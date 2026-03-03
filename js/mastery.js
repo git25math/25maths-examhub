@@ -1,8 +1,8 @@
 /* ══════════════════════════════════════════════════════════════
-   mastery.js — Mastery percentage, rank calculation, word overview
+   mastery.js — Home dashboard, deck detail, mode selection, sort
    ══════════════════════════════════════════════════════════════ */
 
-/* Calculate overall mastery percentage */
+/* ═══ MASTERY CALCULATIONS ═══ */
 function getMasteryPct() {
   var all = getAllWords();
   if (all.length === 0) return 0;
@@ -10,7 +10,6 @@ function getMasteryPct() {
   return Math.round(m / all.length * 100);
 }
 
-/* Get current rank based on mastery percentage */
 function getRank() {
   var pct = getMasteryPct();
   var r = RANKS[0];
@@ -20,7 +19,6 @@ function getRank() {
   return r;
 }
 
-/* Get next rank (or null if at max) */
 function getNextRank() {
   var pct = getMasteryPct();
   for (var i = 0; i < RANKS.length; i++) {
@@ -29,118 +27,175 @@ function getNextRank() {
   return null;
 }
 
-/* ═══ MAIN MENU — inline mastery tab ═══ */
-function renderMasteryInline() {
+/* ═══ DECK STATS ═══ */
+function getDeckStats(li) {
+  var lv = LEVELS[li];
+  var pairs = getPairs(lv.vocabulary);
+  var wd = getWordData();
+  var mastered = 0;
+  pairs.forEach(function(p) {
+    var key = 'L' + li + '_W' + p.lid;
+    var d = wd[key];
+    if (d && d.st === 'mastered') mastered++;
+  });
+  return { total: pairs.length, mastered: mastered, pct: pairs.length > 0 ? Math.round(mastered / pairs.length * 100) : 0 };
+}
+
+/* ═══ HOME DASHBOARD ═══ */
+var DECK_EMOJIS = ['\ud83d\udcdd', '\ud83d\udcc8', '\ud83d\udcd0', '\ud83d\udcca', '\ud83d\udcd6', '\ud83d\udcda'];
+
+function renderHome() {
   var all = getAllWords();
-  var m = all.filter(function(w) { return w.status === 'mastered'; }).length;
-  var l = all.filter(function(w) { return w.status === 'learning'; }).length;
+  var total = all.length;
+  var mastered = all.filter(function(w) { return w.status === 'mastered'; }).length;
+  var due = getReviewCount();
 
-  E('mst-stats').innerHTML =
-    '<div class="mstat"><div class="mstat-num" style="color:#3BA776">' + m + '</div><div class="mstat-lab">已掌握</div></div>' +
-    '<div class="mstat"><div class="mstat-num" style="color:#C4960C">' + l + '</div><div class="mstat-lab">学习中</div></div>' +
-    '<div class="mstat"><div class="mstat-num" style="color:var(--t2)">' + (all.length - m - l) + '</div><div class="mstat-lab">未学</div></div>';
+  var html = '';
 
-  var g = E('mst-grid');
-  g.innerHTML = '';
-  all.forEach(function(w) {
-    g.innerHTML += '<div class="word-chip ' + w.status + '"><div class="wc-en">' + w.word + '</div><div class="wc-zh">' + w.def + '</div></div>';
-  });
-}
+  /* Stats row */
+  html += '<div class="home-stats">';
+  html += '<div class="stat-card"><div class="stat-val">' + total + '</div><div class="stat-label">\u603b\u8bcd\u6c47</div></div>';
+  html += '<div class="stat-card"><div class="stat-val" style="color:var(--c-success)">' + mastered + '</div><div class="stat-label">\u5df2\u638c\u63e1</div></div>';
+  html += '<div class="stat-card"><div class="stat-val" style="color:' + (due > 0 ? 'var(--c-warning)' : 'var(--c-muted)') + '">' + due + '</div><div class="stat-label">\u5f85\u590d\u4e60</div></div>';
+  html += '</div>';
 
-/* ═══ MASTERY POPUP (from user bar) ═══ */
-var masteryFilter = 'all';
+  /* Section title */
+  html += '<div class="section-title">\u5361\u7ec4</div>';
 
-function showMastery() {
-  masteryFilter = 'all';
-  renderMasteryPopup();
-  E('ov-mastery').style.display = 'flex';
-  E('ov-mastery').classList.add('vis');
-}
-
-function filterMastery(f, btn) {
-  masteryFilter = f;
-  if (btn) {
-    btn.parentElement.querySelectorAll('.tab').forEach(function(t) {
-      t.classList.remove('active');
-    });
-    btn.classList.add('active');
-  }
-  renderMasteryPopup();
-}
-
-function renderMasteryPopup() {
-  var all = getAllWords();
-  var m = all.filter(function(w) { return w.status === 'mastered'; }).length;
-  var l = all.filter(function(w) { return w.status === 'learning'; }).length;
-
-  E('mp-stats').innerHTML =
-    '<div class="mstat"><div class="mstat-num" style="color:#3BA776">' + m + '</div><div class="mstat-lab">已掌握</div></div>' +
-    '<div class="mstat"><div class="mstat-num" style="color:#C4960C">' + l + '</div><div class="mstat-lab">学习中</div></div>' +
-    '<div class="mstat"><div class="mstat-num">' + all.length + '</div><div class="mstat-lab">总词汇</div></div>';
-
-  var filtered = masteryFilter === 'all' ? all : all.filter(function(w) {
-    return w.status === (masteryFilter === 'new-word' ? 'new' : masteryFilter);
-  });
-
-  var g = E('mp-grid');
-  g.innerHTML = '';
-  filtered.forEach(function(w) {
-    g.innerHTML += '<div class="word-chip ' + (w.status === 'new' ? 'new-word' : w.status) + '"><div class="wc-en">' + w.word + '</div><div class="wc-zh">' + w.def + '</div></div>';
-  });
-}
-
-/* ═══ MENU ═══ */
-var currentLvl = 0;
-
-function showMenu() {
-  hideAll();
-  updateUserBar();
-
-  var r = getRank(), nr = getNextRank(), pct = getMasteryPct();
-  E('rc-emoji').textContent = r.emoji;
-  E('rc-name').textContent = r.name;
-  E('rc-prog').textContent = nr
-    ? '掌握' + pct + '% \xb7 还需' + (nr.min - pct) + '%升级'
-    : '已达最高段位！' + pct + '%掌握';
-  E('rc-bar').style.width = pct + '%';
-
-  var mc = maxCleared(), list = E('lvl-list');
-  list.innerHTML = '';
-
+  /* Deck grid */
+  html += '<div class="deck-grid">';
   LEVELS.forEach(function(lv, i) {
-    var btn = document.createElement('button');
-    btn.className = 'lvl-btn';
-    var pairs = lv.vocabulary.length / 2;
-    var best = getBest(i);
-    var unlocked = i === 0 || i <= mc + 1;
-    if (!unlocked) btn.classList.add('locked');
-
-    var bH = '';
-    if (best) bH = '<div class="lvl-best">\u2694\ufe0f ' + best.t + 's \xb7 ' + best.m + '\u6b21</div>';
-
-    btn.innerHTML = '<div class="lvl-num">' + (i + 1) + '</div><div style="flex:1"><div class="lvl-name">' + lv.title + '</div><div class="lvl-meta">' + pairs + '\u7ec4 \xb7 ' + lv.timer + 's</div>' + bH + '</div>';
-
-    if (unlocked) btn.addEventListener('click', function() { openMode(i); });
-    list.appendChild(btn);
+    var stats = getDeckStats(i);
+    var emoji = DECK_EMOJIS[i % DECK_EMOJIS.length];
+    html += '<div class="deck-card" onclick="openDeck(' + i + ')">';
+    html += '<div class="deck-card-head">';
+    html += '<div class="deck-card-emoji">' + emoji + '</div>';
+    html += '<div><div class="deck-card-name">' + lv.title + '</div>';
+    html += '<div class="deck-card-count">' + (lv.vocabulary.length / 2) + ' \u8bcd</div></div>';
+    html += '</div>';
+    html += '<div class="deck-progress"><div class="deck-progress-fill" style="width:' + stats.pct + '%"></div></div>';
+    html += '<div class="deck-card-pct">' + stats.pct + '%</div>';
+    html += '</div>';
   });
+  html += '</div>';
 
-  showOv('ov-menu');
+  E('panel-home').innerHTML = html;
+  updateSidebar();
 }
 
-/* ═══ MODE SELECT ═══ */
-function openMode(idx) {
+/* ═══ DECK DETAIL ═══ */
+function openDeck(idx) {
   currentLvl = idx;
+  renderDeck(idx);
+  showPanel('deck');
+}
+
+function renderDeck(idx) {
   var lv = LEVELS[idx];
-  E('mode-title').textContent = 'Stage ' + (idx + 1) + ': ' + lv.title;
-  E('mode-sub').textContent = (lv.vocabulary.length / 2) + '\u7ec4 \xb7 ' + lv.timer + '\u79d2';
+  var pairs = getPairs(lv.vocabulary);
+  var sorted = sortCards(pairs);
+  var wd = getWordData();
 
-  var rc = getReviewCount();
-  E('rv-badge').textContent = rc;
-  E('rv-badge').style.display = rc > 0 ? 'inline-block' : 'none';
+  var html = '';
 
-  E('mc-study').onclick = function() { startStudy(idx); };
-  E('mc-battle').onclick = function() { startBattle(idx); };
-  E('mc-review').onclick = function() { startReview(idx); };
+  /* Header */
+  html += '<div class="deck-header">';
+  html += '<button class="back-btn" onclick="navTo(\'home\')">\u2190</button>';
+  html += '<div class="deck-title">' + DECK_EMOJIS[idx % DECK_EMOJIS.length] + ' ' + lv.title + '</div>';
+  html += '</div>';
 
-  showOv('ov-mode');
+  /* Mode grid */
+  html += '<div class="mode-grid">';
+  var modes = [
+    { emoji: '\ud83d\udc41', name: '\u9884\u89c8', fn: 'openPreview(' + idx + ')' },
+    { emoji: '\ud83d\udcd6', name: '\u5b66\u4e60', fn: 'startStudy(' + idx + ')' },
+    { emoji: '\u2753', name: '\u6d4b\u9a8c', fn: 'startQuiz(' + idx + ')' },
+    { emoji: '\u2328\ufe0f', name: '\u62fc\u5199', fn: 'startSpell(' + idx + ')' },
+    { emoji: '\ud83d\udd17', name: '\u914d\u5bf9', fn: 'startMatch(' + idx + ')' },
+    { emoji: '\u2694\ufe0f', name: '\u5b9e\u6218', fn: 'startBattle(' + idx + ')' },
+    { emoji: '\ud83e\udde0', name: '\u590d\u4e60', fn: 'startReview(' + idx + ')' }
+  ];
+  modes.forEach(function(m) {
+    html += '<button class="mode-btn" onclick="' + m.fn + '">';
+    html += '<div class="mode-emoji">' + m.emoji + '</div>';
+    html += '<div class="mode-name">' + m.name + '</div>';
+    html += '</button>';
+  });
+  html += '</div>';
+
+  /* Sort bar */
+  html += '<div class="sort-bar">';
+  [['default', '\u9ed8\u8ba4'], ['az', 'A-Z'], ['random', '\u968f\u673a'], ['hard', '\u96be\u8bcd\u4f18\u5148']].forEach(function(s) {
+    html += '<button class="sort-btn' + (appSort === s[0] ? ' active' : '') + '" onclick="setSort(\'' + s[0] + '\',' + idx + ')">' + s[1] + '</button>';
+  });
+  html += '</div>';
+
+  /* Word list */
+  html += '<div class="word-list">';
+  sorted.forEach(function(p) {
+    var key = 'L' + idx + '_W' + p.lid;
+    var d = wd[key];
+    var lvNum = d ? (d.lv || 0) : 0;
+    var ok = d ? (d.ok || 0) : 0;
+    var fail = d ? (d.fail || 0) : 0;
+    var lvColor = SRS_COLORS[lvNum] || SRS_COLORS[0];
+
+    html += '<div class="word-row">';
+    html += '<div class="word-en">' + p.word + '</div>';
+    if (appLang === 'bilingual') {
+      html += '<div class="word-zh">' + p.def + '</div>';
+    }
+    html += '<span class="word-lv" style="background:' + lvColor + '20;color:' + lvColor + '">' + SRS_LABELS[lvNum] + '</span>';
+    if (ok > 0 || fail > 0) {
+      html += '<span class="word-stats">\u2713' + ok + ' \u2717' + fail + '</span>';
+    }
+    html += '</div>';
+  });
+  html += '</div>';
+
+  E('panel-deck').innerHTML = html;
+}
+
+function setSort(s, idx) {
+  appSort = s;
+  renderDeck(idx);
+}
+
+/* ═══ QUICK BROWSE MODAL ═══ */
+var browseIdx = 0;
+var browsePairs = [];
+
+function openPreview(idx) {
+  currentLvl = idx;
+  renderPreview(idx);
+  showPanel('preview');
+}
+
+function renderPreview(idx) {
+  var lv = LEVELS[idx];
+  var pairs = getPairs(lv.vocabulary);
+
+  var html = '';
+  html += '<div class="deck-header">';
+  html += '<button class="back-btn" onclick="openDeck(' + idx + ')">\u2190</button>';
+  html += '<div class="deck-title">\u9884\u89c8: ' + lv.title + '</div>';
+  html += '</div>';
+
+  html += '<div class="preview-grid">';
+  pairs.forEach(function(p, i) {
+    html += '<div class="preview-card">';
+    html += '<div class="preview-num">#' + (i + 1) + '</div>';
+    html += '<div class="preview-en">' + p.word + '</div>';
+    if (appLang === 'bilingual') {
+      html += '<div class="preview-zh">' + p.def + '</div>';
+    }
+    html += '</div>';
+  });
+  html += '</div>';
+
+  html += '<div style="margin-top:16px;text-align:center">';
+  html += '<button class="btn btn-secondary" onclick="openDeck(' + idx + ')">\u2190 \u8fd4\u56de\u5361\u7ec4</button>';
+  html += '</div>';
+
+  E('panel-preview').innerHTML = html;
 }

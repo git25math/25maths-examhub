@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════════════════════════
-   storage.js — localStorage CRUD + cloud sync
+   storage.js — localStorage CRUD + cloud sync (extended with SRS)
    ══════════════════════════════════════════════════════════════ */
 
 /* Basic localStorage read/write */
@@ -10,7 +10,7 @@ function loadS() {
 
 function writeS(d) {
   try { localStorage.setItem(SK, JSON.stringify(d)); }
-  catch (e) { /* quota exceeded — silently fail */ }
+  catch (e) { /* quota exceeded */ }
 }
 
 /* Level best scores */
@@ -34,18 +34,39 @@ function maxCleared() {
 
 /* Word mastery storage
    Each word key: "L{levelIndex}_W{wordId}"
-   Value: { st: "mastered"|"learning"|"new", iv: intervalDays, nr: nextReviewTimestamp, lr: lastReviewTimestamp }
+   Value: { st, iv, nr, lr, ok, fail, lv }
+   - st: "mastered"|"learning"|"new"
+   - iv: interval in days
+   - nr: next review timestamp
+   - lr: last review timestamp
+   - ok: correct count
+   - fail: incorrect count
+   - lv: SRS level 0-7 (Ebbinghaus)
 */
 function getWordData() {
   return loadS().words || {};
 }
 
-function setWordStatus(key, status, interval) {
+function setWordStatus(key, status, interval, correct) {
   var s = loadS();
   if (!s.words) s.words = {};
   var now = Date.now();
   var next = now + (interval || 1) * 86400000;
-  s.words[key] = { st: status, iv: interval || 1, nr: next, lr: now };
+  var prev = s.words[key] || {};
+  var ok = prev.ok || 0;
+  var fail = prev.fail || 0;
+  var lv = prev.lv || 0;
+
+  if (correct === true) {
+    ok++;
+    lv = Math.min(lv + 1, 7);
+  } else if (correct === false) {
+    fail++;
+    lv = Math.max(lv - 2, 0);
+  }
+  /* correct === undefined -> no change (backward compatible) */
+
+  s.words[key] = { st: status, iv: interval || 1, nr: next, lr: now, ok: ok, fail: fail, lv: lv };
   writeS(s);
   syncToCloud();
 }
@@ -53,6 +74,7 @@ function setWordStatus(key, status, interval) {
 /* Get all words across all levels with their mastery status */
 function getAllWords() {
   var all = [];
+  var wd = getWordData();
   LEVELS.forEach(function(lv, li) {
     var m = {};
     lv.vocabulary.forEach(function(v) {
@@ -61,27 +83,30 @@ function getAllWords() {
     });
     for (var k in m) {
       var key = 'L' + li + '_W' + k;
-      var wd = getWordData()[key];
+      var d = wd[key];
       all.push({
         key: key,
         word: m[k].word,
         def: m[k].def,
         level: li,
-        status: wd ? wd.st : 'new'
+        status: d ? d.st : 'new',
+        ok: d ? (d.ok || 0) : 0,
+        fail: d ? (d.fail || 0) : 0,
+        lv: d ? (d.lv || 0) : 0
       });
     }
   });
   return all;
 }
 
-/* Get words due for review (non-mastered with past nextReview timestamp) */
+/* Get words due for review */
 function getDueWords() {
   var now = Date.now(), due = [];
   var wd = getWordData();
   getAllWords().forEach(function(w) {
     var d = wd[w.key];
     if (d && d.st !== 'mastered' && d.nr <= now) due.push(w);
-    else if (d && d.st === 'learning' && d.nr <= now) due.push(w);
+    else if (!d || d.st === 'new') due.push(w);
   });
   return due;
 }
@@ -96,7 +121,20 @@ function getReviewCount() {
   return count;
 }
 
-/* Cloud sync (only when Supabase is configured and user is logged in) */
+/* Custom levels persistence */
+function getCustomLevels() {
+  return loadS().customLevels || [];
+}
+
+function saveCustomLevel(level) {
+  var s = loadS();
+  if (!s.customLevels) s.customLevels = [];
+  s.customLevels.push(level);
+  writeS(s);
+  syncToCloud();
+}
+
+/* Cloud sync */
 async function syncToCloud() {
   if (!sb || !currentUser || currentUser.id === 'local') return;
   try {
