@@ -47,6 +47,27 @@ E('auth-login').addEventListener('click', async function() {
       }
 
       currentUser = { email: email, id: res2.data.user.id };
+    } else if (res.error && res.error.message.indexOf('Email not confirmed') >= 0) {
+      /* Already registered but not verified — resend confirmation with correct redirect */
+      btn.textContent = '\u53d1\u9001\u4e2d...';
+      try {
+        var resend = await sb.auth.resend({
+          type: 'signup',
+          email: email,
+          options: { emailRedirectTo: AUTH_REDIRECT }
+        });
+        if (resend.error) {
+          E('auth-err').textContent = translateAuthError(resend.error.message);
+        } else {
+          E('auth-err').textContent = '';
+          showToast('\u9a8c\u8bc1\u90ae\u4ef6\u5df2\u91cd\u65b0\u53d1\u9001\uff0c\u8bf7\u67e5\u6536\u90ae\u7bb1');
+        }
+      } catch (e2) {
+        E('auth-err').textContent = '\u53d1\u9001\u5931\u8d25\uff0c\u8bf7\u7a0d\u540e\u91cd\u8bd5';
+      }
+      btn.disabled = false;
+      btn.textContent = '\u767b\u5f55 / \u6ce8\u518c';
+      return;
     } else if (res.error) {
       E('auth-err').textContent = translateAuthError(res.error.message);
       btn.disabled = false;
