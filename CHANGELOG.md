@@ -1,5 +1,28 @@
 # Changelog
 
+## [0.2.1] - 2026-03-04 — 跨站认证修复
+
+### 认证系统
+- 修复注册后重定向到主站的问题：`signUp()` 添加 `emailRedirectTo` 参数，确认邮件链接回 keywords.25maths.com
+- 新增 `recoverSessionFromUrl()` — 自动从回调 URL 恢复 session（支持 access_token / PKCE code / OTP token_hash 三种模式）
+- 修复登出竞态条件：`doLogout()` 改为 async，await `syncToCloud()` + `signOut()` 顺序执行
+- 注册后若需邮箱验证，显示 Toast 提示而非静默失败
+- `AUTH_REDIRECT` 动态取 `window.location.origin`，跨站部署无需改代码
+
+### UX 改进
+- 登录按钮添加加载状态（disabled + "登录中..."），防止重复点击
+- Supabase 常见错误消息翻译为中文（邮箱或密码错误 / 邮箱未验证 / 已注册 / 操作频繁 / 网络错误）
+- 回调 URL 参数自动清理（`stripAuthParams()`），地址栏保持干净
+
+### 文件变更
+- `js/auth.js` — 重写（新增 159 行：回调恢复、错误翻译、加载状态、登出修复）
+- `js/app.js` — 初始化流程前置 `recoverSessionFromUrl()` 调用
+
+### 配置要求
+- Supabase Dashboard → Authentication → URL Configuration 需添加 `https://keywords.25maths.com/`
+
+---
+
 ## [0.2.0] - 2026-03-04 — 功能融合 + 响应式升级
 
 ### UI / 布局
