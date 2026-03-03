@@ -2,6 +2,11 @@
 
 Math vocabulary matching game (单词消消乐) for CIE IGCSE 0580.
 
+- **Live**: https://git25math.github.io/25maths-keywords/
+- **Repo**: https://github.com/git25math/25maths-keywords
+- **Supabase**: shared with 25maths-website (`vocab_progress` table)
+- **See also**: [CHANGELOG.md](CHANGELOG.md) | [ROADMAP.md](ROADMAP.md)
+
 ## Project Structure
 
 - `index.html` — Main entry point (open via local HTTP server)
