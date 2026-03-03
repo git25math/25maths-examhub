@@ -100,7 +100,7 @@ function getReviewCount() {
 async function syncToCloud() {
   if (!sb || !currentUser || currentUser.id === 'local') return;
   try {
-    await sb.from('progress').upsert(
+    await sb.from('vocab_progress').upsert(
       { user_id: currentUser.id, data: JSON.stringify(loadS()), updated_at: new Date().toISOString() },
       { onConflict: 'user_id' }
     );
@@ -110,7 +110,7 @@ async function syncToCloud() {
 async function syncFromCloud() {
   if (!sb || !currentUser || currentUser.id === 'local') return;
   try {
-    var res = await sb.from('progress').select('data').eq('user_id', currentUser.id).single();
+    var res = await sb.from('vocab_progress').select('data').eq('user_id', currentUser.id).single();
     if (res.data && res.data.data) {
       var cloud = JSON.parse(res.data.data);
       var local = loadS();

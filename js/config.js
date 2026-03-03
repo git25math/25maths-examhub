@@ -2,9 +2,9 @@
    config.js — Application configuration
    ══════════════════════════════════════════════════════════════ */
 
-/* Supabase credentials (leave empty to run in offline/guest mode) */
-var SUPABASE_URL = '';  // e.g. 'https://abc123.supabase.co'
-var SUPABASE_KEY = '';  // your anon public key
+/* Supabase credentials (shared with 25maths-website) */
+var SUPABASE_URL = 'https://jjjigohjvmyewasmmmyf.supabase.co';
+var SUPABASE_KEY = 'sb_publishable_EDe6c9jFS4_PL451oYMYzg_86KRbHRZ';
 
 /* Supabase client (initialized only if credentials are set) */
 var sb = null;
