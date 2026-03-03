@@ -9,6 +9,28 @@
     LEVELS = LEVELS.concat(custom);
   }
 
+  /* Recover session from auth callback URL (email confirmation redirect) */
+  if (sb) {
+    try {
+      var recovered = await recoverSessionFromUrl();
+      if (recovered) {
+        var rs = await sb.auth.getSession();
+        if (rs.data.session) {
+          currentUser = {
+            email: rs.data.session.user.email,
+            id: rs.data.session.user.id
+          };
+          await syncFromCloud();
+          afterLogin();
+          showToast('\u90ae\u7bb1\u9a8c\u8bc1\u6210\u529f\uff0c\u5df2\u767b\u5f55');
+          return;
+        }
+      }
+    } catch (e) {
+      /* Recovery failed — continue to normal session check */
+    }
+  }
+
   /* Check for existing Supabase session */
   if (sb) {
     try {
