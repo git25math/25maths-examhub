@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>单词消消乐 Pro</title>
+
+  <!-- Fonts & External SDKs -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <!-- App Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ══════ PARTICLE CANVAS ══════ -->
+<canvas id="fx"></canvas>
+
+<!-- ══════ USER BAR ══════ -->
+<div class="user-bar" id="user-bar">
+  <div class="user-info">
+    <span class="user-rank" id="ub-rank"></span>
+    <div>
+      <div class="user-name" id="ub-name"></div>
+      <div class="user-rank-label" id="ub-rlabel"></div>
+    </div>
+  </div>
+  <div style="display:flex;gap:6px">
+    <button class="btn btn-s" onclick="showMastery()" style="margin:0;padding:6px 12px;font-size:11px">📊 词库</button>
+    <button class="btn btn-s" id="ub-logout" style="margin:0;padding:6px 12px;font-size:11px">退出</button>
+  </div>
+</div>
+
+<!-- ══════ AUTH SCREEN ══════ -->
+<div class="ov vis" id="ov-auth">
+  <div class="md auth-box">
+    <div class="md-emoji">✨</div>
+    <div class="s-title">单词消消乐</div>
+    <div class="md-sub">输入邮箱，开始你的单词之旅</div>
+    <input class="auth-input" id="auth-email" type="email" placeholder="你的邮箱地址">
+    <input class="auth-input" id="auth-pass" type="password" placeholder="密码 (至少6位)">
+    <div class="auth-err" id="auth-err"></div>
+    <div class="btn-group">
+      <button class="btn btn-p" id="auth-login" style="width:100%">登录 / 注册</button>
+      <button class="btn btn-s" id="auth-skip">先不登录，直接体验</button>
+    </div>
+    <div class="auth-note">首次输入邮箱将自动注册<br>登录后可跨设备同步进度</div>
+  </div>
+</div>
+
+<!-- ══════ MAIN MENU ══════ -->
+<div class="ov" id="ov-menu">
+  <div class="md" style="max-width:420px">
+    <div class="rank-card" id="rank-card">
+      <div class="rank-emoji" id="rc-emoji">🥉</div>
+      <div class="rank-name" id="rc-name">青铜学员</div>
+      <div class="rank-progress-text" id="rc-prog"></div>
+      <div class="rank-bar"><div class="rank-bar-fill" id="rc-bar"></div></div>
+    </div>
+    <div class="tabs">
+      <button class="tab active" data-tab="levels" onclick="switchTab(this)">闯关</button>
+      <button class="tab" data-tab="mastery" onclick="switchTab(this)">词库总览</button>
+    </div>
+    <div id="tab-levels">
+      <div class="lvl-list" id="lvl-list"></div>
+    </div>
+    <div id="tab-mastery" style="display:none">
+      <div class="mastery-stats" id="mst-stats"></div>
+      <div class="mastery-grid" id="mst-grid"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ MODE SELECT ══════ -->
+<div class="ov" id="ov-mode">
+  <div class="md">
+    <div class="md-emoji">📚</div>
+    <div class="md-title" id="mode-title"></div>
+    <div class="md-sub" id="mode-sub"></div>
+    <div class="mode-list">
+      <button class="mode-card" id="mc-study">
+        <div class="mode-icon study">📖</div>
+        <div>
+          <div class="mode-name">学习模式</div>
+          <div class="mode-desc">逐个翻牌认词，自评掌握程度，零压力</div>
+        </div>
+      </button>
+      <button class="mode-card" id="mc-battle">
+        <div class="mode-icon battle">⚔️</div>
+        <div>
+          <div class="mode-name">实战模式</div>
+          <div class="mode-desc">限时配对消消乐，记录最佳成绩</div>
+        </div>
+      </button>
+      <button class="mode-card" id="mc-review">
+        <div class="mode-icon review">🔄</div>
+        <div>
+          <div class="mode-name">复习模式<span class="review-badge" id="rv-badge">0</span></div>
+          <div class="mode-desc">间隔重复，专攻不熟和模糊的词</div>
+        </div>
+      </button>
+    </div>
+    <button class="btn btn-s" onclick="showMenu()">← 返回</button>
+  </div>
+</div>
+
+<!-- ══════ STUDY END ══════ -->
+<div class="ov" id="ov-study-end">
+  <div class="md">
+    <div class="md-emoji">🎓</div>
+    <div class="md-title">学习完成！</div>
+    <div class="md-sub" id="se-sub"></div>
+    <div class="sum-grid">
+      <div class="sum-item hbg"><div class="sum-val" id="se-hard">0</div><div class="sum-lab">😵 不熟</div></div>
+      <div class="sum-item obg"><div class="sum-val" id="se-ok">0</div><div class="sum-lab">🤔 模糊</div></div>
+      <div class="sum-item ebg"><div class="sum-val" id="se-easy">0</div><div class="sum-lab">✅ 掌握</div></div>
+    </div>
+    <div class="btn-group">
+      <button class="btn btn-mint" id="se-battle">⚔️ 进入实战</button>
+      <button class="btn btn-s" id="se-restudy">📖 再学不熟的</button>
+      <button class="btn btn-s" onclick="showMenu()">← 返回菜单</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ BATTLE END ══════ -->
+<div class="ov" id="ov-end">
+  <div class="md">
+    <div class="md-emoji" id="e-emoji">🏆</div>
+    <div class="md-title" id="e-title"></div>
+    <div class="md-sub" id="e-sub"></div>
+    <div class="mstats">
+      <div><div class="ms-v" id="e-time">0</div><div class="ms-l">用时</div></div>
+      <div><div class="ms-v" id="e-moves">0</div><div class="ms-l">翻牌</div></div>
+      <div><div class="ms-v" id="e-combo">0</div><div class="ms-l">连击</div></div>
+    </div>
+    <div id="e-best" style="font-size:11px;color:var(--ga);font-weight:700;margin-bottom:12px"></div>
+    <div class="btn-group">
+      <button class="btn btn-p" id="e-action"></button>
+      <button class="btn btn-s" id="e-retry">🔄 再试一次</button>
+      <button class="btn btn-s" onclick="showMenu()">← 返回菜单</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ REVIEW END ══════ -->
+<div class="ov" id="ov-review-end">
+  <div class="md">
+    <div class="md-emoji">🧠</div>
+    <div class="md-title">复习完成！</div>
+    <div class="md-sub" id="re-sub"></div>
+    <div class="sum-grid">
+      <div class="sum-item hbg"><div class="sum-val" id="re-hard">0</div><div class="sum-lab">😵 还不熟</div></div>
+      <div class="sum-item obg"><div class="sum-val" id="re-ok">0</div><div class="sum-lab">🤔 快了</div></div>
+      <div class="sum-item ebg"><div class="sum-val" id="re-easy">0</div><div class="sum-lab">✅ 搞定</div></div>
+    </div>
+    <div class="btn-group">
+      <button class="btn btn-p" onclick="showMenu()">返回菜单</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ MASTERY POPUP ══════ -->
+<div class="ov" id="ov-mastery">
+  <div class="md" style="max-width:460px">
+    <div class="md-emoji">📊</div>
+    <div class="md-title">我的词库</div>
+    <div class="mastery-stats" id="mp-stats"></div>
+    <div class="tabs" style="margin-bottom:10px">
+      <button class="tab active" onclick="filterMastery('all',this)">全部</button>
+      <button class="tab" onclick="filterMastery('mastered',this)">✅已掌握</button>
+      <button class="tab" onclick="filterMastery('learning',this)">🤔学习中</button>
+      <button class="tab" onclick="filterMastery('new-word',this)">🆕未学</button>
+    </div>
+    <div class="mastery-grid" id="mp-grid"></div>
+    <div class="btn-group" style="margin-top:12px">
+      <button class="btn btn-s" id="btn-export-unfamiliar">📥 导出不熟单词</button>
+      <button class="btn btn-s" id="btn-export-progress">📥 导出学习记录</button>
+      <button class="btn btn-s" onclick="hideOv('ov-mastery')">关闭</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ STUDY AREA ══════ -->
+<div class="area" id="study-area">
+  <div class="area-header">
+    <div class="area-badge badge-study" id="st-badge">学习模式</div>
+    <div class="area-title" id="st-title"></div>
+    <div class="area-prog" id="st-prog"></div>
+    <div class="pbar-wrap pbar-green"><div class="pbar-fill fill-green" id="st-pbar"></div></div>
+  </div>
+  <div class="fc-box" id="fc-box">
+    <div class="fc-inner">
+      <div class="fc-face fc-front">
+        <div class="fc-fl">ENGLISH</div>
+        <div class="fc-fw" id="fc-word"></div>
+        <div class="fc-fh">点击翻牌查看释义</div>
+      </div>
+      <div class="fc-face fc-back">
+        <div class="fc-bl">中文</div>
+        <div class="fc-bd" id="fc-def"></div>
+        <div class="fc-bw" id="fc-word2"></div>
+      </div>
+    </div>
+  </div>
+  <div class="fc-actions hidden" id="fc-actions">
+    <button class="fc-rb hard" data-rate="hard">😵 不熟</button>
+    <button class="fc-rb ok" data-rate="ok">🤔 模糊</button>
+    <button class="fc-rb easy" data-rate="easy">✅ 掌握</button>
+  </div>
+</div>
+
+<!-- ══════ REVIEW AREA ══════ -->
+<div class="area" id="review-area">
+  <div class="area-header">
+    <div class="area-badge badge-review" id="rv-area-badge">复习模式</div>
+    <div class="area-title" id="rv-title">间隔复习</div>
+    <div class="area-prog" id="rv-prog"></div>
+    <div class="pbar-wrap pbar-purple" style="background:#EDE0F5">
+      <div class="pbar-fill" id="rv-pbar" style="background:linear-gradient(90deg,var(--pl),var(--ga))"></div>
+    </div>
+  </div>
+  <div class="fc-box" id="rv-fc-box">
+    <div class="fc-inner">
+      <div class="fc-face fc-front">
+        <div class="fc-fl">ENGLISH</div>
+        <div class="fc-fw" id="rv-fc-word"></div>
+        <div class="fc-fh">点击翻牌查看释义</div>
+      </div>
+      <div class="fc-face fc-back">
+        <div class="fc-bl">中文</div>
+        <div class="fc-bd" id="rv-fc-def"></div>
+        <div class="fc-bw" id="rv-fc-word2"></div>
+      </div>
+    </div>
+  </div>
+  <div class="fc-actions hidden" id="rv-fc-actions">
+    <button class="fc-rb hard" data-rate="hard">😵 还不熟</button>
+    <button class="fc-rb ok" data-rate="ok">🤔 快了</button>
+    <button class="fc-rb easy" data-rate="easy">✅ 搞定了</button>
+  </div>
+</div>
+
+<!-- ══════ BATTLE AREA ══════ -->
+<div class="area" id="game-area">
+  <div class="area-header">
+    <div class="area-badge badge-battle" id="g-badge">STAGE 1</div>
+    <h1 class="area-title" id="g-title"></h1>
+    <div class="sbar">
+      <div class="si" id="si-time"><span class="si-i">⏱</span><span id="d-time">60s</span></div>
+      <div class="si"><span class="si-i">🃏</span><span id="d-moves">0</span></div>
+      <div class="si"><span class="si-i">🔥</span><span id="d-combo">0</span></div>
+    </div>
+    <div class="pbar-wrap pbar-purple"><div class="pbar-fill fill-purple" id="pbar"></div></div>
+  </div>
+  <div id="grid"></div>
+</div>
+
+<!-- ══════ COMBO POPUP ══════ -->
+<div class="combo-pop" id="combo-el"></div>
+
+<!-- ══════ SCRIPTS (load order matters) ══════ -->
+<script src="js/config.js"></script>
+<script src="js/levels.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/particles.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/mastery.js"></script>
+<script src="js/study.js"></script>
+<script src="js/battle.js"></script>
+<script src="js/review.js"></script>
+<script src="js/export.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>单词消消乐</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--pb:#B8D8E8;--pp:#F8C8D4;--pm:#B5E8D5;--pc:#FCDEC0;--pl:#D4C5F0;--ga:#7C6DAF;--gb:#E8A0BF;--gc:#6DAFB0;--bg:#FEF9F2;--t1:#4A3F5C;--t2:#8A80A0;--sh:rgba(120,100,160,.14);--r:16px;--rb:24px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Nunito','PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);min-height:100vh;display:flex;flex-direction:column;align-items:center;color:var(--t1);overflow-x:hidden}
+body::before,body::after{content:'';position:fixed;border-radius:50%;opacity:.09;z-index:0;pointer-events:none}
+body::before{width:300px;height:300px;background:var(--pp);top:-80px;right:-60px;animation:drift 14s ease-in-out infinite}
+body::after{width:260px;height:260px;background:var(--pb);bottom:-60px;left:-40px;animation:drift 18s ease-in-out infinite reverse}
+@keyframes drift{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(18px,-22px) scale(1.04)}66%{transform:translate(-12px,14px) scale(.96)}}
+.ov{position:fixed;inset:0;background:rgba(74,63,92,.72);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);display:none;justify-content:center;align-items:center;z-index:100;overflow-y:auto;padding:20px 0}
+.ov.vis{display:flex}
+.md{background:#fff;border-radius:26px;padding:30px 24px;text-align:center;max-width:400px;width:94%;box-shadow:0 20px 60px rgba(0,0,0,.17);animation:mpop .4s cubic-bezier(.175,.885,.32,1.275)}
+@keyframes mpop{0%{transform:scale(.55);opacity:0}100%{transform:scale(1);opacity:1}}
+.md-emoji{font-size:48px;margin-bottom:2px}.md-title{font-size:21px;font-weight:900;margin-bottom:3px}.md-sub{font-size:13px;color:var(--t2);margin-bottom:14px;line-height:1.5}
+.mstats{display:flex;justify-content:center;gap:18px;margin-bottom:18px}
+.ms-v{font-size:24px;font-weight:900;background:linear-gradient(135deg,var(--ga),var(--gb));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.ms-l{font-size:10px;color:var(--t2);text-transform:uppercase;letter-spacing:1px;font-weight:600}
+.btn{display:inline-block;padding:11px 28px;border:none;border-radius:var(--rb);font-family:inherit;font-size:15px;font-weight:700;cursor:pointer;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px)}.btn:active{transform:translateY(0)}
+.btn-p{background:linear-gradient(135deg,var(--ga),var(--gb));color:#fff;box-shadow:0 4px 14px rgba(124,109,175,.35)}
+.btn-s{background:#EDE8F5;color:var(--ga);margin-top:7px}
+.btn-mint{background:linear-gradient(135deg,var(--gc),#5dafa0);color:#fff;box-shadow:0 4px 14px rgba(100,175,170,.35)}
+.btn-group{display:flex;flex-direction:column;gap:8px;align-items:center;width:100%}
+.s-title{font-size:30px;font-weight:900;background:linear-gradient(135deg,var(--ga),var(--gb),var(--gc));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:4px}
+.s-sub{font-size:13px;color:var(--t2);margin-bottom:18px}
+.lvl-list{display:flex;flex-direction:column;gap:8px;margin-bottom:12px;max-height:52vh;overflow-y:auto;padding:2px 4px}
+.lvl-btn{display:flex;align-items:center;gap:10px;padding:11px 14px;background:#fff;border:2px solid #EDE8F5;border-radius:14px;cursor:pointer;transition:all .2s;text-align:left;font-family:inherit;width:100%}
+.lvl-btn:hover{border-color:var(--pl);transform:translateX(4px);box-shadow:0 4px 12px var(--sh)}
+.lvl-num{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:16px;color:#fff;flex-shrink:0}
+.lvl-name{font-size:13px;font-weight:700}.lvl-meta{font-size:11px;color:var(--t2)}.lvl-best{font-size:10px;color:var(--ga);font-weight:700;margin-top:1px}
+.lvl-btn.locked{opacity:.4;pointer-events:none}
+.lvl-btn:nth-child(5n+1) .lvl-num{background:linear-gradient(135deg,var(--pb),var(--gc))}
+.lvl-btn:nth-child(5n+2) .lvl-num{background:linear-gradient(135deg,var(--pp),var(--gb))}
+.lvl-btn:nth-child(5n+3) .lvl-num{background:linear-gradient(135deg,var(--pl),var(--ga))}
+.lvl-btn:nth-child(5n+4) .lvl-num{background:linear-gradient(135deg,var(--pm),#5dafa0)}
+.lvl-btn:nth-child(5n+5) .lvl-num{background:linear-gradient(135deg,var(--pc),#e88060)}
+.mode-card{display:flex;align-items:center;gap:14px;padding:16px;background:#fff;border:2px solid #EDE8F5;border-radius:16px;cursor:pointer;transition:all .25s;text-align:left;font-family:inherit;width:100%}
+.mode-card:hover{border-color:var(--pl);transform:translateY(-2px);box-shadow:0 6px 18px var(--sh)}
+.mode-icon{width:50px;height:50px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0}
+.mode-icon.study{background:linear-gradient(135deg,var(--pm),var(--gc))}.mode-icon.battle{background:linear-gradient(135deg,var(--pp),var(--gb))}
+.mode-name{font-size:15px;font-weight:800}.mode-desc{font-size:11px;color:var(--t2);line-height:1.4;margin-top:2px}
+.mode-list{display:flex;flex-direction:column;gap:10px;margin:16px 0 10px}
+#study-area{width:100%;max-width:540px;padding:16px 14px;position:relative;z-index:1;display:none}
+#study-area.active{display:block}
+.study-header{text-align:center;margin-bottom:14px}
+.study-badge{display:inline-block;background:linear-gradient(135deg,var(--pm),var(--gc));color:#fff;font-size:11px;font-weight:700;padding:3px 13px;border-radius:20px;letter-spacing:1px;margin-bottom:3px}
+.study-title{font-size:20px;font-weight:900;color:var(--t1)}.study-progress{font-size:12px;color:var(--t2);margin-top:4px}
+.study-pbar-wrap{margin-top:8px;background:#E0F5EC;border-radius:10px;height:6px;overflow:hidden}
+.study-pbar{height:100%;width:0%;background:linear-gradient(90deg,var(--pm),var(--gc));border-radius:10px;transition:width .4s ease}
+.fc-container{perspective:1000px;margin:20px auto;width:280px;height:180px;cursor:pointer}
+.fc-inner{width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform .55s cubic-bezier(.175,.885,.32,1.275)}
+.fc-container.fc-flipped .fc-inner{transform:rotateY(180deg)}
+.fc-face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:20px;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:16px}
+.fc-front{background:linear-gradient(145deg,var(--ga),var(--gb));color:#fff;box-shadow:0 6px 20px var(--sh)}
+.fc-front-label{font-size:11px;opacity:.6;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px}
+.fc-front-word{font-size:26px;font-weight:900}.fc-front-hint{font-size:11px;opacity:.45;margin-top:12px}
+.fc-back{transform:rotateY(180deg);background:#fff;box-shadow:0 6px 20px var(--sh);border:2px solid var(--pm)}
+.fc-back-label{font-size:11px;color:var(--t2);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px}
+.fc-back-def{font-size:26px;font-weight:900;color:var(--t1)}.fc-back-word{font-size:13px;color:var(--t2);margin-top:8px}
+.fc-actions{display:flex;justify-content:center;gap:12px;margin-top:20px}
+.fc-rate-btn{padding:10px 22px;border:none;border-radius:var(--rb);font-family:inherit;font-size:14px;font-weight:700;cursor:pointer;transition:all .2s;opacity:.85}
+.fc-rate-btn:hover{opacity:1;transform:translateY(-2px)}
+.fc-rate-btn.hard{background:#FDDEDE;color:#D35D6E}.fc-rate-btn.ok{background:#FFF3D6;color:#C4960C}.fc-rate-btn.easy{background:#D6F5E8;color:#3BA776}
+.fc-actions.hidden{visibility:hidden;pointer-events:none}
+.sum-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0}
+.sum-item{padding:12px 8px;border-radius:14px;text-align:center}
+.sum-item.hbg{background:#FDDEDE}.sum-item.obg{background:#FFF3D6}.sum-item.ebg{background:#D6F5E8}
+.sum-val{font-size:24px;font-weight:900}.sum-lab{font-size:10px;font-weight:600;margin-top:2px}
+#game-area{width:100%;max-width:540px;padding:16px 12px;position:relative;z-index:1;display:none}
+#game-area.active{display:block}
+.g-header{text-align:center;margin-bottom:12px}
+.g-badge{display:inline-block;background:linear-gradient(135deg,var(--pl),var(--pp));color:#fff;font-size:11px;font-weight:700;padding:3px 13px;border-radius:20px;letter-spacing:1px;text-transform:uppercase;margin-bottom:3px}
+.g-title{font-size:22px;font-weight:900;background:linear-gradient(135deg,var(--ga),var(--gb));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.sbar{display:flex;justify-content:center;gap:15px;margin-top:7px;flex-wrap:wrap}
+.si{display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:var(--t2)}.si-i{font-size:15px}
+.si.warn{color:#E85D75}.si.warn .si-i{animation:pulse .6s ease-in-out infinite alternate}
+@keyframes pulse{to{transform:scale(1.25)}}
+.pbar-wrap{margin-top:9px;background:#EDE8F5;border-radius:10px;height:7px;overflow:hidden}
+#pbar{height:100%;width:0%;background:linear-gradient(90deg,var(--pm),var(--pb),var(--pl));border-radius:10px;transition:width .5s cubic-bezier(.34,1.56,.64,1)}
+#grid{display:grid;gap:10px;padding:6px;perspective:1000px}
+.cs{aspect-ratio:1;perspective:800px;cursor:pointer;opacity:0;transform:translateY(16px) scale(.85);animation:slotIn .35s ease-out forwards}
+@keyframes slotIn{to{opacity:1;transform:translateY(0) scale(1)}}
+.cs.done{pointer-events:none}
+.ci{width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform .5s cubic-bezier(.175,.885,.32,1.275)}
+.cs.flipped .ci{transform:rotateY(180deg)}
+.cf{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:var(--r);display:flex;flex-direction:column;justify-content:center;align-items:center}
+.cf-b{background:linear-gradient(145deg,var(--ga),var(--gb));box-shadow:0 4px 14px var(--sh),inset 0 2px 0 rgba(255,255,255,.18)}
+.cf-b::before{content:'?';font-size:24px;color:rgba(255,255,255,.4);font-weight:900}
+.cf-b::after{content:'';position:absolute;inset:6px;border:2px dashed rgba(255,255,255,.11);border-radius:11px}
+.cf-f{transform:rotateY(180deg);background:#fff;box-shadow:0 4px 16px var(--sh),inset 0 0 0 2px rgba(120,100,160,.06);padding:6px 5px;gap:2px}
+.ct-l{font-size:9px;text-transform:uppercase;letter-spacing:1.3px;color:var(--t2);font-weight:600}
+.ct-t{font-size:15px;font-weight:700;color:var(--t1);text-align:center;line-height:1.25;word-break:break-word}
+.cs[data-tp="word"] .cf-f{border-bottom:3px solid var(--pb)}.cs[data-tp="def"] .cf-f{border-bottom:3px solid var(--pc)}
+.cs.match-go{animation:mB .55s ease-out forwards;pointer-events:none}
+@keyframes mB{0%{transform:scale(1);opacity:1}35%{transform:scale(1.14);opacity:1}100%{transform:scale(0);opacity:0}}
+.cs.shake-go .ci{animation:jS .45s ease-in-out}
+@keyframes jS{0%{transform:rotateY(180deg) translateX(0)}20%{transform:rotateY(180deg) translateX(-6px) rotate(-1.5deg)}40%{transform:rotateY(180deg) translateX(6px) rotate(1.5deg)}60%{transform:rotateY(180deg) translateX(-3px)}80%{transform:rotateY(180deg) translateX(2px)}100%{transform:rotateY(180deg) translateX(0)}}
+.bf{position:fixed;pointer-events:none;z-index:60;font-size:20px;font-weight:900;opacity:0}
+.bf.show{animation:bfl .9s ease-out forwards}
+@keyframes bfl{0%{opacity:1;transform:translate(-50%,-50%) scale(.6)}25%{opacity:1;transform:translate(-50%,-70%) scale(1.1)}100%{opacity:0;transform:translate(-50%,-130%) scale(.8)}}
+.combo-pop{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);font-size:28px;font-weight:900;pointer-events:none;z-index:60;opacity:0}
+.combo-pop.show{animation:cfl 1s ease-out forwards}
+@keyframes cfl{0%{opacity:1;transform:translate(-50%,-50%) scale(.5)}30%{opacity:1;transform:translate(-50%,-65%) scale(1.15)}100%{opacity:0;transform:translate(-50%,-130%) scale(.8)}}
+#fx{position:fixed;inset:0;pointer-events:none;z-index:50}
+.back-btn{position:fixed;top:12px;left:12px;z-index:90;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.85);border:none;box-shadow:0 2px 10px var(--sh);cursor:pointer;font-size:18px;display:none;align-items:center;justify-content:center;transition:transform .2s;backdrop-filter:blur(4px)}
+.back-btn:hover{transform:scale(1.1)}.back-btn.vis{display:flex}
+@media(max-width:400px){#grid{gap:7px;padding:3px}.ct-t{font-size:12px}.fc-container{width:240px;height:160px}.fc-front-word,.fc-back-def{font-size:22px}}
+</style>
+</head>
+<body>
+<canvas id="fx"></canvas>
+<button class="back-btn" id="back-btn" title="返回菜单">&#8592;</button>
+<div class="ov vis" id="ov-start"><div class="md"><div class="md-emoji">&#10024;</div><div class="s-title">单词消消乐</div><div class="s-sub">先学习，再挑战，记住每一个单词！</div><div class="lvl-list" id="lvl-list"></div></div></div>
+<div class="ov" id="ov-mode"><div class="md"><div class="md-emoji" id="mode-emoji">&#128218;</div><div class="md-title" id="mode-title"></div><div class="md-sub" id="mode-sub"></div><div class="mode-list"><button class="mode-card" id="mc-study"><div class="mode-icon study">&#128214;</div><div><div class="mode-name">学习模式</div><div class="mode-desc">逐个翻牌认词，自评掌握程度<br>不计时、零压力</div></div></button><button class="mode-card" id="mc-battle"><div class="mode-icon battle">&#9876;&#65039;</div><div><div class="mode-name">实战模式</div><div class="mode-desc">限时配对消消乐，记录最佳成绩<br>连击加秒，冲刺排行榜</div></div></button></div><button class="btn btn-s" onclick="showMenu()">&#8592; 返回</button></div></div>
+<div class="ov" id="ov-study-end"><div class="md"><div class="md-emoji">&#127891;</div><div class="md-title">学习完成！</div><div class="md-sub" id="se-sub"></div><div class="sum-grid"><div class="sum-item hbg"><div class="sum-val" id="se-hard">0</div><div class="sum-lab">&#128565; 不熟</div></div><div class="sum-item obg"><div class="sum-val" id="se-ok">0</div><div class="sum-lab">&#129300; 模糊</div></div><div class="sum-item ebg"><div class="sum-val" id="se-easy">0</div><div class="sum-lab">&#9989; 掌握</div></div></div><div class="btn-group"><button class="btn btn-mint" id="se-battle">&#9876;&#65039; 进入实战</button><button class="btn btn-s" id="se-restudy">&#128214; 再学一遍不熟的</button><button class="btn btn-s" onclick="showMenu()">&#8592; 返回菜单</button></div></div></div>
+<div class="ov" id="ov-end"><div class="md"><div class="md-emoji" id="e-emoji">&#127942;</div><div class="md-title" id="e-title"></div><div class="md-sub" id="e-sub"></div><div class="mstats"><div><div class="ms-v" id="e-time">0</div><div class="ms-l">用时(秒)</div></div><div><div class="ms-v" id="e-moves">0</div><div class="ms-l">翻牌</div></div><div><div class="ms-v" id="e-combo">0</div><div class="ms-l">最高连击</div></div></div><div id="e-best-line" style="font-size:12px;color:var(--ga);font-weight:700;margin-bottom:14px"></div><div class="btn-group"><button class="btn btn-p" id="e-action"></button><button class="btn btn-s" id="e-retry">&#128260; 再试一次</button><button class="btn btn-s" onclick="showMenu()">&#8592; 返回菜单</button></div></div></div>
+<div class="ov" id="ov-err"><div class="md"><div class="md-emoji">&#9888;&#65039;</div><div class="md-title">数据校验失败</div><div class="md-sub" id="err-msg"></div><button class="btn btn-s" onclick="showMenu()">返回菜单</button></div></div>
+<div id="study-area"><div class="study-header"><div class="study-badge" id="st-badge">学习模式</div><div class="study-title" id="st-title"></div><div class="study-progress" id="st-prog">1 / 6</div><div class="study-pbar-wrap"><div class="study-pbar" id="st-pbar"></div></div></div><div class="fc-container" id="fc-box"><div class="fc-inner" id="fc-inner"><div class="fc-face fc-front"><div class="fc-front-label">ENGLISH</div><div class="fc-front-word" id="fc-word"></div><div class="fc-front-hint">点击翻牌查看释义</div></div><div class="fc-face fc-back"><div class="fc-back-label">中文</div><div class="fc-back-def" id="fc-def"></div><div class="fc-back-word" id="fc-word2"></div></div></div></div><div class="fc-actions hidden" id="fc-actions"><button class="fc-rate-btn hard" data-rate="hard">&#128565; 不熟</button><button class="fc-rate-btn ok" data-rate="ok">&#129300; 模糊</button><button class="fc-rate-btn easy" data-rate="easy">&#9989; 掌握</button></div></div>
+<div id="game-area"><div class="g-header"><div class="g-badge" id="g-badge">STAGE 1</div><h1 class="g-title" id="g-title"></h1><div class="sbar"><div class="si" id="si-time"><span class="si-i">&#9201;</span><span id="d-time">60s</span></div><div class="si"><span class="si-i">&#127183;</span><span id="d-moves">0</span></div><div class="si"><span class="si-i">&#128293;</span><span id="d-combo">0 连击</span></div></div><div class="pbar-wrap"><div id="pbar"></div></div></div><div id="grid"></div></div>
+<div class="combo-pop" id="combo-el"></div>
+<script>
+var LEVELS=[
+{title:"\u5F62\u5BB9\u8BCD\u521D\u89C1",timer:90,comboBonus:3,vocabulary:[
+{id:1,type:"word",content:"Active"},{id:1,type:"def",content:"\u79EF\u6781\u7684"},
+{id:2,type:"word",content:"Brave"},{id:2,type:"def",content:"\u52C7\u6562\u7684"},
+{id:3,type:"word",content:"Calm"},{id:3,type:"def",content:"\u51B7\u9759\u7684"},
+{id:4,type:"word",content:"Clever"},{id:4,type:"def",content:"\u806A\u660E\u7684"},
+{id:5,type:"word",content:"Funny"},{id:5,type:"def",content:"\u6ED1\u7A3D\u7684"},
+{id:6,type:"word",content:"Kind"},{id:6,type:"def",content:"\u5584\u826F\u7684"}]},
+{title:"\u6821\u56ED\u751F\u6D3B",timer:80,comboBonus:3,vocabulary:[
+{id:1,type:"word",content:"Homework"},{id:1,type:"def",content:"\u4F5C\u4E1A"},
+{id:2,type:"word",content:"Library"},{id:2,type:"def",content:"\u56FE\u4E66\u9986"},
+{id:3,type:"word",content:"Exam"},{id:3,type:"def",content:"\u8003\u8BD5"},
+{id:4,type:"word",content:"Classmate"},{id:4,type:"def",content:"\u540C\u5B66"},
+{id:5,type:"word",content:"Schedule"},{id:5,type:"def",content:"\u8BFE\u7A0B\u8868"},
+{id:6,type:"word",content:"Textbook"},{id:6,type:"def",content:"\u6559\u79D1\u4E66"}]},
+{title:"\u60C5\u7EEA\u8868\u8FBE",timer:75,comboBonus:2,vocabulary:[
+{id:1,type:"word",content:"Excited"},{id:1,type:"def",content:"\u5174\u594B\u7684"},
+{id:2,type:"word",content:"Nervous"},{id:2,type:"def",content:"\u7D27\u5F20\u7684"},
+{id:3,type:"word",content:"Grateful"},{id:3,type:"def",content:"\u611F\u6FC0\u7684"},
+{id:4,type:"word",content:"Curious"},{id:4,type:"def",content:"\u597D\u5947\u7684"},
+{id:5,type:"word",content:"Confident"},{id:5,type:"def",content:"\u81EA\u4FE1\u7684"},
+{id:6,type:"word",content:"Surprised"},{id:6,type:"def",content:"\u60CA\u8BB6\u7684"},
+{id:7,type:"word",content:"Anxious"},{id:7,type:"def",content:"\u7126\u8651\u7684"},
+{id:8,type:"word",content:"Proud"},{id:8,type:"def",content:"\u9A84\u50B2\u7684"}]},
+{title:"\u6570\u5B66\u8BCD\u6C47",timer:70,comboBonus:2,vocabulary:[
+{id:1,type:"word",content:"Equation"},{id:1,type:"def",content:"\u65B9\u7A0B"},
+{id:2,type:"word",content:"Fraction"},{id:2,type:"def",content:"\u5206\u6570"},
+{id:3,type:"word",content:"Diameter"},{id:3,type:"def",content:"\u76F4\u5F84"},
+{id:4,type:"word",content:"Parallel"},{id:4,type:"def",content:"\u5E73\u884C\u7684"},
+{id:5,type:"word",content:"Symmetry"},{id:5,type:"def",content:"\u5BF9\u79F0"},
+{id:6,type:"word",content:"Perimeter"},{id:6,type:"def",content:"\u5468\u957F"},
+{id:7,type:"word",content:"Variable"},{id:7,type:"def",content:"\u53D8\u91CF"},
+{id:8,type:"word",content:"Integer"},{id:8,type:"def",content:"\u6574\u6570"}]},
+{title:"\u79D1\u5B66\u63A2\u7D22",timer:65,comboBonus:2,vocabulary:[
+{id:1,type:"word",content:"Gravity"},{id:1,type:"def",content:"\u91CD\u529B"},
+{id:2,type:"word",content:"Molecule"},{id:2,type:"def",content:"\u5206\u5B50"},
+{id:3,type:"word",content:"Hypothesis"},{id:3,type:"def",content:"\u5047\u8BBE"},
+{id:4,type:"word",content:"Experiment"},{id:4,type:"def",content:"\u5B9E\u9A8C"},
+{id:5,type:"word",content:"Velocity"},{id:5,type:"def",content:"\u901F\u5EA6"},
+{id:6,type:"word",content:"Spectrum"},{id:6,type:"def",content:"\u5149\u8C31"},
+{id:7,type:"word",content:"Element"},{id:7,type:"def",content:"\u5143\u7D20"},
+{id:8,type:"word",content:"Density"},{id:8,type:"def",content:"\u5BC6\u5EA6"},
+{id:9,type:"word",content:"Nucleus"},{id:9,type:"def",content:"\u539F\u5B50\u6838"},
+{id:10,type:"word",content:"Catalyst"},{id:10,type:"def",content:"\u50AC\u5316\u5242"}]}
+];
+
+var $i=function(id){return document.getElementById(id)};
+var gridEl=$i('grid'),comboEl=$i('combo-el'),fxC=$i('fx'),fxX=fxC.getContext('2d'),backBtn=$i('back-btn');
+var SK='wmatch_v2';
+function loadS(){try{return JSON.parse(localStorage.getItem(SK))||{}}catch(e){return{}}}
+function writeS(d){try{localStorage.setItem(SK,JSON.stringify(d))}catch(e){}}
+function getBest(i){return(loadS()['l'+i])||null}
+function saveBest(i,t,m,c){var s=loadS(),p=s['l'+i];if(!p||t<p.t)s['l'+i]={t:t,m:m,c:c};if(!s.mc||i>s.mc)s.mc=i;writeS(s)}
+function maxCleared(){return loadS().mc!=null?loadS().mc:-1}
+function getStudyRec(i){return(loadS()['s'+i])||null}
+function saveStudyRec(i,h,o,e){var s=loadS();s['s'+i]={h:h,o:o,e:e};writeS(s)}
+function validate(lv,i){var v=lv.vocabulary;if(!v||!Array.isArray(v))return'Level '+(i+1)+': bad data';if(v.length%2!==0)return'Level '+(i+1)+': odd count';if(v.length<4)return'Level '+(i+1)+': need 2+ pairs';var c={};v.forEach(function(x){c[x.id]=(c[x.id]||0)+1});for(var id in c)if(c[id]!==2)return'Level '+(i+1)+': id='+id+' count='+c[id];var t={};v.forEach(function(x){if(!t[x.id])t[x.id]=[];t[x.id].push(x.type)});for(var id2 in t)if(t[id2].indexOf('word')<0||t[id2].indexOf('def')<0)return'Level '+(i+1)+': id='+id2+' needs word+def';if(!lv.timer||lv.timer<10)return'Level '+(i+1)+': timer<10';return null}
+function shuffle(a){var b=a.slice();for(var i=b.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var tmp=b[i];b[i]=b[j];b[j]=tmp}return b}
+function calcCols(n){return n<=16?4:5}
+function getPairs(vocab){var m={};vocab.forEach(function(v){if(!m[v.id])m[v.id]={};m[v.id][v.type]=v.content});var r=[];for(var k in m)r.push(m[k]);return r}
+
+var particles=[];
+var PC=['#F8B195','#F67280','#C06C84','#6C5B7B','#A8E6CF','#DCEDC1','#FFD93D','#FF6B6B'];
+function resizeFx(){fxC.width=innerWidth;fxC.height=innerHeight}
+addEventListener('resize',resizeFx);resizeFx();
+function spawnP(x,y,n){n=n||12;for(var i=0;i<n;i++){var a=Math.PI*2*i/n+Math.random()*.5,sp=2+Math.random()*4,sz=3+Math.random()*5;particles.push({x:x,y:y,vx:Math.cos(a)*sp,vy:Math.sin(a)*sp-2,sz:sz,col:PC[~~(Math.random()*PC.length)],life:1,dec:.015+Math.random()*.02,sh:['c','s','h'][~~(Math.random()*3)],rot:Math.random()*Math.PI*2,rs:(Math.random()-.5)*.2})}}
+function drawP(){fxX.clearRect(0,0,fxC.width,fxC.height);particles=particles.filter(function(p){return p.life>0});particles.forEach(function(p){p.x+=p.vx;p.y+=p.vy;p.vy+=.1;p.life-=p.dec;p.rot+=p.rs;fxX.save();fxX.translate(p.x,p.y);fxX.rotate(p.rot);fxX.globalAlpha=p.life;fxX.fillStyle=p.col;if(p.sh==='s'){fxX.beginPath();for(var i=0;i<5;i++){var a1=i*4*Math.PI/5-Math.PI/2;fxX.lineTo(Math.cos(a1)*p.sz,Math.sin(a1)*p.sz);var a2=a1+2*Math.PI/5;fxX.lineTo(Math.cos((a1+a2)/2)*p.sz*.4,Math.sin((a1+a2)/2)*p.sz*.4)}fxX.closePath();fxX.fill()}else if(p.sh==='h'){var s=p.sz*.6;fxX.beginPath();fxX.moveTo(0,s*.4);fxX.bezierCurveTo(-s,-s*.3,-s*.5,-s,0,-s*.4);fxX.bezierCurveTo(s*.5,-s,s,-s*.3,0,s*.4);fxX.fill()}else{fxX.beginPath();fxX.arc(0,0,p.sz,0,Math.PI*2);fxX.fill()}fxX.restore()});fxX.globalAlpha=1;requestAnimationFrame(drawP)}
+drawP();
+function floatTxt(t,c,x,y){var el=document.createElement('div');el.className='bf';el.textContent=t;el.style.cssText='left:'+x+'px;top:'+y+'px;color:'+c;document.body.appendChild(el);requestAnimationFrame(function(){el.classList.add('show')});setTimeout(function(){el.remove()},1000)}
+function showCombo(n){var m=['','','Nice \xd72','Great \xd73','Amazing \xd74','Incredible \xd75','GODLIKE \xd76'],e=['','','\u26a1','\ud83d\udd25','\ud83d\udca5','\ud83c\udf1f','\ud83d\udc51'],i=Math.min(n,6);comboEl.textContent=e[i]+' '+m[i];comboEl.style.color=PC[~~(Math.random()*PC.length)];comboEl.className='combo-pop';void comboEl.offsetWidth;comboEl.classList.add('show')}
+
+function hideAll(){['ov-start','ov-mode','ov-study-end','ov-end','ov-err'].forEach(function(id){var e=$i(id);e.classList.remove('vis');e.style.display='none'});$i('study-area').classList.remove('active');$i('game-area').classList.remove('active');backBtn.classList.remove('vis')}
+function showOv(id){hideAll();var e=$i(id);e.style.display='flex';e.classList.add('vis')}
+backBtn.addEventListener('click',function(){clearInterval(G.timer);showMenu()});
+
+var currentLvl=0;
+function showMenu(){
+  hideAll();var mc=maxCleared(),list=$i('lvl-list');list.innerHTML='';
+  LEVELS.forEach(function(lv,i){
+    var btn=document.createElement('button');btn.className='lvl-btn';
+    var pairs=lv.vocabulary.length/2,best=getBest(i),sr=getStudyRec(i);
+    var unlocked=i===0||i<=mc+1;if(!unlocked)btn.classList.add('locked');
+    var bH='';if(best)bH='<div class="lvl-best">\u2694\ufe0f \u6700\u4f73 '+best.t+'s \xb7 '+best.m+'\u6b21</div>';
+    if(sr)bH+='<div class="lvl-best" style="color:var(--gc)">\ud83d\udcd6 \u5df2\u5b66(\u638c\u63e1'+sr.e+'/'+pairs+')</div>';
+    btn.innerHTML='<div class="lvl-num">'+(i+1)+'</div><div style="flex:1"><div class="lvl-name">'+lv.title+'</div><div class="lvl-meta">'+pairs+' \u7ec4 \xb7 '+lv.timer+'s</div>'+bH+'</div>';
+    if(unlocked)btn.addEventListener('click',function(){openMode(i)});
+    list.appendChild(btn);
+  });showOv('ov-start');
+}
+
+function openMode(idx){
+  currentLvl=idx;var lv=LEVELS[idx];
+  $i('mode-title').textContent='Stage '+(idx+1)+': '+lv.title;
+  $i('mode-sub').textContent=(lv.vocabulary.length/2)+' \u7ec4\u8bcd\u6c47 \xb7 \u9650\u65f6 '+lv.timer+' \u79d2';
+  $i('mc-study').onclick=function(){startStudy(idx)};
+  $i('mc-battle').onclick=function(){startBattle(idx)};
+  showOv('ov-mode');
+}
+
+var S={pairs:[],idx:0,ratings:{},subset:null};
+function startStudy(lvlIdx,subset){
+  var lv=LEVELS[lvlIdx],err=validate(lv,lvlIdx);
+  if(err){$i('err-msg').textContent=err;showOv('ov-err');return}
+  currentLvl=lvlIdx;var allP=getPairs(lv.vocabulary);
+  S.pairs=subset||shuffle(allP);S.idx=0;S.ratings={hard:[],ok:[],easy:[]};S.subset=!!subset;
+  hideAll();$i('study-area').classList.add('active');backBtn.classList.add('vis');
+  $i('st-badge').textContent=subset?'\u590d\u4e60\u4e0d\u719f\u7684':'\u5b66\u4e60\u6a21\u5f0f';
+  $i('st-title').textContent='Stage '+(lvlIdx+1)+': '+lv.title;showFC();
+}
+function showFC(){
+  if(S.idx>=S.pairs.length){finishStudy();return}
+  var p=S.pairs[S.idx];
+  $i('fc-word').textContent=p.word;$i('fc-def').textContent=p.def;$i('fc-word2').textContent=p.word;
+  $i('st-prog').textContent=(S.idx+1)+' / '+S.pairs.length;
+  $i('st-pbar').style.width=(S.idx/S.pairs.length*100)+'%';
+  $i('fc-box').classList.remove('fc-flipped');$i('fc-actions').classList.add('hidden');
+}
+$i('fc-box').addEventListener('click',function(){var b=$i('fc-box');if(!b.classList.contains('fc-flipped')){b.classList.add('fc-flipped');$i('fc-actions').classList.remove('hidden')}});
+document.querySelectorAll('.fc-rate-btn').forEach(function(btn){btn.addEventListener('click',function(){var r=btn.dataset.rate;S.ratings[r].push(S.pairs[S.idx]);if(r==='easy'){var rc=btn.getBoundingClientRect();spawnP(rc.left+rc.width/2,rc.top,8)}S.idx++;showFC()})});
+function finishStudy(){
+  $i('study-area').classList.remove('active');backBtn.classList.remove('vis');
+  var h=S.ratings.hard.length,o=S.ratings.ok.length,e=S.ratings.easy.length;
+  saveStudyRec(currentLvl,h,o,e);
+  $i('se-hard').textContent=h;$i('se-ok').textContent=o;$i('se-easy').textContent=e;
+  $i('st-pbar').style.width='100%';
+  $i('se-sub').textContent=h===0&&o===0?'\u5168\u90e8\u638c\u63e1\uff01\u76f4\u63a5\u53bb\u5b9e\u6218\u5427\uff01':h===0?'\u8fd8\u6709'+o+'\u4e2a\u6a21\u7cca\uff0c\u53ef\u4ee5\u5de9\u56fa':'\u6709'+h+'\u4e2a\u4e0d\u719f\uff0c\u5efa\u8bae\u518d\u770b\u4e00\u904d';
+  $i('se-battle').onclick=function(){startBattle(currentLvl)};
+  var hardW=S.ratings.hard.concat(S.ratings.ok);
+  if(hardW.length>0){$i('se-restudy').style.display='inline-block';$i('se-restudy').onclick=function(){startStudy(currentLvl,hardW)}}
+  else $i('se-restudy').style.display='none';
+  showOv('ov-study-end');
+}
+
+var G={first:null,second:null,lock:false,matched:0,total:0,moves:0,combo:0,maxCombo:0,timeLeft:0,timer:null,lvlIdx:0,cb:0};
+function resetG(){return{first:null,second:null,lock:false,matched:0,total:0,moves:0,combo:0,maxCombo:0,timeLeft:0,timer:null,lvlIdx:0,cb:0}}
+function startBattle(idx){
+  var lv=LEVELS[idx],err=validate(lv,idx);
+  if(err){$i('err-msg').textContent=err;showOv('ov-err');return}
+  currentLvl=idx;G=resetG();G.lvlIdx=idx;G.total=lv.vocabulary.length/2;G.timeLeft=lv.timer;G.cb=lv.comboBonus||0;
+  hideAll();$i('game-area').classList.add('active');backBtn.classList.add('vis');
+  $i('g-badge').textContent='STAGE '+(idx+1);$i('g-title').textContent=lv.title;updateHUD();
+  gridEl.style.gridTemplateColumns='repeat('+calcCols(lv.vocabulary.length)+',1fr)';gridEl.innerHTML='';
+  shuffle(lv.vocabulary).forEach(function(item,i){
+    var s=document.createElement('div');s.className='cs';s.dataset.pid=item.id;s.dataset.tp=item.type;s.style.animationDelay=i*.04+'s';
+    s.innerHTML='<div class="ci"><div class="cf cf-b"></div><div class="cf cf-f"><div class="ct-l">'+(item.type==='word'?'English':'\u4e2d\u6587')+'</div><div class="ct-t">'+item.content+'</div></div></div>';
+    s.addEventListener('click',function(){onFlip(s)});gridEl.appendChild(s);
+  });
+  clearInterval(G.timer);G.timer=setInterval(function(){G.timeLeft--;updateHUD();if(G.timeLeft<=0){G.lock=true;G.first=G.second=null;endBattle(false)}},1000);
+}
+function onFlip(s){if(G.lock||s===G.first||s.classList.contains('done'))return;s.classList.add('flipped');if(!G.first){G.first=s;return}G.second=s;G.moves++;G.lock=true;updateHUD();var i1=G.first.dataset.pid,i2=G.second.dataset.pid,t1=G.first.dataset.tp,t2=G.second.dataset.tp;(i1===i2&&t1!==t2)?onMatch():onMiss()}
+function onMatch(){G.combo++;if(G.combo>G.maxCombo)G.maxCombo=G.combo;G.matched++;[G.first,G.second].forEach(function(s){var r=s.getBoundingClientRect();spawnP(r.left+r.width/2,r.top+r.height/2,14)});if(G.combo>=2&&G.cb>0){G.timeLeft+=G.cb;var r=G.second.getBoundingClientRect();floatTxt('+'+G.cb+'s','#3BA776',r.left+r.width/2,r.top)}if(G.combo>=2)showCombo(G.combo);updateHUD();setTimeout(function(){G.first.classList.add('match-go','done');G.second.classList.add('match-go','done');resetB();if(G.matched===G.total)setTimeout(function(){endBattle(true)},400)},350)}
+function onMiss(){G.combo=0;updateHUD();G.first.classList.add('shake-go');G.second.classList.add('shake-go');setTimeout(function(){G.first.classList.remove('flipped','shake-go');G.second.classList.remove('flipped','shake-go');resetB()},650)}
+function resetB(){G.first=G.second=null;G.lock=false}
+function updateHUD(){$i('d-time').textContent=G.timeLeft+'s';$i('d-moves').textContent=G.moves;$i('d-combo').textContent=G.combo+' \u8fde\u51fb';$i('pbar').style.width=(G.total===0?0:Math.round(G.matched/G.total*100))+'%';if(G.timeLeft<=15)$i('si-time').classList.add('warn');else $i('si-time').classList.remove('warn')}
+function endBattle(won){
+  clearInterval(G.timer);G.lock=true;G.first=G.second=null;backBtn.classList.remove('vis');
+  var lv=LEVELS[G.lvlIdx],elapsed=lv.timer-G.timeLeft,isNew=false;
+  if(won){var prev=getBest(G.lvlIdx);if(!prev||elapsed<prev.t)isNew=true;saveBest(G.lvlIdx,elapsed,G.moves,G.maxCombo);for(var i=0;i<5;i++)setTimeout(function(){spawnP(Math.random()*innerWidth,Math.random()*innerHeight*.5,20)},i*180)}
+  $i('e-emoji').textContent=won?'\ud83c\udfc6':'\u23f0';
+  $i('e-title').textContent=won?['\u592a\u795e\u4e86\uff01','\u5b8c\u7f8e\u901a\u5173\uff01','\u4f60\u592a\u5f3a\u4e86\uff01','\u65e0\u654c\uff01','\u6ee1\u5206\uff01'][~~(Math.random()*5)]:'\u65f6\u95f4\u5230\u4e86\uff01';
+  $i('e-sub').textContent=won?'\u5168\u90e8\u914d\u5bf9\u6210\u529f\uff01':'\u522b\u7070\u5fc3\uff0c\u518d\u6765\u4e00\u6b21\uff01';
+  $i('e-time').textContent=won?elapsed:'\u2014';$i('e-moves').textContent=G.moves;$i('e-combo').textContent=G.maxCombo;
+  if(won&&isNew)$i('e-best-line').textContent='\ud83c\udf1f \u65b0\u7eaa\u5f55\uff01';
+  else if(won){var b=getBest(G.lvlIdx);$i('e-best-line').textContent='\u5386\u53f2\u6700\u4f73: '+b.t+'s'}
+  else $i('e-best-line').textContent='';
+  var actBtn=$i('e-action');
+  if(won&&G.lvlIdx<LEVELS.length-1){actBtn.textContent='\u6311\u6218\u4e0b\u4e00\u5173 \u2192';actBtn.onclick=function(){openMode(G.lvlIdx+1)};actBtn.style.display='inline-block'}
+  else if(won){actBtn.textContent='\ud83c\udf89 \u5168\u90e8\u901a\u5173\uff01';actBtn.onclick=function(){showMenu()};actBtn.style.display='inline-block'}
+  else actBtn.style.display='none';
+  $i('e-retry').onclick=function(){startBattle(G.lvlIdx)};
+  $i('game-area').classList.remove('active');showOv('ov-end');
+}
+
+(function(){var p=new URLSearchParams(location.search),lv=parseInt(p.get('level'));if(lv>=1&&lv<=LEVELS.length)openMode(lv-1);else showMenu()})();
+</script>
+</body>
+</html>
