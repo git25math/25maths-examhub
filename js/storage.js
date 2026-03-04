@@ -188,7 +188,8 @@ async function _doSyncToCloud() {
   var pct = allW.length > 0 ? Math.round(mastered / allW.length * 100) : 0;
   var r = getRank();
   var nick = currentUser.nickname || currentUser.email.split('@')[0];
-  await sb.from('leaderboard').upsert({
+  /* Include school_id/class_id from user metadata if available */
+  var lbRow = {
     user_id: currentUser.id,
     nickname: nick,
     score: pct * 20,
@@ -198,7 +199,14 @@ async function _doSyncToCloud() {
     mastered_words: mastered,
     board: userBoard || '',
     updated_at: now
-  }, { onConflict: 'user_id' });
+  };
+  try {
+    var sess = await sb.auth.getSession();
+    var meta = sess.data.session ? sess.data.session.user.user_metadata : {};
+    if (meta.school_id) lbRow.school_id = meta.school_id;
+    if (meta.class_id) lbRow.class_id = meta.class_id;
+  } catch (e) {}
+  await sb.from('leaderboard').upsert(lbRow, { onConflict: 'user_id' });
 }
 
 async function syncToCloud() {

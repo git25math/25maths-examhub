@@ -255,5 +255,11 @@ function lvTitle(lv) {
   return lv.title + ' ' + lv.titleZh;
 }
 
+/* Edge function URL */
+var EDGE_FN_URL = SUPABASE_URL + '/functions/v1';
+
+/* Grade options (25m-y* subset of BOARD_OPTIONS for admin panel) */
+var GRADE_OPTIONS = BOARD_OPTIONS.filter(function(o) { return o.value.indexOf('25m-y') === 0; });
+
 /* DOM helper */
 var E = function(id) { return document.getElementById(id); };

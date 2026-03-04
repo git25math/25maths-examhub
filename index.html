@@ -31,6 +31,16 @@
     <button class="btn btn-ghost btn-block" id="auth-skip">先不登录，直接体验</button>
     <div class="text-center"><a class="auth-forgot" onclick="showPasswordReset()">忘记密码？Forgot password?</a></div>
     <div class="auth-note">首次输入邮箱将自动注册 · 登录后可跨设备同步进度</div>
+    <div class="auth-divider"><span>OR</span></div>
+    <button class="btn btn-ghost btn-block btn-sm" id="auth-teacher-toggle" onclick="toggleTeacherReg()">👩‍🏫 教师注册 Teacher Registration</button>
+    <div id="teacher-reg" style="display:none">
+      <input class="auth-input" id="tr-name" type="text" placeholder="姓名 Name">
+      <input class="auth-input" id="tr-email" type="email" placeholder="邮箱 Email">
+      <input class="auth-input" id="tr-pass" type="password" placeholder="密码 Password (min 6)">
+      <input class="auth-input" id="tr-code" type="text" placeholder="学校注册码 School Code">
+      <div class="auth-err" id="tr-err"></div>
+      <button class="btn btn-primary btn-block" id="tr-submit" onclick="doTeacherRegister()">注册教师账号</button>
+    </div>
   </div>
 </div>
 
@@ -73,6 +83,9 @@
       </button>
       <button class="nav-item" data-panel="stats" onclick="navTo('stats')">
         <span class="nav-icon">📊</span><span class="nav-label" data-en="Stats" data-zh="统计">统计</span>
+      </button>
+      <button class="nav-item" data-panel="admin" id="nav-admin" style="display:none" onclick="navTo('admin')">
+        <span class="nav-icon">👩‍🏫</span><span class="nav-label" data-en="Admin" data-zh="管理">管理</span>
       </button>
     </nav>
 
@@ -144,6 +157,7 @@
       <div class="panel" id="panel-preview"></div>
       <div class="panel" id="panel-daily"></div>
       <div class="panel" id="panel-stats"></div>
+      <div class="panel" id="panel-admin"></div>
     </div>
   </div>
 
@@ -163,6 +177,9 @@
     </button>
     <button class="bnav-item" data-panel="stats" onclick="navTo('stats')">
       <span class="bnav-icon">📊</span><span class="bnav-label" data-en="Stats" data-zh="统计">统计</span>
+    </button>
+    <button class="bnav-item" data-panel="admin" id="bnav-admin" style="display:none" onclick="navTo('admin')">
+      <span class="bnav-icon">👩‍🏫</span><span class="bnav-label" data-en="Admin" data-zh="管理">管理</span>
     </button>
   </nav>
 
@@ -195,6 +212,7 @@
 <script src="js/match.js"></script>
 <script src="js/export.js"></script>
 <script src="js/stats.js"></script>
+<script src="js/admin.js"></script>
 <script src="js/app.js"></script>
 
 </body>

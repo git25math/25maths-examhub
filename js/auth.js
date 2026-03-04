@@ -141,11 +141,31 @@ E('btn-logout-sb').addEventListener('click', function() { doLogout(); });
 E('btn-logout-hb').addEventListener('click', function() { doLogout(); });
 
 /* Post-login setup */
-function afterLogin() {
+async function afterLogin() {
+  /* Role detection from user_metadata */
+  if (sb && currentUser && currentUser.id !== 'local') {
+    var sess = await sb.auth.getSession();
+    var meta = sess.data.session ? sess.data.session.user.user_metadata : {};
+    if (meta.role === 'student') {
+      /* Student: auto-set board from metadata, skip board selection */
+      if (meta.board) userBoard = meta.board;
+      try { localStorage.setItem('userBoard', userBoard || ''); } catch (e) {}
+    }
+    if (meta.role === 'teacher') {
+      /* Teacher: init admin panel after app shows */
+      if (!userBoard) userBoard = 'all';
+      try { localStorage.setItem('userBoard', userBoard); } catch (e) {}
+    }
+  }
+
   if (!userBoard) {
     showBoardSelection();
   } else {
     showApp();
+    /* Init teacher panel after app shell is visible */
+    if (sb && currentUser && currentUser.id !== 'local') {
+      initTeacher();
+    }
   }
 }
 
@@ -359,6 +379,63 @@ async function manualSync() {
     showToast(t('Sync failed, check network', '\u540c\u6b65\u5931\u8d25\uff0c\u8bf7\u68c0\u67e5\u7f51\u7edc'));
   }
   hideModal();
+}
+
+/* ═══ TEACHER REGISTRATION ═══ */
+function toggleTeacherReg() {
+  var el = E('teacher-reg');
+  if (el) el.style.display = el.style.display === 'none' ? 'block' : 'none';
+}
+
+async function doTeacherRegister() {
+  var name = E('tr-name').value.trim();
+  var email = E('tr-email').value.trim();
+  var pass = E('tr-pass').value;
+  var code = E('tr-code').value.trim();
+  var err = E('tr-err');
+  var btn = E('tr-submit');
+  err.textContent = '';
+
+  if (!name) { err.textContent = t('Please enter name', '请输入姓名'); return; }
+  if (!email) { err.textContent = t('Please enter email', '请输入邮箱'); return; }
+  if (pass.length < 6) { err.textContent = t('Password min 6 chars', '密码至少6位'); return; }
+  if (!code) { err.textContent = t('Please enter school code', '请输入学校注册码'); return; }
+
+  btn.disabled = true;
+  btn.textContent = t('Registering...', '注册中...');
+
+  try {
+    var result = await callEdgeFunction('register-teacher', {
+      email: email, password: pass, name: name, school_code: code
+    });
+
+    if (result.error) {
+      err.textContent = result.error;
+      btn.disabled = false;
+      btn.textContent = '注册教师账号';
+      return;
+    }
+
+    /* Auto sign in after registration */
+    var res = await sb.auth.signInWithPassword({ email: email, password: pass });
+    if (res.error) {
+      err.textContent = t('Registered but login failed, please login manually', '注册成功但自动登录失败，请手动登录');
+      btn.disabled = false;
+      btn.textContent = '注册教师账号';
+      return;
+    }
+
+    currentUser = { email: email, id: res.data.user.id, nickname: name };
+    userBoard = 'all';
+    try { localStorage.setItem('userBoard', 'all'); } catch (e) {}
+    btn.disabled = false;
+    btn.textContent = '注册教师账号';
+    afterLogin();
+  } catch (e) {
+    err.textContent = t('Network error', '网络错误');
+    btn.disabled = false;
+    btn.textContent = '注册教师账号';
+  }
 }
 
 /* ═══ RANK GUIDE MODAL ═══ */

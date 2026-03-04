@@ -23,6 +23,7 @@ function navTo(id) {
   else if (id === 'import') renderImport();
   else if (id === 'board') renderBoard();
   else if (id === 'stats') renderStats();
+  else if (id === 'admin') renderAdmin();
 }
 
 function updateNav() {
@@ -92,6 +93,7 @@ function toggleLang() {
   else if (appView === 'import') renderImport();
   else if (appView === 'board') renderBoard();
   else if (appView === 'stats') renderStats();
+  else if (appView === 'admin') renderAdmin();
   updateSidebar();
 }
 
@@ -445,7 +447,7 @@ window.addEventListener('scroll', function() {
 /* ═══ SWIPE GESTURE FOR PANEL SWITCHING ═══ */
 var _touchStartX = 0;
 var _touchStartY = 0;
-var _navSeq = ['home', 'review-dash', 'import', 'board', 'stats'];
+var _navSeq = ['home', 'review-dash', 'import', 'board', 'stats', 'admin'];
 
 document.addEventListener('touchstart', function(e) {
   _touchStartX = e.touches[0].clientX;

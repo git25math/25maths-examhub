@@ -1,5 +1,46 @@
 # Changelog
 
+## [1.0.0] - 2026-03-04 — 教师管理系统：班级 + 学生账户 + 活跃度仪表盘
+
+### 新增
+- **教师注册**：登录页新增"教师注册"入口，通过学校注册码（如 HARROW2026）创建教师账号
+- **班级管理**：教师可创建班级（指定年级），查看班级卡片网格（学生数 + 平均掌握率）
+- **批量创建学生**：弹窗表格输入邮箱/密码/姓名，一键创建最多 30 个学生账号
+- **学生自动选课**：学生登录后自动选中所在年级 board，跳过选课页，仍可在设置中手动切换
+- **班级详情**：学生表格（姓名/最后活跃/掌握率进度条/已掌握词数/段位/重置密码）
+- **重置学生密码**：教师可为同校学生重置密码
+- **年级概览**：按年级分组展示班级数/学生数/活跃学生/平均掌握率
+- **全校概览**：汇总卡片（年级/班级/学生/活跃/掌握率）+ 年级汇总表 + Top 10 学生
+- **Admin 导航**：侧栏 + 底部导航新增"管理"入口（仅教师可见）
+
+### 数据库
+- 4 张新表：`schools`、`teachers`、`classes`、`class_students`
+- 1 个视图：`student_activity_view`（教师仪表盘聚合查询）
+- `leaderboard` 扩展 `school_id` / `class_id` 列
+- RLS 策略：同校教师可查看，学生可查看自己
+
+### Edge Functions（3 个）
+- `register-teacher` — 校验注册码 + 创建教师用户
+- `create-students` — 批量创建学生账户 + 初始化排行榜
+- `reset-student-password` — 教师重置学生密码
+
+### 文件变更
+| 文件 | 类型 | 变更 |
+|------|------|------|
+| `supabase/migrations/20260304_create_admin_tables.sql` | 新增 | ~100 行 |
+| `supabase/functions/register-teacher/index.ts` | 新增 | ~80 行 |
+| `supabase/functions/create-students/index.ts` | 新增 | ~120 行 |
+| `supabase/functions/reset-student-password/index.ts` | 新增 | ~85 行 |
+| `js/admin.js` | 新增 | ~450 行 |
+| `index.html` | 修改 | +18 行 |
+| `css/style.css` | 修改 | +215 行 |
+| `js/auth.js` | 修改 | +79 行 |
+| `js/config.js` | 修改 | +6 行 |
+| `js/storage.js` | 修改 | +12 行 |
+| `js/ui.js` | 修改 | +4 行 |
+
+---
+
 ## [0.9.9] - 2026-03-04 — 侧栏默认收缩 + 点击展开
 
 ### 新增
