@@ -1,5 +1,25 @@
 # Changelog
 
+## [0.9.8] - 2026-03-04 — 侧栏底部改为 Claude 风格弹出菜单
+
+### 重构
+- **侧栏底部弹出菜单**：替换平铺的用户信息 + 5 个按钮为紧凑触发器（头像 + 用户名），点击弹出浮层菜单
+- **菜单内容**：邮箱 + 段位信息 header → 设置/深色/音效/语言 4 项 → 同步状态 → 退出登录
+- **外部点击关闭**：点击菜单外部自动收起
+- **深色模式适配**：菜单背景 + 阴影 + hover 色跟随主题
+
+### 设计决策
+- 交互模式参考 Claude 网页端侧栏底部：用户名入口 + 向上弹出菜单
+- 保留所有原有 ID（`sb-rank`/`sb-name`/`dark-toggle-sb` 等），最小化 JS 改动
+- `applyDark()` / `updateSoundBtn()` 改为仅更新 `.sf-icon` span，避免覆盖菜单项结构
+
+### 文件变更
+- `index.html` — 替换 sidebar-footer HTML（~30 行新结构替换 ~16 行旧结构）
+- `css/style.css` — 替换 sidebar-footer 样式 + 新增弹出菜单样式（~65 行替换 ~15 行）
+- `js/ui.js` — 新增 `toggleUserMenu()` + 外部点击关闭 + 修改 `updateSidebar()`/`applyDark()`/`updateSoundBtn()`
+
+---
+
 ## [0.9.7] - 2026-03-04 — 三项性能与体验优化
 
 ### 新增

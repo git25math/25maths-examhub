@@ -80,7 +80,7 @@ E('modal-overlay').addEventListener('click', function(e) {
 function toggleLang() {
   appLang = appLang === 'bilingual' ? 'en' : 'bilingual';
   var label = appLang === 'bilingual' ? 'EN' : '\u4e2d\u82f1';
-  if (E('lang-toggle-sb')) E('lang-toggle-sb').textContent = label;
+  /* Sidebar menu item label handled by updateNav() via data-en/data-zh */
   if (E('lang-toggle-hb')) E('lang-toggle-hb').textContent = label;
   /* Update nav labels immediately */
   updateNav();
@@ -103,10 +103,15 @@ function applyDark() {
     document.documentElement.removeAttribute('data-theme');
   }
   var icon = appDark ? '\u2600\ufe0f' : '\ud83c\udf19';
-  ['dark-toggle-sb', 'dark-toggle-hb'].forEach(function(id) {
-    var el = E(id);
-    if (el) el.textContent = icon;
-  });
+  /* Sidebar menu item: update only the .sf-icon span */
+  var sbEl = E('dark-toggle-sb');
+  if (sbEl) {
+    var ic = sbEl.querySelector('.sf-icon');
+    if (ic) ic.textContent = icon; else sbEl.textContent = icon;
+  }
+  /* Header bar button: plain text */
+  var hbEl = E('dark-toggle-hb');
+  if (hbEl) hbEl.textContent = icon;
 }
 
 function toggleDark() {
@@ -120,10 +125,15 @@ applyDark();
 /* ═══ SOUND TOGGLE ═══ */
 function updateSoundBtn() {
   var icon = appSound ? '\ud83d\udd0a' : '\ud83d\udd07';
-  ['sound-toggle-sb', 'sound-toggle-hb'].forEach(function(id) {
-    var el = E(id);
-    if (el) el.textContent = icon;
-  });
+  /* Sidebar menu item: update only the .sf-icon span */
+  var sbEl = E('sound-toggle-sb');
+  if (sbEl) {
+    var ic = sbEl.querySelector('.sf-icon');
+    if (ic) ic.textContent = icon; else sbEl.textContent = icon;
+  }
+  /* Header bar button: plain text */
+  var hbEl = E('sound-toggle-hb');
+  if (hbEl) hbEl.textContent = icon;
 }
 
 function toggleSound() {
@@ -211,6 +221,19 @@ function onResize() {
 window.addEventListener('resize', onResize);
 onResize();
 
+/* ═══ USER MENU (Claude-style popup) ═══ */
+function toggleUserMenu() {
+  var menu = E('sf-menu');
+  if (menu) menu.classList.toggle('open');
+}
+document.addEventListener('click', function(e) {
+  var menu = E('sf-menu');
+  var trigger = E('sf-trigger');
+  if (menu && trigger && !trigger.contains(e.target) && !menu.contains(e.target)) {
+    menu.classList.remove('open');
+  }
+});
+
 /* ═══ APP SHELL ═══ */
 function showApp() {
   E('ov-auth').classList.remove('vis');
@@ -229,14 +252,9 @@ function updateSidebar() {
   var displayName = currentUser.email === 'guest' ? t('Guest Mode', '\u8bbf\u5ba2\u6a21\u5f0f') : (currentUser.nickname || currentUser.email.split('@')[0]);
   var displayShort = currentUser.email === 'guest' ? t('Guest', '\u8bbf\u5ba2') : (currentUser.nickname || currentUser.email.split('@')[0]);
 
-  /* Sidebar user */
-  if (E('sb-rank')) {
-    E('sb-rank').textContent = r.emoji;
-    E('sb-rank').style.cursor = 'pointer';
-    E('sb-rank').onclick = showRankGuide;
-  }
+  /* Sidebar trigger: avatar + name */
+  if (E('sb-rank')) E('sb-rank').textContent = r.emoji;
   if (E('sb-name')) E('sb-name').textContent = displayName;
-  if (E('sb-meta')) E('sb-meta').textContent = rankName(r) + ' \xb7 ' + pct + '%';
 
   /* Header user */
   if (E('hb-rank')) {
@@ -246,16 +264,19 @@ function updateSidebar() {
   }
   if (E('hb-name')) E('hb-name').textContent = displayShort;
 
-  /* Sidebar board tag */
-  var sbBoard = E('sb-board');
-  if (sbBoard) {
+  /* Popup menu header: email + rank · % + board tag */
+  var menuHeader = E('sf-menu-header');
+  if (menuHeader) {
+    var lines = [];
+    if (currentUser.email && currentUser.email !== 'guest') {
+      lines.push(currentUser.email);
+    }
+    lines.push(rankName(r) + ' \xb7 ' + pct + '%');
     var boardOpt = getUserBoardOption();
     if (boardOpt) {
-      sbBoard.textContent = boardOpt.emoji + ' ' + t(boardOpt.name, boardOpt.nameZh);
-      sbBoard.style.display = 'inline-block';
-    } else {
-      sbBoard.style.display = 'none';
+      lines.push(boardOpt.emoji + ' ' + t(boardOpt.name, boardOpt.nameZh));
     }
+    menuHeader.innerHTML = lines.join('<br>');
   }
 
   /* Sidebar: multi-board accordions with category sub-items */
@@ -282,26 +303,26 @@ function updateSidebar() {
     deckEl.innerHTML = html;
   }
 
-  /* Sync status in sidebar footer */
-  var sfEl = document.querySelector('.sidebar-footer');
-  if (sfEl) {
-    var oldSync = document.getElementById('sb-sync-status');
-    if (oldSync) oldSync.remove();
+  /* Sync status inside popup menu */
+  var syncEl = E('sb-sync-status');
+  if (syncEl) {
     if (currentUser && currentUser.id !== 'local') {
-      var syncDiv = document.createElement('div');
-      syncDiv.id = 'sb-sync-status';
-      syncDiv.className = 'sync-status';
+      syncEl.className = 'sf-menu-sync';
       if (_syncStatus === 'ok') {
-        syncDiv.className += ' sync-ok';
-        syncDiv.textContent = '\u2713 ' + t('Synced', '\u5df2\u540c\u6b65');
+        syncEl.className += ' sync-ok';
+        syncEl.textContent = '\u2713 ' + t('Synced', '\u5df2\u540c\u6b65');
       } else if (_syncStatus === 'syncing') {
-        syncDiv.className += ' sync-ing';
-        syncDiv.textContent = '\u21bb ' + t('Syncing...', '\u540c\u6b65\u4e2d...');
+        syncEl.className += ' sync-ing';
+        syncEl.textContent = '\u21bb ' + t('Syncing...', '\u540c\u6b65\u4e2d...');
       } else if (_syncStatus === 'error') {
-        syncDiv.className += ' sync-err';
-        syncDiv.textContent = '\u26a0 ' + t('Offline', '\u79bb\u7ebf');
+        syncEl.className += ' sync-err';
+        syncEl.textContent = '\u26a0 ' + t('Offline', '\u79bb\u7ebf');
+      } else {
+        syncEl.textContent = '';
       }
-      sfEl.appendChild(syncDiv);
+    } else {
+      syncEl.textContent = '';
+      syncEl.className = 'sf-menu-sync';
     }
   }
 }

@@ -79,20 +79,31 @@
     <div class="sidebar-decks" id="sidebar-decks"></div>
 
     <div class="sidebar-footer">
-      <div class="sidebar-user" id="sidebar-user">
-        <span class="sidebar-user-rank" id="sb-rank"></span>
-        <div class="sidebar-user-info">
-          <div class="sidebar-user-name" id="sb-name"></div>
-          <div class="sidebar-user-meta" id="sb-meta"></div>
-          <div class="sidebar-user-board" id="sb-board"></div>
-        </div>
-      </div>
-      <div class="sidebar-actions">
-        <button class="btn-icon" id="dark-toggle-sb" onclick="toggleDark()" title="深色模式">🌙</button>
-        <button class="btn-icon" id="sound-toggle-sb" onclick="toggleSound()" title="音效">🔊</button>
-        <button class="btn-icon" id="lang-toggle-sb" onclick="toggleLang()" title="语言切换">EN</button>
-        <button class="btn-icon" onclick="showSettings()" title="设置">⚙</button>
-        <button class="btn-icon" id="btn-logout-sb" title="退出">↩</button>
+      <button class="sf-trigger" id="sf-trigger" onclick="toggleUserMenu()">
+        <span class="sf-avatar" id="sb-rank"></span>
+        <span class="sf-name" id="sb-name"></span>
+      </button>
+      <div class="sf-menu" id="sf-menu">
+        <div class="sf-menu-header" id="sf-menu-header"></div>
+        <div class="sf-divider"></div>
+        <button class="sf-menu-item" onclick="showSettings(); toggleUserMenu()">
+          <span class="sf-icon">⚙</span><span data-en="Settings" data-zh="设置">设置</span>
+        </button>
+        <button class="sf-menu-item" id="dark-toggle-sb" onclick="toggleDark()">
+          <span class="sf-icon">🌙</span><span data-en="Dark Mode" data-zh="深色模式">深色模式</span>
+        </button>
+        <button class="sf-menu-item" id="sound-toggle-sb" onclick="toggleSound()">
+          <span class="sf-icon">🔊</span><span data-en="Sound" data-zh="音效">音效</span>
+        </button>
+        <button class="sf-menu-item" id="lang-toggle-sb" onclick="toggleLang()">
+          <span class="sf-icon">🌐</span><span data-en="Language" data-zh="语言">语言</span>
+        </button>
+        <div class="sf-divider"></div>
+        <div class="sf-menu-sync" id="sb-sync-status"></div>
+        <div class="sf-divider"></div>
+        <button class="sf-menu-item sf-danger" id="btn-logout-sb">
+          <span class="sf-icon">↩</span><span data-en="Log out" data-zh="退出登录">退出登录</span>
+        </button>
       </div>
     </div>
   </aside>

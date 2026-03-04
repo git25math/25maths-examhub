@@ -343,23 +343,80 @@ input { font-family: inherit; }
 .sidebar-sub-name { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .sidebar-sub-pct { font-size: 10px; color: var(--c-muted); font-weight: 600; }
 
-/* Sidebar Footer */
+/* Sidebar Footer — Claude-style popup menu */
 .sidebar-footer {
-  padding: 12px 16px; border-top: 1px solid var(--c-border-light);
-  display: flex; flex-direction: column; gap: 8px;
+  position: relative;
+  padding: 8px 12px; border-top: 1px solid var(--c-border-light);
 }
 
-.sidebar-user {
-  display: flex; align-items: center; gap: 8px;
+.sf-trigger {
+  display: flex; align-items: center; gap: 10px;
+  width: 100%; padding: 8px 10px;
+  background: none; border: none; border-radius: var(--r);
+  cursor: pointer; transition: background 0.15s;
+  color: var(--c-text);
+}
+.sf-trigger:hover { background: var(--c-surface-alt); }
+
+.sf-avatar {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--c-primary); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; flex-shrink: 0; line-height: 1;
 }
 
-.sidebar-user-rank { font-size: 20px; flex-shrink: 0; }
-.sidebar-user-name { font-size: 12px; font-weight: 600; color: var(--c-text); }
-.sidebar-user-meta { font-size: 10px; color: var(--c-muted); }
-
-.sidebar-actions {
-  display: flex; gap: 4px; flex-wrap: wrap;
+.sf-name {
+  font-size: 13px; font-weight: 600;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
 }
+
+.sf-menu {
+  display: none;
+  position: absolute; bottom: calc(100% + 8px); left: 12px; right: 12px;
+  background: #fff; border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.12), 0 0 0 1px rgba(0,0,0,0.05);
+  z-index: 200; overflow: hidden;
+}
+.sf-menu.open { display: block; }
+
+.sf-menu-header {
+  padding: 12px 16px;
+  font-size: 12px; color: var(--c-muted); line-height: 1.5;
+}
+
+.sf-menu-item {
+  display: flex; align-items: center; gap: 10px;
+  width: 100%; padding: 10px 16px;
+  background: none; border: none;
+  font-size: 13px; color: var(--c-text);
+  cursor: pointer; transition: background 0.15s;
+  text-align: left;
+}
+.sf-menu-item:hover { background: var(--c-surface-alt); }
+
+.sf-icon {
+  width: 20px; flex-shrink: 0; text-align: center; font-size: 14px;
+}
+
+.sf-divider {
+  height: 1px; background: var(--c-border-light); margin: 4px 0;
+}
+
+.sf-danger:hover { color: var(--c-danger); background: rgba(220,53,69,0.06); }
+
+.sf-menu-sync {
+  padding: 10px 16px; font-size: 12px;
+}
+.sf-menu-sync.sync-ok { color: var(--c-success); }
+.sf-menu-sync.sync-err { color: var(--c-danger); }
+.sf-menu-sync.sync-ing { color: var(--c-warning); }
+
+/* Dark mode overrides for popup menu */
+[data-theme="dark"] .sf-menu {
+  background: var(--c-surface);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.3), 0 0 0 1px rgba(255,255,255,0.08);
+}
+[data-theme="dark"] .sf-trigger:hover { background: var(--c-surface-alt); }
 
 
 /* ═══ HEADER BAR (Mobile/Tablet) ═══ */
@@ -1358,13 +1415,7 @@ input { font-family: inherit; }
   font-size: 13px; font-weight: 600; color: var(--c-primary);
 }
 
-/* Sidebar board tag */
-.sidebar-user-board {
-  font-size: 10px; font-weight: 600;
-  color: var(--c-primary); background: var(--c-primary-bg);
-  padding: 1px 8px; border-radius: 10px;
-  margin-top: 2px; display: inline-block;
-}
+/* (sidebar-user-board removed — now in popup menu header) */
 
 /* ═══ GUIDE MODALS ═══ */
 .rank-row {
