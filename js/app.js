@@ -89,6 +89,19 @@ async function _loadBoardClasses() {
 
 async function renderBoard() {
   var panel = E('panel-board');
+
+  /* Guest users cannot access leaderboard */
+  if (currentUser && currentUser.id === 'local') {
+    panel.innerHTML = '<div class="section-title">\ud83c\udfc6 ' + t('Leaderboard', '\u6392\u884c\u699c') + '</div>' +
+      '<div class="board-locked-msg">' +
+      '<div style="font-size:48px;margin-bottom:12px">\ud83d\udd12</div>' +
+      '<div style="font-size:16px;font-weight:600;margin-bottom:8px">' + t('Members Only', '\u4ec5\u5bf9\u6ce8\u518c\u4f1a\u5458\u5f00\u653e') + '</div>' +
+      '<p style="color:var(--c-text2);font-size:14px;margin-bottom:16px">' + t('Login or register to view the leaderboard and compete with others.', '\u767b\u5f55\u6216\u6ce8\u518c\u5373\u53ef\u67e5\u770b\u6392\u884c\u699c\u5e76\u4e0e\u4ed6\u4eba\u7ade\u4e89\u3002') + '</p>' +
+      '<button class="btn btn-primary" onclick="doLogout()">' + t('Login / Register', '\u767b\u5f55 / \u6ce8\u518c') + '</button>' +
+      '</div>';
+    return;
+  }
+
   panel.innerHTML = '<div class="section-title">\ud83c\udfc6 ' + t('Leaderboard', '\u6392\u884c\u699c') + '</div>' +
     '<div style="text-align:center;color:var(--c-muted);padding:40px 0">' + t('Loading...', '\u52a0\u8f7d\u4e2d...') + '</div>';
 
@@ -189,8 +202,9 @@ async function renderBoard() {
 
   /* Sub pills per scope */
   if (_boardScope === 'course') {
+    var boardOpts = userSchoolId ? BOARD_OPTIONS : BOARD_OPTIONS.filter(function(o) { return o.value.indexOf('25m-') !== 0; });
     html += '<div class="board-sub-pills">';
-    BOARD_OPTIONS.forEach(function(opt) {
+    boardOpts.forEach(function(opt) {
       html += '<button class="board-sub-pill' + (opt.value === _boardSubKey ? ' active' : '') + '" onclick="switchBoardSub(\'' + opt.value + '\')">' + opt.emoji + ' ' + t(opt.name, opt.nameZh) + '</button>';
     });
     html += '</div>';

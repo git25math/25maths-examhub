@@ -70,6 +70,9 @@ var appSound = (function() {
   return true;
 })();
 
+/* Guest free trial limit */
+var GUEST_FREE_LIMIT = 3;
+
 /* Search matching: level title/vocab against query */
 function matchLevel(lv, q) {
   if (!q) return true;
@@ -102,6 +105,8 @@ var BOARD_OPTIONS = [
 
 /* Check if a level should be visible under current board filter */
 function isLevelVisible(lv) {
+  /* 25m content requires school_id (Harrow users only) */
+  if (!userSchoolId && lv.board === '25m') return false;
   if (!userBoard) return true;
   if (userBoard === 'all') return true;
   /* Custom levels are always visible */
@@ -116,9 +121,10 @@ function isLevelVisible(lv) {
 
 /* Get filtered BOARDS array based on userBoard */
 function getVisibleBoards() {
-  if (!userBoard) return BOARDS;
-  if (userBoard === 'all') return BOARDS;
-  return BOARDS.filter(function(b) {
+  var base = BOARDS.filter(function(b) { return userSchoolId || b.id !== '25m'; });
+  if (!userBoard) return base;
+  if (userBoard === 'all') return base;
+  return base.filter(function(b) {
     /* CIE/Edexcel: show entire board */
     if (userBoard === 'cie' && b.id === 'cie') return true;
     if (userBoard === 'edx' && b.id === 'edx') return true;
@@ -262,6 +268,18 @@ var EDGE_FN_URL = SUPABASE_URL + '/functions/v1';
 
 /* Grade options (25m-y* subset of BOARD_OPTIONS for admin panel) */
 var GRADE_OPTIONS = BOARD_OPTIONS.filter(function(o) { return o.value.indexOf('25m-y') === 0; });
+
+/* Check if a level index is locked for guest users */
+function isGuestLocked(li) {
+  if (!currentUser || currentUser.id !== 'local') return false;
+  /* Build visible level index list */
+  var visIdx = [];
+  for (var i = 0; i < LEVELS.length; i++) {
+    if (isLevelVisible(LEVELS[i])) visIdx.push(i);
+  }
+  var pos = visIdx.indexOf(li);
+  return pos >= GUEST_FREE_LIMIT;
+}
 
 /* DOM helper */
 var E = function(id) { return document.getElementById(id); };

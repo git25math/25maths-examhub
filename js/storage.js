@@ -89,6 +89,7 @@ function getAllWords() {
   var wd = getWordData();
   LEVELS.forEach(function(lv, li) {
     if (!isLevelVisible(lv)) return;
+    if (isGuestLocked(li)) return;
     var m = {};
     lv.vocabulary.forEach(function(v) {
       if (!m[v.id]) m[v.id] = {};

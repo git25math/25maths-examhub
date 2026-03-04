@@ -702,6 +702,37 @@ input { font-family: inherit; }
   color: var(--c-primary); text-align: right;
 }
 
+/* ═══ GUEST LOCKED CARD ═══ */
+.deck-card.locked {
+  opacity: 0.55;
+  position: relative;
+  cursor: pointer;
+}
+.deck-card.locked:hover { border-color: var(--c-border); transform: none; box-shadow: var(--shadow); }
+.deck-lock-badge {
+  margin-left: auto; font-size: 20px;
+}
+
+/* ═══ GUEST TRIAL BANNER ═══ */
+.guest-trial-banner {
+  display: flex; align-items: center; gap: 10px;
+  background: linear-gradient(135deg, var(--c-primary), var(--c-primary-light));
+  color: #fff; border-radius: var(--r); padding: 14px 18px;
+  margin-bottom: 14px; cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 12px rgba(82, 72, 201, 0.25);
+}
+.guest-trial-banner:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(82, 72, 201, 0.35); }
+.guest-trial-icon { font-size: 20px; }
+.guest-trial-text { font-weight: 600; font-size: 14px; flex: 1; }
+.guest-trial-arrow { font-weight: 800; font-size: 16px; }
+
+/* ═══ LEADERBOARD LOCKED ═══ */
+.board-locked-msg {
+  text-align: center; padding: 48px 24px;
+  background: var(--c-surface); border-radius: var(--r-lg);
+  box-shadow: var(--shadow);
+}
 
 /* ═══ BOARD SECTIONS ═══ */
 .board-section {

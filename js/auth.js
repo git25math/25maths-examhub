@@ -148,10 +148,10 @@ E('auth-login').addEventListener('click', async function() {
 /* Guest mode */
 E('auth-skip').addEventListener('click', function() {
   currentUser = { email: 'guest', id: 'local' };
-  /* Restore board from localStorage for guest */
+  /* Restore board from localStorage for guest (skip 25m-* boards) */
   var guestBoard = null;
   try { guestBoard = localStorage.getItem('userBoard'); } catch (e) {}
-  if (guestBoard) userBoard = guestBoard;
+  if (guestBoard && guestBoard.indexOf('25m-') !== 0) userBoard = guestBoard;
   afterLogin();
 });
 
@@ -210,7 +210,8 @@ function showBoardSelection() {
   E('board-sel-title').textContent = t('Choose Your Course', '\u9009\u62e9\u4f60\u7684\u8bfe\u7a0b');
   E('board-sel-sub').textContent = t('You will only see vocabulary for your course. Change anytime in settings.', '\u9009\u8bfe\u540e\u53ea\u663e\u793a\u5bf9\u5e94\u6a21\u5757\u7684\u8bcd\u6c47\uff0c\u53ef\u5728\u8bbe\u7f6e\u4e2d\u66f4\u6362');
   var html = '<div class="board-sel-grid">';
-  BOARD_OPTIONS.forEach(function(opt) {
+  var opts = userSchoolId ? BOARD_OPTIONS : BOARD_OPTIONS.filter(function(o) { return o.value.indexOf('25m-') !== 0; });
+  opts.forEach(function(opt) {
     html += '<button class="board-sel-btn" onclick="selectBoard(\'' + opt.value + '\')">';
     html += '<span class="board-sel-emoji">' + opt.emoji + '</span>';
     html += '<span class="board-sel-name">' + t(opt.name, opt.nameZh) + '</span>';

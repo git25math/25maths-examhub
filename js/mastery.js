@@ -116,6 +116,17 @@ function renderHome() {
   html += '<span class="home-rank-link">' + t('View path \u2192', '\u67e5\u770b\u8def\u7ebf \u2192') + '</span>';
   html += '</div>';
 
+  /* Guest trial banner */
+  if (currentUser && currentUser.id === 'local') {
+    var totalVisible = 0;
+    for (var gi = 0; gi < LEVELS.length; gi++) { if (isLevelVisible(LEVELS[gi])) totalVisible++; }
+    html += '<div class="guest-trial-banner" onclick="showGuestLockPrompt()">';
+    html += '<span class="guest-trial-icon">\ud83d\udd13</span>';
+    html += '<span class="guest-trial-text">' + t('Free Trial: ' + GUEST_FREE_LIMIT + ' groups', '\u514d\u8d39\u8bd5\u7528\uff1a' + GUEST_FREE_LIMIT + ' \u4e2a\u8bcd\u7ec4') + ' · ' + t('Login to unlock all ' + totalVisible + ' groups', '\u767b\u5f55\u89e3\u9501\u5168\u90e8 ' + totalVisible + ' \u4e2a\u8bcd\u7ec4') + '</span>';
+    html += '<span class="guest-trial-arrow">\u2192</span>';
+    html += '</div>';
+  }
+
   /* Daily Challenge banner */
   var dcData = getDailyData();
   html += '<div class="dc-home-banner" onclick="startDaily()">';
@@ -143,7 +154,7 @@ function renderHome() {
     var boardTotal = 0, boardMastered = 0;
     board.categories.forEach(function(cat) {
       LEVELS.forEach(function(lv, i) {
-        if (lv.category === cat.id && isLevelVisible(lv)) {
+        if (lv.category === cat.id && isLevelVisible(lv) && !isGuestLocked(i)) {
           var s = getDeckStats(i);
           boardTotal += s.total;
           boardMastered += s.mastered;
@@ -172,15 +183,17 @@ function renderHome() {
 
       boardHtml += '<div class="deck-grid category-body">';
       catLevels.forEach(function(cl) {
-        var stats = getDeckStats(cl.idx);
-        boardHtml += '<div class="deck-card" onclick="openDeck(' + cl.idx + ')">';
+        var locked = isGuestLocked(cl.idx);
+        var stats = locked ? { pct: 0 } : getDeckStats(cl.idx);
+        boardHtml += '<div class="deck-card' + (locked ? ' locked' : '') + '" onclick="' + (locked ? 'showGuestLockPrompt()' : 'openDeck(' + cl.idx + ')') + '">';
         boardHtml += '<div class="deck-card-head">';
         boardHtml += '<div class="deck-card-emoji">' + cat.emoji + '</div>';
         boardHtml += '<div><div class="deck-card-name">' + lvTitle(cl.lv) + '</div>';
         boardHtml += '<div class="deck-card-count">' + (cl.lv.vocabulary.length / 2) + ' ' + t('words', '\u8bcd') + '</div></div>';
+        if (locked) boardHtml += '<div class="deck-lock-badge">\ud83d\udd12</div>';
         boardHtml += '</div>';
         boardHtml += '<div class="deck-progress"><div class="deck-progress-fill" style="width:' + stats.pct + '%"></div></div>';
-        boardHtml += '<div class="deck-card-pct">' + stats.pct + '%</div>';
+        boardHtml += '<div class="deck-card-pct">' + (locked ? '' : stats.pct + '%') + '</div>';
         boardHtml += '</div>';
       });
       boardHtml += '</div>';
@@ -211,9 +224,23 @@ function renderHome() {
 
 /* ═══ DECK DETAIL ═══ */
 function openDeck(idx) {
+  if (isGuestLocked(idx)) { showGuestLockPrompt(); return; }
   currentLvl = idx;
   renderDeck(idx);
   showPanel('deck');
+}
+
+/* Guest lock prompt modal */
+function showGuestLockPrompt() {
+  var html = '<div style="text-align:center;padding:12px 0">';
+  html += '<div style="font-size:48px;margin-bottom:12px">\ud83d\udd12</div>';
+  html += '<div class="section-title">' + t('Login to Unlock', '\u767b\u5f55\u89e3\u9501\u5168\u90e8\u8bcd\u7ec4') + '</div>';
+  html += '<p style="color:var(--c-text2);font-size:14px;margin:12px 0 20px">' + t('Create a free account to access all vocabulary groups, track progress, and join the leaderboard.', '\u514d\u8d39\u6ce8\u518c\u8d26\u53f7\u5373\u53ef\u89e3\u9501\u5168\u90e8\u8bcd\u7ec4\u3001\u8bb0\u5f55\u5b66\u4e60\u8fdb\u5ea6\u5e76\u52a0\u5165\u6392\u884c\u699c\u3002') + '</p>';
+  html += '<div style="display:flex;gap:8px">';
+  html += '<button class="btn btn-primary" style="flex:1" onclick="hideModal();doLogout()">' + t('Login / Register', '\u767b\u5f55 / \u6ce8\u518c') + '</button>';
+  html += '<button class="btn btn-ghost" style="flex:1" onclick="hideModal()">' + t('Later', '\u7a0d\u540e') + '</button>';
+  html += '</div></div>';
+  showModal(html);
 }
 
 function renderDeck(idx) {

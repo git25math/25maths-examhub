@@ -1,5 +1,25 @@
 # Changelog
 
+## [1.0.5] - 2026-03-04 — 访客模式限制 + 25m 内容权限控制
+
+### 新增
+- **25m 内容仅限哈罗用户**：只有 `userSchoolId` 存在的用户才能看到 25m board（首页、侧栏、选课、排行榜均过滤）
+- **访客只能学习 3 个词组**：其余词组显示但加锁（🔒），点击弹出登录提示 Modal
+- **访客排行榜不可用**：显示"仅注册会员可用"提示 + 登录按钮
+- **非哈罗注册用户**：排行榜可用但 sub-pills 过滤掉 25m-y* 选项
+- **访客试用横幅**：首页显示"免费试用：3 个词组 · 登录解锁全部 X 个词组"引导注册
+- **localStorage 残留 25m-y* board 的访客**：自动重置，不会卡在空首页
+
+### 文件变更
+| 文件 | 类型 | 变更 |
+|------|------|------|
+| `js/config.js` | 修改 | +`GUEST_FREE_LIMIT` 常量 + `isLevelVisible` 25m 守卫 + `getVisibleBoards` 25m 过滤 + `isGuestLocked()` 函数 |
+| `js/auth.js` | 修改 | 选课页过滤 25m-y* 选项 + 访客 board 恢复时跳过 25m-* |
+| `js/storage.js` | 修改 | `getAllWords` 排除锁定词组 |
+| `js/mastery.js` | 修改 | 锁定 UI + `openDeck` 守卫 + `showGuestLockPrompt()` Modal + 试用横幅 + board stats 排除锁定 |
+| `js/app.js` | 修改 | 排行榜访客拦截 + 课程 sub-pills 过滤 25m-y* |
+| `css/style.css` | 修改 | +31 行（锁定卡片、试用横幅、排行榜锁定提示样式）|
+
 ## [1.0.4] - 2026-03-04 — 登录页默认英文 + 语言切换按钮
 
 ### 新增
