@@ -221,6 +221,43 @@ function onResize() {
 window.addEventListener('resize', onResize);
 onResize();
 
+/* ═══ SIDEBAR COLLAPSE / EXPAND ═══ */
+function expandSidebar() {
+  var sb = E('sidebar');
+  if (sb) sb.classList.add('expanded');
+}
+
+function collapseSidebar() {
+  var sb = E('sidebar');
+  if (sb) sb.classList.remove('expanded');
+  var menu = E('sf-menu');
+  if (menu) menu.classList.remove('open');
+}
+
+/* Click inside sidebar (non-footer area) → expand */
+document.addEventListener('click', function(e) {
+  var sb = E('sidebar');
+  if (!sb) return;
+  var trigger = E('sf-trigger');
+  var menu = E('sf-menu');
+  /* If clicking footer trigger or menu, let toggleUserMenu handle it */
+  if (trigger && trigger.contains(e.target)) return;
+  if (menu && menu.contains(e.target)) return;
+  /* If collapsed and click is inside sidebar → expand */
+  if (!sb.classList.contains('expanded') && sb.contains(e.target)) {
+    expandSidebar();
+  }
+});
+
+/* Click outside sidebar → collapse */
+document.addEventListener('click', function(e) {
+  var sb = E('sidebar');
+  if (!sb || !sb.classList.contains('expanded')) return;
+  if (!sb.contains(e.target)) {
+    collapseSidebar();
+  }
+});
+
 /* ═══ USER MENU (Claude-style popup) ═══ */
 function toggleUserMenu() {
   var menu = E('sf-menu');
