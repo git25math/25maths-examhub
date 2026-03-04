@@ -193,6 +193,73 @@ async function doCreateClass() {
   renderClassList();
 }
 
+/* ═══ EDIT CLASS ═══ */
+function showEditClassModal(classId, currentName, currentGrade) {
+  var gradeOpts = '';
+  GRADE_OPTIONS.forEach(function(g) {
+    var sel = g.value === currentGrade ? ' selected' : '';
+    gradeOpts += '<option value="' + g.value + '"' + sel + '>' + g.emoji + ' ' + t(g.name, g.nameZh) + '</option>';
+  });
+
+  var html = '<div class="section-title">' + t('Edit Class', '编辑班级') + '</div>' +
+    '<label class="settings-label">' + t('Class Name', '班级名称') + '</label>' +
+    '<input class="auth-input" id="ec-name" type="text" value="' + currentName.replace(/"/g, '&quot;') + '">' +
+    '<label class="settings-label" style="margin-top:12px">' + t('Grade / Year', '年级') + '</label>' +
+    '<select class="auth-input" id="ec-grade">' + gradeOpts + '</select>' +
+    '<div id="ec-msg" class="settings-msg"></div>' +
+    '<div style="display:flex;gap:8px;margin-top:16px">' +
+    '<button class="btn btn-primary" style="flex:1" onclick="doEditClass(\'' + classId + '\', \'' + currentGrade + '\')">' + t('Save', '保存') + '</button>' +
+    '<button class="btn btn-ghost" style="flex:1" onclick="hideModal()">' + t('Cancel', '取消') + '</button>' +
+    '</div>';
+  showModal(html);
+  setTimeout(function() { var inp = E('ec-name'); if (inp) { inp.focus(); inp.select(); } }, 100);
+}
+
+async function doEditClass(classId, oldGrade) {
+  var name = E('ec-name').value.trim();
+  var grade = E('ec-grade').value;
+  var msg = E('ec-msg');
+  if (!name) { msg.textContent = t('Please enter class name', '请输入班级名称'); msg.className = 'settings-msg error'; return; }
+
+  msg.textContent = t('Saving...', '保存中...');
+  msg.className = 'settings-msg';
+
+  try {
+    var res = await sb.from('classes').update({ name: name, grade: grade }).eq('id', classId);
+    if (res.error) throw new Error(res.error.message);
+
+    /* Cascade grade update if changed */
+    if (grade !== oldGrade) {
+      await cascadeGradeUpdate(classId, grade);
+    }
+
+    hideModal();
+    showToast(t('Class updated!', '班级已更新！'));
+    _adminCache = null;
+    renderClassDetail(classId);
+  } catch (e) {
+    msg.textContent = e.message;
+    msg.className = 'settings-msg error';
+  }
+}
+
+async function cascadeGradeUpdate(classId, newGrade) {
+  /* 1. Batch update leaderboard.board for all students in this class */
+  var r1 = await sb.from('leaderboard').update({ board: newGrade }).eq('class_id', classId);
+  if (r1.error) throw new Error(r1.error.message);
+
+  /* 2. Update each student's auth metadata.board via edge function */
+  var csRes = await sb.from('class_students').select('user_id').eq('class_id', classId);
+  var students = csRes.data || [];
+  for (var i = 0; i < students.length; i++) {
+    var r = await callEdgeFunction('update-student', {
+      student_user_id: students[i].user_id,
+      board: newGrade
+    });
+    if (r.error) throw new Error(r.error);
+  }
+}
+
 /* ═══ PHASE 6: BATCH CREATE STUDENTS ═══ */
 function showBatchCreateModal(classId) {
   var html = '<div class="section-title">' + t('Add Students', '添加学生') + '</div>' +
@@ -206,15 +273,23 @@ function showBatchCreateModal(classId) {
     '<tbody id="batch-rows"></tbody>' +
     '</table>' +
     '</div>' +
-    '<button class="btn btn-ghost btn-sm" style="margin-top:8px" onclick="addBatchRows()">' + t('+ 5 more rows', '+ 再加5行') + '</button>' +
+    '<div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap">' +
+    '<button class="btn btn-ghost btn-sm" onclick="addOneBatchRow()">' + t('+ 1 row', '+ 1行') + '</button>' +
+    '<button class="btn btn-ghost btn-sm" onclick="addBatchRows()">' + t('+ 5 rows', '+ 5行') + '</button>' +
+    '<button class="btn btn-ghost btn-sm" onclick="toggleImportArea()">' + t('\ud83d\udccb Import', '\ud83d\udccb 导入') + '</button>' +
+    '</div>' +
+    '<div id="import-area" style="display:none;margin-top:8px">' +
+    '<textarea id="import-csv" class="auth-input" rows="4" style="font-family:monospace;font-size:12px" placeholder="' + t('Paste CSV: email, password, name (one per line)', '粘贴 CSV：邮箱, 密码, 姓名（每行一个）') + '"></textarea>' +
+    '<button class="btn btn-ghost btn-sm" style="margin-top:4px" onclick="parseImportData()">' + t('Parse & Fill', '解析填入') + '</button>' +
+    '</div>' +
     '<div id="batch-msg" class="settings-msg" style="margin-top:8px"></div>' +
     '<div style="display:flex;gap:8px;margin-top:12px">' +
     '<button class="btn btn-primary" style="flex:1" id="batch-submit" onclick="doBatchCreate(\'' + classId + '\')">' + t('Create All', '创建全部') + '</button>' +
     '<button class="btn btn-ghost" style="flex:1" onclick="hideModal()">' + t('Cancel', '取消') + '</button>' +
     '</div>';
   showModal(html);
-  /* Add initial 5 rows */
-  for (var i = 0; i < 5; i++) addOneBatchRow();
+  /* Add initial 1 row */
+  addOneBatchRow();
 }
 
 function addOneBatchRow() {
@@ -230,6 +305,51 @@ function addOneBatchRow() {
 
 function addBatchRows() {
   for (var i = 0; i < 5; i++) addOneBatchRow();
+}
+
+function toggleImportArea() {
+  var area = E('import-area');
+  if (!area) return;
+  area.style.display = area.style.display === 'none' ? 'block' : 'none';
+}
+
+function parseImportData() {
+  var csv = E('import-csv');
+  if (!csv) return;
+  var text = csv.value.trim();
+  if (!text) return;
+
+  var lines = text.split(/\r?\n/);
+  var parsed = 0;
+  lines.forEach(function(line) {
+    line = line.trim();
+    if (!line) return;
+    /* Support comma, tab, or semicolon as delimiter */
+    var parts = line.split(/[,\t;]/);
+    if (parts.length < 3) return;
+    var email = parts[0].trim();
+    var pass = parts[1].trim();
+    var name = parts.slice(2).join(' ').trim(); /* Allow commas in name by joining remainder */
+    if (!email || !pass || !name) return;
+
+    addOneBatchRow();
+    var rows = document.querySelectorAll('#batch-rows .batch-row');
+    var lastRow = rows[rows.length - 1];
+    var inputs = lastRow.querySelectorAll('input');
+    inputs[0].value = email;
+    inputs[1].value = pass;
+    inputs[2].value = name;
+    parsed++;
+  });
+
+  if (parsed > 0) {
+    csv.value = '';
+    E('import-area').style.display = 'none';
+    showToast(t(parsed + ' students imported', parsed + ' 个学生已导入'));
+  } else {
+    E('batch-msg').textContent = t('No valid rows found. Format: email, password, name', '未找到有效行。格式：邮箱, 密码, 姓名');
+    E('batch-msg').className = 'settings-msg error';
+  }
 }
 
 async function doBatchCreate(classId) {
@@ -309,9 +429,11 @@ async function renderClassDetail(classId) {
   var activity = await loadActivityData(true);
   var students = activity.filter(function(s) { return s.class_id === classId; });
 
+  var safeCName = cls.name.replace(/'/g, "\\'").replace(/"/g, '&quot;');
   var html = '<div class="admin-detail-header">' +
     '<button class="btn btn-ghost btn-sm" onclick="renderClassList()">' + t('\u2190 Back', '\u2190 返回') + '</button>' +
-    '<div class="admin-detail-title">' + cls.name + ' <span class="admin-detail-grade">' + gradeLabel + '</span></div>' +
+    '<div class="admin-detail-title">' + cls.name + ' <span class="admin-detail-grade">' + gradeLabel + '</span>' +
+    ' <button class="btn btn-ghost btn-sm" style="padding:2px 6px;font-size:14px" onclick="showEditClassModal(\'' + classId + '\', \'' + safeCName + '\', \'' + cls.grade + '\')">&#9998;</button></div>' +
     '<button class="btn btn-primary btn-sm" onclick="showBatchCreateModal(\'' + classId + '\')">' + t('+ Add Students', '+ 添加学生') + '</button>' +
     '</div>';
 

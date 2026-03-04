@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.0.9] - 2026-03-05 — 编辑班级 + 单个/批量/导入学生
+
+### 新功能
+- **编辑班级信息**：班级详情页标题栏新增 ✏ 编辑按钮，弹窗预填名称/年级，支持修改保存
+- **年级级联更新**：修改班级年级时自动更新 leaderboard.board + 每位学生的 auth metadata.board
+- **单个添加学生**：添加学生弹窗默认 1 行（原 5 行），新增 `+ 1行` / `+ 5行` 并排按钮
+- **CSV 导入学生**：📋 导入按钮 → 折叠 textarea → 粘贴 CSV（支持逗号/Tab/分号分隔）→ 解析填入表格
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `js/admin.js` | +5 新函数（showEditClassModal, doEditClass, cascadeGradeUpdate, toggleImportArea, parseImportData），2 处修改（renderClassDetail header + showBatchCreateModal） |
+
 ## [1.0.8] - 2026-03-05 — 桌面侧栏常驻展开 + 登录弹窗溢出修复
 
 ### 修复
