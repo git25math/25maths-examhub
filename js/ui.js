@@ -128,26 +128,31 @@ function updateSidebar() {
   }
   if (E('hb-name')) E('hb-name').textContent = displayShort;
 
-  /* Sidebar deck list grouped by category */
+  /* Sidebar: show 8 category entries only */
   var deckEl = E('sidebar-decks');
   if (deckEl) {
-    var html = '';
+    var html = '<div class="sidebar-deck-label">\u4e13\u9898</div>';
     CATEGORIES.forEach(function(cat) {
-      var catLevels = [];
-      LEVELS.forEach(function(lv, i) {
-        if (lv.category === cat.id) catLevels.push({ lv: lv, idx: i });
-      });
-      if (catLevels.length === 0) return;
-      html += '<div class="sidebar-deck-label">' + cat.emoji + ' ' + cat.name + '</div>';
-      catLevels.forEach(function(cl) {
-        html += '<button class="sidebar-deck-item" onclick="openDeck(' + cl.idx + ')">' +
-          '<span>' + cl.lv.title + '</span>' +
-          '<span class="deck-count">' + (cl.lv.vocabulary.length / 2) + '</span>' +
-          '</button>';
-      });
+      var count = 0;
+      LEVELS.forEach(function(lv) { if (lv.category === cat.id) count++; });
+      if (count === 0) return;
+      html += '<button class="sidebar-deck-item" onclick="scrollToCategory(\'' + cat.id + '\')">' +
+        '<span class="deck-emoji">' + cat.emoji + '</span>' +
+        '<span>' + cat.name + '</span>' +
+        '<span class="deck-count">' + count + '</span>' +
+        '</button>';
     });
     deckEl.innerHTML = html;
   }
+}
+
+/* ═══ SCROLL TO CATEGORY ═══ */
+function scrollToCategory(catId) {
+  if (appView !== 'home') navTo('home');
+  setTimeout(function() {
+    var el = document.getElementById('cat-' + catId);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, appView !== 'home' ? 100 : 0);
 }
 
 /* ═══ UTILITY FUNCTIONS ═══ */

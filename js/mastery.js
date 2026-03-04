@@ -80,7 +80,7 @@ function renderHome() {
     });
     if (catLevels.length === 0) return;
 
-    html += '<div class="category-section">';
+    html += '<div class="category-section" id="cat-' + cat.id + '">';
     html += '<div class="category-header">';
     html += '<span class="category-emoji">' + cat.emoji + '</span>';
     html += '<span class="category-name">' + cat.name + '</span>';
