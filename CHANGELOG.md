@@ -1,5 +1,27 @@
 # Changelog
 
+## [0.9.3] - 2026-03-04 — 学习连续天数 (Streak)
+
+### 新增
+- **学习打卡 Streak**：每日首次学习自动记录，首页展示当前连续天数（🔥 火焰图标）
+- **Streak Toast 提示**：当日首次学习完成后弹出"🔥 N-day streak!"双语 Toast
+- **历史最长连续**：`streak.max` 记录历史最长连续天数（为后续成就系统预留）
+- **Streak 卡片**：首页统计栏新增第 4 张卡片（橙色主题 `--c-streak: #FF6B35`）
+- **深色模式适配**：Streak 卡片在深色模式下使用 `#FF8C5A` + 半透明背景
+
+### 设计决策
+- **纯前端实现**：streak 数据存在 `wmatch_v3` localStorage blob 的 `streak` 键内，通过 `vocab_progress` 自动云同步，无需 Supabase 迁移
+- **同日去重**：`today === last` 时 `recordActivity()` 返回 false，不弹 Toast
+- **本地时区**：`toLocaleDateString('en-CA')` 取浏览器本地日期
+- **`saveBest` 参数重命名**：`t` → `tm` 避免遮蔽全局 `t()` i18n 函数
+
+### 文件变更
+- `js/storage.js` — 新增 `getStreak()` / `getStreakCount()` / `recordActivity()` 三个函数 + `setWordStatus()` / `saveBest()` 插入 streak 钩子（~25 行）
+- `js/mastery.js` — `renderHome()` 统计栏新增 streak 卡片（+2 行）
+- `css/style.css` — `--c-streak` / `--c-streak-bg` 设计 token + `.stat-card-streak` 样式（~5 行）
+
+---
+
 ## [0.9.2] - 2026-03-04 — 响应式修补 + 移动体验
 
 ### 新增

@@ -15,6 +15,8 @@
   --c-warning: #F59E0B;
   --c-warning-bg: #FEF3C7;
   --c-danger-bg: #FEE2E2;
+  --c-streak: #FF6B35;
+  --c-streak-bg: #FFF3ED;
 
   --c-bg: #F8F7FF;
   --c-surface: #FFFFFF;
@@ -47,6 +49,7 @@
   --c-success-bg: rgba(52, 211, 153, 0.15);
   --c-warning-bg: rgba(251, 191, 36, 0.15);
   --c-danger-bg: rgba(248, 113, 113, 0.15);
+  --c-streak: #FF8C5A; --c-streak-bg: rgba(255,107,53,0.15);
   --c-bg: #0F0E1A;  --c-surface: #1A1930;  --c-surface-alt: #242340;
   --c-text: #E8E6F0;  --c-text2: #9B99B0;  --c-muted: #6B6980;
   --c-border: #2D2B45;  --c-border-light: #222040;
@@ -497,6 +500,7 @@ input { font-family: inherit; }
   font-size: 11px; color: var(--c-text2);
   font-weight: 600; margin-top: 2px;
 }
+.stat-card-streak { background: var(--c-streak-bg); }
 
 .section-title {
   font-family: var(--font-display);

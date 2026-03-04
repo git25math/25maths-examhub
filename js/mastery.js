@@ -97,6 +97,8 @@ function renderHome() {
   html += '<div class="stat-card"><div class="stat-val">' + total + '</div><div class="stat-label">' + t('Total', '\u603b\u8bcd\u6c47') + '</div></div>';
   html += '<div class="stat-card"><div class="stat-val" style="color:var(--c-success)">' + mastered + '</div><div class="stat-label">' + t('Mastered', '\u5df2\u638c\u63e1') + '</div></div>';
   html += '<div class="stat-card"><div class="stat-val" style="color:' + (due > 0 ? 'var(--c-warning)' : 'var(--c-muted)') + '">' + due + '</div><div class="stat-label">' + t('Due', '\u5f85\u590d\u4e60') + '</div></div>';
+  var streakN = getStreakCount();
+  html += '<div class="stat-card stat-card-streak"><div class="stat-val" style="color:var(--c-streak)">🔥 ' + streakN + '</div><div class="stat-label">' + t('Streak', '连续天数') + '</div></div>';
   html += '</div>';
 
   /* Rank hint row */

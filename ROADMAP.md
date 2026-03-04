@@ -112,7 +112,7 @@
 
 ## Phase 8 — 社交 + 云端
 - [x] 云端排行榜（替换 Mock 数据，基于 Supabase）→ Phase 2.3 完成
-- [ ] 学习连续天数（streak system）
+- [x] 学习连续天数（streak system）→ v0.9.3 完成
 - [ ] 每日挑战模式（随机 10 词限时赛）
 - [ ] 分享结果卡片（截图友好的成绩单）
 - [ ] 与 25maths-website 会员系统深度对接

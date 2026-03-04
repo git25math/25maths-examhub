@@ -18,12 +18,14 @@ function getBest(i) {
   return (loadS()['l' + i]) || null;
 }
 
-function saveBest(i, t, m, c) {
+function saveBest(i, tm, m, c) {
   var s = loadS();
   var p = s['l' + i];
-  if (!p || t < p.t) s['l' + i] = { t: t, m: m, c: c };
+  if (!p || tm < p.t) s['l' + i] = { t: tm, m: m, c: c };
   if (!s.mc || i > s.mc) s.mc = i;
   writeS(s);
+  var _si = recordActivity();
+  if (_si) showToast('🔥 ' + t(getStreakCount() + '-day streak!', '连续学习 ' + getStreakCount() + ' 天！'));
   syncToCloud();
 }
 
@@ -74,6 +76,8 @@ function setWordStatus(key, status, interval, correct) {
 
   s.words[key] = { st: status, iv: interval || 1, nr: next, lr: now, ok: ok, fail: fail, lv: lv };
   writeS(s);
+  var _si = recordActivity();
+  if (_si) showToast('🔥 ' + t(getStreakCount() + '-day streak!', '连续学习 ' + getStreakCount() + ' 天！'));
   syncToCloud();
 }
 
@@ -133,6 +137,33 @@ function saveCustomLevel(level) {
   s.customLevels.push(level);
   writeS(s);
   syncToCloud();
+}
+
+/* ═══ LEARNING STREAK ═══ */
+function getStreak() {
+  var s = loadS();
+  if (!s.streak) return { cur: 0, max: 0, last: '' };
+  return s.streak;
+}
+
+function getStreakCount() {
+  return getStreak().cur || 0;
+}
+
+function recordActivity() {
+  var s = loadS();
+  if (!s.streak) s.streak = { cur: 0, max: 0, last: '' };
+  var today = new Date().toLocaleDateString('en-CA');
+  var last = s.streak.last;
+  if (today === last) return false;
+  var td = new Date(today + 'T00:00:00');
+  var ld = last ? new Date(last + 'T00:00:00') : null;
+  var diff = ld ? Math.round((td - ld) / 86400000) : 999;
+  s.streak.cur = (diff === 1) ? (s.streak.cur || 0) + 1 : 1;
+  if (s.streak.cur > (s.streak.max || 0)) s.streak.max = s.streak.cur;
+  s.streak.last = today;
+  writeS(s);
+  return true;
 }
 
 /* Cloud sync */
