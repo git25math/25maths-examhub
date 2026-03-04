@@ -40,6 +40,13 @@
 - [x] 计分公式：掌握率 × 20，显示排名 + 掌握率百分比
 - [x] Guest 模式降级为本地数据展示
 
+## Phase 2.4 — 段位进化路线 + 艾宾浩斯说明页 [DONE]
+- [x] 段位进化路线 Modal（5 级段位卡片 + 当前高亮 + 进度条 + 升级提示）
+- [x] 艾宾浩斯记忆法 Modal（原理简介 + 8 级 SRS 间隔表 + 评分机制说明）
+- [x] 侧栏 / 顶栏段位 emoji 可点击打开段位路线
+- [x] 首页统计区下方段位提示行（段位名 + 距下一级词数 + "查看路线"入口）
+- [x] 复习仪表盘标题栏 ❓ 帮助按钮入口
+
 ## Phase 3 — CIE 0580 词汇扩容 [DONE]
 - [x] 手写 50 级完整 CIE 0580 词汇（390 词，8 大专题分类）
 - [x] slug-based localStorage key（`wordKey()` helper）
@@ -47,13 +54,6 @@
 - [x] 分类标题样式（emoji + 名称 + 组数）
 - [x] 验证：0 重叠词汇，所有 pair 数据完整
 - [x] 侧栏精简：50 个卡组 → 8 个专题分类，点击滚动到对应分区
-
-## Phase 2.4 — 段位进化路线 + 艾宾浩斯说明页 [DONE]
-- [x] 段位进化路线 Modal（5 级段位卡片 + 当前高亮 + 进度条 + 升级提示）
-- [x] 艾宾浩斯记忆法 Modal（原理简介 + 8 级 SRS 间隔表 + 评分机制说明）
-- [x] 侧栏 / 顶栏段位 emoji 可点击打开段位路线
-- [x] 首页统计区下方段位提示行（段位名 + 距下一级词数 + "查看路线"入口）
-- [x] 复习仪表盘标题栏 ❓ 帮助按钮入口
 
 ## Phase 3.1 — EN/中英双语模式 [DONE]
 - [x] `t(en, zh)` / `rankName()` / `catName()` i18n helper 函数
@@ -63,18 +63,34 @@
 - [x] 语言切换自动刷新所有面板 + 侧栏
 - [x] 12 文件全量 i18n 覆盖
 
-## Phase 4 — 认证加固 + UX 打磨
+## Phase 4 — Edexcel IGCSE 4MA1 + 多考试局架构 [DONE]
+- [x] 多考试局 BOARDS 配置层（CIE 0580 + Edexcel 4MA1）
+- [x] Edexcel 4MA1 全部词汇（41 级，308 词，7 大分类）
+- [x] 首页 + 侧栏按考试局分组显示（双手风琴）
+- [x] Board section 样式（emoji + 名称 + 考试代码标签）
+- [x] 向后兼容（CIE 数据 + word key 不变）
+- [x] Helper 函数：`getBoardInfo()` / `boardName()` / `getLevelBoard()` / `getAllCategories()`
+
+---
+
+## Phase 5 — 考试局筛选 + 统计增强
+- [ ] 首页考试局 Tab 筛选（全部 / CIE / Edexcel），记忆用户选择
+- [ ] 复习仪表盘按考试局筛选待复习词汇
+- [ ] 排行榜按考试局分榜（总榜 + CIE 榜 + Edexcel 榜）
+- [ ] 每个 board section 显示局部统计（该考试局掌握率 / 已掌握词数）
+- [ ] 搜索/过滤功能（首页词组搜索、复习仪表盘过滤）
+
+## Phase 6 — UX 打磨 + 学习体验
 - [ ] 密码重置功能（忘记密码 → 发送重置邮件）
 - [ ] 同步冲突改用时间戳比较（替代当前 key 数量比较）
 - [ ] 同步失败 Toast 提示（替代静默吞错）
 - [ ] 深色模式 (dark mode toggle)
 - [ ] 音效系统（配对成功、连击、倒计时警告）
-- [x] 新手引导（段位路线 + 艾宾浩斯说明 → Phase 2.4 完成）
-- [ ] 搜索/过滤（首页、复习仪表盘）
 - [ ] 拼写模式增加语音朗读（Web Speech API）
 - [ ] 测验模式增加"英文→中文"与"中文→英文"双向模式
+- [x] 新手引导（段位路线 + 艾宾浩斯说明 → Phase 2.4 完成）
 
-## Phase 5 — 响应式修补 + 移动体验
+## Phase 7 — 响应式修补 + 移动体验
 - [ ] iPhone 刘海适配（safe-area-inset-top）
 - [ ] 触控热区最小 44px（移动端按钮/链接）
 - [ ] 实战模式网格列数响应式（小屏 3 列 → 大屏 5 列）
@@ -83,7 +99,7 @@
 - [ ] Toast 位置适配底部导航
 - [ ] 连击弹窗手机端尺寸调整
 
-## Phase 6 — 社交 + 云端
+## Phase 8 — 社交 + 云端
 - [x] 云端排行榜（替换 Mock 数据，基于 Supabase）→ Phase 2.3 完成
 - [ ] 学习连续天数（streak system）
 - [ ] 每日挑战模式（随机 10 词限时赛）
@@ -91,20 +107,15 @@
 - [ ] 与 25maths-website 会员系统深度对接
 - [ ] 学习数据可视化（趋势图、日历热力图）
 
-## Phase 4.1 — Edexcel IGCSE 4MA1 + 多考试局架构 [DONE]
-- [x] 多考试局 BOARDS 配置层（CIE 0580 + Edexcel 4MA1）
-- [x] Edexcel 4MA1 全部词汇（41 级，308 词，7 大分类）
-- [x] 首页 + 侧栏按考试局分组显示
-- [x] 向后兼容（CIE 数据 + key 不变）
-
-## Phase 7 — 内容扩展
-- [x] Edexcel 4MA1 vocabulary sets → Phase 4.1 完成
-- [ ] IB Mathematics vocabulary sets
+## Phase 9 — 内容扩展
+- [x] Edexcel 4MA1 vocabulary sets → Phase 4 完成
+- [ ] IB Mathematics vocabulary sets（第三考试局）
+- [ ] AQA GCSE Mathematics vocabulary sets
 - [ ] 用户创建 + 分享自定义词库（community decks）
 - [ ] Import/Export 增加 Anki 格式支持
 - [ ] 多语言扩展（pinyin 显示选项、繁体中文）
 
-## Phase 8 — PWA + 离线
+## Phase 10 — PWA + 离线
 - [ ] Service Worker 离线缓存
 - [ ] PWA manifest + install prompt
 - [ ] 离线状态自动检测 + 重连同步
