@@ -491,8 +491,15 @@ input { font-family: inherit; }
   align-items: center;
   gap: 8px;
   margin-bottom: 14px;
-  padding-bottom: 8px;
+  padding: 6px 0 8px;
   border-bottom: 2px solid var(--c-border-light);
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.15s;
+}
+
+.category-header:hover {
+  border-bottom-color: var(--c-primary-bg);
 }
 
 .category-emoji {
@@ -511,6 +518,33 @@ input { font-family: inherit; }
   color: var(--c-muted);
   font-weight: 600;
   margin-left: auto;
+}
+
+.category-chevron {
+  font-size: 11px;
+  color: var(--c-muted);
+  transition: transform 0.25s ease;
+  margin-left: 4px;
+}
+
+.category-section.collapsed .category-chevron {
+  transform: rotate(-90deg);
+}
+
+.category-section.collapsed .category-header {
+  margin-bottom: 0;
+}
+
+.category-body {
+  overflow: hidden;
+  max-height: 2000px;
+  transition: max-height 0.35s ease, opacity 0.25s ease;
+  opacity: 1;
+}
+
+.category-section.collapsed .category-body {
+  max-height: 0;
+  opacity: 0;
 }
 
 /* ═══ DECK DETAIL ═══ */

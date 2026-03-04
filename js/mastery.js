@@ -41,6 +41,15 @@ function getDeckStats(li) {
   return { total: pairs.length, mastered: mastered, pct: pairs.length > 0 ? Math.round(mastered / pairs.length * 100) : 0 };
 }
 
+/* ═══ CATEGORY COLLAPSE STATE ═══ */
+var catCollapsed = {};
+
+function toggleCategory(catId) {
+  catCollapsed[catId] = !catCollapsed[catId];
+  var el = document.getElementById('cat-' + catId);
+  if (el) el.classList.toggle('collapsed', catCollapsed[catId]);
+}
+
 /* ═══ HOME DASHBOARD ═══ */
 function renderHome() {
   var all = getAllWords();
@@ -80,14 +89,16 @@ function renderHome() {
     });
     if (catLevels.length === 0) return;
 
-    html += '<div class="category-section" id="cat-' + cat.id + '">';
-    html += '<div class="category-header">';
+    var collapsed = catCollapsed[cat.id] ? true : false;
+    html += '<div class="category-section' + (collapsed ? ' collapsed' : '') + '" id="cat-' + cat.id + '">';
+    html += '<div class="category-header" onclick="toggleCategory(\'' + cat.id + '\')">';
     html += '<span class="category-emoji">' + cat.emoji + '</span>';
     html += '<span class="category-name">' + cat.name + '</span>';
     html += '<span class="category-count">' + catLevels.length + ' \u7ec4</span>';
+    html += '<span class="category-chevron">\u25bc</span>';
     html += '</div>';
 
-    html += '<div class="deck-grid">';
+    html += '<div class="deck-grid category-body">';
     catLevels.forEach(function(cl) {
       var stats = getDeckStats(cl.idx);
       html += '<div class="deck-card" onclick="openDeck(' + cl.idx + ')">';
