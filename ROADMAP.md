@@ -33,6 +33,13 @@
 - [x] 会员升级路线说明页（免费/Pro/Premium 三级展示）
 - [x] Guest 模式设置入口拦截（Toast 提示）
 
+## Phase 2.3 — 云端实时排行榜 [DONE]
+- [x] 新建 `leaderboard` 表（Supabase 迁移，RLS 全员可读 / 本人可写）
+- [x] `syncToCloud()` 每次学习同步时 upsert 排行榜分数
+- [x] `renderBoard()` 重写：async 云端 Top 20 查询，替代 Mock 数据
+- [x] 计分公式：掌握率 × 20，显示排名 + 掌握率百分比
+- [x] Guest 模式降级为本地数据展示
+
 ## Phase 3 — 词汇扩容 (Next)
 - [ ] Fix `extract-vocab.py` regex (Python 3.13 backslash escaping)
 - [ ] Auto-generate levels.js from 8 .tex files (~317 words, ~40 levels)
@@ -62,7 +69,7 @@
 - [ ] 连击弹窗手机端尺寸调整
 
 ## Phase 6 — 社交 + 云端
-- [ ] 云端排行榜（替换 Mock 数据，基于 Supabase）
+- [x] 云端排行榜（替换 Mock 数据，基于 Supabase）→ Phase 2.3 完成
 - [ ] 学习连续天数（streak system）
 - [ ] 每日挑战模式（随机 10 词限时赛）
 - [ ] 分享结果卡片（截图友好的成绩单）

@@ -76,43 +76,72 @@
 })();
 
 /* ═══ LEADERBOARD ═══ */
-function renderBoard() {
-  var mockData = [
-    { name: 'Alice', emoji: '\ud83d\udc51', score: 2450, streak: 15 },
-    { name: 'Bob', emoji: '\ud83d\udc8e', score: 1820, streak: 8 },
-    { name: 'Charlie', emoji: '\ud83e\udd47', score: 1560, streak: 12 },
-    { name: 'Diana', emoji: '\ud83e\udd48', score: 980, streak: 5 },
-    { name: 'Eve', emoji: '\ud83e\udd49', score: 540, streak: 3 }
-  ];
+async function renderBoard() {
+  var panel = E('panel-board');
+  panel.innerHTML = '<div class="section-title">\ud83c\udfc6 \u6392\u884c\u699c</div>' +
+    '<div style="text-align:center;color:var(--c-muted);padding:40px 0">\u52a0\u8f7d\u4e2d...</div>';
 
-  /* Insert current user */
-  var userName = currentUser ? (currentUser.email === 'guest' ? '\u8bbf\u5ba2' : (currentUser.nickname || currentUser.email.split('@')[0])) : '\u4f60';
-  var userRank = getRank();
-  var userScore = getMasteryPct() * 20;
+  var rows = [];
+  var userId = currentUser ? currentUser.id : null;
 
-  var html = '';
-  html += '<div class="section-title">\ud83c\udfc6 \u6392\u884c\u699c</div>';
-  html += '<div style="font-size:12px;color:var(--c-muted);margin-bottom:16px">\u793a\u4f8b\u6570\u636e \xb7 \u4e91\u7aef\u6392\u884c\u699c\u5373\u5c06\u4e0a\u7ebf</div>';
+  /* Fetch cloud leaderboard */
+  if (sb && currentUser && currentUser.id !== 'local') {
+    try {
+      var res = await sb.from('leaderboard')
+        .select('user_id,nickname,score,mastery_pct,rank_emoji,mastered_words,total_words')
+        .order('score', { ascending: false })
+        .limit(20);
+      if (res.data && res.data.length > 0) {
+        rows = res.data.map(function(r) {
+          return {
+            name: r.nickname || '\u533f\u540d',
+            emoji: r.rank_emoji,
+            score: r.score,
+            pct: r.mastery_pct,
+            mastered: r.mastered_words,
+            total: r.total_words,
+            isMe: r.user_id === userId
+          };
+        });
+      }
+    } catch (e) { /* fallback below */ }
+  }
 
+  /* If no cloud data or guest, show local user only */
+  if (rows.length === 0) {
+    var userName = currentUser ? (currentUser.email === 'guest' ? '\u8bbf\u5ba2' : (currentUser.nickname || currentUser.email.split('@')[0])) : '\u4f60';
+    var userRank = getRank();
+    var pct = getMasteryPct();
+    rows.push({ name: userName, emoji: userRank.emoji, score: pct * 20, pct: pct, isMe: true });
+  }
+
+  /* Ensure current user is in the list (they may not have synced yet) */
+  var hasMe = rows.some(function(r) { return r.isMe; });
+  if (!hasMe && currentUser && currentUser.id !== 'local') {
+    var myRank = getRank();
+    var myPct = getMasteryPct();
+    rows.push({
+      name: currentUser.nickname || currentUser.email.split('@')[0],
+      emoji: myRank.emoji, score: myPct * 20, pct: myPct, isMe: true
+    });
+    rows.sort(function(a, b) { return b.score - a.score; });
+  }
+
+  var html = '<div class="section-title">\ud83c\udfc6 \u6392\u884c\u699c</div>';
+  html += '<div style="font-size:12px;color:var(--c-muted);margin-bottom:16px">\u5b9e\u65f6\u6392\u540d \xb7 \u57fa\u4e8e\u5355\u8bcd\u638c\u63e1\u7387\u8ba1\u5206</div>';
   html += '<div class="board-list">';
 
-  var medals = ['\ud83e\udd47', '\ud83e\udd48', '\ud83e\udd49', '4', '5', '6', '7'];
+  var medals = ['\ud83e\udd47', '\ud83e\udd48', '\ud83e\udd49'];
 
-  /* Combine mock + user, sort by score */
-  var all = mockData.slice();
-  all.push({ name: userName, emoji: userRank.emoji, score: userScore, streak: 1, isMe: true });
-  all.sort(function(a, b) { return b.score - a.score; });
-
-  all.forEach(function(row, i) {
+  rows.forEach(function(row, i) {
     html += '<div class="board-row' + (row.isMe ? ' me' : '') + '">';
     html += '<div class="board-rank">' + (i < 3 ? medals[i] : (i + 1)) + '</div>';
     html += '<div class="board-name">' + row.emoji + ' ' + row.name + (row.isMe ? ' (\u4f60)' : '') + '</div>';
     html += '<div class="board-score">' + row.score + '</div>';
-    html += '<div class="board-streak">\ud83d\udd25' + row.streak + '\u5929</div>';
+    html += '<div class="board-streak">' + (row.pct != null ? row.pct + '%' : '') + '</div>';
     html += '</div>';
   });
 
   html += '</div>';
-
-  E('panel-board').innerHTML = html;
+  panel.innerHTML = html;
 }

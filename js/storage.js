@@ -137,11 +137,30 @@ function saveCustomLevel(level) {
 /* Cloud sync */
 async function syncToCloud() {
   if (!sb || !currentUser || currentUser.id === 'local') return;
+  var now = new Date().toISOString();
   try {
     await sb.from('vocab_progress').upsert(
-      { user_id: currentUser.id, data: JSON.stringify(loadS()), updated_at: new Date().toISOString() },
+      { user_id: currentUser.id, data: JSON.stringify(loadS()), updated_at: now },
       { onConflict: 'user_id' }
     );
+  } catch (e) { /* silently fail */ }
+  /* Sync leaderboard score */
+  try {
+    var allW = getAllWords();
+    var mastered = allW.filter(function(w) { return w.status === 'mastered'; }).length;
+    var pct = allW.length > 0 ? Math.round(mastered / allW.length * 100) : 0;
+    var r = getRank();
+    var nick = currentUser.nickname || currentUser.email.split('@')[0];
+    await sb.from('leaderboard').upsert({
+      user_id: currentUser.id,
+      nickname: nick,
+      score: pct * 20,
+      mastery_pct: pct,
+      rank_emoji: r.emoji,
+      total_words: allW.length,
+      mastered_words: mastered,
+      updated_at: now
+    }, { onConflict: 'user_id' });
   } catch (e) { /* silently fail */ }
 }
 

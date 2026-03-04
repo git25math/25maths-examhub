@@ -1,5 +1,31 @@
 # Changelog
 
+## [0.3.1] - 2026-03-04 — 云端实时排行榜
+
+### 排行榜
+- 排行榜从 Mock 数据升级为 Supabase 云端实时查询
+- 新建 `leaderboard` 表（user_id, nickname, score, mastery_pct, rank_emoji, total_words, mastered_words）
+- RLS 策略：所有已登录用户可读，仅本人可写
+- 计分公式：`mastery_pct × 20`（掌握率百分比 × 20）
+- 显示实时排名 + 掌握率百分比（替代原 streak 天数）
+- 未登录用户仅显示本地数据
+
+### 分数同步
+- `syncToCloud()` 每次同步学习进度时同步 upsert 排行榜分数
+- 包含字段：昵称、分数、掌握率、段位、总词数、已掌握词数
+- 打开排行榜面板时从云端拉取 Top 20，确保当前用户在列表中
+
+### 数据库变更
+- 新增 Supabase 迁移：`supabase/migrations/20260304_create_leaderboard.sql`
+- Supabase 项目已 link 并初始化（`supabase/config.toml`）
+
+### 文件变更
+- `js/storage.js` — `syncToCloud()` 增加 leaderboard upsert（+16 行）
+- `js/app.js` — `renderBoard()` 重写为 async 云端查询（+45 行，-40 行）
+- `supabase/` — 新增项目配置 + 迁移文件
+
+---
+
 ## [0.3.0] - 2026-03-04 — 会员设置 + 昵称 + 密码修改
 
 ### 会员自助功能
