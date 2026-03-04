@@ -114,7 +114,16 @@ function renderHome() {
   html += '<span class="home-rank-link">' + t('View path \u2192', '\u67e5\u770b\u8def\u7ebf \u2192') + '</span>';
   html += '</div>';
 
+  /* Search bar */
+  html += '<div class="search-bar">';
+  html += '<input class="search-input" id="home-search" type="text" placeholder="' + t('Search groups or words...', '\u641c\u7d22\u8bcd\u7ec4\u6216\u5355\u8bcd...') + '" value="' + appSearch.replace(/"/g, '&quot;') + '" oninput="onHomeSearch(this.value)">';
+  if (appSearch) {
+    html += '<button class="search-clear" onclick="clearHomeSearch()">&times;</button>';
+  }
+  html += '</div>';
+
   /* Deck grid grouped by BOARDS → categories → levels */
+  var hasAnyResult = false;
   getVisibleBoards().forEach(function(board) {
     /* Compute board-level stats */
     var boardTotal = 0, boardMastered = 0;
@@ -129,50 +138,58 @@ function renderHome() {
     });
     var boardPct = boardTotal > 0 ? Math.round(boardMastered / boardTotal * 100) : 0;
 
-    /* Board section header */
-    html += '<div class="board-section" id="board-' + board.id + '">';
-    html += '<div class="board-header">';
-    html += '<span class="board-emoji">' + board.emoji + '</span>';
-    html += '<span class="board-name">' + boardName(board) + '</span>';
-    html += '<span class="board-stats">' + boardMastered + '/' + boardTotal + ' · ' + boardPct + '%</span>';
-    html += '<span class="board-code">' + board.code + '</span>';
-    html += '</div>';
-
+    /* Build board HTML in temp var, only append if has matching content */
+    var boardHtml = '';
     board.categories.forEach(function(cat) {
       var catLevels = [];
       LEVELS.forEach(function(lv, i) {
-        if (lv.category === cat.id) catLevels.push({ lv: lv, idx: i });
+        if (lv.category === cat.id && matchLevel(lv, appSearch)) catLevels.push({ lv: lv, idx: i });
       });
       if (catLevels.length === 0) return;
 
-      var collapsed = catCollapsed[cat.id] ? true : false;
-      html += '<div class="category-section' + (collapsed ? ' collapsed' : '') + '" id="cat-' + cat.id + '">';
-      html += '<div class="category-header" onclick="toggleCategory(\'' + cat.id + '\')">';
-      html += '<span class="category-emoji">' + cat.emoji + '</span>';
-      html += '<span class="category-name">' + catName(cat) + '</span>';
-      html += '<span class="category-count">' + catLevels.length + ' ' + t('groups', '\u7ec4') + '</span>';
-      html += '<span class="category-chevron">\u25bc</span>';
-      html += '</div>';
+      var collapsed = appSearch ? false : (catCollapsed[cat.id] ? true : false);
+      boardHtml += '<div class="category-section' + (collapsed ? ' collapsed' : '') + '" id="cat-' + cat.id + '">';
+      boardHtml += '<div class="category-header" onclick="toggleCategory(\'' + cat.id + '\')">';
+      boardHtml += '<span class="category-emoji">' + cat.emoji + '</span>';
+      boardHtml += '<span class="category-name">' + catName(cat) + '</span>';
+      boardHtml += '<span class="category-count">' + catLevels.length + ' ' + t('groups', '\u7ec4') + '</span>';
+      boardHtml += '<span class="category-chevron">\u25bc</span>';
+      boardHtml += '</div>';
 
-      html += '<div class="deck-grid category-body">';
+      boardHtml += '<div class="deck-grid category-body">';
       catLevels.forEach(function(cl) {
         var stats = getDeckStats(cl.idx);
-        html += '<div class="deck-card" onclick="openDeck(' + cl.idx + ')">';
-        html += '<div class="deck-card-head">';
-        html += '<div class="deck-card-emoji">' + cat.emoji + '</div>';
-        html += '<div><div class="deck-card-name">' + lvTitle(cl.lv) + '</div>';
-        html += '<div class="deck-card-count">' + (cl.lv.vocabulary.length / 2) + ' ' + t('words', '\u8bcd') + '</div></div>';
-        html += '</div>';
-        html += '<div class="deck-progress"><div class="deck-progress-fill" style="width:' + stats.pct + '%"></div></div>';
-        html += '<div class="deck-card-pct">' + stats.pct + '%</div>';
-        html += '</div>';
+        boardHtml += '<div class="deck-card" onclick="openDeck(' + cl.idx + ')">';
+        boardHtml += '<div class="deck-card-head">';
+        boardHtml += '<div class="deck-card-emoji">' + cat.emoji + '</div>';
+        boardHtml += '<div><div class="deck-card-name">' + lvTitle(cl.lv) + '</div>';
+        boardHtml += '<div class="deck-card-count">' + (cl.lv.vocabulary.length / 2) + ' ' + t('words', '\u8bcd') + '</div></div>';
+        boardHtml += '</div>';
+        boardHtml += '<div class="deck-progress"><div class="deck-progress-fill" style="width:' + stats.pct + '%"></div></div>';
+        boardHtml += '<div class="deck-card-pct">' + stats.pct + '%</div>';
+        boardHtml += '</div>';
       });
-      html += '</div>';
-      html += '</div>';
+      boardHtml += '</div>';
+      boardHtml += '</div>';
     });
 
-    html += '</div>'; /* close board-section */
+    if (boardHtml) {
+      hasAnyResult = true;
+      html += '<div class="board-section" id="board-' + board.id + '">';
+      html += '<div class="board-header">';
+      html += '<span class="board-emoji">' + board.emoji + '</span>';
+      html += '<span class="board-name">' + boardName(board) + '</span>';
+      html += '<span class="board-stats">' + boardMastered + '/' + boardTotal + ' · ' + boardPct + '%</span>';
+      html += '<span class="board-code">' + board.code + '</span>';
+      html += '</div>';
+      html += boardHtml;
+      html += '</div>'; /* close board-section */
+    }
   });
+
+  if (appSearch && !hasAnyResult) {
+    html += '<div class="text-center" style="color:var(--c-muted);padding:32px 0">' + t('No matching results', '\u65e0\u5339\u914d\u7ed3\u679c') + '</div>';
+  }
 
   E('panel-home').innerHTML = html;
   updateSidebar();
@@ -294,4 +311,21 @@ function renderPreview(idx) {
   html += '</div>';
 
   E('panel-preview').innerHTML = html;
+}
+
+/* ═══ HOME SEARCH ═══ */
+var searchTimer = null;
+function onHomeSearch(val) {
+  clearTimeout(searchTimer);
+  searchTimer = setTimeout(function() {
+    appSearch = val.toLowerCase().trim();
+    renderHome();
+    var el = E('home-search');
+    if (el) { el.focus(); el.selectionStart = el.selectionEnd = el.value.length; }
+  }, 200);
+}
+
+function clearHomeSearch() {
+  appSearch = '';
+  renderHome();
 }

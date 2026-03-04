@@ -59,8 +59,22 @@ function renderReviewDash() {
   /* Due word list */
   if (dueWords.length > 0) {
     html += '<div class="section-title">' + t('Words Due for Review', '\u5f85\u590d\u4e60\u8bcd\u6c47') + '</div>';
+
+    /* Search bar */
+    html += '<div class="search-bar">';
+    html += '<input class="search-input" id="review-search" type="text" placeholder="' + t('Filter due words...', '\u8fc7\u6ee4\u5f85\u590d\u4e60\u8bcd\u6c47...') + '" value="' + appSearch.replace(/"/g, '&quot;') + '" oninput="onReviewSearch(this.value)">';
+    if (appSearch) {
+      html += '<button class="search-clear" onclick="clearReviewSearch()">&times;</button>';
+    }
+    html += '</div>';
+
+    var filtered = dueWords.filter(function(w) { return matchWord(w, appSearch); });
+    if (appSearch) {
+      html += '<div class="search-count">' + t(filtered.length + ' of ' + dueWords.length + ' due words', filtered.length + ' / ' + dueWords.length + ' \u4e2a\u5f85\u590d\u4e60\u8bcd') + '</div>';
+    }
+
     html += '<div class="word-list">';
-    dueWords.slice(0, 30).forEach(function(w) {
+    filtered.slice(0, 30).forEach(function(w) {
       var lvColor = SRS_COLORS[w.lv] || SRS_COLORS[0];
       html += '<div class="word-row">';
       html += '<div class="word-en">' + w.word + '</div>';
@@ -71,9 +85,29 @@ function renderReviewDash() {
       html += '</div>';
     });
     html += '</div>';
+
+    if (appSearch && filtered.length === 0) {
+      html += '<div class="text-center" style="color:var(--c-muted);padding:16px 0">' + t('No matching words', '\u65e0\u5339\u914d\u8bcd\u6c47') + '</div>';
+    }
   }
 
   E('panel-review-dash').innerHTML = html;
+}
+
+/* ═══ REVIEW SEARCH ═══ */
+function onReviewSearch(val) {
+  clearTimeout(searchTimer);
+  searchTimer = setTimeout(function() {
+    appSearch = val.toLowerCase().trim();
+    renderReviewDash();
+    var el = E('review-search');
+    if (el) { el.focus(); el.selectionStart = el.selectionEnd = el.value.length; }
+  }, 200);
+}
+
+function clearReviewSearch() {
+  appSearch = '';
+  renderReviewDash();
 }
 
 /* ═══ EBBINGHAUS GUIDE MODAL ═══ */

@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.8.2] - 2026-03-04 — 首页搜索 + 复习过滤
+
+### 新增
+- **首页搜索框**：支持按词组标题（英/中）和词汇内容搜索，200ms 防抖
+- **搜索自动展开**：搜索时匹配的 category 自动展开，不匹配的 board/category/card 隐藏
+- **复习仪表盘搜索**：过滤待复习词汇列表，显示匹配数/总数
+- **搜索状态共享**：首页与复习面板共享 `appSearch` 状态，切换面板搜索词保留
+- **空结果提示**：搜索无匹配时显示"无匹配结果"
+- **清除搜索**：点击 × 按钮或清空输入恢复原始折叠状态
+
+### 文件变更
+- `js/config.js` — 新增 `appSearch` 全局变量 + `matchLevel()` + `matchWord()` 搜索函数
+- `js/mastery.js` — `renderHome()` 加搜索框 + catLevels 过滤 + `onHomeSearch()` / `clearHomeSearch()` 防抖函数
+- `js/review.js` — `renderReviewDash()` 加搜索框 + dueWords 过滤 + `onReviewSearch()` / `clearReviewSearch()`
+- `css/style.css` — 新增 `.search-bar` / `.search-input` / `.search-clear` / `.search-count` 样式
+
+---
+
 ## [0.8.1] - 2026-03-04 — 三项体验打磨
 
 ### 新增

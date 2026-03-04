@@ -50,6 +50,25 @@ var appSort = 'default';     /* 'default' | 'az' | 'random' | 'hard' */
 var appBP = 'desktop';       /* 'phone' | 'tablet' | 'desktop' */
 var currentLvl = 0;
 var userBoard = null;        /* selected board/year filter */
+var appSearch = '';           /* current search keyword (lowercase) */
+
+/* Search matching: level title/vocab against query */
+function matchLevel(lv, q) {
+  if (!q) return true;
+  if (lv.title.toLowerCase().indexOf(q) >= 0) return true;
+  if (lv.titleZh && lv.titleZh.indexOf(q) >= 0) return true;
+  for (var i = 0; i < lv.vocabulary.length; i++) {
+    if (lv.vocabulary[i].content.toLowerCase().indexOf(q) >= 0) return true;
+  }
+  return false;
+}
+
+/* Search matching: word/def against query */
+function matchWord(w, q) {
+  if (!q) return true;
+  return w.word.toLowerCase().indexOf(q) >= 0 ||
+         w.def.toLowerCase().indexOf(q) >= 0;
+}
 
 /* Board selection options (8 choices) */
 var BOARD_OPTIONS = [
