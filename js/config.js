@@ -100,7 +100,7 @@ var BOARD_OPTIONS = [
   { value: '25m-y8',  emoji: '8\ufe0f\u20e3',  name: 'HarrowHaikou Year 8',  nameZh: '\u54c8\u7f57\u6d77\u53e3 \u516b\u5e74\u7ea7' },
   { value: '25m-y9',  emoji: '9\ufe0f\u20e3',  name: 'HarrowHaikou Year 9',  nameZh: '\u54c8\u7f57\u6d77\u53e3 \u4e5d\u5e74\u7ea7' },
   { value: '25m-y10', emoji: '\ud83d\udd1f', name: 'HarrowHaikou Year 10',   nameZh: '\u54c8\u7f57\u6d77\u53e3 \u5341\u5e74\u7ea7' },
-  { value: '25m-y11', emoji: '1\ufe0f\u20e31\ufe0f\u20e3', name: 'HarrowHaikou Year 11', nameZh: '\u54c8\u7f57\u6d77\u53e3 \u5341\u4e00\u5e74\u7ea7' }
+  { value: '25m-y11', emoji: '\u24eb', name: 'HarrowHaikou Year 11', nameZh: '\u54c8\u7f57\u6d77\u53e3 \u5341\u4e00\u5e74\u7ea7' }
 ];
 
 /* Check if a level should be visible under current board filter */
@@ -198,7 +198,7 @@ var BOARDS = [
       { id: '25m-y8',  name: 'Year 8',  emoji: '8\ufe0f\u20e3',  nameZh: '\u516b\u5e74\u7ea7' },
       { id: '25m-y9',  name: 'Year 9',  emoji: '9\ufe0f\u20e3',  nameZh: '\u4e5d\u5e74\u7ea7' },
       { id: '25m-y10', name: 'Year 10', emoji: '\ud83d\udd1f', nameZh: '\u5341\u5e74\u7ea7' },
-      { id: '25m-y11', name: 'Year 11', emoji: '1\ufe0f\u20e31\ufe0f\u20e3', nameZh: '\u5341\u4e00\u5e74\u7ea7' }
+      { id: '25m-y11', name: 'Year 11', emoji: '\u24eb', nameZh: '\u5341\u4e00\u5e74\u7ea7' }
     ]
   }
 ];
