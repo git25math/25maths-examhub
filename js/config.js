@@ -167,6 +167,16 @@ var SRS_COLORS = ['#9CA3AF', '#FBBF24', '#F97316', '#22C55E', '#3B82F6', '#8B5CF
 /* Exam boards configuration */
 var BOARDS = [
   {
+    id: '25m', name: 'Harrow Haikou Upper School Mathematics Curriculum', nameZh: '\u54c8\u7f57\u6d77\u53e3\u9ad8\u5e74\u7ea7\u6570\u5b66\u8bfe\u7a0b', code: 'Y7-11', emoji: '\ud83c\udfeb',
+    categories: [
+      { id: '25m-y7',  name: 'Year 7',  emoji: '\u24fb',  nameZh: '\u4e03\u5e74\u7ea7' },
+      { id: '25m-y8',  name: 'Year 8',  emoji: '\u24fc',  nameZh: '\u516b\u5e74\u7ea7' },
+      { id: '25m-y9',  name: 'Year 9',  emoji: '\u24fd',  nameZh: '\u4e5d\u5e74\u7ea7' },
+      { id: '25m-y10', name: 'Year 10', emoji: '\u24fe', nameZh: '\u5341\u5e74\u7ea7' },
+      { id: '25m-y11', name: 'Year 11', emoji: '\u24eb', nameZh: '\u5341\u4e00\u5e74\u7ea7' }
+    ]
+  },
+  {
     id: 'cie', name: 'CIE IGCSE Maths', nameZh: '\u5251\u6865IGCSE\u6570\u5b66', code: '0580', emoji: '\ud83d\udcda',
     categories: [
       { id: 'number', name: 'Number', emoji: '\ud83d\udd22', nameZh: '\u6570\u8bba' },
@@ -189,16 +199,6 @@ var BOARDS = [
       { id: 'edx-mensuration', name: 'Mensuration', emoji: '\ud83d\udccf', nameZh: '\u5ea6\u91cf' },
       { id: 'edx-vectors', name: 'Vectors & Transformations', emoji: '\u27a1\ufe0f', nameZh: '\u5411\u91cf\u4e0e\u53d8\u6362' },
       { id: 'edx-statistics', name: 'Statistics & Probability', emoji: '\ud83d\udcc8', nameZh: '\u7edf\u8ba1\u4e0e\u6982\u7387' }
-    ]
-  },
-  {
-    id: '25m', name: 'Harrow Haikou Upper School Mathematics Curriculum', nameZh: '\u54c8\u7f57\u6d77\u53e3\u9ad8\u5e74\u7ea7\u6570\u5b66\u8bfe\u7a0b', code: 'Y7-11', emoji: '\ud83c\udfeb',
-    categories: [
-      { id: '25m-y7',  name: 'Year 7',  emoji: '\u24fb',  nameZh: '\u4e03\u5e74\u7ea7' },
-      { id: '25m-y8',  name: 'Year 8',  emoji: '\u24fc',  nameZh: '\u516b\u5e74\u7ea7' },
-      { id: '25m-y9',  name: 'Year 9',  emoji: '\u24fd',  nameZh: '\u4e5d\u5e74\u7ea7' },
-      { id: '25m-y10', name: 'Year 10', emoji: '\u24fe', nameZh: '\u5341\u5e74\u7ea7' },
-      { id: '25m-y11', name: 'Year 11', emoji: '\u24eb', nameZh: '\u5341\u4e00\u5e74\u7ea7' }
     ]
   }
 ];
@@ -312,7 +312,7 @@ function isSuperAdmin() {
 }
 
 /* App version */
-var APP_VERSION = 'v1.1.4';
+var APP_VERSION = 'v1.1.5';
 
 /* DOM helper */
 var E = function(id) { return document.getElementById(id); };
