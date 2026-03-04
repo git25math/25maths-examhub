@@ -26,7 +26,7 @@ function renderReviewDash() {
 
   var html = '';
 
-  html += '<div class="section-title" style="display:flex;align-items:center;gap:8px">\ud83e\udde0 \u827e\u5bbe\u6d69\u65af\u590d\u4e60 <button class="btn-help" onclick="showEbbinghausGuide()" title="\u4e86\u89e3\u827e\u5bbe\u6d69\u65af\u8bb0\u5fc6\u6cd5">\u2753</button></div>';
+  html += '<div class="section-title" style="display:flex;align-items:center;gap:8px">\ud83e\udde0 ' + t('Ebbinghaus Review', '\u827e\u5bbe\u6d69\u65af\u590d\u4e60') + ' <button class="btn-help" onclick="showEbbinghausGuide()" title="' + t('About Ebbinghaus method', '\u4e86\u89e3\u827e\u5bbe\u6d69\u65af\u8bb0\u5fc6\u6cd5') + '">\u2753</button></div>';
 
   /* SRS Bar Chart */
   html += '<div class="srs-chart">';
@@ -42,23 +42,23 @@ function renderReviewDash() {
 
   /* Stats summary */
   html += '<div class="home-stats mb-24">';
-  html += '<div class="stat-card"><div class="stat-val">' + all.length + '</div><div class="stat-label">\u603b\u8bcd\u6c47</div></div>';
-  html += '<div class="stat-card"><div class="stat-val" style="color:var(--c-warning)">' + dueWords.length + '</div><div class="stat-label">\u5f85\u590d\u4e60</div></div>';
-  html += '<div class="stat-card"><div class="stat-val" style="color:var(--c-success)">' + counts[7] + '</div><div class="stat-label">30d \u638c\u63e1</div></div>';
+  html += '<div class="stat-card"><div class="stat-val">' + all.length + '</div><div class="stat-label">' + t('Total', '\u603b\u8bcd\u6c47') + '</div></div>';
+  html += '<div class="stat-card"><div class="stat-val" style="color:var(--c-warning)">' + dueWords.length + '</div><div class="stat-label">' + t('Due', '\u5f85\u590d\u4e60') + '</div></div>';
+  html += '<div class="stat-card"><div class="stat-val" style="color:var(--c-success)">' + counts[7] + '</div><div class="stat-label">' + t('30d Mastered', '30d \u638c\u63e1') + '</div></div>';
   html += '</div>';
 
   /* Start review button */
   if (dueWords.length > 0) {
     html += '<div class="text-center mb-24">';
-    html += '<button class="btn btn-primary" onclick="startReviewSession()">\ud83e\udde0 \u5f00\u59cb\u590d\u4e60 (' + dueWords.length + ' \u8bcd)</button>';
+    html += '<button class="btn btn-primary" onclick="startReviewSession()">\ud83e\udde0 ' + t('Start Review', '\u5f00\u59cb\u590d\u4e60') + ' (' + dueWords.length + ' ' + t('words', '\u8bcd') + ')</button>';
     html += '</div>';
   } else {
-    html += '<div class="text-center mb-24" style="color:var(--c-muted)">\u6682\u65e0\u5f85\u590d\u4e60\u8bcd\u6c47 \ud83c\udf89</div>';
+    html += '<div class="text-center mb-24" style="color:var(--c-muted)">' + t('No words due for review', '\u6682\u65e0\u5f85\u590d\u4e60\u8bcd\u6c47') + ' \ud83c\udf89</div>';
   }
 
   /* Due word list */
   if (dueWords.length > 0) {
-    html += '<div class="section-title">\u5f85\u590d\u4e60\u8bcd\u6c47</div>';
+    html += '<div class="section-title">' + t('Words Due for Review', '\u5f85\u590d\u4e60\u8bcd\u6c47') + '</div>';
     html += '<div class="word-list">';
     dueWords.slice(0, 30).forEach(function(w) {
       var lvColor = SRS_COLORS[w.lv] || SRS_COLORS[0];
@@ -78,18 +78,21 @@ function renderReviewDash() {
 
 /* ═══ EBBINGHAUS GUIDE MODAL ═══ */
 function showEbbinghausGuide() {
-  var html = '<div class="section-title">\ud83e\udde0 \u827e\u5bbe\u6d69\u65af\u8bb0\u5fc6\u6cd5</div>';
+  var html = '<div class="section-title">\ud83e\udde0 ' + t('Ebbinghaus Memory Method', '\u827e\u5bbe\u6d69\u65af\u8bb0\u5fc6\u6cd5') + '</div>';
 
   /* Principle */
   html += '<div class="guide-section">';
   html += '<p style="font-size:13px;color:var(--c-text2);line-height:1.6;text-align:left;margin-bottom:12px">';
-  html += '1885 \u5e74\u827e\u5bbe\u6d69\u65af\u53d1\u73b0\u8bb0\u5fc6\u8870\u51cf\u89c4\u5f8b\uff1a\u4e0d\u590d\u4e60 \u2192 24h \u540e\u4ec5\u5269 33%\u3002\u901a\u8fc7\u5728\u9057\u5fd8\u4e34\u754c\u70b9\u8fdb\u884c\u590d\u4e60\uff0c\u53ef\u5c06\u77ed\u671f\u8bb0\u5fc6\u8f6c\u4e3a\u957f\u671f\u8bb0\u5fc6\u3002';
+  html += t('In 1885, Ebbinghaus discovered the forgetting curve: without review, only 33% is retained after 24h. By reviewing at the critical forgetting point, short-term memory converts to long-term memory.', '1885 \u5e74\u827e\u5bbe\u6d69\u65af\u53d1\u73b0\u8bb0\u5fc6\u8870\u51cf\u89c4\u5f8b\uff1a\u4e0d\u590d\u4e60 \u2192 24h \u540e\u4ec5\u5269 33%\u3002\u901a\u8fc7\u5728\u9057\u5fd8\u4e34\u754c\u70b9\u8fdb\u884c\u590d\u4e60\uff0c\u53ef\u5c06\u77ed\u671f\u8bb0\u5fc6\u8f6c\u4e3a\u957f\u671f\u8bb0\u5fc6\u3002');
   html += '</p></div>';
 
   /* SRS levels table */
-  var srsDescs = ['\u65b0\u8bcd\uff0c\u672a\u5f00\u59cb\u5b66\u4e60', '20 \u5206\u949f\u540e\u590d\u4e60', '1 \u5c0f\u65f6\u540e\u590d\u4e60', '9 \u5c0f\u65f6\u540e\u590d\u4e60', '\u6b21\u65e5\u590d\u4e60', '2 \u5929\u540e\u590d\u4e60', '1 \u5468\u540e\u590d\u4e60', '30 \u5929\u540e \u2014 \u5df2\u638c\u63e1'];
+  var srsDescs = t(
+    ['New word', 'Review after 20 min', 'Review after 1 hour', 'Review after 9 hours', 'Review next day', 'Review after 2 days', 'Review after 1 week', '30 days \u2014 Mastered'],
+    ['\u65b0\u8bcd\uff0c\u672a\u5f00\u59cb\u5b66\u4e60', '20 \u5206\u949f\u540e\u590d\u4e60', '1 \u5c0f\u65f6\u540e\u590d\u4e60', '9 \u5c0f\u65f6\u540e\u590d\u4e60', '\u6b21\u65e5\u590d\u4e60', '2 \u5929\u540e\u590d\u4e60', '1 \u5468\u540e\u590d\u4e60', '30 \u5929\u540e \u2014 \u5df2\u638c\u63e1']
+  );
   html += '<div class="guide-section">';
-  html += '<div class="guide-tip-title">8 \u7ea7\u590d\u4e60\u95f4\u9694</div>';
+  html += '<div class="guide-tip-title">' + t('8-Level Review Intervals', '8 \u7ea7\u590d\u4e60\u95f4\u9694') + '</div>';
   SRS_LABELS.forEach(function(label, i) {
     html += '<div class="srs-row">';
     html += '<span class="srs-row-dot" style="background:' + SRS_COLORS[i] + '"></span>';
@@ -101,18 +104,18 @@ function showEbbinghausGuide() {
 
   /* Rating mechanics */
   html += '<div class="guide-section">';
-  html += '<div class="guide-tip-title">\u8bc4\u5206\u673a\u5236</div>';
-  html += '<div class="srs-row"><span class="srs-row-dot" style="background:var(--c-success)"></span><span class="srs-row-label" style="color:var(--c-success)">\u641e\u5b9a\u4e86</span><span class="srs-row-desc">\u5347 1 \u7ea7\uff0c\u590d\u4e60\u95f4\u9694 \u00d72.5</span></div>';
-  html += '<div class="srs-row"><span class="srs-row-dot" style="background:var(--c-warning)"></span><span class="srs-row-label" style="color:var(--c-warning)">\u5feb\u4e86</span><span class="srs-row-desc">\u5347 1 \u7ea7\uff0c\u590d\u4e60\u95f4\u9694 \u00d71.2</span></div>';
-  html += '<div class="srs-row"><span class="srs-row-dot" style="background:var(--c-danger)"></span><span class="srs-row-label" style="color:var(--c-danger)">\u8fd8\u4e0d\u719f</span><span class="srs-row-desc">\u964d 2 \u7ea7\uff0c3.6h \u540e\u518d\u590d\u4e60</span></div>';
+  html += '<div class="guide-tip-title">' + t('Rating System', '\u8bc4\u5206\u673a\u5236') + '</div>';
+  html += '<div class="srs-row"><span class="srs-row-dot" style="background:var(--c-success)"></span><span class="srs-row-label" style="color:var(--c-success)">' + t('Got it', '\u641e\u5b9a\u4e86') + '</span><span class="srs-row-desc">' + t('+1 level, interval \u00d72.5', '\u5347 1 \u7ea7\uff0c\u590d\u4e60\u95f4\u9694 \u00d72.5') + '</span></div>';
+  html += '<div class="srs-row"><span class="srs-row-dot" style="background:var(--c-warning)"></span><span class="srs-row-label" style="color:var(--c-warning)">' + t('Almost', '\u5feb\u4e86') + '</span><span class="srs-row-desc">' + t('+1 level, interval \u00d71.2', '\u5347 1 \u7ea7\uff0c\u590d\u4e60\u95f4\u9694 \u00d71.2') + '</span></div>';
+  html += '<div class="srs-row"><span class="srs-row-dot" style="background:var(--c-danger)"></span><span class="srs-row-label" style="color:var(--c-danger)">' + t('Hard', '\u8fd8\u4e0d\u719f') + '</span><span class="srs-row-desc">' + t('-2 levels, review in 3.6h', '\u964d 2 \u7ea7\uff0c3.6h \u540e\u518d\u590d\u4e60') + '</span></div>';
   html += '</div>';
 
   /* Usage tip */
   html += '<div class="guide-tip">';
-  html += '<div class="guide-tip-item">\ud83d\udca1 \u6bcf\u5929\u82b1 5 \u5206\u949f\u5b8c\u6210\u5f85\u590d\u4e60\u8bcd\u6c47\uff0c\u575a\u6301 30 \u5929\u6548\u679c\u663e\u8457</div>';
+  html += '<div class="guide-tip-item">\ud83d\udca1 ' + t('Spend 5 minutes daily on due words \u2014 30 days of consistency shows remarkable results', '\u6bcf\u5929\u82b1 5 \u5206\u949f\u5b8c\u6210\u5f85\u590d\u4e60\u8bcd\u6c47\uff0c\u575a\u6301 30 \u5929\u6548\u679c\u663e\u8457') + '</div>';
   html += '</div>';
 
-  html += '<button class="btn btn-ghost btn-block" onclick="hideModal()" style="margin-top:16px">\u5173\u95ed</button>';
+  html += '<button class="btn btn-ghost btn-block" onclick="hideModal()" style="margin-top:16px">' + t('Close', '\u5173\u95ed') + '</button>';
   showModal(html);
 }
 
@@ -131,7 +134,7 @@ function startReviewSession() {
   });
 
   if (due.length === 0) {
-    showToast('\u6ca1\u6709\u5f85\u590d\u4e60\u7684\u8bcd\u6c47');
+    showToast(t('No words due for review', '\u6ca1\u6709\u5f85\u590d\u4e60\u7684\u8bcd\u6c47'));
     return;
   }
 
@@ -205,10 +208,10 @@ function renderReviewCard() {
   html += '<div class="fc-face fc-front">';
   html += '<div class="fc-front-label">ENGLISH</div>';
   html += '<div class="fc-front-word">' + w.word + '</div>';
-  html += '<div class="fc-front-hint">\u70b9\u51fb\u7ffb\u724c\u67e5\u770b\u91ca\u4e49</div>';
+  html += '<div class="fc-front-hint">' + t('Tap to flip', '\u70b9\u51fb\u7ffb\u724c\u67e5\u770b\u91ca\u4e49') + '</div>';
   html += '</div>';
   html += '<div class="fc-face fc-back">';
-  html += '<div class="fc-back-label">\u4e2d\u6587</div>';
+  html += '<div class="fc-back-label">' + t('CHINESE', '\u4e2d\u6587') + '</div>';
   html += '<div class="fc-back-def">' + w.def + '</div>';
   html += '<div class="fc-back-word">' + w.word + '</div>';
   html += '</div>';
@@ -216,9 +219,9 @@ function renderReviewCard() {
 
   /* Rating */
   html += '<div class="fc-actions hidden" id="rv-fc-actions">';
-  html += '<button class="rate-btn rate-hard" onclick="rateReview(\'hard\')">\ud83d\ude35 \u8fd8\u4e0d\u719f</button>';
-  html += '<button class="rate-btn rate-ok" onclick="rateReview(\'ok\')">\ud83e\udd14 \u5feb\u4e86</button>';
-  html += '<button class="rate-btn rate-easy" onclick="rateReview(\'easy\')">\u2705 \u641e\u5b9a\u4e86</button>';
+  html += '<button class="rate-btn rate-hard" onclick="rateReview(\'hard\')">\ud83d\ude35 ' + t('Hard', '\u8fd8\u4e0d\u719f') + '</button>';
+  html += '<button class="rate-btn rate-ok" onclick="rateReview(\'ok\')">\ud83e\udd14 ' + t('Almost', '\u5feb\u4e86') + '</button>';
+  html += '<button class="rate-btn rate-easy" onclick="rateReview(\'easy\')">\u2705 ' + t('Got it', '\u641e\u5b9a\u4e86') + '</button>';
   html += '</div>';
 
   E('panel-review').innerHTML = html;
@@ -264,19 +267,19 @@ function finishReview() {
 
   var html = '<div class="text-center">';
   html += '<div class="result-emoji">\ud83e\udde0</div>';
-  html += '<div class="result-title">\u590d\u4e60\u5b8c\u6210\uff01</div>';
-  html += '<div class="result-sub">' + (h === 0 ? '\u592a\u68d2\u4e86\uff01\u8fdb\u6b65\u660e\u663e' : '\u7ee7\u7eed\u52a0\u6cb9\uff0c\u660e\u5929\u518d\u6765\u590d\u4e60') + '</div>';
+  html += '<div class="result-title">' + t('Review Complete!', '\u590d\u4e60\u5b8c\u6210\uff01') + '</div>';
+  html += '<div class="result-sub">' + (h === 0 ? t('Great progress!', '\u592a\u68d2\u4e86\uff01\u8fdb\u6b65\u660e\u663e') : t('Keep going, review again tomorrow', '\u7ee7\u7eed\u52a0\u6cb9\uff0c\u660e\u5929\u518d\u6765\u590d\u4e60')) + '</div>';
   html += '</div>';
 
   html += '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:20px 0">';
-  html += '<div style="padding:12px;border-radius:var(--r);background:var(--c-danger-bg);text-align:center"><div style="font-size:22px;font-weight:800">' + h + '</div><div style="font-size:10px;font-weight:600">\ud83d\ude35 \u8fd8\u4e0d\u719f</div></div>';
-  html += '<div style="padding:12px;border-radius:var(--r);background:var(--c-warning-bg);text-align:center"><div style="font-size:22px;font-weight:800">' + o + '</div><div style="font-size:10px;font-weight:600">\ud83e\udd14 \u5feb\u4e86</div></div>';
-  html += '<div style="padding:12px;border-radius:var(--r);background:var(--c-success-bg);text-align:center"><div style="font-size:22px;font-weight:800">' + e + '</div><div style="font-size:10px;font-weight:600">\u2705 \u641e\u5b9a</div></div>';
+  html += '<div style="padding:12px;border-radius:var(--r);background:var(--c-danger-bg);text-align:center"><div style="font-size:22px;font-weight:800">' + h + '</div><div style="font-size:10px;font-weight:600">\ud83d\ude35 ' + t('Hard', '\u8fd8\u4e0d\u719f') + '</div></div>';
+  html += '<div style="padding:12px;border-radius:var(--r);background:var(--c-warning-bg);text-align:center"><div style="font-size:22px;font-weight:800">' + o + '</div><div style="font-size:10px;font-weight:600">\ud83e\udd14 ' + t('Almost', '\u5feb\u4e86') + '</div></div>';
+  html += '<div style="padding:12px;border-radius:var(--r);background:var(--c-success-bg);text-align:center"><div style="font-size:22px;font-weight:800">' + e + '</div><div style="font-size:10px;font-weight:600">\u2705 ' + t('Got it', '\u641e\u5b9a') + '</div></div>';
   html += '</div>';
 
   html += '<div class="result-actions">';
-  html += '<button class="btn btn-primary" onclick="navTo(\'review-dash\')">\u2190 \u590d\u4e60\u4eea\u8868\u76d8</button>';
-  html += '<button class="btn btn-ghost" onclick="navTo(\'home\')">\u2190 \u8fd4\u56de\u9996\u9875</button>';
+  html += '<button class="btn btn-primary" onclick="navTo(\'review-dash\')">\u2190 ' + t('Review Dashboard', '\u590d\u4e60\u4eea\u8868\u76d8') + '</button>';
+  html += '<button class="btn btn-ghost" onclick="navTo(\'home\')">\u2190 ' + t('Home', '\u8fd4\u56de\u9996\u9875') + '</button>';
   html += '</div>';
 
   E('panel-review').innerHTML = html;

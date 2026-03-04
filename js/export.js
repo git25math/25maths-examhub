@@ -8,25 +8,25 @@ var importParsed = null;
 function renderImport() {
   var html = '';
 
-  html += '<div class="section-title">\ud83d\udce5 \u5bfc\u5165 / \u5bfc\u51fa</div>';
+  html += '<div class="section-title">\ud83d\udce5 ' + t('Import / Export', '\u5bfc\u5165 / \u5bfc\u51fa') + '</div>';
 
   /* Import section */
   html += '<div class="import-section">';
-  html += '<div style="font-size:14px;font-weight:700;margin-bottom:10px">\u5bfc\u5165\u8bcd\u6c47</div>';
+  html += '<div style="font-size:14px;font-weight:700;margin-bottom:10px">' + t('Import Vocabulary', '\u5bfc\u5165\u8bcd\u6c47') + '</div>';
 
   /* File upload */
   html += '<div class="import-drop" id="import-drop" onclick="E(\'import-file\').click()">';
   html += '<div class="import-drop-icon">\ud83d\udcc1</div>';
-  html += '<div class="import-drop-text">\u70b9\u51fb\u6216\u62d6\u653e\u6587\u4ef6 (CSV, JSON, TXT)</div>';
+  html += '<div class="import-drop-text">' + t('Click or drop file (CSV, JSON, TXT)', '\u70b9\u51fb\u6216\u62d6\u653e\u6587\u4ef6 (CSV, JSON, TXT)') + '</div>';
   html += '</div>';
   html += '<input type="file" id="import-file" accept=".csv,.json,.txt,.md,.tsv" style="display:none">';
 
   /* Text paste */
-  html += '<div style="font-size:12px;font-weight:600;color:var(--c-text2);margin-bottom:6px">\u6216\u8005\u7c98\u8d34\u6587\u672c:</div>';
+  html += '<div style="font-size:12px;font-weight:600;color:var(--c-text2);margin-bottom:6px">' + t('Or paste text:', '\u6216\u8005\u7c98\u8d34\u6587\u672c:') + '</div>';
   html += '<textarea class="import-textarea" id="import-text" placeholder="English, \u4e2d\u6587\nVariable, \u53d8\u91cf\nConstant, \u5e38\u91cf"></textarea>';
 
   html += '<div style="margin-top:10px">';
-  html += '<button class="btn btn-primary btn-sm" onclick="parseImport()">\u89e3\u6790</button>';
+  html += '<button class="btn btn-primary btn-sm" onclick="parseImport()">' + t('Parse', '\u89e3\u6790') + '</button>';
   html += '</div>';
 
   /* Preview area */
@@ -35,11 +35,11 @@ function renderImport() {
 
   /* Export section */
   html += '<hr style="border:none;border-top:1px solid var(--c-border-light);margin:24px 0">';
-  html += '<div style="font-size:14px;font-weight:700;margin-bottom:12px">\u5bfc\u51fa</div>';
+  html += '<div style="font-size:14px;font-weight:700;margin-bottom:12px">' + t('Export', '\u5bfc\u51fa') + '</div>';
   html += '<div class="export-btns">';
-  html += '<button class="btn btn-secondary btn-sm" onclick="exportUnfamiliar()">\ud83d\udcc4 \u4e0d\u719f\u5355\u8bcd CSV</button>';
-  html += '<button class="btn btn-secondary btn-sm" onclick="exportProgress()">\ud83d\udcca \u5b66\u4e60\u8bb0\u5f55 JSON</button>';
-  html += '<button class="btn btn-secondary btn-sm" onclick="exportMarkdown()">\ud83d\udcdd Markdown \u8868\u683c</button>';
+  html += '<button class="btn btn-secondary btn-sm" onclick="exportUnfamiliar()">\ud83d\udcc4 ' + t('Unfamiliar CSV', '\u4e0d\u719f\u5355\u8bcd CSV') + '</button>';
+  html += '<button class="btn btn-secondary btn-sm" onclick="exportProgress()">\ud83d\udcca ' + t('Progress JSON', '\u5b66\u4e60\u8bb0\u5f55 JSON') + '</button>';
+  html += '<button class="btn btn-secondary btn-sm" onclick="exportMarkdown()">\ud83d\udcdd Markdown ' + t('Table', '\u8868\u683c') + '</button>';
   html += '</div>';
 
   E('panel-import').innerHTML = html;
@@ -85,7 +85,7 @@ function renderImport() {
 /* ═══ PARSE IMPORT ═══ */
 function parseImport() {
   var text = E('import-text').value.trim();
-  if (!text) { showToast('\u8bf7\u8f93\u5165\u6216\u7c98\u8d34\u5185\u5bb9'); return; }
+  if (!text) { showToast(t('Please enter or paste content', '\u8bf7\u8f93\u5165\u6216\u7c98\u8d34\u5185\u5bb9')); return; }
 
   var pairs = [];
   var format = detectFormat(text);
@@ -101,12 +101,12 @@ function parseImport() {
   }
 
   if (pairs.length === 0) {
-    showToast('\u672a\u89e3\u6790\u5230\u8bcd\u6c47\uff0c\u8bf7\u68c0\u67e5\u683c\u5f0f');
+    showToast(t('No vocabulary found, check format', '\u672a\u89e3\u6790\u5230\u8bcd\u6c47\uff0c\u8bf7\u68c0\u67e5\u683c\u5f0f'));
     return;
   }
 
   importParsed = pairs;
-  showToast('\u89e3\u6790\u5230 ' + pairs.length + ' \u4e2a\u8bcd\u6c47 (' + format + ')');
+  showToast(t('Parsed ' + pairs.length + ' words (' + format + ')', '\u89e3\u6790\u5230 ' + pairs.length + ' \u4e2a\u8bcd\u6c47 (' + format + ')'));
 
   /* Show preview */
   var html = '<div class="import-preview">';
@@ -117,8 +117,8 @@ function parseImport() {
   html += '</tbody></table></div>';
 
   html += '<div style="margin-top:12px;display:flex;gap:8px;align-items:center">';
-  html += '<input type="text" id="import-name" class="auth-input" placeholder="\u5361\u7ec4\u540d\u79f0 (\u4f8b: \u81ea\u5b9a\u4e49\u8bcd\u6c47)" style="margin:0;flex:1">';
-  html += '<button class="btn btn-success btn-sm" onclick="confirmImport()">\u786e\u8ba4\u5bfc\u5165</button>';
+  html += '<input type="text" id="import-name" class="auth-input" placeholder="' + t('Deck name (e.g. Custom Vocab)', '\u5361\u7ec4\u540d\u79f0 (\u4f8b: \u81ea\u5b9a\u4e49\u8bcd\u6c47)') + '" style="margin:0;flex:1">';
+  html += '<button class="btn btn-success btn-sm" onclick="confirmImport()">' + t('Confirm Import', '\u786e\u8ba4\u5bfc\u5165') + '</button>';
   html += '</div>';
 
   E('import-preview-area').innerHTML = html;
@@ -213,7 +213,7 @@ function parseFreeText(text) {
 function confirmImport() {
   if (!importParsed || importParsed.length === 0) return;
 
-  var name = (E('import-name') ? E('import-name').value.trim() : '') || '\u81ea\u5b9a\u4e49\u8bcd\u6c47';
+  var name = (E('import-name') ? E('import-name').value.trim() : '') || t('Custom Vocab', '\u81ea\u5b9a\u4e49\u8bcd\u6c47');
 
   /* Build vocabulary in LEVELS format */
   var vocab = [];
@@ -237,7 +237,7 @@ function confirmImport() {
   E('import-preview-area').innerHTML = '';
   E('import-text').value = '';
 
-  showToast('\u5bfc\u5165\u6210\u529f\uff01\u5df2\u6dfb\u52a0 "' + name + '"');
+  showToast(t('Imported! Added "' + name + '"', '\u5bfc\u5165\u6210\u529f\uff01\u5df2\u6dfb\u52a0 "' + name + '"'));
   updateSidebar();
   renderImport();
 }
@@ -248,7 +248,7 @@ function exportUnfamiliar() {
   var unfamiliar = all.filter(function(w) { return w.status !== 'mastered'; });
 
   if (unfamiliar.length === 0) {
-    showToast('\u6ca1\u6709\u4e0d\u719f\u7684\u5355\u8bcd\uff01\u5168\u90e8\u5df2\u638c\u63e1');
+    showToast(t('No unfamiliar words! All mastered', '\u6ca1\u6709\u4e0d\u719f\u7684\u5355\u8bcd\uff01\u5168\u90e8\u5df2\u638c\u63e1'));
     return;
   }
 

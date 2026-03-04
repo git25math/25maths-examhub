@@ -18,11 +18,11 @@ var SK = 'wmatch_v3';
 
 /* Rank thresholds (mastery percentage -> rank) */
 var RANKS = [
-  { min: 0,  emoji: '\ud83e\udd49', name: '\u9752\u94dc\u5b66\u5458', color: '#CD7F32' },
-  { min: 15, emoji: '\ud83e\udd48', name: '\u767d\u94f6\u8fbe\u4eba', color: '#C0C0C0' },
-  { min: 40, emoji: '\ud83e\udd47', name: '\u9ec4\u91d1\u5b66\u8005', color: '#FFD700' },
-  { min: 65, emoji: '\ud83d\udc8e', name: '\u94bb\u77f3\u5927\u5e08', color: '#B9F2FF' },
-  { min: 90, emoji: '\ud83d\udc51', name: '\u5355\u8bcd\u738b\u8005', color: '#FF6B6B' }
+  { min: 0,  emoji: '\ud83e\udd49', name: '\u9752\u94dc\u5b66\u5458', nameEn: 'Bronze Learner', color: '#CD7F32' },
+  { min: 15, emoji: '\ud83e\udd48', name: '\u767d\u94f6\u8fbe\u4eba', nameEn: 'Silver Expert', color: '#C0C0C0' },
+  { min: 40, emoji: '\ud83e\udd47', name: '\u9ec4\u91d1\u5b66\u8005', nameEn: 'Gold Scholar', color: '#FFD700' },
+  { min: 65, emoji: '\ud83d\udc8e', name: '\u94bb\u77f3\u5927\u5e08', nameEn: 'Diamond Master', color: '#B9F2FF' },
+  { min: 90, emoji: '\ud83d\udc51', name: '\u5355\u8bcd\u738b\u8005', nameEn: 'Word King', color: '#FF6B6B' }
 ];
 
 /* Theme tokens */
@@ -79,6 +79,23 @@ function getCategoryInfo(catId) {
     if (CATEGORIES[i].id === catId) return CATEGORIES[i];
   }
   return { id: catId, name: catId, emoji: '\ud83d\udcdd', nameZh: catId };
+}
+
+/* ═══ i18n HELPERS ═══ */
+/* Returns en or zh text based on current appLang */
+function t(en, zh) {
+  return appLang === 'en' ? en : zh;
+}
+
+/* Returns rank display name */
+function rankName(r) {
+  return appLang === 'en' ? r.nameEn : r.name;
+}
+
+/* Returns category display name */
+function catName(cat) {
+  if (appLang === 'en') return cat.name;
+  return cat.name + ' ' + cat.nameZh;
 }
 
 /* DOM helper */

@@ -47,7 +47,7 @@ function renderQuizCard() {
   /* Question */
   html += '<div class="quiz-question">';
   html += '<div class="quiz-word">' + p.word + '</div>';
-  html += '<div class="quiz-hint">\u9009\u62e9\u6b63\u786e\u7684\u4e2d\u6587\u91ca\u4e49</div>';
+  html += '<div class="quiz-hint">' + t('Choose the correct definition', '\u9009\u62e9\u6b63\u786e\u7684\u4e2d\u6587\u91ca\u4e49') + '</div>';
   html += '</div>';
 
   /* Options */

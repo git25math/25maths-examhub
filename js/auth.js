@@ -191,26 +191,26 @@ async function recoverSessionFromUrl() {
 /* ═══ SETTINGS MODAL ═══ */
 function showSettings() {
   if (!currentUser || currentUser.id === 'local') {
-    showToast('请先登录');
+    showToast(t('Please login first', '\u8bf7\u5148\u767b\u5f55'));
     return;
   }
   var nick = currentUser.nickname || '';
   var emailPrefix = currentUser.email.split('@')[0];
   var html = '<div class="settings-section">' +
-    '<div class="section-title">⚙ 账号设置</div>' +
-    '<label class="settings-label">昵称</label>' +
+    '<div class="section-title">' + t('\u2699 Account Settings', '\u2699 \u8d26\u53f7\u8bbe\u7f6e') + '</div>' +
+    '<label class="settings-label">' + t('Nickname', '\u6635\u79f0') + '</label>' +
     '<input class="auth-input" id="settings-nick" type="text" value="' + nick.replace(/"/g, '&quot;') + '" placeholder="' + emailPrefix + '" maxlength="20">' +
     '</div>' +
     '<div class="settings-divider"></div>' +
     '<div class="settings-section">' +
-    '<label class="settings-label">修改密码</label>' +
-    '<input class="auth-input" id="settings-pw1" type="password" placeholder="新密码 (至少6位，留空不改)">' +
-    '<input class="auth-input" id="settings-pw2" type="password" placeholder="确认新密码">' +
+    '<label class="settings-label">' + t('Change Password', '\u4fee\u6539\u5bc6\u7801') + '</label>' +
+    '<input class="auth-input" id="settings-pw1" type="password" placeholder="' + t('New password (min 6 chars, leave blank to skip)', '\u65b0\u5bc6\u7801 (\u81f3\u5c116\u4f4d\uff0c\u7559\u7a7a\u4e0d\u6539)') + '">' +
+    '<input class="auth-input" id="settings-pw2" type="password" placeholder="' + t('Confirm new password', '\u786e\u8ba4\u65b0\u5bc6\u7801') + '">' +
     '</div>' +
     '<div class="settings-msg" id="settings-msg"></div>' +
     '<div style="display:flex;gap:8px;margin-top:16px">' +
-    '<button class="btn btn-primary" style="flex:1" onclick="saveSettings()">保存</button>' +
-    '<button class="btn btn-ghost" style="flex:1" onclick="hideModal()">取消</button>' +
+    '<button class="btn btn-primary" style="flex:1" onclick="saveSettings()">' + t('Save', '\u4fdd\u5b58') + '</button>' +
+    '<button class="btn btn-ghost" style="flex:1" onclick="hideModal()">' + t('Cancel', '\u53d6\u6d88') + '</button>' +
     '</div>' +
     '';
   showModal(html);
@@ -230,7 +230,7 @@ async function saveSettings() {
   if (nick !== (currentUser.nickname || '')) {
     var res = await sb.auth.updateUser({ data: { nickname: nick } });
     if (res.error) {
-      msgEl.textContent = '昵称保存失败: ' + res.error.message;
+      msgEl.textContent = t('Nickname save failed: ', '\u6635\u79f0\u4fdd\u5b58\u5931\u8d25: ') + res.error.message;
       msgEl.className = 'settings-msg error';
       return;
     }
@@ -242,18 +242,18 @@ async function saveSettings() {
   /* Password update */
   if (pw1 || pw2) {
     if (pw1.length < 6) {
-      msgEl.textContent = '密码至少6位';
+      msgEl.textContent = t('Password must be at least 6 characters', '\u5bc6\u7801\u81f3\u5c116\u4f4d');
       msgEl.className = 'settings-msg error';
       return;
     }
     if (pw1 !== pw2) {
-      msgEl.textContent = '两次密码不一致';
+      msgEl.textContent = t('Passwords do not match', '\u4e24\u6b21\u5bc6\u7801\u4e0d\u4e00\u81f4');
       msgEl.className = 'settings-msg error';
       return;
     }
     var res2 = await sb.auth.updateUser({ password: pw1 });
     if (res2.error) {
-      msgEl.textContent = '密码修改失败: ' + translateAuthError(res2.error.message);
+      msgEl.textContent = t('Password change failed: ', '\u5bc6\u7801\u4fee\u6539\u5931\u8d25: ') + translateAuthError(res2.error.message);
       msgEl.className = 'settings-msg error';
       return;
     }
@@ -261,7 +261,7 @@ async function saveSettings() {
   }
 
   if (updated) {
-    showToast('保存成功');
+    showToast(t('Saved', '\u4fdd\u5b58\u6210\u529f'));
     hideModal();
   } else {
     hideModal();
@@ -276,7 +276,7 @@ function showRankGuide() {
   var cur = getRank();
   var next = getNextRank();
 
-  var html = '<div class="section-title">\ud83c\udfc5 \u6bb5\u4f4d\u8fdb\u5316\u8def\u7ebf</div>';
+  var html = '<div class="section-title">\ud83c\udfc5 ' + t('Rank Progress', '\u6bb5\u4f4d\u8fdb\u5316\u8def\u7ebf') + '</div>';
 
   /* Rank rows */
   RANKS.forEach(function(r) {
@@ -285,10 +285,10 @@ function showRankGuide() {
     html += '<div class="rank-row' + (isCurrent ? ' current' : '') + '" style="' + (isCurrent ? 'border-color:' + r.color + ';background:' + r.color + '15' : '') + '">';
     html += '<div class="rank-row-emoji">' + r.emoji + '</div>';
     html += '<div class="rank-row-info">';
-    html += '<div class="rank-row-name" style="color:' + r.color + '">' + r.name + '</div>';
-    html += '<div class="rank-row-req">\u638c\u63e1 \u2265' + r.min + '% \u8bcd\u6c47' + (total > 0 ? '\uff08\u7ea6 ' + needed + ' \u8bcd\uff09' : '') + '</div>';
+    html += '<div class="rank-row-name" style="color:' + r.color + '">' + rankName(r) + '</div>';
+    html += '<div class="rank-row-req">' + t('Master \u2265' + r.min + '% vocab' + (total > 0 ? ' (approx. ' + needed + ' words)' : ''), '\u638c\u63e1 \u2265' + r.min + '% \u8bcd\u6c47' + (total > 0 ? '\uff08\u7ea6 ' + needed + ' \u8bcd\uff09' : '')) + '</div>';
     html += '</div>';
-    if (isCurrent) html += '<span class="rank-row-badge">\u5f53\u524d</span>';
+    if (isCurrent) html += '<span class="rank-row-badge">' + t('Current', '\u5f53\u524d') + '</span>';
     html += '</div>';
   });
 
@@ -298,23 +298,23 @@ function showRankGuide() {
     var remaining = Math.max(nextNeeded - mastered, 0);
     var progressPct = total > 0 ? Math.min(Math.round(mastered / nextNeeded * 100), 100) : 0;
     html += '<div class="rank-progress-section">';
-    html += '<div class="rank-progress-label">\u8ddd ' + next.emoji + ' ' + next.name + ' \u8fd8\u9700\u638c\u63e1 <strong>' + remaining + '</strong> \u8bcd</div>';
+    html += '<div class="rank-progress-label">' + t('<strong>' + remaining + '</strong> more words to reach ' + next.emoji + ' ' + rankName(next), '\u8ddd ' + next.emoji + ' ' + rankName(next) + ' \u8fd8\u9700\u638c\u63e1 <strong>' + remaining + '</strong> \u8bcd') + '</div>';
     html += '<div class="rank-progress-bar"><div class="rank-progress-fill" style="width:' + progressPct + '%;background:' + next.color + '"></div></div>';
     html += '<div class="rank-progress-pct">' + pct + '% \u2192 ' + next.min + '%</div>';
     html += '</div>';
   } else {
-    html += '<div class="rank-progress-section text-center" style="color:var(--c-success)">\u5df2\u8fbe\u6700\u9ad8\u6bb5\u4f4d \ud83c\udf89</div>';
+    html += '<div class="rank-progress-section text-center" style="color:var(--c-success)">' + t('Highest rank achieved!', '\u5df2\u8fbe\u6700\u9ad8\u6bb5\u4f4d') + ' \ud83c\udf89</div>';
   }
 
   /* Tips */
   html += '<div class="guide-tip">';
-  html += '<div class="guide-tip-title">\u5982\u4f55\u5347\u7ea7\uff1f</div>';
-  html += '<div class="guide-tip-item">1. \u901a\u8fc7 7 \u79cd\u5b66\u4e60\u6a21\u5f0f\u7ec3\u4e60\u8bcd\u6c47</div>';
-  html += '<div class="guide-tip-item">2. \u590d\u4e60\u65f6\u8bc4\u4e3a\u201c\u641e\u5b9a\u4e86\u201d\u5c06\u8bcd\u6c47\u6807\u8bb0\u4e3a\u5df2\u638c\u63e1</div>';
-  html += '<div class="guide-tip-item">3. \u638c\u63e1\u7387\u63d0\u5347 \u2192 \u81ea\u52a8\u664b\u5347\u6bb5\u4f4d</div>';
+  html += '<div class="guide-tip-title">' + t('How to rank up?', '\u5982\u4f55\u5347\u7ea7\uff1f') + '</div>';
+  html += '<div class="guide-tip-item">' + t('1. Practice vocabulary with 7 study modes', '1. \u901a\u8fc7 7 \u79cd\u5b66\u4e60\u6a21\u5f0f\u7ec3\u4e60\u8bcd\u6c47') + '</div>';
+  html += '<div class="guide-tip-item">' + t('2. Rate "Got it" in review to mark as mastered', '2. \u590d\u4e60\u65f6\u8bc4\u4e3a\u201c\u641e\u5b9a\u4e86\u201d\u5c06\u8bcd\u6c47\u6807\u8bb0\u4e3a\u5df2\u638c\u63e1') + '</div>';
+  html += '<div class="guide-tip-item">' + t('3. Higher mastery % = auto rank up', '3. \u638c\u63e1\u7387\u63d0\u5347 \u2192 \u81ea\u52a8\u664b\u5347\u6bb5\u4f4d') + '</div>';
   html += '</div>';
 
-  html += '<button class="btn btn-ghost btn-block" onclick="hideModal()" style="margin-top:16px">\u5173\u95ed</button>';
+  html += '<button class="btn btn-ghost btn-block" onclick="hideModal()" style="margin-top:16px">' + t('Close', '\u5173\u95ed') + '</button>';
   showModal(html);
 }
 

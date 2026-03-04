@@ -41,10 +41,10 @@ function renderStudyCard() {
   html += '<div class="fc-face fc-front">';
   html += '<div class="fc-front-label">ENGLISH</div>';
   html += '<div class="fc-front-word">' + p.word + '</div>';
-  html += '<div class="fc-front-hint">\u70b9\u51fb\u7ffb\u724c\u67e5\u770b\u91ca\u4e49</div>';
+  html += '<div class="fc-front-hint">' + t('Tap to flip', '\u70b9\u51fb\u7ffb\u724c\u67e5\u770b\u91ca\u4e49') + '</div>';
   html += '</div>';
   html += '<div class="fc-face fc-back">';
-  html += '<div class="fc-back-label">\u4e2d\u6587</div>';
+  html += '<div class="fc-back-label">' + t('CHINESE', '\u4e2d\u6587') + '</div>';
   html += '<div class="fc-back-def">' + p.def + '</div>';
   html += '<div class="fc-back-word">' + p.word + '</div>';
   html += '</div>';
@@ -52,9 +52,9 @@ function renderStudyCard() {
 
   /* Rating buttons */
   html += '<div class="fc-actions hidden" id="fc-study-actions">';
-  html += '<button class="rate-btn rate-hard" onclick="rateStudy(\'hard\')">\ud83d\ude35 \u4e0d\u719f</button>';
-  html += '<button class="rate-btn rate-ok" onclick="rateStudy(\'ok\')">\ud83e\udd14 \u6a21\u7cca</button>';
-  html += '<button class="rate-btn rate-easy" onclick="rateStudy(\'easy\')">\u2705 \u638c\u63e1</button>';
+  html += '<button class="rate-btn rate-hard" onclick="rateStudy(\'hard\')">\ud83d\ude35 ' + t('Hard', '\u4e0d\u719f') + '</button>';
+  html += '<button class="rate-btn rate-ok" onclick="rateStudy(\'ok\')">\ud83e\udd14 ' + t('Okay', '\u6a21\u7cca') + '</button>';
+  html += '<button class="rate-btn rate-easy" onclick="rateStudy(\'easy\')">\u2705 ' + t('Easy', '\u638c\u63e1') + '</button>';
   html += '</div>';
 
   E('panel-study').innerHTML = html;
@@ -105,25 +105,25 @@ function finishStudy() {
   var html = '';
   html += '<div class="text-center">';
   html += '<div class="result-emoji">\ud83c\udf93</div>';
-  html += '<div class="result-title">\u5b66\u4e60\u5b8c\u6210\uff01</div>';
-  html += '<div class="result-sub">' + (h === 0 && o === 0 ? '\u5168\u90e8\u638c\u63e1\uff01' : '\u6709' + (h + o) + '\u4e2a\u9700\u8981\u5de9\u56fa') + '</div>';
+  html += '<div class="result-title">' + t('Study Complete!', '\u5b66\u4e60\u5b8c\u6210\uff01') + '</div>';
+  html += '<div class="result-sub">' + (h === 0 && o === 0 ? t('All mastered!', '\u5168\u90e8\u638c\u63e1\uff01') : t((h + o) + ' need review', '\u6709' + (h + o) + '\u4e2a\u9700\u8981\u5de9\u56fa')) + '</div>';
   html += '</div>';
 
   html += '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:20px 0">';
-  html += '<div style="padding:12px;border-radius:var(--r);background:var(--c-danger-bg);text-align:center"><div style="font-size:22px;font-weight:800">' + h + '</div><div style="font-size:10px;font-weight:600">\ud83d\ude35 \u4e0d\u719f</div></div>';
-  html += '<div style="padding:12px;border-radius:var(--r);background:var(--c-warning-bg);text-align:center"><div style="font-size:22px;font-weight:800">' + o + '</div><div style="font-size:10px;font-weight:600">\ud83e\udd14 \u6a21\u7cca</div></div>';
-  html += '<div style="padding:12px;border-radius:var(--r);background:var(--c-success-bg);text-align:center"><div style="font-size:22px;font-weight:800">' + e + '</div><div style="font-size:10px;font-weight:600">\u2705 \u638c\u63e1</div></div>';
+  html += '<div style="padding:12px;border-radius:var(--r);background:var(--c-danger-bg);text-align:center"><div style="font-size:22px;font-weight:800">' + h + '</div><div style="font-size:10px;font-weight:600">\ud83d\ude35 ' + t('Hard', '\u4e0d\u719f') + '</div></div>';
+  html += '<div style="padding:12px;border-radius:var(--r);background:var(--c-warning-bg);text-align:center"><div style="font-size:22px;font-weight:800">' + o + '</div><div style="font-size:10px;font-weight:600">\ud83e\udd14 ' + t('Okay', '\u6a21\u7cca') + '</div></div>';
+  html += '<div style="padding:12px;border-radius:var(--r);background:var(--c-success-bg);text-align:center"><div style="font-size:22px;font-weight:800">' + e + '</div><div style="font-size:10px;font-weight:600">\u2705 ' + t('Easy', '\u638c\u63e1') + '</div></div>';
   html += '</div>';
 
   html += '<div class="result-actions">';
-  html += '<button class="btn btn-primary" onclick="startBattle(' + currentLvl + ')">\u2694\ufe0f \u8fdb\u5165\u5b9e\u6218</button>';
+  html += '<button class="btn btn-primary" onclick="startBattle(' + currentLvl + ')">\u2694\ufe0f ' + t('Battle', '\u8fdb\u5165\u5b9e\u6218') + '</button>';
 
   var hw = S.ratings.hard.concat(S.ratings.ok);
   if (hw.length > 0) {
-    html += '<button class="btn btn-secondary" onclick="restudyHard()">\ud83d\udcd6 \u518d\u5b66\u4e0d\u719f\u7684</button>';
+    html += '<button class="btn btn-secondary" onclick="restudyHard()">\ud83d\udcd6 ' + t('Restudy hard', '\u518d\u5b66\u4e0d\u719f\u7684') + '</button>';
   }
 
-  html += '<button class="btn btn-ghost" onclick="openDeck(' + currentLvl + ')">\u2190 \u8fd4\u56de\u5361\u7ec4</button>';
+  html += '<button class="btn btn-ghost" onclick="openDeck(' + currentLvl + ')">\u2190 ' + t('Back', '\u8fd4\u56de\u5361\u7ec4') + '</button>';
   html += '</div>';
 
   E('panel-study').innerHTML = html;

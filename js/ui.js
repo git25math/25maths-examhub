@@ -78,6 +78,10 @@ function toggleLang() {
   if (appView === 'home') renderHome();
   else if (appView === 'deck') renderDeck(currentLvl);
   else if (appView === 'preview') renderPreview(currentLvl);
+  else if (appView === 'review-dash') renderReviewDash();
+  else if (appView === 'import') renderImport();
+  else if (appView === 'board') renderBoard();
+  updateSidebar();
 }
 
 function setLang(mode) {
@@ -107,9 +111,9 @@ function updateSidebar() {
   var r = getRank();
   var pct = getMasteryPct();
 
-  /* Display name: nickname > email prefix > 访客模式 */
-  var displayName = currentUser.email === 'guest' ? '\u8bbf\u5ba2\u6a21\u5f0f' : (currentUser.nickname || currentUser.email.split('@')[0]);
-  var displayShort = currentUser.email === 'guest' ? '\u8bbf\u5ba2' : (currentUser.nickname || currentUser.email.split('@')[0]);
+  /* Display name: nickname > email prefix > Guest */
+  var displayName = currentUser.email === 'guest' ? t('Guest Mode', '\u8bbf\u5ba2\u6a21\u5f0f') : (currentUser.nickname || currentUser.email.split('@')[0]);
+  var displayShort = currentUser.email === 'guest' ? t('Guest', '\u8bbf\u5ba2') : (currentUser.nickname || currentUser.email.split('@')[0]);
 
   /* Sidebar user */
   if (E('sb-rank')) {
@@ -118,7 +122,7 @@ function updateSidebar() {
     E('sb-rank').onclick = showRankGuide;
   }
   if (E('sb-name')) E('sb-name').textContent = displayName;
-  if (E('sb-meta')) E('sb-meta').textContent = r.name + ' \xb7 ' + pct + '%';
+  if (E('sb-meta')) E('sb-meta').textContent = rankName(r) + ' \xb7 ' + pct + '%';
 
   /* Header user */
   if (E('hb-rank')) {
@@ -131,14 +135,14 @@ function updateSidebar() {
   /* Sidebar: show 8 category entries only */
   var deckEl = E('sidebar-decks');
   if (deckEl) {
-    var html = '<div class="sidebar-deck-label">\u4e13\u9898</div>';
+    var html = '<div class="sidebar-deck-label">' + t('Topics', '\u4e13\u9898') + '</div>';
     CATEGORIES.forEach(function(cat) {
       var count = 0;
       LEVELS.forEach(function(lv) { if (lv.category === cat.id) count++; });
       if (count === 0) return;
       html += '<button class="sidebar-deck-item" onclick="scrollToCategory(\'' + cat.id + '\')">' +
         '<span class="deck-emoji">' + cat.emoji + '</span>' +
-        '<span>' + cat.name + '</span>' +
+        '<span>' + catName(cat) + '</span>' +
         '<span class="deck-count">' + count + '</span>' +
         '</button>';
     });
@@ -217,17 +221,17 @@ function sortCards(pairs) {
 function resultScreenHTML(ok, total, retryId, backId) {
   var pct = total > 0 ? Math.round(ok / total * 100) : 0;
   var emoji, title;
-  if (pct >= 90) { emoji = '\ud83c\udfc6'; title = '\u592a\u68d2\u4e86\uff01'; }
-  else if (pct >= 70) { emoji = '\ud83c\udf89'; title = '\u505a\u5f97\u597d\uff01'; }
-  else if (pct >= 50) { emoji = '\ud83d\udcaa'; title = '\u7ee7\u7eed\u52a0\u6cb9\uff01'; }
-  else { emoji = '\ud83d\udcda'; title = '\u518d\u7ec3\u7ec3\uff01'; }
+  if (pct >= 90) { emoji = '\ud83c\udfc6'; title = t('Excellent!', '\u592a\u68d2\u4e86\uff01'); }
+  else if (pct >= 70) { emoji = '\ud83c\udf89'; title = t('Well done!', '\u505a\u5f97\u597d\uff01'); }
+  else if (pct >= 50) { emoji = '\ud83d\udcaa'; title = t('Keep going!', '\u7ee7\u7eed\u52a0\u6cb9\uff01'); }
+  else { emoji = '\ud83d\udcda'; title = t('Try again!', '\u518d\u7ec3\u7ec3\uff01'); }
 
   return '<div class="result-emoji">' + emoji + '</div>' +
     '<div class="result-title">' + title + '</div>' +
     '<div class="result-score">' + pct + '%</div>' +
-    '<div class="result-detail">' + ok + ' / ' + total + ' \u6b63\u786e</div>' +
+    '<div class="result-detail">' + ok + ' / ' + total + ' ' + t('correct', '\u6b63\u786e') + '</div>' +
     '<div class="result-actions">' +
-    '<button class="btn btn-primary" onclick="' + retryId + '">\ud83d\udd01 \u518d\u6765\u4e00\u6b21</button>' +
-    '<button class="btn btn-ghost" onclick="' + backId + '">\u2190 \u8fd4\u56de</button>' +
+    '<button class="btn btn-primary" onclick="' + retryId + '">\ud83d\udd01 ' + t('Try again', '\u518d\u6765\u4e00\u6b21') + '</button>' +
+    '<button class="btn btn-ghost" onclick="' + backId + '">\u2190 ' + t('Back', '\u8fd4\u56de') + '</button>' +
     '</div>';
 }

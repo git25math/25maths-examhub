@@ -60,7 +60,7 @@ function renderBattle(lv) {
     s.dataset.tp = item.type;
     s.style.animationDelay = i * 0.04 + 's';
     s.innerHTML = '<div class="ci"><div class="cf cf-b"></div><div class="cf cf-f"><div class="ct-l">' +
-      (item.type === 'word' ? 'EN' : '\u4e2d') + '</div><div class="ct-t">' + item.content + '</div></div></div>';
+      (item.type === 'word' ? 'EN' : t('CN', '\u4e2d')) + '</div><div class="ct-t">' + item.content + '</div></div></div>';
     s.addEventListener('click', function() { onFlip(s); });
     gridEl.appendChild(s);
   });
@@ -191,32 +191,34 @@ function endBattle(won) {
 
   var emoji = won ? '\ud83c\udfc6' : '\u23f0';
   var title = won
-    ? ['\u592a\u795e\u4e86\uff01', '\u5b8c\u7f8e\uff01', '\u4f60\u592a\u5f3a\u4e86\uff01', '\u65e0\u654c\uff01'][~~(Math.random() * 4)]
-    : '\u65f6\u95f4\u5230\uff01';
+    ? (appLang === 'en'
+      ? ['Amazing!', 'Perfect!', 'Incredible!', 'Unstoppable!'][~~(Math.random() * 4)]
+      : ['\u592a\u795e\u4e86\uff01', '\u5b8c\u7f8e\uff01', '\u4f60\u592a\u5f3a\u4e86\uff01', '\u65e0\u654c\uff01'][~~(Math.random() * 4)])
+    : t("Time's up!", '\u65f6\u95f4\u5230\uff01');
 
   var modalHtml = '';
   modalHtml += '<div class="result-emoji">' + emoji + '</div>';
   modalHtml += '<div class="result-title">' + title + '</div>';
-  modalHtml += '<div class="result-sub">' + (won ? '\u5168\u90e8\u914d\u5bf9\u6210\u529f\uff01' : '\u518d\u6765\u4e00\u6b21\uff01') + '</div>';
+  modalHtml += '<div class="result-sub">' + (won ? t('All matched!', '\u5168\u90e8\u914d\u5bf9\u6210\u529f\uff01') : t('Try again!', '\u518d\u6765\u4e00\u6b21\uff01')) + '</div>';
 
   modalHtml += '<div style="display:flex;justify-content:center;gap:16px;margin:16px 0">';
-  modalHtml += '<div style="text-align:center"><div style="font-size:22px;font-weight:800;color:var(--c-primary)">' + (won ? elapsed : '-') + '</div><div style="font-size:9px;color:var(--c-text2);text-transform:uppercase;letter-spacing:1px;font-weight:600">\u7528\u65f6</div></div>';
-  modalHtml += '<div style="text-align:center"><div style="font-size:22px;font-weight:800;color:var(--c-primary)">' + G.moves + '</div><div style="font-size:9px;color:var(--c-text2);text-transform:uppercase;letter-spacing:1px;font-weight:600">\u7ffb\u724c</div></div>';
-  modalHtml += '<div style="text-align:center"><div style="font-size:22px;font-weight:800;color:var(--c-primary)">' + G.maxCombo + '</div><div style="font-size:9px;color:var(--c-text2);text-transform:uppercase;letter-spacing:1px;font-weight:600">\u8fde\u51fb</div></div>';
+  modalHtml += '<div style="text-align:center"><div style="font-size:22px;font-weight:800;color:var(--c-primary)">' + (won ? elapsed : '-') + '</div><div style="font-size:9px;color:var(--c-text2);text-transform:uppercase;letter-spacing:1px;font-weight:600">' + t('TIME', '\u7528\u65f6') + '</div></div>';
+  modalHtml += '<div style="text-align:center"><div style="font-size:22px;font-weight:800;color:var(--c-primary)">' + G.moves + '</div><div style="font-size:9px;color:var(--c-text2);text-transform:uppercase;letter-spacing:1px;font-weight:600">' + t('FLIPS', '\u7ffb\u724c') + '</div></div>';
+  modalHtml += '<div style="text-align:center"><div style="font-size:22px;font-weight:800;color:var(--c-primary)">' + G.maxCombo + '</div><div style="font-size:9px;color:var(--c-text2);text-transform:uppercase;letter-spacing:1px;font-weight:600">' + t('COMBO', '\u8fde\u51fb') + '</div></div>';
   modalHtml += '</div>';
 
   if (won && isNew) {
-    modalHtml += '<div style="font-size:12px;color:var(--c-primary);font-weight:700;margin-bottom:12px">\ud83c\udf1f \u65b0\u7eaa\u5f55\uff01</div>';
+    modalHtml += '<div style="font-size:12px;color:var(--c-primary);font-weight:700;margin-bottom:12px">\ud83c\udf1f ' + t('New Record!', '\u65b0\u7eaa\u5f55\uff01') + '</div>';
   } else if (won) {
-    modalHtml += '<div style="font-size:11px;color:var(--c-text2);margin-bottom:12px">\u6700\u4f73: ' + getBest(G.lvlIdx).t + 's</div>';
+    modalHtml += '<div style="font-size:11px;color:var(--c-text2);margin-bottom:12px">' + t('Best: ', '\u6700\u4f73: ') + getBest(G.lvlIdx).t + 's</div>';
   }
 
   modalHtml += '<div class="result-actions">';
   if (won && G.lvlIdx < LEVELS.length - 1) {
-    modalHtml += '<button class="btn btn-primary" onclick="hideModal();openDeck(' + (G.lvlIdx + 1) + ')">\u4e0b\u4e00\u5173 \u2192</button>';
+    modalHtml += '<button class="btn btn-primary" onclick="hideModal();openDeck(' + (G.lvlIdx + 1) + ')">' + t('Next \u2192', '\u4e0b\u4e00\u5173 \u2192') + '</button>';
   }
-  modalHtml += '<button class="btn btn-secondary" onclick="hideModal();startBattle(' + G.lvlIdx + ')">\ud83d\udd01 \u518d\u8bd5\u4e00\u6b21</button>';
-  modalHtml += '<button class="btn btn-ghost" onclick="hideModal();openDeck(' + G.lvlIdx + ')">\u2190 \u8fd4\u56de\u5361\u7ec4</button>';
+  modalHtml += '<button class="btn btn-secondary" onclick="hideModal();startBattle(' + G.lvlIdx + ')">\ud83d\udd01 ' + t('Try again', '\u518d\u8bd5\u4e00\u6b21') + '</button>';
+  modalHtml += '<button class="btn btn-ghost" onclick="hideModal();openDeck(' + G.lvlIdx + ')">\u2190 ' + t('Back', '\u8fd4\u56de\u5361\u7ec4') + '</button>';
   modalHtml += '</div>';
 
   showModal(modalHtml);

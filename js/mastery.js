@@ -61,9 +61,9 @@ function renderHome() {
 
   /* Stats row */
   html += '<div class="home-stats">';
-  html += '<div class="stat-card"><div class="stat-val">' + total + '</div><div class="stat-label">\u603b\u8bcd\u6c47</div></div>';
-  html += '<div class="stat-card"><div class="stat-val" style="color:var(--c-success)">' + mastered + '</div><div class="stat-label">\u5df2\u638c\u63e1</div></div>';
-  html += '<div class="stat-card"><div class="stat-val" style="color:' + (due > 0 ? 'var(--c-warning)' : 'var(--c-muted)') + '">' + due + '</div><div class="stat-label">\u5f85\u590d\u4e60</div></div>';
+  html += '<div class="stat-card"><div class="stat-val">' + total + '</div><div class="stat-label">' + t('Total', '\u603b\u8bcd\u6c47') + '</div></div>';
+  html += '<div class="stat-card"><div class="stat-val" style="color:var(--c-success)">' + mastered + '</div><div class="stat-label">' + t('Mastered', '\u5df2\u638c\u63e1') + '</div></div>';
+  html += '<div class="stat-card"><div class="stat-val" style="color:' + (due > 0 ? 'var(--c-warning)' : 'var(--c-muted)') + '">' + due + '</div><div class="stat-label">' + t('Due', '\u5f85\u590d\u4e60') + '</div></div>';
   html += '</div>';
 
   /* Rank hint row */
@@ -71,14 +71,14 @@ function renderHome() {
   var homeNext = getNextRank();
   html += '<div class="home-rank-hint" onclick="showRankGuide()">';
   html += '<span class="home-rank-emoji">' + homeRank.emoji + '</span>';
-  html += '<span class="home-rank-name">' + homeRank.name + '</span>';
+  html += '<span class="home-rank-name">' + rankName(homeRank) + '</span>';
   if (homeNext) {
     var nextNeeded = Math.ceil(homeNext.min / 100 * total);
     var remaining = Math.max(nextNeeded - mastered, 0);
     html += '<span class="home-rank-sep">\u00b7</span>';
-    html += '<span class="home-rank-next">\u8ddd ' + homeNext.name + ' \u8fd8\u9700 ' + remaining + ' \u8bcd</span>';
+    html += '<span class="home-rank-next">' + t(remaining + ' to ' + rankName(homeNext), '\u8ddd ' + rankName(homeNext) + ' \u8fd8\u9700 ' + remaining + ' \u8bcd') + '</span>';
   }
-  html += '<span class="home-rank-link">\u67e5\u770b\u8def\u7ebf \u2192</span>';
+  html += '<span class="home-rank-link">' + t('View path \u2192', '\u67e5\u770b\u8def\u7ebf \u2192') + '</span>';
   html += '</div>';
 
   /* Deck grid grouped by category */
@@ -93,8 +93,8 @@ function renderHome() {
     html += '<div class="category-section' + (collapsed ? ' collapsed' : '') + '" id="cat-' + cat.id + '">';
     html += '<div class="category-header" onclick="toggleCategory(\'' + cat.id + '\')">';
     html += '<span class="category-emoji">' + cat.emoji + '</span>';
-    html += '<span class="category-name">' + cat.name + '</span>';
-    html += '<span class="category-count">' + catLevels.length + ' \u7ec4</span>';
+    html += '<span class="category-name">' + catName(cat) + '</span>';
+    html += '<span class="category-count">' + catLevels.length + ' ' + t('groups', '\u7ec4') + '</span>';
     html += '<span class="category-chevron">\u25bc</span>';
     html += '</div>';
 
@@ -105,7 +105,7 @@ function renderHome() {
       html += '<div class="deck-card-head">';
       html += '<div class="deck-card-emoji">' + cat.emoji + '</div>';
       html += '<div><div class="deck-card-name">' + cl.lv.title + '</div>';
-      html += '<div class="deck-card-count">' + (cl.lv.vocabulary.length / 2) + ' \u8bcd</div></div>';
+      html += '<div class="deck-card-count">' + (cl.lv.vocabulary.length / 2) + ' ' + t('words', '\u8bcd') + '</div></div>';
       html += '</div>';
       html += '<div class="deck-progress"><div class="deck-progress-fill" style="width:' + stats.pct + '%"></div></div>';
       html += '<div class="deck-card-pct">' + stats.pct + '%</div>';
@@ -144,13 +144,13 @@ function renderDeck(idx) {
   /* Mode grid */
   html += '<div class="mode-grid">';
   var modes = [
-    { emoji: '\ud83d\udc41', name: '\u9884\u89c8', fn: 'openPreview(' + idx + ')' },
-    { emoji: '\ud83d\udcd6', name: '\u5b66\u4e60', fn: 'startStudy(' + idx + ')' },
-    { emoji: '\u2753', name: '\u6d4b\u9a8c', fn: 'startQuiz(' + idx + ')' },
-    { emoji: '\u2328\ufe0f', name: '\u62fc\u5199', fn: 'startSpell(' + idx + ')' },
-    { emoji: '\ud83d\udd17', name: '\u914d\u5bf9', fn: 'startMatch(' + idx + ')' },
-    { emoji: '\u2694\ufe0f', name: '\u5b9e\u6218', fn: 'startBattle(' + idx + ')' },
-    { emoji: '\ud83e\udde0', name: '\u590d\u4e60', fn: 'startReview(' + idx + ')' }
+    { emoji: '\ud83d\udc41', name: t('Preview', '\u9884\u89c8'), fn: 'openPreview(' + idx + ')' },
+    { emoji: '\ud83d\udcd6', name: t('Study', '\u5b66\u4e60'), fn: 'startStudy(' + idx + ')' },
+    { emoji: '\u2753', name: t('Quiz', '\u6d4b\u9a8c'), fn: 'startQuiz(' + idx + ')' },
+    { emoji: '\u2328\ufe0f', name: t('Spell', '\u62fc\u5199'), fn: 'startSpell(' + idx + ')' },
+    { emoji: '\ud83d\udd17', name: t('Match', '\u914d\u5bf9'), fn: 'startMatch(' + idx + ')' },
+    { emoji: '\u2694\ufe0f', name: t('Battle', '\u5b9e\u6218'), fn: 'startBattle(' + idx + ')' },
+    { emoji: '\ud83e\udde0', name: t('Review', '\u590d\u4e60'), fn: 'startReview(' + idx + ')' }
   ];
   modes.forEach(function(m) {
     html += '<button class="mode-btn" onclick="' + m.fn + '">';
@@ -162,7 +162,7 @@ function renderDeck(idx) {
 
   /* Sort bar */
   html += '<div class="sort-bar">';
-  [['default', '\u9ed8\u8ba4'], ['az', 'A-Z'], ['random', '\u968f\u673a'], ['hard', '\u96be\u8bcd\u4f18\u5148']].forEach(function(s) {
+  [['default', t('Default', '\u9ed8\u8ba4')], ['az', 'A-Z'], ['random', t('Random', '\u968f\u673a')], ['hard', t('Hard first', '\u96be\u8bcd\u4f18\u5148')]].forEach(function(s) {
     html += '<button class="sort-btn' + (appSort === s[0] ? ' active' : '') + '" onclick="setSort(\'' + s[0] + '\',' + idx + ')">' + s[1] + '</button>';
   });
   html += '</div>';
@@ -215,7 +215,7 @@ function renderPreview(idx) {
   var html = '';
   html += '<div class="deck-header">';
   html += '<button class="back-btn" onclick="openDeck(' + idx + ')">\u2190</button>';
-  html += '<div class="deck-title">\u9884\u89c8: ' + lv.title + '</div>';
+  html += '<div class="deck-title">' + t('Preview', '\u9884\u89c8') + ': ' + lv.title + '</div>';
   html += '</div>';
 
   html += '<div class="preview-grid">';
@@ -231,7 +231,7 @@ function renderPreview(idx) {
   html += '</div>';
 
   html += '<div style="margin-top:16px;text-align:center">';
-  html += '<button class="btn btn-secondary" onclick="openDeck(' + idx + ')">\u2190 \u8fd4\u56de\u5361\u7ec4</button>';
+  html += '<button class="btn btn-secondary" onclick="openDeck(' + idx + ')">\u2190 ' + t('Back', '\u8fd4\u56de\u5361\u7ec4') + '</button>';
   html += '</div>';
 
   E('panel-preview').innerHTML = html;

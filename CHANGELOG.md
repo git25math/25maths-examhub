@@ -1,5 +1,30 @@
 # Changelog
 
+## [0.5.0] - 2026-03-04 — EN/中英双语模式全面支持
+
+### 新增
+- `t(en, zh)` / `rankName()` / `catName()` 三个 i18n helper 函数
+- RANKS 增加 `nameEn` 字段（Bronze Learner / Silver Expert / Gold Scholar / Diamond Master / Word King）
+- EN 模式：所有 UI 文本（统计标签、模式名、按钮、提示、结果页、排行榜、设置、导入导出）全部显示英文
+- 中英模式：专题标题显示双语（如 "Number 数论"、"Algebra 代数"）
+- 语言切换后自动刷新当前面板 + 侧栏
+
+### 覆盖范围（12 文件）
+- `js/config.js` — 新增 `t()` / `rankName()` / `catName()` + RANKS.nameEn
+- `js/mastery.js` — renderHome / renderDeck / renderPreview 全量 i18n
+- `js/ui.js` — updateSidebar / resultScreenHTML / toggleLang 刷新范围扩大
+- `js/study.js` — 学习模式卡片 + 评分按钮 + 结果页
+- `js/quiz.js` — 测验提示文本
+- `js/spell.js` — 拼写输入提示 + 检查/下一题按钮 + 正确答案
+- `js/match.js` — 配对说明 + 计时器 + 结果页
+- `js/review.js` — 复习仪表盘 + 艾宾浩斯说明 + 评分按钮 + 结果页
+- `js/battle.js` — 实战模式卡片标签 + 胜利/失败文案 + 统计标签
+- `js/auth.js` — 设置 Modal + 段位路线 Modal 全量 i18n
+- `js/app.js` — 排行榜标题 + 加载/匿名/访客文本
+- `js/export.js` — 导入导出面板全量 i18n
+
+---
+
 ## [0.4.3] - 2026-03-04 — 首页专题模块折叠
 
 ### 折叠功能

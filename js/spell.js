@@ -49,13 +49,13 @@ function renderSpellCard() {
 
   /* Input */
   html += '<div class="spell-input-wrap">';
-  html += '<input type="text" class="spell-input" id="spell-input" placeholder="\u8f93\u5165\u82f1\u6587\u5355\u8bcd..." autocomplete="off" autocapitalize="off">';
+  html += '<input type="text" class="spell-input" id="spell-input" placeholder="' + t('Type the English word...', '\u8f93\u5165\u82f1\u6587\u5355\u8bcd...') + '" autocomplete="off" autocapitalize="off">';
   html += '</div>';
 
   html += '<div class="spell-answer" id="spell-answer"></div>';
 
   html += '<div class="text-center">';
-  html += '<button class="btn btn-primary" id="spell-check-btn" onclick="checkSpell()">\u68c0\u67e5</button>';
+  html += '<button class="btn btn-primary" id="spell-check-btn" onclick="checkSpell()">' + t('Check', '\u68c0\u67e5') + '</button>';
   html += '</div>';
 
   E('panel-spell').innerHTML = html;
@@ -101,10 +101,10 @@ function checkSpell() {
     input.classList.add('wrong');
     input.disabled = true;
     setWordStatus(key, 'learning', 0.15, false);
-    E('spell-answer').textContent = '\u6b63\u786e\u7b54\u6848: ' + p.word;
+    E('spell-answer').textContent = t('Answer: ', '\u6b63\u786e\u7b54\u6848: ') + p.word;
   }
 
-  E('spell-check-btn').textContent = '\u4e0b\u4e00\u9898 \u2192';
+  E('spell-check-btn').textContent = t('Next \u2192', '\u4e0b\u4e00\u9898 \u2192');
   E('spell-check-btn').onclick = function() {
     SP.idx++;
     renderSpellCard();
