@@ -23,7 +23,13 @@
 - [x] recoverSessionFromUrl() 支持 3 种回调模式
 - [x] 修复登出竞态（async await signOut）
 - [x] 登录按钮加载状态 + 中文错误翻译
-- [ ] **待手动配置**：Supabase Dashboard 添加 `https://keywords.25maths.com/` 到 Redirect URLs
+- [x] **已废弃**：邮箱验证流程在 v0.7.1 移除，改为注册即登录
+
+## Phase 2.1.1 — 关闭邮箱验证 + 防刷保护 [DONE]
+- [x] 关闭邮箱验证：注册后直接登录，移除回调恢复逻辑
+- [x] 客户端防刷保护（3s 冷却 + 5 次锁定 60s + rate limit 自动锁定）
+- [x] 移除 recoverSessionFromUrl / stripAuthParams / emailRedirectTo
+- [ ] **待手动配置**：Supabase Dashboard → Authentication → Settings → 关闭 "Confirm email"
 
 ## Phase 2.2 — 账号设置 + 昵称 + 密码 [DONE]
 - [x] 设置 Modal（⚙ 按钮），侧栏 + 顶栏双入口

@@ -1,5 +1,30 @@
 # Changelog
 
+## [0.7.1] - 2026-03-04 — 关闭邮箱验证 + 客户端防刷保护
+
+### 变更
+- **移除邮箱验证流程**：注册后直接登录，不再需要确认邮件
+  - 移除 `recoverSessionFromUrl()` 回调恢复函数
+  - 移除 `stripAuthParams()` URL 清理函数
+  - 移除 "Email not confirmed" 分支（不再 resend 验证邮件）
+  - 移除 `signUp` 中 `emailRedirectTo` 选项
+- **新增客户端防刷保护**：避免触发 Supabase 服务端 rate limit
+  - 两次操作最小间隔 3 秒（AUTH_COOLDOWN_MS）
+  - 连续失败 5 次后锁定 60 秒（AUTH_MAX_ATTEMPTS / AUTH_LOCKOUT_MS）
+  - Rate limit 错误时直接进入 60 秒锁定
+  - 成功登录后重置计数器
+- **简化注册流程**：注册成功有 session → 直接进入；无 session → 提示"注册成功，请直接登录"
+- **简化错误翻译**：移除 "邮箱未验证" 翻译条目
+
+### 文件变更
+- `js/auth.js` — 重写登录流程 + 新增防刷保护（6 个变量 + 3 个函数）；移除 3 个废弃函数
+- `js/app.js` — 移除 `recoverSessionFromUrl()` 调用块（-17 行）
+
+### 配置要求
+- **Supabase Dashboard** → Authentication → Settings → 关闭 "Confirm email"（手动操作）
+
+---
+
 ## [0.7.0] - 2026-03-04 — 添加 25Maths 校本课程 Y7-Y11 词汇（1,502 词）
 
 ### 新增
