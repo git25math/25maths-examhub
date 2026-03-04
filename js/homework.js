@@ -348,7 +348,7 @@ async function renderClassHwList(classId) {
 
     ct.innerHTML = html;
   } catch (e) {
-    ct.innerHTML = '<div style="color:var(--c-danger);font-size:13px">' + e.message + '</div>';
+    ct.innerHTML = '<div style="color:var(--c-danger);font-size:13px">' + escapeHtml(e.message) + '</div>';
   }
 }
 
@@ -385,7 +385,7 @@ async function renderHwProgress(hwId, classId) {
 
     var html = '<div class="admin-detail-header">';
     html += '<button class="btn btn-ghost btn-sm" onclick="renderClassDetail(\'' + classId + '\')">' + t('\u2190 Back', '\u2190 返回') + '</button>';
-    html += '<div class="admin-detail-title">' + hw.title + '</div>';
+    html += '<div class="admin-detail-title">' + escapeHtml(hw.title) + '</div>';
     html += '</div>';
 
     /* Summary cards */
@@ -415,7 +415,7 @@ async function renderHwProgress(hwId, classId) {
       var pct = (r && r.total_count > 0) ? Math.round(r.correct_count / r.total_count * 100) + '%' : '-';
       var attempts = r ? r.attempts : 0;
       var wrongCount = (r && r.wrong_words) ? r.wrong_words.length : 0;
-      var safeName = (s.student_name || '').replace(/'/g, "\\'").replace(/"/g, '&quot;');
+      var safeName = (s.student_name || '').replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/"/g, '&quot;');
 
       html += '<tr>';
       html += '<td class="admin-td-name">' + escapeHtml(s.student_name || '-') + '</td>';

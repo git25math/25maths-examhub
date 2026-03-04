@@ -211,7 +211,7 @@ async function renderBoard() {
   } else if (_boardScope === 'class' && classList.length > 0) {
     html += '<div class="board-sub-pills">';
     classList.forEach(function(c) {
-      html += '<button class="board-sub-pill' + (c.id === _boardSubKey ? ' active' : '') + '" onclick="switchBoardSub(\'' + c.id + '\')">' + c.name + '</button>';
+      html += '<button class="board-sub-pill' + (c.id === _boardSubKey ? ' active' : '') + '" onclick="switchBoardSub(\'' + c.id + '\')">' + escapeHtml(c.name) + '</button>';
     });
     html += '</div>';
   } else if (_boardScope === 'grade') {

@@ -112,7 +112,7 @@ function parseImport() {
   var html = '<div class="import-preview">';
   html += '<table><thead><tr><th>#</th><th>English</th><th>\u4e2d\u6587</th></tr></thead><tbody>';
   pairs.forEach(function(p, i) {
-    html += '<tr><td>' + (i + 1) + '</td><td>' + p.word + '</td><td>' + p.def + '</td></tr>';
+    html += '<tr><td>' + (i + 1) + '</td><td>' + escapeHtml(p.word) + '</td><td>' + escapeHtml(p.def) + '</td></tr>';
   });
   html += '</tbody></table></div>';
 

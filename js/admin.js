@@ -66,12 +66,16 @@ async function initTeacher() {
 /* ═══ LOAD ACTIVITY DATA ═══ */
 async function loadActivityData(force) {
   if (!force && _adminCache && Date.now() - _adminCacheAt < 30000) return _adminCache;
-  var res = await sb.from('student_activity_view')
-    .select('*')
-    .eq('school_id', _teacherData.school_id);
-  _adminCache = res.data || [];
-  _adminCacheAt = Date.now();
-  return _adminCache;
+  try {
+    var res = await sb.from('student_activity_view')
+      .select('*')
+      .eq('school_id', _teacherData.school_id);
+    _adminCache = res.data || [];
+    _adminCacheAt = Date.now();
+    return _adminCache;
+  } catch (e) {
+    return _adminCache || [];
+  }
 }
 
 /* ═══ RENDER ADMIN ═══ */
@@ -81,7 +85,7 @@ function renderAdmin() {
 
   var html = '<div class="admin-header">' +
     '<div class="section-title">' + t('Admin Panel', '管理面板') + '</div>' +
-    '<div class="admin-school-name">' + (_schoolData ? _schoolData.name : '') + '</div>' +
+    '<div class="admin-school-name">' + (_schoolData ? escapeHtml(_schoolData.name) : '') + '</div>' +
     '</div>';
 
   /* Tabs */
@@ -115,6 +119,7 @@ async function renderClassList() {
   if (!ct) return;
   ct.innerHTML = '<div class="admin-loading">' + t('Loading...', '加载中...') + '</div>';
 
+  try {
   var res = await sb.from('classes')
     .select('id, name, grade, created_at')
     .eq('school_id', _teacherData.school_id)
@@ -154,6 +159,9 @@ async function renderClassList() {
   html += '</div>';
 
   ct.innerHTML = html;
+  } catch (e) {
+    ct.innerHTML = '<div class="admin-empty">' + escapeHtml(e.message) + '</div>';
+  }
 }
 
 /* ═══ CREATE CLASS MODAL ═══ */
@@ -182,23 +190,28 @@ async function doCreateClass() {
   var msg = E('cc-msg');
   if (!name) { msg.textContent = t('Please enter class name', '请输入班级名称'); msg.className = 'settings-msg error'; return; }
 
-  var res = await sb.from('classes').insert({
-    school_id: _teacherData.school_id,
-    teacher_id: _teacherData.id,
-    name: name,
-    grade: grade
-  });
+  try {
+    var res = await sb.from('classes').insert({
+      school_id: _teacherData.school_id,
+      teacher_id: _teacherData.id,
+      name: name,
+      grade: grade
+    });
 
-  if (res.error) {
-    msg.textContent = res.error.message;
+    if (res.error) {
+      msg.textContent = res.error.message;
+      msg.className = 'settings-msg error';
+      return;
+    }
+
+    hideModal();
+    showToast(t('Class created!', '班级已创建！'));
+    _adminCache = null;
+    renderClassList();
+  } catch (e) {
+    msg.textContent = escapeHtml(e.message);
     msg.className = 'settings-msg error';
-    return;
   }
-
-  hideModal();
-  showToast(t('Class created!', '班级已创建！'));
-  _adminCache = null;
-  renderClassList();
 }
 
 /* ═══ EDIT CLASS ═══ */
@@ -381,6 +394,7 @@ async function doBatchCreate(classId) {
   btn.textContent = t('Creating...', '创建中...');
   E('batch-msg').textContent = '';
 
+  try {
   var result = await callEdgeFunction('create-students', { class_id: classId, students: students });
 
   btn.disabled = false;
@@ -416,6 +430,12 @@ async function doBatchCreate(classId) {
   E('batch-msg').className = 'settings-msg' + (fail > 0 ? ' error' : '');
 
   _adminCache = null;
+  } catch (e) {
+    btn.disabled = false;
+    btn.textContent = t('Create All', '创建全部');
+    E('batch-msg').textContent = escapeHtml(e.message);
+    E('batch-msg').className = 'settings-msg error';
+  }
 }
 
 /* ═══ PHASE 7: CLASS DETAIL ═══ */
@@ -436,7 +456,7 @@ async function renderClassDetail(classId) {
   var activity = await loadActivityData(true);
   var students = activity.filter(function(s) { return s.class_id === classId; });
 
-  var safeCName = cls.name.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+  var safeCName = cls.name.replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/"/g, '&quot;');
   var html = '<div class="admin-detail-header">' +
     '<button class="btn btn-ghost btn-sm" onclick="renderClassList()">' + t('\u2190 Back', '\u2190 返回') + '</button>' +
     '<div class="admin-detail-title">' + escapeHtml(cls.name) + ' <span class="admin-detail-grade">' + gradeLabel + '</span>' +
@@ -479,7 +499,7 @@ async function renderClassDetail(classId) {
     html += '</td>';
     html += '<td class="admin-td-words">' + mastered + '/' + total + '</td>';
     html += '<td>' + (s.rank_emoji || '\ud83e\udd49') + '</td>';
-    var safeName = (s.student_name || '').replace(/'/g, "\\'").replace(/"/g, '&quot;');
+    var safeName = (s.student_name || '').replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/"/g, '&quot;');
     html += '<td class="admin-td-action">';
     html += '<div class="action-dropdown">';
     html += '<button class="btn btn-ghost btn-sm action-trigger" onclick="toggleActionMenu(this)">' + t('Actions', '操作') + ' ▾</button>';
@@ -529,19 +549,24 @@ async function doResetPassword(userId) {
   var msg = E('rp-msg');
   if (pass.length < 6) { msg.textContent = t('Min 6 chars', '至少6位'); msg.className = 'settings-msg error'; return; }
 
-  var result = await callEdgeFunction('reset-student-password', {
-    student_user_id: userId,
-    new_password: pass
-  });
+  try {
+    var result = await callEdgeFunction('reset-student-password', {
+      student_user_id: userId,
+      new_password: pass
+    });
 
-  if (result.error) {
-    msg.textContent = result.error;
+    if (result.error) {
+      msg.textContent = result.error;
+      msg.className = 'settings-msg error';
+      return;
+    }
+
+    hideModal();
+    showToast(t('Password reset!', '密码已重置！'));
+  } catch (e) {
+    msg.textContent = escapeHtml(e.message);
     msg.className = 'settings-msg error';
-    return;
   }
-
-  hideModal();
-  showToast(t('Password reset!', '密码已重置！'));
 }
 
 /* ═══ PHASE 8: GRADE OVERVIEW ═══ */

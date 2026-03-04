@@ -45,7 +45,7 @@ function renderMatchBoard() {
     var cls = 'match-item';
     if (item.matched) cls += ' matched';
     if (MT.selected && MT.selected.side === 'left' && MT.selected.idx === i) cls += ' selected';
-    html += '<button class="' + cls + '" data-side="left" data-idx="' + i + '" data-lid="' + item.lid + '" onclick="pickMatch(this)">' + item.text + '</button>';
+    html += '<button class="' + cls + '" data-side="left" data-idx="' + i + '" data-lid="' + item.lid + '" onclick="pickMatch(this)">' + escapeHtml(item.text) + '</button>';
   });
   html += '</div>';
 
@@ -55,7 +55,7 @@ function renderMatchBoard() {
     var cls = 'match-item';
     if (item.matched) cls += ' matched';
     if (MT.selected && MT.selected.side === 'right' && MT.selected.idx === i) cls += ' selected';
-    html += '<button class="' + cls + '" data-side="right" data-idx="' + i + '" data-lid="' + item.lid + '" onclick="pickMatch(this)">' + item.text + '</button>';
+    html += '<button class="' + cls + '" data-side="right" data-idx="' + i + '" data-lid="' + item.lid + '" onclick="pickMatch(this)">' + escapeHtml(item.text) + '</button>';
   });
   html += '</div>';
 

@@ -222,12 +222,6 @@ function speakWord(text) {
   window.speechSynthesis.speak(u);
 }
 
-function setLang(mode) {
-  appLang = mode;
-  toggleLang();
-  toggleLang(); /* toggle twice to just update labels without changing */
-}
-
 /* ═══ BREAKPOINT DETECTION ═══ */
 function onResize() {
   appBP = detectBP();
@@ -277,6 +271,8 @@ document.addEventListener('click', function(e) {
 function toggleUserMenu() {
   var menu = E('sf-menu');
   if (menu) menu.classList.toggle('open');
+  var trigger = E('sf-trigger');
+  if (trigger) trigger.setAttribute('aria-expanded', menu && menu.classList.contains('open') ? 'true' : 'false');
 }
 document.addEventListener('click', function(e) {
   var menu = E('sf-menu');
@@ -510,7 +506,7 @@ function showBugReport() {
   }).join('');
 
   var userType = isGuest() ? 'Guest' : (isLoggedIn() ? 'Registered' : 'Unknown');
-  var autoInfo = 'App: v1.0.5\nBoard: ' + (userBoard || 'none') +
+  var autoInfo = 'App: ' + APP_VERSION + '\nBoard: ' + (userBoard || 'none') +
     '\nUser: ' + userType +
     '\nLang: ' + appLang +
     '\nBrowser: ' + navigator.userAgent;
@@ -569,7 +565,7 @@ async function submitBugReport() {
     'Description:\n' + desc + '\n\n' +
     (steps ? 'Steps to Reproduce:\n' + steps + '\n\n' : '') +
     '--- Auto Info ---\n' +
-    'App: v1.1.0\n' +
+    'App: ' + APP_VERSION + '\n' +
     'Board: ' + (userBoard || 'none') + '\n' +
     'User: ' + userType + '\n' +
     'Lang: ' + appLang + '\n' +

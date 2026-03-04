@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -25,8 +25,8 @@
     <div class="auth-logo">25</div>
     <div class="auth-title">25Maths Keywords</div>
     <div class="auth-sub" data-en="IGCSE Math Vocabulary Platform" data-zh="IGCSE 数学词汇学习平台">IGCSE Math Vocabulary Platform</div>
-    <input class="auth-input" id="auth-email" type="email" placeholder="Email">
-    <input class="auth-input" id="auth-pass" type="password" placeholder="Password (min 6 chars)">
+    <input class="auth-input" id="auth-email" type="email" placeholder="Email" aria-label="Email">
+    <input class="auth-input" id="auth-pass" type="password" placeholder="Password (min 6 chars)" aria-label="Password">
     <div class="auth-err" id="auth-err"></div>
     <button class="btn btn-primary btn-block" id="auth-login" data-en="Login / Register" data-zh="登录 / 注册">Login / Register</button>
     <button class="btn btn-ghost btn-block" id="auth-skip" data-en="Try without login" data-zh="先不登录，直接体验">Try without login</button>
@@ -35,10 +35,10 @@
     <div class="auth-divider"><span>OR</span></div>
     <button class="btn btn-ghost btn-block btn-sm" id="auth-teacher-toggle" onclick="toggleTeacherReg()"><span data-en="👩‍🏫 Teacher Registration" data-zh="👩‍🏫 教师注册">👩‍🏫 Teacher Registration</span></button>
     <div id="teacher-reg" style="display:none">
-      <input class="auth-input" id="tr-name" type="text" placeholder="Name">
-      <input class="auth-input" id="tr-email" type="email" placeholder="Email">
-      <input class="auth-input" id="tr-pass" type="password" placeholder="Password (min 6)">
-      <input class="auth-input" id="tr-code" type="text" placeholder="School Code">
+      <input class="auth-input" id="tr-name" type="text" placeholder="Name" aria-label="Name">
+      <input class="auth-input" id="tr-email" type="email" placeholder="Email" aria-label="Email">
+      <input class="auth-input" id="tr-pass" type="password" placeholder="Password (min 6)" aria-label="Password">
+      <input class="auth-input" id="tr-code" type="text" placeholder="School Code" aria-label="School Code">
       <div class="auth-err" id="tr-err"></div>
       <button class="btn btn-primary btn-block" id="tr-submit" onclick="doTeacherRegister()" data-en="Register Teacher Account" data-zh="注册教师账号">Register Teacher Account</button>
     </div>
@@ -103,32 +103,32 @@
     <div class="sidebar-decks" id="sidebar-decks"></div>
 
     <div class="sidebar-footer">
-      <button class="sf-trigger" id="sf-trigger" onclick="toggleUserMenu()">
+      <button class="sf-trigger" id="sf-trigger" onclick="toggleUserMenu()" aria-expanded="false" aria-haspopup="menu">
         <span class="sf-avatar" id="sb-rank"></span>
         <span class="sf-name" id="sb-name"></span>
       </button>
-      <div class="sf-menu" id="sf-menu">
+      <div class="sf-menu" id="sf-menu" role="menu">
         <div class="sf-menu-header" id="sf-menu-header"></div>
         <div class="sf-divider"></div>
-        <button class="sf-menu-item" onclick="showSettings(); toggleUserMenu()">
+        <button class="sf-menu-item" role="menuitem" onclick="showSettings(); toggleUserMenu()">
           <span class="sf-icon">⚙</span><span data-en="Settings" data-zh="设置">设置</span>
         </button>
-        <button class="sf-menu-item" id="dark-toggle-sb" onclick="toggleDark()">
+        <button class="sf-menu-item" role="menuitem" id="dark-toggle-sb" onclick="toggleDark()">
           <span class="sf-icon">🌙</span><span data-en="Dark Mode" data-zh="深色模式">深色模式</span>
         </button>
-        <button class="sf-menu-item" id="sound-toggle-sb" onclick="toggleSound()">
+        <button class="sf-menu-item" role="menuitem" id="sound-toggle-sb" onclick="toggleSound()">
           <span class="sf-icon">🔊</span><span data-en="Sound" data-zh="音效">音效</span>
         </button>
-        <button class="sf-menu-item" id="lang-toggle-sb" onclick="toggleLang()">
+        <button class="sf-menu-item" role="menuitem" id="lang-toggle-sb" onclick="toggleLang()">
           <span class="sf-icon">🌐</span><span data-en="Language" data-zh="语言">语言</span>
         </button>
-        <button class="sf-menu-item" onclick="showBugReport(); toggleUserMenu()">
+        <button class="sf-menu-item" role="menuitem" onclick="showBugReport(); toggleUserMenu()">
           <span class="sf-icon">🐛</span><span data-en="Report Bug" data-zh="报告问题">报告问题</span>
         </button>
         <div class="sf-divider"></div>
         <div class="sf-menu-sync" id="sb-sync-status"></div>
         <div class="sf-divider"></div>
-        <button class="sf-menu-item sf-danger" id="btn-logout-sb">
+        <button class="sf-menu-item sf-danger" role="menuitem" id="btn-logout-sb">
           <span class="sf-icon">↩</span><span data-en="Log out" data-zh="退出登录">退出登录</span>
         </button>
       </div>
@@ -143,16 +143,16 @@
         <div class="header-brand">25Maths</div>
       </div>
       <div class="header-right">
-        <button class="btn-icon" id="dark-toggle-hb" onclick="toggleDark()">🌙</button>
-        <button class="btn-icon" id="sound-toggle-hb" onclick="toggleSound()">🔊</button>
-        <button class="btn-icon" id="lang-toggle-hb" onclick="toggleLang()">中文</button>
+        <button class="btn-icon" id="dark-toggle-hb" onclick="toggleDark()" aria-label="Toggle dark mode">🌙</button>
+        <button class="btn-icon" id="sound-toggle-hb" onclick="toggleSound()" aria-label="Toggle sound">🔊</button>
+        <button class="btn-icon" id="lang-toggle-hb" onclick="toggleLang()" aria-label="Toggle language">中文</button>
         <div class="header-user">
           <span id="hb-rank"></span>
           <span id="hb-name"></span>
         </div>
         <button class="btn-icon notif-bell" id="notif-bell-hb" style="display:none" onclick="showNotifPanel()" title="通知">🔔<span class="notif-badge" id="notif-badge-hb">0</span></button>
-        <button class="btn-icon" onclick="showSettings()" title="设置">⚙</button>
-        <button class="btn-icon" id="btn-logout-hb" title="退出">↩</button>
+        <button class="btn-icon" onclick="showSettings()" title="设置" aria-label="Settings">⚙</button>
+        <button class="btn-icon" id="btn-logout-hb" title="退出" aria-label="Log out">↩</button>
       </div>
     </header>
 
@@ -205,7 +205,7 @@
 </div><!-- /app-shell -->
 
 <!-- Toast -->
-<div id="toast-el" class="toast"></div>
+<div id="toast-el" class="toast" role="alert" aria-live="polite"></div>
 
 <!-- Modal Overlay -->
 <div id="modal-overlay" class="modal-overlay" role="dialog" aria-modal="true" style="display:none">

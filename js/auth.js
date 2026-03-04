@@ -385,47 +385,52 @@ async function saveSettings() {
   msgEl.textContent = '';
   msgEl.className = 'settings-msg';
 
-  var updated = false;
+  try {
+    var updated = false;
 
-  /* Nickname update */
-  if (nick !== (currentUser.nickname || '')) {
-    var res = await sb.auth.updateUser({ data: { nickname: nick } });
-    if (res.error) {
-      msgEl.textContent = t('Nickname save failed: ', '昵称保存失败: ') + res.error.message;
-      msgEl.className = 'settings-msg error';
-      return;
+    /* Nickname update */
+    if (nick !== (currentUser.nickname || '')) {
+      var res = await sb.auth.updateUser({ data: { nickname: nick } });
+      if (res.error) {
+        msgEl.textContent = t('Nickname save failed: ', '昵称保存失败: ') + res.error.message;
+        msgEl.className = 'settings-msg error';
+        return;
+      }
+      currentUser.nickname = nick;
+      updateSidebar();
+      updated = true;
     }
-    currentUser.nickname = nick;
-    updateSidebar();
-    updated = true;
-  }
 
-  /* Password update */
-  if (pw1 || pw2) {
-    if (pw1.length < 6) {
-      msgEl.textContent = t('Password must be at least 6 characters', '密码至少6位');
-      msgEl.className = 'settings-msg error';
-      return;
+    /* Password update */
+    if (pw1 || pw2) {
+      if (pw1.length < 6) {
+        msgEl.textContent = t('Password must be at least 6 characters', '密码至少6位');
+        msgEl.className = 'settings-msg error';
+        return;
+      }
+      if (pw1 !== pw2) {
+        msgEl.textContent = t('Passwords do not match', '两次密码不一致');
+        msgEl.className = 'settings-msg error';
+        return;
+      }
+      var res2 = await sb.auth.updateUser({ password: pw1 });
+      if (res2.error) {
+        msgEl.textContent = t('Password change failed: ', '密码修改失败: ') + translateAuthError(res2.error.message);
+        msgEl.className = 'settings-msg error';
+        return;
+      }
+      updated = true;
     }
-    if (pw1 !== pw2) {
-      msgEl.textContent = t('Passwords do not match', '两次密码不一致');
-      msgEl.className = 'settings-msg error';
-      return;
-    }
-    var res2 = await sb.auth.updateUser({ password: pw1 });
-    if (res2.error) {
-      msgEl.textContent = t('Password change failed: ', '密码修改失败: ') + translateAuthError(res2.error.message);
-      msgEl.className = 'settings-msg error';
-      return;
-    }
-    updated = true;
-  }
 
-  if (updated) {
-    showToast(t('Saved', '保存成功'));
-    hideModal();
-  } else {
-    hideModal();
+    if (updated) {
+      showToast(t('Saved', '保存成功'));
+      hideModal();
+    } else {
+      hideModal();
+    }
+  } catch (e) {
+    msgEl.textContent = t('Save failed: ', '保存失败: ') + e.message;
+    msgEl.className = 'settings-msg error';
   }
 }
 

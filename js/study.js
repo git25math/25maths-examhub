@@ -40,13 +40,13 @@ function renderStudyCard() {
   html += '<div class="fc-inner">';
   html += '<div class="fc-face fc-front">';
   html += '<div class="fc-front-label">ENGLISH</div>';
-  html += '<div class="fc-front-word">' + p.word + '</div>';
+  html += '<div class="fc-front-word">' + escapeHtml(p.word) + '</div>';
   html += '<div class="fc-front-hint">' + t('Tap to flip', '\u70b9\u51fb\u7ffb\u724c\u67e5\u770b\u91ca\u4e49') + '</div>';
   html += '</div>';
   html += '<div class="fc-face fc-back">';
   html += '<div class="fc-back-label">' + t('CHINESE', '\u4e2d\u6587') + '</div>';
-  html += '<div class="fc-back-def">' + p.def + '</div>';
-  html += '<div class="fc-back-word">' + p.word + '</div>';
+  html += '<div class="fc-back-def">' + escapeHtml(p.def) + '</div>';
+  html += '<div class="fc-back-word">' + escapeHtml(p.word) + '</div>';
   html += '</div>';
   html += '</div></div>';
 

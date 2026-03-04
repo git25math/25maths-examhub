@@ -294,7 +294,7 @@ async function renderFeedbackList() {
 
     ct.innerHTML = html;
   } catch (e) {
-    ct.innerHTML = '<div class="admin-empty">' + e.message + '</div>';
+    ct.innerHTML = '<div class="admin-empty">' + escapeHtml(e.message) + '</div>';
   }
 }
 
@@ -348,16 +348,24 @@ async function showFeedbackDetail(id) {
 }
 
 async function updateFeedbackStatus(id, status) {
-  await sb.from('feedback').update({ status: status }).eq('id', id);
-  hideModal();
-  showToast(t('Status updated', '状态已更新'));
-  renderFeedbackList();
+  try {
+    await sb.from('feedback').update({ status: status }).eq('id', id);
+    hideModal();
+    showToast(t('Status updated', '状态已更新'));
+    renderFeedbackList();
+  } catch (e) {
+    showToast(t('Update failed', '更新失败'));
+  }
 }
 
 async function saveFeedbackNotes(id) {
-  var notes = E('fb-notes') ? E('fb-notes').value.trim() : '';
-  await sb.from('feedback').update({ admin_notes: notes }).eq('id', id);
-  hideModal();
-  showToast(t('Notes saved', '备注已保存'));
-  renderFeedbackList();
+  try {
+    var notes = E('fb-notes') ? E('fb-notes').value.trim() : '';
+    await sb.from('feedback').update({ admin_notes: notes }).eq('id', id);
+    hideModal();
+    showToast(t('Notes saved', '备注已保存'));
+    renderFeedbackList();
+  } catch (e) {
+    showToast(t('Save failed', '保存失败'));
+  }
 }

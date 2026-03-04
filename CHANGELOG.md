@@ -1,5 +1,53 @@
 # Changelog
 
+## [1.1.4] - 2026-03-05 — 全面加固：残余 XSS + onclick 注入 + 错误处理 + syncToCloud 节流 + 可访问性 + 代码清理
+
+### 安全修复
+- **残余 XSS 清除（22 处）**：study/review/mastery/match/export 词汇渲染、app.js 排行榜班级名、homework.js 作业标题/错误消息、admin.js 学校名、vocab-admin.js 反馈错误消息全量 `escapeHtml()` 转义
+  - study.js ×3, review.js ×5, mastery.js ×4, match.js ×2, export.js ×2, app.js ×1, homework.js ×2, admin.js ×1, vocab-admin.js ×1
+- **onclick 注入修复（4 处）**：`safeName`/`safeCName` onclick 字符串插值增加 `.replace(/\\/g, '\\\\')`，防止反斜杠逃逸注入
+  - admin.js ×2 (safeCName, safeName), homework.js ×1 (safeName), spell.js ×1 (speakWord onclick)
+
+### 健壮性
+- **异步错误处理（8 个函数 try/catch）**：renderClassList / loadActivityData / doCreateClass / doBatchCreate / doResetPassword / saveSettings / updateFeedbackStatus / saveFeedbackNotes
+  - admin.js ×5, auth.js ×1, vocab-admin.js ×2
+
+### 性能优化
+- **syncToCloud 节流**：新增 `debouncedSync()`（2s trailing debounce），`setWordStatus()` 改用 debouncedSync 代替直接 syncToCloud，减少学习期间网络请求
+
+### 可访问性
+- **`<html lang="en">`**：默认语言从 `zh-CN` 改为 `en`
+- **Toast ARIA**：`#toast-el` 添加 `role="alert" aria-live="polite"`
+- **用户菜单 ARIA**：sf-trigger 添加 `aria-expanded="false" aria-haspopup="menu"`，sf-menu 添加 `role="menu"`，6 个 sf-menu-item 添加 `role="menuitem"`
+- **toggleUserMenu**：切换时动态更新 `aria-expanded`
+- **Header 按钮 aria-label**：5 个 btn-icon 添加 `aria-label`
+- **Auth 表单 aria-label**：4 个登录输入 + 4 个教师注册输入添加 `aria-label`
+
+### 代码清理
+- **移除死代码**：mastery.js `sidebarCIEOpen`/`toggleCIESidebar`、`browseIdx`/`browsePairs`；ui.js `setLang()`
+- **APP_VERSION 常量**：config.js 新增 `var APP_VERSION = 'v1.1.4'`
+- **版本号统一**：ui.js showBugReport 两处硬编码版本号改用 `APP_VERSION`
+- **缓存清理**：storage.js `invalidateCache()` 增加 `_quizCache` 清理
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `js/config.js` | +APP_VERSION 常量 |
+| `js/study.js` | escapeHtml×3 |
+| `js/review.js` | escapeHtml×5 |
+| `js/mastery.js` | escapeHtml×4, 移除死代码×4 |
+| `js/match.js` | escapeHtml×2 |
+| `js/export.js` | escapeHtml×2 |
+| `js/app.js` | escapeHtml×1 |
+| `js/spell.js` | onclick 反斜杠转义 |
+| `js/admin.js` | escapeHtml×1, 反斜杠×2, try/catch×5 |
+| `js/homework.js` | escapeHtml×2, 反斜杠×1 |
+| `js/vocab-admin.js` | escapeHtml×1, try/catch×2 |
+| `js/auth.js` | try/catch×1 |
+| `js/storage.js` | debouncedSync, _quizCache 清理 |
+| `js/ui.js` | 移除 setLang, APP_VERSION×2, aria-expanded |
+| `index.html` | lang="en", toast ARIA, menu ARIA, aria-label×13 |
+
 ## [1.1.3] - 2026-03-05 — 深度加固：残余 XSS + 错误处理 + 批量通知 + 可访问性 + 品牌更名
 
 ### 安全修复

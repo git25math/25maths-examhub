@@ -79,10 +79,6 @@ function selectCategory(catId) {
   }, appView !== 'home' ? 100 : 0);
 }
 
-/* Backward compat */
-var sidebarCIEOpen = false;
-function toggleCIESidebar() { toggleBoardSidebar('cie'); }
-
 /* ═══ HOME DASHBOARD ═══ */
 function renderHome() {
   var all = getAllWords();
@@ -337,9 +333,9 @@ function renderDeck(idx) {
     var lvColor = SRS_COLORS[lvNum] || SRS_COLORS[0];
 
     html += '<div class="word-row">';
-    html += '<div class="word-en">' + p.word + '</div>';
+    html += '<div class="word-en">' + escapeHtml(p.word) + '</div>';
     if (appLang === 'bilingual') {
-      html += '<div class="word-zh">' + p.def + '</div>';
+      html += '<div class="word-zh">' + escapeHtml(p.def) + '</div>';
     }
     html += '<span class="word-lv" style="background:' + lvColor + '20;color:' + lvColor + '">' + SRS_LABELS[lvNum] + '</span>';
     if (ok > 0 || fail > 0) {
@@ -358,9 +354,6 @@ function setSort(s, idx) {
 }
 
 /* ═══ QUICK BROWSE MODAL ═══ */
-var browseIdx = 0;
-var browsePairs = [];
-
 function openPreview(idx) {
   currentLvl = idx;
   renderPreview(idx);
@@ -381,9 +374,9 @@ function renderPreview(idx) {
   pairs.forEach(function(p, i) {
     html += '<div class="preview-card">';
     html += '<div class="preview-num">#' + (i + 1) + '</div>';
-    html += '<div class="preview-en">' + p.word + '</div>';
+    html += '<div class="preview-en">' + escapeHtml(p.word) + '</div>';
     if (appLang === 'bilingual') {
-      html += '<div class="preview-zh">' + p.def + '</div>';
+      html += '<div class="preview-zh">' + escapeHtml(p.def) + '</div>';
     }
     html += '</div>';
   });

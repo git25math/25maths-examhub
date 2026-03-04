@@ -43,7 +43,7 @@ function renderSpellCard() {
 
   /* Prompt */
   html += '<div class="spell-prompt">';
-  html += '<div class="spell-def">' + escapeHtml(p.def) + (canSpeak() ? ' <button class="btn-speak" onclick="speakWord(\'' + p.word.replace(/'/g, "\\'") + '\')" title="' + t('Listen', '\u53d1\u97f3') + '">\ud83d\udd0a</button>' : '') + '</div>';
+  html += '<div class="spell-def">' + escapeHtml(p.def) + (canSpeak() ? ' <button class="btn-speak" onclick="speakWord(\'' + p.word.replace(/\\/g, '\\\\').replace(/'/g, "\\'") + '\')" title="' + t('Listen', '\u53d1\u97f3') + '">\ud83d\udd0a</button>' : '') + '</div>';
   html += '<div class="spell-hint">' + hint + '</div>';
   html += '</div>';
 

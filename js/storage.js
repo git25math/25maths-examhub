@@ -29,6 +29,7 @@ function invalidateCache() {
   _cacheDirty = true;
   _allWordsCache = null;
   _wordDataCache = null;
+  if (typeof _quizCache !== 'undefined') _quizCache = null;
 }
 
 /* Level best scores */
@@ -135,7 +136,7 @@ function setWordStatus(key, status, interval, correct) {
 
   writeS(s);
   if (newStreak) showToast('🔥 ' + t(getStreakCount() + '-day streak!', '连续学习 ' + getStreakCount() + ' 天！'));
-  syncToCloud();
+  debouncedSync();
 }
 
 /* Get all words across all levels with their mastery status */
@@ -225,6 +226,13 @@ function recordActivity() {
   s.streak.last = today;
   writeS(s);
   return true;
+}
+
+/* Debounced sync — avoids hammering cloud during study sessions */
+var _debounceSyncTimer = null;
+function debouncedSync() {
+  clearTimeout(_debounceSyncTimer);
+  _debounceSyncTimer = setTimeout(function() { syncToCloud(); }, 2000);
 }
 
 /* Cloud sync */

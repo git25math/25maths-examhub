@@ -178,6 +178,12 @@
 - [x] Modal ARIA（role=dialog / aria-modal / aria-labelledby）→ v1.1.3 完成
 - [x] Canvas aria-hidden → v1.1.3 完成
 - [x] 品牌更名 AISL Harrow Haikou → Harrow Haikou Upper School Mathematics Curriculum → v1.1.3 完成
+- [x] 残余 XSS 全量清除（study/review/mastery/match/export/app/homework/admin 22 处）→ v1.1.4 完成
+- [x] onclick 反斜杠逃逸注入修复（admin/homework/spell 4 处）→ v1.1.4 完成
+- [x] 异步错误处理（admin×5/auth×1/vocab-admin×2 try/catch）→ v1.1.4 完成
+- [x] syncToCloud 节流（debouncedSync 2s trailing debounce）→ v1.1.4 完成
+- [x] 可访问性增强（lang/ARIA role/aria-expanded/aria-label ×20）→ v1.1.4 完成
+- [x] 死代码清理 + APP_VERSION 版本常量统一 → v1.1.4 完成
 
 ## Phase 8.4 — 班级编辑 + 学生导入 [DONE]
 - [x] 编辑班级信息（名称/年级，年级变更级联更新）→ v1.0.9 完成

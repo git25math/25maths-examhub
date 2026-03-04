@@ -311,5 +311,8 @@ function isSuperAdmin() {
   return currentUser && currentUser.email === SUPER_ADMIN_EMAIL;
 }
 
+/* App version */
+var APP_VERSION = 'v1.1.4';
+
 /* DOM helper */
 var E = function(id) { return document.getElementById(id); };

@@ -77,9 +77,9 @@ function renderReviewDash() {
     filtered.slice(0, 30).forEach(function(w) {
       var lvColor = SRS_COLORS[w.lv] || SRS_COLORS[0];
       html += '<div class="word-row">';
-      html += '<div class="word-en">' + w.word + '</div>';
+      html += '<div class="word-en">' + escapeHtml(w.word) + '</div>';
       if (appLang === 'bilingual') {
-        html += '<div class="word-zh">' + w.def + '</div>';
+        html += '<div class="word-zh">' + escapeHtml(w.def) + '</div>';
       }
       html += '<span class="word-lv" style="background:' + lvColor + '20;color:' + lvColor + '">' + SRS_LABELS[w.lv] + '</span>';
       html += '</div>';
@@ -242,13 +242,13 @@ function renderReviewCard() {
   html += '<div class="fc-inner">';
   html += '<div class="fc-face fc-front">';
   html += '<div class="fc-front-label">ENGLISH</div>';
-  html += '<div class="fc-front-word">' + w.word + '</div>';
+  html += '<div class="fc-front-word">' + escapeHtml(w.word) + '</div>';
   html += '<div class="fc-front-hint">' + t('Tap to flip', '\u70b9\u51fb\u7ffb\u724c\u67e5\u770b\u91ca\u4e49') + '</div>';
   html += '</div>';
   html += '<div class="fc-face fc-back">';
   html += '<div class="fc-back-label">' + t('CHINESE', '\u4e2d\u6587') + '</div>';
-  html += '<div class="fc-back-def">' + w.def + '</div>';
-  html += '<div class="fc-back-word">' + w.word + '</div>';
+  html += '<div class="fc-back-def">' + escapeHtml(w.def) + '</div>';
+  html += '<div class="fc-back-word">' + escapeHtml(w.word) + '</div>';
   html += '</div>';
   html += '</div></div>';
 
