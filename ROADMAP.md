@@ -164,6 +164,11 @@
 - [x] 学生作业导航入口（侧栏+底栏📝按钮）→ v1.1.1 完成
 - [x] 手机端响应式补全（8 条移动端适配规则）→ v1.1.1 完成
 - [x] 自定义词汇校验（最多 10 词上限）→ v1.1.1 完成
+- [x] 残余 XSS 全量清除（14 处 innerHTML 用户数据转义）→ v1.1.2 完成
+- [x] N+1 查询消除（renderClassHwList 批量 .in() 查询）→ v1.1.2 完成
+- [x] 串行→并行（cascadeGradeUpdate Promise.all）→ v1.1.2 完成
+- [x] markNotifRead/markAllNotifsRead try/catch 健壮性 → v1.1.2 完成
+- [x] 键盘 focus-visible 焦点指示器 → v1.1.2 完成
 
 ## Phase 8.4 — 班级编辑 + 学生导入 [DONE]
 - [x] 编辑班级信息（名称/年级，年级变更级联更新）→ v1.0.9 完成

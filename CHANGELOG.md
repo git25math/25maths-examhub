@@ -1,5 +1,30 @@
 # Changelog
 
+## [1.1.2] - 2026-03-05 — 残余 XSS + N+1 查询 + 健壮性 + 可访问性
+
+### 安全修复
+- **残余 XSS 全量清除**：14 处 innerHTML 中用户数据（hw.title / student_name / word / def / description / user_email / row.name）统一 `escapeHtml()` 转义
+  - homework.js ×8, admin.js ×3, vocab-admin.js ×2, app.js ×1
+
+### 性能优化
+- **N+1 查询消除**：`renderClassHwList()` 从 N 次逐条 `assignment_results` 查询改为 1 次 `.in()` 批量查询 + 内存分组
+- **串行→并行**：`cascadeGradeUpdate()` 学生 metadata 更新从 for 循环串行改为 `Promise.all` 并行
+
+### 健壮性
+- **try/catch 补全**：`markNotifRead()` / `markAllNotifsRead()` 添加 try/catch，避免 DB 错误冒泡
+
+### 可访问性
+- **键盘焦点指示器**：所有交互元素（btn / input / textarea / nav / hw-option）添加 `focus-visible` 轮廓
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `js/homework.js` | escapeHtml×8, N+1 批量查询, try/catch×2 |
+| `js/admin.js` | escapeHtml×3, Promise.all 并行化 |
+| `js/vocab-admin.js` | escapeHtml×2 |
+| `js/app.js` | escapeHtml×1 |
+| `css/style.css` | focus-visible 键盘焦点指示器 4 条规则 |
+
 ## [1.1.1] - 2026-03-05 — 项目健康修复（XSS/竞态/深色模式/RLS/响应式）
 
 ### 安全修复

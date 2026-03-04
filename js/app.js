@@ -230,7 +230,7 @@ async function renderBoard() {
   rows.forEach(function(row, i) {
     html += '<div class="board-row' + (row.isMe ? ' me' : '') + '">';
     html += '<div class="board-rank">' + (i < 3 ? medals[i] : (i + 1)) + '</div>';
-    html += '<div class="board-name">' + row.emoji + ' ' + row.name + (row.isMe ? ' (' + t('you', '\u4f60') + ')' : '') + '</div>';
+    html += '<div class="board-name">' + row.emoji + ' ' + escapeHtml(row.name) + (row.isMe ? ' (' + t('you', '\u4f60') + ')' : '') + '</div>';
     html += '<div class="board-score">' + row.score + '</div>';
     html += '<div class="board-streak">' + (row.pct != null ? row.pct + '%' : '') + '</div>';
     html += '</div>';

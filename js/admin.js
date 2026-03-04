@@ -252,16 +252,15 @@ async function cascadeGradeUpdate(classId, newGrade) {
   var r1 = await sb.from('leaderboard').update({ board: newGrade }).eq('class_id', classId);
   if (r1.error) throw new Error(r1.error.message);
 
-  /* 2. Update each student's auth metadata.board via edge function */
+  /* 2. Update each student's auth metadata.board via edge function (parallel) */
   var csRes = await sb.from('class_students').select('user_id').eq('class_id', classId);
   var students = csRes.data || [];
-  for (var i = 0; i < students.length; i++) {
-    var r = await callEdgeFunction('update-student', {
-      student_user_id: students[i].user_id,
-      board: newGrade
-    });
-    if (r.error) throw new Error(r.error);
-  }
+  var promises = students.map(function(s) {
+    return callEdgeFunction('update-student', { student_user_id: s.user_id, board: newGrade });
+  });
+  var results = await Promise.all(promises);
+  var failed = results.filter(function(r) { return r.error; });
+  if (failed.length > 0) throw new Error(failed.length + ' students failed to update');
 }
 
 /* ═══ PHASE 6: BATCH CREATE STUDENTS ═══ */
@@ -436,7 +435,7 @@ async function renderClassDetail(classId) {
   var safeCName = cls.name.replace(/'/g, "\\'").replace(/"/g, '&quot;');
   var html = '<div class="admin-detail-header">' +
     '<button class="btn btn-ghost btn-sm" onclick="renderClassList()">' + t('\u2190 Back', '\u2190 返回') + '</button>' +
-    '<div class="admin-detail-title">' + cls.name + ' <span class="admin-detail-grade">' + gradeLabel + '</span>' +
+    '<div class="admin-detail-title">' + escapeHtml(cls.name) + ' <span class="admin-detail-grade">' + gradeLabel + '</span>' +
     ' <button class="btn btn-ghost btn-sm" style="padding:2px 6px;font-size:14px" onclick="showEditClassModal(\'' + classId + '\', \'' + safeCName + '\', \'' + cls.grade + '\')">&#9998;</button></div>' +
     '<button class="btn btn-primary btn-sm" onclick="showBatchCreateModal(\'' + classId + '\')">' + t('+ Add Students', '+ 添加学生') + '</button>' +
     '</div>';
@@ -468,7 +467,7 @@ async function renderClassDetail(classId) {
     var total = s.total_words || 0;
 
     html += '<tr>';
-    html += '<td class="admin-td-name">' + (s.student_name || '-') + '</td>';
+    html += '<td class="admin-td-name">' + escapeHtml(s.student_name || '-') + '</td>';
     html += '<td class="admin-td-time">' + lastActive + '</td>';
     html += '<td class="admin-td-mastery">';
     html += '<div class="admin-progress"><div class="admin-progress-fill" style="width:' + pct + '%"></div></div>';
@@ -511,7 +510,7 @@ async function renderClassDetail(classId) {
 function showResetPasswordModal(userId, name) {
   var html = '<div class="section-title">' + t('Reset Password', '重置密码') + '</div>' +
     '<p style="font-size:13px;color:var(--c-text2);margin-bottom:12px">' +
-    t('Reset password for: ', '重置学生密码：') + '<strong>' + name + '</strong></p>' +
+    t('Reset password for: ', '重置学生密码：') + '<strong>' + escapeHtml(name) + '</strong></p>' +
     '<input class="auth-input" id="rp-pass" type="text" placeholder="' + t('New password (min 6 chars)', '新密码（至少6位）') + '">' +
     '<div id="rp-msg" class="settings-msg"></div>' +
     '<div style="display:flex;gap:8px;margin-top:12px">' +

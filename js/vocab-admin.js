@@ -285,8 +285,8 @@ async function renderFeedbackList() {
       var date = fb.created_at ? new Date(fb.created_at).toLocaleDateString() : '';
       html += '<div class="fb-list-item">';
       html += '<span class="fb-type">' + (fb.type || 'other') + '</span>';
-      html += '<span class="fb-desc">' + (fb.description || '').substring(0, 80) + '</span>';
-      html += '<span class="fb-meta">' + (fb.user_email || t('Anonymous', '匿名')) + ' · ' + date + '</span>';
+      html += '<span class="fb-desc">' + escapeHtml((fb.description || '').substring(0, 80)) + '</span>';
+      html += '<span class="fb-meta">' + escapeHtml(fb.user_email || t('Anonymous', '匿名')) + ' · ' + date + '</span>';
       html += '<span class="fb-status ' + (fb.status || 'new') + '">' + (fb.status || 'new') + '</span>';
       html += '<button class="btn btn-ghost btn-sm" style="margin-left:4px" onclick="showFeedbackDetail(\'' + fb.id + '\')">' + t('View', '查看') + '</button>';
       html += '</div>';

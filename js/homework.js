@@ -47,22 +47,26 @@ async function sendNotification(userId, type, title, body, linkType, linkId) {
 
 async function markNotifRead(id) {
   if (!sb) return;
-  await sb.from('notifications').update({ is_read: true }).eq('id', id);
-  if (_notifCache) {
-    _notifCache.forEach(function(n) { if (n.id === id) n.is_read = true; });
-    _notifCount = _notifCache.filter(function(n) { return !n.is_read; }).length;
-    updateNotifBadge();
-  }
+  try {
+    await sb.from('notifications').update({ is_read: true }).eq('id', id);
+    if (_notifCache) {
+      _notifCache.forEach(function(n) { if (n.id === id) n.is_read = true; });
+      _notifCount = _notifCache.filter(function(n) { return !n.is_read; }).length;
+      updateNotifBadge();
+    }
+  } catch (e) { /* ignore */ }
 }
 
 async function markAllNotifsRead() {
   if (!sb || !isLoggedIn()) return;
-  await sb.from('notifications').update({ is_read: true }).eq('user_id', currentUser.id).eq('is_read', false);
-  if (_notifCache) {
-    _notifCache.forEach(function(n) { n.is_read = true; });
-    _notifCount = 0;
-    updateNotifBadge();
-  }
+  try {
+    await sb.from('notifications').update({ is_read: true }).eq('user_id', currentUser.id).eq('is_read', false);
+    if (_notifCache) {
+      _notifCache.forEach(function(n) { n.is_read = true; });
+      _notifCount = 0;
+      updateNotifBadge();
+    }
+  } catch (e) { /* ignore */ }
 }
 
 function showNotifPanel() {
@@ -304,6 +308,18 @@ async function renderClassHwList(classId) {
       return;
     }
 
+    /* Batch fetch all assignment results (avoid N+1) */
+    var hwIds = hws.map(function(h) { return h.id; });
+    var rRes = await sb.from('assignment_results')
+      .select('assignment_id, user_id, completed_at')
+      .in('assignment_id', hwIds);
+    var allResults = rRes.data || [];
+    var resultsByHw = {};
+    allResults.forEach(function(r) {
+      if (!resultsByHw[r.assignment_id]) resultsByHw[r.assignment_id] = [];
+      resultsByHw[r.assignment_id].push(r);
+    });
+
     var html = '';
     for (var i = 0; i < hws.length; i++) {
       var hw = hws[i];
@@ -311,14 +327,11 @@ async function renderClassHwList(classId) {
       var isOverdue = new Date(hw.deadline) < new Date();
       var isCustom = hw.custom_vocabulary && hw.custom_vocabulary.length > 0;
 
-      var rRes = await sb.from('assignment_results')
-        .select('user_id, completed_at')
-        .eq('assignment_id', hw.id);
-      var results = rRes.data || [];
+      var results = resultsByHw[hw.id] || [];
       var completed = results.filter(function(r) { return r.completed_at; }).length;
 
       html += '<div class="hw-list-item">';
-      html += '<span class="hw-list-title">' + (isCustom ? '\ud83c\udfaf ' : '') + hw.title + '</span>';
+      html += '<span class="hw-list-title">' + (isCustom ? '\ud83c\udfaf ' : '') + escapeHtml(hw.title) + '</span>';
       html += '<span class="hw-list-deadline" style="' + (isOverdue ? 'color:var(--c-danger)' : '') + '">' + deadline + '</span>';
       html += '<span class="hw-list-rate">' + completed + ' ' + t('done', '完成') + '</span>';
       html += '<button class="btn btn-ghost btn-sm" onclick="renderHwProgress(\'' + hw.id + '\', \'' + classId + '\')">' + t('Detail', '详情') + '</button>';
@@ -398,7 +411,7 @@ async function renderHwProgress(hwId, classId) {
       var safeName = (s.student_name || '').replace(/'/g, "\\'").replace(/"/g, '&quot;');
 
       html += '<tr>';
-      html += '<td class="admin-td-name">' + (s.student_name || '-') + '</td>';
+      html += '<td class="admin-td-name">' + escapeHtml(s.student_name || '-') + '</td>';
       html += '<td style="' + statusStyle + ';font-weight:600">' + status + '</td>';
       html += '<td>' + score + '</td>';
       html += '<td>' + pct + '</td>';
@@ -429,7 +442,7 @@ async function showStudentHwDetail(hwId, studentUserId, studentName, classId) {
   var pct = r.total_count > 0 ? Math.round(r.correct_count / r.total_count * 100) : 0;
   var wrongWords = r.wrong_words || [];
 
-  var html = '<div class="section-title">' + studentName + ' — ' + t('Homework Detail', '作业详情') + '</div>';
+  var html = '<div class="section-title">' + escapeHtml(studentName) + ' — ' + t('Homework Detail', '作业详情') + '</div>';
   html += '<div style="font-size:13px;color:var(--c-text2);margin-bottom:16px">';
   html += t('Score: ', '成绩：') + '<strong>' + r.correct_count + '/' + r.total_count + ' (' + pct + '%)</strong><br>';
   html += t('Attempts: ', '尝试次数：') + r.attempts + '<br>';
@@ -441,7 +454,7 @@ async function showStudentHwDetail(hwId, studentUserId, studentName, classId) {
     html += '<div style="max-height:200px;overflow-y:auto;border:1px solid var(--c-border);border-radius:8px;padding:8px 12px;margin-bottom:12px">';
     wrongWords.forEach(function(w) {
       html += '<div style="padding:4px 0;font-size:13px;border-bottom:1px solid var(--c-border-light)">';
-      html += '<strong>' + (w.word || '') + '</strong> — ' + (w.def || '');
+      html += '<strong>' + escapeHtml(w.word || '') + '</strong> — ' + escapeHtml(w.def || '');
       html += '</div>';
     });
     html += '</div>';
@@ -517,7 +530,7 @@ async function renderHomeworkBanner() {
     var hasResult = hw._result && hw._result.attempts > 0;
 
     html += '<div class="hw-banner-item" onclick="event.stopPropagation();startHwTest(\'' + hw.id + '\')">';
-    html += '<span>' + hw.title + '</span>';
+    html += '<span>' + escapeHtml(hw.title) + '</span>';
     if (hasResult) {
       html += '<span class="hw-banner-status pending">' + hw._result.correct_count + '/' + hw._result.total_count + '</span>';
     }
@@ -565,7 +578,7 @@ async function showStudentHwPage() {
     var isCustom = hw.custom_vocabulary && hw.custom_vocabulary.length > 0;
 
     html += '<div class="hw-list-item" style="cursor:pointer" onclick="startHwTest(\'' + hw.id + '\')">';
-    html += '<span class="hw-list-title">' + (isCustom ? '\ud83c\udfaf ' : '') + hw.title + '</span>';
+    html += '<span class="hw-list-title">' + (isCustom ? '\ud83c\udfaf ' : '') + escapeHtml(hw.title) + '</span>';
     if (hasResult) {
       html += '<span style="font-size:12px;color:var(--c-primary);font-weight:600">' + pct + '%</span>';
     }
@@ -591,7 +604,7 @@ async function showStudentHwPage() {
     else tip = t('Keep practicing this group', '继续练习这个词组');
 
     html += '<div class="hw-list-item" style="flex-wrap:wrap">';
-    html += '<span class="hw-list-title">' + (isCustom ? '\ud83c\udfaf ' : '') + hw.title + '</span>';
+    html += '<span class="hw-list-title">' + (isCustom ? '\ud83c\udfaf ' : '') + escapeHtml(hw.title) + '</span>';
     html += '<span style="font-size:12px;font-weight:600;color:' + (pct >= 70 ? 'var(--c-success)' : 'var(--c-warning)') + '">' + r.correct_count + '/' + r.total_count + ' (' + pct + '%)</span>';
     html += '<span class="hw-list-deadline">' + completedDate + '</span>';
     html += '<button class="btn btn-ghost btn-sm" onclick="startHwTest(\'' + hw.id + '\')">' + t('Retry', '重做') + '</button>';
@@ -796,7 +809,7 @@ async function finishHwTest() {
     resultHtml += '<div class="hw-section-title" style="color:var(--c-danger)">' + t('Wrong Words', '错词') + ' (' + t_.wrongWords.length + ')</div>';
     t_.wrongWords.forEach(function(w) {
       resultHtml += '<div style="padding:6px 0;font-size:13px;border-bottom:1px solid var(--c-border-light)">';
-      resultHtml += '<strong>' + w.word + '</strong> — ' + w.def;
+      resultHtml += '<strong>' + escapeHtml(w.word) + '</strong> — ' + escapeHtml(w.def);
       resultHtml += '</div>';
     });
     resultHtml += '<div style="font-size:12px;color:var(--c-text2);margin-top:8px">\ud83d\udca1 ' + t('Try reviewing these words in Study mode', '建议在学习模式中复习这些词') + '</div>';

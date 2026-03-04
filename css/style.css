@@ -2563,3 +2563,9 @@ input { font-family: inherit; }
 [data-theme="dark"] .fb-list-item { border-color: var(--c-border); }
 [data-theme="dark"] .va-card-table input { background: var(--c-surface-alt); color: var(--c-text); }
 [data-theme="dark"] .hw-card { border-color: var(--c-border); }
+
+/* ═══ KEYBOARD FOCUS INDICATORS ═══ */
+.btn:focus-visible { outline: 2px solid var(--c-primary); outline-offset: 2px; }
+.auth-input:focus-visible, .bug-textarea:focus-visible, .spell-input:focus-visible { outline: 2px solid var(--c-primary); outline-offset: 1px; }
+.nav-item:focus-visible, .bnav-item:focus-visible { outline: 2px solid var(--c-primary); outline-offset: -2px; }
+.hw-option:focus-visible { outline: 2px solid var(--c-primary); outline-offset: 2px; }
