@@ -87,6 +87,7 @@ function toggleLang() {
   else if (appView === 'import') renderImport();
   else if (appView === 'board') renderBoard();
   updateSidebar();
+  updateNav();
 }
 
 function setLang(mode) {

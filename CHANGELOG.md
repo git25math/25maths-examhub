@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.5.2] - 2026-03-04 — 修复语言切换导航标签不更新
+
+### 修复
+- `toggleLang()` 切换语言后导航标签（首页/Home、复习/Review 等）不更新的问题
+- 根因：`toggleLang()` 调用了 `updateSidebar()` 但遗漏了 `updateNav()`，而 `data-en`/`data-zh` 标签切换逻辑在 `updateNav()` 中
+
+### 文件变更
+- `js/ui.js` — `toggleLang()` 末尾新增 `updateNav()` 调用
+
+---
+
 ## [0.5.1] - 2026-03-04 — 侧栏手风琴导航 + 首页默认收起
 
 ### 变更
