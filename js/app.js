@@ -38,7 +38,7 @@
           LEVELS = LEVELS.slice(0, LEVELS.length - custom.length).concat(customAfterSync);
         }
 
-        afterLogin();
+        await afterLogin();
 
         /* Handle ?level=N URL parameter for deep linking */
         var params = new URLSearchParams(window.location.search);

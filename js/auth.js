@@ -164,7 +164,7 @@ async function afterLogin() {
     showApp();
     /* Init teacher panel after app shell is visible */
     if (sb && currentUser && currentUser.id !== 'local') {
-      initTeacher();
+      await initTeacher();
     }
   }
 }
@@ -205,6 +205,10 @@ async function selectBoard(value) {
   }
   hideBoardSelection();
   showApp();
+  /* Init teacher panel if applicable */
+  if (sb && currentUser && currentUser.id !== 'local') {
+    await initTeacher();
+  }
   syncToCloud();
 }
 
