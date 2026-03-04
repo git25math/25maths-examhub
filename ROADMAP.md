@@ -68,6 +68,7 @@
 - [x] 段位名称双语（Bronze Learner / 青铜学员 等）
 - [x] 语言切换自动刷新所有面板 + 侧栏
 - [x] 12 文件全量 i18n 覆盖
+- [x] 登录页默认英文 + 右上角语言切换按钮 → v1.0.4 完成
 
 ## Phase 4 — Edexcel IGCSE 4MA1 + 多考试局架构 [DONE]
 - [x] 多考试局 BOARDS 配置层（CIE 0580 + Edexcel 4MA1）

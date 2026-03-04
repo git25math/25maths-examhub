@@ -80,9 +80,11 @@ E('modal-overlay').addEventListener('click', function(e) {
 /* ═══ LANGUAGE TOGGLE ═══ */
 function toggleLang() {
   appLang = appLang === 'bilingual' ? 'en' : 'bilingual';
-  var label = appLang === 'bilingual' ? 'EN' : '\u4e2d\u82f1';
+  var label = appLang === 'en' ? '中文' : 'EN';
   /* Sidebar menu item label handled by updateNav() via data-en/data-zh */
   if (E('lang-toggle-hb')) E('lang-toggle-hb').textContent = label;
+  /* Sync auth overlay toggle button */
+  if (E('auth-lang-toggle')) E('auth-lang-toggle').textContent = label;
   /* Update nav labels immediately */
   updateNav();
   /* Re-render current panel */

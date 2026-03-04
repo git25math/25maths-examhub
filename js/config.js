@@ -44,7 +44,7 @@ var THEME = {
 };
 
 /* Global app state */
-var appLang = 'bilingual';   /* 'bilingual' | 'en' */
+var appLang = 'en';          /* 'en' | 'bilingual' */
 var appView = 'home';        /* current panel id */
 var appSort = 'default';     /* 'default' | 'az' | 'random' | 'hard' */
 var appBP = 'desktop';       /* 'phone' | 'tablet' | 'desktop' */

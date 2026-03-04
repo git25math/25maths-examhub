@@ -3,6 +3,36 @@
    Cross-site compatible: accounts shared with 25maths.com
    ══════════════════════════════════════════════════════════════ */
 
+/* ═══ AUTH LANGUAGE TOGGLE ═══ */
+function toggleAuthLang() {
+  appLang = appLang === 'en' ? 'bilingual' : 'en';
+  updateAuthLang();
+}
+
+function updateAuthLang() {
+  var isEn = appLang === 'en';
+  /* Toggle button text */
+  var btn = E('auth-lang-toggle');
+  if (btn) btn.textContent = isEn ? '中文' : 'EN';
+  /* Header bar lang button */
+  if (E('lang-toggle-hb')) E('lang-toggle-hb').textContent = isEn ? '中文' : 'EN';
+  /* Update all data-en/data-zh elements */
+  updateNav();
+  /* Placeholders */
+  var ph = {
+    'auth-email': [isEn, 'Email', '邮箱地址'],
+    'auth-pass': [isEn, 'Password (min 6 chars)', '密码 (至少6位)'],
+    'tr-name': [isEn, 'Name', '姓名'],
+    'tr-email': [isEn, 'Email', '邮箱'],
+    'tr-pass': [isEn, 'Password (min 6)', '密码 (至少6位)'],
+    'tr-code': [isEn, 'School Code', '学校注册码']
+  };
+  for (var id in ph) {
+    var el = E(id);
+    if (el) el.placeholder = ph[id][0] ? ph[id][1] : ph[id][2];
+  }
+}
+
 /* ═══ CLIENT-SIDE RATE LIMITING ═══ */
 var AUTH_COOLDOWN_MS = 3000;    // Min interval between attempts
 var AUTH_MAX_ATTEMPTS = 5;      // Lock after N failures
@@ -16,12 +46,12 @@ function checkAuthThrottle() {
   /* Locked out? */
   if (now < authLockUntil) {
     var secs = Math.ceil((authLockUntil - now) / 1000);
-    E('auth-err').textContent = '请 ' + secs + 's 后重试';
+    E('auth-err').textContent = t('Please retry in ' + secs + 's', '请 ' + secs + 's 后重试');
     return false;
   }
   /* Cooldown between attempts */
   if (now - authLastAttempt < AUTH_COOLDOWN_MS) {
-    E('auth-err').textContent = '操作太快，请稍后';
+    E('auth-err').textContent = t('Too fast, please wait', '操作太快，请稍后');
     return false;
   }
   authLastAttempt = now;
@@ -34,7 +64,7 @@ function authFail() {
     authLockUntil = Date.now() + AUTH_LOCKOUT_MS;
     authAttempts = 0;
     var secs = Math.ceil(AUTH_LOCKOUT_MS / 1000);
-    E('auth-err').textContent = '尝试次数过多，请 ' + secs + 's 后重试';
+    E('auth-err').textContent = t('Too many attempts, retry in ' + secs + 's', '尝试次数过多，请 ' + secs + 's 后重试');
   }
 }
 
@@ -50,16 +80,16 @@ E('auth-login').addEventListener('click', async function() {
   var btn = E('auth-login');
   E('auth-err').textContent = '';
 
-  if (!email) { E('auth-err').textContent = '请输入邮箱'; return; }
-  if (pass.length < 6) { E('auth-err').textContent = '密码至少6位'; return; }
-  if (!sb) { E('auth-err').textContent = 'Supabase 未配置，请先体验'; return; }
+  if (!email) { E('auth-err').textContent = t('Please enter email', '请输入邮箱'); return; }
+  if (pass.length < 6) { E('auth-err').textContent = t('Password min 6 chars', '密码至少6位'); return; }
+  if (!sb) { E('auth-err').textContent = t('Supabase not configured', 'Supabase 未配置，请先体验'); return; }
 
   /* Throttle check */
   if (!checkAuthThrottle()) return;
 
   /* Loading state */
   btn.disabled = true;
-  btn.textContent = '登录中...';
+  btn.textContent = t('Logging in...', '登录中...');
 
   try {
     var res = await sb.auth.signInWithPassword({ email: email, password: pass });
@@ -70,7 +100,7 @@ E('auth-login').addEventListener('click', async function() {
         authFail();
         E('auth-err').textContent = translateAuthError(res2.error.message);
         btn.disabled = false;
-        btn.textContent = '登录 / 注册';
+        btn.textContent = t('Login / Register', '登录 / 注册');
         return;
       }
 
@@ -81,9 +111,9 @@ E('auth-login').addEventListener('click', async function() {
       } else {
         /* Dashboard still has Confirm email ON — tell user to login */
         E('auth-err').textContent = '';
-        showToast('注册成功，请直接登录');
+        showToast(t('Registered, please login', '注册成功，请直接登录'));
         btn.disabled = false;
-        btn.textContent = '登录 / 注册';
+        btn.textContent = t('Login / Register', '登录 / 注册');
         return;
       }
     } else if (res.error) {
@@ -95,7 +125,7 @@ E('auth-login').addEventListener('click', async function() {
       }
       E('auth-err').textContent = translateAuthError(res.error.message);
       btn.disabled = false;
-      btn.textContent = '登录 / 注册';
+      btn.textContent = t('Login / Register', '登录 / 注册');
       return;
     } else {
       var meta = res.data.user.user_metadata || {};
@@ -105,13 +135,13 @@ E('auth-login').addEventListener('click', async function() {
 
     authSuccess();
     btn.disabled = false;
-    btn.textContent = '登录 / 注册';
+    btn.textContent = t('Login / Register', '登录 / 注册');
     afterLogin();
   } catch (e) {
     authFail();
-    E('auth-err').textContent = '网络错误，请稍后重试';
+    E('auth-err').textContent = t('Network error, try later', '网络错误，请稍后重试');
     btn.disabled = false;
-    btn.textContent = '登录 / 注册';
+    btn.textContent = t('Login / Register', '登录 / 注册');
   }
 });
 
@@ -222,9 +252,10 @@ function changeBoardFromSettings() {
   showBoardSelection();
 }
 
-/* Translate common Supabase auth error messages to Chinese */
+/* Translate common Supabase auth error messages */
 function translateAuthError(msg) {
-  if (!msg) return '未知错误';
+  if (!msg) return t('Unknown error', '未知错误');
+  if (appLang === 'en') return msg;
   if (msg.indexOf('Invalid login') >= 0) return '邮箱或密码错误';
   if (msg.indexOf('User already registered') >= 0) return '该邮箱已注册，请直接登录';
   if (msg.indexOf('rate') >= 0 || msg.indexOf('limit') >= 0) return '操作太频繁，请稍后重试';
@@ -420,7 +451,7 @@ async function doTeacherRegister() {
     if (result.error) {
       err.textContent = result.error;
       btn.disabled = false;
-      btn.textContent = '注册教师账号';
+      btn.textContent = t('Register Teacher Account', '注册教师账号');
       return;
     }
 
@@ -429,7 +460,7 @@ async function doTeacherRegister() {
     if (res.error) {
       err.textContent = t('Registered but login failed, please login manually', '注册成功但自动登录失败，请手动登录');
       btn.disabled = false;
-      btn.textContent = '注册教师账号';
+      btn.textContent = t('Register Teacher Account', '注册教师账号');
       return;
     }
 
@@ -437,12 +468,12 @@ async function doTeacherRegister() {
     userBoard = 'all';
     try { localStorage.setItem('userBoard', 'all'); } catch (e) {}
     btn.disabled = false;
-    btn.textContent = '注册教师账号';
+    btn.textContent = t('Register Teacher Account', '注册教师账号');
     afterLogin();
   } catch (e) {
     err.textContent = t('Network error', '网络错误');
     btn.disabled = false;
-    btn.textContent = '注册教师账号';
+    btn.textContent = t('Register Teacher Account', '注册教师账号');
   }
 }
 

@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.0.4] - 2026-03-04 — 登录页默认英文 + 语言切换按钮
+
+### 新增
+- **登录页语言切换按钮**：右上角 `中文 / EN` 切换按钮，点击即时切换登录界面语言
+- **登录页默认英文**：所有文字（标题、按钮、placeholder、错误消息）默认英文显示
+- **i18n 全覆盖**：auth overlay 中所有硬编码中文改为 `t(en, zh)` 动态切换
+- **translateAuthError 英文模式**：英文模式直接返回 Supabase 原始错误消息
+- **语言状态同步**：登录页切换语言后，进入 app 内语言保持一致；app 内切换也同步登录页按钮
+
+### 文件变更
+| 文件 | 类型 | 变更 |
+|------|------|------|
+| `js/config.js` | 修改 | 默认语言 `bilingual` → `en` |
+| `index.html` | 修改 | auth-card 加 `auth-lang-toggle` 按钮 + 所有文字元素加 `data-en`/`data-zh` + placeholder 改英文 |
+| `css/style.css` | 修改 | +10 行（`.auth-card { position: relative }` + `.auth-lang-toggle` 样式 + hover 效果）|
+| `js/auth.js` | 修改 | +27 行（`toggleAuthLang()` + `updateAuthLang()` + placeholder 动态切换 + 全部硬编码中文改 `t()` 调用）|
+| `js/ui.js` | 修改 | +2 行（`toggleLang` 同步 auth-lang-toggle 按钮 + label 修正 `中文/EN`）|
+
 ## [1.0.3] - 2026-03-04 — 学生管理：操作下拉菜单（改名 / 重置密码 / 移动班级）
 
 ### 新增
