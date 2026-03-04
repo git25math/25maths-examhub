@@ -91,8 +91,14 @@
 - [ ] 与 25maths-website 会员系统深度对接
 - [ ] 学习数据可视化（趋势图、日历热力图）
 
+## Phase 4.1 — Edexcel IGCSE 4MA1 + 多考试局架构 [DONE]
+- [x] 多考试局 BOARDS 配置层（CIE 0580 + Edexcel 4MA1）
+- [x] Edexcel 4MA1 全部词汇（41 级，308 词，7 大分类）
+- [x] 首页 + 侧栏按考试局分组显示
+- [x] 向后兼容（CIE 数据 + key 不变）
+
 ## Phase 7 — 内容扩展
-- [ ] Edexcel 4MA1 vocabulary sets
+- [x] Edexcel 4MA1 vocabulary sets → Phase 4.1 完成
 - [ ] IB Mathematics vocabulary sets
 - [ ] 用户创建 + 分享自定义词库（community decks）
 - [ ] Import/Export 增加 Anki 格式支持

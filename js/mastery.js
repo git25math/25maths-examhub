@@ -45,14 +45,16 @@ function getDeckStats(li) {
 /* All categories default collapsed */
 var catCollapsed = {};
 (function initCatCollapsed() {
-  CATEGORIES.forEach(function(c) { catCollapsed[c.id] = true; });
+  BOARDS.forEach(function(b) {
+    b.categories.forEach(function(c) { catCollapsed[c.id] = true; });
+  });
 })();
 
-/* Sidebar CIE 0580 accordion state */
-var sidebarCIEOpen = false;
+/* Sidebar board accordion state (per board) */
+var sidebarBoardOpen = {};
 
-function toggleCIESidebar() {
-  sidebarCIEOpen = !sidebarCIEOpen;
+function toggleBoardSidebar(boardId) {
+  sidebarBoardOpen[boardId] = !sidebarBoardOpen[boardId];
   updateSidebar();
 }
 
@@ -76,6 +78,10 @@ function selectCategory(catId) {
     if (el2) el2.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }, appView !== 'home' ? 100 : 0);
 }
+
+/* Backward compat */
+var sidebarCIEOpen = false;
+function toggleCIESidebar() { toggleBoardSidebar('cie'); }
 
 /* ═══ HOME DASHBOARD ═══ */
 function renderHome() {
@@ -108,38 +114,50 @@ function renderHome() {
   html += '<span class="home-rank-link">' + t('View path \u2192', '\u67e5\u770b\u8def\u7ebf \u2192') + '</span>';
   html += '</div>';
 
-  /* Deck grid grouped by category */
-  CATEGORIES.forEach(function(cat) {
-    var catLevels = [];
-    LEVELS.forEach(function(lv, i) {
-      if (lv.category === cat.id) catLevels.push({ lv: lv, idx: i });
-    });
-    if (catLevels.length === 0) return;
-
-    var collapsed = catCollapsed[cat.id] ? true : false;
-    html += '<div class="category-section' + (collapsed ? ' collapsed' : '') + '" id="cat-' + cat.id + '">';
-    html += '<div class="category-header" onclick="toggleCategory(\'' + cat.id + '\')">';
-    html += '<span class="category-emoji">' + cat.emoji + '</span>';
-    html += '<span class="category-name">' + catName(cat) + '</span>';
-    html += '<span class="category-count">' + catLevels.length + ' ' + t('groups', '\u7ec4') + '</span>';
-    html += '<span class="category-chevron">\u25bc</span>';
+  /* Deck grid grouped by BOARDS → categories → levels */
+  BOARDS.forEach(function(board) {
+    /* Board section header */
+    html += '<div class="board-section" id="board-' + board.id + '">';
+    html += '<div class="board-header">';
+    html += '<span class="board-emoji">' + board.emoji + '</span>';
+    html += '<span class="board-name">' + boardName(board) + '</span>';
+    html += '<span class="board-code">' + board.code + '</span>';
     html += '</div>';
 
-    html += '<div class="deck-grid category-body">';
-    catLevels.forEach(function(cl) {
-      var stats = getDeckStats(cl.idx);
-      html += '<div class="deck-card" onclick="openDeck(' + cl.idx + ')">';
-      html += '<div class="deck-card-head">';
-      html += '<div class="deck-card-emoji">' + cat.emoji + '</div>';
-      html += '<div><div class="deck-card-name">' + lvTitle(cl.lv) + '</div>';
-      html += '<div class="deck-card-count">' + (cl.lv.vocabulary.length / 2) + ' ' + t('words', '\u8bcd') + '</div></div>';
+    board.categories.forEach(function(cat) {
+      var catLevels = [];
+      LEVELS.forEach(function(lv, i) {
+        if (lv.category === cat.id) catLevels.push({ lv: lv, idx: i });
+      });
+      if (catLevels.length === 0) return;
+
+      var collapsed = catCollapsed[cat.id] ? true : false;
+      html += '<div class="category-section' + (collapsed ? ' collapsed' : '') + '" id="cat-' + cat.id + '">';
+      html += '<div class="category-header" onclick="toggleCategory(\'' + cat.id + '\')">';
+      html += '<span class="category-emoji">' + cat.emoji + '</span>';
+      html += '<span class="category-name">' + catName(cat) + '</span>';
+      html += '<span class="category-count">' + catLevels.length + ' ' + t('groups', '\u7ec4') + '</span>';
+      html += '<span class="category-chevron">\u25bc</span>';
       html += '</div>';
-      html += '<div class="deck-progress"><div class="deck-progress-fill" style="width:' + stats.pct + '%"></div></div>';
-      html += '<div class="deck-card-pct">' + stats.pct + '%</div>';
+
+      html += '<div class="deck-grid category-body">';
+      catLevels.forEach(function(cl) {
+        var stats = getDeckStats(cl.idx);
+        html += '<div class="deck-card" onclick="openDeck(' + cl.idx + ')">';
+        html += '<div class="deck-card-head">';
+        html += '<div class="deck-card-emoji">' + cat.emoji + '</div>';
+        html += '<div><div class="deck-card-name">' + lvTitle(cl.lv) + '</div>';
+        html += '<div class="deck-card-count">' + (cl.lv.vocabulary.length / 2) + ' ' + t('words', '\u8bcd') + '</div></div>';
+        html += '</div>';
+        html += '<div class="deck-progress"><div class="deck-progress-fill" style="width:' + stats.pct + '%"></div></div>';
+        html += '<div class="deck-card-pct">' + stats.pct + '%</div>';
+        html += '</div>';
+      });
+      html += '</div>';
       html += '</div>';
     });
-    html += '</div>';
-    html += '</div>';
+
+    html += '</div>'; /* close board-section */
   });
 
   E('panel-home').innerHTML = html;

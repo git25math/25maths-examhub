@@ -1,5 +1,41 @@
 # Changelog
 
+## [0.6.0] - 2026-03-04 — 添加 Edexcel IGCSE 4MA1 词汇 + 多考试局架构
+
+### 新增
+- **多考试局架构**：新增 `BOARDS` 配置层，支持 CIE 0580 和 Edexcel 4MA1 两个考试局
+- **Edexcel 4MA1 词汇**：41 个词汇组，308 个词汇，覆盖 7 大分类
+  - Numbers & Number System（8 组）
+  - Equations, Formulae & Identities（6 组）
+  - Sequences, Functions & Graphs（6 组）
+  - Geometry & Trigonometry（8 组）
+  - Mensuration（4 组）
+  - Vectors & Transformations（4 组）
+  - Statistics & Probability（5 组）
+- **首页双考试局显示**：每个考试局独立板块（带 emoji + 名称 + 考试代码标签）
+- **侧栏多考试局手风琴**：📚 CIE IGCSE Maths + 📘 Edexcel IGCSE Maths 两个独立入口
+- Helper 函数：`getBoardInfo()`, `boardName()`, `getLevelBoard()`, `getAllCategories()`
+
+### 向后兼容
+- CIE 词汇 key 不变（现有进度数据完全保留）
+- Edexcel 词汇 key 带 `edx-` 前缀，无冲突
+- `CATEGORIES` 保留为 `BOARDS[0].categories` 别名
+- 7 种游戏模式无需修改
+
+### 文件变更
+- `js/config.js` — 新增 `BOARDS` 数组 + helper 函数，`getCategoryInfo()` 搜索所有 board
+- `js/levels.js` — 50 个 CIE level 添加 `board:'cie'`；追加 41 个 Edexcel level（`board:'edx'`）
+- `js/mastery.js` — `catCollapsed` 遍历所有 BOARDS；`renderHome()` 三层循环（BOARDS → categories → levels）
+- `js/ui.js` — `updateSidebar()` 遍历 BOARDS 渲染多个手风琴
+- `css/style.css` — 新增 `.board-section` / `.board-header` / `.board-name` / `.board-code` 样式
+
+### 数据统计
+- 总词汇量：698 词（CIE 390 + Edexcel 308）
+- 总级数：91 级（CIE 50 + Edexcel 41）
+- 总分类：15 个（CIE 8 + Edexcel 7）
+
+---
+
 ## [0.5.3] - 2026-03-04 — 侧栏改为单一 CIE IGCSE Maths 入口
 
 ### 变更

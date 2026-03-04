@@ -507,6 +507,45 @@ input { font-family: inherit; }
 }
 
 
+/* ═══ BOARD SECTIONS ═══ */
+.board-section {
+  margin-bottom: 36px;
+}
+
+.board-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+  padding: 10px 16px;
+  background: var(--c-surface);
+  border-radius: var(--r);
+  box-shadow: var(--shadow);
+  border-left: 4px solid var(--c-primary);
+}
+
+.board-emoji {
+  font-size: 22px;
+}
+
+.board-name {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--c-text);
+}
+
+.board-code {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--c-primary);
+  background: var(--c-primary-bg);
+  padding: 2px 8px;
+  border-radius: 10px;
+  margin-left: auto;
+}
+
+
 /* ═══ CATEGORY SECTIONS ═══ */
 .category-section {
   margin-bottom: 28px;

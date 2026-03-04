@@ -62,21 +62,68 @@ function detectBP() {
 var SRS_LABELS = ['New', '20m', '1h', '9h', '1d', '2d', '1w', '30d'];
 var SRS_COLORS = ['#9CA3AF', '#FBBF24', '#F97316', '#22C55E', '#3B82F6', '#8B5CF6', '#EF4444', '#1F2937'];
 
-/* Topic categories for CIE 0580 */
-var CATEGORIES = [
-  { id: 'number', name: 'Number', emoji: '\ud83d\udd22', nameZh: '\u6570\u8bba' },
-  { id: 'algebra', name: 'Algebra', emoji: '\ud83d\udcdd', nameZh: '\u4ee3\u6570' },
-  { id: 'coord', name: 'Coordinate Geometry', emoji: '\ud83d\udccd', nameZh: '\u5750\u6807\u51e0\u4f55' },
-  { id: 'geometry', name: 'Geometry', emoji: '\ud83d\udcd0', nameZh: '\u51e0\u4f55' },
-  { id: 'mensuration', name: 'Mensuration', emoji: '\ud83d\udccf', nameZh: '\u5ea6\u91cf' },
-  { id: 'trigonometry', name: 'Trigonometry', emoji: '\ud83d\udcd0', nameZh: '\u4e09\u89d2' },
-  { id: 'vectors', name: 'Vectors & Transformations', emoji: '\u27a1\ufe0f', nameZh: '\u5411\u91cf\u4e0e\u53d8\u6362' },
-  { id: 'statistics', name: 'Statistics & Probability', emoji: '\ud83d\udcc8', nameZh: '\u7edf\u8ba1\u4e0e\u6982\u7387' }
+/* Exam boards configuration */
+var BOARDS = [
+  {
+    id: 'cie', name: 'CIE IGCSE Maths', nameZh: '\u5251\u6865IGCSE\u6570\u5b66', code: '0580', emoji: '\ud83d\udcda',
+    categories: [
+      { id: 'number', name: 'Number', emoji: '\ud83d\udd22', nameZh: '\u6570\u8bba' },
+      { id: 'algebra', name: 'Algebra', emoji: '\ud83d\udcdd', nameZh: '\u4ee3\u6570' },
+      { id: 'coord', name: 'Coordinate Geometry', emoji: '\ud83d\udccd', nameZh: '\u5750\u6807\u51e0\u4f55' },
+      { id: 'geometry', name: 'Geometry', emoji: '\ud83d\udcd0', nameZh: '\u51e0\u4f55' },
+      { id: 'mensuration', name: 'Mensuration', emoji: '\ud83d\udccf', nameZh: '\u5ea6\u91cf' },
+      { id: 'trigonometry', name: 'Trigonometry', emoji: '\ud83d\udcd0', nameZh: '\u4e09\u89d2' },
+      { id: 'vectors', name: 'Vectors & Transformations', emoji: '\u27a1\ufe0f', nameZh: '\u5411\u91cf\u4e0e\u53d8\u6362' },
+      { id: 'statistics', name: 'Statistics & Probability', emoji: '\ud83d\udcc8', nameZh: '\u7edf\u8ba1\u4e0e\u6982\u7387' }
+    ]
+  },
+  {
+    id: 'edx', name: 'Edexcel IGCSE Maths', nameZh: '\u7231\u5fb7\u601dIGCSE\u6570\u5b66', code: '4MA1', emoji: '\ud83d\udcd8',
+    categories: [
+      { id: 'edx-number', name: 'Numbers & Number System', emoji: '\ud83d\udd22', nameZh: '\u6570\u4e0e\u6570\u7cfb' },
+      { id: 'edx-algebra', name: 'Equations, Formulae & Identities', emoji: '\ud83d\udcdd', nameZh: '\u65b9\u7a0b\u4e0e\u4ee3\u6570' },
+      { id: 'edx-functions', name: 'Sequences, Functions & Graphs', emoji: '\ud83d\udcca', nameZh: '\u6570\u5217\u51fd\u6570\u4e0e\u56fe\u50cf' },
+      { id: 'edx-geometry', name: 'Geometry & Trigonometry', emoji: '\ud83d\udcd0', nameZh: '\u51e0\u4f55\u4e0e\u4e09\u89d2' },
+      { id: 'edx-mensuration', name: 'Mensuration', emoji: '\ud83d\udccf', nameZh: '\u5ea6\u91cf' },
+      { id: 'edx-vectors', name: 'Vectors & Transformations', emoji: '\u27a1\ufe0f', nameZh: '\u5411\u91cf\u4e0e\u53d8\u6362' },
+      { id: 'edx-statistics', name: 'Statistics & Probability', emoji: '\ud83d\udcc8', nameZh: '\u7edf\u8ba1\u4e0e\u6982\u7387' }
+    ]
+  }
 ];
 
+/* Backward-compatible alias */
+var CATEGORIES = BOARDS[0].categories;
+
+/* Get all categories across all boards */
+function getAllCategories() {
+  var all = [];
+  BOARDS.forEach(function(b) { all = all.concat(b.categories); });
+  return all;
+}
+
+/* Look up board info by id */
+function getBoardInfo(boardId) {
+  for (var i = 0; i < BOARDS.length; i++) {
+    if (BOARDS[i].id === boardId) return BOARDS[i];
+  }
+  return BOARDS[0];
+}
+
+/* Get board display name */
+function boardName(b) {
+  if (appLang === 'en') return b.name;
+  return b.name + ' ' + b.nameZh;
+}
+
+/* Get which board a level belongs to */
+function getLevelBoard(lv) {
+  return getBoardInfo(lv.board || 'cie');
+}
+
 function getCategoryInfo(catId) {
-  for (var i = 0; i < CATEGORIES.length; i++) {
-    if (CATEGORIES[i].id === catId) return CATEGORIES[i];
+  var allCats = getAllCategories();
+  for (var i = 0; i < allCats.length; i++) {
+    if (allCats[i].id === catId) return allCats[i];
   }
   return { id: catId, name: catId, emoji: '\ud83d\udcdd', nameZh: catId };
 }
