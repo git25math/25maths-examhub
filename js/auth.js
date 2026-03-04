@@ -284,6 +284,56 @@ function showMembershipInfo() {
   showModal(html);
 }
 
+/* ═══ RANK GUIDE MODAL ═══ */
+function showRankGuide() {
+  var pct = getMasteryPct();
+  var total = getAllWords().length;
+  var mastered = getAllWords().filter(function(w) { return w.status === 'mastered'; }).length;
+  var cur = getRank();
+  var next = getNextRank();
+
+  var html = '<div class="section-title">\ud83c\udfc5 \u6bb5\u4f4d\u8fdb\u5316\u8def\u7ebf</div>';
+
+  /* Rank rows */
+  RANKS.forEach(function(r) {
+    var needed = Math.ceil(r.min / 100 * total);
+    var isCurrent = r.name === cur.name;
+    html += '<div class="rank-row' + (isCurrent ? ' current' : '') + '" style="' + (isCurrent ? 'border-color:' + r.color + ';background:' + r.color + '15' : '') + '">';
+    html += '<div class="rank-row-emoji">' + r.emoji + '</div>';
+    html += '<div class="rank-row-info">';
+    html += '<div class="rank-row-name" style="color:' + r.color + '">' + r.name + '</div>';
+    html += '<div class="rank-row-req">\u638c\u63e1 \u2265' + r.min + '% \u8bcd\u6c47' + (total > 0 ? '\uff08\u7ea6 ' + needed + ' \u8bcd\uff09' : '') + '</div>';
+    html += '</div>';
+    if (isCurrent) html += '<span class="rank-row-badge">\u5f53\u524d</span>';
+    html += '</div>';
+  });
+
+  /* Progress to next rank */
+  if (next) {
+    var nextNeeded = Math.ceil(next.min / 100 * total);
+    var remaining = Math.max(nextNeeded - mastered, 0);
+    var progressPct = total > 0 ? Math.min(Math.round(mastered / nextNeeded * 100), 100) : 0;
+    html += '<div class="rank-progress-section">';
+    html += '<div class="rank-progress-label">\u8ddd ' + next.emoji + ' ' + next.name + ' \u8fd8\u9700\u638c\u63e1 <strong>' + remaining + '</strong> \u8bcd</div>';
+    html += '<div class="rank-progress-bar"><div class="rank-progress-fill" style="width:' + progressPct + '%;background:' + next.color + '"></div></div>';
+    html += '<div class="rank-progress-pct">' + pct + '% \u2192 ' + next.min + '%</div>';
+    html += '</div>';
+  } else {
+    html += '<div class="rank-progress-section text-center" style="color:var(--c-success)">\u5df2\u8fbe\u6700\u9ad8\u6bb5\u4f4d \ud83c\udf89</div>';
+  }
+
+  /* Tips */
+  html += '<div class="guide-tip">';
+  html += '<div class="guide-tip-title">\u5982\u4f55\u5347\u7ea7\uff1f</div>';
+  html += '<div class="guide-tip-item">1. \u901a\u8fc7 7 \u79cd\u5b66\u4e60\u6a21\u5f0f\u7ec3\u4e60\u8bcd\u6c47</div>';
+  html += '<div class="guide-tip-item">2. \u590d\u4e60\u65f6\u8bc4\u4e3a\u201c\u641e\u5b9a\u4e86\u201d\u5c06\u8bcd\u6c47\u6807\u8bb0\u4e3a\u5df2\u638c\u63e1</div>';
+  html += '<div class="guide-tip-item">3. \u638c\u63e1\u7387\u63d0\u5347 \u2192 \u81ea\u52a8\u664b\u5347\u6bb5\u4f4d</div>';
+  html += '</div>';
+
+  html += '<button class="btn btn-ghost btn-block" onclick="hideModal()" style="margin-top:16px">\u5173\u95ed</button>';
+  showModal(html);
+}
+
 /* Clean auth callback parameters from URL */
 function stripAuthParams() {
   var url = new URL(window.location.href);

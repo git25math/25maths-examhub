@@ -112,12 +112,20 @@ function updateSidebar() {
   var displayShort = currentUser.email === 'guest' ? '\u8bbf\u5ba2' : (currentUser.nickname || currentUser.email.split('@')[0]);
 
   /* Sidebar user */
-  if (E('sb-rank')) E('sb-rank').textContent = r.emoji;
+  if (E('sb-rank')) {
+    E('sb-rank').textContent = r.emoji;
+    E('sb-rank').style.cursor = 'pointer';
+    E('sb-rank').onclick = showRankGuide;
+  }
   if (E('sb-name')) E('sb-name').textContent = displayName;
   if (E('sb-meta')) E('sb-meta').textContent = r.name + ' \xb7 ' + pct + '%';
 
   /* Header user */
-  if (E('hb-rank')) E('hb-rank').textContent = r.emoji;
+  if (E('hb-rank')) {
+    E('hb-rank').textContent = r.emoji;
+    E('hb-rank').style.cursor = 'pointer';
+    E('hb-rank').onclick = showRankGuide;
+  }
   if (E('hb-name')) E('hb-name').textContent = displayShort;
 
   /* Sidebar deck list */

@@ -48,13 +48,20 @@
 - [ ] Review timer/combo balance across all levels
 - [ ] Level category grouping (show topic headers in deck grid)
 
+## Phase 2.4 — 段位进化路线 + 艾宾浩斯说明页 [DONE]
+- [x] 段位进化路线 Modal（5 级段位卡片 + 当前高亮 + 进度条 + 升级提示）
+- [x] 艾宾浩斯记忆法 Modal（原理简介 + 8 级 SRS 间隔表 + 评分机制说明）
+- [x] 侧栏 / 顶栏段位 emoji 可点击打开段位路线
+- [x] 首页统计区下方段位提示行（段位名 + 距下一级词数 + "查看路线"入口）
+- [x] 复习仪表盘标题栏 ❓ 帮助按钮入口
+
 ## Phase 4 — 认证加固 + UX 打磨
 - [ ] 密码重置功能（忘记密码 → 发送重置邮件）
 - [ ] 同步冲突改用时间戳比较（替代当前 key 数量比较）
 - [ ] 同步失败 Toast 提示（替代静默吞错）
 - [ ] 深色模式 (dark mode toggle)
 - [ ] 音效系统（配对成功、连击、倒计时警告）
-- [ ] 新手引导（首次使用 onboarding tutorial）
+- [x] 新手引导（段位路线 + 艾宾浩斯说明 → Phase 2.4 完成）
 - [ ] 搜索/过滤（首页、复习仪表盘）
 - [ ] 拼写模式增加语音朗读（Web Speech API）
 - [ ] 测验模式增加"英文→中文"与"中文→英文"双向模式

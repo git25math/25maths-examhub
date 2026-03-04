@@ -26,7 +26,7 @@ function renderReviewDash() {
 
   var html = '';
 
-  html += '<div class="section-title">\ud83e\udde0 \u8270\u5bbe\u6d69\u65af\u590d\u4e60</div>';
+  html += '<div class="section-title" style="display:flex;align-items:center;gap:8px">\ud83e\udde0 \u827e\u5bbe\u6d69\u65af\u590d\u4e60 <button class="btn-help" onclick="showEbbinghausGuide()" title="\u4e86\u89e3\u827e\u5bbe\u6d69\u65af\u8bb0\u5fc6\u6cd5">\u2753</button></div>';
 
   /* SRS Bar Chart */
   html += '<div class="srs-chart">';
@@ -74,6 +74,46 @@ function renderReviewDash() {
   }
 
   E('panel-review-dash').innerHTML = html;
+}
+
+/* ═══ EBBINGHAUS GUIDE MODAL ═══ */
+function showEbbinghausGuide() {
+  var html = '<div class="section-title">\ud83e\udde0 \u827e\u5bbe\u6d69\u65af\u8bb0\u5fc6\u6cd5</div>';
+
+  /* Principle */
+  html += '<div class="guide-section">';
+  html += '<p style="font-size:13px;color:var(--c-text2);line-height:1.6;text-align:left;margin-bottom:12px">';
+  html += '1885 \u5e74\u827e\u5bbe\u6d69\u65af\u53d1\u73b0\u8bb0\u5fc6\u8870\u51cf\u89c4\u5f8b\uff1a\u4e0d\u590d\u4e60 \u2192 24h \u540e\u4ec5\u5269 33%\u3002\u901a\u8fc7\u5728\u9057\u5fd8\u4e34\u754c\u70b9\u8fdb\u884c\u590d\u4e60\uff0c\u53ef\u5c06\u77ed\u671f\u8bb0\u5fc6\u8f6c\u4e3a\u957f\u671f\u8bb0\u5fc6\u3002';
+  html += '</p></div>';
+
+  /* SRS levels table */
+  var srsDescs = ['\u65b0\u8bcd\uff0c\u672a\u5f00\u59cb\u5b66\u4e60', '20 \u5206\u949f\u540e\u590d\u4e60', '1 \u5c0f\u65f6\u540e\u590d\u4e60', '9 \u5c0f\u65f6\u540e\u590d\u4e60', '\u6b21\u65e5\u590d\u4e60', '2 \u5929\u540e\u590d\u4e60', '1 \u5468\u540e\u590d\u4e60', '30 \u5929\u540e \u2014 \u5df2\u638c\u63e1'];
+  html += '<div class="guide-section">';
+  html += '<div class="guide-tip-title">8 \u7ea7\u590d\u4e60\u95f4\u9694</div>';
+  SRS_LABELS.forEach(function(label, i) {
+    html += '<div class="srs-row">';
+    html += '<span class="srs-row-dot" style="background:' + SRS_COLORS[i] + '"></span>';
+    html += '<span class="srs-row-label">' + label + '</span>';
+    html += '<span class="srs-row-desc">' + srsDescs[i] + '</span>';
+    html += '</div>';
+  });
+  html += '</div>';
+
+  /* Rating mechanics */
+  html += '<div class="guide-section">';
+  html += '<div class="guide-tip-title">\u8bc4\u5206\u673a\u5236</div>';
+  html += '<div class="srs-row"><span class="srs-row-dot" style="background:var(--c-success)"></span><span class="srs-row-label" style="color:var(--c-success)">\u641e\u5b9a\u4e86</span><span class="srs-row-desc">\u5347 1 \u7ea7\uff0c\u590d\u4e60\u95f4\u9694 \u00d72.5</span></div>';
+  html += '<div class="srs-row"><span class="srs-row-dot" style="background:var(--c-warning)"></span><span class="srs-row-label" style="color:var(--c-warning)">\u5feb\u4e86</span><span class="srs-row-desc">\u5347 1 \u7ea7\uff0c\u590d\u4e60\u95f4\u9694 \u00d71.2</span></div>';
+  html += '<div class="srs-row"><span class="srs-row-dot" style="background:var(--c-danger)"></span><span class="srs-row-label" style="color:var(--c-danger)">\u8fd8\u4e0d\u719f</span><span class="srs-row-desc">\u964d 2 \u7ea7\uff0c3.6h \u540e\u518d\u590d\u4e60</span></div>';
+  html += '</div>';
+
+  /* Usage tip */
+  html += '<div class="guide-tip">';
+  html += '<div class="guide-tip-item">\ud83d\udca1 \u6bcf\u5929\u82b1 5 \u5206\u949f\u5b8c\u6210\u5f85\u590d\u4e60\u8bcd\u6c47\uff0c\u575a\u6301 30 \u5929\u6548\u679c\u663e\u8457</div>';
+  html += '</div>';
+
+  html += '<button class="btn btn-ghost btn-block" onclick="hideModal()" style="margin-top:16px">\u5173\u95ed</button>';
+  showModal(html);
 }
 
 /* ═══ REVIEW SESSION (flashcard-based) ═══ */

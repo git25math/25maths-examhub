@@ -59,6 +59,21 @@ function renderHome() {
   html += '<div class="stat-card"><div class="stat-val" style="color:' + (due > 0 ? 'var(--c-warning)' : 'var(--c-muted)') + '">' + due + '</div><div class="stat-label">\u5f85\u590d\u4e60</div></div>';
   html += '</div>';
 
+  /* Rank hint row */
+  var homeRank = getRank();
+  var homeNext = getNextRank();
+  html += '<div class="home-rank-hint" onclick="showRankGuide()">';
+  html += '<span class="home-rank-emoji">' + homeRank.emoji + '</span>';
+  html += '<span class="home-rank-name">' + homeRank.name + '</span>';
+  if (homeNext) {
+    var nextNeeded = Math.ceil(homeNext.min / 100 * total);
+    var remaining = Math.max(nextNeeded - mastered, 0);
+    html += '<span class="home-rank-sep">\u00b7</span>';
+    html += '<span class="home-rank-next">\u8ddd ' + homeNext.name + ' \u8fd8\u9700 ' + remaining + ' \u8bcd</span>';
+  }
+  html += '<span class="home-rank-link">\u67e5\u770b\u8def\u7ebf \u2192</span>';
+  html += '</div>';
+
   /* Section title */
   html += '<div class="section-title">\u5361\u7ec4</div>';
 

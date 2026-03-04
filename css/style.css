@@ -1151,6 +1151,120 @@ input { font-family: inherit; }
 .membership-badge.plan { background: var(--c-surface-alt); color: var(--c-muted); }
 
 
+/* ═══ GUIDE MODALS ═══ */
+.rank-row {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 12px; border-radius: var(--r-sm);
+  border: 2px solid transparent; margin-bottom: 6px;
+  text-align: left; transition: all 0.15s;
+}
+
+.rank-row.current {
+  border-color: var(--c-primary);
+  background: var(--c-primary-bg);
+}
+
+.rank-row-emoji { font-size: 24px; flex-shrink: 0; }
+
+.rank-row-info { flex: 1; min-width: 0; }
+
+.rank-row-name { font-size: 13px; font-weight: 700; }
+
+.rank-row-req { font-size: 11px; color: var(--c-text2); }
+
+.rank-row-badge {
+  font-size: 10px; font-weight: 700; color: var(--c-primary);
+  background: var(--c-primary-bg); padding: 2px 8px;
+  border-radius: 10px; white-space: nowrap;
+}
+
+.rank-progress-section {
+  margin: 14px 0 4px; padding: 12px;
+  background: var(--c-surface-alt); border-radius: var(--r-sm);
+}
+
+.rank-progress-label {
+  font-size: 12px; color: var(--c-text2); margin-bottom: 8px; text-align: left;
+}
+
+.rank-progress-bar {
+  height: 8px; background: var(--c-border-light);
+  border-radius: 4px; overflow: hidden; margin-bottom: 4px;
+}
+
+.rank-progress-fill {
+  height: 100%; border-radius: 4px; transition: width 0.5s ease;
+}
+
+.rank-progress-pct {
+  font-size: 11px; color: var(--c-muted); text-align: right;
+}
+
+.srs-row {
+  display: flex; align-items: center; gap: 8px;
+  padding: 6px 0; text-align: left;
+}
+
+.srs-row-dot {
+  width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0;
+}
+
+.srs-row-label {
+  font-size: 12px; font-weight: 700; min-width: 40px;
+}
+
+.srs-row-desc {
+  font-size: 12px; color: var(--c-text2); flex: 1;
+}
+
+.guide-section {
+  margin-bottom: 14px; text-align: left;
+}
+
+.guide-tip {
+  margin-top: 14px; padding: 12px;
+  background: var(--c-surface-alt);
+  border-radius: var(--r-sm); text-align: left;
+}
+
+.guide-tip-title {
+  font-size: 13px; font-weight: 700; color: var(--c-text);
+  margin-bottom: 6px;
+}
+
+.guide-tip-item {
+  font-size: 12px; color: var(--c-text2); line-height: 1.8;
+}
+
+.btn-help {
+  width: 24px; height: 24px; border-radius: 50%;
+  background: var(--c-surface-alt); border: none;
+  font-size: 12px; cursor: pointer;
+  display: inline-flex; align-items: center; justify-content: center;
+  transition: all 0.2s; flex-shrink: 0;
+}
+.btn-help:hover { background: var(--c-primary-bg); }
+
+/* Home rank hint */
+.home-rank-hint {
+  display: flex; align-items: center; gap: 8px;
+  padding: 10px 14px; margin-bottom: 20px;
+  background: var(--c-surface); border-radius: var(--r);
+  box-shadow: var(--shadow); cursor: pointer;
+  transition: all 0.2s;
+}
+.home-rank-hint:hover { border-color: var(--c-primary-bg); transform: translateY(-1px); }
+
+.home-rank-emoji { font-size: 20px; }
+.home-rank-name { font-size: 13px; font-weight: 700; color: var(--c-text); }
+.home-rank-sep { color: var(--c-muted); }
+.home-rank-next { font-size: 12px; color: var(--c-text2); }
+.home-rank-link {
+  margin-left: auto; font-size: 12px; font-weight: 600;
+  color: var(--c-primary); white-space: nowrap;
+}
+
+
 /* ═══ UTILITIES ═══ */
 .hidden { display: none !important; }
 .text-center { text-align: center; }

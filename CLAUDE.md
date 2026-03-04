@@ -58,6 +58,31 @@ Scripts are loaded via `<script>` tags in this order (each depends on previous):
 
 Panel system: `showPanel(id)` switches between `panel-home`, `panel-deck`, `panel-study`, `panel-battle`, `panel-review-dash`, `panel-review`, `panel-quiz`, `panel-spell`, `panel-match`, `panel-preview`, `panel-import`, `panel-board`.
 
+## Workflow（强制执行）
+
+每次收到开发任务时，**必须**按以下流程执行：
+
+### 1. Plan — 进入计划模式
+- 调用 `EnterPlanMode`，分析需求，探索相关代码
+- 输出完整实施计划（涉及文件、变更内容、步骤），写入 plan 文件
+- 调用 `ExitPlanMode` 等待用户确认
+- **不确认不动手写代码**
+
+### 2. Execute — 执行计划
+- 按确认后的计划逐步实施
+- 遇到编译/运行/逻辑错误 → 自动诊断并修复，不中断流程
+- 所有变更完成后，做一次自检（`git diff --stat` 确认变更范围）
+
+### 3. Ship — 记录 + 推送 + 部署
+任务代码完成后，**自动触发以下收尾步骤**（无需用户再次指示）：
+
+1. **CHANGELOG.md** — 在文件顶部新增版本条目，格式沿用现有风格（标题 / 功能分类 / 文件变更）
+2. **ROADMAP.md** — 将已完成项标记 `[x]`，如有新 Phase 则插入对应位置
+3. **git commit** — 提交所有变更（含 CHANGELOG + ROADMAP），commit message 用中文概要
+4. **git push origin main** — 推送到远程
+5. **验证部署** — 查询 GitHub Pages build 状态，确认 `status: "built"`
+6. **汇报** — 向用户输出：版本号、上线 URL、变更摘要表格、ROADMAP 更新点
+
 ## Conventions
 
 - No build tools / bundler — plain `<script>` tags with global variables
