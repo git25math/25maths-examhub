@@ -128,17 +128,23 @@ function updateSidebar() {
   }
   if (E('hb-name')) E('hb-name').textContent = displayShort;
 
-  /* Sidebar deck list */
+  /* Sidebar deck list grouped by category */
   var deckEl = E('sidebar-decks');
   if (deckEl) {
-    var html = '<div class="sidebar-deck-label">\u5361\u7ec4</div>';
-    var emojis = ['\ud83d\udcdd', '\ud83d\udcc8', '\ud83d\udcd0', '\ud83d\udcca', '\ud83d\udcd6', '\ud83d\udcda'];
-    LEVELS.forEach(function(lv, i) {
-      html += '<button class="sidebar-deck-item" onclick="openDeck(' + i + ')">' +
-        '<span class="deck-emoji">' + (emojis[i % emojis.length]) + '</span>' +
-        '<span>' + lv.title + '</span>' +
-        '<span class="deck-count">' + (lv.vocabulary.length / 2) + '</span>' +
-        '</button>';
+    var html = '';
+    CATEGORIES.forEach(function(cat) {
+      var catLevels = [];
+      LEVELS.forEach(function(lv, i) {
+        if (lv.category === cat.id) catLevels.push({ lv: lv, idx: i });
+      });
+      if (catLevels.length === 0) return;
+      html += '<div class="sidebar-deck-label">' + cat.emoji + ' ' + cat.name + '</div>';
+      catLevels.forEach(function(cl) {
+        html += '<button class="sidebar-deck-item" onclick="openDeck(' + cl.idx + ')">' +
+          '<span>' + cl.lv.title + '</span>' +
+          '<span class="deck-count">' + (cl.lv.vocabulary.length / 2) + '</span>' +
+          '</button>';
+      });
     });
     deckEl.innerHTML = html;
   }
@@ -191,8 +197,8 @@ function sortCards(pairs) {
   if (appSort === 'hard') {
     var wd = getWordData();
     return pairs.slice().sort(function(a, b) {
-      var ka = 'L' + currentLvl + '_W' + a.lid;
-      var kb = 'L' + currentLvl + '_W' + b.lid;
+      var ka = wordKey(currentLvl, a.lid);
+      var kb = wordKey(currentLvl, b.lid);
       var da = wd[ka], db = wd[kb];
       var la = da ? (da.lv || 0) : 0;
       var lb = db ? (db.lv || 0) : 0;

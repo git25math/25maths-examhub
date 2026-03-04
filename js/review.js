@@ -151,7 +151,7 @@ function startReview(li) {
   var now = Date.now();
 
   var due = allP.map(function(p) {
-    var key = 'L' + li + '_W' + p.lid;
+    var key = wordKey(li, p.lid);
     var d = wd[key];
     return {
       key: key, word: p.word, def: p.def, level: li,
@@ -169,7 +169,7 @@ function startReview(li) {
   if (due.length === 0) {
     /* Review all if none due */
     due = allP.map(function(p) {
-      var key = 'L' + li + '_W' + p.lid;
+      var key = wordKey(li, p.lid);
       var d = wd[key];
       return { key: key, word: p.word, def: p.def, level: li, status: d ? d.st : 'new', lv: d ? (d.lv || 0) : 0 };
     });

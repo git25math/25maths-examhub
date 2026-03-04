@@ -109,7 +109,7 @@ function pickMatch(btn) {
     MT.selected = null;
 
     /* Update word status */
-    var key = 'L' + MT.lvl + '_W' + leftLid;
+    var key = wordKey(MT.lvl, leftLid);
     setWordStatus(key, 'learning', 2, true);
 
     if (MT.matched === MT.pairs.length) {

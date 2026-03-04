@@ -40,13 +40,12 @@
 - [x] 计分公式：掌握率 × 20，显示排名 + 掌握率百分比
 - [x] Guest 模式降级为本地数据展示
 
-## Phase 3 — 词汇扩容 (Next)
-- [ ] Fix `extract-vocab.py` regex (Python 3.13 backslash escaping)
-- [ ] Auto-generate levels.js from 8 .tex files (~317 words, ~40 levels)
-  - Algebra / Number / Geometry / Coordinate / Mensuration / Statistics / Trigonometry / Vectors
-- [ ] Verify level splitting logic (max 10 words per level)
-- [ ] Review timer/combo balance across all levels
-- [ ] Level category grouping (show topic headers in deck grid)
+## Phase 3 — CIE 0580 词汇扩容 [DONE]
+- [x] 手写 50 级完整 CIE 0580 词汇（390 词，8 大专题分类）
+- [x] slug-based localStorage key（`wordKey()` helper）
+- [x] 首页 + 侧栏按专题分类分组显示
+- [x] 分类标题样式（emoji + 名称 + 组数）
+- [x] 验证：0 重叠词汇，所有 pair 数据完整
 
 ## Phase 2.4 — 段位进化路线 + 艾宾浩斯说明页 [DONE]
 - [x] 段位进化路线 Modal（5 级段位卡片 + 当前高亮 + 进度条 + 升级提示）

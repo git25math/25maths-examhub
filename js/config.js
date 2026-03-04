@@ -62,5 +62,24 @@ function detectBP() {
 var SRS_LABELS = ['New', '20m', '1h', '9h', '1d', '2d', '1w', '30d'];
 var SRS_COLORS = ['#9CA3AF', '#FBBF24', '#F97316', '#22C55E', '#3B82F6', '#8B5CF6', '#EF4444', '#1F2937'];
 
+/* Topic categories for CIE 0580 */
+var CATEGORIES = [
+  { id: 'number', name: 'Number', emoji: '\ud83d\udd22', nameZh: '\u6570\u8bba' },
+  { id: 'algebra', name: 'Algebra', emoji: '\ud83d\udcdd', nameZh: '\u4ee3\u6570' },
+  { id: 'coord', name: 'Coordinate Geometry', emoji: '\ud83d\udccd', nameZh: '\u5750\u6807\u51e0\u4f55' },
+  { id: 'geometry', name: 'Geometry', emoji: '\ud83d\udcd0', nameZh: '\u51e0\u4f55' },
+  { id: 'mensuration', name: 'Mensuration', emoji: '\ud83d\udccf', nameZh: '\u5ea6\u91cf' },
+  { id: 'trigonometry', name: 'Trigonometry', emoji: '\ud83d\udcd0', nameZh: '\u4e09\u89d2' },
+  { id: 'vectors', name: 'Vectors & Transformations', emoji: '\u27a1\ufe0f', nameZh: '\u5411\u91cf\u4e0e\u53d8\u6362' },
+  { id: 'statistics', name: 'Statistics & Probability', emoji: '\ud83d\udcc8', nameZh: '\u7edf\u8ba1\u4e0e\u6982\u7387' }
+];
+
+function getCategoryInfo(catId) {
+  for (var i = 0; i < CATEGORIES.length; i++) {
+    if (CATEGORIES[i].id === catId) return CATEGORIES[i];
+  }
+  return { id: catId, name: catId, emoji: '\ud83d\udcdd', nameZh: catId };
+}
+
 /* DOM helper */
 var E = function(id) { return document.getElementById(id); };

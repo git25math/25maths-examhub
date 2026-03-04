@@ -1,5 +1,35 @@
 # Changelog
 
+## [0.4.0] - 2026-03-04 — CIE 0580 词汇扩容（50 级 390 词）
+
+### 词汇数据
+- 从零手写 50 级完整 CIE 0580 Core + Extended 词汇，覆盖大纲 9 个 Topic
+- 8 个专题分类：Number(9)、Algebra(7)、Coordinate Geometry(5)、Geometry(7)、Mensuration(5)、Trigonometry(5)、Vectors & Transformations(5)、Statistics & Probability(7)
+- 每组 5-10 词，共 390 个英中双语术语，无重叠
+- 每级设置 timer 和 comboBonus（≤6 词→90s/3, 7-8 词→80s/3, ≥9 词→70s/2）
+
+### 分类系统
+- `config.js` 新增 `CATEGORIES` 数组 + `getCategoryInfo()` 函数
+- 首页按 8 大专题分组显示卡组网格，每组带分类标题（emoji + 名称 + 组数）
+- 侧栏按分类分组显示 50 个卡组
+- `css/style.css` 新增 `.category-section` / `.category-header` 样式
+
+### localStorage 重构
+- 新增 `wordKey(li, wid)` helper：生成 slug-based key（`L_{slug}_W{id}`）
+- 替换所有 11 处 `'L'+li+'_W'+k` 硬编码为 `wordKey()` 调用
+- 影响文件：storage.js, mastery.js, ui.js, study.js, quiz.js, spell.js, match.js, review.js
+
+### 文件变更
+- `js/config.js` — 新增 CATEGORIES + getCategoryInfo()（+19 行）
+- `js/levels.js` — 重写为 50 级完整词汇数据（+815 行）
+- `js/storage.js` — 新增 wordKey() + 替换 key 生成（+7 行）
+- `js/mastery.js` — renderHome() 分类分组 + 移除 DECK_EMOJIS（+30 行，-27 行）
+- `js/ui.js` — updateSidebar() 分类分组 + sortCards() 用 wordKey（+15 行，-13 行）
+- `js/study.js` / `js/quiz.js` / `js/spell.js` / `js/match.js` / `js/review.js` — key 替换
+- `css/style.css` — 新增分类标题样式（+32 行）
+
+---
+
 ## [0.3.2] - 2026-03-04 — 段位进化路线 + 艾宾浩斯说明页
 
 ### 段位进化路线 Modal

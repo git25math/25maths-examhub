@@ -87,7 +87,7 @@ function checkSpell() {
   var input = E('spell-input');
   var answer = input.value.trim();
   var correct = answer.toLowerCase() === p.word.toLowerCase();
-  var key = 'L' + SP.lvl + '_W' + p.lid;
+  var key = wordKey(SP.lvl, p.lid);
 
   SP.answered = true;
 

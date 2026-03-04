@@ -32,8 +32,14 @@ function maxCleared() {
   return s.mc != null ? s.mc : -1;
 }
 
+/* Slug-based word key: "L_{slug}_W{wordId}" */
+function wordKey(li, wid) {
+  var slug = LEVELS[li] && LEVELS[li].slug ? LEVELS[li].slug : ('L' + li);
+  return 'L_' + slug + '_W' + wid;
+}
+
 /* Word mastery storage
-   Each word key: "L{levelIndex}_W{wordId}"
+   Each word key: "L_{slug}_W{wordId}"
    Value: { st, iv, nr, lr, ok, fail, lv }
    - st: "mastered"|"learning"|"new"
    - iv: interval in days
@@ -82,7 +88,7 @@ function getAllWords() {
       m[v.id][v.type] = v.content;
     });
     for (var k in m) {
-      var key = 'L' + li + '_W' + k;
+      var key = wordKey(li, k);
       var d = wd[key];
       all.push({
         key: key,

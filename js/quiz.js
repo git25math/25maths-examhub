@@ -67,7 +67,7 @@ function pickQuizOpt(btn) {
 
   var isCorrect = btn.dataset.correct === '1';
   var p = Q.pairs[Q.idx];
-  var key = 'L' + Q.lvl + '_W' + p.lid;
+  var key = wordKey(Q.lvl, p.lid);
 
   if (isCorrect) {
     btn.classList.add('correct');

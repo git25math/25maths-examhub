@@ -481,6 +481,38 @@ input { font-family: inherit; }
 }
 
 
+/* ═══ CATEGORY SECTIONS ═══ */
+.category-section {
+  margin-bottom: 28px;
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--c-border-light);
+}
+
+.category-emoji {
+  font-size: 20px;
+}
+
+.category-name {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--c-text);
+}
+
+.category-count {
+  font-size: 11px;
+  color: var(--c-muted);
+  font-weight: 600;
+  margin-left: auto;
+}
+
 /* ═══ DECK DETAIL ═══ */
 .deck-header {
   display: flex; align-items: center; gap: 12px;

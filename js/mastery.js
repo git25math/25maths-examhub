@@ -34,7 +34,7 @@ function getDeckStats(li) {
   var wd = getWordData();
   var mastered = 0;
   pairs.forEach(function(p) {
-    var key = 'L' + li + '_W' + p.lid;
+    var key = wordKey(li, p.lid);
     var d = wd[key];
     if (d && d.st === 'mastered') mastered++;
   });
@@ -42,8 +42,6 @@ function getDeckStats(li) {
 }
 
 /* ═══ HOME DASHBOARD ═══ */
-var DECK_EMOJIS = ['\ud83d\udcdd', '\ud83d\udcc8', '\ud83d\udcd0', '\ud83d\udcca', '\ud83d\udcd6', '\ud83d\udcda'];
-
 function renderHome() {
   var all = getAllWords();
   var total = all.length;
@@ -74,25 +72,37 @@ function renderHome() {
   html += '<span class="home-rank-link">\u67e5\u770b\u8def\u7ebf \u2192</span>';
   html += '</div>';
 
-  /* Section title */
-  html += '<div class="section-title">\u5361\u7ec4</div>';
+  /* Deck grid grouped by category */
+  CATEGORIES.forEach(function(cat) {
+    var catLevels = [];
+    LEVELS.forEach(function(lv, i) {
+      if (lv.category === cat.id) catLevels.push({ lv: lv, idx: i });
+    });
+    if (catLevels.length === 0) return;
 
-  /* Deck grid */
-  html += '<div class="deck-grid">';
-  LEVELS.forEach(function(lv, i) {
-    var stats = getDeckStats(i);
-    var emoji = DECK_EMOJIS[i % DECK_EMOJIS.length];
-    html += '<div class="deck-card" onclick="openDeck(' + i + ')">';
-    html += '<div class="deck-card-head">';
-    html += '<div class="deck-card-emoji">' + emoji + '</div>';
-    html += '<div><div class="deck-card-name">' + lv.title + '</div>';
-    html += '<div class="deck-card-count">' + (lv.vocabulary.length / 2) + ' \u8bcd</div></div>';
+    html += '<div class="category-section">';
+    html += '<div class="category-header">';
+    html += '<span class="category-emoji">' + cat.emoji + '</span>';
+    html += '<span class="category-name">' + cat.name + '</span>';
+    html += '<span class="category-count">' + catLevels.length + ' \u7ec4</span>';
     html += '</div>';
-    html += '<div class="deck-progress"><div class="deck-progress-fill" style="width:' + stats.pct + '%"></div></div>';
-    html += '<div class="deck-card-pct">' + stats.pct + '%</div>';
+
+    html += '<div class="deck-grid">';
+    catLevels.forEach(function(cl) {
+      var stats = getDeckStats(cl.idx);
+      html += '<div class="deck-card" onclick="openDeck(' + cl.idx + ')">';
+      html += '<div class="deck-card-head">';
+      html += '<div class="deck-card-emoji">' + cat.emoji + '</div>';
+      html += '<div><div class="deck-card-name">' + cl.lv.title + '</div>';
+      html += '<div class="deck-card-count">' + (cl.lv.vocabulary.length / 2) + ' \u8bcd</div></div>';
+      html += '</div>';
+      html += '<div class="deck-progress"><div class="deck-progress-fill" style="width:' + stats.pct + '%"></div></div>';
+      html += '<div class="deck-card-pct">' + stats.pct + '%</div>';
+      html += '</div>';
+    });
+    html += '</div>';
     html += '</div>';
   });
-  html += '</div>';
 
   E('panel-home').innerHTML = html;
   updateSidebar();
@@ -116,7 +126,8 @@ function renderDeck(idx) {
   /* Header */
   html += '<div class="deck-header">';
   html += '<button class="back-btn" onclick="navTo(\'home\')">\u2190</button>';
-  html += '<div class="deck-title">' + DECK_EMOJIS[idx % DECK_EMOJIS.length] + ' ' + lv.title + '</div>';
+  var catInfo = getCategoryInfo(lv.category);
+  html += '<div class="deck-title">' + catInfo.emoji + ' ' + lv.title + '</div>';
   html += '</div>';
 
   /* Mode grid */
@@ -148,7 +159,7 @@ function renderDeck(idx) {
   /* Word list */
   html += '<div class="word-list">';
   sorted.forEach(function(p) {
-    var key = 'L' + idx + '_W' + p.lid;
+    var key = wordKey(idx, p.lid);
     var d = wd[key];
     var lvNum = d ? (d.lv || 0) : 0;
     var ok = d ? (d.ok || 0) : 0;

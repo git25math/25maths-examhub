@@ -73,7 +73,7 @@ function flipStudyCard() {
 /* Rate word */
 function rateStudy(r) {
   var p = S.pairs[S.idx];
-  var key = 'L' + S.lvl + '_W' + p.lid;
+  var key = wordKey(S.lvl, p.lid);
 
   S.ratings[r].push(p);
 
