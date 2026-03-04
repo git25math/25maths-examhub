@@ -169,6 +169,13 @@ input { font-family: inherit; }
   margin-bottom: 8px; min-height: 18px;
 }
 
+.auth-forgot {
+  font-size: 12px; color: var(--c-primary);
+  cursor: pointer; display: inline-block;
+  margin-top: 4px; margin-bottom: 8px;
+}
+.auth-forgot:hover { text-decoration: underline; }
+
 .auth-note {
   font-size: 11px; color: var(--c-muted);
   margin-top: 14px; line-height: 1.5;

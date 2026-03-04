@@ -9,6 +9,15 @@
     LEVELS = LEVELS.concat(custom);
   }
 
+  /* Listen for password recovery callback */
+  if (sb) {
+    sb.auth.onAuthStateChange(function(event, session) {
+      if (event === 'PASSWORD_RECOVERY') {
+        setTimeout(function() { showSettings(); showToast(t('Set your new password', '请设置新密码')); }, 500);
+      }
+    });
+  }
+
   /* Check for existing Supabase session */
   if (sb) {
     try {

@@ -136,6 +136,8 @@ function saveCustomLevel(level) {
 }
 
 /* Cloud sync */
+var _lastSyncErrAt = 0;
+
 async function syncToCloud() {
   if (!sb || !currentUser || currentUser.id === 'local') return;
   var now = new Date().toISOString();
@@ -144,7 +146,14 @@ async function syncToCloud() {
       { user_id: currentUser.id, data: JSON.stringify(loadS()), updated_at: now },
       { onConflict: 'user_id' }
     );
-  } catch (e) { /* silently fail */ }
+    try { localStorage.setItem('wmatch_last_sync', Date.now()); } catch (e) {}
+  } catch (e) {
+    var errNow = Date.now();
+    if (!_lastSyncErrAt || errNow - _lastSyncErrAt > 5000) {
+      _lastSyncErrAt = errNow;
+      showToast(t('Sync failed, check network', '同步失败，请检查网络'));
+    }
+  }
   /* Sync leaderboard score */
   try {
     var allW = getAllWords();
@@ -163,19 +172,34 @@ async function syncToCloud() {
       board: userBoard || '',
       updated_at: now
     }, { onConflict: 'user_id' });
-  } catch (e) { /* silently fail */ }
+  } catch (e) {
+    var errNow2 = Date.now();
+    if (!_lastSyncErrAt || errNow2 - _lastSyncErrAt > 5000) {
+      _lastSyncErrAt = errNow2;
+      showToast(t('Sync failed, check network', '同步失败，请检查网络'));
+    }
+  }
 }
 
 async function syncFromCloud() {
   if (!sb || !currentUser || currentUser.id === 'local') return;
   try {
-    var res = await sb.from('vocab_progress').select('data').eq('user_id', currentUser.id).single();
+    var res = await sb.from('vocab_progress').select('data, updated_at').eq('user_id', currentUser.id).single();
     if (res.data && res.data.data) {
       var cloud = JSON.parse(res.data.data);
-      var local = loadS();
-      if (Object.keys(cloud).length > Object.keys(local).length) {
+      var cloudTime = new Date(res.data.updated_at).getTime();
+      var localTime = 0;
+      try { localTime = parseInt(localStorage.getItem('wmatch_last_sync')) || 0; } catch (e) {}
+      if (cloudTime > localTime) {
         writeS(cloud);
+        try { localStorage.setItem('wmatch_last_sync', cloudTime); } catch (e) {}
       }
     }
-  } catch (e) { /* silently fail */ }
+  } catch (e) {
+    var errNow = Date.now();
+    if (!_lastSyncErrAt || errNow - _lastSyncErrAt > 5000) {
+      _lastSyncErrAt = errNow;
+      showToast(t('Sync failed, check network', '同步失败，请检查网络'));
+    }
+  }
 }

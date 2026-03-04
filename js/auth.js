@@ -204,6 +204,47 @@ function translateAuthError(msg) {
   return msg;
 }
 
+/* ═══ PASSWORD RESET ═══ */
+function showPasswordReset() {
+  var prefill = E('auth-email').value.trim();
+  var html = '<div class="section-title">' + t('Reset Password', '重置密码') + '</div>' +
+    '<p style="font-size:13px;color:var(--c-text2);margin-bottom:12px">' +
+    t('Enter your email and we will send a reset link.', '输入注册邮箱，我们将发送重置链接。') + '</p>' +
+    '<input class="auth-input" id="reset-email" type="email" placeholder="' + t('Email', '邮箱地址') + '" value="' + (prefill || '').replace(/"/g, '&quot;') + '">' +
+    '<div id="reset-msg" style="font-size:13px;margin:8px 0;min-height:20px"></div>' +
+    '<div style="display:flex;gap:8px;margin-top:8px">' +
+    '<button class="btn btn-primary" style="flex:1" id="reset-send" onclick="sendPasswordReset()">' + t('Send Reset Link', '发送重置链接') + '</button>' +
+    '<button class="btn btn-ghost" style="flex:1" onclick="hideModal()">' + t('Cancel', '取消') + '</button>' +
+    '</div>';
+  showModal(html);
+}
+
+async function sendPasswordReset() {
+  var email = E('reset-email').value.trim();
+  var msg = E('reset-msg');
+  var btn = E('reset-send');
+  msg.textContent = '';
+  if (!email) { msg.style.color = 'var(--c-danger)'; msg.textContent = t('Please enter email', '请输入邮箱'); return; }
+  if (!sb) { msg.style.color = 'var(--c-danger)'; msg.textContent = 'Supabase not configured'; return; }
+  btn.disabled = true;
+  btn.textContent = t('Sending...', '发送中...');
+  try {
+    var res = await sb.auth.resetPasswordForEmail(email, { redirectTo: location.origin + location.pathname });
+    if (res.error) {
+      msg.style.color = 'var(--c-danger)';
+      msg.textContent = translateAuthError(res.error.message);
+    } else {
+      msg.style.color = 'var(--c-success)';
+      msg.textContent = t('Reset link sent, check your email', '重置链接已发送，请查看邮箱');
+    }
+  } catch (e) {
+    msg.style.color = 'var(--c-danger)';
+    msg.textContent = t('Network error, try later', '网络错误，请稍后重试');
+  }
+  btn.disabled = false;
+  btn.textContent = t('Send Reset Link', '发送重置链接');
+}
+
 /* ═══ SETTINGS MODAL ═══ */
 function showSettings() {
   if (!currentUser || currentUser.id === 'local') {

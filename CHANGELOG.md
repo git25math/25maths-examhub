@@ -1,5 +1,25 @@
 # Changelog
 
+## [0.9.1] - 2026-03-04 — 密码重置 / 同步时间戳 / 同步失败提示
+
+### 新增
+- **密码重置**：登录页新增"忘记密码？Forgot password?"链接，点击弹出 Modal，输入邮箱发送重置链接（Supabase `resetPasswordForEmail`）
+- **密码恢复回调**：用户点击邮件中的重置链接跳回页面后，`onAuthStateChange('PASSWORD_RECOVERY')` 自动弹出设置 Modal + Toast 提示"请设置新密码"
+- **同步失败 Toast 提示**：`syncToCloud()` / `syncFromCloud()` 失败时显示"同步失败，请检查网络"Toast（5s 防抖，不重复弹）
+
+### 变更
+- **同步冲突改用时间戳**：`syncFromCloud()` 改用 DB `updated_at` 字段 vs 本地 `wmatch_last_sync` 时间戳比较，替代原来的 key 数量比较
+- **同步成功写时间戳**：`syncToCloud()` upsert 成功后写 `localStorage('wmatch_last_sync')`
+
+### 文件变更
+- `index.html` — 登录页新增"忘记密码"链接（+1 行）
+- `css/style.css` — 新增 `.auth-forgot` + `:hover` 样式（+5 行）
+- `js/auth.js` — 新增 `showPasswordReset()` + `sendPasswordReset()` 两个函数（+37 行）
+- `js/app.js` — `initApp()` 新增 `onAuthStateChange('PASSWORD_RECOVERY')` 监听（+7 行）
+- `js/storage.js` — `syncToCloud()` 加时间戳写入 + Toast 防抖；`syncFromCloud()` 改时间戳比较 + Toast 防抖（+20 行）
+
+---
+
 ## [0.9.0] - 2026-03-04 — 深色模式 + 游戏增强（测验双向 / 拼写语音 / 音效）
 
 ### 新增
