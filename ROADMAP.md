@@ -135,6 +135,7 @@
 - [x] 3 个 Edge Functions（register-teacher / create-students / reset-student-password）→ v1.0.0 完成
 - [x] RLS 策略 + student_activity_view 视图 → v1.0.0 完成
 - [x] 排行榜多维度 Scope Tabs（课程/班级/年级/全校）→ v1.0.1 完成
+- [x] 排行榜 Sub Pills（维度内选择具体课程/班级/年级）→ v1.0.2 完成
 
 ## Phase 4.1 — 25Maths 校本课程 Y7-Y11 词汇 [DONE]
 - [x] 25Maths Curriculum board（🏫 Y7-11，5 个年级分类）

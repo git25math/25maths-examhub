@@ -64,14 +64,52 @@
 })();
 
 /* ═══ LEADERBOARD ═══ */
-var _boardScope = 'course'; /* 'course' | 'class' | 'grade' | 'school' */
+var _boardScope = 'course';    /* 'course' | 'class' | 'grade' | 'school' */
+var _boardSubKey = null;       /* currently selected sub pill value */
+var _boardClassList = null;    /* cached classes list [{id, name, grade}] */
+var _boardClassListTs = 0;     /* cache timestamp */
+
+/* Load classes for current school (30s cache) */
+async function _loadBoardClasses() {
+  if (!sb || !userSchoolId) return [];
+  var now = Date.now();
+  if (_boardClassList && (now - _boardClassListTs) < 30000) return _boardClassList;
+  try {
+    var res = await sb.from('classes')
+      .select('id, name, grade')
+      .eq('school_id', userSchoolId)
+      .order('created_at', { ascending: true });
+    _boardClassList = res.data || [];
+    _boardClassListTs = now;
+  } catch (e) {
+    _boardClassList = [];
+  }
+  return _boardClassList;
+}
 
 async function renderBoard() {
   var panel = E('panel-board');
-  var boardOpt = getUserBoardOption();
-  var boardTag = boardOpt ? ' <span style="font-size:12px;color:var(--c-primary);background:var(--c-primary-bg);padding:2px 8px;border-radius:10px;font-weight:700;vertical-align:middle">' + boardOpt.emoji + ' ' + t(boardOpt.name, boardOpt.nameZh) + '</span>' : '';
-  panel.innerHTML = '<div class="section-title">\ud83c\udfc6 ' + t('Leaderboard', '\u6392\u884c\u699c') + boardTag + '</div>' +
+  panel.innerHTML = '<div class="section-title">\ud83c\udfc6 ' + t('Leaderboard', '\u6392\u884c\u699c') + '</div>' +
     '<div style="text-align:center;color:var(--c-muted);padding:40px 0">' + t('Loading...', '\u52a0\u8f7d\u4e2d...') + '</div>';
+
+  /* Pre-load classes if scope is 'class' */
+  var classList = [];
+  if (_boardScope === 'class' && userSchoolId) {
+    classList = await _loadBoardClasses();
+  }
+
+  /* Resolve default _boardSubKey per scope */
+  if (_boardSubKey === null) {
+    if (_boardScope === 'course') {
+      _boardSubKey = userBoard || BOARD_OPTIONS[0].value;
+    } else if (_boardScope === 'class') {
+      _boardSubKey = userClassId || (classList.length > 0 ? classList[0].id : null);
+    } else if (_boardScope === 'grade') {
+      /* Default to user's grade if it's a 25m-y* board */
+      _boardSubKey = (userBoard && userBoard.indexOf('25m-y') === 0) ? userBoard : GRADE_OPTIONS[0].value;
+    }
+    /* school scope has no sub key */
+  }
 
   var rows = [];
   var userId = currentUser ? currentUser.id : null;
@@ -82,21 +120,19 @@ async function renderBoard() {
       var qry = sb.from('leaderboard')
         .select('user_id,nickname,score,mastery_pct,rank_emoji,mastered_words,total_words');
 
-      /* Apply filter based on scope */
-      if (_boardScope === 'class' && userClassId) {
-        qry = qry.eq('class_id', userClassId);
-      } else if (_boardScope === 'grade' && userSchoolId) {
-        if (userBoard) qry = qry.eq('board', userBoard);
-        qry = qry.eq('school_id', userSchoolId);
+      /* Apply filter based on scope + sub key */
+      if (_boardScope === 'class' && _boardSubKey) {
+        qry = qry.eq('class_id', _boardSubKey);
+      } else if (_boardScope === 'grade' && _boardSubKey && userSchoolId) {
+        qry = qry.eq('board', _boardSubKey).eq('school_id', userSchoolId);
       } else if (_boardScope === 'school' && userSchoolId) {
         qry = qry.eq('school_id', userSchoolId);
       } else {
-        /* Default: course scope */
-        if (userBoard) qry = qry.eq('board', userBoard);
+        /* course scope */
+        if (_boardSubKey) qry = qry.eq('board', _boardSubKey);
       }
 
-      var res = await qry.order('score', { ascending: false })
-        .limit(50);
+      var res = await qry.order('score', { ascending: false }).limit(50);
       if (res.data && res.data.length > 0) {
         rows = res.data.map(function(r) {
           return {
@@ -121,7 +157,7 @@ async function renderBoard() {
     rows.push({ name: userName, emoji: userRank.emoji, score: pct * 20, pct: pct, isMe: true });
   }
 
-  /* Ensure current user is in the list (they may not have synced yet) */
+  /* Ensure current user is in the list */
   var hasMe = rows.some(function(r) { return r.isMe; });
   if (!hasMe && currentUser && currentUser.id !== 'local') {
     var myRank = getRank();
@@ -133,19 +169,17 @@ async function renderBoard() {
     rows.sort(function(a, b) { return b.score - a.score; });
   }
 
-  var html = '<div class="section-title">\ud83c\udfc6 ' + t('Leaderboard', '\u6392\u884c\u699c') + boardTag + '</div>';
+  /* Build HTML */
+  var html = '<div class="section-title">\ud83c\udfc6 ' + t('Leaderboard', '\u6392\u884c\u699c') + '</div>';
 
-  /* Scope tabs — only show when userSchoolId exists */
+  /* Scope tabs — only when userSchoolId exists */
   if (userSchoolId) {
     var scopes = [
       { key: 'course', label: t('Course', '\u8bfe\u7a0b') },
+      { key: 'class',  label: t('Class', '\u73ed\u7ea7') },
+      { key: 'grade',  label: t('Grade', '\u5e74\u7ea7') },
+      { key: 'school', label: t('School', '\u5168\u6821') }
     ];
-    if (userClassId) {
-      scopes.push({ key: 'class', label: t('Class', '\u73ed\u7ea7') });
-    }
-    scopes.push({ key: 'grade', label: t('Grade', '\u5e74\u7ea7') });
-    scopes.push({ key: 'school', label: t('School', '\u5168\u6821') });
-
     html += '<div class="admin-tabs board-scope-tabs">';
     scopes.forEach(function(s) {
       html += '<button class="admin-tab' + (s.key === _boardScope ? ' active' : '') + '" onclick="switchBoardScope(\'' + s.key + '\')">' + s.label + '</button>';
@@ -153,11 +187,32 @@ async function renderBoard() {
     html += '</div>';
   }
 
+  /* Sub pills per scope */
+  if (_boardScope === 'course') {
+    html += '<div class="board-sub-pills">';
+    BOARD_OPTIONS.forEach(function(opt) {
+      html += '<button class="board-sub-pill' + (opt.value === _boardSubKey ? ' active' : '') + '" onclick="switchBoardSub(\'' + opt.value + '\')">' + opt.emoji + ' ' + t(opt.name, opt.nameZh) + '</button>';
+    });
+    html += '</div>';
+  } else if (_boardScope === 'class' && classList.length > 0) {
+    html += '<div class="board-sub-pills">';
+    classList.forEach(function(c) {
+      html += '<button class="board-sub-pill' + (c.id === _boardSubKey ? ' active' : '') + '" onclick="switchBoardSub(\'' + c.id + '\')">' + c.name + '</button>';
+    });
+    html += '</div>';
+  } else if (_boardScope === 'grade') {
+    html += '<div class="board-sub-pills">';
+    GRADE_OPTIONS.forEach(function(opt) {
+      html += '<button class="board-sub-pill' + (opt.value === _boardSubKey ? ' active' : '') + '" onclick="switchBoardSub(\'' + opt.value + '\')">' + opt.emoji + ' ' + t(opt.name, opt.nameZh) + '</button>';
+    });
+    html += '</div>';
+  }
+  /* school scope: no sub pills */
+
   html += '<div style="font-size:12px;color:var(--c-muted);margin-bottom:16px">' + t('Live ranking \xb7 Based on mastery score', '\u5b9e\u65f6\u6392\u540d \xb7 \u57fa\u4e8e\u5355\u8bcd\u638c\u63e1\u7387\u8ba1\u5206') + '</div>';
   html += '<div class="board-list">';
 
   var medals = ['\ud83e\udd47', '\ud83e\udd48', '\ud83e\udd49'];
-
   rows.forEach(function(row, i) {
     html += '<div class="board-row' + (row.isMe ? ' me' : '') + '">';
     html += '<div class="board-rank">' + (i < 3 ? medals[i] : (i + 1)) + '</div>';
@@ -173,5 +228,11 @@ async function renderBoard() {
 
 function switchBoardScope(scope) {
   _boardScope = scope;
+  _boardSubKey = null; /* reset sub selection — renderBoard will pick default */
+  renderBoard();
+}
+
+function switchBoardSub(key) {
+  _boardSubKey = key;
   renderBoard();
 }

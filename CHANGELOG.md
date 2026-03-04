@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.0.2] - 2026-03-04 — 排行榜 Sub Pills：维度内选择具体项目
+
+### 新增
+- **Sub Pills 选择器**：每个排行榜维度下可选择具体项目
+  - 课程 tab → BOARD_OPTIONS 胶囊按钮（8 个课程任意切换）
+  - 班级 tab → 从 `classes` 表加载该校所有班级列表（30s 缓存）
+  - 年级 tab → GRADE_OPTIONS 胶囊按钮（Y7-Y11）
+  - 全校 tab → 无 sub pills，直接展示全校排名
+- **智能默认选中**：课程默认选 `userBoard`，班级默认选 `userClassId`，年级默认选当前年级
+- **班级 tab 教师+学生均可见**：移除原有 `userClassId` 限制，所有有学校信息的用户都能看到 4 个 tabs
+- 切换维度自动重置 sub pill 为默认值
+
+### 文件变更
+| 文件 | 类型 | 变更 |
+|------|------|------|
+| `js/app.js` | 修改 | ~130 行（+`_boardSubKey`/`_boardClassList` 状态 + `_loadBoardClasses()` + `switchBoardSub()` + sub pills 渲染）|
+| `css/style.css` | 修改 | +21 行（`.board-sub-pills` + `.board-sub-pill` 胶囊按钮样式）|
+
 ## [1.0.1] - 2026-03-04 — 排行榜多维度：课程 / 班级 / 年级 / 全校
 
 ### 新增

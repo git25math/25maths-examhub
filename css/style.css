@@ -1401,6 +1401,27 @@ input { font-family: inherit; }
   margin-bottom: 12px;
 }
 
+.board-sub-pills {
+  display: flex; flex-wrap: wrap; gap: 6px;
+  margin-bottom: 14px;
+}
+
+.board-sub-pill {
+  padding: 5px 14px; font-size: 12px; font-weight: 600;
+  color: var(--c-text2); background: var(--c-surface);
+  border: 1.5px solid var(--c-border-light); border-radius: 20px;
+  cursor: pointer; transition: all 0.2s; white-space: nowrap;
+}
+
+.board-sub-pill:hover {
+  border-color: var(--c-primary); color: var(--c-primary);
+}
+
+.board-sub-pill.active {
+  background: var(--c-primary); color: #fff;
+  border-color: var(--c-primary);
+}
+
 /* ═══ EFFECTS ═══ */
 .bf {
   position: fixed; pointer-events: none; z-index: 210;
