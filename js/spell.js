@@ -43,7 +43,7 @@ function renderSpellCard() {
 
   /* Prompt */
   html += '<div class="spell-prompt">';
-  html += '<div class="spell-def">' + p.def + '</div>';
+  html += '<div class="spell-def">' + p.def + (canSpeak() ? ' <button class="btn-speak" onclick="speakWord(\'' + p.word.replace(/'/g, "\\'") + '\')" title="' + t('Listen', '\u53d1\u97f3') + '">\ud83d\udd0a</button>' : '') + '</div>';
   html += '<div class="spell-hint">' + hint + '</div>';
   html += '</div>';
 
@@ -64,6 +64,11 @@ function renderSpellCard() {
   /* Focus input and bind Enter key */
   var input = E('spell-input');
   setTimeout(function() { input.focus(); }, 100);
+
+  /* Auto-speak word */
+  if (appSound && canSpeak()) {
+    setTimeout(function() { speakWord(p.word); }, 300);
+  }
   input.addEventListener('keydown', function(e) {
     if (e.key === 'Enter') {
       if (SP.answered) {
@@ -97,11 +102,13 @@ function checkSpell() {
     input.disabled = true;
     setWordStatus(key, 'learning', 3, true);
     E('spell-answer').textContent = '';
+    playCorrect();
   } else {
     input.classList.add('wrong');
     input.disabled = true;
     setWordStatus(key, 'learning', 0.15, false);
     E('spell-answer').textContent = t('Answer: ', '\u6b63\u786e\u7b54\u6848: ') + p.word;
+    playWrong();
   }
 
   E('spell-check-btn').textContent = t('Next \u2192', '\u4e0b\u4e00\u9898 \u2192');

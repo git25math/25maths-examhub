@@ -11,6 +11,7 @@
 
   <!-- App Styles -->
   <link rel="stylesheet" href="css/style.css">
+  <script>(function(){try{if(localStorage.getItem('wmatch_dark')==='1'||(localStorage.getItem('wmatch_dark')===null&&window.matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.setAttribute('data-theme','dark')}}catch(e){}})()</script>
 </head>
 <body>
 
@@ -83,6 +84,8 @@
         </div>
       </div>
       <div class="sidebar-actions">
+        <button class="btn-icon" id="dark-toggle-sb" onclick="toggleDark()" title="深色模式">🌙</button>
+        <button class="btn-icon" id="sound-toggle-sb" onclick="toggleSound()" title="音效">🔊</button>
         <button class="btn-icon" id="lang-toggle-sb" onclick="toggleLang()" title="语言切换">EN</button>
         <button class="btn-icon" onclick="showSettings()" title="设置">⚙</button>
         <button class="btn-icon" id="btn-logout-sb" title="退出">↩</button>
@@ -98,6 +101,8 @@
         <div class="header-brand">25Maths</div>
       </div>
       <div class="header-right">
+        <button class="btn-icon" id="dark-toggle-hb" onclick="toggleDark()">🌙</button>
+        <button class="btn-icon" id="sound-toggle-hb" onclick="toggleSound()">🔊</button>
         <button class="btn-icon" id="lang-toggle-hb" onclick="toggleLang()">EN</button>
         <div class="header-user">
           <span id="hb-rank"></span>

@@ -52,6 +52,22 @@ var currentLvl = 0;
 var userBoard = null;        /* selected board/year filter */
 var appSearch = '';           /* current search keyword (lowercase) */
 
+var appDark = (function() {
+  try {
+    var stored = localStorage.getItem('wmatch_dark');
+    if (stored !== null) return stored === '1';
+  } catch (e) {}
+  return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+})();
+
+var appSound = (function() {
+  try {
+    var stored = localStorage.getItem('wmatch_sound');
+    if (stored !== null) return stored === '1';
+  } catch (e) {}
+  return true;
+})();
+
 /* Search matching: level title/vocab against query */
 function matchLevel(lv, q) {
   if (!q) return true;

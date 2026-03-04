@@ -70,6 +70,7 @@ function renderBattle(lv) {
   G.timer = setInterval(function() {
     G.timeLeft--;
     updateHUD();
+    if (G.timeLeft > 0 && G.timeLeft <= 5) playTick();
     if (G.timeLeft <= 0) {
       G.lock = true;
       G.first = G.second = null;
@@ -106,6 +107,8 @@ function onMatch() {
   G.combo++;
   if (G.combo > G.maxCombo) G.maxCombo = G.combo;
   G.matched++;
+  playCorrect();
+  if (G.combo >= 3) playCombo();
 
   [G.first, G.second].forEach(function(s) {
     var r = s.getBoundingClientRect();
@@ -133,6 +136,7 @@ function onMatch() {
 function onMiss() {
   G.combo = 0;
   updateHUD();
+  playWrong();
   G.first.classList.add('shake-go');
   G.second.classList.add('shake-go');
 

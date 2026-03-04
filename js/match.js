@@ -107,6 +107,7 @@ function pickMatch(btn) {
     MT.rightItems[rightIdx].matched = true;
     MT.matched++;
     MT.selected = null;
+    playCorrect();
 
     /* Update word status */
     var key = wordKey(MT.lvl, leftLid);
@@ -121,6 +122,7 @@ function pickMatch(btn) {
     /* Mismatch */
     MT.errors++;
     MT.selected = null;
+    playWrong();
 
     /* Flash wrong effect */
     renderMatchBoard();

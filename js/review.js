@@ -284,10 +284,12 @@ function rateReview(r) {
       var rc = box.getBoundingClientRect();
       spawnP(rc.left + rc.width / 2, rc.top + rc.height / 2, 8);
     }
+    playCorrect();
   } else if (r === 'ok') {
     setWordStatus(w.key, 'learning', Math.max(iv * 1.2, 1), true);
   } else {
     setWordStatus(w.key, 'learning', 0.15, false);
+    playWrong();
   }
 
   RV.idx++;

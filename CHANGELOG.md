@@ -1,5 +1,34 @@
 # Changelog
 
+## [0.9.0] - 2026-03-04 — 深色模式 + 游戏增强（测验双向 / 拼写语音 / 音效）
+
+### 新增
+- **深色模式**：🌙/☀️ 切换按钮（侧栏 + 顶栏），CSS 变量覆盖全部配色；首次访问自动跟随系统偏好，`localStorage` 持久化，`<head>` 内联脚本防白闪
+- **音效系统**：🔊/🔇 切换按钮，Web Audio API 实现 4 种音效 — `playCorrect()` 正确（440→880Hz sine）、`playWrong()` 错误（300→200Hz square）、`playCombo()` 连击（C5-E5-G5 琶音）、`playTick()` 倒计时（800Hz 短促），AudioContext 懒创建遵守 autoplay 策略
+- **测验双向模式**：方向切换栏（EN→中 / 中→EN），切方向不重置进度，选项去重
+- **拼写语音朗读**：Web Speech Synthesis 🔊 按钮 + 加载后自动发音（`rate=0.85, lang=en-US`），不支持 speechSynthesis 的浏览器自动隐藏按钮
+- **全局音效集成**：实战模式（配对成功 + 连击≥3 + 倒计时≤5s）、配对模式、学习模式、复习模式均接入音效
+
+### 设计决策
+- `appDark` + `appSound` 全局状态，统一控制深色/音效+语音
+- `[data-theme="dark"]` 覆盖全部 CSS 自定义属性，无 class 侵入
+- AudioContext 懒创建 + resume：首次用户交互才初始化，兼容 Chrome/Safari autoplay 限制
+- Quiz `setQuizDir()` 只重渲当前卡，保留 `Q.idx` / `Q.correct` 进度
+
+### 文件变更
+- `js/config.js` — `appDark` + `appSound` 全局状态（localStorage + 系统偏好降级）
+- `css/style.css` — `[data-theme="dark"]` 变量覆盖 + header/nav/overlay/input 暗色适配 + `.quiz-dir-bar` / `.btn-speak` 样式
+- `index.html` — `<head>` 防闪烁内联脚本 + 侧栏/顶栏 dark + sound 切换按钮
+- `js/ui.js` — `applyDark()` / `toggleDark()` / `toggleSound()` / Web Audio 引擎（`playTone` / `playCorrect` / `playWrong` / `playCombo` / `playTick`）/ `canSpeak()` / `speakWord()`
+- `js/quiz.js` — `Q.dir` 双向模式 + `setQuizDir()` + 方向切换 UI + 选项去重 + 音效
+- `js/spell.js` — 🔊 发音按钮 + 自动发音 + 答对/答错音效
+- `js/battle.js` — 配对成功/失败/连击/倒计时音效
+- `js/match.js` — 配对成功/失败音效
+- `js/study.js` — 掌握/不熟音效
+- `js/review.js` — 搞定/不熟音效
+
+---
+
 ## [0.8.2] - 2026-03-04 — 首页搜索 + 复习过滤
 
 ### 新增

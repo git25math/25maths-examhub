@@ -85,10 +85,12 @@ function rateStudy(r) {
       var rc = box.getBoundingClientRect();
       spawnP(rc.left + rc.width / 2, rc.top + rc.height / 2, 8);
     }
+    playCorrect();
   } else if (r === 'ok') {
     setWordStatus(key, 'learning', 1);
   } else {
     setWordStatus(key, 'learning', 0.15, false);
+    playWrong();
   }
 
   S.idx++;
