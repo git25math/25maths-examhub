@@ -48,8 +48,13 @@ var catCollapsed = {};
   CATEGORIES.forEach(function(c) { catCollapsed[c.id] = true; });
 })();
 
-/* Sidebar expanded state (tracks which category is open in sidebar) */
-var sidebarExpanded = {};
+/* Sidebar CIE 0580 accordion state */
+var sidebarCIEOpen = false;
+
+function toggleCIESidebar() {
+  sidebarCIEOpen = !sidebarCIEOpen;
+  updateSidebar();
+}
 
 function toggleCategory(catId) {
   catCollapsed[catId] = !catCollapsed[catId];
@@ -59,26 +64,17 @@ function toggleCategory(catId) {
 
 /* Called from sidebar: expand right-side category + scroll to it */
 function selectCategory(catId) {
-  /* Toggle sidebar accordion */
-  var wasOpen = sidebarExpanded[catId];
-  /* Close all sidebar sections */
-  for (var k in sidebarExpanded) sidebarExpanded[k] = false;
-  sidebarExpanded[catId] = !wasOpen;
-  updateSidebar();
+  /* Expand right side category */
+  catCollapsed[catId] = false;
+  var el = document.getElementById('cat-' + catId);
+  if (el) el.classList.remove('collapsed');
 
-  if (!wasOpen) {
-    /* Ensure right side is expanded */
-    catCollapsed[catId] = false;
-    var el = document.getElementById('cat-' + catId);
-    if (el) el.classList.remove('collapsed');
-
-    /* Navigate to home if needed, then scroll */
-    if (appView !== 'home') navTo('home');
-    setTimeout(function() {
-      var el2 = document.getElementById('cat-' + catId);
-      if (el2) el2.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, appView !== 'home' ? 100 : 0);
-  }
+  /* Navigate to home if needed, then scroll */
+  if (appView !== 'home') navTo('home');
+  setTimeout(function() {
+    var el2 = document.getElementById('cat-' + catId);
+    if (el2) el2.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, appView !== 'home' ? 100 : 0);
 }
 
 /* ═══ HOME DASHBOARD ═══ */

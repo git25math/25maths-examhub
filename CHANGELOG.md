@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.5.3] - 2026-03-04 — 侧栏改为单一 CIE IGCSE Maths 入口
+
+### 变更
+- 侧栏专题区从 8 个分类手风琴简化为单一「📚 CIE IGCSE Maths / 剑桥IGCSE数学」入口
+- 点击展开显示 8 个专题分类（含 emoji + 双语名称）
+- 点击分类跳转首页并滚动到对应专题
+- `selectCategory()` 简化：不再管理侧栏展开状态，只控制右侧面板
+- `updateNav()` 移至 `toggleLang()` 开头，确保语言切换时导航标签立即更新
+
+### 文件变更
+- `js/mastery.js` — 新增 `sidebarCIEOpen` + `toggleCIESidebar()`，移除 `sidebarExpanded`
+- `js/ui.js` — `updateSidebar()` 重写为单一 CIE 0580 手风琴结构
+
+---
+
 ## [0.5.2] - 2026-03-04 — 修复语言切换导航标签不更新
 
 ### 修复

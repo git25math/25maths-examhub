@@ -139,33 +139,24 @@ function updateSidebar() {
   }
   if (E('hb-name')) E('hb-name').textContent = displayShort;
 
-  /* Sidebar: accordion categories with expandable deck lists */
+  /* Sidebar: single CIE 0580 accordion with category sub-items */
   var deckEl = E('sidebar-decks');
   if (deckEl) {
-    var html = '<div class="sidebar-deck-label">' + t('Topics', '\u4e13\u9898') + '</div>';
+    var html = '';
+    html += '<div class="sidebar-cat-group' + (sidebarCIEOpen ? ' open' : '') + '">';
+    html += '<button class="sidebar-deck-item sidebar-cat-toggle" onclick="toggleCIESidebar()">' +
+      '<span class="deck-emoji">\ud83d\udcda</span>' +
+      '<span>' + t('CIE IGCSE Maths', '\u5251\u6865IGCSE\u6570\u5b66') + '</span>' +
+      '<span class="sidebar-chevron">\u25b6</span>' +
+      '</button>';
+    html += '<div class="sidebar-cat-decks">';
     CATEGORIES.forEach(function(cat) {
-      var catLevels = [];
-      LEVELS.forEach(function(lv, i) {
-        if (lv.category === cat.id) catLevels.push({ lv: lv, idx: i });
-      });
-      if (catLevels.length === 0) return;
-      var isOpen = sidebarExpanded[cat.id];
-      html += '<div class="sidebar-cat-group' + (isOpen ? ' open' : '') + '">';
-      html += '<button class="sidebar-deck-item sidebar-cat-toggle" onclick="selectCategory(\'' + cat.id + '\')">' +
-        '<span class="deck-emoji">' + cat.emoji + '</span>' +
-        '<span>' + catName(cat) + '</span>' +
-        '<span class="sidebar-chevron">\u25b6</span>' +
+      html += '<button class="sidebar-sub-item" onclick="selectCategory(\'' + cat.id + '\')">' +
+        '<span style="margin-right:6px">' + cat.emoji + '</span>' +
+        '<span class="sidebar-sub-name">' + catName(cat) + '</span>' +
         '</button>';
-      html += '<div class="sidebar-cat-decks">';
-      catLevels.forEach(function(cl) {
-        var stats = getDeckStats(cl.idx);
-        html += '<button class="sidebar-sub-item" onclick="openDeck(' + cl.idx + ')">' +
-          '<span class="sidebar-sub-name">' + cl.lv.title + '</span>' +
-          '<span class="sidebar-sub-pct">' + stats.pct + '%</span>' +
-          '</button>';
-      });
-      html += '</div></div>';
     });
+    html += '</div></div>';
     deckEl.innerHTML = html;
   }
 }
