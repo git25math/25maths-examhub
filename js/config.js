@@ -51,8 +51,9 @@ var appBP = 'desktop';       /* 'phone' | 'tablet' | 'desktop' */
 var currentLvl = 0;
 var userBoard = null;        /* selected board/year filter */
 
-/* Board selection options (7 choices) */
+/* Board selection options (8 choices) */
 var BOARD_OPTIONS = [
+  { value: 'all',     emoji: '\ud83c\udf10', name: 'All Courses',        nameZh: '\u5168\u90e8\u8bfe\u7a0b' },
   { value: 'cie',     emoji: '\ud83d\udcda', name: 'CIE IGCSE 0580',    nameZh: '\u5251\u6865 IGCSE 0580' },
   { value: 'edx',     emoji: '\ud83d\udcd8', name: 'Edexcel IGCSE 4MA1', nameZh: '\u7231\u5fb7\u601d IGCSE 4MA1' },
   { value: '25m-y7',  emoji: '7\ufe0f\u20e3',  name: '25Maths Year 7',  nameZh: '25Maths \u4e03\u5e74\u7ea7' },
@@ -65,6 +66,7 @@ var BOARD_OPTIONS = [
 /* Check if a level should be visible under current board filter */
 function isLevelVisible(lv) {
   if (!userBoard) return true;
+  if (userBoard === 'all') return true;
   /* Custom levels are always visible */
   if (lv.custom) return true;
   /* CIE / Edexcel: filter by board field */
@@ -78,6 +80,7 @@ function isLevelVisible(lv) {
 /* Get filtered BOARDS array based on userBoard */
 function getVisibleBoards() {
   if (!userBoard) return BOARDS;
+  if (userBoard === 'all') return BOARDS;
   return BOARDS.filter(function(b) {
     /* CIE/Edexcel: show entire board */
     if (userBoard === 'cie' && b.id === 'cie') return true;

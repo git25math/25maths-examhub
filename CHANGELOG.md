@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.8.1] - 2026-03-04 — 三项体验打磨
+
+### 新增
+- **Board 局部统计**：首页每个考试局/课程板块标题栏显示掌握数/总数 · 掌握率
+- **全部课程选项**：选课页新增"🌐 全部课程"选项，选择后显示所有模块词汇
+- **切模块自动同步**：切换课程后自动触发 `syncToCloud()`，排行榜分数即时更新
+
+### 文件变更
+- `js/config.js` — `BOARD_OPTIONS` 开头新增 `all` 选项 + `isLevelVisible()` / `getVisibleBoards()` 加 `all` 判断
+- `js/mastery.js` — `renderHome()` board 循环内新增局部统计计算 + `.board-stats` 显示
+- `js/auth.js` — `selectBoard()` 末尾新增 `syncToCloud()` 调用
+- `css/style.css` — 新增 `.board-stats` 样式 + `.board-code` margin-left 调整
+
+---
+
 ## [0.8.0] - 2026-03-04 — 注册选课 + 按模块过滤 + 按模块排行榜/段位
 
 ### 新增

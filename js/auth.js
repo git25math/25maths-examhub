@@ -185,6 +185,7 @@ async function selectBoard(value) {
   }
   hideBoardSelection();
   showApp();
+  syncToCloud();
 }
 
 function changeBoardFromSettings() {

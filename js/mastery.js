@@ -116,11 +116,25 @@ function renderHome() {
 
   /* Deck grid grouped by BOARDS → categories → levels */
   getVisibleBoards().forEach(function(board) {
+    /* Compute board-level stats */
+    var boardTotal = 0, boardMastered = 0;
+    board.categories.forEach(function(cat) {
+      LEVELS.forEach(function(lv, i) {
+        if (lv.category === cat.id && isLevelVisible(lv)) {
+          var s = getDeckStats(i);
+          boardTotal += s.total;
+          boardMastered += s.mastered;
+        }
+      });
+    });
+    var boardPct = boardTotal > 0 ? Math.round(boardMastered / boardTotal * 100) : 0;
+
     /* Board section header */
     html += '<div class="board-section" id="board-' + board.id + '">';
     html += '<div class="board-header">';
     html += '<span class="board-emoji">' + board.emoji + '</span>';
     html += '<span class="board-name">' + boardName(board) + '</span>';
+    html += '<span class="board-stats">' + boardMastered + '/' + boardTotal + ' · ' + boardPct + '%</span>';
     html += '<span class="board-code">' + board.code + '</span>';
     html += '</div>';
 

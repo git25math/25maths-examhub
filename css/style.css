@@ -535,6 +535,14 @@ input { font-family: inherit; }
   color: var(--c-text);
 }
 
+.board-stats {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--c-muted);
+  margin-left: auto;
+  white-space: nowrap;
+}
+
 .board-code {
   font-size: 11px;
   font-weight: 700;
@@ -542,7 +550,7 @@ input { font-family: inherit; }
   background: var(--c-primary-bg);
   padding: 2px 8px;
   border-radius: 10px;
-  margin-left: auto;
+  margin-left: 8px;
 }
 
 
