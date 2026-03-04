@@ -170,46 +170,57 @@ function recordActivity() {
 
 /* Cloud sync */
 var _lastSyncErrAt = 0;
+var _syncStatus = 'idle';   /* 'idle' | 'syncing' | 'ok' | 'error' */
+var _lastSyncOkAt = 0;
+var _syncRetryCount = 0;
+
+async function _doSyncToCloud() {
+  if (!sb || !currentUser || currentUser.id === 'local') return;
+  var now = new Date().toISOString();
+  await sb.from('vocab_progress').upsert(
+    { user_id: currentUser.id, data: JSON.stringify(loadS()), updated_at: now },
+    { onConflict: 'user_id' }
+  );
+  try { localStorage.setItem('wmatch_last_sync', Date.now()); } catch (e) {}
+  /* Sync leaderboard score */
+  var allW = getAllWords();
+  var mastered = allW.filter(function(w) { return w.status === 'mastered'; }).length;
+  var pct = allW.length > 0 ? Math.round(mastered / allW.length * 100) : 0;
+  var r = getRank();
+  var nick = currentUser.nickname || currentUser.email.split('@')[0];
+  await sb.from('leaderboard').upsert({
+    user_id: currentUser.id,
+    nickname: nick,
+    score: pct * 20,
+    mastery_pct: pct,
+    rank_emoji: r.emoji,
+    total_words: allW.length,
+    mastered_words: mastered,
+    board: userBoard || '',
+    updated_at: now
+  }, { onConflict: 'user_id' });
+}
 
 async function syncToCloud() {
   if (!sb || !currentUser || currentUser.id === 'local') return;
-  var now = new Date().toISOString();
+  _syncStatus = 'syncing';
   try {
-    await sb.from('vocab_progress').upsert(
-      { user_id: currentUser.id, data: JSON.stringify(loadS()), updated_at: now },
-      { onConflict: 'user_id' }
-    );
-    try { localStorage.setItem('wmatch_last_sync', Date.now()); } catch (e) {}
+    await _doSyncToCloud();
+    _syncStatus = 'ok';
+    _lastSyncOkAt = Date.now();
+    _syncRetryCount = 0;
   } catch (e) {
+    _syncStatus = 'error';
     var errNow = Date.now();
     if (!_lastSyncErrAt || errNow - _lastSyncErrAt > 5000) {
       _lastSyncErrAt = errNow;
-      showToast(t('Sync failed, check network', '同步失败，请检查网络'));
     }
-  }
-  /* Sync leaderboard score */
-  try {
-    var allW = getAllWords();
-    var mastered = allW.filter(function(w) { return w.status === 'mastered'; }).length;
-    var pct = allW.length > 0 ? Math.round(mastered / allW.length * 100) : 0;
-    var r = getRank();
-    var nick = currentUser.nickname || currentUser.email.split('@')[0];
-    await sb.from('leaderboard').upsert({
-      user_id: currentUser.id,
-      nickname: nick,
-      score: pct * 20,
-      mastery_pct: pct,
-      rank_emoji: r.emoji,
-      total_words: allW.length,
-      mastered_words: mastered,
-      board: userBoard || '',
-      updated_at: now
-    }, { onConflict: 'user_id' });
-  } catch (e) {
-    var errNow2 = Date.now();
-    if (!_lastSyncErrAt || errNow2 - _lastSyncErrAt > 5000) {
-      _lastSyncErrAt = errNow2;
-      showToast(t('Sync failed, check network', '同步失败，请检查网络'));
+    /* Exponential backoff retry: 2s, 5s, 10s */
+    var delays = [2000, 5000, 10000];
+    if (_syncRetryCount < delays.length) {
+      var delay = delays[_syncRetryCount];
+      _syncRetryCount++;
+      setTimeout(function() { syncToCloud(); }, delay);
     }
   }
 }

@@ -418,12 +418,17 @@ input { font-family: inherit; }
   align-items: center;
   z-index: 100;
   padding-bottom: env(safe-area-inset-bottom, 0);
+  transition: transform 0.3s ease;
+}
+
+.bottom-nav.nav-hidden {
+  transform: translateY(100%);
 }
 
 .bnav-item {
   display: flex; flex-direction: column;
   align-items: center; gap: 2px;
-  padding: 10px 16px; border-radius: var(--r-sm);
+  padding: 10px 12px; border-radius: var(--r-sm);
   font-size: 10px; font-weight: 600; color: var(--c-muted);
   transition: all 0.15s;
 }
@@ -1780,6 +1785,15 @@ input { font-family: inherit; }
 .btn-speak:hover { background:var(--c-primary); color:#fff; }
 
 
+/* ═══ SYNC STATUS ═══ */
+.sync-status {
+  font-size: 12px; padding: 6px 12px; margin-top: 8px;
+  border-radius: var(--r-sm); text-align: center;
+}
+.sync-ok { color: var(--c-success); }
+.sync-err { color: var(--c-danger); }
+.sync-ing { color: var(--c-warning); }
+
 /* ══════════════════════════════════════════════════════════════
    RESPONSIVE BREAKPOINTS
    ══════════════════════════════════════════════════════════════ */
@@ -1831,6 +1845,10 @@ input { font-family: inherit; }
 
   .quiz-word { font-size: 22px; }
   .spell-def { font-size: 18px; }
+
+  /* Bottom nav: icon-only on phone */
+  .bnav-label { display: none; }
+  .bnav-item { padding: 8px 0; gap: 0; }
 
   /* Touch targets ≥ 44px */
   .btn-icon { min-width: 44px; min-height: 44px; }

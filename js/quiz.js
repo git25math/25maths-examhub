@@ -4,6 +4,22 @@
 
 var Q = { pairs: [], idx: 0, correct: 0, lvl: 0, locked: false, dir: 'en2zh' };
 
+/* ═══ QUIZ DISTRACTOR CACHE ═══ */
+var _quizCache = null;
+function getQuizCache() {
+  if (_quizCache) return _quizCache;
+  var defsSet = {}, wordsSet = {};
+  var defs = [], words = [];
+  LEVELS.forEach(function(lv) {
+    getPairs(lv.vocabulary).forEach(function(pp) {
+      if (!defsSet[pp.def]) { defsSet[pp.def] = true; defs.push(pp.def); }
+      if (!wordsSet[pp.word]) { wordsSet[pp.word] = true; words.push(pp.word); }
+    });
+  });
+  _quizCache = { defs: defs, words: words };
+  return _quizCache;
+}
+
 function startQuiz(li) {
   var lv = LEVELS[li];
   if (validate(lv, li)) return;
@@ -36,38 +52,19 @@ function renderQuizCard() {
   var questionText, correctAnswer, hintText;
   var distractors = [];
 
+  var cache = getQuizCache();
   if (Q.dir === 'en2zh') {
     questionText = p.word;
     correctAnswer = p.def;
     hintText = t('Choose the correct definition', '\u9009\u62e9\u6b63\u786e\u7684\u4e2d\u6587\u91ca\u4e49');
-    LEVELS.forEach(function(lv) {
-      getPairs(lv.vocabulary).forEach(function(pp) {
-        if (pp.def !== p.def) distractors.push(pp.def);
-      });
-    });
+    distractors = shuffle(cache.defs.filter(function(x) { return x !== correctAnswer; })).slice(0, 3);
   } else {
     questionText = p.def;
     correctAnswer = p.word;
     hintText = t('Choose the correct English word', '\u9009\u62e9\u6b63\u786e\u7684\u82f1\u6587\u5355\u8bcd');
-    LEVELS.forEach(function(lv) {
-      getPairs(lv.vocabulary).forEach(function(pp) {
-        if (pp.word !== p.word) distractors.push(pp.word);
-      });
-    });
+    distractors = shuffle(cache.words.filter(function(x) { return x !== correctAnswer; })).slice(0, 3);
   }
-
-  /* Deduplicate distractors */
-  var seen = {};
-  seen[correctAnswer] = true;
-  var uniqueDistractors = [];
-  for (var d = 0; d < distractors.length; d++) {
-    if (!seen[distractors[d]]) {
-      seen[distractors[d]] = true;
-      uniqueDistractors.push(distractors[d]);
-    }
-  }
-  uniqueDistractors = shuffle(uniqueDistractors).slice(0, 3);
-  var options = shuffle([correctAnswer].concat(uniqueDistractors));
+  var options = shuffle([correctAnswer].concat(distractors));
 
   var html = '';
 
@@ -230,37 +227,21 @@ function renderDailyCard() {
   var dir = (dirSeed % 2 === 0) ? 'en2zh' : 'zh2en';
 
   var questionText, correctAnswer, hintText;
-  var distractors = [];
+  var cache = getQuizCache();
+  var distractors;
 
   if (dir === 'en2zh') {
     questionText = w.word;
     correctAnswer = w.def;
     hintText = t('Choose the correct definition', '选择正确的中文释义');
-    LEVELS.forEach(function(lv) {
-      getPairs(lv.vocabulary).forEach(function(pp) {
-        if (pp.def !== w.def) distractors.push(pp.def);
-      });
-    });
+    distractors = shuffle(cache.defs.filter(function(x) { return x !== correctAnswer; })).slice(0, 3);
   } else {
     questionText = w.def;
     correctAnswer = w.word;
     hintText = t('Choose the correct English word', '选择正确的英文单词');
-    LEVELS.forEach(function(lv) {
-      getPairs(lv.vocabulary).forEach(function(pp) {
-        if (pp.word !== w.word) distractors.push(pp.word);
-      });
-    });
+    distractors = shuffle(cache.words.filter(function(x) { return x !== correctAnswer; })).slice(0, 3);
   }
-
-  /* Deduplicate distractors */
-  var seen = {};
-  seen[correctAnswer] = true;
-  var uniq = [];
-  for (var d = 0; d < distractors.length; d++) {
-    if (!seen[distractors[d]]) { seen[distractors[d]] = true; uniq.push(distractors[d]); }
-  }
-  uniq = shuffle(uniq).slice(0, 3);
-  var options = shuffle([correctAnswer].concat(uniq));
+  var options = shuffle([correctAnswer].concat(distractors));
 
   var html = '';
 

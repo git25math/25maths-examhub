@@ -273,6 +273,19 @@ function showSettings() {
     '<input class="auth-input" id="settings-pw1" type="password" placeholder="' + t('New password (min 6 chars, leave blank to skip)', '新密码 (至少6位，留空不改)') + '">' +
     '<input class="auth-input" id="settings-pw2" type="password" placeholder="' + t('Confirm new password', '确认新密码') + '">' +
     '</div>' +
+    '<div class="settings-divider"></div>' +
+    '<div class="settings-section">' +
+    '<label class="settings-label">' + t('Cloud Sync', '\u4e91\u540c\u6b65') + '</label>' +
+    '<div style="font-size:13px;color:var(--c-text2);margin-bottom:8px">' + (function() {
+      if (!_lastSyncOkAt) return t('Not synced yet', '\u5c1a\u672a\u540c\u6b65');
+      var ago = Math.floor((Date.now() - _lastSyncOkAt) / 60000);
+      if (ago < 1) return t('Last sync: just now', '\u4e0a\u6b21\u540c\u6b65\uff1a\u521a\u521a');
+      if (ago < 60) return t('Last sync: ' + ago + ' min ago', '\u4e0a\u6b21\u540c\u6b65\uff1a' + ago + ' \u5206\u949f\u524d');
+      var hrs = Math.floor(ago / 60);
+      return t('Last sync: ' + hrs + 'h ago', '\u4e0a\u6b21\u540c\u6b65\uff1a' + hrs + ' \u5c0f\u65f6\u524d');
+    })() + '</div>' +
+    '<button class="btn btn-ghost btn-sm" onclick="manualSync()">' + t('Sync Now', '\u7acb\u5373\u540c\u6b65') + '</button>' +
+    '</div>' +
     '<div class="settings-msg" id="settings-msg"></div>' +
     '<div style="display:flex;gap:8px;margin-top:16px">' +
     '<button class="btn btn-primary" style="flex:1" onclick="saveSettings()">' + t('Save', '保存') + '</button>' +
@@ -332,6 +345,20 @@ async function saveSettings() {
   } else {
     hideModal();
   }
+}
+
+/* ═══ MANUAL SYNC ═══ */
+async function manualSync() {
+  showToast(t('Syncing...', '\u540c\u6b65\u4e2d...'));
+  _syncRetryCount = 0;
+  await syncToCloud();
+  updateSidebar();
+  if (_syncStatus === 'ok') {
+    showToast(t('Synced successfully', '\u540c\u6b65\u6210\u529f'));
+  } else {
+    showToast(t('Sync failed, check network', '\u540c\u6b65\u5931\u8d25\uff0c\u8bf7\u68c0\u67e5\u7f51\u7edc'));
+  }
+  hideModal();
 }
 
 /* ═══ RANK GUIDE MODAL ═══ */

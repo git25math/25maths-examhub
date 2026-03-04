@@ -1,5 +1,31 @@
 # Changelog
 
+## [0.9.7] - 2026-03-04 — 三项性能与体验优化
+
+### 新增
+- **底部导航 5 项适配**：Phone 断点（<640px）下仅显示 icon，隐藏文字标签，padding 紧凑化
+- **滚动自动隐藏底栏**：向下滚动 >10px 底部导航隐藏（`translateY(100%)`），向上滚动恢复
+- **左右滑动切换面板**：水平滑动 >50px 在 5 个主面板（首页/复习/导入/排行/统计）间切换
+- **Quiz 干扰项缓存**：新增 `getQuizCache()` 预建去重词库，替换 4 处遍历全部 264 级的循环，每道题从 O(2640) 降为 O(n) filter
+- **同步状态指示器**：全局 `_syncStatus` 跟踪同步状态（idle/syncing/ok/error），侧栏底部实时显示 ✓已同步 / ↻同步中 / ⚠离线
+- **同步失败自动重试**：指数退避重试（2s/5s/10s），静默重试不弹 Toast
+- **设置 Modal 同步区域**：显示"上次同步: x 分钟前" + 手动同步按钮
+- **深色模式适配**：同步状态颜色跟随主题变量
+
+### 设计决策
+- **缓存策略**：`_quizCache` 首次调用时构建，会话内复用，无需失效（词库为静态数据）
+- **滑动手势**：仅在水平位移 > 垂直位移时触发，避免与纵向滚动冲突
+- **重试逻辑**：3 次指数退避后停止，避免无限重试；`manualSync()` 重置重试计数器
+
+### 文件变更
+- `css/style.css` — Phone icon-only + `.nav-hidden` transition + `.sync-status` 样式（~20 行）
+- `js/ui.js` — 滚动/滑动监听 + 同步状态侧栏渲染（~57 行）
+- `js/quiz.js` — `_quizCache` + `getQuizCache()` + 替换 4 处循环（+15 行, −45 行）
+- `js/storage.js` — `_syncStatus` + `_lastSyncOkAt` + `_doSyncToCloud()` + 重试逻辑（~25 行重构）
+- `js/auth.js` — `showSettings()` 同步区域 + `manualSync()` 函数（~27 行）
+
+---
+
 ## [0.9.6a] - 2026-03-04 — 补齐 Battle + Study 分享按钮
 
 ### 新增

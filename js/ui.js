@@ -281,6 +281,29 @@ function updateSidebar() {
     });
     deckEl.innerHTML = html;
   }
+
+  /* Sync status in sidebar footer */
+  var sfEl = document.querySelector('.sidebar-footer');
+  if (sfEl) {
+    var oldSync = document.getElementById('sb-sync-status');
+    if (oldSync) oldSync.remove();
+    if (currentUser && currentUser.id !== 'local') {
+      var syncDiv = document.createElement('div');
+      syncDiv.id = 'sb-sync-status';
+      syncDiv.className = 'sync-status';
+      if (_syncStatus === 'ok') {
+        syncDiv.className += ' sync-ok';
+        syncDiv.textContent = '\u2713 ' + t('Synced', '\u5df2\u540c\u6b65');
+      } else if (_syncStatus === 'syncing') {
+        syncDiv.className += ' sync-ing';
+        syncDiv.textContent = '\u21bb ' + t('Syncing...', '\u540c\u6b65\u4e2d...');
+      } else if (_syncStatus === 'error') {
+        syncDiv.className += ' sync-err';
+        syncDiv.textContent = '\u26a0 ' + t('Offline', '\u79bb\u7ebf');
+      }
+      sfEl.appendChild(syncDiv);
+    }
+  }
 }
 
 /* scrollToCategory kept for backwards compat */
@@ -346,6 +369,40 @@ function sortCards(pairs) {
   }
   return pairs; /* default order */
 }
+
+/* ═══ SCROLL AUTO-HIDE BOTTOM NAV ═══ */
+var _lastScrollY = 0;
+window.addEventListener('scroll', function() {
+  var bnav = E('bottom-nav');
+  if (!bnav) return;
+  var cur = window.scrollY;
+  if (cur > _lastScrollY && cur > 10) {
+    bnav.classList.add('nav-hidden');
+  } else {
+    bnav.classList.remove('nav-hidden');
+  }
+  _lastScrollY = cur;
+}, { passive: true });
+
+/* ═══ SWIPE GESTURE FOR PANEL SWITCHING ═══ */
+var _touchStartX = 0;
+var _touchStartY = 0;
+var _navSeq = ['home', 'review-dash', 'import', 'board', 'stats'];
+
+document.addEventListener('touchstart', function(e) {
+  _touchStartX = e.touches[0].clientX;
+  _touchStartY = e.touches[0].clientY;
+}, { passive: true });
+
+document.addEventListener('touchend', function(e) {
+  var dx = e.changedTouches[0].clientX - _touchStartX;
+  var dy = e.changedTouches[0].clientY - _touchStartY;
+  if (Math.abs(dx) < 50 || Math.abs(dy) > Math.abs(dx)) return;
+  var idx = _navSeq.indexOf(appView);
+  if (idx < 0) return;
+  if (dx < 0 && idx < _navSeq.length - 1) navTo(_navSeq[idx + 1]);
+  else if (dx > 0 && idx > 0) navTo(_navSeq[idx - 1]);
+});
 
 /* Generic result screen HTML */
 function resultScreenHTML(ok, total, retryId, backId, mode) {
