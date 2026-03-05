@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.2.3] - 2026-03-05 — 修复班级编辑保存后数据未实际更新
+
+### Bug 修复 (admin.js + Supabase RPC)
+- **根因**：`doEditClass()` 使用 `.update().eq()` 直接操作，Supabase JS v2 不带 `.select()` 时无论更新 0 行还是 1 行均返回 `{ data: null, error: null }`；若 RLS UPDATE USING 条件不匹配，更新静默失败但前端认为成功
+- **修复**：新建 `update_class` SECURITY DEFINER RPC，验证教师身份 + 同校归属后直接执行 UPDATE，与 `create_assignment` 模式一致
+- **效果**：编辑班级名称/年级后数据立即生效，年级概览/全校概览同步显示新数据
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `supabase/migrations/20260305930000_update_class_rpc.sql` | 新建：`update_class` RPC 函数（SECURITY DEFINER） |
+| `js/admin.js` | `doEditClass()` 改用 `sb.rpc('update_class', {...})` 替代直接 `.update()` |
+
 ## [1.2.2] - 2026-03-05 — 学生错词保存为自定义学习卡组
 
 ### 功能新增 (homework.js)

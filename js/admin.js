@@ -246,7 +246,7 @@ async function doEditClass(classId, oldGrade) {
   msg.className = 'settings-msg';
 
   try {
-    var res = await sb.from('classes').update({ name: name, grade: grade }).eq('id', classId);
+    var res = await sb.rpc('update_class', { p_class_id: classId, p_name: name, p_grade: grade });
     if (res.error) throw new Error(res.error.message);
 
     /* Cascade grade update if changed */
