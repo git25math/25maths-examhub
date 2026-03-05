@@ -273,7 +273,7 @@
 - [x] 首屏优化：资源提示 + 字体条件加载 + Supabase defer + homework 拆包（~66KB → ~47-55KB gzip）→ v1.3.4
 
 ### Phase 10B — 选择题练习（Layer 3 快速突破）[DONE]
-- [x] 导入 25maths-website 纯文本选择题（1,460 题：CIE 884 + Edexcel 576）→ v1.4.0
+- [x] 导入 25maths-website 全部选择题 + KaTeX 渲染（2,424 题：CIE 1,488 + Edexcel 936）→ v1.4.0
 - [x] 复用 Quiz 模式 UI（支持 4 选项数学题）→ v1.4.0
 - [x] 按 topic + difficulty 筛选 → v1.4.0
 - [x] 练习进度独立存储（localStorage wmatch_practice）→ v1.4.0

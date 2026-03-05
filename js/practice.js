@@ -1,9 +1,54 @@
 /* ══════════════════════════════════════════════════════════════
-   practice.js — Exam practice mode (real exam-style MCQs)
+   practice.js — Exam practice mode (real exam-style MCQs + KaTeX)
    ══════════════════════════════════════════════════════════════ */
 
 var _pqData = {};       /* { cie: [...], edx: [...] } lazy-loaded cache */
 var _pqSession = null;  /* { questions, current, correct, answers, lvl } */
+var _katexReady = false; /* KaTeX loaded flag */
+
+/* ═══ KATEX LAZY LOADING ═══ */
+
+function loadKaTeX() {
+  if (_katexReady) return Promise.resolve();
+  if (window._katexLoading) return window._katexLoading;
+
+  window._katexLoading = new Promise(function(resolve) {
+    /* CSS */
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css';
+    document.head.appendChild(link);
+
+    /* KaTeX core */
+    var script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js';
+    script.onload = function() {
+      /* Auto-render extension */
+      var ar = document.createElement('script');
+      ar.src = 'https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js';
+      ar.onload = function() {
+        _katexReady = true;
+        resolve();
+      };
+      document.head.appendChild(ar);
+    };
+    document.head.appendChild(script);
+  });
+  return window._katexLoading;
+}
+
+function renderMath(el) {
+  if (!_katexReady || !window.renderMathInElement) return;
+  try {
+    window.renderMathInElement(el, {
+      delimiters: [
+        { left: '$$', right: '$$', display: true },
+        { left: '$', right: '$', display: false }
+      ],
+      throwOnError: false
+    });
+  } catch(e) { /* ignore render errors */ }
+}
 
 /* ═══ DATA LOADING ═══ */
 
@@ -40,7 +85,7 @@ function startPractice(li) {
   currentLvl = li;
   showToast(t('Loading questions...', '加载题目中...'));
 
-  loadPracticeData(board).then(function() {
+  Promise.all([loadPracticeData(board), loadKaTeX()]).then(function() {
     var questions = getPracticeQuestions(board, lv.category, 10);
     if (questions.length === 0) {
       showToast(t('No practice questions available for this topic', '该主题暂无练习题'));
@@ -111,6 +156,7 @@ function renderPracticeCard() {
   html += '</button></div>';
 
   E('panel-practice').innerHTML = html;
+  renderMath(E('panel-practice'));
 }
 
 /* ═══ ANSWER HANDLING ═══ */
@@ -150,6 +196,7 @@ function pickPracticeOpt(btn, idx) {
     if (expEl) {
       expEl.innerHTML = '<strong>' + t('Explanation', '解析') + ':</strong> ' + escapeHtml(q.e);
       expEl.style.display = 'block';
+      renderMath(expEl);
     }
   }
 
@@ -214,6 +261,7 @@ function finishPractice() {
   html += '</div>';
 
   E('panel-practice').innerHTML = html;
+  renderMath(E('panel-practice'));
   updateSidebar();
   _pqSession = null;
 }

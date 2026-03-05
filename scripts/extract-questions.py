@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
-"""Extract usable multiple-choice questions from 25maths-website exercise JSONs.
+"""Extract multiple-choice questions from 25maths-website exercise JSONs.
 
 Outputs:
-  data/questions-cie.json  — CIE 0580 questions (~880 usable)
-  data/questions-edx.json  — Edexcel 4MA1 questions (~580 usable)
+  data/questions-cie.json  — CIE 0580 questions (~1,488)
+  data/questions-edx.json  — Edexcel 4MA1 questions (~936)
 
-Skips questions containing complex LaTeX commands that need KaTeX rendering.
-Simple inline math ($x$, $2n+1$) is stripped of $ delimiters and kept as plain text.
+All questions are included. LaTeX $...$ delimiters are preserved for KaTeX rendering.
 """
 
 import json
@@ -19,18 +18,6 @@ EXERCISES_DIR = os.path.join(
     os.path.dirname(__file__), '..', '..', '25maths-website', '_data', 'exercises'
 )
 OUTPUT_DIR = os.path.join(os.path.dirname(__file__), '..', 'data')
-
-# LaTeX commands that require KaTeX rendering (Phase 10C)
-COMPLEX_RE = re.compile(
-    r'\\(frac|sqrt|begin|overline|underline|text|mathrm|mathbf|'
-    r'pm|mp|times|div|cdot|leq|geq|neq|approx|infty|'
-    r'sum|prod|int|lim|log|ln|sin|cos|tan|theta|alpha|beta|pi|'
-    r'vec|hat|bar|dot|cup|cap|subset|supset|in |notin|forall|exists|'
-    r'angle|triangle|parallel|perp|cong|sim|equiv|'
-    r'therefore|because|left|right|displaystyle|'
-    r'binom|stackrel|overset|underset|cancel|hline|'
-    r'multicolumn|tabular|array|matrix|pmatrix|cases|boxed)'
-)
 
 # Domain → Keywords category mapping
 CIE_CAT_MAP = {
@@ -55,25 +42,8 @@ EDX_CAT_MAP = {
 }
 
 
-def strip_dollars(text):
-    """Remove $ delimiters from simple inline math, keep content."""
-    return re.sub(r'\$([^$]+)\$', r'\1', text)
-
-
-def has_complex_latex(text):
-    """Check if text contains complex LaTeX commands."""
-    return bool(COMPLEX_RE.search(text))
-
-
-def question_is_usable(q):
-    """Return True if the question can be used without KaTeX."""
-    combined = q['questionText'] + ' '.join(q['options']) + q.get('explanation', '')
-    return not has_complex_latex(combined)
-
-
 def clean_text(text):
-    """Strip $ delimiters and normalize whitespace."""
-    text = strip_dollars(text)
+    """Normalize whitespace, preserve $...$ LaTeX delimiters."""
     text = re.sub(r'\s+', ' ', text).strip()
     return text
 
@@ -108,9 +78,6 @@ def extract(board_prefix, cat_map, id_prefix):
         topic = topic.strip().title() if topic else ''
 
         for q in data['questions']:
-            if not question_is_usable(q):
-                continue
-
             qid = f'{id_prefix}{counter:03d}' if counter < 1000 else f'{id_prefix}{counter}'
             questions.append({
                 'id': qid,
