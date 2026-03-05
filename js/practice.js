@@ -12,6 +12,7 @@ var _pqEditorSaveCb = null;   /* optional callback after editor save */
 var _pqEditorQid = null;      /* qid of question currently in editor */
 var _pqReviewState = null;    /* { li, questions, board } — current review context */
 var _pqReviewFilter = 'all';  /* 'all' | 1 (Core) | 2 (Extended) */
+var _pqReviewTopicFilter = 'all'; /* 'all' | topic name string */
 var _pqReviewDelegated = false; /* event delegation bound flag */
 
 /* ═══ KATEX LAZY LOADING ═══ */
@@ -775,6 +776,7 @@ function startPracticeReview(li) {
     }
     _pqReviewState = { li: li, questions: questions, board: board };
     _pqReviewFilter = 'all';
+    _pqReviewTopicFilter = 'all';
     showPanel('practice');
     renderPracticeReview();
 
@@ -810,12 +812,28 @@ function renderPracticeReview() {
   var catInfo = getCategoryInfo(lv.category);
   var labels = ['A', 'B', 'C', 'D'];
 
-  /* Apply filter */
-  var filtered = _pqReviewFilter === 'all' ? questions : questions.filter(function(q) {
-    return q.d === _pqReviewFilter;
-  });
+  /* Difficulty counts (from all questions, unaffected by topic) */
   var coreCount = questions.filter(function(q) { return q.d === 1; }).length;
   var extCount = questions.filter(function(q) { return q.d === 2; }).length;
+
+  /* Cascading filter: difficulty first */
+  var afterDiff = _pqReviewFilter === 'all' ? questions : questions.filter(function(q) {
+    return q.d === _pqReviewFilter;
+  });
+
+  /* Extract unique topics + counts from afterDiff */
+  var topicMap = {};
+  afterDiff.forEach(function(q) {
+    var tp = q.topic || '';
+    if (!topicMap[tp]) topicMap[tp] = 0;
+    topicMap[tp]++;
+  });
+  var topicList = Object.keys(topicMap).sort();
+
+  /* Then apply topic filter */
+  var filtered = _pqReviewTopicFilter === 'all' ? afterDiff : afterDiff.filter(function(q) {
+    return (q.topic || '') === _pqReviewTopicFilter;
+  });
 
   var html = '';
 
@@ -826,12 +844,23 @@ function renderPracticeReview() {
   html += '<div class="pq-qid" style="font-size:13px;color:var(--c-muted);white-space:nowrap">' + t('Total', '共') + ' ' + filtered.length + ' ' + t('questions', '题') + '</div>';
   html += '</div>';
 
-  /* Filter bar */
+  /* Difficulty filter bar */
   html += '<div class="pq-review-filter">';
   html += '<button class="sort-btn' + (_pqReviewFilter === 'all' ? ' active' : '') + '" onclick="setPqReviewFilter(\'all\')">All (' + questions.length + ')</button>';
   html += '<button class="sort-btn' + (_pqReviewFilter === 1 ? ' active' : '') + '" onclick="setPqReviewFilter(1)">Core (' + coreCount + ')</button>';
   html += '<button class="sort-btn' + (_pqReviewFilter === 2 ? ' active' : '') + '" onclick="setPqReviewFilter(2)">Extended (' + extCount + ')</button>';
   html += '</div>';
+
+  /* Topic filter bar */
+  if (topicList.length > 1) {
+    html += '<div class="pq-review-filter">';
+    html += '<button class="sort-btn' + (_pqReviewTopicFilter === 'all' ? ' active' : '') + '" onclick="setPqReviewTopic(\'all\')">' + t('All Topics', '全部专题') + ' (' + afterDiff.length + ')</button>';
+    topicList.forEach(function(tp) {
+      var active = _pqReviewTopicFilter === tp ? ' active' : '';
+      html += '<button class="sort-btn' + active + '" onclick="setPqReviewTopic(\'' + escapeHtml(tp).replace(/'/g, "\\'") + '\')">' + escapeHtml(tp) + ' (' + topicMap[tp] + ')</button>';
+    });
+    html += '</div>';
+  }
 
   /* Review list */
   html += '<div class="pq-review-list">';
@@ -873,6 +902,12 @@ function renderPracticeReview() {
 
 function setPqReviewFilter(f) {
   _pqReviewFilter = f;
+  _pqReviewTopicFilter = 'all';
+  renderPracticeReview();
+}
+
+function setPqReviewTopic(t) {
+  _pqReviewTopicFilter = t;
   renderPracticeReview();
 }
 

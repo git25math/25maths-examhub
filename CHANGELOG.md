@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.5.3] - 2026-03-05 — Review All 二级 Topic 筛选
+
+### 新功能
+- **Topic 过滤**：Review All 新增二级 Topic 筛选栏，在难度过滤下方显示该分类所有 topic pill（如 Types Of Number、Sets），点击即可聚焦到单个专题
+- **级联过滤**：难度行 → Topic 行级联联动，切换难度时 topic 计数实时更新并重置为 All Topics
+- **pill 自动换行**：topic 数较多时（如 Number 19 个 topic）pill 自动 flex-wrap 换行，手机端友好
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `js/practice.js` | 新增 `_pqReviewTopicFilter` + 级联过滤逻辑 + `setPqReviewTopic()` + 难度切换时重置 topic |
+| `css/style.css` | `.pq-review-filter` 加 `flex-wrap: wrap` |
+| `js/config.js` | APP_VERSION → v1.5.3 |
+| `css/style.min.css` | 重新生成 |
+| `js/app.bundle.min.js` | 重新生成 |
+
 ## [1.5.2] - 2026-03-05 — Review All 四项优化
 
 ### 改进
