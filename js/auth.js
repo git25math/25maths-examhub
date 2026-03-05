@@ -333,9 +333,39 @@ async function sendPasswordReset() {
 /* ═══ SETTINGS MODAL ═══ */
 function showSettings() {
   if (!isLoggedIn()) {
-    showToast(t('Please login first', '请先登录'));
+    showToast(t('Please login first', '\u8bf7\u5148\u767b\u5f55'));
     return;
   }
+
+  /* Guest limited settings */
+  if (isGuest()) {
+    var boardOpt = getUserBoardOption();
+    var boardDisplay = boardOpt ? (boardOpt.emoji + ' ' + t(boardOpt.name, boardOpt.nameZh)) : t('Not selected', '\u672a\u9009\u62e9');
+    var gHtml = '<div class="section-title">' + t('\u2699 Settings', '\u2699 \u8bbe\u7f6e') + '</div>';
+    /* Course section — can change */
+    gHtml += '<div class="settings-section">';
+    gHtml += '<label class="settings-label">' + t('Course / Year', '\u8003\u8bd5\u5c40 / \u5e74\u7ea7') + '</label>';
+    gHtml += '<div class="settings-board-current">' + boardDisplay + '</div>';
+    gHtml += '<button class="btn btn-ghost btn-sm" onclick="changeBoardFromSettings()">' + t('Change', '\u66f4\u6362') + '</button>';
+    gHtml += '</div>';
+    gHtml += '<div class="settings-divider"></div>';
+    /* Locked features list */
+    gHtml += '<div class="settings-section">';
+    gHtml += '<label class="settings-label">' + t('Login to unlock', '\u767b\u5f55\u540e\u53ef\u89e3\u9501') + '</label>';
+    gHtml += '<div style="font-size:13px;color:var(--c-text2);line-height:2">';
+    gHtml += '<div>\ud83d\udd12 ' + t('Set nickname', '\u8bbe\u7f6e\u6635\u79f0') + '</div>';
+    gHtml += '<div>\ud83d\udd12 ' + t('Change password', '\u4fee\u6539\u5bc6\u7801') + '</div>';
+    gHtml += '<div>\ud83d\udd12 ' + t('Cloud sync', '\u4e91\u7aef\u540c\u6b65') + '</div>';
+    gHtml += '</div></div>';
+    /* Buttons */
+    gHtml += '<div style="display:flex;gap:8px;margin-top:16px">';
+    gHtml += '<button class="btn btn-primary" style="flex:1" onclick="hideModal();doLogout()">' + t('Login / Register', '\u767b\u5f55 / \u6ce8\u518c') + '</button>';
+    gHtml += '<button class="btn btn-ghost" style="flex:1" onclick="hideModal()">' + t('Close', '\u5173\u95ed') + '</button>';
+    gHtml += '</div>';
+    showModal(gHtml);
+    return;
+  }
+
   var nick = currentUser.nickname || '';
   var emailPrefix = currentUser.email.split('@')[0];
   var boardOpt = getUserBoardOption();

@@ -304,6 +304,20 @@ function showApp() {
     var nh = E('nav-homework'); if (nh) nh.style.display = '';
     var bh = E('bnav-homework'); if (bh) bh.style.display = '';
   }
+
+  /* Guest: header logout → login/register */
+  var hbLogout = E('btn-logout-hb');
+  if (hbLogout) {
+    if (isGuest()) {
+      hbLogout.textContent = '\ud83d\udd11';
+      hbLogout.title = t('Login / Register', '\u767b\u5f55 / \u6ce8\u518c');
+      hbLogout.setAttribute('aria-label', t('Login / Register', '\u767b\u5f55 / \u6ce8\u518c'));
+    } else {
+      hbLogout.textContent = '\u21a9';
+      hbLogout.title = t('Log out', '\u9000\u51fa');
+      hbLogout.setAttribute('aria-label', t('Log out', '\u9000\u51fa'));
+    }
+  }
 }
 
 function updateSidebar() {
@@ -369,6 +383,24 @@ function updateSidebar() {
       html += '</div></div>';
     });
     deckEl.innerHTML = html;
+  }
+
+  /* Guest: sidebar logout → login/register */
+  var sbLogout = E('btn-logout-sb');
+  if (sbLogout) {
+    var sbIcon = sbLogout.querySelector('.sf-icon');
+    var sbLabel = sbLogout.querySelector('[data-en]');
+    if (isGuest()) {
+      if (sbIcon) sbIcon.textContent = '\ud83d\udd11';
+      if (sbLabel) { sbLabel.dataset.en = 'Login / Register'; sbLabel.dataset.zh = '\u767b\u5f55 / \u6ce8\u518c'; sbLabel.textContent = t('Login / Register', '\u767b\u5f55 / \u6ce8\u518c'); }
+      sbLogout.classList.remove('sf-danger');
+      sbLogout.classList.add('sf-login-cta');
+    } else {
+      if (sbIcon) sbIcon.textContent = '\u21a9';
+      if (sbLabel) { sbLabel.dataset.en = 'Log out'; sbLabel.dataset.zh = '\u9000\u51fa\u767b\u5f55'; sbLabel.textContent = t('Log out', '\u9000\u51fa\u767b\u5f55'); }
+      sbLogout.classList.add('sf-danger');
+      sbLogout.classList.remove('sf-login-cta');
+    }
   }
 
   /* Sync status inside popup menu */

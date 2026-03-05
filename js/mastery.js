@@ -185,15 +185,25 @@ function renderHome() {
     html += '</div>';
   }
 
-  /* Guest trial banner */
+  /* Guest banner */
   if (isGuest()) {
-    var totalVisible = 0;
-    for (var gi = 0; gi < LEVELS.length; gi++) { if (isLevelVisible(LEVELS[gi])) totalVisible++; }
-    html += '<div class="guest-trial-banner" onclick="showGuestLockPrompt()">';
-    html += '<span class="guest-trial-icon">\ud83d\udd13</span>';
-    html += '<span class="guest-trial-text">' + t('Free Trial: ' + GUEST_FREE_LIMIT + ' groups', '\u514d\u8d39\u8bd5\u7528\uff1a' + GUEST_FREE_LIMIT + ' \u4e2a\u8bcd\u7ec4') + ' · ' + t('Login to unlock all ' + totalVisible + ' groups', '\u767b\u5f55\u89e3\u9501\u5168\u90e8 ' + totalVisible + ' \u4e2a\u8bcd\u7ec4') + '</span>';
-    html += '<span class="guest-trial-arrow">\u2192</span>';
-    html += '</div>';
+    if (GUEST_FULL_ACCESS) {
+      /* Green welcome banner — nudge registration */
+      html += '<div class="guest-welcome" onclick="showGuestSignupPrompt()">';
+      html += '<span class="guest-trial-icon">\u2728</span>';
+      html += '<span class="guest-trial-text">' + t('Welcome! Register for free to sync progress & join leaderboard', '\u6b22\u8fce\u4f53\u9a8c\uff01\u514d\u8d39\u6ce8\u518c\u53ef\u540c\u6b65\u8fdb\u5ea6\u3001\u52a0\u5165\u6392\u884c\u699c') + '</span>';
+      html += '<span class="guest-trial-arrow">\u2192</span>';
+      html += '</div>';
+    } else {
+      /* Original trial banner */
+      var totalVisible = 0;
+      for (var gi = 0; gi < LEVELS.length; gi++) { if (isLevelVisible(LEVELS[gi])) totalVisible++; }
+      html += '<div class="guest-trial-banner" onclick="showGuestLockPrompt()">';
+      html += '<span class="guest-trial-icon">\ud83d\udd13</span>';
+      html += '<span class="guest-trial-text">' + t('Free Trial: ' + GUEST_FREE_LIMIT + ' groups', '\u514d\u8d39\u8bd5\u7528\uff1a' + GUEST_FREE_LIMIT + ' \u4e2a\u8bcd\u7ec4') + ' \xb7 ' + t('Login to unlock all ' + totalVisible + ' groups', '\u767b\u5f55\u89e3\u9501\u5168\u90e8 ' + totalVisible + ' \u4e2a\u8bcd\u7ec4') + '</span>';
+      html += '<span class="guest-trial-arrow">\u2192</span>';
+      html += '</div>';
+    }
   }
 
   /* Daily Challenge banner */
@@ -370,6 +380,23 @@ function showGuestLockPrompt() {
   html += '<div style="font-size:48px;margin-bottom:12px">\ud83d\udd12</div>';
   html += '<div class="section-title">' + t('Login to Unlock', '\u767b\u5f55\u89e3\u9501\u5168\u90e8\u8bcd\u7ec4') + '</div>';
   html += '<p style="color:var(--c-text2);font-size:14px;margin:12px 0 20px">' + t('Create a free account to access all vocabulary groups, track progress, and join the leaderboard.', '\u514d\u8d39\u6ce8\u518c\u8d26\u53f7\u5373\u53ef\u89e3\u9501\u5168\u90e8\u8bcd\u7ec4\u3001\u8bb0\u5f55\u5b66\u4e60\u8fdb\u5ea6\u5e76\u52a0\u5165\u6392\u884c\u699c\u3002') + '</p>';
+  html += '<div style="display:flex;gap:8px">';
+  html += '<button class="btn btn-primary" style="flex:1" onclick="hideModal();doLogout()">' + t('Login / Register', '\u767b\u5f55 / \u6ce8\u518c') + '</button>';
+  html += '<button class="btn btn-ghost" style="flex:1" onclick="hideModal()">' + t('Later', '\u7a0d\u540e') + '</button>';
+  html += '</div></div>';
+  showModal(html);
+}
+
+/* Guest signup prompt modal (benefits-focused, replaces lock prompt when GUEST_FULL_ACCESS) */
+function showGuestSignupPrompt() {
+  var html = '<div style="text-align:center;padding:12px 0">';
+  html += '<div style="font-size:48px;margin-bottom:12px">\u2728</div>';
+  html += '<div class="section-title">' + t('Register for Free', '\u514d\u8d39\u6ce8\u518c') + '</div>';
+  html += '<div style="text-align:left;margin:16px 0 20px;font-size:14px;line-height:2">';
+  html += '<div>\u2705 ' + t('Sync progress across devices', '\u8de8\u8bbe\u5907\u540c\u6b65\u5b66\u4e60\u8fdb\u5ea6') + '</div>';
+  html += '<div>\ud83c\udfc6 ' + t('Join the leaderboard', '\u52a0\u5165\u6392\u884c\u699c\u7ade\u4e89') + '</div>';
+  html += '<div>\ud83d\udcca ' + t('Track your learning history', '\u8bb0\u5f55\u5b66\u4e60\u5386\u53f2\u6570\u636e') + '</div>';
+  html += '</div>';
   html += '<div style="display:flex;gap:8px">';
   html += '<button class="btn btn-primary" style="flex:1" onclick="hideModal();doLogout()">' + t('Login / Register', '\u767b\u5f55 / \u6ce8\u518c') + '</button>';
   html += '<button class="btn btn-ghost" style="flex:1" onclick="hideModal()">' + t('Later', '\u7a0d\u540e') + '</button>';

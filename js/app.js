@@ -95,15 +95,43 @@ async function _loadBoardClasses() {
 async function renderBoard() {
   var panel = E('panel-board');
 
-  /* Guest users cannot access leaderboard */
+  /* Guest users — read-only Top 10 */
   if (isGuest()) {
-    panel.innerHTML = '<div class="section-title">\ud83c\udfc6 ' + t('Leaderboard', '\u6392\u884c\u699c') + '</div>' +
-      '<div class="board-locked-msg">' +
-      '<div style="font-size:48px;margin-bottom:12px">\ud83d\udd12</div>' +
-      '<div style="font-size:16px;font-weight:600;margin-bottom:8px">' + t('Members Only', '\u4ec5\u5bf9\u6ce8\u518c\u4f1a\u5458\u5f00\u653e') + '</div>' +
-      '<p style="color:var(--c-text2);font-size:14px;margin-bottom:16px">' + t('Login or register to view the leaderboard and compete with others.', '\u767b\u5f55\u6216\u6ce8\u518c\u5373\u53ef\u67e5\u770b\u6392\u884c\u699c\u5e76\u4e0e\u4ed6\u4eba\u7ade\u4e89\u3002') + '</p>' +
-      '<button class="btn btn-primary" onclick="doLogout()">' + t('Login / Register', '\u767b\u5f55 / \u6ce8\u518c') + '</button>' +
-      '</div>';
+    var gHtml = '<div class="section-title">\ud83c\udfc6 ' + t('Leaderboard', '\u6392\u884c\u699c') + '</div>';
+    gHtml += '<div style="font-size:12px;color:var(--c-muted);margin-bottom:16px">' + t('Live ranking \xb7 Based on mastery score', '\u5b9e\u65f6\u6392\u540d \xb7 \u57fa\u4e8e\u5355\u8bcd\u638c\u63e1\u7387\u8ba1\u5206') + '</div>';
+    /* Try fetching Top 10 */
+    var gRows = [];
+    if (sb) {
+      try {
+        var gRes = await sb.from('leaderboard')
+          .select('nickname,score,mastery_pct,rank_emoji')
+          .order('score', { ascending: false })
+          .limit(10);
+        if (gRes.data) gRows = gRes.data;
+      } catch (e) { /* fallback empty */ }
+    }
+    if (gRows.length > 0) {
+      var gMedals = ['\ud83e\udd47', '\ud83e\udd48', '\ud83e\udd49'];
+      gHtml += '<div class="board-list">';
+      gRows.forEach(function(row, i) {
+        gHtml += '<div class="board-row">';
+        gHtml += '<div class="board-rank">' + (i < 3 ? gMedals[i] : (i + 1)) + '</div>';
+        gHtml += '<div class="board-name">' + (row.rank_emoji || '') + ' ' + escapeHtml(row.nickname || t('Anonymous', '\u533f\u540d')) + '</div>';
+        gHtml += '<div class="board-score">' + row.score + '</div>';
+        gHtml += '<div class="board-streak">' + (row.mastery_pct != null ? row.mastery_pct + '%' : '') + '</div>';
+        gHtml += '</div>';
+      });
+      gHtml += '</div>';
+    } else {
+      gHtml += '<div style="text-align:center;color:var(--c-muted);padding:32px 0">' + t('No ranking data yet', '\u6682\u65e0\u6392\u540d\u6570\u636e') + '</div>';
+    }
+    /* Signup CTA */
+    gHtml += '<div style="text-align:center;margin-top:20px;padding:20px;background:var(--c-surface);border-radius:var(--r-lg);box-shadow:var(--shadow)">';
+    gHtml += '<div style="font-size:24px;margin-bottom:8px">\u2728</div>';
+    gHtml += '<div style="font-size:14px;color:var(--c-text2);margin-bottom:12px">' + t('Register to join the leaderboard!', '\u6ce8\u518c\u8d26\u53f7\u5373\u53ef\u52a0\u5165\u6392\u884c\u699c\uff01') + '</div>';
+    gHtml += '<button class="btn btn-primary" onclick="doLogout()">' + t('Login / Register', '\u767b\u5f55 / \u6ce8\u518c') + '</button>';
+    gHtml += '</div>';
+    panel.innerHTML = gHtml;
     return;
   }
 

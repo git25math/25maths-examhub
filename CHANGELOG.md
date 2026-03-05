@@ -1,5 +1,25 @@
 # Changelog
 
+## [1.2.8] - 2026-03-05 — 优化访客访问体验
+
+### 功能变更
+- **欢迎横幅**：GUEST_FULL_ACCESS 时试用横幅 → 绿色注册引导横幅（点击弹出好处列表弹窗）
+- **注册引导弹窗**：新增 `showGuestSignupPrompt()`，展示跨设备同步/排行榜/学习历史 3 大好处
+- **排行榜只读**：Guest 可查看 Top 10 真实排名 + 底部注册 CTA（替代完全锁定）
+- **访客设置**：Guest 可更换课程，昵称/密码/云同步显示"登录后可解锁"
+- **登录入口优化**：Guest 侧栏/顶栏退出按钮 → 🔑"登录/注册"
+- **回滚**：`GUEST_FULL_ACCESS = false` 时所有分支自动回退原始行为
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `js/mastery.js` | 横幅条件渲染 + `showGuestSignupPrompt()` 新函数 |
+| `js/app.js` | `renderBoard()` Guest 分支 → 只读 Top 10 + 注册 CTA |
+| `js/auth.js` | `showSettings()` Guest 有限设置分支（课程可换 + 锁定提示） |
+| `js/ui.js` | `updateSidebar()` + `showApp()` Guest 登录入口 |
+| `css/style.css` | `.guest-welcome` 绿色渐变横幅 + `.sf-login-cta` 强调样式 |
+| `js/config.js` | 版本号 → v1.2.8 |
+
 ## [1.2.7] - 2026-03-05 — 访客开放哈罗海口全部词汇
 
 ### 功能变更 (config.js / auth.js)
