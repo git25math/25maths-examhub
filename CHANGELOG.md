@@ -1,5 +1,29 @@
 # Changelog
 
+## [1.2.9] - 2026-03-05 — 学习路径两层布局 + 结果页"下一步"推荐
+
+### 功能变更
+- **学习路径布局**：卡组详情页 7 按钮平铺 → 主线三步（📖学习→❓测验→🧠复习）+ 辅助三模式（⌨拼写/🔗配对/⚔实战），路径带箭头引导
+- **预览入口**：从模式按钮移到排序栏上方的文字链接（👁 预览全部词汇 →）
+- **下一步推荐卡片**：完成模式后推荐下一步操作
+  - Study → "下一步：测验检验学习效果"
+  - Quiz/Spell → "下一步：复习巩固记忆"
+  - Match → "下一步：测验检验效果"
+- **Study 结果页重构**：移除 Battle 主按钮，改为 next-step Quiz 卡片 + Study again 按钮
+- **三端响应式**：Phone 端主线/辅助按钮缩小适配
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `js/mastery.js` | renderDeck() 模式网格 → 两层布局（mode-path + mode-extra）+ preview 文字链接 |
+| `css/style.css` | 替换 mode-grid → mode-path/extra 样式 + next-step 卡片样式 + phone 响应式 |
+| `js/ui.js` | 新增 `nextStepHTML()` 辅助函数 |
+| `js/study.js` | finishStudy() → next-step Quiz + 重构 action 按钮 |
+| `js/quiz.js` | finishQuiz() → 注入 next-step Review |
+| `js/spell.js` | finishSpell() → 注入 next-step Review |
+| `js/match.js` | finishMatch() → 插入 next-step Quiz |
+| `js/config.js` | 版本号 → v1.2.9 |
+
 ## [1.2.8] - 2026-03-05 — 优化访客访问体验
 
 ### 功能变更

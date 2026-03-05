@@ -157,6 +157,7 @@ function finishMatch() {
   html += '<div class="result-emoji">' + matchEmoji + '</div>';
   html += '<div class="result-title">' + t('Match Complete!', '\u914d\u5bf9\u5b8c\u6210\uff01') + '</div>';
   html += '<div class="result-sub">' + t('Time ' + elapsed + 's \xb7 Errors ' + MT.errors, '\u7528\u65f6 ' + elapsed + ' \u79d2 \xb7 \u9519\u8bef ' + MT.errors + ' \u6b21') + '</div>';
+  html += nextStepHTML('\u2753', t('Quiz to test yourself', '\u6d4b\u9a8c\u68c0\u9a8c\u6548\u679c'), 'startQuiz(' + currentLvl + ')');
   html += '<div class="result-actions">';
   html += '<button class="btn btn-primary" onclick="startMatch(' + currentLvl + ')">\ud83d\udd01 ' + t('Try again', '\u518d\u6765\u4e00\u6b21') + '</button>';
   html += '<button class="btn btn-share" onclick="shareResult(_lastShareOpts)">\ud83d\udce4 ' + t('Share', '\u5206\u4eab') + '</button>';

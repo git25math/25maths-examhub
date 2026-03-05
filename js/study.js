@@ -120,14 +120,14 @@ function finishStudy() {
   var studyEmoji = (h === 0 && o === 0) ? '\ud83c\udfc6' : (h === 0 ? '\ud83c\udf89' : '\ud83d\udcaa');
   _lastShareOpts = { mode: 'study', score: e, total: total, emoji: studyEmoji };
 
-  html += '<div class="result-actions">';
-  html += '<button class="btn btn-primary" onclick="startBattle(' + currentLvl + ')">\u2694\ufe0f ' + t('Battle', '\u8fdb\u5165\u5b9e\u6218') + '</button>';
+  html += nextStepHTML('\u2753', t('Quiz to test yourself', '\u6d4b\u9a8c\u68c0\u9a8c\u5b66\u4e60\u6548\u679c'), 'startQuiz(' + currentLvl + ')');
 
+  html += '<div class="result-actions">';
   var hw = S.ratings.hard.concat(S.ratings.ok);
   if (hw.length > 0) {
     html += '<button class="btn btn-secondary" onclick="restudyHard()">\ud83d\udcd6 ' + t('Restudy hard', '\u518d\u5b66\u4e0d\u719f\u7684') + '</button>';
   }
-
+  html += '<button class="btn btn-secondary" onclick="startStudy(' + currentLvl + ')">\ud83d\udd01 ' + t('Study again', '\u518d\u5b66\u4e00\u904d') + '</button>';
   html += '<button class="btn btn-share" onclick="shareResult(_lastShareOpts)">\ud83d\udce4 ' + t('Share', '\u5206\u4eab') + '</button>';
   html += '<button class="btn btn-ghost" onclick="openDeck(' + currentLvl + ')">\u2190 ' + t('Back', '\u8fd4\u56de\u5361\u7ec4') + '</button>';
   html += '</div>';

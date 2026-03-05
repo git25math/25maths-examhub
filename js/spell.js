@@ -120,10 +120,12 @@ function checkSpell() {
 
 function finishSpell() {
   var total = SP.pairs.length;
-  var html = '<div class="text-center">';
-  html += resultScreenHTML(SP.correct, total,
+  var raw = resultScreenHTML(SP.correct, total,
     'startSpell(' + currentLvl + ')',
     'openDeck(' + currentLvl + ')', 'spell');
+  var step = nextStepHTML('\ud83e\udde0', t('Review to consolidate', '\u590d\u4e60\u5de9\u56fa\u8bb0\u5fc6'), 'startReview(' + currentLvl + ')');
+  var html = '<div class="text-center">';
+  html += raw.replace('<div class="result-actions">', step + '<div class="result-actions">');
   html += '</div>';
   E('panel-spell').innerHTML = html;
   updateSidebar();

@@ -129,10 +129,12 @@ function pickQuizOpt(btn) {
 
 function finishQuiz() {
   var total = Q.pairs.length;
-  var html = '<div class="text-center">';
-  html += resultScreenHTML(Q.correct, total,
+  var raw = resultScreenHTML(Q.correct, total,
     'startQuiz(' + currentLvl + ')',
     'openDeck(' + currentLvl + ')', 'quiz');
+  var step = nextStepHTML('\ud83e\udde0', t('Review to consolidate', '\u590d\u4e60\u5de9\u56fa\u8bb0\u5fc6'), 'startReview(' + currentLvl + ')');
+  var html = '<div class="text-center">';
+  html += raw.replace('<div class="result-actions">', step + '<div class="result-actions">');
   html += '</div>';
   E('panel-quiz').innerHTML = html;
   updateSidebar();

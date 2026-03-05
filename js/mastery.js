@@ -424,24 +424,41 @@ function renderDeck(idx) {
   }
   html += '</div>';
 
-  /* Mode grid */
-  html += '<div class="mode-grid">';
-  var modes = [
-    { emoji: '\ud83d\udc41', name: t('Preview', '\u9884\u89c8'), fn: 'openPreview(' + idx + ')' },
+  /* Learning path + extra practice */
+  html += '<div class="mode-path">';
+  html += '<div class="mode-path-label">' + t('Learning Path', '\u5b66\u4e60\u8def\u5f84') + '</div>';
+  html += '<div class="mode-path-row">';
+  var pathModes = [
     { emoji: '\ud83d\udcd6', name: t('Study', '\u5b66\u4e60'), fn: 'startStudy(' + idx + ')' },
     { emoji: '\u2753', name: t('Quiz', '\u6d4b\u9a8c'), fn: 'startQuiz(' + idx + ')' },
-    { emoji: '\u2328\ufe0f', name: t('Spell', '\u62fc\u5199'), fn: 'startSpell(' + idx + ')' },
-    { emoji: '\ud83d\udd17', name: t('Match', '\u914d\u5bf9'), fn: 'startMatch(' + idx + ')' },
-    { emoji: '\u2694\ufe0f', name: t('Battle', '\u5b9e\u6218'), fn: 'startBattle(' + idx + ')' },
     { emoji: '\ud83e\udde0', name: t('Review', '\u590d\u4e60'), fn: 'startReview(' + idx + ')' }
   ];
-  modes.forEach(function(m) {
-    html += '<button class="mode-btn" onclick="' + m.fn + '">';
+  pathModes.forEach(function(m, i) {
+    if (i > 0) html += '<span class="mode-arrow">\u2192</span>';
+    html += '<button class="mode-btn mode-btn-path" onclick="' + m.fn + '">';
     html += '<div class="mode-emoji">' + m.emoji + '</div>';
     html += '<div class="mode-name">' + m.name + '</div>';
     html += '</button>';
   });
-  html += '</div>';
+  html += '</div></div>';
+
+  html += '<div class="mode-extra">';
+  html += '<div class="mode-extra-label">' + t('More Practice', '\u66f4\u591a\u7ec3\u4e60') + '</div>';
+  html += '<div class="mode-extra-row">';
+  var extraModes = [
+    { emoji: '\u2328\ufe0f', name: t('Spell', '\u62fc\u5199'), fn: 'startSpell(' + idx + ')' },
+    { emoji: '\ud83d\udd17', name: t('Match', '\u914d\u5bf9'), fn: 'startMatch(' + idx + ')' },
+    { emoji: '\u2694\ufe0f', name: t('Battle', '\u5b9e\u6218'), fn: 'startBattle(' + idx + ')' }
+  ];
+  extraModes.forEach(function(m) {
+    html += '<button class="mode-btn mode-btn-extra" onclick="' + m.fn + '">';
+    html += '<div class="mode-emoji">' + m.emoji + '</div>';
+    html += '<div class="mode-name">' + m.name + '</div>';
+    html += '</button>';
+  });
+  html += '</div></div>';
+
+  html += '<div class="preview-link"><a href="javascript:void(0)" onclick="openPreview(' + idx + ')">\ud83d\udc41 ' + t('Preview all words', '\u9884\u89c8\u5168\u90e8\u8bcd\u6c47') + ' \u2192</a></div>';
 
   /* Sort bar */
   html += '<div class="sort-bar">';

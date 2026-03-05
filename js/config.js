@@ -321,7 +321,7 @@ function isSuperAdmin() {
 }
 
 /* App version */
-var APP_VERSION = 'v1.2.8';
+var APP_VERSION = 'v1.2.9';
 
 /* DOM helper */
 var E = function(id) { return document.getElementById(id); };
