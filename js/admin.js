@@ -9,6 +9,16 @@ var _adminTab = 'classes'; /* 'classes' | 'grade' | 'school' */
 var _adminCache = null;    /* cached student_activity_view rows */
 var _adminCacheAt = 0;
 
+/* Grade-list collapse state (default: all collapsed) */
+var _gradeListCollapsed = {};
+GRADE_OPTIONS.forEach(function(g) { _gradeListCollapsed[g.value] = true; });
+
+function toggleGradeList(grade) {
+  _gradeListCollapsed[grade] = !_gradeListCollapsed[grade];
+  var el = document.getElementById('grade-list-' + grade);
+  if (el) el.classList.toggle('collapsed', _gradeListCollapsed[grade]);
+}
+
 /* ═══ ROLE CHECK ═══ */
 function isTeacher() { return isTeacherUser; }
 
@@ -113,7 +123,7 @@ function switchAdminTab(tab) {
   renderAdmin();
 }
 
-/* ═══ PHASE 5: CLASS LIST ═══ */
+/* ═══ PHASE 5: CLASS LIST (grouped by grade, collapsible) ═══ */
 async function renderClassList() {
   var ct = E('admin-content');
   if (!ct) return;
@@ -138,25 +148,41 @@ async function renderClassList() {
     return;
   }
 
-  html += '<div class="admin-class-grid">';
-  classes.forEach(function(c) {
-    var students = activity.filter(function(s) { return s.class_id === c.id; });
-    var count = students.length;
-    var avgPct = count > 0 ? Math.round(students.reduce(function(sum, s) { return sum + (s.mastery_pct || 0); }, 0) / count) : 0;
-    var gradeOpt = BOARD_OPTIONS.find(function(o) { return o.value === c.grade; });
-    var gradeLabel = gradeOpt ? t(gradeOpt.name, gradeOpt.nameZh) : c.grade;
+  /* Group classes by grade (GRADE_OPTIONS order: Y7→Y11) */
+  GRADE_OPTIONS.forEach(function(g) {
+    var gradeClasses = classes.filter(function(c) { return c.grade === g.value; });
+    if (gradeClasses.length === 0) return; /* skip empty grades */
 
-    html += '<div class="admin-class-card" onclick="renderClassDetail(\'' + c.id + '\')">';
-    html += '<div class="admin-class-name">' + escapeHtml(c.name) + '</div>';
-    html += '<div class="admin-class-grade">' + gradeLabel + '</div>';
-    html += '<div class="admin-class-stats">';
-    html += '<span>' + count + ' ' + t('students', '学生') + '</span>';
-    html += '<span>' + t('Avg', '平均') + ' ' + avgPct + '%</span>';
+    var gradeLabel = t(g.name, g.nameZh);
+    var totalStudents = 0;
+    var cardsHtml = '';
+
+    gradeClasses.forEach(function(c) {
+      var students = activity.filter(function(s) { return s.class_id === c.id; });
+      var count = students.length;
+      totalStudents += count;
+      var avgPct = count > 0 ? Math.round(students.reduce(function(sum, s) { return sum + (s.mastery_pct || 0); }, 0) / count) : 0;
+
+      cardsHtml += '<div class="admin-class-card" onclick="renderClassDetail(\'' + c.id + '\')">';
+      cardsHtml += '<div class="admin-class-name">' + escapeHtml(c.name) + '</div>';
+      cardsHtml += '<div class="admin-class-stats">';
+      cardsHtml += '<span>' + count + ' ' + t('students', '学生') + '</span>';
+      cardsHtml += '<span>' + t('Avg', '平均') + ' ' + avgPct + '%</span>';
+      cardsHtml += '</div>';
+      cardsHtml += '<div class="admin-class-bar"><div class="admin-class-bar-fill" style="width:' + avgPct + '%"></div></div>';
+      cardsHtml += '</div>';
+    });
+
+    var collapsed = _gradeListCollapsed[g.value] !== false;
+    html += '<div class="grade-list-section' + (collapsed ? ' collapsed' : '') + '" id="grade-list-' + g.value + '">';
+    html += '<div class="grade-list-header" onclick="toggleGradeList(\'' + g.value + '\')">';
+    html += '<span class="grade-list-chevron">&#9660;</span>';
+    html += '<span>' + g.emoji + ' ' + gradeLabel + '</span>';
+    html += '<span class="grade-list-meta">' + gradeClasses.length + ' ' + t('classes', '班级') + ' · ' + totalStudents + ' ' + t('students', '学生') + '</span>';
     html += '</div>';
-    html += '<div class="admin-class-bar"><div class="admin-class-bar-fill" style="width:' + avgPct + '%"></div></div>';
+    html += '<div class="grade-list-body"><div class="admin-class-grid">' + cardsHtml + '</div></div>';
     html += '</div>';
   });
-  html += '</div>';
 
   ct.innerHTML = html;
   } catch (e) {

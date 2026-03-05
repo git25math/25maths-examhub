@@ -2208,6 +2208,14 @@ input { font-family: inherit; }
   display: flex; justify-content: flex-end; margin-bottom: 16px;
 }
 
+/* Grade-list collapsible sections */
+.grade-list-header { cursor: pointer; display: flex; align-items: center; gap: 8px; padding: 10px 0; font-weight: 600; font-size: 1.05rem; user-select: none; }
+.grade-list-chevron { transition: transform .2s; display: inline-block; font-size: 12px; }
+.grade-list-section.collapsed .grade-list-chevron { transform: rotate(-90deg); }
+.grade-list-section.collapsed .grade-list-body { display: none; }
+.grade-list-meta { font-weight: 400; font-size: 13px; color: var(--c-text2); }
+.grade-list-body { padding-bottom: 8px; }
+
 /* Class grid */
 .admin-class-grid {
   display: grid;

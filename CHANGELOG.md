@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.2.4] - 2026-03-05 — 班级列表按年级分组 + 默认折叠
+
+### 功能优化 (admin.js)
+- **按年级分组**：Classes Tab 班级卡片从扁平网格改为按年级（Year 7 → Year 11）分组显示
+- **默认折叠**：每个年级分组默认折叠，点击 header 展开/收起，复用 mastery.js 折叠模式
+- **分组 header**：显示年级名称 + 班级数 + 学生总数统计
+- **空年级隐藏**：无班级的年级不显示分组
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `js/admin.js` | 新增 `_gradeListCollapsed` 状态 + `toggleGradeList()` 函数 + 重写 `renderClassList()` 按年级分组 |
+| `css/style.css` | 新增 `.grade-list-section` 折叠样式（header / chevron / body / meta） |
+
 ## [1.2.3] - 2026-03-05 — 修复班级编辑保存后数据未实际更新
 
 ### Bug 修复 (admin.js + Supabase RPC)
