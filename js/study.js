@@ -99,6 +99,7 @@ function rateStudy(r) {
 
 /* Finish study session */
 function finishStudy() {
+  markModeDone(currentLvl, 'study');
   var h = S.ratings.hard.length;
   var o = S.ratings.ok.length;
   var e = S.ratings.easy.length;

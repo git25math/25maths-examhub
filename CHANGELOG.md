@@ -1,5 +1,33 @@
 # Changelog
 
+## [1.3.0] - 2026-03-05 — 学习路径进度标记 + 错词即时复习
+
+### 功能变更
+- **进度标记**：完成任意模式后，卡组详情页对应按钮右上角显示 ✓ 绿色徽章（6 个模式均支持）
+- **错词复习**：Quiz/Spell/Match 结果页有错词时显示"📖 只学错的词"按钮，点击用错词子集启动 Study
+  - Quiz/Spell：精确追踪每道错题的词对
+  - Match：从当前卡组筛选 `fail > 0` 的词
+- **Review 进度标记**：仅卡组入口的 Review 完成后标记 ✓，仪表盘跨卡组复习不标记
+
+### 技术实现
+- `localStorage.modeDone` 对象存储 `{ "slug:mode": true }` 格式
+- `markModeDone(li, mode)` / `isModeDone(li, mode)` 两个 storage API
+- Review 模块新增 `RV.lvl` 字段区分卡组入口 vs 仪表盘入口
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `js/storage.js` | 新增 `markModeDone()` / `isModeDone()` |
+| `js/mastery.js` | renderDeck() mode 按钮添加 ✓ 徽章 |
+| `js/study.js` | finishStudy() 调用 markModeDone |
+| `js/quiz.js` | Q.wrongPairs 追踪 + `studyWrongQuiz()` + finishQuiz() 错词按钮 + markModeDone |
+| `js/spell.js` | SP.wrongPairs 追踪 + `studyWrongSpell()` + finishSpell() 错词按钮 + markModeDone |
+| `js/match.js` | `studyWrongMatch()` + finishMatch() 错词按钮 + markModeDone |
+| `js/battle.js` | endBattle() won 时调用 markModeDone |
+| `js/review.js` | RV.lvl 字段 + startReview/startReviewSession 设置 + finishReview 条件 markModeDone |
+| `css/style.css` | `.mode-done` 徽章样式（绝对定位绿色圆形 ✓） |
+| `js/config.js` | 版本号 → v1.3.0 |
+
 ## [1.2.9] - 2026-03-05 — 学习路径两层布局 + 结果页"下一步"推荐
 
 ### 功能变更

@@ -525,6 +525,22 @@ function mergeVocabLevels(base, dbRows) {
   return merged;
 }
 
+/* ═══ MODE COMPLETION TRACKING ═══ */
+function markModeDone(li, mode) {
+  var s = loadS();
+  if (!s.modeDone) s.modeDone = {};
+  var slug = LEVELS[li] ? LEVELS[li].slug : ('L' + li);
+  s.modeDone[slug + ':' + mode] = true;
+  writeS(s);
+}
+
+function isModeDone(li, mode) {
+  var s = loadS();
+  if (!s.modeDone) return false;
+  var slug = LEVELS[li] ? LEVELS[li].slug : ('L' + li);
+  return !!s.modeDone[slug + ':' + mode];
+}
+
 function bootstrapHistory() {
   var s = loadS();
   if (s.history && s.history.length > 0) return; /* already bootstrapped */

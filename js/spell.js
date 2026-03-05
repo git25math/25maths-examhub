@@ -14,6 +14,7 @@ function startSpell(li) {
   SP.correct = 0;
   SP.lvl = li;
   SP.answered = false;
+  SP.wrongPairs = [];
 
   showPanel('spell');
   renderSpellCard();
@@ -106,6 +107,7 @@ function checkSpell() {
   } else {
     input.classList.add('wrong');
     input.disabled = true;
+    SP.wrongPairs.push(SP.pairs[SP.idx]);
     recordAnswer(key, 'spell', false);
     E('spell-answer').textContent = t('Answer: ', '\u6b63\u786e\u7b54\u6848: ') + p.word;
     playWrong();
@@ -119,14 +121,23 @@ function checkSpell() {
 }
 
 function finishSpell() {
+  markModeDone(currentLvl, 'spell');
   var total = SP.pairs.length;
   var raw = resultScreenHTML(SP.correct, total,
     'startSpell(' + currentLvl + ')',
     'openDeck(' + currentLvl + ')', 'spell');
   var step = nextStepHTML('\ud83e\udde0', t('Review to consolidate', '\u590d\u4e60\u5de9\u56fa\u8bb0\u5fc6'), 'startReview(' + currentLvl + ')');
+  var wrongBtn = '';
+  if (SP.wrongPairs.length > 0) {
+    wrongBtn = '<button class="btn btn-secondary" onclick="studyWrongSpell()">\ud83d\udcd6 ' + t('Study wrong words', '\u53ea\u5b66\u9519\u7684\u8bcd') + '</button>';
+  }
   var html = '<div class="text-center">';
-  html += raw.replace('<div class="result-actions">', step + '<div class="result-actions">');
+  html += raw.replace('<div class="result-actions">', step + '<div class="result-actions">' + wrongBtn);
   html += '</div>';
   E('panel-spell').innerHTML = html;
   updateSidebar();
+}
+
+function studyWrongSpell() {
+  startStudy(currentLvl, SP.wrongPairs);
 }

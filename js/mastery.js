@@ -433,9 +433,12 @@ function renderDeck(idx) {
     { emoji: '\u2753', name: t('Quiz', '\u6d4b\u9a8c'), fn: 'startQuiz(' + idx + ')' },
     { emoji: '\ud83e\udde0', name: t('Review', '\u590d\u4e60'), fn: 'startReview(' + idx + ')' }
   ];
+  var pathKeys = ['study', 'quiz', 'review'];
   pathModes.forEach(function(m, i) {
     if (i > 0) html += '<span class="mode-arrow">\u2192</span>';
+    var done = isModeDone(idx, pathKeys[i]);
     html += '<button class="mode-btn mode-btn-path" onclick="' + m.fn + '">';
+    if (done) html += '<span class="mode-done">\u2713</span>';
     html += '<div class="mode-emoji">' + m.emoji + '</div>';
     html += '<div class="mode-name">' + m.name + '</div>';
     html += '</button>';
@@ -450,8 +453,11 @@ function renderDeck(idx) {
     { emoji: '\ud83d\udd17', name: t('Match', '\u914d\u5bf9'), fn: 'startMatch(' + idx + ')' },
     { emoji: '\u2694\ufe0f', name: t('Battle', '\u5b9e\u6218'), fn: 'startBattle(' + idx + ')' }
   ];
-  extraModes.forEach(function(m) {
+  var extraKeys = ['spell', 'match', 'battle'];
+  extraModes.forEach(function(m, i) {
+    var done = isModeDone(idx, extraKeys[i]);
     html += '<button class="mode-btn mode-btn-extra" onclick="' + m.fn + '">';
+    if (done) html += '<span class="mode-done">\u2713</span>';
     html += '<div class="mode-emoji">' + m.emoji + '</div>';
     html += '<div class="mode-name">' + m.name + '</div>';
     html += '</button>';

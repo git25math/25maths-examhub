@@ -975,6 +975,7 @@ input { font-family: inherit; }
 
 /* Mode Buttons (shared base) */
 .mode-btn {
+  position: relative;
   display: flex; flex-direction: column;
   align-items: center; gap: 6px;
   background: var(--c-surface);
@@ -982,6 +983,14 @@ input { font-family: inherit; }
   border: 2px solid var(--c-border-light);
   transition: all 0.2s;
   cursor: pointer;
+}
+.mode-done {
+  position: absolute; top: -4px; right: -4px;
+  width: 18px; height: 18px; border-radius: 50%;
+  background: var(--c-success); color: #fff;
+  font-size: 10px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  line-height: 1;
 }
 .mode-btn:hover {
   transform: translateY(-2px);

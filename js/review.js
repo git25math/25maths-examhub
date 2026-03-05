@@ -2,7 +2,7 @@
    review.js — Ebbinghaus review dashboard + SRS bar chart
    ══════════════════════════════════════════════════════════════ */
 
-var RV = { words: [], idx: 0, ratings: {} };
+var RV = { words: [], idx: 0, ratings: {}, lvl: -1 };
 
 /* ═══ REVIEW DASHBOARD ═══ */
 function renderReviewDash() {
@@ -176,6 +176,7 @@ function startReviewSession() {
   RV.words = shuffle(due);
   RV.idx = 0;
   RV.ratings = { hard: [], ok: [], easy: [] };
+  RV.lvl = -1;
 
   showPanel('review');
   renderReviewCard();
@@ -227,6 +228,7 @@ function startReview(li) {
   RV.words = shuffle(due);
   RV.idx = 0;
   RV.ratings = { hard: [], ok: [], easy: [] };
+  RV.lvl = li;
 
   showPanel('review');
   renderReviewCard();
@@ -305,6 +307,7 @@ function rateReview(r) {
 }
 
 function finishReview() {
+  if (RV.lvl >= 0) markModeDone(RV.lvl, 'review');
   var h = RV.ratings.hard.length;
   var o = RV.ratings.ok.length;
   var e = RV.ratings.easy.length;

@@ -31,6 +31,7 @@ function startQuiz(li) {
   Q.lvl = li;
   Q.locked = false;
   Q.dir = 'en2zh';
+  Q.wrongPairs = [];
 
   showPanel('quiz');
   renderQuizCard();
@@ -113,6 +114,7 @@ function pickQuizOpt(btn) {
     playCorrect();
   } else {
     btn.classList.add('wrong');
+    Q.wrongPairs.push(Q.pairs[Q.idx]);
     recordAnswer(key, 'quiz', false);
     playWrong();
     /* Highlight correct answer */
@@ -128,16 +130,25 @@ function pickQuizOpt(btn) {
 }
 
 function finishQuiz() {
+  markModeDone(currentLvl, 'quiz');
   var total = Q.pairs.length;
   var raw = resultScreenHTML(Q.correct, total,
     'startQuiz(' + currentLvl + ')',
     'openDeck(' + currentLvl + ')', 'quiz');
   var step = nextStepHTML('\ud83e\udde0', t('Review to consolidate', '\u590d\u4e60\u5de9\u56fa\u8bb0\u5fc6'), 'startReview(' + currentLvl + ')');
+  var wrongBtn = '';
+  if (Q.wrongPairs.length > 0) {
+    wrongBtn = '<button class="btn btn-secondary" onclick="studyWrongQuiz()">\ud83d\udcd6 ' + t('Study wrong words', '\u53ea\u5b66\u9519\u7684\u8bcd') + '</button>';
+  }
   var html = '<div class="text-center">';
-  html += raw.replace('<div class="result-actions">', step + '<div class="result-actions">');
+  html += raw.replace('<div class="result-actions">', step + '<div class="result-actions">' + wrongBtn);
   html += '</div>';
   E('panel-quiz').innerHTML = html;
   updateSidebar();
+}
+
+function studyWrongQuiz() {
+  startStudy(currentLvl, Q.wrongPairs);
 }
 
 /* ══════════════════════════════════════════════════════════════

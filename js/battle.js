@@ -182,6 +182,7 @@ function endBattle(won) {
   var isNew = false;
 
   if (won) {
+    markModeDone(G.lvlIdx, 'battle');
     var prev = getBest(G.lvlIdx);
     if (!prev || elapsed < prev.t) isNew = true;
     saveBest(G.lvlIdx, elapsed, G.moves, G.maxCombo);

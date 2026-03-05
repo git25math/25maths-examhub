@@ -143,6 +143,7 @@ function pickMatch(btn) {
 }
 
 function finishMatch() {
+  markModeDone(currentLvl, 'match');
   var elapsed = Math.round((Date.now() - MT.startTime) / 1000);
   var total = MT.pairs.length;
   var ok = total - MT.errors;
@@ -159,6 +160,9 @@ function finishMatch() {
   html += '<div class="result-sub">' + t('Time ' + elapsed + 's \xb7 Errors ' + MT.errors, '\u7528\u65f6 ' + elapsed + ' \u79d2 \xb7 \u9519\u8bef ' + MT.errors + ' \u6b21') + '</div>';
   html += nextStepHTML('\u2753', t('Quiz to test yourself', '\u6d4b\u9a8c\u68c0\u9a8c\u6548\u679c'), 'startQuiz(' + currentLvl + ')');
   html += '<div class="result-actions">';
+  if (MT.errors > 0) {
+    html += '<button class="btn btn-secondary" onclick="studyWrongMatch()">\ud83d\udcd6 ' + t('Study wrong words', '\u53ea\u5b66\u9519\u7684\u8bcd') + '</button>';
+  }
   html += '<button class="btn btn-primary" onclick="startMatch(' + currentLvl + ')">\ud83d\udd01 ' + t('Try again', '\u518d\u6765\u4e00\u6b21') + '</button>';
   html += '<button class="btn btn-share" onclick="shareResult(_lastShareOpts)">\ud83d\udce4 ' + t('Share', '\u5206\u4eab') + '</button>';
   html += '<button class="btn btn-ghost" onclick="openDeck(' + currentLvl + ')">\u2190 ' + t('Back', '\u8fd4\u56de\u5361\u7ec4') + '</button>';
@@ -167,4 +171,14 @@ function finishMatch() {
 
   E('panel-match').innerHTML = html;
   updateSidebar();
+}
+
+function studyWrongMatch() {
+  var wd = getWordData();
+  var wrong = MT.pairs.filter(function(p) {
+    var d = wd[wordKey(MT.lvl, p.lid)];
+    return d && d.fail > 0;
+  });
+  if (wrong.length > 0) startStudy(currentLvl, wrong);
+  else openDeck(currentLvl);
 }
