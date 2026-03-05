@@ -331,12 +331,46 @@ async function renderClassHwList(classId) {
       var results = resultsByHw[hw.id] || [];
       var completed = results.filter(function(r) { return r.completed_at; }).length;
 
-      html += '<div class="hw-list-item">';
-      html += '<span class="hw-list-title">' + (isCustom ? '\ud83c\udfaf ' : '') + escapeHtml(hw.title) + '</span>';
+      /* Collect words for this assignment */
+      var hwWords = [];
+      if (isCustom) {
+        var cvP = getPairs(hw.custom_vocabulary);
+        cvP.forEach(function(p) { hwWords.push({ word: p.word, def: p.def }); });
+      } else if (hw.deck_slugs && hw.deck_slugs.length > 0) {
+        hw.deck_slugs.forEach(function(slug) {
+          for (var li = 0; li < LEVELS.length; li++) {
+            if (LEVELS[li].slug === slug) {
+              var dp = getPairs(LEVELS[li].vocabulary);
+              dp.forEach(function(p) { hwWords.push({ word: p.word, def: p.def }); });
+              break;
+            }
+          }
+        });
+      }
+
+      html += '<div class="hw-list-item" style="flex-wrap:wrap">';
+      html += '<div style="display:flex;align-items:center;gap:8px;width:100%">';
+      html += '<span class="hw-list-title" style="flex:1">' + (isCustom ? '\ud83c\udfaf ' : '') + escapeHtml(hw.title) + ' <span style="font-size:11px;color:var(--c-text2)">(' + hwWords.length + ' ' + t('words', '词') + ')</span></span>';
       html += '<span class="hw-list-deadline" style="' + (isOverdue ? 'color:var(--c-danger)' : '') + '">' + deadline + '</span>';
       html += '<span class="hw-list-rate">' + completed + ' ' + t('done', '完成') + '</span>';
       html += '<button class="btn btn-ghost btn-sm" onclick="renderHwProgress(\'' + hw.id + '\', \'' + classId + '\')">' + t('Detail', '详情') + '</button>';
       html += '<button class="btn btn-ghost btn-sm" style="color:var(--c-danger)" onclick="deleteHw(\'' + hw.id + '\', \'' + classId + '\')">' + t('Del', '删') + '</button>';
+      html += '</div>';
+
+      /* Expandable word list */
+      if (hwWords.length > 0) {
+        var pid = 'thw-' + hw.id.slice(0, 8);
+        html += '<div style="width:100%;margin-top:6px">';
+        html += '<button class="btn btn-ghost btn-sm" style="font-size:11px;padding:2px 8px" onclick="var el=document.getElementById(\'' + pid + '\');el.style.display=el.style.display===\'none\'?\'block\':\'none\'">' + t('View words', '查看词汇') + ' \u25BC</button>';
+        html += '<div id="' + pid + '" style="display:none;margin-top:6px;max-height:200px;overflow-y:auto;border:1px solid var(--c-border);border-radius:8px;padding:6px 10px;background:var(--c-surface)">';
+        hwWords.forEach(function(w, wi) {
+          html += '<div style="padding:3px 0;font-size:12px;' + (wi < hwWords.length - 1 ? 'border-bottom:1px solid var(--c-border-light)' : '') + '">';
+          html += '<strong>' + escapeHtml(w.word) + '</strong> — ' + escapeHtml(w.def);
+          html += '</div>';
+        });
+        html += '</div></div>';
+      }
+
       html += '</div>';
     }
 
