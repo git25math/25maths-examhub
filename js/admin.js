@@ -2,7 +2,7 @@
    admin.js — Teacher admin panel: classes, students, dashboard
    ══════════════════════════════════════════════════════════════ */
 
-var isTeacherUser = false;
+/* isTeacherUser moved to config.js */
 var _teacherData = null;   /* { id, school_id, display_name } */
 var _schoolData = null;    /* { id, name, code } */
 var _adminTab = 'classes'; /* 'classes' | 'grade' | 'school' */
@@ -19,28 +19,7 @@ function toggleGradeList(grade) {
   if (el) el.classList.toggle('collapsed', _gradeListCollapsed[grade]);
 }
 
-/* ═══ ROLE CHECK ═══ */
-function isTeacher() { return isTeacherUser; }
-
-/* ═══ EDGE FUNCTION CALLER ═══ */
-async function callEdgeFunction(name, body) {
-  try {
-    var session = await sb.auth.getSession();
-    var token = session.data.session ? session.data.session.access_token : '';
-    var res = await fetch(EDGE_FN_URL + '/' + name, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + token,
-        'apikey': SUPABASE_KEY
-      },
-      body: JSON.stringify(body)
-    });
-    return await res.json();
-  } catch (e) {
-    return { error: e.message || 'Network error' };
-  }
-}
+/* isTeacher() and callEdgeFunction() moved to config.js */
 
 /* ═══ INIT TEACHER ═══ */
 async function initTeacher() {

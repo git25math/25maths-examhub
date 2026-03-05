@@ -137,7 +137,7 @@ function renderDeckRow(cl, cat, _levelLocked, _levelStats) {
   } else {
     h += '<span class="deck-row-lock">\ud83d\udd12</span>';
   }
-  if (typeof isSuperAdmin === 'function' && isSuperAdmin()) {
+  if (typeof isSuperAdmin === 'function' && isSuperAdmin() && typeof vocabAdminBtns === 'function') {
     h += vocabAdminBtns(cl.idx);
   }
   h += '</div>';
@@ -332,7 +332,7 @@ function renderHome() {
         });
       }
 
-      if (typeof isSuperAdmin === 'function' && isSuperAdmin()) {
+      if (typeof isSuperAdmin === 'function' && isSuperAdmin() && typeof vocabAdminAddBtn === 'function') {
         boardHtml += vocabAdminAddBtn(board.id, cat.id);
       }
       boardHtml += '</div>';

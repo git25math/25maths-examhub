@@ -26,7 +26,7 @@ function navTo(id) {
   else if (id === 'import') renderImport();
   else if (id === 'board') renderBoard();
   else if (id === 'stats') renderStats();
-  else if (id === 'admin') renderAdmin();
+  else if (id === 'admin' && typeof renderAdmin === 'function') renderAdmin();
   else if (id === 'homework') { if (typeof showStudentHwPage === 'function') showStudentHwPage(); }
 }
 
@@ -106,7 +106,7 @@ function toggleLang() {
   else if (appView === 'import') renderImport();
   else if (appView === 'board') renderBoard();
   else if (appView === 'stats') renderStats();
-  else if (appView === 'admin') renderAdmin();
+  else if (appView === 'admin' && typeof renderAdmin === 'function') renderAdmin();
   updateSidebar();
 }
 

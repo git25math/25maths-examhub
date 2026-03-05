@@ -1,5 +1,36 @@
 # Changelog
 
+## [1.3.1] - 2026-03-05 — 数据层优化（levels 拆分 + 角色按需加载）
+
+### 性能优化
+- **levels.js 拆分**：274KB 单文件 → 3 个 JSON 并行加载（CIE 45KB + EDX 35KB + 25m 184KB），索引完全兼容
+- **角色按需加载**：学生不加载 admin.js + vocab-admin.js（省 55KB），教师登录后动态注入
+- **降级回退**：JSON 加载失败自动降级加载原 levels.js
+
+### 架构变更
+- `isTeacherUser` / `isTeacher()` / `callEdgeFunction()` 从 admin.js 迁移至 config.js（解除循环依赖）
+- `loadAndInitTeacher()` 新增于 auth.js（快速角色检查 → 动态加载 admin 模块）
+- `onLevelsReady()` 回调机制确保 initApp 等待数据就绪
+- `vocabAdminBtns` / `vocabAdminAddBtn` / `renderAdmin` 加 typeof 守卫（兼容未加载状态）
+- `build-single.py` 适配：离线构建仍内联全部 JS + 同步 shim
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `scripts/split-levels.js` | **新建** — Node 脚本，levels.js → 3 JSON |
+| `data/levels-cie.json` | **新建** — CIE 50 levels (45KB) |
+| `data/levels-edx.json` | **新建** — Edexcel 41 levels (35KB) |
+| `data/levels-25m.json` | **新建** — 25m 173 levels (184KB) |
+| `js/levels-loader.js` | **新建** — 异步并行加载器 + 降级回退 |
+| `js/config.js` | 添加 isTeacherUser/isTeacher/callEdgeFunction + v1.3.1 |
+| `js/admin.js` | 移除 3 个已迁移项 |
+| `js/auth.js` | 新增 loadAndInitTeacher() 替代 initTeacher() |
+| `js/app.js` | initApp 包裹 onLevelsReady() |
+| `js/mastery.js` | vocabAdminBtns/vocabAdminAddBtn 加 typeof 守卫 |
+| `js/ui.js` | renderAdmin 加 typeof 守卫 |
+| `index.html` | levels.js→levels-loader.js; 移除 admin/vocab-admin script 标签 |
+| `scripts/build-single.py` | 适配 levels-loader + 重注入 admin 脚本 |
+
 ## [1.3.0-docs] - 2026-03-05 — 架构分析文档 + 扩展路线规划
 
 ### 文档新增

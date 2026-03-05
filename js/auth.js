@@ -222,9 +222,35 @@ async function afterLogin() {
     showApp();
     /* Init teacher panel after app shell is visible */
     if (sb && isLoggedIn()) {
-      await initTeacher();
+      await loadAndInitTeacher();
     }
   }
+}
+
+/* ═══ DYNAMIC TEACHER MODULE LOADING ═══ */
+async function loadAndInitTeacher() {
+  if (!sb || !isLoggedIn()) return;
+  /* Quick role check — avoid loading admin scripts for students */
+  try {
+    var res = await sb.from('teachers')
+      .select('id').eq('user_id', currentUser.id).maybeSingle();
+    if (!res.data) return;
+  } catch(e) { return; }
+  /* Dynamically load admin.js + vocab-admin.js */
+  await new Promise(function(resolve) {
+    var s1 = document.createElement('script');
+    s1.src = 'js/admin.js';
+    s1.onload = function() {
+      var s2 = document.createElement('script');
+      s2.src = 'js/vocab-admin.js';
+      s2.onload = resolve;
+      s2.onerror = resolve;
+      document.head.appendChild(s2);
+    };
+    s1.onerror = resolve;
+    document.head.appendChild(s1);
+  });
+  if (typeof initTeacher === 'function') await initTeacher();
 }
 
 /* ═══ BOARD SELECTION ═══ */
@@ -267,7 +293,7 @@ async function selectBoard(value) {
   showApp();
   /* Init teacher panel if applicable */
   if (sb && isLoggedIn()) {
-    await initTeacher();
+    await loadAndInitTeacher();
   }
   syncToCloud();
 }

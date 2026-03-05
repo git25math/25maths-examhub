@@ -265,9 +265,9 @@
 
 > 详见 `docs/analysis/2026-03-05-architecture-review-v2.md`
 
-### Phase 10A — 数据层优化（前置）
-- [ ] levels.js 按 board 拆分为 3 个 JSON（异步按需加载）
-- [ ] 角色按需加载（学生不加载 admin/vocab-admin）
+### Phase 10A — 数据层优化（前置）[DONE]
+- [x] levels.js 按 board 拆分为 3 个 JSON（异步按需加载）→ v1.3.1
+- [x] 角色按需加载（学生不加载 admin/vocab-admin）→ v1.3.1
 - [ ] 简单 minify 脚本（esbuild 一行命令）
 - [ ] 首屏从 ~114KB gzip → ~75KB gzip
 

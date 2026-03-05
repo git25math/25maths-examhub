@@ -321,7 +321,31 @@ function isSuperAdmin() {
 }
 
 /* App version */
-var APP_VERSION = 'v1.3.0';
+var APP_VERSION = 'v1.3.1';
+
+/* ═══ TEACHER ROLE (shared across modules) ═══ */
+var isTeacherUser = false;
+function isTeacher() { return isTeacherUser; }
+
+/* ═══ EDGE FUNCTION CALLER ═══ */
+async function callEdgeFunction(name, body) {
+  try {
+    var session = await sb.auth.getSession();
+    var token = session.data.session ? session.data.session.access_token : '';
+    var res = await fetch(EDGE_FN_URL + '/' + name, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + token,
+        'apikey': SUPABASE_KEY
+      },
+      body: JSON.stringify(body)
+    });
+    return await res.json();
+  } catch (e) {
+    return { error: e.message || 'Network error' };
+  }
+}
 
 /* DOM helper */
 var E = function(id) { return document.getElementById(id); };

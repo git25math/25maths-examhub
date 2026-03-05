@@ -2,6 +2,7 @@
    app.js — Application entry point: init + URL parameter handling
    ══════════════════════════════════════════════════════════════ */
 
+onLevelsReady(function() {
 (async function initApp() {
   updateAuthLang();
   /* Load custom levels from storage */
@@ -80,6 +81,7 @@
   E('ov-auth').style.display = 'flex';
   E('ov-auth').classList.add('vis');
 })();
+});
 
 /* ═══ LEADERBOARD ═══ */
 var _boardScope = 'course';    /* 'course' | 'class' | 'grade' | 'school' */
