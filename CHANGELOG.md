@@ -1,5 +1,27 @@
 # Changelog
 
+## [1.2.2] - 2026-03-05 — 学生错词保存为自定义学习卡组
+
+### 功能新增 (homework.js)
+- **错词保存按钮**：作业结果页错词区新增「保存为学习卡组」按钮（≥2 错词时显示）
+- **一键创建卡组**：点击按钮将错词转为自定义词卡组，即时加入 LEVELS 数组
+- **持久化存储**：通过 `saveCustomLevel()` 存入 localStorage + syncToCloud 云端同步
+- **防重复保存**：保存后按钮变灰显示「已保存 ✓」，`_pendingWrongWords` 置空
+
+### 数据流
+```
+finishHwTest() → 暂存错词到 _pendingWrongWords
+             → 渲染「保存为学习卡组」按钮
+用户点击 → saveWrongWordsAsDeck()
+         → 构建 vocabulary → LEVELS.push() + saveCustomLevel()
+学生回首页 → 看到新卡组 → 可进入 Study/Quiz/Spell/Match/Battle/Review
+```
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `js/homework.js` | +44 行：`_pendingWrongWords` 全局变量 + `finishHwTest` 按钮注入 + `saveWrongWordsAsDeck()` 新函数 |
+
 ## [1.2.1] - 2026-03-05 — 创建作业支持自定义词汇输入
 
 ### 功能新增 (homework.js)

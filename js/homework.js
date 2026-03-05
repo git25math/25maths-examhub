@@ -818,6 +818,7 @@ async function showStudentHwPage() {
 
 /* ═══ STUDENT: HOMEWORK TEST ═══ */
 var _hwTest = null;
+var _pendingWrongWords = null;
 
 async function startHwTest(hwId) {
   showPanel('homework');
@@ -1011,9 +1012,52 @@ async function finishHwTest() {
       resultHtml += '</div>';
     });
     resultHtml += '<div style="font-size:12px;color:var(--c-text2);margin-top:8px">\ud83d\udca1 ' + t('Try reviewing these words in Study mode', '建议在学习模式中复习这些词') + '</div>';
+    if (t_.wrongWords.length >= 2) {
+      resultHtml += '<button class="btn btn-primary btn-sm" style="margin-top:10px" onclick="saveWrongWordsAsDeck()">'
+        + t('Save as Study Deck', '保存为学习卡组') + '</button>';
+    }
     resultHtml += '</div>';
+  }
+
+  if (t_.wrongWords.length >= 2) {
+    _pendingWrongWords = { title: t_.title, words: t_.wrongWords };
+  } else {
+    _pendingWrongWords = null;
   }
 
   el.innerHTML = resultHtml;
   _hwTest = null;
+}
+
+function saveWrongWordsAsDeck() {
+  if (!_pendingWrongWords || _pendingWrongWords.words.length < 2) return;
+  var ww = _pendingWrongWords;
+
+  var vocab = [];
+  ww.words.forEach(function(w, i) {
+    vocab.push({ id: i + 1, type: 'word', content: w.word });
+    vocab.push({ id: i + 1, type: 'def',  content: w.def });
+  });
+
+  var level = {
+    title: ww.title + ' - ' + t('Wrong Words', '错词'),
+    timer: Math.max(60, ww.words.length * 10),
+    comboBonus: 3,
+    vocabulary: vocab,
+    custom: true
+  };
+
+  LEVELS.push(level);
+  saveCustomLevel(level);
+
+  _pendingWrongWords = null;
+
+  showToast(t('Saved! ' + ww.words.length + ' words added as study deck',
+    '已保存！' + ww.words.length + ' 个错词已添加为学习卡组'));
+
+  var btns = document.querySelectorAll('[onclick="saveWrongWordsAsDeck()"]');
+  btns.forEach(function(b) {
+    b.disabled = true;
+    b.textContent = t('Saved \u2713', '已保存 \u2713');
+  });
 }
