@@ -290,6 +290,7 @@
 - [x] 可滚动列表展示全部题目（qid / topic / difficulty / 题干 / 选项 / 解析）→ v1.5.1
 - [x] 每题编辑按钮直接打开编辑器 modal → v1.5.1
 - [x] `_openEditor()` 公共函数重构，两入口复用 → v1.5.1
+- [x] Practice/Review All 入口从 deck 详情页移到首页分类层级 → v1.5.4
 
 ### Phase 10C — 概念卡 + KaTeX（Layer 2）
 - [ ] getPairs() 扩展支持 formula/example 字段

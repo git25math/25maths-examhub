@@ -289,6 +289,17 @@ function renderHome() {
 
       boardHtml += '<div class="deck-list category-body">';
 
+      /* Practice actions for CIE / Edexcel categories */
+      if (!is25m && catLevels.length > 0) {
+        var firstIdx = catLevels[0].idx;
+        boardHtml += '<div class="pq-cat-actions">';
+        boardHtml += '<button class="sort-btn" onclick="startPractice(' + firstIdx + ')">\ud83d\udcdd ' + t('Practice', '\u7ec3\u4e60') + '</button>';
+        if (typeof isSuperAdmin === 'function' && isSuperAdmin()) {
+          boardHtml += '<button class="sort-btn" onclick="startPracticeReview(' + firstIdx + ')">\ud83d\udccb ' + t('Review All', '\u603b\u89c8\u5168\u90e8') + '</button>';
+        }
+        boardHtml += '</div>';
+      }
+
       if (is25m) {
         /* Group levels by unitNum, preserving order */
         var unitGroups = [];
@@ -463,26 +474,6 @@ function renderDeck(idx) {
     html += '</button>';
   });
   html += '</div></div>';
-
-  /* Exam Practice section (CIE / Edexcel only) */
-  if (lv.board === 'cie' || lv.board === 'edx') {
-    html += '<div class="mode-extra">';
-    html += '<div class="mode-extra-label">' + t('Exam Practice', '真题练习') + '</div>';
-    html += '<div class="mode-extra-row">';
-    var pDone = isModeDone(idx, 'practice');
-    html += '<button class="mode-btn mode-btn-extra" onclick="startPractice(' + idx + ')">';
-    if (pDone) html += '<span class="mode-done">\u2713</span>';
-    html += '<div class="mode-emoji">\ud83d\udcdd</div>';
-    html += '<div class="mode-name">' + t('Practice', '练习') + '</div>';
-    html += '</button>';
-    if (typeof isSuperAdmin === 'function' && isSuperAdmin()) {
-      html += '<button class="mode-btn mode-btn-extra" onclick="startPracticeReview(' + idx + ')">';
-      html += '<div class="mode-emoji">\ud83d\udccb</div>';
-      html += '<div class="mode-name">' + t('Review All', '总览全部') + '</div>';
-      html += '</button>';
-    }
-    html += '</div></div>';
-  }
 
   html += '<div class="preview-link"><a href="javascript:void(0)" onclick="openPreview(' + idx + ')">\ud83d\udc41 ' + t('Preview all words', '\u9884\u89c8\u5168\u90e8\u8bcd\u6c47') + ' \u2192</a></div>';
 

@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.5.4] - 2026-03-06 — Practice 入口从词卡组移到专题分类
+
+### 改进
+- **Practice 入口上移**：Practice 和 Review All 按钮从 deck 详情页移到首页分类（category）层级，在展开的 CIE/Edexcel 分类词卡组列表上方显示，产品结构更清晰
+- **deck 详情页精简**：移除 Exam Practice 区块，deck 详情页只保留 6 个学习模式（Study/Quiz/Review/Spell/Match/Battle）
+- **25m 板块不受影响**：Harrow Haikou 板块无 Practice 题库，不显示 Practice 行
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `js/mastery.js` | `renderHome()` 分类 body 开头插入 pq-cat-actions 行；`renderDeck()` 删除 Exam Practice 区块 |
+| `css/style.css` | +1 行：`.pq-cat-actions` 样式 |
+| `js/config.js` | APP_VERSION → v1.5.4 |
+| `css/style.min.css` | 重新生成 |
+| `js/app.bundle.min.js` | 重新生成 |
+
 ## [1.5.3] - 2026-03-05 — Review All 二级 Topic 筛选
 
 ### 新功能

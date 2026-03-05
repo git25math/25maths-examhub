@@ -892,6 +892,8 @@ input { font-family: inherit; }
   opacity: 0;
 }
 
+.pq-cat-actions { display: flex; gap: 8px; padding: 8px 0 4px; }
+
 /* ═══ UNIT SECTIONS (25m board only) ═══ */
 .unit-section {
   margin-bottom: 8px;
