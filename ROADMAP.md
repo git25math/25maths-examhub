@@ -201,6 +201,7 @@
 - [x] 卡组详情词汇星级指示器（4 圆点）→ v1.2.0
 - [x] 排行榜 score = learningPct × 20，mastery_pct 独立字段 → v1.2.0
 - [x] 零迁移：旧数据从 ok/fail 实时计算 stars → v1.2.0
+- [x] 排行榜积分说明 Modal（星级→积分→段位完整链路 + 当前段位高亮）→ v1.2.6
 
 ## Phase 8.7 — UX 体验优化 + 内容排序 [DONE]
 - [x] BOARDS 显示顺序调整：哈罗海口→CIE→Edexcel → v1.1.5

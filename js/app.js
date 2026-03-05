@@ -107,7 +107,7 @@ async function renderBoard() {
     return;
   }
 
-  panel.innerHTML = '<div class="section-title">\ud83c\udfc6 ' + t('Leaderboard', '\u6392\u884c\u699c') + '</div>' +
+  panel.innerHTML = '<div class="section-title" style="display:flex;align-items:center;gap:8px">\ud83c\udfc6 ' + t('Leaderboard', '\u6392\u884c\u699c') + ' <button class="btn-help" onclick="showScoreGuide()" title="' + t('About scoring', '\u4e86\u89e3\u79ef\u5206\u89c4\u5219') + '">\u2753</button></div>' +
     '<div style="text-align:center;color:var(--c-muted);padding:40px 0">' + t('Loading...', '\u52a0\u8f7d\u4e2d...') + '</div>';
 
   /* Pre-load classes if scope is 'class' */
@@ -188,7 +188,7 @@ async function renderBoard() {
   }
 
   /* Build HTML */
-  var html = '<div class="section-title">\ud83c\udfc6 ' + t('Leaderboard', '\u6392\u884c\u699c') + '</div>';
+  var html = '<div class="section-title" style="display:flex;align-items:center;gap:8px">\ud83c\udfc6 ' + t('Leaderboard', '\u6392\u884c\u699c') + ' <button class="btn-help" onclick="showScoreGuide()" title="' + t('About scoring', '\u4e86\u89e3\u79ef\u5206\u89c4\u5219') + '">\u2753</button></div>';
 
   /* Scope tabs — only when userSchoolId exists */
   if (userSchoolId) {
@@ -254,4 +254,57 @@ function switchBoardScope(scope) {
 function switchBoardSub(key) {
   _boardSubKey = key;
   renderBoard();
+}
+
+/* ═══ SCORE GUIDE MODAL ═══ */
+function showScoreGuide() {
+  var cur = getRank();
+  var html = '<div class="section-title">\ud83c\udfc6 ' + t('Scoring & Rank Guide', '\u79ef\u5206\u4e0e\u6bb5\u4f4d\u8bf4\u660e') + '</div>';
+
+  /* Section 1 — Star Rating */
+  html += '<div class="guide-section">';
+  html += '<div class="guide-tip-title">\u2b50 ' + t('Star Rating', '\u661f\u7ea7\u8bc4\u5b9a') + '</div>';
+  html += '<p style="font-size:13px;color:var(--c-text2);line-height:1.6;text-align:left;margin-bottom:8px">';
+  html += t('Each word earns 0\u20134 stars based on correct answers and accuracy:', '\u6bcf\u4e2a\u8bcd\u6c47\u53ef\u83b7\u5f97 0\u20134 \u661f\uff0c\u53d6\u51b3\u4e8e\u7b54\u5bf9\u6b21\u6570\u548c\u6b63\u786e\u7387\uff1a');
+  html += '</p>';
+  html += '<div class="srs-row"><span class="srs-row-dot" style="background:var(--c-primary)"></span><span class="srs-row-label">' + t('Base stars', '\u539f\u59cb\u661f\u7ea7') + '</span><span class="srs-row-desc">' + t('= correct count (max 4)', '= \u7b54\u5bf9\u6b21\u6570\uff08\u4e0a\u9650 4\uff09') + '</span></div>';
+  html += '<div class="srs-row"><span class="srs-row-dot" style="background:var(--c-danger)"></span><span class="srs-row-label">' + t('Accuracy < 50%', '\u6b63\u786e\u7387 < 50%') + '</span><span class="srs-row-desc">' + t('capped at 2 stars', '\u6700\u9ad8 2 \u661f') + '</span></div>';
+  html += '<div class="srs-row"><span class="srs-row-dot" style="background:var(--c-warning)"></span><span class="srs-row-label">' + t('Accuracy 50\u201360%', '\u6b63\u786e\u7387 50\u201360%') + '</span><span class="srs-row-desc">' + t('capped at 3 stars', '\u6700\u9ad8 3 \u661f') + '</span></div>';
+  html += '<div class="srs-row"><span class="srs-row-dot" style="background:var(--c-success)"></span><span class="srs-row-label">' + t('Accuracy \u2265 60%', '\u6b63\u786e\u7387 \u2265 60%') + '</span><span class="srs-row-desc">' + t('unlock 4 stars', '\u53ef\u89e3\u9501 4 \u661f') + '</span></div>';
+  html += '</div>';
+
+  /* Section 2 — Score Calculation */
+  html += '<div class="guide-section">';
+  html += '<div class="guide-tip-title">\ud83d\udcca ' + t('Score Calculation', '\u79ef\u5206\u8ba1\u7b97') + '</div>';
+  html += '<div class="srs-row"><span class="srs-row-dot" style="background:var(--c-primary)"></span><span class="srs-row-label">' + t('Learning %', '\u5b66\u4e60\u8fdb\u5ea6') + '</span><span class="srs-row-desc">' + t('total stars \u00f7 (words \u00d7 4) \u00d7 100%', '\u603b\u661f\u6570 \u00f7 (\u8bcd\u6c47\u6570 \u00d7 4) \u00d7 100%') + '</span></div>';
+  html += '<div class="srs-row"><span class="srs-row-dot" style="background:var(--c-primaryLight)"></span><span class="srs-row-label">' + t('Score', '\u6392\u884c\u699c\u79ef\u5206') + '</span><span class="srs-row-desc">' + t('learning % \u00d7 20 (max 2000)', '\u5b66\u4e60\u8fdb\u5ea6 \u00d7 20\uff08\u6ee1\u5206 2000\uff09') + '</span></div>';
+  html += '<div class="srs-row"><span class="srs-row-dot" style="background:var(--c-success)"></span><span class="srs-row-label">' + t('Mastery %', '\u7cbe\u901a\u7387') + '</span><span class="srs-row-desc">' + t('4\u2605 words \u00f7 total words \u00d7 100%', '4\u2605\u8bcd\u6c47\u6570 \u00f7 \u603b\u8bcd\u6c47\u6570 \u00d7 100%') + '</span></div>';
+  html += '</div>';
+
+  /* Section 3 — Rank Thresholds */
+  html += '<div class="guide-section">';
+  html += '<div class="guide-tip-title">\ud83c\udfc5 ' + t('Rank Thresholds', '\u6bb5\u4f4d\u95e8\u69db') + '</div>';
+  RANKS.forEach(function(r) {
+    var isCurrent = r.name === cur.name;
+    html += '<div class="rank-row' + (isCurrent ? ' current' : '') + '" style="' + (isCurrent ? 'border-color:' + r.color + ';background:' + r.color + '15' : '') + '">';
+    html += '<div class="rank-row-emoji">' + r.emoji + '</div>';
+    html += '<div class="rank-row-info">';
+    html += '<div class="rank-row-name" style="color:' + r.color + '">' + rankName(r) + '</div>';
+    html += '<div class="rank-row-req">' + t('Mastery \u2265 ' + r.min + '%', '\u7cbe\u901a\u7387 \u2265 ' + r.min + '%') + '</div>';
+    html += '</div>';
+    if (isCurrent) html += '<span class="rank-row-badge">' + t('Current', '\u5f53\u524d') + '</span>';
+    html += '</div>';
+  });
+  html += '</div>';
+
+  /* Section 4 — Tips */
+  html += '<div class="guide-tip">';
+  html += '<div class="guide-tip-title">\ud83d\udca1 ' + t('Tips', '\u5c0f\u8d34\u58eb') + '</div>';
+  html += '<div class="guide-tip-item">' + t('Practice across multiple modes to boost correct count', '\u591a\u6a21\u5f0f\u7ec3\u4e60\u63d0\u5347\u7b54\u5bf9\u6b21\u6570') + '</div>';
+  html += '<div class="guide-tip-item">' + t('Keep accuracy \u2265 60% to unlock 4 stars', '\u4fdd\u6301\u6b63\u786e\u7387 \u2265 60% \u89e3\u9501 4 \u661f') + '</div>';
+  html += '<div class="guide-tip-item">' + t('Mastery % determines your rank progression', '\u7cbe\u901a\u7387\u51b3\u5b9a\u6bb5\u4f4d\u664b\u5347') + '</div>';
+  html += '</div>';
+
+  html += '<button class="btn btn-ghost btn-block" onclick="hideModal()" style="margin-top:16px">' + t('Close', '\u5173\u95ed') + '</button>';
+  showModal(html);
 }
