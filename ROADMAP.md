@@ -153,42 +153,47 @@
 - [x] 反馈收集改 DB 存储（已登录用户直接存 Supabase feedback 表）→ v1.1.0 完成
 - [x] 超管反馈管理面板（Feedback tab + 状态管理 + 管理员备注）→ v1.1.0 完成
 
-## Phase 8.6 — 项目健康修复 [DONE]
-- [x] XSS 防护（escapeHtml + 全量转义通知/反馈/错词）→ v1.1.1 完成
-- [x] 异步修复（sendNotification await×3 + showFeedbackDetail async）→ v1.1.1 完成
-- [x] 竞态修复（finishHwTest upsert + maybeSingle）→ v1.1.1 完成
-- [x] RLS 增强（assignments INSERT 班级归属 + UPDATE 策略）→ v1.1.1 完成
-- [x] 缺失索引×6（assignments/results/students/levels/feedback）→ v1.1.1 完成
-- [x] 深色模式补全（通知/作业/反馈/词库 8 条规则）→ v1.1.1 完成
-- [x] 软删除作业（is_deleted 列 + 前端过滤）→ v1.1.1 完成
-- [x] 学生作业导航入口（侧栏+底栏📝按钮）→ v1.1.1 完成
-- [x] 手机端响应式补全（8 条移动端适配规则）→ v1.1.1 完成
-- [x] 自定义词汇校验（最多 10 词上限）→ v1.1.1 完成
-- [x] 残余 XSS 全量清除（14 处 innerHTML 用户数据转义）→ v1.1.2 完成
-- [x] N+1 查询消除（renderClassHwList 批量 .in() 查询）→ v1.1.2 完成
-- [x] 串行→并行（cascadeGradeUpdate Promise.all）→ v1.1.2 完成
-- [x] markNotifRead/markAllNotifsRead try/catch 健壮性 → v1.1.2 完成
-- [x] 键盘 focus-visible 焦点指示器 → v1.1.2 完成
-- [x] 学习模式 XSS 清除（quiz/spell/battle/homework 14 处词汇数据转义）→ v1.1.3 完成
-- [x] 教师面板+侧栏 XSS 清除（班级名/学生名/用户邮箱 5 处转义）→ v1.1.3 完成
-- [x] callEdgeFunction try/catch 网络异常捕获 → v1.1.3 完成
-- [x] 通知批量 INSERT（doCreateHw 串行→单次批量）→ v1.1.3 完成
-- [x] focus-visible 补全（quiz-opt/match-item/sort-btn 等 9 类元素）→ v1.1.3 完成
-- [x] prefers-reduced-motion 全局规则 → v1.1.3 完成
-- [x] Modal ARIA（role=dialog / aria-modal / aria-labelledby）→ v1.1.3 完成
-- [x] Canvas aria-hidden → v1.1.3 完成
-- [x] 品牌更名 AISL Harrow Haikou → Harrow Haikou Upper School Mathematics Curriculum → v1.1.3 完成
-- [x] 残余 XSS 全量清除（study/review/mastery/match/export/app/homework/admin 22 处）→ v1.1.4 完成
-- [x] onclick 反斜杠逃逸注入修复（admin/homework/spell 4 处）→ v1.1.4 完成
-- [x] 异步错误处理（admin×5/auth×1/vocab-admin×2 try/catch）→ v1.1.4 完成
-- [x] syncToCloud 节流（debouncedSync 2s trailing debounce）→ v1.1.4 完成
-- [x] 可访问性增强（lang/ARIA role/aria-expanded/aria-label ×20）→ v1.1.4 完成
-- [x] 死代码清理 + APP_VERSION 版本常量统一 → v1.1.4 完成
-- [x] BOARDS 显示顺序调整：哈罗海口→CIE→Edexcel → v1.1.5 完成
-- [x] 刷新页面闪现登录页消除（localStorage 时间戳 + 内联 CSS 注入）→ v1.1.6 完成
-- [x] 语言偏好持久化（localStorage wmatch_lang，刷新不重置）→ v1.1.7 完成
-- [x] Y7-Y11 词卡教学顺序重排（55 单元从字母序→课纲教学序）→ v1.1.8 完成
-- [x] Y7-Y11 词卡按单元分组二级折叠（Unit 层 + 折叠/展开 + 搜索自动展开）→ v1.1.9 完成
+## Phase 8.6 — 项目健康修复（安全 + 性能 + 可访问性）[DONE]
+
+### 安全加固（v1.1.1 — v1.1.4）
+- [x] XSS 防护 4 轮全量清除（escapeHtml 覆盖全部 innerHTML 用户数据输出，共 50+ 处）
+- [x] onclick 反斜杠逃逸注入修复（admin/homework/spell 4 处）→ v1.1.4
+- [x] RLS 增强（assignments INSERT 班级归属 + UPDATE 策略）→ v1.1.1
+
+### 性能优化（v1.1.1 — v1.1.4）
+- [x] N+1 查询消除（renderClassHwList 批量 .in() 查询）→ v1.1.2
+- [x] 串行→并行（cascadeGradeUpdate Promise.all）→ v1.1.2
+- [x] 通知批量 INSERT（doCreateHw 串行→单次批量）→ v1.1.3
+- [x] syncToCloud 节流（debouncedSync 2s trailing debounce）→ v1.1.4
+
+### 可访问性（v1.1.2 — v1.1.4）
+- [x] 键盘 focus-visible 焦点指示器（全量 9 类元素）→ v1.1.2 / v1.1.3
+- [x] prefers-reduced-motion 全局规则 → v1.1.3
+- [x] Modal ARIA（role=dialog / aria-modal / aria-labelledby）+ Canvas aria-hidden → v1.1.3
+- [x] 可访问性增强（lang/ARIA role/aria-expanded/aria-label ×20）→ v1.1.4
+
+### 健壮性 + 维护（v1.1.1 — v1.1.4）
+- [x] 异步修复（sendNotification await×3 + showFeedbackDetail async）→ v1.1.1
+- [x] 竞态修复（finishHwTest upsert + maybeSingle）→ v1.1.1
+- [x] 异步错误处理（admin×5/auth×1/vocab-admin×2 + callEdgeFunction try/catch）→ v1.1.3 / v1.1.4
+- [x] markNotifRead/markAllNotifsRead try/catch → v1.1.2
+- [x] 缺失索引×6 → v1.1.1
+- [x] 死代码清理 + APP_VERSION 常量统一 → v1.1.4
+
+### 功能修补（v1.1.1 — v1.1.4）
+- [x] 深色模式补全（通知/作业/反馈/词库 8 条规则）→ v1.1.1
+- [x] 软删除作业（is_deleted 列 + 前端过滤）→ v1.1.1
+- [x] 学生作业导航入口（侧栏+底栏📝按钮）→ v1.1.1
+- [x] 手机端响应式补全（8 条移动端适配规则）→ v1.1.1
+- [x] 自定义词汇校验（最多 10 词上限）→ v1.1.1
+- [x] 品牌更名 AISL Harrow Haikou → Harrow Haikou Upper School Mathematics Curriculum → v1.1.3
+
+## Phase 8.7 — UX 体验优化 + 内容排序 [DONE]
+- [x] BOARDS 显示顺序调整：哈罗海口→CIE→Edexcel → v1.1.5
+- [x] 刷新页面闪现登录页消除（localStorage 时间戳 + 内联 CSS 注入）→ v1.1.6
+- [x] 语言偏好持久化（localStorage wmatch_lang，刷新不重置）→ v1.1.7
+- [x] Y7-Y11 词卡教学顺序重排（55 单元从字母序→课纲教学序）→ v1.1.8
+- [x] Y7-Y11 词卡按单元分组二级折叠（Unit 层 + 折叠/展开 + 搜索自动展开）→ v1.1.9
 
 ## Phase 8.4 — 班级编辑 + 学生导入 [DONE]
 - [x] 编辑班级信息（名称/年级，年级变更级联更新）→ v1.0.9 完成
