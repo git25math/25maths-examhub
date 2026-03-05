@@ -111,6 +111,63 @@ function handleNotifClick(notifId, linkType, linkId) {
 }
 
 /* ═══ TEACHER: CREATE HOMEWORK ═══ */
+var _hwMode = 'deck';
+
+function hwSwitchTab(mode) {
+  _hwMode = mode;
+  var deckArea = E('hw-deck-area');
+  var customArea = E('hw-custom-area');
+  var tabDeck = E('hw-tab-deck');
+  var tabCustom = E('hw-tab-custom');
+  if (!deckArea || !customArea) return;
+  deckArea.style.display = mode === 'deck' ? 'block' : 'none';
+  customArea.style.display = mode === 'custom' ? 'block' : 'none';
+  tabDeck.className = 'btn btn-sm ' + (mode === 'deck' ? 'btn-primary' : 'btn-ghost');
+  tabCustom.className = 'btn btn-sm ' + (mode === 'custom' ? 'btn-primary' : 'btn-ghost');
+}
+
+function hwAddRow() {
+  var ct = E('hw-custom-rows');
+  if (!ct) return;
+  var rows = ct.querySelectorAll('.hw-custom-row');
+  if (rows.length >= 20) { showToast(t('Max 20 words', '最多20个词')); return; }
+  var div = document.createElement('div');
+  div.className = 'hw-custom-row';
+  div.style.cssText = 'display:flex;gap:6px;margin-bottom:6px;align-items:center';
+  div.innerHTML = '<input class="auth-input hw-cw" placeholder="' + t('Word', '词汇') + '" style="flex:1;margin:0">'
+    + '<input class="auth-input hw-cd" placeholder="' + t('Definition', '释义') + '" style="flex:1;margin:0">'
+    + '<button class="btn btn-ghost btn-sm" style="padding:2px 6px;color:var(--c-danger);flex-shrink:0" onclick="this.parentElement.remove()">\u2715</button>';
+  ct.appendChild(div);
+}
+
+function hwParseBatch() {
+  var ta = E('hw-batch-text');
+  if (!ta) return;
+  var lines = ta.value.split('\n').filter(function(l) { return l.trim(); });
+  if (lines.length === 0) return;
+  var ct = E('hw-custom-rows');
+  if (!ct) return;
+  ct.innerHTML = '';
+  var count = 0;
+  lines.forEach(function(line) {
+    if (count >= 20) return;
+    var parts = line.split(/\s[-\u2013\u2014]\s|\t/);
+    var w = (parts[0] || '').trim();
+    var d = (parts[1] || '').trim();
+    if (!w && !d) return;
+    count++;
+    var div = document.createElement('div');
+    div.className = 'hw-custom-row';
+    div.style.cssText = 'display:flex;gap:6px;margin-bottom:6px;align-items:center';
+    div.innerHTML = '<input class="auth-input hw-cw" placeholder="' + t('Word', '词汇') + '" style="flex:1;margin:0" value="' + escapeHtml(w).replace(/"/g, '&quot;') + '">'
+      + '<input class="auth-input hw-cd" placeholder="' + t('Definition', '释义') + '" style="flex:1;margin:0" value="' + escapeHtml(d).replace(/"/g, '&quot;') + '">'
+      + '<button class="btn btn-ghost btn-sm" style="padding:2px 6px;color:var(--c-danger);flex-shrink:0" onclick="this.parentElement.remove()">\u2715</button>';
+    ct.appendChild(div);
+  });
+  if (count < lines.length) showToast(t('Truncated to 20 words', '已截断为20个词'));
+  ta.value = '';
+}
+
 function showCreateHwModal(classId) {
   var deckHtml = '';
   getVisibleBoards().forEach(function(board) {
@@ -138,12 +195,33 @@ function showCreateHwModal(classId) {
   nextWeek.setDate(nextWeek.getDate() + 7);
   var deadlineDefault = nextWeek.toISOString().slice(0, 16);
 
+  _hwMode = 'deck';
+
   var html = '<div class="section-title">' + t('Create Homework', '布置作业') + '</div>';
   html += '<label class="settings-label">' + t('Title', '标题') + '</label>';
   html += '<input class="auth-input" id="hw-title" placeholder="' + t('e.g. Week 3 Vocab Test', '如 第3周词汇测试') + '">';
-  html += '<label class="settings-label">' + t('Select Groups', '选择词组') + '</label>';
+
+  /* Tab buttons */
+  html += '<div style="display:flex;gap:6px;margin:12px 0 8px">';
+  html += '<button id="hw-tab-deck" class="btn btn-sm btn-primary" onclick="hwSwitchTab(\'deck\')">' + t('Select Groups', '选择词组') + '</button>';
+  html += '<button id="hw-tab-custom" class="btn btn-sm btn-ghost" onclick="hwSwitchTab(\'custom\')">' + t('Custom Vocab', '自定义词汇') + '</button>';
+  html += '</div>';
+
+  /* Deck selection area (default visible) */
+  html += '<div id="hw-deck-area">';
   html += '<div style="max-height:200px;overflow-y:auto;border:1px solid var(--c-border);border-radius:8px;padding:8px 12px">';
   html += deckHtml;
+  html += '</div>';
+  html += '</div>';
+
+  /* Custom vocab area (hidden) */
+  html += '<div id="hw-custom-area" style="display:none">';
+  html += '<div style="margin-bottom:8px">';
+  html += '<textarea id="hw-batch-text" class="auth-input" rows="3" style="font-size:12px;resize:vertical" placeholder="' + t('Paste words, one per line: word - definition', '批量粘贴，每行一条：词汇 - 释义') + '"></textarea>';
+  html += '<button class="btn btn-ghost btn-sm" style="margin-top:4px" onclick="hwParseBatch()">' + t('Parse', '解析') + '</button>';
+  html += '</div>';
+  html += '<div id="hw-custom-rows" style="max-height:240px;overflow-y:auto"></div>';
+  html += '<button class="btn btn-ghost btn-sm" onclick="hwAddRow()">+ ' + t('Add row', '添加行') + '</button>';
   html += '</div>';
   html += '<label class="settings-label" style="margin-top:12px">' + t('Deadline', '截止日期') + '</label>';
   html += '<input class="auth-input" id="hw-deadline" type="datetime-local" value="' + deadlineDefault + '">';
@@ -154,6 +232,8 @@ function showCreateHwModal(classId) {
   html += '</div>';
 
   showModal(html);
+  /* Seed 3 empty rows for custom mode */
+  for (var r = 0; r < 3; r++) hwAddRow();
 }
 
 async function doCreateHw(classId) {
@@ -161,25 +241,46 @@ async function doCreateHw(classId) {
   var msg = E('hw-msg');
   var deadline = E('hw-deadline').value;
 
-  var slugs = [];
-  document.querySelectorAll('.hw-deck-cb:checked').forEach(function(cb) {
-    slugs.push(cb.value);
-  });
-
   if (!title) { msg.textContent = t('Title required', '请填写标题'); msg.className = 'settings-msg error'; return; }
-  if (slugs.length === 0) { msg.textContent = t('Select at least 1 group', '至少选择1个词组'); msg.className = 'settings-msg error'; return; }
   if (!deadline) { msg.textContent = t('Deadline required', '请设置截止日期'); msg.className = 'settings-msg error'; return; }
+
+  var slugs = [];
+  var customVocab = null;
+
+  if (_hwMode === 'custom') {
+    /* Collect custom rows */
+    var vocab = [];
+    var vid = 1;
+    document.querySelectorAll('.hw-custom-row').forEach(function(row) {
+      var w = row.querySelector('.hw-cw').value.trim();
+      var d = row.querySelector('.hw-cd').value.trim();
+      if (!w && !d) return;
+      vocab.push({ id: vid, type: 'word', content: w });
+      vocab.push({ id: vid, type: 'def', content: d });
+      vid++;
+    });
+    if (vocab.length < 4) { msg.textContent = t('At least 2 words required', '至少输入2个词'); msg.className = 'settings-msg error'; return; }
+    if (vid > 21) { msg.textContent = t('Max 20 words allowed', '最多20个词'); msg.className = 'settings-msg error'; return; }
+    customVocab = vocab;
+  } else {
+    document.querySelectorAll('.hw-deck-cb:checked').forEach(function(cb) {
+      slugs.push(cb.value);
+    });
+    if (slugs.length === 0) { msg.textContent = t('Select at least 1 group', '至少选择1个词组'); msg.className = 'settings-msg error'; return; }
+  }
 
   msg.textContent = t('Creating...', '创建中...');
   msg.className = 'settings-msg';
 
   try {
-    var res = await sb.rpc('create_assignment', {
+    var rpcParams = {
       p_class_id: classId,
       p_title: title,
       p_deck_slugs: slugs,
       p_deadline: new Date(deadline).toISOString()
-    });
+    };
+    if (customVocab) rpcParams.p_custom_vocabulary = customVocab;
+    var res = await sb.rpc('create_assignment', rpcParams);
     if (res.error) throw new Error(res.error.message);
 
     /* Send notifications to all students in this class (batch INSERT) */

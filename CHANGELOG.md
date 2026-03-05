@@ -1,5 +1,24 @@
 # Changelog
 
+## [1.2.1] - 2026-03-05 — 创建作业支持自定义词汇输入
+
+### 功能新增 (homework.js)
+- **模式切换 Tab**：创建作业弹窗新增「选择词组」/「自定义词汇」双 Tab 切换
+- **逐条输入**：自定义词汇模式提供 word + definition 双输入行，初始 3 行，最多 20 行，支持单行删除
+- **批量粘贴**：textarea 粘贴 `word - definition` 格式文本，点击「解析」自动填入逐条列表
+- **验证规则**：至少 2 词、最多 20 词、空行自动跳过、超限截断提示
+- **RPC 调用**：自定义模式传 `p_custom_vocabulary` JSONB（`[{id, type, content}]`），deck 模式不受影响
+
+### 辅助函数
+- `hwSwitchTab(mode)` — Tab 高亮切换 + 区域显示/隐藏
+- `hwAddRow()` — 追加双 input 行（含 ✕ 删除按钮）
+- `hwParseBatch()` — 按 ` - ` / ` – ` / ` — ` / `\t` 分割每行，填入逐条列表
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `js/homework.js` | +110 行：3 辅助函数 + showCreateHwModal Tab UI + doCreateHw 双模式分支 |
+
 ## [1.2.0] - 2026-03-05 — 星级计分系统重构：统一模式计分 + 双指标（学习进度 + 精通率）
 
 ### 核心引擎 (storage.js)

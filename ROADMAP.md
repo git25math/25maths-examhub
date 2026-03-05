@@ -236,6 +236,11 @@
 
 ---
 
+## Phase 8.8 — 作业系统增强
+- [x] 创建作业支持自定义词汇输入（逐条添加 + 批量粘贴，最多 20 词）→ v1.2.1
+- [ ] 作业模板（保存常用词组组合为模板）
+- [ ] 作业统计导出（Excel/CSV）
+
 ## Phase 9 — 内容扩展
 - [x] Edexcel 4MA1 vocabulary sets → Phase 4 完成
 - [x] 25Maths Curriculum Y7-Y11 vocabulary sets → Phase 4.1 完成
