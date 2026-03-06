@@ -1,5 +1,30 @@
 # Changelog
 
+## [1.9.2] - 2026-03-06 — 全量 Subtopic 标注 Phase B
+
+### 新增功能
+- **7 Topic 批量标注**: 对 Coordinate geometry / Geometry / Mensuration / Trigonometry / Transformations & vectors / Probability / Statistics 共 3,494 道题完成 subtopic 标注
+- **规则引擎标注器**: `tag_subtopics_auto.py` 基于关键词规则的高速标注器，替代 Gemini CLI 批量标注（秒级完成 vs 小时级）
+- **泛化标注管道**: `run_subtopic_tagging.sh` 改为 config-driven，支持 `--config configs/xxx.json`
+- **7 个 Topic Config**: 新建 coord / geometry / mensuration / trigonometry / vectors / probability / statistics 配置文件
+- **build-papers-data 扩展**: `load_tagged_data()` 从 2 个数据源扩展到 9 个，覆盖全部 CIE 0580 考纲章节
+
+### 数据统计
+- 标注覆盖率: 2,174 → 3,781 题（92%，+1,607 题）
+- 覆盖 66 个 sections（共 72 个）
+- 未标注 326 题（原 algebra/number 遗留空标注）
+- 新增标注分布: Geometry 764 / Coord 308 / Statistics 173 / Mensuration 150 / Probability 124 / Vectors 69 / Trigonometry 19
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `CIE analysis/scripts/run_subtopic_tagging.sh` | 泛化为 config-driven（--config 参数） |
+| `CIE analysis/scripts/tag_subtopics_auto.py` | 新建：规则引擎标注器 |
+| `CIE analysis/configs/{7个}.json` | 新建 7 个 topic config |
+| `scripts/build-papers-data.py` | load_tagged_data() 扩展到 9 个数据源 |
+| `data/papers-cie.json` | 重新生成（3,781 题有 subtopic） |
+| `js/config.js` | v1.9.2 |
+
 ## [1.9.1] - 2026-03-06 — 套卷系统 UX 优化
 
 ### 改进

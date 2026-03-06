@@ -31,6 +31,20 @@ PASTPAPERS_ROOT = os.path.join(IGCSE_ROOT, "PastPapers")
 ALGEBRA_TAGGED = os.path.join(IGCSE_ROOT, "analysis/data/algebra_questions_tagged.json")
 NUMBER_TAGGED = os.path.join(IGCSE_ROOT, "analysis/topics/number/data/questions_tagged.json")
 
+# All tagged data sources: (label, path)
+# Order matters: earlier entries take priority for questions appearing in multiple topics
+TAGGED_SOURCES = [
+    ("algebra", ALGEBRA_TAGGED),
+    ("number", NUMBER_TAGGED),
+    ("coord", os.path.join(IGCSE_ROOT, "analysis/topics/coordinate geometry/data/questions_tagged.json")),
+    ("geometry", os.path.join(IGCSE_ROOT, "analysis/topics/geometry/data/questions_tagged.json")),
+    ("mensuration", os.path.join(IGCSE_ROOT, "analysis/topics/mensuration/data/questions_tagged.json")),
+    ("trigonometry", os.path.join(IGCSE_ROOT, "analysis/topics/trigonometry/data/questions_tagged.json")),
+    ("vectors", os.path.join(IGCSE_ROOT, "analysis/topics/transformations and vectors/data/questions_tagged.json")),
+    ("probability", os.path.join(IGCSE_ROOT, "analysis/topics/probability/data/questions_tagged.json")),
+    ("statistics", os.path.join(IGCSE_ROOT, "analysis/topics/statistics/data/questions_tagged.json")),
+]
+
 OUTPUT_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data")
 OUTPUT_FILE = os.path.join(OUTPUT_DIR, "papers-cie.json")
 
@@ -300,22 +314,19 @@ def load_tagged_data():
     """Load and index all available subtopic-tagged data."""
     tagged = {}  # id → tagged question entry
 
-    # Algebra tagged
-    if os.path.exists(ALGEBRA_TAGGED):
-        with open(ALGEBRA_TAGGED) as f:
+    for label, path in TAGGED_SOURCES:
+        if not os.path.exists(path):
+            print(f"  Skipped {label} (not found)")
+            continue
+        with open(path) as f:
             data = json.load(f)
+        new_count = 0
         for q in data.get("questions", []):
-            tagged[q["id"]] = q
-        print(f"  Loaded {len(data.get('questions', []))} algebra tagged questions")
-
-    # Number tagged
-    if os.path.exists(NUMBER_TAGGED):
-        with open(NUMBER_TAGGED) as f:
-            data = json.load(f)
-        for q in data.get("questions", []):
-            if q["id"] not in tagged:  # algebra takes priority
+            if q["id"] not in tagged:  # earlier sources take priority
                 tagged[q["id"]] = q
-        print(f"  Loaded {len(data.get('questions', []))} number tagged questions")
+                new_count += 1
+        total = len(data.get("questions", []))
+        print(f"  Loaded {label}: {total} total, {new_count} new")
 
     return tagged
 
