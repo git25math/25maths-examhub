@@ -45,6 +45,9 @@ onLevelsReady(function() {
 
         await afterLogin();
 
+        /* Past paper wrong book reminder */
+        if (typeof ppCheckWrongBookReminder === 'function') ppCheckWrongBookReminder();
+
         /* Handle ?level= URL parameter for deep linking (slug first, index fallback) */
         var params = new URLSearchParams(window.location.search);
         var lvlParam = params.get('level');

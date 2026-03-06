@@ -1,5 +1,32 @@
 # Changelog
 
+## [1.8.0] - 2026-03-06 — Past Paper 真题引擎 · 试点（Phase A）
+
+### 新增功能
+- **真题题库**: 127 道 CIE 0580 Section 2.5 Equations 历年真题（2018-2025），LaTeX→KaTeX 网页渲染
+- **练习模式**: 逐题浏览 + 分值信息 + 三级自评（Needs Work / Partial / Mastered）+ 自由翻题
+- **实战模式**: 限时考试 + 题量选择（10/20/All）+ 标记不确定 + 题号导航 + 自动计时
+- **批改系统**: 逐题自评 + 得分输入 + 错因标注（6 类：概念不清/方法错误/计算错误/粗心/不完整/超时）+ 题型分析
+- **错题本**: 自动收集（练习🔴 + 实战🔴🟡）+ 错因备注 + 复习计数 + 一键再练 + resolved 标记
+- **首页提醒**: 错题超过 3 天未复习 → Toast 提醒
+- **知识点集成**: Section 详情页 Past Papers 模块（题量 + 掌握度统计 + 练习/实战/复习三入口）
+
+### 数据管道
+- `scripts/build-pastpaper-data.py`: 从 IGCSE_v2 tagged JSON 提取 + LaTeX 清洗 + KaTeX 兼容处理
+- 清洗: 去除 `\begin{question}`/`\AnswerLine`/`\Marks`/`\vgap`/`\begin{center}` + `\textdollar`→`\$` + `\textbf`→`**bold**` + parts 解析
+- 零 marks 修复: 从 `\begin{question}{N}` wrapper 提取分值
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `data/pastpapers-cie.json` | 新增 — 127 道真题（85 KB，LaTeX + 元数据） |
+| `js/practice.js` | +910 行 — Past Paper 模块（数据加载/练习/实战/批改/错题本） |
+| `js/syllabus.js` | +35 行 — Past Papers 入口模块（掌握度统计 + 三入口按钮） |
+| `js/app.js` | +3 行 — 错题本复习提醒 |
+| `css/style.css` | +156 行 — `.pp-*` 系列样式（卡片/计时器/导航点/错因标签/暗色模式） |
+| `index.html` | +1 行 — `panel-pastpaper` 面板 |
+| `scripts/build-pastpaper-data.py` | 新增 — 数据管道脚本 |
+
 ## [1.7.4] - 2026-03-06 — CIE + Edexcel 练习题质量审计与修复
 
 ### Phase A — 题目搬迁（改 `s` 字段）

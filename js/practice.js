@@ -957,3 +957,913 @@ function _pqFindQ(qid, board) {
   }
   return null;
 }
+
+/* ══════════════════════════════════════════════════════════════
+   PAST PAPER MODULE — Practice + Exam + Wrong Book
+   ══════════════════════════════════════════════════════════════ */
+
+var _ppData = {};          /* { cie: [...] } lazy-loaded */
+var _ppSession = null;     /* { questions, current, mode, startTime, results[], board, sectionId, ... } */
+var _ppTimer = null;       /* exam timer interval */
+
+var PP_ERROR_TYPES = [
+  { id: 'concept',     en: 'Concept gap',       zh: '\u6982\u5ff5\u4e0d\u6e05' },
+  { id: 'method',      en: 'Wrong method',      zh: '\u65b9\u6cd5\u9519\u8bef' },
+  { id: 'calculation', en: 'Calculation error',  zh: '\u8ba1\u7b97\u9519\u8bef' },
+  { id: 'careless',    en: 'Careless mistake',   zh: '\u7c97\u5fc3\u5927\u610f' },
+  { id: 'incomplete',  en: 'Incomplete answer',  zh: '\u7b54\u6848\u4e0d\u5b8c\u6574' },
+  { id: 'time',        en: 'Ran out of time',    zh: '\u65f6\u95f4\u4e0d\u591f' }
+];
+
+/* ═══ DATA LOADING ═══ */
+
+function loadPastPaperData(board) {
+  board = board || 'cie';
+  if (_ppData[board]) return Promise.resolve(_ppData[board]);
+  var file = 'data/pastpapers-' + board + '.json';
+  return fetch(file).then(function(r) {
+    if (!r.ok) throw new Error('Failed to load ' + file);
+    return r.json();
+  }).then(function(data) {
+    _ppData[board] = data;
+    return data;
+  });
+}
+
+function getPPBySection(board, sectionId) {
+  var data = _ppData[board];
+  if (!data) return [];
+  return data.filter(function(q) { return q.s === sectionId; });
+}
+
+/* ═══ MASTERY STORAGE ═══ */
+
+function _ppMasteryKey() { return 'pp_mastery'; }
+function _ppGetMastery() {
+  try { return JSON.parse(localStorage.getItem(_ppMasteryKey())) || {}; } catch(e) { return {}; }
+}
+function _ppSetMastery(qid, level) {
+  var m = _ppGetMastery();
+  if (!m[qid]) m[qid] = { m: level, t: Date.now(), n: 1 };
+  else { m[qid].m = level; m[qid].t = Date.now(); m[qid].n = (m[qid].n || 0) + 1; }
+  localStorage.setItem(_ppMasteryKey(), JSON.stringify(m));
+}
+function _ppGetQMastery(qid) {
+  var m = _ppGetMastery();
+  return m[qid] ? m[qid].m : null;
+}
+
+/* ═══ WRONG BOOK STORAGE ═══ */
+
+function _ppWBKey() { return 'pp_wrong_book'; }
+function _ppGetWB() {
+  try { return JSON.parse(localStorage.getItem(_ppWBKey())) || {}; } catch(e) { return {}; }
+}
+function _ppSaveWB(wb) { localStorage.setItem(_ppWBKey(), JSON.stringify(wb)); }
+
+function ppAddToWrongBook(qid, errorType, note) {
+  var wb = _ppGetWB();
+  if (!wb[qid]) {
+    wb[qid] = { addedAt: Date.now(), lastReview: null, reviewCount: 0,
+      errorType: errorType || '', note: note || '', status: 'active' };
+  } else {
+    wb[qid].errorType = errorType || wb[qid].errorType;
+    if (note) wb[qid].note = note;
+    wb[qid].status = 'active';
+  }
+  _ppSaveWB(wb);
+}
+function ppResolveWrongBook(qid) {
+  var wb = _ppGetWB();
+  if (wb[qid]) { wb[qid].status = 'resolved'; wb[qid].lastReview = Date.now(); }
+  _ppSaveWB(wb);
+}
+function ppRemoveFromWrongBook(qid) {
+  var wb = _ppGetWB();
+  delete wb[qid];
+  _ppSaveWB(wb);
+}
+
+/* ═══ EXAM HISTORY STORAGE ═══ */
+
+function _ppExamKey() { return 'pp_exam_history'; }
+function _ppGetExams() {
+  try { return JSON.parse(localStorage.getItem(_ppExamKey())) || []; } catch(e) { return []; }
+}
+function _ppSaveExam(exam) {
+  var list = _ppGetExams();
+  list.unshift(exam);
+  if (list.length > 50) list = list.slice(0, 50);
+  localStorage.setItem(_ppExamKey(), JSON.stringify(list));
+}
+
+/* ═══ HELPER: render tex safely ═══ */
+
+function _ppRenderTex(tex) {
+  /* Convert markdown-style bold and preserve line breaks */
+  var html = tex
+    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\n\n/g, '<br><br>')
+    .replace(/\n/g, '<br>');
+  return html;
+}
+
+function _ppDiffLabel(d) {
+  return d === 2 ? '<span class="pp-diff-badge pp-diff-ext">' + t('Extended', '\u62d3\u5c55') + '</span>'
+    : '<span class="pp-diff-badge pp-diff-core">' + t('Core', '\u57fa\u7840') + '</span>';
+}
+
+function _ppPartsInfo(q) {
+  if (!q.parts || !q.parts.length) return '';
+  return q.parts.map(function(p) { return p.label + ' ' + p.marks + (p.marks === 1 ? ' mark' : ' marks'); }).join('  \u00b7  ');
+}
+
+/* ═══ MASTERY STATS FOR A SECTION ═══ */
+
+function ppGetSectionStats(board, sectionId) {
+  var all = getPPBySection(board, sectionId);
+  var mastery = _ppGetMastery();
+  var wb = _ppGetWB();
+  var stats = { total: all.length, newQ: 0, needsWork: 0, partial: 0, mastered: 0, wrongActive: 0 };
+  for (var i = 0; i < all.length; i++) {
+    var qm = mastery[all[i].id];
+    if (!qm) stats.newQ++;
+    else if (qm.m === 'needs_work') stats.needsWork++;
+    else if (qm.m === 'partial') stats.partial++;
+    else if (qm.m === 'mastered') stats.mastered++;
+  }
+  /* Count active wrong book items for this section */
+  for (var qid in wb) {
+    if (wb[qid].status === 'active') {
+      var found = false;
+      for (var j = 0; j < all.length; j++) { if (all[j].id === qid) { found = true; break; } }
+      if (found) stats.wrongActive++;
+    }
+  }
+  return stats;
+}
+
+/* ═══ ENTRY POINT: START PAST PAPER ═══ */
+
+function startPastPaper(sectionId, board, mode) {
+  board = board || 'cie';
+  mode = mode || 'practice';
+
+  showToast(t('Loading past papers...', '\u52a0\u8f7d\u771f\u9898\u4e2d...'));
+
+  Promise.all([loadPastPaperData(board), loadKaTeX()]).then(function() {
+    var questions = getPPBySection(board, sectionId);
+    if (!questions.length) {
+      showToast(t('No past papers available for this section', '\u672c\u77e5\u8bc6\u70b9\u6682\u65e0\u771f\u9898'));
+      return;
+    }
+
+    if (mode === 'exam') {
+      ppShowExamSetup(sectionId, board, questions);
+    } else if (mode === 'wrongbook') {
+      ppShowWrongBook(sectionId, board);
+    } else {
+      _ppSession = {
+        questions: questions,
+        current: 0,
+        mode: 'practice',
+        board: board,
+        sectionId: sectionId,
+        results: []
+      };
+      showPanel('pastpaper');
+      renderPPCard();
+    }
+  }).catch(function(err) {
+    console.error('Past paper load error:', err);
+    showToast(t('Failed to load past papers', '\u52a0\u8f7d\u771f\u9898\u5931\u8d25'));
+  });
+}
+
+/* ═══ PRACTICE MODE ═══ */
+
+function renderPPCard() {
+  if (!_ppSession) return;
+  var el = E('panel-pastpaper');
+  if (!el) return;
+  var q = _ppSession.questions[_ppSession.current];
+  var total = _ppSession.questions.length;
+  var idx = _ppSession.current;
+  var mastery = _ppGetQMastery(q.id);
+
+  var html = '';
+
+  /* Header */
+  html += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">';
+  html += '<button class="btn btn-ghost btn-sm" onclick="ppBack()">\u2190 ' + t('Back', '\u8fd4\u56de') + '</button>';
+  html += '<div style="flex:1"></div>';
+  if (_ppSession.mode === 'exam') {
+    html += '<div class="pp-timer" id="pp-timer">00:00</div>';
+  }
+  html += '</div>';
+
+  /* Progress */
+  var pct = total > 0 ? Math.round(((idx + 1) / total) * 100) : 0;
+  html += '<div class="pp-progress">';
+  html += '<div class="pp-progress-bar"><div class="pp-progress-fill" style="width:' + pct + '%"></div></div>';
+  html += '<div class="pp-progress-text">' + (idx + 1) + '/' + total + '</div>';
+  html += '</div>';
+
+  /* Card */
+  html += '<div class="pp-card">';
+
+  /* Card header */
+  html += '<div class="pp-card-header">';
+  html += '<div>' + _ppDiffLabel(q.d) + ' <span class="pp-src">' + q.src + '</span></div>';
+  html += '<div class="pp-marks-badge">' + q.marks + (q.marks === 1 ? ' mark' : ' marks') + '</div>';
+  html += '</div>';
+
+  /* Card body: question */
+  html += '<div class="pp-card-body" id="pp-question-body">';
+  html += _ppRenderTex(q.tex);
+  if (q.hasFigure) {
+    html += '<div class="pp-figure-notice">' + t('This question includes a diagram — refer to original paper', '\u672c\u9898\u5305\u542b\u56fe\u8868\uff0c\u8bf7\u53c2\u8003\u539f\u5377') + '</div>';
+  }
+  html += '</div>';
+
+  /* Parts info */
+  var partsStr = _ppPartsInfo(q);
+  if (partsStr) {
+    html += '<div style="padding:8px 16px;font-size:12px;color:var(--c-muted);border-top:1px solid var(--c-border-light)">';
+    html += partsStr;
+    html += '</div>';
+  }
+
+  /* Mark Scheme toggle (practice mode only) */
+  if (_ppSession.mode === 'practice') {
+    html += '<div class="pp-ms-toggle" onclick="ppToggleMS()">';
+    html += '<span id="pp-ms-arrow">\u25b6</span> ' + t('Mark Scheme', '\u8bc4\u5206\u6807\u51c6');
+    html += '</div>';
+    html += '<div class="pp-ms-content" id="pp-ms-body">';
+    html += '<div style="text-align:center;color:var(--c-muted);padding:12px">';
+    html += t('Mark Scheme coming soon \u2014 use self-assessment for now', '\u8bc4\u5206\u6807\u51c6\u5373\u5c06\u63a8\u51fa\uff0c\u8bf7\u5148\u81ea\u8bc4');
+    html += '</div></div>';
+  }
+
+  html += '</div>'; /* end pp-card */
+
+  /* Self-assessment (practice mode) */
+  if (_ppSession.mode === 'practice') {
+    html += '<div style="margin-top:16px;max-width:640px;margin-inline:auto">';
+    html += '<div style="text-align:center;font-size:12px;color:var(--c-muted);margin-bottom:8px">';
+    html += t('How did you do?', '\u4f60\u505a\u5f97\u5982\u4f55\uff1f');
+    html += '</div>';
+    html += '<div class="pp-rate-row">';
+    html += '<button class="pp-rate-btn needs-work' + (mastery === 'needs_work' ? ' selected' : '') + '" onclick="ppRate(\'needs_work\')">';
+    html += '\ud83d\udd34 ' + t('Needs Work', '\u8fd8\u6709\u95ee\u9898') + '</button>';
+    html += '<button class="pp-rate-btn partial' + (mastery === 'partial' ? ' selected' : '') + '" onclick="ppRate(\'partial\')">';
+    html += '\ud83d\udfe1 ' + t('Partial', '\u90e8\u5206\u638c\u63e1') + '</button>';
+    html += '<button class="pp-rate-btn mastered' + (mastery === 'mastered' ? ' selected' : '') + '" onclick="ppRate(\'mastered\')">';
+    html += '\u2705 ' + t('Mastered', '\u5df2\u638c\u63e1') + '</button>';
+    html += '</div></div>';
+  }
+
+  /* Exam mode: flag + submit */
+  if (_ppSession.mode === 'exam') {
+    var flagged = _ppSession.results[idx] && _ppSession.results[idx].flagged;
+    html += '<div style="margin-top:16px;max-width:640px;margin-inline:auto;text-align:center">';
+    html += '<label style="cursor:pointer;font-size:13px;color:var(--c-muted)">';
+    html += '<input type="checkbox" id="pp-flag-cb"' + (flagged ? ' checked' : '') + ' onchange="ppToggleFlag()"> ';
+    html += '\u2753 ' + t('Mark as unsure', '\u6807\u8bb0\u4e0d\u786e\u5b9a');
+    html += '</label></div>';
+
+    /* Nav dots */
+    html += '<div class="pp-nav-dots">';
+    for (var di = 0; di < total; di++) {
+      var dotCls = 'pp-dot';
+      if (di === idx) dotCls += ' current';
+      if (_ppSession.results[di] && _ppSession.results[di].flagged) dotCls += ' flagged';
+      html += '<div class="' + dotCls + '" onclick="ppGoTo(' + di + ')">' + (di + 1) + '</div>';
+    }
+    html += '</div>';
+  }
+
+  /* Navigation */
+  html += '<div class="pp-nav-row">';
+  html += '<button class="pp-nav-btn" onclick="ppPrev()"' + (idx === 0 ? ' disabled style="opacity:0.4;pointer-events:none"' : '') + '>';
+  html += '\u2190 ' + t('Previous', '\u4e0a\u4e00\u9898') + '</button>';
+  if (_ppSession.mode === 'exam' && idx === total - 1) {
+    html += '<button class="pp-nav-btn primary" onclick="ppSubmitExam()">';
+    html += '\u270b ' + t('Submit', '\u4ea4\u5377') + '</button>';
+  } else {
+    html += '<button class="pp-nav-btn primary" onclick="ppNext()">';
+    html += t('Next', '\u4e0b\u4e00\u9898') + ' \u2192</button>';
+  }
+  html += '</div>';
+
+  el.innerHTML = html;
+
+  /* KaTeX render */
+  var qBody = document.getElementById('pp-question-body');
+  if (qBody) renderMath(qBody);
+
+  /* Start exam timer */
+  if (_ppSession.mode === 'exam' && !_ppTimer) {
+    _ppStartTimer();
+  }
+}
+
+function ppToggleMS() {
+  var body = document.getElementById('pp-ms-body');
+  var arrow = document.getElementById('pp-ms-arrow');
+  if (!body) return;
+  body.classList.toggle('show');
+  if (arrow) arrow.textContent = body.classList.contains('show') ? '\u25bc' : '\u25b6';
+}
+
+function ppRate(level) {
+  if (!_ppSession || _ppSession.mode !== 'practice') return;
+  var q = _ppSession.questions[_ppSession.current];
+  _ppSetMastery(q.id, level);
+
+  /* Auto-add to wrong book if needs_work */
+  if (level === 'needs_work') {
+    ppAddToWrongBook(q.id, '', '');
+  } else if (level === 'mastered') {
+    ppResolveWrongBook(q.id);
+  }
+
+  /* Auto-advance after short delay */
+  setTimeout(function() {
+    if (_ppSession && _ppSession.current < _ppSession.questions.length - 1) {
+      ppNext();
+    } else {
+      renderPPCard(); /* re-render to show updated state */
+    }
+  }, 300);
+}
+
+function ppPrev() {
+  if (!_ppSession || _ppSession.current <= 0) return;
+  _ppSession.current--;
+  renderPPCard();
+}
+
+function ppNext() {
+  if (!_ppSession) return;
+  if (_ppSession.current < _ppSession.questions.length - 1) {
+    _ppSession.current++;
+    renderPPCard();
+  }
+}
+
+function ppGoTo(idx) {
+  if (!_ppSession || idx < 0 || idx >= _ppSession.questions.length) return;
+  _ppSession.current = idx;
+  renderPPCard();
+}
+
+function ppBack() {
+  if (_ppTimer) { clearInterval(_ppTimer); _ppTimer = null; }
+  _ppSession = null;
+  showPanel('section');
+}
+
+/* ═══ EXAM MODE ═══ */
+
+function ppShowExamSetup(sectionId, board, questions) {
+  var el = E('panel-pastpaper');
+  if (!el) return;
+
+  var totalMarks = 0;
+  for (var i = 0; i < questions.length; i++) totalMarks += questions[i].marks;
+  var refTime = totalMarks; /* 1 min per mark */
+
+  var html = '';
+  html += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:20px">';
+  html += '<button class="btn btn-ghost btn-sm" onclick="ppBack()">\u2190 ' + t('Back', '\u8fd4\u56de') + '</button>';
+  html += '</div>';
+
+  html += '<div class="pp-setup">';
+  html += '<h3>\u23f1 ' + t('Exam Mode', '\u5b9e\u6218\u6a21\u5f0f') + '</h3>';
+  html += '<p style="color:var(--c-text2);margin-bottom:20px">' + t('Section', '\u77e5\u8bc6\u70b9') + ' ' + sectionId + ' \u00b7 ' + questions.length + ' ' + t('questions', '\u9898') + '</p>';
+
+  /* Question count selector */
+  html += '<div class="pp-setup-row">';
+  html += '<span>' + t('Questions', '\u9898\u91cf') + '</span>';
+  html += '<div class="pp-setup-options" id="pp-exam-count">';
+  var counts = [10, 20, questions.length];
+  for (var ci = 0; ci < counts.length; ci++) {
+    var c = counts[ci];
+    if (c > questions.length) continue;
+    var label = c === questions.length ? t('All', '\u5168\u90e8') + ' (' + c + ')' : '' + c;
+    var active = ci === 0 ? ' active' : '';
+    html += '<div class="pp-setup-opt' + active + '" onclick="ppSetupCount(this,' + c + ')">' + label + '</div>';
+  }
+  html += '</div></div>';
+
+  /* Reference time */
+  var defaultCount = Math.min(10, questions.length);
+  var defaultMarks = 0;
+  var shuffled = questions.slice().sort(function() { return Math.random() - 0.5; });
+  for (var mi = 0; mi < defaultCount && mi < shuffled.length; mi++) defaultMarks += shuffled[mi].marks;
+  html += '<div class="pp-setup-row">';
+  html += '<span>' + t('Reference time', '\u53c2\u8003\u65f6\u95f4') + '</span>';
+  html += '<span id="pp-exam-time" style="font-weight:600">\u2248 ' + defaultMarks + ' min</span>';
+  html += '</div>';
+
+  html += '<div style="margin-top:24px">';
+  html += '<button class="btn btn-primary" onclick="ppStartExam(\'' + sectionId + '\',\'' + board + '\')" style="padding:12px 32px;font-size:15px">';
+  html += '\u25b6 ' + t('Start Exam', '\u5f00\u59cb\u5b9e\u6218') + '</button>';
+  html += '</div>';
+
+  html += '</div>';
+
+  el.innerHTML = html;
+  showPanel('pastpaper');
+
+  /* Store setup state */
+  window._ppSetupBoard = board;
+  window._ppSetupSection = sectionId;
+  window._ppSetupCount = defaultCount;
+  window._ppSetupQuestions = questions;
+}
+
+function ppSetupCount(el, count) {
+  var opts = el.parentElement.querySelectorAll('.pp-setup-opt');
+  for (var i = 0; i < opts.length; i++) opts[i].classList.remove('active');
+  el.classList.add('active');
+  window._ppSetupCount = count;
+
+  /* Update reference time */
+  var questions = window._ppSetupQuestions || [];
+  var shuffled = questions.slice().sort(function() { return Math.random() - 0.5; });
+  var marks = 0;
+  for (var j = 0; j < count && j < shuffled.length; j++) marks += shuffled[j].marks;
+  var timeEl = document.getElementById('pp-exam-time');
+  if (timeEl) timeEl.textContent = '\u2248 ' + marks + ' min';
+}
+
+function ppStartExam(sectionId, board) {
+  var questions = window._ppSetupQuestions || [];
+  var count = window._ppSetupCount || 10;
+
+  /* Shuffle and select */
+  var selected = questions.slice().sort(function() { return Math.random() - 0.5; }).slice(0, count);
+
+  _ppSession = {
+    questions: selected,
+    current: 0,
+    mode: 'exam',
+    board: board,
+    sectionId: sectionId,
+    startTime: Date.now(),
+    results: [],
+    totalMarks: 0
+  };
+
+  /* Calculate total marks */
+  for (var i = 0; i < selected.length; i++) {
+    _ppSession.totalMarks += selected[i].marks;
+    _ppSession.results.push({ flagged: false, scored: null, status: null, errorType: '' });
+  }
+
+  renderPPCard();
+}
+
+function _ppStartTimer() {
+  if (_ppTimer) clearInterval(_ppTimer);
+  _ppTimer = setInterval(function() {
+    if (!_ppSession || _ppSession.mode !== 'exam') { clearInterval(_ppTimer); _ppTimer = null; return; }
+    var elapsed = Math.floor((Date.now() - _ppSession.startTime) / 1000);
+    var min = Math.floor(elapsed / 60);
+    var sec = elapsed % 60;
+    var timerEl = document.getElementById('pp-timer');
+    if (timerEl) {
+      timerEl.textContent = (min < 10 ? '0' : '') + min + ':' + (sec < 10 ? '0' : '') + sec;
+      /* Warning at reference time */
+      var refSec = _ppSession.totalMarks * 60;
+      if (elapsed > refSec * 1.2) timerEl.className = 'pp-timer danger';
+      else if (elapsed > refSec) timerEl.className = 'pp-timer warning';
+      else timerEl.className = 'pp-timer';
+    }
+  }, 1000);
+}
+
+function ppToggleFlag() {
+  if (!_ppSession) return;
+  var idx = _ppSession.current;
+  if (!_ppSession.results[idx]) _ppSession.results[idx] = { flagged: false };
+  _ppSession.results[idx].flagged = !_ppSession.results[idx].flagged;
+}
+
+function ppSubmitExam() {
+  if (!_ppSession || _ppSession.mode !== 'exam') return;
+  if (_ppTimer) { clearInterval(_ppTimer); _ppTimer = null; }
+  var duration = Math.floor((Date.now() - _ppSession.startTime) / 1000);
+  _ppSession.duration = duration;
+  ppShowMarking();
+}
+
+/* ═══ MARKING ═══ */
+
+function ppShowMarking() {
+  if (!_ppSession) return;
+  var el = E('panel-pastpaper');
+  if (!el) return;
+
+  var qs = _ppSession.questions;
+  var duration = _ppSession.duration || 0;
+  var min = Math.floor(duration / 60);
+  var sec = duration % 60;
+
+  var html = '';
+  html += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">';
+  html += '<h3 style="margin:0;flex:1">' + t('Mark Your Answers', '\u6279\u6539\u7b54\u5377') + '</h3>';
+  html += '<div class="pp-src">\u23f1 ' + min + ':' + (sec < 10 ? '0' : '') + sec + '</div>';
+  html += '</div>';
+
+  for (var i = 0; i < qs.length; i++) {
+    var q = qs[i];
+    var r = _ppSession.results[i] || {};
+
+    html += '<div class="pp-mark-item" id="pp-mark-' + i + '">';
+
+    /* Header */
+    html += '<div class="pp-mark-header" onclick="ppToggleMarkBody(' + i + ')">';
+    html += '<div><strong>Q' + (i + 1) + '</strong> <span class="pp-src">' + q.src + '</span> ';
+    html += '<span class="pp-marks-badge">' + q.marks + (q.marks === 1 ? ' mk' : ' mks') + '</span>';
+    if (r.flagged) html += ' \u2753';
+    html += '</div>';
+    html += '<div id="pp-mark-status-' + i + '" style="font-size:13px"></div>';
+    html += '</div>';
+
+    /* Body (collapsed by default) */
+    html += '<div class="pp-mark-body" id="pp-mark-body-' + i + '" style="display:none">';
+
+    /* Question preview */
+    html += '<div style="font-size:13px;line-height:1.6;margin-bottom:12px;max-height:120px;overflow:auto" class="pp-mark-tex">';
+    html += _ppRenderTex(q.tex);
+    html += '</div>';
+
+    /* Self-assessment */
+    html += '<div class="pp-rate-row" style="margin-bottom:8px">';
+    html += '<button class="pp-rate-btn mastered" onclick="ppMarkRate(' + i + ',\'correct\',this)">\u2705 ' + t('All correct', '\u5168\u5bf9') + '</button>';
+    html += '<button class="pp-rate-btn partial" onclick="ppMarkRate(' + i + ',\'partial\',this)">\ud83d\udfe1 ' + t('Partial', '\u90e8\u5206') + '</button>';
+    html += '<button class="pp-rate-btn needs-work" onclick="ppMarkRate(' + i + ',\'wrong\',this)">\ud83d\udd34 ' + t('Wrong', '\u9519\u8bef') + '</button>';
+    html += '</div>';
+
+    /* Score input */
+    html += '<div class="pp-mark-score">';
+    html += '<span style="font-size:13px">' + t('Score', '\u5f97\u5206') + ':</span>';
+    html += '<input type="number" min="0" max="' + q.marks + '" id="pp-score-' + i + '" onchange="ppScoreChange(' + i + ',' + q.marks + ')" placeholder="0">';
+    html += '<span style="font-size:13px">/ ' + q.marks + '</span>';
+    html += '</div>';
+
+    /* Error type chips */
+    html += '<div style="margin-top:8px;font-size:12px;color:var(--c-muted)">' + t('Error type', '\u9519\u56e0') + ':</div>';
+    html += '<div class="pp-error-chips">';
+    for (var ei = 0; ei < PP_ERROR_TYPES.length; ei++) {
+      var et = PP_ERROR_TYPES[ei];
+      html += '<span class="pp-error-chip" data-err="' + et.id + '" data-qi="' + i + '" onclick="ppToggleError(this)">';
+      html += t(et.en, et.zh) + '</span>';
+    }
+    html += '</div>';
+
+    html += '</div>'; /* end mark-body */
+    html += '</div>'; /* end mark-item */
+  }
+
+  /* Submit marking */
+  html += '<div style="text-align:center;margin-top:20px;padding-bottom:40px">';
+  html += '<button class="btn btn-primary" onclick="ppFinishMarking()" style="padding:12px 32px;font-size:15px">';
+  html += '\ud83d\udcca ' + t('See Results', '\u67e5\u770b\u7ed3\u679c') + '</button>';
+  html += '</div>';
+
+  el.innerHTML = html;
+
+  /* Render KaTeX in all question previews */
+  var texEls = el.querySelectorAll('.pp-mark-tex');
+  for (var ti = 0; ti < texEls.length; ti++) renderMath(texEls[ti]);
+}
+
+function ppToggleMarkBody(idx) {
+  var body = document.getElementById('pp-mark-body-' + idx);
+  if (body) body.style.display = body.style.display === 'none' ? 'block' : 'none';
+}
+
+function ppMarkRate(idx, status, btn) {
+  if (!_ppSession) return;
+  _ppSession.results[idx] = _ppSession.results[idx] || {};
+  _ppSession.results[idx].status = status;
+
+  /* Update score based on status */
+  var q = _ppSession.questions[idx];
+  var scoreInput = document.getElementById('pp-score-' + idx);
+  if (status === 'correct') {
+    _ppSession.results[idx].scored = q.marks;
+    if (scoreInput) scoreInput.value = q.marks;
+  } else if (status === 'wrong') {
+    _ppSession.results[idx].scored = 0;
+    if (scoreInput) scoreInput.value = 0;
+  }
+
+  /* Update status display */
+  var statusEl = document.getElementById('pp-mark-status-' + idx);
+  if (statusEl) {
+    var labels = { correct: '\u2705', partial: '\ud83d\udfe1', wrong: '\ud83d\udd34' };
+    statusEl.textContent = labels[status] || '';
+  }
+
+  /* Highlight active button */
+  var row = btn.parentElement;
+  var btns = row.querySelectorAll('.pp-rate-btn');
+  for (var i = 0; i < btns.length; i++) btns[i].style.opacity = '0.5';
+  btn.style.opacity = '1';
+}
+
+function ppScoreChange(idx, maxMarks) {
+  if (!_ppSession) return;
+  var input = document.getElementById('pp-score-' + idx);
+  if (!input) return;
+  var val = parseInt(input.value) || 0;
+  if (val < 0) val = 0;
+  if (val > maxMarks) val = maxMarks;
+  input.value = val;
+  _ppSession.results[idx] = _ppSession.results[idx] || {};
+  _ppSession.results[idx].scored = val;
+
+  /* Auto-set status */
+  if (val === maxMarks) _ppSession.results[idx].status = 'correct';
+  else if (val === 0) _ppSession.results[idx].status = 'wrong';
+  else _ppSession.results[idx].status = 'partial';
+}
+
+function ppToggleError(el) {
+  el.classList.toggle('selected');
+  var idx = parseInt(el.getAttribute('data-qi'));
+  var errId = el.getAttribute('data-err');
+  if (!_ppSession) return;
+  _ppSession.results[idx] = _ppSession.results[idx] || {};
+  _ppSession.results[idx].errorType = errId;
+}
+
+function ppFinishMarking() {
+  if (!_ppSession) return;
+
+  var qs = _ppSession.questions;
+  var totalMarks = _ppSession.totalMarks;
+  var scored = 0;
+  var conceptErrors = {};
+
+  for (var i = 0; i < qs.length; i++) {
+    var r = _ppSession.results[i] || {};
+    var s = r.scored != null ? r.scored : 0;
+    scored += s;
+
+    /* Auto-add wrong/partial to wrong book */
+    if (r.status === 'wrong' || r.status === 'partial') {
+      ppAddToWrongBook(qs[i].id, r.errorType || '', '');
+      _ppSetMastery(qs[i].id, r.status === 'wrong' ? 'needs_work' : 'partial');
+    } else if (r.status === 'correct') {
+      _ppSetMastery(qs[i].id, 'mastered');
+      ppResolveWrongBook(qs[i].id);
+    }
+
+    /* Concept analysis */
+    var qtype = qs[i].qtype || 'other';
+    if (!conceptErrors[qtype]) conceptErrors[qtype] = { total: 0, scored: 0 };
+    conceptErrors[qtype].total += qs[i].marks;
+    conceptErrors[qtype].scored += s;
+  }
+
+  /* Save exam record */
+  var examRecord = {
+    id: 'exam-' + Date.now(),
+    section: _ppSession.sectionId,
+    date: Date.now(),
+    duration: _ppSession.duration || 0,
+    totalMarks: totalMarks,
+    scored: scored,
+    questions: qs.map(function(q, i) {
+      var r = _ppSession.results[i] || {};
+      return { qid: q.id, marks: q.marks, scored: r.scored || 0, status: r.status || '', errorType: r.errorType || '' };
+    })
+  };
+  _ppSaveExam(examRecord);
+
+  /* Show results */
+  ppShowResults(examRecord, conceptErrors);
+}
+
+/* ═══ RESULTS ═══ */
+
+function ppShowResults(exam, conceptErrors) {
+  var el = E('panel-pastpaper');
+  if (!el) return;
+
+  var pct = exam.totalMarks > 0 ? Math.round((exam.scored / exam.totalMarks) * 100) : 0;
+  var pctClass = pct >= 70 ? 'good' : pct >= 40 ? 'ok' : 'low';
+  var min = Math.floor(exam.duration / 60);
+  var sec = exam.duration % 60;
+
+  var html = '';
+  html += '<div class="pp-results">';
+
+  /* Score header */
+  html += '<div class="pp-results-score">';
+  html += '<h2>' + t('Results', '\u7ed3\u679c') + '</h2>';
+  html += '<div class="pp-results-pct ' + pctClass + '">' + exam.scored + ' / ' + exam.totalMarks + ' (' + pct + '%)</div>';
+  html += '<div class="pp-results-time">\u23f1 ' + min + ':' + (sec < 10 ? '0' : '') + sec + '</div>';
+  html += '</div>';
+
+  /* Concept breakdown */
+  var concepts = Object.keys(conceptErrors).sort(function(a, b) {
+    var ra = conceptErrors[a].scored / conceptErrors[a].total;
+    var rb = conceptErrors[b].scored / conceptErrors[b].total;
+    return ra - rb;
+  });
+
+  if (concepts.length > 0) {
+    html += '<h4 style="margin:20px 0 12px">' + t('By Question Type', '\u6309\u9898\u578b\u5206\u6790') + '</h4>';
+    for (var ci = 0; ci < concepts.length; ci++) {
+      var c = concepts[ci];
+      var ce = conceptErrors[c];
+      var cpct = Math.round((ce.scored / ce.total) * 100);
+      var icon = cpct >= 80 ? '\u2705' : cpct >= 40 ? '\ud83d\udfe1' : '\ud83d\udd34';
+      html += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;font-size:13px">';
+      html += '<span>' + icon + '</span>';
+      html += '<span style="flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">' + c + '</span>';
+      html += '<span style="font-weight:600;font-family:var(--font-mono)">' + ce.scored + '/' + ce.total + '</span>';
+      html += '</div>';
+    }
+  }
+
+  /* Action buttons */
+  html += '<div style="display:flex;gap:12px;justify-content:center;margin-top:24px;flex-wrap:wrap;padding-bottom:40px">';
+  if (_ppSession) {
+    html += '<button class="btn btn-ghost" onclick="ppShowWrongBook(\'' + _ppSession.sectionId + '\',\'' + _ppSession.board + '\')">';
+    html += '\ud83d\udcd5 ' + t('Wrong Book', '\u9519\u9898\u672c') + '</button>';
+    html += '<button class="btn btn-primary" onclick="ppStartExam(\'' + _ppSession.sectionId + '\',\'' + _ppSession.board + '\')">';
+    html += '\ud83d\udd04 ' + t('Try Again', '\u518d\u6765\u4e00\u8f6e') + '</button>';
+  }
+  html += '<button class="btn btn-ghost" onclick="ppBack()">' + t('Back to Section', '\u8fd4\u56de\u77e5\u8bc6\u70b9') + '</button>';
+  html += '</div>';
+
+  html += '</div>';
+
+  el.innerHTML = html;
+}
+
+/* ═══ WRONG BOOK ═══ */
+
+function ppShowWrongBook(sectionId, board) {
+  board = board || 'cie';
+
+  Promise.all([loadPastPaperData(board), loadKaTeX()]).then(function() {
+    var el = E('panel-pastpaper');
+    if (!el) return;
+
+    var wb = _ppGetWB();
+    var allQ = getPPBySection(board, sectionId);
+    var wrongItems = [];
+
+    for (var i = 0; i < allQ.length; i++) {
+      var q = allQ[i];
+      if (wb[q.id] && wb[q.id].status === 'active') {
+        wrongItems.push({ q: q, wb: wb[q.id] });
+      }
+    }
+
+    var html = '';
+    html += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:16px">';
+    html += '<button class="btn btn-ghost btn-sm" onclick="ppBack()">\u2190 ' + t('Back', '\u8fd4\u56de') + '</button>';
+    html += '<h3 style="margin:0;flex:1">\ud83d\udcd5 ' + t('Wrong Book', '\u9519\u9898\u672c') + '</h3>';
+    html += '</div>';
+
+    if (wrongItems.length === 0) {
+      html += '<div class="pp-empty">';
+      html += '<div class="pp-empty-icon">\ud83c\udf89</div>';
+      html += '<div style="font-size:16px;font-weight:600;margin-bottom:8px">' + t('All clear!', '\u5168\u90e8\u89e3\u51b3\uff01') + '</div>';
+      html += '<div>' + t('No questions to review \u2014 keep up the great work!', '\u6ca1\u6709\u5f85\u590d\u4e60\u7684\u9898\u76ee\uff0c\u7ee7\u7eed\u4fdd\u6301\uff01') + '</div>';
+      html += '</div>';
+    } else {
+      html += '<p style="color:var(--c-text2);font-size:13px;margin-bottom:16px">';
+      html += wrongItems.length + ' ' + t('questions to review', '\u9898\u5f85\u590d\u4e60');
+      html += '</p>';
+
+      for (var wi = 0; wi < wrongItems.length; wi++) {
+        var item = wrongItems[wi];
+        var errLabel = '';
+        for (var ei = 0; ei < PP_ERROR_TYPES.length; ei++) {
+          if (PP_ERROR_TYPES[ei].id === item.wb.errorType) {
+            errLabel = t(PP_ERROR_TYPES[ei].en, PP_ERROR_TYPES[ei].zh);
+            break;
+          }
+        }
+
+        html += '<div class="pp-wrong-item" onclick="ppReviewWrongItem(\'' + item.q.id + '\',\'' + sectionId + '\',\'' + board + '\')">';
+        html += '<div style="font-size:20px">\ud83d\udd34</div>';
+        html += '<div class="pp-wrong-meta">';
+        html += '<div style="font-size:13px;font-weight:600">' + item.q.src + ' <span class="pp-marks-badge">' + item.q.marks + ' mks</span></div>';
+        var noteText = errLabel || item.wb.note || '';
+        if (noteText) html += '<div class="pp-wrong-note">' + noteText + '</div>';
+        html += '</div>';
+        html += '<div style="font-size:12px;color:var(--c-muted)">\u00d7' + (item.wb.reviewCount || 0) + '</div>';
+        html += '</div>';
+      }
+
+      /* Review all button */
+      html += '<div style="text-align:center;margin-top:20px;padding-bottom:40px">';
+      html += '<button class="btn btn-primary" onclick="ppStartWrongBookReview(\'' + sectionId + '\',\'' + board + '\')" style="padding:10px 28px">';
+      html += '\ud83d\udd04 ' + t('Review All', '\u5168\u90e8\u590d\u4e60') + ' (' + wrongItems.length + ')</button>';
+      html += '</div>';
+    }
+
+    el.innerHTML = html;
+    showPanel('pastpaper');
+  });
+}
+
+function ppReviewWrongItem(qid, sectionId, board) {
+  /* Start practice mode with just this one question */
+  Promise.all([loadPastPaperData(board), loadKaTeX()]).then(function() {
+    var allQ = getPPBySection(board, sectionId);
+    var q = null;
+    for (var i = 0; i < allQ.length; i++) {
+      if (allQ[i].id === qid) { q = allQ[i]; break; }
+    }
+    if (!q) return;
+
+    /* Update review count */
+    var wb = _ppGetWB();
+    if (wb[qid]) { wb[qid].reviewCount = (wb[qid].reviewCount || 0) + 1; wb[qid].lastReview = Date.now(); }
+    _ppSaveWB(wb);
+
+    _ppSession = {
+      questions: [q],
+      current: 0,
+      mode: 'practice',
+      board: board,
+      sectionId: sectionId,
+      results: []
+    };
+    showPanel('pastpaper');
+    renderPPCard();
+  });
+}
+
+function ppStartWrongBookReview(sectionId, board) {
+  Promise.all([loadPastPaperData(board), loadKaTeX()]).then(function() {
+    var wb = _ppGetWB();
+    var allQ = getPPBySection(board, sectionId);
+    var wrongQs = [];
+
+    for (var i = 0; i < allQ.length; i++) {
+      if (wb[allQ[i].id] && wb[allQ[i].id].status === 'active') {
+        wrongQs.push(allQ[i]);
+        /* Update review count */
+        wb[allQ[i].id].reviewCount = (wb[allQ[i].id].reviewCount || 0) + 1;
+        wb[allQ[i].id].lastReview = Date.now();
+      }
+    }
+    _ppSaveWB(wb);
+
+    if (!wrongQs.length) {
+      showToast(t('No questions to review!', '\u6ca1\u6709\u5f85\u590d\u4e60\u7684\u9898\u76ee\uff01'));
+      return;
+    }
+
+    _ppSession = {
+      questions: wrongQs,
+      current: 0,
+      mode: 'practice',
+      board: board,
+      sectionId: sectionId,
+      results: []
+    };
+    showPanel('pastpaper');
+    renderPPCard();
+  });
+}
+
+/* ═══ WRONG BOOK REMINDER (Toast on home) ═══ */
+
+function ppCheckWrongBookReminder() {
+  var wb = _ppGetWB();
+  var now = Date.now();
+  var threeDays = 3 * 24 * 60 * 60 * 1000;
+  var activeCount = 0;
+  var needsReminder = false;
+
+  for (var qid in wb) {
+    if (wb[qid].status !== 'active') continue;
+    activeCount++;
+    var lastReview = wb[qid].lastReview || wb[qid].addedAt;
+    if (now - lastReview > threeDays) needsReminder = true;
+  }
+
+  if (needsReminder && activeCount > 0) {
+    setTimeout(function() {
+      showToast(t(
+        activeCount + ' past paper questions need review \ud83d\udcd5',
+        activeCount + ' \u9053\u771f\u9898\u5f85\u590d\u4e60 \ud83d\udcd5'
+      ), 4000);
+    }, 2000);
+  }
+}
