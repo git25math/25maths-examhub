@@ -52,7 +52,9 @@ function renderMath(el) {
     window.renderMathInElement(el, {
       delimiters: [
         { left: '$$', right: '$$', display: true },
-        { left: '$', right: '$', display: false }
+        { left: '\\[', right: '\\]', display: true },
+        { left: '$', right: '$', display: false },
+        { left: '\\(', right: '\\)', display: false }
       ],
       throwOnError: false
     });
@@ -1060,11 +1062,8 @@ function _ppSaveExam(exam) {
 /* ═══ HELPER: render tex safely ═══ */
 
 function _ppRenderTex(tex) {
-  /* Convert markdown-style bold and preserve line breaks */
-  var html = tex
-    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-    .replace(/\n\n/g, '<br><br>')
-    .replace(/\n/g, '<br>');
+  /* Convert markdown bold; keep \n intact (CSS white-space: pre-line handles display) */
+  var html = tex.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
   return html;
 }
 
@@ -1076,6 +1075,21 @@ function _ppDiffLabel(d) {
 function _ppPartsInfo(q) {
   if (!q.parts || !q.parts.length) return '';
   return q.parts.map(function(p) { return p.label + ' ' + p.marks + (p.marks === 1 ? ' mark' : ' marks'); }).join('  \u00b7  ');
+}
+
+/* ═══ GROUP LABELS ═══ */
+var _ppGroupLabels = {
+  'simul-linear':    { en: 'Simultaneous (Linear)',    zh: '\u8054\u7acb\u4e00\u6b21\u65b9\u7a0b' },
+  'simul-nonlinear': { en: 'Simultaneous (Nonlinear)', zh: '\u8054\u7acb\u975e\u7ebf\u6027\u65b9\u7a0b' },
+  'rearrange':       { en: 'Change of Subject',        zh: '\u516c\u5f0f\u53d8\u5f62' },
+  'quadratic':       { en: 'Quadratic Equations',      zh: '\u4e8c\u6b21\u65b9\u7a0b' },
+  'linear':          { en: 'Linear Equations',          zh: '\u4e00\u6b21\u65b9\u7a0b' },
+  'mixed':           { en: 'Mixed / Other',             zh: '\u7efc\u5408\u8fd0\u7528' }
+};
+
+function _ppGroupLabel(gk) {
+  var gl = _ppGroupLabels[gk];
+  return gl ? t(gl.en, gl.zh) : gk;
 }
 
 /* ═══ MASTERY STATS FOR A SECTION ═══ */
@@ -1105,7 +1119,7 @@ function ppGetSectionStats(board, sectionId) {
 
 /* ═══ ENTRY POINT: START PAST PAPER ═══ */
 
-function startPastPaper(sectionId, board, mode) {
+function startPastPaper(sectionId, board, mode, groupFilter) {
   board = board || 'cie';
   mode = mode || 'practice';
 
@@ -1113,6 +1127,10 @@ function startPastPaper(sectionId, board, mode) {
 
   Promise.all([loadPastPaperData(board), loadKaTeX()]).then(function() {
     var questions = getPPBySection(board, sectionId);
+    /* Apply group filter if specified */
+    if (groupFilter) {
+      questions = questions.filter(function(q) { return q.g === groupFilter; });
+    }
     if (!questions.length) {
       showToast(t('No past papers available for this section', '\u672c\u77e5\u8bc6\u70b9\u6682\u65e0\u771f\u9898'));
       return;
@@ -1129,6 +1147,7 @@ function startPastPaper(sectionId, board, mode) {
         mode: 'practice',
         board: board,
         sectionId: sectionId,
+        groupFilter: groupFilter || null,
         results: []
       };
       showPanel('pastpaper');
@@ -1169,6 +1188,14 @@ function renderPPCard() {
   html += '<div class="pp-progress-text">' + (idx + 1) + '/' + total + '</div>';
   html += '</div>';
 
+  /* Group filter label + qtype tag */
+  if (_ppSession.groupFilter) {
+    html += '<div style="text-align:center;margin-bottom:8px">';
+    html += '<span class="pp-error-chip selected" style="font-size:12px">' + _ppGroupLabel(_ppSession.groupFilter) + '</span>';
+    html += ' <span style="font-size:11px;color:var(--c-muted);cursor:pointer;text-decoration:underline" onclick="ppClearFilter()">' + t('Show all', '\u663e\u793a\u5168\u90e8') + '</span>';
+    html += '</div>';
+  }
+
   /* Card */
   html += '<div class="pp-card">';
 
@@ -1177,6 +1204,11 @@ function renderPPCard() {
   html += '<div>' + _ppDiffLabel(q.d) + ' <span class="pp-src">' + q.src + '</span></div>';
   html += '<div class="pp-marks-badge">' + q.marks + (q.marks === 1 ? ' mark' : ' marks') + '</div>';
   html += '</div>';
+
+  /* Question type tag */
+  if (q.g && _ppGroupLabels[q.g]) {
+    html += '<div style="padding:4px 16px 0;font-size:11px;color:var(--c-muted)">' + _ppGroupLabel(q.g) + '</div>';
+  }
 
   /* Card body: question */
   html += '<div class="pp-card-body" id="pp-question-body">';
@@ -1322,6 +1354,11 @@ function ppBack() {
   if (_ppTimer) { clearInterval(_ppTimer); _ppTimer = null; }
   _ppSession = null;
   showPanel('section');
+}
+
+function ppClearFilter() {
+  if (!_ppSession) return;
+  startPastPaper(_ppSession.sectionId, _ppSession.board, _ppSession.mode, null);
 }
 
 /* ═══ EXAM MODE ═══ */

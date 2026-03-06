@@ -2986,7 +2986,7 @@ input { font-family: inherit; }
   overflow: hidden; background: var(--c-surface); border: 1px solid var(--c-border-light); }
 .pp-card-header { display: flex; align-items: center; justify-content: space-between;
   padding: 12px 16px; border-bottom: 1px solid var(--c-border-light); }
-.pp-card-body { padding: 16px; font-size: 14px; line-height: 1.8; }
+.pp-card-body { padding: 16px; font-size: 14px; line-height: 1.8; white-space: pre-line; }
 .pp-card-body .katex-display { margin: 12px 0; }
 .pp-card-footer { display: flex; align-items: center; justify-content: space-between;
   padding: 12px 16px; border-top: 1px solid var(--c-border-light); gap: 8px; }

@@ -26,33 +26,13 @@ def clean_latex(raw):
     """Clean question_text from IGCSE_v2 format to KaTeX-renderable LaTeX."""
     tex = raw
 
-    # 1. Remove \begin{question}{n} ... \end{question} wrapper
+    # === Phase 1: Remove structural wrappers ===
+
+    # \begin{question}{n} ... \end{question}
     tex = re.sub(r'\\begin\{question\}\{\d+\}\s*', '', tex)
     tex = re.sub(r'\\end\{question\}\s*$', '', tex)
 
-    # 2. Remove \Marks{n} (we extract marks from metadata)
-    tex = re.sub(r'\\Marks\{\d+\}', '', tex)
-
-    # 3. Remove \AnswerLine (all variants: [][] / [] / bare)
-    tex = re.sub(r'\\AnswerLine(?:Short)?(?:\[.*?\])*', '', tex)
-
-    # 4. Remove \answerlines[n]
-    tex = re.sub(r'\\answerlines(?:\[\d+\])?', '', tex)
-
-    # 5. Remove \Answerspace[...]
-    tex = re.sub(r'\\Answerspace(?:\[.*?\])?', '', tex)
-
-    # 6. \textdollar → $
-    tex = tex.replace('\\textdollar', '\\$')
-
-    # 7. \par\par → double newline, \par → newline
-    tex = tex.replace('\\par\\par', '\n\n')
-    tex = tex.replace('\\par', '\n')
-
-    # 8. \vgap → blank line
-    tex = re.sub(r'\\vgap(?:\[.*?\])?', '', tex)
-
-    # 9. Convert \begin{parts}...\end{parts} with \item → (a), (b), etc.
+    # \begin{parts}...\end{parts} with \item → (a), (b), etc.
     def replace_parts(m):
         body = m.group(1)
         items = re.split(r'\\item\s*', body)
@@ -65,19 +45,81 @@ def clean_latex(raw):
 
     tex = re.sub(r'\\begin\{parts\}(.*?)\\end\{parts\}', replace_parts, tex, flags=re.DOTALL)
 
-    # 10. \begin{center}...\end{center} → just keep content
+    # \begin{center}...\end{center} → keep content
     tex = re.sub(r'\\begin\{center\}\s*', '', tex)
     tex = re.sub(r'\\end\{center\}\s*', '', tex)
 
-    # 11. \textbf{...} → keep as-is (KaTeX supports it in text mode, but for display we convert)
-    # Actually KaTeX renderMathInElement only processes $...$ delimited parts.
-    # \textbf outside math mode is just plain text — we convert to **bold** for display.
+    # === Phase 2: Remove exam-specific commands ===
+
+    tex = re.sub(r'\\Marks\{\d+\}', '', tex)
+    tex = re.sub(r'\\AnswerLine(?:Short)?(?:\[.*?\])*', '', tex)
+    tex = re.sub(r'\\answerlines(?:\[\d+\])?', '', tex)
+    tex = re.sub(r'\\Answerspace(?:\[.*?\])?', '', tex)
+    tex = re.sub(r'\\WorkingSpace\{[^}]*\}', '', tex)
+    tex = re.sub(r'\\ImplicitPart', '', tex)
+
+    # \PartLabel{b} → (b)
+    tex = re.sub(r'\\PartLabel\{([^}]*)\}', r'(\1)', tex)
+
+    # \StemText{...} → extract content (remove wrapper, keep content)
+    tex = re.sub(r'\\StemText\{', '', tex)
+
+    # \subpart → sub-part marker, treat as bullet
+    tex = re.sub(r'\\subpart\b', '', tex)
+
+    # === Phase 3: Remove spacing/layout commands ===
+
+    tex = re.sub(r'\\vgap(?:\[.*?\])?', '', tex)
+    tex = re.sub(r'\\vspace\{[^}]*\}', '', tex)
+    tex = re.sub(r'\\hspace\{[^}]*\}', '', tex)
+    tex = re.sub(r'\\hfill\b', '', tex)
+    tex = re.sub(r'\\noindent\b', '', tex)
+    tex = re.sub(r'\\newline\b', '\n', tex)
+    tex = re.sub(r'\\footnotesize\b', '', tex)
+    tex = re.sub(r'\\dotfill\b', '...', tex)
+    tex = re.sub(r'\\hrulefill\b', '---', tex)
+    tex = re.sub(r'\\makebox\[[^\]]*\]\{[^}]*\}', '......', tex)
+
+    # Remaining \item outside parts
+    tex = re.sub(r'\\item\b\s*', '', tex)
+
+    # === Phase 4: Remove figure/TikZ commands ===
+
+    tex = re.sub(r'\\relinput\{[^}]*\}', '', tex)
+    tex = re.sub(r'\\relincludegraphics\{[^}]*\}', '', tex)
+    # TikZ: \draw, \node, \coordinate (usually inside tikzpicture)
+    tex = re.sub(r'\\begin\{tikzpicture\}.*?\\end\{tikzpicture\}', '', tex, flags=re.DOTALL)
+    tex = re.sub(r'\\draw\b[^;]*;', '', tex)
+    tex = re.sub(r'\\node\b[^;]*;', '', tex)
+    tex = re.sub(r'\\coordinate\b[^;]*;', '', tex)
+
+    # === Phase 5: Text formatting ===
+
+    tex = tex.replace('\\textdollar', '\\$')
+    tex = tex.replace('\\par\\par', '\n\n')
+    tex = tex.replace('\\par', '\n')
+
+    # \textbf{...} outside math → **bold**
     tex = re.sub(r'\\textbf\{(.*?)\}', r'**\1**', tex)
 
-    # 11. Clean up excessive blank lines
-    tex = re.sub(r'\n{3,}', '\n\n', tex)
+    # === Phase 6: Clean answer blanks and residue ===
 
-    # 12. Strip leading/trailing whitespace
+    # Dotted answer blanks: "t = ....................."
+    tex = re.sub(r'\.{5,}', '', tex)
+    # Lines that are only "x = " or "y = " (answer indicators after removing blanks)
+    # Keep them if they have more content, remove if standalone
+    tex = re.sub(r'\n[a-zA-Z]\s*=\s*\\\\?\s*$', '', tex, flags=re.MULTILINE)
+    # Orphaned closing brace from \StemText
+    tex = re.sub(r'\n\}\s*$', '', tex)
+    tex = re.sub(r'^\}\s*\n', '', tex)
+
+    # === Phase 7: Normalize whitespace ===
+
+    tex = re.sub(r'\n{3,}', '\n\n', tex)
+    tex = re.sub(r'\n[ \t]+\n', '\n\n', tex)
+    # Remove trailing \\ only on lines that look like answer lines (e.g., "x = \\")
+    # Don't touch \\ inside math environments
+    tex = re.sub(r'^([a-zA-Z]\s*=\s*)\\\\\s*$', r'\1', tex, flags=re.MULTILINE)
     tex = tex.strip()
 
     return tex
@@ -98,6 +140,22 @@ def parse_parts(raw):
         parts.append({"label": label, "marks": marks})
 
     return parts
+
+
+def classify_qtype(qt):
+    """Classify granular qtype into broad groups."""
+    q = qt.lower()
+    if 'simultaneous' in q:
+        if 'quadratic' in q or 'non-linear' in q:
+            return 'simul-nonlinear'
+        return 'simul-linear'
+    if 'rearrang' in q or ('change' in q and 'subject' in q) or ('changing' in q and 'subject' in q):
+        return 'rearrange'
+    if 'quadratic' in q:
+        return 'quadratic'
+    if 'linear equation' in q or 'linear inequality' in q:
+        return 'linear'
+    return 'mixed'
 
 
 def build_source_ref(q):
@@ -176,6 +234,7 @@ def process_questions(questions, section_filter=None):
             "cat": "algebra",
             "topic": "Equations",
             "qtype": q.get("question_type", ""),
+            "g": classify_qtype(q.get("question_type", "")),
             "src": build_source_ref(q),
             "year": q.get("year", 0),
             "session": q.get("session", ""),

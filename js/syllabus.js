@@ -612,9 +612,27 @@ function renderSectionDetail(ch, sec, secIdx, board) {
   }
 }
 
+var PP_GROUP_LABELS = {
+  'simul-linear':    { en: 'Simultaneous (Linear)',    zh: '\u8054\u7acb\u4e00\u6b21\u65b9\u7a0b' },
+  'simul-nonlinear': { en: 'Simultaneous (Nonlinear)', zh: '\u8054\u7acb\u975e\u7ebf\u6027\u65b9\u7a0b' },
+  'rearrange':       { en: 'Change of Subject',        zh: '\u516c\u5f0f\u53d8\u5f62' },
+  'quadratic':       { en: 'Quadratic Equations',      zh: '\u4e8c\u6b21\u65b9\u7a0b' },
+  'linear':          { en: 'Linear Equations',         zh: '\u4e00\u6b21\u65b9\u7a0b' },
+  'mixed':           { en: 'Mixed / Other',            zh: '\u7efc\u5408\u8fd0\u7528' }
+};
+var PP_GROUP_ORDER = ['simul-linear','simul-nonlinear','rearrange','quadratic','linear','mixed'];
+
 function _renderPPSectionModule(slot, secId, board) {
   var ppStats = ppGetSectionStats(board, secId);
   if (ppStats.total === 0) { slot.style.display = 'none'; return; }
+
+  /* Count by group */
+  var allQ = getPPBySection(board, secId);
+  var groupCounts = {};
+  for (var gi = 0; gi < allQ.length; gi++) {
+    var g = allQ[gi].g || 'mixed';
+    groupCounts[g] = (groupCounts[g] || 0) + 1;
+  }
 
   var h = '';
   h += '<div class="sec-module" style="flex-direction:column;align-items:stretch;gap:8px">';
@@ -625,6 +643,7 @@ function _renderPPSectionModule(slot, secId, board) {
   h += '<div class="sec-module-sub">' + ppStats.total + ' ' + t('questions', '\u9898') + ' \u00b7 CIE 0580</div>';
   h += '</div></div>';
 
+  /* Mastery stats */
   h += '<div class="pp-module-stats">';
   if (ppStats.newQ > 0) h += '<span class="pp-module-stat new">\u2b1c ' + ppStats.newQ + ' ' + t('New', '\u65b0\u9898') + '</span>';
   if (ppStats.needsWork > 0) h += '<span class="pp-module-stat needs-work">\ud83d\udd34 ' + ppStats.needsWork + ' ' + t('Needs Work', '\u5f85\u6539\u8fdb') + '</span>';
@@ -632,6 +651,21 @@ function _renderPPSectionModule(slot, secId, board) {
   if (ppStats.mastered > 0) h += '<span class="pp-module-stat mastered-stat">\u2705 ' + ppStats.mastered + ' ' + t('Mastered', '\u5df2\u638c\u63e1') + '</span>';
   h += '</div>';
 
+  /* Question type breakdown */
+  h += '<div style="margin-top:4px">';
+  h += '<div style="font-size:11px;color:var(--c-muted);margin-bottom:4px">' + t('By Question Type', '\u8003\u6cd5\u9898\u578b\u5206\u7c7b') + '</div>';
+  h += '<div style="display:flex;flex-wrap:wrap;gap:4px">';
+  for (var oi = 0; oi < PP_GROUP_ORDER.length; oi++) {
+    var gk = PP_GROUP_ORDER[oi];
+    var gc = groupCounts[gk];
+    if (!gc) continue;
+    var gl = PP_GROUP_LABELS[gk];
+    h += '<span class="pp-error-chip" onclick="event.stopPropagation();startPastPaper(\'' + secId + '\',\'' + board + '\',\'practice\',\'' + gk + '\')">';
+    h += t(gl.en, gl.zh) + ' <b>' + gc + '</b></span>';
+  }
+  h += '</div></div>';
+
+  /* Action buttons */
   h += '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px">';
   h += '<button class="btn btn-sm" onclick="event.stopPropagation();startPastPaper(\'' + secId + '\',\'' + board + '\',\'practice\')" style="flex:1;min-width:120px">';
   h += '\ud83d\udcd6 ' + t('Practice Mode', '\u7ec3\u4e60\u6a21\u5f0f') + '</button>';
