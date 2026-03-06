@@ -1297,6 +1297,14 @@ function renderPPCard() {
   }
   html += '</div>';
 
+  /* Report + Edit buttons (past paper) */
+  html += '<div class="pq-report-row">';
+  html += '<button class="pq-report-btn" onclick="reportPastPaperQ()">\ud83d\udea9 ' + t('Report error', '报告错误') + '</button>';
+  if (typeof isSuperAdmin === 'function' && isSuperAdmin()) {
+    html += '<button class="pq-edit-btn" onclick="editPastPaperQ()">\u270f\ufe0f ' + t('Edit', '编辑') + '</button>';
+  }
+  html += '</div>';
+
   el.innerHTML = html;
 
   /* KaTeX render */
@@ -1571,6 +1579,14 @@ function ppShowMarking() {
     }
     html += '</div>';
 
+    /* Report + Edit in marking view */
+    html += '<div class="pq-report-row" style="margin-top:8px">';
+    html += '<button class="pq-report-btn" onclick="reportPastPaperQ(' + i + ')">\ud83d\udea9 ' + t('Report', '报告') + '</button>';
+    if (typeof isSuperAdmin === 'function' && isSuperAdmin()) {
+      html += '<button class="pq-edit-btn" onclick="editPastPaperQ(' + i + ')">\u270f\ufe0f ' + t('Edit', '编辑') + '</button>';
+    }
+    html += '</div>';
+
     html += '</div>'; /* end mark-body */
     html += '</div>'; /* end mark-item */
   }
@@ -1647,6 +1663,221 @@ function ppToggleError(el) {
   if (!_ppSession) return;
   _ppSession.results[idx] = _ppSession.results[idx] || {};
   _ppSession.results[idx].errorType = errId;
+}
+
+/* ═══ PAST PAPER REPORT / EDIT ═══ */
+
+function reportPastPaperQ(qIdx) {
+  if (!_ppSession) return;
+  var q = (qIdx != null) ? _ppSession.questions[qIdx] : _ppSession.questions[_ppSession.current];
+  if (!q) return;
+
+  var types = [
+    ['tex', t('Question text error', '题目文本错误')],
+    ['latex', t('LaTeX rendering issue', 'LaTeX 渲染问题')],
+    ['marks', t('Wrong marks', '分值错误')],
+    ['qtype', t('Wrong question type', '题型分类错误')],
+    ['source', t('Wrong source info', '来源信息错误')],
+    ['other', t('Other', '其他')]
+  ];
+  var typeOpts = types.map(function(tp) {
+    return '<option value="' + tp[0] + '">' + tp[1] + '</option>';
+  }).join('');
+
+  var html = '<div class="section-title">\ud83d\udea9 ' + t('Report Past Paper Error', '报告真题错误') + '</div>';
+  html += '<div style="text-align:left;margin-bottom:12px;padding:10px;background:var(--c-surface-alt);border-radius:var(--r);font-size:12px">';
+  html += '<strong>#' + escapeHtml(q.id) + '</strong> · ' + escapeHtml(q.src) + '<br>';
+  html += '<span style="color:var(--c-text2)">' + escapeHtml(q.tex.substring(0, 100)) + (q.tex.length > 100 ? '...' : '') + '</span>';
+  html += '</div>';
+  html += '<label class="settings-label">' + t('Error type', '错误类型') + '</label>';
+  html += '<select class="bug-select" id="pp-report-type">' + typeOpts + '</select>';
+  html += '<label class="settings-label">' + t('Description', '描述') + ' *</label>';
+  html += '<textarea class="bug-textarea" id="pp-report-desc" rows="3" placeholder="' + t('Describe the error...', '请描述错误...') + '"></textarea>';
+  html += '<div id="pp-report-msg" style="font-size:13px;margin:8px 0;min-height:20px;color:var(--c-danger)"></div>';
+  html += '<div style="display:flex;gap:8px;margin-top:12px">';
+  var submitLabel = (isLoggedIn() && !isGuest()) ? t('Submit', '提交') : t('Submit via Email', '通过邮件提交');
+  html += '<button class="btn btn-primary" style="flex:1" onclick="submitPPReport(\'' + escapeHtml(q.id) + '\')">' + submitLabel + '</button>';
+  html += '<button class="btn btn-ghost" style="flex:1" onclick="hideModal()">' + t('Cancel', '取消') + '</button>';
+  html += '</div>';
+  showModal(html);
+}
+
+function submitPPReport(qid) {
+  var desc = E('pp-report-desc').value.trim();
+  if (!desc) {
+    E('pp-report-msg').textContent = t('Please describe the error', '请描述错误');
+    return;
+  }
+  var type = E('pp-report-type').value;
+  var q = null;
+  if (_ppSession) {
+    for (var i = 0; i < _ppSession.questions.length; i++) {
+      if (_ppSession.questions[i].id === qid) { q = _ppSession.questions[i]; break; }
+    }
+  }
+  if (!q) { hideModal(); return; }
+
+  if (sb && isLoggedIn() && !isGuest()) {
+    sb.from('feedback').insert({
+      user_id: currentUser.id,
+      user_email: currentUser.email,
+      type: 'pastpaper',
+      description: desc,
+      steps: type,
+      auto_info: { qid: q.id, board: _ppSession.board, src: q.src, marks: q.marks, g: q.g, tex: q.tex.substring(0, 500) }
+    }).then(function(res) {
+      if (res.error) {
+        E('pp-report-msg').textContent = t('Submit failed: ', '提交失败：') + res.error.message;
+        return;
+      }
+      hideModal();
+      showToast(t('Report submitted! Thank you.', '报告已提交，谢谢！'));
+    });
+    return;
+  }
+
+  /* Guest: mailto fallback */
+  var subject = '[Past Paper Error] #' + qid + ' - 25Maths Keywords';
+  var body = 'Question ID: ' + qid + '\nSource: ' + q.src +
+    '\nError type: ' + type + '\n\nDescription:\n' + desc +
+    '\n\n--- Question ---\n' + q.tex.substring(0, 500);
+  var mailto = 'mailto:support@25maths.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  window.open(mailto, '_blank');
+  hideModal();
+  showToast(t('Opening email client...', '正在打开邮件客户端...'));
+}
+
+function editPastPaperQ(qIdx) {
+  if (!_ppSession || !isSuperAdmin()) return;
+  var q = (qIdx != null) ? _ppSession.questions[qIdx] : _ppSession.questions[_ppSession.current];
+  if (!q) return;
+
+  var html = '<div class="section-title">\u270f\ufe0f ' + t('Edit Past Paper Question', '编辑真题') + ' <span style="color:var(--c-muted);font-size:13px">#' + escapeHtml(q.id) + '</span></div>';
+
+  /* Question info */
+  html += '<div style="text-align:left;margin-bottom:12px;padding:10px;background:var(--c-surface-alt);border-radius:var(--r);font-size:12px">';
+  html += '<strong>' + escapeHtml(q.src) + '</strong> · ' + q.marks + (q.marks === 1 ? ' mark' : ' marks');
+  if (q.g) html += ' · ' + _ppGroupLabel(q.g);
+  html += '</div>';
+
+  /* Editable fields */
+  html += '<label class="settings-label">' + t('Question Text (LaTeX)', '题目文本 (LaTeX)') + '</label>';
+  html += '<textarea class="bug-textarea" id="pp-ed-tex" rows="8" style="font-family:var(--font-mono);font-size:12px">' + escapeHtml(q.tex) + '</textarea>';
+
+  html += '<div style="display:flex;gap:12px;margin-top:12px">';
+
+  /* Marks */
+  html += '<div style="flex:1">';
+  html += '<label class="settings-label">' + t('Marks', '分值') + '</label>';
+  html += '<input type="number" class="bug-select" id="pp-ed-marks" min="1" max="20" value="' + q.marks + '" style="width:100%">';
+  html += '</div>';
+
+  /* Difficulty */
+  html += '<div style="flex:1">';
+  html += '<label class="settings-label">' + t('Difficulty', '难度') + '</label>';
+  html += '<select class="bug-select" id="pp-ed-diff" style="width:100%">';
+  html += '<option value="1"' + (q.d === 1 ? ' selected' : '') + '>Core</option>';
+  html += '<option value="2"' + (q.d === 2 ? ' selected' : '') + '>Extended</option>';
+  html += '<option value="3"' + (q.d === 3 ? ' selected' : '') + '>Advanced</option>';
+  html += '</select></div>';
+
+  /* Group */
+  html += '<div style="flex:1">';
+  html += '<label class="settings-label">' + t('Question Type', '题型') + '</label>';
+  html += '<select class="bug-select" id="pp-ed-group" style="width:100%">';
+  var gKeys = Object.keys(_ppGroupLabels);
+  for (var gi = 0; gi < gKeys.length; gi++) {
+    var gk = gKeys[gi];
+    html += '<option value="' + gk + '"' + (q.g === gk ? ' selected' : '') + '>' + _ppGroupLabel(gk) + '</option>';
+  }
+  html += '</select></div>';
+  html += '</div>';
+
+  /* Preview */
+  html += '<div style="margin-top:12px">';
+  html += '<label class="settings-label">' + t('Preview', '预览') + '</label>';
+  html += '<div id="pp-ed-preview" style="padding:12px;background:var(--c-surface-alt);border-radius:var(--r);font-size:13px;line-height:1.6;max-height:200px;overflow:auto;white-space:pre-line"></div>';
+  html += '</div>';
+
+  /* Submit as correction */
+  html += '<div id="pp-ed-msg" style="font-size:13px;margin:8px 0;min-height:20px;color:var(--c-danger)"></div>';
+  html += '<div style="display:flex;gap:8px;margin-top:12px">';
+  html += '<button class="btn btn-primary" style="flex:1" onclick="submitPPEdit(\'' + escapeHtml(q.id) + '\')">\ud83d\udcbe ' + t('Submit Correction', '提交修正') + '</button>';
+  html += '<button class="btn btn-ghost" style="flex:1" onclick="hideModal()">' + t('Cancel', '取消') + '</button>';
+  html += '</div>';
+
+  showModal(html);
+
+  /* Live preview */
+  setTimeout(function() {
+    var texEl = E('pp-ed-tex');
+    if (texEl) {
+      texEl.addEventListener('input', _ppUpdateEditPreview);
+      _ppUpdateEditPreview();
+    }
+  }, 50);
+}
+
+function _ppUpdateEditPreview() {
+  var prev = E('pp-ed-preview');
+  var texEl = E('pp-ed-tex');
+  if (!prev || !texEl) return;
+  prev.innerHTML = _ppRenderTex(texEl.value);
+  renderMath(prev);
+}
+
+function submitPPEdit(qid) {
+  if (!_ppSession || !isSuperAdmin()) return;
+  var q = null;
+  for (var i = 0; i < _ppSession.questions.length; i++) {
+    if (_ppSession.questions[i].id === qid) { q = _ppSession.questions[i]; break; }
+  }
+  if (!q) { hideModal(); return; }
+
+  var newTex = E('pp-ed-tex') ? E('pp-ed-tex').value : q.tex;
+  var newMarks = E('pp-ed-marks') ? parseInt(E('pp-ed-marks').value) || q.marks : q.marks;
+  var newDiff = E('pp-ed-diff') ? parseInt(E('pp-ed-diff').value) || q.d : q.d;
+  var newGroup = E('pp-ed-group') ? E('pp-ed-group').value : q.g;
+
+  /* Build diff description */
+  var changes = [];
+  if (newTex !== q.tex) changes.push('tex');
+  if (newMarks !== q.marks) changes.push('marks: ' + q.marks + '→' + newMarks);
+  if (newDiff !== q.d) changes.push('diff: ' + q.d + '→' + newDiff);
+  if (newGroup !== q.g) changes.push('group: ' + q.g + '→' + newGroup);
+
+  if (changes.length === 0) {
+    E('pp-ed-msg').textContent = t('No changes detected', '未检测到修改');
+    return;
+  }
+
+  sb.from('feedback').insert({
+    user_id: currentUser.id,
+    user_email: currentUser.email,
+    type: 'pastpaper_edit',
+    description: 'Admin correction: ' + changes.join(', '),
+    steps: 'edit',
+    auto_info: {
+      qid: q.id, board: _ppSession.board, src: q.src,
+      original: { tex: q.tex, marks: q.marks, d: q.d, g: q.g },
+      corrected: { tex: newTex, marks: newMarks, d: newDiff, g: newGroup }
+    }
+  }).then(function(res) {
+    if (res.error) {
+      E('pp-ed-msg').textContent = t('Save failed: ', '保存失败：') + res.error.message;
+      return;
+    }
+
+    /* Apply change locally for current session */
+    q.tex = newTex;
+    q.marks = newMarks;
+    q.d = newDiff;
+    q.g = newGroup;
+
+    hideModal();
+    showToast(t('Correction submitted!', '修正已提交！'));
+    renderPPCard();
+  });
 }
 
 function ppFinishMarking() {

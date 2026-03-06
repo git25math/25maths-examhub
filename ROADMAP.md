@@ -310,8 +310,9 @@
 - [x] **Phase D 练习题质量审计**：133 题搬迁 + 21 题隐藏 + 质量修复 + 层级修正 → v1.7.4
 - [ ] **Phase C+ 内容继续扩容**：补充练习题（CIE 1.6/1.7/4.8 + Edexcel 4.7 需补题）
 
-### Phase 10F — Past Paper 真题引擎 [Phase A DONE]
+### Phase 10F — Past Paper 真题引擎 [Phase A+ DONE]
 - [x] **Phase A 试点 (2.5 Equations)**: 数据管道 + 127 题 LaTeX→KaTeX + 练习/实战/错题本 → v1.8.0
+- [x] **Phase A+ 全章扩展 + 纠错**: 代数全章 793 题 + 15 种题型 + 母题总结 + 纠错模块 → v1.8.1-v1.8.3
 - [ ] **Phase B 全面扩展**: 全部 72 CIE sections 批量处理 (3,953 题)
 - [ ] **Phase C 考点精讲**: 每 section 知识卡片（公式 + 要点 + 易错点）
 - [ ] **Phase D 题型归纳**: 按题型分类组织真题（不仅按知识点）
