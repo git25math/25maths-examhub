@@ -1,5 +1,26 @@
 # Changelog
 
+## [1.8.1] - 2026-03-06 — 筛选标注 + LaTeX 缓存修复
+
+### Bug 修复
+- **缓存破坏**: JS/CSS/JSON 引用添加版本号查询参数，解决浏览器缓存旧版导致 LaTeX 不渲染的问题
+
+### 新增功能
+- **母题总结面板**: 知识点页面展示 6 大题型总结，勾选已掌握题型，「只练未掌握」一键筛选
+- **单词筛选标注**: Deck 详情页新增「选择模式」+「隐藏已掌握」，勾选单词自由组合学习
+- **自定义学习**: 学习和测验模式均支持 subset 参数，只练选中的单词
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `index.html` | JS/CSS 引用添加 `?v=1.8.1` |
+| `js/config.js` | APP_VERSION → v1.8.1 |
+| `js/practice.js` | 数据 fetch 缓存破坏 + mqtype 存储函数 |
+| `js/syllabus.js` | 母题总结渲染 `_renderMasterQSummary` + 交互 |
+| `js/mastery.js` | 筛选工具栏 + 选择模式 + 操作函数 |
+| `js/quiz.js` | `startQuiz` 支持 subset 参数 |
+| `css/style.css` | `.mq-*` + `.deck-filter-*` + `.word-check` 样式 |
+
 ## [1.8.0] - 2026-03-06 — Past Paper 真题引擎 · 试点（Phase A）
 
 ### 新增功能

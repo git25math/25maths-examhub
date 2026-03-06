@@ -20,12 +20,12 @@ function getQuizCache() {
   return _quizCache;
 }
 
-function startQuiz(li) {
+function startQuiz(li, subset) {
   var lv = LEVELS[li];
   if (validate(lv, li)) return;
 
   currentLvl = li;
-  Q.pairs = shuffle(getPairs(lv.vocabulary));
+  Q.pairs = subset ? shuffle(subset) : shuffle(getPairs(lv.vocabulary));
   Q.idx = 0;
   Q.correct = 0;
   Q.lvl = li;

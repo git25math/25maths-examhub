@@ -2,6 +2,20 @@
    mastery.js — Home dashboard, deck detail, mode selection, sort
    ══════════════════════════════════════════════════════════════ */
 
+/* ═══ WORD FILTER STATE ═══ */
+var _deckSelectMode = false;
+var _deckHideMastered = false;
+var _deckSelectedWords = {};
+var _deckSelectCount = 0;
+
+/* Restore hideMastered preference */
+(function() {
+  try {
+    var prefs = JSON.parse(localStorage.getItem('word_filter_prefs')) || {};
+    _deckHideMastered = prefs.hideMastered || false;
+  } catch(e) {}
+})();
+
 /* ═══ MASTERY CALCULATIONS ═══ */
 
 /* Dual-metric global stats (Spec v1.0 §7) */
@@ -525,7 +539,20 @@ function renderDeck(idx) {
   });
   html += '</div>';
 
+  /* Filter bar */
+  html += '<div class="deck-filter-bar">';
+  html += '<button class="sort-btn' + (_deckSelectMode ? ' active' : '') + '" onclick="toggleDeckSelect(' + idx + ')">';
+  html += (_deckSelectMode ? '\u2611' : '\u2610') + ' ' + t('Select', '\u9009\u62e9') + '</button>';
+  html += '<button class="sort-btn' + (_deckHideMastered ? ' active' : '') + '" onclick="toggleHideMastered(' + idx + ')">';
+  html += '\u26a1 ' + t('Hide Mastered', '\u9690\u85cf\u5df2\u638c\u63e1') + '</button>';
+  if (_deckSelectMode) {
+    html += '<button class="sort-btn" onclick="selectAllUnmastered(' + idx + ')">' + t('Select Unmastered', '\u5168\u9009\u672a\u638c\u63e1') + '</button>';
+    html += '<span class="deck-filter-count">' + _deckSelectCount + '/' + pairs.length + '</span>';
+  }
+  html += '</div>';
+
   /* Word list */
+  var visibleCount = 0;
   html += '<div class="word-list">';
   sorted.forEach(function(p) {
     var key = wordKey(idx, p.lid);
@@ -536,7 +563,22 @@ function renderDeck(idx) {
     var wStars = d ? (d.stars != null ? d.stars : computeStars(ok, fail)) : 0;
     var lvColor = SRS_COLORS[lvNum] || SRS_COLORS[0];
 
-    html += '<div class="word-row">';
+    /* Hide mastered filter */
+    if (_deckHideMastered && wStars === 4) return;
+    visibleCount++;
+
+    var isSelected = _deckSelectMode && _deckSelectedWords[p.lid];
+    html += '<div class="word-row' + (isSelected ? ' word-row-selected' : '') + '"';
+    if (_deckSelectMode) {
+      html += ' onclick="toggleWordSelect(' + idx + ',' + p.lid + ')" style="cursor:pointer"';
+    }
+    html += '>';
+
+    /* Checkbox column */
+    if (_deckSelectMode) {
+      html += '<span class="word-check">' + (isSelected ? '\u2611' : '\u2610') + '</span>';
+    }
+
     html += '<div class="word-en">' + escapeHtml(p.word) + '</div>';
     if (appLang === 'bilingual') {
       html += '<div class="word-zh">' + escapeHtml(p.def) + '</div>';
@@ -552,7 +594,25 @@ function renderDeck(idx) {
     }
     html += '</div>';
   });
+
+  if (_deckHideMastered && visibleCount === 0) {
+    html += '<div style="text-align:center;color:var(--c-muted);padding:20px 0">';
+    html += t('All words mastered! Well done!', '\u5168\u90e8\u638c\u63e1\uff01\u592a\u68d2\u4e86\uff01');
+    html += '</div>';
+  }
   html += '</div>';
+
+  /* Select mode actions */
+  if (_deckSelectMode && _deckSelectCount > 0) {
+    html += '<div class="deck-select-actions">';
+    html += '<button class="btn btn-primary btn-sm" onclick="studySelected(' + idx + ')">';
+    html += '\ud83d\udcd6 ' + t('Study Selected', '\u5b66\u4e60\u9009\u4e2d') + ' (' + _deckSelectCount + ')</button>';
+    html += '<button class="btn btn-sm" onclick="quizSelected(' + idx + ')">';
+    html += '\u2753 ' + t('Quiz Selected', '\u6d4b\u9a8c\u9009\u4e2d') + '</button>';
+    html += '<button class="btn btn-ghost btn-sm" onclick="clearSelection(' + idx + ')">';
+    html += t('Clear', '\u6e05\u9664') + '</button>';
+    html += '</div>';
+  }
 
   E('panel-deck').innerHTML = html;
 }
@@ -560,6 +620,85 @@ function renderDeck(idx) {
 function setSort(s, idx) {
   appSort = s;
   renderDeck(idx);
+}
+
+/* ═══ WORD FILTER HANDLERS ═══ */
+
+function toggleDeckSelect(idx) {
+  _deckSelectMode = !_deckSelectMode;
+  if (!_deckSelectMode) {
+    _deckSelectedWords = {};
+    _deckSelectCount = 0;
+  }
+  renderDeck(idx);
+}
+
+function toggleHideMastered(idx) {
+  _deckHideMastered = !_deckHideMastered;
+  try {
+    var prefs = JSON.parse(localStorage.getItem('word_filter_prefs')) || {};
+    prefs.hideMastered = _deckHideMastered;
+    localStorage.setItem('word_filter_prefs', JSON.stringify(prefs));
+  } catch(e) {}
+  renderDeck(idx);
+}
+
+function toggleWordSelect(idx, lid) {
+  if (!_deckSelectMode) return;
+  if (_deckSelectedWords[lid]) {
+    delete _deckSelectedWords[lid];
+    _deckSelectCount--;
+  } else {
+    _deckSelectedWords[lid] = true;
+    _deckSelectCount++;
+  }
+  renderDeck(idx);
+}
+
+function clearSelection(idx) {
+  _deckSelectedWords = {};
+  _deckSelectCount = 0;
+  renderDeck(idx);
+}
+
+function selectAllUnmastered(idx) {
+  var lv = LEVELS[idx];
+  var pairs = getPairs(lv.vocabulary);
+  var wd = getWordData();
+  _deckSelectedWords = {};
+  _deckSelectCount = 0;
+  pairs.forEach(function(p) {
+    var key = wordKey(idx, p.lid);
+    var d = wd[key];
+    var wStars = d ? (d.stars != null ? d.stars : computeStars(d.ok || 0, d.fail || 0)) : 0;
+    if (wStars < 4) {
+      _deckSelectedWords[p.lid] = true;
+      _deckSelectCount++;
+    }
+  });
+  renderDeck(idx);
+}
+
+function studySelected(idx) {
+  var lv = LEVELS[idx];
+  var pairs = getPairs(lv.vocabulary);
+  var subset = pairs.filter(function(p) { return _deckSelectedWords[p.lid]; });
+  if (subset.length === 0) {
+    showToast(t('No words selected', '\u672a\u9009\u62e9\u5355\u8bcd'));
+    return;
+  }
+  startStudy(idx, shuffle(subset));
+}
+
+function quizSelected(idx) {
+  var lv = LEVELS[idx];
+  var pairs = getPairs(lv.vocabulary);
+  var subset = pairs.filter(function(p) { return _deckSelectedWords[p.lid]; });
+  if (subset.length < 4) {
+    showToast(t('Select at least 4 words for quiz', '\u81f3\u5c11\u9009\u62e9 4 \u4e2a\u5355\u8bcd\u624d\u80fd\u6d4b\u9a8c'));
+    return;
+  }
+  startQuiz(idx, subset);
 }
 
 /* ═══ QUICK BROWSE MODAL ═══ */

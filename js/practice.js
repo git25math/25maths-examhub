@@ -982,7 +982,7 @@ var PP_ERROR_TYPES = [
 function loadPastPaperData(board) {
   board = board || 'cie';
   if (_ppData[board]) return Promise.resolve(_ppData[board]);
-  var file = 'data/pastpapers-' + board + '.json';
+  var file = 'data/pastpapers-' + board + '.json?v=' + APP_VERSION;
   return fetch(file).then(function(r) {
     if (!r.ok) throw new Error('Failed to load ' + file);
     return r.json();
@@ -1877,6 +1877,26 @@ function ppStartWrongBookReview(sectionId, board) {
     showPanel('pastpaper');
     renderPPCard();
   });
+}
+
+/* ═══ MASTER QUESTION TYPE MASTERY ═══ */
+
+var _mqtypeKey = 'mqtype_mastery';
+
+function _getMQtypeMastery() {
+  try { return JSON.parse(localStorage.getItem(_mqtypeKey)) || {}; } catch(e) { return {}; }
+}
+
+function _setMQtypeMastered(secId, gk, val) {
+  var m = _getMQtypeMastery();
+  if (!m[secId]) m[secId] = {};
+  m[secId][gk] = { mastered: !!val, t: Date.now() };
+  localStorage.setItem(_mqtypeKey, JSON.stringify(m));
+}
+
+function _isMQtypeMastered(secId, gk) {
+  var m = _getMQtypeMastery();
+  return !!(m[secId] && m[secId][gk] && m[secId][gk].mastered);
 }
 
 /* ═══ WRONG BOOK REMINDER (Toast on home) ═══ */

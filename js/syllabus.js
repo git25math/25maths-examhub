@@ -510,6 +510,7 @@ function renderSectionDetail(ch, sec, secIdx, board) {
   /* Past Papers module — between Practice and Knowledge Card */
   if (board === 'cie' && typeof loadPastPaperData === 'function') {
     html += '<div id="pp-section-module" data-section="' + sec.id + '" data-board="' + board + '"></div>';
+    html += '<div id="mq-summary-slot" data-section="' + sec.id + '" data-board="' + board + '"></div>';
   }
 
   /* Knowledge card (3rd) — show content if edited, else "Coming soon" */
@@ -608,6 +609,8 @@ function renderSectionDetail(ch, sec, secIdx, board) {
     var ppBoard = ppSlot.getAttribute('data-board');
     loadPastPaperData(ppBoard).then(function() {
       _renderPPSectionModule(ppSlot, ppSecId, ppBoard);
+      var mqSlot = document.getElementById('mq-summary-slot');
+      if (mqSlot) _renderMasterQSummary(mqSlot, ppSecId, ppBoard);
     }).catch(function() { /* silently ignore if no data */ });
   }
 }
@@ -679,6 +682,134 @@ function _renderPPSectionModule(slot, secId, board) {
   h += '</div>';
 
   slot.innerHTML = h;
+}
+
+/* ═══ MASTER QUESTION SUMMARY ═══ */
+
+function _renderMasterQSummary(slot, secId, board) {
+  var allQ = getPPBySection(board, secId);
+  if (!allQ || allQ.length === 0) { slot.style.display = 'none'; return; }
+
+  /* Group questions and find representative examples */
+  var groups = {};
+  for (var i = 0; i < allQ.length; i++) {
+    var gk = allQ[i].g || 'mixed';
+    if (!groups[gk]) groups[gk] = { count: 0, example: null };
+    groups[gk].count++;
+    if (!groups[gk].example) groups[gk].example = allQ[i];
+  }
+
+  /* Count mastered */
+  var totalTypes = 0;
+  var masteredTypes = 0;
+  var orderedGroups = [];
+  for (var oi = 0; oi < PP_GROUP_ORDER.length; oi++) {
+    var gk2 = PP_GROUP_ORDER[oi];
+    if (!groups[gk2]) continue;
+    totalTypes++;
+    if (_isMQtypeMastered(secId, gk2)) masteredTypes++;
+    orderedGroups.push(gk2);
+  }
+
+  var pct = totalTypes > 0 ? Math.round((masteredTypes / totalTypes) * 100) : 0;
+  var h = '';
+  h += '<div class="mq-summary">';
+
+  /* Header + progress */
+  h += '<div class="mq-summary-header">';
+  h += '<span style="font-size:18px">&#x1F4CB;</span> ';
+  h += '<span class="mq-summary-title">' + t('Master Question Types', '\u6BCD\u9898\u603B\u7ED3') + '</span>';
+  h += '<span style="margin-left:auto;font-size:11px;color:var(--c-muted)">';
+  h += t('Mastered', '\u5DF2\u638C\u63E1') + ' ' + masteredTypes + '/' + totalTypes;
+  h += '</span>';
+  h += '</div>';
+
+  /* Progress bar */
+  h += '<div class="mq-progress-bar"><div class="mq-progress-fill" style="width:' + pct + '%"></div></div>';
+
+  /* Type rows */
+  for (var ri = 0; ri < orderedGroups.length; ri++) {
+    var gKey = orderedGroups[ri];
+    var gData = groups[gKey];
+    var gLabel = PP_GROUP_LABELS[gKey];
+    var isMastered = _isMQtypeMastered(secId, gKey);
+
+    h += '<div class="mq-type-row">';
+
+    /* Checkbox */
+    h += '<input type="checkbox" class="mq-type-checkbox"' + (isMastered ? ' checked' : '') + ' ';
+    h += 'onchange="toggleMQtypeMastery(\'' + secId + '\',\'' + gKey + '\',this)">';
+
+    /* Info */
+    h += '<div class="mq-type-info">';
+    h += '<div class="mq-type-name">' + t(gLabel.en, gLabel.zh) + '</div>';
+
+    /* Example question (first 80 chars of tex, strip $ and \) */
+    if (gData.example && gData.example.tex) {
+      var exTex = gData.example.tex.replace(/\$+/g, '').replace(/\\[a-zA-Z]+(\{[^}]*\})?/g, '').trim();
+      if (exTex.length > 80) exTex = exTex.substring(0, 80) + '...';
+      h += '<div class="mq-type-example">' + t('e.g.', '\u4F8B') + ' ' + escapeHtml(exTex) + '</div>';
+    }
+    h += '</div>';
+
+    /* Count + mastery badge */
+    h += '<div style="text-align:right;flex-shrink:0">';
+    h += '<div class="mq-type-count">' + gData.count + ' ' + t('Q', '\u9898') + '</div>';
+    h += '<div class="mq-type-badge ' + (isMastered ? 'mastered' : 'unmastered') + '">';
+    h += isMastered ? '\u2705' : '\u2B1C';
+    h += '</div>';
+    h += '</div>';
+
+    h += '</div>'; /* end mq-type-row */
+  }
+
+  /* Action buttons */
+  var unmasteredCount = totalTypes - masteredTypes;
+  h += '<div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap">';
+  if (unmasteredCount > 0) {
+    h += '<button class="btn btn-primary btn-sm" onclick="startPracticeUnmastered(\'' + secId + '\',\'' + board + '\')" style="flex:1">';
+    h += t('Practice Unmastered', '\u53EA\u7EC3\u672A\u638C\u63E1') + ' (' + unmasteredCount + ')</button>';
+  }
+  h += '<button class="btn btn-ghost btn-sm" onclick="startPastPaper(\'' + secId + '\',\'' + board + '\',\'practice\')" style="flex:1">';
+  h += t('Practice All', '\u5168\u90E8\u7EC3\u4E60') + '</button>';
+  h += '</div>';
+
+  h += '</div>'; /* end mq-summary */
+  slot.innerHTML = h;
+}
+
+function toggleMQtypeMastery(secId, gk, cb) {
+  _setMQtypeMastered(secId, gk, cb.checked);
+  /* Refresh the entire MQ summary */
+  var slot = document.getElementById('mq-summary-slot');
+  if (slot) {
+    var board = slot.getAttribute('data-board');
+    _renderMasterQSummary(slot, secId, board);
+  }
+}
+
+function startPracticeUnmastered(secId, board) {
+  var allQ = getPPBySection(board, secId);
+  var unmastered = allQ.filter(function(q) {
+    return !_isMQtypeMastered(secId, q.g || 'mixed');
+  });
+  if (unmastered.length === 0) {
+    showToast(t('All question types mastered!', '\u6240\u6709\u9898\u578B\u5DF2\u638C\u63E1\uFF01'));
+    return;
+  }
+  loadKaTeX().then(function() {
+    _ppSession = {
+      questions: unmastered,
+      current: 0,
+      mode: 'practice',
+      board: board,
+      sectionId: secId,
+      groupFilter: null,
+      results: []
+    };
+    showPanel('pastpaper');
+    renderPPCard();
+  });
 }
 
 /* Mini star display helper */
