@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.7.3-dedup3] - 2026-03-06 — 修复 4 个新增跨 section 重复词
+
+### 修复
+- **4 个替换词本身存在于其他 section**，再次替换为真正唯一的词：
+  - 1.6: Expression→Left to right（BIDMAS 同优先级运算方向）
+  - 1.10: Order of magnitude→Rough estimate（估算核心概念）
+  - 4.2: Midpoint→Pair of compasses（作图必备工具）
+  - 9.7: Modal class→Upper boundary（直方图组距上界）
+- 跨 section 重复词从 31 降至 **27**
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `data/vocabulary-cie.json` | 4 处词汇替换（594 词总数不变） |
+
 ## [1.7.3-dedup2] - 2026-03-06 — CIE 跨 section 重复词分级处理
 
 ### 修复
