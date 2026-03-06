@@ -306,7 +306,8 @@
 ### Phase 10C-EDX — Edexcel 4MA1 考纲驱动重构 [Phase A+B DONE]
 - [x] **Phase A 考纲数据**：6 章 39 知识点 + 385 词 + 936 题映射 + SoW 教学序列 → v1.7.0
 - [x] **Phase B JS 架构**：泛化 syllabus.js 多考试局支持 + Edexcel 首页/详情页/练习 → v1.7.0
-- [ ] **Phase C 内容扩容**：补充词汇（目标 ~500 词）+ 补充练习题（目标 ~1,000 题）
+- [x] **Phase C 词汇审核与重组**：7 section 词汇重写 + 22 section 补充（385→387 词）→ v1.7.3
+- [ ] **Phase C+ 内容继续扩容**：补充练习题（目标 ~1,000 题）
 
 ### Phase 10D — 智能学习路径（跨层整合）
 - [ ] 词汇→概念→练习 三层关联（subtopicId 映射）

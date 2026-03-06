@@ -112,7 +112,7 @@
           "tier": "both",
           "foundation_content": "Use standard form to represent large and small numbers. Calculate with numbers in standard form.",
           "higher_content": "Solve problems involving standard form calculations.",
-          "vocabSlugs": ["edx-num-powers"],
+          "vocabSlugs": ["edx-num-standard"],
           "questionTopics": ["Standard Form"],
           "sow": { "foundation": [5], "higher": [3] }
         },
@@ -124,7 +124,7 @@
           "tier": "both",
           "foundation_content": "Use the four operations in practical situations including money, time, mass and length. Use metric units of mass, length, area, volume and capacity. Convert between metric units and between common imperial and metric units. Understand and use compound measures including speed, density and pressure.",
           "higher_content": "See Foundation tier.",
-          "vocabSlugs": ["edx-num-ratio"],
+          "vocabSlugs": ["edx-num-applying"],
           "questionTopics": ["Applying Number"],
           "sow": { "foundation": [11, 18], "higher": [11] }
         },
@@ -136,7 +136,7 @@
           "tier": "both",
           "foundation_content": "Use a scientific calculator efficiently. Interpret the calculator display. Use function keys for reciprocals, squares, powers, roots and fractions. Enter a range of calculations including those involving standard form and statistical functions.",
           "higher_content": "See Foundation tier.",
-          "vocabSlugs": ["edx-num-integers"],
+          "vocabSlugs": ["edx-num-calculator"],
           "questionTopics": ["Electronic Calculators"],
           "sow": { "foundation": [3, 28], "higher": [9] }
         }
@@ -204,7 +204,7 @@
           "tier": "higher",
           "foundation_content": "",
           "higher_content": "Set up and use equations to solve problems involving direct and inverse proportion. Recognise and interpret graphs that illustrate direct and inverse proportion.",
-          "vocabSlugs": ["edx-alg-simul"],
+          "vocabSlugs": ["edx-alg-proportion"],
           "questionTopics": ["Proportion"],
           "sow": { "foundation": [], "higher": [12] }
         },
@@ -352,7 +352,7 @@
           "tier": "both",
           "foundation_content": "Interpret scales and read measurements. Use metric units of mass, length, area, volume and capacity. Convert between units in the metric system. Know approximate metric/imperial conversions. Understand and use compound measures: speed, density, pressure. Use maps, scale drawings and scale factors. Read and use timetables and time calculations.",
           "higher_content": "See Foundation tier.",
-          "vocabSlugs": ["edx-num-ratio"],
+          "vocabSlugs": ["edx-geo-measures"],
           "questionTopics": ["Measures"],
           "sow": { "foundation": [18, 19], "higher": [11, 20] }
         },
@@ -388,7 +388,7 @@
           "tier": "both",
           "foundation_content": "Give informal reasons and simple proofs for geometrical results (angles, parallel lines, polygons).",
           "higher_content": "Give formal proofs using circle theorems and other geometrical results.",
-          "vocabSlugs": ["edx-geo-angles"],
+          "vocabSlugs": ["edx-geo-reasoning"],
           "questionTopics": ["Geometry"],
           "sow": { "foundation": [20, 22], "higher": [20, 25] }
         },

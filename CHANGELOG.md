@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.7.3] - 2026-03-06 — 核心词汇关联性审核与重组
+
+### 修复
+- **Edexcel 7 个 section 词汇重写**：1.9/1.10/1.11/2.5/2.6/4.4/4.7 原先因 vocabSlugs 重复导致词汇错配，全部替换为与知识点匹配的专属词汇
+- **vocabSlugs 一致性修复**：syllabus-edexcel.json 中 7 个 section 的 vocabSlugs 更新为唯一标识（edx-num-standard / edx-num-applying / edx-num-calculator / edx-alg-proportion / edx-geo-measures / edx-geo-reasoning）
+
+### 补充
+- **CIE 22 个薄弱 section 词汇扩容**：为词汇量 ≤5 的 section 各补充 2-4 个关键词（1.6/1.8/1.10/1.11/1.14/1.17/1.18/2.2/2.4/2.8/2.11/3.2/3.3/3.6/3.7/4.5/4.8/6.3/7.3/8.2/9.6/9.7）
+- CIE 最小词汇量从 4 提升到 6，总词数 517→595
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `data/vocabulary-edexcel.json` | 7 section 词汇重写（385→387 词） |
+| `data/vocabulary-cie.json` | 22 section 补充词汇（517→595 词） |
+| `data/syllabus-edexcel.json` | 7 section vocabSlugs 更新 |
+| `js/config.js` | APP_VERSION → v1.7.3 |
+
 ## [1.7.2-data] - 2026-03-06 — 全量知识卡片+经典例题内容填充
 
 ### 数据
