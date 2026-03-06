@@ -1,5 +1,31 @@
 # Changelog
 
+## [1.8.4] - 2026-03-06 — TikZ→SVG 图表渲染试点
+
+### 新增功能
+- **TikZ→SVG 编译管道**: `build-figures.py` 脚本，从 CIE 源码自动提取 TikZ 图表，pdflatex+pdf2svg 编译为 SVG
+- **图表内联渲染**: Section 2.5 七道含图真题直接显示 SVG/PNG 图表，替代"请参考原卷"提示
+- **暗色模式**: SVG 自动反色（`invert(1) hue-rotate(180deg)`），黑底白线，彩色标注保持原色调
+- **PNG 兜底**: 无 TikZ 源码的题目自动拷贝 PNG 截图作为备选
+- **manifest 解耦**: `data/figures/manifest.json` 独立映射，无需重新生成 pastpapers-cie.json
+- **批改视图**: 实战模式批改页面同步显示题目图表
+
+### 数据统计
+- Section 2.5 共 7 道图表题：5 题 TikZ→SVG（7 个 SVG 文件）+ 2 题 PNG 兜底
+- SVG 平均 ~16KB，编译成功率 100%
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `scripts/build-figures.py` | 新建 TikZ→SVG 编译脚本 |
+| `data/figures/*.svg` | 7 个 SVG 图表文件 |
+| `data/figures/*.png` | 2 个 PNG 兜底文件 |
+| `data/figures/manifest.json` | qid→figure 映射 |
+| `js/practice.js` | +`_ppRenderFigures()` + manifest 加载 + 批改视图集成 |
+| `css/style.css` | +`.pp-figures` `.pp-fig` + 暗色模式反色 |
+| `js/config.js` | v1.8.4 |
+| `index.html` | 缓存版本号更新 |
+
 ## [1.8.3] - 2026-03-06 — 真题纠错模块
 
 ### 新增功能

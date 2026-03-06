@@ -965,6 +965,7 @@ function _pqFindQ(qid, board) {
    ══════════════════════════════════════════════════════════════ */
 
 var _ppData = {};          /* { cie: [...] } lazy-loaded */
+var _ppFigures = {};       /* { qid: ["figures/xxx.svg", ...] } from manifest.json */
 var _ppSession = null;     /* { questions, current, mode, startTime, results[], board, sectionId, ... } */
 var _ppTimer = null;       /* exam timer interval */
 
@@ -983,6 +984,14 @@ function loadPastPaperData(board) {
   board = board || 'cie';
   if (_ppData[board]) return Promise.resolve(_ppData[board]);
   var file = 'data/pastpapers-' + board + '.json?v=' + APP_VERSION;
+  /* Load figure manifest in parallel (fire-and-forget) */
+  if (!_ppFigures._loaded) {
+    _ppFigures._loaded = true;
+    fetch('data/figures/manifest.json?v=' + APP_VERSION)
+      .then(function(r) { return r.ok ? r.json() : {}; })
+      .then(function(m) { for (var k in m) _ppFigures[k] = m[k]; })
+      .catch(function() {});
+  }
   return fetch(file).then(function(r) {
     if (!r.ok) throw new Error('Failed to load ' + file);
     return r.json();
@@ -1065,6 +1074,21 @@ function _ppRenderTex(tex) {
   /* Convert markdown bold; keep \n intact (CSS white-space: pre-line handles display) */
   var html = tex.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
   return html;
+}
+
+function _ppRenderFigures(q) {
+  var figs = _ppFigures[q.id];
+  if (figs && figs.length > 0) {
+    var h = '<div class="pp-figures">';
+    for (var i = 0; i < figs.length; i++) {
+      h += '<img class="pp-fig" src="data/' + figs[i] + '?v=' + APP_VERSION + '" alt="Question diagram" loading="lazy">';
+    }
+    return h + '</div>';
+  }
+  if (q.hasFigure) {
+    return '<div class="pp-figure-notice">' + t('This question includes a diagram \u2014 refer to original paper', '\u672c\u9898\u5305\u542b\u56fe\u8868\uff0c\u8bf7\u53c2\u8003\u539f\u5377') + '</div>';
+  }
+  return '';
 }
 
 function _ppDiffLabel(d) {
@@ -1222,9 +1246,7 @@ function renderPPCard() {
   /* Card body: question */
   html += '<div class="pp-card-body" id="pp-question-body">';
   html += _ppRenderTex(q.tex);
-  if (q.hasFigure) {
-    html += '<div class="pp-figure-notice">' + t('This question includes a diagram — refer to original paper', '\u672c\u9898\u5305\u542b\u56fe\u8868\uff0c\u8bf7\u53c2\u8003\u539f\u5377') + '</div>';
-  }
+  html += _ppRenderFigures(q);
   html += '</div>';
 
   /* Parts info */
@@ -1551,8 +1573,9 @@ function ppShowMarking() {
     html += '<div class="pp-mark-body" id="pp-mark-body-' + i + '" style="display:none">';
 
     /* Question preview */
-    html += '<div style="font-size:13px;line-height:1.6;margin-bottom:12px;max-height:120px;overflow:auto" class="pp-mark-tex">';
+    html += '<div style="font-size:13px;line-height:1.6;margin-bottom:12px;max-height:160px;overflow:auto" class="pp-mark-tex">';
     html += _ppRenderTex(q.tex);
+    html += _ppRenderFigures(q);
     html += '</div>';
 
     /* Self-assessment */

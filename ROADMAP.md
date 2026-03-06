@@ -313,6 +313,7 @@
 ### Phase 10F — Past Paper 真题引擎 [Phase A+ DONE]
 - [x] **Phase A 试点 (2.5 Equations)**: 数据管道 + 127 题 LaTeX→KaTeX + 练习/实战/错题本 → v1.8.0
 - [x] **Phase A+ 全章扩展 + 纠错**: 代数全章 793 题 + 15 种题型 + 母题总结 + 纠错模块 → v1.8.1-v1.8.3
+- [x] **图表渲染试点**: TikZ→SVG 管道 + S2.5 七题图表 + 暗色模式反色 + PNG 兜底 → v1.8.4
 - [ ] **Phase B 全面扩展**: 全部 72 CIE sections 批量处理 (3,953 题)
 - [ ] **Phase C 考点精讲**: 每 section 知识卡片（公式 + 要点 + 易错点）
 - [ ] **Phase D 题型归纳**: 按题型分类组织真题（不仅按知识点）

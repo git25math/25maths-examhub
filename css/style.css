@@ -3141,6 +3141,12 @@ input { font-family: inherit; }
 .pp-figure-notice { padding: 12px; background: var(--c-warning-bg); color: var(--c-warning);
   border-radius: var(--r-sm); font-size: 12px; text-align: center; margin-top: 8px; }
 
+/* Past paper figures (TikZ SVG / PNG) */
+.pp-figures { text-align: center; margin: 12px 0; }
+.pp-fig { max-width: 100%; height: auto; border-radius: var(--r-sm);
+  border: 1px solid var(--c-border-light); padding: 8px; background: #fff; }
+[data-theme="dark"] .pp-fig { filter: invert(1) hue-rotate(180deg); border-color: var(--c-border); }
+
 /* Nav buttons */
 .pp-nav-row { display: flex; justify-content: space-between; gap: 12px;
   max-width: 640px; margin: 12px auto 0; }
