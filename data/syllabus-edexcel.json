@@ -51,7 +51,7 @@
           "slug": "edx-1-4",
           "tier": "both",
           "foundation_content": "Identify square numbers, cube numbers and triangular numbers. Calculate squares, square roots, cubes and cube roots. Use index notation and index laws for multiplication, division, and raising a power to a power (positive integer indices). Express integers as a product of powers of prime factors.",
-          "higher_content": "Use surds and manipulate surds, including rationalising a denominator. Use and understand fractional indices (e.g. a^(1/2) = √a). Use and understand negative indices (e.g. a^(-n) = 1/a^n).",
+          "higher_content": "Use surds and manipulate surds, including rationalising a denominator. Use and understand fractional indices (e.g. $a^{\\frac{1}{2}} = \\sqrt{a}$). Use and understand negative indices (e.g. $a^{-n} = \\frac{1}{a^n}$).",
           "vocabSlugs": ["edx-num-powers"],
           "questionTopics": ["Powers And Roots"],
           "sow": { "foundation": [3, 5], "higher": [3] }
@@ -63,7 +63,7 @@
           "slug": "edx-1-5",
           "tier": "both",
           "foundation_content": "Understand the definition of a set. Use set notation: ∈, ∉, ∅ (or {}). Understand and use the universal set, subsets, intersection (∩) and union (∪). Use Venn diagrams to represent sets and their relationships. List or describe subsets of a given set.",
-          "higher_content": "Use sets defined algebraically. Calculate n(A), n(A ∪ B), n(A ∩ B). Use systematic listing strategies, including the product rule for counting. Use Venn diagrams to solve problems involving three sets.",
+          "higher_content": "Use sets defined algebraically. Calculate $n(A)$, $n(A \\cup B)$, $n(A \\cap B)$. Use systematic listing strategies, including the product rule for counting. Use Venn diagrams to solve problems involving three sets.",
           "vocabSlugs": ["edx-num-sets"],
           "questionTopics": ["Set Language And Notation"],
           "sow": { "foundation": [10], "higher": [10, 11] }
@@ -166,8 +166,8 @@
           "title_zh": "代数运算",
           "slug": "edx-2-2",
           "tier": "both",
-          "foundation_content": "Collect like terms. Multiply a single term over a bracket. Take out common factors. Expand the product of two linear expressions. Factorise quadratic expressions of the form x² + bx + c. Factorise the difference of two squares.",
-          "higher_content": "Expand the product of three linear expressions. Factorise quadratics of the form ax² + bx + c. Simplify and manipulate algebraic fractions. Complete the square for a quadratic expression. Construct and use algebraic proofs and arguments.",
+          "foundation_content": "Collect like terms. Multiply a single term over a bracket. Take out common factors. Expand the product of two linear expressions. Factorise quadratic expressions of the form $x^2 + bx + c$. Factorise the difference of two squares.",
+          "higher_content": "Expand the product of three linear expressions. Factorise quadratics of the form $ax^2 + bx + c$. Simplify and manipulate algebraic fractions. Complete the square for a quadratic expression. Construct and use algebraic proofs and arguments.",
           "vocabSlugs": ["edx-alg-manip"],
           "questionTopics": ["Algebraic Manipulation"],
           "sow": { "foundation": [6, 12, 13], "higher": [6, 13, 14] }
@@ -282,8 +282,8 @@
           "title_zh": "图像",
           "slug": "edx-3-3",
           "tier": "both",
-          "foundation_content": "Use and interpret coordinates in all four quadrants. Draw and interpret straight-line graphs including gradient and y-intercept. Recognise, plot and draw graphs of y = mx + c. Find the equation of a straight line from its graph. Generate points and plot graphs of quadratic functions. Interpret graphs of linear and quadratic functions. Read values from real-life graphs (distance–time, speed–time). Calculate the gradient of a straight line from coordinates.",
-          "higher_content": "Plot and recognise graphs of cubic, reciprocal, exponential and trigonometric functions. Apply transformations to graphs: f(x) + a, f(x + a), af(x), f(ax). Find the gradient of a curve at a point using a tangent. Find the intersection of a line and a curve. Determine the equation of a line parallel or perpendicular to a given line.",
+          "foundation_content": "Use and interpret coordinates in all four quadrants. Draw and interpret straight-line graphs including gradient and y-intercept. Recognise, plot and draw graphs of $y = mx + c$. Find the equation of a straight line from its graph. Generate points and plot graphs of quadratic functions. Interpret graphs of linear and quadratic functions. Read values from real-life graphs (distance–time, speed–time). Calculate the gradient of a straight line from coordinates.",
+          "higher_content": "Plot and recognise graphs of cubic, reciprocal, exponential and trigonometric functions. Apply transformations to graphs: $f(x) + a$, $f(x + a)$, $af(x)$, $f(ax)$. Find the gradient of a curve at a point using a tangent. Find the intersection of a line and a curve. Determine the equation of a line parallel or perpendicular to a given line.",
           "vocabSlugs": ["edx-fn-linear", "edx-fn-nonlinear", "edx-fn-transform"],
           "questionTopics": ["Geometry"],
           "sow": { "foundation": [7, 8, 9, 16, 17], "higher": [7, 8, 16, 17, 26, 27, 28] }
@@ -399,7 +399,7 @@
           "slug": "edx-4-8",
           "tier": "both",
           "foundation_content": "Know and use Pythagoras' theorem. Know and use sine, cosine and tangent ratios for right-angled triangles (SOHCAHTOA). Apply Pythagoras and trigonometry in 2D contexts.",
-          "higher_content": "Use trigonometry with obtuse angles. Understand angles of elevation and depression. Know and use the sine rule and cosine rule. Know and use the formula for area of a triangle = ½ab sin C. Apply Pythagoras and trigonometry in 3D contexts.",
+          "higher_content": "Use trigonometry with obtuse angles. Understand angles of elevation and depression. Know and use the sine rule and cosine rule. Know and use the formula for area of a triangle $= \\frac{1}{2}ab\\sin C$. Apply Pythagoras and trigonometry in 3D contexts.",
           "vocabSlugs": ["edx-geo-trig"],
           "questionTopics": ["Trigonometry And Pythagoras' Theorem"],
           "sow": { "foundation": [24, 25], "higher": [23, 24, 27] }
@@ -435,7 +435,7 @@
           "slug": "edx-4-11",
           "tier": "both",
           "foundation_content": "Understand and use similarity of shapes. Identify similar triangles. Calculate missing lengths using similarity (linear scale factor).",
-          "higher_content": "Use the relationship between area scale factor and linear scale factor (k²). Use the relationship between volume scale factor and linear scale factor (k³). Solve problems involving similar shapes.",
+          "higher_content": "Use the relationship between area scale factor and linear scale factor ($k^2$). Use the relationship between volume scale factor and linear scale factor ($k^3$). Solve problems involving similar shapes.",
           "vocabSlugs": ["edx-mens-similarity"],
           "questionTopics": ["Geometry"],
           "sow": { "foundation": [29, 30], "higher": [30, 31] }
@@ -510,7 +510,7 @@
           "title_zh": "概率",
           "slug": "edx-6-3",
           "tier": "both",
-          "foundation_content": "Understand and use the probability scale from 0 to 1. Understand and use the terms: event, outcome, equally likely, sample space, theoretical probability, relative frequency, expected frequency. Calculate probabilities of single events. Use sample space diagrams, two-way tables. Calculate the probability of an event not happening: P(not A) = 1 − P(A). Understand that the sum of all probabilities for mutually exclusive outcomes is 1. List all outcomes systematically. Know that for independent events: P(A and B) = P(A) × P(B). Know that for mutually exclusive events: P(A or B) = P(A) + P(B).",
+          "foundation_content": "Understand and use the probability scale from 0 to 1. Understand and use the terms: event, outcome, equally likely, sample space, theoretical probability, relative frequency, expected frequency. Calculate probabilities of single events. Use sample space diagrams, two-way tables. Calculate the probability of an event not happening: $P(\\text{not } A) = 1 - P(A)$. Understand that the sum of all probabilities for mutually exclusive outcomes is 1. List all outcomes systematically. Know that for independent events: $P(A \\text{ and } B) = P(A) \\times P(B)$. Know that for mutually exclusive events: $P(A \\text{ or } B) = P(A) + P(B)$.",
           "higher_content": "Use tree diagrams to calculate probabilities of successive events (with and without replacement). Calculate conditional probabilities from tree diagrams, two-way tables and Venn diagrams. Apply the addition and multiplication rules for probability.",
           "vocabSlugs": ["edx-stat-prob", "edx-stat-prob-comb"],
           "questionTopics": ["Probability"],

@@ -1,5 +1,31 @@
 # Changelog
 
+## [1.7.1] - 2026-03-06 — 考纲内容支持 LaTeX 数学公式渲染
+
+### 新功能
+- **考纲数学公式渲染**：知识点详情页「考纲要求」区域支持 KaTeX 数学公式渲染，`$...$` 行内公式自动渲染为数学排版
+- **复用 pqRender 安全渲染**：考纲内容从 `escapeHtml()` 切换为 `pqRender()` 白名单消毒 + KaTeX 渲染，支持富文本 + 数学公式
+
+### 数据文件
+| 文件 | 说明 |
+|------|------|
+| `data/syllabus-cie.json` | 14 处数学表达式改为 `$...$` LaTeX 格式（幂与根、标准式、代数、函数、三角、概率等） |
+| `data/syllabus-edexcel.json` | 11 处数学表达式改为 `$...$` LaTeX 格式（幂与根、二次式、函数变换、三角面积、概率公式等） |
+
+### JS 变更
+| 文件 | 变更 |
+|------|------|
+| `js/syllabus.js` | 4 处 `escapeHtml()` → `pqRender()` + 末尾添加 `loadKaTeX().then(renderMath)` |
+| `js/config.js` | APP_VERSION → v1.7.1 |
+
+### LaTeX 转换示例
+- `a^(1/2) = √a` → $a^{\frac{1}{2}} = \sqrt{a}$
+- `A × 10^n` → $A \times 10^n$
+- `ax² + bx + c` → $ax^2 + bx + c$
+- `f(x) = 3x − 5` → $f(x) = 3x - 5$
+- `½ab sin C` → $\frac{1}{2}ab\sin C$
+- `P(A and B) = P(A) × P(B)` → $P(A \text{ and } B) = P(A) \times P(B)$
+
 ## [1.7.0] - 2026-03-06 — Edexcel 4MA1 考纲驱动重构
 
 ### 新功能

@@ -465,24 +465,24 @@ function renderSectionDetail(ch, sec, secIdx, board) {
     /* Edexcel uses foundation_content / higher_content */
     if (sec.foundation_content) {
       html += '<div class="sec-syllabus-block">';
-      html += '<span class="sec-syllabus-label">Foundation:</span> ' + escapeHtml(sec.foundation_content);
+      html += '<span class="sec-syllabus-label">Foundation:</span> ' + pqRender(sec.foundation_content);
       html += '</div>';
     }
     if (sec.higher_content) {
       html += '<div class="sec-syllabus-block">';
-      html += '<span class="sec-syllabus-label">Higher:</span> ' + escapeHtml(sec.higher_content);
+      html += '<span class="sec-syllabus-label">Higher:</span> ' + pqRender(sec.higher_content);
       html += '</div>';
     }
   } else {
     /* CIE uses core_content / extended_content */
     if (sec.core_content) {
       html += '<div class="sec-syllabus-block">';
-      html += '<span class="sec-syllabus-label">Core:</span> ' + escapeHtml(sec.core_content);
+      html += '<span class="sec-syllabus-label">Core:</span> ' + pqRender(sec.core_content);
       html += '</div>';
     }
     if (sec.extended_content) {
       html += '<div class="sec-syllabus-block">';
-      html += '<span class="sec-syllabus-label">Extended:</span> ' + escapeHtml(sec.extended_content);
+      html += '<span class="sec-syllabus-label">Extended:</span> ' + pqRender(sec.extended_content);
       html += '</div>';
     }
   }
@@ -503,6 +503,7 @@ function renderSectionDetail(ch, sec, secIdx, board) {
   html += '</div>';
 
   E('panel-section').innerHTML = html;
+  loadKaTeX().then(function() { renderMath(E('panel-section')); });
 }
 
 /* Mini star display helper */

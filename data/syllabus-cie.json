@@ -25,7 +25,7 @@
           "title_zh": "集合与韦恩图",
           "slug": "cie-1-2",
           "tier": "both",
-          "core_content": "Use set language, notation and Venn diagrams to describe sets and represent relationships between sets. Definition of sets: e.g. A = {x : x is a natural number}, B = {(x, y) : y = mx + c}. Notation: n(A), ∈, ∉, complement, empty set, universal set, A ⊂ B, A ⊄ B, union, intersection.",
+          "core_content": "Use set language, notation and Venn diagrams to describe sets and represent relationships between sets. Definition of sets: e.g. A = {x : x is a natural number}, B = {(x, y) : y = mx + c}. Notation: $n(A)$, ∈, ∉, complement, empty set, universal set, A ⊂ B, A ⊄ B, union, intersection.",
           "extended_content": "Use Venn diagrams with up to three sets to solve problems.",
           "vocabSlugs": ["num-sets"],
           "questionTopics": ["Sets"]
@@ -37,7 +37,7 @@
           "slug": "cie-1-3",
           "tier": "both",
           "core_content": "Calculate with squares, square roots, cubes, cube roots and other powers and roots of numbers. Use index notation and index laws for multiplication and division of positive integer powers.",
-          "extended_content": "Use and interpret fractional indices (e.g. a^(1/2) = √a) and negative indices (e.g. a^(-n) = 1/a^n). Apply the rules of indices.",
+          "extended_content": "Use and interpret fractional indices (e.g. $a^{\\frac{1}{2}} = \\sqrt{a}$) and negative indices (e.g. $a^{-n} = \\frac{1}{a^n}$). Apply the rules of indices.",
           "vocabSlugs": ["num-powers"],
           "questionTopics": ["Powers And Roots", "Indices I"]
         },
@@ -91,7 +91,7 @@
           "title_zh": "标准式",
           "slug": "cie-1-8",
           "tier": "both",
-          "core_content": "Understand and use standard form to express very large and very small numbers in the form A × 10^n where 1 ≤ A < 10 and n is an integer. Convert numbers to and from standard form. Calculate with values in standard form.",
+          "core_content": "Understand and use standard form to express very large and very small numbers in the form $A \\times 10^n$ where $1 \\leq A < 10$ and $n$ is an integer. Convert numbers to and from standard form. Calculate with values in standard form.",
           "extended_content": "",
           "vocabSlugs": ["num-powers"],
           "questionTopics": ["Standard Form"]
@@ -242,8 +242,8 @@
           "title_zh": "代数运算",
           "slug": "cie-2-3",
           "tier": "both",
-          "core_content": "Collect like terms. Expand products of algebraic expressions. Factorise by extracting common factors. Factorise expressions of the form ax + bx + kay + kby. Expand the product of two linear expressions.",
-          "extended_content": "Factorise expressions of the form a²x² − b²y² (difference of squares). Complete the square for expressions in the form x² + bx + c. Factorise quadratic expressions of the form ax² + bx + c.",
+          "core_content": "Collect like terms. Expand products of algebraic expressions. Factorise by extracting common factors. Factorise expressions of the form $ax + bx + kay + kby$. Expand the product of two linear expressions.",
+          "extended_content": "Factorise expressions of the form $a^2x^2 - b^2y^2$ (difference of squares). Complete the square for expressions in the form $x^2 + bx + c$. Factorise quadratic expressions of the form $ax^2 + bx + c$.",
           "vocabSlugs": ["alg-manip"],
           "questionTopics": ["Algebraic Manipulation"]
         },
@@ -319,8 +319,8 @@
           "title_zh": "函数图像",
           "slug": "cie-2-10",
           "tier": "both",
-          "core_content": "Construct tables of values and draw graphs of functions of the form y = ax^n where n = −2, −1, 0, 1, 2, 3. Interpret graphs of linear, quadratic, cubic and reciprocal functions. Solve associated equations approximately by graphical methods.",
-          "extended_content": "Draw and interpret graphs of exponential functions y = a^x. Estimate gradients of curves by drawing tangents. Solve equations approximately using graphical methods.",
+          "core_content": "Construct tables of values and draw graphs of functions of the form $y = ax^n$ where $n = -2, -1, 0, 1, 2, 3$. Interpret graphs of linear, quadratic, cubic and reciprocal functions. Solve associated equations approximately by graphical methods.",
+          "extended_content": "Draw and interpret graphs of exponential functions $y = a^x$. Estimate gradients of curves by drawing tangents. Solve equations approximately using graphical methods.",
           "vocabSlugs": ["alg-graphs"],
           "questionTopics": ["Graphs Of Functions"]
         },
@@ -353,7 +353,7 @@
           "slug": "cie-2-13",
           "tier": "extended",
           "core_content": "",
-          "extended_content": "Understand function notation, e.g. f(x) = 3x − 5, f : x ↦ 3x − 5. Understand and find inverse functions f⁻¹(x). Form composite functions fg(x). Use the relationships between a function and its inverse.",
+          "extended_content": "Understand function notation, e.g. $f(x) = 3x - 5$, $f : x \\mapsto 3x - 5$. Understand and find inverse functions $f^{-1}(x)$. Form composite functions $fg(x)$. Use the relationships between a function and its inverse.",
           "vocabSlugs": ["alg-func"],
           "questionTopics": ["Functions"]
         }
@@ -382,7 +382,7 @@
           "title_zh": "画线性图像",
           "slug": "cie-3-2",
           "tier": "both",
-          "core_content": "Draw straight-line graphs from their equations using a table of values. Recognise that equations of the form y = mx + c correspond to straight-line graphs.",
+          "core_content": "Draw straight-line graphs from their equations using a table of values. Recognise that equations of the form $y = mx + c$ correspond to straight-line graphs.",
           "extended_content": "",
           "vocabSlugs": ["coord-linear"],
           "questionTopics": ["Drawing Linear Graphs"]
@@ -415,7 +415,7 @@
           "title_zh": "直线方程",
           "slug": "cie-3-5",
           "tier": "both",
-          "core_content": "Interpret and obtain the equation of a straight-line graph in the form y = mx + c. Determine the equation of a straight line parallel to a given line.",
+          "core_content": "Interpret and obtain the equation of a straight-line graph in the form $y = mx + c$. Determine the equation of a straight line parallel to a given line.",
           "extended_content": "Find the equation of a straight line given the gradient and one point, or given two points.",
           "vocabSlugs": ["coord-line-eq"],
           "questionTopics": ["Equations Of Linear Graphs"]
@@ -438,7 +438,7 @@
           "slug": "cie-3-7",
           "tier": "extended",
           "core_content": "",
-          "extended_content": "Find the gradient and equation of a straight line perpendicular to a given line. Know that perpendicular lines have gradients whose product is −1.",
+          "extended_content": "Find the gradient and equation of a straight line perpendicular to a given line. Know that perpendicular lines have gradients whose product is $-1$.",
           "vocabSlugs": ["coord-parallel"],
           "questionTopics": ["Perpendicular Lines"]
         }
@@ -649,7 +649,7 @@
           "slug": "cie-6-4",
           "tier": "extended",
           "core_content": "",
-          "extended_content": "Recognise, sketch and interpret graphs of y = sin x, y = cos x, y = tan x for 0° ≤ x ≤ 360°. Solve simple trigonometric equations for values in this range.",
+          "extended_content": "Recognise, sketch and interpret graphs of $y = \\sin x$, $y = \\cos x$, $y = \\tan x$ for $0^\\circ \\leq x \\leq 360^\\circ$. Solve simple trigonometric equations for values in this range.",
           "vocabSlugs": ["trig-graphs"],
           "questionTopics": ["Trigonometry"]
         },
@@ -660,7 +660,7 @@
           "slug": "cie-6-5",
           "tier": "extended",
           "core_content": "",
-          "extended_content": "Use the sine rule and the cosine rule to solve problems involving triangles. Use the formula Area = ½ab sin C for the area of a triangle.",
+          "extended_content": "Use the sine rule and the cosine rule to solve problems involving triangles. Use the formula $\\text{Area} = \\frac{1}{2}ab\\sin C$ for the area of a triangle.",
           "vocabSlugs": ["trig-non-right"],
           "questionTopics": ["Non Right Angled Triangles"]
         },
@@ -690,7 +690,7 @@
           "slug": "cie-7-1",
           "tier": "both",
           "core_content": "Describe and perform reflections, rotations, translations and enlargements. Recognise and describe transformations. Describe combined transformations.",
-          "extended_content": "Use the following transformations: reflection (including y = x, y = −x), rotation, translation, enlargement (including fractional and negative scale factors). Describe fully a single transformation that is equivalent to a combination of transformations.",
+          "extended_content": "Use the following transformations: reflection (including $y = x$, $y = -x$), rotation, translation, enlargement (including fractional and negative scale factors). Describe fully a single transformation that is equivalent to a combination of transformations.",
           "vocabSlugs": ["vec-transform", "vec-rotation"],
           "questionTopics": ["Transformations", "Transformations And Vectors"]
         },
