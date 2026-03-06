@@ -1079,12 +1079,21 @@ function _ppPartsInfo(q) {
 
 /* ═══ GROUP LABELS ═══ */
 var _ppGroupLabels = {
-  'simul-linear':    { en: 'Simultaneous (Linear)',    zh: '\u8054\u7acb\u4e00\u6b21\u65b9\u7a0b' },
-  'simul-nonlinear': { en: 'Simultaneous (Nonlinear)', zh: '\u8054\u7acb\u975e\u7ebf\u6027\u65b9\u7a0b' },
-  'rearrange':       { en: 'Change of Subject',        zh: '\u516c\u5f0f\u53d8\u5f62' },
-  'quadratic':       { en: 'Quadratic Equations',      zh: '\u4e8c\u6b21\u65b9\u7a0b' },
-  'linear':          { en: 'Linear Equations',          zh: '\u4e00\u6b21\u65b9\u7a0b' },
-  'mixed':           { en: 'Mixed / Other',             zh: '\u7efc\u5408\u8fd0\u7528' }
+  'simplify':          { en: 'Simplify / Factorise',     zh: '\u5316\u7b80/\u56e0\u5f0f\u5206\u89e3' },
+  'quadratic':         { en: 'Quadratic Equations',      zh: '\u4e8c\u6b21\u65b9\u7a0b' },
+  'function':          { en: 'Functions',                zh: '\u51fd\u6570' },
+  'sequence':          { en: 'Sequences',                zh: '\u6570\u5217' },
+  'graph':             { en: 'Graphs',                   zh: '\u56fe\u50cf' },
+  'simul-linear':      { en: 'Simultaneous (Linear)',    zh: '\u8054\u7acb\u4e00\u6b21' },
+  'rearrange':         { en: 'Change of Subject',        zh: '\u516c\u5f0f\u53d8\u5f62' },
+  'algebraic-fraction':{ en: 'Algebraic Fractions',      zh: '\u4ee3\u6570\u5206\u5f0f' },
+  'linear':            { en: 'Linear Equations',         zh: '\u4e00\u6b21\u65b9\u7a0b' },
+  'simul-nonlinear':   { en: 'Simultaneous (Nonlinear)', zh: '\u8054\u7acb\u975e\u7ebf\u6027' },
+  'inequality':        { en: 'Inequalities',             zh: '\u4e0d\u7b49\u5f0f' },
+  'proportion':        { en: 'Proportion',               zh: '\u6bd4\u4f8b' },
+  'indices':           { en: 'Indices',                  zh: '\u6307\u6570' },
+  'substitution':      { en: 'Substitution',             zh: '\u4ee3\u5165\u6c42\u503c' },
+  'mixed':             { en: 'Mixed / Other',            zh: '\u7efc\u5408\u8fd0\u7528' }
 };
 
 function _ppGroupLabel(gk) {

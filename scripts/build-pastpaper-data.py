@@ -115,8 +115,10 @@ def clean_latex(raw):
 
     # === Phase 7: Normalize whitespace ===
 
+    # Replace tabs with spaces (tabs break KaTeX rendering)
+    tex = tex.replace('\t', ' ')
     tex = re.sub(r'\n{3,}', '\n\n', tex)
-    tex = re.sub(r'\n[ \t]+\n', '\n\n', tex)
+    tex = re.sub(r'\n[ ]+\n', '\n\n', tex)
     # Remove trailing \\ only on lines that look like answer lines (e.g., "x = \\")
     # Don't touch \\ inside math environments
     tex = re.sub(r'^([a-zA-Z]\s*=\s*)\\\\\s*$', r'\1', tex, flags=re.MULTILINE)
@@ -155,7 +157,43 @@ def classify_qtype(qt):
         return 'quadratic'
     if 'linear equation' in q or 'linear inequality' in q:
         return 'linear'
+    if 'sequence' in q or 'nth term' in q or 'pattern' in q:
+        return 'sequence'
+    if 'function' in q or 'composite' in q or 'inverse' in q:
+        return 'function'
+    if 'graph' in q or 'sketch' in q or 'plot' in q or 'gradient' in q or 'tangent' in q:
+        return 'graph'
+    if 'inequalit' in q:
+        return 'inequality'
+    if 'fraction' in q and 'algebra' in q:
+        return 'algebraic-fraction'
+    if 'factoris' in q or 'expand' in q or 'simplif' in q:
+        return 'simplify'
+    if 'substit' in q:
+        return 'substitution'
+    if 'indic' in q or 'index' in q or 'power' in q:
+        return 'indices'
+    if 'proportion' in q or 'variation' in q:
+        return 'proportion'
     return 'mixed'
+
+
+# Section → topic name mapping
+SECTION_TOPICS = {
+    "2.1": "Algebra basics",
+    "2.2": "Rearranging formulae",
+    "2.3": "Indices",
+    "2.4": "Algebraic fractions",
+    "2.5": "Equations",
+    "2.6": "Inequalities",
+    "2.7": "Sequences",
+    "2.8": "Proportion",
+    "2.9": "Graphs in practical situations",
+    "2.10": "Graphs of functions",
+    "2.11": "Differentiation & gradient",
+    "2.12": "Functions notation",
+    "2.13": "Functions",
+}
 
 
 def build_source_ref(q):
@@ -197,16 +235,12 @@ def process_questions(questions, section_filter=None):
         if not subtopic:
             continue
 
+        # Extract section number: C2.5 → 2.5, E2.10 → 2.10
+        section_num = subtopic.lstrip("CE")
+
         # Filter by section if specified
         if section_filter:
-            # Match C{section} or E{section}
-            section_num = subtopic.lstrip("CE")
             if section_num != section_filter:
-                continue
-        else:
-            # Default: only 2.5 for pilot
-            section_num = subtopic.lstrip("CE")
-            if section_num != "2.5":
                 continue
 
         raw_tex = q.get("question_text", "")
@@ -227,12 +261,15 @@ def process_questions(questions, section_filter=None):
         # Check for figure references
         has_figure = q.get("has_figure", False) or "\\relinput" in raw_tex
 
+        # Determine topic name from section
+        topic = SECTION_TOPICS.get(section_num, "Algebra")
+
         entry = {
             "id": q["id"],
             "s": section_num,
             "d": determine_difficulty(q),
             "cat": "algebra",
-            "topic": "Equations",
+            "topic": topic,
             "qtype": q.get("question_type", ""),
             "g": classify_qtype(q.get("question_type", "")),
             "src": build_source_ref(q),
@@ -255,13 +292,11 @@ def process_questions(questions, section_filter=None):
 
 
 def main():
-    section = "2.5"  # default pilot section
+    section = None  # default: all sections
     if "--section" in sys.argv:
         idx = sys.argv.index("--section")
         if idx + 1 < len(sys.argv):
             section = sys.argv[idx + 1]
-    elif "--all" in sys.argv:
-        section = None
 
     # Load tagged data
     print(f"Loading: {TAGGED_FILE}")
