@@ -108,7 +108,7 @@ async function _loadBoardClasses() {
   var now = Date.now();
   if (_boardClassList && (now - _boardClassListTs) < 30000) return _boardClassList;
   try {
-    var res = await sb.from('classes')
+    var res = await sb.from('kw_classes')
       .select('id, name, grade')
       .eq('school_id', userSchoolId)
       .order('created_at', { ascending: true });

@@ -62,7 +62,7 @@ serve(async (req) => {
 
     // Get class info (grade, school_id)
     const { data: cls } = await supabaseAdmin
-      .from('classes').select('grade, school_id').eq('id', class_id).single()
+      .from('kw_classes').select('grade, school_id').eq('id', class_id).single()
     if (!cls || cls.school_id !== teacher.school_id) {
       return new Response(JSON.stringify({ error: 'Class not found or not yours' }), {
         status: 403, headers: { ...corsHeaders, 'Content-Type': 'application/json' }
@@ -99,7 +99,7 @@ serve(async (req) => {
         }
 
         // Insert class_students record
-        await supabaseAdmin.from('class_students').insert({
+        await supabaseAdmin.from('kw_class_students').insert({
           class_id: class_id,
           user_id: userData.user.id,
           student_name: s.name

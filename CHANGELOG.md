@@ -1,5 +1,25 @@
 # Changelog
 
+## [1.9.4] - 2026-03-07 — Keywords 表重命名 kw_ 前缀
+
+### 变更
+- **表重命名**: `classes` → `kw_classes`、`class_students` → `kw_class_students`、`assignments` → `kw_assignments`，避免与 25maths-website B2B 表名冲突
+- **Supabase 迁移**: 新增 `20260307100000_rename_kw_tables.sql`，包含表重命名、索引重命名、RLS 策略重建、RPC 函数更新、视图重建
+- **Edge Functions**: 3 个函数（create-students / update-student / reset-student-password）更新表引用
+- **前端 JS**: admin.js（7处）、homework.js（1处）、app.js（1处）更新 `.from()` 调用
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `supabase/migrations/20260307100000_rename_kw_tables.sql` | 新建：ALTER TABLE RENAME + 索引/策略/函数/视图更新 |
+| `supabase/functions/create-students/index.ts` | `classes` → `kw_classes`、`class_students` → `kw_class_students` |
+| `supabase/functions/update-student/index.ts` | `class_students` → `kw_class_students`、`classes!inner` → `kw_classes!inner` |
+| `supabase/functions/reset-student-password/index.ts` | 同 update-student |
+| `js/admin.js` | 4处 `classes` + 3处 `class_students` → kw_ 前缀 |
+| `js/homework.js` | 1处 `class_students` → `kw_class_students` |
+| `js/app.js` | 1处 `classes` → `kw_classes` |
+| `CLAUDE.md` | 更新 Supabase tables 列表 |
+
 ## [1.9.3] - 2026-03-07 — 考点精讲知识卡片内容质量审核
 
 ### 修复

@@ -54,13 +54,13 @@ serve(async (req) => {
 
     // Verify student belongs to same school
     const { data: student } = await supabaseAdmin
-      .from('class_students')
-      .select('id, class_id, classes!inner(school_id)')
+      .from('kw_class_students')
+      .select('id, class_id, kw_classes!inner(school_id)')
       .eq('user_id', student_user_id)
       .limit(1)
       .single()
 
-    if (!student || (student as any).classes.school_id !== teacher.school_id) {
+    if (!student || (student as any).kw_classes.school_id !== teacher.school_id) {
       return new Response(JSON.stringify({ error: 'Student not in your school' }), {
         status: 403, headers: { ...corsHeaders, 'Content-Type': 'application/json' }
       })

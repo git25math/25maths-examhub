@@ -109,7 +109,7 @@ async function renderClassList() {
   ct.innerHTML = '<div class="admin-loading">' + t('Loading...', '加载中...') + '</div>';
 
   try {
-  var res = await sb.from('classes')
+  var res = await sb.from('kw_classes')
     .select('id, name, grade, created_at')
     .eq('school_id', _teacherData.school_id)
     .order('created_at', { ascending: true });
@@ -196,7 +196,7 @@ async function doCreateClass() {
   if (!name) { msg.textContent = t('Please enter class name', '请输入班级名称'); msg.className = 'settings-msg error'; return; }
 
   try {
-    var res = await sb.from('classes').insert({
+    var res = await sb.from('kw_classes').insert({
       school_id: _teacherData.school_id,
       teacher_id: _teacherData.id,
       name: name,
@@ -275,7 +275,7 @@ async function cascadeGradeUpdate(classId, newGrade) {
   if (r1.error) throw new Error(r1.error.message);
 
   /* 2. Update each student's auth metadata.board via edge function (parallel) */
-  var csRes = await sb.from('class_students').select('user_id').eq('class_id', classId);
+  var csRes = await sb.from('kw_class_students').select('user_id').eq('class_id', classId);
   var students = csRes.data || [];
   var promises = students.map(function(s) {
     return callEdgeFunction('update-student', { student_user_id: s.user_id, board: newGrade });
@@ -450,7 +450,7 @@ async function renderClassDetail(classId) {
   ct.innerHTML = '<div class="admin-loading">' + t('Loading...', '加载中...') + '</div>';
 
   /* Load class info */
-  var cRes = await sb.from('classes').select('id, name, grade').eq('id', classId).single();
+  var cRes = await sb.from('kw_classes').select('id, name, grade').eq('id', classId).single();
   var cls = cRes.data;
   if (!cls) { ct.innerHTML = '<div class="admin-empty">Not found</div>'; return; }
 
@@ -797,7 +797,7 @@ async function doRenameStudent(userId, classId) {
 
   try {
     /* 1. Update class_students */
-    var r1 = await sb.from('class_students').update({ student_name: newName }).eq('user_id', userId);
+    var r1 = await sb.from('kw_class_students').update({ student_name: newName }).eq('user_id', userId);
     if (r1.error) throw new Error(r1.error.message);
 
     /* 2. Update leaderboard nickname */
@@ -821,7 +821,7 @@ async function doRenameStudent(userId, classId) {
 /* ═══ MOVE STUDENT TO ANOTHER CLASS ═══ */
 async function showMoveClassModal(userId, studentName, currentClassId) {
   /* Load all classes for this school */
-  var res = await sb.from('classes')
+  var res = await sb.from('kw_classes')
     .select('id, name, grade')
     .eq('school_id', _teacherData.school_id)
     .order('created_at', { ascending: true });
@@ -862,7 +862,7 @@ async function doMoveStudent(userId, currentClassId) {
 
   try {
     /* 1. Update class_students */
-    var r1 = await sb.from('class_students').update({ class_id: newClassId }).eq('user_id', userId);
+    var r1 = await sb.from('kw_class_students').update({ class_id: newClassId }).eq('user_id', userId);
     if (r1.error) throw new Error(r1.error.message);
 
     /* 2. Update leaderboard (class_id + board) */

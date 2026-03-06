@@ -284,7 +284,7 @@ async function doCreateHw(classId) {
     if (res.error) throw new Error(res.error.message);
 
     /* Send notifications to all students in this class (batch INSERT) */
-    var csRes = await sb.from('class_students').select('user_id').eq('class_id', classId);
+    var csRes = await sb.from('kw_class_students').select('user_id').eq('class_id', classId);
     var students = csRes.data || [];
     if (students.length > 0) {
       var notifRows = students.map(function(s) {

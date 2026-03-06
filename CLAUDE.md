@@ -4,7 +4,7 @@ Bilingual math vocabulary learning platform (双语数学词汇学习平台) for
 
 - **Live**: https://git25math.github.io/25maths-keywords/
 - **Repo**: https://github.com/git25math/25maths-keywords
-- **Version**: v1.9.1 (2026-03-06)
+- **Version**: v1.9.4 (2026-03-07)
 - **Scale**: 3 boards, 264 levels + 72 CIE sections + 39 Edexcel sections, 2,597 words
 - **Supabase**: shared with 25maths-website (ref: `jjjigohjvmyewasmmmyf`)
 - **See also**: [CHANGELOG.md](CHANGELOG.md) | [ROADMAP.md](ROADMAP.md)
@@ -106,4 +106,4 @@ Panel system: `showPanel(id)` switches between 18 panels:
 - Vocabulary data in levels.js uses the same format as the original prototype
 - Word status fields: `st` (status), `iv` (interval), `nr` (next review), `lr` (last review), `ok` (correct count), `fail` (error count), `lv` (SRS level 0-7), `stars` (0-4 cached)
 - Mode completion: `modeDone` object in localStorage, keyed as `"slug:mode"` (study/quiz/review/spell/match/battle)
-- Supabase tables: `vocab_progress`, `leaderboard`, `schools`, `teachers`, `classes`, `class_students`, `assignments`, `assignment_results`, `vocab_levels`, `notifications`, `feedback`
+- Supabase tables: `vocab_progress`, `leaderboard`, `schools`, `teachers`, `kw_classes`, `kw_class_students`, `kw_assignments`, `assignment_results`, `vocab_levels`, `notifications`, `feedback`
