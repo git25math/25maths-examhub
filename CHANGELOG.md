@@ -1,5 +1,30 @@
 # Changelog
 
+## [1.9.6] - 2026-03-07 — 题型归纳：按指令动词分类真题
+
+### 新增
+- **Command Word 分类引擎**: 12 条优先级排序正则规则（show/explain/describe/draw/sketch/complete/simplify/solve/rearrange/calculate/find/write），对全部 4,107 题自动标注 `cmd` 字段
+- **知识点详情页 cmd chips**: "按指令动词"分类行，点击即可筛选指定类型题目（如"所有 Calculate 计算题"）
+- **练习模式 cmdFilter**: `startPastPaper()` 新增第 5 参数 `cmdFilter`，header 显示 filter chip + "Show all" 清除
+- **题卡 cmd badge**: 每道题卡 header 显示指令动词标签（`.pp-cmd-badge`）
+- **套卷详情页 cmd 分布**: Topic chips 下方新增 Command Words 分布 chips
+
+### 数据统计
+- calculate: 1,167 (28.4%) | find: 803 (19.6%) | draw: 370 (9.0%) | complete: 362 (8.8%)
+- write: 350 (8.5%) | simplify: 306 (7.5%) | show: 206 (5.0%) | solve: 151 (3.7%)
+- describe: 138 (3.4%) | explain: 84 (2.0%) | rearrange: 39 (0.9%) | sketch: 35 (0.9%)
+- other: 96 (2.3%) — 远低于 5% 目标
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `scripts/build-papers-data.py` | +`CMD_RULES` +`classify_cmd()` +entry `cmd` 字段 + cmd 统计输出 |
+| `data/papers-cie.json` | 重新生成（+4,107 个 `cmd` 字段） |
+| `js/syllabus.js` | +`PP_CMD_LABELS` +`PP_CMD_ORDER` + `_renderPPSectionModule()` cmd chips |
+| `js/practice.js` | `startPastPaper()` +cmdFilter + `_ppCmdLabel()` + `ppClearCmdFilter()` + cmd badge + 套卷 cmd 分布 |
+| `css/style.css` | +`.pp-cmd-badge` |
+| `js/config.js` | 版本号 v1.9.5 → v1.9.6 |
+
 ## [1.9.5] - 2026-03-07 — 知识卡片 Edexcel + 剩余 ZH 补全
 
 ### 修复

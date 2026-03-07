@@ -647,6 +647,24 @@ var PP_GROUP_LABELS = {
 };
 var PP_GROUP_ORDER = ['simplify','quadratic','function','sequence','graph','simul-linear','rearrange','algebraic-fraction','linear','simul-nonlinear','inequality','proportion','indices','substitution','mixed'];
 
+var PP_CMD_LABELS = {
+  'calculate': { en: 'Calculate',      zh: '\u8ba1\u7b97' },
+  'find':      { en: 'Find',           zh: '\u6c42\u89e3' },
+  'draw':      { en: 'Draw / Plot',    zh: '\u753b\u56fe' },
+  'complete':  { en: 'Complete',        zh: '\u586b\u5199' },
+  'write':     { en: 'Write / State',  zh: '\u5199\u51fa' },
+  'simplify':  { en: 'Simplify',       zh: '\u5316\u7b80' },
+  'show':      { en: 'Show / Prove',   zh: '\u8bc1\u660e' },
+  'solve':     { en: 'Solve',          zh: '\u89e3\u65b9\u7a0b' },
+  'explain':   { en: 'Explain',        zh: '\u89e3\u91ca' },
+  'describe':  { en: 'Describe',       zh: '\u63cf\u8ff0' },
+  'rearrange': { en: 'Rearrange',      zh: '\u53d8\u5f62' },
+  'sketch':    { en: 'Sketch',         zh: '\u8349\u56fe' },
+  'other':     { en: 'Other',          zh: '\u5176\u4ed6' }
+};
+var PP_CMD_ORDER = ['calculate','find','draw','complete','write','simplify',
+                    'show','solve','explain','describe','rearrange','sketch','other'];
+
 function _renderPPSectionModule(slot, secId, board) {
   var ppStats = ppGetSectionStats(board, secId);
   if (ppStats.total === 0) { slot.style.display = 'none'; return; }
@@ -689,6 +707,29 @@ function _renderPPSectionModule(slot, secId, board) {
     h += t(gl.en, gl.zh) + ' <b>' + gc + '</b></span>';
   }
   h += '</div></div>';
+
+  /* Command word breakdown */
+  var cmdCounts = {};
+  var cmdTypes = 0;
+  for (var ci = 0; ci < allQ.length; ci++) {
+    var ck = allQ[ci].cmd || 'other';
+    cmdCounts[ck] = (cmdCounts[ck] || 0) + 1;
+  }
+  for (var _ck in cmdCounts) cmdTypes++;
+  if (cmdTypes >= 2) {
+    h += '<div style="margin-top:4px">';
+    h += '<div style="font-size:11px;color:var(--c-muted);margin-bottom:4px">' + t('By Command Word', '\u6309\u6307\u4ee4\u52a8\u8bcd') + '</div>';
+    h += '<div style="display:flex;flex-wrap:wrap;gap:4px">';
+    for (var coi = 0; coi < PP_CMD_ORDER.length; coi++) {
+      var cmk = PP_CMD_ORDER[coi];
+      var cmc = cmdCounts[cmk];
+      if (!cmc) continue;
+      var cml = PP_CMD_LABELS[cmk];
+      h += '<span class="pp-error-chip" onclick="event.stopPropagation();startPastPaper(\'' + secId + '\',\'' + board + '\',\'practice\',null,\'' + cmk + '\')">';
+      h += t(cml.en, cml.zh) + ' <b>' + cmc + '</b></span>';
+    }
+    h += '</div></div>';
+  }
 
   /* Action buttons */
   h += '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px">';

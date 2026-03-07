@@ -3067,6 +3067,8 @@ input { font-family: inherit; }
 .pp-error-chip:hover { border-color: var(--c-primary); }
 .pp-error-chip.selected { background: var(--c-primary-bg); border-color: var(--c-primary);
   color: var(--c-primary); font-weight: 600; }
+.pp-cmd-badge { display: inline-block; padding: 2px 8px; border-radius: var(--r-sm);
+  font-size: 11px; background: var(--c-primary-bg); color: var(--c-primary); margin-left: 6px; }
 
 /* Master Question Summary */
 .mq-summary { padding: 16px; margin: 8px 0; background: var(--c-surface);

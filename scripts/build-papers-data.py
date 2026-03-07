@@ -287,6 +287,36 @@ def classify_qtype(qt):
     return 'mixed'
 
 
+# ══════════════════════════════════════════════════════════
+# Command word classification (CIE 0580 command words)
+# ══════════════════════════════════════════════════════════
+
+CMD_RULES = [
+    ('show',      r'show\s+that\b|prove\b'),
+    ('explain',   r'\bexplain\b|\bgive\s+(?:a\s+)?reason'),
+    ('describe',  r'\bdescribe\b'),
+    ('draw',      r'\bdraw\b|\bconstruct\b|\bplot\b|\bshade\b'),
+    ('sketch',    r'\bsketch\b'),
+    ('complete',  r'\bcomplete\b'),
+    ('simplify',  r'\bsimplify\b|\bfactoris[ez]\b|\bexpand\b'),
+    ('solve',     r'\bsolve\b'),
+    ('rearrange', r'make\b.*\bsubject\b|\brearrang'),
+    ('calculate', r'\bcalculate\b|\bwork\s+out\b|\bestimate\b|\bconvert\b'),
+    ('find',      r'\bfind\b'),
+    ('write',     r'\bwrite\b|\bstate\b'),
+]
+
+_CMD_COMPILED = [(name, re.compile(pat, re.IGNORECASE)) for name, pat in CMD_RULES]
+
+
+def classify_cmd(tex):
+    """Classify question by command word (instruction verb)."""
+    for name, pat in _CMD_COMPILED:
+        if pat.search(tex):
+            return name
+    return 'other'
+
+
 def build_source_ref(year, session, paper, qnum):
     """Build human-readable source reference: 0580/22/M/23 Q7."""
     session_map = {
@@ -466,6 +496,7 @@ def main():
             "parts": parts,
             "hasFigure": has_figure,
             "cognitive": cognitive,
+            "cmd": classify_cmd(cleaned),
         }
         questions.append(entry)
 
@@ -541,6 +572,17 @@ def main():
         type_counts[pm["type"]] = type_counts.get(pm["type"], 0) + 1
     for t, n in sorted(type_counts.items()):
         print(f"    {t}: {n}")
+
+    # Command word stats
+    cmd_counts = {}
+    for q in questions:
+        cmd_counts[q["cmd"]] = cmd_counts.get(q["cmd"], 0) + 1
+    print(f"  Command words:")
+    for c, n in sorted(cmd_counts.items(), key=lambda x: -x[1]):
+        pct = n / len(questions) * 100
+        print(f"    {c}: {n} ({pct:.1f}%)")
+    other_pct = cmd_counts.get("other", 0) / len(questions) * 100
+    print(f"  'other' rate: {other_pct:.1f}%")
 
 
 if __name__ == "__main__":

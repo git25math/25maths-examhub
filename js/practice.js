@@ -1211,7 +1211,7 @@ function ppGetSectionStats(board, sectionId) {
 
 /* ═══ ENTRY POINT: START PAST PAPER ═══ */
 
-function startPastPaper(sectionId, board, mode, groupFilter) {
+function startPastPaper(sectionId, board, mode, groupFilter, cmdFilter) {
   board = board || 'cie';
   mode = mode || 'practice';
 
@@ -1222,6 +1222,10 @@ function startPastPaper(sectionId, board, mode, groupFilter) {
     /* Apply group filter if specified */
     if (groupFilter) {
       questions = questions.filter(function(q) { return q.g === groupFilter; });
+    }
+    /* Apply command word filter */
+    if (cmdFilter) {
+      questions = questions.filter(function(q) { return q.cmd === cmdFilter; });
     }
     if (!questions.length) {
       showToast(t('No past papers available for this section', '\u672c\u77e5\u8bc6\u70b9\u6682\u65e0\u771f\u9898'));
@@ -1240,6 +1244,7 @@ function startPastPaper(sectionId, board, mode, groupFilter) {
         board: board,
         sectionId: sectionId,
         groupFilter: groupFilter || null,
+        cmdFilter: cmdFilter || null,
         results: []
       };
       showPanel('pastpaper');
@@ -1299,13 +1304,24 @@ function renderPPCard() {
     html += ' <span style="font-size:11px;color:var(--c-muted);cursor:pointer;text-decoration:underline" onclick="ppClearFilter()">' + t('Show all', '\u663e\u793a\u5168\u90e8') + '</span>';
     html += '</div>';
   }
+  /* Command word filter chip */
+  if (_ppSession.cmdFilter) {
+    html += '<div style="text-align:center;margin-bottom:8px">';
+    html += '<span class="pp-cmd-badge" style="font-size:12px;padding:3px 10px">' + _ppCmdLabel(_ppSession.cmdFilter) + '</span>';
+    html += ' <span style="font-size:11px;color:var(--c-muted);cursor:pointer;text-decoration:underline" onclick="ppClearCmdFilter()">' + t('Show all', '\u663e\u793a\u5168\u90e8') + '</span>';
+    html += '</div>';
+  }
 
   /* Card */
   html += '<div class="pp-card">';
 
   /* Card header */
   html += '<div class="pp-card-header">';
-  html += '<div>' + _ppDiffLabel(q.d) + ' <span class="pp-src">' + q.src + '</span></div>';
+  html += '<div>' + _ppDiffLabel(q.d) + ' <span class="pp-src">' + q.src + '</span>';
+  if (q.cmd && q.cmd !== 'other') {
+    html += ' <span class="pp-cmd-badge">' + _ppCmdLabel(q.cmd) + '</span>';
+  }
+  html += '</div>';
   html += '<div class="pp-marks-badge">' + q.marks + (q.marks === 1 ? ' mark' : ' marks') + '</div>';
   html += '</div>';
 
@@ -1489,7 +1505,17 @@ function ppForceBack() {
 
 function ppClearFilter() {
   if (!_ppSession) return;
-  startPastPaper(_ppSession.sectionId, _ppSession.board, _ppSession.mode, null);
+  startPastPaper(_ppSession.sectionId, _ppSession.board, _ppSession.mode, null, _ppSession.cmdFilter || null);
+}
+
+function _ppCmdLabel(ck) {
+  var cl = (typeof PP_CMD_LABELS !== 'undefined') ? PP_CMD_LABELS[ck] : null;
+  return cl ? t(cl.en, cl.zh) : ck;
+}
+
+function ppClearCmdFilter() {
+  if (!_ppSession) return;
+  startPastPaper(_ppSession.sectionId, _ppSession.board, _ppSession.mode, _ppSession.groupFilter || null, null);
 }
 
 /* ═══ EXAM MODE ═══ */
@@ -2442,6 +2468,26 @@ function ppShowPaperDetail(paperKey, board) {
     html += '<div class="pp-topic-chips">';
     for (var tp in topicCounts) {
       html += '<span class="pp-error-chip">' + tp + ' (' + topicCounts[tp] + ')</span>';
+    }
+    html += '</div>';
+  }
+
+  /* Command word distribution */
+  var cmdCounts = {};
+  for (var ci = 0; ci < questions.length; ci++) {
+    var ck = questions[ci].cmd || 'other';
+    cmdCounts[ck] = (cmdCounts[ck] || 0) + 1;
+  }
+  if (Object.keys(cmdCounts).length > 1) {
+    html += '<h4 style="margin:20px 0 8px">' + t('Command Words', '\u6307\u4ee4\u52a8\u8bcd\u5206\u5e03') + '</h4>';
+    html += '<div class="pp-topic-chips">';
+    var cmdOrd = (typeof PP_CMD_ORDER !== 'undefined') ? PP_CMD_ORDER : Object.keys(cmdCounts);
+    for (var coi = 0; coi < cmdOrd.length; coi++) {
+      var cmk = cmdOrd[coi];
+      if (!cmdCounts[cmk]) continue;
+      var cml = (typeof PP_CMD_LABELS !== 'undefined' && PP_CMD_LABELS[cmk]) ? PP_CMD_LABELS[cmk] : null;
+      var cmLabel = cml ? t(cml.en, cml.zh) : cmk;
+      html += '<span class="pp-cmd-badge" style="padding:3px 10px;cursor:default">' + cmLabel + ' <b>' + cmdCounts[cmk] + '</b></span>';
     }
     html += '</div>';
   }
