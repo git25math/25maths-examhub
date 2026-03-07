@@ -409,3 +409,58 @@ window.addEventListener('offline', function() {
 if (!navigator.onLine) {
   document.body.classList.add('is-offline');
 }
+
+/* ═══ KEYBOARD SHORTCUTS ═══ */
+document.addEventListener('keydown', function(e) {
+  /* Skip if user is typing in an input/textarea */
+  var tag = (e.target.tagName || '').toLowerCase();
+  if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable) return;
+  /* Skip if a modal is open */
+  var modal = document.getElementById('modal-overlay');
+  if (modal && modal.classList.contains('vis')) return;
+
+  var key = e.key;
+
+  /* ── Study mode (panel-study) ── */
+  if (appView === 'study') {
+    if (key === ' ' || key === 'Enter') {
+      e.preventDefault();
+      if (typeof flipStudyCard === 'function') flipStudyCard();
+    } else if (key === '1') {
+      if (typeof rateStudy === 'function') rateStudy('hard');
+    } else if (key === '2') {
+      if (typeof rateStudy === 'function') rateStudy('ok');
+    } else if (key === '3') {
+      if (typeof rateStudy === 'function') rateStudy('easy');
+    }
+    return;
+  }
+
+  /* ── Quiz mode (panel-quiz) ── */
+  if (appView === 'quiz') {
+    var idx = -1;
+    if (key === '1') idx = 0;
+    else if (key === '2') idx = 1;
+    else if (key === '3') idx = 2;
+    else if (key === '4') idx = 3;
+    if (idx >= 0) {
+      var opts = document.querySelectorAll('#quiz-options .quiz-opt');
+      if (opts[idx]) opts[idx].click();
+    }
+    return;
+  }
+
+  /* ── Daily Challenge (panel-daily) ── */
+  if (appView === 'daily') {
+    var dIdx = -1;
+    if (key === '1') dIdx = 0;
+    else if (key === '2') dIdx = 1;
+    else if (key === '3') dIdx = 2;
+    else if (key === '4') dIdx = 3;
+    if (dIdx >= 0) {
+      var dOpts = document.querySelectorAll('#dc-options .quiz-opt');
+      if (dOpts[dIdx]) dOpts[dIdx].click();
+    }
+    return;
+  }
+});

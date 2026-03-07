@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.12.1] - 2026-03-07 — 作业模板 + 键盘快捷键
+
+### 新增
+- **作业模板系统**: 教师创建作业时可保存当前选中词组为模板，下次一键加载；支持保存/加载/删除操作，数据存储在 localStorage (`hw_templates`)
+- **键盘快捷键**: Study 模式 Space/Enter 翻卡 + 1/2/3 评分（Hard/OK/Easy），Quiz/Daily Challenge 模式 1-4 选择答案；自动跳过输入框和 Modal 场景
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `js/homework.js` | +`_getHwTemplates()` / `hwSaveTemplate()` / `hwLoadTemplate()` / `hwDeleteTemplate()` + 模板选择 UI |
+| `js/app.js` | +全局 keydown 监听器，按 appView 分发快捷键 |
+| `js/config.js` | 版本号 v1.12.0 -> v1.12.1 |
+
 ## [1.12.0] - 2026-03-07 — 4 维掌握度系统 + 复习计划推荐
 
 ### 新增

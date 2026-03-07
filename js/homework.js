@@ -168,6 +168,55 @@ function hwParseBatch() {
   ta.value = '';
 }
 
+/* ═══ HOMEWORK TEMPLATES (localStorage) ═══ */
+function _getHwTemplates() {
+  try { return JSON.parse(localStorage.getItem('hw_templates') || '[]'); } catch(e) { return []; }
+}
+function _saveHwTemplates(tpls) {
+  try { localStorage.setItem('hw_templates', JSON.stringify(tpls)); } catch(e) {}
+}
+function hwSaveTemplate() {
+  var title = (E('hw-title') ? E('hw-title').value.trim() : '') || t('Untitled', '\u672a\u547d\u540d');
+  var slugs = [];
+  document.querySelectorAll('.hw-deck-cb:checked').forEach(function(cb) { slugs.push(cb.value); });
+  if (slugs.length === 0) { showToast(t('Select at least 1 group first', '\u8bf7\u5148\u9009\u62e9\u81f3\u5c111\u4e2a\u8bcd\u7ec4')); return; }
+  var tpls = _getHwTemplates();
+  tpls.push({ name: title, slugs: slugs, created: Date.now() });
+  if (tpls.length > 20) tpls = tpls.slice(-20);
+  _saveHwTemplates(tpls);
+  showToast(t('Template saved: ', '\u6a21\u677f\u5df2\u4fdd\u5b58\uff1a') + title);
+}
+function hwLoadTemplate(classId) {
+  var sel = E('hw-tpl-select');
+  if (!sel || sel.value === '') return;
+  var tpls = _getHwTemplates();
+  var tpl = tpls[parseInt(sel.value)];
+  if (!tpl) return;
+  /* Set title */
+  var titleEl = E('hw-title');
+  if (titleEl) titleEl.value = tpl.name;
+  /* Check matching decks */
+  document.querySelectorAll('.hw-deck-cb').forEach(function(cb) {
+    cb.checked = tpl.slugs.indexOf(cb.value) >= 0;
+  });
+  /* Switch to deck tab */
+  hwSwitchTab('deck');
+  showToast(t('Template loaded', '\u6a21\u677f\u5df2\u52a0\u8f7d'));
+}
+function hwDeleteTemplate() {
+  var sel = E('hw-tpl-select');
+  if (!sel || sel.value === '') { showToast(t('Select a template first', '\u8bf7\u5148\u9009\u62e9\u6a21\u677f')); return; }
+  var idx = parseInt(sel.value);
+  var tpls = _getHwTemplates();
+  if (idx < 0 || idx >= tpls.length) return;
+  var name = tpls[idx].name;
+  tpls.splice(idx, 1);
+  _saveHwTemplates(tpls);
+  sel.remove(sel.selectedIndex);
+  sel.value = '';
+  showToast(t('Template deleted: ', '\u6a21\u677f\u5df2\u5220\u9664\uff1a') + name);
+}
+
 function showCreateHwModal(classId) {
   var deckHtml = '';
   getVisibleBoards().forEach(function(board) {
@@ -198,6 +247,21 @@ function showCreateHwModal(classId) {
   _hwMode = 'deck';
 
   var html = '<div class="section-title">' + t('Create Homework', '布置作业') + '</div>';
+
+  /* Template selector */
+  var tpls = _getHwTemplates();
+  if (tpls.length > 0) {
+    html += '<div style="display:flex;align-items:center;gap:6px;margin-bottom:10px">';
+    html += '<select id="hw-tpl-select" class="auth-input" style="margin:0;flex:1;font-size:12px" onchange="hwLoadTemplate(\'' + classId + '\')">';
+    html += '<option value="">' + t('-- Load template --', '-- \u52a0\u8f7d\u6a21\u677f --') + '</option>';
+    for (var ti = 0; ti < tpls.length; ti++) {
+      html += '<option value="' + ti + '">' + escapeHtml(tpls[ti].name) + ' (' + tpls[ti].slugs.length + ' ' + t('groups', '\u7ec4') + ')</option>';
+    }
+    html += '</select>';
+    html += '<button class="btn btn-ghost btn-sm" onclick="hwDeleteTemplate()" style="color:var(--c-danger);padding:4px 8px" title="' + t('Delete', '\u5220\u9664') + '">\u2716</button>';
+    html += '</div>';
+  }
+
   html += '<label class="settings-label">' + t('Title', '标题') + '</label>';
   html += '<input class="auth-input" id="hw-title" placeholder="' + t('e.g. Week 3 Vocab Test', '如 第3周词汇测试') + '">';
 
@@ -227,7 +291,8 @@ function showCreateHwModal(classId) {
   html += '<input class="auth-input" id="hw-deadline" type="datetime-local" value="' + deadlineDefault + '">';
   html += '<div id="hw-msg" class="settings-msg" style="margin-top:8px"></div>';
   html += '<div style="display:flex;gap:8px;margin-top:12px">';
-  html += '<button class="btn btn-primary" style="flex:1" onclick="doCreateHw(\'' + classId + '\')">' + t('Create', '创建') + '</button>';
+  html += '<button class="btn btn-primary" style="flex:2" onclick="doCreateHw(\'' + classId + '\')">' + t('Create', '创建') + '</button>';
+  html += '<button class="btn btn-secondary btn-sm" style="flex:1" onclick="hwSaveTemplate()">' + t('Save Template', '\u4fdd\u5b58\u6a21\u677f') + '</button>';
   html += '<button class="btn btn-ghost" style="flex:1" onclick="hideModal()">' + t('Cancel', '取消') + '</button>';
   html += '</div>';
 
