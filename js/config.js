@@ -116,6 +116,8 @@ function isLevelVisible(lv) {
   /* Hide old CIE/Edexcel levels when syllabus mode is active */
   if (lv._cieOld) return false;
   if (lv._edxOld) return false;
+  /* Super admin sees all modules */
+  if (isSuperAdmin()) return true;
   /* 25m content requires school_id (Harrow users only), unless guest full access is on */
   if (!userSchoolId && !(GUEST_FULL_ACCESS && isGuest()) && lv.board === '25m') return false;
   if (!userBoard) return true;
@@ -136,7 +138,7 @@ function isLevelVisible(lv) {
 
 /* Get filtered BOARDS array based on userBoard */
 function getVisibleBoards() {
-  var base = BOARDS.filter(function(b) { return userSchoolId || (GUEST_FULL_ACCESS && isGuest()) || b.id !== '25m'; });
+  var base = BOARDS.filter(function(b) { return isSuperAdmin() || userSchoolId || (GUEST_FULL_ACCESS && isGuest()) || b.id !== '25m'; });
   if (!userBoard) return base;
   if (userBoard === 'all') return base;
   return base.filter(function(b) {

@@ -193,6 +193,10 @@ async function afterLogin() {
       if (meta.school_id) userSchoolId = meta.school_id;
       try { localStorage.setItem('userBoard', userBoard || ''); } catch (e) {}
     }
+    /* Super admin always gets full access */
+    if (isSuperAdmin()) {
+      userBoard = 'all';
+    }
     if (meta.role === 'teacher') {
       /* Teacher: init admin panel after app shows */
       if (!userBoard) userBoard = 'all';
