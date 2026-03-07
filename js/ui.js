@@ -33,6 +33,8 @@ function navTo(id) {
   /* Render content for target panel */
   if (id === 'home') { if (typeof _currentSectionContext !== 'undefined') _currentSectionContext = null; renderHome(); }
   else if (id === 'review-dash') renderReviewDash();
+  else if (id === 'plan') renderTodaysPlan();
+  else if (id === 'mistakes') renderMistakeBook();
   else if (id === 'import') renderImport();
   else if (id === 'board') renderBoard();
   else if (id === 'stats') renderStats();
@@ -153,6 +155,8 @@ function toggleLang() {
   else if (appView === 'deck') renderDeck(currentLvl);
   else if (appView === 'preview') renderPreview(currentLvl);
   else if (appView === 'review-dash') renderReviewDash();
+  else if (appView === 'plan') renderTodaysPlan();
+  else if (appView === 'mistakes') renderMistakeBook();
   else if (appView === 'import') renderImport();
   else if (appView === 'board') renderBoard();
   else if (appView === 'stats') renderStats();
@@ -541,7 +545,7 @@ window.addEventListener('scroll', function() {
 /* ═══ SWIPE GESTURE FOR PANEL SWITCHING ═══ */
 var _touchStartX = 0;
 var _touchStartY = 0;
-var _navSeq = ['home', 'review-dash', 'import', 'board', 'stats', 'admin'];
+var _navSeq = ['home', 'plan', 'review-dash', 'mistakes', 'stats'];
 
 document.addEventListener('touchstart', function(e) {
   _touchStartX = e.touches[0].clientX;

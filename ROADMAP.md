@@ -362,3 +362,9 @@
 - [x] **Phase 5 — 去 AI 味**: Smart Path/Section Detail/进度标签人性化 + 3 态圆点 + 彩条替代环形分数 → v2.0.0
 - [x] **v2.0.1 质量优化**: onclick XSS 消除 9 处 + getDueWords 缓存 + checkBadges 节流 + 暗色模式 8 规则 + 手机端 3 规则 → v2.0.1
 - [x] **v2.0.2 HHK 教学目标**: 55 sections core_content→407 条真实双语 LO + 111 子单元卡片 → v2.0.2
+
+## v2.1 侧栏导航重构 + HHK 技能学习系统 [DONE]
+- [x] **Phase A — 侧栏导航重构**: 下架 Leaderboard，新增今日计划 + 错题本，底栏同步更新 → v2.1.0
+- [x] **Phase B — 今日计划 + 错题本**: renderTodaysPlan（日期/连续天数/待复习/Smart Path/Review Plan）+ renderMistakeBook（Tab 切换/词汇错题/练习错题）→ v2.1.0
+- [x] **Phase C — HHK 练习引擎解锁**: 55 道 Y7 MCQ + board guard 放行 25m + Journey Bar 三步 + getSectionHealth practiceScore → v2.1.0
+- [x] **Phase D — 诊断反馈 + 学习闭环**: diag 字段 + 答错诊断提示 + 结果页 diag 摘要 + 错题本联动 + Smart Path rec 增强 → v2.1.0

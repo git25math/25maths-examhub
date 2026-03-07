@@ -1,5 +1,47 @@
 # Changelog
 
+## [2.1.0] - 2026-03-07 — 侧栏导航重构 + HHK 技能学习系统
+
+### Phase A: 侧栏导航重构
+- **侧栏**: 下架 Leaderboard，新增"今日计划"和"错题本"入口
+- **底栏**: Home → Plan → Review → Mistakes → Stats（替换 Board）
+- **面板容器**: 新增 `panel-plan`、`panel-mistakes`
+- **滑动导航**: `_navSeq` 更新为 `['home','plan','review-dash','mistakes','stats']`
+- **navTo / toggleLang**: 新增 `plan`、`mistakes` case
+
+### Phase B: 今日计划 + 错题本面板
+- **renderTodaysPlan()**: 日期 + 连续天数 + 待复习词汇 + 待解决错题 + Smart Path + Review Plan
+- **renderMistakeBook()**: Tab 切换（全部/词汇/练习）+ 词汇错词列表 + 练习错题列表
+- **startMistakeReview()**: 跳转复习模式
+- **CSS**: 今日计划卡片样式 + 错题本样式 + 暗色模式
+
+### Phase C: HHK 练习引擎解锁
+- **data/questions-25m.json**: 55 道 Y7 MCQ 练习题（11 sections 全覆盖）
+- **practice.js**: board guard 放行 `25m`（原仅 CIE/Edexcel）
+- **syllabus.js**: Journey Bar 不再排除 HHK；qCount 计算包含 HHK
+- **getSectionHealth()**: HHK 分支新增 practiceScore 计算
+
+### Phase D: 诊断反馈 + 学习闭环
+- **diag 字段**: 每道 HHK 题标注 `vocab`/`concept`/`calc`/`logic` 诊断类型
+- **答错诊断**: pickPracticeOpt() 答错后显示诊断提示卡
+- **结果诊断**: finishPractice() 结果页按 diag 分组统计
+- **错题本联动**: MCQ 答错自动 ppAddToWrongBook → 出现在错题本面板
+- **Smart Path**: rec 推荐逻辑增加 practiceScore 判断
+
+### 新增文件
+- `data/questions-25m.json` — HHK Y7 练习题（55 题）
+- `scripts/generate-hhk-questions.py` — Gemini CLI 批量生成脚本
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `index.html` | 侧栏/底栏重构 + 新增 panel-plan/panel-mistakes |
+| `js/ui.js` | navTo + toggleLang + _navSeq 更新 |
+| `js/syllabus.js` | renderTodaysPlan + renderMistakeBook + HHK 练习解锁 + 健康度升级 |
+| `js/practice.js` | board guard 放行 25m + 诊断反馈 + 错题本联动 |
+| `css/style.css` | 今日计划 + 错题本样式 |
+| `js/config.js` | v2.0.4 → v2.1.0 |
+
 ## [2.0.4] - 2026-03-07 — HHK 点击修复 + 下架导入功能 + 缓存同步
 
 ### Bug 修复

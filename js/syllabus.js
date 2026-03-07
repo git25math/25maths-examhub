@@ -508,7 +508,7 @@ function renderSectionDetail(ch, sec, secIdx, board) {
   /* Count practice questions for this section */
   var qCount = 0;
   var pqBoard = board === 'edexcel' ? 'edx' : board === 'hhk' ? '25m' : board;
-  if (board !== 'hhk' && typeof _pqData !== 'undefined' && _pqData && _pqData[pqBoard]) {
+  if (typeof _pqData !== 'undefined' && _pqData && _pqData[pqBoard]) {
     _pqData[pqBoard].forEach(function(q) { if (q.s === sec.id) qCount++; });
   }
 
@@ -661,7 +661,7 @@ function renderSectionDetail(ch, sec, secIdx, board) {
   }
   var _jPracticeDone = li >= 0 && isModeDone(li, 'practice');
   var _jHasPP = (board === 'cie' || board === 'edexcel') && typeof loadPastPaperData === 'function';
-  var _jHasPractice = board !== 'hhk' && qCount > 0;
+  var _jHasPractice = qCount > 0;
 
   /* Determine current step: first incomplete step gets pulse */
   var _jVocabClass = _jVocabDone ? 'done' : (stats.started > 0 ? 'current pulse' : 'current pulse');
@@ -978,6 +978,24 @@ function getSectionHealth(sectionId, board) {
       }
       if (srsCount > 0) retentionScore = Math.round((srsSum / srsCount / 7) * 100 * recency);
     }
+    /* HHK practice score */
+    var hhkPqBoard = '25m';
+    if (typeof _pqData !== 'undefined' && _pqData[hhkPqBoard]) {
+      var hhkQs = _pqData[hhkPqBoard].filter(function(q) { return q.s === sectionId; });
+      if (hhkQs.length > 0) {
+        hasPP = true;
+        if (typeof isModeDone === 'function') {
+          /* Check if any vocab level for this section has practice done */
+          if (secInfo.section.vocabSlugs) {
+            for (var _pi = 0; _pi < LEVELS.length; _pi++) {
+              if (secInfo.section.vocabSlugs.indexOf(LEVELS[_pi].slug) >= 0 && isModeDone(_pi, 'practice')) {
+                practiceScore = 100; break;
+              }
+            }
+          }
+        }
+      }
+    }
   } else if (hasVocab) {
     var ds = getDeckStats(li);
     vocabScore = ds.learningPct || 0;
@@ -1035,11 +1053,12 @@ function getSectionHealth(sectionId, board) {
 
   /* Recommendation */
   var rec;
-  if (vocabScore === 0 && ppScore === 0) rec = 'start';
+  if (vocabScore === 0 && ppScore === 0 && practiceScore === 0) rec = 'start';
   else if (score >= 80) rec = 'great';
   else if (failRate > 40) rec = 'review_words';
   else if (vocabScore < 30) rec = 'vocab';
   else if (hasPP && ppScore < 20) rec = 'past_papers';
+  else if (practiceScore === 0 && vocabScore >= 30) rec = 'practice';
   else rec = 'practice';
 
   /* Weakest question group (for targeted practice recommendation) */
@@ -1956,6 +1975,190 @@ function startPracticeByChapter(chNum, board) {
     }
   });
 })();
+
+/* ═══ TODAY'S PLAN PANEL ═══ */
+
+function renderTodaysPlan() {
+  var panel = E('panel-plan');
+  if (!panel) return;
+  var html = '';
+
+  /* Title + date */
+  var dateStr = new Date().toLocaleDateString(appLang === 'en' ? 'en-US' : 'zh-CN', { weekday: 'long', month: 'long', day: 'numeric' });
+  html += '<div class="section-title">' + t("Today's Plan", '\u4eca\u65e5\u8ba1\u5212') + '</div>';
+  html += '<div class="plan-date">' + dateStr + '</div>';
+
+  /* Streak */
+  var streak = getStreakCount();
+  if (streak > 0) {
+    html += '<div class="plan-streak">\ud83d\udd25 ' + streak + t('-day streak', ' \u5929\u8fde\u7eed\u5b66\u4e60') + '</div>';
+  }
+
+  /* Due review words */
+  var dueCount = getReviewCount();
+  html += '<div class="plan-card plan-review-due">';
+  html += '<div class="plan-card-header">';
+  html += '<span class="plan-card-icon">\ud83e\udde0</span>';
+  html += '<span class="plan-card-title">' + t('Words Due for Review', '\u5f85\u590d\u4e60\u8bcd\u6c47') + '</span>';
+  html += '</div>';
+  if (dueCount > 0) {
+    html += '<div class="plan-card-count">' + dueCount + ' ' + t('words', '\u4e2a\u8bcd') + '</div>';
+    html += '<button class="btn btn-primary btn-sm" onclick="navTo(\'review-dash\')">' + t('Start Review', '\u5f00\u59cb\u590d\u4e60') + '</button>';
+  } else {
+    html += '<div class="plan-card-count plan-done">\u2713 ' + t('All caught up!', '\u5168\u90e8\u5b8c\u6210\uff01') + '</div>';
+  }
+  html += '</div>';
+
+  /* Mistake summary */
+  var vocabMistakes = _getVocabMistakes();
+  var wb = typeof _ppGetWB === 'function' ? _ppGetWB() : {};
+  var ppMistakeCount = 0;
+  for (var k in wb) { if (wb[k].status === 'active') ppMistakeCount++; }
+  var totalMistakes = vocabMistakes.length + ppMistakeCount;
+  if (totalMistakes > 0) {
+    html += '<div class="plan-card plan-mistakes-summary">';
+    html += '<div class="plan-card-header">';
+    html += '<span class="plan-card-icon">\ud83d\udcd5</span>';
+    html += '<span class="plan-card-title">' + t('Pending Mistakes', '\u5f85\u89e3\u51b3\u9519\u9898') + '</span>';
+    html += '</div>';
+    html += '<div class="plan-card-count">' + totalMistakes + ' ' + t('items', '\u9898') + '</div>';
+    html += '<button class="btn btn-ghost btn-sm" onclick="navTo(\'mistakes\')">' + t('Review Mistakes', '\u590d\u4e60\u9519\u9898') + '</button>';
+    html += '</div>';
+  }
+
+  /* Smart Path recommendations */
+  if (typeof renderSmartPath === 'function') {
+    var sp = renderSmartPath();
+    if (sp) html += sp;
+  }
+
+  /* Review Plan */
+  if (typeof renderReviewPlan === 'function') {
+    var rp = renderReviewPlan();
+    if (rp) html += rp;
+  }
+
+  panel.innerHTML = html;
+}
+
+/* ═══ MISTAKE BOOK PANEL ═══ */
+
+function _getVocabMistakes() {
+  var all = getAllWords();
+  var mistakes = [];
+  for (var i = 0; i < all.length; i++) {
+    if (all[i].fail > 0 && all[i].stars < 3) {
+      mistakes.push(all[i]);
+    }
+  }
+  mistakes.sort(function(a, b) { return b.fail - a.fail; });
+  return mistakes;
+}
+
+var _mistakeTab = 'all';
+
+function renderMistakeBook() {
+  var panel = E('panel-mistakes');
+  if (!panel) return;
+  var html = '';
+
+  html += '<div class="section-title">' + t('Mistake Book', '\u9519\u9898\u672c') + '</div>';
+
+  /* Tabs */
+  html += '<div class="mistake-tabs">';
+  html += '<button class="mistake-tab' + (_mistakeTab === 'all' ? ' active' : '') + '" data-mtab="all">' + t('All', '\u5168\u90e8') + '</button>';
+  html += '<button class="mistake-tab' + (_mistakeTab === 'vocab' ? ' active' : '') + '" data-mtab="vocab">' + t('Vocabulary', '\u8bcd\u6c47') + '</button>';
+  html += '<button class="mistake-tab' + (_mistakeTab === 'practice' ? ' active' : '') + '" data-mtab="practice">' + t('Practice', '\u7ec3\u4e60') + '</button>';
+  html += '</div>';
+
+  /* Vocab mistakes */
+  var vocabMistakes = _getVocabMistakes();
+  if (_mistakeTab === 'all' || _mistakeTab === 'vocab') {
+    if (vocabMistakes.length > 0) {
+      html += '<div class="mistake-section">';
+      html += '<div class="mistake-section-title">\ud83d\udcdd ' + t('Vocabulary', '\u8bcd\u6c47') + ' (' + vocabMistakes.length + ')</div>';
+      for (var i = 0; i < vocabMistakes.length; i++) {
+        var w = vocabMistakes[i];
+        html += '<div class="mistake-row">';
+        html += '<div class="mistake-word">' + escapeHtml(w.word || '') + '</div>';
+        html += '<div class="mistake-def">' + escapeHtml(w.def || '') + '</div>';
+        html += '<div class="mistake-fail">\u2717 ' + w.fail + '</div>';
+        html += '<div class="mistake-stars">';
+        for (var s = 0; s < w.stars; s++) html += '\u2605';
+        html += '</div>';
+        html += '</div>';
+      }
+      html += '<div style="text-align:center;margin-top:12px">';
+      html += '<button class="btn btn-primary btn-sm" onclick="startMistakeReview(\'vocab\')">' + t('Review Wrong Words', '\u590d\u4e60\u9519\u8bcd') + '</button>';
+      html += '</div>';
+      html += '</div>';
+    } else if (_mistakeTab === 'vocab') {
+      html += '<div class="mistake-empty">\ud83c\udf89 ' + t('No vocabulary mistakes!', '\u6ca1\u6709\u8bcd\u6c47\u9519\u9898\uff01') + '</div>';
+    }
+  }
+
+  /* Practice mistakes (wrong book) */
+  var wb = typeof _ppGetWB === 'function' ? _ppGetWB() : {};
+  var ppItems = [];
+  for (var qid in wb) {
+    if (wb[qid].status === 'active') ppItems.push({ qid: qid, data: wb[qid] });
+  }
+  ppItems.sort(function(a, b) { return b.data.addedAt - a.data.addedAt; });
+
+  if (_mistakeTab === 'all' || _mistakeTab === 'practice') {
+    if (ppItems.length > 0) {
+      html += '<div class="mistake-section">';
+      html += '<div class="mistake-section-title">\ud83d\udcdd ' + t('Practice / Past Papers', '\u7ec3\u4e60 / \u771f\u9898') + ' (' + ppItems.length + ')</div>';
+      for (var j = 0; j < ppItems.length; j++) {
+        var item = ppItems[j];
+        var errLabel = item.data.errorType || '';
+        if (typeof PP_ERROR_TYPES !== 'undefined' && errLabel) {
+          for (var ei = 0; ei < PP_ERROR_TYPES.length; ei++) {
+            if (PP_ERROR_TYPES[ei].id === errLabel) {
+              errLabel = t(PP_ERROR_TYPES[ei].en, PP_ERROR_TYPES[ei].zh);
+              break;
+            }
+          }
+        }
+        html += '<div class="mistake-row">';
+        html += '<div class="mistake-word">' + escapeHtml(item.qid) + '</div>';
+        if (errLabel) html += '<div class="mistake-def">' + escapeHtml(errLabel) + '</div>';
+        html += '<div class="mistake-fail">\u00d7' + (item.data.reviewCount || 0) + '</div>';
+        html += '</div>';
+      }
+      html += '</div>';
+    } else if (_mistakeTab === 'practice') {
+      html += '<div class="mistake-empty">\ud83c\udf89 ' + t('No practice mistakes!', '\u6ca1\u6709\u7ec3\u4e60\u9519\u9898\uff01') + '</div>';
+    }
+  }
+
+  if (vocabMistakes.length === 0 && ppItems.length === 0) {
+    html += '<div class="mistake-empty">';
+    html += '<div style="font-size:48px;margin-bottom:16px">\ud83c\udf89</div>';
+    html += '<div style="font-size:18px;font-weight:600;margin-bottom:8px">' + t('All clear!', '\u5168\u90e8\u89e3\u51b3\uff01') + '</div>';
+    html += '<div>' + t('No mistakes to review \u2014 keep up the great work!', '\u6ca1\u6709\u9519\u9898\u9700\u8981\u590d\u4e60\uff0c\u7ee7\u7eed\u52a0\u6cb9\uff01') + '</div>';
+    html += '</div>';
+  }
+
+  panel.innerHTML = html;
+
+  /* Tab click delegation */
+  panel.addEventListener('click', function _mtabHandler(e) {
+    var tab = e.target.closest('[data-mtab]');
+    if (tab) {
+      _mistakeTab = tab.dataset.mtab;
+      panel.removeEventListener('click', _mtabHandler);
+      renderMistakeBook();
+    }
+  });
+}
+
+function startMistakeReview(type) {
+  if (type === 'vocab') {
+    /* Jump to review dashboard — SRS naturally prioritizes failed words */
+    navTo('review-dash');
+  }
+}
 
 /* ═══ INIT ═══ */
 /* Auto-load all board data on script load */

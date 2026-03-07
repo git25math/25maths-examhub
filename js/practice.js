@@ -189,13 +189,60 @@ function getPracticeByChapter(board, chNum, count) {
   return shuffle(filtered).slice(0, count);
 }
 
+/* ═══ DIAGNOSTIC FEEDBACK (HHK) ═══ */
+
+var _DIAG_LABELS = {
+  vocab:   { icon: '\ud83d\udcd6', en: 'Review the key vocabulary for this topic', zh: '\u590d\u4e60\u8fd9\u4e2a\u77e5\u8bc6\u70b9\u7684\u5173\u952e\u8bcd\u6c47' },
+  concept: { icon: '\ud83d\udca1', en: 'The concept needs strengthening', zh: '\u6982\u5ff5\u9700\u8981\u5de9\u56fa' },
+  calc:    { icon: '\ud83d\udd22', en: 'Correct method \u2014 watch the calculation', zh: '\u65b9\u6cd5\u6b63\u786e\uff0c\u6ce8\u610f\u8ba1\u7b97' },
+  logic:   { icon: '\ud83e\udde9', en: 'Check your reasoning steps', zh: '\u68c0\u67e5\u63a8\u7406\u6b65\u9aa4' }
+};
+
+function _diagFeedback(q) {
+  var d = _DIAG_LABELS[q.diag];
+  if (!d) return '';
+  return '<div class="pq-diag-hint" style="margin-top:8px;padding:8px 12px;border-radius:8px;background:var(--c-surface-alt);font-size:13px">' +
+    d.icon + ' <em>' + t(d.en, d.zh) + '</em></div>';
+}
+
+function _diagSummary(answers, questions) {
+  var counts = {};
+  var wrong = answers.filter(function(a) { return !a.correct; });
+  if (wrong.length === 0) return '';
+  for (var i = 0; i < wrong.length; i++) {
+    var q = null;
+    for (var j = 0; j < questions.length; j++) {
+      if (questions[j].id === wrong[i].qid) { q = questions[j]; break; }
+    }
+    if (q && q.diag) {
+      counts[q.diag] = (counts[q.diag] || 0) + 1;
+    }
+  }
+  var keys = Object.keys(counts);
+  if (keys.length === 0) return '';
+  var html = '<div class="pq-diag-summary" style="margin-top:16px;text-align:left;max-width:360px;margin-left:auto;margin-right:auto">';
+  html += '<div style="font-weight:700;margin-bottom:8px">' + t('Diagnostic Analysis', '\u8bca\u65ad\u5206\u6790') + '</div>';
+  for (var k = 0; k < keys.length; k++) {
+    var key = keys[k];
+    var dl = _DIAG_LABELS[key];
+    if (!dl) continue;
+    html += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">';
+    html += '<span>' + dl.icon + '</span>';
+    html += '<span>' + t(dl.en, dl.zh) + '</span>';
+    html += '<span style="color:var(--c-danger);font-weight:600">(' + counts[key] + ')</span>';
+    html += '</div>';
+  }
+  html += '</div>';
+  return html;
+}
+
 /* ═══ START PRACTICE ═══ */
 
 function startPractice(li) {
   var lv = LEVELS[li];
   if (!lv) return;
   var board = lv.board;
-  if (board !== 'cie' && board !== 'edx') return;
+  if (board !== 'cie' && board !== 'edx' && board !== '25m') return;
 
   currentLvl = li;
   showToast(t('Loading questions...', '加载题目中...'));
@@ -334,13 +381,22 @@ function pickPracticeOpt(btn, idx) {
     opts.forEach(function(o) {
       if (parseInt(o.dataset.idx) === q.a) o.classList.add('correct');
     });
+    /* Auto-add to wrong book for HHK/MCQ practice */
+    if (typeof ppAddToWrongBook === 'function') {
+      ppAddToWrongBook(q.id, q.diag || '', '');
+    }
   }
 
   /* Show explanation */
   if (q.e) {
     var expEl = document.getElementById('pq-explanation');
     if (expEl) {
-      expEl.innerHTML = '<strong>' + t('Explanation', '解析') + ':</strong> ' + pqRender(q.e);
+      var expHtml = '<strong>' + t('Explanation', '\u89e3\u6790') + ':</strong> ' + pqRender(q.e);
+      /* Diagnostic feedback for HHK questions */
+      if (q.diag && !isCorrect) {
+        expHtml += _diagFeedback(q);
+      }
+      expEl.innerHTML = expHtml;
       expEl.style.display = 'block';
       renderMath(expEl);
     }
@@ -417,8 +473,11 @@ function finishPractice() {
     wrongHtml += '</div>';
   }
 
+  /* Diagnostic summary (HHK questions with diag field) */
+  var diagHtml = _diagSummary(s.answers, s.questions);
+
   var html = '<div class="text-center" style="padding-top:40px">';
-  html += raw.replace('<div class="result-actions">', step + wrongHtml + '<div class="result-actions">');
+  html += raw.replace('<div class="result-actions">', diagHtml + step + wrongHtml + '<div class="result-actions">');
   html += '</div>';
 
   E('panel-practice').innerHTML = html;
