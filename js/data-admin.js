@@ -176,7 +176,7 @@ function dqRenderDashboard(ct) {
     var sevClass = rule.severity === 'error' ? 'dq-sev-error' : rule.severity === 'warn' ? 'dq-sev-warn' : 'dq-sev-info';
     html += '<div class="dq-rule">';
     html += '<span class="dq-sev-dot ' + sevClass + '"></span>';
-    html += '<span class="dq-rule-label">' + escapeHtml(rule.label[lang === 'zh' ? 1 : 0]) + '</span>';
+    html += '<span class="dq-rule-label">' + escapeHtml(rule.label[appLang === 'zh' ? 1 : 0]) + '</span>';
     html += '<span class="dq-badge">' + items.length + '</span>';
     html += '<div class="dq-rule-actions">';
     html += '<button class="btn btn-ghost btn-sm" data-dq-action="view" data-rule="' + rule.id + '">' + t('View', '\u67e5\u770b') + '</button>';
@@ -209,7 +209,7 @@ function dqShowIssueList(ruleId, page) {
   var pageItems = items.slice(start, start + _dqPageSize);
 
   var rule = DQ_RULES.find(function(r) { return r.id === ruleId; });
-  var ruleLabel = rule ? rule.label[lang === 'zh' ? 1 : 0] : ruleId;
+  var ruleLabel = rule ? rule.label[appLang === 'zh' ? 1 : 0] : ruleId;
 
   var html = '<div class="section-title">' + escapeHtml(ruleLabel) + ' <span style="color:var(--c-muted);font-size:13px">(' + items.length + ' ' + t('issues', '\u95ee\u9898') + ')</span></div>';
 
