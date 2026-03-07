@@ -257,11 +257,12 @@ async function afterLogin() {
 async function loadAndInitTeacher() {
   if (!sb || !isLoggedIn()) return;
   /* Quick role check — avoid loading admin scripts for students */
+  var _isSA = typeof isSuperAdmin === 'function' && isSuperAdmin();
   try {
     var res = await sb.from('teachers')
       .select('id').eq('user_id', currentUser.id).maybeSingle();
-    if (!res.data) return;
-  } catch(e) { return; }
+    if (!res.data && !_isSA) return;
+  } catch(e) { if (!_isSA) return; }
   /* Teacher needs all boards (cross-board homework) */
   try { await ensureAllBoardsLoaded(); } catch(e) {}
   /* Load homework module (admin.js depends on homework functions like renderClassHwList) */
