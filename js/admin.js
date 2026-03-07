@@ -99,6 +99,7 @@ function renderAdmin() {
   html += '<button class="admin-tab' + (_adminTab === 'grade' ? ' active' : '') + '" onclick="switchAdminTab(\'grade\')">' + t('By Grade', '年级概览') + '</button>';
   html += '<button class="admin-tab' + (_adminTab === 'school' ? ' active' : '') + '" onclick="switchAdminTab(\'school\')">' + t('School', '全校概览') + '</button>';
   if (typeof isSuperAdmin === 'function' && isSuperAdmin()) {
+    html += '<button class="admin-tab' + (_adminTab === 'allusers' ? ' active' : '') + '" onclick="switchAdminTab(\'allusers\')">' + t('All Users', '全部用户') + '</button>';
     html += '<button class="admin-tab' + (_adminTab === 'feedback' ? ' active' : '') + '" onclick="switchAdminTab(\'feedback\')">' + t('Feedback', '反馈') + '</button>';
     html += '<button class="admin-tab' + (_adminTab === 'dataquality' ? ' active' : '') + '" onclick="switchAdminTab(\'dataquality\')">' + t('Data Quality', '数据质量') + '</button>';
   }
@@ -111,6 +112,7 @@ function renderAdmin() {
   if (_adminTab === 'classes') renderClassList();
   else if (_adminTab === 'grade') renderGradeOverview();
   else if (_adminTab === 'school') renderSchoolOverview();
+  else if (_adminTab === 'allusers') renderAllUsers();
   else if (_adminTab === 'feedback' && typeof renderFeedbackList === 'function') renderFeedbackList();
   else if (_adminTab === 'dataquality' && typeof renderDataQuality === 'function') renderDataQuality();
 }
@@ -757,6 +759,88 @@ async function renderSchoolOverview() {
   }
 
   ct.innerHTML = html;
+}
+
+/* ═══ ALL USERS (super admin) ═══ */
+async function renderAllUsers() {
+  var ct = E('admin-content');
+  if (!ct) return;
+  ct.innerHTML = '<div class="admin-loading">' + t('Loading all users...', '加载全部用户...') + '</div>';
+
+  try {
+    var res = await sb.from('leaderboard')
+      .select('user_id, nickname, score, mastery_pct, mastered_words, total_words, rank_emoji, board, school_id, class_id, updated_at')
+      .order('updated_at', { ascending: false });
+    var users = res.data || [];
+
+    /* Summary */
+    var now = Date.now();
+    var active7d = users.filter(function(u) { return u.updated_at && (now - new Date(u.updated_at).getTime()) < 7 * 86400000; }).length;
+    var active30d = users.filter(function(u) { return u.updated_at && (now - new Date(u.updated_at).getTime()) < 30 * 86400000; }).length;
+    var avgPct = users.length > 0 ? Math.round(users.reduce(function(s, u) { return s + (u.mastery_pct || 0); }, 0) / users.length) : 0;
+
+    var html = '<div class="admin-summary-grid">';
+    html += summaryCard(t('Total Users', '总用户'), users.length, 'var(--c-primary)');
+    html += summaryCard(t('Active (7d)', '活跃(7天)'), active7d, 'var(--c-success)');
+    html += summaryCard(t('Active (30d)', '活跃(30天)'), active30d, 'var(--c-warning)');
+    html += summaryCard(t('Avg Mastery', '平均掌握率'), avgPct + '%', 'var(--c-primary-dark)');
+    html += '</div>';
+
+    /* Board distribution */
+    var boardMap = {};
+    users.forEach(function(u) {
+      var b = u.board || 'unknown';
+      boardMap[b] = (boardMap[b] || 0) + 1;
+    });
+    var boardKeys = Object.keys(boardMap).sort();
+    if (boardKeys.length > 0) {
+      html += '<div style="margin-bottom:16px;display:flex;gap:8px;flex-wrap:wrap">';
+      boardKeys.forEach(function(b) {
+        html += '<span class="dq-pill">' + escapeHtml(b) + ': ' + boardMap[b] + '</span>';
+      });
+      html += '</div>';
+    }
+
+    /* User table */
+    if (users.length === 0) {
+      html += '<div class="admin-empty">' + t('No users yet', '暂无用户') + '</div>';
+    } else {
+      html += '<div class="admin-table-wrap"><table class="admin-student-table"><thead><tr>';
+      html += '<th>#</th>';
+      html += '<th>' + t('Name', '姓名') + '</th>';
+      html += '<th>' + t('Board', '课程') + '</th>';
+      html += '<th>' + t('Mastery', '掌握率') + '</th>';
+      html += '<th>' + t('Words', '词汇') + '</th>';
+      html += '<th>' + t('Score', '得分') + '</th>';
+      html += '<th>' + t('Rank', '段位') + '</th>';
+      html += '<th>' + t('Last Active', '最后活跃') + '</th>';
+      html += '</tr></thead><tbody>';
+
+      users.forEach(function(u, i) {
+        var lastActive = u.updated_at ? timeAgo(u.updated_at) : t('Never', '从未');
+        var pct = u.mastery_pct || 0;
+        html += '<tr>';
+        html += '<td>' + (i + 1) + '</td>';
+        html += '<td class="admin-td-name">' + escapeHtml(u.nickname || t('Anonymous', '匿名')) + '</td>';
+        html += '<td>' + escapeHtml(u.board || '-') + '</td>';
+        html += '<td class="admin-td-mastery">';
+        html += '<div class="admin-progress"><div class="admin-progress-fill" style="width:' + pct + '%"></div></div>';
+        html += '<span class="admin-pct">' + pct + '%</span>';
+        html += '</td>';
+        html += '<td class="admin-td-words">' + (u.mastered_words || 0) + '/' + (u.total_words || 0) + '</td>';
+        html += '<td>' + (u.score || 0) + '</td>';
+        html += '<td>' + (u.rank_emoji || '') + '</td>';
+        html += '<td class="admin-td-time">' + lastActive + '</td>';
+        html += '</tr>';
+      });
+
+      html += '</tbody></table></div>';
+    }
+
+    ct.innerHTML = html;
+  } catch (e) {
+    ct.innerHTML = '<div class="admin-empty">' + escapeHtml(e.message) + '</div>';
+  }
 }
 
 function summaryCard(label, value, color) {
