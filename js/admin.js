@@ -29,7 +29,18 @@ async function initTeacher() {
       .select('id, school_id, display_name')
       .eq('user_id', currentUser.id)
       .single();
-    if (res.error || !res.data) { isTeacherUser = false; return; }
+    if (res.error || !res.data) {
+      /* Super admin can access admin panel without teacher record */
+      if (typeof isSuperAdmin === 'function' && isSuperAdmin()) {
+        var navAdmin = E('nav-admin');
+        var bnavAdmin = E('bnav-admin');
+        if (navAdmin) navAdmin.style.display = '';
+        if (bnavAdmin) bnavAdmin.style.display = '';
+      } else {
+        isTeacherUser = false;
+      }
+      return;
+    }
     _teacherData = res.data;
     isTeacherUser = true;
     updateSidebar();
@@ -70,7 +81,7 @@ async function loadActivityData(force) {
 /* ═══ RENDER ADMIN ═══ */
 function renderAdmin() {
   var el = E('panel-admin');
-  if (!el || !isTeacherUser) return;
+  if (!el || (!isTeacherUser && !(typeof isSuperAdmin === 'function' && isSuperAdmin()))) return;
 
   var html = '<div class="admin-header">' +
     '<div class="section-title">' + t('Admin Panel', '管理面板') + '</div>' +
