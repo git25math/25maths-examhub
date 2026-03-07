@@ -258,7 +258,7 @@
 - [ ] IB Mathematics vocabulary sets
 - [ ] AQA GCSE Mathematics vocabulary sets
 - [ ] 用户创建 + 分享自定义词库（community decks）
-- [ ] Import/Export 增加 Anki 格式支持
+- [x] Import/Export 增加 Anki 格式支持（TSV 导出 + 导入已有 TSV 解析）→ v1.11.4
 - [ ] 多语言扩展（pinyin 显示选项、繁体中文）
 
 ## Phase 10 — 平台扩展：从词汇工具到学习支撑平台

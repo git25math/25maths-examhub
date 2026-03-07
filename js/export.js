@@ -17,7 +17,7 @@ function renderImport() {
   /* File upload */
   html += '<div class="import-drop" id="import-drop" onclick="E(\'import-file\').click()">';
   html += '<div class="import-drop-icon">\ud83d\udcc1</div>';
-  html += '<div class="import-drop-text">' + t('Click or drop file (CSV, JSON, TXT)', '\u70b9\u51fb\u6216\u62d6\u653e\u6587\u4ef6 (CSV, JSON, TXT)') + '</div>';
+  html += '<div class="import-drop-text">' + t('Click or drop file (CSV, JSON, TXT, Anki TSV)', '\u70b9\u51fb\u6216\u62d6\u653e\u6587\u4ef6 (CSV, JSON, TXT, Anki TSV)') + '</div>';
   html += '</div>';
   html += '<input type="file" id="import-file" accept=".csv,.json,.txt,.md,.tsv" style="display:none">';
 
@@ -40,6 +40,7 @@ function renderImport() {
   html += '<button class="btn btn-secondary btn-sm" onclick="exportUnfamiliar()">\ud83d\udcc4 ' + t('Unfamiliar CSV', '\u4e0d\u719f\u5355\u8bcd CSV') + '</button>';
   html += '<button class="btn btn-secondary btn-sm" onclick="exportProgress()">\ud83d\udcca ' + t('Progress JSON', '\u5b66\u4e60\u8bb0\u5f55 JSON') + '</button>';
   html += '<button class="btn btn-secondary btn-sm" onclick="exportMarkdown()">\ud83d\udcdd Markdown ' + t('Table', '\u8868\u683c') + '</button>';
+  html += '<button class="btn btn-secondary btn-sm" onclick="exportAnki()">\ud83d\udce6 ' + t('Anki TSV', 'Anki \u5361\u7247') + '</button>';
   html += '</div>';
 
   E('panel-import').innerHTML = html;
@@ -300,6 +301,24 @@ function exportMarkdown() {
 
   downloadBlob(new Blob([lines.join('\n')], { type: 'text/markdown;charset=utf-8;' }), 'vocabulary.md');
   showToast('\u5df2\u5bfc\u51fa Markdown');
+}
+
+function exportAnki() {
+  var all = getAllWords();
+  if (all.length === 0) {
+    showToast(t('No vocabulary to export', '\u6ca1\u6709\u53ef\u5bfc\u51fa\u7684\u8bcd\u6c47'));
+    return;
+  }
+  /* Anki import format: front<TAB>back<TAB>tags (one card per line) */
+  var lines = [];
+  all.forEach(function(w) {
+    var front = w.word;
+    var back = w.def;
+    var tag = w.level.replace(/\s+/g, '_');
+    lines.push(front + '\t' + back + '\t' + tag);
+  });
+  downloadBlob(new Blob([lines.join('\n')], { type: 'text/tab-separated-values;charset=utf-8;' }), '25maths-keywords-anki.txt');
+  showToast(t('Anki file exported — import as TSV in Anki', 'Anki \u6587\u4ef6\u5df2\u5bfc\u51fa \u2014 \u5728 Anki \u4e2d\u4ee5 TSV \u5bfc\u5165'));
 }
 
 function downloadBlob(blob, filename) {

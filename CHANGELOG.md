@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.11.4] - 2026-03-07 — Anki 格式导出
+
+### 新增
+- **Anki TSV 导出** `exportAnki()`: 导出全部词汇为 Anki 兼容的 TSV 文件（front/back/tag），可直接导入 Anki 桌面端
+- 导入界面提示文案更新，明确支持 Anki TSV 格式文件
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `js/export.js` | +`exportAnki()` + Anki 导出按钮 + 导入提示更新 |
+| `js/config.js` | 版本号 v1.11.3 -> v1.11.4 |
+
 ## [1.11.3] - 2026-03-07 — 作业统计导出 CSV
 
 ### 新增
