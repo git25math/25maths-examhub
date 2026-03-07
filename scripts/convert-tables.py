@@ -79,7 +79,26 @@ def process_cell_content(content):
         return ''
     # Remove \rule commands (spacers)
     content = re.sub(r'\\rule\{[^}]*\}\{[^}]*\}', '', content)
+    # Convert \qquad and \quad to non-breaking spaces (outside math mode)
+    content = _replace_spacing_outside_math(content)
     return content
+
+
+def _replace_spacing_outside_math(text):
+    """Replace \\qquad and \\quad with HTML spaces, but only outside $...$ math."""
+    # Split on unescaped $...$ (not \$)
+    parts = re.split(r'(?<!\\)(\$(?:[^$\\]|\\.)*\$)', text)
+    result = []
+    for i, part in enumerate(parts):
+        if i % 2 == 1:
+            # Inside math — keep as-is
+            result.append(part)
+        else:
+            # Outside math — convert spacing
+            part = part.replace('\\qquad', '\u2003\u2003')
+            part = part.replace('\\quad', '\u2003')
+            result.append(part)
+    return ''.join(result)
 
 
 def parse_multicolumn(cell):
@@ -223,9 +242,18 @@ def convert_tex(tex):
     result = re.sub(r'\\renewcommand\{\\arraystretch\}\{[^}]*\}\s*', '', result)
 
     # Remove \begin{center} / \end{center} around tabular
-    # Only remove if they immediately wrap a tabular
     result = re.sub(r'\\begin\{center\}\s*(\\begin\{tabular\})', r'\1', result)
     result = re.sub(r'(\\end\{tabular\})\s*\\end\{center\}', r'\1', result)
+
+    # Remove \begin{minipage}{...} / \end{minipage} wrappers
+    result = re.sub(r'\\begin\{minipage\}\{[^}]*\}\s*', '', result)
+    result = re.sub(r'\\end\{minipage\}', '', result)
+
+    # Remove \centering
+    result = re.sub(r'\\centering\s*', '', result)
+
+    # Remove empty \begin{figure}...\end{figure} blocks
+    result = re.sub(r'\\begin\{figure\}\[?\w?\]?\s*\\end\{figure\}', '', result)
 
     # Convert each tabular block
     pattern = re.compile(r'\\begin\{tabular\}\{[^}]*\}.*?\\end\{tabular\}', re.DOTALL)
