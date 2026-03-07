@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.13.0] - 2026-03-07 — 防御性修复（onclick XSS 消除 + 空引用防护）
+
+### 修复
+- **spell.js onclick XSS 消除**: speakWord 内联 `onclick` 字符串拼接改为 `data-speak` 属性 + 事件委托，消除单引号/反斜杠转义不完整注入风险
+- **spell.js input null check**: `input.focus()` 添加 null 检查，防止 DOM 未就绪时抛异常
+- **practice.js topic filter XSS 消除**: topic/difficulty 按钮从 `onclick` 字符串拼接改为 `data-pq-topic` / `data-pq-filter` 属性 + 事件委托
+- **homework.js pickHwAnswer XSS 消除**: 答案按钮从 `onclick="pickHwAnswer(this, ...)"` 改为 `data-correct` / `data-answer` 属性 + 事件委托
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `js/spell.js` | speakWord onclick→data 属性+事件委托 + input null check |
+| `js/practice.js` | topic/difficulty filter onclick→data 属性+事件委托 |
+| `js/homework.js` | pickHwAnswer onclick→data 属性+事件委托 |
+| `js/config.js` | 版本号 v1.12.9→v1.13.0 |
+| `index.html` | 缓存标签 v1.12.9→v1.13.0 |
+
 ## [1.12.9] - 2026-03-07 — 可靠性修复（Timer 泄漏 + Modal 安全 + XSS 修复）
 
 ### 修复

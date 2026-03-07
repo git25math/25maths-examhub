@@ -44,7 +44,7 @@ function renderSpellCard() {
 
   /* Prompt */
   html += '<div class="spell-prompt">';
-  html += '<div class="spell-def">' + escapeHtml(p.def) + (canSpeak() ? ' <button class="btn-speak" onclick="speakWord(\'' + p.word.replace(/\\/g, '\\\\').replace(/'/g, "\\'") + '\')" title="' + t('Listen', '\u53d1\u97f3') + '">\ud83d\udd0a</button>' : '') + '</div>';
+  html += '<div class="spell-def">' + escapeHtml(p.def) + (canSpeak() ? ' <button class="btn-speak" data-speak="' + escapeHtml(p.word) + '" title="' + t('Listen', '\u53d1\u97f3') + '">\ud83d\udd0a</button>' : '') + '</div>';
   html += '<div class="spell-hint">' + hint + '</div>';
   html += '</div>';
 
@@ -62,9 +62,15 @@ function renderSpellCard() {
   E('panel-spell').innerHTML = html;
   SP.answered = false;
 
+  /* Delegated click for speak button */
+  E('panel-spell').addEventListener('click', function(e) {
+    var btn = e.target.closest('[data-speak]');
+    if (btn) speakWord(btn.dataset.speak);
+  });
+
   /* Focus input and bind Enter key */
   var input = E('spell-input');
-  setTimeout(function() { input.focus(); }, 100);
+  setTimeout(function() { if (input) input.focus(); }, 100);
 
   /* Auto-speak word */
   if (appSound && canSpeak()) {

@@ -1216,11 +1216,17 @@ function renderHwQuestion() {
 
   html += '<div class="hw-options">';
   options.forEach(function(opt) {
-    html += '<button class="hw-option" onclick="pickHwAnswer(this, ' + JSON.stringify(opt === answer) + ', ' + JSON.stringify(answer).replace(/"/g, '&quot;') + ')">' + escapeHtml(opt) + '</button>';
+    html += '<button class="hw-option" data-correct="' + (opt === answer ? '1' : '0') + '" data-answer="' + escapeHtml(answer) + '">' + escapeHtml(opt) + '</button>';
   });
   html += '</div>';
 
   el.innerHTML = html;
+
+  /* Delegated click for answer buttons */
+  el.addEventListener('click', function(e) {
+    var btn = e.target.closest('.hw-option[data-correct]');
+    if (btn) pickHwAnswer(btn, btn.dataset.correct === '1', btn.dataset.answer);
+  });
 }
 
 function pickHwAnswer(btn, isCorrect, correctAnswer) {

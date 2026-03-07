@@ -907,18 +907,18 @@ function renderPracticeReview() {
 
   /* Difficulty filter bar */
   html += '<div class="pq-review-filter">';
-  html += '<button class="sort-btn' + (_pqReviewFilter === 'all' ? ' active' : '') + '" onclick="setPqReviewFilter(\'all\')">All (' + questions.length + ')</button>';
-  html += '<button class="sort-btn' + (_pqReviewFilter === 1 ? ' active' : '') + '" onclick="setPqReviewFilter(1)">Core (' + coreCount + ')</button>';
-  html += '<button class="sort-btn' + (_pqReviewFilter === 2 ? ' active' : '') + '" onclick="setPqReviewFilter(2)">Extended (' + extCount + ')</button>';
+  html += '<button class="sort-btn' + (_pqReviewFilter === 'all' ? ' active' : '') + '" data-pq-filter="all">All (' + questions.length + ')</button>';
+  html += '<button class="sort-btn' + (_pqReviewFilter === 1 ? ' active' : '') + '" data-pq-filter="1">Core (' + coreCount + ')</button>';
+  html += '<button class="sort-btn' + (_pqReviewFilter === 2 ? ' active' : '') + '" data-pq-filter="2">Extended (' + extCount + ')</button>';
   html += '</div>';
 
   /* Topic filter bar */
   if (topicList.length > 1) {
     html += '<div class="pq-review-filter">';
-    html += '<button class="sort-btn' + (_pqReviewTopicFilter === 'all' ? ' active' : '') + '" onclick="setPqReviewTopic(\'all\')">' + t('All Topics', '全部专题') + ' (' + afterDiff.length + ')</button>';
+    html += '<button class="sort-btn' + (_pqReviewTopicFilter === 'all' ? ' active' : '') + '" data-pq-topic="all">' + t('All Topics', '全部专题') + ' (' + afterDiff.length + ')</button>';
     topicList.forEach(function(tp) {
       var active = _pqReviewTopicFilter === tp ? ' active' : '';
-      html += '<button class="sort-btn' + active + '" onclick="setPqReviewTopic(\'' + escapeHtml(tp).replace(/'/g, "\\'") + '\')">' + escapeHtml(tp) + ' (' + topicMap[tp] + ')</button>';
+      html += '<button class="sort-btn' + active + '" data-pq-topic="' + escapeHtml(tp) + '">' + escapeHtml(tp) + ' (' + topicMap[tp] + ')</button>';
     });
     html += '</div>';
   }
@@ -958,6 +958,21 @@ function renderPracticeReview() {
   html += '</div>'; /* end list */
 
   E('panel-practice').innerHTML = html;
+
+  /* Delegated clicks for filter buttons */
+  E('panel-practice').addEventListener('click', function(e) {
+    var fb = e.target.closest('[data-pq-filter]');
+    if (fb) {
+      var v = fb.dataset.pqFilter;
+      setPqReviewFilter(v === 'all' ? 'all' : Number(v));
+      return;
+    }
+    var tb = e.target.closest('[data-pq-topic]');
+    if (tb) {
+      setPqReviewTopic(tb.dataset.pqTopic);
+    }
+  });
+
   renderMath(E('panel-practice'));
 }
 
