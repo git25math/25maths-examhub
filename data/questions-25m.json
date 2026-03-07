@@ -1,69 +1,4677 @@
 [
-  {"id":"h001","cat":"fractions","topic":"Multiplication of Fractions","q":"Simplify $\\frac{12}{18}$.","o":["$\\frac{2}{3}$","$\\frac{3}{4}$","$\\frac{6}{9}$","$\\frac{4}{6}$"],"a":0,"e":"$\\frac{12}{18} = \\frac{12 \\div 6}{18 \\div 6} = \\frac{2}{3}$","d":1,"s":"Y7.1","diag":"calc"},
-  {"id":"h002","cat":"fractions","topic":"Multiplication of Fractions","q":"Convert $2\\frac{3}{4}$ to an improper fraction.","o":["$\\frac{11}{4}$","$\\frac{8}{4}$","$\\frac{9}{4}$","$\\frac{7}{4}$"],"a":0,"e":"$2\\frac{3}{4} = \\frac{2 \\times 4 + 3}{4} = \\frac{11}{4}$","d":1,"s":"Y7.1","diag":"concept"},
-  {"id":"h003","cat":"fractions","topic":"Multiplication of Fractions","q":"Calculate $\\frac{2}{5} \\times \\frac{3}{4}$.","o":["$\\frac{3}{10}$","$\\frac{6}{20}$","$\\frac{5}{9}$","$\\frac{6}{9}$"],"a":0,"e":"Multiply numerators: $2 \\times 3 = 6$. Multiply denominators: $5 \\times 4 = 20$. Simplify: $\\frac{6}{20} = \\frac{3}{10}$.","d":1,"s":"Y7.1","diag":"calc"},
-  {"id":"h004","cat":"fractions","topic":"Multiplication of Fractions","q":"What is the reciprocal of $\\frac{3}{7}$?","o":["$\\frac{7}{3}$","$\\frac{3}{7}$","$\\frac{1}{3}$","$-\\frac{3}{7}$"],"a":0,"e":"The reciprocal of a fraction $\\frac{a}{b}$ is $\\frac{b}{a}$. So the reciprocal of $\\frac{3}{7}$ is $\\frac{7}{3}$.","d":1,"s":"Y7.1","diag":"concept"},
-  {"id":"h005","cat":"fractions","topic":"Multiplication of Fractions","q":"Calculate $\\frac{1}{3} + \\frac{1}{4}$.","o":["$\\frac{7}{12}$","$\\frac{2}{7}$","$\\frac{1}{7}$","$\\frac{2}{12}$"],"a":0,"e":"Find the LCM of 3 and 4: $12$. Convert: $\\frac{4}{12} + \\frac{3}{12} = \\frac{7}{12}$.","d":1,"s":"Y7.1","diag":"calc"},
-  {"id":"h006","cat":"fractions","topic":"Multiplication of Fractions","q":"Round 3.456 to 2 decimal places.","o":["3.46","3.45","3.50","3.4"],"a":0,"e":"Look at the 3rd decimal place (6). Since $6 \\geq 5$, round up: $3.456 \\approx 3.46$.","d":1,"s":"Y7.1","diag":"calc"},
-  {"id":"h007","cat":"fractions","topic":"Multiplication of Fractions","q":"Calculate $1\\frac{2}{3} \\times \\frac{3}{5}$.","o":["$1$","$\\frac{3}{5}$","$\\frac{2}{5}$","$1\\frac{1}{5}$"],"a":0,"e":"Convert to improper: $\\frac{5}{3} \\times \\frac{3}{5}$. Cancel: $\\frac{5}{3} \\times \\frac{3}{5} = \\frac{15}{15} = 1$.","d":2,"s":"Y7.1","diag":"calc"},
-  {"id":"h008","cat":"fractions","topic":"Multiplication of Fractions","q":"A recipe needs $\\frac{3}{4}$ cup of flour. If you make $\\frac{2}{3}$ of the recipe, how much flour do you need?","o":["$\\frac{1}{2}$ cup","$\\frac{5}{7}$ cup","$\\frac{2}{4}$ cup","$\\frac{6}{7}$ cup"],"a":0,"e":"$\\frac{3}{4} \\times \\frac{2}{3} = \\frac{6}{12} = \\frac{1}{2}$ cup.","d":2,"s":"Y7.1","diag":"logic"},
-  {"id":"h009","cat":"fractions","topic":"Multiplication of Fractions","q":"Round 0.04567 to 2 significant figures.","o":["0.046","0.045","0.05","0.04"],"a":0,"e":"The first significant figure is 4, the second is 5. The next digit is 6, so round up: $0.046$.","d":2,"s":"Y7.1","diag":"calc"},
-
-  {"id":"h010","cat":"fractions","topic":"Division of Fraction","q":"Calculate $\\frac{3}{4} \\div \\frac{1}{2}$.","o":["$\\frac{3}{2}$","$\\frac{3}{8}$","$\\frac{1}{2}$","$\\frac{2}{3}$"],"a":0,"e":"Dividing by a fraction means multiplying by its reciprocal: $\\frac{3}{4} \\times \\frac{2}{1} = \\frac{6}{4} = \\frac{3}{2}$.","d":1,"s":"Y7.2","diag":"concept"},
-  {"id":"h011","cat":"fractions","topic":"Division of Fraction","q":"Calculate $5 \\div \\frac{1}{3}$.","o":["15","$\\frac{5}{3}$","$\\frac{1}{15}$","3"],"a":0,"e":"$5 \\div \\frac{1}{3} = 5 \\times 3 = 15$.","d":1,"s":"Y7.2","diag":"calc"},
-  {"id":"h012","cat":"fractions","topic":"Division of Fraction","q":"What is $\\frac{2}{3} \\div \\frac{4}{5}$?","o":["$\\frac{5}{6}$","$\\frac{8}{15}$","$\\frac{6}{5}$","$\\frac{10}{12}$"],"a":0,"e":"$\\frac{2}{3} \\div \\frac{4}{5} = \\frac{2}{3} \\times \\frac{5}{4} = \\frac{10}{12} = \\frac{5}{6}$.","d":1,"s":"Y7.2","diag":"calc"},
-  {"id":"h013","cat":"fractions","topic":"Division of Fraction","q":"Evaluate $(\\frac{1}{2} + \\frac{1}{3}) \\times 6$.","o":["5","3","4","6"],"a":0,"e":"First: $\\frac{1}{2} + \\frac{1}{3} = \\frac{5}{6}$. Then: $\\frac{5}{6} \\times 6 = 5$.","d":2,"s":"Y7.2","diag":"calc"},
-
-  {"id":"h014","cat":"number","topic":"Negative Number","q":"Calculate $(-3) + (-5)$.","o":["$-8$","$-2$","$8$","$2$"],"a":0,"e":"Adding two negative numbers: $(-3) + (-5) = -(3+5) = -8$.","d":1,"s":"Y7.3","diag":"concept"},
-  {"id":"h015","cat":"number","topic":"Negative Number","q":"Calculate $(-4) \\times (-6)$.","o":["$24$","$-24$","$-10$","$10$"],"a":0,"e":"Negative times negative gives positive: $(-4) \\times (-6) = 24$.","d":1,"s":"Y7.3","diag":"calc"},
-  {"id":"h016","cat":"number","topic":"Negative Number","q":"What is $7 - (-3)$?","o":["$10$","$4$","$-4$","$-10$"],"a":0,"e":"Subtracting a negative is the same as adding: $7 - (-3) = 7 + 3 = 10$.","d":1,"s":"Y7.3","diag":"concept"},
-  {"id":"h017","cat":"number","topic":"Negative Number","q":"Arrange in ascending order: $-5, 2, -1, 0, -3$.","o":["$-5, -3, -1, 0, 2$","$-1, -3, -5, 0, 2$","$2, 0, -1, -3, -5$","$-5, -1, -3, 0, 2$"],"a":0,"e":"From smallest to largest: $-5 < -3 < -1 < 0 < 2$.","d":1,"s":"Y7.3","diag":"concept"},
-
-  {"id":"h018","cat":"geometry","topic":"Position and Direction","q":"A point is translated 3 units right and 2 units up from $(1, 4)$. What are the new coordinates?","o":["$(4, 6)$","$(3, 2)$","$(-2, 2)$","$(1, 6)$"],"a":0,"e":"Add 3 to x: $1+3=4$. Add 2 to y: $4+2=6$. New point: $(4, 6)$.","d":1,"s":"Y7.4","diag":"concept"},
-  {"id":"h019","cat":"geometry","topic":"Position and Direction","q":"What is the reflection of the point $(3, -2)$ in the x-axis?","o":["$(3, 2)$","$(-3, -2)$","$(-3, 2)$","$(3, -2)$"],"a":0,"e":"Reflection in the x-axis changes the sign of y: $(3, -2) \\to (3, 2)$.","d":1,"s":"Y7.4","diag":"concept"},
-  {"id":"h020","cat":"geometry","topic":"Position and Direction","q":"A shape is rotated $90^\\circ$ clockwise about the origin. The point $(2, 3)$ moves to:","o":["$(3, -2)$","$(-3, 2)$","$(-2, -3)$","$(2, -3)$"],"a":0,"e":"$90^\\circ$ clockwise rotation: $(x,y) \\to (y,-x)$. So $(2,3) \\to (3,-2)$.","d":2,"s":"Y7.4","diag":"concept"},
-
-  {"id":"h021","cat":"ratio","topic":"Ratio and Proportion","q":"Simplify the ratio $12:18$.","o":["$2:3$","$3:4$","$6:9$","$4:6$"],"a":0,"e":"Divide both by HCF(12,18)=6: $12 \\div 6 : 18 \\div 6 = 2:3$.","d":1,"s":"Y7.5","diag":"calc"},
-  {"id":"h022","cat":"ratio","topic":"Ratio and Proportion","q":"Share $\\$60$ in the ratio $2:3$. How much is the larger share?","o":["$\\$36$","$\\$24$","$\\$30$","$\\$40$"],"a":0,"e":"Total parts: $2+3=5$. One part: $60 \\div 5 = 12$. Larger share: $3 \\times 12 = \\$36$.","d":1,"s":"Y7.5","diag":"calc"},
-  {"id":"h023","cat":"ratio","topic":"Ratio and Proportion","q":"If $5$ books cost $\\$35$, how much do $8$ books cost?","o":["$\\$56$","$\\$48$","$\\$40$","$\\$64$"],"a":0,"e":"Unit cost: $35 \\div 5 = \\$7$. For 8 books: $8 \\times 7 = \\$56$.","d":1,"s":"Y7.5","diag":"calc"},
-  {"id":"h024","cat":"ratio","topic":"Ratio and Proportion","q":"Express $3:5$ as a fraction.","o":["$\\frac{3}{5}$","$\\frac{5}{3}$","$\\frac{3}{8}$","$\\frac{5}{8}$"],"a":0,"e":"$3:5$ means 3 out of 5, which is $\\frac{3}{5}$.","d":1,"s":"Y7.5","diag":"vocab"},
-
-  {"id":"h025","cat":"percentage","topic":"Percentage","q":"Convert $\\frac{3}{5}$ to a percentage.","o":["$60\\%$","$35\\%$","$53\\%$","$75\\%$"],"a":0,"e":"$\\frac{3}{5} \\times 100 = 60\\%$.","d":1,"s":"Y7.6","diag":"calc"},
-  {"id":"h026","cat":"percentage","topic":"Percentage","q":"Find $15\\%$ of $200$.","o":["$30$","$15$","$20$","$25$"],"a":0,"e":"$15\\% \\times 200 = 0.15 \\times 200 = 30$.","d":1,"s":"Y7.6","diag":"calc"},
-  {"id":"h027","cat":"percentage","topic":"Percentage","q":"A shirt costs $\\$40$ and is reduced by $25\\%$. What is the sale price?","o":["$\\$30$","$\\$35$","$\\$25$","$\\$32$"],"a":0,"e":"Discount: $25\\%$ of $40 = \\$10$. Sale price: $40 - 10 = \\$30$.","d":1,"s":"Y7.6","diag":"calc"},
-  {"id":"h028","cat":"percentage","topic":"Percentage","q":"Express $0.375$ as a percentage.","o":["$37.5\\%$","$3.75\\%$","$375\\%$","$0.375\\%$"],"a":0,"e":"$0.375 \\times 100 = 37.5\\%$.","d":1,"s":"Y7.6","diag":"calc"},
-
-  {"id":"h029","cat":"geometry","topic":"Circle","q":"What is the circumference of a circle with radius $7$ cm? (Use $\\pi \\approx \\frac{22}{7}$)","o":["$44$ cm","$154$ cm","$22$ cm","$88$ cm"],"a":0,"e":"$C = 2\\pi r = 2 \\times \\frac{22}{7} \\times 7 = 44$ cm.","d":1,"s":"Y7.7","diag":"calc"},
-  {"id":"h030","cat":"geometry","topic":"Circle","q":"Find the area of a circle with diameter $10$ cm. (Use $\\pi \\approx 3.14$)","o":["$78.5$ cm$^2$","$31.4$ cm$^2$","$314$ cm$^2$","$157$ cm$^2$"],"a":0,"e":"Radius $= 5$ cm. Area $= \\pi r^2 = 3.14 \\times 25 = 78.5$ cm$^2$.","d":1,"s":"Y7.7","diag":"calc"},
-  {"id":"h031","cat":"geometry","topic":"Circle","q":"What is the name of a straight line from the centre to the circumference of a circle?","o":["Radius","Diameter","Chord","Tangent"],"a":0,"e":"A radius is a line segment from the centre of a circle to any point on the circumference.","d":1,"s":"Y7.7","diag":"vocab"},
-
-  {"id":"h032","cat":"geometry","topic":"Cylinders and Cones","q":"Find the volume of a cylinder with radius $3$ cm and height $10$ cm. (Use $\\pi \\approx 3.14$)","o":["$282.6$ cm$^3$","$94.2$ cm$^3$","$188.4$ cm$^3$","$90$ cm$^3$"],"a":0,"e":"$V = \\pi r^2 h = 3.14 \\times 9 \\times 10 = 282.6$ cm$^3$.","d":1,"s":"Y7.8","diag":"calc"},
-  {"id":"h033","cat":"geometry","topic":"Cylinders and Cones","q":"The volume of a cone is given by:","o":["$\\frac{1}{3}\\pi r^2 h$","$\\pi r^2 h$","$\\frac{1}{2}\\pi r^2 h$","$2\\pi r h$"],"a":0,"e":"The volume of a cone is $\\frac{1}{3}$ of the volume of a cylinder with the same base and height.","d":1,"s":"Y7.8","diag":"concept"},
-  {"id":"h034","cat":"geometry","topic":"Cylinders and Cones","q":"Find the curved surface area of a cylinder with radius $4$ cm and height $7$ cm. (Use $\\pi \\approx 3.14$)","o":["$175.84$ cm$^2$","$87.92$ cm$^2$","$351.68$ cm$^2$","$100.48$ cm$^2$"],"a":0,"e":"Curved SA $= 2\\pi rh = 2 \\times 3.14 \\times 4 \\times 7 = 175.84$ cm$^2$.","d":2,"s":"Y7.8","diag":"calc"},
-
-  {"id":"h035","cat":"algebra","topic":"Linear Sequences","q":"Find the next term in the sequence: $3, 7, 11, 15, \\ldots$","o":["$19$","$18$","$20$","$17$"],"a":0,"e":"Common difference: $7-3=4$. Next term: $15+4=19$.","d":1,"s":"Y7.9","diag":"calc"},
-  {"id":"h036","cat":"algebra","topic":"Linear Sequences","q":"What is the $n$th term rule for the sequence $5, 8, 11, 14, \\ldots$?","o":["$3n + 2$","$3n + 5$","$n + 3$","$5n + 3$"],"a":0,"e":"Common difference $= 3$. Zero term $= 5 - 3 = 2$. $n$th term $= 3n + 2$.","d":2,"s":"Y7.9","diag":"concept"},
-  {"id":"h037","cat":"algebra","topic":"Linear Sequences","q":"Find the 10th term of the sequence with $n$th term $= 2n - 1$.","o":["$19$","$20$","$21$","$18$"],"a":0,"e":"Substitute $n=10$: $2(10) - 1 = 19$.","d":1,"s":"Y7.9","diag":"calc"},
-  {"id":"h038","cat":"algebra","topic":"Linear Sequences","q":"Is $50$ a term of the sequence $4, 9, 14, 19, \\ldots$?","o":["No","Yes","",""],"a":0,"e":"$n$th term $= 5n - 1$. Set $5n - 1 = 50$: $n = 10.2$. Since $n$ is not a whole number, $50$ is not a term.","d":2,"s":"Y7.9","diag":"logic"},
-
-  {"id":"h039","cat":"probability","topic":"Probability","q":"A fair dice is rolled. What is the probability of getting a number greater than $4$?","o":["$\\frac{1}{3}$","$\\frac{1}{2}$","$\\frac{2}{3}$","$\\frac{1}{6}$"],"a":0,"e":"Numbers greater than 4: $\\{5, 6\\}$. Probability $= \\frac{2}{6} = \\frac{1}{3}$.","d":1,"s":"Y7.10","diag":"calc"},
-  {"id":"h040","cat":"probability","topic":"Probability","q":"A bag has 3 red and 5 blue balls. What is the probability of picking a red ball?","o":["$\\frac{3}{8}$","$\\frac{5}{8}$","$\\frac{3}{5}$","$\\frac{1}{3}$"],"a":0,"e":"Total balls $= 3 + 5 = 8$. $P(\\text{red}) = \\frac{3}{8}$.","d":1,"s":"Y7.10","diag":"calc"},
-  {"id":"h041","cat":"probability","topic":"Probability","q":"The probability of an event is $0.3$. What is the probability it does NOT happen?","o":["$0.7$","$0.3$","$1.3$","$0.03$"],"a":0,"e":"$P(\\text{not}) = 1 - P(\\text{event}) = 1 - 0.3 = 0.7$.","d":1,"s":"Y7.10","diag":"concept"},
-
-  {"id":"h042","cat":"geometry","topic":"Constructions","q":"What instrument is used to draw an arc?","o":["Compass","Protractor","Ruler","Set square"],"a":0,"e":"A compass (pair of compasses) is used to draw arcs and circles.","d":1,"s":"Y7.11","diag":"vocab"},
-  {"id":"h043","cat":"geometry","topic":"Constructions","q":"To bisect an angle, you need:","o":["A compass and a straight edge","Only a protractor","A ruler only","A calculator"],"a":0,"e":"Angle bisection is done using a compass to draw two arcs and a straight edge to connect the intersection.","d":1,"s":"Y7.11","diag":"concept"},
-  {"id":"h044","cat":"geometry","topic":"Constructions","q":"What does 'perpendicular bisector' mean?","o":["A line that cuts another at 90 degrees at its midpoint","A line parallel to another","A line at 45 degrees","Any line through a midpoint"],"a":0,"e":"A perpendicular bisector crosses the line at its midpoint at a right angle ($90^\\circ$).","d":1,"s":"Y7.11","diag":"vocab"},
-
-  {"id":"h045","cat":"fractions","topic":"Division of Fraction","q":"Calculate $2\\frac{1}{2} \\div 1\\frac{1}{4}$.","o":["$2$","$\\frac{5}{4}$","$3$","$\\frac{8}{5}$"],"a":0,"e":"Convert: $\\frac{5}{2} \\div \\frac{5}{4} = \\frac{5}{2} \\times \\frac{4}{5} = \\frac{20}{10} = 2$.","d":2,"s":"Y7.2","diag":"calc"},
-  {"id":"h046","cat":"number","topic":"Negative Number","q":"Calculate $(-8) \\div (-2)$.","o":["$4$","$-4$","$16$","$-16$"],"a":0,"e":"Negative divided by negative gives positive: $(-8) \\div (-2) = 4$.","d":1,"s":"Y7.3","diag":"calc"},
-  {"id":"h047","cat":"number","topic":"Negative Number","q":"The temperature drops from $5^\\circ$C to $-3^\\circ$C. What is the change?","o":["$-8^\\circ$C","$8^\\circ$C","$-2^\\circ$C","$2^\\circ$C"],"a":0,"e":"Change $= -3 - 5 = -8^\\circ$C (a drop of $8$ degrees).","d":1,"s":"Y7.3","diag":"logic"},
-  {"id":"h048","cat":"percentage","topic":"Percentage","q":"Increase $80$ by $20\\%$.","o":["$96$","$100$","$84$","$64$"],"a":0,"e":"$20\\%$ of $80 = 16$. New value: $80 + 16 = 96$. Or: $80 \\times 1.2 = 96$.","d":1,"s":"Y7.6","diag":"calc"},
-  {"id":"h049","cat":"ratio","topic":"Ratio and Proportion","q":"A map has a scale of $1:50000$. A distance on the map is $4$ cm. What is the real distance in km?","o":["$2$ km","$20$ km","$200$ km","$0.2$ km"],"a":0,"e":"Real distance $= 4 \\times 50000 = 200000$ cm $= 2000$ m $= 2$ km.","d":2,"s":"Y7.5","diag":"calc"},
-  {"id":"h050","cat":"geometry","topic":"Circle","q":"A chord passes through the centre of a circle. It is called a:","o":["Diameter","Radius","Tangent","Secant"],"a":0,"e":"A chord that passes through the centre is called a diameter.","d":1,"s":"Y7.7","diag":"vocab"},
-
-  {"id":"h051","cat":"algebra","topic":"Linear Sequences","q":"The first term of a sequence is $a = 3$ and common difference $d = -2$. Find the 5th term.","o":["$-5$","$-3$","$-7$","$5$"],"a":0,"e":"$a_5 = a + 4d = 3 + 4(-2) = 3 - 8 = -5$.","d":2,"s":"Y7.9","diag":"calc"},
-  {"id":"h052","cat":"probability","topic":"Probability","q":"Two coins are tossed. What is the probability of getting two heads?","o":["$\\frac{1}{4}$","$\\frac{1}{2}$","$\\frac{1}{3}$","$\\frac{3}{4}$"],"a":0,"e":"Outcomes: HH, HT, TH, TT. $P(HH) = \\frac{1}{4}$.","d":2,"s":"Y7.10","diag":"logic"},
-  {"id":"h053","cat":"percentage","topic":"Percentage","q":"What is $12.5\\%$ as a fraction in its simplest form?","o":["$\\frac{1}{8}$","$\\frac{1}{4}$","$\\frac{1}{12}$","$\\frac{5}{40}$"],"a":0,"e":"$12.5\\% = \\frac{12.5}{100} = \\frac{125}{1000} = \\frac{1}{8}$.","d":1,"s":"Y7.6","diag":"calc"},
-  {"id":"h054","cat":"ratio","topic":"Ratio and Proportion","q":"If $y$ is directly proportional to $x$, and $y = 12$ when $x = 4$, find $y$ when $x = 7$.","o":["$21$","$28$","$15$","$24$"],"a":0,"e":"$k = \\frac{y}{x} = \\frac{12}{4} = 3$. When $x = 7$: $y = 3 \\times 7 = 21$.","d":2,"s":"Y7.5","diag":"calc"},
-  {"id":"h055","cat":"geometry","topic":"Cylinders and Cones","q":"A cone has radius $5$ cm, height $12$ cm, and slant height $13$ cm. Find the total surface area. (Use $\\pi \\approx 3.14$)","o":["$282.6$ cm$^2$","$204.1$ cm$^2$","$345.4$ cm$^2$","$157$ cm$^2$"],"a":0,"e":"Total SA $= \\pi r l + \\pi r^2 = 3.14 \\times 5 \\times 13 + 3.14 \\times 25 = 204.1 + 78.5 = 282.6$ cm$^2$.","d":2,"s":"Y7.8","diag":"calc"}
+  {
+    "id": "h001",
+    "cat": "fractions",
+    "topic": "Multiplication of Fractions",
+    "q": "Simplify $\\frac{12}{18}$.",
+    "o": [
+      "$\\frac{2}{3}$",
+      "$\\frac{3}{4}$",
+      "$\\frac{6}{9}$",
+      "$\\frac{4}{6}$"
+    ],
+    "a": 0,
+    "e": "$\\frac{12}{18} = \\frac{12 \\div 6}{18 \\div 6} = \\frac{2}{3}$",
+    "d": 1,
+    "s": "Y7.1",
+    "diag": "calc"
+  },
+  {
+    "id": "h002",
+    "cat": "fractions",
+    "topic": "Multiplication of Fractions",
+    "q": "Convert $2\\frac{3}{4}$ to an improper fraction.",
+    "o": [
+      "$\\frac{11}{4}$",
+      "$\\frac{8}{4}$",
+      "$\\frac{9}{4}$",
+      "$\\frac{7}{4}$"
+    ],
+    "a": 0,
+    "e": "$2\\frac{3}{4} = \\frac{2 \\times 4 + 3}{4} = \\frac{11}{4}$",
+    "d": 1,
+    "s": "Y7.1",
+    "diag": "concept"
+  },
+  {
+    "id": "h003",
+    "cat": "fractions",
+    "topic": "Multiplication of Fractions",
+    "q": "Calculate $\\frac{2}{5} \\times \\frac{3}{4}$.",
+    "o": [
+      "$\\frac{3}{10}$",
+      "$\\frac{6}{20}$",
+      "$\\frac{5}{9}$",
+      "$\\frac{6}{9}$"
+    ],
+    "a": 0,
+    "e": "Multiply numerators: $2 \\times 3 = 6$. Multiply denominators: $5 \\times 4 = 20$. Simplify: $\\frac{6}{20} = \\frac{3}{10}$.",
+    "d": 1,
+    "s": "Y7.1",
+    "diag": "calc"
+  },
+  {
+    "id": "h004",
+    "cat": "fractions",
+    "topic": "Multiplication of Fractions",
+    "q": "What is the reciprocal of $\\frac{3}{7}$?",
+    "o": [
+      "$\\frac{7}{3}$",
+      "$\\frac{3}{7}$",
+      "$\\frac{1}{3}$",
+      "$-\\frac{3}{7}$"
+    ],
+    "a": 0,
+    "e": "The reciprocal of a fraction $\\frac{a}{b}$ is $\\frac{b}{a}$. So the reciprocal of $\\frac{3}{7}$ is $\\frac{7}{3}$.",
+    "d": 1,
+    "s": "Y7.1",
+    "diag": "concept"
+  },
+  {
+    "id": "h005",
+    "cat": "fractions",
+    "topic": "Multiplication of Fractions",
+    "q": "Calculate $\\frac{1}{3} + \\frac{1}{4}$.",
+    "o": [
+      "$\\frac{7}{12}$",
+      "$\\frac{2}{7}$",
+      "$\\frac{1}{7}$",
+      "$\\frac{2}{12}$"
+    ],
+    "a": 0,
+    "e": "Find the LCM of 3 and 4: $12$. Convert: $\\frac{4}{12} + \\frac{3}{12} = \\frac{7}{12}$.",
+    "d": 1,
+    "s": "Y7.1",
+    "diag": "calc"
+  },
+  {
+    "id": "h006",
+    "cat": "fractions",
+    "topic": "Multiplication of Fractions",
+    "q": "Round 3.456 to 2 decimal places.",
+    "o": [
+      "3.46",
+      "3.45",
+      "3.50",
+      "3.4"
+    ],
+    "a": 0,
+    "e": "Look at the 3rd decimal place (6). Since $6 \\geq 5$, round up: $3.456 \\approx 3.46$.",
+    "d": 1,
+    "s": "Y7.1",
+    "diag": "calc"
+  },
+  {
+    "id": "h007",
+    "cat": "fractions",
+    "topic": "Multiplication of Fractions",
+    "q": "Calculate $1\\frac{2}{3} \\times \\frac{3}{5}$.",
+    "o": [
+      "$1$",
+      "$\\frac{3}{5}$",
+      "$\\frac{2}{5}$",
+      "$1\\frac{1}{5}$"
+    ],
+    "a": 0,
+    "e": "Convert to improper: $\\frac{5}{3} \\times \\frac{3}{5}$. Cancel: $\\frac{5}{3} \\times \\frac{3}{5} = \\frac{15}{15} = 1$.",
+    "d": 2,
+    "s": "Y7.1",
+    "diag": "calc"
+  },
+  {
+    "id": "h008",
+    "cat": "fractions",
+    "topic": "Multiplication of Fractions",
+    "q": "A recipe needs $\\frac{3}{4}$ cup of flour. If you make $\\frac{2}{3}$ of the recipe, how much flour do you need?",
+    "o": [
+      "$\\frac{1}{2}$ cup",
+      "$\\frac{5}{7}$ cup",
+      "$\\frac{2}{4}$ cup",
+      "$\\frac{6}{7}$ cup"
+    ],
+    "a": 0,
+    "e": "$\\frac{3}{4} \\times \\frac{2}{3} = \\frac{6}{12} = \\frac{1}{2}$ cup.",
+    "d": 2,
+    "s": "Y7.1",
+    "diag": "logic"
+  },
+  {
+    "id": "h009",
+    "cat": "fractions",
+    "topic": "Multiplication of Fractions",
+    "q": "Round 0.04567 to 2 significant figures.",
+    "o": [
+      "0.046",
+      "0.045",
+      "0.05",
+      "0.04"
+    ],
+    "a": 0,
+    "e": "The first significant figure is 4, the second is 5. The next digit is 6, so round up: $0.046$.",
+    "d": 2,
+    "s": "Y7.1",
+    "diag": "calc"
+  },
+  {
+    "id": "h010",
+    "cat": "fractions",
+    "topic": "Division of Fraction",
+    "q": "Calculate $\\frac{3}{4} \\div \\frac{1}{2}$.",
+    "o": [
+      "$\\frac{3}{2}$",
+      "$\\frac{3}{8}$",
+      "$\\frac{1}{2}$",
+      "$\\frac{2}{3}$"
+    ],
+    "a": 0,
+    "e": "Dividing by a fraction means multiplying by its reciprocal: $\\frac{3}{4} \\times \\frac{2}{1} = \\frac{6}{4} = \\frac{3}{2}$.",
+    "d": 1,
+    "s": "Y7.2",
+    "diag": "concept"
+  },
+  {
+    "id": "h011",
+    "cat": "fractions",
+    "topic": "Division of Fraction",
+    "q": "Calculate $5 \\div \\frac{1}{3}$.",
+    "o": [
+      "15",
+      "$\\frac{5}{3}$",
+      "$\\frac{1}{15}$",
+      "3"
+    ],
+    "a": 0,
+    "e": "$5 \\div \\frac{1}{3} = 5 \\times 3 = 15$.",
+    "d": 1,
+    "s": "Y7.2",
+    "diag": "calc"
+  },
+  {
+    "id": "h012",
+    "cat": "fractions",
+    "topic": "Division of Fraction",
+    "q": "What is $\\frac{2}{3} \\div \\frac{4}{5}$?",
+    "o": [
+      "$\\frac{5}{6}$",
+      "$\\frac{8}{15}$",
+      "$\\frac{6}{5}$",
+      "$\\frac{10}{12}$"
+    ],
+    "a": 0,
+    "e": "$\\frac{2}{3} \\div \\frac{4}{5} = \\frac{2}{3} \\times \\frac{5}{4} = \\frac{10}{12} = \\frac{5}{6}$.",
+    "d": 1,
+    "s": "Y7.2",
+    "diag": "calc"
+  },
+  {
+    "id": "h013",
+    "cat": "fractions",
+    "topic": "Division of Fraction",
+    "q": "Evaluate $(\\frac{1}{2} + \\frac{1}{3}) \\times 6$.",
+    "o": [
+      "5",
+      "3",
+      "4",
+      "6"
+    ],
+    "a": 0,
+    "e": "First: $\\frac{1}{2} + \\frac{1}{3} = \\frac{5}{6}$. Then: $\\frac{5}{6} \\times 6 = 5$.",
+    "d": 2,
+    "s": "Y7.2",
+    "diag": "calc"
+  },
+  {
+    "id": "h014",
+    "cat": "number",
+    "topic": "Negative Number",
+    "q": "Calculate $(-3) + (-5)$.",
+    "o": [
+      "$-8$",
+      "$-2$",
+      "$8$",
+      "$2$"
+    ],
+    "a": 0,
+    "e": "Adding two negative numbers: $(-3) + (-5) = -(3+5) = -8$.",
+    "d": 1,
+    "s": "Y7.3",
+    "diag": "concept"
+  },
+  {
+    "id": "h015",
+    "cat": "number",
+    "topic": "Negative Number",
+    "q": "Calculate $(-4) \\times (-6)$.",
+    "o": [
+      "$24$",
+      "$-24$",
+      "$-10$",
+      "$10$"
+    ],
+    "a": 0,
+    "e": "Negative times negative gives positive: $(-4) \\times (-6) = 24$.",
+    "d": 1,
+    "s": "Y7.3",
+    "diag": "calc"
+  },
+  {
+    "id": "h016",
+    "cat": "number",
+    "topic": "Negative Number",
+    "q": "What is $7 - (-3)$?",
+    "o": [
+      "$10$",
+      "$4$",
+      "$-4$",
+      "$-10$"
+    ],
+    "a": 0,
+    "e": "Subtracting a negative is the same as adding: $7 - (-3) = 7 + 3 = 10$.",
+    "d": 1,
+    "s": "Y7.3",
+    "diag": "concept"
+  },
+  {
+    "id": "h017",
+    "cat": "number",
+    "topic": "Negative Number",
+    "q": "Arrange in ascending order: $-5, 2, -1, 0, -3$.",
+    "o": [
+      "$-5, -3, -1, 0, 2$",
+      "$-1, -3, -5, 0, 2$",
+      "$2, 0, -1, -3, -5$",
+      "$-5, -1, -3, 0, 2$"
+    ],
+    "a": 0,
+    "e": "From smallest to largest: $-5 < -3 < -1 < 0 < 2$.",
+    "d": 1,
+    "s": "Y7.3",
+    "diag": "concept"
+  },
+  {
+    "id": "h018",
+    "cat": "geometry",
+    "topic": "Position and Direction",
+    "q": "A point is translated 3 units right and 2 units up from $(1, 4)$. What are the new coordinates?",
+    "o": [
+      "$(4, 6)$",
+      "$(3, 2)$",
+      "$(-2, 2)$",
+      "$(1, 6)$"
+    ],
+    "a": 0,
+    "e": "Add 3 to x: $1+3=4$. Add 2 to y: $4+2=6$. New point: $(4, 6)$.",
+    "d": 1,
+    "s": "Y7.4",
+    "diag": "concept"
+  },
+  {
+    "id": "h019",
+    "cat": "geometry",
+    "topic": "Position and Direction",
+    "q": "What is the reflection of the point $(3, -2)$ in the x-axis?",
+    "o": [
+      "$(3, 2)$",
+      "$(-3, -2)$",
+      "$(-3, 2)$",
+      "$(3, -2)$"
+    ],
+    "a": 0,
+    "e": "Reflection in the x-axis changes the sign of y: $(3, -2) \\to (3, 2)$.",
+    "d": 1,
+    "s": "Y7.4",
+    "diag": "concept"
+  },
+  {
+    "id": "h020",
+    "cat": "geometry",
+    "topic": "Position and Direction",
+    "q": "A shape is rotated $90^\\circ$ clockwise about the origin. The point $(2, 3)$ moves to:",
+    "o": [
+      "$(3, -2)$",
+      "$(-3, 2)$",
+      "$(-2, -3)$",
+      "$(2, -3)$"
+    ],
+    "a": 0,
+    "e": "$90^\\circ$ clockwise rotation: $(x,y) \\to (y,-x)$. So $(2,3) \\to (3,-2)$.",
+    "d": 2,
+    "s": "Y7.4",
+    "diag": "concept"
+  },
+  {
+    "id": "h021",
+    "cat": "ratio",
+    "topic": "Ratio and Proportion",
+    "q": "Simplify the ratio $12:18$.",
+    "o": [
+      "$2:3$",
+      "$3:4$",
+      "$6:9$",
+      "$4:6$"
+    ],
+    "a": 0,
+    "e": "Divide both by HCF(12,18)=6: $12 \\div 6 : 18 \\div 6 = 2:3$.",
+    "d": 1,
+    "s": "Y7.5",
+    "diag": "calc"
+  },
+  {
+    "id": "h022",
+    "cat": "ratio",
+    "topic": "Ratio and Proportion",
+    "q": "Share $\\$60$ in the ratio $2:3$. How much is the larger share?",
+    "o": [
+      "$\\$36$",
+      "$\\$24$",
+      "$\\$30$",
+      "$\\$40$"
+    ],
+    "a": 0,
+    "e": "Total parts: $2+3=5$. One part: $60 \\div 5 = 12$. Larger share: $3 \\times 12 = \\$36$.",
+    "d": 1,
+    "s": "Y7.5",
+    "diag": "calc"
+  },
+  {
+    "id": "h023",
+    "cat": "ratio",
+    "topic": "Ratio and Proportion",
+    "q": "If $5$ books cost $\\$35$, how much do $8$ books cost?",
+    "o": [
+      "$\\$56$",
+      "$\\$48$",
+      "$\\$40$",
+      "$\\$64$"
+    ],
+    "a": 0,
+    "e": "Unit cost: $35 \\div 5 = \\$7$. For 8 books: $8 \\times 7 = \\$56$.",
+    "d": 1,
+    "s": "Y7.5",
+    "diag": "calc"
+  },
+  {
+    "id": "h024",
+    "cat": "ratio",
+    "topic": "Ratio and Proportion",
+    "q": "Express $3:5$ as a fraction.",
+    "o": [
+      "$\\frac{3}{5}$",
+      "$\\frac{5}{3}$",
+      "$\\frac{3}{8}$",
+      "$\\frac{5}{8}$"
+    ],
+    "a": 0,
+    "e": "$3:5$ means 3 out of 5, which is $\\frac{3}{5}$.",
+    "d": 1,
+    "s": "Y7.5",
+    "diag": "vocab"
+  },
+  {
+    "id": "h025",
+    "cat": "percentage",
+    "topic": "Percentage",
+    "q": "Convert $\\frac{3}{5}$ to a percentage.",
+    "o": [
+      "$60\\%$",
+      "$35\\%$",
+      "$53\\%$",
+      "$75\\%$"
+    ],
+    "a": 0,
+    "e": "$\\frac{3}{5} \\times 100 = 60\\%$.",
+    "d": 1,
+    "s": "Y7.6",
+    "diag": "calc"
+  },
+  {
+    "id": "h026",
+    "cat": "percentage",
+    "topic": "Percentage",
+    "q": "Find $15\\%$ of $200$.",
+    "o": [
+      "$30$",
+      "$15$",
+      "$20$",
+      "$25$"
+    ],
+    "a": 0,
+    "e": "$15\\% \\times 200 = 0.15 \\times 200 = 30$.",
+    "d": 1,
+    "s": "Y7.6",
+    "diag": "calc"
+  },
+  {
+    "id": "h027",
+    "cat": "percentage",
+    "topic": "Percentage",
+    "q": "A shirt costs $\\$40$ and is reduced by $25\\%$. What is the sale price?",
+    "o": [
+      "$\\$30$",
+      "$\\$35$",
+      "$\\$25$",
+      "$\\$32$"
+    ],
+    "a": 0,
+    "e": "Discount: $25\\%$ of $40 = \\$10$. Sale price: $40 - 10 = \\$30$.",
+    "d": 1,
+    "s": "Y7.6",
+    "diag": "calc"
+  },
+  {
+    "id": "h028",
+    "cat": "percentage",
+    "topic": "Percentage",
+    "q": "Express $0.375$ as a percentage.",
+    "o": [
+      "$37.5\\%$",
+      "$3.75\\%$",
+      "$375\\%$",
+      "$0.375\\%$"
+    ],
+    "a": 0,
+    "e": "$0.375 \\times 100 = 37.5\\%$.",
+    "d": 1,
+    "s": "Y7.6",
+    "diag": "calc"
+  },
+  {
+    "id": "h029",
+    "cat": "geometry",
+    "topic": "Circle",
+    "q": "What is the circumference of a circle with radius $7$ cm? (Use $\\pi \\approx \\frac{22}{7}$)",
+    "o": [
+      "$44$ cm",
+      "$154$ cm",
+      "$22$ cm",
+      "$88$ cm"
+    ],
+    "a": 0,
+    "e": "$C = 2\\pi r = 2 \\times \\frac{22}{7} \\times 7 = 44$ cm.",
+    "d": 1,
+    "s": "Y7.7",
+    "diag": "calc"
+  },
+  {
+    "id": "h030",
+    "cat": "geometry",
+    "topic": "Circle",
+    "q": "Find the area of a circle with diameter $10$ cm. (Use $\\pi \\approx 3.14$)",
+    "o": [
+      "$78.5$ cm$^2$",
+      "$31.4$ cm$^2$",
+      "$314$ cm$^2$",
+      "$157$ cm$^2$"
+    ],
+    "a": 0,
+    "e": "Radius $= 5$ cm. Area $= \\pi r^2 = 3.14 \\times 25 = 78.5$ cm$^2$.",
+    "d": 1,
+    "s": "Y7.7",
+    "diag": "calc"
+  },
+  {
+    "id": "h031",
+    "cat": "geometry",
+    "topic": "Circle",
+    "q": "What is the name of a straight line from the centre to the circumference of a circle?",
+    "o": [
+      "Radius",
+      "Diameter",
+      "Chord",
+      "Tangent"
+    ],
+    "a": 0,
+    "e": "A radius is a line segment from the centre of a circle to any point on the circumference.",
+    "d": 1,
+    "s": "Y7.7",
+    "diag": "vocab"
+  },
+  {
+    "id": "h032",
+    "cat": "geometry",
+    "topic": "Cylinders and Cones",
+    "q": "Find the volume of a cylinder with radius $3$ cm and height $10$ cm. (Use $\\pi \\approx 3.14$)",
+    "o": [
+      "$282.6$ cm$^3$",
+      "$94.2$ cm$^3$",
+      "$188.4$ cm$^3$",
+      "$90$ cm$^3$"
+    ],
+    "a": 0,
+    "e": "$V = \\pi r^2 h = 3.14 \\times 9 \\times 10 = 282.6$ cm$^3$.",
+    "d": 1,
+    "s": "Y7.8",
+    "diag": "calc"
+  },
+  {
+    "id": "h033",
+    "cat": "geometry",
+    "topic": "Cylinders and Cones",
+    "q": "The volume of a cone is given by:",
+    "o": [
+      "$\\frac{1}{3}\\pi r^2 h$",
+      "$\\pi r^2 h$",
+      "$\\frac{1}{2}\\pi r^2 h$",
+      "$2\\pi r h$"
+    ],
+    "a": 0,
+    "e": "The volume of a cone is $\\frac{1}{3}$ of the volume of a cylinder with the same base and height.",
+    "d": 1,
+    "s": "Y7.8",
+    "diag": "concept"
+  },
+  {
+    "id": "h034",
+    "cat": "geometry",
+    "topic": "Cylinders and Cones",
+    "q": "Find the curved surface area of a cylinder with radius $4$ cm and height $7$ cm. (Use $\\pi \\approx 3.14$)",
+    "o": [
+      "$175.84$ cm$^2$",
+      "$87.92$ cm$^2$",
+      "$351.68$ cm$^2$",
+      "$100.48$ cm$^2$"
+    ],
+    "a": 0,
+    "e": "Curved SA $= 2\\pi rh = 2 \\times 3.14 \\times 4 \\times 7 = 175.84$ cm$^2$.",
+    "d": 2,
+    "s": "Y7.8",
+    "diag": "calc"
+  },
+  {
+    "id": "h035",
+    "cat": "algebra",
+    "topic": "Linear Sequences",
+    "q": "Find the next term in the sequence: $3, 7, 11, 15, \\ldots$",
+    "o": [
+      "$19$",
+      "$18$",
+      "$20$",
+      "$17$"
+    ],
+    "a": 0,
+    "e": "Common difference: $7-3=4$. Next term: $15+4=19$.",
+    "d": 1,
+    "s": "Y7.9",
+    "diag": "calc"
+  },
+  {
+    "id": "h036",
+    "cat": "algebra",
+    "topic": "Linear Sequences",
+    "q": "What is the $n$th term rule for the sequence $5, 8, 11, 14, \\ldots$?",
+    "o": [
+      "$3n + 2$",
+      "$3n + 5$",
+      "$n + 3$",
+      "$5n + 3$"
+    ],
+    "a": 0,
+    "e": "Common difference $= 3$. Zero term $= 5 - 3 = 2$. $n$th term $= 3n + 2$.",
+    "d": 2,
+    "s": "Y7.9",
+    "diag": "concept"
+  },
+  {
+    "id": "h037",
+    "cat": "algebra",
+    "topic": "Linear Sequences",
+    "q": "Find the 10th term of the sequence with $n$th term $= 2n - 1$.",
+    "o": [
+      "$19$",
+      "$20$",
+      "$21$",
+      "$18$"
+    ],
+    "a": 0,
+    "e": "Substitute $n=10$: $2(10) - 1 = 19$.",
+    "d": 1,
+    "s": "Y7.9",
+    "diag": "calc"
+  },
+  {
+    "id": "h038",
+    "cat": "algebra",
+    "topic": "Linear Sequences",
+    "q": "Is $50$ a term of the sequence $4, 9, 14, 19, \\ldots$?",
+    "o": [
+      "No",
+      "Yes",
+      "",
+      ""
+    ],
+    "a": 0,
+    "e": "$n$th term $= 5n - 1$. Set $5n - 1 = 50$: $n = 10.2$. Since $n$ is not a whole number, $50$ is not a term.",
+    "d": 2,
+    "s": "Y7.9",
+    "diag": "logic"
+  },
+  {
+    "id": "h039",
+    "cat": "probability",
+    "topic": "Probability",
+    "q": "A fair dice is rolled. What is the probability of getting a number greater than $4$?",
+    "o": [
+      "$\\frac{1}{3}$",
+      "$\\frac{1}{2}$",
+      "$\\frac{2}{3}$",
+      "$\\frac{1}{6}$"
+    ],
+    "a": 0,
+    "e": "Numbers greater than 4: $\\{5, 6\\}$. Probability $= \\frac{2}{6} = \\frac{1}{3}$.",
+    "d": 1,
+    "s": "Y7.10",
+    "diag": "calc"
+  },
+  {
+    "id": "h040",
+    "cat": "probability",
+    "topic": "Probability",
+    "q": "A bag has 3 red and 5 blue balls. What is the probability of picking a red ball?",
+    "o": [
+      "$\\frac{3}{8}$",
+      "$\\frac{5}{8}$",
+      "$\\frac{3}{5}$",
+      "$\\frac{1}{3}$"
+    ],
+    "a": 0,
+    "e": "Total balls $= 3 + 5 = 8$. $P(\\text{red}) = \\frac{3}{8}$.",
+    "d": 1,
+    "s": "Y7.10",
+    "diag": "calc"
+  },
+  {
+    "id": "h041",
+    "cat": "probability",
+    "topic": "Probability",
+    "q": "The probability of an event is $0.3$. What is the probability it does NOT happen?",
+    "o": [
+      "$0.7$",
+      "$0.3$",
+      "$1.3$",
+      "$0.03$"
+    ],
+    "a": 0,
+    "e": "$P(\\text{not}) = 1 - P(\\text{event}) = 1 - 0.3 = 0.7$.",
+    "d": 1,
+    "s": "Y7.10",
+    "diag": "concept"
+  },
+  {
+    "id": "h042",
+    "cat": "geometry",
+    "topic": "Constructions",
+    "q": "What instrument is used to draw an arc?",
+    "o": [
+      "Compass",
+      "Protractor",
+      "Ruler",
+      "Set square"
+    ],
+    "a": 0,
+    "e": "A compass (pair of compasses) is used to draw arcs and circles.",
+    "d": 1,
+    "s": "Y7.11",
+    "diag": "vocab"
+  },
+  {
+    "id": "h043",
+    "cat": "geometry",
+    "topic": "Constructions",
+    "q": "To bisect an angle, you need:",
+    "o": [
+      "A compass and a straight edge",
+      "Only a protractor",
+      "A ruler only",
+      "A calculator"
+    ],
+    "a": 0,
+    "e": "Angle bisection is done using a compass to draw two arcs and a straight edge to connect the intersection.",
+    "d": 1,
+    "s": "Y7.11",
+    "diag": "concept"
+  },
+  {
+    "id": "h044",
+    "cat": "geometry",
+    "topic": "Constructions",
+    "q": "What does 'perpendicular bisector' mean?",
+    "o": [
+      "A line that cuts another at 90 degrees at its midpoint",
+      "A line parallel to another",
+      "A line at 45 degrees",
+      "Any line through a midpoint"
+    ],
+    "a": 0,
+    "e": "A perpendicular bisector crosses the line at its midpoint at a right angle ($90^\\circ$).",
+    "d": 1,
+    "s": "Y7.11",
+    "diag": "vocab"
+  },
+  {
+    "id": "h045",
+    "cat": "fractions",
+    "topic": "Division of Fraction",
+    "q": "Calculate $2\\frac{1}{2} \\div 1\\frac{1}{4}$.",
+    "o": [
+      "$2$",
+      "$\\frac{5}{4}$",
+      "$3$",
+      "$\\frac{8}{5}$"
+    ],
+    "a": 0,
+    "e": "Convert: $\\frac{5}{2} \\div \\frac{5}{4} = \\frac{5}{2} \\times \\frac{4}{5} = \\frac{20}{10} = 2$.",
+    "d": 2,
+    "s": "Y7.2",
+    "diag": "calc"
+  },
+  {
+    "id": "h046",
+    "cat": "number",
+    "topic": "Negative Number",
+    "q": "Calculate $(-8) \\div (-2)$.",
+    "o": [
+      "$4$",
+      "$-4$",
+      "$16$",
+      "$-16$"
+    ],
+    "a": 0,
+    "e": "Negative divided by negative gives positive: $(-8) \\div (-2) = 4$.",
+    "d": 1,
+    "s": "Y7.3",
+    "diag": "calc"
+  },
+  {
+    "id": "h047",
+    "cat": "number",
+    "topic": "Negative Number",
+    "q": "The temperature drops from $5^\\circ$C to $-3^\\circ$C. What is the change?",
+    "o": [
+      "$-8^\\circ$C",
+      "$8^\\circ$C",
+      "$-2^\\circ$C",
+      "$2^\\circ$C"
+    ],
+    "a": 0,
+    "e": "Change $= -3 - 5 = -8^\\circ$C (a drop of $8$ degrees).",
+    "d": 1,
+    "s": "Y7.3",
+    "diag": "logic"
+  },
+  {
+    "id": "h048",
+    "cat": "percentage",
+    "topic": "Percentage",
+    "q": "Increase $80$ by $20\\%$.",
+    "o": [
+      "$96$",
+      "$100$",
+      "$84$",
+      "$64$"
+    ],
+    "a": 0,
+    "e": "$20\\%$ of $80 = 16$. New value: $80 + 16 = 96$. Or: $80 \\times 1.2 = 96$.",
+    "d": 1,
+    "s": "Y7.6",
+    "diag": "calc"
+  },
+  {
+    "id": "h049",
+    "cat": "ratio",
+    "topic": "Ratio and Proportion",
+    "q": "A map has a scale of $1:50000$. A distance on the map is $4$ cm. What is the real distance in km?",
+    "o": [
+      "$2$ km",
+      "$20$ km",
+      "$200$ km",
+      "$0.2$ km"
+    ],
+    "a": 0,
+    "e": "Real distance $= 4 \\times 50000 = 200000$ cm $= 2000$ m $= 2$ km.",
+    "d": 2,
+    "s": "Y7.5",
+    "diag": "calc"
+  },
+  {
+    "id": "h050",
+    "cat": "geometry",
+    "topic": "Circle",
+    "q": "A chord passes through the centre of a circle. It is called a:",
+    "o": [
+      "Diameter",
+      "Radius",
+      "Tangent",
+      "Secant"
+    ],
+    "a": 0,
+    "e": "A chord that passes through the centre is called a diameter.",
+    "d": 1,
+    "s": "Y7.7",
+    "diag": "vocab"
+  },
+  {
+    "id": "h051",
+    "cat": "algebra",
+    "topic": "Linear Sequences",
+    "q": "The first term of a sequence is $a = 3$ and common difference $d = -2$. Find the 5th term.",
+    "o": [
+      "$-5$",
+      "$-3$",
+      "$-7$",
+      "$5$"
+    ],
+    "a": 0,
+    "e": "$a_5 = a + 4d = 3 + 4(-2) = 3 - 8 = -5$.",
+    "d": 2,
+    "s": "Y7.9",
+    "diag": "calc"
+  },
+  {
+    "id": "h052",
+    "cat": "probability",
+    "topic": "Probability",
+    "q": "Two coins are tossed. What is the probability of getting two heads?",
+    "o": [
+      "$\\frac{1}{4}$",
+      "$\\frac{1}{2}$",
+      "$\\frac{1}{3}$",
+      "$\\frac{3}{4}$"
+    ],
+    "a": 0,
+    "e": "Outcomes: HH, HT, TH, TT. $P(HH) = \\frac{1}{4}$.",
+    "d": 2,
+    "s": "Y7.10",
+    "diag": "logic"
+  },
+  {
+    "id": "h053",
+    "cat": "percentage",
+    "topic": "Percentage",
+    "q": "What is $12.5\\%$ as a fraction in its simplest form?",
+    "o": [
+      "$\\frac{1}{8}$",
+      "$\\frac{1}{4}$",
+      "$\\frac{1}{12}$",
+      "$\\frac{5}{40}$"
+    ],
+    "a": 0,
+    "e": "$12.5\\% = \\frac{12.5}{100} = \\frac{125}{1000} = \\frac{1}{8}$.",
+    "d": 1,
+    "s": "Y7.6",
+    "diag": "calc"
+  },
+  {
+    "id": "h054",
+    "cat": "ratio",
+    "topic": "Ratio and Proportion",
+    "q": "If $y$ is directly proportional to $x$, and $y = 12$ when $x = 4$, find $y$ when $x = 7$.",
+    "o": [
+      "$21$",
+      "$28$",
+      "$15$",
+      "$24$"
+    ],
+    "a": 0,
+    "e": "$k = \\frac{y}{x} = \\frac{12}{4} = 3$. When $x = 7$: $y = 3 \\times 7 = 21$.",
+    "d": 2,
+    "s": "Y7.5",
+    "diag": "calc"
+  },
+  {
+    "id": "h055",
+    "cat": "geometry",
+    "topic": "Cylinders and Cones",
+    "q": "A cone has radius $5$ cm, height $12$ cm, and slant height $13$ cm. Find the total surface area. (Use $\\pi \\approx 3.14$)",
+    "o": [
+      "$282.6$ cm$^2$",
+      "$204.1$ cm$^2$",
+      "$345.4$ cm$^2$",
+      "$157$ cm$^2$"
+    ],
+    "a": 0,
+    "e": "Total SA $= \\pi r l + \\pi r^2 = 3.14 \\times 5 \\times 13 + 3.14 \\times 25 = 204.1 + 78.5 = 282.6$ cm$^2$.",
+    "d": 2,
+    "s": "Y7.8",
+    "diag": "calc"
+  },
+  {
+    "id": "h056",
+    "cat": "number",
+    "topic": "Review of Numbers",
+    "q": "Round $4567$ to the nearest hundred.",
+    "o": [
+      "$4500$",
+      "$4600$",
+      "$4570$",
+      "$5000$"
+    ],
+    "a": 1,
+    "e": "The tens digit is $6$ (≥5), so round up: $4567 \\approx 4600$.",
+    "d": 1,
+    "s": "Y8.1",
+    "diag": "calc"
+  },
+  {
+    "id": "h057",
+    "cat": "number",
+    "topic": "Review of Numbers",
+    "q": "Which of these numbers is written in standard form?",
+    "o": [
+      "$32 \\times 10^4$",
+      "$3.2 \\times 10^5$",
+      "$0.32 \\times 10^6$",
+      "$320 \\times 10^3$"
+    ],
+    "a": 1,
+    "e": "Standard form requires $1 \\leq a < 10$. Only $3.2 \\times 10^5$ satisfies this.",
+    "d": 1,
+    "s": "Y8.1",
+    "diag": "concept"
+  },
+  {
+    "id": "h058",
+    "cat": "number",
+    "topic": "Review of Numbers",
+    "q": "Estimate $49.7 \\times 3.12$ by rounding each number to $1$ significant figure.",
+    "o": [
+      "$200$",
+      "$100$",
+      "$150$",
+      "$160$"
+    ],
+    "a": 2,
+    "e": "$49.7 \\approx 50$ and $3.12 \\approx 3$, so $50 \\times 3 = 150$.",
+    "d": 1,
+    "s": "Y8.1",
+    "diag": "calc"
+  },
+  {
+    "id": "h059",
+    "cat": "number",
+    "topic": "Review of Numbers",
+    "q": "What is $0.00376$ written in standard form?",
+    "o": [
+      "$3.76 \\times 10^{3}$",
+      "$37.6 \\times 10^{-4}$",
+      "$3.76 \\times 10^{-3}$",
+      "$0.376 \\times 10^{-2}$"
+    ],
+    "a": 2,
+    "e": "Move the decimal $3$ places right: $0.00376 = 3.76 \\times 10^{-3}$.",
+    "d": 2,
+    "s": "Y8.1",
+    "diag": "calc"
+  },
+  {
+    "id": "h060",
+    "cat": "number",
+    "topic": "Review of Numbers",
+    "q": "Put these in order from smallest to largest: $0.305,\\ 0.35,\\ 0.3$",
+    "o": [
+      "$0.3,\\ 0.305,\\ 0.35$",
+      "$0.305,\\ 0.3,\\ 0.35$",
+      "$0.35,\\ 0.305,\\ 0.3$",
+      "$0.3,\\ 0.35,\\ 0.305$"
+    ],
+    "a": 0,
+    "e": "$0.3 = 0.300$, $0.305 = 0.305$, $0.35 = 0.350$. So order is $0.3 < 0.305 < 0.35$.",
+    "d": 2,
+    "s": "Y8.1",
+    "diag": "concept"
+  },
+  {
+    "id": "h061",
+    "cat": "number",
+    "topic": "Rational Numbers, Factors and Primes",
+    "q": "What is the highest common factor (HCF) of $24$ and $36$?",
+    "o": [
+      "$6$",
+      "$8$",
+      "$12$",
+      "$18$"
+    ],
+    "a": 2,
+    "e": "Factors of $24$: $1,2,3,4,6,8,12,24$. Factors of $36$: $1,2,3,4,6,9,12,18,36$. HCF $= 12$.",
+    "d": 1,
+    "s": "Y8.2",
+    "diag": "calc"
+  },
+  {
+    "id": "h062",
+    "cat": "number",
+    "topic": "Rational Numbers, Factors and Primes",
+    "q": "What is the lowest common multiple (LCM) of $6$ and $8$?",
+    "o": [
+      "$48$",
+      "$24$",
+      "$14$",
+      "$2$"
+    ],
+    "a": 1,
+    "e": "Multiples of $6$: $6,12,18,24,\\ldots$ Multiples of $8$: $8,16,24,\\ldots$ LCM $= 24$.",
+    "d": 1,
+    "s": "Y8.2",
+    "diag": "calc"
+  },
+  {
+    "id": "h063",
+    "cat": "number",
+    "topic": "Rational Numbers, Factors and Primes",
+    "q": "Express $60$ as a product of prime factors.",
+    "o": [
+      "$2^2 \\times 3 \\times 5$",
+      "$2 \\times 3 \\times 10$",
+      "$4 \\times 15$",
+      "$2 \\times 30$"
+    ],
+    "a": 0,
+    "e": "$60 = 2 \\times 30 = 2 \\times 2 \\times 15 = 2 \\times 2 \\times 3 \\times 5 = 2^2 \\times 3 \\times 5$.",
+    "d": 1,
+    "s": "Y8.2",
+    "diag": "calc"
+  },
+  {
+    "id": "h064",
+    "cat": "number",
+    "topic": "Rational Numbers, Factors and Primes",
+    "q": "Which of the following is an irrational number?",
+    "o": [
+      "$\\frac{3}{7}$",
+      "$0.\\overline{3}$",
+      "$\\sqrt{2}$",
+      "$-5$"
+    ],
+    "a": 2,
+    "e": "$\\sqrt{2}$ cannot be written as a fraction and its decimal never repeats or terminates, so it is irrational.",
+    "d": 2,
+    "s": "Y8.2",
+    "diag": "concept"
+  },
+  {
+    "id": "h065",
+    "cat": "number",
+    "topic": "Rational Numbers, Factors and Primes",
+    "q": "Using prime factorisation, find the LCM of $12$ and $18$.",
+    "o": [
+      "$6$",
+      "$36$",
+      "$72$",
+      "$216$"
+    ],
+    "a": 1,
+    "e": "$12 = 2^2 \\times 3$ and $18 = 2 \\times 3^2$. LCM $= 2^2 \\times 3^2 = 36$.",
+    "d": 2,
+    "s": "Y8.2",
+    "diag": "calc"
+  },
+  {
+    "id": "h066",
+    "cat": "algebra",
+    "topic": "Algebraic Formula",
+    "q": "If $y = 3x + 2$, find $y$ when $x = 4$.",
+    "o": [
+      "$10$",
+      "$14$",
+      "$18$",
+      "$9$"
+    ],
+    "a": 1,
+    "e": "$y = 3(4) + 2 = 12 + 2 = 14$.",
+    "d": 1,
+    "s": "Y8.3",
+    "diag": "calc"
+  },
+  {
+    "id": "h067",
+    "cat": "algebra",
+    "topic": "Algebraic Formula",
+    "q": "If $A = \\frac{1}{2}bh$, find $A$ when $b = 6$ and $h = 5$.",
+    "o": [
+      "$30$",
+      "$11$",
+      "$15$",
+      "$60$"
+    ],
+    "a": 2,
+    "e": "$A = \\frac{1}{2} \\times 6 \\times 5 = 15$.",
+    "d": 1,
+    "s": "Y8.3",
+    "diag": "calc"
+  },
+  {
+    "id": "h068",
+    "cat": "algebra",
+    "topic": "Algebraic Formula",
+    "q": "A taxi charges $\\$2$ plus $\\$0.50$ per kilometre. Which formula gives the cost $C$ for $k$ kilometres?",
+    "o": [
+      "$C = 0.50 + 2k$",
+      "$C = 2k + 0.50$",
+      "$C = 2 + 0.50k$",
+      "$C = 2.50k$"
+    ],
+    "a": 2,
+    "e": "The fixed charge is $\\$2$ and each km costs $\\$0.50$, so $C = 2 + 0.50k$.",
+    "d": 2,
+    "s": "Y8.3",
+    "diag": "concept"
+  },
+  {
+    "id": "h069",
+    "cat": "algebra",
+    "topic": "Algebraic Formula",
+    "q": "Make $x$ the subject of $y = 5x - 3$.",
+    "o": [
+      "$x = \\frac{y - 3}{5}$",
+      "$x = \\frac{y + 3}{5}$",
+      "$x = 5y + 3$",
+      "$x = \\frac{5}{y + 3}$"
+    ],
+    "a": 1,
+    "e": "$y = 5x - 3 \\Rightarrow y + 3 = 5x \\Rightarrow x = \\frac{y+3}{5}$.",
+    "d": 2,
+    "s": "Y8.3",
+    "diag": "calc"
+  },
+  {
+    "id": "h070",
+    "cat": "algebra",
+    "topic": "Algebraic Formula",
+    "q": "Make $r$ the subject of $A = \\pi r^2$.",
+    "o": [
+      "$r = \\frac{A}{\\pi}$",
+      "$r = \\sqrt{\\frac{A}{\\pi}}$",
+      "$r = \\frac{\\sqrt{A}}{\\pi}$",
+      "$r = \\frac{A}{2\\pi}$"
+    ],
+    "a": 1,
+    "e": "$A = \\pi r^2 \\Rightarrow r^2 = \\frac{A}{\\pi} \\Rightarrow r = \\sqrt{\\frac{A}{\\pi}}$.",
+    "d": 3,
+    "s": "Y8.3",
+    "diag": "calc"
+  },
+  {
+    "id": "h071",
+    "cat": "algebra",
+    "topic": "Inequalities and Inequations",
+    "q": "Solve $x + 3 > 7$.",
+    "o": [
+      "$x > 10$",
+      "$x > 4$",
+      "$x < 4$",
+      "$x > 3$"
+    ],
+    "a": 1,
+    "e": "$x + 3 > 7 \\Rightarrow x > 7 - 3 \\Rightarrow x > 4$.",
+    "d": 1,
+    "s": "Y8.4",
+    "diag": "calc"
+  },
+  {
+    "id": "h072",
+    "cat": "algebra",
+    "topic": "Inequalities and Inequations",
+    "q": "Which integer values satisfy $-2 < x \\leq 3$?",
+    "o": [
+      "$-2, -1, 0, 1, 2, 3$",
+      "$-1, 0, 1, 2, 3$",
+      "$-2, -1, 0, 1, 2$",
+      "$-1, 0, 1, 2$"
+    ],
+    "a": 1,
+    "e": "$x > -2$ (not equal) and $x \\leq 3$. Integers: $-1, 0, 1, 2, 3$.",
+    "d": 1,
+    "s": "Y8.4",
+    "diag": "concept"
+  },
+  {
+    "id": "h073",
+    "cat": "algebra",
+    "topic": "Inequalities and Inequations",
+    "q": "Solve $3x - 1 \\leq 11$.",
+    "o": [
+      "$x \\leq 3$",
+      "$x \\geq 4$",
+      "$x \\leq 4$",
+      "$x < 3$"
+    ],
+    "a": 2,
+    "e": "$3x - 1 \\leq 11 \\Rightarrow 3x \\leq 12 \\Rightarrow x \\leq 4$.",
+    "d": 2,
+    "s": "Y8.4",
+    "diag": "calc"
+  },
+  {
+    "id": "h074",
+    "cat": "algebra",
+    "topic": "Inequalities and Inequations",
+    "q": "On a number line, an open circle at $5$ with an arrow pointing left represents which inequality?",
+    "o": [
+      "$x \\leq 5$",
+      "$x > 5$",
+      "$x < 5$",
+      "$x \\geq 5$"
+    ],
+    "a": 2,
+    "e": "An open circle means $5$ is not included, and the arrow pointing left means $x$ is less than $5$: $x < 5$.",
+    "d": 2,
+    "s": "Y8.4",
+    "diag": "vocab"
+  },
+  {
+    "id": "h075",
+    "cat": "algebra",
+    "topic": "Inequalities and Inequations",
+    "q": "Solve $-2x > 6$.",
+    "o": [
+      "$x > -3$",
+      "$x < -3$",
+      "$x > 3$",
+      "$x < 3$"
+    ],
+    "a": 1,
+    "e": "Dividing both sides by $-2$ reverses the inequality: $x < -3$.",
+    "d": 3,
+    "s": "Y8.4",
+    "diag": "calc"
+  },
+  {
+    "id": "h076",
+    "cat": "geometry",
+    "topic": "Intro to Pythagoras' Theorem",
+    "q": "A right-angled triangle has legs $3$ cm and $4$ cm. What is the hypotenuse?",
+    "o": [
+      "$7$ cm",
+      "$25$ cm",
+      "$5$ cm",
+      "$6$ cm"
+    ],
+    "a": 2,
+    "e": "$c = \\sqrt{3^2 + 4^2} = \\sqrt{9 + 16} = \\sqrt{25} = 5$ cm.",
+    "d": 1,
+    "s": "Y8.5",
+    "diag": "calc"
+  },
+  {
+    "id": "h077",
+    "cat": "geometry",
+    "topic": "Intro to Pythagoras' Theorem",
+    "q": "In Pythagoras' theorem $a^2 + b^2 = c^2$, what does $c$ represent?",
+    "o": [
+      "The shortest side",
+      "The longest side (hypotenuse)",
+      "Any side of the triangle",
+      "The height of the triangle"
+    ],
+    "a": 1,
+    "e": "$c$ is always the hypotenuse — the side opposite the right angle and the longest side.",
+    "d": 1,
+    "s": "Y8.5",
+    "diag": "vocab"
+  },
+  {
+    "id": "h078",
+    "cat": "geometry",
+    "topic": "Intro to Pythagoras' Theorem",
+    "q": "A right-angled triangle has hypotenuse $13$ cm and one leg $5$ cm. Find the other leg.",
+    "o": [
+      "$8$ cm",
+      "$18$ cm",
+      "$12$ cm",
+      "$\\sqrt{194}$ cm"
+    ],
+    "a": 2,
+    "e": "$b = \\sqrt{13^2 - 5^2} = \\sqrt{169 - 25} = \\sqrt{144} = 12$ cm.",
+    "d": 2,
+    "s": "Y8.5",
+    "diag": "calc"
+  },
+  {
+    "id": "h079",
+    "cat": "geometry",
+    "topic": "Intro to Pythagoras' Theorem",
+    "q": "A ladder $10$ m long leans against a wall. Its base is $6$ m from the wall. How high up the wall does it reach?",
+    "o": [
+      "$4$ m",
+      "$\\sqrt{136}$ m",
+      "$8$ m",
+      "$16$ m"
+    ],
+    "a": 2,
+    "e": "$h = \\sqrt{10^2 - 6^2} = \\sqrt{100 - 36} = \\sqrt{64} = 8$ m.",
+    "d": 2,
+    "s": "Y8.5",
+    "diag": "logic"
+  },
+  {
+    "id": "h080",
+    "cat": "geometry",
+    "topic": "Intro to Pythagoras' Theorem",
+    "q": "A triangle has sides $7$ cm, $24$ cm and $25$ cm. Is it right-angled?",
+    "o": [
+      "No, because $7 + 24 \\neq 25$",
+      "No, because $7^2 + 24^2 \\neq 25^2$",
+      "Yes, because $7^2 + 24^2 = 25^2$",
+      "Yes, because $7 + 24 > 25$"
+    ],
+    "a": 2,
+    "e": "$7^2 + 24^2 = 49 + 576 = 625 = 25^2$. The converse of Pythagoras confirms it is right-angled.",
+    "d": 3,
+    "s": "Y8.5",
+    "diag": "logic"
+  },
+  {
+    "id": "h081",
+    "cat": "geometry",
+    "topic": "Intersecting Lines and Parallel Lines",
+    "q": "Two straight lines cross. One angle is $65°$. What is the vertically opposite angle?",
+    "o": [
+      "$115°$",
+      "$65°$",
+      "$25°$",
+      "$130°$"
+    ],
+    "a": 1,
+    "e": "Vertically opposite angles are equal, so the angle is $65°$.",
+    "d": 1,
+    "s": "Y8.6",
+    "diag": "concept"
+  },
+  {
+    "id": "h082",
+    "cat": "geometry",
+    "topic": "Intersecting Lines and Parallel Lines",
+    "q": "Two parallel lines are cut by a transversal. One alternate angle is $72°$. What is the other?",
+    "o": [
+      "$72°$",
+      "$108°$",
+      "$36°$",
+      "$144°$"
+    ],
+    "a": 0,
+    "e": "Alternate angles between parallel lines are equal: $72°$.",
+    "d": 1,
+    "s": "Y8.6",
+    "diag": "concept"
+  },
+  {
+    "id": "h083",
+    "cat": "geometry",
+    "topic": "Intersecting Lines and Parallel Lines",
+    "q": "Co-interior (same-side interior) angles between parallel lines add up to:",
+    "o": [
+      "$90°$",
+      "$360°$",
+      "$270°$",
+      "$180°$"
+    ],
+    "a": 3,
+    "e": "Co-interior angles are supplementary, meaning they sum to $180°$.",
+    "d": 1,
+    "s": "Y8.6",
+    "diag": "vocab"
+  },
+  {
+    "id": "h084",
+    "cat": "geometry",
+    "topic": "Intersecting Lines and Parallel Lines",
+    "q": "A transversal crosses two parallel lines. A corresponding angle is $110°$. What is its co-interior partner on the same side?",
+    "o": [
+      "$110°$",
+      "$70°$",
+      "$90°$",
+      "$180°$"
+    ],
+    "a": 1,
+    "e": "The co-interior angle on the same side is $180° - 110° = 70°$.",
+    "d": 2,
+    "s": "Y8.6",
+    "diag": "calc"
+  },
+  {
+    "id": "h085",
+    "cat": "geometry",
+    "topic": "Intersecting Lines and Parallel Lines",
+    "q": "Two lines intersect. One angle is $x°$ and the adjacent angle is $(2x + 30)°$. Find $x$.",
+    "o": [
+      "$60$",
+      "$30$",
+      "$50$",
+      "$45$"
+    ],
+    "a": 2,
+    "e": "Adjacent angles on a straight line sum to $180°$: $x + 2x + 30 = 180 \\Rightarrow 3x = 150 \\Rightarrow x = 50$.",
+    "d": 2,
+    "s": "Y8.6",
+    "diag": "calc"
+  },
+  {
+    "id": "h086",
+    "cat": "algebra",
+    "topic": "Further Algebra",
+    "q": "Expand $3(x + 4)$.",
+    "o": [
+      "$3x + 4$",
+      "$3x + 7$",
+      "$3x + 12$",
+      "$x + 12$"
+    ],
+    "a": 2,
+    "e": "$3(x + 4) = 3 \\times x + 3 \\times 4 = 3x + 12$.",
+    "d": 1,
+    "s": "Y8.7",
+    "diag": "calc"
+  },
+  {
+    "id": "h087",
+    "cat": "algebra",
+    "topic": "Further Algebra",
+    "q": "Simplify $5x + 3y - 2x + y$.",
+    "o": [
+      "$3x + 4y$",
+      "$7x + 4y$",
+      "$3x + 2y$",
+      "$7x + 2y$"
+    ],
+    "a": 0,
+    "e": "$5x - 2x = 3x$ and $3y + y = 4y$, giving $3x + 4y$.",
+    "d": 1,
+    "s": "Y8.7",
+    "diag": "calc"
+  },
+  {
+    "id": "h088",
+    "cat": "algebra",
+    "topic": "Further Algebra",
+    "q": "Expand and simplify $2(x + 3) + 3(x - 1)$.",
+    "o": [
+      "$5x + 9$",
+      "$5x + 3$",
+      "$5x + 6$",
+      "$6x + 3$"
+    ],
+    "a": 1,
+    "e": "$2x + 6 + 3x - 3 = 5x + 3$.",
+    "d": 2,
+    "s": "Y8.7",
+    "diag": "calc"
+  },
+  {
+    "id": "h089",
+    "cat": "algebra",
+    "topic": "Further Algebra",
+    "q": "Factorise $6x + 15$.",
+    "o": [
+      "$6(x + 15)$",
+      "$3(2x + 5)$",
+      "$3(2x + 15)$",
+      "$2(3x + 5)$"
+    ],
+    "a": 1,
+    "e": "HCF of $6$ and $15$ is $3$: $6x + 15 = 3(2x + 5)$.",
+    "d": 2,
+    "s": "Y8.7",
+    "diag": "calc"
+  },
+  {
+    "id": "h090",
+    "cat": "algebra",
+    "topic": "Further Algebra",
+    "q": "Expand $(x + 3)(x + 5)$.",
+    "o": [
+      "$x^2 + 15$",
+      "$x^2 + 8x + 8$",
+      "$x^2 + 5x + 15$",
+      "$x^2 + 8x + 15$"
+    ],
+    "a": 3,
+    "e": "$(x+3)(x+5) = x^2 + 5x + 3x + 15 = x^2 + 8x + 15$.",
+    "d": 3,
+    "s": "Y8.7",
+    "diag": "calc"
+  },
+  {
+    "id": "h091",
+    "cat": "algebra",
+    "topic": "Co-ordinates and Plotting Linear Graphs",
+    "q": "What is the gradient of the line $y = 3x + 1$?",
+    "o": [
+      "$1$",
+      "$3$",
+      "$-3$",
+      "$\\frac{1}{3}$"
+    ],
+    "a": 1,
+    "e": "In $y = mx + c$, the gradient $m = 3$.",
+    "d": 1,
+    "s": "Y8.8",
+    "diag": "concept"
+  },
+  {
+    "id": "h092",
+    "cat": "algebra",
+    "topic": "Co-ordinates and Plotting Linear Graphs",
+    "q": "What is the $y$-intercept of $y = -2x + 7$?",
+    "o": [
+      "$-2$",
+      "$2$",
+      "$7$",
+      "$-7$"
+    ],
+    "a": 2,
+    "e": "In $y = mx + c$, the $y$-intercept is $c = 7$.",
+    "d": 1,
+    "s": "Y8.8",
+    "diag": "concept"
+  },
+  {
+    "id": "h093",
+    "cat": "algebra",
+    "topic": "Co-ordinates and Plotting Linear Graphs",
+    "q": "A line passes through $(0, 2)$ and $(3, 11)$. What is its gradient?",
+    "o": [
+      "$\\frac{9}{3} = 3$",
+      "$\\frac{3}{9} = \\frac{1}{3}$",
+      "$\\frac{13}{3}$",
+      "$\\frac{11}{3}$"
+    ],
+    "a": 0,
+    "e": "Gradient $= \\frac{11 - 2}{3 - 0} = \\frac{9}{3} = 3$.",
+    "d": 2,
+    "s": "Y8.8",
+    "diag": "calc"
+  },
+  {
+    "id": "h094",
+    "cat": "algebra",
+    "topic": "Co-ordinates and Plotting Linear Graphs",
+    "q": "Which point lies on the line $y = 2x - 3$?",
+    "o": [
+      "$(1, 1)$",
+      "$(2, 1)$",
+      "$(0, 3)$",
+      "$(3, 4)$"
+    ],
+    "a": 1,
+    "e": "Substitute $x = 2$: $y = 2(2) - 3 = 1$. So $(2, 1)$ lies on the line.",
+    "d": 2,
+    "s": "Y8.8",
+    "diag": "calc"
+  },
+  {
+    "id": "h095",
+    "cat": "algebra",
+    "topic": "Co-ordinates and Plotting Linear Graphs",
+    "q": "A line has gradient $-2$ and passes through $(1, 5)$. Find its equation.",
+    "o": [
+      "$y = -2x + 5$",
+      "$y = 2x + 3$",
+      "$y = -2x + 3$",
+      "$y = -2x + 7$"
+    ],
+    "a": 3,
+    "e": "$y = -2x + c$. Substituting $(1,5)$: $5 = -2(1) + c \\Rightarrow c = 7$. So $y = -2x + 7$.",
+    "d": 3,
+    "s": "Y8.8",
+    "diag": "calc"
+  },
+  {
+    "id": "h096",
+    "cat": "probability",
+    "topic": "Further Statistics",
+    "q": "Find the mean of $3, 5, 7, 9, 11$.",
+    "o": [
+      "$5$",
+      "$9$",
+      "$7$",
+      "$8$"
+    ],
+    "a": 2,
+    "e": "Mean $= \\frac{3+5+7+9+11}{5} = \\frac{35}{5} = 7$.",
+    "d": 1,
+    "s": "Y8.9",
+    "diag": "calc"
+  },
+  {
+    "id": "h097",
+    "cat": "probability",
+    "topic": "Further Statistics",
+    "q": "Find the median of $12, 5, 8, 3, 10$.",
+    "o": [
+      "$5$",
+      "$8$",
+      "$10$",
+      "$3$"
+    ],
+    "a": 1,
+    "e": "Ordered: $3, 5, 8, 10, 12$. The middle value is $8$.",
+    "d": 1,
+    "s": "Y8.9",
+    "diag": "calc"
+  },
+  {
+    "id": "h098",
+    "cat": "probability",
+    "topic": "Further Statistics",
+    "q": "The ages of $5$ students are $13, 14, 13, 15, 14$. What is the mode?",
+    "o": [
+      "$15$",
+      "$14$ only",
+      "$13$ only",
+      "$13$ and $14$"
+    ],
+    "a": 3,
+    "e": "Both $13$ and $14$ appear twice. The data is bimodal.",
+    "d": 2,
+    "s": "Y8.9",
+    "diag": "concept"
+  },
+  {
+    "id": "h099",
+    "cat": "probability",
+    "topic": "Further Statistics",
+    "q": "A frequency table shows: score $1$ (freq $4$), score $2$ (freq $6$), score $3$ (freq $5$). What is the mean score?",
+    "o": [
+      "$2.1$",
+      "$\\frac{31}{15}$",
+      "$2$",
+      "$2.5$"
+    ],
+    "a": 1,
+    "e": "Total $= 1(4)+2(6)+3(5) = 4+12+15 = 31$. Mean $= \\frac{31}{15} \\approx 2.07$.",
+    "d": 2,
+    "s": "Y8.9",
+    "diag": "calc"
+  },
+  {
+    "id": "h100",
+    "cat": "probability",
+    "topic": "Further Statistics",
+    "q": "In a grouped frequency table, the class $10$–$20$ has $8$ entries. Which value is used as the midpoint for calculating the estimated mean?",
+    "o": [
+      "$10$",
+      "$20$",
+      "$15$",
+      "$30$"
+    ],
+    "a": 2,
+    "e": "The midpoint of the class $10$–$20$ is $\\frac{10+20}{2} = 15$.",
+    "d": 3,
+    "s": "Y8.9",
+    "diag": "concept"
+  },
+  {
+    "id": "h101",
+    "cat": "number",
+    "topic": "Working with Irrational Numbers",
+    "q": "Simplify $\\sqrt{72}$.",
+    "o": [
+      "$8\\sqrt{2}$",
+      "$9\\sqrt{2}$",
+      "$6\\sqrt{2}$",
+      "$6\\sqrt{3}$"
+    ],
+    "a": 2,
+    "e": "$\\sqrt{72} = \\sqrt{36 \\times 2} = 6\\sqrt{2}$.",
+    "d": 1,
+    "s": "Y9.1",
+    "diag": "calc"
+  },
+  {
+    "id": "h102",
+    "cat": "number",
+    "topic": "Working with Irrational Numbers",
+    "q": "Simplify $\\sqrt{18} + \\sqrt{8}$.",
+    "o": [
+      "$\\sqrt{26}$",
+      "$6\\sqrt{2}$",
+      "$4\\sqrt{2}$",
+      "$5\\sqrt{2}$"
+    ],
+    "a": 3,
+    "e": "$\\sqrt{18} = 3\\sqrt{2}$ and $\\sqrt{8} = 2\\sqrt{2}$, so $3\\sqrt{2} + 2\\sqrt{2} = 5\\sqrt{2}$.",
+    "d": 1,
+    "s": "Y9.1",
+    "diag": "calc"
+  },
+  {
+    "id": "h103",
+    "cat": "number",
+    "topic": "Working with Irrational Numbers",
+    "q": "Rationalise the denominator of $\\dfrac{1}{\\sqrt{5}}$.",
+    "o": [
+      "$\\dfrac{\\sqrt{5}}{5}$",
+      "$\\dfrac{5}{\\sqrt{5}}$",
+      "$\\dfrac{1}{5}$",
+      "$\\dfrac{\\sqrt{5}}{25}$"
+    ],
+    "a": 0,
+    "e": "$\\dfrac{1}{\\sqrt{5}} \\times \\dfrac{\\sqrt{5}}{\\sqrt{5}} = \\dfrac{\\sqrt{5}}{5}$.",
+    "d": 2,
+    "s": "Y9.1",
+    "diag": "calc"
+  },
+  {
+    "id": "h104",
+    "cat": "number",
+    "topic": "Working with Irrational Numbers",
+    "q": "Expand and simplify $(3 + \\sqrt{2})(3 - \\sqrt{2})$.",
+    "o": [
+      "$11$",
+      "$7$",
+      "$9$",
+      "$9 - 2\\sqrt{2}$"
+    ],
+    "a": 1,
+    "e": "Using the difference of two squares: $(3)^2 - (\\sqrt{2})^2 = 9 - 2 = 7$.",
+    "d": 2,
+    "s": "Y9.1",
+    "diag": "calc"
+  },
+  {
+    "id": "h105",
+    "cat": "number",
+    "topic": "Working with Irrational Numbers",
+    "q": "Rationalise the denominator of $\\dfrac{6}{3 - \\sqrt{3}}$.",
+    "o": [
+      "$2(3 + \\sqrt{3})$",
+      "$\\dfrac{6(3 + \\sqrt{3})}{6}$",
+      "$3(3 + \\sqrt{3})$",
+      "$3 + \\sqrt{3}$"
+    ],
+    "a": 3,
+    "e": "$\\dfrac{6}{3-\\sqrt{3}} \\times \\dfrac{3+\\sqrt{3}}{3+\\sqrt{3}} = \\dfrac{6(3+\\sqrt{3})}{9-3} = \\dfrac{6(3+\\sqrt{3})}{6} = 3+\\sqrt{3}$.",
+    "d": 3,
+    "s": "Y9.1",
+    "diag": "calc"
+  },
+  {
+    "id": "h106",
+    "cat": "algebra",
+    "topic": "Working with Expressions",
+    "q": "Expand $(x + 3)(x + 5)$.",
+    "o": [
+      "$x^2 + 8x + 15$",
+      "$x^2 + 15$",
+      "$x^2 + 5x + 15$",
+      "$x^2 + 8x + 8$"
+    ],
+    "a": 0,
+    "e": "$(x+3)(x+5) = x^2 + 5x + 3x + 15 = x^2 + 8x + 15$.",
+    "d": 1,
+    "s": "Y9.2",
+    "diag": "calc"
+  },
+  {
+    "id": "h107",
+    "cat": "algebra",
+    "topic": "Working with Expressions",
+    "q": "Factorise $x^2 + 7x + 12$.",
+    "o": [
+      "$(x+2)(x+6)$",
+      "$(x+3)(x+4)$",
+      "$(x+1)(x+12)$",
+      "$(x+7)(x+12)$"
+    ],
+    "a": 1,
+    "e": "We need two numbers that multiply to 12 and add to 7: $3 \\times 4 = 12$ and $3 + 4 = 7$.",
+    "d": 1,
+    "s": "Y9.2",
+    "diag": "calc"
+  },
+  {
+    "id": "h108",
+    "cat": "algebra",
+    "topic": "Working with Expressions",
+    "q": "Expand and simplify $(2x - 1)(x + 4)$.",
+    "o": [
+      "$2x^2 + 9x - 4$",
+      "$2x^2 - 7x - 4$",
+      "$2x^2 + 7x - 4$",
+      "$2x^2 + 8x - 4$"
+    ],
+    "a": 2,
+    "e": "$(2x-1)(x+4) = 2x^2 + 8x - x - 4 = 2x^2 + 7x - 4$.",
+    "d": 2,
+    "s": "Y9.2",
+    "diag": "calc"
+  },
+  {
+    "id": "h109",
+    "cat": "algebra",
+    "topic": "Working with Expressions",
+    "q": "Factorise $x^2 - 5x - 14$.",
+    "o": [
+      "$(x-14)(x+1)$",
+      "$(x+7)(x-2)$",
+      "$(x-1)(x+14)$",
+      "$(x+2)(x-7)$"
+    ],
+    "a": 3,
+    "e": "We need two numbers that multiply to $-14$ and add to $-5$: $2 \\times (-7) = -14$ and $2 + (-7) = -5$.",
+    "d": 2,
+    "s": "Y9.2",
+    "diag": "calc"
+  },
+  {
+    "id": "h110",
+    "cat": "algebra",
+    "topic": "Working with Expressions",
+    "q": "Factorise $6x^2 + 11x + 3$.",
+    "o": [
+      "$(6x+1)(x+3)$",
+      "$(2x+1)(3x+3)$",
+      "$(3x+1)(2x+3)$",
+      "$(6x+3)(x+1)$"
+    ],
+    "a": 2,
+    "e": "$6x^2 + 11x + 3$: we need factors of $6 \\times 3 = 18$ that add to 11: $9$ and $2$. Split: $6x^2 + 9x + 2x + 3 = 3x(2x+3) + 1(2x+3) = (3x+1)(2x+3)$.",
+    "d": 3,
+    "s": "Y9.2",
+    "diag": "calc"
+  },
+  {
+    "id": "h111",
+    "cat": "algebra",
+    "topic": "Algebraic Functions",
+    "q": "If $f(x) = 3x - 2$, find $f(4)$.",
+    "o": [
+      "$14$",
+      "$12$",
+      "$6$",
+      "$10$"
+    ],
+    "a": 3,
+    "e": "$f(4) = 3(4) - 2 = 12 - 2 = 10$.",
+    "d": 1,
+    "s": "Y9.3",
+    "diag": "calc"
+  },
+  {
+    "id": "h112",
+    "cat": "algebra",
+    "topic": "Algebraic Functions",
+    "q": "If $f(x) = x^2 + 1$, find $f(-3)$.",
+    "o": [
+      "$10$",
+      "$-8$",
+      "$8$",
+      "$-10$"
+    ],
+    "a": 0,
+    "e": "$f(-3) = (-3)^2 + 1 = 9 + 1 = 10$.",
+    "d": 1,
+    "s": "Y9.3",
+    "diag": "calc"
+  },
+  {
+    "id": "h113",
+    "cat": "algebra",
+    "topic": "Algebraic Functions",
+    "q": "If $f(x) = 2x + 5$, find $f^{-1}(x)$.",
+    "o": [
+      "$\\dfrac{x+5}{2}$",
+      "$\\dfrac{x-5}{2}$",
+      "$2x - 5$",
+      "$\\dfrac{2}{x-5}$"
+    ],
+    "a": 1,
+    "e": "Let $y = 2x + 5$. Swap: $x = 2y + 5$. Solve: $y = \\dfrac{x-5}{2}$.",
+    "d": 2,
+    "s": "Y9.3",
+    "diag": "calc"
+  },
+  {
+    "id": "h114",
+    "cat": "algebra",
+    "topic": "Algebraic Functions",
+    "q": "If $f(x) = 4x - 1$ and $g(x) = x^2$, what is $fg(2)$?",
+    "o": [
+      "$49$",
+      "$7$",
+      "$15$",
+      "$63$"
+    ],
+    "a": 2,
+    "e": "$g(2) = 2^2 = 4$, then $f(4) = 4(4) - 1 = 15$.",
+    "d": 2,
+    "s": "Y9.3",
+    "diag": "calc"
+  },
+  {
+    "id": "h115",
+    "cat": "algebra",
+    "topic": "Algebraic Functions",
+    "q": "If $f(x) = \\dfrac{3x+1}{2}$, find $f^{-1}(5)$.",
+    "o": [
+      "$3$",
+      "$2$",
+      "$\\dfrac{11}{2}$",
+      "$8$"
+    ],
+    "a": 0,
+    "e": "$f^{-1}(x) = \\dfrac{2x-1}{3}$. So $f^{-1}(5) = \\dfrac{2(5)-1}{3} = \\dfrac{9}{3} = 3$.",
+    "d": 3,
+    "s": "Y9.3",
+    "diag": "calc"
+  },
+  {
+    "id": "h116",
+    "cat": "geometry",
+    "topic": "Mastery of Angles",
+    "q": "What is the sum of interior angles of a hexagon?",
+    "o": [
+      "$540°$",
+      "$720°$",
+      "$1080°$",
+      "$360°$"
+    ],
+    "a": 1,
+    "e": "Sum of interior angles $= (n-2) \\times 180° = (6-2) \\times 180° = 720°$.",
+    "d": 1,
+    "s": "Y9.4",
+    "diag": "calc"
+  },
+  {
+    "id": "h117",
+    "cat": "geometry",
+    "topic": "Mastery of Angles",
+    "q": "Each exterior angle of a regular polygon is $30°$. How many sides does it have?",
+    "o": [
+      "$10$",
+      "$6$",
+      "$15$",
+      "$12$"
+    ],
+    "a": 3,
+    "e": "Number of sides $= \\dfrac{360°}{30°} = 12$.",
+    "d": 1,
+    "s": "Y9.4",
+    "diag": "calc"
+  },
+  {
+    "id": "h118",
+    "cat": "geometry",
+    "topic": "Mastery of Angles",
+    "q": "What is the size of each interior angle of a regular octagon?",
+    "o": [
+      "$135°$",
+      "$144°$",
+      "$120°$",
+      "$140°$"
+    ],
+    "a": 0,
+    "e": "Interior angle $= \\dfrac{(8-2) \\times 180°}{8} = \\dfrac{1080°}{8} = 135°$.",
+    "d": 2,
+    "s": "Y9.4",
+    "diag": "calc"
+  },
+  {
+    "id": "h119",
+    "cat": "geometry",
+    "topic": "Mastery of Angles",
+    "q": "The interior angles of a pentagon are $110°$, $95°$, $120°$, $x°$ and $130°$. Find $x$.",
+    "o": [
+      "$95$",
+      "$105$",
+      "$85$",
+      "$75$"
+    ],
+    "a": 2,
+    "e": "Sum $= (5-2) \\times 180° = 540°$. So $x = 540 - 110 - 95 - 120 - 130 = 85$.",
+    "d": 2,
+    "s": "Y9.4",
+    "diag": "calc"
+  },
+  {
+    "id": "h120",
+    "cat": "geometry",
+    "topic": "Mastery of Angles",
+    "q": "A regular polygon has interior angles of $156°$. How many sides does it have?",
+    "o": [
+      "$12$",
+      "$15$",
+      "$18$",
+      "$20$"
+    ],
+    "a": 1,
+    "e": "Exterior angle $= 180° - 156° = 24°$. Sides $= \\dfrac{360°}{24°} = 15$.",
+    "d": 3,
+    "s": "Y9.4",
+    "diag": "calc"
+  },
+  {
+    "id": "h121",
+    "cat": "geometry",
+    "topic": "Pythagoras Theorem",
+    "q": "A right-angled triangle has legs of $6$ cm and $8$ cm. What is the hypotenuse?",
+    "o": [
+      "$14$ cm",
+      "$100$ cm",
+      "$12$ cm",
+      "$10$ cm"
+    ],
+    "a": 3,
+    "e": "$c = \\sqrt{6^2 + 8^2} = \\sqrt{36 + 64} = \\sqrt{100} = 10$ cm.",
+    "d": 1,
+    "s": "Y9.5",
+    "diag": "calc"
+  },
+  {
+    "id": "h122",
+    "cat": "geometry",
+    "topic": "Pythagoras Theorem",
+    "q": "The hypotenuse of a right-angled triangle is $13$ cm and one leg is $5$ cm. Find the other leg.",
+    "o": [
+      "$12$ cm",
+      "$8$ cm",
+      "$18$ cm",
+      "$\\sqrt{194}$ cm"
+    ],
+    "a": 0,
+    "e": "$b = \\sqrt{13^2 - 5^2} = \\sqrt{169 - 25} = \\sqrt{144} = 12$ cm.",
+    "d": 1,
+    "s": "Y9.5",
+    "diag": "calc"
+  },
+  {
+    "id": "h123",
+    "cat": "geometry",
+    "topic": "Pythagoras Theorem",
+    "q": "A cuboid has dimensions $3$ cm, $4$ cm, and $12$ cm. Find the length of the space diagonal.",
+    "o": [
+      "$19$ cm",
+      "$\\sqrt{160}$ cm",
+      "$13$ cm",
+      "$\\sqrt{169}$ cm"
+    ],
+    "a": 2,
+    "e": "Space diagonal $= \\sqrt{3^2 + 4^2 + 12^2} = \\sqrt{9 + 16 + 144} = \\sqrt{169} = 13$ cm.",
+    "d": 2,
+    "s": "Y9.5",
+    "diag": "calc"
+  },
+  {
+    "id": "h124",
+    "cat": "geometry",
+    "topic": "Pythagoras Theorem",
+    "q": "A triangle has sides $7$ cm, $24$ cm, and $25$ cm. Is it a right-angled triangle?",
+    "o": [
+      "No, because $7 + 24 \\neq 25$",
+      "Yes, because $7^2 + 24^2 = 25^2$",
+      "No, because $7^2 + 24^2 \\neq 25^2$",
+      "Yes, because $7 + 24 > 25$"
+    ],
+    "a": 1,
+    "e": "$7^2 + 24^2 = 49 + 576 = 625 = 25^2$, so it is a right-angled triangle by the converse of Pythagoras.",
+    "d": 2,
+    "s": "Y9.5",
+    "diag": "logic"
+  },
+  {
+    "id": "h125",
+    "cat": "geometry",
+    "topic": "Pythagoras Theorem",
+    "q": "A cone has base radius $5$ cm and slant height $13$ cm. Find its vertical height.",
+    "o": [
+      "$18$ cm",
+      "$8$ cm",
+      "$\\sqrt{194}$ cm",
+      "$12$ cm"
+    ],
+    "a": 3,
+    "e": "$h = \\sqrt{13^2 - 5^2} = \\sqrt{169 - 25} = \\sqrt{144} = 12$ cm.",
+    "d": 3,
+    "s": "Y9.5",
+    "diag": "calc"
+  },
+  {
+    "id": "h126",
+    "cat": "geometry",
+    "topic": "2D Shape",
+    "q": "Find the area of a trapezium with parallel sides $8$ cm and $12$ cm, and height $5$ cm.",
+    "o": [
+      "$50$ cm²",
+      "$60$ cm²",
+      "$100$ cm²",
+      "$40$ cm²"
+    ],
+    "a": 0,
+    "e": "Area $= \\dfrac{1}{2}(8 + 12) \\times 5 = \\dfrac{1}{2} \\times 20 \\times 5 = 50$ cm².",
+    "d": 1,
+    "s": "Y9.6",
+    "diag": "calc"
+  },
+  {
+    "id": "h127",
+    "cat": "geometry",
+    "topic": "2D Shape",
+    "q": "A parallelogram has base $9$ cm and perpendicular height $6$ cm. What is its area?",
+    "o": [
+      "$15$ cm²",
+      "$27$ cm²",
+      "$30$ cm²",
+      "$54$ cm²"
+    ],
+    "a": 3,
+    "e": "Area of parallelogram $= \\text{base} \\times \\text{height} = 9 \\times 6 = 54$ cm².",
+    "d": 1,
+    "s": "Y9.6",
+    "diag": "calc"
+  },
+  {
+    "id": "h128",
+    "cat": "geometry",
+    "topic": "2D Shape",
+    "q": "A compound shape is made of a rectangle $10$ cm by $4$ cm with a semicircle of diameter $4$ cm attached to one end. Find its area. (Use $\\pi = 3.14$)",
+    "o": [
+      "$40$ cm²",
+      "$52.56$ cm²",
+      "$46.28$ cm²",
+      "$53.12$ cm²"
+    ],
+    "a": 2,
+    "e": "Rectangle area $= 10 \\times 4 = 40$ cm². Semicircle area $= \\dfrac{1}{2} \\pi r^2 = \\dfrac{1}{2} \\times 3.14 \\times 2^2 = 6.28$ cm². Total $= 46.28$ cm².",
+    "d": 2,
+    "s": "Y9.6",
+    "diag": "calc"
+  },
+  {
+    "id": "h129",
+    "cat": "geometry",
+    "topic": "2D Shape",
+    "q": "A triangle has base $14$ cm and area $63$ cm². What is its perpendicular height?",
+    "o": [
+      "$4.5$ cm",
+      "$9$ cm",
+      "$12.6$ cm",
+      "$7$ cm"
+    ],
+    "a": 1,
+    "e": "Area $= \\dfrac{1}{2} \\times b \\times h$. So $63 = \\dfrac{1}{2} \\times 14 \\times h$, giving $h = \\dfrac{63}{7} = 9$ cm.",
+    "d": 2,
+    "s": "Y9.6",
+    "diag": "calc"
+  },
+  {
+    "id": "h130",
+    "cat": "geometry",
+    "topic": "2D Shape",
+    "q": "An L-shaped compound shape is formed by removing a $3$ cm by $2$ cm rectangle from a $8$ cm by $6$ cm rectangle. What is the area of the L-shape?",
+    "o": [
+      "$36$ cm²",
+      "$54$ cm²",
+      "$48$ cm²",
+      "$42$ cm²"
+    ],
+    "a": 3,
+    "e": "Area $= (8 \\times 6) - (3 \\times 2) = 48 - 6 = 42$ cm².",
+    "d": 3,
+    "s": "Y9.6",
+    "diag": "calc"
+  },
+  {
+    "id": "h131",
+    "cat": "percentage",
+    "topic": "Percentages",
+    "q": "A shirt costs £40 and is reduced by $15\\%$. What is the sale price?",
+    "o": [
+      "$£25$",
+      "$£34$",
+      "$£6$",
+      "$£46$"
+    ],
+    "a": 1,
+    "e": "Discount $= 0.15 \\times 40 = £6$. Sale price $= 40 - 6 = £34$.",
+    "d": 1,
+    "s": "Y9.7",
+    "diag": "calc"
+  },
+  {
+    "id": "h132",
+    "cat": "percentage",
+    "topic": "Percentages",
+    "q": "A population increases from $500$ to $650$. What is the percentage increase?",
+    "o": [
+      "$15\\%$",
+      "$23\\%$",
+      "$30\\%$",
+      "$25\\%$"
+    ],
+    "a": 2,
+    "e": "Increase $= 650 - 500 = 150$. Percentage increase $= \\dfrac{150}{500} \\times 100 = 30\\%$.",
+    "d": 1,
+    "s": "Y9.7",
+    "diag": "calc"
+  },
+  {
+    "id": "h133",
+    "cat": "percentage",
+    "topic": "Percentages",
+    "q": "After a $20\\%$ increase, a price is £96. What was the original price?",
+    "o": [
+      "$£76.80$",
+      "$£115.20$",
+      "$£90$",
+      "$£80$"
+    ],
+    "a": 3,
+    "e": "Original $\\times 1.20 = 96$. Original $= \\dfrac{96}{1.20} = £80$.",
+    "d": 2,
+    "s": "Y9.7",
+    "diag": "calc"
+  },
+  {
+    "id": "h134",
+    "cat": "percentage",
+    "topic": "Percentages",
+    "q": "£2000 is invested at $3\\%$ compound interest per annum. What is the value after 2 years?",
+    "o": [
+      "$£2121.80$",
+      "$£2060$",
+      "$£2120$",
+      "$£2061.80$"
+    ],
+    "a": 0,
+    "e": "After 2 years: $2000 \\times 1.03^2 = 2000 \\times 1.0609 = £2121.80$.",
+    "d": 2,
+    "s": "Y9.7",
+    "diag": "calc"
+  },
+  {
+    "id": "h135",
+    "cat": "percentage",
+    "topic": "Percentages",
+    "q": "A car depreciates by $10\\%$ each year. It is worth £20,000 now. What will it be worth in 3 years?",
+    "o": [
+      "$£14,000$",
+      "$£14,580$",
+      "$£16,200$",
+      "$£17,820$"
+    ],
+    "a": 1,
+    "e": "Value $= 20000 \\times 0.9^3 = 20000 \\times 0.729 = £14,580$.",
+    "d": 3,
+    "s": "Y9.7",
+    "diag": "calc"
+  },
+  {
+    "id": "h136",
+    "cat": "probability",
+    "topic": "Statistical Sampling",
+    "q": "Which type of sampling gives every member of the population an equal chance of being selected?",
+    "o": [
+      "Systematic sampling",
+      "Convenience sampling",
+      "Simple random sampling",
+      "Stratified sampling"
+    ],
+    "a": 2,
+    "e": "Simple random sampling ensures every member has an equal chance of selection.",
+    "d": 1,
+    "s": "Y9.8",
+    "diag": "vocab"
+  },
+  {
+    "id": "h137",
+    "cat": "probability",
+    "topic": "Statistical Sampling",
+    "q": "A survey is conducted by asking the first 20 people who enter a shop. What type of sampling is this?",
+    "o": [
+      "Convenience sampling",
+      "Stratified sampling",
+      "Random sampling",
+      "Systematic sampling"
+    ],
+    "a": 0,
+    "e": "This is convenience sampling as the researcher selects whoever is easiest to reach.",
+    "d": 1,
+    "s": "Y9.8",
+    "diag": "concept"
+  },
+  {
+    "id": "h138",
+    "cat": "probability",
+    "topic": "Statistical Sampling",
+    "q": "A school has 600 boys and 400 girls. For a stratified sample of 50, how many girls should be selected?",
+    "o": [
+      "$25$",
+      "$30$",
+      "$40$",
+      "$20$"
+    ],
+    "a": 3,
+    "e": "Proportion of girls $= \\dfrac{400}{1000} = 0.4$. Girls in sample $= 0.4 \\times 50 = 20$.",
+    "d": 2,
+    "s": "Y9.8",
+    "diag": "calc"
+  },
+  {
+    "id": "h139",
+    "cat": "probability",
+    "topic": "Statistical Sampling",
+    "q": "Which of the following is a source of bias in a survey?",
+    "o": [
+      "Using a large sample size",
+      "Asking leading questions",
+      "Selecting every 10th name from a list",
+      "Using random number generators"
+    ],
+    "a": 1,
+    "e": "Leading questions influence respondents' answers, introducing bias into the results.",
+    "d": 2,
+    "s": "Y9.8",
+    "diag": "concept"
+  },
+  {
+    "id": "h140",
+    "cat": "probability",
+    "topic": "Statistical Sampling",
+    "q": "In systematic sampling from a list of 500 people to select 25, every $k$th person is chosen. What is $k$?",
+    "o": [
+      "$20$",
+      "$10$",
+      "$50$",
+      "$25$"
+    ],
+    "a": 0,
+    "e": "$k = \\dfrac{500}{25} = 20$. Every 20th person is selected.",
+    "d": 3,
+    "s": "Y9.8",
+    "diag": "calc"
+  },
+  {
+    "id": "h141",
+    "cat": "probability",
+    "topic": "Graphical Representation of Statistical Data",
+    "q": "In a histogram, what does the area of each bar represent?",
+    "o": [
+      "The midpoint of the class",
+      "The class width",
+      "The frequency of the class",
+      "The cumulative frequency"
+    ],
+    "a": 2,
+    "e": "In a histogram, the area of each bar is proportional to the frequency of that class.",
+    "d": 1,
+    "s": "Y9.9",
+    "diag": "concept"
+  },
+  {
+    "id": "h142",
+    "cat": "probability",
+    "topic": "Graphical Representation of Statistical Data",
+    "q": "A cumulative frequency graph is used to estimate which of the following?",
+    "o": [
+      "The mode",
+      "The median and quartiles",
+      "The mean",
+      "The range only"
+    ],
+    "a": 1,
+    "e": "Cumulative frequency graphs are used to estimate the median, quartiles and percentiles.",
+    "d": 1,
+    "s": "Y9.9",
+    "diag": "concept"
+  },
+  {
+    "id": "h143",
+    "cat": "probability",
+    "topic": "Graphical Representation of Statistical Data",
+    "q": "A histogram bar has a class width of $5$ and a frequency density of $4$. What is the frequency?",
+    "o": [
+      "$0.8$",
+      "$9$",
+      "$1.25$",
+      "$20$"
+    ],
+    "a": 3,
+    "e": "Frequency $=$ frequency density $\\times$ class width $= 4 \\times 5 = 20$.",
+    "d": 2,
+    "s": "Y9.9",
+    "diag": "calc"
+  },
+  {
+    "id": "h144",
+    "cat": "probability",
+    "topic": "Graphical Representation of Statistical Data",
+    "q": "In a box plot, the interquartile range (IQR) is the distance between which two values?",
+    "o": [
+      "Lower quartile and upper quartile",
+      "Minimum and maximum",
+      "Median and upper quartile",
+      "Mean and median"
+    ],
+    "a": 0,
+    "e": "IQR $= Q_3 - Q_1$, the distance between the upper quartile and lower quartile.",
+    "d": 2,
+    "s": "Y9.9",
+    "diag": "concept"
+  },
+  {
+    "id": "h145",
+    "cat": "probability",
+    "topic": "Graphical Representation of Statistical Data",
+    "q": "A class has frequency 30 and class width 10. Another class has frequency 12 and class width 4. Which class has the higher frequency density?",
+    "o": [
+      "The first class",
+      "They are equal",
+      "The second class",
+      "Cannot be determined"
+    ],
+    "a": 1,
+    "e": "First: $\\dfrac{30}{10} = 3$. Second: $\\dfrac{12}{4} = 3$. They are equal.",
+    "d": 3,
+    "s": "Y9.9",
+    "diag": "calc"
+  },
+  {
+    "id": "h146",
+    "cat": "algebra",
+    "topic": "Algebraic Fractions",
+    "q": "Simplify $\\dfrac{6x^2}{3x}$.",
+    "o": [
+      "$3x$",
+      "$2x^2$",
+      "$2x$",
+      "$\\dfrac{x}{2}$"
+    ],
+    "a": 2,
+    "e": "$\\dfrac{6x^2}{3x} = \\dfrac{6}{3} \\times \\dfrac{x^2}{x} = 2x$.",
+    "d": 1,
+    "s": "Y9.10",
+    "diag": "calc"
+  },
+  {
+    "id": "h147",
+    "cat": "algebra",
+    "topic": "Algebraic Fractions",
+    "q": "Simplify $\\dfrac{x^2 - 9}{x + 3}$.",
+    "o": [
+      "$x + 3$",
+      "$x - 9$",
+      "$\\dfrac{x-9}{x+3}$",
+      "$x - 3$"
+    ],
+    "a": 3,
+    "e": "$\\dfrac{x^2 - 9}{x + 3} = \\dfrac{(x+3)(x-3)}{x+3} = x - 3$.",
+    "d": 1,
+    "s": "Y9.10",
+    "diag": "calc"
+  },
+  {
+    "id": "h148",
+    "cat": "algebra",
+    "topic": "Algebraic Fractions",
+    "q": "Simplify $\\dfrac{2}{x} + \\dfrac{3}{x}$.",
+    "o": [
+      "$\\dfrac{5}{x}$",
+      "$\\dfrac{6}{x^2}$",
+      "$\\dfrac{5}{2x}$",
+      "$\\dfrac{6}{x}$"
+    ],
+    "a": 0,
+    "e": "$\\dfrac{2}{x} + \\dfrac{3}{x} = \\dfrac{2+3}{x} = \\dfrac{5}{x}$.",
+    "d": 2,
+    "s": "Y9.10",
+    "diag": "calc"
+  },
+  {
+    "id": "h149",
+    "cat": "algebra",
+    "topic": "Algebraic Fractions",
+    "q": "Simplify $\\dfrac{1}{x+1} + \\dfrac{2}{x-1}$.",
+    "o": [
+      "$\\dfrac{3}{(x+1)(x-1)}$",
+      "$\\dfrac{3x+1}{(x+1)(x-1)}$",
+      "$\\dfrac{3x-1}{(x+1)(x-1)}$",
+      "$\\dfrac{2x+1}{x^2-1}$"
+    ],
+    "a": 1,
+    "e": "$\\dfrac{1(x-1) + 2(x+1)}{(x+1)(x-1)} = \\dfrac{x - 1 + 2x + 2}{(x+1)(x-1)} = \\dfrac{3x + 1}{(x+1)(x-1)}$.",
+    "d": 2,
+    "s": "Y9.10",
+    "diag": "calc"
+  },
+  {
+    "id": "h150",
+    "cat": "algebra",
+    "topic": "Algebraic Fractions",
+    "q": "Simplify $\\dfrac{x^2 + 5x + 6}{x^2 + 3x + 2}$.",
+    "o": [
+      "$\\dfrac{x+2}{x+1}$",
+      "$\\dfrac{x+6}{x+2}$",
+      "$\\dfrac{x+3}{x+1}$",
+      "$\\dfrac{x+1}{x+3}$"
+    ],
+    "a": 2,
+    "e": "$\\dfrac{(x+2)(x+3)}{(x+1)(x+2)} = \\dfrac{x+3}{x+1}$.",
+    "d": 3,
+    "s": "Y9.10",
+    "diag": "calc"
+  },
+  {
+    "id": "h151",
+    "cat": "geometry",
+    "topic": "Practice with Constructions",
+    "q": "What is the locus of points equidistant from two fixed points $A$ and $B$?",
+    "o": [
+      "A circle centred at $A$",
+      "The perpendicular bisector of $AB$",
+      "The angle bisector of $AB$",
+      "A line parallel to $AB$"
+    ],
+    "a": 1,
+    "e": "The locus of points equidistant from two fixed points is the perpendicular bisector of the line segment joining them.",
+    "d": 1,
+    "s": "Y9.11",
+    "diag": "concept"
+  },
+  {
+    "id": "h152",
+    "cat": "geometry",
+    "topic": "Practice with Constructions",
+    "q": "What is the locus of points equidistant from a single fixed point $P$?",
+    "o": [
+      "A straight line through $P$",
+      "Two parallel lines either side of $P$",
+      "A circle centred at $P$",
+      "A perpendicular bisector"
+    ],
+    "a": 2,
+    "e": "The locus of points equidistant from a single point is a circle centred at that point.",
+    "d": 1,
+    "s": "Y9.11",
+    "diag": "concept"
+  },
+  {
+    "id": "h153",
+    "cat": "geometry",
+    "topic": "Practice with Constructions",
+    "q": "To construct a $60°$ angle, which of the following methods is correct?",
+    "o": [
+      "Draw an equilateral triangle using compasses",
+      "Draw an arc from the vertex and bisect it",
+      "Use a protractor and ruler",
+      "Draw two perpendicular lines"
+    ],
+    "a": 0,
+    "e": "An equilateral triangle has all angles equal to $60°$. Using compasses to construct one gives an exact $60°$ angle.",
+    "d": 2,
+    "s": "Y9.11",
+    "diag": "concept"
+  },
+  {
+    "id": "h154",
+    "cat": "geometry",
+    "topic": "Practice with Constructions",
+    "q": "What is the locus of points equidistant from two intersecting lines?",
+    "o": [
+      "A circle",
+      "The perpendicular bisector",
+      "A line parallel to both",
+      "The angle bisector of the two lines"
+    ],
+    "a": 3,
+    "e": "The locus of points equidistant from two intersecting lines consists of the angle bisectors of the angles formed.",
+    "d": 2,
+    "s": "Y9.11",
+    "diag": "concept"
+  },
+  {
+    "id": "h155",
+    "cat": "geometry",
+    "topic": "Practice with Constructions",
+    "q": "A region is defined as all points within $3$ cm of a point $P$ AND closer to line $AB$ than line $CD$. What shapes form the boundary of this region?",
+    "o": [
+      "A circle and a straight line",
+      "A rectangle and a straight line",
+      "Two circles",
+      "A triangle and an arc"
+    ],
+    "a": 0,
+    "e": "Within 3 cm of $P$ gives a circle of radius 3 cm. Closer to $AB$ than $CD$ is bounded by the angle bisector (a straight line). The region is the intersection.",
+    "d": 3,
+    "s": "Y9.11",
+    "diag": "logic"
+  },
+  {
+    "id": "h156",
+    "cat": "geometry",
+    "topic": "Congruence and Similarity",
+    "q": "Which of the following is NOT a condition for congruent triangles?",
+    "o": [
+      "SSS",
+      "AAA",
+      "SAS",
+      "RHS"
+    ],
+    "a": 1,
+    "e": "AAA (angle-angle-angle) proves similarity, not congruence. Triangles can have the same angles but different sizes.",
+    "d": 1,
+    "s": "Y9.12",
+    "diag": "concept"
+  },
+  {
+    "id": "h157",
+    "cat": "geometry",
+    "topic": "Congruence and Similarity",
+    "q": "Two similar shapes have a length scale factor of $3$. What is the ratio of their areas?",
+    "o": [
+      "$3:1$",
+      "$6:1$",
+      "$27:1$",
+      "$9:1$"
+    ],
+    "a": 3,
+    "e": "Area ratio $=$ (scale factor)$^2 = 3^2 = 9$. So the ratio is $9:1$.",
+    "d": 1,
+    "s": "Y9.12",
+    "diag": "concept"
+  },
+  {
+    "id": "h158",
+    "cat": "geometry",
+    "topic": "Congruence and Similarity",
+    "q": "Two similar triangles have areas in the ratio $25:4$. What is the ratio of their corresponding sides?",
+    "o": [
+      "$25:4$",
+      "$12.5:2$",
+      "$5:2$",
+      "$\\sqrt{25}:\\sqrt{4}$"
+    ],
+    "a": 2,
+    "e": "Side ratio $= \\sqrt{\\text{area ratio}} = \\sqrt{25}:\\sqrt{4} = 5:2$.",
+    "d": 2,
+    "s": "Y9.12",
+    "diag": "calc"
+  },
+  {
+    "id": "h159",
+    "cat": "geometry",
+    "topic": "Congruence and Similarity",
+    "q": "Triangle $ABC$ is similar to triangle $DEF$. $AB = 6$ cm, $DE = 9$ cm, and $BC = 8$ cm. Find $EF$.",
+    "o": [
+      "$12$ cm",
+      "$11$ cm",
+      "$5.33$ cm",
+      "$14$ cm"
+    ],
+    "a": 0,
+    "e": "Scale factor $= \\dfrac{9}{6} = 1.5$. $EF = 8 \\times 1.5 = 12$ cm.",
+    "d": 2,
+    "s": "Y9.12",
+    "diag": "calc"
+  },
+  {
+    "id": "h160",
+    "cat": "geometry",
+    "topic": "Congruence and Similarity",
+    "q": "Two similar solids have a length ratio of $2:5$. What is the ratio of their volumes?",
+    "o": [
+      "$4:25$",
+      "$8:125$",
+      "$2:5$",
+      "$4:10$"
+    ],
+    "a": 1,
+    "e": "Volume ratio $=$ (scale factor)$^3 = 2^3:5^3 = 8:125$.",
+    "d": 3,
+    "s": "Y9.12",
+    "diag": "calc"
+  },
+  {
+    "id": "h161",
+    "cat": "number",
+    "topic": "Real Numbers",
+    "q": "Which of the following is irrational?",
+    "o": [
+      "$\\frac{22}{7}$",
+      "$0.\\overline{3}$",
+      "$-4$",
+      "$\\sqrt{5}$"
+    ],
+    "a": 3,
+    "e": "$\\sqrt{5}$ cannot be expressed as a fraction of two integers, so it is irrational. $\\frac{22}{7}$ and $0.\\overline{3}$ are rational.",
+    "d": 1,
+    "s": "Y10.1",
+    "diag": "concept"
+  },
+  {
+    "id": "h162",
+    "cat": "number",
+    "topic": "Real Numbers",
+    "q": "Simplify $\\sqrt{50}$.",
+    "o": [
+      "$5\\sqrt{2}$",
+      "$25\\sqrt{2}$",
+      "$2\\sqrt{5}$",
+      "$10\\sqrt{5}$"
+    ],
+    "a": 0,
+    "e": "$\\sqrt{50} = \\sqrt{25 \\times 2} = 5\\sqrt{2}$.",
+    "d": 1,
+    "s": "Y10.1",
+    "diag": "calc"
+  },
+  {
+    "id": "h163",
+    "cat": "number",
+    "topic": "Real Numbers",
+    "q": "Simplify $2^3 \\times 2^{-5}$.",
+    "o": [
+      "$2^{-15}$",
+      "$2^{-2}$",
+      "$2^8$",
+      "$4^{-2}$"
+    ],
+    "a": 1,
+    "e": "Using the index law $a^m \\times a^n = a^{m+n}$: $2^3 \\times 2^{-5} = 2^{3+(-5)} = 2^{-2}$.",
+    "d": 2,
+    "s": "Y10.1",
+    "diag": "calc"
+  },
+  {
+    "id": "h164",
+    "cat": "number",
+    "topic": "Real Numbers",
+    "q": "Which statement is true about $\\sqrt{9} + \\sqrt{16}$?",
+    "o": [
+      "It equals $\\sqrt{25}$",
+      "It equals $\\sqrt{7}$",
+      "It equals $7$",
+      "It equals $5$"
+    ],
+    "a": 2,
+    "e": "$\\sqrt{9} + \\sqrt{16} = 3 + 4 = 7$. Note: $\\sqrt{a} + \\sqrt{b} \\neq \\sqrt{a+b}$.",
+    "d": 2,
+    "s": "Y10.1",
+    "diag": "concept"
+  },
+  {
+    "id": "h165",
+    "cat": "number",
+    "topic": "Real Numbers",
+    "q": "Rationalise the denominator of $\\frac{6}{\\sqrt{3}}$.",
+    "o": [
+      "$\\frac{6\\sqrt{3}}{9}$",
+      "$\\frac{\\sqrt{3}}{6}$",
+      "$6\\sqrt{3}$",
+      "$2\\sqrt{3}$"
+    ],
+    "a": 3,
+    "e": "$\\frac{6}{\\sqrt{3}} = \\frac{6}{\\sqrt{3}} \\times \\frac{\\sqrt{3}}{\\sqrt{3}} = \\frac{6\\sqrt{3}}{3} = 2\\sqrt{3}$.",
+    "d": 3,
+    "s": "Y10.1",
+    "diag": "calc"
+  },
+  {
+    "id": "h166",
+    "cat": "algebra",
+    "topic": "Algebraic Fractions",
+    "q": "Simplify $\\frac{6x^2}{3x}$.",
+    "o": [
+      "$3x$",
+      "$2x$",
+      "$2x^2$",
+      "$\\frac{x}{2}$"
+    ],
+    "a": 1,
+    "e": "$\\frac{6x^2}{3x} = \\frac{6}{3} \\times \\frac{x^2}{x} = 2x$.",
+    "d": 1,
+    "s": "Y10.2",
+    "diag": "calc"
+  },
+  {
+    "id": "h167",
+    "cat": "algebra",
+    "topic": "Algebraic Fractions",
+    "q": "Simplify $\\frac{x^2 - 4}{x + 2}$.",
+    "o": [
+      "$x + 2$",
+      "$x - 4$",
+      "$x - 2$",
+      "$x^2 - 2$"
+    ],
+    "a": 2,
+    "e": "$\\frac{x^2-4}{x+2} = \\frac{(x-2)(x+2)}{x+2} = x-2$.",
+    "d": 1,
+    "s": "Y10.2",
+    "diag": "calc"
+  },
+  {
+    "id": "h168",
+    "cat": "algebra",
+    "topic": "Algebraic Fractions",
+    "q": "Simplify $\\frac{2}{x} + \\frac{3}{x+1}$.",
+    "o": [
+      "$\\frac{5}{2x+1}$",
+      "$\\frac{5x}{x+1}$",
+      "$\\frac{5}{x(x+1)}$",
+      "$\\frac{5x+2}{x(x+1)}$"
+    ],
+    "a": 3,
+    "e": "$\\frac{2}{x}+\\frac{3}{x+1} = \\frac{2(x+1)+3x}{x(x+1)} = \\frac{5x+2}{x(x+1)}$.",
+    "d": 2,
+    "s": "Y10.2",
+    "diag": "calc"
+  },
+  {
+    "id": "h169",
+    "cat": "algebra",
+    "topic": "Algebraic Fractions",
+    "q": "Simplify $\\frac{x^2-9}{x^2+5x+6}$.",
+    "o": [
+      "$\\frac{x-3}{x+2}$",
+      "$\\frac{x+3}{x-2}$",
+      "$\\frac{x-3}{x+3}$",
+      "$\\frac{x+3}{x+2}$"
+    ],
+    "a": 0,
+    "e": "$\\frac{(x-3)(x+3)}{(x+2)(x+3)} = \\frac{x-3}{x+2}$.",
+    "d": 2,
+    "s": "Y10.2",
+    "diag": "calc"
+  },
+  {
+    "id": "h170",
+    "cat": "algebra",
+    "topic": "Algebraic Fractions",
+    "q": "Simplify $\\frac{\\frac{1}{x} + \\frac{1}{y}}{\\frac{1}{xy}}$.",
+    "o": [
+      "$\\frac{1}{x+y}$",
+      "$xy$",
+      "$x + y$",
+      "$\\frac{x+y}{xy}$"
+    ],
+    "a": 2,
+    "e": "Numerator: $\\frac{1}{x}+\\frac{1}{y}=\\frac{x+y}{xy}$. Dividing by $\\frac{1}{xy}$: $\\frac{x+y}{xy} \\times xy = x+y$.",
+    "d": 3,
+    "s": "Y10.2",
+    "diag": "calc"
+  },
+  {
+    "id": "h171",
+    "cat": "algebra",
+    "topic": "Quadratic Equations",
+    "q": "Solve $x^2 - 5x + 6 = 0$.",
+    "o": [
+      "$x=2$ or $x=3$",
+      "$x=-2$ or $x=-3$",
+      "$x=1$ or $x=6$",
+      "$x=-1$ or $x=-6$"
+    ],
+    "a": 0,
+    "e": "$x^2-5x+6=(x-2)(x-3)=0$, so $x=2$ or $x=3$.",
+    "d": 1,
+    "s": "Y10.3",
+    "diag": "calc"
+  },
+  {
+    "id": "h172",
+    "cat": "algebra",
+    "topic": "Quadratic Equations",
+    "q": "What is the discriminant of $2x^2 + 3x - 5 = 0$?",
+    "o": [
+      "$-31$",
+      "$49$",
+      "$19$",
+      "$-49$"
+    ],
+    "a": 1,
+    "e": "Discriminant $= b^2-4ac = 3^2 - 4(2)(-5) = 9+40 = 49$.",
+    "d": 1,
+    "s": "Y10.3",
+    "diag": "calc"
+  },
+  {
+    "id": "h173",
+    "cat": "algebra",
+    "topic": "Quadratic Equations",
+    "q": "Express $x^2 + 6x + 2$ in completed square form.",
+    "o": [
+      "$(x+3)^2 + 7$",
+      "$(x+6)^2 - 34$",
+      "$(x-3)^2 - 7$",
+      "$(x+3)^2 - 7$"
+    ],
+    "a": 3,
+    "e": "$x^2+6x+2 = (x+3)^2 - 9 + 2 = (x+3)^2 - 7$.",
+    "d": 2,
+    "s": "Y10.3",
+    "diag": "calc"
+  },
+  {
+    "id": "h174",
+    "cat": "algebra",
+    "topic": "Quadratic Equations",
+    "q": "If the discriminant of a quadratic equation is negative, the equation has:",
+    "o": [
+      "no real roots",
+      "two distinct real roots",
+      "two equal real roots",
+      "one positive root"
+    ],
+    "a": 0,
+    "e": "A negative discriminant means $b^2-4ac < 0$, so the quadratic has no real roots.",
+    "d": 2,
+    "s": "Y10.3",
+    "diag": "concept"
+  },
+  {
+    "id": "h175",
+    "cat": "algebra",
+    "topic": "Quadratic Equations",
+    "q": "Solve $3x^2 - 2x - 1 = 0$ using the quadratic formula.",
+    "o": [
+      "$x = -\\frac{1}{3}$ or $x = 1$",
+      "$x = \\frac{1}{3}$ or $x = -1$",
+      "$x = 3$ or $x = -1$",
+      "$x = \\frac{2}{3}$ or $x = -\\frac{1}{2}$"
+    ],
+    "a": 0,
+    "e": "$x = \\frac{2 \\pm \\sqrt{4+12}}{6} = \\frac{2 \\pm 4}{6}$, giving $x=1$ or $x=-\\frac{1}{3}$.",
+    "d": 3,
+    "s": "Y10.3",
+    "diag": "calc"
+  },
+  {
+    "id": "h176",
+    "cat": "algebra",
+    "topic": "Simultaneous Equations",
+    "q": "Solve: $x + y = 7$ and $x - y = 3$.",
+    "o": [
+      "$x=4, y=2$",
+      "$x=3, y=4$",
+      "$x=5, y=2$",
+      "$x=2, y=5$"
+    ],
+    "a": 2,
+    "e": "Adding: $2x=10$, so $x=5$. Then $y=7-5=2$.",
+    "d": 1,
+    "s": "Y10.4",
+    "diag": "calc"
+  },
+  {
+    "id": "h177",
+    "cat": "algebra",
+    "topic": "Simultaneous Equations",
+    "q": "Solve: $2x + 3y = 12$ and $4x - 3y = 6$.",
+    "o": [
+      "$x=2, y=\\frac{8}{3}$",
+      "$x=1, y=\\frac{10}{3}$",
+      "$x=3, y=2$",
+      "$x=4, y=\\frac{4}{3}$"
+    ],
+    "a": 2,
+    "e": "Adding: $6x=18$, so $x=3$. Then $3y=12-6=6$, $y=2$.",
+    "d": 1,
+    "s": "Y10.4",
+    "diag": "calc"
+  },
+  {
+    "id": "h178",
+    "cat": "algebra",
+    "topic": "Simultaneous Equations",
+    "q": "Solve: $y = x + 1$ and $x^2 + y^2 = 13$.",
+    "o": [
+      "$x=2, y=3$ or $x=-3, y=-2$",
+      "$x=3, y=2$ or $x=-2, y=-3$",
+      "$x=1, y=2$ or $x=-2, y=-1$",
+      "$x=-1, y=0$ or $x=3, y=4$"
+    ],
+    "a": 0,
+    "e": "Substituting: $x^2+(x+1)^2=13 \\Rightarrow 2x^2+2x-12=0 \\Rightarrow x^2+x-6=0 \\Rightarrow (x-2)(x+3)=0$.",
+    "d": 2,
+    "s": "Y10.4",
+    "diag": "calc"
+  },
+  {
+    "id": "h179",
+    "cat": "algebra",
+    "topic": "Simultaneous Equations",
+    "q": "Which method is most efficient for solving $y = 3x - 1$ and $2x + 5y = 9$?",
+    "o": [
+      "Elimination",
+      "Graphical",
+      "Substitution",
+      "Trial and improvement"
+    ],
+    "a": 2,
+    "e": "Since $y$ is already isolated, substitution is most efficient: replace $y$ with $3x-1$ in the second equation.",
+    "d": 2,
+    "s": "Y10.4",
+    "diag": "concept"
+  },
+  {
+    "id": "h180",
+    "cat": "algebra",
+    "topic": "Simultaneous Equations",
+    "q": "Solve: $y = x + 2$ and $y = x^2 - 4$.",
+    "o": [
+      "$x=3, y=5$ or $x=-2, y=0$",
+      "$x=2, y=4$ or $x=-1, y=1$",
+      "$x=0, y=2$ or $x=3, y=5$",
+      "$x=-2, y=0$ or $x=3, y=5$"
+    ],
+    "a": 3,
+    "e": "Setting equal: $x+2=x^2-4 \\Rightarrow x^2-x-6=0 \\Rightarrow (x-3)(x+2)=0$. So $x=3,y=5$ or $x=-2,y=0$.",
+    "d": 3,
+    "s": "Y10.4",
+    "diag": "calc"
+  },
+  {
+    "id": "h181",
+    "cat": "algebra",
+    "topic": "Functions",
+    "q": "If $f(x) = 3x - 2$, what is $f(4)$?",
+    "o": [
+      "$14$",
+      "$6$",
+      "$10$",
+      "$12$"
+    ],
+    "a": 2,
+    "e": "$f(4) = 3(4)-2 = 12-2 = 10$.",
+    "d": 1,
+    "s": "Y10.5",
+    "diag": "calc"
+  },
+  {
+    "id": "h182",
+    "cat": "algebra",
+    "topic": "Functions",
+    "q": "If $f(x) = x^2 + 1$, what is the range of $f$ for real values of $x$?",
+    "o": [
+      "$f(x) \\geq 0$",
+      "$f(x) \\geq 1$",
+      "All real numbers",
+      "$f(x) > 1$"
+    ],
+    "a": 1,
+    "e": "Since $x^2 \\geq 0$ for all real $x$, the minimum of $x^2+1$ is $1$, so the range is $f(x) \\geq 1$.",
+    "d": 2,
+    "s": "Y10.5",
+    "diag": "concept"
+  },
+  {
+    "id": "h183",
+    "cat": "algebra",
+    "topic": "Functions",
+    "q": "If $f(x) = 2x+1$ and $g(x) = x^2$, find $fg(3)$.",
+    "o": [
+      "$49$",
+      "$19$",
+      "$7$",
+      "$37$"
+    ],
+    "a": 1,
+    "e": "$fg(3) = f(g(3)) = f(9) = 2(9)+1 = 19$.",
+    "d": 2,
+    "s": "Y10.5",
+    "diag": "calc"
+  },
+  {
+    "id": "h184",
+    "cat": "algebra",
+    "topic": "Functions",
+    "q": "If $f(x) = 5x - 3$, find $f^{-1}(x)$.",
+    "o": [
+      "$\\frac{x-3}{5}$",
+      "$\\frac{x+3}{5}$",
+      "$5x+3$",
+      "$\\frac{3-x}{5}$"
+    ],
+    "a": 1,
+    "e": "Let $y=5x-3$. Then $x=\\frac{y+3}{5}$. So $f^{-1}(x) = \\frac{x+3}{5}$.",
+    "d": 1,
+    "s": "Y10.5",
+    "diag": "calc"
+  },
+  {
+    "id": "h185",
+    "cat": "algebra",
+    "topic": "Functions",
+    "q": "If $f(x) = \\frac{2x}{x-1}$, find $f^{-1}(x)$.",
+    "o": [
+      "$\\frac{x}{2-x}$",
+      "$\\frac{x-1}{2x}$",
+      "$\\frac{x}{x-2}$",
+      "$\\frac{2x}{x+1}$"
+    ],
+    "a": 2,
+    "e": "Let $y=\\frac{2x}{x-1}$. Then $y(x-1)=2x$, $yx-y=2x$, $yx-2x=y$, $x(y-2)=y$, $x=\\frac{y}{y-2}$. So $f^{-1}(x)=\\frac{x}{x-2}$.",
+    "d": 3,
+    "s": "Y10.5",
+    "diag": "calc"
+  },
+  {
+    "id": "h186",
+    "cat": "geometry",
+    "topic": "Further Trigonometry",
+    "q": "In triangle $ABC$, $a=8$, $A=30°$, $B=45°$. Using the sine rule, find $b$ to 1 d.p.",
+    "o": [
+      "$10.2$",
+      "$9.5$",
+      "$8.0$",
+      "$11.3$"
+    ],
+    "a": 3,
+    "e": "$\\frac{a}{\\sin A} = \\frac{b}{\\sin B}$. $\\frac{8}{\\sin 30°} = \\frac{b}{\\sin 45°}$. $b = \\frac{8 \\times \\sin 45°}{\\sin 30°} = \\frac{8 \\times 0.7071}{0.5} = 11.3$.",
+    "d": 2,
+    "s": "Y10.6",
+    "diag": "calc"
+  },
+  {
+    "id": "h187",
+    "cat": "geometry",
+    "topic": "Further Trigonometry",
+    "q": "The formula for the area of a triangle using trigonometry is:",
+    "o": [
+      "$\\frac{1}{2}ab\\cos C$",
+      "$ab\\sin C$",
+      "$\\frac{1}{2}ab\\sin C$",
+      "$\\frac{1}{2}ab\\tan C$"
+    ],
+    "a": 2,
+    "e": "The area of a triangle is $\\frac{1}{2}ab\\sin C$ where $a$, $b$ are two sides and $C$ is the included angle.",
+    "d": 1,
+    "s": "Y10.6",
+    "diag": "vocab"
+  },
+  {
+    "id": "h188",
+    "cat": "geometry",
+    "topic": "Further Trigonometry",
+    "q": "In triangle $PQR$, $p=5$, $q=7$, $R=60°$. Find $r$ using the cosine rule.",
+    "o": [
+      "$\\sqrt{74}$",
+      "$\\sqrt{39}$",
+      "$\\sqrt{109}$",
+      "$\\sqrt{59}$"
+    ],
+    "a": 1,
+    "e": "$r^2 = p^2+q^2-2pq\\cos R = 25+49-2(5)(7)\\cos 60° = 74-70(0.5) = 74-35 = 39$. So $r=\\sqrt{39}$.",
+    "d": 2,
+    "s": "Y10.6",
+    "diag": "calc"
+  },
+  {
+    "id": "h189",
+    "cat": "geometry",
+    "topic": "Further Trigonometry",
+    "q": "Find the area of a triangle with sides $a=6$ cm, $b=10$ cm and included angle $C=30°$.",
+    "o": [
+      "$15$ cm²",
+      "$60$ cm²",
+      "$30$ cm²",
+      "$20$ cm²"
+    ],
+    "a": 0,
+    "e": "Area $= \\frac{1}{2}(6)(10)\\sin 30° = 30 \\times 0.5 = 15$ cm².",
+    "d": 1,
+    "s": "Y10.6",
+    "diag": "calc"
+  },
+  {
+    "id": "h190",
+    "cat": "geometry",
+    "topic": "Further Trigonometry",
+    "q": "A ship sails from $A$ on a bearing of $040°$ for $12$ km to $B$, then on a bearing of $130°$ for $9$ km to $C$. Find angle $ABC$.",
+    "o": [
+      "$70°$",
+      "$110°$",
+      "$90°$",
+      "$130°$"
+    ],
+    "a": 2,
+    "e": "The angle between the reverse bearing at $B$ (i.e. $040°+180°=220°$) and the bearing $130°$ is $220°-130°=90°$.",
+    "d": 3,
+    "s": "Y10.6",
+    "diag": "logic"
+  },
+  {
+    "id": "h191",
+    "cat": "geometry",
+    "topic": "Circles",
+    "q": "A tangent to a circle meets the radius at the point of tangency. What angle do they form?",
+    "o": [
+      "$45°$",
+      "$60°$",
+      "$180°$",
+      "$90°$"
+    ],
+    "a": 3,
+    "e": "A tangent to a circle is always perpendicular to the radius at the point of tangency, forming a $90°$ angle.",
+    "d": 1,
+    "s": "Y10.7",
+    "diag": "concept"
+  },
+  {
+    "id": "h192",
+    "cat": "geometry",
+    "topic": "Circles",
+    "q": "An arc of a circle with radius $10$ cm subtends an angle of $72°$ at the centre. Find the arc length.",
+    "o": [
+      "$4\\pi$ cm",
+      "$2\\pi$ cm",
+      "$20\\pi$ cm",
+      "$36\\pi$ cm"
+    ],
+    "a": 0,
+    "e": "Arc length $= \\frac{72}{360} \\times 2\\pi(10) = \\frac{1}{5} \\times 20\\pi = 4\\pi$ cm.",
+    "d": 1,
+    "s": "Y10.7",
+    "diag": "calc"
+  },
+  {
+    "id": "h193",
+    "cat": "geometry",
+    "topic": "Circles",
+    "q": "An angle at the centre of a circle is $140°$. What is the angle at the circumference subtended by the same arc?",
+    "o": [
+      "$140°$",
+      "$70°$",
+      "$280°$",
+      "$35°$"
+    ],
+    "a": 1,
+    "e": "The angle at the circumference is half the angle at the centre: $\\frac{140°}{2} = 70°$.",
+    "d": 2,
+    "s": "Y10.7",
+    "diag": "concept"
+  },
+  {
+    "id": "h194",
+    "cat": "geometry",
+    "topic": "Circles",
+    "q": "Find the area of a sector with radius $6$ cm and angle $120°$.",
+    "o": [
+      "$6\\pi$ cm²",
+      "$12\\pi$ cm²",
+      "$36\\pi$ cm²",
+      "$24\\pi$ cm²"
+    ],
+    "a": 1,
+    "e": "Sector area $= \\frac{120}{360} \\times \\pi(6)^2 = \\frac{1}{3} \\times 36\\pi = 12\\pi$ cm².",
+    "d": 2,
+    "s": "Y10.7",
+    "diag": "calc"
+  },
+  {
+    "id": "h195",
+    "cat": "geometry",
+    "topic": "Circles",
+    "q": "Points $A$, $B$, $C$, $D$ lie on a circle. If $\\angle ABC = 85°$, what is $\\angle ADC$?",
+    "o": [
+      "$85°$",
+      "$170°$",
+      "$95°$",
+      "$42.5°$"
+    ],
+    "a": 2,
+    "e": "Opposite angles in a cyclic quadrilateral sum to $180°$. So $\\angle ADC = 180° - 85° = 95°$.",
+    "d": 3,
+    "s": "Y10.7",
+    "diag": "logic"
+  },
+  {
+    "id": "h196",
+    "cat": "geometry",
+    "topic": "Practice with Constructions",
+    "q": "To construct a perpendicular bisector of a line segment, you need:",
+    "o": [
+      "A compass and straight edge",
+      "A ruler only",
+      "A protractor and ruler",
+      "A set square only"
+    ],
+    "a": 0,
+    "e": "A perpendicular bisector is constructed using a compass (to draw arcs from both endpoints) and a straight edge.",
+    "d": 1,
+    "s": "Y10.8",
+    "diag": "vocab"
+  },
+  {
+    "id": "h197",
+    "cat": "geometry",
+    "topic": "Practice with Constructions",
+    "q": "A map has a scale of $1:25000$. A distance of $8$ cm on the map represents:",
+    "o": [
+      "$200$ m",
+      "$2$ km",
+      "$20$ km",
+      "$0.2$ km"
+    ],
+    "a": 1,
+    "e": "$8 \\times 25000 = 200000$ cm $= 2000$ m $= 2$ km.",
+    "d": 1,
+    "s": "Y10.8",
+    "diag": "calc"
+  },
+  {
+    "id": "h198",
+    "cat": "geometry",
+    "topic": "Practice with Constructions",
+    "q": "The locus of points equidistant from two fixed points $A$ and $B$ is:",
+    "o": [
+      "A circle centred at $A$",
+      "A straight line through $A$ and $B$",
+      "An arc from $A$ to $B$",
+      "The perpendicular bisector of $AB$"
+    ],
+    "a": 3,
+    "e": "The set of all points equidistant from two fixed points is the perpendicular bisector of the segment joining them.",
+    "d": 2,
+    "s": "Y10.8",
+    "diag": "concept"
+  },
+  {
+    "id": "h199",
+    "cat": "geometry",
+    "topic": "Practice with Constructions",
+    "q": "A bearing is always measured:",
+    "o": [
+      "Clockwise from North",
+      "Anticlockwise from East",
+      "Anticlockwise from North",
+      "Clockwise from East"
+    ],
+    "a": 0,
+    "e": "Bearings are always measured clockwise from North, given as three-figure values.",
+    "d": 2,
+    "s": "Y10.8",
+    "diag": "vocab"
+  },
+  {
+    "id": "h200",
+    "cat": "geometry",
+    "topic": "Practice with Constructions",
+    "q": "The locus of points that are $3$ cm from a given straight line consists of:",
+    "o": [
+      "A single straight line",
+      "Two parallel lines, one on each side",
+      "A circle of radius $3$ cm",
+      "A semicircle"
+    ],
+    "a": 1,
+    "e": "The locus of points at a fixed distance from a line is two parallel lines, one on each side of the given line.",
+    "d": 3,
+    "s": "Y10.8",
+    "diag": "concept"
+  },
+  {
+    "id": "h201",
+    "cat": "geometry",
+    "topic": "Congruence and Similarity",
+    "q": "Two triangles are similar. The ratio of their corresponding sides is $2:5$. What is the ratio of their areas?",
+    "o": [
+      "$2:5$",
+      "$4:10$",
+      "$4:25$",
+      "$8:125$"
+    ],
+    "a": 2,
+    "e": "For similar shapes, the area ratio is the square of the length ratio: $(2)^2:(5)^2 = 4:25$.",
+    "d": 1,
+    "s": "Y10.9",
+    "diag": "calc"
+  },
+  {
+    "id": "h202",
+    "cat": "geometry",
+    "topic": "Congruence and Similarity",
+    "q": "Which condition does NOT prove two triangles are congruent?",
+    "o": [
+      "SSS",
+      "AAA",
+      "SAS",
+      "RHS"
+    ],
+    "a": 1,
+    "e": "AAA (angle-angle-angle) proves similarity but not congruence, as the triangles could be different sizes.",
+    "d": 1,
+    "s": "Y10.9",
+    "diag": "concept"
+  },
+  {
+    "id": "h203",
+    "cat": "geometry",
+    "topic": "Congruence and Similarity",
+    "q": "Two similar cylinders have heights $6$ cm and $9$ cm. If the volume of the smaller is $48$ cm³, find the volume of the larger.",
+    "o": [
+      "$72$ cm³",
+      "$108$ cm³",
+      "$216$ cm³",
+      "$162$ cm³"
+    ],
+    "a": 3,
+    "e": "Scale factor $= \\frac{9}{6} = 1.5$. Volume ratio $= 1.5^3 = 3.375$. Volume $= 48 \\times 3.375 = 162$ cm³.",
+    "d": 2,
+    "s": "Y10.9",
+    "diag": "calc"
+  },
+  {
+    "id": "h204",
+    "cat": "geometry",
+    "topic": "Congruence and Similarity",
+    "q": "Triangle $ABC$ is similar to triangle $DEF$. If $AB=4$, $DE=6$, and the area of $ABC$ is $20$ cm², what is the area of $DEF$?",
+    "o": [
+      "$30$ cm²",
+      "$60$ cm²",
+      "$45$ cm²",
+      "$40$ cm²"
+    ],
+    "a": 2,
+    "e": "Scale factor $= \\frac{6}{4} = 1.5$. Area ratio $= 1.5^2 = 2.25$. Area of $DEF = 20 \\times 2.25 = 45$ cm².",
+    "d": 2,
+    "s": "Y10.9",
+    "diag": "calc"
+  },
+  {
+    "id": "h205",
+    "cat": "geometry",
+    "topic": "Congruence and Similarity",
+    "q": "Two similar solids have surface areas $50$ cm² and $200$ cm². What is the ratio of their volumes?",
+    "o": [
+      "$1:4$",
+      "$1:16$",
+      "$1:8$",
+      "$1:2$"
+    ],
+    "a": 2,
+    "e": "Surface area ratio $= 50:200 = 1:4$. Length ratio $= 1:2$ (square root). Volume ratio $= 1^3:2^3 = 1:8$.",
+    "d": 3,
+    "s": "Y10.9",
+    "diag": "logic"
+  },
+  {
+    "id": "h206",
+    "cat": "geometry",
+    "topic": "Transformations",
+    "q": "A shape is reflected in the line $y = x$. The point $(3, 1)$ maps to:",
+    "o": [
+      "$(1, 3)$",
+      "$(-3, 1)$",
+      "$(3, -1)$",
+      "$(-1, -3)$"
+    ],
+    "a": 0,
+    "e": "Reflection in $y=x$ swaps the coordinates: $(3,1) \\to (1,3)$.",
+    "d": 1,
+    "s": "Y10.10",
+    "diag": "calc"
+  },
+  {
+    "id": "h207",
+    "cat": "geometry",
+    "topic": "Transformations",
+    "q": "A rotation of $90°$ clockwise about the origin maps $(2, 5)$ to:",
+    "o": [
+      "$(-5, 2)$",
+      "$(-2, -5)$",
+      "$(5, -2)$",
+      "$(5, 2)$"
+    ],
+    "a": 2,
+    "e": "$90°$ clockwise rotation about origin: $(x,y) \\to (y,-x)$. So $(2,5) \\to (5,-2)$.",
+    "d": 1,
+    "s": "Y10.10",
+    "diag": "calc"
+  },
+  {
+    "id": "h208",
+    "cat": "geometry",
+    "topic": "Transformations",
+    "q": "A shape is enlarged by scale factor $-2$ from centre $(1, 1)$. The point $(3, 2)$ maps to:",
+    "o": [
+      "$(-3, -1)$",
+      "$(5, 4)$",
+      "$(-5, -2)$",
+      "$(-1, 0)$"
+    ],
+    "a": 0,
+    "e": "Vector from centre to point: $(2,1)$. Multiply by $-2$: $(-4,-2)$. New point: $(1-4, 1-2) = (-3,-1)$.",
+    "d": 2,
+    "s": "Y10.10",
+    "diag": "calc"
+  },
+  {
+    "id": "h209",
+    "cat": "geometry",
+    "topic": "Transformations",
+    "q": "Which transformation preserves both shape and size?",
+    "o": [
+      "Enlargement with scale factor $2$",
+      "Enlargement with scale factor $-1$",
+      "Enlargement with scale factor $\\frac{1}{2}$",
+      "Translation"
+    ],
+    "a": 3,
+    "e": "Translation moves every point the same distance and direction, preserving both shape and size (an isometry).",
+    "d": 2,
+    "s": "Y10.10",
+    "diag": "concept"
+  },
+  {
+    "id": "h210",
+    "cat": "geometry",
+    "topic": "Transformations",
+    "q": "Triangle $A$ is reflected in the $x$-axis then reflected in the $y$-axis. This is equivalent to:",
+    "o": [
+      "A translation",
+      "A rotation of $180°$ about the origin",
+      "A reflection in $y=x$",
+      "A rotation of $90°$ about the origin"
+    ],
+    "a": 1,
+    "e": "Reflecting in the $x$-axis then the $y$-axis gives $(x,y) \\to (x,-y) \\to (-x,-y)$, which is a $180°$ rotation about the origin.",
+    "d": 3,
+    "s": "Y10.10",
+    "diag": "logic"
+  },
+  {
+    "id": "h211",
+    "cat": "probability",
+    "topic": "Probability",
+    "q": "A bag contains $3$ red and $5$ blue balls. Two are drawn without replacement. What is $P(\\text{both red})$?",
+    "o": [
+      "$\\frac{9}{64}$",
+      "$\\frac{3}{8}$",
+      "$\\frac{6}{56}$",
+      "$\\frac{3}{28}$"
+    ],
+    "a": 3,
+    "e": "$P(\\text{both red}) = \\frac{3}{8} \\times \\frac{2}{7} = \\frac{6}{56} = \\frac{3}{28}$.",
+    "d": 2,
+    "s": "Y10.11",
+    "diag": "calc"
+  },
+  {
+    "id": "h212",
+    "cat": "probability",
+    "topic": "Probability",
+    "q": "Events $A$ and $B$ are independent. $P(A)=0.4$ and $P(B)=0.3$. Find $P(A \\text{ and } B)$.",
+    "o": [
+      "$0.12$",
+      "$0.1$",
+      "$0.7$",
+      "$0.07$"
+    ],
+    "a": 0,
+    "e": "For independent events, $P(A \\cap B) = P(A) \\times P(B) = 0.4 \\times 0.3 = 0.12$.",
+    "d": 1,
+    "s": "Y10.11",
+    "diag": "calc"
+  },
+  {
+    "id": "h213",
+    "cat": "probability",
+    "topic": "Probability",
+    "q": "In a Venn diagram, $P(A)=0.5$, $P(B)=0.4$, $P(A \\cap B)=0.2$. Find $P(A \\cup B)$.",
+    "o": [
+      "$0.9$",
+      "$0.3$",
+      "$0.1$",
+      "$0.7$"
+    ],
+    "a": 3,
+    "e": "$P(A \\cup B) = P(A)+P(B)-P(A \\cap B) = 0.5+0.4-0.2 = 0.7$.",
+    "d": 1,
+    "s": "Y10.11",
+    "diag": "calc"
+  },
+  {
+    "id": "h214",
+    "cat": "probability",
+    "topic": "Probability",
+    "q": "A coin is biased with $P(\\text{Head})=0.6$. It is tossed 3 times. What is the probability of getting exactly 2 Heads?",
+    "o": [
+      "$0.432$",
+      "$0.36$",
+      "$0.288$",
+      "$0.216$"
+    ],
+    "a": 0,
+    "e": "$P(\\text{2H}) = \\binom{3}{2}(0.6)^2(0.4)^1 = 3 \\times 0.36 \\times 0.4 = 0.432$.",
+    "d": 2,
+    "s": "Y10.11",
+    "diag": "calc"
+  },
+  {
+    "id": "h215",
+    "cat": "probability",
+    "topic": "Probability",
+    "q": "$P(A|B) = 0.5$ and $P(B) = 0.6$. Find $P(A \\cap B)$.",
+    "o": [
+      "$0.83$",
+      "$0.3$",
+      "$1.1$",
+      "$0.12$"
+    ],
+    "a": 1,
+    "e": "$P(A|B) = \\frac{P(A \\cap B)}{P(B)}$, so $P(A \\cap B) = 0.5 \\times 0.6 = 0.3$.",
+    "d": 3,
+    "s": "Y10.11",
+    "diag": "calc"
+  },
+  {
+    "id": "h216",
+    "cat": "geometry",
+    "topic": "3D Geometry",
+    "q": "What is the volume of a sphere with radius $3$ cm?",
+    "o": [
+      "$27\\pi$ cm³",
+      "$12\\pi$ cm³",
+      "$108\\pi$ cm³",
+      "$36\\pi$ cm³"
+    ],
+    "a": 3,
+    "e": "$V = \\frac{4}{3}\\pi r^3 = \\frac{4}{3}\\pi(27) = 36\\pi$ cm³.",
+    "d": 1,
+    "s": "Y10.12",
+    "diag": "calc"
+  },
+  {
+    "id": "h217",
+    "cat": "geometry",
+    "topic": "3D Geometry",
+    "q": "A cone has radius $4$ cm and height $9$ cm. What is its volume?",
+    "o": [
+      "$144\\pi$ cm³",
+      "$48\\pi$ cm³",
+      "$36\\pi$ cm³",
+      "$108\\pi$ cm³"
+    ],
+    "a": 1,
+    "e": "$V = \\frac{1}{3}\\pi r^2 h = \\frac{1}{3}\\pi(16)(9) = 48\\pi$ cm³.",
+    "d": 1,
+    "s": "Y10.12",
+    "diag": "calc"
+  },
+  {
+    "id": "h218",
+    "cat": "geometry",
+    "topic": "3D Geometry",
+    "q": "The surface area of a sphere with radius $r$ is:",
+    "o": [
+      "$2\\pi r^2$",
+      "$\\frac{4}{3}\\pi r^3$",
+      "$\\pi r^2$",
+      "$4\\pi r^2$"
+    ],
+    "a": 3,
+    "e": "The surface area of a sphere is $4\\pi r^2$.",
+    "d": 2,
+    "s": "Y10.12",
+    "diag": "vocab"
+  },
+  {
+    "id": "h219",
+    "cat": "geometry",
+    "topic": "3D Geometry",
+    "q": "A pyramid has a square base of side $6$ cm and height $10$ cm. Find its volume.",
+    "o": [
+      "$360$ cm³",
+      "$180$ cm³",
+      "$60$ cm³",
+      "$120$ cm³"
+    ],
+    "a": 3,
+    "e": "$V = \\frac{1}{3} \\times 6^2 \\times 10 = \\frac{1}{3} \\times 360 = 120$ cm³.",
+    "d": 2,
+    "s": "Y10.12",
+    "diag": "calc"
+  },
+  {
+    "id": "h220",
+    "cat": "geometry",
+    "topic": "3D Geometry",
+    "q": "A hemisphere of radius $5$ cm sits on top of a cylinder of radius $5$ cm and height $8$ cm. What is the total volume?",
+    "o": [
+      "$\\frac{250}{3}\\pi + 200\\pi$",
+      "$\\frac{500}{3}\\pi + 200\\pi$",
+      "$250\\pi + 200\\pi$",
+      "$\\frac{200}{3}\\pi + 250\\pi$"
+    ],
+    "a": 0,
+    "e": "Hemisphere: $\\frac{2}{3}\\pi(125)=\\frac{250}{3}\\pi$. Cylinder: $\\pi(25)(8)=200\\pi$. Total: $\\frac{250}{3}\\pi + 200\\pi$.",
+    "d": 3,
+    "s": "Y10.12",
+    "diag": "calc"
+  },
+  {
+    "id": "h221",
+    "cat": "number",
+    "topic": "Estimation & Bounds",
+    "q": "A length is measured as $12.4$ cm to 1 decimal place. What is the upper bound?",
+    "o": [
+      "$12.5$ cm",
+      "$12.45$ cm",
+      "$12.49$ cm",
+      "$12.44$ cm"
+    ],
+    "a": 1,
+    "e": "To 1 d.p., the upper bound is $12.4 + 0.05 = 12.45$ cm.",
+    "d": 1,
+    "s": "Y11.1",
+    "diag": "concept"
+  },
+  {
+    "id": "h222",
+    "cat": "number",
+    "topic": "Estimation & Bounds",
+    "q": "A mass is $3.6$ kg, correct to 1 decimal place. What is the error interval?",
+    "o": [
+      "$3.55 \\leq m < 3.65$",
+      "$3.5 \\leq m < 3.7$",
+      "$3.55 < m < 3.65$",
+      "$3.6 \\leq m \\leq 3.65$"
+    ],
+    "a": 0,
+    "e": "To 1 d.p., the error interval is $3.55 \\leq m < 3.65$.",
+    "d": 1,
+    "s": "Y11.1",
+    "diag": "concept"
+  },
+  {
+    "id": "h223",
+    "cat": "number",
+    "topic": "Estimation & Bounds",
+    "q": "$a = 5.0$ correct to 1 d.p. and $b = 3.0$ correct to 1 d.p. What is the upper bound of $a + b$?",
+    "o": [
+      "$8.0$",
+      "$8.05$",
+      "$8.1$",
+      "$8.10$"
+    ],
+    "a": 3,
+    "e": "Upper bounds: $a < 5.05$, $b < 3.05$. Upper bound of $a + b$ is $5.05 + 3.05 = 8.10$.",
+    "d": 2,
+    "s": "Y11.1",
+    "diag": "calc"
+  },
+  {
+    "id": "h224",
+    "cat": "number",
+    "topic": "Estimation & Bounds",
+    "q": "$p = 8.2$ correct to 1 d.p. and $q = 2.5$ correct to 1 d.p. What is the lower bound of $\\frac{p}{q}$?",
+    "o": [
+      "$\\frac{8.25}{2.45}$",
+      "$\\frac{8.15}{2.45}$",
+      "$\\frac{8.25}{2.55}$",
+      "$\\frac{8.15}{2.55}$"
+    ],
+    "a": 3,
+    "e": "Lower bound of $\\frac{p}{q}$ uses lower bound of $p$ ($8.15$) and upper bound of $q$ ($2.55$): $\\frac{8.15}{2.55}$.",
+    "d": 2,
+    "s": "Y11.1",
+    "diag": "calc"
+  },
+  {
+    "id": "h225",
+    "cat": "number",
+    "topic": "Estimation & Bounds",
+    "q": "The side of a square is $6.0$ cm to 2 significant figures. What is the lower bound of the area?",
+    "o": [
+      "$35.4025$ cm$^2$",
+      "$36$ cm$^2$",
+      "$34.2225$ cm$^2$",
+      "$30.25$ cm$^2$"
+    ],
+    "a": 2,
+    "e": "Lower bound of side is $5.85$ cm. Lower bound of area is $5.85^2 = 34.2225$ cm$^2$.",
+    "d": 3,
+    "s": "Y11.1",
+    "diag": "calc"
+  },
+  {
+    "id": "h226",
+    "cat": "number",
+    "topic": "Set Notation & Venn Diagrams",
+    "q": "If $\\mathcal{U} = \\{1,2,3,4,5,6,7,8\\}$ and $A = \\{2,4,6,8\\}$, what is $A'$?",
+    "o": [
+      "$\\{1,3,5,7\\}$",
+      "$\\{2,4,6,8\\}$",
+      "$\\{1,2,3,4\\}$",
+      "$\\emptyset$"
+    ],
+    "a": 0,
+    "e": "$A'$ is the complement of $A$: all elements in $\\mathcal{U}$ not in $A$, which is $\\{1,3,5,7\\}$.",
+    "d": 1,
+    "s": "Y11.2",
+    "diag": "concept"
+  },
+  {
+    "id": "h227",
+    "cat": "number",
+    "topic": "Set Notation & Venn Diagrams",
+    "q": "Which symbol means '$x$ is an element of set $B$'?",
+    "o": [
+      "$x \\subset B$",
+      "$x \\cup B$",
+      "$x \\cap B$",
+      "$x \\in B$"
+    ],
+    "a": 3,
+    "e": "The symbol $\\in$ means 'is an element of'.",
+    "d": 1,
+    "s": "Y11.2",
+    "diag": "vocab"
+  },
+  {
+    "id": "h228",
+    "cat": "number",
+    "topic": "Set Notation & Venn Diagrams",
+    "q": "In a Venn diagram, $n(A) = 15$, $n(B) = 12$, $n(A \\cap B) = 5$. What is $n(A \\cup B)$?",
+    "o": [
+      "$27$",
+      "$22$",
+      "$32$",
+      "$20$"
+    ],
+    "a": 1,
+    "e": "$n(A \\cup B) = n(A) + n(B) - n(A \\cap B) = 15 + 12 - 5 = 22$.",
+    "d": 2,
+    "s": "Y11.2",
+    "diag": "calc"
+  },
+  {
+    "id": "h229",
+    "cat": "number",
+    "topic": "Set Notation & Venn Diagrams",
+    "q": "If $A \\subset B$, which statement is always true?",
+    "o": [
+      "$A \\cap B = B$",
+      "$A \\cup B = A$",
+      "$A \\cap B = A$",
+      "$A' = B'$"
+    ],
+    "a": 2,
+    "e": "If $A \\subset B$, then every element of $A$ is in $B$, so $A \\cap B = A$.",
+    "d": 2,
+    "s": "Y11.2",
+    "diag": "logic"
+  },
+  {
+    "id": "h230",
+    "cat": "number",
+    "topic": "Set Notation & Venn Diagrams",
+    "q": "In a group of 40 students, 25 study French, 18 study Spanish, and 8 study neither. How many study both?",
+    "o": [
+      "$7$",
+      "$11$",
+      "$3$",
+      "$15$"
+    ],
+    "a": 1,
+    "e": "Students studying at least one: $40 - 8 = 32$. Both $= 25 + 18 - 32 = 11$.",
+    "d": 3,
+    "s": "Y11.2",
+    "diag": "calc"
+  },
+  {
+    "id": "h231",
+    "cat": "algebra",
+    "topic": "Simultaneous Equations",
+    "q": "Solve $y = x + 1$ and $y = x^2 - 2x - 3$. What are the $x$-values of the solutions?",
+    "o": [
+      "$x = -1$ and $x = 4$",
+      "$x = 2$ and $x = -2$",
+      "$x = 1$ and $x = -4$",
+      "$x = 3$ and $x = -1$"
+    ],
+    "a": 0,
+    "e": "Substitute: $x + 1 = x^2 - 2x - 3$, so $x^2 - 3x - 4 = 0$, $(x-4)(x+1) = 0$, giving $x = -1$ or $x = 4$.",
+    "d": 2,
+    "s": "Y11.3",
+    "diag": "calc"
+  },
+  {
+    "id": "h232",
+    "cat": "algebra",
+    "topic": "Simultaneous Equations",
+    "q": "Solve $y = 2x$ and $x^2 + y^2 = 20$. Find the positive solution for $x$.",
+    "o": [
+      "$2$",
+      "$4$",
+      "$1$",
+      "$\\sqrt{5}$"
+    ],
+    "a": 0,
+    "e": "Substitute $y=2x$: $x^2 + 4x^2 = 20$, so $5x^2=20$, $x^2=4$, $x=2$ (positive).",
+    "d": 1,
+    "s": "Y11.3",
+    "diag": "calc"
+  },
+  {
+    "id": "h233",
+    "cat": "algebra",
+    "topic": "Simultaneous Equations",
+    "q": "When solving one linear and one quadratic equation simultaneously, what is the maximum number of solution pairs?",
+    "o": [
+      "$1$",
+      "$3$",
+      "$4$",
+      "$2$"
+    ],
+    "a": 3,
+    "e": "A line can intersect a quadratic curve at most $2$ points, giving at most $2$ solution pairs.",
+    "d": 1,
+    "s": "Y11.3",
+    "diag": "concept"
+  },
+  {
+    "id": "h234",
+    "cat": "algebra",
+    "topic": "Simultaneous Equations",
+    "q": "Solve $x + y + z = 10$, $x - y = 2$, $y + z = 5$. What is $x$?",
+    "o": [
+      "$3$",
+      "$7$",
+      "$4$",
+      "$5$"
+    ],
+    "a": 3,
+    "e": "From $y + z = 5$ and $x + y + z = 10$: $x = 5$.",
+    "d": 2,
+    "s": "Y11.3",
+    "diag": "calc"
+  },
+  {
+    "id": "h235",
+    "cat": "algebra",
+    "topic": "Simultaneous Equations",
+    "q": "The line $y = mx - 1$ is tangent to $y = x^2$. What is $m$?",
+    "o": [
+      "$1$",
+      "$\\pm 2$",
+      "$-2$",
+      "$4$"
+    ],
+    "a": 1,
+    "e": "Set $x^2 = mx - 1$, so $x^2 - mx + 1 = 0$. Tangent means discriminant $= 0$: $m^2 - 4 = 0$, so $m = \\pm 2$.",
+    "d": 3,
+    "s": "Y11.3",
+    "diag": "logic"
+  },
+  {
+    "id": "h236",
+    "cat": "algebra",
+    "topic": "Quadratic Sequences",
+    "q": "A sequence has terms $3, 8, 15, 24, \\ldots$ What is the second difference?",
+    "o": [
+      "$2$",
+      "$5$",
+      "$3$",
+      "$4$"
+    ],
+    "a": 0,
+    "e": "First differences: $5, 7, 9, \\ldots$ Second differences: $2, 2, \\ldots$ The second difference is $2$.",
+    "d": 1,
+    "s": "Y11.4",
+    "diag": "calc"
+  },
+  {
+    "id": "h237",
+    "cat": "algebra",
+    "topic": "Quadratic Sequences",
+    "q": "The $n$th term of a quadratic sequence is $an^2 + bn + c$. If the second difference is $6$, what is $a$?",
+    "o": [
+      "$6$",
+      "$2$",
+      "$3$",
+      "$1$"
+    ],
+    "a": 2,
+    "e": "For a quadratic $an^2+bn+c$, the second difference $= 2a$. So $2a=6$, hence $a=3$.",
+    "d": 1,
+    "s": "Y11.4",
+    "diag": "concept"
+  },
+  {
+    "id": "h238",
+    "cat": "algebra",
+    "topic": "Quadratic Sequences",
+    "q": "Find the $n$th term of $2, 6, 12, 20, 30, \\ldots$",
+    "o": [
+      "$n^2 + n$",
+      "$n^2 + 2$",
+      "$2n^2$",
+      "$n^2 + 2n - 1$"
+    ],
+    "a": 0,
+    "e": "First differences: $4,6,8,10$. Second difference: $2$, so $a=1$. $n^2$ gives $1,4,9,16,25$. Subtract: $1,2,3,4,5 = n$. So $n$th term $= n^2 + n$.",
+    "d": 2,
+    "s": "Y11.4",
+    "diag": "calc"
+  },
+  {
+    "id": "h239",
+    "cat": "algebra",
+    "topic": "Quadratic Sequences",
+    "q": "The $n$th term of a sequence is $2n^2 - 3n + 1$. What is the 5th term?",
+    "o": [
+      "$26$",
+      "$36$",
+      "$46$",
+      "$31$"
+    ],
+    "a": 1,
+    "e": "$2(25) - 3(5) + 1 = 50 - 15 + 1 = 36$.",
+    "d": 2,
+    "s": "Y11.4",
+    "diag": "calc"
+  },
+  {
+    "id": "h240",
+    "cat": "algebra",
+    "topic": "Quadratic Sequences",
+    "q": "A quadratic sequence starts $0, 5, 14, 27, 44, \\ldots$ Find the $n$th term.",
+    "o": [
+      "$2n^2 + n - 3$",
+      "$2n^2 + 3n - 5$",
+      "$2n^2 - n - 1$",
+      "$2n^2 - 3n + 1$"
+    ],
+    "a": 2,
+    "e": "First differences: $5,9,13,17$. Second difference: $4$, so $a=2$. $2n^2$: $2,8,18,32,50$. Subtract from sequence: $-2,-3,-4,-5,-6$, which is $-n-1$. So $n$th term $= 2n^2 - n - 1$. Check: $n=1$: $2-1-1=0$; $n=2$: $8-2-1=5$; $n=3$: $18-3-1=14$. All correct.",
+    "d": 3,
+    "s": "Y11.4",
+    "diag": "calc"
+  },
+  {
+    "id": "h241",
+    "cat": "algebra",
+    "topic": "Functions",
+    "q": "$f(x) = 3x - 2$. Find $f^{-1}(x)$.",
+    "o": [
+      "$\\frac{x-2}{3}$",
+      "$\\frac{x+2}{3}$",
+      "$3x+2$",
+      "$\\frac{2-x}{3}$"
+    ],
+    "a": 1,
+    "e": "Let $y = 3x-2$. Then $x = \\frac{y+2}{3}$. So $f^{-1}(x) = \\frac{x+2}{3}$.",
+    "d": 1,
+    "s": "Y11.5",
+    "diag": "calc"
+  },
+  {
+    "id": "h242",
+    "cat": "algebra",
+    "topic": "Functions",
+    "q": "$f(x) = x^2 + 1$ and $g(x) = 2x$. Find $fg(3)$.",
+    "o": [
+      "$19$",
+      "$20$",
+      "$37$",
+      "$7$"
+    ],
+    "a": 2,
+    "e": "$g(3) = 6$. $fg(3) = f(6) = 36 + 1 = 37$.",
+    "d": 1,
+    "s": "Y11.5",
+    "diag": "calc"
+  },
+  {
+    "id": "h243",
+    "cat": "algebra",
+    "topic": "Functions",
+    "q": "$f(x) = \\frac{1}{x-3}$, $x \\neq 3$. What is $ff(4)$?",
+    "o": [
+      "$\\frac{1}{2}$",
+      "$1$",
+      "$-\\frac{1}{2}$",
+      "$-2$"
+    ],
+    "a": 2,
+    "e": "$f(4) = \\frac{1}{4-3} = 1$. $ff(4) = f(1) = \\frac{1}{1-3} = -\\frac{1}{2}$.",
+    "d": 2,
+    "s": "Y11.5",
+    "diag": "calc"
+  },
+  {
+    "id": "h244",
+    "cat": "algebra",
+    "topic": "Functions",
+    "q": "$g(x) = \\frac{2x+1}{x-1}$, $x \\neq 1$. Find $g^{-1}(x)$.",
+    "o": [
+      "$\\frac{x+1}{x-2}$",
+      "$\\frac{x-1}{2x+1}$",
+      "$\\frac{2x+1}{x-1}$",
+      "$\\frac{x+1}{x+2}$"
+    ],
+    "a": 0,
+    "e": "Let $y = \\frac{2x+1}{x-1}$. Then $y(x-1)=2x+1$, $xy - y = 2x+1$, $xy-2x=y+1$, $x(y-2)=y+1$, $x=\\frac{y+1}{y-2}$. So $g^{-1}(x)=\\frac{x+1}{x-2}$.",
+    "d": 2,
+    "s": "Y11.5",
+    "diag": "calc"
+  },
+  {
+    "id": "h245",
+    "cat": "algebra",
+    "topic": "Functions",
+    "q": "$f(x) = x^2 - 4x + 7$ for $x \\geq 2$. What is the range of $f$?",
+    "o": [
+      "$f(x) \\geq 7$",
+      "$f(x) \\geq 0$",
+      "$f(x) > 3$",
+      "$f(x) \\geq 3$"
+    ],
+    "a": 3,
+    "e": "Complete the square: $f(x) = (x-2)^2 + 3$. For $x \\geq 2$, minimum is at $x=2$: $f(2) = 3$. So $f(x) \\geq 3$.",
+    "d": 3,
+    "s": "Y11.5",
+    "diag": "logic"
+  },
+  {
+    "id": "h246",
+    "cat": "algebra",
+    "topic": "Differentiation",
+    "q": "Differentiate $y = 5x^3$.",
+    "o": [
+      "$15x^3$",
+      "$5x^2$",
+      "$3x^2$",
+      "$15x^2$"
+    ],
+    "a": 3,
+    "e": "$\\frac{dy}{dx} = 5 \\times 3x^{3-1} = 15x^2$.",
+    "d": 1,
+    "s": "Y11.6",
+    "diag": "calc"
+  },
+  {
+    "id": "h247",
+    "cat": "algebra",
+    "topic": "Differentiation",
+    "q": "$y = x^3 - 6x^2 + 9x + 2$. Find the $x$-coordinates of the stationary points.",
+    "o": [
+      "$x = 1$ and $x = 3$",
+      "$x = 2$ and $x = 3$",
+      "$x = 0$ and $x = 6$",
+      "$x = -1$ and $x = 3$"
+    ],
+    "a": 0,
+    "e": "$\\frac{dy}{dx} = 3x^2 - 12x + 9 = 3(x^2-4x+3) = 3(x-1)(x-3) = 0$. So $x = 1$ or $x = 3$.",
+    "d": 2,
+    "s": "Y11.6",
+    "diag": "calc"
+  },
+  {
+    "id": "h248",
+    "cat": "algebra",
+    "topic": "Differentiation",
+    "q": "What does $\\frac{dy}{dx} = 0$ tell you about a curve?",
+    "o": [
+      "The curve crosses the $x$-axis",
+      "The gradient is zero (stationary point)",
+      "The curve is increasing",
+      "The curve has no turning point"
+    ],
+    "a": 1,
+    "e": "$\\frac{dy}{dx} = 0$ means the gradient of the tangent is zero, indicating a stationary point.",
+    "d": 1,
+    "s": "Y11.6",
+    "diag": "concept"
+  },
+  {
+    "id": "h249",
+    "cat": "algebra",
+    "topic": "Differentiation",
+    "q": "$y = 2x^2 - 8x + 3$. Find the equation of the tangent at $x = 3$.",
+    "o": [
+      "$y = 4x - 15$",
+      "$y = 4x - 9$",
+      "$y = -4x + 15$",
+      "$y = 4x - 3$"
+    ],
+    "a": 0,
+    "e": "$\\frac{dy}{dx} = 4x - 8$. At $x=3$: gradient $= 4$. $y(3) = 18-24+3 = -3$. Tangent: $y + 3 = 4(x-3)$, $y = 4x - 12 - 3 = 4x - 15$.",
+    "d": 2,
+    "s": "Y11.6",
+    "diag": "calc"
+  },
+  {
+    "id": "h250",
+    "cat": "algebra",
+    "topic": "Differentiation",
+    "q": "$y = x^3 - 3x + 2$. Determine the nature of the stationary point at $x = -1$.",
+    "o": [
+      "Minimum",
+      "Point of inflection",
+      "Cannot be determined",
+      "Maximum"
+    ],
+    "a": 3,
+    "e": "$\\frac{dy}{dx} = 3x^2-3$. $\\frac{d^2y}{dx^2} = 6x$. At $x=-1$: $\\frac{d^2y}{dx^2} = -6 < 0$, so it is a maximum.",
+    "d": 3,
+    "s": "Y11.6",
+    "diag": "logic"
+  },
+  {
+    "id": "h251",
+    "cat": "geometry",
+    "topic": "Further Trigonometry",
+    "q": "In triangle $ABC$, $a = 8$, $b = 6$, $C = 60°$. Find the area.",
+    "o": [
+      "$24\\sqrt{3}$",
+      "$12\\sqrt{3}$",
+      "$24$",
+      "$48$"
+    ],
+    "a": 1,
+    "e": "Area $= \\frac{1}{2}ab\\sin C = \\frac{1}{2}(8)(6)\\sin 60° = 24 \\times \\frac{\\sqrt{3}}{2} = 12\\sqrt{3}$.",
+    "d": 1,
+    "s": "Y11.7",
+    "diag": "calc"
+  },
+  {
+    "id": "h252",
+    "cat": "geometry",
+    "topic": "Further Trigonometry",
+    "q": "In triangle $PQR$, $p = 10$, $q = 7$, $R = 45°$. Which expression gives $r^2$?",
+    "o": [
+      "$149 - 140\\cos 45°$",
+      "$51$",
+      "$149 + 140\\cos 45°$",
+      "$100 - 140\\cos 45°$"
+    ],
+    "a": 0,
+    "e": "$r^2 = p^2+q^2-2pq\\cos R = 100+49-2(10)(7)\\cos 45° = 149-140\\cos 45°$.",
+    "d": 1,
+    "s": "Y11.7",
+    "diag": "calc"
+  },
+  {
+    "id": "h253",
+    "cat": "geometry",
+    "topic": "Further Trigonometry",
+    "q": "Using the sine rule: if $a=12$, $A=30°$, $B=80°$, find $b$ to 1 d.p.",
+    "o": [
+      "$23.6$",
+      "$6.1$",
+      "$20.5$",
+      "$10.4$"
+    ],
+    "a": 0,
+    "e": "$\\frac{12}{\\sin 30°} = \\frac{b}{\\sin 80°}$. $\\frac{12}{0.5} = 24$. $b = 24\\sin 80° \\approx 24 \\times 0.9848 = 23.6$.",
+    "d": 2,
+    "s": "Y11.7",
+    "diag": "calc"
+  },
+  {
+    "id": "h254",
+    "cat": "geometry",
+    "topic": "Further Trigonometry",
+    "q": "A wire runs from the top of a $10$ m vertical pole to a point $15$ m from its base on flat ground. What angle does the wire make with the ground?",
+    "o": [
+      "$41.8°$",
+      "$56.3°$",
+      "$25°$",
+      "$33.7°$"
+    ],
+    "a": 3,
+    "e": "$\\tan \\theta = \\frac{10}{15} = \\frac{2}{3}$. $\\theta = \\arctan\\left(\\frac{2}{3}\\right) \\approx 33.7°$.",
+    "d": 2,
+    "s": "Y11.7",
+    "diag": "calc"
+  },
+  {
+    "id": "h255",
+    "cat": "geometry",
+    "topic": "Further Trigonometry",
+    "q": "In a cuboid with dimensions $3 \\times 4 \\times 12$, find the length of the space diagonal.",
+    "o": [
+      "$\\sqrt{160}$",
+      "$19$",
+      "$13$",
+      "$\\sqrt{153}$"
+    ],
+    "a": 2,
+    "e": "Space diagonal $= \\sqrt{3^2+4^2+12^2} = \\sqrt{9+16+144} = \\sqrt{169} = 13$.",
+    "d": 3,
+    "s": "Y11.7",
+    "diag": "calc"
+  },
+  {
+    "id": "h256",
+    "cat": "algebra",
+    "topic": "Graphs of Trigonometric Functions",
+    "q": "What is the period of $y = \\sin x$?",
+    "o": [
+      "$360°$",
+      "$90°$",
+      "$180°$",
+      "$720°$"
+    ],
+    "a": 0,
+    "e": "The period of $\\sin x$ is $360°$.",
+    "d": 1,
+    "s": "Y11.8",
+    "diag": "concept"
+  },
+  {
+    "id": "h257",
+    "cat": "algebra",
+    "topic": "Graphs of Trigonometric Functions",
+    "q": "What is the amplitude of $y = 3\\cos x$?",
+    "o": [
+      "$6$",
+      "$3$",
+      "$1$",
+      "$-3$"
+    ],
+    "a": 1,
+    "e": "The amplitude is the coefficient of $\\cos x$, which is $3$.",
+    "d": 1,
+    "s": "Y11.8",
+    "diag": "concept"
+  },
+  {
+    "id": "h258",
+    "cat": "algebra",
+    "topic": "Graphs of Trigonometric Functions",
+    "q": "The graph of $y = \\sin(2x)$ has what period?",
+    "o": [
+      "$720°$",
+      "$360°$",
+      "$90°$",
+      "$180°$"
+    ],
+    "a": 3,
+    "e": "Period $= \\frac{360°}{2} = 180°$.",
+    "d": 2,
+    "s": "Y11.8",
+    "diag": "calc"
+  },
+  {
+    "id": "h259",
+    "cat": "algebra",
+    "topic": "Graphs of Trigonometric Functions",
+    "q": "The graph of $y = \\cos(x - 90°)$ is equivalent to which graph?",
+    "o": [
+      "$y = -\\cos x$",
+      "$y = \\sin x$",
+      "$y = -\\sin x$",
+      "$y = \\cos x$"
+    ],
+    "a": 1,
+    "e": "$\\cos(x - 90°) = \\sin x$ is a standard identity.",
+    "d": 2,
+    "s": "Y11.8",
+    "diag": "logic"
+  },
+  {
+    "id": "h260",
+    "cat": "algebra",
+    "topic": "Graphs of Trigonometric Functions",
+    "q": "How many solutions does $\\sin x = 0.5$ have for $0° \\leq x \\leq 720°$?",
+    "o": [
+      "$2$",
+      "$3$",
+      "$4$",
+      "$1$"
+    ],
+    "a": 2,
+    "e": "In $0°$-$360°$: $x=30°,150°$ (2 solutions). In $360°$-$720°$: $x=390°,510°$ (2 more). Total: $4$.",
+    "d": 3,
+    "s": "Y11.8",
+    "diag": "logic"
+  },
+  {
+    "id": "h261",
+    "cat": "algebra",
+    "topic": "Regions & Inequalities",
+    "q": "Which inequality represents the region below the line $y = 2x + 1$?",
+    "o": [
+      "$y > 2x + 1$",
+      "$y \\geq 2x + 1$",
+      "$y < 2x + 1$",
+      "$y = 2x + 1$"
+    ],
+    "a": 2,
+    "e": "Below the line means $y$ is less than $2x + 1$, so $y < 2x + 1$.",
+    "d": 1,
+    "s": "Y11.9",
+    "diag": "concept"
+  },
+  {
+    "id": "h262",
+    "cat": "algebra",
+    "topic": "Regions & Inequalities",
+    "q": "A region is defined by $x \\geq 0$, $y \\geq 0$, and $x + y \\leq 5$. What shape is this region?",
+    "o": [
+      "Rectangle",
+      "Triangle",
+      "Circle",
+      "Pentagon"
+    ],
+    "a": 1,
+    "e": "The constraints form a right triangle with vertices $(0,0)$, $(5,0)$, and $(0,5)$.",
+    "d": 1,
+    "s": "Y11.9",
+    "diag": "concept"
+  },
+  {
+    "id": "h263",
+    "cat": "algebra",
+    "topic": "Regions & Inequalities",
+    "q": "The point $(2, 3)$ satisfies which set of inequalities?",
+    "o": [
+      "$x > 3,\\; y < 2$",
+      "$x + y < 4,\\; x > 0$",
+      "$x > 0,\\; y > 0,\\; x + y < 8,\\; y < 2x$",
+      "$x > 0,\\; y > 0,\\; x + y < 4$"
+    ],
+    "a": 2,
+    "e": "Check $(2,3)$: $x>0$ yes, $y>0$ yes, $x+y=5<8$ yes, $y=3<2(2)=4$ yes. Option C holds. Option D fails: $2+3=5 \\not< 4$.",
+    "d": 2,
+    "s": "Y11.9",
+    "diag": "logic"
+  },
+  {
+    "id": "h264",
+    "cat": "algebra",
+    "topic": "Regions & Inequalities",
+    "q": "In a linear programming problem, $P = 3x + 2y$. At which vertex is $P$ maximised: $(0,5)$, $(3,4)$, $(6,0)$, $(0,0)$?",
+    "o": [
+      "$(0,5)$",
+      "$(3,4)$",
+      "$(0,0)$",
+      "$(6,0)$"
+    ],
+    "a": 3,
+    "e": "$P(0,5)=10$, $P(3,4)=17$, $P(6,0)=18$, $P(0,0)=0$. Maximum is $18$ at $(6,0)$.",
+    "d": 2,
+    "s": "Y11.9",
+    "diag": "calc"
+  },
+  {
+    "id": "h265",
+    "cat": "algebra",
+    "topic": "Regions & Inequalities",
+    "q": "A feasible region is bounded by $y \\leq x$, $y \\geq 1$, and $x \\leq 5$. What is the maximum value of $2x + 3y$ in this region?",
+    "o": [
+      "$25$",
+      "$19$",
+      "$13$",
+      "$23$"
+    ],
+    "a": 0,
+    "e": "Vertices: $(1,1)$, $(5,1)$, $(5,5)$. $2x+3y$: $(1,1) \\to 5$, $(5,1) \\to 13$, $(5,5) \\to 25$. Maximum is $25$.",
+    "d": 3,
+    "s": "Y11.9",
+    "diag": "calc"
+  },
+  {
+    "id": "h266",
+    "cat": "geometry",
+    "topic": "Vectors",
+    "q": "If $\\mathbf{a} = \\binom{3}{-2}$, what is $|\\mathbf{a}|$?",
+    "o": [
+      "$1$",
+      "$5$",
+      "$\\sqrt{5}$",
+      "$\\sqrt{13}$"
+    ],
+    "a": 3,
+    "e": "$|\\mathbf{a}| = \\sqrt{3^2+(-2)^2} = \\sqrt{9+4} = \\sqrt{13}$.",
+    "d": 1,
+    "s": "Y11.10",
+    "diag": "calc"
+  },
+  {
+    "id": "h267",
+    "cat": "geometry",
+    "topic": "Vectors",
+    "q": "$\\mathbf{p} = \\binom{4}{1}$ and $\\mathbf{q} = \\binom{-2}{3}$. Find $\\mathbf{p} + \\mathbf{q}$.",
+    "o": [
+      "$\\binom{6}{-2}$",
+      "$\\binom{2}{4}$",
+      "$\\binom{-2}{4}$",
+      "$\\binom{2}{-2}$"
+    ],
+    "a": 1,
+    "e": "$\\mathbf{p}+\\mathbf{q} = \\binom{4+(-2)}{1+3} = \\binom{2}{4}$.",
+    "d": 1,
+    "s": "Y11.10",
+    "diag": "calc"
+  },
+  {
+    "id": "h268",
+    "cat": "geometry",
+    "topic": "Vectors",
+    "q": "$\\overrightarrow{OA} = \\mathbf{a}$ and $\\overrightarrow{OB} = \\mathbf{b}$. Express $\\overrightarrow{AB}$ in terms of $\\mathbf{a}$ and $\\mathbf{b}$.",
+    "o": [
+      "$\\mathbf{a} + \\mathbf{b}$",
+      "$\\mathbf{a} - \\mathbf{b}$",
+      "$\\mathbf{b} - \\mathbf{a}$",
+      "$2\\mathbf{b} - \\mathbf{a}$"
+    ],
+    "a": 2,
+    "e": "$\\overrightarrow{AB} = \\overrightarrow{AO} + \\overrightarrow{OB} = -\\mathbf{a} + \\mathbf{b} = \\mathbf{b} - \\mathbf{a}$.",
+    "d": 2,
+    "s": "Y11.10",
+    "diag": "concept"
+  },
+  {
+    "id": "h269",
+    "cat": "geometry",
+    "topic": "Vectors",
+    "q": "$M$ is the midpoint of $AB$. If $\\overrightarrow{OA} = \\mathbf{a}$ and $\\overrightarrow{OB} = \\mathbf{b}$, find $\\overrightarrow{OM}$.",
+    "o": [
+      "$\\frac{1}{2}(\\mathbf{a} - \\mathbf{b})$",
+      "$\\frac{1}{2}(\\mathbf{a} + \\mathbf{b})$",
+      "$\\mathbf{a} + \\mathbf{b}$",
+      "$\\frac{1}{2}\\mathbf{b}$"
+    ],
+    "a": 1,
+    "e": "$\\overrightarrow{OM} = \\overrightarrow{OA} + \\frac{1}{2}\\overrightarrow{AB} = \\mathbf{a} + \\frac{1}{2}(\\mathbf{b}-\\mathbf{a}) = \\frac{1}{2}(\\mathbf{a}+\\mathbf{b})$.",
+    "d": 2,
+    "s": "Y11.10",
+    "diag": "logic"
+  },
+  {
+    "id": "h270",
+    "cat": "geometry",
+    "topic": "Vectors",
+    "q": "$\\overrightarrow{OA} = 2\\mathbf{a} + 3\\mathbf{b}$ and $\\overrightarrow{OB} = 8\\mathbf{a} + 12\\mathbf{b}$. What scalar $k$ satisfies $\\overrightarrow{OB} = k\\overrightarrow{OA}$?",
+    "o": [
+      "$2$",
+      "$3$",
+      "$6$",
+      "$4$"
+    ],
+    "a": 3,
+    "e": "$\\overrightarrow{OB} = 8\\mathbf{a}+12\\mathbf{b} = 4(2\\mathbf{a}+3\\mathbf{b}) = 4\\overrightarrow{OA}$. So $k=4$.",
+    "d": 3,
+    "s": "Y11.10",
+    "diag": "logic"
+  },
+  {
+    "id": "h271",
+    "cat": "probability",
+    "topic": "Statistics and Probability",
+    "q": "A bag has 5 red and 3 blue balls. Two are drawn without replacement. What is $P(\\text{both red})$?",
+    "o": [
+      "$\\frac{25}{64}$",
+      "$\\frac{5}{14}$",
+      "$\\frac{5}{28}$",
+      "$\\frac{10}{28}$"
+    ],
+    "a": 1,
+    "e": "$P = \\frac{5}{8} \\times \\frac{4}{7} = \\frac{20}{56} = \\frac{5}{14}$.",
+    "d": 1,
+    "s": "Y11.11",
+    "diag": "calc"
+  },
+  {
+    "id": "h272",
+    "cat": "probability",
+    "topic": "Statistics and Probability",
+    "q": "A histogram has a bar of width $5$ and frequency density $4$. What is the frequency for that class?",
+    "o": [
+      "$4$",
+      "$0.8$",
+      "$20$",
+      "$9$"
+    ],
+    "a": 2,
+    "e": "Frequency $=$ frequency density $\\times$ class width $= 4 \\times 5 = 20$.",
+    "d": 1,
+    "s": "Y11.11",
+    "diag": "calc"
+  },
+  {
+    "id": "h273",
+    "cat": "probability",
+    "topic": "Statistics and Probability",
+    "q": "From a cumulative frequency graph, the median of 80 data values is read at which cumulative frequency?",
+    "o": [
+      "$80$",
+      "$40$",
+      "$20$",
+      "$39.5$"
+    ],
+    "a": 1,
+    "e": "Median is at the $\\frac{n}{2} = \\frac{80}{2} = 40$th value on the cumulative frequency axis.",
+    "d": 2,
+    "s": "Y11.11",
+    "diag": "concept"
+  },
+  {
+    "id": "h274",
+    "cat": "probability",
+    "topic": "Statistics and Probability",
+    "q": "$P(A) = 0.6$, $P(B|A) = 0.3$. Find $P(A \\cap B)$.",
+    "o": [
+      "$0.9$",
+      "$0.5$",
+      "$0.3$",
+      "$0.18$"
+    ],
+    "a": 3,
+    "e": "$P(A \\cap B) = P(A) \\times P(B|A) = 0.6 \\times 0.3 = 0.18$.",
+    "d": 2,
+    "s": "Y11.11",
+    "diag": "calc"
+  },
+  {
+    "id": "h275",
+    "cat": "probability",
+    "topic": "Statistics and Probability",
+    "q": "Events $A$ and $B$ are such that $P(A) = 0.5$, $P(B) = 0.4$, $P(A \\cup B) = 0.7$. Are $A$ and $B$ independent?",
+    "o": [
+      "Yes, because $P(A \\cap B) = P(A) \\times P(B) = 0.2$",
+      "No, because $P(A \\cap B) \\neq P(A) \\times P(B)$",
+      "Yes, because $P(A) + P(B) = 0.9$",
+      "Cannot be determined"
+    ],
+    "a": 0,
+    "e": "$P(A \\cap B) = 0.5+0.4-0.7 = 0.2$. $P(A) \\times P(B) = 0.5 \\times 0.4 = 0.2$. Since $P(A \\cap B) = P(A)P(B)$, they are independent.",
+    "d": 3,
+    "s": "Y11.11",
+    "diag": "logic"
+  }
 ]

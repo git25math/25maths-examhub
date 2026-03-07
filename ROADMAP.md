@@ -379,3 +379,4 @@
 - [x] **LaTeX tabular 表格 HTML 渲染**: 546 条 texHtml + _ppRenderTex 优先读 texHtml → v2.2.1
 - [x] **超管数据质量面板**: 15 规则扫描 + 批量 AI 编辑 + 词级 diff + Auto-Fix + JSON 导出 → v2.2.2
 - [x] **HHK 知识卡片+经典例题**: 55 sections × 2 modules = 110 条双语富文本（知识回顾+关键技能+考试技巧+经典例题）→ v2.2.3
+- [x] **HHK 练习题扩容 Y8-Y11**: 44 sections × 5 = 220 道 MCQ（h056-h275），HHK 覆盖率 20%→100% → v2.2.4
