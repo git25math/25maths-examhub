@@ -333,7 +333,7 @@
 - [ ] 服务端评分（Edge Function）
 
 ## Phase 11 — PWA + 离线
-- [ ] Service Worker 离线缓存
-- [ ] PWA manifest + install prompt
-- [ ] 离线状态自动检测 + 重连同步
+- [x] **Service Worker 离线缓存**: 三层策略（shell cache-first / data network-first / CDN cache-first）→ v1.11.0
+- [x] **PWA manifest + install prompt**: manifest.json + SVG 图标 + 首页安装提示横条 → v1.11.0
+- [x] **离线状态自动检测 + 重连同步**: online/offline 事件 + Toast + is-offline 样式 → v1.11.0
 - [ ] build-single.py 更新适配新架构

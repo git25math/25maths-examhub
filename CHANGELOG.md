@@ -1,5 +1,29 @@
 # Changelog
 
+## [1.11.0] - 2026-03-07 — PWA 离线支持：Service Worker + 安装提示 + 离线检测
+
+### 新增
+- **Web App Manifest**: 应用名、图标（3 个 SVG）、standalone 模式、紫色主题色
+- **Service Worker** (`sw.js`): 三层缓存策略 — App Shell 缓存优先（HTML/JS/CSS），数据文件网络优先+缓存兜底（JSON），CDN 缓存优先（字体/Supabase SDK）；离线时导航回退到 index.html
+- **安装提示**: 首页搜索栏上方显示 "Install app for offline access" 横条（仅在浏览器支持且未安装时显示），点击触发原生安装对话框
+- **离线检测**: `online`/`offline` 事件监听 + Toast 提示 + 首页 stats 区域 "Offline" 标记
+- **Apple 适配**: `apple-mobile-web-app-capable` + `apple-touch-icon` + `black-translucent` 状态栏
+- **图标**: 3 个 SVG 图标（192px/512px/maskable），紫色背景 + "25 MATHS" 白色文字
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `manifest.json` | 新建：PWA manifest |
+| `sw.js` | 新建：Service Worker（shell/data/cdn 三层缓存） |
+| `icons/icon-192.svg` | 新建 |
+| `icons/icon-512.svg` | 新建 |
+| `icons/icon-maskable.svg` | 新建 |
+| `index.html` | +manifest link +theme-color +apple meta +favicon +SW 注册脚本 |
+| `js/app.js` | +install prompt 捕获 +`pwaInstall()` +offline/online 事件 |
+| `js/mastery.js` | +PWA 安装提示横条 |
+| `css/style.css` | +`.pwa-install-*` + `.is-offline` 样式 |
+| `js/config.js` | 版本号 v1.10.3 → v1.11.0 |
+
 ## [1.10.3] - 2026-03-07 — 模拟卷生成器：按考试局格式自动组题
 
 ### 新增

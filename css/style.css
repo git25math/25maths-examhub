@@ -3373,6 +3373,16 @@ input { font-family: inherit; }
 .dark .diag-recs { background: rgba(255,152,0,0.1); border-color: rgba(255,152,0,0.3); }
 .dark .diag-rec-item { border-color: rgba(255,255,255,0.06); }
 
+/* ═══ PWA ═══ */
+.pwa-install-hint { display: flex; align-items: center; gap: 10px; padding: 10px 14px; margin: 8px 0; background: linear-gradient(135deg, rgba(82,72,201,0.06), rgba(82,72,201,0.02)); border: 1px dashed var(--c-primary); border-radius: 10px; cursor: pointer; transition: all 0.2s; }
+.pwa-install-hint:hover { background: linear-gradient(135deg, rgba(82,72,201,0.12), rgba(82,72,201,0.04)); }
+.pwa-install-icon { font-size: 20px; }
+.pwa-install-text { flex: 1; font-size: 13px; color: var(--c-text2); }
+.pwa-install-btn { padding: 4px 12px; border-radius: 6px; background: var(--c-primary); color: #fff; font-size: 12px; font-weight: 600; }
+.is-offline .home-stats::after { content: 'Offline'; position: absolute; top: 4px; right: 8px; font-size: 10px; color: var(--c-warning); font-weight: 600; }
+.home-stats { position: relative; }
+.dark .pwa-install-hint { background: linear-gradient(135deg, rgba(82,72,201,0.12), rgba(82,72,201,0.04)); }
+
 /* ═══ REDUCED MOTION ═══ */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {

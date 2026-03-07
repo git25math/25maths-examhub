@@ -364,3 +364,48 @@ function showScoreGuide() {
   html += '<button class="btn btn-ghost btn-block" onclick="hideModal()" style="margin-top:16px">' + t('Close', '\u5173\u95ed') + '</button>';
   showModal(html);
 }
+
+/* ═══ PWA: OFFLINE DETECTION + INSTALL PROMPT ═══ */
+
+var _pwaInstallPrompt = null;
+
+window.addEventListener('beforeinstallprompt', function(e) {
+  e.preventDefault();
+  _pwaInstallPrompt = e;
+  _showInstallHint();
+});
+
+function _showInstallHint() {
+  /* Show a subtle install hint on home page if not already installed */
+  if (window.matchMedia('(display-mode: standalone)').matches) return;
+  var el = document.getElementById('pwa-install-hint');
+  if (el) el.style.display = '';
+}
+
+function pwaInstall() {
+  if (!_pwaInstallPrompt) return;
+  _pwaInstallPrompt.prompt();
+  _pwaInstallPrompt.userChoice.then(function(result) {
+    if (result.outcome === 'accepted') {
+      showToast(t('App installed!', '\u5e94\u7528\u5df2\u5b89\u88c5\uff01'));
+    }
+    _pwaInstallPrompt = null;
+    var el = document.getElementById('pwa-install-hint');
+    if (el) el.style.display = 'none';
+  });
+}
+
+/* Offline/online status */
+window.addEventListener('online', function() {
+  showToast(t('Back online', '\u5df2\u6062\u590d\u7f51\u7edc'));
+  document.body.classList.remove('is-offline');
+});
+
+window.addEventListener('offline', function() {
+  showToast(t('You are offline', '\u5f53\u524d\u65e0\u7f51\u7edc'));
+  document.body.classList.add('is-offline');
+});
+
+if (!navigator.onLine) {
+  document.body.classList.add('is-offline');
+}

@@ -255,6 +255,16 @@ function renderHome() {
     html += '</div>';
   }
 
+  /* PWA install hint */
+  var _isStandalone = window.matchMedia('(display-mode: standalone)').matches;
+  if (!_isStandalone) {
+    html += '<div class="pwa-install-hint" id="pwa-install-hint" style="display:none" onclick="pwaInstall()">';
+    html += '<span class="pwa-install-icon">\ud83d\udcf2</span>';
+    html += '<span class="pwa-install-text">' + t('Install app for offline access', '\u5b89\u88c5\u5e94\u7528\u4ee5\u79bb\u7ebf\u4f7f\u7528') + '</span>';
+    html += '<span class="pwa-install-btn">' + t('Install', '\u5b89\u88c5') + '</span>';
+    html += '</div>';
+  }
+
   /* Search bar */
   html += '<div class="search-bar">';
   html += '<input class="search-input" id="home-search" type="text" placeholder="' + t('Search groups or words...', '\u641c\u7d22\u8bcd\u7ec4\u6216\u5355\u8bcd...') + '" value="' + appSearch.replace(/"/g, '&quot;') + '" oninput="onHomeSearch(this.value)">';

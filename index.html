@@ -3,7 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#5248C9">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>25Maths Keywords</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/icon-192.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-192.svg">
 
   <!-- Resource hints -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -231,6 +237,15 @@
 <script src="js/app.bundle.min.js?v=1.8.4"></script>
 <!-- homework.min.js loaded dynamically for students with classes + teachers (see auth.js) -->
 <!-- admin.js + vocab-admin.js loaded dynamically for teachers (see auth.js) -->
+
+<!-- Service Worker registration -->
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('sw.js').catch(function() {});
+  });
+}
+</script>
 
 </body>
 </html>
