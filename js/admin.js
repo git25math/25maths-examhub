@@ -84,6 +84,7 @@ function renderAdmin() {
   html += '<button class="admin-tab' + (_adminTab === 'school' ? ' active' : '') + '" onclick="switchAdminTab(\'school\')">' + t('School', '全校概览') + '</button>';
   if (typeof isSuperAdmin === 'function' && isSuperAdmin()) {
     html += '<button class="admin-tab' + (_adminTab === 'feedback' ? ' active' : '') + '" onclick="switchAdminTab(\'feedback\')">' + t('Feedback', '反馈') + '</button>';
+    html += '<button class="admin-tab' + (_adminTab === 'dataquality' ? ' active' : '') + '" onclick="switchAdminTab(\'dataquality\')">' + t('Data Quality', '数据质量') + '</button>';
   }
   html += '</div>';
 
@@ -95,6 +96,7 @@ function renderAdmin() {
   else if (_adminTab === 'grade') renderGradeOverview();
   else if (_adminTab === 'school') renderSchoolOverview();
   else if (_adminTab === 'feedback' && typeof renderFeedbackList === 'function') renderFeedbackList();
+  else if (_adminTab === 'dataquality' && typeof renderDataQuality === 'function') renderDataQuality();
 }
 
 function switchAdminTab(tab) {

@@ -1,5 +1,32 @@
 # Changelog
 
+## [2.2.2] - 2026-03-08 — 超管数据质量管理面板
+
+### Data Quality Dashboard
+- **`js/data-admin.js`**: 新建超管专属数据质量面板（602 行）
+- **15 条检测规则**: subparts/textbf/spacing/screenshot/quad/tmarker/text_cmd/center/parts/placeholder/degree/pounds/minipage/renewcmd/hspace
+- **3 数据源**: CIE papers / Edexcel papers / CIE pastpapers (legacy)，自动扫描全部题目
+- **批量操作**: [Copy JSON for AI] 复制问题题目 → AI 修复 → [Paste Back] 粘贴 → 词级差异预览 → 勾选应用
+- **一键修复**: textbf/spacing/center/degree/pounds/minipage/renewcmd/hspace 等规则支持 Auto-Fix
+- **JSON 导出**: 保持原格式（v2.0 wrapper / 平面数组），下载 `papers-{board}-fixed-{date}.json`
+- **差异预览**: LCS 词级 diff 算法，红色删除 + 绿色新增，分页浏览 + 勾选应用
+
+### 集成
+- **`js/admin.js`**: 超管 tab 栏新增 "Data Quality" 选项卡
+- **`js/auth.js`**: 动态加载链追加 `data-admin.js`（vocab-admin.js → data-admin.js）
+- **`css/style.css`**: 新增 `.dq-*` 系列样式（96 行），含摘要卡片、规则行、差异显示、暗色模式、移动端适配
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `js/data-admin.js` | 新建 — 检测引擎 + 批量编辑 + 差异预览 + 导出 (602 行) |
+| `js/admin.js` | 新增 Data Quality tab + 路由 (+2 行) |
+| `js/auth.js` | 动态加载链追加 data-admin.js (+6 行) |
+| `js/config.js` | v2.2.1→v2.2.2 |
+| `css/style.css` | `.dq-*` 样式 (+96 行) |
+
+---
+
 ## [2.2.1] - 2026-03-08 — LaTeX tabular 表格 HTML 渲染
 
 ### 表格转换

@@ -273,7 +273,13 @@ async function loadAndInitTeacher() {
     s1.onload = function() {
       var s2 = document.createElement('script');
       s2.src = 'js/vocab-admin.js';
-      s2.onload = resolve;
+      s2.onload = function() {
+        var s3 = document.createElement('script');
+        s3.src = 'js/data-admin.js';
+        s3.onload = resolve;
+        s3.onerror = resolve;
+        document.head.appendChild(s3);
+      };
       s2.onerror = resolve;
       document.head.appendChild(s2);
     };

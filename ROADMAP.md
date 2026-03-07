@@ -376,3 +376,5 @@
 - [x] **登录流程适配**: showBoardSelection 守卫跳过 + afterLogin 强制锁定 + HHK 年级保留 → v2.2.0
 - [x] **设置页适配**: 子站隐藏"更换课程"按钮 → v2.2.0
 - [x] **PWA 兼容**: manifest.json start_url/scope 改为相对路径 `./` → v2.2.0
+- [x] **LaTeX tabular 表格 HTML 渲染**: 546 条 texHtml + _ppRenderTex 优先读 texHtml → v2.2.1
+- [x] **超管数据质量面板**: 15 规则扫描 + 批量 AI 编辑 + 词级 diff + Auto-Fix + JSON 导出 → v2.2.2
