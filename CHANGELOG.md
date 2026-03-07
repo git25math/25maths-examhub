@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.10.3] - 2026-03-07 — 模拟卷生成器：按考试局格式自动组题
+
+### 新增
+- **模拟卷生成器** `ppShowMockSetup()`: 设置界面选择目标分数（40/70/100）+ 侧重模式（均衡/薄弱项/随机）+ 自动计算时限
+- **智能组卷算法** `ppStartMockExam()`: 按知识点轮询选题，确保覆盖面最大化；薄弱项模式按健康度 4x/2x/1x 加权；题目按难度排序（简→难，模拟真实考卷）；mark 总量贴近目标（±5 分容差）
+- **模拟卷答题体验**: 顶部显示橙色 "Mock Exam · XX marks" 标题 + 考试计时器 + 退出确认
+- **模拟卷结果页**: 复用诊断结果的知识点逐项分析视图 + "New Mock" 重新生成按钮
+- **入口**: 套卷浏览页右上角 "Mock Exam" 按钮 + 诊断结果页 "Mock Exam" 链接
+- **退出路由**: 模拟卷退出返回首页（非空白 section 面板）
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `js/practice.js` | +`ppShowMockSetup()` 设置界面 + `ppMockSetOpt()` + `ppStartMockExam()` 组卷算法 + renderPPCard mock header + ppForceBack mock 路由 + ppFinishMarking mock 分流 + 诊断结果 mock 适配 |
+| `js/config.js` | 版本号 v1.10.2 → v1.10.3 |
+
 ## [1.10.2] - 2026-03-07 — 质量修复：诊断测试 UX + 学习闭环 Bug 修复
 
 ### 修复

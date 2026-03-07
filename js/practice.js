@@ -1295,6 +1295,10 @@ function renderPPCard() {
     html += '<div style="flex:1;text-align:center;font-size:13px;font-weight:600;color:var(--c-primary)">';
     html += '\ud83c\udfaf ' + t('Diagnostic Test', '\u8bca\u65ad\u6d4b\u8bd5');
     html += '</div>';
+  } else if (_ppSession.isMock) {
+    html += '<div style="flex:1;text-align:center;font-size:13px;font-weight:600;color:var(--c-warning)">';
+    html += '\ud83c\udfb2 ' + t('Mock Exam', '\u6a21\u62df\u8003\u8bd5') + ' \u00b7 ' + _ppSession.totalMarks + ' marks';
+    html += '</div>';
   } else if (_ppSession.paperKey) {
     var _hMeta = getPaperMeta(_ppSession.board)[_ppSession.paperKey];
     if (_hMeta) {
@@ -1550,11 +1554,12 @@ function ppForceBack() {
   if (_ppTimer) { clearInterval(_ppTimer); _ppTimer = null; }
   var wasPaper = _ppSession && _ppSession.paperKey;
   var wasDiag = _ppSession && _ppSession.isDiagnostic;
+  var wasMock = _ppSession && _ppSession.isMock;
   var board = _ppSession ? _ppSession.board : 'cie';
   _ppSession = null;
   if (wasPaper) {
     ppShowPaperBrowse(board);
-  } else if (wasDiag) {
+  } else if (wasDiag || wasMock) {
     navTo('home');
   } else {
     showPanel('section');
@@ -1717,8 +1722,9 @@ function _diagShowResults(exam, conceptErrors) {
   var html = '<div class="pp-results">';
 
   /* Header */
+  var _isMockExam = _ppSession && _ppSession.isMock;
   html += '<div class="pp-results-score">';
-  html += '<h2>\ud83c\udfaf ' + t('Diagnostic Results', '\u8bca\u65ad\u7ed3\u679c') + '</h2>';
+  html += '<h2>' + (_isMockExam ? '\ud83c\udfb2 ' + t('Mock Exam Results', '\u6a21\u62df\u8003\u8bd5\u7ed3\u679c') : '\ud83c\udfaf ' + t('Diagnostic Results', '\u8bca\u65ad\u7ed3\u679c')) + '</h2>';
   html += '<div class="pp-results-pct ' + pctClass + '">' + exam.scored + ' / ' + exam.totalMarks + ' (' + pct + '%)</div>';
   html += '<div class="pp-results-time">\u23f1 ' + min + ':' + (sec < 10 ? '0' : '') + sec + '</div>';
   html += '</div>';
@@ -1793,7 +1799,12 @@ function _diagShowResults(exam, conceptErrors) {
 
   /* Action buttons */
   html += '<div style="display:flex;gap:12px;justify-content:center;margin-top:24px;flex-wrap:wrap;padding-bottom:40px">';
-  html += '<button class="btn btn-primary" onclick="startDiagnostic(\'' + board + '\')">\ud83d\udd04 ' + t('Retry', '\u91cd\u65b0\u6d4b\u8bd5') + '</button>';
+  if (_isMockExam) {
+    html += '<button class="btn btn-primary" onclick="ppShowMockSetup(\'' + board + '\')">\ud83d\udd04 ' + t('New Mock', '\u65b0\u6a21\u62df\u5377') + '</button>';
+  } else {
+    html += '<button class="btn btn-primary" onclick="startDiagnostic(\'' + board + '\')">\ud83d\udd04 ' + t('Retry', '\u91cd\u65b0\u6d4b\u8bd5') + '</button>';
+    html += '<button class="btn btn-ghost" onclick="ppShowMockSetup(\'' + board + '\')" style="border-color:var(--c-warning);color:var(--c-warning)">\ud83c\udfb2 ' + t('Mock Exam', '\u6a21\u62df\u5377') + '</button>';
+  }
   html += '<button class="btn btn-ghost" onclick="navTo(\'home\')">\u2190 ' + t('Home', '\u9996\u9875') + '</button>';
   html += '</div>';
 
@@ -2433,7 +2444,7 @@ function ppFinishMarking() {
   }
 
   /* Show results */
-  if (_ppSession && _ppSession.isDiagnostic) {
+  if (_ppSession && (_ppSession.isDiagnostic || _ppSession.isMock)) {
     _diagShowResults(examRecord, conceptErrors);
   } else {
     ppShowResults(examRecord, conceptErrors);
@@ -2724,8 +2735,8 @@ function ppShowPaperBrowse(board) {
     var html = '';
     html += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:16px">';
     html += '<button class="btn-icon" onclick="ppBack()" title="Back">&larr;</button>';
-    html += '<h2 style="margin:0;flex:1">' + t('Past Papers', '套卷练习') + '</h2>';
-    html += '<span class="pp-src">' + papers.length + ' ' + t('papers', '套') + '</span>';
+    html += '<h2 style="margin:0;flex:1">' + t('Past Papers', '\u5957\u5377\u7ec3\u4e60') + '</h2>';
+    html += '<button class="btn btn-sm" onclick="ppShowMockSetup(\'' + board + '\')" style="background:var(--c-warning);border-color:var(--c-warning);color:#fff">\ud83c\udfb2 ' + t('Mock Exam', '\u6a21\u62df\u5377') + '</button>';
     html += '</div>';
 
     /* Year tabs */
@@ -2990,6 +3001,224 @@ function ppStartPaperExam(paperKey, board) {
     _ppSession.totalMarks += questions[i].marks;
     _ppSession.results.push({ flagged: false, scored: null, status: null, errorType: '' });
   }
+  showPanel('pastpaper');
+  renderPPCard();
+}
+
+/* ═══ MOCK EXAM GENERATOR ═══ */
+
+function ppShowMockSetup(board) {
+  board = board || 'cie';
+
+  Promise.all([loadPastPaperData(board), loadKaTeX()]).then(function() {
+    var el = E('panel-pastpaper');
+    if (!el) return;
+
+    var allQ = getPPQuestions(board);
+    if (!allQ || allQ.length === 0) {
+      showToast(t('No questions available', '\u6682\u65e0\u9898\u76ee'));
+      return;
+    }
+
+    /* Count sections with questions */
+    var secs = {};
+    for (var i = 0; i < allQ.length; i++) {
+      if (allQ[i].s) secs[allQ[i].s] = (secs[allQ[i].s] || 0) + 1;
+    }
+    var secCount = Object.keys(secs).length;
+
+    var html = '';
+    html += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:20px">';
+    html += '<button class="btn btn-ghost btn-sm" onclick="ppShowPaperBrowse(\'' + board + '\')">\u2190 ' + t('Back', '\u8fd4\u56de') + '</button>';
+    html += '</div>';
+
+    html += '<div class="pp-setup">';
+    html += '<h3>\ud83c\udfb2 ' + t('Mock Exam', '\u6a21\u62df\u8003\u8bd5') + '</h3>';
+    html += '<p style="color:var(--c-text2);margin-bottom:20px">';
+    html += t('Generate a custom exam from ', '\u4ece ') + allQ.length + t(' questions across ', ' \u9053\u771f\u9898\u3001') + secCount + t(' topics', ' \u4e2a\u77e5\u8bc6\u70b9\u4e2d\u7ec4\u5377');
+    html += '</p>';
+
+    /* Mark target */
+    html += '<div class="pp-setup-row">';
+    html += '<span>' + t('Target Marks', '\u76ee\u6807\u5206\u6570') + '</span>';
+    html += '<div class="pp-setup-options" id="mock-marks">';
+    var markOpts = [40, 70, 100];
+    for (var mi = 0; mi < markOpts.length; mi++) {
+      var active = mi === 1 ? ' active' : '';
+      html += '<div class="pp-setup-opt' + active + '" onclick="ppMockSetOpt(this,\'marks\',' + markOpts[mi] + ')">' + markOpts[mi] + '</div>';
+    }
+    html += '</div></div>';
+
+    /* Focus mode */
+    html += '<div class="pp-setup-row">';
+    html += '<span>' + t('Focus', '\u91cd\u70b9') + '</span>';
+    html += '<div class="pp-setup-options" id="mock-focus">';
+    html += '<div class="pp-setup-opt active" onclick="ppMockSetOpt(this,\'focus\',\'balanced\')">' + t('Balanced', '\u5747\u8861') + '</div>';
+    html += '<div class="pp-setup-opt" onclick="ppMockSetOpt(this,\'focus\',\'weak\')">' + t('Weak Areas', '\u8584\u5f31\u9879') + '</div>';
+    html += '<div class="pp-setup-opt" onclick="ppMockSetOpt(this,\'focus\',\'random\')">' + t('Random', '\u968f\u673a') + '</div>';
+    html += '</div></div>';
+
+    /* Time limit */
+    html += '<div class="pp-setup-row">';
+    html += '<span>' + t('Time Limit', '\u65f6\u9650') + '</span>';
+    html += '<span id="mock-time" style="font-weight:600">\u2248 70 min</span>';
+    html += '</div>';
+
+    html += '<div style="margin-top:24px;text-align:center">';
+    html += '<button class="btn btn-primary" onclick="ppStartMockExam(\'' + board + '\')" style="padding:12px 32px;font-size:15px">';
+    html += '\u25b6 ' + t('Generate & Start', '\u751f\u6210\u5e76\u5f00\u59cb') + '</button>';
+    html += '</div>';
+
+    html += '</div>';
+
+    /* Store setup state */
+    window._mockSetup = { board: board, marks: 70, focus: 'balanced' };
+
+    el.innerHTML = html;
+    showPanel('pastpaper');
+  });
+}
+
+function ppMockSetOpt(el, key, val) {
+  var opts = el.parentElement.querySelectorAll('.pp-setup-opt');
+  for (var i = 0; i < opts.length; i++) opts[i].classList.remove('active');
+  el.classList.add('active');
+  if (window._mockSetup) window._mockSetup[key] = val;
+  /* Update time estimate */
+  if (key === 'marks') {
+    var timeEl = document.getElementById('mock-time');
+    if (timeEl) timeEl.textContent = '\u2248 ' + val + ' min';
+  }
+}
+
+function ppStartMockExam(board) {
+  board = board || 'cie';
+  var setup = window._mockSetup || { marks: 70, focus: 'balanced' };
+  var targetMarks = setup.marks || 70;
+  var focus = setup.focus || 'balanced';
+
+  var allQ = getPPQuestions(board);
+  if (!allQ || allQ.length === 0) return;
+
+  /* Group by section */
+  var secQs = {};
+  for (var i = 0; i < allQ.length; i++) {
+    var s = allQ[i].s;
+    if (!s || !allQ[i].marks) continue;
+    if (!secQs[s]) secQs[s] = [];
+    secQs[s].push(allQ[i]);
+  }
+
+  /* Calculate section weights */
+  var secIds = Object.keys(secQs);
+  var weights = {};
+  for (var si = 0; si < secIds.length; si++) {
+    var sid = secIds[si];
+    if (focus === 'weak' && typeof getSectionHealth === 'function') {
+      var h = getSectionHealth(sid, board);
+      weights[sid] = h.score < 30 ? 4 : h.score < 60 ? 2 : 1;
+    } else {
+      weights[sid] = 1;
+    }
+  }
+
+  /* Select questions to meet target marks */
+  var selected = [];
+  var totalMarks = 0;
+  var maxPerSec = Math.max(3, Math.ceil(targetMarks / secIds.length));
+
+  /* Shuffle sections weighted */
+  var secPool = [];
+  for (var wi = 0; wi < secIds.length; wi++) {
+    for (var wj = 0; wj < weights[secIds[wi]]; wj++) {
+      secPool.push(secIds[wi]);
+    }
+  }
+  secPool.sort(function() { return Math.random() - 0.5; });
+
+  /* Remove duplicates while preserving weighted order */
+  var orderedSecs = [];
+  var seen = {};
+  for (var oi = 0; oi < secPool.length; oi++) {
+    if (!seen[secPool[oi]]) {
+      seen[secPool[oi]] = true;
+      orderedSecs.push(secPool[oi]);
+    }
+  }
+
+  /* Round-robin pick from sections */
+  var perSec = {};
+  var round = 0;
+  while (totalMarks < targetMarks && round < 10) {
+    var added = false;
+    for (var ri = 0; ri < orderedSecs.length; ri++) {
+      if (totalMarks >= targetMarks) break;
+      var rsid = orderedSecs[ri];
+      var rqs = secQs[rsid];
+      var rPicked = perSec[rsid] || 0;
+      if (rPicked >= maxPerSec || rPicked >= rqs.length) continue;
+
+      /* Pick a random unpicked question from this section */
+      var candidates = [];
+      for (var ci = 0; ci < rqs.length; ci++) {
+        var dup = false;
+        for (var di = 0; di < selected.length; di++) {
+          if (selected[di].id === rqs[ci].id) { dup = true; break; }
+        }
+        if (!dup) candidates.push(rqs[ci]);
+      }
+      if (candidates.length === 0) continue;
+      candidates.sort(function() { return Math.random() - 0.5; });
+
+      /* Try to pick one that doesn't overshoot too much */
+      var picked = candidates[0];
+      for (var pi = 0; pi < candidates.length; pi++) {
+        if (totalMarks + candidates[pi].marks <= targetMarks + 5) {
+          picked = candidates[pi];
+          break;
+        }
+      }
+
+      selected.push(picked);
+      totalMarks += picked.marks;
+      perSec[rsid] = rPicked + 1;
+      added = true;
+    }
+    if (!added) break;
+    round++;
+  }
+
+  /* Sort by difficulty (easy first, like a real paper) */
+  var diffOrder = { 'easy': 0, 'medium': 1, 'hard': 2 };
+  selected.sort(function(a, b) {
+    return (diffOrder[a.d] || 1) - (diffOrder[b.d] || 1);
+  });
+
+  if (selected.length === 0) {
+    showToast(t('Could not generate exam', '\u65e0\u6cd5\u751f\u6210\u8bd5\u5377'));
+    return;
+  }
+
+  var timeLimit = totalMarks * 60; /* 1 min per mark */
+
+  _ppSession = {
+    questions: selected,
+    current: 0,
+    mode: 'exam',
+    board: board,
+    sectionId: null,
+    isMock: true,
+    startTime: Date.now(),
+    results: [],
+    totalMarks: 0,
+    timeLimit: timeLimit
+  };
+
+  for (var mi = 0; mi < selected.length; mi++) {
+    _ppSession.totalMarks += selected[mi].marks;
+    _ppSession.results.push({ flagged: false, scored: null, status: null, errorType: '' });
+  }
+
   showPanel('pastpaper');
   renderPPCard();
 }
