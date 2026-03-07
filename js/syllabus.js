@@ -436,8 +436,9 @@ function renderSectionDetail(ch, sec, secIdx, board) {
   /* Section Health indicator */
   if (typeof getSectionHealth === 'function') {
     var sh = getSectionHealth(sec.id, board);
+    var shColor = sh.score >= 60 ? 'var(--c-success)' : sh.score >= 30 ? 'var(--c-warning)' : 'var(--c-danger)';
     html += '<div class="sec-health">';
-    html += '<div class="sec-health-ring" style="--pct:' + sh.score + '">' + sh.score + '</div>';
+    html += '<div class="sec-health-ring" style="--pct:' + sh.score + ';--ring-color:' + shColor + '">' + sh.score + '</div>';
     html += '<div class="sec-health-info">';
     html += '<div class="sec-health-label">' + t('Section Health', '\u77e5\u8bc6\u70b9\u5065\u5eb7\u5ea6') + '</div>';
     html += '<div class="sec-health-rec">' + _spRecLabel(sh.rec) + '</div>';
@@ -819,6 +820,8 @@ function getWeakestSections(board, limit) {
  * renderSmartPath() → HTML string for home page Smart Path recommendations
  */
 function renderSmartPath() {
+  /* Always recompute — vocab/PP data may have changed since last render */
+  _invalidateSectionHealthCache();
   var boards = getVisibleBoards();
   var all = [];
   for (var i = 0; i < boards.length; i++) {
@@ -849,30 +852,29 @@ function renderSmartPath() {
   html += '<div class="smart-path-header" onclick="toggleSmartPath()">';
   html += '<span class="smart-path-icon">\ud83c\udfaf</span>';
   html += '<span class="smart-path-title">' + t('Recommended Study', '\u63a8\u8350\u5b66\u4e60') + '</span>';
-  html += '<span class="smart-path-toggle">' + (collapsed ? '\u25bc' : '\u25b2') + '</span>';
+  html += '<span class="smart-path-toggle">\u25bc</span>';
   html += '</div>';
 
-  if (!collapsed) {
-    html += '<div class="smart-path-list">';
-    for (var k = 0; k < all.length; k++) {
-      var h = all[k];
-      var info = getSectionInfo(h.sectionId, h.board);
-      var secTitle = info ? escapeHtml(info.section.title) : h.sectionId;
-      var boardLabel = h._boardId === 'edx' ? '4MA1' : '0580';
-      html += '<div class="smart-path-card" onclick="openSection(\'' + h.sectionId + '\',\'' + h.board + '\')">';
-      html += '<div class="sp-score-ring" style="--pct:' + h.score + '">' + h.score + '</div>';
-      html += '<div class="smart-path-info">';
-      html += '<div class="smart-path-section">' + h.sectionId + ' ' + secTitle + '</div>';
-      html += '<div class="smart-path-rec">' + _spRecLabel(h.rec);
-      html += ' · ' + t('Vocab', '\u8bcd\u6c47') + ' ' + h.vocabScore + '%';
-      if (h.hasPP) html += ' · ' + t('Papers', '\u771f\u9898') + ' ' + h.ppScore + '%';
-      html += '</div>';
-      html += '</div>';
-      html += '<span class="smart-path-board">' + boardLabel + '</span>';
-      html += '</div>';
-    }
+  html += '<div class="smart-path-list">';
+  for (var k = 0; k < all.length; k++) {
+    var h = all[k];
+    var info = getSectionInfo(h.sectionId, h.board);
+    var secTitle = info ? escapeHtml(info.section.title) : h.sectionId;
+    var boardLabel = h._boardId === 'edx' ? '4MA1' : '0580';
+    var ringColor = h.score >= 60 ? 'var(--c-success)' : h.score >= 30 ? 'var(--c-warning)' : 'var(--c-danger)';
+    html += '<div class="smart-path-card" onclick="openSection(\'' + h.sectionId + '\',\'' + h.board + '\')">';
+    html += '<div class="smart-path-ring" style="--pct:' + h.score + ';--ring-color:' + ringColor + '">' + h.score + '</div>';
+    html += '<div class="smart-path-info">';
+    html += '<div class="smart-path-section">' + h.sectionId + ' ' + secTitle + '</div>';
+    html += '<div class="smart-path-rec">' + _spRecLabel(h.rec);
+    html += ' \u00b7 ' + t('Vocab', '\u8bcd\u6c47') + ' ' + h.vocabScore + '%';
+    if (h.hasPP) html += ' \u00b7 ' + t('Papers', '\u771f\u9898') + ' ' + h.ppScore + '%';
+    html += '</div>';
+    html += '</div>';
+    html += '<span class="smart-path-board">' + boardLabel + '</span>';
     html += '</div>';
   }
+  html += '</div>';
   html += '</div>';
   return html;
 }

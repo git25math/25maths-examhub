@@ -431,10 +431,13 @@ function renderHome() {
     renderHomeworkBanner();
   }
 
-  /* Preload PP data for Smart Path scoring (fire-and-forget, no re-render) */
+  /* Preload PP data for Smart Path scoring (fire-and-forget) */
   if (typeof loadPastPaperData === 'function') {
-    if (_cieDataReady) loadPastPaperData('cie').catch(function() {});
-    if (_edxDataReady) loadPastPaperData('edx').catch(function() {});
+    var _ppInvalidate = function() {
+      if (typeof _invalidateSectionHealthCache === 'function') _invalidateSectionHealthCache();
+    };
+    if (_cieDataReady) loadPastPaperData('cie').then(_ppInvalidate).catch(function() {});
+    if (_edxDataReady) loadPastPaperData('edx').then(_ppInvalidate).catch(function() {});
   }
 }
 
@@ -769,9 +772,7 @@ function clearHomeSearch() {
 function toggleSmartPath() {
   var box = document.getElementById('smart-path-box');
   if (!box) return;
-  var collapsed = box.classList.toggle('collapsed');
-  try { localStorage.setItem('sp_collapsed', collapsed ? '1' : '0'); } catch(e) {}
-  /* Re-render to update content */
-  if (typeof _invalidateSectionHealthCache === 'function') _invalidateSectionHealthCache();
-  renderHome();
+  var isCollapsed = !box.classList.contains('collapsed');
+  try { localStorage.setItem('sp_collapsed', isCollapsed ? '1' : '0'); } catch(e) {}
+  box.classList.toggle('collapsed', isCollapsed);
 }
