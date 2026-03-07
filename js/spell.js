@@ -3,6 +3,7 @@
    ══════════════════════════════════════════════════════════════ */
 
 var SP = { pairs: [], idx: 0, correct: 0, lvl: 0, answered: false };
+var _spellDelegated = false;
 
 function startSpell(li) {
   var lv = LEVELS[li];
@@ -62,11 +63,14 @@ function renderSpellCard() {
   E('panel-spell').innerHTML = html;
   SP.answered = false;
 
-  /* Delegated click for speak button */
-  E('panel-spell').addEventListener('click', function(e) {
-    var btn = e.target.closest('[data-speak]');
-    if (btn) speakWord(btn.dataset.speak);
-  });
+  /* Delegated click for speak button (bind once) */
+  if (!_spellDelegated) {
+    E('panel-spell').addEventListener('click', function(e) {
+      var btn = e.target.closest('[data-speak]');
+      if (btn) speakWord(btn.dataset.speak);
+    });
+    _spellDelegated = true;
+  }
 
   /* Focus input and bind Enter key */
   var input = E('spell-input');

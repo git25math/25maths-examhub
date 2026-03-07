@@ -461,11 +461,10 @@ async function renderClassDetail(classId) {
   var activity = await loadActivityData(true);
   var students = activity.filter(function(s) { return s.class_id === classId; });
 
-  var safeCName = cls.name.replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/"/g, '&quot;');
   var html = '<div class="admin-detail-header">' +
     '<button class="btn btn-ghost btn-sm" onclick="renderClassList()">' + t('\u2190 Back', '\u2190 返回') + '</button>' +
     '<div class="admin-detail-title">' + escapeHtml(cls.name) + ' <span class="admin-detail-grade">' + gradeLabel + '</span>' +
-    ' <button class="btn btn-ghost btn-sm" style="padding:2px 6px;font-size:14px" onclick="showEditClassModal(\'' + classId + '\', \'' + safeCName + '\', \'' + cls.grade + '\')">&#9998;</button></div>' +
+    ' <button class="btn btn-ghost btn-sm" style="padding:2px 6px;font-size:14px" data-action="editclass" data-cid="' + classId + '" data-cname="' + escapeHtml(cls.name) + '" data-grade="' + cls.grade + '">&#9998;</button></div>' +
     '<button class="btn btn-primary btn-sm" onclick="showBatchCreateModal(\'' + classId + '\')">' + t('+ Add Students', '+ 添加学生') + '</button>' +
     '</div>';
 
@@ -504,14 +503,13 @@ async function renderClassDetail(classId) {
     html += '</td>';
     html += '<td class="admin-td-words">' + mastered + '/' + total + '</td>';
     html += '<td>' + (s.rank_emoji || '\ud83e\udd49') + '</td>';
-    var safeName = (s.student_name || '').replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/"/g, '&quot;');
     html += '<td class="admin-td-action">';
     html += '<div class="action-dropdown">';
     html += '<button class="btn btn-ghost btn-sm action-trigger" onclick="toggleActionMenu(this)">' + t('Actions', '操作') + ' ▾</button>';
     html += '<div class="action-menu">';
-    html += '<button class="action-item" onclick="showRenameModal(\'' + s.user_id + '\', \'' + safeName + '\', \'' + classId + '\')">✏️ ' + t('Rename', '改名') + '</button>';
-    html += '<button class="action-item" onclick="showResetPasswordModal(\'' + s.user_id + '\', \'' + safeName + '\')">🔑 ' + t('Reset PW', '重置密码') + '</button>';
-    html += '<button class="action-item" onclick="showMoveClassModal(\'' + s.user_id + '\', \'' + safeName + '\', \'' + classId + '\')">↗️ ' + t('Move Class', '移动班级') + '</button>';
+    html += '<button class="action-item" data-action="rename" data-uid="' + s.user_id + '" data-name="' + escapeHtml(s.student_name || '') + '" data-cid="' + classId + '">✏️ ' + t('Rename', '改名') + '</button>';
+    html += '<button class="action-item" data-action="resetpw" data-uid="' + s.user_id + '" data-name="' + escapeHtml(s.student_name || '') + '">🔑 ' + t('Reset PW', '重置密码') + '</button>';
+    html += '<button class="action-item" data-action="moveclass" data-uid="' + s.user_id + '" data-name="' + escapeHtml(s.student_name || '') + '" data-cid="' + classId + '">↗️ ' + t('Move Class', '移动班级') + '</button>';
     html += '</div></div></td>';
     html += '</tr>';
   });
@@ -763,13 +761,25 @@ function toggleActionMenu(btn) {
   if (!wasOpen) menu.classList.add('open');
 }
 
-/* Global click to close menus */
+/* Global click to close menus + action delegation */
 document.addEventListener('click', function(e) {
   if (!e.target.closest('.action-dropdown')) {
     document.querySelectorAll('.action-menu.open').forEach(function(m) {
       m.classList.remove('open');
     });
   }
+
+  /* B1: student action buttons */
+  var act = e.target.closest('[data-action="rename"]');
+  if (act) { showRenameModal(act.dataset.uid, act.dataset.name, act.dataset.cid); return; }
+  act = e.target.closest('[data-action="resetpw"]');
+  if (act) { showResetPasswordModal(act.dataset.uid, act.dataset.name); return; }
+  act = e.target.closest('[data-action="moveclass"]');
+  if (act) { showMoveClassModal(act.dataset.uid, act.dataset.name, act.dataset.cid); return; }
+
+  /* B2: edit class */
+  act = e.target.closest('[data-action="editclass"]');
+  if (act) { showEditClassModal(act.dataset.cid, act.dataset.cname, act.dataset.grade); return; }
 });
 
 /* ═══ RENAME STUDENT ═══ */

@@ -1,5 +1,39 @@
 # Changelog
 
+## [1.13.1] - 2026-03-07 — 质量修复（监听器泄漏修复 + 残余 onclick XSS 消除）
+
+### 修复 — 监听器泄漏（Part A）
+- **spell.js 委托泄漏**: `renderSpellCard()` 内 `panel-spell` click 委托每张卡片叠加 → `_spellDelegated` 标志只绑定一次
+- **practice.js 委托泄漏**: `renderPracticeReview()` 内 `panel-practice` click 委托每次过滤叠加 → `_pqReviewDelegated` 标志只绑定一次
+- **practice.js pqToolFormula 泄漏**: `inp.addEventListener('input')` 每次打开公式弹窗叠加 → 添加前先 `removeEventListener`
+- **homework.js renderHwQuestion 泄漏**: `el.addEventListener('click')` 每题叠加 → `_hwQuestionDelegated` 标志只绑定一次
+- **homework.js showNotifications 泄漏**: `modal-card` click/keydown 每次打开通知叠加 → 提取为命名函数 + remove 后 add
+- **export.js renderImport 泄漏**: `import-file` change / `import-drop` drag 监听器每次打开面板叠加 → `_importDelegated` 标志只绑定一次
+
+### 修复 — onclick XSS 消除（Part B）
+- **admin.js 学生操作按钮**: 3 个 action-item（rename/resetpw/moveclass）从 `onclick` + `safeName` 改为 `data-action` + `data-uid/name/cid` + 全局事件委托
+- **admin.js 编辑班级按钮**: `showEditClassModal` onclick 改为 `data-action="editclass"` + 委托
+- **homework.js 学生详情按钮**: `showStudentHwDetail` onclick 改为 `data-action="hw-student-detail"` + 委托
+- **homework.js 作业操作按钮**: `renderHwProgress`/`deleteHw` onclick 改为 `data-action="hw-detail|hw-delete"` + 委托
+- **homework.js 模板选择器**: `hwLoadTemplate` onchange 改为 `data-hw-tpl-cid` + change 委托
+- **homework.js 词汇预览切换**: 内联 onclick 改为 `data-toggle-preview` + 委托
+- **homework.js 退出确认按钮**: 内联 `onclick="if(confirm(...))"` 改为 `data-action="hw-quit-practice"` + 委托
+- **syllabus.js startPastPaper**: 6 处 onclick 改为 `data-pp-start` + `data-sec/board/mode/group/cmd` + 委托
+- **syllabus.js toggleMQtypeMastery**: onchange 改为 `data-mq-toggle` + `data-sec/gkey` + change 委托
+- **practice.js startPastPaper**: Focus Areas onclick 改为 `data-pp-start` + 委托
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `js/spell.js` | A1: 委托泄漏修复 |
+| `js/practice.js` | A2+A5: 委托泄漏修复 + B10: onclick→data |
+| `js/homework.js` | A3+A6: 委托泄漏修复 + B3-B7: onclick→data + 事件委托 |
+| `js/export.js` | A4: import 监听器泄漏修复 |
+| `js/admin.js` | B1+B2: onclick→data + 事件委托 |
+| `js/syllabus.js` | B8+B9: onclick→data + 事件委托 |
+| `js/config.js` | 版本号 v1.13.0→v1.13.1 |
+| `index.html` | 缓存标签 v1.13.0→v1.13.1 |
+
 ## [1.13.0] - 2026-03-07 — 防御性修复（onclick XSS 消除 + 空引用防护）
 
 ### 修复

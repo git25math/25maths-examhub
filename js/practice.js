@@ -13,6 +13,7 @@ var _pqEditorQid = null;      /* qid of question currently in editor */
 var _pqReviewState = null;    /* { li, questions, board } — current review context */
 var _pqReviewFilter = 'all';  /* 'all' | 1 (Core) | 2 (Extended) */
 var _pqReviewTopicFilter = 'all'; /* 'all' | topic name string */
+var _pqReviewDelegated = false;
 var _pqReviewDelegated = false; /* event delegation bound flag */
 
 /* ═══ KATEX LAZY LOADING ═══ */
@@ -712,6 +713,7 @@ function pqToolFormula() {
     if (inp) {
       inp.value = '';
       inp.focus();
+      inp.removeEventListener('input', _pqPreviewFormula);
       inp.addEventListener('input', _pqPreviewFormula);
     }
     var prev = E('pq-formula-preview');
@@ -959,19 +961,22 @@ function renderPracticeReview() {
 
   E('panel-practice').innerHTML = html;
 
-  /* Delegated clicks for filter buttons */
-  E('panel-practice').addEventListener('click', function(e) {
-    var fb = e.target.closest('[data-pq-filter]');
-    if (fb) {
-      var v = fb.dataset.pqFilter;
-      setPqReviewFilter(v === 'all' ? 'all' : Number(v));
-      return;
-    }
-    var tb = e.target.closest('[data-pq-topic]');
-    if (tb) {
-      setPqReviewTopic(tb.dataset.pqTopic);
-    }
-  });
+  /* Delegated clicks for filter buttons (bind once) */
+  if (!_pqReviewDelegated) {
+    E('panel-practice').addEventListener('click', function(e) {
+      var fb = e.target.closest('[data-pq-filter]');
+      if (fb) {
+        var v = fb.dataset.pqFilter;
+        setPqReviewFilter(v === 'all' ? 'all' : Number(v));
+        return;
+      }
+      var tb = e.target.closest('[data-pq-topic]');
+      if (tb) {
+        setPqReviewTopic(tb.dataset.pqTopic);
+      }
+    });
+    _pqReviewDelegated = true;
+  }
 
   renderMath(E('panel-practice'));
 }
@@ -2558,7 +2563,7 @@ function ppShowResults(exam, conceptErrors) {
         var wg = _wkGroups[fi];
         var gl = PP_GROUP_LABELS[wg.group];
         var glabel = gl ? t(gl.en, gl.zh) : wg.group;
-        html += '<span class="pp-focus-chip" onclick="startPastPaper(\'' + _ppSession.sectionId + '\',\'' + _ppSession.board + '\',\'practice\',\'' + wg.group + '\')">';
+        html += '<span class="pp-focus-chip" data-pp-start data-sec="' + _ppSession.sectionId + '" data-board="' + _ppSession.board + '" data-mode="practice" data-group="' + wg.group + '">';
         html += glabel + ' <span class="pp-focus-pct">' + wg.pct + '%</span></span>';
       }
       html += '</div></div>';

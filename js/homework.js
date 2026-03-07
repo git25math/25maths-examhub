@@ -5,6 +5,18 @@
 /* ═══ NOTIFICATION SYSTEM ═══ */
 var _notifCache = null;
 var _notifCount = 0;
+var _hwQuestionDelegated = false;
+
+function _notifClickHandler(e) {
+  var item = e.target.closest('.notif-item');
+  if (item) handleNotifClick(item.dataset.nid, item.dataset.ntype, item.dataset.nlid);
+}
+function _notifKeyHandler(e) {
+  if (e.key === 'Enter' || e.key === ' ') {
+    var item = e.target.closest('.notif-item');
+    if (item) { e.preventDefault(); handleNotifClick(item.dataset.nid, item.dataset.ntype, item.dataset.nlid); }
+  }
+}
 
 async function loadNotifications() {
   if (!sb || !isLoggedIn() || isGuest()) return [];
@@ -102,19 +114,13 @@ function showNotifPanel() {
   html += '<button class="btn btn-ghost btn-block" style="margin-top:12px" onclick="hideModal()">' + t('Close', '关闭') + '</button>';
   showModal(html);
 
-  /* Event delegation for notification clicks (avoids inline onclick XSS risk) */
+  /* Event delegation for notification clicks (remove+add to prevent leaks) */
   var mc = E('modal-card');
   if (mc) {
-    mc.addEventListener('click', function(e) {
-      var item = e.target.closest('.notif-item');
-      if (item) handleNotifClick(item.dataset.nid, item.dataset.ntype, item.dataset.nlid);
-    });
-    mc.addEventListener('keydown', function(e) {
-      if (e.key === 'Enter' || e.key === ' ') {
-        var item = e.target.closest('.notif-item');
-        if (item) { e.preventDefault(); handleNotifClick(item.dataset.nid, item.dataset.ntype, item.dataset.nlid); }
-      }
-    });
+    mc.removeEventListener('click', _notifClickHandler);
+    mc.addEventListener('click', _notifClickHandler);
+    mc.removeEventListener('keydown', _notifKeyHandler);
+    mc.addEventListener('keydown', _notifKeyHandler);
   }
 }
 
@@ -280,7 +286,7 @@ function showCreateHwModal(classId) {
   var tpls = _getHwTemplates();
   if (tpls.length > 0) {
     html += '<div style="display:flex;align-items:center;gap:6px;margin-bottom:10px">';
-    html += '<select id="hw-tpl-select" class="auth-input" style="margin:0;flex:1;font-size:12px" onchange="hwLoadTemplate(\'' + classId + '\')">';
+    html += '<select id="hw-tpl-select" class="auth-input" style="margin:0;flex:1;font-size:12px" data-hw-tpl-cid="' + classId + '">';
     html += '<option value="">' + t('-- Load template --', '-- \u52a0\u8f7d\u6a21\u677f --') + '</option>';
     for (var ti = 0; ti < tpls.length; ti++) {
       html += '<option value="' + ti + '">' + escapeHtml(tpls[ti].name) + ' (' + tpls[ti].slugs.length + ' ' + t('groups', '\u7ec4') + ')</option>';
@@ -665,8 +671,8 @@ async function renderClassHwList(classId) {
       html += '<span class="hw-list-title" style="flex:1">' + prefix + escapeHtml(hw.title) + ' <span style="font-size:11px;color:var(--c-text2)">(' + countLabel + ')</span></span>';
       html += '<span class="hw-list-deadline" style="' + (isOverdue ? 'color:var(--c-danger)' : '') + '">' + deadline + '</span>';
       html += '<span class="hw-list-rate">' + completed + ' ' + t('done', '完成') + '</span>';
-      html += '<button class="btn btn-ghost btn-sm" onclick="renderHwProgress(\'' + hw.id + '\', \'' + classId + '\')">' + t('Detail', '详情') + '</button>';
-      html += '<button class="btn btn-ghost btn-sm" style="color:var(--c-danger)" onclick="deleteHw(\'' + hw.id + '\', \'' + classId + '\')">' + t('Del', '删') + '</button>';
+      html += '<button class="btn btn-ghost btn-sm" data-action="hw-detail" data-hwid="' + hw.id + '" data-cid="' + classId + '">' + t('Detail', '详情') + '</button>';
+      html += '<button class="btn btn-ghost btn-sm" style="color:var(--c-danger)" data-action="hw-delete" data-hwid="' + hw.id + '" data-cid="' + classId + '">' + t('Del', '删') + '</button>';
       html += '</div>';
 
       if (isPractice) {
@@ -809,7 +815,6 @@ async function renderHwProgress(hwId, classId) {
       var pct = (r && r.total_count > 0) ? Math.round(r.correct_count / r.total_count * 100) + '%' : '-';
       var attempts = r ? r.attempts : 0;
       var wrongCount = (r && r.wrong_words) ? r.wrong_words.length : 0;
-      var safeName = (s.student_name || '').replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/"/g, '&quot;');
 
       html += '<tr>';
       html += '<td class="admin-td-name">' + escapeHtml(s.student_name || '-') + '</td>';
@@ -820,7 +825,7 @@ async function renderHwProgress(hwId, classId) {
       html += '<td>' + (wrongCount > 0 ? '<span style="color:var(--c-danger)">' + wrongCount + '</span>' : '-') + '</td>';
       html += '<td>';
       if (r && wrongCount > 0) {
-        html += '<button class="btn btn-ghost btn-sm" onclick="showStudentHwDetail(\'' + hwId + '\', \'' + s.user_id + '\', \'' + safeName + '\', \'' + classId + '\')">' + t('View', '查看') + '</button>';
+        html += '<button class="btn btn-ghost btn-sm" data-action="hw-student-detail" data-hwid="' + hwId + '" data-uid="' + s.user_id + '" data-name="' + escapeHtml(s.student_name || '') + '" data-cid="' + classId + '">' + t('View', '查看') + '</button>';
       }
       html += '</td>';
       html += '</tr>';
@@ -1068,7 +1073,7 @@ async function showStudentHwPage() {
     if (!isPractice && pWords.length > 0) {
       var previewId = 'hw-preview-' + hw.id.slice(0, 8);
       html += '<div style="width:100%;margin-top:6px">';
-      html += '<button class="btn btn-ghost btn-sm" style="font-size:11px;padding:2px 8px" onclick="event.stopPropagation();var el=document.getElementById(\'' + previewId + '\');el.style.display=el.style.display===\'none\'?\'block\':\'none\'">' + t('View words', '\u67e5\u770b\u8bcd\u6c47') + ' \u25BC</button>';
+      html += '<button class="btn btn-ghost btn-sm" style="font-size:11px;padding:2px 8px" data-toggle-preview="' + previewId + '">' + t('View words', '\u67e5\u770b\u8bcd\u6c47') + ' \u25BC</button>';
       html += '<div id="' + previewId + '" style="display:none;margin-top:6px;max-height:180px;overflow-y:auto;border:1px solid var(--c-border);border-radius:8px;padding:6px 10px;background:var(--c-surface)">';
       pWords.forEach(function(w, i) {
         html += '<div style="padding:3px 0;font-size:12px;' + (i < pWords.length - 1 ? 'border-bottom:1px solid var(--c-border-light)' : '') + '">';
@@ -1222,11 +1227,14 @@ function renderHwQuestion() {
 
   el.innerHTML = html;
 
-  /* Delegated click for answer buttons */
-  el.addEventListener('click', function(e) {
-    var btn = e.target.closest('.hw-option[data-correct]');
-    if (btn) pickHwAnswer(btn, btn.dataset.correct === '1', btn.dataset.answer);
-  });
+  /* Delegated click for answer buttons (bind once) */
+  if (!_hwQuestionDelegated) {
+    el.addEventListener('click', function(e) {
+      var btn = e.target.closest('.hw-option[data-correct]');
+      if (btn) pickHwAnswer(btn, btn.dataset.correct === '1', btn.dataset.answer);
+    });
+    _hwQuestionDelegated = true;
+  }
 }
 
 function pickHwAnswer(btn, isCorrect, correctAnswer) {
@@ -1442,7 +1450,7 @@ function renderHwPracticeCard() {
   var progressPct = Math.round(s.current / s.total * 100);
 
   var html = '<div class="hw-header">';
-  html += '<button class="back-btn" onclick="if(confirm(\'' + t('Quit practice?', '\u9000\u51fa\u7ec3\u4e60\uff1f') + '\'))showStudentHwPage()">\u2190</button>';
+  html += '<button class="back-btn" data-action="hw-quit-practice">\u2190</button>';
   html += '<div class="deck-title">' + escapeHtml(s.title) + '</div>';
   html += '<div style="font-size:13px;color:var(--c-text2);margin-left:auto">' + (s.current + 1) + '/' + s.total + '</div>';
   html += '</div>';
@@ -1574,3 +1582,32 @@ async function finishHwPractice() {
   renderMath(el);
   _hwPractice = null;
 }
+
+/* ═══ HOMEWORK EVENT DELEGATION ═══ */
+(function() {
+  document.addEventListener('click', function(e) {
+    /* B7: quit practice */
+    var qp = e.target.closest('[data-action="hw-quit-practice"]');
+    if (qp) { if (confirm(t('Quit practice?', '\u9000\u51fa\u7ec3\u4e60\uff1f'))) showStudentHwPage(); return; }
+
+    /* B6: toggle preview */
+    var tp = e.target.closest('[data-toggle-preview]');
+    if (tp) { e.stopPropagation(); var el = document.getElementById(tp.dataset.togglePreview); if (el) el.style.display = el.style.display === 'none' ? 'block' : 'none'; return; }
+
+    /* B3: student hw detail */
+    var sd = e.target.closest('[data-action="hw-student-detail"]');
+    if (sd) { showStudentHwDetail(sd.dataset.hwid, sd.dataset.uid, sd.dataset.name, sd.dataset.cid); return; }
+
+    /* B4: hw detail / delete */
+    var hd = e.target.closest('[data-action="hw-detail"]');
+    if (hd) { renderHwProgress(hd.dataset.hwid, hd.dataset.cid); return; }
+    var hdel = e.target.closest('[data-action="hw-delete"]');
+    if (hdel) { deleteHw(hdel.dataset.hwid, hdel.dataset.cid); return; }
+  });
+
+  /* B5: template selector change */
+  document.addEventListener('change', function(e) {
+    var tpl = e.target.closest('[data-hw-tpl-cid]');
+    if (tpl) hwLoadTemplate(tpl.dataset.hwTplCid);
+  });
+})();

@@ -5,6 +5,8 @@
 /* ═══ IMPORT PANEL ═══ */
 var importParsed = null;
 
+var _importDelegated = false;
+
 function renderImport() {
   var html = '';
 
@@ -45,7 +47,9 @@ function renderImport() {
 
   E('panel-import').innerHTML = html;
 
-  /* Bind file upload */
+  /* Bind file upload (once only) */
+  if (_importDelegated) return;
+  _importDelegated = true;
   setTimeout(function() {
     var fileInput = E('import-file');
     if (fileInput) {

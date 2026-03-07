@@ -1064,7 +1064,7 @@ function _renderPPSectionModule(slot, secId, board) {
     var gc = groupCounts[gk];
     if (!gc) continue;
     var gl = PP_GROUP_LABELS[gk];
-    h += '<span class="pp-error-chip" onclick="event.stopPropagation();startPastPaper(\'' + secId + '\',\'' + board + '\',\'practice\',\'' + gk + '\')">';
+    h += '<span class="pp-error-chip" data-pp-start data-sec="' + secId + '" data-board="' + board + '" data-mode="practice" data-group="' + gk + '">';
     h += t(gl.en, gl.zh) + ' <b>' + gc + '</b></span>';
   }
   h += '</div></div>';
@@ -1086,7 +1086,7 @@ function _renderPPSectionModule(slot, secId, board) {
       var cmc = cmdCounts[cmk];
       if (!cmc) continue;
       var cml = PP_CMD_LABELS[cmk];
-      h += '<span class="pp-error-chip" onclick="event.stopPropagation();startPastPaper(\'' + secId + '\',\'' + board + '\',\'practice\',null,\'' + cmk + '\')">';
+      h += '<span class="pp-error-chip" data-pp-start data-sec="' + secId + '" data-board="' + board + '" data-mode="practice" data-cmd="' + cmk + '">';
       h += t(cml.en, cml.zh) + ' <b>' + cmc + '</b></span>';
     }
     h += '</div></div>';
@@ -1102,7 +1102,7 @@ function _renderPPSectionModule(slot, secId, board) {
       var wg = _secWeak[wi];
       var wgl = PP_GROUP_LABELS[wg.group];
       var wglabel = wgl ? t(wgl.en, wgl.zh) : wg.group;
-      h += '<span class="pp-focus-chip" onclick="event.stopPropagation();startPastPaper(\'' + secId + '\',\'' + board + '\',\'practice\',\'' + wg.group + '\')">';
+      h += '<span class="pp-focus-chip" data-pp-start data-sec="' + secId + '" data-board="' + board + '" data-mode="practice" data-group="' + wg.group + '">';
       h += wglabel + ' <span class="pp-focus-pct">' + wg.pct + '%</span></span>';
     }
     h += '</div></div>';
@@ -1110,12 +1110,12 @@ function _renderPPSectionModule(slot, secId, board) {
 
   /* Action buttons */
   h += '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px">';
-  h += '<button class="btn btn-sm" onclick="event.stopPropagation();startPastPaper(\'' + secId + '\',\'' + board + '\',\'practice\')" style="flex:1;min-width:120px">';
+  h += '<button class="btn btn-sm" data-pp-start data-sec="' + secId + '" data-board="' + board + '" data-mode="practice" style="flex:1;min-width:120px">';
   h += '\ud83d\udcd6 ' + t('Practice Mode', '\u7ec3\u4e60\u6a21\u5f0f') + '</button>';
-  h += '<button class="btn btn-sm" onclick="event.stopPropagation();startPastPaper(\'' + secId + '\',\'' + board + '\',\'exam\')" style="flex:1;min-width:120px;background:var(--c-warning);border-color:var(--c-warning);color:#fff">';
+  h += '<button class="btn btn-sm" data-pp-start data-sec="' + secId + '" data-board="' + board + '" data-mode="exam" style="flex:1;min-width:120px;background:var(--c-warning);border-color:var(--c-warning);color:#fff">';
   h += '\u23f1 ' + t('Exam Mode', '\u5b9e\u6218\u6a21\u5f0f') + '</button>';
   if (ppStats.wrongActive > 0) {
-    h += '<button class="btn btn-sm" onclick="event.stopPropagation();startPastPaper(\'' + secId + '\',\'' + board + '\',\'wrongbook\')" style="flex:1;min-width:120px;background:#ef5350;border-color:#ef5350;color:#fff">';
+    h += '<button class="btn btn-sm" data-pp-start data-sec="' + secId + '" data-board="' + board + '" data-mode="wrongbook" style="flex:1;min-width:120px;background:#ef5350;border-color:#ef5350;color:#fff">';
     h += '\ud83d\udcd5 ' + t('Wrong Book', '\u9519\u9898\u672c') + ' (' + ppStats.wrongActive + ')</button>';
   }
   h += '</div>';
@@ -1202,7 +1202,7 @@ function _renderMasterQSummary(slot, secId, board) {
 
     /* Checkbox */
     h += '<input type="checkbox" class="mq-type-checkbox"' + (isMastered ? ' checked' : '') + ' ';
-    h += 'onchange="toggleMQtypeMastery(\'' + secId + '\',\'' + gKey + '\',this)">';
+    h += 'data-mq-toggle data-sec="' + secId + '" data-gkey="' + gKey + '">';
 
     /* Info */
     h += '<div class="mq-type-info">';
@@ -1625,6 +1625,24 @@ function startPracticeByChapter(chNum, board) {
   window._practiceBoard = board;
   if (typeof startPractice === 'function') startPractice(li);
 }
+
+/* ═══ SYLLABUS EVENT DELEGATION ═══ */
+(function() {
+  /* B8 + B10: startPastPaper via data attributes */
+  document.addEventListener('click', function(e) {
+    var pp = e.target.closest('[data-pp-start]');
+    if (pp) {
+      e.stopPropagation();
+      startPastPaper(pp.dataset.sec, pp.dataset.board, pp.dataset.mode, pp.dataset.group || undefined, pp.dataset.cmd || undefined);
+    }
+  });
+
+  /* B9: toggleMQtypeMastery via data attributes */
+  document.addEventListener('change', function(e) {
+    var mq = e.target.closest('[data-mq-toggle]');
+    if (mq) toggleMQtypeMastery(mq.dataset.sec, mq.dataset.gkey, mq);
+  });
+})();
 
 /* ═══ INIT ═══ */
 /* Auto-load both board data on script load */
