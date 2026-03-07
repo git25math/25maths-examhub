@@ -3363,6 +3363,13 @@ input { font-family: inherit; }
   border: 1px solid var(--c-border-light); padding: 8px; background: #fff; }
 [data-theme="dark"] .pp-fig { filter: invert(1) hue-rotate(180deg); border-color: var(--c-border); }
 
+/* PP Table (converted from LaTeX tabular) */
+.pp-table-wrap { overflow-x: auto; margin: 12px 0; white-space: normal; }
+.pp-table { border-collapse: collapse; width: auto; margin: 0 auto; font-size: 13px; }
+.pp-table td, .pp-table th { border: 1px solid var(--c-border); padding: 6px 10px; }
+.pp-table th { background: var(--c-surface-alt); font-weight: 600; }
+.pp-table-nb td, .pp-table-nb th { border: none; }
+
 /* Nav buttons */
 .pp-nav-row { display: flex; justify-content: space-between; gap: 12px;
   max-width: 640px; margin: 12px auto 0; }

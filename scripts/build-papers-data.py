@@ -20,10 +20,15 @@ Usage:
   python3 scripts/build-papers-data.py --section 2.5     # filter output to one section
 """
 
+import importlib
 import json
 import os
 import re
 import sys
+
+# Import convert_tex from convert-tables.py (hyphenated filename)
+_ct = importlib.import_module("convert-tables")
+tabular_to_html = _ct.convert_tex
 
 IGCSE_ROOT = "/Users/zhuxingzhe/Project/ExamBoard/CIE/IGCSE_v2"
 CATALOG_FILE = os.path.join(IGCSE_ROOT, "TikzVault/catalog.json")
@@ -498,6 +503,10 @@ def main():
             "cognitive": cognitive,
             "cmd": classify_cmd(cleaned),
         }
+        # Add texHtml for questions with tabular
+        tex_html = tabular_to_html(cleaned)
+        if tex_html is not None:
+            entry["texHtml"] = tex_html
         questions.append(entry)
 
         # Accumulate paper stats

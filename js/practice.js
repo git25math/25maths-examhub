@@ -1231,7 +1231,9 @@ function _ppSaveExam(exam) {
 
 /* ═══ HELPER: render tex safely ═══ */
 
-function _ppRenderTex(tex) {
+function _ppRenderTex(texOrQ) {
+  /* Accept a question object (prefer texHtml) or raw string */
+  var tex = (typeof texOrQ === 'object' && texOrQ !== null) ? (texOrQ.texHtml || texOrQ.tex) : texOrQ;
   /* Convert markdown bold; keep \n intact (CSS white-space: pre-line handles display) */
   var html = tex.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
   return html;
@@ -1442,7 +1444,7 @@ function renderPPCard() {
 
   /* Card body: question */
   html += '<div class="pp-card-body" id="pp-question-body">';
-  html += _ppRenderTex(q.tex);
+  html += _ppRenderTex(q);
   html += _ppRenderFigures(q);
   html += '</div>';
 
@@ -2177,7 +2179,7 @@ function ppShowMarking() {
 
     /* Question preview */
     html += '<div style="font-size:13px;line-height:1.6;margin-bottom:12px;max-height:160px;overflow:auto" class="pp-mark-tex">';
-    html += _ppRenderTex(q.tex);
+    html += _ppRenderTex(q);
     html += _ppRenderFigures(q);
     html += '</div>';
 
