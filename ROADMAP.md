@@ -378,3 +378,4 @@
 - [x] **PWA 兼容**: manifest.json start_url/scope 改为相对路径 `./` → v2.2.0
 - [x] **LaTeX tabular 表格 HTML 渲染**: 546 条 texHtml + _ppRenderTex 优先读 texHtml → v2.2.1
 - [x] **超管数据质量面板**: 15 规则扫描 + 批量 AI 编辑 + 词级 diff + Auto-Fix + JSON 导出 → v2.2.2
+- [x] **HHK 知识卡片+经典例题**: 55 sections × 2 modules = 110 条双语富文本（知识回顾+关键技能+考试技巧+经典例题）→ v2.2.3

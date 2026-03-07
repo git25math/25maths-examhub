@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.2.3] - 2026-03-08 — HHK 知识卡片 + 经典例题
+
+### HHK 考点精讲内容（55 sections × 2 modules = 110 条）
+- **知识卡片 (knowledge)**: 55 张双语富文本卡片，每张包含 Recap / Key Skills / Exam Tip / Watch Out!（中文：知识回顾/关键技能/考试技巧/注意！）
+- **经典例题 (examples)**: 55 组双语 Worked Examples，每组 2 道含 [marks] + Solution 步骤 + Exam Tip（中文：经典例题/解答/考试技巧）
+- **覆盖范围**: Y7 (11) + Y8 (9) + Y9 (12) + Y10 (12) + Y11 (11) 全部 55 个知识点
+- **内容特点**: 难度适配 Harrow Haikou 校本课程（Y7-Y8 基础，Y9-Y11 进阶），LaTeX 公式 KaTeX 渲染
+- **数据管道**: `scripts/seed-hhk.js` → `seed-hhk.sql` → Supabase `section_edits` 表 upsert
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `scripts/seed-hhk.js` | 新建 — HHK 知识卡片+例题种子脚本 (4,133 行) |
+| `scripts/seed-hhk.sql` | 新建 — 110 条 INSERT SQL (115 行) |
+| `js/config.js` | v2.2.2→v2.2.3 |
+
+---
+
 ## [2.2.2] - 2026-03-08 — 超管数据质量管理面板
 
 ### Data Quality Dashboard
