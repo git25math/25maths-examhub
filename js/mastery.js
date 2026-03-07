@@ -243,8 +243,9 @@ function renderHome() {
   }
 
   /* Diagnostic test button (only if PP data available) */
+  var _diagBoard = (userBoard === 'edx') ? 'edx' : 'cie';
   if (typeof startDiagnostic === 'function' && gs.total > 0) {
-    html += '<div class="diag-home-btn" onclick="startDiagnostic(\'cie\')">';
+    html += '<div class="diag-home-btn" onclick="startDiagnostic(\'' + _diagBoard + '\')">';
     html += '<span class="diag-home-icon">\ud83c\udfaf</span>';
     html += '<div class="diag-home-info">';
     html += '<div class="diag-home-title">' + t('Diagnostic Test', '\u8bca\u65ad\u6d4b\u8bd5') + '</div>';

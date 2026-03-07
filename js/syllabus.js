@@ -498,16 +498,17 @@ function renderSectionDetail(ch, sec, secIdx, board) {
   /* Learning journey bar */
   var _jVocabDone = stats.learningPct >= 80;
   var _jPracticeDone = li >= 0 && isModeDone(li, 'practice');
-  var _jPapersDone = false; /* updated async after PP data loads */
+  var _jHasPP = board === 'cie' && typeof loadPastPaperData === 'function';
   var _jVocabClass = _jVocabDone ? 'done' : (stats.started > 0 ? 'current' : '');
   var _jPracticeClass = _jPracticeDone ? 'done' : (_jVocabDone ? 'current' : '');
-  var _jPapersClass = ''; /* set async */
   html += '<div class="sec-journey" id="sec-journey-bar">';
   html += '<div class="sec-journey-step ' + _jVocabClass + '"><span class="sec-journey-icon">\ud83d\udcdd</span> ' + t('Vocab', '\u8bcd\u6c47') + '</div>';
   html += '<div class="sec-journey-arrow">\u2192</div>';
   html += '<div class="sec-journey-step ' + _jPracticeClass + '"><span class="sec-journey-icon">\u270f\ufe0f</span> ' + t('Practice', '\u7ec3\u4e60') + '</div>';
-  html += '<div class="sec-journey-arrow">\u2192</div>';
-  html += '<div class="sec-journey-step ' + _jPapersClass + '" id="sec-journey-papers"><span class="sec-journey-icon">\ud83d\udcc4</span> ' + t('Papers', '\u771f\u9898') + '</div>';
+  if (_jHasPP) {
+    html += '<div class="sec-journey-arrow">\u2192</div>';
+    html += '<div class="sec-journey-step" id="sec-journey-papers"><span class="sec-journey-icon">\ud83d\udcc4</span> ' + t('Papers', '\u771f\u9898') + '</div>';
+  }
   html += '</div>';
 
   /* Module cards: Vocabulary → Practice → Knowledge → Examples */

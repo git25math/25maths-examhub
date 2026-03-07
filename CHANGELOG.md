@@ -1,5 +1,27 @@
 # Changelog
 
+## [1.10.2] - 2026-03-07 — 质量修复：诊断测试 UX + 学习闭环 Bug 修复
+
+### 修复
+- **Bug**: `finishPractice()` PP 数据检查使用错误的 board key（'edexcel' vs 'edx'），修正为统一转换
+- **Bug**: 诊断测试首页入口硬编码 'cie' board，改为根据用户选择的考试局自动适配
+- **Bug**: 诊断测试退出时跳转到 section 面板（空白），修正为返回首页
+
+### 优化
+- **诊断测试标题**: 答题界面顶部显示 "Diagnostic Test" 紫色标题，区分普通 PP 练习
+- **诊断结果进度条**: 每个知识点行新增彩色进度条（绿/黄/红），视觉反馈更直观
+- **诊断结果 KaTeX**: 结果页调用 `renderMath()` 确保数学公式正确渲染
+- **旅程条适配**: Edexcel 等无真题 board 的 section 详情页隐藏 Papers 步骤（仅显示 Vocab → Practice）
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `js/practice.js` | PP board key 修复 + 诊断标题 + ppForceBack 诊断路由 + 结果进度条 + renderMath |
+| `js/mastery.js` | 诊断入口 board 自适应 |
+| `js/syllabus.js` | 旅程条 Papers 步条件渲染 |
+| `css/style.css` | +`.diag-label-col` `.diag-bar` `.diag-bar-fill` 进度条样式 |
+| `js/config.js` | 版本号 v1.10.1 → v1.10.2 |
+
 ## [1.10.1] - 2026-03-07 — 诊断测试：跨知识点薄弱点定位
 
 ### 新增

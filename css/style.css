@@ -3357,7 +3357,10 @@ input { font-family: inherit; }
 .diag-section-row { display: flex; align-items: center; gap: 8px; padding: 8px 12px; margin-bottom: 4px; border-radius: 8px; font-size: 13px; cursor: pointer; transition: background 0.15s; }
 .diag-section-row:hover { background: rgba(82,72,201,0.06); }
 .diag-icon { font-size: 14px; flex-shrink: 0; }
-.diag-label { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.diag-label-col { flex: 1; min-width: 0; }
+.diag-label { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.diag-bar { height: 4px; background: var(--c-border); border-radius: 2px; margin-top: 4px; overflow: hidden; }
+.diag-bar-fill { height: 100%; border-radius: 2px; transition: width 0.3s; }
 .diag-score { font-weight: 600; font-family: var(--font-mono); font-size: 12px; color: var(--c-text2); }
 .diag-pct { font-weight: 700; font-family: var(--font-mono); font-size: 12px; width: 36px; text-align: right; }
 .diag-recs { margin-top: 16px; padding: 12px; background: rgba(255,152,0,0.08); border: 1px solid rgba(255,152,0,0.25); border-radius: 10px; }

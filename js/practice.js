@@ -384,8 +384,9 @@ function finishPractice() {
 
   /* Smart next step: context-aware recommendation */
   var step;
-  if (s.sectionId && typeof startPastPaper === 'function' && typeof _ppData !== 'undefined' && _ppData[s.sectionBoard === 'edexcel' ? 'edx' : s.sectionBoard]) {
-    var _ppCheck = getPPBySection(s.sectionBoard, s.sectionId);
+  var _ppBoardKey = s.sectionBoard === 'edexcel' ? 'edx' : s.sectionBoard;
+  if (s.sectionId && typeof startPastPaper === 'function' && typeof _ppData !== 'undefined' && _ppData[_ppBoardKey]) {
+    var _ppCheck = getPPBySection(_ppBoardKey, s.sectionId);
     if (_ppCheck && _ppCheck.length > 0) {
       step = nextStepHTML('\ud83d\udcc4', t('Try Past Papers', '\u5c1d\u8bd5\u771f\u9898'), 'startPastPaper(\'' + s.sectionId + '\',\'' + s.sectionBoard + '\',\'practice\')');
     } else {
@@ -1290,7 +1291,11 @@ function renderPPCard() {
   /* Header */
   html += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">';
   html += '<button class="btn btn-ghost btn-sm" onclick="ppBack()">\u2190 ' + t('Back', '\u8fd4\u56de') + '</button>';
-  if (_ppSession.paperKey) {
+  if (_ppSession.isDiagnostic) {
+    html += '<div style="flex:1;text-align:center;font-size:13px;font-weight:600;color:var(--c-primary)">';
+    html += '\ud83c\udfaf ' + t('Diagnostic Test', '\u8bca\u65ad\u6d4b\u8bd5');
+    html += '</div>';
+  } else if (_ppSession.paperKey) {
     var _hMeta = getPaperMeta(_ppSession.board)[_ppSession.paperKey];
     if (_hMeta) {
       var _hSl = PP_SESSION_LABELS[_hMeta.session] || { en: _hMeta.session, zh: _hMeta.session };
@@ -1544,10 +1549,13 @@ function ppBack() {
 function ppForceBack() {
   if (_ppTimer) { clearInterval(_ppTimer); _ppTimer = null; }
   var wasPaper = _ppSession && _ppSession.paperKey;
+  var wasDiag = _ppSession && _ppSession.isDiagnostic;
   var board = _ppSession ? _ppSession.board : 'cie';
   _ppSession = null;
   if (wasPaper) {
     ppShowPaperBrowse(board);
+  } else if (wasDiag) {
+    navTo('home');
   } else {
     showPanel('section');
   }
@@ -1743,11 +1751,15 @@ function _diagShowResults(exam, conceptErrors) {
     var info = (typeof getSectionInfo === 'function') ? getSectionInfo(sk, board) : null;
     var secLabel = info ? info.section.title : sk;
 
+    var spctColor = spct >= 80 ? 'var(--c-success)' : spct >= 40 ? 'var(--c-warning)' : 'var(--c-danger)';
     html += '<div class="diag-section-row" onclick="openSection(\'' + sk + '\',\'' + board + '\')">';
     html += '<span class="diag-icon">' + icon + '</span>';
+    html += '<div class="diag-label-col">';
     html += '<span class="diag-label">' + sk + ' ' + escapeHtml(secLabel) + '</span>';
+    html += '<div class="diag-bar"><div class="diag-bar-fill" style="width:' + spct + '%;background:' + spctColor + '"></div></div>';
+    html += '</div>';
     html += '<span class="diag-score">' + sr.scored + '/' + sr.total + '</span>';
-    html += '<span class="diag-pct">' + spct + '%</span>';
+    html += '<span class="diag-pct" style="color:' + spctColor + '">' + spct + '%</span>';
     html += '</div>';
   }
 
@@ -1787,6 +1799,7 @@ function _diagShowResults(exam, conceptErrors) {
 
   html += '</div>';
   el.innerHTML = html;
+  renderMath(el);
 }
 
 /* ═══ LEARNING LOOP HELPERS ═══ */
