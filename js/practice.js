@@ -2730,7 +2730,11 @@ var PP_TYPE_LABELS = {
   'core-nocalc': { en: 'Core Non-Calc', zh: 'Core 非计算器', cls: 'pp-type-core' },
   'ext-nocalc':  { en: 'Extended Non-Calc', zh: 'Extended 非计算器', cls: 'pp-type-ext' },
   'core-calc':   { en: 'Core Calculator', zh: 'Core 计算器', cls: 'pp-type-core' },
-  'ext-calc':    { en: 'Extended Calculator', zh: 'Extended 计算器', cls: 'pp-type-ext' }
+  'ext-calc':    { en: 'Extended Calculator', zh: 'Extended 计算器', cls: 'pp-type-ext' },
+  'foundation-nocalc': { en: 'Foundation Non-Calc', zh: 'Foundation 非计算器', cls: 'pp-type-core' },
+  'foundation-calc':   { en: 'Foundation Calculator', zh: 'Foundation 计算器', cls: 'pp-type-core' },
+  'higher-nocalc':     { en: 'Higher Non-Calc', zh: 'Higher 非计算器', cls: 'pp-type-ext' },
+  'higher-calc':       { en: 'Higher Calculator', zh: 'Higher 计算器', cls: 'pp-type-ext' }
 };
 
 var PP_SESSION_LABELS = {
@@ -2738,7 +2742,11 @@ var PP_SESSION_LABELS = {
   'FebMarch': { en: 'Feb/March', zh: '二/三月' },
   'MayJune': { en: 'May/June', zh: '五/六月' },
   'OctNov': { en: 'Oct/Nov', zh: '十/十一月' },
-  'Specimen': { en: 'Specimen', zh: '样卷' }
+  'Specimen': { en: 'Specimen', zh: '样卷' },
+  'June': { en: 'June', zh: '六月' },
+  'Jan': { en: 'January', zh: '一月' },
+  'Nov': { en: 'November', zh: '十一月' },
+  'SP': { en: 'Specimen', zh: '样卷' }
 };
 
 /* ─── Paper browse panel ─── */
@@ -2809,7 +2817,7 @@ function ppSelectYear(year, board) {
 
 function _ppRenderYearPapers(sessions, year, board, results) {
   if (!sessions) return '';
-  var sessionOrder = ['March', 'FebMarch', 'MayJune', 'OctNov', 'Specimen'];
+  var sessionOrder = ['SP', 'Jan', 'March', 'FebMarch', 'June', 'MayJune', 'Nov', 'OctNov', 'Specimen'];
   var html = '';
 
   for (var si = 0; si < sessionOrder.length; si++) {

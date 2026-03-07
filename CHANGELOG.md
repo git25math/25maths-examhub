@@ -1,5 +1,32 @@
 # Changelog
 
+## [1.12.6] - 2026-03-07 — Edexcel 真题引擎 + 考纲教学流程
+
+### 新增
+- **Edexcel 真题数据**: 从 IGCSE_v2 转录 1,855 道真题（76 套卷，20 sessions，2017-2025），生成 `papers-edx.json` v2.0 格式
+- **考纲标注修正**: 严格按 Edexcel 4MA1 官方 Specification 标注，修复 32 道 topic 2.9→3.1（Sequences）映射错误，39 个 section 100% 覆盖
+- **Edexcel 套卷浏览**: 解除 `syllabus.js` 中 CIE-only 限制，Edexcel 知识点详情页现可显示真题模块（练习/实战/错题本/套卷浏览/模拟卷）
+- **SoW 教学流程**: `syllabus-edexcel.json` 添加 65 个教学单元（Foundation 30 + Higher 32），含 spec reference 映射和教学时数
+- **Edexcel 纸型标签**: PP_TYPE_LABELS 新增 Foundation/Higher × Calc/Non-Calc 4 种 Edexcel 试卷类型
+- **Session 标签扩展**: PP_SESSION_LABELS 新增 June/Jan/Nov/SP 适配 Edexcel 考试时间安排
+
+### LaTeX 清理
+- 自定义宏转换: `\StemText{}`/`\InsertScreenShot{}`→内容保留, `\StemFigure{}`→`[Figure]`
+- `\AnswerLine`/`\AnswerLineShort`→`\dotfill`, `\Marks{}`/`\WorkingSpace{}`/`\ImplicitPart` 移除
+- `\part`→`\textbf{(a)}` 自动编号, `\relincludegraphics`→`[Figure]`
+- 注释行移除, 嵌套大括号正确处理
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `data/papers-edx.json` | 新增 — 1,855 题 76 套卷 1.27MB |
+| `data/syllabus-edexcel.json` | +65 teachingUnits (SoW) |
+| `js/syllabus.js` | 3 处 CIE-only→支持 Edexcel PP |
+| `js/practice.js` | +4 PP_TYPE_LABELS + 4 PP_SESSION_LABELS + sessionOrder 扩展 |
+| `js/config.js` | 版本号 v1.12.5→v1.12.6 |
+| `index.html` | 缓存标签 v1.12.5→v1.12.6 |
+| `package.json` | version 1.12.5→1.12.6 |
+
 ## [1.12.5] - 2026-03-07 — 代码质量修复 + 版本同步
 
 ### 修复

@@ -244,13 +244,17 @@ function _renderBoardHome(board) {
 
   var html = '';
 
-  /* Past Papers (Full) entry for CIE */
-  if (board === 'cie' && typeof ppShowPaperBrowse === 'function') {
-    html += '<div class="pp-browse-entry" onclick="ppShowPaperBrowse(\'cie\')">';
+  /* Past Papers (Full) entry */
+  var _ppBoardKey = board === 'edexcel' ? 'edx' : board;
+  if ((board === 'cie' || board === 'edexcel') && typeof ppShowPaperBrowse === 'function') {
+    var _ppSub = board === 'cie'
+      ? t('228 papers \u00b7 4,110 questions \u00b7 2018\u20132025', '228\u5957\u5377 \u00b7 4,110\u9053\u9898 \u00b7 2018\u20132025')
+      : t('76 papers \u00b7 1,855 questions \u00b7 2017\u20132025', '76\u5957\u5377 \u00b7 1,855\u9053\u9898 \u00b7 2017\u20132025');
+    html += '<div class="pp-browse-entry" onclick="ppShowPaperBrowse(\'' + _ppBoardKey + '\')">';
     html += '<span class="pp-browse-icon">\ud83d\udcdd</span>';
     html += '<div class="pp-browse-info">';
     html += '<div class="pp-browse-title">' + t('Past Papers', '\u5957\u5377\u7ec3\u4e60') + '</div>';
-    html += '<div class="pp-browse-sub">' + t('228 papers \u00b7 4,110 questions \u00b7 2018\u20132025', '228\u5957\u5377 \u00b7 4,110\u9053\u9898 \u00b7 2018\u20132025') + '</div>';
+    html += '<div class="pp-browse-sub">' + _ppSub + '</div>';
     html += '</div>';
     html += '<span class="pp-browse-arrow">\u2192</span>';
     html += '</div>';
@@ -511,7 +515,7 @@ function renderSectionDetail(ch, sec, secIdx, board) {
   /* Learning journey bar */
   var _jVocabDone = stats.learningPct >= 80;
   var _jPracticeDone = li >= 0 && isModeDone(li, 'practice');
-  var _jHasPP = board === 'cie' && typeof loadPastPaperData === 'function';
+  var _jHasPP = (board === 'cie' || board === 'edexcel') && typeof loadPastPaperData === 'function';
   var _jVocabClass = _jVocabDone ? 'done' : (stats.started > 0 ? 'current' : '');
   var _jPracticeClass = _jPracticeDone ? 'done' : (_jVocabDone ? 'current' : '');
   html += '<div class="sec-journey" id="sec-journey-bar">';
@@ -570,7 +574,7 @@ function renderSectionDetail(ch, sec, secIdx, board) {
   }
 
   /* Past Papers module — between Practice and Knowledge Card */
-  if (board === 'cie' && typeof loadPastPaperData === 'function') {
+  if ((board === 'cie' || board === 'edexcel') && typeof loadPastPaperData === 'function') {
     html += '<div id="pp-section-module" data-section="' + sec.id + '" data-board="' + board + '"></div>';
     html += '<div id="mq-summary-slot" data-section="' + sec.id + '" data-board="' + board + '"></div>';
   }

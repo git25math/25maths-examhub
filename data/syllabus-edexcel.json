@@ -7,6 +7,25 @@
       "num": 1,
       "title": "Numbers and the number system",
       "title_zh": "数与数系",
+      "teachingUnits": [
+        { "unit": 1, "title": "Integers and place value", "tier": "foundation", "hours": 4, "sections": ["1.1"] },
+        { "unit": 2, "title": "Decimals", "tier": "foundation", "hours": 4, "sections": ["1.3", "1.8", "1.11"] },
+        { "unit": 3, "title": "Special numbers and powers", "tier": "foundation", "hours": 7, "sections": ["1.1", "1.4"] },
+        { "unit": 4, "title": "Fractions", "tier": "foundation", "hours": 4, "sections": ["1.2"] },
+        { "unit": 5, "title": "Percentages", "tier": "foundation", "hours": 9, "sections": ["1.6"] },
+        { "unit": 6, "title": "Ratio and proportion", "tier": "foundation", "hours": 7, "sections": ["1.7", "1.10"] },
+        { "unit": 7, "title": "Arithmetic of fractions", "tier": "foundation", "hours": 4, "sections": ["1.2"] },
+        { "unit": 8, "title": "Set language and Venn diagrams", "tier": "foundation", "hours": 7, "sections": ["1.5"] },
+        { "unit": 9, "title": "Indices and standard form", "tier": "foundation", "hours": 5, "sections": ["1.4", "1.9"] },
+        { "unit": 1, "title": "Decimals", "tier": "higher", "hours": 4, "sections": ["1.3"] },
+        { "unit": 2, "title": "Special numbers, powers and roots", "tier": "higher", "hours": 6, "sections": ["1.4"] },
+        { "unit": 3, "title": "Fractions", "tier": "higher", "hours": 4, "sections": ["1.2"] },
+        { "unit": 4, "title": "Percentages", "tier": "higher", "hours": 5, "sections": ["1.6"] },
+        { "unit": 5, "title": "Ratio and proportion", "tier": "higher", "hours": 3, "sections": ["1.7"] },
+        { "unit": 6, "title": "Indices and standard form", "tier": "higher", "hours": 4, "sections": ["1.4", "1.9"] },
+        { "unit": 7, "title": "Degree of accuracy", "tier": "higher", "hours": 4, "sections": ["1.8"] },
+        { "unit": 8, "title": "Set language and Venn diagrams", "tier": "higher", "hours": 6, "sections": ["1.5"] }
+      ],
       "sections": [
         {
           "id": "1.1",
@@ -147,6 +166,18 @@
       "num": 2,
       "title": "Equations, formulae and identities",
       "title_zh": "方程、公式与恒等式",
+      "teachingUnits": [
+        { "unit": 10, "title": "Algebraic manipulation", "tier": "foundation", "hours": 5, "sections": ["2.1", "2.2"] },
+        { "unit": 11, "title": "Expressions and formulae", "tier": "foundation", "hours": 6, "sections": ["2.3"] },
+        { "unit": 12, "title": "Linear equations and inequalities", "tier": "foundation", "hours": 8, "sections": ["2.4", "2.8"] },
+        { "unit": 16, "title": "Quadratic equations and graphs", "tier": "foundation", "hours": 5, "sections": ["2.7"] },
+        { "unit": 17, "title": "Simultaneous equations", "tier": "foundation", "hours": 4, "sections": ["2.6"] },
+        { "unit": 9, "title": "Algebraic manipulation", "tier": "higher", "hours": 8, "sections": ["2.2"] },
+        { "unit": 10, "title": "Expressions and formulae", "tier": "higher", "hours": 6, "sections": ["2.3"] },
+        { "unit": 11, "title": "Linear equations and inequalities", "tier": "higher", "hours": 4, "sections": ["2.4", "2.8"] },
+        { "unit": 15, "title": "Quadratic equations and graphs", "tier": "higher", "hours": 8, "sections": ["2.7"] },
+        { "unit": 17, "title": "Simultaneous equations", "tier": "higher", "hours": 5, "sections": ["2.6"] }
+      ],
       "sections": [
         {
           "id": "2.1",
@@ -251,6 +282,19 @@
       "num": 3,
       "title": "Sequences, functions and graphs",
       "title_zh": "数列、函数与图像",
+      "teachingUnits": [
+        { "unit": 13, "title": "Sequences", "tier": "foundation", "hours": 5, "sections": ["3.1"] },
+        { "unit": 14, "title": "Real life graphs", "tier": "foundation", "hours": 4, "sections": ["3.3"] },
+        { "unit": 15, "title": "Linear graphs", "tier": "foundation", "hours": 6, "sections": ["3.3"] },
+        { "unit": 16, "title": "Quadratic equations and graphs", "tier": "foundation", "hours": 5, "sections": ["3.3"] },
+        { "unit": 12, "title": "Sequences", "tier": "higher", "hours": 4, "sections": ["3.1"] },
+        { "unit": 13, "title": "Real life graphs", "tier": "higher", "hours": 2, "sections": ["3.3"] },
+        { "unit": 14, "title": "Linear graphs", "tier": "higher", "hours": 7, "sections": ["3.3"] },
+        { "unit": 15, "title": "Quadratic equations and graphs", "tier": "higher", "hours": 8, "sections": ["3.3"] },
+        { "unit": 16, "title": "Harder graphs and transformations", "tier": "higher", "hours": 7, "sections": ["3.3"] },
+        { "unit": 18, "title": "Function notation", "tier": "higher", "hours": 7, "sections": ["3.2"] },
+        { "unit": 19, "title": "Calculus", "tier": "higher", "hours": 8, "sections": ["3.4"] }
+      ],
       "sections": [
         {
           "id": "3.1",
@@ -307,6 +351,26 @@
       "num": 4,
       "title": "Geometry and trigonometry",
       "title_zh": "几何与三角",
+      "teachingUnits": [
+        { "unit": 18, "title": "Measures, bearings and scale drawings", "tier": "foundation", "hours": 5, "sections": ["4.4"] },
+        { "unit": 19, "title": "Symmetry, shapes, angles", "tier": "foundation", "hours": 8, "sections": ["4.1", "4.2", "4.3"] },
+        { "unit": 20, "title": "Interior/exterior angles of polygons", "tier": "foundation", "hours": 5, "sections": ["4.2"] },
+        { "unit": 21, "title": "Compound measures", "tier": "foundation", "hours": 5, "sections": ["4.4"] },
+        { "unit": 22, "title": "Perimeter, area and volume", "tier": "foundation", "hours": 6, "sections": ["4.9", "4.10"] },
+        { "unit": 23, "title": "Circles and cylinders", "tier": "foundation", "hours": 6, "sections": ["4.6", "4.9", "4.10"] },
+        { "unit": 24, "title": "Transformations", "tier": "foundation", "hours": 7, "sections": ["4.8"] },
+        { "unit": 25, "title": "Pythagoras and trigonometry", "tier": "foundation", "hours": 12, "sections": ["4.8"] },
+        { "unit": 26, "title": "Similarity and congruence", "tier": "foundation", "hours": 5, "sections": ["4.11"] },
+        { "unit": 27, "title": "Constructions", "tier": "foundation", "hours": 4, "sections": ["4.5"] },
+        { "unit": 20, "title": "Compound measures", "tier": "higher", "hours": 5, "sections": ["4.4"] },
+        { "unit": 21, "title": "Geometry of shapes", "tier": "higher", "hours": 6, "sections": ["4.1", "4.2", "4.3", "4.7"] },
+        { "unit": 22, "title": "Constructions and bearings", "tier": "higher", "hours": 4, "sections": ["4.4", "4.5"] },
+        { "unit": 23, "title": "Perimeter, area and volume", "tier": "higher", "hours": 8, "sections": ["4.9", "4.10"] },
+        { "unit": 24, "title": "Pythagoras and trigonometry", "tier": "higher", "hours": 8, "sections": ["4.8"] },
+        { "unit": 26, "title": "Circle properties", "tier": "higher", "hours": 6, "sections": ["4.6"] },
+        { "unit": 27, "title": "Advanced trigonometry", "tier": "higher", "hours": 8, "sections": ["4.8"] },
+        { "unit": 28, "title": "Similar shapes", "tier": "higher", "hours": 7, "sections": ["4.11"] }
+      ],
       "sections": [
         {
           "id": "4.1",
@@ -447,6 +511,11 @@
       "num": 5,
       "title": "Vectors and transformation geometry",
       "title_zh": "向量与变换几何",
+      "teachingUnits": [
+        { "unit": 24, "title": "Transformations", "tier": "foundation", "hours": 7, "sections": ["5.2"] },
+        { "unit": 25, "title": "Transformations", "tier": "higher", "hours": 5, "sections": ["5.2"] },
+        { "unit": 29, "title": "Vectors", "tier": "higher", "hours": 6, "sections": ["5.1"] }
+      ],
       "sections": [
         {
           "id": "5.1",
@@ -479,6 +548,14 @@
       "num": 6,
       "title": "Statistics and probability",
       "title_zh": "统计与概率",
+      "teachingUnits": [
+        { "unit": 28, "title": "Graphical representation", "tier": "foundation", "hours": 7, "sections": ["6.1"] },
+        { "unit": 29, "title": "Statistical measures", "tier": "foundation", "hours": 7, "sections": ["6.2"] },
+        { "unit": 30, "title": "Probability", "tier": "foundation", "hours": 9, "sections": ["6.3"] },
+        { "unit": 30, "title": "Graphical representation", "tier": "higher", "hours": 5, "sections": ["6.1"] },
+        { "unit": 31, "title": "Statistical measures", "tier": "higher", "hours": 4, "sections": ["6.2"] },
+        { "unit": 32, "title": "Probability", "tier": "higher", "hours": 6, "sections": ["6.3"] }
+      ],
       "sections": [
         {
           "id": "6.1",
