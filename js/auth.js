@@ -268,14 +268,15 @@ async function loadAndInitTeacher() {
   await loadHomeworkModule();
   /* Dynamically load admin.js + vocab-admin.js */
   await new Promise(function(resolve) {
+    var _v = typeof APP_VERSION !== 'undefined' ? APP_VERSION : '';
     var s1 = document.createElement('script');
-    s1.src = 'js/admin.js';
+    s1.src = 'js/admin.js?v=' + _v;
     s1.onload = function() {
       var s2 = document.createElement('script');
-      s2.src = 'js/vocab-admin.js';
+      s2.src = 'js/vocab-admin.js?v=' + _v;
       s2.onload = function() {
         var s3 = document.createElement('script');
-        s3.src = 'js/data-admin.js';
+        s3.src = 'js/data-admin.js?v=' + _v;
         s3.onload = resolve;
         s3.onerror = resolve;
         document.head.appendChild(s3);
