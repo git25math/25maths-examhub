@@ -515,6 +515,7 @@ async function renderHwProgress(hwId, classId) {
     var html = '<div class="admin-detail-header">';
     html += '<button class="btn btn-ghost btn-sm" onclick="renderClassDetail(\'' + classId + '\')">' + t('\u2190 Back', '\u2190 返回') + '</button>';
     html += '<div class="admin-detail-title">' + escapeHtml(hw.title) + '</div>';
+    html += '<button class="btn btn-ghost btn-sm" onclick="exportHwCSV(\'' + hwId + '\', \'' + classId + '\')" style="margin-left:auto">\u2b07 ' + t('Export CSV', '\u5bfc\u51fa CSV') + '</button>';
     html += '</div>';
 
     /* Summary cards */
@@ -595,6 +596,51 @@ async function renderHwProgress(hwId, classId) {
     ct.innerHTML = html;
   } catch (e) {
     ct.innerHTML = '<div class="admin-empty">' + e.message + '</div>';
+  }
+}
+
+/* ═══ TEACHER: EXPORT HOMEWORK RESULTS TO CSV ═══ */
+async function exportHwCSV(hwId, classId) {
+  try {
+    showToast(t('Exporting...', '\u5bfc\u51fa\u4e2d...'));
+    var aRes = await sb.rpc('get_assignment', { p_id: hwId });
+    var hw = (aRes.data && aRes.data.length > 0) ? aRes.data[0] : null;
+    if (!hw) { showToast(t('Assignment not found', '\u4f5c\u4e1a\u672a\u627e\u5230'), 'error'); return; }
+
+    var activity = await loadActivityData(true);
+    var students = activity.filter(function(s) { return s.class_id === classId; });
+
+    var rRes = await sb.from('assignment_results').select('*').eq('assignment_id', hwId);
+    var results = rRes.data || [];
+    var resultMap = {};
+    results.forEach(function(r) { resultMap[r.user_id] = r; });
+
+    var rows = [];
+    rows.push([t('Name','姓名'), t('Status','状态'), t('Score','成绩'), t('Total','总题'), t('Accuracy','正确率'), t('Attempts','尝试次数'), t('Wrong Words','错词'), t('Completed At','完成时间')].join(','));
+
+    students.forEach(function(s) {
+      var r = resultMap[s.user_id];
+      var done = r && r.completed_at;
+      var name = '"' + (s.student_name || '').replace(/"/g, '""') + '"';
+      var status = done ? t('Done','完成') : t('Pending','未完成');
+      var correct = r ? r.correct_count : 0;
+      var total = r ? r.total_count : 0;
+      var pct = total > 0 ? Math.round(correct / total * 100) + '%' : '-';
+      var attempts = r ? r.attempts : 0;
+      var wrongWords = '';
+      if (r && r.wrong_words && r.wrong_words.length > 0) {
+        wrongWords = '"' + r.wrong_words.join('; ').replace(/"/g, '""') + '"';
+      }
+      var completedAt = done ? new Date(r.completed_at).toLocaleString() : '-';
+      rows.push([name, status, correct, total, pct, attempts, wrongWords, completedAt].join(','));
+    });
+
+    var safeTitle = hw.title.replace(/[^a-zA-Z0-9\u4e00-\u9fff]/g, '_').slice(0, 30);
+    var filename = 'homework_' + safeTitle + '_' + new Date().toISOString().slice(0, 10) + '.csv';
+    downloadBlob(new Blob(['\ufeff' + rows.join('\n')], { type: 'text/csv;charset=utf-8;' }), filename);
+    showToast(t('CSV exported', 'CSV \u5df2\u5bfc\u51fa'));
+  } catch(e) {
+    showToast(t('Export failed', '\u5bfc\u51fa\u5931\u8d25') + ': ' + e.message, 'error');
   }
 }
 
