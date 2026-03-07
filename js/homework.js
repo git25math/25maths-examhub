@@ -85,7 +85,10 @@ function showNotifPanel() {
     notifs.forEach(function(n) {
       var unread = !n.is_read;
       var time = n.created_at ? timeAgo(n.created_at) : '';
-      html += '<div class="notif-item' + (unread ? ' unread' : '') + '" onclick="handleNotifClick(\'' + n.id + '\', \'' + (n.link_type || '') + '\', \'' + (n.link_id || '') + '\')">';
+      html += '<div class="notif-item' + (unread ? ' unread' : '') +
+        '" role="button" tabindex="0" data-nid="' + escapeHtml(String(n.id)) +
+        '" data-ntype="' + escapeHtml(n.link_type || '') +
+        '" data-nlid="' + escapeHtml(n.link_id || '') + '">';
       html += '<div class="notif-dot' + (unread ? ' active' : '') + '"></div>';
       html += '<div class="notif-content">';
       html += '<div class="notif-title">' + escapeHtml(n.title || '') + '</div>';
@@ -98,6 +101,21 @@ function showNotifPanel() {
 
   html += '<button class="btn btn-ghost btn-block" style="margin-top:12px" onclick="hideModal()">' + t('Close', '关闭') + '</button>';
   showModal(html);
+
+  /* Event delegation for notification clicks (avoids inline onclick XSS risk) */
+  var mc = E('modal-card');
+  if (mc) {
+    mc.addEventListener('click', function(e) {
+      var item = e.target.closest('.notif-item');
+      if (item) handleNotifClick(item.dataset.nid, item.dataset.ntype, item.dataset.nlid);
+    });
+    mc.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        var item = e.target.closest('.notif-item');
+        if (item) { e.preventDefault(); handleNotifClick(item.dataset.nid, item.dataset.ntype, item.dataset.nlid); }
+      }
+    });
+  }
 }
 
 function handleNotifClick(notifId, linkType, linkId) {

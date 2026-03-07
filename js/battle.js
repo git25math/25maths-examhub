@@ -15,6 +15,7 @@ function startBattle(idx) {
   if (validate(lv, idx)) return;
 
   currentLvl = idx;
+  if (G && G.timer) clearInterval(G.timer);
   G = resetG();
   G.lvlIdx = idx;
   G.total = lv.vocabulary.length / 2;

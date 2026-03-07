@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.12.9] - 2026-03-07 — 可靠性修复（Timer 泄漏 + Modal 安全 + XSS 修复）
+
+### 修复
+- **showPanel 统一出口清理**: 新增 `_cleanupActiveMode()` 在面板切换时自动清理 Battle/Daily Challenge 定时器和 Review 搜索 timeout，防止泄漏
+- **Modal handler 去重**: `showModal()` 添加 handler 前先移除已有的 ESC/Tab handler，防止连续调用 showModal 时 handler 叠加
+- **Modal 焦点恢复 isConnected 检查**: `hideModal()` 恢复焦点前检查 `_modalPrevFocus.isConnected`，防止焦点恢复到已分离 DOM 节点
+- **通知 onclick XSS 修复**: 通知列表从内联 `onclick` 字符串拼接改为 `data-*` 属性 + 事件委托，彻底消除 DB 值注入风险，同时添加键盘可访问性（Enter/Space）
+- **Battle startBattle 防护性 clearInterval**: 在 `G = resetG()` 之前清理旧 `G.timer`，防止旧定时器引用丢失导致泄漏
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `js/ui.js` | `_cleanupActiveMode()` + Modal handler 去重 + `isConnected` 检查 |
+| `js/homework.js` | 通知 onclick→data 属性+事件委托（XSS 修复+键盘可访问） |
+| `js/battle.js` | `startBattle()` 防护性 `clearInterval` |
+| `js/config.js` | 版本号 v1.12.8→v1.12.9 |
+| `index.html` | 缓存标签 v1.12.8→v1.12.9 |
+
 ## [1.12.8] - 2026-03-07 — P1 优化（数据安全 + 可访问性 + 缓存标签）
 
 ### 修复

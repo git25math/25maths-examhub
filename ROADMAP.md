@@ -349,3 +349,4 @@
 - [x] **复习仪表盘增强**: SRS 等级图例 + 到期词汇按紧急度排序 → v1.12.3
 - [x] **P0 快速优化**: Modal 焦点陷阱+ESC + Quiz 方向持久化 + 暗色模式 28 规则修正 + getDeckStats 缓存 + 折叠状态持久化 → v1.12.7
 - [x] **P1 优化**: syncToCloud 并发锁 + finishDaily 双调用防护 + Battle/Match 键盘可访问性 + 缓存标签 → v1.12.8
+- [x] **P2 可靠性修复**: Timer 泄漏防护 + Modal handler 去重 + 通知 XSS 修复 + 焦点恢复 isConnected → v1.12.9

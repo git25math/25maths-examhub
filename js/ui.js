@@ -8,7 +8,17 @@ var _lastShareOpts = null;
 function escapeHtml(s) { var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
 
 /* ═══ PANEL NAVIGATION ═══ */
+function _cleanupActiveMode() {
+  /* Battle timer */
+  if (typeof G !== 'undefined' && G && G.timer) { clearInterval(G.timer); G.timer = null; }
+  /* Daily Challenge timer */
+  if (typeof DC !== 'undefined' && DC && DC.timer) { clearInterval(DC.timer); DC.timer = null; }
+  /* Review search timeout */
+  if (typeof _rvSearchTimer !== 'undefined' && _rvSearchTimer) { clearTimeout(_rvSearchTimer); _rvSearchTimer = null; }
+}
+
 function showPanel(id) {
+  _cleanupActiveMode();
   document.querySelectorAll('.panel').forEach(function(p) {
     p.classList.remove('active');
   });
@@ -88,6 +98,10 @@ function showModal(html) {
   card.setAttribute('tabindex', '-1');
   card.focus();
 
+  /* Remove any existing handlers before adding new ones */
+  if (_modalEscHandler) document.removeEventListener('keydown', _modalEscHandler);
+  if (_modalTabHandler) document.removeEventListener('keydown', _modalTabHandler);
+
   /* ESC to close */
   _modalEscHandler = function(e) { if (e.key === 'Escape') hideModal(); };
   document.addEventListener('keydown', _modalEscHandler);
@@ -113,7 +127,7 @@ function hideModal() {
   if (_modalEscHandler) { document.removeEventListener('keydown', _modalEscHandler); _modalEscHandler = null; }
   if (_modalTabHandler) { document.removeEventListener('keydown', _modalTabHandler); _modalTabHandler = null; }
   /* Restore focus */
-  if (_modalPrevFocus && typeof _modalPrevFocus.focus === 'function') {
+  if (_modalPrevFocus && _modalPrevFocus.isConnected && typeof _modalPrevFocus.focus === 'function') {
     try { _modalPrevFocus.focus(); } catch(e) {}
     _modalPrevFocus = null;
   }
