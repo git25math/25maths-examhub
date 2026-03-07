@@ -23,6 +23,7 @@ DATA_DIR = os.path.join(PROJECT_ROOT, "data")
 TARGET_FILES = [
     os.path.join(DATA_DIR, "pastpapers-cie.json"),
     os.path.join(DATA_DIR, "papers-cie.json"),
+    os.path.join(DATA_DIR, "papers-edx.json"),
 ]
 
 
@@ -79,6 +80,29 @@ def process_cell_content(content):
         return ''
     # Remove \rule commands (spacers)
     content = re.sub(r'\\rule\{[^}]*\}\{[^}]*\}', '', content)
+    # \textbf{...} → <strong>...</strong>
+    content = re.sub(r'\\textbf\{([^}]*)\}', r'<strong>\1</strong>', content)
+    # \dots → ...
+    content = content.replace('\\dots', '\u2026')
+    # \pounds → £
+    content = content.replace('\\pounds', '\u00a3')
+    # \degree / \textdegree → °
+    content = content.replace('\\textdegree', '\u00b0')
+    content = content.replace('\\degree', '\u00b0')
+    # \TableAnswerLine → underline placeholder
+    content = content.replace('\\TableAnswerLine', '______')
+    # \dotfill → dots
+    content = content.replace('\\dotfill', '\u2026\u2026')
+    # \phantom{...} → remove (invisible spacer)
+    content = re.sub(r'\\phantom\{[^}]*\}', '', content)
+    # \cline{...} → remove (partial horizontal line)
+    content = re.sub(r'\\cline\{[^}]*\}', '', content)
+    # \rotatebox{angle}{content} → keep content
+    content = re.sub(r'\\rotatebox\{[^}]*\}\{([^}]*)\}', r'\1', content)
+    # \multirow{N}{width}{content} → keep content
+    content = re.sub(r'\\multirow\{[^}]*\}\{[^}]*\}\{([^}]*)\}', r'\1', content)
+    # \textbackslash → backslash
+    content = content.replace('\\textbackslash', '\\')
     # Convert \qquad and \quad to non-breaking spaces (outside math mode)
     content = _replace_spacing_outside_math(content)
     return content
@@ -141,9 +165,11 @@ def convert_tabular(tabular_str):
         if not row_text:
             continue
 
-        # Check for \hline
+        # Check for \hline and \cline
         hline_count = row_text.count('\\hline')
-        row_text = row_text.replace('\\hline', '').strip()
+        row_text = row_text.replace('\\hline', '')
+        row_text = re.sub(r'\\cline\{[^}]*\}', '', row_text)
+        row_text = row_text.strip()
 
         if not row_text:
             # Row was only \hline(s) — mark next row

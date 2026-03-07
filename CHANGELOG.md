@@ -4,14 +4,15 @@
 
 ### 表格转换
 - **`scripts/convert-tables.py`**: 新建批量转换脚本，将 LaTeX `\begin{tabular}` 转为 HTML `<table>`
-- **`texHtml` 字段**: 73 条 pastpapers-cie + 315 条 papers-cie 记录新增 `texHtml`，保留原 `tex` 不变
-- **转换规则**: 解析列规格 (`|l|c|r|`)、`\hline` 边框、`\multicolumn` 合并单元格；数学公式保留给 KaTeX
+- **`texHtml` 字段**: 546 条记录新增（CIE 73+315 + Edexcel 158），保留原 `tex` 不变
+- **转换规则**: 解析列规格 (`|l|c|r|`)、`\hline`/`\cline` 边框、`\multicolumn`/`\multirow` 合并；数学公式保留给 KaTeX
 - **跳过策略**: `InsertScreenShot` 包裹的 tabular（23 条）不转换
+- **单元格清理**: `\textbf`→`<strong>`、`\dots`→`…`、`\pounds`→`£`、`\quad`→em-space、`\phantom`/`\cline` 移除、`\degree`→`°`、`\TableAnswerLine`→`______`
 
 ### 前端渲染
 - **`_ppRenderTex()` 升级**: 接受 question 对象，优先读 `texHtml`；兼容原有字符串传入
 - **调用点更新**: `renderPPCard()` 和 `ppShowMarking()` 传入完整 question 对象
-- **`.pp-table` 样式**: 边框折叠、居中、13px 字号；`.pp-table-nb` 无边框变体；暗色模式自动继承 CSS 变量
+- **`.pp-table` 样式**: 边框折叠、居中、13px 字号、垂直居中；`.pp-table-nb` 无边框变体；KaTeX 字号继承；暗色模式自动继承 CSS 变量
 
 ### 构建管道
 - **`build-papers-data.py`**: 导入 `convert-tables.py`，重建时自动生成 `texHtml`
@@ -19,12 +20,13 @@
 ### 文件变更
 | 文件 | 变更 |
 |------|------|
-| `scripts/convert-tables.py` | 新建 — tabular→HTML 批量转换 |
+| `scripts/convert-tables.py` | 新建 — tabular→HTML 批量转换 + 单元格 LaTeX 清理 |
 | `data/pastpapers-cie.json` | 73 条记录新增 `texHtml` |
 | `data/papers-cie.json` | 315 条记录新增 `texHtml` |
+| `data/papers-edx.json` | 158 条记录新增 `texHtml` |
 | `js/practice.js` | `_ppRenderTex()` 优先读 `texHtml` + 2 处调用更新 |
 | `js/config.js` | v2.2.0→v2.2.1 |
-| `css/style.css` | `.pp-table` 系列样式 |
+| `css/style.css` | `.pp-table` 系列样式（含 vertical-align / KaTeX 字号） |
 | `scripts/build-papers-data.py` | 导入 tabular_to_html + 自动生成 texHtml |
 
 ---
