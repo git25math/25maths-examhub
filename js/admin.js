@@ -63,13 +63,18 @@ async function initTeacher() {
   }
 }
 
+/* Helper: super admin sees all schools; teachers see own school only */
+function _adminSchoolFilter(query) {
+  if (_teacherData && _teacherData.school_id) return query.eq('school_id', _teacherData.school_id);
+  return query; /* super admin without teacher record → no filter */
+}
+
 /* ═══ LOAD ACTIVITY DATA ═══ */
 async function loadActivityData(force) {
   if (!force && _adminCache && Date.now() - _adminCacheAt < 30000) return _adminCache;
   try {
-    var res = await sb.from('student_activity_view')
-      .select('*')
-      .eq('school_id', _teacherData.school_id);
+    var res = await _adminSchoolFilter(sb.from('student_activity_view')
+      .select('*'));
     _adminCache = res.data || [];
     _adminCacheAt = Date.now();
     return _adminCache;
@@ -85,7 +90,7 @@ function renderAdmin() {
 
   var html = '<div class="admin-header">' +
     '<div class="section-title">' + t('Admin Panel', '管理面板') + '</div>' +
-    '<div class="admin-school-name">' + (_schoolData ? escapeHtml(_schoolData.name) : '') + '</div>' +
+    '<div class="admin-school-name">' + (_schoolData ? escapeHtml(_schoolData.name) : (typeof isSuperAdmin === 'function' && isSuperAdmin() ? t('Super Admin — All Schools', '超级管理员 — 全部学校') : '')) + '</div>' +
     '</div>';
 
   /* Tabs */
@@ -122,9 +127,8 @@ async function renderClassList() {
   ct.innerHTML = '<div class="admin-loading">' + t('Loading...', '加载中...') + '</div>';
 
   try {
-  var res = await sb.from('kw_classes')
-    .select('id, name, grade, created_at')
-    .eq('school_id', _teacherData.school_id)
+  var res = await _adminSchoolFilter(sb.from('kw_classes')
+    .select('id, name, grade, created_at'))
     .order('created_at', { ascending: true });
   var classes = res.data || [];
 
@@ -207,6 +211,7 @@ async function doCreateClass() {
   var grade = E('cc-grade').value;
   var msg = E('cc-msg');
   if (!name) { msg.textContent = t('Please enter class name', '请输入班级名称'); msg.className = 'settings-msg error'; return; }
+  if (!_teacherData) { msg.textContent = t('No school context (super admin view-only)', '无学校上下文（超管仅查看）'); msg.className = 'settings-msg error'; return; }
 
   try {
     var res = await sb.from('kw_classes').insert({
@@ -854,9 +859,8 @@ async function doRenameStudent(userId, classId) {
 /* ═══ MOVE STUDENT TO ANOTHER CLASS ═══ */
 async function showMoveClassModal(userId, studentName, currentClassId) {
   /* Load all classes for this school */
-  var res = await sb.from('kw_classes')
-    .select('id, name, grade')
-    .eq('school_id', _teacherData.school_id)
+  var res = await _adminSchoolFilter(sb.from('kw_classes')
+    .select('id, name, grade'))
     .order('created_at', { ascending: true });
   var classes = (res.data || []).filter(function(c) { return c.id !== currentClassId; });
 
