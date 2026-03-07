@@ -1,5 +1,34 @@
 # Changelog
 
+## [1.13.2] - 2026-03-07 — 质量修复（onclick XSS 第三轮消除）
+
+### 修复 — onclick XSS 消除（9 处修复）
+- **admin.js showRenameModal 确认按钮**（HIGH）: `onclick="doRenameStudent(userId,classId)"` → `data-action="do-rename"` + `data-uid/cid` + 委托
+- **admin.js showResetPasswordModal 确认按钮**（HIGH）: `onclick="doResetPassword(userId)"` → `data-action="do-resetpw"` + `data-uid` + 委托
+- **admin.js showMoveClassModal 确认按钮**（HIGH）: `onclick="doMoveStudent(userId,classId)"` → `data-action="do-move"` + `data-uid/cid` + 委托
+- **admin.js showMoveClassModal 选项名**（MEDIUM）: `c.name` 未转义 → `escapeHtml(c.name)`
+- **admin.js modal Cancel 按钮**: `onclick="hideModal()"` → `data-action="modal-cancel"` + 委托
+- **syllabus.js Smart Path 推荐卡片**（HIGH）: 4 种 onclick 分支 → `data-sp-rec/sec/board/li` + 委托
+- **homework.js 教师词汇预览切换**: 内联 onclick → `data-toggle-preview`（复用已有 B6 委托）
+- **homework.js 学生 GO 按钮**（MEDIUM）: `onclick="startHwPractice/startHwTest(hw.id)"` → `data-action="hw-go"` + `data-hwid/practice` + 委托
+- **homework.js 已完成 Retry 按钮**（MEDIUM）: `onclick="startHwPractice/startHwTest(hw.id)"` → `data-action="hw-retry"` + `data-hwid/practice` + 委托
+- **app.js 排行榜 Board Scope/Sub Pills**: `onclick="switchBoardScope/switchBoardSub(value)"` → `data-board-scope/data-board-sub` + 委托
+
+### 跳过（LOW 风险，纯硬编码值）
+- mastery.js `startStudy(idx)` — idx 纯数字
+- ui.js `resultScreenHTML`/`nextStepHTML` — retryId/backId 纯硬编码
+- practice.js `ppScoreChange(i, marks)` — 纯数值
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `js/admin.js` | A1-A4: modal 确认按钮 onclick→data + escapeHtml + 全局委托扩展 |
+| `js/syllabus.js` | A5: Smart Path 4 种 onclick→data + B11 委托 |
+| `js/homework.js` | A6-A8: 预览/GO/Retry onclick→data + B8-B9 委托 |
+| `js/app.js` | A9: Board Scope/Sub Pills onclick→data + 委托 |
+| `js/config.js` | 版本号 v1.13.1→v1.13.2 |
+| `index.html` | 缓存标签 v1.13.1→v1.13.2 |
+
 ## [1.13.1] - 2026-03-07 — 质量修复（监听器泄漏修复 + 残余 onclick XSS 消除）
 
 ### 修复 — 监听器泄漏（Part A）

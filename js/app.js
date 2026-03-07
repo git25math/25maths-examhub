@@ -256,7 +256,7 @@ async function renderBoard() {
     ];
     html += '<div class="admin-tabs board-scope-tabs">';
     scopes.forEach(function(s) {
-      html += '<button class="admin-tab' + (s.key === _boardScope ? ' active' : '') + '" onclick="switchBoardScope(\'' + s.key + '\')">' + s.label + '</button>';
+      html += '<button class="admin-tab' + (s.key === _boardScope ? ' active' : '') + '" data-board-scope="' + s.key + '">' + s.label + '</button>';
     });
     html += '</div>';
   }
@@ -266,19 +266,19 @@ async function renderBoard() {
     var boardOpts = userSchoolId ? BOARD_OPTIONS : getPublicBoardOptions();
     html += '<div class="board-sub-pills">';
     boardOpts.forEach(function(opt) {
-      html += '<button class="board-sub-pill' + (opt.value === _boardSubKey ? ' active' : '') + '" onclick="switchBoardSub(\'' + opt.value + '\')">' + opt.emoji + ' ' + t(opt.name, opt.nameZh) + '</button>';
+      html += '<button class="board-sub-pill' + (opt.value === _boardSubKey ? ' active' : '') + '" data-board-sub="' + opt.value + '">' + opt.emoji + ' ' + t(opt.name, opt.nameZh) + '</button>';
     });
     html += '</div>';
   } else if (_boardScope === 'class' && classList.length > 0) {
     html += '<div class="board-sub-pills">';
     classList.forEach(function(c) {
-      html += '<button class="board-sub-pill' + (c.id === _boardSubKey ? ' active' : '') + '" onclick="switchBoardSub(\'' + c.id + '\')">' + escapeHtml(c.name) + '</button>';
+      html += '<button class="board-sub-pill' + (c.id === _boardSubKey ? ' active' : '') + '" data-board-sub="' + c.id + '">' + escapeHtml(c.name) + '</button>';
     });
     html += '</div>';
   } else if (_boardScope === 'grade') {
     html += '<div class="board-sub-pills">';
     GRADE_OPTIONS.forEach(function(opt) {
-      html += '<button class="board-sub-pill' + (opt.value === _boardSubKey ? ' active' : '') + '" onclick="switchBoardSub(\'' + opt.value + '\')">' + opt.emoji + ' ' + t(opt.name, opt.nameZh) + '</button>';
+      html += '<button class="board-sub-pill' + (opt.value === _boardSubKey ? ' active' : '') + '" data-board-sub="' + opt.value + '">' + opt.emoji + ' ' + t(opt.name, opt.nameZh) + '</button>';
     });
     html += '</div>';
   }
@@ -311,6 +311,14 @@ function switchBoardSub(key) {
   _boardSubKey = key;
   renderBoard();
 }
+
+/* Board delegation */
+document.addEventListener('click', function(e) {
+  var bs = e.target.closest('[data-board-scope]');
+  if (bs) { switchBoardScope(bs.dataset.boardScope); return; }
+  var bsub = e.target.closest('[data-board-sub]');
+  if (bsub) { switchBoardSub(bsub.dataset.boardSub); return; }
+});
 
 /* ═══ SCORE GUIDE MODAL ═══ */
 function showScoreGuide() {

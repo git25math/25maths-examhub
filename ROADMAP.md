@@ -352,3 +352,4 @@
 - [x] **P2 可靠性修复**: Timer 泄漏防护 + Modal handler 去重 + 通知 XSS 修复 + 焦点恢复 isConnected → v1.12.9
 - [x] **P3 防御性修复**: onclick XSS 消除（spell/practice/homework）+ 空引用防护 → v1.13.0
 - [x] **P4 质量修复**: 监听器泄漏修复（6 处）+ 残余 onclick XSS 消除（admin/homework/syllabus/practice 10 处）→ v1.13.1
+- [x] **P5 质量修复**: onclick XSS 第三轮消除（admin modal HIGH×3 + syllabus Smart Path HIGH + homework GO/Retry + app Board Pills，共 9 处）→ v1.13.2

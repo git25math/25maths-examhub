@@ -687,7 +687,7 @@ async function renderClassHwList(classId) {
         /* Expandable word list */
         var pid = 'thw-' + hw.id.slice(0, 8);
         html += '<div style="width:100%;margin-top:6px">';
-        html += '<button class="btn btn-ghost btn-sm" style="font-size:11px;padding:2px 8px" onclick="var el=document.getElementById(\'' + pid + '\');el.style.display=el.style.display===\'none\'?\'block\':\'none\'">' + t('View words', '查看词汇') + ' \u25BC</button>';
+        html += '<button class="btn btn-ghost btn-sm" style="font-size:11px;padding:2px 8px" data-toggle-preview="' + pid + '">' + t('View words', '查看词汇') + ' \u25BC</button>';
         html += '<div id="' + pid + '" style="display:none;margin-top:6px;max-height:200px;overflow-y:auto;border:1px solid var(--c-border);border-radius:8px;padding:6px 10px;background:var(--c-surface)">';
         hwWords.forEach(function(w, wi) {
           html += '<div style="padding:3px 0;font-size:12px;' + (wi < hwWords.length - 1 ? 'border-bottom:1px solid var(--c-border-light)' : '') + '">';
@@ -1055,8 +1055,6 @@ async function showStudentHwPage() {
       countLabel = pWords.length + ' ' + t('words', '\u8bcd');
     }
 
-    var goAction = isPractice ? 'startHwPractice(\'' + hw.id + '\')' : 'startHwTest(\'' + hw.id + '\')';
-
     html += '<div class="hw-list-item" style="flex-wrap:wrap">';
     html += '<div style="display:flex;align-items:center;gap:8px;width:100%">';
     html += '<span class="hw-list-title" style="flex:1">' + prefix + escapeHtml(hw.title) + ' <span style="font-size:11px;color:var(--c-text2)">(' + countLabel + ')</span></span>';
@@ -1066,7 +1064,7 @@ async function showStudentHwPage() {
     html += '<span class="hw-list-deadline" style="' + (isOverdue ? 'color:var(--c-danger)' : '') + '">';
     html += (isOverdue ? t('Overdue', '\u5df2\u903e\u671f') + ' ' : '') + deadline.toLocaleDateString();
     html += '</span>';
-    html += '<button class="btn btn-primary btn-sm" onclick="event.stopPropagation();' + goAction + '">GO \u2192</button>';
+    html += '<button class="btn btn-primary btn-sm" data-action="hw-go" data-hwid="' + hw.id + '" data-practice="' + (isPractice ? '1' : '0') + '">GO \u2192</button>';
     html += '</div>';
 
     /* Expandable word list (vocab HW only) */
@@ -1102,13 +1100,11 @@ async function showStudentHwPage() {
     else if (pct >= 70) tip = isPractice2 ? t('Good! Try harder questions', '\u4e0d\u9519\uff01\u8bd5\u8bd5\u66f4\u96be\u7684\u9898') : t('Good! Review wrong words', '\u4e0d\u9519\uff01\u590d\u4e60\u4e00\u4e0b\u9519\u8bcd');
     else tip = isPractice2 ? t('Review the sections and try again', '\u590d\u4e60\u77e5\u8bc6\u70b9\u540e\u518d\u8bd5') : t('Keep practicing this group', '\u7ee7\u7eed\u7ec3\u4e60\u8fd9\u4e2a\u8bcd\u7ec4');
 
-    var retryAction = isPractice2 ? 'startHwPractice(\'' + hw.id + '\')' : 'startHwTest(\'' + hw.id + '\')';
-
     html += '<div class="hw-list-item" style="flex-wrap:wrap">';
     html += '<span class="hw-list-title">' + prefix2 + escapeHtml(hw.title) + '</span>';
     html += '<span style="font-size:12px;font-weight:600;color:' + (pct >= 70 ? 'var(--c-success)' : 'var(--c-warning)') + '">' + r.correct_count + '/' + r.total_count + ' (' + pct + '%)</span>';
     html += '<span class="hw-list-deadline">' + completedDate + '</span>';
-    html += '<button class="btn btn-ghost btn-sm" onclick="' + retryAction + '">' + t('Retry', '\u91cd\u505a') + '</button>';
+    html += '<button class="btn btn-ghost btn-sm" data-action="hw-retry" data-hwid="' + hw.id + '" data-practice="' + (isPractice2 ? '1' : '0') + '">' + t('Retry', '\u91cd\u505a') + '</button>';
     html += '<div style="width:100%;font-size:11px;color:var(--c-text2);margin-top:4px">\ud83d\udca1 ' + tip + '</div>';
     html += '</div>';
   });
@@ -1603,6 +1599,14 @@ async function finishHwPractice() {
     if (hd) { renderHwProgress(hd.dataset.hwid, hd.dataset.cid); return; }
     var hdel = e.target.closest('[data-action="hw-delete"]');
     if (hdel) { deleteHw(hdel.dataset.hwid, hdel.dataset.cid); return; }
+
+    /* B8: student GO button */
+    var hgo = e.target.closest('[data-action="hw-go"]');
+    if (hgo) { e.stopPropagation(); if (hgo.dataset.practice === '1') startHwPractice(hgo.dataset.hwid); else startHwTest(hgo.dataset.hwid); return; }
+
+    /* B9: completed Retry button */
+    var hretry = e.target.closest('[data-action="hw-retry"]');
+    if (hretry) { if (hretry.dataset.practice === '1') startHwPractice(hretry.dataset.hwid); else startHwTest(hretry.dataset.hwid); return; }
   });
 
   /* B5: template selector change */

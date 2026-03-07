@@ -916,17 +916,17 @@ function renderSmartPath() {
     var boardLabel = h._boardId === 'edx' ? '4MA1' : '0580';
     var ringColor = h.score >= 60 ? 'var(--c-success)' : h.score >= 30 ? 'var(--c-warning)' : 'var(--c-danger)';
     /* Smart click: route to best action per recommendation */
-    var onclick;
+    var spRec, spLi = '';
     if (h.rec === 'vocab' && h.levelIdx >= 0) {
-      onclick = "openDeck(" + h.levelIdx + ")";
+      spRec = 'vocab'; spLi = h.levelIdx;
     } else if (h.rec === 'review_words' && h.levelIdx >= 0) {
-      onclick = "appSort='hard';openDeck(" + h.levelIdx + ")";
+      spRec = 'review_words'; spLi = h.levelIdx;
     } else if (h.rec === 'past_papers' && typeof startPastPaper === 'function') {
-      onclick = "startPastPaper('" + h.sectionId + "','" + h.board + "','practice')";
+      spRec = 'past_papers';
     } else {
-      onclick = "openSection('" + h.sectionId + "','" + h.board + "')";
+      spRec = 'section';
     }
-    html += '<div class="smart-path-card" onclick="' + onclick + '">';
+    html += '<div class="smart-path-card" data-sp-rec="' + spRec + '" data-sp-sec="' + h.sectionId + '" data-sp-board="' + h.board + '" data-sp-li="' + spLi + '">';
     html += '<div class="smart-path-ring" style="--pct:' + h.score + ';--ring-color:' + ringColor + '">' + h.score + '</div>';
     html += '<div class="smart-path-info">';
     html += '<div class="smart-path-section">' + h.sectionId + ' ' + secTitle + '</div>';
@@ -1641,6 +1641,23 @@ function startPracticeByChapter(chNum, board) {
   document.addEventListener('change', function(e) {
     var mq = e.target.closest('[data-mq-toggle]');
     if (mq) toggleMQtypeMastery(mq.dataset.sec, mq.dataset.gkey, mq);
+  });
+
+  /* B11: Smart Path recommendation cards */
+  document.addEventListener('click', function(e) {
+    var sp = e.target.closest('[data-sp-rec]');
+    if (!sp) return;
+    var rec = sp.dataset.spRec;
+    var li = sp.dataset.spLi;
+    if (rec === 'vocab' && li !== '') {
+      openDeck(parseInt(li, 10));
+    } else if (rec === 'review_words' && li !== '') {
+      appSort = 'hard'; openDeck(parseInt(li, 10));
+    } else if (rec === 'past_papers' && typeof startPastPaper === 'function') {
+      startPastPaper(sp.dataset.spSec, sp.dataset.spBoard, 'practice');
+    } else {
+      openSection(sp.dataset.spSec, sp.dataset.spBoard);
+    }
   });
 })();
 

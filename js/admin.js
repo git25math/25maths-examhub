@@ -541,8 +541,8 @@ function showResetPasswordModal(userId, name) {
     '<input class="auth-input" id="rp-pass" type="text" placeholder="' + t('New password (min 6 chars)', '新密码（至少6位）') + '">' +
     '<div id="rp-msg" class="settings-msg"></div>' +
     '<div style="display:flex;gap:8px;margin-top:12px">' +
-    '<button class="btn btn-primary" style="flex:1" onclick="doResetPassword(\'' + userId + '\')">' + t('Reset', '重置') + '</button>' +
-    '<button class="btn btn-ghost" style="flex:1" onclick="hideModal()">' + t('Cancel', '取消') + '</button>' +
+    '<button class="btn btn-primary" style="flex:1" data-action="do-resetpw" data-uid="' + userId + '">' + t('Reset', '重置') + '</button>' +
+    '<button class="btn btn-ghost" style="flex:1" data-action="modal-cancel">' + t('Cancel', '取消') + '</button>' +
     '</div>';
   showModal(html);
 }
@@ -780,6 +780,16 @@ document.addEventListener('click', function(e) {
   /* B2: edit class */
   act = e.target.closest('[data-action="editclass"]');
   if (act) { showEditClassModal(act.dataset.cid, act.dataset.cname, act.dataset.grade); return; }
+
+  /* B3: modal confirm actions */
+  act = e.target.closest('[data-action="do-rename"]');
+  if (act) { doRenameStudent(act.dataset.uid, act.dataset.cid); return; }
+  act = e.target.closest('[data-action="do-resetpw"]');
+  if (act) { doResetPassword(act.dataset.uid); return; }
+  act = e.target.closest('[data-action="do-move"]');
+  if (act) { doMoveStudent(act.dataset.uid, act.dataset.cid); return; }
+  act = e.target.closest('[data-action="modal-cancel"]');
+  if (act) { hideModal(); return; }
 });
 
 /* ═══ RENAME STUDENT ═══ */
@@ -789,8 +799,8 @@ function showRenameModal(userId, currentName, classId) {
     '<input class="auth-input" id="rn-name" type="text" value="' + currentName.replace(/"/g, '&quot;') + '">' +
     '<div id="rn-msg" class="settings-msg"></div>' +
     '<div style="display:flex;gap:8px;margin-top:12px">' +
-    '<button class="btn btn-primary" style="flex:1" onclick="doRenameStudent(\'' + userId + '\', \'' + classId + '\')">' + t('Confirm', '确认') + '</button>' +
-    '<button class="btn btn-ghost" style="flex:1" onclick="hideModal()">' + t('Cancel', '取消') + '</button>' +
+    '<button class="btn btn-primary" style="flex:1" data-action="do-rename" data-uid="' + userId + '" data-cid="' + classId + '">' + t('Confirm', '确认') + '</button>' +
+    '<button class="btn btn-ghost" style="flex:1" data-action="modal-cancel">' + t('Cancel', '取消') + '</button>' +
     '</div>';
   showModal(html);
   /* Auto-focus and select */
@@ -846,7 +856,7 @@ async function showMoveClassModal(userId, studentName, currentClassId) {
   classes.forEach(function(c) {
     var gradeOpt = BOARD_OPTIONS.find(function(o) { return o.value === c.grade; });
     var gradeLabel = gradeOpt ? t(gradeOpt.name, gradeOpt.nameZh) : c.grade;
-    opts += '<option value="' + c.id + '" data-grade="' + c.grade + '">' + c.name + ' (' + gradeLabel + ')</option>';
+    opts += '<option value="' + c.id + '" data-grade="' + c.grade + '">' + escapeHtml(c.name) + ' (' + gradeLabel + ')</option>';
   });
 
   var html = '<div class="section-title">' + t('Move Student', '移动学生') + '</div>' +
@@ -855,8 +865,8 @@ async function showMoveClassModal(userId, studentName, currentClassId) {
     '<select class="auth-input" id="mc-target">' + opts + '</select>' +
     '<div id="mc-msg" class="settings-msg"></div>' +
     '<div style="display:flex;gap:8px;margin-top:12px">' +
-    '<button class="btn btn-primary" style="flex:1" onclick="doMoveStudent(\'' + userId + '\', \'' + currentClassId + '\')">' + t('Confirm', '确认') + '</button>' +
-    '<button class="btn btn-ghost" style="flex:1" onclick="hideModal()">' + t('Cancel', '取消') + '</button>' +
+    '<button class="btn btn-primary" style="flex:1" data-action="do-move" data-uid="' + userId + '" data-cid="' + currentClassId + '">' + t('Confirm', '确认') + '</button>' +
+    '<button class="btn btn-ghost" style="flex:1" data-action="modal-cancel">' + t('Cancel', '取消') + '</button>' +
     '</div>';
   showModal(html);
 }
