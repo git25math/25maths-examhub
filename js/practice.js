@@ -363,6 +363,7 @@ function finishPractice() {
   if (!_pqSession) return;
   var s = _pqSession;
   markModeDone(s.lvl, 'practice');
+  if (typeof checkSectionMilestone === 'function') checkSectionMilestone();
 
   /* Save progress to localStorage */
   var lv = LEVELS[s.lvl];

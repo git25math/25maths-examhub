@@ -353,3 +353,10 @@
 - [x] **P3 防御性修复**: onclick XSS 消除（spell/practice/homework）+ 空引用防护 → v1.13.0
 - [x] **P4 质量修复**: 监听器泄漏修复（6 处）+ 残余 onclick XSS 消除（admin/homework/syllabus/practice 10 处）→ v1.13.1
 - [x] **P5 质量修复**: onclick XSS 第三轮消除（admin modal HIGH×3 + syllabus Smart Path HIGH + homework GO/Retry + app Board Pills，共 9 处）→ v1.13.2
+
+## v2.0 结构性重构 [DONE]
+- [x] **Phase 1 — HHK 考纲化**: 25m→hhk 考纲驱动架构统一（syllabus-hhk.json + vocabulary-hhk.json + 多 sub-level 聚合）→ v2.0.0
+- [x] **Phase 2 — 首页重设计**: 3 区聚焦（Hero Action Card + Quick Stats Strip + Syllabus Explorer）→ v2.0.0
+- [x] **Phase 3 — 学习闭环**: 交互旅程条 + section 上下文 + 里程碑庆祝 + 模式完成后智能导航 → v2.0.0
+- [x] **Phase 4 — 黏性系统**: 12 成就徽章 + 周目标 + 每日欢迎 + 复习提醒 → v2.0.0
+- [x] **Phase 5 — 去 AI 味**: Smart Path/Section Detail/进度标签人性化 + 3 态圆点 + 彩条替代环形分数 → v2.0.0

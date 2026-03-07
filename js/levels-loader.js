@@ -56,6 +56,9 @@ function _rebuildLevels() {
   if (typeof _edxDataReady !== 'undefined' && _edxDataReady && typeof _initBoardLevels === 'function') {
     _initBoardLevels('edexcel');
   }
+  if (typeof _hhkDataReady !== 'undefined' && _hhkDataReady && typeof _initBoardLevels === 'function') {
+    _initBoardLevels('hhk');
+  }
   if (typeof invalidateCache === 'function') invalidateCache();
   if (typeof invalidateGuestCache === 'function') invalidateGuestCache();
   _quizCache = null;  /* quiz distractor cache */

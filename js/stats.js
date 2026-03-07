@@ -105,7 +105,26 @@ function renderStats() {
   /* Trend chart */
   html += renderTrendChart(trendData);
 
+  /* Achievement badges */
+  html += _renderBadgeSection();
+
   panel.innerHTML = html;
+}
+
+function _renderBadgeSection() {
+  if (typeof BADGES === 'undefined' || typeof getUnlockedBadges !== 'function') return '';
+  var unlocked = getUnlockedBadges();
+  var html = '<div class="section-title" style="margin-top:24px">' + t('Achievements', '\u6210\u5c31\u5fbd\u7ae0') + '</div>';
+  html += '<div class="badge-grid">';
+  BADGES.forEach(function(b) {
+    var isUnlocked = unlocked.indexOf(b.id) >= 0;
+    html += '<div class="badge-item' + (isUnlocked ? ' unlocked' : '') + '">';
+    html += '<span class="badge-icon">' + b.icon + '</span>';
+    html += '<span class="badge-name">' + t(b.en, b.zh) + '</span>';
+    html += '</div>';
+  });
+  html += '</div>';
+  return html;
 }
 
 /* ═══ MODE BREAKDOWN ═══ */

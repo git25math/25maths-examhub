@@ -100,6 +100,7 @@ function rateStudy(r) {
 /* Finish study session */
 function finishStudy() {
   markModeDone(currentLvl, 'study');
+  if (typeof checkSectionMilestone === 'function') checkSectionMilestone();
   var h = S.ratings.hard.length;
   var o = S.ratings.ok.length;
   var e = S.ratings.easy.length;
@@ -121,7 +122,9 @@ function finishStudy() {
   var studyEmoji = (h === 0 && o === 0) ? '\ud83c\udfc6' : (h === 0 ? '\ud83c\udf89' : '\ud83d\udcaa');
   _lastShareOpts = { mode: 'study', score: e, total: total, emoji: studyEmoji };
 
-  html += nextStepHTML('\u2753', t('Quiz to test yourself', '\u6d4b\u9a8c\u68c0\u9a8c\u5b66\u4e60\u6548\u679c'), 'startQuiz(' + currentLvl + ')');
+  /* Context-aware next step */
+  var _sectionStep = typeof sectionNextStepHTML === 'function' ? sectionNextStepHTML('study') : '';
+  html += _sectionStep || nextStepHTML('\u2753', t('Quiz to test yourself', '\u6d4b\u9a8c\u68c0\u9a8c\u5b66\u4e60\u6548\u679c'), 'startQuiz(' + currentLvl + ')');
 
   html += '<div class="result-actions">';
   var hw = S.ratings.hard.concat(S.ratings.ok);

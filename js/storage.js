@@ -121,6 +121,12 @@ function recordAnswer(key, mode, isCorrect) {
   }
   var nr = now + iv * 86400000;
 
+  /* Bump weekly goal when word first reaches 'learning' or 'mastered' */
+  var _prevSt = prev.st || 'new';
+  if (_prevSt === 'new' && st !== 'new') {
+    if (typeof bumpWeeklyGoal === 'function') bumpWeeklyGoal(1);
+  }
+
   s.words[key] = { st: st, iv: iv, nr: nr, lr: now, ok: ok, fail: fail, lv: lv, stars: stars };
 
   /* 4. Inline daily history */
@@ -161,8 +167,13 @@ function recordAnswer(key, mode, isCorrect) {
 
   writeS(s);
   if (newStreak) showToast('🔥 ' + t(getStreakCount() + '-day streak!', '连续学习 ' + getStreakCount() + ' 天！'));
+  /* Debounced badge check (avoid checking every single answer) */
+  clearTimeout(_badgeCheckTimer);
+  _badgeCheckTimer = setTimeout(function() { if (typeof checkBadges === 'function') checkBadges(); }, 3000);
   debouncedSync();
 }
+
+var _badgeCheckTimer = null;
 
 /* Word mastery storage
    Each word key: "L_{slug}_W{wordId}"
@@ -581,4 +592,128 @@ function bootstrapHistory() {
     s.history = history;
     writeS(s);
   }
+}
+
+/* ═══ ACHIEVEMENT BADGES ═══ */
+var BADGES = [
+  { id: 'first_word',    icon: '\ud83c\udf1f', en: 'First Word',      zh: '\u7b2c\u4e00\u4e2a\u8bcd', check: function(ctx) { return ctx.mastered >= 1; } },
+  { id: 'ten_words',     icon: '\ud83d\udcda', en: 'Ten Down',         zh: '\u5341\u4e2a\u8bcd\u4e86', check: function(ctx) { return ctx.mastered >= 10; } },
+  { id: 'hundred_club',  icon: '\ud83c\udfc5', en: 'Hundred Club',     zh: '\u767e\u8bcd\u4ff1\u4e50\u90e8', check: function(ctx) { return ctx.mastered >= 100; } },
+  { id: 'streak_3',      icon: '\ud83d\udd25', en: '3-Day Streak',     zh: '\u8fde\u7eed3\u5929',  check: function(ctx) { return ctx.streak >= 3; } },
+  { id: 'streak_7',      icon: '\ud83d\udcaa', en: 'Week Warrior',     zh: '\u4e00\u5468\u6218\u58eb', check: function(ctx) { return ctx.streak >= 7; } },
+  { id: 'streak_30',     icon: '\ud83d\udc8e', en: 'Monthly Master',   zh: '\u6708\u5ea6\u5927\u5e08', check: function(ctx) { return ctx.streak >= 30; } },
+  { id: 'daily_5',       icon: '\u26a1',       en: 'Daily 5',          zh: '\u6bcf\u65e5\u63505\u6b21', check: function(ctx) { return ctx.dailyCount >= 5; } },
+  { id: 'quiz_perfect',  icon: '\ud83c\udfc6', en: 'Perfectionist',    zh: '\u5b8c\u7f8e\u4e3b\u4e49', check: function(ctx) { return ctx.perfectQuiz; } },
+  { id: 'first_section', icon: '\u2705',       en: 'First Section',    zh: '\u7b2c\u4e00\u4e2a\u77e5\u8bc6\u70b9', check: function(ctx) { return ctx.sectionsCleared >= 1; } },
+  { id: 'srs_master',    icon: '\ud83e\udde0', en: 'Memory Master',    zh: '\u8bb0\u5fc6\u5927\u5e08', check: function(ctx) { return ctx.srsMaxCount >= 50; } },
+  { id: 'five_hundred',  icon: '\ud83d\ude80', en: '500 Words',        zh: '500\u8bcd\u8fbe\u6210', check: function(ctx) { return ctx.mastered >= 500; } },
+  { id: 'all_modes',     icon: '\ud83c\udf08', en: 'Explorer',         zh: '\u63a2\u7d22\u8005',  check: function(ctx) { return ctx.modesUsed >= 5; } }
+];
+
+function getUnlockedBadges() {
+  try { return JSON.parse(localStorage.getItem('wmatch_badges') || '[]'); } catch(e) { return []; }
+}
+
+function _saveBadges(arr) {
+  try { localStorage.setItem('wmatch_badges', JSON.stringify(arr)); } catch(e) {}
+}
+
+function checkBadges() {
+  var unlocked = getUnlockedBadges();
+  var gs = typeof getGlobalStats === 'function' ? getGlobalStats() : { mastered: 0 };
+  var streak = getStreakCount();
+  var s = loadS();
+
+  /* Count daily challenges completed */
+  var dailyCount = 0;
+  if (s.history) {
+    s.history.forEach(function(h) { if (h.m && h.m.daily) dailyCount++; });
+  }
+  /* Check for perfect quiz (any session with 100%) */
+  var perfectQuiz = false;
+  if (s.history) {
+    s.history.forEach(function(h) {
+      if (h.m && h.m.quiz && h.score === h.total && h.total > 0) perfectQuiz = true;
+    });
+  }
+  /* Count sections cleared (mastered milestone) */
+  var sectionsCleared = 0;
+  try {
+    var keys = Object.keys(localStorage);
+    for (var i = 0; i < keys.length; i++) {
+      if (keys[i].indexOf('wmatch_milestone_') === 0) {
+        var v = localStorage.getItem(keys[i]);
+        if (v === 'mastered') sectionsCleared++;
+      }
+    }
+  } catch(e) {}
+  /* Count SRS level 7 words */
+  var srsMaxCount = 0;
+  if (s.words) {
+    for (var k in s.words) {
+      if (s.words[k].lv >= 7) srsMaxCount++;
+    }
+  }
+  /* Count distinct modes used */
+  var modesUsed = 0;
+  if (s.modeDone) {
+    var modeSet = {};
+    for (var mk in s.modeDone) {
+      var parts = mk.split(':');
+      if (parts.length === 2) modeSet[parts[1]] = true;
+    }
+    modesUsed = Object.keys(modeSet).length;
+  }
+
+  var ctx = {
+    mastered: gs.mastered, streak: streak, dailyCount: dailyCount,
+    perfectQuiz: perfectQuiz, sectionsCleared: sectionsCleared,
+    srsMaxCount: srsMaxCount, modesUsed: modesUsed
+  };
+
+  var newlyUnlocked = [];
+  BADGES.forEach(function(b) {
+    if (unlocked.indexOf(b.id) >= 0) return;
+    if (b.check(ctx)) {
+      unlocked.push(b.id);
+      newlyUnlocked.push(b);
+    }
+  });
+
+  if (newlyUnlocked.length > 0) {
+    _saveBadges(unlocked);
+    newlyUnlocked.forEach(function(b) {
+      if (typeof showToast === 'function') {
+        showToast(b.icon + ' ' + t(b.en, b.zh) + ' ' + t('unlocked!', '\u89e3\u9501\uff01'));
+      }
+    });
+  }
+  return unlocked;
+}
+
+/* ═══ WEEKLY GOAL ═══ */
+function getWeeklyGoal() {
+  var now = new Date();
+  /* Week starts Monday */
+  var day = now.getDay();
+  var diff = day === 0 ? 6 : day - 1;
+  var monday = new Date(now);
+  monday.setDate(now.getDate() - diff);
+  var weekKey = monday.toLocaleDateString('en-CA');
+
+  var stored = {};
+  try { stored = JSON.parse(localStorage.getItem('wmatch_weekly') || '{}'); } catch(e) {}
+
+  if (stored.week !== weekKey) {
+    stored = { week: weekKey, learned: 0, target: stored.target || 35 };
+    try { localStorage.setItem('wmatch_weekly', JSON.stringify(stored)); } catch(e) {}
+  }
+  return stored;
+}
+
+function bumpWeeklyGoal(count) {
+  var wg = getWeeklyGoal();
+  wg.learned = (wg.learned || 0) + (count || 1);
+  try { localStorage.setItem('wmatch_weekly', JSON.stringify(wg)); } catch(e) {}
+  return wg;
 }

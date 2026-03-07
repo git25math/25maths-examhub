@@ -31,7 +31,7 @@ function showPanel(id) {
 function navTo(id) {
   showPanel(id);
   /* Render content for target panel */
-  if (id === 'home') renderHome();
+  if (id === 'home') { if (typeof _currentSectionContext !== 'undefined') _currentSectionContext = null; renderHome(); }
   else if (id === 'review-dash') renderReviewDash();
   else if (id === 'import') renderImport();
   else if (id === 'board') renderBoard();
@@ -692,6 +692,38 @@ function nextStepHTML(emoji, label, onclick) {
     '<div class="next-step-label">' + t('Next step', '\u4e0b\u4e00\u6b65') + '</div>' +
     '<div class="next-step-action">' + emoji + ' ' + label + ' \u2192</div>' +
     '</div>';
+}
+
+/* Context-aware "Continue Journey" next step for section-based learning */
+function sectionNextStepHTML(currentMode) {
+  if (!_currentSectionContext) return '';
+  var ctx = _currentSectionContext;
+  var ms = typeof getSectionMilestone === 'function' ? getSectionMilestone(ctx.sectionId, ctx.board) : null;
+  var emoji, label, action;
+  if (currentMode === 'study') {
+    /* After study → suggest quiz if vocab is done enough */
+    var li = typeof getSectionLevelIdx === 'function' ? getSectionLevelIdx(ctx.sectionId, ctx.board) : -1;
+    if (li >= 0) {
+      emoji = '\u2753'; label = t('Quiz to test yourself', '\u6d4b\u9a8c\u68c0\u9a8c\u5b66\u4e60\u6548\u679c');
+      action = 'startQuiz(' + li + ')';
+    } else {
+      emoji = '\ud83d\udcd8'; label = t('Back to Section', '\u8fd4\u56de\u77e5\u8bc6\u70b9');
+      action = 'openSection(\'' + ctx.sectionId + '\',\'' + ctx.board + '\')';
+    }
+  } else if (currentMode === 'quiz') {
+    if (ms === 'quiz_done' || ms === 'mastered') {
+      emoji = '\ud83d\udcd8'; label = t('Back to Section', '\u8fd4\u56de\u77e5\u8bc6\u70b9');
+      action = 'openSection(\'' + ctx.sectionId + '\',\'' + ctx.board + '\')';
+    } else {
+      emoji = '\ud83e\udde0'; label = t('Review to consolidate', '\u590d\u4e60\u5de9\u56fa\u8bb0\u5fc6');
+      var rli = typeof getSectionLevelIdx === 'function' ? getSectionLevelIdx(ctx.sectionId, ctx.board) : -1;
+      action = rli >= 0 ? 'startReview(' + rli + ')' : 'openSection(\'' + ctx.sectionId + '\',\'' + ctx.board + '\')';
+    }
+  } else {
+    emoji = '\ud83d\udcd8'; label = t('Back to Section', '\u8fd4\u56de\u77e5\u8bc6\u70b9');
+    action = 'openSection(\'' + ctx.sectionId + '\',\'' + ctx.board + '\')';
+  }
+  return nextStepHTML(emoji, label, action);
 }
 
 /* ═══ ONBOARDING TOUR ═══ */

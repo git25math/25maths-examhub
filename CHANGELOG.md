@@ -1,5 +1,65 @@
 # Changelog
 
+## [2.0.0] - 2026-03-07 — v2.0 结构性重构（5 Phase 全量）
+
+### Phase 1 — HHK 考纲化（架构统一）
+- **新增 `scripts/generate-hhk-syllabus.py`**: 从 levels-25m.json 生成考纲结构
+- **新增 `data/syllabus-hhk.json`**: 5 章（Y7-Y11）55 个知识点，vocabSlugs 映射 173 个已有 level
+- **新增 `data/vocabulary-hhk.json`**: 55 sections 共 1,501 词汇
+- **`js/syllabus.js`**: 新增 loadHHKSyllabus / renderHHKHome / _getHHKSectionStats，HHK 多 sub-level 聚合统计
+- **`js/levels-loader.js`**: _rebuildLevels 支持 HHK board re-init
+- **`js/mastery.js`**: renderHome 25m board 路由切换为 renderHHKHome
+
+### Phase 2 — 首页重设计（3 区聚焦）
+- **Zone 1 Hero Action Card**: 渐变卡片 + 每日欢迎语 + 周目标 + 智能推荐（继续/复习/挑战/开始）+ 复习提醒
+- **Zone 2 Quick Stats Strip**: 4 个 pill 徽章（连续天数/词汇量/掌握率/段位）
+- **_getNextAction()**: 优先级推荐引擎（进行中→到期复习→每日挑战→新知识点→探索）
+- **精简移除**: 旧 Stats Row / Rank Hint / Daily Challenge 横幅 / Smart Path / Review Plan（合并入 Hero Card）
+- **CSS**: hero-card 渐变动画 + quick-stats pills + 手机端响应式
+
+### Phase 3 — 学习闭环完善
+- **交互式旅程条**: Vocab→Quiz→Practice→Papers 四步，可点击跳转，脉冲高亮当前步，锁定未解锁步
+- **`_currentSectionContext`**: 全局变量追踪学习上下文，从 section 进入 deck 时设置，返回首页时清除
+- **`sectionNextStepHTML()`**: 模式完成后根据上下文推荐下一步（study→quiz / quiz→review / practice→section）
+- **`getSectionMilestone()`**: 5 态里程碑（not_started→in_progress→vocab_done→quiz_done→mastered）
+- **`checkSectionMilestone()`**: 完成模式后自动检测里程碑变化 → Toast 庆祝 + mastered 时粒子效果
+
+### Phase 4 — 黏性与激励系统
+- **成就徽章**: 12 个可解锁徽章（First Word / Ten Down / Hundred Club / 3/7/30-Day Streak / Daily 5 / Perfectionist / First Section / Memory Master / 500 Words / Explorer）
+- **徽章检测**: recordAnswer 后 3 秒防抖检测 → 解锁时 Toast 通知
+- **统计页徽章展示**: 已解锁/未解锁网格，灰度滤镜区分
+- **周目标**: 默认 35 词/周，Hero Card 显示进度，每周一重置
+- **每日欢迎**: 首次打开基于连续天数显示不同鼓励语
+- **复习提醒**: SRS 到期 ≥5 词且 2+ 天未复习 → Hero Card 温馨提示
+
+### Phase 5 — 去 AI 味 + UI 打磨
+- **Smart Path 标签人性化**: start→"Ready to start!" / vocab→"Learn the key words first" / review_words→"Quick refresh needed" / great→"Doing great!"
+- **Section Detail 简化**: Health Ring 数字 → 4px 彩条 + 自然语言描述（"You've learned 5 of 8 words"）
+- **Section Row 3 态圆点**: 百分比进度条 → 空心/半满/实心圆点 + ✓ 标记
+- **Smart Path 卡片**: 环形分数 → 彩色竖条，移除百分比数字
+- **Review Plan**: retentionScore 百分比 → "Needs refresh" / "Fading" 自然语言
+- **进度标签**: "45% · 3/8 mastered" → "You've learned 5 of 8 words"
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| 新 `scripts/generate-hhk-syllabus.py` | HHK 考纲数据生成脚本 |
+| 新 `data/syllabus-hhk.json` | HHK 考纲结构（5 章 55 知识点） |
+| 新 `data/vocabulary-hhk.json` | HHK 词汇映射（1,501 词） |
+| `js/syllabus.js` | +448 行：HHK 考纲 + 交互旅程条 + 里程碑 + 去 AI 味 |
+| `js/mastery.js` | +276 行：3 区首页 + Hero Card + Quick Stats + 每日欢迎 |
+| `js/storage.js` | +135 行：徽章系统 + 周目标 + bumpWeeklyGoal |
+| `js/ui.js` | +34 行：sectionNextStepHTML + 上下文清除 |
+| `js/stats.js` | +19 行：徽章展示区 |
+| `js/study.js` | 完成画面上下文感知 + 里程碑检测 |
+| `js/quiz.js` | 完成画面上下文感知 + 里程碑检测 |
+| `js/practice.js` | 里程碑检测 |
+| `js/review.js` | 记录最后复习时间 |
+| `js/levels-loader.js` | HHK re-init 支持 |
+| `js/config.js` | 版本号 v1.13.2→v2.0.0 |
+| `index.html` | 缓存标签 v2.0.0 |
+| `css/style.css` | +134 行：Hero Card + Quick Stats + 旅程条脉冲 + 徽章 + 3 态圆点 |
+
 ## [1.13.2] - 2026-03-07 — 质量修复（onclick XSS 第三轮消除）
 
 ### 修复 — onclick XSS 消除（9 处修复）

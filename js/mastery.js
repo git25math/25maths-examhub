@@ -166,117 +166,196 @@ function renderDeckRow(cl, cat, _levelLocked, _levelStats) {
   return h;
 }
 
-/* ═══ HOME DASHBOARD ═══ */
-function renderHome() {
-  var all = getAllWords();
-  var wd = getWordData();
-  var gs = getGlobalStats();
-  var total = gs.total;
-  var due = getDueWords().length;
+/* ═══ HOME DASHBOARD — 3-Zone Architecture ═══ */
 
+/* Next action recommendation logic (priority-based) */
+function _getNextAction() {
+  var boards = getVisibleBoards();
+  var due = getDueWords().length;
+  var dcData = getDailyData();
+
+  /* Check all syllabus boards for in-progress or next sections */
+  var inProgress = null;
+  var nextNew = null;
+  for (var i = 0; i < boards.length; i++) {
+    var bid = boards[i].id;
+    var syllabusBoard = bid === 'edx' ? 'edexcel' : bid === '25m' ? 'hhk' : bid;
+    var syllabus = typeof BOARD_SYLLABUS !== 'undefined' ? BOARD_SYLLABUS[syllabusBoard] : null;
+    if (!syllabus) continue;
+    for (var ci = 0; ci < syllabus.chapters.length; ci++) {
+      var ch = syllabus.chapters[ci];
+      for (var si = 0; si < ch.sections.length; si++) {
+        var sec = ch.sections[si];
+        var h = typeof getSectionHealth === 'function' ? getSectionHealth(sec.id, syllabusBoard) : null;
+        if (!h || !h.hasVocab) continue;
+        /* In-progress: started but vocab < 80% */
+        if (h.vocabScore > 0 && h.vocabScore < 80 && !inProgress) {
+          inProgress = { section: sec, board: syllabusBoard, health: h, chapter: ch };
+        }
+        /* Next new: not started */
+        if (h.vocabScore === 0 && !nextNew) {
+          nextNew = { section: sec, board: syllabusBoard, health: h, chapter: ch };
+        }
+        if (inProgress && nextNew) break;
+      }
+      if (inProgress && nextNew) break;
+    }
+    if (inProgress && nextNew) break;
+  }
+
+  /* Priority: 1. In-progress section → 2. Due review (>=5) → 3. Daily challenge → 4. Next new section */
+  if (inProgress) {
+    return { type: 'continue', section: inProgress.section, board: inProgress.board, label: inProgress.section.id + ' ' + inProgress.section.title, labelZh: inProgress.section.title_zh };
+  }
+  if (due >= 5) {
+    return { type: 'review', count: due };
+  }
+  if (!dcData) {
+    return { type: 'daily' };
+  }
+  if (nextNew) {
+    return { type: 'start', section: nextNew.section, board: nextNew.board, label: nextNew.section.id + ' ' + nextNew.section.title, labelZh: nextNew.section.title_zh };
+  }
+  return { type: 'explore' };
+}
+
+/* Zone 1: Hero Action Card */
+function _renderHeroAction() {
+  var gs = getGlobalStats();
+  var streakN = getStreakCount();
+  var homeRank = getRank();
+  var action = _getNextAction();
+  var dcData = getDailyData();
+  var wg = typeof getWeeklyGoal === 'function' ? getWeeklyGoal() : null;
+
+  var html = '<div class="hero-card">';
+
+  /* Daily welcome (first visit of the day) */
+  var _todayKey = new Date().toLocaleDateString('en-CA');
+  var _lastWelcome = '';
+  try { _lastWelcome = localStorage.getItem('wmatch_last_welcome') || ''; } catch(e) {}
+  if (_todayKey !== _lastWelcome) {
+    try { localStorage.setItem('wmatch_last_welcome', _todayKey); } catch(e) {}
+    var welcomeMsg;
+    if (streakN >= 7) welcomeMsg = t('Amazing dedication!', '\u575a\u6301\u5f97\u592a\u68d2\u4e86\uff01');
+    else if (streakN >= 3) welcomeMsg = t(streakN + ' days strong!', '\u8fde\u7eed ' + streakN + ' \u5929\u4e86\uff0c\u7ee7\u7eed\uff01');
+    else welcomeMsg = t('Welcome back!', '\u6b22\u8fce\u56de\u6765\uff01');
+    html += '<div class="hero-welcome">' + welcomeMsg + '</div>';
+  }
+
+  /* Top row: streak + weekly goal + rank */
+  html += '<div class="hero-top">';
+  html += '<span class="hero-streak">\ud83d\udd25 ' + t(streakN + '-day streak', '\u8fde\u7eed ' + streakN + ' \u5929') + '</span>';
+  if (wg) {
+    var wgPct = Math.min(100, Math.round((wg.learned / wg.target) * 100));
+    html += '<span class="hero-weekly">' + t('Week', '\u672c\u5468') + ': ' + wg.learned + '/' + wg.target + '</span>';
+  }
+  html += '<span class="hero-rank" onclick="showRankGuide()">' + homeRank.emoji + ' ' + rankName(homeRank) + '</span>';
+  html += '</div>';
+
+  /* Main action area */
+  html += '<div class="hero-main">';
+  if (action.type === 'continue') {
+    html += '<div class="hero-label">' + t('Continue', '\u7ee7\u7eed\u5b66\u4e60') + '</div>';
+    html += '<div class="hero-section">' + escapeHtml(action.label) + '</div>';
+    if (appLang !== 'en' && action.labelZh) html += '<div class="hero-section-zh">' + escapeHtml(action.labelZh) + '</div>';
+    html += '<button class="btn btn-primary hero-btn" onclick="openSection(\'' + action.section.id + '\',\'' + action.board + '\')">';
+    html += t('Continue Learning', '\u7ee7\u7eed\u5b66\u4e60') + ' \u2192</button>';
+  } else if (action.type === 'review') {
+    html += '<div class="hero-label">' + t('Time to review', '\u8be5\u590d\u4e60\u4e86') + '</div>';
+    html += '<div class="hero-section">' + t(action.count + ' words need a quick refresh', '\u6709 ' + action.count + ' \u4e2a\u8bcd\u9700\u8981\u590d\u4e60') + '</div>';
+    html += '<button class="btn btn-primary hero-btn" onclick="navTo(\'review-dash\')">';
+    html += t('Start Review', '\u5f00\u59cb\u590d\u4e60') + ' \u2192</button>';
+  } else if (action.type === 'daily') {
+    html += '<div class="hero-label">' + t('Daily Challenge', '\u6bcf\u65e5\u6311\u6218') + '</div>';
+    html += '<div class="hero-section">' + t('10 words \u00b7 60 seconds \u00b7 test your speed!', '10 \u4e2a\u8bcd \u00b7 60 \u79d2 \u00b7 \u6d4b\u8bd5\u4f60\u7684\u901f\u5ea6\uff01') + '</div>';
+    html += '<button class="btn btn-primary hero-btn" onclick="startDaily()">';
+    html += t('GO', '\u5f00\u59cb') + ' \u2192</button>';
+  } else if (action.type === 'start') {
+    html += '<div class="hero-label">' + t('Up next', '\u4e0b\u4e00\u7ad9') + '</div>';
+    html += '<div class="hero-section">' + escapeHtml(action.label) + '</div>';
+    if (appLang !== 'en' && action.labelZh) html += '<div class="hero-section-zh">' + escapeHtml(action.labelZh) + '</div>';
+    html += '<button class="btn btn-primary hero-btn" onclick="openSection(\'' + action.section.id + '\',\'' + action.board + '\')">';
+    html += t('Start Learning', '\u5f00\u59cb\u5b66\u4e60') + ' \u2192</button>';
+  } else {
+    html += '<div class="hero-label">' + t('Explore', '\u63a2\u7d22') + '</div>';
+    html += '<div class="hero-section">' + t('Pick a topic below to start learning', '\u9009\u62e9\u4e00\u4e2a\u77e5\u8bc6\u70b9\u5f00\u59cb\u5b66\u4e60') + '</div>';
+  }
+  html += '</div>';
+
+  /* Review reminder — gentle nudge when overdue */
+  if (action.type !== 'review') {
+    var _dueCount = getDueWords().length;
+    if (_dueCount >= 5) {
+      var _lastReview = 0;
+      try { _lastReview = parseInt(localStorage.getItem('wmatch_last_review') || '0'); } catch(e) {}
+      var _daysSinceReview = _lastReview > 0 ? (Date.now() - _lastReview) / 86400000 : 999;
+      if (_daysSinceReview >= 2) {
+        html += '<div class="hero-reminder" onclick="navTo(\'review-dash\')">\ud83d\udca1 ' + t(_dueCount + ' words waiting for a quick refresh \u2014 just 2 min!', '\u6709 ' + _dueCount + ' \u4e2a\u8bcd\u7b49\u4f60\u590d\u4e60\u2014\u2014\u53ea\u9700 2 \u5206\u949f\uff01') + '</div>';
+      }
+    }
+  }
+
+  /* Secondary actions */
+  html += '<div class="hero-alt">';
+  if (action.type !== 'daily') {
+    html += '<button class="hero-alt-btn" onclick="startDaily()">\u26a1 ' + t('Daily Challenge', '\u6bcf\u65e5\u6311\u6218');
+    if (dcData) html += ' (' + dcData.score + '/10)';
+    html += '</button>';
+  }
+  if (action.type !== 'review') {
+    var due = getDueWords().length;
+    if (due > 0) {
+      html += '<button class="hero-alt-btn" onclick="navTo(\'review-dash\')">\ud83e\udde0 ' + t('Review', '\u590d\u4e60') + ' (' + due + ')</button>';
+    }
+  }
+  html += '</div>';
+
+  html += '</div>';
+  return html;
+}
+
+/* Zone 2: Quick Stats Strip */
+function _renderQuickStats() {
+  var gs = getGlobalStats();
+  var streakN = getStreakCount();
+  var homeRank = getRank();
+  var html = '<div class="quick-stats" onclick="navTo(\'stats\')">';
+  html += '<span class="qs-pill">\ud83d\udd25 ' + streakN + t('d', '\u5929') + '</span>';
+  html += '<span class="qs-pill">\ud83d\udcca ' + gs.total + t(' words', '\u8bcd') + '</span>';
+  html += '<span class="qs-pill">\u2b50 ' + gs.masteryPct + '%</span>';
+  html += '<span class="qs-pill">' + homeRank.emoji + ' ' + rankName(homeRank) + '</span>';
+  html += '</div>';
+  return html;
+}
+
+/* Homework slot (compact) */
+function _renderHomeworkSlot() {
+  if (!isLoggedIn() || isGuest() || !userClassId) return '';
+  return '<div id="hw-banner"></div>';
+}
+
+function renderHome() {
+  var gs = getGlobalStats();
   var html = '';
 
-  /* Stats row — Total / Learning% / Mastery% / Streak */
-  html += '<div class="home-stats">';
-  html += '<div class="stat-card"><div class="stat-val">' + total + '</div><div class="stat-label">' + t('Total', '\u603b\u8bcd\u6c47') + '</div></div>';
-  html += '<div class="stat-card"><div class="stat-val" style="color:var(--c-primary)">' + gs.learningPct + '%</div><div class="stat-label">' + t('Progress', '\u5b66\u4e60\u8fdb\u5ea6') + '</div></div>';
-  html += '<div class="stat-card"><div class="stat-val" style="color:var(--c-success)">' + gs.masteryPct + '%</div><div class="stat-label">' + t('Mastery', '\u7cbe\u901a\u7387') + '</div></div>';
-  var streakN = getStreakCount();
-  html += '<div class="stat-card stat-card-streak"><div class="stat-val" style="color:var(--c-streak)">🔥 ' + streakN + '</div><div class="stat-label">' + t('Streak', '连续天数') + '</div></div>';
-  html += '</div>';
-
-  /* Rank hint row */
-  var homeRank = getRank();
-  var homeNext = getNextRank();
-  if (isTeacher()) {
-    html += '<div class="home-rank-hint" style="cursor:default">';
-    html += '<span class="home-rank-emoji">\ud83c\udfeb</span>';
-    html += '<span class="home-rank-name">' + t('Teacher Account', '\u6559\u5e08\u8d26\u53f7') + '</span>';
-    html += '</div>';
-  } else {
-    html += '<div class="home-rank-hint" onclick="showRankGuide()">';
-    html += '<span class="home-rank-emoji">' + homeRank.emoji + '</span>';
-    html += '<span class="home-rank-name">' + rankName(homeRank) + '</span>';
-    if (homeNext) {
-      var nextNeeded = Math.ceil(homeNext.min / 100 * total);
-      var remaining = Math.max(nextNeeded - gs.mastered, 0);
-      html += '<span class="home-rank-sep">\u00b7</span>';
-      html += '<span class="home-rank-next">' + t(remaining + ' to ' + rankName(homeNext), '\u8ddd ' + rankName(homeNext) + ' \u8fd8\u9700 ' + remaining + ' \u8bcd') + '</span>';
-    }
-    html += '<span class="home-rank-link">' + t('View path \u2192', '\u67e5\u770b\u8def\u7ebf \u2192') + '</span>';
-    html += '</div>';
-  }
-
-  /* Guest banner */
+  /* Guest banner (compact toast-style) */
   if (isGuest()) {
-    if (GUEST_FULL_ACCESS) {
-      /* Green welcome banner — nudge registration */
-      html += '<div class="guest-welcome" onclick="showGuestSignupPrompt()">';
-      html += '<span class="guest-trial-icon">\u2728</span>';
-      html += '<span class="guest-trial-text">' + t('Welcome! Register for free to sync progress & join leaderboard', '\u6b22\u8fce\u4f53\u9a8c\uff01\u514d\u8d39\u6ce8\u518c\u53ef\u540c\u6b65\u8fdb\u5ea6\u3001\u52a0\u5165\u6392\u884c\u699c') + '</span>';
-      html += '<span class="guest-trial-arrow">\u2192</span>';
-      html += '</div>';
-    } else {
-      /* Original trial banner */
-      var totalVisible = 0;
-      for (var gi = 0; gi < LEVELS.length; gi++) { if (isLevelVisible(LEVELS[gi])) totalVisible++; }
-      html += '<div class="guest-trial-banner" onclick="showGuestLockPrompt()">';
-      html += '<span class="guest-trial-icon">\ud83d\udd13</span>';
-      html += '<span class="guest-trial-text">' + t('Free Trial: ' + GUEST_FREE_LIMIT + ' groups', '\u514d\u8d39\u8bd5\u7528\uff1a' + GUEST_FREE_LIMIT + ' \u4e2a\u8bcd\u7ec4') + ' \xb7 ' + t('Login to unlock all ' + totalVisible + ' groups', '\u767b\u5f55\u89e3\u9501\u5168\u90e8 ' + totalVisible + ' \u4e2a\u8bcd\u7ec4') + '</span>';
-      html += '<span class="guest-trial-arrow">\u2192</span>';
-      html += '</div>';
-    }
+    html += '<div class="guest-welcome" onclick="showGuestSignupPrompt()">';
+    html += '<span class="guest-trial-icon">\u2728</span>';
+    html += '<span class="guest-trial-text">' + t('Register free to sync progress', '\u514d\u8d39\u6ce8\u518c\u540c\u6b65\u8fdb\u5ea6') + '</span>';
+    html += '<span class="guest-trial-arrow">\u2192</span>';
+    html += '</div>';
   }
 
-  /* Daily Challenge banner */
-  var dcData = getDailyData();
-  html += '<div class="dc-home-banner" onclick="startDaily()">';
-  html += '<span class="dc-badge">\u26a1 ' + t('Daily Challenge', '每日挑战') + '</span>';
-  if (dcData) {
-    html += '<span class="dc-banner-info">' + dcData.score + '/10 \u2713</span>';
-  } else {
-    html += '<span class="dc-banner-info">' + t('10 words \u00b7 60s', '10 词 \u00b7 60 秒') + '</span>';
-    html += '<span class="dc-banner-go">GO \u2192</span>';
-  }
-  html += '</div>';
+  /* Zone 1: Hero Action Card */
+  html += _renderHeroAction();
+
+  /* Zone 2: Quick Stats Strip */
+  html += _renderQuickStats();
 
   /* Homework banner (students only) */
-  if (isLoggedIn() && !isGuest() && userClassId) {
-    html += '<div id="hw-banner"></div>';
-  }
-
-  /* Smart Path recommendations */
-  if (typeof renderSmartPath === 'function') {
-    html += renderSmartPath();
-  }
-
-  /* Review Plan */
-  if (typeof renderReviewPlan === 'function') {
-    html += renderReviewPlan();
-  }
-
-  /* Diagnostic test button (only if PP data available) */
-  var _diagBoard = (userBoard === 'edx') ? 'edx' : 'cie';
-  if (typeof startDiagnostic === 'function' && gs.total > 0) {
-    html += '<div class="diag-home-btn" onclick="startDiagnostic(\'' + _diagBoard + '\')">';
-    html += '<span class="diag-home-icon">\ud83c\udfaf</span>';
-    html += '<div class="diag-home-info">';
-    html += '<div class="diag-home-title">' + t('Diagnostic Test', '\u8bca\u65ad\u6d4b\u8bd5') + '</div>';
-    html += '<div class="diag-home-sub">' + t('20 questions across all topics \u00b7 Find your weak spots', '20 \u9898\u8de8\u77e5\u8bc6\u70b9\u6d4b\u8bd5 \u00b7 \u53d1\u73b0\u8584\u5f31\u73af\u8282') + '</div>';
-    html += '</div>';
-    html += '<span class="diag-home-go">GO \u2192</span>';
-    html += '</div>';
-  }
-
-  /* PWA install hint */
-  var _isStandalone = window.matchMedia('(display-mode: standalone)').matches;
-  if (!_isStandalone) {
-    html += '<div class="pwa-install-hint" id="pwa-install-hint" style="display:none" onclick="pwaInstall()">';
-    html += '<span class="pwa-install-icon">\ud83d\udcf2</span>';
-    html += '<span class="pwa-install-text">' + t('Install app for offline access', '\u5b89\u88c5\u5e94\u7528\u4ee5\u79bb\u7ebf\u4f7f\u7528') + '</span>';
-    html += '<span class="pwa-install-btn">' + t('Install', '\u5b89\u88c5') + '</span>';
-    html += '</div>';
-  }
+  html += _renderHomeworkSlot();
 
   /* Search bar */
   html += '<div class="search-bar">';
@@ -319,6 +398,23 @@ function renderHome() {
         html += '<span class="board-code">' + board.code + '</span>';
         html += '</div>';
         html += edxHtml;
+        html += '</div>';
+      }
+      return;
+    }
+
+    /* ── HHK (25m) board: syllabus-driven rendering ── */
+    if (board.id === '25m' && typeof renderHHKHome === 'function' && _hhkDataReady) {
+      var hhkHtml = renderHHKHome();
+      if (hhkHtml) {
+        hasAnyResult = true;
+        html += '<div class="board-section" id="board-25m">';
+        html += '<div class="board-header">';
+        html += '<span class="board-emoji">' + board.emoji + '</span>';
+        html += '<span class="board-name">' + boardName(board) + '</span>';
+        html += '<span class="board-code">' + board.code + '</span>';
+        html += '</div>';
+        html += hhkHtml;
         html += '</div>';
       }
       return;

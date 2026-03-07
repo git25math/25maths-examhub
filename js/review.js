@@ -192,6 +192,7 @@ function startReviewSession() {
   RV.idx = 0;
   RV.ratings = { hard: [], ok: [], easy: [] };
   RV.lvl = -1;
+  try { localStorage.setItem('wmatch_last_review', String(Date.now())); } catch(e) {}
 
   showPanel('review');
   renderReviewCard();

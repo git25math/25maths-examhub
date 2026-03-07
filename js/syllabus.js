@@ -1,14 +1,14 @@
 /* ══════════════════════════════════════════════════════════════
    syllabus.js — Multi-board syllabus-driven navigation + section detail
-   Supports CIE 0580 and Edexcel 4MA1.
+   Supports CIE 0580, Edexcel 4MA1, and Harrow Haikou (HHK).
    Loaded after mastery.js, before practice.js
    ══════════════════════════════════════════════════════════════ */
 
 /* ═══ GLOBALS ═══ */
-var BOARD_SYLLABUS = {};      /* { cie: {...}, edexcel: {...} } */
-var BOARD_VOCAB = {};         /* { cie: {...}, edexcel: {...} } */
-var _boardSectionLevelMap = {};  /* { cie: {id→idx}, edexcel: {id→idx} } */
-var _sectionEditsCache = {};  /* { cie: { secId: { module: data } }, edexcel: ... } */
+var BOARD_SYLLABUS = {};      /* { cie: {...}, edexcel: {...}, hhk: {...} } */
+var BOARD_VOCAB = {};         /* { cie: {...}, edexcel: {...}, hhk: {...} } */
+var _boardSectionLevelMap = {};  /* { cie: {id→idx}, edexcel: {id→idx}, hhk: {id→idx} } */
+var _sectionEditsCache = {};  /* { cie: { secId: { module: data } }, edexcel: ..., hhk: ... } */
 
 /* Legacy aliases — keep existing code working */
 var CIE_SYLLABUS = null;
@@ -19,6 +19,11 @@ var _cieDataReady = false;
 var _cieDataLoading = false;
 var _edxDataReady = false;
 var _edxDataLoading = false;
+var _hhkDataReady = false;
+var _hhkDataLoading = false;
+
+/* Section context — tracks which section the student entered from */
+var _currentSectionContext = null; /* { sectionId, board } or null */
 
 /* Chapter collapse state (default all collapsed; restore from localStorage) */
 var cieChapterCollapsed = (function() {
@@ -71,14 +76,17 @@ function loadEdexcelSyllabus() {
   return _loadBoardSyllabus('edexcel');
 }
 
-function _loadBoardSyllabus(board) {
-  var readyKey = board === 'cie' ? '_cieDataReady' : '_edxDataReady';
-  var loadingKey = board === 'cie' ? '_cieDataLoading' : '_edxDataLoading';
+function loadHHKSyllabus() {
+  return _loadBoardSyllabus('hhk');
+}
 
+function _loadBoardSyllabus(board) {
   if (board === 'cie' && _cieDataReady) return Promise.resolve();
   if (board === 'edexcel' && _edxDataReady) return Promise.resolve();
+  if (board === 'hhk' && _hhkDataReady) return Promise.resolve();
   if (board === 'cie' && _cieDataLoading) return _cieDataLoading;
   if (board === 'edexcel' && _edxDataLoading) return _edxDataLoading;
+  if (board === 'hhk' && _hhkDataLoading) return _hhkDataLoading;
 
   var syllabusFile = 'data/syllabus-' + board + '.json';
   var vocabFile = 'data/vocabulary-' + board + '.json';
@@ -116,7 +124,8 @@ function _loadBoardSyllabus(board) {
   });
 
   if (board === 'cie') _cieDataLoading = loadingPromise;
-  else _edxDataLoading = loadingPromise;
+  else if (board === 'edexcel') _edxDataLoading = loadingPromise;
+  else if (board === 'hhk') _hhkDataLoading = loadingPromise;
 
   return loadingPromise;
 }
@@ -124,6 +133,7 @@ function _loadBoardSyllabus(board) {
 function _setBoardReady(board) {
   if (board === 'cie') _cieDataReady = true;
   else if (board === 'edexcel') _edxDataReady = true;
+  else if (board === 'hhk') _hhkDataReady = true;
 }
 
 /* ═══ VIRTUAL LEVELS CREATION ═══ */
@@ -142,7 +152,35 @@ function _vocabToLevelsFormat(words) {
 function _initBoardLevels(board) {
   var syllabus = BOARD_SYLLABUS[board];
   var vocab = BOARD_VOCAB[board];
-  var boardKey = board === 'edexcel' ? 'edx' : board;  /* LEVELS uses 'edx' not 'edexcel' */
+  var boardKey = board === 'edexcel' ? 'edx' : board === 'hhk' ? '25m' : board;  /* LEVELS uses 'edx'/'25m' */
+
+  /* HHK special path: don't create virtual levels, map to existing 25m levels */
+  if (board === 'hhk') {
+    _boardSectionLevelMap.hhk = {};
+    if (!syllabus) return;
+    /* Build slug→LEVELS index map */
+    var slugIdx = {};
+    for (var si = 0; si < LEVELS.length; si++) {
+      if (LEVELS[si].board === '25m') slugIdx[LEVELS[si].slug] = si;
+    }
+    /* Map each section to its first vocabSlug's level index */
+    syllabus.chapters.forEach(function(ch) {
+      ch.sections.forEach(function(sec) {
+        if (!sec.vocabSlugs || sec.vocabSlugs.length === 0) return;
+        var firstSlug = sec.vocabSlugs[0];
+        var idx = slugIdx[firstSlug];
+        if (idx !== undefined) {
+          _boardSectionLevelMap.hhk[sec.id] = idx;
+          /* Tag the level so section detail can find it */
+          LEVELS[idx]._section = sec.id;
+          LEVELS[idx]._board = 'hhk';
+          LEVELS[idx]._isSection = true;
+        }
+      });
+    });
+    if (typeof invalidateGuestCache === 'function') invalidateGuestCache();
+    return;
+  }
 
   /* Clear previous virtual levels for this board from LEVELS */
   var cleaned = [];
@@ -221,7 +259,7 @@ function getSectionLevelIdx(sectionId, board) {
 
 /* Get section info from syllabus by ID — searches all boards or specified board */
 function getSectionInfo(sectionId, board) {
-  var boards = board ? [board] : ['cie', 'edexcel'];
+  var boards = board ? [board] : ['cie', 'edexcel', 'hhk'];
   for (var bi = 0; bi < boards.length; bi++) {
     var syl = BOARD_SYLLABUS[boards[bi]];
     if (!syl) continue;
@@ -246,8 +284,8 @@ function _renderBoardHome(board) {
 
   var html = '';
 
-  /* Past Papers (Full) entry */
-  var _ppBoardKey = board === 'edexcel' ? 'edx' : board;
+  /* Past Papers (Full) entry — CIE/Edexcel only */
+  var _ppBoardKey = board === 'edexcel' ? 'edx' : board === 'hhk' ? '25m' : board;
   if ((board === 'cie' || board === 'edexcel') && typeof ppShowPaperBrowse === 'function') {
     var _ppSub = board === 'cie'
       ? t('228 papers \u00b7 4,110 questions \u00b7 2018\u20132025', '228\u5957\u5377 \u00b7 4,110\u9053\u9898 \u00b7 2018\u20132025')
@@ -262,9 +300,11 @@ function _renderBoardHome(board) {
     html += '</div>';
   }
 
-  var prefix = board === 'cie' ? 'cie-ch' : 'edx-ch';
+  var prefix = board === 'cie' ? 'cie-ch' : board === 'hhk' ? 'hhk-ch' : 'edx-ch';
   var emojis = board === 'cie'
     ? ['', '\ud83d\udd22', '\ud83d\udcdd', '\ud83d\udccd', '\ud83d\udcd0', '\ud83d\udccf', '\ud83d\udcd0', '\u27a1\ufe0f', '\ud83c\udfb2', '\ud83d\udcc8']
+    : board === 'hhk'
+    ? { 7: '\u24fb', 8: '\u24fc', 9: '\u24fd', 10: '\u24fe', 11: '\u24eb' }
     : ['', '\ud83d\udd22', '\ud83d\udcdd', '\ud83d\udcca', '\ud83d\udcd0', '\u27a1\ufe0f', '\ud83d\udcc8'];
 
   syllabus.chapters.forEach(function(ch) {
@@ -297,14 +337,22 @@ function _renderBoardHome(board) {
 
       visibleSections.push(sec);
 
-      /* Stats from virtual level */
-      var li = getSectionLevelIdx(sec.id, board);
-      if (li >= 0) {
-        var stats = getDeckStats(li);
-        chTotalWords += stats.total;
-        chMastered += stats.mastered;
-        chTotalStars += Math.round(stats.learningPct * stats.total * 4 / 100);
-        chMaxStars += stats.total * 4;
+      /* Stats from level(s) */
+      if (board === 'hhk') {
+        var hhkSt = _getHHKSectionStats(sec);
+        chTotalWords += hhkSt.total;
+        chMastered += hhkSt.mastered;
+        chTotalStars += Math.round(hhkSt.learningPct * hhkSt.total * 4 / 100);
+        chMaxStars += hhkSt.total * 4;
+      } else {
+        var li = getSectionLevelIdx(sec.id, board);
+        if (li >= 0) {
+          var stats = getDeckStats(li);
+          chTotalWords += stats.total;
+          chMastered += stats.mastered;
+          chTotalStars += Math.round(stats.learningPct * stats.total * 4 / 100);
+          chMaxStars += stats.total * 4;
+        }
       }
     });
 
@@ -312,23 +360,33 @@ function _renderBoardHome(board) {
 
     html += '<div class="category-section' + (collapsed ? ' collapsed' : '') + '" id="cat-' + catKey + '">';
     html += '<div class="category-header" onclick="toggleCIEChapter(\'' + catKey + '\')">';
-    html += '<span class="category-emoji">' + (emojis[ch.num] || '\ud83d\udcda') + '</span>';
-    html += '<span class="category-name">' + ch.num + '. ' + ch.title;
-    if (appLang !== 'en') html += ' ' + ch.title_zh;
-    html += '</span>';
-    html += '<span class="category-count">' + ch.sections.length + ' ' + t('sections', '\u8282') + '</span>';
+    var _chEmoji = Array.isArray(emojis) ? (emojis[ch.num] || '\ud83d\udcda') : (emojis[ch.num] || '\ud83d\udcda');
+    html += '<span class="category-emoji">' + _chEmoji + '</span>';
+    if (board === 'hhk') {
+      html += '<span class="category-name">' + ch.title;
+      if (appLang !== 'en') html += ' ' + ch.title_zh;
+      html += '</span>';
+      html += '<span class="category-count">' + ch.sections.length + ' ' + t('units', '\u5355\u5143') + '</span>';
+    } else {
+      html += '<span class="category-name">' + ch.num + '. ' + ch.title;
+      if (appLang !== 'en') html += ' ' + ch.title_zh;
+      html += '</span>';
+      html += '<span class="category-count">' + ch.sections.length + ' ' + t('sections', '\u8282') + '</span>';
+    }
     html += '<span class="category-chevron">\u25bc</span>';
     html += '</div>';
 
     html += '<div class="deck-list category-body">';
 
-    /* Practice actions for the chapter */
-    var firstSec = visibleSections[0];
-    var firstLi = getSectionLevelIdx(firstSec.id, board);
-    if (firstLi >= 0) {
-      html += '<div class="pq-cat-actions">';
-      html += '<button class="sort-btn" onclick="startPracticeByChapter(' + ch.num + ',\'' + board + '\')">\ud83d\udcdd ' + t('Practice', '\u7ec3\u4e60') + '</button>';
-      html += '</div>';
+    /* Practice actions for the chapter (not for HHK — no practice questions) */
+    if (board !== 'hhk') {
+      var firstSec = visibleSections[0];
+      var firstLi = getSectionLevelIdx(firstSec.id, board);
+      if (firstLi >= 0) {
+        html += '<div class="pq-cat-actions">';
+        html += '<button class="sort-btn" onclick="startPracticeByChapter(' + ch.num + ',\'' + board + '\')">\ud83d\udcdd ' + t('Practice', '\u7ec3\u4e60') + '</button>';
+        html += '</div>';
+      }
     }
 
     visibleSections.forEach(function(sec) {
@@ -351,10 +409,36 @@ function renderEdexcelHome() {
   return _renderBoardHome('edexcel');
 }
 
+function renderHHKHome() {
+  if (!_hhkDataReady || !BOARD_SYLLABUS.hhk) return '';
+  return _renderBoardHome('hhk');
+}
+
 /* Helper: chapter emoji */
 function _chapterEmoji(num) {
   var emojis = ['', '\ud83d\udd22', '\ud83d\udcdd', '\ud83d\udccd', '\ud83d\udcd0', '\ud83d\udccf', '\ud83d\udcd0', '\u27a1\ufe0f', '\ud83c\udfb2', '\ud83d\udcc8'];
   return emojis[num] || '\ud83d\udcda';
+}
+
+/* Get combined stats across all vocabSlug levels for an HHK section */
+function _getHHKSectionStats(sec) {
+  if (!sec.vocabSlugs || sec.vocabSlugs.length === 0) return { pct: 0, started: 0, total: 0, learningPct: 0, masteryPct: 0, mastered: 0 };
+  var totalWords = 0, totalStars = 0, mastered = 0, started = 0;
+  var wd = getWordData();
+  for (var si = 0; si < LEVELS.length; si++) {
+    var lv = LEVELS[si];
+    if (lv.board !== '25m') continue;
+    if (sec.vocabSlugs.indexOf(lv.slug) < 0) continue;
+    var ds = getDeckStats(si, wd);
+    totalWords += ds.total;
+    mastered += ds.mastered;
+    started += ds.started;
+    totalStars += Math.round(ds.learningPct * ds.total * 4 / 100);
+  }
+  var maxStars = totalWords * 4;
+  var learningPct = maxStars > 0 ? Math.round(totalStars / maxStars * 100) : 0;
+  var masteryPct = totalWords > 0 ? Math.round(mastered / totalWords * 100) : 0;
+  return { pct: learningPct, started: started, total: totalWords, learningPct: learningPct, masteryPct: masteryPct, mastered: mastered };
 }
 
 /* Render a single section row in the home view */
@@ -363,7 +447,12 @@ function _renderSectionRow(sec, ch, board) {
   var vocab = BOARD_VOCAB[board] || {};
   var li = getSectionLevelIdx(sec.id, board);
   var words = vocab[sec.id] || [];
-  var stats = li >= 0 ? getDeckStats(li) : { pct: 0, started: 0, total: words.length, learningPct: 0, masteryPct: 0 };
+  var stats;
+  if (board === 'hhk') {
+    stats = _getHHKSectionStats(sec);
+  } else {
+    stats = li >= 0 ? getDeckStats(li) : { pct: 0, started: 0, total: words.length, learningPct: 0, masteryPct: 0 };
+  }
 
   var tierBadge = '';
   if (sec.tier === 'extended') tierBadge = ' <span class="tier-badge tier-ext">E</span>';
@@ -377,10 +466,11 @@ function _renderSectionRow(sec, ch, board) {
   h += '<span class="deck-row-name">' + escapeHtml(sec.title);
   if (appLang !== 'en') h += ' ' + escapeHtml(sec.title_zh);
   h += tierBadge + '</span>';
-  h += '<span class="deck-row-count">' + (words.length > 0 ? stats.started + '/' + stats.total : '-') + '</span>';
+  /* 3-state indicator: empty=not started, half=in progress, full=mastered */
   if (words.length > 0) {
-    h += '<span class="deck-row-progress"><span class="deck-row-progress-fill" style="width:' + stats.pct + '%"></span></span>';
-    h += '<span class="deck-row-pct">' + stats.pct + '%</span>';
+    var _dotClass = stats.started === 0 ? 'sec-dot-empty' : (stats.pct >= 80 ? 'sec-dot-full' : 'sec-dot-half');
+    h += '<span class="sec-dot ' + _dotClass + '"></span>';
+    if (stats.pct >= 80) h += '<span class="sec-done-check">\u2713</span>';
   }
   h += '</div>';
   return h;
@@ -398,6 +488,7 @@ function toggleCIEChapter(catKey) {
 function openSection(sectionId, board) {
   var info = getSectionInfo(sectionId, board);
   if (!info) return;
+  _currentSectionContext = { sectionId: sectionId, board: info.board };
   renderSectionDetail(info.chapter, info.section, info.sectionIndex, info.board);
   showPanel('section');
 }
@@ -407,12 +498,17 @@ function renderSectionDetail(ch, sec, secIdx, board) {
   var vocab = BOARD_VOCAB[board] || {};
   var li = getSectionLevelIdx(sec.id, board);
   var words = vocab[sec.id] || [];
-  var stats = li >= 0 ? getDeckStats(li) : { pct: 0, started: 0, total: words.length, learningPct: 0, masteryPct: 0, mastered: 0 };
+  var stats;
+  if (board === 'hhk') {
+    stats = _getHHKSectionStats(sec);
+  } else {
+    stats = li >= 0 ? getDeckStats(li) : { pct: 0, started: 0, total: words.length, learningPct: 0, masteryPct: 0, mastered: 0 };
+  }
 
   /* Count practice questions for this section */
   var qCount = 0;
-  var pqBoard = board === 'edexcel' ? 'edx' : board;
-  if (typeof _pqData !== 'undefined' && _pqData && _pqData[pqBoard]) {
+  var pqBoard = board === 'edexcel' ? 'edx' : board === 'hhk' ? '25m' : board;
+  if (board !== 'hhk' && typeof _pqData !== 'undefined' && _pqData && _pqData[pqBoard]) {
     _pqData[pqBoard].forEach(function(q) { if (q.s === sec.id) qCount++; });
   }
 
@@ -421,9 +517,15 @@ function renderSectionDetail(ch, sec, secIdx, board) {
   /* Header */
   html += '<div class="deck-header">';
   html += '<button class="back-btn" onclick="navTo(\'home\')">\u2190</button>';
-  html += '<div class="deck-title">' + ch.num + '. ' + ch.title;
-  if (appLang !== 'en') html += ' ' + ch.title_zh;
-  html += '</div>';
+  if (board === 'hhk') {
+    html += '<div class="deck-title">' + ch.title;
+    if (appLang !== 'en') html += ' ' + ch.title_zh;
+    html += '</div>';
+  } else {
+    html += '<div class="deck-title">' + ch.num + '. ' + ch.title;
+    if (appLang !== 'en') html += ' ' + ch.title_zh;
+    html += '</div>';
+  }
   html += '<div class="sec-position">' + sec.id + ' / ' + ch.sections.length + '</div>';
   html += '</div>';
 
@@ -450,23 +552,35 @@ function renderSectionDetail(ch, sec, secIdx, board) {
   html += '<div class="sec-progress-bar">';
   html += '<div class="sec-progress-fill" style="width:' + stats.pct + '%"></div>';
   html += '</div>';
-  html += '<div class="sec-progress-label">' + stats.pct + '% \u00b7 ' + stats.mastered + '/' + stats.total + ' ' + t('mastered', '\u5df2\u638c\u63e1') + '</div>';
+  /* Human-friendly progress label */
+  var _progLabel;
+  if (stats.started === 0) _progLabel = t('Not started yet', '\u8fd8\u672a\u5f00\u59cb');
+  else if (stats.pct >= 80) _progLabel = t('Well done! ' + stats.mastered + '/' + stats.total + ' mastered', '\u505a\u5f97\u5f88\u68d2\uff01\u5df2\u638c\u63e1 ' + stats.mastered + '/' + stats.total);
+  else _progLabel = t("You've learned " + stats.started + ' of ' + stats.total + ' words', '\u4f60\u5df2\u5b66\u4e60 ' + stats.started + '/' + stats.total + ' \u4e2a\u8bcd');
+  html += '<div class="sec-progress-label">' + _progLabel + '</div>';
 
-  /* Section Health indicator */
+  /* Section status — human-friendly progress description */
   if (typeof getSectionHealth === 'function') {
     var sh = getSectionHealth(sec.id, board);
-    var shColor = sh.score >= 60 ? 'var(--c-success)' : sh.score >= 30 ? 'var(--c-warning)' : 'var(--c-danger)';
+    var statusColor = sh.score >= 60 ? 'var(--c-success)' : sh.score >= 30 ? 'var(--c-warning)' : 'var(--c-border)';
     html += '<div class="sec-health">';
-    html += '<div class="sec-health-ring" style="--pct:' + sh.score + ';--ring-color:' + shColor + '">' + sh.score + '</div>';
+    html += '<div class="sec-health-bar" style="background:' + statusColor + ';width:4px;min-height:100%;border-radius:2px"></div>';
     html += '<div class="sec-health-info">';
-    html += '<div class="sec-health-label">' + t('Section Health', '\u77e5\u8bc6\u70b9\u5065\u5eb7\u5ea6') + '</div>';
+    /* Natural language status */
+    var statusText;
+    if (sh.score >= 80) statusText = t('Well done! Keep it up.', '\u505a\u5f97\u5f88\u597d\uff01\u7ee7\u7eed\u4fdd\u6301\u3002');
+    else if (sh.score >= 50) statusText = t('Making progress!', '\u8fdb\u6b65\u4e2d\uff01');
+    else if (sh.score > 0) statusText = t('Getting started \u2014 keep going!', '\u521a\u5f00\u59cb\u2014\u2014\u7ee7\u7eed\u52a0\u6cb9\uff01');
+    else statusText = t('Ready to begin!', '\u51c6\u5907\u5f00\u59cb\uff01');
     html += '<div class="sec-health-rec">' + _spRecLabel(sh.rec) + '</div>';
-    html += '<div class="sec-mastery-bars">';
-    html += _masteryBar('\ud83d\udcdd', t('Vocab', '\u8bcd\u6c47'), sh.vocabScore);
-    html += _masteryBar('\u270f\ufe0f', t('Practice', '\u7ec3\u4e60'), sh.practiceScore);
-    if (sh.hasPP) html += _masteryBar('\ud83d\udcc4', t('Papers', '\u771f\u9898'), sh.ppScore);
-    html += _masteryBar('\ud83e\udde0', t('Retention', '\u8bb0\u5fc6'), sh.retentionScore);
-    html += '</div>';
+    /* Concise summary instead of 4 dimension bars */
+    var _summaryParts = [];
+    if (stats.started > 0) _summaryParts.push(t(stats.started + '/' + stats.total + ' words learned', '\u5df2\u5b66 ' + stats.started + '/' + stats.total + ' \u8bcd'));
+    if (sh.practiceScore > 0) _summaryParts.push(t('Practice done', '\u7ec3\u4e60\u5b8c\u6210'));
+    if (sh.hasPP && sh.ppScore > 0) _summaryParts.push(t('Papers started', '\u771f\u9898\u5df2\u5f00\u59cb'));
+    if (_summaryParts.length > 0) {
+      html += '<div class="sec-health-summary">' + _summaryParts.join(' \u00b7 ') + '</div>';
+    }
     html += '</div></div>';
   }
 
@@ -498,6 +612,12 @@ function renderSectionDetail(ch, sec, secIdx, board) {
       html += '<span class="sec-syllabus-label">Higher:</span> ' + pqRender(hc);
       html += '</div>';
     }
+  } else if (board === 'hhk') {
+    /* HHK uses simple core_content */
+    var hcc = (syllabusEdit && syllabusEdit.core_content) || sec.core_content;
+    if (hcc) {
+      html += '<div class="sec-syllabus-block">' + pqRender(hcc) + '</div>';
+    }
   } else {
     /* CIE uses core_content / extended_content */
     var cc = (syllabusEdit && syllabusEdit.core_content) || sec.core_content;
@@ -515,27 +635,90 @@ function renderSectionDetail(ch, sec, secIdx, board) {
   }
   html += '</div>';
 
-  /* Learning journey bar */
+  /* Learning journey bar — interactive, auto-advancing */
   var _jVocabDone = stats.learningPct >= 80;
+  var _jQuizDone = false;
+  if (board === 'hhk' && sec.vocabSlugs) {
+    for (var _qi = 0; _qi < LEVELS.length; _qi++) {
+      if (sec.vocabSlugs.indexOf(LEVELS[_qi].slug) >= 0 && isModeDone(_qi, 'quiz')) { _jQuizDone = true; break; }
+    }
+  } else if (li >= 0) {
+    _jQuizDone = isModeDone(li, 'quiz');
+  }
   var _jPracticeDone = li >= 0 && isModeDone(li, 'practice');
   var _jHasPP = (board === 'cie' || board === 'edexcel') && typeof loadPastPaperData === 'function';
-  var _jVocabClass = _jVocabDone ? 'done' : (stats.started > 0 ? 'current' : '');
-  var _jPracticeClass = _jPracticeDone ? 'done' : (_jVocabDone ? 'current' : '');
+  var _jHasPractice = board !== 'hhk' && qCount > 0;
+
+  /* Determine current step: first incomplete step gets pulse */
+  var _jVocabClass = _jVocabDone ? 'done' : (stats.started > 0 ? 'current pulse' : 'current pulse');
+  var _jQuizClass = _jQuizDone ? 'done' : (_jVocabDone ? 'current pulse' : 'locked');
+  var _jPracticeClass = _jPracticeDone ? 'done' : (_jQuizDone ? 'current pulse' : 'locked');
+
+  /* Vocab step click → open first available level */
+  var _jVocabClick = li >= 0 ? 'openDeck(' + li + ')' : '';
+  if (board === 'hhk' && sec.vocabSlugs && sec.vocabSlugs.length > 0) {
+    for (var _vi = 0; _vi < LEVELS.length; _vi++) {
+      if (LEVELS[_vi].slug === sec.vocabSlugs[0]) { _jVocabClick = 'openDeck(' + _vi + ')'; break; }
+    }
+  }
+  /* Quiz step click → start quiz on first level (only if unlocked) */
+  var _jQuizClick = '';
+  if (_jVocabDone && li >= 0) _jQuizClick = 'startQuiz(' + li + ')';
+  if (_jVocabDone && board === 'hhk' && sec.vocabSlugs) {
+    for (var _qci = 0; _qci < LEVELS.length; _qci++) {
+      if (sec.vocabSlugs.indexOf(LEVELS[_qci].slug) >= 0) { _jQuizClick = 'startQuiz(' + _qci + ')'; break; }
+    }
+  }
+  /* Practice step click */
+  var _jPracticeClick = (_jQuizDone && board !== 'hhk') ? 'startPracticeBySection(\'' + sec.id + '\',\'' + board + '\')' : '';
+
   html += '<div class="sec-journey" id="sec-journey-bar">';
-  html += '<div class="sec-journey-step ' + _jVocabClass + '"><span class="sec-journey-icon">\ud83d\udcdd</span> ' + t('Vocab', '\u8bcd\u6c47') + '</div>';
+  html += '<div class="sec-journey-step ' + _jVocabClass + '"' + (_jVocabClick ? ' onclick="' + _jVocabClick + '"' : '') + '><span class="sec-journey-icon">' + (_jVocabDone ? '\u2713' : '\ud83d\udcdd') + '</span> ' + t('Vocab', '\u8bcd\u6c47') + '</div>';
   html += '<div class="sec-journey-arrow">\u2192</div>';
-  html += '<div class="sec-journey-step ' + _jPracticeClass + '"><span class="sec-journey-icon">\u270f\ufe0f</span> ' + t('Practice', '\u7ec3\u4e60') + '</div>';
-  if (_jHasPP) {
+  html += '<div class="sec-journey-step ' + _jQuizClass + '"' + (_jQuizClick ? ' onclick="' + _jQuizClick + '"' : '') + '><span class="sec-journey-icon">' + (_jQuizDone ? '\u2713' : '\u2753') + '</span> ' + t('Quiz', '\u6d4b\u9a8c') + '</div>';
+  if (_jHasPractice) {
     html += '<div class="sec-journey-arrow">\u2192</div>';
-    html += '<div class="sec-journey-step" id="sec-journey-papers"><span class="sec-journey-icon">\ud83d\udcc4</span> ' + t('Papers', '\u771f\u9898') + '</div>';
+    html += '<div class="sec-journey-step ' + _jPracticeClass + '"' + (_jPracticeClick ? ' onclick="' + _jPracticeClick + '"' : '') + '><span class="sec-journey-icon">' + (_jPracticeDone ? '\u2713' : '\u270f\ufe0f') + '</span> ' + t('Practice', '\u7ec3\u4e60') + '</div>';
+  }
+  if (_jHasPP) {
+    var _jPPClass = (_jHasPractice ? _jPracticeDone : _jQuizDone) ? '' : 'locked';
+    html += '<div class="sec-journey-arrow">\u2192</div>';
+    html += '<div class="sec-journey-step ' + _jPPClass + '" id="sec-journey-papers"><span class="sec-journey-icon">\ud83d\udcc4</span> ' + t('Papers', '\u771f\u9898') + '</div>';
   }
   html += '</div>';
 
   /* Module cards: Vocabulary → Practice → Knowledge → Examples */
   html += '<div class="sec-modules">';
 
-  /* Vocabulary module (2nd) */
-  if (words.length > 0 && li >= 0) {
+  /* Vocabulary module — HHK shows sub-deck list */
+  if (board === 'hhk' && sec.vocabSlugs && sec.vocabSlugs.length > 0) {
+    html += '<div class="sec-module" style="flex-direction:column;align-items:stretch;gap:8px">';
+    if (_jVocabDone) html += '<div class="sec-module-done">\u2713</div>';
+    html += '<div style="display:flex;align-items:center;gap:12px">';
+    html += '<div class="sec-module-icon">\ud83d\udcdd</div>';
+    html += '<div class="sec-module-info">';
+    html += '<div class="sec-module-title">' + t('Vocabulary', '\u6838\u5fc3\u8bcd\u6c47') + '</div>';
+    html += '<div class="sec-module-sub">' + stats.total + ' ' + t('words', '\u8bcd') + ' \u00b7 ' + sec.vocabSlugs.length + ' ' + t('groups', '\u7ec4') + '</div>';
+    html += '</div></div>';
+    /* Sub-deck rows */
+    var wd = getWordData();
+    sec.vocabSlugs.forEach(function(slug, si) {
+      for (var _li = 0; _li < LEVELS.length; _li++) {
+        if (LEVELS[_li].slug !== slug) continue;
+        var subStats = getDeckStats(_li, wd);
+        var subTitle = LEVELS[_li].title || ('Group ' + (si + 1));
+        html += '<div class="deck-row" style="margin:0" onclick="openDeck(' + _li + ')">';
+        html += '<span class="deck-row-tag">' + (si + 1) + '</span>';
+        html += '<span class="deck-row-name">' + escapeHtml(subTitle) + '</span>';
+        html += '<span class="deck-row-count">' + subStats.started + '/' + subStats.total + '</span>';
+        html += '<span class="deck-row-progress"><span class="deck-row-progress-fill" style="width:' + subStats.pct + '%"></span></span>';
+        html += '<span class="deck-row-pct">' + subStats.pct + '%</span>';
+        html += '</div>';
+        break;
+      }
+    });
+    html += '</div>';
+  } else if (words.length > 0 && li >= 0) {
     html += '<div class="sec-module" onclick="openDeck(' + li + ')">';
     if (_jVocabDone) html += '<div class="sec-module-done">\u2713</div>';
     html += '<div class="sec-module-icon">\ud83d\udcdd</div>';
@@ -728,12 +911,12 @@ var _sectionHealthCache = {};
 function _invalidateSectionHealthCache() { _sectionHealthCache = {}; }
 
 var _SP_REC = {
-  start:        { icon: '\ud83d\ude80', en: 'Start learning',       zh: '\u5f00\u59cb\u5b66\u4e60' },
-  vocab:        { icon: '\ud83d\udcdd', en: 'Study vocabulary',      zh: '\u5b66\u4e60\u8bcd\u6c47' },
-  past_papers:  { icon: '\ud83d\udcc4', en: 'Practice past papers',  zh: '\u7ec3\u4e60\u771f\u9898' },
-  review_words: { icon: '\ud83d\udd04', en: 'Review weak words',     zh: '\u590d\u4e60\u8584\u5f31\u8bcd\u6c47' },
-  practice:     { icon: '\ud83d\udcaa', en: 'Keep practicing',        zh: '\u7ee7\u7eed\u7ec3\u4e60' },
-  great:        { icon: '\ud83c\udf89', en: 'Well done!',            zh: '\u505a\u5f97\u5f88\u597d!' }
+  start:        { icon: '\ud83d\udc4b', en: 'Ready to start!',           zh: '\u51c6\u5907\u5f00\u59cb\u5427\uff01' },
+  vocab:        { icon: '\ud83d\udcdd', en: 'Learn the key words first', zh: '\u5148\u5b66\u5173\u952e\u8bcd\u6c47' },
+  past_papers:  { icon: '\ud83d\udcc4', en: 'Try real exam questions',   zh: '\u8bd5\u8bd5\u771f\u9898\u5427' },
+  review_words: { icon: '\ud83d\udd04', en: 'Quick refresh needed',      zh: '\u5feb\u901f\u590d\u4e60\u4e00\u4e0b' },
+  practice:     { icon: '\ud83d\udcaa', en: 'Keep going!',               zh: '\u7ee7\u7eed\u52a0\u6cb9\uff01' },
+  great:        { icon: '\ud83c\udf89', en: 'Doing great!',             zh: '\u505a\u5f97\u5f88\u68d2\uff01' }
 };
 
 function _spRecLabel(rec) {
@@ -760,7 +943,38 @@ function getSectionHealth(sectionId, board) {
   /* Vocab score + fail rate + recency + retention in single pass */
   var retentionScore = 0;
   var practiceScore = 0;
-  if (hasVocab) {
+
+  /* HHK: aggregate across all vocabSlug levels */
+  if (board === 'hhk') {
+    var secInfo = getSectionInfo(sectionId, 'hhk');
+    if (secInfo && secInfo.section.vocabSlugs && secInfo.section.vocabSlugs.length > 0) {
+      var hhkStats = _getHHKSectionStats(secInfo.section);
+      vocabScore = hhkStats.learningPct || 0;
+      hasVocab = hhkStats.total > 0;
+      /* Aggregate SRS data across all sub-levels */
+      var wd = getWordData();
+      var totalOk = 0, totalFail = 0, lastActive = 0, srsSum = 0, srsCount = 0;
+      for (var _si = 0; _si < LEVELS.length; _si++) {
+        if (LEVELS[_si].board !== '25m') continue;
+        if (secInfo.section.vocabSlugs.indexOf(LEVELS[_si].slug) < 0) continue;
+        getPairs(LEVELS[_si].vocabulary).forEach(function(p) {
+          var d = wd[wordKey(_si, p.lid)];
+          if (d) {
+            totalOk += d.ok || 0;
+            totalFail += d.fail || 0;
+            if (d.lr && d.lr > lastActive) lastActive = d.lr;
+            if (d.lv != null) { srsSum += d.lv; srsCount++; }
+          }
+        });
+      }
+      failRate = (totalOk + totalFail) > 0 ? Math.round(totalFail / (totalOk + totalFail) * 100) : 0;
+      if (lastActive > 0) {
+        var daysAgo = (Date.now() - lastActive) / 86400000;
+        recency = daysAgo < 1 ? 1.0 : daysAgo < 7 ? 0.95 : daysAgo < 30 ? 0.85 : 0.7;
+      }
+      if (srsCount > 0) retentionScore = Math.round((srsSum / srsCount / 7) * 100 * recency);
+    }
+  } else if (hasVocab) {
     var ds = getDeckStats(li);
     vocabScore = ds.learningPct || 0;
 
@@ -793,9 +1007,9 @@ function getSectionHealth(sectionId, board) {
     }
   }
 
-  /* PP score from ppGetSectionStats (only if data loaded) */
-  var ppBoard = board === 'edexcel' ? 'edx' : board;
-  if (typeof ppGetSectionStats === 'function' && typeof _ppData !== 'undefined' && _ppData[ppBoard]) {
+  /* PP score from ppGetSectionStats (only if data loaded, skip HHK) */
+  var ppBoard = board === 'edexcel' ? 'edx' : board === 'hhk' ? null : board;
+  if (ppBoard && typeof ppGetSectionStats === 'function' && typeof _ppData !== 'undefined' && _ppData[ppBoard]) {
     var ps = ppGetSectionStats(ppBoard, sectionId);
     if (ps.total > 0) {
       hasPP = true;
@@ -842,6 +1056,44 @@ function getSectionHealth(sectionId, board) {
 }
 
 /**
+ * getSectionMilestone(sectionId, board) → milestone string
+ * Returns: 'not_started' | 'in_progress' | 'vocab_done' | 'quiz_done' | 'mastered'
+ */
+function getSectionMilestone(sectionId, board) {
+  var li = getSectionLevelIdx(sectionId, board);
+  if (li < 0 && board !== 'hhk') return 'not_started';
+  var stats;
+  if (board === 'hhk') {
+    var info = getSectionInfo(sectionId, 'hhk');
+    if (!info) return 'not_started';
+    stats = _getHHKSectionStats(info.section);
+  } else {
+    stats = getDeckStats(li);
+  }
+  if (stats.started === 0) return 'not_started';
+  var vocabDone = stats.learningPct >= 80;
+  if (!vocabDone) return 'in_progress';
+  /* Check quiz done on any mapped level */
+  var quizDone = false;
+  if (board === 'hhk') {
+    var secInfo = getSectionInfo(sectionId, 'hhk');
+    if (secInfo && secInfo.section.vocabSlugs) {
+      for (var _i = 0; _i < LEVELS.length; _i++) {
+        if (secInfo.section.vocabSlugs.indexOf(LEVELS[_i].slug) >= 0 && isModeDone(_i, 'quiz')) { quizDone = true; break; }
+      }
+    }
+  } else if (li >= 0) {
+    quizDone = isModeDone(li, 'quiz');
+  }
+  if (!quizDone) return 'vocab_done';
+  /* Check practice or high mastery */
+  var practiceDone = false;
+  if (board !== 'hhk' && li >= 0) practiceDone = isModeDone(li, 'practice');
+  if (stats.masteryPct >= 80 || (practiceDone && vocabDone && quizDone)) return 'mastered';
+  return 'quiz_done';
+}
+
+/**
  * getWeakestSections(board, limit) → sorted array of section health objects (weakest first)
  */
 function getWeakestSections(board, limit) {
@@ -862,6 +1114,32 @@ function getWeakestSections(board, limit) {
 }
 
 /**
+ * checkSectionMilestone() — call after mode completion to fire celebration toast
+ * Compares current milestone with previous; fires toast on advancement.
+ */
+function checkSectionMilestone() {
+  if (!_currentSectionContext) return;
+  var ctx = _currentSectionContext;
+  var ms = getSectionMilestone(ctx.sectionId, ctx.board);
+  var prevKey = 'wmatch_milestone_' + ctx.board + ':' + ctx.sectionId;
+  var prev = '';
+  try { prev = localStorage.getItem(prevKey) || ''; } catch(e) {}
+  if (ms === prev) return;
+  try { localStorage.setItem(prevKey, ms); } catch(e) {}
+  /* Fire toast for advancement */
+  var msgs = {
+    in_progress: '\ud83d\udcaa ' + t('Started learning!', '\u5f00\u59cb\u5b66\u4e60\u4e86\uff01'),
+    vocab_done:  '\ud83d\udcdd ' + t('Vocabulary complete!', '\u8bcd\u6c47\u5b66\u5b8c\u4e86\uff01'),
+    quiz_done:   '\u2753 '  + t('Quiz passed!', '\u6d4b\u9a8c\u901a\u8fc7\u4e86\uff01'),
+    mastered:    '\ud83c\udf89 ' + t('Section mastered!', '\u77e5\u8bc6\u70b9\u638c\u63e1\u4e86\uff01')
+  };
+  if (msgs[ms]) {
+    if (typeof showToast === 'function') showToast(msgs[ms]);
+    if (ms === 'mastered' && typeof spawnP === 'function') spawnP(window.innerWidth / 2, window.innerHeight / 3, 30);
+  }
+}
+
+/**
  * renderSmartPath() → HTML string for home page Smart Path recommendations
  */
 function renderSmartPath() {
@@ -871,9 +1149,8 @@ function renderSmartPath() {
   var all = [];
   for (var i = 0; i < boards.length; i++) {
     var bid = boards[i].id;
-    /* Skip 25m board — no syllabus sections */
-    if (bid === '25m') continue;
-    var syllabusBoard = bid === 'edx' ? 'edexcel' : bid;
+    /* Map board id to syllabus key */
+    var syllabusBoard = bid === 'edx' ? 'edexcel' : bid === '25m' ? 'hhk' : bid;
     if (!BOARD_SYLLABUS[syllabusBoard]) continue;
     var weak = getWeakestSections(syllabusBoard, 10);
     for (var j = 0; j < weak.length; j++) {
@@ -913,7 +1190,7 @@ function renderSmartPath() {
     var h = all[k];
     var info = getSectionInfo(h.sectionId, h.board);
     var secTitle = info ? escapeHtml(info.section.title) : h.sectionId;
-    var boardLabel = h._boardId === 'edx' ? '4MA1' : '0580';
+    var boardLabel = h._boardId === 'edx' ? '4MA1' : h._boardId === '25m' ? 'HHK' : '0580';
     var ringColor = h.score >= 60 ? 'var(--c-success)' : h.score >= 30 ? 'var(--c-warning)' : 'var(--c-danger)';
     /* Smart click: route to best action per recommendation */
     var spRec, spLi = '';
@@ -927,13 +1204,11 @@ function renderSmartPath() {
       spRec = 'section';
     }
     html += '<div class="smart-path-card" data-sp-rec="' + spRec + '" data-sp-sec="' + h.sectionId + '" data-sp-board="' + h.board + '" data-sp-li="' + spLi + '">';
-    html += '<div class="smart-path-ring" style="--pct:' + h.score + ';--ring-color:' + ringColor + '">' + h.score + '</div>';
+    html += '<div class="smart-path-dot" style="background:' + ringColor + '"></div>';
     html += '<div class="smart-path-info">';
     html += '<div class="smart-path-section">' + h.sectionId + ' ' + secTitle + '</div>';
     html += '<div class="smart-path-rec">' + _spRecLabel(h.rec);
-    html += ' \u00b7 ' + t('Vocab', '\u8bcd\u6c47') + ' ' + h.vocabScore + '%';
-    if (h.hasPP) html += ' \u00b7 ' + t('Papers', '\u771f\u9898') + ' ' + h.ppScore + '%';
-    if (h.weakGroup && PP_GROUP_LABELS[h.weakGroup]) {
+    if (h.weakGroup && typeof PP_GROUP_LABELS !== 'undefined' && PP_GROUP_LABELS[h.weakGroup]) {
       var _wgl = PP_GROUP_LABELS[h.weakGroup];
       html += ' \u00b7 <span class="smart-path-weak">' + t('Focus', '\u91cd\u70b9') + ': ' + t(_wgl.en, _wgl.zh) + '</span>';
     }
@@ -955,8 +1230,7 @@ function renderReviewPlan() {
   var candidates = [];
   for (var i = 0; i < boards.length; i++) {
     var bid = boards[i].id;
-    if (bid === '25m') continue;
-    var syllabusBoard = bid === 'edx' ? 'edexcel' : bid;
+    var syllabusBoard = bid === 'edx' ? 'edexcel' : bid === '25m' ? 'hhk' : bid;
     if (!BOARD_SYLLABUS[syllabusBoard]) continue;
     var syllabus = BOARD_SYLLABUS[syllabusBoard];
     for (var ci = 0; ci < syllabus.chapters.length; ci++) {
@@ -991,7 +1265,8 @@ function renderReviewPlan() {
     html += '<div class="review-plan-item" onclick="openSection(\'' + c.sectionId + '\',\'' + c.board + '\')">';
     html += '<span class="review-plan-sec">' + c.sectionId + '</span>';
     html += '<span class="review-plan-name">' + title + '</span>';
-    html += '<span class="review-plan-ret" style="color:' + retColor + '">\ud83e\udde0 ' + c.retentionScore + '%</span>';
+    var retLabel = c.retentionScore >= 50 ? t('Fading', '\u6de1\u5fd8\u4e2d') : t('Needs refresh', '\u9700\u8981\u590d\u4e60');
+    html += '<span class="review-plan-ret" style="color:' + retColor + '">\ud83d\udd04 ' + retLabel + '</span>';
     html += '</div>';
   }
   html += '</div>';
@@ -1662,6 +1937,7 @@ function startPracticeByChapter(chNum, board) {
 })();
 
 /* ═══ INIT ═══ */
-/* Auto-load both board data on script load */
+/* Auto-load all board data on script load */
 loadCIESyllabus();
 loadEdexcelSyllabus();
+loadHHKSyllabus();
