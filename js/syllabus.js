@@ -717,23 +717,30 @@ function getSectionHealth(sectionId, board) {
   var vocabScore = 0;
   var ppScore = 0;
   var failRate = 0;
+  var recency = 0.7;
 
-  /* Vocab score from getDeckStats */
+  /* Vocab score + fail rate + recency in single pass */
   if (hasVocab) {
     var ds = getDeckStats(li);
     vocabScore = ds.learningPct || 0;
 
-    /* Fail rate from word data */
     var lv = LEVELS[li];
     var pairs = getPairs(lv.vocabulary);
     var wd = getWordData();
-    var totalOk = 0, totalFail = 0;
+    var totalOk = 0, totalFail = 0, lastActive = 0;
     pairs.forEach(function(p) {
-      var key = wordKey(li, p.lid);
-      var d = wd[key];
-      if (d) { totalOk += d.ok || 0; totalFail += d.fail || 0; }
+      var d = wd[wordKey(li, p.lid)];
+      if (d) {
+        totalOk += d.ok || 0;
+        totalFail += d.fail || 0;
+        if (d.lr && d.lr > lastActive) lastActive = d.lr;
+      }
     });
     failRate = (totalOk + totalFail) > 0 ? Math.round(totalFail / (totalOk + totalFail) * 100) : 0;
+    if (lastActive > 0) {
+      var daysAgo = (Date.now() - lastActive) / 86400000;
+      recency = daysAgo < 1 ? 1.0 : daysAgo < 7 ? 0.95 : daysAgo < 30 ? 0.85 : 0.7;
+    }
   }
 
   /* PP score from ppGetSectionStats (only if data loaded) */
@@ -743,26 +750,6 @@ function getSectionHealth(sectionId, board) {
     if (ps.total > 0) {
       hasPP = true;
       ppScore = Math.round((ps.mastered * 100 + ps.partial * 50 + ps.needsWork * 10) / (ps.total * 100) * 100);
-    }
-  }
-
-  /* Recency decay based on last activity */
-  var recency = 0.7;
-  if (hasVocab) {
-    var wd2 = getWordData();
-    var lv2 = LEVELS[li];
-    var pairs2 = getPairs(lv2.vocabulary);
-    var lastActive = 0;
-    pairs2.forEach(function(p) {
-      var d = wd2[wordKey(li, p.lid)];
-      if (d && d.lr && d.lr > lastActive) lastActive = d.lr;
-    });
-    if (lastActive > 0) {
-      var daysAgo = (Date.now() - lastActive) / 86400000;
-      if (daysAgo < 1) recency = 1.0;
-      else if (daysAgo < 7) recency = 0.95;
-      else if (daysAgo < 30) recency = 0.85;
-      else recency = 0.7;
     }
   }
 
@@ -844,6 +831,10 @@ function renderSmartPath() {
 
   if (all.length === 0) return '';
 
+  /* Zero-data state: all scores are 0 → limit to 3 starters with welcome hint */
+  var isZeroData = all.every(function(h) { return h.score === 0; });
+  if (isZeroData) all = all.slice(0, 3);
+
   var collapsed = false;
   try { collapsed = localStorage.getItem('sp_collapsed') === '1'; } catch(e) {}
 
@@ -855,6 +846,10 @@ function renderSmartPath() {
   html += '<span class="smart-path-toggle">\u25bc</span>';
   html += '</div>';
 
+  if (isZeroData) {
+    html += '<div class="smart-path-welcome">' + t('Pick a topic to begin your learning journey!', '\u9009\u62e9\u4e00\u4e2a\u77e5\u8bc6\u70b9\uff0c\u5f00\u59cb\u5b66\u4e60\u4e4b\u65c5\uff01') + '</div>';
+  }
+
   html += '<div class="smart-path-list">';
   for (var k = 0; k < all.length; k++) {
     var h = all[k];
@@ -862,7 +857,18 @@ function renderSmartPath() {
     var secTitle = info ? escapeHtml(info.section.title) : h.sectionId;
     var boardLabel = h._boardId === 'edx' ? '4MA1' : '0580';
     var ringColor = h.score >= 60 ? 'var(--c-success)' : h.score >= 30 ? 'var(--c-warning)' : 'var(--c-danger)';
-    html += '<div class="smart-path-card" onclick="openSection(\'' + h.sectionId + '\',\'' + h.board + '\')">';
+    /* Smart click: route to best action per recommendation */
+    var onclick;
+    if (h.rec === 'vocab' && h.levelIdx >= 0) {
+      onclick = "openDeck(" + h.levelIdx + ")";
+    } else if (h.rec === 'review_words' && h.levelIdx >= 0) {
+      onclick = "appSort='hard';openDeck(" + h.levelIdx + ")";
+    } else if (h.rec === 'past_papers' && typeof startPastPaper === 'function') {
+      onclick = "startPastPaper('" + h.sectionId + "','" + h.board + "','practice')";
+    } else {
+      onclick = "openSection('" + h.sectionId + "','" + h.board + "')";
+    }
+    html += '<div class="smart-path-card" onclick="' + onclick + '">';
     html += '<div class="smart-path-ring" style="--pct:' + h.score + ';--ring-color:' + ringColor + '">' + h.score + '</div>';
     html += '<div class="smart-path-info">';
     html += '<div class="smart-path-section">' + h.sectionId + ' ' + secTitle + '</div>';
