@@ -1,5 +1,28 @@
 # Changelog
 
+## [2.3.7] - 2026-03-08 — P3 质量优化（硬编码颜色 + 监听器泄漏 + 内联样式清理）
+
+### CSS 新增
+- **`.btn-warning` 类**: 统一 warning 按钮样式（`var(--c-warning)` + hover opacity），替代内联 style
+
+### 硬编码颜色修复
+- **Exam Mode 按钮**: 内联 `background/border-color/color` → `btn-warning` 类（syllabus.js）
+- **Wrong Book 按钮**: 硬编码 `#ef5350` → `btn-danger` 类，暗色模式自适应（syllabus.js）
+- **Mock Exam 按钮**: 内联样式 → `btn-warning` 类（practice.js）
+
+### 监听器优化
+- **editSectionModule**: `addEventListener` → `oninput`/`onfocus` 赋值式绑定，避免多次打开 modal 累积监听器
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `css/style.css` | +2 行 `.btn-warning` |
+| `js/syllabus.js` | 2 处 inline style→class + addEventListener→oninput/onfocus |
+| `js/practice.js` | 1 处 inline style→class |
+| `js/config.js` | v2.3.6 → v2.3.7 |
+
+---
+
 ## [2.3.6] - 2026-03-08 — KP 模块 P2 优化（响应式 + 可访问性 + 暗色补全）
 
 ### 响应式适配

@@ -1521,10 +1521,10 @@ function _renderPPSectionModule(slot, secId, board) {
   h += '<div class="btn-row btn-row--wrap mt-4">';
   h += '<button class="btn btn-sm" data-pp-start data-sec="' + secId + '" data-board="' + board + '" data-mode="practice" style="flex:1;min-width:120px">';
   h += '\ud83d\udcd6 ' + t('Practice Mode', '\u7ec3\u4e60\u6a21\u5f0f') + '</button>';
-  h += '<button class="btn btn-sm" data-pp-start data-sec="' + secId + '" data-board="' + board + '" data-mode="exam" style="flex:1;min-width:120px;background:var(--c-warning);border-color:var(--c-warning);color:#fff">';
+  h += '<button class="btn btn-sm btn-warning" data-pp-start data-sec="' + secId + '" data-board="' + board + '" data-mode="exam" style="flex:1;min-width:120px">';
   h += '\u23f1 ' + t('Exam Mode', '\u5b9e\u6218\u6a21\u5f0f') + '</button>';
   if (ppStats.wrongActive > 0) {
-    h += '<button class="btn btn-sm" data-pp-start data-sec="' + secId + '" data-board="' + board + '" data-mode="wrongbook" style="flex:1;min-width:120px;background:#ef5350;border-color:#ef5350;color:#fff">';
+    h += '<button class="btn btn-sm btn-danger" data-pp-start data-sec="' + secId + '" data-board="' + board + '" data-mode="wrongbook" style="flex:1;min-width:120px">';
     h += '\ud83d\udcd5 ' + t('Wrong Book', '\u9519\u9898\u672c') + ' (' + ppStats.wrongActive + ')</button>';
   }
   h += '</div>';
@@ -1842,8 +1842,8 @@ function editSectionModule(sectionId, module, board) {
     fields.forEach(function(fid) {
       var el = E(fid);
       if (el) {
-        el.addEventListener('input', function() { _seUpdatePreview(module, board); });
-        el.addEventListener('focus', function() { _pqFocusedTextarea = this; });
+        el.oninput = function() { _seUpdatePreview(module, board); };
+        el.onfocus = function() { _pqFocusedTextarea = this; };
       }
     });
     _seUpdatePreview(module, board);

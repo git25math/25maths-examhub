@@ -2898,7 +2898,7 @@ function ppShowPaperBrowse(board) {
     html += '<div class="page-header">';
     html += '<button class="btn-icon" onclick="ppBack()" title="Back">&larr;</button>';
     html += '<h2 class="mt-0 mb-0 flex-1">' + t('Past Papers', '\u5957\u5377\u7ec3\u4e60') + '</h2>';
-    html += '<button class="btn btn-sm" onclick="ppShowMockSetup(\'' + board + '\')" style="background:var(--c-warning);border-color:var(--c-warning);color:#fff">\ud83c\udfb2 ' + t('Mock Exam', '\u6a21\u62df\u5377') + '</button>';
+    html += '<button class="btn btn-sm" onclick="ppShowMockSetup(\'' + board + '\')" class="btn-warning">\ud83c\udfb2 ' + t('Mock Exam', '\u6a21\u62df\u5377') + '</button>';
     html += '</div>';
 
     /* Year tabs */
