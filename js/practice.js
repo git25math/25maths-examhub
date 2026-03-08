@@ -8,6 +8,7 @@ var _pqSession = null;  /* { questions, current, correct, answers, lvl } */
 var _katexReady = false; /* KaTeX loaded flag */
 var _pqEditsCache = {};  /* { cie: {qid: data}, edx: {qid: data} } */
 var _pqFocusedTextarea = null; /* last focused textarea in editor */
+var _pqPreviewTimer = null;
 var _pqEditorSaveCb = null;   /* optional callback after editor save */
 var _pqEditorQid = null;      /* qid of question currently in editor */
 var _pqReviewState = null;    /* { li, questions, board } — current review context */
@@ -667,7 +668,7 @@ function _openEditor(q, board, onSaveCb) {
     fields.forEach(function(fid) {
       var el = E(fid);
       if (el) {
-        el.oninput = _pqUpdatePreview;
+        el.oninput = _pqUpdatePreviewDebounced;
         el.onfocus = function() { _pqFocusedTextarea = this; };
       }
     });
@@ -685,6 +686,11 @@ function _pqFieldGroup(label, id, value, rows) {
   h += '<textarea id="' + id + '" class="pq-ed-textarea" rows="' + rows + '">' + escapeHtml(value) + '</textarea>';
   h += '</div>';
   return h;
+}
+
+function _pqUpdatePreviewDebounced() {
+  clearTimeout(_pqPreviewTimer);
+  _pqPreviewTimer = setTimeout(_pqUpdatePreview, 300);
 }
 
 function _pqUpdatePreview() {

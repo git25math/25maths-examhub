@@ -16,12 +16,8 @@ var CIE_SYLLABUS = null;
 var CIE_VOCAB = null;
 var _cieSectionLevelMap = {};
 
-var _cieDataReady = false;
-var _cieDataLoading = false;
-var _edxDataReady = false;
-var _edxDataLoading = false;
-var _hhkDataReady = false;
-var _hhkDataLoading = false;
+var _boardReady = { cie: false, edexcel: false, hhk: false };
+var _boardLoading = { cie: null, edexcel: null, hhk: null };
 
 /* Section context — tracks which section the student entered from */
 var _currentSectionContext = null; /* { sectionId, board } or null */
@@ -82,12 +78,8 @@ function loadHHKSyllabus() {
 }
 
 function _loadBoardSyllabus(board) {
-  if (board === 'cie' && _cieDataReady) return Promise.resolve();
-  if (board === 'edexcel' && _edxDataReady) return Promise.resolve();
-  if (board === 'hhk' && _hhkDataReady) return Promise.resolve();
-  if (board === 'cie' && _cieDataLoading) return _cieDataLoading;
-  if (board === 'edexcel' && _edxDataLoading) return _edxDataLoading;
-  if (board === 'hhk' && _hhkDataLoading) return _hhkDataLoading;
+  if (_boardReady[board]) return Promise.resolve();
+  if (_boardLoading[board]) return _boardLoading[board];
 
   var syllabusFile = 'data/syllabus-' + board + '.json';
   var vocabFile = 'data/vocabulary-' + board + '.json';
@@ -128,18 +120,12 @@ function _loadBoardSyllabus(board) {
     console.error('Failed to load ' + board + ' syllabus data:', e);
   });
 
-  if (board === 'cie') _cieDataLoading = loadingPromise;
-  else if (board === 'edexcel') _edxDataLoading = loadingPromise;
-  else if (board === 'hhk') _hhkDataLoading = loadingPromise;
+  _boardLoading[board] = loadingPromise;
 
   return loadingPromise;
 }
 
-function _setBoardReady(board) {
-  if (board === 'cie') _cieDataReady = true;
-  else if (board === 'edexcel') _edxDataReady = true;
-  else if (board === 'hhk') _hhkDataReady = true;
-}
+function _setBoardReady(board) { _boardReady[board] = true; }
 
 /* ═══ VIRTUAL LEVELS CREATION ═══ */
 /* Convert vocabulary JSON format to LEVELS vocabulary format */
@@ -861,7 +847,7 @@ function renderSectionDetail(ch, sec, secIdx, board) {
       html += '<div class="sec-module-arrow">\u25bc</div>';
       html += '</div>';
       html += '<div class="sec-module-content d-none">';
-      html += '<div class="sec-module-content-body">' + pqRender(kcContent) + '</div>';
+      html += '<div class="sec-module-content-body" data-kc-raw="' + escapeHtml(kcContent) + '"></div>';
       html += '</div>';
     } else {
       html += '<div class="sec-module sec-module-coming">';
@@ -1423,9 +1409,9 @@ function _renderPPSectionModule(slot, secId, board) {
   var _ppModuleDone = _ppDoneRatio >= 0.5;
 
   var h = '';
-  h += '<div class="sec-module" style="flex-direction:column;align-items:stretch;gap:8px;position:relative">';
+  h += '<div class="sec-module sec-module-col" style="position:relative">';
   if (_ppModuleDone) h += '<div class="sec-module-done">\u2713</div>';
-  h += '<div style="display:flex;align-items:center;gap:12px">';
+  h += '<div class="sec-module-row">';
   h += '<div class="sec-module-icon">\ud83d\udcc4</div>';
   h += '<div class="sec-module-info">';
   h += '<div class="sec-module-title">' + t('Past Papers', '\u771f\u9898\u7ec3\u4e60') + '</div>';
@@ -1452,11 +1438,11 @@ function _renderPPSectionModule(slot, secId, board) {
         var wk = wordKey(secLevelIdx, secLv.vocabulary[wi].id);
         if (wd[wk] && (wd[wk].ok || 0) > 0) learnedW++;
       }
-      h += '<div style="font-size:12px;color:var(--c-muted);margin-top:4px">';
+      h += '<div class="sec-mod-note">';
       h += '\ud83d\udcdd ' + t('Vocabulary', '\u8bcd\u6c47') + ': ';
       h += '<b>' + learnedW + '</b>/' + totalW + ' ' + t('learned', '\u5df2\u5b66');
       if (learnedW < totalW) {
-        h += ' \u00b7 <span style="cursor:pointer;color:var(--c-primary);text-decoration:underline" ';
+        h += ' \u00b7 <span class="sec-mod-link" ';
         h += 'onclick="event.stopPropagation();openDeck(' + secLevelIdx + ')">';
         h += t('Study now', '\u53bb\u5b66\u4e60') + '</span>';
       }
@@ -1466,8 +1452,8 @@ function _renderPPSectionModule(slot, secId, board) {
 
   /* Question type breakdown */
   h += '<div class="mt-4">';
-  h += '<div style="font-size:11px;color:var(--c-muted);margin-bottom:4px">' + t('By Question Type', '\u8003\u6cd5\u9898\u578b\u5206\u7c7b') + '</div>';
-  h += '<div style="display:flex;flex-wrap:wrap;gap:4px">';
+  h += '<div class="sec-mod-label">' + t('By Question Type', '\u8003\u6cd5\u9898\u578b\u5206\u7c7b') + '</div>';
+  h += '<div class="sec-mod-chips">';
   for (var oi = 0; oi < PP_GROUP_ORDER.length; oi++) {
     var gk = PP_GROUP_ORDER[oi];
     var gc = groupCounts[gk];
@@ -1488,8 +1474,8 @@ function _renderPPSectionModule(slot, secId, board) {
   for (var _ck in cmdCounts) cmdTypes++;
   if (cmdTypes >= 2) {
     h += '<div class="mt-4">';
-    h += '<div style="font-size:11px;color:var(--c-muted);margin-bottom:4px">' + t('By Command Word', '\u6309\u6307\u4ee4\u52a8\u8bcd') + '</div>';
-    h += '<div style="display:flex;flex-wrap:wrap;gap:4px">';
+    h += '<div class="sec-mod-label">' + t('By Command Word', '\u6309\u6307\u4ee4\u52a8\u8bcd') + '</div>';
+    h += '<div class="sec-mod-chips">';
     for (var coi = 0; coi < PP_CMD_ORDER.length; coi++) {
       var cmk = PP_CMD_ORDER[coi];
       var cmc = cmdCounts[cmk];
@@ -1519,12 +1505,12 @@ function _renderPPSectionModule(slot, secId, board) {
 
   /* Action buttons */
   h += '<div class="btn-row btn-row--wrap mt-4">';
-  h += '<button class="btn btn-sm" data-pp-start data-sec="' + secId + '" data-board="' + board + '" data-mode="practice" style="flex:1;min-width:120px">';
+  h += '<button class="btn btn-sm sec-mod-btn-flex" data-pp-start data-sec="' + secId + '" data-board="' + board + '" data-mode="practice">';
   h += '\ud83d\udcd6 ' + t('Practice Mode', '\u7ec3\u4e60\u6a21\u5f0f') + '</button>';
-  h += '<button class="btn btn-sm btn-warning" data-pp-start data-sec="' + secId + '" data-board="' + board + '" data-mode="exam" style="flex:1;min-width:120px">';
+  h += '<button class="btn btn-sm btn-warning sec-mod-btn-flex" data-pp-start data-sec="' + secId + '" data-board="' + board + '" data-mode="exam">';
   h += '\u23f1 ' + t('Exam Mode', '\u5b9e\u6218\u6a21\u5f0f') + '</button>';
   if (ppStats.wrongActive > 0) {
-    h += '<button class="btn btn-sm btn-danger" data-pp-start data-sec="' + secId + '" data-board="' + board + '" data-mode="wrongbook" style="flex:1;min-width:120px">';
+    h += '<button class="btn btn-sm btn-danger sec-mod-btn-flex" data-pp-start data-sec="' + secId + '" data-board="' + board + '" data-mode="wrongbook">';
     h += '\ud83d\udcd5 ' + t('Wrong Book', '\u9519\u9898\u672c') + ' (' + ppStats.wrongActive + ')</button>';
   }
   h += '</div>';
@@ -1592,7 +1578,7 @@ function _renderMasterQSummary(slot, secId, board) {
   h += '<div class="mq-summary-header">';
   h += '<span style="font-size:18px">&#x1F4CB;</span> ';
   h += '<span class="mq-summary-title">' + t('Master Question Types', '\u6BCD\u9898\u603B\u7ED3') + '</span>';
-  h += '<span style="margin-left:auto;font-size:11px;color:var(--c-muted)">';
+  h += '<span class="mq-summary-count">';
   h += t('Mastered', '\u5DF2\u638C\u63E1') + ' ' + masteredTypes + '/' + totalTypes;
   h += '</span>';
   h += '</div>';
@@ -1749,6 +1735,11 @@ function toggleSectionContent(moduleEl) {
   if (!content || !content.classList.contains('sec-module-content')) return;
   var arrow = moduleEl.querySelector('.sec-module-arrow');
   if (content.classList.contains('d-none')) {
+    var kcBody = content.querySelector('[data-kc-raw]');
+    if (kcBody) {
+      kcBody.innerHTML = pqRender(kcBody.dataset.kcRaw);
+      delete kcBody.dataset.kcRaw;
+    }
     content.classList.remove('d-none');
     if (arrow) arrow.textContent = '\u25b2';
     loadKaTeX().then(function() { renderMath(content); });
@@ -1776,7 +1767,7 @@ function editSectionModule(sectionId, module, board) {
   var modLabels = { syllabus: ['Syllabus', '\u8003\u7eb2\u8981\u6c42'], knowledge: ['Knowledge Card', '\u77e5\u8bc6\u5361\u7247'], examples: ['Worked Examples', '\u7ecf\u5178\u4f8b\u9898'] };
   var modLabel = modLabels[module] || modLabels.syllabus;
   html += '<div class="pq-editor-header">';
-  html += '<div class="section-title" style="margin:0">\u270f\ufe0f ' + t(modLabel[0], modLabel[1]) + ' <span style="color:var(--c-muted);font-size:13px">' + escapeHtml(sectionId) + ' ' + escapeHtml(sec.title) + '</span></div>';
+  html += '<div class="section-title" style="margin:0">\u270f\ufe0f ' + t(modLabel[0], modLabel[1]) + ' <span class="sec-editor-subtitle">' + escapeHtml(sectionId) + ' ' + escapeHtml(sec.title) + '</span></div>';
   html += '</div>';
 
   /* Toolbar */
@@ -2545,6 +2536,15 @@ function openKnowledgePoint(kpId, board) {
   window.scrollTo(0, 0);
 }
 
+function _truncTitle(str, maxWidth) {
+  var w = 0;
+  for (var i = 0; i < str.length; i++) {
+    w += (str.charCodeAt(i) > 0x2E7F) ? 2 : 1;
+    if (w > maxWidth) return str.substring(0, i) + '\u2026';
+  }
+  return str;
+}
+
 function renderKPDetail(kp, board) {
   var el = document.getElementById('panel-kp');
   if (!el) return;
@@ -2699,8 +2699,7 @@ function renderKPDetail(kp, board) {
   /* Prev/Next Navigation */
   html += '<div class="kp-nav">';
   if (curIdx > 0) {
-    var prevTitle = sectionKPs[curIdx - 1].title;
-    if (prevTitle.length > 25) prevTitle = prevTitle.substring(0, 22) + '...';
+    var prevTitle = _truncTitle(sectionKPs[curIdx - 1].title, 25);
     html += '<button class="kp-nav-btn" data-kp-nav="' + sectionKPs[curIdx - 1].id + '" data-kp-nav-board="' + board + '">';
     html += '\u2190 ' + escapeHtml(prevTitle);
     html += '</button>';
@@ -2708,8 +2707,7 @@ function renderKPDetail(kp, board) {
     html += '<button class="kp-nav-btn" disabled>\u2190 ' + t('Previous', '\u4e0a\u4e00\u4e2a') + '</button>';
   }
   if (curIdx >= 0 && curIdx < sectionKPs.length - 1) {
-    var nextTitle = sectionKPs[curIdx + 1].title;
-    if (nextTitle.length > 25) nextTitle = nextTitle.substring(0, 22) + '...';
+    var nextTitle = _truncTitle(sectionKPs[curIdx + 1].title, 25);
     html += '<button class="kp-nav-btn" data-kp-nav="' + sectionKPs[curIdx + 1].id + '" data-kp-nav-board="' + board + '">';
     html += escapeHtml(nextTitle) + ' \u2192';
     html += '</button>';

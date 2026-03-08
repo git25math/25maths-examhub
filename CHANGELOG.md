@@ -1,5 +1,34 @@
 # Changelog
 
+## [2.3.9] - 2026-03-08 — 质量优化批次（性能 + 暗色模式 + 可访问性 + 代码精简）
+
+### 性能优化
+- **Knowledge Card 惰性渲染**: 展开前仅存 `data-kc-raw` 属性，展开时才调用 `pqRender()`，减少初始 DOM 体积
+- **编辑器预览防抖**: `_pqUpdatePreviewDebounced()` 300ms 防抖，避免逐字触发 KaTeX 渲染
+- **Board 数据加载去重**: 6 个独立变量 → `_boardReady` / `_boardLoading` 对象，简化 `_loadBoardSyllabus`
+
+### 暗色模式
+- **CSS 状态颜色变量化**: 新增 6 个 `--c-status-*` 变量（red/orange/green 文字 + 背景），`:root` + `[data-theme="dark"]` 双层
+- **14 处硬编码颜色替换**: `.pp-diff-core/ext` / `.pp-rate-btn` 三色 / `.pp-timer.danger` / `.pp-dot.done/wrong` / `.pp-results-pct` 三色
+- **删除 10 行冗余 dark 覆盖**: 变量化后无需手动覆盖的 `.pp-diff-*` / `.pp-rate-btn.*` / `.pp-dot.*`
+
+### 可访问性
+- **focus-visible 补全**: `.quiz-dir-btn` / `.dq-pill` / `.pp-rate-btn` / `.pp-dot` 添加焦点环
+
+### 代码质量
+- **13 处内联样式→CSS 类**: 新增 9 个工具类（`sec-module-col/row` / `sec-mod-note/link/label/chips/btn-flex` / `mq-summary-count` / `sec-editor-subtitle`）
+- **Unicode 感知截断**: `_truncTitle()` 中文字符占 2 宽度，KP 导航按钮不再溢出
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `css/style.css` | +6 状态变量 + 14 处颜色→变量 + 删 10 行冗余 dark + 9 新 CSS 类 + focus-visible |
+| `js/syllabus.js` | KC 惰性渲染 + 13 处 inline→class + board 加载去重 + `_truncTitle` |
+| `js/practice.js` | 编辑器预览防抖 300ms |
+| `js/config.js` | v2.3.8 → v2.3.9 |
+
+---
+
 ## [2.3.8] - 2026-03-08 — 数据质量修复（内容审计 + 正则修复 + 13 条 ZH 翻译补全）
 
 ### 数据修复
