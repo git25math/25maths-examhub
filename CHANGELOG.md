@@ -1,5 +1,42 @@
 # Changelog
 
+## [2.3.15] - 2026-03-09 — 知识点全量扩充（72/72 sections 100% 覆盖，97 KPs）
+
+### 知识点数据扩充
+- **Ch1 Number** 补全 1.9-1.18（+9 KPs，原有 1.1-1.8 共 14 KPs）
+- **Ch2 Algebra** 全量覆盖 2.1-2.13（+15 KPs）
+- **Ch3 Coordinate Geometry** 全量覆盖 3.1-3.7（+8 KPs）
+- **Ch4 Geometry** 全量覆盖 4.1-4.8（+12 KPs）
+- **Ch5 Mensuration** 全量覆盖 5.1-5.5（+7 KPs）
+- **Ch6 Trigonometry** 全量覆盖 6.1-6.6（+8 KPs）
+- **Ch7 Transformations & Vectors** 全量覆盖 7.1-7.4（+5 KPs）
+- **Ch8 Probability** 全量覆盖 8.1-8.4（+6 KPs）
+- **Ch9 Statistics** 全量覆盖 9.1-9.7（+11 KPs + 2 patch）
+
+### 生成流程
+- `scripts/gen-kp.sh` — Gemini CLI 按 chapter 批量生成 KP JSON
+- `scripts/fix-kp-json.js` — 自动修复 Gemini 输出中的无效 JSON 转义、断行、拖尾逗号
+- `scripts/merge-kp.js` — 合并到 `knowledge-cie.json` 并按 section 排序
+
+### 数据统计
+| 指标 | 值 |
+|------|-----|
+| 总 KP 数 | 97 |
+| 覆盖 sections | 72/72 (100%) |
+| 每个 KP 含 | explanation + examPatterns + worked examples + MCQ quiz |
+| 双语 | 全部 en + zh |
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `data/knowledge-cie.json` | 14 → 97 KPs（+83），796 → 5304 行 |
+| `js/config.js` | v2.3.14 → v2.3.15 |
+| `scripts/gen-kp.sh` | 新增：Gemini 批量生成脚本 |
+| `scripts/fix-kp-json.js` | 新增：JSON 修复器 |
+| `scripts/merge-kp.js` | 新增：KP 合并脚本 |
+
+---
+
 ## [2.3.14] - 2026-03-09 — 知识点详情页 UI 优化（概念卡片拆分 + 例题编号）
 
 ### 概念卡片拆分
