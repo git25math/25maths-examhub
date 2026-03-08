@@ -2817,8 +2817,8 @@ document.addEventListener('click', function(e) {
   if (backBtn) {
     var backSec = backBtn.getAttribute('data-kp-back-section');
     var backBoard = backBtn.getAttribute('data-kp-back-board');
-    if (typeof openSectionDetail === 'function') {
-      openSectionDetail(backSec, backBoard);
+    if (typeof openSection === 'function') {
+      openSection(backSec, backBoard);
     }
     return;
   }
