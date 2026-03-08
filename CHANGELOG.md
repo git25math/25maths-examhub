@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.2.12] - 2026-03-08 — 暗色模式完备性修复
+
+### 暗色模式硬编码颜色清理
+- **PP 模块状态标签**: `needs-work/partial/mastered` 改用 `--c-danger-bg/--c-warning-bg/--c-success-bg` CSS 变量，暗色模式自动适配
+- **PP 试卷类型标签**: `pp-type-core/pp-type-ext` 同上改用语义色变量
+- **PP 图片背景**: `background: #fff` → `var(--c-bg)`，暗色模式不再白色刺眼
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `css/style.css` | 4 处硬编码 `#fff/#ffebee/#fff3e0/#e8f5e9` → CSS 变量 |
+| `js/config.js` | v2.2.11 → v2.2.12 |
+
+---
+
 ## [2.2.11] - 2026-03-08 — 性能优化 + 防御性修复
 
 ### 性能优化

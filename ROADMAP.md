@@ -387,3 +387,4 @@
 - [x] **CIE/Edexcel 数据一致性修复**: EDX cat 标准化(4→6 分类) + difficulty 标签适配 + DQ underline 规则 → v2.2.9
 - [x] **性能优化**: getLevelBySlug() O(1) 哈希索引 + homework.js 3 处线性搜索重构 → v2.2.10
 - [x] **性能优化+防御性修复**: getLevelIdxBySlug() + syllabus/app 7处O(1) + practice/homework 错误处理 → v2.2.11
+- [x] **暗色模式完备性修复**: PP 模块 4 处硬编码颜色 → CSS 语义变量 → v2.2.12
