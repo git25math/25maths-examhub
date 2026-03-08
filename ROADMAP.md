@@ -309,6 +309,7 @@
   - [x] P5 质量优化：暗色模式补全 + 内联样式清理 + 键盘可访问性（category-header/unit-header） → v2.3.10
   - [x] P6 质量优化：可访问性扩展（31 处 role/tabindex + focus-visible）+ 内联样式清理（23 处→CSS 类）+ 键盘委托 → v2.3.11
   - [x] P7 质量优化：4 文件内联样式清理（~30 处）+ 32 新 CSS 工具类 + 首页空白热修复（Supabase 守卫 + 5s 超时 + 看门狗） → v2.3.12
+  - [x] P8 启动 Bug 修复：`_xxxDataReady` 未声明 ReferenceError + `knowledge-edexcel.json` 404 → v2.3.13
 - [x] **Phase C 知识点精析模块 Phase 1**：数据架构 `knowledge-cie.json` + 知识点列表/详情页 5 区域布局 + 事件委托 + LaTeX → v2.3.0
   - [x] Phase 2：Test Yourself MCQ 引擎 + 进度追踪 + getSectionHealth 纳入 knowledgeScore → v2.3.1
   - [x] Phase 2.5：Chapter 1 KP 数据扩充（14 KP 覆盖 8 sections）+ tqItem null guard 修复 → v2.3.2

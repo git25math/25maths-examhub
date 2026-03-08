@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.3.13] - 2026-03-09 — 启动 Bug 修复（_xxxDataReady 未声明 + knowledge-edexcel 404）
+
+### Bug 修复
+- **`_xxxDataReady` 全局变量声明**: `_cieDataReady` / `_edxDataReady` / `_hhkDataReady` 从未声明，`renderHHKHome()` 等函数引用时抛 ReferenceError 导致首页渲染中断。在 `syllabus.js` 顶部声明 3 变量 + `_setBoardReady()` 同步赋值
+- **`knowledge-edexcel.json` 404**: `loadKnowledgeData('edexcel')` 请求不存在的文件，删除该调用
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `js/syllabus.js` | 声明 `_cieDataReady` / `_edxDataReady` / `_hhkDataReady` + `_setBoardReady` 同步赋值 + 删除 `loadKnowledgeData('edexcel')` |
+| `js/config.js` | v2.3.12 → v2.3.13 |
+
+---
+
 ## [2.3.12] - 2026-03-09 — 质量优化批次 4（内联样式清理 4 文件 + 空白页修复）
 
 ### 空白页修复（独立 hotfix 已先发布）

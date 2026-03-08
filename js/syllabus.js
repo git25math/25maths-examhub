@@ -18,6 +18,9 @@ var _cieSectionLevelMap = {};
 
 var _boardReady = { cie: false, edexcel: false, hhk: false };
 var _boardLoading = { cie: null, edexcel: null, hhk: null };
+var _cieDataReady = false;
+var _edxDataReady = false;
+var _hhkDataReady = false;
 
 /* Section context — tracks which section the student entered from */
 var _currentSectionContext = null; /* { sectionId, board } or null */
@@ -125,7 +128,12 @@ function _loadBoardSyllabus(board) {
   return loadingPromise;
 }
 
-function _setBoardReady(board) { _boardReady[board] = true; }
+function _setBoardReady(board) {
+  _boardReady[board] = true;
+  if (board === 'cie') _cieDataReady = true;
+  else if (board === 'edexcel') _edxDataReady = true;
+  else if (board === 'hhk') _hhkDataReady = true;
+}
 
 /* ═══ VIRTUAL LEVELS CREATION ═══ */
 /* Convert vocabulary JSON format to LEVELS vocabulary format */
@@ -2888,4 +2896,3 @@ loadEdexcelSyllabus();
 loadHHKSyllabus();
 /* Pre-load knowledge point data for active boards */
 loadKnowledgeData('cie');
-loadKnowledgeData('edexcel');
