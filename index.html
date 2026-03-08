@@ -37,23 +37,25 @@
     <div class="auth-logo">25</div>
     <div class="auth-title">25Maths Keywords</div>
     <div class="auth-sub" data-en="IGCSE Math Vocabulary Platform" data-zh="IGCSE 数学词汇学习平台">IGCSE Math Vocabulary Platform</div>
-    <input class="auth-input" id="auth-email" type="email" placeholder="Email" aria-label="Email">
-    <input class="auth-input" id="auth-pass" type="password" placeholder="Password (min 6 chars)" aria-label="Password">
-    <div class="auth-err" id="auth-err"></div>
-    <button class="btn btn-primary btn-block" id="auth-login" data-en="Login / Register" data-zh="登录 / 注册">Login / Register</button>
+    <form id="auth-form" autocomplete="on" onsubmit="return false">
+      <input class="auth-input" id="auth-email" type="email" placeholder="Email" aria-label="Email" autocomplete="username">
+      <input class="auth-input" id="auth-pass" type="password" placeholder="Password (min 6 chars)" aria-label="Password" autocomplete="current-password">
+      <div class="auth-err" id="auth-err"></div>
+      <button class="btn btn-primary btn-block" id="auth-login" type="submit" data-en="Login / Register" data-zh="登录 / 注册">Login / Register</button>
+    </form>
     <button class="btn btn-ghost btn-block" id="auth-skip" data-en="Try without login" data-zh="先不登录，直接体验">Try without login</button>
     <div class="text-center"><a class="auth-forgot" onclick="showPasswordReset()" data-en="Forgot password?" data-zh="忘记密码？">Forgot password?</a></div>
     <div class="auth-note" data-en="First email auto-registers · Login to sync across devices" data-zh="首次输入邮箱将自动注册 · 登录后可跨设备同步进度">First email auto-registers · Login to sync across devices</div>
     <div class="auth-divider"><span>OR</span></div>
     <button class="btn btn-ghost btn-block btn-sm" id="auth-teacher-toggle" onclick="toggleTeacherReg()"><span data-en="👩‍🏫 Teacher Registration" data-zh="👩‍🏫 教师注册">👩‍🏫 Teacher Registration</span></button>
-    <div id="teacher-reg" style="display:none">
-      <input class="auth-input" id="tr-name" type="text" placeholder="Name" aria-label="Name">
-      <input class="auth-input" id="tr-email" type="email" placeholder="Email" aria-label="Email">
-      <input class="auth-input" id="tr-pass" type="password" placeholder="Password (min 6)" aria-label="Password">
-      <input class="auth-input" id="tr-code" type="text" placeholder="School Code" aria-label="School Code">
+    <form id="teacher-reg" style="display:none" autocomplete="on" onsubmit="doTeacherRegister(); return false">
+      <input class="auth-input" id="tr-name" type="text" placeholder="Name" aria-label="Name" autocomplete="name">
+      <input class="auth-input" id="tr-email" type="email" placeholder="Email" aria-label="Email" autocomplete="username">
+      <input class="auth-input" id="tr-pass" type="password" placeholder="Password (min 6)" aria-label="Password" autocomplete="new-password">
+      <input class="auth-input" id="tr-code" type="text" placeholder="School Code" aria-label="School Code" autocomplete="off">
       <div class="auth-err" id="tr-err"></div>
-      <button class="btn btn-primary btn-block" id="tr-submit" onclick="doTeacherRegister()" data-en="Register Teacher Account" data-zh="注册教师账号">Register Teacher Account</button>
-    </div>
+      <button class="btn btn-primary btn-block" id="tr-submit" type="submit" data-en="Register Teacher Account" data-zh="注册教师账号">Register Teacher Account</button>
+    </form>
   </div>
 </div>
 

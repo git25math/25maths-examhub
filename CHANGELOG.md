@@ -6,11 +6,15 @@
 - **`_xxxDataReady` 全局变量声明**: `_cieDataReady` / `_edxDataReady` / `_hhkDataReady` 从未声明，`renderHHKHome()` 等函数引用时抛 ReferenceError 导致首页渲染中断。在 `syllabus.js` 顶部声明 3 变量 + `_setBoardReady()` 同步赋值
 - **`knowledge-edexcel.json` 404**: `loadKnowledgeData('edexcel')` 请求不存在的文件，删除该调用
 
+### Chrome DOM 警告修复
+- **密码输入框包裹 `<form>`**: `auth-pass` 和 `tr-pass` 不在 `<form>` 内，Chrome 报 DOM 警告且无法触发浏览器密码保存。将登录区和教师注册区分别包裹 `<form>` + `autocomplete` 属性
+
 ### 文件变更
 | 文件 | 变更 |
 |------|------|
 | `js/syllabus.js` | 声明 `_cieDataReady` / `_edxDataReady` / `_hhkDataReady` + `_setBoardReady` 同步赋值 + 删除 `loadKnowledgeData('edexcel')` |
 | `js/config.js` | v2.3.12 → v2.3.13 |
+| `index.html` | 登录/教师注册区 `<form>` 包裹 + `autocomplete` 属性 |
 
 ---
 
