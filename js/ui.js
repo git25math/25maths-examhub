@@ -175,6 +175,9 @@ function toggleLang() {
   else if (appView === 'board') renderBoard();
   else if (appView === 'stats') renderStats();
   else if (appView === 'admin' && typeof renderAdmin === 'function') renderAdmin();
+  else if (appView === 'section' && typeof _currentSectionContext === 'object' && _currentSectionContext) {
+    openSection(_currentSectionContext.sectionId, _currentSectionContext.board);
+  }
   updateSidebar();
 }
 

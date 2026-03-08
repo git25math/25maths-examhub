@@ -8,14 +8,23 @@
 - **延迟 KaTeX 渲染**: 仅在卡片展开时触发 `loadKaTeX()` + `renderMath()`，减少首次加载开销
 - **副标题显示例题数**: "4 examples / 4 道例题" 替代 "Click to expand"
 
+### 知识点精析质量修复（P0 + P1）
+- **P0-1 Markdown 渲染引擎**: 新增 `kpMarkdown()` 函数（LaTeX 保护 + `**bold**` + 表格 + 段落），替换 6 处 `pqRender` 调用，修复精析/考法/例题/自测全部格式失效
+- **P0-2 双语模式修复**: `getLang()` 函数不存在导致双语静默失败，新增 `_kpIsZh()` 替代
+- **P0-3 多考试局变量修复**: `_cieSyllabus` / `_edxSyllabus` / `_hhkSyllabus` 未定义 → 改用 `BOARD_SYLLABUS[board]`
+- **P1-4 详情页滚动归顶**: 切换 KP 时 `scrollTop = 0` + `window.scrollTo(0, 0)`
+- **P1-5 导航按钮溢出**: 标题截断 25 字符 + CSS `max-width: 45%` + `text-overflow: ellipsis`
+- **P1-6 自测完成滚动**: 全部答完后 `scrollIntoView` 到得分汇总
+- **P2-7 CSS 清理**: 移除死代码 `.kp-coming` + 新增 `.kp-table` 表格样式 + 暗色模式
+
 ### Seed 合并脚本
 - **`scripts/seed-all.sh`**: 合并 6 个 seed JS 脚本输出为单文件 SQL（BEGIN/COMMIT 事务包裹）
 
 ### 文件变更
 | 文件 | 变更 |
 |------|------|
-| `js/syllabus.js` | `_parseWorkedExamples()` 解析函数 + `toggleWeCard()` + 渲染逻辑重构 |
-| `css/style.css` | `.we-card` 系列样式（卡片/header/body/arrow，~12 行） |
+| `js/syllabus.js` | `_parseWorkedExamples()` + `toggleWeCard()` + `kpMarkdown()` + `_kpIsZh()` + P0/P1 修复（~60 行） |
+| `css/style.css` | `.we-card` 样式 + `.kp-table` 表格样式 + 暗色模式 + 导航按钮溢出 |
 | `scripts/seed-all.sh` | 新建 — 合并 6 个 seed 脚本 → 单文件 SQL |
 | `js/config.js` | v2.3.2 → v2.3.3 |
 

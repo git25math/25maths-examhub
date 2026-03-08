@@ -899,9 +899,9 @@ function renderSectionDetail(ch, sec, secIdx, board) {
       html += '<div class="we-card-header" onclick="event.stopPropagation();toggleWeCard(this)">';
       html += '<span class="we-card-num">' + ex.heading + '</span>';
       if (ex.marks) html += '<span class="we-card-marks">' + ex.marks + '</span>';
-      html += '<span class="we-card-arrow">\u25b6</span>';
+      html += '<span class="we-card-arrow">\u25bc</span>';
       html += '</div>';
-      html += '<div class="we-card-body d-none">' + pqRender(ex.body) + '</div>';
+      html += '<div class="we-card-body d-none" data-we-raw="' + escapeHtml(ex.body) + '"></div>';
       html += '</div>';
     }
     html += '</div>';
@@ -1709,7 +1709,7 @@ function _parseWorkedExamples(html) {
     var marksMatch = body.match(/^\s*\[([^\]]+)\]/);
     if (marksMatch) {
       marks = '[' + marksMatch[1] + ']';
-      body = body.substring(marksMatch[0].length).replace(/^<br\s*\/?>/, '').trim();
+      body = body.substring(marksMatch[0].length).replace(/^(<br\s*\/?\s*>)+/i, '').trim();
     }
     // Extract number from heading
     var numMatch = heading.match(/\d+/);
@@ -1726,12 +1726,17 @@ function toggleWeCard(headerEl) {
   var body = card.querySelector('.we-card-body');
   var arrow = card.querySelector('.we-card-arrow');
   if (body.classList.contains('d-none')) {
+    /* Lazy render: first expand populates content */
+    if (body.dataset.weRaw) {
+      body.innerHTML = pqRender(body.dataset.weRaw);
+      delete body.dataset.weRaw;
+    }
     body.classList.remove('d-none');
-    arrow.textContent = '\u25bc';
+    arrow.textContent = '\u25b2';
     loadKaTeX().then(function() { renderMath(body); });
   } else {
     body.classList.add('d-none');
-    arrow.textContent = '\u25b6';
+    arrow.textContent = '\u25bc';
   }
 }
 
@@ -1740,12 +1745,12 @@ function toggleSectionContent(moduleEl) {
   var content = moduleEl.nextElementSibling;
   if (!content || !content.classList.contains('sec-module-content')) return;
   var arrow = moduleEl.querySelector('.sec-module-arrow');
-  if (content.style.display === 'none') {
-    content.style.display = 'block';
+  if (content.classList.contains('d-none')) {
+    content.classList.remove('d-none');
     if (arrow) arrow.textContent = '\u25b2';
     loadKaTeX().then(function() { renderMath(content); });
   } else {
-    content.style.display = 'none';
+    content.classList.add('d-none');
     if (arrow) arrow.textContent = '\u25bc';
   }
 }
@@ -2457,6 +2462,55 @@ function startMistakeReview(type) {
 var _kpData = {};
 var _kpLoading = {};
 
+/* Minimal Markdown→HTML for KP content (handles bold, paragraphs, tables) */
+function kpMarkdown(text) {
+  if (!text) return '';
+  /* Protect LaTeX: temporarily replace $...$ and $$...$$ */
+  var latexBlocks = [];
+  text = text.replace(/\$\$[\s\S]*?\$\$/g, function(m) { latexBlocks.push(m); return '\x00L' + (latexBlocks.length - 1) + '\x00'; });
+  text = text.replace(/\$[^$\n]+?\$/g, function(m) { latexBlocks.push(m); return '\x00L' + (latexBlocks.length - 1) + '\x00'; });
+  /* Escape HTML entities */
+  text = text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  /* Bold **text** */
+  text = text.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+  /* Markdown tables: detect lines starting with | */
+  text = text.replace(/((?:^|\n)\|.+\|(?:\n\|.+\|)*)/g, function(block) {
+    var rows = block.trim().split('\n');
+    var html = '<table class="kp-table">';
+    var isHeader = true;
+    for (var ri = 0; ri < rows.length; ri++) {
+      var row = rows[ri].trim();
+      if (!row || row.match(/^\|[\s\-:|]+\|$/)) continue; /* skip separator row */
+      var cells = row.split('|').filter(function(c, i, a) { return i > 0 && i < a.length - 1; });
+      var tag = isHeader ? 'th' : 'td';
+      html += '<tr>';
+      for (var ci = 0; ci < cells.length; ci++) html += '<' + tag + '>' + cells[ci].trim() + '</' + tag + '>';
+      html += '</tr>';
+      if (isHeader) isHeader = false;
+    }
+    return html + '</table>';
+  });
+  /* Paragraphs: split by double newline */
+  var paragraphs = text.split(/\n\n+/);
+  if (paragraphs.length > 1) {
+    text = paragraphs.map(function(p) {
+      p = p.trim();
+      if (!p) return '';
+      /* Don't wrap tables or already-wrapped content */
+      if (p.indexOf('<table') === 0) return p;
+      return '<p>' + p.replace(/\n/g, '<br>') + '</p>';
+    }).join('');
+  } else {
+    text = text.replace(/\n/g, '<br>');
+  }
+  /* Restore LaTeX */
+  text = text.replace(/\x00L(\d+)\x00/g, function(_, idx) { return latexBlocks[parseInt(idx)]; });
+  return text;
+}
+
+/* KP bilingual helper — true when user selected bilingual mode */
+function _kpIsZh() { return appLang !== 'en'; }
+
 function loadKnowledgeData(board) {
   if (_kpData[board]) return Promise.resolve(_kpData[board]);
   if (_kpLoading[board]) return _kpLoading[board];
@@ -2482,12 +2536,16 @@ function openKnowledgePoint(kpId, board) {
   if (!kp) return;
   renderKPDetail(kp, board);
   showPanel('kp');
+  /* Scroll to top */
+  var panel = document.getElementById('panel-kp');
+  if (panel) panel.scrollTop = 0;
+  window.scrollTo(0, 0);
 }
 
 function renderKPDetail(kp, board) {
   var el = document.getElementById('panel-kp');
   if (!el) return;
-  var isZh = typeof getLang === 'function' && getLang() === 'zh';
+  var isZh = _kpIsZh();
   var sectionKPs = getKPsForSection(kp.section, board);
   var curIdx = -1;
   for (var ci = 0; ci < sectionKPs.length; ci++) {
@@ -2496,7 +2554,7 @@ function renderKPDetail(kp, board) {
 
   /* Find section title */
   var secTitle = kp.section;
-  var boardData = board === 'cie' ? _cieSyllabus : board === 'edexcel' ? _edxSyllabus : _hhkSyllabus;
+  var boardData = BOARD_SYLLABUS[board];
   if (boardData) {
     for (var ch = 0; ch < boardData.length; ch++) {
       var secs = boardData[ch].sections || [];
@@ -2535,7 +2593,7 @@ function renderKPDetail(kp, board) {
   html += '</div>';
   html += '<div class="kp-section-body">';
   var expText = isZh && kp.explanation.zh ? kp.explanation.zh : kp.explanation.en;
-  html += pqRender(expText);
+  html += kpMarkdown(expText);
   html += '</div>';
   html += '</div>';
 
@@ -2550,9 +2608,9 @@ function renderKPDetail(kp, board) {
     for (var pi = 0; pi < kp.examPatterns.length; pi++) {
       var ep = kp.examPatterns[pi];
       html += '<div class="kp-pattern">';
-      html += '<div class="kp-pattern-label">' + pqRender(isZh && ep.label_zh ? ep.label_zh : ep.label) + '</div>';
+      html += '<div class="kp-pattern-label">' + kpMarkdown(isZh && ep.label_zh ? ep.label_zh : ep.label) + '</div>';
       var epDesc = isZh && ep.description_zh ? ep.description_zh : ep.description;
-      if (epDesc) html += '<div class="kp-pattern-desc">' + pqRender(epDesc) + '</div>';
+      if (epDesc) html += '<div class="kp-pattern-desc">' + kpMarkdown(epDesc) + '</div>';
       html += '</div>';
     }
     html += '</div>';
@@ -2571,10 +2629,10 @@ function renderKPDetail(kp, board) {
       var ex = kp.examples[ei];
       html += '<div class="kp-example">';
       if (ex.source) html += '<div class="kp-example-source">' + ex.source + '</div>';
-      html += '<div class="kp-example-q">' + pqRender(isZh && ex.question_zh ? ex.question_zh : ex.question) + '</div>';
+      html += '<div class="kp-example-q">' + kpMarkdown(isZh && ex.question_zh ? ex.question_zh : ex.question) + '</div>';
       html += '<button class="kp-example-toggle" data-kp-sol="' + ei + '">' + t('Show Solution', '\u663e\u793a\u89e3\u6790') + ' \u25bc</button>';
       html += '<div class="kp-example-solution" id="kp-sol-' + ei + '">';
-      html += pqRender(isZh && ex.solution_zh ? ex.solution_zh : ex.solution);
+      html += kpMarkdown(isZh && ex.solution_zh ? ex.solution_zh : ex.solution);
       html += '</div>';
       html += '</div>';
     }
@@ -2601,7 +2659,7 @@ function renderKPDetail(kp, board) {
       var tq = kp.testYourself[qi];
       html += '<div class="kp-quiz-card" data-kp-q-idx="' + qi + '">';
       html += '<div class="kp-quiz-q-num">' + t('Q', '\u7b2c') + (qi + 1) + '</div>';
-      html += '<div class="kp-quiz-question">' + pqRender(isZh && tq.q_zh ? tq.q_zh : tq.q) + '</div>';
+      html += '<div class="kp-quiz-question">' + kpMarkdown(isZh && tq.q_zh ? tq.q_zh : tq.q) + '</div>';
       html += '<div class="kp-quiz-options">';
       for (var oi = 0; oi < tq.o.length; oi++) {
         html += '<button class="kp-quiz-opt" data-kp-q="' + qi + '" data-kp-opt="' + oi + '">' + pqRender(tq.o[oi]) + '</button>';
@@ -2638,15 +2696,19 @@ function renderKPDetail(kp, board) {
   /* Prev/Next Navigation */
   html += '<div class="kp-nav">';
   if (curIdx > 0) {
+    var prevTitle = sectionKPs[curIdx - 1].title;
+    if (prevTitle.length > 25) prevTitle = prevTitle.substring(0, 22) + '...';
     html += '<button class="kp-nav-btn" data-kp-nav="' + sectionKPs[curIdx - 1].id + '" data-kp-nav-board="' + board + '">';
-    html += '\u2190 ' + pqRender(sectionKPs[curIdx - 1].title);
+    html += '\u2190 ' + escapeHtml(prevTitle);
     html += '</button>';
   } else {
     html += '<button class="kp-nav-btn" disabled>\u2190 ' + t('Previous', '\u4e0a\u4e00\u4e2a') + '</button>';
   }
   if (curIdx >= 0 && curIdx < sectionKPs.length - 1) {
+    var nextTitle = sectionKPs[curIdx + 1].title;
+    if (nextTitle.length > 25) nextTitle = nextTitle.substring(0, 22) + '...';
     html += '<button class="kp-nav-btn" data-kp-nav="' + sectionKPs[curIdx + 1].id + '" data-kp-nav-board="' + board + '">';
-    html += pqRender(sectionKPs[curIdx + 1].title) + ' \u2192';
+    html += escapeHtml(nextTitle) + ' \u2192';
     html += '</button>';
   } else {
     html += '<button class="kp-nav-btn" disabled>' + t('Next', '\u4e0b\u4e00\u4e2a') + ' \u2192</button>';
@@ -2760,11 +2822,11 @@ document.addEventListener('click', function(e) {
     if (isCorrect && typeof playCorrect === 'function') playCorrect();
     if (!isCorrect && typeof playWrong === 'function') playWrong();
     /* Show explanation */
-    var kpIsZh = typeof getLang === 'function' && getLang() === 'zh';
+    var kpIsZh = _kpIsZh();
     var expText = kpIsZh && tqItem.e_zh ? tqItem.e_zh : tqItem.e;
     var expEl = document.getElementById('kp-exp-' + qIdx);
     if (expEl && expText) {
-      expEl.innerHTML = (isCorrect ? '\u2705 ' : '\u274c ') + '<strong>' + t('Explanation', '\u89e3\u6790') + ':</strong> ' + pqRender(expText);
+      expEl.innerHTML = (isCorrect ? '\u2705 ' : '\u274c ') + '<strong>' + t('Explanation', '\u89e3\u6790') + ':</strong> ' + kpMarkdown(expText);
       expEl.classList.remove('d-none');
       if (typeof renderMath === 'function') renderMath(expEl);
     }
@@ -2785,6 +2847,7 @@ document.addEventListener('click', function(e) {
           : t('You scored', '\u4f60\u5f97\u4e86') + ' ' + correctCount + '/' + kpQuizTotal;
         resultEl.innerHTML = '<div class="kp-quiz-score">' + msg + '</div>';
         resultEl.classList.remove('d-none');
+        setTimeout(function() { resultEl.scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 100);
       }
     }
     return;
