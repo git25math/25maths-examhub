@@ -166,10 +166,10 @@ function hwAddRow() {
   if (rows.length >= 20) { showToast(t('Max 20 words', '最多20个词')); return; }
   var div = document.createElement('div');
   div.className = 'hw-custom-row';
-  div.style.cssText = 'display:flex;gap:6px;margin-bottom:6px;align-items:center';
-  div.innerHTML = '<input class="auth-input hw-cw" placeholder="' + t('Word', '词汇') + '" style="flex:1;margin:0">'
-    + '<input class="auth-input hw-cd" placeholder="' + t('Definition', '释义') + '" style="flex:1;margin:0">'
-    + '<button class="btn btn-ghost btn-sm" style="padding:2px 6px;color:var(--c-danger);flex-shrink:0" onclick="this.parentElement.remove()">\u2715</button>';
+  /* styled via .hw-custom-row in CSS */
+  div.innerHTML = '<input class="auth-input hw-cw flex-1 mt-0" placeholder="' + t('Word', '词汇') + '">'
+    + '<input class="auth-input hw-cd flex-1 mt-0" placeholder="' + t('Definition', '释义') + '">'
+    + '<button class="btn btn-ghost btn-sm btn-icon-danger" onclick="this.parentElement.remove()">\u2715</button>';
   ct.appendChild(div);
 }
 
@@ -191,10 +191,10 @@ function hwParseBatch() {
     count++;
     var div = document.createElement('div');
     div.className = 'hw-custom-row';
-    div.style.cssText = 'display:flex;gap:6px;margin-bottom:6px;align-items:center';
-    div.innerHTML = '<input class="auth-input hw-cw" placeholder="' + t('Word', '词汇') + '" style="flex:1;margin:0" value="' + escapeHtml(w).replace(/"/g, '&quot;') + '">'
-      + '<input class="auth-input hw-cd" placeholder="' + t('Definition', '释义') + '" style="flex:1;margin:0" value="' + escapeHtml(d).replace(/"/g, '&quot;') + '">'
-      + '<button class="btn btn-ghost btn-sm" style="padding:2px 6px;color:var(--c-danger);flex-shrink:0" onclick="this.parentElement.remove()">\u2715</button>';
+    /* styled via .hw-custom-row in CSS */
+    div.innerHTML = '<input class="auth-input hw-cw flex-1 mt-0" placeholder="' + t('Word', '词汇') + '" value="' + escapeHtml(w).replace(/"/g, '&quot;') + '">'
+      + '<input class="auth-input hw-cd flex-1 mt-0" placeholder="' + t('Definition', '释义') + '" value="' + escapeHtml(d).replace(/"/g, '&quot;') + '">'
+      + '<button class="btn btn-ghost btn-sm btn-icon-danger" onclick="this.parentElement.remove()">\u2715</button>';
     ct.appendChild(div);
   });
   if (count < lines.length) showToast(t('Truncated to 20 words', '已截断为20个词'));
@@ -346,13 +346,13 @@ function showCreateHwModal(classId) {
   html += '<div style="color:var(--c-text2);font-size:13px">' + t('Loading...', '加载中...') + '</div>';
   html += '</div>';
   html += '</div>';
-  html += '<label class="settings-label" style="margin-top:12px">' + t('Deadline', '截止日期') + '</label>';
+  html += '<label class="settings-label mt-12">' + t('Deadline', '截止日期') + '</label>';
   html += '<input class="auth-input" id="hw-deadline" type="datetime-local" value="' + deadlineDefault + '">';
-  html += '<div id="hw-msg" class="settings-msg" style="margin-top:8px"></div>';
-  html += '<div style="display:flex;gap:8px;margin-top:12px">';
+  html += '<div id="hw-msg" class="settings-msg mt-8"></div>';
+  html += '<div class="btn-row">';
   html += '<button class="btn btn-primary" style="flex:2" onclick="doCreateHw(\'' + classId + '\')">' + t('Create', '创建') + '</button>';
-  html += '<button class="btn btn-secondary btn-sm" style="flex:1" onclick="hwSaveTemplate()">' + t('Save Template', '\u4fdd\u5b58\u6a21\u677f') + '</button>';
-  html += '<button class="btn btn-ghost" style="flex:1" onclick="hideModal()">' + t('Cancel', '取消') + '</button>';
+  html += '<button class="btn btn-secondary btn-sm" onclick="hwSaveTemplate()">' + t('Save Template', '\u4fdd\u5b58\u6a21\u677f') + '</button>';
+  html += '<button class="btn btn-ghost" onclick="hideModal()">' + t('Cancel', '取消') + '</button>';
   html += '</div>';
 
   showModal(html);
@@ -545,12 +545,12 @@ function showCreateCustomHwModal(classId, studentUserId, studentName, wrongWords
 
   var nextWeek = new Date();
   nextWeek.setDate(nextWeek.getDate() + 3);
-  html += '<label class="settings-label" style="margin-top:12px">' + t('Deadline', '截止日期') + '</label>';
+  html += '<label class="settings-label mt-12">' + t('Deadline', '截止日期') + '</label>';
   html += '<input class="auth-input" id="chw-deadline" type="datetime-local" value="' + nextWeek.toISOString().slice(0, 16) + '">';
-  html += '<div id="chw-msg" class="settings-msg" style="margin-top:8px"></div>';
-  html += '<div style="display:flex;gap:8px;margin-top:12px">';
-  html += '<button class="btn btn-primary" style="flex:1" onclick="doCreateCustomHw(\'' + classId + '\', \'' + studentUserId + '\')">' + t('Assign', '布置') + '</button>';
-  html += '<button class="btn btn-ghost" style="flex:1" onclick="hideModal()">' + t('Cancel', '取消') + '</button>';
+  html += '<div id="chw-msg" class="settings-msg mt-8"></div>';
+  html += '<div class="btn-row">';
+  html += '<button class="btn btn-primary" onclick="doCreateCustomHw(\'' + classId + '\', \'' + studentUserId + '\')">' + t('Assign', '布置') + '</button>';
+  html += '<button class="btn btn-ghost" onclick="hideModal()">' + t('Cancel', '取消') + '</button>';
   html += '</div>';
 
   showModal(html);

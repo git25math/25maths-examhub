@@ -36,12 +36,12 @@ function showEditDeckModal(idx) {
     html += vaCardRow(i, p.word || '', p.def || '');
   });
   html += '</tbody></table></div>';
-  html += '<button class="btn btn-ghost btn-sm" style="margin-top:8px" onclick="vaAddCard()">+ ' + t('Add word', '添加词') + '</button>';
+  html += '<button class="btn btn-ghost btn-sm mt-8" onclick="vaAddCard()">+ ' + t('Add word', '添加词') + '</button>';
 
-  html += '<div id="va-msg" class="settings-msg" style="margin-top:8px"></div>';
-  html += '<div style="display:flex;gap:8px;margin-top:12px">';
-  html += '<button class="btn btn-primary" style="flex:1" onclick="vaSaveDeck(' + idx + ')">' + t('Save', '保存') + '</button>';
-  html += '<button class="btn btn-ghost" style="flex:1" onclick="hideModal()">' + t('Cancel', '取消') + '</button>';
+  html += '<div id="va-msg" class="settings-msg mt-8"></div>';
+  html += '<div class="btn-row">';
+  html += '<button class="btn btn-primary" onclick="vaSaveDeck(' + idx + ')">' + t('Save', '保存') + '</button>';
+  html += '<button class="btn btn-ghost" onclick="hideModal()">' + t('Cancel', '取消') + '</button>';
   html += '</div>';
 
   showModal(html);
@@ -49,10 +49,10 @@ function showEditDeckModal(idx) {
 
 function vaCardRow(i, word, def) {
   return '<tr class="va-row">' +
-    '<td style="width:24px;color:var(--c-text2)">' + (i + 1) + '</td>' +
+    '<td class="text-sub" style="width:24px">' + (i + 1) + '</td>' +
     '<td><input class="va-word" value="' + word.replace(/"/g, '&quot;') + '"></td>' +
     '<td><input class="va-def" value="' + def.replace(/"/g, '&quot;') + '"></td>' +
-    '<td style="width:28px"><button class="btn btn-ghost btn-sm" style="padding:2px 4px;font-size:12px;color:var(--c-danger)" onclick="this.closest(\'tr\').remove();vaRenum()">x</button></td>' +
+    '<td style="width:28px"><button class="btn btn-ghost btn-sm btn-icon-danger" onclick="this.closest(\'tr\').remove();vaRenum()">x</button></td>' +
     '</tr>';
 }
 
@@ -62,10 +62,10 @@ function vaAddCard() {
   var rows = tbody.querySelectorAll('.va-row');
   var tr = document.createElement('tr');
   tr.className = 'va-row';
-  tr.innerHTML = '<td style="width:24px;color:var(--c-text2)">' + (rows.length + 1) + '</td>' +
+  tr.innerHTML = '<td class="text-sub" style="width:24px">' + (rows.length + 1) + '</td>' +
     '<td><input class="va-word" value=""></td>' +
     '<td><input class="va-def" value=""></td>' +
-    '<td style="width:28px"><button class="btn btn-ghost btn-sm" style="padding:2px 4px;font-size:12px;color:var(--c-danger)" onclick="this.closest(\'tr\').remove();vaRenum()">x</button></td>';
+    '<td style="width:28px"><button class="btn btn-ghost btn-sm btn-icon-danger" onclick="this.closest(\'tr\').remove();vaRenum()">x</button></td>';
   tbody.appendChild(tr);
 }
 
@@ -140,10 +140,10 @@ async function vaSaveDeck(idx) {
 function confirmDeleteDeck(idx) {
   var lv = LEVELS[idx];
   var html = '<div class="section-title">' + t('Delete Group?', '删除词组？') + '</div>';
-  html += '<p style="font-size:14px;color:var(--c-text2);margin:12px 0">' + lvTitle(lv) + '</p>';
-  html += '<div style="display:flex;gap:8px">';
-  html += '<button class="btn btn-primary" style="flex:1;background:var(--c-danger)" onclick="doDeleteDeck(' + idx + ')">' + t('Delete', '删除') + '</button>';
-  html += '<button class="btn btn-ghost" style="flex:1" onclick="hideModal()">' + t('Cancel', '取消') + '</button>';
+  html += '<p class="text-sub" style="margin:12px 0">' + lvTitle(lv) + '</p>';
+  html += '<div class="btn-row btn-row--mt0">';
+  html += '<button class="btn btn-primary" style="background:var(--c-danger)" onclick="doDeleteDeck(' + idx + ')">' + t('Delete', '删除') + '</button>';
+  html += '<button class="btn btn-ghost" onclick="hideModal()">' + t('Cancel', '取消') + '</button>';
   html += '</div>';
   showModal(html);
 }
@@ -197,12 +197,12 @@ function showAddDeckModal(boardId, catId) {
     html += vaCardRow(i, '', '');
   }
   html += '</tbody></table></div>';
-  html += '<button class="btn btn-ghost btn-sm" style="margin-top:8px" onclick="vaAddCard()">+ ' + t('Add word', '添加词') + '</button>';
+  html += '<button class="btn btn-ghost btn-sm mt-8" onclick="vaAddCard()">+ ' + t('Add word', '添加词') + '</button>';
 
-  html += '<div id="va-msg" class="settings-msg" style="margin-top:8px"></div>';
-  html += '<div style="display:flex;gap:8px;margin-top:12px">';
-  html += '<button class="btn btn-primary" style="flex:1" onclick="vaCreateDeck(\'' + boardId + '\', \'' + catId + '\')">' + t('Create', '创建') + '</button>';
-  html += '<button class="btn btn-ghost" style="flex:1" onclick="hideModal()">' + t('Cancel', '取消') + '</button>';
+  html += '<div id="va-msg" class="settings-msg mt-8"></div>';
+  html += '<div class="btn-row">';
+  html += '<button class="btn btn-primary" onclick="vaCreateDeck(\'' + boardId + '\', \'' + catId + '\')">' + t('Create', '创建') + '</button>';
+  html += '<button class="btn btn-ghost" onclick="hideModal()">' + t('Cancel', '取消') + '</button>';
   html += '</div>';
 
   showModal(html);
@@ -328,17 +328,17 @@ async function showFeedbackDetail(id) {
     html += '<label class="settings-label">' + t('Admin Notes', '管理备注') + '</label>';
     html += '<textarea class="bug-textarea" id="fb-notes" rows="3">' + escapeHtml(fb.admin_notes || '') + '</textarea>';
 
-    html += '<label class="settings-label" style="margin-top:8px">' + t('Change Status', '更改状态') + '</label>';
-    html += '<div style="display:flex;gap:6px;margin-bottom:12px">';
+    html += '<label class="settings-label mt-8">' + t('Change Status', '更改状态') + '</label>';
+    html += '<div class="flex gap-6 mb-12">';
     ['new', 'in_progress', 'done', 'dismissed'].forEach(function(st) {
       var active = fb.status === st ? ' style="border-color:var(--c-primary);background:var(--c-primary-bg)"' : '';
       html += '<button class="btn btn-ghost btn-sm"' + active + ' onclick="updateFeedbackStatus(\'' + fb.id + '\', \'' + st + '\')">' + st + '</button>';
     });
     html += '</div>';
 
-    html += '<div style="display:flex;gap:8px">';
-    html += '<button class="btn btn-primary" style="flex:1" onclick="saveFeedbackNotes(\'' + fb.id + '\')">' + t('Save Notes', '保存备注') + '</button>';
-    html += '<button class="btn btn-ghost" style="flex:1" onclick="hideModal();renderFeedbackList()">' + t('Close', '关闭') + '</button>';
+    html += '<div class="btn-row btn-row--mt0">';
+    html += '<button class="btn btn-primary" onclick="saveFeedbackNotes(\'' + fb.id + '\')">' + t('Save Notes', '保存备注') + '</button>';
+    html += '<button class="btn btn-ghost" onclick="hideModal();renderFeedbackList()">' + t('Close', '关闭') + '</button>';
     html += '</div>';
 
     showModal(html);

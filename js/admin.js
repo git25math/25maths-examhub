@@ -222,12 +222,12 @@ function showCreateClassModal() {
   var html = '<div class="section-title">' + t('Create Class', '创建班级') + '</div>' +
     '<label class="settings-label">' + t('Class Name', '班级名称') + '</label>' +
     '<input class="auth-input" id="cc-name" type="text" placeholder="' + t('e.g. 7A', '如 7A') + '">' +
-    '<label class="settings-label" style="margin-top:12px">' + t('Grade / Year', '年级') + '</label>' +
+    '<label class="settings-label mt-12">' + t('Grade / Year', '年级') + '</label>' +
     '<select class="auth-input" id="cc-grade">' + gradeOpts + '</select>' +
     '<div id="cc-msg" class="settings-msg"></div>' +
-    '<div style="display:flex;gap:8px;margin-top:16px">' +
-    '<button class="btn btn-primary" style="flex:1" onclick="doCreateClass()">' + t('Create', '创建') + '</button>' +
-    '<button class="btn btn-ghost" style="flex:1" onclick="hideModal()">' + t('Cancel', '取消') + '</button>' +
+    '<div class="btn-row btn-row--mt16">' +
+    '<button class="btn btn-primary" onclick="doCreateClass()">' + t('Create', '创建') + '</button>' +
+    '<button class="btn btn-ghost" onclick="hideModal()">' + t('Cancel', '取消') + '</button>' +
     '</div>';
   showModal(html);
 }
@@ -274,12 +274,12 @@ function showEditClassModal(classId, currentName, currentGrade) {
   var html = '<div class="section-title">' + t('Edit Class', '编辑班级') + '</div>' +
     '<label class="settings-label">' + t('Class Name', '班级名称') + '</label>' +
     '<input class="auth-input" id="ec-name" type="text" value="' + currentName.replace(/"/g, '&quot;') + '">' +
-    '<label class="settings-label" style="margin-top:12px">' + t('Grade / Year', '年级') + '</label>' +
+    '<label class="settings-label mt-12">' + t('Grade / Year', '年级') + '</label>' +
     '<select class="auth-input" id="ec-grade">' + gradeOpts + '</select>' +
     '<div id="ec-msg" class="settings-msg"></div>' +
-    '<div style="display:flex;gap:8px;margin-top:16px">' +
-    '<button class="btn btn-primary" style="flex:1" onclick="doEditClass(\'' + classId + '\', \'' + currentGrade + '\')">' + t('Save', '保存') + '</button>' +
-    '<button class="btn btn-ghost" style="flex:1" onclick="hideModal()">' + t('Cancel', '取消') + '</button>' +
+    '<div class="btn-row btn-row--mt16">' +
+    '<button class="btn btn-primary" onclick="doEditClass(\'' + classId + '\', \'' + currentGrade + '\')">' + t('Save', '保存') + '</button>' +
+    '<button class="btn btn-ghost" onclick="hideModal()">' + t('Cancel', '取消') + '</button>' +
     '</div>';
   showModal(html);
   setTimeout(function() { var inp = E('ec-name'); if (inp) { inp.focus(); inp.select(); } }, 100);
@@ -342,19 +342,19 @@ function showBatchCreateModal(classId) {
     '<tbody id="batch-rows"></tbody>' +
     '</table>' +
     '</div>' +
-    '<div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap">' +
+    '<div class="btn-row btn-row--mt8 btn-row--wrap">' +
     '<button class="btn btn-ghost btn-sm" onclick="addOneBatchRow()">' + t('+ 1 row', '+ 1行') + '</button>' +
     '<button class="btn btn-ghost btn-sm" onclick="addBatchRows()">' + t('+ 5 rows', '+ 5行') + '</button>' +
     '<button class="btn btn-ghost btn-sm" onclick="toggleImportArea()">' + t('\ud83d\udccb Import', '\ud83d\udccb 导入') + '</button>' +
     '</div>' +
-    '<div id="import-area" style="display:none;margin-top:8px">' +
-    '<textarea id="import-csv" class="auth-input" rows="4" style="font-family:monospace;font-size:12px" placeholder="' + t('Paste CSV: email, password, name (one per line)', '粘贴 CSV：邮箱, 密码, 姓名（每行一个）') + '"></textarea>' +
-    '<button class="btn btn-ghost btn-sm" style="margin-top:4px" onclick="parseImportData()">' + t('Parse & Fill', '解析填入') + '</button>' +
+    '<div id="import-area" style="display:none" class="mt-8">' +
+    '<textarea id="import-csv" class="auth-input" rows="4" style="font-family:var(--font-mono);font-size:12px" placeholder="' + t('Paste CSV: email, password, name (one per line)', '粘贴 CSV：邮箱, 密码, 姓名（每行一个）') + '"></textarea>' +
+    '<button class="btn btn-ghost btn-sm mt-4" onclick="parseImportData()">' + t('Parse & Fill', '解析填入') + '</button>' +
     '</div>' +
-    '<div id="batch-msg" class="settings-msg" style="margin-top:8px"></div>' +
-    '<div style="display:flex;gap:8px;margin-top:12px">' +
-    '<button class="btn btn-primary" style="flex:1" id="batch-submit" onclick="doBatchCreate(\'' + classId + '\')">' + t('Create All', '创建全部') + '</button>' +
-    '<button class="btn btn-ghost" style="flex:1" onclick="hideModal()">' + t('Cancel', '取消') + '</button>' +
+    '<div id="batch-msg" class="settings-msg mt-8"></div>' +
+    '<div class="btn-row">' +
+    '<button class="btn btn-primary" id="batch-submit" onclick="doBatchCreate(\'' + classId + '\')">' + t('Create All', '创建全部') + '</button>' +
+    '<button class="btn btn-ghost" onclick="hideModal()">' + t('Cancel', '取消') + '</button>' +
     '</div>';
   showModal(html);
   /* Add initial 1 row */
@@ -581,13 +581,13 @@ async function renderClassDetail(classId) {
 /* ═══ RESET PASSWORD MODAL ═══ */
 function showResetPasswordModal(userId, name) {
   var html = '<div class="section-title">' + t('Reset Password', '重置密码') + '</div>' +
-    '<p style="font-size:13px;color:var(--c-text2);margin-bottom:12px">' +
+    '<p class="text-sm text-sub mb-12">' +
     t('Reset password for: ', '重置学生密码：') + '<strong>' + escapeHtml(name) + '</strong></p>' +
     '<input class="auth-input" id="rp-pass" type="text" placeholder="' + t('New password (min 6 chars)', '新密码（至少6位）') + '">' +
     '<div id="rp-msg" class="settings-msg"></div>' +
-    '<div style="display:flex;gap:8px;margin-top:12px">' +
-    '<button class="btn btn-primary" style="flex:1" data-action="do-resetpw" data-uid="' + userId + '">' + t('Reset', '重置') + '</button>' +
-    '<button class="btn btn-ghost" style="flex:1" data-action="modal-cancel">' + t('Cancel', '取消') + '</button>' +
+    '<div class="btn-row">' +
+    '<button class="btn btn-primary" data-action="do-resetpw" data-uid="' + userId + '">' + t('Reset', '重置') + '</button>' +
+    '<button class="btn btn-ghost" data-action="modal-cancel">' + t('Cancel', '取消') + '</button>' +
     '</div>';
   showModal(html);
 }
@@ -1056,9 +1056,9 @@ function showRenameModal(userId, currentName, classId) {
     '<label class="settings-label">' + t('New Name', '新姓名') + '</label>' +
     '<input class="auth-input" id="rn-name" type="text" value="' + currentName.replace(/"/g, '&quot;') + '">' +
     '<div id="rn-msg" class="settings-msg"></div>' +
-    '<div style="display:flex;gap:8px;margin-top:12px">' +
-    '<button class="btn btn-primary" style="flex:1" data-action="do-rename" data-uid="' + userId + '" data-cid="' + classId + '">' + t('Confirm', '确认') + '</button>' +
-    '<button class="btn btn-ghost" style="flex:1" data-action="modal-cancel">' + t('Cancel', '取消') + '</button>' +
+    '<div class="btn-row">' +
+    '<button class="btn btn-primary" data-action="do-rename" data-uid="' + userId + '" data-cid="' + classId + '">' + t('Confirm', '确认') + '</button>' +
+    '<button class="btn btn-ghost" data-action="modal-cancel">' + t('Cancel', '取消') + '</button>' +
     '</div>';
   showModal(html);
   /* Auto-focus and select */
@@ -1117,13 +1117,13 @@ async function showMoveClassModal(userId, studentName, currentClassId) {
   });
 
   var html = '<div class="section-title">' + t('Move Student', '移动学生') + '</div>' +
-    '<p style="font-size:13px;color:var(--c-text2);margin-bottom:12px">' +
+    '<p class="text-sm text-sub mb-12">' +
     t('Move ', '移动 ') + '<strong>' + studentName + '</strong>' + t(' to:', ' 到：') + '</p>' +
     '<select class="auth-input" id="mc-target">' + opts + '</select>' +
     '<div id="mc-msg" class="settings-msg"></div>' +
-    '<div style="display:flex;gap:8px;margin-top:12px">' +
-    '<button class="btn btn-primary" style="flex:1" data-action="do-move" data-uid="' + userId + '" data-cid="' + currentClassId + '">' + t('Confirm', '确认') + '</button>' +
-    '<button class="btn btn-ghost" style="flex:1" data-action="modal-cancel">' + t('Cancel', '取消') + '</button>' +
+    '<div class="btn-row">' +
+    '<button class="btn btn-primary" data-action="do-move" data-uid="' + userId + '" data-cid="' + currentClassId + '">' + t('Confirm', '确认') + '</button>' +
+    '<button class="btn btn-ghost" data-action="modal-cancel">' + t('Cancel', '取消') + '</button>' +
     '</div>';
   showModal(html);
 }

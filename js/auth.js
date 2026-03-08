@@ -371,10 +371,10 @@ function showPasswordReset() {
     '<p style="font-size:13px;color:var(--c-text2);margin-bottom:12px">' +
     t('Enter your email and we will send a reset link.', '输入注册邮箱，我们将发送重置链接。') + '</p>' +
     '<input class="auth-input" id="reset-email" type="email" placeholder="' + t('Email', '邮箱地址') + '" value="' + (prefill || '').replace(/"/g, '&quot;') + '">' +
-    '<div id="reset-msg" style="font-size:13px;margin:8px 0;min-height:20px"></div>' +
-    '<div style="display:flex;gap:8px;margin-top:8px">' +
-    '<button class="btn btn-primary" style="flex:1" id="reset-send" onclick="sendPasswordReset()">' + t('Send Reset Link', '发送重置链接') + '</button>' +
-    '<button class="btn btn-ghost" style="flex:1" onclick="hideModal()">' + t('Cancel', '取消') + '</button>' +
+    '<div id="reset-msg" class="text-sm" style="margin:8px 0;min-height:20px"></div>' +
+    '<div class="btn-row btn-row--mt8">' +
+    '<button class="btn btn-primary" id="reset-send" onclick="sendPasswordReset()">' + t('Send Reset Link', '发送重置链接') + '</button>' +
+    '<button class="btn btn-ghost" onclick="hideModal()">' + t('Cancel', '取消') + '</button>' +
     '</div>';
   showModal(html);
 }
@@ -435,9 +435,9 @@ function showSettings() {
     gHtml += '<div>\ud83d\udd12 ' + t('Cloud sync', '\u4e91\u7aef\u540c\u6b65') + '</div>';
     gHtml += '</div></div>';
     /* Buttons */
-    gHtml += '<div style="display:flex;gap:8px;margin-top:16px">';
-    gHtml += '<button class="btn btn-primary" style="flex:1" onclick="hideModal();doLogout()">' + t('Login / Register', '\u767b\u5f55 / \u6ce8\u518c') + '</button>';
-    gHtml += '<button class="btn btn-ghost" style="flex:1" onclick="hideModal()">' + t('Close', '\u5173\u95ed') + '</button>';
+    gHtml += '<div class="btn-row btn-row--mt16">';
+    gHtml += '<button class="btn btn-primary" onclick="hideModal();doLogout()">' + t('Login / Register', '\u767b\u5f55 / \u6ce8\u518c') + '</button>';
+    gHtml += '<button class="btn btn-ghost" onclick="hideModal()">' + t('Close', '\u5173\u95ed') + '</button>';
     gHtml += '</div>';
     showModal(gHtml);
     return;
@@ -479,9 +479,9 @@ function showSettings() {
     '<button class="btn btn-ghost btn-sm" onclick="manualSync()">' + t('Sync Now', '\u7acb\u5373\u540c\u6b65') + '</button>' +
     '</div>' +
     '<div class="settings-msg" id="settings-msg"></div>' +
-    '<div style="display:flex;gap:8px;margin-top:16px">' +
-    '<button class="btn btn-primary" style="flex:1" onclick="saveSettings()">' + t('Save', '保存') + '</button>' +
-    '<button class="btn btn-ghost" style="flex:1" onclick="hideModal()">' + t('Cancel', '取消') + '</button>' +
+    '<div class="btn-row btn-row--mt16">' +
+    '<button class="btn btn-primary" onclick="saveSettings()">' + t('Save', '保存') + '</button>' +
+    '<button class="btn btn-ghost" onclick="hideModal()">' + t('Cancel', '取消') + '</button>' +
     '</div>' +
     '';
   showModal(html);

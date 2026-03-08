@@ -234,7 +234,7 @@ function dqShowIssueList(ruleId, page) {
   }
 
   /* Bottom actions */
-  html += '<div style="display:flex;gap:8px;margin-top:16px;flex-wrap:wrap">';
+  html += '<div class="btn-row btn-row--mt16 btn-row--wrap">';
   html += '<button class="btn btn-primary btn-sm" data-dq-action="copy-ai" data-rule="' + ruleId + '">' + t('Copy JSON for AI', '\u590d\u5236 JSON \u7ed9 AI') + '</button>';
   html += '<button class="btn btn-ghost btn-sm" data-dq-action="paste-back" data-rule="' + ruleId + '">' + t('Paste Back', '\u7c98\u8d34\u56de\u6765') + '</button>';
   if (rule && rule.autoFix) {
@@ -299,7 +299,7 @@ function dqShowCopyFallback(json) {
 function dqShowPasteBack(ruleId) {
   var html = '<div class="section-title">' + t('Paste AI-fixed JSON', '\u7c98\u8d34 AI \u4fee\u590d\u540e\u7684 JSON') + '</div>';
   html += '<textarea class="dq-textarea" id="dq-paste-area" rows="12" placeholder=\'[{"id":"...","tex":"..."},...]\'></textarea>';
-  html += '<div style="display:flex;gap:8px;margin-top:12px">';
+  html += '<div class="btn-row">';
   html += '<button class="btn btn-primary" data-dq-action="preview-diff" data-rule="' + ruleId + '">' + t('Preview Diff', '\u9884\u89c8\u5dee\u5f02') + '</button>';
   html += '<button class="btn btn-ghost" onclick="hideModal()">' + t('Cancel', '\u53d6\u6d88') + '</button>';
   html += '</div>';
@@ -389,7 +389,7 @@ function dqRenderDiffPreview() {
     html += '</div>';
   }
 
-  html += '<div style="display:flex;gap:8px;margin-top:16px">';
+  html += '<div class="btn-row btn-row--mt16">';
   html += '<button class="btn btn-primary" data-dq-action="apply-diffs">' + t('Apply Selected', '\u5e94\u7528\u5df2\u9009') + ' (' + diffs.filter(function(d) { return d.checked; }).length + ')</button>';
   html += '<button class="btn btn-ghost" onclick="hideModal()">' + t('Cancel', '\u53d6\u6d88') + '</button>';
   html += '</div>';

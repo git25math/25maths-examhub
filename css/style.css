@@ -3746,6 +3746,59 @@ input { font-family: inherit; }
   .mistake-def { flex-basis:100%; order:3; margin-top:2px; white-space:normal; }
 }
 
+/* ═══ UTILITY CLASSES ═══ */
+
+/* Button row — replaces inline style="display:flex;gap:8px;margin-top:Npx" */
+.btn-row { display:flex; gap:8px; margin-top:12px; }
+.btn-row--mt0 { margin-top:0; }
+.btn-row--mt8 { margin-top:8px; }
+.btn-row--mt16 { margin-top:16px; }
+.btn-row--wrap { flex-wrap:wrap; }
+.btn-row > .btn { flex:1; }
+
+/* Text color utilities — replaces inline style="color:var(--c-*)" */
+.text-danger { color:var(--c-danger); }
+.text-muted { color:var(--c-muted); }
+.text-sub { color:var(--c-text2); }
+.text-success { color:var(--c-success); }
+.text-warning { color:var(--c-warning); }
+.text-primary { color:var(--c-primary); }
+.text-center { text-align:center; }
+.text-sm { font-size:13px; }
+.text-xs { font-size:11px; }
+
+/* Spacing utilities — replaces common inline margin/padding */
+.mt-0 { margin-top:0; }
+.mt-4 { margin-top:4px; }
+.mt-8 { margin-top:8px; }
+.mt-12 { margin-top:12px; }
+.mt-16 { margin-top:16px; }
+.mt-20 { margin-top:20px; }
+.mt-24 { margin-top:24px; }
+.mb-0 { margin-bottom:0; }
+.mb-8 { margin-bottom:8px; }
+.mb-12 { margin-bottom:12px; }
+.gap-6 { gap:6px; }
+.gap-8 { gap:8px; }
+
+/* Flex utilities */
+.flex { display:flex; }
+.flex-1 { flex:1; }
+.flex-wrap { flex-wrap:wrap; }
+.flex-col { flex-direction:column; }
+.items-center { align-items:center; }
+.justify-between { justify-content:space-between; }
+
+/* Small delete/action button — replaces inline padding+color on btn-ghost btn-sm */
+.btn-icon-danger { padding:2px 6px; color:var(--c-danger); flex-shrink:0; }
+.btn-icon-danger:hover { background:var(--c-danger-bg); }
+
+/* Label no margin — replaces style="margin:0" on settings-label */
+.settings-label--compact { margin:0; }
+
+/* Homework custom word row — replaces inline cssText */
+.hw-custom-row { display:flex; gap:6px; margin-bottom:6px; align-items:center; }
+
 /* ═══ PRINT STYLES ═══ */
 @media print {
   body { background:#fff !important; color:#000 !important; }
