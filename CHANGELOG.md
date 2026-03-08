@@ -1,5 +1,28 @@
 # Changelog
 
+## [2.2.23] - 2026-03-08 — 渐进解锁系统质量优化 (Progressive Unlock Quality Fix)
+
+### 修复
+- **XSS 消除**: mastery.js 锁定按钮（行 849/874）+ syllabus.js 锁定行（行 490）移除 inline `onclick`，改用 `data-locked-msg` 属性 + 顶层事件委托 `_handleLockedClick()`
+- **HHK 解锁 bug**: `isSectionUnlocked` fallback 路径对 HHK board 使用 `_getHHKSectionStats`（多 vocabSlug 聚合），而非 `getDeckStats` 单 level 查询
+- **竞态条件**: `migrateForceUnlock()` 移除一次性 `wmatch_forceUnlocked_done` 标记，改为幂等追加；调用时机从 `initApp` 移到每个 `_loadBoardSyllabus` 完成后
+
+### 增强
+- **性能优化**: `isFeatureUnlocked()` 缓存 `getUserStage().stage` 结果 5 秒；`_renderSectionRow` 返回 `{html, stats}` 传递 prevStats 给下一行，避免重复 `getDeckStats` 调用
+- **可访问性**: 锁定按钮/行添加 `aria-disabled="true"` + `tabindex="-1"` + `title` 说明解锁条件
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `js/ui.js` | +`_handleLockedClick()` 事件委托 + `isFeatureUnlocked()` stage 缓存 |
+| `js/mastery.js` | 锁定按钮 `onclick` → `data-locked-msg` + `aria-disabled` + `tabindex` |
+| `js/syllabus.js` | 锁定行 `onclick` → `data-locked-msg` + `_renderSectionRow` 返回 `{html,stats}` + prevStats 传递 + syllabus 加载后调 `migrateForceUnlock` |
+| `js/storage.js` | `isSectionUnlocked` +prevStats 参数 + HHK fallback + `migrateForceUnlock` 幂等化 |
+| `js/app.js` | 移除 `migrateForceUnlock` 调用（已迁移到 syllabus.js） |
+| `js/config.js` | v2.2.22 → v2.2.23 |
+
+---
+
 ## [2.2.22] - 2026-03-08 — 百度翻译接入 (Baidu Translate Integration)
 
 ### 增强

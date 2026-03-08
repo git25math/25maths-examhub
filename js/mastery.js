@@ -846,7 +846,7 @@ function renderDeck(idx) {
       html += '<button class="mode-btn mode-btn-path" onclick="' + m.fn + '">';
       if (done) html += '<span class="mode-done">\u2713</span>';
     } else {
-      html += '<button class="mode-btn mode-btn-path mode-btn-locked" onclick="showToast(t(\'Complete the previous mode first\',\'\u8bf7\u5148\u5b8c\u6210\u524d\u4e00\u4e2a\u6a21\u5f0f\'));return false">';
+      html += '<button class="mode-btn mode-btn-path mode-btn-locked" data-locked-msg="mode" aria-disabled="true" tabindex="-1" title="' + t('Complete the previous mode first', '请先完成前一个模式') + '">';
       html += '<span class="mode-lock">\ud83d\udd12</span>';
     }
     html += '<div class="mode-emoji">' + m.emoji + '</div>';
@@ -871,7 +871,7 @@ function renderDeck(idx) {
       html += '<button class="mode-btn mode-btn-extra" onclick="' + m.fn + '">';
       if (done) html += '<span class="mode-done">\u2713</span>';
     } else {
-      html += '<button class="mode-btn mode-btn-extra mode-btn-locked" onclick="showToast(t(\'Complete Study mode first\',\'\u8bf7\u5148\u5b8c\u6210\u5b66\u4e60\u6a21\u5f0f\'));return false">';
+      html += '<button class="mode-btn mode-btn-extra mode-btn-locked" data-locked-msg="study" aria-disabled="true" tabindex="-1" title="' + t('Complete Study mode first', '请先完成学习模式') + '">';
       html += '<span class="mode-lock">\ud83d\udd12</span>';
     }
     html += '<div class="mode-emoji">' + m.emoji + '</div>';

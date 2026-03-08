@@ -586,12 +586,22 @@ function _getForceUnlocked() {
   try { return JSON.parse(localStorage.getItem('wmatch_forceUnlocked') || '{}'); } catch(e) { return {}; }
 }
 
-function isSectionUnlocked(secId, secIdx, prevSecId, board) {
+function isSectionUnlocked(secId, secIdx, prevSecId, board, prevStats) {
   if (secIdx === 0) return true; /* first section always open */
   var fu = _getForceUnlocked();
   if (fu[secId]) return true;
   if (!prevSecId) return true;
-  /* Check previous section learningPct >= 80 */
+  /* Use pre-computed prevStats when available (avoids redundant getDeckStats) */
+  if (prevStats) return prevStats.learningPct >= 80;
+  /* Fallback: compute stats for previous section */
+  if (board === 'hhk') {
+    var prevInfo = typeof getSectionInfo === 'function' ? getSectionInfo(prevSecId, 'hhk') : null;
+    if (prevInfo && prevInfo.section) {
+      var hhkStats = typeof _getHHKSectionStats === 'function' ? _getHHKSectionStats(prevInfo.section) : null;
+      return hhkStats ? hhkStats.learningPct >= 80 : true;
+    }
+    return true;
+  }
   var prevLi = typeof getSectionLevelIdx === 'function' ? getSectionLevelIdx(prevSecId, board) : -1;
   if (prevLi < 0) return true;
   var stats = typeof getDeckStats === 'function' ? getDeckStats(prevLi) : null;
@@ -601,10 +611,10 @@ function isSectionUnlocked(secId, secIdx, prevSecId, board) {
 
 function migrateForceUnlock() {
   try {
-    if (localStorage.getItem('wmatch_forceUnlocked_done')) return;
-    var fu = {};
+    var fu = _getForceUnlocked();
     var wd = getWordData();
-    /* Scan all boards' sections */
+    var changed = false;
+    /* Scan all boards' sections — idempotent, only appends new entries */
     var boards = ['cie', 'edexcel', 'hhk'];
     for (var bi = 0; bi < boards.length; bi++) {
       var bKey = boards[bi];
@@ -616,18 +626,18 @@ function migrateForceUnlock() {
         for (var si = 0; si < secs.length; si++) {
           if (si === 0) continue; /* first is always open */
           var sec = secs[si];
+          if (fu[sec.id]) continue; /* already unlocked */
           var li = typeof getSectionLevelIdx === 'function' ? getSectionLevelIdx(sec.id, bKey) : -1;
           if (li >= 0) {
             var ds = typeof getDeckStats === 'function' ? getDeckStats(li, wd) : null;
-            if (ds && ds.started > 0) fu[sec.id] = true;
+            if (ds && ds.started > 0) { fu[sec.id] = true; changed = true; }
           }
         }
       }
     }
-    if (Object.keys(fu).length > 0) {
+    if (changed) {
       localStorage.setItem('wmatch_forceUnlocked', JSON.stringify(fu));
     }
-    localStorage.setItem('wmatch_forceUnlocked_done', '1');
   } catch(e) {}
 }
 

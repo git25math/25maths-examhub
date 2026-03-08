@@ -885,11 +885,31 @@ var FEATURE_STAGE = {
   match: 'active', battle: 'active', practice: 'active',
   diagnostic: 'intermediate', mock: 'advanced'
 };
+var _cachedStage = null, _cachedStageTs = 0;
 function isFeatureUnlocked(f) {
   var required = FEATURE_STAGE[f] || 'new';
-  var cur = getUserStage().stage;
-  return STAGE_ORDER.indexOf(cur) >= STAGE_ORDER.indexOf(required);
+  var now = Date.now();
+  if (!_cachedStage || now - _cachedStageTs > 5000) {
+    _cachedStage = getUserStage().stage;
+    _cachedStageTs = now;
+  }
+  return STAGE_ORDER.indexOf(_cachedStage) >= STAGE_ORDER.indexOf(required);
 }
+
+/* ═══ LOCKED ELEMENT CLICK DELEGATION (XSS-safe) ═══ */
+function _handleLockedClick(e) {
+  var el = e.target.closest('.mode-btn-locked, .deck-row.locked');
+  if (!el) return;
+  e.stopPropagation();
+  var key = el.getAttribute('data-locked-msg');
+  var msgs = {
+    mode: t('Complete the previous mode first', '请先完成前一个模式'),
+    study: t('Complete Study mode first', '请先完成学习模式'),
+    section: t('Complete the previous section first (80%+)', '请先完成上一个知识点(80%+)')
+  };
+  showToast(msgs[key] || msgs.mode);
+}
+document.addEventListener('click', _handleLockedClick);
 
 var _activeNudge = null;
 var _lastNudgeShownAt = 0;

@@ -111,15 +111,18 @@ function _loadBoardSyllabus(board) {
     if (typeof _levelsReady !== 'undefined' && _levelsReady) {
       _setBoardReady(board);
       _initBoardLevels(board);
+      if (typeof migrateForceUnlock === 'function') migrateForceUnlock();
     } else if (typeof onLevelsReady === 'function') {
       onLevelsReady(function() {
         _setBoardReady(board);
         _initBoardLevels(board);
+        if (typeof migrateForceUnlock === 'function') migrateForceUnlock();
         if (typeof scheduleRenderHome === 'function') scheduleRenderHome();
       });
     } else {
       _setBoardReady(board);
       _initBoardLevels(board);
+      if (typeof migrateForceUnlock === 'function') migrateForceUnlock();
     }
   }).catch(function(e) {
     console.error('Failed to load ' + board + ' syllabus data:', e);
@@ -397,9 +400,12 @@ function _renderBoardHome(board) {
       }
     }
 
+    var prevSecStats = null;
     visibleSections.forEach(function(sec, vi) {
       var prevSecId = vi > 0 ? visibleSections[vi - 1].id : null;
-      html += _renderSectionRow(sec, ch, board, wd, vi, prevSecId);
+      var result = _renderSectionRow(sec, ch, board, wd, vi, prevSecId, prevSecStats);
+      html += result.html;
+      prevSecStats = result.stats;
     });
 
     html += '</div></div>';
@@ -462,7 +468,7 @@ function _getHHKSectionStats(sec, _wd) {
 }
 
 /* Render a single section row in the home view */
-function _renderSectionRow(sec, ch, board, _wd, secIdx, prevSecId) {
+function _renderSectionRow(sec, ch, board, _wd, secIdx, prevSecId, prevStats) {
   board = board || 'cie';
   var vocab = BOARD_VOCAB[board] || {};
   var li = getSectionLevelIdx(sec.id, board);
@@ -474,8 +480,8 @@ function _renderSectionRow(sec, ch, board, _wd, secIdx, prevSecId) {
     stats = li >= 0 ? getDeckStats(li, _wd) : { pct: 0, started: 0, total: words.length, learningPct: 0, masteryPct: 0 };
   }
 
-  /* Section sequential unlock */
-  var secUnlocked = typeof isSectionUnlocked !== 'function' || secIdx === undefined || isSectionUnlocked(sec.id, secIdx, prevSecId, board);
+  /* Section sequential unlock — pass prevStats to avoid redundant getDeckStats */
+  var secUnlocked = typeof isSectionUnlocked !== 'function' || secIdx === undefined || isSectionUnlocked(sec.id, secIdx, prevSecId, board, prevStats);
 
   var tierBadge = '';
   if (sec.tier === 'extended') tierBadge = ' <span class="tier-badge tier-ext">E</span>';
@@ -487,7 +493,7 @@ function _renderSectionRow(sec, ch, board, _wd, secIdx, prevSecId) {
   if (secUnlocked) {
     h += '<div class="deck-row" onclick="openSection(\'' + sec.id + '\',\'' + board + '\')">';
   } else {
-    h += '<div class="deck-row locked" onclick="showToast(t(\'Complete the previous section first (80%+)\',\'\u8bf7\u5148\u5b8c\u6210\u4e0a\u4e00\u4e2a\u77e5\u8bc6\u70b9(80%+)\'))">';
+    h += '<div class="deck-row locked" data-locked-msg="section" aria-disabled="true" tabindex="-1" title="' + t('Complete the previous section first (80%+)', '请先完成上一个知识点(80%+)') + '">';
   }
   h += '<span class="deck-row-tag sec-tag">' + sec.id + '</span>';
   h += '<span class="deck-row-name">' + escapeHtml(sec.title);
@@ -502,7 +508,7 @@ function _renderSectionRow(sec, ch, board, _wd, secIdx, prevSecId) {
     if (stats.pct >= 80) h += '<span class="sec-done-check">\u2713</span>';
   }
   h += '</div>';
-  return h;
+  return { html: h, stats: stats };
 }
 
 /* Toggle chapter collapse */

@@ -5,8 +5,7 @@
 onLevelsReady(function() {
 (async function initApp() {
   updateAuthLang();
-  /* Migrate force-unlock for existing users (one-time) */
-  if (typeof migrateForceUnlock === 'function') migrateForceUnlock();
+  /* migrateForceUnlock is called after each syllabus board loads (syllabus.js) */
   /* Load custom levels from storage */
   var custom = getCustomLevels();
   if (custom.length > 0) {
