@@ -5,7 +5,7 @@
 /* isTeacherUser moved to config.js */
 var _teacherData = null;   /* { id, school_id, display_name } */
 var _schoolData = null;    /* { id, name, code } */
-var _adminTab = 'classes'; /* 'classes' | 'grade' | 'school' */
+var _adminTab = null; /* set on first render */
 var _adminCache = null;    /* cached student_activity_view rows */
 var _adminCacheAt = 0;
 
@@ -87,6 +87,11 @@ async function loadActivityData(force) {
 function renderAdmin() {
   var el = E('panel-admin');
   if (!el || (!isTeacherUser && !(typeof isSuperAdmin === 'function' && isSuperAdmin()))) return;
+
+  /* Default tab: super admin → allusers, teacher → classes */
+  if (!_adminTab) {
+    _adminTab = (typeof isSuperAdmin === 'function' && isSuperAdmin() && !_teacherData) ? 'allusers' : 'classes';
+  }
 
   var html = '<div class="admin-header">' +
     '<div class="section-title">' + t('Admin Panel', '管理面板') + '</div>' +
@@ -762,86 +767,180 @@ async function renderSchoolOverview() {
 }
 
 /* ═══ ALL USERS (super admin) ═══ */
+var _auData = null;       /* cached leaderboard rows */
+var _auSort = 'updated_at'; /* sort column */
+var _auSortAsc = false;
+var _auFilter = '';       /* board filter: '' = all */
+var _auSearch = '';       /* search term */
+
 async function renderAllUsers() {
   var ct = E('admin-content');
   if (!ct) return;
-  ct.innerHTML = '<div class="admin-loading">' + t('Loading all users...', '加载全部用户...') + '</div>';
 
-  try {
-    var res = await sb.from('leaderboard')
-      .select('user_id, nickname, score, mastery_pct, mastered_words, total_words, rank_emoji, board, school_id, class_id, updated_at')
-      .order('updated_at', { ascending: false });
-    var users = res.data || [];
+  if (!_auData) {
+    ct.innerHTML = '<div class="admin-loading">' + t('Loading all users...', '加载全部用户...') + '</div>';
+    try {
+      var res = await sb.from('leaderboard')
+        .select('user_id, nickname, score, mastery_pct, mastered_words, total_words, rank_emoji, board, school_id, class_id, updated_at')
+        .order('updated_at', { ascending: false });
+      _auData = res.data || [];
+    } catch (e) {
+      ct.innerHTML = '<div class="admin-empty">' + escapeHtml(e.message) + '</div>';
+      return;
+    }
+  }
 
-    /* Summary */
-    var now = Date.now();
-    var active7d = users.filter(function(u) { return u.updated_at && (now - new Date(u.updated_at).getTime()) < 7 * 86400000; }).length;
-    var active30d = users.filter(function(u) { return u.updated_at && (now - new Date(u.updated_at).getTime()) < 30 * 86400000; }).length;
-    var avgPct = users.length > 0 ? Math.round(users.reduce(function(s, u) { return s + (u.mastery_pct || 0); }, 0) / users.length) : 0;
+  var users = _auData;
 
-    var html = '<div class="admin-summary-grid">';
-    html += summaryCard(t('Total Users', '总用户'), users.length, 'var(--c-primary)');
-    html += summaryCard(t('Active (7d)', '活跃(7天)'), active7d, 'var(--c-success)');
-    html += summaryCard(t('Active (30d)', '活跃(30天)'), active30d, 'var(--c-warning)');
-    html += summaryCard(t('Avg Mastery', '平均掌握率'), avgPct + '%', 'var(--c-primary-dark)');
-    html += '</div>';
+  /* Summary (always on full data) */
+  var now = Date.now();
+  var active7d = users.filter(function(u) { return u.updated_at && (now - new Date(u.updated_at).getTime()) < 7 * 86400000; }).length;
+  var active30d = users.filter(function(u) { return u.updated_at && (now - new Date(u.updated_at).getTime()) < 30 * 86400000; }).length;
+  var avgPct = users.length > 0 ? Math.round(users.reduce(function(s, u) { return s + (u.mastery_pct || 0); }, 0) / users.length) : 0;
 
-    /* Board distribution */
-    var boardMap = {};
-    users.forEach(function(u) {
-      var b = u.board || 'unknown';
-      boardMap[b] = (boardMap[b] || 0) + 1;
+  var html = '<div class="admin-summary-grid">';
+  html += summaryCard(t('Total Users', '总用户'), users.length, 'var(--c-primary)');
+  html += summaryCard(t('Active (7d)', '活跃(7天)'), active7d, 'var(--c-success)');
+  html += summaryCard(t('Active (30d)', '活跃(30天)'), active30d, 'var(--c-warning)');
+  html += summaryCard(t('Avg Mastery', '平均掌握率'), avgPct + '%', 'var(--c-primary-dark)');
+  html += '</div>';
+
+  /* Board filter pills */
+  var boardMap = {};
+  users.forEach(function(u) { var b = u.board || 'unknown'; boardMap[b] = (boardMap[b] || 0) + 1; });
+  var boardKeys = Object.keys(boardMap).sort();
+  html += '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;align-items:center">';
+  html += '<button class="dq-pill' + (!_auFilter ? ' active' : '') + '" data-au-filter="">' + t('All', '全部') + ' (' + users.length + ')</button>';
+  boardKeys.forEach(function(b) {
+    html += '<button class="dq-pill' + (_auFilter === b ? ' active' : '') + '" data-au-filter="' + escapeHtml(b) + '">' + escapeHtml(b) + ': ' + boardMap[b] + '</button>';
+  });
+  html += '</div>';
+
+  /* Search + actions bar */
+  html += '<div style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;align-items:center">';
+  html += '<input type="text" class="auth-input" id="au-search" placeholder="' + t('Search name...', '搜索姓名...') + '" value="' + escapeHtml(_auSearch) + '" style="flex:1;min-width:160px;max-width:300px">';
+  html += '<button class="btn btn-ghost btn-sm" data-au-action="refresh">' + t('Refresh', '刷新') + '</button>';
+  html += '<button class="btn btn-primary btn-sm" data-au-action="csv">' + t('Export CSV', '导出 CSV') + '</button>';
+  html += '</div>';
+
+  /* Apply filter + search */
+  var filtered = users;
+  if (_auFilter) filtered = filtered.filter(function(u) { return (u.board || 'unknown') === _auFilter; });
+  if (_auSearch) {
+    var q = _auSearch.toLowerCase();
+    filtered = filtered.filter(function(u) { return (u.nickname || '').toLowerCase().indexOf(q) >= 0; });
+  }
+
+  /* Sort */
+  var sortKey = _auSort;
+  var asc = _auSortAsc;
+  filtered.sort(function(a, b) {
+    var va = a[sortKey], vb = b[sortKey];
+    if (va == null) va = sortKey === 'updated_at' ? '' : 0;
+    if (vb == null) vb = sortKey === 'updated_at' ? '' : 0;
+    if (typeof va === 'string') { va = va.toLowerCase(); vb = (vb || '').toLowerCase(); }
+    if (va < vb) return asc ? -1 : 1;
+    if (va > vb) return asc ? 1 : -1;
+    return 0;
+  });
+
+  /* Table */
+  if (filtered.length === 0) {
+    html += '<div class="admin-empty">' + t('No matching users', '无匹配用户') + '</div>';
+  } else {
+    var cols = [
+      { key: 'nickname', en: 'Name', zh: '姓名' },
+      { key: 'board', en: 'Board', zh: '课程' },
+      { key: 'mastery_pct', en: 'Mastery', zh: '掌握率' },
+      { key: 'mastered_words', en: 'Words', zh: '词汇' },
+      { key: 'score', en: 'Score', zh: '得分' },
+      { key: 'updated_at', en: 'Last Active', zh: '最后活跃' }
+    ];
+    html += '<div class="admin-table-wrap"><table class="admin-student-table"><thead><tr><th>#</th>';
+    cols.forEach(function(c) {
+      var arrow = _auSort === c.key ? (_auSortAsc ? ' ▲' : ' ▼') : '';
+      html += '<th style="cursor:pointer" data-au-sort="' + c.key + '">' + t(c.en, c.zh) + arrow + '</th>';
     });
-    var boardKeys = Object.keys(boardMap).sort();
-    if (boardKeys.length > 0) {
-      html += '<div style="margin-bottom:16px;display:flex;gap:8px;flex-wrap:wrap">';
-      boardKeys.forEach(function(b) {
-        html += '<span class="dq-pill">' + escapeHtml(b) + ': ' + boardMap[b] + '</span>';
-      });
-      html += '</div>';
-    }
+    html += '<th>' + t('Rank', '段位') + '</th>';
+    html += '</tr></thead><tbody>';
 
-    /* User table */
-    if (users.length === 0) {
-      html += '<div class="admin-empty">' + t('No users yet', '暂无用户') + '</div>';
-    } else {
-      html += '<div class="admin-table-wrap"><table class="admin-student-table"><thead><tr>';
-      html += '<th>#</th>';
-      html += '<th>' + t('Name', '姓名') + '</th>';
-      html += '<th>' + t('Board', '课程') + '</th>';
-      html += '<th>' + t('Mastery', '掌握率') + '</th>';
-      html += '<th>' + t('Words', '词汇') + '</th>';
-      html += '<th>' + t('Score', '得分') + '</th>';
-      html += '<th>' + t('Rank', '段位') + '</th>';
-      html += '<th>' + t('Last Active', '最后活跃') + '</th>';
-      html += '</tr></thead><tbody>';
+    filtered.forEach(function(u, i) {
+      var lastActive = u.updated_at ? timeAgo(u.updated_at) : t('Never', '从未');
+      var pct = u.mastery_pct || 0;
+      html += '<tr>';
+      html += '<td>' + (i + 1) + '</td>';
+      html += '<td class="admin-td-name">' + escapeHtml(u.nickname || t('Anonymous', '匿名')) + '</td>';
+      html += '<td>' + escapeHtml(u.board || '-') + '</td>';
+      html += '<td class="admin-td-mastery">';
+      html += '<div class="admin-progress"><div class="admin-progress-fill" style="width:' + pct + '%"></div></div>';
+      html += '<span class="admin-pct">' + pct + '%</span></td>';
+      html += '<td class="admin-td-words">' + (u.mastered_words || 0) + '/' + (u.total_words || 0) + '</td>';
+      html += '<td>' + (u.score || 0) + '</td>';
+      html += '<td class="admin-td-time">' + lastActive + '</td>';
+      html += '<td>' + (u.rank_emoji || '') + '</td>';
+      html += '</tr>';
+    });
+    html += '</tbody></table></div>';
+    html += '<div style="font-size:12px;color:var(--c-text2);margin-top:4px">' + t('Showing', '显示') + ' ' + filtered.length + ' / ' + users.length + '</div>';
+  }
 
-      users.forEach(function(u, i) {
-        var lastActive = u.updated_at ? timeAgo(u.updated_at) : t('Never', '从未');
-        var pct = u.mastery_pct || 0;
-        html += '<tr>';
-        html += '<td>' + (i + 1) + '</td>';
-        html += '<td class="admin-td-name">' + escapeHtml(u.nickname || t('Anonymous', '匿名')) + '</td>';
-        html += '<td>' + escapeHtml(u.board || '-') + '</td>';
-        html += '<td class="admin-td-mastery">';
-        html += '<div class="admin-progress"><div class="admin-progress-fill" style="width:' + pct + '%"></div></div>';
-        html += '<span class="admin-pct">' + pct + '%</span>';
-        html += '</td>';
-        html += '<td class="admin-td-words">' + (u.mastered_words || 0) + '/' + (u.total_words || 0) + '</td>';
-        html += '<td>' + (u.score || 0) + '</td>';
-        html += '<td>' + (u.rank_emoji || '') + '</td>';
-        html += '<td class="admin-td-time">' + lastActive + '</td>';
-        html += '</tr>';
-      });
+  ct.innerHTML = html;
 
-      html += '</tbody></table></div>';
-    }
-
-    ct.innerHTML = html;
-  } catch (e) {
-    ct.innerHTML = '<div class="admin-empty">' + escapeHtml(e.message) + '</div>';
+  /* Bind search input (debounced) */
+  var inp = E('au-search');
+  if (inp) {
+    inp.addEventListener('input', function() {
+      clearTimeout(inp._t);
+      inp._t = setTimeout(function() { _auSearch = inp.value.trim(); _auRender(); }, 300);
+    });
   }
 }
+
+/* Re-render without re-fetching */
+function _auRender() { var ct = E('admin-content'); if (ct) renderAllUsers(); }
+
+/* CSV export */
+function _auExportCSV() {
+  if (!_auData || _auData.length === 0) return;
+  var rows = [['Name', 'Board', 'Mastery%', 'Mastered', 'Total', 'Score', 'Rank', 'Last Active'].join(',')];
+  _auData.forEach(function(u) {
+    rows.push([
+      '"' + (u.nickname || '').replace(/"/g, '""') + '"',
+      u.board || '',
+      u.mastery_pct || 0,
+      u.mastered_words || 0,
+      u.total_words || 0,
+      u.score || 0,
+      '"' + (u.rank_emoji || '') + '"',
+      u.updated_at || ''
+    ].join(','));
+  });
+  var blob = new Blob([rows.join('\n')], { type: 'text/csv' });
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href = url; a.download = 'all-users-' + new Date().toISOString().slice(0, 10) + '.csv';
+  a.click(); URL.revokeObjectURL(url);
+  showToast(t('CSV exported', 'CSV 已导出'));
+}
+
+/* Event delegation for All Users */
+document.addEventListener('click', function(e) {
+  var pill = e.target.closest('[data-au-filter]');
+  if (pill) { _auFilter = pill.dataset.auFilter; _auRender(); return; }
+
+  var sort = e.target.closest('[data-au-sort]');
+  if (sort) {
+    var key = sort.dataset.auSort;
+    if (_auSort === key) _auSortAsc = !_auSortAsc;
+    else { _auSort = key; _auSortAsc = key === 'nickname'; }
+    _auRender(); return;
+  }
+
+  var act = e.target.closest('[data-au-action]');
+  if (!act) return;
+  if (act.dataset.auAction === 'refresh') { _auData = null; renderAllUsers(); }
+  else if (act.dataset.auAction === 'csv') { _auExportCSV(); }
+});
 
 function summaryCard(label, value, color) {
   return '<div class="admin-summary-card">' +
