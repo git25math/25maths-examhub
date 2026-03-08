@@ -278,8 +278,8 @@ async function exportProgress() {
     levels: LEVELS.map(function(lv, i) {
       return { index: i, title: lv.title, best: getBest(i) };
     }),
-    words: getAllWords().map(function(w) {
-      var d = getWordData()[w.key];
+    words: (function() { var wd = getWordData(); return getAllWords().map(function(w) {
+      var d = wd[w.key];
       return {
         word: w.word, def: w.def, level: w.level,
         status: w.status, srsLevel: w.lv,
@@ -288,7 +288,7 @@ async function exportProgress() {
         nextReview: d ? new Date(d.nr).toISOString() : null,
         lastReview: d ? new Date(d.lr).toISOString() : null
       };
-    })
+    }); })()
   };
 
   downloadBlob(new Blob([JSON.stringify(data, null, 2)], { type: 'application/json;charset=utf-8;' }), 'learning-progress.json');

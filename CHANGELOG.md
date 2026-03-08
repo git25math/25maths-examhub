@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.2.25] - 2026-03-08 — 空引用防护 + 性能优化
+
+### 修复
+- **showNudge 空引用防护**: `el.querySelector('.guide-nudge-close')` 添加 null check，防止 DOM 异常时崩溃
+- **spell.js input 防护**: `E('spell-input')` 添加 null check 后再绑定 keydown 监听器
+- **export.js 性能优化**: `getWordData()` 从 `getAllWords().map()` 循环内提取到局部变量，避免 2,200 次冗余函数调用
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `js/ui.js` | showNudge close 按钮 null check |
+| `js/export.js` | getWordData() 缓存到局部变量 |
+| `js/spell.js` | input null check |
+| `js/config.js` | v2.2.24 → v2.2.25 |
+
+---
+
 ## [2.2.24] - 2026-03-08 — 划词翻译质量优化
 
 ### 优化

@@ -943,7 +943,8 @@ function showNudge(key, msg, actionLabel, actionFn) {
   if (btn && actionFn) btn.addEventListener('click', function() { el.remove(); _activeNudge = null; actionFn(); });
 
   /* Close (permanent dismiss) */
-  el.querySelector('.guide-nudge-close').addEventListener('click', function() {
+  var closeBtn = el.querySelector('.guide-nudge-close');
+  if (closeBtn) closeBtn.addEventListener('click', function() {
     try {
       var r = JSON.parse(localStorage.getItem(storeKey) || '{}');
       r.d = 1;
