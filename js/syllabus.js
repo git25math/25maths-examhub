@@ -653,9 +653,10 @@ function renderSectionDetail(ch, sec, secIdx, board) {
   var _jVocabDone = stats.learningPct >= 80;
   var _jQuizDone = false;
   if (board === 'hhk' && sec.vocabSlugs) {
-    for (var _qi = 0; _qi < LEVELS.length; _qi++) {
-      if (sec.vocabSlugs.indexOf(LEVELS[_qi].slug) >= 0 && isModeDone(_qi, 'quiz')) { _jQuizDone = true; break; }
-    }
+    sec.vocabSlugs.forEach(function(slug) {
+      var idx = getLevelIdxBySlug(slug);
+      if (idx >= 0 && isModeDone(idx, 'quiz')) _jQuizDone = true;
+    });
   } else if (li >= 0) {
     _jQuizDone = isModeDone(li, 'quiz');
   }
@@ -671,9 +672,8 @@ function renderSectionDetail(ch, sec, secIdx, board) {
   /* Resolve level index for vocab/quiz step clicks */
   var _jLevelIdx = li;
   if (board === 'hhk' && sec.vocabSlugs && sec.vocabSlugs.length > 0) {
-    for (var _vi = 0; _vi < LEVELS.length; _vi++) {
-      if (LEVELS[_vi].slug === sec.vocabSlugs[0]) { _jLevelIdx = _vi; break; }
-    }
+    var _viIdx = getLevelIdxBySlug(sec.vocabSlugs[0]);
+    if (_viIdx >= 0) _jLevelIdx = _viIdx;
   }
 
   html += '<div class="sec-journey" id="sec-journey-bar">';
@@ -707,19 +707,17 @@ function renderSectionDetail(ch, sec, secIdx, board) {
     /* Sub-deck rows */
     var wd = getWordData();
     sec.vocabSlugs.forEach(function(slug, si) {
-      for (var _li = 0; _li < LEVELS.length; _li++) {
-        if (LEVELS[_li].slug !== slug) continue;
-        var subStats = getDeckStats(_li, wd);
-        var subTitle = LEVELS[_li].title || ('Group ' + (si + 1));
-        html += '<div class="deck-row" style="margin:0" onclick="openDeck(' + _li + ')">';
-        html += '<span class="deck-row-tag">' + (si + 1) + '</span>';
-        html += '<span class="deck-row-name">' + escapeHtml(subTitle) + '</span>';
-        html += '<span class="deck-row-count">' + subStats.started + '/' + subStats.total + '</span>';
-        html += '<span class="deck-row-progress"><span class="deck-row-progress-fill" style="width:' + subStats.pct + '%"></span></span>';
-        html += '<span class="deck-row-pct">' + subStats.pct + '%</span>';
-        html += '</div>';
-        break;
-      }
+      var _li = getLevelIdxBySlug(slug);
+      if (_li < 0) return;
+      var subStats = getDeckStats(_li, wd);
+      var subTitle = LEVELS[_li].title || ('Group ' + (si + 1));
+      html += '<div class="deck-row" style="margin:0" onclick="openDeck(' + _li + ')">';
+      html += '<span class="deck-row-tag">' + (si + 1) + '</span>';
+      html += '<span class="deck-row-name">' + escapeHtml(subTitle) + '</span>';
+      html += '<span class="deck-row-count">' + subStats.started + '/' + subStats.total + '</span>';
+      html += '<span class="deck-row-progress"><span class="deck-row-progress-fill" style="width:' + subStats.pct + '%"></span></span>';
+      html += '<span class="deck-row-pct">' + subStats.pct + '%</span>';
+      html += '</div>';
     });
     html += '</div>';
   } else if (words.length > 0 && li >= 0) {
@@ -988,11 +986,10 @@ function getSectionHealth(sectionId, board) {
         if (typeof isModeDone === 'function') {
           /* Check if any vocab level for this section has practice done */
           if (secInfo.section.vocabSlugs) {
-            for (var _pi = 0; _pi < LEVELS.length; _pi++) {
-              if (secInfo.section.vocabSlugs.indexOf(LEVELS[_pi].slug) >= 0 && isModeDone(_pi, 'practice')) {
-                practiceScore = 100; break;
-              }
-            }
+            secInfo.section.vocabSlugs.forEach(function(slug) {
+              var idx = getLevelIdxBySlug(slug);
+              if (idx >= 0 && isModeDone(idx, 'practice')) practiceScore = 100;
+            });
           }
         }
       }
@@ -1102,9 +1099,10 @@ function getSectionMilestone(sectionId, board) {
   if (board === 'hhk') {
     var secInfo = getSectionInfo(sectionId, 'hhk');
     if (secInfo && secInfo.section.vocabSlugs) {
-      for (var _i = 0; _i < LEVELS.length; _i++) {
-        if (secInfo.section.vocabSlugs.indexOf(LEVELS[_i].slug) >= 0 && isModeDone(_i, 'quiz')) { quizDone = true; break; }
-      }
+      secInfo.section.vocabSlugs.forEach(function(slug) {
+        var idx = getLevelIdxBySlug(slug);
+        if (idx >= 0 && isModeDone(idx, 'quiz')) quizDone = true;
+      });
     }
   } else if (li >= 0) {
     quizDone = isModeDone(li, 'quiz');

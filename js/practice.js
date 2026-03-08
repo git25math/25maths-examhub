@@ -13,7 +13,6 @@ var _pqEditorQid = null;      /* qid of question currently in editor */
 var _pqReviewState = null;    /* { li, questions, board } — current review context */
 var _pqReviewFilter = 'all';  /* 'all' | 1 (Core) | 2 (Extended) */
 var _pqReviewTopicFilter = 'all'; /* 'all' | topic name string */
-var _pqReviewDelegated = false;
 var _pqReviewDelegated = false; /* event delegation bound flag */
 
 /* ═══ KATEX LAZY LOADING ═══ */
@@ -832,7 +831,7 @@ function pqUploadImage(input) {
       var url = SUPABASE_URL + '/storage/v1/object/public/question-images/' + path;
       _pqInsertAtCursor('<img src="' + url + '" alt="">');
       showToast(t('Image inserted!', '图片已插入！'));
-    });
+    }).catch(function() { showToast('Upload error'); });
   /* Reset file input */
   input.value = '';
 }

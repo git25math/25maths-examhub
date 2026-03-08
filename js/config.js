@@ -268,14 +268,23 @@ function getCategoryInfo(catId) {
 
 /* ═══ LEVEL SLUG INDEX ═══ */
 var _levelSlugMap = null;
-function getLevelBySlug(slug) {
+function _ensureSlugMap() {
   if (!_levelSlugMap) {
     _levelSlugMap = {};
     for (var i = 0; i < LEVELS.length; i++) {
-      _levelSlugMap[LEVELS[i].slug] = LEVELS[i];
+      _levelSlugMap[LEVELS[i].slug] = { level: LEVELS[i], idx: i };
     }
   }
-  return _levelSlugMap[slug] || null;
+}
+function getLevelBySlug(slug) {
+  _ensureSlugMap();
+  var entry = _levelSlugMap[slug];
+  return entry ? entry.level : null;
+}
+function getLevelIdxBySlug(slug) {
+  _ensureSlugMap();
+  var entry = _levelSlugMap[slug];
+  return entry ? entry.idx : -1;
 }
 
 /* ═══ i18n HELPERS ═══ */
@@ -351,7 +360,7 @@ function isSuperAdmin() {
 }
 
 /* App version */
-var APP_VERSION = 'v2.2.10';
+var APP_VERSION = 'v2.2.11';
 
 /* ═══ TEACHER ROLE (shared across modules) ═══ */
 var isTeacherUser = false;

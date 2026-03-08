@@ -492,6 +492,7 @@ async function doCreateHw(classId) {
 
     /* Send notifications to all students in this class (batch INSERT) */
     var csRes = await sb.from('kw_class_students').select('user_id').eq('class_id', classId);
+    if (csRes.error) return;
     var students = csRes.data || [];
     if (students.length > 0) {
       var notifRows = students.map(function(s) {
@@ -610,6 +611,7 @@ async function renderClassHwList(classId) {
 
   try {
     var res = await sb.rpc('list_class_assignments', { p_class_id: classId });
+    if (res.error) { ct.innerHTML = '<div class="text-sm text-muted">' + t('Failed to load', '加载失败') + '</div>'; return; }
     var hws = res.data || [];
 
     if (hws.length === 0) {
@@ -622,6 +624,7 @@ async function renderClassHwList(classId) {
     var rRes = await sb.from('assignment_results')
       .select('assignment_id, user_id, completed_at')
       .in('assignment_id', hwIds);
+    if (rRes.error) { ct.innerHTML = '<div class="text-sm text-muted">' + t('Failed to load results', '加载结果失败') + '</div>'; return; }
     var allResults = rRes.data || [];
     var resultsByHw = {};
     allResults.forEach(function(r) {
@@ -1284,14 +1287,15 @@ async function finishHwTest() {
       last_attempt_at: now
     };
 
-    await sb.from('assignment_results').upsert(resultData, { onConflict: 'assignment_id,user_id' });
+    var upsRes = await sb.from('assignment_results').upsert(resultData, { onConflict: 'assignment_id,user_id' });
+    if (upsRes.error) return;
 
     /* Notify teacher about completion */
     var aRes = await sb.rpc('get_assignment', { p_id: t_.hwId });
     var hwData = (aRes.data && aRes.data.length > 0) ? aRes.data[0] : null;
     if (hwData) {
       var tRes = await sb.from('teachers').select('user_id').eq('id', hwData.teacher_id).single();
-      if (tRes.data) {
+      if (tRes.data && !tRes.error) {
         await sendNotification(tRes.data.user_id, 'hw_result',
           getDisplayName() + ' ' + t('completed homework', '完成了作业'),
           t_.title + ' — ' + t_.correct + '/' + t_.total + ' (' + pct + '%)',
@@ -1531,14 +1535,15 @@ async function finishHwPractice() {
       last_attempt_at: now
     };
 
-    await sb.from('assignment_results').upsert(resultData, { onConflict: 'assignment_id,user_id' });
+    var upsRes2 = await sb.from('assignment_results').upsert(resultData, { onConflict: 'assignment_id,user_id' });
+    if (upsRes2.error) return;
 
     /* Notify teacher */
     var aRes = await sb.rpc('get_assignment', { p_id: s.hwId });
     var hwData = (aRes.data && aRes.data.length > 0) ? aRes.data[0] : null;
     if (hwData) {
       var tRes = await sb.from('teachers').select('user_id').eq('id', hwData.teacher_id).single();
-      if (tRes.data) {
+      if (tRes.data && !tRes.error) {
         await sendNotification(tRes.data.user_id, 'hw_result',
           getDisplayName() + ' ' + t('completed practice', '\u5b8c\u6210\u4e86\u7ec3\u4e60\u9898'),
           s.title + ' \u2014 ' + s.correct + '/' + s.total + ' (' + pct + '%)',

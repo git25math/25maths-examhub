@@ -1,5 +1,27 @@
 # Changelog
 
+## [2.2.11] - 2026-03-08 — 性能优化 + 防御性修复
+
+### 性能优化
+- **O(1) slug→index 查找**: 新增 `getLevelIdxBySlug()`，`_levelSlugMap` 改存 `{level, idx}` 对象
+- **syllabus.js**: 5 处 LEVELS 线性搜索（quiz done / level resolve / sub-deck rows / practice done / section health）→ O(1)
+- **app.js**: 2 处 URL deep linking 线性搜索 → `getLevelIdxBySlug()` O(1)
+
+### 防御性修复
+- **practice.js**: 删除重复 `_pqReviewDelegated` 变量声明；`.upload()` 补 `.catch()` 防静默失败
+- **homework.js**: 6 处 Supabase 调用增加 `error` 检查（csRes / res / rRes / upsert×2 / tRes.single()×2）
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `js/config.js` | `_levelSlugMap` 改存 `{level, idx}` + 新增 `getLevelIdxBySlug()` + v2.2.11 |
+| `js/syllabus.js` | 5 处 O(N) → O(1) slug 查找 |
+| `js/app.js` | 2 处 O(N) → O(1) slug 查找 |
+| `js/practice.js` | 删重复变量 + upload .catch() |
+| `js/homework.js` | 6 处 Supabase 错误检查 |
+
+---
+
 ## [2.2.10] - 2026-03-08 — 性能优化 + homework.js 重构
 
 ### 性能优化
