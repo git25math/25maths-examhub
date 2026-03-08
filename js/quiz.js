@@ -121,9 +121,8 @@ function pickQuizOpt(btn) {
     recordAnswer(key, 'quiz', false);
     playWrong();
     /* Highlight correct answer */
-    document.querySelectorAll('#quiz-options .quiz-opt').forEach(function(o) {
-      if (o.dataset.correct === '1') o.classList.add('correct');
-    });
+    var correctOpt = document.querySelector('#quiz-options .quiz-opt[data-correct="1"]');
+    if (correctOpt) correctOpt.classList.add('correct');
   }
 
   setTimeout(function() {

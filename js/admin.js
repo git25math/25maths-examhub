@@ -1009,24 +1009,23 @@ function summaryCard(label, value, color) {
 }
 
 /* ═══ ACTION DROPDOWN ═══ */
-function toggleActionMenu(btn) {
-  var menu = btn.nextElementSibling;
-  var wasOpen = menu.classList.contains('open');
-
-  /* Close all open menus first */
+function _closeAllActionMenus() {
   document.querySelectorAll('.action-menu.open').forEach(function(m) {
     m.classList.remove('open');
   });
+}
 
+function toggleActionMenu(btn) {
+  var menu = btn.nextElementSibling;
+  var wasOpen = menu.classList.contains('open');
+  _closeAllActionMenus();
   if (!wasOpen) menu.classList.add('open');
 }
 
 /* Global click to close menus + action delegation */
 document.addEventListener('click', function(e) {
   if (!e.target.closest('.action-dropdown')) {
-    document.querySelectorAll('.action-menu.open').forEach(function(m) {
-      m.classList.remove('open');
-    });
+    _closeAllActionMenus();
   }
 
   /* B1: student action buttons */

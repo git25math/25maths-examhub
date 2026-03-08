@@ -398,3 +398,4 @@
 - [x] **渐进解锁系统**: 模式解锁链 + 知识点顺序解锁(80%门槛) + 徽章前置链 + 阶段功能门控(4阶段) + 老用户迁移 → v2.2.21
 - [x] **渐进解锁质量优化**: XSS onclick消除 + isFeatureUnlocked缓存 + prevStats传递 + HHK解锁修复 + migrateForceUnlock幂等化 + 可访问性 → v2.2.23
 - [x] **防御性修复**: showNudge/spell null check + export getWordData循环缓存 → v2.2.25
+- [x] **事件委托修复**: practice.js 编辑按钮委托冲突 + quiz querySelector优化 + admin menu抽取 → v2.2.27

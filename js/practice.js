@@ -902,24 +902,7 @@ function startPracticeReview(li) {
     showPanel('practice');
     renderPracticeReview();
 
-    /* Event delegation: bind once on panel-practice */
-    if (!_pqReviewDelegated) {
-      _pqReviewDelegated = true;
-      E('panel-practice').addEventListener('click', function(e) {
-        var btn = e.target.closest('.pq-review-edit');
-        if (!btn || !_pqReviewState) return;
-        var qid = btn.dataset.qid;
-        var st = _pqReviewState;
-        var q = _pqFindQ(qid, st.board);
-        if (!q) return;
-        var scrollY = window.scrollY;
-        _openEditor(q, st.board, function() {
-          startPracticeReview(st.li).then(function() {
-            window.scrollTo(0, scrollY);
-          });
-        });
-      });
-    }
+    /* Event delegation moved to renderPracticeReview() */
   }).catch(function() {
     showToast(t('Failed to load questions', '加载题目失败'));
   });
@@ -1020,21 +1003,33 @@ function renderPracticeReview() {
 
   E('panel-practice').innerHTML = html;
 
-  /* Delegated clicks for filter buttons (bind once) */
+  /* Delegated clicks for edit/filter/topic buttons (bind once) */
   if (!_pqReviewDelegated) {
+    _pqReviewDelegated = true;
     E('panel-practice').addEventListener('click', function(e) {
-      var fb = e.target.closest('[data-pq-filter]');
-      if (fb) {
-        var v = fb.dataset.pqFilter;
-        setPqReviewFilter(v === 'all' ? 'all' : Number(v));
+      /* Edit button */
+      var btn = e.target.closest('.pq-review-edit');
+      if (btn && _pqReviewState) {
+        var qid = btn.dataset.qid;
+        var st = _pqReviewState;
+        var q = _pqFindQ(qid, st.board);
+        if (!q) return;
+        var scrollY = window.scrollY;
+        _openEditor(q, st.board, function() {
+          startPracticeReview(st.li).then(function() { window.scrollTo(0, scrollY); });
+        });
         return;
       }
-      var tb = e.target.closest('[data-pq-topic]');
-      if (tb) {
-        setPqReviewTopic(tb.dataset.pqTopic);
+      /* Filter buttons */
+      var fb = e.target.closest('[data-pq-filter]');
+      if (fb) {
+        setPqReviewFilter(fb.dataset.pqFilter === 'all' ? 'all' : Number(fb.dataset.pqFilter));
+        return;
       }
+      /* Topic buttons */
+      var tb = e.target.closest('[data-pq-topic]');
+      if (tb) { setPqReviewTopic(tb.dataset.pqTopic); }
     });
-    _pqReviewDelegated = true;
   }
 
   renderMath(E('panel-practice'));

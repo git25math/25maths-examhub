@@ -1,5 +1,24 @@
 # Changelog
 
+## [2.2.27] - 2026-03-08 — 事件委托 bug 修复 + DOM 查询优化
+
+### 修复
+- **practice.js 委托冲突 bug**: `startPracticeReview` 和 `renderPracticeReview` 共用 `_pqReviewDelegated` 标志导致编辑按钮 handler 从未绑定；合并两个委托块到 `renderPracticeReview`，统一处理 edit/filter/topic 三种点击
+
+### 优化
+- **quiz.js DOM 查询**: `querySelectorAll` 遍历所有选项找正确答案 → `querySelector('[data-correct="1"]')` 直接定位
+- **admin.js 代码抽取**: 两处相同 `querySelectorAll('.action-menu.open')` 关闭逻辑 → 抽取 `_closeAllActionMenus()` 复用
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `js/practice.js` | 合并两个委托块，修复编辑按钮从未绑定的 bug |
+| `js/quiz.js` | querySelectorAll→querySelector 优化 |
+| `js/admin.js` | 抽取 `_closeAllActionMenus()` |
+| `js/config.js` | v2.2.26 → v2.2.27 |
+
+---
+
 ## [2.2.26] - 2026-03-08 — 划词翻译第二轮优化
 
 ### 增强
