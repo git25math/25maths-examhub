@@ -379,6 +379,9 @@ function showApp() {
   /* Onboarding tour for first-time users */
   setTimeout(maybeStartTour, 600);
 
+  /* Select-to-Translate */
+  if (typeof initTranslate === 'function') initTranslate();
+
   /* Guest: header logout → login/register */
   var hbLogout = E('btn-logout-hb');
   if (hbLogout) {
@@ -876,7 +879,11 @@ function getDistinctModesUsed() {
 }
 
 var _activeNudge = null;
+var _lastNudgeShownAt = 0;
 function showNudge(key, msg, actionLabel, actionFn) {
+  /* 30-min cooldown (memory-level, resets on page refresh) */
+  if (Date.now() - _lastNudgeShownAt < 1800000) return;
+
   /* Check dismiss / max-show limits */
   var storeKey = 'wmatch_nudge_' + key;
   try {
@@ -926,6 +933,7 @@ function showNudge(key, msg, actionLabel, actionFn) {
   var panel = document.querySelector('.panel.active');
   if (panel) panel.insertBefore(el, panel.firstChild);
   _activeNudge = el;
+  _lastNudgeShownAt = Date.now();
 
   /* Auto fade out after 8s */
   setTimeout(function() {

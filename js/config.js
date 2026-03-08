@@ -360,7 +360,7 @@ function isSuperAdmin() {
 }
 
 /* App version */
-var APP_VERSION = 'v2.2.17';
+var APP_VERSION = 'v2.2.18';
 
 /* ═══ TEACHER ROLE (shared across modules) ═══ */
 var isTeacherUser = false;

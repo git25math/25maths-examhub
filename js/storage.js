@@ -32,6 +32,7 @@ function invalidateCache() {
   if (typeof _quizCache !== 'undefined') _quizCache = null;
   if (typeof _catLevelIndex !== 'undefined') _catLevelIndex = null;
   if (typeof _hhkSlugIdx !== 'undefined') _hhkSlugIdx = null;
+  if (typeof _sttIndex !== 'undefined') _sttIndex = null;
 }
 
 /* Level best scores */
@@ -701,13 +702,23 @@ function checkBadges() {
 
   if (newlyUnlocked.length > 0) {
     _saveBadges(unlocked);
-    newlyUnlocked.forEach(function(b) {
-      if (typeof showBadgeCelebration === 'function') {
-        showBadgeCelebration(b);
-      } else if (typeof showToast === 'function') {
-        showToast(b.icon + ' ' + t(b.en, b.zh) + ' ' + t('unlocked!', '\u89e3\u9501\uff01'));
-      }
+    newlyUnlocked.forEach(function(b, idx) {
+      setTimeout(function() {
+        if (typeof showBadgeCelebration === 'function') {
+          showBadgeCelebration(b);
+        } else if (typeof showToast === 'function') {
+          showToast(b.icon + ' ' + t(b.en, b.zh) + ' ' + t('unlocked!', '\u89e3\u9501\uff01'));
+        }
+      }, idx * 4500);
     });
+    /* first_word badge → guide to quiz after celebration */
+    if (newlyUnlocked.some(function(b) { return b.id === 'first_word'; })) {
+      setTimeout(function() {
+        if (typeof showNudge === 'function') {
+          showNudge('first_word_next', t('Great start! Try Quiz mode to reinforce your memory', '\u597d\u7684\u5f00\u59cb\uff01\u8bd5\u8bd5\u6d4b\u9a8c\u6a21\u5f0f\u5de9\u56fa\u8bb0\u5fc6'), t('Go', '\u53bb\u8bd5\u8bd5'), function() { if (typeof navTo === 'function') navTo('home'); });
+        }
+      }, 5000);
+    }
     /* Milestone nudges */
     if (typeof showNudge === 'function') {
       if (gs.mastered >= 50 && gs.mastered < 100) {

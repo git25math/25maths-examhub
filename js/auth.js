@@ -417,6 +417,13 @@ function showSettings() {
     }
     gHtml += '</div>';
     gHtml += '<div class="settings-divider"></div>';
+    /* Select-to-Translate toggle */
+    gHtml += '<div class="settings-section">';
+    gHtml += '<label class="settings-label">' + t('Select-to-Translate', '划词翻译') + '</label>';
+    gHtml += '<div class="text-sm text-sub mb-8">' + t('Select text to see translation from vocabulary', '选中文字即可查看词库翻译') + '</div>';
+    gHtml += '<label style="cursor:pointer"><input type="checkbox" id="settings-translate"' + (_sttEnabled ? ' checked' : '') + ' onchange="toggleTranslate(this.checked)"> ' + t('Enable', '启用') + '</label>';
+    gHtml += '</div>';
+    gHtml += '<div class="settings-divider"></div>';
     /* Locked features list */
     gHtml += '<div class="settings-section">';
     gHtml += '<label class="settings-label">' + t('Login to unlock', '\u767b\u5f55\u540e\u53ef\u89e3\u9501') + '</label>';
@@ -468,6 +475,12 @@ function showSettings() {
       return t('Last sync: ' + hrs + 'h ago', '\u4e0a\u6b21\u540c\u6b65\uff1a' + hrs + ' \u5c0f\u65f6\u524d');
     })() + '</div>' +
     '<button class="btn btn-ghost btn-sm" onclick="manualSync()">' + t('Sync Now', '\u7acb\u5373\u540c\u6b65') + '</button>' +
+    '</div>' +
+    '<div class="settings-divider"></div>' +
+    '<div class="settings-section">' +
+    '<label class="settings-label">' + t('Select-to-Translate', '划词翻译') + '</label>' +
+    '<div class="text-sm text-sub mb-8">' + t('Select text to see translation from vocabulary', '选中文字即可查看词库翻译') + '</div>' +
+    '<label style="cursor:pointer"><input type="checkbox" id="settings-translate"' + (_sttEnabled ? ' checked' : '') + '> ' + t('Enable', '启用') + '</label>' +
     '</div>' +
     '<div class="settings-msg" id="settings-msg"></div>' +
     '<div class="btn-row btn-row--mt16">' +
@@ -522,6 +535,10 @@ async function saveSettings() {
       }
       updated = true;
     }
+
+    /* Select-to-Translate toggle */
+    var trEl = E('settings-translate');
+    if (trEl) toggleTranslate(trEl.checked);
 
     if (updated) {
       showToast(t('Saved', '保存成功'));

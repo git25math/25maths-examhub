@@ -7,7 +7,7 @@ cd "$ROOT"
 # (homework.js excluded — lazy-loaded for students with classes + teachers)
 cat js/config.js js/levels-loader.js js/storage.js js/particles.js \
     js/auth.js js/ui.js js/mastery.js js/syllabus.js js/study.js js/battle.js \
-    js/review.js js/quiz.js js/spell.js js/match.js js/export.js \
+    js/review.js js/quiz.js js/spell.js js/match.js js/translate.js js/export.js \
     js/stats.js js/practice.js js/app.js | \
     npx esbuild --loader=js --minify > js/app.bundle.min.js
 

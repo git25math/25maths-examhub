@@ -1,5 +1,29 @@
 # Changelog
 
+## [2.2.18] - 2026-03-08 — 划词翻译 (Select-to-Translate)
+
+### 新功能
+- **划词翻译**: 选中页面文字自动匹配词库翻译，弹出浮层显示词义 + 学习状态 + 星级
+- **双向查找**: 英→中 / 中→英，支持基础英文词干还原 (-s/-es/-ed/-ing/-ies)
+- **操作按钮**: "开始学习"（新词→recordAnswer）+ "打开词组"（→openDeck 跳转）
+- **多匹配展开**: 同一词出现在多个 level 时显示 "+N more" 可展开
+- **设置开关**: Guest 和登录用户均可在设置中启用/禁用
+- **干扰防护**: Battle/Match/Daily 模式 + Modal 弹窗时不触发
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `js/translate.js` | **新建** — 反向索引 + 浮层弹出 + selectionchange 监听 + 加入复习 |
+| `css/style.css` | +18 行 `.stt-popup` 组件样式（fixed 定位 + 暗色模式自动适配） |
+| `index.html` | Toast 前新增 `#stt-popup` 容器 |
+| `js/auth.js` | Guest + 登录用户设置增加划词翻译 toggle + saveSettings 保存 |
+| `js/ui.js` | `showApp()` 调用 `initTranslate()` |
+| `js/storage.js` | `invalidateCache()` 清除 `_sttIndex` |
+| `scripts/minify.sh` | bundle 列表增加 `js/translate.js` |
+| `js/config.js` | v2.2.17 → v2.2.18 |
+
+---
+
 ## [2.2.17] - 2026-03-08 — 性能优化第二轮 + 引导系统质量修复
 
 ### 性能优化
