@@ -689,7 +689,7 @@ function resultScreenHTML(ok, total, retryId, backId, mode) {
 }
 
 function nextStepHTML(emoji, label, onclick) {
-  return '<div class="next-step" onclick="' + onclick + '">' +
+  return '<div class="next-step" role="button" tabindex="0" onclick="' + onclick + '">' +
     '<div class="next-step-label">' + t('Next step', '\u4e0b\u4e00\u6b65') + '</div>' +
     '<div class="next-step-action">' + emoji + ' ' + label + ' \u2192</div>' +
     '</div>';

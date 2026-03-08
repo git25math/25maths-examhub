@@ -285,7 +285,7 @@ function _renderBoardHome(board) {
     var _ppSub = board === 'cie'
       ? t('228 papers \u00b7 4,110 questions \u00b7 2018\u20132025', '228\u5957\u5377 \u00b7 4,110\u9053\u9898 \u00b7 2018\u20132025')
       : t('76 papers \u00b7 1,855 questions \u00b7 2017\u20132025', '76\u5957\u5377 \u00b7 1,855\u9053\u9898 \u00b7 2017\u20132025');
-    html += '<div class="pp-browse-entry" onclick="ppShowPaperBrowse(\'' + _ppBoardKey + '\')">';
+    html += '<div class="pp-browse-entry" role="button" tabindex="0" onclick="ppShowPaperBrowse(\'' + _ppBoardKey + '\')">';
     html += '<span class="pp-browse-icon">\ud83d\udcdd</span>';
     html += '<div class="pp-browse-info">';
     html += '<div class="pp-browse-title">' + t('Past Papers', '\u5957\u5377\u7ec3\u4e60') + '</div>';
@@ -356,7 +356,7 @@ function _renderBoardHome(board) {
     if (visibleSections.length === 0) return;
 
     html += '<div class="category-section' + (collapsed ? ' collapsed' : '') + '" id="cat-' + catKey + '">';
-    html += '<div class="category-header" onclick="toggleCIEChapter(\'' + catKey + '\')">';
+    html += '<div class="category-header" role="button" tabindex="0" onclick="toggleCIEChapter(\'' + catKey + '\')">';
     var _chEmoji = Array.isArray(emojis) ? (emojis[ch.num] || '\ud83d\udcda') : (emojis[ch.num] || '\ud83d\udcda');
     html += '<span class="category-emoji">' + _chEmoji + '</span>';
     if (board === 'hhk') {
@@ -477,7 +477,7 @@ function _renderSectionRow(sec, ch, board, _wd, secIdx, prevSecId, prevStats) {
 
   var h = '';
   if (secUnlocked) {
-    h += '<div class="deck-row" onclick="openSection(\'' + sec.id + '\',\'' + board + '\')">';
+    h += '<div class="deck-row" role="button" tabindex="0" onclick="openSection(\'' + sec.id + '\',\'' + board + '\')">';
   } else {
     h += '<div class="deck-row locked" data-locked-msg="section" aria-disabled="true" tabindex="-1" title="' + t('Complete the previous section first (80%+)', '请先完成上一个知识点(80%+)') + '">';
   }
@@ -740,7 +740,7 @@ function renderSectionDetail(ch, sec, secIdx, board) {
       if (_li < 0) return;
       var subStats = getDeckStats(_li, wd);
       var subTitle = LEVELS[_li].title || ('Group ' + (si + 1));
-      html += '<div class="deck-row sec-deck-row-flush" onclick="openDeck(' + _li + ')">';
+      html += '<div class="deck-row sec-deck-row-flush" role="button" tabindex="0" onclick="openDeck(' + _li + ')">';
       html += '<span class="deck-row-tag">' + (si + 1) + '</span>';
       html += '<span class="deck-row-name">' + escapeHtml(subTitle) + '</span>';
       html += '<span class="deck-row-count">' + subStats.started + '/' + subStats.total + '</span>';
@@ -750,7 +750,7 @@ function renderSectionDetail(ch, sec, secIdx, board) {
     });
     html += '</div>';
   } else if (words.length > 0 && li >= 0) {
-    html += '<div class="sec-module" onclick="openDeck(' + li + ')">';
+    html += '<div class="sec-module" role="button" tabindex="0" onclick="openDeck(' + li + ')">';
     if (_jVocabDone) html += '<div class="sec-module-done">\u2713</div>';
     html += '<div class="sec-module-icon">\ud83d\udcdd</div>';
     html += '<div class="sec-module-info">';
@@ -775,7 +775,7 @@ function renderSectionDetail(ch, sec, secIdx, board) {
 
   /* Practice module */
   if (qCount > 0) {
-    html += '<div class="sec-module" onclick="startPracticeBySection(\'' + sec.id + '\',\'' + board + '\')">';
+    html += '<div class="sec-module" role="button" tabindex="0" onclick="startPracticeBySection(\'' + sec.id + '\',\'' + board + '\')">';
     if (_jPracticeDone) html += '<div class="sec-module-done">\u2713</div>';
     html += '<div class="sec-module-icon">\u270f\ufe0f</div>';
     html += '<div class="sec-module-info">';
@@ -800,7 +800,7 @@ function renderSectionDetail(ch, sec, secIdx, board) {
   /* Knowledge Points (3rd) — show list from knowledge-{board}.json */
   var kpList = getKPsForSection(sec.id, board);
   if (kpList.length > 0) {
-    html += '<div class="sec-module sec-module-expandable" onclick="toggleSectionContent(this)">';
+    html += '<div class="sec-module sec-module-expandable" role="button" tabindex="0" onclick="toggleSectionContent(this)">';
     html += '<div class="sec-module-icon">\ud83d\udcd6</div>';
     html += '<div class="sec-module-info">';
     html += '<div class="sec-module-title">' + t('Knowledge Points', '\u77e5\u8bc6\u70b9\u7cbe\u6790') + '</div>';
@@ -838,7 +838,7 @@ function renderSectionDetail(ch, sec, secIdx, board) {
     var knowledgeEdit = _getSectionEdit(board, sec.id, 'knowledge');
     if (knowledgeEdit && knowledgeEdit.content) {
       var kcContent = (appLang !== 'en' && knowledgeEdit.content_zh) ? knowledgeEdit.content_zh : knowledgeEdit.content;
-      html += '<div class="sec-module sec-module-expandable" onclick="toggleSectionContent(this)">';
+      html += '<div class="sec-module sec-module-expandable" role="button" tabindex="0" onclick="toggleSectionContent(this)">';
       html += '<div class="sec-module-icon">\ud83d\udcd8</div>';
       html += '<div class="sec-module-info">';
       html += '<div class="sec-module-title">' + t('Knowledge Card', '\u77e5\u8bc6\u5361\u7247') + '</div>';
@@ -866,7 +866,7 @@ function renderSectionDetail(ch, sec, secIdx, board) {
     var enExamples = _parseWorkedExamples(examplesEdit.content);
     var zhExamples = examplesEdit.content_zh ? _parseWorkedExamples(examplesEdit.content_zh) : [];
     var langExamples = appLang !== 'en' && zhExamples.length ? zhExamples : enExamples;
-    html += '<div class="sec-module sec-module-expandable" onclick="toggleSectionContent(this)">';
+    html += '<div class="sec-module sec-module-expandable" role="button" tabindex="0" onclick="toggleSectionContent(this)">';
     html += '<div class="sec-module-icon">\ud83d\udcd6</div>';
     html += '<div class="sec-module-info">';
     html += '<div class="sec-module-title">' + t('Worked Examples', '\u7ecf\u5178\u4f8b\u9898') + '</div>';
@@ -882,7 +882,7 @@ function renderSectionDetail(ch, sec, secIdx, board) {
     for (var ei = 0; ei < langExamples.length; ei++) {
       var ex = langExamples[ei];
       html += '<div class="we-card">';
-      html += '<div class="we-card-header" onclick="event.stopPropagation();toggleWeCard(this)">';
+      html += '<div class="we-card-header" role="button" tabindex="0" onclick="event.stopPropagation();toggleWeCard(this)">';
       html += '<span class="we-card-num">' + ex.heading + '</span>';
       if (ex.marks) html += '<span class="we-card-marks">' + ex.marks + '</span>';
       html += '<span class="we-card-arrow">\u25bc</span>';
@@ -1295,7 +1295,7 @@ function renderSmartPath() {
 
   var html = '';
   html += '<div class="smart-path' + (collapsed ? ' collapsed' : '') + '" id="smart-path-box">';
-  html += '<div class="smart-path-header" onclick="toggleSmartPath()">';
+  html += '<div class="smart-path-header" role="button" tabindex="0" onclick="toggleSmartPath()">';
   html += '<span class="smart-path-icon">\ud83c\udfaf</span>';
   html += '<span class="smart-path-title">' + t('Recommended Study', '\u63a8\u8350\u5b66\u4e60') + '</span>';
   html += '<span class="smart-path-toggle">\u25bc</span>';
@@ -1382,7 +1382,7 @@ function renderReviewPlan() {
     var info = getSectionInfo(c.sectionId, c.board);
     var title = info ? escapeHtml(info.section.title) : c.sectionId;
     var retColor = c.retentionScore >= 50 ? 'var(--c-warning)' : 'var(--c-danger)';
-    html += '<div class="review-plan-item" onclick="openSection(\'' + c.sectionId + '\',\'' + c.board + '\')">';
+    html += '<div class="review-plan-item" role="button" tabindex="0" onclick="openSection(\'' + c.sectionId + '\',\'' + c.board + '\')">';
     html += '<span class="review-plan-sec">' + c.sectionId + '</span>';
     html += '<span class="review-plan-name">' + title + '</span>';
     var retLabel = c.retentionScore >= 50 ? t('Fading', '\u6de1\u5fd8\u4e2d') : t('Needs refresh', '\u9700\u8981\u590d\u4e60');
@@ -1409,7 +1409,7 @@ function _renderPPSectionModule(slot, secId, board) {
   var _ppModuleDone = _ppDoneRatio >= 0.5;
 
   var h = '';
-  h += '<div class="sec-module sec-module-col" style="position:relative">';
+  h += '<div class="sec-module sec-module-col">';
   if (_ppModuleDone) h += '<div class="sec-module-done">\u2713</div>';
   h += '<div class="sec-module-row">';
   h += '<div class="sec-module-icon">\ud83d\udcc4</div>';
@@ -1576,7 +1576,7 @@ function _renderMasterQSummary(slot, secId, board) {
 
   /* Header + progress */
   h += '<div class="mq-summary-header">';
-  h += '<span style="font-size:18px">&#x1F4CB;</span> ';
+  h += '<span class="sec-kp-icon">&#x1F4CB;</span> ';
   h += '<span class="mq-summary-title">' + t('Master Question Types', '\u6BCD\u9898\u603B\u7ED3') + '</span>';
   h += '<span class="mq-summary-count">';
   h += t('Mastered', '\u5DF2\u638C\u63E1') + ' ' + masteredTypes + '/' + totalTypes;
@@ -1767,7 +1767,7 @@ function editSectionModule(sectionId, module, board) {
   var modLabels = { syllabus: ['Syllabus', '\u8003\u7eb2\u8981\u6c42'], knowledge: ['Knowledge Card', '\u77e5\u8bc6\u5361\u7247'], examples: ['Worked Examples', '\u7ecf\u5178\u4f8b\u9898'] };
   var modLabel = modLabels[module] || modLabels.syllabus;
   html += '<div class="pq-editor-header">';
-  html += '<div class="section-title" style="margin:0">\u270f\ufe0f ' + t(modLabel[0], modLabel[1]) + ' <span class="sec-editor-subtitle">' + escapeHtml(sectionId) + ' ' + escapeHtml(sec.title) + '</span></div>';
+  html += '<div class="section-title sec-title-flush">\u270f\ufe0f ' + t(modLabel[0], modLabel[1]) + ' <span class="sec-editor-subtitle">' + escapeHtml(sectionId) + ' ' + escapeHtml(sec.title) + '</span></div>';
   html += '</div>';
 
   /* Toolbar */
@@ -1812,7 +1812,7 @@ function editSectionModule(sectionId, module, board) {
   /* Formula popup (shared with practice editor) */
   html += '<div class="pq-formula-popup" id="pq-formula-popup" class="d-none">';
   html += '<label class="pq-field-label">LaTeX</label>';
-  html += '<textarea id="pq-formula-input" class="bug-textarea" rows="2" placeholder="\\frac{1}{2}" style="font-family:var(--font-mono)"></textarea>';
+  html += '<textarea id="pq-formula-input" class="bug-textarea font-mono" rows="2" placeholder="\\frac{1}{2}"></textarea>';
   html += '<div class="pq-formula-preview" id="pq-formula-preview"></div>';
   html += '<div class="btn-row btn-row--mt8">';
   html += '<button class="btn btn-primary btn-sm" onclick="pqInsertFormula()">' + t('Insert', '\u63d2\u5165') + '</button>';
@@ -2870,7 +2870,15 @@ document.addEventListener('keydown', function(e) {
   var navBtn = e.target.closest('.kp-nav-btn:not(:disabled)');
   if (navBtn) { e.preventDefault(); navBtn.click(); return; }
   var togBtn = e.target.closest('.kp-example-toggle[data-kp-sol]');
-  if (togBtn) { e.preventDefault(); togBtn.click(); }
+  if (togBtn) { e.preventDefault(); togBtn.click(); return; }
+  /* Syllabus interactive elements */
+  var t2 = e.target;
+  if (t2.hasAttribute('onclick') && (
+    t2.classList.contains('deck-row') || t2.classList.contains('sec-module') ||
+    t2.classList.contains('sec-module-expandable') || t2.classList.contains('we-card-header') ||
+    t2.classList.contains('smart-path-header') || t2.classList.contains('review-plan-item') ||
+    t2.classList.contains('pp-browse-entry') || t2.classList.contains('category-header')
+  )) { e.preventDefault(); t2.click(); }
 });
 
 /* ═══ INIT ═══ */

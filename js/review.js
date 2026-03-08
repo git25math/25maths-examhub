@@ -268,7 +268,7 @@ function renderReviewCard() {
   html += '</div>';
 
   /* Flashcard */
-  html += '<div class="fc-box" id="rv-fc-box" onclick="flipReviewCard()">';
+  html += '<div class="fc-box" id="rv-fc-box" role="button" tabindex="0" onclick="flipReviewCard()">';
   html += '<div class="fc-inner">';
   html += '<div class="fc-face fc-front">';
   html += '<div class="fc-front-label">ENGLISH</div>';

@@ -1429,14 +1429,14 @@ function renderPPCard() {
   if (_ppSession.groupFilter) {
     html += '<div class="text-center mb-8">';
     html += '<span class="pp-error-chip selected" style="font-size:12px">' + _ppGroupLabel(_ppSession.groupFilter) + '</span>';
-    html += ' <span style="font-size:11px;color:var(--c-muted);cursor:pointer;text-decoration:underline" onclick="ppClearFilter()">' + t('Show all', '\u663e\u793a\u5168\u90e8') + '</span>';
+    html += ' <span class="pp-filter-link" role="button" tabindex="0" onclick="ppClearFilter()">' + t('Show all', '\u663e\u793a\u5168\u90e8') + '</span>';
     html += '</div>';
   }
   /* Command word filter chip */
   if (_ppSession.cmdFilter) {
     html += '<div class="text-center mb-8">';
     html += '<span class="pp-cmd-badge" style="font-size:12px;padding:3px 10px">' + _ppCmdLabel(_ppSession.cmdFilter) + '</span>';
-    html += ' <span style="font-size:11px;color:var(--c-muted);cursor:pointer;text-decoration:underline" onclick="ppClearCmdFilter()">' + t('Show all', '\u663e\u793a\u5168\u90e8') + '</span>';
+    html += ' <span class="pp-filter-link" role="button" tabindex="0" onclick="ppClearCmdFilter()">' + t('Show all', '\u663e\u793a\u5168\u90e8') + '</span>';
     html += '</div>';
   }
 
@@ -1467,18 +1467,18 @@ function renderPPCard() {
   /* Parts info */
   var partsStr = _ppPartsInfo(q);
   if (partsStr) {
-    html += '<div style="padding:8px 16px;font-size:12px;color:var(--c-muted);border-top:1px solid var(--c-border-light)">';
+    html += '<div class="pp-parts-bar">';
     html += partsStr;
     html += '</div>';
   }
 
   /* Mark Scheme toggle (practice mode only) */
   if (_ppSession.mode === 'practice') {
-    html += '<div class="pp-ms-toggle" onclick="ppToggleMS()">';
+    html += '<div class="pp-ms-toggle" role="button" tabindex="0" onclick="ppToggleMS()">';
     html += '<span id="pp-ms-arrow">\u25b6</span> ' + t('Mark Scheme', '\u8bc4\u5206\u6807\u51c6');
     html += '</div>';
     html += '<div class="pp-ms-content" id="pp-ms-body">';
-    html += '<div style="text-align:center;color:var(--c-muted);padding:12px">';
+    html += '<div class="pp-ms-placeholder">';
     html += t('Mark Scheme coming soon \u2014 use self-assessment for now', '\u8bc4\u5206\u6807\u51c6\u5373\u5c06\u63a8\u51fa\uff0c\u8bf7\u5148\u81ea\u8bc4');
     html += '</div></div>';
   }
@@ -1487,10 +1487,10 @@ function renderPPCard() {
   if (_ppSession.mode === 'practice' && q.s) {
     var vocabInfo = _ppGetSectionVocab(q.s, _ppSession.board);
     if (vocabInfo && vocabInfo.words.length > 0) {
-      html += '<div class="pp-ms-toggle" onclick="ppToggleVocab()">';
+      html += '<div class="pp-ms-toggle" role="button" tabindex="0" onclick="ppToggleVocab()">';
       html += '<span id="pp-vocab-arrow">\u25b6</span> ';
       html += t('Related Vocabulary', '\u76f8\u5173\u8bcd\u6c47');
-      html += ' <span style="font-size:11px;color:var(--c-muted)">(' + vocabInfo.words.length + ')</span>';
+      html += ' <span class="text-muted-sm">(' + vocabInfo.words.length + ')</span>';
       html += '</div>';
       html += '<div class="pp-ms-content" id="pp-vocab-body">';
       for (var vi = 0; vi < vocabInfo.words.length; vi++) {
@@ -1519,8 +1519,8 @@ function renderPPCard() {
 
   /* Self-assessment (practice mode) */
   if (_ppSession.mode === 'practice') {
-    html += '<div class="mt-16" style="max-width:640px;margin-inline:auto">';
-    html += '<div style="text-align:center;font-size:12px;color:var(--c-muted);margin-bottom:8px">';
+    html += '<div class="mt-16 pp-self-assess-wrap">';
+    html += '<div class="pp-self-assess-hint">';
     html += t('How did you do?', '\u4f60\u505a\u5f97\u5982\u4f55\uff1f');
     html += '</div>';
     html += '<div class="pp-rate-row">';
@@ -1536,8 +1536,8 @@ function renderPPCard() {
   /* Exam mode: flag + submit */
   if (_ppSession.mode === 'exam') {
     var flagged = _ppSession.results[idx] && _ppSession.results[idx].flagged;
-    html += '<div class="mt-16 text-center" style="max-width:640px;margin-inline:auto">';
-    html += '<label style="cursor:pointer;font-size:13px;color:var(--c-muted)">';
+    html += '<div class="mt-16 text-center pp-self-assess-wrap">';
+    html += '<label class="pp-flag-label">';
     html += '<input type="checkbox" id="pp-flag-cb"' + (flagged ? ' checked' : '') + ' onchange="ppToggleFlag()"> ';
     html += '\u2753 ' + t('Mark as unsure', '\u6807\u8bb0\u4e0d\u786e\u5b9a');
     html += '</label></div>';
@@ -1877,7 +1877,7 @@ function _diagShowResults(exam, conceptErrors) {
     var secLabel = info ? info.section.title : sk;
 
     var spctColor = spct >= 80 ? 'var(--c-success)' : spct >= 40 ? 'var(--c-warning)' : 'var(--c-danger)';
-    html += '<div class="diag-section-row" onclick="openSection(\'' + sk + '\',\'' + board + '\')">';
+    html += '<div class="diag-section-row" role="button" tabindex="0" onclick="openSection(\'' + sk + '\',\'' + board + '\')">';
     html += '<span class="diag-icon">' + icon + '</span>';
     html += '<div class="diag-label-col">';
     html += '<span class="diag-label">' + sk + ' ' + escapeHtml(secLabel) + '</span>';
@@ -1899,7 +1899,7 @@ function _diagShowResults(exam, conceptErrors) {
       var wk = weakSecs[wi];
       var wInfo = (typeof getSectionInfo === 'function') ? getSectionInfo(wk, board) : null;
       var wLabel = wInfo ? wInfo.section.title : wk;
-      html += '<div class="diag-rec-item" onclick="openSection(\'' + wk + '\',\'' + board + '\')">';
+      html += '<div class="diag-rec-item" role="button" tabindex="0" onclick="openSection(\'' + wk + '\',\'' + board + '\')">';
       html += '<span>' + wk + ' ' + escapeHtml(wLabel) + '</span>';
       html += '<span class="diag-rec-go">' + t('Review', '\u53bb\u590d\u4e60') + ' \u2192</span>';
       html += '</div>';
@@ -2039,7 +2039,7 @@ function ppShowExamSetup(sectionId, board, questions) {
     if (c > questions.length) continue;
     var label = c === questions.length ? t('All', '\u5168\u90e8') + ' (' + c + ')' : '' + c;
     var active = ci === 0 ? ' active' : '';
-    html += '<div class="pp-setup-opt' + active + '" onclick="ppSetupCount(this,' + c + ')">' + label + '</div>';
+    html += '<div class="pp-setup-opt' + active + '" role="button" tabindex="0" onclick="ppSetupCount(this,' + c + ')">' + label + '</div>';
   }
   html += '</div></div>';
 
@@ -2189,7 +2189,7 @@ function ppShowMarking() {
     html += '<div class="pp-mark-item" id="pp-mark-' + i + '">';
 
     /* Header */
-    html += '<div class="pp-mark-header" onclick="ppToggleMarkBody(' + i + ')">';
+    html += '<div class="pp-mark-header" role="button" tabindex="0" onclick="ppToggleMarkBody(' + i + ')">';
     html += '<div><strong>Q' + (i + 1) + '</strong> <span class="pp-src">' + q.src + '</span> ';
     html += '<span class="pp-marks-badge">' + q.marks + (q.marks === 1 ? ' mk' : ' mks') + '</span>';
     if (r.flagged) html += ' \u2753';
@@ -2201,7 +2201,7 @@ function ppShowMarking() {
     html += '<div class="pp-mark-body d-none" id="pp-mark-body-' + i + '">';
 
     /* Question preview */
-    html += '<div style="font-size:13px;line-height:1.6;margin-bottom:12px;max-height:160px;overflow:auto" class="pp-mark-tex">';
+    html += '<div class="pp-mark-tex">';
     html += _ppRenderTex(q);
     html += _ppRenderFigures(q);
     html += '</div>';
@@ -2221,11 +2221,11 @@ function ppShowMarking() {
     html += '</div>';
 
     /* Error type chips */
-    html += '<div style="margin-top:8px;font-size:12px;color:var(--c-muted)">' + t('Error type', '\u9519\u56e0') + ':</div>';
+    html += '<div class="pp-error-label">' + t('Error type', '\u9519\u56e0') + ':</div>';
     html += '<div class="pp-error-chips">';
     for (var ei = 0; ei < PP_ERROR_TYPES.length; ei++) {
       var et = PP_ERROR_TYPES[ei];
-      html += '<span class="pp-error-chip" data-err="' + et.id + '" data-qi="' + i + '" onclick="ppToggleError(this)">';
+      html += '<span class="pp-error-chip" role="button" tabindex="0" data-err="' + et.id + '" data-qi="' + i + '" onclick="ppToggleError(this)">';
       html += t(et.en, et.zh) + '</span>';
     }
     html += '</div>';
@@ -2760,14 +2760,14 @@ function ppShowWrongBook(sectionId, board) {
           }
         }
 
-        html += '<div class="pp-wrong-item" onclick="ppReviewWrongItem(\'' + item.q.id + '\',\'' + sectionId + '\',\'' + board + '\')">';
-        html += '<div style="font-size:20px">\ud83d\udd34</div>';
+        html += '<div class="pp-wrong-item" role="button" tabindex="0" onclick="ppReviewWrongItem(\'' + item.q.id + '\',\'' + sectionId + '\',\'' + board + '\')">';
+        html += '<div class="pp-wrong-icon">\ud83d\udd34</div>';
         html += '<div class="pp-wrong-meta">';
         html += '<div style="font-size:13px;font-weight:600">' + item.q.src + ' <span class="pp-marks-badge">' + item.q.marks + ' mks</span></div>';
         var noteText = errLabel || item.wb.note || '';
         if (noteText) html += '<div class="pp-wrong-note">' + noteText + '</div>';
         html += '</div>';
-        html += '<div style="font-size:12px;color:var(--c-muted)">\u00d7' + (item.wb.reviewCount || 0) + '</div>';
+        html += '<div class="pp-wrong-review-count">\u00d7' + (item.wb.reviewCount || 0) + '</div>';
         html += '</div>';
       }
 
@@ -2962,7 +2962,7 @@ function _ppRenderYearPapers(sessions, year, board, results) {
       var tl = PP_TYPE_LABELS[p.type] || { en: p.type, zh: p.type, cls: '' };
       var result = results[p.key];
 
-      html += '<div class="pp-paper-card" onclick="ppShowPaperDetail(\'' + p.key + '\',\'' + board + '\')">';
+      html += '<div class="pp-paper-card" role="button" tabindex="0" onclick="ppShowPaperDetail(\'' + p.key + '\',\'' + board + '\')">';
       html += '<div class="pp-paper-card-top">';
       html += '<span class="pp-paper-type ' + tl.cls + '">' + t(tl.en, tl.zh) + '</span>';
       html += '<span class="pp-paper-num">Paper ' + p.paper + '</span>';
@@ -3065,9 +3065,9 @@ function ppShowPaperDetail(paperKey, board) {
     var q = questions[qi];
     var mastery = _ppGetQMastery(q.id);
     var mIcon = mastery === 'mastered' ? '✓' : mastery === 'partial' ? '◐' : mastery === 'needs_work' ? '✗' : '';
-    html += '<div class="pp-q-preview" onclick="ppStartFullPaper(\'' + paperKey + '\',\'' + board + '\',\'practice\',' + qi + ')">';
+    html += '<div class="pp-q-preview" role="button" tabindex="0" onclick="ppStartFullPaper(\'' + paperKey + '\',\'' + board + '\',\'practice\',' + qi + ')">';
     html += '<span class="pp-q-num">Q' + q.qnum + '</span>';
-    html += '<span class="pp-q-topic" style="flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">' + (q.topics || []).join(', ') + '</span>';
+    html += '<span class="pp-q-topic-cell">' + (q.topics || []).join(', ') + '</span>';
     html += '<span class="pp-marks-badge">' + q.marks + '</span>';
     if (mIcon) html += '<span class="pp-q-mastery">' + mIcon + '</span>';
     html += '</div>';
@@ -3219,7 +3219,7 @@ function ppShowMockSetup(board) {
     var markOpts = [40, 70, 100];
     for (var mi = 0; mi < markOpts.length; mi++) {
       var active = mi === 1 ? ' active' : '';
-      html += '<div class="pp-setup-opt' + active + '" onclick="ppMockSetOpt(this,\'marks\',' + markOpts[mi] + ')">' + markOpts[mi] + '</div>';
+      html += '<div class="pp-setup-opt' + active + '" role="button" tabindex="0" onclick="ppMockSetOpt(this,\'marks\',' + markOpts[mi] + ')">' + markOpts[mi] + '</div>';
     }
     html += '</div></div>';
 
@@ -3227,9 +3227,9 @@ function ppShowMockSetup(board) {
     html += '<div class="pp-setup-row">';
     html += '<span>' + t('Focus', '\u91cd\u70b9') + '</span>';
     html += '<div class="pp-setup-options" id="mock-focus">';
-    html += '<div class="pp-setup-opt active" onclick="ppMockSetOpt(this,\'focus\',\'balanced\')">' + t('Balanced', '\u5747\u8861') + '</div>';
-    html += '<div class="pp-setup-opt" onclick="ppMockSetOpt(this,\'focus\',\'weak\')">' + t('Weak Areas', '\u8584\u5f31\u9879') + '</div>';
-    html += '<div class="pp-setup-opt" onclick="ppMockSetOpt(this,\'focus\',\'random\')">' + t('Random', '\u968f\u673a') + '</div>';
+    html += '<div class="pp-setup-opt active" role="button" tabindex="0" onclick="ppMockSetOpt(this,\'focus\',\'balanced\')">' + t('Balanced', '\u5747\u8861') + '</div>';
+    html += '<div class="pp-setup-opt" role="button" tabindex="0" onclick="ppMockSetOpt(this,\'focus\',\'weak\')">' + t('Weak Areas', '\u8584\u5f31\u9879') + '</div>';
+    html += '<div class="pp-setup-opt" role="button" tabindex="0" onclick="ppMockSetOpt(this,\'focus\',\'random\')">' + t('Random', '\u968f\u673a') + '</div>';
     html += '</div></div>';
 
     /* Time limit */
@@ -3442,3 +3442,17 @@ function ppCheckWrongBookReminder() {
     }, 2000);
   }
 }
+
+/* ═══ KEYBOARD ACCESSIBILITY ═══ */
+document.addEventListener('keydown', function(e) {
+  if (e.key !== 'Enter' && e.key !== ' ') return;
+  var t2 = e.target;
+  if (!t2.hasAttribute('onclick') && !t2.hasAttribute('tabindex')) return;
+  if (t2.classList.contains('pp-ms-toggle') || t2.classList.contains('pp-setup-opt') ||
+      t2.classList.contains('pp-mark-header') || t2.classList.contains('pp-error-chip') ||
+      t2.classList.contains('pp-wrong-item') || t2.classList.contains('pp-paper-card') ||
+      t2.classList.contains('pp-q-preview') || t2.classList.contains('diag-section-row') ||
+      t2.classList.contains('diag-rec-item') || t2.classList.contains('pp-filter-link')) {
+    e.preventDefault(); t2.click();
+  }
+});

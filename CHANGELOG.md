@@ -1,5 +1,37 @@
 # Changelog
 
+## [2.3.11] - 2026-03-08 — 质量优化批次 3（可访问性扩展 + 内联样式清理）
+
+### 可访问性（31 处 role/tabindex）
+- **syllabus.js 10 处**: `pp-browse-entry` / `category-header` / `deck-row` / `sec-deck-row-flush` / `sec-module`（vocab + practice）/ `sec-module-expandable`（3 处）/ `we-card-header` / `smart-path-header` / `review-plan-item`
+- **practice.js 17 处**: `pp-filter-link`（2 处）/ `pp-ms-toggle`（2 处）/ `diag-section-row` / `diag-rec-item` / `pp-setup-opt`（5 处）/ `pp-mark-header` / `pp-error-chip` / `pp-wrong-item` / `pp-paper-card` / `pp-q-preview`
+- **其他文件 4 处**: `mastery.js` deck-row / `ui.js` next-step / `study.js` fc-box / `review.js` fc-box / `export.js` import-drop
+- **键盘委托扩展**: syllabus.js keydown + practice.js 新增全局 keydown（Enter/Space 触发）
+- **focus-visible 扩展**: 新增 17 个选择器到 `:focus-visible` 焦点环规则
+
+### 内联样式→CSS 类（~23 处）
+- **practice.js** ~15 处: `pp-mark-tex` / `pp-filter-link` / `pp-parts-bar` / `pp-ms-placeholder` / `text-muted-sm` / `pp-self-assess-wrap` / `pp-self-assess-hint` / `pp-flag-label` / `pp-error-label` / `pp-wrong-icon` / `pp-wrong-review-count` / `pp-q-topic-cell`
+- **syllabus.js** 4 处: 删除冗余 `position:relative` / `sec-kp-icon` / `sec-title-flush` / `font-mono`
+- **export.js** 4 处: `import-desc` / `import-sub` / `import-sep` / `style="margin:0"` 删除
+
+### 新 CSS 工具类（25 个）
+`pp-mark-tex` / `pp-filter-link` / `pp-wrong-icon` / `pp-wrong-review-count` / `pp-error-label` / `pp-ms-placeholder` / `pp-self-assess-wrap` / `pp-self-assess-hint` / `pp-flag-label` / `pp-parts-bar` / `pp-q-topic-cell` / `text-muted-sm` / `sec-title-flush` / `sec-kp-icon` / `font-mono` / `import-desc` / `import-sub` / `import-sep`
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `css/style.css` | 17 focus-visible 新选择器 + 25 新工具类 |
+| `js/syllabus.js` | 10 处 role/tabindex + 4 处 inline→class + keydown 扩展 |
+| `js/practice.js` | 17 处 role/tabindex + ~15 处 inline→class + 新 keydown 监听器 |
+| `js/mastery.js` | 1 处 deck-row role/tabindex |
+| `js/ui.js` | 1 处 next-step role/tabindex |
+| `js/study.js` | 1 处 fc-box role/tabindex |
+| `js/review.js` | 1 处 fc-box role/tabindex |
+| `js/export.js` | 1 处 import-drop role/tabindex + 4 处 inline→class |
+| `js/config.js` | v2.3.10 → v2.3.11 |
+
+---
+
 ## [2.3.10] - 2026-03-08 — 质量优化批次 2（暗色模式补全 + 内联样式 + 可访问性 + 颜色变量化）
 
 ### 暗色模式

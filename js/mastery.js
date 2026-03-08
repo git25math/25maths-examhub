@@ -144,7 +144,7 @@ function renderDeckRow(cl, cat, _levelLocked, _levelStats) {
   var stats = locked ? { pct: 0, started: 0, total: 0 } : (_levelStats[cl.idx] || { pct: 0, started: 0, total: 0 });
   var wordCount = Math.floor(cl.lv.vocabulary.length / 2);
   var h = '';
-  h += '<div class="deck-row' + (locked ? ' locked' : '') + '" onclick="' + (locked ? 'showGuestLockPrompt()' : 'openDeck(' + cl.idx + ')') + '">';
+  h += '<div class="deck-row' + (locked ? ' locked' : '') + '" role="button" tabindex="' + (locked ? '-1' : '0') + '" onclick="' + (locked ? 'showGuestLockPrompt()' : 'openDeck(' + cl.idx + ')') + '">';
   if (cl.lv.board === '25m' && cl.lv.unitNum) {
     var yn = cl.lv.category.replace('25m-y', '');
     h += '<span class="deck-row-tag">Y' + yn + '.' + cl.lv.unitNum + '</span>';
