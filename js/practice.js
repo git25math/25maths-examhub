@@ -1722,6 +1722,7 @@ function ppGetWeakGroups(board, sectionId) {
 /* ═══ DIAGNOSTIC TEST ═══ */
 
 function startDiagnostic(board) {
+  if (typeof isFeatureUnlocked === 'function' && !isFeatureUnlocked('diagnostic')) { showToast(t('Master 100+ words to unlock Diagnostic', '\u638c\u63e1100+\u8bcd\u6c47\u89e3\u9501\u8bca\u65ad\u6d4b\u8bd5')); return; }
   board = board || 'cie';
 
   if (!_ppAccessAllowed(board)) {
@@ -3174,6 +3175,7 @@ function ppStartPaperExam(paperKey, board) {
 /* ═══ MOCK EXAM GENERATOR ═══ */
 
 function ppShowMockSetup(board) {
+  if (typeof isFeatureUnlocked === 'function' && !isFeatureUnlocked('mock')) { showToast(t('Master 500+ words to unlock Mock Exam', '\u638c\u63e1500+\u8bcd\u6c47\u89e3\u9501\u6a21\u62df\u5377')); return; }
   board = board || 'cie';
 
   if (!_ppAccessAllowed(board)) {

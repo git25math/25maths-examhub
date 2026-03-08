@@ -200,6 +200,8 @@ function startReviewSession() {
 
 /* Start review for a specific level */
 function startReview(li) {
+  if (typeof isModeUnlocked === 'function' && !isModeUnlocked(li, 'review')) { showToast(t('Complete Quiz mode first', '\u8bf7\u5148\u5b8c\u6210\u6d4b\u9a8c\u6a21\u5f0f')); return; }
+  if (typeof isFeatureUnlocked === 'function' && !isFeatureUnlocked('review')) { showToast(t('Learn more words to unlock', '\u5b66\u4e60\u66f4\u591a\u8bcd\u6c47\u89e3\u9501')); return; }
   var lv = LEVELS[li];
   var allP = getPairs(lv.vocabulary);
   var wd = getWordData();

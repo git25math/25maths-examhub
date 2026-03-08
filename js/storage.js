@@ -573,6 +573,64 @@ function isModeDone(li, mode) {
   return !!s.modeDone[slug + ':' + mode];
 }
 
+/* ═══ MODE UNLOCK CHAIN ═══ */
+function isModeUnlocked(li, mode) {
+  if (mode === 'study') return true;
+  if (mode === 'quiz') return isModeDone(li, 'study');
+  if (mode === 'review') return isModeDone(li, 'quiz');
+  return isModeDone(li, 'study'); /* spell/match/battle */
+}
+
+/* ═══ SECTION SEQUENTIAL UNLOCK ═══ */
+function _getForceUnlocked() {
+  try { return JSON.parse(localStorage.getItem('wmatch_forceUnlocked') || '{}'); } catch(e) { return {}; }
+}
+
+function isSectionUnlocked(secId, secIdx, prevSecId, board) {
+  if (secIdx === 0) return true; /* first section always open */
+  var fu = _getForceUnlocked();
+  if (fu[secId]) return true;
+  if (!prevSecId) return true;
+  /* Check previous section learningPct >= 80 */
+  var prevLi = typeof getSectionLevelIdx === 'function' ? getSectionLevelIdx(prevSecId, board) : -1;
+  if (prevLi < 0) return true;
+  var stats = typeof getDeckStats === 'function' ? getDeckStats(prevLi) : null;
+  if (!stats) return true;
+  return stats.learningPct >= 80;
+}
+
+function migrateForceUnlock() {
+  try {
+    if (localStorage.getItem('wmatch_forceUnlocked_done')) return;
+    var fu = {};
+    var wd = getWordData();
+    /* Scan all boards' sections */
+    var boards = ['cie', 'edexcel', 'hhk'];
+    for (var bi = 0; bi < boards.length; bi++) {
+      var bKey = boards[bi];
+      var syllabus = typeof BOARD_SYLLABUS !== 'undefined' ? BOARD_SYLLABUS[bKey] : null;
+      if (!syllabus) continue;
+      for (var ci = 0; ci < syllabus.length; ci++) {
+        var secs = syllabus[ci].sections;
+        if (!secs) continue;
+        for (var si = 0; si < secs.length; si++) {
+          if (si === 0) continue; /* first is always open */
+          var sec = secs[si];
+          var li = typeof getSectionLevelIdx === 'function' ? getSectionLevelIdx(sec.id, bKey) : -1;
+          if (li >= 0) {
+            var ds = typeof getDeckStats === 'function' ? getDeckStats(li, wd) : null;
+            if (ds && ds.started > 0) fu[sec.id] = true;
+          }
+        }
+      }
+    }
+    if (Object.keys(fu).length > 0) {
+      localStorage.setItem('wmatch_forceUnlocked', JSON.stringify(fu));
+    }
+    localStorage.setItem('wmatch_forceUnlocked_done', '1');
+  } catch(e) {}
+}
+
 function bootstrapHistory() {
   var s = loadS();
   if (s.history && s.history.length > 0) return; /* already bootstrapped */
@@ -612,18 +670,18 @@ function bootstrapHistory() {
 
 /* ═══ ACHIEVEMENT BADGES ═══ */
 var BADGES = [
-  { id: 'first_word',    icon: '\ud83c\udf1f', en: 'First Word',      zh: '\u7b2c\u4e00\u4e2a\u8bcd', check: function(ctx) { return ctx.mastered >= 1; } },
-  { id: 'ten_words',     icon: '\ud83d\udcda', en: 'Ten Down',         zh: '\u5341\u4e2a\u8bcd\u4e86', check: function(ctx) { return ctx.mastered >= 10; } },
-  { id: 'hundred_club',  icon: '\ud83c\udfc5', en: 'Hundred Club',     zh: '\u767e\u8bcd\u4ff1\u4e50\u90e8', check: function(ctx) { return ctx.mastered >= 100; } },
-  { id: 'streak_3',      icon: '\ud83d\udd25', en: '3-Day Streak',     zh: '\u8fde\u7eed3\u5929',  check: function(ctx) { return ctx.streak >= 3; } },
-  { id: 'streak_7',      icon: '\ud83d\udcaa', en: 'Week Warrior',     zh: '\u4e00\u5468\u6218\u58eb', check: function(ctx) { return ctx.streak >= 7; } },
-  { id: 'streak_30',     icon: '\ud83d\udc8e', en: 'Monthly Master',   zh: '\u6708\u5ea6\u5927\u5e08', check: function(ctx) { return ctx.streak >= 30; } },
-  { id: 'daily_5',       icon: '\u26a1',       en: 'Daily 5',          zh: '\u6bcf\u65e5\u63505\u6b21', check: function(ctx) { return ctx.dailyCount >= 5; } },
-  { id: 'quiz_perfect',  icon: '\ud83c\udfc6', en: 'Perfectionist',    zh: '\u5b8c\u7f8e\u4e3b\u4e49', check: function(ctx) { return ctx.perfectQuiz; } },
-  { id: 'first_section', icon: '\u2705',       en: 'First Section',    zh: '\u7b2c\u4e00\u4e2a\u77e5\u8bc6\u70b9', check: function(ctx) { return ctx.sectionsCleared >= 1; } },
-  { id: 'srs_master',    icon: '\ud83e\udde0', en: 'Memory Master',    zh: '\u8bb0\u5fc6\u5927\u5e08', check: function(ctx) { return ctx.srsMaxCount >= 50; } },
-  { id: 'five_hundred',  icon: '\ud83d\ude80', en: '500 Words',        zh: '500\u8bcd\u8fbe\u6210', check: function(ctx) { return ctx.mastered >= 500; } },
-  { id: 'all_modes',     icon: '\ud83c\udf08', en: 'Explorer',         zh: '\u63a2\u7d22\u8005',  check: function(ctx) { return ctx.modesUsed >= 5; } }
+  { id: 'first_word',    icon: '\ud83c\udf1f', en: 'First Word',      zh: '\u7b2c\u4e00\u4e2a\u8bcd', prereq: null, check: function(ctx) { return ctx.mastered >= 1; } },
+  { id: 'ten_words',     icon: '\ud83d\udcda', en: 'Ten Down',         zh: '\u5341\u4e2a\u8bcd\u4e86', prereq: 'first_word', check: function(ctx) { return ctx.mastered >= 10; } },
+  { id: 'hundred_club',  icon: '\ud83c\udfc5', en: 'Hundred Club',     zh: '\u767e\u8bcd\u4ff1\u4e50\u90e8', prereq: 'ten_words', check: function(ctx) { return ctx.mastered >= 100; } },
+  { id: 'streak_3',      icon: '\ud83d\udd25', en: '3-Day Streak',     zh: '\u8fde\u7eed3\u5929', prereq: null, check: function(ctx) { return ctx.streak >= 3; } },
+  { id: 'streak_7',      icon: '\ud83d\udcaa', en: 'Week Warrior',     zh: '\u4e00\u5468\u6218\u58eb', prereq: 'streak_3', check: function(ctx) { return ctx.streak >= 7; } },
+  { id: 'streak_30',     icon: '\ud83d\udc8e', en: 'Monthly Master',   zh: '\u6708\u5ea6\u5927\u5e08', prereq: 'streak_7', check: function(ctx) { return ctx.streak >= 30; } },
+  { id: 'daily_5',       icon: '\u26a1',       en: 'Daily 5',          zh: '\u6bcf\u65e5\u63505\u6b21', prereq: null, check: function(ctx) { return ctx.dailyCount >= 5; } },
+  { id: 'quiz_perfect',  icon: '\ud83c\udfc6', en: 'Perfectionist',    zh: '\u5b8c\u7f8e\u4e3b\u4e49', prereq: 'first_word', check: function(ctx) { return ctx.perfectQuiz; } },
+  { id: 'first_section', icon: '\u2705',       en: 'First Section',    zh: '\u7b2c\u4e00\u4e2a\u77e5\u8bc6\u70b9', prereq: 'first_word', check: function(ctx) { return ctx.sectionsCleared >= 1; } },
+  { id: 'srs_master',    icon: '\ud83e\udde0', en: 'Memory Master',    zh: '\u8bb0\u5fc6\u5927\u5e08', prereq: 'first_word', check: function(ctx) { return ctx.srsMaxCount >= 50; } },
+  { id: 'five_hundred',  icon: '\ud83d\ude80', en: '500 Words',        zh: '500\u8bcd\u8fbe\u6210', prereq: 'hundred_club', check: function(ctx) { return ctx.mastered >= 500; } },
+  { id: 'all_modes',     icon: '\ud83c\udf08', en: 'Explorer',         zh: '\u63a2\u7d22\u8005', prereq: 'first_word', check: function(ctx) { return ctx.modesUsed >= 5; } }
 ];
 
 function getUnlockedBadges() {
@@ -694,6 +752,7 @@ function checkBadges() {
   var newlyUnlocked = [];
   BADGES.forEach(function(b) {
     if (unlocked.indexOf(b.id) >= 0) return;
+    if (b.prereq && unlocked.indexOf(b.prereq) < 0) return;
     if (b.check(ctx)) {
       unlocked.push(b.id);
       newlyUnlocked.push(b);

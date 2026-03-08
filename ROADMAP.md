@@ -395,3 +395,4 @@
 - [x] **性能优化第二轮**: HHK slug→idx 索引缓存 + getWordData 共享 + mastery.js wd 未定义修复 → v2.2.17
 - [x] **引导系统质量修复**: 可访问性（aria-label/role/keyboard）+ 触摸目标 36px + safe-area + 响应式断点 + ESC 关闭 + print 隐藏 → v2.2.17
 - [x] **引导流程优化**: Nudge 30min 冷却 + 徽章庆祝排队 + 首词引导 + streak-at-risk + 阶段升级 + 发现重置 → v2.2.19
+- [x] **渐进解锁系统**: 模式解锁链 + 知识点顺序解锁(80%门槛) + 徽章前置链 + 阶段功能门控(4阶段) + 老用户迁移 → v2.2.21

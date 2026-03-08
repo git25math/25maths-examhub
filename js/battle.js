@@ -11,6 +11,8 @@ function resetG() {
 
 /* Start battle mode */
 function startBattle(idx) {
+  if (typeof isModeUnlocked === 'function' && !isModeUnlocked(idx, 'battle')) { showToast(t('Complete Study mode first', '\u8bf7\u5148\u5b8c\u6210\u5b66\u4e60\u6a21\u5f0f')); return; }
+  if (typeof isFeatureUnlocked === 'function' && !isFeatureUnlocked('battle')) { showToast(t('Learn more words to unlock', '\u5b66\u4e60\u66f4\u591a\u8bcd\u6c47\u89e3\u9501')); return; }
   var lv = LEVELS[idx];
   if (validate(lv, idx)) return;
 

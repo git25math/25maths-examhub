@@ -841,8 +841,14 @@ function renderDeck(idx) {
   pathModes.forEach(function(m, i) {
     if (i > 0) html += '<span class="mode-arrow">\u2192</span>';
     var done = isModeDone(idx, pathKeys[i]);
-    html += '<button class="mode-btn mode-btn-path" onclick="' + m.fn + '">';
-    if (done) html += '<span class="mode-done">\u2713</span>';
+    var mUnlocked = isModeUnlocked(idx, pathKeys[i]) && (typeof isFeatureUnlocked !== 'function' || isFeatureUnlocked(pathKeys[i]));
+    if (mUnlocked) {
+      html += '<button class="mode-btn mode-btn-path" onclick="' + m.fn + '">';
+      if (done) html += '<span class="mode-done">\u2713</span>';
+    } else {
+      html += '<button class="mode-btn mode-btn-path mode-btn-locked" onclick="showToast(t(\'Complete the previous mode first\',\'\u8bf7\u5148\u5b8c\u6210\u524d\u4e00\u4e2a\u6a21\u5f0f\'));return false">';
+      html += '<span class="mode-lock">\ud83d\udd12</span>';
+    }
     html += '<div class="mode-emoji">' + m.emoji + '</div>';
     html += '<div class="mode-name">' + m.name + '</div>';
     html += '</button>';
@@ -860,8 +866,14 @@ function renderDeck(idx) {
   var extraKeys = ['spell', 'match', 'battle'];
   extraModes.forEach(function(m, i) {
     var done = isModeDone(idx, extraKeys[i]);
-    html += '<button class="mode-btn mode-btn-extra" onclick="' + m.fn + '">';
-    if (done) html += '<span class="mode-done">\u2713</span>';
+    var mUnlocked = isModeUnlocked(idx, extraKeys[i]) && (typeof isFeatureUnlocked !== 'function' || isFeatureUnlocked(extraKeys[i]));
+    if (mUnlocked) {
+      html += '<button class="mode-btn mode-btn-extra" onclick="' + m.fn + '">';
+      if (done) html += '<span class="mode-done">\u2713</span>';
+    } else {
+      html += '<button class="mode-btn mode-btn-extra mode-btn-locked" onclick="showToast(t(\'Complete Study mode first\',\'\u8bf7\u5148\u5b8c\u6210\u5b66\u4e60\u6a21\u5f0f\'));return false">';
+      html += '<span class="mode-lock">\ud83d\udd12</span>';
+    }
     html += '<div class="mode-emoji">' + m.emoji + '</div>';
     html += '<div class="mode-name">' + m.name + '</div>';
     html += '</button>';

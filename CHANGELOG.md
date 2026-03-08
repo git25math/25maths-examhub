@@ -1,5 +1,33 @@
 # Changelog
 
+## [2.2.21] - 2026-03-08 — 渐进解锁系统 (Progressive Unlock)
+
+### 新增
+- **模式解锁链**: Study 始终可用 → Quiz 需完成 Study → Review 需完成 Quiz → Spell/Match/Battle 需完成 Study；未解锁按钮显示 🔒 + 低透明度
+- **知识点顺序解锁**: 每章首个 section 始终开放，后续需前一个 section learningPct ≥ 80%；老用户已有进度自动 force-unlock（一次性迁移）
+- **徽章前置链**: 掌握链（first_word → ten_words → hundred_club → five_hundred）、连续链（streak_3 → streak_7 → streak_30）、弱依赖（quiz_perfect/first_section/srs_master/all_modes → first_word）
+- **阶段功能门控**: new(0-10词) 只有 Study/Quiz → active(11-100) 解锁 Review/Spell/Match/Battle/Practice → intermediate(101-500) 解锁 Diagnostic → advanced(501+) 解锁 Mock
+- **入口双重防护**: 5 个模式入口函数 + Diagnostic/Mock 均加 unlock + feature 检查，防止绕过 UI 直接调用
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `js/storage.js` | +`isModeUnlocked()` + `isSectionUnlocked()` + `migrateForceUnlock()` + BADGES `prereq` 字段 + `checkBadges` prereq 检查 |
+| `js/mastery.js` | `renderDeck()` 路径模式 + 额外模式按钮 lock 渲染（`mode-btn-locked` + 🔒） |
+| `js/syllabus.js` | `_renderSectionRow()` 新增 secIdx/prevSecId 参数 + 锁定渲染 + `openSection()` 防护 |
+| `js/ui.js` | +`STAGE_ORDER` + `FEATURE_STAGE` + `isFeatureUnlocked()` |
+| `js/practice.js` | `startDiagnostic()` + `ppShowMockSetup()` 入口 feature 防护 |
+| `js/quiz.js` | `startQuiz()` 入口 mode + feature 防护 |
+| `js/review.js` | `startReview()` 入口 mode + feature 防护 |
+| `js/spell.js` | `startSpell()` 入口 mode + feature 防护 |
+| `js/match.js` | `startMatch()` 入口 mode + feature 防护 |
+| `js/battle.js` | `startBattle()` 入口 mode + feature 防护 |
+| `js/app.js` | initApp 调用 `migrateForceUnlock()` |
+| `css/style.css` | +`.mode-btn-locked` + `.mode-lock` 样式（含暗色模式） |
+| `js/config.js` | v2.2.20 → v2.2.21 |
+
+---
+
 ## [2.2.20] - 2026-03-08 — 划词翻译词典回退 (Dictionary API Fallback)
 
 ### 增强

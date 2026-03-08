@@ -397,8 +397,9 @@ function _renderBoardHome(board) {
       }
     }
 
-    visibleSections.forEach(function(sec) {
-      html += _renderSectionRow(sec, ch, board, wd);
+    visibleSections.forEach(function(sec, vi) {
+      var prevSecId = vi > 0 ? visibleSections[vi - 1].id : null;
+      html += _renderSectionRow(sec, ch, board, wd, vi, prevSecId);
     });
 
     html += '</div></div>';
@@ -461,7 +462,7 @@ function _getHHKSectionStats(sec, _wd) {
 }
 
 /* Render a single section row in the home view */
-function _renderSectionRow(sec, ch, board, _wd) {
+function _renderSectionRow(sec, ch, board, _wd, secIdx, prevSecId) {
   board = board || 'cie';
   var vocab = BOARD_VOCAB[board] || {};
   var li = getSectionLevelIdx(sec.id, board);
@@ -473,6 +474,9 @@ function _renderSectionRow(sec, ch, board, _wd) {
     stats = li >= 0 ? getDeckStats(li, _wd) : { pct: 0, started: 0, total: words.length, learningPct: 0, masteryPct: 0 };
   }
 
+  /* Section sequential unlock */
+  var secUnlocked = typeof isSectionUnlocked !== 'function' || secIdx === undefined || isSectionUnlocked(sec.id, secIdx, prevSecId, board);
+
   var tierBadge = '';
   if (sec.tier === 'extended') tierBadge = ' <span class="tier-badge tier-ext">E</span>';
   else if (sec.tier === 'core') tierBadge = ' <span class="tier-badge tier-core">C</span>';
@@ -480,13 +484,19 @@ function _renderSectionRow(sec, ch, board, _wd) {
   else if (sec.tier === 'foundation') tierBadge = ' <span class="tier-badge tier-foundation">F</span>';
 
   var h = '';
-  h += '<div class="deck-row" onclick="openSection(\'' + sec.id + '\',\'' + board + '\')">';
+  if (secUnlocked) {
+    h += '<div class="deck-row" onclick="openSection(\'' + sec.id + '\',\'' + board + '\')">';
+  } else {
+    h += '<div class="deck-row locked" onclick="showToast(t(\'Complete the previous section first (80%+)\',\'\u8bf7\u5148\u5b8c\u6210\u4e0a\u4e00\u4e2a\u77e5\u8bc6\u70b9(80%+)\'))">';
+  }
   h += '<span class="deck-row-tag sec-tag">' + sec.id + '</span>';
   h += '<span class="deck-row-name">' + escapeHtml(sec.title);
   if (appLang !== 'en') h += ' ' + escapeHtml(sec.title_zh);
   h += tierBadge + '</span>';
-  /* 3-state indicator: empty=not started, half=in progress, full=mastered */
-  if (words.length > 0) {
+  if (!secUnlocked) {
+    h += '<span class="deck-row-lock">\ud83d\udd12</span>';
+  } else if (words.length > 0) {
+    /* 3-state indicator: empty=not started, half=in progress, full=mastered */
     var _dotClass = stats.started === 0 ? 'sec-dot-empty' : (stats.pct >= 80 ? 'sec-dot-full' : 'sec-dot-half');
     h += '<span class="sec-dot ' + _dotClass + '"></span>';
     if (stats.pct >= 80) h += '<span class="sec-done-check">\u2713</span>';
@@ -507,6 +517,14 @@ function toggleCIEChapter(catKey) {
 function openSection(sectionId, board) {
   var info = getSectionInfo(sectionId, board);
   if (!info) return;
+  /* Section sequential unlock guard */
+  if (typeof isSectionUnlocked === 'function' && info.sectionIndex > 0) {
+    var prevSec = info.chapter.sections[info.sectionIndex - 1];
+    if (prevSec && !isSectionUnlocked(sectionId, info.sectionIndex, prevSec.id, info.board)) {
+      showToast(t('Complete the previous section first (80%+)', '\u8bf7\u5148\u5b8c\u6210\u4e0a\u4e00\u4e2a\u77e5\u8bc6\u70b9(80%+)'));
+      return;
+    }
+  }
   _currentSectionContext = { sectionId: sectionId, board: info.board };
   renderSectionDetail(info.chapter, info.section, info.sectionIndex, info.board);
   showPanel('section');

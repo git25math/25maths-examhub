@@ -878,6 +878,19 @@ function getDistinctModesUsed() {
   return Object.keys(modeSet).length;
 }
 
+/* ═══ STAGE-BASED FEATURE GATING ═══ */
+var STAGE_ORDER = ['new', 'active', 'intermediate', 'advanced'];
+var FEATURE_STAGE = {
+  study: 'new', quiz: 'new', review: 'active', spell: 'active',
+  match: 'active', battle: 'active', practice: 'active',
+  diagnostic: 'intermediate', mock: 'advanced'
+};
+function isFeatureUnlocked(f) {
+  var required = FEATURE_STAGE[f] || 'new';
+  var cur = getUserStage().stage;
+  return STAGE_ORDER.indexOf(cur) >= STAGE_ORDER.indexOf(required);
+}
+
 var _activeNudge = null;
 var _lastNudgeShownAt = 0;
 function showNudge(key, msg, actionLabel, actionFn) {

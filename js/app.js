@@ -5,6 +5,8 @@
 onLevelsReady(function() {
 (async function initApp() {
   updateAuthLang();
+  /* Migrate force-unlock for existing users (one-time) */
+  if (typeof migrateForceUnlock === 'function') migrateForceUnlock();
   /* Load custom levels from storage */
   var custom = getCustomLevels();
   if (custom.length > 0) {
