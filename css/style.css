@@ -3982,6 +3982,8 @@ input { font-family: inherit; }
 .stt-popup-dict-def { font-size:0.9rem; color:var(--c-text); margin-bottom:4px; line-height:1.4; }
 .stt-popup-pos { font-size:0.75rem; font-weight:600; color:var(--c-primary); font-style:italic; }
 .stt-popup-example { font-size:0.8rem; color:var(--c-text2); font-style:italic; margin-top:2px; }
+.stt-popup-badge--translate { background:#2979ff; color:#fff; display:inline-block; }
+.stt-popup-dir { font-size:0.75rem; color:var(--c-text2); }
 @media (max-width:639px) { .stt-popup { max-width:calc(100vw - 32px); } }
 
 /* ═══ PRINT STYLES ═══ */

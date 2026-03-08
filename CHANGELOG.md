@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.2.22] - 2026-03-08 — 百度翻译接入 (Baidu Translate Integration)
+
+### 增强
+- **百度翻译 API**: 词库外文字通过 Supabase Edge Function 代理调用百度翻译，实现英↔中双向翻译
+- **三层查找链**: 本地词库 → 百度翻译（EN↔ZH）→ Free Dictionary API（英英释义 + 发音）
+- **Translation badge**: 翻译结果标注蓝色 "翻译" 徽章 + 方向标识（EN → ZH / ZH → EN）
+- **密钥安全**: APP ID + Secret Key 存储在 Supabase 环境变量，前端不暴露
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `supabase/functions/translate/index.ts` | **新建** — Edge Function 代理百度翻译 API（MD5 签名 + 错误处理） |
+| `js/translate.js` | +`_fetchBaiduTranslate()` + `_showBaiduPopup()` + `_sttBaiduCache` + 查找链重构 |
+| `css/style.css` | +2 行（.stt-popup-badge--translate + .stt-popup-dir） |
+| `js/config.js` | v2.2.21 → v2.2.22 |
+
+---
+
 ## [2.2.21] - 2026-03-08 — 渐进解锁系统 (Progressive Unlock)
 
 ### 新增

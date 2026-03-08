@@ -1,7 +1,8 @@
 /* ══════════════════════════════════════════════════════════════
    translate.js — Select-to-Translate (划词翻译)
    Matches selected text against vocabulary index, shows popup.
-   Falls back to Free Dictionary API for English words not in vocab.
+   Falls back to Baidu Translate (EN↔ZH) via Edge Function,
+   then Free Dictionary API for English pronunciation/definitions.
    ══════════════════════════════════════════════════════════════ */
 
 /* Global state */
@@ -11,6 +12,7 @@ var _sttPopupEl = null;
 var _sttDebounce = null;
 var _sttDictCache = {};   /* API result cache: word → response | null */
 var _sttDictPending = null; /* current pending fetch abort controller */
+var _sttBaiduCache = {};  /* Baidu translate cache: word → { src, dst, from, to } | null */
 
 /* ─── Build reverse index ─── */
 function _buildSTTIndex() {
@@ -69,7 +71,86 @@ function _isEnglish(text) {
   return /^[a-zA-Z][a-zA-Z\s\-']{0,58}$/.test(text.trim());
 }
 
-/* ─── Free Dictionary API fallback ─── */
+/* ─── Baidu Translate via Edge Function (primary fallback) ─── */
+function _fetchBaiduTranslate(text, rect) {
+  var key = text.toLowerCase().trim();
+  /* Check cache */
+  if (key in _sttBaiduCache) {
+    if (_sttBaiduCache[key]) {
+      _showBaiduPopup(_sttBaiduCache[key], rect);
+    } else if (_isEnglish(text)) {
+      _fetchDictAPI(text, rect);
+    }
+    return;
+  }
+  /* Abort previous pending request */
+  if (_sttDictPending) {
+    try { _sttDictPending.abort(); } catch(e) {}
+    _sttDictPending = null;
+  }
+  _showSTTLoading(rect);
+  var controller = (typeof AbortController !== 'undefined') ? new AbortController() : null;
+  _sttDictPending = controller;
+  var isEn = _isEnglish(text);
+  var body = { q: text, from: isEn ? 'en' : 'zh', to: isEn ? 'zh' : 'en' };
+  var opts = {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'apikey': SUPABASE_KEY },
+    body: JSON.stringify(body)
+  };
+  if (controller) opts.signal = controller.signal;
+  fetch(EDGE_FN_URL + '/translate', opts)
+    .then(function(res) { return res.json(); })
+    .then(function(data) {
+      _sttDictPending = null;
+      if (data.error || !data.results || data.results.length === 0) {
+        _sttBaiduCache[key] = null;
+        /* Fallback to dictionary for English */
+        if (isEn) { _fetchDictAPI(text, rect); return; }
+        _hideSTTPopup();
+        return;
+      }
+      var result = {
+        src: data.results[0].src,
+        dst: data.results[0].dst,
+        from: data.from,
+        to: data.to
+      };
+      _sttBaiduCache[key] = result;
+      _showBaiduPopup(result, rect);
+    })
+    .catch(function(err) {
+      _sttDictPending = null;
+      if (err && err.name === 'AbortError') return;
+      _sttBaiduCache[key] = null;
+      /* Fallback to dictionary for English */
+      if (isEn) { _fetchDictAPI(text, rect); return; }
+      _hideSTTPopup();
+    });
+}
+
+/* ─── Show Baidu translation popup ─── */
+function _showBaiduPopup(result, rect) {
+  if (!_sttPopupEl) return;
+  var html = '<div class="stt-popup-word">' + _escHtml(result.src) + '</div>';
+  html += '<div class="stt-popup-def" style="font-size:1.05rem">' + _escHtml(result.dst) + '</div>';
+  html += '<div class="stt-popup-meta">';
+  html += '<span class="stt-popup-badge stt-popup-badge--translate">' + t('Translation', '翻译') + '</span>';
+  var dir = (result.from === 'en') ? 'EN → ZH' : 'ZH → EN';
+  html += '<span class="stt-popup-dir">' + dir + '</span>';
+  html += '</div>';
+  _sttPopupEl.innerHTML = html;
+  _positionPopup(rect, 100);
+  _sttPopupEl.classList.add('show');
+  requestAnimationFrame(function() {
+    var actualH = _sttPopupEl.offsetHeight;
+    var newTop = rect.top - actualH - 8;
+    if (newTop < 8) newTop = rect.bottom + 8;
+    _sttPopupEl.style.top = newTop + 'px';
+  });
+}
+
+/* ─── Free Dictionary API fallback (English pronunciation + definitions) ─── */
 function _fetchDictAPI(word, rect) {
   var key = word.toLowerCase().trim();
   /* Check cache */
@@ -331,9 +412,9 @@ function _onSTTSelection() {
       return;
     }
 
-    /* Fallback: Free Dictionary API for English words */
-    if (_isEnglish(text) && text.length >= 2) {
-      _fetchDictAPI(text, rect);
+    /* Fallback: Baidu Translate (EN↔ZH), then Free Dictionary API */
+    if (text.length >= 2) {
+      _fetchBaiduTranslate(text, rect);
       return;
     }
 
