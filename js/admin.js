@@ -133,17 +133,33 @@ async function renderClassList() {
   if (!ct) return;
   ct.innerHTML = '<div class="admin-loading">' + t('Loading...', '加载中...') + '</div>';
 
+  var _saView = !_teacherData && typeof isSuperAdmin === 'function' && isSuperAdmin();
   try {
   var res = await _adminSchoolFilter(sb.from('kw_classes')
-    .select('id, name, grade, created_at'))
+    .select('id, name, grade, school_id, created_at'))
     .order('created_at', { ascending: true });
   var classes = res.data || [];
 
   var activity = await loadActivityData();
 
-  var html = '<div class="admin-toolbar">' +
-    '<button class="btn btn-primary btn-sm" onclick="showCreateClassModal()">' + t('+ Create Class', '+ 创建班级') + '</button>' +
-    '</div>';
+  /* Super admin: load school names for labeling */
+  var _schoolNames = {};
+  if (_saView && classes.length > 0) {
+    var schoolIds = {};
+    classes.forEach(function(c) { if (c.school_id) schoolIds[c.school_id] = true; });
+    var sids = Object.keys(schoolIds);
+    if (sids.length > 0) {
+      var sRes = await sb.from('schools').select('id, name').in('id', sids);
+      (sRes.data || []).forEach(function(s) { _schoolNames[s.id] = s.name; });
+    }
+  }
+
+  var html = '';
+  if (!_saView) {
+    html += '<div class="admin-toolbar">' +
+      '<button class="btn btn-primary btn-sm" onclick="showCreateClassModal()">' + t('+ Create Class', '+ 创建班级') + '</button>' +
+      '</div>';
+  }
 
   if (classes.length === 0) {
     html += '<div class="admin-empty">' + t('No classes yet. Create your first class!', '还没有班级，创建第一个班级吧！') + '</div>';
@@ -168,6 +184,9 @@ async function renderClassList() {
 
       cardsHtml += '<div class="admin-class-card" onclick="renderClassDetail(\'' + c.id + '\')">';
       cardsHtml += '<div class="admin-class-name">' + escapeHtml(c.name) + '</div>';
+      if (_saView && _schoolNames[c.school_id]) {
+        cardsHtml += '<div style="font-size:11px;color:var(--c-text2);margin-bottom:4px">' + escapeHtml(_schoolNames[c.school_id]) + '</div>';
+      }
       cardsHtml += '<div class="admin-class-stats">';
       cardsHtml += '<span>' + count + ' ' + t('students', '学生') + '</span>';
       cardsHtml += '<span>' + t('Avg', '平均') + ' ' + avgPct + '%</span>';
@@ -486,11 +505,12 @@ async function renderClassDetail(classId) {
   var activity = await loadActivityData(true);
   var students = activity.filter(function(s) { return s.class_id === classId; });
 
+  var _saReadOnly = !_teacherData && typeof isSuperAdmin === 'function' && isSuperAdmin();
   var html = '<div class="admin-detail-header">' +
     '<button class="btn btn-ghost btn-sm" onclick="renderClassList()">' + t('\u2190 Back', '\u2190 返回') + '</button>' +
     '<div class="admin-detail-title">' + escapeHtml(cls.name) + ' <span class="admin-detail-grade">' + gradeLabel + '</span>' +
-    ' <button class="btn btn-ghost btn-sm" style="padding:2px 6px;font-size:14px" data-action="editclass" data-cid="' + classId + '" data-cname="' + escapeHtml(cls.name) + '" data-grade="' + cls.grade + '">&#9998;</button></div>' +
-    '<button class="btn btn-primary btn-sm" onclick="showBatchCreateModal(\'' + classId + '\')">' + t('+ Add Students', '+ 添加学生') + '</button>' +
+    (_saReadOnly ? '' : ' <button class="btn btn-ghost btn-sm" style="padding:2px 6px;font-size:14px" data-action="editclass" data-cid="' + classId + '" data-cname="' + escapeHtml(cls.name) + '" data-grade="' + cls.grade + '">&#9998;</button>') + '</div>' +
+    (_saReadOnly ? '' : '<button class="btn btn-primary btn-sm" onclick="showBatchCreateModal(\'' + classId + '\')">' + t('+ Add Students', '+ 添加学生') + '</button>') +
     '</div>';
 
   if (students.length === 0) {
@@ -694,6 +714,7 @@ async function renderSchoolOverview() {
   ct.innerHTML = '<div class="admin-loading">' + t('Loading...', '加载中...') + '</div>';
 
   var activity = await loadActivityData(true);
+  var _saView = !_teacherData && typeof isSuperAdmin === 'function' && isSuperAdmin();
 
   var totalStudents = activity.length;
   var now = Date.now();
@@ -717,6 +738,42 @@ async function renderSchoolOverview() {
   html += summaryCard(t('Active (7d)', '活跃(7天)'), active7d, 'var(--c-warning)');
   html += summaryCard(t('Avg Mastery', '平均掌握率'), avgPct + '%', 'var(--c-primary-dark)');
   html += '</div>';
+
+  /* Super admin: per-school breakdown */
+  if (_saView) {
+    var schoolMap = {};
+    activity.forEach(function(s) {
+      var sid = s.school_id || 'unknown';
+      if (!schoolMap[sid]) schoolMap[sid] = { students: 0, sumPct: 0, classes: {}, active7d: 0 };
+      schoolMap[sid].students++;
+      schoolMap[sid].sumPct += (s.mastery_pct || 0);
+      schoolMap[sid].classes[s.class_id] = true;
+      if (s.last_active && (now - new Date(s.last_active).getTime()) < 7 * 86400000) schoolMap[sid].active7d++;
+    });
+    var schoolIds = Object.keys(schoolMap);
+    /* Load school names */
+    var _sNames = {};
+    if (schoolIds.length > 0) {
+      try {
+        var sRes = await sb.from('schools').select('id, name').in('id', schoolIds);
+        (sRes.data || []).forEach(function(s) { _sNames[s.id] = s.name; });
+      } catch(e) {}
+    }
+    html += '<div class="section-title" style="margin-top:20px">' + t('Schools', '学校') + '</div>';
+    html += '<div class="admin-class-grid">';
+    schoolIds.forEach(function(sid) {
+      var d = schoolMap[sid];
+      var avg = d.students > 0 ? Math.round(d.sumPct / d.students) : 0;
+      var name = _sNames[sid] || sid;
+      html += '<div class="admin-class-card" style="cursor:default">';
+      html += '<div class="admin-class-name">' + escapeHtml(name) + '</div>';
+      html += '<div class="admin-class-stats"><span>' + Object.keys(d.classes).length + ' ' + t('classes', '班级') + '</span><span>' + d.students + ' ' + t('students', '学生') + '</span></div>';
+      html += '<div class="admin-class-stats"><span>' + d.active7d + ' ' + t('active (7d)', '活跃(7天)') + '</span><span>' + t('Avg', '平均') + ' ' + avg + '%</span></div>';
+      html += '<div class="admin-class-bar"><div class="admin-class-bar-fill" style="width:' + avg + '%"></div></div>';
+      html += '</div>';
+    });
+    html += '</div>';
+  }
 
   /* Grade summary table */
   var gradeMap = {};
