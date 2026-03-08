@@ -1,0 +1,218 @@
+{
+  "version": "1.0",
+  "points": [
+    {
+      "id": "kp-1.1-01",
+      "section": "1.1",
+      "order": 1,
+      "title": "Natural Numbers, Integers & Real Numbers",
+      "title_zh": "自然数、整数与实数",
+      "explanation": {
+        "en": "Numbers can be classified into different types based on their properties.\n\n**Natural numbers** ($\\mathbb{N}$) are the counting numbers: $1, 2, 3, 4, \\ldots$\n\n**Integers** ($\\mathbb{Z}$) include all whole numbers, both positive and negative: $\\ldots, -3, -2, -1, 0, 1, 2, 3, \\ldots$\n\n**Rational numbers** ($\\mathbb{Q}$) can be written as a fraction $\\frac{p}{q}$ where $p$ and $q$ are integers and $q \\neq 0$. This includes terminating and recurring decimals.\n\n**Irrational numbers** cannot be written as a fraction. Examples include $\\sqrt{2}$, $\\pi$, and $\\sqrt{3}$.\n\n**Real numbers** ($\\mathbb{R}$) include both rational and irrational numbers — essentially all numbers on the number line.",
+        "zh": "数可以根据性质分为不同类型。\n\n**自然数** ($\\mathbb{N}$)：即正整数 $1, 2, 3, 4, \\ldots$\n\n**整数** ($\\mathbb{Z}$)：包含正整数、负整数和零：$\\ldots, -3, -2, -1, 0, 1, 2, 3, \\ldots$\n\n**有理数** ($\\mathbb{Q}$)：可以写成分数 $\\frac{p}{q}$（$p, q$ 为整数且 $q \\neq 0$）的数。包括有限小数和循环小数。\n\n**无理数**：不能写成分数的数，如 $\\sqrt{2}$、$\\pi$、$\\sqrt{3}$。\n\n**实数** ($\\mathbb{R}$)：有理数和无理数的总称，即数轴上所有的数。"
+      },
+      "examPatterns": [
+        {
+          "id": "ep-classify",
+          "label": "Classify numbers from a given list",
+          "label_zh": "从给定列表中分类数",
+          "description": "You are given a list of numbers and asked to identify which are natural, integer, rational, or irrational.",
+          "description_zh": "给出一组数，要求辨别哪些是自然数、整数、有理数或无理数。"
+        },
+        {
+          "id": "ep-irrational",
+          "label": "Identify irrational numbers",
+          "label_zh": "辨别无理数",
+          "description": "You must determine whether a number (often involving square roots or $\\pi$) is rational or irrational.",
+          "description_zh": "判断一个数（通常含平方根或 $\\pi$）是有理数还是无理数。"
+        }
+      ],
+      "examples": [
+        {
+          "patternId": "ep-classify",
+          "question": "From the list $-3,\\ \\frac{1}{2},\\ \\sqrt{5},\\ 0,\\ 7,\\ \\pi$, write down:\n\n(a) a natural number\n(b) an irrational number\n(c) a negative integer",
+          "question_zh": "从 $-3,\\ \\frac{1}{2},\\ \\sqrt{5},\\ 0,\\ 7,\\ \\pi$ 中选出：\n\n(a) 一个自然数\n(b) 一个无理数\n(c) 一个负整数",
+          "solution": "**Step 1:** Identify natural numbers — these are positive whole numbers.\n$7$ is a natural number. ✓\n\n**Step 2:** Identify irrational numbers — these cannot be written as fractions.\n$\\sqrt{5}$ and $\\pi$ are both irrational. ✓\n\n**Step 3:** Identify negative integers — whole numbers below zero.\n$-3$ is a negative integer. ✓\n\n**Answers:** (a) $7$ (b) $\\sqrt{5}$ or $\\pi$ (c) $-3$",
+          "solution_zh": "**步骤1：** 找自然数——正整数。\n$7$ 是自然数。✓\n\n**步骤2：** 找无理数——不能写成分数的数。\n$\\sqrt{5}$ 和 $\\pi$ 都是无理数。✓\n\n**步骤3：** 找负整数——小于零的整数。\n$-3$ 是负整数。✓\n\n**答案：** (a) $7$ (b) $\\sqrt{5}$ 或 $\\pi$ (c) $-3$",
+          "source": "Adapted from 0580 specimen"
+        }
+      ],
+      "testYourself": [
+        {
+          "q": "Which of these is an irrational number?",
+          "q_zh": "下列哪个是无理数？",
+          "o": ["$\\frac{22}{7}$", "$\\sqrt{9}$", "$\\sqrt{2}$", "$0.\\overline{3}$"],
+          "a": 2,
+          "e": "$\\sqrt{2} = 1.41421356\\ldots$ is a non-terminating, non-repeating decimal, so it is irrational. $\\frac{22}{7}$ is rational (it's a fraction), $\\sqrt{9} = 3$ is an integer, and $0.\\overline{3} = \\frac{1}{3}$ is rational.",
+          "e_zh": "$\\sqrt{2} = 1.41421356\\ldots$ 是无限不循环小数，因此是无理数。$\\frac{22}{7}$ 是有理数（分数），$\\sqrt{9} = 3$ 是整数，$0.\\overline{3} = \\frac{1}{3}$ 是有理数。"
+        },
+        {
+          "q": "Which statement is true?",
+          "q_zh": "下列哪个说法正确？",
+          "o": ["All integers are natural numbers", "All natural numbers are integers", "$0$ is a natural number", "$-5$ is a natural number"],
+          "a": 1,
+          "e": "Every natural number ($1, 2, 3, \\ldots$) is also an integer. But not every integer is natural — negative integers and $0$ are not natural numbers.",
+          "e_zh": "每个自然数（$1, 2, 3, \\ldots$）都是整数。但并非每个整数都是自然数——负整数和 $0$ 不是自然数。"
+        }
+      ],
+      "vocabLinks": ["num-types"],
+      "tier": "both"
+    },
+    {
+      "id": "kp-1.1-02",
+      "section": "1.1",
+      "order": 2,
+      "title": "Prime Numbers, Squares & Cubes",
+      "title_zh": "质数、平方数与立方数",
+      "explanation": {
+        "en": "**Prime numbers** have exactly two factors: $1$ and the number itself.\nThe first few primes are: $2, 3, 5, 7, 11, 13, 17, 19, 23, 29, \\ldots$\n\nNote: $1$ is **not** a prime number (it has only one factor). $2$ is the only even prime.\n\n**Square numbers** are formed by multiplying a whole number by itself:\n$1, 4, 9, 16, 25, 36, 49, 64, 81, 100, \\ldots$\n\n**Cube numbers** are formed by multiplying a whole number by itself twice:\n$1, 8, 27, 64, 125, 216, \\ldots$\n\n**Triangular numbers** are: $1, 3, 6, 10, 15, 21, 28, \\ldots$ (add $2$, then $3$, then $4$, etc.)\n\n**Reciprocal** of a number $n$ is $\\frac{1}{n}$. The reciprocal of $\\frac{a}{b}$ is $\\frac{b}{a}$.",
+        "zh": "**质数** 恰好有两个因数：$1$ 和它本身。\n前几个质数：$2, 3, 5, 7, 11, 13, 17, 19, 23, 29, \\ldots$\n\n注意：$1$ **不是**质数（只有一个因数）。$2$ 是唯一的偶数质数。\n\n**平方数**：一个整数乘以自身：\n$1, 4, 9, 16, 25, 36, 49, 64, 81, 100, \\ldots$\n\n**立方数**：一个整数的三次方：\n$1, 8, 27, 64, 125, 216, \\ldots$\n\n**三角数**：$1, 3, 6, 10, 15, 21, 28, \\ldots$（依次加 $2, 3, 4, \\ldots$）\n\n**倒数**：$n$ 的倒数是 $\\frac{1}{n}$。$\\frac{a}{b}$ 的倒数是 $\\frac{b}{a}$。"
+      },
+      "examPatterns": [
+        {
+          "id": "ep-pick-prime",
+          "label": "Pick primes / squares / cubes from a list",
+          "label_zh": "从列表中挑出质数/平方数/立方数",
+          "description": "A list of numbers is given and you must identify which are prime, square, or cube numbers.",
+          "description_zh": "给出一组数，要求辨别哪些是质数、平方数或立方数。"
+        },
+        {
+          "id": "ep-reciprocal",
+          "label": "Find the reciprocal of a number",
+          "label_zh": "求一个数的倒数",
+          "description": "Given a whole number or fraction, find its reciprocal.",
+          "description_zh": "给出一个整数或分数，求其倒数。"
+        }
+      ],
+      "examples": [
+        {
+          "patternId": "ep-pick-prime",
+          "question": "From the list $2,\\ 9,\\ 15,\\ 17,\\ 21,\\ 25$:\n\n(a) Write down the prime numbers.\n(b) Write down a square number.",
+          "question_zh": "从 $2,\\ 9,\\ 15,\\ 17,\\ 21,\\ 25$ 中：\n\n(a) 写出所有质数。\n(b) 写出一个平方数。",
+          "solution": "**(a)** Check each number:\n- $2$: factors are $1, 2$ → prime ✓\n- $9 = 3 \\times 3$ → not prime\n- $15 = 3 \\times 5$ → not prime\n- $17$: factors are $1, 17$ → prime ✓\n- $21 = 3 \\times 7$ → not prime\n- $25 = 5 \\times 5$ → not prime\n\n**Answer:** $2$ and $17$\n\n**(b)** $9 = 3^2$ and $25 = 5^2$ are both square numbers.\n\n**Answer:** $9$ or $25$",
+          "solution_zh": "**(a)** 逐个检查：\n- $2$：因数为 $1, 2$ → 质数 ✓\n- $9 = 3 \\times 3$ → 非质数\n- $15 = 3 \\times 5$ → 非质数\n- $17$：因数为 $1, 17$ → 质数 ✓\n- $21 = 3 \\times 7$ → 非质数\n- $25 = 5 \\times 5$ → 非质数\n\n**答案：** $2$ 和 $17$\n\n**(b)** $9 = 3^2$ 和 $25 = 5^2$ 都是平方数。\n\n**答案：** $9$ 或 $25$",
+          "source": "0580/22/M/J/19"
+        }
+      ],
+      "testYourself": [
+        {
+          "q": "Which of these is a prime number?",
+          "q_zh": "下列哪个是质数？",
+          "o": ["$1$", "$21$", "$23$", "$27$"],
+          "a": 2,
+          "e": "$23$ has exactly two factors: $1$ and $23$. $1$ is not prime, $21 = 3 \\times 7$, and $27 = 3^3$.",
+          "e_zh": "$23$ 恰好有两个因数：$1$ 和 $23$。$1$ 不是质数，$21 = 3 \\times 7$，$27 = 3^3$。"
+        },
+        {
+          "q": "What is the reciprocal of $\\frac{3}{5}$?",
+          "q_zh": "$\\frac{3}{5}$ 的倒数是什么？",
+          "o": ["$\\frac{3}{5}$", "$\\frac{5}{3}$", "$-\\frac{3}{5}$", "$\\frac{1}{5}$"],
+          "a": 1,
+          "e": "The reciprocal of $\\frac{a}{b}$ is $\\frac{b}{a}$. So the reciprocal of $\\frac{3}{5}$ is $\\frac{5}{3}$.",
+          "e_zh": "$\\frac{a}{b}$ 的倒数是 $\\frac{b}{a}$。所以 $\\frac{3}{5}$ 的倒数是 $\\frac{5}{3}$。"
+        }
+      ],
+      "vocabLinks": ["num-types"],
+      "tier": "both"
+    },
+    {
+      "id": "kp-1.1-03",
+      "section": "1.1",
+      "order": 3,
+      "title": "HCF, LCM & Prime Factorisation",
+      "title_zh": "最高公因数、最小公倍数与质因数分解",
+      "explanation": {
+        "en": "**Factors** of a number divide into it exactly. For example, the factors of $12$ are: $1, 2, 3, 4, 6, 12$.\n\n**Common factors** are factors shared by two or more numbers.\n\n**Highest Common Factor (HCF)** is the largest common factor.\n\n**Multiples** of a number are found by multiplying it by $1, 2, 3, \\ldots$\n\n**Lowest Common Multiple (LCM)** is the smallest number that is a multiple of both.\n\n**Prime factorisation** writes a number as a product of prime factors.\n\nTo find HCF and LCM using prime factorisation:\n- **HCF** = product of the **lowest** powers of **common** primes\n- **LCM** = product of the **highest** powers of **all** primes",
+        "zh": "**因数**：能整除一个数的数。例如 $12$ 的因数是：$1, 2, 3, 4, 6, 12$。\n\n**公因数**：两个或多个数共有的因数。\n\n**最高公因数 (HCF)**：最大的公因数。\n\n**倍数**：一个数乘以 $1, 2, 3, \\ldots$ 得到的数。\n\n**最小公倍数 (LCM)**：两个数的最小公共倍数。\n\n**质因数分解**：将一个数写成质数的乘积。\n\n用质因数分解求 HCF 和 LCM：\n- **HCF** = 公共质因数的**最低**次方之积\n- **LCM** = 所有质因数的**最高**次方之积"
+      },
+      "examPatterns": [
+        {
+          "id": "ep-prime-factor",
+          "label": "Express as a product of prime factors",
+          "label_zh": "写成质因数的乘积",
+          "description": "Use a factor tree or repeated division to break a number into prime factors.",
+          "description_zh": "用因数树或短除法将一个数分解为质因数。"
+        },
+        {
+          "id": "ep-hcf-lcm",
+          "label": "Find HCF and LCM of two numbers",
+          "label_zh": "求两个数的 HCF 和 LCM",
+          "description": "Use prime factorisation or listing methods to find HCF and LCM.",
+          "description_zh": "用质因数分解法或列举法求最高公因数和最小公倍数。"
+        }
+      ],
+      "examples": [
+        {
+          "patternId": "ep-hcf-lcm",
+          "question": "Find the HCF and LCM of $36$ and $48$.",
+          "question_zh": "求 $36$ 和 $48$ 的最高公因数和最小公倍数。",
+          "solution": "**Step 1:** Prime factorise each number.\n$36 = 2^2 \\times 3^2$\n$48 = 2^4 \\times 3$\n\n**Step 2:** HCF = product of lowest powers of common primes.\nCommon primes: $2$ and $3$\nHCF $= 2^2 \\times 3 = 4 \\times 3 = 12$\n\n**Step 3:** LCM = product of highest powers of all primes.\nAll primes: $2$ and $3$\nLCM $= 2^4 \\times 3^2 = 16 \\times 9 = 144$",
+          "solution_zh": "**步骤1：** 分别质因数分解。\n$36 = 2^2 \\times 3^2$\n$48 = 2^4 \\times 3$\n\n**步骤2：** HCF = 公共质因数最低次方之积。\n公共质因数：$2$ 和 $3$\nHCF $= 2^2 \\times 3 = 4 \\times 3 = 12$\n\n**步骤3：** LCM = 所有质因数最高次方之积。\n所有质因数：$2$ 和 $3$\nLCM $= 2^4 \\times 3^2 = 16 \\times 9 = 144$",
+          "source": "0580 style"
+        }
+      ],
+      "testYourself": [
+        {
+          "q": "$60$ written as a product of its prime factors is:",
+          "q_zh": "$60$ 的质因数分解是：",
+          "o": ["$2 \\times 3 \\times 10$", "$2^2 \\times 3 \\times 5$", "$4 \\times 15$", "$2 \\times 30$"],
+          "a": 1,
+          "e": "$60 = 2 \\times 30 = 2 \\times 2 \\times 15 = 2 \\times 2 \\times 3 \\times 5 = 2^2 \\times 3 \\times 5$. The other options contain non-prime factors.",
+          "e_zh": "$60 = 2 \\times 30 = 2 \\times 2 \\times 15 = 2 \\times 2 \\times 3 \\times 5 = 2^2 \\times 3 \\times 5$。其他选项包含非质因数。"
+        },
+        {
+          "q": "The HCF of $24$ and $36$ is:",
+          "q_zh": "$24$ 和 $36$ 的最高公因数是：",
+          "o": ["$6$", "$8$", "$12$", "$72$"],
+          "a": 2,
+          "e": "$24 = 2^3 \\times 3$ and $36 = 2^2 \\times 3^2$. HCF = lowest powers of common primes = $2^2 \\times 3 = 12$.",
+          "e_zh": "$24 = 2^3 \\times 3$，$36 = 2^2 \\times 3^2$。HCF = 公共质因数最低次方 = $2^2 \\times 3 = 12$。"
+        }
+      ],
+      "vocabLinks": ["num-factors"],
+      "tier": "both"
+    },
+    {
+      "id": "kp-1.3-01",
+      "section": "1.3",
+      "order": 1,
+      "title": "Squares, Cubes and Roots",
+      "title_zh": "平方、立方与根",
+      "explanation": {
+        "en": "**Squaring** a number means multiplying it by itself: $n^2 = n \\times n$\n\n**Square root** is the reverse: $\\sqrt{25} = 5$ because $5^2 = 25$.\n\nNote: Every positive number has two square roots: $\\sqrt{25} = \\pm 5$.\n\n**Cubing** a number: $n^3 = n \\times n \\times n$\n\n**Cube root**: $\\sqrt[3]{27} = 3$ because $3^3 = 27$.\n\nYou should know the common values:\n| $n$ | $n^2$ | $n^3$ |\n|-----|-------|-------|\n| $1$ | $1$ | $1$ |\n| $2$ | $4$ | $8$ |\n| $3$ | $9$ | $27$ |\n| $4$ | $16$ | $64$ |\n| $5$ | $25$ | $125$ |\n| $10$ | $100$ | $1000$ |",
+        "zh": "**平方**：一个数乘以自身：$n^2 = n \\times n$\n\n**平方根**：平方的逆运算：$\\sqrt{25} = 5$，因为 $5^2 = 25$。\n\n注意：每个正数有两个平方根：$\\sqrt{25} = \\pm 5$。\n\n**立方**：$n^3 = n \\times n \\times n$\n\n**立方根**：$\\sqrt[3]{27} = 3$，因为 $3^3 = 27$。\n\n常用数值表：\n| $n$ | $n^2$ | $n^3$ |\n|-----|-------|-------|\n| $1$ | $1$ | $1$ |\n| $2$ | $4$ | $8$ |\n| $3$ | $9$ | $27$ |\n| $4$ | $16$ | $64$ |\n| $5$ | $25$ | $125$ |\n| $10$ | $100$ | $1000$ |"
+      },
+      "examPatterns": [
+        {
+          "id": "ep-evaluate",
+          "label": "Evaluate expressions with powers and roots",
+          "label_zh": "计算含幂和根的表达式",
+          "description": "Calculate expressions like $\\sqrt{144} + 2^3$ or $\\sqrt[3]{64} \\times 3^2$.",
+          "description_zh": "计算如 $\\sqrt{144} + 2^3$ 或 $\\sqrt[3]{64} \\times 3^2$ 的表达式。"
+        }
+      ],
+      "examples": [
+        {
+          "patternId": "ep-evaluate",
+          "question": "Work out $\\sqrt{144} + \\sqrt[3]{27}$.",
+          "question_zh": "计算 $\\sqrt{144} + \\sqrt[3]{27}$。",
+          "solution": "$\\sqrt{144} = 12$ (since $12^2 = 144$)\n\n$\\sqrt[3]{27} = 3$ (since $3^3 = 27$)\n\n$12 + 3 = 15$\n\n**Answer:** $15$",
+          "solution_zh": "$\\sqrt{144} = 12$（因为 $12^2 = 144$）\n\n$\\sqrt[3]{27} = 3$（因为 $3^3 = 27$）\n\n$12 + 3 = 15$\n\n**答案：** $15$",
+          "source": "0580 style"
+        }
+      ],
+      "testYourself": [
+        {
+          "q": "What is $\\sqrt[3]{125}$?",
+          "q_zh": "$\\sqrt[3]{125}$ 等于多少？",
+          "o": ["$3$", "$5$", "$15$", "$25$"],
+          "a": 1,
+          "e": "$5 \\times 5 \\times 5 = 125$, so $\\sqrt[3]{125} = 5$.",
+          "e_zh": "$5 \\times 5 \\times 5 = 125$，所以 $\\sqrt[3]{125} = 5$。"
+        }
+      ],
+      "vocabLinks": ["num-powers"],
+      "tier": "both"
+    }
+  ]
+}

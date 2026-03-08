@@ -1,5 +1,37 @@
 # Changelog
 
+## [2.3.0] - 2026-03-08 — 知识点精析模块 Phase 1（数据架构 + 展示）
+
+### 新功能
+- **知识点精析模块**: 将密集的单块知识卡片拆分为独立知识点模块，每个模块包含 5 个区域：
+  - ① 知识点精析 Explanation（双语富文本 + LaTeX）
+  - ② 典型考法 Exam Patterns（左侧紫色竖条标识）
+  - ③ 典型例题 + 解析 Worked Examples（折叠/展开解答）
+  - ④ Test Yourself 自测（Phase 2 占位）
+  - ⑤ 相关资源 Related Resources（词汇/练习跳转）
+- **知识点列表**: Section 详情页 Knowledge Card 替换为可展开的知识点列表，点击行进入详情页
+- **KP 导航**: 详情页底部 Prev/Next 导航 + 顶部返回按钮
+- **数据架构**: `data/knowledge-cie.json` 存储知识点数据（JSON 离线可用），4 个示例 KP 覆盖 Section 1.1 + 1.3
+- **无知识点数据时回退**: 保留原知识卡片展示或显示 "Coming soon"
+
+### UI 设计（呼吸感 + 亲和力）
+- 卡片圆角 16px、内距 24px、区域间距 20px、正文行高 1.8
+- 圆形编号（1-5）浅紫背景标识区域
+- 考法卡片左侧 3px 紫色竖条
+- 例题解答折叠按钮（pill 形状 + 渐变背景）
+- 全套暗色模式适配
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `data/knowledge-cie.json` | **新建** — 4 个知识点（Section 1.1 × 3 + 1.3 × 1）|
+| `index.html` | +1 行 `panel-kp`，版本号 → 2.3.0 |
+| `css/style.css` | +80 行 `.kp-*` 组件样式（列表/详情/考法/例题/资源/导航 + 暗色模式）|
+| `js/syllabus.js` | 替换 Knowledge Card 块 → KP 列表渲染 + 回退逻辑；+170 行 `loadKnowledgeData()` / `getKPsForSection()` / `openKnowledgePoint()` / `renderKPDetail()` + 事件委托 |
+| `js/config.js` | v2.2.27 → v2.3.0 |
+
+---
+
 ## [2.2.27] - 2026-03-08 — 事件委托 bug 修复 + DOM 查询优化
 
 ### 修复

@@ -4002,6 +4002,81 @@ input { font-family: inherit; }
   .back-btn { display:none !important; }
 }
 
+/* ═══ KNOWLEDGE POINTS (KP) ═══ */
+.kp-list { display: flex; flex-direction: column; gap: 4px; }
+.kp-row { display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 10px; cursor: pointer; transition: background 0.15s; }
+.kp-row:hover { background: var(--c-surface-alt); }
+.kp-row-num { width: 24px; height: 24px; border-radius: 50%; background: var(--c-primary-bg); color: var(--c-primary); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0; }
+.kp-row-name { flex: 1; font-size: 14px; font-weight: 600; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.kp-row-name-zh { font-size: 12px; color: var(--c-text2); font-weight: 400; margin-left: 6px; }
+.kp-row-status { font-size: 12px; flex-shrink: 0; }
+.kp-row-new { color: var(--c-primary); font-weight: 700; }
+.kp-row-done { color: var(--c-success); }
+
+/* KP Detail Page */
+.kp-detail { max-width: 680px; margin: 0 auto; padding: 0 4px; }
+.kp-back { display: inline-flex; align-items: center; gap: 6px; padding: 8px 0; font-size: 13px; font-weight: 600; color: var(--c-primary); cursor: pointer; border: none; background: none; margin-bottom: 8px; }
+.kp-back:hover { opacity: 0.8; }
+.kp-hero { text-align: center; padding: 24px 16px 20px; border-bottom: 1px solid var(--c-border-light); margin-bottom: 20px; }
+.kp-hero-title { font-family: var(--font-display); font-size: 20px; font-weight: 800; color: var(--c-text); }
+.kp-hero-sub { font-size: 14px; color: var(--c-text2); margin-top: 6px; }
+
+/* KP Section Cards */
+.kp-section { background: var(--c-surface); border-radius: 16px; padding: 24px; margin-bottom: 20px; border: 1px solid var(--c-border-light); }
+.kp-section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.kp-section-num { width: 32px; height: 32px; border-radius: 50%; background: var(--c-primary-bg); color: var(--c-primary); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 14px; flex-shrink: 0; }
+.kp-section-labels { flex: 1; }
+.kp-section-label { font-family: var(--font-display); font-weight: 700; font-size: 15px; color: var(--c-text); }
+.kp-section-label-zh { font-size: 13px; color: var(--c-text2); }
+.kp-section-body { line-height: 1.8; font-size: 14px; color: var(--c-text); }
+.kp-section-body p { margin: 0 0 12px; }
+.kp-section-body p:last-child { margin-bottom: 0; }
+
+/* Exam Pattern Cards */
+.kp-pattern { background: var(--c-bg); border-radius: 12px; padding: 16px 18px; margin-bottom: 12px; border-left: 3px solid var(--c-primary); }
+.kp-pattern:last-child { margin-bottom: 0; }
+.kp-pattern-label { font-weight: 700; font-size: 14px; color: var(--c-primary); }
+.kp-pattern-desc { font-size: 13px; color: var(--c-text2); margin-top: 6px; line-height: 1.6; }
+
+/* Example Cards */
+.kp-example { background: var(--c-bg); border-radius: 12px; padding: 18px 20px; margin-bottom: 12px; border: 1px solid var(--c-border-light); }
+.kp-example:last-child { margin-bottom: 0; }
+.kp-example-source { font-size: 11px; color: var(--c-muted); font-family: var(--font-mono); margin-bottom: 8px; }
+.kp-example-q { font-size: 14px; line-height: 1.7; }
+.kp-example-toggle { display: inline-flex; align-items: center; gap: 6px; margin-top: 12px; padding: 8px 16px; border-radius: 20px; background: var(--c-primary-bg); color: var(--c-primary); font-size: 13px; font-weight: 600; cursor: pointer; border: none; transition: background 0.15s; }
+.kp-example-toggle:hover { background: rgba(82,72,201,0.15); }
+.kp-example-solution { margin-top: 16px; padding-top: 16px; border-top: 1px dashed var(--c-border); line-height: 1.8; font-size: 14px; display: none; }
+.kp-example-solution.open { display: block; }
+
+/* Test Yourself placeholder */
+.kp-coming { text-align: center; padding: 20px; color: var(--c-text2); font-size: 13px; }
+
+/* Related Resources */
+.kp-resource { display: flex; flex-direction: column; gap: 8px; }
+.kp-resource-link { display: flex; align-items: center; gap: 10px; padding: 12px 16px; border-radius: 12px; background: var(--c-bg); cursor: pointer; font-size: 14px; font-weight: 600; transition: background 0.15s; border: none; width: 100%; text-align: left; color: var(--c-text); }
+.kp-resource-link:hover { background: var(--c-primary-bg); }
+
+/* Bottom Nav */
+.kp-nav { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; margin-top: 8px; }
+.kp-nav-btn { padding: 10px 20px; border-radius: 20px; background: var(--c-surface); border: 1px solid var(--c-border); font-size: 13px; font-weight: 600; cursor: pointer; color: var(--c-text); transition: all 0.15s; }
+.kp-nav-btn:hover { border-color: var(--c-primary); color: var(--c-primary); }
+.kp-nav-btn:disabled { opacity: 0.3; cursor: default; }
+.kp-nav-btn:disabled:hover { border-color: var(--c-border); color: var(--c-text); }
+
+/* Dark mode overrides */
+[data-theme="dark"] .kp-section { background: var(--c-surface); border-color: var(--c-border); }
+[data-theme="dark"] .kp-pattern { background: var(--c-bg); border-left-color: #9d97f0; }
+[data-theme="dark"] .kp-pattern-label { color: #9d97f0; }
+[data-theme="dark"] .kp-example { background: var(--c-bg); border-color: var(--c-border); }
+[data-theme="dark"] .kp-example-toggle { background: rgba(82,72,201,0.2); color: #9d97f0; }
+[data-theme="dark"] .kp-example-toggle:hover { background: rgba(82,72,201,0.3); }
+[data-theme="dark"] .kp-resource-link { background: var(--c-bg); }
+[data-theme="dark"] .kp-resource-link:hover { background: rgba(82,72,201,0.15); }
+[data-theme="dark"] .kp-nav-btn { background: var(--c-surface); border-color: var(--c-border); color: var(--c-text); }
+[data-theme="dark"] .kp-nav-btn:hover { border-color: #9d97f0; color: #9d97f0; }
+[data-theme="dark"] .kp-row:hover { background: var(--c-surface); }
+[data-theme="dark"] .kp-hero { border-color: var(--c-border); }
+
 /* ═══ REDUCED MOTION ═══ */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {

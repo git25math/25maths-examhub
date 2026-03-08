@@ -811,39 +811,58 @@ function renderSectionDetail(ch, sec, secIdx, board) {
     html += '<div id="mq-summary-slot" data-section="' + sec.id + '" data-board="' + board + '"></div>';
   }
 
-  /* Knowledge card (3rd) — show content if edited, else "Coming soon" */
-  var knowledgeEdit = _getSectionEdit(board, sec.id, 'knowledge');
-  if (knowledgeEdit && knowledgeEdit.content) {
+  /* Knowledge Points (3rd) — show list from knowledge-{board}.json */
+  var kpList = getKPsForSection(sec.id, board);
+  if (kpList.length > 0) {
     html += '<div class="sec-module sec-module-expandable" onclick="toggleSectionContent(this)">';
-    html += '<div class="sec-module-icon">\ud83d\udcd8</div>';
+    html += '<div class="sec-module-icon">\ud83d\udcd6</div>';
     html += '<div class="sec-module-info">';
-    html += '<div class="sec-module-title">' + t('Knowledge Card', '\u77e5\u8bc6\u5361\u7247') + '</div>';
-    html += '<div class="sec-module-sub">' + t('Click to expand', '\u70b9\u51fb\u5c55\u5f00') + '</div>';
+    html += '<div class="sec-module-title">' + t('Knowledge Points', '\u77e5\u8bc6\u70b9\u7cbe\u6790') + '</div>';
+    html += '<div class="sec-module-sub">' + kpList.length + ' ' + t('points', '\u4e2a\u77e5\u8bc6\u70b9') + '</div>';
     html += '</div>';
-    if (typeof isSuperAdmin === 'function' && isSuperAdmin()) {
-      html += '<button class="sec-module-edit" onclick="event.stopPropagation();editSectionModule(\'' + sec.id + '\',\'knowledge\',\'' + board + '\')" title="' + t('Edit', '\u7f16\u8f91') + '">\u270f\ufe0f</button>';
-    }
-    html += '<button class="sec-module-report" onclick="event.stopPropagation();reportSectionModule(\'' + sec.id + '\',\'knowledge\',\'' + board + '\')" title="' + t('Report error', '\u62a5\u544a\u9519\u8bef') + '">\ud83d\udea9</button>';
     html += '<div class="sec-module-arrow">\u25bc</div>';
     html += '</div>';
     html += '<div class="sec-module-content d-none">';
-    html += '<div class="sec-module-content-body">' + pqRender(knowledgeEdit.content) + '</div>';
-    if (knowledgeEdit.content_zh) {
-      html += '<div class="sec-module-content-body" style="margin-top:8px;color:var(--c-text2)">' + pqRender(knowledgeEdit.content_zh) + '</div>';
+    html += '<div class="kp-list">';
+    for (var ki = 0; ki < kpList.length; ki++) {
+      var kp = kpList[ki];
+      html += '<div class="kp-row" data-kp-id="' + kp.id + '" data-kp-board="' + board + '">';
+      html += '<div class="kp-row-num">' + (ki + 1) + '</div>';
+      html += '<div class="kp-row-name">' + pqRender(kp.title);
+      if (kp.title_zh) html += '<span class="kp-row-name-zh">' + kp.title_zh + '</span>';
+      html += '</div>';
+      html += '<div class="kp-row-status kp-row-new">NEW</div>';
+      html += '</div>';
     }
+    html += '</div>';
     html += '</div>';
   } else {
-    html += '<div class="sec-module sec-module-coming">';
-    html += '<div class="sec-module-icon">\ud83d\udcd8</div>';
-    html += '<div class="sec-module-info">';
-    html += '<div class="sec-module-title">' + t('Knowledge Card', '\u77e5\u8bc6\u5361\u7247') + '</div>';
-    html += '<div class="sec-module-sub">' + t('Coming soon', '\u5373\u5c06\u63a8\u51fa') + '</div>';
-    html += '</div>';
-    if (typeof isSuperAdmin === 'function' && isSuperAdmin()) {
-      html += '<button class="sec-module-edit" onclick="event.stopPropagation();editSectionModule(\'' + sec.id + '\',\'knowledge\',\'' + board + '\')" title="' + t('Edit', '\u7f16\u8f91') + '">\u270f\ufe0f</button>';
+    /* Fallback to old knowledge card if no KP data */
+    var knowledgeEdit = _getSectionEdit(board, sec.id, 'knowledge');
+    if (knowledgeEdit && knowledgeEdit.content) {
+      html += '<div class="sec-module sec-module-expandable" onclick="toggleSectionContent(this)">';
+      html += '<div class="sec-module-icon">\ud83d\udcd8</div>';
+      html += '<div class="sec-module-info">';
+      html += '<div class="sec-module-title">' + t('Knowledge Card', '\u77e5\u8bc6\u5361\u7247') + '</div>';
+      html += '<div class="sec-module-sub">' + t('Click to expand', '\u70b9\u51fb\u5c55\u5f00') + '</div>';
+      html += '</div>';
+      html += '<div class="sec-module-arrow">\u25bc</div>';
+      html += '</div>';
+      html += '<div class="sec-module-content d-none">';
+      html += '<div class="sec-module-content-body">' + pqRender(knowledgeEdit.content) + '</div>';
+      if (knowledgeEdit.content_zh) {
+        html += '<div class="sec-module-content-body" style="margin-top:8px;color:var(--c-text2)">' + pqRender(knowledgeEdit.content_zh) + '</div>';
+      }
+      html += '</div>';
+    } else {
+      html += '<div class="sec-module sec-module-coming">';
+      html += '<div class="sec-module-icon">\ud83d\udcd8</div>';
+      html += '<div class="sec-module-info">';
+      html += '<div class="sec-module-title">' + t('Knowledge Points', '\u77e5\u8bc6\u70b9\u7cbe\u6790') + '</div>';
+      html += '<div class="sec-module-sub">' + t('Coming soon', '\u5373\u5c06\u63a8\u51fa') + '</div>';
+      html += '</div>';
+      html += '</div>';
     }
-    html += '<button class="sec-module-report" onclick="event.stopPropagation();reportSectionModule(\'' + sec.id + '\',\'knowledge\',\'' + board + '\')" title="' + t('Report error', '\u62a5\u544a\u9519\u8bef') + '">\ud83d\udea9</button>';
-    html += '</div>';
   }
 
   /* Worked Examples (4th) — show content if edited, else "Coming soon" */
@@ -2346,8 +2365,257 @@ function startMistakeReview(type) {
   }
 }
 
+/* ═══ KNOWLEDGE POINTS DATA & RENDERING ═══ */
+var _kpData = {};
+var _kpLoading = {};
+
+function loadKnowledgeData(board) {
+  if (_kpData[board]) return Promise.resolve(_kpData[board]);
+  if (_kpLoading[board]) return _kpLoading[board];
+  _kpLoading[board] = fetch('data/knowledge-' + board + '.json?v=' + APP_VERSION)
+    .then(function(r) { return r.json(); })
+    .then(function(d) { _kpData[board] = d.points || []; return _kpData[board]; })
+    .catch(function() { _kpData[board] = []; return []; });
+  return _kpLoading[board];
+}
+
+function getKPsForSection(sectionId, board) {
+  var pts = _kpData[board] || [];
+  return pts.filter(function(kp) { return kp.section === sectionId; })
+            .sort(function(a, b) { return a.order - b.order; });
+}
+
+function openKnowledgePoint(kpId, board) {
+  var pts = _kpData[board] || [];
+  var kp = null;
+  for (var i = 0; i < pts.length; i++) {
+    if (pts[i].id === kpId) { kp = pts[i]; break; }
+  }
+  if (!kp) return;
+  renderKPDetail(kp, board);
+  showPanel('kp');
+}
+
+function renderKPDetail(kp, board) {
+  var el = document.getElementById('panel-kp');
+  if (!el) return;
+  var isZh = typeof getLang === 'function' && getLang() === 'zh';
+  var sectionKPs = getKPsForSection(kp.section, board);
+  var curIdx = -1;
+  for (var ci = 0; ci < sectionKPs.length; ci++) {
+    if (sectionKPs[ci].id === kp.id) { curIdx = ci; break; }
+  }
+
+  /* Find section title */
+  var secTitle = kp.section;
+  var boardData = board === 'cie' ? _cieSyllabus : board === 'edexcel' ? _edxSyllabus : _hhkSyllabus;
+  if (boardData) {
+    for (var ch = 0; ch < boardData.length; ch++) {
+      var secs = boardData[ch].sections || [];
+      for (var si = 0; si < secs.length; si++) {
+        if (secs[si].id === kp.section) {
+          secTitle = secs[si].id + ' ' + (isZh && secs[si].title_zh ? secs[si].title_zh : secs[si].title);
+          break;
+        }
+      }
+    }
+  }
+
+  var html = '<div class="kp-detail">';
+
+  /* Back button */
+  html += '<button class="kp-back" data-kp-back-section="' + kp.section + '" data-kp-back-board="' + board + '">';
+  html += '\u2190 ' + t('Back to', '\u8fd4\u56de') + ' ' + secTitle;
+  html += '</button>';
+
+  /* Hero */
+  html += '<div class="kp-hero">';
+  html += '<div class="kp-hero-title">' + pqRender(kp.title) + '</div>';
+  if (kp.title_zh) html += '<div class="kp-hero-sub">' + kp.title_zh + '</div>';
+  html += '</div>';
+
+  /* ① Explanation */
+  html += '<div class="kp-section">';
+  html += '<div class="kp-section-header">';
+  html += '<div class="kp-section-num">1</div>';
+  html += '<div class="kp-section-labels"><div class="kp-section-label">' + t('Explanation', '\u77e5\u8bc6\u70b9\u7cbe\u6790') + '</div></div>';
+  html += '</div>';
+  html += '<div class="kp-section-body">';
+  var expText = isZh && kp.explanation.zh ? kp.explanation.zh : kp.explanation.en;
+  html += pqRender(expText);
+  html += '</div>';
+  html += '</div>';
+
+  /* ② Exam Patterns */
+  if (kp.examPatterns && kp.examPatterns.length > 0) {
+    html += '<div class="kp-section">';
+    html += '<div class="kp-section-header">';
+    html += '<div class="kp-section-num">2</div>';
+    html += '<div class="kp-section-labels"><div class="kp-section-label">' + t('Exam Patterns', '\u5178\u578b\u8003\u6cd5') + '</div></div>';
+    html += '</div>';
+    html += '<div class="kp-section-body">';
+    for (var pi = 0; pi < kp.examPatterns.length; pi++) {
+      var ep = kp.examPatterns[pi];
+      html += '<div class="kp-pattern">';
+      html += '<div class="kp-pattern-label">' + pqRender(isZh && ep.label_zh ? ep.label_zh : ep.label) + '</div>';
+      var epDesc = isZh && ep.description_zh ? ep.description_zh : ep.description;
+      if (epDesc) html += '<div class="kp-pattern-desc">' + pqRender(epDesc) + '</div>';
+      html += '</div>';
+    }
+    html += '</div>';
+    html += '</div>';
+  }
+
+  /* ③ Worked Examples */
+  if (kp.examples && kp.examples.length > 0) {
+    html += '<div class="kp-section">';
+    html += '<div class="kp-section-header">';
+    html += '<div class="kp-section-num">3</div>';
+    html += '<div class="kp-section-labels"><div class="kp-section-label">' + t('Worked Examples', '\u5178\u578b\u4f8b\u9898') + '</div></div>';
+    html += '</div>';
+    html += '<div class="kp-section-body">';
+    for (var ei = 0; ei < kp.examples.length; ei++) {
+      var ex = kp.examples[ei];
+      html += '<div class="kp-example">';
+      if (ex.source) html += '<div class="kp-example-source">' + ex.source + '</div>';
+      html += '<div class="kp-example-q">' + pqRender(isZh && ex.question_zh ? ex.question_zh : ex.question) + '</div>';
+      html += '<button class="kp-example-toggle" data-kp-sol="' + ei + '">' + t('Show Solution', '\u663e\u793a\u89e3\u6790') + ' \u25bc</button>';
+      html += '<div class="kp-example-solution" id="kp-sol-' + ei + '">';
+      html += pqRender(isZh && ex.solution_zh ? ex.solution_zh : ex.solution);
+      html += '</div>';
+      html += '</div>';
+    }
+    html += '</div>';
+    html += '</div>';
+  }
+
+  /* ④ Test Yourself (Phase 2 placeholder) */
+  html += '<div class="kp-section">';
+  html += '<div class="kp-section-header">';
+  html += '<div class="kp-section-num">4</div>';
+  html += '<div class="kp-section-labels"><div class="kp-section-label">' + t('Test Yourself', '\u81ea\u6d4b') + '</div></div>';
+  html += '</div>';
+  html += '<div class="kp-coming">' + t('Coming in Phase 2 — inline quiz', '\u5373\u5c06\u5728 Phase 2 \u63a8\u51fa \u2014 \u5728\u7ebf\u81ea\u6d4b') + '</div>';
+  html += '</div>';
+
+  /* ⑤ Related Resources */
+  html += '<div class="kp-section">';
+  html += '<div class="kp-section-header">';
+  html += '<div class="kp-section-num">5</div>';
+  html += '<div class="kp-section-labels"><div class="kp-section-label">' + t('Related Resources', '\u76f8\u5173\u8d44\u6e90') + '</div></div>';
+  html += '</div>';
+  html += '<div class="kp-resource">';
+  if (kp.vocabLinks && kp.vocabLinks.length > 0) {
+    for (var vi = 0; vi < kp.vocabLinks.length; vi++) {
+      html += '<button class="kp-resource-link" data-kp-vocab="' + kp.vocabLinks[vi] + '">';
+      html += '\ud83d\udcdd ' + t('Vocabulary', '\u8bcd\u6c47') + ': ' + kp.vocabLinks[vi];
+      html += '</button>';
+    }
+  }
+  html += '<button class="kp-resource-link" data-kp-practice-section="' + kp.section + '" data-kp-practice-board="' + board + '">';
+  html += '\u270f\ufe0f ' + t('Practice Questions', '\u7ec3\u4e60\u9898');
+  html += '</button>';
+  html += '</div>';
+  html += '</div>';
+
+  /* Prev/Next Navigation */
+  html += '<div class="kp-nav">';
+  if (curIdx > 0) {
+    html += '<button class="kp-nav-btn" data-kp-nav="' + sectionKPs[curIdx - 1].id + '" data-kp-nav-board="' + board + '">';
+    html += '\u2190 ' + pqRender(sectionKPs[curIdx - 1].title);
+    html += '</button>';
+  } else {
+    html += '<button class="kp-nav-btn" disabled>\u2190 ' + t('Previous', '\u4e0a\u4e00\u4e2a') + '</button>';
+  }
+  if (curIdx >= 0 && curIdx < sectionKPs.length - 1) {
+    html += '<button class="kp-nav-btn" data-kp-nav="' + sectionKPs[curIdx + 1].id + '" data-kp-nav-board="' + board + '">';
+    html += pqRender(sectionKPs[curIdx + 1].title) + ' \u2192';
+    html += '</button>';
+  } else {
+    html += '<button class="kp-nav-btn" disabled>' + t('Next', '\u4e0b\u4e00\u4e2a') + ' \u2192</button>';
+  }
+  html += '</div>';
+
+  html += '</div>'; /* /kp-detail */
+  el.innerHTML = html;
+
+  /* Trigger KaTeX rendering */
+  if (typeof renderMathInElement === 'function') {
+    renderMathInElement(el, { delimiters: [
+      { left: '$$', right: '$$', display: true },
+      { left: '$', right: '$', display: false }
+    ]});
+  } else if (typeof loadKaTeX === 'function') {
+    loadKaTeX(function() {
+      if (typeof renderMathInElement === 'function') {
+        renderMathInElement(el, { delimiters: [
+          { left: '$$', right: '$$', display: true },
+          { left: '$', right: '$', display: false }
+        ]});
+      }
+    });
+  }
+}
+
+/* KP event delegation */
+document.addEventListener('click', function(e) {
+  /* KP row click → open detail */
+  var kpRow = e.target.closest('.kp-row[data-kp-id]');
+  if (kpRow) {
+    openKnowledgePoint(kpRow.getAttribute('data-kp-id'), kpRow.getAttribute('data-kp-board'));
+    return;
+  }
+  /* Solution toggle */
+  var solBtn = e.target.closest('.kp-example-toggle[data-kp-sol]');
+  if (solBtn) {
+    var solIdx = solBtn.getAttribute('data-kp-sol');
+    var solEl = document.getElementById('kp-sol-' + solIdx);
+    if (solEl) {
+      var isOpen = solEl.classList.toggle('open');
+      solBtn.textContent = isOpen
+        ? (t('Hide Solution', '\u9690\u85cf\u89e3\u6790') + ' \u25b2')
+        : (t('Show Solution', '\u663e\u793a\u89e3\u6790') + ' \u25bc');
+    }
+    return;
+  }
+  /* Back button */
+  var backBtn = e.target.closest('.kp-back[data-kp-back-section]');
+  if (backBtn) {
+    var backSec = backBtn.getAttribute('data-kp-back-section');
+    var backBoard = backBtn.getAttribute('data-kp-back-board');
+    if (typeof openSectionDetail === 'function') {
+      openSectionDetail(backSec, backBoard);
+    }
+    return;
+  }
+  /* Prev/Next nav */
+  var navBtn = e.target.closest('.kp-nav-btn[data-kp-nav]');
+  if (navBtn) {
+    openKnowledgePoint(navBtn.getAttribute('data-kp-nav'), navBtn.getAttribute('data-kp-nav-board'));
+    return;
+  }
+  /* Vocab link */
+  var vocabLink = e.target.closest('.kp-resource-link[data-kp-vocab]');
+  if (vocabLink) {
+    var slug = vocabLink.getAttribute('data-kp-vocab');
+    if (typeof openDeck === 'function') openDeck(slug);
+    return;
+  }
+  /* Practice link */
+  var practiceLink = e.target.closest('.kp-resource-link[data-kp-practice-section]');
+  if (practiceLink) {
+    var pSec = practiceLink.getAttribute('data-kp-practice-section');
+    var pBoard = practiceLink.getAttribute('data-kp-practice-board');
+    if (typeof startPracticeBySection === 'function') startPracticeBySection(pSec, pBoard);
+    return;
+  }
+});
+
 /* ═══ INIT ═══ */
 /* Auto-load all board data on script load */
 loadCIESyllabus();
 loadEdexcelSyllabus();
 loadHHKSyllabus();
+/* Pre-load knowledge point data for active boards */
+loadKnowledgeData('cie');
+loadKnowledgeData('edexcel');
