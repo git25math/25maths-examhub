@@ -46,19 +46,50 @@ add('cie', '5.1', 'examples', {
     '<b>Worked Example 1</b> [2 marks]<br>' +
     'Convert $3.5\\text{ m}^2$ to $\\text{cm}^2$.<br><br>' +
     '<b>Solution:</b><br>' +
+    '$1\\text{ m} = 100\\text{ cm}$, so $1\\text{ m}^2 = 100^2 = 10\\,000\\text{ cm}^2$.<br>' +
     '$3.5 \\times 10\\,000 = 35\\,000\\text{ cm}^2$<br><br>' +
     '<b>Worked Example 2</b> [3 marks]<br>' +
     'A block of metal has mass 540 g and volume $200\\text{ cm}^3$. Find the density in g/cm$^3$. Another block of the same metal has volume $350\\text{ cm}^3$. Find its mass.<br><br>' +
     '<b>Solution:</b><br>' +
     'Density $= \\frac{540}{200} = 2.7\\text{ g/cm}^3$<br>' +
-    'Mass $= 2.7 \\times 350 = 945$ g',
+    'Mass $= 2.7 \\times 350 = 945$ g<br><br>' +
+    '<b>Worked Example 3</b> [3 marks]<br>' +
+    'A car travels 150 km in 2 hours 30 minutes. Calculate its average speed in km/h and convert it to m/s.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Time $= 2.5$ hours<br>' +
+    'Speed $= \\frac{150}{2.5} = 60\\text{ km/h}$<br>' +
+    'Convert: $60 \\times \\frac{1000}{3600} = 60 \\times \\frac{5}{18} = \\frac{300}{18} = 16.7\\text{ m/s}$<br><br>' +
+    '<b>Worked Example 4</b> [3 marks]<br>' +
+    'Convert $0.5\\text{ m}^3$ to litres.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '$1\\text{ m}^3 = 100^3 = 1\\,000\\,000\\text{ cm}^3$<br>' +
+    '$0.5\\text{ m}^3 = 0.5 \\times 1\\,000\\,000 = 500\\,000\\text{ cm}^3$<br>' +
+    '$1\\text{ litre} = 1000\\text{ cm}^3$, so $500\\,000 \\div 1000 = 500$ litres<br><br>' +
+    '<b>Exam Tip:</b> For area conversions, square the factor; for volume, cube it. Always show the conversion factor clearly.',
   content_zh:
     '<b>经典例题 1</b> [2 分]<br>' +
     '将 $3.5\\text{ m}^2$ 换算为 cm$^2$。<br><br>' +
-    '<b>解答：</b>$3.5 \\times 10\\,000 = 35\\,000\\text{ cm}^2$<br><br>' +
+    '<b>解答：</b><br>' +
+    '$1\\text{ m} = 100\\text{ cm}$，所以 $1\\text{ m}^2 = 100^2 = 10\\,000\\text{ cm}^2$。<br>' +
+    '$3.5 \\times 10\\,000 = 35\\,000\\text{ cm}^2$<br><br>' +
     '<b>经典例题 2</b> [3 分]<br>' +
     '金属块质量 540 g，体积 $200\\text{ cm}^3$。另一块同材料体积 $350\\text{ cm}^3$，求质量。<br><br>' +
-    '<b>解答：</b>密度 $= 2.7\\text{ g/cm}^3$，质量 $= 945$ g'
+    '<b>解答：</b><br>' +
+    '密度 $= \\frac{540}{200} = 2.7\\text{ g/cm}^3$<br>' +
+    '质量 $= 2.7 \\times 350 = 945$ g<br><br>' +
+    '<b>经典例题 3</b> [3 分]<br>' +
+    '一辆汽车 2 小时 30 分钟行驶了 150 km。计算其平均速度（km/h），并换算为 m/s。<br><br>' +
+    '<b>解答：</b><br>' +
+    '时间 $= 2.5$ 小时<br>' +
+    '速度 $= \\frac{150}{2.5} = 60\\text{ km/h}$<br>' +
+    '换算：$60 \\times \\frac{1000}{3600} = 16.7\\text{ m/s}$<br><br>' +
+    '<b>经典例题 4</b> [3 分]<br>' +
+    '将 $0.5\\text{ m}^3$ 换算为升。<br><br>' +
+    '<b>解答：</b><br>' +
+    '$1\\text{ m}^3 = 1\\,000\\,000\\text{ cm}^3$<br>' +
+    '$0.5\\text{ m}^3 = 500\\,000\\text{ cm}^3$<br>' +
+    '$1\\text{ litre} = 1000\\text{ cm}^3$，所以 $500\\,000 \\div 1000 = 500$ 升<br><br>' +
+    '<b>考试技巧：</b>面积换算需将因子平方，体积换算需将因子立方。务必清晰写出换算因子。'
 });
 
 // ── 5.2 Area and perimeter ──
@@ -95,21 +126,46 @@ add('cie', '5.2', 'knowledge', {
 
 add('cie', '5.2', 'examples', {
   content:
-    '<b>Worked Example</b> [4 marks]<br>' +
-    'A trapezium has parallel sides 8 cm and 14 cm and perpendicular height 6 cm. Find its area.<br><br>' +
+    '<b>Worked Example 1</b> [2 marks]<br>' +
+    'A rectangle has length 12 cm and width 5 cm. Calculate its area and perimeter.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Area $= 12 \\times 5 = 60\\text{ cm}^2$<br>' +
+    'Perimeter $= 2(12 + 5) = 2 \\times 17 = 34$ cm<br><br>' +
+    '<b>Worked Example 2</b> [3 marks]<br>' +
+    'A trapezium has parallel sides 8 cm and 14 cm and perpendicular height 6 cm. Calculate its area.<br><br>' +
     '<b>Solution:</b><br>' +
     '$A = \\frac{1}{2}(8 + 14) \\times 6 = \\frac{1}{2} \\times 22 \\times 6 = 66\\text{ cm}^2$<br><br>' +
-    '<b>Worked Example 2</b> (Extended) [3 marks]<br>' +
+    '<b>Worked Example 3</b> [4 marks]<br>' +
+    'A parallelogram has base 15 cm. Its area is $120\\text{ cm}^2$. Find its perpendicular height. A triangle is cut from the parallelogram with the same base and height. Find the area of the triangle.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Parallelogram: $A = bh$, so $120 = 15h$, $h = 8$ cm.<br>' +
+    'Triangle: $A = \\frac{1}{2} \\times 15 \\times 8 = 60\\text{ cm}^2$<br><br>' +
+    '<b>Worked Example 4</b> [4 marks — Extended]<br>' +
     'Triangle $PQR$: $PQ = 9$ cm, $PR = 7$ cm, $\\angle P = 48°$. Find the area.<br><br>' +
     '<b>Solution:</b><br>' +
-    '$A = \\frac{1}{2} \\times 9 \\times 7 \\times \\sin 48° = 31.5 \\times 0.7431 = 23.4\\text{ cm}^2$',
+    '$A = \\frac{1}{2} \\times 9 \\times 7 \\times \\sin 48°$<br>' +
+    '$= 31.5 \\times 0.7431 = 23.4\\text{ cm}^2$<br><br>' +
+    '<b>Exam Tip:</b> Always check you are using the perpendicular height, not a slant side. For non-right-angled triangles (Extended), use $A = \\frac{1}{2}ab\\sin C$.',
   content_zh:
-    '<b>经典例题</b> [4 分]<br>' +
+    '<b>经典例题 1</b> [2 分]<br>' +
+    '长方形长 12 cm，宽 5 cm。计算其面积和周长。<br><br>' +
+    '<b>解答：</b><br>' +
+    '面积 $= 12 \\times 5 = 60\\text{ cm}^2$<br>' +
+    '周长 $= 2(12 + 5) = 34$ cm<br><br>' +
+    '<b>经典例题 2</b> [3 分]<br>' +
     '梯形平行边 8 cm 和 14 cm，高 6 cm，求面积。<br><br>' +
-    '<b>解答：</b>$A = \\frac{1}{2}(8+14) \\times 6 = 66\\text{ cm}^2$<br><br>' +
-    '<b>经典例题 2</b>（Extended）[3 分]<br>' +
-    '$PQ = 9$, $PR = 7$, $\\angle P = 48°$。<br>' +
-    '<b>解答：</b>$A = \\frac{1}{2}(9)(7)\\sin 48° = 23.4\\text{ cm}^2$'
+    '<b>解答：</b><br>' +
+    '$A = \\frac{1}{2}(8 + 14) \\times 6 = \\frac{1}{2} \\times 22 \\times 6 = 66\\text{ cm}^2$<br><br>' +
+    '<b>经典例题 3</b> [4 分]<br>' +
+    '平行四边形底边 15 cm，面积 $120\\text{ cm}^2$。求垂直高度。从该平行四边形中切出一个同底同高的三角形，求三角形面积。<br><br>' +
+    '<b>解答：</b><br>' +
+    '平行四边形：$A = bh$，$120 = 15h$，$h = 8$ cm。<br>' +
+    '三角形：$A = \\frac{1}{2} \\times 15 \\times 8 = 60\\text{ cm}^2$<br><br>' +
+    '<b>经典例题 4</b> [4 分 — 进阶]<br>' +
+    '$PQ = 9$ cm，$PR = 7$ cm，$\\angle P = 48°$。求面积。<br><br>' +
+    '<b>解答：</b><br>' +
+    '$A = \\frac{1}{2} \\times 9 \\times 7 \\times \\sin 48° = 31.5 \\times 0.7431 = 23.4\\text{ cm}^2$<br><br>' +
+    '<b>考试技巧：</b>务必使用垂直高度而非斜边。对于非直角三角形（进阶），使用 $A = \\frac{1}{2}ab\\sin C$。'
 });
 
 // ── 5.3 Circles, arcs and sectors ──
@@ -144,18 +200,58 @@ add('cie', '5.3', 'knowledge', {
 
 add('cie', '5.3', 'examples', {
   content:
-    '<b>Worked Example</b> [4 marks]<br>' +
+    '<b>Worked Example 1</b> [2 marks]<br>' +
+    'A circle has radius 7 cm. Find its circumference and area.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Circumference $= 2\\pi \\times 7 = 14\\pi = 44.0$ cm<br>' +
+    'Area $= \\pi \\times 7^2 = 49\\pi = 153.9\\text{ cm}^2$<br><br>' +
+    '<b>Worked Example 2</b> [3 marks]<br>' +
+    'The area of a circle is $200\\text{ cm}^2$. Find its radius and circumference.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '$\\pi r^2 = 200$<br>' +
+    '$r^2 = \\frac{200}{\\pi} = 63.66...$<br>' +
+    '$r = \\sqrt{63.66} = 7.98$ cm<br>' +
+    'Circumference $= 2\\pi \\times 7.98 = 50.1$ cm<br><br>' +
+    '<b>Worked Example 3</b> [4 marks]<br>' +
     'A sector has radius 12 cm and angle $150°$. Find (a) the arc length, (b) the area, (c) the perimeter.<br><br>' +
     '<b>Solution:</b><br>' +
     '(a) Arc $= \\frac{150}{360} \\times 2\\pi \\times 12 = \\frac{5}{12} \\times 24\\pi = 10\\pi = 31.4$ cm<br>' +
     '(b) Area $= \\frac{150}{360} \\times \\pi \\times 144 = 60\\pi = 188.5\\text{ cm}^2$<br>' +
-    '(c) Perimeter $= 31.4 + 2(12) = 31.4 + 24 = 55.4$ cm',
+    '(c) Perimeter $= 31.4 + 2(12) = 31.4 + 24 = 55.4$ cm<br><br>' +
+    '<b>Worked Example 4</b> [4 marks]<br>' +
+    'A sector has area $75\\text{ cm}^2$ and radius 10 cm. Find the angle at the centre and the arc length.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '$\\frac{\\theta}{360} \\times \\pi \\times 10^2 = 75$<br>' +
+    '$\\frac{\\theta}{360} \\times 100\\pi = 75$<br>' +
+    '$\\frac{\\theta}{360} = \\frac{75}{100\\pi} = 0.2387...$<br>' +
+    '$\\theta = 0.2387 \\times 360 = 85.9°$<br>' +
+    'Arc length $= \\frac{85.9}{360} \\times 2\\pi \\times 10 = 15.0$ cm<br><br>' +
+    '<b>Exam Tip:</b> The perimeter of a sector is NOT just the arc length — remember to add the two radii: $P = \\text{arc} + 2r$.',
   content_zh:
-    '<b>经典例题</b> [4 分]<br>' +
+    '<b>经典例题 1</b> [2 分]<br>' +
+    '圆的半径为 7 cm。求其周长和面积。<br><br>' +
+    '<b>解答：</b><br>' +
+    '周长 $= 2\\pi \\times 7 = 14\\pi = 44.0$ cm<br>' +
+    '面积 $= \\pi \\times 7^2 = 49\\pi = 153.9\\text{ cm}^2$<br><br>' +
+    '<b>经典例题 2</b> [3 分]<br>' +
+    '一个圆的面积为 $200\\text{ cm}^2$。求其半径和周长。<br><br>' +
+    '<b>解答：</b><br>' +
+    '$\\pi r^2 = 200$，$r^2 = \\frac{200}{\\pi} = 63.66$，$r = 7.98$ cm<br>' +
+    '周长 $= 2\\pi \\times 7.98 = 50.1$ cm<br><br>' +
+    '<b>经典例题 3</b> [4 分]<br>' +
     '扇形半径 12 cm，角 $150°$。求弧长、面积、周长。<br><br>' +
-    '<b>解答：</b>(a) 弧长 $= 10\\pi = 31.4$ cm<br>' +
-    '(b) 面积 $= 60\\pi = 188.5\\text{ cm}^2$<br>' +
-    '(c) 周长 $= 31.4 + 24 = 55.4$ cm'
+    '<b>解答：</b><br>' +
+    '(a) 弧长 $= \\frac{150}{360} \\times 2\\pi \\times 12 = 10\\pi = 31.4$ cm<br>' +
+    '(b) 面积 $= \\frac{150}{360} \\times \\pi \\times 144 = 60\\pi = 188.5\\text{ cm}^2$<br>' +
+    '(c) 周长 $= 31.4 + 24 = 55.4$ cm<br><br>' +
+    '<b>经典例题 4</b> [4 分]<br>' +
+    '一个扇形的面积为 $75\\text{ cm}^2$，半径为 10 cm。求圆心角和弧长。<br><br>' +
+    '<b>解答：</b><br>' +
+    '$\\frac{\\theta}{360} \\times \\pi \\times 10^2 = 75$<br>' +
+    '$\\frac{\\theta}{360} = \\frac{75}{100\\pi} = 0.2387$<br>' +
+    '$\\theta = 85.9°$<br>' +
+    '弧长 $= \\frac{85.9}{360} \\times 2\\pi \\times 10 = 15.0$ cm<br><br>' +
+    '<b>考试技巧：</b>扇形的周长不仅仅是弧长 —— 别忘了加上两条半径：$P = \\text{弧长} + 2r$。'
 });
 
 // ── 5.4 Surface area and volume ──
@@ -194,7 +290,25 @@ add('cie', '5.4', 'knowledge', {
 
 add('cie', '5.4', 'examples', {
   content:
-    '<b>Worked Example</b> [5 marks]<br>' +
+    '<b>Worked Example 1</b> [3 marks]<br>' +
+    'A cylinder has radius 4 cm and height 9 cm. Calculate its volume and total surface area.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Volume $= \\pi r^2 h = \\pi \\times 16 \\times 9 = 144\\pi = 452.4\\text{ cm}^3$<br>' +
+    'Total SA $= 2\\pi rh + 2\\pi r^2 = 2\\pi(4)(9) + 2\\pi(16) = 72\\pi + 32\\pi = 104\\pi = 326.7\\text{ cm}^2$<br><br>' +
+    '<b>Worked Example 2</b> [4 marks]<br>' +
+    'A cone has base radius 6 cm and vertical height 8 cm. Find the volume and the curved surface area.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Volume $= \\frac{1}{3}\\pi r^2 h = \\frac{1}{3}\\pi \\times 36 \\times 8 = 96\\pi = 301.6\\text{ cm}^3$<br>' +
+    'Slant height: $l = \\sqrt{6^2 + 8^2} = \\sqrt{100} = 10$ cm<br>' +
+    'Curved SA $= \\pi rl = \\pi \\times 6 \\times 10 = 60\\pi = 188.5\\text{ cm}^2$<br><br>' +
+    '<b>Worked Example 3</b> [3 marks]<br>' +
+    'A sphere has volume $288\\pi\\text{ cm}^3$. Find its radius and surface area.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '$\\frac{4}{3}\\pi r^3 = 288\\pi$<br>' +
+    '$r^3 = 288 \\times \\frac{3}{4} = 216$<br>' +
+    '$r = \\sqrt[3]{216} = 6$ cm<br>' +
+    'SA $= 4\\pi r^2 = 4\\pi \\times 36 = 144\\pi = 452.4\\text{ cm}^2$<br><br>' +
+    '<b>Worked Example 4</b> [5 marks]<br>' +
     'A solid is made from a cylinder (radius 5 cm, height 10 cm) with a hemisphere on top. Find the total volume and total surface area.<br><br>' +
     '<b>Solution:</b><br>' +
     '<b>Volume:</b><br>' +
@@ -206,24 +320,48 @@ add('cie', '5.4', 'examples', {
     'Base circle: $\\pi \\times 25 = 25\\pi$<br>' +
     'Hemisphere curved: $2\\pi \\times 25 = 50\\pi$<br>' +
     'Total $= 100\\pi + 25\\pi + 50\\pi = 175\\pi = 550\\text{ cm}^2$<br><br>' +
-    '<b>Watch Out:</b> No top circle on the cylinder (hemisphere covers it) and no flat face on the hemisphere.',
+    '<b>Worked Example 5</b> [5 marks]<br>' +
+    'A square-based pyramid has base edge 10 cm and vertical height 12 cm. Calculate the volume and the total surface area.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Volume $= \\frac{1}{3} \\times 10^2 \\times 12 = \\frac{1}{3} \\times 1200 = 400\\text{ cm}^3$<br>' +
+    'Slant height of triangular face: from centre of base edge to apex.<br>' +
+    'Half base $= 5$ cm, so $l = \\sqrt{5^2 + 12^2} = \\sqrt{169} = 13$ cm<br>' +
+    'Area of one triangular face $= \\frac{1}{2} \\times 10 \\times 13 = 65\\text{ cm}^2$<br>' +
+    'Total SA $= 10^2 + 4 \\times 65 = 100 + 260 = 360\\text{ cm}^2$<br><br>' +
+    '<b>Exam Tip:</b> For compound solids, think about which faces are hidden (e.g. no top circle on a cylinder when a hemisphere sits on it). Formulae for cone, sphere, and pyramid are on the formula sheet.',
   content_zh:
-    '<b>经典例题</b> [5 分]<br>' +
-    '一个几何体由一个圆柱体（半径 5 cm，高 10 cm）及其顶部的半球体组成。求其总体积和总表面积。<br>' +
-    '<br>' +
+    '<b>经典例题 1</b> [3 分]<br>' +
+    '圆柱体半径 4 cm，高 9 cm。计算其体积和总表面积。<br><br>' +
+    '<b>解答：</b><br>' +
+    '体积 $= \\pi r^2 h = \\pi \\times 16 \\times 9 = 144\\pi = 452.4\\text{ cm}^3$<br>' +
+    '总表面积 $= 2\\pi rh + 2\\pi r^2 = 72\\pi + 32\\pi = 104\\pi = 326.7\\text{ cm}^2$<br><br>' +
+    '<b>经典例题 2</b> [4 分]<br>' +
+    '圆锥体底面半径 6 cm，垂直高度 8 cm。求体积和侧面积。<br><br>' +
+    '<b>解答：</b><br>' +
+    '体积 $= \\frac{1}{3}\\pi \\times 36 \\times 8 = 96\\pi = 301.6\\text{ cm}^3$<br>' +
+    '斜高：$l = \\sqrt{6^2 + 8^2} = \\sqrt{100} = 10$ cm<br>' +
+    '侧面积 $= \\pi rl = \\pi \\times 6 \\times 10 = 60\\pi = 188.5\\text{ cm}^2$<br><br>' +
+    '<b>经典例题 3</b> [3 分]<br>' +
+    '一个球体的体积为 $288\\pi\\text{ cm}^3$。求其半径和表面积。<br><br>' +
+    '<b>解答：</b><br>' +
+    '$\\frac{4}{3}\\pi r^3 = 288\\pi$，$r^3 = 216$，$r = 6$ cm<br>' +
+    '表面积 $= 4\\pi \\times 36 = 144\\pi = 452.4\\text{ cm}^2$<br><br>' +
+    '<b>经典例题 4</b> [5 分]<br>' +
+    '一个几何体由一个圆柱体（半径 5 cm，高 10 cm）及其顶部的半球体组成。求其总体积和总表面积。<br><br>' +
     '<b>解答：</b><br>' +
     '<b>体积：</b><br>' +
-    '圆柱体：$\\pi \\times 25 \\times 10 = 250\\pi$<br>' +
-    '半球体：$\\frac{1}{2} \\times \\frac{4}{3}\\pi \\times 125 = \\frac{250\\pi}{3}$<br>' +
-    '总计 $= 250\\pi + \\frac{250\\pi}{3} = \\frac{1000\\pi}{3} = 1047\\text{ cm}^3$<br>' +
-    '<br>' +
+    '圆柱体：$250\\pi$，半球体：$\\frac{250\\pi}{3}$<br>' +
+    '总计 $= \\frac{1000\\pi}{3} = 1047\\text{ cm}^3$<br>' +
     '<b>表面积：</b><br>' +
-    '圆柱侧面积：$2\\pi \\times 5 \\times 10 = 100\\pi$<br>' +
-    '底面圆面积：$\\pi \\times 25 = 25\\pi$<br>' +
-    '半球曲面面积：$2\\pi \\times 25 = 50\\pi$<br>' +
-    '总计 $= 100\\pi + 25\\pi + 50\\pi = 175\\pi = 550\\text{ cm}^2$<br>' +
-    '<br>' +
-    '<b>注意！</b> 圆柱顶部没有圆（被半球覆盖了），且半球没有平面。'
+    '圆柱侧面积 $100\\pi$ + 底面 $25\\pi$ + 半球曲面 $50\\pi = 175\\pi = 550\\text{ cm}^2$<br><br>' +
+    '<b>经典例题 5</b> [5 分]<br>' +
+    '正方形底面棱锥，底边 10 cm，垂直高度 12 cm。求体积和总表面积。<br><br>' +
+    '<b>解答：</b><br>' +
+    '体积 $= \\frac{1}{3} \\times 100 \\times 12 = 400\\text{ cm}^3$<br>' +
+    '三角面斜高：$l = \\sqrt{5^2 + 12^2} = 13$ cm<br>' +
+    '一个三角面 $= \\frac{1}{2} \\times 10 \\times 13 = 65\\text{ cm}^2$<br>' +
+    '总表面积 $= 100 + 4 \\times 65 = 360\\text{ cm}^2$<br><br>' +
+    '<b>考试技巧：</b>对于复合几何体，注意哪些面是被遮挡的（例如：圆柱体顶部放半球时没有顶圆）。圆锥、球体和棱锥的公式在公式表上。'
 });
 
 // ── 5.5 Compound shapes ──
@@ -258,23 +396,56 @@ add('cie', '5.5', 'knowledge', {
 
 add('cie', '5.5', 'examples', {
   content:
-    '<b>Worked Example</b> [4 marks]<br>' +
-    'An L-shaped room is 10 m by 8 m with a 4 m by 3 m rectangle removed from one corner. Find the area and perimeter.<br><br>' +
+    '<b>Worked Example 1</b> [3 marks]<br>' +
+    'An L-shaped room is 10 m by 8 m with a 4 m by 3 m rectangle removed from one corner. Find the area.<br><br>' +
     '<b>Solution:</b><br>' +
-    'Area $= (10 \\times 8) - (4 \\times 3) = 80 - 12 = 68\\text{ m}^2$<br>' +
-    'Perimeter: trace the outside: $10 + 8 + 6 + 3 + 4 + 5 = 36$ m<br>' +
-    '(or $10 + 8 + (10-4) + 3 + 4 + (8-3) = 36$ m)<br><br>' +
-    '<b>Exam Tip:</b> For perimeter, trace around the outside of the shape to make sure you count every edge.',
+    'Area $= (10 \\times 8) - (4 \\times 3) = 80 - 12 = 68\\text{ m}^2$<br><br>' +
+    '<b>Worked Example 2</b> [3 marks]<br>' +
+    'A shape is made from a rectangle 12 cm by 8 cm with a semicircle of diameter 8 cm attached to one end. Find the total area.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Rectangle: $12 \\times 8 = 96\\text{ cm}^2$<br>' +
+    'Semicircle radius $= 4$ cm: $\\frac{1}{2}\\pi \\times 4^2 = 8\\pi = 25.1\\text{ cm}^2$<br>' +
+    'Total area $= 96 + 25.1 = 121.1\\text{ cm}^2$<br><br>' +
+    '<b>Worked Example 3</b> [4 marks]<br>' +
+    'A running track consists of a rectangle 100 m by 60 m with semicircles at each end. Calculate the perimeter of the track and the total area enclosed.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Each semicircle has diameter 60 m, so radius $= 30$ m.<br>' +
+    'Perimeter $= 2 \\times 100 + 2 \\times \\frac{1}{2} \\times 2\\pi \\times 30 = 200 + 60\\pi = 200 + 188.5 = 388.5$ m<br>' +
+    'Area $= 100 \\times 60 + \\pi \\times 30^2 = 6000 + 900\\pi = 6000 + 2827.4 = 8827\\text{ m}^2$<br><br>' +
+    '<b>Worked Example 4</b> [4 marks]<br>' +
+    'A square has side 20 cm. Four quarter-circles of radius 5 cm are cut from the corners. Find the shaded area remaining and the perimeter of the shaded shape.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Square area $= 20^2 = 400\\text{ cm}^2$<br>' +
+    'Four quarter-circles $= 1$ full circle of radius 5: $\\pi \\times 25 = 78.5\\text{ cm}^2$<br>' +
+    'Shaded area $= 400 - 78.5 = 321.5\\text{ cm}^2$<br>' +
+    'Perimeter: four straight edges of $(20 - 5 - 5) = 10$ cm each, plus four quarter-circle arcs $= 1$ full circumference $= 2\\pi \\times 5 = 31.4$ cm.<br>' +
+    'Total perimeter $= 4 \\times 10 + 31.4 = 71.4$ cm<br><br>' +
+    '<b>Exam Tip:</b> For perimeter of compound shapes, trace around the outside carefully. Only count outer edges — internal boundaries are not part of the perimeter.',
   content_zh:
-    '<b>经典例题</b> [4 分]<br>' +
-    '一个 L 形房间的长宽分别为 10 m 和 8 m，其中一个角被扣除了一个 4 m 乘以 3 m 的长方形。求其面积和周长。<br>' +
-    '<br>' +
+    '<b>经典例题 1</b> [3 分]<br>' +
+    '一个 L 形房间长 10 m、宽 8 m，一个角被扣除了 4 m × 3 m 的矩形。求面积。<br><br>' +
     '<b>解答：</b><br>' +
-    '面积 $= (10 \\times 8) - (4 \\times 3) = 80 - 12 = 68\\text{ m}^2$<br>' +
-    '周长：沿外围追踪：$10 + 8 + 6 + 3 + 4 + 5 = 36$ m<br>' +
-    '(或者 $10 + 8 + (10-4) + 3 + 4 + (8-3) = 36$ m)<br>' +
-    '<br>' +
-    '<b>考试技巧：</b> 对于周长，沿图形外围追踪一圈，确保计算到每一条边。'
+    '面积 $= (10 \\times 8) - (4 \\times 3) = 80 - 12 = 68\\text{ m}^2$<br><br>' +
+    '<b>经典例题 2</b> [3 分]<br>' +
+    '一个图形由一个 12 cm × 8 cm 的矩形和一端附加的直径为 8 cm 的半圆组成。求总面积。<br><br>' +
+    '<b>解答：</b><br>' +
+    '矩形：$12 \\times 8 = 96\\text{ cm}^2$<br>' +
+    '半圆半径 $= 4$ cm：$\\frac{1}{2}\\pi \\times 16 = 8\\pi = 25.1\\text{ cm}^2$<br>' +
+    '总面积 $= 96 + 25.1 = 121.1\\text{ cm}^2$<br><br>' +
+    '<b>经典例题 3</b> [4 分]<br>' +
+    '跑道由一个 100 m × 60 m 的矩形加两端的半圆组成。计算跑道的周长和总面积。<br><br>' +
+    '<b>解答：</b><br>' +
+    '半圆半径 $= 30$ m。<br>' +
+    '周长 $= 200 + 2 \\times \\frac{1}{2} \\times 2\\pi \\times 30 = 200 + 60\\pi = 388.5$ m<br>' +
+    '面积 $= 6000 + \\pi \\times 900 = 6000 + 2827.4 = 8827\\text{ m}^2$<br><br>' +
+    '<b>经典例题 4</b> [4 分]<br>' +
+    '正方形边长 20 cm，四个角各挖去一个半径 5 cm 的四分之一圆。求剩余阴影部分的面积和周长。<br><br>' +
+    '<b>解答：</b><br>' +
+    '正方形 $= 400\\text{ cm}^2$，四个四分之一圆 $= \\pi \\times 25 = 78.5\\text{ cm}^2$<br>' +
+    '阴影面积 $= 400 - 78.5 = 321.5\\text{ cm}^2$<br>' +
+    '周长：四段直边各 $10$ cm + 四段弧长 $= 2\\pi \\times 5 = 31.4$ cm<br>' +
+    '总周长 $= 40 + 31.4 = 71.4$ cm<br><br>' +
+    '<b>考试技巧：</b>求组合图形周长时，沿外围仔细追踪。只计算外部边——内部分界线不属于周长。'
 });
 
 /* ══════════════════════════════════════════════════
@@ -312,18 +483,46 @@ add('cie', '6.1', 'knowledge', {
 add('cie', '6.1', 'examples', {
   content:
     '<b>Worked Example 1</b> [2 marks]<br>' +
-    'Find the hypotenuse of a right triangle with legs 6 cm and 8 cm.<br><br>' +
+    'Find the hypotenuse of a right-angled triangle with legs 6 cm and 8 cm.<br><br>' +
     '<b>Solution:</b><br>' +
     '$c = \\sqrt{6^2 + 8^2} = \\sqrt{36 + 64} = \\sqrt{100} = 10$ cm<br><br>' +
-    '<b>Worked Example 2</b> (Extended) [3 marks]<br>' +
-    'A cuboid is $3 \\times 4 \\times 12$. Find the space diagonal.<br><br>' +
+    '<b>Worked Example 2</b> [3 marks]<br>' +
+    'A right-angled triangle has hypotenuse 15 cm and one leg 9 cm. Find the other leg.<br><br>' +
     '<b>Solution:</b><br>' +
-    '$d = \\sqrt{3^2 + 4^2 + 12^2} = \\sqrt{9 + 16 + 144} = \\sqrt{169} = 13$',
+    '$a = \\sqrt{15^2 - 9^2} = \\sqrt{225 - 81} = \\sqrt{144} = 12$ cm<br><br>' +
+    '<b>Worked Example 3</b> [3 marks]<br>' +
+    'Find the distance between the points $A(1, 3)$ and $B(7, 11)$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Horizontal distance $= 7 - 1 = 6$<br>' +
+    'Vertical distance $= 11 - 3 = 8$<br>' +
+    '$AB = \\sqrt{6^2 + 8^2} = \\sqrt{36 + 64} = \\sqrt{100} = 10$<br><br>' +
+    '<b>Worked Example 4</b> [4 marks — Extended]<br>' +
+    'A cuboid has dimensions $3 \\times 4 \\times 12$. Find the length of the space diagonal.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Base diagonal $= \\sqrt{3^2 + 4^2} = \\sqrt{9 + 16} = \\sqrt{25} = 5$<br>' +
+    'Space diagonal $= \\sqrt{5^2 + 12^2} = \\sqrt{25 + 144} = \\sqrt{169} = 13$<br>' +
+    '(Or directly: $d = \\sqrt{3^2 + 4^2 + 12^2} = \\sqrt{169} = 13$)<br><br>' +
+    '<b>Exam Tip:</b> The hypotenuse is always the longest side, opposite the right angle. Identify it before substituting into the formula.',
   content_zh:
     '<b>经典例题 1</b> [2 分]<br>' +
-    '直角边 6 cm 和 8 cm，求斜边。<br><b>解答：</b>$\\sqrt{100} = 10$ cm<br><br>' +
-    '<b>经典例题 2</b>（Extended）[3 分]<br>' +
-    '长方体 $3 \\times 4 \\times 12$，求空间对角线。<br><b>解答：</b>$\\sqrt{169} = 13$'
+    '直角三角形两直角边为 6 cm 和 8 cm，求斜边。<br><br>' +
+    '<b>解答：</b><br>' +
+    '$c = \\sqrt{6^2 + 8^2} = \\sqrt{100} = 10$ cm<br><br>' +
+    '<b>经典例题 2</b> [3 分]<br>' +
+    '直角三角形斜边 15 cm，一条直角边 9 cm。求另一条直角边。<br><br>' +
+    '<b>解答：</b><br>' +
+    '$a = \\sqrt{15^2 - 9^2} = \\sqrt{225 - 81} = \\sqrt{144} = 12$ cm<br><br>' +
+    '<b>经典例题 3</b> [3 分]<br>' +
+    '求点 $A(1, 3)$ 和 $B(7, 11)$ 之间的距离。<br><br>' +
+    '<b>解答：</b><br>' +
+    '水平距离 $= 6$，垂直距离 $= 8$<br>' +
+    '$AB = \\sqrt{6^2 + 8^2} = \\sqrt{100} = 10$<br><br>' +
+    '<b>经典例题 4</b> [4 分 — 进阶]<br>' +
+    '长方体尺寸为 $3 \\times 4 \\times 12$。求空间对角线。<br><br>' +
+    '<b>解答：</b><br>' +
+    '底面对角线 $= \\sqrt{9 + 16} = 5$<br>' +
+    '空间对角线 $= \\sqrt{25 + 144} = \\sqrt{169} = 13$<br><br>' +
+    '<b>考试技巧：</b>斜边总是最长边，在直角的对面。代入公式前先确定它。'
 });
 
 // ── 6.2 Right-angled triangles ──
@@ -358,21 +557,55 @@ add('cie', '6.2', 'knowledge', {
 
 add('cie', '6.2', 'examples', {
   content:
-    '<b>Worked Example</b> [4 marks]<br>' +
+    '<b>Worked Example 1</b> [2 marks]<br>' +
+    'In a right-angled triangle, the hypotenuse is 13 cm and one angle is $35°$. Find the side opposite to this angle.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '$\\sin 35° = \\frac{\\text{Opp}}{13}$<br>' +
+    'Opp $= 13 \\times \\sin 35° = 13 \\times 0.5736 = 7.46$ cm<br><br>' +
+    '<b>Worked Example 2</b> [3 marks]<br>' +
+    'A ladder of length 6 m leans against a wall. The foot of the ladder is 2.5 m from the base of the wall. Find the angle the ladder makes with the ground.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '$\\cos\\theta = \\frac{2.5}{6} = 0.4167$<br>' +
+    '$\\theta = \\cos^{-1}(0.4167) = 65.4°$<br><br>' +
+    '<b>Worked Example 3</b> [4 marks]<br>' +
     'From the top of a 25 m cliff, the angle of depression to a boat is $32°$. Find the horizontal distance from the base of the cliff to the boat.<br><br>' +
     '<b>Solution:</b><br>' +
-    'The angle of depression from top = angle of elevation from boat = $32°$.<br>' +
-    '$\\tan 32° = \\frac{25}{d}$ → $d = \\frac{25}{\\tan 32°} = \\frac{25}{0.6249} = 40.0$ m<br><br>' +
-    '<b>Exam Tip:</b> Draw a clear diagram. Angle of depression from the top equals the angle of elevation from the bottom (alternate angles).',
+    'The angle of depression from top = angle of elevation from boat $= 32°$ (alternate angles).<br>' +
+    '$\\tan 32° = \\frac{25}{d}$<br>' +
+    '$d = \\frac{25}{\\tan 32°} = \\frac{25}{0.6249} = 40.0$ m<br><br>' +
+    '<b>Worked Example 4</b> [4 marks]<br>' +
+    'A ship sails 15 km due east and then 20 km due north. Find the direct distance from the starting point and the bearing of the ship from its start.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Distance $= \\sqrt{15^2 + 20^2} = \\sqrt{225 + 400} = \\sqrt{625} = 25$ km<br>' +
+    '$\\tan\\theta = \\frac{15}{20} = 0.75$<br>' +
+    '$\\theta = \\tan^{-1}(0.75) = 36.9°$<br>' +
+    'Bearing $= 090° - 36.9° = 053.1°$<br>' +
+    '(Or: from north, angle $= \\tan^{-1}\\frac{15}{20} = 36.9°$ east of north $= 036.9°$... but the ship went east then north, so bearing from start: $\\tan^{-1}\\frac{20}{15}$ from east $= 53.1°$ from east... Bearing $= 90° - 53.1° = 036.9°$.)<br>' +
+    'Bearing from start $= 037°$ (nearest degree).<br><br>' +
+    '<b>Exam Tip:</b> Label the sides O, A, H relative to the angle you are working with, then pick the correct ratio (SOH CAH TOA).',
   content_zh:
-    '<b>经典例题</b> [4 分]<br>' +
-    '从 25 m 高的悬崖顶部看一艘船的俯角为 $32°$。求从悬崖底部到船的水平距离。<br>' +
-    '<br>' +
+    '<b>经典例题 1</b> [2 分]<br>' +
+    '在直角三角形中，斜边为 13 cm，一个角为 $35°$。求该角的对边。<br><br>' +
     '<b>解答：</b><br>' +
-    '顶部的俯角 = 船的仰角 = $32°$。<br>' +
-    '$\\tan 32° = \\frac{25}{d}$ → $d = \\frac{25}{\\tan 32°} = \\frac{25}{0.6249} = 40.0$ m<br>' +
-    '<br>' +
-    '<b>考试技巧：</b>画一个清晰的图示。顶部的俯角等于底部的仰角（内错角）。'
+    '$\\sin 35° = \\frac{\\text{对边}}{13}$<br>' +
+    '对边 $= 13 \\times \\sin 35° = 13 \\times 0.5736 = 7.46$ cm<br><br>' +
+    '<b>经典例题 2</b> [3 分]<br>' +
+    '一架 6 m 长的梯子靠在墙上，梯脚距墙底 2.5 m。求梯子与地面的夹角。<br><br>' +
+    '<b>解答：</b><br>' +
+    '$\\cos\\theta = \\frac{2.5}{6} = 0.4167$<br>' +
+    '$\\theta = \\cos^{-1}(0.4167) = 65.4°$<br><br>' +
+    '<b>经典例题 3</b> [4 分]<br>' +
+    '从 25 m 高的悬崖顶部看一艘船的俯角为 $32°$。求从悬崖底部到船的水平距离。<br><br>' +
+    '<b>解答：</b><br>' +
+    '顶部的俯角 $=$ 船的仰角 $= 32°$（内错角）。<br>' +
+    '$\\tan 32° = \\frac{25}{d}$，$d = \\frac{25}{0.6249} = 40.0$ m<br><br>' +
+    '<b>经典例题 4</b> [4 分]<br>' +
+    '一艘船先向正东航行 15 km，再向正北航行 20 km。求其与出发点的直线距离和从出发点看的方位角。<br><br>' +
+    '<b>解答：</b><br>' +
+    '距离 $= \\sqrt{15^2 + 20^2} = \\sqrt{625} = 25$ km<br>' +
+    '$\\tan\\theta = \\frac{15}{20} = 0.75$，$\\theta = 36.9°$<br>' +
+    '方位角 $= 037°$（最近的整数度）<br><br>' +
+    '<b>考试技巧：</b>相对于所用角，将各边标注为 O（对边）、A（邻边）、H（斜边），然后选择正确的比率（SOH CAH TOA）。'
 });
 
 // ── 6.3 Exact trigonometric values ──
@@ -399,23 +632,50 @@ add('cie', '6.3', 'knowledge', {
 
 add('cie', '6.3', 'examples', {
   content:
-    '<b>Worked Example</b> [3 marks]<br>' +
+    '<b>Worked Example 1</b> [2 marks]<br>' +
+    'Without a calculator, find the exact value of $\\sin 30° + \\cos 60°$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '$\\sin 30° = \\frac{1}{2}$, $\\cos 60° = \\frac{1}{2}$<br>' +
+    '$\\frac{1}{2} + \\frac{1}{2} = 1$<br><br>' +
+    '<b>Worked Example 2</b> [3 marks]<br>' +
     'Without a calculator, find the exact value of $\\frac{\\sin 60°}{\\cos 30°} + \\tan 45°$.<br><br>' +
     '<b>Solution:</b><br>' +
     '$\\sin 60° = \\frac{\\sqrt{3}}{2}$, $\\cos 30° = \\frac{\\sqrt{3}}{2}$, $\\tan 45° = 1$<br>' +
     '$\\frac{\\frac{\\sqrt{3}}{2}}{\\frac{\\sqrt{3}}{2}} + 1 = 1 + 1 = 2$<br><br>' +
-    '<b>Worked Example 2</b> [2 marks]<br>' +
-    'An equilateral triangle has side 4 cm. Find the exact area.<br><br>' +
+    '<b>Worked Example 3</b> [3 marks]<br>' +
+    'An equilateral triangle has side length 4 cm. Find the exact area.<br><br>' +
     '<b>Solution:</b><br>' +
-    'Height $= 4\\sin 60° = 4 \\times \\frac{\\sqrt{3}}{2} = 2\\sqrt{3}$<br>' +
-    'Area $= \\frac{1}{2} \\times 4 \\times 2\\sqrt{3} = 4\\sqrt{3}\\text{ cm}^2$',
+    'Height $= 4\\sin 60° = 4 \\times \\frac{\\sqrt{3}}{2} = 2\\sqrt{3}$ cm<br>' +
+    'Area $= \\frac{1}{2} \\times 4 \\times 2\\sqrt{3} = 4\\sqrt{3}\\text{ cm}^2$<br><br>' +
+    '<b>Worked Example 4</b> [3 marks]<br>' +
+    'Show that $\\tan 60° \\times \\cos 60° = \\sin 60°$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'LHS: $\\tan 60° \\times \\cos 60° = \\sqrt{3} \\times \\frac{1}{2} = \\frac{\\sqrt{3}}{2}$<br>' +
+    'RHS: $\\sin 60° = \\frac{\\sqrt{3}}{2}$<br>' +
+    'LHS $=$ RHS, so $\\tan 60° \\times \\cos 60° = \\sin 60°$ ∎<br><br>' +
+    '<b>Exam Tip:</b> Memorise the exact values from the 30-60-90 and 45-45-90 triangles. These are not on the formula sheet.',
   content_zh:
-    '<b>经典例题</b> [3 分]<br>' +
+    '<b>经典例题 1</b> [2 分]<br>' +
+    '不用计算器，求 $\\sin 30° + \\cos 60°$ 的精确值。<br><br>' +
+    '<b>解答：</b><br>' +
+    '$\\sin 30° = \\frac{1}{2}$，$\\cos 60° = \\frac{1}{2}$<br>' +
+    '$\\frac{1}{2} + \\frac{1}{2} = 1$<br><br>' +
+    '<b>经典例题 2</b> [3 分]<br>' +
     '不用计算器求 $\\frac{\\sin 60°}{\\cos 30°} + \\tan 45°$ 的精确值。<br><br>' +
-    '<b>解答：</b>$\\frac{\\frac{\\sqrt{3}}{2}}{\\frac{\\sqrt{3}}{2}} + 1 = 2$<br><br>' +
-    '<b>经典例题 2</b> [2 分]<br>' +
-    '等边三角形边长 4 cm，求精确面积。<br>' +
-    '<b>解答：</b>高 $= 2\\sqrt{3}$，面积 $= 4\\sqrt{3}\\text{ cm}^2$'
+    '<b>解答：</b><br>' +
+    '$\\frac{\\frac{\\sqrt{3}}{2}}{\\frac{\\sqrt{3}}{2}} + 1 = 1 + 1 = 2$<br><br>' +
+    '<b>经典例题 3</b> [3 分]<br>' +
+    '等边三角形边长 4 cm，求精确面积。<br><br>' +
+    '<b>解答：</b><br>' +
+    '高 $= 4\\sin 60° = 2\\sqrt{3}$ cm<br>' +
+    '面积 $= \\frac{1}{2} \\times 4 \\times 2\\sqrt{3} = 4\\sqrt{3}\\text{ cm}^2$<br><br>' +
+    '<b>经典例题 4</b> [3 分]<br>' +
+    '证明 $\\tan 60° \\times \\cos 60° = \\sin 60°$。<br><br>' +
+    '<b>解答：</b><br>' +
+    '左边：$\\tan 60° \\times \\cos 60° = \\sqrt{3} \\times \\frac{1}{2} = \\frac{\\sqrt{3}}{2}$<br>' +
+    '右边：$\\sin 60° = \\frac{\\sqrt{3}}{2}$<br>' +
+    '左边 $=$ 右边，证毕。<br><br>' +
+    '<b>考试技巧：</b>请记住 30-60-90 和 45-45-90 三角形的精确值。这些不在公式表上。'
 });
 
 // ── 6.4 Trigonometric functions ──
@@ -451,23 +711,73 @@ add('cie', '6.4', 'knowledge', {
 
 add('cie', '6.4', 'examples', {
   content:
-    '<b>Worked Example</b> [3 marks]<br>' +
+    '<b>Worked Example 1</b> [3 marks — Extended]<br>' +
     'Solve $\\sin x = 0.6$ for $0° \\leq x \\leq 360°$.<br><br>' +
     '<b>Solution:</b><br>' +
     '$x = \\sin^{-1}(0.6) = 36.87°$<br>' +
     'Sine is also positive in Q2: $x = 180° - 36.87° = 143.13°$<br>' +
     '$x = 36.9°$ or $x = 143.1°$ (1 d.p.)<br><br>' +
-    '<b>Exam Tip:</b> For $\\sin x = k$ (positive): solutions are $x$ and $180° - x$. For $\\cos x = k$ (positive): solutions are $x$ and $360° - x$.',
+    '<b>Worked Example 2</b> [3 marks — Extended]<br>' +
+    'Solve $\\cos x = -0.5$ for $0° \\leq x \\leq 360°$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '$\\cos^{-1}(0.5) = 60°$ (reference angle)<br>' +
+    'Cosine is negative in Q2 and Q3:<br>' +
+    '$x = 180° - 60° = 120°$<br>' +
+    '$x = 180° + 60° = 240°$<br>' +
+    '$x = 120°$ or $x = 240°$<br><br>' +
+    '<b>Worked Example 3</b> [4 marks — Extended]<br>' +
+    'Solve $\\tan x = -1$ for $0° \\leq x \\leq 360°$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '$\\tan^{-1}(1) = 45°$ (reference angle)<br>' +
+    'Tangent is negative in Q2 and Q4:<br>' +
+    '$x = 180° - 45° = 135°$<br>' +
+    '$x = 360° - 45° = 315°$<br>' +
+    '$x = 135°$ or $x = 315°$<br><br>' +
+    '<b>Worked Example 4</b> [4 marks — Extended]<br>' +
+    'Solve $2\\sin x - 1 = 0$ for $0° \\leq x \\leq 360°$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '$2\\sin x = 1$, so $\\sin x = 0.5$<br>' +
+    '$x = \\sin^{-1}(0.5) = 30°$<br>' +
+    'Sine is positive in Q1 and Q2:<br>' +
+    '$x = 30°$ or $x = 180° - 30° = 150°$<br><br>' +
+    '<b>Worked Example 5</b> [5 marks — Extended]<br>' +
+    'Solve $3\\cos x + 1 = 0$ for $0° \\leq x \\leq 360°$. Give answers to 1 decimal place.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '$3\\cos x = -1$, so $\\cos x = -\\frac{1}{3} = -0.3333$<br>' +
+    '$\\cos^{-1}(0.3333) = 70.53°$ (reference angle)<br>' +
+    'Cosine is negative in Q2 and Q3:<br>' +
+    '$x = 180° - 70.53° = 109.5°$<br>' +
+    '$x = 180° + 70.53° = 250.5°$<br><br>' +
+    '<b>Exam Tip:</b> Sketch the graph to count how many solutions exist. Use the CAST diagram: All trig positive in Q1, Sine in Q2, Tangent in Q3, Cosine in Q4.',
   content_zh:
-    '<b>经典例题</b> [3 分]<br>' +
-    '解 $\\sin x = 0.6$ 对于 $0° \\leq x \\leq 360°$。<br>' +
-    '<br>' +
+    '<b>经典例题 1</b> [3 分 — 进阶]<br>' +
+    '解 $\\sin x = 0.6$，$0° \\leq x \\leq 360°$。<br><br>' +
     '<b>解答：</b><br>' +
     '$x = \\sin^{-1}(0.6) = 36.87°$<br>' +
-    '正弦在第二象限也是正值：$x = 180° - 36.87° = 143.13°$<br>' +
-    '$x = 36.9°$ 或 $x = 143.1°$（保留 1 位小数）<br>' +
-    '<br>' +
-    '<b>考试技巧：</b>对于 $\\sin x = k$（正值）：解为 $x$ 和 $180° - x$。对于 $\\cos x = k$（正值）：解为 $x$ 和 $360° - x$。'
+    '正弦在第二象限也为正：$x = 180° - 36.87° = 143.13°$<br>' +
+    '$x = 36.9°$ 或 $x = 143.1°$<br><br>' +
+    '<b>经典例题 2</b> [3 分 — 进阶]<br>' +
+    '解 $\\cos x = -0.5$，$0° \\leq x \\leq 360°$。<br><br>' +
+    '<b>解答：</b><br>' +
+    '参考角 $\\cos^{-1}(0.5) = 60°$<br>' +
+    '余弦在第二、三象限为负：<br>' +
+    '$x = 180° - 60° = 120°$ 或 $x = 180° + 60° = 240°$<br><br>' +
+    '<b>经典例题 3</b> [4 分 — 进阶]<br>' +
+    '解 $\\tan x = -1$，$0° \\leq x \\leq 360°$。<br><br>' +
+    '<b>解答：</b><br>' +
+    '参考角 $45°$。正切在第二、四象限为负：<br>' +
+    '$x = 135°$ 或 $x = 315°$<br><br>' +
+    '<b>经典例题 4</b> [4 分 — 进阶]<br>' +
+    '解 $2\\sin x - 1 = 0$，$0° \\leq x \\leq 360°$。<br><br>' +
+    '<b>解答：</b><br>' +
+    '$\\sin x = 0.5$，$x = 30°$ 或 $x = 150°$<br><br>' +
+    '<b>经典例题 5</b> [5 分 — 进阶]<br>' +
+    '解 $3\\cos x + 1 = 0$，$0° \\leq x \\leq 360°$。精确到 1 位小数。<br><br>' +
+    '<b>解答：</b><br>' +
+    '$\\cos x = -\\frac{1}{3}$，参考角 $= 70.53°$<br>' +
+    '余弦在第二、三象限为负：<br>' +
+    '$x = 109.5°$ 或 $x = 250.5°$<br><br>' +
+    '<b>考试技巧：</b>画图确定解的个数。使用 CAST 图：第一象限全正，第二象限正弦为正，第三象限正切为正，第四象限余弦为正。'
 });
 
 // ── 6.5 Non-right-angled triangles ──
@@ -496,23 +806,67 @@ add('cie', '6.5', 'knowledge', {
 
 add('cie', '6.5', 'examples', {
   content:
-    '<b>Worked Example 1</b> [3 marks]<br>' +
+    '<b>Worked Example 1</b> [3 marks — Extended]<br>' +
     'In $\\triangle ABC$: $A = 40°$, $B = 75°$, $a = 10$ cm. Find side $b$.<br><br>' +
     '<b>Solution:</b><br>' +
+    'Using the sine rule: $\\frac{a}{\\sin A} = \\frac{b}{\\sin B}$<br>' +
     '$\\frac{10}{\\sin 40°} = \\frac{b}{\\sin 75°}$<br>' +
-    '$b = \\frac{10 \\sin 75°}{\\sin 40°} = \\frac{10 \\times 0.9659}{0.6428} = 15.0$ cm<br><br>' +
-    '<b>Worked Example 2</b> [4 marks]<br>' +
-    'In $\\triangle PQR$: $p = 7$, $q = 9$, $r = 5$. Find angle $Q$.<br><br>' +
+    '$b = \\frac{10 \\times \\sin 75°}{\\sin 40°} = \\frac{10 \\times 0.9659}{0.6428} = 15.0$ cm<br><br>' +
+    '<b>Worked Example 2</b> [4 marks — Extended]<br>' +
+    'In $\\triangle PQR$: $p = 7$ cm, $q = 9$ cm, $r = 5$ cm. Find angle $Q$.<br><br>' +
     '<b>Solution:</b><br>' +
-    '$\\cos Q = \\frac{7^2 + 5^2 - 9^2}{2 \\times 7 \\times 5} = \\frac{49 + 25 - 81}{70} = \\frac{-7}{70} = -0.1$<br>' +
-    '$Q = \\cos^{-1}(-0.1) = 95.7°$',
+    'Using the cosine rule to find an angle:<br>' +
+    '$\\cos Q = \\frac{p^2 + r^2 - q^2}{2pr} = \\frac{49 + 25 - 81}{70} = \\frac{-7}{70} = -0.1$<br>' +
+    '$Q = \\cos^{-1}(-0.1) = 95.7°$<br><br>' +
+    '<b>Worked Example 3</b> [4 marks — Extended]<br>' +
+    'In $\\triangle ABC$: $b = 11$ cm, $c = 8$ cm, $A = 55°$. Find side $a$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Using the cosine rule to find a side:<br>' +
+    '$a^2 = b^2 + c^2 - 2bc\\cos A$<br>' +
+    '$a^2 = 121 + 64 - 2(11)(8)\\cos 55°$<br>' +
+    '$a^2 = 185 - 176 \\times 0.5736 = 185 - 100.95 = 84.05$<br>' +
+    '$a = \\sqrt{84.05} = 9.17$ cm<br><br>' +
+    '<b>Worked Example 4</b> [4 marks — Extended]<br>' +
+    'In $\\triangle XYZ$: $x = 12$ cm, $y = 9$ cm, $Z = 65°$. Find the area of the triangle.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '$A = \\frac{1}{2}xy\\sin Z = \\frac{1}{2} \\times 12 \\times 9 \\times \\sin 65°$<br>' +
+    '$= 54 \\times 0.9063 = 48.9\\text{ cm}^2$<br><br>' +
+    '<b>Worked Example 5</b> [5 marks — Extended]<br>' +
+    'Two ships leave a port at the same time. Ship A sails 20 km on a bearing of $060°$ and ship B sails 15 km on a bearing of $130°$. Find the distance between the two ships.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Angle at the port between the two paths $= 130° - 60° = 70°$<br>' +
+    'Using the cosine rule with sides 20 and 15, included angle $70°$:<br>' +
+    '$d^2 = 20^2 + 15^2 - 2(20)(15)\\cos 70°$<br>' +
+    '$d^2 = 400 + 225 - 600 \\times 0.3420 = 625 - 205.2 = 419.8$<br>' +
+    '$d = \\sqrt{419.8} = 20.5$ km<br><br>' +
+    '<b>Exam Tip:</b> Choose sine rule when you have a side-angle pair; choose cosine rule for SAS or SSS. Watch for the ambiguous case with the sine rule when finding angles.',
   content_zh:
-    '<b>经典例题 1</b> [3 分]<br>' +
-    '$A = 40°, B = 75°, a = 10$。求 $b$。<br><br>' +
-    '<b>解答：</b>$b = \\frac{10\\sin 75°}{\\sin 40°} = 15.0$ cm<br><br>' +
-    '<b>经典例题 2</b> [4 分]<br>' +
-    '$p = 7, q = 9, r = 5$。求角 $Q$。<br><br>' +
-    '<b>解答：</b>$\\cos Q = \\frac{-7}{70} = -0.1$，$Q = 95.7°$'
+    '<b>经典例题 1</b> [3 分 — 进阶]<br>' +
+    '在 $\\triangle ABC$ 中：$A = 40°$，$B = 75°$，$a = 10$ cm。求边 $b$。<br><br>' +
+    '<b>解答：</b><br>' +
+    '正弦定则：$\\frac{10}{\\sin 40°} = \\frac{b}{\\sin 75°}$<br>' +
+    '$b = \\frac{10 \\times 0.9659}{0.6428} = 15.0$ cm<br><br>' +
+    '<b>经典例题 2</b> [4 分 — 进阶]<br>' +
+    '在 $\\triangle PQR$ 中：$p = 7$，$q = 9$，$r = 5$。求角 $Q$。<br><br>' +
+    '<b>解答：</b><br>' +
+    '$\\cos Q = \\frac{49 + 25 - 81}{70} = \\frac{-7}{70} = -0.1$<br>' +
+    '$Q = \\cos^{-1}(-0.1) = 95.7°$<br><br>' +
+    '<b>经典例题 3</b> [4 分 — 进阶]<br>' +
+    '在 $\\triangle ABC$ 中：$b = 11$ cm，$c = 8$ cm，$A = 55°$。求边 $a$。<br><br>' +
+    '<b>解答：</b><br>' +
+    '$a^2 = 121 + 64 - 2(11)(8)\\cos 55° = 185 - 100.95 = 84.05$<br>' +
+    '$a = \\sqrt{84.05} = 9.17$ cm<br><br>' +
+    '<b>经典例题 4</b> [4 分 — 进阶]<br>' +
+    '在 $\\triangle XYZ$ 中：$x = 12$ cm，$y = 9$ cm，$Z = 65°$。求三角形面积。<br><br>' +
+    '<b>解答：</b><br>' +
+    '$A = \\frac{1}{2} \\times 12 \\times 9 \\times \\sin 65° = 54 \\times 0.9063 = 48.9\\text{ cm}^2$<br><br>' +
+    '<b>经典例题 5</b> [5 分 — 进阶]<br>' +
+    '两艘船同时从港口出发。A 船以 $060°$ 方位角航行 20 km，B 船以 $130°$ 方位角航行 15 km。求两船之间的距离。<br><br>' +
+    '<b>解答：</b><br>' +
+    '港口处夹角 $= 130° - 60° = 70°$<br>' +
+    '$d^2 = 20^2 + 15^2 - 2(20)(15)\\cos 70° = 625 - 205.2 = 419.8$<br>' +
+    '$d = \\sqrt{419.8} = 20.5$ km<br><br>' +
+    '<b>考试技巧：</b>有对边对角时用正弦定则；SAS 或 SSS 时用余弦定则。注意正弦定则求角时可能存在歧义情况。'
 });
 
 // ── 6.6 3D trigonometry ──
@@ -548,29 +902,78 @@ add('cie', '6.6', 'knowledge', {
 
 add('cie', '6.6', 'examples', {
   content:
-    '<b>Worked Example</b> [5 marks]<br>' +
+    '<b>Worked Example 1</b> [4 marks — Extended]<br>' +
     'A cuboid has dimensions $8 \\times 6 \\times 4$ cm. Find the angle between the space diagonal $AG$ and the base $ABCD$.<br><br>' +
     '<b>Solution:</b><br>' +
-    'Step 1: Find base diagonal $AC = \\sqrt{8^2 + 6^2} = \\sqrt{100} = 10$ cm.<br>' +
-    'Step 2: The space diagonal $AG$ goes from $A$ at the base to $G$ at the top. The right triangle has:<br>' +
-    '• Base $= AC = 10$ cm (along the base)<br>' +
-    '• Height $= CG = 4$ cm (vertical edge)<br>' +
+    'Step 1: Base diagonal $AC = \\sqrt{8^2 + 6^2} = \\sqrt{100} = 10$ cm<br>' +
+    'Step 2: Right triangle with base $AC = 10$ and height $CG = 4$:<br>' +
     '$\\tan\\theta = \\frac{4}{10} = 0.4$<br>' +
     '$\\theta = \\tan^{-1}(0.4) = 21.8°$<br><br>' +
-    '<b>Exam Tip:</b> Always identify which plane and which line. The angle is measured AT the base.',
+    '<b>Worked Example 2</b> [4 marks — Extended]<br>' +
+    'A square-based pyramid has base edge 10 cm and vertical height 12 cm. Find the angle between a slant edge and the base.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Step 1: Half the base diagonal $= \\frac{1}{2}\\sqrt{10^2 + 10^2} = \\frac{1}{2}\\sqrt{200} = \\frac{10\\sqrt{2}}{2} = 5\\sqrt{2} = 7.071$ cm<br>' +
+    'Step 2: Right triangle with base $= 5\\sqrt{2}$ and height $= 12$:<br>' +
+    '$\\tan\\theta = \\frac{12}{5\\sqrt{2}} = \\frac{12}{7.071} = 1.697$<br>' +
+    '$\\theta = \\tan^{-1}(1.697) = 59.5°$<br><br>' +
+    '<b>Worked Example 3</b> [5 marks — Extended]<br>' +
+    'A cone has base radius 5 cm and slant height 13 cm. Find (a) the vertical height, (b) the angle between the slant height and the base.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '(a) $h = \\sqrt{13^2 - 5^2} = \\sqrt{169 - 25} = \\sqrt{144} = 12$ cm<br>' +
+    '(b) $\\cos\\theta = \\frac{5}{13}$, so $\\theta = \\cos^{-1}(0.3846) = 67.4°$<br>' +
+    '(Or: $\\tan\\theta = \\frac{12}{5} = 2.4$, $\\theta = 67.4°$)<br><br>' +
+    '<b>Worked Example 4</b> [5 marks — Extended]<br>' +
+    'A cuboid $ABCDEFGH$ has $AB = 12$ cm, $BC = 5$ cm, $CG = 8$ cm. $M$ is the midpoint of $EH$. Find the length $BM$ and the angle $BM$ makes with the base $ABCD$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Step 1: $M$ is the midpoint of $EH$, so the projection of $M$ onto the base is the midpoint $N$ of $AD$.<br>' +
+    '$BN$: $B$ to $N$ across the base. $N$ is at $(0, 2.5)$ if $B = (12, 0)$ (taking $A$ as origin, $AB$ along $x$, $AD$ along $y$).<br>' +
+    '$BN = \\sqrt{12^2 + 2.5^2} = \\sqrt{144 + 6.25} = \\sqrt{150.25} = 12.26$ cm<br>' +
+    'Step 2: $BM$ is the hypotenuse of the right triangle with base $BN = 12.26$ and height $= CG = 8$:<br>' +
+    '$BM = \\sqrt{12.26^2 + 8^2} = \\sqrt{150.25 + 64} = \\sqrt{214.25} = 14.6$ cm<br>' +
+    'Step 3: $\\tan\\theta = \\frac{8}{12.26} = 0.6525$<br>' +
+    '$\\theta = \\tan^{-1}(0.6525) = 33.1°$<br><br>' +
+    '<b>Worked Example 5</b> [6 marks — Extended]<br>' +
+    'A vertical pole $OP$ of height $h$ stands at point $O$ on level ground. Point $A$ is due north of $O$ and point $B$ is due east of $O$. From $A$, the angle of elevation of $P$ is $35°$. From $B$, the angle of elevation of $P$ is $28°$. $AB = 50$ m. Find $h$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'From $A$: $\\tan 35° = \\frac{h}{OA}$, so $OA = \\frac{h}{\\tan 35°}$<br>' +
+    'From $B$: $\\tan 28° = \\frac{h}{OB}$, so $OB = \\frac{h}{\\tan 28°}$<br>' +
+    '$A$ is north, $B$ is east, so $\\angle AOB = 90°$ and $AB^2 = OA^2 + OB^2$:<br>' +
+    '$50^2 = \\frac{h^2}{\\tan^2 35°} + \\frac{h^2}{\\tan^2 28°}$<br>' +
+    '$2500 = h^2\\left(\\frac{1}{0.7002^2} + \\frac{1}{0.5317^2}\\right) = h^2(2.040 + 3.537) = 5.577h^2$<br>' +
+    '$h^2 = \\frac{2500}{5.577} = 448.3$<br>' +
+    '$h = \\sqrt{448.3} = 21.2$ m<br><br>' +
+    '<b>Exam Tip:</b> In 3D problems, always extract a clear 2D right triangle from the solid. Draw it separately and label all known sides and angles.',
   content_zh:
-    '<b>经典例题</b> [5 分]<br>' +
-    '一个长方体的尺寸为 $8 \\times 6 \\times 4$ cm。求空间对角线 $AG$ 与底面 $ABCD$ 之间的夹角。<br>' +
-    '<br>' +
+    '<b>经典例题 1</b> [4 分 — 进阶]<br>' +
+    '长方体尺寸 $8 \\times 6 \\times 4$ cm。求空间对角线 $AG$ 与底面 $ABCD$ 的夹角。<br><br>' +
     '<b>解答：</b><br>' +
-    '第一步：求底面对角线 $AC = \\sqrt{8^2 + 6^2} = \\sqrt{100} = 10$ cm。<br>' +
-    '第二步：空间对角线 $AG$ 从底部的 $A$ 延伸到顶部的 $G$。对应的直角三角形具有：<br>' +
-    '• 底边 $= AC = 10$ cm（沿底面）<br>' +
-    '• 高度 $= CG = 4$ cm（垂直棱）<br>' +
-    '$\\tan\\theta = \\frac{4}{10} = 0.4$<br>' +
-    '$\\theta = \\tan^{-1}(0.4) = 21.8°$<br>' +
-    '<br>' +
-    '<b>考试技巧：</b>始终明确是哪个平面和哪条线。角度是在底面（AT the base）处测量的。'
+    '底面对角线 $AC = \\sqrt{64 + 36} = 10$ cm<br>' +
+    '$\\tan\\theta = \\frac{4}{10} = 0.4$，$\\theta = 21.8°$<br><br>' +
+    '<b>经典例题 2</b> [4 分 — 进阶]<br>' +
+    '正方形底面棱锥底边 10 cm，垂直高度 12 cm。求斜棱与底面的夹角。<br><br>' +
+    '<b>解答：</b><br>' +
+    '底面半对角线 $= \\frac{10\\sqrt{2}}{2} = 5\\sqrt{2} = 7.071$ cm<br>' +
+    '$\\tan\\theta = \\frac{12}{5\\sqrt{2}} = 1.697$，$\\theta = 59.5°$<br><br>' +
+    '<b>经典例题 3</b> [5 分 — 进阶]<br>' +
+    '圆锥底面半径 5 cm，斜高 13 cm。求 (a) 垂直高度，(b) 斜高与底面的夹角。<br><br>' +
+    '<b>解答：</b><br>' +
+    '(a) $h = \\sqrt{169 - 25} = 12$ cm<br>' +
+    '(b) $\\tan\\theta = \\frac{12}{5} = 2.4$，$\\theta = 67.4°$<br><br>' +
+    '<b>经典例题 4</b> [5 分 — 进阶]<br>' +
+    '长方体 $AB = 12$ cm，$BC = 5$ cm，$CG = 8$ cm。$M$ 是 $EH$ 的中点。求 $BM$ 的长度及 $BM$ 与底面的夹角。<br><br>' +
+    '<b>解答：</b><br>' +
+    '$M$ 在底面的投影 $N$ 是 $AD$ 的中点。<br>' +
+    '$BN = \\sqrt{12^2 + 2.5^2} = \\sqrt{150.25} = 12.26$ cm<br>' +
+    '$BM = \\sqrt{12.26^2 + 8^2} = \\sqrt{214.25} = 14.6$ cm<br>' +
+    '$\\tan\\theta = \\frac{8}{12.26}$，$\\theta = 33.1°$<br><br>' +
+    '<b>经典例题 5</b> [6 分 — 进阶]<br>' +
+    '竖直杆 $OP$（高 $h$）立于水平地面上的 $O$ 点。$A$ 在 $O$ 的正北，$B$ 在 $O$ 的正东。从 $A$ 看 $P$ 的仰角为 $35°$，从 $B$ 看 $P$ 的仰角为 $28°$。$AB = 50$ m，求 $h$。<br><br>' +
+    '<b>解答：</b><br>' +
+    '$OA = \\frac{h}{\\tan 35°}$，$OB = \\frac{h}{\\tan 28°}$<br>' +
+    '$\\angle AOB = 90°$，$50^2 = OA^2 + OB^2$<br>' +
+    '$2500 = h^2(\\frac{1}{\\tan^2 35°} + \\frac{1}{\\tan^2 28°}) = 5.577h^2$<br>' +
+    '$h = \\sqrt{\\frac{2500}{5.577}} = 21.2$ m<br><br>' +
+    '<b>考试技巧：</b>在 3D 问题中，始终从立体图形中提取清晰的 2D 直角三角形，单独画出并标注所有已知的边和角。'
 });
 
 /* ══════════════════════════════════════════════════

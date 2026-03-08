@@ -30,21 +30,51 @@ add('cie', '3.1', 'knowledge', {
 
 add('cie', '3.1', 'examples', {
   content:
-    '<b>Worked Example</b> [2 marks]<br>' +
+    '<b>Worked Example 1</b> [2 marks]<br>' +
     'A rectangle has vertices at $A(1, 2)$, $B(5, 2)$, $C(5, 6)$. Find $D$.<br><br>' +
     '<b>Solution:</b><br>' +
     '$D$ must complete the rectangle: same $x$ as $A$, same $y$ as $C$.<br>' +
     '$D = (1, 6)$<br><br>' +
-    '<b>Exam Tip:</b> Sketch the shape on axes to visualise the missing vertex.',
+    '<b>Worked Example 2</b> [2 marks]<br>' +
+    'Write down the coordinates of the point $P$ that is 3 units to the left and 5 units above the origin.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Left means negative $x$, above means positive $y$.<br>' +
+    '$P = (-3, 5)$<br><br>' +
+    '<b>Worked Example 3</b> [3 marks]<br>' +
+    'A triangle has vertices $A(-2, -1)$, $B(4, -1)$, $C(1, 5)$. State which quadrant each vertex lies in.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '$A(-2, -1)$: $x < 0, y < 0$ → Quadrant 3 (Q3)<br>' +
+    '$B(4, -1)$: $x > 0, y < 0$ → Quadrant 4 (Q4)<br>' +
+    '$C(1, 5)$: $x > 0, y > 0$ → Quadrant 1 (Q1)<br><br>' +
+    '<b>Worked Example 4</b> [3 marks]<br>' +
+    'A parallelogram $ABCD$ has $A(0, 0)$, $B(4, 0)$ and $D(1, 3)$. Find $C$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'In a parallelogram, $\\vec{AB} = \\vec{DC}$.<br>' +
+    '$\\vec{AB} = (4, 0)$, so $C = D + (4, 0) = (1+4, 3+0) = (5, 3)$<br><br>' +
+    '<b>Exam Tip:</b> In parallelogram problems, use the fact that opposite sides are equal and parallel to find missing vertices.',
   content_zh:
-    '<b>经典例题</b> [2 分]<br>' +
-    '一个长方形的顶点位于 $A(1, 2)$，$B(5, 2)$，$C(5, 6)$。求 $D$ 的坐标。<br>' +
-    '<br>' +
+    '<b>经典例题 1</b> [2 分]<br>' +
+    '一个长方形的顶点位于 $A(1, 2)$，$B(5, 2)$，$C(5, 6)$。求 $D$ 的坐标。<br><br>' +
     '<b>解答：</b><br>' +
     '$D$ 必须完善该长方形：其 $x$ 坐标与 $A$ 相同，$y$ 坐标与 $C$ 相同。<br>' +
-    '$D = (1, 6)$<br>' +
-    '<br>' +
-    '<b>考试技巧：</b>在轴线上草绘该形状，以便直观观察缺失的顶点。'
+    '$D = (1, 6)$<br><br>' +
+    '<b>经典例题 2</b> [2 分]<br>' +
+    '写出位于原点左边 3 个单位、上方 5 个单位的点 $P$ 的坐标。<br><br>' +
+    '<b>解答：</b><br>' +
+    '左边表示 $x$ 为负，上方表示 $y$ 为正。<br>' +
+    '$P = (-3, 5)$<br><br>' +
+    '<b>经典例题 3</b> [3 分]<br>' +
+    '一个三角形的顶点为 $A(-2, -1)$，$B(4, -1)$，$C(1, 5)$。指出每个顶点所在的象限。<br><br>' +
+    '<b>解答：</b><br>' +
+    '$A(-2, -1)$：$x < 0, y < 0$ → 第三象限 (Q3)<br>' +
+    '$B(4, -1)$：$x > 0, y < 0$ → 第四象限 (Q4)<br>' +
+    '$C(1, 5)$：$x > 0, y > 0$ → 第一象限 (Q1)<br><br>' +
+    '<b>经典例题 4</b> [3 分]<br>' +
+    '平行四边形 $ABCD$ 的顶点 $A(0, 0)$，$B(4, 0)$，$D(1, 3)$。求 $C$ 的坐标。<br><br>' +
+    '<b>解答：</b><br>' +
+    '在平行四边形中，$\\vec{AB} = \\vec{DC}$。<br>' +
+    '$\\vec{AB} = (4, 0)$，所以 $C = D + (4, 0) = (5, 3)$<br><br>' +
+    '<b>考试技巧：</b>在平行四边形问题中，利用对边相等且平行的性质来求缺失的顶点。'
 });
 
 // ── 3.2 Drawing linear graphs ──
@@ -75,16 +105,51 @@ add('cie', '3.2', 'knowledge', {
 
 add('cie', '3.2', 'examples', {
   content:
-    '<b>Worked Example</b> [3 marks]<br>' +
+    '<b>Worked Example 1</b> [3 marks]<br>' +
     'Draw the graph of $y = 2x - 3$ for $-1 \\leq x \\leq 4$.<br><br>' +
     '<b>Solution:</b><br>' +
     '$x = -1$: $y = -5$; $x = 0$: $y = -3$; $x = 2$: $y = 1$; $x = 4$: $y = 5$.<br>' +
     'Plot these points and join with a straight line.<br><br>' +
-    '<b>Exam Tip:</b> Always use a ruler for straight-line graphs.',
+    '<b>Worked Example 2</b> [2 marks]<br>' +
+    'On the same axes, draw the lines $y = 4$ and $x = -2$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '$y = 4$ is a horizontal line through $(0, 4)$.<br>' +
+    '$x = -2$ is a vertical line through $(-2, 0)$.<br>' +
+    'The two lines intersect at $(-2, 4)$.<br><br>' +
+    '<b>Worked Example 3</b> [3 marks]<br>' +
+    'A straight line passes through $(0, -1)$ and $(3, 5)$. Find its equation in the form $y = mx + c$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '$y$-intercept $c = -1$ (the line crosses the $y$-axis at $(0, -1)$).<br>' +
+    '$m = \\frac{5 - (-1)}{3 - 0} = \\frac{6}{3} = 2$<br>' +
+    '$y = 2x - 1$<br><br>' +
+    '<b>Worked Example 4</b> [3 marks]<br>' +
+    'Use the graph of $y = 3x + 1$ and $y = -x + 9$ to find their point of intersection.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'At the intersection, $3x + 1 = -x + 9$.<br>' +
+    '$4x = 8$, so $x = 2$.<br>' +
+    '$y = 3(2) + 1 = 7$. Intersection at $(2, 7)$.<br><br>' +
+    '<b>Exam Tip:</b> Always use a ruler for straight-line graphs. Use at least 3 points — the third checks for errors.',
   content_zh:
-    '<b>经典例题</b> [3 分]<br>' +
+    '<b>经典例题 1</b> [3 分]<br>' +
     '画 $y = 2x - 3$ 在 $-1 \\leq x \\leq 4$ 的图像。<br><br>' +
-    '<b>解答：</b>代入 $x = -1, 0, 2, 4$ 得 $y = -5, -3, 1, 5$，描点用直尺连线。'
+    '<b>解答：</b>代入 $x = -1, 0, 2, 4$ 得 $y = -5, -3, 1, 5$，描点用直尺连线。<br><br>' +
+    '<b>经典例题 2</b> [2 分]<br>' +
+    '在同一坐标系上画出 $y = 4$ 和 $x = -2$。<br><br>' +
+    '<b>解答：</b><br>' +
+    '$y = 4$ 是过 $(0, 4)$ 的水平线。<br>' +
+    '$x = -2$ 是过 $(-2, 0)$ 的垂直线。<br>' +
+    '两线交于 $(-2, 4)$。<br><br>' +
+    '<b>经典例题 3</b> [3 分]<br>' +
+    '一条直线过 $(0, -1)$ 和 $(3, 5)$。求其方程（$y = mx + c$ 形式）。<br><br>' +
+    '<b>解答：</b><br>' +
+    '$y$ 轴截距 $c = -1$。<br>' +
+    '$m = \\frac{5-(-1)}{3-0} = 2$<br>' +
+    '$y = 2x - 1$<br><br>' +
+    '<b>经典例题 4</b> [3 分]<br>' +
+    '利用 $y = 3x + 1$ 和 $y = -x + 9$ 的图像求其交点。<br><br>' +
+    '<b>解答：</b><br>' +
+    '交点处 $3x + 1 = -x + 9$，$4x = 8$，$x = 2$，$y = 7$。交于 $(2, 7)$。<br><br>' +
+    '<b>考试技巧：</b>画直线时一定用直尺。用至少 3 个点描图——第三个点用来验证。'
 });
 
 // ── 3.3 Gradient of linear graphs ──
@@ -119,19 +184,47 @@ add('cie', '3.3', 'knowledge', {
 
 add('cie', '3.3', 'examples', {
   content:
-    '<b>Worked Example</b> [2 marks]<br>' +
+    '<b>Worked Example 1</b> [2 marks]<br>' +
     'Find the gradient of the line through $(2, 5)$ and $(8, -1)$.<br><br>' +
     '<b>Solution:</b><br>' +
     '$m = \\frac{-1 - 5}{8 - 2} = \\frac{-6}{6} = -1$<br><br>' +
-    '<b>Exam Tip:</b> Be consistent: always subtract in the same order for both coordinates.',
+    '<b>Worked Example 2</b> [2 marks]<br>' +
+    'A line passes through $(-3, 4)$ and $(5, 4)$. Find its gradient.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '$m = \\frac{4 - 4}{5 - (-3)} = \\frac{0}{8} = 0$<br>' +
+    'The gradient is 0 — the line is horizontal.<br><br>' +
+    '<b>Worked Example 3</b> [3 marks]<br>' +
+    'The line $y = mx + 5$ passes through $(4, -3)$. Find $m$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Substitute the point: $-3 = m(4) + 5$<br>' +
+    '$4m = -8$<br>' +
+    '$m = -2$<br><br>' +
+    '<b>Worked Example 4</b> [3 marks]<br>' +
+    'A line has gradient $\\frac{3}{4}$. The line passes through $(0, 2)$ and $(8, k)$. Find $k$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '$\\frac{3}{4} = \\frac{k - 2}{8 - 0}$<br>' +
+    '$k - 2 = \\frac{3}{4} \\times 8 = 6$<br>' +
+    '$k = 8$<br><br>' +
+    '<b>Exam Tip:</b> Be consistent: always subtract in the same order for both numerator and denominator.',
   content_zh:
-    '<b>经典例题</b> [2 分]<br>' +
-    '求通过 $(2, 5)$ 和 $(8, -1)$ 的直线的斜率。<br>' +
-    '<br>' +
+    '<b>经典例题 1</b> [2 分]<br>' +
+    '求通过 $(2, 5)$ 和 $(8, -1)$ 的直线的斜率。<br><br>' +
     '<b>解答：</b><br>' +
-    '$m = \\frac{-1 - 5}{8 - 2} = \\frac{-6}{6} = -1$<br>' +
-    '<br>' +
-    '<b>考试技巧：</b>保持一致：始终以相同的顺序减去两个坐标。'
+    '$m = \\frac{-1 - 5}{8 - 2} = \\frac{-6}{6} = -1$<br><br>' +
+    '<b>经典例题 2</b> [2 分]<br>' +
+    '一条直线通过 $(-3, 4)$ 和 $(5, 4)$。求其斜率。<br><br>' +
+    '<b>解答：</b><br>' +
+    '$m = \\frac{4-4}{5-(-3)} = \\frac{0}{8} = 0$<br>' +
+    '斜率为 0——这是一条水平线。<br><br>' +
+    '<b>经典例题 3</b> [3 分]<br>' +
+    '直线 $y = mx + 5$ 通过点 $(4, -3)$。求 $m$。<br><br>' +
+    '<b>解答：</b><br>' +
+    '代入点：$-3 = 4m + 5$，$4m = -8$，$m = -2$<br><br>' +
+    '<b>经典例题 4</b> [3 分]<br>' +
+    '一条直线的斜率为 $\\frac{3}{4}$，通过 $(0, 2)$ 和 $(8, k)$。求 $k$。<br><br>' +
+    '<b>解答：</b><br>' +
+    '$\\frac{3}{4} = \\frac{k-2}{8}$，$k - 2 = 6$，$k = 8$<br><br>' +
+    '<b>考试技巧：</b>分子和分母的减法顺序必须保持一致。'
 });
 
 // ── 3.4 Length and midpoint ──
@@ -162,15 +255,50 @@ add('cie', '3.4', 'knowledge', {
 
 add('cie', '3.4', 'examples', {
   content:
-    '<b>Worked Example</b> [3 marks]<br>' +
+    '<b>Worked Example 1</b> [3 marks]<br>' +
     'Find the distance and midpoint of $A(1, 3)$ and $B(7, 11)$.<br><br>' +
     '<b>Solution:</b><br>' +
     '$d = \\sqrt{(7-1)^2 + (11-3)^2} = \\sqrt{36 + 64} = \\sqrt{100} = 10$<br>' +
-    '$M = \\left(\\frac{1+7}{2}, \\frac{3+11}{2}\\right) = (4, 7)$',
+    '$M = \\left(\\frac{1+7}{2}, \\frac{3+11}{2}\\right) = (4, 7)$<br><br>' +
+    '<b>Worked Example 2</b> [3 marks]<br>' +
+    'Find the exact distance between $P(-3, 2)$ and $Q(1, -1)$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '$d = \\sqrt{(1-(-3))^2 + (-1-2)^2} = \\sqrt{16 + 9} = \\sqrt{25} = 5$<br><br>' +
+    '<b>Worked Example 3</b> [3 marks — Extended]<br>' +
+    'The midpoint of $A(2, k)$ and $B(8, 10)$ is $M(5, 7)$. Find $k$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '$\\frac{2 + 8}{2} = 5$ ✓ (confirms $x$-coordinate)<br>' +
+    '$\\frac{k + 10}{2} = 7$<br>' +
+    '$k + 10 = 14$<br>' +
+    '$k = 4$<br><br>' +
+    '<b>Worked Example 4</b> [4 marks — Extended]<br>' +
+    '$A(1, 2)$ and $B(5, 8)$. Point $C$ is such that $B$ is the midpoint of $AC$. Find $C$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Let $C = (a, b)$. Since $B$ is the midpoint of $AC$:<br>' +
+    '$\\frac{1 + a}{2} = 5 \\Rightarrow a = 9$<br>' +
+    '$\\frac{2 + b}{2} = 8 \\Rightarrow b = 14$<br>' +
+    '$C = (9, 14)$<br><br>' +
+    '<b>Exam Tip:</b> Leave answers in surd form if the question says "exact value". If finding a missing coordinate from a midpoint, set up equations and solve.',
   content_zh:
-    '<b>经典例题</b> [3 分]<br>' +
+    '<b>经典例题 1</b> [3 分]<br>' +
     '求 $A(1,3)$ 和 $B(7,11)$ 的距离和中点。<br><br>' +
-    '<b>解答：</b>$d = \\sqrt{36+64} = 10$，$M = (4, 7)$'
+    '<b>解答：</b><br>' +
+    '$d = \\sqrt{(7-1)^2 + (11-3)^2} = \\sqrt{36+64} = 10$<br>' +
+    '$M = (4, 7)$<br><br>' +
+    '<b>经典例题 2</b> [3 分]<br>' +
+    '求 $P(-3, 2)$ 和 $Q(1, -1)$ 之间的精确距离。<br><br>' +
+    '<b>解答：</b><br>' +
+    '$d = \\sqrt{16 + 9} = \\sqrt{25} = 5$<br><br>' +
+    '<b>经典例题 3</b> [3 分 — 进阶]<br>' +
+    '$A(2, k)$ 和 $B(8, 10)$ 的中点是 $M(5, 7)$。求 $k$。<br><br>' +
+    '<b>解答：</b><br>' +
+    '$\\frac{k + 10}{2} = 7$，$k + 10 = 14$，$k = 4$<br><br>' +
+    '<b>经典例题 4</b> [4 分 — 进阶]<br>' +
+    '$A(1, 2)$ 和 $B(5, 8)$，$B$ 是 $AC$ 的中点。求 $C$。<br><br>' +
+    '<b>解答：</b><br>' +
+    '设 $C = (a, b)$。$\\frac{1+a}{2} = 5$，$a = 9$；$\\frac{2+b}{2} = 8$，$b = 14$。<br>' +
+    '$C = (9, 14)$<br><br>' +
+    '<b>考试技巧：</b>题目要求"精确值"时，答案保留根式形式。根据中点求坐标时，列等式求解。'
 });
 
 // ── 3.5 Equations of linear graphs ──
@@ -203,16 +331,51 @@ add('cie', '3.5', 'knowledge', {
 
 add('cie', '3.5', 'examples', {
   content:
-    '<b>Worked Example</b> [3 marks]<br>' +
+    '<b>Worked Example 1</b> [3 marks]<br>' +
     'Find the equation of the line through $(2, 1)$ and $(6, 9)$.<br><br>' +
     '<b>Solution:</b><br>' +
     '$m = \\frac{9-1}{6-2} = \\frac{8}{4} = 2$<br>' +
     '$y - 1 = 2(x - 2)$<br>' +
-    '$y = 2x - 3$',
+    '$y = 2x - 3$<br><br>' +
+    '<b>Worked Example 2</b> [2 marks]<br>' +
+    'A line has gradient $-3$ and passes through $(0, 7)$. Write its equation.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Since the line passes through $(0, 7)$, the $y$-intercept $c = 7$.<br>' +
+    '$y = -3x + 7$<br><br>' +
+    '<b>Worked Example 3</b> [3 marks — Extended]<br>' +
+    'Find the equation of the line with gradient $\\frac{1}{2}$ that passes through $(6, -1)$. Give your answer in the form $ax + by = c$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '$y - (-1) = \\frac{1}{2}(x - 6)$<br>' +
+    '$y + 1 = \\frac{1}{2}x - 3$<br>' +
+    '$y = \\frac{1}{2}x - 4$<br>' +
+    'Multiply by 2: $2y = x - 8$<br>' +
+    '$x - 2y = 8$<br><br>' +
+    '<b>Worked Example 4</b> [4 marks — Extended]<br>' +
+    'Line $L$ passes through $A(-1, 5)$ and $B(3, -3)$. Find where $L$ crosses the $x$-axis.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '$m = \\frac{-3 - 5}{3 - (-1)} = \\frac{-8}{4} = -2$<br>' +
+    '$y - 5 = -2(x + 1)$<br>' +
+    '$y = -2x + 3$<br>' +
+    'At the $x$-axis, $y = 0$: $0 = -2x + 3$, so $x = 1.5$.<br>' +
+    'The line crosses at $(1.5, 0)$.<br><br>' +
+    '<b>Exam Tip:</b> To find the $x$-intercept, set $y = 0$. To find the $y$-intercept, set $x = 0$.',
   content_zh:
-    '<b>经典例题</b> [3 分]<br>' +
+    '<b>经典例题 1</b> [3 分]<br>' +
     '求过 $(2,1)$ 和 $(6,9)$ 的直线方程。<br><br>' +
-    '<b>解答：</b>$m = 2$，$y - 1 = 2(x-2)$，$y = 2x - 3$'
+    '<b>解答：</b>$m = 2$，$y - 1 = 2(x-2)$，$y = 2x - 3$<br><br>' +
+    '<b>经典例题 2</b> [2 分]<br>' +
+    '一条直线斜率为 $-3$，过 $(0, 7)$。写出其方程。<br><br>' +
+    '<b>解答：</b>过 $(0,7)$，故 $c = 7$。$y = -3x + 7$<br><br>' +
+    '<b>经典例题 3</b> [3 分 — 进阶]<br>' +
+    '求斜率为 $\\frac{1}{2}$、过 $(6, -1)$ 的直线方程，用 $ax + by = c$ 的形式表示。<br><br>' +
+    '<b>解答：</b><br>' +
+    '$y + 1 = \\frac{1}{2}(x - 6)$，$y = \\frac{1}{2}x - 4$<br>' +
+    '两边乘 2：$x - 2y = 8$<br><br>' +
+    '<b>经典例题 4</b> [4 分 — 进阶]<br>' +
+    '直线 $L$ 过 $A(-1, 5)$ 和 $B(3, -3)$。求 $L$ 与 $x$ 轴的交点。<br><br>' +
+    '<b>解答：</b><br>' +
+    '$m = -2$，$y = -2x + 3$。令 $y = 0$：$x = 1.5$。交于 $(1.5, 0)$。<br><br>' +
+    '<b>考试技巧：</b>求 $x$ 轴截距时令 $y = 0$；求 $y$ 轴截距时令 $x = 0$。'
 });
 
 // ── 3.6 Parallel lines ──
@@ -236,16 +399,39 @@ add('cie', '3.6', 'knowledge', {
 
 add('cie', '3.6', 'examples', {
   content:
-    '<b>Worked Example</b> [2 marks]<br>' +
+    '<b>Worked Example 1</b> [2 marks]<br>' +
     'Find the equation of the line parallel to $y = -2x + 5$ that passes through $(3, 1)$.<br><br>' +
     '<b>Solution:</b><br>' +
     'Gradient $m = -2$ (same as the given line).<br>' +
     '$y - 1 = -2(x - 3)$<br>' +
-    '$y = -2x + 7$',
+    '$y = -2x + 7$<br><br>' +
+    '<b>Worked Example 2</b> [2 marks]<br>' +
+    'Are the lines $y = 3x - 1$ and $6x - 2y = 10$ parallel? Explain.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Rearrange: $6x - 2y = 10 \\Rightarrow 2y = 6x - 10 \\Rightarrow y = 3x - 5$.<br>' +
+    'Both lines have gradient 3, so they are parallel. ✓<br><br>' +
+    '<b>Worked Example 3</b> [3 marks — Extended]<br>' +
+    'Line $L_1$ has equation $2x + 3y = 12$. Line $L_2$ is parallel to $L_1$ and passes through $(6, 1)$. Find the equation of $L_2$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '$L_1$: $3y = -2x + 12$, so $y = -\\frac{2}{3}x + 4$. Gradient $= -\\frac{2}{3}$.<br>' +
+    '$L_2$: $y - 1 = -\\frac{2}{3}(x - 6) = -\\frac{2}{3}x + 4$<br>' +
+    '$y = -\\frac{2}{3}x + 5$<br><br>' +
+    '<b>Exam Tip:</b> "Parallel" means same gradient. Always rearrange to $y = mx + c$ first to identify the gradient.',
   content_zh:
-    '<b>经典例题</b> [2 分]<br>' +
+    '<b>经典例题 1</b> [2 分]<br>' +
     '求平行于 $y = -2x+5$、过 $(3,1)$ 的直线方程。<br><br>' +
-    '<b>解答：</b>$m = -2$，$y - 1 = -2(x-3)$，$y = -2x + 7$'
+    '<b>解答：</b>$m = -2$，$y - 1 = -2(x-3)$，$y = -2x + 7$<br><br>' +
+    '<b>经典例题 2</b> [2 分]<br>' +
+    '$y = 3x - 1$ 和 $6x - 2y = 10$ 是否平行？请说明。<br><br>' +
+    '<b>解答：</b><br>' +
+    '化简：$6x - 2y = 10 \\Rightarrow y = 3x - 5$。<br>' +
+    '两条直线斜率都是 3，所以它们平行。✓<br><br>' +
+    '<b>经典例题 3</b> [3 分 — 进阶]<br>' +
+    '直线 $L_1$：$2x + 3y = 12$。$L_2$ 平行于 $L_1$ 且过 $(6, 1)$。求 $L_2$ 的方程。<br><br>' +
+    '<b>解答：</b><br>' +
+    '$L_1$：$y = -\\frac{2}{3}x + 4$，斜率 $= -\\frac{2}{3}$。<br>' +
+    '$L_2$：$y - 1 = -\\frac{2}{3}(x - 6)$，$y = -\\frac{2}{3}x + 5$<br><br>' +
+    '<b>考试技巧：</b>"平行"意味着斜率相同。先化为 $y = mx + c$ 形式以确定斜率。'
 });
 
 // ── 3.7 Perpendicular lines ──
@@ -281,27 +467,57 @@ add('cie', '3.7', 'knowledge', {
 
 add('cie', '3.7', 'examples', {
   content:
-    '<b>Worked Example</b> [3 marks]<br>' +
+    '<b>Worked Example 1</b> [3 marks]<br>' +
+    'Find the gradient of the line perpendicular to $y = \\frac{2}{5}x + 1$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Gradient of given line $= \\frac{2}{5}$.<br>' +
+    'Perpendicular gradient $= -\\frac{5}{2}$ (negative reciprocal).<br><br>' +
+    '<b>Worked Example 2</b> [3 marks]<br>' +
+    'Find the equation of the line perpendicular to $y = 3x - 4$ that passes through $(6, 1)$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Perpendicular gradient $= -\\frac{1}{3}$.<br>' +
+    '$y - 1 = -\\frac{1}{3}(x - 6)$<br>' +
+    '$y = -\\frac{1}{3}x + 3$<br><br>' +
+    '<b>Worked Example 3</b> [4 marks — Extended]<br>' +
     'Line $L$ passes through $A(1, 4)$ and $B(5, 2)$. Find the equation of the perpendicular bisector of $AB$.<br><br>' +
     '<b>Solution:</b><br>' +
-    'Midpoint: $M = (3, 3)$<br>' +
+    'Midpoint: $M = \\left(\\frac{1+5}{2}, \\frac{4+2}{2}\\right) = (3, 3)$<br>' +
     'Gradient of $AB$: $m = \\frac{2-4}{5-1} = -\\frac{1}{2}$<br>' +
     'Perpendicular gradient: $m_{\\perp} = 2$<br>' +
     '$y - 3 = 2(x - 3)$<br>' +
     '$y = 2x - 3$<br><br>' +
-    '<b>Exam Tip:</b> Perpendicular bisector = midpoint + negative reciprocal gradient.',
+    '<b>Worked Example 4</b> [5 marks — Extended]<br>' +
+    'Show that the lines $y = 2x + 1$ and $x + 2y = 10$ are perpendicular, and find their point of intersection.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Line 1 gradient: $m_1 = 2$<br>' +
+    'Line 2: $2y = -x + 10$, $y = -\\frac{1}{2}x + 5$, so $m_2 = -\\frac{1}{2}$.<br>' +
+    '$m_1 \\times m_2 = 2 \\times (-\\frac{1}{2}) = -1$ ✓ Perpendicular.<br><br>' +
+    'Intersection: $2x + 1 = -\\frac{1}{2}x + 5$<br>' +
+    '$\\frac{5}{2}x = 4$, $x = \\frac{8}{5}$<br>' +
+    '$y = 2(\\frac{8}{5}) + 1 = \\frac{21}{5}$<br>' +
+    'Intersection: $\\left(\\frac{8}{5}, \\frac{21}{5}\\right)$<br><br>' +
+    '<b>Exam Tip:</b> To prove lines are perpendicular, show that the product of their gradients equals $-1$.',
   content_zh:
-    '<b>经典例题</b> [3 分]<br>' +
-    '直线 $L$ 通过 $A(1, 4)$ 和 $B(5, 2)$。求 $AB$ 的垂直平分线方程。<br>' +
-    '<br>' +
+    '<b>经典例题 1</b> [3 分]<br>' +
+    '求垂直于 $y = \\frac{2}{5}x + 1$ 的直线的斜率。<br><br>' +
     '<b>解答：</b><br>' +
-    '中点：$M = (3, 3)$<br>' +
-    '$AB$ 的斜率：$m = \\frac{2-4}{5-1} = -\\frac{1}{2}$<br>' +
-    '垂直斜率：$m_{\\perp} = 2$<br>' +
-    '$y - 3 = 2(x - 3)$<br>' +
-    '$y = 2x - 3$<br>' +
-    '<br>' +
-    '<b>考试技巧：</b>垂直平分线 = 中点 + 负倒数斜率。'
+    '已知直线斜率 $= \\frac{2}{5}$。垂直线斜率 $= -\\frac{5}{2}$（负倒数）。<br><br>' +
+    '<b>经典例题 2</b> [3 分]<br>' +
+    '求垂直于 $y = 3x - 4$ 且过 $(6, 1)$ 的直线方程。<br><br>' +
+    '<b>解答：</b><br>' +
+    '垂直斜率 $= -\\frac{1}{3}$。$y - 1 = -\\frac{1}{3}(x - 6)$，$y = -\\frac{1}{3}x + 3$<br><br>' +
+    '<b>经典例题 3</b> [4 分 — 进阶]<br>' +
+    '直线 $L$ 通过 $A(1, 4)$ 和 $B(5, 2)$。求 $AB$ 的垂直平分线方程。<br><br>' +
+    '<b>解答：</b><br>' +
+    '中点 $M = (3, 3)$，$AB$ 斜率 $= -\\frac{1}{2}$，垂直斜率 $= 2$。<br>' +
+    '$y - 3 = 2(x - 3)$，$y = 2x - 3$<br><br>' +
+    '<b>经典例题 4</b> [5 分 — 进阶]<br>' +
+    '证明 $y = 2x + 1$ 和 $x + 2y = 10$ 垂直，并求其交点。<br><br>' +
+    '<b>解答：</b><br>' +
+    '$m_1 = 2$，$m_2 = -\\frac{1}{2}$。$m_1 \\times m_2 = -1$ ✓ 垂直。<br>' +
+    '联立：$2x + 1 = -\\frac{1}{2}x + 5$，$x = \\frac{8}{5}$，$y = \\frac{21}{5}$。<br>' +
+    '交于 $\\left(\\frac{8}{5}, \\frac{21}{5}\\right)$<br><br>' +
+    '<b>考试技巧：</b>证明两线垂直时，证明斜率之积等于 $-1$。'
 });
 
 /* ══════════════════════════════════════════════════

@@ -69,7 +69,7 @@ add('cie', '1.1', 'examples', {
     '$63 \\div 3 = 21$<br>' +
     '$21 \\div 3 = 7$<br>' +
     '$\\therefore 504 = 2^3 \\times 3^2 \\times 7$<br><br>' +
-    '<b>Worked Example 2</b> [4 marks]<br>' +
+    '<b>Worked Example 2</b> [3 marks]<br>' +
     'Find the HCF and LCM of 60 and 504.<br><br>' +
     '<b>Solution:</b><br>' +
     '$60 = 2^2 \\times 3 \\times 5$<br>' +
@@ -78,7 +78,23 @@ add('cie', '1.1', 'examples', {
     '$\\text{HCF} = 2^2 \\times 3 = 12$<br><br>' +
     'LCM = product of all primes with highest powers:<br>' +
     '$\\text{LCM} = 2^3 \\times 3^2 \\times 5 \\times 7 = 2520$<br><br>' +
-    '<b>Exam Tip:</b> Write both numbers as products of prime factors first. For HCF take the <i>lowest</i> powers of <i>common</i> primes. For LCM take the <i>highest</i> powers of <i>all</i> primes.',
+    '<b>Worked Example 3</b> [4 marks — Extended]<br>' +
+    'Show that $\\sqrt{\\frac{9}{16}}$ is rational and $\\sqrt{5}$ is irrational.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '$\\sqrt{\\frac{9}{16}} = \\frac{\\sqrt{9}}{\\sqrt{16}} = \\frac{3}{4}$<br>' +
+    'Since $\\frac{3}{4}$ is in the form $\\frac{p}{q}$ with $p, q$ integers and $q \\neq 0$, it is rational.<br><br>' +
+    '$\\sqrt{5} = 2.2360679...$<br>' +
+    'The decimal neither terminates nor recurs, so it cannot be written as $\\frac{p}{q}$. Therefore $\\sqrt{5}$ is irrational.<br><br>' +
+    '<b>Worked Example 4</b> [5 marks — Extended]<br>' +
+    'Two buses leave a station at 08:00. Bus A returns every 18 minutes and Bus B every 24 minutes. At what time will they next both be at the station together?<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Find LCM of 18 and 24.<br>' +
+    '$18 = 2 \\times 3^2$<br>' +
+    '$24 = 2^3 \\times 3$<br>' +
+    '$\\text{LCM} = 2^3 \\times 3^2 = 72$ minutes<br>' +
+    '$72$ minutes $= 1$ hour $12$ minutes<br>' +
+    'Next time together: $08:00 + 1\\text{h}\\,12\\text{min} = 09:12$<br><br>' +
+    '<b>Exam Tip:</b> Write both numbers as products of prime factors first. For HCF take the <i>lowest</i> powers of <i>common</i> primes. For LCM take the <i>highest</i> powers of <i>all</i> primes. LCM questions often appear as real-life "when will they next coincide?" problems.',
   content_zh:
     '<b>经典例题 1</b> [2 分]<br>' +
     '将 504 表示为质因数的乘积。<br><br>' +
@@ -90,7 +106,7 @@ add('cie', '1.1', 'examples', {
     '$63 \\div 3 = 21$<br>' +
     '$21 \\div 3 = 7$<br>' +
     '$\\therefore 504 = 2^3 \\times 3^2 \\times 7$<br><br>' +
-    '<b>经典例题 2</b> [4 分]<br>' +
+    '<b>经典例题 2</b> [3 分]<br>' +
     '求 60 和 504 的 HCF 和 LCM。<br><br>' +
     '<b>解答：</b><br>' +
     '$60 = 2^2 \\times 3 \\times 5$<br>' +
@@ -99,7 +115,23 @@ add('cie', '1.1', 'examples', {
     '$\\text{HCF} = 2^2 \\times 3 = 12$<br><br>' +
     'LCM = 所有质因数取最大幂：<br>' +
     '$\\text{LCM} = 2^3 \\times 3^2 \\times 5 \\times 7 = 2520$<br><br>' +
-    '<b>考试技巧：</b>先把两个数写成质因数乘积。HCF 取<i>公共</i>质因数的<i>最小</i>幂，LCM 取<i>所有</i>质因数的<i>最大</i>幂。'
+    '<b>经典例题 3</b> [4 分 — 进阶]<br>' +
+    '说明 $\\sqrt{\\frac{9}{16}}$ 是有理数，$\\sqrt{5}$ 是无理数。<br><br>' +
+    '<b>解答：</b><br>' +
+    '$\\sqrt{\\frac{9}{16}} = \\frac{\\sqrt{9}}{\\sqrt{16}} = \\frac{3}{4}$<br>' +
+    '$\\frac{3}{4}$ 可以写成 $\\frac{p}{q}$（$p, q$ 为整数，$q \\neq 0$），所以是有理数。<br><br>' +
+    '$\\sqrt{5} = 2.2360679...$<br>' +
+    '小数既不终止也不循环，不能写成 $\\frac{p}{q}$，所以是无理数。<br><br>' +
+    '<b>经典例题 4</b> [5 分 — 进阶]<br>' +
+    '两辆公交车在 08:00 同时从车站出发。A 路每 18 分钟一班，B 路每 24 分钟一班。它们下次同时在车站是几点？<br><br>' +
+    '<b>解答：</b><br>' +
+    '求 18 和 24 的 LCM。<br>' +
+    '$18 = 2 \\times 3^2$<br>' +
+    '$24 = 2^3 \\times 3$<br>' +
+    '$\\text{LCM} = 2^3 \\times 3^2 = 72$ 分钟<br>' +
+    '$72$ 分钟 $= 1$ 小时 $12$ 分钟<br>' +
+    '下次同时到站：$08:00 + 1\\text{h}\\,12\\text{min} = 09:12$<br><br>' +
+    '<b>考试技巧：</b>先把两个数写成质因数乘积。HCF 取<i>公共</i>质因数的<i>最小</i>幂，LCM 取<i>所有</i>质因数的<i>最大</i>幂。LCM 常以"下次何时同时出现"的实际问题形式考查。'
 });
 
 // ── 1.2 Sets and Venn diagrams ──
@@ -146,36 +178,72 @@ add('cie', '1.2', 'knowledge', {
 
 add('cie', '1.2', 'examples', {
   content:
-    '<b>Worked Example</b> [4 marks]<br>' +
+    '<b>Worked Example 1</b> [2 marks]<br>' +
+    '$\\mathcal{E} = \\{1, 2, 3, 4, 5, 6, 7, 8, 9, 10\\}$, $A = \\{2, 4, 6, 8\\}$, $B = \\{3, 6, 9\\}$.<br>' +
+    'List the members of (a) $A \\cap B$ &nbsp; (b) $A \\cup B$ &nbsp; (c) $A\'$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '(a) $A \\cap B = \\{6\\}$ (elements in both)<br>' +
+    '(b) $A \\cup B = \\{2, 3, 4, 6, 8, 9\\}$ (elements in either)<br>' +
+    '(c) $A\' = \\{1, 3, 5, 7, 9, 10\\}$ (elements NOT in $A$)<br><br>' +
+    '<b>Worked Example 2</b> [3 marks]<br>' +
     'In a class of 33 students, 20 like chess, 12 like draughts and 5 like neither.<br>' +
-    '(a) Represent this information in a Venn diagram.<br>' +
-    '(b) How many students like only one of chess or draughts?<br><br>' +
+    '(a) Find the number who like both.<br>' +
+    '(b) Find the number who like only one activity.<br><br>' +
     '<b>Solution:</b><br>' +
     '(a) Students who like at least one = $33 - 5 = 28$<br>' +
-    'Let $n(C \\cap D) = x$<br>' +
     '$n(C) + n(D) - n(C \\cap D) = 28$<br>' +
-    '$20 + 12 - x = 28$<br>' +
-    '$x = 4$<br><br>' +
-    'Chess only: $20 - 4 = 16$<br>' +
-    'Draughts only: $12 - 4 = 8$<br>' +
-    'Intersection: $4$, Outside: $5$<br><br>' +
-    '(b) Only one = $16 + 8 = 24$<br><br>' +
-    '<b>Exam Tip:</b> Draw a Venn diagram with two overlapping circles. Add the "neither" group outside. Always start by finding the intersection.',
+    '$20 + 12 - x = 28$, so $x = 4$<br><br>' +
+    '(b) Chess only: $20 - 4 = 16$, Draughts only: $12 - 4 = 8$<br>' +
+    'Only one = $16 + 8 = 24$<br><br>' +
+    '<b>Worked Example 3</b> [5 marks — Extended]<br>' +
+    'In a group of 50 students, 30 study French ($F$), 25 study Spanish ($S$), and 18 study German ($G$). Also $n(F \\cap S) = 12$, $n(F \\cap G) = 8$, $n(S \\cap G) = 7$, and $n(F \\cap S \\cap G) = 3$. Find the number who study none of these languages.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'By inclusion–exclusion:<br>' +
+    '$n(F \\cup S \\cup G) = 30 + 25 + 18 - 12 - 8 - 7 + 3 = 49$<br>' +
+    'None = $50 - 49 = 1$<br><br>' +
+    '<b>Worked Example 4</b> [4 marks — Extended]<br>' +
+    '$\\mathcal{E} = \\{x : x \\text{ is an integer}, 1 \\leq x \\leq 12\\}$, $P = \\{\\text{prime numbers}\\}$, $Q = \\{\\text{factors of 12}\\}$.<br>' +
+    'Find $n((P \\cup Q)\')$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '$P = \\{2, 3, 5, 7, 11\\}$<br>' +
+    '$Q = \\{1, 2, 3, 4, 6, 12\\}$<br>' +
+    '$P \\cup Q = \\{1, 2, 3, 4, 5, 6, 7, 11, 12\\}$<br>' +
+    '$(P \\cup Q)\' = \\{8, 9, 10\\}$<br>' +
+    '$n((P \\cup Q)\') = 3$<br><br>' +
+    '<b>Exam Tip:</b> For 3-set Venn diagrams, always start from the centre ($F \\cap S \\cap G$) and work outward. For 2-set problems, find the intersection first using $n(A \\cup B) = n(A) + n(B) - n(A \\cap B)$.',
   content_zh:
-    '<b>经典例题</b> [4 分]<br>' +
+    '<b>经典例题 1</b> [2 分]<br>' +
+    '$\\mathcal{E} = \\{1, 2, 3, 4, 5, 6, 7, 8, 9, 10\\}$，$A = \\{2, 4, 6, 8\\}$，$B = \\{3, 6, 9\\}$。<br>' +
+    '列出 (a) $A \\cap B$ &nbsp; (b) $A \\cup B$ &nbsp; (c) $A\'$ 的元素。<br><br>' +
+    '<b>解答：</b><br>' +
+    '(a) $A \\cap B = \\{6\\}$（两集合的公共元素）<br>' +
+    '(b) $A \\cup B = \\{2, 3, 4, 6, 8, 9\\}$（至少属于一个集合的元素）<br>' +
+    '(c) $A\' = \\{1, 3, 5, 7, 9, 10\\}$（不属于 $A$ 的元素）<br><br>' +
+    '<b>经典例题 2</b> [3 分]<br>' +
     '一个班 33 名学生中，20 人喜欢国际象棋，12 人喜欢跳棋，5 人两者都不喜欢。<br>' +
-    '(a) 用韦恩图表示。<br>' +
-    '(b) 只喜欢其中一项的有多少人？<br><br>' +
+    '(a) 求两者都喜欢的人数。<br>' +
+    '(b) 求只喜欢一项的人数。<br><br>' +
     '<b>解答：</b><br>' +
     '(a) 至少喜欢一项的 = $33 - 5 = 28$<br>' +
-    '设 $n(C \\cap D) = x$<br>' +
-    '$20 + 12 - x = 28$<br>' +
-    '$x = 4$<br><br>' +
-    '只喜欢象棋：$20 - 4 = 16$<br>' +
-    '只喜欢跳棋：$12 - 4 = 8$<br>' +
-    '交集：$4$，圈外：$5$<br><br>' +
-    '(b) 只喜欢一项 = $16 + 8 = 24$<br><br>' +
-    '<b>考试技巧：</b>画两个重叠的圆，把"两者都不喜欢"放在圈外。从交集开始填。'
+    '$20 + 12 - x = 28$，所以 $x = 4$<br><br>' +
+    '(b) 只喜欢象棋：$20 - 4 = 16$，只喜欢跳棋：$12 - 4 = 8$<br>' +
+    '只喜欢一项 = $16 + 8 = 24$<br><br>' +
+    '<b>经典例题 3</b> [5 分 — 进阶]<br>' +
+    '50 名学生中，30 人学法语($F$)，25 人学西班牙语($S$)，18 人学德语($G$)。已知 $n(F \\cap S) = 12$，$n(F \\cap G) = 8$，$n(S \\cap G) = 7$，$n(F \\cap S \\cap G) = 3$。求三门都不学的人数。<br><br>' +
+    '<b>解答：</b><br>' +
+    '容斥原理：<br>' +
+    '$n(F \\cup S \\cup G) = 30 + 25 + 18 - 12 - 8 - 7 + 3 = 49$<br>' +
+    '都不学 = $50 - 49 = 1$<br><br>' +
+    '<b>经典例题 4</b> [4 分 — 进阶]<br>' +
+    '$\\mathcal{E} = \\{x : x \\text{ 是整数}, 1 \\leq x \\leq 12\\}$，$P = \\{\\text{质数}\\}$，$Q = \\{12\\text{的因数}\\}$。<br>' +
+    '求 $n((P \\cup Q)\')$。<br><br>' +
+    '<b>解答：</b><br>' +
+    '$P = \\{2, 3, 5, 7, 11\\}$<br>' +
+    '$Q = \\{1, 2, 3, 4, 6, 12\\}$<br>' +
+    '$P \\cup Q = \\{1, 2, 3, 4, 5, 6, 7, 11, 12\\}$<br>' +
+    '$(P \\cup Q)\' = \\{8, 9, 10\\}$<br>' +
+    '$n((P \\cup Q)\') = 3$<br><br>' +
+    '<b>考试技巧：</b>三圈韦恩图从最中心（$F \\cap S \\cap G$）往外填。两圈问题先用 $n(A \\cup B) = n(A) + n(B) - n(A \\cap B)$ 求交集。'
 });
 
 // ── 1.3 Powers and roots ──
@@ -222,25 +290,52 @@ add('cie', '1.3', 'examples', {
     'Simplify $\\frac{6x^5 \\times 2x^3}{4x^2}$.<br><br>' +
     '<b>Solution:</b><br>' +
     '$= \\frac{12x^{5+3}}{4x^2} = \\frac{12x^8}{4x^2} = 3x^{8-2} = 3x^6$<br><br>' +
-    '<b>Worked Example 2</b> (Extended) [3 marks]<br>' +
+    '<b>Worked Example 2</b> [3 marks]<br>' +
     'Evaluate without a calculator:<br>' +
     '(a) $27^{\\frac{2}{3}}$ &nbsp;&nbsp; (b) $16^{-\\frac{3}{4}}$<br><br>' +
     '<b>Solution:</b><br>' +
     '(a) $27^{\\frac{2}{3}} = (\\sqrt[3]{27})^2 = 3^2 = 9$<br><br>' +
     '(b) $16^{-\\frac{3}{4}} = \\frac{1}{16^{\\frac{3}{4}}} = \\frac{1}{(\\sqrt[4]{16})^3} = \\frac{1}{2^3} = \\frac{1}{8}$<br><br>' +
-    '<b>Exam Tip:</b> For fractional indices, find the root FIRST (denominator), then raise to the power (numerator). This keeps the numbers small.',
+    '<b>Worked Example 3</b> [4 marks — Extended]<br>' +
+    'Simplify $(2a^3 b^{-2})^4 \\times \\frac{b^5}{a^{-1}}$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '$(2a^3 b^{-2})^4 = 2^4 \\times a^{12} \\times b^{-8} = 16a^{12}b^{-8}$<br>' +
+    '$\\frac{b^5}{a^{-1}} = a^1 b^5$<br>' +
+    '$16a^{12}b^{-8} \\times a^1 b^5 = 16a^{13}b^{-3} = \\frac{16a^{13}}{b^3}$<br><br>' +
+    '<b>Worked Example 4</b> [4 marks — Extended]<br>' +
+    'Solve $5^{2x} = 125^{x-1}$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Write both sides as powers of 5:<br>' +
+    '$5^{2x} = (5^3)^{x-1} = 5^{3(x-1)} = 5^{3x-3}$<br>' +
+    'Equate exponents: $2x = 3x - 3$<br>' +
+    '$-x = -3$<br>' +
+    '$x = 3$<br><br>' +
+    '<b>Exam Tip:</b> For fractional indices, find the root FIRST (denominator), then raise to the power (numerator). When solving index equations, write both sides with the same base and equate the exponents.',
   content_zh:
     '<b>经典例题 1</b> [2 分]<br>' +
     '化简 $\\frac{6x^5 \\times 2x^3}{4x^2}$。<br><br>' +
     '<b>解答：</b><br>' +
     '$= \\frac{12x^{8}}{4x^2} = 3x^{6}$<br><br>' +
-    '<b>经典例题 2</b>（Extended）[3 分]<br>' +
+    '<b>经典例题 2</b> [3 分]<br>' +
     '不用计算器求值：<br>' +
     '(a) $27^{\\frac{2}{3}}$ &nbsp;&nbsp; (b) $16^{-\\frac{3}{4}}$<br><br>' +
     '<b>解答：</b><br>' +
     '(a) $27^{\\frac{2}{3}} = (\\sqrt[3]{27})^2 = 3^2 = 9$<br><br>' +
     '(b) $16^{-\\frac{3}{4}} = \\frac{1}{(\\sqrt[4]{16})^3} = \\frac{1}{2^3} = \\frac{1}{8}$<br><br>' +
-    '<b>考试技巧：</b>分数指数先开根（分母），再乘方（分子），数字更小更好算。'
+    '<b>经典例题 3</b> [4 分 — 进阶]<br>' +
+    '化简 $(2a^3 b^{-2})^4 \\times \\frac{b^5}{a^{-1}}$。<br><br>' +
+    '<b>解答：</b><br>' +
+    '$(2a^3 b^{-2})^4 = 16a^{12}b^{-8}$<br>' +
+    '$\\frac{b^5}{a^{-1}} = a^1 b^5$<br>' +
+    '$16a^{12}b^{-8} \\times a b^5 = 16a^{13}b^{-3} = \\frac{16a^{13}}{b^3}$<br><br>' +
+    '<b>经典例题 4</b> [4 分 — 进阶]<br>' +
+    '解方程 $5^{2x} = 125^{x-1}$。<br><br>' +
+    '<b>解答：</b><br>' +
+    '两边写成以 5 为底的幂：<br>' +
+    '$5^{2x} = (5^3)^{x-1} = 5^{3x-3}$<br>' +
+    '指数相等：$2x = 3x - 3$<br>' +
+    '$x = 3$<br><br>' +
+    '<b>考试技巧：</b>分数指数先开根（分母），再乘方（分子）。解指数方程时，把两边写成相同底数的幂，然后令指数相等。'
 });
 
 // ── 1.4 Directed numbers ──
@@ -271,19 +366,45 @@ add('cie', '1.4', 'knowledge', {
 
 add('cie', '1.4', 'examples', {
   content:
-    '<b>Worked Example</b> [3 marks]<br>' +
+    '<b>Worked Example 1</b> [2 marks]<br>' +
+    'Calculate $(-8) \\times 3 + (-4) \\div (-2)$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '$(-8) \\times 3 = -24$<br>' +
+    '$(-4) \\div (-2) = 2$ (same signs → positive)<br>' +
+    '$-24 + 2 = -22$<br><br>' +
+    '<b>Worked Example 2</b> [3 marks]<br>' +
     'The temperature at midnight is $-5°C$. By 6am it has dropped by $3°C$. By noon it has risen by $11°C$. Find the temperature at noon.<br><br>' +
     '<b>Solution:</b><br>' +
     'At 6am: $-5 - 3 = -8°C$<br>' +
     'At noon: $-8 + 11 = 3°C$<br><br>' +
-    '<b>Exam Tip:</b> Use a number line if you find directed number calculations confusing. "Drop by" means subtract, "rise by" means add.',
+    '<b>Worked Example 3</b> [3 marks — Extended]<br>' +
+    'A diver is at $-12$ metres. She rises $5$ metres, then descends $8$ metres. Find her final depth and the total distance she has travelled.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'After rising: $-12 + 5 = -7$ m<br>' +
+    'After descending: $-7 - 8 = -15$ m<br>' +
+    'Final depth: $-15$ metres (15 m below the surface).<br>' +
+    'Total distance travelled = $5 + 8 = 13$ m.<br><br>' +
+    '<b>Exam Tip:</b> "Drop by" or "descend" means subtract. "Rise by" or "ascend" means add. Distance travelled is always positive — add the magnitudes of each move.',
   content_zh:
-    '<b>经典例题</b> [3 分]<br>' +
+    '<b>经典例题 1</b> [2 分]<br>' +
+    '计算 $(-8) \\times 3 + (-4) \\div (-2)$。<br><br>' +
+    '<b>解答：</b><br>' +
+    '$(-8) \\times 3 = -24$<br>' +
+    '$(-4) \\div (-2) = 2$（同号得正）<br>' +
+    '$-24 + 2 = -22$<br><br>' +
+    '<b>经典例题 2</b> [3 分]<br>' +
     '午夜温度为 $-5°C$，到早上6点下降了 $3°C$，到中午又上升了 $11°C$。求中午温度。<br><br>' +
     '<b>解答：</b><br>' +
     '早上6点：$-5 - 3 = -8°C$<br>' +
     '中午：$-8 + 11 = 3°C$<br><br>' +
-    '<b>考试技巧：</b>"下降"用减法，"上升"用加法。可以借助数轴来思考。'
+    '<b>经典例题 3</b> [3 分 — 进阶]<br>' +
+    '一名潜水员在 $-12$ 米处。她上升 $5$ 米，又下潜 $8$ 米。求最终深度和总行进距离。<br><br>' +
+    '<b>解答：</b><br>' +
+    '上升后：$-12 + 5 = -7$ 米<br>' +
+    '下潜后：$-7 - 8 = -15$ 米<br>' +
+    '最终深度：$-15$ 米（水面以下 15 米）。<br>' +
+    '总行进距离 = $5 + 8 = 13$ 米。<br><br>' +
+    '<b>考试技巧：</b>"下降/下潜"用减法，"上升"用加法。行进距离始终为正值——把每段移动的绝对值相加。'
 });
 
 // ── 1.5 Fractions, decimals and percentages ──
@@ -338,12 +459,17 @@ add('cie', '1.5', 'knowledge', {
 
 add('cie', '1.5', 'examples', {
   content:
-    '<b>Worked Example 1</b> [3 marks]<br>' +
+    '<b>Worked Example 1</b> [2 marks]<br>' +
+    'Calculate $\\frac{3}{4} + \\frac{2}{5}$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Common denominator = 20.<br>' +
+    '$\\frac{3}{4} + \\frac{2}{5} = \\frac{15}{20} + \\frac{8}{20} = \\frac{23}{20} = 1\\frac{3}{20}$<br><br>' +
+    '<b>Worked Example 2</b> [3 marks]<br>' +
     'Calculate $2\\frac{1}{3} \\times 1\\frac{2}{5}$. Give your answer as a mixed number.<br><br>' +
     '<b>Solution:</b><br>' +
     'Convert to improper fractions: $\\frac{7}{3} \\times \\frac{7}{5} = \\frac{49}{15} = 3\\frac{4}{15}$<br><br>' +
-    '<b>Worked Example 2</b> (Extended) [3 marks]<br>' +
-    'Convert $0.1\\dot{5}\\dot{4}$ to a fraction.<br><br>' +
+    '<b>Worked Example 3</b> [4 marks — Extended]<br>' +
+    'Convert $0.1\\dot{5}\\dot{4}$ to a fraction in its simplest form.<br><br>' +
     '<b>Solution:</b><br>' +
     'Let $x = 0.1545454...$<br>' +
     '$10x = 1.545454...$<br>' +
@@ -351,21 +477,44 @@ add('cie', '1.5', 'examples', {
     '$1000x - 10x = 153$<br>' +
     '$990x = 153$<br>' +
     '$x = \\frac{153}{990} = \\frac{17}{110}$<br><br>' +
-    '<b>Exam Tip:</b> For recurring decimals, multiply by powers of 10 so that the recurring parts align, then subtract to eliminate the repeating digits.',
+    '<b>Worked Example 4</b> [4 marks — Extended]<br>' +
+    'Show that $0.\\dot{2}\\dot{7} + 0.\\dot{6}$ can be written as $\\frac{31}{33}$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Let $x = 0.\\dot{2}\\dot{7} = 0.272727...$<br>' +
+    '$100x = 27.2727...$<br>' +
+    '$99x = 27$, so $x = \\frac{27}{99} = \\frac{3}{11}$<br><br>' +
+    'Let $y = 0.\\dot{6} = 0.666...$<br>' +
+    '$10y = 6.666...$<br>' +
+    '$9y = 6$, so $y = \\frac{6}{9} = \\frac{2}{3}$<br><br>' +
+    '$\\frac{3}{11} + \\frac{2}{3} = \\frac{9}{33} + \\frac{22}{33} = \\frac{31}{33}$<br><br>' +
+    '<b>Exam Tip:</b> For recurring decimals, multiply by powers of 10 so that the recurring parts align, then subtract. Always simplify your final fraction.',
   content_zh:
-    '<b>经典例题 1</b> [3 分]<br>' +
+    '<b>经典例题 1</b> [2 分]<br>' +
+    '计算 $\\frac{3}{4} + \\frac{2}{5}$。<br><br>' +
+    '<b>解答：</b><br>' +
+    '通分分母 = 20。<br>' +
+    '$\\frac{3}{4} + \\frac{2}{5} = \\frac{15}{20} + \\frac{8}{20} = \\frac{23}{20} = 1\\frac{3}{20}$<br><br>' +
+    '<b>经典例题 2</b> [3 分]<br>' +
     '计算 $2\\frac{1}{3} \\times 1\\frac{2}{5}$，用带分数表示。<br><br>' +
     '<b>解答：</b><br>' +
     '化为假分数：$\\frac{7}{3} \\times \\frac{7}{5} = \\frac{49}{15} = 3\\frac{4}{15}$<br><br>' +
-    '<b>经典例题 2</b>（Extended）[3 分]<br>' +
-    '将 $0.1\\dot{5}\\dot{4}$ 化为分数。<br><br>' +
+    '<b>经典例题 3</b> [4 分 — 进阶]<br>' +
+    '将 $0.1\\dot{5}\\dot{4}$ 化为最简分数。<br><br>' +
     '<b>解答：</b><br>' +
     '设 $x = 0.1545454...$<br>' +
     '$10x = 1.545454...$<br>' +
     '$1000x = 154.5454...$<br>' +
     '$990x = 153$<br>' +
     '$x = \\frac{153}{990} = \\frac{17}{110}$<br><br>' +
-    '<b>考试技巧：</b>循环小数转分数时，乘以合适的 10 的幂使循环部分对齐，然后相减消去循环部分。'
+    '<b>经典例题 4</b> [4 分 — 进阶]<br>' +
+    '证明 $0.\\dot{2}\\dot{7} + 0.\\dot{6}$ 可以写成 $\\frac{31}{33}$。<br><br>' +
+    '<b>解答：</b><br>' +
+    '设 $x = 0.272727...$，$100x = 27.2727...$<br>' +
+    '$99x = 27$，$x = \\frac{3}{11}$<br><br>' +
+    '设 $y = 0.666...$，$10y = 6.666...$<br>' +
+    '$9y = 6$，$y = \\frac{2}{3}$<br><br>' +
+    '$\\frac{3}{11} + \\frac{2}{3} = \\frac{9}{33} + \\frac{22}{33} = \\frac{31}{33}$<br><br>' +
+    '<b>考试技巧：</b>循环小数转分数时，乘以 $10^n$ 使循环节对齐后相减。最终分数要化到最简。'
 });
 
 // ── 1.6 Order of operations ──
@@ -402,7 +551,7 @@ add('cie', '1.6', 'knowledge', {
 
 add('cie', '1.6', 'examples', {
   content:
-    '<b>Worked Example</b> [2 marks]<br>' +
+    '<b>Worked Example 1</b> [2 marks]<br>' +
     'Calculate $3 + 4 \\times (8 - 2)^2 \\div 9$.<br><br>' +
     '<b>Solution:</b><br>' +
     'Brackets: $8 - 2 = 6$<br>' +
@@ -410,9 +559,21 @@ add('cie', '1.6', 'examples', {
     'Multiply: $4 \\times 36 = 144$<br>' +
     'Divide: $144 \\div 9 = 16$<br>' +
     'Add: $3 + 16 = 19$<br><br>' +
-    '<b>Exam Tip:</b> Show each step clearly. Examiners award marks for correct working even if the final answer is wrong.',
+    '<b>Worked Example 2</b> [2 marks]<br>' +
+    'Insert brackets to make this statement correct: $5 + 3 \\times 2 - 1 = 8$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Without brackets: $5 + 3 \\times 2 - 1 = 5 + 6 - 1 = 10$ (not 8).<br>' +
+    'Try $5 + 3 \\times (2 - 1) = 5 + 3 \\times 1 = 8$ ✓<br>' +
+    'Answer: $5 + 3 \\times (2 - 1) = 8$<br><br>' +
+    '<b>Worked Example 3</b> [3 marks — Extended]<br>' +
+    'Calculate $\\frac{(5 - 2)^3 + 7}{2^2 \\times (1 + 3)}$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Numerator: $(5-2)^3 + 7 = 3^3 + 7 = 27 + 7 = 34$<br>' +
+    'Denominator: $2^2 \\times (1+3) = 4 \\times 4 = 16$<br>' +
+    '$\\frac{34}{16} = \\frac{17}{8} = 2\\frac{1}{8}$<br><br>' +
+    '<b>Exam Tip:</b> Show each step clearly — examiners award marks for correct working even if the final answer is wrong. Treat the fraction bar as a bracket: work out numerator and denominator separately.',
   content_zh:
-    '<b>经典例题</b> [2 分]<br>' +
+    '<b>经典例题 1</b> [2 分]<br>' +
     '计算 $3 + 4 \\times (8 - 2)^2 \\div 9$。<br><br>' +
     '<b>解答：</b><br>' +
     '括号：$8 - 2 = 6$<br>' +
@@ -420,7 +581,19 @@ add('cie', '1.6', 'examples', {
     '乘法：$4 \\times 36 = 144$<br>' +
     '除法：$144 \\div 9 = 16$<br>' +
     '加法：$3 + 16 = 19$<br><br>' +
-    '<b>考试技巧：</b>每一步都写清楚，即使最终答案错了也能拿步骤分。'
+    '<b>经典例题 2</b> [2 分]<br>' +
+    '添加括号使等式成立：$5 + 3 \\times 2 - 1 = 8$。<br><br>' +
+    '<b>解答：</b><br>' +
+    '无括号时：$5 + 3 \\times 2 - 1 = 10$（不等于 8）。<br>' +
+    '尝试 $5 + 3 \\times (2 - 1) = 5 + 3 = 8$ ✓<br>' +
+    '答案：$5 + 3 \\times (2 - 1) = 8$<br><br>' +
+    '<b>经典例题 3</b> [3 分 — 进阶]<br>' +
+    '计算 $\\frac{(5 - 2)^3 + 7}{2^2 \\times (1 + 3)}$。<br><br>' +
+    '<b>解答：</b><br>' +
+    '分子：$(5-2)^3 + 7 = 27 + 7 = 34$<br>' +
+    '分母：$2^2 \\times (1+3) = 4 \\times 4 = 16$<br>' +
+    '$\\frac{34}{16} = \\frac{17}{8} = 2\\frac{1}{8}$<br><br>' +
+    '<b>考试技巧：</b>每一步都写清楚，即使最终答案错了也能拿步骤分。分数线相当于括号——分子分母分别计算。'
 });
 
 // ── 1.7 Bounds and rounding ──
@@ -451,21 +624,51 @@ add('cie', '1.7', 'knowledge', {
 
 add('cie', '1.7', 'examples', {
   content:
-    '<b>Worked Example</b> [2 marks]<br>' +
+    '<b>Worked Example 1</b> [2 marks]<br>' +
     'Write 0.06372 correct to (a) 2 decimal places, (b) 2 significant figures.<br><br>' +
     '<b>Solution:</b><br>' +
     '(a) 2 d.p.: look at the 3rd decimal digit (3), which is < 5, so round down: $0.06$<br>' +
     '(b) 2 s.f.: first significant digit is 6, second is 3. Next digit is 7 ≥ 5, round up: $0.064$<br><br>' +
-    '<b>Exam Tip:</b> Always write down what degree of accuracy you\'re rounding to when asked for "a reasonable degree of accuracy".',
+    '<b>Worked Example 2</b> [2 marks]<br>' +
+    'Round 34 650 to (a) the nearest thousand, (b) 2 significant figures.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '(a) Nearest 1000: digit in hundreds is 6 ≥ 5, round up: $35\\,000$<br>' +
+    '(b) 2 s.f.: first two significant digits are 3 and 4. Next digit is 6 ≥ 5, round up: $35\\,000$<br><br>' +
+    '<b>Worked Example 3</b> [4 marks — Extended]<br>' +
+    'By rounding each number to 1 significant figure, estimate $\\frac{0.0389 \\times 198}{\\sqrt{0.043}}$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '$0.0389 \\approx 0.04$, $198 \\approx 200$, $0.043 \\approx 0.04$<br>' +
+    '$\\sqrt{0.04} = 0.2$<br>' +
+    '$\\approx \\frac{0.04 \\times 200}{0.2} = \\frac{8}{0.2} = 40$<br><br>' +
+    '<b>Worked Example 4</b> [4 marks — Extended]<br>' +
+    'The length of a field is measured as 84.3 m to the nearest 0.1 m. Write down the upper and lower bounds of the length, and determine the length correct to an appropriate degree of accuracy.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Lower bound = $84.25$ m, Upper bound = $84.35$ m.<br>' +
+    'Both bounds round to $84$ m (nearest metre), so the length is $84$ m to the nearest metre.<br><br>' +
+    '<b>Exam Tip:</b> Always write down what degree of accuracy you are rounding to. For estimation questions, you MUST show the rounded values, not just the final answer.',
   content_zh:
-    '<b>经典例题</b> [2 分]<br>' +
-    '将 0.06372 保留至 (a) 2 位小数，(b) 2 位有效数字。<br>' +
-    '<br>' +
+    '<b>经典例题 1</b> [2 分]<br>' +
+    '将 0.06372 保留至 (a) 2 位小数，(b) 2 位有效数字。<br><br>' +
     '<b>解答：</b><br>' +
-    '(a) 2 位小数：观察第 3 位小数位 (3)，由于 < 5，所以舍去：$0.06$<br>' +
-    '(b) 2 位有效数字：第一个有效数字是 6，第二个是 3。下一位数字是 7 ≥ 5，所以进位：$0.064$<br>' +
-    '<br>' +
-    '<b>考试技巧：</b>当题目要求"合理的精确度"时，务必写下你四舍五入时所保留的精确位数。'
+    '(a) 2 位小数：第 3 位小数是 3 < 5，舍去：$0.06$<br>' +
+    '(b) 2 位有效数字：第一个有效数字 6，第二个 3。下一位 7 ≥ 5，进位：$0.064$<br><br>' +
+    '<b>经典例题 2</b> [2 分]<br>' +
+    '将 34 650 取整到 (a) 最近千位，(b) 2 位有效数字。<br><br>' +
+    '<b>解答：</b><br>' +
+    '(a) 最近千位：百位是 6 ≥ 5，进位：$35\\,000$<br>' +
+    '(b) 2 位有效数字：前两位是 3 和 4，下一位 6 ≥ 5，进位：$35\\,000$<br><br>' +
+    '<b>经典例题 3</b> [4 分 — 进阶]<br>' +
+    '将每个数取 1 位有效数字，估算 $\\frac{0.0389 \\times 198}{\\sqrt{0.043}}$。<br><br>' +
+    '<b>解答：</b><br>' +
+    '$0.0389 \\approx 0.04$，$198 \\approx 200$，$0.043 \\approx 0.04$<br>' +
+    '$\\sqrt{0.04} = 0.2$<br>' +
+    '$\\approx \\frac{0.04 \\times 200}{0.2} = \\frac{8}{0.2} = 40$<br><br>' +
+    '<b>经典例题 4</b> [4 分 — 进阶]<br>' +
+    '一块田的长度测量为 84.3 m（精确到 0.1 m）。写出长度的上界和下界，并确定合适精确度下的长度。<br><br>' +
+    '<b>解答：</b><br>' +
+    '下界 = $84.25$ m，上界 = $84.35$ m。<br>' +
+    '两个界都四舍五入到 $84$ m，所以长度为 $84$ m（精确到最近米）。<br><br>' +
+    '<b>考试技巧：</b>务必写明取整精度。估算题必须写出取整后的数值，不能只写最终答案。'
 });
 
 // ── 1.8 Standard form ──
@@ -496,21 +699,56 @@ add('cie', '1.8', 'knowledge', {
 
 add('cie', '1.8', 'examples', {
   content:
-    '<b>Worked Example</b> [3 marks]<br>' +
+    '<b>Worked Example 1</b> [2 marks]<br>' +
+    'Write in standard form: (a) $456\\,000$ &nbsp; (b) $0.000 072$<br><br>' +
+    '<b>Solution:</b><br>' +
+    '(a) $456\\,000 = 4.56 \\times 10^5$<br>' +
+    '(b) $0.000 072 = 7.2 \\times 10^{-5}$<br><br>' +
+    '<b>Worked Example 2</b> [3 marks]<br>' +
     'Calculate $\\frac{3.6 \\times 10^5}{4.5 \\times 10^{-2}}$. Give your answer in standard form.<br><br>' +
     '<b>Solution:</b><br>' +
     '$\\frac{3.6}{4.5} = 0.8$<br>' +
     '$10^{5-(-2)} = 10^7$<br>' +
     '$0.8 \\times 10^7 = 8 \\times 10^6$<br><br>' +
-    '<b>Exam Tip:</b> Remember to adjust if $A < 1$ or $A \\geq 10$. Here $0.8$ became $8$ and the power decreased by 1.',
+    '<b>Worked Example 3</b> [4 marks — Extended]<br>' +
+    'Calculate $(3.2 \\times 10^4) + (5.8 \\times 10^3)$. Give your answer in standard form.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Convert to same power: $3.2 \\times 10^4 = 32\\,000$ and $5.8 \\times 10^3 = 5\\,800$<br>' +
+    '$32\\,000 + 5\\,800 = 37\\,800$<br>' +
+    '$= 3.78 \\times 10^4$<br><br>' +
+    '<b>Worked Example 4</b> [5 marks — Extended]<br>' +
+    'The mass of a hydrogen atom is $1.67 \\times 10^{-27}$ kg. A sample contains $4.2 \\times 10^{23}$ atoms. Calculate the total mass in kg, giving your answer in standard form correct to 2 significant figures.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Total mass = $1.67 \\times 10^{-27} \\times 4.2 \\times 10^{23}$<br>' +
+    '$= 1.67 \\times 4.2 \\times 10^{-27+23}$<br>' +
+    '$= 7.014 \\times 10^{-4}$<br>' +
+    '$\\approx 7.0 \\times 10^{-4}$ kg (2 s.f.)<br><br>' +
+    '<b>Exam Tip:</b> Remember to adjust if $A < 1$ or $A \\geq 10$ after your calculation. For addition/subtraction in standard form, convert to the same power of 10 or to ordinary numbers first.',
   content_zh:
-    '<b>经典例题</b> [3 分]<br>' +
+    '<b>经典例题 1</b> [2 分]<br>' +
+    '用标准式表示：(a) $456\\,000$ &nbsp; (b) $0.000 072$<br><br>' +
+    '<b>解答：</b><br>' +
+    '(a) $456\\,000 = 4.56 \\times 10^5$<br>' +
+    '(b) $0.000 072 = 7.2 \\times 10^{-5}$<br><br>' +
+    '<b>经典例题 2</b> [3 分]<br>' +
     '计算 $\\frac{3.6 \\times 10^5}{4.5 \\times 10^{-2}}$，用标准式表示。<br><br>' +
     '<b>解答：</b><br>' +
     '$\\frac{3.6}{4.5} = 0.8$<br>' +
     '$10^{5-(-2)} = 10^7$<br>' +
     '$0.8 \\times 10^7 = 8 \\times 10^6$<br><br>' +
-    '<b>考试技巧：</b>若 $A < 1$ 或 $A \\geq 10$，需调整。这里 $0.8$ 变为 $8$，幂次减 1。'
+    '<b>经典例题 3</b> [4 分 — 进阶]<br>' +
+    '计算 $(3.2 \\times 10^4) + (5.8 \\times 10^3)$，用标准式表示。<br><br>' +
+    '<b>解答：</b><br>' +
+    '化为相同幂次：$3.2 \\times 10^4 = 32\\,000$，$5.8 \\times 10^3 = 5\\,800$<br>' +
+    '$32\\,000 + 5\\,800 = 37\\,800$<br>' +
+    '$= 3.78 \\times 10^4$<br><br>' +
+    '<b>经典例题 4</b> [5 分 — 进阶]<br>' +
+    '一个氢原子质量为 $1.67 \\times 10^{-27}$ kg。一个样本含 $4.2 \\times 10^{23}$ 个原子。求总质量（标准式，2 位有效数字）。<br><br>' +
+    '<b>解答：</b><br>' +
+    '总质量 = $1.67 \\times 4.2 \\times 10^{-27+23}$<br>' +
+    '$= 7.014 \\times 10^{-4}$<br>' +
+    '$\\approx 7.0 \\times 10^{-4}$ kg (2 s.f.)<br><br>' +
+    '<b>考试技巧：</b>计算后若 $A < 1$ 或 $A \\geq 10$，需调整幂次。标准式的加减法要先化为相同幂次或普通数再计算。'
 });
 
 // ── 1.9 Four operations ──
@@ -539,19 +777,51 @@ add('cie', '1.9', 'knowledge', {
 
 add('cie', '1.9', 'examples', {
   content:
-    '<b>Worked Example</b> [3 marks]<br>' +
+    '<b>Worked Example 1</b> [2 marks]<br>' +
+    'Without a calculator, work out $347 \\times 26$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '$347 \\times 26 = 347 \\times 20 + 347 \\times 6$<br>' +
+    '$= 6940 + 2082 = 9022$<br><br>' +
+    '<b>Worked Example 2</b> [3 marks]<br>' +
     'Without a calculator, work out $2\\frac{3}{4} \\div 1\\frac{1}{3}$.<br><br>' +
     '<b>Solution:</b><br>' +
     'Convert: $\\frac{11}{4} \\div \\frac{4}{3}$<br>' +
     'Multiply by reciprocal: $\\frac{11}{4} \\times \\frac{3}{4} = \\frac{33}{16} = 2\\frac{1}{16}$<br><br>' +
-    '<b>Exam Tip:</b> To divide fractions, flip the second fraction and multiply. Always simplify your answer.',
+    '<b>Worked Example 3</b> [4 marks — Extended]<br>' +
+    'Without a calculator, work out $3\\frac{1}{2} - 1\\frac{2}{3} \\times \\frac{6}{5}$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'BIDMAS: do the multiplication first.<br>' +
+    '$1\\frac{2}{3} \\times \\frac{6}{5} = \\frac{5}{3} \\times \\frac{6}{5} = \\frac{30}{15} = 2$<br>' +
+    '$3\\frac{1}{2} - 2 = 1\\frac{1}{2}$<br><br>' +
+    '<b>Worked Example 4</b> [4 marks — Extended]<br>' +
+    'Without a calculator, work out $\\frac{2.4 \\times 0.35}{0.06}$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Numerator: $2.4 \\times 0.35 = 2.4 \\times \\frac{35}{100} = \\frac{84}{100} = 0.84$<br>' +
+    '$\\frac{0.84}{0.06} = \\frac{84}{6} = 14$<br><br>' +
+    '<b>Exam Tip:</b> To divide fractions, flip the second fraction and multiply. For decimal division, multiply top and bottom by the same power of 10 to remove decimals. Always show each step of your working.',
   content_zh:
-    '<b>经典例题</b> [3 分]<br>' +
+    '<b>经典例题 1</b> [2 分]<br>' +
+    '不用计算器，计算 $347 \\times 26$。<br><br>' +
+    '<b>解答：</b><br>' +
+    '$347 \\times 26 = 347 \\times 20 + 347 \\times 6$<br>' +
+    '$= 6940 + 2082 = 9022$<br><br>' +
+    '<b>经典例题 2</b> [3 分]<br>' +
     '不用计算器，计算 $2\\frac{3}{4} \\div 1\\frac{1}{3}$。<br><br>' +
     '<b>解答：</b><br>' +
     '化为假分数：$\\frac{11}{4} \\div \\frac{4}{3}$<br>' +
     '乘倒数：$\\frac{11}{4} \\times \\frac{3}{4} = \\frac{33}{16} = 2\\frac{1}{16}$<br><br>' +
-    '<b>考试技巧：</b>分数除法 = 乘以倒数。结果要化简。'
+    '<b>经典例题 3</b> [4 分 — 进阶]<br>' +
+    '不用计算器，计算 $3\\frac{1}{2} - 1\\frac{2}{3} \\times \\frac{6}{5}$。<br><br>' +
+    '<b>解答：</b><br>' +
+    'BIDMAS：先算乘法。<br>' +
+    '$1\\frac{2}{3} \\times \\frac{6}{5} = \\frac{5}{3} \\times \\frac{6}{5} = \\frac{30}{15} = 2$<br>' +
+    '$3\\frac{1}{2} - 2 = 1\\frac{1}{2}$<br><br>' +
+    '<b>经典例题 4</b> [4 分 — 进阶]<br>' +
+    '不用计算器，计算 $\\frac{2.4 \\times 0.35}{0.06}$。<br><br>' +
+    '<b>解答：</b><br>' +
+    '分子：$2.4 \\times 0.35 = 0.84$<br>' +
+    '$\\frac{0.84}{0.06} = \\frac{84}{6} = 14$<br><br>' +
+    '<b>考试技巧：</b>分数除法 = 乘以倒数。小数除法可以把分子分母同乘 10 的幂去掉小数。务必展示每一步运算。'
 });
 
 // ── 1.10 Estimation ──
@@ -580,17 +850,52 @@ add('cie', '1.10', 'knowledge', {
 
 add('cie', '1.10', 'examples', {
   content:
-    '<b>Worked Example</b> [2 marks]<br>' +
+    '<b>Worked Example 1</b> [2 marks]<br>' +
     'By rounding each number to 1 significant figure, estimate $\\frac{4.87 \\times 21.3}{0.509}$.<br><br>' +
     '<b>Solution:</b><br>' +
     '$\\approx \\frac{5 \\times 20}{0.5} = \\frac{100}{0.5} = 200$<br><br>' +
-    '<b>Exam Tip:</b> Show the rounded values clearly. The actual answer is about 203.9, so the estimate of 200 is reasonable.',
+    '<b>Worked Example 2</b> [2 marks]<br>' +
+    'Estimate $\\sqrt{62.4 \\times 3.91}$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '$62.4 \\approx 60$, $3.91 \\approx 4$<br>' +
+    '$\\sqrt{60 \\times 4} = \\sqrt{240} \\approx \\sqrt{256} = 16$<br>' +
+    '(Or $\\approx \\sqrt{225} = 15$. Either is acceptable.)<br><br>' +
+    '<b>Worked Example 3</b> [4 marks — Extended]<br>' +
+    'By rounding to 1 significant figure, estimate $\\frac{(9.82)^2 \\times 0.203}{49.7}$. State whether your estimate is an overestimate or an underestimate.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '$9.82 \\approx 10$, $0.203 \\approx 0.2$, $49.7 \\approx 50$<br>' +
+    '$\\approx \\frac{10^2 \\times 0.2}{50} = \\frac{100 \\times 0.2}{50} = \\frac{20}{50} = 0.4$<br>' +
+    'Actual value $\\approx 0.394$. Our estimate is an overestimate because we rounded $9.82$ up (squaring magnifies the effect) and $49.7$ down.<br><br>' +
+    '<b>Worked Example 4</b> [4 marks — Extended]<br>' +
+    'A hall has floor area $14.3 \\times 8.7$ m. Tiles are $0.3 \\times 0.3$ m. Estimate the number of tiles needed.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Floor area $\\approx 14 \\times 9 = 126$ m²<br>' +
+    'Tile area $= 0.3 \\times 0.3 = 0.09$ m²<br>' +
+    'Number of tiles $\\approx \\frac{126}{0.09} = 1400$<br><br>' +
+    '<b>Exam Tip:</b> Show the rounded values clearly — you MUST demonstrate the rounding step. For square root estimations, find the nearest perfect square.',
   content_zh:
-    '<b>经典例题</b> [2 分]<br>' +
+    '<b>经典例题 1</b> [2 分]<br>' +
     '将每个数取 1 位有效数字，估算 $\\frac{4.87 \\times 21.3}{0.509}$。<br><br>' +
     '<b>解答：</b><br>' +
     '$\\approx \\frac{5 \\times 20}{0.5} = \\frac{100}{0.5} = 200$<br><br>' +
-    '<b>考试技巧：</b>要清楚写出取整后的数。精确值约 203.9，估算值 200 合理。'
+    '<b>经典例题 2</b> [2 分]<br>' +
+    '估算 $\\sqrt{62.4 \\times 3.91}$。<br><br>' +
+    '<b>解答：</b><br>' +
+    '$62.4 \\approx 60$，$3.91 \\approx 4$<br>' +
+    '$\\sqrt{60 \\times 4} = \\sqrt{240} \\approx \\sqrt{256} = 16$<br><br>' +
+    '<b>经典例题 3</b> [4 分 — 进阶]<br>' +
+    '取 1 位有效数字，估算 $\\frac{(9.82)^2 \\times 0.203}{49.7}$。判断估算值偏大还是偏小。<br><br>' +
+    '<b>解答：</b><br>' +
+    '$9.82 \\approx 10$，$0.203 \\approx 0.2$，$49.7 \\approx 50$<br>' +
+    '$\\approx \\frac{100 \\times 0.2}{50} = \\frac{20}{50} = 0.4$<br>' +
+    '精确值 $\\approx 0.394$。估算值偏大，因为 $9.82$ 向上取整后平方放大了误差。<br><br>' +
+    '<b>经典例题 4</b> [4 分 — 进阶]<br>' +
+    '一个大厅地板面积 $14.3 \\times 8.7$ m，地砖尺寸 $0.3 \\times 0.3$ m。估算所需地砖数量。<br><br>' +
+    '<b>解答：</b><br>' +
+    '地板面积 $\\approx 14 \\times 9 = 126$ m²<br>' +
+    '地砖面积 $= 0.09$ m²<br>' +
+    '地砖数量 $\\approx \\frac{126}{0.09} = 1400$<br><br>' +
+    '<b>考试技巧：</b>必须写出取整后的数值。估算开方时，找最近的完全平方数。'
 });
 
 // ── 1.11 Limits of accuracy (Extended only) ──
@@ -628,23 +933,63 @@ add('cie', '1.11', 'knowledge', {
 
 add('cie', '1.11', 'examples', {
   content:
-    '<b>Worked Example</b> [3 marks]<br>' +
+    '<b>Worked Example 1</b> [2 marks]<br>' +
+    'A length is measured as $8.4$ cm correct to 1 decimal place. Write down the upper and lower bounds.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Lower bound = $8.35$ cm<br>' +
+    'Upper bound = $8.45$ cm<br>' +
+    '$8.35 \\leq l < 8.45$<br><br>' +
+    '<b>Worked Example 2</b> [3 marks]<br>' +
     '$p = 4.3$ correct to 1 decimal place. $q = 0.72$ correct to 2 decimal places.<br>' +
     'Calculate the upper bound of $\\frac{p}{q}$.<br><br>' +
     '<b>Solution:</b><br>' +
     '$p$: LB = $4.25$, UB = $4.35$<br>' +
     '$q$: LB = $0.715$, UB = $0.725$<br><br>' +
     'Upper bound of $\\frac{p}{q}$ = $\\frac{\\text{UB of } p}{\\text{LB of } q} = \\frac{4.35}{0.715} = 6.08...$<br><br>' +
-    '<b>Exam Tip:</b> For maximum of a fraction, make the top as BIG as possible and the bottom as SMALL as possible.',
+    '<b>Worked Example 3</b> [4 marks — Extended]<br>' +
+    'A rectangle has length $12.4$ cm and width $5.6$ cm, both measured to the nearest mm. Calculate the lower bound of the area.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Length: LB = $12.35$ cm, Width: LB = $5.55$ cm<br>' +
+    'Lower bound of area = $12.35 \\times 5.55 = 68.5425$ cm²<br>' +
+    '$= 68.5$ cm² (3 s.f.)<br><br>' +
+    '<b>Worked Example 4</b> [5 marks — Extended]<br>' +
+    'A car travels a distance of $120$ km, correct to the nearest $10$ km, in a time of $1.5$ hours, correct to the nearest $0.1$ hours. Calculate the upper and lower bounds of the speed, and hence determine the speed to an appropriate degree of accuracy.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Distance: LB = $115$, UB = $125$ km<br>' +
+    'Time: LB = $1.45$, UB = $1.55$ hours<br>' +
+    'Upper bound of speed = $\\frac{125}{1.45} = 86.2$ km/h (3 s.f.)<br>' +
+    'Lower bound of speed = $\\frac{115}{1.55} = 74.2$ km/h (3 s.f.)<br>' +
+    'Both round to $80$ km/h (1 s.f.), so the speed is $80$ km/h to 1 significant figure.<br><br>' +
+    '<b>Exam Tip:</b> For maximum of a fraction, make the top as BIG as possible and the bottom as SMALL as possible. The upper bound is never included — use $\\leq$ for the lower bound and $<$ for the upper bound.',
   content_zh:
-    '<b>经典例题</b> [3 分]<br>' +
+    '<b>经典例题 1</b> [2 分]<br>' +
+    '长度测量为 $8.4$ cm（精确到 1 位小数）。写出上界和下界。<br><br>' +
+    '<b>解答：</b><br>' +
+    '下界 = $8.35$ cm<br>' +
+    '上界 = $8.45$ cm<br>' +
+    '$8.35 \\leq l < 8.45$<br><br>' +
+    '<b>经典例题 2</b> [3 分]<br>' +
     '$p = 4.3$（精确到 1 位小数），$q = 0.72$（精确到 2 位小数）。<br>' +
     '求 $\\frac{p}{q}$ 的上界。<br><br>' +
     '<b>解答：</b><br>' +
     '$p$: 下界 = $4.25$, 上界 = $4.35$<br>' +
     '$q$: 下界 = $0.715$, 上界 = $0.725$<br><br>' +
     '$\\frac{p}{q}$ 的上界 = $\\frac{4.35}{0.715} = 6.08...$<br><br>' +
-    '<b>考试技巧：</b>分数要最大→分子取上界，分母取下界。'
+    '<b>经典例题 3</b> [4 分 — 进阶]<br>' +
+    '一个矩形长 $12.4$ cm，宽 $5.6$ cm，均精确到最近 mm。求面积的下界。<br><br>' +
+    '<b>解答：</b><br>' +
+    '长下界 = $12.35$ cm，宽下界 = $5.55$ cm<br>' +
+    '面积下界 = $12.35 \\times 5.55 = 68.5425$ cm²<br>' +
+    '$= 68.5$ cm²（3 s.f.）<br><br>' +
+    '<b>经典例题 4</b> [5 分 — 进阶]<br>' +
+    '一辆车行驶 $120$ km（精确到最近 $10$ km），用时 $1.5$ 小时（精确到 $0.1$ 小时）。求速度的上界和下界，并确定合适精确度下的速度。<br><br>' +
+    '<b>解答：</b><br>' +
+    '距离：下界 = $115$，上界 = $125$ km<br>' +
+    '时间：下界 = $1.45$，上界 = $1.55$ 小时<br>' +
+    '速度上界 = $\\frac{125}{1.45} = 86.2$ km/h<br>' +
+    '速度下界 = $\\frac{115}{1.55} = 74.2$ km/h<br>' +
+    '两者都四舍五入到 $80$ km/h (1 s.f.)，所以速度为 $80$ km/h（1 位有效数字）。<br><br>' +
+    '<b>考试技巧：</b>分数要最大→分子取上界，分母取下界。上界不包含在内——下界用 $\\leq$，上界用 $<$。'
 });
 
 // ── 1.12 Ratio and proportion ──
@@ -677,7 +1022,12 @@ add('cie', '1.12', 'knowledge', {
 
 add('cie', '1.12', 'examples', {
   content:
-    '<b>Worked Example</b> [3 marks]<br>' +
+    '<b>Worked Example 1</b> [2 marks]<br>' +
+    'Simplify the ratio $120 : 84$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'HCF of 120 and 84 = 12<br>' +
+    '$120 : 84 = 10 : 7$<br><br>' +
+    '<b>Worked Example 2</b> [3 marks]<br>' +
     'Divide $\\$480$ in the ratio $3 : 5$.<br><br>' +
     '<b>Solution:</b><br>' +
     'Total parts = $3 + 5 = 8$<br>' +
@@ -685,16 +1035,52 @@ add('cie', '1.12', 'examples', {
     'First share = $3 \\times 60 = \\$180$<br>' +
     'Second share = $5 \\times 60 = \\$300$<br>' +
     'Check: $180 + 300 = 480$ ✓<br><br>' +
-    '<b>Exam Tip:</b> Always verify that your parts add up to the original total.',
+    '<b>Worked Example 3</b> [4 marks — Extended]<br>' +
+    'A recipe for 6 people uses 450 g flour, 200 g sugar and 3 eggs. Find the amounts needed for 10 people.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Scale factor = $\\frac{10}{6} = \\frac{5}{3}$<br>' +
+    'Flour: $450 \\times \\frac{5}{3} = 750$ g<br>' +
+    'Sugar: $200 \\times \\frac{5}{3} = 333.3... \\approx 333$ g<br>' +
+    'Eggs: $3 \\times \\frac{5}{3} = 5$ eggs<br><br>' +
+    '<b>Worked Example 4</b> [5 marks — Extended]<br>' +
+    'Ali and Ben share money in the ratio $3 : 7$. Ben receives $\\$24$ more than Ali. Find the total amount shared.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Difference in parts = $7 - 3 = 4$ parts<br>' +
+    '$4$ parts $= \\$24$<br>' +
+    '$1$ part $= \\$6$<br>' +
+    'Total parts = $3 + 7 = 10$<br>' +
+    'Total = $10 \\times 6 = \\$60$<br><br>' +
+    '<b>Exam Tip:</b> Always check your parts add up to the total. If given a difference rather than a total, find the value of the difference in parts first.',
   content_zh:
-    '<b>经典例题</b> [3 分]<br>' +
+    '<b>经典例题 1</b> [2 分]<br>' +
+    '化简比 $120 : 84$。<br><br>' +
+    '<b>解答：</b><br>' +
+    '120 和 84 的 HCF = 12<br>' +
+    '$120 : 84 = 10 : 7$<br><br>' +
+    '<b>经典例题 2</b> [3 分]<br>' +
     '将 $\\$480$ 按 $3 : 5$ 分配。<br><br>' +
     '<b>解答：</b><br>' +
     '总份数 = $3 + 5 = 8$<br>' +
     '每份 = $480 \\div 8 = \\$60$<br>' +
     '第一份 = $3 \\times 60 = \\$180$<br>' +
     '第二份 = $5 \\times 60 = \\$300$<br>' +
-    '验证：$180 + 300 = 480$ ✓'
+    '验证：$180 + 300 = 480$ ✓<br><br>' +
+    '<b>经典例题 3</b> [4 分 — 进阶]<br>' +
+    '一个食谱供 6 人份用 450 g 面粉、200 g 糖和 3 个鸡蛋。求 10 人份的用量。<br><br>' +
+    '<b>解答：</b><br>' +
+    '比例因子 = $\\frac{10}{6} = \\frac{5}{3}$<br>' +
+    '面粉：$450 \\times \\frac{5}{3} = 750$ g<br>' +
+    '糖：$200 \\times \\frac{5}{3} \\approx 333$ g<br>' +
+    '鸡蛋：$3 \\times \\frac{5}{3} = 5$ 个<br><br>' +
+    '<b>经典例题 4</b> [5 分 — 进阶]<br>' +
+    'Ali 和 Ben 按 $3 : 7$ 分钱。Ben 比 Ali 多 $\\$24$。求总金额。<br><br>' +
+    '<b>解答：</b><br>' +
+    '份数差 = $7 - 3 = 4$ 份<br>' +
+    '$4$ 份 $= \\$24$<br>' +
+    '$1$ 份 $= \\$6$<br>' +
+    '总份数 = $10$<br>' +
+    '总金额 = $10 \\times 6 = \\$60$<br><br>' +
+    '<b>考试技巧：</b>检查各部分之和是否等于总量。若给出差值而非总量，先求差值对应的份数。'
 });
 
 // ── 1.13 Percentages ──
@@ -733,22 +1119,46 @@ add('cie', '1.13', 'examples', {
     '<b>Solution:</b><br>' +
     'Multiplier = $1 - 0.15 = 0.85$<br>' +
     'Sale price = $850 \\times 0.85 = \\$722.50$<br><br>' +
-    '<b>Worked Example 2</b> (Extended) [3 marks]<br>' +
+    '<b>Worked Example 2</b> [3 marks]<br>' +
     '$\\$5000$ is invested at 3% compound interest per year. Find the value after 4 years.<br><br>' +
     '<b>Solution:</b><br>' +
     '$A = 5000 \\times (1.03)^4 = 5000 \\times 1.1255... = \\$5627.54$<br><br>' +
-    '<b>Exam Tip:</b> Use the multiplier method for percentage changes — it\'s faster and less error-prone than calculating the percentage separately.',
+    '<b>Worked Example 3</b> [4 marks — Extended]<br>' +
+    'After a 20% increase, the price of a TV is $\\$540$. Find the original price.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Multiplier for 20% increase = $1.2$<br>' +
+    'Original price $\\times 1.2 = 540$<br>' +
+    'Original price $= \\frac{540}{1.2} = \\$450$<br><br>' +
+    '<b>Worked Example 4</b> [5 marks — Extended]<br>' +
+    'A population increases by 5% per year. After how many complete years will it first exceed double the original population?<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Need $(1.05)^n > 2$<br>' +
+    'Try: $(1.05)^{14} = 1.980...$, $(1.05)^{15} = 2.079...$<br>' +
+    'After 15 complete years the population first exceeds double.<br><br>' +
+    '<b>Exam Tip:</b> Use the multiplier method for percentage changes. For reverse percentage, divide by the multiplier — do NOT calculate the percentage of the new amount. For "how many years" problems, use trial and improvement.',
   content_zh:
     '<b>经典例题 1</b> [2 分]<br>' +
-    '一台笔记本原价 $\\$850$，打 85 折（降价 15%）。求售价。<br><br>' +
+    '一台笔记本原价 $\\$850$，降价 15%。求售价。<br><br>' +
     '<b>解答：</b><br>' +
     '乘数 = $1 - 0.15 = 0.85$<br>' +
     '售价 = $850 \\times 0.85 = \\$722.50$<br><br>' +
-    '<b>经典例题 2</b>（Extended）[3 分]<br>' +
+    '<b>经典例题 2</b> [3 分]<br>' +
     '$\\$5000$ 以年利率 3% 复利投资。求 4 年后的价值。<br><br>' +
     '<b>解答：</b><br>' +
     '$A = 5000 \\times (1.03)^4 = \\$5627.54$<br><br>' +
-    '<b>考试技巧：</b>用乘数法处理百分比变化，比分步计算更快更准。'
+    '<b>经典例题 3</b> [4 分 — 进阶]<br>' +
+    '涨价 20% 后，一台电视售价 $\\$540$。求原价。<br><br>' +
+    '<b>解答：</b><br>' +
+    '涨 20% 的乘数 = $1.2$<br>' +
+    '原价 $\\times 1.2 = 540$<br>' +
+    '原价 $= \\frac{540}{1.2} = \\$450$<br><br>' +
+    '<b>经典例题 4</b> [5 分 — 进阶]<br>' +
+    '人口每年增长 5%。经过几个完整年后人口首次超过原来的 2 倍？<br><br>' +
+    '<b>解答：</b><br>' +
+    '需要 $(1.05)^n > 2$<br>' +
+    '尝试：$(1.05)^{14} = 1.980...$，$(1.05)^{15} = 2.079...$<br>' +
+    '经过 15 个完整年后首次超过 2 倍。<br><br>' +
+    '<b>考试技巧：</b>用乘数法处理百分比变化。逆百分比要除以乘数，不是算新金额的百分比。"多少年"类问题用试错法。'
 });
 
 // ── 1.14 Using a calculator (Core only) ──
@@ -775,21 +1185,46 @@ add('cie', '1.14', 'knowledge', {
 
 add('cie', '1.14', 'examples', {
   content:
-    '<b>Worked Example</b> [2 marks]<br>' +
+    '<b>Worked Example 1</b> [2 marks]<br>' +
     'Use a calculator to find $\\frac{3.7^2 + \\sqrt{19.6}}{2.1 - 0.84}$. Give your answer correct to 3 significant figures.<br><br>' +
     '<b>Solution:</b><br>' +
     'Numerator: $3.7^2 + \\sqrt{19.6} = 13.69 + 4.427... = 18.117...$<br>' +
     'Denominator: $2.1 - 0.84 = 1.26$<br>' +
     '$\\frac{18.117...}{1.26} = 14.379... \\approx 14.4$ (3 s.f.)<br><br>' +
-    '<b>Exam Tip:</b> Use brackets around the numerator and denominator when entering into your calculator: $(3.7^2 + \\sqrt{19.6}) \\div (2.1 - 0.84)$.',
+    '<b>Worked Example 2</b> [2 marks]<br>' +
+    'Use a calculator to evaluate $\\frac{\\sqrt[3]{2.744}}{1 - \\cos 40°}$. Give your answer to 4 significant figures.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '$\\sqrt[3]{2.744} = 1.4$<br>' +
+    '$\\cos 40° = 0.7660...$<br>' +
+    '$1 - 0.7660... = 0.2339...$<br>' +
+    '$\\frac{1.4}{0.2339...} = 5.985... \\approx 5.985$ (4 s.f.)<br><br>' +
+    '<b>Worked Example 3</b> [3 marks]<br>' +
+    'The formula $V = \\frac{4}{3}\\pi r^3$ gives the volume of a sphere. Calculate $V$ when $r = 5.2$ cm. Give your answer to the nearest integer.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '$V = \\frac{4}{3} \\times \\pi \\times 5.2^3$<br>' +
+    '$= \\frac{4}{3} \\times \\pi \\times 140.608$<br>' +
+    '$= 588.977...$<br>' +
+    '$\\approx 589$ cm³<br><br>' +
+    '<b>Exam Tip:</b> Use brackets around the numerator and denominator when entering fractions into your calculator. Always write down at least 4 figures from your calculator before rounding to the required accuracy.',
   content_zh:
-    '<b>经典例题</b> [2 分]<br>' +
+    '<b>经典例题 1</b> [2 分]<br>' +
     '用计算器求 $\\frac{3.7^2 + \\sqrt{19.6}}{2.1 - 0.84}$，精确到 3 位有效数字。<br><br>' +
     '<b>解答：</b><br>' +
     '分子：$3.7^2 + \\sqrt{19.6} = 18.117...$<br>' +
     '分母：$2.1 - 0.84 = 1.26$<br>' +
     '$\\frac{18.117...}{1.26} \\approx 14.4$（3 s.f.）<br><br>' +
-    '<b>考试技巧：</b>输入计算器时给分子和分母加括号。'
+    '<b>经典例题 2</b> [2 分]<br>' +
+    '用计算器求 $\\frac{\\sqrt[3]{2.744}}{1 - \\cos 40°}$，精确到 4 位有效数字。<br><br>' +
+    '<b>解答：</b><br>' +
+    '$\\sqrt[3]{2.744} = 1.4$<br>' +
+    '$\\cos 40° = 0.7660...$<br>' +
+    '$\\frac{1.4}{0.2339...} = 5.985...$（4 s.f.）<br><br>' +
+    '<b>经典例题 3</b> [3 分]<br>' +
+    '球体体积公式 $V = \\frac{4}{3}\\pi r^3$。当 $r = 5.2$ cm 时求 $V$（取整到最近整数）。<br><br>' +
+    '<b>解答：</b><br>' +
+    '$V = \\frac{4}{3} \\times \\pi \\times 5.2^3 = 588.977...$<br>' +
+    '$\\approx 589$ cm³<br><br>' +
+    '<b>考试技巧：</b>输入计算器时给分子和分母加括号。取整前先写出计算器显示的至少 4 位数字。'
 });
 
 // ── 1.15 Time, speed and rates ──
@@ -817,7 +1252,13 @@ add('cie', '1.15', 'knowledge', {
 
 add('cie', '1.15', 'examples', {
   content:
-    '<b>Worked Example</b> [3 marks]<br>' +
+    '<b>Worked Example 1</b> [2 marks]<br>' +
+    'A journey starts at 09:45 and finishes at 12:20. How long is the journey in hours and minutes?<br><br>' +
+    '<b>Solution:</b><br>' +
+    '09:45 to 12:00 = 2 hours 15 minutes<br>' +
+    '12:00 to 12:20 = 20 minutes<br>' +
+    'Total = 2 hours 35 minutes<br><br>' +
+    '<b>Worked Example 2</b> [3 marks]<br>' +
     'A train travels 50 km at 40 km/h, then 60 km at 30 km/h. Find the average speed for the whole journey, to 3 s.f.<br><br>' +
     '<b>Solution:</b><br>' +
     'Time 1 = $\\frac{50}{40} = 1.25$ hours<br>' +
@@ -825,15 +1266,32 @@ add('cie', '1.15', 'examples', {
     'Total distance = $50 + 60 = 110$ km<br>' +
     'Total time = $1.25 + 2 = 3.25$ hours<br>' +
     'Average speed = $\\frac{110}{3.25} = 33.8$ km/h (3 s.f.)<br><br>' +
-    '<b>Exam Tip:</b> Find each time separately, then use total distance ÷ total time.',
+    '<b>Worked Example 3</b> [4 marks — Extended]<br>' +
+    'A gold bar has mass 12.4 kg and volume $642$ cm³. Calculate the density of gold in g/cm³, correct to 3 s.f.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Convert mass: $12.4$ kg $= 12\\,400$ g<br>' +
+    'Density = $\\frac{\\text{mass}}{\\text{volume}} = \\frac{12\\,400}{642} = 19.3$ g/cm³ (3 s.f.)<br><br>' +
+    '<b>Exam Tip:</b> Average speed = total distance ÷ total time (NOT the mean of two speeds). For compound measures, check your units are consistent before calculating.',
   content_zh:
-    '<b>经典例题</b> [3 分]<br>' +
+    '<b>经典例题 1</b> [2 分]<br>' +
+    '一段旅程从 09:45 开始，12:20 结束。旅程用了多长时间？<br><br>' +
+    '<b>解答：</b><br>' +
+    '09:45 到 12:00 = 2 小时 15 分<br>' +
+    '12:00 到 12:20 = 20 分<br>' +
+    '共 2 小时 35 分<br><br>' +
+    '<b>经典例题 2</b> [3 分]<br>' +
     '火车先以 40 km/h 走了 50 km，再以 30 km/h 走了 60 km。求全程平均速度（3 s.f.）。<br><br>' +
     '<b>解答：</b><br>' +
     '第1段时间 = $\\frac{50}{40} = 1.25$ 小时<br>' +
     '第2段时间 = $\\frac{60}{30} = 2$ 小时<br>' +
     '总路程 = $110$ km，总时间 = $3.25$ 小时<br>' +
-    '平均速度 = $\\frac{110}{3.25} = 33.8$ km/h'
+    '平均速度 = $\\frac{110}{3.25} = 33.8$ km/h<br><br>' +
+    '<b>经典例题 3</b> [4 分 — 进阶]<br>' +
+    '一块金条质量 12.4 kg，体积 $642$ cm³。求金的密度（g/cm³，3 s.f.）。<br><br>' +
+    '<b>解答：</b><br>' +
+    '质量转换：$12.4$ kg $= 12\\,400$ g<br>' +
+    '密度 = $\\frac{12\\,400}{642} = 19.3$ g/cm³（3 s.f.）<br><br>' +
+    '<b>考试技巧：</b>平均速度 = 总路程÷总时间（不是两速度的算术平均）。复合量计算前要统一单位。'
 });
 
 // ── 1.16 Money and finance ──
@@ -860,19 +1318,49 @@ add('cie', '1.16', 'knowledge', {
 
 add('cie', '1.16', 'examples', {
   content:
-    '<b>Worked Example</b> [3 marks]<br>' +
+    '<b>Worked Example 1</b> [2 marks]<br>' +
+    'Convert $\\$250$ to euros when the exchange rate is $\\$1 = €0.92$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '$250 \\times 0.92 = €230$<br><br>' +
+    '<b>Worked Example 2</b> [3 marks]<br>' +
     'A shop buys a coat for $\\$40$ and sells it for $\\$52$. Calculate the percentage profit.<br><br>' +
     '<b>Solution:</b><br>' +
     'Profit = $52 - 40 = \\$12$<br>' +
     'Percentage profit = $\\frac{12}{40} \\times 100 = 30\\%$<br><br>' +
-    '<b>Exam Tip:</b> Percentage profit/loss is always calculated as a percentage of the COST price, not the selling price.',
+    '<b>Worked Example 3</b> [4 marks — Extended]<br>' +
+    '$\\$8000$ is invested at $4.5\\%$ simple interest per year. Find the total value after 3 years.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '$I = \\frac{PRT}{100} = \\frac{8000 \\times 4.5 \\times 3}{100} = \\$1080$<br>' +
+    'Total value = $8000 + 1080 = \\$9080$<br><br>' +
+    '<b>Worked Example 4</b> [5 marks — Extended]<br>' +
+    'Maria changes $€500$ to dollars at a rate of $€1 = \\$1.12$. She spends $\\$340$ and changes the remaining dollars back to euros at $€1 = \\$1.08$. How many euros does she receive?<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Dollars received: $500 \\times 1.12 = \\$560$<br>' +
+    'Remaining: $560 - 340 = \\$220$<br>' +
+    'Convert back: $\\frac{220}{1.08} = €203.70$ (to nearest cent)<br><br>' +
+    '<b>Exam Tip:</b> Percentage profit/loss is always based on the COST price. For currency problems, check whether you should multiply or divide by the exchange rate.',
   content_zh:
-    '<b>经典例题</b> [3 分]<br>' +
+    '<b>经典例题 1</b> [2 分]<br>' +
+    '汇率 $\\$1 = €0.92$ 时，将 $\\$250$ 换成欧元。<br><br>' +
+    '<b>解答：</b><br>' +
+    '$250 \\times 0.92 = €230$<br><br>' +
+    '<b>经典例题 2</b> [3 分]<br>' +
     '商店以 $\\$40$ 进货，$\\$52$ 出售。求利润百分比。<br><br>' +
     '<b>解答：</b><br>' +
     '利润 = $52 - 40 = \\$12$<br>' +
     '利润率 = $\\frac{12}{40} \\times 100 = 30\\%$<br><br>' +
-    '<b>考试技巧：</b>利润率以成本价为基准，不是售价。'
+    '<b>经典例题 3</b> [4 分 — 进阶]<br>' +
+    '$\\$8000$ 以年利率 $4.5\\%$ 单利投资。求 3 年后的总价值。<br><br>' +
+    '<b>解答：</b><br>' +
+    '$I = \\frac{8000 \\times 4.5 \\times 3}{100} = \\$1080$<br>' +
+    '总价值 = $8000 + 1080 = \\$9080$<br><br>' +
+    '<b>经典例题 4</b> [5 分 — 进阶]<br>' +
+    'Maria 以 $€1 = \\$1.12$ 将 $€500$ 换成美元，花了 $\\$340$，剩余以 $€1 = \\$1.08$ 换回欧元。她收到多少欧元？<br><br>' +
+    '<b>解答：</b><br>' +
+    '收到美元：$500 \\times 1.12 = \\$560$<br>' +
+    '剩余：$560 - 340 = \\$220$<br>' +
+    '换回：$\\frac{220}{1.08} = €203.70$<br><br>' +
+    '<b>考试技巧：</b>利润率以成本价为基准。汇率题要看清转换方向（乘还是除）。'
 });
 
 // ── 1.17 Exponential growth and decay (Extended only) ──
@@ -915,20 +1403,54 @@ add('cie', '1.17', 'knowledge', {
 
 add('cie', '1.17', 'examples', {
   content:
-    '<b>Worked Example</b> [3 marks]<br>' +
+    '<b>Worked Example 1</b> [2 marks]<br>' +
+    'A population of bacteria starts at 500 and doubles every hour. Find the population after 4 hours.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '$P = 500 \\times 2^4 = 500 \\times 16 = 8000$<br><br>' +
+    '<b>Worked Example 2</b> [3 marks]<br>' +
     'A car costs $\\$24\\,000$ and depreciates by 12% each year. Find its value after 3 years.<br><br>' +
     '<b>Solution:</b><br>' +
     '$V = 24000 \\times (1 - 0.12)^3$<br>' +
     '$= 24000 \\times 0.88^3$<br>' +
     '$= 24000 \\times 0.681472$<br>' +
     '$= \\$16\\,355.33$<br><br>' +
-    '<b>Exam Tip:</b> Depreciation is exponential DECAY — use $(1 - \\frac{r}{100})$, not $(1 + \\frac{r}{100})$.',
+    '<b>Worked Example 3</b> [4 marks — Extended]<br>' +
+    'A radioactive substance decays at 8% per day. Initially there is 200 g. After how many complete days will the mass first fall below 100 g?<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Need $200 \\times 0.92^n < 100$, i.e. $0.92^n < 0.5$<br>' +
+    '$0.92^8 = 0.5132...$, $0.92^9 = 0.4722...$<br>' +
+    'After 9 complete days.<br><br>' +
+    '<b>Worked Example 4</b> [5 marks — Extended]<br>' +
+    'A town\'s population is 45 000, increasing at $r\\%$ per year. After 5 years the population is 52 000. Find $r$ correct to 1 decimal place.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '$45000 \\times (1 + \\frac{r}{100})^5 = 52000$<br>' +
+    '$(1 + \\frac{r}{100})^5 = \\frac{52000}{45000} = 1.1\\overline{5}$<br>' +
+    '$1 + \\frac{r}{100} = 1.1\\overline{5}^{\\frac{1}{5}} = 1.0294...$<br>' +
+    '$r = 2.9\\%$ (1 d.p.)<br><br>' +
+    '<b>Exam Tip:</b> Depreciation is exponential DECAY — use $(1 - \\frac{r}{100})$. For "after how many years" problems, use trial and improvement. To find the rate, rearrange and use the $n$th root.',
   content_zh:
-    '<b>经典例题</b> [3 分]<br>' +
+    '<b>经典例题 1</b> [2 分]<br>' +
+    '500 个细菌每小时翻倍。求 4 小时后的数量。<br><br>' +
+    '<b>解答：</b><br>' +
+    '$P = 500 \\times 2^4 = 8000$<br><br>' +
+    '<b>经典例题 2</b> [3 分]<br>' +
     '一辆车售价 $\\$24\\,000$，每年折旧 12%。求 3 年后的价值。<br><br>' +
     '<b>解答：</b><br>' +
     '$V = 24000 \\times 0.88^3 = \\$16\\,355.33$<br><br>' +
-    '<b>考试技巧：</b>折旧是指数衰减，用 $(1 - \\frac{r}{100})$。'
+    '<b>经典例题 3</b> [4 分 — 进阶]<br>' +
+    '一种放射性物质每天衰减 8%。初始 200 g。经过多少个完整天后质量首次低于 100 g？<br><br>' +
+    '<b>解答：</b><br>' +
+    '需要 $200 \\times 0.92^n < 100$，即 $0.92^n < 0.5$<br>' +
+    '$0.92^8 = 0.513...$，$0.92^9 = 0.472...$<br>' +
+    '经过 9 个完整天。<br><br>' +
+    '<b>经典例题 4</b> [5 分 — 进阶]<br>' +
+    '一个镇的人口 45 000，每年增长 $r\\%$。5 年后人口为 52 000。求 $r$（1 位小数）。<br><br>' +
+    '<b>解答：</b><br>' +
+    '$45000 \\times (1 + \\frac{r}{100})^5 = 52000$<br>' +
+    '$(1 + \\frac{r}{100})^5 = \\frac{52000}{45000} = 1.1\\overline{5}$<br>' +
+    '$1 + \\frac{r}{100} = 1.1\\overline{5}^{\\frac{1}{5}} = 1.0294...$<br>' +
+    '$r = 2.9\\%$<br><br>' +
+    '<b>考试技巧：</b>折旧是指数衰减，用 $(1 - \\frac{r}{100})$。"多少年后"用试错法。求增长率时，变形后开 $n$ 次方。'
 });
 
 // ── 1.18 Surds (Extended only) ──
@@ -978,7 +1500,18 @@ add('cie', '1.18', 'examples', {
     'Rationalise the denominator: $\\frac{6}{3 + \\sqrt{3}}$.<br><br>' +
     '<b>Solution:</b><br>' +
     '$= \\frac{6(3 - \\sqrt{3})}{(3 + \\sqrt{3})(3 - \\sqrt{3})} = \\frac{18 - 6\\sqrt{3}}{9 - 3} = \\frac{18 - 6\\sqrt{3}}{6} = 3 - \\sqrt{3}$<br><br>' +
-    '<b>Exam Tip:</b> To rationalise $\\frac{a}{b + \\sqrt{c}}$, multiply by $\\frac{b - \\sqrt{c}}{b - \\sqrt{c}}$. This uses the difference of two squares to eliminate the surd from the denominator.',
+    '<b>Worked Example 3</b> [4 marks — Extended]<br>' +
+    'Expand and simplify $(2 + \\sqrt{5})(3 - \\sqrt{5})$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '$= 2 \\times 3 + 2 \\times (-\\sqrt{5}) + \\sqrt{5} \\times 3 + \\sqrt{5} \\times (-\\sqrt{5})$<br>' +
+    '$= 6 - 2\\sqrt{5} + 3\\sqrt{5} - 5$<br>' +
+    '$= 1 + \\sqrt{5}$<br><br>' +
+    '<b>Worked Example 4</b> [5 marks — Extended]<br>' +
+    'Show that $\\frac{\\sqrt{12} + \\sqrt{3}}{\\sqrt{12} - \\sqrt{3}}$ can be written as $3$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Simplify: $\\sqrt{12} = 2\\sqrt{3}$<br>' +
+    '$\\frac{2\\sqrt{3} + \\sqrt{3}}{2\\sqrt{3} - \\sqrt{3}} = \\frac{3\\sqrt{3}}{\\sqrt{3}} = 3$<br><br>' +
+    '<b>Exam Tip:</b> To rationalise $\\frac{a}{b + \\sqrt{c}}$, multiply by $\\frac{b - \\sqrt{c}}{b - \\sqrt{c}}$. Always simplify surds first — it often makes the calculation much easier.',
   content_zh:
     '<b>经典例题 1</b> [2 分]<br>' +
     '化简 $\\sqrt{48} + \\sqrt{27}$。<br><br>' +
@@ -988,8 +1521,18 @@ add('cie', '1.18', 'examples', {
     '<b>经典例题 2</b> [3 分]<br>' +
     '有理化分母：$\\frac{6}{3 + \\sqrt{3}}$。<br><br>' +
     '<b>解答：</b><br>' +
-    '$= \\frac{6(3 - \\sqrt{3})}{(3)^2 - (\\sqrt{3})^2} = \\frac{18 - 6\\sqrt{3}}{6} = 3 - \\sqrt{3}$<br><br>' +
-    '<b>考试技巧：</b>有理化 $\\frac{a}{b + \\sqrt{c}}$ 时，乘以 $\\frac{b - \\sqrt{c}}{b - \\sqrt{c}}$，利用平方差消去根号。'
+    '$= \\frac{6(3 - \\sqrt{3})}{9 - 3} = \\frac{18 - 6\\sqrt{3}}{6} = 3 - \\sqrt{3}$<br><br>' +
+    '<b>经典例题 3</b> [4 分 — 进阶]<br>' +
+    '展开并化简 $(2 + \\sqrt{5})(3 - \\sqrt{5})$。<br><br>' +
+    '<b>解答：</b><br>' +
+    '$= 6 - 2\\sqrt{5} + 3\\sqrt{5} - 5$<br>' +
+    '$= 1 + \\sqrt{5}$<br><br>' +
+    '<b>经典例题 4</b> [5 分 — 进阶]<br>' +
+    '证明 $\\frac{\\sqrt{12} + \\sqrt{3}}{\\sqrt{12} - \\sqrt{3}}$ 可以写成 $3$。<br><br>' +
+    '<b>解答：</b><br>' +
+    '先化简：$\\sqrt{12} = 2\\sqrt{3}$<br>' +
+    '$\\frac{2\\sqrt{3} + \\sqrt{3}}{2\\sqrt{3} - \\sqrt{3}} = \\frac{3\\sqrt{3}}{\\sqrt{3}} = 3$<br><br>' +
+    '<b>考试技巧：</b>有理化 $\\frac{a}{b + \\sqrt{c}}$ 时，乘以共轭表达式。先化简根式往往能大幅简化计算。'
 });
 
 /* ══════════════════════════════════════════════════

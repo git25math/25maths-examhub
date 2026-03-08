@@ -1,5 +1,34 @@
 # Changelog
 
+## [2.3.2] - 2026-03-08 — Phase 10C-B 经典例题扩充（CIE 291 道 worked examples）
+
+### 内容扩充
+- **CIE 0580 经典例题**: 72 个知识点的 worked examples 从 92 道扩充至 **291 道**
+  - 每个知识点 3-5 道例题，覆盖 Core + Extended 难度层级
+  - 格式统一：题目 + `[marks]` + Solution 步骤 + Exam Tip（双语英中）
+  - Extended 级例题标记 `[marks — Extended]` / `[分 — 进阶]`
+  - 使用 CIE 0580 命令词（calculate, find, show that, determine, explain）
+  - LaTeX 数学公式完整（KaTeX 兼容）
+- **章节分布**: Ch1 Number (~72) + Ch2 Algebra (~55) + Ch3 Coord Geo (~26) + Ch4 Geometry (~32) + Ch5-6 Mensuration & Trig (~48) + Ch7-9 Transform & Stats (~58)
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `scripts/seed-section-content.js` | Ch1 例题扩充（18 sections） |
+| `scripts/seed-ch2.js` | Ch2 例题扩充（13 sections） |
+| `scripts/seed-ch3.js` | Ch3 例题扩充（7 sections） |
+| `scripts/seed-ch4.js` | Ch4 例题扩充（8 sections） |
+| `scripts/seed-ch5-6.js` | Ch5-6 例题扩充（11 sections） |
+| `scripts/seed-ch7-9.js` | Ch7-9 例题扩充（15 sections） |
+| `scripts/seed-ch*.sql` | 6 个 SQL 种子文件（共 252 行 upsert） |
+| `js/config.js` | v2.3.1 → v2.3.2 |
+
+### 部署步骤
+1. 运行 6 个 SQL 文件至 Supabase Dashboard SQL Editor
+2. `section_edits` 表 72 行 CIE examples 数据更新
+
+---
+
 ## [2.3.1] - 2026-03-08 — 知识点 Test Yourself MCQ 引擎 + 进度追踪
 
 ### 新功能

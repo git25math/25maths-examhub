@@ -2695,7 +2695,8 @@ document.addEventListener('click', function(e) {
       if (kpPts[ki].id === kpQuizId) { kpObj = kpPts[ki]; break; }
     }
     if (!kpObj) return;
-    var tqItem = kpObj.testYourself[qIdx];
+    var tqItem = kpObj.testYourself ? kpObj.testYourself[qIdx] : null;
+    if (!tqItem) return;
     var ansIdx = tqItem.a;
     var isCorrect = optIdx === ansIdx;
     /* Mark options */

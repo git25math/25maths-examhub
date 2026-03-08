@@ -47,21 +47,37 @@ add('cie', '4.1', 'knowledge', {
 
 add('cie', '4.1', 'examples', {
   content:
-    '<b>Worked Example</b> [3 marks]<br>' +
+    '<b>Worked Example 1</b> [2 marks]<br>' +
+    'Describe fully the difference between a <b>line</b> and a <b>line segment</b>.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'A line extends infinitely in both directions; a line segment has two fixed endpoints and a definite length.<br><br>' +
+    '<b>Worked Example 2</b> [3 marks]<br>' +
     'A quadrilateral has two pairs of equal adjacent sides but its diagonals are NOT equal. Name the shape and state its properties.<br><br>' +
     '<b>Solution:</b><br>' +
     'The shape is a <b>kite</b>.<br>' +
     'Properties: two pairs of equal adjacent sides, one pair of equal angles, diagonals cross at right angles, one diagonal bisects the other.<br><br>' +
-    '<b>Exam Tip:</b> "Adjacent" means next to each other — not opposite.',
+    '<b>Worked Example 3</b> [3 marks]<br>' +
+    'A triangle has sides 5 cm, 5 cm and 8 cm. Name the type of triangle, and find how many lines of symmetry it has.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'The triangle is <b>isosceles</b> (two equal sides).<br>' +
+    'It has <b>1</b> line of symmetry (the perpendicular bisector of the unequal side).<br><br>' +
+    '<b>Exam Tip:</b> Know the difference between scalene (0 equal sides), isosceles (2 equal sides) and equilateral (3 equal sides) — and how many lines of symmetry each has.',
   content_zh:
-    '<b>经典例题</b> [3 分]<br>' +
-    '一个四边形有两组相等的邻边，但其对角线不相等。命名该形状并说明其性质。<br>' +
-    '<br>' +
+    '<b>经典例题 1</b> [2 分]<br>' +
+    '完整描述<b>直线</b>和<b>线段</b>之间的区别。<br><br>' +
+    '<b>解答：</b><br>' +
+    '直线向两个方向无限延伸；线段有两个固定端点且有确定长度。<br><br>' +
+    '<b>经典例题 2</b> [3 分]<br>' +
+    '一个四边形有两组相等的邻边，但其对角线不相等。命名该形状并说明其性质。<br><br>' +
     '<b>解答：</b><br>' +
     '该形状是<b>筝形</b>。<br>' +
-    '性质：两组相等的邻边，一组相等的对角，对角线垂直相交，其中一条对角线平分另一条。<br>' +
-    '<br>' +
-    '<b>考试技巧：</b>"Adjacent"（相邻的）意味着挨在一起——而不是相对。'
+    '性质：两组相等的邻边，一组相等的对角，对角线垂直相交，其中一条对角线平分另一条。<br><br>' +
+    '<b>经典例题 3</b> [3 分]<br>' +
+    '一个三角形的边长为 5 cm、5 cm 和 8 cm。命名三角形类型，并说明它有几条对称轴。<br><br>' +
+    '<b>解答：</b><br>' +
+    '该三角形是<b>等腰三角形</b>（两边相等）。<br>' +
+    '它有 <b>1</b> 条对称轴（不等边的垂直平分线）。<br><br>' +
+    '<b>考试技巧：</b>了解不等边三角形（0 条等边）、等腰三角形（2 条等边）和等边三角形（3 条等边）的区别——以及每种有几条对称轴。'
 });
 
 // ── 4.2 Geometrical constructions ──
@@ -96,25 +112,61 @@ add('cie', '4.2', 'knowledge', {
 
 add('cie', '4.2', 'examples', {
   content:
-    '<b>Worked Example</b> [3 marks]<br>' +
+    '<b>Worked Example 1</b> [3 marks]<br>' +
     'Construct triangle $ABC$ where $AB = 8$ cm, $AC = 6$ cm, $BC = 7$ cm.<br><br>' +
     '<b>Solution:</b><br>' +
     '1. Draw $AB = 8$ cm.<br>' +
     '2. Set compass to 6 cm, draw arc from $A$.<br>' +
     '3. Set compass to 7 cm, draw arc from $B$.<br>' +
     '4. Mark intersection as $C$. Join $AC$ and $BC$.<br><br>' +
-    '<b>Exam Tip:</b> Measure your base line accurately — a 1 mm error at the start leads to bigger errors later.',
+    '<b>Worked Example 2</b> [3 marks]<br>' +
+    'Construct the perpendicular bisector of a line segment $PQ$ of length 10 cm.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '1. Draw $PQ = 10$ cm.<br>' +
+    '2. Set compass to more than 5 cm. Draw arcs from $P$ above and below the line.<br>' +
+    '3. Keeping the same radius, draw arcs from $Q$ to intersect the first arcs.<br>' +
+    '4. Join the two intersection points — this line is the perpendicular bisector.<br><br>' +
+    '<b>Worked Example 3</b> [3 marks]<br>' +
+    'Construct an angle of $60°$ at point $A$ on a line.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '1. From $A$, draw an arc cutting the line at $B$.<br>' +
+    '2. With the same radius, draw an arc from $B$ to cut the first arc at $C$.<br>' +
+    '3. Draw $AC$. $\\angle BAC = 60°$ (equilateral triangle construction).<br><br>' +
+    '<b>Worked Example 4</b> [4 marks]<br>' +
+    'Construct the bisector of $\\angle XYZ = 80°$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '1. From vertex $Y$, draw an arc cutting $YX$ at $P$ and $YZ$ at $Q$.<br>' +
+    '2. From $P$, draw an arc. From $Q$, draw an arc with the same radius to intersect at $R$.<br>' +
+    '3. Draw $YR$ — this is the angle bisector, making two angles of $40°$.<br><br>' +
+    '<b>Exam Tip:</b> Always leave your construction arcs visible — the examiner must see them to award full marks.',
   content_zh:
-    '<b>经典例题</b> [3 分]<br>' +
-    '作三角形 $ABC$，其中 $AB = 8$ cm，$AC = 6$ cm，$BC = 7$ cm。<br>' +
-    '<br>' +
+    '<b>经典例题 1</b> [3 分]<br>' +
+    '作三角形 $ABC$，其中 $AB = 8$ cm，$AC = 6$ cm，$BC = 7$ cm。<br><br>' +
     '<b>解答：</b><br>' +
     '1. 画出 $AB = 8$ cm。<br>' +
     '2. 将圆规设为 6 cm，从 $A$ 点画弧。<br>' +
     '3. 将圆规设为 7 cm，从 $B$ 点画弧。<br>' +
-    '4. 将交点标记为 $C$。连接 $AC$ 和 $BC$。<br>' +
-    '<br>' +
-    '<b>考试技巧：</b>准确测量基线 —— 开始时 1 mm 的误差会导致后面更大的误差。'
+    '4. 将交点标记为 $C$。连接 $AC$ 和 $BC$。<br><br>' +
+    '<b>经典例题 2</b> [3 分]<br>' +
+    '作长度为 10 cm 的线段 $PQ$ 的垂直平分线。<br><br>' +
+    '<b>解答：</b><br>' +
+    '1. 画出 $PQ = 10$ cm。<br>' +
+    '2. 将圆规设为大于 5 cm。从 $P$ 在线段上方和下方画弧。<br>' +
+    '3. 保持同样的半径，从 $Q$ 画弧与第一组弧线相交。<br>' +
+    '4. 连接两个交点——此线即为垂直平分线。<br><br>' +
+    '<b>经典例题 3</b> [3 分]<br>' +
+    '在直线上的 $A$ 点作 $60°$ 角。<br><br>' +
+    '<b>解答：</b><br>' +
+    '1. 从 $A$ 画弧切直线于 $B$。<br>' +
+    '2. 以相同半径从 $B$ 画弧，交第一条弧于 $C$。<br>' +
+    '3. 画 $AC$。$\\angle BAC = 60°$（等边三角形作法）。<br><br>' +
+    '<b>经典例题 4</b> [4 分]<br>' +
+    '作 $\\angle XYZ = 80°$ 的角平分线。<br><br>' +
+    '<b>解答：</b><br>' +
+    '1. 从顶点 $Y$ 画弧，分别交 $YX$ 于 $P$、交 $YZ$ 于 $Q$。<br>' +
+    '2. 从 $P$ 画弧，从 $Q$ 以相同半径画弧，交于 $R$。<br>' +
+    '3. 画 $YR$——此即角平分线，将角分为两个 $40°$。<br><br>' +
+    '<b>考试技巧：</b>务必保留作图痕迹（弧线）——阅卷老师必须看到它们才能给满分。'
 });
 
 // ── 4.3 Scale drawings and bearings ──
@@ -145,21 +197,49 @@ add('cie', '4.3', 'knowledge', {
 
 add('cie', '4.3', 'examples', {
   content:
-    '<b>Worked Example</b> [3 marks]<br>' +
-    'The bearing of $B$ from $A$ is $065°$. Find the bearing of $A$ from $B$.<br><br>' +
-    '<b>Solution:</b><br>' +
-    'Back bearing = $065° + 180° = 245°$<br><br>' +
-    '<b>Worked Example 2</b> [2 marks]<br>' +
+    '<b>Worked Example 1</b> [2 marks]<br>' +
     'On a map with scale $1 : 50\\,000$, two towns are 6.4 cm apart. Find the real distance in km.<br><br>' +
     '<b>Solution:</b><br>' +
-    '$6.4 \\times 50\\,000 = 320\\,000$ cm $= 3.2$ km',
+    '$6.4 \\times 50\\,000 = 320\\,000$ cm $= 3.2$ km<br><br>' +
+    '<b>Worked Example 2</b> [3 marks]<br>' +
+    'The bearing of $B$ from $A$ is $065°$. Find the bearing of $A$ from $B$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Back bearing $= 065° + 180° = 245°$<br><br>' +
+    '<b>Worked Example 3</b> [3 marks]<br>' +
+    'The bearing of $C$ from $D$ is $310°$. Find the bearing of $D$ from $C$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Since $310° > 180°$, back bearing $= 310° - 180° = 130°$.<br>' +
+    'The bearing of $D$ from $C$ is $130°$.<br><br>' +
+    '<b>Worked Example 4</b> [4 marks]<br>' +
+    'On a map with scale $1 : 25\\,000$, a park has area $8\\text{ cm}^2$. Find the real area in $\\text{m}^2$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Scale factor for length $= 25\\,000$.<br>' +
+    'Scale factor for area $= 25\\,000^2 = 625\\,000\\,000$.<br>' +
+    'Real area $= 8 \\times 625\\,000\\,000 = 5\\,000\\,000\\,000\\text{ cm}^2$.<br>' +
+    'Convert: $\\div 10\\,000 = 500\\,000\\text{ m}^2$.<br><br>' +
+    '<b>Exam Tip:</b> For area on a scale drawing, square the scale factor. For bearings, always give three figures (e.g. $008°$, not $8°$).',
   content_zh:
-    '<b>经典例题</b> [3 分]<br>' +
-    '$B$ 从 $A$ 的方位角为 $065°$。求 $A$ 从 $B$ 的方位角。<br><br>' +
-    '<b>解答：</b>反方位角 = $065° + 180° = 245°$<br><br>' +
-    '<b>经典例题 2</b> [2 分]<br>' +
+    '<b>经典例题 1</b> [2 分]<br>' +
     '比例尺 $1:50\\,000$ 的地图上两镇相距 6.4 cm。求实际距离。<br><br>' +
-    '<b>解答：</b>$6.4 \\times 50\\,000 = 320\\,000$ cm $= 3.2$ km'
+    '<b>解答：</b><br>' +
+    '$6.4 \\times 50\\,000 = 320\\,000$ cm $= 3.2$ km<br><br>' +
+    '<b>经典例题 2</b> [3 分]<br>' +
+    '$B$ 从 $A$ 的方位角为 $065°$。求 $A$ 从 $B$ 的方位角。<br><br>' +
+    '<b>解答：</b><br>' +
+    '反方位角 $= 065° + 180° = 245°$<br><br>' +
+    '<b>经典例题 3</b> [3 分]<br>' +
+    '$C$ 从 $D$ 的方位角为 $310°$。求 $D$ 从 $C$ 的方位角。<br><br>' +
+    '<b>解答：</b><br>' +
+    '因为 $310° > 180°$，反方位角 $= 310° - 180° = 130°$。<br>' +
+    '$D$ 从 $C$ 的方位角为 $130°$。<br><br>' +
+    '<b>经典例题 4</b> [4 分]<br>' +
+    '比例尺 $1:25\\,000$ 的地图上一个公园面积为 $8\\text{ cm}^2$。求实际面积（$\\text{m}^2$）。<br><br>' +
+    '<b>解答：</b><br>' +
+    '长度比例因子 $= 25\\,000$。<br>' +
+    '面积比例因子 $= 25\\,000^2 = 625\\,000\\,000$。<br>' +
+    '实际面积 $= 8 \\times 625\\,000\\,000 = 5\\,000\\,000\\,000\\text{ cm}^2$。<br>' +
+    '换算：$\\div 10\\,000 = 500\\,000\\text{ m}^2$。<br><br>' +
+    '<b>考试技巧：</b>比例图上的面积需要将比例因子平方。方位角务必写成三位数（如 $008°$，而不是 $8°$）。'
 });
 
 // ── 4.4 Similarity and congruence ──
@@ -192,23 +272,65 @@ add('cie', '4.4', 'knowledge', {
 
 add('cie', '4.4', 'examples', {
   content:
-    '<b>Worked Example</b> [4 marks]<br>' +
+    '<b>Worked Example 1</b> [2 marks]<br>' +
+    'Triangle $PQR$ has sides 3 cm, 4 cm and 5 cm. Triangle $XYZ$ has sides 6 cm, 8 cm and 10 cm. Explain why the triangles are similar.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '$\\frac{6}{3} = \\frac{8}{4} = \\frac{10}{5} = 2$. All corresponding sides are in the same ratio, so the triangles are similar (SSS similarity).<br><br>' +
+    '<b>Worked Example 2</b> [3 marks]<br>' +
+    'Two similar triangles have corresponding sides 5 cm and 8 cm. The area of the smaller triangle is $30\\text{ cm}^2$. Find the area of the larger.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Length scale factor $k = \\frac{8}{5} = 1.6$<br>' +
+    'Area scale factor $= k^2 = 1.6^2 = 2.56$<br>' +
+    'Area $= 30 \\times 2.56 = 76.8\\text{ cm}^2$<br><br>' +
+    '<b>Worked Example 3</b> [4 marks]<br>' +
     'Two similar cylinders have heights 10 cm and 15 cm. The smaller has volume $200\\text{ cm}^3$. Find the volume of the larger.<br><br>' +
     '<b>Solution:</b><br>' +
     'Length scale factor $k = \\frac{15}{10} = 1.5$<br>' +
     'Volume scale factor $= k^3 = 1.5^3 = 3.375$<br>' +
     'Volume $= 200 \\times 3.375 = 675\\text{ cm}^3$<br><br>' +
-    '<b>Exam Tip:</b> For area/volume problems, always find the <b>length</b> scale factor first, then square or cube it.',
+    '<b>Worked Example 4</b> [4 marks — Extended]<br>' +
+    'In $\\triangle ABC$, $D$ lies on $AB$ and $E$ lies on $AC$ such that $DE \\parallel BC$. $AD = 4$ cm, $DB = 6$ cm, $DE = 5$ cm. Find $BC$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '$\\triangle ADE \\sim \\triangle ABC$ ($DE \\parallel BC$, corresponding angles equal).<br>' +
+    '$\\frac{AD}{AB} = \\frac{DE}{BC}$, so $\\frac{4}{10} = \\frac{5}{BC}$.<br>' +
+    '$BC = \\frac{5 \\times 10}{4} = 12.5$ cm.<br><br>' +
+    '<b>Worked Example 5</b> [4 marks — Extended]<br>' +
+    'Two similar solids have surface areas $50\\text{ cm}^2$ and $200\\text{ cm}^2$. The volume of the smaller is $100\\text{ cm}^3$. Find the volume of the larger.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Area ratio $= \\frac{200}{50} = 4$, so length ratio $k = \\sqrt{4} = 2$.<br>' +
+    'Volume ratio $= k^3 = 2^3 = 8$.<br>' +
+    'Volume $= 100 \\times 8 = 800\\text{ cm}^3$.<br><br>' +
+    '<b>Exam Tip:</b> If given an area ratio, square root to get the length ratio. If given a volume ratio, cube root. Always find the <b>length</b> scale factor first.',
   content_zh:
-    '<b>经典例题</b> [4 分]<br>' +
-    '两个相似圆柱体的高度分别为 10 cm 和 15 cm。较小的圆柱体体积为 $200\\text{ cm}^3$。求较大圆柱体的体积。<br>' +
-    '<br>' +
+    '<b>经典例题 1</b> [2 分]<br>' +
+    '三角形 $PQR$ 的边长为 3 cm、4 cm 和 5 cm。三角形 $XYZ$ 的边长为 6 cm、8 cm 和 10 cm。解释为什么这两个三角形相似。<br><br>' +
+    '<b>解答：</b><br>' +
+    '$\\frac{6}{3} = \\frac{8}{4} = \\frac{10}{5} = 2$。所有对应边成相同比例，因此两三角形相似（SSS 相似）。<br><br>' +
+    '<b>经典例题 2</b> [3 分]<br>' +
+    '两个相似三角形的对应边分别为 5 cm 和 8 cm。较小三角形的面积为 $30\\text{ cm}^2$。求较大三角形的面积。<br><br>' +
+    '<b>解答：</b><br>' +
+    '长度比例因子 $k = \\frac{8}{5} = 1.6$<br>' +
+    '面积比例因子 $= k^2 = 1.6^2 = 2.56$<br>' +
+    '面积 $= 30 \\times 2.56 = 76.8\\text{ cm}^2$<br><br>' +
+    '<b>经典例题 3</b> [4 分]<br>' +
+    '两个相似圆柱体的高度分别为 10 cm 和 15 cm。较小的体积为 $200\\text{ cm}^3$。求较大的体积。<br><br>' +
     '<b>解答：</b><br>' +
     '长度比例因子 $k = \\frac{15}{10} = 1.5$<br>' +
     '体积比例因子 $= k^3 = 1.5^3 = 3.375$<br>' +
-    '体积 $= 200 \\times 3.375 = 675\\text{ cm}^3$<br>' +
-    '<br>' +
-    '<b>考试技巧：</b> 对于面积/体积问题，务必先找到<b>长度</b>比例因子，然后计算其平方或立方。'
+    '体积 $= 200 \\times 3.375 = 675\\text{ cm}^3$<br><br>' +
+    '<b>经典例题 4</b> [4 分 — 进阶]<br>' +
+    '在 $\\triangle ABC$ 中，$D$ 在 $AB$ 上，$E$ 在 $AC$ 上，$DE \\parallel BC$。$AD = 4$ cm，$DB = 6$ cm，$DE = 5$ cm。求 $BC$。<br><br>' +
+    '<b>解答：</b><br>' +
+    '$\\triangle ADE \\sim \\triangle ABC$（$DE \\parallel BC$，对应角相等）。<br>' +
+    '$\\frac{AD}{AB} = \\frac{DE}{BC}$，所以 $\\frac{4}{10} = \\frac{5}{BC}$。<br>' +
+    '$BC = \\frac{5 \\times 10}{4} = 12.5$ cm。<br><br>' +
+    '<b>经典例题 5</b> [4 分 — 进阶]<br>' +
+    '两个相似立体的表面积分别为 $50\\text{ cm}^2$ 和 $200\\text{ cm}^2$。较小的体积为 $100\\text{ cm}^3$。求较大的体积。<br><br>' +
+    '<b>解答：</b><br>' +
+    '面积比 $= \\frac{200}{50} = 4$，长度比 $k = \\sqrt{4} = 2$。<br>' +
+    '体积比 $= k^3 = 2^3 = 8$。<br>' +
+    '体积 $= 100 \\times 8 = 800\\text{ cm}^3$。<br><br>' +
+    '<b>考试技巧：</b>如果已知面积比，开平方根得到长度比。如果已知体积比，开立方根。务必先找到<b>长度</b>比例因子。'
 });
 
 // ── 4.5 Symmetry ──
@@ -238,28 +360,37 @@ add('cie', '4.5', 'knowledge', {
 
 add('cie', '4.5', 'examples', {
   content:
-    '<b>Worked Example</b> [2 marks]<br>' +
+    '<b>Worked Example 1</b> [2 marks]<br>' +
     'State the number of lines of symmetry and the order of rotational symmetry of a regular hexagon.<br><br>' +
     '<b>Solution:</b><br>' +
-    'Lines of symmetry = $6$<br>' +
-    'Order of rotational symmetry = $6$<br><br>' +
+    'Lines of symmetry $= 6$.<br>' +
+    'Order of rotational symmetry $= 6$.<br><br>' +
     '<b>Worked Example 2</b> [2 marks]<br>' +
     'A shape has rotational symmetry of order 3 but NO lines of symmetry. Give an example.<br><br>' +
     '<b>Solution:</b><br>' +
-    'A <b>triskelion</b> (or three identical arms arranged around a centre, like a recycling symbol).',
+    'A <b>triskelion</b> (or three identical arms arranged around a centre, like a recycling symbol).<br><br>' +
+    '<b>Worked Example 3</b> [3 marks]<br>' +
+    'A parallelogram has rotational symmetry of order 2. Explain why it has NO lines of symmetry.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'If you fold a parallelogram along any line, the two halves do not match exactly — the slanted sides fall in different positions.<br>' +
+    'However, rotating $180°$ about the centre maps each vertex onto the opposite vertex, so the order of rotational symmetry is $2$.<br><br>' +
+    '<b>Exam Tip:</b> Do not confuse rotational symmetry with line symmetry. A parallelogram has order 2 rotational symmetry but 0 lines of symmetry — this is a common exam question.',
   content_zh:
-    '<b>经典例题</b> [2 分]<br>' +
-    '指出正六边形的对称轴数量和旋转对称阶数。<br>' +
-    '<br>' +
+    '<b>经典例题 1</b> [2 分]<br>' +
+    '指出正六边形的对称轴数量和旋转对称阶数。<br><br>' +
     '<b>解答：</b><br>' +
-    '对称轴数量 = $6$<br>' +
-    '旋转对称阶数 = $6$<br>' +
-    '<br>' +
+    '对称轴数量 $= 6$。<br>' +
+    '旋转对称阶数 $= 6$。<br><br>' +
     '<b>经典例题 2</b> [2 分]<br>' +
-    '一个形状具有 3 阶旋转对称性，但没有对称轴。举出一个例子。<br>' +
-    '<br>' +
+    '一个形状具有 3 阶旋转对称性，但没有对称轴。举出一个例子。<br><br>' +
     '<b>解答：</b><br>' +
-    '一个<b>三曲腿图</b>（或者三个完全相同且围绕中心排列的图形分支，例如回收标志）。'
+    '一个<b>三曲腿图</b>（或者三个完全相同且围绕中心排列的图形分支，例如回收标志）。<br><br>' +
+    '<b>经典例题 3</b> [3 分]<br>' +
+    '平行四边形具有 2 阶旋转对称性。解释为什么它没有对称轴。<br><br>' +
+    '<b>解答：</b><br>' +
+    '如果沿任何一条线折叠平行四边形，两半都不能完全重合——倾斜的边会落在不同的位置。<br>' +
+    '但是，绕中心旋转 $180°$ 时，每个顶点都会映射到对面的顶点，因此旋转对称阶数为 $2$。<br><br>' +
+    '<b>考试技巧：</b>不要混淆旋转对称和轴对称。平行四边形有 2 阶旋转对称但 0 条对称轴——这是常见考题。'
 });
 
 // ── 4.6 Angles ──
@@ -300,23 +431,55 @@ add('cie', '4.6', 'knowledge', {
 
 add('cie', '4.6', 'examples', {
   content:
-    '<b>Worked Example 1</b> [3 marks]<br>' +
+    '<b>Worked Example 1</b> [2 marks]<br>' +
+    'Find the sum of the interior angles of a heptagon (7-sided polygon).<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Sum $= (7 - 2) \\times 180° = 5 \\times 180° = 900°$<br><br>' +
+    '<b>Worked Example 2</b> [3 marks]<br>' +
     'A regular polygon has interior angle $156°$. Find the number of sides.<br><br>' +
     '<b>Solution:</b><br>' +
     'Exterior angle $= 180° - 156° = 24°$<br>' +
     '$n = \\frac{360°}{24°} = 15$ sides<br><br>' +
-    '<b>Worked Example 2</b> [3 marks]<br>' +
+    '<b>Worked Example 3</b> [3 marks]<br>' +
     'In the diagram, $AB \\parallel CD$. Angle $ABE = 55°$ and angle $BED = 90°$. Find angle $CDE$.<br><br>' +
     '<b>Solution:</b><br>' +
     '$\\angle BEA = 180° - 90° - 55° = 35°$ (angles in triangle)<br>' +
-    '$\\angle CDE = \\angle BEA = 35°$ (alternate angles, $AB \\parallel CD$)',
+    '$\\angle CDE = \\angle BEA = 35°$ (alternate angles, $AB \\parallel CD$)<br><br>' +
+    '<b>Worked Example 4</b> [4 marks]<br>' +
+    'Two parallel lines are cut by a transversal. One angle is $3x + 10°$ and its co-interior angle is $2x + 20°$. Find the value of $x$ and both angles.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Co-interior angles sum to $180°$:<br>' +
+    '$(3x + 10) + (2x + 20) = 180$<br>' +
+    '$5x + 30 = 180$<br>' +
+    '$5x = 150$, so $x = 30$.<br>' +
+    'The angles are $3(30) + 10 = 100°$ and $2(30) + 20 = 80°$.<br>' +
+    'Check: $100° + 80° = 180°$ ✓<br><br>' +
+    '<b>Exam Tip:</b> Always give <b>reasons</b> for each step, e.g. "co-interior angles sum to $180°$", "alternate angles are equal". Without reasons you lose marks.',
   content_zh:
-    '<b>经典例题 1</b> [3 分]<br>' +
-    '正多边形内角 $156°$，求边数。<br><br>' +
-    '<b>解答：</b>外角 = $180° - 156° = 24°$，$n = \\frac{360°}{24°} = 15$<br><br>' +
+    '<b>经典例题 1</b> [2 分]<br>' +
+    '求七边形的内角和。<br><br>' +
+    '<b>解答：</b><br>' +
+    '内角和 $= (7 - 2) \\times 180° = 5 \\times 180° = 900°$<br><br>' +
     '<b>经典例题 2</b> [3 分]<br>' +
+    '正多边形内角 $156°$，求边数。<br><br>' +
+    '<b>解答：</b><br>' +
+    '外角 $= 180° - 156° = 24°$<br>' +
+    '$n = \\frac{360°}{24°} = 15$ 条边<br><br>' +
+    '<b>经典例题 3</b> [3 分]<br>' +
     '$AB \\parallel CD$，$\\angle ABE = 55°$，$\\angle BED = 90°$。求 $\\angle CDE$。<br><br>' +
-    '<b>解答：</b>$\\angle BEA = 35°$（三角形内角和），$\\angle CDE = 35°$（内错角）'
+    '<b>解答：</b><br>' +
+    '$\\angle BEA = 180° - 90° - 55° = 35°$（三角形内角和）<br>' +
+    '$\\angle CDE = \\angle BEA = 35°$（内错角，$AB \\parallel CD$）<br><br>' +
+    '<b>经典例题 4</b> [4 分]<br>' +
+    '两条平行线被截线所截。一个角为 $3x + 10°$，与它的同旁内角为 $2x + 20°$。求 $x$ 的值及两个角。<br><br>' +
+    '<b>解答：</b><br>' +
+    '同旁内角之和为 $180°$：<br>' +
+    '$(3x + 10) + (2x + 20) = 180$<br>' +
+    '$5x + 30 = 180$<br>' +
+    '$5x = 150$，所以 $x = 30$。<br>' +
+    '两角分别为 $3(30) + 10 = 100°$ 和 $2(30) + 20 = 80°$。<br>' +
+    '验证：$100° + 80° = 180°$ ✓<br><br>' +
+    '<b>考试技巧：</b>务必为每一步给出<b>理由</b>，例如"同旁内角互补"、"内错角相等"。没有理由会扣分。'
 });
 
 // ── 4.7 Circle theorems ──
@@ -350,18 +513,62 @@ add('cie', '4.7', 'knowledge', {
 
 add('cie', '4.7', 'examples', {
   content:
-    '<b>Worked Example</b> [4 marks]<br>' +
+    '<b>Worked Example 1</b> [3 marks]<br>' +
+    '$A$, $B$ and $C$ are points on a circle. $AB$ is a diameter. $\\angle BAC = 53°$. Find $\\angle ABC$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '$\\angle ACB = 90°$ (angle in a semicircle).<br>' +
+    '$\\angle ABC = 180° - 90° - 53° = 37°$ (angles in a triangle).<br><br>' +
+    '<b>Worked Example 2</b> [4 marks]<br>' +
     '$O$ is the centre of the circle. $A$, $B$, $C$ are on the circumference. Angle $AOB = 124°$. Find angle $ACB$ and angle $OAB$.<br><br>' +
     '<b>Solution:</b><br>' +
-    '$\\angle ACB = \\frac{124°}{2} = 62°$ (angle at centre = twice angle at circumference)<br>' +
+    '$\\angle ACB = \\frac{124°}{2} = 62°$ (angle at centre = twice angle at circumference).<br>' +
     '$\\triangle OAB$ is isosceles ($OA = OB$ = radius).<br>' +
-    '$\\angle OAB = \\frac{180° - 124°}{2} = \\frac{56°}{2} = 28°$<br><br>' +
-    '<b>Exam Tip:</b> Always state the circle theorem used. Draw radii if they help — $OA = OB$ = radius gives isosceles triangles.',
+    '$\\angle OAB = \\frac{180° - 124°}{2} = \\frac{56°}{2} = 28°$.<br><br>' +
+    '<b>Worked Example 3</b> [3 marks]<br>' +
+    '$ABCD$ is a cyclic quadrilateral. $\\angle DAB = 105°$ and $\\angle ABC = 80°$. Find $\\angle BCD$ and $\\angle CDA$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '$\\angle BCD = 180° - 105° = 75°$ (opposite angles in a cyclic quadrilateral sum to $180°$).<br>' +
+    '$\\angle CDA = 180° - 80° = 100°$ (opposite angles in a cyclic quadrilateral sum to $180°$).<br><br>' +
+    '<b>Worked Example 4</b> [4 marks — Extended]<br>' +
+    '$TA$ is a tangent to the circle at $A$. $AB$ is a chord. $\\angle TAB = 40°$. $C$ is on the major arc. Find $\\angle ACB$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '$\\angle ACB = \\angle TAB = 40°$ (alternate segment theorem: the angle between a tangent and a chord equals the angle in the alternate segment).<br><br>' +
+    '<b>Worked Example 5</b> [6 marks — Extended]<br>' +
+    '$O$ is the centre. Tangent $PT$ touches the circle at $T$. $PO$ extended meets the circle at $A$ and $B$. $\\angle TPB = 30°$. Find $\\angle OTP$, $\\angle TOP$ and $\\angle ATT\'$ where $T\'$ is another point on the circle.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '$\\angle OTP = 90°$ (tangent $\\perp$ radius at point of contact).<br>' +
+    '$\\angle TOP = 180° - 90° - 30° = 60°$ (angles in $\\triangle OTP$).<br>' +
+    '$\\angle TOB = 180° - 60° = 120°$ (angles on a straight line $AOB$).<br>' +
+    '$\\angle ATT\' = \\frac{120°}{2} = 60°$ (angle at circumference = half angle at centre, if $T\'$ is in the alternate segment).<br><br>' +
+    '<b>Exam Tip:</b> Always state the full circle theorem used. Draw radii to create isosceles triangles — $OA = OB$ = radius. Mark right angles where a tangent meets a radius.',
   content_zh:
-    '<b>经典例题</b> [4 分]<br>' +
+    '<b>经典例题 1</b> [3 分]<br>' +
+    '$A$、$B$ 和 $C$ 是圆上的点。$AB$ 是直径。$\\angle BAC = 53°$。求 $\\angle ABC$。<br><br>' +
+    '<b>解答：</b><br>' +
+    '$\\angle ACB = 90°$（半圆上的圆周角）。<br>' +
+    '$\\angle ABC = 180° - 90° - 53° = 37°$（三角形内角和）。<br><br>' +
+    '<b>经典例题 2</b> [4 分]<br>' +
     '$O$ 为圆心，$A, B, C$ 在圆上。$\\angle AOB = 124°$。求 $\\angle ACB$ 和 $\\angle OAB$。<br><br>' +
-    '<b>解答：</b>$\\angle ACB = 62°$（圆心角 = 2 × 圆周角）<br>' +
-    '$\\triangle OAB$ 等腰（$OA = OB$），$\\angle OAB = \\frac{56°}{2} = 28°$'
+    '<b>解答：</b><br>' +
+    '$\\angle ACB = \\frac{124°}{2} = 62°$（圆心角 = 2 × 圆周角）。<br>' +
+    '$\\triangle OAB$ 等腰（$OA = OB$ = 半径）。<br>' +
+    '$\\angle OAB = \\frac{180° - 124°}{2} = \\frac{56°}{2} = 28°$。<br><br>' +
+    '<b>经典例题 3</b> [3 分]<br>' +
+    '$ABCD$ 是圆内接四边形。$\\angle DAB = 105°$，$\\angle ABC = 80°$。求 $\\angle BCD$ 和 $\\angle CDA$。<br><br>' +
+    '<b>解答：</b><br>' +
+    '$\\angle BCD = 180° - 105° = 75°$（圆内接四边形对角互补）。<br>' +
+    '$\\angle CDA = 180° - 80° = 100°$（圆内接四边形对角互补）。<br><br>' +
+    '<b>经典例题 4</b> [4 分 — 进阶]<br>' +
+    '$TA$ 是圆在 $A$ 点的切线。$AB$ 是弦。$\\angle TAB = 40°$。$C$ 在优弧上。求 $\\angle ACB$。<br><br>' +
+    '<b>解答：</b><br>' +
+    '$\\angle ACB = \\angle TAB = 40°$（弦切角定理：切线与弦之间的夹角等于交错弓形内的角）。<br><br>' +
+    '<b>经典例题 5</b> [6 分 — 进阶]<br>' +
+    '$O$ 为圆心。切线 $PT$ 切圆于 $T$。$PO$ 延长交圆于 $A$ 和 $B$。$\\angle TPB = 30°$。求 $\\angle OTP$、$\\angle TOP$。<br><br>' +
+    '<b>解答：</b><br>' +
+    '$\\angle OTP = 90°$（切线与半径在切点处垂直）。<br>' +
+    '$\\angle TOP = 180° - 90° - 30° = 60°$（$\\triangle OTP$ 内角和）。<br>' +
+    '$\\angle TOB = 180° - 60° = 120°$（直线上的角互补）。<br><br>' +
+    '<b>考试技巧：</b>务必完整陈述所使用的圆定理。画出半径构造等腰三角形——$OA = OB$ = 半径。在切线与半径交汇处标出直角。'
 });
 
 // ── 4.8 Constructions and loci ──
@@ -400,25 +607,55 @@ add('cie', '4.8', 'knowledge', {
 
 add('cie', '4.8', 'examples', {
   content:
-    '<b>Worked Example</b> [4 marks]<br>' +
+    '<b>Worked Example 1</b> [2 marks]<br>' +
+    'Describe the locus of points that are exactly 5 cm from a fixed point $P$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'The locus is a <b>circle</b> with centre $P$ and radius 5 cm.<br><br>' +
+    '<b>Worked Example 2</b> [3 marks]<br>' +
+    'Two points $A$ and $B$ are 8 cm apart. Construct the locus of points equidistant from $A$ and $B$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '1. Set compass to more than 4 cm. Draw arcs from $A$ above and below the line $AB$.<br>' +
+    '2. With the same radius, draw arcs from $B$ to intersect.<br>' +
+    '3. Join the intersections — this perpendicular bisector is the required locus.<br><br>' +
+    '<b>Worked Example 3</b> [4 marks]<br>' +
     'In triangle $ABC$, find the region that is: (i) closer to $A$ than $B$, (ii) less than 4 cm from $C$, (iii) closer to $AC$ than $BC$.<br><br>' +
     '<b>Solution:</b><br>' +
     '(i) Construct the perpendicular bisector of $AB$. Region on $A$\'s side.<br>' +
     '(ii) Draw circle centre $C$, radius 4 cm. Region inside the circle.<br>' +
     '(iii) Construct the angle bisector of $\\angle ACB$. Region on $AC$\'s side.<br>' +
     'The answer is the intersection of all three regions.<br><br>' +
-    '<b>Exam Tip:</b> Use light shading or cross-hatching to clearly show the required region.',
+    '<b>Worked Example 4</b> [4 marks]<br>' +
+    'A rectangular garden $ABCD$ measures 10 m by 6 m. A fountain must be: (i) more than 3 m from $A$, (ii) closer to $AB$ than $CD$. Shade the region.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '(i) Draw a circle arc centre $A$, radius 3 cm (using scale). The fountain must be <b>outside</b> this arc.<br>' +
+    '(ii) Construct the perpendicular bisector of $AD$ (or $BC$). The fountain must be on the side closer to $AB$.<br>' +
+    'Shade the intersection of both regions within the rectangle.<br><br>' +
+    '<b>Exam Tip:</b> Read every condition carefully. The answer is often the intersection of two or more loci. Use clear shading and leave construction arcs visible.',
   content_zh:
-    '<b>经典例题</b> [4 分]<br>' +
-    '在三角形 $ABC$ 中，求满足以下条件的区域：(i) 距离 $A$ 比距离 $B$ 近，(ii) 距离 $C$ 小于 4 cm，(iii) 距离 $AC$ 比距离 $BC$ 近。<br>' +
-    '<br>' +
+    '<b>经典例题 1</b> [2 分]<br>' +
+    '描述距离固定点 $P$ 恰好 5 cm 的所有点的轨迹。<br><br>' +
+    '<b>解答：</b><br>' +
+    '轨迹是以 $P$ 为圆心、半径为 5 cm 的<b>圆</b>。<br><br>' +
+    '<b>经典例题 2</b> [3 分]<br>' +
+    '两点 $A$ 和 $B$ 相距 8 cm。作出距离 $A$ 和 $B$ 等距的点的轨迹。<br><br>' +
+    '<b>解答：</b><br>' +
+    '1. 将圆规设为大于 4 cm。从 $A$ 在 $AB$ 上方和下方画弧。<br>' +
+    '2. 以相同半径从 $B$ 画弧，使之相交。<br>' +
+    '3. 连接交点——此垂直平分线即为所求轨迹。<br><br>' +
+    '<b>经典例题 3</b> [4 分]<br>' +
+    '在三角形 $ABC$ 中，求满足以下条件的区域：(i) 距离 $A$ 比距离 $B$ 近，(ii) 距离 $C$ 小于 4 cm，(iii) 距离 $AC$ 比距离 $BC$ 近。<br><br>' +
     '<b>解答：</b><br>' +
     '(i) 作 $AB$ 的垂直平分线。取 $A$ 一侧的区域。<br>' +
     '(ii) 以 $C$ 为圆心，4 cm 为半径画圆。取圆内部的区域。<br>' +
     '(iii) 作 $\\angle ACB$ 的角平分线。取 $AC$ 一侧的区域。<br>' +
-    '答案是这三个区域的交集。<br>' +
-    '<br>' +
-    '<b>考试技巧：</b> 使用浅阴影或交叉阴影清晰地标出所需区域。'
+    '答案是这三个区域的交集。<br><br>' +
+    '<b>经典例题 4</b> [4 分]<br>' +
+    '长方形花园 $ABCD$ 尺寸为 10 m × 6 m。喷泉必须：(i) 距 $A$ 超过 3 m，(ii) 距 $AB$ 比距 $CD$ 更近。画出阴影区域。<br><br>' +
+    '<b>解答：</b><br>' +
+    '(i) 以 $A$ 为圆心，3 cm 为半径（按比例）画弧。喷泉必须在弧<b>外</b>。<br>' +
+    '(ii) 作 $AD$（或 $BC$）的垂直平分线。喷泉必须在靠近 $AB$ 的一侧。<br>' +
+    '在长方形内对两个区域的交集画阴影。<br><br>' +
+    '<b>考试技巧：</b>仔细阅读每一个条件。答案通常是两个或多个轨迹的交集。使用清晰的阴影并保留作图痕迹。'
 });
 
 /* ══════════════════════════════════════════════════

@@ -299,7 +299,7 @@
 
 ### Phase 10C — CIE 考纲驱动重构 [Phase A DONE]
 - [x] **Phase A 考纲骨架 + 数据迁移**：9 章 72 知识点 + 517 词 + 1,488 题映射 → v1.6.0
-- [ ] **Phase B 经典例题**：AI 生成 ~300 道 worked examples + ~~examples.js 渲染~~ 超管内联编辑 (v1.7.2)
+- [x] **Phase B 经典例题**：291 道 CIE worked examples（72 sections × 3-5 道，Core + Extended 分层）→ v2.3.2
 - [x] **Phase C 知识点精析模块 Phase 1**：数据架构 `knowledge-cie.json` + 知识点列表/详情页 5 区域布局 + 事件委托 + LaTeX → v2.3.0
   - [x] Phase 2：Test Yourself MCQ 引擎 + 进度追踪 + getSectionHealth 纳入 knowledgeScore → v2.3.1
   - [ ] Phase 3：超管编辑 + Edexcel/HHK 数据 + 内容批量生成

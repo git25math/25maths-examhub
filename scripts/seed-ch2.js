@@ -49,21 +49,45 @@ add('cie', '2.1', 'knowledge', {
 
 add('cie', '2.1', 'examples', {
   content:
-    '<b>Worked Example</b> [3 marks]<br>' +
+    '<b>Worked Example 1</b> [2 marks]<br>' +
+    'Write an expression for the total cost of $n$ pens at $3$ dollars each and $m$ notebooks at $5$ dollars each.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Total cost $= 3n + 5m$<br><br>' +
+    '<b>Worked Example 2</b> [3 marks]<br>' +
     'Given $a = -2$, $b = 3$, $c = -5$, find the value of:<br>' +
     '(a) $3a^2 - 2b$ &nbsp;&nbsp; (b) $\\frac{b - c}{a}$<br><br>' +
     '<b>Solution:</b><br>' +
-    '(a) $3(-2)^2 - 2(3) = 3(4) - 6 = 12 - 6 = 6$<br><br>' +
+    '(a) $3(-2)^2 - 2(3) = 3(4) - 6 = 12 - 6 = 6$<br>' +
     '(b) $\\frac{3 - (-5)}{-2} = \\frac{8}{-2} = -4$<br><br>' +
-    '<b>Exam Tip:</b> Always use brackets when substituting negative numbers to avoid sign errors.',
+    '<b>Worked Example 3</b> [3 marks]<br>' +
+    'Given that $y = \\frac{x^2 - 3}{2x + 1}$, find the value of $y$ when $x = 4$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '$y = \\frac{4^2 - 3}{2(4) + 1} = \\frac{16 - 3}{8 + 1} = \\frac{13}{9} = 1\\frac{4}{9}$<br><br>' +
+    '<b>Worked Example 4</b> [3 marks]<br>' +
+    '$T = \\frac{a(b + c)}{b - c}$. Calculate $T$ when $a = 6$, $b = -1$, $c = 3$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '$T = \\frac{6(-1 + 3)}{-1 - 3} = \\frac{6(2)}{-4} = \\frac{12}{-4} = -3$<br><br>' +
+    '<b>Exam Tip:</b> Always use brackets when substituting negative numbers to avoid sign errors. Show each step of your substitution clearly.',
   content_zh:
-    '<b>经典例题</b> [3 分]<br>' +
+    '<b>经典例题 1</b> [2 分]<br>' +
+    '写出 $n$ 支钢笔（每支 3 美元）和 $m$ 本笔记本（每本 5 美元）总费用的代数式。<br><br>' +
+    '<b>解答：</b><br>' +
+    '总费用 $= 3n + 5m$<br><br>' +
+    '<b>经典例题 2</b> [3 分]<br>' +
     '已知 $a = -2$, $b = 3$, $c = -5$，求：<br>' +
     '(a) $3a^2 - 2b$ &nbsp;&nbsp; (b) $\\frac{b - c}{a}$<br><br>' +
     '<b>解答：</b><br>' +
     '(a) $3(-2)^2 - 2(3) = 12 - 6 = 6$<br>' +
     '(b) $\\frac{3-(-5)}{-2} = \\frac{8}{-2} = -4$<br><br>' +
-    '<b>考试技巧：</b>代入负数时一定要加括号。'
+    '<b>经典例题 3</b> [3 分]<br>' +
+    '已知 $y = \\frac{x^2 - 3}{2x + 1}$，求 $x = 4$ 时 $y$ 的值。<br><br>' +
+    '<b>解答：</b><br>' +
+    '$y = \\frac{16 - 3}{8 + 1} = \\frac{13}{9} = 1\\frac{4}{9}$<br><br>' +
+    '<b>经典例题 4</b> [3 分]<br>' +
+    '$T = \\frac{a(b + c)}{b - c}$，当 $a = 6$, $b = -1$, $c = 3$ 时求 $T$。<br><br>' +
+    '<b>解答：</b><br>' +
+    '$T = \\frac{6(-1+3)}{-1-3} = \\frac{12}{-4} = -3$<br><br>' +
+    '<b>考试技巧：</b>代入负数时一定要加括号，每步代入过程都要清楚展示。'
 });
 
 // ── 2.2 Rearranging formulae ──
@@ -102,27 +126,45 @@ add('cie', '2.2', 'knowledge', {
 add('cie', '2.2', 'examples', {
   content:
     '<b>Worked Example 1</b> [2 marks]<br>' +
+    'Make $t$ the subject of $v = u + at$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '$v - u = at$<br>' +
+    '$t = \\frac{v - u}{a}$<br><br>' +
+    '<b>Worked Example 2</b> [3 marks]<br>' +
     'Make $r$ the subject of $V = \\frac{4}{3}\\pi r^3$.<br><br>' +
     '<b>Solution:</b><br>' +
     '$\\frac{3V}{4\\pi} = r^3$<br>' +
     '$r = \\sqrt[3]{\\frac{3V}{4\\pi}}$<br><br>' +
-    '<b>Worked Example 2</b> (Extended) [3 marks]<br>' +
+    '<b>Worked Example 3</b> [3 marks — Extended]<br>' +
     'Make $x$ the subject of $y = \\frac{x + 3}{x - 1}$.<br><br>' +
     '<b>Solution:</b><br>' +
     '$y(x - 1) = x + 3$<br>' +
     '$xy - y = x + 3$<br>' +
     '$xy - x = y + 3$<br>' +
     '$x(y - 1) = y + 3$<br>' +
-    '$x = \\frac{y + 3}{y - 1}$',
+    '$x = \\frac{y + 3}{y - 1}$<br><br>' +
+    '<b>Worked Example 4</b> [4 marks — Extended]<br>' +
+    'Make $a$ the subject of $S = \\frac{a}{1 - r}$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '$S(1 - r) = a$<br>' +
+    '$a = S - Sr$<br><br>' +
+    '<b>Exam Tip:</b> When the subject appears twice, collect all terms containing it on one side, factorise, then divide.',
   content_zh:
     '<b>经典例题 1</b> [2 分]<br>' +
+    '将 $v = u + at$ 变为以 $t$ 为主语。<br><br>' +
+    '<b>解答：</b>$t = \\frac{v - u}{a}$<br><br>' +
+    '<b>经典例题 2</b> [3 分]<br>' +
     '将 $V = \\frac{4}{3}\\pi r^3$ 变为以 $r$ 为主语。<br><br>' +
     '<b>解答：</b>$r = \\sqrt[3]{\\frac{3V}{4\\pi}}$<br><br>' +
-    '<b>经典例题 2</b>（Extended）[3 分]<br>' +
+    '<b>经典例题 3</b> [3 分 — 进阶]<br>' +
     '将 $y = \\frac{x + 3}{x - 1}$ 变为以 $x$ 为主语。<br><br>' +
     '<b>解答：</b><br>' +
     '$y(x-1) = x+3$ → $xy - x = y+3$ → $x(y-1) = y+3$<br>' +
-    '$x = \\frac{y+3}{y-1}$'
+    '$x = \\frac{y+3}{y-1}$<br><br>' +
+    '<b>经典例题 4</b> [4 分 — 进阶]<br>' +
+    '将 $S = \\frac{a}{1 - r}$ 变为以 $a$ 为主语。<br><br>' +
+    '<b>解答：</b>$a = S(1 - r) = S - Sr$<br><br>' +
+    '<b>考试技巧：</b>当主元出现两次时，将含主元的项移到一边，因式分解后再除。'
 });
 
 // ── 2.3 Algebraic manipulation ──
@@ -156,24 +198,48 @@ add('cie', '2.3', 'knowledge', {
 add('cie', '2.3', 'examples', {
   content:
     '<b>Worked Example 1</b> [2 marks]<br>' +
+    'Expand and simplify $3(2x - 1) - 2(x - 4)$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '$= 6x - 3 - 2x + 8 = 4x + 5$<br><br>' +
+    '<b>Worked Example 2</b> [2 marks]<br>' +
+    'Expand $(x + 5)(x - 3)$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '$= x^2 - 3x + 5x - 15 = x^2 + 2x - 15$<br><br>' +
+    '<b>Worked Example 3</b> [2 marks]<br>' +
+    'Factorise completely $6x^2y - 9xy^2$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'HCF $= 3xy$<br>' +
+    '$6x^2y - 9xy^2 = 3xy(2x - 3y)$<br><br>' +
+    '<b>Worked Example 4</b> [3 marks — Extended]<br>' +
     'Factorise $x^2 - 7x + 12$.<br><br>' +
     '<b>Solution:</b><br>' +
     'Find two numbers that multiply to $+12$ and add to $-7$: $-3$ and $-4$.<br>' +
     '$x^2 - 7x + 12 = (x - 3)(x - 4)$<br><br>' +
-    '<b>Worked Example 2</b> (Extended) [3 marks]<br>' +
-    'Write $x^2 + 6x - 4$ in the form $(x + a)^2 + b$.<br><br>' +
+    '<b>Worked Example 5</b> [3 marks — Extended]<br>' +
+    'Factorise $4x^2 - 25$.<br><br>' +
     '<b>Solution:</b><br>' +
-    '$x^2 + 6x = (x + 3)^2 - 9$<br>' +
-    '$x^2 + 6x - 4 = (x + 3)^2 - 9 - 4 = (x + 3)^2 - 13$<br>' +
-    'So $a = 3$, $b = -13$.',
+    'Recognise the difference of two squares: $a^2 - b^2 = (a+b)(a-b)$.<br>' +
+    '$4x^2 - 25 = (2x)^2 - 5^2 = (2x + 5)(2x - 5)$<br><br>' +
+    '<b>Exam Tip:</b> Always check if you can factorise further. Look for common factors first, then try difference of two squares or quadratic factorisation.',
   content_zh:
     '<b>经典例题 1</b> [2 分]<br>' +
+    '展开并化简 $3(2x - 1) - 2(x - 4)$。<br><br>' +
+    '<b>解答：</b>$= 6x - 3 - 2x + 8 = 4x + 5$<br><br>' +
+    '<b>经典例题 2</b> [2 分]<br>' +
+    '展开 $(x + 5)(x - 3)$。<br><br>' +
+    '<b>解答：</b>$= x^2 - 3x + 5x - 15 = x^2 + 2x - 15$<br><br>' +
+    '<b>经典例题 3</b> [2 分]<br>' +
+    '彻底因式分解 $6x^2y - 9xy^2$。<br><br>' +
+    '<b>解答：</b>最大公因式 $= 3xy$<br>' +
+    '$6x^2y - 9xy^2 = 3xy(2x - 3y)$<br><br>' +
+    '<b>经典例题 4</b> [3 分 — 进阶]<br>' +
     '因式分解 $x^2 - 7x + 12$。<br><br>' +
     '<b>解答：</b>找两个数乘积为 $+12$、和为 $-7$：$-3$ 和 $-4$。<br>' +
     '$= (x-3)(x-4)$<br><br>' +
-    '<b>经典例题 2</b>（Extended）[3 分]<br>' +
-    '将 $x^2 + 6x - 4$ 写成 $(x+a)^2 + b$ 的形式。<br><br>' +
-    '<b>解答：</b>$(x+3)^2 - 9 - 4 = (x+3)^2 - 13$'
+    '<b>经典例题 5</b> [3 分 — 进阶]<br>' +
+    '因式分解 $4x^2 - 25$。<br><br>' +
+    '<b>解答：</b>识别平方差：$4x^2 - 25 = (2x+5)(2x-5)$<br><br>' +
+    '<b>考试技巧：</b>始终检查是否可以进一步分解。先找公因式，再尝试平方差或二次因式分解。'
 });
 
 // ── 2.4 Algebraic fractions ──
@@ -211,21 +277,62 @@ add('cie', '2.4', 'knowledge', {
 
 add('cie', '2.4', 'examples', {
   content:
-    '<b>Worked Example</b> [4 marks]<br>' +
+    '<b>Worked Example 1</b> [3 marks — Extended]<br>' +
+    'Simplify $\\frac{x^2 - 9}{x^2 + 5x + 6}$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Factorise numerator: $x^2 - 9 = (x+3)(x-3)$<br>' +
+    'Factorise denominator: $x^2 + 5x + 6 = (x+2)(x+3)$<br>' +
+    '$= \\frac{(x+3)(x-3)}{(x+2)(x+3)} = \\frac{x-3}{x+2}$<br><br>' +
+    '<b>Worked Example 2</b> [4 marks — Extended]<br>' +
     'Simplify $\\frac{3}{x-2} - \\frac{1}{x+1}$.<br><br>' +
     '<b>Solution:</b><br>' +
-    'Common denominator = $(x-2)(x+1)$<br>' +
+    'Common denominator $= (x-2)(x+1)$<br>' +
     '$= \\frac{3(x+1) - 1(x-2)}{(x-2)(x+1)}$<br>' +
-    '$= \\frac{3x + 3 - x + 2}{(x-2)(x+1)}$<br>' +
-    '$= \\frac{2x + 5}{(x-2)(x+1)}$<br><br>' +
-    '<b>Exam Tip:</b> Be very careful with minus signs when subtracting: $-1(x - 2) = -x + 2$, not $-x - 2$.',
+    '$= \\frac{3x + 3 - x + 2}{(x-2)(x+1)} = \\frac{2x + 5}{(x-2)(x+1)}$<br><br>' +
+    '<b>Worked Example 3</b> [4 marks — Extended]<br>' +
+    'Simplify $\\frac{2}{x+3} + \\frac{5}{x-1}$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Common denominator $= (x+3)(x-1)$<br>' +
+    '$= \\frac{2(x-1) + 5(x+3)}{(x+3)(x-1)}$<br>' +
+    '$= \\frac{2x - 2 + 5x + 15}{(x+3)(x-1)} = \\frac{7x + 13}{(x+3)(x-1)}$<br><br>' +
+    '<b>Worked Example 4</b> [4 marks — Extended]<br>' +
+    'Solve $\\frac{4}{x+1} = \\frac{3}{x-2}$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Cross-multiply: $4(x-2) = 3(x+1)$<br>' +
+    '$4x - 8 = 3x + 3$<br>' +
+    '$x = 11$<br><br>' +
+    '<b>Worked Example 5</b> [5 marks — Extended]<br>' +
+    'Simplify $\\frac{x^2 - 4}{x+2} \\times \\frac{x+1}{x-2}$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Factorise: $\\frac{(x+2)(x-2)}{x+2} \\times \\frac{x+1}{x-2}$<br>' +
+    'Cancel $(x+2)$ and $(x-2)$:<br>' +
+    '$= x + 1$<br><br>' +
+    '<b>Exam Tip:</b> Always factorise before cancelling. You can only cancel factors, not individual terms.',
   content_zh:
-    '<b>经典例题</b> [4 分]<br>' +
+    '<b>经典例题 1</b> [3 分 — 进阶]<br>' +
+    '化简 $\\frac{x^2 - 9}{x^2 + 5x + 6}$。<br><br>' +
+    '<b>解答：</b><br>' +
+    '分子：$(x+3)(x-3)$，分母：$(x+2)(x+3)$<br>' +
+    '约去 $(x+3)$：$= \\frac{x-3}{x+2}$<br><br>' +
+    '<b>经典例题 2</b> [4 分 — 进阶]<br>' +
     '化简 $\\frac{3}{x-2} - \\frac{1}{x+1}$。<br><br>' +
     '<b>解答：</b><br>' +
     '通分 $(x-2)(x+1)$：<br>' +
     '$= \\frac{3(x+1) - (x-2)}{(x-2)(x+1)} = \\frac{2x+5}{(x-2)(x+1)}$<br><br>' +
-    '<b>考试技巧：</b>减法时注意负号分配：$-(x-2) = -x+2$。'
+    '<b>经典例题 3</b> [4 分 — 进阶]<br>' +
+    '化简 $\\frac{2}{x+3} + \\frac{5}{x-1}$。<br><br>' +
+    '<b>解答：</b><br>' +
+    '通分 $(x+3)(x-1)$：$= \\frac{7x+13}{(x+3)(x-1)}$<br><br>' +
+    '<b>经典例题 4</b> [4 分 — 进阶]<br>' +
+    '解方程 $\\frac{4}{x+1} = \\frac{3}{x-2}$。<br><br>' +
+    '<b>解答：</b><br>' +
+    '交叉相乘：$4(x-2) = 3(x+1)$<br>' +
+    '$4x - 8 = 3x + 3$，$x = 11$<br><br>' +
+    '<b>经典例题 5</b> [5 分 — 进阶]<br>' +
+    '化简 $\\frac{x^2 - 4}{x+2} \\times \\frac{x+1}{x-2}$。<br><br>' +
+    '<b>解答：</b><br>' +
+    '分解后约去公因式：$= x + 1$<br><br>' +
+    '<b>考试技巧：</b>先因式分解再约分，只能约去因式，不能约去单个项。'
 });
 
 // ── 2.5 Equations ──
@@ -266,26 +373,52 @@ add('cie', '2.5', 'knowledge', {
 
 add('cie', '2.5', 'examples', {
   content:
-    '<b>Worked Example 1</b> [3 marks]<br>' +
+    '<b>Worked Example 1</b> [2 marks]<br>' +
+    'Solve $5(x - 3) = 2(x + 6)$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '$5x - 15 = 2x + 12$<br>' +
+    '$3x = 27$<br>' +
+    '$x = 9$<br><br>' +
+    '<b>Worked Example 2</b> [3 marks]<br>' +
     'Solve $\\frac{2x+1}{3} - \\frac{x-2}{4} = 2$.<br><br>' +
     '<b>Solution:</b><br>' +
     'Multiply by 12: $4(2x+1) - 3(x-2) = 24$<br>' +
     '$8x + 4 - 3x + 6 = 24$<br>' +
     '$5x + 10 = 24$<br>' +
     '$5x = 14$, $x = 2.8$<br><br>' +
-    '<b>Worked Example 2</b> (Extended) [3 marks]<br>' +
-    'Solve $2x^2 + 5x - 3 = 0$.<br><br>' +
+    '<b>Worked Example 3</b> [3 marks]<br>' +
+    'The sum of three consecutive integers is $72$. Find the integers.<br><br>' +
     '<b>Solution:</b><br>' +
-    '$(2x - 1)(x + 3) = 0$<br>' +
-    '$x = \\frac{1}{2}$ or $x = -3$',
+    'Let the integers be $n$, $n+1$, $n+2$.<br>' +
+    '$n + (n+1) + (n+2) = 72$<br>' +
+    '$3n + 3 = 72$<br>' +
+    '$3n = 69$, $n = 23$<br>' +
+    'The integers are $23, 24, 25$.<br><br>' +
+    '<b>Worked Example 4</b> [3 marks]<br>' +
+    'Solve $\\frac{7}{x} = \\frac{3}{x-2}$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Cross-multiply: $7(x - 2) = 3x$<br>' +
+    '$7x - 14 = 3x$<br>' +
+    '$4x = 14$, $x = 3.5$<br><br>' +
+    '<b>Exam Tip:</b> For equations with fractions, multiply every term by the LCM of the denominators to clear all fractions in one step.',
   content_zh:
-    '<b>经典例题 1</b> [3 分]<br>' +
+    '<b>经典例题 1</b> [2 分]<br>' +
+    '解方程 $5(x - 3) = 2(x + 6)$。<br><br>' +
+    '<b>解答：</b>$5x - 15 = 2x + 12$，$3x = 27$，$x = 9$<br><br>' +
+    '<b>经典例题 2</b> [3 分]<br>' +
     '解方程 $\\frac{2x+1}{3} - \\frac{x-2}{4} = 2$。<br><br>' +
     '<b>解答：</b>两边乘12：$4(2x+1) - 3(x-2) = 24$<br>' +
     '$5x + 10 = 24$，$x = 2.8$<br><br>' +
-    '<b>经典例题 2</b>（Extended）[3 分]<br>' +
-    '解 $2x^2 + 5x - 3 = 0$。<br><br>' +
-    '<b>解答：</b>$(2x-1)(x+3) = 0$，$x = \\frac{1}{2}$ 或 $x = -3$'
+    '<b>经典例题 3</b> [3 分]<br>' +
+    '三个连续整数之和为 $72$，求这三个整数。<br><br>' +
+    '<b>解答：</b>设为 $n, n+1, n+2$<br>' +
+    '$3n + 3 = 72$，$n = 23$<br>' +
+    '三个整数为 $23, 24, 25$。<br><br>' +
+    '<b>经典例题 4</b> [3 分]<br>' +
+    '解方程 $\\frac{7}{x} = \\frac{3}{x-2}$。<br><br>' +
+    '<b>解答：</b>交叉相乘：$7(x-2) = 3x$<br>' +
+    '$4x = 14$，$x = 3.5$<br><br>' +
+    '<b>考试技巧：</b>含分式的方程，将每项乘以分母的最小公倍数，一步消去所有分数。'
 });
 
 // ── 2.6 Inequalities ──
@@ -319,25 +452,47 @@ add('cie', '2.6', 'knowledge', {
 add('cie', '2.6', 'examples', {
   content:
     '<b>Worked Example 1</b> [2 marks]<br>' +
+    'Solve $4x - 7 > 2x + 3$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '$4x - 2x > 3 + 7$<br>' +
+    '$2x > 10$<br>' +
+    '$x > 5$<br><br>' +
+    '<b>Worked Example 2</b> [2 marks]<br>' +
     'Solve $3 - 2x \\leq 7$.<br><br>' +
     '<b>Solution:</b><br>' +
     '$-2x \\leq 4$<br>' +
     '$x \\geq -2$ (dividing by $-2$, flip the sign)<br><br>' +
-    '<b>Worked Example 2</b> (Extended) [3 marks]<br>' +
+    '<b>Worked Example 3</b> [3 marks]<br>' +
+    'Find the integers satisfying $-3 < 2n - 1 \\leq 5$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '$-3 < 2n - 1 \\leq 5$<br>' +
+    '$-2 < 2n \\leq 6$<br>' +
+    '$-1 < n \\leq 3$<br>' +
+    'Integers: $n = 0, 1, 2, 3$<br><br>' +
+    '<b>Worked Example 4</b> [4 marks — Extended]<br>' +
     'Solve $x^2 - 5x + 6 > 0$.<br><br>' +
     '<b>Solution:</b><br>' +
     '$(x-2)(x-3) > 0$<br>' +
     'Critical values: $x = 2$ and $x = 3$.<br>' +
-    'Test regions: $x < 2$ → positive ✓, $2 < x < 3$ → negative ✗, $x > 3$ → positive ✓<br>' +
-    'Answer: $x < 2$ or $x > 3$.',
+    'Test regions: $x < 2$ gives positive, $2 < x < 3$ gives negative, $x > 3$ gives positive.<br>' +
+    'Answer: $x < 2$ or $x > 3$.<br><br>' +
+    '<b>Exam Tip:</b> When dividing or multiplying both sides of an inequality by a negative number, you MUST reverse the inequality sign.',
   content_zh:
     '<b>经典例题 1</b> [2 分]<br>' +
+    '解 $4x - 7 > 2x + 3$。<br><br>' +
+    '<b>解答：</b>$2x > 10$，$x > 5$<br><br>' +
+    '<b>经典例题 2</b> [2 分]<br>' +
     '解 $3 - 2x \\leq 7$。<br><br>' +
     '<b>解答：</b>$-2x \\leq 4$，除以 $-2$ 翻转不等号：$x \\geq -2$<br><br>' +
-    '<b>经典例题 2</b>（Extended）[3 分]<br>' +
+    '<b>经典例题 3</b> [3 分]<br>' +
+    '求满足 $-3 < 2n - 1 \\leq 5$ 的整数。<br><br>' +
+    '<b>解答：</b>$-1 < n \\leq 3$<br>' +
+    '整数：$n = 0, 1, 2, 3$<br><br>' +
+    '<b>经典例题 4</b> [4 分 — 进阶]<br>' +
     '解 $x^2 - 5x + 6 > 0$。<br><br>' +
     '<b>解答：</b>$(x-2)(x-3) > 0$<br>' +
-    '临界值 $x = 2, 3$。测试区间得 $x < 2$ 或 $x > 3$。'
+    '临界值 $x = 2, 3$。测试区间得 $x < 2$ 或 $x > 3$。<br><br>' +
+    '<b>考试技巧：</b>当不等式两边乘以或除以负数时，必须翻转不等号方向。'
 });
 
 // ── 2.7 Sequences ──
@@ -375,8 +530,23 @@ add('cie', '2.7', 'examples', {
     '<b>Solution:</b><br>' +
     'Common difference $d = 3$. First term $a = 5$.<br>' +
     '$T_n = 3n + 2$<br>' +
-    'Check: $T_1 = 5$ ✓, $T_2 = 8$ ✓<br><br>' +
-    '<b>Worked Example 2</b> (Extended) [4 marks]<br>' +
+    'Check: $T_1 = 5$, $T_2 = 8$<br><br>' +
+    '<b>Worked Example 2</b> [3 marks]<br>' +
+    'The $n$th term of a sequence is $T_n = 4n - 7$.<br>' +
+    '(a) Find $T_{20}$. (b) Which term has value $53$?<br><br>' +
+    '<b>Solution:</b><br>' +
+    '(a) $T_{20} = 4(20) - 7 = 80 - 7 = 73$<br>' +
+    '(b) $4n - 7 = 53$ → $4n = 60$ → $n = 15$. It is the 15th term.<br><br>' +
+    '<b>Worked Example 3</b> [3 marks]<br>' +
+    'Find the $n$th term of: $2, 6, 12, 20, 30, ...$<br><br>' +
+    '<b>Solution:</b><br>' +
+    '1st differences: $4, 6, 8, 10$<br>' +
+    '2nd differences: $2, 2, 2$ (constant) → quadratic.<br>' +
+    '$a = \\frac{2}{2} = 1$, so $T_n = n^2 + bn + c$.<br>' +
+    '$n = 1$: $1 + b + c = 2$ → $b + c = 1$<br>' +
+    '$n = 2$: $4 + 2b + c = 6$ → $2b + c = 2$<br>' +
+    'Solving: $b = 1$, $c = 0$. $T_n = n^2 + n = n(n+1)$<br><br>' +
+    '<b>Worked Example 4</b> [4 marks — Extended]<br>' +
     'Find the $n$th term of: $3, 9, 19, 33, 51, ...$<br><br>' +
     '<b>Solution:</b><br>' +
     '1st differences: $6, 10, 14, 18$<br>' +
@@ -384,17 +554,29 @@ add('cie', '2.7', 'examples', {
     '$T_n = 2n^2 + bn + c$<br>' +
     '$n = 1$: $2 + b + c = 3$ → $b + c = 1$<br>' +
     '$n = 2$: $8 + 2b + c = 9$ → $2b + c = 1$<br>' +
-    'Solving: $b = 0$, $c = 1$<br>' +
-    '$T_n = 2n^2 + 1$',
+    'Solving: $b = 0$, $c = 1$.<br>' +
+    '$T_n = 2n^2 + 1$<br><br>' +
+    '<b>Exam Tip:</b> Always verify your $n$th term formula by substituting $n = 1, 2, 3$ back in to check it produces the given terms.',
   content_zh:
     '<b>经典例题 1</b> [2 分]<br>' +
     '求 $5, 8, 11, 14, ...$ 的通项。<br><br>' +
     '<b>解答：</b>公差 $d = 3$，$T_n = 3n + 2$<br><br>' +
-    '<b>经典例题 2</b>（Extended）[4 分]<br>' +
+    '<b>经典例题 2</b> [3 分]<br>' +
+    '数列通项 $T_n = 4n - 7$。(a) 求 $T_{20}$。(b) 哪一项等于 $53$？<br><br>' +
+    '<b>解答：</b><br>' +
+    '(a) $T_{20} = 73$<br>' +
+    '(b) $4n - 7 = 53$，$n = 15$，即第 15 项。<br><br>' +
+    '<b>经典例题 3</b> [3 分]<br>' +
+    '求 $2, 6, 12, 20, 30, ...$ 的通项。<br><br>' +
+    '<b>解答：</b>二阶差恒为 2，$a = 1$<br>' +
+    '$T_n = n^2 + bn + c$，代入解得 $b = 1, c = 0$<br>' +
+    '$T_n = n(n+1)$<br><br>' +
+    '<b>经典例题 4</b> [4 分 — 进阶]<br>' +
     '求 $3, 9, 19, 33, 51, ...$ 的通项。<br><br>' +
     '<b>解答：</b>二阶差 = 4，$a = 2$<br>' +
     '$T_n = 2n^2 + bn + c$，代入解得 $b = 0, c = 1$<br>' +
-    '$T_n = 2n^2 + 1$'
+    '$T_n = 2n^2 + 1$<br><br>' +
+    '<b>考试技巧：</b>始终通过代入 $n = 1, 2, 3$ 来验证你的通项公式是否正确。'
 });
 
 // ── 2.8 Direct and inverse proportion ──
@@ -434,19 +616,48 @@ add('cie', '2.8', 'knowledge', {
 
 add('cie', '2.8', 'examples', {
   content:
-    '<b>Worked Example</b> [4 marks]<br>' +
+    '<b>Worked Example 1</b> [3 marks — Extended]<br>' +
+    '$y$ is directly proportional to $x$. When $x = 4$, $y = 10$. Find $y$ when $x = 6$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '$y = kx$<br>' +
+    '$10 = 4k$ → $k = 2.5$<br>' +
+    'When $x = 6$: $y = 2.5 \\times 6 = 15$<br><br>' +
+    '<b>Worked Example 2</b> [4 marks — Extended]<br>' +
     '$y$ is inversely proportional to $x^2$. When $x = 2$, $y = 5$. Find $y$ when $x = 10$.<br><br>' +
     '<b>Solution:</b><br>' +
     '$y = \\frac{k}{x^2}$<br>' +
     '$5 = \\frac{k}{4}$ → $k = 20$<br>' +
     'When $x = 10$: $y = \\frac{20}{100} = 0.2$<br><br>' +
-    '<b>Exam Tip:</b> Always find $k$ first using the given pair of values before substituting the new value.',
+    '<b>Worked Example 3</b> [4 marks — Extended]<br>' +
+    '$y$ is proportional to $x^3$. When $x = 2$, $y = 24$. Find $x$ when $y = 81$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '$y = kx^3$<br>' +
+    '$24 = k(8)$ → $k = 3$<br>' +
+    '$81 = 3x^3$ → $x^3 = 27$ → $x = 3$<br><br>' +
+    '<b>Worked Example 4</b> [4 marks — Extended]<br>' +
+    '$T$ is inversely proportional to $\\sqrt{d}$. When $d = 9$, $T = 8$. Find $T$ when $d = 25$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '$T = \\frac{k}{\\sqrt{d}}$<br>' +
+    '$8 = \\frac{k}{\\sqrt{9}} = \\frac{k}{3}$ → $k = 24$<br>' +
+    'When $d = 25$: $T = \\frac{24}{\\sqrt{25}} = \\frac{24}{5} = 4.8$<br><br>' +
+    '<b>Exam Tip:</b> Always find $k$ first using the given pair of values. Write the full equation with $k$ before substituting the new value.',
   content_zh:
-    '<b>经典例题</b> [4 分]<br>' +
-    '$y$ 与 $x^2$ 成反比。$x = 2$ 时 $y = 5$。求 $x = 10$ 时的 $y$。<br><br>' +
-    '<b>解答：</b><br>' +
-    '$y = \\frac{k}{x^2}$，代入 $5 = \\frac{k}{4}$，$k = 20$<br>' +
-    '$x = 10$ 时：$y = \\frac{20}{100} = 0.2$'
+    '<b>经典例题 1</b> [3 分 — 进阶]<br>' +
+    '$y$ 与 $x$ 成正比。$x = 4$ 时 $y = 10$。求 $x = 6$ 时 $y$。<br><br>' +
+    '<b>解答：</b>$y = kx$，$k = 2.5$，$y = 15$<br><br>' +
+    '<b>经典例题 2</b> [4 分 — 进阶]<br>' +
+    '$y$ 与 $x^2$ 成反比。$x = 2$ 时 $y = 5$。求 $x = 10$ 时 $y$。<br><br>' +
+    '<b>解答：</b>$y = \\frac{k}{x^2}$，$k = 20$<br>' +
+    '$x = 10$ 时：$y = \\frac{20}{100} = 0.2$<br><br>' +
+    '<b>经典例题 3</b> [4 分 — 进阶]<br>' +
+    '$y$ 与 $x^3$ 成正比。$x = 2$ 时 $y = 24$。求 $y = 81$ 时 $x$。<br><br>' +
+    '<b>解答：</b>$y = kx^3$，$k = 3$<br>' +
+    '$81 = 3x^3$，$x^3 = 27$，$x = 3$<br><br>' +
+    '<b>经典例题 4</b> [4 分 — 进阶]<br>' +
+    '$T$ 与 $\\sqrt{d}$ 成反比。$d = 9$ 时 $T = 8$。求 $d = 25$ 时 $T$。<br><br>' +
+    '<b>解答：</b>$T = \\frac{k}{\\sqrt{d}}$，$k = 24$<br>' +
+    '$d = 25$ 时：$T = \\frac{24}{5} = 4.8$<br><br>' +
+    '<b>考试技巧：</b>先用已知数据求出 $k$，写出完整公式后再代入新值。'
 });
 
 // ── 2.9 Graphs in practical situations ──
@@ -477,20 +688,45 @@ add('cie', '2.9', 'knowledge', {
 
 add('cie', '2.9', 'examples', {
   content:
-    '<b>Worked Example</b> [3 marks]<br>' +
+    '<b>Worked Example 1</b> [2 marks]<br>' +
+    'A car travels 120 km in 1.5 hours. Calculate the average speed.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Speed $= \\frac{\\text{distance}}{\\text{time}} = \\frac{120}{1.5} = 80$ km/h<br><br>' +
+    '<b>Worked Example 2</b> [3 marks]<br>' +
     'A speed-time graph shows: 0 to 10s accelerating uniformly from 0 to 15 m/s, then constant speed from 10s to 25s. Find the total distance.<br><br>' +
     '<b>Solution:</b><br>' +
     'Phase 1 (triangle): $\\frac{1}{2} \\times 10 \\times 15 = 75$ m<br>' +
     'Phase 2 (rectangle): $15 \\times 15 = 225$ m<br>' +
-    'Total = $75 + 225 = 300$ m<br><br>' +
-    '<b>Exam Tip:</b> Split the area into simple shapes (triangles, rectangles, trapeziums).',
+    'Total $= 75 + 225 = 300$ m<br><br>' +
+    '<b>Worked Example 3</b> [3 marks]<br>' +
+    'A speed-time graph shows constant speed of 20 m/s for 5s, then uniform deceleration to rest in 8s. Find the total distance and the deceleration.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Rectangle: $20 \\times 5 = 100$ m<br>' +
+    'Triangle: $\\frac{1}{2} \\times 8 \\times 20 = 80$ m<br>' +
+    'Total $= 180$ m<br>' +
+    'Deceleration $= \\frac{20 - 0}{8} = 2.5$ m/s$^2$<br><br>' +
+    '<b>Worked Example 4</b> [4 marks — Extended]<br>' +
+    'A distance-time graph shows a curve. At $t = 3$, the tangent to the curve passes through $(1, 10)$ and $(5, 50)$. Find the speed at $t = 3$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Speed $=$ gradient of tangent $= \\frac{50 - 10}{5 - 1} = \\frac{40}{4} = 10$ m/s<br><br>' +
+    '<b>Exam Tip:</b> For speed-time graphs, distance = area under the graph. For distance-time graphs, speed = gradient. Split areas into triangles, rectangles and trapeziums.',
   content_zh:
-    '<b>经典例题</b> [3 分]<br>' +
+    '<b>经典例题 1</b> [2 分]<br>' +
+    '一辆车 1.5 小时行驶 120 km，计算平均速度。<br><br>' +
+    '<b>解答：</b>速度 $= \\frac{120}{1.5} = 80$ km/h<br><br>' +
+    '<b>经典例题 2</b> [3 分]<br>' +
     '速度-时间图：0-10秒从0均匀加速到15 m/s，10-25秒匀速。求总路程。<br><br>' +
     '<b>解答：</b><br>' +
-    '三角形面积：$\\frac{1}{2} \\times 10 \\times 15 = 75$ m<br>' +
-    '矩形面积：$15 \\times 15 = 225$ m<br>' +
-    '总路程 = $300$ m'
+    '三角形：$75$ m，矩形：$225$ m<br>' +
+    '总路程 $= 300$ m<br><br>' +
+    '<b>经典例题 3</b> [3 分]<br>' +
+    '速度-时间图：20 m/s 匀速 5 秒，然后 8 秒内均匀减速至静止。求总路程和减速度。<br><br>' +
+    '<b>解答：</b>矩形 $100$ m + 三角形 $80$ m = $180$ m<br>' +
+    '减速度 $= \\frac{20}{8} = 2.5$ m/s$^2$<br><br>' +
+    '<b>经典例题 4</b> [4 分 — 进阶]<br>' +
+    '距离-时间图为曲线。在 $t = 3$ 处，切线经过 $(1, 10)$ 和 $(5, 50)$，求此刻速度。<br><br>' +
+    '<b>解答：</b>速度 = 切线斜率 $= \\frac{40}{4} = 10$ m/s<br><br>' +
+    '<b>考试技巧：</b>速度-时间图中距离=面积，距离-时间图中速度=斜率。将面积分割为三角形、矩形和梯形。'
 });
 
 // ── 2.10 Graphs of functions ──
@@ -527,7 +763,12 @@ add('cie', '2.10', 'knowledge', {
 
 add('cie', '2.10', 'examples', {
   content:
-    '<b>Worked Example</b> [4 marks]<br>' +
+    '<b>Worked Example 1</b> [2 marks]<br>' +
+    'Find the gradient and $y$-intercept of $3x + 2y = 10$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Rearrange: $2y = -3x + 10$ → $y = -\\frac{3}{2}x + 5$<br>' +
+    'Gradient $= -\\frac{3}{2}$, $y$-intercept $= 5$.<br><br>' +
+    '<b>Worked Example 2</b> [4 marks]<br>' +
     'Draw the graph of $y = x^2 - 3x - 4$ for $-2 \\leq x \\leq 5$. Use your graph to solve $x^2 - 3x - 4 = 0$.<br><br>' +
     '<b>Solution:</b><br>' +
     'Table of values:<br>' +
@@ -535,20 +776,37 @@ add('cie', '2.10', 'examples', {
     '$y$: $6, 0, -4, -6, -6, -4, 0, 6$<br><br>' +
     'The graph crosses the $x$-axis at $x = -1$ and $x = 4$.<br>' +
     'So $x^2 - 3x - 4 = 0$ has solutions $x = -1$ and $x = 4$.<br><br>' +
-    '<b>Exam Tip:</b> Solutions to $y = 0$ are where the curve crosses the $x$-axis.',
+    '<b>Worked Example 3</b> [3 marks]<br>' +
+    'A straight line passes through $(1, 5)$ and $(4, -1)$. Find the equation of the line.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Gradient $= \\frac{-1 - 5}{4 - 1} = \\frac{-6}{3} = -2$<br>' +
+    'Using $y - y_1 = m(x - x_1)$: $y - 5 = -2(x - 1)$<br>' +
+    '$y = -2x + 7$<br><br>' +
+    '<b>Worked Example 4</b> [4 marks — Extended]<br>' +
+    'By drawing $y = x^2 - 3x - 4$ and $y = x - 1$ on the same axes, solve $x^2 - 4x - 3 = 0$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Set $x^2 - 3x - 4 = x - 1$:<br>' +
+    '$x^2 - 3x - 4 - x + 1 = 0$ → $x^2 - 4x - 3 = 0$<br>' +
+    'So the solutions are the $x$-coordinates where the parabola meets the line $y = x - 1$.<br><br>' +
+    '<b>Exam Tip:</b> To solve a different equation using an existing graph, rearrange so one side equals the function you have already drawn, then draw the other side as a new line.',
   content_zh:
-    '<b>经典例题</b> [4 分]<br>' +
-    '画出 $y = x^2 - 3x - 4$ 在 $-2 \\leq x \\leq 5$ 范围内的图像。利用你的图像解方程 $x^2 - 3x - 4 = 0$。<br>' +
-    '<br>' +
+    '<b>经典例题 1</b> [2 分]<br>' +
+    '求 $3x + 2y = 10$ 的斜率和 $y$ 轴截距。<br><br>' +
+    '<b>解答：</b>变形：$y = -\\frac{3}{2}x + 5$<br>' +
+    '斜率 $= -\\frac{3}{2}$，$y$ 截距 $= 5$。<br><br>' +
+    '<b>经典例题 2</b> [4 分]<br>' +
+    '画出 $y = x^2 - 3x - 4$ 在 $-2 \\leq x \\leq 5$ 的图像，并解 $x^2 - 3x - 4 = 0$。<br><br>' +
     '<b>解答：</b><br>' +
-    '数值表：<br>' +
-    '$x$：$-2, -1, 0, 1, 2, 3, 4, 5$<br>' +
-    '$y$：$6, 0, -4, -6, -6, -4, 0, 6$<br>' +
-    '<br>' +
-    '图像与 $x$ 轴交于 $x = -1$ 和 $x = 4$。<br>' +
-    '因此 $x^2 - 3x - 4 = 0$ 的解为 $x = -1$ 和 $x = 4$。<br>' +
-    '<br>' +
-    '<b>考试技巧：</b>$y = 0$ 的解即为曲线与 $x$ 轴相交的位置。'
+    '图像与 $x$ 轴交于 $x = -1$ 和 $x = 4$。<br><br>' +
+    '<b>经典例题 3</b> [3 分]<br>' +
+    '一条直线经过 $(1, 5)$ 和 $(4, -1)$，求直线方程。<br><br>' +
+    '<b>解答：</b>斜率 $= \\frac{-6}{3} = -2$<br>' +
+    '$y - 5 = -2(x - 1)$，$y = -2x + 7$<br><br>' +
+    '<b>经典例题 4</b> [4 分 — 进阶]<br>' +
+    '在同一坐标系上画出 $y = x^2 - 3x - 4$ 和 $y = x - 1$，解方程 $x^2 - 4x - 3 = 0$。<br><br>' +
+    '<b>解答：</b>令 $x^2 - 3x - 4 = x - 1$，化简得 $x^2 - 4x - 3 = 0$<br>' +
+    '解即为抛物线与直线 $y = x - 1$ 交点的 $x$ 坐标。<br><br>' +
+    '<b>考试技巧：</b>用已有图像解新方程时，变形使一边等于已画函数，另一边画为新直线。'
 });
 
 // ── 2.11 Sketching curves ──
@@ -592,25 +850,54 @@ add('cie', '2.11', 'knowledge', {
 
 add('cie', '2.11', 'examples', {
   content:
-    '<b>Worked Example</b> [3 marks]<br>' +
+    '<b>Worked Example 1</b> [3 marks — Extended]<br>' +
+    'Sketch the graph of $y = x^2 - 4x + 3$, showing all intercepts and the turning point.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '$x$-intercepts: $x^2 - 4x + 3 = (x-1)(x-3) = 0$ → $x = 1, 3$.<br>' +
+    '$y$-intercept: $y = 3$ (set $x = 0$).<br>' +
+    'Turning point: $x = \\frac{4}{2} = 2$, $y = 4 - 8 + 3 = -1$. Minimum at $(2, -1)$.<br>' +
+    'U-shaped parabola.<br><br>' +
+    '<b>Worked Example 2</b> [3 marks — Extended]<br>' +
     'Sketch the graph of $y = (x - 2)(x + 1)(x - 4)$, showing all intercepts.<br><br>' +
     '<b>Solution:</b><br>' +
-    '$x$-intercepts: $x = 2, -1, 4$ (set each bracket = 0).<br>' +
+    '$x$-intercepts: $x = 2, -1, 4$ (set each bracket $= 0$).<br>' +
     '$y$-intercept: $y = (-2)(1)(-4) = 8$.<br>' +
-    'Leading term is $x^3$ (positive), so the curve goes from bottom-left to top-right.<br>' +
-    'The curve crosses the $x$-axis at each root.<br><br>' +
-    '<b>Exam Tip:</b> For cubic sketches, find all $x$-intercepts and the $y$-intercept, then draw the general S-shape.',
+    'Leading term is $x^3$ (positive), so the curve goes from bottom-left to top-right.<br><br>' +
+    '<b>Worked Example 3</b> [3 marks — Extended]<br>' +
+    'Sketch the graph of $y = \\frac{1}{x - 2}$, showing asymptotes.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Vertical asymptote: $x = 2$ (denominator $= 0$).<br>' +
+    'Horizontal asymptote: $y = 0$ (as $x \\to \\pm\\infty$).<br>' +
+    '$y$-intercept: $y = \\frac{1}{0-2} = -\\frac{1}{2}$.<br>' +
+    'Two branches: one in each region either side of $x = 2$.<br><br>' +
+    '<b>Worked Example 4</b> [4 marks — Extended]<br>' +
+    'The graph of $y = f(x)$ passes through $(0, 3)$ and $(2, 7)$. Sketch $y = f(x - 3)$ and state the new coordinates of these points.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '$f(x - 3)$ is a translation of $3$ units to the right.<br>' +
+    '$(0, 3)$ becomes $(3, 3)$.<br>' +
+    '$(2, 7)$ becomes $(5, 7)$.<br><br>' +
+    '<b>Exam Tip:</b> For sketches, always label intercepts, turning points and asymptotes. Remember: $f(x + a)$ shifts LEFT, $f(x) + a$ shifts UP.',
   content_zh:
-    '<b>经典例题</b> [3 分]<br>' +
-    '画出 $y = (x - 2)(x + 1)(x - 4)$ 的函数图像草图，标出所有截距。<br>' +
-    '<br>' +
+    '<b>经典例题 1</b> [3 分 — 进阶]<br>' +
+    '画出 $y = x^2 - 4x + 3$ 的草图，标出所有截距和顶点。<br><br>' +
     '<b>解答：</b><br>' +
-    '$x$ 轴截距：$x = 2, -1, 4$（令每个括号等于 0）。<br>' +
-    '$y$ 轴截距：$y = (-2)(1)(-4) = 8$。<br>' +
-    '最高次项是 $x^3$（正数），所以曲线从左下延伸到右上。<br>' +
-    '曲线在每个根处穿过 $x$ 轴。<br>' +
-    '<br>' +
-    '<b>考试技巧：</b> 对于三次函数的图像草图，找到所有 $x$ 轴截距和 $y$ 轴截距，然后画出通用的 S 形。'
+    '$x$ 截距：$x = 1, 3$。$y$ 截距：$y = 3$。<br>' +
+    '顶点：$(2, -1)$，U 型抛物线。<br><br>' +
+    '<b>经典例题 2</b> [3 分 — 进阶]<br>' +
+    '画出 $y = (x - 2)(x + 1)(x - 4)$ 的草图，标出所有截距。<br><br>' +
+    '<b>解答：</b><br>' +
+    '$x$ 截距：$x = -1, 2, 4$。$y$ 截距：$y = 8$。<br>' +
+    '最高次项 $x^3$ 为正，从左下延伸到右上。<br><br>' +
+    '<b>经典例题 3</b> [3 分 — 进阶]<br>' +
+    '画出 $y = \\frac{1}{x - 2}$ 的草图，标出渐近线。<br><br>' +
+    '<b>解答：</b><br>' +
+    '垂直渐近线 $x = 2$，水平渐近线 $y = 0$。<br>' +
+    '$y$ 截距 $= -\\frac{1}{2}$。<br><br>' +
+    '<b>经典例题 4</b> [4 分 — 进阶]<br>' +
+    '$y = f(x)$ 经过 $(0, 3)$ 和 $(2, 7)$。画出 $y = f(x - 3)$ 并写出新坐标。<br><br>' +
+    '<b>解答：</b>$f(x-3)$ 向右平移 3 个单位。<br>' +
+    '$(0,3) \\to (3,3)$，$(2,7) \\to (5,7)$。<br><br>' +
+    '<b>考试技巧：</b>画草图时务必标注截距、顶点和渐近线。$f(x+a)$ 向左移，$f(x)+a$ 向上移。'
 });
 
 // ── 2.12 Differentiation ──
@@ -640,25 +927,61 @@ add('cie', '2.12', 'knowledge', {
 
 add('cie', '2.12', 'examples', {
   content:
-    '<b>Worked Example</b> [5 marks]<br>' +
+    '<b>Worked Example 1</b> [2 marks — Extended]<br>' +
+    'Differentiate $y = 3x^4 - 5x^2 + 7x - 2$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '$\\frac{dy}{dx} = 12x^3 - 10x + 7$<br><br>' +
+    '<b>Worked Example 2</b> [3 marks — Extended]<br>' +
+    'Find the gradient of $y = x^3 - 4x + 1$ at $x = 2$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '$\\frac{dy}{dx} = 3x^2 - 4$<br>' +
+    'At $x = 2$: $\\frac{dy}{dx} = 3(4) - 4 = 8$<br><br>' +
+    '<b>Worked Example 3</b> [5 marks — Extended]<br>' +
     'Find the turning points of $y = 2x^3 - 9x^2 + 12x$ and determine their nature.<br><br>' +
     '<b>Solution:</b><br>' +
     '$\\frac{dy}{dx} = 6x^2 - 18x + 12$<br>' +
     'Set $= 0$: $6(x^2 - 3x + 2) = 0$<br>' +
     '$6(x - 1)(x - 2) = 0$ → $x = 1$ or $x = 2$<br><br>' +
     '$\\frac{d^2y}{dx^2} = 12x - 18$<br>' +
-    'At $x = 1$: $12(1) - 18 = -6 < 0$ → <b>maximum</b>, $y = 5$.<br>' +
-    'At $x = 2$: $12(2) - 18 = 6 > 0$ → <b>minimum</b>, $y = 4$.<br><br>' +
-    '<b>Exam Tip:</b> Always find the $y$-values of turning points by substituting back into the original equation.',
+    'At $x = 1$: $12 - 18 = -6 < 0$ → <b>maximum</b>, $y = 2 - 9 + 12 = 5$.<br>' +
+    'At $x = 2$: $24 - 18 = 6 > 0$ → <b>minimum</b>, $y = 16 - 36 + 24 = 4$.<br><br>' +
+    '<b>Worked Example 4</b> [4 marks — Extended]<br>' +
+    'Find the equation of the tangent to $y = x^2 - 3x + 5$ at $x = 4$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '$\\frac{dy}{dx} = 2x - 3$. At $x = 4$: gradient $= 2(4) - 3 = 5$.<br>' +
+    'At $x = 4$: $y = 16 - 12 + 5 = 9$. Point is $(4, 9)$.<br>' +
+    'Tangent: $y - 9 = 5(x - 4)$ → $y = 5x - 11$<br><br>' +
+    '<b>Worked Example 5</b> [5 marks — Extended]<br>' +
+    'A particle moves so that $s = t^3 - 6t^2 + 9t$ metres. Find when the particle is momentarily at rest, and its acceleration at that time.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Velocity $v = \\frac{ds}{dt} = 3t^2 - 12t + 9 = 3(t^2 - 4t + 3) = 3(t - 1)(t - 3)$<br>' +
+    'At rest: $v = 0$ → $t = 1$ or $t = 3$ seconds.<br>' +
+    'Acceleration $a = \\frac{dv}{dt} = 6t - 12$.<br>' +
+    'At $t = 1$: $a = -6$ m/s$^2$. At $t = 3$: $a = 6$ m/s$^2$.<br><br>' +
+    '<b>Exam Tip:</b> Always substitute back into the original equation to find $y$-values of turning points. For tangent questions, you need both the gradient AND the point.',
   content_zh:
-    '<b>经典例题</b> [5 分]<br>' +
+    '<b>经典例题 1</b> [2 分 — 进阶]<br>' +
+    '求 $y = 3x^4 - 5x^2 + 7x - 2$ 的导数。<br><br>' +
+    '<b>解答：</b>$\\frac{dy}{dx} = 12x^3 - 10x + 7$<br><br>' +
+    '<b>经典例题 2</b> [3 分 — 进阶]<br>' +
+    '求 $y = x^3 - 4x + 1$ 在 $x = 2$ 处的斜率。<br><br>' +
+    '<b>解答：</b>$\\frac{dy}{dx} = 3x^2 - 4$，代入 $x = 2$：$= 8$<br><br>' +
+    '<b>经典例题 3</b> [5 分 — 进阶]<br>' +
     '求 $y = 2x^3 - 9x^2 + 12x$ 的转折点并判断性质。<br><br>' +
     '<b>解答：</b><br>' +
-    '$\\frac{dy}{dx} = 6x^2 - 18x + 12 = 0$<br>' +
-    '$x = 1$ 或 $x = 2$<br>' +
+    '$\\frac{dy}{dx} = 6x^2 - 18x + 12 = 0$，$x = 1$ 或 $x = 2$<br>' +
     '$\\frac{d^2y}{dx^2} = 12x - 18$<br>' +
     '$x = 1$：$-6 < 0$ → 最大值，$y = 5$<br>' +
-    '$x = 2$：$6 > 0$ → 最小值，$y = 4$'
+    '$x = 2$：$6 > 0$ → 最小值，$y = 4$<br><br>' +
+    '<b>经典例题 4</b> [4 分 — 进阶]<br>' +
+    '求 $y = x^2 - 3x + 5$ 在 $x = 4$ 处的切线方程。<br><br>' +
+    '<b>解答：</b>斜率 $= 5$，切点 $(4, 9)$<br>' +
+    '切线：$y = 5x - 11$<br><br>' +
+    '<b>经典例题 5</b> [5 分 — 进阶]<br>' +
+    '质点运动 $s = t^3 - 6t^2 + 9t$。求质点瞬时静止的时刻及此时加速度。<br><br>' +
+    '<b>解答：</b>$v = 3(t-1)(t-3) = 0$，$t = 1$ 或 $t = 3$ 秒<br>' +
+    '$a = 6t - 12$。$t = 1$ 时 $a = -6$ m/s$^2$，$t = 3$ 时 $a = 6$ m/s$^2$。<br><br>' +
+    '<b>考试技巧：</b>求转折点时记得代回原方程求 $y$ 值。切线题需同时求出斜率和切点坐标。'
 });
 
 // ── 2.13 Functions ──
@@ -689,22 +1012,59 @@ add('cie', '2.13', 'knowledge', {
 
 add('cie', '2.13', 'examples', {
   content:
-    '<b>Worked Example</b> [5 marks]<br>' +
-    '$f(x) = 2x + 1$, $g(x) = x^2 - 3$.<br>' +
-    '(a) Find $fg(2)$. (b) Find $gf(x)$. (c) Find $f^{-1}(x)$.<br><br>' +
+    '<b>Worked Example 1</b> [2 marks — Extended]<br>' +
+    '$f(x) = 3x - 5$. Find $f(4)$ and $f(-2)$.<br><br>' +
     '<b>Solution:</b><br>' +
-    '(a) $g(2) = 4 - 3 = 1$, $f(1) = 2(1) + 1 = 3$. So $fg(2) = 3$.<br><br>' +
+    '$f(4) = 3(4) - 5 = 7$<br>' +
+    '$f(-2) = 3(-2) - 5 = -11$<br><br>' +
+    '<b>Worked Example 2</b> [4 marks — Extended]<br>' +
+    '$f(x) = 2x + 1$, $g(x) = x^2 - 3$.<br>' +
+    '(a) Find $fg(2)$. (b) Find $gf(x)$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '(a) $g(2) = 4 - 3 = 1$, $f(1) = 2(1) + 1 = 3$. So $fg(2) = 3$.<br>' +
     '(b) $gf(x) = g(2x+1) = (2x+1)^2 - 3 = 4x^2 + 4x + 1 - 3 = 4x^2 + 4x - 2$.<br><br>' +
-    '(c) $y = 2x + 1$. Swap: $x = 2y + 1$. $y = \\frac{x - 1}{2}$.<br>' +
-    'So $f^{-1}(x) = \\frac{x - 1}{2}$.',
+    '<b>Worked Example 3</b> [3 marks — Extended]<br>' +
+    '$f(x) = \\frac{x + 4}{3}$. Find $f^{-1}(x)$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Let $y = \\frac{x + 4}{3}$. Swap $x$ and $y$: $x = \\frac{y + 4}{3}$.<br>' +
+    '$3x = y + 4$ → $y = 3x - 4$.<br>' +
+    '$f^{-1}(x) = 3x - 4$<br><br>' +
+    '<b>Worked Example 4</b> [4 marks — Extended]<br>' +
+    '$f(x) = 2x + 1$, $g(x) = x^2 - 3$. Solve $fg(x) = 11$.<br><br>' +
+    '<b>Solution:</b><br>' +
+    '$fg(x) = f(x^2 - 3) = 2(x^2 - 3) + 1 = 2x^2 - 5$<br>' +
+    '$2x^2 - 5 = 11$<br>' +
+    '$2x^2 = 16$ → $x^2 = 8$ → $x = \\pm 2\\sqrt{2}$<br><br>' +
+    '<b>Worked Example 5</b> [5 marks — Extended]<br>' +
+    '$h(x) = \\frac{3x}{x - 2}$, $x \\neq 2$. Find $h^{-1}(x)$ and state the value of $x$ for which $h^{-1}$ is not defined.<br><br>' +
+    '<b>Solution:</b><br>' +
+    'Let $y = \\frac{3x}{x - 2}$. Swap: $x = \\frac{3y}{y - 2}$.<br>' +
+    '$x(y - 2) = 3y$ → $xy - 2x = 3y$<br>' +
+    '$xy - 3y = 2x$ → $y(x - 3) = 2x$<br>' +
+    '$y = \\frac{2x}{x - 3}$<br>' +
+    '$h^{-1}(x) = \\frac{2x}{x - 3}$, undefined when $x = 3$.<br><br>' +
+    '<b>Exam Tip:</b> For composite functions, always work from the inside out: $fg(x)$ means apply $g$ first, then $f$. Order matters since $fg(x) \\neq gf(x)$ in general.',
   content_zh:
-    '<b>经典例题</b> [5 分]<br>' +
-    '$f(x) = 2x + 1$, $g(x) = x^2 - 3$。<br>' +
-    '(a) 求 $fg(2)$。(b) 求 $gf(x)$。(c) 求 $f^{-1}(x)$。<br><br>' +
+    '<b>经典例题 1</b> [2 分 — 进阶]<br>' +
+    '$f(x) = 3x - 5$，求 $f(4)$ 和 $f(-2)$。<br><br>' +
+    '<b>解答：</b>$f(4) = 7$，$f(-2) = -11$<br><br>' +
+    '<b>经典例题 2</b> [4 分 — 进阶]<br>' +
+    '$f(x) = 2x + 1$, $g(x) = x^2 - 3$。(a) 求 $fg(2)$。(b) 求 $gf(x)$。<br><br>' +
     '<b>解答：</b><br>' +
-    '(a) $g(2) = 1$, $f(1) = 3$。$fg(2) = 3$。<br>' +
-    '(b) $gf(x) = (2x+1)^2 - 3 = 4x^2 + 4x - 2$。<br>' +
-    '(c) $f^{-1}(x) = \\frac{x-1}{2}$。'
+    '(a) $g(2) = 1$，$f(1) = 3$，$fg(2) = 3$<br>' +
+    '(b) $gf(x) = (2x+1)^2 - 3 = 4x^2 + 4x - 2$<br><br>' +
+    '<b>经典例题 3</b> [3 分 — 进阶]<br>' +
+    '$f(x) = \\frac{x+4}{3}$，求 $f^{-1}(x)$。<br><br>' +
+    '<b>解答：</b>交换 $x, y$：$x = \\frac{y+4}{3}$，$f^{-1}(x) = 3x - 4$<br><br>' +
+    '<b>经典例题 4</b> [4 分 — 进阶]<br>' +
+    '$f(x) = 2x + 1$，$g(x) = x^2 - 3$。解 $fg(x) = 11$。<br><br>' +
+    '<b>解答：</b>$fg(x) = 2x^2 - 5 = 11$<br>' +
+    '$x^2 = 8$，$x = \\pm 2\\sqrt{2}$<br><br>' +
+    '<b>经典例题 5</b> [5 分 — 进阶]<br>' +
+    '$h(x) = \\frac{3x}{x-2}$（$x \\neq 2$）。求 $h^{-1}(x)$，并指出使 $h^{-1}$ 无意义的 $x$ 值。<br><br>' +
+    '<b>解答：</b>交换后解出 $y = \\frac{2x}{x-3}$<br>' +
+    '$h^{-1}(x) = \\frac{2x}{x-3}$，$x = 3$ 时无意义。<br><br>' +
+    '<b>考试技巧：</b>复合函数从内到外运算：$fg(x)$ 先 $g$ 后 $f$。顺序很重要，$fg(x) \\neq gf(x)$。'
 });
 
 /* ══════════════════════════════════════════════════
