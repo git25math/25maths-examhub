@@ -6,11 +6,13 @@
 var SUPABASE_URL = 'https://jjjigohjvmyewasmmmyf.supabase.co';
 var SUPABASE_KEY = 'sb_publishable_EDe6c9jFS4_PL451oYMYzg_86KRbHRZ';
 
-/* Supabase client (initialized only if credentials are set) */
+/* Supabase client (initialized only if credentials are set and SDK is loaded) */
 var sb = null;
 var currentUser = null;
-if (SUPABASE_URL && SUPABASE_KEY) {
-  sb = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+if (typeof supabase !== 'undefined' && SUPABASE_URL && SUPABASE_KEY) {
+  try {
+    sb = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+  } catch(e) { sb = null; }
 }
 
 /* localStorage key */

@@ -4196,6 +4196,38 @@ input { font-family: inherit; }
   }
 }
 
+/* ═══ UTILITY CLASSES (v2.3.12) ═══ */
+/* homework.js helpers */
+.hw-scroll-list { max-height:200px; overflow-y:auto; border:1px solid var(--c-border); border-radius:8px; padding:8px 12px; }
+.hw-scroll-list-xl { max-height:400px; overflow-y:auto; }
+.hw-checkbox-label { padding:3px 0; cursor:pointer; }
+.hw-checkbox-label-indent { padding:2px 0 2px 20px; cursor:pointer; }
+.hw-checkbox-heading { font-size:12px; cursor:pointer; padding:2px 0; }
+.hw-tip-row { width:100%; font-size:11px; color:var(--c-text2); margin-top:4px; }
+.hw-list-item-wrap { flex-wrap:wrap; }
+.mb-12 { margin-bottom:12px; }
+.mt-20 { margin-top:20px; }
+/* review.js helpers */
+.rv-empty-pad { padding:16px 0; }
+.rv-guide-text { line-height:1.6; text-align:left; }
+.rv-result-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin:20px 0; }
+.rv-result-cell { padding:12px; border-radius:var(--r); text-align:center; }
+.rv-result-num { font-size:22px; font-weight:800; }
+.rv-result-label { font-size:10px; font-weight:600; }
+/* mastery.js helpers */
+.ms-modal-center { text-align:center; padding:12px 0; }
+.ms-modal-emoji { font-size:48px; margin-bottom:12px; }
+.ms-benefits-list { text-align:left; margin:16px 0 20px; font-size:14px; line-height:2; }
+.ms-preview-actions { margin-top:16px; text-align:center; display:flex; gap:8px; justify-content:center; }
+/* practice.js helpers */
+.pq-diag-summary { margin-top:16px; text-align:left; max-width:360px; margin-left:auto; margin-right:auto; }
+.pp-diag-row { display:flex; align-items:center; gap:8px; margin-bottom:4px; }
+.pp-cmd-stat-row { display:flex; align-items:center; gap:8px; margin-bottom:6px; font-size:13px; }
+.pp-cmd-stat-score { font-weight:600; font-family:var(--font-mono); }
+.pp-all-clear-title { font-size:16px; font-weight:600; margin-bottom:8px; }
+.pp-section-h4 { margin:20px 0 8px; }
+.font-mono-sm { font-family:var(--font-mono); font-size:12px; }
+
 /* ═══ UTILITY CLASSES (v2.3.11) ═══ */
 /* practice.js card helpers */
 .pp-mark-tex { font-size:13px; line-height:1.6; margin-bottom:12px; max-height:160px; overflow:auto; }

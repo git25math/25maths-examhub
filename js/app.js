@@ -21,10 +21,15 @@ onLevelsReady(function() {
     });
   }
 
-  /* Check for existing Supabase session */
+  /* Check for existing Supabase session (5s timeout to prevent blank page) */
   if (sb) {
     try {
-      var sess = await sb.auth.getSession();
+      var sess = await Promise.race([
+        sb.auth.getSession(),
+        new Promise(function(resolve) {
+          setTimeout(function() { resolve({ data: { session: null } }); }, 5000);
+        })
+      ]);
       if (sess.data.session) {
         var sessMeta = sess.data.session.user.user_metadata || {};
         currentUser = {
