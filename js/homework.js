@@ -300,7 +300,7 @@ function showCreateHwModal(classId) {
   html += '<input class="auth-input" id="hw-title" placeholder="' + t('e.g. Week 3 Vocab Test', '如 第3周词汇测试') + '">';
 
   /* Tab buttons */
-  html += '<div style="display:flex;gap:6px;margin:12px 0 8px;flex-wrap:wrap">';
+  html += '<div class="flex flex-wrap gap-6" style="margin:12px 0 8px">';
   html += '<button id="hw-tab-deck" class="btn btn-sm btn-primary" onclick="hwSwitchTab(\'deck\')">' + t('Select Groups', '选择词组') + '</button>';
   html += '<button id="hw-tab-custom" class="btn btn-sm btn-ghost" onclick="hwSwitchTab(\'custom\')">' + t('Custom Vocab', '自定义词汇') + '</button>';
   html += '<button id="hw-tab-practice" class="btn btn-sm btn-ghost" onclick="hwSwitchTab(\'practice\')">' + t('Practice MCQ', '练习题') + '</button>';
@@ -325,14 +325,14 @@ function showCreateHwModal(classId) {
 
   /* Practice MCQ area (hidden) */
   html += '<div id="hw-practice-area" style="display:none">';
-  html += '<div style="display:flex;gap:8px;margin-bottom:8px;align-items:center">';
+  html += '<div class="flex gap-8 items-center mb-8">';
   html += '<label class="settings-label" style="margin:0;white-space:nowrap">' + t('Board', '考试局') + '</label>';
   html += '<select id="hw-pq-board" class="auth-input" style="margin:0;flex:1" onchange="_renderHwSections(this.value)">';
   html += '<option value="cie">CIE 0580</option>';
   html += '<option value="edexcel">Edexcel 4MA1</option>';
   html += '</select>';
   html += '</div>';
-  html += '<div style="display:flex;gap:8px;margin-bottom:8px">';
+  html += '<div class="flex gap-8 mb-8">';
   html += '<div style="flex:1"><label class="settings-label" style="margin:0">' + t('Questions', '题数') + '</label>';
   html += '<select id="hw-pq-count" class="auth-input" style="margin:4px 0 0">';
   html += '<option value="5">5</option><option value="10" selected>10</option><option value="15">15</option><option value="20">20</option>';

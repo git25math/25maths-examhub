@@ -48,6 +48,7 @@ DATA_FILES = {
     "_offlineVocabCie": "data/vocabulary-cie.json",
     "_offlineVocabEdx": "data/vocabulary-edexcel.json",
     "_offlinePapersCie": "data/papers-cie.json",
+    "_offlinePapersEdx": "data/papers-edx.json",
 }
 
 # Optional data files (skip if missing)
@@ -133,6 +134,7 @@ var _dataMap = {
   'data/vocabulary-cie.json': typeof _offlineVocabCie !== 'undefined' ? _offlineVocabCie : null,
   'data/vocabulary-edexcel.json': typeof _offlineVocabEdx !== 'undefined' ? _offlineVocabEdx : null,
   'data/papers-cie.json': typeof _offlinePapersCie !== 'undefined' ? _offlinePapersCie : null,
+  'data/papers-edx.json': typeof _offlinePapersEdx !== 'undefined' ? _offlinePapersEdx : null,
   'data/figures/manifest.json': typeof _offlineFigures !== 'undefined' ? _offlineFigures : null,
   'data/pastpapers-cie.json': typeof _offlinePastpapersCie !== 'undefined' ? _offlinePastpapersCie : null
 };

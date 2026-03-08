@@ -1,5 +1,35 @@
 # Changelog
 
+## [2.2.7] - 2026-03-08 — 真题数据质量深度修复 + DQ 规则扩展 + 离线构建完善
+
+### 数据质量深度修复（第二轮，2,295 处）
+- **EDX \dotfill 清除**: 1,722 题中的 PDF 答题空格标记 → 换行符
+- **EDX \item 清除**: 127 题列表标记移除（内容已有 **(a)/(b)** 标号）
+- **EDX enumerate/itemize**: 30 题列表环境包装移除
+- **CIE \currfiledir**: 14 题不可渲染图片引用 → `[Diagram]` 占位符（含 `\includegraphics` + `\IfFileExists` + `InsertScreenShot` 三种模式）
+- **CIE \centering**: 27 题布局命令移除
+- **通用修复**: textit(57) → `*italic*` / fbox(11) → 内容 / phantom(9) → 删除 / enumerate(42) / figure(7) / large(4) / bigskip(6) / hfill(3) / mbox(2) / noindent 等
+- **修复后验证**: ERROR=0, 残余 250 项均在 `$...$` 数学模式内（quad 65 + text 183 + underline 2）
+
+### DQ 规则扩展（15→30 条）
+- **新增 15 条检测+自动修复规则**: dotfill / centering / textit / item / enumerate / figure / fbox / phantom / large / hfill / bigskip / currfiledir / noindent / mbox（含 currfiledir 三模式匹配）
+- **总规则数**: 30 条（14 error/warn + 16 info），26 条支持 Auto-Fix
+
+### 离线构建修复
+- **`scripts/build-single.py`**: 新增 `_offlinePapersEdx` 数据文件 + fetch override 映射，离线模式支持 Edexcel 真题
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `scripts/fix-papers-quality.py` | 新增 15 条修复规则（dotfill/centering/textit/item/enumerate/figure/fbox/phantom/large/noindent/mbox/hfill/bigskip/currfiledir/underline） |
+| `js/data-admin.js` | DQ_RULES 15→30 条，新增 15 条检测+Auto-Fix 规则 |
+| `scripts/build-single.py` | 新增 papers-edx.json 离线构建支持 |
+| `data/papers-cie.json` | 修复 73 题（centering/figure/fbox/phantom/currfiledir/bigskip/textit/large/mbox/enumerate） |
+| `data/papers-edx.json` | 修复 1,728 题（dotfill/item/enumerate/textit/fbox/phantom/large/hfill/centering） |
+| `js/config.js` | v2.2.5 → v2.2.7 |
+
+---
+
 ## [2.2.6] - 2026-03-08 — Admin UI 一致性优化 + CSS 工具类系统
 
 ### Admin 面板 UI 统一

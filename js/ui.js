@@ -605,7 +605,7 @@ function showBugReport() {
   html += '<label class="settings-label">' + t('Auto-collected Info', '自动收集信息') + '</label>';
   html += '<textarea class="bug-textarea bug-auto" rows="4" readonly>' + autoInfo + '</textarea>';
   html += '<div id="bug-msg" style="font-size:13px;margin:8px 0;min-height:20px;color:var(--c-danger)"></div>';
-  html += '<div style="display:flex;gap:8px;margin-top:12px">';
+  html += '<div class="btn-row">';
   var submitLabel = (isLoggedIn() && !isGuest()) ? t('Submit', '提交') : t('Submit via Email', '通过邮件提交');
   html += '<button class="btn btn-primary" style="flex:1" onclick="submitBugReport()">' + submitLabel + '</button>';
   html += '<button class="btn btn-ghost" style="flex:1" onclick="hideModal()">' + t('Cancel', '取消') + '</button>';

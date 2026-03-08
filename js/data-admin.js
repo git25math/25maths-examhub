@@ -35,7 +35,40 @@ var DQ_RULES = [
   { id: 'renewcmd', label: ['\\renewcommand', '\\renewcommand'], pattern: /\\renewcommand\{[^}]*\}\{[^}]*\}/g, severity: 'warn',
     autoFix: function(tex) { return tex.replace(/\\renewcommand\{[^}]*\}\{[^}]*\}\s*/g, ''); } },
   { id: 'hspace', label: ['\\hspace / \\vspace', '\\hspace / \\vspace'], pattern: /\\[hv]space\*?\{[^}]*\}/g, severity: 'warn',
-    autoFix: function(tex) { return tex.replace(/\\[hv]space\*?\{[^}]*\}/g, ''); } }
+    autoFix: function(tex) { return tex.replace(/\\[hv]space\*?\{[^}]*\}/g, ''); } },
+  { id: 'dotfill', label: ['\\dotfill', '\\dotfill'], pattern: /\\dotfill/g, severity: 'warn',
+    autoFix: function(tex) { return tex.replace(/\s*\\dotfill\s*/g, '\n'); } },
+  { id: 'centering', label: ['\\centering', '\\centering'], pattern: /\\centering/g, severity: 'warn',
+    autoFix: function(tex) { return tex.replace(/\\centering\s*/g, ''); } },
+  { id: 'textit', label: ['\\textit{}', '\\textit{}'], pattern: /\\textit\{([^}]*)\}/g, severity: 'warn',
+    autoFix: function(tex) { return tex.replace(/\\textit\{([^}]*)\}/g, '*$1*'); } },
+  { id: 'item', label: ['\\item', '\\item'], pattern: /\\item/g, severity: 'warn',
+    autoFix: function(tex) { return tex.replace(/\\item\s*/g, ''); } },
+  { id: 'enumerate', label: ['enumerate/itemize', 'enumerate/itemize'], pattern: /\\begin\{(enumerate|itemize)\}|\\end\{(enumerate|itemize)\}/g, severity: 'warn',
+    autoFix: function(tex) { return tex.replace(/\\begin\{(enumerate|itemize)\}(\[[^\]]*\])?\s*/g, '').replace(/\\end\{(enumerate|itemize)\}\s*/g, ''); } },
+  { id: 'figure', label: ['\\begin{figure}', '\\begin{figure}'], pattern: /\\begin\{figure\}|\\end\{figure\}/g, severity: 'warn',
+    autoFix: function(tex) { return tex.replace(/\\begin\{figure\}(\[[^\]]*\])?\s*/g, '').replace(/\\end\{figure\}\s*/g, ''); } },
+  { id: 'fbox', label: ['\\fbox{}', '\\fbox{}'], pattern: /\\fbox\{([^}]*)\}/g, severity: 'warn',
+    autoFix: function(tex) { return tex.replace(/\\fbox\{([^}]*)\}/g, '$1'); } },
+  { id: 'phantom', label: ['\\phantom{}', '\\phantom{}'], pattern: /\\phantom\{[^}]*\}/g, severity: 'warn',
+    autoFix: function(tex) { return tex.replace(/\\phantom\{[^}]*\}/g, ''); } },
+  { id: 'large', label: ['\\large/\\small', '\\large/\\small'], pattern: /\\(large|Large|LARGE|small|footnotesize|tiny)\b/g, severity: 'info',
+    autoFix: function(tex) { return tex.replace(/\\(large|Large|LARGE|small|footnotesize|tiny)\b\s*/g, ''); } },
+  { id: 'hfill', label: ['\\hfill', '\\hfill'], pattern: /\\hfill/g, severity: 'warn',
+    autoFix: function(tex) { return tex.replace(/\\hfill\s*/g, ' '); } },
+  { id: 'bigskip', label: ['bigskip/medskip/smallskip', 'bigskip/medskip/smallskip'], pattern: /\\(bigskip|medskip|smallskip)/g, severity: 'info',
+    autoFix: function(tex) { return tex.replace(/\\(bigskip|medskip|smallskip)\s*/g, '\n'); } },
+  { id: 'currfiledir', label: ['\\currfiledir refs', '\\currfiledir 引用'], pattern: /\\(input|includegraphics)\{\\currfiledir[^}]*\}|\\IfFileExists\{\\currfiledir/g, severity: 'error',
+    autoFix: function(tex) {
+      tex = tex.replace(/\\includegraphics\{\\currfiledir\s*[^}]*\}\s*/g, '[Diagram]\n');
+      tex = tex.replace(/\\input\{\\currfiledir\s*[^}]*\}\s*/g, '[Diagram]\n');
+      tex = tex.replace(/\\begin\{InsertScreenShot\}[\s\S]*?\\end\{InsertScreenShot\}\s*/g, '[Diagram]\n');
+      return tex;
+    } },
+  { id: 'noindent', label: ['\\noindent', '\\noindent'], pattern: /\\noindent/g, severity: 'info',
+    autoFix: function(tex) { return tex.replace(/\\noindent\s*/g, ''); } },
+  { id: 'mbox', label: ['\\mbox{}', '\\mbox{}'], pattern: /\\mbox\{([^}]*)\}/g, severity: 'info',
+    autoFix: function(tex) { return tex.replace(/\\mbox\{([^}]*)\}/g, '$1'); } }
 ];
 
 var _dqBoard = 'cie';

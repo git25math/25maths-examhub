@@ -3753,7 +3753,11 @@ input { font-family: inherit; }
 .btn-row--mt0 { margin-top:0; }
 .btn-row--mt8 { margin-top:8px; }
 .btn-row--mt16 { margin-top:16px; }
+.btn-row--mt24 { margin-top:24px; }
 .btn-row--wrap { flex-wrap:wrap; }
+.btn-row--gap12 { gap:12px; }
+.btn-row--center { justify-content:center; }
+.btn-row--end { justify-content:flex-end; }
 .btn-row > .btn { flex:1; }
 
 /* Text color utilities — replaces inline style="color:var(--c-*)" */
@@ -3798,6 +3802,37 @@ input { font-family: inherit; }
 
 /* Homework custom word row — replaces inline cssText */
 .hw-custom-row { display:flex; gap:6px; margin-bottom:6px; align-items:center; }
+
+/* Page header row — flex row with center-aligned items */
+.page-header { display:flex; align-items:center; gap:8px; margin-bottom:16px; }
+.page-header--mb12 { margin-bottom:12px; }
+.page-header--mb20 { margin-bottom:20px; }
+
+/* Big action button */
+.btn-lg { padding:12px 32px; font-size:15px; }
+
+/* Sub-heading inside result/detail pages */
+.sub-heading { margin:20px 0 12px; }
+
+/* Monospace font utility */
+.font-mono { font-family:var(--font-mono); }
+
+/* Description paragraph */
+.desc { color:var(--c-text2); margin-bottom:20px; }
+
+/* Additional spacing */
+.mb-4 { margin-bottom:4px; }
+.mb-16 { margin-bottom:16px; }
+.mb-20 { margin-bottom:20px; }
+.pt-40 { padding-top:40px; }
+.pb-40 { padding-bottom:40px; }
+
+/* Hidden utility */
+.d-none { display:none; }
+
+/* Font weight */
+.fw-600 { font-weight:600; }
+.fw-700 { font-weight:700; }
 
 /* ═══ PRINT STYLES ═══ */
 @media print {

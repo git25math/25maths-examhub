@@ -81,6 +81,110 @@ def fix_hspace(tex):
     r"""Remove \hspace{...} and \vspace{...}."""
     return re.sub(r'\\[hv]space\*?\{[^}]*\}', '', tex)
 
+def fix_dotfill(tex):
+    r"""Remove \dotfill (PDF answer-space markers)."""
+    return re.sub(r'\s*\\dotfill\s*', '\n', tex)
+
+def fix_centering(tex):
+    r"""Remove \centering layout command."""
+    return re.sub(r'\\centering\s*', '', tex)
+
+def fix_textit(tex):
+    r"""Convert \textit{text} → *text*."""
+    return re.sub(r'\\textit\{([^}]*)\}', r'*\1*', tex)
+
+def fix_underline(tex):
+    r"""Convert \underline{text} → text (outside math mode)."""
+    parts = []
+    last = 0
+    for m in re.finditer(r'\\underline\{([^}]*)\}', tex):
+        if not is_in_math(tex, m.start()):
+            parts.append(tex[last:m.start()])
+            parts.append(m.group(1))
+            last = m.end()
+    if last == 0:
+        return tex
+    parts.append(tex[last:])
+    return ''.join(parts)
+
+def fix_item(tex):
+    r"""Remove \item list markers (content already has **(a)** labels)."""
+    return re.sub(r'\\item\s*', '', tex)
+
+def fix_enumerate(tex):
+    r"""Remove \begin{enumerate/itemize}...\end{enumerate/itemize} wrappers."""
+    tex = re.sub(r'\\begin\{(enumerate|itemize)\}(\[[^\]]*\])?\s*', '', tex)
+    tex = re.sub(r'\\end\{(enumerate|itemize)\}\s*', '', tex)
+    return tex
+
+def fix_figure(tex):
+    r"""Remove \begin{figure}...\end{figure} wrappers (keep inner content)."""
+    tex = re.sub(r'\\begin\{figure\}(\[[^\]]*\])?\s*', '', tex)
+    tex = re.sub(r'\\end\{figure\}\s*', '', tex)
+    return tex
+
+def fix_fbox(tex):
+    r"""Convert \fbox{content} → content (outside math mode)."""
+    parts = []
+    last = 0
+    for m in re.finditer(r'\\fbox\{([^}]*)\}', tex):
+        if not is_in_math(tex, m.start()):
+            parts.append(tex[last:m.start()])
+            parts.append(m.group(1))
+            last = m.end()
+    if last == 0:
+        return tex
+    parts.append(tex[last:])
+    return ''.join(parts)
+
+def fix_phantom(tex):
+    r"""Remove \phantom{...} (invisible spacing boxes)."""
+    return re.sub(r'\\phantom\{[^}]*\}', '', tex)
+
+def fix_large(tex):
+    r"""Remove \large, \Large, \small etc. font size commands."""
+    return re.sub(r'\\(large|Large|LARGE|small|footnotesize|tiny)\b\s*', '', tex)
+
+def fix_noindent(tex):
+    r"""Remove \noindent."""
+    return re.sub(r'\\noindent\s*', '', tex)
+
+def fix_mbox(tex):
+    r"""Convert \mbox{content} → content (outside math mode)."""
+    parts = []
+    last = 0
+    for m in re.finditer(r'\\mbox\{([^}]*)\}', tex):
+        if not is_in_math(tex, m.start()):
+            parts.append(tex[last:m.start()])
+            parts.append(m.group(1))
+            last = m.end()
+    if last == 0:
+        return tex
+    parts.append(tex[last:])
+    return ''.join(parts)
+
+def fix_hfill(tex):
+    r"""Remove \hfill (horizontal fill)."""
+    return re.sub(r'\\hfill\s*', ' ', tex)
+
+def fix_bigskip(tex):
+    r"""Remove \bigskip, \medskip, \smallskip."""
+    return re.sub(r'\\(bigskip|medskip|smallskip)\s*', '\n', tex)
+
+def fix_currfiledir(tex):
+    r"""Replace \input/\includegraphics/\IfFileExists with \currfiledir → [Diagram]."""
+    # \includegraphics{\currfiledir Figures/Q11.png}
+    tex = re.sub(r'\\includegraphics\{\\currfiledir\s*[^}]*\}\s*', '[Diagram]\n', tex)
+    # \input{\currfiledir Figures/Q02-Tikz.tex}
+    tex = re.sub(r'\\input\{\\currfiledir\s*[^}]*\}\s*', '[Diagram]\n', tex)
+    # Full InsertScreenShot blocks with \IfFileExists
+    tex = re.sub(
+        r'\\begin\{InsertScreenShot\}\s*\\IfFileExists\{\\currfiledir[^}]*\}\{[^}]*\}\{\s*(?:box\{[^}]*\}\{?\[[^\]]*\]\}?)?\s*\}\s*\\end\{InsertScreenShot\}\s*',
+        '[Diagram]\n', tex)
+    # Simpler \IfFileExists pattern
+    tex = re.sub(r'\\IfFileExists\{\\currfiledir[^}]*\}\{[^}]*\}\{[^}]*\}\s*', '[Diagram]\n', tex)
+    return tex
+
 def fix_subparts(tex):
     r"""Convert \begin{subparts}...\end{subparts} to (a)/(b)/(c) plain text."""
     # Remove environment markers
@@ -124,36 +228,66 @@ def fix_text_cmd(tex):
 
 # Detection patterns (for stats)
 DETECT_PATTERNS = {
-    'spacing':   re.compile(r'\\\\\[\d+(\.\d+)?(cm|mm|pt|em)\]'),
-    'textbf':    re.compile(r'\\textbf\{[^}]*\}'),
-    'center':    re.compile(r'\\begin\{center\}|\\end\{center\}'),
-    'quad':      re.compile(r'\\quad'),
-    'tmarker':   re.compile(r'^t ', re.MULTILINE),
-    'degree':    re.compile(r'\\(text)?degree'),
-    'pounds':    re.compile(r'\\pounds'),
-    'minipage':  re.compile(r'\\begin\{minipage\}'),
-    'renewcmd':  re.compile(r'\\renewcommand\{[^}]*\}\{[^}]*\}'),
-    'hspace':    re.compile(r'\\[hv]space\*?\{[^}]*\}'),
-    'subparts':  re.compile(r'\\begin\{subparts\}'),
-    'parts':     re.compile(r'\\begin\{parts\}'),
-    'text_cmd':  re.compile(r'\\text\{'),
+    'spacing':      re.compile(r'\\\\\[\d+(\.\d+)?(cm|mm|pt|em)\]'),
+    'textbf':       re.compile(r'\\textbf\{[^}]*\}'),
+    'center':       re.compile(r'\\begin\{center\}|\\end\{center\}'),
+    'quad':         re.compile(r'\\quad'),
+    'tmarker':      re.compile(r'^t ', re.MULTILINE),
+    'degree':       re.compile(r'\\(text)?degree'),
+    'pounds':       re.compile(r'\\pounds'),
+    'minipage':     re.compile(r'\\begin\{minipage\}'),
+    'renewcmd':     re.compile(r'\\renewcommand\{[^}]*\}\{[^}]*\}'),
+    'hspace':       re.compile(r'\\[hv]space\*?\{[^}]*\}'),
+    'subparts':     re.compile(r'\\begin\{subparts\}'),
+    'parts':        re.compile(r'\\begin\{parts\}'),
+    'text_cmd':     re.compile(r'\\text\{'),
+    'dotfill':      re.compile(r'\\dotfill'),
+    'centering':    re.compile(r'\\centering'),
+    'textit':       re.compile(r'\\textit\{[^}]*\}'),
+    'underline':    re.compile(r'\\underline\{'),
+    'item':         re.compile(r'\\item'),
+    'enumerate':    re.compile(r'\\begin\{(enumerate|itemize)\}'),
+    'figure':       re.compile(r'\\begin\{figure\}'),
+    'fbox':         re.compile(r'\\fbox\{'),
+    'phantom':      re.compile(r'\\phantom\{'),
+    'large':        re.compile(r'\\(large|Large|LARGE|small|footnotesize|tiny)\b'),
+    'noindent':     re.compile(r'\\noindent'),
+    'mbox':         re.compile(r'\\mbox\{'),
+    'hfill':        re.compile(r'\\hfill'),
+    'bigskip':      re.compile(r'\\(bigskip|medskip|smallskip)'),
+    'currfiledir':  re.compile(r'\\currfiledir'),
 }
 
 # Fix functions in application order
 FIXES = [
-    ('spacing',   fix_spacing),
-    ('textbf',    fix_textbf),
-    ('center',    fix_center),
-    ('quad',      fix_quad),
-    ('tmarker',   fix_tmarker),
-    ('degree',    fix_degree),
-    ('pounds',    fix_pounds),
-    ('minipage',  fix_minipage),
-    ('renewcmd',  fix_renewcmd),
-    ('hspace',    fix_hspace),
-    ('subparts',  fix_subparts),
-    ('parts',     fix_parts),
-    ('text_cmd',  fix_text_cmd),
+    ('spacing',      fix_spacing),
+    ('textbf',       fix_textbf),
+    ('center',       fix_center),
+    ('quad',         fix_quad),
+    ('tmarker',      fix_tmarker),
+    ('degree',       fix_degree),
+    ('pounds',       fix_pounds),
+    ('minipage',     fix_minipage),
+    ('renewcmd',     fix_renewcmd),
+    ('hspace',       fix_hspace),
+    ('dotfill',      fix_dotfill),
+    ('centering',    fix_centering),
+    ('textit',       fix_textit),
+    ('underline',    fix_underline),
+    ('item',         fix_item),
+    ('enumerate',    fix_enumerate),
+    ('figure',       fix_figure),
+    ('fbox',         fix_fbox),
+    ('phantom',      fix_phantom),
+    ('large',        fix_large),
+    ('noindent',     fix_noindent),
+    ('mbox',         fix_mbox),
+    ('hfill',        fix_hfill),
+    ('bigskip',      fix_bigskip),
+    ('currfiledir',  fix_currfiledir),
+    ('subparts',     fix_subparts),
+    ('parts',        fix_parts),
+    ('text_cmd',     fix_text_cmd),
 ]
 
 

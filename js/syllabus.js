@@ -586,7 +586,7 @@ function renderSectionDetail(ch, sec, secIdx, board) {
   html += '<div class="sec-syllabus-header">';
   var _syllTitle = board === 'hhk' ? t('Learning Objectives', '\u5b66\u4e60\u76ee\u6807') : t('Syllabus Requirements', '\u8003\u7eb2\u8981\u6c42');
   html += '<div class="sec-syllabus-title">' + _syllTitle + '</div>';
-  html += '<div style="display:flex;gap:4px;align-items:center">';
+  html += '<div class="flex items-center" style="gap:4px">';
   if (typeof isSuperAdmin === 'function' && isSuperAdmin()) {
     html += '<button class="sec-module-edit" onclick="editSectionModule(\'' + sec.id + '\',\'syllabus\',\'' + board + '\')" title="' + t('Edit', '\u7f16\u8f91') + '">\u270f\ufe0f</button>';
   }
@@ -1410,7 +1410,7 @@ function _renderPPSectionModule(slot, secId, board) {
   }
 
   /* Action buttons */
-  h += '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px">';
+  h += '<div class="btn-row btn-row--wrap" style="margin-top:4px">';
   h += '<button class="btn btn-sm" data-pp-start data-sec="' + secId + '" data-board="' + board + '" data-mode="practice" style="flex:1;min-width:120px">';
   h += '\ud83d\udcd6 ' + t('Practice Mode', '\u7ec3\u4e60\u6a21\u5f0f') + '</button>';
   h += '<button class="btn btn-sm" data-pp-start data-sec="' + secId + '" data-board="' + board + '" data-mode="exam" style="flex:1;min-width:120px;background:var(--c-warning);border-color:var(--c-warning);color:#fff">';
@@ -1530,7 +1530,7 @@ function _renderMasterQSummary(slot, secId, board) {
 
   /* Action buttons */
   var unmasteredCount = totalTypes - masteredTypes;
-  h += '<div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap">';
+  h += '<div class="btn-row btn-row--wrap">';
   if (unmasteredCount > 0) {
     h += '<button class="btn btn-primary btn-sm" onclick="startPracticeUnmastered(\'' + secId + '\',\'' + board + '\')" style="flex:1">';
     h += t('Practice Unmastered', '\u53EA\u7EC3\u672A\u638C\u63E1') + ' (' + unmasteredCount + ')</button>';
@@ -1667,7 +1667,7 @@ function editSectionModule(sectionId, module, board) {
   html += '<label class="pq-field-label">LaTeX</label>';
   html += '<textarea id="pq-formula-input" class="bug-textarea" rows="2" placeholder="\\frac{1}{2}" style="font-family:var(--font-mono)"></textarea>';
   html += '<div class="pq-formula-preview" id="pq-formula-preview"></div>';
-  html += '<div style="display:flex;gap:8px;margin-top:8px">';
+  html += '<div class="btn-row btn-row--mt8">';
   html += '<button class="btn btn-primary btn-sm" onclick="pqInsertFormula()">' + t('Insert', '\u63d2\u5165') + '</button>';
   html += '<button class="btn btn-ghost btn-sm" onclick="pqCloseFormula()">' + t('Cancel', '\u53d6\u6d88') + '</button>';
   html += '</div></div>';
@@ -1842,7 +1842,7 @@ function reportSectionModule(sectionId, moduleType, board) {
   html += '<label class="settings-label">' + t('Description', '\u63cf\u8ff0') + ' *</label>';
   html += '<textarea class="bug-textarea" id="sec-report-desc" rows="3" placeholder="' + t('Describe the error...', '\u8bf7\u63cf\u8ff0\u9519\u8bef...') + '"></textarea>';
   html += '<div id="sec-report-msg" style="font-size:13px;margin:8px 0;min-height:20px;color:var(--c-danger)"></div>';
-  html += '<div style="display:flex;gap:8px;margin-top:12px">';
+  html += '<div class="btn-row">';
   var submitLabel = (isLoggedIn() && !isGuest()) ? t('Submit', '\u63d0\u4ea4') : t('Submit via Email', '\u901a\u8fc7\u90ae\u4ef6\u63d0\u4ea4');
   html += '<button class="btn btn-primary" style="flex:1" onclick="submitSectionReport(\'' + sectionId + '\',\'' + moduleType + '\',\'' + board + '\')">' + submitLabel + '</button>';
   html += '<button class="btn btn-ghost" style="flex:1" onclick="hideModal()">' + t('Cancel', '\u53d6\u6d88') + '</button>';

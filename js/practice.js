@@ -515,7 +515,7 @@ function reportPracticeQ() {
   html += '<label class="settings-label">' + t('Description', '描述') + ' *</label>';
   html += '<textarea class="bug-textarea" id="pq-report-desc" rows="3" placeholder="' + t('Describe the error...', '请描述错误...') + '"></textarea>';
   html += '<div id="pq-report-msg" style="font-size:13px;margin:8px 0;min-height:20px;color:var(--c-danger)"></div>';
-  html += '<div style="display:flex;gap:8px;margin-top:12px">';
+  html += '<div class="btn-row">';
   var submitLabel = (isLoggedIn() && !isGuest()) ? t('Submit', '提交') : t('Submit via Email', '通过邮件提交');
   html += '<button class="btn btn-primary" style="flex:1" onclick="submitPracticeReport()">' + submitLabel + '</button>';
   html += '<button class="btn btn-ghost" style="flex:1" onclick="hideModal()">' + t('Cancel', '取消') + '</button>';
@@ -613,7 +613,7 @@ function _openEditor(q, board, onSaveCb) {
   }
   /* Correct answer radio */
   html += '<div class="pq-field-group"><label class="pq-field-label">' + t('Correct Answer', '正确答案') + '</label>';
-  html += '<div style="display:flex;gap:12px">';
+  html += '<div class="btn-row btn-row--mt0 btn-row--gap12">';
   for (var j = 0; j < q.o.length; j++) {
     html += '<label style="font-size:13px;cursor:pointer"><input type="radio" name="pq-ed-correct" value="' + j + '"' + (j === q.a ? ' checked' : '') + '> ' + optLabels[j] + '</label>';
   }
@@ -642,7 +642,7 @@ function _openEditor(q, board, onSaveCb) {
   html += '<label class="pq-field-label">LaTeX</label>';
   html += '<textarea id="pq-formula-input" class="bug-textarea" rows="2" placeholder="\\frac{1}{2}" style="font-family:var(--font-mono)"></textarea>';
   html += '<div class="pq-formula-preview" id="pq-formula-preview"></div>';
-  html += '<div style="display:flex;gap:8px;margin-top:8px">';
+  html += '<div class="btn-row btn-row--mt8">';
   html += '<button class="btn btn-primary btn-sm" onclick="pqInsertFormula()">' + t('Insert', '插入') + '</button>';
   html += '<button class="btn btn-ghost btn-sm" onclick="pqCloseFormula()">' + t('Cancel', '取消') + '</button>';
   html += '</div></div>';
@@ -1645,7 +1645,7 @@ function ppBack() {
   if (_ppSession && _ppSession.mode === 'exam' && _ppSession.startTime) {
     var html = '<h3 class="section-title">' + t('Quit Exam?', '\u9000\u51fa\u8003\u8bd5\uff1f') + '</h3>';
     html += '<p style="color:var(--c-text2);margin:12px 0">' + t('Your progress will be lost.', '\u8fdb\u5ea6\u5c06\u4e22\u5931\uff0c\u786e\u5b9a\u9000\u51fa\u5417\uff1f') + '</p>';
-    html += '<div style="display:flex;gap:12px;justify-content:flex-end;margin-top:16px">';
+    html += '<div class="btn-row btn-row--gap12 btn-row--end btn-row--mt16">';
     html += '<button class="btn btn-ghost" onclick="hideModal()">' + t('Cancel', '\u53d6\u6d88') + '</button>';
     html += '<button class="btn btn-primary" onclick="hideModal();ppForceBack()">' + t('Quit', '\u786e\u5b9a\u9000\u51fa') + '</button>';
     html += '</div>';
@@ -1935,7 +1935,7 @@ function _diagShowResults(exam, conceptErrors) {
   }
 
   /* Action buttons */
-  html += '<div style="display:flex;gap:12px;justify-content:center;margin-top:24px;flex-wrap:wrap;padding-bottom:40px">';
+  html += '<div class="btn-row btn-row--gap12 btn-row--center btn-row--mt24 btn-row--wrap" style="padding-bottom:40px">';
   if (_isMockExam) {
     html += '<button class="btn btn-primary" onclick="ppShowMockSetup(\'' + board + '\')">\ud83d\udd04 ' + t('New Mock', '\u65b0\u6a21\u62df\u5377') + '</button>';
   } else {
@@ -2341,7 +2341,7 @@ function reportPastPaperQ(qIdx) {
   html += '<label class="settings-label">' + t('Description', '描述') + ' *</label>';
   html += '<textarea class="bug-textarea" id="pp-report-desc" rows="3" placeholder="' + t('Describe the error...', '请描述错误...') + '"></textarea>';
   html += '<div id="pp-report-msg" style="font-size:13px;margin:8px 0;min-height:20px;color:var(--c-danger)"></div>';
-  html += '<div style="display:flex;gap:8px;margin-top:12px">';
+  html += '<div class="btn-row">';
   var submitLabel = (isLoggedIn() && !isGuest()) ? t('Submit', '提交') : t('Submit via Email', '通过邮件提交');
   html += '<button class="btn btn-primary" style="flex:1" onclick="submitPPReport(\'' + escapeHtml(q.id) + '\')">' + submitLabel + '</button>';
   html += '<button class="btn btn-ghost" style="flex:1" onclick="hideModal()">' + t('Cancel', '取消') + '</button>';
@@ -2414,7 +2414,7 @@ function editPastPaperQ(qIdx) {
   html += '<label class="settings-label">' + t('Question Text (LaTeX)', '题目文本 (LaTeX)') + '</label>';
   html += '<textarea class="bug-textarea" id="pp-ed-tex" rows="8" style="font-family:var(--font-mono);font-size:12px">' + escapeHtml(q.tex) + '</textarea>';
 
-  html += '<div style="display:flex;gap:12px;margin-top:12px">';
+  html += '<div class="btn-row btn-row--gap12">';
 
   /* Marks */
   html += '<div style="flex:1">';
@@ -2451,7 +2451,7 @@ function editPastPaperQ(qIdx) {
 
   /* Submit as correction */
   html += '<div id="pp-ed-msg" style="font-size:13px;margin:8px 0;min-height:20px;color:var(--c-danger)"></div>';
-  html += '<div style="display:flex;gap:8px;margin-top:12px">';
+  html += '<div class="btn-row">';
   html += '<button class="btn btn-primary" style="flex:1" onclick="submitPPEdit(\'' + escapeHtml(q.id) + '\')">\ud83d\udcbe ' + t('Submit Correction', '提交修正') + '</button>';
   html += '<button class="btn btn-ghost" style="flex:1" onclick="hideModal()">' + t('Cancel', '取消') + '</button>';
   html += '</div>';
@@ -2681,7 +2681,7 @@ function ppShowResults(exam, conceptErrors) {
   }
 
   /* Action buttons */
-  html += '<div style="display:flex;gap:12px;justify-content:center;margin-top:24px;flex-wrap:wrap;padding-bottom:40px">';
+  html += '<div class="btn-row btn-row--gap12 btn-row--center btn-row--mt24 btn-row--wrap" style="padding-bottom:40px">';
   if (_ppSession && _ppSession.paperKey) {
     html += '<button class="btn btn-ghost" onclick="ppShowPaperBrowse(\'' + _ppSession.board + '\')">';
     html += t('Back to Papers', '\u8fd4\u56de\u5957\u5377') + '</button>';
@@ -3040,7 +3040,7 @@ function ppShowPaperDetail(paperKey, board) {
   }
 
   /* Action buttons */
-  html += '<div style="display:flex;gap:12px;justify-content:center;margin-top:24px;flex-wrap:wrap">';
+  html += '<div class="btn-row btn-row--gap12 btn-row--center btn-row--mt24 btn-row--wrap">';
   html += '<button class="btn btn-primary" onclick="ppStartFullPaper(\'' + paperKey + '\',\'' + board + '\',\'practice\')">';
   html += t('Practice', '练习模式') + '</button>';
   html += '<button class="btn btn-ghost" onclick="ppStartFullPaper(\'' + paperKey + '\',\'' + board + '\',\'exam\')">';
