@@ -13,6 +13,16 @@ var _sttDebounce = null;
 var _sttDictCache = {};   /* API result cache: word → response | null */
 var _sttDictPending = null; /* current pending fetch abort controller */
 var _sttBaiduCache = {};  /* Baidu translate cache: word → { src, dst, from, to } | null */
+var _STT_CACHE_MAX = 200; /* max entries per cache */
+
+/* ─── Cache with LRU eviction ─── */
+function _sttCacheSet(cache, key, val) {
+  var keys = Object.keys(cache);
+  if (keys.length >= _STT_CACHE_MAX) {
+    for (var i = 0; i < 50; i++) delete cache[keys[i]];
+  }
+  cache[key] = val;
+}
 
 /* ─── Build reverse index ─── */
 function _buildSTTIndex() {
@@ -104,8 +114,7 @@ function _fetchBaiduTranslate(text, rect) {
     .then(function(data) {
       _sttDictPending = null;
       if (data.error || !data.results || data.results.length === 0) {
-        _sttBaiduCache[key] = null;
-        /* Fallback to dictionary for English */
+        _sttCacheSet(_sttBaiduCache, key, null);
         if (isEn) { _fetchDictAPI(text, rect); return; }
         _hideSTTPopup();
         return;
@@ -116,14 +125,13 @@ function _fetchBaiduTranslate(text, rect) {
         from: data.from,
         to: data.to
       };
-      _sttBaiduCache[key] = result;
+      _sttCacheSet(_sttBaiduCache, key, result);
       _showBaiduPopup(result, rect);
     })
     .catch(function(err) {
       _sttDictPending = null;
       if (err && err.name === 'AbortError') return;
-      _sttBaiduCache[key] = null;
-      /* Fallback to dictionary for English */
+      _sttCacheSet(_sttBaiduCache, key, null);
       if (isEn) { _fetchDictAPI(text, rect); return; }
       _hideSTTPopup();
     });
@@ -132,22 +140,17 @@ function _fetchBaiduTranslate(text, rect) {
 /* ─── Show Baidu translation popup ─── */
 function _showBaiduPopup(result, rect) {
   if (!_sttPopupEl) return;
-  var html = '<div class="stt-popup-word">' + _escHtml(result.src) + '</div>';
-  html += '<div class="stt-popup-def" style="font-size:1.05rem">' + _escHtml(result.dst) + '</div>';
-  html += '<div class="stt-popup-meta">';
-  html += '<span class="stt-popup-badge stt-popup-badge--translate">' + t('Translation', '翻译') + '</span>';
   var dir = (result.from === 'en') ? 'EN → ZH' : 'ZH → EN';
-  html += '<span class="stt-popup-dir">' + dir + '</span>';
-  html += '</div>';
+  var html = '<div class="stt-popup-word">' + _escHtml(result.src) + '</div>' +
+    '<div class="stt-popup-def" style="font-size:1.05rem">' + _escHtml(result.dst) + '</div>' +
+    '<div class="stt-popup-meta">' +
+      '<span class="stt-popup-badge stt-popup-badge--translate">' + t('Translation', '翻译') + '</span>' +
+      '<span class="stt-popup-dir">' + dir + '</span>' +
+    '</div>';
   _sttPopupEl.innerHTML = html;
   _positionPopup(rect, 100);
   _sttPopupEl.classList.add('show');
-  requestAnimationFrame(function() {
-    var actualH = _sttPopupEl.offsetHeight;
-    var newTop = rect.top - actualH - 8;
-    if (newTop < 8) newTop = rect.bottom + 8;
-    _sttPopupEl.style.top = newTop + 'px';
-  });
+  _sttReposition(rect);
 }
 
 /* ─── Free Dictionary API fallback (English pronunciation + definitions) ─── */
@@ -163,9 +166,7 @@ function _fetchDictAPI(word, rect) {
     try { _sttDictPending.abort(); } catch(e) {}
     _sttDictPending = null;
   }
-  /* Show loading state */
   _showSTTLoading(rect);
-  /* Fetch */
   var controller = (typeof AbortController !== 'undefined') ? new AbortController() : null;
   _sttDictPending = controller;
   var opts = controller ? { signal: controller.signal } : {};
@@ -176,12 +177,10 @@ function _fetchDictAPI(word, rect) {
     })
     .then(function(data) {
       _sttDictPending = null;
-      if (!data || !data[0]) { _sttDictCache[key] = null; _hideSTTPopup(); return; }
+      if (!data || !data[0]) { _sttCacheSet(_sttDictCache, key, null); _hideSTTPopup(); return; }
       var entry = data[0];
       var result = { word: entry.word || key };
-      /* Phonetic */
       result.phonetic = entry.phonetic || '';
-      /* Audio — find first non-empty audio URL */
       result.audio = '';
       if (entry.phonetics) {
         for (var i = 0; i < entry.phonetics.length; i++) {
@@ -189,7 +188,6 @@ function _fetchDictAPI(word, rect) {
           if (!result.phonetic && entry.phonetics[i].text) result.phonetic = entry.phonetics[i].text;
         }
       }
-      /* Definitions — take first 3 across all meanings */
       result.defs = [];
       if (entry.meanings) {
         for (var m = 0; m < entry.meanings.length && result.defs.length < 3; m++) {
@@ -203,21 +201,21 @@ function _fetchDictAPI(word, rect) {
           }
         }
       }
-      _sttDictCache[key] = result;
+      _sttCacheSet(_sttDictCache, key, result);
       _showDictPopup(result, rect);
     })
     .catch(function(err) {
       _sttDictPending = null;
       if (err && err.name === 'AbortError') return;
-      _sttDictCache[key] = null;
+      _sttCacheSet(_sttDictCache, key, null);
       _hideSTTPopup();
     });
 }
 
-/* ─── Show loading spinner in popup ─── */
+/* ─── Show loading state ─── */
 function _showSTTLoading(rect) {
   if (!_sttPopupEl) return;
-  _sttPopupEl.innerHTML = '<div class="stt-popup-loading">' + t('Looking up…', '查询中…') + '</div>';
+  _sttPopupEl.innerHTML = '<div class="stt-popup-loading">' + t('Looking up\u2026', '\u67e5\u8be2\u4e2d\u2026') + '</div>';
   _positionPopup(rect, 60);
   _sttPopupEl.classList.add('show');
 }
@@ -230,33 +228,27 @@ function _showDictPopup(result, rect) {
     html += ' <span class="stt-popup-phonetic">' + _escHtml(result.phonetic) + '</span>';
   }
   if (result.audio) {
-    html += ' <button class="stt-popup-audio" onclick="_sttPlayAudio(\'' + _escAttr(result.audio) + '\')" title="' + t('Play pronunciation', '播放发音') + '">🔊</button>';
+    html += ' <button class="stt-popup-audio" data-stt-audio="' + _escHtml(result.audio) + '" title="' + t('Play pronunciation', '\u64ad\u653e\u53d1\u97f3') + '">\ud83d\udd0a</button>';
   }
   html += '</div>';
-  html += '<div class="stt-popup-badge stt-popup-badge--dict">' + t('Dictionary', '词典') + '</div>';
+  html += '<div class="stt-popup-badge stt-popup-badge--dict">' + t('Dictionary', '\u8bcd\u5178') + '</div>';
   for (var i = 0; i < result.defs.length; i++) {
     var d = result.defs[i];
     html += '<div class="stt-popup-dict-def">';
     html += '<span class="stt-popup-pos">' + _escHtml(d.pos) + '</span> ';
     html += _escHtml(d.text);
     if (d.example) {
-      html += '<div class="stt-popup-example">"' + _escHtml(d.example) + '"</div>';
+      html += '<div class="stt-popup-example">\u201c' + _escHtml(d.example) + '\u201d</div>';
     }
     html += '</div>';
   }
   if (result.defs.length === 0) {
-    html += '<div class="stt-popup-def">' + t('No definition found', '未找到释义') + '</div>';
+    html += '<div class="stt-popup-def">' + t('No definition found', '\u672a\u627e\u5230\u91ca\u4e49') + '</div>';
   }
   _sttPopupEl.innerHTML = html;
   _positionPopup(rect, 160);
   _sttPopupEl.classList.add('show');
-  /* Reposition after render */
-  requestAnimationFrame(function() {
-    var actualH = _sttPopupEl.offsetHeight;
-    var newTop = rect.top - actualH - 8;
-    if (newTop < 8) newTop = rect.bottom + 8;
-    _sttPopupEl.style.top = newTop + 'px';
-  });
+  _sttReposition(rect);
 }
 
 /* ─── Play pronunciation audio ─── */
@@ -283,22 +275,31 @@ function _positionPopup(rect, estH) {
   _sttPopupEl.style.top = top + 'px';
 }
 
+/* ─── Reposition after render ─── */
+function _sttReposition(rect) {
+  requestAnimationFrame(function() {
+    if (!_sttPopupEl) return;
+    var actualH = _sttPopupEl.offsetHeight;
+    var newTop = rect.top - actualH - 8;
+    if (newTop < 8) newTop = rect.bottom + 8;
+    _sttPopupEl.style.top = newTop + 'px';
+  });
+}
+
 /* ─── Show vocab popup (local match) ─── */
 function _showSTTPopup(matches, rect) {
   if (!_sttPopupEl) return;
   var m = matches[0];
   var ws = _sttWordStatus(m.levelIdx, m.wordId);
 
-  /* Badge */
   var badgeClass = 'stt-popup-badge stt-popup-badge--' + ws.status;
-  var badgeText = ws.status === 'mastered' ? t('Mastered', '已掌握') :
-                  ws.status === 'learning' ? t('Learning', '学习中') :
-                  t('New', '新词');
+  var badgeText = ws.status === 'mastered' ? t('Mastered', '\u5df2\u638c\u63e1') :
+                  ws.status === 'learning' ? t('Learning', '\u5b66\u4e60\u4e2d') :
+                  t('New', '\u65b0\u8bcd');
 
-  /* Stars */
   var starsHtml = '';
   for (var i = 0; i < 4; i++) {
-    starsHtml += i < ws.stars ? '★' : '☆';
+    starsHtml += i < ws.stars ? '\u2605' : '\u2606';
   }
 
   var html = '<div class="stt-popup-word">' + _escHtml(m.word) + '</div>' +
@@ -310,24 +311,24 @@ function _showSTTPopup(matches, rect) {
     '<div class="stt-popup-actions">';
 
   if (ws.status === 'new') {
-    html += '<button class="btn btn-primary btn-sm" onclick="_sttStartLearn(' + m.levelIdx + ',\'' + _escAttr(m.wordId) + '\')">' +
-      t('Start Learning', '开始学习') + '</button>';
+    html += '<button class="btn btn-primary btn-sm" data-stt-learn="' + m.levelIdx + '" data-stt-wid="' + _escHtml(m.wordId) + '">' +
+      t('Start Learning', '\u5f00\u59cb\u5b66\u4e60') + '</button>';
   }
-  html += '<button class="btn btn-ghost btn-sm" onclick="_sttOpenDeck(' + m.levelIdx + ')">' +
-    t('Open Deck', '打开词组') + '</button>';
+  html += '<button class="btn btn-ghost btn-sm" data-stt-deck="' + m.levelIdx + '">' +
+    t('Open Deck', '\u6253\u5f00\u8bcd\u7ec4') + '</button>';
   html += '</div>';
 
   if (matches.length > 1) {
-    html += '<div class="stt-popup-more" onclick="_sttExpandMore(this)" data-expanded="0">' +
-      '+' + (matches.length - 1) + ' ' + t('more', '更多') + '</div>';
+    html += '<div class="stt-popup-more" data-stt-toggle="more">' +
+      '+' + (matches.length - 1) + ' ' + t('more', '\u66f4\u591a') + '</div>';
     html += '<div class="stt-popup-extra" style="display:none">';
     for (var j = 1; j < matches.length; j++) {
       var mj = matches[j];
       html += '<div style="margin-top:8px;padding-top:8px;border-top:1px solid var(--c-border)">' +
         '<div class="stt-popup-word" style="font-size:0.95rem">' + _escHtml(mj.word) + '</div>' +
         '<div class="stt-popup-def">' + _escHtml(mj.def) + '</div>' +
-        '<button class="btn btn-ghost btn-sm" style="margin-top:4px" onclick="_sttOpenDeck(' + mj.levelIdx + ')">' +
-        t('Open Deck', '打开词组') + '</button></div>';
+        '<button class="btn btn-ghost btn-sm" style="margin-top:4px" data-stt-deck="' + mj.levelIdx + '">' +
+        t('Open Deck', '\u6253\u5f00\u8bcd\u7ec4') + '</button></div>';
     }
     html += '</div>';
   }
@@ -335,14 +336,7 @@ function _showSTTPopup(matches, rect) {
   _sttPopupEl.innerHTML = html;
   _positionPopup(rect, 160);
   _sttPopupEl.classList.add('show');
-
-  /* Reposition after render (actual height may differ) */
-  requestAnimationFrame(function() {
-    var actualH = _sttPopupEl.offsetHeight;
-    var newTop = rect.top - actualH - 8;
-    if (newTop < 8) newTop = rect.bottom + 8;
-    _sttPopupEl.style.top = newTop + 'px';
-  });
+  _sttReposition(rect);
 }
 
 function _hideSTTPopup() {
@@ -353,7 +347,7 @@ function _hideSTTPopup() {
 function _sttStartLearn(levelIdx, wordId) {
   var key = wordKey(levelIdx, wordId);
   recordAnswer(key, 'study', true);
-  showToast(t('Added to learning', '已加入学习'));
+  showToast(t('Added to learning', '\u5df2\u52a0\u5165\u5b66\u4e60'));
   _hideSTTPopup();
 }
 
@@ -362,21 +356,38 @@ function _sttOpenDeck(levelIdx) {
   openDeck(levelIdx);
 }
 
-function _sttExpandMore(el) {
-  var extra = el.nextElementSibling;
-  if (!extra) return;
-  var expanded = el.getAttribute('data-expanded') === '1';
-  extra.style.display = expanded ? 'none' : 'block';
-  el.setAttribute('data-expanded', expanded ? '0' : '1');
-  el.textContent = expanded ? el.textContent : t('Collapse', '收起');
-}
-
 /* ─── Escape helpers ─── */
 function _escHtml(s) {
-  return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 function _escAttr(s) {
   return s.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+}
+
+/* ─── Event delegation for popup clicks (no inline onclick) ─── */
+function _onSTTPopupClick(e) {
+  var el = e.target;
+  /* Audio button */
+  var audioBtn = el.closest('[data-stt-audio]');
+  if (audioBtn) { _sttPlayAudio(audioBtn.getAttribute('data-stt-audio')); return; }
+  /* Start Learn button */
+  var learnBtn = el.closest('[data-stt-learn]');
+  if (learnBtn) {
+    _sttStartLearn(parseInt(learnBtn.getAttribute('data-stt-learn'), 10), learnBtn.getAttribute('data-stt-wid'));
+    return;
+  }
+  /* Open Deck button */
+  var deckBtn = el.closest('[data-stt-deck]');
+  if (deckBtn) { _sttOpenDeck(parseInt(deckBtn.getAttribute('data-stt-deck'), 10)); return; }
+  /* Toggle more */
+  var moreBtn = el.closest('[data-stt-toggle]');
+  if (moreBtn) {
+    var extra = moreBtn.nextElementSibling;
+    if (!extra) return;
+    var expanded = extra.style.display !== 'none';
+    extra.style.display = expanded ? 'none' : 'block';
+    moreBtn.textContent = expanded ? moreBtn.textContent : t('Collapse', '\u6536\u8d77');
+  }
 }
 
 /* ─── Event handlers ─── */
@@ -429,6 +440,18 @@ function _onSTTClickOutside(e) {
   _hideSTTPopup();
 }
 
+function _onSTTKeydown(e) {
+  if (e.key === 'Escape' && _sttPopupEl && _sttPopupEl.classList.contains('show')) {
+    _hideSTTPopup();
+  }
+}
+
+function _onSTTScroll() {
+  if (_sttPopupEl && _sttPopupEl.classList.contains('show')) {
+    _hideSTTPopup();
+  }
+}
+
 /* ─── Toggle ─── */
 function toggleTranslate(enabled) {
   _sttEnabled = enabled;
@@ -439,6 +462,10 @@ function toggleTranslate(enabled) {
 /* ─── Init ─── */
 function initTranslate() {
   _sttPopupEl = E('stt-popup');
+  if (!_sttPopupEl) return;
   document.addEventListener('selectionchange', _onSTTSelection);
   document.addEventListener('mousedown', _onSTTClickOutside);
+  document.addEventListener('keydown', _onSTTKeydown);
+  window.addEventListener('scroll', _onSTTScroll, true);
+  _sttPopupEl.addEventListener('click', _onSTTPopupClick);
 }

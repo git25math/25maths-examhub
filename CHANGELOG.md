@@ -1,5 +1,25 @@
 # Changelog
 
+## [2.2.24] - 2026-03-08 — 划词翻译质量优化
+
+### 优化
+- **ESC 键关闭**: 按 Escape 关闭翻译浮层
+- **滚动时关闭**: 页面滚动自动隐藏浮层（capture 监听，含嵌套容器）
+- **onclick XSS 消除**: 所有按钮改用 `data-stt-*` 属性 + 事件委托，消除 6 处 inline onclick
+- **缓存上限**: `_sttBaiduCache` + `_sttDictCache` 各限 200 条，超出时淘汰最早 50 条
+- **打印隐藏**: `.stt-popup` 加入 `@media print` 隐藏列表
+- **重复代码抽取**: `_sttReposition()` 统一 3 处 `requestAnimationFrame` 定位逻辑
+- **_escHtml 加固**: 增加 `"` → `&quot;` 转义
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `js/translate.js` | 事件委托重构 + ESC/scroll 监听 + LRU 缓存 + _sttReposition 抽取 |
+| `css/style.css` | `.stt-popup` 加入 print 隐藏 |
+| `js/config.js` | v2.2.23 → v2.2.24 |
+
+---
+
 ## [2.2.23] - 2026-03-08 — 渐进解锁系统质量优化 (Progressive Unlock Quality Fix)
 
 ### 修复
