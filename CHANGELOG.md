@@ -1,5 +1,25 @@
 # Changelog
 
+## [2.2.19] - 2026-03-08 — 引导流程优化（防抖 + 里程碑 + 连续激励）
+
+### 体验优化
+- **Nudge 30 分钟冷却**: 连续完成多个模式不再密集弹 nudge，内存级变量页面刷新自动重置
+- **徽章庆祝排队**: 多徽章同时解锁时依次播放（4.5s 间隔），不再叠加 DOM
+- **首词引导下一步**: `first_word` 徽章解锁后 5s 弹 nudge 引导尝试测验模式
+- **连续学习临中断提醒**: streak ≥1 且 20-48h 未活动时首页提醒做 Daily Challenge
+- **阶段升级庆祝**: new→active / active→intermediate / intermediate→advanced 升级弹 nudge 庆祝
+- **模式发现重置**: 阶段升级后清除 `wmatch_disc_*` dismissal 记录，发现芯片重新出现
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `js/ui.js` | +4 行：`_lastNudgeShownAt` 冷却变量 + `showNudge()` 入口 30 分钟防抖 |
+| `js/storage.js` | +10 行：徽章 `forEach` 增加 `setTimeout(idx * 4500)` 排队 + `first_word` 引导 nudge |
+| `js/mastery.js` | +32 行：`renderHome()` 末尾 streak-at-risk 检查 + 阶段升级庆祝 + 发现重置 |
+| `js/config.js` | v2.2.18 → v2.2.19 |
+
+---
+
 ## [2.2.18] - 2026-03-08 — 划词翻译 (Select-to-Translate)
 
 ### 新功能

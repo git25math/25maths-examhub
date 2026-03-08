@@ -716,6 +716,53 @@ function renderHome() {
     if (_cieDataReady) loadPastPaperData('cie').then(_ppInvalidate).catch(function() {});
     if (_edxDataReady) loadPastPaperData('edx').then(_ppInvalidate).catch(function() {});
   }
+
+  /* Streak-at-risk reminder (20-48h since last activity) */
+  setTimeout(function() {
+    try {
+      var st = loadS().streak;
+      if (st && st.cur >= 1 && st.last) {
+        var hrsAgo = (Date.now() - new Date(st.last + 'T00:00:00').getTime()) / 3600000;
+        if (hrsAgo >= 20 && hrsAgo <= 48) {
+          var today = new Date().toISOString().slice(0, 10);
+          if (st.last !== today && typeof showNudge === 'function') {
+            showNudge('streak_risk', t('Your ' + st.cur + '-day streak is at risk! Do a Daily Challenge to keep it going', '\u4f60\u7684 ' + st.cur + ' \u5929\u8fde\u7eed\u5b66\u4e60\u5373\u5c06\u4e2d\u65ad\uff01\u505a\u4e2a\u6bcf\u65e5\u6311\u6218\u7ee7\u7eed\u4fdd\u6301'), t('Go', '\u53bb\u6311\u6218'), function() { if (typeof startDailyChallenge === 'function') startDailyChallenge(); });
+          }
+        }
+      }
+    } catch (e) {}
+  }, 500);
+
+  /* Stage upgrade celebration + mode discovery reset */
+  setTimeout(function() {
+    try {
+      var us = typeof getUserStage === 'function' ? getUserStage() : null;
+      if (!us) return;
+      var prevStage = localStorage.getItem('wmatch_user_stage') || 'new';
+      var stages = ['new', 'active', 'intermediate', 'advanced'];
+      var prevIdx = stages.indexOf(prevStage);
+      var curIdx = stages.indexOf(us.stage);
+      if (curIdx > prevIdx && prevIdx >= 0) {
+        localStorage.setItem('wmatch_user_stage', us.stage);
+        var msgs = {
+          active: t('You\'ve mastered 10+ words! Keep exploring different modes', '\u5df2\u638c\u63e1 10+ \u8bcd\u6c47\uff01\u7ee7\u7eed\u63a2\u7d22\u4e0d\u540c\u6a21\u5f0f'),
+          intermediate: t('100+ words mastered! You\'re becoming a math vocab expert', '\u638c\u63e1 100+ \u8bcd\u6c47\uff01\u4f60\u6b63\u5728\u6210\u4e3a\u6570\u5b66\u8bcd\u6c47\u8fbe\u4eba'),
+          advanced: t('500+ words! You\'re a true math vocabulary master', '500+ \u8bcd\u6c47\uff01\u4f60\u662f\u771f\u6b63\u7684\u6570\u5b66\u8bcd\u6c47\u5927\u5e08')
+        };
+        if (typeof showNudge === 'function' && msgs[us.stage]) {
+          showNudge('stage_' + us.stage, msgs[us.stage]);
+        }
+        /* Reset mode discovery dismissals so chips reappear */
+        for (var dk in localStorage) {
+          if (dk.indexOf('wmatch_disc_') === 0) {
+            try { localStorage.removeItem(dk); } catch (e) {}
+          }
+        }
+      } else if (curIdx >= 0 && prevStage !== us.stage) {
+        localStorage.setItem('wmatch_user_stage', us.stage);
+      }
+    } catch (e) {}
+  }, 1000);
 }
 
 /* ═══ DECK DETAIL ═══ */
