@@ -1,5 +1,30 @@
 # Changelog
 
+## [2.3.10] - 2026-03-08 — 质量优化批次 2（暗色模式补全 + 内联样式 + 可访问性 + 颜色变量化）
+
+### 暗色模式
+- **5 处硬编码颜色→变量**: `.star-dot.filled` → `--c-warning`、`.sec-journey-step.done` → `--c-status-green`、`.sec-module-done` → `--c-status-green`、`.plan-streak` → `--c-streak`、`.stt-popup-badge--translate` → `--c-primary-light`
+- **Dark 模式 journey done**: 移除硬编码 `#66bb6a` / `#4caf50`，统一使用 `--c-status-green` 变量
+
+### 可访问性
+- **category-header / unit-header 键盘支持**: 添加 `role="button"` + `tabindex="0"` + `focus-visible` 焦点环
+- **全局键盘委托**: Enter/Space 触发 category/unit 折叠（复用已有 keydown 监听器）
+
+### 代码质量
+- **8 处内联样式→CSS 类**: HHK vocab 模块 `sec-module-col/row`、deck-row `sec-deck-row-flush`、syllabus header `sec-flex-gap4`、health bar `sec-health-bar`、MQ type 右列 `mq-type-right`、mini stars `sec-mini-star`、focus areas margin 合并到 CSS
+- **5 新 CSS 工具类**: `sec-health-bar` / `sec-flex-gap4` / `mq-type-right` / `sec-mini-star` / `sec-deck-row-flush`
+- **`.pp-focus-areas` margin 合并**: `style="margin-top:6px"` → CSS `margin-top: 6px`
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `css/style.css` | 5 处颜色→变量 + `.pp-focus-areas` margin 合并 + 5 新 CSS 类 + focus-visible |
+| `js/syllabus.js` | 8 处 inline style→class |
+| `js/mastery.js` | category/unit-header role+tabindex + 键盘委托 |
+| `js/config.js` | v2.3.9 → v2.3.10 |
+
+---
+
 ## [2.3.9] - 2026-03-08 — 质量优化批次（性能 + 暗色模式 + 可访问性 + 代码精简）
 
 ### 性能优化

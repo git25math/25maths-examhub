@@ -593,7 +593,7 @@ function renderSectionDetail(ch, sec, secIdx, board) {
     var sh = getSectionHealth(sec.id, board);
     var statusColor = sh.score >= 60 ? 'var(--c-success)' : sh.score >= 30 ? 'var(--c-warning)' : 'var(--c-border)';
     html += '<div class="sec-health">';
-    html += '<div class="sec-health-bar" style="background:' + statusColor + ';width:4px;min-height:100%;border-radius:2px"></div>';
+    html += '<div class="sec-health-bar" style="background:' + statusColor + '"></div>';
     html += '<div class="sec-health-info">';
     html += '<div class="sec-health-rec">' + _spRecLabel(sh.rec) + '</div>';
     /* Concise summary instead of 4 dimension bars */
@@ -615,7 +615,7 @@ function renderSectionDetail(ch, sec, secIdx, board) {
   html += '<div class="sec-syllabus-header">';
   var _syllTitle = board === 'hhk' ? t('Learning Objectives', '\u5b66\u4e60\u76ee\u6807') : t('Syllabus Requirements', '\u8003\u7eb2\u8981\u6c42');
   html += '<div class="sec-syllabus-title">' + _syllTitle + '</div>';
-  html += '<div class="flex items-center" style="gap:4px">';
+  html += '<div class="sec-flex-gap4">';
   if (typeof isSuperAdmin === 'function' && isSuperAdmin()) {
     html += '<button class="sec-module-edit" onclick="editSectionModule(\'' + sec.id + '\',\'syllabus\',\'' + board + '\')" title="' + t('Edit', '\u7f16\u8f91') + '">\u270f\ufe0f</button>';
   }
@@ -725,9 +725,9 @@ function renderSectionDetail(ch, sec, secIdx, board) {
 
   /* Vocabulary module — HHK shows sub-deck list */
   if (board === 'hhk' && sec.vocabSlugs && sec.vocabSlugs.length > 0) {
-    html += '<div class="sec-module" style="flex-direction:column;align-items:stretch;gap:8px">';
+    html += '<div class="sec-module sec-module-col">';
     if (_jVocabDone) html += '<div class="sec-module-done">\u2713</div>';
-    html += '<div style="display:flex;align-items:center;gap:12px">';
+    html += '<div class="sec-module-row">';
     html += '<div class="sec-module-icon">\ud83d\udcdd</div>';
     html += '<div class="sec-module-info">';
     html += '<div class="sec-module-title">' + t('Vocabulary', '\u6838\u5fc3\u8bcd\u6c47') + '</div>';
@@ -740,7 +740,7 @@ function renderSectionDetail(ch, sec, secIdx, board) {
       if (_li < 0) return;
       var subStats = getDeckStats(_li, wd);
       var subTitle = LEVELS[_li].title || ('Group ' + (si + 1));
-      html += '<div class="deck-row" style="margin:0" onclick="openDeck(' + _li + ')">';
+      html += '<div class="deck-row sec-deck-row-flush" onclick="openDeck(' + _li + ')">';
       html += '<span class="deck-row-tag">' + (si + 1) + '</span>';
       html += '<span class="deck-row-name">' + escapeHtml(subTitle) + '</span>';
       html += '<span class="deck-row-count">' + subStats.started + '/' + subStats.total + '</span>';
@@ -1490,7 +1490,7 @@ function _renderPPSectionModule(slot, secId, board) {
   /* Focus areas: targeted practice for weak groups */
   var _secWeak = ppGetWeakGroups(board, secId);
   if (_secWeak.length > 0) {
-    h += '<div class="pp-focus-areas" style="margin-top:6px">';
+    h += '<div class="pp-focus-areas">';
     h += '<div class="pp-focus-title">' + t('Focus Areas', '\u91cd\u70b9\u7ec3\u4e60') + '</div>';
     h += '<div class="pp-focus-chips">';
     for (var wi = 0; wi < Math.min(_secWeak.length, 3); wi++) {
@@ -1612,7 +1612,7 @@ function _renderMasterQSummary(slot, secId, board) {
     h += '</div>';
 
     /* Count + mastery badge */
-    h += '<div style="text-align:right;flex-shrink:0">';
+    h += '<div class="mq-type-right">';
     h += '<div class="mq-type-count">' + gData.count + ' ' + t('Q', '\u9898') + '</div>';
     h += '<div class="mq-type-badge ' + (isMastered ? 'mastered' : 'unmastered') + '">';
     h += isMastered ? '\u2705' : '\u2B1C';
@@ -1676,7 +1676,7 @@ function _renderMiniStars(pct) {
   var filled = Math.round(pct / 25);
   var s = '';
   for (var i = 0; i < 4; i++) {
-    s += '<span class="star-dot' + (i < filled ? ' filled' : '') + '" style="width:6px;height:6px"></span>';
+    s += '<span class="star-dot sec-mini-star' + (i < filled ? ' filled' : '') + '"></span>';
   }
   return s;
 }

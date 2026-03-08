@@ -309,7 +309,8 @@ function _initDiscDelegation() {
     if (e.key !== 'Enter' && e.key !== ' ') return;
     var dismiss = e.target.closest('[data-disc-dismiss]');
     var recapClose = e.target.closest('.return-recap-close');
-    if (dismiss || recapClose) { e.preventDefault(); e.target.click(); }
+    if (dismiss || recapClose) { e.preventDefault(); e.target.click(); return; }
+    if (e.target.classList.contains('category-header') || e.target.classList.contains('unit-header')) { e.preventDefault(); e.target.click(); }
   });
 }
 
@@ -603,7 +604,7 @@ function renderHome() {
 
       var collapsed = appSearch ? false : (catCollapsed[cat.id] ? true : false);
       boardHtml += '<div class="category-section' + (collapsed ? ' collapsed' : '') + '" id="cat-' + cat.id + '">';
-      boardHtml += '<div class="category-header" onclick="toggleCategory(\'' + cat.id + '\')">';
+      boardHtml += '<div class="category-header" role="button" tabindex="0" onclick="toggleCategory(\'' + cat.id + '\')">';
       boardHtml += '<span class="category-emoji">' + cat.emoji + '</span>';
       boardHtml += '<span class="category-name">' + catName(cat) + '</span>';
 
@@ -655,7 +656,7 @@ function renderHome() {
           if (appLang !== 'en' && ug.unitTitleZh) unitLabel += ' ' + ug.unitTitleZh;
 
           boardHtml += '<div class="unit-section' + (uCollapsed ? ' collapsed' : '') + '" id="unit-' + unitKey + '">';
-          boardHtml += '<div class="unit-header" onclick="toggleUnit(\'' + unitKey + '\')">';
+          boardHtml += '<div class="unit-header" role="button" tabindex="0" onclick="toggleUnit(\'' + unitKey + '\')">';
           boardHtml += '<span class="unit-name">' + unitLabel + '</span>';
           boardHtml += '<span class="unit-count">' + ug.levels.length + ' ' + t('groups', '\u7ec4') + '</span>';
           boardHtml += '<span class="unit-chevron">\u25bc</span>';
