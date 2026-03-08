@@ -22,15 +22,18 @@ function toggleGradeList(grade) {
 /* isTeacher() and callEdgeFunction() moved to config.js */
 
 /* ═══ INIT TEACHER ═══ */
-async function initTeacher() {
+async function initTeacher(prefetchedData) {
   if (!sb || !isLoggedIn()) return;
   try {
-    var res = await sb.from('teachers')
-      .select('id, school_id, display_name')
-      .eq('user_id', currentUser.id)
-      .single();
-    if (res.error || !res.data) {
-      /* Super admin can access admin panel without teacher record */
+    var data = prefetchedData !== undefined ? prefetchedData : null;
+    /* Fallback: query DB if no prefetched data (e.g. called from other paths) */
+    if (prefetchedData === undefined) {
+      var res = await sb.from('teachers')
+        .select('id, school_id, display_name')
+        .eq('user_id', currentUser.id).single();
+      data = (res.error || !res.data) ? null : res.data;
+    }
+    if (!data) {
       if (typeof isSuperAdmin === 'function' && isSuperAdmin()) {
         var navAdmin = E('nav-admin');
         var bnavAdmin = E('bnav-admin');
@@ -41,7 +44,7 @@ async function initTeacher() {
       }
       return;
     }
-    _teacherData = res.data;
+    _teacherData = data;
     isTeacherUser = true;
     updateSidebar();
     if (typeof appView !== 'undefined' && appView === 'home') renderHome();
@@ -53,7 +56,6 @@ async function initTeacher() {
       .single();
     if (sRes.data) _schoolData = sRes.data;
 
-    /* Show admin nav items */
     var navAdmin = E('nav-admin');
     var bnavAdmin = E('bnav-admin');
     if (navAdmin) navAdmin.style.display = '';

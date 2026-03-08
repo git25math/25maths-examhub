@@ -1,5 +1,25 @@
 # Changelog
 
+## [2.2.15] - 2026-03-08 — 超级管理员功能加载优化
+
+### 性能优化
+- **auth.js**: `loadAndInitTeacher()` 重写 — teachers 表查询 2 次→1 次（完整字段一次取完）；board/homework/admin 三资源 `Promise.all` 并行加载
+- **auth.js**: admin 脚本加载从 3 个串行请求（admin.js → vocab-admin.js → data-admin.js）改为 1 个 minified bundle
+- **admin.js**: `initTeacher(prefetchedData)` 接受预取数据参数，有值时跳过 DB 查询；未传参时保留 fallback 查询
+
+### 构建
+- **minify.sh**: 新增 admin bundle — `cat admin.js vocab-admin.js data-admin.js | esbuild → admin.bundle.min.js`（66K / 17K gzip）
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `js/auth.js` | `loadAndInitTeacher()` 重写：单次查询 + Promise.all 并行 + bundle 加载 |
+| `js/admin.js` | `initTeacher(prefetchedData)` 接受预取数据，跳过重复查询 |
+| `scripts/minify.sh` | 新增 admin bundle 构建 + ls/gzip 统计 |
+| `js/config.js` | v2.2.14 → v2.2.15 |
+
+---
+
 ## [2.2.14] - 2026-03-08 — getSectionInfo O(1) 缓存 + 防御性修复
 
 ### 性能优化

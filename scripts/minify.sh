@@ -14,6 +14,10 @@ cat js/config.js js/levels-loader.js js/storage.js js/particles.js \
 # Homework module (lazy-loaded separately)
 npx esbuild js/homework.js --minify --outfile=js/homework.min.js
 
+# Admin module bundle (lazy-loaded for teachers/super admin)
+cat js/admin.js js/vocab-admin.js js/data-admin.js | \
+    npx esbuild --loader=js --minify > js/admin.bundle.min.js
+
 # CSS minify
 npx esbuild css/style.css --minify --outfile=css/style.min.css
 
@@ -29,7 +33,8 @@ if [ -n "$APP_VER" ]; then
 fi
 
 echo "=== Build complete ==="
-ls -lh js/app.bundle.min.js js/homework.min.js css/style.min.css
+ls -lh js/app.bundle.min.js js/homework.min.js js/admin.bundle.min.js css/style.min.css
 printf "JS bundle gzip: "; gzip -c js/app.bundle.min.js | wc -c
 printf "JS homework gzip: "; gzip -c js/homework.min.js | wc -c
+printf "JS admin gzip: "; gzip -c js/admin.bundle.min.js | wc -c
 printf "CSS gzip: "; gzip -c css/style.min.css | wc -c

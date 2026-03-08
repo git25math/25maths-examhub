@@ -256,39 +256,30 @@ async function afterLogin() {
 /* ═══ DYNAMIC TEACHER MODULE LOADING ═══ */
 async function loadAndInitTeacher() {
   if (!sb || !isLoggedIn()) return;
-  /* Quick role check — avoid loading admin scripts for students */
   var _isSA = typeof isSuperAdmin === 'function' && isSuperAdmin();
+  /* Single query with full fields (eliminates duplicate query in initTeacher) */
+  var teacherRow = null;
   try {
     var res = await sb.from('teachers')
-      .select('id').eq('user_id', currentUser.id).maybeSingle();
+      .select('id, school_id, display_name')
+      .eq('user_id', currentUser.id).maybeSingle();
     if (!res.data && !_isSA) return;
+    teacherRow = res.data || null;
   } catch(e) { if (!_isSA) return; }
-  /* Teacher needs all boards (cross-board homework) */
-  try { await ensureAllBoardsLoaded(); } catch(e) {}
-  /* Load homework module (admin.js depends on homework functions like renderClassHwList) */
-  await loadHomeworkModule();
-  /* Dynamically load admin.js + vocab-admin.js */
-  await new Promise(function(resolve) {
-    var _v = typeof APP_VERSION !== 'undefined' ? APP_VERSION : '';
-    var s1 = document.createElement('script');
-    s1.src = 'js/admin.js?v=' + _v;
-    s1.onload = function() {
-      var s2 = document.createElement('script');
-      s2.src = 'js/vocab-admin.js?v=' + _v;
-      s2.onload = function() {
-        var s3 = document.createElement('script');
-        s3.src = 'js/data-admin.js?v=' + _v;
-        s3.onload = resolve;
-        s3.onerror = resolve;
-        document.head.appendChild(s3);
-      };
-      s2.onerror = resolve;
-      document.head.appendChild(s2);
-    };
-    s1.onerror = resolve;
-    document.head.appendChild(s1);
-  });
-  if (typeof initTeacher === 'function') await initTeacher();
+  /* Parallel: board data + homework module + admin bundle */
+  var _v = typeof APP_VERSION !== 'undefined' ? APP_VERSION : '';
+  await Promise.all([
+    ensureAllBoardsLoaded().catch(function(){}),
+    loadHomeworkModule(),
+    new Promise(function(resolve) {
+      var s = document.createElement('script');
+      s.src = 'js/admin.bundle.min.js?v=' + _v;
+      s.onload = resolve;
+      s.onerror = resolve;
+      document.head.appendChild(s);
+    })
+  ]);
+  if (typeof initTeacher === 'function') await initTeacher(teacherRow);
 }
 
 /* ═══ BOARD SELECTION ═══ */
