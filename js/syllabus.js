@@ -2510,6 +2510,31 @@ function kpMarkdown(text) {
   return text;
 }
 
+/* Split explanation text into intro + concept cards */
+function _splitExplanation(text) {
+  if (!text) return { intro: '', concepts: [] };
+  var blocks = text.split(/\n\n+/);
+  var concepts = [];
+  var intro = [];
+  var current = null;
+  for (var i = 0; i < blocks.length; i++) {
+    var b = blocks[i].trim();
+    if (!b) continue;
+    /* Paragraph starts with **Term** — new concept */
+    var m = b.match(/^\*\*(.+?)\*\*\s*([\s\S]*)/);
+    if (m) {
+      if (current) concepts.push(current);
+      current = { title: m[1], body: m[2] || '' };
+    } else if (current) {
+      current.body += '\n\n' + b;
+    } else {
+      intro.push(b);
+    }
+  }
+  if (current) concepts.push(current);
+  return { intro: intro.join('\n\n'), concepts: concepts };
+}
+
 /* KP bilingual helper — true when user selected bilingual mode */
 function _kpIsZh() { return appLang !== 'en'; }
 
@@ -2596,16 +2621,33 @@ function renderKPDetail(kp, board) {
   }
   html += '</div>';
 
-  /* ① Explanation */
+  /* ① Explanation — split into concept cards */
   html += '<div class="kp-section">';
   html += '<div class="kp-section-header">';
   html += '<div class="kp-section-num">1</div>';
   html += '<div class="kp-section-labels"><div class="kp-section-label">' + t('Explanation', '\u77e5\u8bc6\u70b9\u7cbe\u6790') + '</div></div>';
   html += '</div>';
-  html += '<div class="kp-section-body">';
   var expText = isZh && kp.explanation.zh ? kp.explanation.zh : kp.explanation.en;
-  html += kpMarkdown(expText);
-  html += '</div>';
+  var parsed = _splitExplanation(expText);
+  if (parsed.intro) {
+    html += '<div class="kp-section-body">' + kpMarkdown(parsed.intro) + '</div>';
+  }
+  if (parsed.concepts.length > 0) {
+    html += '<div class="kp-concepts">';
+    for (var ci2 = 0; ci2 < parsed.concepts.length; ci2++) {
+      var con = parsed.concepts[ci2];
+      html += '<div class="kp-concept">';
+      html += '<div class="kp-concept-title">' + pqRender(con.title) + '</div>';
+      if (con.body) html += '<div class="kp-concept-body">' + kpMarkdown(con.body) + '</div>';
+      html += '</div>';
+    }
+    html += '</div>';
+  } else {
+    /* Fallback: no bold headings found, render as single block */
+    if (!parsed.intro) {
+      html += '<div class="kp-section-body">' + kpMarkdown(expText) + '</div>';
+    }
+  }
   html += '</div>';
 
   /* ② Exam Patterns */
@@ -2639,7 +2681,10 @@ function renderKPDetail(kp, board) {
     for (var ei = 0; ei < kp.examples.length; ei++) {
       var ex = kp.examples[ei];
       html += '<div class="kp-example">';
-      if (ex.source) html += '<div class="kp-example-source">' + ex.source + '</div>';
+      html += '<div class="kp-example-header">';
+      html += '<span class="kp-example-num">' + t('Example', '\u4f8b\u9898') + ' ' + (ei + 1) + '</span>';
+      if (ex.source) html += '<span class="kp-example-source">' + ex.source + '</span>';
+      html += '</div>';
       html += '<div class="kp-example-q">' + kpMarkdown(isZh && ex.question_zh ? ex.question_zh : ex.question) + '</div>';
       html += '<button class="kp-example-toggle" aria-expanded="false" data-kp-sol="' + ei + '">' + t('Show Solution', '\u663e\u793a\u89e3\u6790') + ' \u25bc</button>';
       html += '<div class="kp-example-solution" id="kp-sol-' + ei + '">';

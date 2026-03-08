@@ -1,5 +1,32 @@
 # Changelog
 
+## [2.3.14] - 2026-03-09 — 知识点详情页 UI 优化（概念卡片拆分 + 例题编号）
+
+### 概念卡片拆分
+- **Explanation 段落拆分**: 新增 `_splitExplanation()` 解析器，将长解释文本按 `**术语**` 段落自动拆分为独立概念卡片
+- **概念卡片 UI**: 左侧 teal 色边框 + 术语标题 + 正文，每个知识点概念独立成卡（`.kp-concept`）
+- **兜底处理**: 无 bold 标题的解释仍渲染为整块文本
+
+### 例题编号
+- **Worked Examples 编号**: 每个例题卡片顶部新增 "Example 1/2/3" 编号 + 来源徽标并排显示
+- **例题卡片重设计**: 左侧 amber 色边框（与概念卡 teal + 考法卡 purple 形成三色体系）
+
+### 视觉体系
+| 卡片类型 | 左边框颜色 | 标题色 |
+|---------|-----------|--------|
+| 概念卡 `.kp-concept` | teal #14b8a6 | teal |
+| 考法卡 `.kp-pattern` | purple (primary) | purple |
+| 例题卡 `.kp-example` | amber #f59e0b | amber |
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `js/syllabus.js` | `_splitExplanation()` + `renderKPDetail()` 概念卡渲染 + 例题编号 |
+| `css/style.css` | `.kp-concept` / `.kp-concept-title` / `.kp-concept-body` / `.kp-example-header` / `.kp-example-num` + 暗色模式 + 手机端 |
+| `js/config.js` | v2.3.13 → v2.3.14 |
+
+---
+
 ## [2.3.13] - 2026-03-09 — 启动 Bug 修复（_xxxDataReady 未声明 + knowledge-edexcel 404）
 
 ### Bug 修复
