@@ -388,3 +388,4 @@
 - [x] **性能优化**: getLevelBySlug() O(1) 哈希索引 + homework.js 3 处线性搜索重构 → v2.2.10
 - [x] **性能优化+防御性修复**: getLevelIdxBySlug() + syllabus/app 7处O(1) + practice/homework 错误处理 → v2.2.11
 - [x] **暗色模式完备性修复**: PP 模块 4 处硬编码颜色 → CSS 语义变量 → v2.2.12
+- [x] **性能优化+防御性修复**: storage.js upsert error 检查 + homework/syllabus O(1) 查找 → v2.2.13

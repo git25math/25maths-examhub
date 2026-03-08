@@ -376,10 +376,11 @@ var _syncInProgress = false;
 async function _doSyncToCloud() {
   if (!sb || !isLoggedIn()) return;
   var now = new Date().toISOString();
-  await sb.from('vocab_progress').upsert(
+  var vpRes = await sb.from('vocab_progress').upsert(
     { user_id: currentUser.id, data: JSON.stringify(loadS()), updated_at: now },
     { onConflict: 'user_id' }
   );
+  if (vpRes.error) return;
   try { localStorage.setItem('wmatch_last_sync', Date.now()); } catch (e) {}
   /* Sync leaderboard score (skip for teachers) */
   if (!isTeacher()) {
@@ -411,7 +412,8 @@ async function _doSyncToCloud() {
       if (meta.school_id) lbRow.school_id = meta.school_id;
       if (meta.class_id) lbRow.class_id = meta.class_id;
     } catch (e) {}
-    await sb.from('leaderboard').upsert(lbRow, { onConflict: 'user_id' });
+    var lbRes = await sb.from('leaderboard').upsert(lbRow, { onConflict: 'user_id' });
+    if (lbRes.error) return;
   }
 }
 

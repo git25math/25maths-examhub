@@ -957,9 +957,9 @@ function getSectionHealth(sectionId, board) {
       /* Aggregate SRS data across all sub-levels */
       var wd = getWordData();
       var totalOk = 0, totalFail = 0, lastActive = 0, srsSum = 0, srsCount = 0;
-      for (var _si = 0; _si < LEVELS.length; _si++) {
-        if (LEVELS[_si].board !== '25m') continue;
-        if (secInfo.section.vocabSlugs.indexOf(LEVELS[_si].slug) < 0) continue;
+      secInfo.section.vocabSlugs.forEach(function(slug) {
+        var _si = getLevelIdxBySlug(slug);
+        if (_si < 0) return;
         getPairs(LEVELS[_si].vocabulary).forEach(function(p) {
           var d = wd[wordKey(_si, p.lid)];
           if (d) {
@@ -969,7 +969,7 @@ function getSectionHealth(sectionId, board) {
             if (d.lv != null) { srsSum += d.lv; srsCount++; }
           }
         });
-      }
+      });
       failRate = (totalOk + totalFail) > 0 ? Math.round(totalFail / (totalOk + totalFail) * 100) : 0;
       if (lastActive > 0) {
         var daysAgo = (Date.now() - lastActive) / 86400000;

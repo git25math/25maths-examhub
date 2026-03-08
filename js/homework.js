@@ -1142,15 +1142,12 @@ async function startHwTest(hwId) {
     } else {
       /* Standard deck_slugs assignment */
       hw.deck_slugs.forEach(function(slug) {
-        for (var i = 0; i < LEVELS.length; i++) {
-          if (LEVELS[i].slug === slug) {
-            var pairs = getPairs(LEVELS[i].vocabulary);
-            pairs.forEach(function(p) {
-              words.push({ word: p.word, def: p.def, levelIdx: i, lid: p.lid });
-            });
-            break;
-          }
-        }
+        var i = getLevelIdxBySlug(slug);
+        if (i < 0) return;
+        var pairs = getPairs(LEVELS[i].vocabulary);
+        pairs.forEach(function(p) {
+          words.push({ word: p.word, def: p.def, levelIdx: i, lid: p.lid });
+        });
       });
     }
 

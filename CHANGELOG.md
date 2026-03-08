@@ -1,5 +1,24 @@
 # Changelog
 
+## [2.2.13] - 2026-03-08 — 性能优化 + 防御性修复
+
+### 防御性修复
+- **storage.js**: 2 处 Supabase upsert（vocab_progress / leaderboard）增加 error 检查，失败时立即 return 阻止后续写入
+
+### 性能优化
+- **homework.js**: deck_slugs 线性搜索 LEVELS → `getLevelIdxBySlug()` O(1) 查找
+- **syllabus.js**: getSectionHealth HHK SRS 聚合从 O(N) 全量 LEVELS 遍历 → O(M) vocabSlugs.forEach + `getLevelIdxBySlug()`
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `js/storage.js` | 2 处 upsert 加 error 检查 |
+| `js/homework.js` | L1144 线性搜索 → `getLevelIdxBySlug()` |
+| `js/syllabus.js` | L960-972 O(N) → O(M) vocabSlugs 遍历 |
+| `js/config.js` | v2.2.12 → v2.2.13 |
+
+---
+
 ## [2.2.12] - 2026-03-08 — 暗色模式完备性修复
 
 ### 暗色模式硬编码颜色清理
