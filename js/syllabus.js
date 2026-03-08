@@ -831,7 +831,16 @@ function renderSectionDetail(ch, sec, secIdx, board) {
       html += '<div class="kp-row-name">' + pqRender(kp.title);
       if (kp.title_zh) html += '<span class="kp-row-name-zh">' + kp.title_zh + '</span>';
       html += '</div>';
-      html += '<div class="kp-row-status kp-row-new">NEW</div>';
+      var kpRes = typeof getKPResult === 'function' ? getKPResult(kp.id) : null;
+      if (kpRes) {
+        if (kpRes.score === kpRes.total) {
+          html += '<div class="kp-row-status kp-row-done">\u2713 ' + kpRes.score + '/' + kpRes.total + '</div>';
+        } else {
+          html += '<div class="kp-row-status kp-row-partial">' + kpRes.score + '/' + kpRes.total + '</div>';
+        }
+      } else {
+        html += '<div class="kp-row-status kp-row-new">NEW</div>';
+      }
       html += '</div>';
     }
     html += '</div>';
@@ -1099,24 +1108,53 @@ function getSectionHealth(sectionId, board) {
     }
   }
 
+  /* Knowledge Point score */
+  var knowledgeScore = 0;
+  var hasKP = false;
+  if (_kpData[board]) {
+    var secKPs = getKPsForSection(sectionId, board);
+    if (secKPs.length > 0) {
+      var kpTotalScore = 0, kpTotalMax = 0;
+      for (var ksi = 0; ksi < secKPs.length; ksi++) {
+        var kpR = typeof getKPResult === 'function' ? getKPResult(secKPs[ksi].id) : null;
+        var tyLen = secKPs[ksi].testYourself ? secKPs[ksi].testYourself.length : 0;
+        if (kpR) { kpTotalScore += kpR.score; kpTotalMax += kpR.total; }
+        else { kpTotalMax += tyLen; }
+      }
+      if (kpTotalMax > 0) {
+        hasKP = true;
+        knowledgeScore = Math.round(kpTotalScore / kpTotalMax * 100);
+      }
+    }
+  }
+
   /* Composite score */
   var score;
-  if (hasVocab && hasPP) {
+  if (hasVocab && hasPP && hasKP) {
+    score = Math.round((vocabScore * 0.3 + ppScore * 0.4 + knowledgeScore * 0.3) * recency);
+  } else if (hasVocab && hasPP) {
     score = Math.round((vocabScore * 0.4 + ppScore * 0.6) * recency);
+  } else if (hasVocab && hasKP) {
+    score = Math.round((vocabScore * 0.5 + knowledgeScore * 0.5) * recency);
+  } else if (hasPP && hasKP) {
+    score = Math.round((ppScore * 0.6 + knowledgeScore * 0.4) * recency);
   } else if (hasVocab) {
     score = Math.round(vocabScore * recency);
   } else if (hasPP) {
     score = Math.round(ppScore * recency);
+  } else if (hasKP) {
+    score = Math.round(knowledgeScore * recency);
   } else {
     score = 0;
   }
 
   /* Recommendation */
   var rec;
-  if (vocabScore === 0 && ppScore === 0 && practiceScore === 0) rec = 'start';
+  if (vocabScore === 0 && ppScore === 0 && practiceScore === 0 && knowledgeScore === 0) rec = 'start';
   else if (score >= 80) rec = 'great';
   else if (failRate > 40) rec = 'review_words';
   else if (vocabScore < 30) rec = 'vocab';
+  else if (hasKP && knowledgeScore === 0) rec = 'knowledge';
   else if (hasPP && ppScore < 20) rec = 'past_papers';
   else if (practiceScore === 0 && vocabScore >= 30) rec = 'practice';
   else rec = 'practice';
@@ -1130,8 +1168,8 @@ function getSectionHealth(sectionId, board) {
 
   var result = {
     score: score, vocabScore: vocabScore, ppScore: ppScore, failRate: failRate,
-    practiceScore: practiceScore, retentionScore: retentionScore,
-    recency: recency, rec: rec, hasVocab: hasVocab, hasPP: hasPP,
+    practiceScore: practiceScore, retentionScore: retentionScore, knowledgeScore: knowledgeScore,
+    recency: recency, rec: rec, hasVocab: hasVocab, hasPP: hasPP, hasKP: hasKP,
     sectionId: sectionId, board: board, levelIdx: li, weakGroup: weakGroup
   };
   _sectionHealthCache[cacheKey] = result;
@@ -2432,6 +2470,11 @@ function renderKPDetail(kp, board) {
   html += '<div class="kp-hero">';
   html += '<div class="kp-hero-title">' + pqRender(kp.title) + '</div>';
   if (kp.title_zh) html += '<div class="kp-hero-sub">' + kp.title_zh + '</div>';
+  var heroResult = typeof getKPResult === 'function' ? getKPResult(kp.id) : null;
+  if (heroResult) {
+    var heroClass = heroResult.score === heroResult.total ? 'kp-hero-score-perfect' : 'kp-hero-score-partial';
+    html += '<div class="kp-hero-score ' + heroClass + '">' + t('Score', '\u5f97\u5206') + ': ' + heroResult.score + '/' + heroResult.total + '</div>';
+  }
   html += '</div>';
 
   /* ① Explanation */
@@ -2489,14 +2532,38 @@ function renderKPDetail(kp, board) {
     html += '</div>';
   }
 
-  /* ④ Test Yourself (Phase 2 placeholder) */
-  html += '<div class="kp-section">';
-  html += '<div class="kp-section-header">';
-  html += '<div class="kp-section-num">4</div>';
-  html += '<div class="kp-section-labels"><div class="kp-section-label">' + t('Test Yourself', '\u81ea\u6d4b') + '</div></div>';
-  html += '</div>';
-  html += '<div class="kp-coming">' + t('Coming in Phase 2 — inline quiz', '\u5373\u5c06\u5728 Phase 2 \u63a8\u51fa \u2014 \u5728\u7ebf\u81ea\u6d4b') + '</div>';
-  html += '</div>';
+  /* ④ Test Yourself — inline MCQ quiz */
+  if (kp.testYourself && kp.testYourself.length > 0) {
+    html += '<div class="kp-section">';
+    html += '<div class="kp-section-header">';
+    html += '<div class="kp-section-num">4</div>';
+    html += '<div class="kp-section-labels"><div class="kp-section-label">' + t('Test Yourself', '\u81ea\u6d4b') + '</div></div>';
+    html += '</div>';
+    var prevKPResult = typeof getKPResult === 'function' ? getKPResult(kp.id) : null;
+    if (prevKPResult) {
+      html += '<div class="kp-quiz-summary">';
+      html += t('Previous score', '\u4e0a\u6b21\u5f97\u5206') + ': ' + prevKPResult.score + '/' + prevKPResult.total;
+      html += ' <button class="kp-quiz-retry" data-kp-retry="' + kp.id + '" data-kp-retry-board="' + board + '">' + t('Retry', '\u91cd\u8bd5') + '</button>';
+      html += '</div>';
+    }
+    html += '<div class="kp-quiz-stack" data-kp-quiz-id="' + kp.id + '" data-kp-quiz-total="' + kp.testYourself.length + '" data-kp-quiz-board="' + board + '">';
+    for (var qi = 0; qi < kp.testYourself.length; qi++) {
+      var tq = kp.testYourself[qi];
+      html += '<div class="kp-quiz-card" data-kp-q-idx="' + qi + '">';
+      html += '<div class="kp-quiz-q-num">' + t('Q', '\u7b2c') + (qi + 1) + '</div>';
+      html += '<div class="kp-quiz-question">' + pqRender(isZh && tq.q_zh ? tq.q_zh : tq.q) + '</div>';
+      html += '<div class="kp-quiz-options">';
+      for (var oi = 0; oi < tq.o.length; oi++) {
+        html += '<button class="kp-quiz-opt" data-kp-q="' + qi + '" data-kp-opt="' + oi + '">' + pqRender(tq.o[oi]) + '</button>';
+      }
+      html += '</div>';
+      html += '<div class="kp-quiz-explain d-none" id="kp-exp-' + qi + '"></div>';
+      html += '</div>';
+    }
+    html += '</div>';
+    html += '<div class="kp-quiz-result d-none" id="kp-quiz-result"></div>';
+    html += '</div>';
+  }
 
   /* ⑤ Related Resources */
   html += '<div class="kp-section">';
@@ -2607,6 +2674,74 @@ document.addEventListener('click', function(e) {
     var pSec = practiceLink.getAttribute('data-kp-practice-section');
     var pBoard = practiceLink.getAttribute('data-kp-practice-board');
     if (typeof startPracticeBySection === 'function') startPracticeBySection(pSec, pBoard);
+    return;
+  }
+  /* KP Quiz — option click */
+  var kpOpt = e.target.closest('.kp-quiz-opt[data-kp-q]');
+  if (kpOpt) {
+    var qCard = kpOpt.closest('.kp-quiz-card');
+    if (qCard.classList.contains('answered')) return;
+    qCard.classList.add('answered');
+    var qIdx = parseInt(kpOpt.getAttribute('data-kp-q'));
+    var optIdx = parseInt(kpOpt.getAttribute('data-kp-opt'));
+    var stack = kpOpt.closest('.kp-quiz-stack');
+    var kpQuizId = stack.getAttribute('data-kp-quiz-id');
+    var kpQuizBoard = stack.getAttribute('data-kp-quiz-board');
+    var kpQuizTotal = parseInt(stack.getAttribute('data-kp-quiz-total'));
+    /* Find correct answer from data */
+    var kpPts = _kpData[kpQuizBoard] || [];
+    var kpObj = null;
+    for (var ki = 0; ki < kpPts.length; ki++) {
+      if (kpPts[ki].id === kpQuizId) { kpObj = kpPts[ki]; break; }
+    }
+    if (!kpObj) return;
+    var tqItem = kpObj.testYourself[qIdx];
+    var ansIdx = tqItem.a;
+    var isCorrect = optIdx === ansIdx;
+    /* Mark options */
+    var allOpts = qCard.querySelectorAll('.kp-quiz-opt');
+    for (var oi = 0; oi < allOpts.length; oi++) {
+      allOpts[oi].disabled = true;
+      if (parseInt(allOpts[oi].getAttribute('data-kp-opt')) === ansIdx) allOpts[oi].classList.add('correct');
+    }
+    if (!isCorrect) kpOpt.classList.add('wrong');
+    /* Sound */
+    if (isCorrect && typeof playCorrect === 'function') playCorrect();
+    if (!isCorrect && typeof playWrong === 'function') playWrong();
+    /* Show explanation */
+    var kpIsZh = typeof getLang === 'function' && getLang() === 'zh';
+    var expText = kpIsZh && tqItem.e_zh ? tqItem.e_zh : tqItem.e;
+    var expEl = document.getElementById('kp-exp-' + qIdx);
+    if (expEl && expText) {
+      expEl.innerHTML = (isCorrect ? '\u2705 ' : '\u274c ') + '<strong>' + t('Explanation', '\u89e3\u6790') + ':</strong> ' + pqRender(expText);
+      expEl.classList.remove('d-none');
+      if (typeof renderMath === 'function') renderMath(expEl);
+    }
+    /* Check if all answered */
+    var answeredCount = stack.querySelectorAll('.kp-quiz-card.answered').length;
+    if (answeredCount === kpQuizTotal) {
+      var correctCount = 0;
+      var allCards = stack.querySelectorAll('.kp-quiz-card');
+      for (var ci = 0; ci < allCards.length; ci++) {
+        if (!allCards[ci].querySelector('.kp-quiz-opt.wrong')) correctCount++;
+      }
+      if (typeof saveKPResult === 'function') saveKPResult(kpQuizId, correctCount, kpQuizTotal);
+      if (typeof _sectionHealthCache !== 'undefined') _sectionHealthCache = {};
+      var resultEl = document.getElementById('kp-quiz-result');
+      if (resultEl) {
+        var msg = correctCount === kpQuizTotal
+          ? t('Perfect score!', '\u6ee1\u5206\uff01')
+          : t('You scored', '\u4f60\u5f97\u4e86') + ' ' + correctCount + '/' + kpQuizTotal;
+        resultEl.innerHTML = '<div class="kp-quiz-score">' + msg + '</div>';
+        resultEl.classList.remove('d-none');
+      }
+    }
+    return;
+  }
+  /* KP Quiz — retry */
+  var retryBtn = e.target.closest('.kp-quiz-retry[data-kp-retry]');
+  if (retryBtn) {
+    openKnowledgePoint(retryBtn.getAttribute('data-kp-retry'), retryBtn.getAttribute('data-kp-retry-board'));
     return;
   }
 });

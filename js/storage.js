@@ -573,6 +573,20 @@ function isModeDone(li, mode) {
   return !!s.modeDone[slug + ':' + mode];
 }
 
+/* ═══ KNOWLEDGE POINT PROGRESS ═══ */
+function saveKPResult(kpId, score, total) {
+  var s = loadS();
+  if (!s.kpDone) s.kpDone = {};
+  s.kpDone[kpId] = { score: score, total: total, ts: Date.now() };
+  writeS(s);
+  debouncedSync();
+}
+function getKPResult(kpId) {
+  var s = loadS();
+  return s.kpDone ? s.kpDone[kpId] || null : null;
+}
+function isKPDone(kpId) { return !!getKPResult(kpId); }
+
 /* ═══ MODE UNLOCK CHAIN ═══ */
 function isModeUnlocked(li, mode) {
   if (mode === 'study') return true;

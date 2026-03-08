@@ -1,5 +1,28 @@
 # Changelog
 
+## [2.3.1] - 2026-03-08 — 知识点 Test Yourself MCQ 引擎 + 进度追踪
+
+### 新功能
+- **Test Yourself MCQ 引擎**: KP 详情页 Section ④ 从占位符升级为可交互的内联 MCQ 测试
+  - 所有题目一次性展示（每 KP 2-4 题）
+  - 点击选项 → 即时判对错 → 正确/错误边框 + 音效 → 展开解析
+  - 全部答完 → 显示得分汇总
+  - 历史成绩显示 + Retry 重试按钮
+- **进度追踪**: `saveKPResult()` / `getKPResult()` / `isKPDone()` — localStorage 持久化 + 云端同步
+- **KP 列表状态**: Section 详情页知识点行显示 ✓ 2/2（满分绿色）/ 1/2（部分橙色）/ NEW（未做紫色）
+- **Hero 区域分数**: KP 详情页标题下显示历史得分
+- **getSectionHealth 集成**: 新增 `knowledgeScore` 维度（3 维权重 0.3/0.4/0.3），纳入推荐逻辑
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `js/storage.js` | +3 函数 `saveKPResult` / `getKPResult` / `isKPDone` |
+| `js/syllabus.js` | ④ 占位符 → MCQ 渲染 + 事件委托 + KP 行状态 + Hero 分数 + getSectionHealth knowledgeScore |
+| `css/style.css` | +32 行 `.kp-quiz-*` 样式 + 暗色模式 |
+| `js/config.js` | v2.3.0 → v2.3.1 |
+
+---
+
 ## [2.3.0] - 2026-03-08 — 知识点精析模块 Phase 1（数据架构 + 展示）
 
 ### 新功能
