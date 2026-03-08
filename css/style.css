@@ -4133,6 +4133,26 @@ input { font-family: inherit; }
 [data-theme="dark"] .kp-quiz-explain { background: rgba(82,72,201,0.2); }
 [data-theme="dark"] .kp-quiz-retry { background: rgba(82,72,201,0.2); color: #9d97f0; }
 [data-theme="dark"] .kp-hero { border-color: var(--c-border); }
+[data-theme="dark"] .kp-quiz-summary { color: var(--c-text2); }
+[data-theme="dark"] .kp-quiz-score { color: #9d97f0; }
+[data-theme="dark"] .kp-quiz-result { color: var(--c-text); }
+[data-theme="dark"] .kp-example-solution { border-top-color: var(--c-border); }
+
+/* KP phone responsive */
+@media (max-width: 639px) {
+  .kp-detail { padding: 0; }
+  .kp-section { padding: 18px 14px; margin-bottom: 14px; border-radius: 12px; }
+  .kp-hero { padding: 18px 12px 16px; margin-bottom: 14px; }
+  .kp-hero-title { font-size: 17px; }
+  .kp-pattern { padding: 12px 14px; }
+  .kp-example { padding: 14px 16px; }
+  .kp-quiz-card { padding: 16px 14px; }
+  .kp-quiz-opt { padding: 10px 14px; font-size: 13px; }
+  .kp-nav { flex-direction: row; gap: 8px; }
+  .kp-nav-btn { padding: 8px 14px; font-size: 12px; }
+  .kp-resource-link { padding: 10px 14px; font-size: 13px; }
+  .kp-row { padding: 10px 12px; gap: 10px; }
+}
 
 /* ═══ REDUCED MOTION ═══ */
 @media (prefers-reduced-motion: reduce) {

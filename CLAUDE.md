@@ -4,7 +4,7 @@ Bilingual math vocabulary learning platform (双语数学词汇学习平台) for
 
 - **Live**: https://git25math.github.io/25maths-keywords/
 - **Repo**: https://github.com/git25math/25maths-keywords
-- **Version**: v2.3.5 (2026-03-08)
+- **Version**: v2.3.6 (2026-03-08)
 - **Scale**: 3 boards, 264 levels + 72 CIE sections + 39 Edexcel sections, 2,200 words + 5,962 真题 + 2,454 练习题
 - **Supabase**: shared with 25maths-website (ref: `jjjigohjvmyewasmmmyf`)
 - **See also**: [CHANGELOG.md](CHANGELOG.md) | [ROADMAP.md](ROADMAP.md)

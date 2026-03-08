@@ -826,12 +826,14 @@ function renderSectionDetail(ch, sec, secIdx, board) {
     html += '<div class="kp-list">';
     for (var ki = 0; ki < kpList.length; ki++) {
       var kp = kpList[ki];
-      html += '<div class="kp-row" data-kp-id="' + kp.id + '" data-kp-board="' + board + '">';
+      var kpRes = typeof getKPResult === 'function' ? getKPResult(kp.id) : null;
+      var kpAriaStatus = kpRes ? (kpRes.score + '/' + kpRes.total) : 'New';
+      var kpAriaLabel = pqRender(kp.title).replace(/<[^>]*>/g, '') + ' — ' + kpAriaStatus;
+      html += '<div class="kp-row" role="button" tabindex="0" aria-label="' + kpAriaLabel + '" data-kp-id="' + kp.id + '" data-kp-board="' + board + '">';
       html += '<div class="kp-row-num">' + (ki + 1) + '</div>';
       html += '<div class="kp-row-name">' + pqRender(kp.title);
       if (kp.title_zh) html += '<span class="kp-row-name-zh">' + kp.title_zh + '</span>';
       html += '</div>';
-      var kpRes = typeof getKPResult === 'function' ? getKPResult(kp.id) : null;
       if (kpRes) {
         if (kpRes.score === kpRes.total) {
           html += '<div class="kp-row-status kp-row-done">\u2713 ' + kpRes.score + '/' + kpRes.total + '</div>';
@@ -2628,7 +2630,7 @@ function renderKPDetail(kp, board) {
       html += '<div class="kp-example">';
       if (ex.source) html += '<div class="kp-example-source">' + ex.source + '</div>';
       html += '<div class="kp-example-q">' + kpMarkdown(isZh && ex.question_zh ? ex.question_zh : ex.question) + '</div>';
-      html += '<button class="kp-example-toggle" data-kp-sol="' + ei + '">' + t('Show Solution', '\u663e\u793a\u89e3\u6790') + ' \u25bc</button>';
+      html += '<button class="kp-example-toggle" aria-expanded="false" data-kp-sol="' + ei + '">' + t('Show Solution', '\u663e\u793a\u89e3\u6790') + ' \u25bc</button>';
       html += '<div class="kp-example-solution" id="kp-sol-' + ei + '">';
       html += kpMarkdown(isZh && ex.solution_zh ? ex.solution_zh : ex.solution);
       html += '</div>';
@@ -2752,6 +2754,7 @@ document.addEventListener('click', function(e) {
       solBtn.textContent = isOpen
         ? (t('Hide Solution', '\u9690\u85cf\u89e3\u6790') + ' \u25b2')
         : (t('Show Solution', '\u663e\u793a\u89e3\u6790') + ' \u25bc');
+      solBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     }
     return;
   }
@@ -2856,6 +2859,17 @@ document.addEventListener('click', function(e) {
     openKnowledgePoint(retryBtn.getAttribute('data-kp-retry'), retryBtn.getAttribute('data-kp-retry-board'));
     return;
   }
+});
+
+/* KP keyboard navigation */
+document.addEventListener('keydown', function(e) {
+  if (e.key !== 'Enter' && e.key !== ' ') return;
+  var kpRow = e.target.closest('.kp-row[data-kp-id]');
+  if (kpRow) { e.preventDefault(); kpRow.click(); return; }
+  var navBtn = e.target.closest('.kp-nav-btn:not(:disabled)');
+  if (navBtn) { e.preventDefault(); navBtn.click(); return; }
+  var togBtn = e.target.closest('.kp-example-toggle[data-kp-sol]');
+  if (togBtn) { e.preventDefault(); togBtn.click(); }
 });
 
 /* ═══ INIT ═══ */

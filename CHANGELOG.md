@@ -1,5 +1,27 @@
 # Changelog
 
+## [2.3.6] - 2026-03-08 — KP 模块 P2 优化（响应式 + 可访问性 + 暗色补全）
+
+### 响应式适配
+- **KP 手机端优化**: `@media (max-width:639px)` 缩减 `.kp-*` 组件 padding/font-size，适配小屏
+
+### 可访问性增强
+- **KP 行键盘导航**: `.kp-row` 添加 `role="button"` + `tabindex="0"` + `aria-label`
+- **键盘事件委托**: Enter/Space 触发 KP 行/导航按钮/解析折叠
+- **aria-expanded**: `.kp-example-toggle` 添加展开状态追踪
+
+### 暗色模式补全
+- **4 条 dark 规则**: `.kp-quiz-summary`/`.kp-quiz-score`/`.kp-quiz-result`/`.kp-example-solution` 暗色适配
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `css/style.css` | +13 行 phone responsive + 4 行 dark mode 补全 |
+| `js/syllabus.js` | KP 行 ARIA 属性 + aria-expanded + keydown 委托 |
+| `js/config.js` | v2.3.5 → v2.3.6 |
+
+---
+
 ## [2.3.5] - 2026-03-08 — Knowledge Card 语言切换 + 手机端优化
 
 ### UX 改进
