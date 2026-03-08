@@ -244,7 +244,7 @@ function dqShowIssueList(ruleId, page) {
   var rule = DQ_RULES.find(function(r) { return r.id === ruleId; });
   var ruleLabel = rule ? rule.label[appLang === 'zh' ? 1 : 0] : ruleId;
 
-  var html = '<div class="section-title">' + escapeHtml(ruleLabel) + ' <span style="color:var(--c-muted);font-size:13px">(' + items.length + ' ' + t('issues', '\u95ee\u9898') + ')</span></div>';
+  var html = '<div class="section-title">' + escapeHtml(ruleLabel) + ' <span class="text-muted text-sm">(' + items.length + ' ' + t('issues', '\u95ee\u9898') + ')</span></div>';
 
   html += '<div class="dq-issue-list" style="max-height:400px;overflow:auto">';
   for (var i = 0; i < pageItems.length; i++) {
@@ -323,7 +323,7 @@ function dqCopyForAI(ruleId) {
 function dqShowCopyFallback(json) {
   var html = '<div class="section-title">' + t('Copy this JSON', '\u590d\u5236\u6b64 JSON') + '</div>';
   html += '<textarea class="dq-textarea" rows="16" readonly onclick="this.select()">' + escapeHtml(json) + '</textarea>';
-  html += '<button class="btn btn-ghost" style="margin-top:12px" onclick="hideModal()">' + t('Close', '\u5173\u95ed') + '</button>';
+  html += '<button class="btn btn-ghost mt-12" onclick="hideModal()">' + t('Close', '\u5173\u95ed') + '</button>';
   showModal(html);
 }
 
@@ -400,7 +400,7 @@ function dqRenderDiffPreview() {
   var start = _dqDiffPage * _dqDiffPageSize;
   var pageDiffs = diffs.slice(start, start + _dqDiffPageSize);
 
-  var html = '<div class="section-title">' + t('Diff Preview', '\u5dee\u5f02\u9884\u89c8') + ' <span style="color:var(--c-muted);font-size:13px">(' + diffs.length + ' ' + t('changes', '\u53d8\u66f4') + ')</span></div>';
+  var html = '<div class="section-title">' + t('Diff Preview', '\u5dee\u5f02\u9884\u89c8') + ' <span class="text-muted text-sm">(' + diffs.length + ' ' + t('changes', '\u53d8\u66f4') + ')</span></div>';
 
   html += '<div style="max-height:400px;overflow:auto">';
   for (var i = 0; i < pageDiffs.length; i++) {

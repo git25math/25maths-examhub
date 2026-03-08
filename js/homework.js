@@ -83,7 +83,7 @@ async function markAllNotifsRead() {
 
 function showNotifPanel() {
   var notifs = _notifCache || [];
-  var html = '<div class="section-title" style="display:flex;align-items:center;gap:8px">';
+  var html = '<div class="section-title flex items-center gap-8">';
   html += t('Notifications', '通知');
   if (_notifCount > 0) {
     html += ' <button class="btn btn-ghost btn-sm" onclick="markAllNotifsRead();hideModal()">' + t('Mark all read', '全部已读') + '</button>';
@@ -111,7 +111,7 @@ function showNotifPanel() {
     html += '</div>';
   }
 
-  html += '<button class="btn btn-ghost btn-block" style="margin-top:12px" onclick="hideModal()">' + t('Close', '关闭') + '</button>';
+  html += '<button class="btn btn-ghost btn-block mt-12" onclick="hideModal()">' + t('Close', '关闭') + '</button>';
   showModal(html);
 
   /* Event delegation for notification clicks (remove+add to prevent leaks) */
@@ -261,10 +261,10 @@ function showCreateHwModal(classId) {
         }
       });
       if (catDecks.length === 0) return;
-      deckHtml += '<div style="margin-bottom:8px">';
-      deckHtml += '<div style="font-size:12px;font-weight:600;color:var(--c-text2);margin-bottom:4px">' + cat.emoji + ' ' + catName(cat) + '</div>';
+      deckHtml += '<div class="mb-8">';
+      deckHtml += '<div class="fw-600 text-muted mb-4" style="font-size:12px">' + cat.emoji + ' ' + catName(cat) + '</div>';
       catDecks.forEach(function(cl) {
-        deckHtml += '<label style="display:flex;align-items:center;gap:6px;padding:3px 0;font-size:13px;cursor:pointer">';
+        deckHtml += '<label class="flex items-center gap-6 text-sm" style="padding:3px 0;cursor:pointer">';
         deckHtml += '<input type="checkbox" class="hw-deck-cb" value="' + cl.lv.slug + '">';
         deckHtml += lvTitle(cl.lv) + ' (' + Math.floor(cl.lv.vocabulary.length / 2) + ' ' + t('words', '词') + ')';
         deckHtml += '</label>';
@@ -285,14 +285,14 @@ function showCreateHwModal(classId) {
   /* Template selector */
   var tpls = _getHwTemplates();
   if (tpls.length > 0) {
-    html += '<div style="display:flex;align-items:center;gap:6px;margin-bottom:10px">';
-    html += '<select id="hw-tpl-select" class="auth-input" style="margin:0;flex:1;font-size:12px" data-hw-tpl-cid="' + classId + '">';
+    html += '<div class="flex items-center gap-6" style="margin-bottom:10px">';
+    html += '<select id="hw-tpl-select" class="auth-input flex-1 mt-0" style="font-size:12px" data-hw-tpl-cid="' + classId + '">';
     html += '<option value="">' + t('-- Load template --', '-- \u52a0\u8f7d\u6a21\u677f --') + '</option>';
     for (var ti = 0; ti < tpls.length; ti++) {
       html += '<option value="' + ti + '">' + escapeHtml(tpls[ti].name) + ' (' + tpls[ti].slugs.length + ' ' + t('groups', '\u7ec4') + ')</option>';
     }
     html += '</select>';
-    html += '<button class="btn btn-ghost btn-sm" onclick="hwDeleteTemplate()" style="color:var(--c-danger);padding:4px 8px" title="' + t('Delete', '\u5220\u9664') + '">\u2716</button>';
+    html += '<button class="btn btn-ghost btn-sm text-danger" style="padding:4px 8px" title="' + t('Delete', '\u5220\u9664') + '" onclick="hwDeleteTemplate()">\u2716</button>';
     html += '</div>';
   }
 
@@ -314,36 +314,36 @@ function showCreateHwModal(classId) {
   html += '</div>';
 
   /* Custom vocab area (hidden) */
-  html += '<div id="hw-custom-area" style="display:none">';
-  html += '<div style="margin-bottom:8px">';
+  html += '<div id="hw-custom-area" class="d-none">';
+  html += '<div class="mb-8">';
   html += '<textarea id="hw-batch-text" class="auth-input" rows="3" style="font-size:12px;resize:vertical" placeholder="' + t('Paste words, one per line: word - definition', '批量粘贴，每行一条：词汇 - 释义') + '"></textarea>';
-  html += '<button class="btn btn-ghost btn-sm" style="margin-top:4px" onclick="hwParseBatch()">' + t('Parse', '解析') + '</button>';
+  html += '<button class="btn btn-ghost btn-sm mt-4" onclick="hwParseBatch()">' + t('Parse', '解析') + '</button>';
   html += '</div>';
   html += '<div id="hw-custom-rows" style="max-height:240px;overflow-y:auto"></div>';
   html += '<button class="btn btn-ghost btn-sm" onclick="hwAddRow()">+ ' + t('Add row', '添加行') + '</button>';
   html += '</div>';
 
   /* Practice MCQ area (hidden) */
-  html += '<div id="hw-practice-area" style="display:none">';
+  html += '<div id="hw-practice-area" class="d-none">';
   html += '<div class="flex gap-8 items-center mb-8">';
-  html += '<label class="settings-label" style="margin:0;white-space:nowrap">' + t('Board', '考试局') + '</label>';
-  html += '<select id="hw-pq-board" class="auth-input" style="margin:0;flex:1" onchange="_renderHwSections(this.value)">';
+  html += '<label class="settings-label mt-0" style="white-space:nowrap">' + t('Board', '考试局') + '</label>';
+  html += '<select id="hw-pq-board" class="auth-input mt-0 flex-1" onchange="_renderHwSections(this.value)">';
   html += '<option value="cie">CIE 0580</option>';
   html += '<option value="edexcel">Edexcel 4MA1</option>';
   html += '</select>';
   html += '</div>';
   html += '<div class="flex gap-8 mb-8">';
-  html += '<div style="flex:1"><label class="settings-label" style="margin:0">' + t('Questions', '题数') + '</label>';
-  html += '<select id="hw-pq-count" class="auth-input" style="margin:4px 0 0">';
+  html += '<div class="flex-1"><label class="settings-label mt-0">' + t('Questions', '题数') + '</label>';
+  html += '<select id="hw-pq-count" class="auth-input mt-4">';
   html += '<option value="5">5</option><option value="10" selected>10</option><option value="15">15</option><option value="20">20</option>';
   html += '</select></div>';
-  html += '<div style="flex:1"><label class="settings-label" style="margin:0">' + t('Difficulty', '难度') + '</label>';
-  html += '<select id="hw-pq-diff" class="auth-input" style="margin:4px 0 0">';
+  html += '<div class="flex-1"><label class="settings-label mt-0">' + t('Difficulty', '难度') + '</label>';
+  html += '<select id="hw-pq-diff" class="auth-input mt-4">';
   html += '<option value="">' + t('All', '全部') + '</option><option value="1">Core</option><option value="2">Extended</option>';
   html += '</select></div>';
   html += '</div>';
   html += '<div id="hw-pq-sections" style="max-height:200px;overflow-y:auto;border:1px solid var(--c-border);border-radius:8px;padding:8px 12px">';
-  html += '<div style="color:var(--c-text2);font-size:13px">' + t('Loading...', '加载中...') + '</div>';
+  html += '<div class="text-muted text-sm">' + t('Loading...', '加载中...') + '</div>';
   html += '</div>';
   html += '</div>';
   html += '<label class="settings-label mt-12">' + t('Deadline', '截止日期') + '</label>';
@@ -388,7 +388,7 @@ function _renderHwSections(board) {
 
   if (!syllabus || !syllabus.chapters) {
     /* Try loading */
-    ct.innerHTML = '<div style="color:var(--c-text2);font-size:13px">' + t('Loading...', '加载中...') + '</div>';
+    ct.innerHTML = '<div class="text-muted text-sm">' + t('Loading...', '加载中...') + '</div>';
     var loadFn = board === 'cie' ? loadCIESyllabus : loadEdexcelSyllabus;
     loadFn().then(function() {
       loadPracticeData(dataBoard).then(function() { _renderHwSections(board); });
@@ -406,22 +406,22 @@ function _renderHwSections(board) {
     if (chSecs.length === 0) return;
     var chId = 'hw-ch-' + board + '-' + ch.num;
     html += '<div style="margin-bottom:6px">';
-    html += '<label style="display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--c-text2);cursor:pointer;padding:2px 0">';
+    html += '<label class="flex items-center gap-6 fw-600 text-muted" style="font-size:12px;cursor:pointer;padding:2px 0">';
     html += '<input type="checkbox" class="hw-ch-cb" data-ch="' + ch.num + '" data-board="' + board + '" onchange="_hwToggleChapter(this)">';
     html += ch.num + '. ' + ch.title;
     if (ch.title_zh) html += ' ' + ch.title_zh;
     html += '</label>';
     chSecs.forEach(function(sec) {
-      html += '<label style="display:flex;align-items:center;gap:6px;padding:2px 0 2px 20px;font-size:13px;cursor:pointer">';
+      html += '<label class="flex items-center gap-6 text-sm" style="padding:2px 0 2px 20px;cursor:pointer">';
       html += '<input type="checkbox" class="hw-sec-cb" value="' + sec.id + '" data-ch="' + ch.num + '" data-board="' + board + '">';
       html += sec.id + ' ' + sec.title;
-      html += ' <span style="color:var(--c-text2);font-size:11px">(' + (secCounts[sec.id] || 0) + ')</span>';
+      html += ' <span class="text-muted text-xs">(' + (secCounts[sec.id] || 0) + ')</span>';
       html += '</label>';
     });
     html += '</div>';
   });
 
-  if (!html) html = '<div style="color:var(--c-text2);font-size:13px">' + t('No questions available', '暂无题目') + '</div>';
+  if (!html) html = '<div class="text-muted text-sm">' + t('No questions available', '暂无题目') + '</div>';
   ct.innerHTML = html;
 }
 
@@ -529,14 +529,14 @@ function showCreateCustomHwModal(classId, studentUserId, studentName, wrongWords
   var wordsToUse = wrongWords.slice(0, 10);
 
   var html = '<div class="section-title">' + t('Custom Vocab Assignment', '自定义错词作业') + '</div>';
-  html += '<div style="font-size:13px;color:var(--c-text2);margin-bottom:12px">' + t('For: ', '学生：') + '<strong>' + studentName + '</strong></div>';
+  html += '<div class="text-sm text-muted mb-12">' + t('For: ', '学生：') + '<strong>' + studentName + '</strong></div>';
   html += '<label class="settings-label">' + t('Title', '标题') + '</label>';
   html += '<input class="auth-input" id="chw-title" value="' + t('Error Words Review', '错词复习') + '">';
 
   html += '<label class="settings-label">' + t('Words', '词汇') + ' (' + wordsToUse.length + '/' + t('max 10', '最多10') + ')</label>';
   html += '<div style="max-height:200px;overflow-y:auto;border:1px solid var(--c-border);border-radius:8px;padding:8px 12px">';
   wordsToUse.forEach(function(w, i) {
-    html += '<label style="display:flex;align-items:center;gap:6px;padding:3px 0;font-size:13px;cursor:pointer">';
+    html += '<label class="flex items-center gap-6 text-sm" style="padding:3px 0;cursor:pointer">';
     html += '<input type="checkbox" class="chw-word-cb" data-word="' + escapeHtml(w.word || '').replace(/"/g, '&quot;') + '" data-def="' + escapeHtml(w.def || '').replace(/"/g, '&quot;') + '" checked>';
     html += '<strong>' + escapeHtml(w.word || '') + '</strong> — ' + escapeHtml(w.def || '');
     html += '</label>';
@@ -613,7 +613,7 @@ async function renderClassHwList(classId) {
     var hws = res.data || [];
 
     if (hws.length === 0) {
-      ct.innerHTML = '<div style="font-size:13px;color:var(--c-text2);padding:8px 0">' + t('No homework yet', '暂无作业') + '</div>';
+      ct.innerHTML = '<div class="text-sm text-muted" style="padding:8px 0">' + t('No homework yet', '暂无作业') + '</div>';
       return;
     }
 
@@ -666,13 +666,13 @@ async function renderClassHwList(classId) {
         countLabel = hwWords.length + ' ' + t('words', '\u8bcd');
       }
 
-      html += '<div class="hw-list-item" style="flex-wrap:wrap">';
-      html += '<div style="display:flex;align-items:center;gap:8px;width:100%">';
-      html += '<span class="hw-list-title" style="flex:1">' + prefix + escapeHtml(hw.title) + ' <span style="font-size:11px;color:var(--c-text2)">(' + countLabel + ')</span></span>';
+      html += '<div class="hw-list-item flex-wrap">';
+      html += '<div class="flex items-center gap-8" style="width:100%">';
+      html += '<span class="hw-list-title flex-1">' + prefix + escapeHtml(hw.title) + ' <span class="text-xs text-muted">(' + countLabel + ')</span></span>';
       html += '<span class="hw-list-deadline" style="' + (isOverdue ? 'color:var(--c-danger)' : '') + '">' + deadline + '</span>';
       html += '<span class="hw-list-rate">' + completed + ' ' + t('done', '完成') + '</span>';
       html += '<button class="btn btn-ghost btn-sm" data-action="hw-detail" data-hwid="' + hw.id + '" data-cid="' + classId + '">' + t('Detail', '详情') + '</button>';
-      html += '<button class="btn btn-ghost btn-sm" style="color:var(--c-danger)" data-action="hw-delete" data-hwid="' + hw.id + '" data-cid="' + classId + '">' + t('Del', '删') + '</button>';
+      html += '<button class="btn btn-ghost btn-sm text-danger" data-action="hw-delete" data-hwid="' + hw.id + '" data-cid="' + classId + '">' + t('Del', '删') + '</button>';
       html += '</div>';
 
       if (isPractice) {
@@ -680,15 +680,15 @@ async function renderClassHwList(classId) {
         var cfg2 = hw.custom_vocabulary;
         var boardLabel = cfg2.board === 'edexcel' ? 'Edexcel 4MA1' : 'CIE 0580';
         var diffLabel = cfg2.difficulty === 1 ? 'Core' : cfg2.difficulty === 2 ? 'Extended' : t('All', '全部');
-        html += '<div style="width:100%;margin-top:4px;font-size:11px;color:var(--c-text2)">';
+        html += '<div class="text-xs text-muted mt-4" style="width:100%">';
         html += boardLabel + ' | ' + t('Sections', '知识点') + ': ' + (hw.deck_slugs || []).join(', ') + ' | ' + t('Difficulty', '难度') + ': ' + diffLabel;
         html += '</div>';
       } else if (typeof hwWords !== 'undefined' && hwWords.length > 0) {
         /* Expandable word list */
         var pid = 'thw-' + hw.id.slice(0, 8);
         html += '<div style="width:100%;margin-top:6px">';
-        html += '<button class="btn btn-ghost btn-sm" style="font-size:11px;padding:2px 8px" data-toggle-preview="' + pid + '">' + t('View words', '查看词汇') + ' \u25BC</button>';
-        html += '<div id="' + pid + '" style="display:none;margin-top:6px;max-height:200px;overflow-y:auto;border:1px solid var(--c-border);border-radius:8px;padding:6px 10px;background:var(--c-surface)">';
+        html += '<button class="btn btn-ghost btn-sm text-xs" style="padding:2px 8px" data-toggle-preview="' + pid + '">' + t('View words', '查看词汇') + ' \u25BC</button>';
+        html += '<div id="' + pid + '" class="d-none" style="margin-top:6px;max-height:200px;overflow-y:auto;border:1px solid var(--c-border);border-radius:8px;padding:6px 10px;background:var(--c-surface)">';
         hwWords.forEach(function(w, wi) {
           html += '<div style="padding:3px 0;font-size:12px;' + (wi < hwWords.length - 1 ? 'border-bottom:1px solid var(--c-border-light)' : '') + '">';
           html += '<strong>' + escapeHtml(w.word) + '</strong> — ' + escapeHtml(w.def);
@@ -702,7 +702,7 @@ async function renderClassHwList(classId) {
 
     ct.innerHTML = html;
   } catch (e) {
-    ct.innerHTML = '<div style="color:var(--c-danger);font-size:13px">' + escapeHtml(e.message) + '</div>';
+    ct.innerHTML = '<div class="text-danger text-sm">' + escapeHtml(e.message) + '</div>';
   }
 }
 
@@ -744,7 +744,7 @@ async function renderHwProgress(hwId, classId) {
     html += '</div>';
 
     /* Summary cards */
-    html += '<div class="admin-summary-grid" style="margin-bottom:16px">';
+    html += '<div class="admin-summary-grid mb-16">';
     html += summaryCard(t('Completed', '已完成'), doneCount + '/' + totalStudents, 'var(--c-success)');
     html += summaryCard(t('Avg Score', '平均分'), avgScore + '%', 'var(--c-primary)');
     html += summaryCard(t('Deadline', '截止'), new Date(hw.deadline).toLocaleDateString(), new Date(hw.deadline) < new Date() ? 'var(--c-danger)' : 'var(--c-text2)');
@@ -782,8 +782,8 @@ async function renderHwProgress(hwId, classId) {
       }
     }
     if (hwWords.length > 0) {
-      html += '<div style="margin-bottom:16px">';
-      html += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">';
+      html += '<div class="mb-16">';
+      html += '<div class="flex items-center gap-8 mb-8">';
       html += '<div class="hw-section-title">' + t('Vocabulary', '词汇') + ' (' + hwWords.length + ')</div>';
       html += '</div>';
       html += '<div style="max-height:200px;overflow-y:auto;border:1px solid var(--c-border);border-radius:8px;padding:8px 12px;background:var(--c-surface)">';
@@ -818,11 +818,11 @@ async function renderHwProgress(hwId, classId) {
 
       html += '<tr>';
       html += '<td class="admin-td-name">' + escapeHtml(s.student_name || '-') + '</td>';
-      html += '<td style="' + statusStyle + ';font-weight:600">' + status + '</td>';
+      html += '<td class="fw-600" style="' + statusStyle + '">' + status + '</td>';
       html += '<td>' + score + '</td>';
       html += '<td>' + pct + '</td>';
       html += '<td>' + attempts + '</td>';
-      html += '<td>' + (wrongCount > 0 ? '<span style="color:var(--c-danger)">' + wrongCount + '</span>' : '-') + '</td>';
+      html += '<td>' + (wrongCount > 0 ? '<span class="text-danger">' + wrongCount + '</span>' : '-') + '</td>';
       html += '<td>';
       if (r && wrongCount > 0) {
         html += '<button class="btn btn-ghost btn-sm" data-action="hw-student-detail" data-hwid="' + hwId + '" data-uid="' + s.user_id + '" data-name="' + escapeHtml(s.student_name || '') + '" data-cid="' + classId + '">' + t('View', '查看') + '</button>';
@@ -895,14 +895,14 @@ async function showStudentHwDetail(hwId, studentUserId, studentName, classId) {
   var wrongWords = r.wrong_words || [];
 
   var html = '<div class="section-title">' + escapeHtml(studentName) + ' — ' + t('Homework Detail', '作业详情') + '</div>';
-  html += '<div style="font-size:13px;color:var(--c-text2);margin-bottom:16px">';
+  html += '<div class="text-sm text-muted mb-16">';
   html += t('Score: ', '成绩：') + '<strong>' + r.correct_count + '/' + r.total_count + ' (' + pct + '%)</strong><br>';
   html += t('Attempts: ', '尝试次数：') + r.attempts + '<br>';
   html += t('Last attempt: ', '最后尝试：') + (r.last_attempt_at ? new Date(r.last_attempt_at).toLocaleString() : '-');
   html += '</div>';
 
   if (wrongWords.length > 0) {
-    html += '<label class="settings-label" style="color:var(--c-danger)">' + t('Wrong Words', '错词') + ' (' + wrongWords.length + ')</label>';
+    html += '<label class="settings-label text-danger">' + t('Wrong Words', '错词') + ' (' + wrongWords.length + ')</label>';
     html += '<div style="max-height:200px;overflow-y:auto;border:1px solid var(--c-border);border-radius:8px;padding:8px 12px;margin-bottom:12px">';
     wrongWords.forEach(function(w) {
       html += '<div style="padding:4px 0;font-size:13px;border-bottom:1px solid var(--c-border-light)">';
@@ -1018,7 +1018,7 @@ async function showStudentHwPage() {
   html += '</div>';
 
   /* Pending section */
-  html += '<div class="hw-section-title" style="margin-top:8px">' + t('Pending', '待完成') + ' (' + pending.length + ')</div>';
+  html += '<div class="hw-section-title mt-8">' + t('Pending', '待完成') + ' (' + pending.length + ')</div>';
   if (pending.length === 0) {
     html += '<div style="font-size:13px;color:var(--c-text2);padding:12px 0">' + t('All done!', '全部完成！') + ' \ud83c\udf89</div>';
   }
@@ -1057,7 +1057,7 @@ async function showStudentHwPage() {
 
     html += '<div class="hw-list-item" style="flex-wrap:wrap">';
     html += '<div style="display:flex;align-items:center;gap:8px;width:100%">';
-    html += '<span class="hw-list-title" style="flex:1">' + prefix + escapeHtml(hw.title) + ' <span style="font-size:11px;color:var(--c-text2)">(' + countLabel + ')</span></span>';
+    html += '<span class="hw-list-title flex-1">' + prefix + escapeHtml(hw.title) + ' <span style="font-size:11px;color:var(--c-text2)">(' + countLabel + ')</span></span>';
     if (hasResult) {
       html += '<span style="font-size:12px;color:var(--c-primary);font-weight:600">' + pct + '%</span>';
     }
@@ -1317,7 +1317,7 @@ async function finishHwTest() {
   /* Add wrong words review section */
   if (t_.wrongWords.length > 0) {
     resultHtml += '<div style="margin-top:16px;text-align:left">';
-    resultHtml += '<div class="hw-section-title" style="color:var(--c-danger)">' + t('Wrong Words', '错词') + ' (' + t_.wrongWords.length + ')</div>';
+    resultHtml += '<div class="hw-section-title text-danger">' + t('Wrong Words', '错词') + ' (' + t_.wrongWords.length + ')</div>';
     t_.wrongWords.forEach(function(w) {
       resultHtml += '<div style="padding:6px 0;font-size:13px;border-bottom:1px solid var(--c-border-light)">';
       resultHtml += '<strong>' + escapeHtml(w.word) + '</strong> — ' + escapeHtml(w.def);
@@ -1564,7 +1564,7 @@ async function finishHwPractice() {
   /* Wrong questions review */
   if (s.wrongQuestions.length > 0) {
     resultHtml += '<div style="margin-top:16px;text-align:left">';
-    resultHtml += '<div class="hw-section-title" style="color:var(--c-danger)">' + t('Wrong Questions', '\u9519\u9898') + ' (' + s.wrongQuestions.length + ')</div>';
+    resultHtml += '<div class="hw-section-title text-danger">' + t('Wrong Questions', '\u9519\u9898') + ' (' + s.wrongQuestions.length + ')</div>';
     s.wrongQuestions.forEach(function(w) {
       resultHtml += '<div style="padding:6px 0;font-size:13px;border-bottom:1px solid var(--c-border-light)">';
       resultHtml += '<div>' + pqRender(w.q) + '</div>';

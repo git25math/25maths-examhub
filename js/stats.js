@@ -86,7 +86,7 @@ function renderStats() {
   var heatData = getHeatmapData(91);
   var trendData = getTrendData(30);
 
-  var html = '<div class="section-title" style="display:flex;align-items:center;gap:8px">' + t('Learning Analytics', '\u5b66\u4e60\u6570\u636e') + ' <button class="btn btn-ghost btn-sm no-print" onclick="exportStats()" style="margin-left:auto;font-size:11px">\u2b07 ' + t('Export', '\u5bfc\u51fa') + '</button></div>';
+  var html = '<div class="section-title page-header">' + t('Learning Analytics', '\u5b66\u4e60\u6570\u636e') + ' <button class="btn btn-ghost btn-sm no-print" onclick="exportStats()" class="text-xs" style="margin-left:auto">\u2b07 ' + t('Export', '\u5bfc\u51fa') + '</button></div>';
 
   /* Summary cards */
   html += '<div class="stats-summary">';
@@ -114,7 +114,7 @@ function renderStats() {
 function _renderBadgeSection() {
   if (typeof BADGES === 'undefined' || typeof getUnlockedBadges !== 'function') return '';
   var unlocked = getUnlockedBadges();
-  var html = '<div class="section-title" style="margin-top:24px">' + t('Achievements', '\u6210\u5c31\u5fbd\u7ae0') + '</div>';
+  var html = '<div class="section-title mt-24">' + t('Achievements', '\u6210\u5c31\u5fbd\u7ae0') + '</div>';
   html += '<div class="badge-grid">';
   BADGES.forEach(function(b) {
     var isUnlocked = unlocked.indexOf(b.id) >= 0;

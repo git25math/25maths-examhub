@@ -350,7 +350,7 @@ function finishDaily() {
     streak: getStreakCount()
   };
 
-  var html = '<div class="text-center" style="padding-top:48px">';
+  var html = '<div class="text-center pt-40">';
   html += '<div class="result-emoji">' + emoji + '</div>';
   html += '<div class="result-title">' + title + '</div>';
   html += '<div class="result-score">' + DC.score + ' / ' + DC.words.length + '</div>';

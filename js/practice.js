@@ -221,7 +221,7 @@ function _diagSummary(answers, questions) {
   var keys = Object.keys(counts);
   if (keys.length === 0) return '';
   var html = '<div class="pq-diag-summary" style="margin-top:16px;text-align:left;max-width:360px;margin-left:auto;margin-right:auto">';
-  html += '<div style="font-weight:700;margin-bottom:8px">' + t('Diagnostic Analysis', '\u8bca\u65ad\u5206\u6790') + '</div>';
+  html += '<div class="fw-700 mb-8">' + t('Diagnostic Analysis', '\u8bca\u65ad\u5206\u6790') + '</div>';
   for (var k = 0; k < keys.length; k++) {
     var key = keys[k];
     var dl = _DIAG_LABELS[key];
@@ -332,11 +332,11 @@ function renderPracticeCard() {
   html += '</div>';
 
   /* Explanation area (hidden until answer) */
-  html += '<div class="pq-explanation" id="pq-explanation" style="display:none"></div>';
+  html += '<div class="pq-explanation d-none" id="pq-explanation"></div>';
 
   /* Next button (hidden until answer) */
-  html += '<div style="text-align:center;margin-top:16px">';
-  html += '<button class="btn btn-primary pq-next-btn" id="pq-next" style="display:none" onclick="nextPracticeCard()">';
+  html += '<div class="text-center mt-16">';
+  html += '<button class="btn btn-primary pq-next-btn d-none" id="pq-next" onclick="nextPracticeCard()">';
   html += (s.current + 1 < total) ? t('Next →', '下一题 →') : t('See Results', '查看结果');
   html += '</button></div>';
 
@@ -461,7 +461,7 @@ function finishPractice() {
   var wrongOnes = s.answers.filter(function(a) { return !a.correct; });
   if (wrongOnes.length > 0) {
     wrongHtml += '<div class="pq-wrong-review">';
-    wrongHtml += '<div style="font-weight:700;margin-bottom:8px">' + t('Questions to review:', '需要复习的题目：') + '</div>';
+    wrongHtml += '<div class="fw-700 mb-8">' + t('Questions to review:', '需要复习的题目：') + '</div>';
     wrongOnes.forEach(function(a) {
       var q = s.questions.filter(function(qq) { return qq.id === a.qid; })[0];
       if (!q) return;
@@ -476,7 +476,7 @@ function finishPractice() {
   /* Diagnostic summary (HHK questions with diag field) */
   var diagHtml = _diagSummary(s.answers, s.questions);
 
-  var html = '<div class="text-center" style="padding-top:40px">';
+  var html = '<div class="text-center pt-40">';
   html += raw.replace('<div class="result-actions">', diagHtml + step + wrongHtml + '<div class="result-actions">');
   html += '</div>';
 
@@ -508,7 +508,7 @@ function reportPracticeQ() {
   var html = '<div class="section-title">\ud83d\udea9 ' + t('Report Question Error', '报告题目错误') + '</div>';
   html += '<div style="text-align:left;margin-bottom:12px;padding:10px;background:var(--c-surface-alt);border-radius:var(--r);font-size:12px">';
   html += '<strong>#' + escapeHtml(q.id) + '</strong> · ' + escapeHtml(q.topic || '') + '<br>';
-  html += '<span style="color:var(--c-text2)">' + escapeHtml(q.q.substring(0, 80)) + (q.q.length > 80 ? '...' : '') + '</span>';
+  html += '<span class="text-sub">' + escapeHtml(q.q.substring(0, 80)) + (q.q.length > 80 ? '...' : '') + '</span>';
   html += '</div>';
   html += '<label class="settings-label">' + t('Error type', '错误类型') + '</label>';
   html += '<select class="bug-select" id="pq-report-type">' + typeOpts + '</select>';
@@ -517,8 +517,8 @@ function reportPracticeQ() {
   html += '<div id="pq-report-msg" style="font-size:13px;margin:8px 0;min-height:20px;color:var(--c-danger)"></div>';
   html += '<div class="btn-row">';
   var submitLabel = (isLoggedIn() && !isGuest()) ? t('Submit', '提交') : t('Submit via Email', '通过邮件提交');
-  html += '<button class="btn btn-primary" style="flex:1" onclick="submitPracticeReport()">' + submitLabel + '</button>';
-  html += '<button class="btn btn-ghost" style="flex:1" onclick="hideModal()">' + t('Cancel', '取消') + '</button>';
+  html += '<button class="btn btn-primary" onclick="submitPracticeReport()">' + submitLabel + '</button>';
+  html += '<button class="btn btn-ghost" onclick="hideModal()">' + t('Cancel', '取消') + '</button>';
   html += '</div>';
   showModal(html);
 }
@@ -638,9 +638,9 @@ function _openEditor(q, board, onSaveCb) {
   html += '</div>'; /* end split */
 
   /* Formula popup (hidden) */
-  html += '<div class="pq-formula-popup" id="pq-formula-popup" style="display:none">';
+  html += '<div class="pq-formula-popup d-none" id="pq-formula-popup">';
   html += '<label class="pq-field-label">LaTeX</label>';
-  html += '<textarea id="pq-formula-input" class="bug-textarea" rows="2" placeholder="\\frac{1}{2}" style="font-family:var(--font-mono)"></textarea>';
+  html += '<textarea id="pq-formula-input" class="bug-textarea font-mono" rows="2" placeholder="\\frac{1}{2}"></textarea>';
   html += '<div class="pq-formula-preview" id="pq-formula-preview"></div>';
   html += '<div class="btn-row btn-row--mt8">';
   html += '<button class="btn btn-primary btn-sm" onclick="pqInsertFormula()">' + t('Insert', '插入') + '</button>';
@@ -648,7 +648,7 @@ function _openEditor(q, board, onSaveCb) {
   html += '</div></div>';
 
   /* Hidden file input for image upload */
-  html += '<input type="file" id="pq-img-input" accept="image/*" style="display:none" onchange="pqUploadImage(this)">';
+  html += '<input type="file" id="pq-img-input" accept="image/*" class="d-none" onchange="pqUploadImage(this)">';
 
   /* Footer buttons */
   html += '<div class="pq-editor-footer">';
@@ -991,7 +991,7 @@ function renderPracticeReview() {
     html += '<div class="pq-review-card">';
 
     /* Header: num + qid + topic + difficulty + edit btn */
-    html += '<div class="pq-meta" style="margin-bottom:8px">';
+    html += '<div class="pq-meta mb-8">';
     html += '<span style="font-weight:700;color:var(--c-text);min-width:28px">' + (i + 1) + '.</span>';
     html += '<span class="pq-qid" style="font-size:11px;color:var(--c-muted)">#' + escapeHtml(q.id) + '</span>';
     if (q.topic) html += '<span class="pq-topic">' + escapeHtml(q.topic) + '</span>';
@@ -1000,7 +1000,7 @@ function renderPracticeReview() {
     html += '</div>';
 
     /* Question */
-    html += '<div class="pq-question" style="margin-bottom:8px">' + pqRender(q.q) + '</div>';
+    html += '<div class="pq-question mb-8">' + pqRender(q.q) + '</div>';
 
     /* Options */
     html += '<div class="pq-review-opts">';
@@ -1386,28 +1386,28 @@ function renderPPCard() {
   var html = '';
 
   /* Header */
-  html += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">';
+  html += '<div class="page-header page-header--mb12">';
   html += '<button class="btn btn-ghost btn-sm" onclick="ppBack()">\u2190 ' + t('Back', '\u8fd4\u56de') + '</button>';
   if (_ppSession.isDiagnostic) {
-    html += '<div style="flex:1;text-align:center;font-size:13px;font-weight:600;color:var(--c-primary)">';
+    html += '<div class="flex-1 text-center text-sm fw-600" style="color:var(--c-primary)">';
     html += '\ud83c\udfaf ' + t('Diagnostic Test', '\u8bca\u65ad\u6d4b\u8bd5');
     html += '</div>';
   } else if (_ppSession.isMock) {
-    html += '<div style="flex:1;text-align:center;font-size:13px;font-weight:600;color:var(--c-warning)">';
+    html += '<div class="flex-1 text-center text-sm fw-600" style="color:var(--c-warning)">';
     html += '\ud83c\udfb2 ' + t('Mock Exam', '\u6a21\u62df\u8003\u8bd5') + ' \u00b7 ' + _ppSession.totalMarks + ' marks';
     html += '</div>';
   } else if (_ppSession.paperKey) {
     var _hMeta = getPaperMeta(_ppSession.board)[_ppSession.paperKey];
     if (_hMeta) {
       var _hSl = PP_SESSION_LABELS[_hMeta.session] || { en: _hMeta.session, zh: _hMeta.session };
-      html += '<div style="flex:1;text-align:center;font-size:13px;font-weight:600;color:var(--c-text2)">';
+      html += '<div class="flex-1 text-center text-sm fw-600 text-muted">';
       html += 'Paper ' + _hMeta.paper + ' \u00b7 ' + _hMeta.year + ' ' + t(_hSl.en, _hSl.zh);
       html += '</div>';
     } else {
-      html += '<div style="flex:1"></div>';
+      html += '<div class="flex-1"></div>';
     }
   } else {
-    html += '<div style="flex:1"></div>';
+    html += '<div class="flex-1"></div>';
   }
   if (_ppSession.mode === 'exam') {
     html += '<div class="pp-timer" id="pp-timer">00:00</div>';
@@ -1423,14 +1423,14 @@ function renderPPCard() {
 
   /* Group filter label + qtype tag */
   if (_ppSession.groupFilter) {
-    html += '<div style="text-align:center;margin-bottom:8px">';
+    html += '<div class="text-center mb-8">';
     html += '<span class="pp-error-chip selected" style="font-size:12px">' + _ppGroupLabel(_ppSession.groupFilter) + '</span>';
     html += ' <span style="font-size:11px;color:var(--c-muted);cursor:pointer;text-decoration:underline" onclick="ppClearFilter()">' + t('Show all', '\u663e\u793a\u5168\u90e8') + '</span>';
     html += '</div>';
   }
   /* Command word filter chip */
   if (_ppSession.cmdFilter) {
-    html += '<div style="text-align:center;margin-bottom:8px">';
+    html += '<div class="text-center mb-8">';
     html += '<span class="pp-cmd-badge" style="font-size:12px;padding:3px 10px">' + _ppCmdLabel(_ppSession.cmdFilter) + '</span>';
     html += ' <span style="font-size:11px;color:var(--c-muted);cursor:pointer;text-decoration:underline" onclick="ppClearCmdFilter()">' + t('Show all', '\u663e\u793a\u5168\u90e8') + '</span>';
     html += '</div>';
@@ -1504,7 +1504,7 @@ function renderPPCard() {
         }
         html += '</div>';
       }
-      html += '<div style="text-align:center;padding:8px">';
+      html += '<div class="text-center" style="padding:8px">';
       html += '<button class="btn btn-sm" onclick="openDeck(' + vocabInfo.levelIdx + ')">';
       html += '\ud83d\udcd6 ' + t('Study Vocabulary', '\u5b66\u4e60\u8bcd\u6c47') + '</button></div>';
       html += '</div>';
@@ -1515,7 +1515,7 @@ function renderPPCard() {
 
   /* Self-assessment (practice mode) */
   if (_ppSession.mode === 'practice') {
-    html += '<div style="margin-top:16px;max-width:640px;margin-inline:auto">';
+    html += '<div class="mt-16" style="max-width:640px;margin-inline:auto">';
     html += '<div style="text-align:center;font-size:12px;color:var(--c-muted);margin-bottom:8px">';
     html += t('How did you do?', '\u4f60\u505a\u5f97\u5982\u4f55\uff1f');
     html += '</div>';
@@ -1532,7 +1532,7 @@ function renderPPCard() {
   /* Exam mode: flag + submit */
   if (_ppSession.mode === 'exam') {
     var flagged = _ppSession.results[idx] && _ppSession.results[idx].flagged;
-    html += '<div style="margin-top:16px;max-width:640px;margin-inline:auto;text-align:center">';
+    html += '<div class="mt-16 text-center" style="max-width:640px;margin-inline:auto">';
     html += '<label style="cursor:pointer;font-size:13px;color:var(--c-muted)">';
     html += '<input type="checkbox" id="pp-flag-cb"' + (flagged ? ' checked' : '') + ' onchange="ppToggleFlag()"> ';
     html += '\u2753 ' + t('Mark as unsure', '\u6807\u8bb0\u4e0d\u786e\u5b9a');
@@ -1861,7 +1861,7 @@ function _diagShowResults(exam, conceptErrors) {
     return pa - pb;
   });
 
-  html += '<h4 style="margin:20px 0 12px">' + t('By Topic', '\u6309\u77e5\u8bc6\u70b9') + '</h4>';
+  html += '<h4 class="sub-heading">' + t('By Topic', '\u6309\u77e5\u8bc6\u70b9') + '</h4>';
   var board = _ppSession ? _ppSession.board : 'cie';
   for (var si = 0; si < secKeys.length; si++) {
     var sk = secKeys[si];
@@ -1914,7 +1914,7 @@ function _diagShowResults(exam, conceptErrors) {
   /* History trend chart (show if >=2 results) */
   if (diagHistory && diagHistory.length >= 2) {
     html += '<div class="diag-trend">';
-    html += '<h4 style="margin:20px 0 12px">' + t('Score History', '\u6210\u7ee9\u8d8b\u52bf') + '</h4>';
+    html += '<h4 class="sub-heading">' + t('Score History', '\u6210\u7ee9\u8d8b\u52bf') + '</h4>';
     html += '<div class="diag-trend-chart">';
     for (var hi = 0; hi < diagHistory.length; hi++) {
       var dh = diagHistory[hi];
@@ -1935,7 +1935,7 @@ function _diagShowResults(exam, conceptErrors) {
   }
 
   /* Action buttons */
-  html += '<div class="btn-row btn-row--gap12 btn-row--center btn-row--mt24 btn-row--wrap" style="padding-bottom:40px">';
+  html += '<div class="btn-row btn-row--gap12 btn-row--center btn-row--mt24 btn-row--wrap pb-40">';
   if (_isMockExam) {
     html += '<button class="btn btn-primary" onclick="ppShowMockSetup(\'' + board + '\')">\ud83d\udd04 ' + t('New Mock', '\u65b0\u6a21\u62df\u5377') + '</button>';
   } else {
@@ -2016,13 +2016,13 @@ function ppShowExamSetup(sectionId, board, questions) {
   var refTime = totalMarks; /* 1 min per mark */
 
   var html = '';
-  html += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:20px">';
+  html += '<div class="page-header page-header--mb20">';
   html += '<button class="btn btn-ghost btn-sm" onclick="ppBack()">\u2190 ' + t('Back', '\u8fd4\u56de') + '</button>';
   html += '</div>';
 
   html += '<div class="pp-setup">';
   html += '<h3>\u23f1 ' + t('Exam Mode', '\u5b9e\u6218\u6a21\u5f0f') + '</h3>';
-  html += '<p style="color:var(--c-text2);margin-bottom:20px">' + t('Section', '\u77e5\u8bc6\u70b9') + ' ' + sectionId + ' \u00b7 ' + questions.length + ' ' + t('questions', '\u9898') + '</p>';
+  html += '<p class="desc">' + t('Section', '\u77e5\u8bc6\u70b9') + ' ' + sectionId + ' \u00b7 ' + questions.length + ' ' + t('questions', '\u9898') + '</p>';
 
   /* Question count selector */
   html += '<div class="pp-setup-row">';
@@ -2045,11 +2045,11 @@ function ppShowExamSetup(sectionId, board, questions) {
   for (var mi = 0; mi < defaultCount && mi < shuffled.length; mi++) defaultMarks += shuffled[mi].marks;
   html += '<div class="pp-setup-row">';
   html += '<span>' + t('Reference time', '\u53c2\u8003\u65f6\u95f4') + '</span>';
-  html += '<span id="pp-exam-time" style="font-weight:600">\u2248 ' + defaultMarks + ' min</span>';
+  html += '<span id="pp-exam-time" class="fw-600">\u2248 ' + defaultMarks + ' min</span>';
   html += '</div>';
 
-  html += '<div style="margin-top:24px">';
-  html += '<button class="btn btn-primary" onclick="ppStartExam(\'' + sectionId + '\',\'' + board + '\')" style="padding:12px 32px;font-size:15px">';
+  html += '<div class="mt-24">';
+  html += '<button class="btn btn-primary" onclick="ppStartExam(\'' + sectionId + '\',\'' + board + '\') btn-lg">';
   html += '\u25b6 ' + t('Start Exam', '\u5f00\u59cb\u5b9e\u6218') + '</button>';
   html += '</div>';
 
@@ -2172,8 +2172,8 @@ function ppShowMarking() {
   var sec = duration % 60;
 
   var html = '';
-  html += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">';
-  html += '<h3 style="margin:0;flex:1">' + t('Mark Your Answers', '\u6279\u6539\u7b54\u5377') + '</h3>';
+  html += '<div class="page-header page-header--mb12">';
+  html += '<h3 class="mt-0 mb-0 flex-1">' + t('Mark Your Answers', '\u6279\u6539\u7b54\u5377') + '</h3>';
   html += '<div class="pp-src">\u23f1 ' + min + ':' + (sec < 10 ? '0' : '') + sec + '</div>';
   html += '</div>';
 
@@ -2189,11 +2189,11 @@ function ppShowMarking() {
     html += '<span class="pp-marks-badge">' + q.marks + (q.marks === 1 ? ' mk' : ' mks') + '</span>';
     if (r.flagged) html += ' \u2753';
     html += '</div>';
-    html += '<div id="pp-mark-status-' + i + '" style="font-size:13px"></div>';
+    html += '<div id="pp-mark-status-' + i + '" class="text-sm"></div>';
     html += '</div>';
 
     /* Body (collapsed by default) */
-    html += '<div class="pp-mark-body" id="pp-mark-body-' + i + '" style="display:none">';
+    html += '<div class="pp-mark-body d-none" id="pp-mark-body-' + i + '">';
 
     /* Question preview */
     html += '<div style="font-size:13px;line-height:1.6;margin-bottom:12px;max-height:160px;overflow:auto" class="pp-mark-tex">';
@@ -2202,7 +2202,7 @@ function ppShowMarking() {
     html += '</div>';
 
     /* Self-assessment */
-    html += '<div class="pp-rate-row" style="margin-bottom:8px">';
+    html += '<div class="pp-rate-row mb-8">';
     html += '<button class="pp-rate-btn mastered" onclick="ppMarkRate(' + i + ',\'correct\',this)">\u2705 ' + t('All correct', '\u5168\u5bf9') + '</button>';
     html += '<button class="pp-rate-btn partial" onclick="ppMarkRate(' + i + ',\'partial\',this)">\ud83d\udfe1 ' + t('Partial', '\u90e8\u5206') + '</button>';
     html += '<button class="pp-rate-btn needs-work" onclick="ppMarkRate(' + i + ',\'wrong\',this)">\ud83d\udd34 ' + t('Wrong', '\u9519\u8bef') + '</button>';
@@ -2210,9 +2210,9 @@ function ppShowMarking() {
 
     /* Score input */
     html += '<div class="pp-mark-score">';
-    html += '<span style="font-size:13px">' + t('Score', '\u5f97\u5206') + ':</span>';
+    html += '<span class="text-sm">' + t('Score', '\u5f97\u5206') + ':</span>';
     html += '<input type="number" min="0" max="' + q.marks + '" id="pp-score-' + i + '" onchange="ppScoreChange(' + i + ',' + q.marks + ')" placeholder="0">';
-    html += '<span style="font-size:13px">/ ' + q.marks + '</span>';
+    html += '<span class="text-sm">/ ' + q.marks + '</span>';
     html += '</div>';
 
     /* Error type chips */
@@ -2226,7 +2226,7 @@ function ppShowMarking() {
     html += '</div>';
 
     /* Report + Edit in marking view */
-    html += '<div class="pq-report-row" style="margin-top:8px">';
+    html += '<div class="pq-report-row mt-8">';
     html += '<button class="pq-report-btn" onclick="reportPastPaperQ(' + i + ')">\ud83d\udea9 ' + t('Report', '报告') + '</button>';
     if (typeof isSuperAdmin === 'function' && isSuperAdmin()) {
       html += '<button class="pq-edit-btn" onclick="editPastPaperQ(' + i + ')">\u270f\ufe0f ' + t('Edit', '编辑') + '</button>';
@@ -2238,8 +2238,8 @@ function ppShowMarking() {
   }
 
   /* Submit marking */
-  html += '<div style="text-align:center;margin-top:20px;padding-bottom:40px">';
-  html += '<button class="btn btn-primary" onclick="ppFinishMarking()" style="padding:12px 32px;font-size:15px">';
+  html += '<div class="text-center mt-20 pb-40">';
+  html += '<button class="btn btn-primary" onclick="ppFinishMarking() btn-lg">';
   html += '\ud83d\udcca ' + t('See Results', '\u67e5\u770b\u7ed3\u679c') + '</button>';
   html += '</div>';
 
@@ -2252,7 +2252,7 @@ function ppShowMarking() {
 
 function ppToggleMarkBody(idx) {
   var body = document.getElementById('pp-mark-body-' + idx);
-  if (body) body.style.display = body.style.display === 'none' ? 'block' : 'none';
+  if (body) body.classList.toggle('d-none');
 }
 
 function ppMarkRate(idx, status, btn) {
@@ -2334,7 +2334,7 @@ function reportPastPaperQ(qIdx) {
   var html = '<div class="section-title">\ud83d\udea9 ' + t('Report Past Paper Error', '报告真题错误') + '</div>';
   html += '<div style="text-align:left;margin-bottom:12px;padding:10px;background:var(--c-surface-alt);border-radius:var(--r);font-size:12px">';
   html += '<strong>#' + escapeHtml(q.id) + '</strong> · ' + escapeHtml(q.src) + '<br>';
-  html += '<span style="color:var(--c-text2)">' + escapeHtml(q.tex.substring(0, 100)) + (q.tex.length > 100 ? '...' : '') + '</span>';
+  html += '<span class="text-sub">' + escapeHtml(q.tex.substring(0, 100)) + (q.tex.length > 100 ? '...' : '') + '</span>';
   html += '</div>';
   html += '<label class="settings-label">' + t('Error type', '错误类型') + '</label>';
   html += '<select class="bug-select" id="pp-report-type">' + typeOpts + '</select>';
@@ -2343,8 +2343,8 @@ function reportPastPaperQ(qIdx) {
   html += '<div id="pp-report-msg" style="font-size:13px;margin:8px 0;min-height:20px;color:var(--c-danger)"></div>';
   html += '<div class="btn-row">';
   var submitLabel = (isLoggedIn() && !isGuest()) ? t('Submit', '提交') : t('Submit via Email', '通过邮件提交');
-  html += '<button class="btn btn-primary" style="flex:1" onclick="submitPPReport(\'' + escapeHtml(q.id) + '\')">' + submitLabel + '</button>';
-  html += '<button class="btn btn-ghost" style="flex:1" onclick="hideModal()">' + t('Cancel', '取消') + '</button>';
+  html += '<button class="btn btn-primary" onclick="submitPPReport(\'' + escapeHtml(q.id) + '\')">' + submitLabel + '</button>';
+  html += '<button class="btn btn-ghost" onclick="hideModal()">' + t('Cancel', '取消') + '</button>';
   html += '</div>';
   showModal(html);
 }
@@ -2417,13 +2417,13 @@ function editPastPaperQ(qIdx) {
   html += '<div class="btn-row btn-row--gap12">';
 
   /* Marks */
-  html += '<div style="flex:1">';
+  html += '<div class="flex-1">';
   html += '<label class="settings-label">' + t('Marks', '分值') + '</label>';
   html += '<input type="number" class="bug-select" id="pp-ed-marks" min="1" max="20" value="' + q.marks + '" style="width:100%">';
   html += '</div>';
 
   /* Difficulty */
-  html += '<div style="flex:1">';
+  html += '<div class="flex-1">';
   html += '<label class="settings-label">' + t('Difficulty', '难度') + '</label>';
   html += '<select class="bug-select" id="pp-ed-diff" style="width:100%">';
   html += '<option value="1"' + (q.d === 1 ? ' selected' : '') + '>Core</option>';
@@ -2432,7 +2432,7 @@ function editPastPaperQ(qIdx) {
   html += '</select></div>';
 
   /* Group */
-  html += '<div style="flex:1">';
+  html += '<div class="flex-1">';
   html += '<label class="settings-label">' + t('Question Type', '题型') + '</label>';
   html += '<select class="bug-select" id="pp-ed-group" style="width:100%">';
   var gKeys = Object.keys(_ppGroupLabels);
@@ -2444,7 +2444,7 @@ function editPastPaperQ(qIdx) {
   html += '</div>';
 
   /* Preview */
-  html += '<div style="margin-top:12px">';
+  html += '<div class="mt-12">';
   html += '<label class="settings-label">' + t('Preview', '预览') + '</label>';
   html += '<div id="pp-ed-preview" style="padding:12px;background:var(--c-surface-alt);border-radius:var(--r);font-size:13px;line-height:1.6;max-height:200px;overflow:auto;white-space:pre-line"></div>';
   html += '</div>';
@@ -2452,8 +2452,8 @@ function editPastPaperQ(qIdx) {
   /* Submit as correction */
   html += '<div id="pp-ed-msg" style="font-size:13px;margin:8px 0;min-height:20px;color:var(--c-danger)"></div>';
   html += '<div class="btn-row">';
-  html += '<button class="btn btn-primary" style="flex:1" onclick="submitPPEdit(\'' + escapeHtml(q.id) + '\')">\ud83d\udcbe ' + t('Submit Correction', '提交修正') + '</button>';
-  html += '<button class="btn btn-ghost" style="flex:1" onclick="hideModal()">' + t('Cancel', '取消') + '</button>';
+  html += '<button class="btn btn-primary" onclick="submitPPEdit(\'' + escapeHtml(q.id) + '\')">\ud83d\udcbe ' + t('Submit Correction', '提交修正') + '</button>';
+  html += '<button class="btn btn-ghost" onclick="hideModal()">' + t('Cancel', '取消') + '</button>';
   html += '</div>';
 
   showModal(html);
@@ -2629,7 +2629,7 @@ function ppShowResults(exam, conceptErrors) {
   });
 
   if (concepts.length > 0) {
-    html += '<h4 style="margin:20px 0 12px">' + t('By Question Type', '\u6309\u9898\u578b\u5206\u6790') + '</h4>';
+    html += '<h4 class="sub-heading">' + t('By Question Type', '\u6309\u9898\u578b\u5206\u6790') + '</h4>';
     for (var ci = 0; ci < concepts.length; ci++) {
       var c = concepts[ci];
       var ce = conceptErrors[c];
@@ -2681,7 +2681,7 @@ function ppShowResults(exam, conceptErrors) {
   }
 
   /* Action buttons */
-  html += '<div class="btn-row btn-row--gap12 btn-row--center btn-row--mt24 btn-row--wrap" style="padding-bottom:40px">';
+  html += '<div class="btn-row btn-row--gap12 btn-row--center btn-row--mt24 btn-row--wrap pb-40">';
   if (_ppSession && _ppSession.paperKey) {
     html += '<button class="btn btn-ghost" onclick="ppShowPaperBrowse(\'' + _ppSession.board + '\')">';
     html += t('Back to Papers', '\u8fd4\u56de\u5957\u5377') + '</button>';
@@ -2722,9 +2722,9 @@ function ppShowWrongBook(sectionId, board) {
     }
 
     var html = '';
-    html += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:16px">';
+    html += '<div class="page-header">';
     html += '<button class="btn btn-ghost btn-sm" onclick="ppBack()">\u2190 ' + t('Back', '\u8fd4\u56de') + '</button>';
-    html += '<h3 style="margin:0;flex:1">\ud83d\udcd5 ' + t('Wrong Book', '\u9519\u9898\u672c') + '</h3>';
+    html += '<h3 class="mt-0 mb-0 flex-1">\ud83d\udcd5 ' + t('Wrong Book', '\u9519\u9898\u672c') + '</h3>';
     html += '</div>';
 
     if (wrongItems.length === 0) {
@@ -2760,7 +2760,7 @@ function ppShowWrongBook(sectionId, board) {
       }
 
       /* Review all button */
-      html += '<div style="text-align:center;margin-top:20px;padding-bottom:40px">';
+      html += '<div class="text-center mt-20 pb-40">';
       html += '<button class="btn btn-primary" onclick="ppStartWrongBookReview(\'' + sectionId + '\',\'' + board + '\')" style="padding:10px 28px">';
       html += '\ud83d\udd04 ' + t('Review All', '\u5168\u90e8\u590d\u4e60') + ' (' + wrongItems.length + ')</button>';
       html += '</div>';
@@ -2889,9 +2889,9 @@ function ppShowPaperBrowse(board) {
     var yearKeys = Object.keys(years).sort(function(a, b) { return b - a; });
 
     var html = '';
-    html += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:16px">';
+    html += '<div class="page-header">';
     html += '<button class="btn-icon" onclick="ppBack()" title="Back">&larr;</button>';
-    html += '<h2 style="margin:0;flex:1">' + t('Past Papers', '\u5957\u5377\u7ec3\u4e60') + '</h2>';
+    html += '<h2 class="mt-0 mb-0 flex-1">' + t('Past Papers', '\u5957\u5377\u7ec3\u4e60') + '</h2>';
     html += '<button class="btn btn-sm" onclick="ppShowMockSetup(\'' + board + '\')" style="background:var(--c-warning);border-color:var(--c-warning);color:#fff">\ud83c\udfb2 ' + t('Mock Exam', '\u6a21\u62df\u5377') + '</button>';
     html += '</div>';
 
@@ -2985,9 +2985,9 @@ function ppShowPaperDetail(paperKey, board) {
   var result = _ppGetPaperResults()[paperKey];
 
   var html = '';
-  html += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:16px">';
+  html += '<div class="page-header">';
   html += '<button class="btn-icon" onclick="ppShowPaperBrowse(\'' + board + '\')" title="Back">&larr;</button>';
-  html += '<h2 style="margin:0;flex:1">Paper ' + meta.paper + '</h2>';
+  html += '<h2 class="mt-0 mb-0 flex-1">Paper ' + meta.paper + '</h2>';
   html += '<span class="pp-paper-type ' + tl.cls + '">' + t(tl.en, tl.zh) + '</span>';
   html += '</div>';
 
@@ -3110,23 +3110,23 @@ function ppShowPaperExamSetup(paperKey, board, questions, meta) {
   var sl = PP_SESSION_LABELS[meta.session] || { en: meta.session, zh: meta.session };
 
   var html = '';
-  html += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:20px">';
+  html += '<div class="page-header page-header--mb20">';
   html += '<button class="btn btn-ghost btn-sm" onclick="ppShowPaperBrowse(\'' + board + '\')">\u2190 ' + t('Back', '\u8fd4\u56de') + '</button>';
   html += '</div>';
 
   html += '<div class="pp-setup">';
   html += '<h3>\u23f1 ' + t('Exam Mode', '\u5b9e\u6218\u6a21\u5f0f') + '</h3>';
-  html += '<p style="color:var(--c-text2);margin-bottom:20px">Paper ' + meta.paper + ' \u00b7 ' + meta.year + ' ' + t(sl.en, sl.zh) + '</p>';
+  html += '<p class="desc">Paper ' + meta.paper + ' \u00b7 ' + meta.year + ' ' + t(sl.en, sl.zh) + '</p>';
 
-  html += '<div class="pp-paper-detail-info" style="margin-bottom:20px">';
+  html += '<div class="pp-paper-detail-info mb-20">';
   html += '<div class="pp-detail-row"><span>' + t('Type', '\u7c7b\u578b') + '</span><span>' + t(tl.en, tl.zh) + '</span></div>';
   html += '<div class="pp-detail-row"><span>' + t('Total Marks', '\u603b\u5206') + '</span><span>' + meta.totalMarks + '</span></div>';
   html += '<div class="pp-detail-row"><span>' + t('Time Limit', '\u65f6\u9650') + '</span><span>' + meta.time + ' min</span></div>';
   html += '<div class="pp-detail-row"><span>' + t('Questions', '\u9898\u6570') + '</span><span>' + questions.length + '</span></div>';
   html += '</div>';
 
-  html += '<div style="margin-top:24px;text-align:center">';
-  html += '<button class="btn btn-primary" onclick="ppStartPaperExam(\'' + paperKey + '\',\'' + board + '\')" style="padding:12px 32px;font-size:15px">';
+  html += '<div class="mt-24 text-center">';
+  html += '<button class="btn btn-primary" onclick="ppStartPaperExam(\'' + paperKey + '\',\'' + board + '\') btn-lg">';
   html += '\u25b6 ' + t('Start Exam', '\u5f00\u59cb\u8003\u8bd5') + '</button>';
   html += '</div>';
 
@@ -3189,13 +3189,13 @@ function ppShowMockSetup(board) {
     var secCount = Object.keys(secs).length;
 
     var html = '';
-    html += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:20px">';
+    html += '<div class="page-header page-header--mb20">';
     html += '<button class="btn btn-ghost btn-sm" onclick="ppShowPaperBrowse(\'' + board + '\')">\u2190 ' + t('Back', '\u8fd4\u56de') + '</button>';
     html += '</div>';
 
     html += '<div class="pp-setup">';
     html += '<h3>\ud83c\udfb2 ' + t('Mock Exam', '\u6a21\u62df\u8003\u8bd5') + '</h3>';
-    html += '<p style="color:var(--c-text2);margin-bottom:20px">';
+    html += '<p class="desc">';
     html += t('Generate a custom exam from ', '\u4ece ') + allQ.length + t(' questions across ', ' \u9053\u771f\u9898\u3001') + secCount + t(' topics', ' \u4e2a\u77e5\u8bc6\u70b9\u4e2d\u7ec4\u5377');
     html += '</p>';
 
@@ -3222,11 +3222,11 @@ function ppShowMockSetup(board) {
     /* Time limit */
     html += '<div class="pp-setup-row">';
     html += '<span>' + t('Time Limit', '\u65f6\u9650') + '</span>';
-    html += '<span id="mock-time" style="font-weight:600">\u2248 70 min</span>';
+    html += '<span id="mock-time" class="fw-600">\u2248 70 min</span>';
     html += '</div>';
 
-    html += '<div style="margin-top:24px;text-align:center">';
-    html += '<button class="btn btn-primary" onclick="ppStartMockExam(\'' + board + '\')" style="padding:12px 32px;font-size:15px">';
+    html += '<div class="mt-24 text-center">';
+    html += '<button class="btn btn-primary" onclick="ppStartMockExam(\'' + board + '\') btn-lg">';
     html += '\u25b6 ' + t('Generate & Start', '\u751f\u6210\u5e76\u5f00\u59cb') + '</button>';
     html += '</div>';
 

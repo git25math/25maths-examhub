@@ -368,7 +368,7 @@ function translateAuthError(msg) {
 function showPasswordReset() {
   var prefill = E('auth-email').value.trim();
   var html = '<div class="section-title">' + t('Reset Password', '重置密码') + '</div>' +
-    '<p style="font-size:13px;color:var(--c-text2);margin-bottom:12px">' +
+    '<p class="text-sm text-sub mb-12">' +
     t('Enter your email and we will send a reset link.', '输入注册邮箱，我们将发送重置链接。') + '</p>' +
     '<input class="auth-input" id="reset-email" type="email" placeholder="' + t('Email', '邮箱地址') + '" value="' + (prefill || '').replace(/"/g, '&quot;') + '">' +
     '<div id="reset-msg" class="text-sm" style="margin:8px 0;min-height:20px"></div>' +
@@ -429,7 +429,7 @@ function showSettings() {
     /* Locked features list */
     gHtml += '<div class="settings-section">';
     gHtml += '<label class="settings-label">' + t('Login to unlock', '\u767b\u5f55\u540e\u53ef\u89e3\u9501') + '</label>';
-    gHtml += '<div style="font-size:13px;color:var(--c-text2);line-height:2">';
+    gHtml += '<div class="text-sm text-sub" style="line-height:2">';
     gHtml += '<div>\ud83d\udd12 ' + t('Set nickname', '\u8bbe\u7f6e\u6635\u79f0') + '</div>';
     gHtml += '<div>\ud83d\udd12 ' + t('Change password', '\u4fee\u6539\u5bc6\u7801') + '</div>';
     gHtml += '<div>\ud83d\udd12 ' + t('Cloud sync', '\u4e91\u7aef\u540c\u6b65') + '</div>';
@@ -468,7 +468,7 @@ function showSettings() {
     '<div class="settings-divider"></div>' +
     '<div class="settings-section">' +
     '<label class="settings-label">' + t('Cloud Sync', '\u4e91\u540c\u6b65') + '</label>' +
-    '<div style="font-size:13px;color:var(--c-text2);margin-bottom:8px">' + (function() {
+    '<div class="text-sm text-sub mb-8">' + (function() {
       if (!_lastSyncOkAt) return t('Not synced yet', '\u5c1a\u672a\u540c\u6b65');
       var ago = Math.floor((Date.now() - _lastSyncOkAt) / 60000);
       if (ago < 1) return t('Last sync: just now', '\u4e0a\u6b21\u540c\u6b65\uff1a\u521a\u521a');
@@ -652,7 +652,7 @@ function showRankGuide() {
     html += '<div class="rank-progress-pct">' + pct + '% \u2192 ' + next.min + '%</div>';
     html += '</div>';
   } else {
-    html += '<div class="rank-progress-section text-center" style="color:var(--c-success)">' + t('Highest rank achieved!', '已达最高段位') + ' \ud83c\udf89</div>';
+    html += '<div class="rank-progress-section text-center text-success">' + t('Highest rank achieved!', '已达最高段位') + ' \ud83c\udf89</div>';
   }
 
   /* Tips */
@@ -663,6 +663,6 @@ function showRankGuide() {
   html += '<div class="guide-tip-item">' + t('3. Higher mastery % = auto rank up', '3. 掌握率提升 → 自动晋升段位') + '</div>';
   html += '</div>';
 
-  html += '<button class="btn btn-ghost btn-block" onclick="hideModal()" style="margin-top:16px">' + t('Close', '关闭') + '</button>';
+  html += '<button class="btn btn-ghost btn-block mt-16" onclick="hideModal()">' + t('Close', '关闭') + '</button>';
   showModal(html);
 }

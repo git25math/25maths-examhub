@@ -604,11 +604,11 @@ function showBugReport() {
   html += '<textarea class="bug-textarea" id="bug-steps" rows="3" placeholder="' + t('1. Go to...\n2. Click on...\n3. See error', '1. 打开...\n2. 点击...\n3. 出现错误') + '"></textarea>';
   html += '<label class="settings-label">' + t('Auto-collected Info', '自动收集信息') + '</label>';
   html += '<textarea class="bug-textarea bug-auto" rows="4" readonly>' + autoInfo + '</textarea>';
-  html += '<div id="bug-msg" style="font-size:13px;margin:8px 0;min-height:20px;color:var(--c-danger)"></div>';
+  html += '<div id="bug-msg" class="text-sm text-danger" style="margin:8px 0;min-height:20px"></div>';
   html += '<div class="btn-row">';
   var submitLabel = (isLoggedIn() && !isGuest()) ? t('Submit', '提交') : t('Submit via Email', '通过邮件提交');
-  html += '<button class="btn btn-primary" style="flex:1" onclick="submitBugReport()">' + submitLabel + '</button>';
-  html += '<button class="btn btn-ghost" style="flex:1" onclick="hideModal()">' + t('Cancel', '取消') + '</button>';
+  html += '<button class="btn btn-primary" onclick="submitBugReport()">' + submitLabel + '</button>';
+  html += '<button class="btn btn-ghost" onclick="hideModal()">' + t('Cancel', '取消') + '</button>';
   html += '</div>';
   showModal(html);
 }

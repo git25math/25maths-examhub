@@ -3814,8 +3814,9 @@ input { font-family: inherit; }
 /* Sub-heading inside result/detail pages */
 .sub-heading { margin:20px 0 12px; }
 
-/* Monospace font utility */
+/* Font family utilities */
 .font-mono { font-family:var(--font-mono); }
+.font-display { font-family:var(--font-display); }
 
 /* Description paragraph */
 .desc { color:var(--c-text2); margin-bottom:20px; }
@@ -3830,9 +3831,21 @@ input { font-family: inherit; }
 /* Hidden utility */
 .d-none { display:none; }
 
+/* SRS dot color variants */
+.srs-row-dot--primary { background:var(--c-primary); }
+.srs-row-dot--danger { background:var(--c-danger); }
+.srs-row-dot--warning { background:var(--c-warning); }
+.srs-row-dot--success { background:var(--c-success); }
+.srs-row-dot--light { background:var(--c-primary-light); }
+
 /* Font weight */
 .fw-600 { font-weight:600; }
 .fw-700 { font-weight:700; }
+
+/* Result stat row (battle/match results) */
+.result-stats { display:flex; justify-content:center; gap:16px; margin:16px 0; }
+.result-stat-val { font-size:22px; font-weight:800; color:var(--c-primary); }
+.result-stat-label { font-size:9px; color:var(--c-text2); text-transform:uppercase; letter-spacing:1px; font-weight:600; }
 
 /* ═══ PRINT STYLES ═══ */
 @media print {

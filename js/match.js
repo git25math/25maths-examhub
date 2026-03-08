@@ -34,7 +34,7 @@ function renderMatchBoard() {
   html += '<div class="study-count">' + MT.matched + ' / ' + MT.pairs.length + '</div>';
   html += '</div>';
 
-  html += '<div style="text-align:center;margin-bottom:16px;font-size:13px;color:var(--c-text2)">' + t('Click English on left, then Chinese on right to match', '\u70b9\u51fb\u5de6\u5217\u82f1\u6587\uff0c\u518d\u70b9\u51fb\u53f3\u5217\u4e2d\u6587\u8fdb\u884c\u914d\u5bf9') + '</div>';
+  html += '<div class="text-center mb-16 text-sm text-sub">' + t('Click English on left, then Chinese on right to match', '\u70b9\u51fb\u5de6\u5217\u82f1\u6587\uff0c\u518d\u70b9\u51fb\u53f3\u5217\u4e2d\u6587\u8fdb\u884c\u914d\u5bf9') + '</div>';
 
   /* Match area */
   html += '<div class="match-area">';

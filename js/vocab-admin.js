@@ -305,7 +305,7 @@ async function showFeedbackDetail(id) {
     if (!fb) { showToast(t('Feedback not found', '未找到反馈')); return; }
 
     var html = '<div class="section-title">' + t('Feedback Detail', '反馈详情') + '</div>';
-    html += '<div style="font-size:13px;color:var(--c-text2);margin-bottom:12px">';
+    html += '<div class="text-sm text-sub mb-12">';
     html += '<strong>' + t('Type:', '类型：') + '</strong> ' + escapeHtml(fb.type || '') + '<br>';
     html += '<strong>' + t('User:', '用户：') + '</strong> ' + escapeHtml(fb.user_email || '-') + '<br>';
     html += '<strong>' + t('Date:', '日期：') + '</strong> ' + new Date(fb.created_at).toLocaleString() + '<br>';

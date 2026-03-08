@@ -539,13 +539,13 @@ function renderSectionDetail(ch, sec, secIdx, board) {
 
   /* Tier badge — board-aware */
   if (sec.tier === 'extended') {
-    html += '<span class="tier-badge tier-ext" style="margin-top:8px">Extended Only</span>';
+    html += '<span class="tier-badge tier-ext mt-8">Extended Only</span>';
   } else if (sec.tier === 'core') {
-    html += '<span class="tier-badge tier-core" style="margin-top:8px">Core Only</span>';
+    html += '<span class="tier-badge tier-core mt-8">Core Only</span>';
   } else if (sec.tier === 'higher') {
-    html += '<span class="tier-badge tier-higher" style="margin-top:8px">Higher Only</span>';
+    html += '<span class="tier-badge tier-higher mt-8">Higher Only</span>';
   } else if (sec.tier === 'foundation') {
-    html += '<span class="tier-badge tier-foundation" style="margin-top:8px">Foundation Only</span>';
+    html += '<span class="tier-badge tier-foundation mt-8">Foundation Only</span>';
   }
 
   /* Progress bar */
@@ -785,7 +785,7 @@ function renderSectionDetail(ch, sec, secIdx, board) {
     html += '<button class="sec-module-report" onclick="event.stopPropagation();reportSectionModule(\'' + sec.id + '\',\'knowledge\',\'' + board + '\')" title="' + t('Report error', '\u62a5\u544a\u9519\u8bef') + '">\ud83d\udea9</button>';
     html += '<div class="sec-module-arrow">\u25bc</div>';
     html += '</div>';
-    html += '<div class="sec-module-content" style="display:none">';
+    html += '<div class="sec-module-content d-none">';
     html += '<div class="sec-module-content-body">' + pqRender(knowledgeEdit.content) + '</div>';
     if (knowledgeEdit.content_zh) {
       html += '<div class="sec-module-content-body" style="margin-top:8px;color:var(--c-text2)">' + pqRender(knowledgeEdit.content_zh) + '</div>';
@@ -820,7 +820,7 @@ function renderSectionDetail(ch, sec, secIdx, board) {
     html += '<button class="sec-module-report" onclick="event.stopPropagation();reportSectionModule(\'' + sec.id + '\',\'examples\',\'' + board + '\')" title="' + t('Report error', '\u62a5\u544a\u9519\u8bef') + '">\ud83d\udea9</button>';
     html += '<div class="sec-module-arrow">\u25bc</div>';
     html += '</div>';
-    html += '<div class="sec-module-content" style="display:none">';
+    html += '<div class="sec-module-content d-none">';
     html += '<div class="sec-module-content-body">' + pqRender(examplesEdit.content) + '</div>';
     if (examplesEdit.content_zh) {
       html += '<div class="sec-module-content-body" style="margin-top:8px;color:var(--c-text2)">' + pqRender(examplesEdit.content_zh) + '</div>';
@@ -1357,7 +1357,7 @@ function _renderPPSectionModule(slot, secId, board) {
   }
 
   /* Question type breakdown */
-  h += '<div style="margin-top:4px">';
+  h += '<div class="mt-4">';
   h += '<div style="font-size:11px;color:var(--c-muted);margin-bottom:4px">' + t('By Question Type', '\u8003\u6cd5\u9898\u578b\u5206\u7c7b') + '</div>';
   h += '<div style="display:flex;flex-wrap:wrap;gap:4px">';
   for (var oi = 0; oi < PP_GROUP_ORDER.length; oi++) {
@@ -1379,7 +1379,7 @@ function _renderPPSectionModule(slot, secId, board) {
   }
   for (var _ck in cmdCounts) cmdTypes++;
   if (cmdTypes >= 2) {
-    h += '<div style="margin-top:4px">';
+    h += '<div class="mt-4">';
     h += '<div style="font-size:11px;color:var(--c-muted);margin-bottom:4px">' + t('By Command Word', '\u6309\u6307\u4ee4\u52a8\u8bcd') + '</div>';
     h += '<div style="display:flex;flex-wrap:wrap;gap:4px">';
     for (var coi = 0; coi < PP_CMD_ORDER.length; coi++) {
@@ -1410,7 +1410,7 @@ function _renderPPSectionModule(slot, secId, board) {
   }
 
   /* Action buttons */
-  h += '<div class="btn-row btn-row--wrap" style="margin-top:4px">';
+  h += '<div class="btn-row btn-row--wrap mt-4">';
   h += '<button class="btn btn-sm" data-pp-start data-sec="' + secId + '" data-board="' + board + '" data-mode="practice" style="flex:1;min-width:120px">';
   h += '\ud83d\udcd6 ' + t('Practice Mode', '\u7ec3\u4e60\u6a21\u5f0f') + '</button>';
   h += '<button class="btn btn-sm" data-pp-start data-sec="' + secId + '" data-board="' + board + '" data-mode="exam" style="flex:1;min-width:120px;background:var(--c-warning);border-color:var(--c-warning);color:#fff">';
@@ -1532,10 +1532,10 @@ function _renderMasterQSummary(slot, secId, board) {
   var unmasteredCount = totalTypes - masteredTypes;
   h += '<div class="btn-row btn-row--wrap">';
   if (unmasteredCount > 0) {
-    h += '<button class="btn btn-primary btn-sm" onclick="startPracticeUnmastered(\'' + secId + '\',\'' + board + '\')" style="flex:1">';
+    h += '<button class="btn btn-primary btn-sm" onclick="startPracticeUnmastered(\'' + secId + '\',\'' + board + '\')" class="flex-1">';
     h += t('Practice Unmastered', '\u53EA\u7EC3\u672A\u638C\u63E1') + ' (' + unmasteredCount + ')</button>';
   }
-  h += '<button class="btn btn-ghost btn-sm" onclick="startPastPaper(\'' + secId + '\',\'' + board + '\',\'practice\')" style="flex:1">';
+  h += '<button class="btn btn-ghost btn-sm" onclick="startPastPaper(\'' + secId + '\',\'' + board + '\',\'practice\')" class="flex-1">';
   h += t('Practice All', '\u5168\u90E8\u7EC3\u4E60') + '</button>';
   h += '</div>';
 
@@ -1663,7 +1663,7 @@ function editSectionModule(sectionId, module, board) {
   html += '</div>'; /* end split */
 
   /* Formula popup (shared with practice editor) */
-  html += '<div class="pq-formula-popup" id="pq-formula-popup" style="display:none">';
+  html += '<div class="pq-formula-popup" id="pq-formula-popup" class="d-none">';
   html += '<label class="pq-field-label">LaTeX</label>';
   html += '<textarea id="pq-formula-input" class="bug-textarea" rows="2" placeholder="\\frac{1}{2}" style="font-family:var(--font-mono)"></textarea>';
   html += '<div class="pq-formula-preview" id="pq-formula-preview"></div>';
@@ -1722,7 +1722,7 @@ function _seUpdatePreview(module, board) {
     }
     if (f2) {
       h += '<div class="pq-preview-section"><div class="pq-preview-label">Content (\u4e2d\u6587)</div>';
-      h += '<div class="pq-preview-content" style="color:var(--c-text2)">' + pqRender(f2) + '</div></div>';
+      h += '<div class="pq-preview-content text-sub">' + pqRender(f2) + '</div></div>';
     }
   }
 
@@ -1835,7 +1835,7 @@ function reportSectionModule(sectionId, moduleType, board) {
   html += '<div style="text-align:left;margin-bottom:12px;padding:10px;background:var(--c-surface-alt);border-radius:var(--r);font-size:12px">';
   html += '<strong>' + escapeHtml(sec.id) + '</strong> \u00b7 ' + escapeHtml(sec.title);
   if (appLang !== 'en' && sec.title_zh) html += ' \u00b7 ' + escapeHtml(sec.title_zh);
-  html += '<br><span style="color:var(--c-text2)">' + t('Module', '\u6a21\u5757') + ': ' + modLabel + '</span>';
+  html += '<br><span class="text-sub">' + t('Module', '\u6a21\u5757') + ': ' + modLabel + '</span>';
   html += '</div>';
   html += '<label class="settings-label">' + t('Error type', '\u9519\u8bef\u7c7b\u578b') + '</label>';
   html += '<select class="bug-select" id="sec-report-type">' + typeOpts + '</select>';
@@ -1844,8 +1844,8 @@ function reportSectionModule(sectionId, moduleType, board) {
   html += '<div id="sec-report-msg" style="font-size:13px;margin:8px 0;min-height:20px;color:var(--c-danger)"></div>';
   html += '<div class="btn-row">';
   var submitLabel = (isLoggedIn() && !isGuest()) ? t('Submit', '\u63d0\u4ea4') : t('Submit via Email', '\u901a\u8fc7\u90ae\u4ef6\u63d0\u4ea4');
-  html += '<button class="btn btn-primary" style="flex:1" onclick="submitSectionReport(\'' + sectionId + '\',\'' + moduleType + '\',\'' + board + '\')">' + submitLabel + '</button>';
-  html += '<button class="btn btn-ghost" style="flex:1" onclick="hideModal()">' + t('Cancel', '\u53d6\u6d88') + '</button>';
+  html += '<button class="btn btn-primary flex-1" onclick="submitSectionReport(\'' + sectionId + '\',\'' + moduleType + '\',\'' + board + '\')">' + submitLabel + '</button>';
+  html += '<button class="btn btn-ghost flex-1" onclick="hideModal()">' + t('Cancel', '\u53d6\u6d88') + '</button>';
   html += '</div>';
   showModal(html);
 }
@@ -2194,7 +2194,7 @@ function renderMistakeBook() {
         html += '</div>';
         html += '</div>';
       }
-      html += '<div style="text-align:center;margin-top:12px">';
+      html += '<div class="text-center mt-12">';
       html += '<button class="btn btn-primary btn-sm" onclick="startMistakeReview(\'vocab\')">' + t('Review Wrong Words (SRS Priority)', '\u590d\u4e60\u9519\u8bcd\uff08SRS \u4f18\u5148\uff09') + '</button>';
       html += '</div>';
       html += '</div>';
@@ -2233,7 +2233,7 @@ function renderMistakeBook() {
         html += '<button class="btn btn-ghost btn-xs mistake-review-btn" onclick="reviewMistakeQ(\'' + escapeHtml(item.qid) + '\')">' + t('Review', '\u590d\u4e60') + '</button>';
         html += '</div>';
       }
-      html += '<div style="text-align:center;margin-top:12px">';
+      html += '<div class="text-center mt-12">';
       html += '<button class="btn btn-primary btn-sm" onclick="reviewAllMistakeQs()">' + t('Review All', '\u5168\u90e8\u590d\u4e60') + ' (' + ppItems.length + ')</button>';
       html += '</div>';
       html += '</div>';

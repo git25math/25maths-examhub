@@ -14,20 +14,20 @@ function renderImport() {
 
   /* Import section */
   html += '<div class="import-section">';
-  html += '<div style="font-size:14px;font-weight:700;margin-bottom:10px">' + t('Import Vocabulary', '\u5bfc\u5165\u8bcd\u6c47') + '</div>';
+  html += '<div class="fw-700" style="font-size:14px;margin-bottom:10px">' + t('Import Vocabulary', '\u5bfc\u5165\u8bcd\u6c47') + '</div>';
 
   /* File upload */
   html += '<div class="import-drop" id="import-drop" onclick="E(\'import-file\').click()">';
   html += '<div class="import-drop-icon">\ud83d\udcc1</div>';
   html += '<div class="import-drop-text">' + t('Click or drop file (CSV, JSON, TXT, Anki TSV)', '\u70b9\u51fb\u6216\u62d6\u653e\u6587\u4ef6 (CSV, JSON, TXT, Anki TSV)') + '</div>';
   html += '</div>';
-  html += '<input type="file" id="import-file" accept=".csv,.json,.txt,.md,.tsv" style="display:none">';
+  html += '<input type="file" id="import-file" accept=".csv,.json,.txt,.md,.tsv" class="d-none">';
 
   /* Text paste */
-  html += '<div style="font-size:12px;font-weight:600;color:var(--c-text2);margin-bottom:6px">' + t('Or paste text:', '\u6216\u8005\u7c98\u8d34\u6587\u672c:') + '</div>';
+  html += '<div class="fw-600 text-sub" style="font-size:12px;margin-bottom:6px">' + t('Or paste text:', '\u6216\u8005\u7c98\u8d34\u6587\u672c:') + '</div>';
   html += '<textarea class="import-textarea" id="import-text" placeholder="English, \u4e2d\u6587\nVariable, \u53d8\u91cf\nConstant, \u5e38\u91cf"></textarea>';
 
-  html += '<div style="margin-top:10px">';
+  html += '<div class="mt-8">';
   html += '<button class="btn btn-primary btn-sm" onclick="parseImport()">' + t('Parse', '\u89e3\u6790') + '</button>';
   html += '</div>';
 
@@ -37,7 +37,7 @@ function renderImport() {
 
   /* Export section */
   html += '<hr style="border:none;border-top:1px solid var(--c-border-light);margin:24px 0">';
-  html += '<div style="font-size:14px;font-weight:700;margin-bottom:12px">' + t('Export', '\u5bfc\u51fa') + '</div>';
+  html += '<div class="fw-700 mb-12" style="font-size:14px">' + t('Export', '\u5bfc\u51fa') + '</div>';
   html += '<div class="export-btns">';
   html += '<button class="btn btn-secondary btn-sm" onclick="exportUnfamiliar()">\ud83d\udcc4 ' + t('Unfamiliar CSV', '\u4e0d\u719f\u5355\u8bcd CSV') + '</button>';
   html += '<button class="btn btn-secondary btn-sm" onclick="exportProgress()">\ud83d\udcca ' + t('Progress JSON', '\u5b66\u4e60\u8bb0\u5f55 JSON') + '</button>';
@@ -121,8 +121,8 @@ function parseImport() {
   });
   html += '</tbody></table></div>';
 
-  html += '<div style="margin-top:12px;display:flex;gap:8px;align-items:center">';
-  html += '<input type="text" id="import-name" class="auth-input" placeholder="' + t('Deck name (e.g. Custom Vocab)', '\u5361\u7ec4\u540d\u79f0 (\u4f8b: \u81ea\u5b9a\u4e49\u8bcd\u6c47)') + '" style="margin:0;flex:1">';
+  html += '<div class="mt-12 flex items-center gap-8">';
+  html += '<input type="text" id="import-name" class="auth-input flex-1" placeholder="' + t('Deck name (e.g. Custom Vocab)', '\u5361\u7ec4\u540d\u79f0 (\u4f8b: \u81ea\u5b9a\u4e49\u8bcd\u6c47)') + '" style="margin:0">';
   html += '<button class="btn btn-success btn-sm" onclick="confirmImport()">' + t('Confirm Import', '\u786e\u8ba4\u5bfc\u5165') + '</button>';
   html += '</div>';
 

@@ -34,7 +34,7 @@ function renderBattle(lv) {
   /* Header */
   html += '<div class="study-topbar">';
   html += '<button class="back-btn" onclick="exitBattle()">\u2190</button>';
-  html += '<div style="flex:1;text-align:center"><div style="font-family:var(--font-display);font-weight:800;font-size:16px">STAGE ' + (G.lvlIdx + 1) + ': ' + lvTitle(lv) + '</div></div>';
+  html += '<div class="flex-1 text-center"><div class="font-display fw-700" style="font-size:16px">STAGE ' + (G.lvlIdx + 1) + ': ' + lvTitle(lv) + '</div></div>';
   html += '</div>';
 
   /* HUD */
@@ -210,16 +210,16 @@ function endBattle(won) {
   modalHtml += '<div class="result-title">' + title + '</div>';
   modalHtml += '<div class="result-sub">' + (won ? t('All matched!', '\u5168\u90e8\u914d\u5bf9\u6210\u529f\uff01') : t('Try again!', '\u518d\u6765\u4e00\u6b21\uff01')) + '</div>';
 
-  modalHtml += '<div style="display:flex;justify-content:center;gap:16px;margin:16px 0">';
-  modalHtml += '<div style="text-align:center"><div style="font-size:22px;font-weight:800;color:var(--c-primary)">' + (won ? elapsed : '-') + '</div><div style="font-size:9px;color:var(--c-text2);text-transform:uppercase;letter-spacing:1px;font-weight:600">' + t('TIME', '\u7528\u65f6') + '</div></div>';
-  modalHtml += '<div style="text-align:center"><div style="font-size:22px;font-weight:800;color:var(--c-primary)">' + G.moves + '</div><div style="font-size:9px;color:var(--c-text2);text-transform:uppercase;letter-spacing:1px;font-weight:600">' + t('FLIPS', '\u7ffb\u724c') + '</div></div>';
-  modalHtml += '<div style="text-align:center"><div style="font-size:22px;font-weight:800;color:var(--c-primary)">' + G.maxCombo + '</div><div style="font-size:9px;color:var(--c-text2);text-transform:uppercase;letter-spacing:1px;font-weight:600">' + t('COMBO', '\u8fde\u51fb') + '</div></div>';
+  modalHtml += '<div class="result-stats">';
+  modalHtml += '<div class="text-center"><div class="result-stat-val">' + (won ? elapsed : '-') + '</div><div class="result-stat-label">' + t('TIME', '\u7528\u65f6') + '</div></div>';
+  modalHtml += '<div class="text-center"><div class="result-stat-val">' + G.moves + '</div><div class="result-stat-label">' + t('FLIPS', '\u7ffb\u724c') + '</div></div>';
+  modalHtml += '<div class="text-center"><div class="result-stat-val">' + G.maxCombo + '</div><div class="result-stat-label">' + t('COMBO', '\u8fde\u51fb') + '</div></div>';
   modalHtml += '</div>';
 
   if (won && isNew) {
-    modalHtml += '<div style="font-size:12px;color:var(--c-primary);font-weight:700;margin-bottom:12px">\ud83c\udf1f ' + t('New Record!', '\u65b0\u7eaa\u5f55\uff01') + '</div>';
+    modalHtml += '<div class="fw-700 mb-12 text-primary" style="font-size:12px">\ud83c\udf1f ' + t('New Record!', '\u65b0\u7eaa\u5f55\uff01') + '</div>';
   } else if (won) {
-    modalHtml += '<div style="font-size:11px;color:var(--c-text2);margin-bottom:12px">' + t('Best: ', '\u6700\u4f73: ') + getBest(G.lvlIdx).t + 's</div>';
+    modalHtml += '<div class="text-xs text-sub mb-12">' + t('Best: ', '\u6700\u4f73: ') + getBest(G.lvlIdx).t + 's</div>';
   }
 
   _lastShareOpts = { mode: 'battle', score: won ? G.matched : 0, total: G.total, emoji: emoji, time: won ? elapsed : null, combo: G.maxCombo };

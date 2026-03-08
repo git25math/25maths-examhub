@@ -347,8 +347,8 @@ function showBatchCreateModal(classId) {
     '<button class="btn btn-ghost btn-sm" onclick="addBatchRows()">' + t('+ 5 rows', '+ 5行') + '</button>' +
     '<button class="btn btn-ghost btn-sm" onclick="toggleImportArea()">' + t('\ud83d\udccb Import', '\ud83d\udccb 导入') + '</button>' +
     '</div>' +
-    '<div id="import-area" style="display:none" class="mt-8">' +
-    '<textarea id="import-csv" class="auth-input" rows="4" style="font-family:var(--font-mono);font-size:12px" placeholder="' + t('Paste CSV: email, password, name (one per line)', '粘贴 CSV：邮箱, 密码, 姓名（每行一个）') + '"></textarea>' +
+    '<div id="import-area" class="d-none mt-8">' +
+    '<textarea id="import-csv" class="auth-input font-mono" rows="4" style="font-size:12px" placeholder="' + t('Paste CSV: email, password, name (one per line)', '粘贴 CSV：邮箱, 密码, 姓名（每行一个）') + '"></textarea>' +
     '<button class="btn btn-ghost btn-sm mt-4" onclick="parseImportData()">' + t('Parse & Fill', '解析填入') + '</button>' +
     '</div>' +
     '<div id="batch-msg" class="settings-msg mt-8"></div>' +
@@ -509,7 +509,7 @@ async function renderClassDetail(classId) {
   var html = '<div class="admin-detail-header">' +
     '<button class="btn btn-ghost btn-sm" onclick="renderClassList()">' + t('\u2190 Back', '\u2190 返回') + '</button>' +
     '<div class="admin-detail-title">' + escapeHtml(cls.name) + ' <span class="admin-detail-grade">' + gradeLabel + '</span>' +
-    (_saReadOnly ? '' : ' <button class="btn btn-ghost btn-sm" style="padding:2px 6px;font-size:14px" data-action="editclass" data-cid="' + classId + '" data-cname="' + escapeHtml(cls.name) + '" data-grade="' + cls.grade + '">&#9998;</button>') + '</div>' +
+    (_saReadOnly ? '' : ' <button class="btn btn-ghost btn-sm text-sub" style="padding:2px 6px" data-action="editclass" data-cid="' + classId + '" data-cname="' + escapeHtml(cls.name) + '" data-grade="' + cls.grade + '">&#9998;</button>') + '</div>' +
     (_saReadOnly ? '' : '<button class="btn btn-primary btn-sm" onclick="showBatchCreateModal(\'' + classId + '\')">' + t('+ Add Students', '+ 添加学生') + '</button>') +
     '</div>';
 
@@ -563,7 +563,7 @@ async function renderClassDetail(classId) {
 
   /* Homework section */
   html += '<div class="hw-section">';
-  html += '<div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">';
+  html += '<div class="flex items-center gap-8 mb-12">';
   html += '<div class="hw-section-title">' + t('Homework', '作业') + '</div>';
   html += '<button class="btn btn-primary btn-sm" onclick="showCreateHwModal(\'' + classId + '\')">' + t('+ Assign', '+ 布置作业') + '</button>';
   html += '</div>';
@@ -759,7 +759,7 @@ async function renderSchoolOverview() {
         (sRes.data || []).forEach(function(s) { _sNames[s.id] = s.name; });
       } catch(e) {}
     }
-    html += '<div class="section-title" style="margin-top:20px">' + t('Schools', '学校') + '</div>';
+    html += '<div class="section-title mt-20">' + t('Schools', '学校') + '</div>';
     html += '<div class="admin-class-grid">';
     schoolIds.forEach(function(sid) {
       var d = schoolMap[sid];
@@ -786,7 +786,7 @@ async function renderSchoolOverview() {
 
   var gradeKeys = Object.keys(gradeMap).sort();
   if (gradeKeys.length > 0) {
-    html += '<div class="section-title" style="margin-top:20px">' + t('Grade Summary', '年级汇总') + '</div>';
+    html += '<div class="section-title mt-20">' + t('Grade Summary', '年级汇总') + '</div>';
     html += '<div class="admin-table-wrap"><table class="admin-student-table"><thead><tr>';
     html += '<th>' + t('Grade', '年级') + '</th>';
     html += '<th>' + t('Students', '学生') + '</th>';
@@ -806,7 +806,7 @@ async function renderSchoolOverview() {
   if (activity.length > 0) {
     var sorted = activity.slice().sort(function(a, b) { return (b.mastery_pct || 0) - (a.mastery_pct || 0); });
     var top10 = sorted.slice(0, 10);
-    html += '<div class="section-title" style="margin-top:20px">' + t('Top 10 Students', 'Top 10 学生') + '</div>';
+    html += '<div class="section-title mt-20">' + t('Top 10 Students', 'Top 10 学生') + '</div>';
     html += '<div class="admin-table-wrap"><table class="admin-student-table"><thead><tr>';
     html += '<th>#</th><th>' + t('Name', '姓名') + '</th><th>' + t('Class', '班级') + '</th>';
     html += '<th>' + t('Mastery', '掌握率') + '</th><th>' + t('Rank', '段位') + '</th>';
