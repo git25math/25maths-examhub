@@ -284,9 +284,9 @@ function _renderBoardHome(board) {
 
   var html = '';
 
-  /* Past Papers (Full) entry — CIE/Edexcel only */
+  /* Past Papers (Full) entry — CIE/Edexcel only, gated by access check */
   var _ppBoardKey = board === 'edexcel' ? 'edx' : board === 'hhk' ? '25m' : board;
-  if ((board === 'cie' || board === 'edexcel') && typeof ppShowPaperBrowse === 'function') {
+  if ((board === 'cie' || board === 'edexcel') && typeof ppShowPaperBrowse === 'function' && typeof _ppAccessAllowed === 'function' && _ppAccessAllowed(_ppBoardKey)) {
     var _ppSub = board === 'cie'
       ? t('228 papers \u00b7 4,110 questions \u00b7 2018\u20132025', '228\u5957\u5377 \u00b7 4,110\u9053\u9898 \u00b7 2018\u20132025')
       : t('76 papers \u00b7 1,855 questions \u00b7 2017\u20132025', '76\u5957\u5377 \u00b7 1,855\u9053\u9898 \u00b7 2017\u20132025');
@@ -763,8 +763,9 @@ function renderSectionDetail(ch, sec, secIdx, board) {
     html += '</div>';
   }
 
-  /* Past Papers module — between Practice and Knowledge Card */
-  if ((board === 'cie' || board === 'edexcel') && typeof loadPastPaperData === 'function') {
+  /* Past Papers module — between Practice and Knowledge Card (gated) */
+  var _secPPKey = board === 'edexcel' ? 'edx' : board;
+  if ((board === 'cie' || board === 'edexcel') && typeof loadPastPaperData === 'function' && typeof _ppAccessAllowed === 'function' && _ppAccessAllowed(_secPPKey)) {
     html += '<div id="pp-section-module" data-section="' + sec.id + '" data-board="' + board + '"></div>';
     html += '<div id="mq-summary-slot" data-section="' + sec.id + '" data-board="' + board + '"></div>';
   }
@@ -1223,7 +1224,7 @@ function renderSmartPath() {
       spRec = 'vocab'; spLi = h.levelIdx;
     } else if (h.rec === 'review_words' && h.levelIdx >= 0) {
       spRec = 'review_words'; spLi = h.levelIdx;
-    } else if (h.rec === 'past_papers' && typeof startPastPaper === 'function') {
+    } else if (h.rec === 'past_papers' && typeof startPastPaper === 'function' && typeof _ppAccessAllowed === 'function' && _ppAccessAllowed(h.board === 'edexcel' ? 'edx' : h.board)) {
       spRec = 'past_papers';
     } else {
       spRec = 'section';
@@ -1953,7 +1954,7 @@ function startPracticeByChapter(chNum, board) {
       openDeck(parseInt(li, 10));
     } else if (rec === 'review_words' && li !== '') {
       appSort = 'hard'; openDeck(parseInt(li, 10));
-    } else if (rec === 'past_papers' && typeof startPastPaper === 'function') {
+    } else if (rec === 'past_papers' && typeof startPastPaper === 'function' && typeof _ppAccessAllowed === 'function' && _ppAccessAllowed(sp.dataset.spBoard === 'edexcel' ? 'edx' : sp.dataset.spBoard)) {
       startPastPaper(sp.dataset.spSec, sp.dataset.spBoard, 'practice');
     } else {
       openSection(sp.dataset.spSec, sp.dataset.spBoard);

@@ -443,7 +443,7 @@ function finishPractice() {
   /* Smart next step: context-aware recommendation */
   var step;
   var _ppBoardKey = s.sectionBoard === 'edexcel' ? 'edx' : s.sectionBoard;
-  if (s.sectionId && typeof startPastPaper === 'function' && typeof _ppData !== 'undefined' && _ppData[_ppBoardKey]) {
+  if (s.sectionId && typeof startPastPaper === 'function' && typeof _ppData !== 'undefined' && _ppData[_ppBoardKey] && _ppAccessAllowed(_ppBoardKey)) {
     var _ppCheck = getPPBySection(_ppBoardKey, s.sectionId);
     if (_ppCheck && _ppCheck.length > 0) {
       step = nextStepHTML('\ud83d\udcc4', t('Try Past Papers', '\u5c1d\u8bd5\u771f\u9898'), 'startPastPaper(\'' + s.sectionId + '\',\'' + s.sectionBoard + '\',\'practice\')');
@@ -1066,6 +1066,12 @@ function _pqFindQ(qid, board) {
    PAST PAPER MODULE — Practice + Exam + Wrong Book
    ══════════════════════════════════════════════════════════════ */
 
+/* Past paper access guard: CIE/Edexcel locked to super admin until QA complete */
+function _ppAccessAllowed(board) {
+  if (board === '25m') return true;
+  return typeof isSuperAdmin === 'function' && isSuperAdmin();
+}
+
 var _ppData = {};          /* { cie: { paperMeta: {}, questions: [] } } lazy-loaded */
 var _ppFigures = {};       /* { qid: ["figures/xxx.svg", ...] } from manifest.json */
 var _ppSession = null;     /* { questions, current, mode, startTime, results[], board, sectionId, paperKey, ... } */
@@ -1318,6 +1324,12 @@ function ppGetSectionStats(board, sectionId) {
 function startPastPaper(sectionId, board, mode, groupFilter, cmdFilter) {
   board = board || 'cie';
   mode = mode || 'practice';
+
+  var _ppBK = board === 'edexcel' ? 'edx' : board === 'hhk' ? '25m' : board;
+  if (!_ppAccessAllowed(_ppBK)) {
+    showToast(t('Past papers are under review. Coming soon!', '真题模块正在验收中，敬请期待！'));
+    return;
+  }
 
   showToast(t('Loading past papers...', '\u52a0\u8f7d\u771f\u9898\u4e2d...'));
 
@@ -1708,6 +1720,12 @@ function ppGetWeakGroups(board, sectionId) {
 
 function startDiagnostic(board) {
   board = board || 'cie';
+
+  if (!_ppAccessAllowed(board)) {
+    showToast(t('Past papers are under review. Coming soon!', '真题模块正在验收中，敬请期待！'));
+    return;
+  }
+
   showToast(t('Preparing diagnostic...', '\u51c6\u5907\u8bca\u65ad\u6d4b\u8bd5\u4e2d...'));
 
   Promise.all([loadPastPaperData(board), loadKaTeX()]).then(function() {
@@ -2847,6 +2865,11 @@ var PP_SESSION_LABELS = {
 function ppShowPaperBrowse(board) {
   board = board || 'cie';
 
+  if (!_ppAccessAllowed(board)) {
+    showToast(t('Past papers are under review. Coming soon!', '真题模块正在验收中，敬请期待！'));
+    return;
+  }
+
   Promise.all([loadPastPaperData(board), loadKaTeX()]).then(function() {
     var el = E('panel-papers');
     if (!el) return;
@@ -3142,6 +3165,11 @@ function ppStartPaperExam(paperKey, board) {
 
 function ppShowMockSetup(board) {
   board = board || 'cie';
+
+  if (!_ppAccessAllowed(board)) {
+    showToast(t('Past papers are under review. Coming soon!', '真题模块正在验收中，敬请期待！'));
+    return;
+  }
 
   Promise.all([loadPastPaperData(board), loadKaTeX()]).then(function() {
     var el = E('panel-pastpaper');
