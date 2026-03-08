@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.2.10] - 2026-03-08 — 性能优化 + homework.js 重构
+
+### 性能优化
+- **O(1) 词库查找**: 新增 `getLevelBySlug()` 懒初始化哈希索引，替代 O(N) 线性遍历
+- **homework.js**: 3 处 `LEVELS` 线性搜索重构为 `getLevelBySlug()` 调用（O(N×M) → O(N)）
+
+### homework.js 内联样式清理
+- 进一步减少 homework.js 中的内联样式，迁移至 CSS 工具类
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `js/config.js` | 新增 `_levelSlugMap` + `getLevelBySlug()` 函数 |
+| `js/homework.js` | 3 处线性搜索→O(1) 查找 + 内联样式清理 |
+
+---
+
 ## [2.2.9] - 2026-03-08 — CIE/Edexcel 数据一致性修复
 
 ### 数据一致性审计 + 修复

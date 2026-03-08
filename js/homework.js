@@ -654,12 +654,10 @@ async function renderClassHwList(classId) {
           cvP.forEach(function(p) { hwWords.push({ word: p.word, def: p.def }); });
         } else if (hw.deck_slugs && hw.deck_slugs.length > 0) {
           hw.deck_slugs.forEach(function(slug) {
-            for (var li = 0; li < LEVELS.length; li++) {
-              if (LEVELS[li].slug === slug) {
-                var dp = getPairs(LEVELS[li].vocabulary);
-                dp.forEach(function(p) { hwWords.push({ word: p.word, def: p.def }); });
-                break;
-              }
+            var lv = getLevelBySlug(slug);
+            if (lv) {
+              var dp = getPairs(lv.vocabulary);
+              dp.forEach(function(p) { hwWords.push({ word: p.word, def: p.def }); });
             }
           });
         }
@@ -771,12 +769,10 @@ async function renderHwProgress(hwId, classId) {
         cvPairs.forEach(function(p) { hwWords.push({ word: p.word, def: p.def }); });
       } else if (hw.deck_slugs && hw.deck_slugs.length > 0) {
         hw.deck_slugs.forEach(function(slug) {
-          for (var li = 0; li < LEVELS.length; li++) {
-            if (LEVELS[li].slug === slug) {
-              var dp = getPairs(LEVELS[li].vocabulary);
-              dp.forEach(function(p) { hwWords.push({ word: p.word, def: p.def }); });
-              break;
-            }
+          var lv = getLevelBySlug(slug);
+          if (lv) {
+            var dp = getPairs(lv.vocabulary);
+            dp.forEach(function(p) { hwWords.push({ word: p.word, def: p.def }); });
           }
         });
       }
@@ -1043,12 +1039,10 @@ async function showStudentHwPage() {
         cp.forEach(function(p) { pWords.push({ word: p.word, def: p.def }); });
       } else if (hw.deck_slugs && hw.deck_slugs.length > 0) {
         hw.deck_slugs.forEach(function(slug) {
-          for (var li = 0; li < LEVELS.length; li++) {
-            if (LEVELS[li].slug === slug) {
-              var dp = getPairs(LEVELS[li].vocabulary);
-              dp.forEach(function(p) { pWords.push({ word: p.word, def: p.def }); });
-              break;
-            }
+          var lv = getLevelBySlug(slug);
+          if (lv) {
+            var dp = getPairs(lv.vocabulary);
+            dp.forEach(function(p) { pWords.push({ word: p.word, def: p.def }); });
           }
         });
       }

@@ -266,6 +266,18 @@ function getCategoryInfo(catId) {
   return { id: catId, name: catId, emoji: '\ud83d\udcdd', nameZh: catId };
 }
 
+/* ═══ LEVEL SLUG INDEX ═══ */
+var _levelSlugMap = null;
+function getLevelBySlug(slug) {
+  if (!_levelSlugMap) {
+    _levelSlugMap = {};
+    for (var i = 0; i < LEVELS.length; i++) {
+      _levelSlugMap[LEVELS[i].slug] = LEVELS[i];
+    }
+  }
+  return _levelSlugMap[slug] || null;
+}
+
 /* ═══ i18n HELPERS ═══ */
 /* Returns en or zh text based on current appLang */
 function t(en, zh) {
@@ -339,7 +351,7 @@ function isSuperAdmin() {
 }
 
 /* App version */
-var APP_VERSION = 'v2.2.9';
+var APP_VERSION = 'v2.2.10';
 
 /* ═══ TEACHER ROLE (shared across modules) ═══ */
 var isTeacherUser = false;
