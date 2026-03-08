@@ -1260,7 +1260,11 @@ function _ppRenderFigures(q) {
   return '';
 }
 
-function _ppDiffLabel(d) {
+function _ppDiffLabel(d, board) {
+  if (board === 'edx') {
+    return d >= 4 ? '<span class="pp-diff-badge pp-diff-ext">' + t('Higher', '\u9ad8\u7ea7') + '</span>'
+      : '<span class="pp-diff-badge pp-diff-core">' + t('Foundation', '\u57fa\u7840') + '</span>';
+  }
   return d === 2 ? '<span class="pp-diff-badge pp-diff-ext">' + t('Extended', '\u62d3\u5c55') + '</span>'
     : '<span class="pp-diff-badge pp-diff-core">' + t('Core', '\u57fa\u7840') + '</span>';
 }
@@ -1441,7 +1445,7 @@ function renderPPCard() {
 
   /* Card header */
   html += '<div class="pp-card-header">';
-  html += '<div>' + _ppDiffLabel(q.d) + ' <span class="pp-src">' + q.src + '</span>';
+  html += '<div>' + _ppDiffLabel(q.d, _ppSession.board) + ' <span class="pp-src">' + q.src + '</span>';
   if (q.cmd && q.cmd !== 'other') {
     html += ' <span class="pp-cmd-badge">' + _ppCmdLabel(q.cmd) + '</span>';
   }
@@ -2426,9 +2430,16 @@ function editPastPaperQ(qIdx) {
   html += '<div class="flex-1">';
   html += '<label class="settings-label">' + t('Difficulty', '难度') + '</label>';
   html += '<select class="bug-select" id="pp-ed-diff" style="width:100%">';
-  html += '<option value="1"' + (q.d === 1 ? ' selected' : '') + '>Core</option>';
-  html += '<option value="2"' + (q.d === 2 ? ' selected' : '') + '>Extended</option>';
-  html += '<option value="3"' + (q.d === 3 ? ' selected' : '') + '>Advanced</option>';
+  if (_ppSession && _ppSession.board === 'edx') {
+    for (var _di = 1; _di <= 6; _di++) {
+      var _dlbl = _di <= 3 ? 'Foundation D' + _di : 'Higher D' + _di;
+      html += '<option value="' + _di + '"' + (q.d === _di ? ' selected' : '') + '>' + _dlbl + '</option>';
+    }
+  } else {
+    html += '<option value="1"' + (q.d === 1 ? ' selected' : '') + '>Core</option>';
+    html += '<option value="2"' + (q.d === 2 ? ' selected' : '') + '>Extended</option>';
+    html += '<option value="3"' + (q.d === 3 ? ' selected' : '') + '>Advanced</option>';
+  }
   html += '</select></div>';
 
   /* Group */

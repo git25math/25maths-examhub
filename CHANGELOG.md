@@ -1,5 +1,28 @@
 # Changelog
 
+## [2.2.9] - 2026-03-08 — CIE/Edexcel 数据一致性修复
+
+### 数据一致性审计 + 修复
+- **EDX cat 字段标准化**: `number/algebra/geometry/statistics` → `edx-number/edx-algebra/edx-functions/edx-geometry/edx-mensuration/edx-statistics`（1,855 题全部更新，按 syllabus 章节精确映射 6 个分类）
+- **EDX difficulty 标签适配**: `_ppDiffLabel()` 区分 CIE (Core/Extended) 和 EDX (Foundation d1-3/Higher d4-6)，修复 EDX d≥3 误显示为 "Core" 的 bug
+- **EDX 编辑对话框**: difficulty 下拉改为 Foundation D1-D6 / Higher D4-D6（原固定 Core/Extended/Advanced 三选项）
+- **DQ 规则同步**: 新增 `underline` 规则（JS 30→31 条，与 Python 脚本 28 条对齐）
+
+### 审计发现记录（暂不修复）
+- CIE 326 题（7.9%）缺少 section ID `s` 字段，分布在 153 套卷中（需回溯原始数据源）
+- EDX 缺少 `topics/cognitive/g/topic` 字段（与 CIE schema 不同，PP 模块不依赖这些字段）
+- CIE 278 题缺少 `cognitive` 字段
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `data/papers-edx.json` | 1,855 题 cat 字段标准化（4→6 分类，加 `edx-` 前缀） |
+| `js/practice.js` | `_ppDiffLabel()` 增加 board 参数 + EDX 编辑对话框 difficulty 适配 |
+| `js/data-admin.js` | 新增 `underline` DQ 规则（30→31 条） |
+| `js/config.js` | v2.2.8 → v2.2.9 |
+
+---
+
 ## [2.2.8] - 2026-03-08 — 深度内联样式清理（20 文件 173 处）
 
 ### CSS 工具类扩展

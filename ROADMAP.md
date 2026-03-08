@@ -384,3 +384,4 @@
 - [x] **Admin UI 一致性优化 + CSS 工具类**: 45 个工具类 + 6 个 JS 文件 40+ 处内联样式清理 + 暗色模式补全 → v2.2.6
 - [x] **真题数据深度修复 + DQ 扩展 + 离线构建**: 第二轮 2,295 处修复（dotfill 1722 + currfiledir 14 + centering 27 等）+ DQ 15→30 规则 + EDX 离线构建 → v2.2.7
 - [x] **深度内联样式清理**: 20 文件 173 处静态 style= 消除 + 15 个新 CSS 工具类 + battle/srs 组件类化 → v2.2.8
+- [x] **CIE/Edexcel 数据一致性修复**: EDX cat 标准化(4→6 分类) + difficulty 标签适配 + DQ underline 规则 → v2.2.9

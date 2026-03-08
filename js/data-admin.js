@@ -68,7 +68,15 @@ var DQ_RULES = [
   { id: 'noindent', label: ['\\noindent', '\\noindent'], pattern: /\\noindent/g, severity: 'info',
     autoFix: function(tex) { return tex.replace(/\\noindent\s*/g, ''); } },
   { id: 'mbox', label: ['\\mbox{}', '\\mbox{}'], pattern: /\\mbox\{([^}]*)\}/g, severity: 'info',
-    autoFix: function(tex) { return tex.replace(/\\mbox\{([^}]*)\}/g, '$1'); } }
+    autoFix: function(tex) { return tex.replace(/\\mbox\{([^}]*)\}/g, '$1'); } },
+  { id: 'underline', label: ['\\underline{} outside $', '\\underline{} 在 $ 外'], pattern: /\\underline\{([^}]*)\}/g, severity: 'info',
+    autoFix: function(tex) {
+      return tex.replace(/\\underline\{([^}]*)\}/g, function(m, p1, offset) {
+        var before = tex.substring(0, offset);
+        var inMath = (before.split('$').length - 1) % 2 === 1;
+        return inMath ? m : p1;
+      });
+    } }
 ];
 
 var _dqBoard = 'cie';

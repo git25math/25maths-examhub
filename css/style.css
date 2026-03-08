@@ -367,7 +367,7 @@ input { font-family: inherit; }
 .sf-menu {
   display: none;
   position: absolute; bottom: calc(100% + 8px); left: 12px; right: 12px;
-  background: #fff; border-radius: 12px;
+  background: var(--c-surface); border-radius: 12px;
   box-shadow: 0 4px 24px rgba(0,0,0,0.12), 0 0 0 1px rgba(0,0,0,0.05);
   z-index: 200; overflow: hidden;
 }
@@ -3019,6 +3019,9 @@ input { font-family: inherit; }
   .va-card-table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
   .hw-progress-summary { grid-template-columns: repeat(2, 1fr); }
   .hw-student-row { flex-wrap: wrap; }
+  .admin-student-table { font-size: 12px; min-width: 420px; }
+  .admin-student-table th, .admin-student-table td { padding: 8px 8px; }
+  .modal-card { padding: 20px 14px; }
 }
 
 /* ═══ DATA QUALITY ═══ */
@@ -3160,6 +3163,7 @@ input { font-family: inherit; }
 .hw-option:focus-visible, .quiz-opt:focus-visible { outline: 2px solid var(--c-primary); outline-offset: 2px; }
 .match-item:focus-visible, .sort-btn:focus-visible, .mode-btn:focus-visible { outline: 2px solid var(--c-primary); outline-offset: 2px; }
 .admin-tab:focus-visible, .board-sub-pill:focus-visible { outline: 2px solid var(--c-primary); outline-offset: 2px; }
+.admin-class-card:focus-visible, .grade-list-header:focus-visible, .deck-row:focus-visible { outline: 2px solid var(--c-primary); outline-offset: 2px; }
 .sf-trigger:focus-visible, .sf-menu-item:focus-visible { outline: 2px solid var(--c-primary); outline-offset: -2px; }
 
 /* ═══ ONBOARDING TOUR ═══ */
@@ -3592,9 +3596,12 @@ input { font-family: inherit; }
 /* Dark mode overrides */
 [data-theme="dark"] .pp-diff-core { background: #1b3a1b; color: #66bb6a; }
 [data-theme="dark"] .pp-diff-ext { background: #3e2723; color: #ffb74d; }
-[data-theme="dark"] .pp-rate-btn.needs-work { border-color: #ef5350; }
+[data-theme="dark"] .pp-rate-btn { border-color: var(--c-border); }
+[data-theme="dark"] .pp-rate-btn.needs-work { border-color: #ef5350; color: #f87171; }
 [data-theme="dark"] .pp-rate-btn.needs-work:hover { background: #3e1515; }
+[data-theme="dark"] .pp-rate-btn.partial { border-color: #ff9800; color: #ffb74d; }
 [data-theme="dark"] .pp-rate-btn.partial:hover { background: #3e2723; }
+[data-theme="dark"] .pp-rate-btn.mastered { border-color: #4caf50; color: #66bb6a; }
 [data-theme="dark"] .pp-rate-btn.mastered:hover { background: #1b3a1b; }
 [data-theme="dark"] .pp-dot.done { background: #1b3a1b; color: #66bb6a; border-color: #66bb6a; }
 [data-theme="dark"] .pp-dot.wrong { background: #3e1515; color: #ef5350; border-color: #ef5350; }
