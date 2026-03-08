@@ -1,5 +1,29 @@
 # Changelog
 
+## [2.3.4] - 2026-03-08 — 质量修复（双击 bug + 语言切换 + 惰性渲染 + 箭头统一）
+
+### Bug 修复
+- **CRITICAL: 双击展开 bug**: `toggleSectionContent()` 从 `style.display` 检测改为 `classList.contains('d-none')`，修复所有可展开模块需点两次的问题
+- **语言切换不刷新 section**: `toggleLang()` 新增 `'section'` 分支，切换语言后自动重新渲染当前知识点详情页
+
+### 性能优化
+- **惰性 pqRender**: 例题 body 存入 `data-we-raw`，首次展开时才 `pqRender()`
+
+### UX 改进
+- **箭头方向统一**: we-card 箭头从 ▶/▼ 改为 ▼/▲，与外层模块一致
+- **CSS `--c-surface-hover`**: 新增设计 token（亮 `#E8E6FA` / 暗 `#2E2C50`）
+- **marks 后多 `<br>` 清理**: regex 贪婪匹配连续 `<br>`
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `js/syllabus.js` | `toggleSectionContent` class 修复 + 惰性渲染 + 箭头统一 + `<br>` regex |
+| `js/ui.js` | `toggleLang()` 新增 section 重渲染 |
+| `css/style.css` | `--c-surface-hover` 亮/暗色 token |
+| `js/config.js` | v2.3.3 → v2.3.4 |
+
+---
+
 ## [2.3.3] - 2026-03-08 — 经典例题 UX 优化（手风琴卡片 + 语言切换）
 
 ### 例题渲染重构
