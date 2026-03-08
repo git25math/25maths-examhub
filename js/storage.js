@@ -30,6 +30,7 @@ function invalidateCache() {
   _allWordsCache = null;
   _wordDataCache = null;
   if (typeof _quizCache !== 'undefined') _quizCache = null;
+  if (typeof _catLevelIndex !== 'undefined') _catLevelIndex = null;
 }
 
 /* Level best scores */
@@ -700,10 +701,20 @@ function checkBadges() {
   if (newlyUnlocked.length > 0) {
     _saveBadges(unlocked);
     newlyUnlocked.forEach(function(b) {
-      if (typeof showToast === 'function') {
+      if (typeof showBadgeCelebration === 'function') {
+        showBadgeCelebration(b);
+      } else if (typeof showToast === 'function') {
         showToast(b.icon + ' ' + t(b.en, b.zh) + ' ' + t('unlocked!', '\u89e3\u9501\uff01'));
       }
     });
+    /* Milestone nudges */
+    if (typeof showNudge === 'function') {
+      if (gs.mastered >= 50 && gs.mastered < 100) {
+        showNudge('try_diag', t('Try a Diagnostic Test to find weak areas!', '试试诊断测试找薄弱知识点'), t('Go', '去试试'), function() { if (typeof navTo === 'function') navTo('diag'); });
+      } else if (gs.mastered >= 100) {
+        showNudge('try_mock', t('Mock exams help you prepare for the real thing!', '模拟卷帮你实战备考'), t('Go', '去试试'), function() { if (typeof navTo === 'function') navTo('mock'); });
+      }
+    }
   }
   return unlocked;
 }

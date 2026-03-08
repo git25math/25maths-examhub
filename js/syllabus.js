@@ -115,7 +115,7 @@ function _loadBoardSyllabus(board) {
       onLevelsReady(function() {
         _setBoardReady(board);
         _initBoardLevels(board);
-        if (appView === 'home' && typeof renderHome === 'function') renderHome();
+        if (typeof scheduleRenderHome === 'function') scheduleRenderHome();
       });
     } else {
       _setBoardReady(board);
@@ -1983,6 +1983,26 @@ function startPracticeByChapter(chNum, board) {
 
 /* ═══ TODAY'S PLAN PANEL ═══ */
 
+function _renderPlanInsights() {
+  if (typeof getUserStage !== 'function') return '';
+  var info = getUserStage();
+  var msg = '';
+  if (info.stage === 'new') {
+    msg = '\ud83d\udca1 ' + t('You\'ve learned ' + info.mastered + ' words this week. Keep going!', '本周学了 ' + info.mastered + ' 词，继续加油！');
+  } else if (info.stage === 'active') {
+    msg = '\ud83d\udca1 ' + t('You\'ve used ' + info.modesUsed + '/7 modes. Try more for better retention!', '已用 ' + info.modesUsed + '/7 种模式，多种模式有助记忆！');
+  } else if (info.stage === 'intermediate') {
+    msg = '\ud83d\udca1 ' + t('Focus 10 min on your weakest topic for the best improvement.', '花 10 分钟攻克最弱知识点效果最佳。');
+  } else {
+    if (info.dueCount > 0) {
+      msg = '\ud83d\udca1 ' + t(info.dueCount + ' words due for SRS review. Retention is key!', info.dueCount + ' 词待 SRS 复习，记忆保持是关键！');
+    } else {
+      msg = '\ud83d\udca1 ' + t('Great mastery! Challenge yourself with mock exams.', '掌握出色！试试模拟卷挑战自己。');
+    }
+  }
+  return '<div class="plan-insight">' + msg + '</div>';
+}
+
 function renderTodaysPlan() {
   var panel = E('panel-plan');
   if (!panel) return;
@@ -1998,6 +2018,9 @@ function renderTodaysPlan() {
   if (streak > 0) {
     html += '<div class="plan-streak">\ud83d\udd25 ' + streak + t('-day streak', ' \u5929\u8fde\u7eed\u5b66\u4e60') + '</div>';
   }
+
+  /* Stage-based insight */
+  html += _renderPlanInsights();
 
   /* Due review words */
   var dueCount = getReviewCount();

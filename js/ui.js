@@ -690,32 +690,57 @@ function nextStepHTML(emoji, label, onclick) {
 }
 
 /* Context-aware "Continue Journey" next step for section-based learning */
-function sectionNextStepHTML(currentMode) {
+function sectionNextStepHTML(currentMode, scoreRate) {
   if (!_currentSectionContext) return '';
   var ctx = _currentSectionContext;
   var ms = typeof getSectionMilestone === 'function' ? getSectionMilestone(ctx.sectionId, ctx.board) : null;
+  var li = typeof getSectionLevelIdx === 'function' ? getSectionLevelIdx(ctx.sectionId, ctx.board) : -1;
   var emoji, label, action;
-  if (currentMode === 'study') {
-    /* After study → suggest quiz if vocab is done enough */
-    var li = typeof getSectionLevelIdx === 'function' ? getSectionLevelIdx(ctx.sectionId, ctx.board) : -1;
+
+  /* Score-based dynamic recommendations */
+  if (typeof scoreRate === 'number' && currentMode !== 'study') {
+    var modesUsed = getDistinctModesUsed();
+    if (scoreRate < 0.5) {
+      /* Low score → review wrong words */
+      emoji = '\ud83d\udcd6'; label = t('Review the words you missed', '复习刚才错的词');
+      action = li >= 0 ? 'startStudy(' + li + ')' : 'openSection(\'' + ctx.sectionId + '\',\'' + ctx.board + '\')';
+    } else if (scoreRate <= 0.8) {
+      /* Medium → try again or spell */
+      if (currentMode === 'quiz') {
+        emoji = '\u270d\ufe0f'; label = t('Try Spelling mode', '试试拼写模式');
+        action = li >= 0 ? 'startSpell(' + li + ')' : 'openSection(\'' + ctx.sectionId + '\',\'' + ctx.board + '\')';
+      } else {
+        emoji = '\ud83d\udd01'; label = t('Try again for a better score', '再试一次提高成绩');
+        action = li >= 0 ? 'start' + currentMode.charAt(0).toUpperCase() + currentMode.slice(1) + '(' + li + ')' : 'openSection(\'' + ctx.sectionId + '\',\'' + ctx.board + '\')';
+      }
+    } else {
+      /* High score */
+      if (modesUsed < 7 && currentMode !== 'battle') {
+        emoji = '\u2694\ufe0f'; label = t('Challenge Battle mode', '挑战 Battle 模式');
+        action = li >= 0 ? 'startBattle(' + li + ')' : 'openSection(\'' + ctx.sectionId + '\',\'' + ctx.board + '\')';
+      } else {
+        emoji = '\ud83d\udcd8'; label = t('Continue to next section', '进入下一知识点');
+        action = 'openSection(\'' + ctx.sectionId + '\',\'' + ctx.board + '\')';
+      }
+    }
+  } else if (currentMode === 'study') {
     if (li >= 0) {
-      emoji = '\u2753'; label = t('Quiz to test yourself', '\u6d4b\u9a8c\u68c0\u9a8c\u5b66\u4e60\u6548\u679c');
+      emoji = '\u2753'; label = t('Quiz to test yourself', '测验检验学习效果');
       action = 'startQuiz(' + li + ')';
     } else {
-      emoji = '\ud83d\udcd8'; label = t('Back to Section', '\u8fd4\u56de\u77e5\u8bc6\u70b9');
+      emoji = '\ud83d\udcd8'; label = t('Back to Section', '返回知识点');
       action = 'openSection(\'' + ctx.sectionId + '\',\'' + ctx.board + '\')';
     }
   } else if (currentMode === 'quiz') {
     if (ms === 'quiz_done' || ms === 'mastered') {
-      emoji = '\ud83d\udcd8'; label = t('Back to Section', '\u8fd4\u56de\u77e5\u8bc6\u70b9');
+      emoji = '\ud83d\udcd8'; label = t('Back to Section', '返回知识点');
       action = 'openSection(\'' + ctx.sectionId + '\',\'' + ctx.board + '\')';
     } else {
-      emoji = '\ud83e\udde0'; label = t('Review to consolidate', '\u590d\u4e60\u5de9\u56fa\u8bb0\u5fc6');
-      var rli = typeof getSectionLevelIdx === 'function' ? getSectionLevelIdx(ctx.sectionId, ctx.board) : -1;
-      action = rli >= 0 ? 'startReview(' + rli + ')' : 'openSection(\'' + ctx.sectionId + '\',\'' + ctx.board + '\')';
+      emoji = '\ud83e\udde0'; label = t('Review to consolidate', '复习巩固记忆');
+      action = li >= 0 ? 'startReview(' + li + ')' : 'openSection(\'' + ctx.sectionId + '\',\'' + ctx.board + '\')';
     }
   } else {
-    emoji = '\ud83d\udcd8'; label = t('Back to Section', '\u8fd4\u56de\u77e5\u8bc6\u70b9');
+    emoji = '\ud83d\udcd8'; label = t('Back to Section', '返回知识点');
     action = 'openSection(\'' + ctx.sectionId + '\',\'' + ctx.board + '\')';
   }
   return nextStepHTML(emoji, label, action);
@@ -825,4 +850,96 @@ function nextTourStep() {
 function endTour() {
   if (_tourOverlay) { _tourOverlay.remove(); _tourOverlay = null; }
   try { localStorage.setItem('wmatch_tour_done', '1'); } catch (e) {}
+}
+
+/* ═══ NUDGE ENGINE ═══ */
+
+function getUserStage() {
+  var gs = typeof getGlobalStats === 'function' ? getGlobalStats() : { mastered: 0 };
+  var mastered = gs.mastered || 0;
+  var stage = mastered <= 10 ? 'new' : mastered <= 100 ? 'active' : mastered <= 500 ? 'intermediate' : 'advanced';
+  var modesUsed = getDistinctModesUsed();
+  var streak = typeof getStreakCount === 'function' ? getStreakCount() : 0;
+  var dueCount = typeof getDueWords === 'function' ? getDueWords().length : 0;
+  return { stage: stage, mastered: mastered, modesUsed: modesUsed, streak: streak, dueCount: dueCount };
+}
+
+function getDistinctModesUsed() {
+  var s = typeof loadS === 'function' ? loadS() : {};
+  if (!s.modeDone) return 0;
+  var modeSet = {};
+  for (var mk in s.modeDone) {
+    var parts = mk.split(':');
+    if (parts.length === 2) modeSet[parts[1]] = true;
+  }
+  return Object.keys(modeSet).length;
+}
+
+var _activeNudge = null;
+function showNudge(key, msg, actionLabel, actionFn) {
+  /* Check dismiss / max-show limits */
+  var storeKey = 'wmatch_nudge_' + key;
+  try {
+    var rec = JSON.parse(localStorage.getItem(storeKey) || '{}');
+    if (rec.d) return;
+    if ((rec.n || 0) >= 3) return;
+    rec.n = (rec.n || 0) + 1;
+    localStorage.setItem(storeKey, JSON.stringify(rec));
+  } catch (e) { return; }
+
+  /* Remove any existing nudge */
+  if (_activeNudge && _activeNudge.parentNode) _activeNudge.remove();
+
+  var el = document.createElement('div');
+  el.className = 'guide-nudge';
+  el.innerHTML =
+    '<span class="guide-nudge-msg">' + msg + '</span>' +
+    (actionLabel ? '<button class="guide-nudge-btn">' + actionLabel + '</button>' : '') +
+    '<button class="guide-nudge-close">&times;</button>';
+
+  /* Action button */
+  var btn = el.querySelector('.guide-nudge-btn');
+  if (btn && actionFn) btn.addEventListener('click', function() { el.remove(); _activeNudge = null; actionFn(); });
+
+  /* Close (permanent dismiss) */
+  el.querySelector('.guide-nudge-close').addEventListener('click', function() {
+    try {
+      var r = JSON.parse(localStorage.getItem(storeKey) || '{}');
+      r.d = 1;
+      localStorage.setItem(storeKey, JSON.stringify(r));
+    } catch (e) {}
+    el.remove();
+    _activeNudge = null;
+  });
+
+  /* Insert at top of active panel */
+  var panel = document.querySelector('.panel.active');
+  if (panel) panel.insertBefore(el, panel.firstChild);
+  _activeNudge = el;
+
+  /* Auto fade out after 8s */
+  setTimeout(function() {
+    if (el.parentNode) { el.classList.add('fade-out'); setTimeout(function() { if (el.parentNode) el.remove(); }, 400); }
+    if (_activeNudge === el) _activeNudge = null;
+  }, 8000);
+}
+
+/* Badge celebration (replaces showToast for badges) */
+function showBadgeCelebration(badge) {
+  var el = document.createElement('div');
+  el.className = 'badge-celebration';
+  el.innerHTML =
+    '<span class="badge-celeb-icon">' + badge.icon + '</span>' +
+    '<span class="badge-celeb-text">' + t(badge.en, badge.zh) + ' ' + t('unlocked!', '解锁！') + '</span>';
+  document.body.appendChild(el);
+  /* Trigger particle burst */
+  if (typeof spawnP === 'function') {
+    for (var i = 0; i < 3; i++) {
+      setTimeout(function() { spawnP(Math.random() * innerWidth, 60, 12); }, i * 120);
+    }
+  }
+  setTimeout(function() {
+    el.classList.add('fade-out');
+    setTimeout(function() { if (el.parentNode) el.remove(); }, 400);
+  }, 4000);
 }

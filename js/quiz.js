@@ -134,10 +134,11 @@ function finishQuiz() {
   markModeDone(currentLvl, 'quiz');
   if (typeof checkSectionMilestone === 'function') checkSectionMilestone();
   var total = Q.pairs.length;
+  var scoreRate = total > 0 ? Q.correct / total : 0;
   var raw = resultScreenHTML(Q.correct, total,
     'startQuiz(' + currentLvl + ')',
     'openDeck(' + currentLvl + ')', 'quiz');
-  var _sectionStep = typeof sectionNextStepHTML === 'function' ? sectionNextStepHTML('quiz') : '';
+  var _sectionStep = typeof sectionNextStepHTML === 'function' ? sectionNextStepHTML('quiz', scoreRate) : '';
   var step = _sectionStep || nextStepHTML('\ud83e\udde0', t('Review to consolidate', '\u590d\u4e60\u5de9\u56fa\u8bb0\u5fc6'), 'startReview(' + currentLvl + ')');
   var wrongBtn = '';
   if (Q.wrongPairs.length > 0) {
@@ -148,6 +149,11 @@ function finishQuiz() {
   html += '</div>';
   E('panel-quiz').innerHTML = html;
   updateSidebar();
+
+  /* Nudge: suggest battle after first quiz */
+  if (typeof showNudge === 'function') {
+    showNudge('try_battle', t('Challenge Battle mode to boost reaction speed!', '挑战 Battle 模式提升反应速度'), t('Go', '去试试'), function() { startBattle(currentLvl); });
+  }
 }
 
 function studyWrongQuiz() {

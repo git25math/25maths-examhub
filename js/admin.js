@@ -47,7 +47,7 @@ async function initTeacher(prefetchedData) {
     _teacherData = data;
     isTeacherUser = true;
     updateSidebar();
-    if (typeof appView !== 'undefined' && appView === 'home') renderHome();
+    if (typeof scheduleRenderHome === 'function') scheduleRenderHome();
 
     /* Load school info */
     var sRes = await sb.from('schools')

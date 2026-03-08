@@ -391,3 +391,4 @@
 - [x] **性能优化+防御性修复**: storage.js upsert error 检查 + homework/syllabus O(1) 查找 → v2.2.13
 - [x] **getSectionInfo O(1) 缓存 + 防御性修复**: syllabus.js 哈希缓存 + homework.js 3 处 error 检查 → v2.2.14
 - [x] **超管加载优化**: admin bundle（3→1 请求）+ teachers 查询去重（2→1 次）+ Promise.all 并行 → v2.2.15
+- [x] **renderHome 性能优化**: LEVELS 分类索引缓存 O(1) + scheduleRenderHome 微任务合并 → v2.2.16

@@ -133,10 +133,12 @@ function checkSpell() {
 function finishSpell() {
   markModeDone(currentLvl, 'spell');
   var total = SP.pairs.length;
+  var scoreRate = total > 0 ? SP.correct / total : 0;
   var raw = resultScreenHTML(SP.correct, total,
     'startSpell(' + currentLvl + ')',
     'openDeck(' + currentLvl + ')', 'spell');
-  var step = nextStepHTML('\ud83e\udde0', t('Review to consolidate', '\u590d\u4e60\u5de9\u56fa\u8bb0\u5fc6'), 'startReview(' + currentLvl + ')');
+  var _sectionStep = typeof sectionNextStepHTML === 'function' ? sectionNextStepHTML('spell', scoreRate) : '';
+  var step = _sectionStep || nextStepHTML('\ud83e\udde0', t('Review to consolidate', '\u590d\u4e60\u5de9\u56fa\u8bb0\u5fc6'), 'startReview(' + currentLvl + ')');
   var wrongBtn = '';
   if (SP.wrongPairs.length > 0) {
     wrongBtn = '<button class="btn btn-secondary" onclick="studyWrongSpell()">\ud83d\udcd6 ' + t('Study wrong words', '\u53ea\u5b66\u9519\u7684\u8bcd') + '</button>';

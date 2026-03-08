@@ -138,6 +138,17 @@ function finishStudy() {
 
   E('panel-study').innerHTML = html;
   updateSidebar();
+
+  /* Nudge: suggest quiz after first study */
+  if (typeof showNudge === 'function') {
+    showNudge('try_quiz', t('Try Quiz mode to test what you learned!', '试试测验模式检验学习效果'), t('Go', '去试试'), function() { startQuiz(currentLvl); });
+  }
+  /* Guest nudge after 5 study sessions */
+  if (typeof isGuest === 'function' && isGuest() && typeof showNudge === 'function') {
+    var gc = 0;
+    try { gc = parseInt(localStorage.getItem('wmatch_guest_study') || '0') + 1; localStorage.setItem('wmatch_guest_study', gc); } catch(e) {}
+    if (gc >= 5) showNudge('guest_sync', t('Register free to sync your progress across devices', '注册免费账号同步进度到云端'), t('Register', '注册'), function() { if (typeof showGuestSignupPrompt === 'function') showGuestSignupPrompt(); });
+  }
 }
 
 function restudyHard() {

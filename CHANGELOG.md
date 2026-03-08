@@ -1,5 +1,37 @@
 # Changelog
 
+## [2.2.16] - 2026-03-08 — renderHome 性能优化 + 引导系统
+
+### 性能优化
+- **mastery.js**: `_catLevelIndex` 分类索引缓存 — LEVELS 2× 全量扫描 O(N) → 1× 建索引 + O(1) 查找
+- **mastery.js**: `scheduleRenderHome()` 微任务合并 — 初始化期间 2-3 次重复渲染合并为 1 次
+- **admin.js**: `initTeacher` 内 `renderHome()` → `scheduleRenderHome()`
+- **syllabus.js**: board data ready 回调 `renderHome()` → `scheduleRenderHome()`
+- **storage.js**: `invalidateCache()` 清除 `_catLevelIndex`
+
+### 引导系统
+- **ui.js**: Nudge Engine 引导提示 + 徽章庆祝动画 + 模式发现芯片 + 返回回顾 + 计划洞察
+- **mastery.js**: Hero Action Card + 模式发现 + 快速统计 + 返回回顾渲染
+- **css/style.css**: 引导系统完整样式（nudge/badge-celebration/hero-discover/return-recap/plan-insight + 暗色模式）
+- **battle.js/quiz.js/spell.js/study.js**: 学习模式完成后触发引导检查
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `js/mastery.js` | `_catLevelIndex` 索引缓存 + `scheduleRenderHome()` + Hero/Stats/Discovery 渲染 |
+| `js/storage.js` | `invalidateCache()` 清除 `_catLevelIndex` |
+| `js/admin.js` | `renderHome()` → `scheduleRenderHome()` |
+| `js/syllabus.js` | `renderHome()` → `scheduleRenderHome()` |
+| `js/ui.js` | Nudge Engine + Badge Celebration + 模式发现 |
+| `js/battle.js` | 完成后触发引导检查 |
+| `js/quiz.js` | 完成后触发引导检查 |
+| `js/spell.js` | 完成后触发引导检查 |
+| `js/study.js` | 完成后触发引导检查 |
+| `css/style.css` | 引导系统样式 + 暗色模式适配 |
+| `js/config.js` | v2.2.15 → v2.2.16 |
+
+---
+
 ## [2.2.15] - 2026-03-08 — 超级管理员功能加载优化
 
 ### 性能优化

@@ -219,6 +219,84 @@ function _getNextAction(dueCount) {
   return { type: 'explore' };
 }
 
+/* Return recap card (shown if >24h since last visit) */
+function _renderReturnRecap() {
+  var now = Date.now();
+  var lastVisit = 0;
+  try { lastVisit = parseInt(localStorage.getItem('wmatch_last_visit') || '0'); } catch(e) {}
+  try { localStorage.setItem('wmatch_last_visit', '' + now); } catch(e) {}
+  if (!lastVisit || (now - lastVisit) < 86400000) return '';
+  /* Check if already shown today */
+  var todayKey = new Date().toLocaleDateString('en-CA');
+  try { if (localStorage.getItem('wmatch_recap_day') === todayKey) return ''; localStorage.setItem('wmatch_recap_day', todayKey); } catch(e) {}
+  var gs = typeof getGlobalStats === 'function' ? getGlobalStats() : { mastered: 0 };
+  var streak = typeof getStreakCount === 'function' ? getStreakCount() : 0;
+  var dueCount = typeof getDueWords === 'function' ? getDueWords().length : 0;
+  var msg = t('Welcome back!', '欢迎回来！');
+  var details = [];
+  if (dueCount > 0) details.push(dueCount + ' ' + t('words to review', '词待复习'));
+  if (streak > 0) details.push(streak + ' ' + t('-day streak', '天连续'));
+  details.push(gs.mastered + ' ' + t('words mastered', '词已掌握'));
+  return '<div class="return-recap"><span>' + msg + ' ' + details.join(' · ') + '</span></div>';
+}
+
+/* Mode discovery chips (recommend untried modes) */
+function _renderModeDiscovery() {
+  if (typeof getUserStage !== 'function') return '';
+  var info = getUserStage();
+  var s = typeof loadS === 'function' ? loadS() : {};
+  /* Determine which modes have been used */
+  var usedModes = {};
+  if (s.modeDone) {
+    for (var mk in s.modeDone) {
+      var parts = mk.split(':');
+      if (parts.length === 2) usedModes[parts[1]] = true;
+    }
+  }
+  /* Stage → suggested modes */
+  var suggestions = [];
+  if (info.stage === 'new') {
+    if (!usedModes.quiz) suggestions.push({ mode: 'quiz', emoji: '\u2753', en: 'Quiz', zh: '测验' });
+  } else if (info.stage === 'active') {
+    if (!usedModes.battle) suggestions.push({ mode: 'battle', emoji: '\u2694\ufe0f', en: 'Battle', zh: '对战' });
+    if (!usedModes.spell) suggestions.push({ mode: 'spell', emoji: '\u270d\ufe0f', en: 'Spell', zh: '拼写' });
+  } else {
+    if (!usedModes.practice) suggestions.push({ mode: 'practice', emoji: '\ud83d\udcdd', en: 'Practice', zh: '练习题' });
+  }
+  /* Filter out dismissed */
+  suggestions = suggestions.filter(function(sg) {
+    try { return !localStorage.getItem('wmatch_disc_' + sg.mode); } catch(e) { return true; }
+  });
+  if (suggestions.length === 0) return '';
+  var html = '<div class="hero-discover">';
+  html += '<span class="hero-discover-label">' + t('Try:', '试试:') + '</span>';
+  suggestions.forEach(function(sg) {
+    html += '<span class="hero-discover-chip" data-disc-mode="' + sg.mode + '">' +
+      sg.emoji + ' ' + t(sg.en, sg.zh) +
+      '<span class="hero-discover-close" data-disc-dismiss="' + sg.mode + '">&times;</span></span>';
+  });
+  html += '</div>';
+  return html;
+}
+
+/* Mode discovery dismiss delegation */
+var _discDelegated = false;
+function _initDiscDelegation() {
+  if (_discDelegated) return;
+  _discDelegated = true;
+  document.addEventListener('click', function(e) {
+    var dismiss = e.target.closest('[data-disc-dismiss]');
+    if (dismiss) {
+      var mode = dismiss.dataset.discDismiss;
+      try { localStorage.setItem('wmatch_disc_' + mode, '1'); } catch(e2) {}
+      var chip = dismiss.closest('.hero-discover-chip');
+      if (chip) chip.remove();
+      e.stopPropagation();
+      return;
+    }
+  });
+}
+
 /* Zone 1: Hero Action Card */
 function _renderHeroAction() {
   var gs = getGlobalStats();
@@ -352,8 +430,35 @@ function _renderHomeworkSlot() {
   return '<div id="hw-banner"></div>';
 }
 
+/* ═══ LEVELS CATEGORY INDEX (避免 renderHome 中 2× 全量扫描) ═══ */
+var _catLevelIndex = null; /* { 'cie:algebra': [{lv, idx}, ...], ... } */
+
+function _ensureCatIndex() {
+  if (_catLevelIndex) return _catLevelIndex;
+  _catLevelIndex = {};
+  LEVELS.forEach(function(lv, i) {
+    if (!isLevelVisible(lv)) return;
+    var key = (lv.board || '') + ':' + (lv.category || '');
+    if (!_catLevelIndex[key]) _catLevelIndex[key] = [];
+    _catLevelIndex[key].push({ lv: lv, idx: i });
+  });
+  return _catLevelIndex;
+}
+
+/* ═══ renderHome 微任务合并（避免初始化期间重复渲染） ═══ */
+var _homeRenderPending = false;
+function scheduleRenderHome() {
+  if (_homeRenderPending) return;
+  _homeRenderPending = true;
+  Promise.resolve().then(function() {
+    _homeRenderPending = false;
+    if (typeof appView !== 'undefined' && appView === 'home') renderHome();
+  });
+}
+
 function renderHome() {
   _initHeroDelegation();
+  _initDiscDelegation();
   var gs = getGlobalStats();
   var html = '';
 
@@ -366,8 +471,14 @@ function renderHome() {
     html += '</div>';
   }
 
+  /* Return recap (24h+ absence) */
+  html += _renderReturnRecap();
+
   /* Zone 1: Hero Action Card */
   html += _renderHeroAction();
+
+  /* Mode discovery chips */
+  html += _renderModeDiscovery();
 
   /* Zone 2: Quick Stats Strip */
   html += _renderQuickStats();
@@ -439,17 +550,16 @@ function renderHome() {
     }
 
     /* ── Non-CIE boards: original rendering ── */
-    /* Pre-compute per-level stats + lock state for this board */
+    /* Pre-compute per-level stats + lock state for this board (indexed) */
+    var _ci = _ensureCatIndex();
     var _levelStats = {};
     var _levelLocked = {};
     board.categories.forEach(function(cat) {
-      LEVELS.forEach(function(lv, i) {
-        if (lv.category !== cat.id || !isLevelVisible(lv)) return;
-        var locked = isGuestLocked(i);
-        _levelLocked[i] = locked;
-        if (!locked) {
-          _levelStats[i] = getDeckStats(i, wd);
-        }
+      var entries = _ci[(board.id || '') + ':' + cat.id] || [];
+      entries.forEach(function(e) {
+        var locked = isGuestLocked(e.idx);
+        _levelLocked[e.idx] = locked;
+        if (!locked) _levelStats[e.idx] = getDeckStats(e.idx, wd);
       });
     });
 
@@ -468,10 +578,10 @@ function renderHome() {
     var boardHtml = '';
     var is25m = board.id === '25m';
     board.categories.forEach(function(cat) {
-      var catLevels = [];
-      LEVELS.forEach(function(lv, i) {
-        if (lv.category === cat.id && matchLevel(lv, appSearch)) catLevels.push({ lv: lv, idx: i });
-      });
+      var entries = _ci[(board.id || '') + ':' + cat.id] || [];
+      var catLevels = appSearch
+        ? entries.filter(function(e) { return matchLevel(e.lv, appSearch); })
+        : entries;
       if (catLevels.length === 0) return;
 
       var collapsed = appSearch ? false : (catCollapsed[cat.id] ? true : false);
