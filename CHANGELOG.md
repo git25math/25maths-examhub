@@ -1,6 +1,6 @@
 # Changelog
 
-## [2.2.17] - 2026-03-08 — 性能优化第二轮
+## [2.2.17] - 2026-03-08 — 性能优化第二轮 + 引导系统质量修复
 
 ### 性能优化
 - **syllabus.js**: `_hhkSlugIdx` slug→idx 索引缓存 — `_getHHKSectionStats` 从 O(264)×36 sections 全量扫描 → O(vocabSlugs.length)×36 索引查找
@@ -9,12 +9,26 @@
 - **mastery.js**: 非 CIE 分支补充 `var wd = getWordData()` — 修复 `wd` 未声明 BUG（每次 fallback 多余判断）
 - **storage.js**: `invalidateCache()` 清除 `_hhkSlugIdx`
 
+### 引导系统质量修复（可访问性 + 响应式 + 健壮性）
+- **可访问性**: nudge 关闭按钮 `aria-label="Close"` + 动作按钮 `aria-label` + nudge `role="status"`
+- **可访问性**: badge-celebration `role="status"` + `aria-live="polite"` — VoiceOver 可读
+- **可访问性**: return-recap `role="status"` + `aria-live="polite"` + 可关闭 × 按钮
+- **可访问性**: discover-close `role="button"` + `tabindex="0"` + Enter/Space 键盘支持
+- **触摸目标**: nudge-btn / nudge-close / discover-close / recap-close 最小 36px 触摸区域
+- **iPhone 安全区**: badge-celebration `padding-top: env(safe-area-inset-top)` 适配刘海
+- **响应式**: `@media (max-width:639px)` 断点 — nudge/recap/discover/badge 字号间距收紧
+- **focus-visible**: nudge 按钮 + discover close 键盘聚焦样式
+- **ESC 键**: nudge 支持 ESC 键关闭
+- **打印**: guide-nudge/badge-celebration/return-recap/hero-discover 加入 print 隐藏列表
+
 ### 文件变更
 | 文件 | 变更 |
 |------|------|
 | `js/syllabus.js` | `_hhkSlugIdx` 索引 + `_ensureHHKSlugIdx()` + `_getHHKSectionStats` 重写 + `_renderBoardHome` 共享 wd + `_renderSectionRow` 加 `_wd` 参数 |
-| `js/mastery.js` | 非 CIE 分支 `var wd = getWordData()` 声明 |
+| `js/mastery.js` | 非 CIE 分支 wd 声明 + return-recap aria-live + 可关闭 + discover keyboard 支持 |
 | `js/storage.js` | `invalidateCache()` 清除 `_hhkSlugIdx` |
+| `js/ui.js` | nudge aria-label + role + ESC 键 + badge-celebration aria-live |
+| `css/style.css` | +35 行：触摸目标 + safe-area + focus-visible + 响应式断点 + print 隐藏 |
 | `js/config.js` | v2.2.16 → v2.2.17 |
 
 ---

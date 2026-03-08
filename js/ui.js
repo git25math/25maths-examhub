@@ -892,10 +892,11 @@ function showNudge(key, msg, actionLabel, actionFn) {
 
   var el = document.createElement('div');
   el.className = 'guide-nudge';
+  el.setAttribute('role', 'status');
   el.innerHTML =
     '<span class="guide-nudge-msg">' + msg + '</span>' +
-    (actionLabel ? '<button class="guide-nudge-btn">' + actionLabel + '</button>' : '') +
-    '<button class="guide-nudge-close">&times;</button>';
+    (actionLabel ? '<button class="guide-nudge-btn" aria-label="' + actionLabel + '">' + actionLabel + '</button>' : '') +
+    '<button class="guide-nudge-close" aria-label="' + t('Close', '关闭') + '">&times;</button>';
 
   /* Action button */
   var btn = el.querySelector('.guide-nudge-btn');
@@ -911,6 +912,15 @@ function showNudge(key, msg, actionLabel, actionFn) {
     el.remove();
     _activeNudge = null;
   });
+
+  /* ESC to dismiss */
+  var _nudgeEsc = function(e) {
+    if (e.key === 'Escape' && el.parentNode) {
+      el.remove(); _activeNudge = null;
+      document.removeEventListener('keydown', _nudgeEsc);
+    }
+  };
+  document.addEventListener('keydown', _nudgeEsc);
 
   /* Insert at top of active panel */
   var panel = document.querySelector('.panel.active');
@@ -928,6 +938,8 @@ function showNudge(key, msg, actionLabel, actionFn) {
 function showBadgeCelebration(badge) {
   var el = document.createElement('div');
   el.className = 'badge-celebration';
+  el.setAttribute('role', 'status');
+  el.setAttribute('aria-live', 'polite');
   el.innerHTML =
     '<span class="badge-celeb-icon">' + badge.icon + '</span>' +
     '<span class="badge-celeb-text">' + t(badge.en, badge.zh) + ' ' + t('unlocked!', '解锁！') + '</span>';

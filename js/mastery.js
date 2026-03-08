@@ -237,7 +237,8 @@ function _renderReturnRecap() {
   if (dueCount > 0) details.push(dueCount + ' ' + t('words to review', '词待复习'));
   if (streak > 0) details.push(streak + ' ' + t('-day streak', '天连续'));
   details.push(gs.mastered + ' ' + t('words mastered', '词已掌握'));
-  return '<div class="return-recap"><span>' + msg + ' ' + details.join(' · ') + '</span></div>';
+  return '<div class="return-recap" role="status" aria-live="polite"><span>' + msg + ' ' + details.join(' · ') + '</span>' +
+    '<button class="return-recap-close" aria-label="' + t('Close', '关闭') + '">&times;</button></div>';
 }
 
 /* Mode discovery chips (recommend untried modes) */
@@ -273,7 +274,7 @@ function _renderModeDiscovery() {
   suggestions.forEach(function(sg) {
     html += '<span class="hero-discover-chip" data-disc-mode="' + sg.mode + '">' +
       sg.emoji + ' ' + t(sg.en, sg.zh) +
-      '<span class="hero-discover-close" data-disc-dismiss="' + sg.mode + '">&times;</span></span>';
+      '<span class="hero-discover-close" data-disc-dismiss="' + sg.mode + '" role="button" tabindex="0" aria-label="' + t('Dismiss', '关闭') + '">&times;</span></span>';
   });
   html += '</div>';
   return html;
@@ -284,7 +285,7 @@ var _discDelegated = false;
 function _initDiscDelegation() {
   if (_discDelegated) return;
   _discDelegated = true;
-  document.addEventListener('click', function(e) {
+  function _handleDiscDismiss(e) {
     var dismiss = e.target.closest('[data-disc-dismiss]');
     if (dismiss) {
       var mode = dismiss.dataset.discDismiss;
@@ -294,6 +295,21 @@ function _initDiscDelegation() {
       e.stopPropagation();
       return;
     }
+    /* Return recap close */
+    var recapClose = e.target.closest('.return-recap-close');
+    if (recapClose) {
+      var recap = recapClose.closest('.return-recap');
+      if (recap) recap.remove();
+      return;
+    }
+  }
+  document.addEventListener('click', _handleDiscDismiss);
+  /* Keyboard support: Enter/Space on discover-close and recap-close */
+  document.addEventListener('keydown', function(e) {
+    if (e.key !== 'Enter' && e.key !== ' ') return;
+    var dismiss = e.target.closest('[data-disc-dismiss]');
+    var recapClose = e.target.closest('.return-recap-close');
+    if (dismiss || recapClose) { e.preventDefault(); e.target.click(); }
   });
 }
 
