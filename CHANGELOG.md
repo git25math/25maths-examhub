@@ -1,5 +1,39 @@
 # Changelog
 
+## [2.2.6] - 2026-03-08 — Admin UI 一致性优化 + CSS 工具类系统
+
+### Admin 面板 UI 统一
+- **Header**: flex 布局 + badge 式学校名显示
+- **Tabs**: 横向滚动 + 隐藏滚动条 + hover 底色效果
+- **Summary Cards**: hover 上浮变换 + 统一尺寸
+- **Dark Mode**: 补全 admin 全组件暗色规则（卡片、表格、pills、header）
+
+### CSS 工具类系统（45 个新类）
+- **btn-row**: 替代 40+ 处 `style="display:flex;gap:8px;margin-top:Npx"` + `style="flex:1"` 内联样式
+- **text-***: text-danger / text-muted / text-sub / text-success / text-warning / text-primary / text-center / text-sm / text-xs
+- **mt-***: mt-0 / mt-4 / mt-8 / mt-12 / mt-16 / mt-20 / mt-24 + mb-0 / mb-8 / mb-12
+- **flex-***: flex / flex-1 / flex-wrap / flex-col / items-center / justify-between
+- **btn-icon-danger**: 统一小型删除按钮（padding + color + hover 效果）
+
+### 6 个 JS 文件内联样式清理
+- `admin.js` — 7 处 modal 按钮行 → `.btn-row`
+- `auth.js` — 3 处设置/重置/Guest modal → `.btn-row`
+- `data-admin.js` — 3 处 DQ modal → `.btn-row`
+- `vocab-admin.js` — 4 处 + 删除按钮 → `.btn-icon-danger` + 序号 → `.text-sub`
+- `homework.js` — 2 处 + 自定义词行 → `.hw-custom-row` CSS 类 + 删除按钮 → `.btn-icon-danger`
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `css/style.css` | +100 行（admin UI 优化 + 45 个工具类 + hw-custom-row） |
+| `js/admin.js` | 7 处 inline→class 替换 |
+| `js/auth.js` | 3 处 inline→class 替换 |
+| `js/data-admin.js` | 3 处 inline→class 替换 |
+| `js/vocab-admin.js` | 6 处 inline→class 替换 |
+| `js/homework.js` | 4 处 inline→class 替换 + cssText 移除 |
+
+---
+
 ## [2.2.5] - 2026-03-08 — CIE/Edexcel 真题数据质量批量修复
 
 ### 批量修复 2,901 处 LaTeX 质量问题
