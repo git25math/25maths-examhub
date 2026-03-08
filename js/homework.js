@@ -715,6 +715,7 @@ async function renderHwProgress(hwId, classId) {
 
   try {
     var aRes = await sb.rpc('get_assignment', { p_id: hwId });
+    if (aRes.error) { ct.innerHTML = '<div class="admin-empty">Load failed</div>'; return; }
     var hw = (aRes.data && aRes.data.length > 0) ? aRes.data[0] : null;
     if (!hw) { ct.innerHTML = '<div class="admin-empty">Not found</div>'; return; }
 
@@ -722,6 +723,7 @@ async function renderHwProgress(hwId, classId) {
     var students = activity.filter(function(s) { return s.class_id === classId; });
 
     var rRes = await sb.from('assignment_results').select('*').eq('assignment_id', hwId);
+    if (rRes.error) { ct.innerHTML = '<div class="admin-empty">Load failed</div>'; return; }
     var results = rRes.data || [];
     var resultMap = {};
     results.forEach(function(r) { resultMap[r.user_id] = r; });
@@ -1128,6 +1130,7 @@ async function startHwTest(hwId) {
 
   try {
     var aRes = await sb.rpc('get_assignment', { p_id: hwId });
+    if (aRes.error) { el.innerHTML = '<div class="admin-empty">Load failed</div>'; return; }
     var hw = (aRes.data && aRes.data.length > 0) ? aRes.data[0] : null;
     if (!hw) { el.innerHTML = '<div class="admin-empty">Not found</div>'; return; }
 

@@ -9,6 +9,7 @@ var BOARD_SYLLABUS = {};      /* { cie: {...}, edexcel: {...}, hhk: {...} } */
 var BOARD_VOCAB = {};         /* { cie: {...}, edexcel: {...}, hhk: {...} } */
 var _boardSectionLevelMap = {};  /* { cie: {id→idx}, edexcel: {id→idx}, hhk: {id→idx} } */
 var _sectionEditsCache = {};  /* { cie: { secId: { module: data } }, edexcel: ..., hhk: ... } */
+var _sectionInfoCache = {};   /* { 'board:sectionId' → {chapter,section,sectionIndex,board} } */
 
 /* Legacy aliases — keep existing code working */
 var CIE_SYLLABUS = null;
@@ -98,6 +99,7 @@ function _loadBoardSyllabus(board) {
   ]).then(function(results) {
     BOARD_SYLLABUS[board] = results[0];
     BOARD_VOCAB[board] = results[1];
+    _sectionInfoCache = {};  /* invalidate on new board data */
 
     /* Legacy aliases for CIE */
     if (board === 'cie') {
@@ -259,6 +261,8 @@ function getSectionLevelIdx(sectionId, board) {
 
 /* Get section info from syllabus by ID — searches all boards or specified board */
 function getSectionInfo(sectionId, board) {
+  var cacheKey = (board || '') + ':' + sectionId;
+  if (_sectionInfoCache[cacheKey]) return _sectionInfoCache[cacheKey];
   var boards = board ? [board] : ['cie', 'edexcel', 'hhk'];
   for (var bi = 0; bi < boards.length; bi++) {
     var syl = BOARD_SYLLABUS[boards[bi]];
@@ -267,7 +271,9 @@ function getSectionInfo(sectionId, board) {
       var ch = syl.chapters[i];
       for (var j = 0; j < ch.sections.length; j++) {
         if (ch.sections[j].id === sectionId) {
-          return { chapter: ch, section: ch.sections[j], sectionIndex: j, board: boards[bi] };
+          var result = { chapter: ch, section: ch.sections[j], sectionIndex: j, board: boards[bi] };
+          _sectionInfoCache[cacheKey] = result;
+          return result;
         }
       }
     }

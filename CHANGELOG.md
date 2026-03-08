@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.2.14] - 2026-03-08 — getSectionInfo O(1) 缓存 + 防御性修复
+
+### 性能优化
+- **syllabus.js**: `getSectionInfo()` 增加 `_sectionInfoCache` 哈希缓存，首次查找后 O(1) 命中；board 数据加载时自动失效
+
+### 防御性修复
+- **homework.js**: `renderHwProgress` 2 处 + `startHwTest` 1 处 Supabase 调用增加显式 error 检查
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `js/syllabus.js` | `_sectionInfoCache` + `getSectionInfo()` 缓存逻辑 + board 加载时清缓存 |
+| `js/homework.js` | 3 处 Supabase rpc/select 加 error 检查 |
+| `js/config.js` | v2.2.13 → v2.2.14 |
+
+---
+
 ## [2.2.13] - 2026-03-08 — 性能优化 + 防御性修复
 
 ### 防御性修复
