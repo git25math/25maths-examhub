@@ -849,6 +849,7 @@ function renderSectionDetail(ch, sec, secIdx, board) {
     /* Fallback to old knowledge card if no KP data */
     var knowledgeEdit = _getSectionEdit(board, sec.id, 'knowledge');
     if (knowledgeEdit && knowledgeEdit.content) {
+      var kcContent = (appLang !== 'en' && knowledgeEdit.content_zh) ? knowledgeEdit.content_zh : knowledgeEdit.content;
       html += '<div class="sec-module sec-module-expandable" onclick="toggleSectionContent(this)">';
       html += '<div class="sec-module-icon">\ud83d\udcd8</div>';
       html += '<div class="sec-module-info">';
@@ -858,10 +859,7 @@ function renderSectionDetail(ch, sec, secIdx, board) {
       html += '<div class="sec-module-arrow">\u25bc</div>';
       html += '</div>';
       html += '<div class="sec-module-content d-none">';
-      html += '<div class="sec-module-content-body">' + pqRender(knowledgeEdit.content) + '</div>';
-      if (knowledgeEdit.content_zh) {
-        html += '<div class="sec-module-content-body" style="margin-top:8px;color:var(--c-text2)">' + pqRender(knowledgeEdit.content_zh) + '</div>';
-      }
+      html += '<div class="sec-module-content-body">' + pqRender(kcContent) + '</div>';
       html += '</div>';
     } else {
       html += '<div class="sec-module sec-module-coming">';

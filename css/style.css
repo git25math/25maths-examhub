@@ -3262,6 +3262,10 @@ input { font-family: inherit; }
   transition: transform 0.2s; }
 .we-card-body { padding: 12px 16px; font-size: 0.92rem; line-height: 1.7; }
 .we-card-body img { max-width: 100%; }
+@media (max-width: 639px) {
+  .we-card-header { padding: 8px 10px; gap: 6px; }
+  .we-card-body { padding: 10px 12px; font-size: 0.88rem; }
+}
 
 /* Syllabus requirements block */
 .sec-syllabus { background: var(--c-surface-alt); border-radius: var(--r); padding: 16px; margin-bottom: 20px; }

@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.3.5] - 2026-03-08 — Knowledge Card 语言切换 + 手机端优化
+
+### UX 改进
+- **Knowledge Card 语言切换**: 根据 `appLang` 选择 EN/ZH 版本显示，不再堆叠双语内容
+- **手机端 we-card 优化**: `@media (max-width:639px)` 减小 padding/gap/font-size，适配小屏
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `js/syllabus.js` | Knowledge Card 渲染按 appLang 选语言 |
+| `css/style.css` | we-card 手机端响应式规则 |
+| `js/config.js` | v2.3.4 → v2.3.5 |
+
+---
+
 ## [2.3.4] - 2026-03-08 — 质量修复（双击 bug + 语言切换 + 惰性渲染 + 箭头统一）
 
 ### Bug 修复
