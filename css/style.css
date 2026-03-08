@@ -3969,6 +3969,13 @@ input { font-family: inherit; }
 .stt-popup-actions { display:flex; gap:6px; margin-top:8px; }
 .stt-popup-actions .btn { font-size:0.8rem; padding:4px 10px; }
 .stt-popup-more { font-size:0.8rem; color:var(--c-primary); cursor:pointer; margin-top:6px; }
+.stt-popup-loading { font-size:0.9rem; color:var(--c-text2); }
+.stt-popup-phonetic { font-size:0.85rem; color:var(--c-text2); font-weight:400; }
+.stt-popup-audio { background:none; border:none; cursor:pointer; font-size:1rem; padding:0 2px; vertical-align:middle; }
+.stt-popup-badge--dict { background:var(--c-primary); color:#fff; display:inline-block; margin-bottom:6px; }
+.stt-popup-dict-def { font-size:0.9rem; color:var(--c-text); margin-bottom:4px; line-height:1.4; }
+.stt-popup-pos { font-size:0.75rem; font-weight:600; color:var(--c-primary); font-style:italic; }
+.stt-popup-example { font-size:0.8rem; color:var(--c-text2); font-style:italic; margin-top:2px; }
 @media (max-width:639px) { .stt-popup { max-width:calc(100vw - 32px); } }
 
 /* ═══ PRINT STYLES ═══ */

@@ -1,6 +1,7 @@
 /* ══════════════════════════════════════════════════════════════
    translate.js — Select-to-Translate (划词翻译)
    Matches selected text against vocabulary index, shows popup.
+   Falls back to Free Dictionary API for English words not in vocab.
    ══════════════════════════════════════════════════════════════ */
 
 /* Global state */
@@ -8,6 +9,8 @@ var _sttEnabled = (function() { try { return localStorage.getItem('wmatch_transl
 var _sttIndex = null;
 var _sttPopupEl = null;
 var _sttDebounce = null;
+var _sttDictCache = {};   /* API result cache: word → response | null */
+var _sttDictPending = null; /* current pending fetch abort controller */
 
 /* ─── Build reverse index ─── */
 function _buildSTTIndex() {
@@ -61,6 +64,125 @@ function _lookupSTT(text) {
   return null;
 }
 
+/* ─── Detect if text is English (Latin alphabet) ─── */
+function _isEnglish(text) {
+  return /^[a-zA-Z][a-zA-Z\s\-']{0,58}$/.test(text.trim());
+}
+
+/* ─── Free Dictionary API fallback ─── */
+function _fetchDictAPI(word, rect) {
+  var key = word.toLowerCase().trim();
+  /* Check cache */
+  if (key in _sttDictCache) {
+    if (_sttDictCache[key]) _showDictPopup(_sttDictCache[key], rect);
+    return;
+  }
+  /* Abort previous pending request */
+  if (_sttDictPending) {
+    try { _sttDictPending.abort(); } catch(e) {}
+    _sttDictPending = null;
+  }
+  /* Show loading state */
+  _showSTTLoading(rect);
+  /* Fetch */
+  var controller = (typeof AbortController !== 'undefined') ? new AbortController() : null;
+  _sttDictPending = controller;
+  var opts = controller ? { signal: controller.signal } : {};
+  fetch('https://api.dictionaryapi.dev/api/v2/entries/en/' + encodeURIComponent(key), opts)
+    .then(function(res) {
+      if (!res.ok) throw new Error('not found');
+      return res.json();
+    })
+    .then(function(data) {
+      _sttDictPending = null;
+      if (!data || !data[0]) { _sttDictCache[key] = null; _hideSTTPopup(); return; }
+      var entry = data[0];
+      var result = { word: entry.word || key };
+      /* Phonetic */
+      result.phonetic = entry.phonetic || '';
+      /* Audio — find first non-empty audio URL */
+      result.audio = '';
+      if (entry.phonetics) {
+        for (var i = 0; i < entry.phonetics.length; i++) {
+          if (entry.phonetics[i].audio) { result.audio = entry.phonetics[i].audio; break; }
+          if (!result.phonetic && entry.phonetics[i].text) result.phonetic = entry.phonetics[i].text;
+        }
+      }
+      /* Definitions — take first 3 across all meanings */
+      result.defs = [];
+      if (entry.meanings) {
+        for (var m = 0; m < entry.meanings.length && result.defs.length < 3; m++) {
+          var meaning = entry.meanings[m];
+          for (var d = 0; d < meaning.definitions.length && result.defs.length < 3; d++) {
+            result.defs.push({
+              pos: meaning.partOfSpeech,
+              text: meaning.definitions[d].definition,
+              example: meaning.definitions[d].example || ''
+            });
+          }
+        }
+      }
+      _sttDictCache[key] = result;
+      _showDictPopup(result, rect);
+    })
+    .catch(function(err) {
+      _sttDictPending = null;
+      if (err && err.name === 'AbortError') return;
+      _sttDictCache[key] = null;
+      _hideSTTPopup();
+    });
+}
+
+/* ─── Show loading spinner in popup ─── */
+function _showSTTLoading(rect) {
+  if (!_sttPopupEl) return;
+  _sttPopupEl.innerHTML = '<div class="stt-popup-loading">' + t('Looking up…', '查询中…') + '</div>';
+  _positionPopup(rect, 60);
+  _sttPopupEl.classList.add('show');
+}
+
+/* ─── Show dictionary API result popup ─── */
+function _showDictPopup(result, rect) {
+  if (!_sttPopupEl) return;
+  var html = '<div class="stt-popup-word">' + _escHtml(result.word);
+  if (result.phonetic) {
+    html += ' <span class="stt-popup-phonetic">' + _escHtml(result.phonetic) + '</span>';
+  }
+  if (result.audio) {
+    html += ' <button class="stt-popup-audio" onclick="_sttPlayAudio(\'' + _escAttr(result.audio) + '\')" title="' + t('Play pronunciation', '播放发音') + '">🔊</button>';
+  }
+  html += '</div>';
+  html += '<div class="stt-popup-badge stt-popup-badge--dict">' + t('Dictionary', '词典') + '</div>';
+  for (var i = 0; i < result.defs.length; i++) {
+    var d = result.defs[i];
+    html += '<div class="stt-popup-dict-def">';
+    html += '<span class="stt-popup-pos">' + _escHtml(d.pos) + '</span> ';
+    html += _escHtml(d.text);
+    if (d.example) {
+      html += '<div class="stt-popup-example">"' + _escHtml(d.example) + '"</div>';
+    }
+    html += '</div>';
+  }
+  if (result.defs.length === 0) {
+    html += '<div class="stt-popup-def">' + t('No definition found', '未找到释义') + '</div>';
+  }
+  _sttPopupEl.innerHTML = html;
+  _positionPopup(rect, 160);
+  _sttPopupEl.classList.add('show');
+  /* Reposition after render */
+  requestAnimationFrame(function() {
+    var actualH = _sttPopupEl.offsetHeight;
+    var newTop = rect.top - actualH - 8;
+    if (newTop < 8) newTop = rect.bottom + 8;
+    _sttPopupEl.style.top = newTop + 'px';
+  });
+}
+
+/* ─── Play pronunciation audio ─── */
+function _sttPlayAudio(url) {
+  try { new Audio(url).play(); } catch(e) {}
+}
+
 /* ─── Word status helper ─── */
 function _sttWordStatus(levelIdx, wordId) {
   var s = loadS();
@@ -70,7 +192,17 @@ function _sttWordStatus(levelIdx, wordId) {
   return { status: w.st || 'new', stars: w.stars || 0 };
 }
 
-/* ─── Show popup ─── */
+/* ─── Position popup near selection ─── */
+function _positionPopup(rect, estH) {
+  var popW = 300;
+  var left = Math.max(8, Math.min(rect.left + rect.width / 2 - popW / 2, window.innerWidth - popW - 8));
+  var top = rect.top - estH - 8;
+  if (top < 8) top = rect.bottom + 8;
+  _sttPopupEl.style.left = left + 'px';
+  _sttPopupEl.style.top = top + 'px';
+}
+
+/* ─── Show vocab popup (local match) ─── */
 function _showSTTPopup(matches, rect) {
   if (!_sttPopupEl) return;
   var m = matches[0];
@@ -120,16 +252,7 @@ function _showSTTPopup(matches, rect) {
   }
 
   _sttPopupEl.innerHTML = html;
-
-  /* Position: above selection, fallback below */
-  var popW = 300;
-  var popH = 160;
-  var left = Math.max(8, Math.min(rect.left + rect.width / 2 - popW / 2, window.innerWidth - popW - 8));
-  var top = rect.top - popH - 8;
-  if (top < 8) top = rect.bottom + 8;
-
-  _sttPopupEl.style.left = left + 'px';
-  _sttPopupEl.style.top = top + 'px';
+  _positionPopup(rect, 160);
   _sttPopupEl.classList.add('show');
 
   /* Reposition after render (actual height may differ) */
@@ -198,12 +321,23 @@ function _onSTTSelection() {
           parent.closest('#stt-popup'))) return;
     }
 
-    var matches = _lookupSTT(text);
-    if (!matches || matches.length === 0) { _hideSTTPopup(); return; }
-
     var range = sel.getRangeAt(0);
     var rect = range.getBoundingClientRect();
-    _showSTTPopup(matches, rect);
+
+    /* Try local vocabulary first */
+    var matches = _lookupSTT(text);
+    if (matches && matches.length > 0) {
+      _showSTTPopup(matches, rect);
+      return;
+    }
+
+    /* Fallback: Free Dictionary API for English words */
+    if (_isEnglish(text) && text.length >= 2) {
+      _fetchDictAPI(text, rect);
+      return;
+    }
+
+    _hideSTTPopup();
   }, 300);
 }
 

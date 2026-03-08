@@ -1,5 +1,24 @@
 # Changelog
 
+## [2.2.20] - 2026-03-08 — 划词翻译词典回退 (Dictionary API Fallback)
+
+### 增强
+- **词典 API 回退**: 词库外的英文词自动调用 Free Dictionary API，显示英文定义 + 音标 + 发音音频
+- **发音播放**: 🔊 按钮播放 API 提供的 MP3 发音
+- **加载状态**: API 查询期间显示"查询中…"
+- **请求管理**: AbortController 取消旧请求 + 内存缓存避免重复调用
+- **Dictionary badge**: 词典结果标注紫色 "Dictionary" 徽章，与词库结果区分
+- **词性标注**: 每条释义显示 part of speech（noun/verb/adjective…）+ 例句
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `js/translate.js` | +`_fetchDictAPI()` + `_showDictPopup()` + `_isEnglish()` + `_sttPlayAudio()` + `_sttDictCache` |
+| `css/style.css` | +8 行词典样式（phonetic + audio + dict-def + pos + example + loading） |
+| `js/config.js` | v2.2.19 → v2.2.20 |
+
+---
+
 ## [2.2.19] - 2026-03-08 — 引导流程优化（防抖 + 里程碑 + 连续激励）
 
 ### 体验优化
