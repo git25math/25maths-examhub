@@ -1254,24 +1254,18 @@ add('edexcel', '6.3', 'examples', {
     'Check: $P(A) \\times P(B) = 0.18 \\neq 0.15$, so NOT independent.<br><br>' +
     '<b>Exam Tip:</b> Independent ⟺ $P(A \\cap B) = P(A) \\times P(B)$.',
   content_zh:
-    '<b>知识回顾</b><br>' +
-    '• $P(\\text{event}) = \\frac{\\text{favourable outcomes}}{\\text{total outcomes}}$。始终满足 $0 \\leq P \\leq 1$。<br>' +
-    '• $P(\\text{not } A) = 1 - P(A)$。<br>' +
-    '• <b>样本空间 (Sample space)</b>：列出所有结果的清单。对于复合事件，使用表格或列表。<br>' +
-    '• <b>相对频数 (Relative frequency)</b> $= \\frac{\\text{number of times event occurs}}{\\text{total trials}}$。试验次数越多，估计效果越好。<br>' +
-    '<br>' +
-    '<b>关键技能</b><br>' +
-    '• <b>树状图</b>：沿分叉相乘（AND），分叉间相加（OR）。<br>' +
-    '• <b>独立事件</b>：$P(A \\text{ and } B) = P(A) \\times P(B)$。<br>' +
-    '• <b>互斥事件</b>：$P(A \\text{ or } B) = P(A) + P(B)$。<br>' +
-    '<br>' +
-    '<b>仅 Higher</b><br>' +
-    '• <b>条件概率</b>：$P(A | B) = \\frac{P(A \\cap B)}{P(B)}$。<br>' +
-    '• <b>不放回 (Without replacement)</b>：第二次抽取的概率会发生变化。<br>' +
-    '• <b>维恩图 (Venn diagrams)</b>：$P(A \\cup B) = P(A) + P(B) - P(A \\cap B)$。<br>' +
-    '<br>' +
-    '<b>注意！</b><br>' +
-    '"至少一个"最容易通过 $1 - P(\\text{none})$ 来解答。'
+    '<b>经典例题 1</b> [3 分]<br>' +
+    '袋中有 5 个红球和 3 个蓝球。随机取一个不放回，再取一个。求两个都是红球的概率。<br><br>' +
+    '<b>解答：</b><br>' +
+    '$P(\\text{第 1 个红}) = \\frac{5}{8}$<br>' +
+    '$P(\\text{第 2 个红} | \\text{第 1 个红}) = \\frac{4}{7}$<br>' +
+    '$P(\\text{都是红}) = \\frac{5}{8} \\times \\frac{4}{7} = \\frac{20}{56} = \\frac{5}{14}$<br><br>' +
+    '<b>经典例题 2</b>（Higher）[3 分]<br>' +
+    '$P(A) = 0.6$，$P(B) = 0.3$，$P(A \\cap B) = 0.15$。求 $P(A \\cup B)$ 并判断 $A$、$B$ 是否独立。<br><br>' +
+    '<b>解答：</b><br>' +
+    '$P(A \\cup B) = 0.6 + 0.3 - 0.15 = 0.75$<br>' +
+    '验证：$P(A) \\times P(B) = 0.18 \\neq 0.15$，因此不独立。<br><br>' +
+    '<b>考试技巧：</b>独立 ⟺ $P(A \\cap B) = P(A) \\times P(B)$。'
 });
 
 /* ══════════════════════════════════════════════════

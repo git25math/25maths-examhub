@@ -804,7 +804,8 @@ add('edexcel', '4.3', 'examples', {
     '<b>经典例题</b> [2 分]<br>' +
     '一个图形恰好有 2 条对称轴和 2 阶旋转对称。说出两种可能的图形。<br><br>' +
     '<b>解答：</b><b>长方形</b>和<b>菱形</b>。<br>' +
-    '（正方形有 4 条对称轴，不符合"恰好 2 条"。）'
+    '（正方形有 4 条对称轴，不符合"恰好 2 条"。）<br><br>' +
+    '<b>考试技巧：</b>如果题目说"恰好 2 条对称轴"，则排除正方形（有 4 条）。'
 });
 
 // ── Edexcel 4.4 Measures ──
@@ -858,7 +859,8 @@ add('edexcel', '4.4', 'examples', {
     '<b>解答：</b>时间 = 1.5 小时，速度 = $\\frac{135}{1.5} = 90$ km/h<br><br>' +
     '<b>经典例题 2</b>（Higher）[3 分]<br>' +
     '$p = 4.6$（1 位小数），$q = 0.35$（2 位小数）。求 $\\frac{p}{q}$ 的上界。<br><br>' +
-    '<b>解答：</b>$p$ 上界 = 4.65，$q$ 下界 = 0.345。$\\frac{4.65}{0.345} = 13.5$'
+    '<b>解答：</b>$p$ 上界 = 4.65，$q$ 下界 = 0.345。$\\frac{4.65}{0.345} = 13.5$<br><br>' +
+    '<b>考试技巧：</b>求 $\frac{a}{b}$ 最大值：用 $a$ 的最大值和 $b$ 的最小值。'
 });
 
 // ── Edexcel 4.5 Construction ──
@@ -961,7 +963,8 @@ add('edexcel', '4.6', 'examples', {
     '<b>经典例题</b>（Higher）[4 分]<br>' +
     '$O$ 为圆心，$A, B, C$ 在圆上。$\\angle BAC = 35°$。求 $\\angle BOC$ 和 $\\angle OBC$。<br><br>' +
     '<b>解答：</b>$\\angle BOC = 70°$（圆心角 = 2 × 圆周角）<br>' +
-    '$\\triangle OBC$ 等腰：$\\angle OBC = \\frac{110°}{2} = 55°$'
+    '$\\triangle OBC$ 等腰：$\\angle OBC = \\frac{110°}{2} = 55°$<br><br>' +
+    '<b>考试技巧：</b>说明定理并指出 $OB = OC$ = 半径，以此证明等腰三角形。'
 });
 
 // ── Edexcel 4.7 Geometrical reasoning ──
@@ -1013,7 +1016,8 @@ add('edexcel', '4.7', 'examples', {
     '<b>经典例题</b>（Higher）[4 分]<br>' +
     '已知 $AB = CB$，$AD = CD$。证明 $\\triangle ABD \\cong \\triangle CBD$。<br><br>' +
     '<b>解答：</b>• $AB = CB$（已知）• $AD = CD$（已知）• $BD = BD$（公共边）<br>' +
-    '∴ $\\triangle ABD \\cong \\triangle CBD$（SSS）'
+    '∴ $\\triangle ABD \\cong \\triangle CBD$（SSS）<br><br>' +
+    '<b>考试技巧：</b>必须在最后注明所用的全等条件（SSS、SAS、ASA 或 RHS）。'
 });
 
 // ── Edexcel 4.8 Trigonometry and Pythagoras' theorem ──

@@ -1697,23 +1697,26 @@ function _renderMiniStars(pct) {
 
 /* ═══ PARSE WORKED EXAMPLES ═══ */
 function _parseWorkedExamples(html) {
-  // Split by <b>Worked Example N</b> or <b>经典例题 N</b> headings
-  var parts = html.split(/<b>(Worked Example \d+|经典例题 \d+)<\/b>/i);
+  // Split by <b>Worked Example [N]</b> or <b>经典例题 [N]</b> headings
+  // Supports both numbered (Example 1) and unnumbered (Example) formats
+  var parts = html.split(/<b>(Worked Example(?:\s+\d+)?|经典例题(?:\s+\d+)?)<\/b>/i);
   var results = [];
   // parts[0] = text before first heading (usually empty), then alternating: heading, body
   for (var i = 1; i < parts.length; i += 2) {
     var heading = parts[i];
     var body = (parts[i + 1] || '').trim();
-    // Extract marks from start of body, e.g. " [2 marks]<br>" or " [3 分]<br>"
+    // Extract marks/qualifier from start of body, e.g. " [2 marks]<br>" or " (Higher) [3 marks]<br>"
     var marks = '';
-    var marksMatch = body.match(/^\s*\[([^\]]+)\]/);
+    var marksMatch = body.match(/^\s*(?:\([^)]+\)\s*)?\[([^\]]+)\]/);
     if (marksMatch) {
-      marks = '[' + marksMatch[1] + ']';
+      marks = marksMatch[0].trim();
       body = body.substring(marksMatch[0].length).replace(/^(<br\s*\/?\s*>)+/i, '').trim();
     }
-    // Extract number from heading
+    // Extract number from heading, or auto-number
     var numMatch = heading.match(/\d+/);
     var num = numMatch ? numMatch[0] : (results.length + 1);
+    // For unnumbered headings, add the number
+    if (!numMatch) heading = heading + ' ' + num;
     results.push({ num: num, heading: heading, marks: marks, body: body });
   }
   return results;

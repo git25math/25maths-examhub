@@ -1,5 +1,28 @@
 # Changelog
 
+## [2.3.8] - 2026-03-08 — 数据质量修复（内容审计 + 正则修复 + 13 条 ZH 翻译补全）
+
+### 数据修复
+- **Edexcel 6.3 content_zh 错误**: 原内容为知识模块内容，已替换为正确的中文例题翻译
+- **13 条 Edexcel 中文考试技巧补全**: 1.1/1.2/1.3/1.5/2.1/2.3/2.4/2.5/2.7/4.3/4.4/4.6/4.7
+
+### 正则修复
+- **`_parseWorkedExamples` 正则增强**: 支持无编号 `<b>Worked Example</b>` 格式（影响 20 个 Edexcel 知识点）
+- **marks 提取正则**: 支持 `(Higher) [2 marks]` 格式
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `js/syllabus.js` | 正则 `Worked Example \d+` → `Worked Example(?:\s+\d+)?` + marks 正则增强 |
+| `scripts/seed-section-content.js` | +4 条 Edexcel Ch1 ZH 考试技巧 |
+| `scripts/seed-ch2.js` | +5 条 Edexcel Ch2 ZH 考试技巧 |
+| `scripts/seed-ch4.js` | +4 条 Edexcel Ch4 ZH 考试技巧 |
+| `scripts/seed-ch5-6.js` | Edexcel 6.3 content_zh 修正 |
+| `scripts/seed-ch*.sql` | 重新生成 SQL |
+| `js/config.js` | v2.3.7 → v2.3.8 |
+
+---
+
 ## [2.3.7] - 2026-03-08 — P3 质量优化（硬编码颜色 + 监听器泄漏 + 内联样式清理）
 
 ### CSS 新增
