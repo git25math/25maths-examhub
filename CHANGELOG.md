@@ -1,5 +1,24 @@
 # Changelog
 
+## [2.2.17] - 2026-03-08 — 性能优化第二轮
+
+### 性能优化
+- **syllabus.js**: `_hhkSlugIdx` slug→idx 索引缓存 — `_getHHKSectionStats` 从 O(264)×36 sections 全量扫描 → O(vocabSlugs.length)×36 索引查找
+- **syllabus.js**: `_renderBoardHome` 共享 `wd` — `getWordData()` 从每 section 各调用 1 次 → 全局 1 次共享
+- **syllabus.js**: `_renderSectionRow` 加 `_wd` 参数透传，避免重复 `getWordData()`
+- **mastery.js**: 非 CIE 分支补充 `var wd = getWordData()` — 修复 `wd` 未声明 BUG（每次 fallback 多余判断）
+- **storage.js**: `invalidateCache()` 清除 `_hhkSlugIdx`
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `js/syllabus.js` | `_hhkSlugIdx` 索引 + `_ensureHHKSlugIdx()` + `_getHHKSectionStats` 重写 + `_renderBoardHome` 共享 wd + `_renderSectionRow` 加 `_wd` 参数 |
+| `js/mastery.js` | 非 CIE 分支 `var wd = getWordData()` 声明 |
+| `js/storage.js` | `invalidateCache()` 清除 `_hhkSlugIdx` |
+| `js/config.js` | v2.2.16 → v2.2.17 |
+
+---
+
 ## [2.2.16] - 2026-03-08 — renderHome 性能优化 + 引导系统
 
 ### 性能优化

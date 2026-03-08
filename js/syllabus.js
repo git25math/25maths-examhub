@@ -313,6 +313,8 @@ function _renderBoardHome(board) {
     ? { 7: '\u24fb', 8: '\u24fc', 9: '\u24fd', 10: '\u24fe', 11: '\u24eb' }
     : ['', '\ud83d\udd22', '\ud83d\udcdd', '\ud83d\udcca', '\ud83d\udcd0', '\u27a1\ufe0f', '\ud83d\udcc8'];
 
+  var wd = getWordData();
+
   syllabus.chapters.forEach(function(ch) {
     var catKey = prefix + ch.num;
     if (!(catKey in cieChapterCollapsed)) cieChapterCollapsed[catKey] = true;
@@ -345,7 +347,7 @@ function _renderBoardHome(board) {
 
       /* Stats from level(s) */
       if (board === 'hhk') {
-        var hhkSt = _getHHKSectionStats(sec);
+        var hhkSt = _getHHKSectionStats(sec, wd);
         chTotalWords += hhkSt.total;
         chMastered += hhkSt.mastered;
         chTotalStars += Math.round(hhkSt.learningPct * hhkSt.total * 4 / 100);
@@ -353,7 +355,7 @@ function _renderBoardHome(board) {
       } else {
         var li = getSectionLevelIdx(sec.id, board);
         if (li >= 0) {
-          var stats = getDeckStats(li);
+          var stats = getDeckStats(li, wd);
           chTotalWords += stats.total;
           chMastered += stats.mastered;
           chTotalStars += Math.round(stats.learningPct * stats.total * 4 / 100);
@@ -396,7 +398,7 @@ function _renderBoardHome(board) {
     }
 
     visibleSections.forEach(function(sec) {
-      html += _renderSectionRow(sec, ch, board);
+      html += _renderSectionRow(sec, ch, board, wd);
     });
 
     html += '</div></div>';
@@ -426,15 +428,26 @@ function _chapterEmoji(num) {
   return emojis[num] || '\ud83d\udcda';
 }
 
+/* HHK slug→idx index cache for O(1) lookup */
+var _hhkSlugIdx = null;
+function _ensureHHKSlugIdx() {
+  if (_hhkSlugIdx) return _hhkSlugIdx;
+  _hhkSlugIdx = {};
+  for (var i = 0; i < LEVELS.length; i++) {
+    if (LEVELS[i].board === '25m') _hhkSlugIdx[LEVELS[i].slug] = i;
+  }
+  return _hhkSlugIdx;
+}
+
 /* Get combined stats across all vocabSlug levels for an HHK section */
-function _getHHKSectionStats(sec) {
+function _getHHKSectionStats(sec, _wd) {
   if (!sec.vocabSlugs || sec.vocabSlugs.length === 0) return { pct: 0, started: 0, total: 0, learningPct: 0, masteryPct: 0, mastered: 0 };
   var totalWords = 0, totalStars = 0, mastered = 0, started = 0;
-  var wd = getWordData();
-  for (var si = 0; si < LEVELS.length; si++) {
-    var lv = LEVELS[si];
-    if (lv.board !== '25m') continue;
-    if (sec.vocabSlugs.indexOf(lv.slug) < 0) continue;
+  var wd = _wd || getWordData();
+  var slugIdx = _ensureHHKSlugIdx();
+  for (var i = 0; i < sec.vocabSlugs.length; i++) {
+    var si = slugIdx[sec.vocabSlugs[i]];
+    if (si === undefined) continue;
     var ds = getDeckStats(si, wd);
     totalWords += ds.total;
     mastered += ds.mastered;
@@ -448,16 +461,16 @@ function _getHHKSectionStats(sec) {
 }
 
 /* Render a single section row in the home view */
-function _renderSectionRow(sec, ch, board) {
+function _renderSectionRow(sec, ch, board, _wd) {
   board = board || 'cie';
   var vocab = BOARD_VOCAB[board] || {};
   var li = getSectionLevelIdx(sec.id, board);
   var words = vocab[sec.id] || [];
   var stats;
   if (board === 'hhk') {
-    stats = _getHHKSectionStats(sec);
+    stats = _getHHKSectionStats(sec, _wd);
   } else {
-    stats = li >= 0 ? getDeckStats(li) : { pct: 0, started: 0, total: words.length, learningPct: 0, masteryPct: 0 };
+    stats = li >= 0 ? getDeckStats(li, _wd) : { pct: 0, started: 0, total: words.length, learningPct: 0, masteryPct: 0 };
   }
 
   var tierBadge = '';

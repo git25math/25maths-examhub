@@ -551,6 +551,7 @@ function renderHome() {
 
     /* ── Non-CIE boards: original rendering ── */
     /* Pre-compute per-level stats + lock state for this board (indexed) */
+    var wd = getWordData();
     var _ci = _ensureCatIndex();
     var _levelStats = {};
     var _levelLocked = {};

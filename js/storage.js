@@ -31,6 +31,7 @@ function invalidateCache() {
   _wordDataCache = null;
   if (typeof _quizCache !== 'undefined') _quizCache = null;
   if (typeof _catLevelIndex !== 'undefined') _catLevelIndex = null;
+  if (typeof _hhkSlugIdx !== 'undefined') _hhkSlugIdx = null;
 }
 
 /* Level best scores */
