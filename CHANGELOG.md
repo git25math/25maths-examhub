@@ -1,6 +1,13 @@
 # Changelog
 
-## [2.3.2] - 2026-03-08 — Phase 10C-B 经典例题扩充（CIE 291 道 worked examples）
+## [2.3.2] - 2026-03-08 — 知识点精析 Chapter 1 内容扩充 + 经典例题 291 道
+
+### 知识点精析 Phase 2.5
+- **CIE Chapter 1 KP 数据扩充**: `knowledge-cie.json` 从 4 个 KP 扩充至 **14 个 KP**
+  - 覆盖 Chapter 1 全部 8 个 section（1.1-1.8）
+  - 新增 10 个 KP：Sets(2) + Index Laws(1) + Directed Numbers(1) + Fractions(2) + BIDMAS(1) + Rounding(2) + Standard Form(1)
+  - 每个 KP 含：双语精析 + 2-3 典型考法 + 1-2 真题例题 + 2 道 MCQ 自测
+- **Bug Fix**: `tqItem` null guard — 防止无 `testYourself` 数据时点击选项崩溃
 
 ### 内容扩充
 - **CIE 0580 经典例题**: 72 个知识点的 worked examples 从 92 道扩充至 **291 道**
@@ -21,6 +28,8 @@
 | `scripts/seed-ch5-6.js` | Ch5-6 例题扩充（11 sections） |
 | `scripts/seed-ch7-9.js` | Ch7-9 例题扩充（15 sections） |
 | `scripts/seed-ch*.sql` | 6 个 SQL 种子文件（共 252 行 upsert） |
+| `data/knowledge-cie.json` | 4→14 KP（+10 KP 覆盖 Ch1 sections 1.2-1.8） |
+| `js/syllabus.js` | tqItem null guard 修复（行 2698） |
 | `js/config.js` | v2.3.1 → v2.3.2 |
 
 ### 部署步骤
