@@ -877,11 +877,14 @@ function renderSectionDetail(ch, sec, secIdx, board) {
   /* Worked Examples (4th) — show content if edited, else "Coming soon" */
   var examplesEdit = _getSectionEdit(board, sec.id, 'examples');
   if (examplesEdit && examplesEdit.content) {
+    var enExamples = _parseWorkedExamples(examplesEdit.content);
+    var zhExamples = examplesEdit.content_zh ? _parseWorkedExamples(examplesEdit.content_zh) : [];
+    var langExamples = appLang !== 'en' && zhExamples.length ? zhExamples : enExamples;
     html += '<div class="sec-module sec-module-expandable" onclick="toggleSectionContent(this)">';
     html += '<div class="sec-module-icon">\ud83d\udcd6</div>';
     html += '<div class="sec-module-info">';
     html += '<div class="sec-module-title">' + t('Worked Examples', '\u7ecf\u5178\u4f8b\u9898') + '</div>';
-    html += '<div class="sec-module-sub">' + t('Click to expand', '\u70b9\u51fb\u5c55\u5f00') + '</div>';
+    html += '<div class="sec-module-sub">' + langExamples.length + ' ' + t('examples', '\u9053\u4f8b\u9898') + '</div>';
     html += '</div>';
     if (typeof isSuperAdmin === 'function' && isSuperAdmin()) {
       html += '<button class="sec-module-edit" onclick="event.stopPropagation();editSectionModule(\'' + sec.id + '\',\'examples\',\'' + board + '\')" title="' + t('Edit', '\u7f16\u8f91') + '">\u270f\ufe0f</button>';
@@ -890,9 +893,16 @@ function renderSectionDetail(ch, sec, secIdx, board) {
     html += '<div class="sec-module-arrow">\u25bc</div>';
     html += '</div>';
     html += '<div class="sec-module-content d-none">';
-    html += '<div class="sec-module-content-body">' + pqRender(examplesEdit.content) + '</div>';
-    if (examplesEdit.content_zh) {
-      html += '<div class="sec-module-content-body" style="margin-top:8px;color:var(--c-text2)">' + pqRender(examplesEdit.content_zh) + '</div>';
+    for (var ei = 0; ei < langExamples.length; ei++) {
+      var ex = langExamples[ei];
+      html += '<div class="we-card">';
+      html += '<div class="we-card-header" onclick="event.stopPropagation();toggleWeCard(this)">';
+      html += '<span class="we-card-num">' + ex.heading + '</span>';
+      if (ex.marks) html += '<span class="we-card-marks">' + ex.marks + '</span>';
+      html += '<span class="we-card-arrow">\u25b6</span>';
+      html += '</div>';
+      html += '<div class="we-card-body d-none">' + pqRender(ex.body) + '</div>';
+      html += '</div>';
     }
     html += '</div>';
   } else {
@@ -1683,6 +1693,46 @@ function _renderMiniStars(pct) {
     s += '<span class="star-dot' + (i < filled ? ' filled' : '') + '" style="width:6px;height:6px"></span>';
   }
   return s;
+}
+
+/* ═══ PARSE WORKED EXAMPLES ═══ */
+function _parseWorkedExamples(html) {
+  // Split by <b>Worked Example N</b> or <b>经典例题 N</b> headings
+  var parts = html.split(/<b>(Worked Example \d+|经典例题 \d+)<\/b>/i);
+  var results = [];
+  // parts[0] = text before first heading (usually empty), then alternating: heading, body
+  for (var i = 1; i < parts.length; i += 2) {
+    var heading = parts[i];
+    var body = (parts[i + 1] || '').trim();
+    // Extract marks from start of body, e.g. " [2 marks]<br>" or " [3 分]<br>"
+    var marks = '';
+    var marksMatch = body.match(/^\s*\[([^\]]+)\]/);
+    if (marksMatch) {
+      marks = '[' + marksMatch[1] + ']';
+      body = body.substring(marksMatch[0].length).replace(/^<br\s*\/?>/, '').trim();
+    }
+    // Extract number from heading
+    var numMatch = heading.match(/\d+/);
+    var num = numMatch ? numMatch[0] : (results.length + 1);
+    results.push({ num: num, heading: heading, marks: marks, body: body });
+  }
+  return results;
+}
+
+/* ═══ TOGGLE WORKED EXAMPLE CARD ═══ */
+function toggleWeCard(headerEl) {
+  var card = headerEl.closest('.we-card');
+  if (!card) return;
+  var body = card.querySelector('.we-card-body');
+  var arrow = card.querySelector('.we-card-arrow');
+  if (body.classList.contains('d-none')) {
+    body.classList.remove('d-none');
+    arrow.textContent = '\u25bc';
+    loadKaTeX().then(function() { renderMath(body); });
+  } else {
+    body.classList.add('d-none');
+    arrow.textContent = '\u25b6';
+  }
 }
 
 /* ═══ EXPANDABLE MODULE TOGGLE ═══ */

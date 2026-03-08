@@ -1,5 +1,26 @@
 # Changelog
 
+## [2.3.3] - 2026-03-08 — 经典例题 UX 优化（手风琴卡片 + 语言切换）
+
+### 例题渲染重构
+- **手风琴卡片**: 将 worked examples 从整体展开改为逐条独立卡片，每张卡片可单独展开/收起
+- **语言智能切换**: 根据 `appLang` 自动选择 EN/ZH 版本显示（非堆叠），fallback 到另一语言
+- **延迟 KaTeX 渲染**: 仅在卡片展开时触发 `loadKaTeX()` + `renderMath()`，减少首次加载开销
+- **副标题显示例题数**: "4 examples / 4 道例题" 替代 "Click to expand"
+
+### Seed 合并脚本
+- **`scripts/seed-all.sh`**: 合并 6 个 seed JS 脚本输出为单文件 SQL（BEGIN/COMMIT 事务包裹）
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `js/syllabus.js` | `_parseWorkedExamples()` 解析函数 + `toggleWeCard()` + 渲染逻辑重构 |
+| `css/style.css` | `.we-card` 系列样式（卡片/header/body/arrow，~12 行） |
+| `scripts/seed-all.sh` | 新建 — 合并 6 个 seed 脚本 → 单文件 SQL |
+| `js/config.js` | v2.3.2 → v2.3.3 |
+
+---
+
 ## [2.3.2] - 2026-03-08 — 知识点精析 Chapter 1 内容扩充 + 经典例题 291 道
 
 ### 知识点精析 Phase 2.5

@@ -3248,6 +3248,20 @@ input { font-family: inherit; }
 }
 .sec-module-content-body img { max-width: 100%; border-radius: var(--r-sm); }
 
+/* ═══ WORKED EXAMPLE CARDS ═══ */
+.we-card { border: 1px solid var(--c-border); border-radius: var(--r-sm);
+  margin-bottom: 8px; overflow: hidden; }
+.we-card-header { display: flex; align-items: center; gap: 8px;
+  padding: 10px 14px; cursor: pointer; user-select: none;
+  background: var(--c-surface-alt); }
+.we-card-header:hover { background: var(--c-surface-hover, var(--c-bg)); }
+.we-card-num { font-weight: 700; font-size: 0.9rem; color: var(--c-primary); }
+.we-card-marks { font-size: 0.8rem; color: var(--c-text2); }
+.we-card-arrow { margin-left: auto; font-size: 0.7rem; color: var(--c-text2);
+  transition: transform 0.2s; }
+.we-card-body { padding: 12px 16px; font-size: 0.92rem; line-height: 1.7; }
+.we-card-body img { max-width: 100%; }
+
 /* Syllabus requirements block */
 .sec-syllabus { background: var(--c-surface-alt); border-radius: var(--r); padding: 16px; margin-bottom: 20px; }
 .sec-syllabus-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
