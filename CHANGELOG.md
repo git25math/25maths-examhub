@@ -1,5 +1,29 @@
 # Changelog
 
+## [2.2.8] - 2026-03-08 — 深度内联样式清理（20 文件 173 处）
+
+### CSS 工具类扩展
+- **布局类**: `.page-header` / `.page-header--mb12/20` / `.result-stats` / `.result-stat-val` / `.result-stat-label`
+- **字体类**: `.font-display` / `.font-mono` / `.btn-lg` / `.sub-heading`
+- **颜色变体**: `.srs-row-dot--primary/danger/warning/success/light`（替代 7 处内联 background）
+- **间距**: `.mb-4/16/20` / `.pt-40` / `.pb-40`
+
+### 20 文件全覆盖清理
+- **总量**: 436→263 处（消除 173 处静态内联样式）
+- **practice.js**: 134→77（-57）
+- **homework.js**: 99→73（-26）
+- **syllabus.js**: 53→35（-18）
+- **app.js**: 20→8（-12）
+- **admin.js**: 15→10（-5）
+- **battle.js**: 9→4（-5）
+- **其他 14 文件**: 合计 -50
+
+### 修复
+- admin.js 重复 class 属性修复
+- 剩余 263 处均为动态值（width:X% / color:'+var+'）或唯一布局样式
+
+---
+
 ## [2.2.7] - 2026-03-08 — 真题数据质量深度修复 + DQ 规则扩展 + 离线构建完善
 
 ### 数据质量深度修复（第二轮，2,295 处）
