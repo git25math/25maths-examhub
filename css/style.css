@@ -2537,24 +2537,31 @@ input { font-family: inherit; }
 }
 
 /* Admin header */
-.admin-header { margin-bottom: 16px; }
+.admin-header {
+  margin-bottom: 16px; display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;
+}
+.admin-header .section-title { margin-bottom: 0; }
 .admin-school-name {
-  font-size: 13px; color: var(--c-text2); margin-top: 4px;
+  font-size: 13px; color: var(--c-text2); font-weight: 500;
+  background: var(--c-surface-alt); padding: 3px 12px; border-radius: 12px;
 }
 
 /* Admin tabs */
 .admin-tabs {
-  display: flex; gap: 4px;
+  display: flex; gap: 2px;
   border-bottom: 2px solid var(--c-border-light);
   margin-bottom: 20px;
+  overflow-x: auto; -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
 }
+.admin-tabs::-webkit-scrollbar { display: none; }
 .admin-tab {
-  padding: 10px 18px; font-size: 14px; font-weight: 600;
+  padding: 10px 16px; font-size: 13px; font-weight: 600;
   color: var(--c-text2); background: none; border: none;
   cursor: pointer; border-bottom: 2px solid transparent;
-  margin-bottom: -2px; transition: all 0.2s;
+  margin-bottom: -2px; transition: all 0.2s; white-space: nowrap;
 }
-.admin-tab:hover { color: var(--c-text); }
+.admin-tab:hover { color: var(--c-text); background: var(--c-surface-alt); border-radius: 8px 8px 0 0; }
 .admin-tab.active {
   color: var(--c-primary); border-bottom-color: var(--c-primary);
 }
@@ -2565,7 +2572,8 @@ input { font-family: inherit; }
 }
 
 /* Grade-list collapsible sections */
-.grade-list-header { cursor: pointer; display: flex; align-items: center; gap: 8px; padding: 10px 0; font-weight: 600; font-size: 1.05rem; user-select: none; }
+.grade-list-header { cursor: pointer; display: flex; align-items: center; gap: 8px; padding: 10px 8px; font-weight: 600; font-size: 1.05rem; user-select: none; border-radius: 8px; transition: background 0.15s; margin: 0 -8px; }
+.grade-list-header:hover { background: var(--c-surface-alt); }
 .grade-list-chevron { transition: transform .2s; display: inline-block; font-size: 12px; }
 .grade-list-section.collapsed .grade-list-chevron { transform: rotate(-90deg); }
 .grade-list-section.collapsed .grade-list-body { display: none; }
@@ -2598,6 +2606,14 @@ input { font-family: inherit; }
   font-size: 12px; color: var(--c-primary); font-weight: 600;
   background: var(--c-primary-bg); display: inline-block;
   padding: 2px 8px; border-radius: 8px; margin-bottom: 10px;
+}
+.admin-class-school {
+  font-size: 11px; color: var(--c-text2); margin-bottom: 4px;
+  display: flex; align-items: center; gap: 4px;
+}
+.admin-class-school::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--c-primary-light); flex-shrink: 0;
 }
 .admin-class-stats {
   display: flex; justify-content: space-between;
@@ -2689,19 +2705,23 @@ input { font-family: inherit; }
 /* Summary cards */
 .admin-summary-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-  gap: 12px; margin-bottom: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 10px; margin-bottom: 18px;
 }
 .admin-summary-card {
   background: var(--c-surface); border: 1px solid var(--c-border-light);
-  border-radius: var(--r); padding: 16px; text-align: center;
+  border-radius: var(--r); padding: 14px 12px; text-align: center;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.admin-summary-card:hover {
+  transform: translateY(-1px); box-shadow: var(--shadow);
 }
 .admin-summary-val {
-  font-size: 28px; font-weight: 800;
-  font-family: var(--font-display);
+  font-size: 26px; font-weight: 800;
+  font-family: var(--font-display); line-height: 1.2;
 }
 .admin-summary-label {
-  font-size: 12px; color: var(--c-text2); margin-top: 4px;
+  font-size: 11px; color: var(--c-text2); margin-top: 4px; font-weight: 500;
 }
 
 /* Grade overview class list */
@@ -3002,27 +3022,40 @@ input { font-family: inherit; }
 }
 
 /* ═══ DATA QUALITY ═══ */
-.dq-board-pills { display: flex; gap: 6px; margin-bottom: 16px; }
+.dq-board-pills { display: flex; gap: 6px; margin-bottom: 16px; flex-wrap: wrap; }
 .dq-pill {
-  padding: 6px 16px; font-size: 13px; font-weight: 600; border: 1px solid var(--c-border);
+  padding: 5px 14px; font-size: 12px; font-weight: 600; border: 1px solid var(--c-border);
   border-radius: 20px; background: var(--c-surface); color: var(--c-text2); cursor: pointer;
-  transition: all 0.15s;
+  transition: all 0.15s; white-space: nowrap;
 }
-.dq-pill:hover { border-color: var(--c-primary-bg); }
+.dq-pill:hover { border-color: var(--c-primary-bg); color: var(--c-text); }
 .dq-pill.active { background: var(--c-primary); color: #fff; border-color: var(--c-primary); }
 
-.dq-summary { display: flex; gap: 12px; align-items: center; margin-bottom: 20px; flex-wrap: wrap; }
+.dq-summary { display: flex; gap: 10px; align-items: center; margin-bottom: 18px; flex-wrap: wrap; }
 .dq-card {
   background: var(--c-surface); border: 1px solid var(--c-border-light);
   border-left: 4px solid var(--c-border); border-radius: var(--r);
   padding: 14px 18px; min-width: 100px; text-align: center;
+  transition: transform 0.15s, box-shadow 0.15s;
 }
+.dq-card:hover { transform: translateY(-1px); box-shadow: var(--shadow); }
 .dq-card--error { border-left-color: var(--c-danger); }
 .dq-card--warn { border-left-color: var(--c-warning); }
 .dq-card--ok { border-left-color: var(--c-success); }
-.dq-card-val { font-size: 24px; font-weight: 800; font-family: var(--font-display); color: var(--c-text); }
-.dq-card-label { font-size: 12px; color: var(--c-text2); margin-top: 2px; }
+.dq-card-val { font-size: 24px; font-weight: 800; font-family: var(--font-display); color: var(--c-text); line-height: 1.2; }
+.dq-card-label { font-size: 11px; color: var(--c-text2); margin-top: 2px; font-weight: 500; }
 .dq-summary-actions { margin-left: auto; display: flex; gap: 8px; }
+
+/* Shared admin toolbar row */
+.admin-filter-bar {
+  display: flex; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; align-items: center;
+}
+.admin-filter-bar .auth-input {
+  flex: 1; min-width: 160px; max-width: 300px; font-size: 13px; padding: 7px 12px;
+}
+.admin-filter-count {
+  font-size: 12px; color: var(--c-text2); margin-top: 4px;
+}
 
 .dq-pending {
   padding: 8px 14px; background: var(--c-warning-bg); border-radius: var(--r);
@@ -3083,18 +3116,31 @@ input { font-family: inherit; }
 .dq-page-nav { display: flex; align-items: center; gap: 12px; justify-content: center; margin-top: 12px; }
 .dq-page-info { font-size: 13px; color: var(--c-text2); }
 
-/* Dark mode */
+/* Dark mode — Data Quality + Admin */
 [data-theme="dark"] .dq-hl { background: rgba(239,68,68,0.3); }
 [data-theme="dark"] .dq-del { background: rgba(239,68,68,0.25); }
 [data-theme="dark"] .dq-ins { background: rgba(34,197,94,0.25); }
 [data-theme="dark"] .dq-pending { background: rgba(245,158,11,0.15); }
+[data-theme="dark"] .dq-pill { border-color: var(--c-border); background: var(--c-surface); }
+[data-theme="dark"] .dq-pill:hover { border-color: var(--c-primary-bg); }
+[data-theme="dark"] .dq-pill.active { background: var(--c-primary); border-color: var(--c-primary); }
+[data-theme="dark"] .dq-rule { border-color: var(--c-border); }
+[data-theme="dark"] .admin-summary-card { border-color: var(--c-border); }
+[data-theme="dark"] .admin-summary-card:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.3); }
+[data-theme="dark"] .admin-class-card { border-color: var(--c-border); }
+[data-theme="dark"] .admin-class-card:hover { border-color: var(--c-primary-bg); box-shadow: 0 4px 16px rgba(0,0,0,0.3); }
+[data-theme="dark"] .admin-school-name { background: var(--c-surface-alt); }
+[data-theme="dark"] .grade-list-header:hover { background: var(--c-surface-alt); border-radius: 8px; }
+[data-theme="dark"] .admin-student-table th { border-bottom-color: var(--c-border); }
+[data-theme="dark"] .admin-student-table td { border-bottom-color: var(--c-border); }
 
-/* Mobile */
+/* Mobile — Data Quality */
 @media (max-width: 639px) {
   .dq-summary { flex-direction: column; align-items: stretch; }
   .dq-summary-actions { margin-left: 0; justify-content: flex-end; }
   .dq-rule { flex-wrap: wrap; }
   .dq-rule-actions { width: 100%; justify-content: flex-end; }
+  .admin-filter-bar .auth-input { max-width: 100%; }
 }
 
 /* ═══ DARK MODE: HOMEWORK / NOTIFICATIONS / FEEDBACK ═══ */

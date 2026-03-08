@@ -1,5 +1,25 @@
 # Changelog
 
+## [2.2.5] - 2026-03-08 — CIE/Edexcel 真题数据质量批量修复
+
+### 批量修复 2,901 处 LaTeX 质量问题
+- **修复范围**: CIE 709 处 + Edexcel 2,192 处，涉及 2,213 题（CIE 685 + EDX 1,528）
+- **13 条修复规则**: spacing/textbf/center/quad/tmarker/degree/pounds/minipage/renewcmd/hspace/subparts/parts/text_cmd
+- **自动修复**: `\\[Xcm]` 间距删除、`\textbf{}` → `**bold**`、`\begin{center}` 删除、`\quad` 外 → em-space、`t ` 行首标记删除、`\degree` → °、`\pounds` → £、`\begin{minipage}` 删除、`\renewcommand` 删除、`\hspace/\vspace` 删除
+- **结构修复**: `\begin{subparts}` + `\begin{parts}` → `(a)/(b)/(c)` 纯文本标号（48 + 51 题）
+- **语义修复**: `\text{}` 在数学模式外 → 移除包装保留内容（234 题原始，修复后仅剩 183 题在 `$...$` 内合法保留）
+- **修复后验证**: ERROR=0, 残余 65 `\quad` + 183 `\text{}` 均在 `$...$` 数学模式内（合法保留）
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `scripts/fix-papers-quality.py` | 新建 — 批量修复脚本（13 规则 + scan + apply） |
+| `data/papers-cie.json` | 修复 685 题中 709 处 LaTeX 问题 |
+| `data/papers-edx.json` | 修复 1,528 题中 2,192 处 LaTeX 问题 |
+| `js/config.js` | v2.2.4 → v2.2.5 |
+
+---
+
 ## [2.2.4] - 2026-03-08 — HHK 练习题扩容 Y8-Y11
 
 ### HHK MCQ 扩容（44 sections × 5 = 220 道新增）

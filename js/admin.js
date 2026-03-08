@@ -185,7 +185,7 @@ async function renderClassList() {
       cardsHtml += '<div class="admin-class-card" onclick="renderClassDetail(\'' + c.id + '\')">';
       cardsHtml += '<div class="admin-class-name">' + escapeHtml(c.name) + '</div>';
       if (_saView && _schoolNames[c.school_id]) {
-        cardsHtml += '<div style="font-size:11px;color:var(--c-text2);margin-bottom:4px">' + escapeHtml(_schoolNames[c.school_id]) + '</div>';
+        cardsHtml += '<div class="admin-class-school">' + escapeHtml(_schoolNames[c.school_id]) + '</div>';
       }
       cardsHtml += '<div class="admin-class-stats">';
       cardsHtml += '<span>' + count + ' ' + t('students', '学生') + '</span>';
@@ -866,7 +866,7 @@ async function renderAllUsers() {
   var boardMap = {};
   users.forEach(function(u) { var b = u.board || 'unknown'; boardMap[b] = (boardMap[b] || 0) + 1; });
   var boardKeys = Object.keys(boardMap).sort();
-  html += '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;align-items:center">';
+  html += '<div class="dq-board-pills">';
   html += '<button class="dq-pill' + (!_auFilter ? ' active' : '') + '" data-au-filter="">' + t('All', '全部') + ' (' + users.length + ')</button>';
   boardKeys.forEach(function(b) {
     html += '<button class="dq-pill' + (_auFilter === b ? ' active' : '') + '" data-au-filter="' + escapeHtml(b) + '">' + escapeHtml(b) + ': ' + boardMap[b] + '</button>';
@@ -874,8 +874,8 @@ async function renderAllUsers() {
   html += '</div>';
 
   /* Search + actions bar */
-  html += '<div style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;align-items:center">';
-  html += '<input type="text" class="auth-input" id="au-search" placeholder="' + t('Search name...', '搜索姓名...') + '" value="' + escapeHtml(_auSearch) + '" style="flex:1;min-width:160px;max-width:300px">';
+  html += '<div class="admin-filter-bar">';
+  html += '<input type="text" class="auth-input" id="au-search" placeholder="' + t('Search name...', '搜索姓名...') + '" value="' + escapeHtml(_auSearch) + '">';
   html += '<button class="btn btn-ghost btn-sm" data-au-action="refresh">' + t('Refresh', '刷新') + '</button>';
   html += '<button class="btn btn-primary btn-sm" data-au-action="csv">' + t('Export CSV', '导出 CSV') + '</button>';
   html += '</div>';
@@ -938,7 +938,7 @@ async function renderAllUsers() {
       html += '</tr>';
     });
     html += '</tbody></table></div>';
-    html += '<div style="font-size:12px;color:var(--c-text2);margin-top:4px">' + t('Showing', '显示') + ' ' + filtered.length + ' / ' + users.length + '</div>';
+    html += '<div class="admin-filter-count">' + t('Showing', '显示') + ' ' + filtered.length + ' / ' + users.length + '</div>';
   }
 
   ct.innerHTML = html;
