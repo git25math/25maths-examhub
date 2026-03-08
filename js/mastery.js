@@ -776,8 +776,8 @@ function openDeck(idx) {
 
 /* Guest lock prompt modal */
 function showGuestLockPrompt() {
-  var html = '<div style="text-align:center;padding:12px 0">';
-  html += '<div style="font-size:48px;margin-bottom:12px">\ud83d\udd12</div>';
+  var html = '<div class="ms-modal-center">';
+  html += '<div class="ms-modal-emoji">\ud83d\udd12</div>';
   html += '<div class="section-title">' + t('Login to Unlock', '\u767b\u5f55\u89e3\u9501\u5168\u90e8\u8bcd\u7ec4') + '</div>';
   html += '<p style="color:var(--c-text2);font-size:14px;margin:12px 0 20px">' + t('Create a free account to access all vocabulary groups, track progress, and join the leaderboard.', '\u514d\u8d39\u6ce8\u518c\u8d26\u53f7\u5373\u53ef\u89e3\u9501\u5168\u90e8\u8bcd\u7ec4\u3001\u8bb0\u5f55\u5b66\u4e60\u8fdb\u5ea6\u5e76\u52a0\u5165\u6392\u884c\u699c\u3002') + '</p>';
   html += '<div class="btn-row btn-row--mt0">';
@@ -789,10 +789,10 @@ function showGuestLockPrompt() {
 
 /* Guest signup prompt modal (benefits-focused, replaces lock prompt when GUEST_FULL_ACCESS) */
 function showGuestSignupPrompt() {
-  var html = '<div style="text-align:center;padding:12px 0">';
-  html += '<div style="font-size:48px;margin-bottom:12px">\u2728</div>';
+  var html = '<div class="ms-modal-center">';
+  html += '<div class="ms-modal-emoji">\u2728</div>';
   html += '<div class="section-title">' + t('Register for Free', '\u514d\u8d39\u6ce8\u518c') + '</div>';
-  html += '<div style="text-align:left;margin:16px 0 20px;font-size:14px;line-height:2">';
+  html += '<div class="ms-benefits-list">';
   html += '<div>\u2705 ' + t('Sync progress across devices', '\u8de8\u8bbe\u5907\u540c\u6b65\u5b66\u4e60\u8fdb\u5ea6') + '</div>';
   html += '<div>\ud83c\udfc6 ' + t('Join the leaderboard', '\u52a0\u5165\u6392\u884c\u699c\u7ade\u4e89') + '</div>';
   html += '<div>\ud83d\udcca ' + t('Track your learning history', '\u8bb0\u5f55\u5b66\u4e60\u5386\u53f2\u6570\u636e') + '</div>';
@@ -1081,7 +1081,7 @@ function renderPreview(idx) {
   });
   html += '</div>';
 
-  html += '<div style="margin-top:16px;text-align:center;display:flex;gap:8px;justify-content:center">';
+  html += '<div class="ms-preview-actions">';
   html += '<button class="btn btn-secondary" onclick="openDeck(' + idx + ')">\u2190 ' + t('Back', '\u8fd4\u56de\u5361\u7ec4') + '</button>';
   html += '<button class="btn btn-ghost no-print" onclick="window.print()">\ud83d\udda8 ' + t('Print', '\u6253\u5370') + '</button>';
   html += '</div>';

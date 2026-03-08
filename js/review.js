@@ -102,7 +102,7 @@ function renderReviewDash() {
     html += '</div>';
 
     if (appSearch && filtered.length === 0) {
-      html += '<div class="text-center text-muted" style="padding:16px 0">' + t('No matching words', '\u65e0\u5339\u914d\u8bcd\u6c47') + '</div>';
+      html += '<div class="text-center text-muted rv-empty-pad">' + t('No matching words', '\u65e0\u5339\u914d\u8bcd\u6c47') + '</div>';
     }
   }
 
@@ -132,7 +132,7 @@ function showEbbinghausGuide() {
 
   /* Principle */
   html += '<div class="guide-section">';
-  html += '<p class="text-sm text-sub mb-12" style="line-height:1.6;text-align:left">';
+  html += '<p class="text-sm text-sub mb-12 rv-guide-text">';
   html += t('In 1885, Ebbinghaus discovered the forgetting curve: without review, only 33% is retained after 24h. By reviewing at the critical forgetting point, short-term memory converts to long-term memory.', '1885 \u5e74\u827e\u5bbe\u6d69\u65af\u53d1\u73b0\u8bb0\u5fc6\u8870\u51cf\u89c4\u5f8b\uff1a\u4e0d\u590d\u4e60 \u2192 24h \u540e\u4ec5\u5269 33%\u3002\u901a\u8fc7\u5728\u9057\u5fd8\u4e34\u754c\u70b9\u8fdb\u884c\u590d\u4e60\uff0c\u53ef\u5c06\u77ed\u671f\u8bb0\u5fc6\u8f6c\u4e3a\u957f\u671f\u8bb0\u5fc6\u3002');
   html += '</p></div>';
 
@@ -165,7 +165,7 @@ function showEbbinghausGuide() {
   html += '<div class="guide-tip-item">\ud83d\udca1 ' + t('Spend 5 minutes daily on due words \u2014 30 days of consistency shows remarkable results', '\u6bcf\u5929\u82b1 5 \u5206\u949f\u5b8c\u6210\u5f85\u590d\u4e60\u8bcd\u6c47\uff0c\u575a\u6301 30 \u5929\u6548\u679c\u663e\u8457') + '</div>';
   html += '</div>';
 
-  html += '<button class="btn btn-ghost btn-block" onclick="hideModal()" style="margin-top:16px">' + t('Close', '\u5173\u95ed') + '</button>';
+  html += '<button class="btn btn-ghost btn-block mt-16" onclick="hideModal()">' + t('Close', '\u5173\u95ed') + '</button>';
   showModal(html);
 }
 
@@ -336,10 +336,10 @@ function finishReview() {
   html += '<div class="result-sub">' + (h === 0 ? t('Great progress!', '\u592a\u68d2\u4e86\uff01\u8fdb\u6b65\u660e\u663e') : t('Keep going, review again tomorrow', '\u7ee7\u7eed\u52a0\u6cb9\uff0c\u660e\u5929\u518d\u6765\u590d\u4e60')) + '</div>';
   html += '</div>';
 
-  html += '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:20px 0">';
-  html += '<div style="padding:12px;border-radius:var(--r);background:var(--c-danger-bg);text-align:center"><div style="font-size:22px;font-weight:800">' + h + '</div><div style="font-size:10px;font-weight:600">\ud83d\ude35 ' + t('Hard', '\u8fd8\u4e0d\u719f') + '</div></div>';
-  html += '<div style="padding:12px;border-radius:var(--r);background:var(--c-warning-bg);text-align:center"><div style="font-size:22px;font-weight:800">' + o + '</div><div style="font-size:10px;font-weight:600">\ud83e\udd14 ' + t('Almost', '\u5feb\u4e86') + '</div></div>';
-  html += '<div style="padding:12px;border-radius:var(--r);background:var(--c-success-bg);text-align:center"><div style="font-size:22px;font-weight:800">' + e + '</div><div style="font-size:10px;font-weight:600">\u2705 ' + t('Got it', '\u641e\u5b9a') + '</div></div>';
+  html += '<div class="rv-result-grid">';
+  html += '<div class="rv-result-cell" style="background:var(--c-danger-bg)"><div class="rv-result-num">' + h + '</div><div class="rv-result-label">\ud83d\ude35 ' + t('Hard', '\u8fd8\u4e0d\u719f') + '</div></div>';
+  html += '<div class="rv-result-cell" style="background:var(--c-warning-bg)"><div class="rv-result-num">' + o + '</div><div class="rv-result-label">\ud83e\udd14 ' + t('Almost', '\u5feb\u4e86') + '</div></div>';
+  html += '<div class="rv-result-cell" style="background:var(--c-success-bg)"><div class="rv-result-num">' + e + '</div><div class="rv-result-label">\u2705 ' + t('Got it', '\u641e\u5b9a') + '</div></div>';
   html += '</div>';
 
   html += '<div class="result-actions">';

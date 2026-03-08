@@ -1,5 +1,35 @@
 # Changelog
 
+## [2.3.12] - 2026-03-09 — 质量优化批次 4（内联样式清理 4 文件 + 空白页修复）
+
+### 空白页修复（独立 hotfix 已先发布）
+- **config.js `typeof` 守卫**: Supabase CDN 加载失败时 `supabase` 未定义不再抛出 ReferenceError 导致整包崩溃
+- **app.js 5s 超时**: `getSession()` 使用 `Promise.race` + 5s 超时，Supabase API 无响应时不再挂起
+- **index.html 看门狗**: 登录时间戳隐藏窗口 30min→5min，8s 看门狗定时器兜底恢复 auth overlay
+
+### 内联样式→CSS 类（~30 处）
+**mastery.js（4 处）**: `ms-modal-center` / `ms-modal-emoji` / `ms-benefits-list` / `ms-preview-actions` — guest lock/signup 弹窗统一用类
+**review.js（4 处）**: `rv-empty-pad` / `rv-guide-text` / `mt-16` / `rv-result-grid + rv-result-cell + rv-result-num + rv-result-label` — 复习结果格替换 7 个 inline style
+**practice.js（7 处）**: `pq-diag-summary` 清除 inline / `pp-diag-row` / `font-mono-sm` / `pp-cmd-stat-row + pp-q-topic-cell + pp-cmd-stat-score` / `pp-all-clear-title` / `pp-section-h4`（3 处 h4）
+**homework.js（11 处）**: `hw-scroll-list`（4 处重复）/ `hw-scroll-list-xl` / `hw-checkbox-label`（2 处）/ `hw-checkbox-heading` / `hw-checkbox-label-indent` / `hw-list-item-wrap`（2 处）/ `hw-section-title mt-20` / `hw-tip-row`
+
+### 新 CSS 工具类（32 个）
+`hw-scroll-list` / `hw-scroll-list-xl` / `hw-checkbox-label` / `hw-checkbox-label-indent` / `hw-checkbox-heading` / `hw-tip-row` / `hw-list-item-wrap` / `mb-12` / `mt-20` / `rv-empty-pad` / `rv-guide-text` / `rv-result-grid` / `rv-result-cell` / `rv-result-num` / `rv-result-label` / `ms-modal-center` / `ms-modal-emoji` / `ms-benefits-list` / `ms-preview-actions` / `pq-diag-summary` (CSS 扩展) / `pp-diag-row` / `pp-cmd-stat-row` / `pp-cmd-stat-score` / `pp-all-clear-title` / `pp-section-h4` / `font-mono-sm`
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `css/style.css` | ~32 新工具类 |
+| `js/mastery.js` | 4 处 inline→class |
+| `js/review.js` | 6 处 inline→class |
+| `js/practice.js` | 7 处 inline→class |
+| `js/homework.js` | 11 处 inline→class |
+| `js/config.js` | v2.3.11 → v2.3.12 + typeof 守卫 |
+| `js/app.js` | getSession 5s 超时 |
+| `index.html` | 看门狗 + 5min 窗口 |
+
+---
+
 ## [2.3.11] - 2026-03-08 — 质量优化批次 3（可访问性扩展 + 内联样式清理）
 
 ### 可访问性（31 处 role/tabindex）

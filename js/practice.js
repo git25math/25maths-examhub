@@ -220,13 +220,13 @@ function _diagSummary(answers, questions) {
   }
   var keys = Object.keys(counts);
   if (keys.length === 0) return '';
-  var html = '<div class="pq-diag-summary" style="margin-top:16px;text-align:left;max-width:360px;margin-left:auto;margin-right:auto">';
+  var html = '<div class="pq-diag-summary">';
   html += '<div class="fw-700 mb-8">' + t('Diagnostic Analysis', '\u8bca\u65ad\u5206\u6790') + '</div>';
   for (var k = 0; k < keys.length; k++) {
     var key = keys[k];
     var dl = _DIAG_LABELS[key];
     if (!dl) continue;
-    html += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">';
+    html += '<div class="pp-diag-row">';
     html += '<span>' + dl.icon + '</span>';
     html += '<span>' + t(dl.en, dl.zh) + '</span>';
     html += '<span style="color:var(--c-danger);font-weight:600">(' + counts[key] + ')</span>';
@@ -2417,7 +2417,7 @@ function editPastPaperQ(qIdx) {
 
   /* Editable fields */
   html += '<label class="settings-label">' + t('Question Text (LaTeX)', '题目文本 (LaTeX)') + '</label>';
-  html += '<textarea class="bug-textarea" id="pp-ed-tex" rows="8" style="font-family:var(--font-mono);font-size:12px">' + escapeHtml(q.tex) + '</textarea>';
+  html += '<textarea class="bug-textarea font-mono-sm" id="pp-ed-tex" rows="8">' + escapeHtml(q.tex) + '</textarea>';
 
   html += '<div class="btn-row btn-row--gap12">';
 
@@ -2647,10 +2647,10 @@ function ppShowResults(exam, conceptErrors) {
       var ce = conceptErrors[c];
       var cpct = Math.round((ce.scored / ce.total) * 100);
       var icon = cpct >= 80 ? '\u2705' : cpct >= 40 ? '\ud83d\udfe1' : '\ud83d\udd34';
-      html += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;font-size:13px">';
+      html += '<div class="pp-cmd-stat-row">';
       html += '<span>' + icon + '</span>';
-      html += '<span style="flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">' + c + '</span>';
-      html += '<span style="font-weight:600;font-family:var(--font-mono)">' + ce.scored + '/' + ce.total + '</span>';
+      html += '<span class="pp-q-topic-cell">' + c + '</span>';
+      html += '<span class="pp-cmd-stat-score">' + ce.scored + '/' + ce.total + '</span>';
       html += '</div>';
     }
   }
@@ -2742,7 +2742,7 @@ function ppShowWrongBook(sectionId, board) {
     if (wrongItems.length === 0) {
       html += '<div class="pp-empty">';
       html += '<div class="pp-empty-icon">\ud83c\udf89</div>';
-      html += '<div style="font-size:16px;font-weight:600;margin-bottom:8px">' + t('All clear!', '\u5168\u90e8\u89e3\u51b3\uff01') + '</div>';
+      html += '<div class="pp-all-clear-title">' + t('All clear!', '\u5168\u90e8\u89e3\u51b3\uff01') + '</div>';
       html += '<div>' + t('No questions to review \u2014 keep up the great work!', '\u6ca1\u6709\u5f85\u590d\u4e60\u7684\u9898\u76ee\uff0c\u7ee7\u7eed\u4fdd\u6301\uff01') + '</div>';
       html += '</div>';
     } else {
@@ -3023,7 +3023,7 @@ function ppShowPaperDetail(paperKey, board) {
     }
   }
   if (Object.keys(topicCounts).length > 0) {
-    html += '<h4 style="margin:20px 0 8px">' + t('Topics', '知识点分布') + '</h4>';
+    html += '<h4 class="pp-section-h4">' + t('Topics', '知识点分布') + '</h4>';
     html += '<div class="pp-topic-chips">';
     for (var tp in topicCounts) {
       html += '<span class="pp-error-chip">' + tp + ' (' + topicCounts[tp] + ')</span>';
@@ -3038,7 +3038,7 @@ function ppShowPaperDetail(paperKey, board) {
     cmdCounts[ck] = (cmdCounts[ck] || 0) + 1;
   }
   if (Object.keys(cmdCounts).length > 1) {
-    html += '<h4 style="margin:20px 0 8px">' + t('Command Words', '\u6307\u4ee4\u52a8\u8bcd\u5206\u5e03') + '</h4>';
+    html += '<h4 class="pp-section-h4">' + t('Command Words', '\u6307\u4ee4\u52a8\u8bcd\u5206\u5e03') + '</h4>';
     html += '<div class="pp-topic-chips">';
     var cmdOrd = (typeof PP_CMD_ORDER !== 'undefined') ? PP_CMD_ORDER : Object.keys(cmdCounts);
     for (var coi = 0; coi < cmdOrd.length; coi++) {
@@ -3060,7 +3060,7 @@ function ppShowPaperDetail(paperKey, board) {
   html += '</div>';
 
   /* Question list preview */
-  html += '<h4 style="margin:24px 0 8px">' + t('Questions', '题目列表') + '</h4>';
+  html += '<h4 class="pp-section-h4">' + t('Questions', '题目列表') + '</h4>';
   for (var qi = 0; qi < questions.length; qi++) {
     var q = questions[qi];
     var mastery = _ppGetQMastery(q.id);

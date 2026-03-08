@@ -93,7 +93,7 @@ function showNotifPanel() {
   if (notifs.length === 0) {
     html += '<div style="padding:20px;text-align:center;color:var(--c-text2);font-size:14px">' + t('No notifications', '暂无通知') + '</div>';
   } else {
-    html += '<div style="max-height:400px;overflow-y:auto">';
+    html += '<div class="hw-scroll-list-xl">';
     notifs.forEach(function(n) {
       var unread = !n.is_read;
       var time = n.created_at ? timeAgo(n.created_at) : '';
@@ -264,7 +264,7 @@ function showCreateHwModal(classId) {
       deckHtml += '<div class="mb-8">';
       deckHtml += '<div class="fw-600 text-muted mb-4" style="font-size:12px">' + cat.emoji + ' ' + catName(cat) + '</div>';
       catDecks.forEach(function(cl) {
-        deckHtml += '<label class="flex items-center gap-6 text-sm" style="padding:3px 0;cursor:pointer">';
+        deckHtml += '<label class="flex items-center gap-6 text-sm hw-checkbox-label">';
         deckHtml += '<input type="checkbox" class="hw-deck-cb" value="' + cl.lv.slug + '">';
         deckHtml += lvTitle(cl.lv) + ' (' + Math.floor(cl.lv.vocabulary.length / 2) + ' ' + t('words', '词') + ')';
         deckHtml += '</label>';
@@ -308,7 +308,7 @@ function showCreateHwModal(classId) {
 
   /* Deck selection area (default visible) */
   html += '<div id="hw-deck-area">';
-  html += '<div style="max-height:200px;overflow-y:auto;border:1px solid var(--c-border);border-radius:8px;padding:8px 12px">';
+  html += '<div class="hw-scroll-list">';
   html += deckHtml;
   html += '</div>';
   html += '</div>';
@@ -342,7 +342,7 @@ function showCreateHwModal(classId) {
   html += '<option value="">' + t('All', '全部') + '</option><option value="1">Core</option><option value="2">Extended</option>';
   html += '</select></div>';
   html += '</div>';
-  html += '<div id="hw-pq-sections" style="max-height:200px;overflow-y:auto;border:1px solid var(--c-border);border-radius:8px;padding:8px 12px">';
+  html += '<div id="hw-pq-sections" class="hw-scroll-list">';
   html += '<div class="text-muted text-sm">' + t('Loading...', '加载中...') + '</div>';
   html += '</div>';
   html += '</div>';
@@ -406,13 +406,13 @@ function _renderHwSections(board) {
     if (chSecs.length === 0) return;
     var chId = 'hw-ch-' + board + '-' + ch.num;
     html += '<div style="margin-bottom:6px">';
-    html += '<label class="flex items-center gap-6 fw-600 text-muted" style="font-size:12px;cursor:pointer;padding:2px 0">';
+    html += '<label class="flex items-center gap-6 fw-600 text-muted hw-checkbox-heading">';
     html += '<input type="checkbox" class="hw-ch-cb" data-ch="' + ch.num + '" data-board="' + board + '" onchange="_hwToggleChapter(this)">';
     html += ch.num + '. ' + ch.title;
     if (ch.title_zh) html += ' ' + ch.title_zh;
     html += '</label>';
     chSecs.forEach(function(sec) {
-      html += '<label class="flex items-center gap-6 text-sm" style="padding:2px 0 2px 20px;cursor:pointer">';
+      html += '<label class="flex items-center gap-6 text-sm hw-checkbox-label-indent">';
       html += '<input type="checkbox" class="hw-sec-cb" value="' + sec.id + '" data-ch="' + ch.num + '" data-board="' + board + '">';
       html += sec.id + ' ' + sec.title;
       html += ' <span class="text-muted text-xs">(' + (secCounts[sec.id] || 0) + ')</span>';
@@ -535,9 +535,9 @@ function showCreateCustomHwModal(classId, studentUserId, studentName, wrongWords
   html += '<input class="auth-input" id="chw-title" value="' + t('Error Words Review', '错词复习') + '">';
 
   html += '<label class="settings-label">' + t('Words', '词汇') + ' (' + wordsToUse.length + '/' + t('max 10', '最多10') + ')</label>';
-  html += '<div style="max-height:200px;overflow-y:auto;border:1px solid var(--c-border);border-radius:8px;padding:8px 12px">';
+  html += '<div class="hw-scroll-list">';
   wordsToUse.forEach(function(w, i) {
-    html += '<label class="flex items-center gap-6 text-sm" style="padding:3px 0;cursor:pointer">';
+    html += '<label class="flex items-center gap-6 text-sm hw-checkbox-label">';
     html += '<input type="checkbox" class="chw-word-cb" data-word="' + escapeHtml(w.word || '').replace(/"/g, '&quot;') + '" data-def="' + escapeHtml(w.def || '').replace(/"/g, '&quot;') + '" checked>';
     html += '<strong>' + escapeHtml(w.word || '') + '</strong> — ' + escapeHtml(w.def || '');
     html += '</label>';
@@ -904,7 +904,7 @@ async function showStudentHwDetail(hwId, studentUserId, studentName, classId) {
 
   if (wrongWords.length > 0) {
     html += '<label class="settings-label text-danger">' + t('Wrong Words', '错词') + ' (' + wrongWords.length + ')</label>';
-    html += '<div style="max-height:200px;overflow-y:auto;border:1px solid var(--c-border);border-radius:8px;padding:8px 12px;margin-bottom:12px">';
+    html += '<div class="hw-scroll-list mb-12">';
     wrongWords.forEach(function(w) {
       html += '<div style="padding:4px 0;font-size:13px;border-bottom:1px solid var(--c-border-light)">';
       html += '<strong>' + escapeHtml(w.word || '') + '</strong> — ' + escapeHtml(w.def || '');
@@ -1054,7 +1054,7 @@ async function showStudentHwPage() {
       countLabel = pWords.length + ' ' + t('words', '\u8bcd');
     }
 
-    html += '<div class="hw-list-item" style="flex-wrap:wrap">';
+    html += '<div class="hw-list-item hw-list-item-wrap">';
     html += '<div style="display:flex;align-items:center;gap:8px;width:100%">';
     html += '<span class="hw-list-title flex-1">' + prefix + escapeHtml(hw.title) + ' <span style="font-size:11px;color:var(--c-text2)">(' + countLabel + ')</span></span>';
     if (hasResult) {
@@ -1084,7 +1084,7 @@ async function showStudentHwPage() {
   });
 
   /* Completed section */
-  html += '<div class="hw-section-title" style="margin-top:20px">' + t('Completed', '\u5df2\u5b8c\u6210') + ' (' + completed.length + ')</div>';
+  html += '<div class="hw-section-title mt-20">' + t('Completed', '\u5df2\u5b8c\u6210') + ' (' + completed.length + ')</div>';
   completed.forEach(function(hw) {
     var r = hw._result;
     var pct = r.total_count > 0 ? Math.round(r.correct_count / r.total_count * 100) : 0;
@@ -1099,12 +1099,12 @@ async function showStudentHwPage() {
     else if (pct >= 70) tip = isPractice2 ? t('Good! Try harder questions', '\u4e0d\u9519\uff01\u8bd5\u8bd5\u66f4\u96be\u7684\u9898') : t('Good! Review wrong words', '\u4e0d\u9519\uff01\u590d\u4e60\u4e00\u4e0b\u9519\u8bcd');
     else tip = isPractice2 ? t('Review the sections and try again', '\u590d\u4e60\u77e5\u8bc6\u70b9\u540e\u518d\u8bd5') : t('Keep practicing this group', '\u7ee7\u7eed\u7ec3\u4e60\u8fd9\u4e2a\u8bcd\u7ec4');
 
-    html += '<div class="hw-list-item" style="flex-wrap:wrap">';
+    html += '<div class="hw-list-item hw-list-item-wrap">';
     html += '<span class="hw-list-title">' + prefix2 + escapeHtml(hw.title) + '</span>';
     html += '<span style="font-size:12px;font-weight:600;color:' + (pct >= 70 ? 'var(--c-success)' : 'var(--c-warning)') + '">' + r.correct_count + '/' + r.total_count + ' (' + pct + '%)</span>';
     html += '<span class="hw-list-deadline">' + completedDate + '</span>';
     html += '<button class="btn btn-ghost btn-sm" data-action="hw-retry" data-hwid="' + hw.id + '" data-practice="' + (isPractice2 ? '1' : '0') + '">' + t('Retry', '\u91cd\u505a') + '</button>';
-    html += '<div style="width:100%;font-size:11px;color:var(--c-text2);margin-top:4px">\ud83d\udca1 ' + tip + '</div>';
+    html += '<div class="hw-tip-row">\ud83d\udca1 ' + tip + '</div>';
     html += '</div>';
   });
 
