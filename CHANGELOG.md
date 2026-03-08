@@ -1,5 +1,24 @@
 # Changelog
 
+## [2.2.26] - 2026-03-08 — 划词翻译第二轮优化
+
+### 增强
+- **复制按钮**: 翻译/词典/词库结果均可一键复制（Clipboard API + execCommand 兼容）
+- **同文本检测**: 百度返回 dst === src 时视为无翻译，自动降级 Dict API
+- **纯数字/符号跳过**: 选中 "123" "+" 等不触发 API 请求
+- **网络错误提示**: 翻译失败显示红色"翻译失败"1.5s 后自动消失（不再静默）
+- **sessionStorage 持久缓存**: 百度翻译结果页面刷新不丢失
+- **展开/收起文本修复**: 收起后恢复原始 "+N more" 文本（`data-stt-more-label`）
+- **移除未使用的 `_escAttr` 函数**
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `js/translate.js` | +`_sttCopyText()` + `_showSTTError()` + `_isTranslatable()` + `_sttPersistBaidu()` + dst===src 检测 |
+| `js/config.js` | v2.2.25 → v2.2.26 |
+
+---
+
 ## [2.2.25] - 2026-03-08 — 空引用防护 + 性能优化
 
 ### 修复

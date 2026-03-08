@@ -10,10 +10,21 @@ var _sttEnabled = (function() { try { return localStorage.getItem('wmatch_transl
 var _sttIndex = null;
 var _sttPopupEl = null;
 var _sttDebounce = null;
-var _sttDictCache = {};   /* API result cache: word → response | null */
+var _sttDictCache = {};   /* Dict API cache: word → response | null */
 var _sttDictPending = null; /* current pending fetch abort controller */
-var _sttBaiduCache = {};  /* Baidu translate cache: word → { src, dst, from, to } | null */
-var _STT_CACHE_MAX = 200; /* max entries per cache */
+var _sttBaiduCache = {};  /* Baidu cache: word → { src, dst, from, to } | null */
+var _STT_CACHE_MAX = 200;
+
+/* ─── Restore Baidu cache from sessionStorage ─── */
+(function() {
+  try {
+    var raw = sessionStorage.getItem('stt_baidu');
+    if (raw) _sttBaiduCache = JSON.parse(raw);
+  } catch(e) {}
+})();
+function _sttPersistBaidu() {
+  try { sessionStorage.setItem('stt_baidu', JSON.stringify(_sttBaiduCache)); } catch(e) {}
+}
 
 /* ─── Cache with LRU eviction ─── */
 function _sttCacheSet(cache, key, val) {
@@ -37,13 +48,11 @@ function _buildSTTIndex() {
       var w = p.word || '';
       var d = p.def || '';
       var entry = { word: w, def: d, levelIdx: i, wordId: p.lid };
-      /* English → Chinese */
       var wKey = w.toLowerCase().trim();
       if (wKey) {
         if (!_sttIndex[wKey]) _sttIndex[wKey] = [];
         _sttIndex[wKey].push(entry);
       }
-      /* Chinese → English */
       var dKey = d.trim();
       if (dKey) {
         var rev = { word: d, def: w, levelIdx: i, wordId: p.lid };
@@ -60,10 +69,8 @@ function _lookupSTT(text) {
   var idx = _buildSTTIndex();
   var key = text.toLowerCase().trim();
   if (idx[key]) return idx[key];
-  /* Also try original (Chinese is case-insensitive-irrelevant but trim matters) */
   var trimmed = text.trim();
   if (idx[trimmed]) return idx[trimmed];
-  /* Basic English stemming: remove common suffixes */
   var stems = [];
   if (key.endsWith('ies')) stems.push(key.slice(0, -3) + 'y');
   if (key.endsWith('es')) stems.push(key.slice(0, -2));
@@ -76,15 +83,21 @@ function _lookupSTT(text) {
   return null;
 }
 
-/* ─── Detect if text is English (Latin alphabet) ─── */
+/* ─── Text type detection ─── */
 function _isEnglish(text) {
   return /^[a-zA-Z][a-zA-Z\s\-']{0,58}$/.test(text.trim());
 }
+function _isTranslatable(text) {
+  var t = text.trim();
+  /* Skip pure numbers, symbols, single chars */
+  if (/^[\d\s\+\-\*\/\=\.\,\;\:\!\?\(\)\[\]\{\}]+$/.test(t)) return false;
+  if (t.length < 2) return false;
+  return true;
+}
 
-/* ─── Baidu Translate via Edge Function (primary fallback) ─── */
+/* ─── Baidu Translate via Edge Function ─── */
 function _fetchBaiduTranslate(text, rect) {
   var key = text.toLowerCase().trim();
-  /* Check cache */
   if (key in _sttBaiduCache) {
     if (_sttBaiduCache[key]) {
       _showBaiduPopup(_sttBaiduCache[key], rect);
@@ -93,7 +106,6 @@ function _fetchBaiduTranslate(text, rect) {
     }
     return;
   }
-  /* Abort previous pending request */
   if (_sttDictPending) {
     try { _sttDictPending.abort(); } catch(e) {}
     _sttDictPending = null;
@@ -115,8 +127,9 @@ function _fetchBaiduTranslate(text, rect) {
       _sttDictPending = null;
       if (data.error || !data.results || data.results.length === 0) {
         _sttCacheSet(_sttBaiduCache, key, null);
+        _sttPersistBaidu();
         if (isEn) { _fetchDictAPI(text, rect); return; }
-        _hideSTTPopup();
+        _showSTTError(rect);
         return;
       }
       var result = {
@@ -125,7 +138,16 @@ function _fetchBaiduTranslate(text, rect) {
         from: data.from,
         to: data.to
       };
+      /* If dst === src (no real translation), treat as failure */
+      if (result.dst.toLowerCase().trim() === result.src.toLowerCase().trim()) {
+        _sttCacheSet(_sttBaiduCache, key, null);
+        _sttPersistBaidu();
+        if (isEn) { _fetchDictAPI(text, rect); return; }
+        _hideSTTPopup();
+        return;
+      }
       _sttCacheSet(_sttBaiduCache, key, result);
+      _sttPersistBaidu();
       _showBaiduPopup(result, rect);
     })
     .catch(function(err) {
@@ -133,35 +155,37 @@ function _fetchBaiduTranslate(text, rect) {
       if (err && err.name === 'AbortError') return;
       _sttCacheSet(_sttBaiduCache, key, null);
       if (isEn) { _fetchDictAPI(text, rect); return; }
-      _hideSTTPopup();
+      _showSTTError(rect);
     });
 }
 
 /* ─── Show Baidu translation popup ─── */
 function _showBaiduPopup(result, rect) {
   if (!_sttPopupEl) return;
-  var dir = (result.from === 'en') ? 'EN → ZH' : 'ZH → EN';
+  var dir = (result.from === 'en') ? 'EN \u2192 ZH' : 'ZH \u2192 EN';
   var html = '<div class="stt-popup-word">' + _escHtml(result.src) + '</div>' +
     '<div class="stt-popup-def" style="font-size:1.05rem">' + _escHtml(result.dst) + '</div>' +
     '<div class="stt-popup-meta">' +
-      '<span class="stt-popup-badge stt-popup-badge--translate">' + t('Translation', '翻译') + '</span>' +
+      '<span class="stt-popup-badge stt-popup-badge--translate">' + t('Translation', '\u7ffb\u8bd1') + '</span>' +
       '<span class="stt-popup-dir">' + dir + '</span>' +
+    '</div>' +
+    '<div class="stt-popup-actions">' +
+      '<button class="btn btn-ghost btn-sm" data-stt-copy="' + _escHtml(result.dst) + '">' + t('Copy', '\u590d\u5236') + '</button>' +
     '</div>';
   _sttPopupEl.innerHTML = html;
-  _positionPopup(rect, 100);
+  _positionPopup(rect, 120);
   _sttPopupEl.classList.add('show');
   _sttReposition(rect);
 }
 
-/* ─── Free Dictionary API fallback (English pronunciation + definitions) ─── */
+/* ─── Free Dictionary API fallback ─── */
 function _fetchDictAPI(word, rect) {
   var key = word.toLowerCase().trim();
-  /* Check cache */
   if (key in _sttDictCache) {
     if (_sttDictCache[key]) _showDictPopup(_sttDictCache[key], rect);
+    else _hideSTTPopup();
     return;
   }
-  /* Abort previous pending request */
   if (_sttDictPending) {
     try { _sttDictPending.abort(); } catch(e) {}
     _sttDictPending = null;
@@ -220,7 +244,16 @@ function _showSTTLoading(rect) {
   _sttPopupEl.classList.add('show');
 }
 
-/* ─── Show dictionary API result popup ─── */
+/* ─── Show error state ─── */
+function _showSTTError(rect) {
+  if (!_sttPopupEl) return;
+  _sttPopupEl.innerHTML = '<div class="stt-popup-loading" style="color:var(--c-danger)">' + t('Translation failed', '\u7ffb\u8bd1\u5931\u8d25') + '</div>';
+  _positionPopup(rect, 50);
+  _sttPopupEl.classList.add('show');
+  setTimeout(_hideSTTPopup, 1500);
+}
+
+/* ─── Show dictionary result popup ─── */
 function _showDictPopup(result, rect) {
   if (!_sttPopupEl) return;
   var html = '<div class="stt-popup-word">' + _escHtml(result.word);
@@ -245,6 +278,10 @@ function _showDictPopup(result, rect) {
   if (result.defs.length === 0) {
     html += '<div class="stt-popup-def">' + t('No definition found', '\u672a\u627e\u5230\u91ca\u4e49') + '</div>';
   }
+  /* Copy first definition */
+  if (result.defs.length > 0) {
+    html += '<div class="stt-popup-actions"><button class="btn btn-ghost btn-sm" data-stt-copy="' + _escHtml(result.defs[0].text) + '">' + t('Copy', '\u590d\u5236') + '</button></div>';
+  }
   _sttPopupEl.innerHTML = html;
   _positionPopup(rect, 160);
   _sttPopupEl.classList.add('show');
@@ -254,6 +291,24 @@ function _showDictPopup(result, rect) {
 /* ─── Play pronunciation audio ─── */
 function _sttPlayAudio(url) {
   try { new Audio(url).play(); } catch(e) {}
+}
+
+/* ─── Copy to clipboard ─── */
+function _sttCopyText(text) {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(function() {
+      showToast(t('Copied', '\u5df2\u590d\u5236'));
+    }).catch(function() {});
+  } else {
+    /* Fallback for older browsers */
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;left:-9999px';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); showToast(t('Copied', '\u5df2\u590d\u5236')); } catch(e) {}
+    document.body.removeChild(ta);
+  }
 }
 
 /* ─── Word status helper ─── */
@@ -316,11 +371,13 @@ function _showSTTPopup(matches, rect) {
   }
   html += '<button class="btn btn-ghost btn-sm" data-stt-deck="' + m.levelIdx + '">' +
     t('Open Deck', '\u6253\u5f00\u8bcd\u7ec4') + '</button>';
+  html += '<button class="btn btn-ghost btn-sm" data-stt-copy="' + _escHtml(m.def) + '">' +
+    t('Copy', '\u590d\u5236') + '</button>';
   html += '</div>';
 
   if (matches.length > 1) {
-    html += '<div class="stt-popup-more" data-stt-toggle="more">' +
-      '+' + (matches.length - 1) + ' ' + t('more', '\u66f4\u591a') + '</div>';
+    var moreLabel = '+' + (matches.length - 1) + ' ' + t('more', '\u66f4\u591a');
+    html += '<div class="stt-popup-more" data-stt-toggle="more" data-stt-more-label="' + _escHtml(moreLabel) + '">' + moreLabel + '</div>';
     html += '<div class="stt-popup-extra" style="display:none">';
     for (var j = 1; j < matches.length; j++) {
       var mj = matches[j];
@@ -360,33 +417,28 @@ function _sttOpenDeck(levelIdx) {
 function _escHtml(s) {
   return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
-function _escAttr(s) {
-  return s.replace(/'/g, "\\'").replace(/"/g, '&quot;');
-}
 
-/* ─── Event delegation for popup clicks (no inline onclick) ─── */
+/* ─── Event delegation for popup clicks ─── */
 function _onSTTPopupClick(e) {
   var el = e.target;
-  /* Audio button */
   var audioBtn = el.closest('[data-stt-audio]');
   if (audioBtn) { _sttPlayAudio(audioBtn.getAttribute('data-stt-audio')); return; }
-  /* Start Learn button */
+  var copyBtn = el.closest('[data-stt-copy]');
+  if (copyBtn) { _sttCopyText(copyBtn.getAttribute('data-stt-copy')); return; }
   var learnBtn = el.closest('[data-stt-learn]');
   if (learnBtn) {
     _sttStartLearn(parseInt(learnBtn.getAttribute('data-stt-learn'), 10), learnBtn.getAttribute('data-stt-wid'));
     return;
   }
-  /* Open Deck button */
   var deckBtn = el.closest('[data-stt-deck]');
   if (deckBtn) { _sttOpenDeck(parseInt(deckBtn.getAttribute('data-stt-deck'), 10)); return; }
-  /* Toggle more */
   var moreBtn = el.closest('[data-stt-toggle]');
   if (moreBtn) {
     var extra = moreBtn.nextElementSibling;
     if (!extra) return;
     var expanded = extra.style.display !== 'none';
     extra.style.display = expanded ? 'none' : 'block';
-    moreBtn.textContent = expanded ? moreBtn.textContent : t('Collapse', '\u6536\u8d77');
+    moreBtn.textContent = expanded ? (moreBtn.getAttribute('data-stt-more-label') || '') : t('Collapse', '\u6536\u8d77');
   }
 }
 
@@ -395,7 +447,6 @@ function _onSTTSelection() {
   if (!_sttEnabled) return;
   clearTimeout(_sttDebounce);
   _sttDebounce = setTimeout(function() {
-    /* Skip in game modes / modal visible */
     if (appView === 'battle' || appView === 'match' || appView === 'daily') return;
     var overlay = E('modal-overlay');
     if (overlay && overlay.style.display !== 'none') return;
@@ -403,15 +454,17 @@ function _onSTTSelection() {
     var sel = window.getSelection();
     if (!sel || sel.rangeCount === 0) { _hideSTTPopup(); return; }
     var text = sel.toString().trim();
-    if (!text || text.length < 1 || text.length > 60) { _hideSTTPopup(); return; }
+    if (!text || text.length > 60) { _hideSTTPopup(); return; }
 
-    /* Skip if selection is inside input/textarea or the popup itself */
     var anchor = sel.anchorNode;
     if (anchor) {
       var parent = anchor.nodeType === 3 ? anchor.parentElement : anchor;
       if (parent && (parent.closest('input, textarea, [contenteditable]') ||
           parent.closest('#stt-popup'))) return;
     }
+
+    /* Skip pure numbers/symbols */
+    if (!_isTranslatable(text)) { _hideSTTPopup(); return; }
 
     var range = sel.getRangeAt(0);
     var rect = range.getBoundingClientRect();
@@ -423,13 +476,8 @@ function _onSTTSelection() {
       return;
     }
 
-    /* Fallback: Baidu Translate (EN↔ZH), then Free Dictionary API */
-    if (text.length >= 2) {
-      _fetchBaiduTranslate(text, rect);
-      return;
-    }
-
-    _hideSTTPopup();
+    /* Fallback: Baidu Translate → Dict API */
+    _fetchBaiduTranslate(text, rect);
   }, 300);
 }
 
