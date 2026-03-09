@@ -31,6 +31,7 @@ function invalidateCache() {
   _cacheDirty = true;
   _allWordsCache = null;
   _wordDataCache = null;
+  _staleCacheData = null;
   if (typeof _quizCache !== 'undefined') _quizCache = null;
   if (typeof _catLevelIndex !== 'undefined') _catLevelIndex = null;
   if (typeof _hhkSlugIdx !== 'undefined') _hhkSlugIdx = null;
@@ -407,10 +408,17 @@ function getAllWords() {
 
 /* ═══ MASTERED DECAY — REFRESH SCAN ═══ */
 
-/* Get stale mastered words (exceeded refresh interval) */
+/* Get stale mastered words (exceeded refresh interval) — 30s TTL cache */
+var _staleCacheData = null;
+var _staleCacheTime = 0;
+var STALE_CACHE_TTL = 30000;
+
 function getStaleWords() {
-  var all = getAllWords();
   var now = Date.now();
+  if (_staleCacheData && !_cacheDirty && (now - _staleCacheTime) < STALE_CACHE_TTL) {
+    return _staleCacheData;
+  }
+  var all = getAllWords();
   var stale = [];
   for (var i = 0; i < all.length; i++) {
     var w = all[i];
@@ -425,6 +433,8 @@ function getStaleWords() {
     }
   }
   stale.sort(function(a, b) { return b.daysSince - a.daysSince; });
+  _staleCacheData = stale;
+  _staleCacheTime = now;
   return stale;
 }
 
@@ -465,8 +475,47 @@ function recordRefreshScan(key, verdict) {
     stars: prev.stars != null ? prev.stars : computeStars(ok, fail)
   };
 
+  /* Daily history */
+  if (!s.history) s.history = [];
+  var today = new Date().toLocaleDateString('en-CA');
+  var entry = null;
+  for (var hi = s.history.length - 1; hi >= 0; hi--) {
+    if (s.history[hi].d === today) { entry = s.history[hi]; break; }
+  }
+  if (!entry) {
+    entry = { d: today, a: 0, ok: 0, fail: 0, m: 0 };
+    s.history.push(entry);
+  }
+  entry.a++;
+  if (verdict === 'unknown') entry.fail++;
+  var _wds = s.words || {};
+  var _mc = 0;
+  for (var _wk in _wds) { if (_wds[_wk].fs === 'mastered') _mc++; }
+  entry.m = _mc;
+  if (s.history.length > 365) {
+    s.history = s.history.slice(s.history.length - 365);
+  }
+
+  /* Streak */
+  if (!s.streak) s.streak = { cur: 0, max: 0, last: '' };
+  var _last = s.streak.last;
+  var _newStreak = false;
+  if (today !== _last) {
+    var _td = new Date(today + 'T00:00:00');
+    var _ld = _last ? new Date(_last + 'T00:00:00') : null;
+    var _diff = _ld ? Math.round((_td - _ld) / 86400000) : 999;
+    s.streak.cur = (_diff === 1) ? (s.streak.cur || 0) + 1 : 1;
+    if (s.streak.cur > (s.streak.max || 0)) s.streak.max = s.streak.cur;
+    s.streak.last = today;
+    _newStreak = true;
+  }
+
+  _staleCacheData = null;
   _cacheDirty = true;
   writeS(s);
+  if (_newStreak) showToast('\ud83d\udd25 ' + t(getStreakCount() + '-day streak!', '\u8fde\u7eed\u5b66\u4e60 ' + getStreakCount() + ' \u5929\uff01'));
+  clearTimeout(_badgeCheckTimer);
+  _badgeCheckTimer = setTimeout(function() { if (typeof checkBadges === 'function') checkBadges(); }, 3000);
   debouncedSync();
 }
 

@@ -1,5 +1,38 @@
 # Changelog
 
+## [2.8.0] - 2026-03-09 — FLM 质量加固 + 数据完整性
+
+### 性能优化
+- `getStaleWords()` 新增 30 秒 TTL 缓存，避免 Today's Plan + Hero 重复遍历 2,200 词
+- 缓存在 `writeS()` / `invalidateCache()` / `recordRefreshScan()` 时自动失效
+
+### 数据完整性
+- `exportProgress()` 导出新增 `rc`（复查次数）、`fmt`（mastered 时间戳）、`src`（来源标识）字段
+- 导入后衰退状态完整保留，不再丢失 mastered 衰退进度
+
+### FLM 断点修复
+- `recordRefreshScan()` 补全 daily history + streak 逻辑，Refresh Scan 活动正式计入学习记录
+- Daily Challenge 优先从 learning/uncertain 词池选题，pool 不足时补 mastered 词
+
+### UX 增强
+- 侧栏 + 底栏 Plan 按钮新增红色 badge 显示 stale 词数量
+- Deck 详情页新增黄色 "words getting stale" refresh banner + Quick Refresh 按钮
+- 统计页新增 "Mastery Stability" 区块：已掌握/正在衰退/稳定率/回流词 四格卡片
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| storage.js | getStaleWords 30s 缓存 + recordRefreshScan 补 history/streak/badge |
+| export.js | 导出补 rc/fmt/src 字段 |
+| quiz.js | Daily Challenge pool 优先选题 |
+| ui.js | updateNav 补 plan badge |
+| mastery.js | renderDeck refresh banner + deck-refresh delegation |
+| stats.js | +_renderMasteryStability 四格卡片 |
+| index.html | 2 个 plan badge span + 版本号 |
+| css/style.css | +deck-refresh-banner 样式 |
+| config.js | APP_VERSION→v2.8.0 |
+| sw.js | CACHE_VERSION→v2.8.0 |
+
 ## [2.7.0] - 2026-03-09 — Mastered 衰退复查 + 错题词汇回流
 
 ### Feature 1: Mastered 衰退复查

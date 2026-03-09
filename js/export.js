@@ -285,7 +285,10 @@ async function exportProgress() {
         status: w.status, flmStatus: w.fs,
         ok: w.ok, fail: w.fail,
         round: d ? (d.fr || 0) : 0,
-        lastReview: d ? new Date(d.lr).toISOString() : null
+        lastReview: d ? new Date(d.lr).toISOString() : null,
+        rc: w.rc || 0,
+        fmt: w.fmt ? new Date(w.fmt).toISOString() : null,
+        src: w.src || ''
       };
     }); })()
   };

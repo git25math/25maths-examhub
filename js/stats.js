@@ -99,6 +99,9 @@ function renderStats() {
   /* Mode breakdown */
   html += renderModeBreakdown();
 
+  /* Mastery stability */
+  html += _renderMasteryStability();
+
   /* Heatmap */
   html += renderCalendarHeatmap(heatData);
 
@@ -300,4 +303,34 @@ function exportStats() {
   var blob = new Blob([lines.join('\n')], { type: 'text/csv;charset=utf-8;' });
   downloadBlob(blob, '25maths-stats-' + new Date().toLocaleDateString('en-CA') + '.csv');
   showToast(t('Stats exported!', '\u6570\u636e\u5df2\u5bfc\u51fa\uff01'));
+}
+
+/* ═══ MASTERY STABILITY ═══ */
+function _renderMasteryStability() {
+  var all = getAllWords();
+  var mastered = 0, stale = 0, reflowed = 0;
+  var now = Date.now();
+  for (var i = 0; i < all.length; i++) {
+    var w = all[i];
+    if (w.fs === 'mastered') {
+      mastered++;
+      if (w.fmt) {
+        var rc = w.rc || 0;
+        var threshold = REFRESH_INTERVALS[Math.min(rc, REFRESH_INTERVALS.length - 1)];
+        if ((now - w.fmt) / 86400000 >= threshold) stale++;
+      }
+    }
+    if (w.src === 'reflow') reflowed++;
+  }
+  if (mastered === 0) return '';
+  var stablePct = Math.round((mastered - stale) / mastered * 100);
+  var html = '<div class="stats-section">';
+  html += '<div class="stats-section-title">' + t('Mastery Stability', '\u638c\u63e1\u7a33\u5b9a\u5ea6') + '</div>';
+  html += '<div class="stats-summary">';
+  html += '<div class="stat-card"><div class="stat-num">' + mastered + '</div><div class="stat-label">' + t('Mastered', '\u5df2\u638c\u63e1') + '</div></div>';
+  html += '<div class="stat-card"><div class="stat-num">' + stale + '</div><div class="stat-label">' + t('Getting Stale', '\u6b63\u5728\u8870\u9000') + '</div></div>';
+  html += '<div class="stat-card"><div class="stat-num">' + stablePct + '%</div><div class="stat-label">' + t('Stable', '\u7a33\u5b9a') + '</div></div>';
+  html += '<div class="stat-card"><div class="stat-num">' + reflowed + '</div><div class="stat-label">' + t('Reflowed', '\u56de\u6d41') + '</div></div>';
+  html += '</div></div>';
+  return html;
 }

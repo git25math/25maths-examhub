@@ -845,6 +845,17 @@ function renderDeck(idx) {
   }
   html += '</div>';
 
+  /* Deck-level refresh banner */
+  var _deckStale = typeof getStaleWords === 'function' ?
+    getStaleWords().filter(function(w) { return w.level === idx; }) : [];
+  if (_deckStale.length > 0) {
+    html += '<div class="deck-refresh-banner">';
+    html += '<span class="deck-refresh-icon">\ud83d\udd04</span>';
+    html += '<span class="deck-refresh-text">' + _deckStale.length + ' ' + t('words getting stale', '\u4e2a\u8bcd\u6b63\u5728\u8870\u9000') + '</span>';
+    html += '<button class="btn btn-primary btn-sm" data-action="deck-refresh" data-li="' + idx + '">' + t('Quick Refresh', '\u5feb\u901f\u590d\u67e5') + '</button>';
+    html += '</div>';
+  }
+
   /* Learning path + extra practice */
   html += '<div class="mode-path">';
   html += '<div class="mode-path-label">' + t('Learning Path', '\u5b66\u4e60\u8def\u5f84') + '</div>';
@@ -1186,6 +1197,10 @@ function _initDeckActionDelegation() {
     } else if (action === 'preview') {
       li = parseInt(btn.getAttribute('data-li'), 10);
       if (!isNaN(li)) openPreview(li);
+    } else if (action === 'deck-refresh') {
+      var dli = parseInt(btn.getAttribute('data-li'), 10);
+      var dStale = typeof getStaleWords === 'function' ? getStaleWords().filter(function(w) { return w.level === dli; }) : [];
+      if (dStale.length > 0 && typeof startRefreshScan === 'function') startRefreshScan(dStale);
     } else if (action === 'back') {
       var backType = btn.getAttribute('data-back');
       if (backType === 'home') {

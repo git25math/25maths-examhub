@@ -443,6 +443,15 @@
 - [x] **教师作业解锁**: diagnostic/mock 作业自动注入 featureOverride → v2.5.0
 - [x] **全面取消路径锁定**: 所有模式/知识点直接开放，删除 FEATURE_THRESHOLD + Test Out + 锁定 UI → v2.5.1
 
+## v2.8 FLM 质量加固 + 数据完整性 [DONE]
+- [x] **getStaleWords 缓存**: 30s TTL + mutation 失效，避免重复遍历 → v2.8.0
+- [x] **recordRefreshScan 补全**: daily history + streak + badge check → v2.8.0
+- [x] **导出数据完整**: rc/fmt/src 字段导出，衰退状态不丢失 → v2.8.0
+- [x] **Daily Challenge pool 优先**: learning/uncertain 词优先选入每日挑战 → v2.8.0
+- [x] **Plan badge**: 侧栏+底栏 stale 词数量红色角标 → v2.8.0
+- [x] **Deck refresh banner**: 详情页黄色衰退提示 + Quick Refresh 按钮 → v2.8.0
+- [x] **Mastery Stability 统计**: 已掌握/衰退/稳定率/回流 四格卡片 → v2.8.0
+
 ## v2.7 Mastered 衰退复查 + 错题词汇回流 [DONE]
 - [x] **Mastered 衰退检测**: getStaleWords + REFRESH_INTERVALS [7,14,30] + rc 递增阈值 → v2.7.0
 - [x] **Refresh Scan 模式**: startRefreshScan 复用 Scan UI + recordRefreshScan + Quick Scan CTA → v2.7.0

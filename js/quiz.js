@@ -221,8 +221,14 @@ function startDaily() {
     return;
   }
 
+  var pool = all.filter(function(w) { return w.fs === 'learning' || w.fs === 'uncertain'; });
+  var rest = all.filter(function(w) { return w.fs !== 'learning' && w.fs !== 'uncertain'; });
   var seed = getDailySeed();
-  var picked = seededShuffle(all, seed).slice(0, 10);
+  var picked = seededShuffle(pool, seed);
+  if (picked.length < 10) {
+    picked = picked.concat(seededShuffle(rest, seed + 1));
+  }
+  picked = picked.slice(0, 10);
 
   DC.words = picked;
   DC.idx = 0;
