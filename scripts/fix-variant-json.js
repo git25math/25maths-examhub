@@ -93,6 +93,7 @@ arr.forEach(function(q, idx) {
     console.error('WARN: Skipping question at index ' + idx + ' (invalid answer index: ' + q.a + ')');
     return;
   }
+  delete q.id;  // IDs assigned by merge, not generation
   if (!q.s) q.s = '';
   if (!q.d) q.d = 1;
   if (!q.e) q.e = '';

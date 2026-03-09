@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.3.24] - 2026-03-09 — 变式题 ID 去重机制合规化
+
+### 根因消除
+- **gen-variants.sh**：移除 MAX_ID 计算 + NEXT_ID 状态，prompt 改为 `Omit the "id" field`（Gemini 不再分配 ID）
+- **fix-variant-json.js**：添加 `delete q.id` 安全网，即使 Gemini 忽略指令仍输出 id 也会被剥离
+- **merge-variants.js**：持久化计数器（`.next-id-{board}`），确保跨运行 ID 单调递增，彻底杜绝碰撞
+- **--clean 选项**：合并成功后可自动删除已处理的 variant 文件，防止重复合并
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `scripts/gen-variants.sh` | 删除 ID 计算逻辑（-15 行）+ prompt 改为省略 id |
+| `scripts/fix-variant-json.js` | 添加 `delete q.id`（+1 行） |
+| `scripts/merge-variants.js` | 持久化计数器读写 + --clean 选项（+25 行） |
+| `data/kp-gen/.next-id-*` | 新增 3 个计数器文件（cie=1716, edx=971, 25m=957） |
+| `js/config.js` | v2.3.23 → v2.3.24 |
+
 ## [2.3.23] - 2026-03-09 — 数据质量修复 + HHK Y9 补全（+168 变式题）
 
 ### P0 修复

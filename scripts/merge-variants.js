@@ -28,6 +28,13 @@ questions.forEach(function(q) {
   if (m) { var n = parseInt(m[0]); if (n > maxNum) maxNum = n; }
 });
 
+// Read persistent counter (ensures IDs never go backwards across runs)
+var counterFile = path.join(__dirname, '..', 'data', 'kp-gen', '.next-id-' + board);
+try {
+  var savedNext = parseInt(fs.readFileSync(counterFile, 'utf8'));
+  if (!isNaN(savedNext) && savedNext > maxNum) maxNum = savedNext - 1;
+} catch(e) { /* first run — use maxNum from questions file */ }
+
 var files;
 try {
   files = fs.readdirSync(varDir).filter(function(f) { return f.match(/^var-.+\.json$/); }).sort();
@@ -87,6 +94,24 @@ questions.sort(function(a, b) {
 fs.writeFileSync(qFile, JSON.stringify(questions, null, 2) + '\n');
 console.log('\nMerged: +' + added + ' variants, ' + skipped + ' skipped, ' + invalid + ' invalid');
 console.log('Total questions: ' + questions.length);
+
+// Persist counter for next run
+fs.writeFileSync(counterFile, String(maxNum + 1));
+console.log('Counter saved: ' + counterFile + ' = ' + (maxNum + 1));
+
+// Clean up merged variant files if --clean flag is set
+if (process.argv.indexOf('--clean') >= 0 && added > 0) {
+  files.forEach(function(f) {
+    var jsonPath = path.join(varDir, f);
+    var rawPath = jsonPath.replace(/\.json$/, '.raw');
+    var logPath = jsonPath.replace(/\.json$/, '.log');
+    var parseLogPath = jsonPath.replace(/\.json$/, '.parse.log');
+    [jsonPath, rawPath, logPath, parseLogPath].forEach(function(p) {
+      try { fs.unlinkSync(p); } catch(e) {}
+    });
+  });
+  console.log('Cleaned ' + files.length + ' variant file sets from ' + varDir);
+}
 
 // Section coverage stats
 var secs = {};

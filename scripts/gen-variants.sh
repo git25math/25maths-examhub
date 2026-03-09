@@ -49,24 +49,10 @@ if [ -z "$SECTIONS" ]; then
   exit 0
 fi
 
-# Get max existing ID number
-MAX_ID=$(node -e "
-var qs = require('./$QFILE');
-var max = 0;
-qs.forEach(function(q) {
-  var m = q.id.match(/\d+/);
-  if (m) { var n = parseInt(m[0]); if (n > max) max = n; }
-});
-console.log(max);
-")
-
 echo "=== Variant Generation: $BOARD ==="
 echo "Sections to process: $(echo $SECTIONS | wc -w | tr -d ' ')"
 echo "Variants per mother: $COUNT"
-echo "Max existing ID: $PREFIX$(printf '%04d' $MAX_ID)"
 echo ""
-
-NEXT_ID=$((MAX_ID + 1))
 
 for SEC in $SECTIONS; do
   OUTFILE="$OUTDIR/var-${SEC}.json"
@@ -118,7 +104,7 @@ RULES:
 4. Use DOUBLE BACKSLASHES for LaTeX in JSON: \\\\frac, \\\\sqrt, \\\\times, \\\\pi, etc.
 5. The explanation (e) should show the full working for the NEW numbers.
 6. Keep the same cat, topic, s, and d fields as the mother question.
-7. For IDs, use sequential format: "${PREFIX}$(printf '%04d' $NEXT_ID)", "${PREFIX}$(printf '%04d' $((NEXT_ID+1)))", etc.
+7. Omit the "id" field — IDs will be assigned automatically during merge.
 8. CRITICAL: Output MUST be valid JSON array. No markdown, no code fences. Start with [ end with ].
 
 OUTPUT: A JSON array of variant questions. Each variant is a complete question object.
@@ -130,7 +116,6 @@ PROMPT_EOF
   if [ $? -eq 0 ]; then
     VCOUNT=$(node -e "console.log(JSON.parse(require('fs').readFileSync('$OUTFILE','utf8')).length)")
     echo "  [OK] $VCOUNT variants → $OUTFILE"
-    NEXT_ID=$((NEXT_ID + VCOUNT))
   else
     echo "  [ERR] Parse failed for $SEC"
     cat "$OUTDIR/var-${SEC}.parse.log"

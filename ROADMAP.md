@@ -427,3 +427,4 @@
 - [x] **Gemini 变式题生成器**: gen-variants.sh 自动检测薄弱 section + 母题多样化选取 + N 变式生成 → v2.3.22
 - [x] **JSON 修复 + 合并管线**: fix-variant-json.js 模式验证 + merge-variants.js 去重/排序/覆盖统计 → v2.3.22
 - [x] **三考试局批量生成**: HHK +480 / CIE +177 / EDX +24 变式题，总练习题 2,454→3,135 → v2.3.22
+- [x] **ID 去重机制合规化**: 集中 ID 分配（merge 唯一分配点）+ 持久化计数器 + Gemini 不分配 ID + --clean 选项 → v2.3.24
