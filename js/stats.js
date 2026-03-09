@@ -118,10 +118,17 @@ function _renderBadgeSection() {
   html += '<div class="badge-grid">';
   BADGES.forEach(function(b) {
     var isUnlocked = unlocked.indexOf(b.id) >= 0;
-    html += '<div class="badge-item' + (isUnlocked ? ' unlocked' : '') + '">';
-    html += '<span class="badge-icon">' + b.icon + '</span>';
-    html += '<span class="badge-name">' + t(b.en, b.zh) + '</span>';
-    html += '</div>';
+    if (b.hidden && !isUnlocked) {
+      html += '<div class="badge-item badge-hidden">';
+      html += '<span class="badge-icon">\u2753</span>';
+      html += '<span class="badge-name">???</span>';
+      html += '</div>';
+    } else {
+      html += '<div class="badge-item' + (isUnlocked ? ' unlocked' : '') + '">';
+      html += '<span class="badge-icon">' + b.icon + '</span>';
+      html += '<span class="badge-name">' + t(b.en, b.zh) + '</span>';
+      html += '</div>';
+    }
   });
   html += '</div>';
   return html;

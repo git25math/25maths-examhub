@@ -6,7 +6,13 @@ var MT = { pairs: [], leftItems: [], rightItems: [], selected: null, matched: 0,
 
 function startMatch(li) {
   if (typeof isModeUnlocked === 'function' && !isModeUnlocked(li, 'match')) { showToast(t('Complete Study mode first', '\u8bf7\u5148\u5b8c\u6210\u5b66\u4e60\u6a21\u5f0f')); return; }
-  if (typeof isFeatureUnlocked === 'function' && !isFeatureUnlocked('match')) { showToast(t('Learn more words to unlock', '\u5b66\u4e60\u66f4\u591a\u8bcd\u6c47\u89e3\u9501')); return; }
+  if (typeof isFeatureUnlocked === 'function' && !isFeatureUnlocked('match')) {
+    var _mtNeed = typeof FEATURE_THRESHOLD !== 'undefined' ? FEATURE_THRESHOLD.match : 0;
+    var _mtHave = typeof getGlobalStats === 'function' ? getGlobalStats().mastered : 0;
+    showToast(t('Master ' + _mtNeed + '+ words to unlock (' + _mtHave + '/' + _mtNeed + ')',
+                '掌握' + _mtNeed + '+词解锁 (' + _mtHave + '/' + _mtNeed + ')'));
+    return;
+  }
   var lv = LEVELS[li];
   if (validate(lv, li)) return;
 

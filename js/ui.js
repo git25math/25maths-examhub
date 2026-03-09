@@ -26,6 +26,11 @@ function showPanel(id) {
   if (el) el.classList.add('active');
   appView = id;
   updateNav();
+  /* Track panels visited (hidden badge) */
+  try {
+    var pv = JSON.parse(localStorage.getItem('wmatch_panels_visited') || '[]');
+    if (pv.indexOf(id) < 0) { pv.push(id); localStorage.setItem('wmatch_panels_visited', JSON.stringify(pv)); }
+  } catch(e) {}
 }
 
 function navTo(id) {
@@ -883,20 +888,34 @@ function getDistinctModesUsed() {
 
 /* ═══ STAGE-BASED FEATURE GATING ═══ */
 var STAGE_ORDER = ['new', 'active', 'intermediate', 'advanced'];
+/* @deprecated — kept for _renderModeDiscovery; use FEATURE_THRESHOLD instead */
 var FEATURE_STAGE = {
   study: 'new', quiz: 'new', review: 'active', spell: 'active',
   match: 'active', battle: 'active', practice: 'active',
   diagnostic: 'intermediate', mock: 'advanced'
 };
-var _cachedStage = null, _cachedStageTs = 0;
+
+/* ═══ THRESHOLD-BASED FEATURE GATING ═══ */
+var FEATURE_THRESHOLD = {
+  study: 0, quiz: 0, review: 0,
+  match: 0, spell: 15, battle: 30,
+  practice: 10, diagnostic: 20, mock: 50
+};
+var _cachedStageObj = null, _cachedStageTs = 0;
 function isFeatureUnlocked(f) {
-  var required = FEATURE_STAGE[f] || 'new';
+  /* Teacher-assigned override (#14) */
+  try {
+    var ov = JSON.parse(localStorage.getItem('wmatch_featureOverride') || '{}');
+    if (ov[f]) return true;
+  } catch(e) {}
+  var threshold = FEATURE_THRESHOLD[f] || 0;
+  if (threshold === 0) return true;
   var now = Date.now();
-  if (!_cachedStage || now - _cachedStageTs > 5000) {
-    _cachedStage = getUserStage().stage;
+  if (!_cachedStageObj || now - _cachedStageTs > 5000) {
+    _cachedStageObj = getUserStage();
     _cachedStageTs = now;
   }
-  return STAGE_ORDER.indexOf(_cachedStage) >= STAGE_ORDER.indexOf(required);
+  return (_cachedStageObj.mastered || 0) >= threshold;
 }
 
 /* ═══ LOCKED ELEMENT CLICK DELEGATION (XSS-safe) ═══ */
@@ -904,6 +923,27 @@ function _handleLockedClick(e) {
   var el = e.target.closest('.mode-btn-locked, .deck-row.locked');
   if (!el) return;
   e.stopPropagation();
+
+  /* Guest → register CTA (#12) */
+  if (typeof isGuest === 'function' && isGuest()) {
+    showToast(t('Register free to unlock all features', '免费注册解锁全部功能'));
+    return;
+  }
+
+  var modeKey = el.getAttribute('data-unlock-mode');
+  /* Feature gate blocking? Show progress (#4) */
+  if (modeKey && typeof FEATURE_THRESHOLD !== 'undefined') {
+    var need = FEATURE_THRESHOLD[modeKey] || 0;
+    if (need > 0) {
+      var gs = typeof getGlobalStats === 'function' ? getGlobalStats() : { mastered: 0 };
+      if ((gs.mastered || 0) < need) {
+        showToast(t('Master ' + need + ' words to unlock (' + gs.mastered + '/' + need + ')',
+                     '掌握 ' + need + ' 词解锁 (已 ' + gs.mastered + '/' + need + ')'));
+        return;
+      }
+    }
+  }
+  /* Mode gate fallback */
   var key = el.getAttribute('data-locked-msg');
   var msgs = {
     mode: t('Complete the previous mode first', '请先完成前一个模式'),

@@ -497,6 +497,9 @@ function renderHome() {
   /* Mode discovery chips */
   html += _renderModeDiscovery();
 
+  /* Reflux recommendation (#15) */
+  html += _renderRefluxRec();
+
   /* Zone 2: Quick Stats Strip */
   html += _renderQuickStats();
 
@@ -857,8 +860,16 @@ function renderDeck(idx) {
       html += '<button class="mode-btn mode-btn-path" onclick="' + m.fn + '">';
       if (done) html += '<span class="mode-done">\u2713</span>';
     } else {
-      html += '<button class="mode-btn mode-btn-path mode-btn-locked" data-locked-msg="mode" aria-disabled="true" tabindex="-1" title="' + t('Complete the previous mode first', '请先完成前一个模式') + '">';
+      html += '<button class="mode-btn mode-btn-path mode-btn-locked" data-locked-msg="mode" data-unlock-mode="' + pathKeys[i] + '" aria-disabled="true" tabindex="-1" title="' + t('Complete the previous mode first', '请先完成前一个模式') + '">';
       html += '<span class="mode-lock">\ud83d\udd12</span>';
+      if (typeof FEATURE_THRESHOLD !== 'undefined') {
+        var _pNeed = FEATURE_THRESHOLD[pathKeys[i]] || 0;
+        if (_pNeed > 0) {
+          var _pGs = typeof getGlobalStats === 'function' ? getGlobalStats() : { mastered: 0 };
+          var _pPct = Math.min(100, Math.round((_pGs.mastered || 0) / _pNeed * 100));
+          html += '<div class="unlock-progress"><div class="unlock-progress-fill" style="width:' + _pPct + '%"></div></div>';
+        }
+      }
     }
     html += '<div class="mode-emoji">' + m.emoji + '</div>';
     html += '<div class="mode-name">' + m.name + '</div>';
@@ -882,8 +893,16 @@ function renderDeck(idx) {
       html += '<button class="mode-btn mode-btn-extra" onclick="' + m.fn + '">';
       if (done) html += '<span class="mode-done">\u2713</span>';
     } else {
-      html += '<button class="mode-btn mode-btn-extra mode-btn-locked" data-locked-msg="study" aria-disabled="true" tabindex="-1" title="' + t('Complete Study mode first', '请先完成学习模式') + '">';
+      html += '<button class="mode-btn mode-btn-extra mode-btn-locked" data-locked-msg="study" data-unlock-mode="' + extraKeys[i] + '" aria-disabled="true" tabindex="-1" title="' + t('Complete Study mode first', '请先完成学习模式') + '">';
       html += '<span class="mode-lock">\ud83d\udd12</span>';
+      if (typeof FEATURE_THRESHOLD !== 'undefined') {
+        var _eNeed = FEATURE_THRESHOLD[extraKeys[i]] || 0;
+        if (_eNeed > 0) {
+          var _eGs = typeof getGlobalStats === 'function' ? getGlobalStats() : { mastered: 0 };
+          var _ePct = Math.min(100, Math.round((_eGs.mastered || 0) / _eNeed * 100));
+          html += '<div class="unlock-progress"><div class="unlock-progress-fill" style="width:' + _ePct + '%"></div></div>';
+        }
+      }
     }
     html += '<div class="mode-emoji">' + m.emoji + '</div>';
     html += '<div class="mode-name">' + m.name + '</div>';
@@ -892,6 +911,11 @@ function renderDeck(idx) {
   html += '</div></div>';
 
   html += '<div class="preview-link"><a href="javascript:void(0)" onclick="openPreview(' + idx + ')">\ud83d\udc41 ' + t('Preview all words', '\u9884\u89c8\u5168\u90e8\u8bcd\u6c47') + ' \u2192</a></div>';
+
+  /* Test Out button — only when Study not yet done (#6) */
+  if (!isModeDone(idx, 'study')) {
+    html += '<div class="testout-link"><button class="btn btn-ghost btn-sm" data-action="testout" data-li="' + idx + '">\u26a1 ' + t('Test Out', '跳级测试') + '</button></div>';
+  }
 
   /* Sort bar */
   html += '<div class="sort-bar">';
@@ -1123,4 +1147,110 @@ function toggleSmartPath() {
   var isCollapsed = !box.classList.contains('collapsed');
   try { localStorage.setItem('sp_collapsed', isCollapsed ? '1' : '0'); } catch(e) {}
   box.classList.toggle('collapsed', isCollapsed);
+}
+
+/* ═══ TEST OUT (#6) ═══ */
+var _testOutDelegated = false;
+function startTestOut(li) {
+  var lv = LEVELS[li];
+  if (!lv) return;
+  var allP = getPairs(lv.vocabulary);
+  if (allP.length === 0) return;
+  var pool = shuffle(allP).slice(0, 8);
+  var cache = typeof getQuizCache === 'function' ? getQuizCache() : { defs: [], words: [] };
+  var _toIdx = 0, _toCorrect = 0, _toTotal = pool.length;
+
+  function _renderTOCard() {
+    if (_toIdx >= _toTotal) {
+      /* Results */
+      var passed = _toCorrect >= Math.ceil(_toTotal * 0.875); /* ≥7/8 */
+      var html = '<div class="testout-result">';
+      html += '<div class="testout-score">' + _toCorrect + ' / ' + _toTotal + '</div>';
+      if (passed) {
+        markModeDone(li, 'study');
+        markModeDone(li, 'quiz');
+        html += '<div class="testout-msg">' + t('Passed! Study & Quiz completed.', '通过！学习和测验已完成。') + ' \ud83c\udf89</div>';
+      } else {
+        html += '<div class="testout-msg">' + t('Keep studying! You need 7/' + _toTotal + ' to pass.', '继续加油！需要答对 7/' + _toTotal + ' 题。') + '</div>';
+      }
+      html += '<button class="btn btn-primary" onclick="openDeck(' + li + ')">' + t('Back', '返回') + '</button>';
+      html += '</div>';
+      showModal(t('Test Out', '跳级测试'), html);
+      return;
+    }
+    var p = pool[_toIdx];
+    var correctAnswer = p.def;
+    var distractors = shuffle(cache.defs.filter(function(x) { return x !== correctAnswer; })).slice(0, 3);
+    var options = shuffle([correctAnswer].concat(distractors));
+    var html = '<div class="testout-progress">' + (_toIdx + 1) + ' / ' + _toTotal + '</div>';
+    html += '<div class="quiz-word" style="margin:12px 0;font-size:20px">' + escapeHtml(p.word) + '</div>';
+    html += '<div class="quiz-options" id="to-options">';
+    options.forEach(function(opt, i) {
+      html += '<button class="quiz-opt" data-idx="' + i + '" data-correct="' + (opt === correctAnswer ? '1' : '0') + '">' + escapeHtml(opt) + '</button>';
+    });
+    html += '</div>';
+    showModal(t('Test Out', '跳级测试') + ' — ' + escapeHtml(lvTitle(lv)), html);
+
+    /* Delegate clicks inside modal */
+    var optWrap = document.getElementById('to-options');
+    if (optWrap) {
+      optWrap.addEventListener('click', function handler(ev) {
+        var btn = ev.target.closest('.quiz-opt');
+        if (!btn || btn.classList.contains('chosen')) return;
+        optWrap.querySelectorAll('.quiz-opt').forEach(function(b) { b.classList.add('chosen'); });
+        if (btn.getAttribute('data-correct') === '1') {
+          btn.classList.add('correct');
+          _toCorrect++;
+        } else {
+          btn.classList.add('wrong');
+          optWrap.querySelector('[data-correct="1"]').classList.add('correct');
+        }
+        setTimeout(function() { _toIdx++; _renderTOCard(); }, 800);
+      });
+    }
+  }
+  _renderTOCard();
+}
+
+/* Delegate testout clicks in deck panel */
+function _initTestOutDelegation() {
+  if (_testOutDelegated) return;
+  _testOutDelegated = true;
+  document.addEventListener('click', function(e) {
+    var btn = e.target.closest('[data-action="testout"]');
+    if (!btn) return;
+    var li = parseInt(btn.getAttribute('data-li'), 10);
+    if (!isNaN(li)) startTestOut(li);
+  });
+}
+_initTestOutDelegation();
+
+/* ═══ REFLUX RECOMMENDATION (#15) ═══ */
+function _renderRefluxRec() {
+  var modes = ['battle', 'spell', 'match'];
+  var modeInfo = {
+    battle: { emoji: '\u2694\ufe0f', en: 'Battle', zh: '实战' },
+    spell: { emoji: '\u2328\ufe0f', en: 'Spell', zh: '拼写' },
+    match: { emoji: '\ud83d\udd17', en: 'Match', zh: '配对' }
+  };
+  var modeFns = { battle: 'startBattle', spell: 'startSpell', match: 'startMatch' };
+  var recs = [];
+  for (var i = 0; i < LEVELS.length && recs.length < 20; i++) {
+    if (!isModeDone(i, 'study')) continue;
+    for (var m = 0; m < modes.length; m++) {
+      if (!isModeDone(i, modes[m]) && (typeof isFeatureUnlocked !== 'function' || isFeatureUnlocked(modes[m]))) {
+        recs.push({ li: i, mode: modes[m], title: lvTitle(LEVELS[i]) });
+      }
+    }
+  }
+  if (recs.length === 0) return '';
+  var dayIdx = Math.floor(Date.now() / 86400000);
+  var rec = recs[dayIdx % recs.length];
+  var info = modeInfo[rec.mode];
+  return '<div class="reflux-rec">' +
+    '<span class="reflux-icon">\ud83d\udca1</span>' +
+    '<span class="reflux-text">' + t('Try something new:', '试试新模式：') + '</span>' +
+    '<button class="btn btn-ghost btn-sm" onclick="' + modeFns[rec.mode] + '(' + rec.li + ')">' +
+    info.emoji + ' ' + t(info.en, info.zh) + ' — ' + escapeHtml(rec.title) + '</button>' +
+    '</div>';
 }

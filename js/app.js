@@ -4,6 +4,10 @@
 
 onLevelsReady(function() {
 (async function initApp() {
+  /* Session start timestamp for hidden badges */
+  if (!sessionStorage.getItem('wmatch_session_start')) {
+    sessionStorage.setItem('wmatch_session_start', String(Date.now()));
+  }
   updateAuthLang();
   /* migrateForceUnlock is called after each syllabus board loads (syllabus.js) */
   /* Load custom levels from storage */

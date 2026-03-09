@@ -1,5 +1,51 @@
 # Changelog
 
+## [2.5.0] - 2026-03-09 — 解锁系统全面优化
+
+### Phase A: 核心阈值重构
+- FEATURE_THRESHOLD 替换 stage-based 门控，精确数值阈值（spell:15, battle:30, diagnostic:20, mock:50）
+- Review 与 Quiz 平行解锁（均依赖 Study 完成，不再链式）
+- 首 Level Quiz 自动解锁（无需先完成 Study）
+- nudge 阈值与 FEATURE_THRESHOLD 同步
+- 所有模式门控消息动态化，显示当前进度（已掌握/需要）
+- 教师作业 featureOverride 机制（diagnostic/mock 作业自动解锁对应功能）
+
+### Phase B: 锁定 UX 改进
+- 锁定按钮增加 data-unlock-mode 属性 + 进度条（底部 3px 彩条）
+- Guest 用户点击锁定功能显示注册 CTA
+- _handleLockedClick 重写：优先检查 feature gate → 显示进度
+- Diagnostic/Mock 入口增加 Guest 检查拦截
+
+### Phase C: 新功能
+- **Test Out 跳级测试**: 未完成 Study 的 Level 显示跳级按钮，8 题 MCQ ≥7 正确自动完成 Study+Quiz
+- **徽章奖励系统**: hundred_club→数据导出、streak_7→困难每日、all_modes→自定义主题
+- **衰退警告**: 进入 Diagnostic/Mock 时若 20+ 词过期自动提醒复习
+- **隐藏成就**: Speed Demon（quiz ≥10 正确 ≤60s）、Deep Focus（30 分钟 session）、Full Explorer（15+ 面板）
+- **回流推荐**: 首页每日推荐一个已学但未尝试的模式+Level 组合
+- isBadgeRewardUnlocked 工具函数
+
+### Phase D: 教师作业解锁
+- homework.js 加载作业时自动注入 featureOverride
+- isFeatureUnlocked 支持 localStorage override 检查
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `js/ui.js` | FEATURE_THRESHOLD + _handleLockedClick 重写 + showPanel 面板追踪 |
+| `js/storage.js` | isModeUnlocked 重写 + _isFirstSectionLevel + BADGES 扩展(reward+hidden) + checkBadges 上下文 + nudge 阈值 + isBadgeRewardUnlocked |
+| `js/mastery.js` | 锁定按钮 data-unlock-mode + 进度条 + Test Out + reflux 推荐 |
+| `js/practice.js` | Diagnostic/Mock 动态阈值 + Guest 检查 + 衰退警告 |
+| `js/review.js` | 门控消息改为 "Complete Study first" |
+| `js/quiz.js` | quiz 计时 + speedDemon localStorage 记录 |
+| `js/spell.js` | 门控消息动态化 |
+| `js/match.js` | 门控消息动态化 |
+| `js/battle.js` | 门控消息动态化 |
+| `js/stats.js` | _renderBadgeSection 支持 hidden 徽章 |
+| `js/app.js` | session 计时(wmatch_session_start) |
+| `js/homework.js` | _applyHomeworkFeatureOverride |
+| `css/style.css` | .unlock-progress + .badge-hidden + .testout-link + .reflux-rec |
+| `js/config.js` | v2.4.4 → v2.5.0 |
+
 ## [2.4.4] - 2026-03-09 — practice.js 5 处 Critical/High Bug 修复
 
 ### Fix 1-4: `btn-lg` 语法错误修复（4 处）

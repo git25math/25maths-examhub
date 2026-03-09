@@ -27,6 +27,7 @@ function startQuiz(li, subset) {
   if (validate(lv, li)) return;
 
   currentLvl = li;
+  Q._startTime = Date.now();
   Q.pairs = subset ? shuffle(subset) : shuffle(getPairs(lv.vocabulary));
   Q.idx = 0;
   Q.correct = 0;
@@ -134,6 +135,11 @@ function pickQuizOpt(btn) {
 function finishQuiz() {
   markModeDone(currentLvl, 'quiz');
   if (typeof checkSectionMilestone === 'function') checkSectionMilestone();
+  /* Track fast quiz for speedDemon badge */
+  var _quizDuration = Q._startTime ? Math.round((Date.now() - Q._startTime) / 1000) : 999;
+  if (Q.correct >= 10 && _quizDuration <= 60) {
+    try { localStorage.setItem('wmatch_speed_demon', '1'); } catch(e) {}
+  }
   var total = Q.pairs.length;
   var scoreRate = total > 0 ? Q.correct / total : 0;
   var raw = resultScreenHTML(Q.correct, total,

@@ -854,6 +854,39 @@ input { font-family: inherit; }
 .mode-lock { position: absolute; top: 4px; right: 4px; font-size: 12px; opacity: 0.7; }
 [data-theme="dark"] .mode-btn-locked { opacity: 0.3; }
 
+/* Unlock progress bar on locked buttons */
+.unlock-progress {
+  position: absolute; bottom: 2px; left: 8px; right: 8px;
+  height: 3px; background: var(--c-border); border-radius: 2px; overflow: hidden;
+}
+.unlock-progress-fill {
+  height: 100%; background: var(--c-primary); border-radius: 2px;
+  transition: width 0.3s ease;
+}
+[data-theme="dark"] .unlock-progress { background: rgba(255,255,255,0.15); }
+
+/* Hidden badge */
+.badge-hidden { opacity: 0.5; filter: grayscale(1); }
+
+/* Test Out link */
+.testout-link { text-align: center; margin: 8px 0; }
+
+/* Reflux recommendation */
+.reflux-rec {
+  display: flex; align-items: center; gap: 8px;
+  padding: 10px 16px; margin: 8px 0;
+  background: var(--c-surface); border-radius: var(--r-lg);
+  font-size: 14px;
+}
+.reflux-icon { font-size: 18px; }
+.reflux-text { color: var(--c-text-sub); }
+
+/* Test Out result */
+.testout-result { text-align: center; padding: 16px 0; }
+.testout-score { font-size: 32px; font-weight: 700; margin-bottom: 8px; }
+.testout-msg { margin-bottom: 16px; color: var(--c-text-sub); }
+.testout-progress { text-align: center; font-size: 13px; color: var(--c-text-sub); margin-bottom: 8px; }
+
 /* Super admin inline buttons */
 .deck-row-admin {
   display: flex; gap: 4px; flex-shrink: 0; margin-left: 4px;

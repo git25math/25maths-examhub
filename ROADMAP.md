@@ -430,3 +430,14 @@
 - [x] **ID 去重机制合规化**: 集中 ID 分配（merge 唯一分配点）+ 持久化计数器 + Gemini 不分配 ID + --clean 选项 → v2.3.24
 - [x] **变式题质量审计**: audit-variants.js 6 条规则 + fix-variant-quality.js 自动修复 48 ERROR + 质量门 + Prompt 加固 → v2.3.25
 - [x] **真题 PDF 还原排版**: 右对齐分值（_ppRenderWithMarks）+ 表格补全（60 题 ISS 修复）+ 缺图优化 + 编辑器工具栏（插入表格/Parts 编辑）→ v2.4.1
+
+## v2.5 解锁系统全面优化
+
+- [x] **阈值重构**: FEATURE_THRESHOLD 替换 stage-based 门控，精确数值阈值(spell:15/battle:30/diagnostic:20/mock:50) + Review∥Quiz 平行解锁 + 首Level Quiz 自动解锁 → v2.5.0
+- [x] **锁定 UX 改进**: data-unlock-mode 属性 + 进度条 + Guest 注册 CTA + 动态进度消息 → v2.5.0
+- [x] **Test Out 跳级测试**: 8 题 MCQ ≥7 正确自动完成 Study+Quiz → v2.5.0
+- [x] **徽章奖励系统**: 3 徽章绑定 reward + isBadgeRewardUnlocked → v2.5.0
+- [x] **隐藏成就**: Speed Demon + Deep Focus + Full Explorer → v2.5.0
+- [x] **衰退警告**: Diagnostic/Mock 入口 20+ 词过期提醒 → v2.5.0
+- [x] **回流推荐**: 首页每日推荐未尝试的模式+Level → v2.5.0
+- [x] **教师作业解锁**: diagnostic/mock 作业自动注入 featureOverride → v2.5.0

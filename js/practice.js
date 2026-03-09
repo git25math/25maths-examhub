@@ -1822,12 +1822,25 @@ function ppGetWeakGroups(board, sectionId) {
 /* ═══ DIAGNOSTIC TEST ═══ */
 
 function startDiagnostic(board) {
-  if (typeof isFeatureUnlocked === 'function' && !isFeatureUnlocked('diagnostic')) { showToast(t('Master 100+ words to unlock Diagnostic', '\u638c\u63e1100+\u8bcd\u6c47\u89e3\u9501\u8bca\u65ad\u6d4b\u8bd5')); return; }
+  if (typeof isGuest === 'function' && isGuest()) { showToast(t('Register free to unlock Diagnostic', '免费注册解锁诊断测试')); return; }
+  if (typeof isFeatureUnlocked === 'function' && !isFeatureUnlocked('diagnostic')) {
+    var _dNeed = typeof FEATURE_THRESHOLD !== 'undefined' ? FEATURE_THRESHOLD.diagnostic : 20;
+    var _dHave = typeof getGlobalStats === 'function' ? getGlobalStats().mastered : 0;
+    showToast(t('Master ' + _dNeed + '+ words to unlock Diagnostic (' + _dHave + '/' + _dNeed + ')',
+                '掌握' + _dNeed + '+词汇解锁诊断测试 (' + _dHave + '/' + _dNeed + ')'));
+    return;
+  }
   board = board || 'cie';
 
   if (!_ppAccessAllowed(board)) {
     showToast(t('Past papers are under review. Coming soon!', '真题模块正在验收中，敬请期待！'));
     return;
+  }
+
+  /* Decay warning (#9) */
+  var _overdueDiag = typeof getDueWords === 'function' ? getDueWords().length : 0;
+  if (_overdueDiag > 20) {
+    showToast(t('You have ' + _overdueDiag + ' words overdue for review', '你有 ' + _overdueDiag + ' 个词已过期待复习'));
   }
 
   showToast(t('Preparing diagnostic...', '\u51c6\u5907\u8bca\u65ad\u6d4b\u8bd5\u4e2d...'));
@@ -3397,12 +3410,25 @@ function ppStartPaperExam(paperKey, board) {
 /* ═══ MOCK EXAM GENERATOR ═══ */
 
 function ppShowMockSetup(board) {
-  if (typeof isFeatureUnlocked === 'function' && !isFeatureUnlocked('mock')) { showToast(t('Master 500+ words to unlock Mock Exam', '\u638c\u63e1500+\u8bcd\u6c47\u89e3\u9501\u6a21\u62df\u5377')); return; }
+  if (typeof isGuest === 'function' && isGuest()) { showToast(t('Register free to unlock Mock Exam', '免费注册解锁模拟卷')); return; }
+  if (typeof isFeatureUnlocked === 'function' && !isFeatureUnlocked('mock')) {
+    var _mNeed = typeof FEATURE_THRESHOLD !== 'undefined' ? FEATURE_THRESHOLD.mock : 50;
+    var _mHave = typeof getGlobalStats === 'function' ? getGlobalStats().mastered : 0;
+    showToast(t('Master ' + _mNeed + '+ words to unlock Mock Exam (' + _mHave + '/' + _mNeed + ')',
+                '掌握' + _mNeed + '+词汇解锁模拟卷 (' + _mHave + '/' + _mNeed + ')'));
+    return;
+  }
   board = board || 'cie';
 
   if (!_ppAccessAllowed(board)) {
     showToast(t('Past papers are under review. Coming soon!', '真题模块正在验收中，敬请期待！'));
     return;
+  }
+
+  /* Decay warning (#9) */
+  var _overdueMock = typeof getDueWords === 'function' ? getDueWords().length : 0;
+  if (_overdueMock > 20) {
+    showToast(t('You have ' + _overdueMock + ' words overdue for review', '你有 ' + _overdueMock + ' 个词已过期待复习'));
   }
 
   Promise.all([loadPastPaperData(board), loadKaTeX()]).then(function() {
