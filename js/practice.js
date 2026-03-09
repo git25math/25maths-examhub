@@ -1203,21 +1203,152 @@ function _ppSavePaperResult(paperKey, result) {
   localStorage.setItem(_ppResultsKey(), JSON.stringify(all));
 }
 
-/* ═══ MASTERY STORAGE ═══ */
+/* ═══ MASTERY STORAGE (FLM) ═══ */
+/*
+ * PP mastery uses FLM 4-state model (new/learning/uncertain/mastered).
+ * - Practice mode: manual 3-button rating, cs = consecutive "mastered" ratings
+ * - Exam mode: high-confidence, correct → mastered immediately (cs=2)
+ * - Mastered questions decay via REFRESH_INTERVALS [7,14,30]
+ */
 
 function _ppMasteryKey() { return 'pp_mastery'; }
+
+/* One-time migration: old {m,t,n} → FLM format */
+var _ppFLMMigrated = false;
+function _migratePPtoFLM(m) {
+  if (_ppFLMMigrated) return;
+  var needsMigration = false;
+  for (var k in m) {
+    if (m[k].m != null && m[k].fs == null) { needsMigration = true; break; }
+  }
+  if (!needsMigration) { _ppFLMMigrated = true; return; }
+  for (var qid in m) {
+    var d = m[qid];
+    if (d.fs != null) continue;
+    if (d.m === 'mastered') { d.fs = 'mastered'; d.fmt = d.t || Date.now(); d.cs = 2; }
+    else if (d.m === 'partial') { d.fs = 'uncertain'; d.cs = 0; }
+    else if (d.m === 'needs_work') { d.fs = 'learning'; d.cs = 0; }
+    else { d.fs = 'new'; d.cs = 0; }
+    d.rc = 0;
+  }
+  _ppFLMMigrated = true;
+  try { localStorage.setItem(_ppMasteryKey(), JSON.stringify(m)); } catch (e) {}
+}
+
 function _ppGetMastery() {
-  try { return JSON.parse(localStorage.getItem(_ppMasteryKey())) || {}; } catch(e) { return {}; }
+  try {
+    var m = JSON.parse(localStorage.getItem(_ppMasteryKey())) || {};
+    _migratePPtoFLM(m);
+    return m;
+  } catch(e) { return {}; }
 }
-function _ppSetMastery(qid, level) {
+
+/*
+ * _ppSetMastery — FLM-aware mastery setter.
+ * opts.source: 'practice' (manual rating, cs-based) or 'exam' (high-confidence)
+ */
+function _ppSetMastery(qid, level, opts) {
   var m = _ppGetMastery();
-  if (!m[qid]) m[qid] = { m: level, t: Date.now(), n: 1 };
-  else { m[qid].m = level; m[qid].t = Date.now(); m[qid].n = (m[qid].n || 0) + 1; }
-  localStorage.setItem(_ppMasteryKey(), JSON.stringify(m));
+  var prev = m[qid] || {};
+  var now = Date.now();
+  var fs = prev.fs || 'new';
+  var cs = prev.cs || 0;
+  opts = opts || {};
+  var source = opts.source || 'practice';
+
+  if (level === 'mastered') {
+    if (source === 'exam') {
+      /* Exam correct = high-confidence mastered */
+      fs = 'mastered';
+      if (!prev.fmt || fs !== 'mastered') prev.fmt = now;
+      cs = 2;
+    } else {
+      /* Practice rating: cs-based progression */
+      cs++;
+      if (cs >= 2) {
+        fs = 'mastered';
+        if (!prev.fmt || prev.fs !== 'mastered') prev.fmt = now;
+      } else if (fs === 'new' || fs === 'learning') {
+        fs = 'uncertain';
+      }
+    }
+  } else if (level === 'partial') {
+    fs = 'uncertain';
+    cs = 0;
+  } else if (level === 'needs_work') {
+    if (fs === 'mastered') fs = 'uncertain';
+    else fs = 'learning';
+    cs = 0;
+  }
+
+  m[qid] = {
+    m: level, fs: fs, t: now, n: (prev.n || 0) + 1,
+    fmt: prev.fmt || (fs === 'mastered' ? now : null),
+    rc: prev.rc || 0, cs: cs
+  };
+  try { localStorage.setItem(_ppMasteryKey(), JSON.stringify(m)); } catch (e) {}
+
+  /* Auto-resolve wrong book when mastered */
+  if (fs === 'mastered') ppResolveWrongBook(qid);
+  /* Invalidate stale cache */
+  _stalePPCacheData = null;
 }
+
 function _ppGetQMastery(qid) {
   var m = _ppGetMastery();
   return m[qid] ? m[qid].m : null;
+}
+function _ppGetQFLM(qid) {
+  var m = _ppGetMastery();
+  return m[qid] ? (m[qid].fs || 'new') : 'new';
+}
+
+/* ═══ STALE PP QUESTIONS ═══ */
+var _stalePPCacheData = null;
+var _stalePPCacheTime = 0;
+function getStalePPQuestions(board) {
+  var now = Date.now();
+  if (_stalePPCacheData && (now - _stalePPCacheTime) < 30000 && !board) return _stalePPCacheData;
+  var mastery = _ppGetMastery();
+  var stale = [];
+  for (var qid in mastery) {
+    var d = mastery[qid];
+    if (!d.fs || d.fs !== 'mastered' || !d.fmt) continue;
+    var rc = d.rc || 0;
+    var threshold = REFRESH_INTERVALS[Math.min(rc, REFRESH_INTERVALS.length - 1)];
+    var daysSince = (now - d.fmt) / 86400000;
+    if (daysSince >= threshold) {
+      stale.push({ qid: qid, rc: rc, daysSince: Math.floor(daysSince) });
+    }
+  }
+  stale.sort(function(a, b) { return b.daysSince - a.daysSince; });
+  if (!board) { _stalePPCacheData = stale; _stalePPCacheTime = now; }
+  return stale;
+}
+function getStalePPCount(board) { return getStalePPQuestions(board).length; }
+
+/* Record PP refresh scan verdict (for v3.0.1 refresh UI) */
+function recordPPRefreshScan(qid, verdict) {
+  var m = _ppGetMastery();
+  var prev = m[qid] || {};
+  var now = Date.now();
+  var fs = prev.fs || 'mastered';
+  var rc = prev.rc || 0;
+  if (verdict === 'known') {
+    rc++;
+    prev.fmt = now;
+  } else if (verdict === 'fuzzy') {
+    fs = 'uncertain'; prev.cs = 0;
+  } else if (verdict === 'unknown') {
+    fs = 'learning'; prev.cs = 0;
+  }
+  m[qid] = {
+    m: fs === 'mastered' ? 'mastered' : fs === 'uncertain' ? 'partial' : 'needs_work',
+    fs: fs, t: now, n: (prev.n || 0) + 1,
+    fmt: prev.fmt || null, rc: rc, cs: prev.cs || 0
+  };
+  try { localStorage.setItem(_ppMasteryKey(), JSON.stringify(m)); } catch (e) {}
+  _stalePPCacheData = null;
 }
 
 /* ═══ WRONG BOOK STORAGE ═══ */
@@ -1406,13 +1537,22 @@ function ppGetSectionStats(board, sectionId) {
   var all = getPPBySection(board, sectionId);
   var mastery = _ppGetMastery();
   var wb = _ppGetWB();
-  var stats = { total: all.length, newQ: 0, needsWork: 0, partial: 0, mastered: 0, wrongActive: 0 };
+  var now = Date.now();
+  var stats = { total: all.length, newQ: 0, learning: 0, uncertain: 0, mastered: 0,
+                needsWork: 0, partial: 0, stale: 0, wrongActive: 0 };
   for (var i = 0; i < all.length; i++) {
     var qm = mastery[all[i].id];
-    if (!qm) stats.newQ++;
-    else if (qm.m === 'needs_work') stats.needsWork++;
-    else if (qm.m === 'partial') stats.partial++;
-    else if (qm.m === 'mastered') stats.mastered++;
+    if (!qm || !qm.fs || qm.fs === 'new') { stats.newQ++; }
+    else if (qm.fs === 'learning') { stats.learning++; stats.needsWork++; }
+    else if (qm.fs === 'uncertain') { stats.uncertain++; stats.partial++; }
+    else if (qm.fs === 'mastered') {
+      stats.mastered++;
+      if (qm.fmt) {
+        var rc = qm.rc || 0;
+        var threshold = REFRESH_INTERVALS[Math.min(rc, REFRESH_INTERVALS.length - 1)];
+        if ((now - qm.fmt) / 86400000 >= threshold) stats.stale++;
+      }
+    }
   }
   /* Count active wrong book items for this section */
   for (var qid in wb) {
@@ -1707,13 +1847,11 @@ function ppToggleMS() {
 function ppRate(level) {
   if (!_ppSession || _ppSession.mode !== 'practice') return;
   var q = _ppSession.questions[_ppSession.current];
-  _ppSetMastery(q.id, level);
+  _ppSetMastery(q.id, level, { source: 'practice' });
 
-  /* Auto-add to wrong book if needs_work */
+  /* Auto-add to wrong book if needs_work (resolve handled by _ppSetMastery) */
   if (level === 'needs_work') {
     ppAddToWrongBook(q.id, '', '', _ppSession.sectionId || q.s || '', _ppSession.board || '');
-  } else if (level === 'mastered') {
-    ppResolveWrongBook(q.id);
   }
 
   /* Auto-advance after short delay */
@@ -2793,13 +2931,12 @@ function ppFinishMarking() {
     var s = r.scored != null ? r.scored : 0;
     scored += s;
 
-    /* Auto-add wrong/partial to wrong book */
+    /* Auto-add wrong/partial to wrong book + FLM mastery (exam source) */
     if (r.status === 'wrong' || r.status === 'partial') {
       ppAddToWrongBook(qs[i].id, r.errorType || '', '', _ppSession.sectionId || '', _ppSession.board || '');
-      _ppSetMastery(qs[i].id, r.status === 'wrong' ? 'needs_work' : 'partial');
+      _ppSetMastery(qs[i].id, r.status === 'wrong' ? 'needs_work' : 'partial', { source: 'exam' });
     } else if (r.status === 'correct') {
-      _ppSetMastery(qs[i].id, 'mastered');
-      ppResolveWrongBook(qs[i].id);
+      _ppSetMastery(qs[i].id, 'mastered', { source: 'exam' });
     }
 
     /* Concept analysis */

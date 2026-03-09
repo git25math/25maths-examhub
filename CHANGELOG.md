@@ -1,5 +1,46 @@
 # Changelog
 
+## [3.0.0] - 2026-03-09 — 真题接入 FLM（Learning Unit Phase 2）
+
+### 核心功能：PP FLM 集成
+- `_ppSetMastery()` 重构为 FLM-aware setter — 新增 `opts.source` 区分 practice/exam 模式
+- Practice 模式：手动评分 cs-based 升级（mastered 评分 cs++, cs≥2 → mastered）
+- Exam 模式：高置信度直接 mastered（correct → fs=mastered, cs=2）
+- 旧数据自动迁移：mastered→mastered(cs=2), partial→uncertain, needs_work→learning
+- Auto-resolve wrong book when FLM reaches mastered（集中到 _ppSetMastery）
+
+### PP 衰退检测
+- `getStalePPQuestions(board)` + `getStalePPCount(board)` — 30s TTL 缓存
+- `recordPPRefreshScan(qid, verdict)` — known/fuzzy/unknown 三档（v3.0.1 UI 预留）
+- Today's Plan 新增"真题复查"卡片，显示衰退 PP 数量
+- Plan badge 计入 PP stale 数量
+
+### getSectionHealth ppScore 统一
+- ppScore 公式从 `(mastered*100+partial*50+needsWork*10)/(total*100)` 改为 FLM 加权
+- mastered=1.0, uncertain=0.5, learning=0.2 — 与 vocabScore/knowledgeScore 语义一致
+
+### ppGetSectionStats FLM 化
+- 返回值新增 `learning / uncertain / stale` 字段
+- 保留 `needsWork / partial` 向后兼容别名
+- PP Section Module 标签改为 Learning / Uncertain / Mastered / Stale
+
+### Hero 推荐
+- `_getNextAction` 新增 pp-refresh 优先级（stalePP ≥ 3，低于 KP 衰退）
+- Hero 渲染 pp-refresh 动作（导航到 Today's Plan）
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| practice.js | _migratePPtoFLM + _ppSetMastery FLM + getStalePP + ppGetSectionStats + recordPPRefreshScan + ppRate/ppFinishMarking source 适配 |
+| syllabus.js | getSectionHealth ppScore FLM 加权 + PP section FLM 标签 + Today's Plan PP stale 卡片 |
+| mastery.js | _getNextAction pp-refresh + Hero pp-refresh 动作 |
+| ui.js | Plan badge +PP stale |
+| storage.js | invalidateCache +_stalePPCacheData |
+| css/style.css | pp-module-stat learning/uncertain/stale + 暗色模式 |
+| config.js | APP_VERSION → v3.0.0 |
+| sw.js | CACHE_VERSION → v3.0.0 |
+| index.html | cache-bust → v3.0.0 |
+
 ## [2.9.0] - 2026-03-09 — 知识点接入 FLM（Learning Unit Phase 1）
 
 ### 核心功能：KP Session-Based FLM

@@ -1083,13 +1083,14 @@ function getSectionHealth(sectionId, board) {
     }
   }
 
-  /* PP score from ppGetSectionStats (only if data loaded, skip HHK) */
+  /* PP score from FLM states: mastered=1.0, uncertain=0.5, learning=0.2 */
   var ppBoard = board === 'edexcel' ? 'edx' : board === 'hhk' ? null : board;
   if (ppBoard && typeof ppGetSectionStats === 'function' && typeof _ppData !== 'undefined' && _ppData[ppBoard]) {
     var ps = ppGetSectionStats(ppBoard, sectionId);
     if (ps.total > 0) {
       hasPP = true;
-      ppScore = Math.round((ps.mastered * 100 + ps.partial * 50 + ps.needsWork * 10) / (ps.total * 100) * 100);
+      var ppW = ps.mastered * 1.0 + ps.uncertain * 0.5 + ps.learning * 0.2;
+      ppScore = Math.round(ppW / ps.total * 100);
     }
   }
 
@@ -1407,9 +1408,10 @@ function _renderPPSectionModule(slot, secId, board) {
   /* Mastery stats */
   h += '<div class="pp-module-stats">';
   if (ppStats.newQ > 0) h += '<span class="pp-module-stat new">\u2b1c ' + ppStats.newQ + ' ' + t('New', '\u65b0\u9898') + '</span>';
-  if (ppStats.needsWork > 0) h += '<span class="pp-module-stat needs-work">\ud83d\udd34 ' + ppStats.needsWork + ' ' + t('Needs Work', '\u5f85\u6539\u8fdb') + '</span>';
-  if (ppStats.partial > 0) h += '<span class="pp-module-stat partial-stat">\ud83d\udfe1 ' + ppStats.partial + ' ' + t('Partial', '\u90e8\u5206') + '</span>';
+  if (ppStats.learning > 0) h += '<span class="pp-module-stat learning">' + ppStats.learning + ' ' + t('Learning', '\u5b66\u4e60\u4e2d') + '</span>';
+  if (ppStats.uncertain > 0) h += '<span class="pp-module-stat uncertain">' + ppStats.uncertain + ' ' + t('Uncertain', '\u4e0d\u786e\u5b9a') + '</span>';
   if (ppStats.mastered > 0) h += '<span class="pp-module-stat mastered-stat">\u2705 ' + ppStats.mastered + ' ' + t('Mastered', '\u5df2\u638c\u63e1') + '</span>';
+  if (ppStats.stale > 0) h += '<span class="pp-module-stat stale">\u26a0 ' + ppStats.stale + ' ' + t('Stale', '\u8870\u9000') + '</span>';
   h += '</div>';
 
   /* Vocab progress for this section */
@@ -2566,6 +2568,18 @@ function renderTodaysPlan() {
     html += '<span class="plan-card-title">' + t('Knowledge Point Review', '\u77e5\u8bc6\u70b9\u590d\u67e5') + '</span>';
     html += '</div>';
     html += '<div class="plan-card-count">' + staleKPN + ' ' + t('mastered KPs getting stale', '\u4e2a\u5df2\u638c\u63e1\u77e5\u8bc6\u70b9\u6b63\u5728\u8870\u9000') + '</div>';
+    html += '</div>';
+  }
+
+  /* PP stale refresh */
+  var stalePPN = typeof getStalePPCount === 'function' ? getStalePPCount() : 0;
+  if (stalePPN > 0) {
+    html += '<div class="plan-card plan-refresh">';
+    html += '<div class="plan-card-header">';
+    html += '<span class="plan-card-icon">\ud83d\udcc4</span>';
+    html += '<span class="plan-card-title">' + t('Past Paper Review', '\u771f\u9898\u590d\u67e5') + '</span>';
+    html += '</div>';
+    html += '<div class="plan-card-count">' + stalePPN + ' ' + t('mastered questions getting stale', '\u4e2a\u5df2\u638c\u63e1\u771f\u9898\u6b63\u5728\u8870\u9000') + '</div>';
     html += '</div>';
   }
 

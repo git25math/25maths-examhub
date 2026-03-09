@@ -443,6 +443,15 @@
 - [x] **教师作业解锁**: diagnostic/mock 作业自动注入 featureOverride → v2.5.0
 - [x] **全面取消路径锁定**: 所有模式/知识点直接开放，删除 FEATURE_THRESHOLD + Test Out + 锁定 UI → v2.5.1
 
+## v3.0 真题接入 FLM — Learning Unit Phase 2 [DONE]
+- [x] **PP FLM 集成**: _ppSetMastery FLM-aware + practice/exam source 区分 + 旧数据迁移 → v3.0.0
+- [x] **PP 衰退检测**: getStalePPQuestions + 30s 缓存 + Today's Plan PP 卡片 + Plan badge → v3.0.0
+- [x] **ppScore FLM 加权**: getSectionHealth ppScore 与 vocab/KP 语义一致 → v3.0.0
+- [x] **ppGetSectionStats FLM 化**: learning/uncertain/stale 字段 + PP Section Module 标签更新 → v3.0.0
+- [x] **Hero 推荐**: pp-refresh 优先级 + Today's Plan 导航 → v3.0.0
+- [ ] **PP Refresh Scan UI (v3.0.1)**: 跨 board 加载 stale 题目 + Refresh 模式 UI
+- [ ] **Learning Unit Phase 3 (v3.1)**: 统一 recordUnitAnswer API + 跨类型衰退检测
+
 ## v2.9 知识点接入 FLM — Learning Unit Phase 1 [DONE]
 - [x] **KP Session-Based FLM**: saveKPResult 重构为 session finalizer，题组提交统一结算 → v2.9.0
 - [x] **cs 语义统一**: KP cs = 连续成功 session 次数（≥85% 准确率），区别于词汇逐题 cs → v2.9.0
@@ -450,7 +459,6 @@
 - [x] **getSectionHealth 加权评分**: KP 维度改为 FLM 加权（mastered:1/uncertain:0.5/learning:0.2） → v2.9.0
 - [x] **KP 衰退检测**: getStaleKPs(board) + 30s 缓存 + Today's Plan KP 卡片 → v2.9.0
 - [x] **KP FLM 可视化**: 状态 chip + 测验结果标签 + Hero 推荐 + Plan badge → v2.9.0
-- [ ] **Learning Unit Phase 2 (v3.0)**: 练习题/真题接入 FLM，统一 recordUnitAnswer
 
 ## v2.8 FLM 质量加固 + 数据完整性 [DONE]
 - [x] **getStaleWords 缓存**: 30s TTL + mutation 失效，避免重复遍历 → v2.8.0

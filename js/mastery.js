@@ -213,7 +213,7 @@ function _getNextAction(dueCount) {
     if (inProgress && nextNew) break;
   }
 
-  /* Priority: 0. Stale mastered words → 1. Stale KPs → 2. In-progress section → 3. Daily challenge → 4. Next new section */
+  /* Priority: 0. Stale words → 1. Stale KPs → 2. Stale PPs → 3. In-progress → 4. Daily → 5. Next new */
   var staleN = typeof getStaleCount === 'function' ? getStaleCount() : 0;
   if (staleN >= 5) {
     return { type: 'refresh', count: staleN };
@@ -221,6 +221,10 @@ function _getNextAction(dueCount) {
   var staleKPN = typeof getStaleKPCount === 'function' ? getStaleKPCount() : 0;
   if (staleKPN >= 2) {
     return { type: 'kp-refresh', count: staleKPN };
+  }
+  var stalePPN = typeof getStalePPCount === 'function' ? getStalePPCount() : 0;
+  if (stalePPN >= 3) {
+    return { type: 'pp-refresh', count: stalePPN };
   }
   if (inProgress) {
     return { type: 'continue', section: inProgress.section, board: inProgress.board, label: inProgress.section.id + ' ' + inProgress.section.title, labelZh: inProgress.section.title_zh };
@@ -389,6 +393,11 @@ function _renderHeroAction() {
     html += '<div class="hero-section">' + action.count + ' ' + t('mastered KPs getting stale', '\u4e2a\u5df2\u638c\u63e1\u77e5\u8bc6\u70b9\u6b63\u5728\u8870\u9000') + '</div>';
     html += '<button class="btn btn-primary hero-btn" data-hero-action="plan">';
     html += '\ud83d\udcd6 ' + t("Today's Plan", '\u4eca\u65e5\u8ba1\u5212') + ' \u2192</button>';
+  } else if (action.type === 'pp-refresh') {
+    html += '<div class="hero-label">' + t('Past Paper Review', '\u771f\u9898\u590d\u67e5') + '</div>';
+    html += '<div class="hero-section">' + action.count + ' ' + t('mastered questions getting stale', '\u4e2a\u5df2\u638c\u63e1\u771f\u9898\u6b63\u5728\u8870\u9000') + '</div>';
+    html += '<button class="btn btn-primary hero-btn" data-hero-action="plan">';
+    html += '\ud83d\udcc4 ' + t("Today's Plan", '\u4eca\u65e5\u8ba1\u5212') + ' \u2192</button>';
   } else if (action.type === 'start') {
     html += '<div class="hero-label">' + t('Up next', '\u4e0b\u4e00\u7ad9') + '</div>';
     html += '<div class="hero-section">' + escapeHtml(action.label) + '</div>';

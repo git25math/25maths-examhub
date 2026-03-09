@@ -33,6 +33,7 @@ function invalidateCache() {
   _wordDataCache = null;
   _staleCacheData = null;
   _staleKPCache = null;
+  if (typeof _stalePPCacheData !== 'undefined') _stalePPCacheData = null;
   if (typeof _quizCache !== 'undefined') _quizCache = null;
   if (typeof _catLevelIndex !== 'undefined') _catLevelIndex = null;
   if (typeof _hhkSlugIdx !== 'undefined') _hhkSlugIdx = null;

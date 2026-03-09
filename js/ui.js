@@ -75,10 +75,11 @@ function updateNav() {
       b.style.display = mc > 0 ? 'inline-block' : 'none';
     }
   });
-  /* Plan badge — stale word + KP count */
+  /* Plan badge — stale word + KP + PP count */
   var staleN = typeof getStaleCount === 'function' ? getStaleCount() : 0;
   var staleKPN = typeof getStaleKPCount === 'function' ? getStaleKPCount() : 0;
-  var totalStale = staleN + staleKPN;
+  var stalePPN = typeof getStalePPCount === 'function' ? getStalePPCount() : 0;
+  var totalStale = staleN + staleKPN + stalePPN;
   var planBadges = [E('nav-plan-badge'), E('bnav-plan-badge')];
   planBadges.forEach(function(b) {
     if (b) {
