@@ -1112,16 +1112,32 @@ function loadPastPaperData(board) {
       .then(function(m) { for (var k in m) _ppFigures[k] = m[k]; })
       .catch(function() {});
   }
-  return fetch(file).then(function(r) {
-    if (!r.ok) throw new Error('Failed to load ' + file);
-    return r.json();
-  }).then(function(data) {
+  return Promise.all([
+    fetch(file).then(function(r) {
+      if (!r.ok) throw new Error('Failed to load ' + file);
+      return r.json();
+    }),
+    loadQuestionEdits(board)
+  ]).then(function(results) {
+    var data = results[0];
+    var edits = results[1];
     /* v2.0 format: { v, paperMeta, questions } */
     if (data.v === '2.0') {
       _ppData[board] = data;
     } else {
       /* Legacy flat array fallback */
       _ppData[board] = { paperMeta: {}, questions: data };
+    }
+    /* Merge question_edits overrides (marks, tex, d, g) */
+    var qs = _ppData[board].questions || [];
+    for (var qi = 0; qi < qs.length; qi++) {
+      var ed = edits[qs[qi].id];
+      if (ed) {
+        if (ed.marks !== undefined) qs[qi].marks = ed.marks;
+        if (ed.tex !== undefined) qs[qi].tex = ed.tex;
+        if (ed.d !== undefined) qs[qi].d = ed.d;
+        if (ed.g !== undefined) qs[qi].g = ed.g;
+      }
     }
     return _ppData[board];
   });
@@ -2524,18 +2540,20 @@ function submitPPEdit(qid) {
     return;
   }
 
-  sb.from('feedback').insert({
-    user_id: currentUser.id,
-    user_email: currentUser.email,
-    type: 'pastpaper_edit',
-    description: 'Admin correction: ' + changes.join(', '),
-    steps: 'edit',
-    auto_info: {
-      qid: q.id, board: _ppSession.board, src: q.src,
-      original: { tex: q.tex, marks: q.marks, d: q.d, g: q.g },
-      corrected: { tex: newTex, marks: newMarks, d: newDiff, g: newGroup }
-    }
-  }).then(function(res) {
+  var editData = {};
+  if (newTex !== q.tex) editData.tex = newTex;
+  if (newMarks !== q.marks) editData.marks = newMarks;
+  if (newDiff !== q.d) editData.d = newDiff;
+  if (newGroup !== q.g) editData.g = newGroup;
+
+  sb.from('question_edits').upsert({
+    qid: q.id,
+    board: _ppSession.board,
+    data: editData,
+    status: 'active',
+    updated_by: currentUser.id,
+    updated_at: new Date().toISOString()
+  }, { onConflict: 'qid' }).then(function(res) {
     if (res.error) {
       E('pp-ed-msg').textContent = t('Save failed: ', '保存失败：') + res.error.message;
       return;
@@ -2546,6 +2564,8 @@ function submitPPEdit(qid) {
     q.marks = newMarks;
     q.d = newDiff;
     q.g = newGroup;
+    /* Invalidate edits cache so next load picks up the change */
+    _pqEditsCache[_ppSession.board] = null;
 
     hideModal();
     showToast(t('Correction submitted!', '修正已提交！'));

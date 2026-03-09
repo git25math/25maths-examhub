@@ -1,5 +1,27 @@
 # Changelog
 
+## [2.4.0] - 2026-03-09 — KP 超管编辑 + 真题分值持久化
+
+### KP 超管在线编辑（Phase 4）
+- **6 个编辑器**：标题 / 知识讲解（分屏预览+LaTeX）/ 典型考法 / 例题 / 自测 MCQ / 词汇关联
+- **数据持久化**：保存到 `section_edits` 表（module='kp'），加载时自动合并覆盖 JSON 基础数据
+- **编辑入口**：KP 详情页每个 section header 右侧 ✏️ 按钮（仅超管可见）
+- **可增删行**：考法/例题/MCQ 编辑器支持动态增删条目
+- **CSS**：编辑按钮 + 表单行样式 + 暗色模式
+
+### 真题分值持久化
+- **`submitPPEdit`**：从 `feedback` 日志改为 `question_edits` 表持久化（marks/tex/d/g）
+- **`loadPastPaperData`**：加载时合并 `question_edits` 覆盖，分值修改跨会话生效
+- **缓存失效**：保存后清除 `_pqEditsCache`，确保下次加载取最新数据
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `js/syllabus.js` | +422 行：_mergeKPEdits + 6 编辑器 + _saveKPEdit + 事件委托 + 编辑按钮注入 |
+| `js/practice.js` | +35 行：loadPastPaperData 合并 question_edits + submitPPEdit 持久化 |
+| `css/style.css` | +20 行：kp-edit-btn + kpe-row 样式 + 暗色模式 |
+| `js/config.js` | v2.3.25 → v2.4.0 |
+
 ## [2.3.25] - 2026-03-09 — 变式题质量审计 + 自动修复
 
 ### 质量修复（48 ERROR → 0）

@@ -4073,6 +4073,23 @@ input { font-family: inherit; }
 .kp-hero-title { font-family: var(--font-display); font-size: 20px; font-weight: 800; color: var(--c-text); }
 .kp-hero-sub { font-size: 14px; color: var(--c-text2); margin-top: 6px; }
 
+/* KP Edit Button (super-admin) */
+.kp-edit-btn { background: none; border: 1px solid var(--c-border); border-radius: 6px; padding: 2px 6px; font-size: 13px; cursor: pointer; opacity: 0.5; transition: opacity 0.15s; flex-shrink: 0; }
+.kp-edit-btn:hover { opacity: 1; background: var(--c-primary-bg); }
+.kp-hero-title { position: relative; }
+.kp-hero-title .kp-edit-btn { margin-left: 8px; vertical-align: middle; }
+/* KP Editor Rows */
+.kpe-row { border: 1px solid var(--c-border-light); border-radius: 10px; padding: 14px; margin-bottom: 12px; background: var(--c-bg); }
+.kpe-row-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+.kpe-row-num { font-weight: 700; font-size: 13px; color: var(--c-primary); }
+.kpe-row-fields { display: flex; flex-direction: column; gap: 8px; }
+.kpe-row-fields input, .kpe-row-fields textarea { width: 100%; box-sizing: border-box; }
+.kpe-quiz-opts { display: flex; flex-direction: column; gap: 6px; }
+.kpe-quiz-opt-row { display: flex; align-items: center; gap: 8px; }
+.kpe-quiz-opt-row label { flex-shrink: 0; font-size: 13px; min-width: 30px; }
+.kpe-quiz-opt-row input.auth-input { flex: 1; }
+.kpe-remove-row { color: var(--c-danger, #e74c3c); }
+
 /* KP Section Cards */
 .kp-section { background: var(--c-surface); border-radius: 16px; padding: 24px; margin-bottom: 20px; border: 1px solid var(--c-border-light); }
 .kp-section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
@@ -4183,6 +4200,9 @@ input { font-family: inherit; }
 [data-theme="dark"] .kp-quiz-score { color: #9d97f0; }
 [data-theme="dark"] .kp-quiz-result { color: var(--c-text); }
 [data-theme="dark"] .kp-example-solution { border-top-color: var(--c-border); }
+[data-theme="dark"] .kp-edit-btn { border-color: var(--c-border); color: var(--c-text2); }
+[data-theme="dark"] .kp-edit-btn:hover { background: rgba(82,72,201,0.2); }
+[data-theme="dark"] .kpe-row { background: var(--c-surface); border-color: var(--c-border); }
 
 /* KP phone responsive */
 @media (max-width: 639px) {

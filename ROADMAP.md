@@ -321,7 +321,7 @@
   - [x] Phase 3.8：KP 跳转原路返回 + openDeck slug 修复 + 词汇链接友好名称 → v2.3.19
   - [x] Phase 3.9：vocabLinks 无效 slug 清除（CIE -22 / EDX -6） → v2.3.20
   - [x] Phase 3.10：补建 11 vocab levels + 201/201 KPs 100% vocabLinks → v2.3.21
-  - [ ] Phase 4：超管编辑
+  - [x] Phase 4：超管在线编辑（6 编辑器 + section_edits 持久化 + 真题分值持久化） → v2.4.0
 - [x] **Phase D 掌握度系统**：4 维掌握度追踪（Vocab/Practice/Papers/Retention）+ 复习计划推荐 → v1.12.0
 
 ### Phase 10C-EDX — Edexcel 4MA1 考纲驱动重构 [Phase A+B DONE]

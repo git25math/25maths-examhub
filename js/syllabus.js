@@ -1931,6 +1931,384 @@ function saveSectionEdit(sectionId, module, board) {
   });
 }
 
+/* ═══ KP EDITOR (super-admin) ═══ */
+
+var _kpeTimer = null;
+var _kpeCurrentKP = null;
+var _kpeCurrentBoard = null;
+var _kpeCurrentField = null;
+
+function editKPField(kpId, field, board) {
+  if (!isSuperAdmin()) return;
+  var pts = _kpData[board] || [];
+  var kp = null;
+  for (var i = 0; i < pts.length; i++) { if (pts[i].id === kpId) { kp = pts[i]; break; } }
+  if (!kp) { showToast('KP not found'); return; }
+  _kpeCurrentKP = kp;
+  _kpeCurrentBoard = board;
+  _kpeCurrentField = field;
+  switch (field) {
+    case 'title': _editKPTitle(kp, board); break;
+    case 'explanation': _editKPExplanation(kp, board); break;
+    case 'examPatterns': _editKPPatterns(kp, board); break;
+    case 'examples': _editKPExamples(kp, board); break;
+    case 'testYourself': _editKPQuiz(kp, board); break;
+    case 'vocabLinks': _editKPVocabLinks(kp, board); break;
+  }
+}
+
+/* --- Title Editor --- */
+function _editKPTitle(kp, board) {
+  var html = '<div class="modal-card pq-editor-modal" style="max-width:500px" onclick="event.stopPropagation()">';
+  html += '<div class="pq-editor-header"><div class="section-title sec-title-flush">' + t('Edit Title', '编辑标题') + ' <span class="sec-editor-subtitle">' + escapeHtml(kp.id) + '</span></div></div>';
+  html += '<div class="pq-editor-fields" style="padding:16px">';
+  html += _pqFieldGroup('Title (EN)', 'kpe-title', kp.title || '', 1);
+  html += _pqFieldGroup('Title (中文)', 'kpe-title-zh', kp.title_zh || '', 1);
+  html += '</div>';
+  html += '<div class="pq-editor-footer">';
+  html += '<button class="btn btn-primary" id="kpe-save-btn">' + t('Save', '保存') + '</button>';
+  html += '<button class="btn btn-ghost" onclick="hideModal()">' + t('Cancel', '取消') + '</button>';
+  html += '</div></div>';
+  showModal(html);
+  E('modal-card').className = 'modal-card pq-editor-modal';
+  setTimeout(function() {
+    var saveBtn = E('kpe-save-btn');
+    if (saveBtn) saveBtn.addEventListener('click', function() {
+      var data = { title: E('kpe-title').value, title_zh: E('kpe-title-zh').value };
+      _saveKPEdit(kp.id, board, data);
+    });
+  }, 30);
+}
+
+/* --- Explanation Editor (split pane with preview) --- */
+function _editKPExplanation(kp, board) {
+  var html = '<div class="modal-card pq-editor-modal" onclick="event.stopPropagation()">';
+  html += '<div class="pq-editor-header"><div class="section-title sec-title-flush">' + t('Edit Explanation', '编辑知识讲解') + ' <span class="sec-editor-subtitle">' + escapeHtml(kp.id) + '</span></div></div>';
+  /* Toolbar */
+  html += '<div class="pq-editor-toolbar">';
+  html += '<button type="button" onclick="pqToolBold()" title="Bold"><b>B</b></button>';
+  html += '<button type="button" onclick="pqToolItalic()" title="Italic"><i>I</i></button>';
+  html += '<button type="button" onclick="pqToolSub()" title="Subscript">X<sub>2</sub></button>';
+  html += '<button type="button" onclick="pqToolSup()" title="Superscript">X<sup>2</sup></button>';
+  html += '<button type="button" onclick="pqToolFormula()" title="Formula">\u2211</button>';
+  html += '</div>';
+  /* Split */
+  html += '<div class="pq-editor-split">';
+  html += '<div class="pq-editor-fields">';
+  html += _pqFieldGroup('Content (EN)', 'kpe-exp-en', kp.explanation ? kp.explanation.en || '' : '', 8);
+  html += _pqFieldGroup('Content (中文)', 'kpe-exp-zh', kp.explanation ? kp.explanation.zh || '' : '', 8);
+  html += '</div>';
+  html += '<div class="pq-editor-preview" id="kpe-preview"></div>';
+  html += '</div>';
+  /* Formula popup */
+  html += '<div class="pq-formula-popup" id="pq-formula-popup" class="d-none">';
+  html += '<label class="pq-field-label">LaTeX</label>';
+  html += '<textarea id="pq-formula-input" class="bug-textarea font-mono" rows="2" placeholder="\\frac{1}{2}"></textarea>';
+  html += '<div class="pq-formula-preview" id="pq-formula-preview"></div>';
+  html += '<div class="btn-row btn-row--mt8">';
+  html += '<button class="btn btn-primary btn-sm" onclick="pqInsertFormula()">' + t('Insert', '插入') + '</button>';
+  html += '<button class="btn btn-ghost btn-sm" onclick="pqCloseFormula()">' + t('Cancel', '取消') + '</button>';
+  html += '</div></div>';
+  /* Footer */
+  html += '<div class="pq-editor-footer">';
+  html += '<button class="btn btn-primary" id="kpe-save-btn">' + t('Save', '保存') + '</button>';
+  html += '<button class="btn btn-ghost" onclick="hideModal()">' + t('Cancel', '取消') + '</button>';
+  html += '</div></div>';
+  showModal(html);
+  E('modal-card').className = 'modal-card pq-editor-modal';
+  setTimeout(function() {
+    ['kpe-exp-en', 'kpe-exp-zh'].forEach(function(fid) {
+      var el = E(fid);
+      if (el) {
+        el.oninput = function() { _kpeUpdateExpPreview(); };
+        el.onfocus = function() { _pqFocusedTextarea = this; };
+      }
+    });
+    _kpeUpdateExpPreview();
+    var saveBtn = E('kpe-save-btn');
+    if (saveBtn) saveBtn.addEventListener('click', function() {
+      var data = { explanation: { en: E('kpe-exp-en').value, zh: E('kpe-exp-zh').value } };
+      _saveKPEdit(kp.id, board, data);
+    });
+  }, 50);
+}
+
+function _kpeUpdateExpPreview() {
+  var prev = E('kpe-preview');
+  if (!prev) return;
+  var en = E('kpe-exp-en') ? E('kpe-exp-en').value : '';
+  var zh = E('kpe-exp-zh') ? E('kpe-exp-zh').value : '';
+  var h = '<div class="pq-preview-section"><div class="pq-preview-label">EN</div><div class="pq-preview-content">' + kpMarkdown(en) + '</div></div>';
+  if (zh) h += '<div class="pq-preview-section"><div class="pq-preview-label">ZH</div><div class="pq-preview-content text-sub">' + kpMarkdown(zh) + '</div></div>';
+  prev.innerHTML = h;
+  clearTimeout(_kpeTimer);
+  _kpeTimer = setTimeout(function() { if (typeof renderMath === 'function') renderMath(prev); }, 300);
+}
+
+/* --- Exam Patterns Editor --- */
+function _editKPPatterns(kp, board) {
+  var patterns = kp.examPatterns ? JSON.parse(JSON.stringify(kp.examPatterns)) : [];
+  var html = '<div class="modal-card pq-editor-modal" style="max-width:640px" onclick="event.stopPropagation()">';
+  html += '<div class="pq-editor-header"><div class="section-title sec-title-flush">' + t('Edit Exam Patterns', '编辑典型考法') + ' <span class="sec-editor-subtitle">' + escapeHtml(kp.id) + '</span></div></div>';
+  html += '<div class="pq-editor-fields" style="padding:16px;max-height:60vh;overflow-y:auto" id="kpe-patterns-list">';
+  html += _kpeRenderPatternRows(patterns);
+  html += '</div>';
+  html += '<div class="pq-editor-footer">';
+  html += '<button class="btn btn-ghost btn-sm" id="kpe-add-pattern">+ ' + t('Add Pattern', '添加考法') + '</button>';
+  html += '<button class="btn btn-primary" id="kpe-save-btn">' + t('Save', '保存') + '</button>';
+  html += '<button class="btn btn-ghost" onclick="hideModal()">' + t('Cancel', '取消') + '</button>';
+  html += '</div></div>';
+  showModal(html);
+  E('modal-card').className = 'modal-card pq-editor-modal';
+  setTimeout(function() {
+    E('kpe-add-pattern').addEventListener('click', function() {
+      var list = E('kpe-patterns-list');
+      var idx = list.querySelectorAll('.kpe-row').length;
+      var row = document.createElement('div');
+      row.innerHTML = _kpePatternRow(idx, {});
+      list.appendChild(row.firstChild);
+    });
+    E('kpe-save-btn').addEventListener('click', function() {
+      _saveKPEdit(kp.id, board, { examPatterns: _kpeCollectPatterns() });
+    });
+  }, 30);
+}
+
+function _kpeRenderPatternRows(patterns) {
+  var h = '';
+  for (var i = 0; i < patterns.length; i++) h += _kpePatternRow(i, patterns[i]);
+  return h;
+}
+
+function _kpePatternRow(idx, p) {
+  var h = '<div class="kpe-row" data-kpe-idx="' + idx + '">';
+  h += '<div class="kpe-row-header"><span class="kpe-row-num">#' + (idx + 1) + '</span><button class="btn btn-ghost btn-sm kpe-remove-row" onclick="this.closest(\'.kpe-row\').remove()" title="Remove">\u2715</button></div>';
+  h += '<div class="kpe-row-fields">';
+  h += '<input class="auth-input kpe-f" data-kpe-key="label" placeholder="Label (EN)" value="' + escapeHtml(p.label || '') + '">';
+  h += '<input class="auth-input kpe-f" data-kpe-key="label_zh" placeholder="Label (中文)" value="' + escapeHtml(p.label_zh || '') + '">';
+  h += '<textarea class="pq-ed-textarea kpe-f" data-kpe-key="description" rows="2" placeholder="Description (EN)">' + escapeHtml(p.description || '') + '</textarea>';
+  h += '<textarea class="pq-ed-textarea kpe-f" data-kpe-key="description_zh" rows="2" placeholder="Description (中文)">' + escapeHtml(p.description_zh || '') + '</textarea>';
+  h += '</div></div>';
+  return h;
+}
+
+function _kpeCollectPatterns() {
+  var rows = document.querySelectorAll('#kpe-patterns-list .kpe-row');
+  var result = [];
+  rows.forEach(function(row, idx) {
+    var p = { id: 'p' + (idx + 1) };
+    row.querySelectorAll('.kpe-f').forEach(function(f) {
+      p[f.getAttribute('data-kpe-key')] = f.value;
+    });
+    if (p.label || p.label_zh) result.push(p);
+  });
+  return result;
+}
+
+/* --- Examples Editor --- */
+function _editKPExamples(kp, board) {
+  var examples = kp.examples ? JSON.parse(JSON.stringify(kp.examples)) : [];
+  var html = '<div class="modal-card pq-editor-modal" style="max-width:640px" onclick="event.stopPropagation()">';
+  html += '<div class="pq-editor-header"><div class="section-title sec-title-flush">' + t('Edit Examples', '编辑例题') + ' <span class="sec-editor-subtitle">' + escapeHtml(kp.id) + '</span></div></div>';
+  html += '<div class="pq-editor-fields" style="padding:16px;max-height:60vh;overflow-y:auto" id="kpe-examples-list">';
+  html += _kpeRenderExampleRows(examples);
+  html += '</div>';
+  html += '<div class="pq-editor-footer">';
+  html += '<button class="btn btn-ghost btn-sm" id="kpe-add-example">+ ' + t('Add Example', '添加例题') + '</button>';
+  html += '<button class="btn btn-primary" id="kpe-save-btn">' + t('Save', '保存') + '</button>';
+  html += '<button class="btn btn-ghost" onclick="hideModal()">' + t('Cancel', '取消') + '</button>';
+  html += '</div></div>';
+  showModal(html);
+  E('modal-card').className = 'modal-card pq-editor-modal';
+  setTimeout(function() {
+    E('kpe-add-example').addEventListener('click', function() {
+      var list = E('kpe-examples-list');
+      var idx = list.querySelectorAll('.kpe-row').length;
+      var row = document.createElement('div');
+      row.innerHTML = _kpeExampleRow(idx, {});
+      list.appendChild(row.firstChild);
+    });
+    E('kpe-save-btn').addEventListener('click', function() {
+      _saveKPEdit(kp.id, board, { examples: _kpeCollectExamples() });
+    });
+  }, 30);
+}
+
+function _kpeRenderExampleRows(examples) {
+  var h = '';
+  for (var i = 0; i < examples.length; i++) h += _kpeExampleRow(i, examples[i]);
+  return h;
+}
+
+function _kpeExampleRow(idx, ex) {
+  var h = '<div class="kpe-row" data-kpe-idx="' + idx + '">';
+  h += '<div class="kpe-row-header"><span class="kpe-row-num">' + t('Example', '例题') + ' ' + (idx + 1) + '</span><button class="btn btn-ghost btn-sm kpe-remove-row" onclick="this.closest(\'.kpe-row\').remove()" title="Remove">\u2715</button></div>';
+  h += '<div class="kpe-row-fields">';
+  h += '<input class="auth-input kpe-f" data-kpe-key="source" placeholder="Source (e.g. 0580/42/M/J/20 Q3)" value="' + escapeHtml(ex.source || '') + '">';
+  h += '<textarea class="pq-ed-textarea kpe-f" data-kpe-key="question" rows="3" placeholder="Question (EN)">' + escapeHtml(ex.question || '') + '</textarea>';
+  h += '<textarea class="pq-ed-textarea kpe-f" data-kpe-key="question_zh" rows="2" placeholder="Question (中文)">' + escapeHtml(ex.question_zh || '') + '</textarea>';
+  h += '<textarea class="pq-ed-textarea kpe-f" data-kpe-key="solution" rows="4" placeholder="Solution (EN)">' + escapeHtml(ex.solution || '') + '</textarea>';
+  h += '<textarea class="pq-ed-textarea kpe-f" data-kpe-key="solution_zh" rows="3" placeholder="Solution (中文)">' + escapeHtml(ex.solution_zh || '') + '</textarea>';
+  h += '</div></div>';
+  return h;
+}
+
+function _kpeCollectExamples() {
+  var rows = document.querySelectorAll('#kpe-examples-list .kpe-row');
+  var result = [];
+  rows.forEach(function(row) {
+    var ex = {};
+    row.querySelectorAll('.kpe-f').forEach(function(f) {
+      ex[f.getAttribute('data-kpe-key')] = f.value;
+    });
+    if (ex.question || ex.question_zh) result.push(ex);
+  });
+  return result;
+}
+
+/* --- Test Yourself MCQ Editor --- */
+function _editKPQuiz(kp, board) {
+  var questions = kp.testYourself ? JSON.parse(JSON.stringify(kp.testYourself)) : [];
+  var html = '<div class="modal-card pq-editor-modal" style="max-width:700px" onclick="event.stopPropagation()">';
+  html += '<div class="pq-editor-header"><div class="section-title sec-title-flush">' + t('Edit Quiz', '编辑自测题') + ' <span class="sec-editor-subtitle">' + escapeHtml(kp.id) + '</span></div></div>';
+  html += '<div class="pq-editor-fields" style="padding:16px;max-height:60vh;overflow-y:auto" id="kpe-quiz-list">';
+  html += _kpeRenderQuizRows(questions);
+  html += '</div>';
+  html += '<div class="pq-editor-footer">';
+  html += '<button class="btn btn-ghost btn-sm" id="kpe-add-quiz">+ ' + t('Add Question', '添加题目') + '</button>';
+  html += '<button class="btn btn-primary" id="kpe-save-btn">' + t('Save', '保存') + '</button>';
+  html += '<button class="btn btn-ghost" onclick="hideModal()">' + t('Cancel', '取消') + '</button>';
+  html += '</div></div>';
+  showModal(html);
+  E('modal-card').className = 'modal-card pq-editor-modal';
+  setTimeout(function() {
+    E('kpe-add-quiz').addEventListener('click', function() {
+      var list = E('kpe-quiz-list');
+      var idx = list.querySelectorAll('.kpe-row').length;
+      var row = document.createElement('div');
+      row.innerHTML = _kpeQuizRow(idx, { o: ['', '', '', ''], a: 0 });
+      list.appendChild(row.firstChild);
+    });
+    E('kpe-save-btn').addEventListener('click', function() {
+      _saveKPEdit(kp.id, board, { testYourself: _kpeCollectQuiz() });
+    });
+  }, 30);
+}
+
+function _kpeRenderQuizRows(questions) {
+  var h = '';
+  for (var i = 0; i < questions.length; i++) h += _kpeQuizRow(i, questions[i]);
+  return h;
+}
+
+function _kpeQuizRow(idx, q) {
+  var opts = q.o || ['', '', '', ''];
+  var labels = ['A', 'B', 'C', 'D'];
+  var h = '<div class="kpe-row" data-kpe-idx="' + idx + '">';
+  h += '<div class="kpe-row-header"><span class="kpe-row-num">Q' + (idx + 1) + '</span><button class="btn btn-ghost btn-sm kpe-remove-row" onclick="this.closest(\'.kpe-row\').remove()" title="Remove">\u2715</button></div>';
+  h += '<div class="kpe-row-fields">';
+  h += '<textarea class="pq-ed-textarea kpe-f" data-kpe-key="q" rows="2" placeholder="Question (EN)">' + escapeHtml(q.q || '') + '</textarea>';
+  h += '<textarea class="pq-ed-textarea kpe-f" data-kpe-key="q_zh" rows="2" placeholder="Question (中文)">' + escapeHtml(q.q_zh || '') + '</textarea>';
+  h += '<div class="kpe-quiz-opts">';
+  for (var i = 0; i < 4; i++) {
+    h += '<div class="kpe-quiz-opt-row">';
+    h += '<label><input type="radio" name="kpe-correct-' + idx + '" value="' + i + '"' + (q.a === i ? ' checked' : '') + '> ' + labels[i] + '</label>';
+    h += '<input class="auth-input kpe-opt" data-kpe-opt-idx="' + i + '" placeholder="Option ' + labels[i] + '" value="' + escapeHtml(opts[i] || '') + '">';
+    h += '</div>';
+  }
+  h += '</div>';
+  h += '<textarea class="pq-ed-textarea kpe-f" data-kpe-key="e" rows="2" placeholder="Explanation (EN)">' + escapeHtml(q.e || '') + '</textarea>';
+  h += '<textarea class="pq-ed-textarea kpe-f" data-kpe-key="e_zh" rows="2" placeholder="Explanation (中文)">' + escapeHtml(q.e_zh || '') + '</textarea>';
+  h += '</div></div>';
+  return h;
+}
+
+function _kpeCollectQuiz() {
+  var rows = document.querySelectorAll('#kpe-quiz-list .kpe-row');
+  var result = [];
+  rows.forEach(function(row, idx) {
+    var q = {};
+    row.querySelectorAll('.kpe-f').forEach(function(f) {
+      q[f.getAttribute('data-kpe-key')] = f.value;
+    });
+    /* Options */
+    q.o = [];
+    row.querySelectorAll('.kpe-opt').forEach(function(f) {
+      q.o.push(f.value);
+    });
+    /* Correct answer */
+    var checked = row.querySelector('input[name="kpe-correct-' + idx + '"]:checked');
+    q.a = checked ? parseInt(checked.value) : 0;
+    if (q.q || q.q_zh) result.push(q);
+  });
+  return result;
+}
+
+/* --- Vocab Links Editor --- */
+function _editKPVocabLinks(kp, board) {
+  var links = (kp.vocabLinks || []).join('\n');
+  var html = '<div class="modal-card pq-editor-modal" style="max-width:500px" onclick="event.stopPropagation()">';
+  html += '<div class="pq-editor-header"><div class="section-title sec-title-flush">' + t('Edit Vocab Links', '编辑词汇关联') + ' <span class="sec-editor-subtitle">' + escapeHtml(kp.id) + '</span></div></div>';
+  html += '<div class="pq-editor-fields" style="padding:16px">';
+  html += '<label class="pq-field-label">' + t('One slug per line', '每行一个 slug') + '</label>';
+  html += '<textarea id="kpe-vlinks" class="pq-ed-textarea" rows="6" placeholder="cie-algebra-basics\ncie-equations">' + escapeHtml(links) + '</textarea>';
+  html += '</div>';
+  html += '<div class="pq-editor-footer">';
+  html += '<button class="btn btn-primary" id="kpe-save-btn">' + t('Save', '保存') + '</button>';
+  html += '<button class="btn btn-ghost" onclick="hideModal()">' + t('Cancel', '取消') + '</button>';
+  html += '</div></div>';
+  showModal(html);
+  E('modal-card').className = 'modal-card pq-editor-modal';
+  setTimeout(function() {
+    E('kpe-save-btn').addEventListener('click', function() {
+      var val = E('kpe-vlinks').value.trim();
+      var slugs = val ? val.split('\n').map(function(s) { return s.trim(); }).filter(Boolean) : [];
+      _saveKPEdit(kp.id, board, { vocabLinks: slugs });
+    });
+  }, 30);
+}
+
+/* --- Save KP Edit to Supabase --- */
+function _saveKPEdit(kpId, board, fieldData) {
+  if (!sb || !isSuperAdmin()) { showToast('Not authorized'); return; }
+  /* Build full KP override: merge current KP with edited fields */
+  var pts = _kpData[board] || [];
+  var kp = null;
+  for (var i = 0; i < pts.length; i++) { if (pts[i].id === kpId) { kp = pts[i]; break; } }
+  if (!kp) { showToast('KP not found'); return; }
+  var override = {};
+  var editableKeys = ['title', 'title_zh', 'explanation', 'examPatterns', 'examples', 'testYourself', 'vocabLinks', 'tier'];
+  editableKeys.forEach(function(k) { if (kp[k] !== undefined) override[k] = kp[k]; });
+  /* Apply new field data */
+  Object.keys(fieldData).forEach(function(k) { override[k] = fieldData[k]; });
+  showToast(t('Saving...', '保存中...'));
+  sb.from('section_edits').upsert({
+    board: board,
+    section_id: kpId,
+    module: 'kp',
+    data: override,
+    updated_by: currentUser.id,
+    updated_at: new Date().toISOString()
+  }, { onConflict: 'board,section_id,module' }).then(function(res) {
+    if (res.error) {
+      showToast(t('Save failed: ', '保存失败：') + res.error.message);
+      return;
+    }
+    /* Invalidate caches and re-render */
+    _sectionEditsCache[board] = null;
+    _kpData[board] = null;
+    _kpLoading[board] = null;
+    hideModal();
+    E('modal-card').className = 'modal-card';
+    showToast(t('Saved!', '已保存！'));
+    loadSectionEdits(board).then(function() {
+      return loadKnowledgeData(board);
+    }).then(function() {
+      openKnowledgePoint(kpId, board);
+    });
+  });
+}
+
 /* ═══ SECTION MODULE REPORT ═══ */
 
 var _sectionReportTypes = {
@@ -2543,9 +2921,27 @@ function loadKnowledgeData(board) {
   if (_kpLoading[board]) return _kpLoading[board];
   _kpLoading[board] = fetch('data/knowledge-' + board + '.json?v=' + APP_VERSION)
     .then(function(r) { return r.json(); })
-    .then(function(d) { _kpData[board] = d.points || []; return _kpData[board]; })
+    .then(function(d) { _kpData[board] = d.points || []; _mergeKPEdits(board); return _kpData[board]; })
     .catch(function() { _kpData[board] = []; return []; });
   return _kpLoading[board];
+}
+
+/* Merge Supabase KP overrides into cached data */
+function _mergeKPEdits(board) {
+  var edits = _sectionEditsCache[board] || {};
+  var points = _kpData[board] || [];
+  Object.keys(edits).forEach(function(secId) {
+    var kpOverride = edits[secId] && edits[secId].kp;
+    if (!kpOverride) return;
+    for (var i = 0; i < points.length; i++) {
+      if (points[i].id === secId) {
+        Object.keys(kpOverride).forEach(function(k) {
+          if (k !== 'id' && k !== 'section' && k !== 'order') points[i][k] = kpOverride[k];
+        });
+        break;
+      }
+    }
+  });
 }
 
 function getKPsForSection(sectionId, board) {
@@ -2603,6 +2999,11 @@ function renderKPDetail(kp, board) {
     }
   }
 
+  var _kpeAdmin = typeof isSuperAdmin === 'function' && isSuperAdmin();
+  function _kpeBtn(field) {
+    if (!_kpeAdmin) return '';
+    return '<button class="kp-edit-btn" data-kpe-field="' + field + '" data-kpe-id="' + kp.id + '" data-kpe-board="' + board + '" title="Edit">\u270f\ufe0f</button>';
+  }
   var html = '<div class="kp-detail">';
 
   /* Back button */
@@ -2612,7 +3013,7 @@ function renderKPDetail(kp, board) {
 
   /* Hero */
   html += '<div class="kp-hero">';
-  html += '<div class="kp-hero-title">' + pqRender(kp.title) + '</div>';
+  html += '<div class="kp-hero-title">' + pqRender(kp.title) + _kpeBtn('title') + '</div>';
   if (kp.title_zh) html += '<div class="kp-hero-sub">' + kp.title_zh + '</div>';
   var heroResult = typeof getKPResult === 'function' ? getKPResult(kp.id) : null;
   if (heroResult) {
@@ -2625,7 +3026,7 @@ function renderKPDetail(kp, board) {
   html += '<div class="kp-section">';
   html += '<div class="kp-section-header">';
   html += '<div class="kp-section-num">1</div>';
-  html += '<div class="kp-section-labels"><div class="kp-section-label">' + t('Explanation', '\u77e5\u8bc6\u70b9\u7cbe\u6790') + '</div></div>';
+  html += '<div class="kp-section-labels"><div class="kp-section-label">' + t('Explanation', '\u77e5\u8bc6\u70b9\u7cbe\u6790') + '</div></div>' + _kpeBtn('explanation');
   html += '</div>';
   var expText = isZh && kp.explanation.zh ? kp.explanation.zh : kp.explanation.en;
   var parsed = _splitExplanation(expText);
@@ -2655,7 +3056,7 @@ function renderKPDetail(kp, board) {
     html += '<div class="kp-section">';
     html += '<div class="kp-section-header">';
     html += '<div class="kp-section-num">2</div>';
-    html += '<div class="kp-section-labels"><div class="kp-section-label">' + t('Exam Patterns', '\u5178\u578b\u8003\u6cd5') + '</div></div>';
+    html += '<div class="kp-section-labels"><div class="kp-section-label">' + t('Exam Patterns', '\u5178\u578b\u8003\u6cd5') + '</div></div>' + _kpeBtn('examPatterns');
     html += '</div>';
     html += '<div class="kp-section-body">';
     for (var pi = 0; pi < kp.examPatterns.length; pi++) {
@@ -2675,7 +3076,7 @@ function renderKPDetail(kp, board) {
     html += '<div class="kp-section">';
     html += '<div class="kp-section-header">';
     html += '<div class="kp-section-num">3</div>';
-    html += '<div class="kp-section-labels"><div class="kp-section-label">' + t('Worked Examples', '\u5178\u578b\u4f8b\u9898') + '</div></div>';
+    html += '<div class="kp-section-labels"><div class="kp-section-label">' + t('Worked Examples', '\u5178\u578b\u4f8b\u9898') + '</div></div>' + _kpeBtn('examples');
     html += '</div>';
     html += '<div class="kp-section-body">';
     for (var ei = 0; ei < kp.examples.length; ei++) {
@@ -2701,7 +3102,7 @@ function renderKPDetail(kp, board) {
     html += '<div class="kp-section">';
     html += '<div class="kp-section-header">';
     html += '<div class="kp-section-num">4</div>';
-    html += '<div class="kp-section-labels"><div class="kp-section-label">' + t('Test Yourself', '\u81ea\u6d4b') + '</div></div>';
+    html += '<div class="kp-section-labels"><div class="kp-section-label">' + t('Test Yourself', '\u81ea\u6d4b') + '</div></div>' + _kpeBtn('testYourself');
     html += '</div>';
     var prevKPResult = typeof getKPResult === 'function' ? getKPResult(kp.id) : null;
     if (prevKPResult) {
@@ -2733,7 +3134,7 @@ function renderKPDetail(kp, board) {
   html += '<div class="kp-section">';
   html += '<div class="kp-section-header">';
   html += '<div class="kp-section-num">5</div>';
-  html += '<div class="kp-section-labels"><div class="kp-section-label">' + t('Related Resources', '\u76f8\u5173\u8d44\u6e90') + '</div></div>';
+  html += '<div class="kp-section-labels"><div class="kp-section-label">' + t('Related Resources', '\u76f8\u5173\u8d44\u6e90') + '</div></div>' + _kpeBtn('vocabLinks');
   html += '</div>';
   html += '<div class="kp-resource">';
   if (kp.vocabLinks && kp.vocabLinks.length > 0) {
@@ -2795,6 +3196,13 @@ function renderKPDetail(kp, board) {
 
 /* KP event delegation */
 document.addEventListener('click', function(e) {
+  /* KP edit button (super-admin) */
+  var kpeBtn = e.target.closest('.kp-edit-btn[data-kpe-field]');
+  if (kpeBtn) {
+    e.stopPropagation();
+    editKPField(kpeBtn.getAttribute('data-kpe-id'), kpeBtn.getAttribute('data-kpe-field'), kpeBtn.getAttribute('data-kpe-board'));
+    return;
+  }
   /* KP row click → open detail */
   var kpRow = e.target.closest('.kp-row[data-kp-id]');
   if (kpRow) {
