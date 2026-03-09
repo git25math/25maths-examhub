@@ -443,6 +443,12 @@
 - [x] **教师作业解锁**: diagnostic/mock 作业自动注入 featureOverride → v2.5.0
 - [x] **全面取消路径锁定**: 所有模式/知识点直接开放，删除 FEATURE_THRESHOLD + Test Out + 锁定 UI → v2.5.1
 
+## v2.7 Mastered 衰退复查 + 错题词汇回流 [DONE]
+- [x] **Mastered 衰退检测**: getStaleWords + REFRESH_INTERVALS [7,14,30] + rc 递增阈值 → v2.7.0
+- [x] **Refresh Scan 模式**: startRefreshScan 复用 Scan UI + recordRefreshScan + Quick Scan CTA → v2.7.0
+- [x] **错题词汇回流**: reflowVocabForSection + ppAddToWrongBook 触发 + 3 天保护期 → v2.7.0
+- [x] **UI 集成**: Today's Plan Refresh 卡片 + Hero 推荐 + 错题本 reflow 标签 → v2.7.0
+
 ## v2.6 FLM 筛选循环词汇学习系统 [DONE]
 - [x] **SRS→FLM 引擎替换**: 4 状态模型(new/learning/uncertain/mastered) + recordScan + recordAnswer 重写 + 旧数据迁移 → v2.6.0
 - [x] **Study→Scan 模式**: 三按钮筛选(认识/模糊/不认识) + 多轮 Pool 缩小 + 键盘快捷键 → v2.6.0

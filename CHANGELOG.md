@@ -1,5 +1,39 @@
 # Changelog
 
+## [2.7.0] - 2026-03-09 — Mastered 衰退复查 + 错题词汇回流
+
+### Feature 1: Mastered 衰退复查
+- 新增 `getStaleWords()` / `getStaleCount()` — 检测超过衰退阈值的 mastered 词
+- 衰退阈值随复查次数递增：`REFRESH_INTERVALS = [7, 14, 30]` 天（rc=0→7天, rc=1→14天, rc≥2→30天）
+- 新增 `recordRefreshScan(key, verdict)` — Refresh Scan 专用记录（known→rc++留mastered, fuzzy→uncertain, unknown→learning）
+- 新增 `startRefreshScan()` — 复用 Scan UI 的轻量复查模式（最多 20 词）
+- Today's Plan 面板新增 "Refresh Review" 卡片，显示 stale 词数量 + Quick Scan 按钮
+- Hero 推荐区：stale ≥ 5 时优先推荐 Refresh Review 动作
+
+### Feature 2: 错题→词汇回流
+- `ppAddToWrongBook()` 新增 `sectionId, board` 参数
+- 新增 `reflowVocabForSection(sectionId, board)` — 错题新增时自动将该 section 内 mastered(>3天) 词降级为 uncertain
+- 错题本词汇区新增 "Reflowed" 标签，标识回流来源的词
+- 3 个 ppAddToWrongBook 调用点（诊断/考试/批量评阅）均传入 sectionId + board
+
+### 质量改进
+- `_getVocabMistakes()` 条件从 `stars < 3` 改为 `fs !== 'mastered'`（FLM 对齐）
+- `recordAnswer()` / `recordScan()` 保留 `rc` 字段
+- `getAllWords()` 输出新增 `rc`, `fmt` 字段
+- 错题本按钮文字改为 "Re-scan Wrong Words"
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| config.js | +REFRESH_INTERVALS, +REFRESH_CAP, 版本→v2.7.0 |
+| storage.js | +getStaleWords, +getStaleCount, +recordRefreshScan, +reflowVocabForSection, rc 字段保留 |
+| study.js | +startRefreshScan, +_renderRefreshCard, +_finishRefreshScan, rateScan/finishStudy 分支 |
+| mastery.js | _getNextAction +refresh 优先级, _renderHeroAction +refresh 分支, _initHeroDelegation +refresh |
+| syllabus.js | renderTodaysPlan +Refresh 卡片+委托, _getVocabMistakes FLM 对齐, renderMistakeBook +reflow 标签 |
+| practice.js | ppAddToWrongBook +sectionId/board + reflowVocabForSection, 3 调用点传参 |
+| css/style.css | +.plan-refresh, +.reflow-tag, +.study-refresh-label, dark mode |
+| sw.js | CACHE_VERSION→v2.7.0 |
+
 ## [2.6.0] - 2026-03-09 — FLM 筛选循环词汇学习系统
 
 ### 核心变更：SRS → FLM

@@ -167,6 +167,7 @@ function recordAnswer(key, mode, isCorrect) {
   s.words[key] = {
     st: st, lr: now, ok: ok, fail: fail,
     fs: fs, cs: cs, fr: prev.fr || 0, fmt: prev.fmt || null, src: prev.src || '',
+    rc: prev.rc || 0,
     /* Keep legacy fields for compat but stop updating SRS */
     lv: prev.lv || 0, iv: prev.iv || 0, nr: prev.nr || 0,
     stars: prev.stars != null ? prev.stars : computeStars(ok, fail)
@@ -249,6 +250,7 @@ function recordScan(key, verdict, round) {
   s.words[key] = {
     st: st, lr: now, ok: ok, fail: fail,
     fs: fs, cs: 0, fr: prev.fr || 0, fmt: prev.fmt || null, src: prev.src || 'scan',
+    rc: prev.rc || 0,
     lv: prev.lv || 0, iv: prev.iv || 0, nr: prev.nr || 0,
     stars: prev.stars != null ? prev.stars : computeStars(ok, fail)
   };
@@ -392,13 +394,114 @@ function getAllWords() {
         lv: d ? (d.lv || 0) : 0,
         cs: d ? (d.cs || 0) : 0,
         fr: d ? (d.fr || 0) : 0,
-        src: d ? (d.src || '') : ''
+        src: d ? (d.src || '') : '',
+        rc: d ? (d.rc || 0) : 0,
+        fmt: d ? (d.fmt || null) : null
       });
     }
   });
   _allWordsCache = all;
   _cacheDirty = false;
   return all;
+}
+
+/* ═══ MASTERED DECAY — REFRESH SCAN ═══ */
+
+/* Get stale mastered words (exceeded refresh interval) */
+function getStaleWords() {
+  var all = getAllWords();
+  var now = Date.now();
+  var stale = [];
+  for (var i = 0; i < all.length; i++) {
+    var w = all[i];
+    if (w.fs !== 'mastered') continue;
+    if (!w.fmt) continue;
+    var rc = w.rc || 0;
+    var threshold = REFRESH_INTERVALS[Math.min(rc, REFRESH_INTERVALS.length - 1)];
+    var daysSince = (now - w.fmt) / 86400000;
+    if (daysSince >= threshold) {
+      stale.push({ key: w.key, word: w.word, def: w.def, level: w.level,
+                   lid: w.key.split('_W')[1], rc: rc, daysSince: Math.floor(daysSince) });
+    }
+  }
+  stale.sort(function(a, b) { return b.daysSince - a.daysSince; });
+  return stale;
+}
+
+function getStaleCount() { return getStaleWords().length; }
+
+/* Refresh Scan recorder — handles mastered decay review */
+function recordRefreshScan(key, verdict) {
+  var s = loadS();
+  if (!s.words) s.words = {};
+  var now = Date.now();
+  var prev = s.words[key] || {};
+  var rc = prev.rc || 0;
+  var fs = prev.fs || 'mastered';
+  var ok = prev.ok || 0;
+  var fail = prev.fail || 0;
+
+  if (verdict === 'known') {
+    rc += 1;
+    prev.fmt = now;
+    /* stays mastered */
+  } else if (verdict === 'fuzzy') {
+    fs = 'uncertain';
+    prev.src = 'reflow';
+    prev.cs = 0;
+  } else if (verdict === 'unknown') {
+    fs = 'learning';
+    fail += 1;
+    prev.src = 'reflow';
+    prev.cs = 0;
+  }
+
+  var st = fs === 'mastered' ? 'mastered' : fs === 'new' ? 'new' : 'learning';
+  s.words[key] = {
+    st: st, lr: now, ok: ok, fail: fail,
+    fs: fs, cs: prev.cs || 0, fr: prev.fr || 0, fmt: prev.fmt || null,
+    src: prev.src || '', rc: rc,
+    lv: prev.lv || 0, iv: prev.iv || 0, nr: prev.nr || 0,
+    stars: prev.stars != null ? prev.stars : computeStars(ok, fail)
+  };
+
+  _cacheDirty = true;
+  writeS(s);
+  debouncedSync();
+}
+
+/* Mistake reflow — demote mastered words in a section when practice error occurs */
+function reflowVocabForSection(sectionId, board) {
+  if (typeof getSectionLevelIdx !== 'function') return 0;
+  var li = getSectionLevelIdx(sectionId, board);
+  if (li < 0 || !LEVELS[li]) return 0;
+  var lv = LEVELS[li];
+  var s = loadS();
+  if (!s.words) s.words = {};
+  var now = Date.now();
+  var count = 0;
+  var THREE_DAYS = 3 * 86400000;
+
+  var m = {};
+  lv.vocabulary.forEach(function(v) { if (!m[v.id]) m[v.id] = true; });
+  for (var kid in m) {
+    var key = wordKey(li, kid);
+    var d = s.words[key];
+    if (!d || d.fs !== 'mastered') continue;
+    if (d.fmt && (now - d.fmt) < THREE_DAYS) continue;
+    d.fs = 'uncertain';
+    d.st = 'learning';
+    d.src = 'reflow';
+    d.cs = 0;
+    d.lr = now;
+    count++;
+  }
+  if (count > 0) {
+    _cacheDirty = true;
+    writeS(s);
+    debouncedSync();
+  }
+  return count;
 }
 
 /* Legacy getDueWords — returns pool words (learning + uncertain) */

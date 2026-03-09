@@ -213,7 +213,11 @@ function _getNextAction(dueCount) {
     if (inProgress && nextNew) break;
   }
 
-  /* Priority: 1. In-progress section → 2. Daily challenge → 3. Next new section */
+  /* Priority: 0. Stale mastered words → 1. In-progress section → 2. Daily challenge → 3. Next new section */
+  var staleN = typeof getStaleCount === 'function' ? getStaleCount() : 0;
+  if (staleN >= 5) {
+    return { type: 'refresh', count: staleN };
+  }
   if (inProgress) {
     return { type: 'continue', section: inProgress.section, board: inProgress.board, label: inProgress.section.id + ' ' + inProgress.section.title, labelZh: inProgress.section.title_zh };
   }
@@ -371,6 +375,11 @@ function _renderHeroAction() {
     html += '<div class="hero-section">' + t('10 words \u00b7 60 seconds \u00b7 test your speed!', '10 \u4e2a\u8bcd \u00b7 60 \u79d2 \u00b7 \u6d4b\u8bd5\u4f60\u7684\u901f\u5ea6\uff01') + '</div>';
     html += '<button class="btn btn-primary hero-btn" data-hero-action="daily">';
     html += t('GO', '\u5f00\u59cb') + ' \u2192</button>';
+  } else if (action.type === 'refresh') {
+    html += '<div class="hero-label">' + t('Refresh Review', '\u8f7b\u91cf\u590d\u67e5') + '</div>';
+    html += '<div class="hero-section">' + action.count + ' ' + t('mastered words getting stale', '\u4e2a\u5df2\u638c\u63e1\u8bcd\u6c47\u6b63\u5728\u8870\u9000') + '</div>';
+    html += '<button class="btn btn-primary hero-btn" data-hero-action="refresh">';
+    html += '\ud83d\udd04 ' + t('Quick Scan', '\u5feb\u901f\u590d\u67e5') + ' \u2192</button>';
   } else if (action.type === 'start') {
     html += '<div class="hero-label">' + t('Up next', '\u4e0b\u4e00\u7ad9') + '</div>';
     html += '<div class="hero-section">' + escapeHtml(action.label) + '</div>';
@@ -407,6 +416,10 @@ function _initHeroDelegation() {
     var act = el.dataset.heroAction;
     if (act === 'continue' || act === 'start') {
       openSection(el.dataset.heroSec, el.dataset.heroBoard);
+    } else if (act === 'refresh') {
+      if (typeof startRefreshScan === 'function' && typeof getStaleWords === 'function') {
+        startRefreshScan(getStaleWords());
+      }
     } else if (act === 'daily') {
       startDaily();
     } else if (act === 'rank') {

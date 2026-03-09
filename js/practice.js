@@ -389,7 +389,7 @@ function pickPracticeOpt(btn, idx) {
     });
     /* Auto-add to wrong book for HHK/MCQ practice */
     if (typeof ppAddToWrongBook === 'function') {
-      ppAddToWrongBook(q.id, q.diag || '', '');
+      ppAddToWrongBook(q.id, q.diag || '', '', q.s || '', _pqSession ? (_pqSession.board || '') : '');
     }
   }
 
@@ -1228,9 +1228,10 @@ function _ppGetWB() {
 }
 function _ppSaveWB(wb) { localStorage.setItem(_ppWBKey(), JSON.stringify(wb)); }
 
-function ppAddToWrongBook(qid, errorType, note) {
+function ppAddToWrongBook(qid, errorType, note, sectionId, board) {
   var wb = _ppGetWB();
-  if (!wb[qid]) {
+  var isNew = !wb[qid];
+  if (isNew) {
     wb[qid] = { addedAt: Date.now(), lastReview: null, reviewCount: 0,
       errorType: errorType || '', note: note || '', status: 'active' };
   } else {
@@ -1239,6 +1240,13 @@ function ppAddToWrongBook(qid, errorType, note) {
     wb[qid].status = 'active';
   }
   _ppSaveWB(wb);
+  /* Trigger vocab reflow for new wrong-book entries */
+  if (isNew && sectionId && typeof reflowVocabForSection === 'function') {
+    var reflowed = reflowVocabForSection(sectionId, board);
+    if (reflowed > 0) {
+      showToast('\ud83d\udcd5 ' + reflowed + t(' related words reflowed to review', ' \u4e2a\u76f8\u5173\u8bcd\u6c47\u5df2\u56de\u6d41'));
+    }
+  }
 }
 function ppResolveWrongBook(qid) {
   var wb = _ppGetWB();
@@ -1703,7 +1711,7 @@ function ppRate(level) {
 
   /* Auto-add to wrong book if needs_work */
   if (level === 'needs_work') {
-    ppAddToWrongBook(q.id, '', '');
+    ppAddToWrongBook(q.id, '', '', _ppSession.sectionId || q.s || '', _ppSession.board || '');
   } else if (level === 'mastered') {
     ppResolveWrongBook(q.id);
   }
@@ -2787,7 +2795,7 @@ function ppFinishMarking() {
 
     /* Auto-add wrong/partial to wrong book */
     if (r.status === 'wrong' || r.status === 'partial') {
-      ppAddToWrongBook(qs[i].id, r.errorType || '', '');
+      ppAddToWrongBook(qs[i].id, r.errorType || '', '', _ppSession.sectionId || '', _ppSession.board || '');
       _ppSetMastery(qs[i].id, r.status === 'wrong' ? 'needs_work' : 'partial');
     } else if (r.status === 'correct') {
       _ppSetMastery(qs[i].id, 'mastered');

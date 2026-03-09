@@ -3865,6 +3865,16 @@ input { font-family: inherit; }
 .plan-card-count { font-size:24px; font-weight:700; color:var(--c-primary); margin-bottom:8px; }
 .plan-card-count.plan-done { font-size:16px; color:var(--c-success); }
 
+/* Refresh review card in Today's Plan */
+.plan-refresh { border-left:3px solid var(--c-warning); }
+.plan-refresh .plan-card-icon { color:var(--c-warning); }
+
+/* Reflow source tag */
+.reflow-tag { display:inline-block; font-size:10px; font-weight:700; padding:1px 6px; border-radius:8px; background:var(--c-warning-bg); color:var(--c-warning); margin-left:8px; vertical-align:middle; }
+
+/* Refresh scan header label */
+.study-refresh-label { color:var(--c-warning); font-weight:700; font-size:12px; text-transform:uppercase; letter-spacing:0.05em; text-align:center; margin-bottom:12px; }
+
 /* ═══ MISTAKE BOOK ═══ */
 .mistake-tabs { display:flex; gap:8px; margin-bottom:16px; }
 .mistake-tab { padding:6px 16px; border-radius:20px; cursor:pointer; border:1px solid var(--c-border); background:var(--c-surface); font-size:13px; font-weight:500; color:var(--c-text); }
@@ -3887,6 +3897,7 @@ input { font-family: inherit; }
 [data-theme="dark"] .mistake-tab { background:var(--c-surface); border-color:var(--c-border); color:var(--c-text); }
 [data-theme="dark"] .mistake-tab.active { background:var(--c-primary); color:#fff; }
 [data-theme="dark"] .mistake-row { border-color:var(--c-border); }
+[data-theme="dark"] .reflow-tag { background:rgba(245,158,11,0.15); }
 
 /* Mobile: mistake row responsive */
 @media (max-width:639px) {

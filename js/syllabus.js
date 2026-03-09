@@ -2544,6 +2544,19 @@ function renderTodaysPlan() {
   }
   html += '</div>';
 
+  /* Refresh review (stale mastered words) */
+  var staleN = typeof getStaleCount === 'function' ? getStaleCount() : 0;
+  if (staleN > 0) {
+    html += '<div class="plan-card plan-refresh">';
+    html += '<div class="plan-card-header">';
+    html += '<span class="plan-card-icon">\ud83d\udd04</span>';
+    html += '<span class="plan-card-title">' + t('Refresh Review', '\u8f7b\u91cf\u590d\u67e5') + '</span>';
+    html += '</div>';
+    html += '<div class="plan-card-count">' + staleN + ' ' + t('mastered words getting stale', '\u4e2a\u5df2\u638c\u63e1\u8bcd\u6c47\u6b63\u5728\u8870\u9000') + '</div>';
+    html += '<button class="btn btn-primary btn-sm" data-action="start-refresh">' + t('Quick Scan', '\u5feb\u901f\u590d\u67e5') + '</button>';
+    html += '</div>';
+  }
+
   /* Today's progress */
   var todayStr = new Date().toLocaleDateString('en-CA');
   var _planS = loadS();
@@ -2592,6 +2605,14 @@ function renderTodaysPlan() {
   }
 
   panel.innerHTML = html;
+
+  /* Delegation for plan actions */
+  panel.addEventListener('click', function(e) {
+    var refreshBtn = e.target.closest('[data-action="start-refresh"]');
+    if (refreshBtn && typeof startRefreshScan === 'function' && typeof getStaleWords === 'function') {
+      startRefreshScan(getStaleWords());
+    }
+  });
 }
 
 /* ═══ MISTAKE BOOK PANEL ═══ */
@@ -2600,7 +2621,7 @@ function _getVocabMistakes() {
   var all = getAllWords();
   var mistakes = [];
   for (var i = 0; i < all.length; i++) {
-    if (all[i].fail > 0 && all[i].stars < 3) {
+    if (all[i].fail > 0 && all[i].fs !== 'mastered') {
       mistakes.push(all[i]);
     }
   }
@@ -2720,7 +2741,9 @@ function renderMistakeBook() {
       for (var i = 0; i < vocabMistakes.length; i++) {
         var w = vocabMistakes[i];
         html += '<div class="mistake-row">';
-        html += '<div class="mistake-word">' + escapeHtml(w.word || '') + '</div>';
+        html += '<div class="mistake-word">' + escapeHtml(w.word || '');
+        if (w.src === 'reflow') html += '<span class="reflow-tag">' + t('Reflowed', '\u56de\u6d41') + '</span>';
+        html += '</div>';
         html += '<div class="mistake-def">' + escapeHtml(w.def || '') + '</div>';
         html += '<div class="mistake-fail">\u2717 ' + w.fail + '</div>';
         html += '<div class="mistake-stars">';
@@ -2729,7 +2752,7 @@ function renderMistakeBook() {
         html += '</div>';
       }
       html += '<div class="text-center mt-12">';
-      html += '<button class="btn btn-primary btn-sm" onclick="startMistakeReview(\'vocab\')">' + t('Review Wrong Words (SRS Priority)', '\u590d\u4e60\u9519\u8bcd\uff08SRS \u4f18\u5148\uff09') + '</button>';
+      html += '<button class="btn btn-primary btn-sm" onclick="startMistakeReview(\'vocab\')">' + t('Re-scan Wrong Words', '\u91cd\u65b0\u626b\u63cf\u9519\u8bcd') + '</button>';
       html += '</div>';
       html += '</div>';
     } else if (_mistakeTab === 'vocab') {
