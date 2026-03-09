@@ -7159,14 +7159,12 @@
     "id": "c1505",
     "cat": "number",
     "topic": "Bounds and Rounding",
-    "q": "Round 0.04567 to 2 significant figures.",
+    "q": "$p = 6.0$ correct to 1 decimal place and $q = 2.0$ correct to 1 decimal place. Calculate the upper bound of $\\frac{p}{q}$.",
     "o": [
-      [
-        "3",
-        "3.103",
-        "3.051",
-        "3.333"
-      ]
+      "3",
+      "3.103",
+      "3.051",
+      "3.333"
     ],
     "a": 1,
     "e": "Upper bound of $p = 6.05$, lower bound of $q = 1.95$. Upper bound of $\\frac{p}{q} = \\frac{6.05}{1.95} \\approx 3.103$.",
