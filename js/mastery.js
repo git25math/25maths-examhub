@@ -829,18 +829,18 @@ function renderDeck(idx) {
   html += '<div class="deck-header">';
   if (window._kpReturnContext) {
     var _kpRet = window._kpReturnContext;
-    html += '<button class="back-btn" onclick="window._kpReturnContext=null;openKnowledgePoint(\'' + _kpRet.kpId + '\',\'' + _kpRet.board + '\')">\u2190</button>';
+    html += '<button class="back-btn" data-action="back" data-back="kp" data-kp-id="' + escapeHtml(_kpRet.kpId) + '" data-kp-board="' + escapeHtml(_kpRet.board) + '">\u2190</button>';
     window._kpReturnContext = null;
   } else if (lv._isSection && lv._section) {
     var _backBoard = lv._board || 'cie';
-    html += '<button class="back-btn" onclick="openSection(\'' + lv._section + '\',\'' + _backBoard + '\')">\u2190</button>';
+    html += '<button class="back-btn" data-action="back" data-back="section" data-sec-id="' + escapeHtml(lv._section) + '" data-sec-board="' + escapeHtml(_backBoard) + '">\u2190</button>';
     html += '<div class="deck-title">\ud83d\udcdd ' + lvTitle(lv) + '</div>';
   } else if (lv.board === '25m' && lv.unitNum) {
-    html += '<button class="back-btn" onclick="navTo(\'home\')">\u2190</button>';
+    html += '<button class="back-btn" data-action="back" data-back="home">\u2190</button>';
     var yn = lv.category.replace('25m-y', '');
     html += '<div class="deck-title">Y' + yn + '.' + lv.unitNum + ' \u00b7 ' + lvTitle(lv) + '</div>';
   } else {
-    html += '<button class="back-btn" onclick="navTo(\'home\')">\u2190</button>';
+    html += '<button class="back-btn" data-action="back" data-back="home">\u2190</button>';
     var catInfo = getCategoryInfo(lv.category);
     html += '<div class="deck-title">' + catInfo.emoji + ' ' + lvTitle(lv) + '</div>';
   }
@@ -924,7 +924,7 @@ function renderDeck(idx) {
   });
   html += '</div></div>';
 
-  html += '<div class="preview-link"><a href="javascript:void(0)" onclick="openPreview(' + idx + ')">\ud83d\udc41 ' + t('Preview all words', '\u9884\u89c8\u5168\u90e8\u8bcd\u6c47') + ' \u2192</a></div>';
+  html += '<div class="preview-link"><button class="btn-link" data-action="preview" data-li="' + idx + '">\ud83d\udc41 ' + t('Preview all words', '\u9884\u89c8\u5168\u90e8\u8bcd\u6c47') + ' \u2192</button></div>';
 
   /* Test Out button — only when Study not yet done (#6) */
   if (!isModeDone(idx, 'study')) {
@@ -1250,17 +1250,35 @@ function _initDeckActionDelegation() {
     spell: startSpell, match: startMatch, battle: startBattle
   };
   document.addEventListener('click', function(e) {
-    var btn = e.target.closest('[data-action="testout"]');
-    if (btn) {
-      var li = parseInt(btn.getAttribute('data-li'), 10);
+    var btn = e.target.closest('[data-action]');
+    if (!btn) return;
+    var action = btn.getAttribute('data-action');
+    var li;
+
+    if (action === 'testout') {
+      li = parseInt(btn.getAttribute('data-li'), 10);
       if (!isNaN(li)) startTestOut(li);
-      return;
-    }
-    btn = e.target.closest('[data-action="mode"]');
-    if (btn) {
+    } else if (action === 'mode') {
       var mode = btn.getAttribute('data-mode');
-      var li2 = parseInt(btn.getAttribute('data-li'), 10);
-      if (modeFns[mode] && !isNaN(li2)) modeFns[mode](li2);
+      li = parseInt(btn.getAttribute('data-li'), 10);
+      if (modeFns[mode] && !isNaN(li)) modeFns[mode](li);
+    } else if (action === 'preview') {
+      li = parseInt(btn.getAttribute('data-li'), 10);
+      if (!isNaN(li)) openPreview(li);
+    } else if (action === 'back') {
+      var backType = btn.getAttribute('data-back');
+      if (backType === 'home') {
+        navTo('home');
+      } else if (backType === 'section') {
+        var secId = btn.getAttribute('data-sec-id');
+        var secBoard = btn.getAttribute('data-sec-board');
+        if (typeof openSection === 'function') openSection(secId, secBoard);
+      } else if (backType === 'kp') {
+        window._kpReturnContext = null;
+        var kpId = btn.getAttribute('data-kp-id');
+        var kpBoard = btn.getAttribute('data-kp-board');
+        if (typeof openKnowledgePoint === 'function') openKnowledgePoint(kpId, kpBoard);
+      }
     }
   });
 }

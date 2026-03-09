@@ -46,7 +46,7 @@ function renderMatchBoard() {
     var cls = 'match-item';
     if (item.matched) cls += ' matched';
     if (MT.selected && MT.selected.side === 'left' && MT.selected.idx === i) cls += ' selected';
-    html += '<button class="' + cls + '" data-side="left" data-idx="' + i + '" data-lid="' + item.lid + '" onclick="pickMatch(this)">' + escapeHtml(item.text) + '</button>';
+    html += '<button class="' + cls + '" data-side="left" data-idx="' + i + '" data-lid="' + item.lid + '" >' + escapeHtml(item.text) + '</button>';
   });
   html += '</div>';
 
@@ -56,7 +56,7 @@ function renderMatchBoard() {
     var cls = 'match-item';
     if (item.matched) cls += ' matched';
     if (MT.selected && MT.selected.side === 'right' && MT.selected.idx === i) cls += ' selected';
-    html += '<button class="' + cls + '" data-side="right" data-idx="' + i + '" data-lid="' + item.lid + '" onclick="pickMatch(this)">' + escapeHtml(item.text) + '</button>';
+    html += '<button class="' + cls + '" data-side="right" data-idx="' + i + '" data-lid="' + item.lid + '" >' + escapeHtml(item.text) + '</button>';
   });
   html += '</div>';
 
@@ -183,3 +183,14 @@ function studyWrongMatch() {
   if (wrong.length > 0) startStudy(currentLvl, wrong);
   else openDeck(currentLvl);
 }
+
+/* ═══ MATCH CLICK DELEGATION ═══ */
+(function() {
+  var matchPanel = document.getElementById('panel-match');
+  if (matchPanel) {
+    matchPanel.addEventListener('click', function(e) {
+      var btn = e.target.closest('.match-card');
+      if (btn) pickMatch(btn);
+    });
+  }
+})();

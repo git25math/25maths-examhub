@@ -94,7 +94,7 @@ function renderQuizCard() {
   /* Options */
   html += '<div class="quiz-options" id="quiz-options">';
   options.forEach(function(opt, i) {
-    html += '<button class="quiz-opt" data-idx="' + i + '" data-correct="' + (opt === correctAnswer ? '1' : '0') + '" onclick="pickQuizOpt(this)">' + escapeHtml(opt) + '</button>';
+    html += '<button class="quiz-opt" data-idx="' + i + '" data-correct="' + (opt === correctAnswer ? '1' : '0') + '">' + escapeHtml(opt) + '</button>';
   });
   html += '</div>';
 
@@ -303,7 +303,7 @@ function renderDailyCard() {
   /* Options */
   html += '<div class="quiz-options" id="dc-options">';
   options.forEach(function(opt, i) {
-    html += '<button class="quiz-opt" data-correct="' + (opt === correctAnswer ? '1' : '0') + '" onclick="pickDailyOpt(this)">' + escapeHtml(opt) + '</button>';
+    html += '<button class="quiz-opt" data-correct="' + (opt === correctAnswer ? '1' : '0') + '">' + escapeHtml(opt) + '</button>';
   });
   html += '</div>';
 
@@ -556,3 +556,21 @@ function shareResult(opts) {
     }, 'image/png');
   });
 }
+
+/* ═══ QUIZ & DAILY OPTION CLICK DELEGATION ═══ */
+(function() {
+  var quizPanel = document.getElementById('panel-quiz');
+  if (quizPanel) {
+    quizPanel.addEventListener('click', function(e) {
+      var btn = e.target.closest('.quiz-opt');
+      if (btn) pickQuizOpt(btn);
+    });
+  }
+  var dailyPanel = document.getElementById('panel-daily');
+  if (dailyPanel) {
+    dailyPanel.addEventListener('click', function(e) {
+      var btn = e.target.closest('.quiz-opt');
+      if (btn) pickDailyOpt(btn);
+    });
+  }
+})();

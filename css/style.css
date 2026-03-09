@@ -868,6 +868,14 @@ input { font-family: inherit; }
 /* Hidden badge */
 .badge-hidden { opacity: 0.5; filter: grayscale(1); }
 
+/* Inline link button (replaces href="javascript:void(0)") */
+.btn-link {
+  background: none; border: none; cursor: pointer;
+  color: var(--c-primary); font: inherit; padding: 0;
+  text-decoration: none;
+}
+.btn-link:hover { text-decoration: underline; }
+
 /* Test Out link */
 .testout-link { text-align: center; margin: 8px 0; }
 
