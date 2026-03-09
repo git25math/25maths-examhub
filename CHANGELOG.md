@@ -1,5 +1,42 @@
 # Changelog
 
+## [3.1.0] - 2026-03-09 — 统一 Learning Unit API + 质量修复
+
+### PP 云同步（HIGH fix）
+- `_doSyncToCloud()` 嵌入 `_ppMastery` 桥接字段到 `vocab_progress.data`
+- `syncFromCloud()` 提取并恢复 pp_mastery（防御性 typeof 检查）
+- `_ppSetMastery()` + `recordPPRefreshScan()` 新增 `debouncedSync()` + `invalidateCache()`
+- **注**：`_ppMastery` 为过渡桥接字段，v3.2+ 统一 unit storage 时迁出
+
+### ppGetWeakGroups 字段修复（MEDIUM fix）
+- `qm.m === 'mastered'` → `(qm.fs || qm.m) === 'mastered'`（FLM 字段 + 旧数据 fallback）
+
+### rc 字段上限（MEDIUM fix）
+- 新增 `MAX_RC = REFRESH_INTERVALS.length - 1` 常量
+- `recordRefreshScan` / `recordKPRefreshScan` / `recordPPRefreshScan` 三处 rc cap
+
+### KP/PP src 追踪（LOW fix）
+- `recordKPRefreshScan` fuzzy/unknown → `src: 'reflow'`
+- `recordPPRefreshScan` fuzzy/unknown → `src: 'reflow'`
+- `_ppSetMastery` 写入 `src: source || prev.src || ''`
+
+### PP 计入每日活动（LOW fix）
+- `_ppSetMastery()` + `recordPPRefreshScan()` 调用 `recordDailyHistory(null)` 计入 entry.a++
+
+### 统一 Learning Unit Dispatcher
+- `recordUnitAnswer(type, id, verdict)` — 过渡分发器，路由到现有 per-type recorders
+- `getStaleUnits(board)` — 聚合 vocab/kp/pp stale 列表 + total 计数
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| config.js | + MAX_RC, APP_VERSION → v3.1.0 |
+| storage.js | PP 云同步桥接 + rc cap + KP src/history + recordUnitAnswer + getStaleUnits |
+| practice.js | _ppSetMastery 副作用 + recordPPRefreshScan 增强 + ppGetWeakGroups fix |
+| sw.js | CACHE_VERSION → v3.1.0 |
+
+---
+
 ## [3.0.1] - 2026-03-09 — Refresh Scan UI + Stats 独立展示
 
 ### KP Refresh Scan UI

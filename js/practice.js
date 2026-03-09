@@ -1284,14 +1284,18 @@ function _ppSetMastery(qid, level, opts) {
   m[qid] = {
     m: level, fs: fs, t: now, n: (prev.n || 0) + 1,
     fmt: prev.fmt || (fs === 'mastered' ? now : null),
-    rc: prev.rc || 0, cs: cs
+    rc: prev.rc || 0, cs: cs,
+    src: source || prev.src || ''
   };
   try { localStorage.setItem(_ppMasteryKey(), JSON.stringify(m)); } catch (e) {}
 
   /* Auto-resolve wrong book when mastered */
   if (fs === 'mastered') ppResolveWrongBook(qid);
-  /* Invalidate stale cache */
+  /* Invalidate stale cache + sync */
   _stalePPCacheData = null;
+  invalidateCache();
+  recordDailyHistory(null);
+  debouncedSync();
 }
 
 function _ppGetQMastery(qid) {
@@ -1335,7 +1339,7 @@ function recordPPRefreshScan(qid, verdict) {
   var fs = prev.fs || 'mastered';
   var rc = prev.rc || 0;
   if (verdict === 'known') {
-    rc++;
+    rc = Math.min(rc + 1, MAX_RC);
     prev.fmt = now;
   } else if (verdict === 'fuzzy') {
     fs = 'uncertain'; prev.cs = 0;
@@ -1345,10 +1349,14 @@ function recordPPRefreshScan(qid, verdict) {
   m[qid] = {
     m: fs === 'mastered' ? 'mastered' : fs === 'uncertain' ? 'partial' : 'needs_work',
     fs: fs, t: now, n: (prev.n || 0) + 1,
-    fmt: prev.fmt || null, rc: rc, cs: prev.cs || 0
+    fmt: prev.fmt || null, rc: rc, cs: prev.cs || 0,
+    src: (verdict !== 'known') ? 'reflow' : (prev.src || '')
   };
   try { localStorage.setItem(_ppMasteryKey(), JSON.stringify(m)); } catch (e) {}
   _stalePPCacheData = null;
+  invalidateCache();
+  recordDailyHistory(null);
+  debouncedSync();
 }
 
 /* ═══ PP REFRESH SCAN UI ═══ */
@@ -2076,7 +2084,7 @@ function ppGetWeakGroups(board, sectionId) {
     var qm = mastery[allQ[i].id];
     if (qm) {
       groups[g].attempted++;
-      if (qm.m === 'mastered') groups[g].mastered++;
+      if ((qm.fs || qm.m) === 'mastered') groups[g].mastered++;
     }
   }
   var weak = [];

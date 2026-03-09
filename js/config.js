@@ -367,11 +367,12 @@ function isSuperAdmin() {
 }
 
 /* App version */
-var APP_VERSION = 'v3.0.1';
+var APP_VERSION = 'v3.1.0';
 
 /* Mastered decay — refresh intervals (days) by refresh count */
 var REFRESH_INTERVALS = [7, 14, 30];
 var REFRESH_CAP = 20;
+var MAX_RC = REFRESH_INTERVALS.length - 1;  // rc 上限，当前 = 2
 
 /* ═══ TEACHER ROLE (shared across modules) ═══ */
 var isTeacherUser = false;

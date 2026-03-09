@@ -454,7 +454,7 @@ function recordRefreshScan(key, verdict) {
   var fail = prev.fail || 0;
 
   if (verdict === 'known') {
-    rc += 1;
+    rc = Math.min((rc || 0) + 1, MAX_RC);
     prev.fmt = now;
     /* stays mastered */
   } else if (verdict === 'fuzzy') {
@@ -628,8 +628,17 @@ var _syncInProgress = false;
 async function _doSyncToCloud() {
   if (!sb || !isLoggedIn()) return;
   var now = new Date().toISOString();
+  var payload = loadS();
+  /* Transitional sync bridge for PP mastery.
+     PP uses separate localStorage key ('pp_mastery').
+     Embed here for cross-device sync. Must be extracted before writeS() on restore.
+     TODO v3.2+: consider migrating PP into unified unit storage. */
+  try {
+    var ppRaw = localStorage.getItem('pp_mastery');
+    if (ppRaw) payload._ppMastery = JSON.parse(ppRaw);
+  } catch(e) {}
   var vpRes = await sb.from('vocab_progress').upsert(
-    { user_id: currentUser.id, data: JSON.stringify(loadS()), updated_at: now },
+    { user_id: currentUser.id, data: JSON.stringify(payload), updated_at: now },
     { onConflict: 'user_id' }
   );
   if (vpRes.error) return;
@@ -701,6 +710,11 @@ async function syncFromCloud() {
       var localTime = 0;
       try { localTime = parseInt(localStorage.getItem('wmatch_last_sync')) || 0; } catch (e) {}
       if (cloudTime > localTime) {
+        /* Restore PP mastery from transitional bridge field */
+        if (cloud && typeof cloud === 'object' && cloud._ppMastery && typeof cloud._ppMastery === 'object') {
+          try { localStorage.setItem('pp_mastery', JSON.stringify(cloud._ppMastery)); } catch(e) {}
+        }
+        delete cloud._ppMastery;
         writeS(cloud);
         invalidateCache();
         try { localStorage.setItem('wmatch_last_sync', cloudTime); } catch (e) {}
@@ -986,17 +1000,51 @@ function recordKPRefreshScan(kpId, verdict) {
   var prev = s.kpDone[kpId] || {};
   var rc = prev.rc || 0;
   var fs = prev.fs || 'mastered';
-  if (verdict === 'known') { rc++; prev.fmt = now; }
-  else if (verdict === 'fuzzy') { fs = 'uncertain'; prev.cs = 0; }
-  else if (verdict === 'unknown') { fs = 'learning'; prev.cs = 0; }
+  if (verdict === 'known') { rc = Math.min(rc + 1, MAX_RC); prev.fmt = now; }
+  else if (verdict === 'fuzzy') { fs = 'uncertain'; prev.cs = 0; prev.src = 'reflow'; }
+  else if (verdict === 'unknown') { fs = 'learning'; prev.cs = 0; prev.src = 'reflow'; }
   s.kpDone[kpId] = {
     score: prev.score || 0, total: prev.total || 0, pct: prev.pct || 0,
-    t: now, fs: fs, cs: prev.cs || 0, fmt: prev.fmt || null, rc: rc
+    t: now, fs: fs, cs: prev.cs || 0, fmt: prev.fmt || null, rc: rc,
+    src: prev.src || ''
   };
   writeS(s);
   _staleKPCache = null;
   invalidateCache();
+  recordDailyHistory(null);
   debouncedSync();
+}
+
+/* ═══ UNIFIED LEARNING UNIT DISPATCHER ═══ */
+
+/*
+ * Transitional dispatcher for heterogeneous learning units.
+ * Routes to existing per-type recorders. Not yet a normalized unit-state API —
+ * each type still has different verdict shapes and FLM transition semantics.
+ * TODO v3.2+: normalize verdict schema across types.
+ */
+function recordUnitAnswer(type, id, verdict) {
+  if (type === 'vocab') {
+    if (verdict.refresh) return recordRefreshScan(id, verdict.refresh);
+    if (verdict.scan) return recordScan(id, verdict.scan, verdict.round);
+    return recordAnswer(id, verdict.mode, verdict.isCorrect);
+  }
+  if (type === 'kp') {
+    if (verdict.refresh) return recordKPRefreshScan(id, verdict.refresh);
+    return saveKPResult(id, verdict.score, verdict.total);
+  }
+  if (type === 'pp') {
+    if (verdict.refresh) return recordPPRefreshScan(id, verdict.refresh);
+    if (typeof _ppSetMastery === 'function') return _ppSetMastery(id, verdict.level, { source: verdict.source });
+  }
+}
+
+/* Aggregated stale items across all unit types */
+function getStaleUnits(board) {
+  var v = typeof getStaleWords === 'function' ? getStaleWords() : [];
+  var k = typeof getStaleKPs === 'function' ? getStaleKPs(board) : [];
+  var p = typeof getStalePPQuestions === 'function' ? getStalePPQuestions(board) : [];
+  return { vocab: v, kp: k, pp: p, total: v.length + k.length + p.length };
 }
 
 /* ═══ MODE UNLOCK — all modes open ═══ */
