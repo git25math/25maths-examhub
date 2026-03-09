@@ -102,5 +102,30 @@ arr.forEach(function(q, idx) {
   valid.push(q);
 });
 
+// Quality gate: warn about common issues before writing
+valid.forEach(function(q, idx) {
+  var fields = [q.q, q.e].concat(q.o);
+  fields.forEach(function(text) {
+    if (!text) return;
+    // Check unbalanced $ (skip \$ currency)
+    var dc = 0;
+    for (var j = 0; j < text.length; j++) {
+      if (text[j] === '$' && (j === 0 || text[j - 1] !== '\\')) dc++;
+    }
+    if (dc % 2 !== 0) {
+      console.error('QUALITY WARN [' + idx + ']: Unbalanced $ in: ' + text.substring(0, 80));
+    }
+  });
+  // Check mixed option format (some with $, others with bare algebra)
+  var withD = 0, alg = 0;
+  q.o.forEach(function(o) {
+    if (o.indexOf('$') >= 0) withD++;
+    else if (/^[A-Za-z]{1,2}\s*=/.test(o)) alg++;
+  });
+  if (withD > 0 && alg > 0) {
+    console.error('QUALITY WARN [' + idx + ']: Mixed option format');
+  }
+});
+
 fs.writeFileSync(outFile, JSON.stringify(valid, null, 2));
 console.log(valid.length);

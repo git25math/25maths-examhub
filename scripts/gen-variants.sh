@@ -106,6 +106,9 @@ RULES:
 6. Keep the same cat, topic, s, and d fields as the mother question.
 7. Omit the "id" field — IDs will be assigned automatically during merge.
 8. CRITICAL: Output MUST be valid JSON array. No markdown, no code fences. Start with [ end with ].
+9. Ensure ALL LaTeX expressions are properly enclosed in $ delimiters. Every \\\\frac, \\\\sqrt, \\\\times must be inside $...$.
+10. All 4 options MUST use CONSISTENT formatting: if any option uses $...$ for math, ALL options must also use $...$.
+11. For currency amounts, use \\\\\$ inside LaTeX: e.g., $\\\\\$50$ not \$50.
 
 OUTPUT: A JSON array of variant questions. Each variant is a complete question object.
 PROMPT_EOF

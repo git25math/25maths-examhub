@@ -1,5 +1,30 @@
 # Changelog
 
+## [2.3.25] - 2026-03-09 — 变式题质量审计 + 自动修复
+
+### 质量修复（48 ERROR → 0）
+- **裸 LaTeX 修复**（43 题）：CIE cv1588-1677 + EDX ev0943-0970 解释字段中 `\frac`/`\sqrt`/`\times`/`\div` 命令包裹入 `$...$`
+- **混合选项格式修复**（5 题）：CIE cv1696-1700 裸代数选项（`t = S / (2(u+v))`）统一包裹 `$...$`
+
+### 新增工具
+- **`scripts/audit-variants.js`**：6 条规则全量审计（UNBALANCED_LATEX / NAKED_LATEX / MIXED_OPTION_FORMAT / DUPLICATE_OPTIONS / ALL_SHORT_OPTIONS / EMPTY_EXPLANATION）
+- **`scripts/fix-variant-quality.js`**：自动修复裸 LaTeX + 混合选项，支持 `--dry-run`
+
+### 质量门 + Prompt 加固
+- **`fix-variant-json.js`**：写入前增加 unbalanced `$` + 混合选项格式警告
+- **`gen-variants.sh`**：添加 3 条 Gemini prompt 规则（LaTeX 闭合 / 选项格式一致 / 货币 `\$`）
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `scripts/audit-variants.js` | **新建** ~120 行，6 条审计规则 |
+| `scripts/fix-variant-quality.js` | **新建** ~115 行，2 类自动修复 |
+| `scripts/fix-variant-json.js` | +15 行质量门警告 |
+| `scripts/gen-variants.sh` | +3 行 prompt 规则 |
+| `data/questions-cie.json` | 23 题修复（5 MIXED_OPTIONS + 18 NAKED_LATEX） |
+| `data/questions-edx.json` | 25 题修复（NAKED_LATEX） |
+| `js/config.js` | v2.3.24 → v2.3.25 |
+
 ## [2.3.24] - 2026-03-09 — 变式题 ID 去重机制合规化
 
 ### 根因消除

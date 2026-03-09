@@ -9927,7 +9927,7 @@
       "$t = 2S / (u + v)$",
       "t = S / (u + v) - $\\frac{1}{2}$",
       "$t = 2S(u + v)$",
-      "t = S / (2(u + v))"
+      "$t = S / (2(u + v))$"
     ],
     "a": 0,
     "e": "Multiply both sides by 2: $2S = (u + v)t$. Then, divide both sides by $(u + v)$ to isolate $t$: $t = 2S / (u + v)$.",
@@ -9942,9 +9942,9 @@
     "q": "The formula for the area of a trapezoid is $A = \\frac{1}{2}(x + y)h$. Make $h$ the subject of the formula.",
     "o": [
       "$h = 2A / (x + y)$",
-      "h = A / (x + y) - 0.5",
+      "$h = A / (x + y) - 0.5$",
       "$h = 2A(x + y)$",
-      "h = A / (2x + 2y)"
+      "$h = A / (2x + 2y)$"
     ],
     "a": 0,
     "e": "Multiply both sides by 2: $2A = (x + y)h$. Then, divide both sides by $(x + y)$ to isolate $h$: $h = 2A / (x + y)$.",
@@ -9961,7 +9961,7 @@
       "$r = 2M / (p + q)$",
       "r = M / (p + q) - $\\frac{1}{2}$",
       "$r = 2M(p + q)$",
-      "r = M / (2(p + q))"
+      "$r = M / (2(p + q))$"
     ],
     "a": 0,
     "e": "Multiply both sides by 2: $2M = (p + q)r$. Then, divide both sides by $(p + q)$ to isolate $r$: $r = 2M / (p + q)$.",
@@ -9976,9 +9976,9 @@
     "q": "The sum of terms in a sequence is given by $P = \\frac{1}{2}(a + b)n$. Make $n$ the subject of the formula.",
     "o": [
       "$n = 2P / (a + b)$",
-      "n = P / (a + b) - 0.5",
+      "$n = P / (a + b) - 0.5$",
       "$n = 2P(a + b)$",
-      "n = P / (2a + 2b)"
+      "$n = P / (2a + 2b)$"
     ],
     "a": 0,
     "e": "Multiply both sides by 2: $2P = (a + b)n$. Then, divide both sides by $(a + b)$ to isolate $n$: $n = 2P / (a + b)$.",
@@ -9995,7 +9995,7 @@
       "$Z = 2K / (X + Y)$",
       "Z = K / (X + Y) - $\\frac{1}{2}$",
       "$Z = 2K(X + Y)$",
-      "Z = K / (2(X + Y))"
+      "$Z = K / (2(X + Y))$"
     ],
     "a": 0,
     "e": "Multiply both sides by 2: $2K = (X + Y)Z$. Then, divide both sides by $(X + Y)$ to isolate $Z$: $Z = 2K / (X + Y)$.",
@@ -10676,7 +10676,7 @@
       "$(3a^2) / (5b)$"
     ],
     "a": 0,
-    "e": "Divide the numerator and denominator by their greatest common divisor, which is $5ab$. This gives $(15a^3b / 5ab) / (20ab^2 / 5ab) = (3a^2) / (4b)$. \\\\frac{15a^3b}{20ab^2} = \\\\frac{3a^2}{4b}$.",
+    "e": "Divide the numerator and denominator by their greatest common divisor, which is $5ab$. This gives $(15a^3b / 5ab) / (20ab^2 / 5ab) = (3a^2) / (4b)$. $\\\\frac{15a^3b}{20ab^2} = \\\\frac{3a^2}{4b}$.",
     "d": 2,
     "s": "2.4",
     "src": "variant"
@@ -10693,7 +10693,7 @@
       "$(2n^4) / (3m^2)$"
     ],
     "a": 0,
-    "e": "Divide the numerator and denominator by their greatest common divisor, which is $7m^2n$. This gives $(14m^2n^4 / 7m^2n) / (21m^3n / 7m^2n) = (2n^3) / (3m)$. \\\\frac{14m^2n^4}{21m^3n} = \\\\frac{2n^3}{3m}$.",
+    "e": "Divide the numerator and denominator by their greatest common divisor, which is $7m^2n$. This gives $(14m^2n^4 / 7m^2n) / (21m^3n / 7m^2n) = (2n^3) / (3m)$. $\\\\frac{14m^2n^4}{21m^3n} = \\\\frac{2n^3}{3m}$.",
     "d": 2,
     "s": "2.4",
     "src": "variant"
@@ -10710,7 +10710,7 @@
       "$3 / (4p^2q^2)$"
     ],
     "a": 0,
-    "e": "Divide the numerator and denominator by their greatest common divisor, which is $8pq^2$. This gives $(24pq^2 / 8pq^2) / (32p^2q^3 / 8pq^2) = 3 / (4pq)$. \\\\frac{24pq^2}{32p^2q^3} = \\\\frac{3}{4pq}$.",
+    "e": "Divide the numerator and denominator by their greatest common divisor, which is $8pq^2$. This gives $(24pq^2 / 8pq^2) / (32p^2q^3 / 8pq^2) = 3 / (4pq)$. $\\\\frac{24pq^2}{32p^2q^3} = \\\\frac{3}{4pq}$.",
     "d": 2,
     "s": "2.4",
     "src": "variant"
@@ -12074,7 +12074,7 @@
       "4"
     ],
     "a": 0,
-    "e": "Since y is directly proportional to x, we have y = kx. From the given values, 12 = k \\times 3, so $k = 4$. The relationship is y = 4x. When $x = 8$, $y = 4 \\times 8 = 32$.",
+    "e": "Since y is directly proportional to x, we have y = kx. From the given values, 12 = k $\\times$ 3, so $k = 4$. The relationship is y = 4x. When $x = 8$, $y = 4 \\times 8 = 32$.",
     "d": 2,
     "s": "2.8",
     "src": "variant"
@@ -12091,7 +12091,7 @@
       "1.5"
     ],
     "a": 0,
-    "e": "Since p is directly proportional to q, we have p = kq. From the given values, 30 = k \\times 6, so $k = 5$. The relationship is p = 5q. When $q = 9$, $p = 5 \\times 9 = 45$.",
+    "e": "Since p is directly proportional to q, we have p = kq. From the given values, 30 = k $\\times$ 6, so $k = 5$. The relationship is p = 5q. When $q = 9$, $p = 5 \\times 9 = 45$.",
     "d": 2,
     "s": "2.8",
     "src": "variant"
@@ -12108,7 +12108,7 @@
       "1.5"
     ],
     "a": 0,
-    "e": "Since a is directly proportional to b, we have a = kb. From the given values, 42 = k \\times 7, so $k = 6$. The relationship is a = 6b. When $b = 4$, $a = 6 \\times 4 = 24$.",
+    "e": "Since a is directly proportional to b, we have a = kb. From the given values, 42 = k $\\times$ 7, so $k = 6$. The relationship is a = 6b. When $b = 4$, $a = 6 \\times 4 = 24$.",
     "d": 2,
     "s": "2.8",
     "src": "variant"
@@ -22299,7 +22299,7 @@
       "21.6 cm"
     ],
     "a": 0,
-    "e": "The body diagonal of a cuboid is found using the 3D Pythagoras formula: d = \\sqrt{l^2 + w^2 + h^2}. So, d = \\sqrt{8^2 + 9^2 + 12^2} = \\sqrt{64 + 81 + 144} = \\sqrt{289} = 17 cm.",
+    "e": "The body diagonal of a cuboid is found using the 3D Pythagoras formula: d = $\\sqrt{l^2 + w^2 + h^2}$. So, d = $\\sqrt{8^2 + 9^2 + 12^2} = \\sqrt{64 + 81 + 144} = \\sqrt{289}$ = 17 cm.",
     "d": 2,
     "s": "6.6",
     "src": "variant"
@@ -22316,7 +22316,7 @@
       "5.4 cm"
     ],
     "a": 0,
-    "e": "The body diagonal of a cuboid is found using the 3D Pythagoras formula: d = \\sqrt{l^2 + w^2 + h^2}. So, d = \\sqrt{2^2 + 3^2 + 6^2} = \\sqrt{4 + 9 + 36} = \\sqrt{49} = 7 cm.",
+    "e": "The body diagonal of a cuboid is found using the 3D Pythagoras formula: d = $\\sqrt{l^2 + w^2 + h^2}$. So, d = $\\sqrt{2^2 + 3^2 + 6^2} = \\sqrt{4 + 9 + 36} = \\sqrt{49}$ = 7 cm.",
     "d": 2,
     "s": "6.6",
     "src": "variant"
@@ -22333,7 +22333,7 @@
       "25 m"
     ],
     "a": 0,
-    "e": "The body diagonal of a cuboid is found using the 3D Pythagoras formula: d = \\sqrt{l^2 + w^2 + h^2}. So, d = \\sqrt{15^2 + 10^2 + 6^2} = \\sqrt{225 + 100 + 36} = \\sqrt{361} = 19 m.",
+    "e": "The body diagonal of a cuboid is found using the 3D Pythagoras formula: d = $\\sqrt{l^2 + w^2 + h^2}$. So, d = $\\sqrt{15^2 + 10^2 + 6^2} = \\sqrt{225 + 100 + 36} = \\sqrt{361}$ = 19 m.",
     "d": 2,
     "s": "6.6",
     "src": "variant"
@@ -22350,7 +22350,7 @@
       "14.14 m"
     ],
     "a": 0,
-    "e": "This is the body diagonal of the cuboid. Use the formula d = \\sqrt{l^2 + w^2 + h^2}. So, d = \\sqrt{10^2 + 8^2 + 5^2} = \\sqrt{100 + 64 + 25} = \\sqrt{189} \\approx 13.75 m.",
+    "e": "This is the body diagonal of the cuboid. Use the formula d = $\\sqrt{l^2 + w^2 + h^2}$. So, d = $\\sqrt{10^2 + 8^2 + 5^2} = \\sqrt{100 + 64 + 25} = \\sqrt{189}$ \\approx 13.75 m.",
     "d": 2,
     "s": "6.6",
     "src": "variant"
@@ -22367,7 +22367,7 @@
       "11.22 m"
     ],
     "a": 1,
-    "e": "This is the body diagonal of the cuboid. Use the formula d = \\sqrt{l^2 + w^2 + h^2}. So, d = \\sqrt{7^2 + 4^2 + 4^2} = \\sqrt{49 + 16 + 16} = \\sqrt{81} = 9 m.",
+    "e": "This is the body diagonal of the cuboid. Use the formula d = $\\sqrt{l^2 + w^2 + h^2}$. So, d = $\\sqrt{7^2 + 4^2 + 4^2} = \\sqrt{49 + 16 + 16} = \\sqrt{81}$ = 9 m.",
     "d": 2,
     "s": "6.6",
     "src": "variant"
@@ -22384,7 +22384,7 @@
       "17.30 cm"
     ],
     "a": 0,
-    "e": "The longest distance inside a cuboid is its body diagonal. Use the formula d = \\sqrt{l^2 + w^2 + h^2}. So, d = \\sqrt{12^2 + 5^2 + 2^2} = \\sqrt{144 + 25 + 4} = \\sqrt{173} \\approx 13.15 cm.",
+    "e": "The longest distance inside a cuboid is its body diagonal. Use the formula d = $\\sqrt{l^2 + w^2 + h^2}$. So, d = $\\sqrt{12^2 + 5^2 + 2^2} = \\sqrt{144 + 25 + 4} = \\sqrt{173}$ \\approx 13.15 cm.",
     "d": 2,
     "s": "6.6",
     "src": "variant"
@@ -25139,7 +25139,7 @@
       "2.5"
     ],
     "a": 1,
-    "e": "Use the formula P(A|B) = P(A and B) / P(B). So, P(A|B) = \\frac{0.24}{0.6} = 0.4.",
+    "e": "Use the formula P(A|B) = P(A and B) / P(B). So, P(A|B) = $\\frac{0.24}{0.6}$ = 0.4.",
     "d": 2,
     "s": "8.4",
     "src": "variant"
@@ -25156,7 +25156,7 @@
       "6.67"
     ],
     "a": 0,
-    "e": "Using the conditional probability formula P(X|Y) = P(X and Y) / P(Y), we get P(X|Y) = \\frac{0.12}{0.8} = 0.15.",
+    "e": "Using the conditional probability formula P(X|Y) = P(X and Y) / P(Y), we get P(X|Y) = $\\frac{0.12}{0.8}$ = 0.15.",
     "d": 2,
     "s": "8.4",
     "src": "variant"
@@ -25173,7 +25173,7 @@
       "0.5"
     ],
     "a": 3,
-    "e": "Apply the formula P(E|F) = P(E and F) / P(F). Substituting the values, P(E|F) = \\frac{0.35}{0.7} = 0.5.",
+    "e": "Apply the formula P(E|F) = P(E and F) / P(F). Substituting the values, P(E|F) = $\\frac{0.35}{0.7}$ = 0.5.",
     "d": 2,
     "s": "8.4",
     "src": "variant"
@@ -25190,7 +25190,7 @@
       "\\frac{20}{40}"
     ],
     "a": 1,
-    "e": "Let S be Spanish and F be French. We want P(S|F) = P(S and F) / P(F). There are 20 students studying French, and 8 of these also study Spanish. So the probability is \\frac{8}{20}.",
+    "e": "Let S be Spanish and F be French. We want P(S|F) = P(S and F) / P(F). There are 20 students studying French, and 8 of these also study Spanish. So the probability is $\\frac{8}{20}$.",
     "d": 2,
     "s": "8.4",
     "src": "variant"
@@ -25207,7 +25207,7 @@
       "\\frac{25}{50}"
     ],
     "a": 0,
-    "e": "Let F be Football and B be Basketball. We need P(B|F) = P(B and F) / P(F). There are 25 members who play Football, and 10 of those also play Basketball. Thus, P(B|F) = \\frac{10}{25}.",
+    "e": "Let F be Football and B be Basketball. We need P(B|F) = P(B and F) / P(F). There are 25 members who play Football, and 10 of those also play Basketball. Thus, P(B|F) = $\\frac{10}{25}$.",
     "d": 2,
     "s": "8.4",
     "src": "variant"
@@ -25224,7 +25224,7 @@
       "\\frac{15}{40}"
     ],
     "a": 3,
-    "e": "Let C be Coffee and T be Tea. We seek P(C|T) = P(C and T) / P(T). There are 40 people who drink Tea, and 15 of them also drink Coffee. Therefore, the probability is \\frac{15}{40}.",
+    "e": "Let C be Coffee and T be Tea. We seek P(C|T) = P(C and T) / P(T). There are 40 people who drink Tea, and 15 of them also drink Coffee. Therefore, the probability is $\\frac{15}{40}$.",
     "d": 2,
     "s": "8.4",
     "src": "variant"
