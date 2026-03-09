@@ -177,6 +177,79 @@ function _computeProfileTrend() {
   return { direction: direction, delta: delta, sufficient: sufficient };
 }
 
+/* ═══ SCHEDULER SUMMARY (v3.8.0) ═══ */
+
+function inferWeakType(profile) {
+  if (!profile || !profile.mastery) return '';
+  /* Compute per-type mastery ratios */
+  var vTotal = 0, vMastered = 0;
+  if (typeof getAllWords === 'function') {
+    var words = getAllWords();
+    for (var i = 0; i < words.length; i++) {
+      vTotal++;
+      if (words[i].fs === 'mastered') vMastered++;
+    }
+  }
+  var kTotal = 0, kMastered = 0;
+  if (typeof loadS === 'function') {
+    var s = loadS();
+    if (s.kpDone) {
+      for (var k in s.kpDone) { kTotal++; if (s.kpDone[k].fs === 'mastered') kMastered++; }
+    }
+  }
+  var pTotal = 0, pMastered = 0;
+  if (typeof _ppGetMastery === 'function') {
+    var pp = _ppGetMastery();
+    for (var p in pp) { pTotal++; if (pp[p].fs === 'mastered') pMastered++; }
+  }
+
+  var pairs = [
+    { type: 'vocab', pct: vTotal > 0 ? vMastered / vTotal : 1 },
+    { type: 'kp', pct: kTotal > 0 ? kMastered / kTotal : 1 },
+    { type: 'pp', pct: pTotal > 0 ? pMastered / pTotal : 1 }
+  ];
+  pairs.sort(function(a, b) { return a.pct - b.pct; });
+  /* Only return a weak type if the weakest is meaningfully low */
+  return (pairs[0] && pairs[0].pct < 0.6) ? pairs[0].type : '';
+}
+
+function getStudentProfileSummary() {
+  var profile = rebuildStudentProfile();
+  if (!profile) return null;
+
+  var recoveryRate = profile.recovery.hasData ? profile.recovery.completionRate / 100 : 0;
+  var backlogPressure = typeof getRecoveryBacklogCount === 'function' ? getRecoveryBacklogCount() : 0;
+
+  /* Compute skip rate from history */
+  var skipRate = 0;
+  if (typeof getRecoveryScheduleHistory === 'function') {
+    var hist = getRecoveryScheduleHistory();
+    if (hist.length > 0) {
+      var totalPlanned = 0, totalDone = 0;
+      for (var i = 0; i < hist.length; i++) {
+        totalPlanned += hist[i].total || hist[i].planned || 0;
+        totalDone += hist[i].completed || hist[i].done || 0;
+      }
+      skipRate = totalPlanned > 0 ? Math.max(0, (totalPlanned - totalDone) / totalPlanned) : 0;
+    }
+  }
+
+  var weakSectionIds = [];
+  for (var w = 0; w < profile.weakSections.length; w++) {
+    weakSectionIds.push(profile.weakSections[w].id);
+  }
+
+  return {
+    recoveryRate: recoveryRate,
+    skipRate: skipRate,
+    avgDailyLoad: profile.recovery.avgDailyLoad || 0,
+    weakSections: weakSectionIds,
+    learningTrend: profile.trend.direction || 'stable',
+    backlogPressure: backlogPressure,
+    weakType: inferWeakType(profile)
+  };
+}
+
 /* ═══ RENDER ═══ */
 
 function renderStudentProfileCard() {

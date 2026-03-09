@@ -2624,6 +2624,16 @@ function renderTodaysPlan() {
         if (_rsPlan.reasons && _rsPlan.reasons.length > 0) {
           html += '<div class="plan-card-reason">' + t('Focus', '\u91cd\u70b9') + ': ' + _rsPlan.reasons.join(' \u00b7 ') + '</div>';
         }
+        /* Personalized note (v3.8.0) */
+        if (_rsPlan.personalizationNote) {
+          var _pnMap = {
+            'lighter-load': t('Adjusted for you: lighter load today due to backlog', '\u4E2A\u6027\u5316\u8C03\u6574\uFF1A\u56E0\u79EF\u538B\u8F83\u591A\uFF0C\u4ECA\u65E5\u4EFB\u52A1\u91CF\u5DF2\u964D\u4F4E'),
+            'weak-type-bias': t('Focus boost: more practice in your weakest type', '\u4E2A\u6027\u5316\u8C03\u6574\uFF1A\u5DF2\u589E\u52A0\u4F60\u6700\u8584\u5F31\u7C7B\u578B\u7684\u7EC3\u4E60'),
+            'weak-section-bias': t('Focus boost: more items from your weakest sections', '\u4E2A\u6027\u5316\u8C03\u6574\uFF1A\u5DF2\u4F18\u5148\u5B89\u6392\u4F60\u8F83\u5F31\u7AE0\u8282\u7684\u4EFB\u52A1')
+          };
+          var _pnText = _pnMap[_rsPlan.personalizationNote] || '';
+          if (_pnText) html += '<div class="plan-card-personalized">' + _pnText + '</div>';
+        }
         html += '<button class="btn btn-primary btn-sm" data-action="start-recovery">' + t('Start', '\u5f00\u59cb') + '</button>';
         /* Recovery Calendar Lite (v3.6.1) */
         if (typeof getRecentRecoveryHistory === 'function') {

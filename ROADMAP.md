@@ -462,6 +462,13 @@
 ## v3.3 Print Repair Sheet [DONE]
 - [x] **单题打印修复单 (v3.3.0)**: worksheet.js 新窗口 A4 打印（题目+词汇+KP+留白+纠错+订正），从 Recovery Pack 触发
 
+## v3.8 Personalized Scheduling [DONE]
+- [x] **Dynamic Budget (v3.8.0)**: improving+高 recovery→budget +2, declining/高 skip/高 backlog→budget -1~-4
+- [x] **Type Caps (v3.8.0)**: weakType 对应类型配额 +1（vocab/kp/pp）
+- [x] **Profile Bias (v3.8.0)**: weak section +8 / weak type +5 优先级偏置
+- [x] **Personalized Note (v3.8.0)**: Today's Recovery 显示个性化调整原因
+- [x] **Dynamic Budget Enforcement**: _enforceDailyBudget 支持传入 budget/caps 参数
+
 ## v3.7 Student Recovery Profile [DONE]
 - [x] **Student Profile Card (v3.7.0)**: Today's Plan 学习画像（Accuracy/Mastery/Streak/Recovery 四维指标）
 - [x] Weak sections 识别（getSectionHealth < 40 的 section 标为 Needs work）

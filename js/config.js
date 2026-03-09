@@ -367,7 +367,21 @@ function isSuperAdmin() {
 }
 
 /* App version */
-var APP_VERSION = 'v3.7.0';
+var APP_VERSION = 'v3.8.0';
+
+/* Personalized Scheduling configuration */
+var RECOVERY_PERSONALIZATION_CONFIG = {
+  minUnitsPerDay: 4,
+  maxUnitsPerDayCap: 12,
+  improveBonus: 1,
+  strongRecoveryBonus: 1,
+  decliningPenalty: -1,
+  highSkipPenalty: -2,
+  highBacklogPenalty: -2,
+  weakSectionBias: 8,
+  weakTypeBias: 5,
+  carryOverWarningThreshold: 6
+};
 
 /* Student Profile configuration */
 var STUDENT_PROFILE_CONFIG = {

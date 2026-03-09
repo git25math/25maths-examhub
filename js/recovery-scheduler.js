@@ -87,12 +87,12 @@ function _applySkipPenalty(unit) {
 
 /* ═══ DAILY BUDGET ENFORCEMENT ═══ */
 
-function _enforceDailyBudget(units) {
+function _enforceDailyBudget(units, budget, caps) {
   var cfg = (typeof RECOVERY_SCHEDULER_CONFIG !== 'undefined') ? RECOVERY_SCHEDULER_CONFIG : {};
-  var maxTotal = cfg.maxUnitsPerDay || 10;
-  var maxV = cfg.maxVocabPerDay || 5;
-  var maxK = cfg.maxKPPerDay || 3;
-  var maxP = cfg.maxPPPerDay || 4;
+  var maxTotal = (budget && budget.maxUnitsPerDay) || cfg.maxUnitsPerDay || 10;
+  var maxV = (caps && caps.maxVocabPerDay) || cfg.maxVocabPerDay || 5;
+  var maxK = (caps && caps.maxKPPerDay) || cfg.maxKPPerDay || 3;
+  var maxP = (caps && caps.maxPPPerDay) || cfg.maxPPPerDay || 4;
 
   var picked = [];
   var counts = { vocab: 0, kp: 0, pp: 0 };
@@ -110,6 +110,74 @@ function _enforceDailyBudget(units) {
   }
 
   return { picked: picked, counts: counts, overflow: overflow };
+}
+
+/* ═══ PERSONALIZED SCHEDULING (v3.8.0) ═══ */
+
+function getProfileAdjustedBudget(baseBudget, profile) {
+  var pcfg = (typeof RECOVERY_PERSONALIZATION_CONFIG !== 'undefined') ? RECOVERY_PERSONALIZATION_CONFIG : {};
+  var next = {};
+  var cfg = (typeof RECOVERY_SCHEDULER_CONFIG !== 'undefined') ? RECOVERY_SCHEDULER_CONFIG : {};
+  next.maxUnitsPerDay = (baseBudget && baseBudget.maxUnitsPerDay) || cfg.maxUnitsPerDay || 10;
+  if (!profile) return next;
+
+  var total = next.maxUnitsPerDay;
+
+  if (profile.learningTrend === 'up') total += (pcfg.improveBonus || 1);
+  if ((profile.recoveryRate || 0) >= 0.75) total += (pcfg.strongRecoveryBonus || 1);
+  if (profile.learningTrend === 'down') total += (pcfg.decliningPenalty || -1);
+  if ((profile.skipRate || 0) >= 0.3) total += (pcfg.highSkipPenalty || -2);
+  if ((profile.backlogPressure || 0) >= (pcfg.carryOverWarningThreshold || 6)) total += (pcfg.highBacklogPenalty || -2);
+
+  total = Math.max(pcfg.minUnitsPerDay || 4, total);
+  total = Math.min(pcfg.maxUnitsPerDayCap || 12, total);
+
+  next.maxUnitsPerDay = total;
+  next._adjustedFrom = (baseBudget && baseBudget.maxUnitsPerDay) || cfg.maxUnitsPerDay || 10;
+  return next;
+}
+
+function getProfileAdjustedTypeCaps(baseCaps, profile) {
+  var cfg = (typeof RECOVERY_SCHEDULER_CONFIG !== 'undefined') ? RECOVERY_SCHEDULER_CONFIG : {};
+  var caps = {
+    maxVocabPerDay: (baseCaps && baseCaps.maxVocabPerDay) || cfg.maxVocabPerDay || 5,
+    maxKPPerDay: (baseCaps && baseCaps.maxKPPerDay) || cfg.maxKPPerDay || 3,
+    maxPPPerDay: (baseCaps && baseCaps.maxPPPerDay) || cfg.maxPPPerDay || 4
+  };
+  if (!profile || !profile.weakType) return caps;
+
+  if (profile.weakType === 'vocab') caps.maxVocabPerDay += 1;
+  if (profile.weakType === 'kp') caps.maxKPPerDay += 1;
+  if (profile.weakType === 'pp') caps.maxPPPerDay += 1;
+
+  return caps;
+}
+
+function applyProfileBias(units, profile) {
+  if (!profile) return units;
+  var pcfg = (typeof RECOVERY_PERSONALIZATION_CONFIG !== 'undefined') ? RECOVERY_PERSONALIZATION_CONFIG : {};
+
+  for (var i = 0; i < units.length; i++) {
+    if (profile.weakSections && profile.weakSections.indexOf(units[i].sectionId) !== -1) {
+      units[i].priorityScore += (pcfg.weakSectionBias || 8);
+      units[i]._personalizedReason = 'weak-section';
+    }
+    if (profile.weakType && profile.weakType === units[i].type) {
+      units[i].priorityScore += (pcfg.weakTypeBias || 5);
+      if (!units[i]._personalizedReason) units[i]._personalizedReason = 'weak-type';
+    }
+  }
+
+  return units;
+}
+
+function _inferPersonalizationNote(budget, caps, profile) {
+  if (!profile) return '';
+  /* Priority: load reduction > weak type > weak section */
+  if (budget && budget._adjustedFrom && budget.maxUnitsPerDay < budget._adjustedFrom) return 'lighter-load';
+  if (profile.weakType) return 'weak-type-bias';
+  if (profile.weakSections && profile.weakSections.length > 0) return 'weak-section-bias';
+  return '';
 }
 
 /* ═══ DAILY PLAN BUILDER ═══ */
@@ -156,6 +224,12 @@ function buildDailyRecoveryPlan(board) {
     _applySkipPenalty(merged[j]);
   }
 
+  /* Personalized scheduling (v3.8.0) */
+  var _pProfile = (typeof getStudentProfileSummary === 'function') ? getStudentProfileSummary() : null;
+  if (_pProfile) {
+    applyProfileBias(merged, _pProfile);
+  }
+
   /* Sort by adjusted priority */
   if (typeof sortRecoveryUnits === 'function') {
     sortRecoveryUnits(merged);
@@ -163,8 +237,10 @@ function buildDailyRecoveryPlan(board) {
     merged.sort(function (a, b) { return b.priorityScore - a.priorityScore; });
   }
 
-  /* Enforce daily budget */
-  var result = _enforceDailyBudget(merged);
+  /* Enforce daily budget (personalized) */
+  var _pBudget = getProfileAdjustedBudget(null, _pProfile);
+  var _pCaps = getProfileAdjustedTypeCaps(null, _pProfile);
+  var result = _enforceDailyBudget(merged, _pBudget, _pCaps);
 
   /* Count carry-overs in picked items */
   var carryOverCount = 0;
@@ -183,6 +259,8 @@ function buildDailyRecoveryPlan(board) {
     }
   }
 
+  var _pNote = _inferPersonalizationNote(_pBudget, _pCaps, _pProfile);
+
   var plan = {
     date: today,
     total: result.picked.length,
@@ -192,7 +270,8 @@ function buildDailyRecoveryPlan(board) {
     items: result.picked,
     carryOverCount: carryOverCount,
     backlogCount: result.overflow.length,
-    reasons: reasons
+    reasons: reasons,
+    personalizationNote: _pNote
   };
 
   /* Update state: save overflow as new backlog */

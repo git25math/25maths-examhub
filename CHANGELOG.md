@@ -1,5 +1,38 @@
 # Changelog
 
+## [3.8.0] - 2026-03-10 — Personalized Scheduling
+
+### 个性化调度引擎（js/recovery-scheduler.js）
+- `getProfileAdjustedBudget(baseBudget, profile)` — 根据 trend/recovery rate/skip rate/backlog 动态调整 maxUnitsPerDay
+- `getProfileAdjustedTypeCaps(baseCaps, profile)` — weak type 对应类型配额 +1
+- `applyProfileBias(units, profile)` — weak section +8 / weak type +5 优先级偏置
+- `_inferPersonalizationNote(budget, caps, profile)` — 生成个性化说明 key
+- `_enforceDailyBudget()` 升级支持动态 budget/caps 参数传入
+- `buildDailyRecoveryPlan()` 新流程：skip penalty → profile bias → sort → adjusted budget/caps → enforce
+
+### Student Profile Summary（js/student-profile.js）
+- `getStudentProfileSummary()` — 输出 scheduler 可直接消费的轻量结构（recoveryRate/skipRate/weakSections/learningTrend/backlogPressure/weakType）
+- `inferWeakType(profile)` — 按 vocab/kp/pp mastery 最低者推断弱类型
+
+### 个性化说明 UI（js/syllabus.js）
+- Today's Recovery 卡片新增 `.plan-card-personalized` 行
+- 3 种文案：lighter-load / weak-type-bias / weak-section-bias
+
+### 配置（js/config.js）
+- `RECOVERY_PERSONALIZATION_CONFIG` — 12 个个性化参数（budget 调整幅度/偏置权重/阈值）
+- `APP_VERSION` → v3.8.0
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| js/config.js | +RECOVERY_PERSONALIZATION_CONFIG, version bump |
+| js/recovery-scheduler.js | +4 个性化函数, _enforceDailyBudget 支持动态参数, buildDailyRecoveryPlan 接入 profile |
+| js/student-profile.js | +getStudentProfileSummary, +inferWeakType |
+| js/syllabus.js | Today's Recovery 增加 personalized note |
+| css/style.css | +plan-card-personalized + dark mode |
+
+---
+
 ## [3.7.0] - 2026-03-10 — Student Recovery Profile
 
 ### Student Profile Card（js/student-profile.js 新增）

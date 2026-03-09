@@ -4490,3 +4490,7 @@ input { font-family: inherit; }
 .profile-weak-pills { display:flex; flex-wrap:wrap; gap:4px; }
 .profile-weak-pill { font-size:11px; padding:2px 8px; border-radius:10px; background:var(--c-danger-bg); color:var(--c-danger); font-weight:600; }
 [data-theme="dark"] .student-profile-metric { background:var(--c-surface); }
+
+/* ═══ PERSONALIZED SCHEDULING NOTE (v3.8.0) ═══ */
+.plan-card-personalized { margin-top:4px; font-size:12px; color:var(--c-primary); line-height:1.35; }
+[data-theme="dark"] .plan-card-personalized { color:#b8b4ff; }
