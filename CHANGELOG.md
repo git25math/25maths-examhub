@@ -1,5 +1,46 @@
 # Changelog
 
+## [3.5.0] - 2026-03-10 — Smart Recovery Ordering
+
+### Priority Engine（js/recovery-priority.js 新增）
+- `collectRecoveryUnits(board)` — 收集三类过期项（词汇/KP/PP），统一为 RecoveryUnit 结构
+- `computeRecoveryPriority(unit)` — 4 维评分：errorWeight(0-45) + decayWeight(0-35) + examWeight(0-20) + healthPenalty(0-15)
+- `sortRecoveryUnits(units)` — 按 priorityScore 降序排列，tie-breaker: decayWeight → examWeight
+- `groupRecoveryUnitsByType(units, board)` — 按类型聚合为连贯批次，批次顺序由各类最高分决定
+- `buildSmartRecoveryQueue(board)` — 主入口：collect → score → sort → group
+
+### 评分数据来源
+- Error Weight: vocab 用 ok/fail 错误率，KP 用 kpDone ok/fail，PP 用 cs 代理信号
+- Decay Weight: daysSince 减去 REFRESH_INTERVALS 阈值后按 bucket 映射（0/8/16/26/35）
+- Exam Weight: ppGetSectionStats().total 题量映射，默认 8 分
+- Health Penalty: getSectionHealth().score 按 40/60/80 三档映射（15/10/5/0）
+
+### 可配置参数（js/config.js）
+- `RECOVERY_PRIORITY_CONFIG.maxUnits` — 最大评分单位数（默认 30）
+- `RECOVERY_PRIORITY_CONFIG.decayBuckets` — 衰退天数→分数映射表
+- `RECOVERY_PRIORITY_CONFIG.healthPenalty` — Section 健康度→惩罚分映射表
+- `RECOVERY_PRIORITY_CONFIG.defaultExamWeight` — 无法获取题量时的默认考试权重
+
+### Session 集成（js/recovery-session.js）
+- `buildRecoverySession()` — 优先走 `buildSmartRecoveryQueue()`，失败自动 fallback 到固定顺序
+- `_buildLegacyRecoverySession()` — 原有 vocab→kp→pp 固定顺序逻辑保留为降级方案
+- Session 执行层完全不变：step bar、Next/Exit、finish hooks、结果面板
+
+### Explainability（调试用，本版不展示给用户）
+- 每个 RecoveryUnit 带 `reason[]` 数组，标注高错误率/长时间衰退/高考试权重/弱章节等原因
+- Queue 条目带 `_smart: true` 和 `_score` 字段，便于区分智能排序 vs 降级排序
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| js/recovery-priority.js | **新增** — Priority Engine 10 个函数 |
+| js/recovery-session.js | buildRecoverySession 重构为 smart+fallback 双路径 |
+| js/config.js | + RECOVERY_PRIORITY_CONFIG 配置对象 + APP_VERSION → v3.5.0 |
+| scripts/minify.sh | + recovery-priority.js 加入 bundle（worksheet 之后、recovery-session 之前） |
+| CLAUDE.md | JS 文件数 24→25，load order 更新 |
+
+---
+
 ## [3.4.1] - 2026-03-10 — Recovery Session UX Polish
 
 ### 步骤指示条（recovery-session.js + css/style.css）

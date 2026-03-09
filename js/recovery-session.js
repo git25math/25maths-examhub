@@ -1,14 +1,15 @@
 /* ══════════════════════════════════════════════════════════════
    recovery-session.js — Recovery Session orchestration
-   Chains vocab → KP → PP refresh scans into a single session.
+   Chains refresh scans into a single session, ordered by
+   smart priority engine (v3.5) with legacy fallback.
    Triggered from Today's Plan "Start Recovery" button.
    ══════════════════════════════════════════════════════════════ */
 
 var _recoverySession = null;
 var RECOVERY_ADVANCE_DELAY = 800;
 
-/* Build a queue of stale item types to review */
-function buildRecoverySession() {
+/* Legacy fixed-order queue builder (fallback) */
+function _buildLegacyRecoverySession() {
   var board = typeof userBoard !== 'undefined' ? userBoard : null;
   var queue = [];
   if (typeof getStaleWords === 'function') {
@@ -24,6 +25,21 @@ function buildRecoverySession() {
     if (sp && sp.length > 0) queue.push({ type: 'pp', count: sp.length, board: board });
   }
   return queue;
+}
+
+/* Build a queue of stale item types to review — smart priority or legacy fallback */
+function buildRecoverySession() {
+  var board = typeof userBoard !== 'undefined' ? userBoard : null;
+
+  /* Try smart priority engine first */
+  try {
+    if (typeof buildSmartRecoveryQueue === 'function') {
+      var smart = buildSmartRecoveryQueue(board);
+      if (smart && smart.length > 0) return smart;
+    }
+  } catch (e) { /* fall through to legacy */ }
+
+  return _buildLegacyRecoverySession();
 }
 
 /* Start a recovery session — called from Today's Plan delegation */

@@ -462,6 +462,13 @@
 ## v3.3 Print Repair Sheet [DONE]
 - [x] **单题打印修复单 (v3.3.0)**: worksheet.js 新窗口 A4 打印（题目+词汇+KP+留白+纠错+订正），从 Recovery Pack 触发
 
+## v3.5 Smart Recovery Ordering [DONE]
+- [x] **Priority Engine (v3.5.0)**: 4 维评分（错误率+衰退+考试权重+章节健康度）替代固定 vocab→kp→pp 顺序
+- [x] 按类型聚合批次，批次顺序由各类最高优先级决定
+- [x] RECOVERY_PRIORITY_CONFIG 可配置评分参数
+- [x] 智能排序失败自动 fallback 到固定顺序
+- [x] Explainability reason 字段（调试用，v3.5.1 展示给用户）
+
 ## v3.4 Recovery Session [DONE]
 - [x] **Recovery Session MVP (v3.4.0)**: Today's Plan 一键复查，串联 vocab→KP→PP 三类过期项自动推进
 - [x] finish hook 自动推进（不改原有结果面板 UI）

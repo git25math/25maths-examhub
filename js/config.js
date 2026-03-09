@@ -367,7 +367,26 @@ function isSuperAdmin() {
 }
 
 /* App version */
-var APP_VERSION = 'v3.4.1';
+var APP_VERSION = 'v3.5.0';
+
+/* Recovery Priority Engine configuration */
+var RECOVERY_PRIORITY_CONFIG = {
+  maxUnits: 30,
+  defaultExamWeight: 8,
+  decayBuckets: [
+    { days: 1, score: 0 },
+    { days: 3, score: 8 },
+    { days: 7, score: 16 },
+    { days: 14, score: 26 },
+    { days: 9999, score: 35 }
+  ],
+  healthPenalty: [
+    { max: 40, score: 15 },
+    { max: 60, score: 10 },
+    { max: 80, score: 5 },
+    { max: 101, score: 0 }
+  ]
+};
 
 /* Mastered decay — refresh intervals (days) by refresh count */
 var REFRESH_INTERVALS = [7, 14, 30];
