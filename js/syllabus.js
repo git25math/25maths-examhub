@@ -3183,6 +3183,23 @@ function renderKPDetail(kp, board) {
   html += '<button class="kp-resource-link" data-kp-practice-section="' + kp.section + '" data-kp-practice-board="' + board + '" data-kp-return-id="' + kp.id + '">';
   html += '\u270f\ufe0f ' + t('Practice Questions', '\u7ec3\u4e60\u9898');
   html += '</button>';
+  /* Related Questions count from Learning Graph */
+  if (typeof getKPQuestions === 'function') {
+    var relQs = getKPQuestions(kp.id, board);
+    if (relQs.length > 0) {
+      var _lgPP = 0, _lgMCQ = 0;
+      for (var ri = 0; ri < relQs.length; ri++) {
+        if (relQs[ri].type === 'pp') _lgPP++;
+        else _lgMCQ++;
+      }
+      html += '<div class="kp-related-qs-info">';
+      html += '<span class="text-muted-sm">\ud83d\udcca ';
+      if (_lgPP > 0) html += _lgPP + ' ' + t('past paper questions', '\u9053\u771f\u9898');
+      if (_lgPP > 0 && _lgMCQ > 0) html += ' \u00b7 ';
+      if (_lgMCQ > 0) html += _lgMCQ + ' ' + t('practice questions', '\u9053\u7ec3\u4e60\u9898');
+      html += '</span></div>';
+    }
+  }
   html += '</div>';
   html += '</div>';
 

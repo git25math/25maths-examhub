@@ -1882,6 +1882,29 @@ function renderPPCard() {
     }
   }
 
+  /* Related Knowledge Points toggle (practice mode + has section + graph available) */
+  if (_ppSession.mode === 'practice' && q.s && typeof getQuestionKPs === 'function') {
+    var relKPs = getQuestionKPs(q.s, _ppSession.board);
+    if (relKPs.length > 0) {
+      html += '<div class="pp-ms-toggle" role="button" tabindex="0" data-action="toggleKP">';
+      html += '<span id="pp-kp-arrow">\u25b6</span> ';
+      html += t('Related Knowledge Points', '\u76f8\u5173\u77e5\u8bc6\u70b9');
+      html += ' <span class="text-muted-sm">(' + relKPs.length + ')</span>';
+      html += '</div>';
+      html += '<div class="pp-ms-content" id="pp-kp-body">';
+      for (var ki = 0; ki < relKPs.length; ki++) {
+        var rkp = relKPs[ki];
+        var kpBadge = rkp.fs === 'mastered' ? '\u2705' : rkp.fs === 'uncertain' ? '\ud83d\udfe1' : rkp.fs === 'learning' ? '\ud83d\udfe2' : '\u26aa';
+        html += '<div class="pp-vocab-row">';
+        html += '<span class="pp-vocab-word">' + escapeHtml(rkp.title) + '</span>';
+        if (rkp.title_zh) html += '<span class="pp-vocab-def">' + escapeHtml(rkp.title_zh) + '</span>';
+        html += '<span class="pp-kp-badge">' + kpBadge + '</span>';
+        html += '</div>';
+      }
+      html += '</div>';
+    }
+  }
+
   html += '</div>'; /* end pp-card */
 
   /* Self-assessment (practice mode) */
@@ -1955,6 +1978,7 @@ function renderPPCard() {
       var action = target.dataset.action;
       if (action === 'toggleMS') ppToggleMS();
       else if (action === 'toggleVocab') ppToggleVocab();
+      else if (action === 'toggleKP') ppToggleKP();
       else if (action === 'toggleMarkBody') ppToggleMarkBody(Number(target.dataset.idx));
     });
   }
@@ -2389,6 +2413,14 @@ function _ppGetSectionVocab(sectionId, board) {
 function ppToggleVocab() {
   var body = document.getElementById('pp-vocab-body');
   var arrow = document.getElementById('pp-vocab-arrow');
+  if (!body) return;
+  body.classList.toggle('show');
+  if (arrow) arrow.textContent = body.classList.contains('show') ? '\u25bc' : '\u25b6';
+}
+
+function ppToggleKP() {
+  var body = document.getElementById('pp-kp-body');
+  var arrow = document.getElementById('pp-kp-arrow');
   if (!body) return;
   body.classList.toggle('show');
   if (arrow) arrow.textContent = body.classList.contains('show') ? '\u25bc' : '\u25b6';
@@ -3271,6 +3303,21 @@ function ppShowWrongBook(sectionId, board) {
         html += '<div style="font-size:13px;font-weight:600">' + item.q.src + ' <span class="pp-marks-badge">' + item.q.marks + ' mks</span></div>';
         var noteText = errLabel || item.wb.note || '';
         if (noteText) html += '<div class="pp-wrong-note">' + noteText + '</div>';
+        /* Recovery suggestion from Learning Graph */
+        if (typeof getRecoveryCandidates === 'function') {
+          var recovery = getRecoveryCandidates(item.q.id, sectionId, board);
+          if (recovery && (recovery.weakVocab.length > 0 || recovery.weakKPs.length > 0)) {
+            html += '<div class="recovery-hint">';
+            if (recovery.weakVocab.length > 0) {
+              html += '\ud83d\udcd6 ' + recovery.weakVocab.slice(0, 3).map(function(v) { return escapeHtml(v.word); }).join(', ');
+            }
+            if (recovery.weakKPs.length > 0) {
+              if (recovery.weakVocab.length > 0) html += ' \u00b7 ';
+              html += '\ud83e\udde0 ' + recovery.weakKPs.map(function(k) { return escapeHtml(k.title); }).join(', ');
+            }
+            html += '</div>';
+          }
+        }
         html += '</div>';
         html += '<div class="pp-wrong-review-count">\u00d7' + (item.wb.reviewCount || 0) + '</div>';
         html += '</div>';

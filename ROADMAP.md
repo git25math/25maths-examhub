@@ -452,6 +452,12 @@
 - [x] **KP/PP Refresh Scan UI (v3.0.1)**: KP/PP 复查三按钮 UI + Plan/Hero 直达按钮 + Stats 三独立掌握度区块
 - [x] **统一 Learning Unit API (v3.1.0)**: recordUnitAnswer dispatcher + getStaleUnits + PP 云同步 + rc cap + src 追踪 + ppGetWeakGroups fix
 
+## v3.2 Learning Graph 查询层 + Recovery Pack [DONE]
+- [x] **learning-graph.js 查询层 (v3.2.0)**: 6 个运行时查询函数，section code 连接 questions ↔ vocab ↔ KPs，纯只读
+- [x] **PP 题详情 Related KPs (v3.2.0)**: 折叠区显示同 section 知识点 + FLM 状态徽标
+- [x] **错题本 Recovery Hint (v3.2.0)**: getRecoveryCandidates 输出弱词汇/弱知识点提示
+- [x] **KP 详情 Related Questions (v3.2.0)**: ⑤ Related Resources 新增 PP+MCQ 题目统计
+
 ## v2.9 知识点接入 FLM — Learning Unit Phase 1 [DONE]
 - [x] **KP Session-Based FLM**: saveKPResult 重构为 session finalizer，题组提交统一结算 → v2.9.0
 - [x] **cs 语义统一**: KP cs = 连续成功 session 次数（≥85% 准确率），区别于词汇逐题 cs → v2.9.0

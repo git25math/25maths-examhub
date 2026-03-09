@@ -3505,6 +3505,10 @@ input { font-family: inherit; }
 .pp-vocab-stars { font-size: 11px; white-space: nowrap; color: var(--c-warning); }
 .pp-vocab-new { font-size: 10px; color: var(--c-muted); background: var(--c-border-light);
   padding: 1px 6px; border-radius: var(--r-sm); }
+.pp-kp-badge { font-size: 12px; white-space: nowrap; }
+.recovery-hint { font-size: 11px; color: var(--c-text2); margin-top: 3px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.kp-related-qs-info { padding: 8px 16px; font-size: 13px; }
 
 /* Smart Path */
 .smart-path { margin-bottom: 16px; }

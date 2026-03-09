@@ -4,7 +4,7 @@ Bilingual math vocabulary learning platform (双语数学词汇学习平台) for
 
 - **Live**: https://git25math.github.io/25maths-keywords/
 - **Repo**: https://github.com/git25math/25maths-keywords
-- **Version**: v3.1.0 (2026-03-09)
+- **Version**: v3.2.0 (2026-03-09)
 - **Scale**: 3 boards, 275 levels + 72 CIE sections + 39 Edexcel sections, 2,200 words + 5,962 真题 + 3,578 练习题
 - **Supabase**: shared with 25maths-website (ref: `jjjigohjvmyewasmmmyf`)
 - **See also**: [CHANGELOG.md](CHANGELOG.md) | [ROADMAP.md](ROADMAP.md)
@@ -13,7 +13,7 @@ Bilingual math vocabulary learning platform (双语数学词汇学习平台) for
 
 - `index.html` — Main entry (sidebar + 18 panels + bottom-nav shell)
 - `css/style.css` — All styles (design tokens, 3 breakpoints, dark mode, components)
-- `js/` — 21 modular JS files loaded via `<script>` tags (no bundler)
+- `js/` — 22 modular JS files loaded via `<script>` tags (no bundler)
 - `supabase/migrations/` — 17 SQL migration files (tables, RLS, RPC, Edge Functions)
 - `scripts/` — Python build/extract scripts
 - `data/sources.json` — .tex file path mapping for vocab extraction
@@ -31,7 +31,7 @@ python3 scripts/extract-vocab.py
 python3 scripts/build-single.py
 ```
 
-## JS Load Order (20 files)
+## JS Load Order (21 files)
 
 Scripts are loaded via `<script>` tags in this order (each depends on previous):
 1. config.js — App constants, theme tokens, global state, breakpoint detection
@@ -50,10 +50,11 @@ Scripts are loaded via `<script>` tags in this order (each depends on previous):
 14. export.js — Import (4 formats) + Export (CSV/JSON/Markdown)
 15. stats.js — Statistics dashboard, heatmap, trend chart
 16. practice.js — Exam practice mode (real MCQs from 25maths-website)
-17. admin.js — Teacher management (classes, students, grades, school overview)
-18. vocab-admin.js — Super-admin vocabulary CRUD (vocab_levels table)
-19. homework.js — Homework assignments + notifications + student submissions
-20. app.js — Init, leaderboard, URL deep linking, iOS share recovery
+17. learning-graph.js — Runtime query layer (questions ↔ vocab ↔ KPs via section codes)
+18. admin.js — Teacher management (classes, students, grades, school overview)
+19. vocab-admin.js — Super-admin vocabulary CRUD (vocab_levels table)
+20. homework.js — Homework assignments + notifications + student submissions
+21. app.js — Init, leaderboard, URL deep linking, iOS share recovery
 
 ## Layout Architecture
 

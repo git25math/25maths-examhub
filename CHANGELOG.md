@@ -1,5 +1,43 @@
 # Changelog
 
+## [3.2.0] - 2026-03-09 — Learning Graph 查询层 + Recovery Pack Hook
+
+### Learning Graph 查询层（js/learning-graph.js 新增）
+- 6 个运行时查询函数，基于 section code 连接 questions ↔ vocabulary ↔ knowledge points
+- `getQuestionVocabLevels(qid, sectionId, board)` — 题目→相关词汇级别
+- `getQuestionKPs(sectionId, board)` — 题目→相关知识点（含 FLM 状态）
+- `getKPQuestions(kpId, board)` — 知识点→相关题目（PP + MCQ）
+- `getVocabQuestions(vocabSlug, board)` — 词汇→相关题目
+- `getRecoveryCandidates(qid, sectionId, board)` — 错题→弱词汇 + 弱知识点 + 兄弟题
+- `getSectionGraph(sectionId, board)` — Section 完整关系概览
+- 纯只读层，不写任何状态，所有数据依赖已加载的全局变量
+
+### PP 题详情页 — Related Knowledge Points（practice.js）
+- 练习模式 PP 题卡新增 "Related Knowledge Points" 折叠区（复用 pp-ms-toggle 模式）
+- 每个 KP 显示 FLM 状态徽标（⚪ new / 🟢 learning / 🟡 uncertain / ✅ mastered）
+- `ppToggleKP()` + delegation 注册
+
+### 错题本 — Recovery Hint（practice.js）
+- 每个错题项底部显示恢复提示（弱词汇 + 弱知识点名称）
+- 数据来自 `getRecoveryCandidates()`，弱词汇≤3 + 弱知识点≤2
+
+### KP 详情页 — Related Questions 统计（syllabus.js）
+- ⑤ Related Resources 区域新增题目数量统计（PP 真题 + MCQ 练习题）
+- 数据来自 `getKPQuestions()`
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| js/learning-graph.js | **新增** — 6 个查询函数 + 2 个内部 helper |
+| js/practice.js | + Related KPs 折叠区 + ppToggleKP + 错题 Recovery Hint |
+| js/syllabus.js | + KP 详情页 Related Questions 统计 |
+| css/style.css | + .pp-kp-badge, .recovery-hint, .kp-related-qs-info |
+| js/config.js | APP_VERSION → v3.2.0 |
+| scripts/minify.sh | + learning-graph.js 加入 bundle |
+| sw.js | CACHE_VERSION → v3.2.0 (auto-sync) |
+
+---
+
 ## [3.1.0] - 2026-03-09 — 统一 Learning Unit API + 质量修复
 
 ### PP 云同步（HIGH fix）
