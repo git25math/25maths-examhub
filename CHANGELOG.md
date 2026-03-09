@@ -1,5 +1,32 @@
 # Changelog
 
+## [2.4.2] - 2026-03-09 — 真题排版 3 Critical Bug 修复
+
+### Fix 1: f(x)/g(x) 误切修复（54 题）
+- **`_ppInsertPartMarks`** 重写：废弃通用正则 `/(\([a-z]\)|\([ivx]+\))/gi`，改为动态正则只匹配 `partsMap` 中实际存在的 label
+- 要求 label 在行首或换行后出现（`(?:^|\n)\s*`），避免 `f(x)` 行内误匹配
+
+### Fix 2: marks=0 不再显示 `[0]`（632 题 / 1,081 parts）
+- 数据中 `marks=0` 表示"未提取到分值"，现过滤为空不显示
+- 同时修复无 parts 题目的总分值显示
+
+### Fix 3: LaTeX 残留清理
+- `_ppRenderTex` 清除 `[leftmargin=...]` 文字残留（8 题）
+- `\\[0.3cm]` 间距命令转换为 `<div style="margin-top:8px">` CSS 间距（347 题）
+
+### Fix 4: float→flex 布局
+- `.pp-part-block` 从 `overflow:hidden` + `float:right` 改为 `display:flex`
+- 新增 `.pp-part-content` 包裹内容区（`flex:1`）
+- `.pp-marks-right` 改用 `margin-left:auto` 自然右对齐
+- `.pp-part-block` 设 `white-space:normal` 避免与 `.pp-card-body` 的 `pre-line` 冲突
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `js/practice.js` | 重写 `_ppInsertPartMarks`（动态正则）+ `_ppRenderTex` 增加清理 + marks>0 过滤 |
+| `css/style.css` | `.pp-part-block` float→flex + `.pp-part-content` 新增 + `.pp-marks-right` 去 float |
+| `js/config.js` | v2.4.1 → v2.4.2 |
+
 ## [2.4.1] - 2026-03-09 — 真题 PDF 还原排版
 
 ### 右对齐分值（PDF 风格）

@@ -1268,8 +1268,12 @@ function _ppSaveExam(exam) {
 function _ppRenderTex(texOrQ) {
   /* Accept a question object (prefer texHtml) or raw string */
   var tex = (typeof texOrQ === 'object' && texOrQ !== null) ? (texOrQ.texHtml || texOrQ.tex) : texOrQ;
+  /* Clean LaTeX remnants before rendering */
+  var html = tex.replace(/\[leftmargin[^\]]*\]/g, '');
+  /* Convert \\[0.3cm] spacing commands to CSS margin */
+  html = html.replace(/\\\\?\[[\d.]+cm\]/g, '<div style="margin-top:8px"></div>');
   /* Convert markdown bold; keep \n intact (CSS white-space: pre-line handles display) */
-  var html = tex.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+  html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
   return html;
 }
 
@@ -1278,9 +1282,11 @@ function _ppRenderTex(texOrQ) {
 function _ppRenderWithMarks(q) {
   var html = _ppRenderTex(q);
   if (!q.parts || !q.parts.length) {
-    /* No parts — show total marks right-aligned at end */
-    return '<div class="pp-part-block">' + html +
-      '<span class="pp-marks-right">[' + q.marks + ']</span></div>';
+    /* No parts — show total marks right-aligned at end (skip if marks=0) */
+    var totalMarksHtml = (q.marks > 0)
+      ? '<span class="pp-marks-right">[' + q.marks + ']</span>' : '';
+    return '<div class="pp-part-block"><div class="pp-part-content">' + html +
+      '</div>' + totalMarksHtml + '</div>';
   }
   /* Build parts lookup: "(a)" → marks */
   var partsMap = {};
@@ -1291,28 +1297,37 @@ function _ppRenderWithMarks(q) {
 }
 
 function _ppInsertPartMarks(html, partsMap) {
-  /* Split by part labels like (a), (b), (i), (ii), (iii) etc. */
-  var partRe = /(\([a-z]\)|\([ivx]+\))/gi;
-  var parts = html.split(partRe);
-  /* parts array: [intro, "(a)", contentA, "(b)", contentB, ...] */
-  if (parts.length < 3) {
-    /* No part labels found in text — just show total */
+  var labels = Object.keys(partsMap);
+  if (!labels.length) return html;
+  /* Build dynamic regex matching only labels present in partsMap */
+  /* Require label at line start (or after newline) to avoid matching f(x), g(x) etc. */
+  var escaped = labels.map(function(l) {
+    return l.replace(/[()]/g, '\\$&');
+  });
+  var re = new RegExp('((?:^|\\n)\\s*(' + escaped.join('|') + '))', 'gi');
+  var parts = html.split(re);
+  /* split with capture groups: [intro, fullMatch, labelOnly, content, fullMatch, labelOnly, content, ...] */
+  /* Each match produces 2 capture groups, so stride is 3 */
+  if (parts.length < 4) {
+    /* No part labels found in text — just show as-is */
     return html;
   }
   var result = '';
   /* First segment is the intro (before any part label) */
   var intro = parts[0].replace(/\s+$/, '');
   if (intro) result += '<div class="pp-part-intro">' + intro + '</div>';
-  /* Process pairs: label + content */
-  for (var i = 1; i < parts.length; i += 2) {
-    var label = parts[i];
-    var content = (i + 1 < parts.length) ? parts[i + 1] : '';
+  /* Process groups: fullMatch(i) + labelOnly(i+1) + content(i+2) */
+  for (var i = 1; i < parts.length; i += 3) {
+    var label = parts[i + 1]; /* the clean label like "(a)" */
+    var content = (i + 2 < parts.length) ? parts[i + 2] : '';
     var marks = partsMap[label.toLowerCase()];
-    var marksHtml = (marks != null) ? '<span class="pp-marks-right">[' + marks + ']</span>' : '';
+    /* marks=0 means "not extracted" — don't display [0] */
+    var marksHtml = (marks != null && marks > 0)
+      ? '<span class="pp-marks-right">[' + marks + ']</span>' : '';
     /* Trim trailing whitespace from content */
     content = content.replace(/\s+$/, '');
     result += '<div class="pp-part-block"><span class="pp-part-label">' + label + '</span>' +
-      content + marksHtml + '</div>';
+      '<div class="pp-part-content">' + content + '</div>' + marksHtml + '</div>';
   }
   return result;
 }
