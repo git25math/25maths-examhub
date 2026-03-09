@@ -1088,6 +1088,7 @@ var _ppFigures = {};       /* { qid: ["figures/xxx.svg", ...] } from manifest.js
 var _ppSession = null;     /* { questions, current, mode, startTime, results[], board, sectionId, paperKey, ... } */
 var _ppPaperResults = null; /* lazy-loaded paper results from localStorage */
 var _ppTimer = null;       /* exam timer interval */
+var _ppDelegated = false;  /* event delegation bound on panel-pastpaper */
 
 var PP_ERROR_TYPES = [
   { id: 'concept',     en: 'Concept gap',       zh: '\u6982\u5ff5\u4e0d\u6e05' },
@@ -1270,8 +1271,6 @@ function _ppRenderTex(texOrQ) {
   var tex = (typeof texOrQ === 'object' && texOrQ !== null) ? (texOrQ.texHtml || texOrQ.tex) : texOrQ;
   /* Clean LaTeX remnants before rendering */
   var html = tex.replace(/\[leftmargin[^\]]*\]/g, '');
-  /* Convert \\[0.3cm] spacing commands to CSS margin */
-  html = html.replace(/\\\\?\[[\d.]+cm\]/g, '<div style="margin-top:8px"></div>');
   /* Convert markdown bold; keep \n intact (CSS white-space: pre-line handles display) */
   html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
   return html;
@@ -1561,7 +1560,7 @@ function renderPPCard() {
 
   /* Mark Scheme toggle (practice mode only) */
   if (_ppSession.mode === 'practice') {
-    html += '<div class="pp-ms-toggle" role="button" tabindex="0" onclick="ppToggleMS()">';
+    html += '<div class="pp-ms-toggle" role="button" tabindex="0" data-action="toggleMS">';
     html += '<span id="pp-ms-arrow">\u25b6</span> ' + t('Mark Scheme', '\u8bc4\u5206\u6807\u51c6');
     html += '</div>';
     html += '<div class="pp-ms-content" id="pp-ms-body">';
@@ -1574,7 +1573,7 @@ function renderPPCard() {
   if (_ppSession.mode === 'practice' && q.s) {
     var vocabInfo = _ppGetSectionVocab(q.s, _ppSession.board);
     if (vocabInfo && vocabInfo.words.length > 0) {
-      html += '<div class="pp-ms-toggle" role="button" tabindex="0" onclick="ppToggleVocab()">';
+      html += '<div class="pp-ms-toggle" role="button" tabindex="0" data-action="toggleVocab">';
       html += '<span id="pp-vocab-arrow">\u25b6</span> ';
       html += t('Related Vocabulary', '\u76f8\u5173\u8bcd\u6c47');
       html += ' <span class="text-muted-sm">(' + vocabInfo.words.length + ')</span>';
@@ -1665,6 +1664,19 @@ function renderPPCard() {
   html += '</div>';
 
   el.innerHTML = html;
+
+  /* Delegated click handler for data-action elements (bind once) */
+  if (!_ppDelegated) {
+    _ppDelegated = true;
+    el.addEventListener('click', function(e) {
+      var target = e.target.closest('[data-action]');
+      if (!target) return;
+      var action = target.dataset.action;
+      if (action === 'toggleMS') ppToggleMS();
+      else if (action === 'toggleVocab') ppToggleVocab();
+      else if (action === 'toggleMarkBody') ppToggleMarkBody(Number(target.dataset.idx));
+    });
+  }
 
   /* KaTeX render */
   var qBody = document.getElementById('pp-question-body');
@@ -2276,7 +2288,7 @@ function ppShowMarking() {
     html += '<div class="pp-mark-item" id="pp-mark-' + i + '">';
 
     /* Header */
-    html += '<div class="pp-mark-header" role="button" tabindex="0" onclick="ppToggleMarkBody(' + i + ')">';
+    html += '<div class="pp-mark-header" role="button" tabindex="0" data-action="toggleMarkBody" data-idx="' + i + '">';
     html += '<div><strong>Q' + (i + 1) + '</strong> <span class="pp-src">' + q.src + '</span> ';
     html += '<span class="pp-marks-badge">' + q.marks + (q.marks === 1 ? ' mk' : ' mks') + '</span>';
     if (r.flagged) html += ' \u2753';

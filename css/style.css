@@ -4275,7 +4275,7 @@ input { font-family: inherit; }
 .pp-flag-label { cursor:pointer; font-size:13px; color:var(--c-muted); }
 .pp-parts-bar { padding:8px 16px; font-size:12px; color:var(--c-muted); border-top:1px solid var(--c-border-light); }
 /* PDF-style part blocks with right-aligned marks */
-.pp-part-block { display:flex; flex-wrap:wrap; align-items:flex-start; margin-bottom:6px; white-space:normal; }
+.pp-part-block { display:flex; align-items:flex-start; margin-bottom:6px; white-space:normal; }
 .pp-part-intro { margin-bottom:8px; }
 .pp-part-label { font-weight:600; margin-right:4px; flex-shrink:0; }
 .pp-part-content { flex:1; min-width:0; }

@@ -1,5 +1,26 @@
 # Changelog
 
+## [2.4.3] - 2026-03-09 — 真题排版继续优化
+
+### Fix 1: 移除误杀 display math 的 spacing 正则
+- `_ppRenderTex` 中 `/\\\\?\[[\d.]+cm\]/g` 正则会匹配 `\[...\]` display math 起始符
+- 数据中实测 0 题含此 pattern（spacing 已在提取阶段清除），正则冗余且有误杀风险
+- 直接移除该行
+
+### Fix 2: `flex-wrap:wrap` 去除
+- `.pp-part-block` 去掉 `flex-wrap:wrap`，marks badge 不再在窄屏上换行脱离内容
+
+### Fix 3: onclick XSS 消除（3 处）
+- `ppToggleMS()` / `ppToggleVocab()` / `ppToggleMarkBody(i)` 的 3 处 `onclick=` 内联事件
+- 改为 `data-action` 属性 + `panel-pastpaper` 上的事件委托（bind once）
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `js/practice.js` | 移除 spacing 正则 + 3 处 onclick→data-action 事件委托 |
+| `css/style.css` | `.pp-part-block` 去掉 `flex-wrap:wrap` |
+| `js/config.js` | v2.4.2 → v2.4.3 |
+
 ## [2.4.2] - 2026-03-09 — 真题排版 3 Critical Bug 修复
 
 ### Fix 1: f(x)/g(x) 误切修复（54 题）
