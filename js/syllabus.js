@@ -2695,6 +2695,11 @@ function renderTodaysPlan() {
     }
   }
 
+  /* Student Profile Card (v3.7.0) */
+  if (typeof renderStudentProfileCard === 'function') {
+    try { var _ph = renderStudentProfileCard(); if (_ph) html += _ph; } catch (e) {}
+  }
+
   /* Today's progress */
   var todayStr = new Date().toLocaleDateString('en-CA');
   var _planS = loadS();

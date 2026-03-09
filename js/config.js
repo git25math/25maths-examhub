@@ -367,7 +367,17 @@ function isSuperAdmin() {
 }
 
 /* App version */
-var APP_VERSION = 'v3.6.1';
+var APP_VERSION = 'v3.7.0';
+
+/* Student Profile configuration */
+var STUDENT_PROFILE_CONFIG = {
+  cacheKey: 'student_profile',
+  cacheTTL: 300000,
+  weakThreshold: 40,
+  maxWeakSections: 3,
+  trendDays: 7,
+  minDataDays: 3
+};
 
 /* Recovery Priority Engine configuration */
 var RECOVERY_EXPLAIN_DEBUG = false;

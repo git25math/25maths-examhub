@@ -143,6 +143,7 @@ function _finishRefreshScan() {
 
   E('panel-study').innerHTML = html;
   updateSidebar();
+  if (typeof _profileCacheTs !== 'undefined') _profileCacheTs = 0;
 
   /* Recovery session: replace buttons with session-aware controls */
   if (_isRecovery) {
@@ -261,6 +262,7 @@ function _finishKPRefreshScan() {
   html += '</div>';
   E('panel-study').innerHTML = html;
   updateSidebar();
+  if (typeof _profileCacheTs !== 'undefined') _profileCacheTs = 0;
 
   /* Recovery session: replace buttons with session-aware controls */
   if (_isRecovery) {

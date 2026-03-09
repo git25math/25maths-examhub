@@ -207,6 +207,7 @@ function _endRecoverySession() {
   } catch (e) {}
 
   _recoverySession = null;
+  if (typeof _profileCacheTs !== 'undefined') _profileCacheTs = 0;
 
   if (typeof navTo === 'function') navTo('plan');
 

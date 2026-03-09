@@ -366,6 +366,12 @@ function getRecoveryBacklogCount() {
   return state.backlog ? state.backlog.length : 0;
 }
 
+/* Get full recovery schedule history for profile analysis */
+function getRecoveryScheduleHistory() {
+  var state = _loadScheduleState();
+  return state.history || [];
+}
+
 /* Invalidate daily plan cache (e.g. after learning activity) */
 function invalidateRecoveryPlanCache() {
   _dailyPlanCache = null;

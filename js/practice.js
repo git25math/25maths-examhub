@@ -1489,6 +1489,7 @@ function _finishPPRefreshScan() {
   html += '</div>';
   E('panel-practice').innerHTML = html;
   if (typeof updateSidebar === 'function') updateSidebar();
+  if (typeof _profileCacheTs !== 'undefined') _profileCacheTs = 0;
 
   /* Recovery session: replace buttons with session-aware controls */
   if (_isRecovery) {
@@ -2032,6 +2033,7 @@ function ppRate(level) {
   if (!_ppSession || _ppSession.mode !== 'practice') return;
   var q = _ppSession.questions[_ppSession.current];
   _ppSetMastery(q.id, level, { source: 'practice' });
+  if (typeof _profileCacheTs !== 'undefined') _profileCacheTs = 0;
 
   /* Auto-add to wrong book if needs_work (resolve handled by _ppSetMastery) */
   if (level === 'needs_work') {

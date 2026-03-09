@@ -462,6 +462,13 @@
 ## v3.3 Print Repair Sheet [DONE]
 - [x] **单题打印修复单 (v3.3.0)**: worksheet.js 新窗口 A4 打印（题目+词汇+KP+留白+纠错+订正），从 Recovery Pack 触发
 
+## v3.7 Student Recovery Profile [DONE]
+- [x] **Student Profile Card (v3.7.0)**: Today's Plan 学习画像（Accuracy/Mastery/Streak/Recovery 四维指标）
+- [x] Weak sections 识别（getSectionHealth < 40 的 section 标为 Needs work）
+- [x] Trend 趋势分析（近 7d vs 前 7d accuracy delta → up/stable/down）
+- [x] 5 分钟缓存 TTL + 5 处 cache invalidation 触发点
+- [x] 降级策略（无数据不渲染、recovery 空用 Active Days、trend 不足隐藏 pill）
+
 ## v3.6 Adaptive Scheduling [DONE]
 - [x] **Recovery Scheduler (v3.6.0)**: 每日 budget 约束（10 总量 / 5V+3K+4P 类型上限）
 - [x] Backlog + carry-over 跨天结转（独立 localStorage 持久化）

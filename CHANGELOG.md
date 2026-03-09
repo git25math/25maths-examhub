@@ -1,5 +1,50 @@
 # Changelog
 
+## [3.7.0] - 2026-03-10 — Student Recovery Profile
+
+### Student Profile Card（js/student-profile.js 新增）
+- `rebuildStudentProfile()` 主聚合器，5 分钟缓存 TTL + localStorage 持久化
+- 4 维指标：Accuracy%（calcSummaryStats）、Mastery%（vocab+KP+PP FLM 计数）、Streak、Recovery%（scheduler history）
+- `_computeProfileWeakSections()` 遍历 BOARD_SYLLABUS，getSectionHealth < 40 的 section 标为 weak
+- `_computeProfileTrend()` 近 7d vs 前 7d accuracy delta → up/stable/down 趋势判断
+- `renderStudentProfileCard()` 渲染到 Today's Plan 区域：header + trend pill + 2×2 metrics + weak pills
+
+### 降级策略
+- activeDays=0 且 totalWords=0 → 不渲染卡片
+- trend 数据不足（< 3 天活跃）→ 不显示 trend pill
+- recovery history 为空 → 第 4 格显示 Active Days 替代 Recovery%
+- weak sections 为空 → 不显示 Needs work 行
+
+### Cache Invalidation（5 处触发点）
+- study.js: `_finishRefreshScan()` / `_finishKPRefreshScan()` 结束后 reset cache
+- practice.js: `ppRate()` / `_finishPPRefreshScan()` 结束后 reset cache
+- recovery-session.js: `_endRecoverySession()` 结束后 reset cache
+
+### 配置（js/config.js）
+- `STUDENT_PROFILE_CONFIG.cacheTTL` — 缓存有效期（默认 5 分钟）
+- `STUDENT_PROFILE_CONFIG.weakThreshold` — weak section 阈值（默认 40）
+- `STUDENT_PROFILE_CONFIG.maxWeakSections` — 最多显示 weak 数（默认 3）
+- `STUDENT_PROFILE_CONFIG.trendDays` — 趋势对比天数（默认 7）
+- `APP_VERSION` → v3.7.0
+
+### 公共 API（js/recovery-scheduler.js）
+- `getRecoveryScheduleHistory()` 返回完整 scheduler history 数组
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| js/config.js | +STUDENT_PROFILE_CONFIG, version bump |
+| js/recovery-scheduler.js | +getRecoveryScheduleHistory() |
+| js/student-profile.js | **新增** ~200 行，profile 计算 + 渲染 |
+| js/syllabus.js | Today's Plan 插入 Profile Card |
+| js/study.js | 2 处 finish 后 invalidate cache |
+| js/practice.js | 2 处 finish 后 invalidate cache |
+| js/recovery-session.js | session end 后 invalidate cache |
+| css/style.css | +student-profile-card/metrics/trend/weak + dark mode |
+| scripts/minify.sh | +student-profile.js in bundle |
+
+---
+
 ## [3.6.1] - 2026-03-10 — Carry-over UX + Recovery Calendar Lite
 
 ### Carry-over 可视化（js/syllabus.js）
