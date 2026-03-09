@@ -13,9 +13,13 @@ var varDir = path.join(__dirname, '..', 'data', 'kp-gen', 'variants-' + board);
 
 var questions = JSON.parse(fs.readFileSync(qFile, 'utf8'));
 
-// Build existing ID set
+// Build existing ID set + content hash for dedup
 var existingIds = {};
-questions.forEach(function(q) { existingIds[q.id] = true; });
+var existingContent = {};
+questions.forEach(function(q) {
+  existingIds[q.id] = true;
+  existingContent[q.s + '|' + q.q] = true;
+});
 
 // Find max numeric ID for dedup
 var maxNum = 0;
@@ -47,6 +51,13 @@ files.forEach(function(f) {
       return;
     }
 
+    // Skip if same content already exists (prevents re-merge)
+    var contentKey = v.s + '|' + v.q;
+    if (existingContent[contentKey]) {
+      skipped++;
+      return;
+    }
+
     // Ensure unique ID
     if (!v.id || existingIds[v.id]) {
       maxNum++;
@@ -57,6 +68,7 @@ files.forEach(function(f) {
     v.src = 'variant';
 
     existingIds[v.id] = true;
+    existingContent[contentKey] = true;
     questions.push(v);
     added++;
     fileAdded++;
