@@ -886,65 +886,8 @@ function getDistinctModesUsed() {
   return Object.keys(modeSet).length;
 }
 
-/* ═══ THRESHOLD-BASED FEATURE GATING ═══ */
-var FEATURE_THRESHOLD = {
-  study: 0, quiz: 0, review: 0,
-  match: 0, spell: 15, battle: 30,
-  practice: 10, diagnostic: 20, mock: 50
-};
-var _cachedStageObj = null, _cachedStageTs = 0;
-function isFeatureUnlocked(f) {
-  /* Teacher-assigned override (#14) */
-  try {
-    var ov = JSON.parse(localStorage.getItem('wmatch_featureOverride') || '{}');
-    if (ov[f]) return true;
-  } catch(e) {}
-  var threshold = FEATURE_THRESHOLD[f] || 0;
-  if (threshold === 0) return true;
-  var now = Date.now();
-  if (!_cachedStageObj || now - _cachedStageTs > 5000) {
-    _cachedStageObj = getUserStage();
-    _cachedStageTs = now;
-  }
-  return (_cachedStageObj.mastered || 0) >= threshold;
-}
-
-/* ═══ LOCKED ELEMENT CLICK DELEGATION (XSS-safe) ═══ */
-function _handleLockedClick(e) {
-  var el = e.target.closest('.mode-btn-locked, .deck-row.locked');
-  if (!el) return;
-  e.stopPropagation();
-
-  /* Guest → register CTA (#12) */
-  if (typeof isGuest === 'function' && isGuest()) {
-    showToast(t('Register free to unlock all features', '免费注册解锁全部功能'));
-    return;
-  }
-
-  var modeKey = el.getAttribute('data-unlock-mode');
-  /* Feature gate blocking? Show progress (#4) */
-  if (modeKey && typeof FEATURE_THRESHOLD !== 'undefined') {
-    var need = FEATURE_THRESHOLD[modeKey] || 0;
-    if (need > 0) {
-      var gs = typeof getGlobalStats === 'function' ? getGlobalStats() : { mastered: 0 };
-      if ((gs.mastered || 0) < need) {
-        showToast(t('Master ' + need + ' words to unlock (' + gs.mastered + '/' + need + ')',
-                     '掌握 ' + need + ' 词解锁 (已 ' + gs.mastered + '/' + need + ')'));
-        return;
-      }
-    }
-  }
-  /* Mode gate fallback */
-  var key = el.getAttribute('data-locked-msg');
-  var msgs = {
-    mode: t('Complete the previous mode first', '请先完成前一个模式'),
-    study: t('Complete Study mode first', '请先完成学习模式'),
-    feature: t('Master more words to unlock', '掌握更多词汇解锁'),
-    section: t('Complete the previous section first (80%+)', '请先完成上一个知识点(80%+)')
-  };
-  showToast(msgs[key] || msgs.mode);
-}
-document.addEventListener('click', _handleLockedClick);
+/* ═══ FEATURE GATING — all features open ═══ */
+function isFeatureUnlocked() { return true; }
 
 var _activeNudge = null;
 var _lastNudgeShownAt = 0;

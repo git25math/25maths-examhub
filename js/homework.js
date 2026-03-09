@@ -953,25 +953,9 @@ async function loadMyHomework() {
       hw._result = resultMap[hw.id] || null;
       return hw;
     });
-    /* Auto-inject featureOverride for diagnostic/mock homework (#14) */
-    _applyHomeworkFeatureOverride(mapped);
     return mapped;
   } catch (e) {
     return [];
-  }
-}
-
-function _applyHomeworkFeatureOverride(assignments) {
-  var overrides = {};
-  try { overrides = JSON.parse(localStorage.getItem('wmatch_featureOverride') || '{}'); } catch(e) {}
-  var changed = false;
-  assignments.forEach(function(hw) {
-    if (!hw || !hw.type) return;
-    if (hw.type === 'diagnostic' && !overrides.diagnostic) { overrides.diagnostic = true; changed = true; }
-    if (hw.type === 'mock' && !overrides.mock) { overrides.mock = true; changed = true; }
-  });
-  if (changed) {
-    try { localStorage.setItem('wmatch_featureOverride', JSON.stringify(overrides)); } catch(e) {}
   }
 }
 

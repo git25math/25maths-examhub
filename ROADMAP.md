@@ -441,3 +441,4 @@
 - [x] **衰退警告**: Diagnostic/Mock 入口 20+ 词过期提醒 → v2.5.0
 - [x] **回流推荐**: 首页每日推荐未尝试的模式+Level → v2.5.0
 - [x] **教师作业解锁**: diagnostic/mock 作业自动注入 featureOverride → v2.5.0
+- [x] **全面取消路径锁定**: 所有模式/知识点直接开放，删除 FEATURE_THRESHOLD + Test Out + 锁定 UI → v2.5.1

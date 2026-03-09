@@ -587,91 +587,11 @@ function getKPResult(kpId) {
 }
 function isKPDone(kpId) { return !!getKPResult(kpId); }
 
-/* ═══ MODE UNLOCK CHAIN ═══ */
-function isModeUnlocked(li, mode) {
-  if (mode === 'study') return true;
-  if (mode === 'quiz') {
-    if (li === 0 || _isFirstSectionLevel(li)) return true; /* first level auto-unlocks Quiz */
-    return isModeDone(li, 'study');
-  }
-  if (mode === 'review') return isModeDone(li, 'study'); /* Review ∥ Quiz — both unlock after Study */
-  return isModeDone(li, 'study'); /* spell/match/battle */
-}
+/* ═══ MODE UNLOCK — all modes open ═══ */
+function isModeUnlocked() { return true; }
 
-function _isFirstSectionLevel(li) {
-  if (typeof BOARD_SYLLABUS === 'undefined') return li === 0;
-  var lv = LEVELS[li];
-  if (!lv || !lv._isSection) return false;
-  for (var bk in BOARD_SYLLABUS) {
-    var syl = BOARD_SYLLABUS[bk];
-    if (!syl || !syl.chapters || !syl.chapters.length) continue;
-    var ch0 = syl.chapters[0];
-    if (!ch0.sections || !ch0.sections.length) continue;
-    var firstSec = ch0.sections[0];
-    if (firstSec && typeof getSectionLevelIdx === 'function' && getSectionLevelIdx(firstSec.id, bk) === li) return true;
-  }
-  return false;
-}
-
-/* ═══ SECTION SEQUENTIAL UNLOCK ═══ */
-function _getForceUnlocked() {
-  try { return JSON.parse(localStorage.getItem('wmatch_forceUnlocked') || '{}'); } catch(e) { return {}; }
-}
-
-function isSectionUnlocked(secId, secIdx, prevSecId, board, prevStats) {
-  if (secIdx === 0) return true; /* first section always open */
-  var fu = _getForceUnlocked();
-  if (fu[secId]) return true;
-  if (!prevSecId) return true;
-  /* Use pre-computed prevStats when available (avoids redundant getDeckStats) */
-  if (prevStats) return prevStats.learningPct >= 80;
-  /* Fallback: compute stats for previous section */
-  if (board === 'hhk') {
-    var prevInfo = typeof getSectionInfo === 'function' ? getSectionInfo(prevSecId, 'hhk') : null;
-    if (prevInfo && prevInfo.section) {
-      var hhkStats = typeof _getHHKSectionStats === 'function' ? _getHHKSectionStats(prevInfo.section) : null;
-      return hhkStats ? hhkStats.learningPct >= 80 : true;
-    }
-    return true;
-  }
-  var prevLi = typeof getSectionLevelIdx === 'function' ? getSectionLevelIdx(prevSecId, board) : -1;
-  if (prevLi < 0) return true;
-  var stats = typeof getDeckStats === 'function' ? getDeckStats(prevLi) : null;
-  if (!stats) return true;
-  return stats.learningPct >= 80;
-}
-
-function migrateForceUnlock() {
-  try {
-    var fu = _getForceUnlocked();
-    var wd = getWordData();
-    var changed = false;
-    /* Scan all boards' sections — idempotent, only appends new entries */
-    var boards = ['cie', 'edexcel', 'hhk'];
-    for (var bi = 0; bi < boards.length; bi++) {
-      var bKey = boards[bi];
-      var syllabus = typeof BOARD_SYLLABUS !== 'undefined' ? BOARD_SYLLABUS[bKey] : null;
-      if (!syllabus) continue;
-      for (var ci = 0; ci < syllabus.length; ci++) {
-        var secs = syllabus[ci].sections;
-        if (!secs) continue;
-        for (var si = 0; si < secs.length; si++) {
-          if (si === 0) continue; /* first is always open */
-          var sec = secs[si];
-          if (fu[sec.id]) continue; /* already unlocked */
-          var li = typeof getSectionLevelIdx === 'function' ? getSectionLevelIdx(sec.id, bKey) : -1;
-          if (li >= 0) {
-            var ds = typeof getDeckStats === 'function' ? getDeckStats(li, wd) : null;
-            if (ds && ds.started > 0) { fu[sec.id] = true; changed = true; }
-          }
-        }
-      }
-    }
-    if (changed) {
-      localStorage.setItem('wmatch_forceUnlocked', JSON.stringify(fu));
-    }
-  } catch(e) {}
-}
+/* ═══ SECTION UNLOCK — all sections open ═══ */
+function isSectionUnlocked() { return true; }
 
 function bootstrapHistory() {
   var s = loadS();
@@ -848,13 +768,7 @@ function checkBadges() {
     }
     /* Milestone nudges */
     if (typeof showNudge === 'function') {
-      var diagNeed = typeof FEATURE_THRESHOLD !== 'undefined' ? FEATURE_THRESHOLD.diagnostic : 20;
-      var mockNeed = typeof FEATURE_THRESHOLD !== 'undefined' ? FEATURE_THRESHOLD.mock : 50;
-      if (gs.mastered >= diagNeed && gs.mastered < mockNeed) {
-        showNudge('try_diag', t('Try a Diagnostic Test to find weak areas!', '试试诊断测试找薄弱知识点'), t('Go', '去试试'), function() { if (typeof navTo === 'function') navTo('diag'); });
-      } else if (gs.mastered >= mockNeed) {
-        showNudge('try_mock', t('Mock exams help you prepare for the real thing!', '模拟卷帮你实战备考'), t('Go', '去试试'), function() { if (typeof navTo === 'function') navTo('mock'); });
-      }
+      showNudge('try_diag', t('Try a Diagnostic Test to find weak areas!', '试试诊断测试找薄弱知识点'), t('Go', '去试试'), function() { if (typeof navTo === 'function') navTo('diag'); });
     }
   }
   return unlocked;

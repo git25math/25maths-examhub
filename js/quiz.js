@@ -21,7 +21,6 @@ function getQuizCache() {
 }
 
 function startQuiz(li, subset) {
-  if (typeof isModeUnlocked === 'function' && !isModeUnlocked(li, 'quiz')) { showToast(t('Complete Study mode first', '\u8bf7\u5148\u5b8c\u6210\u5b66\u4e60\u6a21\u5f0f')); return; }
   var lv = LEVELS[li];
   if (validate(lv, li)) return;
 

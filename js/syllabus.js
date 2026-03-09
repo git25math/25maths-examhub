@@ -106,18 +106,15 @@ function _loadBoardSyllabus(board) {
     if (typeof _levelsReady !== 'undefined' && _levelsReady) {
       _setBoardReady(board);
       _initBoardLevels(board);
-      if (typeof migrateForceUnlock === 'function') migrateForceUnlock();
     } else if (typeof onLevelsReady === 'function') {
       onLevelsReady(function() {
         _setBoardReady(board);
         _initBoardLevels(board);
-        if (typeof migrateForceUnlock === 'function') migrateForceUnlock();
-        if (typeof scheduleRenderHome === 'function') scheduleRenderHome();
+          if (typeof scheduleRenderHome === 'function') scheduleRenderHome();
       });
     } else {
       _setBoardReady(board);
       _initBoardLevels(board);
-      if (typeof migrateForceUnlock === 'function') migrateForceUnlock();
     }
   }).catch(function(e) {
     console.error('Failed to load ' + board + ' syllabus data:', e);
@@ -474,9 +471,6 @@ function _renderSectionRow(sec, ch, board, _wd, secIdx, prevSecId, prevStats) {
     stats = li >= 0 ? getDeckStats(li, _wd) : { pct: 0, started: 0, total: words.length, learningPct: 0, masteryPct: 0 };
   }
 
-  /* Section sequential unlock — pass prevStats to avoid redundant getDeckStats */
-  var secUnlocked = typeof isSectionUnlocked !== 'function' || secIdx === undefined || isSectionUnlocked(sec.id, secIdx, prevSecId, board, prevStats);
-
   var tierBadge = '';
   if (sec.tier === 'extended') tierBadge = ' <span class="tier-badge tier-ext">E</span>';
   else if (sec.tier === 'core') tierBadge = ' <span class="tier-badge tier-core">C</span>';
@@ -484,18 +478,12 @@ function _renderSectionRow(sec, ch, board, _wd, secIdx, prevSecId, prevStats) {
   else if (sec.tier === 'foundation') tierBadge = ' <span class="tier-badge tier-foundation">F</span>';
 
   var h = '';
-  if (secUnlocked) {
-    h += '<div class="deck-row" role="button" tabindex="0" onclick="openSection(\'' + sec.id + '\',\'' + board + '\')">';
-  } else {
-    h += '<div class="deck-row locked" data-locked-msg="section" aria-disabled="true" tabindex="-1" title="' + t('Complete the previous section first (80%+)', '请先完成上一个知识点(80%+)') + '">';
-  }
+  h += '<div class="deck-row" role="button" tabindex="0" onclick="openSection(\'' + sec.id + '\',\'' + board + '\')">';
   h += '<span class="deck-row-tag sec-tag">' + sec.id + '</span>';
   h += '<span class="deck-row-name">' + escapeHtml(sec.title);
   if (appLang !== 'en') h += ' ' + escapeHtml(sec.title_zh);
   h += tierBadge + '</span>';
-  if (!secUnlocked) {
-    h += '<span class="deck-row-lock">\ud83d\udd12</span>';
-  } else if (words.length > 0) {
+  if (words.length > 0) {
     /* 3-state indicator: empty=not started, half=in progress, full=mastered */
     var _dotClass = stats.started === 0 ? 'sec-dot-empty' : (stats.pct >= 80 ? 'sec-dot-full' : 'sec-dot-half');
     h += '<span class="sec-dot ' + _dotClass + '"></span>';
@@ -517,14 +505,6 @@ function toggleCIEChapter(catKey) {
 function openSection(sectionId, board) {
   var info = getSectionInfo(sectionId, board);
   if (!info) return;
-  /* Section sequential unlock guard */
-  if (typeof isSectionUnlocked === 'function' && info.sectionIndex > 0) {
-    var prevSec = info.chapter.sections[info.sectionIndex - 1];
-    if (prevSec && !isSectionUnlocked(sectionId, info.sectionIndex, prevSec.id, info.board)) {
-      showToast(t('Complete the previous section first (80%+)', '\u8bf7\u5148\u5b8c\u6210\u4e0a\u4e00\u4e2a\u77e5\u8bc6\u70b9(80%+)'));
-      return;
-    }
-  }
   _currentSectionContext = { sectionId: sectionId, board: info.board };
   renderSectionDetail(info.chapter, info.section, info.sectionIndex, info.board);
   showPanel('section');

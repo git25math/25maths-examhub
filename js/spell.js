@@ -6,14 +6,6 @@ var SP = { pairs: [], idx: 0, correct: 0, lvl: 0, answered: false };
 var _spellDelegated = false;
 
 function startSpell(li) {
-  if (typeof isModeUnlocked === 'function' && !isModeUnlocked(li, 'spell')) { showToast(t('Complete Study mode first', '\u8bf7\u5148\u5b8c\u6210\u5b66\u4e60\u6a21\u5f0f')); return; }
-  if (typeof isFeatureUnlocked === 'function' && !isFeatureUnlocked('spell')) {
-    var _spNeed = typeof FEATURE_THRESHOLD !== 'undefined' ? FEATURE_THRESHOLD.spell : 15;
-    var _spHave = typeof getGlobalStats === 'function' ? getGlobalStats().mastered : 0;
-    showToast(t('Master ' + _spNeed + '+ words to unlock (' + _spHave + '/' + _spNeed + ')',
-                '掌握' + _spNeed + '+词解锁 (' + _spHave + '/' + _spNeed + ')'));
-    return;
-  }
   var lv = LEVELS[li];
   if (validate(lv, li)) return;
 

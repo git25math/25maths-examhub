@@ -239,13 +239,6 @@ function _diagSummary(answers, questions) {
 /* ═══ START PRACTICE ═══ */
 
 function startPractice(li) {
-  if (typeof isFeatureUnlocked === 'function' && !isFeatureUnlocked('practice')) {
-    var _prNeed = typeof FEATURE_THRESHOLD !== 'undefined' ? FEATURE_THRESHOLD.practice : 10;
-    var _prHave = typeof getGlobalStats === 'function' ? getGlobalStats().mastered : 0;
-    showToast(t('Master ' + _prNeed + '+ words to unlock Practice (' + _prHave + '/' + _prNeed + ')',
-                '掌握' + _prNeed + '+词汇解锁练习题 (' + _prHave + '/' + _prNeed + ')'));
-    return;
-  }
   var lv = LEVELS[li];
   if (!lv) return;
   var board = lv.board;
@@ -1830,13 +1823,6 @@ function ppGetWeakGroups(board, sectionId) {
 
 function startDiagnostic(board) {
   if (typeof isGuest === 'function' && isGuest()) { showToast(t('Register free to unlock Diagnostic', '免费注册解锁诊断测试')); return; }
-  if (typeof isFeatureUnlocked === 'function' && !isFeatureUnlocked('diagnostic')) {
-    var _dNeed = typeof FEATURE_THRESHOLD !== 'undefined' ? FEATURE_THRESHOLD.diagnostic : 20;
-    var _dHave = typeof getGlobalStats === 'function' ? getGlobalStats().mastered : 0;
-    showToast(t('Master ' + _dNeed + '+ words to unlock Diagnostic (' + _dHave + '/' + _dNeed + ')',
-                '掌握' + _dNeed + '+词汇解锁诊断测试 (' + _dHave + '/' + _dNeed + ')'));
-    return;
-  }
   board = board || 'cie';
 
   if (!_ppAccessAllowed(board)) {
@@ -3418,13 +3404,6 @@ function ppStartPaperExam(paperKey, board) {
 
 function ppShowMockSetup(board) {
   if (typeof isGuest === 'function' && isGuest()) { showToast(t('Register free to unlock Mock Exam', '免费注册解锁模拟卷')); return; }
-  if (typeof isFeatureUnlocked === 'function' && !isFeatureUnlocked('mock')) {
-    var _mNeed = typeof FEATURE_THRESHOLD !== 'undefined' ? FEATURE_THRESHOLD.mock : 50;
-    var _mHave = typeof getGlobalStats === 'function' ? getGlobalStats().mastered : 0;
-    showToast(t('Master ' + _mNeed + '+ words to unlock Mock Exam (' + _mHave + '/' + _mNeed + ')',
-                '掌握' + _mNeed + '+词汇解锁模拟卷 (' + _mHave + '/' + _mNeed + ')'));
-    return;
-  }
   board = board || 'cie';
 
   if (!_ppAccessAllowed(board)) {

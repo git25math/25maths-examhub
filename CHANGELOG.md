@@ -1,5 +1,44 @@
 # Changelog
 
+## [2.5.1] - 2026-03-09 — 全面取消路径锁定
+
+### 变更
+- **isModeUnlocked()** → 始终返回 true，删除 `_isFirstSectionLevel` 辅助函数
+- **isFeatureUnlocked()** → 始终返回 true，删除 `FEATURE_THRESHOLD`、`_cachedStageObj`、`_cachedStageTs`
+- **isSectionUnlocked()** → 始终返回 true，删除 `_getForceUnlocked`、`migrateForceUnlock`
+- **_handleLockedClick** 事件委托完全删除
+- **Test Out 跳级测试** 完全删除（锁定取消后无意义）
+- **_applyHomeworkFeatureOverride** 删除（不再需要教师作业解锁 override）
+- 所有模式入口门控移除：quiz/review/match/spell/battle/practice/diagnostic/mock
+- 知识点列表移除 locked 分支 + 🔒 图标
+- mastery.js 模式按钮移除 locked 分支 + 进度条 + 🔒
+- `_renderModeDiscovery` / `_renderRefluxRec` 移除 `isFeatureUnlocked` 检查
+- storage.js nudge 移除 FEATURE_THRESHOLD 引用，简化为直接推荐
+- CSS 清理：`.deck-row.locked`、`.mode-btn-locked`、`.mode-lock`、`.unlock-progress`、`.testout-*` 全部删除
+
+### 保留
+- `isModeDone()` / `markModeDone()` — 完成标记 ✓
+- `getUserStage()` — 统计/徽章用
+- Badge 系统、衰退警告、Guest CTA（diagnostic/mock 的 isGuest 检查）
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `js/storage.js` | isModeUnlocked/isSectionUnlocked → return true, 删除辅助函数, 简化 nudge |
+| `js/ui.js` | isFeatureUnlocked → return true, 删除 FEATURE_THRESHOLD + _handleLockedClick |
+| `js/mastery.js` | 模式按钮简化 + 删除 Test Out + 推荐逻辑简化 |
+| `js/quiz.js` | 移除 isModeUnlocked 门控 |
+| `js/review.js` | 移除 isModeUnlocked 门控 |
+| `js/match.js` | 移除 isModeUnlocked 门控 |
+| `js/spell.js` | 移除 isModeUnlocked + isFeatureUnlocked 门控 |
+| `js/battle.js` | 移除 isModeUnlocked + isFeatureUnlocked 门控 |
+| `js/practice.js` | 移除 isFeatureUnlocked 门控（practice/diagnostic/mock） |
+| `js/syllabus.js` | 移除 section locked 分支 + 🔒 + migrateForceUnlock 调用 |
+| `js/homework.js` | 删除 _applyHomeworkFeatureOverride |
+| `css/style.css` | 删除 locked/testout 相关样式 |
+| `js/config.js` | v2.5.0 → v2.5.1 |
+| `sw.js` | v2.5.0 → v2.5.1 |
+
 ## [2.5.0] - 2026-03-09 — 解锁系统全面优化
 
 ### Phase A: 核心阈值重构
