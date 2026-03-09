@@ -2585,6 +2585,30 @@ function renderTodaysPlan() {
     html += '</div>';
   }
 
+  /* Recovery Session — one-click chain all stale refresh scans */
+  if (typeof getStaleUnits === 'function') {
+    var staleU = getStaleUnits();
+    var _rsTypeCount = (staleU.vocab.length > 0 ? 1 : 0)
+                     + (staleU.kp.length > 0 ? 1 : 0)
+                     + (staleU.pp.length > 0 ? 1 : 0);
+    if (staleU.total > 0 && _rsTypeCount > 1) {
+      html += '<div class="plan-card recovery-session-card">';
+      html += '<div class="plan-card-header">';
+      html += '<span class="plan-card-icon">\ud83d\udd04</span>';
+      html += '<span class="plan-card-title">' + t('Start Recovery', '\u4e00\u952e\u590d\u67e5') + '</span>';
+      html += '</div>';
+      html += '<div class="plan-card-count">';
+      var _rsParts = [];
+      if (staleU.vocab.length > 0) _rsParts.push(staleU.vocab.length + ' ' + t('words', '\u8bcd'));
+      if (staleU.kp.length > 0) _rsParts.push(staleU.kp.length + ' ' + t('KPs', '\u77e5\u8bc6\u70b9'));
+      if (staleU.pp.length > 0) _rsParts.push(staleU.pp.length + ' ' + t('questions', '\u9898'));
+      html += _rsParts.join(' + ');
+      html += '</div>';
+      html += '<button class="btn btn-primary btn-sm" data-action="start-recovery">' + t('Start', '\u5f00\u59cb') + '</button>';
+      html += '</div>';
+    }
+  }
+
   /* Today's progress */
   var todayStr = new Date().toLocaleDateString('en-CA');
   var _planS = loadS();
@@ -2644,6 +2668,8 @@ function renderTodaysPlan() {
     if (kpRefreshBtn && typeof startKPRefreshScan === 'function') startKPRefreshScan();
     var ppRefreshBtn = e.target.closest('[data-action="start-pp-refresh"]');
     if (ppRefreshBtn && typeof startPPRefreshScan === 'function') startPPRefreshScan();
+    var recoveryBtn = e.target.closest('[data-action="start-recovery"]');
+    if (recoveryBtn && typeof startRecoverySession === 'function') startRecoverySession();
   });
 }
 

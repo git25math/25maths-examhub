@@ -1,5 +1,49 @@
 # Changelog
 
+## [3.4.0] - 2026-03-10 — Recovery Session MVP
+
+### Recovery Session 引擎（js/recovery-session.js 新增）
+- `buildRecoverySession()` — 检测三类过期项（词汇/KP/PP），构建 queue 带 board 上下文
+- `startRecoverySession()` — 启动 session，防重复点击 toast 保护
+- `_runCurrentRecoveryItem()` — 按 type 调度到 startRefreshScan / startKPRefreshScan / startPPRefreshScan
+- `_advanceRecoverySession(resultType)` — 完成一步后自动推进下一步（RECOVERY_ADVANCE_DELAY 800ms）
+- `_endRecoverySession()` — 全部完成后 navTo('plan') + summary toast（N 轮扫描完成 + 用时）
+- `isRecoverySessionActive()` / `skipRecoverySession()` — 状态查询 + 静默终止
+- 异常安全：start 函数不可用或抛异常时自动 skip 并继续
+
+### Finish Hook（auto-advance，不改原有 UI）
+- `_finishRefreshScan()` (study.js) — session active 时跳过结果面板，直接推进
+- `_finishKPRefreshScan()` (study.js) — 同上
+- `_finishPPRefreshScan()` (practice.js) — 同上
+- 非 session 模式下完全不受影响，保持原有结果面板 + 按钮
+
+### Today's Plan 集成（syllabus.js）
+- 新增 "Start Recovery / 一键复查" 卡片，显示过期项分类汇总（N 词 + N 知识点 + N 题）
+- 条件：typeCount > 1 时才显示（单种过期用独立刷新按钮即可）
+- delegation 新增 `data-action="start-recovery"`
+
+### 导航中断检测（ui.js）
+- `navTo()` 顶部加 recovery session 终止守卫
+- session 进行中用户 nav 到非 scan panel 时自动 skipRecoverySession()
+
+### 样式（css/style.css）
+- `.recovery-session-card` — 左边框高亮 + 轻背景色 + 暗色模式适配
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| js/recovery-session.js | **新增** — Session 状态机 8 个函数 |
+| js/study.js | + 两个 finish hook（vocab + KP） |
+| js/practice.js | + PP finish hook |
+| js/syllabus.js | + Start Recovery 卡片 + delegation |
+| js/ui.js | + navTo session 中断检测 |
+| js/config.js | APP_VERSION → v3.4.0 |
+| css/style.css | + .recovery-session-card 样式 |
+| scripts/minify.sh | + recovery-session.js 加入 bundle |
+| sw.js | CACHE_VERSION → v3.4.0 (auto-sync) |
+
+---
+
 ## [3.3.0] - 2026-03-09 — Print Repair Sheet MVP
 
 ### 单题打印修复单（js/worksheet.js 新增）

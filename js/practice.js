@@ -1461,6 +1461,13 @@ function _finishPPRefreshScan() {
   var f = _ppRefreshResults.fuzzy.length;
   var u = _ppRefreshResults.unknown.length;
   _ppRefreshMode = false;
+
+  /* Recovery session auto-advance: skip result screen */
+  if (typeof isRecoverySessionActive === 'function' && isRecoverySessionActive()) {
+    _advanceRecoverySession('pp');
+    return;
+  }
+
   var html = '<div class="text-center">';
   html += '<div class="result-emoji">\ud83d\udd04</div>';
   html += '<div class="result-title">' + t('PP Refresh Complete!', '真题复查完成！') + '</div>';

@@ -462,6 +462,12 @@
 ## v3.3 Print Repair Sheet [DONE]
 - [x] **单题打印修复单 (v3.3.0)**: worksheet.js 新窗口 A4 打印（题目+词汇+KP+留白+纠错+订正），从 Recovery Pack 触发
 
+## v3.4 Recovery Session [DONE]
+- [x] **Recovery Session MVP (v3.4.0)**: Today's Plan 一键复查，串联 vocab→KP→PP 三类过期项自动推进
+- [x] finish hook 自动推进（不改原有结果面板 UI）
+- [x] navTo 中断检测（用户 nav 离开即终止 session）
+- [ ] v3.4.1 Session UX polish: progress indicator + Next/Exit 按钮 + 智能排序
+
 ## v2.9 知识点接入 FLM — Learning Unit Phase 1 [DONE]
 - [x] **KP Session-Based FLM**: saveKPResult 重构为 session finalizer，题组提交统一结算 → v2.9.0
 - [x] **cs 语义统一**: KP cs = 连续成功 session 次数（≥85% 准确率），区别于词汇逐题 cs → v2.9.0

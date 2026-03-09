@@ -34,6 +34,12 @@ function showPanel(id) {
 }
 
 function navTo(id) {
+  /* If recovery session is active and user navigates away from scan panels, terminate session */
+  if (typeof isRecoverySessionActive === 'function' && isRecoverySessionActive()) {
+    if (id !== 'study' && id !== 'practice') {
+      if (typeof skipRecoverySession === 'function') skipRecoverySession();
+    }
+  }
   showPanel(id);
   /* Render content for target panel */
   if (id === 'home') { if (typeof _currentSectionContext !== 'undefined') _currentSectionContext = null; renderHome(); }

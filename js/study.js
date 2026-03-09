@@ -110,6 +110,12 @@ function _finishRefreshScan() {
 
   S._refreshMode = false;
 
+  /* Recovery session auto-advance: skip result screen */
+  if (typeof isRecoverySessionActive === 'function' && isRecoverySessionActive()) {
+    _advanceRecoverySession('vocab');
+    return;
+  }
+
   var html = '<div class="text-center">';
   html += '<div class="result-emoji">\ud83d\udd04</div>';
   html += '<div class="result-title">' + t('Refresh Complete!', '\u590d\u67e5\u5b8c\u6210\uff01') + '</div>';
@@ -216,6 +222,13 @@ function _finishKPRefreshScan() {
   var f = S.results.fuzzy.length;
   var u = S.results.unknown.length;
   S._kpRefreshMode = false;
+
+  /* Recovery session auto-advance: skip result screen */
+  if (typeof isRecoverySessionActive === 'function' && isRecoverySessionActive()) {
+    _advanceRecoverySession('kp');
+    return;
+  }
+
   var html = '<div class="text-center">';
   html += '<div class="result-emoji">\ud83d\udd04</div>';
   html += '<div class="result-title">' + t('KP Refresh Complete!', '知识点复查完成！') + '</div>';
