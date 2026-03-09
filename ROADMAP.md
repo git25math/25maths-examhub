@@ -462,6 +462,14 @@
 ## v3.3 Print Repair Sheet [DONE]
 - [x] **单题打印修复单 (v3.3.0)**: worksheet.js 新窗口 A4 打印（题目+词汇+KP+留白+纠错+订正），从 Recovery Pack 触发
 
+## v3.6 Adaptive Scheduling [DONE]
+- [x] **Recovery Scheduler (v3.6.0)**: 每日 budget 约束（10 总量 / 5V+3K+4P 类型上限）
+- [x] Backlog + carry-over 跨天结转（独立 localStorage 持久化）
+- [x] Skip penalty 越拖越前（+5 分/次）
+- [x] Today's Plan 升级为 "Today's Recovery"（显示计划量 + 结转 + backlog + 理由）
+- [x] Session 三层降级：scheduler → smart queue → legacy
+- [x] Session 结束/中断时自动 finalize（完成移除，未完成进 backlog）
+
 ## v3.5 Smart Recovery Ordering [DONE]
 - [x] **Priority Engine (v3.5.0)**: 4 维评分（错误率+衰退+考试权重+章节健康度）替代固定 vocab→kp→pp 顺序
 - [x] 按类型聚合批次，批次顺序由各类最高优先级决定

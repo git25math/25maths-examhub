@@ -367,7 +367,7 @@ function isSuperAdmin() {
 }
 
 /* App version */
-var APP_VERSION = 'v3.5.1';
+var APP_VERSION = 'v3.6.0';
 
 /* Recovery Priority Engine configuration */
 var RECOVERY_EXPLAIN_DEBUG = false;
@@ -387,6 +387,16 @@ var RECOVERY_PRIORITY_CONFIG = {
     { max: 80, score: 5 },
     { max: 101, score: 0 }
   ]
+};
+
+/* Recovery Scheduler configuration */
+var RECOVERY_SCHEDULER_CONFIG = {
+  maxUnitsPerDay: 10,
+  maxVocabPerDay: 5,
+  maxKPPerDay: 3,
+  maxPPPerDay: 4,
+  skipPenaltyStep: 5,
+  maxCarryOverDays: 7
 };
 
 /* Mastered decay — refresh intervals (days) by refresh count */

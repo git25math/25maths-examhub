@@ -1,5 +1,62 @@
 # Changelog
 
+## [3.6.0] - 2026-03-10 — Adaptive Scheduling
+
+### Recovery Scheduler（js/recovery-scheduler.js 新增）
+- `buildDailyRecoveryPlan(board)` — 基于 Priority Engine 输出生成受 budget 约束的今日复查计划
+- `_enforceDailyBudget(units)` — 按总量(10)/词汇(5)/KP(3)/PP(4)上限截断，溢出进 backlog
+- `_mergeWithBacklog(freshUnits, backlog)` — 合并新鲜评分单位与历史 backlog，保留 skippedCount
+- `_applySkipPenalty(unit)` — 跳过惩罚：每次跳过 +5 分，越拖优先级越高
+- `dailyPlanToSessionQueue(plan)` — 将今日计划转为 Recovery Session queue 格式
+- `finalizeRecoverySchedule(completedTypes)` — Session 结束时结算：完成的移除，未完成进 backlog
+- `getTodayRecoveryPlan(board)` — 获取今日计划（同日缓存避免抖动）
+- `invalidateRecoveryPlanCache()` — 学习活动后失效缓存
+
+### 持久化（localStorage `recovery_schedule`）
+- 独立 localStorage key，不侵入 `wmatch_v3` 主存储
+- 结构：`{date, backlog[], history[]}`
+- backlog 条目保留 `skippedCount` + `carryOver` 标记
+- history 保留最近 30 天轻量摘要
+
+### Session 集成（js/recovery-session.js）
+- `buildRecoverySession()` — 三层降级：scheduler → smart queue → legacy
+- `_endRecoverySession()` — 结束时调用 `finalizeRecoverySchedule()` 结算
+- `skipRecoverySession()` — 中途退出时也结算（未完成项进 backlog）
+
+### Today's Plan 升级（js/syllabus.js）
+- 卡片标题升级为 "Today's Recovery / 今日复查"
+- 显示 scheduler 计划的任务量（而非全部 stale 总量）
+- 新增 carry-over 提示行："N 项结转自昨日"
+- 新增 backlog 提示行："N 项在待办列表中"
+- 保留 Focus 原因行（复用 v3.5.1 explainability）
+- 降级安全：scheduler 不可用时回退到原 Start Recovery 卡片
+
+### 可配置参数（js/config.js）
+- `RECOVERY_SCHEDULER_CONFIG.maxUnitsPerDay` — 每日总上限（默认 10）
+- `RECOVERY_SCHEDULER_CONFIG.maxVocabPerDay` — 词汇上限（默认 5）
+- `RECOVERY_SCHEDULER_CONFIG.maxKPPerDay` — KP 上限（默认 3）
+- `RECOVERY_SCHEDULER_CONFIG.maxPPPerDay` — PP 上限（默认 4）
+- `RECOVERY_SCHEDULER_CONFIG.skipPenaltyStep` — 跳过惩罚步长（默认 5 分/次）
+- `RECOVERY_SCHEDULER_CONFIG.maxCarryOverDays` — backlog 最大保留跳过次数（默认 7）
+
+### 样式（css/style.css）
+- `.plan-card-carryover` — 12px 警告色，carry-over 提示
+- `.plan-card-backlog` — 11px 次要色，backlog 提示
+- 暗色模式适配
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| js/recovery-scheduler.js | **新增** — Adaptive Scheduler 8 个核心函数 |
+| js/recovery-session.js | 三层降级 + session 结束/跳过时 finalize scheduler |
+| js/syllabus.js | Today's Plan 卡片升级为 scheduler-driven + 降级回退 |
+| js/config.js | + RECOVERY_SCHEDULER_CONFIG + APP_VERSION → v3.6.0 |
+| css/style.css | + .plan-card-carryover / .plan-card-backlog 样式 |
+| scripts/minify.sh | + recovery-scheduler.js 加入 bundle |
+| CLAUDE.md | JS 文件数 25→26，load order 更新 |
+
+---
+
 ## [3.5.1] - 2026-03-10 — Priority Explainability
 
 ### Reason 结构升级（js/recovery-priority.js）

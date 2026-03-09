@@ -2585,17 +2585,52 @@ function renderTodaysPlan() {
     html += '</div>';
   }
 
-  /* Recovery Session — one-click chain all stale refresh scans */
-  if (typeof getStaleUnits === 'function') {
+  /* Recovery Session — scheduler-driven or fallback to stale summary */
+  var _rsPlanRendered = false;
+  try {
+    if (typeof getTodayRecoveryPlan === 'function') {
+      var _rBoard = typeof userBoard !== 'undefined' ? userBoard : null;
+      var _rsPlan = getTodayRecoveryPlan(_rBoard);
+      if (_rsPlan && _rsPlan.total > 0) {
+        _rsPlanRendered = true;
+        html += '<div class="plan-card recovery-session-card">';
+        html += '<div class="plan-card-header">';
+        html += '<span class="plan-card-icon">\ud83d\udd04</span>';
+        html += '<span class="plan-card-title">' + t("Today's Recovery", '\u4eca\u65e5\u590d\u67e5') + '</span>';
+        html += '</div>';
+        html += '<div class="plan-card-count">';
+        var _rsParts2 = [];
+        if (_rsPlan.vocab > 0) _rsParts2.push(_rsPlan.vocab + ' ' + t('words', '\u8bcd'));
+        if (_rsPlan.kp > 0) _rsParts2.push(_rsPlan.kp + ' ' + t('KPs', '\u77e5\u8bc6\u70b9'));
+        if (_rsPlan.pp > 0) _rsParts2.push(_rsPlan.pp + ' ' + t('questions', '\u9898'));
+        html += _rsParts2.join(' + ');
+        html += '</div>';
+        if (_rsPlan.carryOverCount > 0) {
+          html += '<div class="plan-card-carryover">' + _rsPlan.carryOverCount + ' ' + t('carried over', '\u9879\u7ed3\u8f6c\u81ea\u6628\u65e5') + '</div>';
+        }
+        if (_rsPlan.backlogCount > 0) {
+          html += '<div class="plan-card-backlog">' + _rsPlan.backlogCount + ' ' + t('more in backlog', '\u9879\u5728\u5f85\u529e\u5217\u8868\u4e2d') + '</div>';
+        }
+        if (_rsPlan.reasons && _rsPlan.reasons.length > 0) {
+          html += '<div class="plan-card-reason">' + t('Focus', '\u91cd\u70b9') + ': ' + _rsPlan.reasons.join(' \u00b7 ') + '</div>';
+        }
+        html += '<button class="btn btn-primary btn-sm" data-action="start-recovery">' + t('Start', '\u5f00\u59cb') + '</button>';
+        html += '</div>';
+      }
+    }
+  } catch (e) {}
+
+  /* Fallback: show original stale-based recovery card if scheduler didn't render */
+  if (!_rsPlanRendered && typeof getStaleUnits === 'function') {
     var staleU = getStaleUnits();
     var _rsTypeCount = (staleU.vocab.length > 0 ? 1 : 0)
                      + (staleU.kp.length > 0 ? 1 : 0)
                      + (staleU.pp.length > 0 ? 1 : 0);
-    /* Pre-build smart queue to populate reason summary cache */
-    if (staleU.total > 0 && _rsTypeCount > 1 && typeof buildSmartRecoveryQueue === 'function') {
-      try { buildSmartRecoveryQueue(typeof userBoard !== 'undefined' ? userBoard : null); } catch (e) {}
-    }
     if (staleU.total > 0 && _rsTypeCount > 1) {
+      /* Pre-build smart queue for reason cache */
+      if (typeof buildSmartRecoveryQueue === 'function') {
+        try { buildSmartRecoveryQueue(typeof userBoard !== 'undefined' ? userBoard : null); } catch (e) {}
+      }
       html += '<div class="plan-card recovery-session-card">';
       html += '<div class="plan-card-header">';
       html += '<span class="plan-card-icon">\ud83d\udd04</span>';
@@ -2608,7 +2643,6 @@ function renderTodaysPlan() {
       if (staleU.pp.length > 0) _rsParts.push(staleU.pp.length + ' ' + t('questions', '\u9898'));
       html += _rsParts.join(' + ');
       html += '</div>';
-      /* Show top priority reasons if smart engine available */
       try {
         if (typeof getLastSmartQueueSummary === 'function') {
           var _rsSummary = getLastSmartQueueSummary();

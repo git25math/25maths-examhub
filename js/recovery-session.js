@@ -27,11 +27,21 @@ function _buildLegacyRecoverySession() {
   return queue;
 }
 
-/* Build a queue of stale item types to review — smart priority or legacy fallback */
+/* Build a queue of stale item types to review — scheduler → smart → legacy fallback */
 function buildRecoverySession() {
   var board = typeof userBoard !== 'undefined' ? userBoard : null;
 
-  /* Try smart priority engine first */
+  /* Try adaptive scheduler first (v3.6) */
+  try {
+    if (typeof getTodayRecoveryPlan === 'function') {
+      var plan = getTodayRecoveryPlan(board);
+      if (plan && plan.items && plan.items.length > 0 && typeof dailyPlanToSessionQueue === 'function') {
+        return dailyPlanToSessionQueue(plan);
+      }
+    }
+  } catch (e) { /* fall through */ }
+
+  /* Try smart priority engine (v3.5) */
   try {
     if (typeof buildSmartRecoveryQueue === 'function') {
       var smart = buildSmartRecoveryQueue(board);
@@ -179,6 +189,18 @@ function _endRecoverySession() {
   var results = _recoverySession.results;
   var duration = Math.round((Date.now() - _recoverySession.startedAt) / 1000);
   var reasons = _recoverySession.summaryReasons || [];
+
+  /* Finalize scheduler: track completed types, carry over incomplete */
+  try {
+    if (typeof finalizeRecoverySchedule === 'function') {
+      var completedTypes = {};
+      for (var ci = 0; ci < results.length; ci++) {
+        if (results[ci].status === 'done') completedTypes[results[ci].type] = true;
+      }
+      finalizeRecoverySchedule(completedTypes);
+    }
+  } catch (e) {}
+
   _recoverySession = null;
 
   if (typeof navTo === 'function') navTo('plan');
@@ -207,5 +229,18 @@ function isRecoverySessionActive() {
 
 /* Silently terminate recovery session (e.g. user navigated away) */
 function skipRecoverySession() {
+  /* Carry over all remaining items */
+  if (_recoverySession) {
+    try {
+      if (typeof finalizeRecoverySchedule === 'function') {
+        var completedTypes = {};
+        var results = _recoverySession.results || [];
+        for (var i = 0; i < results.length; i++) {
+          if (results[i].status === 'done') completedTypes[results[i].type] = true;
+        }
+        finalizeRecoverySchedule(completedTypes);
+      }
+    } catch (e) {}
+  }
   _recoverySession = null;
 }

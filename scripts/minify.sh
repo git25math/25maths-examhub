@@ -8,7 +8,7 @@ cd "$ROOT"
 cat js/config.js js/levels-loader.js js/storage.js js/particles.js \
     js/auth.js js/ui.js js/mastery.js js/syllabus.js js/study.js js/battle.js \
     js/review.js js/quiz.js js/spell.js js/match.js js/translate.js js/export.js \
-    js/stats.js js/practice.js js/learning-graph.js js/worksheet.js js/recovery-priority.js js/recovery-session.js js/app.js | \
+    js/stats.js js/practice.js js/learning-graph.js js/worksheet.js js/recovery-priority.js js/recovery-scheduler.js js/recovery-session.js js/app.js | \
     npx esbuild --loader=js --minify > js/app.bundle.min.js
 
 # Homework module (lazy-loaded separately)
