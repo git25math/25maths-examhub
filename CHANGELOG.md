@@ -1,5 +1,32 @@
 # Changelog
 
+## [2.3.17] - 2026-03-09 — Edexcel 4MA1 知识点全量生成
+
+### Edexcel 4MA1 知识点
+- **49 KPs 覆盖 39/39 Edexcel sections (100%)**
+- Ch1 Numbers: 11 | Ch2 Equations: 10 | Ch3 Sequences: 7 | Ch4 Geometry: 12 | Ch5 Vectors: 4 | Ch6 Statistics: 5
+- 7 个 thin KPs 自动 enrichment 至 2+ quiz + 2+ examples
+- `loadKnowledgeData('edexcel')` 启动时自动加载
+
+### 三考试局知识点统计
+| 课程 | KPs | Sections | Quiz | Examples |
+|------|-----|----------|------|----------|
+| CIE 0580 | 97 | 72/72 | 194+ | 194+ |
+| HHK Y7-11 | 55 | 55/55 | 110+ | 110+ |
+| Edexcel 4MA1 | 49 | 39/39 | 98+ | 98+ |
+| **总计** | **201** | **166/166** | **402+** | **402+** |
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `data/knowledge-edexcel.json` | 新增：49 KPs（6 章 39 section 全覆盖） |
+| `js/syllabus.js` | 添加 `loadKnowledgeData('edexcel')` |
+| `js/config.js` | v2.3.16 → v2.3.17 |
+| `scripts/gen-kp-edx.sh` | 新增：Edexcel KP 生成脚本 |
+| `scripts/merge-kp-edx.js` | 新增：Edexcel KP 合并器 |
+| `scripts/enrich-kp-edx.sh` | 新增：Edexcel enrichment 脚本 |
+| `scripts/apply-enrich-edx.js` | 新增：Edexcel enrichment 应用器 |
+
 ## [2.3.16] - 2026-03-09 — CIE 题目补充 + HHK Y7-11 知识点全量覆盖
 
 ### CIE 知识点质量补充

@@ -2942,3 +2942,4 @@ loadHHKSyllabus();
 /* Pre-load knowledge point data for active boards */
 loadKnowledgeData('cie');
 loadKnowledgeData('hhk');
+loadKnowledgeData('edexcel');

@@ -316,7 +316,8 @@
   - [x] Phase 2.5：Chapter 1 KP 数据扩充（14 KP 覆盖 8 sections）+ tqItem null guard 修复 → v2.3.2
   - [x] Phase 3 数据扩充：全量 97 KPs 覆盖 72/72 CIE sections（Gemini 批量生成 + JSON 修复 + 合并） → v2.3.15
   - [x] Phase 3.5：CIE 题目补充（2+ quiz/examples）+ HHK Y7-11 全量 55 KPs → v2.3.16
-  - [ ] Phase 4：超管编辑 + Edexcel 数据
+  - [x] Phase 3.6：Edexcel 4MA1 全量 49 KPs 覆盖 39/39 sections + enrichment → v2.3.17
+  - [ ] Phase 4：超管编辑
 - [x] **Phase D 掌握度系统**：4 维掌握度追踪（Vocab/Practice/Papers/Retention）+ 复习计划推荐 → v1.12.0
 
 ### Phase 10C-EDX — Edexcel 4MA1 考纲驱动重构 [Phase A+B DONE]
