@@ -2153,7 +2153,7 @@ function ppShowExamSetup(sectionId, board, questions) {
   html += '</div>';
 
   html += '<div class="mt-24">';
-  html += '<button class="btn btn-primary" onclick="ppStartExam(\'' + sectionId + '\',\'' + board + '\') btn-lg">';
+  html += '<button class="btn btn-primary btn-lg" onclick="ppStartExam(\'' + sectionId + '\',\'' + board + '\')">';
   html += '\u25b6 ' + t('Start Exam', '\u5f00\u59cb\u5b9e\u6218') + '</button>';
   html += '</div>';
 
@@ -2343,7 +2343,7 @@ function ppShowMarking() {
 
   /* Submit marking */
   html += '<div class="text-center mt-20 pb-40">';
-  html += '<button class="btn btn-primary" onclick="ppFinishMarking() btn-lg">';
+  html += '<button class="btn btn-primary btn-lg" onclick="ppFinishMarking()">';
   html += '\ud83d\udcca ' + t('See Results', '\u67e5\u770b\u7ed3\u679c') + '</button>';
   html += '</div>';
 
@@ -3125,7 +3125,7 @@ function ppShowPaperBrowse(board) {
     html += '<div class="page-header">';
     html += '<button class="btn-icon" onclick="ppBack()" title="Back">&larr;</button>';
     html += '<h2 class="mt-0 mb-0 flex-1">' + t('Past Papers', '\u5957\u5377\u7ec3\u4e60') + '</h2>';
-    html += '<button class="btn btn-sm" onclick="ppShowMockSetup(\'' + board + '\')" class="btn-warning">\ud83c\udfb2 ' + t('Mock Exam', '\u6a21\u62df\u5377') + '</button>';
+    html += '<button class="btn btn-sm btn-warning" onclick="ppShowMockSetup(\'' + board + '\')">\ud83c\udfb2 ' + t('Mock Exam', '\u6a21\u62df\u5377') + '</button>';
     html += '</div>';
 
     /* Year tabs */
@@ -3359,7 +3359,7 @@ function ppShowPaperExamSetup(paperKey, board, questions, meta) {
   html += '</div>';
 
   html += '<div class="mt-24 text-center">';
-  html += '<button class="btn btn-primary" onclick="ppStartPaperExam(\'' + paperKey + '\',\'' + board + '\') btn-lg">';
+  html += '<button class="btn btn-primary btn-lg" onclick="ppStartPaperExam(\'' + paperKey + '\',\'' + board + '\')">';
   html += '\u25b6 ' + t('Start Exam', '\u5f00\u59cb\u8003\u8bd5') + '</button>';
   html += '</div>';
 
@@ -3460,7 +3460,7 @@ function ppShowMockSetup(board) {
     html += '</div>';
 
     html += '<div class="mt-24 text-center">';
-    html += '<button class="btn btn-primary" onclick="ppStartMockExam(\'' + board + '\') btn-lg">';
+    html += '<button class="btn btn-primary btn-lg" onclick="ppStartMockExam(\'' + board + '\')">';
     html += '\u25b6 ' + t('Generate & Start', '\u751f\u6210\u5e76\u5f00\u59cb') + '</button>';
     html += '</div>';
 

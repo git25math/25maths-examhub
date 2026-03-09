@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.4.4] - 2026-03-09 — practice.js 5 处 Critical/High Bug 修复
+
+### Fix 1-4: `btn-lg` 语法错误修复（4 处）
+- `btn-lg` 被错误写入 `onclick=` 属性值内部，导致按钮缺失大尺寸样式，且 JS 抛出 `ReferenceError: btn is not defined`
+- 修复：将 `btn-lg` 移入 `class=` 属性
+- 影响按钮：`ppStartExam` / `ppFinishMarking` / `ppStartPaperExam` / `ppStartMockExam`
+
+### Fix 5: 重复 class 属性合并（1 处）
+- Mock Exam 按钮有两个 `class=` 属性，第二个 `btn-warning` 被 HTML parser 忽略
+- 修复：合并为单个 `class="btn btn-sm btn-warning"`
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `js/practice.js` | 4 处 btn-lg 语法修复 + 1 处重复 class 合并 |
+| `js/config.js` | v2.4.3 → v2.4.4 |
+
 ## [2.4.3] - 2026-03-09 — 真题排版继续优化
 
 ### Fix 1: 移除误杀 display math 的 spacing 正则
