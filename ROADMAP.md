@@ -466,7 +466,7 @@
 - [x] **Recovery Session MVP (v3.4.0)**: Today's Plan 一键复查，串联 vocab→KP→PP 三类过期项自动推进
 - [x] finish hook 自动推进（不改原有结果面板 UI）
 - [x] navTo 中断检测（用户 nav 离开即终止 session）
-- [ ] v3.4.1 Session UX polish: progress indicator + Next/Exit 按钮 + 智能排序
+- [x] v3.4.1 Session UX polish: progress indicator + Next/Exit 按钮（智能排序→v3.5）
 
 ## v2.9 知识点接入 FLM — Learning Unit Phase 1 [DONE]
 - [x] **KP Session-Based FLM**: saveKPResult 重构为 session finalizer，题组提交统一结算 → v2.9.0

@@ -1415,6 +1415,10 @@ function _renderPPRefreshCard() {
   html += '<div class="study-progress"><div class="study-progress-fill" style="width:' + progress + '%"></div></div>';
   html += '<div class="study-count">' + (_ppRefreshIdx + 1) + ' / ' + _ppRefreshItems.length + '</div>';
   html += '</div>';
+  /* Recovery step bar */
+  if (typeof isRecoverySessionActive === 'function' && isRecoverySessionActive()) {
+    html += _renderRecoveryStepBar();
+  }
   html += '<div class="study-refresh-label">\ud83d\udd04 ' + t('Past Paper Refresh', '真题复查') + '</div>';
   html += '<div class="scan-card pp-scan-card" id="scan-card">';
   html += '<div class="pp-card-header">';
@@ -1462,11 +1466,7 @@ function _finishPPRefreshScan() {
   var u = _ppRefreshResults.unknown.length;
   _ppRefreshMode = false;
 
-  /* Recovery session auto-advance: skip result screen */
-  if (typeof isRecoverySessionActive === 'function' && isRecoverySessionActive()) {
-    _advanceRecoverySession('pp');
-    return;
-  }
+  var _isRecovery = typeof isRecoverySessionActive === 'function' && isRecoverySessionActive();
 
   var html = '<div class="text-center">';
   html += '<div class="result-emoji">\ud83d\udd04</div>';
@@ -1489,6 +1489,16 @@ function _finishPPRefreshScan() {
   html += '</div>';
   E('panel-practice').innerHTML = html;
   if (typeof updateSidebar === 'function') updateSidebar();
+
+  /* Recovery session: replace buttons with session-aware controls */
+  if (_isRecovery) {
+    _recordRecoveryResult('pp');
+    var panel = E('panel-practice');
+    var actionsDiv = panel ? panel.querySelector('.result-actions') : null;
+    if (actionsDiv) {
+      actionsDiv.outerHTML = _renderRecoveryStepBar() + _renderRecoveryResultButtons();
+    }
+  }
 }
 
 /* ═══ WRONG BOOK STORAGE ═══ */

@@ -1,5 +1,37 @@
 # Changelog
 
+## [3.4.1] - 2026-03-10 — Recovery Session UX Polish
+
+### 步骤指示条（recovery-session.js + css/style.css）
+- `_renderRecoveryStepBar()` — 生成步骤进度条（Vocabulary › KP › PP），当前高亮，已完成划线
+- `_getRecoveryStepLabel(type)` — 类型→双语标签映射
+- `.recovery-step-bar` 样式 + 暗色模式适配
+
+### Session-Aware 结果面板按钮（recovery-session.js）
+- `_renderRecoveryResultButtons()` — 替换默认按钮为 "Next: X →" / "Finish Recovery" + "Exit Recovery"
+- `_recordRecoveryResult(resultType)` — 记录结果但不推进（取代原 _advanceRecoverySession 的双重职责）
+- `_advanceRecoverySession()` — 简化为纯推进（由按钮触发，不再自动跳过结果面板）
+- `_advanceRecoveryFromResult()` / `_finishRecoveryFromResult()` / `_exitRecoveryFromResult()` — 按钮 handler
+
+### Finish Hook 改造（study.js + practice.js）
+- `_finishRefreshScan()` — 不再 return 跳过结果面板，改为正常渲染后替换 .result-actions 为 session 按钮
+- `_finishKPRefreshScan()` — 同上
+- `_finishPPRefreshScan()` — 同上（practice.js）
+
+### Render 注入步骤条（study.js + practice.js）
+- `_renderRefreshCard()` — topbar 后注入 recovery step bar
+- `_renderKPRefreshCard()` — 同上
+- `_renderPPRefreshCard()` — 同上（practice.js）
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| js/recovery-session.js | + 7 个 UI 辅助函数，_advanceRecoverySession 拆分为记录+推进两阶段 |
+| js/study.js | + vocab/KP finish hook 改为结果面板+按钮替换，render 注入步骤条 |
+| js/practice.js | + PP finish hook 改为结果面板+按钮替换，render 注入步骤条 |
+| css/style.css | + .recovery-step-bar 步骤指示条样式 |
+| js/config.js | APP_VERSION → v3.4.1 |
+
 ## [3.4.0] - 2026-03-10 — Recovery Session MVP
 
 ### Recovery Session 引擎（js/recovery-session.js 新增）

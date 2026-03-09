@@ -72,6 +72,11 @@ function _renderRefreshCard() {
   html += '<div class="study-count">' + (S.idx + 1) + ' / ' + S.pairs.length + '</div>';
   html += '</div>';
 
+  /* Recovery step bar */
+  if (typeof isRecoverySessionActive === 'function' && isRecoverySessionActive()) {
+    html += _renderRecoveryStepBar();
+  }
+
   /* Refresh label */
   html += '<div class="study-refresh-label">\ud83d\udd04 ' + t('Refresh Review', '\u8f7b\u91cf\u590d\u67e5') + '</div>';
 
@@ -110,11 +115,7 @@ function _finishRefreshScan() {
 
   S._refreshMode = false;
 
-  /* Recovery session auto-advance: skip result screen */
-  if (typeof isRecoverySessionActive === 'function' && isRecoverySessionActive()) {
-    _advanceRecoverySession('vocab');
-    return;
-  }
+  var _isRecovery = typeof isRecoverySessionActive === 'function' && isRecoverySessionActive();
 
   var html = '<div class="text-center">';
   html += '<div class="result-emoji">\ud83d\udd04</div>';
@@ -142,6 +143,16 @@ function _finishRefreshScan() {
 
   E('panel-study').innerHTML = html;
   updateSidebar();
+
+  /* Recovery session: replace buttons with session-aware controls */
+  if (_isRecovery) {
+    _recordRecoveryResult('vocab');
+    var panel = E('panel-study');
+    var actionsDiv = panel ? panel.querySelector('.result-actions') : null;
+    if (actionsDiv) {
+      actionsDiv.outerHTML = _renderRecoveryStepBar() + _renderRecoveryResultButtons();
+    }
+  }
 }
 
 /* ═══ KP REFRESH SCAN (knowledge point decay review) ═══ */
@@ -195,6 +206,10 @@ function _renderKPRefreshCard() {
   html += '<div class="study-progress"><div class="study-progress-fill" style="width:' + progress + '%"></div></div>';
   html += '<div class="study-count">' + (S.idx + 1) + ' / ' + S.pairs.length + '</div>';
   html += '</div>';
+  /* Recovery step bar */
+  if (typeof isRecoverySessionActive === 'function' && isRecoverySessionActive()) {
+    html += _renderRecoveryStepBar();
+  }
   html += '<div class="study-refresh-label">\ud83d\udd04 ' + t('Knowledge Point Refresh', '知识点复查') + '</div>';
   html += '<div class="scan-card" id="scan-card">';
   html += '<div class="scan-word">' + (typeof pqRender === 'function' ? pqRender(p.word) : escapeHtml(p.word)) + '</div>';
@@ -223,11 +238,7 @@ function _finishKPRefreshScan() {
   var u = S.results.unknown.length;
   S._kpRefreshMode = false;
 
-  /* Recovery session auto-advance: skip result screen */
-  if (typeof isRecoverySessionActive === 'function' && isRecoverySessionActive()) {
-    _advanceRecoverySession('kp');
-    return;
-  }
+  var _isRecovery = typeof isRecoverySessionActive === 'function' && isRecoverySessionActive();
 
   var html = '<div class="text-center">';
   html += '<div class="result-emoji">\ud83d\udd04</div>';
@@ -250,6 +261,16 @@ function _finishKPRefreshScan() {
   html += '</div>';
   E('panel-study').innerHTML = html;
   updateSidebar();
+
+  /* Recovery session: replace buttons with session-aware controls */
+  if (_isRecovery) {
+    _recordRecoveryResult('kp');
+    var panel = E('panel-study');
+    var actionsDiv = panel ? panel.querySelector('.result-actions') : null;
+    if (actionsDiv) {
+      actionsDiv.outerHTML = _renderRecoveryStepBar() + _renderRecoveryResultButtons();
+    }
+  }
 }
 
 /* Render the scan card */

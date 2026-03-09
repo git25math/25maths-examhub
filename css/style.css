@@ -3912,6 +3912,15 @@ input { font-family: inherit; }
 /* Refresh scan header label */
 .study-refresh-label { color:var(--c-warning); font-weight:700; font-size:12px; text-transform:uppercase; letter-spacing:0.05em; text-align:center; margin-bottom:12px; }
 
+/* ═══ RECOVERY SESSION STEP BAR ═══ */
+.recovery-step-bar { display:flex; align-items:center; justify-content:center; gap:6px; padding:6px 12px; margin-bottom:12px; font-size:12px; font-weight:600; color:var(--c-text2); }
+.recovery-step { padding:2px 8px; border-radius:10px; background:var(--c-border-light); }
+.recovery-step.active { background:var(--c-primary); color:#fff; }
+.recovery-step.done { text-decoration:line-through; opacity:0.5; }
+.recovery-step-arrow { font-size:14px; opacity:0.4; }
+[data-theme="dark"] .recovery-step { background:var(--c-border); }
+[data-theme="dark"] .recovery-step.active { background:var(--c-primary); color:#fff; }
+
 /* ═══ MISTAKE BOOK ═══ */
 .mistake-tabs { display:flex; gap:8px; margin-bottom:16px; }
 .mistake-tab { padding:6px 16px; border-radius:20px; cursor:pointer; border:1px solid var(--c-border); background:var(--c-surface); font-size:13px; font-weight:500; color:var(--c-text); }

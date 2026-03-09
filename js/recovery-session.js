@@ -69,18 +69,78 @@ function _runCurrentRecoveryItem() {
   }
 }
 
-/* Called by finish hooks to advance to next scan type */
-function _advanceRecoverySession(resultType) {
+/* Record result without advancing (called by finish hooks) */
+function _recordRecoveryResult(resultType) {
   if (!_recoverySession) return;
-  if (resultType) {
-    _recoverySession.results.push({ type: resultType, status: 'done' });
-  }
+  _recoverySession.results.push({ type: resultType, status: 'done' });
+}
+
+/* Advance to next item (called by session buttons) */
+function _advanceRecoverySession() {
+  if (!_recoverySession) return;
   _recoverySession.currentIndex++;
   if (_recoverySession.currentIndex >= _recoverySession.queue.length) {
     _endRecoverySession();
   } else {
-    setTimeout(function() { _runCurrentRecoveryItem(); }, RECOVERY_ADVANCE_DELAY);
+    _runCurrentRecoveryItem();
   }
+}
+
+/* ═══ RECOVERY SESSION UI HELPERS ═══ */
+
+function _getRecoveryStepLabel(type) {
+  if (type === 'vocab') return t('Vocabulary', '词汇');
+  if (type === 'kp') return t('Knowledge Points', '知识点');
+  if (type === 'pp') return t('Past Papers', '真题');
+  return type;
+}
+
+function _renderRecoveryStepBar() {
+  if (!_recoverySession) return '';
+  var q = _recoverySession.queue;
+  var cur = _recoverySession.currentIndex;
+  var html = '<div class="recovery-step-bar">';
+  for (var i = 0; i < q.length; i++) {
+    var cls = 'recovery-step';
+    if (i < cur) cls += ' done';
+    else if (i === cur) cls += ' active';
+    html += '<span class="' + cls + '">' + _getRecoveryStepLabel(q[i].type) + '</span>';
+    if (i < q.length - 1) html += '<span class="recovery-step-arrow">\u203a</span>';
+  }
+  html += '</div>';
+  return html;
+}
+
+function _renderRecoveryResultButtons() {
+  if (!_recoverySession) return '';
+  var cur = _recoverySession.currentIndex;
+  var total = _recoverySession.queue.length;
+  var isLast = (cur >= total - 1);
+  var html = '<div class="result-actions">';
+  if (isLast) {
+    html += '<button class="btn btn-primary" onclick="_finishRecoveryFromResult()">';
+    html += t('Finish Recovery', '完成复查') + '</button>';
+  } else {
+    var nextType = _recoverySession.queue[cur + 1].type;
+    html += '<button class="btn btn-primary" onclick="_advanceRecoveryFromResult()">';
+    html += t('Next', '下一步') + ': ' + _getRecoveryStepLabel(nextType) + ' \u2192</button>';
+  }
+  html += '<button class="btn btn-ghost" onclick="_exitRecoveryFromResult()">';
+  html += t('Exit Recovery', '退出复查') + '</button>';
+  html += '</div>';
+  return html;
+}
+
+function _advanceRecoveryFromResult() {
+  _advanceRecoverySession();
+}
+function _finishRecoveryFromResult() {
+  _endRecoverySession();
+}
+function _exitRecoveryFromResult() {
+  skipRecoverySession();
+  if (typeof navTo === 'function') navTo('plan');
+  if (typeof showToast === 'function') showToast(t('Recovery session ended', '复查已中止'));
 }
 
 /* Finish session: navigate to plan + show summary toast */
