@@ -1,118 +1,86 @@
 # 25Maths Learning Engine Architecture
 
 > System blueprint as of v3.4.1 (2026-03-10)
-> An adaptive learning system for IGCSE Mathematics exam preparation.
+
+## Mission
+
+25Maths is not a question bank or vocabulary website. It is a **curriculum-aligned learning engine** that connects questions, vocabulary, knowledge points, recovery sessions, and printable repair sheets into one continuous mastery loop.
+
+> 25Maths 不只是一个题库或词汇网站，而是一个基于课纲的学习引擎。它将题目、词汇、知识点、复查流程和可打印修复单连接成一个连续的掌握闭环。
 
 ---
 
-## 1. System Overview
+## 1. Core Layers
 
-25Maths-Keywords is a **Learning Operating System** — not a practice website, but an integrated engine that detects knowledge gaps, plans recovery, executes targeted review, and tracks mastery across three knowledge dimensions.
+The system is organized into 8 layers, each with a clear responsibility:
 
 ```
-┌─────────────────────────────────────────────────────┐
-│                   Learning Engine                    │
-│                                                      │
-│  ┌──────────┐   ┌──────────┐   ┌──────────────────┐ │
-│  │ Vocabulary│   │Knowledge │   │  Past Paper      │ │
-│  │ 2,200    │   │Points    │   │  Questions       │ │
-│  │ words    │   │111 KPs   │   │  7,817 questions │ │
-│  └────┬─────┘   └────┬─────┘   └────┬─────────────┘ │
-│       │              │              │                │
-│       └──────┬───────┴──────┬───────┘                │
-│              │              │                        │
-│       ┌──────▼──────┐ ┌─────▼──────┐                 │
-│       │  FLM State  │ │  Learning  │                 │
-│       │  Machine    │ │  Graph     │                 │
-│       └──────┬──────┘ └─────┬──────┘                 │
-│              │              │                        │
-│       ┌──────▼──────────────▼──────┐                 │
-│       │   Detection & Planning     │                 │
-│       │   (stale / weak / health)  │                 │
-│       └──────┬─────────────────────┘                 │
-│              │                                       │
-│       ┌──────▼──────┐                                │
-│       │  Recovery   │                                │
-│       │  Session    │                                │
-│       └─────────────┘                                │
-└─────────────────────────────────────────────────────┘
+Layer 1  Curriculum Layer
+         (Exam Boards / Year Groups / Sections)
+              |
+Layer 2  Content Layer
+         (Vocabulary / Knowledge Points / Questions / Past Papers / Examples)
+              |
+Layer 3  Relationship Layer
+         (Learning Graph)
+              |
+Layer 4  State Layer
+         (FLM / Mastery / Stale / Mistakes / Reflow)
+              |
+Layer 5  Planning Layer
+         (Today's Plan / Section Health / Weak Groups)
+              |
+Layer 6  Execution Layer
+         (Recovery Session / Practice / Refresh Scan)
+              |
+Layer 7  Repair Layer
+         (Recovery Pack / Print Repair Sheet)
+              |
+Layer 8  Feedback Loop
+         (Return by ID / Re-attempt / Status Update)
 ```
+
+Each layer answers one question:
+
+| Layer | Question |
+|-------|----------|
+| **1. Curriculum** | What chapter / section / syllabus point is the student working on? |
+| **2. Content** | What are the learning objects to study? |
+| **3. Relationship** | How are questions, vocabulary, and knowledge points connected? |
+| **4. State** | How well does the student currently know each item? |
+| **5. Planning** | What should the student do today? |
+| **6. Execution** | How does the student do it right now? |
+| **7. Repair** | What happens when something is wrong? |
+| **8. Feedback** | How does the system know the student improved? |
 
 ---
 
-## 2. The Learning Loop
+## 2. Core Objects
 
-The system implements a complete learning cycle with five stages:
+Six formal objects define the system's vocabulary. All development and documentation should use these terms consistently.
 
-```
-  ┌─────────────────────────────────────────────────┐
-  │                                                  │
-  │   1. DETECT ──► 2. PLAN ──► 3. EXECUTE           │
-  │       ▲                         │                │
-  │       │                         ▼                │
-  │   5. REFLECT ◄── 4. REPAIR                      │
-  │                                                  │
-  └─────────────────────────────────────────────────┘
-```
+### 2.1 Learning Unit
 
-| Stage | System Component | What It Does |
-|-------|-----------------|--------------|
-| **1. Detect** | Stale Detection + Weak Groups | Identifies decayed mastery (FLM state regression) and weak areas (low section health) |
-| **2. Plan** | Today's Plan | Aggregates all pending recovery items into a prioritized dashboard |
-| **3. Execute** | Recovery Session | Chains vocab → KP → PP refresh scans with step progress bar |
-| **4. Repair** | Recovery Pack | Shows linked vocab/KP/similar questions for any failed item |
-| **5. Reflect** | Print Repair Sheet | Generates single-question A4 worksheets for deep practice |
+The smallest trackable learning object. Three types:
 
----
+| Type | Example | FLM Tracked |
+|------|---------|-------------|
+| **Vocabulary** | "integer", "coefficient" | Yes — per-word scan |
+| **Knowledge Point (KP)** | "1.3 Squares, cubes, roots" | Yes — session-based |
+| **Question** | Past paper Q or MCQ practice item | Yes — per-question |
 
-## 3. FLM State Machine (Filter-Learn-Master)
+### 2.2 Learning Graph
 
-All three knowledge dimensions share the same 4-state model:
+Runtime cross-referencing between Learning Units via shared section codes:
 
 ```
-  new ──► learning ──► uncertain ──► mastered
-           ▲              │              │
-           │              ▼              ▼
-           └── learning ◄──        (decay check)
-                                        │
-                                        ▼
-                                   uncertain
+Vocabulary <-------> Section Code <-------> Knowledge Points
+     |                    |                       |
+     |                    v                       |
+     +----------> Past Paper Questions <----------+
 ```
 
-### State Transitions
-
-| Dimension | Transition Trigger | Consecutive Success (cs) |
-|-----------|-------------------|--------------------------|
-| **Vocabulary** | Per-word scan rating (Know/Fuzzy/Don't know) | Per-word correct streak |
-| **Knowledge Points** | Session-based (saveKPResult batch) | Consecutive sessions with ≥85% accuracy |
-| **Past Papers** | Practice mode: manual cs++; Exam mode: high-confidence → mastered | Per-question correct streak |
-
-### Mastered Decay
-
-Mastered items are not permanent. The system checks for decay at intervals:
-
-```
-REFRESH_INTERVALS = [7, 14, 30] days
-rc (refresh count) increments on each successful refresh
-MAX_RC = 2 (caps at final interval)
-```
-
-When `daysSinceLastReview > REFRESH_INTERVALS[rc]`, the item becomes "stale" and enters the recovery queue.
-
----
-
-## 4. Learning Graph
-
-`learning-graph.js` provides runtime cross-referencing between the three dimensions:
-
-```
-  Vocabulary ◄──────► Section Code ◄──────► Knowledge Points
-       │                    │                      │
-       │                    ▼                      │
-       └──────────► Past Paper Questions ◄─────────┘
-```
-
-### Key Functions
+Implemented in `learning-graph.js` with 6 query functions:
 
 | Function | Purpose |
 |----------|---------|
@@ -123,154 +91,268 @@ When `daysSinceLastReview > REFRESH_INTERVALS[rc]`, the item becomes "stale" and
 | `lgGetRelatedKPs(questionId)` | Knowledge points linked to a question |
 | `lgGetSimilarQuestions(questionId)` | Questions in the same section/subtopic |
 
----
+### 2.3 Recovery Session
 
-## 5. Section Health Score
+A chained sequence of refresh scans launched from Today's Plan. Currently: `vocab -> KP -> PP` with step indicator bar, result panels, and Next/Exit controls.
 
-`getSectionHealth(sectionId)` computes a 0–100 composite score across four dimensions:
+### 2.4 Recovery Pack
+
+A contextual repair bundle shown when a student rates a question as "needs work":
 
 ```
-health = vocabScore × 0.25
-       + practiceScore × 0.25
-       + knowledgeScore × 0.25
-       + ppScore × 0.25
++-- Recovery Pack ----------------------------------+
+|                                                    |
+|  Weak Vocabulary      -> Opens vocab deck          |
+|  Related KPs          -> Opens KP detail page      |
+|  Similar Questions    -> Same-subtopic items       |
+|  Print Repair Sheet   -> A4 worksheet              |
+|                                                    |
++----------------------------------------------------+
 ```
 
-Each sub-score uses FLM-weighted calculation:
-- mastered = 1.0
-- uncertain = 0.5
-- learning = 0.2
-- new = 0.0
+### 2.5 Repair Sheet
 
-This score drives:
-- Home page recommended learning areas
-- Smart Path weak-section highlighting
-- Recovery session item prioritization (v3.5)
+A single-question A4 printable worksheet generated by `worksheet.js`. Contains: question text, related vocabulary, related KP summary, blank working space, self-correction section. Rendered with KaTeX and inline CSS in a new window.
+
+### 2.6 Section Health
+
+A 0-100 composite score computed by `getSectionHealth(sectionId)`:
+
+```
+health = vocabScore  x 0.25
+       + practiceScore x 0.25
+       + knowledgeScore x 0.25
+       + ppScore x 0.25
+```
+
+FLM-weighted sub-scores: mastered=1.0, uncertain=0.5, learning=0.2, new=0.0.
+
+Drives: home page recommendations, Smart Path weak-section highlighting, recovery item prioritization.
 
 ---
 
-## 6. Recovery Session Engine
+## 3. Layer Details
 
-### Current Architecture (v3.4.1)
+### Layer 1: Curriculum
+
+The system's organizational backbone. Not UI — content structure.
+
+| Board | Code | Sections |
+|-------|------|----------|
+| CIE IGCSE Mathematics | 0580 | 9 chapters, 72 sections |
+| Edexcel IGCSE Mathematics | 4MA1 | 6 chapters, 39 sections |
+| Harrow Haikou Y7-Y11 | HHK | 5 year groups, 164 levels |
+
+Sections are the join key between vocabulary, KPs, questions, and past papers.
+
+### Layer 2: Content
+
+| Object | Count | Source |
+|--------|-------|--------|
+| Vocabulary words | 2,200 | `data/levels.js` (auto-generated from .tex) |
+| Knowledge Points | 72 CIE + 39 Edexcel | `data/knowledge-*.json` |
+| Practice MCQs | 3,578 | `data/practice-*.json` |
+| Past Paper Questions | 5,965 (4,110 CIE + 1,855 Edexcel) | `data/papers-*.json` |
+| Worked Examples | 291 (CIE Ch1) | Embedded in knowledge data |
+
+### Layer 3: Relationship (Learning Graph)
+
+See [2.2 Learning Graph](#22-learning-graph) above. Runtime query layer using section code joins. No pre-computed graph — all lookups are O(n) scans with small n per section.
+
+### Layer 4: State (FLM State Machine)
+
+All three Learning Unit types share one 4-state model:
+
+```
+new --> learning --> uncertain --> mastered
+         ^             |              |
+         |             v              v (decay)
+         +-- learning <--        uncertain
+```
+
+| Dimension | Transition Trigger | cs Definition |
+|-----------|-------------------|---------------|
+| **Vocabulary** | Per-word scan (Know/Fuzzy/Don't know) | Per-word correct streak |
+| **KP** | Session batch (saveKPResult) | Consecutive sessions >= 85% accuracy |
+| **PP** | Practice: manual cs++; Exam: high-confidence -> mastered | Per-question correct streak |
+
+**Mastered Decay**: `REFRESH_INTERVALS = [7, 14, 30]` days. `rc` (refresh count) increments on successful refresh. `MAX_RC = 2`. When `daysSinceReview > REFRESH_INTERVALS[rc]`, item becomes stale.
+
+**Storage**:
+
+| Data | Location | Cloud Sync |
+|------|----------|------------|
+| Vocab progress | `localStorage:wmatch_v3` | Supabase `vocab_progress` |
+| KP mastery | `wmatch_v3._kpMastery` | Supabase bridge field |
+| PP mastery | `localStorage:pp_mastery` | Supabase `_ppMastery` bridge |
+| Mode completion | `wmatch_v3.modeDone` | Cloud sync |
+| Wrong book | `localStorage:pp_wrong_book` | Local only |
+
+### Layer 5: Planning
+
+Converts state into "what to do today":
+
+| Component | Role |
+|-----------|------|
+| `getStaleWords()` | Detect decayed vocabulary |
+| `getStaleKPs(board)` | Detect decayed knowledge points |
+| `getStalePPQuestions(board)` | Detect decayed past paper questions |
+| `ppGetWeakGroups(board)` | Identify weak question-type clusters |
+| `getSectionHealth(sectionId)` | Rank sections by composite health |
+| Today's Plan panel | Aggregate dashboard with badges and action buttons |
+| Hero recommendation | Home page "start here" suggestion |
+
+### Layer 6: Execution
+
+Launches actual learning activities:
+
+| Component | Trigger |
+|-----------|---------|
+| Vocabulary Refresh Scan | `startRefreshScan(words)` |
+| KP Refresh Scan | `startKPRefreshScan()` |
+| PP Refresh Scan | `startPPRefreshScan()` |
+| Recovery Session | `startRecoverySession()` — chains all three |
+| Practice mode | MCQ quiz from practice data |
+| Exam mode | Timed full-paper simulation |
+
+**Recovery Session flow (v3.4.1)**:
 
 ```
 buildRecoverySession()
-  │
-  ├── getStaleWords()      → queue[0]: { type: 'vocab', data, count }
-  ├── getStaleKPs(board)   → queue[1]: { type: 'kp', count }
-  └── getStalePPQuestions() → queue[2]: { type: 'pp', count }
+  |
+  +-- getStaleWords()       -> queue item { type: 'vocab' }
+  +-- getStaleKPs(board)    -> queue item { type: 'kp' }
+  +-- getStalePPQuestions() -> queue item { type: 'pp' }
 
 startRecoverySession()
-  │
-  ├── _runCurrentRecoveryItem()
-  │     ├── startRefreshScan(words)     [vocab]
-  │     ├── startKPRefreshScan()        [kp]
-  │     └── startPPRefreshScan()        [pp]
-  │
-  ├── [Scan runs with step indicator bar]
-  │
-  ├── [Finish hook renders result panel]
-  │     ├── _recordRecoveryResult(type)
-  │     └── Replace .result-actions with session buttons:
-  │           ├── "Next: KP →"  / "Finish Recovery"
-  │           └── "Exit Recovery"
-  │
-  ├── _advanceRecoverySession()         [button triggers]
-  │
-  └── _endRecoverySession()             [summary toast + navTo plan]
+  |
+  +-- _runCurrentRecoveryItem()
+  |     +-- startRefreshScan()   / startKPRefreshScan()   / startPPRefreshScan()
+  |
+  +-- [Scan with step bar: Vocabulary > KP > PP]
+  |
+  +-- [Finish hook: render result panel + replace buttons]
+  |     +-- _recordRecoveryResult(type)
+  |     +-- Session buttons: "Next: KP ->" or "Finish Recovery" + "Exit Recovery"
+  |
+  +-- _advanceRecoverySession()   [user clicks Next]
+  |
+  +-- _endRecoverySession()       [summary toast + navTo plan]
 ```
 
-### Session UX (v3.4.1)
+### Layer 7: Repair
 
-- **Step bar**: `Vocabulary › Knowledge Points › Past Papers` — active highlighted, completed struck-through
-- **Result panels**: Each step shows full result breakdown (Known/Fuzzy/Forgot) before advancing
-- **Exit**: Available at any point during scan or result screen
+Activated when a student identifies a gap:
+
+1. **Recovery Pack** — contextual bundle of weak vocab, related KPs, similar questions (see [2.4](#24-recovery-pack))
+2. **Print Repair Sheet** — A4 worksheet for paper-based correction (see [2.5](#25-repair-sheet))
+
+### Layer 8: Feedback Loop
+
+Results flow back into the State Layer:
+
+```
+Question Attempt
+      |
+  Wrong / Needs Work
+      |
+  Learning Graph lookup
+      |
+  Recovery Pack
+      |
+  Vocabulary / KP / Similar Question
+      |
+  Print Repair Sheet
+      |
+  Paper Correction
+      |
+  Return by ID
+      |
+  Retry / Refresh
+      |
+  Mastery Update (FLM state change)
+      |
+  Section Health recalculated
+      |
+  Today's Plan updated
+```
+
+This closes the loop: every learning action feeds back into detection and planning.
 
 ---
 
-## 7. Recovery Pack
-
-When a student rates a past paper question as "needs work", the Recovery Pack expands to show:
+## 4. Module Map
 
 ```
-┌─ Recovery Pack ──────────────────────┐
-│                                       │
-│  📕 Weak Vocabulary (clickable)       │
-│     → Opens vocab deck for review     │
-│                                       │
-│  📘 Related Knowledge Points          │
-│     → Opens KP detail page            │
-│                                       │
-│  📝 Similar Questions                 │
-│     → Links to same-subtopic items    │
-│                                       │
-│  🖨️ Print Repair Sheet               │
-│     → A4 worksheet for deep practice  │
-│                                       │
-└───────────────────────────────────────┘
+config.js            Constants, theme, board detection, i18n
+levels.js            Vocabulary data (auto-generated by extract-vocab.py)
+storage.js           FLM state machine, cloud sync, mode tracking, stale detection
+study.js             Vocab + KP scan mode (FLM three-button cycle + refresh scan)
+practice.js          PP engine: practice/exam/refresh scan + wrong book
+learning-graph.js    Cross-dimension query layer (6 functions)
+recovery-session.js  Recovery Session orchestration + step bar + session buttons
+worksheet.js         Print Repair Sheet generator
+syllabus.js          Syllabus navigation + Today's Plan + section health dashboard
+mastery.js           Home dashboard + deck detail + mode selection
+ui.js                Panel navigation, toast, modal, language toggle
+auth.js              Login/register/guest + settings + board selection
+quiz.js              Four-choice quiz + Daily Challenge
+spell.js             Spelling mode (Web Speech API)
+match.js             Simple pair matching
+battle.js            Timed matching battle
+review.js            Review dashboard
+stats.js             Statistics, heatmap, trend chart
+export.js            Import/export (CSV/JSON/Markdown/Anki TSV)
+admin.js             Teacher management (classes, students, grades)
+vocab-admin.js       Super-admin vocabulary CRUD
+homework.js          Homework assignments + notifications (lazy-loaded)
+app.js               Init, deep linking, iOS share recovery
 ```
 
 ---
 
-## 8. Data Architecture
+## 5. Version Timeline (Learning Engine milestones)
 
-### Storage
-
-| Data | Location | Sync |
-|------|----------|------|
-| Vocabulary progress (FLM states, streaks) | `localStorage:wmatch_v3` | Supabase `vocab_progress` |
-| KP mastery | `localStorage:wmatch_v3._kpMastery` | Supabase via bridge field |
-| PP mastery | `localStorage:pp_mastery` | Supabase via `_ppMastery` bridge |
-| Mode completion | `localStorage:wmatch_v3.modeDone` | Cloud sync |
-| Wrong book | `localStorage:pp_wrong_book` | Local only |
-
-### Data Sources
-
-| File | Content | Size |
-|------|---------|------|
-| `data/levels.js` | 275 vocabulary decks, 2,200 words | Auto-generated |
-| `data/papers-cie.json` | 4,110 CIE questions, 152 papers | Static |
-| `data/papers-edx.json` | 1,855 Edexcel questions, 76 papers | Static |
-| `data/practice-*.json` | 3,578 MCQ practice questions | Static |
-| `data/knowledge-cie.json` | 72 CIE knowledge points | Static |
-| `data/knowledge-edx.json` | 39 Edexcel knowledge points | Static |
+```
+v2.6.0   FLM state machine (vocabulary)
+v2.7.0   Mastered decay + error-driven reflow
+v2.9.0   KP FLM integration (Learning Unit Phase 1)
+v3.0.0   PP FLM integration (Learning Unit Phase 2)
+v3.1.0   Unified Learning Unit API
+v3.2.0   Learning Graph query layer
+v3.2.1   Recovery Pack interaction
+v3.3.0   Print Repair Sheet
+v3.4.0   Recovery Session engine
+v3.4.1   Recovery Session UX polish (step bar + Next/Exit)
+v3.5.0   Smart Recovery Ordering (planned)
+```
 
 ---
 
-## 9. Future: Smart Recovery Ordering (v3.5)
+## 6. Next: Smart Recovery Ordering (v3.5)
 
 ### Current Limitation
 
-Recovery Session uses fixed ordering: `vocab → kp → pp`. This doesn't account for urgency.
+Recovery Session uses fixed ordering: `vocab -> kp -> pp`. This doesn't reflect actual urgency.
 
-### Proposed Architecture
+### Target
 
-Replace fixed ordering with priority-scored items:
+Replace fixed ordering with priority-scored items. The session becomes:
 
 ```
 buildRecoverySession()
-  │
-  ├── Collect ALL stale items (vocab + kp + pp)
-  │
-  ├── Score each item:
-  │     priority = error_weight      (recent error frequency)
-  │               + decay_weight     (days overdue for refresh)
-  │               + exam_weight      (syllabus frequency / marks)
-  │
-  ├── Sort by priority DESC
-  │
-  └── Group into batches (optional: by type for UX coherence)
+  |
+  +-- Collect ALL stale items (vocab + kp + pp)
+  +-- Score each: priority = error_weight + decay_weight + exam_weight
+  +-- Sort by priority DESC
+  +-- Group into batches by type (for UX coherence)
 ```
 
-This transforms Recovery Session from a **task runner** into a **learning engine**.
-
-### Scoring Formula (draft)
+### Draft Scoring Formula
 
 ```javascript
 function recoveryPriority(item) {
-  var errorW = 0;
-  var decayW = 0;
-  var examW  = 0;
+  var errorW = 0, decayW = 0, examW = 0;
 
   // Error weight: higher if recently failed
   if (item.recentErrors > 0) errorW = Math.min(item.recentErrors * 15, 45);
@@ -286,35 +368,18 @@ function recoveryPriority(item) {
 }
 ```
 
----
-
-## 10. Module Map
-
-```
-config.js          Constants, theme, board detection
-levels.js          Vocabulary data (auto-generated)
-storage.js         FLM state machine, cloud sync, mode tracking
-study.js           Vocab + KP refresh scan (FLM Scan mode)
-practice.js        PP refresh scan + exam engine + wrong book
-learning-graph.js  Cross-dimension query layer
-recovery-session.js Recovery Session orchestration
-worksheet.js       Print Repair Sheet generator
-syllabus.js        Today's Plan + section health dashboard
-mastery.js         Home dashboard + deck detail
-ui.js              Panel navigation + toast + modal
-app.js             Init, deep linking, iOS recovery
-```
+This transforms Recovery Session from a **task runner** into a **learning engine**. It sits between the Planning Layer and the Execution Layer as the intelligent bridge.
 
 ---
 
-## 11. Exam Board Coverage
+## 7. Exam Board Coverage
 
-| Board | Sections | Vocabulary | Practice MCQs | Past Paper Qs |
-|-------|----------|-----------|---------------|---------------|
-| CIE IGCSE 0580 | 72 | ~1,300 | 884 | 4,110 |
-| Edexcel IGCSE 4MA1 | 39 | ~500 | 576 | 1,855 |
-| Harrow Haikou Y7-11 | 164 levels | ~400 | 55 | — |
+| Board | Code | Sections | Vocabulary | Practice MCQs | Past Paper Qs |
+|-------|------|----------|-----------|---------------|---------------|
+| CIE IGCSE Mathematics | 0580 | 72 | ~1,300 | 884 | 4,110 |
+| Edexcel IGCSE Mathematics | 4MA1 | 39 | ~500 | 576 | 1,855 |
+| Harrow Haikou Y7-Y11 | HHK | 164 levels | ~400 | 55 | -- |
 
 ---
 
-*This document serves as the canonical reference for the 25Maths Learning Engine architecture. Update it as the system evolves.*
+*Canonical reference for the 25Maths Learning Engine. Update as the system evolves.*
