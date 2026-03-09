@@ -1138,7 +1138,7 @@
         }
       ],
       "vocabLinks": [
-        "arithmetic-ops"
+        "num-ops"
       ],
       "tier": "both"
     },
@@ -1208,7 +1208,7 @@
         }
       ],
       "vocabLinks": [
-        "rounding-estimation"
+        "num-accuracy"
       ],
       "tier": "both"
     },
@@ -1278,7 +1278,7 @@
         }
       ],
       "vocabLinks": [
-        "accuracy-bounds"
+        "num-accuracy"
       ],
       "tier": "both"
     },
@@ -1348,7 +1348,7 @@
         }
       ],
       "vocabLinks": [
-        "ratio-proportion"
+        "num-ratio"
       ],
       "tier": "both"
     },
@@ -1418,7 +1418,7 @@
         }
       ],
       "vocabLinks": [
-        "percentages"
+        "num-ratio"
       ],
       "tier": "both"
     },
@@ -1563,7 +1563,7 @@
         }
       ],
       "vocabLinks": [
-        "kinematics"
+        "num-rates"
       ],
       "tier": "both"
     },
@@ -1633,7 +1633,7 @@
         }
       ],
       "vocabLinks": [
-        "finance-interest"
+        "num-rates"
       ],
       "tier": "both"
     },
@@ -1702,9 +1702,7 @@
           "e_zh": "种群数 = $1000 \\times (1.1)^2 = 1000 \\times 1.21 = 1210$。"
         }
       ],
-      "vocabLinks": [
-        "growth-decay"
-      ],
+      "vocabLinks": [],
       "tier": "extended"
     },
     {
@@ -1772,9 +1770,7 @@
           "e_zh": "$\\sqrt{48} = \\sqrt{16 \\times 3} = \\sqrt{16} \\times \\sqrt{3} = 4\\sqrt{3}$。"
         }
       ],
-      "vocabLinks": [
-        "surds"
-      ],
+      "vocabLinks": [],
       "tier": "extended"
     },
     {
@@ -1843,7 +1839,7 @@
         }
       ],
       "vocabLinks": [
-        "algebra-terms"
+        "alg-expr"
       ],
       "tier": "both"
     },
@@ -1913,7 +1909,7 @@
         }
       ],
       "vocabLinks": [
-        "formula-subject"
+        "alg-manip"
       ],
       "tier": "both"
     },
@@ -1990,8 +1986,7 @@
         }
       ],
       "vocabLinks": [
-        "factorise",
-        "expand"
+        "alg-manip"
       ],
       "tier": "both"
     },
@@ -2068,8 +2063,7 @@
         }
       ],
       "vocabLinks": [
-        "quadratic",
-        "difference-of-squares"
+        "alg-manip"
       ],
       "tier": "both"
     },
@@ -2146,7 +2140,7 @@
         }
       ],
       "vocabLinks": [
-        "fraction-simplify"
+        "alg-prop"
       ],
       "tier": "extended"
     },
@@ -2223,7 +2217,7 @@
         }
       ],
       "vocabLinks": [
-        "simultaneous-equations"
+        "alg-eq"
       ],
       "tier": "both"
     },
@@ -2293,7 +2287,7 @@
         }
       ],
       "vocabLinks": [
-        "quadratic-formula"
+        "alg-eq"
       ],
       "tier": "both"
     },
@@ -2370,8 +2364,7 @@
         }
       ],
       "vocabLinks": [
-        "inequality",
-        "region"
+        "alg-ineq"
       ],
       "tier": "both"
     },
@@ -2441,8 +2434,7 @@
         }
       ],
       "vocabLinks": [
-        "sequence",
-        "nth-term"
+        "alg-ineq"
       ],
       "tier": "both"
     },
@@ -2512,8 +2504,7 @@
         }
       ],
       "vocabLinks": [
-        "proportion",
-        "inverse-proportion"
+        "alg-prop"
       ],
       "tier": "both"
     },
@@ -2583,8 +2574,7 @@
         }
       ],
       "vocabLinks": [
-        "gradient",
-        "acceleration"
+        "alg-graphs"
       ],
       "tier": "both"
     },
@@ -2654,8 +2644,7 @@
         }
       ],
       "vocabLinks": [
-        "parabola",
-        "intersection"
+        "alg-graphs"
       ],
       "tier": "both"
     },
@@ -2724,10 +2713,7 @@
           "e_zh": "反比例图像的形式为 y = k/x。"
         }
       ],
-      "vocabLinks": [
-        "reciprocal",
-        "asymptote"
-      ],
+      "vocabLinks": [],
       "tier": "both"
     },
     {
@@ -2803,8 +2789,7 @@
         }
       ],
       "vocabLinks": [
-        "derivative",
-        "stationary-point"
+        "alg-prop"
       ],
       "tier": "extended"
     },
@@ -2881,8 +2866,7 @@
         }
       ],
       "vocabLinks": [
-        "composite-function",
-        "inverse-function"
+        "alg-func"
       ],
       "tier": "extended"
     },
@@ -2952,7 +2936,7 @@
         }
       ],
       "vocabLinks": [
-        "coordinate-geometry"
+        "coord-system"
       ],
       "tier": "both"
     },
@@ -3022,7 +3006,7 @@
         }
       ],
       "vocabLinks": [
-        "linear-equations"
+        "coord-linear"
       ],
       "tier": "both"
     },
@@ -3099,7 +3083,7 @@
         }
       ],
       "vocabLinks": [
-        "gradient"
+        "coord-linear"
       ],
       "tier": "both"
     },
@@ -3169,7 +3153,7 @@
         }
       ],
       "vocabLinks": [
-        "distance-formula"
+        "coord-distance"
       ],
       "tier": "both"
     },
@@ -3246,7 +3230,7 @@
         }
       ],
       "vocabLinks": [
-        "midpoint"
+        "coord-distance"
       ],
       "tier": "both"
     },
@@ -3316,7 +3300,7 @@
         }
       ],
       "vocabLinks": [
-        "y-intercept"
+        "coord-line-eq"
       ],
       "tier": "both"
     },
@@ -3386,7 +3370,7 @@
         }
       ],
       "vocabLinks": [
-        "parallel"
+        "coord-parallel"
       ],
       "tier": "both"
     },
@@ -3463,7 +3447,7 @@
         }
       ],
       "vocabLinks": [
-        "perpendicular"
+        "coord-parallel"
       ],
       "tier": "extended"
     },
@@ -3533,8 +3517,10 @@
         }
       ],
       "vocabLinks": [
-        "geom-terms",
-        "shapes-2d"
+        "geom-triangles",
+        "geom-polygons",
+        "geom-circles",
+        "geom-solids"
       ],
       "tier": "both"
     },
@@ -3604,7 +3590,7 @@
         }
       ],
       "vocabLinks": [
-        "constructions"
+        "geom-solids"
       ],
       "tier": "both"
     },
@@ -3674,7 +3660,7 @@
         }
       ],
       "vocabLinks": [
-        "scale-drawings"
+        "geom-solids"
       ],
       "tier": "both"
     },
@@ -3751,7 +3737,7 @@
         }
       ],
       "vocabLinks": [
-        "bearings"
+        "geom-solids"
       ],
       "tier": "both"
     },
@@ -3821,8 +3807,7 @@
         }
       ],
       "vocabLinks": [
-        "similarity",
-        "congruence"
+        "geom-similarity"
       ],
       "tier": "both"
     },
@@ -3892,7 +3877,7 @@
         }
       ],
       "vocabLinks": [
-        "similarity"
+        "geom-similarity"
       ],
       "tier": "extended"
     },
@@ -3962,7 +3947,7 @@
         }
       ],
       "vocabLinks": [
-        "symmetry"
+        "geom-similarity"
       ],
       "tier": "both"
     },
@@ -4032,7 +4017,8 @@
         }
       ],
       "vocabLinks": [
-        "angles"
+        "geom-angles-basic",
+        "geom-circle-thm"
       ],
       "tier": "both"
     },
@@ -4102,7 +4088,8 @@
         }
       ],
       "vocabLinks": [
-        "polygons"
+        "geom-angles-basic",
+        "geom-circle-thm"
       ],
       "tier": "both"
     },
@@ -4172,7 +4159,7 @@
         }
       ],
       "vocabLinks": [
-        "circle-theorems"
+        "geom-circle-thm"
       ],
       "tier": "both"
     },
@@ -4242,7 +4229,7 @@
         }
       ],
       "vocabLinks": [
-        "circle-theorems"
+        "geom-circle-thm"
       ],
       "tier": "extended"
     },
@@ -4311,9 +4298,7 @@
           "e_zh": "在二维几何中，到某一点距离固定的点集构成一个圆。"
         }
       ],
-      "vocabLinks": [
-        "loci"
-      ],
+      "vocabLinks": [],
       "tier": "both"
     },
     {
@@ -4382,7 +4367,7 @@
         }
       ],
       "vocabLinks": [
-        "metric-units"
+        "mens-units"
       ],
       "tier": "both"
     },
@@ -4452,7 +4437,7 @@
         }
       ],
       "vocabLinks": [
-        "polygons-area"
+        "mens-area"
       ],
       "tier": "both"
     },
@@ -4522,7 +4507,7 @@
         }
       ],
       "vocabLinks": [
-        "circle-parts"
+        "mens-circles"
       ],
       "tier": "both"
     },
@@ -4592,7 +4577,7 @@
         }
       ],
       "vocabLinks": [
-        "arc-sector"
+        "mens-circles"
       ],
       "tier": "both"
     },
@@ -4662,7 +4647,7 @@
         }
       ],
       "vocabLinks": [
-        "3d-shapes-vol"
+        "mens-surface"
       ],
       "tier": "both"
     },
@@ -4732,7 +4717,7 @@
         }
       ],
       "vocabLinks": [
-        "extended-3d"
+        "mens-surface"
       ],
       "tier": "extended"
     },
@@ -4802,7 +4787,7 @@
         }
       ],
       "vocabLinks": [
-        "compound-shapes"
+        "mens-3d"
       ],
       "tier": "both"
     },
@@ -4879,7 +4864,7 @@
         }
       ],
       "vocabLinks": [
-        "trig-basics"
+        "trig-pythag"
       ],
       "tier": "both"
     },
@@ -5460,7 +5445,8 @@
         }
       ],
       "vocabLinks": [
-        "transformations"
+        "vec-transform",
+        "vec-rotation"
       ],
       "tier": "both"
     },
@@ -5537,7 +5523,8 @@
         }
       ],
       "vocabLinks": [
-        "transformations"
+        "vec-transform",
+        "vec-rotation"
       ],
       "tier": "both"
     },
@@ -5607,7 +5594,7 @@
         }
       ],
       "vocabLinks": [
-        "vectors"
+        "vec-basics"
       ],
       "tier": "both"
     },
@@ -5677,7 +5664,7 @@
         }
       ],
       "vocabLinks": [
-        "vectors"
+        "vec-magnitude"
       ],
       "tier": "both"
     },
@@ -5754,7 +5741,7 @@
         }
       ],
       "vocabLinks": [
-        "vectors"
+        "vec-relations"
       ],
       "tier": "extended"
     },
@@ -5824,7 +5811,7 @@
         }
       ],
       "vocabLinks": [
-        "prob-intro"
+        "stat-prob"
       ],
       "tier": "both"
     },
@@ -5894,7 +5881,7 @@
         }
       ],
       "vocabLinks": [
-        "prob-complement"
+        "stat-prob"
       ],
       "tier": "both"
     },
@@ -5971,7 +5958,7 @@
         }
       ],
       "vocabLinks": [
-        "prob-expected"
+        "stat-prob"
       ],
       "tier": "both"
     },
@@ -6041,7 +6028,7 @@
         }
       ],
       "vocabLinks": [
-        "prob-tree"
+        "stat-prob-comb"
       ],
       "tier": "both"
     },
@@ -6111,7 +6098,7 @@
         }
       ],
       "vocabLinks": [
-        "prob-independent"
+        "stat-prob-comb"
       ],
       "tier": "both"
     },
@@ -6181,7 +6168,7 @@
         }
       ],
       "vocabLinks": [
-        "prob-conditional"
+        "stat-prob-cond"
       ],
       "tier": "extended"
     },
@@ -6251,8 +6238,7 @@
         }
       ],
       "vocabLinks": [
-        "discrete-data",
-        "continuous-data"
+        "stat-data"
       ],
       "tier": "both"
     },
@@ -6322,8 +6308,7 @@
         }
       ],
       "vocabLinks": [
-        "frequency",
-        "tally"
+        "stat-data"
       ],
       "tier": "both"
     },
@@ -6470,10 +6455,7 @@
         }
       ],
       "vocabLinks": [
-        "mean",
-        "median",
-        "mode",
-        "range"
+        "stat-averages"
       ],
       "tier": "both"
     },
@@ -6543,8 +6525,7 @@
         }
       ],
       "vocabLinks": [
-        "modal-class",
-        "mid-interval-value"
+        "stat-averages"
       ],
       "tier": "both"
     },
@@ -6614,8 +6595,7 @@
         }
       ],
       "vocabLinks": [
-        "pie-chart",
-        "bar-chart"
+        "stat-charts"
       ],
       "tier": "both"
     },
@@ -6685,7 +6665,7 @@
         }
       ],
       "vocabLinks": [
-        "stem-and-leaf"
+        "stat-charts"
       ],
       "tier": "both"
     },
@@ -6755,10 +6735,7 @@
         }
       ],
       "vocabLinks": [
-        "scatter-diagram",
-        "correlation",
-        "positive-correlation",
-        "negative-correlation"
+        "stat-advanced"
       ],
       "tier": "both"
     },
@@ -6828,7 +6805,7 @@
         }
       ],
       "vocabLinks": [
-        "line-of-best-fit"
+        "stat-advanced"
       ],
       "tier": "both"
     },
@@ -6898,7 +6875,7 @@
         }
       ],
       "vocabLinks": [
-        "cumulative-frequency"
+        "stat-advanced"
       ],
       "tier": "extended"
     },
@@ -6968,9 +6945,7 @@
         }
       ],
       "vocabLinks": [
-        "lower-quartile",
-        "upper-quartile",
-        "interquartile-range"
+        "stat-advanced"
       ],
       "tier": "extended"
     },
@@ -7047,8 +7022,7 @@
         }
       ],
       "vocabLinks": [
-        "histogram",
-        "frequency-density"
+        "stat-advanced"
       ],
       "tier": "extended"
     }

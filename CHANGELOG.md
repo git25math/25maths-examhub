@@ -1,5 +1,28 @@
 # Changelog
 
+## [2.3.20] - 2026-03-09 — vocabLinks 无效 slug 清除
+
+### 修复
+- **CIE**：清除 22 个 Gemini 生成的虚假 slug（如 `"gradient"`, `"vectors"` 等不在 LEVELS 中），保留 99 个有效链接
+- **Edexcel**：清除 6 个无效 slug（syllabus 定义了 slug 但 levels.js 无对应条目），保留 59 个有效链接
+- 修复前点击这些词汇链接会静默失败（`getLevelIdxBySlug` 返回 -1）
+
+### 最终 vocabLinks 状态
+| 考试局 | 有效链接 | 空链接 | 说明 |
+|--------|---------|--------|------|
+| CIE | 92/97 | 5 | 1.14/1.17/1.18/2.11/4.8 syllabus 无词汇 |
+| HHK | 55/55 | 0 | 100% |
+| Edexcel | 43/49 | 6 | 6 section 的 vocab level 未创建 |
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `data/knowledge-cie.json` | 清除 22 个无效 vocabLinks |
+| `data/knowledge-edexcel.json` | 清除 6 个无效 vocabLinks |
+| `js/config.js` | v2.3.19 → v2.3.20 |
+| `scripts/fix-vocablinks.js` | 新增：vocabLinks 校验/清除脚本 |
+| `scripts/check-slugs.js` | 新增：slug 有效性检查脚本 |
+
 ## [2.3.19] - 2026-03-09 — KP 跳转原路返回 + openDeck slug 修复
 
 ### Bug 修复

@@ -319,6 +319,7 @@
   - [x] Phase 3.6：Edexcel 4MA1 全量 49 KPs 覆盖 39/39 sections + enrichment → v2.3.17
   - [x] Phase 3.7：vocabLinks 补全（200/201 KPs 关联词汇映射） → v2.3.18
   - [x] Phase 3.8：KP 跳转原路返回 + openDeck slug 修复 + 词汇链接友好名称 → v2.3.19
+  - [x] Phase 3.9：vocabLinks 无效 slug 清除（CIE -22 / EDX -6） → v2.3.20
   - [ ] Phase 4：超管编辑
 - [x] **Phase D 掌握度系统**：4 维掌握度追踪（Vocab/Practice/Papers/Retention）+ 复习计划推荐 → v1.12.0
 
