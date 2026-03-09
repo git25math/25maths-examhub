@@ -2738,12 +2738,15 @@ function renderKPDetail(kp, board) {
   html += '<div class="kp-resource">';
   if (kp.vocabLinks && kp.vocabLinks.length > 0) {
     for (var vi = 0; vi < kp.vocabLinks.length; vi++) {
-      html += '<button class="kp-resource-link" data-kp-vocab="' + kp.vocabLinks[vi] + '">';
-      html += '\ud83d\udcdd ' + t('Vocabulary', '\u8bcd\u6c47') + ': ' + kp.vocabLinks[vi];
+      var vSlug = kp.vocabLinks[vi];
+      var vLv = typeof getLevelBySlug === 'function' ? getLevelBySlug(vSlug) : null;
+      var vLabel = vLv ? lvTitle(vLv) : vSlug;
+      html += '<button class="kp-resource-link" data-kp-vocab="' + vSlug + '" data-kp-return-id="' + kp.id + '" data-kp-return-board="' + board + '">';
+      html += '\ud83d\udcdd ' + escapeHtml(vLabel);
       html += '</button>';
     }
   }
-  html += '<button class="kp-resource-link" data-kp-practice-section="' + kp.section + '" data-kp-practice-board="' + board + '">';
+  html += '<button class="kp-resource-link" data-kp-practice-section="' + kp.section + '" data-kp-practice-board="' + board + '" data-kp-return-id="' + kp.id + '">';
   html += '\u270f\ufe0f ' + t('Practice Questions', '\u7ec3\u4e60\u9898');
   html += '</button>';
   html += '</div>';
@@ -2832,6 +2835,9 @@ document.addEventListener('click', function(e) {
   var vocabLink = e.target.closest('.kp-resource-link[data-kp-vocab]');
   if (vocabLink) {
     var slug = vocabLink.getAttribute('data-kp-vocab');
+    var vKpId = vocabLink.getAttribute('data-kp-return-id');
+    var vKpBoard = vocabLink.getAttribute('data-kp-return-board');
+    if (vKpId) window._kpReturnContext = { kpId: vKpId, board: vKpBoard };
     if (typeof openDeck === 'function') openDeck(slug);
     return;
   }
@@ -2840,6 +2846,8 @@ document.addEventListener('click', function(e) {
   if (practiceLink) {
     var pSec = practiceLink.getAttribute('data-kp-practice-section');
     var pBoard = practiceLink.getAttribute('data-kp-practice-board');
+    var pKpId = practiceLink.getAttribute('data-kp-return-id');
+    if (pKpId) window._kpReturnContext = { kpId: pKpId, board: pBoard };
     if (typeof startPracticeBySection === 'function') startPracticeBySection(pSec, pBoard);
     return;
   }

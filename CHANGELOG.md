@@ -1,5 +1,25 @@
 # Changelog
 
+## [2.3.19] - 2026-03-09 — KP 跳转原路返回 + openDeck slug 修复
+
+### Bug 修复
+- **openDeck slug 参数修复**：`openDeck()` 不支持字符串 slug 参数（仅支持 numeric index），导致 KP 详情页点击"关联词汇"按钮报错。新增 `getLevelIdxBySlug()` 自动转换
+- **KP → 词汇/练习原路返回**：新增 `_kpReturnContext` 机制，从 KP 详情页跳转到词汇卡组或练习题后，返回按钮原路返回 KP 详情页而非 section/home
+  - Deck 页返回按钮：检测 `_kpReturnContext` → 回到 KP
+  - Practice 答题中返回：`_pqSession.kpReturn` → 回到 KP
+  - Practice 完成页：结果屏 + "下一步"推荐 → 回到 KP
+
+### 优化
+- **词汇链接显示名称**：KP 详情页的关联词汇按钮现在显示 level 标题（如 "Integers"）而非原始 slug（如 "edx-num-integers"）
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `js/mastery.js` | `openDeck()` 支持 slug + deck 返回按钮 KP 感知 |
+| `js/practice.js` | `_pqSession.kpReturn` + 答题/完成页返回 KP |
+| `js/syllabus.js` | vocab/practice link 设置 `_kpReturnContext` + 显示 level 标题 |
+| `js/config.js` | v2.3.18 → v2.3.19 |
+
 ## [2.3.18] - 2026-03-09 — vocabLinks 补全（三考试局 200/201 KPs 关联词汇）
 
 ### 关联词汇补全

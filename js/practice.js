@@ -280,8 +280,10 @@ function startPractice(li) {
       answers: [],
       lvl: li,
       sectionId: _capturedSection || (lv._isSection ? lv._section : null),
-      sectionBoard: _capturedBoard || board
+      sectionBoard: _capturedBoard || board,
+      kpReturn: window._kpReturnContext || null
     };
+    window._kpReturnContext = null;
     showPanel('practice');
     renderPracticeCard();
   }).catch(function() {
@@ -307,7 +309,11 @@ function renderPracticeCard() {
 
   /* Top bar */
   html += '<div class="study-topbar">';
-  html += '<button class="back-btn" onclick="openDeck(' + s.lvl + ')">←</button>';
+  if (s.kpReturn) {
+    html += '<button class="back-btn" onclick="openKnowledgePoint(\'' + s.kpReturn.kpId + '\',\'' + s.kpReturn.board + '\')">←</button>';
+  } else {
+    html += '<button class="back-btn" onclick="openDeck(' + s.lvl + ')">←</button>';
+  }
   html += '<div class="study-progress"><div class="study-progress-fill" style="width:' + progress + '%"></div></div>';
   html += '<div class="study-count">' + (s.current + 1) + ' / ' + total + '</div>';
   html += '</div>';
@@ -436,24 +442,29 @@ function finishPractice() {
 
   /* Result screen */
   var total = s.questions.length;
+  var _kpBackAction = s.kpReturn ? 'openKnowledgePoint(\'' + s.kpReturn.kpId + '\',\'' + s.kpReturn.board + '\')' : 'openDeck(' + s.lvl + ')';
   var raw = resultScreenHTML(s.correct, total,
     'startPractice(' + s.lvl + ')',
-    'openDeck(' + s.lvl + ')', 'practice');
+    _kpBackAction, 'practice');
 
   /* Smart next step: context-aware recommendation */
   var step;
-  var _ppBoardKey = s.sectionBoard === 'edexcel' ? 'edx' : s.sectionBoard;
-  if (s.sectionId && typeof startPastPaper === 'function' && typeof _ppData !== 'undefined' && _ppData[_ppBoardKey] && _ppAccessAllowed(_ppBoardKey)) {
-    var _ppCheck = getPPBySection(_ppBoardKey, s.sectionId);
-    if (_ppCheck && _ppCheck.length > 0) {
-      step = nextStepHTML('\ud83d\udcc4', t('Try Past Papers', '\u5c1d\u8bd5\u771f\u9898'), 'startPastPaper(\'' + s.sectionId + '\',\'' + s.sectionBoard + '\',\'practice\')');
-    } else {
-      step = nextStepHTML('\ud83d\udcd8', t('Back to Section', '\u8fd4\u56de\u77e5\u8bc6\u70b9'), 'openSection(\'' + s.sectionId + '\',\'' + s.sectionBoard + '\')');
-    }
-  } else if (s.sectionId) {
-    step = nextStepHTML('\ud83d\udcd8', t('Back to Section', '\u8fd4\u56de\u77e5\u8bc6\u70b9'), 'openSection(\'' + s.sectionId + '\',\'' + s.sectionBoard + '\')');
+  if (s.kpReturn) {
+    step = nextStepHTML('\ud83d\udcd6', t('Back to Knowledge Point', '\u8fd4\u56de\u77e5\u8bc6\u70b9'), 'openKnowledgePoint(\'' + s.kpReturn.kpId + '\',\'' + s.kpReturn.board + '\')');
   } else {
-    step = nextStepHTML('\ud83d\udcd6', t('Back to Study', '\u8fd4\u56de\u5b66\u4e60'), 'openDeck(' + s.lvl + ')');
+    var _ppBoardKey = s.sectionBoard === 'edexcel' ? 'edx' : s.sectionBoard;
+    if (s.sectionId && typeof startPastPaper === 'function' && typeof _ppData !== 'undefined' && _ppData[_ppBoardKey] && _ppAccessAllowed(_ppBoardKey)) {
+      var _ppCheck = getPPBySection(_ppBoardKey, s.sectionId);
+      if (_ppCheck && _ppCheck.length > 0) {
+        step = nextStepHTML('\ud83d\udcc4', t('Try Past Papers', '\u5c1d\u8bd5\u771f\u9898'), 'startPastPaper(\'' + s.sectionId + '\',\'' + s.sectionBoard + '\',\'practice\')');
+      } else {
+        step = nextStepHTML('\ud83d\udcd8', t('Back to Section', '\u8fd4\u56de\u77e5\u8bc6\u70b9'), 'openSection(\'' + s.sectionId + '\',\'' + s.sectionBoard + '\')');
+      }
+    } else if (s.sectionId) {
+      step = nextStepHTML('\ud83d\udcd8', t('Back to Section', '\u8fd4\u56de\u77e5\u8bc6\u70b9'), 'openSection(\'' + s.sectionId + '\',\'' + s.sectionBoard + '\')');
+    } else {
+      step = nextStepHTML('\ud83d\udcd6', t('Back to Study', '\u8fd4\u56de\u5b66\u4e60'), 'openDeck(' + s.lvl + ')');
+    }
   }
 
   /* Wrong questions review list */

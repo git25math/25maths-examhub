@@ -768,6 +768,12 @@ function renderHome() {
 
 /* ═══ DECK DETAIL ═══ */
 function openDeck(idx) {
+  /* Support slug string: resolve to numeric index */
+  if (typeof idx === 'string' && isNaN(idx)) {
+    var resolved = getLevelIdxBySlug(idx);
+    if (resolved < 0) return;
+    idx = resolved;
+  }
   if (isGuestLocked(idx)) { showGuestLockPrompt(); return; }
   currentLvl = idx;
   renderDeck(idx);
@@ -814,7 +820,11 @@ function renderDeck(idx) {
 
   /* Header */
   html += '<div class="deck-header">';
-  if (lv._isSection && lv._section) {
+  if (window._kpReturnContext) {
+    var _kpRet = window._kpReturnContext;
+    html += '<button class="back-btn" onclick="window._kpReturnContext=null;openKnowledgePoint(\'' + _kpRet.kpId + '\',\'' + _kpRet.board + '\')">\u2190</button>';
+    window._kpReturnContext = null;
+  } else if (lv._isSection && lv._section) {
     var _backBoard = lv._board || 'cie';
     html += '<button class="back-btn" onclick="openSection(\'' + lv._section + '\',\'' + _backBoard + '\')">\u2190</button>';
     html += '<div class="deck-title">\ud83d\udcdd ' + lvTitle(lv) + '</div>';
