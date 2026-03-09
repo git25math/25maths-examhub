@@ -800,20 +800,23 @@ function renderSectionDetail(ch, sec, secIdx, board) {
     html += '<div class="kp-list">';
     for (var ki = 0; ki < kpList.length; ki++) {
       var kp = kpList[ki];
+      var kpFs = typeof getKPFLM === 'function' ? getKPFLM(kp.id) : 'new';
       var kpRes = typeof getKPResult === 'function' ? getKPResult(kp.id) : null;
-      var kpAriaStatus = kpRes ? (kpRes.score + '/' + kpRes.total) : 'New';
+      var kpFsLabels = { mastered: ['Mastered', '\u5df2\u638c\u63e1'], uncertain: ['Uncertain', '\u4e0d\u786e\u5b9a'], learning: ['Learning', '\u5b66\u4e60\u4e2d'] };
+      var kpAriaStatus = kpFsLabels[kpFs] ? kpFsLabels[kpFs][0] : 'New';
       var kpAriaLabel = pqRender(kp.title).replace(/<[^>]*>/g, '') + ' — ' + kpAriaStatus;
       html += '<div class="kp-row" role="button" tabindex="0" aria-label="' + kpAriaLabel + '" data-kp-id="' + kp.id + '" data-kp-board="' + board + '">';
       html += '<div class="kp-row-num">' + (ki + 1) + '</div>';
       html += '<div class="kp-row-name">' + pqRender(kp.title);
       if (kp.title_zh) html += '<span class="kp-row-name-zh">' + kp.title_zh + '</span>';
       html += '</div>';
-      if (kpRes) {
-        if (kpRes.score === kpRes.total) {
-          html += '<div class="kp-row-status kp-row-done">\u2713 ' + kpRes.score + '/' + kpRes.total + '</div>';
-        } else {
-          html += '<div class="kp-row-status kp-row-partial">' + kpRes.score + '/' + kpRes.total + '</div>';
-        }
+      var kpChipClass = 'kp-row-' + kpFs;
+      if (kpFs === 'mastered') {
+        html += '<div class="kp-row-status ' + kpChipClass + '">\u2713 ' + t('Mastered', '\u5df2\u638c\u63e1') + '</div>';
+      } else if (kpFs === 'uncertain') {
+        html += '<div class="kp-row-status ' + kpChipClass + '">' + t('Uncertain', '\u4e0d\u786e\u5b9a') + '</div>';
+      } else if (kpFs === 'learning') {
+        html += '<div class="kp-row-status ' + kpChipClass + '">' + t('Learning', '\u5b66\u4e60\u4e2d') + '</div>';
       } else {
         html += '<div class="kp-row-status kp-row-new">NEW</div>';
       }
@@ -1090,23 +1093,20 @@ function getSectionHealth(sectionId, board) {
     }
   }
 
-  /* Knowledge Point score */
+  /* Knowledge Point score — weighted FLM: mastered=1, uncertain=0.5, learning=0.2, new=0 */
   var knowledgeScore = 0;
   var hasKP = false;
   if (_kpData[board]) {
     var secKPs = getKPsForSection(sectionId, board);
     if (secKPs.length > 0) {
-      var kpTotalScore = 0, kpTotalMax = 0;
+      var kpWeighted = 0;
+      var KP_WEIGHTS = { mastered: 1.0, uncertain: 0.5, learning: 0.2 };
       for (var ksi = 0; ksi < secKPs.length; ksi++) {
-        var kpR = typeof getKPResult === 'function' ? getKPResult(secKPs[ksi].id) : null;
-        var tyLen = secKPs[ksi].testYourself ? secKPs[ksi].testYourself.length : 0;
-        if (kpR) { kpTotalScore += kpR.score; kpTotalMax += kpR.total; }
-        else { kpTotalMax += tyLen; }
+        var kpFs = typeof getKPFLM === 'function' ? getKPFLM(secKPs[ksi].id) : 'new';
+        kpWeighted += KP_WEIGHTS[kpFs] || 0;
       }
-      if (kpTotalMax > 0) {
-        hasKP = true;
-        knowledgeScore = Math.round(kpTotalScore / kpTotalMax * 100);
-      }
+      hasKP = true;
+      knowledgeScore = Math.round(kpWeighted / secKPs.length * 100);
     }
   }
 
@@ -2557,6 +2557,18 @@ function renderTodaysPlan() {
     html += '</div>';
   }
 
+  /* KP stale refresh */
+  var staleKPN = typeof getStaleKPCount === 'function' ? getStaleKPCount() : 0;
+  if (staleKPN > 0) {
+    html += '<div class="plan-card plan-refresh">';
+    html += '<div class="plan-card-header">';
+    html += '<span class="plan-card-icon">\ud83d\udcd6</span>';
+    html += '<span class="plan-card-title">' + t('Knowledge Point Review', '\u77e5\u8bc6\u70b9\u590d\u67e5') + '</span>';
+    html += '</div>';
+    html += '<div class="plan-card-count">' + staleKPN + ' ' + t('mastered KPs getting stale', '\u4e2a\u5df2\u638c\u63e1\u77e5\u8bc6\u70b9\u6b63\u5728\u8870\u9000') + '</div>';
+    html += '</div>';
+  }
+
   /* Today's progress */
   var todayStr = new Date().toLocaleDateString('en-CA');
   var _planS = loadS();
@@ -3317,6 +3329,11 @@ document.addEventListener('click', function(e) {
         var msg = correctCount === kpQuizTotal
           ? t('Perfect score!', '\u6ee1\u5206\uff01')
           : t('You scored', '\u4f60\u5f97\u4e86') + ' ' + correctCount + '/' + kpQuizTotal;
+        /* Show FLM status after session */
+        var _kpNewFs = typeof getKPFLM === 'function' ? getKPFLM(kpQuizId) : 'new';
+        var _fsLabels = { mastered: ['Mastered', '\u5df2\u638c\u63e1'], uncertain: ['Uncertain', '\u4e0d\u786e\u5b9a'], learning: ['Learning', '\u5b66\u4e60\u4e2d'], 'new': ['New', '\u65b0'] };
+        var _fsL = _fsLabels[_kpNewFs] || _fsLabels['new'];
+        msg += '<div class="kp-flm-chip kp-flm-' + _kpNewFs + '">' + t(_fsL[0], _fsL[1]) + '</div>';
         resultEl.innerHTML = '<div class="kp-quiz-score">' + msg + '</div>';
         resultEl.classList.remove('d-none');
         setTimeout(function() { resultEl.scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 100);

@@ -213,10 +213,14 @@ function _getNextAction(dueCount) {
     if (inProgress && nextNew) break;
   }
 
-  /* Priority: 0. Stale mastered words → 1. In-progress section → 2. Daily challenge → 3. Next new section */
+  /* Priority: 0. Stale mastered words → 1. Stale KPs → 2. In-progress section → 3. Daily challenge → 4. Next new section */
   var staleN = typeof getStaleCount === 'function' ? getStaleCount() : 0;
   if (staleN >= 5) {
     return { type: 'refresh', count: staleN };
+  }
+  var staleKPN = typeof getStaleKPCount === 'function' ? getStaleKPCount() : 0;
+  if (staleKPN >= 2) {
+    return { type: 'kp-refresh', count: staleKPN };
   }
   if (inProgress) {
     return { type: 'continue', section: inProgress.section, board: inProgress.board, label: inProgress.section.id + ' ' + inProgress.section.title, labelZh: inProgress.section.title_zh };
@@ -380,6 +384,11 @@ function _renderHeroAction() {
     html += '<div class="hero-section">' + action.count + ' ' + t('mastered words getting stale', '\u4e2a\u5df2\u638c\u63e1\u8bcd\u6c47\u6b63\u5728\u8870\u9000') + '</div>';
     html += '<button class="btn btn-primary hero-btn" data-hero-action="refresh">';
     html += '\ud83d\udd04 ' + t('Quick Scan', '\u5feb\u901f\u590d\u67e5') + ' \u2192</button>';
+  } else if (action.type === 'kp-refresh') {
+    html += '<div class="hero-label">' + t('Knowledge Point Review', '\u77e5\u8bc6\u70b9\u590d\u67e5') + '</div>';
+    html += '<div class="hero-section">' + action.count + ' ' + t('mastered KPs getting stale', '\u4e2a\u5df2\u638c\u63e1\u77e5\u8bc6\u70b9\u6b63\u5728\u8870\u9000') + '</div>';
+    html += '<button class="btn btn-primary hero-btn" data-hero-action="plan">';
+    html += '\ud83d\udcd6 ' + t("Today's Plan", '\u4eca\u65e5\u8ba1\u5212') + ' \u2192</button>';
   } else if (action.type === 'start') {
     html += '<div class="hero-label">' + t('Up next', '\u4e0b\u4e00\u7ad9') + '</div>';
     html += '<div class="hero-section">' + escapeHtml(action.label) + '</div>';

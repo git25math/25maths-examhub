@@ -367,7 +367,7 @@ function isSuperAdmin() {
 }
 
 /* App version */
-var APP_VERSION = 'v2.8.0';
+var APP_VERSION = 'v2.9.0';
 
 /* Mastered decay — refresh intervals (days) by refresh count */
 var REFRESH_INTERVALS = [7, 14, 30];

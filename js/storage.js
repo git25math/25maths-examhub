@@ -32,6 +32,7 @@ function invalidateCache() {
   _allWordsCache = null;
   _wordDataCache = null;
   _staleCacheData = null;
+  _staleKPCache = null;
   if (typeof _quizCache !== 'undefined') _quizCache = null;
   if (typeof _catLevelIndex !== 'undefined') _catLevelIndex = null;
   if (typeof _hhkSlugIdx !== 'undefined') _hhkSlugIdx = null;
@@ -805,19 +806,176 @@ function isModeDone(li, mode) {
   return !!s.modeDone[slug + ':' + mode];
 }
 
-/* ═══ KNOWLEDGE POINT PROGRESS ═══ */
+/* ═══ KNOWLEDGE POINT PROGRESS (FLM) ═══ */
+/*
+ * KP FLM uses SESSION-BASED transitions (not per-question like vocab).
+ * - Questions accumulate ok/fail during a test session
+ * - ONE FLM state transition happens when session is finalized via saveKPResult()
+ * - cs = consecutive successful sessions (accuracy >= 85%), NOT per-question
+ * - Thresholds: >=85% accuracy → success (cs+1, cs>=2 → mastered)
+ *               50-84% → uncertain (cs=0)
+ *               <50% → learning (cs=0)
+ *               mastered + <50% → uncertain (cs=0)
+ */
+
+/* One-time migration: old {score,total,ts} → FLM format */
+var _kpFLMMigrated = false;
+function _migrateKPtoFLM(s) {
+  if (_kpFLMMigrated || !s.kpDone) return;
+  var needsMigration = false;
+  for (var k in s.kpDone) {
+    if (s.kpDone[k].score != null && s.kpDone[k].fs == null) { needsMigration = true; break; }
+  }
+  if (!needsMigration) { _kpFLMMigrated = true; return; }
+  for (var kpId in s.kpDone) {
+    var d = s.kpDone[kpId];
+    if (d.fs != null) continue;
+    /* Conservative migration: require total >= 5 for mastered */
+    var pct = d.total > 0 ? d.score / d.total : 0;
+    var migratedFs;
+    if (pct >= 0.85 && d.total >= 5) migratedFs = 'mastered';
+    else if (pct >= 0.5) migratedFs = 'uncertain';
+    else if (d.total > 0) migratedFs = 'learning';
+    else migratedFs = 'new';
+    d.fs = migratedFs;
+    d.ok = d.score || 0;
+    d.fail = (d.total || 0) - (d.score || 0);
+    d.lr = d.ts || Date.now();
+    d.fmt = d.fs === 'mastered' ? (d.ts || Date.now()) : null;
+    d.rc = 0;
+    d.cs = d.fs === 'mastered' ? 2 : 0;
+    d.src = 'migrate';
+  }
+  _kpFLMMigrated = true;
+  try { localStorage.setItem(SK, JSON.stringify(s)); } catch (e) {}
+}
+
+/*
+ * saveKPResult — Session finalizer with FLM state transition.
+ * Called once when all KP MCQs are answered. This is the ONLY place
+ * where KP FLM state changes happen.
+ */
 function saveKPResult(kpId, score, total) {
   var s = loadS();
   if (!s.kpDone) s.kpDone = {};
-  s.kpDone[kpId] = { score: score, total: total, ts: Date.now() };
+  _migrateKPtoFLM(s);
+  var now = Date.now();
+  var prev = s.kpDone[kpId] || {};
+  var fs = prev.fs || 'new';
+  var cs = prev.cs || 0;
+  var pct = total > 0 ? score / total : 0;
+
+  /* Session-based FLM transition */
+  if (pct >= 0.85) {
+    /* Successful session */
+    cs++;
+    if (cs >= 2) {
+      if (fs !== 'mastered') prev.fmt = now;
+      fs = 'mastered';
+    } else {
+      /* cs=1: at least uncertain */
+      if (fs === 'new' || fs === 'learning') fs = 'uncertain';
+    }
+  } else if (pct >= 0.5) {
+    /* Partial session — uncertain, reset cs */
+    cs = 0;
+    if (fs === 'new' || fs === 'learning') fs = 'uncertain';
+    /* mastered stays mastered on partial (only drops on <50%) */
+  } else {
+    /* Failed session — demote, reset cs */
+    cs = 0;
+    if (fs === 'mastered') fs = 'uncertain';
+    else if (fs === 'new') fs = 'learning';
+    /* uncertain/learning stay as-is */
+  }
+
+  s.kpDone[kpId] = {
+    fs: fs, cs: cs,
+    ok: (prev.ok || 0) + score,
+    fail: (prev.fail || 0) + (total - score),
+    lr: now,
+    fmt: prev.fmt || null, rc: prev.rc || 0, src: prev.src || '',
+    /* backward compat */
+    score: score, total: total, ts: now
+  };
+
+  /* daily history + streak */
+  if (!s.history) s.history = [];
+  var today = new Date().toLocaleDateString('en-CA');
+  var entry = null;
+  for (var i = s.history.length - 1; i >= 0; i--) {
+    if (s.history[i].d === today) { entry = s.history[i]; break; }
+  }
+  if (!entry) { entry = { d: today, a: 0, ok: 0, fail: 0, m: 0 }; s.history.push(entry); }
+  entry.a += total;
+  entry.ok += score;
+  entry.fail += (total - score);
+  if (s.history.length > 365) s.history = s.history.slice(s.history.length - 365);
+
+  if (!s.streak) s.streak = { cur: 0, max: 0, last: '' };
+  var _last = s.streak.last;
+  var _newStreak = false;
+  if (today !== _last) {
+    var _td = new Date(today + 'T00:00:00');
+    var _ld = _last ? new Date(_last + 'T00:00:00') : null;
+    var _diff = _ld ? Math.round((_td - _ld) / 86400000) : 999;
+    s.streak.cur = (_diff === 1) ? (s.streak.cur || 0) + 1 : 1;
+    if (s.streak.cur > (s.streak.max || 0)) s.streak.max = s.streak.cur;
+    s.streak.last = today;
+    _newStreak = true;
+  }
+
+  invalidateCache();
   writeS(s);
+  if (_newStreak) showToast('\ud83d\udd25 ' + t(getStreakCount() + '-day streak!', '\u8fde\u7eed\u5b66\u4e60 ' + getStreakCount() + ' \u5929\uff01'));
+  clearTimeout(_badgeCheckTimer);
+  _badgeCheckTimer = setTimeout(function() { if (typeof checkBadges === 'function') checkBadges(); }, 3000);
   debouncedSync();
 }
+
 function getKPResult(kpId) {
   var s = loadS();
+  if (s.kpDone) _migrateKPtoFLM(s);
   return s.kpDone ? s.kpDone[kpId] || null : null;
 }
 function isKPDone(kpId) { return !!getKPResult(kpId); }
+function getKPFLM(kpId) {
+  var d = getKPResult(kpId);
+  return d ? (d.fs || 'new') : 'new';
+}
+
+/* Get stale mastered KPs, filtered by board */
+var _staleKPCache = null;
+var _staleKPCacheTime = 0;
+function getStaleKPs(board) {
+  var now = Date.now();
+  if (_staleKPCache && (now - _staleKPCacheTime) < 30000 && !board) return _staleKPCache;
+  var s = loadS();
+  if (!s.kpDone) return [];
+  _migrateKPtoFLM(s);
+  /* Build set of valid KP ids for board filter */
+  var validIds = null;
+  if (board && typeof _kpData !== 'undefined' && _kpData[board]) {
+    validIds = {};
+    for (var ki = 0; ki < _kpData[board].length; ki++) {
+      validIds[_kpData[board][ki].id] = true;
+    }
+  }
+  var stale = [];
+  for (var kpId in s.kpDone) {
+    if (validIds && !validIds[kpId]) continue;
+    var d = s.kpDone[kpId];
+    if (!d.fs || d.fs !== 'mastered' || !d.fmt) continue;
+    var rc = d.rc || 0;
+    var threshold = REFRESH_INTERVALS[Math.min(rc, REFRESH_INTERVALS.length - 1)];
+    if ((now - d.fmt) / 86400000 >= threshold) {
+      stale.push({ id: kpId, rc: rc, daysSince: Math.floor((now - d.fmt) / 86400000) });
+    }
+  }
+  if (!board) { _staleKPCache = stale; _staleKPCacheTime = now; }
+  return stale;
+}
+function getStaleKPCount(board) { return getStaleKPs(board).length; }
 
 /* ═══ MODE UNLOCK — all modes open ═══ */
 function isModeUnlocked() { return true; }

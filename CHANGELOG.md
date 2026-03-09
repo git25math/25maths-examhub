@@ -1,5 +1,40 @@
 # Changelog
 
+## [2.9.0] - 2026-03-09 — 知识点接入 FLM（Learning Unit Phase 1）
+
+### 核心功能：KP Session-Based FLM
+- `saveKPResult()` 重构为 FLM session finalizer — 题组提交时统一结算状态转换
+- KP FLM 状态：new → learning → uncertain → mastered（与词汇一致的 4 态模型）
+- `cs` 语义为"连续成功 session 次数"（准确率 ≥ 85%），区别于词汇的逐题 cs
+- 阈值设计：≥85% 成功（cs+1）、50-84% uncertain、<50% 降级（mastered→uncertain）
+- 旧数据自动迁移：85%+total≥5 → mastered、≥50% → uncertain、其余 → learning
+
+### getSectionHealth 升级
+- KP 维度从 score/total 百分比改为 FLM 加权评分（mastered=1.0, uncertain=0.5, learning=0.2）
+- 与 vocabScore 语义一致（都基于 FLM 状态），权重分配更合理
+
+### KP 衰退检测
+- `getStaleKPs(board)` 支持按考试局过滤 + 30s TTL 缓存
+- Today's Plan 新增"知识点复查"卡片，显示衰退 KP 数量
+- Plan badge 计入 KP stale 数量
+
+### KP FLM 状态可视化
+- KP 列表：✓/✗ 二值标记替换为 Mastered/Uncertain/Learning/NEW 彩色状态 chip
+- KP 测验结果页：显示 FLM 状态标签（含配色）
+- 首页 Hero：stale KP ≥ 2 时推荐知识点复查
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| storage.js | saveKPResult FLM session finalizer + _migrateKPtoFLM 保守阈值 + getStaleKPs board 过滤 + 30s 缓存 |
+| syllabus.js | getSectionHealth KP 加权评分 + KP 列表 FLM chip + 测验结果 FLM 标签 + Today's Plan KP stale 卡片 |
+| mastery.js | _getNextAction KP 衰退感知 + Hero kp-refresh 动作 |
+| ui.js | Plan badge 计入 KP stale 数量 |
+| css/style.css | kp-row-mastered/uncertain/learning + kp-flm-chip 状态样式 |
+| config.js | APP_VERSION → v2.9.0 |
+| sw.js | CACHE_VERSION → v2.9.0 |
+| index.html | cache-bust → v2.9.0 |
+
 ## [2.8.0] - 2026-03-09 — FLM 质量加固 + 数据完整性
 
 ### 性能优化
