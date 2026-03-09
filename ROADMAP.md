@@ -420,3 +420,10 @@
 - [x] **渐进解锁质量优化**: XSS onclick消除 + isFeatureUnlocked缓存 + prevStats传递 + HHK解锁修复 + migrateForceUnlock幂等化 + 可访问性 → v2.2.23
 - [x] **防御性修复**: showNudge/spell null check + export getWordData循环缓存 → v2.2.25
 - [x] **事件委托修复**: practice.js 编辑按钮委托冲突 + quiz querySelector优化 + admin menu抽取 → v2.2.27
+
+## v2.3 知识点精析 + 变式题生成
+
+### Phase 10F-G — 变式题生成管线
+- [x] **Gemini 变式题生成器**: gen-variants.sh 自动检测薄弱 section + 母题多样化选取 + N 变式生成 → v2.3.22
+- [x] **JSON 修复 + 合并管线**: fix-variant-json.js 模式验证 + merge-variants.js 去重/排序/覆盖统计 → v2.3.22
+- [x] **三考试局批量生成**: HHK +480 / CIE +177 / EDX +24 变式题，总练习题 2,454→3,135 → v2.3.22

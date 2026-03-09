@@ -1,5 +1,31 @@
 # Changelog
 
+## [2.3.22] - 2026-03-09 — 变式题生成管线（三考试局 +681 变式题，覆盖率全面提升）
+
+### 新增管线
+- **gen-variants.sh** — Gemini 驱动变式题生成器，自动检测薄弱 section（低于阈值），从母题生成 N 个换数/换情境的变式
+- **fix-variant-json.js** — JSON 修复 + 选择题 schema 验证（q/o[4]/a/s）
+- **merge-variants.js** — 去重合并 + 顺序 ID 分配 + section 排序 + 覆盖统计
+
+### 生成数据
+| 考试局 | 新增变式 | 覆盖 sections | 合并后总题数 | 平均题数/section |
+|--------|----------|--------------|-------------|-----------------|
+| HHK | +480 | 39 sections | 755 | 14Q (原 5Q) |
+| CIE | +177 | 23 sections | 1,695 | 24Q |
+| EDX | +24 | 3 sections | 960 | 25Q |
+| **合计** | **+681** | **65 sections** | **3,410** | — |
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `scripts/gen-variants.sh` | 新增：变式题生成脚本 |
+| `scripts/fix-variant-json.js` | 新增：JSON 修复 + schema 验证 |
+| `scripts/merge-variants.js` | 新增：变式题合并工具 |
+| `data/questions-25m.json` | +480 变式题（275→755） |
+| `data/questions-cie.json` | +177 变式题（1,518→1,695） |
+| `data/questions-edx.json` | +24 变式题（936→960） |
+| `js/config.js` | v2.3.21 → v2.3.22 |
+
 ## [2.3.21] - 2026-03-09 — 补建 11 个缺失 vocab levels（201/201 KPs 100% 关联词汇）
 
 ### 新增 Vocabulary Levels
