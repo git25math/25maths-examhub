@@ -459,6 +459,9 @@
 - [x] **KP 详情 Related Questions (v3.2.0)**: ⑤ Related Resources 新增 PP+MCQ 题目统计
 - [x] **Recovery Pack 交互 (v3.2.1)**: ppRate(needs_work) 拦截→展开修复卡片（弱词汇+弱KP+类似题）可点击跳转
 
+## v3.3 Print Repair Sheet [DONE]
+- [x] **单题打印修复单 (v3.3.0)**: worksheet.js 新窗口 A4 打印（题目+词汇+KP+留白+纠错+订正），从 Recovery Pack 触发
+
 ## v2.9 知识点接入 FLM — Learning Unit Phase 1 [DONE]
 - [x] **KP Session-Based FLM**: saveKPResult 重构为 session finalizer，题组提交统一结算 → v2.9.0
 - [x] **cs 语义统一**: KP cs = 连续成功 session 次数（≥85% 准确率），区别于词汇逐题 cs → v2.9.0

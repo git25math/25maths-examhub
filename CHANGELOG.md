@@ -1,5 +1,47 @@
 # Changelog
 
+## [3.3.0] - 2026-03-09 — Print Repair Sheet MVP
+
+### 单题打印修复单（js/worksheet.js 新增）
+- `buildRepairWorksheet(q, sectionId, board)` — 组装 worksheet model（复用 getRecoveryCandidates + getSectionInfo）
+- `renderRepairWorksheet(ws)` — 生成完整 A4 printable HTML（内嵌 CSS + KaTeX CDN）
+- `printRepairWorksheet(q, sectionId, board)` — 新窗口打开 → KaTeX 渲染 → window.print()
+- `createWorksheetId()` — 本地唯一 ID（WS-YYYYMMDD-HHMMSS-NN）
+
+### 打印页内容结构
+- Header（25Maths 品牌 + Worksheet ID + 日期）
+- Meta（Question ID、Board、Chapter、Section、Marks、Source）
+- Related Vocabulary（词汇 + 释义 + FLM 状态文本）
+- Related Knowledge Points（KP 标题 + 中文 + 状态）
+- Question（复用 _ppRenderWithMarks + _ppRenderFigures + KaTeX 渲染）
+- Working Area（大块留白供纸面演算）
+- Error Analysis（7 项复选框：Vocabulary/Concept/Method/Misread/Calculation/Careless/Other）
+- Correction Summary（三行：Correct method / My mistake / Next time）
+- Footer（ID 回显 + "Use Question ID to find this item in 25Maths" 提示）
+
+### Recovery Pack 集成
+- Recovery Pack actions 新增 `Print Repair Sheet` 按钮
+- delegation 新增 `recoverPrint` action
+
+### 技术要点
+- 新窗口方案，不污染 SPA
+- print 样式完全内嵌在打印 HTML 中，不改主站 CSS
+- KaTeX onload 后 renderMathInElement → setTimeout 300ms → window.print()
+- 弹窗被拦截时 showToast 提示
+- questionHtml 兜底：渲染失败时显示 "Question content unavailable"
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| js/worksheet.js | **新增** — 4 个函数 + 完整 A4 打印模板 |
+| js/practice.js | + Print 按钮 + recoverPrint delegation |
+| js/config.js | APP_VERSION → v3.3.0 |
+| scripts/minify.sh | + worksheet.js 加入 bundle |
+| CLAUDE.md | JS 文件数 23 + load order 更新 |
+| sw.js | CACHE_VERSION → v3.3.0 (auto-sync) |
+
+---
+
 ## [3.2.1] - 2026-03-09 — Recovery Pack 交互式修复建议
 
 ### Recovery Pack（practice.js）

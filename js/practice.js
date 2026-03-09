@@ -1983,6 +1983,12 @@ function renderPPCard() {
       else if (action === 'recoverVocab') openDeck(Number(target.dataset.levelIdx));
       else if (action === 'recoverKP') openKnowledgePoint(target.dataset.kpId, target.dataset.board);
       else if (action === 'recoverQuestion') ppReviewWrongItem(target.dataset.qid, target.dataset.section, target.dataset.board);
+      else if (action === 'recoverPrint') {
+        var rpq = _ppSession && _ppSession.questions ? _ppSession.questions[_ppSession.current] : null;
+        if (rpq && typeof printRepairWorksheet === 'function') {
+          printRepairWorksheet(rpq, _ppSession.sectionId || rpq.s || '', _ppSession.board || '');
+        }
+      }
       else if (action === 'recoverSkip') _ppRecoverySkip();
     });
   }
@@ -2110,6 +2116,8 @@ function _ppShowRecoveryPack(q) {
 
   /* Action buttons */
   html += '<div class="recovery-pack-actions">';
+  html += '<button class="btn btn-sm" data-action="recoverPrint">';
+  html += '\ud83d\udda8 ' + t('Print Repair Sheet', '\u6253\u5370\u4fee\u590d\u5355') + '</button>';
   html += '<button class="btn btn-sm btn-ghost" data-action="recoverSkip">';
   html += t('Skip \u2192 Next', '\u8df3\u8fc7 \u2192 \u4e0b\u4e00\u9898') + '</button>';
   html += '</div>';
