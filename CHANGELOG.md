@@ -1,5 +1,35 @@
 # Changelog
 
+## [2.4.1] - 2026-03-09 — 真题 PDF 还原排版
+
+### 右对齐分值（PDF 风格）
+- **`_ppRenderWithMarks(q)`**：按 part label 分段，每段末尾插入右对齐 `[n]` 分值标记
+- **`_insertPartMarks(html, partsMap)`**：解析 `(a)/(b)/(i)/(ii)` 等标记，自动插入对应分值
+- 无 parts 的题目在末尾显示总分值 `[marks]`
+- 移除旧的 `.pp-parts-bar` 平铺显示，改为内嵌到题目正文
+
+### 表格补全
+- **`convert-tables.py`**：移除 `InsertScreenShot` 跳过逻辑，改为剥离 ISS wrapper 后转换 tabular
+- **60 题 texHtml 补全**：2025 MayJune 新卷的 tabular 题目全部生成 HTML table（375/375 覆盖率 100%）
+
+### 缺图提示优化
+- `hasFigure` 无资产时显示虚线边框占位区 + 🖼️ 图标 + "查看原卷"链接
+
+### 超管编辑器增强
+- **工具栏**：插入表格（行列选择 + tabular 模板）、数学公式 `$x$`、加粗按钮
+- **实时 tabular 预览**：`_ppConvertTabularRuntime()` JS 运行时转换 LaTeX 表格为 HTML
+- **Parts 小题编辑**：可增删的 label + marks 行，保存到 `question_edits.data.parts`
+- **数据合并**：`loadPastPaperData` 增加 parts 字段合并
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `js/practice.js` | +195 行：_ppRenderWithMarks + 编辑器工具栏 + parts 编辑 + runtime tabular |
+| `css/style.css` | +9 行：pp-marks-right + pp-part-block + pp-figure-placeholder + 编辑器样式 |
+| `js/config.js` | v2.4.0 → v2.4.1 |
+| `data/papers-cie.json` | 60 题 texHtml 补全 |
+| `scripts/convert-tables.py` | InsertScreenShot 剥离逻辑 |
+
 ## [2.4.0] - 2026-03-09 — KP 超管编辑 + 真题分值持久化
 
 ### KP 超管在线编辑（Phase 4）

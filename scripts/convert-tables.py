@@ -258,11 +258,12 @@ def convert_tex(tex):
     if '\\begin{tabular}' not in tex:
         return None
 
-    # Skip if wrapped in InsertScreenShot
-    if 'InsertScreenShot' in tex:
-        return None
-
     result = tex
+
+    # Strip InsertScreenShot wrappers (keep inner content including tabular)
+    if 'InsertScreenShot' in result:
+        result = re.sub(r'\\begin\{InsertScreenShot\}\s*', '', result)
+        result = re.sub(r'\\end\{InsertScreenShot\}', '', result)
 
     # Remove \renewcommand{\arraystretch}{...} before tabular
     result = re.sub(r'\\renewcommand\{\\arraystretch\}\{[^}]*\}\s*', '', result)

@@ -429,3 +429,4 @@
 - [x] **三考试局批量生成**: HHK +480 / CIE +177 / EDX +24 变式题，总练习题 2,454→3,135 → v2.3.22
 - [x] **ID 去重机制合规化**: 集中 ID 分配（merge 唯一分配点）+ 持久化计数器 + Gemini 不分配 ID + --clean 选项 → v2.3.24
 - [x] **变式题质量审计**: audit-variants.js 6 条规则 + fix-variant-quality.js 自动修复 48 ERROR + 质量门 + Prompt 加固 → v2.3.25
+- [x] **真题 PDF 还原排版**: 右对齐分值（_ppRenderWithMarks）+ 表格补全（60 题 ISS 修复）+ 缺图优化 + 编辑器工具栏（插入表格/Parts 编辑）→ v2.4.1

@@ -1137,6 +1137,7 @@ function loadPastPaperData(board) {
         if (ed.tex !== undefined) qs[qi].tex = ed.tex;
         if (ed.d !== undefined) qs[qi].d = ed.d;
         if (ed.g !== undefined) qs[qi].g = ed.g;
+        if (ed.parts !== undefined) qs[qi].parts = ed.parts;
       }
     }
     return _ppData[board];
@@ -1272,6 +1273,50 @@ function _ppRenderTex(texOrQ) {
   return html;
 }
 
+/* ═══ Render question with right-aligned marks (PDF-style) ═══ */
+
+function _ppRenderWithMarks(q) {
+  var html = _ppRenderTex(q);
+  if (!q.parts || !q.parts.length) {
+    /* No parts — show total marks right-aligned at end */
+    return '<div class="pp-part-block">' + html +
+      '<span class="pp-marks-right">[' + q.marks + ']</span></div>';
+  }
+  /* Build parts lookup: "(a)" → marks */
+  var partsMap = {};
+  for (var i = 0; i < q.parts.length; i++) {
+    partsMap[q.parts[i].label.toLowerCase()] = q.parts[i].marks;
+  }
+  return _ppInsertPartMarks(html, partsMap);
+}
+
+function _ppInsertPartMarks(html, partsMap) {
+  /* Split by part labels like (a), (b), (i), (ii), (iii) etc. */
+  var partRe = /(\([a-z]\)|\([ivx]+\))/gi;
+  var parts = html.split(partRe);
+  /* parts array: [intro, "(a)", contentA, "(b)", contentB, ...] */
+  if (parts.length < 3) {
+    /* No part labels found in text — just show total */
+    return html;
+  }
+  var result = '';
+  /* First segment is the intro (before any part label) */
+  var intro = parts[0].replace(/\s+$/, '');
+  if (intro) result += '<div class="pp-part-intro">' + intro + '</div>';
+  /* Process pairs: label + content */
+  for (var i = 1; i < parts.length; i += 2) {
+    var label = parts[i];
+    var content = (i + 1 < parts.length) ? parts[i + 1] : '';
+    var marks = partsMap[label.toLowerCase()];
+    var marksHtml = (marks != null) ? '<span class="pp-marks-right">[' + marks + ']</span>' : '';
+    /* Trim trailing whitespace from content */
+    content = content.replace(/\s+$/, '');
+    result += '<div class="pp-part-block"><span class="pp-part-label">' + label + '</span>' +
+      content + marksHtml + '</div>';
+  }
+  return result;
+}
+
 function _ppRenderFigures(q) {
   var figs = _ppFigures[q.id];
   if (figs && figs.length > 0) {
@@ -1282,7 +1327,15 @@ function _ppRenderFigures(q) {
     return h + '</div>';
   }
   if (q.hasFigure) {
-    return '<div class="pp-figure-notice">' + t('This question includes a diagram \u2014 refer to original paper', '\u672c\u9898\u5305\u542b\u56fe\u8868\uff0c\u8bf7\u53c2\u8003\u539f\u5377') + '</div>';
+    var figH = '<div class="pp-figure-placeholder">';
+    figH += '<div style="font-size:24px;margin-bottom:6px">\ud83d\uddbc\ufe0f</div>';
+    figH += t('This question includes a diagram', '\u672c\u9898\u5305\u542b\u56fe\u8868');
+    if (q.paper && q.year) {
+      figH += '<br><a href="https://papers.gceguide.cc/Cambridge%20IGCSE/Mathematics%20(0580)/' + q.year +
+        '/" target="_blank" rel="noopener">' + t('View original paper \u2197', '\u67e5\u770b\u539f\u5377 \u2197') + '</a>';
+    }
+    figH += '</div>';
+    return figH;
   }
   return '';
 }
@@ -1485,19 +1538,11 @@ function renderPPCard() {
     html += '<div style="padding:4px 16px 0;font-size:11px;color:var(--c-muted)">' + _ppGroupLabel(q.g) + '</div>';
   }
 
-  /* Card body: question */
+  /* Card body: question with PDF-style right-aligned marks */
   html += '<div class="pp-card-body" id="pp-question-body">';
-  html += _ppRenderTex(q);
+  html += _ppRenderWithMarks(q);
   html += _ppRenderFigures(q);
   html += '</div>';
-
-  /* Parts info */
-  var partsStr = _ppPartsInfo(q);
-  if (partsStr) {
-    html += '<div class="pp-parts-bar">';
-    html += partsStr;
-    html += '</div>';
-  }
 
   /* Mark Scheme toggle (practice mode only) */
   if (_ppSession.mode === 'practice') {
@@ -2443,7 +2488,13 @@ function editPastPaperQ(qIdx) {
   html += '</div>';
 
   /* Editable fields */
-  html += '<label class="settings-label">' + t('Question Text (LaTeX)', '题目文本 (LaTeX)') + '</label>';
+  html += '<label class="settings-label">' + t('Question Text (LaTeX)', '\u9898\u76ee\u6587\u672c (LaTeX)') + '</label>';
+  /* Toolbar */
+  html += '<div class="pp-ed-toolbar">';
+  html += '<button class="btn btn-sm btn-ghost" type="button" onclick="_ppEdInsertTable()" title="' + t('Insert Table', '\u63d2\u5165\u8868\u683c') + '">\ud83d\udcca ' + t('Table', '\u8868\u683c') + '</button>';
+  html += '<button class="btn btn-sm btn-ghost" type="button" onclick="_ppEdInsertAtCursor(\'$\',\'$\')" title="Math">$x$</button>';
+  html += '<button class="btn btn-sm btn-ghost" type="button" onclick="_ppEdInsertAtCursor(\'\\\\textbf{\',\'}\')" title="Bold"><strong>B</strong></button>';
+  html += '</div>';
   html += '<textarea class="bug-textarea font-mono-sm" id="pp-ed-tex" rows="8">' + escapeHtml(q.tex) + '</textarea>';
 
   html += '<div class="btn-row btn-row--gap12">';
@@ -2482,6 +2533,16 @@ function editPastPaperQ(qIdx) {
   html += '</select></div>';
   html += '</div>';
 
+  /* Parts editor */
+  html += '<label class="settings-label">' + t('Parts (sub-questions)', '\u5c0f\u9898') + '</label>';
+  html += '<div id="pp-ed-parts">';
+  var _edParts = q.parts || [];
+  for (var _pi = 0; _pi < _edParts.length; _pi++) {
+    html += _ppEdPartRow(_edParts[_pi].label, _edParts[_pi].marks, _pi);
+  }
+  html += '</div>';
+  html += '<button class="btn btn-sm btn-ghost" type="button" onclick="_ppEdAddPart()">+ ' + t('Add Part', '\u6dfb\u52a0\u5c0f\u9898') + '</button>';
+
   /* Preview */
   html += '<div class="mt-12">';
   html += '<label class="settings-label">' + t('Preview', '预览') + '</label>';
@@ -2511,8 +2572,107 @@ function _ppUpdateEditPreview() {
   var prev = E('pp-ed-preview');
   var texEl = E('pp-ed-tex');
   if (!prev || !texEl) return;
-  prev.innerHTML = _ppRenderTex(texEl.value);
+  var tex = texEl.value;
+  /* Runtime tabular → HTML conversion for preview */
+  tex = _ppConvertTabularRuntime(tex);
+  prev.innerHTML = _ppRenderTex(tex);
   renderMath(prev);
+}
+
+/* ═══ Editor helper functions ═══ */
+
+function _ppConvertTabularRuntime(tex) {
+  /* Simplified JS version of convert-tables.py for live preview */
+  return tex.replace(/\\begin\{tabular\}\{([^}]*)\}([\s\S]*?)\\end\{tabular\}/g, function(m, spec, body) {
+    var aligns = [];
+    var hasBorders = spec.indexOf('|') >= 0;
+    for (var i = 0; i < spec.length; i++) {
+      if (spec[i] === 'l') aligns.push('left');
+      else if (spec[i] === 'c') aligns.push('center');
+      else if (spec[i] === 'r') aligns.push('right');
+    }
+    var rows = body.split(/\\\\(?:\s*\[[^\]]*\])?/);
+    var cls = hasBorders ? 'pp-table' : 'pp-table pp-table-nb';
+    var h = '<div class="pp-table-wrap"><table class="' + cls + '">';
+    var isFirst = true;
+    for (var ri = 0; ri < rows.length; ri++) {
+      var row = rows[ri].replace(/\\hline/g, '').replace(/\\cline\{[^}]*\}/g, '').trim();
+      if (!row) continue;
+      var cells = row.split('&');
+      var tag = isFirst ? 'th' : 'td';
+      h += '<tr>';
+      for (var ci = 0; ci < cells.length; ci++) {
+        var cell = cells[ci].trim().replace(/\\textbf\{([^}]*)\}/g, '<strong>$1</strong>');
+        var al = ci < aligns.length ? aligns[ci] : 'center';
+        h += '<' + tag + (al !== 'left' ? ' style="text-align:' + al + '"' : '') + '>' + cell + '</' + tag + '>';
+      }
+      h += '</tr>';
+      isFirst = false;
+    }
+    h += '</table></div>';
+    return h;
+  });
+}
+
+function _ppEdInsertAtCursor(before, after) {
+  var texEl = E('pp-ed-tex');
+  if (!texEl) return;
+  var s = texEl.selectionStart, e = texEl.selectionEnd;
+  var sel = texEl.value.substring(s, e);
+  texEl.value = texEl.value.slice(0, s) + before + sel + after + texEl.value.slice(e);
+  texEl.selectionStart = texEl.selectionEnd = s + before.length + sel.length;
+  texEl.focus();
+  if (texEl.oninput) texEl.oninput();
+}
+
+function _ppEdInsertTable() {
+  var texEl = E('pp-ed-tex');
+  if (!texEl) return;
+  var rows = parseInt(prompt(t('Number of rows (including header):', '\u884c\u6570\uff08\u542b\u8868\u5934\uff09\uff1a'), '3')) || 3;
+  var cols = parseInt(prompt(t('Number of columns:', '\u5217\u6570\uff1a'), '3')) || 3;
+  var spec = '|' + Array(cols).fill('c').join('|') + '|';
+  var tpl = '\\begin{tabular}{' + spec + '}\n\\hline\n';
+  for (var r = 0; r < rows; r++) {
+    tpl += Array(cols).fill('  ').join(' & ') + ' \\\\\n\\hline\n';
+  }
+  tpl += '\\end{tabular}';
+  var pos = texEl.selectionStart;
+  texEl.value = texEl.value.slice(0, pos) + '\n' + tpl + '\n' + texEl.value.slice(pos);
+  texEl.focus();
+  if (texEl.oninput) texEl.oninput();
+}
+
+function _ppEdPartRow(label, marks, idx) {
+  return '<div class="pp-ed-part-row" data-idx="' + idx + '">' +
+    '<input type="text" class="bug-select pp-ed-part-label" value="' + escapeHtml(label) + '" style="width:60px" placeholder="(a)">' +
+    '<input type="number" class="bug-select pp-ed-part-marks" value="' + marks + '" min="0" max="20" style="width:60px" placeholder="marks">' +
+    '<button class="btn btn-sm btn-ghost" type="button" onclick="this.parentElement.remove()" title="Remove">\u2716</button>' +
+    '</div>';
+}
+
+function _ppEdAddPart() {
+  var container = E('pp-ed-parts');
+  if (!container) return;
+  var idx = container.children.length;
+  /* Auto-suggest next label */
+  var nextLabel = '(' + String.fromCharCode(97 + idx) + ')';
+  var div = document.createElement('div');
+  div.innerHTML = _ppEdPartRow(nextLabel, 1, idx);
+  container.appendChild(div.firstChild);
+}
+
+function _ppEdCollectParts() {
+  var container = E('pp-ed-parts');
+  if (!container) return null;
+  var rows = container.querySelectorAll('.pp-ed-part-row');
+  if (!rows.length) return [];
+  var parts = [];
+  for (var i = 0; i < rows.length; i++) {
+    var label = rows[i].querySelector('.pp-ed-part-label').value.trim();
+    var marks = parseInt(rows[i].querySelector('.pp-ed-part-marks').value) || 0;
+    if (label) parts.push({ label: label, marks: marks });
+  }
+  return parts;
 }
 
 function submitPPEdit(qid) {
@@ -2527,16 +2687,18 @@ function submitPPEdit(qid) {
   var newMarks = E('pp-ed-marks') ? parseInt(E('pp-ed-marks').value) || q.marks : q.marks;
   var newDiff = E('pp-ed-diff') ? parseInt(E('pp-ed-diff').value) || q.d : q.d;
   var newGroup = E('pp-ed-group') ? E('pp-ed-group').value : q.g;
+  var newParts = _ppEdCollectParts();
 
   /* Build diff description */
   var changes = [];
   if (newTex !== q.tex) changes.push('tex');
-  if (newMarks !== q.marks) changes.push('marks: ' + q.marks + '→' + newMarks);
-  if (newDiff !== q.d) changes.push('diff: ' + q.d + '→' + newDiff);
-  if (newGroup !== q.g) changes.push('group: ' + q.g + '→' + newGroup);
+  if (newMarks !== q.marks) changes.push('marks: ' + q.marks + '\u2192' + newMarks);
+  if (newDiff !== q.d) changes.push('diff: ' + q.d + '\u2192' + newDiff);
+  if (newGroup !== q.g) changes.push('group: ' + q.g + '\u2192' + newGroup);
+  if (newParts !== null && JSON.stringify(newParts) !== JSON.stringify(q.parts || [])) changes.push('parts');
 
   if (changes.length === 0) {
-    E('pp-ed-msg').textContent = t('No changes detected', '未检测到修改');
+    E('pp-ed-msg').textContent = t('No changes detected', '\u672a\u68c0\u6d4b\u5230\u4fee\u6539');
     return;
   }
 
@@ -2545,6 +2707,7 @@ function submitPPEdit(qid) {
   if (newMarks !== q.marks) editData.marks = newMarks;
   if (newDiff !== q.d) editData.d = newDiff;
   if (newGroup !== q.g) editData.g = newGroup;
+  if (newParts !== null && JSON.stringify(newParts) !== JSON.stringify(q.parts || [])) editData.parts = newParts;
 
   sb.from('question_edits').upsert({
     qid: q.id,
