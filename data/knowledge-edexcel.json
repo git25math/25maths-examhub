@@ -73,7 +73,9 @@
           "e_zh": "LCM 通过取所有质因数的最高幂次求得：$2^2 \\times 3 \\times 5 = 4 \\times 3 \\times 5 = 60$。"
         }
       ],
-      "vocabLinks": [],
+      "vocabLinks": [
+        "edx-num-integers"
+      ],
       "tier": "both"
     },
     {
@@ -141,7 +143,9 @@
           "e_zh": "$2 \\div \\frac{1}{4} = 2 \\times \\frac{4}{1} = 8$。"
         }
       ],
-      "vocabLinks": [],
+      "vocabLinks": [
+        "edx-num-fractions"
+      ],
       "tier": "both"
     },
     {
@@ -209,7 +213,9 @@
           "e_zh": "$0.\\dot{1}\\dot{2} = \\frac{12}{99}$。分子分母同时除以 3 得到 $\\frac{4}{33}$。"
         }
       ],
-      "vocabLinks": [],
+      "vocabLinks": [
+        "edx-num-decimals"
+      ],
       "tier": "both"
     },
     {
@@ -284,7 +290,9 @@
           "e_zh": "$16^{\\frac{3}{4}} = (\\sqrt[4]{16})^3 = 2^3 = 8$。"
         }
       ],
-      "vocabLinks": [],
+      "vocabLinks": [
+        "edx-num-powers"
+      ],
       "tier": "both"
     },
     {
@@ -352,7 +360,9 @@
           "e_zh": "符号 $A'$ 表示 A 的补集，包含所有不在集合 A 中的元素。"
         }
       ],
-      "vocabLinks": [],
+      "vocabLinks": [
+        "edx-num-sets"
+      ],
       "tier": "both"
     },
     {
@@ -427,7 +437,9 @@
           "e_zh": "$100\\% - 5\\% = 95\\%$，所以倍数是 0.95。"
         }
       ],
-      "vocabLinks": [],
+      "vocabLinks": [
+        "edx-num-pct"
+      ],
       "tier": "both"
     },
     {
@@ -495,7 +507,9 @@
           "e_zh": "2 厘米代表 $2 \\times 50,000 = 100,000$ 厘米。$100,000$ 厘米 = $1,000$ 米 = $1$ 千米。"
         }
       ],
-      "vocabLinks": [],
+      "vocabLinks": [
+        "edx-num-ratio"
+      ],
       "tier": "both"
     },
     {
@@ -563,7 +577,9 @@
           "e_zh": "10 公斤的一半是 5 公斤。下界 = $50 - 5 = 45$ 公斤。"
         }
       ],
-      "vocabLinks": [],
+      "vocabLinks": [
+        "edx-num-accuracy"
+      ],
       "tier": "both"
     },
     {
@@ -638,7 +654,9 @@
           "e_zh": "$6 \\div 3 = 2$ 且 $10^8 \\div 10^2 = 10^{8-2} = 10^6$。结果是 $2 \\times 10^6$。"
         }
       ],
-      "vocabLinks": [],
+      "vocabLinks": [
+        "edx-num-standard"
+      ],
       "tier": "both"
     },
     {
@@ -706,7 +724,9 @@
           "e_zh": "1 位有效数字舍入：$20 \\times 10 = 200$。实际值：$19.1 \\times 11.2 = 213.92$。由于 200 小于 213.92，所以这是低估（Underestimate）。"
         }
       ],
-      "vocabLinks": [],
+      "vocabLinks": [
+        "edx-num-applying"
+      ],
       "tier": "both"
     },
     {
@@ -774,7 +794,9 @@
           "e_zh": "必须对分母使用括号，以确保先进行加法。$1 \\div (2 + 3) = 1 \\div 5 = 0.2$。"
         }
       ],
-      "vocabLinks": [],
+      "vocabLinks": [
+        "edx-num-calculator"
+      ],
       "tier": "both"
     },
     {
@@ -842,7 +864,9 @@
           "e_zh": "因为 $2(x + 3)$ 对所有的 $x$ 值都等于 $2x + 6$，所以这是一个恒等式 ($\\equiv$)。"
         }
       ],
-      "vocabLinks": [],
+      "vocabLinks": [
+        "edx-alg-expr"
+      ],
       "tier": "both"
     },
     {
@@ -910,7 +934,9 @@
           "e_zh": "使用 FOIL 法：$2x^2 - 8x + x - 4 = 2x^2 - 7x - 4$。"
         }
       ],
-      "vocabLinks": [],
+      "vocabLinks": [
+        "edx-alg-manip"
+      ],
       "tier": "both"
     },
     {
@@ -978,7 +1004,9 @@
           "e_zh": "最大公因式是 $2p$。$4p^2 \\div 2p = 2p$，$10p \\div 2p = 5$。"
         }
       ],
-      "vocabLinks": [],
+      "vocabLinks": [
+        "edx-alg-manip"
+      ],
       "tier": "both"
     },
     {
@@ -1046,7 +1074,10 @@
           "e_zh": "$P - 2l = 2w$，然后除以 2：$w = (P - 2l)/2$。"
         }
       ],
-      "vocabLinks": [],
+      "vocabLinks": [
+        "edx-alg-expr",
+        "edx-alg-linear"
+      ],
       "tier": "both"
     },
     {
@@ -1114,7 +1145,9 @@
           "e_zh": "$\\frac{x}{4} = 2 - 5 \\Rightarrow \\frac{x}{4} = -3 \\Rightarrow x = -12$。"
         }
       ],
-      "vocabLinks": [],
+      "vocabLinks": [
+        "edx-alg-linear"
+      ],
       "tier": "both"
     },
     {
@@ -1182,7 +1215,9 @@
           "e_zh": "反比例表示 $y = k/(\\text{某项})$，而 $x$ 的平方是 $x^2$。"
         }
       ],
-      "vocabLinks": [],
+      "vocabLinks": [
+        "edx-alg-proportion"
+      ],
       "tier": "both"
     },
     {
@@ -1250,7 +1285,9 @@
           "e_zh": "将第二个方程乘以 3 得到 $-3y$，然后可以与 $+3y$ 相加消去 $y$。"
         }
       ],
-      "vocabLinks": [],
+      "vocabLinks": [
+        "edx-alg-simul"
+      ],
       "tier": "both"
     },
     {
@@ -1318,7 +1355,9 @@
           "e_zh": "提取公因式 $x$：$x(x + 7) = 0$。所以 $x = 0$ 或 $x = -7$。"
         }
       ],
-      "vocabLinks": [],
+      "vocabLinks": [
+        "edx-alg-quadratic"
+      ],
       "tier": "both"
     },
     {
@@ -1386,7 +1425,9 @@
           "e_zh": "移项得 $2x^2 - x - 5 = 0$。因此 $a=2, b=-1, c=-5$。"
         }
       ],
-      "vocabLinks": [],
+      "vocabLinks": [
+        "edx-alg-quadratic"
+      ],
       "tier": "higher"
     },
     {
@@ -1454,7 +1495,9 @@
           "e_zh": "$x + 2 > 5 \\Rightarrow x > 3$。"
         }
       ],
-      "vocabLinks": [],
+      "vocabLinks": [
+        "edx-alg-ineq"
+      ],
       "tier": "both"
     },
     {
@@ -1522,7 +1565,9 @@
           "e_zh": "代入 $n = 50$：$4(50) - 5 = 200 - 5 = 195$。"
         }
       ],
-      "vocabLinks": [],
+      "vocabLinks": [
+        "edx-fn-seq"
+      ],
       "tier": "both"
     },
     {
@@ -1590,7 +1635,9 @@
           "e_zh": "一阶差为：$7, 11, 15, 19$。二阶差为常数 $4$。因为 $2a = 4$，所以 $a = 2$。从原数列中减去 $2n^2$ 项 ($2, 8, 18, 32, 50$) 得到 $0, 1, 2, 3, 4$，其规律为 $n-1$。因此，第 $n$ 项表达式为 $2n^2 + n - 1$。"
         }
       ],
-      "vocabLinks": [],
+      "vocabLinks": [
+        "edx-fn-seq"
+      ],
       "tier": "higher"
     },
     {
@@ -1665,7 +1712,9 @@
           "e_zh": "首先求 $f(-3) = 2(-3) - 5 = -11$。然后将其代入 $g(x)$：$g(-11) = (-11)^2 = 121$。"
         }
       ],
-      "vocabLinks": [],
+      "vocabLinks": [
+        "edx-fn-notation"
+      ],
       "tier": "higher"
     },
     {
@@ -1733,7 +1782,9 @@
           "e_zh": "设 $y = \\frac{4}{x-3}$。整理方程使 $x$ 成为主元：$x-3 = \\frac{4}{y} \\implies x = \\frac{4}{y} + 3$。交换 $x$ 和 $y$ 得到 $f^{-1}(x) = \\frac{4}{x} + 3$。"
         }
       ],
-      "vocabLinks": [],
+      "vocabLinks": [
+        "edx-fn-notation"
+      ],
       "tier": "higher"
     },
     {
@@ -1801,7 +1852,11 @@
           "e_zh": "将方程整理为 $y = mx + c$ 形式：$2y = 5x - 10 \\implies y = 2.5x - 5$。斜率 $m$ 为 $2.5$。"
         }
       ],
-      "vocabLinks": [],
+      "vocabLinks": [
+        "edx-fn-linear",
+        "edx-fn-nonlinear",
+        "edx-fn-transform"
+      ],
       "tier": "both"
     },
     {
@@ -1869,7 +1924,9 @@
           "e_zh": "$y$ 可以写为 $2x^{-2} + 4x$。微分得到 $\\frac{dy}{dx} = 2(-2)x^{-3} + 4 = -4x^{-3} + 4 = -\\frac{4}{x^3} + 4$。"
         }
       ],
-      "vocabLinks": [],
+      "vocabLinks": [
+        "edx-fn-calculus"
+      ],
       "tier": "higher"
     },
     {
@@ -1937,7 +1994,9 @@
           "e_zh": "求导得到 $\\frac{dy}{dx} = 2x + 6$。在驻点处，$\\frac{dy}{dx} = 0$。解 $2x + 6 = 0$ 得到 $x = -3$。"
         }
       ],
-      "vocabLinks": [],
+      "vocabLinks": [
+        "edx-fn-calculus"
+      ],
       "tier": "higher"
     },
     {
@@ -2005,7 +2064,11 @@
           "e_zh": "内错角相等，可以通过平行线和截线形成的 Z 字形来识别。"
         }
       ],
-      "vocabLinks": [],
+      "vocabLinks": [
+        "edx-geo-angles",
+        "edx-geo-parallel",
+        "edx-geo-shapes"
+      ],
       "tier": "both"
     },
     {
@@ -2073,7 +2136,10 @@
           "e_zh": "$(n-2) \\times 180 = 1080 \\Rightarrow n-2 = 6 \\Rightarrow n = 8$。"
         }
       ],
-      "vocabLinks": [],
+      "vocabLinks": [
+        "edx-geo-shapes",
+        "edx-geo-polygons"
+      ],
       "tier": "both"
     },
     {
@@ -2141,7 +2207,9 @@
           "e_zh": "平行四边形在 $0^\\circ$ 和 $180^\\circ$ 时看起来相同，所以阶数为 2。"
         }
       ],
-      "vocabLinks": [],
+      "vocabLinks": [
+        "edx-geo-polygons"
+      ],
       "tier": "both"
     },
     {
@@ -2209,7 +2277,9 @@
           "e_zh": "在方位角上加上 $180^\\circ$：$70^\\circ + 180^\\circ = 250^\\circ$。"
         }
       ],
-      "vocabLinks": [],
+      "vocabLinks": [
+        "edx-geo-measures"
+      ],
       "tier": "both"
     },
     {
@@ -2277,7 +2347,9 @@
           "e_zh": "圆是到单个中心点距离固定的一组点的轨迹。"
         }
       ],
-      "vocabLinks": [],
+      "vocabLinks": [
+        "edx-geo-construct"
+      ],
       "tier": "both"
     },
     {
@@ -2345,7 +2417,10 @@
           "e_zh": "该定理指出，切线与弦之间的夹角等于该弦在另一个（交错）弓形中所对的圆周角。"
         }
       ],
-      "vocabLinks": [],
+      "vocabLinks": [
+        "edx-geo-circles",
+        "edx-geo-circle-thm"
+      ],
       "tier": "both"
     },
     {
@@ -2413,7 +2488,9 @@
           "e_zh": "相似意味着边成比例，即它们处于相同的比例。"
         }
       ],
-      "vocabLinks": [],
+      "vocabLinks": [
+        "edx-geo-reasoning"
+      ],
       "tier": "both"
     },
     {
@@ -2488,7 +2565,9 @@
           "e_zh": "$6^2 + b^2 = 10^2 \\Rightarrow 36 + b^2 = 100 \\Rightarrow b^2 = 64 \\Rightarrow b = 8$。"
         }
       ],
-      "vocabLinks": [],
+      "vocabLinks": [
+        "edx-geo-trig"
+      ],
       "tier": "both"
     },
     {
@@ -2556,7 +2635,9 @@
           "e_zh": "面积 $= \\frac{1}{2} ab \\sin C$，其中 $C$ 是边 $a$ 和 $b$ 之间的夹角。"
         }
       ],
-      "vocabLinks": [],
+      "vocabLinks": [
+        "edx-geo-trig"
+      ],
       "tier": "higher"
     },
     {
@@ -2624,7 +2705,10 @@
           "e_zh": "弧长是圆周长（$2\\pi r$）的比例部分（$\\theta/360$）。"
         }
       ],
-      "vocabLinks": [],
+      "vocabLinks": [
+        "edx-mens-area",
+        "edx-mens-circles"
+      ],
       "tier": "both"
     },
     {
@@ -2692,7 +2776,9 @@
           "e_zh": "圆柱体的体积 = 底面积（$\\pi r^2$）$\\times$ 高度（$h$）。"
         }
       ],
-      "vocabLinks": [],
+      "vocabLinks": [
+        "edx-mens-volume"
+      ],
       "tier": "both"
     },
     {
@@ -2760,7 +2846,9 @@
           "e_zh": "由于面积比是 $k^2$，所以长度比 $k$ 是 $\\sqrt{\\text{面积比}}$。"
         }
       ],
-      "vocabLinks": [],
+      "vocabLinks": [
+        "edx-mens-similarity"
+      ],
       "tier": "both"
     },
     {
@@ -2835,7 +2923,10 @@
           "e_zh": "将 $\\begin{pmatrix} 4 \\\\ -6 \\end{pmatrix}$ 除以 $-2$ 得到 $\\begin{pmatrix} -2 \\\\ 3 \\end{pmatrix}$。因为互为倍数关系，所以它们平行。"
         }
       ],
-      "vocabLinks": [],
+      "vocabLinks": [
+        "edx-vec-basics",
+        "edx-vec-ops"
+      ],
       "tier": "both"
     },
     {
@@ -2910,7 +3001,10 @@
           "e_zh": "在平行四边形中，$\\vec{BC} = \\vec{AD} = \\mathbf{q}$。因此，$\\vec{AC} = \\vec{AB} + \\vec{BC} = \\mathbf{p} + \\mathbf{q}$。"
         }
       ],
-      "vocabLinks": [],
+      "vocabLinks": [
+        "edx-vec-basics",
+        "edx-vec-ops"
+      ],
       "tier": "higher"
     },
     {
@@ -2985,7 +3079,10 @@
           "e_zh": "绕原点逆时针旋转 $90^\\circ$ 的规则是 $(x, y) \\rightarrow (-y, x)$。因此 $(3, 1) \\rightarrow (-1, 3)$。"
         }
       ],
-      "vocabLinks": [],
+      "vocabLinks": [
+        "edx-vec-transform",
+        "edx-vec-combined"
+      ],
       "tier": "both"
     },
     {
@@ -3060,7 +3157,10 @@
           "e_zh": "负比例因子 ($k < 0$) 使像位于另一侧。绝对值小于 1 ($|k| < 1$) 的比例因子使图形变小。因此 $-0.5$ 是正确的。"
         }
       ],
-      "vocabLinks": [],
+      "vocabLinks": [
+        "edx-vec-transform",
+        "edx-vec-combined"
+      ],
       "tier": "both"
     },
     {
@@ -3135,7 +3235,10 @@
           "e_zh": "高度 = 频数密度 = 频数 / 组距 = $20 / 5 = 4$。"
         }
       ],
-      "vocabLinks": [],
+      "vocabLinks": [
+        "edx-stat-data",
+        "edx-stat-diagrams"
+      ],
       "tier": "higher"
     },
     {
@@ -3210,7 +3313,10 @@
           "e_zh": "较小的 IQR 意味着中间 50% 的数据更接近，表明数据更一致或离散度更小。"
         }
       ],
-      "vocabLinks": [],
+      "vocabLinks": [
+        "edx-stat-data",
+        "edx-stat-diagrams"
+      ],
       "tier": "both"
     },
     {
@@ -3278,7 +3384,9 @@
           "e_zh": "中点 = $(25 + 40) / 2 = 65 / 2 = 32.5$。"
         }
       ],
-      "vocabLinks": [],
+      "vocabLinks": [
+        "edx-stat-averages"
+      ],
       "tier": "both"
     },
     {
@@ -3353,7 +3461,10 @@
           "e_zh": "单个事件所有可能结果的概率之和必须始终为 1。"
         }
       ],
-      "vocabLinks": [],
+      "vocabLinks": [
+        "edx-stat-prob",
+        "edx-stat-prob-comb"
+      ],
       "tier": "both"
     },
     {
@@ -3428,7 +3539,10 @@
           "e_zh": "如果事件是互斥的，它们不能同时发生，所以 $P(A \\cap B) = 0$，这使得 $P(A|B) = 0$。"
         }
       ],
-      "vocabLinks": [],
+      "vocabLinks": [
+        "edx-stat-prob",
+        "edx-stat-prob-comb"
+      ],
       "tier": "higher"
     }
   ]

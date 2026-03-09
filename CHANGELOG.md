@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.3.18] - 2026-03-09 — vocabLinks 补全（三考试局 200/201 KPs 关联词汇）
+
+### 关联词汇补全
+- **HHK Y7-11**：55/55 KPs 补全 vocabLinks（从 syllabus vocabSlugs 自动映射）
+- **Edexcel 4MA1**：49/49 KPs 补全 vocabLinks
+- **CIE 0580**：7 个缺失 KPs 补全，96/97 完成（1.14 "Using a calculator" 无对应词汇属正常）
+- KP 详情页"相关资源"区域现在显示关联词汇按钮，点击跳转词汇卡组
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `data/knowledge-cie.json` | +7 KPs vocabLinks 补全 |
+| `data/knowledge-hhk.json` | +55 KPs vocabLinks 补全 |
+| `data/knowledge-edexcel.json` | +49 KPs vocabLinks 补全 |
+| `js/config.js` | v2.3.17 → v2.3.18 |
+
 ## [2.3.17] - 2026-03-09 — Edexcel 4MA1 知识点全量生成
 
 ### Edexcel 4MA1 知识点
