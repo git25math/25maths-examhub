@@ -53,11 +53,25 @@ function startRecoverySession() {
     if (typeof showToast === 'function') showToast(t('Nothing to refresh!', '没有需要复查的内容！'));
     return;
   }
+  /* Capture reason summary from smart engine if available */
+  var summaryReasons = [];
+  try {
+    if (typeof getLastSmartQueueSummary === 'function') {
+      var summary = getLastSmartQueueSummary();
+      if (summary && summary.topReasons) {
+        for (var ri = 0; ri < Math.min(summary.topReasons.length, 2); ri++) {
+          summaryReasons.push(summary.topReasons[ri].label);
+        }
+      }
+    }
+  } catch (e) {}
+
   _recoverySession = {
     queue: queue,
     currentIndex: 0,
     results: [],
-    startedAt: Date.now()
+    startedAt: Date.now(),
+    summaryReasons: summaryReasons
   };
   _runCurrentRecoveryItem();
 }
@@ -164,6 +178,7 @@ function _endRecoverySession() {
   if (!_recoverySession) return;
   var results = _recoverySession.results;
   var duration = Math.round((Date.now() - _recoverySession.startedAt) / 1000);
+  var reasons = _recoverySession.summaryReasons || [];
   _recoverySession = null;
 
   if (typeof navTo === 'function') navTo('plan');
@@ -179,6 +194,9 @@ function _endRecoverySession() {
   var msg = done + ' ' + t('scans completed', '轮扫描完成');
   if (skipped > 0) msg += ', ' + skipped + ' ' + t('skipped', '跳过');
   msg += ' (' + timeStr + ')';
+  if (reasons.length > 0) {
+    msg += ' \u00b7 ' + t('Focus', '重点') + ': ' + reasons.join(t(', ', '、'));
+  }
   if (typeof showToast === 'function') showToast(msg, 'success');
 }
 

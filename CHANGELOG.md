@@ -1,5 +1,43 @@
 # Changelog
 
+## [3.5.1] - 2026-03-10 — Priority Explainability
+
+### Reason 结构升级（js/recovery-priority.js）
+- `computeRecoveryPriority()` — reason 从字符串数组升级为结构化对象 `{key, weight, label}`，label 双语
+- `getRecoveryReasonLabels(unit)` — 提取 unit 的人类可读理由标签数组
+- `summarizeRecoveryReasons(units)` — 汇总多个 unit 的 topReasons（按最大 weight 降序）
+- `getLastSmartQueueSummary()` — 获取最近一次 smart queue 构建的理由摘要
+- `_lastSmartUnits` — 缓存最近评分后的 units，供 explainability 查询
+- Debug logging: `RECOVERY_EXPLAIN_DEBUG = true` 时 console.group 输出前 10 个 unit 的评分明细
+
+### Today's Plan 卡片推荐原因（js/syllabus.js）
+- Recovery Session 卡片下方新增 `plan-card-reason` 行：显示前 2 个优先理由
+- 渲染前调用 `buildSmartRecoveryQueue()` 预构建缓存，确保理由可用
+- 降级安全：smart engine 不可用时不渲染理由行
+
+### Session 完成 Toast 增强（js/recovery-session.js）
+- `startRecoverySession()` — 启动时捕获 `summaryReasons`（前 2 条理由标签）
+- `_endRecoverySession()` — toast 末尾追加 "Focus: 理由1, 理由2"
+
+### 样式（css/style.css）
+- `.plan-card-reason` — 12px 次要文字色，4px 上间距
+- 暗色模式 `.plan-card-reason` 使用 `--c-muted`
+
+### 配置（js/config.js）
+- `RECOVERY_EXPLAIN_DEBUG` — 调试开关（默认 false），开启后 console 输出评分明细
+- `APP_VERSION → v3.5.1`
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| js/recovery-priority.js | reason 结构化 + 3 个 explainability helper + debug log + units 缓存 |
+| js/recovery-session.js | summaryReasons 捕获 + end toast 增强 |
+| js/syllabus.js | Today's Plan 卡片 reason 预览 + smart queue 预构建 |
+| css/style.css | + .plan-card-reason 样式 + 暗色适配 |
+| js/config.js | + RECOVERY_EXPLAIN_DEBUG + APP_VERSION → v3.5.1 |
+
+---
+
 ## [3.5.0] - 2026-03-10 — Smart Recovery Ordering
 
 ### Priority Engine（js/recovery-priority.js 新增）

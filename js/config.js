@@ -367,9 +367,10 @@ function isSuperAdmin() {
 }
 
 /* App version */
-var APP_VERSION = 'v3.5.0';
+var APP_VERSION = 'v3.5.1';
 
 /* Recovery Priority Engine configuration */
+var RECOVERY_EXPLAIN_DEBUG = false;
 var RECOVERY_PRIORITY_CONFIG = {
   maxUnits: 30,
   defaultExamWeight: 8,

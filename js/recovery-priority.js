@@ -210,16 +210,28 @@ function computeRecoveryPriority(unit) {
     unit.examWeight +
     unit.healthPenalty;
 
-  /* Explainability — for debug, not shown to users */
+  /* Explainability — structured reasons for UI display */
   unit.reason = [];
-  if (unit.errorWeight > 20) unit.reason.push('high error rate');
-  else if (unit.errorWeight > 0) unit.reason.push('error');
-  if (unit.decayWeight > 20) unit.reason.push('stale ' + (unit.raw.daysSince || 0) + ' days');
-  else if (unit.decayWeight > 0) unit.reason.push('decay');
-  if (unit.examWeight > 12) unit.reason.push('high exam weight');
-  else if (unit.examWeight > 0) unit.reason.push('exam');
-  if (unit.healthPenalty > 8) unit.reason.push('weak section');
-  else if (unit.healthPenalty > 0) unit.reason.push('health');
+  if (unit.errorWeight > 20) {
+    unit.reason.push({ key: 'error', weight: unit.errorWeight, label: t('High error rate', '错误率高') });
+  } else if (unit.errorWeight > 0) {
+    unit.reason.push({ key: 'error', weight: unit.errorWeight, label: t('Some errors', '有错误记录') });
+  }
+  if (unit.decayWeight > 20) {
+    unit.reason.push({ key: 'decay', weight: unit.decayWeight, label: t('Overdue ' + (unit.raw.daysSince || 0) + ' days', '过期' + (unit.raw.daysSince || 0) + '天') });
+  } else if (unit.decayWeight > 0) {
+    unit.reason.push({ key: 'decay', weight: unit.decayWeight, label: t('Not reviewed recently', '近期未复习') });
+  }
+  if (unit.examWeight > 12) {
+    unit.reason.push({ key: 'exam', weight: unit.examWeight, label: t('Important exam topic', '考试高频考点') });
+  } else if (unit.examWeight > 0) {
+    unit.reason.push({ key: 'exam', weight: unit.examWeight, label: t('Exam relevant', '考试相关') });
+  }
+  if (unit.healthPenalty > 8) {
+    unit.reason.push({ key: 'health', weight: unit.healthPenalty, label: t('Weak section', '章节偏弱') });
+  } else if (unit.healthPenalty > 0) {
+    unit.reason.push({ key: 'health', weight: unit.healthPenalty, label: t('Section needs work', '章节需加强') });
+  }
 
   /* Clean up temp field */
   delete unit._ppM;
@@ -290,7 +302,52 @@ function groupRecoveryUnitsByType(units, board) {
   return queue;
 }
 
+/* ═══ EXPLAINABILITY HELPERS ═══ */
+
+/* Get human-readable reason labels for a unit */
+function getRecoveryReasonLabels(unit) {
+  if (!unit || !unit.reason) return [];
+  var labels = [];
+  for (var i = 0; i < unit.reason.length; i++) {
+    labels.push(unit.reason[i].label);
+  }
+  return labels;
+}
+
+/* Summarize top reasons across a set of units for UI display */
+function summarizeRecoveryReasons(units) {
+  if (!units || !units.length) return { topReasons: [] };
+  var counts = {};
+  var labels = {};
+  var weights = {};
+
+  for (var i = 0; i < units.length; i++) {
+    if (!units[i].reason) continue;
+    for (var j = 0; j < units[i].reason.length; j++) {
+      var r = units[i].reason[j];
+      counts[r.key] = (counts[r.key] || 0) + 1;
+      labels[r.key] = r.label;
+      weights[r.key] = Math.max(weights[r.key] || 0, r.weight);
+    }
+  }
+
+  /* Sort by total weight descending */
+  var keys = [];
+  for (var k in counts) keys.push(k);
+  keys.sort(function (a, b) { return weights[b] - weights[a]; });
+
+  var topReasons = [];
+  for (var m = 0; m < keys.length; m++) {
+    topReasons.push({ key: keys[m], count: counts[keys[m]], label: labels[keys[m]] });
+  }
+
+  return { topReasons: topReasons };
+}
+
 /* ═══ MAIN ENTRY ═══ */
+
+/* Last built units cache — used by explainability helpers */
+var _lastSmartUnits = null;
 
 /*
  * Build a smart recovery queue ordered by priority.
@@ -299,12 +356,34 @@ function groupRecoveryUnitsByType(units, board) {
  */
 function buildSmartRecoveryQueue(board) {
   var units = collectRecoveryUnits(board);
-  if (!units || !units.length) return [];
+  if (!units || !units.length) { _lastSmartUnits = null; return []; }
 
   for (var i = 0; i < units.length; i++) {
     computeRecoveryPriority(units[i]);
   }
 
   sortRecoveryUnits(units);
+
+  /* Cache for explainability */
+  _lastSmartUnits = units;
+
+  /* Debug logging */
+  if (typeof RECOVERY_EXPLAIN_DEBUG !== 'undefined' && RECOVERY_EXPLAIN_DEBUG) {
+    console.group('[Recovery Priority] Smart Queue');
+    for (var d = 0; d < Math.min(units.length, 10); d++) {
+      var u = units[d];
+      console.log(u.type + ' ' + u.id + ' score=' + u.priorityScore +
+        ' (err=' + u.errorWeight + ' dec=' + u.decayWeight +
+        ' exam=' + u.examWeight + ' hp=' + u.healthPenalty + ')' +
+        ' reasons: ' + getRecoveryReasonLabels(u).join(', '));
+    }
+    console.groupEnd();
+  }
+
   return groupRecoveryUnitsByType(units, board);
+}
+
+/* Get the summary of the last smart queue build (for Today's Plan / session) */
+function getLastSmartQueueSummary() {
+  return summarizeRecoveryReasons(_lastSmartUnits);
 }

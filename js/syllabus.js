@@ -2591,6 +2591,10 @@ function renderTodaysPlan() {
     var _rsTypeCount = (staleU.vocab.length > 0 ? 1 : 0)
                      + (staleU.kp.length > 0 ? 1 : 0)
                      + (staleU.pp.length > 0 ? 1 : 0);
+    /* Pre-build smart queue to populate reason summary cache */
+    if (staleU.total > 0 && _rsTypeCount > 1 && typeof buildSmartRecoveryQueue === 'function') {
+      try { buildSmartRecoveryQueue(typeof userBoard !== 'undefined' ? userBoard : null); } catch (e) {}
+    }
     if (staleU.total > 0 && _rsTypeCount > 1) {
       html += '<div class="plan-card recovery-session-card">';
       html += '<div class="plan-card-header">';
@@ -2604,6 +2608,19 @@ function renderTodaysPlan() {
       if (staleU.pp.length > 0) _rsParts.push(staleU.pp.length + ' ' + t('questions', '\u9898'));
       html += _rsParts.join(' + ');
       html += '</div>';
+      /* Show top priority reasons if smart engine available */
+      try {
+        if (typeof getLastSmartQueueSummary === 'function') {
+          var _rsSummary = getLastSmartQueueSummary();
+          if (_rsSummary && _rsSummary.topReasons && _rsSummary.topReasons.length > 0) {
+            var _rsReasonParts = [];
+            for (var _rri = 0; _rri < Math.min(_rsSummary.topReasons.length, 2); _rri++) {
+              _rsReasonParts.push(_rsSummary.topReasons[_rri].label);
+            }
+            html += '<div class="plan-card-reason">' + t('Because', '\u539f\u56e0') + ': ' + _rsReasonParts.join(' \u00b7 ') + '</div>';
+          }
+        }
+      } catch (e) {}
       html += '<button class="btn btn-primary btn-sm" data-action="start-recovery">' + t('Start', '\u5f00\u59cb') + '</button>';
       html += '</div>';
     }

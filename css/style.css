@@ -3939,10 +3939,12 @@ input { font-family: inherit; }
 
 /* Recovery Session card highlight */
 .recovery-session-card { border-left:3px solid var(--c-primary); background:rgba(82,72,201,0.06); }
+.plan-card-reason { margin-top:4px; font-size:12px; color:var(--c-text2); line-height:1.35; margin-bottom:8px; }
 
 /* Dark mode overrides for plan/mistakes */
 [data-theme="dark"] .plan-card { background:var(--c-surface); border-color:var(--c-border); }
 [data-theme="dark"] .recovery-session-card { background:rgba(82,72,201,0.12); }
+[data-theme="dark"] .plan-card-reason { color:var(--c-muted); }
 [data-theme="dark"] .plan-streak { opacity:0.95; }
 [data-theme="dark"] .mistake-tab { background:var(--c-surface); border-color:var(--c-border); color:var(--c-text); }
 [data-theme="dark"] .mistake-tab.active { background:var(--c-primary); color:#fff; }
