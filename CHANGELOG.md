@@ -1,5 +1,39 @@
 # Changelog
 
+## [2.3.16] - 2026-03-09 — CIE 题目补充 + HHK Y7-11 知识点全量覆盖
+
+### CIE 知识点质量补充
+- **97 KPs 全部补充至 2+ quiz + 2+ examples**：+74 道 MCQ + 97 道例题
+- Gemini 批量 enrichment 流水线（enrich-kp.sh + fix-enrich-json.js + apply-enrich.js）
+
+### HHK Y7-11 知识点全量生成
+- **55 KPs 覆盖 55/55 HHK sections (100%)**
+- Y7: 11 KPs | Y8: 9 KPs | Y9: 12 KPs | Y10: 12 KPs | Y11: 11 KPs
+- 每个 KP 含 2+ quiz + 2+ examples + 概念卡片 + 考法分析
+- `loadKnowledgeData('hhk')` 启动时自动加载
+
+### 数据统计
+| 课程 | KPs | Sections | Quiz | Examples |
+|------|-----|----------|------|----------|
+| CIE 0580 | 97 | 72/72 | 194+ | 194+ |
+| HHK Y7-11 | 55 | 55/55 | 110+ | 110+ |
+| **总计** | **152** | **127/127** | **304+** | **304+** |
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `data/knowledge-cie.json` | +74 quiz + 97 examples 补充 |
+| `data/knowledge-hhk.json` | 新增：55 KPs（Y7-11 全覆盖） |
+| `js/syllabus.js` | 添加 `loadKnowledgeData('hhk')` |
+| `js/config.js` | v2.3.15 → v2.3.16 |
+| `scripts/enrich-kp.sh` | 新增：批量补充脚本 |
+| `scripts/fix-enrich-json.js` | 新增：enrichment JSON 修复器 |
+| `scripts/apply-enrich.js` | 新增：补充数据合并器 |
+| `scripts/gen-kp-hhk.sh` | 新增：HHK KP 生成脚本 |
+| `scripts/merge-kp-hhk.js` | 新增：HHK KP 合并脚本 |
+
+---
+
 ## [2.3.15] - 2026-03-09 — 知识点全量扩充（72/72 sections 100% 覆盖，97 KPs）
 
 ### 知识点数据扩充

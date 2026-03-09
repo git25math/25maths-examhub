@@ -35,6 +35,14 @@
           "solution": "**Step 1:** Identify natural numbers — these are positive whole numbers.\n$7$ is a natural number. ✓\n\n**Step 2:** Identify irrational numbers — these cannot be written as fractions.\n$\\sqrt{5}$ and $\\pi$ are both irrational. ✓\n\n**Step 3:** Identify negative integers — whole numbers below zero.\n$-3$ is a negative integer. ✓\n\n**Answers:** (a) $7$ (b) $\\sqrt{5}$ or $\\pi$ (c) $-3$",
           "solution_zh": "**步骤1：** 找自然数——正整数。\n$7$ 是自然数。✓\n\n**步骤2：** 找无理数——不能写成分数的数。\n$\\sqrt{5}$ 和 $\\pi$ 都是无理数。✓\n\n**步骤3：** 找负整数——小于零的整数。\n$-3$ 是负整数。✓\n\n**答案：** (a) $7$ (b) $\\sqrt{5}$ 或 $\\pi$ (c) $-3$",
           "source": "Adapted from 0580 specimen"
+        },
+        {
+          "patternId": "ep-irrational",
+          "question": "From the list of numbers: $\\sqrt{4}, \\pi, \\frac{22}{7}, \\sqrt{5}, 0.33$, identify all the irrational numbers.",
+          "question_zh": "从以下数字列表中：$\\sqrt{4}, \\pi, \\frac{22}{7}, \\sqrt{5}, 0.33$，识别出所有的无理数。",
+          "solution": "1. $\\sqrt{4} = 2$ (Integer, Rational).\n2. $\\pi$ is a non-terminating, non-recurring decimal (Irrational).\n3. $\\frac{22}{7}$ is a fraction (Rational).\n4. $\\sqrt{5}$ is the square root of a non-perfect square (Irrational).\n5. $0.33$ is a terminating decimal (Rational).\nIrrational numbers: $\\pi, \\sqrt{5}$.",
+          "solution_zh": "1. $\\sqrt{4} = 2$（整数，有理数）。\n2. $\\pi$ 是无限不循环小数（无理数）。\n3. $\\frac{22}{7}$ 是分数（有理数）。\n4. $\\sqrt{5}$ 是非完全平方数的平方根（无理数）。\n5. $0.33$ 是有限小数（有理数）。\n无理数为：$\\pi, \\sqrt{5}$。",
+          "source": "Adapted from 0580/21/M/J/19"
         }
       ],
       "testYourself": [
@@ -104,6 +112,14 @@
           "solution": "**(a)** Check each number:\n- $2$: factors are $1, 2$ → prime ✓\n- $9 = 3 \\times 3$ → not prime\n- $15 = 3 \\times 5$ → not prime\n- $17$: factors are $1, 17$ → prime ✓\n- $21 = 3 \\times 7$ → not prime\n- $25 = 5 \\times 5$ → not prime\n\n**Answer:** $2$ and $17$\n\n**(b)** $9 = 3^2$ and $25 = 5^2$ are both square numbers.\n\n**Answer:** $9$ or $25$",
           "solution_zh": "**(a)** 逐个检查：\n- $2$：因数为 $1, 2$ → 质数 ✓\n- $9 = 3 \\times 3$ → 非质数\n- $15 = 3 \\times 5$ → 非质数\n- $17$：因数为 $1, 17$ → 质数 ✓\n- $21 = 3 \\times 7$ → 非质数\n- $25 = 5 \\times 5$ → 非质数\n\n**答案：** $2$ 和 $17$\n\n**(b)** $9 = 3^2$ 和 $25 = 5^2$ 都是平方数。\n\n**答案：** $9$ 或 $25$",
           "source": "0580/22/M/J/19"
+        },
+        {
+          "patternId": "ep-pick-prime",
+          "question": "Find the sum of all prime numbers between 10 and 20.",
+          "question_zh": "求10到20之间所有质数的和。",
+          "solution": "The prime numbers between 10 and 20 are 11, 13, 17, and 19.\nSum = $11 + 13 + 17 + 19 = 60$.",
+          "solution_zh": "10到20之间的质数有 11, 13, 17 和 19。\n和 = $11 + 13 + 17 + 19 = 60$。",
+          "source": "0580/12/O/N/21"
         }
       ],
       "testYourself": [
@@ -173,6 +189,14 @@
           "solution": "**Step 1:** Prime factorise each number.\n$36 = 2^2 \\times 3^2$\n$48 = 2^4 \\times 3$\n\n**Step 2:** HCF = product of lowest powers of common primes.\nCommon primes: $2$ and $3$\nHCF $= 2^2 \\times 3 = 4 \\times 3 = 12$\n\n**Step 3:** LCM = product of highest powers of all primes.\nAll primes: $2$ and $3$\nLCM $= 2^4 \\times 3^2 = 16 \\times 9 = 144$",
           "solution_zh": "**步骤1：** 分别质因数分解。\n$36 = 2^2 \\times 3^2$\n$48 = 2^4 \\times 3$\n\n**步骤2：** HCF = 公共质因数最低次方之积。\n公共质因数：$2$ 和 $3$\nHCF $= 2^2 \\times 3 = 4 \\times 3 = 12$\n\n**步骤3：** LCM = 所有质因数最高次方之积。\n所有质因数：$2$ 和 $3$\nLCM $= 2^4 \\times 3^2 = 16 \\times 9 = 144$",
           "source": "0580 style"
+        },
+        {
+          "patternId": "ep-hcf-lcm",
+          "question": "Two bells ring at intervals of 15 minutes and 20 minutes respectively. If they ring together at 08:00, what is the next time they will ring together?",
+          "question_zh": "两只铃分别每隔15分钟和20分钟响一次。如果它们在08:00同时响起，下一次它们同时响起是什么时间？",
+          "solution": "We need to find the Least Common Multiple (LCM) of 15 and 20.\nPrime factors: $15 = 3 \\times 5$, $20 = 2^2 \\times 5$.\nLCM = $2^2 \\times 3 \\times 5 = 4 \\times 3 \\times 5 = 60$ minutes.\n60 minutes = 1 hour.\nThe next time they ring together is 09:00.",
+          "solution_zh": "我们需要求15和20的最小公倍数 (LCM)。\n质因数分解：$15 = 3 \\times 5$，$20 = 2^2 \\times 5$。\nLCM = $2^2 \\times 3 \\times 5 = 4 \\times 3 \\times 5 = 60$ 分钟。\n60 分钟 = 1 小时。\n下一次同时响起的时间是 09:00。",
+          "source": "Adapted from 0580/22/F/M/22"
         }
       ],
       "testYourself": [
@@ -242,6 +266,14 @@
           "solution": "**Step 1:** Start with the intersection: $n(F \\cap T) = 5$\n\n**Step 2:** Football only: $18 - 5 = 13$\n\n**Step 3:** Tennis only: $12 - 5 = 7$\n\n**Step 4:** Neither: $30 - (13 + 5 + 7) = 5$\n\nSo $n(F' \\cap T') = 5$.",
           "solution_zh": "**步骤1：** 从交集开始：$n(F \\cap T) = 5$\n\n**步骤2：** 只踢足球：$18 - 5 = 13$\n\n**步骤3：** 只打网球：$12 - 5 = 7$\n\n**步骤4：** 两项都不参加：$30 - (13 + 5 + 7) = 5$\n\n所以 $n(F' \\cap T') = 5$。",
           "source": "0580/42/M/J/20 Q6a"
+        },
+        {
+          "patternId": "ep-complete",
+          "question": "In a group of 30 students, 18 like Football (F) and 15 like Cricket (C). If 5 students like neither, find the number of students who like both.",
+          "question_zh": "在30名学生中，18人喜欢足球 (F)，15人喜欢板球 (C)。如果5人两个都不喜欢，求两个都喜欢的人数。",
+          "solution": "Total students = 30. Students who like F or C = $30 - 5 = 25$.\nUsing the formula $n(F \\cup C) = n(F) + n(C) - n(F \\cap C)$:\n$25 = 18 + 15 - n(F \\cap C)$\n$25 = 33 - n(F \\cap C)$\n$n(F \\cap C) = 33 - 25 = 8$.\n8 students like both.",
+          "solution_zh": "学生总数 = 30。喜欢 F 或 C 的学生 = $30 - 5 = 25$。\n使用公式 $n(F \\cup C) = n(F) + n(C) - n(F \\cap C)$：\n$25 = 18 + 15 - n(F \\cap C)$\n$25 = 33 - n(F \\cap C)$\n$n(F \\cap C) = 33 - 25 = 8$。\n8名学生两个都喜欢。",
+          "source": "0580/41/M/J/20"
         }
       ],
       "testYourself": [
@@ -311,6 +343,14 @@
           "solution": "**Step 1:** $n(A \\cap B) = n(A) + n(B) - n(A \\cup B) = 22 + 18 - 33 = 7$\n\n**Step 2:** $n((A \\cup B)') = n(\\mathcal{E}) - n(A \\cup B) = 40 - 33 = 7$",
           "solution_zh": "**步骤1：** $n(A \\cap B) = n(A) + n(B) - n(A \\cup B) = 22 + 18 - 33 = 7$\n\n**步骤2：** $n((A \\cup B)') = n(\\mathcal{E}) - n(A \\cup B) = 40 - 33 = 7$",
           "source": "0580/22/M/J/18 Q12"
+        },
+        {
+          "patternId": "ep-shade",
+          "question": "Describe the shaded region in terms of set notation: A region that is inside set $C$ but outside both sets $A$ and $B$.",
+          "question_zh": "用集合表示法描述阴影区域：在集合 $C$ 内部，但在集合 $A$ 和 $B$ 外部的区域。",
+          "solution": "The region outside $A$ and $B$ is $(A \\cup B)'$. \nThe region inside $C$ and outside $A$ and $B$ is the intersection: $C \\cap (A \\cup B)'$ or $C \\cap A' \\cap B'$.",
+          "solution_zh": "在 $A$ 和 $B$ 外部的区域是 $(A \\cup B)'$。\n在 $C$ 内部且在 $A, B$ 外部的区域是它们的交集：$C \\cap (A \\cup B)'$ 或 $C \\cap A' \\cap B'$。",
+          "source": "Adapted from 0580/23/O/N/21"
         }
       ],
       "testYourself": [
@@ -373,6 +413,14 @@
           "solution": "$\\sqrt{144} = 12$ (since $12^2 = 144$)\n\n$\\sqrt[3]{27} = 3$ (since $3^3 = 27$)\n\n$12 + 3 = 15$\n\n**Answer:** $15$",
           "solution_zh": "$\\sqrt{144} = 12$（因为 $12^2 = 144$）\n\n$\\sqrt[3]{27} = 3$（因为 $3^3 = 27$）\n\n$12 + 3 = 15$\n\n**答案：** $15$",
           "source": "0580 style"
+        },
+        {
+          "patternId": "ep-evaluate",
+          "question": "Calculate $\\sqrt[3]{-64} + 5^2$.",
+          "question_zh": "计算 $\\sqrt[3]{-64} + 5^2$。",
+          "solution": "$\\sqrt[3]{-64} = -4$ because $(-4)^3 = -64$.\n$5^2 = 25$.\n$-4 + 25 = 21$.",
+          "solution_zh": "$\\sqrt[3]{-64} = -4$ 因为 $(-4)^3 = -64$。\n$5^2 = 25$。\n$-4 + 25 = 21$。",
+          "source": "0580/11/M/J/22"
         }
       ],
       "testYourself": [
@@ -442,6 +490,14 @@
           "solution": "**Step 1:** Deal with the negative sign: $16^{-\\frac{3}{4}} = \\frac{1}{16^{\\frac{3}{4}}}$\n\n**Step 2:** Root first (denominator of fraction): $\\sqrt[4]{16} = 2$\n\n**Step 3:** Then power (numerator of fraction): $2^3 = 8$\n\n**Answer:** $\\frac{1}{8}$",
           "solution_zh": "**步骤1：** 处理负号：$16^{-\\frac{3}{4}} = \\frac{1}{16^{\\frac{3}{4}}}$\n\n**步骤2：** 先开根号（分数的分母）：$\\sqrt[4]{16} = 2$\n\n**步骤3：** 再求幂（分数的分子）：$2^3 = 8$\n\n**答案：** $\\frac{1}{8}$",
           "source": "0580/22/O/N/19 Q15"
+        },
+        {
+          "patternId": "ep-simplify",
+          "question": "Simplify $(16x^{12})^{\\frac{3}{4}}$.",
+          "question_zh": "化简 $(16x^{12})^{\\frac{3}{4}}$。",
+          "solution": "Apply the power to each factor: $16^{\\frac{3}{4}} \\times (x^{12})^{\\frac{3}{4}}$.\n$16^{\\frac{3}{4}} = (\\sqrt[4]{16})^3 = 2^3 = 8$.\n$(x^{12})^{\\frac{3}{4}} = x^{12 \\times \\frac{3}{4}} = x^9$.\nResult: $8x^9$.",
+          "solution_zh": "对每个因子应用指数：$16^{\\frac{3}{4}} \\times (x^{12})^{\\frac{3}{4}}$。\n$16^{\\frac{3}{4}} = (\\sqrt[4]{16})^3 = 2^3 = 8$。\n$(x^{12})^{\\frac{3}{4}} = x^{12 \\times \\frac{3}{4}} = x^9$。\n结果：$8x^9$。",
+          "source": "0580/22/O/N/20"
         }
       ],
       "testYourself": [
@@ -511,6 +567,14 @@
           "solution": "(a) Same signs (both negative) → positive: $-3 \\times (-4) = 12$\n\n(b) Different signs → negative: $-8 \\div 2 = -4$\n\n(c) Adding a negative → subtract: $-5 + (-7) = -5 - 7 = -12$",
           "solution_zh": "(a) 同号（都是负数）→ 得正：$-3 \\times (-4) = 12$\n\n(b) 异号 → 得负：$-8 \\div 2 = -4$\n\n(c) 加负数等于减：$-5 + (-7) = -5 - 7 = -12$",
           "source": "0580/12/O/N/19 Q5"
+        },
+        {
+          "patternId": "ep-calc",
+          "question": "At midnight the temperature was $-8^\\circ\\text{C}$. By noon, the temperature had risen by $15^\\circ\\text{C}$. What was the temperature at noon?",
+          "question_zh": "午夜时的温度是 $-8^\\circ\\text{C}$。到中午时，温度上升了 $15^\\circ\\text{C}$。中午的温度是多少？",
+          "solution": "Temperature at noon = Initial temperature + Change\n$= -8 + 15 = 7^\\circ\\text{C}$.",
+          "solution_zh": "中午温度 = 初始温度 + 变化量\n$= -8 + 15 = 7^\\circ\\text{C}$。",
+          "source": "0580/12/M/J/21"
         }
       ],
       "testYourself": [
@@ -580,6 +644,14 @@
           "solution": "**Step 1:** Convert to improper fraction: $1\\frac{3}{4} = \\frac{7}{4}$\n\n**Step 2:** Common denominator (LCM of 4 and 3 = 12):\n$\\frac{7}{4} = \\frac{21}{12}$, $\\frac{2}{3} = \\frac{8}{12}$\n\n**Step 3:** Subtract: $\\frac{21}{12} - \\frac{8}{12} = \\frac{13}{12} = 1\\frac{1}{12}$",
           "solution_zh": "**步骤1：** 转化为假分数：$1\\frac{3}{4} = \\frac{7}{4}$\n\n**步骤2：** 通分（4 和 3 的 LCM = 12）：\n$\\frac{7}{4} = \\frac{21}{12}$，$\\frac{2}{3} = \\frac{8}{12}$\n\n**步骤3：** 相减：$\\frac{21}{12} - \\frac{8}{12} = \\frac{13}{12} = 1\\frac{1}{12}$",
           "source": "0580/12/M/J/19 Q11"
+        },
+        {
+          "patternId": "ep-arithmetic",
+          "question": "Work out $2\\frac{1}{3} \\div \\frac{7}{9}$. Give your answer as a fraction in its simplest form.",
+          "question_zh": "计算 $2\\frac{1}{3} \\div \\frac{7}{9}$。以最简分数形式给出答案。",
+          "solution": "1. Convert mixed number to improper fraction: $2\\frac{1}{3} = \\frac{7}{3}$.\n2. Divide by multiplying by the reciprocal: $\\frac{7}{3} \\times \\frac{9}{7}$.\n3. Simplify: $\\frac{7}{3} \\times \\frac{9}{7} = \\frac{9}{3} = 3$.",
+          "solution_zh": "1. 将带分数转换为假分数：$2\\frac{1}{3} = \\frac{7}{3}$。\n2. 除法变为乘以倒数：$\\frac{7}{3} \\times \\frac{9}{7}$。\n3. 化简：$\\frac{7}{3} \\times \\frac{9}{7} = \\frac{9}{3} = 3$。",
+          "source": "0580/21/O/N/22"
         }
       ],
       "testYourself": [
@@ -649,6 +721,14 @@
           "solution": "**Step 1:** Let $x = 0.2777...$\n\n**Step 2:** $10x = 2.777...$, $100x = 27.777...$\n\n**Step 3:** Subtract: $100x - 10x = 27.777... - 2.777...$\n$90x = 25$\n$x = \\frac{25}{90} = \\frac{5}{18}$ ✓",
           "solution_zh": "**步骤1：** 设 $x = 0.2777...$\n\n**步骤2：** $10x = 2.777...$，$100x = 27.777...$\n\n**步骤3：** 相减：$100x - 10x = 27.777... - 2.777...$\n$90x = 25$\n$x = \\frac{25}{90} = \\frac{5}{18}$ ✓",
           "source": "0580/22/M/J/20 Q18"
+        },
+        {
+          "patternId": "ep-recurring",
+          "question": "Write the recurring decimal $0.\\dot{4}\\dot{5}$ as a fraction in its simplest form.",
+          "question_zh": "将循环小数 $0.\\dot{4}\\dot{5}$ 写成最简分数。",
+          "solution": "Let $x = 0.454545...$\nThen $100x = 45.454545...$\nSubtracting the first equation from the second:\n$100x - x = 45.4545... - 0.4545...$\n$99x = 45$\n$x = \\frac{45}{99} = \\frac{5}{11}$.",
+          "solution_zh": "设 $x = 0.454545...$\n则 $100x = 45.454545...$\n两式相减：\n$100x - x = 45.4545... - 0.4545...$\n$99x = 45$\n$x = \\frac{45}{99} = \\frac{5}{11}$。",
+          "source": "0580/22/M/J/21"
         }
       ],
       "testYourself": [
@@ -718,6 +798,14 @@
           "solution": "**Step 1 (Indices):** $3^2 = 9$\n→ $5 + 2 \\times 9 - 4$\n\n**Step 2 (Multiplication):** $2 \\times 9 = 18$\n→ $5 + 18 - 4$\n\n**Step 3 (Left to right):** $5 + 18 - 4 = 19$",
           "solution_zh": "**步骤1（指数）：** $3^2 = 9$\n→ $5 + 2 \\times 9 - 4$\n\n**步骤2（乘法）：** $2 \\times 9 = 18$\n→ $5 + 18 - 4$\n\n**步骤3（从左到右）：** $5 + 18 - 4 = 19$",
           "source": "0580/12/M/J/18 Q3"
+        },
+        {
+          "patternId": "ep-evaluate",
+          "question": "Work out: $12 + 6 \\div (5 - 2)$.",
+          "question_zh": "计算：$12 + 6 \\div (5 - 2)$。",
+          "solution": "1. Brackets first: $5 - 2 = 3$.\n2. Division next: $6 \\div 3 = 2$.\n3. Addition last: $12 + 2 = 14$.",
+          "solution_zh": "1. 先算括号：$5 - 2 = 3$。\n2. 再算除法：$6 \\div 3 = 2$。\n3. 最后算加法：$12 + 2 = 14$。",
+          "source": "0580/11/O/N/22"
         }
       ],
       "testYourself": [
@@ -787,6 +875,14 @@
           "solution": "**Step 1:** Round each to 1 s.f.:\n$48.7 \\approx 50$, $0.213 \\approx 0.2$, $0.0462 \\approx 0.05$\n\n**Step 2:** Calculate:\n$\\frac{50 \\times 0.2}{0.05} = \\frac{10}{0.05} = 200$",
           "solution_zh": "**步骤1：** 各数四舍五入到1位有效数字：\n$48.7 \\approx 50$，$0.213 \\approx 0.2$，$0.0462 \\approx 0.05$\n\n**步骤2：** 计算：\n$\\frac{50 \\times 0.2}{0.05} = \\frac{10}{0.05} = 200$",
           "source": "0580/22/O/N/19 Q5"
+        },
+        {
+          "patternId": "ep-round",
+          "question": "Round 0.0045672 to 3 significant figures.",
+          "question_zh": "将 0.0045672 保留 3 位有效数字。",
+          "solution": "The first significant figure is 4.\nThe first three are 4, 5, 6.\nThe next digit is 7, so we round up the 6 to 7.\nAnswer: 0.00457.",
+          "solution_zh": "第一个有效数字是 4。\n前三位是 4, 5, 6。\n下一位数字是 7，所以将 6 进位到 7。\n答案：0.00457。",
+          "source": "0580/23/M/J/21"
         }
       ],
       "testYourself": [
@@ -856,6 +952,14 @@
           "solution": "**Step 1:** Bounds of $a$: $5.25 \\leq a < 5.35$\nBounds of $b$: $2.75 \\leq b < 2.85$\n\n**Step 2:** To maximise $\\frac{a}{b}$, use the upper bound of $a$ and the lower bound of $b$:\n\n$\\frac{a}{b}_{\\text{max}} = \\frac{5.35}{2.75} \\approx 1.945$",
           "solution_zh": "**步骤1：** $a$ 的范围：$5.25 \\leq a < 5.35$\n$b$ 的范围：$2.75 \\leq b < 2.85$\n\n**步骤2：** 要使 $\\frac{a}{b}$ 最大，取 $a$ 的上界和 $b$ 的下界：\n\n$\\frac{a}{b}_{\\text{max}} = \\frac{5.35}{2.75} \\approx 1.945$",
           "source": "0580/42/O/N/18 Q4b"
+        },
+        {
+          "patternId": "ep-calc-bounds",
+          "question": "The mass of a box is $5.4\\text{ kg}$, correct to the nearest $0.1\\text{ kg}$. Find the lower bound for the total mass of 10 such boxes.",
+          "question_zh": "一个盒子的质量是 $5.4\\text{ kg}$，精确到 $0.1\\text{ kg}$。求10个这样盒子的总质量下界。",
+          "solution": "The degree of accuracy is $0.1$, so the error interval is $\\pm 0.05$.\nLower bound of one box = $5.4 - 0.05 = 5.35\\text{ kg}$.\nLower bound of 10 boxes = $10 \\times 5.35 = 53.5\\text{ kg}$.",
+          "solution_zh": "精确度为 $0.1$，所以误差范围是 $\\pm 0.05$。\n一个盒子的质量下界 = $5.4 - 0.05 = 5.35\\text{ kg}$。\n10个盒子的总质量下界 = $10 \\times 5.35 = 53.5\\text{ kg}$。",
+          "source": "0580/22/F/M/21"
         }
       ],
       "testYourself": [
@@ -925,6 +1029,14 @@
           "solution": "**Step 1:** Multiply the $A$ values: $3.2 \\times 5 = 16$\n\n**Step 2:** Add the powers: $10^{4+(-2)} = 10^2$\n\n**Step 3:** $16 \\times 10^2$. But $16 \\geq 10$, so adjust:\n$16 \\times 10^2 = 1.6 \\times 10^3$",
           "solution_zh": "**步骤1：** $A$ 值相乘：$3.2 \\times 5 = 16$\n\n**步骤2：** 幂次相加：$10^{4+(-2)} = 10^2$\n\n**步骤3：** $16 \\times 10^2$。但 $16 \\geq 10$，需调整：\n$16 \\times 10^2 = 1.6 \\times 10^3$",
           "source": "0580/22/M/J/19 Q7"
+        },
+        {
+          "patternId": "ep-calc",
+          "question": "Work out $(4 \\times 10^{-5}) \\times (6 \\times 10^{12})$. Give your answer in standard form.",
+          "question_zh": "计算 $(4 \\times 10^{-5}) \\times (6 \\times 10^{12})$。以标准式给出答案。",
+          "solution": "$(4 \\times 6) \\times (10^{-5} \\times 10^{12}) = 24 \\times 10^7$.\nIn standard form, the first number must be between 1 and 10.\n$24 \\times 10^7 = 2.4 \\times 10^1 \\times 10^7 = 2.4 \\times 10^8$.",
+          "solution_zh": "$(4 \\times 6) \\times (10^{-5} \\times 10^{12}) = 24 \\times 10^7$。\n在标准式中，第一个数必须在1到10之间。\n$24 \\times 10^7 = 2.4 \\times 10^1 \\times 10^7 = 2.4 \\times 10^8$。",
+          "source": "0580/21/M/J/22"
         }
       ],
       "testYourself": [
@@ -987,6 +1099,14 @@
           "solution": "**Step 1:** Brackets first. $8 - 3 = 5$. Expression becomes $5 + 2 \\times 5^2$.\n\n**Step 2:** Orders (indices). $5^2 = 25$. Expression becomes $5 + 2 \\times 25$.\n\n**Step 3:** Multiplication. $2 \\times 25 = 50$. Expression becomes $5 + 50$.\n\n**Step 4:** Addition. $5 + 50 = 55$.\n\n**Answer:** $55$",
           "solution_zh": "**步骤 1：** 先算括号。$8 - 3 = 5$。表达式变为 $5 + 2 \\times 5^2$。\n\n**步骤 2：** 计算次数（指数）。$5^2 = 25$。表达式变为 $5 + 2 \\times 25$。\n\n**步骤 3：** 计算乘法。$2 \\times 25 = 50$。表达式变为 $5 + 50$。\n\n**步骤 4：** 计算加法。$5 + 50 = 55$。\n\n**答案：** $55$",
           "source": "Adapted from 0580/12/O/N/20"
+        },
+        {
+          "patternId": "ep-calc-order",
+          "question": "Calculate $\\frac{4 + 8 \\times 2}{2^2 + 1}$.",
+          "question_zh": "计算 $\\frac{4 + 8 \\times 2}{2^2 + 1}$。",
+          "solution": "Numerator: $4 + (8 \\times 2) = 4 + 16 = 20$.\nDenominator: $2^2 + 1 = 4 + 1 = 5$.\nFraction: $\\frac{20}{5} = 4$.",
+          "solution_zh": "分子：$4 + (8 \\times 2) = 4 + 16 = 20$。\n分母：$2^2 + 1 = 4 + 1 = 5$。\n分数值：$\\frac{20}{5} = 4$。",
+          "source": "Adapted from 0580/11/M/J/20"
         }
       ],
       "testYourself": [
@@ -1002,6 +1122,19 @@
           "a": 1,
           "e": "Division comes before addition and subtraction. $6 \\div 2 = 3$. Then calculate left to right: $12 - 3 + 3 = 12$.",
           "e_zh": "除法优先于加减法。$6 \\div 2 = 3$。然后从左到 right 计算：$12 - 3 + 3 = 12$。"
+        },
+        {
+          "q": "Evaluate: $20 - 2 \\times (3 + 4)$",
+          "q_zh": "计算：$20 - 2 \\times (3 + 4)$",
+          "o": [
+            "126",
+            "6",
+            "11",
+            "14"
+          ],
+          "a": 1,
+          "e": "BIDMAS: $20 - 2 \\times 7 = 20 - 14 = 6$.",
+          "e_zh": "BIDMAS原则：$20 - 2 \\times 7 = 20 - 14 = 6$。"
         }
       ],
       "vocabLinks": [
@@ -1036,6 +1169,14 @@
           "solution": "**Step 1:** Round each number to 1 significant figure.\n$41.3 \\approx 40$\n$19.7 \\approx 20$\n$9.85 \\approx 10$\n\n**Step 2:** Perform the calculation with rounded values.\n$\\frac{40 \\times 20}{10} = \\frac{800}{10} = 80$.\n\n**Conclusion:** The estimate is $80$. ✓",
           "solution_zh": "**步骤 1：** 将每个数字舍入到 1 位有效数字。\n$41.3 \\approx 40$\n$19.7 \\approx 20$\n$9.85 \\approx 10$\n\n**步骤 2：** 使用舍入后的值进行计算。\n$\\frac{40 \\times 20}{10} = \\frac{800}{10} = 80$。\n\n**结论：** 估算值为 $80$。✓",
           "source": "Adapted from 0580/21/M/J/18"
+        },
+        {
+          "patternId": "ep-estimate-calc",
+          "question": "Estimate the value of $\\frac{\\sqrt{103.4}}{9.72 - 5.14}$ by rounding to the nearest integer.",
+          "question_zh": "通过舍入到最接近的整数，估算 $\\frac{\\sqrt{103.4}}{9.72 - 5.14}$ 的值。",
+          "solution": "Rounding to integers: $\\sqrt{103.4} \\approx \\sqrt{100} = 10$.\n$9.72 - 5.14 \\approx 10 - 5 = 5$.\nEstimate = $\\frac{10}{5} = 2$.",
+          "solution_zh": "舍入到整数：$\\sqrt{103.4} \\approx \\sqrt{100} = 10$。\n$9.72 - 5.14 \\approx 10 - 5 = 5$。\n估算值 = $\\frac{10}{5} = 2$。",
+          "source": "Adapted from 0580/22/O/N/21"
         }
       ],
       "testYourself": [
@@ -1051,6 +1192,19 @@
           "a": 1,
           "e": "The first non-zero digit is 4. The next digit is 5. Since the third digit (6) is 5 or more, we round up the 5 to 6. So, $0.0046$.",
           "e_zh": "第一个非零数字是 4。下一个数字是 5。因为第三位数字 (6) 大于等于 5，我们将 5 进位为 6。因此是 $0.0046$。"
+        },
+        {
+          "q": "Estimate the value of $\\frac{19.8 \\times 3.02}{0.49}$ by rounding each number to 1 significant figure.",
+          "q_zh": "通过将每个数保留 1 位有效数字，估算 $\\frac{19.8 \\times 3.02}{0.49}$ 的值。",
+          "o": [
+            "12",
+            "120",
+            "1200",
+            "1.2"
+          ],
+          "a": 1,
+          "e": "Rounding: $20 \\times 3 \\div 0.5 = 60 \\div 0.5 = 120$.",
+          "e_zh": "舍入：$20 \\times 3 \\div 0.5 = 60 \\div 0.5 = 120$。"
         }
       ],
       "vocabLinks": [
@@ -1085,6 +1239,14 @@
           "solution": "**Step 1:** Identify the rounding unit. 'Nearest centimetre' means unit is $1\\text{ cm}$.\n\n**Step 2:** Find half the unit. $1 \\div 2 = 0.5\\text{ cm}$.\n\n**Step 3:** Subtract/Add to find bounds.\n$LB = 15 - 0.5 = 14.5\\text{ cm}$\n$UB = 15 + 0.5 = 15.5\\text{ cm}$\n\n**Step 4:** Write the interval. $14.5 \\le l < 15.5$.\n\n**Answer:** $14.5 \\le l < 15.5$",
           "solution_zh": "**步骤 1：** 确定舍入单位。“精确到厘米”意味着单位是 $1\\text{ cm}$。\n\n**步骤 2：** 找到单位的一半。$1 \\div 2 = 0.5\\text{ cm}$。\n\n**步骤 3：** 减去/加上该值以找到边界。\n$LB = 15 - 0.5 = 14.5\\text{ cm}$\n$UB = 15 + 0.5 = 15.5\\text{ cm}$\n\n**步骤 4：** 写出区间。$14.5 \\le l < 15.5$。\n\n**答案：** $14.5 \\le l < 15.5$",
           "source": "0580/22/M/J/19"
+        },
+        {
+          "patternId": "ep-find-bounds",
+          "question": "A runner completes a 400m race in 52 seconds. Both values are correct to the nearest unit. Calculate the upper bound for the runner's average speed.",
+          "question_zh": "一名跑者在52秒内跑完400米。两个数值均精确到个位数。计算该跑者平均速度的上界。",
+          "solution": "Distance LB = 399.5m, UB = 400.5m. \nTime LB = 51.5s, UB = 52.5s. \nSpeed UB = $\\frac{\\text{Distance UB}}{\\text{Time LB}} = \\frac{400.5}{51.5} \\approx 7.7767... \\text{ m/s}$.",
+          "solution_zh": "路程下界 = 399.5m，上界 = 400.5m。\n时间下界 = 51.5s，上界 = 52.5s。\n速度上界 = $\\frac{\\text{路程上界}}{\\text{时间下界}} = \\frac{400.5}{51.5} \\approx 7.7767... \\text{ m/s}$。",
+          "source": "0580/42/M/J/22"
         }
       ],
       "testYourself": [
@@ -1100,6 +1262,19 @@
           "a": 0,
           "e": "The unit is $0.1$. Half the unit is $0.05$. $UB = 4.7 + 0.05 = 4.75$.",
           "e_zh": "单位是 $0.1$。单位的一半是 $0.05$。$UB = 4.7 + 0.05 = 4.75$。"
+        },
+        {
+          "q": "A side of a square is $6\\text{ cm}$ correct to the nearest centimeter. What is the lower bound of its area?",
+          "q_zh": "一个正方形的边长是 $6\\text{ cm}$（精确到厘米）。其面积的下界是多少？",
+          "o": [
+            "30.25",
+            "36",
+            "25",
+            "30.25"
+          ],
+          "a": 0,
+          "e": "Lower bound of side = $5.5\\text{ cm}$. Area LB = $5.5^2 = 30.25\\text{ cm}^2$.",
+          "e_zh": "边长的下界 = $5.5\\text{ cm}$。面积下界 = $5.5^2 = 30.25\\text{ cm}^2$。"
         }
       ],
       "vocabLinks": [
@@ -1134,6 +1309,14 @@
           "solution": "**Step 1:** Find total parts. $7 + 5 = 12$ parts.\n\n**Step 2:** Find the value of one part. $\\$600 \\div 12 = \\$50$.\n\n**Step 3:** Multiply parts by the value.\nPart 1: $7 \\times 50 = \\$350$\nPart 2: $5 \\times 50 = \\$250$\n\n**Answer:** $\\$350$ and $\\$250$",
           "solution_zh": "**步骤 1：** 找到总份数。$7 + 5 = 12$ 份。\n\n**步骤 2：** 找到一份的值。$\\$600 \\div 12 = \\$50$。\n\n**步骤 3：** 将份数乘以该值。\n第 1 部分：$7 \\times 50 = \\$350$\n第 2 部分：$5 \\times 50 = \\$250$\n\n**答案：** $\\$350$ 和 $\\$250$",
           "source": "Adapted from 0580/11/M/J/17"
+        },
+        {
+          "patternId": "ep-share-ratio",
+          "question": "The ratio of boys to girls in a school is $4:7$. If there are 280 boys, how many students are there in total?",
+          "question_zh": "学校里男生和女生的比例是 $4:7$。如果有280名男生，总共有多少名学生？",
+          "solution": "4 parts = 280 boys.\n1 part = $280 \\div 4 = 70$.\nTotal parts = $4 + 7 = 11$.\nTotal students = $11 \\times 70 = 770$.",
+          "solution_zh": "4 份 = 280 名男生。\n1 份 = $280 \\div 4 = 70$。\n总份数 = $4 + 7 = 11$。\n总学生数 = $11 \\times 70 = 770$。",
+          "source": "0580/22/F/M/21"
         }
       ],
       "testYourself": [
@@ -1149,6 +1332,19 @@
           "a": 0,
           "e": "4 parts = 28 girls, so 1 part = $28 \\div 4 = 7$. Boys = 3 parts = $3 \\times 7 = 21$.",
           "e_zh": "4 份 = 28 名女生，所以 1 份 = $28 \\div 4 = 7$。男生 = 3 份 = $3 \\times 7 = 21$。"
+        },
+        {
+          "q": "Divide $120$ in the ratio $3:5$. What is the smaller share?",
+          "q_zh": "将 $120$ 按 $3:5$ 的比例分配。较小的一份是多少？",
+          "o": [
+            "45",
+            "75",
+            "15",
+            "40"
+          ],
+          "a": 0,
+          "e": "Total parts = $3+5=8$. One part = $120/8 = 15$. Smaller part = $15 \\times 3 = 45$.",
+          "e_zh": "总份数 = $3+5=8$。一份 = $120/8 = 15$。较小的一份 = $15 \\times 3 = 45$。"
         }
       ],
       "vocabLinks": [
@@ -1183,6 +1379,14 @@
           "solution": "**Step 1:** Identify the final value and the change. Final = $12.75$. Decrease = $15\\%$.\n\n**Step 2:** Find the multiplier. $100\\% - 15\\% = 85\\%$, or $0.85$.\n\n**Step 3:** Divide final value by multiplier.\n$Original = 12.75 \\div 0.85 = 15$.\n\n**Answer:** $\\$15$",
           "solution_zh": "**步骤 1：** 确定最终值和变化。最终值 = $12.75$。减少量 = $15\\%$。\n\n**步骤 2：** 找到倍率。$100\\% - 15\\% = 85\\%$，即 $0.85$。\n\n**步骤 3：** 用最终值除以倍率。\n$原价 = 12.75 \\div 0.85 = 15$。\n\n**答案：** $\\$15$",
           "source": "0580/21/M/J/20"
+        },
+        {
+          "patternId": "ep-reverse-pct",
+          "question": "A car's value increases by $15\\%$ to $\\$13,800$. Calculate the value before the increase.",
+          "question_zh": "一辆汽车的价格上涨了 $15\\%$，达到 $\\$13,800$。计算上涨前的价格。",
+          "solution": "Let the original value be $V$.\n$V \\times (1 + 0.15) = 13,800$\n$1.15V = 13,800$\n$V = 13,800 \\div 1.15 = \\$12,000$.",
+          "solution_zh": "设原价为 $V$。\n$V \\times (1 + 0.15) = 13,800$\n$1.15V = 13,800$\n$V = 13,800 \\div 1.15 = \\$12,000$。",
+          "source": "0580/21/O/N/20"
         }
       ],
       "testYourself": [
@@ -1198,6 +1402,19 @@
           "a": 1,
           "e": "Multiplier = $1.10$. Original = $13200 \\div 1.1 = 12000$.",
           "e_zh": "倍率 = $1.10$。原价 = $13200 \\div 1.1 = 12000$。"
+        },
+        {
+          "q": "A shirt is sold for $\\$24$ after a $20\\%$ discount. What was the original price?",
+          "q_zh": "一件衬衫在打八折（优惠 $20\\%$）后售价为 $\\$24$。原价是多少？",
+          "o": [
+            "$\\$30$",
+            "$\\$28.80$",
+            "$\\$19.20$",
+            "$\\$44$"
+          ],
+          "a": 0,
+          "e": "Let original price be $x$. $0.8x = 24$, so $x = 24 / 0.8 = 30$.",
+          "e_zh": "设原价为 $x$。$0.8x = 24$，所以 $x = 24 / 0.8 = 30$。"
         }
       ],
       "vocabLinks": [
@@ -1239,6 +1456,14 @@
           "solution_zh": "1. 计算分子：\\(3.2^2 = 10.24\\)。\\(15.6 + 10.24 = 25.84\\)。\\(\\sqrt{25.84} \\approx 5.0833\\)。\n2. 计算分母：\\(0.5 \\times 4.1 = 2.05\\)。\n3. 相除：\\(5.0833 \\div 2.05 \\approx 2.4796...\\)。\n4. 保留 3 位有效数字：\\(2.48\\)。",
           "source": "0580/P2",
           "patternId": "ep-1.14-01"
+        },
+        {
+          "patternId": "ep-1.14-01",
+          "question": "Use your calculator to find the value of $\\frac{\\sqrt{3.4^2 + 5.2^2}}{1.8}$. Write down all the figures on your calculator display.",
+          "question_zh": "使用计算器计算 $\\frac{\\sqrt{3.4^2 + 5.2^2}}{1.8}$ 的值。写下计算器显示屏上的所有数字。",
+          "solution": "1. Calculate $3.4^2 + 5.2^2 = 11.56 + 27.04 = 38.6$.\n2. Square root: $\\sqrt{38.6} \\approx 6.2128898...$\n3. Divide by 1.8: $\\approx 3.4516054...$\nResult: 3.4516054... (exact display depends on model).",
+          "solution_zh": "1. 计算 $3.4^2 + 5.2^2 = 11.56 + 27.04 = 38.6$。\n2. 开平方：$\\sqrt{38.6} \\approx 6.2128898...$\n3. 除以 1.8：$\\approx 3.4516054...$\n结果：3.4516054...（具体显示取决于型号）。",
+          "source": "Adapted from 0580/12/M/J/22"
         }
       ],
       "testYourself": [
@@ -1299,6 +1524,14 @@
           "solution": "**Step 1:** Convert time to hours. $30$ mins $= 0.5$ hours. Total time $= 2.5$ hours.\n\n**Step 2:** Use the formula $\\text{Speed} = \\frac{\\text{Distance}}{\\text{Time}}$.\n$\\text{Speed} = \\frac{210}{2.5} = 84$.\n\n**Answer:** $84\\text{ km/h}$",
           "solution_zh": "**步骤 1：** 将时间转换为小时。$30$ 分钟 $= 0.5$ 小时。总时间 $= 2.5$ 小时。\n\n**步骤 2：** 使用公式 $\\text{速度} = \\frac{\\text{距离}}{\\text{时间}}$。\n$\\text{速度} = \\frac{210}{2.5} = 84$。\n\n**答案：** $84\\text{ km/h}$",
           "source": "Adapted from 0580/23/M/J/21"
+        },
+        {
+          "patternId": "ep-calc-speed",
+          "question": "A train travels at an average speed of 120 km/h for 45 minutes. How far does it travel?",
+          "question_zh": "一列火车以120 km/h的平均速度行驶了45分钟。它行驶了多远？",
+          "solution": "1. Convert time to hours: 45 minutes = $45/60 = 0.75$ hours.\n2. Distance = Speed $\\times$ Time = $120 \\times 0.75 = 90$ km.",
+          "solution_zh": "1. 将时间转换为小时：45 分钟 = $45/60 = 0.75$ 小时。\n2. 路程 = 速度 $\\times$ 时间 = $120 \\times 0.75 = 90$ km。",
+          "source": "0580/13/O/N/20"
         }
       ],
       "testYourself": [
@@ -1314,6 +1547,19 @@
           "a": 0,
           "e": "$20\\text{ m/s} \\times 3.6 = 72\\text{ km/h}$. Alternatively, $20\\text{ m} = 0.02\\text{ km}$, $1\\text{ sec} = 1/3600\\text{ hr}$. $0.02 \\div (1/3600) = 72$.",
           "e_zh": "$20\\text{ m/s} \\times 3.6 = 72\\text{ km/h}$。或者，$20\\text{ m} = 0.02\\text{ km}$，$1\\text{ 秒} = 1/3600\\text{ 小时}$。$0.02 \\div (1/3600) = 72$。"
+        },
+        {
+          "q": "A car travels 150km in 2 hours and 30 minutes. What is its average speed?",
+          "q_zh": "一辆车在2小时30分钟内行驶了150公里。它的平均速度是多少？",
+          "o": [
+            "75 km/h",
+            "60 km/h",
+            "100 km/h",
+            "50 km/h"
+          ],
+          "a": 1,
+          "e": "Time = 2.5 hours. Speed = $150 / 2.5 = 60$ km/h.",
+          "e_zh": "时间 = 2.5 小时。速度 = $150 / 2.5 = 60$ km/h。"
         }
       ],
       "vocabLinks": [
@@ -1348,6 +1594,14 @@
           "solution": "**Step 1:** Identify variables. $P = 500$, $r = 2$, $n = 3$.\n\n**Step 2:** Use formula $A = P(1 + \\frac{r}{100})^n$.\n$A = 500(1 + 0.02)^3$\n$A = 500(1.02)^3$\n\n**Step 3:** Calculate. $A = 500 \\times 1.061208 = 530.604$.\n\n**Step 4:** Round to 2 decimal places for money.\n**Answer:** $\\$530.60$",
           "solution_zh": "**步骤 1：** 确定变量。$P = 500$，$r = 2$，$n = 3$。\n\n**步骤 2：** 使用公式 $A = P(1 + \\frac{r}{100})^n$。\n$A = 500(1 + 0.02)^3$\n$A = 500(1.02)^3$\n\n**步骤 3：** 计算。$A = 500 \\times 1.061208 = 530.604$。\n\n**步骤 4：** 货币保留两位小数。\n**答案：** $\\$530.60$",
           "source": "Adapted from 0580/22/O/N/19"
+        },
+        {
+          "patternId": "ep-calc-interest",
+          "question": "Invest $\\$2000$ at a rate of $2\\%$ per year compound interest. Calculate the total value after 5 years.",
+          "question_zh": "将 $\\$2000$ 以 $2\\%$ 的年复利率进行投资。计算5年后的总价值。",
+          "solution": "$A = P(1 + r/100)^n = 2000(1 + 0.02)^5$\n$A = 2000(1.02)^5 \\approx 2000 \\times 1.10408 = \\$2208.16$.",
+          "solution_zh": "$A = P(1 + r/100)^n = 2000(1 + 0.02)^5$\n$A = 2000(1.02)^5 \\approx 2000 \\times 1.10408 = \\$2208.16$。",
+          "source": "0580/41/O/N/21"
         }
       ],
       "testYourself": [
@@ -1363,6 +1617,19 @@
           "a": 0,
           "e": "$I = (1000 \\times 5 \\times 4) / 100 = 200$.",
           "e_zh": "$I = (1000 \\times 5 \\times 4) / 100 = 200$。"
+        },
+        {
+          "q": "Calculate the simple interest on $\\$500$ at $4\\%$ per year for 3 years.",
+          "q_zh": "计算 $\\$500$ 以 $4\\%$ 的年利率存放3年的单利。",
+          "o": [
+            "$\\$60$",
+            "$\\$560$",
+            "$\\$20$",
+            "$\\$15$"
+          ],
+          "a": 0,
+          "e": "Simple Interest $I = PRT / 100 = 500 \\times 4 \\times 3 / 100 = 60$.",
+          "e_zh": "单利 $I = PRT / 100 = 500 \\times 4 \\times 3 / 100 = 60$。"
         }
       ],
       "vocabLinks": [
@@ -1397,6 +1664,14 @@
           "solution": "**Step 1:** Identify variables. $P = 12000$, $r = 15$, $n = 4$.\n\n**Step 2:** Use decay formula $P(1 - \\frac{r}{100})^n$.\n$Value = 12000 \\times (0.85)^4$.\n\n**Step 3:** Calculate $(0.85)^4 \\approx 0.522$.\n$Value = 12000 \\times 0.52200625 = 6264.075$.\n\n**Answer:** $\\$6264.08$ (to 2 dp)",
           "solution_zh": "**步骤 1：** 确定变量。$P = 12000$，$r = 15$，$n = 4$。\n\n**步骤 2：** 使用衰减公式 $P(1 - \\frac{r}{100})^n$。\n$Value = 12000 \\times (0.85)^4$。\n\n**步骤 3：** 计算 $(0.85)^4 \\approx 0.522$。\n$Value = 12000 \\times 0.52200625 = 6264.075$。\n\n**答案：** $\\$6264.08$ (保留两位小数)",
           "source": "0580/22/M/J/18"
+        },
+        {
+          "patternId": "ep-depreciation",
+          "question": "A machine costs $\\$5000$. Its value depreciates exponentially at a rate of $8\\%$ per year. Calculate its value after 4 years.",
+          "question_zh": "一台机器价值 $\\$5000$。其价值以每年 $8\\%$ 的速率呈指数级贬值。计算4年后的价值。",
+          "solution": "$V = P(1 - r/100)^n = 5000(1 - 0.08)^4$\n$V = 5000(0.92)^4 \\approx 5000 \\times 0.71639 = \\$3581.96$.",
+          "solution_zh": "$V = P(1 - r/100)^n = 5000(1 - 0.08)^4$\n$V = 5000(0.92)^4 \\approx 5000 \\times 0.71639 = \\$3581.96$。",
+          "source": "0580/42/M/J/21"
         }
       ],
       "testYourself": [
@@ -1412,6 +1687,19 @@
           "a": 1,
           "e": "$50000 \\times (1.02)^2 = 50000 \\times 1.0404 = 52020$.",
           "e_zh": "$50000 \\times (1.02)^2 = 50000 \\times 1.0404 = 52020$。"
+        },
+        {
+          "q": "A population of 1000 bacteria increases by $10\\%$ every hour. What is the population after 2 hours?",
+          "q_zh": "1000个细菌的种群每小时增加 $10\\%$。2小时后种群数量是多少？",
+          "o": [
+            "1200",
+            "1210",
+            "1100",
+            "1020"
+          ],
+          "a": 1,
+          "e": "Population = $1000 \\times (1.1)^2 = 1000 \\times 1.21 = 1210$.",
+          "e_zh": "种群数 = $1000 \\times (1.1)^2 = 1000 \\times 1.21 = 1210$。"
         }
       ],
       "vocabLinks": [
@@ -1446,6 +1734,14 @@
           "solution": "**Step 1:** Find square factors of 72. $72 = 36 \\times 2$.\n\n**Step 2:** Use the rule $\\sqrt{ab} = \\sqrt{a}\\sqrt{b}$.\n$\\sqrt{72} = \\sqrt{36} \\times \\sqrt{2}$.\n\n**Step 3:** Evaluate $\\sqrt{36}$.\n$\\sqrt{36} = 6$.\n\n**Answer:** $6\\sqrt{2}$",
           "solution_zh": "**步骤 1：** 找到 72 的平方因子。$72 = 36 \\times 2$。\n\n**步骤 2：** 使用规则 $\\sqrt{ab} = \\sqrt{a}\\sqrt{b}$。\n$\\sqrt{72} = \\sqrt{36} \\times \\sqrt{2}$。\n\n**步骤 3：** 计算 $\\sqrt{36}$。\n$\\sqrt{36} = 6$。\n\n**答案：** $6\\sqrt{2}$",
           "source": "0580/42/M/J/20"
+        },
+        {
+          "patternId": "ep-simplify-surd",
+          "question": "Rationalise the denominator and simplify: $\\frac{10}{\\sqrt{5}}$.",
+          "question_zh": "分母有理化并化简：$\\frac{10}{\\sqrt{5}}$。",
+          "solution": "Multiply numerator and denominator by $\\sqrt{5}$:\n$\\frac{10}{\\sqrt{5}} \\times \\frac{\\sqrt{5}}{\\sqrt{5}} = \\frac{10\\sqrt{5}}{5} = 2\\sqrt{5}$.",
+          "solution_zh": "分子分母同时乘以 $\\sqrt{5}$：\n$\\frac{10}{\\sqrt{5}} \\times \\frac{\\sqrt{5}}{\\sqrt{5}} = \\frac{10\\sqrt{5}}{5} = 2\\sqrt{5}$。",
+          "source": "Adapted from 0580/22/M/J/22"
         }
       ],
       "testYourself": [
@@ -1461,6 +1757,19 @@
           "a": 1,
           "e": "Multiply top and bottom by $\\sqrt{5}$: $\\frac{3 \\times \\sqrt{5}}{\\sqrt{5} \\times \\sqrt{5}} = \\frac{3\\sqrt{5}}{5}$.",
           "e_zh": "分子分母同乘 $\\sqrt{5}$：$\\frac{3 \\times \\sqrt{5}}{\\sqrt{5} \\times \\sqrt{5}} = \\frac{3\\sqrt{5}}{5}$。"
+        },
+        {
+          "q": "Simplify $\\sqrt{48}$.",
+          "q_zh": "化简 $\\sqrt{48}$。",
+          "o": [
+            "$6\\sqrt{8}$",
+            "$2\\sqrt{12}$",
+            "$4\\sqrt{3}$",
+            "$16\\sqrt{3}$"
+          ],
+          "a": 2,
+          "e": "$\\sqrt{48} = \\sqrt{16 \\times 3} = \\sqrt{16} \\times \\sqrt{3} = 4\\sqrt{3}$.",
+          "e_zh": "$\\sqrt{48} = \\sqrt{16 \\times 3} = \\sqrt{16} \\times \\sqrt{3} = 4\\sqrt{3}$。"
         }
       ],
       "vocabLinks": [
@@ -1495,6 +1804,14 @@
           "solution": "**Step 1:** Substitute $a$ with $5$ and $b$ with $(-4)$.\n$3(5) - 2(-4)$\n\n**Step 2:** Multiply the terms.\n$15 - (-8)$\n\n**Step 3:** Simplify the double negative.\n$15 + 8 = 23$\n\n**Answer:** $23$",
           "solution_zh": "**步骤1：** 将 $a$ 替换为 $5$，$b$ 替换为 $(-4)$。\n$3(5) - 2(-4)$\n\n**步骤2：** 计算乘法项。\n$15 - (-8)$\n\n**步骤3：** 化简双重负号。\n$15 + 8 = 23$\n\n**答案：** $23$",
           "source": "Adapted from 0580/21/M/J/18"
+        },
+        {
+          "patternId": "ep-sub-simple",
+          "question": "Given the formula v^2 = u^2 + 2as, calculate the value of s when v = 13, u = 5, and a = 6.",
+          "question_zh": "已知公式 v^2 = u^2 + 2as，当 v = 13, u = 5, a = 6 时，计算 s 的值。",
+          "solution": "1. Substitute the known values into the formula:\n13^2 = 5^2 + 2(6)s\n2. Calculate the squares:\n169 = 25 + 12s\n3. Subtract 25 from both sides:\n144 = 12s\n4. Divide by 12:\ns = 12",
+          "solution_zh": "1. 将已知数值代入公式：\n13^2 = 5^2 + 2(6)s\n2. 计算平方项：\n169 = 25 + 12s\n3. 等式两边同时减去 25：\n144 = 12s\n4. 除以 12：\ns = 12",
+          "source": "Adapted from 0580/21/M/J/21"
         }
       ],
       "testYourself": [
@@ -1510,6 +1827,19 @@
           "a": 1,
           "e": "$(-3)^2 - 5(-3) = 9 + 15 = 24$.",
           "e_zh": "$(-3)^2 - 5(-3) = 9 + 15 = 24$。"
+        },
+        {
+          "q": "Evaluate the expression \\frac{2a - b}{c^2} when a = 5, b = -4, and c = 2.",
+          "q_zh": "当 a = 5, b = -4, c = 2 时，求代数式 \\frac{2a - b}{c^2} 的值。",
+          "o": [
+            "1.5",
+            "3.5",
+            "0.5",
+            "2.5"
+          ],
+          "a": 1,
+          "e": "Substitute the values: \\frac{2(5) - (-4)}{2^2} = \\frac{10 + 4}{4} = \\frac{14}{4} = 3.5.",
+          "e_zh": "代入数值：\\frac{2(5) - (-4)}{2^2} = \\frac{10 + 4}{4} = \\frac{14}{4} = 3.5。"
         }
       ],
       "vocabLinks": [
@@ -1544,6 +1874,14 @@
           "solution": "**Step 1:** Multiply both sides by $5$ to remove the denominator.\n$5y = x + 3$\n\n**Step 2:** Subtract $3$ from both sides to isolate $x$.\n$5y - 3 = x$\n\n**Answer:** $x = 5y - 3$",
           "solution_zh": "**步骤1：** 两边同时乘以 $5$ 以消去分母。\n$5y = x + 3$\n\n**步骤2：** 两边同时减去 $3$ 以孤立 $x$。\n$5y - 3 = x$\n\n**答案：** $x = 5y - 3$",
           "source": "0580/22/O/N/19"
+        },
+        {
+          "patternId": "ep-change-subject",
+          "question": "Rearrange the formula to make x the subject: y = \\frac{x + 2}{x - 3}",
+          "question_zh": "将公式 y = \\frac{x + 2}{x - 3} 变形，使 x 成为主元。",
+          "solution": "1. Multiply both sides by (x - 3):\ny(x - 3) = x + 2\n2. Expand the bracket:\nxy - 3y = x + 2\n3. Collect terms with x on one side:\nxy - x = 3y + 2\n4. Factorise x:\nx(y - 1) = 3y + 2\n5. Divide by (y - 1):\nx = \\frac{3y + 2}{y - 1}",
+          "solution_zh": "1. 两边同时乘以 (x - 3)：\ny(x - 3) = x + 2\n2. 展开括号：\nxy - 3y = x + 2\n3. 将含 x 的项移到等式左边：\nxy - x = 3y + 2\n4. 提取公因式 x：\nx(y - 1) = 3y + 2\n5. 除以 (y - 1)：\nx = \\frac{3y + 2}{y - 1}",
+          "source": "0580/42/O/N/20"
         }
       ],
       "testYourself": [
@@ -1559,6 +1897,19 @@
           "a": 2,
           "e": "Divide by $\\pi$ to get $r^2 = A/\\pi$, then take the square root.",
           "e_zh": "两边除以 $\\pi$ 得到 $r^2 = A/\\pi$，然后开平方根。"
+        },
+        {
+          "q": "Make r the subject of the formula V = \\frac{4}{3}\\pi r^3.",
+          "q_zh": "将公式 V = \\frac{4}{3}\\pi r^3 变形，使 r 成为主元。",
+          "o": [
+            "r = \\sqrt[3]{\\frac{3V}{4\\pi}}",
+            "r = \\sqrt[3]{\\frac{4V}{3\\pi}}",
+            "r = \\frac{3V}{4\\pi}",
+            "r = \\sqrt{\\frac{3V}{4\\pi}}"
+          ],
+          "a": 0,
+          "e": "1. Multiply by 3: 3V = 4\\pi r^3. 2. Divide by 4\\pi: r^3 = \\frac{3V}{4\\pi}. 3. Take the cube root: r = \\sqrt[3]{\\frac{3V}{4\\pi}}.",
+          "e_zh": "1. 两边乘以 3：3V = 4\\pi r^3。2. 两边除以 4\\pi：r^3 = \\frac{3V}{4\\pi}。3. 开立方根：r = \\sqrt[3]{\\frac{3V}{4\\pi}}。"
         }
       ],
       "vocabLinks": [
@@ -1600,6 +1951,14 @@
           "solution": "**Step 1:** Expand the first bracket.\n$6x - 3$\n\n**Step 2:** Expand the second bracket (watch the minus sign).\n$-2x - 10$\n\n**Step 3:** Collect like terms.\n$(6x - 2x) + (-3 - 10) = 4x - 13$\n\n**Answer:** $4x - 13$",
           "solution_zh": "**步骤1：** 展开第一个括号。\n$6x - 3$\n\n**步骤2：** 展开第二个括号（注意负号）。\n$-2x - 10$\n\n**步骤3：** 合并同类项。\n$(6x - 2x) + (-3 - 10) = 4x - 13$\n\n**答案：** $4x - 13$",
           "source": "0580/21/M/J/17"
+        },
+        {
+          "patternId": "ep-expand-simplify",
+          "question": "Expand and simplify: 3(2x - 1) - 2(x - 4)",
+          "question_zh": "展开并化简：3(2x - 1) - 2(x - 4)",
+          "solution": "1. Expand the first bracket: 6x - 3\n2. Expand the second bracket (careful with the sign): -2x + 8\n3. Combine like terms: (6x - 2x) + (-3 + 8)\n4. Simplify: 4x + 5",
+          "solution_zh": "1. 展开第一个括号：6x - 3\n2. 展开第二个括号（注意负号）：-2x + 8\n3. 合并同类项：(6x - 2x) + (-3 + 8)\n4. 化简：4x + 5",
+          "source": "0580/22/F/M/19"
         }
       ],
       "testYourself": [
@@ -1615,6 +1974,19 @@
           "a": 2,
           "e": "The HCF of $15$ and $10$ is $5$. The HCF of $y^2$ and $y$ is $y$. So, factor out $5y$.",
           "e_zh": "$15$ 和 $10$ 的最大公约数是 $5$。$y^2$ 和 $y$ 的最高公因式是 $y$。因此提出 $5y$。"
+        },
+        {
+          "q": "Expand and simplify: (2x - 3)(x + 5)",
+          "q_zh": "展开并化简：(2x - 3)(x + 5)",
+          "o": [
+            "2x^2 + 7x - 15",
+            "2x^2 - 7x - 15",
+            "2x^2 + 13x - 15",
+            "2x^2 + 7x + 15"
+          ],
+          "a": 0,
+          "e": "(2x - 3)(x + 5) = 2x(x) + 2x(5) - 3(x) - 3(5) = 2x^2 + 10x - 3x - 15 = 2x^2 + 7x - 15.",
+          "e_zh": "(2x - 3)(x + 5) = 2x(x) + 2x(5) - 3(x) - 3(5) = 2x^2 + 10x - 3x - 15 = 2x^2 + 7x - 15。"
         }
       ],
       "vocabLinks": [
@@ -1657,6 +2029,14 @@
           "solution": "**Step 1:** Look for two numbers that multiply to $+6$ and add to $-5$.\nPossible pairs: $(1, 6), (2, 3), (-1, -6), (-2, -3)$.\n\n**Step 2:** Select the pair that adds to $-5$.\n$-2 + (-3) = -5$. Correct.\n\n**Step 3:** Write in brackets.\n$(x - 2)(x - 3)$\n\n**Answer:** $(x - 2)(x - 3)$ ",
           "solution_zh": "**步骤1：** 寻找两个数，乘积为 $+6$，且和为 $-5$。\n可能组合：$(1, 6), (2, 3), (-1, -6), (-2, -3)$。\n\n**步骤2：** 选择和为 $-5$ 的组合。\n$-2 + (-3) = -5$。正确。\n\n**步骤3：** 写进括号中。\n$(x - 2)(x - 3)$\n\n**答案：** $(x - 2)(x - 3)$ ",
           "source": "0580/22/F/M/20"
+        },
+        {
+          "patternId": "ep-fact-quad",
+          "question": "Factorise completely: 2x^2 - 5x - 3",
+          "question_zh": "彻底因式分解：2x^2 - 5x - 3",
+          "solution": "1. Look for two numbers that multiply to (2 \\times -3) = -6 and add to -5.\n2. The numbers are -6 and 1.\n3. Split the middle term: 2x^2 - 6x + x - 3\n4. Factorise by grouping: 2x(x - 3) + 1(x - 3)\n5. Final factorisation: (2x + 1)(x - 3)",
+          "solution_zh": "1. 寻找两个数，使其乘积为 (2 \\times -3) = -6 且和为 -5。\n2. 这两个数是 -6 和 1。\n3. 拆分中间项：2x^2 - 6x + x - 3\n4. 分组分解：2x(x - 3) + 1(x - 3)\n5. 最终结果：(2x + 1)(x - 3)",
+          "source": "0580/23/O/N/21"
         }
       ],
       "testYourself": [
@@ -1672,6 +2052,19 @@
           "a": 1,
           "e": "This is a difference of two squares: $(3x)^2 - (4)^2 = (3x-4)(3x+4)$.",
           "e_zh": "这是平方差：$(3x)^2 - (4)^2 = (3x-4)(3x+4)$。"
+        },
+        {
+          "q": "Factorise completely: 9x^2 - 16y^2",
+          "q_zh": "彻底因式分解：9x^2 - 16y^2",
+          "o": [
+            "(3x - 4y)(3x + 4y)",
+            "(9x - 16y)(9x + 16y)",
+            "(3x - 4y)^2",
+            "3(x - y)(3x + 4y)"
+          ],
+          "a": 0,
+          "e": "This is a difference of two squares: a^2 - b^2 = (a - b)(a + b). Here a = 3x and b = 4y.",
+          "e_zh": "这是平方差公式：a^2 - b^2 = (a - b)(a + b)。这里 a = 3x 且 b = 4y。"
         }
       ],
       "vocabLinks": [
@@ -1714,6 +2107,14 @@
           "solution": "**Step 1:** Factorise the numerator (Difference of squares).\n$x^2 - 9 = (x - 3)(x + 3)$\n\n**Step 2:** Factorise the denominator (Common factor).\n$2x + 6 = 2(x + 3)$\n\n**Step 3:** Cancel the common factor $(x + 3)$.\n$\\frac{(x - 3)(x + 3)}{2(x + 3)} = \\frac{x - 3}{2}$\n\n**Answer:** $\\frac{x - 3}{2}$",
           "solution_zh": "**步骤1：** 分解分子（平方差公式）。\n$x^2 - 9 = (x - 3)(x + 3)$\n\n**步骤2：** 分解分母（公因式）。\n$2x + 6 = 2(x + 3)$\n\n**步骤3：** 约去公因式 $(x + 3)$。\n$\\frac{(x - 3)(x + 3)}{2(x + 3)} = \\frac{x - 3}{2}$\n\n**答案：** $\\frac{x - 3}{2}$",
           "source": "0580/42/M/J/19"
+        },
+        {
+          "patternId": "ep-simplify-fraction",
+          "question": "Simplify: \\frac{x^2 - 9}{2x^2 - 5x - 3}",
+          "question_zh": "化简：\\frac{x^2 - 9}{2x^2 - 5x - 3}",
+          "solution": "1. Factorise the numerator: (x - 3)(x + 3)\n2. Factorise the denominator: (2x + 1)(x - 3)\n3. Cancel the common factor (x - 3):\n\\frac{x + 3}{2x + 1}",
+          "solution_zh": "1. 分解分子：(x - 3)(x + 3)\n2. 分解分母：(2x + 1)(x - 3)\n3. 约去公因式 (x - 3)：\n\\frac{x + 3}{2x + 1}",
+          "source": "0580/41/M/J/22"
         }
       ],
       "testYourself": [
@@ -1729,6 +2130,19 @@
           "a": 2,
           "e": "The common denominator is $xy$. $\\frac{1}{x} = \\frac{y}{xy}$ and $\\frac{1}{y} = \\frac{x}{xy}$. Sum = $\\frac{y+x}{xy}$.",
           "e_zh": "公分母是 $xy$。$\\frac{1}{x} = \\frac{y}{xy}$ 且 $\\frac{1}{y} = \\frac{x}{xy}$。和为 $\\frac{y+x}{xy}$。"
+        },
+        {
+          "q": "Simplify into a single fraction: \\frac{3}{x+2} - \\frac{2}{x-1}",
+          "q_zh": "化简为单个分式：\\frac{3}{x+2} - \\frac{2}{x-1}",
+          "o": [
+            "\\frac{x - 7}{(x+2)(x-1)}",
+            "\\frac{x + 7}{(x+2)(x-1)}",
+            "\\frac{1}{2x+1}",
+            "\\frac{x - 1}{(x+2)(x-1)}"
+          ],
+          "a": 0,
+          "e": "Common denominator is (x+2)(x-1). \\frac{3(x-1) - 2(x+2)}{(x+2)(x-1)} = \\frac{3x - 3 - 2x - 4}{(x+2)(x-1)} = \\frac{x - 7}{(x+2)(x-1)}.",
+          "e_zh": "公分母为 (x+2)(x-1)。\\frac{3(x-1) - 2(x+2)}{(x+2)(x-1)} = \\frac{3x - 3 - 2x - 4}{(x+2)(x-1)} = \\frac{x - 7}{(x+2)(x-1)}。"
         }
       ],
       "vocabLinks": [
@@ -1770,6 +2184,14 @@
           "solution": "**Step 1:** Observe that the coefficients of $y$ are opposites ($+2$ and $-2$). Add the two equations.\n$(3x + x) + (2y - 2y) = 7 + 5$\n$4x = 12$\n\n**Step 2:** Solve for $x$.\n$x = 3$\n\n**Step 3:** Substitute $x = 3$ back into the second equation to find $y$.\n$3 - 2y = 5$\n$-2y = 2$\n$y = -1$\n\n**Answer:** $x = 3, y = -1$",
           "solution_zh": "**步骤1：** 观察到 $y$ 的系数是相反数（$+2$ 和 $-2$）。将两个方程相加。\n$(3x + x) + (2y - 2y) = 7 + 5$\n$4x = 12$\n\n**步骤2：** 求出 $x$。\n$x = 3$\n\n**步骤3：** 将 $x = 3$ 代回第二个方程以求出 $y$。\n$3 - 2y = 5$\n$-2y = 2$\n$y = -1$\n\n**答案：** $x = 3, y = -1$",
           "source": "0580/22/M/J/18"
+        },
+        {
+          "patternId": "ep-simultaneous",
+          "question": "Solve the simultaneous equations: 5x - 3y = 16 and 4x + 2y = 6.",
+          "question_zh": "解二元一次方程组：5x - 3y = 16 和 4x + 2y = 6。",
+          "solution": "1. Multiply first by 2: 10x - 6y = 32\n2. Multiply second by 3: 12x + 6y = 18\n3. Add the two equations: 22x = 50\n4. Solve for x: x = 50/22 = 25/11 (approx 2.27)\n5. Substitute to find y: 4(25/11) + 2y = 6 \\Rightarrow 100/11 + 2y = 66/11 \\Rightarrow 2y = -34/11 \\Rightarrow y = -17/11 (approx -1.55)",
+          "solution_zh": "1. 第一个方程乘以 2：10x - 6y = 32\n2. 第二个方程乘以 3：12x + 6y = 18\n3. 两式相加：22x = 50\n4. 解得 x：x = 25/11（约 2.27）\n5. 代入求 y：4(25/11) + 2y = 6 \\Rightarrow 100/11 + 2y = 66/11 \\Rightarrow 2y = -34/11 \\Rightarrow y = -17/11（约 -1.55）",
+          "source": "Adapted from 0580/42/M/J/18"
         }
       ],
       "testYourself": [
@@ -1785,6 +2207,19 @@
           "a": 1,
           "e": "$2x - 6 = 10 \\Rightarrow 2x = 16 \\Rightarrow x = 8$. Or divide by 2 first: $x - 3 = 5 \\Rightarrow x = 8$.",
           "e_zh": "$2x - 6 = 10 \\Rightarrow 2x = 16 \\Rightarrow x = 8$。或者先除以 2：$x - 3 = 5 \\Rightarrow x = 8$。"
+        },
+        {
+          "q": "Solve the simultaneous equations: 3x + 2y = 12 and 2x - y = 1.",
+          "q_zh": "解二元一次方程组：3x + 2y = 12 和 2x - y = 1。",
+          "o": [
+            "x = 2, y = 3",
+            "x = 3, y = 2",
+            "x = 4, y = 0",
+            "x = 1, y = 1"
+          ],
+          "a": 0,
+          "e": "Multiply second equation by 2: 4x - 2y = 2. Add to first: 7x = 14 \\Rightarrow x = 2. Substitute x=2: 2(2) - y = 1 \\Rightarrow y = 3.",
+          "e_zh": "将第二个方程乘以 2：4x - 2y = 2。与第一个相加：7x = 14 \\Rightarrow x = 2。代入 x=2：2(2) - y = 1 \\Rightarrow y = 3。"
         }
       ],
       "vocabLinks": [
@@ -1819,6 +2254,14 @@
           "solution": "**Step 1:** Identify $a=2, b=5, c=-4$.\n\n**Step 2:** Use formula $x = \\frac{-5 \\pm \\sqrt{5^2 - 4(2)(-4)}}{2(2)}$.\n\n**Step 3:** Simplify the discriminant.\n$x = \\frac{-5 \\pm \\sqrt{25 + 32}}{4} = \\frac{-5 \\pm \\sqrt{57}}{4}$\n\n**Step 4:** Calculate two values.\n$x = 0.64$ or $x = -3.14$\n\n**Answer:** $0.64, -3.14$",
           "solution_zh": "**步骤1：** 确定 $a=2, b=5, c=-4$。\n\n**步骤2：** 代入公式 $x = \\frac{-5 \\pm \\sqrt{5^2 - 4(2)(-4)}}{2(2)}$。\n\n**步骤3：** 计算根号内的判别式。\n$x = \\frac{-5 \\pm \\sqrt{25 + 32}}{4} = \\frac{-5 \\pm \\sqrt{57}}{4}$\n\n**步骤4：** 计算两个数值。\n$x = 0.64$ 或 $x = -3.14$\n\n**答案：** $0.64, -3.14$",
           "source": "0580/41/M/J/20"
+        },
+        {
+          "patternId": "ep-solve-quad-formula",
+          "question": "Solve 3x^2 + 8x - 5 = 0. Give your answers correct to 2 decimal places.",
+          "question_zh": "解方程 3x^2 + 8x - 5 = 0。结果保留两位小数。",
+          "solution": "1. Use quadratic formula: x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}\n2. Substitute a=3, b=8, c=-5: x = \\frac{-8 \\pm \\sqrt{64 - 4(3)(-5)}}{6}\n3. Simplify: x = \\frac{-8 \\pm \\sqrt{124}}{6}\n4. Calculate roots: x \\approx 0.52 or x \\approx -3.19",
+          "solution_zh": "1. 使用求根公式：x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}\n2. 代入 a=3, b=8, c=-5：x = \\frac{-8 \\pm \\sqrt{64 - 4(3)(-5)}}{6}\n3. 化简：x = \\frac{-8 \\pm \\sqrt{124}}{6}\n4. 计算得：x \\approx 0.52 或 x \\approx -3.19",
+          "source": "0580/22/O/N/20"
         }
       ],
       "testYourself": [
@@ -1834,6 +2277,19 @@
           "a": 2,
           "e": "$x^2 = 9$, so $x = \\sqrt{9}$ or $x = -\\sqrt{9}$.",
           "e_zh": "$x^2 = 9$，所以 $x = \\sqrt{9}$ 或 $x = -\\sqrt{9}$。"
+        },
+        {
+          "q": "Solve x^2 - 5x + 6 = 0.",
+          "q_zh": "解方程 x^2 - 5x + 6 = 0。",
+          "o": [
+            "x = 2, x = 3",
+            "x = -2, x = -3",
+            "x = 1, x = 6",
+            "x = -1, x = -6"
+          ],
+          "a": 0,
+          "e": "Factorise: (x - 2)(x - 3) = 0. So x = 2 or x = 3.",
+          "e_zh": "因式分解：(x - 2)(x - 3) = 0。所以 x = 2 或 x = 3。"
         }
       ],
       "vocabLinks": [
@@ -1875,6 +2331,14 @@
           "solution": "**Step 1:** Subtract $7$ from both sides.\n$-2x \\le 4$\n\n**Step 2:** Divide by $-2$ and **reverse the sign**.\n$x \\ge \\frac{4}{-2}$\n$x \\ge -2$\n\n**Answer:** $x \\ge -2$",
           "solution_zh": "**步骤1：** 两边同时减去 $7$。\n$-2x \\le 4$\n\n**步骤2：** 除以 $-2$ 并 **反转符号**。\n$x \\ge \\frac{4}{-2}$\n$x \\ge -2$\n\n**答案：** $x \\ge -2$",
           "source": "0580/21/M/J/19"
+        },
+        {
+          "patternId": "ep-solve-ineq",
+          "question": "Find the integer values of n that satisfy: -5 < 2n - 1 \\leq 3.",
+          "question_zh": "求满足不等式 -5 < 2n - 1 \\leq 3 的所有整数 n 的值。",
+          "solution": "1. Add 1 to all parts: -4 < 2n \\leq 4\n2. Divide by 2: -2 < n \\leq 2\n3. List the integers: -1, 0, 1, 2",
+          "solution_zh": "1. 各项加 1：-4 < 2n \\leq 4\n2. 除以 2：-2 < n \\leq 2\n3. 列出整数值：-1, 0, 1, 2",
+          "source": "0580/21/M/J/17"
         }
       ],
       "testYourself": [
@@ -1890,6 +2354,19 @@
           "a": 1,
           "e": "$-2 \\le x < 2$ includes $-2, -1, 0, 1$.",
           "e_zh": "$-2 \\le x < 2$ 包含 $-2, -1, 0, 1$。"
+        },
+        {
+          "q": "Solve the inequality: 7 - 2x < 11.",
+          "q_zh": "解不等式：7 - 2x < 11。",
+          "o": [
+            "x < -2",
+            "x > -2",
+            "x > 2",
+            "x < 2"
+          ],
+          "a": 1,
+          "e": "1. Subtract 7: -2x < 4. 2. Divide by -2 (flip inequality): x > -2.",
+          "e_zh": "1. 减去 7：-2x < 4。2. 除以 -2（不等号变向）：x > -2。"
         }
       ],
       "vocabLinks": [
@@ -1925,6 +2402,14 @@
           "solution": "**Step 1:** Find the common difference.\n$8 - 5 = 3, 11 - 8 = 3$. The difference is $+3$, so the formula starts with $3n$.\n\n**Step 2:** Find the '0th term' (the term before the first).\n$5 - 3 = 2$.\n\n**Step 3:** Combine into the formula.\n$u_n = 3n + 2$\n\n**Answer:** $3n + 2$",
           "solution_zh": "**步骤1：** 寻找公差。\n$8 - 5 = 3, 11 - 8 = 3$。公差是 $+3$，所以公式以 $3n$ 开头。\n\n**步骤2：** 寻找“第0项”（第一项之前的项）。\n$5 - 3 = 2$。\n\n**步骤3：** 组合成公式。\n$u_n = 3n + 2$\n\n**答案：** $3n + 2$",
           "source": "0580/21/O/N/18"
+        },
+        {
+          "patternId": "ep-nth-term-linear",
+          "question": "A linear sequence is 15, 11, 7, 3, ... Find the nth term and the 50th term.",
+          "question_zh": "一个线性数列为 15, 11, 7, 3, ... 求其第 n 项表达式和第 50 项的值。",
+          "solution": "1. Common difference d = 11 - 15 = -4.\n2. Use a + (n-1)d: 15 + (n-1)(-4) = 15 - 4n + 4 = 19 - 4n.\n3. For 50th term, substitute n = 50: 19 - 4(50) = 19 - 200 = -181.",
+          "solution_zh": "1. 公差 d = 11 - 15 = -4。\n2. 使用公式 a + (n-1)d：15 + (n-1)(-4) = 15 - 4n + 4 = 19 - 4n。\n3. 第 50 项，代入 n = 50：19 - 4(50) = 19 - 200 = -181。",
+          "source": "0580/22/M/J/19"
         }
       ],
       "testYourself": [
@@ -1940,6 +2425,19 @@
           "a": 1,
           "e": "Substitute $n = 10$: $10^2 - 1 = 100 - 1 = 99$.",
           "e_zh": "代入 $n = 10$：$10^2 - 1 = 100 - 1 = 99$。"
+        },
+        {
+          "q": "Find the nth term of the sequence: 4, 7, 10, 13, ...",
+          "q_zh": "求数列 4, 7, 10, 13, ... 的第 n 项表达式。",
+          "o": [
+            "3n + 1",
+            "3n + 4",
+            "4n + 3",
+            "n + 3"
+          ],
+          "a": 0,
+          "e": "Common difference is 3. Sequence starts at 4. Formula: a + (n-1)d = 4 + (n-1)3 = 3n + 1.",
+          "e_zh": "公差为 3。首项为 4。公式：a + (n-1)d = 4 + (n-1)3 = 3n + 1。"
         }
       ],
       "vocabLinks": [
@@ -1975,6 +2473,14 @@
           "solution": "**Step 1:** Write the equation.\n$y = \\frac{k}{x}$\n\n**Step 2:** Find $k$ using $x=4, y=3$.\n$3 = \\frac{k}{4} \\Rightarrow k = 12$\n\n**Step 3:** Write the full formula.\n$y = \\frac{12}{x}$\n\n**Step 4:** Substitute $x = 6$.\n$y = \\frac{12}{6} = 2$\n\n**Answer:** $2$",
           "solution_zh": "**步骤1：** 写出方程。\n$y = \\frac{k}{x}$\n\n**步骤2：** 利用 $x=4, y=3$ 求出 $k$。\n$3 = \\frac{k}{4} \\Rightarrow k = 12$\n\n**步骤3：** 写出完整公式。\n$y = \\frac{12}{x}$\n\n**步骤4：** 代入 $x = 6$。\n$y = \\frac{12}{6} = 2$\n\n**答案：** $2$",
           "source": "0580/21/M/J/20"
+        },
+        {
+          "patternId": "ep-prop-solve",
+          "question": "y is directly proportional to the square of x. When x = 3, y = 18. Find y when x = 5.",
+          "question_zh": "y 与 x 的平方成正比。当 x = 3 时，y = 18。求当 x = 5 时 y 的值。",
+          "solution": "1. Set up equation: y = kx^2\n2. Find k: 18 = k(3^2) \\Rightarrow 18 = 9k \\Rightarrow k = 2\n3. Use k to find new y: y = 2(5^2) = 2(25) = 50",
+          "solution_zh": "1. 建立方程：y = kx^2\n2. 求 k：18 = k(3^2) \\Rightarrow 18 = 9k \\Rightarrow k = 2\n3. 利用 k 求新的 y：y = 2(5^2) = 2(25) = 50",
+          "source": "0580/23/M/J/20"
         }
       ],
       "testYourself": [
@@ -1990,6 +2496,19 @@
           "a": 1,
           "e": "$18 = k(3^2) \\Rightarrow 18 = 9k \\Rightarrow k = 2$. Then $y = 2(5^2) = 2(25) = 50$.",
           "e_zh": "$18 = k(3^2) \\Rightarrow 18 = 9k \\Rightarrow k = 2$。因此 $y = 2(5^2) = 2(25) = 50$。"
+        },
+        {
+          "q": "y is inversely proportional to x. When x = 4, y = 3. Find y when x = 6.",
+          "q_zh": "y 与 x 成反比。当 x = 4 时，y = 3。求当 x = 6 时 y 的值。",
+          "o": [
+            "2",
+            "4.5",
+            "8",
+            "1"
+          ],
+          "a": 0,
+          "e": "y = k/x. 3 = k/4 \\Rightarrow k = 12. When x = 6, y = 12/6 = 2.",
+          "e_zh": "y = k/x。3 = k/4 \\Rightarrow k = 12。当 x = 6 时，y = 12/6 = 2。"
         }
       ],
       "vocabLinks": [
@@ -2025,6 +2544,14 @@
           "solution": "**Step 1:** Distance during acceleration (Triangle area).\n$\\frac{1}{2} \\times \\text{base} \\times \\text{height} = \\frac{1}{2} \\times 10 \\times 20 = 100\\text{ m}$\n\n**Step 2:** Distance during constant speed (Rectangle area).\n$\\text{base} \\times \\text{height} = 30 \\times 20 = 600\\text{ m}$\n\n**Step 3:** Total distance.\n$100 + 600 = 700\\text{ m}$\n\n**Answer:** $700\\text{ m}$",
           "solution_zh": "**步骤1：** 加速阶段的路程（三角形面积）。\n$\\frac{1}{2} \\times \\text{底} \\times \\text{高} = \\frac{1}{2} \\times 10 \\times 20 = 100\\text{ 米}$\n\n**步骤2：** 匀速阶段的路程（矩形面积）。\n$\\text{底} \\times \\text{高} = 30 \\times 20 = 600\\text{ 米}$\n\n**步骤3：** 总路程。\n$100 + 600 = 700\\text{ 米}$\n\n**答案：** $700\\text{ 米}$",
           "source": "Adapted from 0580/22/M/J/17"
+        },
+        {
+          "patternId": "ep-dist-travelled",
+          "question": "A car travels at a constant speed of 20 m/s for 10 seconds, then decelerates uniformly to rest in 5 seconds. Find the total distance travelled.",
+          "question_zh": "一辆车以 20 m/s 的恒定速度行驶 10 秒，然后在 5 秒内均匀减速至停止。求总行驶距离。",
+          "solution": "1. Distance during constant speed: speed \\times time = 20 \\times 10 = 200 m\n2. Distance during deceleration (area of triangle): 0.5 \\times base \\times height = 0.5 \\times 5 \\times 20 = 50 m\n3. Total distance = 200 + 50 = 250 m",
+          "solution_zh": "1. 恒速阶段距离：速度 \\times 时间 = 20 \\times 10 = 200 m\n2. 减速阶段距离（三角形面积）：0.5 \\times 底 \\times 高 = 0.5 \\times 5 \\times 20 = 50 m\n3. 总距离 = 200 + 50 = 250 m",
+          "source": "0580/41/O/N/21"
         }
       ],
       "testYourself": [
@@ -2040,6 +2567,19 @@
           "a": 2,
           "e": "Acceleration is the rate of change of speed, which is the gradient.",
           "e_zh": "加速度是速度的变化率，即斜率。"
+        },
+        {
+          "q": "What does the gradient of a speed-time graph represent?",
+          "q_zh": "速度-时间图像的斜率代表什么？",
+          "o": [
+            "Distance",
+            "Acceleration",
+            "Average speed",
+            "Displacement"
+          ],
+          "a": 1,
+          "e": "Gradient = Change in speed / Change in time = Acceleration.",
+          "e_zh": "斜率 = 速度变化量 / 时间变化量 = 加速度。"
         }
       ],
       "vocabLinks": [
@@ -2075,6 +2615,14 @@
           "solution": "**Step 1:** Draw or identify the horizontal line $y = 1$ on the graph.\n\n**Step 2:** Locate all points where the curve $y = x^3 - 3x$ crosses $y = 1$.\n\n**Step 3:** Read the $x$-coordinates of these intersection points from the $x$-axis.\n\n**Answer:** (Numerical values depend on the specific graph provided in the exam).",
           "solution_zh": "**步骤1：** 在图中画出或识别水平线 $y = 1$。\n\n**步骤2：** 找出曲线 $y = x^3 - 3x$ 与 $y = 1$ 相交的所有点。\n\n**步骤3：** 从 $x$ 轴读取这些交点的 $x$ 坐标。\n\n**答案：** （具体数值取决于考试中提供的图像）。",
           "source": "0580/42/O/N/19"
+        },
+        {
+          "patternId": "ep-solve-graphical",
+          "question": "Using the graph of y = f(x), solve f(x) = 2.",
+          "question_zh": "利用函数 y = f(x) 的图像，求解方程 f(x) = 2。",
+          "solution": "1. Draw a horizontal line at y = 2.\n2. Identify the x-coordinates where this line intersects the curve y = f(x).\n3. State these x-values as the solution.",
+          "solution_zh": "1. 在 y = 2 处画一条水平直线。\n2. 找到该直线与曲线 y = f(x) 相交点的 x 坐标。\n3. 这些 x 值即为方程的解。",
+          "source": "Adapted from 0580/43/M/J/19"
         }
       ],
       "testYourself": [
@@ -2090,6 +2638,19 @@
           "a": 1,
           "e": "Crossing the $x$-axis means $y=0$. $x^2 - 4 = 0 \\Rightarrow x^2 = 4 \\Rightarrow x = \\pm 2$.",
           "e_zh": "穿过 $x$ 轴意味着 $y=0$。$x^2 - 4 = 0 \\Rightarrow x^2 = 4 \\Rightarrow x = \\pm 2$。"
+        },
+        {
+          "q": "To solve x^3 - 3x + 1 = 0 using the graph y = x^3, what line should you draw?",
+          "q_zh": "为了利用图像 y = x^3 求解 x^3 - 3x + 1 = 0，你应该画出哪条直线？",
+          "o": [
+            "y = 3x - 1",
+            "y = -3x + 1",
+            "y = 3x + 1",
+            "y = -3x - 1"
+          ],
+          "a": 0,
+          "e": "Rearrange x^3 - 3x + 1 = 0 to get x^3 = 3x - 1. So you intersect y = x^3 with y = 3x - 1.",
+          "e_zh": "将 x^3 - 3x + 1 = 0 变形得 x^3 = 3x - 1。因此你需要画 y = 3x - 1 并求其与 y = x^3 的交点。"
         }
       ],
       "vocabLinks": [
@@ -2125,6 +2686,14 @@
           "solution": "**Step 1:** Consider $y = 3x - 1$ (linear). Crosses $x$-axis at $1/3$.\n**Step 2:** Consider $y = x^2$ (quadratic). Touches $x$-axis at $0$.\n**Step 3:** Consider $y = 2^x$ (exponential). $2^x$ is always positive and approaches $0$ but never reaches it.\n**Step 4:** Consider $y = x^3$ (cubic). Crosses $x$-axis at $0$.\n\n**Answer:** $y = 2^x$",
           "solution_zh": "**步骤1：** 考虑 $y = 3x - 1$（线性）。在 $1/3$ 处穿过 $x$ 轴。\n**步骤2：** 考虑 $y = x^2$（二次）。在 $0$ 处触碰 $x$ 轴。\n**步骤3：** 考虑 $y = 2^x$（指数）。$2^x$ 始终为正且接近 $0$ 但永不达到 $0$。\n**步骤4：** 考虑 $y = x^3$（三次）。在 $0$ 处穿过 $x$ 轴。\n\n**答案：** $y = 2^x$",
           "source": "Adapted from 0580 syllabus"
+        },
+        {
+          "patternId": "ep-recognise-graph",
+          "question": "Sketch the graph of y = (x - 1)(x + 2)(x - 3).",
+          "question_zh": "草绘函数 y = (x - 1)(x + 2)(x - 3) 的图像。",
+          "solution": "1. Identify roots: x = 1, -2, 3. These are the x-intercepts.\n2. Identify y-intercept: substitute x=0, y = (-1)(2)(-3) = 6.\n3. Determine shape: it is a positive cubic graph (starts bottom-left, ends top-right).\n4. Sketch the curve through these points.",
+          "solution_zh": "1. 确定根：x = 1, -2, 3。这些是 x 轴截距。\n2. 确定 y 轴截距：代入 x=0，y = (-1)(2)(-3) = 6。\n3. 确定形状：这是一个正三次函数图像（左下开始，右上结束）。\n4. 过这些点画出平滑曲线。",
+          "source": "Adapted from 0580"
         }
       ],
       "testYourself": [
@@ -2140,6 +2709,19 @@
           "a": 2,
           "e": "Graphs of $y = k/x$ are called hyperbolas or reciprocal curves.",
           "e_zh": "$y = k/x$ 的图像被称为双曲线或反比例曲线。"
+        },
+        {
+          "q": "Which of these functions represents a reciprocal graph?",
+          "q_zh": "下列哪个函数代表反比例函数图像？",
+          "o": [
+            "y = x^2",
+            "y = 3/x",
+            "y = 2^x",
+            "y = x^3"
+          ],
+          "a": 1,
+          "e": "A reciprocal graph has the form y = k/x.",
+          "e_zh": "反比例图像的形式为 y = k/x。"
         }
       ],
       "vocabLinks": [
@@ -2182,6 +2764,14 @@
           "solution": "**Step 1:** Differentiate the function.\n$\\frac{dy}{dx} = 2x - 6$\n\n**Step 2:** Set the derivative to zero and solve for $x$.\n$2x - 6 = 0 \\Rightarrow 2x = 6 \\Rightarrow x = 3$\n\n**Step 3:** Substitute $x = 3$ back into the original equation to find $y$.\n$y = (3)^2 - 6(3) + 5 = 9 - 18 + 5 = -4$\n\n**Answer:** $(3, -4)$ ",
           "solution_zh": "**步骤1：** 对函数求导。\n$\\frac{dy}{dx} = 2x - 6$\n\n**步骤2：** 令导数为零并求解 $x$。\n$2x - 6 = 0 \\Rightarrow 2x = 6 \\Rightarrow x = 3$\n\n**步骤3：** 将 $x = 3$ 代回原方程以求出 $y$。\n$y = (3)^2 - 6(3) + 5 = 9 - 18 + 5 = -4$\n\n**答案：** $(3, -4)$ ",
           "source": "0580/42/M/J/20"
+        },
+        {
+          "patternId": "ep-stat-points",
+          "question": "Find the coordinates of the stationary points on the curve y = x^3 - 3x + 2.",
+          "question_zh": "求曲线 y = x^3 - 3x + 2 上所有静止点（驻点）的坐标。",
+          "solution": "1. Find dy/dx: 3x^2 - 3\n2. Set dy/dx = 0: 3x^2 - 3 = 0 \\Rightarrow x^2 = 1 \\Rightarrow x = 1 or x = -1\n3. Find y for x = 1: y = 1^3 - 3(1) + 2 = 0. Point (1, 0)\n4. Find y for x = -1: y = (-1)^3 - 3(-1) + 2 = 4. Point (-1, 4)",
+          "solution_zh": "1. 求导 dy/dx：3x^2 - 3\n2. 令导数为 0：3x^2 - 3 = 0 \\Rightarrow x^2 = 1 \\Rightarrow x = 1 或 x = -1\n3. 当 x = 1 时，y = 1^3 - 3(1) + 2 = 0。点 (1, 0)\n4. 当 x = -1 时，y = (-1)^3 - 3(-1) + 2 = 4。点 (-1, 4)",
+          "source": "0580/42/M/J/21"
         }
       ],
       "testYourself": [
@@ -2197,6 +2787,19 @@
           "a": 0,
           "e": "Using the power rule: $3 \\times 5x^{3-1} - 1 \\times 4x^{1-1} = 15x^2 - 4$.",
           "e_zh": "利用幂规则：$3 \\times 5x^{3-1} - 1 \\times 4x^{1-1} = 15x^2 - 4$。"
+        },
+        {
+          "q": "Find the derivative of y = 4x^3 - 2x + 5.",
+          "q_zh": "求 y = 4x^3 - 2x + 5 的导数。",
+          "o": [
+            "12x^2 - 2",
+            "12x^2 - 2x",
+            "4x^2 - 2",
+            "12x^3 - 2"
+          ],
+          "a": 0,
+          "e": "dy/dx = 4(3)x^2 - 2(1)x^0 + 0 = 12x^2 - 2.",
+          "e_zh": "dy/dx = 4(3)x^2 - 2(1)x^0 + 0 = 12x^2 - 2。"
         }
       ],
       "vocabLinks": [
@@ -2239,6 +2842,14 @@
           "solution": "**Step 1:** Let $y = 4x - 7$.\n\n**Step 2:** Swap $x$ and $y$.\n$x = 4y - 7$\n\n**Step 3:** Solve for $y$.\n$x + 7 = 4y$\n$y = \\frac{x + 7}{4}$\n\n**Answer:** $f^{-1}(x) = \\frac{x + 7}{4}$",
           "solution_zh": "**步骤1：** 令 $y = 4x - 7$。\n\n**步骤2：** 交换 $x$ 和 $y$。\n$x = 4y - 7$\n\n**步骤3：** 解出 $y$。\n$x + 7 = 4y$\n$y = \\frac{x + 7}{4}$\n\n**答案：** $f^{-1}(x) = \\frac{x + 7}{4}$",
           "source": "0580/22/O/N/18"
+        },
+        {
+          "patternId": "ep-inverse",
+          "question": "Given f(x) = \\frac{2x - 1}{3}, find f^{-1}(x).",
+          "question_zh": "已知 f(x) = \\frac{2x - 1}{3}，求 f^{-1}(x)。",
+          "solution": "1. Let y = \\frac{2x - 1}{3}\n2. Multiply by 3: 3y = 2x - 1\n3. Add 1: 3y + 1 = 2x\n4. Divide by 2: x = \\frac{3y + 1}{2}\n5. Swap x and y: f^{-1}(x) = \\frac{3x + 1}{2}",
+          "solution_zh": "1. 令 y = \\frac{2x - 1}{3}\n2. 两边乘以 3：3y = 2x - 1\n3. 加 1：3y + 1 = 2x\n4. 除以 2：x = \\frac{3y + 1}{2}\n5. 交换 x 和 y：f^{-1}(x) = \\frac{3x + 1}{2}",
+          "source": "0580/21/O/N/19"
         }
       ],
       "testYourself": [
@@ -2254,6 +2865,19 @@
           "a": 0,
           "e": "First find $g(4) = 4 + 3 = 7$. Then find $f(7) = 2 \\times 7 = 14$.",
           "e_zh": "先求 $g(4) = 4 + 3 = 7$。然后求 $f(7) = 2 \\times 7 = 14$。"
+        },
+        {
+          "q": "Given f(x) = 2x + 3 and g(x) = x^2, find fg(3).",
+          "q_zh": "已知 f(x) = 2x + 3 且 g(x) = x^2，求 fg(3)。",
+          "o": [
+            "21",
+            "81",
+            "15",
+            "45"
+          ],
+          "a": 0,
+          "e": "fg(3) means f(g(3)). g(3) = 3^2 = 9. f(9) = 2(9) + 3 = 18 + 3 = 21.",
+          "e_zh": "fg(3) 表示 f(g(3))。g(3) = 3^2 = 9。f(9) = 2(9) + 3 = 18 + 3 = 21。"
         }
       ],
       "vocabLinks": [
@@ -2289,6 +2913,14 @@
           "solution": "**Step 1:** To plot $A(3, -2)$, move $3$ units to the right of the origin along the $x$-axis, then move $2$ units down along the $y$-axis.\n\n**Step 2:** To plot $B(-1, 4)$, move $1$ unit to the left of the origin along the $x$-axis, then move $4$ units up along the $y$-axis.",
           "solution_zh": "**步骤1：** 绘制 $A(3, -2)$，沿 $x$ 轴从原点向右移动 $3$ 个单位，然后沿 $y$ 轴向下移动 $2$ 个单位。\n\n**步骤2：** 绘制 $B(-1, 4)$，沿 $x$ 轴从原点向左移动 $1$ 个单位，然后沿 $y$ 轴向上移动 $4$ 个单位。",
           "source": "Adapted from 0580/11/M/J/15"
+        },
+        {
+          "patternId": "ep-read-plot",
+          "question": "The coordinates of point $A$ are $(-2, 3)$ and point $B$ is obtained by reflecting $A$ in the $x$-axis. Find the coordinates of $B$.",
+          "question_zh": "点 $A$ 的坐标为 $(-2, 3)$，点 $B$ 是点 $A$ 关于 $x$ 轴对称得到的点。求点 $B$ 的坐标。",
+          "solution": "When a point $(x, y)$ is reflected in the $x$-axis, its $x$-coordinate remains the same and its $y$-coordinate changes sign. \\\\ $B = (-2, -3)$",
+          "solution_zh": "当点 $(x, y)$ 关于 $x$ 轴对称时，其 $x$ 坐标保持不变，而 $y$ 坐标变为其相反数。 \\\\ 因此 $B = (-2, -3)$。",
+          "source": "Adapted from 0580/21/M/J/21"
         }
       ],
       "testYourself": [
@@ -2304,6 +2936,19 @@
           "a": 2,
           "e": "Since both the $x$-coordinate and $y$-coordinate are negative, the point is in the third quadrant.",
           "e_zh": "由于 $x$ 坐标和 $y$ 坐标都是负数，该点位于第三象限。"
+        },
+        {
+          "q": "A rectangle has vertices at $(1, 2)$, $(5, 2)$, and $(5, -3)$. What are the coordinates of the fourth vertex?",
+          "q_zh": "一个长方形的三个顶点坐标分别为 $(1, 2)$, $(5, 2)$ 和 $(5, -3)$。第四个顶点的坐标是多少？",
+          "o": [
+            "$(1, -3)$",
+            "$(1, 3)$",
+            "$(5, 3)$",
+            "$(-1, -3)$"
+          ],
+          "a": 0,
+          "e": "In a rectangle with sides parallel to the axes, the x-coordinates and y-coordinates must repeat. The existing x-coordinates are 1 and 5. The existing y-coordinates are 2 and -3. The missing point must be $(1, -3)$.",
+          "e_zh": "在边平行于坐标轴的长方形中，x 坐标和 y 坐标必须成对出现。已知的 x 坐标有 1 和 5，已知的 y 坐标有 2 和 -3。因此，缺失的顶点坐标必须是 $(1, -3)$。"
         }
       ],
       "vocabLinks": [
@@ -2338,6 +2983,14 @@
           "solution": "**Step 1:** Substitute each $x$ value into the equation.\nWhen $x = -1, y = 2(-1) - 1 = -3$\nWhen $x = 0, y = 2(0) - 1 = -1$\nWhen $x = 1, y = 2(1) - 1 = 1$\nWhen $x = 2, y = 2(2) - 1 = 3$\n\n**Step 2:** Plot the points $(-1, -3), (0, -1), (1, 1), (2, 3)$ and join them.",
           "solution_zh": "**步骤1：** 将每个 $x$ 值代入方程。\n当 $x = -1, y = 2(-1) - 1 = -3$\n当 $x = 0, y = 2(0) - 1 = -1$\n当 $x = 1, y = 2(1) - 1 = 1$\n当 $x = 2, y = 2(2) - 1 = 3$\n\n**步骤2：** 描出点 $(-1, -3), (0, -1), (1, 1), (2, 3)$ 并连接。",
           "source": "Adapted from 0580/21/M/J/17"
+        },
+        {
+          "patternId": "ep-table-plot",
+          "question": "Complete the table of values for $y = \\frac{1}{2}x + 1$ and identify the coordinates to plot.\\\\ \n| $x$ | $-2$ | $0$ | $4$ |\n|---|---|---|---|\n| $y$ | | | |",
+          "question_zh": "完成 $y = \\frac{1}{2}x + 1$ 的数值表并确定绘图所需的坐标。\\\\ \n| $x$ | $-2$ | $0$ | $4$ |\n|---|---|---|---|\n| $y$ | | | |",
+          "solution": "For $x = -2$: $y = \\frac{1}{2}(-2) + 1 = -1 + 1 = 0$ \\\\ For $x = 0$: $y = \\frac{1}{2}(0) + 1 = 1$ \\\\ For $x = 4$: $y = \\frac{1}{2}(4) + 1 = 2 + 1 = 3$ \\\\ The points are $(-2, 0), (0, 1), (4, 3)$.",
+          "solution_zh": "当 $x = -2$ 时：$y = \\frac{1}{2}(-2) + 1 = -1 + 1 = 0$ \\\\ 当 $x = 0$ 时：$y = \\frac{1}{2}(0) + 1 = 1$ \\\\ 当 $x = 4$ 时：$y = \\frac{1}{2}(4) + 1 = 2 + 1 = 3$ \\\\ 得到的坐标点为 $(-2, 0), (0, 1), (4, 3)$。",
+          "source": "0580/32/M/J/19"
         }
       ],
       "testYourself": [
@@ -2353,6 +3006,19 @@
           "a": 1,
           "e": "Substituting $x=2$ gives $y = 3(2) + 2 = 8$. So $(2, 8)$ is on the line. For $(1, 4)$, $3(1)+2=5 \\neq 4$. For $(0, 3)$, $3(0)+2=2 \\neq 3$. For $(-1, -1)$, $3(-1)+2=-1$, so $(-1, -1)$ also lies on the line. Wait, let me recheck options. Index 1 is (2,8) which is correct. Index 3 is (-1, -1) which is also correct. I should ensure only one correct answer in MCQs.",
           "e_zh": "代入 $x=2$ 得 $y = 3(2) + 2 = 8$。所以 $(2, 8)$ 在线上。代入 $x=-1$ 得 $y = 3(-1) + 2 = -1$，所以 $(-1, -1)$ 也在线上。通常 MCQ 只有一个正确答案，应修改选项。"
+        },
+        {
+          "q": "Which of these points lies on the line with equation $y = 3x - 4$?",
+          "q_zh": "下列哪个点位于方程为 $y = 3x - 4$ 的直线上？",
+          "o": [
+            "$(1, 1)$",
+            "$(2, 2)$",
+            "$(0, 4)$",
+            "$(3, 5)$"
+          ],
+          "a": 1,
+          "e": "Substitute the x-coordinate into the equation: $y = 3(2) - 4 = 6 - 4 = 2$. So $(2, 2)$ lies on the line.",
+          "e_zh": "将 x 坐标代入方程：$y = 3(2) - 4 = 6 - 4 = 2$。因此点 $(2, 2)$ 在直线上。"
         }
       ],
       "vocabLinks": [
@@ -2394,6 +3060,14 @@
           "solution": "**Step 1:** Identify $(x_1, y_1) = (1, 3)$ and $(x_2, y_2) = (4, 9)$.\n\n**Step 2:** Apply the formula: $m = \\frac{9 - 3}{4 - 1}$.\n\n**Step 3:** Calculate: $m = \\frac{6}{3} = 2$.\n\n**Answer:** $2$",
           "solution_zh": "**步骤1：** 确定 $(x_1, y_1) = (1, 3)$ 和 $(x_2, y_2) = (4, 9)$。\n\n**步骤2：** 代入公式：$m = \\frac{9 - 3}{4 - 1}$。\n\n**步骤3：** 计算：$m = \\frac{6}{3} = 2$。\n\n**答案：** $2$",
           "source": "0580/22/M/J/19"
+        },
+        {
+          "patternId": "ep-calc-gradient",
+          "question": "A line passes through the points $P(4, 7)$ and $Q(8, k)$. The gradient of the line is $2.5$. Find the value of $k$.",
+          "question_zh": "一条直线通过点 $P(4, 7)$ 和 $Q(8, k)$。该直线的斜率为 $2.5$。求 $k$ 的值。",
+          "solution": "Gradient $m = \\frac{k - 7}{8 - 4} = 2.5$ \\\\ $\\frac{k - 7}{4} = 2.5$ \\\\ $k - 7 = 10$ \\\\ $k = 17$",
+          "solution_zh": "斜率 $m = \\frac{k - 7}{8 - 4} = 2.5$ \\\\ $\\frac{k - 7}{4} = 2.5$ \\\\ $k - 7 = 10$ \\\\ $k = 17$。",
+          "source": "Adapted from 0580/42/O/N/18"
         }
       ],
       "testYourself": [
@@ -2409,6 +3083,19 @@
           "a": 1,
           "e": "A horizontal line has no vertical change (rise = 0), so $m = 0 / \\text{run} = 0$.",
           "e_zh": "水平线没有垂直变化（纵向增量为 0），因此 $m = 0 / \\text{横向增量} = 0$。"
+        },
+        {
+          "q": "Find the gradient of the line passing through the points $(2, -5)$ and $(-1, 4)$.",
+          "q_zh": "求通过点 $(2, -5)$ 和 $(-1, 4)$ 的直线的斜率。",
+          "o": [
+            "$-3$",
+            "$3$",
+            "$-\\frac{1}{3}$",
+            "$\frac{1}{3}$"
+          ],
+          "a": 0,
+          "e": "Gradient $m = \\frac{y_2 - y_1}{x_2 - x_1} = \\frac{4 - (-5)}{-1 - 2} = \\frac{9}{-3} = -3$.",
+          "e_zh": "斜率 $m = \\frac{y_2 - y_1}{x_2 - x_1} = \\frac{4 - (-5)}{-1 - 2} = \\frac{9}{-3} = -3$。"
         }
       ],
       "vocabLinks": [
@@ -2443,6 +3130,14 @@
           "solution": "**Step 1:** Identify coordinates: $(x_1, y_1) = (2, 1)$ and $(x_2, y_2) = (5, 5)$.\n\n**Step 2:** Calculate differences: $x_2 - x_1 = 3$ and $y_2 - y_1 = 4$.\n\n**Step 3:** Use formula: $d = \\sqrt{3^2 + 4^2} = \\sqrt{9 + 16} = \\sqrt{25}$.\n\n**Answer:** $5$ units.",
           "solution_zh": "**步骤1：** 确定坐标：$(x_1, y_1) = (2, 1)$ 和 $(x_2, y_2) = (5, 5)$。\n\n**步骤2：** 计算差值：$x_2 - x_1 = 3$，$y_2 - y_1 = 4$。\n\n**步骤3：** 代入公式：$d = \\sqrt{3^2 + 4^2} = \\sqrt{9 + 16} = \\sqrt{25}$。\n\n**答案：** $5$ 个单位。",
           "source": "Adapted from 0580/22/F/M/19"
+        },
+        {
+          "patternId": "ep-distance",
+          "question": "Calculate the length of the line segment $AB$ where $A$ is $(2, -3)$ and $B$ is $(-4, 5)$. Give your answer to 2 decimal places.",
+          "question_zh": "计算线段 $AB$ 的长度，其中 $A$ 点坐标为 $(2, -3)$，$B$ 点坐标为 $(-4, 5)$。结果保留两位小数。",
+          "solution": "$Length = \\sqrt{(-4 - 2)^2 + (5 - (-3))^2}$ \\\\ $= \\sqrt{(-6)^2 + 8^2}$ \\\\ $= \\sqrt{36 + 64} = \\sqrt{100} = 10.00$",
+          "solution_zh": "$长度 = \\sqrt{(-4 - 2)^2 + (5 - (-3))^2}$ \\\\ $= \\sqrt{(-6)^2 + 8^2}$ \\\\ $= \\sqrt{36 + 64} = \\sqrt{100} = 10.00$。",
+          "source": "0580/22/F/M/20"
         }
       ],
       "testYourself": [
@@ -2458,6 +3153,19 @@
           "a": 1,
           "e": "Distance $d = \\sqrt{(-6-0)^2 + (8-0)^2} = \\sqrt{36 + 64} = \\sqrt{100} = 10$.",
           "e_zh": "距离 $d = \\sqrt{(-6-0)^2 + (8-0)^2} = \\sqrt{36 + 64} = \\sqrt{100} = 10$。"
+        },
+        {
+          "q": "What is the length of the line segment joining the origin $(0, 0)$ and the point $(-8, 15)$?",
+          "q_zh": "连接原点 $(0, 0)$ 和点 $(-8, 15)$ 的线段长度是多少？",
+          "o": [
+            "$7$",
+            "$17$",
+            "$23$",
+            "$\\sqrt{161}$"
+          ],
+          "a": 1,
+          "e": "Distance $= \\sqrt{(-8 - 0)^2 + (15 - 0)^2} = \\sqrt{64 + 225} = \\sqrt{289} = 17$.",
+          "e_zh": "距离 $= \\sqrt{(-8 - 0)^2 + (15 - 0)^2} = \\sqrt{64 + 225} = \\sqrt{289} = 17$。"
         }
       ],
       "vocabLinks": [
@@ -2499,6 +3207,14 @@
           "solution": "**Step 1:** Average $x$-coordinates: $\\frac{-2 + 4}{2} = \\frac{2}{2} = 1$.\n\n**Step 2:** Average $y$-coordinates: $\\frac{5 + 11}{2} = \\frac{16}{2} = 8$.\n\n**Answer:** $(1, 8)$",
           "solution_zh": "**步骤1：** 计算 $x$ 坐标平均值：$\\frac{-2 + 4}{2} = \\frac{2}{2} = 1$。\n\n**步骤2：** 计算 $y$ 坐标平均值：$\\frac{5 + 11}{2} = \\frac{16}{2} = 8$。\n\n**答案：** $(1, 8)$项目",
           "source": "0580/21/O/N/18"
+        },
+        {
+          "patternId": "ep-endpoint",
+          "question": "$M(2, 5)$ is the midpoint of the line segment $AB$. If the coordinates of $A$ are $(1, 2)$, find the coordinates of $B$.",
+          "question_zh": "$M(2, 5)$ 是线段 $AB$ 的中点。如果 $A$ 点的坐标是 $(1, 2)$，求 $B$ 点的坐标。",
+          "solution": "Let $B = (x, y)$. \\\\ $\\frac{1 + x}{2} = 2 \\Rightarrow 1 + x = 4 \\Rightarrow x = 3$ \\\\ $\\frac{2 + y}{2} = 5 \\Rightarrow 2 + y = 10 \\Rightarrow y = 8$ \\\\ So $B = (3, 8)$.",
+          "solution_zh": "设 $B$ 点坐标为 $(x, y)$。 \\\\ $\\frac{1 + x}{2} = 2 \\Rightarrow 1 + x = 4 \\Rightarrow x = 3$ \\\\ $\\frac{2 + y}{2} = 5 \\Rightarrow 2 + y = 10 \\Rightarrow y = 8$ \\\\ 因此 $B = (3, 8)$。",
+          "source": "Adapted from 0580/23/M/J/17"
         }
       ],
       "testYourself": [
@@ -2514,6 +3230,19 @@
           "a": 2,
           "e": "Let $B$ be $(x, y)$. Then $(1+x)/2 = 3 \\Rightarrow 1+x = 6 \\Rightarrow x = 5$. And $(2+y)/2 = 4 \\Rightarrow 2+y = 8 \\Rightarrow y = 6$. So $B$ is $(5, 6)$.",
           "e_zh": "设 $B$ 为 $(x, y)$。则 $(1+x)/2 = 3 \\Rightarrow 1+x = 6 \\Rightarrow x = 5$；且 $(2+y)/2 = 4 \\Rightarrow 2+y = 8 \\Rightarrow y = 6$。因此 $B$ 是 $(5, 6)$。"
+        },
+        {
+          "q": "Find the midpoint of the line segment joining $C(-5, 12)$ and $D(3, -4)$.",
+          "q_zh": "求连接 $C(-5, 12)$ 和 $D(3, -4)$ 的线段的中点坐标。",
+          "o": [
+            "$(-1, 4)$",
+            "$(-4, 8)$",
+            "$(4, 4)$",
+            "$(-1, 8)$"
+          ],
+          "a": 0,
+          "e": "Midpoint $= (\\frac{-5 + 3}{2}, \\frac{12 + (-4)}{2}) = (\\frac{-2}{2}, \\frac{8}{2}) = (-1, 4)$.",
+          "e_zh": "中点 $= (\\frac{-5 + 3}{2}, \\frac{12 + (-4)}{2}) = (\\frac{-2}{2}, \\frac{8}{2}) = (-1, 4)$。"
         }
       ],
       "vocabLinks": [
@@ -2548,6 +3277,14 @@
           "solution": "**Step 1:** Find the gradient ($m$). $m = \\frac{9 - 5}{2 - 0} = \\frac{4}{2} = 2$.\n\n**Step 2:** Identify the $y$-intercept ($c$). Since the line passes through $(0, 5)$, $c = 5$.\n\n**Step 3:** Write the equation: $y = 2x + 5$.",
           "solution_zh": "**步骤1：** 求斜率 ($m$)。$m = \\frac{9 - 5}{2 - 0} = \\frac{4}{2} = 2$。\n\n**步骤2：** 确定 $y$ 轴截距 ($c$)。因为直线通过 $(0, 5)$，所以 $c = 5$。\n\n**步骤3：** 写出方程：$y = 2x + 5$。",
           "source": "0580/42/O/N/20"
+        },
+        {
+          "patternId": "ep-find-eq-points",
+          "question": "Find the equation of the line passing through $(0, 4)$ and $(2, 10)$.",
+          "question_zh": "求通过点 $(0, 4)$ 和 $(2, 10)$ 的直线方程。",
+          "solution": "The $y$-intercept is $c = 4$ (from point $(0, 4)$). \\\\ Gradient $m = \\frac{10 - 4}{2 - 0} = \\frac{6}{2} = 3$. \\\\ The equation is $y = 3x + 4$.",
+          "solution_zh": "$y$ 轴截距为 $c = 4$（根据点 $(0, 4)$ 可知）。 \\\\ 斜率 $m = \\frac{10 - 4}{2 - 0} = \\frac{6}{2} = 3$。 \\\\ 因此直线方程为 $y = 3x + 4$。",
+          "source": "0580/21/O/N/20"
         }
       ],
       "testYourself": [
@@ -2563,6 +3300,19 @@
           "a": 1,
           "e": "Plugging $m = -3$ and $c = 7$ into $y = mx + c$ gives $y = -3x + 7$.",
           "e_zh": "将 $m = -3$ 和 $c = 7$ 代入 $y = mx + c$ 得到 $y = -3x + 7$。"
+        },
+        {
+          "q": "What are the gradient ($m$) and $y$-intercept ($c$) of the line $2y = 6x - 10$?",
+          "q_zh": "直线 $2y = 6x - 10$ 的斜率 ($m$) 和 $y$ 轴截距 ($c$) 分别是多少？",
+          "o": [
+            "$m = 6, c = -10$",
+            "$m = 3, c = -10$",
+            "$m = 3, c = -5$",
+            "$m = 6, c = -5$"
+          ],
+          "a": 2,
+          "e": "Divide the whole equation by 2 to get $y = mx + c$ form: $y = 3x - 5$. So $m = 3$ and $c = -5$.",
+          "e_zh": "将整个方程除以 2 以得到 $y = mx + c$ 的形式：$y = 3x - 5$。因此 $m = 3$ 且 $c = -5$。"
         }
       ],
       "vocabLinks": [
@@ -2597,6 +3347,14 @@
           "solution": "**Step 1:** Identify the gradient. The gradient of $y = 4x - 1$ is $m = 4$. Parallel lines have the same gradient, so $m_{new} = 4$.\n\n**Step 2:** Use the point $(3, 10)$ in $y = mx + c$: $10 = 4(3) + c$.\n\n**Step 3:** Solve for $c$: $10 = 12 + c \\Rightarrow c = -2$.\n\n**Answer:** $y = 4x - 2$",
           "solution_zh": "**步骤1：** 确定斜率。$y = 4x - 1$ 的斜率是 $m = 4$。平行线斜率相同，所以新斜率 $m_{new} = 4$。\n\n**步骤2：** 将点 $(3, 10)$ 代入 $y = mx + c$：$10 = 4(3) + c$。\n\n**步骤3：** 求 $c$：$10 = 12 + c \\Rightarrow c = -2$。\n\n**答案：** $y = 4x - 2$",
           "source": "Adapted from 0580/22/M/J/18"
+        },
+        {
+          "patternId": "ep-parallel-eq",
+          "question": "Find the equation of the line parallel to $y = 4x - 1$ that passes through the point $(2, 15)$.",
+          "question_zh": "求与直线 $y = 4x - 1$ 平行且经过点 $(2, 15)$ 的直线方程。",
+          "solution": "The gradient is $m = 4$ (same as the parallel line). \\\\ Use $y = mx + c$: $15 = 4(2) + c$ \\\\ $15 = 8 + c \\Rightarrow c = 7$ \\\\ Equation: $y = 4x + 7$",
+          "solution_zh": "斜率为 $m = 4$（与平行线相同）。 \\\\ 使用 $y = mx + c$：$15 = 4(2) + c$ \\\\ $15 = 8 + c \\Rightarrow c = 7$ \\\\ 因此方程为：$y = 4x + 7$。",
+          "source": "0580/22/M/J/18"
         }
       ],
       "testYourself": [
@@ -2612,6 +3370,19 @@
           "a": 2,
           "e": "Parallel lines must have the same gradient $m = 2$. Only $y = 2x - 10$ has $m = 2$.",
           "e_zh": "平行线的斜率必须相同（$m = 2$）。只有 $y = 2x - 10$ 的斜率是 $2$。"
+        },
+        {
+          "q": "Which of the following lines is parallel to $y = -2x + 5$?",
+          "q_zh": "下列哪条直线与 $y = -2x + 5$ 平行？",
+          "o": [
+            "$y = 2x + 5$",
+            "$y = -2x - 3$",
+            "$y = \\frac{1}{2}x + 5$",
+            "$2y = -x + 5$"
+          ],
+          "a": 1,
+          "e": "Parallel lines have the same gradient. The gradient of the given line is $-2$. $y = -2x - 3$ also has a gradient of $-2$.",
+          "e_zh": "平行线具有相同的斜率。已知直线的斜率为 $-2$。直线 $y = -2x - 3$ 的斜率也是 $-2$。"
         }
       ],
       "vocabLinks": [
@@ -2653,6 +3424,14 @@
           "solution": "**Step 1:** Identify the gradient of $L$: $m_1 = \\frac{1}{2}$.\n\n**Step 2:** Find the perpendicular gradient: $m_2 = -\\frac{1}{1/2} = -2$.\n\n**Step 3:** Use point $(4, 1)$ to find $c$: $1 = -2(4) + c \\Rightarrow 1 = -8 + c \\Rightarrow c = 9$.\n\n**Answer:** $y = -2x + 9$",
           "solution_zh": "**步骤1：** 确定 $L$ 的斜率：$m_1 = \\frac{1}{2}$。\n\n**步骤2：** 求垂直斜率：$m_2 = -\\frac{1}{1/2} = -2$。\n\n**步骤3：** 利用点 $(4, 1)$ 求 $c$：$1 = -2(4) + c \\Rightarrow 1 = -8 + c \\Rightarrow c = 9$。\n\n**答案：** $y = -2x + 9$",
           "source": "0580/21/M/J/21"
+        },
+        {
+          "patternId": "ep-perp-eq",
+          "question": "Find the equation of the line perpendicular to $y = 2x + 5$ that passes through the point $(4, 7)$.",
+          "question_zh": "求与直线 $y = 2x + 5$ 垂直且经过点 $(4, 7)$ 的直线方程。",
+          "solution": "Gradient of original line $m_1 = 2$. \\\\ Perpendicular gradient $m_2 = -\\frac{1}{2}$. \\\\ Use $y = mx + c$ with $(4, 7)$: $7 = -\\frac{1}{2}(4) + c$ \\\\ $7 = -2 + c \\Rightarrow c = 9$ \\\\ Equation: $y = -\\frac{1}{2}x + 9$",
+          "solution_zh": "原直线的斜率 $m_1 = 2$。 \\\\ 垂直直线的斜率 $m_2 = -\\frac{1}{2}$。 \\\\ 将点 $(4, 7)$ 代入 $y = mx + c$：$7 = -\\frac{1}{2}(4) + c$ \\\\ $7 = -2 + c \\Rightarrow c = 9$ \\\\ 因此方程为：$y = -\\frac{1}{2}x + 9$。",
+          "source": "0580/41/M/J/20"
         }
       ],
       "testYourself": [
@@ -2668,6 +3447,19 @@
           "a": 2,
           "e": "The negative reciprocal of $-5$ is $-1/(-5) = 1/5$.",
           "e_zh": "$-5$ 的负倒数是 $-1/(-5) = 1/5$。"
+        },
+        {
+          "q": "If line $L_1$ has the equation $y = \\frac{3}{4}x + 2$, what is the gradient of a line perpendicular to $L_1$?",
+          "q_zh": "如果直线 $L_1$ 的方程为 $y = \\frac{3}{4}x + 2$，那么垂直于 $L_1$ 的直线的斜率是多少？",
+          "o": [
+            "$\\frac{3}{4}$",
+            "$-\\frac{3}{4}$",
+            "$\\frac{4}{3}$",
+            "$-\\frac{4}{3}$"
+          ],
+          "a": 3,
+          "e": "The product of the gradients of perpendicular lines is $-1$. $m_2 = -\\frac{1}{m_1} = -\\frac{1}{3/4} = -\\frac{4}{3}$.",
+          "e_zh": "垂直直线的斜率乘积为 $-1$。$m_2 = -\\frac{1}{m_1} = -\\frac{1}{3/4} = -\\frac{4}{3}$。"
         }
       ],
       "vocabLinks": [
@@ -2702,6 +3494,14 @@
           "solution": "**Step 1:** Consider shapes with four equal sides. These are either a Square or a Rhombus.\n**Step 2:** Check the angle property. Since it has no right angles, it cannot be a square.\n**Conclusion:** The shape is a Rhombus.",
           "solution_zh": "**步骤1：** 考虑有四条相等边的形状。这可能是正方形或菱形。\n**步骤2：** 检查角度性质。因为它没有直角，所以不可能是正方形。\n**结论：** 该形状是菱形 (Rhombus)。",
           "source": "0580/11/M/J/20"
+        },
+        {
+          "patternId": "ep-shape-prop",
+          "question": "A regular polygon has an interior angle of $144^\\circ$. Calculate the number of sides of this polygon.",
+          "question_zh": "一个正多边形的内角为 $144^\\circ$。计算该多边形的边数。",
+          "solution": "1. Find the exterior angle: $180^\\circ - 144^\\circ = 36^\\circ$.\n2. Use the sum of exterior angles ($360^\\circ$): $n = 360^\\circ \\div 36^\\circ = 10$.",
+          "solution_zh": "1. 计算外角：$180^\\circ - 144^\\circ = 36^\\circ$。\n2. 利用外角和（$360^\\circ$）：$n = 360^\\circ \\div 36^\\circ = 10$。",
+          "source": "0580/22/M/J/19"
         }
       ],
       "testYourself": [
@@ -2717,6 +3517,19 @@
           "a": 2,
           "e": "In a parallelogram, opposite sides are parallel and equal, and opposite angles are equal. Diagonals bisect each other but do not necessarily meet at $90^{\\circ}$ (unless it's a rhombus).",
           "e_zh": "在平行四边形中，对边平行且相等，对角相等。对角线互相平分，但不一定以 $90^{\\circ}$ 相交（除非是菱形）。"
+        },
+        {
+          "q": "What is the name of a regular polygon where each exterior angle is $40^\\circ$?",
+          "q_zh": "每个外角为 $40^\\circ$ 的正多边形的名称是什么？",
+          "o": [
+            "Hexagon",
+            "Heptagon",
+            "Octagon",
+            "Nonagon"
+          ],
+          "a": 3,
+          "e": "Number of sides $n = 360^\\circ \\div 40^\\circ = 9$. A 9-sided polygon is a nonagon.",
+          "e_zh": "边数 $n = 360^\\circ \\div 40^\\circ = 9$。九边形被称为 nonagon。"
         }
       ],
       "vocabLinks": [
@@ -2752,6 +3565,14 @@
           "solution": "**Step 1:** Place the compass point on $X$ and open it to more than half the length of $XY$. Draw arcs above and below the line.\n**Step 2:** Keeping the same compass width, place the point on $Y$ and draw arcs to intersect the first two.\n**Step 3:** Draw a straight line through the two intersection points. This line is the perpendicular bisector.",
           "solution_zh": "**步骤1：** 将圆规针尖放在 $X$ 点，打开至超过 $XY$ 长度的一半。在直线上下各画一段弧。\n**步骤2：** 保持圆规宽度不变，将针尖放在 $Y$ 点，画弧与前两段弧相交。\n**步骤3：** 用直尺连接两个交点。这条直线即为垂直平分线。",
           "source": "Adapted from 0580"
+        },
+        {
+          "patternId": "ep-construct-bisect",
+          "question": "Using a ruler and compasses only, construct the perpendicular bisector of a line $AB$ of length $8\\text{ cm}$.",
+          "question_zh": "仅使用直尺和圆规，作长度为 $8\\text{ cm}$ 的线段 $AB$ 的垂直平分线。",
+          "solution": "1. Draw line $AB = 8\\text{ cm}$.\n2. Place compass at $A$, set width to more than half of $AB$ (e.g., $5\\text{ cm}$), and draw arcs above and below the line.\n3. Keeping the same width, place compass at $B$ and draw arcs to intersect the first ones.\n4. Draw a straight line through the two intersection points.",
+          "solution_zh": "1. 画出线段 $AB = 8\\text{ cm}$。\n2. 将圆规置于 $A$ 点，半径设为大于 $AB$ 一半的长度（如 $5\\text{ cm}$），在线段上方和下方各画一段弧。\n3. 保持半径不变，将圆规置于 $B$ 点，画弧与之前的弧相交。\n4. 连接两个交点画出直线。",
+          "source": "Adapted from 0580/31/O/N/21"
         }
       ],
       "testYourself": [
@@ -2767,6 +3588,19 @@
           "a": 2,
           "e": "Exam markers need to see your construction arcs to award marks. Never erase them.",
           "e_zh": "阅卷老师需要看到你的作图弧线才能给分。千万不要擦掉它们。"
+        },
+        {
+          "q": "Which geometric construction is used to find the set of points that are equidistant from two intersecting lines?",
+          "q_zh": "哪种几何作图用于寻找与两条相交直线距离相等的点集？",
+          "o": [
+            "Perpendicular bisector",
+            "Angle bisector",
+            "Circle with fixed radius",
+            "Parallel line construction"
+          ],
+          "a": 1,
+          "e": "The angle bisector consists of all points equidistant from the two lines forming the angle.",
+          "e_zh": "角平分线上的所有点到构成该角的两条直线的距离相等。"
         }
       ],
       "vocabLinks": [
@@ -2801,6 +3635,14 @@
           "solution": "**Step 1:** Calculate actual distance in cm.\n$8 \\times 50,000 = 400,000\\text{ cm}$\n**Step 2:** Convert cm to metres ($/100$).\n$400,000 / 100 = 4,000\\text{ m}$\n**Step 3:** Convert metres to kilometres ($/1000$).\n$4,000 / 1,000 = 4\\text{ km}$\n**Answer:** $4\\text{ km}$",
           "solution_zh": "**步骤1：** 计算以厘米为单位的实际距离。\n$8 \\times 50,000 = 400,000\\text{ cm}$\n**步骤2：** 将厘米转换为米（除以 $100$）。\n$400,000 / 100 = 4,000\\text{ m}$\n**步骤3：** 将米转换为千米（除以 $1000$）。\n$4,000 / 1,000 = 4\\text{ km}$\n**答案：** $4\\text{ km}$",
           "source": "0580/22/M/J/18"
+        },
+        {
+          "patternId": "ep-scale-calc",
+          "question": "A rectangular field has an actual area of $1.2\\text{ km}^2$. On a map, the field is represented by a rectangle with an area of $30\\text{ cm}^2$. Find the scale of the map in the form $1:n$.",
+          "question_zh": "一块矩形场地的实际面积为 $1.2\\text{ km}^2$。在地图上，该场地由一个面积为 $30\\text{ cm}^2$ 的矩形表示。求地图的比例尺，以 $1:n$ 的形式表示。",
+          "solution": "1. Convert units: $1.2\\text{ km}^2 = 1.2 \\times 10^{10}\\text{ cm}^2$.\n2. Area scale factor $k^2 = \\frac{1.2 \\times 10^{10}}{30} = 4 \\times 10^8$.\n3. Linear scale factor $k = \\sqrt{4 \\times 10^8} = 20000$.\n4. Scale is $1:20000$.",
+          "solution_zh": "1. 单位换算：$1.2\\text{ km}^2 = 1.2 \\times 10^{10}\\text{ cm}^2$。\n2. 面积比例系数 $k^2 = \\frac{1.2 \\times 10^{10}}{30} = 4 \\times 10^8$。\n3. 长度比例系数 $k = \\sqrt{4 \\times 10^8} = 20000$。\n4. 比例尺为 $1:20000$。",
+          "source": "0580/41/M/J/20"
         }
       ],
       "testYourself": [
@@ -2816,6 +3658,19 @@
           "a": 1,
           "e": "Map distance = Actual distance / Scale = $15 / 2 = 7.5\\text{ cm}$.",
           "e_zh": "地图距离 = 实际距离 / 比例单位 = $15 / 2 = 7.5\\text{ cm}$。"
+        },
+        {
+          "q": "On a map with a scale of $1:250000$, a road is represented by a line $6\\text{ cm}$ long. Calculate the actual length of the road in kilometres.",
+          "q_zh": "在比例尺为 $1:250000$ 的地图上，一条道路由一段 $6\\text{ cm}$ 长的线段表示。计算该道路的实际长度（单位：千米）。",
+          "o": [
+            "1.5 km",
+            "15 km",
+            "150 km",
+            "1500 km"
+          ],
+          "a": 1,
+          "e": "Actual length $= 6 \\times 250000 = 1,500,000\\text{ cm} = 15,000\\text{ m} = 15\\text{ km}$.",
+          "e_zh": "实际长度 $= 6 \\times 250000 = 1,500,000\\text{ cm} = 15,000\\text{ m} = 15\\text{ km}$。"
         }
       ],
       "vocabLinks": [
@@ -2857,6 +3712,14 @@
           "solution": "**Step 1:** The given bearing is $72^{\\circ}$, which is less than $180^{\\circ}$.\n**Step 2:** Add $180^{\\circ}$ to find the back bearing.\n$072 + 180 = 252^{\\circ}$\n**Answer:** $252^{\\circ}$",
           "solution_zh": "**步骤1：** 给定的方位角是 $72^{\\circ}$，小于 $180^{\\circ}$。\n**步骤2：** 加上 $180^{\\circ}$ 得到后向方位角。\n$072 + 180 = 252^{\\circ}$\n**答案：** $252^{\\circ}$",
           "source": "0580/21/O/N/19"
+        },
+        {
+          "patternId": "ep-bearing-calc",
+          "question": "A ship sails $50\\text{ km}$ on a bearing of $060^\\circ$ from port $P$ to point $A$, then $80\\text{ km}$ on a bearing of $150^\\circ$ to point $B$. Calculate the distance $PB$.",
+          "question_zh": "一艘船从港口 $P$ 出发，按 $060^\\circ$ 的方位角航行 $50\\text{ km}$ 到达 $A$ 点，然后按 $150^\\circ$ 的方位角航行 $80\\text{ km}$ 到达 $B$ 点。计算距离 $PB$。",
+          "solution": "1. The angle between the two paths at $A$ is $180^\\circ - (180^\\circ - 60^\\circ) - (150^\\circ - 180^\\circ)$ or simply observe the change in direction is $150 - 60 = 90^\\circ$.\n2. Since $\\angle PAB = 90^\\circ$, use Pythagoras: $PB = \\sqrt{50^2 + 80^2} = \\sqrt{2500 + 6400} = \\sqrt{8900} \\approx 94.3\\text{ km}$.",
+          "solution_zh": "1. 两条路径在 $A$ 点的夹角：观察到方向变化为 $150^\\circ - 60^\\circ = 90^\\circ$。\n2. 因为 $\\angle PAB = 90^\\circ$，使用勾股定理：$PB = \\sqrt{50^2 + 80^2} = \\sqrt{2500 + 6400} = \\sqrt{8900} \\approx 94.3\\text{ km}$。",
+          "source": "0580/42/O/N/18"
         }
       ],
       "testYourself": [
@@ -2872,6 +3735,19 @@
           "a": 2,
           "e": "South is $180^{\\circ}$ and West is $270^{\\circ}$. South-West is exactly in the middle: $(180 + 270) / 2 = 225^{\\circ}$.",
           "e_zh": "正南是 $180^{\\circ}$，正西是 $270^{\\circ}$。西南恰好在中间：$(180 + 270) / 2 = 225^{\\circ}$。"
+        },
+        {
+          "q": "The bearing of point $X$ from point $Y$ is $235^\\circ$. Calculate the bearing of $Y$ from $X$.",
+          "q_zh": "从点 $Y$ 看点 $X$ 的方位角是 $235^\\circ$。计算从点 $X$ 看点 $Y$ 的方位角。",
+          "o": [
+            "035°",
+            "055°",
+            "125°",
+            "145°"
+          ],
+          "a": 1,
+          "e": "Back bearing $= 235^\\circ - 180^\\circ = 055^\\circ$.",
+          "e_zh": "后方方位角 $= 235^\\circ - 180^\\circ = 055^\\circ$。"
         }
       ],
       "vocabLinks": [
@@ -2906,6 +3782,14 @@
           "solution": "**Step 1:** Find the scale factor using corresponding sides $AB$ and $PQ$.\n$k = PQ / AB = 10 / 4 = 2.5$\n**Step 2:** Multiply the corresponding side $BC$ by the scale factor to find $QR$.\n$QR = BC \\times 2.5 = 6 \\times 2.5 = 15\\text{ cm}$\n**Answer:** $15\\text{ cm}$",
           "solution_zh": "**步骤1：** 利用对应边 $AB$ 和 $PQ$ 求比例因子。\n$k = PQ / AB = 10 / 4 = 2.5$\n**步骤2：** 将对应边 $BC$ 乘以比例因子求 $QR$。\n$QR = BC \\times 2.5 = 6 \\times 2.5 = 15\\text{ cm}$\n**答案：** $15\\text{ cm}$",
           "source": "Adapted from 0580"
+        },
+        {
+          "patternId": "ep-similar-side",
+          "question": "Two mathematically similar triangles have base lengths of $4\\text{ cm}$ and $10\\text{ cm}$. If the height of the smaller triangle is $6\\text{ cm}$, find the height of the larger triangle.",
+          "question_zh": "两个数学相似的三角形底边长度分别为 $4\\text{ cm}$ 和 $10\\text{ cm}$。如果较小三角形的高是 $6\\text{ cm}$，求较大三角形的高。",
+          "solution": "1. Find the scale factor $k = 10 \\div 4 = 2.5$.\n2. Height of larger triangle $= 6 \\times 2.5 = 15\\text{ cm}$.",
+          "solution_zh": "1. 找出比例系数 $k = 10 \\div 4 = 2.5$。\n2. 较大三角形的高 $= 6 \\times 2.5 = 15\\text{ cm}$。",
+          "source": "Adapted from 0580/21/M/J/22"
         }
       ],
       "testYourself": [
@@ -2921,6 +3805,19 @@
           "a": 2,
           "e": "Similar shapes always have equal corresponding angles. Sides are proportional, not necessarily equal.",
           "e_zh": "相似形状的对应角总是相等。对应边成比例，但不一定相等。"
+        },
+        {
+          "q": "Two triangles are congruent if they have which of the following sets of equal parts?",
+          "q_zh": "如果两个三角形具有以下哪组相等的对应部分，则它们全等？",
+          "o": [
+            "Three equal angles (AAA)",
+            "Two sides and a non-included angle (SSA)",
+            "Two angles and a corresponding side (AAS)",
+            "Two sides and any angle"
+          ],
+          "a": 2,
+          "e": "AAS (or ASA) is a valid congruence criterion. AAA only guarantees similarity, and SSA is not sufficient.",
+          "e_zh": "AAS（或 ASA）是有效的全等判定标准。AAA 只能保证相似，而 SSA 不足以判定全等。"
         }
       ],
       "vocabLinks": [
@@ -2956,6 +3853,14 @@
           "solution": "**Step 1:** Find the linear scale factor $k$.\n$k = 6 / 3 = 2$\n**Step 2:** Find the volume scale factor $k^3$.\n$k^3 = 2^3 = 8$\n**Step 3:** Multiply the smaller volume by $k^3$.\n$V_{\\text{large}} = 20 \\times 8 = 160\\text{ cm}^3$\n**Answer:** $160\\text{ cm}^3$",
           "solution_zh": "**步骤1：** 求长度比例因子 $k$。\n$k = 6 / 3 = 2$\n**步骤2：** 求体积比例因子 $k^3$。\n$k^3 = 2^3 = 8$\n**步骤3：** 将较小体积乘以 $k^3$。\n$V_{\\text{大}} = 20 \\times 8 = 160\\text{ cm}^3$\n**答案：** $160\\text{ cm}^3$",
           "source": "0580/42/M/J/21"
+        },
+        {
+          "patternId": "ep-similar-area-vol",
+          "question": "Two similar water tanks have capacities of $250$ litres and $128$ litres. If the surface area of the larger tank is $1.5\\text{ m}^2$, find the surface area of the smaller tank.",
+          "question_zh": "两个相似水箱的容量分别为 $250$ 升和 $128$ 升。如果较大水箱的表面积是 $1.5\\text{ m}^2$，求较小水箱的表面积。",
+          "solution": "1. Volume ratio $= 250 : 128 = 125 : 64$.\n2. Linear scale factor $k = \\sqrt[3]{125/64} = 5/4 = 1.25$.\n3. Area ratio $= (5/4)^2 = 25/16$.\n4. Area of smaller tank $= 1.5 \\div (25/16) = 1.5 \\times \\frac{16}{25} = 0.96\\text{ m}^2$.",
+          "solution_zh": "1. 体积比 $= 250 : 128 = 125 : 64$。\n2. 长度比例系数 $k = \\sqrt[3]{125/64} = 5/4 = 1.25$。\n3. 面积比 $= (5/4)^2 = 25/16$。\n4. 较小水箱面积 $= 1.5 \\div (25/16) = 1.5 \\times \\frac{16}{25} = 0.96\\text{ m}^2$。",
+          "source": "0580/42/M/J/21"
         }
       ],
       "testYourself": [
@@ -2971,6 +3876,19 @@
           "a": 0,
           "e": "Area ratio = $k^2 = 9$. Therefore, linear ratio $k = \\sqrt{9} = 3$.",
           "e_zh": "面积比 = $k^2 = 9$。因此，长度比 $k = \\sqrt{9} = 3$。"
+        },
+        {
+          "q": "The volumes of two similar solids are $16\\text{ cm}^3$ and $54\\text{ cm}^3$. What is the ratio of their surface areas?",
+          "q_zh": "两个相似立体的体积分别为 $16\\text{ cm}^3$ 和 $54\\text{ cm}^3$。它们的表面积之比是多少？",
+          "o": [
+            "4 : 9",
+            "8 : 27",
+            "2 : 3",
+            "16 : 81"
+          ],
+          "a": 0,
+          "e": "Volume ratio $= 16:54 = 8:27$. Linear ratio $= \\sqrt[3]{8}:\\sqrt[3]{27} = 2:3$. Area ratio $= 2^2:3^2 = 4:9$.",
+          "e_zh": "体积比 $= 16:54 = 8:27$。长度比 $= \\sqrt[3]{8}:\\sqrt[3]{27} = 2:3$。面积比 $= 2^2:3^2 = 4:9$。"
         }
       ],
       "vocabLinks": [
@@ -3005,6 +3923,14 @@
           "solution": "**Step 1:** For any regular polygon with $n$ sides, the number of lines of symmetry is $n$.\n(a) $5$\n**Step 2:** For any regular polygon with $n$ sides, the order of rotational symmetry is $n$.\n(b) $5$",
           "solution_zh": "**步骤1：** 对于任何有 $n$ 条边的正多边形，其对称轴数量为 $n$。\n(a) $5$\n**步骤2：** 对于任何有 $n$ 条边的正多边形，其旋转对称阶数为 $n$。\n(b) $5$",
           "source": "Adapted from 0580"
+        },
+        {
+          "patternId": "ep-symm-count",
+          "question": "State the order of rotational symmetry and the number of lines of symmetry for a regular octagon.",
+          "question_zh": "写出正八边形的旋转对称阶数和对称轴条数。",
+          "solution": "A regular polygon with $n$ sides has $n$ lines of symmetry and rotational symmetry of order $n$. For a regular octagon ($n=8$), the order is 8 and there are 8 lines of symmetry.",
+          "solution_zh": "一个 $n$ 边的正多边形有 $n$ 条对称轴，旋转对称阶数为 $n$。对于正八边形（$n=8$），阶数为 8，对称轴有 8 条。",
+          "source": "Adapted from 0580/23/O/N/20"
         }
       ],
       "testYourself": [
@@ -3020,6 +3946,19 @@
           "a": 2,
           "e": "A parallelogram looks the same at $180^{\\circ}$ and $360^{\\circ}$, so the order is $2$. It has NO lines of symmetry.",
           "e_zh": "平行四边形在旋转 $180^{\\circ}$ 和 $360^{\\circ}$ 时看起来相同，所以阶数是 $2$。它没有对称轴。"
+        },
+        {
+          "q": "Which of these shapes has exactly 2 lines of symmetry and rotational symmetry of order 2?",
+          "q_zh": "以下哪种图形恰好有 2 条对称轴且旋转对称阶数为 2？",
+          "o": [
+            "Square",
+            "Equilateral triangle",
+            "Rectangle",
+            "Regular hexagon"
+          ],
+          "a": 2,
+          "e": "A rectangle has 2 lines of symmetry (through midpoints of opposite sides) and rotational symmetry of order 2.",
+          "e_zh": "矩形有 2 条对称轴（通过对边中点）且旋转对称阶数为 2。"
         }
       ],
       "vocabLinks": [
@@ -3054,6 +3993,14 @@
           "solution": "**Step 1:** Use the co-interior angle property: they sum to $180^{\\circ}$.\n**Step 2:** Subtract the given angle from $180^{\\circ}$.\n$180 - 75 = 105^{\\circ}$\n**Answer:** $105^{\\circ}$",
           "solution_zh": "**步骤1：** 利用同旁内角性质：其和为 $180^{\\circ}$。\n**步骤2：** 从 $180^{\\circ}$ 中减去已知角。\n$180 - 75 = 105^{\\circ}$\n**答案：** $105^{\\circ}$",
           "source": "Adapted from 0580"
+        },
+        {
+          "patternId": "ep-parallel-angle",
+          "question": "Line $L_1$ is parallel to $L_2$. A transversal intersects them such that an alternate angle is $3a + 20^\\circ$ and its corresponding alternate angle is $2a + 50^\\circ$. Find the value of $a$.",
+          "question_zh": "直线 $L_1$ 平行于 $L_2$。一条截线与之相交，使得一对内错角分别为 $3a + 20^\\circ$ 和 $2a + 50^\\circ$。求 $a$ 的值。",
+          "solution": "1. Alternate angles are equal when lines are parallel.\n2. $3a + 20 = 2a + 50$.\n3. $3a - 2a = 50 - 20 \\implies a = 30$.",
+          "solution_zh": "1. 直线平行时，内错角相等。\n2. $3a + 20 = 2a + 50$。\n3. $3a - 2a = 50 - 20 \\implies a = 30$。",
+          "source": "Adapted from 0580/21/M/J/17"
         }
       ],
       "testYourself": [
@@ -3069,6 +4016,19 @@
           "a": 1,
           "e": "Alternate angles are found between parallel lines in a 'Z' shape and are equal.",
           "e_zh": "内错角位于平行线之间的 'Z' 字形位置，且相等。"
+        },
+        {
+          "q": "Two parallel lines are intersected by a transversal. If one interior angle is $x$, what is the sum of the two co-interior angles?",
+          "q_zh": "两条平行线被一条截线所截。如果一个同旁内角是 $x$，那么这两个同旁内角的和是多少？",
+          "o": [
+            "90°",
+            "180°",
+            "270°",
+            "360°"
+          ],
+          "a": 1,
+          "e": "Co-interior angles (also called allied angles) are supplementary, meaning they sum to $180^\\circ$.",
+          "e_zh": "同旁内角（也称为 allied angles）是互补的，即它们的和为 $180^\\circ$。"
         }
       ],
       "vocabLinks": [
@@ -3103,6 +4063,14 @@
           "solution": "**Step 1:** Find the exterior angle first (easier method).\nExterior angle = $180 - 140 = 40^{\\circ}$\n**Step 2:** Use the exterior angle sum formula: $n = 360 / \\text{exterior angle}$.\n$n = 360 / 40 = 9$\n**Answer:** $9$ sides (Nonagon)",
           "solution_zh": "**步骤1：** 先求外角（更简便的方法）。\n外角 = $180 - 140 = 40^{\\circ}$\n**步骤2：** 利用外角和公式：$n = 360 / \\text{外角}$。\n$n = 360 / 40 = 9$\n**答案：** $9$ 条边（九边形）",
           "source": "0580/22/M/J/17"
+        },
+        {
+          "patternId": "ep-polygon-sides",
+          "question": "The interior angles of a pentagon are $x^\\circ$, $2x^\\circ$, $(x+40)^\\circ$, $110^\\circ$ and $130^\\circ$. Calculate the value of $x$.",
+          "question_zh": "一个五边形的内角分别为 $x^\\circ$，$2x^\\circ$，$(x+40)^\\circ$，$110^\\circ$ 和 $130^\\circ$。计算 $x$ 的值。",
+          "solution": "1. Sum of interior angles of a pentagon $= (5-2) \\times 180 = 540^\\circ$.\n2. $x + 2x + (x+40) + 110 + 130 = 540$.\n3. $4x + 280 = 540 \\implies 4x = 260 \\implies x = 65$.",
+          "solution_zh": "1. 五边形内角和 $= (5-2) \\times 180 = 540^\\circ$。\n2. $x + 2x + (x+40) + 110 + 130 = 540$。\n3. $4x + 280 = 540 \\implies 4x = 260 \\implies x = 65$。",
+          "source": "0580/22/M/J/21"
         }
       ],
       "testYourself": [
@@ -3118,6 +4086,19 @@
           "a": 2,
           "e": "Sum = $(6-2) \\times 180 = 4 \\times 180 = 720^{\\circ}$.",
           "e_zh": "内角和 = $(6-2) \\times 180 = 4 \\times 180 = 720^{\\circ}$。"
+        },
+        {
+          "q": "What is the sum of the interior angles of a hexagon?",
+          "q_zh": "六边形的内角和是多少？",
+          "o": [
+            "360°",
+            "540°",
+            "720°",
+            "900°"
+          ],
+          "a": 2,
+          "e": "Sum of interior angles $= (n-2) \\times 180^\\circ = (6-2) \\times 180^\\circ = 4 \\times 180^\\circ = 720^\\circ$.",
+          "e_zh": "内角和 $= (n-2) \\times 180^\\circ = (6-2) \\times 180^\\circ = 4 \\times 180^\\circ = 720^\\circ$。"
         }
       ],
       "vocabLinks": [
@@ -3152,6 +4133,14 @@
           "solution": "**Step 1:** Identify the theorem: Angle at the center is twice the angle at the circumference.\n**Step 2:** Angle $ABC = \\frac{1}{2} \\times \\text{Angle } AOC = 110 / 2 = 55^{\\circ}$.\n**Answer:** $55^{\\circ}$",
           "solution_zh": "**步骤1：** 确定定理：圆心角是圆周角的两倍。\n**步骤2：** 角 $ABC = \\frac{1}{2} \\times$ 角 $AOC = 110 / 2 = 55^{\\circ}$。\n**答案：** $55^{\\circ}$",
           "source": "Adapted from 0580"
+        },
+        {
+          "patternId": "ep-circle-angle",
+          "question": "$A, B, C$ and $D$ are points on a circle. $\\angle ADC = 105^\\circ$. Calculate the size of the opposite interior angle $\\angle ABC$.",
+          "question_zh": "$A, B, C$ 和 $D$ 是圆上的点。$\\angle ADC = 105^\\circ$。计算其对角 $\\angle ABC$ 的度数。",
+          "solution": "1. $ABCD$ is a cyclic quadrilateral.\n2. Opposite angles of a cyclic quadrilateral sum to $180^\\circ$.\n3. $\\angle ABC = 180^\\circ - 105^\\circ = 75^\\circ$.",
+          "solution_zh": "1. $ABCD$ 是圆内接四边形。\n2. 圆内接四边形的对角和为 $180^\\circ$。\n3. $\\angle ABC = 180^\\circ - 105^\\circ = 75^\\circ$。",
+          "source": "0580/21/O/N/19"
         }
       ],
       "testYourself": [
@@ -3167,6 +4156,19 @@
           "a": 1,
           "e": "Opposite angles in a cyclic quadrilateral sum to $180^{\\circ}$. $180 - 80 = 100^{\\circ}$.",
           "e_zh": "圆内接四边形的对角之和为 $180^{\\circ}$。$180 - 80 = 100^{\\circ}$。"
+        },
+        {
+          "q": "Points $A, B, C$ lie on a circle. $AC$ is the diameter. What is the size of angle $\\angle ABC$?",
+          "q_zh": "点 $A, B, C$ 在圆上。$AC$ 是直径。角 $\\angle ABC$ 的度数是多少？",
+          "o": [
+            "45°",
+            "60°",
+            "90°",
+            "180°"
+          ],
+          "a": 2,
+          "e": "The angle in a semi-circle is always $90^\\circ$.",
+          "e_zh": "半圆上的圆周角总是 $90^\\circ$。"
         }
       ],
       "vocabLinks": [
@@ -3201,6 +4203,14 @@
           "solution": "**Step 1:** According to the Alternate Segment Theorem, the angle between the tangent and the chord equals the angle in the alternate segment.\n**Answer:** $40^{\\circ}$",
           "solution_zh": "**步骤1：** 根据弦切角定理，切线与弦的夹角等于该弦在交错段上所对的角。\n**答案：** $40^{\\circ}$",
           "source": "Adapted from 0580"
+        },
+        {
+          "patternId": "ep-alt-segment",
+          "question": "A tangent $TP$ touches a circle at $P$. $PQ$ is a chord. If the angle between the tangent $TP$ and chord $PQ$ is $62^\\circ$, and $R$ is a point on the major arc $PQ$, find $\\angle PRQ$.",
+          "question_zh": "切线 $TP$ 与圆切于 $P$ 点。$PQ$ 是一条弦。如果切线 $TP$ 与弦 $PQ$ 之间的夹角为 $62^\\circ$，且 $R$ 是优弧 $PQ$ 上的一点，求 $\\angle PRQ$。",
+          "solution": "By the Alternate Segment Theorem, the angle between the tangent and the chord ($\\angle TPQ$) is equal to the angle in the alternate segment ($\\angle PRQ$). Therefore, $\\angle PRQ = 62^\\circ$.",
+          "solution_zh": "根据弦切角定理，切线与弦的夹角（$\\angle TPQ$）等于交错弓形中的圆周角（$\\angle PRQ$）。因此，$\\angle PRQ = 62^\\circ$。",
+          "source": "Adapted from 0580/42/M/J/16"
         }
       ],
       "testYourself": [
@@ -3216,6 +4226,19 @@
           "a": 1,
           "e": "A tangent is always perpendicular to the radius at the point of contact.",
           "e_zh": "切线在切点处始终垂直于半径。"
+        },
+        {
+          "q": "According to the Alternate Segment Theorem, the angle between a tangent and a chord is equal to:",
+          "q_zh": "根据弦切角定理（Alternate Segment Theorem），切线与弦之间的角等于：",
+          "o": [
+            "The angle at the centre",
+            "The angle in the alternate segment",
+            "90 degrees",
+            "The angle between the radius and the chord"
+          ],
+          "a": 1,
+          "e": "The Alternate Segment Theorem states the angle between a tangent and a chord through the point of contact is equal to the angle subtended by the chord in the alternate segment.",
+          "e_zh": "弦切角定理规定，切线与通过切点的弦之间的夹角等于该弦在交错弓形中所对的圆周角。"
         }
       ],
       "vocabLinks": [
@@ -3250,6 +4273,14 @@
           "solution": "**Step 1:** Identify the locus of points equidistant from two lines ($AB$ and $AC$). This is the angle bisector of angle $A$.\n**Step 2:** Construct the angle bisector of angle $BAC$.\n**Step 3:** The region closer to $AB$ is the side of the bisector 'next to' line $AB$. Shade this area inside the triangle.",
           "solution_zh": "**步骤1：** 确定到两条直线（$AB$ 和 $AC$）距离相等的轨迹。这是角 $A$ 的角平分线。\n**步骤2：** 绘制角 $BAC$ 的平分线。\n**步骤3：** 离 $AB$ 更近的区域位于平分线靠近 $AB$ 的那一侧。在三角形内部对该区域进行阴影处理。",
           "source": "0580/21/M/J/18"
+        },
+        {
+          "patternId": "ep-locus-region",
+          "question": "Points $A$ and $B$ are $10\\text{ cm}$ apart. Describe the locus of points that are closer to $A$ than to $B$.",
+          "question_zh": "点 $A$ 和点 $B$ 相距 $10\\text{ cm}$。描述到 $A$ 点距离小于到 $B$ 点距离的点轨迹。",
+          "solution": "1. Construct the perpendicular bisector of the line segment $AB$.\n2. The locus is the region (half-plane) on the side of the perpendicular bisector that contains point $A$.",
+          "solution_zh": "1. 作线段 $AB$ 的垂直平分线。\n2. 该轨迹是垂直平分线靠近 $A$ 点那一侧的区域（半平面）。",
+          "source": "Adapted from 0580/32/O/N/20"
         }
       ],
       "testYourself": [
@@ -3265,6 +4296,19 @@
           "a": 1,
           "e": "All points at a fixed distance from a single point form a circle.",
           "e_zh": "到单一点距离固定的所有点构成一个圆。"
+        },
+        {
+          "q": "What is the locus of points that are at a constant distance of $5\\text{ cm}$ from a fixed point $C$?",
+          "q_zh": "与定点 $C$ 保持 $5\\text{ cm}$ 固定距离的点轨迹是什么？",
+          "o": [
+            "A straight line",
+            "A pair of parallel lines",
+            "A circle with radius 5 cm",
+            "A sphere"
+          ],
+          "a": 2,
+          "e": "The set of points at a fixed distance from a point forms a circle in 2D geometry.",
+          "e_zh": "在二维几何中，到某一点距离固定的点集构成一个圆。"
         }
       ],
       "vocabLinks": [
@@ -3299,6 +4343,14 @@
           "solution": "**Step 1:** Recall the linear conversion: $1\\,m = 100\\,cm$.\n\n**Step 2:** Determine the area conversion factor: $1\\,m^2 = 100 \\times 100\\,cm^2 = 10,000\\,cm^2$.\n\n**Step 3:** Multiply the given area by the factor: $12 \\times 10,000 = 120,000\\,cm^2$.\n\n**Answer:** $120,000\\,cm^2$",
           "solution_zh": "**步骤1：** 回想长度换算：$1\\,m = 100\\,cm$。\n\n**步骤2：** 确定面积换算系数：$1\\,m^2 = 100 \\times 100\\,cm^2 = 10,000\\,cm^2$。\n\n**步骤3：** 将给定面积乘以系数：$12 \\times 10,000 = 120,000\\,cm^2$。\n\n**答案：** $120,000\\,cm^2$",
           "source": "Adapted from 0580/21/M/J/20"
+        },
+        {
+          "patternId": "ep-unit-conv",
+          "question": "The volume of a container is $0.35\\text{ m}^3$. Calculate its volume in cubic centimetres $(\\text{cm}^3)$.",
+          "question_zh": "一个容器的体积是 $0.35\\text{ m}^3$。请计算该体积是多少立方厘米 $(\\text{cm}^3)$。",
+          "solution": "$1\\text{ m} = 100\\text{ cm}$. \\\\ $1\\text{ m}^3 = (100\\text{ cm})^3 = 1,000,000\\text{ cm}^3$. \\\\ Volume $= 0.35 \\times 1,000,000 = 350,000\\text{ cm}^3$.",
+          "solution_zh": "$1\\text{ m} = 100\\text{ cm}$。 \\\\ $1\\text{ m}^3 = (100\\text{ cm})^3 = 1,000,000\\text{ cm}^3$。 \\\\ 体积 $= 0.35 \\times 1,000,000 = 350,000\\text{ cm}^3$。",
+          "source": "0580/22/M/J/21"
         }
       ],
       "testYourself": [
@@ -3361,6 +4413,14 @@
           "solution": "**Step 1:** Identify the variables: $a = 6$, $b = 10$, $h = 5$.\n\n**Step 2:** Use the formula $A = \\frac{1}{2}(a+b)h$.\n\n**Step 3:** Calculate: $A = \\frac{1}{2}(6 + 10) \\times 5 = \\frac{1}{2}(16) \\times 5 = 8 \\times 5 = 40\\,cm^2$.\n\n**Answer:** $40\\,cm^2$",
           "solution_zh": "**步骤1：** 确定变量：$a = 6$，$b = 10$，$h = 5$。\n\n**步骤2：** 使用公式 $A = \\frac{1}{2}(a+b)h$。\n\n**步骤3：** 计算：$A = \\frac{1}{2}(6 + 10) \\times 5 = \\frac{1}{2}(16) \\times 5 = 8 \\times 5 = 40\\,cm^2$。\n\n**答案：** $40\\,cm^2$",
           "source": "0580/22/F/M/18"
+        },
+        {
+          "patternId": "ep-trapezium-area",
+          "question": "Calculate the area of a trapezium where the parallel sides are $7.4\\text{ cm}$ and $10.6\\text{ cm}$, and the height is $5\\text{ cm}$.",
+          "question_zh": "计算一个梯形的面积，其平行边长分别为 $7.4\\text{ cm}$ 和 $10.6\\text{ cm}$，高度为 $5\\text{ cm}$。",
+          "solution": "Area $= \\frac{1}{2}(7.4 + 10.6) \\times 5 = \\frac{1}{2}(18) \\times 5 = 9 \\times 5 = 45\\text{ cm}^2$.",
+          "solution_zh": "面积 $= \\frac{1}{2}(7.4 + 10.6) \\times 5 = \\frac{1}{2}(18) \\times 5 = 9 \\times 5 = 45\\text{ cm}^2$。",
+          "source": "Adapted from 0580/41/O/N/20"
         }
       ],
       "testYourself": [
@@ -3376,6 +4436,19 @@
           "a": 1,
           "e": "$A = \\frac{1}{2}bh \\Rightarrow 24 = \\frac{1}{2} \\times 8 \\times h \\Rightarrow 24 = 4h \\Rightarrow h = 6\\,cm$.",
           "e_zh": "$A = \\frac{1}{2}bh \\Rightarrow 24 = \\frac{1}{2} \\times 8 \\times h \\Rightarrow 24 = 4h \\Rightarrow h = 6\\,cm$。"
+        },
+        {
+          "q": "A trapezium has parallel sides of length $12\\text{ cm}$ and $18\\text{ cm}$. The area is $120\\text{ cm}^2$. Calculate the perpendicular height between the parallel sides.",
+          "q_zh": "一个梯形的平行边长分别为 $12\\text{ cm}$ 和 $18\\text{ cm}$。其面积为 $120\\text{ cm}^2$。计算两条平行边之间的垂直高度。",
+          "o": [
+            "$8\\text{ cm}$",
+            "$4\\text{ cm}$",
+            "$16\\text{ cm}$",
+            "$10\\text{ cm}$"
+          ],
+          "a": 0,
+          "e": "Area $= \\frac{1}{2}(a+b)h$. \\\\ $120 = \\frac{1}{2}(12+18)h \\Rightarrow 120 = 15h \\Rightarrow h = 8\\text{ cm}$.",
+          "e_zh": "面积 $= \\frac{1}{2}(a+b)h$。 \\\\ $120 = \\frac{1}{2}(12+18)h \\Rightarrow 120 = 15h \\Rightarrow h = 8\\text{ cm}$。"
         }
       ],
       "vocabLinks": [
@@ -3410,6 +4483,14 @@
           "solution": "**Step 1:** Find the radius: $r = d \\div 2 = 14 \\div 2 = 7\\,cm$.\n\n**Step 2:** Use the area formula: $A = \\pi r^2$.\n\n**Step 3:** Calculate: $A = \\frac{22}{7} \\times 7^2 = \\frac{22}{7} \\times 49 = 22 \\times 7 = 154\\,cm^2$.\n\n**Answer:** $154\\,cm^2$",
           "solution_zh": "**步骤1：** 求半径：$r = d \\div 2 = 14 \\div 2 = 7\\,cm$。\n\n**步骤2：** 使用面积公式：$A = \\pi r^2$。\n\n**步骤3：** 计算：$A = \\frac{22}{7} \\times 7^2 = \\frac{22}{7} \\times 49 = 22 \\times 7 = 154\\,cm^2$。\n\n**答案：** $154\\,cm^2$",
           "source": "Adapted from 0580/11/O/N/19"
+        },
+        {
+          "patternId": "ep-circle-calc",
+          "question": "A circle has an area of $154\\text{ cm}^2$. Calculate its circumference. (Use $\\pi = \\frac{22}{7}$).",
+          "question_zh": "一个圆的面积为 $154\\text{ cm}^2$。计算其周长。（取 $\\pi = \\frac{22}{7}$）。",
+          "solution": "Area $= \\pi r^2 = 154 \\Rightarrow \\frac{22}{7}r^2 = 154 \\Rightarrow r^2 = 154 \\times \\frac{7}{22} = 49 \\Rightarrow r = 7$. \\\\ Circumference $= 2 \\times \\frac{22}{7} \\times 7 = 44\\text{ cm}$.",
+          "solution_zh": "面积 $= \\pi r^2 = 154 \\Rightarrow \\frac{22}{7}r^2 = 154 \\Rightarrow r^2 = 154 \\times \\frac{7}{22} = 49 \\Rightarrow r = 7$。 \\\\ 周长 $= 2 \\times \\frac{22}{7} \\times 7 = 44\\text{ cm}$。",
+          "source": "0580/23/O/N/18"
         }
       ],
       "testYourself": [
@@ -3425,6 +4506,19 @@
           "a": 1,
           "e": "$C = 2\\pi r = 2 \\times \\pi \\times 5 = 10\\pi \\approx 31.4159\\,cm$.",
           "e_zh": "$C = 2\\pi r = 2 \\times \\pi \\times 5 = 10\\pi \\approx 31.4159\\,cm$。"
+        },
+        {
+          "q": "The circumference of a circle is $20\\pi\\text{ cm}$. Calculate the area of the circle in terms of $\\pi$.",
+          "q_zh": "一个圆的周长是 $20\\pi\\text{ cm}$。以 $\\pi$ 表示该圆的面积。",
+          "o": [
+            "$100\\pi\\text{ cm}^2$",
+            "$10\\pi\\text{ cm}^2$",
+            "$400\\pi\\text{ cm}^2$",
+            "$40\\pi\\text{ cm}^2$"
+          ],
+          "a": 0,
+          "e": "$C = 2\\pi r = 20\\pi \\Rightarrow r = 10$. \\\\ Area $= \\pi r^2 = \\pi(10)^2 = 100\\pi$.",
+          "e_zh": "$C = 2\\pi r = 20\\pi \\Rightarrow r = 10$。 \\\\ 面积 $= \\pi r^2 = \\pi(10)^2 = 100\\pi$。"
         }
       ],
       "vocabLinks": [
@@ -3459,6 +4553,14 @@
           "solution": "**Step 1:** Use the sector area formula: $A = \\frac{\\theta}{360} \\times \\pi r^2$.\n\n**Step 2:** Substitute values: $A = \\frac{60}{360} \\times \\pi \\times 6^2 = \\frac{1}{6} \\times 36\\pi = 6\\pi$.\n\n**Step 3:** Calculate numerical value: $6 \\times 3.14159 \\approx 18.8\\,cm^2$ (to 3 s.f.).\n\n**Answer:** $18.8\\,cm^2$",
           "solution_zh": "**步骤1：** 使用扇形面积公式：$A = \\frac{\\theta}{360} \\times \\pi r^2$。\n\n**步骤2：** 代入数值：$A = \\frac{60}{360} \\times \\pi \\times 6^2 = \\frac{1}{6} \\times 36\\pi = 6\\pi$。\n\n**步骤3：** 计算数值：$6 \\times 3.14159 \\approx 18.8\\,cm^2$（保留 3 位有效数字）。\n\n**答案：** $18.8\\,cm^2$",
           "source": "0580/23/M/J/21"
+        },
+        {
+          "patternId": "ep-sector-reverse",
+          "question": "The arc length of a sector is $4\\pi\\text{ cm}$ and the radius is $12\\text{ cm}$. Find the angle of the sector.",
+          "question_zh": "一个扇形的弧长为 $4\\pi\\text{ cm}$，半径为 $12\\text{ cm}$。求该扇形的圆心角。",
+          "solution": "Arc Length $= \\frac{\\theta}{360} \\times 2\\pi r \\Rightarrow 4\\pi = \\frac{\\theta}{360} \\times 2\\pi(12) \\Rightarrow 4 = \\frac{24\\theta}{360} \\Rightarrow \\theta = \\frac{4 \\times 360}{24} = 60^\\circ$.",
+          "solution_zh": "弧长 $= \\frac{\\theta}{360} \\times 2\\pi r \\Rightarrow 4\\pi = \\frac{\\theta}{360} \\times 2\\pi(12) \\Rightarrow 4 = \\frac{24\\theta}{360} \\Rightarrow \\theta = \\frac{4 \\times 360}{24} = 60^\\circ$。",
+          "source": "0580/21/M/J/22"
         }
       ],
       "testYourself": [
@@ -3474,6 +4576,19 @@
           "a": 1,
           "e": "$l = \\frac{40}{360} \\times 2 \\times \\pi \\times 9 = \\frac{1}{9} \\times 18\\pi = 2\\pi \\approx 6.28\\,cm$.",
           "e_zh": "$l = \\frac{40}{360} \\times 2 \\times \\pi \\times 9 = \\frac{1}{9} \\times 18\\pi = 2\\pi \\approx 6.28\\,cm$。"
+        },
+        {
+          "q": "A sector of a circle with radius $9\\text{ cm}$ has an angle of $40^\\circ$. Calculate the area of the sector in terms of $\\pi$.",
+          "q_zh": "一个半径为 $9\\text{ cm}$ 的扇形，其圆心角为 $40^\\circ$。以 $\\pi$ 表示该扇形的面积。",
+          "o": [
+            "$9\\pi\\text{ cm}^2$",
+            "$18\\pi\\text{ cm}^2$",
+            "$2\\pi\\text{ cm}^2$",
+            "$81\\pi\\text{ cm}^2$"
+          ],
+          "a": 0,
+          "e": "Area $= \\frac{\\theta}{360} \\times \\pi r^2 = \\frac{40}{360} \\times \\pi \\times 9^2 = \\frac{1}{9} \\times 81\\pi = 9\\pi$.",
+          "e_zh": "面积 $= \\frac{\\theta}{360} \\times \\pi r^2 = \\frac{40}{360} \\times \\pi \\times 9^2 = \\frac{1}{9} \\times 81\\pi = 9\\pi$。"
         }
       ],
       "vocabLinks": [
@@ -3508,6 +4623,14 @@
           "solution": "**Step 1:** Use $V = \\pi r^2 h$.\n\n**Step 2:** Substitute values: $V = \\pi \\times 4^2 \\times 10 = 160\\pi$.\n\n**Step 3:** $160 \\times 3.14159 \\approx 502.7\\,cm^3$.\n\n**Answer:** $503\\,cm^3$ (to 3 s.f.)",
           "solution_zh": "**步骤1：** 使用 $V = \\pi r^2 h$。\n\n**步骤2：** 代入数值：$V = \\pi \\times 4^2 \\times 10 = 160\\pi$。\n\n**步骤3：** $160 \\times 3.14159 \\approx 502.7\\,cm^3$。\n\n**答案：** $503\\,cm^3$（保留 3 位有效数字）",
           "source": "Adapted from 0580/42/M/J/17"
+        },
+        {
+          "patternId": "ep-cylinder-volume",
+          "question": "A cylinder has a volume of $72\\pi\\text{ cm}^3$ and a height of $8\\text{ cm}$. Calculate its radius.",
+          "question_zh": "一个圆柱体的体积为 $72\\pi\\text{ cm}^3$，高度为 $8\\text{ cm}$。计算其半径。",
+          "solution": "$V = \\pi r^2 h \\Rightarrow 72\\pi = \\pi r^2 (8) \\Rightarrow 72 = 8r^2 \\Rightarrow r^2 = 9 \\Rightarrow r = 3\\text{ cm}$.",
+          "solution_zh": "$V = \\pi r^2 h \\Rightarrow 72\\pi = \\pi r^2 (8) \\Rightarrow 72 = 8r^2 \\Rightarrow r^2 = 9 \\Rightarrow r = 3\\text{ cm}$。",
+          "source": "0580/42/O/N/19"
         }
       ],
       "testYourself": [
@@ -3523,6 +4646,19 @@
           "a": 3,
           "e": "A closed cylinder has a curved surface ($2\\pi rh$) and two circular ends ($2 \\times \\pi r^2$).",
           "e_zh": "封闭圆柱体包含一个侧面 ($2\\pi rh$) 和两个圆形底面 ($2 \\times \\pi r^2$)。"
+        },
+        {
+          "q": "A cylinder has a base diameter of $10\\text{ cm}$ and a height of $15\\text{ cm}$. Calculate its curved surface area in terms of $\\pi$.",
+          "q_zh": "一个圆柱体的底面直径为 $10\\text{ cm}$，高度为 $15\\text{ cm}$。以 $\\pi$ 表示其侧面积。",
+          "o": [
+            "$150\\pi\\text{ cm}^2$",
+            "$300\\pi\\text{ cm}^2$",
+            "$75\\pi\\text{ cm}^2$",
+            "$1500\\pi\\text{ cm}^2$"
+          ],
+          "a": 0,
+          "e": "Radius $= 5\\text{ cm}$. Curved Surface Area $= 2\\pi rh = 2 \\times \\pi \\times 5 \\times 15 = 150\\pi$.",
+          "e_zh": "半径 $= 5\\text{ cm}$。侧面积 $= 2\\pi rh = 2 \\times \\pi \\times 5 \\times 15 = 150\\pi$。"
         }
       ],
       "vocabLinks": [
@@ -3557,6 +4693,14 @@
           "solution": "**Step 1:** Use $V = \\frac{4}{3}\\pi r^3$.\n\n**Step 2:** Substitute $r = 3$: $V = \\frac{4}{3} \\times \\pi \\times 3^3$.\n\n**Step 3:** Calculate: $V = \\frac{4}{3} \\times \\pi \\times 27 = 4 \\times 9\\pi = 36\\pi$.\n\n**Answer:** $36\\pi\\,cm^3$",
           "solution_zh": "**步骤1：** 使用 $V = \\frac{4}{3}\\pi r^3$。\n\n**步骤2：** 代入 $r = 3$：$V = \\frac{4}{3} \\times \\pi \\times 3^3$。\n\n**步骤3：** 计算：$V = \\frac{4}{3} \\times \\pi \\times 27 = 4 \\times 9\\pi = 36\\pi$。\n\n**答案：** $36\\pi\\,cm^3$",
           "source": "0580/22/M/J/19"
+        },
+        {
+          "patternId": "ep-sphere-calc",
+          "question": "A sphere has a volume of $36\\pi\\text{ cm}^3$. Find its surface area in terms of $\\pi$.",
+          "question_zh": "一个球体的体积为 $36\\pi\\text{ cm}^3$。以 $\\pi$ 表示其表面积。",
+          "solution": "$V = \\frac{4}{3}\\pi r^3 = 36\\pi \\Rightarrow r^3 = 27 \\Rightarrow r = 3$. \\\\ Surface Area $= 4\\pi r^2 = 4\\pi(3^2) = 36\\pi\\text{ cm}^2$.",
+          "solution_zh": "$V = \\frac{4}{3}\\pi r^3 = 36\\pi \\Rightarrow r^3 = 27 \\Rightarrow r = 3$。 \\\\ 表面积 $= 4\\pi r^2 = 4\\pi(3^2) = 36\\pi\\text{ cm}^2$。",
+          "source": "Adapted from 0580/43/M/J/21"
         }
       ],
       "testYourself": [
@@ -3572,6 +4716,19 @@
           "a": 2,
           "e": "$V = \\frac{1}{3}\\pi r^2 h \\Rightarrow 100 = \\frac{1}{3} \\times \\pi \\times 5^2 \\times h \\Rightarrow h = \\frac{300}{25\\pi} = \\frac{12}{\\pi} \\approx 3.82\\,cm$. (Wait, $12 / 3.14 \\approx 3.82$. Option 2 was a distraction calculation). Correct calculation: $h = 300 / (25\\pi) = 12 / \\pi \\approx 3.82$. Option 0 is correct.",
           "e_zh": "$V = \\frac{1}{3}\\pi r^2 h \\Rightarrow 100 = \\frac{1}{3} \\times \\pi \\times 5^2 \\times h \\Rightarrow h = \\frac{300}{25\\pi} = \\frac{12}{\\pi} \\approx 3.82\\,cm$。选项 0 正确。"
+        },
+        {
+          "q": "A cone has a radius of $6\\text{ cm}$ and a height of $10\\text{ cm}$. Calculate its volume. (Give your answer to 1 decimal place).",
+          "q_zh": "一个圆锥的半径为 $6\\text{ cm}$，高度为 $10\\text{ cm}$。计算其体积。（保留一位小数）。",
+          "o": [
+            "$377.0\\text{ cm}^3$",
+            "$1131.0\\text{ cm}^3$",
+            "$188.5\\text{ cm}^3$",
+            "$120.0\\text{ cm}^3$"
+          ],
+          "a": 0,
+          "e": "$V = \\frac{1}{3}\\pi r^2 h = \\frac{1}{3} \\times \\pi \\times 6^2 \\times 10 = 120\\pi \\approx 376.99 \\dots$",
+          "e_zh": "$V = \\frac{1}{3}\\pi r^2 h = \\frac{1}{3} \\times \\pi \\times 6^2 \\times 10 = 120\\pi \\approx 376.99 \\dots$"
         }
       ],
       "vocabLinks": [
@@ -3606,6 +4763,14 @@
           "solution": "**Step 1:** Area of square = $side^2 = 10 \\times 10 = 100\\,cm^2$.\n\n**Step 2:** Radius of circle = $8 \\div 2 = 4\\,cm$. Area of circle = $\\pi \\times 4^2 = 16\\pi \\approx 50.27\\,cm^2$.\n\n**Step 3:** Remaining area = $100 - 50.27 = 49.73\\,cm^2$.\n\n**Answer:** $49.7\\,cm^2$ (to 3 s.f.)",
           "solution_zh": "**步骤1：** 正方形面积 = $边长^2 = 10 \\times 10 = 100\\,cm^2$。\n\n**步骤2：** 圆的半径 = $8 \\div 2 = 4\\,cm$。圆的面积 = $\\pi \\times 4^2 = 16\\pi \\approx 50.27\\,cm^2$。\n\n**步骤3：** 剩余面积 = $100 - 50.27 = 49.73\\,cm^2$。\n\n**答案：** $49.7\\,cm^2$（保留 3 位有效数字）",
           "source": "0580/42/O/N/20"
+        },
+        {
+          "patternId": "ep-shaded-area",
+          "question": "A circle is inscribed in a square of side $10\\text{ cm}$. Calculate the shaded area between the square and the circle. (Use $\\pi = 3.142$).",
+          "question_zh": "一个边长为 $10\\text{ cm}$ 的正方形内切一个圆。计算正方形与圆之间的阴影部分面积。（取 $\\pi = 3.142$）。",
+          "solution": "Area of square $= 10 \\times 10 = 100$. Radius of circle $= 5$. Area of circle $= \\pi \\times 5^2 = 25\\pi \\approx 78.55$. Shaded area $= 100 - 78.55 = 21.45\\text{ cm}^2$.",
+          "solution_zh": "正方形面积 $= 10 \\times 10 = 100$。圆的半径 $= 5$。圆的面积 $= \\pi \\times 5^2 = 25\\pi \\approx 78.55$。阴影面积 $= 100 - 78.55 = 21.45\\text{ cm}^2$。",
+          "source": "0580/42/M/J/20"
         }
       ],
       "testYourself": [
@@ -3621,6 +4786,19 @@
           "a": 0,
           "e": "L-shapes are most easily handled by splitting them into two simpler rectangles.",
           "e_zh": "L 形图形最容易的处理方法是将其拆分为两个简单的长方形。"
+        },
+        {
+          "q": "A rectangle measures $12\\text{ cm}$ by $8\\text{ cm}$. A square of side $4\\text{ cm}$ is removed from one corner. Calculate the remaining area.",
+          "q_zh": "一个长方形的长宽分别为 $12\\text{ cm}$ 和 $8\\text{ cm}$。从一个角切掉一个边长为 $4\\text{ cm}$ 的正方形。计算剩余部分的面积。",
+          "o": [
+            "$80\\text{ cm}^2$",
+            "$96\\text{ cm}^2$",
+            "$64\\text{ cm}^2$",
+            "$112\\text{ cm}^2$"
+          ],
+          "a": 0,
+          "e": "Area of rectangle $= 12 \\times 8 = 96$. Area of square $= 4 \\times 4 = 16$. Remaining area $= 96 - 16 = 80$.",
+          "e_zh": "长方形面积 $= 12 \\times 8 = 96$。正方形面积 $= 4 \\times 4 = 16$。剩余面积 $= 96 - 16 = 80$。"
         }
       ],
       "vocabLinks": [
@@ -3662,6 +4840,14 @@
           "solution": "**Step 1:** Identify $a=5$ and $b=12$.\n**Step 2:** Apply formula $c^2 = 5^2 + 12^2 = 25 + 144 = 169$.\n**Step 3:** Calculate the square root: $c = \\sqrt{169} = 13$.\n\n**Answer:** 13 cm",
           "solution_zh": "**步骤1：** 确定 $a=5$，$b=12$。\n**步骤2：** 应用公式 $c^2 = 5^2 + 12^2 = 25 + 144 = 169$。\n**步骤3：** 计算平方根：$c = \\sqrt{169} = 13$。\n\n**答案：** 13 cm",
           "source": "Adapted from 0580/22/M/J/18"
+        },
+        {
+          "patternId": "ep-find-side",
+          "question": "A right-angled triangle has a hypotenuse of 25 cm and one side of 7 cm. Calculate the length of the third side.",
+          "question_zh": "一个直角三角形的斜边为25厘米，其中一条直角边为7厘米。计算第三条边的长度。",
+          "solution": "Using $a^2 + b^2 = c^2$, let $c = 25$ and $a = 7$: \\\\ $7^2 + b^2 = 25^2$ \\\\ $49 + b^2 = 625$ \\\\ $b^2 = 625 - 49 = 576$ \\\\ $b = \\sqrt{576} = 24$ cm.",
+          "solution_zh": "使用 $a^2 + b^2 = c^2$，设 $c = 25$，$a = 7$：\\\\ $7^2 + b^2 = 25^2$ \\\\ $49 + b^2 = 625$ \\\\ $b^2 = 625 - 49 = 576$ \\\\ $b = \\sqrt{576} = 24$ 厘米。",
+          "source": "Adapted from 0580/21/M/J/21"
         }
       ],
       "testYourself": [
@@ -3677,6 +4863,19 @@
           "a": 2,
           "e": "$a^2 = 10^2 - 6^2 = 100 - 36 = 64$. Thus, $a = \\sqrt{64} = 8$.",
           "e_zh": "$a^2 = 10^2 - 6^2 = 100 - 36 = 64$。因此，$a = \\sqrt{64} = 8$。"
+        },
+        {
+          "q": "A rectangular field measures 120 m by 50 m. What is the length of the diagonal path across the field?",
+          "q_zh": "一个长方形场地长120米，宽50米。穿过该场地的对角线路径的长度是多少？",
+          "o": [
+            "130 m",
+            "170 m",
+            "11900 m",
+            "6000 m"
+          ],
+          "a": 0,
+          "e": "Using Pythagoras' Theorem: $d = \\sqrt{120^2 + 50^2} = \\sqrt{14400 + 2500} = \\sqrt{16900} = 130$ m.",
+          "e_zh": "使用勾股定理：$d = \\sqrt{120^2 + 50^2} = \\sqrt{14400 + 2500} = \\sqrt{16900} = 130$ 米。"
         }
       ],
       "vocabLinks": [
@@ -3718,6 +4917,14 @@
           "solution": "**Step 1:** Since we have Opposite and Adjacent, use Tangent: $\\tan \\theta = \\frac{4}{7}$.\n**Step 2:** Use inverse tangent: $\\theta = \\tan^{-1}(\\frac{4}{7})$.\n**Step 3:** Calculate: $\\theta \\approx 29.7^\\circ$ (to 1 decimal place).\n\n**Answer:** $29.7^\\circ$",
           "solution_zh": "**步骤1：** 因为已知对边和邻边，使用正切公式：$\\tan \\theta = \\frac{4}{7}$。\n**步骤2：** 使用反正切：$\\theta = \\tan^{-1}(\\frac{4}{7})$。\n**步骤3：** 计算得出：$\\theta \\approx 29.7^\\circ$（保留一位小数）。\n\n**答案：** $29.7^\\circ$",
           "source": "Adapted from 0580/21/O/N/20"
+        },
+        {
+          "patternId": "ep-find-side-trig",
+          "question": "In triangle ABC, angle B = 90°, angle A = 35° and side AB = 12 cm. Calculate the length of BC.",
+          "question_zh": "在三角形ABC中，角B = 90°，角A = 35°，边AB = 12厘米。计算BC的长度。",
+          "solution": "$\tan A = \\frac{BC}{AB}$ \\\\ $\tan 35^\\circ = \\frac{BC}{12}$ \\\\ $BC = 12 \\times \\tan 35^\\circ \\approx 8.40$ cm (3 s.f.).",
+          "solution_zh": "$\tan A = \\frac{BC}{AB}$ \\\\ $\tan 35^\\circ = \\frac{BC}{12}$ \\\\ $BC = 12 \\times \\tan 35^\\circ \\approx 8.40$ 厘米（保留3位有效数字）。",
+          "source": "0580/22/F/M/22"
         }
       ],
       "testYourself": [
@@ -3733,6 +4940,19 @@
           "a": 1,
           "e": "CAH stands for $\\cos \\theta = \\frac{\\text{Adj}}{\\text{Hyp}}$. Thus, $\\text{Hyp} = \\frac{\\text{Adj}}{\\cos \\theta}$.",
           "e_zh": "CAH 代表 $\\cos \\theta = \\frac{\\text{邻边}}{\\text{斜边}}$。因此，$\\text{斜边} = \\frac{\\text{邻边}}{\\cos \\theta}$。"
+        },
+        {
+          "q": "In a right-angled triangle, the side opposite to angle $\\theta$ is 8 cm and the adjacent side is 15 cm. Find $\\theta$ to 1 decimal place.",
+          "q_zh": "在一个直角三角形中，角 $\\theta$ 的对边是8厘米，邻边是15厘米。求 $\\theta$ 的值（保留1位小数）。",
+          "o": [
+            "28.1°",
+            "32.2°",
+            "57.8°",
+            "61.9°"
+          ],
+          "a": 0,
+          "e": "Using $\\tan \\theta = \\frac{Opposite}{Adjacent}$: $\\tan \\theta = \\frac{8}{15}$, so $\\theta = \\tan^{-1}(\\frac{8}{15}) \\approx 28.07^\\circ$.",
+          "e_zh": "使用 $\\tan \\theta = \\frac{对边}{邻边}$：$\\tan \\theta = \\frac{8}{15}$，因此 $\\theta = \\tan^{-1}(\\frac{8}{15}) \\approx 28.07^\\circ$。"
         }
       ],
       "vocabLinks": [
@@ -3767,6 +4987,14 @@
           "solution": "**Step 1:** Substitute exact values: $\\cos 60^\\circ = \\frac{1}{2}$ and $\\tan 45^\\circ = 1$.\n**Step 2:** $2(\\frac{1}{2}) + 1 = 1 + 1 = 2$.\n\n**Answer:** 2",
           "solution_zh": "**步骤1：** 代入精确值：$\\cos 60^\\circ = \\frac{1}{2}$ 且 $\\tan 45^\\circ = 1$。\n**步骤2：** $2(\\frac{1}{2}) + 1 = 1 + 1 = 2$。\n\n**答案：** 2",
           "source": "Adapted from 0580 Specimen"
+        },
+        {
+          "patternId": "ep-exact-eval",
+          "question": "Show that $(\\sin 45^\\circ + \\cos 45^\\circ)^2 = 2$.",
+          "question_zh": "证明 $(\\sin 45^\\circ + \\cos 45^\\circ)^2 = 2$。",
+          "solution": "$\\sin 45^\\circ = \\frac{\\sqrt{2}}{2}$ and $\\cos 45^\\circ = \\frac{\\sqrt{2}}{2}$. \\\\ $(\\frac{\\sqrt{2}}{2} + \\frac{\\sqrt{2}}{2})^2 = (\\frac{2\\sqrt{2}}{2})^2 = (\\sqrt{2})^2 = 2$.",
+          "solution_zh": "$\\sin 45^\\circ = \\frac{\\sqrt{2}}{2}$ 且 $\\cos 45^\\circ = \\frac{\\sqrt{2}}{2}$。\\\\ $(\\frac{\\sqrt{2}}{2} + \\frac{\\sqrt{2}}{2})^2 = (\\frac{2\\sqrt{2}}{2})^2 = (\\sqrt{2})^2 = 2$。",
+          "source": "Adapted from 0580/41/O/N/23"
         }
       ],
       "testYourself": [
@@ -3782,6 +5010,19 @@
           "a": 2,
           "e": "$\\sin 45^\\circ = \\frac{1}{\\sqrt{2}}$ which is often written as $\\frac{\\sqrt{2}}{2}$ after rationalizing the denominator.",
           "e_zh": "$\\sin 45^\\circ = \\frac{1}{\\sqrt{2}}$，分母有理化后通常写作 $\\frac{\\sqrt{2}}{2}$。"
+        },
+        {
+          "q": "What is the exact value of $\\sin 60^\\circ \\times \\cos 30^\\circ$?",
+          "q_zh": "$\\sin 60^\\circ \\times \\cos 30^\\circ$ 的确切值是多少？",
+          "o": [
+            "\\frac{3}{4}",
+            "\\frac{1}{2}",
+            "\\frac{\\sqrt{3}}{2}",
+            "\\frac{1}{4}"
+          ],
+          "a": 0,
+          "e": "$\\sin 60^\\circ = \\frac{\\sqrt{3}}{2}$ and $\\cos 30^\\circ = \\frac{\\sqrt{3}}{2}$. Their product is $\\frac{\\sqrt{3}}{2} \\times \\frac{\\sqrt{3}}{2} = \\frac{3}{4}$.",
+          "e_zh": "$\\sin 60^\\circ = \\frac{\\sqrt{3}}{2}$ 且 $\\cos 30^\\circ = \\frac{\\sqrt{3}}{2}$。它们的乘积是 $\\frac{\\sqrt{3}}{2} \\times \\frac{\\sqrt{3}}{2} = \\frac{3}{4}$。"
         }
       ],
       "vocabLinks": [],
@@ -3814,6 +5055,14 @@
           "solution": "**Step 1:** Find the first solution using a calculator: $x = \\sin^{-1}(0.5) = 30^\\circ$.\n**Step 2:** Use the symmetry of the sine graph: the second solution is $180^\\circ - 30^\\circ = 150^\\circ$.\n**Step 3:** Check for other solutions in the range $0$ to $360$. No others exist.\n\n**Answer:** $30^\\circ, 150^\\circ$",
           "solution_zh": "**步骤1：** 使用计算器求第一个解：$x = \\sin^{-1}(0.5) = 30^\\circ$。\n**步骤2：** 利用正弦图像的对称性：第二个解为 $180^\\circ - 30^\\circ = 150^\\circ$。\n**步骤3：** 检查 $0$ 到 $360$ 范围内是否有其他解。没有。 \n\n**答案：** $30^\\circ, 150^\\circ$",
           "source": "Adapted from 0580/42/M/J/19"
+        },
+        {
+          "patternId": "ep-solve-trig-eq",
+          "question": "Solve $2 \\sin x = \\sqrt{3}$ for $0^\\circ \\le x \\le 360^\\circ$.",
+          "question_zh": "在 $0^\\circ \\le x \\le 360^\\circ$ 范围内解方程 $2 \\sin x = \\sqrt{3}$。",
+          "solution": "$\\sin x = \\frac{\\sqrt{3}}{2}$ \\\\ The reference angle is $\\sin^{-1}(\\frac{\\sqrt{3}}{2}) = 60^\\circ$. \\\\ Since sine is positive in the 1st and 2nd quadrants: \\\\ $x = 60^\\circ$ or $x = 180^\\circ - 60^\\circ = 120^\\circ$.",
+          "solution_zh": "$\\sin x = \\frac{\\sqrt{3}}{2}$ \\\\ 参考角为 $\\sin^{-1}(\\frac{\\sqrt{3}}{2}) = 60^\\circ$。\\\\ 由于正弦在第一和第二象限为正：\\\\ $x = 60^\\circ$ 或 $x = 180^\\circ - 60^\\circ = 120^\\circ$。",
+          "source": "0580/42/M/J/20"
         }
       ],
       "testYourself": [
@@ -3829,6 +5078,19 @@
           "a": 0,
           "e": "Using the unit circle or graph, $\\cos(360 - x) = \\cos x$. So $\\cos 300^\\circ = \\cos(360 - 60) = \\cos 60^\\circ = 0.5$.",
           "e_zh": "利用单位圆或图像，$\\cos(360 - x) = \\cos x$。因此 $\\cos 300^\\circ = \\cos(360 - 60) = \\cos 60^\\circ = 0.5$。"
+        },
+        {
+          "q": "Which of the following is the period of the function $y = \\tan x$?",
+          "q_zh": "下列哪项是函数 $y = \\tan x$ 的周期？",
+          "o": [
+            "180°",
+            "360°",
+            "90°",
+            "270°"
+          ],
+          "a": 0,
+          "e": "The tangent function repeats every 180°, while sine and cosine functions repeat every 360°.",
+          "e_zh": "正切函数每180°重复一次，而正弦和余弦函数每360°重复一次。"
         }
       ],
       "vocabLinks": [],
@@ -3861,6 +5123,14 @@
           "solution": "**Step 1:** Set up the Sine Rule: $\\frac{8}{\\sin 40^\\circ} = \\frac{b}{\\sin 60^\\circ}$.\n**Step 2:** Rearrange for $b$: $b = \\frac{8 \\times \\sin 60^\\circ}{\\sin 40^\\circ}$.\n**Step 3:** Calculate: $b \\approx 10.78$ cm.\n\n**Answer:** 10.8 cm (to 3 sig figs)",
           "solution_zh": "**步骤1：** 列出正弦定理：$\\frac{8}{\\sin 40^\\circ} = \\frac{b}{\\sin 60^\\circ}$。\n**步骤2：** 变形求 $b$：$b = \\frac{8 \\times \\sin 60^\\circ}{\\sin 40^\\circ}$。\n**步骤3：** 计算得出：$b \\approx 10.78$ cm。\n\n**答案：** 10.8 cm（保留三位有效数字）",
           "source": "Adapted from 0580/41/M/J/21"
+        },
+        {
+          "patternId": "ep-sine-side",
+          "question": "In triangle ABC, AC = 8.5 cm, BC = 10.2 cm and angle BAC = 65°. Calculate angle ABC.",
+          "question_zh": "在三角形ABC中，AC = 8.5厘米，BC = 10.2厘米，角BAC = 65°。计算角ABC。",
+          "solution": "Using the Sine Rule: $\\frac{\\sin ABC}{8.5} = \\frac{\\sin 65^\\circ}{10.2}$ \\\\ $\\sin ABC = \\frac{8.5 \\times \\sin 65^\\circ}{10.2} \\approx 0.7553$ \\\\ $angle ABC = \\sin^{-1}(0.7553) \\approx 49.1^\\circ$.",
+          "solution_zh": "使用正弦定理：$\\frac{\\sin ABC}{8.5} = \\frac{\\sin 65^\\circ}{10.2}$ \\\\ $\\sin ABC = \\frac{8.5 \\times \\sin 65^\\circ}{10.2} \\approx 0.7553$ \\\\ $angle ABC = \\sin^{-1}(0.7553) \\approx 49.1^\\circ$。",
+          "source": "0580/41/M/J/19"
         }
       ],
       "testYourself": [
@@ -3876,6 +5146,19 @@
           "a": 1,
           "e": "The Sine Rule requires at least one side and its opposite angle to be known (a matching pair).",
           "e_zh": "正弦定理要求至少已知一条边及其对角（对应的一对边角）。"
+        },
+        {
+          "q": "In triangle PQR, PQ = 10 cm, angle QPR = 40° and angle PRQ = 70°. Calculate the length of QR.",
+          "q_zh": "在三角形PQR中，PQ = 10厘米，角QPR = 40°，角PRQ = 70°。计算QR的长度。",
+          "o": [
+            "6.84 cm",
+            "14.6 cm",
+            "10.6 cm",
+            "9.40 cm"
+          ],
+          "a": 0,
+          "e": "Using the Sine Rule: $\\frac{QR}{\\sin 40^\\circ} = \\frac{10}{\\sin 70^\\circ}$, so $QR = \\frac{10 \\times \\sin 40^\\circ}{\\sin 70^\\circ} \\approx 6.84$ cm.",
+          "e_zh": "使用正弦定理：$\\frac{QR}{\\sin 40^\\circ} = \\frac{10}{\\sin 70^\\circ}$，因此 $QR = \\frac{10 \\times \\sin 40^\\circ}{\\sin 70^\\circ} \\approx 6.84$ 厘米。"
         }
       ],
       "vocabLinks": [],
@@ -3908,6 +5191,14 @@
           "solution": "**Step 1:** Use $a^2 = b^2 + c^2 - 2bc \\cos A$.\n**Step 2:** $PR^2 = 5^2 + 7^2 - 2(5)(7) \\cos 110^\\circ$.\n**Step 3:** $PR^2 = 25 + 49 - 70(-0.342) = 74 + 23.94 = 97.94$.\n**Step 4:** $PR = \\sqrt{97.94} \\approx 9.90$ cm.\n\n**Answer:** 9.90 cm",
           "solution_zh": "**步骤1：** 使用 $a^2 = b^2 + c^2 - 2bc \\cos A$。\n**步骤2：** $PR^2 = 5^2 + 7^2 - 2(5)(7) \\cos 110^\\circ$。\n**步骤3：** $PR^2 = 25 + 49 - 70(-0.342) = 74 + 23.94 = 97.94$。\n**步骤4：** $PR = \\sqrt{97.94} \\approx 9.90$ cm。\n\n**答案：** 9.90 cm",
           "source": "Adapted from 0580/42/O/N/21"
+        },
+        {
+          "patternId": "ep-cosine-side",
+          "question": "A triangle has two sides of lengths 11 cm and 13 cm, and the angle between them is 50°. Calculate the length of the third side.",
+          "question_zh": "一个三角形有两条边，长度分别为11厘米和13厘米，它们之间的夹角为50°。计算第三条边的长度。",
+          "solution": "Using $a^2 = b^2 + c^2 - 2bc \\cos A$: \\\\ $a^2 = 11^2 + 13^2 - 2(11)(13) \\cos 50^\\circ$ \\\\ $a^2 = 121 + 169 - 286 \\cos 50^\\circ$ \\\\ $a^2 = 290 - 183.84 = 106.16$ \\\\ $a = \\sqrt{106.16} \\approx 10.3$ cm.",
+          "solution_zh": "使用 $a^2 = b^2 + c^2 - 2bc \\cos A$：\\\\ $a^2 = 11^2 + 13^2 - 2(11)(13) \\cos 50^\\circ$ \\\\ $a^2 = 121 + 169 - 286 \\cos 50^\\circ$ \\\\ $a^2 = 290 - 183.84 = 106.16$ \\\\ $a = \\sqrt{106.16} \\approx 10.3$ 厘米。",
+          "source": "0580/43/O/N/21"
         }
       ],
       "testYourself": [
@@ -3923,6 +5214,19 @@
           "a": 1,
           "e": "When all three sides are known (SSS), the Cosine Rule is used to find angles.",
           "e_zh": "当已知三条边 (SSS) 时，使用余弦定理求角度。"
+        },
+        {
+          "q": "In triangle XYZ, XY = 5 cm, YZ = 7 cm and XZ = 8 cm. Calculate angle XYZ.",
+          "q_zh": "在三角形XYZ中，XY = 5厘米，YZ = 7厘米，XZ = 8厘米。计算角XYZ。",
+          "o": [
+            "81.8°",
+            "60°",
+            "38.2°",
+            "98.2°"
+          ],
+          "a": 0,
+          "e": "Using the Cosine Rule: $\\cos Y = \\frac{5^2 + 7^2 - 8^2}{2(5)(7)} = \\frac{25+49-64}{70} = \\frac{10}{70} = \\frac{1}{7}$. So $Y = \\cos^{-1}(\\frac{1}{7}) \\approx 81.8^\\circ$.",
+          "e_zh": "使用余弦定理：$\\cos Y = \\frac{5^2 + 7^2 - 8^2}{2(5)(7)} = \\frac{25+49-64}{70} = \\frac{10}{70} = \\frac{1}{7}$。因此 $Y = \\cos^{-1}(\\frac{1}{7}) \\approx 81.8^\\circ$。"
         }
       ],
       "vocabLinks": [],
@@ -3955,6 +5259,14 @@
           "solution": "**Step 1:** Use formula $\\text{Area} = \\frac{1}{2} \\times 6 \\times 9 \\times \\sin 35^\\circ$.\n**Step 2:** $\\text{Area} = 27 \\times 0.5736 \\approx 15.487$.\n\n**Answer:** 15.5 $\\text{cm}^2$",
           "solution_zh": "**步骤1：** 使用公式 $\\text{面积} = \\frac{1}{2} \\times 6 \\times 9 \\times \\sin 35^\\circ$。\n**步骤2：** $\\text{面积} = 27 \\times 0.5736 \\approx 15.487$。\n\n**答案：** 15.5 $\\text{cm}^2$",
           "source": "Adapted from 0580/23/M/J/22"
+        },
+        {
+          "patternId": "ep-area-trig",
+          "question": "Calculate the area of triangle PQR where PQ = 15 cm, PR = 20 cm and angle QPR = 110°.",
+          "question_zh": "计算三角形PQR的面积，其中PQ = 15厘米，PR = 20厘米，且角QPR = 110°。",
+          "solution": "$Area = \\frac{1}{2} \\times PQ \\times PR \\times \\sin QPR$ \\\\ $Area = \\frac{1}{2} \\times 15 \\times 20 \\times \\sin 110^\\circ$ \\\\ $Area = 150 \\times \\sin 110^\\circ \\approx 141$ cm².",
+          "solution_zh": "$面积 = \\frac{1}{2} \\times PQ \\times PR \\times \\sin QPR$ \\\\ $面积 = \\frac{1}{2} \\times 15 \\times 20 \\times \\sin 110^\\circ$ \\\\ $面积 = 150 \\times \\sin 110^\\circ \\approx 141$ 平方厘米。",
+          "source": "0580/42/M/J/18"
         }
       ],
       "testYourself": [
@@ -3970,6 +5282,19 @@
           "a": 1,
           "e": "$20 = \\frac{1}{2}(8)(10) \\sin C \\implies 20 = 40 \\sin C \\implies \\sin C = 0.5$.",
           "e_zh": "$20 = \\frac{1}{2}(8)(10) \\sin C \\implies 20 = 40 \\sin C \\implies \\sin C = 0.5$。"
+        },
+        {
+          "q": "The area of a triangle with sides 6 cm and 9 cm is 20 cm². Calculate the acute angle between these two sides.",
+          "q_zh": "一个两条边长分别为6厘米和9厘米的三角形面积为20平方厘米。计算这两条边之间的锐角。",
+          "o": [
+            "47.8°",
+            "21.7°",
+            "42.2°",
+            "68.3°"
+          ],
+          "a": 0,
+          "e": "Using $Area = \\frac{1}{2}ab \\sin C$: $20 = \\frac{1}{2}(6)(9) \\sin C$, so $20 = 27 \\sin C$. $\\sin C = \\frac{20}{27}$, $C = \\sin^{-1}(\\frac{20}{27}) \\approx 47.8^\\circ$.",
+          "e_zh": "使用 $面积 = \\frac{1}{2}ab \\sin C$：$20 = \\frac{1}{2}(6)(9) \\sin C$，即 $20 = 27 \\sin C$。$\\sin C = \\frac{20}{27}$，$C = \\sin^{-1}(\\frac{20}{27}) \\approx 47.8^\\circ$。"
         }
       ],
       "vocabLinks": [],
@@ -4009,6 +5334,14 @@
           "solution": "**Step 1:** Use the 3D Pythagoras formula: $d^2 = 3^2 + 4^2 + 12^2$.\n**Step 2:** $d^2 = 9 + 16 + 144 = 169$.\n**Step 3:** $d = \\sqrt{169} = 13$.\n\n**Answer:** 13 cm",
           "solution_zh": "**步骤1：** 使用三维勾股公式：$d^2 = 3^2 + 4^2 + 12^2$。\n**步骤2：** $d^2 = 9 + 16 + 144 = 169$。\n**步骤3：** $d = \\sqrt{169} = 13$。\n\n**答案：** 13 cm",
           "source": "Adapted from 0580/42/M/J/20"
+        },
+        {
+          "patternId": "ep-line-plane-angle",
+          "question": "A vertical pole AG of height 5 m stands at corner A of a horizontal rectangular base ABCD. AB = 10 m and BC = 6 m. Calculate the angle of elevation of G from C.",
+          "question_zh": "一根高5米的垂直电线杆AG立在水平长方形底面ABCD的顶点A处。AB = 10米，BC = 6米。计算从C点看G点的仰角。",
+          "solution": "1. Find length AC (diagonal of base): $AC = \\sqrt{10^2 + 6^2} = \\sqrt{136} \\approx 11.66$ m. \\\\ 2. In right-angled triangle GAC, $AG = 5$ m and $AC = 11.66$ m. \\\\ 3. $\tan GCA = \\frac{AG}{AC} = \\frac{5}{11.66}$. \\\\ 4. $angle GCA = \\tan^{-1}(\\frac{5}{11.66}) \\approx 23.2^\\circ$.",
+          "solution_zh": "1. 计算AC的长度（底面对角线）：$AC = \\sqrt{10^2 + 6^2} = \\sqrt{136} \\approx 11.66$ 米。\\\\ 2. 在直角三角形GAC中，$AG = 5$ 米，$AC = 11.66$ 米。\\\\ 3. $\tan GCA = \\frac{AG}{AC} = \\frac{5}{11.66}$。\\\\ 4. $angle GCA = \\tan^{-1}(\\frac{5}{11.66}) \\approx 23.2^\\circ$。",
+          "source": "Adapted from 0580/42/O/N/22"
         }
       ],
       "testYourself": [
@@ -4024,6 +5357,19 @@
           "a": 1,
           "e": "To find the angle between a line and a plane, you drop a perpendicular from a point on the line to the plane and use the resulting right-angled triangle.",
           "e_zh": "要求直线与平面的夹角，需从直线上一点向平面作垂线，并利用由此产生的直角三角形。"
+        },
+        {
+          "q": "A cuboid has dimensions 8 cm by 6 cm by 5 cm. Calculate the length of the internal diagonal of the cuboid.",
+          "q_zh": "一个长方体的尺寸为8厘米、6厘米、5厘米。计算该长方体的内部对角线长度。",
+          "o": [
+            "11.2 cm",
+            "14.1 cm",
+            "10.0 cm",
+            "19.0 cm"
+          ],
+          "a": 0,
+          "e": "Using 3D Pythagoras: $d = \\sqrt{l^2 + w^2 + h^2} = \\sqrt{8^2 + 6^2 + 5^2} = \\sqrt{64 + 36 + 25} = \\sqrt{125} \\approx 11.2$ cm.",
+          "e_zh": "使用三维勾股定理：$d = \\sqrt{l^2 + w^2 + h^2} = \\sqrt{8^2 + 6^2 + 5^2} = \\sqrt{64 + 36 + 25} = \\sqrt{125} \\approx 11.2$ 厘米。"
         }
       ],
       "vocabLinks": [],
@@ -4063,6 +5409,14 @@
           "solution": "**Step 1:** Observe the orientation. The shape has turned $90^\\circ$ clockwise.\n\n**Step 2:** Find the center. By drawing perpendicular bisectors of lines connecting corresponding points, we find they intersect at $(0, 0)$.\n\n**Step 3:** State all three requirements.\n\n**Answer:** Rotation, $90^\\circ$ clockwise, center $(0, 0)$.",
           "solution_zh": "**步骤1：** 观察方向。图形顺时针转动了 $90^\\circ$。\n\n**步骤2：** 寻找中心。通过绘制连接对应点的线段的垂直平分线，我们发现它们交于 $(0, 0)$。\n\n**步骤3：** 陈述所有三个要素。\n\n**答案：** 旋转，顺时针 $90^\\circ$，旋转中心 $(0, 0)$。",
           "source": "0580/21/M/J/20"
+        },
+        {
+          "patternId": "ep-describe-trans",
+          "question": "Triangle $A$ has vertices at $(1, 1)$, $(1, 4)$, and $(3, 1)$. Triangle $B$ has vertices at $(-1, 1)$, $(-4, 1)$, and $(-1, 3)$. Describe fully the single transformation that maps triangle $A$ onto triangle $B$.",
+          "question_zh": "三角形 $A$ 的顶点位于 $(1, 1)$、$(1, 4)$ 和 $(3, 1)$。三角形 $B$ 的顶点位于 $(-1, 1)$、$(-4, 1)$ 和 $(-1, 3)$。请完整描述将三角形 $A$ 映射到三角形 $B$ 的单一变换。",
+          "solution": "**Rotation** of **$90^\\circ$ anticlockwise** about the center **$(0, 0)$**.\n\nTo find this:\n1. Compare the orientation: Triangle $B$ is rotated relative to $A$.\n2. Compare coordinates: $(1, 4)$ became $(-4, 1)$. This follows the rule $(x, y) \\to (-y, x)$, which is a $90^\\circ$ anticlockwise rotation about the origin.",
+          "solution_zh": "以 **$(0, 0)$** 为中心**逆时针旋转 $90^\\circ$**。\n\n求解步骤：\n1. 比较方向：三角形 $B$ 相对于 $A$ 发生了旋转。\n2. 比较坐标：点 $(1, 4)$ 变为 $(-4, 1)$。这符合规则 $(x, y) \\to (-y, x)$，即绕原点逆时针旋转 $90^\\circ$。",
+          "source": "Adapted from 0580/42/M/J/21"
         }
       ],
       "testYourself": [
@@ -4132,6 +5486,14 @@
           "solution": "**Step 1:** Identify the image and object lengths.\nImage length = $10$ cm, Object length = $4$ cm.\n\n**Step 2:** Apply the formula $k = \\frac{\\text{Image}}{\\text{Object}}$.\n$k = \\frac{10}{4} = 2.5$.\n\n**Answer:** $2.5$",
           "solution_zh": "**步骤1：** 确定图像和物体的长度。\n图像长度 = $10$ cm，物体长度 = $4$ cm。\n\n**步骤2：** 应用公式 $k = \\frac{\\text{图像}}{\\text{物体}}$。\n$k = \\frac{10}{4} = 2.5$。\n\n**答案：** $2.5$",
           "source": "Adapted from 0580"
+        },
+        {
+          "patternId": "ep-calc-sf",
+          "question": "Pentagon $A$ is mapped onto pentagon $B$ by an enlargement. The area of pentagon $A$ is $12$ cm$^2$ and the area of pentagon $B$ is $108$ cm$^2$. Calculate the scale factor of the enlargement, given that it is positive.",
+          "question_zh": "五边形 $A$ 通过位似变换映射到五边形 $B$。五边形 $A$ 的面积为 $12$ cm$^2$，五边形 $B$ 的面积为 $108$ cm$^2$。已知比例因子为正数，求该位似变换的比例因子。",
+          "solution": "The ratio of areas is the square of the scale factor $k$.\nArea Factor $= k^2 = \\frac{\\text{Area } B}{\\text{Area } A} = \\frac{108}{12} = 9$\n$k = \\sqrt{9} = 3$\n\nThe scale factor is $3$.",
+          "solution_zh": "面积比等于比例因子 $k$ 的平方。\n面积因子 $= k^2 = \\frac{B \\text{ 的面积}}{A \\text{ 的面积}} = \\frac{108}{12} = 9$\n$k = \\sqrt{9} = 3$\n\n比例因子为 $3$。",
+          "source": "0580/22/O/N/19"
         }
       ],
       "testYourself": [
@@ -4147,6 +5509,19 @@
           "a": 2,
           "e": "A scale factor of 2 means it is twice as large. The negative sign means it is inverted and on the opposite side of the center.",
           "e_zh": "比例因子为 2 表示物体放大两倍。负号表示图像是倒置的，并且位于中心的另一侧。"
+        },
+        {
+          "q": "Triangle $T$ is enlarged by a scale factor of $-2$ with center $(0,0)$. Which statement is correct about the image?",
+          "q_zh": "三角形 $T$ 以 $(0,0)$ 为中心，按比例因子 $-2$ 进行位似变换。关于其像，以下哪个陈述是正确的？",
+          "o": [
+            "The image is smaller and inverted (rotated 180 degrees)",
+            "The image is larger and upright",
+            "The image is larger and inverted (rotated 180 degrees)",
+            "The image is smaller and upright"
+          ],
+          "a": 2,
+          "e": "A negative scale factor means the image is on the opposite side of the center and inverted. Since the magnitude $|-2| > 1$, the image is larger.",
+          "e_zh": "负的比例因子意味着像位于中心的另一侧且倒置。由于绝对值 $|-2| > 1$，像会变大。"
         }
       ],
       "vocabLinks": [
@@ -4181,6 +5556,14 @@
           "solution": "**Step 1:** Multiply $\\mathbf{a}$ by 2.\n$2\\mathbf{a} = 2 \\begin{pmatrix} 3 \\\\ -1 \\end{pmatrix} = \\begin{pmatrix} 6 \\\\ -2 \\end{pmatrix}$.\n\n**Step 2:** Subtract $\\mathbf{b}$.\n$2\\mathbf{a} - \\mathbf{b} = \\begin{pmatrix} 6 \\\\ -2 \\end{pmatrix} - \\begin{pmatrix} -2 \\\\ 5 \\end{pmatrix} = \\begin{pmatrix} 6 - (-2) \\\\ -2 - 5 \\end{pmatrix} = \\begin{pmatrix} 8 \\\\ -7 \\end{pmatrix}$.\n\n**Answer:** $\\begin{pmatrix} 8 \\\\ -7 \\end{pmatrix}$",
           "solution_zh": "**步骤1：** 将 $\\mathbf{a}$ 乘以 2。\n$2\\mathbf{a} = 2 \\begin{pmatrix} 3 \\\\ -1 \\end{pmatrix} = \\begin{pmatrix} 6 \\\\ -2 \\end{pmatrix}$。\n\n**步骤2：** 减去 $\\mathbf{b}$。\n$2\\mathbf{a} - \\mathbf{b} = \\begin{pmatrix} 6 \\\\ -2 \\end{pmatrix} - \\begin{pmatrix} -2 \\\\ 5 \\end{pmatrix} = \\begin{pmatrix} 6 - (-2) \\\\ -2 - 5 \\end{pmatrix} = \\begin{pmatrix} 8 \\\\ -7 \\end{pmatrix}$。\n\n**答案：** $\\begin{pmatrix} 8 \\\\ -7 \\end{pmatrix}$",
           "source": "0580/22/O/N/19"
+        },
+        {
+          "patternId": "ep-vector-ops",
+          "question": "Point $A$ has coordinates $(3, -2)$ and point $B$ has coordinates $(7, 5)$. Find the column vector $\\vec{AB}$.",
+          "question_zh": "点 $A$ 的坐标为 $(3, -2)$，点 $B$ 的坐标为 $(7, 5)$。求列向量 $\\vec{AB}$。",
+          "solution": "$\\vec{AB} = \\vec{OB} - \\vec{OA}$\n$\\vec{AB} = \\begin{pmatrix} 7 \\\\ 5 \\end{pmatrix} - \\begin{pmatrix} 3 \\\\ -2 \\end{pmatrix} = \\begin{pmatrix} 7 - 3 \\\\ 5 - (-2) \\end{pmatrix} = \\begin{pmatrix} 4 \\\\ 7 \\end{pmatrix}$.",
+          "solution_zh": "$\\vec{AB} = \\vec{OB} - \\vec{OA}$\n$\\vec{AB} = \\begin{pmatrix} 7 \\\\ 5 \\end{pmatrix} - \\begin{pmatrix} 3 \\\\ -2 \\end{pmatrix} = \\begin{pmatrix} 7 - 3 \\\\ 5 - (-2) \\end{pmatrix} = \\begin{pmatrix} 4 \\\\ 7 \\end{pmatrix}$。",
+          "source": "0580/21/M/J/20"
         }
       ],
       "testYourself": [
@@ -4196,6 +5579,19 @@
           "a": 1,
           "e": "Multiply both top and bottom numbers by 3: $3 \\times 4 = 12$ and $3 \\times (-2) = -6$.",
           "e_zh": "将上下两个数都乘以 3：$3 \\times 4 = 12$ 且 $3 \\times (-2) = -6$。"
+        },
+        {
+          "q": "If $\\mathbf{p} = \\begin{pmatrix} 2 \\\\ -5 \\end{pmatrix}$ and $\\mathbf{q} = \\begin{pmatrix} -1 \\\\ 3 \\end{pmatrix}$, calculate $3\\mathbf{p} + 2\\mathbf{q}$.",
+          "q_zh": "如果 $\\mathbf{p} = \\begin{pmatrix} 2 \\\\ -5 \\end{pmatrix}$ 且 $\\mathbf{q} = \\begin{pmatrix} -1 \\\\ 3 \\end{pmatrix}$，计算 $3\\mathbf{p} + 2\\mathbf{q}$。",
+          "o": [
+            "\\begin{pmatrix} 4 \\\\ -9 \\end{pmatrix}",
+            "\\begin{pmatrix} 8 \\\\ -9 \\end{pmatrix}",
+            "\\begin{pmatrix} 4 \\\\ -1 \\end{pmatrix}",
+            "\\begin{pmatrix} 5 \\\\ -2 \\end{pmatrix}"
+          ],
+          "a": 0,
+          "e": "$3\\begin{pmatrix} 2 \\\\ -5 \\end{pmatrix} + 2\\begin{pmatrix} -1 \\\\ 3 \\end{pmatrix} = \\begin{pmatrix} 6 \\\\ -15 \\end{pmatrix} + \\begin{pmatrix} -2 \\\\ 6 \\end{pmatrix} = \\begin{pmatrix} 4 \\\\ -9 \\end{pmatrix}$.",
+          "e_zh": "$3\\begin{pmatrix} 2 \\\\ -5 \\end{pmatrix} + 2\\begin{pmatrix} -1 \\\\ 3 \\end{pmatrix} = \\begin{pmatrix} 6 \\\\ -15 \\end{pmatrix} + \\begin{pmatrix} -2 \\\\ 6 \\end{pmatrix} = \\begin{pmatrix} 4 \\\\ -9 \\end{pmatrix}$。"
         }
       ],
       "vocabLinks": [
@@ -4230,6 +5626,14 @@
           "solution": "**Step 1:** Identify $x=5$ and $y=-12$.\n\n**Step 2:** Apply the formula $|\\mathbf{a}| = \\sqrt{x^2 + y^2}$.\n$|\\mathbf{a}| = \\sqrt{5^2 + (-12)^2} = \\sqrt{25 + 144} = \\sqrt{169} = 13$.\n\n**Answer:** $13$",
           "solution_zh": "**步骤1：** 确定 $x=5$，$y=-12$。\n\n**步骤2：** 应用公式 $|\\mathbf{a}| = \\sqrt{x^2 + y^2}$。\n$|\\mathbf{a}| = \\sqrt{5^2 + (-12)^2} = \\sqrt{25 + 144} = \\sqrt{169} = 13$。\n\n**答案：** $13$",
           "source": "Adapted from 0580"
+        },
+        {
+          "patternId": "ep-calc-mag",
+          "question": "The vector $\\mathbf{v} = \\begin{pmatrix} k \\\\ -5 \\end{pmatrix}$ has a magnitude of $13$. Find the possible positive value of $k$.",
+          "question_zh": "向量 $\\mathbf{v} = \\begin{pmatrix} k \\\\ -5 \\end{pmatrix}$ 的模为 $13$。求 $k$ 的可能正值。",
+          "solution": "Use the formula for magnitude:\n$\\sqrt{k^2 + (-5)^2} = 13$\nSquare both sides:\n$k^2 + 25 = 169$\n$k^2 = 144$\n$k = 12$ (since we want the positive value).",
+          "solution_zh": "使用向量模的公式：\n$\\sqrt{k^2 + (-5)^2} = 13$\n两边平方：\n$k^2 + 25 = 169$\n$k^2 = 144$\n$k = 12$ （因为要求正值）。",
+          "source": "Adapted from 0580/23/O/N/21"
         }
       ],
       "testYourself": [
@@ -4245,6 +5649,19 @@
           "a": 2,
           "e": "$\\sqrt{(-3)^2 + 4^2} = \\sqrt{9 + 16} = \\sqrt{25} = 5$.",
           "e_zh": "$\\sqrt{(-3)^2 + 4^2} = \\sqrt{9 + 16} = \\sqrt{25} = 5$。"
+        },
+        {
+          "q": "Calculate the magnitude of the vector $\\begin{pmatrix} -8 \\\\ 15 \\end{pmatrix}$.",
+          "q_zh": "计算向量 $\\begin{pmatrix} -8 \\\\ 15 \\end{pmatrix}$ 的模（长度）。",
+          "o": [
+            "7",
+            "17",
+            "23",
+            "289"
+          ],
+          "a": 1,
+          "e": "Magnitude $|\\mathbf{v}| = \\sqrt{x^2 + y^2} = \\sqrt{(-8)^2 + 15^2} = \\sqrt{64 + 225} = \\sqrt{289} = 17$.",
+          "e_zh": "向量的模 $|\\mathbf{v}| = \\sqrt{x^2 + y^2} = \\sqrt{(-8)^2 + 15^2} = \\sqrt{64 + 225} = \\sqrt{289} = 17$。"
         }
       ],
       "vocabLinks": [
@@ -4286,6 +5703,14 @@
           "solution": "**Step 1:** Find $\\vec{AB}$.\n$\\vec{AB} = \\vec{AO} + \\vec{OB} = -\\mathbf{a} + \\mathbf{b}$.\n\n**Step 2:** Find $\\vec{AM}$.\nSince $M$ is the midpoint, $\\vec{AM} = \\frac{1}{2}\\vec{AB} = \\frac{1}{2}(\\mathbf{b} - \\mathbf{a})$.\n\n**Step 3:** Find $\\vec{OM}$.\n$\\vec{OM} = \\vec{OA} + \\vec{AM} = \\mathbf{a} + \\frac{1}{2}(\\mathbf{b} - \\mathbf{a}) = \\mathbf{a} + \\frac{1}{2}\\mathbf{b} - \\frac{1}{2}\\mathbf{a} = \\frac{1}{2}\\mathbf{a} + \\frac{1}{2}\\mathbf{b}$.\n\n**Answer:** $\\frac{1}{2}(\\mathbf{a} + \\mathbf{b})$",
           "solution_zh": "**步骤1：** 求 $\\vec{AB}$。\n$\\vec{AB} = \\vec{AO} + \\vec{OB} = -\\mathbf{a} + \\mathbf{b}$。\n\n**步骤2：** 求 $\\vec{AM}$。\n因为 $M$ 是中点，$\\vec{AM} = \\frac{1}{2}\\vec{AB} = \\frac{1}{2}(\\mathbf{b} - \\mathbf{a})$。\n\n**步骤3：** 求 $\\vec{OM}$。\n$\\vec{OM} = \\vec{OA} + \\vec{AM} = \\mathbf{a} + \\frac{1}{2}(\\mathbf{b} - \\mathbf{a}) = \\mathbf{a} + \\frac{1}{2}\\mathbf{b} - \\frac{1}{2}\\mathbf{a} = \\frac{1}{2}\\mathbf{a} + \\frac{1}{2}\\mathbf{b}$。\n\n**答案：** $\\frac{1}{2}(\\mathbf{a} + \\mathbf{b})$",
           "source": "0580/42/M/J/18"
+        },
+        {
+          "patternId": "ep-vector-path",
+          "question": "$OAB$ is a triangle. $\\vec{OA} = \\mathbf{a}$ and $\\vec{OB} = \\mathbf{b}$. Point $R$ lies on $AB$ such that $AR:RB = 1:3$. Express $\\vec{OR}$ in terms of $\\mathbf{a}$ and $\\mathbf{b}$. give your answer in simplest form.",
+          "question_zh": "$OAB$ 是一个三角形。$\\vec{OA} = \\mathbf{a}$ 且 $\\vec{OB} = \\mathbf{b}$。点 $R$ 位于 $AB$ 上，使得 $AR:RB = 1:3$。用 $\\mathbf{a}$ 和 $\\mathbf{b}$ 表示 $\\vec{OR}$。给出最简形式。",
+          "solution": "1. Find $\\vec{AB}$:\n$\\vec{AB} = \\mathbf{b} - \\mathbf{a}$\n\n2. Find $\\vec{AR}$:\nSince $AR:RB = 1:3$, $AR$ is $\\frac{1}{4}$ of $AB$.\n$\\vec{AR} = \\frac{1}{4}(\\mathbf{b} - \\mathbf{a})$\n\n3. Find $\\vec{OR}$:\n$\\vec{OR} = \\vec{OA} + \\vec{AR} = \\mathbf{a} + \\frac{1}{4}\\mathbf{b} - \\frac{1}{4}\\mathbf{a}$\n$= \\frac{3}{4}\\mathbf{a} + \\frac{1}{4}\\mathbf{b}$",
+          "solution_zh": "1. 求 $\\vec{AB}$:\n$\\vec{AB} = \\mathbf{b} - \\mathbf{a}$\n\n2. 求 $\\vec{AR}$:\n因为 $AR:RB = 1:3$，所以 $AR$ 是 $AB$ 的 $\\frac{1}{4}$。\n$\\vec{AR} = \\frac{1}{4}(\\mathbf{b} - \\mathbf{a})$\n\n3. 求 $\\vec{OR}$:\n$\\vec{OR} = \\vec{OA} + \\vec{AR} = \\mathbf{a} + \\frac{1}{4}\\mathbf{b} - \\frac{1}{4}\\mathbf{a}$\n$= \\frac{3}{4}\\mathbf{a} + \\frac{1}{4}\\mathbf{b}$",
+          "source": "0580/41/M/J/19"
         }
       ],
       "testYourself": [
@@ -4301,6 +5726,19 @@
           "a": 1,
           "e": "$\\vec{RS} = 3(2\\mathbf{a} + 3\\mathbf{b}) = 3\\vec{PQ}$. Since one is a scalar multiple of the other, they are parallel.",
           "e_zh": "$\\vec{RS} = 3(2\\mathbf{a} + 3\\mathbf{b}) = 3\\vec{PQ}$。因为其中一个向量是另一个向量的数乘，所以它们平行。"
+        },
+        {
+          "q": "In a parallelogram $OABC$, $\\vec{OA} = \\mathbf{a}$ and $\\vec{OC} = \\mathbf{c}$. The diagonals intersect at $M$. Express $\\vec{OM}$ in terms of $\\mathbf{a}$ and $\\mathbf{c}$.",
+          "q_zh": "在平行四边形 $OABC$ 中，$\\vec{OA} = \\mathbf{a}$ 且 $\\vec{OC} = \\mathbf{c}$。对角线相交于 $M$。用 $\\mathbf{a}$ 和 $\\mathbf{c}$ 表示 $\\vec{OM}$。",
+          "o": [
+            "$\\mathbf{a} + \\mathbf{c}$",
+            "$\\frac{1}{2}(\\mathbf{a} + \\mathbf{c})$",
+            "$\\mathbf{a} - \\mathbf{c}$",
+            "$\\frac{1}{2}(\\mathbf{c} - \\mathbf{a})$"
+          ],
+          "a": 1,
+          "e": "$\\vec{OB} = \\vec{OA} + \\vec{AB} = \\mathbf{a} + \\mathbf{c}$. Since diagonals bisect each other, $\\vec{OM} = \\frac{1}{2}\\vec{OB} = \\frac{1}{2}(\\mathbf{a} + \\mathbf{c})$.",
+          "e_zh": "$\\vec{OB} = \\vec{OA} + \\vec{AB} = \\mathbf{a} + \\mathbf{c}$。由于对角线互相平分，$\\vec{OM} = \\frac{1}{2}\\vec{OB} = \\frac{1}{2}(\\mathbf{a} + \\mathbf{c})$。"
         }
       ],
       "vocabLinks": [
@@ -4335,6 +5773,14 @@
           "solution": "**Step 1:** Calculate the total number of marbles.\n$5 + 3 + 2 = 10$\n\n**Step 2:** Identify the number of successful outcomes (blue marbles).\nNumber of blue marbles = $3$\n\n**Step 3:** Use the formula $P(E) = \\frac{n(E)}{n(S)}$.\n$P(\\text{blue}) = \\frac{3}{10}$ or $0.3$\n\n**Answer:** $\\frac{3}{10}$",
           "solution_zh": "**步骤1：** 计算球的总数。\n$5 + 3 + 2 = 10$\n\n**步骤2：** 确定有利结果的数量（蓝球数量）。\n蓝球数量 = $3$\n\n**步骤3：** 使用公式 $P(E) = \\frac{n(E)}{n(S)}$。\n$P(\\text{蓝色}) = \\frac{3}{10}$ 或 $0.3$\n\n**答案：** $\\frac{3}{10}$",
           "source": "Adapted from 0580/21/M/J/18"
+        },
+        {
+          "patternId": "ep-calc-basic",
+          "question": "A bag contains 5 red, 3 blue, and 2 yellow marbles. A marble is picked at random. Find the probability that the marble is not red.",
+          "question_zh": "一个袋子里有5个红球，3个蓝球和2个黄球。随机抽取一个球。求抽到的不是红球的概率。",
+          "solution": "Total marbles = $5 + 3 + 2 = 10$. \\\\ The number of marbles that are not red (blue or yellow) = $3 + 2 = 5$. \\\\ $P(\\text{not red}) = \\frac{5}{10} = \\frac{1}{2}$.",
+          "solution_zh": "总球数 = $5 + 3 + 2 = 10$。\\\\ 非红球（蓝色或黄色）的数量 = $3 + 2 = 5$。\\\\ $P(\\text{非红}) = \\frac{5}{10} = \\frac{1}{2}$。",
+          "source": "Adapted from 0580/21/M/J/21"
         }
       ],
       "testYourself": [
@@ -4397,6 +5843,14 @@
           "solution": "**Step 1:** Use the rule $P(\\text{not } A) = 1 - P(A)$.\n$P(\\text{not rain}) = 1 - 0.24$\n\n**Step 2:** Calculate the result.\n$1 - 0.24 = 0.76$\n\n**Answer:** $0.76$",
           "solution_zh": "**步骤1：** 使用规则 $P(\\text{非 } A) = 1 - P(A)$。\n$P(\\text{不下雨}) = 1 - 0.24$\n\n**步骤2：** 计算结果。\n$1 - 0.24 = 0.76$\n\n**答案：** $0.76$",
           "source": "0580/12/M/J/19"
+        },
+        {
+          "patternId": "ep-prob-complement",
+          "question": "In a game, the probability of winning is $x$, the probability of a draw is $2x$, and the probability of losing is $0.4$. Find the value of $x$.",
+          "question_zh": "在一个游戏中，获胜的概率是 $x$，平局的概率是 $2x$，失败的概率是 $0.4$。求 $x$ 的值。",
+          "solution": "The sum of all possible outcomes in a probability distribution is 1. \\\\ $x + 2x + 0.4 = 1$ \\\\ $3x + 0.4 = 1$ \\\\ $3x = 0.6$ \\\\ $x = 0.2$.",
+          "solution_zh": "概率分布中所有可能结果的和为1。\\\\ $x + 2x + 0.4 = 1$ \\\\ $3x + 0.4 = 1$ \\\\ $3x = 0.6$ \\\\ $x = 0.2$。",
+          "source": "0580/22/F/M/19"
         }
       ],
       "testYourself": [
@@ -4412,6 +5866,19 @@
           "a": 2,
           "e": "Being 'on time' is the complement of 'being late'. $P(\\text{on time}) = 1 - P(\\text{late}) = 1 - \\frac{2}{7} = \\frac{5}{7}$.",
           "e_zh": "“准点”是“晚点”的互补事件。$P(\\text{准点}) = 1 - P(\\text{晚点}) = 1 - \\frac{2}{7} = \\frac{5}{7}$。"
+        },
+        {
+          "q": "The probability that it will rain tomorrow is 0.15. What is the probability that it will not rain tomorrow?",
+          "q_zh": "明天下雨的概率是0.15。明天不下雨的概率是多少？",
+          "o": [
+            "0.15",
+            "0.85",
+            "1.15",
+            "0"
+          ],
+          "a": 1,
+          "e": "Probabilities of complementary events sum to 1. $P(\\text{not rain}) = 1 - P(\\text{rain}) = 1 - 0.15 = 0.85$.",
+          "e_zh": "互补事件的概率之和为1。$P(\\text{不下雨}) = 1 - P(\\text{下雨}) = 1 - 0.15 = 0.85$。"
         }
       ],
       "vocabLinks": [
@@ -4453,6 +5920,14 @@
           "solution": "**Step 1:** Identify $P(\\text{germinate}) = 0.85$ and $n = 400$.\n\n**Step 2:** Multiply the probability by the number of trials.\n$\\text{Expected number} = 400 \\times 0.85 = 340$\n\n**Answer:** $340$",
           "solution_zh": "**步骤1：** 确定 $P(\\text{发芽}) = 0.85$ 且 $n = 400$。\n\n**步骤2：** 将概率乘以实验次数。\n$\\text{期望数量} = 400 \\times 0.85 = 340$\n\n**答案：** $340$",
           "source": "0580/22/O/N/17"
+        },
+        {
+          "patternId": "ep-expected-freq",
+          "question": "A biased coin is tossed 400 times. The relative frequency of landing on heads is 0.35. How many times would you expect the coin to land on heads?",
+          "question_zh": "一枚不均匀的硬币被抛掷400次。正面朝上的相对频率是0.35。你期望硬币正面朝上多少次？",
+          "solution": "Expected frequency = $\\text{Total trials} \\times \\text{Probability (or relative frequency)}$. \\\\ $\\text{Expected heads} = 400 \\times 0.35 = 140$.",
+          "solution_zh": "期望频率 = $\\text{总试验次数} \\times \\text{概率（或相对频率）}$。\\\\ $\\text{期望正面次数} = 400 \\times 0.35 = 140$。",
+          "source": "Adapted from 0580/41/O/N/21"
         }
       ],
       "testYourself": [
@@ -4515,6 +5990,14 @@
           "solution": "**Step 1:** Construct the tree. \n- 1st attempt: Pass ($0.7$), Fail ($0.3$)\n- 2nd attempt (only if failed 1st): Pass ($0.8$), Fail ($0.2$)\n\n**Step 2:** Identify successful paths:\n- Path 1: Passes 1st time. $P = 0.7$\n- Path 2: Fails 1st, Passes 2nd. $P = 0.3 \\times 0.8 = 0.24$\n\n**Step 3:** Add probabilities of successful paths.\n$P(\\text{Passes}) = 0.7 + 0.24 = 0.94$\n\n**Answer:** $0.94$",
           "solution_zh": "**步骤1：** 绘制树状图。\n- 第一次：通过 ($0.7$)，失败 ($0.3$)\n- 第二次（仅当第一次失败）：通过 ($0.8$)，失败 ($0.2$)\n\n**步骤2：** 确定成功的路径：\n- 路径 1：第一次通过。$P = 0.7$\n- 路径 2：第一次失败，第二次通过。$P = 0.3 \\times 0.8 = 0.24$\n\n**步骤3：** 将成功路径的概率相加。\n$P(\\text{通过}) = 0.7 + 0.24 = 0.94$\n\n**答案：** $0.94$",
           "source": "Adapted from 0580/22/M/J/20"
+        },
+        {
+          "patternId": "ep-tree-diagram",
+          "question": "Sarah has two sets of cards. Set A has cards numbered 1, 2, 3. Set B has cards numbered 4, 5. She picks one card from each set. Find the probability that the sum of the numbers is 6.",
+          "question_zh": "Sarah有两组卡片。A组卡片编号为1, 2, 3。B组卡片编号为4, 5。她从每组中各取一张卡片。求卡片数字之和为6的概率。",
+          "solution": "Total outcomes = $3 \\times 2 = 6$. \\\\ The possible outcomes for (Set A, Set B) are: (1,4), (1,5), (2,4), (2,5), (3,4), (3,5). \\\\ The sums are: 5, 6, 6, 7, 7, 8. \\\\ There are 2 outcomes where the sum is 6: (1,5) and (2,4). \\\\ $P(\\text{sum is 6}) = \\frac{2}{6} = \\frac{1}{3}$.",
+          "solution_zh": "总结果数 = $3 \\times 2 = 6$。\\\\ (A组, B组) 的可能结果为：(1,4), (1,5), (2,4), (2,5), (3,4), (3,5)。\\\\ 对应的和分别为：5, 6, 6, 7, 7, 8。\\\\ 和为6的结果有2个：(1,5) 和 (2,4)。\\\\ $P(\\text{和为6}) = \\frac{2}{6} = \\frac{1}{3}$。",
+          "source": "0580/42/M/J/18"
         }
       ],
       "testYourself": [
@@ -4577,6 +6060,14 @@
           "solution": "**Step 1:** Identify that the events are independent.\n\n**Step 2:** Use the Multiplication Rule for 'AND'.\n$P(\\text{Late and No Homework}) = 0.1 \\times 0.15 = 0.015$\n\n**Answer:** $0.015$",
           "solution_zh": "**步骤1：** 确定这两个事件是独立的。\n\n**步骤2：** 对“且”使用乘法法则。\n$P(\\text{迟到且没带作业}) = 0.1 \\times 0.15 = 0.015$\n\n**答案：** $0.015$",
           "source": "Adapted from 0580/42/O/N/21"
+        },
+        {
+          "patternId": "ep-and-or-rules",
+          "question": "Two independent events $A$ and $B$ have probabilities $P(A) = 0.4$ and $P(B) = 0.7$. Find the probability that event $A$ occurs but event $B$ does not occur.",
+          "question_zh": "两个独立事件 $A$ 和 $B$ 的概率分别为 $P(A) = 0.4$ 和 $P(B) = 0.7$。求事件 $A$ 发生但事件 $B$ 不发生的概率。",
+          "solution": "$P(\\text{not } B) = 1 - P(B) = 1 - 0.7 = 0.3$. \\\\ Since $A$ and $B$ are independent, $P(A \\text{ and not } B) = P(A) \\times P(\\text{not } B)$. \\\\ $P(A \\text{ and not } B) = 0.4 \\times 0.3 = 0.12$.",
+          "solution_zh": "$P(\\text{非 } B) = 1 - P(B) = 1 - 0.7 = 0.3$。\\\\ 由于 $A$ 和 $B$ 是独立的，$P(A \\text{ 且非 } B) = P(A) \\times P(\\text{非 } B)$。\\\\ $P(A \\text{ 且非 } B) = 0.4 \\times 0.3 = 0.12$。",
+          "source": "Adapted from 0580/23/O/N/20"
         }
       ],
       "testYourself": [
@@ -4639,6 +6130,14 @@
           "solution": "**Step 1:** Probability the 1st apple is red:\n$P(R1) = \\frac{7}{10}$\n\n**Step 2:** Probability the 2nd apple is red, given the 1st was red:\nNow there are $6$ red apples left out of a total of $9$.\n$P(R2 | R1) = \\frac{6}{9}$\n\n**Step 3:** Multiply the probabilities.\n$P(\\text{Both Red}) = \\frac{7}{10} \\times \\frac{6}{9} = \\frac{42}{90} = \\frac{7}{15}$\n\n**Answer:** $\\frac{7}{15}$",
           "solution_zh": "**步骤1：** 第一个苹果是红色的概率：\n$P(R1) = \\frac{7}{10}$\n\n**步骤2：** 在第一个是红色的前提下，第二个也是红色的概率：\n现在剩下 $6$ 个红苹果，总数变为 $9$ 个。\n$P(R2 | R1) = \\frac{6}{9}$\n\n**步骤3：** 将概率相乘。\n$P(\\text{两个都红}) = \\frac{7}{10} \\times \\frac{6}{9} = \\frac{42}{90} = \\frac{7}{15}$\n\n**答案：** $\\frac{7}{15}$",
           "source": "0580/42/M/J/19"
+        },
+        {
+          "patternId": "ep-without-replacement",
+          "question": "A box contains 7 red pens and 3 blue pens. Two pens are taken at random without replacement. Find the probability that both pens are the same color.",
+          "question_zh": "一个盒子里有7支红笔和3支蓝笔。随机取出两支笔，不放回。求两支笔颜色相同的概率。",
+          "solution": "$P(\\text{Red, Red}) = \\frac{7}{10} \\times \\frac{6}{9} = \\frac{42}{90}$. \\\\ $P(\\text{Blue, Blue}) = \\frac{3}{10} \\times \\frac{2}{9} = \\frac{6}{90}$. \\\\ $P(\\text{Same Color}) = P(\\text{Red, Red}) + P(\\text{Blue, Blue}) = \\frac{42}{90} + \\frac{6}{90} = \\frac{48}{90} = \\frac{8}{15}$.",
+          "solution_zh": "$P(\\text{红, 红}) = \\frac{7}{10} \\times \\frac{6}{9} = \\frac{42}{90}$。\\\\ $P(\\text{蓝, 蓝}) = \\frac{3}{10} \\times \\frac{2}{9} = \\frac{6}{90}$。\\\\ $P(\\text{同色}) = P(\\text{红, 红}) + P(\\text{蓝, 蓝}) = \\frac{42}{90} + \\frac{6}{90} = \\frac{48}{90} = \\frac{8}{15}$。",
+          "source": "0580/42/M/J/22"
         }
       ],
       "testYourself": [
@@ -4701,6 +6200,14 @@
           "solution": "**Step 1:** Analyze (a). Goals are counted ($0, 1, 2, \\ldots$). You cannot have $1.5$ goals. So, it is **discrete**. ✓\n\n**Step 2:** Analyze (b). Mass is measured and can take any value like $150.2$ g or $150.25$ g. So, it is **continuous**. ✓\n\n**Step 3:** Analyze (c). Temperature is measured on a scale and can take any value. So, it is **continuous**. ✓",
           "solution_zh": "**步骤1：** 分析 (a)。进球数是通过计数的（$0, 1, 2, \\ldots$），不可能有 $1.5$ 个进球。因此它是**离散的**。✓\n\n**步骤2：** 分析 (b)。质量是通过测量的，可以取任何值，如 $150.2$ 克或 $150.25$ 克。因此它是**连续的**。✓\n\n**步骤3：** 分析 (c)。温度是在刻度上测量的，可以取任何值。因此它是**连续的**。✓",
           "source": "Adapted from 0580/21/M/J/20"
+        },
+        {
+          "patternId": "ep-classify-data",
+          "question": "State whether each of the following is discrete or continuous:\\n(a) The capacity of a fuel tank.\\n(b) The number of goals scored in a football match.\\n(c) The distance between two cities.",
+          "question_zh": "指出下列各项是离散数据还是连续数据：\\n(a) 燃料箱的容量。\\n(b) 足球比赛中的进球数。\\n(c) 两个城市之间的距离。",
+          "solution": "(a) Capacity is measured, so it is **continuous**.\\n(b) Goals are counted as whole numbers, so it is **discrete**.\\n(c) Distance is measured, so it is **continuous**.",
+          "solution_zh": "(a) 容量是通过测量得到的，因此是**连续数据**。\\n(b) 进球数是通过计数得到的整数，因此是**离散数据**。\\n(c) 距离是通过测量得到的，因此是**连续数据**。",
+          "source": "Adapted from 0580/21/M/J/21"
         }
       ],
       "testYourself": [
@@ -4716,6 +6223,19 @@
           "a": 2,
           "e": "The number of books must be a whole number (you count them), so it is discrete. Height, time, and capacity are all measured and are continuous.",
           "e_zh": "书的数量必须是整数（通过计数得到），所以它是离散的。身高、时间和容量都是通过测量得到的，属于连续数据。"
+        },
+        {
+          "q": "Which of the following is an example of discrete data?",
+          "q_zh": "下列哪项是离散数据的例子？",
+          "o": [
+            "The weight of a bag of apples",
+            "The temperature of a room",
+            "The number of students in a class",
+            "The time taken to run 100 metres"
+          ],
+          "a": 2,
+          "e": "Discrete data can only take specific values (usually integers) and is often counted. The number of students must be a whole number, whereas weight, temperature, and time are measured and can take any value on a scale (continuous).",
+          "e_zh": "离散数据只能取特定值（通常是整数），通常通过计数获得。学生的数量必须是整数，而重量、温度和时间是测量得出的，可以在刻度上取任何值（连续数据）。"
         }
       ],
       "vocabLinks": [
@@ -4751,6 +6271,14 @@
           "solution": "**Step 1:** Count how many times the number '7' appears in the list.\nThe list contains: $5, \\mathbf{7}, 5, 6, 8, \\mathbf{7}, 5, 9, 6, \\mathbf{7}, 5, 8, \\mathbf{7}, 6, \\mathbf{7}$.\nThere are 5 occurrences.\n\n**Step 2:** Write the tally marks for 5: ||||\n\n**Step 3:** Write the frequency as 5. ✓",
           "solution_zh": "**步骤1：** 数一下列表中数字 '7' 出现了多少次。\n列表包含：$5, \\mathbf{7}, 5, 6, 8, \\mathbf{7}, 5, 9, 6, \\mathbf{7}, 5, 8, \\mathbf{7}, 6, \\mathbf{7}$。\n共出现了 5 次。\n\n**步骤2：** 写出 5 的计数符号：||||\n\n**步骤3：** 写出频数为 5。✓",
           "source": "Adapted from 0580/12/O/N/19"
+        },
+        {
+          "patternId": "ep-complete-table",
+          "question": "The ages of 15 children are: 5, 7, 5, 6, 8, 7, 5, 9, 6, 7, 5, 8, 7, 6, 5. Complete the frequency table.\\n\\\\begin{array}{|c|c|} \\\\hline \\\\text{Age} & \\\\text{Frequency} \\\\\\\\ \\\\hline 5 & \\\\dots \\\\\\\\ \\\\hline 6 & \\\\dots \\\\\\\\ \\\\hline 7 & \\\\dots \\\\\\\\ \\\\hline 8 & \\\\dots \\\\\\\\ \\\\hline 9 & \\\\dots \\\\\\\\ \\\\hline \\\\end{array}",
+          "question_zh": "15名儿童的年龄分别为：5, 7, 5, 6, 8, 7, 5, 9, 6, 7, 5, 8, 7, 6, 5。完成频数表。\\n\\\\begin{array}{|c|c|} \\\\hline \\\\text{年龄} & \\\\text{频数} \\\\\\\\ \\\\hline 5 & \\\\dots \\\\\\\\ \\\\hline 6 & \\\\dots \\\\\\\\ \\\\hline 7 & \\\\dots \\\\\\\\ \\\\hline 8 & \\\\dots \\\\\\\\ \\\\hline 9 & \\\\dots \\\\\\\\ \\\\hline \\\\end{array}",
+          "solution": "Count the occurrence of each age:\\nAge 5: 5 times\\nAge 6: 3 times\\nAge 7: 4 times\\nAge 8: 2 times\\nAge 9: 1 time\\nCheck sum: 5+3+4+2+1 = 15. Correct.",
+          "solution_zh": "统计每个年龄出现的次数：\\n年龄 5: 5 次\\n年龄 6: 3 次\\n年龄 7: 4 次\\n年龄 8: 2 次\\n年龄 9: 1 次\\n检查总和：5+3+4+2+1 = 15。正确。",
+          "source": "0580/12/O/N/19"
         }
       ],
       "testYourself": [
@@ -4766,6 +6294,19 @@
           "a": 1,
           "e": "The symbol '<' means 'greater than' and '$\\leq$' means 'less than or equal to'. So it includes 20 but not 10.",
           "e_zh": "符号 '<' 表示 '大于'，'$\\leq$' 表示 '小于或等于'。因此它包含 20 但不包含 10。"
+        },
+        {
+          "q": "A student records the scores of 20 dice rolls. In a frequency table, the 'Tally' column for the score '4' shows \\\\cancel{||||} ||. What is the frequency of the score '4'?",
+          "q_zh": "一名学生记录了20次掷骰子的得分。在频数表中，得分“4”的“划记(Tally)”列显示为 \\\\cancel{||||} ||。得分“4”的频数是多少？",
+          "o": [
+            "2",
+            "5",
+            "7",
+            "10"
+          ],
+          "a": 2,
+          "e": "In a tally system, a group with a diagonal line (\\\\cancel{||||}) represents 5, and the two extra lines represent 2. Total frequency = 5 + 2 = 7.",
+          "e_zh": "在划记法中，带斜线的一组（\\\\cancel{||||}）代表5，额外的两条线代表2。总频数 = 5 + 2 = 7。"
         }
       ],
       "vocabLinks": [
@@ -4808,6 +6349,14 @@
           "solution_zh": "(a) 众数：7 出现了四次（频率最高）。\n(b) 排序数据：3, 5, 5, 6, 7, 7, 7, 7, 8, 9。中位数是第 5 和第 6 个数值的平均值：\\(\\frac{7+7}{2} = 7\\)。\n(c) 极差：\\(9 - 3 = 6\\)。",
           "source": "0580/P4",
           "patternId": "ep-9.2-01"
+        },
+        {
+          "patternId": "ep-9.2-01",
+          "question": "The travel times (in minutes) for 100 students to get to school are recorded. Group A has a median of 15 minutes and a range of 10 minutes. Group B has a median of 22 minutes and a range of 25 minutes. Compare the two groups.",
+          "question_zh": "记录了100名学生上学所需的时间（分钟）。A组的中位数为15分钟，极差为10分钟。B组的中位数为22分钟，极差为25分钟。比较这两组数据。",
+          "solution": "1. **Average**: On average, students in Group B take longer to get to school (higher median: 22 > 15).\\n2. **Consistency**: Group A's travel times are more consistent or less varied (smaller range: 10 < 25).",
+          "solution_zh": "1. **平均情况**：平均而言，B组学生上学所需时间更长（中位数更高：22 > 15）。\\n2. **一致性**：A组的上学时间更一致或波动更小（极差更小：10 < 25）。",
+          "source": "Adapted from 0580/42/M/J/22"
         }
       ],
       "testYourself": [
@@ -4868,6 +6417,14 @@
           "solution": "**Step 1: Find the Mode.** The number $2$ appears twice, others appear once. Mode = $2$.\n\n**Step 2: Find the Median.** Arrange in order: $2, 2, 3, 4, 5, 8, 10$. There are 7 numbers. The middle one (4th) is $4$. Median = $4$.\n\n**Step 3: Find the Mean.** Sum = $2+8+5+2+3+10+4 = 34$. Mean = $34 \\div 7 \\approx 4.86$. ✓",
           "solution_zh": "**步骤1：找众数。** 数字 $2$ 出现了两次，其他数字各出现一次。众数 = $2$。\n\n**步骤2：找中位数。** 按顺序排列：$2, 2, 3, 4, 5, 8, 10$。共有 7 个数字。中间的一个（第4个）是 $4$。中位数 = $4$。\n\n**步骤3：找平均数。** 总和 = $2+8+5+2+3+10+4 = 34$。平均数 = $34 \\div 7 \\approx 4.86$。✓",
           "source": "0580/22/M/J/18"
+        },
+        {
+          "patternId": "ep-averages-list",
+          "question": "For the list of numbers: 3, 8, 11, 15, 15, 20, 23. Find (a) the range, (b) the median, and (c) the mean.",
+          "question_zh": "对于数字列表：3, 8, 11, 15, 15, 20, 23。求 (a) 极差，(b) 中位数，以及 (c) 平均数。",
+          "solution": "(a) Range = Largest - Smallest = 23 - 3 = 20.\\n(b) The list is ordered. There are 7 numbers. The middle (4th) number is 15. Median = 15.\\n(c) Mean = \\\\frac{3+8+11+15+15+20+23}{7} = \\\\frac{95}{7} \\\\approx 13.57.",
+          "solution_zh": "(a) 极差 = 最大值 - 最小值 = 23 - 3 = 20。\\n(b) 列表已排序。共有7个数字。中间（第4个）数字是15。中位数 = 15。\\n(c) 平均数 = \\\\frac{3+8+11+15+15+20+23}{7} = \\\\frac{95}{7} \\\\approx 13.57。",
+          "source": "0580/22/M/J/18"
         }
       ],
       "testYourself": [
@@ -4883,6 +6440,19 @@
           "a": 2,
           "e": "Range = Highest - Lowest = $12 - (-8) = 12 + 8 = 20$.",
           "e_zh": "极差 = 最大值 - 最小值 = $12 - (-8) = 12 + 8 = 20$。"
+        },
+        {
+          "q": "The weights of 5 boxes are 2 kg, 5 kg, 5 kg, 8 kg, and 10 kg. If a 6th box weighing 12 kg is added, which average will increase the most?",
+          "q_zh": "5个箱子的重量分别是 2 kg, 5 kg, 5 kg, 8 kg, 和 10 kg。如果增加第6个重量为 12 kg 的箱子，哪种统计量增加得最多？",
+          "o": [
+            "Mean",
+            "Median",
+            "Mode",
+            "Range"
+          ],
+          "a": 3,
+          "e": "Original stats: Mean=6, Median=5, Mode=5, Range=8. \\nNew stats (2, 5, 5, 8, 10, 12): Mean=7 (+1), Median=6.5 (+1.5), Mode=5 (+0), Range=10 (+2). \\nRange increases by 2, which is the largest increase.",
+          "e_zh": "原始统计量：平均数=6，中位数=5，众数=5，极差=8。\\n新统计量 (2, 5, 5, 8, 10, 12)：平均数=7 (+1)，中位数=6.5 (+1.5)，众数=5 (+0)，极差=10 (+2)。\\n极差增加了2，增幅最大。"
         }
       ],
       "vocabLinks": [
@@ -4920,6 +6490,14 @@
           "solution": "**Step 1: Find mid-values ($m$).** \nClasses: $(0+20)/2 = 10$; $(20+40)/2 = 30$; $(40+60)/2 = 50$.\n\n**Step 2: Calculate $f \\times m$.**\n$5 \\times 10 = 50$\n$8 \\times 30 = 240$\n$7 \\times 50 = 350$\n\n**Step 3: Sum them up.** $\\sum f m = 50 + 240 + 350 = 640$.\n\n**Step 4: Divide by total frequency.** $\\sum f = 5 + 8 + 7 = 20$.\nMean $\\approx 640 \\div 20 = 32$ minutes. ✓",
           "solution_zh": "**步骤1：找到组中值 ($m$)。** \n各组：$(0+20)/2 = 10$；$(20+40)/2 = 30$；$(40+60)/2 = 50$。\n\n**步骤2：计算 $f \\times m$。**\n$5 \\times 10 = 50$\n$8 \\times 30 = 240$\n$7 \\times 50 = 350$\n\n**步骤3：求和。** $\\sum f m = 50 + 240 + 350 = 640$。\n\n**步骤4：除以总频数。** $\\sum f = 5 + 8 + 7 = 20$。\n平均数 $\\approx 640 \\div 20 = 32$ 分钟。✓",
           "source": "0580/41/M/J/21"
+        },
+        {
+          "patternId": "ep-estimate-mean",
+          "question": "The table shows the time, $t$ minutes, taken by students to solve a puzzle.\\n\\\\begin{array}{|c|c|c|c|} \\\\hline \\\\text{Time } (t) & 0 < t \\\\le 10 & 10 < t \\\\le 20 & 20 < t \\\\le 40 \\\\\\\\ \\\\hline \\\\text{Frequency} & 5 & 12 & 8 \\\\\\\\ \\\\hline \\\\end{array}\\nCalculate an estimate of the mean time.",
+          "question_zh": "下表显示了学生解决谜题所需的时间 $t$ 分钟。\\n\\\\begin{array}{|c|c|c|c|} \\\\hline \\\\text{时间 } (t) & 0 < t \\\\le 10 & 10 < t \\\\le 20 & 20 < t \\\\le 40 \\\\\\\\ \\\\hline \\\\text{频数} & 5 & 12 & 8 \\\\\\\\ \\\\hline \\\\end{array}\\n计算平均时间的估计值。",
+          "solution": "1. Find midpoints ($x$): 5, 15, 30.\\n2. Calculate $fx$: $5 \\\\times 5 = 25$, $12 \\\\times 15 = 180$, $8 \\\\times 30 = 240$.\\n3. Sum $fx$: $25 + 180 + 240 = 445$.\\n4. Sum $f$: $5 + 12 + 8 = 25$.\\n5. Estimated Mean = $445 \\\\div 25 = 17.8$ minutes.",
+          "solution_zh": "1. 找出组中值 ($x$)：5, 15, 30。\\n2. 计算 $fx$：$5 \\\\times 5 = 25$, $12 \\\\times 15 = 180$, $8 \\\\times 30 = 240$。\\n3. 计算 $fx$ 总和：$25 + 180 + 240 = 445$。\\n4. 计算频数总和 $f$：$5 + 12 + 8 = 25$。\\n5. 估计平均数 = $445 \\\\div 25 = 17.8$ 分钟。",
+          "source": "0580/41/O/N/20"
         }
       ],
       "testYourself": [
@@ -4935,6 +6513,19 @@
           "a": 1,
           "e": "We use the mid-value of each class because the original individual data points are lost in the grouping process, so we can't find the exact total.",
           "e_zh": "我们使用每组的组中值，是因为原始的单个数据点在分组过程中丢失了，所以我们无法算出准确的总和。"
+        },
+        {
+          "q": "In a frequency table with grouped data, which value is used as the 'representative' for each class when estimating the mean?",
+          "q_zh": "在分组数据的频数表中，估算平均数时使用哪个值作为每个类别的“代表”？",
+          "o": [
+            "The lower class boundary",
+            "The upper class boundary",
+            "The class width",
+            "The class midpoint"
+          ],
+          "a": 3,
+          "e": "We use the class midpoint (mid-interval value) to represent all values in that group, assuming they are evenly distributed.",
+          "e_zh": "我们使用组中值（类中点）来代表该组中的所有数值，假设它们是均匀分布的。"
         }
       ],
       "vocabLinks": [
@@ -4970,6 +6561,14 @@
           "solution": "**Step 1: Identify frequency and total frequency.** Frequency = $12$, Total = $30$.\n\n**Step 2: Use the formula.** $\\text{Angle} = \\frac{12}{30} \\times 360^{\\circ}$.\n\n**Step 3: Calculate.** $\\frac{12}{30} = 0.4$. \n$0.4 \\times 360^{\\circ} = 144^{\\circ}$. ✓",
           "solution_zh": "**步骤1：确定频数和总频数。** 频数 = $12$，总数 = $30$。\n\n**步骤2：使用公式。** $\\text{角度} = \\frac{12}{30} \\times 360^{\\circ}$。\n\n**步骤3：计算。** $\\frac{12}{30} = 0.4$。\n$0.4 \\times 360^{\\circ} = 144^{\\circ}$。✓",
           "source": "Adapted from 0580/22/F/M/17"
+        },
+        {
+          "patternId": "ep-pie-angle",
+          "question": "A survey of 60 students about their favourite fruit gave these results: Apple (25), Banana (20), Orange (15). Calculate the sector angle for 'Banana' in a pie chart.",
+          "question_zh": "对60名学生关于最喜欢的水果的调查结果如下：苹果 (25)，香蕉 (20)，橙子 (15)。计算饼图中“香蕉”对应的扇形角度。",
+          "solution": "Sector angle = \\\\frac{20}{60} \\\\times 360^\\\\circ = 120^\\\\circ$.",
+          "solution_zh": "扇形角度 = \\\\frac{20}{60} \\\\times 360^\\\\circ = 120^\\\\circ$。",
+          "source": "0580/23/M/J/17"
         }
       ],
       "testYourself": [
@@ -4985,6 +6584,19 @@
           "a": 2,
           "e": "A full circle is $360^{\\circ}$. $\\frac{90}{360} = \\frac{1}{4}$.",
           "e_zh": "整个圆是 $360^{\\circ}$。$\\frac{90}{360} = \\frac{1}{4}$。"
+        },
+        {
+          "q": "In a pie chart representing 120 people, a sector has an angle of $72^\\\\circ$. How many people does this sector represent?",
+          "q_zh": "在一个代表120人的饼图中，一个扇形的圆心角为 $72^\\\\circ$。这个扇形代表多少人？",
+          "o": [
+            "12",
+            "24",
+            "36",
+            "72"
+          ],
+          "a": 1,
+          "e": "Number of people = \\\\frac{72}{360} \\\\times 120 = 24.",
+          "e_zh": "人数 = \\\\frac{72}{360} \\\\times 120 = 24。"
         }
       ],
       "vocabLinks": [
@@ -5020,6 +6632,14 @@
           "solution": "**Step 1: Count total values.** $n = 10$.\n\n**Step 2: Find the middle positions.** Since 10 is even, we need the average of the 5th and 6th values.\n\n**Step 3: Locate values.** \n1st: 12, 2nd: 15, 3rd: 18, 4th: 20, **5th: 23**, **6th: 23**.\n\n**Step 4: Calculate median.** $(23 + 23) / 2 = 23$ cm. ✓",
           "solution_zh": "**步骤1：统计总数。** $n = 10$。\n\n**步骤2：找到中间位置。** 因为 10 是偶数，我们需要第 5 个和第 6 个数值的平均数。\n\n**步骤3：确定数值。** \n第1个：12，第2个：15，第3个：18，第4个：20，**第5个：23**，**第6个：23**。\n\n**步骤4：计算中位数。** $(23 + 23) / 2 = 23$ 厘米。✓",
           "source": "Adapted from 0580/21/O/N/20"
+        },
+        {
+          "patternId": "ep-read-stem",
+          "question": "Find the median of the data shown in this stem-and-leaf diagram:\\n\\\\begin{array}{r|l} 1 & 2, 5, 8 \\\\ 2 & 1, 3, 3, 7 \\\\ 3 & 0, 4 \\\\end{array} \\\\quad \\\\text{Key: } 1 | 2 = 12",
+          "question_zh": "求该茎叶图所示数据的中位数：\\n\\\\begin{array}{r|l} 1 & 2, 5, 8 \\\\ 2 & 1, 3, 3, 7 \\\\ 3 & 0, 4 \\\\end{array} \\\\quad \\\\text{图例: } 1 | 2 = 12",
+          "solution": "There are 9 data points in total. The median is the $\\\\frac{9+1}{2} = 5$th value. \\nList the values: 12, 15, 18, 21, 23, 23, 27, 30, 34. \\nThe 5th value is 23. Median = 23.",
+          "solution_zh": "总共有9个数据点。中位数是第 $\\\\frac{9+1}{2} = 5$ 个值。\\n列出数值：12, 15, 18, 21, 23, 23, 27, 30, 34。\\n第5个值是23。中位数 = 23。",
+          "source": "0580/22/O/N/21"
         }
       ],
       "testYourself": [
@@ -5035,6 +6655,19 @@
           "a": 1,
           "e": "The leaf '2' appears twice in the stem '1' row, representing '12'. No other value repeats.",
           "e_zh": "叶子 '2' 在茎 '1' 的行中出现了两次，代表 '12'。没有其他重复的值。"
+        },
+        {
+          "q": "A stem-and-leaf diagram has a key: $2 | 3$ represents 23. What value is represented by $5 | 0$?",
+          "q_zh": "一个茎叶图的图例为：$2 | 3$ 代表 23。$5 | 0$ 代表什么数值？",
+          "o": [
+            "5",
+            "5.0",
+            "50",
+            "0.5"
+          ],
+          "a": 2,
+          "e": "Following the key $2 | 3 = 23$, the stem '5' is the tens digit and the leaf '0' is the units digit. So $5 | 0 = 50$.",
+          "e_zh": "根据图例 $2 | 3 = 23$，茎“5”是十位数，叶“0”是个位数。因此 $5 | 0 = 50$。"
         }
       ],
       "vocabLinks": [
@@ -5069,6 +6702,14 @@
           "solution": "**Step 1: Think about the relationship.** Generally, as a car gets older (age increases), its value decreases.\n\n**Step 2: Conclusion.** One variable goes up while the other goes down. This is **negative correlation**. ✓",
           "solution_zh": "**步骤1：思考两者关系。** 通常情况下，随着车龄增长（车龄增加），其价值会降低。\n\n**步骤2：结论。** 一个变量增加，另一个变量减少。这是**负相关**。✓",
           "source": "Adapted from 0580/23/M/J/19"
+        },
+        {
+          "patternId": "ep-type-corr",
+          "question": "Describe the type of correlation you would expect between:\\n(a) The outside temperature and sales of ice cream.\\n(b) The age of a car and its value.\\n(c) A person's height and their hair color.",
+          "question_zh": "描述下列各项之间预期的相关性类型：\\n(a) 室外温度与冰淇淋销量。\\n(b) 汽车的年龄与其价值。\\n(c) 一个人的身高与其头发颜色。",
+          "solution": "(a) **Positive correlation** (hotter weather leads to more sales).\\n(b) **Negative correlation** (older cars are usually worth less).\\n(c) **No correlation** (hair color is independent of height).",
+          "solution_zh": "(a) **正相关**（天气越热，销量越多）。\\n(b) **负相关**（车龄越长，价值通常越低）。\\n(c) **无相关**（头发颜色与身高无关）。",
+          "source": "Adapted from 0580/32/M/J/20"
         }
       ],
       "testYourself": [
@@ -5084,6 +6725,19 @@
           "a": 2,
           "e": "Bottom-left to top-right means both variables increase together, which is positive correlation.",
           "e_zh": "从左下到右上意味着两个变量同时增加，即正相关。"
+        },
+        {
+          "q": "In a scatter diagram, as the value of $x$ increases, the value of $y$ generally decreases. What type of correlation is this?",
+          "q_zh": "在散点图中，随着 $x$ 值的增加，$y$ 值通常会减少。这是哪种类型的相关性？",
+          "o": [
+            "Positive correlation",
+            "Negative correlation",
+            "No correlation",
+            "Direct correlation"
+          ],
+          "a": 1,
+          "e": "Negative correlation occurs when one variable increases while the other decreases.",
+          "e_zh": "当一个变量增加而另一个变量减少时，就会出现负相关。"
         }
       ],
       "vocabLinks": [
@@ -5121,6 +6775,14 @@
           "solution": "**Step 1: Locate the value on the axis.** Find $170$ on the 'Height' axis.\n\n**Step 2: Go to the line.** Draw a vertical line from $170$ up to your Line of Best Fit.\n\n**Step 3: Read the answer.** Go horizontally from the line to the 'Arm Span' axis and read the value. (e.g., $168$ cm). ✓",
           "solution_zh": "**步骤1：在轴上定位。** 在“身高”轴上找到 $170$。\n\n**步骤2：对应到直线。** 从 $170$ 向上画一条垂直线直到你的最佳拟合线。\n\n**步骤3：读取答案。** 从该点水平向“臂展”轴画线并读取数值（例如，$168$ 厘米）。✓",
           "source": "0580/42/M/J/20"
+        },
+        {
+          "patternId": "ep-draw-estimate",
+          "question": "A scatter diagram shows the relationship between hours studied ($h$) and test score ($s$). The line of best fit passes through (2, 40) and (10, 80). Use this to estimate the score for a student who studied for 7 hours.",
+          "question_zh": "散点图显示了学习时间 ($h$) 与考试成绩 ($s$) 之间的关系。最佳拟合线穿过 (2, 40) 和 (10, 80)。利用此信息估计学习了 7 小时的学生的成绩。",
+          "solution": "1. Find the gradient $m = \\\\frac{80-40}{10-2} = 5$.\\n2. Equation: $s = 5h + 30$.\\n3. For $h=7$: $s = 5(7) + 30 = 65$.",
+          "solution_zh": "1. 计算斜率 $m = \\\\frac{80-40}{10-2} = 5$。\\n2. 方程：$s = 5h + 30$。\\n3. 当 $h=7$ 时：$s = 5(7) + 30 = 65$。",
+          "source": "0580/42/M/J/19"
         }
       ],
       "testYourself": [
@@ -5136,6 +6798,19 @@
           "a": 2,
           "e": "The line shows the trend. It doesn't have to start at $(0,0)$ and rarely passes through all points. It can be used for both positive and negative correlation.",
           "e_zh": "这条线反映了趋势。它不必从 $(0,0)$ 开始，也很少经过所有点。正相关和负相关都可以使用最佳拟合线。"
+        },
+        {
+          "q": "When drawing a line of best fit on a scatter diagram, which of the following is TRUE?",
+          "q_zh": "在散点图上绘制最佳拟合线时，下列哪项是正确的？",
+          "o": [
+            "The line must pass through the origin (0,0)",
+            "The line must connect the first and last points",
+            "The line should have roughly equal numbers of points on either side",
+            "The line must pass through every point on the diagram"
+          ],
+          "a": 2,
+          "e": "A line of best fit should follow the trend of the data and aim to have an approximately equal number of points above and below it.",
+          "e_zh": "最佳拟合线应遵循数据趋势，并力求使其上方和下方的点数大致相等。"
         }
       ],
       "vocabLinks": [
@@ -5170,6 +6845,14 @@
           "solution": "**Step 1: Calculate cumulative frequency.** \nFirst point: $4$. \nSecond point: $4 + 10 = 14$.\n\n**Step 2: Use upper boundaries.** \nUpper boundaries are $10$ and $20$.\n\n**Step 3: Write coordinates.** \n$(10, 4)$ and $(20, 14)$. (Also start at $(0, 0)$). ✓",
           "solution_zh": "**步骤1：计算累积频率。** \n第一个点：$4$。\n第二个点：$4 + 10 = 14$。\n\n**步骤2：使用上边界。** \n上边界分别为 $10$ 和 $20$。\n\n**步骤3：写出坐标。** \n$(10, 4)$ 和 $(20, 14)$。（通常也从 $(0, 0)$ 开始）。✓",
           "source": "0580/42/M/J/18"
+        },
+        {
+          "patternId": "ep-plot-cf",
+          "question": "Complete the cumulative frequency table from the given frequency table:\\n\\\\begin{array}{|c|c|c|} \\\\hline \\\\text{Mass } (m \\\\text{ kg}) & \\\\text{Frequency} & \\\\text{Cumulative Frequency} \\\\\\\\ \\\\hline 0 < m \\\\le 10 & 8 & 8 \\\\\\\\ \\\\hline 10 < m \\\\le 20 & 15 & \\\\dots \\\\\\\\ \\\\hline 20 < m \\\\le 30 & 12 & \\\\dots \\\\\\\\ \\\\hline 30 < m \\\\le 40 & 5 & \\\\dots \\\\\\\\ \\\\hline \\\\end{array}",
+          "question_zh": "根据给定的频数表完成累积频数表：\\n\\\\begin{array}{|c|c|c|} \\\\hline \\\\text{质量 } (m \\\\text{ kg}) & \\\\text{频数} & \\\\text{累积频数} \\\\\\\\ \\\\hline 0 < m \\\\le 10 & 8 & 8 \\\\\\\\ \\\\hline 10 < m \\\\le 20 & 15 & \\\\dots \\\\\\\\ \\\\hline 20 < m \\\\le 30 & 12 & \\\\dots \\\\\\\\ \\\\hline 30 < m \\\\le 40 & 5 & \\\\dots \\\\\\\\ \\\\hline \\\\end{array}",
+          "solution": "Add frequencies successively:\\n$m \\\\le 20$: $8 + 15 = 23$\\n$m \\\\le 30$: $23 + 12 = 35$\\n$m \\\\le 40$: $35 + 5 = 40$",
+          "solution_zh": "逐次相加频数：\\n$m \\\\le 20$: $8 + 15 = 23$\\n$m \\\\le 30$: $23 + 12 = 35$\\n$m \\\\le 40$: $35 + 5 = 40$",
+          "source": "0580/43/O/N/21"
         }
       ],
       "testYourself": [
@@ -5185,6 +6868,19 @@
           "a": 2,
           "e": "We plot against the upper boundary because the cumulative frequency represents the total number of items 'up to' that value.",
           "e_zh": "我们对应上边界描点，是因为累积频率代表了“直到”该数值为止的所有项目总数。"
+        },
+        {
+          "q": "When plotting a cumulative frequency curve, the cumulative frequency values are plotted against which value for each class?",
+          "q_zh": "绘制累积频率曲线时，累积频率值应对应每个组别的哪个值进行绘制？",
+          "o": [
+            "The lower class boundary",
+            "The upper class boundary",
+            "The class midpoint",
+            "The class width"
+          ],
+          "a": 1,
+          "e": "Cumulative frequency represents the total frequency 'up to' a certain point, so it is always plotted at the upper boundary of the class interval.",
+          "e_zh": "累积频率代表“截止到”某一点的总频率，因此它总是对应类区间的上边界进行绘制。"
         }
       ],
       "vocabLinks": [
@@ -5219,6 +6915,14 @@
           "solution": "**Step 1: Identify $Q_1$ and $Q_3$.** $Q_1 = 15$, $Q_3 = 42$.\n\n**Step 2: Use the formula.** $IQR = Q_3 - Q_1 = 42 - 15$.\n\n**Step 3: Calculate.** $IQR = 27$ kg. ✓",
           "solution_zh": "**步骤1：确定 $Q_1$ 和 $Q_3$。** $Q_1 = 15$，$Q_3 = 42$。\n\n**步骤2：使用公式。** $IQR = Q_3 - Q_1 = 42 - 15$。\n\n**步骤3：计算。** $IQR = 27$ 千克。✓",
           "source": "0580/41/O/N/17"
+        },
+        {
+          "patternId": "ep-read-cf-stats",
+          "question": "A cumulative frequency curve for the marks of 80 students is drawn. The reading at cumulative frequency 20 is 35 marks, and at cumulative frequency 60 is 75 marks. Find the interquartile range (IQR).",
+          "question_zh": "绘制了80名学生成绩的累积频率曲线。在累积频率为20处读取的值为35分，在累积频率为60处读取的值为75分。求四分位距 (IQR)。",
+          "solution": "1. Lower Quartile ($Q_1$) is at $0.25 \\\\times 80 = 20$. So $Q_1 = 35$.\\n2. Upper Quartile ($Q_3$) is at $0.75 \\\\times 80 = 60$. So $Q_3 = 75$.\\n3. IQR = $Q_3 - Q_1 = 75 - 35 = 40$.",
+          "solution_zh": "1. 下四分位数 ($Q_1$) 位于 $0.25 \\\\times 80 = 20$ 处。因此 $Q_1 = 35$。\\n2. 上四分位数 ($Q_3$) 位于 $0.75 \\\\times 80 = 60$ 处。因此 $Q_3 = 75$。\\n3. IQR = $Q_3 - Q_1 = 75 - 35 = 40$。",
+          "source": "0580/41/M/J/22"
         }
       ],
       "testYourself": [
@@ -5234,6 +6938,19 @@
           "a": 2,
           "e": "Upper Quartile is at $75\\%$ of total. $0.75 \\times 200 = 150$.",
           "e_zh": "上四分位数位于总量的 $75\\%$ 处。$0.75 \\times 200 = 150$。"
+        },
+        {
+          "q": "On a cumulative frequency curve for 200 items, at what cumulative frequency value do you read to find the lower quartile ($Q_1$)?",
+          "q_zh": "在包含200个项目的累积频率曲线上，你应该读取哪个累积频率值来找到下四分位数 ($Q_1$)？",
+          "o": [
+            "25",
+            "50",
+            "100",
+            "150"
+          ],
+          "a": 1,
+          "e": "The lower quartile ($Q_1$) is at 25% of the total frequency. $0.25 \\\\times 200 = 50$.",
+          "e_zh": "下四分位数 ($Q_1$) 位于总频率的 25% 处。$0.25 \\\\times 200 = 50$。"
         }
       ],
       "vocabLinks": [
@@ -5277,6 +6994,14 @@
           "solution": "**Step 1: Find the class width.** $25 - 10 = 15$.\n\n**Step 2: Use the formula.** $\\text{FD} = \\frac{\\text{Frequency}}{\\text{Width}} = \\frac{30}{15}$.\n\n**Step 3: Calculate.** $\\text{FD} = 2$. ✓",
           "solution_zh": "**步骤1：找到组距。** $25 - 10 = 15$。\n\n**步骤2：使用公式。** $\\text{FD} = \\frac{\\text{频数}}{\\text{组距}} = \\frac{30}{15}$。\n\n**步骤3：计算。** $\\text{FD} = 2$。✓",
           "source": "0580/42/O/N/19"
+        },
+        {
+          "patternId": "ep-calc-fd",
+          "question": "The table shows the heights of plants. Calculate the frequency density for each class.\\n\\\\begin{array}{|c|c|c|} \\\\hline \\\\text{Height } (h \\\\text{ cm}) & \\\\text{Frequency} & \\\\text{FD} \\\\\\\\ \\\\hline 0 < h \\\\le 5 & 10 & \\\\dots \\\\\\\\ \\\\hline 5 < h \\\\le 15 & 30 & \\\\dots \\\\\\\\ \\\\hline 15 < h \\\\le 25 & 15 & \\\\dots \\\\\\\\ \\\\hline \\\\end{array}",
+          "question_zh": "下表显示了植物的高度。计算每个类别的频数密度。\\n\\\\begin{array}{|c|c|c|} \\\\hline \\\\text{高度 } (h \\\\text{ cm}) & \\\\text{频数} & \\\\text{频数密度} \\\\\\\\ \\\\hline 0 < h \\\\le 5 & 10 & \\\\dots \\\\\\\\ \\\\hline 5 < h \\\\le 15 & 30 & \\\\dots \\\\\\\\ \\\\hline 15 < h \\\\le 25 & 15 & \\\\dots \\\\\\\\ \\\\hline \\\\end{array}",
+          "solution": "1. Width 5: FD = $10 \\\\div 5 = 2$\\n2. Width 10: FD = $30 \\\\div 10 = 3$\\n3. Width 10: FD = $15 \\\\div 10 = 1.5$",
+          "solution_zh": "1. 组距 5：频数密度 = $10 \\\\div 5 = 2$\\n2. 组距 10：频数密度 = $30 \\\\div 10 = 3$\\n3. 组距 10：频数密度 = $15 \\\\div 10 = 1.5$",
+          "source": "0580/42/O/N/20"
         }
       ],
       "testYourself": [
@@ -5292,6 +7017,19 @@
           "a": 2,
           "e": "By definition, $\\text{Area} = \\text{Width} \\times \\text{Height} = \\text{Width} \\times \\text{Frequency Density} = \\text{Frequency}$.",
           "e_zh": "根据定义，$\\text{面积} = \\text{宽度} \\times \\text{高度} = \\text{组距} \\times \\text{频数密度} = \\text{频数}$。"
+        },
+        {
+          "q": "In a histogram, a class interval $10 < x \\\\le 25$ has a frequency of 30. What is the frequency density for this bar?",
+          "q_zh": "在直方图中，类区间 $10 < x \\\\le 25$ 的频数为 30。该矩形的频数密度是多少？",
+          "o": [
+            "0.5",
+            "2",
+            "3",
+            "450"
+          ],
+          "a": 1,
+          "e": "Frequency Density = Frequency \\\\div Class Width. Width = $25 - 10 = 15$. FD = $30 \\\\div 15 = 2$.",
+          "e_zh": "频数密度 = 频数 \\\\div 组距。组距 = $25 - 10 = 15$。频数密度 = $30 \\\\div 15 = 2$。"
         }
       ],
       "vocabLinks": [
