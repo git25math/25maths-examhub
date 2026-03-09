@@ -101,6 +101,8 @@ function renderStats() {
 
   /* Mastery stability */
   html += _renderMasteryStability();
+  html += _renderKPMasteryStability();
+  html += _renderPPMasteryStability();
 
   /* Heatmap */
   html += renderCalendarHeatmap(heatData);
@@ -325,12 +327,66 @@ function _renderMasteryStability() {
   if (mastered === 0) return '';
   var stablePct = Math.round((mastered - stale) / mastered * 100);
   var html = '<div class="stats-section">';
-  html += '<div class="stats-section-title">' + t('Mastery Stability', '\u638c\u63e1\u7a33\u5b9a\u5ea6') + '</div>';
+  html += '<div class="stats-section-title">' + t('Vocabulary Mastery', '\u8bcd\u6c47\u638c\u63e1\u5ea6') + '</div>';
   html += '<div class="stats-summary">';
   html += '<div class="stat-card"><div class="stat-num">' + mastered + '</div><div class="stat-label">' + t('Mastered', '\u5df2\u638c\u63e1') + '</div></div>';
   html += '<div class="stat-card"><div class="stat-num">' + stale + '</div><div class="stat-label">' + t('Getting Stale', '\u6b63\u5728\u8870\u9000') + '</div></div>';
   html += '<div class="stat-card"><div class="stat-num">' + stablePct + '%</div><div class="stat-label">' + t('Stable', '\u7a33\u5b9a') + '</div></div>';
   html += '<div class="stat-card"><div class="stat-num">' + reflowed + '</div><div class="stat-label">' + t('Reflowed', '\u56de\u6d41') + '</div></div>';
+  html += '</div></div>';
+  return html;
+}
+
+function _renderKPMasteryStability() {
+  var s = loadS();
+  if (!s.kpDone) return '';
+  var now = Date.now();
+  var mastered = 0, stale = 0;
+  for (var kpId in s.kpDone) {
+    var d = s.kpDone[kpId];
+    if (!d.fs || d.fs !== 'mastered') continue;
+    mastered++;
+    if (d.fmt) {
+      var rc = d.rc || 0;
+      var threshold = REFRESH_INTERVALS[Math.min(rc, REFRESH_INTERVALS.length - 1)];
+      if ((now - d.fmt) / 86400000 >= threshold) stale++;
+    }
+  }
+  if (mastered === 0) return '';
+  var stablePct = Math.round((mastered - stale) / mastered * 100);
+  var html = '<div class="stats-section">';
+  html += '<div class="stats-section-title">' + t('Knowledge Point Mastery', '\u77e5\u8bc6\u70b9\u638c\u63e1\u5ea6') + '</div>';
+  html += '<div class="stats-summary">';
+  html += '<div class="stat-card"><div class="stat-num">' + mastered + '</div><div class="stat-label">' + t('Mastered', '\u5df2\u638c\u63e1') + '</div></div>';
+  html += '<div class="stat-card"><div class="stat-num">' + stale + '</div><div class="stat-label">' + t('Getting Stale', '\u6b63\u5728\u8870\u9000') + '</div></div>';
+  html += '<div class="stat-card"><div class="stat-num">' + stablePct + '%</div><div class="stat-label">' + t('Stable', '\u7a33\u5b9a') + '</div></div>';
+  html += '</div></div>';
+  return html;
+}
+
+function _renderPPMasteryStability() {
+  if (typeof _ppGetMastery !== 'function') return '';
+  var mastery = _ppGetMastery();
+  var now = Date.now();
+  var mastered = 0, stale = 0;
+  for (var qid in mastery) {
+    var d = mastery[qid];
+    if (!d.fs || d.fs !== 'mastered') continue;
+    mastered++;
+    if (d.fmt) {
+      var rc = d.rc || 0;
+      var threshold = REFRESH_INTERVALS[Math.min(rc, REFRESH_INTERVALS.length - 1)];
+      if ((now - d.fmt) / 86400000 >= threshold) stale++;
+    }
+  }
+  if (mastered === 0) return '';
+  var stablePct = Math.round((mastered - stale) / mastered * 100);
+  var html = '<div class="stats-section">';
+  html += '<div class="stats-section-title">' + t('Past Paper Mastery', '\u771f\u9898\u638c\u63e1\u5ea6') + '</div>';
+  html += '<div class="stats-summary">';
+  html += '<div class="stat-card"><div class="stat-num">' + mastered + '</div><div class="stat-label">' + t('Mastered', '\u5df2\u638c\u63e1') + '</div></div>';
+  html += '<div class="stat-card"><div class="stat-num">' + stale + '</div><div class="stat-label">' + t('Getting Stale', '\u6b63\u5728\u8870\u9000') + '</div></div>';
+  html += '<div class="stat-card"><div class="stat-num">' + stablePct + '%</div><div class="stat-label">' + t('Stable', '\u7a33\u5b9a') + '</div></div>';
   html += '</div></div>';
   return html;
 }

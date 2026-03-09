@@ -1299,6 +1299,11 @@ input { font-family: inherit; }
 .scan-card.scan-fuzzy { border-color: #F59E0B; background: #F59E0B10; }
 .scan-card.scan-unknown { border-color: #EF4444; background: #EF444410; }
 
+.pp-scan-card { min-height: 120px; white-space: pre-line; font-size: 14px; line-height: 1.6; text-align: left; }
+.pp-scan-card .pp-card-header { font-size: 12px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.pp-scan-card .pp-marks-badge { font-size: 11px; }
+.pp-scan-card .pp-scan-body { font-size: 14px; }
+
 .scan-word {
   font-size: 28px; font-weight: 800; color: var(--c-text);
   margin-bottom: 12px;

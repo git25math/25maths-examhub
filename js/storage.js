@@ -978,6 +978,27 @@ function getStaleKPs(board) {
 }
 function getStaleKPCount(board) { return getStaleKPs(board).length; }
 
+function recordKPRefreshScan(kpId, verdict) {
+  var s = loadS();
+  if (!s.kpDone) s.kpDone = {};
+  _migrateKPtoFLM(s);
+  var now = Date.now();
+  var prev = s.kpDone[kpId] || {};
+  var rc = prev.rc || 0;
+  var fs = prev.fs || 'mastered';
+  if (verdict === 'known') { rc++; prev.fmt = now; }
+  else if (verdict === 'fuzzy') { fs = 'uncertain'; prev.cs = 0; }
+  else if (verdict === 'unknown') { fs = 'learning'; prev.cs = 0; }
+  s.kpDone[kpId] = {
+    score: prev.score || 0, total: prev.total || 0, pct: prev.pct || 0,
+    t: now, fs: fs, cs: prev.cs || 0, fmt: prev.fmt || null, rc: rc
+  };
+  writeS(s);
+  _staleKPCache = null;
+  invalidateCache();
+  debouncedSync();
+}
+
 /* ═══ MODE UNLOCK — all modes open ═══ */
 function isModeUnlocked() { return true; }
 

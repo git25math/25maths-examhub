@@ -1,5 +1,45 @@
 # Changelog
 
+## [3.0.1] - 2026-03-09 — Refresh Scan UI + Stats 独立展示
+
+### KP Refresh Scan UI
+- `startKPRefreshScan()` — 加载 stale KP 列表，复用 Scan 三按钮 UI（study panel）
+- `_renderKPRefreshCard()` — 显示 KP 标题 + KaTeX 渲染 + known/fuzzy/unknown 三评
+- `_finishKPRefreshScan()` — 三列摘要 + 回流提示
+- `recordKPRefreshScan(kpId, verdict)` — storage 层 KP 复查记录
+
+### PP Refresh Scan UI
+- `startPPRefreshScan()` — 跨 board 加载 stale PP 题目，practice panel 内展示
+- `_renderPPRefreshCard()` — 完整真题渲染（难度标签 + marks + 题目 + 图表 + KaTeX）
+- `_ratePPScan()` / `_finishPPRefreshScan()` — 评分 + 摘要页
+
+### Plan & Hero 直达
+- Today's Plan KP/PP 卡片新增 "Quick Scan" 按钮（data-action delegation）
+- Hero 推荐 kp-refresh / pp-refresh 改为直接启动 Refresh Scan（不再跳 Plan 页）
+
+### Stats 独立 Mastery Stability
+- 原"Mastery Stability"改名"Vocabulary Mastery / 词汇掌握度"
+- 新增 `_renderKPMasteryStability()` — 知识点掌握度（Mastered / Stale / Stable%）
+- 新增 `_renderPPMasteryStability()` — 真题掌握度（同上三卡）
+
+### CSS
+- `.pp-scan-card` 样式（min-height 120px, pre-line, left-align）
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| storage.js | + recordKPRefreshScan |
+| study.js | + startKPRefreshScan / _renderKPRefreshCard / _finishKPRefreshScan + 路由钩子 |
+| practice.js | + startPPRefreshScan / _renderPPRefreshCard / _ratePPScan / _finishPPRefreshScan |
+| syllabus.js | Plan KP/PP 卡片 Quick Scan 按钮 + delegation |
+| mastery.js | Hero kp-refresh / pp-refresh 直达 + delegation |
+| stats.js | + _renderKPMasteryStability + _renderPPMasteryStability + 标题重命名 |
+| css/style.css | + .pp-scan-card 样式 |
+| config.js | APP_VERSION → v3.0.1 |
+| sw.js | CACHE_VERSION → v3.0.1 |
+
+---
+
 ## [3.0.0] - 2026-03-09 — 真题接入 FLM（Learning Unit Phase 2）
 
 ### 核心功能：PP FLM 集成

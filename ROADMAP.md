@@ -449,7 +449,7 @@
 - [x] **ppScore FLM 加权**: getSectionHealth ppScore 与 vocab/KP 语义一致 → v3.0.0
 - [x] **ppGetSectionStats FLM 化**: learning/uncertain/stale 字段 + PP Section Module 标签更新 → v3.0.0
 - [x] **Hero 推荐**: pp-refresh 优先级 + Today's Plan 导航 → v3.0.0
-- [ ] **PP Refresh Scan UI (v3.0.1)**: 跨 board 加载 stale 题目 + Refresh 模式 UI
+- [x] **KP/PP Refresh Scan UI (v3.0.1)**: KP/PP 复查三按钮 UI + Plan/Hero 直达按钮 + Stats 三独立掌握度区块
 - [ ] **Learning Unit Phase 3 (v3.1)**: 统一 recordUnitAnswer API + 跨类型衰退检测
 
 ## v2.9 知识点接入 FLM — Learning Unit Phase 1 [DONE]

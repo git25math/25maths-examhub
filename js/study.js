@@ -138,8 +138,110 @@ function _finishRefreshScan() {
   updateSidebar();
 }
 
+/* ═══ KP REFRESH SCAN (knowledge point decay review) ═══ */
+
+function startKPRefreshScan() {
+  var boards = typeof getVisibleBoards === 'function' ? getVisibleBoards() : ['cie'];
+  var cap = typeof REFRESH_CAP !== 'undefined' ? REFRESH_CAP : 20;
+  var promises = [];
+  for (var i = 0; i < boards.length; i++) {
+    if (boards[i] !== '25m') promises.push(loadKnowledgeData(boards[i]));
+  }
+  Promise.all(promises).then(function() {
+    var staleList = typeof getStaleKPs === 'function' ? getStaleKPs() : [];
+    if (staleList.length === 0) { showToast(t('No stale KPs', '没有衰退的知识点')); return; }
+    var items = staleList.slice(0, cap);
+    /* Resolve KP details from _kpData */
+    var resolved = [];
+    for (var j = 0; j < items.length; j++) {
+      var kpId = items[j].id;
+      var found = null;
+      for (var b in _kpData) {
+        if (!_kpData[b]) continue;
+        for (var k = 0; k < _kpData[b].length; k++) {
+          if (_kpData[b][k].id === kpId) { found = _kpData[b][k]; break; }
+        }
+        if (found) break;
+      }
+      if (found) resolved.push({ id: kpId, title: found.title, title_zh: found.title_zh || '' });
+    }
+    if (resolved.length === 0) return;
+    S._kpRefreshMode = true;
+    S._kpRefreshItems = resolved;
+    S.idx = 0;
+    S.results = { known: [], fuzzy: [], unknown: [] };
+    S.pairs = [];
+    for (var r = 0; r < resolved.length; r++) {
+      S.pairs.push({ word: resolved[r].title, def: resolved[r].title_zh, _kpId: resolved[r].id });
+    }
+    showPanel('study');
+    renderStudyCard();
+  });
+}
+
+function _renderKPRefreshCard() {
+  if (S.idx >= S.pairs.length) { finishStudy(); return; }
+  var p = S.pairs[S.idx];
+  var progress = S.pairs.length > 0 ? Math.round(S.idx / S.pairs.length * 100) : 0;
+  var html = '';
+  html += '<div class="study-topbar">';
+  html += '<button class="back-btn" onclick="S._kpRefreshMode=false;navTo(\'plan\')">\u2190</button>';
+  html += '<div class="study-progress"><div class="study-progress-fill" style="width:' + progress + '%"></div></div>';
+  html += '<div class="study-count">' + (S.idx + 1) + ' / ' + S.pairs.length + '</div>';
+  html += '</div>';
+  html += '<div class="study-refresh-label">\ud83d\udd04 ' + t('Knowledge Point Refresh', '知识点复查') + '</div>';
+  html += '<div class="scan-card" id="scan-card">';
+  html += '<div class="scan-word">' + (typeof pqRender === 'function' ? pqRender(p.word) : escapeHtml(p.word)) + '</div>';
+  if (p.def) html += '<div class="scan-def hidden" id="scan-def">' + escapeHtml(p.def) + '</div>';
+  html += '</div>';
+  html += '<div class="scan-actions" id="scan-actions">';
+  html += '<button class="scan-btn scan-known" data-scan="known"><span class="scan-key">1</span> ' + t('Know it', '认识') + '</button>';
+  html += '<button class="scan-btn scan-fuzzy" data-scan="fuzzy"><span class="scan-key">2</span> ' + t('Fuzzy', '模糊') + '</button>';
+  html += '<button class="scan-btn scan-unknown" data-scan="unknown"><span class="scan-key">3</span> ' + t("Don't know", '不认识') + '</button>';
+  html += '</div>';
+  E('panel-study').innerHTML = html;
+  if (typeof renderMathInElement === 'function') renderMathInElement(E('panel-study'));
+  var actions = E('scan-actions');
+  if (actions && !actions._bound) {
+    actions._bound = true;
+    actions.addEventListener('click', function(e) {
+      var btn = e.target.closest('[data-scan]');
+      if (btn) rateScan(btn.dataset.scan);
+    });
+  }
+}
+
+function _finishKPRefreshScan() {
+  var k = S.results.known.length;
+  var f = S.results.fuzzy.length;
+  var u = S.results.unknown.length;
+  S._kpRefreshMode = false;
+  var html = '<div class="text-center">';
+  html += '<div class="result-emoji">\ud83d\udd04</div>';
+  html += '<div class="result-title">' + t('KP Refresh Complete!', '知识点复查完成！') + '</div>';
+  html += '<div class="result-sub">' + t('Checked ' + (k + f + u) + ' stale KPs', '检查了 ' + (k + f + u) + ' 个衰退知识点') + '</div>';
+  html += '</div>';
+  html += '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:20px 0">';
+  html += '<div style="padding:12px;border-radius:var(--r);background:var(--c-success-bg);text-align:center"><div style="font-size:22px;font-weight:800">' + k + '</div><div style="font-size:10px;font-weight:600;color:var(--c-success)">' + t('Still know', '仍认识') + '</div></div>';
+  html += '<div style="padding:12px;border-radius:var(--r);background:var(--c-warning-bg);text-align:center"><div style="font-size:22px;font-weight:800">' + f + '</div><div style="font-size:10px;font-weight:600;color:var(--c-warning)">' + t('Fuzzy', '模糊') + '</div></div>';
+  html += '<div style="padding:12px;border-radius:var(--r);background:var(--c-danger-bg);text-align:center"><div style="font-size:22px;font-weight:800">' + u + '</div><div style="font-size:10px;font-weight:600;color:var(--c-danger)">' + t('Forgot', '忘记') + '</div></div>';
+  html += '</div>';
+  if (f + u > 0) {
+    html += '<div style="font-size:13px;color:var(--c-text2);text-align:center;margin:8px 0">';
+    html += t((f + u) + ' KPs returned to learning', (f + u) + ' 个知识点已回流到学习池');
+    html += '</div>';
+  }
+  html += '<div class="result-actions">';
+  html += '<button class="btn btn-primary" onclick="navTo(\'plan\')">' + t('Back to Plan', '返回计划') + '</button>';
+  html += '<button class="btn btn-ghost" onclick="navTo(\'home\')">' + t('Home', '首页') + '</button>';
+  html += '</div>';
+  E('panel-study').innerHTML = html;
+  updateSidebar();
+}
+
 /* Render the scan card */
 function renderStudyCard() {
+  if (S._kpRefreshMode) return _renderKPRefreshCard();
   if (S._refreshMode) return _renderRefreshCard();
   if (S.idx >= S.pairs.length) { finishStudy(); return; }
 
@@ -192,8 +294,10 @@ function rateScan(verdict) {
 
   S.results[verdict].push(p);
 
-  /* Refresh mode uses dedicated recorder */
-  if (S._refreshMode) {
+  /* KP refresh mode uses dedicated recorder */
+  if (S._kpRefreshMode) {
+    recordKPRefreshScan(p._kpId, verdict);
+  } else if (S._refreshMode) {
     recordRefreshScan(p._key, verdict);
   } else {
     var key = wordKey(S.lvl, p.lid);
@@ -221,6 +325,7 @@ function rateScan(verdict) {
 
 /* Finish round */
 function finishStudy() {
+  if (S._kpRefreshMode) return _finishKPRefreshScan();
   if (S._refreshMode) return _finishRefreshScan();
   var k = S.results.known.length;
   var f = S.results.fuzzy.length;

@@ -391,13 +391,13 @@ function _renderHeroAction() {
   } else if (action.type === 'kp-refresh') {
     html += '<div class="hero-label">' + t('Knowledge Point Review', '\u77e5\u8bc6\u70b9\u590d\u67e5') + '</div>';
     html += '<div class="hero-section">' + action.count + ' ' + t('mastered KPs getting stale', '\u4e2a\u5df2\u638c\u63e1\u77e5\u8bc6\u70b9\u6b63\u5728\u8870\u9000') + '</div>';
-    html += '<button class="btn btn-primary hero-btn" data-hero-action="plan">';
-    html += '\ud83d\udcd6 ' + t("Today's Plan", '\u4eca\u65e5\u8ba1\u5212') + ' \u2192</button>';
+    html += '<button class="btn btn-primary hero-btn" data-hero-action="kp-refresh">';
+    html += '\ud83d\udd04 ' + t('Quick Scan', '\u5feb\u901f\u590d\u67e5') + ' \u2192</button>';
   } else if (action.type === 'pp-refresh') {
     html += '<div class="hero-label">' + t('Past Paper Review', '\u771f\u9898\u590d\u67e5') + '</div>';
     html += '<div class="hero-section">' + action.count + ' ' + t('mastered questions getting stale', '\u4e2a\u5df2\u638c\u63e1\u771f\u9898\u6b63\u5728\u8870\u9000') + '</div>';
-    html += '<button class="btn btn-primary hero-btn" data-hero-action="plan">';
-    html += '\ud83d\udcc4 ' + t("Today's Plan", '\u4eca\u65e5\u8ba1\u5212') + ' \u2192</button>';
+    html += '<button class="btn btn-primary hero-btn" data-hero-action="pp-refresh">';
+    html += '\ud83d\udd04 ' + t('Quick Scan', '\u5feb\u901f\u590d\u67e5') + ' \u2192</button>';
   } else if (action.type === 'start') {
     html += '<div class="hero-label">' + t('Up next', '\u4e0b\u4e00\u7ad9') + '</div>';
     html += '<div class="hero-section">' + escapeHtml(action.label) + '</div>';
@@ -442,6 +442,10 @@ function _initHeroDelegation() {
       startDaily();
     } else if (act === 'rank') {
       showRankGuide();
+    } else if (act === 'kp-refresh') {
+      if (typeof startKPRefreshScan === 'function') startKPRefreshScan();
+    } else if (act === 'pp-refresh') {
+      if (typeof startPPRefreshScan === 'function') startPPRefreshScan();
     } else if (act === 'stats') {
       navTo('stats');
     }

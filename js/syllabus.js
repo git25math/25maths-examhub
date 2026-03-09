@@ -2568,6 +2568,7 @@ function renderTodaysPlan() {
     html += '<span class="plan-card-title">' + t('Knowledge Point Review', '\u77e5\u8bc6\u70b9\u590d\u67e5') + '</span>';
     html += '</div>';
     html += '<div class="plan-card-count">' + staleKPN + ' ' + t('mastered KPs getting stale', '\u4e2a\u5df2\u638c\u63e1\u77e5\u8bc6\u70b9\u6b63\u5728\u8870\u9000') + '</div>';
+    html += '<button class="btn btn-primary btn-sm" data-action="start-kp-refresh">' + t('Quick Scan', '\u5feb\u901f\u590d\u67e5') + '</button>';
     html += '</div>';
   }
 
@@ -2580,6 +2581,7 @@ function renderTodaysPlan() {
     html += '<span class="plan-card-title">' + t('Past Paper Review', '\u771f\u9898\u590d\u67e5') + '</span>';
     html += '</div>';
     html += '<div class="plan-card-count">' + stalePPN + ' ' + t('mastered questions getting stale', '\u4e2a\u5df2\u638c\u63e1\u771f\u9898\u6b63\u5728\u8870\u9000') + '</div>';
+    html += '<button class="btn btn-primary btn-sm" data-action="start-pp-refresh">' + t('Quick Scan', '\u5feb\u901f\u590d\u67e5') + '</button>';
     html += '</div>';
   }
 
@@ -2638,6 +2640,10 @@ function renderTodaysPlan() {
     if (refreshBtn && typeof startRefreshScan === 'function' && typeof getStaleWords === 'function') {
       startRefreshScan(getStaleWords());
     }
+    var kpRefreshBtn = e.target.closest('[data-action="start-kp-refresh"]');
+    if (kpRefreshBtn && typeof startKPRefreshScan === 'function') startKPRefreshScan();
+    var ppRefreshBtn = e.target.closest('[data-action="start-pp-refresh"]');
+    if (ppRefreshBtn && typeof startPPRefreshScan === 'function') startPPRefreshScan();
   });
 }
 

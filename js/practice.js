@@ -1351,6 +1351,131 @@ function recordPPRefreshScan(qid, verdict) {
   _stalePPCacheData = null;
 }
 
+/* ═══ PP REFRESH SCAN UI ═══ */
+
+var _ppRefreshItems = [];
+var _ppRefreshIdx = 0;
+var _ppRefreshResults = { known: [], fuzzy: [], unknown: [] };
+var _ppRefreshMode = false;
+
+function startPPRefreshScan() {
+  var boards = typeof getVisibleBoards === 'function' ? getVisibleBoards() : ['cie'];
+  var ppBoards = [];
+  for (var i = 0; i < boards.length; i++) {
+    if (boards[i] === 'cie' || boards[i] === 'edx') ppBoards.push(boards[i]);
+  }
+  if (ppBoards.length === 0) return;
+  var promises = ppBoards.map(function(b) { return loadPastPaperData(b); });
+  Promise.all(promises).then(function() {
+    var cap = typeof REFRESH_CAP !== 'undefined' ? REFRESH_CAP : 20;
+    var staleList = typeof getStalePPQuestions === 'function' ? getStalePPQuestions() : [];
+    if (staleList.length === 0) { showToast(t('No stale questions', '没有衰退的真题')); return; }
+    var items = staleList.slice(0, cap);
+    /* Resolve qid → full question object */
+    var resolved = [];
+    for (var j = 0; j < items.length; j++) {
+      var qid = items[j].qid;
+      var found = null, foundBoard = null;
+      for (var b in _ppData) {
+        var qs = _ppData[b] ? (_ppData[b].questions || []) : [];
+        for (var k = 0; k < qs.length; k++) {
+          if (qs[k].id === qid) { found = qs[k]; foundBoard = b; break; }
+        }
+        if (found) break;
+      }
+      if (found) resolved.push({ qid: qid, q: found, board: foundBoard });
+    }
+    if (resolved.length === 0) return;
+    _ppRefreshItems = resolved;
+    _ppRefreshIdx = 0;
+    _ppRefreshResults = { known: [], fuzzy: [], unknown: [] };
+    _ppRefreshMode = true;
+    _ppSession = null;
+    showPanel('practice');
+    loadKaTeX().then(function() { _renderPPRefreshCard(); });
+  });
+}
+
+function _renderPPRefreshCard() {
+  if (_ppRefreshIdx >= _ppRefreshItems.length) { _finishPPRefreshScan(); return; }
+  var item = _ppRefreshItems[_ppRefreshIdx];
+  var q = item.q;
+  var progress = _ppRefreshItems.length > 0 ? Math.round(_ppRefreshIdx / _ppRefreshItems.length * 100) : 0;
+  var html = '';
+  html += '<div class="study-topbar">';
+  html += '<button class="back-btn" onclick="_ppRefreshMode=false;navTo(\'plan\')">\u2190</button>';
+  html += '<div class="study-progress"><div class="study-progress-fill" style="width:' + progress + '%"></div></div>';
+  html += '<div class="study-count">' + (_ppRefreshIdx + 1) + ' / ' + _ppRefreshItems.length + '</div>';
+  html += '</div>';
+  html += '<div class="study-refresh-label">\ud83d\udd04 ' + t('Past Paper Refresh', '真题复查') + '</div>';
+  html += '<div class="scan-card pp-scan-card" id="scan-card">';
+  html += '<div class="pp-card-header">';
+  html += _ppDiffLabel(q.d || 1, item.board);
+  if (q.marks > 0) html += '<span class="pp-marks-badge">[' + q.marks + ' ' + t('marks', '分') + ']</span>';
+  if (q.src) html += '<span style="font-size:11px;color:var(--c-text3)">' + escapeHtml(q.src) + '</span>';
+  html += '</div>';
+  html += '<div class="pp-scan-body">' + _ppRenderWithMarks(q) + '</div>';
+  html += _ppRenderFigures(q);
+  html += '</div>';
+  html += '<div class="scan-actions" id="pp-scan-actions">';
+  html += '<button class="scan-btn scan-known" data-pp-scan="known"><span class="scan-key">1</span> ' + t('Know it', '认识') + '</button>';
+  html += '<button class="scan-btn scan-fuzzy" data-pp-scan="fuzzy"><span class="scan-key">2</span> ' + t('Fuzzy', '模糊') + '</button>';
+  html += '<button class="scan-btn scan-unknown" data-pp-scan="unknown"><span class="scan-key">3</span> ' + t("Don't know", '不认识') + '</button>';
+  html += '</div>';
+  E('panel-practice').innerHTML = html;
+  if (typeof renderMathInElement === 'function') renderMathInElement(E('panel-practice'));
+  var actions = E('pp-scan-actions');
+  if (actions && !actions._bound) {
+    actions._bound = true;
+    actions.addEventListener('click', function(e) {
+      var btn = e.target.closest('[data-pp-scan]');
+      if (btn) _ratePPScan(btn.dataset.ppScan);
+    });
+  }
+}
+
+function _ratePPScan(verdict) {
+  var item = _ppRefreshItems[_ppRefreshIdx];
+  _ppRefreshResults[verdict].push(item);
+  recordPPRefreshScan(item.qid, verdict);
+  var card = E('scan-card');
+  if (card) card.classList.add('scan-' + verdict);
+  if (verdict === 'known' && typeof playCorrect === 'function') playCorrect();
+  else if (verdict === 'unknown' && typeof playWrong === 'function') playWrong();
+  setTimeout(function() {
+    _ppRefreshIdx++;
+    _renderPPRefreshCard();
+  }, 600);
+}
+
+function _finishPPRefreshScan() {
+  var k = _ppRefreshResults.known.length;
+  var f = _ppRefreshResults.fuzzy.length;
+  var u = _ppRefreshResults.unknown.length;
+  _ppRefreshMode = false;
+  var html = '<div class="text-center">';
+  html += '<div class="result-emoji">\ud83d\udd04</div>';
+  html += '<div class="result-title">' + t('PP Refresh Complete!', '真题复查完成！') + '</div>';
+  html += '<div class="result-sub">' + t('Checked ' + (k + f + u) + ' stale questions', '检查了 ' + (k + f + u) + ' 个衰退真题') + '</div>';
+  html += '</div>';
+  html += '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:20px 0">';
+  html += '<div style="padding:12px;border-radius:var(--r);background:var(--c-success-bg);text-align:center"><div style="font-size:22px;font-weight:800">' + k + '</div><div style="font-size:10px;font-weight:600;color:var(--c-success)">' + t('Still know', '仍认识') + '</div></div>';
+  html += '<div style="padding:12px;border-radius:var(--r);background:var(--c-warning-bg);text-align:center"><div style="font-size:22px;font-weight:800">' + f + '</div><div style="font-size:10px;font-weight:600;color:var(--c-warning)">' + t('Fuzzy', '模糊') + '</div></div>';
+  html += '<div style="padding:12px;border-radius:var(--r);background:var(--c-danger-bg);text-align:center"><div style="font-size:22px;font-weight:800">' + u + '</div><div style="font-size:10px;font-weight:600;color:var(--c-danger)">' + t('Forgot', '忘记') + '</div></div>';
+  html += '</div>';
+  if (f + u > 0) {
+    html += '<div style="font-size:13px;color:var(--c-text2);text-align:center;margin:8px 0">';
+    html += t((f + u) + ' questions returned to learning', (f + u) + ' 个真题已回流到学习池');
+    html += '</div>';
+  }
+  html += '<div class="result-actions">';
+  html += '<button class="btn btn-primary" onclick="navTo(\'plan\')">' + t('Back to Plan', '返回计划') + '</button>';
+  html += '<button class="btn btn-ghost" onclick="navTo(\'home\')">' + t('Home', '首页') + '</button>';
+  html += '</div>';
+  E('panel-practice').innerHTML = html;
+  if (typeof updateSidebar === 'function') updateSidebar();
+}
+
 /* ═══ WRONG BOOK STORAGE ═══ */
 
 function _ppWBKey() { return 'pp_wrong_book'; }
