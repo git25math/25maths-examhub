@@ -886,15 +886,6 @@ function getDistinctModesUsed() {
   return Object.keys(modeSet).length;
 }
 
-/* ═══ STAGE-BASED FEATURE GATING ═══ */
-var STAGE_ORDER = ['new', 'active', 'intermediate', 'advanced'];
-/* @deprecated — kept for _renderModeDiscovery; use FEATURE_THRESHOLD instead */
-var FEATURE_STAGE = {
-  study: 'new', quiz: 'new', review: 'active', spell: 'active',
-  match: 'active', battle: 'active', practice: 'active',
-  diagnostic: 'intermediate', mock: 'advanced'
-};
-
 /* ═══ THRESHOLD-BASED FEATURE GATING ═══ */
 var FEATURE_THRESHOLD = {
   study: 0, quiz: 0, review: 0,
@@ -948,6 +939,7 @@ function _handleLockedClick(e) {
   var msgs = {
     mode: t('Complete the previous mode first', '请先完成前一个模式'),
     study: t('Complete Study mode first', '请先完成学习模式'),
+    feature: t('Master more words to unlock', '掌握更多词汇解锁'),
     section: t('Complete the previous section first (80%+)', '请先完成上一个知识点(80%+)')
   };
   showToast(msgs[key] || msgs.mode);

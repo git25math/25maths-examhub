@@ -254,16 +254,20 @@ function _renderModeDiscovery() {
       if (parts.length === 2) usedModes[parts[1]] = true;
     }
   }
-  /* Stage → suggested modes */
+  /* Suggest unlocked but unused modes (threshold-aware) */
   var suggestions = [];
-  if (info.stage === 'new') {
-    if (!usedModes.quiz) suggestions.push({ mode: 'quiz', emoji: '\u2753', en: 'Quiz', zh: '测验' });
-  } else if (info.stage === 'active') {
-    if (!usedModes.battle) suggestions.push({ mode: 'battle', emoji: '\u2694\ufe0f', en: 'Battle', zh: '对战' });
-    if (!usedModes.spell) suggestions.push({ mode: 'spell', emoji: '\u270d\ufe0f', en: 'Spell', zh: '拼写' });
-  } else {
-    if (!usedModes.practice) suggestions.push({ mode: 'practice', emoji: '\ud83d\udcdd', en: 'Practice', zh: '练习题' });
-  }
+  var _discCandidates = [
+    { mode: 'quiz',     emoji: '\u2753',       en: 'Quiz',     zh: '测验' },
+    { mode: 'spell',    emoji: '\u270d\ufe0f',  en: 'Spell',    zh: '拼写' },
+    { mode: 'battle',   emoji: '\u2694\ufe0f',  en: 'Battle',   zh: '对战' },
+    { mode: 'practice', emoji: '\ud83d\udcdd',  en: 'Practice', zh: '练习题' }
+  ];
+  _discCandidates.forEach(function(c) {
+    if (!usedModes[c.mode] && (typeof isFeatureUnlocked !== 'function' || isFeatureUnlocked(c.mode))) {
+      suggestions.push(c);
+    }
+  });
+  suggestions = suggestions.slice(0, 2); /* Show at most 2 chips */
   /* Filter out dismissed */
   suggestions = suggestions.filter(function(sg) {
     try { return !localStorage.getItem('wmatch_disc_' + sg.mode); } catch(e) { return true; }
@@ -855,14 +859,19 @@ function renderDeck(idx) {
   pathModes.forEach(function(m, i) {
     if (i > 0) html += '<span class="mode-arrow">\u2192</span>';
     var done = isModeDone(idx, pathKeys[i]);
-    var mUnlocked = isModeUnlocked(idx, pathKeys[i]) && (typeof isFeatureUnlocked !== 'function' || isFeatureUnlocked(pathKeys[i]));
-    if (mUnlocked) {
+    var _modeOk = isModeUnlocked(idx, pathKeys[i]);
+    var _featOk = typeof isFeatureUnlocked !== 'function' || isFeatureUnlocked(pathKeys[i]);
+    if (_modeOk && _featOk) {
       html += '<button class="mode-btn mode-btn-path" onclick="' + m.fn + '">';
       if (done) html += '<span class="mode-done">\u2713</span>';
     } else {
-      html += '<button class="mode-btn mode-btn-path mode-btn-locked" data-locked-msg="mode" data-unlock-mode="' + pathKeys[i] + '" aria-disabled="true" tabindex="-1" title="' + t('Complete the previous mode first', '请先完成前一个模式') + '">';
+      var _lockReason = !_featOk ? 'feature' : 'mode';
+      var _lockTitle = _lockReason === 'feature'
+        ? t('Master more words to unlock', '掌握更多词汇解锁')
+        : t('Complete the previous mode first', '请先完成前一个模式');
+      html += '<button class="mode-btn mode-btn-path mode-btn-locked" data-locked-msg="' + _lockReason + '" data-unlock-mode="' + pathKeys[i] + '" aria-disabled="true" tabindex="-1" title="' + _lockTitle + '">';
       html += '<span class="mode-lock">\ud83d\udd12</span>';
-      if (typeof FEATURE_THRESHOLD !== 'undefined') {
+      if (!_featOk && typeof FEATURE_THRESHOLD !== 'undefined') {
         var _pNeed = FEATURE_THRESHOLD[pathKeys[i]] || 0;
         if (_pNeed > 0) {
           var _pGs = typeof getGlobalStats === 'function' ? getGlobalStats() : { mastered: 0 };
@@ -888,14 +897,19 @@ function renderDeck(idx) {
   var extraKeys = ['spell', 'match', 'battle'];
   extraModes.forEach(function(m, i) {
     var done = isModeDone(idx, extraKeys[i]);
-    var mUnlocked = isModeUnlocked(idx, extraKeys[i]) && (typeof isFeatureUnlocked !== 'function' || isFeatureUnlocked(extraKeys[i]));
-    if (mUnlocked) {
+    var _exModeOk = isModeUnlocked(idx, extraKeys[i]);
+    var _exFeatOk = typeof isFeatureUnlocked !== 'function' || isFeatureUnlocked(extraKeys[i]);
+    if (_exModeOk && _exFeatOk) {
       html += '<button class="mode-btn mode-btn-extra" onclick="' + m.fn + '">';
       if (done) html += '<span class="mode-done">\u2713</span>';
     } else {
-      html += '<button class="mode-btn mode-btn-extra mode-btn-locked" data-locked-msg="study" data-unlock-mode="' + extraKeys[i] + '" aria-disabled="true" tabindex="-1" title="' + t('Complete Study mode first', '请先完成学习模式') + '">';
+      var _exReason = !_exFeatOk ? 'feature' : 'study';
+      var _exTitle = _exReason === 'feature'
+        ? t('Master more words to unlock', '掌握更多词汇解锁')
+        : t('Complete Study mode first', '请先完成学习模式');
+      html += '<button class="mode-btn mode-btn-extra mode-btn-locked" data-locked-msg="' + _exReason + '" data-unlock-mode="' + extraKeys[i] + '" aria-disabled="true" tabindex="-1" title="' + _exTitle + '">';
       html += '<span class="mode-lock">\ud83d\udd12</span>';
-      if (typeof FEATURE_THRESHOLD !== 'undefined') {
+      if (!_exFeatOk && typeof FEATURE_THRESHOLD !== 'undefined') {
         var _eNeed = FEATURE_THRESHOLD[extraKeys[i]] || 0;
         if (_eNeed > 0) {
           var _eGs = typeof getGlobalStats === 'function' ? getGlobalStats() : { mastered: 0 };

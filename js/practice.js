@@ -239,6 +239,13 @@ function _diagSummary(answers, questions) {
 /* ═══ START PRACTICE ═══ */
 
 function startPractice(li) {
+  if (typeof isFeatureUnlocked === 'function' && !isFeatureUnlocked('practice')) {
+    var _prNeed = typeof FEATURE_THRESHOLD !== 'undefined' ? FEATURE_THRESHOLD.practice : 10;
+    var _prHave = typeof getGlobalStats === 'function' ? getGlobalStats().mastered : 0;
+    showToast(t('Master ' + _prNeed + '+ words to unlock Practice (' + _prHave + '/' + _prNeed + ')',
+                '掌握' + _prNeed + '+词汇解锁练习题 (' + _prHave + '/' + _prNeed + ')'));
+    return;
+  }
   var lv = LEVELS[li];
   if (!lv) return;
   var board = lv.board;

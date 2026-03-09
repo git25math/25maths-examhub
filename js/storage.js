@@ -605,7 +605,9 @@ function _isFirstSectionLevel(li) {
   for (var bk in BOARD_SYLLABUS) {
     var syl = BOARD_SYLLABUS[bk];
     if (!syl || !syl.chapters || !syl.chapters.length) continue;
-    var firstSec = syl.chapters[0].sections[0];
+    var ch0 = syl.chapters[0];
+    if (!ch0.sections || !ch0.sections.length) continue;
+    var firstSec = ch0.sections[0];
     if (firstSec && typeof getSectionLevelIdx === 'function' && getSectionLevelIdx(firstSec.id, bk) === li) return true;
   }
   return false;
