@@ -367,7 +367,7 @@ function isSuperAdmin() {
 }
 
 /* App version */
-var APP_VERSION = 'v3.6.0';
+var APP_VERSION = 'v3.6.1';
 
 /* Recovery Priority Engine configuration */
 var RECOVERY_EXPLAIN_DEBUG = false;
@@ -397,6 +397,12 @@ var RECOVERY_SCHEDULER_CONFIG = {
   maxPPPerDay: 4,
   skipPenaltyStep: 5,
   maxCarryOverDays: 7
+};
+
+/* Recovery Calendar Lite configuration */
+var RECOVERY_CALENDAR_CONFIG = {
+  recentDays: 7,
+  showEmptyDays: true
 };
 
 /* Mastered decay — refresh intervals (days) by refresh count */

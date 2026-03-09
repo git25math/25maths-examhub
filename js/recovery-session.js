@@ -194,10 +194,15 @@ function _endRecoverySession() {
   try {
     if (typeof finalizeRecoverySchedule === 'function') {
       var completedTypes = {};
+      var doneCount = 0;
       for (var ci = 0; ci < results.length; ci++) {
-        if (results[ci].status === 'done') completedTypes[results[ci].type] = true;
+        if (results[ci].status === 'done') { completedTypes[results[ci].type] = true; doneCount++; }
       }
-      finalizeRecoverySchedule(completedTypes);
+      finalizeRecoverySchedule(completedTypes, {
+        total: results.length,
+        completed: doneCount,
+        durationSec: duration
+      });
     }
   } catch (e) {}
 

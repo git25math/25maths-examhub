@@ -289,7 +289,7 @@ function dailyPlanToSessionQueue(plan) {
  * Called when a recovery session ends.
  * Moves incomplete items to backlog with skippedCount++.
  */
-function finalizeRecoverySchedule(completedTypes) {
+function finalizeRecoverySchedule(completedTypes, meta) {
   if (!_dailyPlanCache) return;
 
   var state = _loadScheduleState();
@@ -326,13 +326,22 @@ function finalizeRecoverySchedule(completedTypes) {
     }
   }
 
-  /* Record in history (lightweight) */
+  /* Record in history (enriched v3.6.1) */
   if (!state.history) state.history = [];
+  var _meta = meta || {};
+  var carryOutCount = 0;
+  for (var co = 0; co < state.backlog.length; co++) {
+    if (state.backlog[co].carryOver) carryOutCount++;
+  }
   state.history.push({
     date: today,
     planned: _dailyPlanCache.total,
     done: Object.keys(done).length,
-    types: Object.keys(done)
+    types: Object.keys(done),
+    total: _meta.total || _dailyPlanCache.total,
+    completed: _meta.completed || Object.keys(done).length,
+    carryOverOut: carryOutCount,
+    durationSec: _meta.durationSec || 0
   });
   /* Keep only last 30 days */
   if (state.history.length > 30) state.history = state.history.slice(-30);
@@ -361,4 +370,50 @@ function getRecoveryBacklogCount() {
 function invalidateRecoveryPlanCache() {
   _dailyPlanCache = null;
   _dailyPlanCacheDate = '';
+}
+
+/* ═══ CARRY-OVER & CALENDAR HELPERS (v3.6.1) ═══ */
+
+/* Split today's plan items into fresh vs carry-over */
+function splitTodayPlanItems(plan) {
+  if (!plan || !plan.items) return { fresh: [], carryOver: [] };
+  var fresh = [], co = [];
+  for (var i = 0; i < plan.items.length; i++) {
+    if (plan.items[i].carryOver) co.push(plan.items[i]);
+    else fresh.push(plan.items[i]);
+  }
+  return { fresh: fresh, carryOver: co };
+}
+
+/* Get recent N days recovery history for calendar lite */
+function getRecentRecoveryHistory(days) {
+  var n = days || 7;
+  var state = _loadScheduleState();
+  var hist = state.history || [];
+
+  /* Build date→entry map */
+  var map = {};
+  for (var i = 0; i < hist.length; i++) {
+    map[hist[i].date] = hist[i];
+  }
+
+  /* Generate last N days */
+  var result = [];
+  var now = new Date();
+  for (var d = n - 1; d >= 0; d--) {
+    var dt = new Date(now);
+    dt.setDate(dt.getDate() - d);
+    var ds = dt.toLocaleDateString('en-CA');
+    var dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    var entry = map[ds];
+    result.push({
+      date: ds,
+      day: dayNames[dt.getDay()],
+      planned: entry ? (entry.planned || 0) : 0,
+      done: entry ? (entry.done || 0) : 0,
+      hasData: !!entry
+    });
+  }
+
+  return result;
 }

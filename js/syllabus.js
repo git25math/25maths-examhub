@@ -2605,7 +2605,17 @@ function renderTodaysPlan() {
         if (_rsPlan.pp > 0) _rsParts2.push(_rsPlan.pp + ' ' + t('questions', '\u9898'));
         html += _rsParts2.join(' + ');
         html += '</div>';
-        if (_rsPlan.carryOverCount > 0) {
+        /* Fresh vs carry-over split (v3.6.1) */
+        if (typeof splitTodayPlanItems === 'function') {
+          var _rsSplit = splitTodayPlanItems(_rsPlan);
+          if (_rsSplit.fresh.length > 0 || _rsSplit.carryOver.length > 0) {
+            html += '<div class="plan-card-split">';
+            if (_rsSplit.fresh.length > 0) html += '<span class="split-fresh">' + _rsSplit.fresh.length + ' ' + t('new', '\u65b0') + '</span>';
+            if (_rsSplit.fresh.length > 0 && _rsSplit.carryOver.length > 0) html += '<span class="split-dot"> \u00b7 </span>';
+            if (_rsSplit.carryOver.length > 0) html += '<span class="split-carry">' + _rsSplit.carryOver.length + ' ' + t('carried over', '\u7ed3\u8f6c') + '</span>';
+            html += '</div>';
+          }
+        } else if (_rsPlan.carryOverCount > 0) {
           html += '<div class="plan-card-carryover">' + _rsPlan.carryOverCount + ' ' + t('carried over', '\u9879\u7ed3\u8f6c\u81ea\u6628\u65e5') + '</div>';
         }
         if (_rsPlan.backlogCount > 0) {
@@ -2615,6 +2625,31 @@ function renderTodaysPlan() {
           html += '<div class="plan-card-reason">' + t('Focus', '\u91cd\u70b9') + ': ' + _rsPlan.reasons.join(' \u00b7 ') + '</div>';
         }
         html += '<button class="btn btn-primary btn-sm" data-action="start-recovery">' + t('Start', '\u5f00\u59cb') + '</button>';
+        /* Recovery Calendar Lite (v3.6.1) */
+        if (typeof getRecentRecoveryHistory === 'function') {
+          var _calCfg = (typeof RECOVERY_CALENDAR_CONFIG !== 'undefined') ? RECOVERY_CALENDAR_CONFIG : {};
+          var _calDays = _calCfg.recentDays || 7;
+          var _calHist = getRecentRecoveryHistory(_calDays);
+          if (_calHist && _calHist.length > 0) {
+            html += '<div class="recovery-calendar-lite">';
+            html += '<div class="recovery-calendar-row">';
+            for (var _ci = 0; _ci < _calHist.length; _ci++) {
+              var _cd = _calHist[_ci];
+              var _dayClass = 'recovery-day';
+              if (!_cd.hasData) _dayClass += ' empty';
+              else if (_cd.done >= _cd.planned && _cd.planned > 0) _dayClass += ' done';
+              else if (_cd.done > 0) _dayClass += ' partial';
+              else _dayClass += ' missed';
+              var _dayTip = _cd.date + ': ' + _cd.done + '/' + _cd.planned;
+              html += '<div class="' + _dayClass + '" title="' + _dayTip + '">';
+              html += '<div class="recovery-day-label">' + _cd.day + '</div>';
+              html += '<div class="recovery-day-dot"></div>';
+              html += '</div>';
+            }
+            html += '</div>';
+            html += '</div>';
+          }
+        }
         html += '</div>';
       }
     }

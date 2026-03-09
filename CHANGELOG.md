@@ -1,5 +1,34 @@
 # Changelog
 
+## [3.6.1] - 2026-03-10 — Carry-over UX + Recovery Calendar Lite
+
+### Carry-over 可视化（js/syllabus.js）
+- Today's Recovery 卡片新增 fresh/carry-over 拆分行："N new · N carried over"
+- `splitTodayPlanItems(plan)` 将计划项分为新鲜 vs 结转两组
+
+### Recovery Calendar Lite（7 天迷你日历）
+- `getRecentRecoveryHistory(days)` 返回最近 N 天复查历史（日期/星期/计划/完成/有数据）
+- Today's Recovery 卡片底部渲染 7 天圆点日历（done=绿 / partial=黄 / missed=红 / empty=灰）
+- CSS：`.recovery-calendar-lite` / `.recovery-day` 4 状态 + 暗色模式
+
+### 历史记录增强（js/recovery-scheduler.js）
+- `finalizeRecoverySchedule(completedTypes, meta)` 接受 meta 参数（total/completed/durationSec）
+- history 条目新增 `total`, `completed`, `carryOverOut`, `durationSec` 字段
+
+### 配置（js/config.js）
+- `RECOVERY_CALENDAR_CONFIG.recentDays` — 日历天数（默认 7）
+- `RECOVERY_CALENDAR_CONFIG.showEmptyDays` — 是否显示无数据日（默认 true）
+- `APP_VERSION` → v3.6.1
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| js/config.js | +RECOVERY_CALENDAR_CONFIG, version bump |
+| js/recovery-scheduler.js | +splitTodayPlanItems, +getRecentRecoveryHistory, finalizeRecoverySchedule enriched |
+| js/recovery-session.js | _endRecoverySession passes meta to finalize |
+| js/syllabus.js | Today's Recovery card: fresh/carry-over split + Calendar Lite |
+| css/style.css | +plan-card-split, +recovery-calendar-lite, +dark mode overrides |
+
 ## [3.6.0] - 2026-03-10 — Adaptive Scheduling
 
 ### Recovery Scheduler（js/recovery-scheduler.js 新增）

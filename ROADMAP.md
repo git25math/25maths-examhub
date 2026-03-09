@@ -469,6 +469,9 @@
 - [x] Today's Plan 升级为 "Today's Recovery"（显示计划量 + 结转 + backlog + 理由）
 - [x] Session 三层降级：scheduler → smart queue → legacy
 - [x] Session 结束/中断时自动 finalize（完成移除，未完成进 backlog）
+- [x] **Carry-over UX (v3.6.1)**: Today's Recovery 卡片 fresh/carry-over 拆分显示
+- [x] **Recovery Calendar Lite (v3.6.1)**: 7 天迷你日历（done/partial/missed/empty 4 态圆点）
+- [x] 历史记录增强（total/completed/carryOverOut/durationSec）
 
 ## v3.5 Smart Recovery Ordering [DONE]
 - [x] **Priority Engine (v3.5.0)**: 4 维评分（错误率+衰退+考试权重+章节健康度）替代固定 vocab→kp→pp 顺序
