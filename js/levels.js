@@ -1,6 +1,6 @@
 /* ==============================================================
    levels.js -- Mathematics Vocabulary
-   CIE 0580 (50 levels) + Edexcel 4MA1 (41 levels) + 25Maths Y7-11 (173 levels)
+   CIE 0580 (55 levels) + Edexcel 4MA1 (47 levels) + 25Maths Y7-11 (173 levels)
    ============================================================== */
 
 var LEVELS = [
@@ -777,8 +777,78 @@ var LEVELS = [
   ]
 },
 
+/* ── CIE Additional Levels ── */
+
+// Using a Calculator (§1.14)
+{
+  board: 'cie', slug: 'num-calculator', category: 'number', title: 'Using a Calculator', titleZh: '计算器使用', timer: 70, comboBonus: 2,
+  vocabulary: [
+    {id:"0",type:"word",content:"Scientific calculator"},{id:"0",type:"def",content:"科学计算器"},
+    {id:"1",type:"word",content:"Display"},{id:"1",type:"def",content:"显示屏"},
+    {id:"2",type:"word",content:"Order of operations"},{id:"2",type:"def",content:"运算顺序"},
+    {id:"3",type:"word",content:"Brackets"},{id:"3",type:"def",content:"括号"},
+    {id:"4",type:"word",content:"Memory key"},{id:"4",type:"def",content:"记忆键"},
+    {id:"5",type:"word",content:"Estimation"},{id:"5",type:"def",content:"估算"}
+  ]
+},
+
+// Exponential Growth & Decay (§1.17)
+{
+  board: 'cie', slug: 'num-growth-decay', category: 'number', title: 'Exponential Growth & Decay', titleZh: '指数增长与衰减', timer: 80, comboBonus: 3,
+  vocabulary: [
+    {id:"0",type:"word",content:"Exponential growth"},{id:"0",type:"def",content:"指数增长"},
+    {id:"1",type:"word",content:"Exponential decay"},{id:"1",type:"def",content:"指数衰减"},
+    {id:"2",type:"word",content:"Growth factor"},{id:"2",type:"def",content:"增长因子"},
+    {id:"3",type:"word",content:"Decay factor"},{id:"3",type:"def",content:"衰减因子"},
+    {id:"4",type:"word",content:"Half-life"},{id:"4",type:"def",content:"半衰期"},
+    {id:"5",type:"word",content:"Compound interest"},{id:"5",type:"def",content:"复利"},
+    {id:"6",type:"word",content:"Depreciation"},{id:"6",type:"def",content:"折旧"}
+  ]
+},
+
+// Surds (§1.18)
+{
+  board: 'cie', slug: 'num-surds', category: 'number', title: 'Surds', titleZh: '根式', timer: 80, comboBonus: 3,
+  vocabulary: [
+    {id:"0",type:"word",content:"Surd"},{id:"0",type:"def",content:"根式（无理根）"},
+    {id:"1",type:"word",content:"Simplify a surd"},{id:"1",type:"def",content:"化简根式"},
+    {id:"2",type:"word",content:"Rationalise the denominator"},{id:"2",type:"def",content:"分母有理化"},
+    {id:"3",type:"word",content:"Conjugate"},{id:"3",type:"def",content:"共轭"},
+    {id:"4",type:"word",content:"Irrational number"},{id:"4",type:"def",content:"无理数"},
+    {id:"5",type:"word",content:"Radical"},{id:"5",type:"def",content:"根号"}
+  ]
+},
+
+// Sketching Curves (§2.11)
+{
+  board: 'cie', slug: 'alg-sketching', category: 'algebra', title: 'Sketching Curves', titleZh: '曲线草图', timer: 80, comboBonus: 3,
+  vocabulary: [
+    {id:"0",type:"word",content:"Sketch"},{id:"0",type:"def",content:"草图"},
+    {id:"1",type:"word",content:"Cubic curve"},{id:"1",type:"def",content:"三次曲线"},
+    {id:"2",type:"word",content:"Reciprocal graph"},{id:"2",type:"def",content:"倒数图像"},
+    {id:"3",type:"word",content:"Exponential curve"},{id:"3",type:"def",content:"指数曲线"},
+    {id:"4",type:"word",content:"Asymptote"},{id:"4",type:"def",content:"渐近线"},
+    {id:"5",type:"word",content:"Turning point"},{id:"5",type:"def",content:"转折点"},
+    {id:"6",type:"word",content:"Intercept"},{id:"6",type:"def",content:"截距"}
+  ]
+},
+
+// Constructions & Loci (§4.8)
+{
+  board: 'cie', slug: 'geom-loci', category: 'geometry', title: 'Constructions & Loci', titleZh: '作图与轨迹', timer: 80, comboBonus: 3,
+  vocabulary: [
+    {id:"0",type:"word",content:"Locus"},{id:"0",type:"def",content:"轨迹"},
+    {id:"1",type:"word",content:"Loci"},{id:"1",type:"def",content:"轨迹（复数）"},
+    {id:"2",type:"word",content:"Perpendicular bisector"},{id:"2",type:"def",content:"垂直平分线"},
+    {id:"3",type:"word",content:"Angle bisector"},{id:"3",type:"def",content:"角平分线"},
+    {id:"4",type:"word",content:"Equidistant"},{id:"4",type:"def",content:"等距的"},
+    {id:"5",type:"word",content:"Arc (construction)"},{id:"5",type:"def",content:"弧（作图用）"},
+    {id:"6",type:"word",content:"Compass"},{id:"6",type:"def",content:"圆规"}
+  ]
+},
+
 /* ═══════════════════════════════════════════════════════════
-   EDEXCEL IGCSE 4MA1 (41 levels)
+   EDEXCEL IGCSE 4MA1 (47 levels)
    ═══════════════════════════════════════════════════════════ */
 
 /* ── Numbers & Number System (8 groups) ── */
@@ -1387,6 +1457,89 @@ var LEVELS = [
     {id:"4",type:"word",content:"Conditional probability"},{id:"4",type:"def",content:"\u6761\u4ef6\u6982\u7387"},
     {id:"5",type:"word",content:"With replacement"},{id:"5",type:"def",content:"\u6709\u653e\u56de"},
     {id:"6",type:"word",content:"Without replacement"},{id:"6",type:"def",content:"\u65e0\u653e\u56de"}
+  ]
+},
+
+/* ── Edexcel Additional Levels ── */
+
+// Standard Form (§1.9)
+{
+  board: 'edx', slug: 'edx-num-standard', category: 'edx-number', title: 'Standard Form', titleZh: '标准式', timer: 70, comboBonus: 2,
+  vocabulary: [
+    {id:"0",type:"word",content:"Standard form"},{id:"0",type:"def",content:"标准式（科学记数法）"},
+    {id:"1",type:"word",content:"Power of 10"},{id:"1",type:"def",content:"10 的幂"},
+    {id:"2",type:"word",content:"Significant figure"},{id:"2",type:"def",content:"有效数字"},
+    {id:"3",type:"word",content:"Order of magnitude"},{id:"3",type:"def",content:"数量级"},
+    {id:"4",type:"word",content:"Ordinary number"},{id:"4",type:"def",content:"普通数"},
+    {id:"5",type:"word",content:"Coefficient"},{id:"5",type:"def",content:"系数"}
+  ]
+},
+
+// Applying Number (§1.10)
+{
+  board: 'edx', slug: 'edx-num-applying', category: 'edx-number', title: 'Applying Number', titleZh: '数的应用', timer: 70, comboBonus: 2,
+  vocabulary: [
+    {id:"0",type:"word",content:"Metric unit"},{id:"0",type:"def",content:"公制单位"},
+    {id:"1",type:"word",content:"Imperial unit"},{id:"1",type:"def",content:"英制单位"},
+    {id:"2",type:"word",content:"Conversion"},{id:"2",type:"def",content:"换算"},
+    {id:"3",type:"word",content:"Exchange rate"},{id:"3",type:"def",content:"汇率"},
+    {id:"4",type:"word",content:"Profit"},{id:"4",type:"def",content:"利润"},
+    {id:"5",type:"word",content:"Loss"},{id:"5",type:"def",content:"亏损"},
+    {id:"6",type:"word",content:"VAT"},{id:"6",type:"def",content:"增值税"}
+  ]
+},
+
+// Electronic Calculators (§1.11)
+{
+  board: 'edx', slug: 'edx-num-calculator', category: 'edx-number', title: 'Electronic Calculators', titleZh: '计算器使用', timer: 70, comboBonus: 2,
+  vocabulary: [
+    {id:"0",type:"word",content:"Reciprocal key"},{id:"0",type:"def",content:"倒数键"},
+    {id:"1",type:"word",content:"Square root key"},{id:"1",type:"def",content:"平方根键"},
+    {id:"2",type:"word",content:"Power key"},{id:"2",type:"def",content:"幂键"},
+    {id:"3",type:"word",content:"Fraction key"},{id:"3",type:"def",content:"分数键"},
+    {id:"4",type:"word",content:"Brackets"},{id:"4",type:"def",content:"括号"},
+    {id:"5",type:"word",content:"Standard form key"},{id:"5",type:"def",content:"标准式键"}
+  ]
+},
+
+// Proportion (§2.5)
+{
+  board: 'edx', slug: 'edx-alg-proportion', category: 'edx-algebra', title: 'Proportion', titleZh: '比例', timer: 70, comboBonus: 2,
+  vocabulary: [
+    {id:"0",type:"word",content:"Direct proportion"},{id:"0",type:"def",content:"正比例"},
+    {id:"1",type:"word",content:"Inverse proportion"},{id:"1",type:"def",content:"反比例"},
+    {id:"2",type:"word",content:"Constant of proportionality"},{id:"2",type:"def",content:"比例常数"},
+    {id:"3",type:"word",content:"Proportional to"},{id:"3",type:"def",content:"与……成比例"},
+    {id:"4",type:"word",content:"Unitary method"},{id:"4",type:"def",content:"单位法"},
+    {id:"5",type:"word",content:"Scale factor"},{id:"5",type:"def",content:"比例因子"}
+  ]
+},
+
+// Measures (§4.4)
+{
+  board: 'edx', slug: 'edx-geo-measures', category: 'edx-geometry', title: 'Measures', titleZh: '测量', timer: 70, comboBonus: 2,
+  vocabulary: [
+    {id:"0",type:"word",content:"Scale"},{id:"0",type:"def",content:"比例尺"},
+    {id:"1",type:"word",content:"Upper bound"},{id:"1",type:"def",content:"上界"},
+    {id:"2",type:"word",content:"Lower bound"},{id:"2",type:"def",content:"下界"},
+    {id:"3",type:"word",content:"Compound measure"},{id:"3",type:"def",content:"复合量"},
+    {id:"4",type:"word",content:"Speed"},{id:"4",type:"def",content:"速度"},
+    {id:"5",type:"word",content:"Density"},{id:"5",type:"def",content:"密度"},
+    {id:"6",type:"word",content:"Pressure"},{id:"6",type:"def",content:"压强"}
+  ]
+},
+
+// Geometrical Reasoning (§4.7)
+{
+  board: 'edx', slug: 'edx-geo-reasoning', category: 'edx-geometry', title: 'Geometrical Reasoning', titleZh: '几何推理', timer: 80, comboBonus: 3,
+  vocabulary: [
+    {id:"0",type:"word",content:"Proof"},{id:"0",type:"def",content:"证明"},
+    {id:"1",type:"word",content:"Vertically opposite angles"},{id:"1",type:"def",content:"对顶角"},
+    {id:"2",type:"word",content:"Alternate angles"},{id:"2",type:"def",content:"内错角"},
+    {id:"3",type:"word",content:"Co-interior angles"},{id:"3",type:"def",content:"同旁内角"},
+    {id:"4",type:"word",content:"Exterior angle of a triangle"},{id:"4",type:"def",content:"三角形外角"},
+    {id:"5",type:"word",content:"Angle sum of a polygon"},{id:"5",type:"def",content:"多边形内角和"},
+    {id:"6",type:"word",content:"Congruent triangles"},{id:"6",type:"def",content:"全等三角形"}
   ]
 },
 

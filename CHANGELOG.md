@@ -1,5 +1,26 @@
 # Changelog
 
+## [2.3.21] - 2026-03-09 — 补建 11 个缺失 vocab levels（201/201 KPs 100% 关联词汇）
+
+### 新增 Vocabulary Levels
+- **CIE +5 levels**：Using a Calculator / Exponential Growth & Decay / Surds / Sketching Curves / Constructions & Loci
+- **Edexcel +6 levels**：Standard Form / Applying Number / Electronic Calculators / Proportion / Measures / Geometrical Reasoning
+- 总词汇量：264 → 275 levels（CIE 55 + Edexcel 47 + HHK 173）
+
+### 数据修复
+- CIE syllabus 5 个 section 补充 vocabSlugs（原为空数组）
+- 11 个 KP vocabLinks 补全（从 0 → 有效 slug）
+- **最终状态：201/201 KPs 100% vocabLinks，0 无效 slug**
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `js/levels.js` | +5 CIE levels + 6 Edexcel levels (275 total) |
+| `data/syllabus-cie.json` | 5 sections 补充 vocabSlugs |
+| `data/knowledge-cie.json` | 5 KPs vocabLinks 补全 |
+| `data/knowledge-edexcel.json` | 6 KPs vocabLinks 补全 |
+| `js/config.js` | v2.3.20 → v2.3.21 |
+
 ## [2.3.20] - 2026-03-09 — vocabLinks 无效 slug 清除
 
 ### 修复
