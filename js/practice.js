@@ -1980,6 +1980,10 @@ function renderPPCard() {
       else if (action === 'toggleVocab') ppToggleVocab();
       else if (action === 'toggleKP') ppToggleKP();
       else if (action === 'toggleMarkBody') ppToggleMarkBody(Number(target.dataset.idx));
+      else if (action === 'recoverVocab') openDeck(Number(target.dataset.levelIdx));
+      else if (action === 'recoverKP') openKnowledgePoint(target.dataset.kpId, target.dataset.board);
+      else if (action === 'recoverQuestion') ppReviewWrongItem(target.dataset.qid, target.dataset.section, target.dataset.board);
+      else if (action === 'recoverSkip') _ppRecoverySkip();
     });
   }
 
@@ -2009,9 +2013,12 @@ function ppRate(level) {
   /* Auto-add to wrong book if needs_work (resolve handled by _ppSetMastery) */
   if (level === 'needs_work') {
     ppAddToWrongBook(q.id, '', '', _ppSession.sectionId || q.s || '', _ppSession.board || '');
+    /* Show Recovery Pack instead of auto-advance */
+    _ppShowRecoveryPack(q);
+    return;
   }
 
-  /* Auto-advance after short delay */
+  /* Auto-advance after short delay (partial / mastered) */
   setTimeout(function() {
     if (_ppSession && _ppSession.current < _ppSession.questions.length - 1) {
       ppNext();
@@ -2019,6 +2026,116 @@ function ppRate(level) {
       renderPPCard(); /* re-render to show updated state */
     }
   }, 300);
+}
+
+/* ═══ RECOVERY PACK ═══ */
+
+var _ppRecoveryAdvancing = false;
+
+function _ppShowRecoveryPack(q) {
+  /* Always start fresh — remove any residual pack from previous question */
+  var old = document.getElementById('pp-recovery-pack');
+  if (old) old.remove();
+
+  var assessWrap = document.querySelector('.pp-self-assess-wrap');
+  if (!assessWrap) { _ppRecoverySkip(); return; }
+
+  var sectionId = _ppSession.sectionId || q.s || '';
+  var board = _ppSession.board || '';
+  var recovery = typeof getRecoveryCandidates === 'function'
+    ? getRecoveryCandidates(q.id, sectionId, board) : null;
+
+  if (!recovery || (recovery.weakVocab.length === 0 && recovery.weakKPs.length === 0 && recovery.siblingQuestions.length === 0)) {
+    _ppRecoverySkip();
+    return;
+  }
+
+  var wrap = document.createElement('div');
+  wrap.id = 'pp-recovery-pack';
+
+  var html = '<div class="recovery-pack">';
+  html += '<div class="recovery-pack-header">';
+  html += '<span class="recovery-pack-icon">\ud83e\ude7a</span> ';
+  html += t('Recovery Pack', '\u4fee\u590d\u5efa\u8bae');
+  html += '</div>';
+  html += '<div class="recovery-pack-why">';
+  html += t('This question was marked needs work. Here are steps to help you improve.',
+            '\u8fd9\u9053\u9898\u88ab\u6807\u8bb0\u4e3a\u201c\u9700\u8981\u52a0\u5f3a\u201d\uff0c\u4ee5\u4e0b\u662f\u7cfb\u7edf\u4e3a\u4f60\u751f\u6210\u7684\u4fee\u590d\u5efa\u8bae\u3002');
+  html += '</div>';
+
+  /* Weak vocabulary */
+  if (recovery.weakVocab.length > 0) {
+    html += '<div class="recovery-pack-section">';
+    html += '<div class="recovery-pack-label">\ud83d\udcd6 ' + t('Review Vocabulary', '\u590d\u4e60\u8bcd\u6c47') + '</div>';
+    for (var vi = 0; vi < recovery.weakVocab.length; vi++) {
+      var v = recovery.weakVocab[vi];
+      var vBadge = v.fs === 'learning' ? '\ud83d\udfe2' : v.fs === 'uncertain' ? '\ud83d\udfe1' : '\u26aa';
+      html += '<button class="recovery-pack-item" data-action="recoverVocab" data-level-idx="' + v.levelIdx + '" data-word="' + escapeHtml(v.word) + '">';
+      html += vBadge + ' <strong>' + escapeHtml(v.word) + '</strong>';
+      html += ' <span class="text-muted-sm">' + escapeHtml(v.def) + '</span>';
+      html += ' <span class="recovery-fs-label">' + t(v.fs, v.fs === 'learning' ? '\u5b66\u4e60\u4e2d' : v.fs === 'uncertain' ? '\u6a21\u7cca' : '\u65b0\u8bcd') + '</span>';
+      html += '</button>';
+    }
+    html += '</div>';
+  }
+
+  /* Weak knowledge points */
+  if (recovery.weakKPs.length > 0) {
+    html += '<div class="recovery-pack-section">';
+    html += '<div class="recovery-pack-label">\ud83e\udde0 ' + t('Review Knowledge', '\u590d\u4e60\u77e5\u8bc6\u70b9') + '</div>';
+    for (var ki = 0; ki < recovery.weakKPs.length; ki++) {
+      var kp = recovery.weakKPs[ki];
+      var kpBadge = kp.fs === 'learning' ? '\ud83d\udfe2' : kp.fs === 'uncertain' ? '\ud83d\udfe1' : '\u26aa';
+      html += '<button class="recovery-pack-item" data-action="recoverKP" data-kp-id="' + kp.id + '" data-board="' + board + '">';
+      html += kpBadge + ' <strong>' + escapeHtml(kp.title) + '</strong>';
+      if (kp.title_zh) html += ' <span class="text-muted-sm">' + escapeHtml(kp.title_zh) + '</span>';
+      html += ' <span class="recovery-fs-label">' + t(kp.fs, kp.fs === 'learning' ? '\u5b66\u4e60\u4e2d' : kp.fs === 'uncertain' ? '\u6a21\u7cca' : '\u65b0') + '</span>';
+      html += '</button>';
+    }
+    html += '</div>';
+  }
+
+  /* Sibling questions */
+  if (recovery.siblingQuestions.length > 0) {
+    html += '<div class="recovery-pack-section">';
+    html += '<div class="recovery-pack-label">\u270f\ufe0f ' + t('Practice Similar', '\u7c7b\u4f3c\u9898\u76ee') + '</div>';
+    for (var si = 0; si < recovery.siblingQuestions.length; si++) {
+      var sq = recovery.siblingQuestions[si];
+      html += '<button class="recovery-pack-item" data-action="recoverQuestion" data-qid="' + sq.id + '" data-section="' + sectionId + '" data-board="' + board + '">';
+      html += '\ud83d\udcdd ' + escapeHtml(sq.src || sq.id) + ' <span class="pp-marks-badge">' + sq.marks + ' mks</span>';
+      html += '</button>';
+    }
+    html += '</div>';
+  }
+
+  /* Action buttons */
+  html += '<div class="recovery-pack-actions">';
+  html += '<button class="btn btn-sm btn-ghost" data-action="recoverSkip">';
+  html += t('Skip \u2192 Next', '\u8df3\u8fc7 \u2192 \u4e0b\u4e00\u9898') + '</button>';
+  html += '</div>';
+  html += '</div>';
+
+  wrap.innerHTML = html;
+  assessWrap.parentNode.insertBefore(wrap, assessWrap.nextSibling);
+  wrap.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function _ppRecoverySkip() {
+  /* Guard against double-click */
+  if (_ppRecoveryAdvancing) return;
+  _ppRecoveryAdvancing = true;
+
+  var pack = document.getElementById('pp-recovery-pack');
+  if (pack) pack.remove();
+
+  setTimeout(function() {
+    _ppRecoveryAdvancing = false;
+    if (_ppSession && _ppSession.current < _ppSession.questions.length - 1) {
+      ppNext();
+    } else {
+      renderPPCard();
+    }
+  }, 200);
 }
 
 function ppPrev() {
@@ -3315,6 +3432,7 @@ function ppShowWrongBook(sectionId, board) {
               if (recovery.weakVocab.length > 0) html += ' \u00b7 ';
               html += '\ud83e\udde0 ' + recovery.weakKPs.map(function(k) { return escapeHtml(k.title); }).join(', ');
             }
+            html += ' <span class="recovery-hint-cta">\u2192 ' + t('view recovery', '\u67e5\u770b\u4fee\u590d\u5efa\u8bae') + '</span>';
             html += '</div>';
           }
         }

@@ -1,5 +1,42 @@
 # Changelog
 
+## [3.2.1] - 2026-03-09 — Recovery Pack 交互式修复建议
+
+### Recovery Pack（practice.js）
+- `ppRate('needs_work')` 不再自动跳转，改为在当前题下方展开 Recovery Pack 卡片
+- `_ppShowRecoveryPack(q)` 渲染三区块：弱词汇（≤5）+ 弱知识点（≤2）+ 类似题目（≤3）
+- 每个 item 可点击跳转：`openDeck` / `openKnowledgePoint` / `ppReviewWrongItem`
+- `_ppRecoverySkip()` Skip 按钮恢复原自动跳转行为，含防双击保护
+- 顶部解释文案：`"这道题被标记为需要加强，系统为你生成了修复建议"`
+- FLM 状态同时显示 emoji 徽标 + 文本标签（learning/uncertain/new）
+- recoverVocab 按钮携带 `data-word` 字段为后续定位到具体词预留
+- 旧 pack 在每次渲染前先 remove，避免连续 needs_work 时 DOM 残留
+- `partial` / `mastered` 评分保持原行为（300ms 自动跳转）
+
+### 错题本列表 hint 优化
+- recovery-hint 末尾新增 `→ view recovery` / `查看修复建议` 引导文本
+- 引导学生进入单题查看完整 Recovery Pack
+
+### 委托事件
+- pastpaper panel delegation 新增 4 个 action：recoverVocab / recoverKP / recoverQuestion / recoverSkip
+
+### CSS
+- `.recovery-pack` 系列样式（header / why / section / label / item / actions）
+- `.recovery-pack-item:focus-visible` 键盘可访问性
+- `.recovery-pack-item strong { word-break: break-word }` 防长词溢出
+- `.recovery-fs-label` FLM 状态文本标签
+- `.recovery-hint-cta` 错题本列表引导文本样式
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| js/practice.js | + ppRate 拦截 + _ppShowRecoveryPack + _ppRecoverySkip + 4 delegation + hint cta |
+| css/style.css | + 14 条 Recovery Pack 样式 |
+| js/config.js | APP_VERSION → v3.2.1 |
+| sw.js | CACHE_VERSION → v3.2.1 (auto-sync) |
+
+---
+
 ## [3.2.0] - 2026-03-09 — Learning Graph 查询层 + Recovery Pack Hook
 
 ### Learning Graph 查询层（js/learning-graph.js 新增）

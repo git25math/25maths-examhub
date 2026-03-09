@@ -457,6 +457,7 @@
 - [x] **PP 题详情 Related KPs (v3.2.0)**: 折叠区显示同 section 知识点 + FLM 状态徽标
 - [x] **错题本 Recovery Hint (v3.2.0)**: getRecoveryCandidates 输出弱词汇/弱知识点提示
 - [x] **KP 详情 Related Questions (v3.2.0)**: ⑤ Related Resources 新增 PP+MCQ 题目统计
+- [x] **Recovery Pack 交互 (v3.2.1)**: ppRate(needs_work) 拦截→展开修复卡片（弱词汇+弱KP+类似题）可点击跳转
 
 ## v2.9 知识点接入 FLM — Learning Unit Phase 1 [DONE]
 - [x] **KP Session-Based FLM**: saveKPResult 重构为 session finalizer，题组提交统一结算 → v2.9.0
