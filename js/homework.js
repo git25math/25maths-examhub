@@ -966,6 +966,7 @@ function _applyHomeworkFeatureOverride(assignments) {
   try { overrides = JSON.parse(localStorage.getItem('wmatch_featureOverride') || '{}'); } catch(e) {}
   var changed = false;
   assignments.forEach(function(hw) {
+    if (!hw || !hw.type) return;
     if (hw.type === 'diagnostic' && !overrides.diagnostic) { overrides.diagnostic = true; changed = true; }
     if (hw.type === 'mock' && !overrides.mock) { overrides.mock = true; changed = true; }
   });

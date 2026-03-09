@@ -851,9 +851,9 @@ function renderDeck(idx) {
   html += '<div class="mode-path-label">' + t('Learning Path', '\u5b66\u4e60\u8def\u5f84') + '</div>';
   html += '<div class="mode-path-row">';
   var pathModes = [
-    { emoji: '\ud83d\udcd6', name: t('Study', '\u5b66\u4e60'), fn: 'startStudy(' + idx + ')' },
-    { emoji: '\u2753', name: t('Quiz', '\u6d4b\u9a8c'), fn: 'startQuiz(' + idx + ')' },
-    { emoji: '\ud83e\udde0', name: t('Review', '\u590d\u4e60'), fn: 'startReview(' + idx + ')' }
+    { emoji: '\ud83d\udcd6', name: t('Study', '\u5b66\u4e60'), mode: 'study' },
+    { emoji: '\u2753', name: t('Quiz', '\u6d4b\u9a8c'), mode: 'quiz' },
+    { emoji: '\ud83e\udde0', name: t('Review', '\u590d\u4e60'), mode: 'review' }
   ];
   var pathKeys = ['study', 'quiz', 'review'];
   pathModes.forEach(function(m, i) {
@@ -862,7 +862,7 @@ function renderDeck(idx) {
     var _modeOk = isModeUnlocked(idx, pathKeys[i]);
     var _featOk = typeof isFeatureUnlocked !== 'function' || isFeatureUnlocked(pathKeys[i]);
     if (_modeOk && _featOk) {
-      html += '<button class="mode-btn mode-btn-path" onclick="' + m.fn + '">';
+      html += '<button class="mode-btn mode-btn-path" data-action="mode" data-mode="' + m.mode + '" data-li="' + idx + '">';
       if (done) html += '<span class="mode-done">\u2713</span>';
     } else {
       var _lockReason = !_featOk ? 'feature' : 'mode';
@@ -890,9 +890,9 @@ function renderDeck(idx) {
   html += '<div class="mode-extra-label">' + t('More Practice', '\u66f4\u591a\u7ec3\u4e60') + '</div>';
   html += '<div class="mode-extra-row">';
   var extraModes = [
-    { emoji: '\u2328\ufe0f', name: t('Spell', '\u62fc\u5199'), fn: 'startSpell(' + idx + ')' },
-    { emoji: '\ud83d\udd17', name: t('Match', '\u914d\u5bf9'), fn: 'startMatch(' + idx + ')' },
-    { emoji: '\u2694\ufe0f', name: t('Battle', '\u5b9e\u6218'), fn: 'startBattle(' + idx + ')' }
+    { emoji: '\u2328\ufe0f', name: t('Spell', '\u62fc\u5199'), mode: 'spell' },
+    { emoji: '\ud83d\udd17', name: t('Match', '\u914d\u5bf9'), mode: 'match' },
+    { emoji: '\u2694\ufe0f', name: t('Battle', '\u5b9e\u6218'), mode: 'battle' }
   ];
   var extraKeys = ['spell', 'match', 'battle'];
   extraModes.forEach(function(m, i) {
@@ -900,7 +900,7 @@ function renderDeck(idx) {
     var _exModeOk = isModeUnlocked(idx, extraKeys[i]);
     var _exFeatOk = typeof isFeatureUnlocked !== 'function' || isFeatureUnlocked(extraKeys[i]);
     if (_exModeOk && _exFeatOk) {
-      html += '<button class="mode-btn mode-btn-extra" onclick="' + m.fn + '">';
+      html += '<button class="mode-btn mode-btn-extra" data-action="mode" data-mode="' + m.mode + '" data-li="' + idx + '">';
       if (done) html += '<span class="mode-done">\u2713</span>';
     } else {
       var _exReason = !_exFeatOk ? 'feature' : 'study';
@@ -1240,18 +1240,31 @@ function startTestOut(li) {
   }
 }
 
-/* Delegate testout clicks in deck panel */
-function _initTestOutDelegation() {
-  if (_testOutDelegated) return;
-  _testOutDelegated = true;
+/* Delegate testout + mode button clicks in deck panel */
+var _deckActionDelegated = false;
+function _initDeckActionDelegation() {
+  if (_deckActionDelegated) return;
+  _deckActionDelegated = true;
+  var modeFns = {
+    study: startStudy, quiz: startQuiz, review: startReview,
+    spell: startSpell, match: startMatch, battle: startBattle
+  };
   document.addEventListener('click', function(e) {
     var btn = e.target.closest('[data-action="testout"]');
-    if (!btn) return;
-    var li = parseInt(btn.getAttribute('data-li'), 10);
-    if (!isNaN(li)) startTestOut(li);
+    if (btn) {
+      var li = parseInt(btn.getAttribute('data-li'), 10);
+      if (!isNaN(li)) startTestOut(li);
+      return;
+    }
+    btn = e.target.closest('[data-action="mode"]');
+    if (btn) {
+      var mode = btn.getAttribute('data-mode');
+      var li2 = parseInt(btn.getAttribute('data-li'), 10);
+      if (modeFns[mode] && !isNaN(li2)) modeFns[mode](li2);
+    }
   });
 }
-_initTestOutDelegation();
+_initDeckActionDelegation();
 
 /* ═══ REFLUX RECOMMENDATION (#15) ═══ */
 function _renderRefluxRec() {

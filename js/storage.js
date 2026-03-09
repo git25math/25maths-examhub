@@ -752,18 +752,12 @@ function checkBadges() {
   var streak = getStreakCount();
   var s = loadS();
 
-  /* Count daily challenges completed */
+  /* Count daily challenges completed (tracked via localStorage counter) */
   var dailyCount = 0;
-  if (s.history) {
-    s.history.forEach(function(h) { if (h.m && h.m.daily) dailyCount++; });
-  }
-  /* Check for perfect quiz (any session with 100%) */
+  try { dailyCount = parseInt(localStorage.getItem('wmatch_daily_count') || '0', 10) || 0; } catch(e) {}
+  /* Check for perfect quiz (tracked via localStorage flag from finishQuiz) */
   var perfectQuiz = false;
-  if (s.history) {
-    s.history.forEach(function(h) {
-      if (h.m && h.m.quiz && h.score === h.total && h.total > 0) perfectQuiz = true;
-    });
-  }
+  try { perfectQuiz = !!localStorage.getItem('wmatch_perfect_quiz'); } catch(e) {}
   /* Count sections cleared (mastered milestone) */
   var sectionsCleared = 0;
   try {

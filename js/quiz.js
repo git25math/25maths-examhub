@@ -22,7 +22,6 @@ function getQuizCache() {
 
 function startQuiz(li, subset) {
   if (typeof isModeUnlocked === 'function' && !isModeUnlocked(li, 'quiz')) { showToast(t('Complete Study mode first', '\u8bf7\u5148\u5b8c\u6210\u5b66\u4e60\u6a21\u5f0f')); return; }
-  if (typeof isFeatureUnlocked === 'function' && !isFeatureUnlocked('quiz')) { showToast(t('Learn more words to unlock', '\u5b66\u4e60\u66f4\u591a\u8bcd\u6c47\u89e3\u9501')); return; }
   var lv = LEVELS[li];
   if (validate(lv, li)) return;
 
@@ -140,7 +139,11 @@ function finishQuiz() {
   if (Q.correct >= 10 && _quizDuration <= 60) {
     try { localStorage.setItem('wmatch_speed_demon', '1'); } catch(e) {}
   }
+  /* Track perfect quiz for badge */
   var total = Q.pairs.length;
+  if (Q.correct === total && total > 0) {
+    try { localStorage.setItem('wmatch_perfect_quiz', '1'); } catch(e) {}
+  }
   var scoreRate = total > 0 ? Q.correct / total : 0;
   var raw = resultScreenHTML(Q.correct, total,
     'startQuiz(' + currentLvl + ')',
@@ -348,6 +351,11 @@ function finishDaily() {
   clearInterval(DC.timer);
   var elapsed = Math.min(60, Math.floor((Date.now() - DC.startTime) / 1000));
   saveDailyResult(DC.score, elapsed);
+  /* Increment daily challenge count for badge */
+  try {
+    var _dc = parseInt(localStorage.getItem('wmatch_daily_count') || '0', 10) || 0;
+    localStorage.setItem('wmatch_daily_count', String(_dc + 1));
+  } catch(e) {}
 
   var data = getDailyData();
   var pct = Math.round(DC.score / DC.words.length * 100);

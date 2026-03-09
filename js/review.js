@@ -201,7 +201,6 @@ function startReviewSession() {
 /* Start review for a specific level */
 function startReview(li) {
   if (typeof isModeUnlocked === 'function' && !isModeUnlocked(li, 'review')) { showToast(t('Complete Study mode first', '请先完成学习模式')); return; }
-  if (typeof isFeatureUnlocked === 'function' && !isFeatureUnlocked('review')) { showToast(t('Learn more words to unlock', '\u5b66\u4e60\u66f4\u591a\u8bcd\u6c47\u89e3\u9501')); return; }
   var lv = LEVELS[li];
   var allP = getPairs(lv.vocabulary);
   var wd = getWordData();
