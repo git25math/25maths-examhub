@@ -9919,6 +9919,176 @@
     "src": "variant"
   },
   {
+    "id": "cv1696",
+    "cat": "algebra",
+    "topic": "Introduction To Algebra",
+    "q": "The formula for the distance traveled by an accelerating object is $S = \\frac{1}{2}(u + v)t$. Make $t$ the subject of the formula.",
+    "o": [
+      "$t = 2S / (u + v)$",
+      "t = S / (u + v) - $\\frac{1}{2}$",
+      "$t = 2S(u + v)$",
+      "t = S / (2(u + v))"
+    ],
+    "a": 0,
+    "e": "Multiply both sides by 2: $2S = (u + v)t$. Then, divide both sides by $(u + v)$ to isolate $t$: $t = 2S / (u + v)$.",
+    "d": 2,
+    "s": "2.2",
+    "src": "variant"
+  },
+  {
+    "id": "cv1697",
+    "cat": "algebra",
+    "topic": "Introduction To Algebra",
+    "q": "The formula for the area of a trapezoid is $A = \\frac{1}{2}(x + y)h$. Make $h$ the subject of the formula.",
+    "o": [
+      "$h = 2A / (x + y)$",
+      "h = A / (x + y) - 0.5",
+      "$h = 2A(x + y)$",
+      "h = A / (2x + 2y)"
+    ],
+    "a": 0,
+    "e": "Multiply both sides by 2: $2A = (x + y)h$. Then, divide both sides by $(x + y)$ to isolate $h$: $h = 2A / (x + y)$.",
+    "d": 2,
+    "s": "2.2",
+    "src": "variant"
+  },
+  {
+    "id": "cv1698",
+    "cat": "algebra",
+    "topic": "Introduction To Algebra",
+    "q": "In coordinate geometry, the area of a specific shape is given by $M = \\frac{1}{2}(p + q)r$. Make $r$ the subject of the formula.",
+    "o": [
+      "$r = 2M / (p + q)$",
+      "r = M / (p + q) - $\\frac{1}{2}$",
+      "$r = 2M(p + q)$",
+      "r = M / (2(p + q))"
+    ],
+    "a": 0,
+    "e": "Multiply both sides by 2: $2M = (p + q)r$. Then, divide both sides by $(p + q)$ to isolate $r$: $r = 2M / (p + q)$.",
+    "d": 2,
+    "s": "2.2",
+    "src": "variant"
+  },
+  {
+    "id": "cv1699",
+    "cat": "algebra",
+    "topic": "Introduction To Algebra",
+    "q": "The sum of terms in a sequence is given by $P = \\frac{1}{2}(a + b)n$. Make $n$ the subject of the formula.",
+    "o": [
+      "$n = 2P / (a + b)$",
+      "n = P / (a + b) - 0.5",
+      "$n = 2P(a + b)$",
+      "n = P / (2a + 2b)"
+    ],
+    "a": 0,
+    "e": "Multiply both sides by 2: $2P = (a + b)n$. Then, divide both sides by $(a + b)$ to isolate $n$: $n = 2P / (a + b)$.",
+    "d": 2,
+    "s": "2.2",
+    "src": "variant"
+  },
+  {
+    "id": "cv1700",
+    "cat": "algebra",
+    "topic": "Introduction To Algebra",
+    "q": "A general formula for a system is $K = \\frac{1}{2}(X + Y)Z$. Make $Z$ the subject of the formula.",
+    "o": [
+      "$Z = 2K / (X + Y)$",
+      "Z = K / (X + Y) - $\\frac{1}{2}$",
+      "$Z = 2K(X + Y)$",
+      "Z = K / (2(X + Y))"
+    ],
+    "a": 0,
+    "e": "Multiply both sides by 2: $2K = (X + Y)Z$. Then, divide both sides by $(X + Y)$ to isolate $Z$: $Z = 2K / (X + Y)$.",
+    "d": 2,
+    "s": "2.2",
+    "src": "variant"
+  },
+  {
+    "id": "cv1701",
+    "cat": "algebra",
+    "topic": "Algebraic Manipulation",
+    "q": "Make 'n' the subject of the formula $y = mx + \\frac{1}{2}nx^2$.",
+    "o": [
+      "n = 2(y - mx) / $x^2$",
+      "n = (y - mx) / (2$x^2$)",
+      "n = 2y - mx / $x^2$",
+      "n = 2(y + mx) / $x^2$"
+    ],
+    "a": 0,
+    "e": "First, subtract 'mx' from both sides: y - mx = $\\frac{1}{2}nx^2$. Then multiply by 2: 2(y - mx) = $nx^2$. Finally, divide by $x^2$ to isolate 'n': n = 2(y - mx) / $x^2$.",
+    "d": 2,
+    "s": "2.2",
+    "src": "variant"
+  },
+  {
+    "id": "cv1702",
+    "cat": "algebra",
+    "topic": "Algebraic Manipulation",
+    "q": "Make 'k' the subject of the formula $W = Fd + \\frac{1}{2}kd^2$.",
+    "o": [
+      "k = 2(W - Fd) / $d^2$",
+      "k = (W - Fd) / (2$d^2$)",
+      "k = 2W - Fd / $d^2$",
+      "k = 2(W + Fd) / $d^2$"
+    ],
+    "a": 0,
+    "e": "First, subtract 'Fd' from both sides: W - Fd = $\\frac{1}{2}kd^2$. Then multiply by 2: 2(W - Fd) = $kd^2$. Finally, divide by $d^2$ to isolate 'k': k = 2(W - Fd) / $d^2$.",
+    "d": 2,
+    "s": "2.2",
+    "src": "variant"
+  },
+  {
+    "id": "cv1703",
+    "cat": "algebra",
+    "topic": "Algebraic Manipulation",
+    "q": "Make 'c' the subject of the formula $H = ab + \\frac{1}{2}cb^2$.",
+    "o": [
+      "c = 2(H - ab) / $b^2$",
+      "c = (H - ab) / (2$b^2$)",
+      "c = 2H - ab / $b^2$",
+      "c = 2(H + ab) / $b^2$"
+    ],
+    "a": 0,
+    "e": "First, subtract 'ab' from both sides: H - ab = $\\frac{1}{2}cb^2$. Then multiply by 2: 2(H - ab) = $cb^2$. Finally, divide by $b^2$ to isolate 'c': c = 2(H - ab) / $b^2$.",
+    "d": 2,
+    "s": "2.2",
+    "src": "variant"
+  },
+  {
+    "id": "cv1704",
+    "cat": "algebra",
+    "topic": "Algebraic Manipulation",
+    "q": "Make 'Z' the subject of the formula $P = XY + \\frac{1}{2}ZY^2$.",
+    "o": [
+      "Z = 2(P - XY) / $Y^2$",
+      "Z = (P - XY) / (2$Y^2$)",
+      "Z = 2P - XY / $Y^2$",
+      "Z = 2(P + XY) / $Y^2$"
+    ],
+    "a": 0,
+    "e": "First, subtract 'XY' from both sides: P - XY = $\\frac{1}{2}ZY^2$. Then multiply by 2: 2(P - XY) = $ZY^2$. Finally, divide by $Y^2$ to isolate 'Z': Z = 2(P - XY) / $Y^2$.",
+    "d": 2,
+    "s": "2.2",
+    "src": "variant"
+  },
+  {
+    "id": "cv1705",
+    "cat": "algebra",
+    "topic": "Algebraic Manipulation",
+    "q": "Make 'r' the subject of the formula $E = pQ + \\frac{1}{2}rQ^2$.",
+    "o": [
+      "r = 2(E - pQ) / $Q^2$",
+      "r = (E - pQ) / (2$Q^2$)",
+      "r = 2E - pQ / $Q^2$",
+      "r = 2(E + pQ) / $Q^2$"
+    ],
+    "a": 0,
+    "e": "First, subtract 'pQ' from both sides: E - pQ = $\\frac{1}{2}rQ^2$. Then multiply by 2: 2(E - pQ) = $rQ^2$. Finally, divide by $Q^2$ to isolate 'r': r = 2(E - pQ) / $Q^2$.",
+    "d": 2,
+    "s": "2.2",
+    "src": "variant"
+  },
+  {
     "id": "c013",
     "cat": "algebra",
     "topic": "Algebraic Manipulation",
@@ -21457,6 +21627,176 @@
     ],
     "a": 0,
     "e": "The principal value is $\\theta = sin⁻¹(0.940) = 70°$. Since sin($\\theta$) is positive, the second solution in the range $0° ≤ \\theta ≤ 180°$ is found using the identity $\\sin(\\theta) = \\sin(180° - \\theta)$, which gives $180° - 70° = 110°$.",
+    "d": 2,
+    "s": "6.4",
+    "src": "variant"
+  },
+  {
+    "id": "cv1696",
+    "cat": "trigonometry",
+    "topic": "Trigonometry",
+    "q": "Solve the equation $\\cos(x) = 0.5$ for an acute angle $x$. Give your answer to one decimal place.",
+    "o": [
+      "60.0°",
+      "30.0°",
+      "45.0°",
+      "1.0°"
+    ],
+    "a": 0,
+    "e": "Use the inverse cosine function: $x = \\cos^{-1}(0.5)$. A calculator gives $x = 60.0°$. This is because $\\cos(60°) = 0.5$ is an exact value.",
+    "d": 2,
+    "s": "6.4",
+    "src": "variant"
+  },
+  {
+    "id": "cv1697",
+    "cat": "trigonometry",
+    "topic": "Trigonometry",
+    "q": "Solve the equation $\\tan(y) = 1$ for an acute angle $y$. Give your answer to one decimal place.",
+    "o": [
+      "30.0°",
+      "60.0°",
+      "45.0°",
+      "90.0°"
+    ],
+    "a": 2,
+    "e": "Use the inverse tangent function: $y = \\tan^{-1}(1)$. A calculator gives $y = 45.0°$. This corresponds to the exact value where the opposite and adjacent sides are equal.",
+    "d": 2,
+    "s": "6.4",
+    "src": "variant"
+  },
+  {
+    "id": "cv1698",
+    "cat": "trigonometry",
+    "topic": "Trigonometry",
+    "q": "Solve the equation $\\sin(A) = 0.707$ for an acute angle $A$. Give your answer to one decimal place.",
+    "o": [
+      "30.0°",
+      "45.0°",
+      "60.0°",
+      "0.7°"
+    ],
+    "a": 1,
+    "e": "Use the inverse sine function: $A = \\sin^{-1}(0.707)$. A calculator gives $A \\approx 45.0°$. This is because $\\frac{1}{\\sqrt{2}} \\approx 0.707$, which is the exact value for $\\sin(45°)$.",
+    "d": 2,
+    "s": "6.4",
+    "src": "variant"
+  },
+  {
+    "id": "cv1699",
+    "cat": "trigonometry",
+    "topic": "Trigonometry",
+    "q": "Solve the equation $\\cos(\\theta) = 0.866$ for an acute angle $\\theta$. Give your answer to one decimal place.",
+    "o": [
+      "30.0°",
+      "60.0°",
+      "0.9°",
+      "45.0°"
+    ],
+    "a": 0,
+    "e": "Use the inverse cosine function: $\\theta = \\cos^{-1}(0.866)$. A calculator gives $\\theta \\approx 30.0°$. This is because $\\frac{\\sqrt{3}}{2} \\approx 0.866$, which is the exact value for $\\cos(30°)$.",
+    "d": 2,
+    "s": "6.4",
+    "src": "variant"
+  },
+  {
+    "id": "cv1700",
+    "cat": "trigonometry",
+    "topic": "Trigonometry",
+    "q": "Solve the equation $\\tan(x) = 1.732$ for an acute angle $x$. Give your answer to one decimal place.",
+    "o": [
+      "30.0°",
+      "45.0°",
+      "1.7°",
+      "60.0°"
+    ],
+    "a": 3,
+    "e": "Use the inverse tangent function: $x = \\tan^{-1}(1.732)$. A calculator gives $x \\approx 60.0°$. This is because $\\sqrt{3} \\approx 1.732$, which is the exact value for $\\tan(60°)$.",
+    "d": 2,
+    "s": "6.4",
+    "src": "variant"
+  },
+  {
+    "id": "cv1701",
+    "cat": "trigonometry",
+    "topic": "Trigonometry",
+    "q": "Solve $\\sin(x) = 0.866$ for $0° \\le x \\le 180°$.",
+    "o": [
+      "60° and 120°",
+      "60° and 300°",
+      "60° only",
+      "30° and 150°"
+    ],
+    "a": 0,
+    "e": "The principal value is $x = \\sin^{-1}(0.866) = 60°$. Since $\\sin(x)$ is positive, the second solution in the range $0° \\le x \\le 180°$ is found using the identity $\\sin(x) = \\sin(180° - x)$, which gives $180° - 60° = 120°$.",
+    "d": 2,
+    "s": "6.4",
+    "src": "variant"
+  },
+  {
+    "id": "cv1702",
+    "cat": "trigonometry",
+    "topic": "Trigonometry",
+    "q": "Solve $\\sin(\\theta) = 0.707$ for $0° \\le \\theta \\le 180°$.",
+    "o": [
+      "45° and 315°",
+      "45° and 135°",
+      "45° only",
+      "60° and 120°"
+    ],
+    "a": 1,
+    "e": "The principal value is $\\theta = \\sin^{-1}(0.707) = 45°$. Since $\\sin(\\theta)$ is positive, the second solution in the range $0° \\le \\theta \\le 180°$ is $180° - 45° = 135°$.",
+    "d": 2,
+    "s": "6.4",
+    "src": "variant"
+  },
+  {
+    "id": "cv1703",
+    "cat": "trigonometry",
+    "topic": "Trigonometry",
+    "q": "Solve $\\sin(A) = 0.25$ for $0° \\le A \\le 180°$. Give answers to one decimal place.",
+    "o": [
+      "14.5° and 194.5°",
+      "14.5° only",
+      "14.5° and 165.5°",
+      "75.5° and 104.5°"
+    ],
+    "a": 2,
+    "e": "The principal value is $A = \\sin^{-1}(0.25) \\approx 14.5°$. The second solution in the range $0° \\le A \\le 180°$ is $180° - 14.5° = 165.5°$.",
+    "d": 2,
+    "s": "6.4",
+    "src": "variant"
+  },
+  {
+    "id": "cv1704",
+    "cat": "trigonometry",
+    "topic": "Trigonometry",
+    "q": "Solve $\\sin(y) = 0.940$ for $0° \\le y \\le 180°$. Give answers to the nearest degree.",
+    "o": [
+      "70° and 110°",
+      "70° and 290°",
+      "70° only",
+      "20° and 160°"
+    ],
+    "a": 0,
+    "e": "The principal value is $y = \\sin^{-1}(0.940) \\approx 70°$. The second solution in the range $0° \\le y \\le 180°$ is $180° - 70° = 110°$.",
+    "d": 2,
+    "s": "6.4",
+    "src": "variant"
+  },
+  {
+    "id": "cv1705",
+    "cat": "trigonometry",
+    "topic": "Trigonometry",
+    "q": "Solve $\\sin(\\phi) = 0.342$ for $0° \\le \\phi \\le 180°$. Give answers to the nearest degree.",
+    "o": [
+      "20° and 340°",
+      "20° only",
+      "70° and 110°",
+      "20° and 160°"
+    ],
+    "a": 3,
+    "e": "The principal value is $\\phi = \\sin^{-1}(0.342) \\approx 20°$. The second solution in the range $0° \\le \\phi \\le 180°$ is $180° - 20° = 160°$.",
     "d": 2,
     "s": "6.4",
     "src": "variant"
