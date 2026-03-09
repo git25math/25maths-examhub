@@ -1,0 +1,211 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 980" font-family="'Segoe UI', 'SF Pro Display', system-ui, sans-serif">
+  <defs>
+    <linearGradient id="gPurple" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6C63FF"/>
+      <stop offset="100%" stop-color="#5248C9"/>
+    </linearGradient>
+    <linearGradient id="gBlue" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#2563EB"/>
+    </linearGradient>
+    <linearGradient id="gGreen" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#22C55E"/>
+      <stop offset="100%" stop-color="#16A34A"/>
+    </linearGradient>
+    <linearGradient id="gAmber" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+    <linearGradient id="gRed" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#EF4444"/>
+      <stop offset="100%" stop-color="#DC2626"/>
+    </linearGradient>
+    <linearGradient id="gTeal" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#14B8A6"/>
+      <stop offset="100%" stop-color="#0D9488"/>
+    </linearGradient>
+    <linearGradient id="gIndigo" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#818CF8"/>
+      <stop offset="100%" stop-color="#6366F1"/>
+    </linearGradient>
+    <linearGradient id="gSlate" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#64748B"/>
+      <stop offset="100%" stop-color="#475569"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="980" fill="#F8F7FF" rx="12"/>
+
+  <!-- Title -->
+  <text x="450" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#1E1B4B">25Maths Learning Engine</text>
+  <text x="450" y="64" text-anchor="middle" font-size="12" fill="#6B7280">Curriculum-Aligned Maths Recovery &amp; Mastery System  |  v3.4.1</text>
+
+  <!-- Layer 1: Curriculum -->
+  <g filter="url(#shadow)">
+    <rect x="60" y="88" width="780" height="72" rx="10" fill="url(#gPurple)"/>
+    <text x="80" y="114" font-size="10" font-weight="700" fill="#fff" opacity="0.7">LAYER 1</text>
+    <text x="80" y="134" font-size="16" font-weight="700" fill="#fff">Curriculum Layer</text>
+    <text x="80" y="150" font-size="11" fill="#fff" opacity="0.85">Exam boards, year groups, chapters, sections</text>
+    <text x="760" y="120" text-anchor="end" font-size="11" fill="#fff" opacity="0.8">CIE 0580 (72 sections)</text>
+    <text x="760" y="136" text-anchor="end" font-size="11" fill="#fff" opacity="0.8">Edexcel 4MA1 (39 sections)</text>
+    <text x="760" y="152" text-anchor="end" font-size="11" fill="#fff" opacity="0.8">Harrow Y7-Y11 (164 levels)</text>
+  </g>
+
+  <!-- Arrow -->
+  <path d="M450 160 L450 176" stroke="#CBD5E1" stroke-width="2" marker-end="url(#arrowGray)"/>
+  <defs><marker id="arrowGray" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#CBD5E1"/></marker></defs>
+
+  <!-- Layer 2: Content -->
+  <g filter="url(#shadow)">
+    <rect x="60" y="178" width="780" height="88" rx="10" fill="#fff" stroke="#E5E7EB" stroke-width="1"/>
+    <text x="80" y="204" font-size="10" font-weight="700" fill="#6C63FF" opacity="0.8">LAYER 2</text>
+    <text x="80" y="224" font-size="16" font-weight="700" fill="#1E1B4B">Content Layer</text>
+    <!-- Content boxes -->
+    <rect x="80" y="236" width="130" height="24" rx="5" fill="#EEF2FF"/>
+    <text x="145" y="252" text-anchor="middle" font-size="10" font-weight="600" fill="#4F46E5">2,200 Vocabulary</text>
+    <rect x="220" y="236" width="130" height="24" rx="5" fill="#EEF2FF"/>
+    <text x="285" y="252" text-anchor="middle" font-size="10" font-weight="600" fill="#4F46E5">111 KPs</text>
+    <rect x="360" y="236" width="130" height="24" rx="5" fill="#EEF2FF"/>
+    <text x="425" y="252" text-anchor="middle" font-size="10" font-weight="600" fill="#4F46E5">3,578 MCQs</text>
+    <rect x="500" y="236" width="160" height="24" rx="5" fill="#EEF2FF"/>
+    <text x="580" y="252" text-anchor="middle" font-size="10" font-weight="600" fill="#4F46E5">5,965 Past Paper Qs</text>
+    <rect x="670" y="236" width="130" height="24" rx="5" fill="#EEF2FF"/>
+    <text x="735" y="252" text-anchor="middle" font-size="10" font-weight="600" fill="#4F46E5">291 Examples</text>
+  </g>
+
+  <!-- Arrow -->
+  <path d="M450 266 L450 282" stroke="#CBD5E1" stroke-width="2" marker-end="url(#arrowGray)"/>
+
+  <!-- Layer 3: Relationship -->
+  <g filter="url(#shadow)">
+    <rect x="60" y="284" width="780" height="72" rx="10" fill="url(#gBlue)"/>
+    <text x="80" y="310" font-size="10" font-weight="700" fill="#fff" opacity="0.7">LAYER 3</text>
+    <text x="80" y="330" font-size="16" font-weight="700" fill="#fff">Relationship Layer — Learning Graph</text>
+    <text x="80" y="346" font-size="11" fill="#fff" opacity="0.85">Vocab &lt;-&gt; Section Code &lt;-&gt; KP &lt;-&gt; Questions  |  6 query functions</text>
+    <text x="760" y="330" text-anchor="end" font-size="11" fill="#fff" opacity="0.8">learning-graph.js</text>
+  </g>
+
+  <!-- Arrow -->
+  <path d="M450 356 L450 372" stroke="#CBD5E1" stroke-width="2" marker-end="url(#arrowGray)"/>
+
+  <!-- Layer 4: State -->
+  <g filter="url(#shadow)">
+    <rect x="60" y="374" width="780" height="88" rx="10" fill="#fff" stroke="#E5E7EB" stroke-width="1"/>
+    <text x="80" y="400" font-size="10" font-weight="700" fill="#22C55E" opacity="0.8">LAYER 4</text>
+    <text x="80" y="420" font-size="16" font-weight="700" fill="#1E1B4B">State Layer — FLM State Machine</text>
+    <!-- FLM states -->
+    <rect x="80" y="432" width="70" height="24" rx="5" fill="#F3F4F6"/>
+    <text x="115" y="448" text-anchor="middle" font-size="10" font-weight="600" fill="#9CA3AF">new</text>
+    <text x="160" y="448" font-size="12" fill="#CBD5E1">-></text>
+    <rect x="175" y="432" width="80" height="24" rx="5" fill="#FEE2E2"/>
+    <text x="215" y="448" text-anchor="middle" font-size="10" font-weight="600" fill="#EF4444">learning</text>
+    <text x="265" y="448" font-size="12" fill="#CBD5E1">-></text>
+    <rect x="280" y="432" width="80" height="24" rx="5" fill="#FEF3C7"/>
+    <text x="320" y="448" text-anchor="middle" font-size="10" font-weight="600" fill="#D97706">uncertain</text>
+    <text x="370" y="448" font-size="12" fill="#CBD5E1">-></text>
+    <rect x="385" y="432" width="80" height="24" rx="5" fill="#DCFCE7"/>
+    <text x="425" y="448" text-anchor="middle" font-size="10" font-weight="600" fill="#16A34A">mastered</text>
+    <text x="475" y="448" font-size="12" fill="#CBD5E1">-></text>
+    <rect x="490" y="432" width="60" height="24" rx="5" fill="#FEF3C7" stroke="#D97706" stroke-width="1" stroke-dasharray="3,2"/>
+    <text x="520" y="448" text-anchor="middle" font-size="10" font-weight="600" fill="#D97706">decay</text>
+    <!-- Right side info -->
+    <text x="760" y="434" text-anchor="end" font-size="10" fill="#6B7280">Refresh: 7 / 14 / 30 days</text>
+    <text x="760" y="450" text-anchor="end" font-size="10" fill="#6B7280">Stale detection + Reflow</text>
+  </g>
+
+  <!-- Arrow -->
+  <path d="M450 462 L450 478" stroke="#CBD5E1" stroke-width="2" marker-end="url(#arrowGray)"/>
+
+  <!-- Layer 5: Planning -->
+  <g filter="url(#shadow)">
+    <rect x="60" y="480" width="780" height="72" rx="10" fill="url(#gAmber)"/>
+    <text x="80" y="506" font-size="10" font-weight="700" fill="#fff" opacity="0.7">LAYER 5</text>
+    <text x="80" y="526" font-size="16" font-weight="700" fill="#fff">Planning Layer</text>
+    <text x="80" y="542" font-size="11" fill="#fff" opacity="0.85">Today's Plan  |  Section Health  |  Weak Groups  |  Smart Path</text>
+    <text x="760" y="526" text-anchor="end" font-size="11" fill="#fff" opacity="0.8">What should I study today?</text>
+  </g>
+
+  <!-- Arrow (special: v3.5 label) -->
+  <path d="M450 552 L450 576" stroke="#CBD5E1" stroke-width="2" marker-end="url(#arrowGray)"/>
+  <rect x="370" y="558" width="160" height="16" rx="4" fill="#EEF2FF" stroke="#818CF8" stroke-width="1"/>
+  <text x="450" y="570" text-anchor="middle" font-size="9" font-weight="700" fill="#6366F1">v3.5 Smart Ordering</text>
+
+  <!-- Layer 6: Execution -->
+  <g filter="url(#shadow)">
+    <rect x="60" y="578" width="780" height="88" rx="10" fill="url(#gTeal)"/>
+    <text x="80" y="604" font-size="10" font-weight="700" fill="#fff" opacity="0.7">LAYER 6</text>
+    <text x="80" y="624" font-size="16" font-weight="700" fill="#fff">Execution Layer — Recovery Session</text>
+    <!-- Session flow -->
+    <rect x="80" y="636" width="110" height="24" rx="5" fill="#fff" fill-opacity="0.2"/>
+    <text x="135" y="652" text-anchor="middle" font-size="10" font-weight="600" fill="#fff">Vocab Scan</text>
+    <text x="200" y="652" font-size="14" fill="#fff" opacity="0.6">></text>
+    <rect x="215" y="636" width="110" height="24" rx="5" fill="#fff" fill-opacity="0.2"/>
+    <text x="270" y="652" text-anchor="middle" font-size="10" font-weight="600" fill="#fff">KP Scan</text>
+    <text x="335" y="652" font-size="14" fill="#fff" opacity="0.6">></text>
+    <rect x="350" y="636" width="110" height="24" rx="5" fill="#fff" fill-opacity="0.2"/>
+    <text x="405" y="652" text-anchor="middle" font-size="10" font-weight="600" fill="#fff">PP Scan</text>
+    <text x="470" y="652" font-size="14" fill="#fff" opacity="0.6">></text>
+    <rect x="485" y="636" width="100" height="24" rx="5" fill="#fff" fill-opacity="0.3"/>
+    <text x="535" y="652" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">Result</text>
+    <text x="595" y="652" font-size="14" fill="#fff" opacity="0.6">></text>
+    <rect x="610" y="636" width="110" height="24" rx="5" fill="#fff" fill-opacity="0.3"/>
+    <text x="665" y="652" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">Next / Exit</text>
+    <text x="760" y="606" text-anchor="end" font-size="11" fill="#fff" opacity="0.8">recovery-session.js</text>
+  </g>
+
+  <!-- Arrow -->
+  <path d="M450 666 L450 682" stroke="#CBD5E1" stroke-width="2" marker-end="url(#arrowGray)"/>
+
+  <!-- Layer 7: Repair -->
+  <g filter="url(#shadow)">
+    <rect x="60" y="684" width="780" height="88" rx="10" fill="url(#gRed)"/>
+    <text x="80" y="710" font-size="10" font-weight="700" fill="#fff" opacity="0.7">LAYER 7</text>
+    <text x="80" y="730" font-size="16" font-weight="700" fill="#fff">Repair Layer</text>
+    <!-- Recovery Pack items -->
+    <rect x="80" y="742" width="150" height="24" rx="5" fill="#fff" fill-opacity="0.2"/>
+    <text x="155" y="758" text-anchor="middle" font-size="10" font-weight="600" fill="#fff">Recovery Pack</text>
+    <rect x="240" y="742" width="150" height="24" rx="5" fill="#fff" fill-opacity="0.2"/>
+    <text x="315" y="758" text-anchor="middle" font-size="10" font-weight="600" fill="#fff">Weak Vocab + KPs</text>
+    <rect x="400" y="742" width="150" height="24" rx="5" fill="#fff" fill-opacity="0.2"/>
+    <text x="475" y="758" text-anchor="middle" font-size="10" font-weight="600" fill="#fff">Similar Questions</text>
+    <rect x="560" y="742" width="170" height="24" rx="5" fill="#fff" fill-opacity="0.2"/>
+    <text x="645" y="758" text-anchor="middle" font-size="10" font-weight="600" fill="#fff">Print Repair Sheet (A4)</text>
+    <text x="760" y="710" text-anchor="end" font-size="11" fill="#fff" opacity="0.8">worksheet.js</text>
+  </g>
+
+  <!-- Arrow -->
+  <path d="M450 772 L450 788" stroke="#CBD5E1" stroke-width="2" marker-end="url(#arrowGray)"/>
+
+  <!-- Layer 8: Feedback -->
+  <g filter="url(#shadow)">
+    <rect x="60" y="790" width="780" height="72" rx="10" fill="url(#gSlate)"/>
+    <text x="80" y="816" font-size="10" font-weight="700" fill="#fff" opacity="0.7">LAYER 8</text>
+    <text x="80" y="836" font-size="16" font-weight="700" fill="#fff">Feedback Loop</text>
+    <text x="80" y="852" font-size="11" fill="#fff" opacity="0.85">Re-attempt -> Mastery Update -> Section Health recalc -> Plan refreshed</text>
+  </g>
+
+  <!-- Feedback loop arrow (back to Layer 4) -->
+  <path d="M840 826 L860 826 L860 420 L840 420" stroke="#818CF8" stroke-width="2" fill="none" stroke-dasharray="6,3" marker-end="url(#arrowPurple)"/>
+  <defs><marker id="arrowPurple" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#818CF8"/></marker></defs>
+  <text x="866" y="630" font-size="9" font-weight="600" fill="#818CF8" transform="rotate(-90, 866, 630)">Feedback Loop</text>
+
+  <!-- Footer: Core Objects -->
+  <rect x="60" y="886" width="780" height="80" rx="10" fill="#F1F0FB" stroke="#E5E7EB" stroke-width="1"/>
+  <text x="450" y="908" text-anchor="middle" font-size="11" font-weight="700" fill="#5248C9">6 CORE OBJECTS</text>
+  <text x="130" y="930" text-anchor="middle" font-size="10" font-weight="600" fill="#1E1B4B">Learning Unit</text>
+  <text x="130" y="944" text-anchor="middle" font-size="9" fill="#6B7280">vocab / kp / question</text>
+  <text x="270" y="930" text-anchor="middle" font-size="10" font-weight="600" fill="#1E1B4B">Learning Graph</text>
+  <text x="270" y="944" text-anchor="middle" font-size="9" fill="#6B7280">cross-dimension links</text>
+  <text x="410" y="930" text-anchor="middle" font-size="10" font-weight="600" fill="#1E1B4B">Recovery Session</text>
+  <text x="410" y="944" text-anchor="middle" font-size="9" fill="#6B7280">chained scan engine</text>
+  <text x="550" y="930" text-anchor="middle" font-size="10" font-weight="600" fill="#1E1B4B">Recovery Pack</text>
+  <text x="550" y="944" text-anchor="middle" font-size="9" fill="#6B7280">contextual repair</text>
+  <text x="690" y="930" text-anchor="middle" font-size="10" font-weight="600" fill="#1E1B4B">Repair Sheet</text>
+  <text x="690" y="944" text-anchor="middle" font-size="9" fill="#6B7280">A4 printable</text>
+  <text x="800" y="930" text-anchor="middle" font-size="10" font-weight="600" fill="#1E1B4B">Section Health</text>
+  <text x="800" y="944" text-anchor="middle" font-size="9" fill="#6B7280">0-100 composite</text>
+</svg>

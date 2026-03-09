@@ -10,6 +10,12 @@
 
 ---
 
+## Architecture Diagram
+
+![25Maths Learning Engine Architecture](architecture-diagram.svg)
+
+---
+
 ## 1. Core Layers
 
 The system is organized into 8 layers, each with a clear responsibility:
@@ -333,42 +339,109 @@ v3.5.0   Smart Recovery Ordering (planned)
 
 ### Current Limitation
 
-Recovery Session uses fixed ordering: `vocab -> kp -> pp`. This doesn't reflect actual urgency.
+Recovery Session uses fixed ordering: `vocab -> kp -> pp`. A student with 3 critically overdue PP questions and 15 mildly stale vocabulary words still starts with all 15 vocab words before touching the urgent questions.
 
 ### Target
 
-Replace fixed ordering with priority-scored items. The session becomes:
+Replace fixed ordering with priority-scored items. The session becomes an intelligent bridge between the Planning Layer and the Execution Layer.
+
+### Recovery Priority Model
+
+#### 6.1 Data Collection
+
+`buildRecoverySession()` collects ALL stale items into a unified pool:
 
 ```
 buildRecoverySession()
   |
-  +-- Collect ALL stale items (vocab + kp + pp)
-  +-- Score each: priority = error_weight + decay_weight + exam_weight
+  +-- getStaleWords()         -> [{type:'vocab', id, key, ...stateFields}]
+  +-- getStaleKPs(board)      -> [{type:'kp',    id, ...stateFields}]
+  +-- getStalePPQuestions()    -> [{type:'pp',    qid, ...stateFields}]
+  |
+  +-- Normalize into unified items with common fields:
+  |     { type, id, daysSinceReview, expectedInterval,
+  |       recentErrors, failCount, sectionId, rc }
+  |
+  +-- Score each item
   +-- Sort by priority DESC
-  +-- Group into batches by type (for UX coherence)
+  +-- Group into type-coherent batches
 ```
 
-### Draft Scoring Formula
+#### 6.2 Scoring Formula
+
+```
+Priority Score = Error Weight + Decay Weight + Exam Weight + Health Penalty
+                 (0-45)         (0-35)         (0-20)        (0-15)
+                                                              max = 115
+```
+
+**Error Weight** (0-45): Recent failure frequency. Items the student keeps getting wrong are most urgent.
 
 ```javascript
-function recoveryPriority(item) {
-  var errorW = 0, decayW = 0, examW = 0;
-
-  // Error weight: higher if recently failed
-  if (item.recentErrors > 0) errorW = Math.min(item.recentErrors * 15, 45);
-
-  // Decay weight: days overdue beyond refresh interval
-  var overdue = item.daysSinceReview - item.expectedInterval;
-  if (overdue > 0) decayW = Math.min(overdue * 3, 35);
-
-  // Exam weight: based on section exam frequency
-  examW = (item.examFrequency || 0.5) * 20;
-
-  return errorW + decayW + examW;
-}
+// recentErrors = errors in last 14 days (from fail count delta)
+errorW = Math.min(recentErrors * 15, 45);
 ```
 
-This transforms Recovery Session from a **task runner** into a **learning engine**. It sits between the Planning Layer and the Execution Layer as the intelligent bridge.
+**Decay Weight** (0-35): How far past the expected refresh interval. More overdue = more urgent.
+
+```javascript
+// overdue = daysSinceReview - REFRESH_INTERVALS[rc]
+overdueDays = Math.max(0, daysSinceReview - expectedInterval);
+decayW = Math.min(overdueDays * 3, 35);
+```
+
+**Exam Weight** (0-20): Syllabus importance. Frequently-examined sections get priority.
+
+```javascript
+// examFrequency = question count in section / total questions (0-1 normalized)
+examW = (examFrequency || 0.5) * 20;
+```
+
+**Health Penalty** (0-15): Items from unhealthy sections get a boost.
+
+```javascript
+// sectionHealth = getSectionHealth(sectionId), 0-100
+healthPenalty = Math.max(0, 15 - Math.floor(sectionHealth / 7));
+```
+
+#### 6.3 Grouping Strategy
+
+Pure priority sorting would create jarring type switches (vocab -> pp -> vocab -> kp). Instead, after scoring:
+
+1. Sort all items by priority DESC
+2. Split into type buckets, preserving relative priority order within each bucket
+3. Determine batch order by highest-priority item in each bucket
+4. Present as type-coherent batches: e.g. `[PP batch] -> [Vocab batch] -> [KP batch]`
+
+```
+Example:
+  PP-Q42   score 95    \
+  PP-Q17   score 82     }  PP batch (first: highest item)
+  PP-Q31   score 71    /
+  Vocab-A  score 88    \
+  Vocab-D  score 61     }  Vocab batch (second)
+  Vocab-F  score 44    /
+  KP-C     score 74    }  KP batch (third)
+```
+
+The step bar then shows: `Past Papers > Vocabulary > Knowledge Points`
+
+#### 6.4 Implementation Plan
+
+| Change | File | Description |
+|--------|------|-------------|
+| `_scoreRecoveryItem(item)` | recovery-session.js | Compute priority score |
+| `_normalizeStaleItems()` | recovery-session.js | Unified item format from 3 sources |
+| `_groupByType(scored)` | recovery-session.js | Type-coherent batch grouping |
+| Modify `buildRecoverySession()` | recovery-session.js | Use scored + grouped queue |
+| Add `recentErrors` field | storage.js | Track error count in 14-day window |
+| Add `examFrequency` lookup | syllabus.js or practice.js | Section question count ratio |
+
+#### 6.5 Fallback
+
+If scoring data is incomplete (e.g. no exam frequency data for HHK board), fall back to the current fixed ordering. The system should degrade gracefully.
+
+This transforms Recovery Session from a **task runner** into a **learning engine**.
 
 ---
 
