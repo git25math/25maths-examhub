@@ -875,6 +875,7 @@ input { font-family: inherit; }
   text-decoration: none;
 }
 .btn-link:hover { text-decoration: underline; }
+[data-theme="dark"] .btn-link { color: #8b83ff; }
 
 /* Test Out link */
 .testout-link { text-align: center; margin: 8px 0; }

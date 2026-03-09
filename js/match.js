@@ -189,7 +189,7 @@ function studyWrongMatch() {
   var matchPanel = document.getElementById('panel-match');
   if (matchPanel) {
     matchPanel.addEventListener('click', function(e) {
-      var btn = e.target.closest('.match-card');
+      var btn = e.target.closest('.match-item');
       if (btn) pickMatch(btn);
     });
   }
