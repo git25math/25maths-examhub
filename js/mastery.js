@@ -1164,7 +1164,8 @@ function startTestOut(li) {
     if (_toIdx >= _toTotal) {
       /* Results */
       var passed = _toCorrect >= Math.ceil(_toTotal * 0.875); /* ≥7/8 */
-      var html = '<div class="testout-result">';
+      var html = '<div class="section-title">' + t('Test Out', '跳级测试') + '</div>';
+      html += '<div class="testout-result">';
       html += '<div class="testout-score">' + _toCorrect + ' / ' + _toTotal + '</div>';
       if (passed) {
         markModeDone(li, 'study');
@@ -1173,43 +1174,56 @@ function startTestOut(li) {
       } else {
         html += '<div class="testout-msg">' + t('Keep studying! You need 7/' + _toTotal + ' to pass.', '继续加油！需要答对 7/' + _toTotal + ' 题。') + '</div>';
       }
-      html += '<button class="btn btn-primary" onclick="openDeck(' + li + ')">' + t('Back', '返回') + '</button>';
+      html += '<button class="btn btn-primary" data-action="to-back" data-li="' + li + '">' + t('Back', '返回') + '</button>';
       html += '</div>';
-      showModal(t('Test Out', '跳级测试'), html);
+      showModal(html);
       return;
     }
     var p = pool[_toIdx];
     var correctAnswer = p.def;
     var distractors = shuffle(cache.defs.filter(function(x) { return x !== correctAnswer; })).slice(0, 3);
     var options = shuffle([correctAnswer].concat(distractors));
-    var html = '<div class="testout-progress">' + (_toIdx + 1) + ' / ' + _toTotal + '</div>';
+    var html = '<div class="section-title">' + t('Test Out', '跳级测试') + ' — ' + escapeHtml(lvTitle(lv)) + '</div>';
+    html += '<div class="testout-progress">' + (_toIdx + 1) + ' / ' + _toTotal + '</div>';
     html += '<div class="quiz-word" style="margin:12px 0;font-size:20px">' + escapeHtml(p.word) + '</div>';
     html += '<div class="quiz-options" id="to-options">';
     options.forEach(function(opt, i) {
       html += '<button class="quiz-opt" data-idx="' + i + '" data-correct="' + (opt === correctAnswer ? '1' : '0') + '">' + escapeHtml(opt) + '</button>';
     });
     html += '</div>';
-    showModal(t('Test Out', '跳级测试') + ' — ' + escapeHtml(lvTitle(lv)), html);
-
-    /* Delegate clicks inside modal */
-    var optWrap = document.getElementById('to-options');
-    if (optWrap) {
-      optWrap.addEventListener('click', function handler(ev) {
-        var btn = ev.target.closest('.quiz-opt');
-        if (!btn || btn.classList.contains('chosen')) return;
-        optWrap.querySelectorAll('.quiz-opt').forEach(function(b) { b.classList.add('chosen'); });
-        if (btn.getAttribute('data-correct') === '1') {
-          btn.classList.add('correct');
-          _toCorrect++;
-        } else {
-          btn.classList.add('wrong');
-          optWrap.querySelector('[data-correct="1"]').classList.add('correct');
-        }
-        setTimeout(function() { _toIdx++; _renderTOCard(); }, 800);
-      });
-    }
+    showModal(html);
   }
   _renderTOCard();
+
+  /* Modal-level delegation for quiz option clicks + back button */
+  var modalCard = E('modal-card');
+  if (modalCard) {
+    if (modalCard._toHandler) modalCard.removeEventListener('click', modalCard._toHandler);
+    modalCard._toHandler = function(ev) {
+      /* Back button */
+      var backBtn = ev.target.closest('[data-action="to-back"]');
+      if (backBtn) {
+        var bLi = parseInt(backBtn.getAttribute('data-li'), 10);
+        hideModal();
+        if (!isNaN(bLi)) openDeck(bLi);
+        return;
+      }
+      /* Quiz option */
+      var btn = ev.target.closest('.quiz-opt');
+      if (!btn || btn.classList.contains('chosen')) return;
+      var wrap = btn.parentNode;
+      wrap.querySelectorAll('.quiz-opt').forEach(function(b) { b.classList.add('chosen'); });
+      if (btn.getAttribute('data-correct') === '1') {
+        btn.classList.add('correct');
+        _toCorrect++;
+      } else {
+        btn.classList.add('wrong');
+        wrap.querySelector('[data-correct="1"]').classList.add('correct');
+      }
+      setTimeout(function() { _toIdx++; _renderTOCard(); }, 800);
+    };
+    modalCard.addEventListener('click', modalCard._toHandler);
+  }
 }
 
 /* Delegate testout clicks in deck panel */
@@ -1233,7 +1247,6 @@ function _renderRefluxRec() {
     spell: { emoji: '\u2328\ufe0f', en: 'Spell', zh: '拼写' },
     match: { emoji: '\ud83d\udd17', en: 'Match', zh: '配对' }
   };
-  var modeFns = { battle: 'startBattle', spell: 'startSpell', match: 'startMatch' };
   var recs = [];
   for (var i = 0; i < LEVELS.length && recs.length < 20; i++) {
     if (!isModeDone(i, 'study')) continue;
@@ -1250,7 +1263,23 @@ function _renderRefluxRec() {
   return '<div class="reflux-rec">' +
     '<span class="reflux-icon">\ud83d\udca1</span>' +
     '<span class="reflux-text">' + t('Try something new:', '试试新模式：') + '</span>' +
-    '<button class="btn btn-ghost btn-sm" onclick="' + modeFns[rec.mode] + '(' + rec.li + ')">' +
+    '<button class="btn btn-ghost btn-sm" data-action="reflux" data-mode="' + rec.mode + '" data-li="' + rec.li + '">' +
     info.emoji + ' ' + t(info.en, info.zh) + ' — ' + escapeHtml(rec.title) + '</button>' +
     '</div>';
 }
+
+/* Reflux click delegation */
+var _refluxDelegated = false;
+function _initRefluxDelegation() {
+  if (_refluxDelegated) return;
+  _refluxDelegated = true;
+  var fns = { battle: startBattle, spell: startSpell, match: startMatch };
+  document.addEventListener('click', function(e) {
+    var btn = e.target.closest('[data-action="reflux"]');
+    if (!btn) return;
+    var mode = btn.getAttribute('data-mode');
+    var li = parseInt(btn.getAttribute('data-li'), 10);
+    if (fns[mode] && !isNaN(li)) fns[mode](li);
+  });
+}
+_initRefluxDelegation();
