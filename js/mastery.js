@@ -7,6 +7,14 @@ var _deckSelectMode = false;
 var _deckHideMastered = false;
 var _deckSelectedWords = {};
 var _deckSelectCount = 0;
+var _deckFLMFilter = null; /* null='all', 'new', 'learning', 'uncertain', 'mastered' */
+
+function _setFLMFilter(key, idx) {
+  _deckFLMFilter = key === 'all' ? null : key;
+  /* When FLM filter is set, disable old hideMastered */
+  if (_deckFLMFilter) _deckHideMastered = false;
+  renderDeck(idx);
+}
 
 /* Restore hideMastered preference */
 (function() {
@@ -18,20 +26,18 @@ var _deckSelectCount = 0;
 
 /* ═══ MASTERY CALCULATIONS ═══ */
 
-/* Dual-metric global stats (Spec v1.0 §7) */
+/* FLM global stats */
 function getGlobalStats() {
   var all = getAllWords();
   if (all.length === 0) return { total: 0, mastered: 0, learningPct: 0, masteryPct: 0 };
-  var totalStars = 0, mastered = 0;
-  all.forEach(function(w) {
-    totalStars += w.stars || 0;
-    if ((w.stars || 0) === 4) mastered++;
-  });
+  var mastered = 0;
+  all.forEach(function(w) { if (w.fs === 'mastered') mastered++; });
+  var masteryPct = Math.round(mastered / all.length * 100);
   return {
     total: all.length,
     mastered: mastered,
-    learningPct: Math.round(totalStars / (all.length * 4) * 100),
-    masteryPct: Math.round(mastered / all.length * 100)
+    learningPct: masteryPct,
+    masteryPct: masteryPct
   };
 }
 
@@ -57,29 +63,33 @@ function getNextRank() {
   return null;
 }
 
-/* ═══ DECK STATS (dual metrics, Spec v1.0 §6) ═══ */
+/* ═══ DECK STATS (FLM) ═══ */
 function getDeckStats(li, _wd) {
   var lv = LEVELS[li];
   var pairs = getPairs(lv.vocabulary);
   var wd = _wd || getWordData();
-  var totalStars = 0, mastered = 0, started = 0;
+  var mastered = 0, started = 0, newCount = 0, uncertainCount = 0, learningCount = 0;
   pairs.forEach(function(p) {
     var key = wordKey(li, p.lid);
     var d = wd[key];
-    var s = d ? (d.stars != null ? d.stars : computeStars(d.ok || 0, d.fail || 0)) : 0;
-    totalStars += s;
-    if (s === 4) mastered++;
-    if (d && (d.ok || 0) >= 1) started++;
+    var fs = d ? (d.fs || 'new') : 'new';
+    if (fs === 'mastered') mastered++;
+    else if (fs === 'uncertain') uncertainCount++;
+    else if (fs === 'learning') learningCount++;
+    else newCount++;
+    if (d && ((d.ok || 0) >= 1 || fs !== 'new')) started++;
   });
-  var learningPct = pairs.length > 0 ? Math.round(totalStars / (pairs.length * 4) * 100) : 0;
   var masteryPct = pairs.length > 0 ? Math.round(mastered / pairs.length * 100) : 0;
   return {
     total: pairs.length,
     started: started,
     mastered: mastered,
-    learningPct: learningPct,
+    newCount: newCount,
+    uncertainCount: uncertainCount,
+    learningCount: learningCount,
+    learningPct: masteryPct,
     masteryPct: masteryPct,
-    pct: learningPct  /* backward-compatible alias */
+    pct: masteryPct  /* backward-compatible alias */
   };
 }
 
@@ -203,12 +213,9 @@ function _getNextAction(dueCount) {
     if (inProgress && nextNew) break;
   }
 
-  /* Priority: 1. In-progress section → 2. Due review (>=5) → 3. Daily challenge → 4. Next new section */
+  /* Priority: 1. In-progress section → 2. Daily challenge → 3. Next new section */
   if (inProgress) {
     return { type: 'continue', section: inProgress.section, board: inProgress.board, label: inProgress.section.id + ' ' + inProgress.section.title, labelZh: inProgress.section.title_zh };
-  }
-  if (due >= 5) {
-    return { type: 'review', count: due };
   }
   if (!dcData) {
     return { type: 'daily' };
@@ -323,8 +330,7 @@ function _renderHeroAction() {
   var gs = getGlobalStats();
   var streakN = getStreakCount();
   var homeRank = getRank();
-  var dueCount = getDueWords().length;  /* cached — used 3 places */
-  var action = _getNextAction(dueCount);
+  var action = _getNextAction(0);
   var dcData = getDailyData();
   var wg = typeof getWeeklyGoal === 'function' ? getWeeklyGoal() : null;
 
@@ -360,11 +366,6 @@ function _renderHeroAction() {
     if (appLang !== 'en' && action.labelZh) html += '<div class="hero-section-zh">' + escapeHtml(action.labelZh) + '</div>';
     html += '<button class="btn btn-primary hero-btn" data-hero-action="continue" data-hero-sec="' + action.section.id + '" data-hero-board="' + action.board + '">';
     html += t('Continue Learning', '\u7ee7\u7eed\u5b66\u4e60') + ' \u2192</button>';
-  } else if (action.type === 'review') {
-    html += '<div class="hero-label">' + t('Time to review', '\u8be5\u590d\u4e60\u4e86') + '</div>';
-    html += '<div class="hero-section">' + t(action.count + ' words need a quick refresh', '\u6709 ' + action.count + ' \u4e2a\u8bcd\u9700\u8981\u590d\u4e60') + '</div>';
-    html += '<button class="btn btn-primary hero-btn" data-hero-action="review">';
-    html += t('Start Review', '\u5f00\u59cb\u590d\u4e60') + ' \u2192</button>';
   } else if (action.type === 'daily') {
     html += '<div class="hero-label">' + t('Daily Challenge', '\u6bcf\u65e5\u6311\u6218') + '</div>';
     html += '<div class="hero-section">' + t('10 words \u00b7 60 seconds \u00b7 test your speed!', '10 \u4e2a\u8bcd \u00b7 60 \u79d2 \u00b7 \u6d4b\u8bd5\u4f60\u7684\u901f\u5ea6\uff01') + '</div>';
@@ -382,25 +383,12 @@ function _renderHeroAction() {
   }
   html += '</div>';
 
-  /* Review reminder — gentle nudge when overdue */
-  if (action.type !== 'review' && dueCount >= 5) {
-    var lastReviewAt = 0;
-    try { lastReviewAt = parseInt(localStorage.getItem('wmatch_last_review') || '0'); } catch(e) {}
-    var daysSinceReview = lastReviewAt > 0 ? (Date.now() - lastReviewAt) / 86400000 : 999;
-    if (daysSinceReview >= 2) {
-      html += '<div class="hero-reminder" data-hero-action="review">\ud83d\udca1 ' + t(dueCount + ' words waiting for a quick refresh \u2014 just 2 min!', '\u6709 ' + dueCount + ' \u4e2a\u8bcd\u7b49\u4f60\u590d\u4e60\u2014\u2014\u53ea\u9700 2 \u5206\u949f\uff01') + '</div>';
-    }
-  }
-
   /* Secondary actions */
   html += '<div class="hero-alt">';
   if (action.type !== 'daily') {
     html += '<button class="hero-alt-btn" data-hero-action="daily">\u26a1 ' + t('Daily Challenge', '\u6bcf\u65e5\u6311\u6218');
     if (dcData) html += ' (' + dcData.score + '/10)';
     html += '</button>';
-  }
-  if (action.type !== 'review' && dueCount > 0) {
-    html += '<button class="hero-alt-btn" data-hero-action="review">\ud83e\udde0 ' + t('Review', '\u590d\u4e60') + ' (' + dueCount + ')</button>';
   }
   html += '</div>';
 
@@ -419,8 +407,6 @@ function _initHeroDelegation() {
     var act = el.dataset.heroAction;
     if (act === 'continue' || act === 'start') {
       openSection(el.dataset.heroSec, el.dataset.heroBoard);
-    } else if (act === 'review') {
-      navTo('review-dash');
     } else if (act === 'daily') {
       startDaily();
     } else if (act === 'rank') {
@@ -851,11 +837,10 @@ function renderDeck(idx) {
   html += '<div class="mode-path-label">' + t('Learning Path', '\u5b66\u4e60\u8def\u5f84') + '</div>';
   html += '<div class="mode-path-row">';
   var pathModes = [
-    { emoji: '\ud83d\udcd6', name: t('Study', '\u5b66\u4e60'), mode: 'study' },
-    { emoji: '\u2753', name: t('Quiz', '\u6d4b\u9a8c'), mode: 'quiz' },
-    { emoji: '\ud83e\udde0', name: t('Review', '\u590d\u4e60'), mode: 'review' }
+    { emoji: '\ud83d\udcd6', name: t('Scan', '\u626b\u63cf'), mode: 'study' },
+    { emoji: '\u2753', name: t('Quiz', '\u6d4b\u9a8c'), mode: 'quiz' }
   ];
-  var pathKeys = ['study', 'quiz', 'review'];
+  var pathKeys = ['study', 'quiz'];
   pathModes.forEach(function(m, i) {
     if (i > 0) html += '<span class="mode-arrow">\u2192</span>';
     var done = isModeDone(idx, pathKeys[i]);
@@ -895,6 +880,41 @@ function renderDeck(idx) {
   });
   html += '</div>';
 
+  /* FLM deck stats bar */
+  var _ds = getDeckStats(idx);
+  var _poolCount = _ds.learningCount + _ds.uncertainCount;
+  var _chRound = typeof getChapterRound === 'function' ? getChapterRound(lv.slug || idx, lv.board || '') : { round: 0 };
+  html += '<div class="pool-bar-wrap" style="margin:0 0 12px">';
+  html += '<div class="pool-bar">';
+  var _newPct = _ds.total > 0 ? Math.round(_ds.newCount / _ds.total * 100) : 0;
+  var _poolPct = _ds.total > 0 ? Math.round(_poolCount / _ds.total * 100) : 0;
+  var _mastPct = _ds.total > 0 ? Math.round(_ds.mastered / _ds.total * 100) : 0;
+  html += '<div class="pool-bar-mastered" style="width:' + _mastPct + '%"></div>';
+  html += '<div class="pool-bar-pool" style="width:' + _poolPct + '%"></div>';
+  html += '</div>';
+  html += '<div style="font-size:12px;color:var(--c-text2);margin-top:6px;display:flex;justify-content:space-between">';
+  html += '<span>' + t('Mastered', '\u5df2\u638c\u63e1') + ' ' + _ds.mastered + ' / ' + _ds.total + '</span>';
+  html += '<span>' + t('Pool', '\u5b66\u4e60\u6c60') + ': ' + _poolCount + ' ' + t('words', '\u8bcd') + '</span>';
+  html += '</div></div>';
+
+  /* Filter bar — status chips */
+  html += '<div class="deck-filter-bar">';
+  html += '<div class="flm-filter-chips" id="flm-filter-chips">';
+  var _flmFilters = [
+    { key: 'all', label: t('All', '\u5168\u90e8'), count: _ds.total },
+    { key: 'new', label: t('New', '\u672a\u5b66'), count: _ds.newCount },
+    { key: 'learning', label: t('Learning', '\u5b66\u4e60\u4e2d'), count: _ds.learningCount },
+    { key: 'uncertain', label: t('Uncertain', '\u6a21\u7cca'), count: _ds.uncertainCount },
+    { key: 'mastered', label: t('Mastered', '\u5df2\u638c\u63e1'), count: _ds.mastered }
+  ];
+  _flmFilters.forEach(function(f) {
+    var isActive = (!_deckFLMFilter && f.key === 'all') || _deckFLMFilter === f.key;
+    html += '<button class="flm-chip' + (isActive ? ' active' : '') + '" onclick="_setFLMFilter(\'' + f.key + '\',' + idx + ')">';
+    html += f.label + ' <span class="flm-chip-count">' + f.count + '</span></button>';
+  });
+  html += '</div>';
+  html += '</div>';
+
   /* Filter bar */
   html += '<div class="deck-filter-bar">';
   html += '<button class="sort-btn' + (_deckSelectMode ? ' active' : '') + '" onclick="toggleDeckSelect(' + idx + ')">';
@@ -913,14 +933,18 @@ function renderDeck(idx) {
   sorted.forEach(function(p) {
     var key = wordKey(idx, p.lid);
     var d = wd[key];
-    var lvNum = d ? (d.lv || 0) : 0;
     var ok = d ? (d.ok || 0) : 0;
     var fail = d ? (d.fail || 0) : 0;
-    var wStars = d ? (d.stars != null ? d.stars : computeStars(ok, fail)) : 0;
-    var lvColor = SRS_COLORS[lvNum] || SRS_COLORS[0];
+    var fs = d ? (d.fs || 'new') : 'new';
+    var flmColor = FLM_COLORS[fs] || FLM_COLORS['new'];
+    var flmLabel = appLang === 'en' ? FLM_LABELS[fs] : FLM_LABELS_ZH[fs];
+    var wSrc = d ? (d.src || '') : '';
+    var wFr = d ? (d.fr || 0) : 0;
 
-    /* Hide mastered filter */
-    if (_deckHideMastered && wStars === 4) return;
+    /* FLM filter */
+    if (_deckFLMFilter && fs !== _deckFLMFilter) return;
+    /* Legacy hide mastered */
+    if (_deckHideMastered && fs === 'mastered') return;
     visibleCount++;
 
     var isSelected = _deckSelectMode && _deckSelectedWords[p.lid];
@@ -930,7 +954,6 @@ function renderDeck(idx) {
     }
     html += '>';
 
-    /* Checkbox column */
     if (_deckSelectMode) {
       html += '<span class="word-check">' + (isSelected ? '\u2611' : '\u2610') + '</span>';
     }
@@ -939,21 +962,29 @@ function renderDeck(idx) {
     if (appLang === 'bilingual') {
       html += '<div class="word-zh">' + escapeHtml(p.def) + '</div>';
     }
-    html += '<span class="word-stars">';
-    for (var si = 0; si < 4; si++) {
-      html += '<span class="star-dot' + (si < wStars ? ' filled' : '') + '"></span>';
+
+    /* FLM status tag */
+    var tagExtra = '';
+    if ((fs === 'uncertain' || fs === 'learning') && wFr > 0) tagExtra = ' \u00b7 R' + wFr;
+    if (fs === 'mastered') tagExtra = ' \u2713';
+    html += '<span class="word-status status-' + fs + '" style="background:' + flmColor + '18;color:' + flmColor + '">' + flmLabel + tagExtra + '</span>';
+
+    /* Source tag */
+    if (wSrc === 'reflow') {
+      html += '<span class="source-tag">' + t('From Mistakes', '\u6765\u81ea\u9519\u9898') + '</span>';
     }
-    html += '</span>';
-    html += '<span class="word-lv" style="background:' + lvColor + '20;color:' + lvColor + '">' + SRS_LABELS[lvNum] + '</span>';
+
     if (ok > 0 || fail > 0) {
       html += '<span class="word-stats">\u2713' + ok + ' \u2717' + fail + '</span>';
     }
     html += '</div>';
   });
 
-  if (_deckHideMastered && visibleCount === 0) {
+  if ((_deckHideMastered || _deckFLMFilter) && visibleCount === 0) {
     html += '<div style="text-align:center;color:var(--c-muted);padding:20px 0">';
-    html += t('All words mastered! Well done!', '\u5168\u90e8\u638c\u63e1\uff01\u592a\u68d2\u4e86\uff01');
+    html += _deckFLMFilter
+      ? t('No words with this status', '\u6ca1\u6709\u8be5\u72b6\u6001\u7684\u8bcd\u6c47')
+      : t('All words mastered! Well done!', '\u5168\u90e8\u638c\u63e1\uff01\u592a\u68d2\u4e86\uff01');
     html += '</div>';
   }
   html += '</div>';
@@ -1026,8 +1057,8 @@ function selectAllUnmastered(idx) {
   pairs.forEach(function(p) {
     var key = wordKey(idx, p.lid);
     var d = wd[key];
-    var wStars = d ? (d.stars != null ? d.stars : computeStars(d.ok || 0, d.fail || 0)) : 0;
-    if (wStars < 4) {
+    var fs = d ? (d.fs || 'new') : 'new';
+    if (fs !== 'mastered') {
       _deckSelectedWords[p.lid] = true;
       _deckSelectCount++;
     }
@@ -1126,7 +1157,7 @@ function _initDeckActionDelegation() {
   if (_deckActionDelegated) return;
   _deckActionDelegated = true;
   var modeFns = {
-    study: startStudy, quiz: startQuiz, review: startReview,
+    study: startStudy, quiz: startQuiz,
     spell: startSpell, match: startMatch, battle: startBattle
   };
   document.addEventListener('click', function(e) {

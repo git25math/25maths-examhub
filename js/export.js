@@ -282,10 +282,9 @@ async function exportProgress() {
       var d = wd[w.key];
       return {
         word: w.word, def: w.def, level: w.level,
-        status: w.status, srsLevel: w.lv,
+        status: w.status, flmStatus: w.fs,
         ok: w.ok, fail: w.fail,
-        interval: d ? d.iv : null,
-        nextReview: d ? new Date(d.nr).toISOString() : null,
+        round: d ? (d.fr || 0) : 0,
         lastReview: d ? new Date(d.lr).toISOString() : null
       };
     }); })()
@@ -297,10 +296,10 @@ async function exportProgress() {
 
 function exportMarkdown() {
   var all = getAllWords();
-  var lines = ['| English | \u4e2d\u6587 | \u72b6\u6001 | SRS |', '|---------|------|------|-----|'];
+  var lines = ['| English | \u4e2d\u6587 | Status |', '|---------|------|--------|'];
   all.forEach(function(w) {
-    var st = w.status === 'mastered' ? '\u2705' : w.status === 'learning' ? '\ud83d\udfe1' : '\u26aa';
-    lines.push('| ' + w.word + ' | ' + w.def + ' | ' + st + ' | ' + SRS_LABELS[w.lv] + ' |');
+    var st = w.fs === 'mastered' ? '\u2705 Mastered' : w.fs === 'uncertain' ? '\ud83d\udfe1 Uncertain' : w.fs === 'learning' ? '\ud83d\udd34 Learning' : '\u26aa New';
+    lines.push('| ' + w.word + ' | ' + w.def + ' | ' + st + ' |');
   });
 
   downloadBlob(new Blob([lines.join('\n')], { type: 'text/markdown;charset=utf-8;' }), 'vocabulary.md');

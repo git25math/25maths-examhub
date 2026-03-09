@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════════════════════════
-   storage.js — localStorage CRUD + cloud sync (extended with SRS)
+   storage.js — localStorage CRUD + cloud sync (FLM system)
    ══════════════════════════════════════════════════════════════ */
 
 /* Basic localStorage read/write — with memory cache */
@@ -12,6 +12,8 @@ function loadS() {
   if (_sCache) return _sCache;
   try { _sCache = JSON.parse(localStorage.getItem(SK)) || {}; }
   catch (e) { _sCache = {}; }
+  /* One-time SRS→FLM migration */
+  _migrateSRStoFLM(_sCache);
   return _sCache;
 }
 
@@ -48,7 +50,7 @@ function saveBest(i, tm, m, c) {
   writeS(s);
   recordDailyHistory(undefined);
   var _si = recordActivity();
-  if (_si) showToast('🔥 ' + t(getStreakCount() + '-day streak!', '连续学习 ' + getStreakCount() + ' 天！'));
+  if (_si) showToast('\ud83d\udd25 ' + t(getStreakCount() + '-day streak!', '\u8fde\u7eed\u5b66\u4e60 ' + getStreakCount() + ' \u5929\uff01'));
   syncToCloud();
 }
 
@@ -63,7 +65,7 @@ function wordKey(li, wid) {
   return 'L_' + slug + '_W' + wid;
 }
 
-/* ═══ STAR CALCULATION (Spec v1.0 §4) ═══ */
+/* ═══ STAR CALCULATION (legacy, kept for backward compat) ═══ */
 function computeStars(ok, fail) {
   var raw = Math.min(ok, 4);
   var attempts = ok + fail;
@@ -72,10 +74,47 @@ function computeStars(ok, fail) {
   return Math.min(raw, cap);
 }
 
-/* SRS interval table (days) for levels 0-7 */
-var SRS_INTERVALS = [0.014, 0.042, 0.375, 1, 2, 7, 30, 30];
+/* ═══ FLM MIGRATION (one-time, SRS→FLM) ═══ */
+var _flmMigrated = false;
+function _migrateSRStoFLM(s) {
+  if (_flmMigrated) return;
+  if (!s.words) return;
+  /* Check if any word has lv but no fs — needs migration */
+  var needsMigration = false;
+  for (var k in s.words) {
+    var w = s.words[k];
+    if (w.lv != null && w.fs == null) { needsMigration = true; break; }
+  }
+  if (!needsMigration) { _flmMigrated = true; return; }
 
-/* ═══ UNIFIED ANSWER RECORDER (Spec v1.0 §2) ═══ */
+  for (var wk in s.words) {
+    var wd = s.words[wk];
+    if (wd.fs != null) continue; /* already migrated */
+    var ok = wd.ok || 0;
+    var fail = wd.fail || 0;
+    var lv = wd.lv || 0;
+    var stars = wd.stars != null ? wd.stars : computeStars(ok, fail);
+
+    if (stars >= 4 || lv >= 6) {
+      wd.fs = 'mastered';
+      wd.fmt = wd.lr || Date.now();
+    } else if (lv >= 3 && ok > 0) {
+      wd.fs = 'uncertain';
+    } else if (ok > 0) {
+      wd.fs = 'learning';
+    } else {
+      wd.fs = 'new';
+    }
+    wd.cs = 0;
+    wd.fr = 0;
+    wd.src = '';
+  }
+  _flmMigrated = true;
+  /* Write back migrated data */
+  try { localStorage.setItem(SK, JSON.stringify(s)); } catch (e) {}
+}
+
+/* ═══ FLM UNIFIED ANSWER RECORDER ═══ */
 function recordAnswer(key, mode, isCorrect) {
   var s = loadS();
   if (!s.words) s.words = {};
@@ -83,56 +122,57 @@ function recordAnswer(key, mode, isCorrect) {
   var prev = s.words[key] || {};
   var ok = prev.ok || 0;
   var fail = prev.fail || 0;
-  var lv = prev.lv || 0;
+  var fs = prev.fs || 'new';
+  var cs = prev.cs || 0;
 
-  /* 1. Update ok/fail per mode rules */
-  if (mode === 'study-easy') {
-    if (ok === 0) ok = 1;
-  } else if (mode === 'study-hard') {
-    fail += 1;
-  } else if (mode === 'study-okay') {
-    /* no-op: acknowledge only */
+  /* 1. Update ok/fail — scan modes handled by recordScan() */
+  if (mode === 'study-easy' || mode === 'study-okay' || mode === 'study-hard') {
+    /* Study mode no longer updates ok/fail (handled by scan) */
   } else if (isCorrect) {
     ok += (mode === 'spell' ? 2 : 1);
   } else {
     fail += 1;
   }
 
-  /* 2. Recompute stars & status */
-  var stars = computeStars(ok, fail);
-  var st = stars === 0 ? 'new' : stars === 4 ? 'mastered' : 'learning';
-
-  /* 3. SRS scheduling */
-  if (isCorrect === true) {
-    lv = Math.min(lv + 1, 7);
-  } else if (isCorrect === false) {
-    lv = Math.max(lv - 2, 0);
-  }
-
-  var iv;
-  if (mode === 'review' && prev.iv) {
-    /* Review mode: scale existing interval */
-    if (isCorrect === false) {
-      iv = 0.15;
-    } else {
-      iv = (isCorrect && mode === 'review')
-        ? Math.max(prev.iv * (isCorrect && fail === 0 ? 2.5 : 1.2), 1)
-        : SRS_INTERVALS[lv] || 1;
+  /* 2. FLM state transitions (game modes: quiz/spell/match/battle) */
+  if (mode !== 'study-easy' && mode !== 'study-okay' && mode !== 'study-hard') {
+    if (isCorrect) {
+      cs += 1;
+      if (cs >= 2) {
+        fs = 'mastered';
+        prev.fmt = now;
+        cs = 0;
+      } else if (fs === 'learning') {
+        fs = 'uncertain';
+      }
+    } else if (isCorrect === false) {
+      cs = 0;
+      if (fs === 'mastered') {
+        fs = 'uncertain';
+      } else if (fs === 'uncertain') {
+        fs = 'learning';
+      }
     }
-  } else {
-    iv = SRS_INTERVALS[lv] || 1;
   }
-  var nr = now + iv * 86400000;
 
-  /* Bump weekly goal when word first reaches 'learning' or 'mastered' */
-  var _prevSt = prev.st || 'new';
-  if (_prevSt === 'new' && st !== 'new') {
+  /* Bump weekly goal when word first leaves 'new' */
+  var _prevFs = prev.fs || 'new';
+  if (_prevFs === 'new' && fs !== 'new') {
     if (typeof bumpWeeklyGoal === 'function') bumpWeeklyGoal(1);
   }
 
-  s.words[key] = { st: st, iv: iv, nr: nr, lr: now, ok: ok, fail: fail, lv: lv, stars: stars };
+  /* Derive legacy st from fs for backward compat */
+  var st = fs === 'mastered' ? 'mastered' : fs === 'new' ? 'new' : 'learning';
 
-  /* 4. Inline daily history */
+  s.words[key] = {
+    st: st, lr: now, ok: ok, fail: fail,
+    fs: fs, cs: cs, fr: prev.fr || 0, fmt: prev.fmt || null, src: prev.src || '',
+    /* Keep legacy fields for compat but stop updating SRS */
+    lv: prev.lv || 0, iv: prev.iv || 0, nr: prev.nr || 0,
+    stars: prev.stars != null ? prev.stars : computeStars(ok, fail)
+  };
+
+  /* 3. Inline daily history */
   if (!s.history) s.history = [];
   var today = new Date().toLocaleDateString('en-CA');
   var entry = null;
@@ -146,15 +186,15 @@ function recordAnswer(key, mode, isCorrect) {
   entry.a++;
   if (isCorrect === true) entry.ok++;
   else if (isCorrect === false) entry.fail++;
-  var wd = s.words || {};
+  var wds = s.words || {};
   var mc = 0;
-  for (var wk in wd) { if (wd[wk].st === 'mastered') mc++; }
+  for (var wk in wds) { if (wds[wk].fs === 'mastered') mc++; }
   entry.m = mc;
   if (s.history.length > 365) {
     s.history = s.history.slice(s.history.length - 365);
   }
 
-  /* 5. Inline streak */
+  /* 4. Inline streak */
   if (!s.streak) s.streak = { cur: 0, max: 0, last: '' };
   var last = s.streak.last;
   var newStreak = false;
@@ -169,8 +209,7 @@ function recordAnswer(key, mode, isCorrect) {
   }
 
   writeS(s);
-  if (newStreak) showToast('🔥 ' + t(getStreakCount() + '-day streak!', '连续学习 ' + getStreakCount() + ' 天！'));
-  /* Debounced badge check (avoid checking every single answer) */
+  if (newStreak) showToast('\ud83d\udd25 ' + t(getStreakCount() + '-day streak!', '\u8fde\u7eed\u5b66\u4e60 ' + getStreakCount() + ' \u5929\uff01'));
   clearTimeout(_badgeCheckTimer);
   _badgeCheckTimer = setTimeout(function() { if (typeof checkBadges === 'function') checkBadges(); }, 3000);
   debouncedSync();
@@ -178,46 +217,43 @@ function recordAnswer(key, mode, isCorrect) {
 
 var _badgeCheckTimer = null;
 
-/* Word mastery storage
-   Each word key: "L_{slug}_W{wordId}"
-   Value: { st, iv, nr, lr, ok, fail, lv, stars }
-   - st: "mastered"|"learning"|"new"
-   - iv: interval in days
-   - nr: next review timestamp
-   - lr: last review timestamp
-   - ok: correct count
-   - fail: incorrect count
-   - lv: SRS level 0-7 (Ebbinghaus)
-   - stars: 0-4 (cached, or computed from ok/fail)
-*/
-function getWordData() {
-  if (_wordDataCache && !_cacheDirty) return _wordDataCache;
-  _wordDataCache = loadS().words || {};
-  return _wordDataCache;
-}
-
-function setWordStatus(key, status, interval, correct) {
+/* ═══ FLM SCAN RECORDER (used by Scan/Study mode) ═══ */
+function recordScan(key, verdict, round) {
   var s = loadS();
   if (!s.words) s.words = {};
   var now = Date.now();
-  var next = now + (interval || 1) * 86400000;
   var prev = s.words[key] || {};
   var ok = prev.ok || 0;
   var fail = prev.fail || 0;
-  var lv = prev.lv || 0;
+  var fs = prev.fs || 'new';
 
-  if (correct === true) {
-    ok++;
-    lv = Math.min(lv + 1, 7);
-  } else if (correct === false) {
-    fail++;
-    lv = Math.max(lv - 2, 0);
+  if (verdict === 'known') {
+    fs = 'mastered';
+    prev.fmt = now;
+  } else if (verdict === 'fuzzy') {
+    fs = 'uncertain';
+    prev.fr = round || 1;
+  } else if (verdict === 'unknown') {
+    fs = 'learning';
+    prev.fr = round || 1;
+    fail += 1;
   }
-  /* correct === undefined -> no change (backward compatible) */
 
-  s.words[key] = { st: status, iv: interval || 1, nr: next, lr: now, ok: ok, fail: fail, lv: lv };
+  /* Bump weekly goal when word first leaves 'new' */
+  var _prevFs = prev.fs || 'new';
+  if (_prevFs === 'new' && fs !== 'new') {
+    if (typeof bumpWeeklyGoal === 'function') bumpWeeklyGoal(1);
+  }
 
-  /* Inline recordDailyHistory */
+  var st = fs === 'mastered' ? 'mastered' : fs === 'new' ? 'new' : 'learning';
+  s.words[key] = {
+    st: st, lr: now, ok: ok, fail: fail,
+    fs: fs, cs: 0, fr: prev.fr || 0, fmt: prev.fmt || null, src: prev.src || 'scan',
+    lv: prev.lv || 0, iv: prev.iv || 0, nr: prev.nr || 0,
+    stars: prev.stars != null ? prev.stars : computeStars(ok, fail)
+  };
+
+  /* Inline daily history */
   if (!s.history) s.history = [];
   var today = new Date().toLocaleDateString('en-CA');
   var entry = null;
@@ -229,17 +265,16 @@ function setWordStatus(key, status, interval, correct) {
     s.history.push(entry);
   }
   entry.a++;
-  if (correct === true) entry.ok++;
-  else if (correct === false) entry.fail++;
-  var wd = s.words || {};
+  if (verdict === 'unknown') entry.fail++;
+  var wds = s.words || {};
   var mc = 0;
-  for (var wk in wd) { if (wd[wk].st === 'mastered') mc++; }
+  for (var wk in wds) { if (wds[wk].fs === 'mastered') mc++; }
   entry.m = mc;
   if (s.history.length > 365) {
     s.history = s.history.slice(s.history.length - 365);
   }
 
-  /* Inline recordActivity */
+  /* Inline streak */
   if (!s.streak) s.streak = { cur: 0, max: 0, last: '' };
   var last = s.streak.last;
   var newStreak = false;
@@ -254,11 +289,76 @@ function setWordStatus(key, status, interval, correct) {
   }
 
   writeS(s);
-  if (newStreak) showToast('🔥 ' + t(getStreakCount() + '-day streak!', '连续学习 ' + getStreakCount() + ' 天！'));
+  if (newStreak) showToast('\ud83d\udd25 ' + t(getStreakCount() + '-day streak!', '\u8fde\u7eed\u5b66\u4e60 ' + getStreakCount() + ' \u5929\uff01'));
+  clearTimeout(_badgeCheckTimer);
+  _badgeCheckTimer = setTimeout(function() { if (typeof checkBadges === 'function') checkBadges(); }, 3000);
   debouncedSync();
 }
 
-/* Get all words across all levels with their mastery status */
+/* Word mastery storage (FLM)
+   Each word key: "L_{slug}_W{wordId}"
+   Value: { st, lr, ok, fail, fs, cs, fr, fmt, src, lv, iv, nr, stars }
+   - fs: FLM status 'new'|'learning'|'uncertain'|'mastered'
+   - cs: consecutive correct count
+   - fr: last round marked non-mastered (0=unseen)
+   - fmt: mastered timestamp
+   - src: source 'scan'|'reflow'|''
+   Legacy: st, lv, iv, nr, stars (kept for compat)
+*/
+function getWordData() {
+  if (_wordDataCache && !_cacheDirty) return _wordDataCache;
+  _wordDataCache = loadS().words || {};
+  return _wordDataCache;
+}
+
+/* Get FLM status for a word */
+function getWordFLM(key) {
+  var wd = getWordData();
+  var d = wd[key];
+  return d ? (d.fs || 'new') : 'new';
+}
+
+/* Get pool words for a level (learning + uncertain = active pool) */
+function getPoolWords(li) {
+  var lv = LEVELS[li];
+  if (!lv) return [];
+  var pairs = getPairs(lv.vocabulary);
+  var wd = getWordData();
+  return pairs.filter(function(p) {
+    var d = wd[wordKey(li, p.lid)];
+    if (!d || !d.fs || d.fs === 'new') return false;
+    return d.fs === 'learning' || d.fs === 'uncertain';
+  });
+}
+
+/* Chapter round tracking */
+function getChapterRound(secId, board) {
+  var s = loadS();
+  if (!s.chapters) return { round: 0, lastRoundAt: 0 };
+  var key = (board || '') + ':' + secId;
+  return s.chapters[key] || { round: 0, lastRoundAt: 0 };
+}
+
+function setChapterRound(secId, board, round) {
+  var s = loadS();
+  if (!s.chapters) s.chapters = {};
+  var key = (board || '') + ':' + secId;
+  s.chapters[key] = { round: round, lastRoundAt: Date.now() };
+  writeS(s);
+}
+
+/* Legacy setWordStatus — redirect to FLM */
+function setWordStatus(key, status, interval, correct) {
+  if (correct === true) {
+    recordAnswer(key, 'legacy', true);
+  } else if (correct === false) {
+    recordAnswer(key, 'legacy', false);
+  } else {
+    recordAnswer(key, 'legacy', null);
+  }
+}
+
+/* Get all words across all levels with FLM status */
 function getAllWords() {
   if (_allWordsCache && !_cacheDirty) return _allWordsCache;
   var all = [];
@@ -276,17 +376,23 @@ function getAllWords() {
       var d = wd[key];
       var wOk = d ? (d.ok || 0) : 0;
       var wFail = d ? (d.fail || 0) : 0;
-      var wStars = d && d.stars != null ? d.stars : computeStars(wOk, wFail);
+      var fs = d ? (d.fs || 'new') : 'new';
+      /* Map FLM status to legacy 3-state for backward compat */
+      var status = fs === 'mastered' ? 'mastered' : fs === 'new' ? 'new' : 'learning';
       all.push({
         key: key,
         word: m[k].word,
         def: m[k].def,
         level: li,
-        status: wStars === 0 ? 'new' : wStars === 4 ? 'mastered' : 'learning',
-        stars: wStars,
+        status: status,
+        fs: fs,
+        stars: d && d.stars != null ? d.stars : computeStars(wOk, wFail),
         ok: wOk,
         fail: wFail,
-        lv: d ? (d.lv || 0) : 0
+        lv: d ? (d.lv || 0) : 0,
+        cs: d ? (d.cs || 0) : 0,
+        fr: d ? (d.fr || 0) : 0,
+        src: d ? (d.src || '') : ''
       });
     }
   });
@@ -295,31 +401,20 @@ function getAllWords() {
   return all;
 }
 
-/* Get words due for review — uses star-derived status, not stored st */
+/* Legacy getDueWords — returns pool words (learning + uncertain) */
 function getDueWords() {
-  var now = Date.now(), due = [];
-  var wd = getWordData();
-  getAllWords().forEach(function(w) {
-    var d = wd[w.key];
-    if (d && w.status !== 'mastered' && d.nr <= now) due.push(w);
-    else if (!d || w.status === 'new') due.push(w);
+  return getAllWords().filter(function(w) {
+    return w.fs === 'learning' || w.fs === 'uncertain';
   });
-  return due;
 }
 
 function getReviewCount() {
   return getDueWords().length;
 }
 
-/* Count only studied words that are due (exclude new/unseen words) */
+/* Legacy getStudiedDueCount — returns pool count */
 function getStudiedDueCount() {
-  var now = Date.now(), count = 0;
-  var wd = getWordData();
-  getAllWords().forEach(function(w) {
-    var d = wd[w.key];
-    if (d && w.status !== 'new' && w.status !== 'mastered' && d.nr <= now) count++;
-  });
-  return count;
+  return getDueWords().length;
 }
 
 /* Custom levels persistence */
@@ -388,20 +483,15 @@ async function _doSyncToCloud() {
   /* Sync leaderboard score (skip for teachers) */
   if (!isTeacher()) {
     var allW = getAllWords();
-    var totalStars = 0, masteredW = 0;
-    allW.forEach(function(w) {
-      totalStars += w.stars || 0;
-      if ((w.stars || 0) === 4) masteredW++;
-    });
-    var learningPct = allW.length > 0 ? Math.round(totalStars / (allW.length * 4) * 100) : 0;
+    var masteredW = 0;
+    allW.forEach(function(w) { if (w.fs === 'mastered') masteredW++; });
     var masteryPct = allW.length > 0 ? Math.round(masteredW / allW.length * 100) : 0;
     var r = getRank();
     var nick = getDisplayName();
-    /* Include school_id/class_id from user metadata if available */
     var lbRow = {
       user_id: currentUser.id,
       nickname: nick,
-      score: learningPct * 20,
+      score: masteryPct * 20,
       mastery_pct: masteryPct,
       rank_emoji: r.emoji,
       total_words: allW.length,
@@ -436,7 +526,6 @@ async function syncToCloud() {
     if (!_lastSyncErrAt || errNow - _lastSyncErrAt > 5000) {
       _lastSyncErrAt = errNow;
     }
-    /* Exponential backoff retry: 2s, 5s, 10s */
     var delays = [2000, 5000, 10000];
     if (_syncRetryCount < delays.length) {
       var delay = delays[_syncRetryCount];
@@ -467,15 +556,12 @@ async function syncFromCloud() {
     var errNow = Date.now();
     if (!_lastSyncErrAt || errNow - _lastSyncErrAt > 5000) {
       _lastSyncErrAt = errNow;
-      showToast(t('Sync failed, check network', '同步失败，请检查网络'));
+      showToast(t('Sync failed, check network', '\u540c\u6b65\u5931\u8d25\uff0c\u8bf7\u68c0\u67e5\u7f51\u7edc'));
     }
   }
 }
 
 /* ═══ LEARNING HISTORY ═══ */
-/* Each entry: { d: "2026-03-04", a: 12, ok: 9, fail: 3, m: 47 }
-   d = date, a = activities, ok = correct, fail = incorrect, m = mastered total */
-
 function getHistory() {
   return loadS().history || [];
 }
@@ -485,7 +571,6 @@ function recordDailyHistory(correct) {
   if (!s.history) s.history = [];
   var today = new Date().toLocaleDateString('en-CA');
 
-  /* Find or create today's entry */
   var entry = null;
   for (var i = s.history.length - 1; i >= 0; i--) {
     if (s.history[i].d === today) { entry = s.history[i]; break; }
@@ -499,13 +584,11 @@ function recordDailyHistory(correct) {
   if (correct === true) entry.ok++;
   else if (correct === false) entry.fail++;
 
-  /* Count current mastered words */
   var wd = s.words || {};
   var mc = 0;
-  for (var k in wd) { if (wd[k].st === 'mastered') mc++; }
+  for (var k in wd) { if (wd[k].fs === 'mastered') mc++; }
   entry.m = mc;
 
-  /* Trim to 365 entries */
   if (s.history.length > 365) {
     s.history = s.history.slice(s.history.length - 365);
   }
@@ -545,15 +628,12 @@ function mergeVocabLevels(base, dbRows) {
       vocabulary: row.vocabulary || []
     };
     if (slugMap[row.slug] !== undefined) {
-      /* Override existing */
       merged[slugMap[row.slug]] = lvObj;
     } else {
-      /* Append new */
       merged.push(lvObj);
     }
   });
 
-  /* Remove levels flagged as deleted in DB */
   return merged;
 }
 
@@ -595,11 +675,10 @@ function isSectionUnlocked() { return true; }
 
 function bootstrapHistory() {
   var s = loadS();
-  if (s.history && s.history.length > 0) return; /* already bootstrapped */
+  if (s.history && s.history.length > 0) return;
   var wd = s.words || {};
   var dayMap = {};
 
-  /* Reconstruct from lr timestamps */
   for (var k in wd) {
     var w = wd[k];
     if (!w.lr) continue;
@@ -610,15 +689,13 @@ function bootstrapHistory() {
     dayMap[d].fail += (w.fail || 0);
   }
 
-  /* Sort by date and calculate running mastered count */
   var dates = Object.keys(dayMap).sort();
   var history = [];
   for (var i = 0; i < dates.length; i++) {
     var entry = dayMap[dates[i]];
-    /* Count mastered up to this date */
     var mc = 0;
     for (var wk in wd) {
-      if (wd[wk].st === 'mastered' && wd[wk].lr && new Date(wd[wk].lr).toLocaleDateString('en-CA') <= dates[i]) mc++;
+      if (wd[wk].fs === 'mastered' && wd[wk].lr && new Date(wd[wk].lr).toLocaleDateString('en-CA') <= dates[i]) mc++;
     }
     entry.m = mc;
     history.push(entry);
@@ -634,20 +711,20 @@ function bootstrapHistory() {
 var BADGES = [
   { id: 'first_word',    icon: '\ud83c\udf1f', en: 'First Word',      zh: '\u7b2c\u4e00\u4e2a\u8bcd', prereq: null, check: function(ctx) { return ctx.mastered >= 1; } },
   { id: 'ten_words',     icon: '\ud83d\udcda', en: 'Ten Down',         zh: '\u5341\u4e2a\u8bcd\u4e86', prereq: 'first_word', check: function(ctx) { return ctx.mastered >= 10; } },
-  { id: 'hundred_club',  icon: '\ud83c\udfc5', en: 'Hundred Club',     zh: '\u767e\u8bcd\u4ff1\u4e50\u90e8', prereq: 'ten_words', check: function(ctx) { return ctx.mastered >= 100; }, reward: { id: 'data_export', en: 'Data Export unlocked!', zh: '数据导出已解锁！' } },
+  { id: 'hundred_club',  icon: '\ud83c\udfc5', en: 'Hundred Club',     zh: '\u767e\u8bcd\u4ff1\u4e50\u90e8', prereq: 'ten_words', check: function(ctx) { return ctx.mastered >= 100; }, reward: { id: 'data_export', en: 'Data Export unlocked!', zh: '\u6570\u636e\u5bfc\u51fa\u5df2\u89e3\u9501\uff01' } },
   { id: 'streak_3',      icon: '\ud83d\udd25', en: '3-Day Streak',     zh: '\u8fde\u7eed3\u5929', prereq: null, check: function(ctx) { return ctx.streak >= 3; } },
-  { id: 'streak_7',      icon: '\ud83d\udcaa', en: 'Week Warrior',     zh: '\u4e00\u5468\u6218\u58eb', prereq: 'streak_3', check: function(ctx) { return ctx.streak >= 7; }, reward: { id: 'hard_daily', en: 'Hard Mode Daily unlocked!', zh: '困难每日挑战已解锁！' } },
+  { id: 'streak_7',      icon: '\ud83d\udcaa', en: 'Week Warrior',     zh: '\u4e00\u5468\u6218\u58eb', prereq: 'streak_3', check: function(ctx) { return ctx.streak >= 7; }, reward: { id: 'hard_daily', en: 'Hard Mode Daily unlocked!', zh: '\u56f0\u96be\u6bcf\u65e5\u6311\u6218\u5df2\u89e3\u9501\uff01' } },
   { id: 'streak_30',     icon: '\ud83d\udc8e', en: 'Monthly Master',   zh: '\u6708\u5ea6\u5927\u5e08', prereq: 'streak_7', check: function(ctx) { return ctx.streak >= 30; } },
   { id: 'daily_5',       icon: '\u26a1',       en: 'Daily 5',          zh: '\u6bcf\u65e5\u63505\u6b21', prereq: null, check: function(ctx) { return ctx.dailyCount >= 5; } },
   { id: 'quiz_perfect',  icon: '\ud83c\udfc6', en: 'Perfectionist',    zh: '\u5b8c\u7f8e\u4e3b\u4e49', prereq: 'first_word', check: function(ctx) { return ctx.perfectQuiz; } },
   { id: 'first_section', icon: '\u2705',       en: 'First Section',    zh: '\u7b2c\u4e00\u4e2a\u77e5\u8bc6\u70b9', prereq: 'first_word', check: function(ctx) { return ctx.sectionsCleared >= 1; } },
-  { id: 'srs_master',    icon: '\ud83e\udde0', en: 'Memory Master',    zh: '\u8bb0\u5fc6\u5927\u5e08', prereq: 'first_word', check: function(ctx) { return ctx.srsMaxCount >= 50; } },
+  { id: 'srs_master',    icon: '\ud83e\udde0', en: 'Memory Master',    zh: '\u8bb0\u5fc6\u5927\u5e08', prereq: 'first_word', check: function(ctx) { return ctx.masteredCount >= 50; } },
   { id: 'five_hundred',  icon: '\ud83d\ude80', en: '500 Words',        zh: '500\u8bcd\u8fbe\u6210', prereq: 'hundred_club', check: function(ctx) { return ctx.mastered >= 500; } },
-  { id: 'all_modes',     icon: '\ud83c\udf08', en: 'Explorer',         zh: '\u63a2\u7d22\u8005', prereq: 'first_word', check: function(ctx) { return ctx.modesUsed >= 5; }, reward: { id: 'custom_theme', en: 'Custom Theme unlocked!', zh: '自定义主题已解锁！' } },
-  /* Hidden badges (#13) */
-  { id: 'speed_demon',   icon: '\u26a1', en: 'Speed Demon',    zh: '闪电侠', prereq: null, hidden: true, check: function(ctx) { return ctx.speedDemon; } },
-  { id: 'focus_30',      icon: '\ud83e\uddd8', en: 'Deep Focus',     zh: '深度专注', prereq: null, hidden: true, check: function(ctx) { return ctx.focusSession; } },
-  { id: 'explorer_all',  icon: '\ud83d\uddfa\ufe0f', en: 'Full Explorer',  zh: '全面探索', prereq: null, hidden: true, check: function(ctx) { return ctx.panelsVisited >= 15; } }
+  { id: 'all_modes',     icon: '\ud83c\udf08', en: 'Explorer',         zh: '\u63a2\u7d22\u8005', prereq: 'first_word', check: function(ctx) { return ctx.modesUsed >= 5; }, reward: { id: 'custom_theme', en: 'Custom Theme unlocked!', zh: '\u81ea\u5b9a\u4e49\u4e3b\u9898\u5df2\u89e3\u9501\uff01' } },
+  /* Hidden badges */
+  { id: 'speed_demon',   icon: '\u26a1', en: 'Speed Demon',    zh: '\u95ea\u7535\u4fa0', prereq: null, hidden: true, check: function(ctx) { return ctx.speedDemon; } },
+  { id: 'focus_30',      icon: '\ud83e\uddd8', en: 'Deep Focus',     zh: '\u6df1\u5ea6\u4e13\u6ce8', prereq: null, hidden: true, check: function(ctx) { return ctx.focusSession; } },
+  { id: 'explorer_all',  icon: '\ud83d\uddfa\ufe0f', en: 'Full Explorer',  zh: '\u5168\u9762\u63a2\u7d22', prereq: null, hidden: true, check: function(ctx) { return ctx.panelsVisited >= 15; } }
 ];
 
 function getUnlockedBadges() {
@@ -672,13 +749,10 @@ function checkBadges() {
   var streak = getStreakCount();
   var s = loadS();
 
-  /* Count daily challenges completed (tracked via localStorage counter) */
   var dailyCount = 0;
   try { dailyCount = parseInt(localStorage.getItem('wmatch_daily_count') || '0', 10) || 0; } catch(e) {}
-  /* Check for perfect quiz (tracked via localStorage flag from finishQuiz) */
   var perfectQuiz = false;
   try { perfectQuiz = !!localStorage.getItem('wmatch_perfect_quiz'); } catch(e) {}
-  /* Count sections cleared (mastered milestone) */
   var sectionsCleared = 0;
   try {
     var keys = Object.keys(localStorage);
@@ -689,14 +763,13 @@ function checkBadges() {
       }
     }
   } catch(e) {}
-  /* Count SRS level 7 words */
-  var srsMaxCount = 0;
+  /* Count mastered words (FLM) for srs_master badge */
+  var masteredCount = 0;
   if (s.words) {
     for (var k in s.words) {
-      if (s.words[k].lv >= 7) srsMaxCount++;
+      if (s.words[k].fs === 'mastered') masteredCount++;
     }
   }
-  /* Count distinct modes used */
   var modesUsed = 0;
   if (s.modeDone) {
     var modeSet = {};
@@ -707,23 +780,20 @@ function checkBadges() {
     modesUsed = Object.keys(modeSet).length;
   }
 
-  /* Hidden badge context: speedDemon (quiz ≥10 correct in ≤60s) */
   var speedDemon = false;
   try { speedDemon = !!localStorage.getItem('wmatch_speed_demon'); } catch(e) {}
-  /* Hidden badge context: focusSession (30+ min in current session) */
   var focusSession = false;
   try {
     var sessStart = parseInt(sessionStorage.getItem('wmatch_session_start') || '0', 10);
     if (sessStart > 0 && Date.now() - sessStart > 30 * 60 * 1000) focusSession = true;
   } catch(e) {}
-  /* Hidden badge context: panelsVisited */
   var panelsVisited = 0;
   try { panelsVisited = JSON.parse(localStorage.getItem('wmatch_panels_visited') || '[]').length; } catch(e) {}
 
   var ctx = {
     mastered: gs.mastered, streak: streak, dailyCount: dailyCount,
     perfectQuiz: perfectQuiz, sectionsCleared: sectionsCleared,
-    srsMaxCount: srsMaxCount, modesUsed: modesUsed,
+    masteredCount: masteredCount, srsMaxCount: masteredCount, modesUsed: modesUsed,
     speedDemon: speedDemon, focusSession: focusSession, panelsVisited: panelsVisited
   };
 
@@ -740,7 +810,6 @@ function checkBadges() {
   if (newlyUnlocked.length > 0) {
     _saveBadges(unlocked);
     newlyUnlocked.forEach(function(b, idx) {
-      /* Store reward if badge has one */
       if (b.reward) {
         try { localStorage.setItem('wmatch_reward_' + b.reward.id, '1'); } catch(e) {}
       }
@@ -750,7 +819,6 @@ function checkBadges() {
         } else if (typeof showToast === 'function') {
           showToast(b.icon + ' ' + t(b.en, b.zh) + ' ' + t('unlocked!', '\u89e3\u9501\uff01'));
         }
-        /* Show reward toast after celebration */
         if (b.reward && typeof showToast === 'function') {
           setTimeout(function() {
             showToast('\ud83c\udf81 ' + t(b.reward.en, b.reward.zh));
@@ -758,7 +826,6 @@ function checkBadges() {
         }
       }, idx * 4500);
     });
-    /* first_word badge → guide to quiz after celebration */
     if (newlyUnlocked.some(function(b) { return b.id === 'first_word'; })) {
       setTimeout(function() {
         if (typeof showNudge === 'function') {
@@ -766,9 +833,8 @@ function checkBadges() {
         }
       }, 5000);
     }
-    /* Milestone nudges */
     if (typeof showNudge === 'function') {
-      showNudge('try_diag', t('Try a Diagnostic Test to find weak areas!', '试试诊断测试找薄弱知识点'), t('Go', '去试试'), function() { if (typeof navTo === 'function') navTo('diag'); });
+      showNudge('try_diag', t('Try a Diagnostic Test to find weak areas!', '\u8bd5\u8bd5\u8bca\u65ad\u6d4b\u8bd5\u627e\u8584\u5f31\u77e5\u8bc6\u70b9'), t('Go', '\u53bb\u8bd5\u8bd5'), function() { if (typeof navTo === 'function') navTo('diag'); });
     }
   }
   return unlocked;
@@ -777,7 +843,6 @@ function checkBadges() {
 /* ═══ WEEKLY GOAL ═══ */
 function getWeeklyGoal() {
   var now = new Date();
-  /* Week starts Monday */
   var day = now.getDay();
   var diff = day === 0 ? 6 : day - 1;
   var monday = new Date(now);

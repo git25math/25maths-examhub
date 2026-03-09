@@ -1239,20 +1239,94 @@ input { font-family: inherit; }
   font-size: 12px; color: var(--c-text2); flex: 1;
 }
 
-.word-lv {
+/* Legacy SRS styles (hidden but kept) */
+.word-lv { display: none; }
+.word-stars { display: none; }
+.star-dot { display: none; }
+
+/* FLM status tags */
+.word-status {
   font-size: 10px; font-weight: 700; padding: 2px 8px;
-  border-radius: 10px;
+  border-radius: 10px; white-space: nowrap;
+}
+.source-tag {
+  font-size: 9px; font-weight: 600; padding: 1px 6px;
+  border-radius: 8px; background: var(--c-primary-bg); color: var(--c-primary);
+  white-space: nowrap; margin-left: 4px;
 }
 
-.word-stars {
-  display: inline-flex; gap: 2px; align-items: center; margin-right: 4px;
+/* FLM filter chips */
+.flm-filter-chips {
+  display: flex; gap: 6px; overflow-x: auto; padding: 4px 0;
 }
-.star-dot {
-  width: 7px; height: 7px; border-radius: 50%;
-  background: var(--c-border); display: inline-block;
+.flm-chip {
+  font-size: 11px; font-weight: 600; padding: 4px 10px;
+  border-radius: 16px; border: 1px solid var(--c-border);
+  background: var(--c-surface); color: var(--c-text2);
+  cursor: pointer; white-space: nowrap; transition: all 0.15s;
 }
-.star-dot.filled {
-  background: var(--c-warning);
+.flm-chip:hover { border-color: var(--c-primary); }
+.flm-chip.active {
+  background: var(--c-primary); color: #fff; border-color: var(--c-primary);
+}
+.flm-chip-count {
+  font-weight: 400; opacity: 0.8; margin-left: 2px;
+}
+
+/* Pool progress bar */
+.pool-bar-wrap { padding: 0; }
+.pool-bar {
+  height: 8px; background: var(--c-border-light); border-radius: 4px;
+  overflow: hidden; display: flex;
+}
+.pool-bar-mastered {
+  background: #22C55E; transition: width 0.4s ease;
+}
+.pool-bar-pool {
+  background: #F59E0B; transition: width 0.4s ease;
+}
+
+/* Scan mode */
+.scan-card {
+  background: var(--c-surface); border-radius: var(--r);
+  padding: 40px 24px; text-align: center;
+  margin: 24px 0; border: 2px solid var(--c-border);
+  transition: border-color 0.3s, background 0.3s;
+  min-height: 160px; display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+}
+.scan-card.scan-known { border-color: #22C55E; background: #22C55E10; }
+.scan-card.scan-fuzzy { border-color: #F59E0B; background: #F59E0B10; }
+.scan-card.scan-unknown { border-color: #EF4444; background: #EF444410; }
+
+.scan-word {
+  font-size: 28px; font-weight: 800; color: var(--c-text);
+  margin-bottom: 12px;
+}
+.scan-def {
+  font-size: 18px; color: var(--c-text2); font-weight: 500;
+}
+
+.scan-actions {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;
+  padding: 0 4px;
+}
+.scan-btn {
+  padding: 14px 8px; border-radius: var(--r); font-size: 14px;
+  font-weight: 700; cursor: pointer; border: 2px solid transparent;
+  transition: all 0.15s; text-align: center;
+}
+.scan-known { background: #22C55E18; color: #22C55E; border-color: #22C55E40; }
+.scan-known:hover { background: #22C55E28; border-color: #22C55E; }
+.scan-fuzzy { background: #F59E0B18; color: #F59E0B; border-color: #F59E0B40; }
+.scan-fuzzy:hover { background: #F59E0B28; border-color: #F59E0B; }
+.scan-unknown { background: #EF444418; color: #EF4444; border-color: #EF444440; }
+.scan-unknown:hover { background: #EF444428; border-color: #EF4444; }
+.scan-key {
+  display: inline-block; width: 18px; height: 18px; line-height: 18px;
+  border-radius: 4px; background: currentColor; color: #fff;
+  font-size: 10px; font-weight: 800; text-align: center;
+  margin-right: 4px; opacity: 0.6;
 }
 
 .word-stats {

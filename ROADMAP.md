@@ -442,3 +442,10 @@
 - [x] **回流推荐**: 首页每日推荐未尝试的模式+Level → v2.5.0
 - [x] **教师作业解锁**: diagnostic/mock 作业自动注入 featureOverride → v2.5.0
 - [x] **全面取消路径锁定**: 所有模式/知识点直接开放，删除 FEATURE_THRESHOLD + Test Out + 锁定 UI → v2.5.1
+
+## v2.6 FLM 筛选循环词汇学习系统 [DONE]
+- [x] **SRS→FLM 引擎替换**: 4 状态模型(new/learning/uncertain/mastered) + recordScan + recordAnswer 重写 + 旧数据迁移 → v2.6.0
+- [x] **Study→Scan 模式**: 三按钮筛选(认识/模糊/不认识) + 多轮 Pool 缩小 + 键盘快捷键 → v2.6.0
+- [x] **Review 模式删除**: review.js 清空 + 导航/首页/统计去除 Review 入口 → v2.6.0
+- [x] **FLM UI 改造**: 状态标签 + filter chips + Pool 三段进度条 + Scan 卡片 UI → v2.6.0
+- [x] **系统适配**: Game 模式统一 FLM 转换 + getSectionHealth + 导出格式 + 徽章 → v2.6.0

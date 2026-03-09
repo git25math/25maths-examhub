@@ -188,7 +188,12 @@ function detectBP() {
   return 'desktop';
 }
 
-/* SRS labels for Ebbinghaus levels 0-7 */
+/* FLM (Filter-Learn-Master) status colors and labels */
+var FLM_COLORS = { new: '#9CA3AF', learning: '#EF4444', uncertain: '#F59E0B', mastered: '#22C55E' };
+var FLM_LABELS = { new: 'New', learning: 'Learning', uncertain: 'Uncertain', mastered: 'Mastered' };
+var FLM_LABELS_ZH = { new: '未学', learning: '学习中', uncertain: '模糊', mastered: '已掌握' };
+
+/* Legacy SRS labels (kept for backward compat in exports) */
 var SRS_LABELS = ['New', '20m', '1h', '9h', '1d', '2d', '1w', '30d'];
 var SRS_COLORS = ['#9CA3AF', '#FBBF24', '#F97316', '#22C55E', '#3B82F6', '#8B5CF6', '#EF4444', '#1F2937'];
 
@@ -362,7 +367,7 @@ function isSuperAdmin() {
 }
 
 /* App version */
-var APP_VERSION = 'v2.5.1';
+var APP_VERSION = 'v2.6.0';
 
 /* ═══ TEACHER ROLE (shared across modules) ═══ */
 var isTeacherUser = false;

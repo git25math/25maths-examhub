@@ -998,7 +998,7 @@ function getSectionHealth(sectionId, board) {
   var failRate = 0;
   var recency = 0.7;
 
-  /* Vocab score + fail rate + recency + retention in single pass */
+  /* Vocab score + fail rate + recency in single pass */
   var retentionScore = 0;
   var practiceScore = 0;
 
@@ -1009,19 +1009,20 @@ function getSectionHealth(sectionId, board) {
       var hhkStats = _getHHKSectionStats(secInfo.section);
       vocabScore = hhkStats.learningPct || 0;
       hasVocab = hhkStats.total > 0;
-      /* Aggregate SRS data across all sub-levels */
+      /* Aggregate FLM data across all sub-levels */
       var wd = getWordData();
-      var totalOk = 0, totalFail = 0, lastActive = 0, srsSum = 0, srsCount = 0;
+      var totalOk = 0, totalFail = 0, lastActive = 0, masteredN = 0, totalN = 0;
       secInfo.section.vocabSlugs.forEach(function(slug) {
         var _si = getLevelIdxBySlug(slug);
         if (_si < 0) return;
         getPairs(LEVELS[_si].vocabulary).forEach(function(p) {
           var d = wd[wordKey(_si, p.lid)];
+          totalN++;
           if (d) {
             totalOk += d.ok || 0;
             totalFail += d.fail || 0;
             if (d.lr && d.lr > lastActive) lastActive = d.lr;
-            if (d.lv != null) { srsSum += d.lv; srsCount++; }
+            if (d.fs === 'mastered') masteredN++;
           }
         });
       });
@@ -1030,7 +1031,7 @@ function getSectionHealth(sectionId, board) {
         var daysAgo = (Date.now() - lastActive) / 86400000;
         recency = daysAgo < 1 ? 1.0 : daysAgo < 7 ? 0.95 : daysAgo < 30 ? 0.85 : 0.7;
       }
-      if (srsCount > 0) retentionScore = Math.round((srsSum / srsCount / 7) * 100 * recency);
+      retentionScore = totalN > 0 ? Math.round((masteredN / totalN) * 100 * recency) : 0;
     }
     /* HHK practice score */
     var hhkPqBoard = '25m';
@@ -1057,14 +1058,14 @@ function getSectionHealth(sectionId, board) {
     var pairs = getPairs(lv.vocabulary);
     var wd = getWordData();
     var totalOk = 0, totalFail = 0, lastActive = 0;
-    var srsSum = 0, srsCount = 0;
+    var masteredN = 0;
     pairs.forEach(function(p) {
       var d = wd[wordKey(li, p.lid)];
       if (d) {
         totalOk += d.ok || 0;
         totalFail += d.fail || 0;
         if (d.lr && d.lr > lastActive) lastActive = d.lr;
-        if (d.lv != null) { srsSum += d.lv; srsCount++; }
+        if (d.fs === 'mastered') masteredN++;
       }
     });
     failRate = (totalOk + totalFail) > 0 ? Math.round(totalFail / (totalOk + totalFail) * 100) : 0;
@@ -1072,10 +1073,7 @@ function getSectionHealth(sectionId, board) {
       var daysAgo = (Date.now() - lastActive) / 86400000;
       recency = daysAgo < 1 ? 1.0 : daysAgo < 7 ? 0.95 : daysAgo < 30 ? 0.85 : 0.7;
     }
-    /* Retention: avg SRS level (0-7) → 0-100%, with recency decay */
-    if (srsCount > 0) {
-      retentionScore = Math.round((srsSum / srsCount / 7) * 100 * recency);
-    }
+    retentionScore = pairs.length > 0 ? Math.round((masteredN / pairs.length) * 100 * recency) : 0;
     /* Practice MCQ score */
     if (typeof isModeDone === 'function' && isModeDone(li, 'practice')) {
       practiceScore = 100;

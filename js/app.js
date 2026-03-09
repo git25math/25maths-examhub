@@ -433,17 +433,14 @@ document.addEventListener('keydown', function(e) {
 
   var key = e.key;
 
-  /* ── Study mode (panel-study) ── */
+  /* ── Scan mode (panel-study) ── */
   if (appView === 'study') {
-    if (key === ' ' || key === 'Enter') {
-      e.preventDefault();
-      if (typeof flipStudyCard === 'function') flipStudyCard();
-    } else if (key === '1') {
-      if (typeof rateStudy === 'function') rateStudy('hard');
+    if (key === '1') {
+      if (typeof rateScan === 'function') rateScan('known');
     } else if (key === '2') {
-      if (typeof rateStudy === 'function') rateStudy('ok');
+      if (typeof rateScan === 'function') rateScan('fuzzy');
     } else if (key === '3') {
-      if (typeof rateStudy === 'function') rateStudy('easy');
+      if (typeof rateScan === 'function') rateScan('unknown');
     }
     return;
   }

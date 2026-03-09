@@ -144,7 +144,6 @@ function renderModeBreakdown() {
     { key: 'spell',   icon: '\u270d\ufe0f', en: 'Spell',   zh: '\u62fc\u5199' },
     { key: 'match',   icon: '\ud83c\udfaf', en: 'Match',   zh: '\u914d\u5bf9' },
     { key: 'battle',  icon: '\u26a1',       en: 'Battle',  zh: '\u6311\u6218' },
-    { key: 'review',  icon: '\ud83d\udd04', en: 'Review',  zh: '\u590d\u4e60' },
     { key: 'practice',icon: '\u270f\ufe0f', en: 'Practice',zh: '\u7ec3\u4e60' }
   ];
 
@@ -274,7 +273,7 @@ function exportStats() {
   var s = loadS();
   var md = s.modeDone || {};
 
-  var modes = ['study', 'quiz', 'spell', 'match', 'battle', 'review', 'practice'];
+  var modes = ['study', 'quiz', 'spell', 'match', 'battle', 'practice'];
   var modeCounts = {};
   modes.forEach(function(m) { modeCounts[m] = 0; });
   for (var k in md) {

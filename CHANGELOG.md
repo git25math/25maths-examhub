@@ -1,5 +1,64 @@
 # Changelog
 
+## [2.6.0] - 2026-03-09 — FLM 筛选循环词汇学习系统
+
+### 核心变更：SRS → FLM
+- **艾宾浩斯 SRS 系统完全替换为 FLM（Filter-Learn-Master）筛选循环系统**
+- 4 状态模型：`new` → `learning` → `uncertain` → `mastered`
+- 每轮学习后 Learning Pool 自动缩小，直至全部掌握
+
+### Phase A: 数据引擎
+- `storage.js` 重写：`recordAnswer()` 改为 FLM 状态转换（连续答对 2 次→mastered，答错降一级）
+- 新增 `recordScan(key, verdict, round)` 扫描专用记录
+- 新增 `getPoolWords(li)` 获取 learning+uncertain 词池
+- 新增 `getChapterRound()` / `setChapterRound()` 章节轮次追踪
+- `_migrateSRStoFLM()` 一次性旧数据迁移（基于 lv/stars/ok 映射到 fs）
+- `checkBadges()` 改为 `fs='mastered'` 计数
+- 云端同步排行榜使用 FLM mastered 计数
+
+### Phase B: Study → Scan 模式
+- `study.js` 重写为三按钮扫描筛选：认识(绿) / 模糊(橙) / 不认识(红)
+- 点击后显示中文释义 + 视觉反馈，0.6s 自动下一词
+- 轮结束显示 Pool 进度条 + 结果摘要
+- Round 2+ 仅加载 uncertain + learning 词（Pool 逐轮缩小）
+- 全部 mastered → 推荐游戏模式强化
+- 键盘快捷键：1=认识, 2=模糊, 3=不认识
+
+### Phase C: 删除 Review 模式
+- `review.js` 清空为空壳函数
+- 侧栏/底栏/首页删除 Review 入口和 badge
+- 学习路径从 Study→Quiz→Review 简化为 Scan→Quiz
+
+### Phase D: UI 改造
+- 词条显示：4 星点 + SRS 级别 → FLM 状态标签（New/Learning/Uncertain/Mastered）
+- 筛选栏：Hide Mastered → 状态 filter chips（All/New/Learning/Uncertain/Mastered）
+- Deck 统计条：三段 Pool 进度条（mastered 绿 + pool 橙 + new 灰）
+- 新增 CSS：`.word-status`, `.flm-filter-chips`, `.pool-bar`, `.scan-card`, `.scan-btn`
+
+### Phase E-G: 系统适配
+- Game 模式（Quiz/Spell/Match/Battle）：统一 recordAnswer FLM 状态转换
+- `syllabus.js`：`getSectionHealth()` 改为 mastered/total 比率
+- `stats.js`：删除 review 行
+- `export.js`：导出格式改为 flmStatus/round
+- `config.js`：新增 `FLM_COLORS`, `FLM_LABELS`, `FLM_LABELS_ZH`
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| `js/storage.js` | 重写：recordAnswer/recordScan, 删除 SRS 函数, 迁移, getPoolWords |
+| `js/study.js` | 重写：Study → Scan 三按钮筛选循环 |
+| `js/review.js` | 清空为空壳函数 |
+| `js/mastery.js` | 改造：getDeckStats 新逻辑, 词条 FLM UI, 筛选 chips, Pool 进度条 |
+| `js/config.js` | FLM 常量 + 版本号 v2.6.0 |
+| `js/ui.js` | 删除 review badge + dueCount |
+| `js/syllabus.js` | getSectionHealth 去 SRS |
+| `js/stats.js` | 删除 review 行 |
+| `js/export.js` | 导出格式适配 FLM |
+| `js/app.js` | 键盘快捷键适配 Scan |
+| `css/style.css` | 新增 FLM 状态/扫描/进度条样式 |
+| `index.html` | 删除 Review 导航 |
+| `sw.js` | 版本号 v2.6.0 |
+
 ## [2.5.1] - 2026-03-09 — 全面取消路径锁定
 
 ### 变更

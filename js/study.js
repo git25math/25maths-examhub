@@ -1,25 +1,42 @@
 /* ══════════════════════════════════════════════════════════════
-   study.js — Flashcard study mode (renders into panel-study)
+   study.js — FLM Scan mode (three-button filter cycle)
    ══════════════════════════════════════════════════════════════ */
 
-var S = { pairs: [], idx: 0, ratings: {}, lvl: 0 };
+var S = { pairs: [], idx: 0, round: 1, lvl: 0,
+          results: { known: [], fuzzy: [], unknown: [] } };
 
-/* Start study mode for a level */
+/* Start scan mode for a level */
 function startStudy(li, subset) {
   var lv = LEVELS[li];
   if (validate(lv, li)) return;
 
   currentLvl = li;
+  S.lvl = li;
+  S.round = 1;
   S.pairs = subset || shuffle(getPairs(lv.vocabulary));
   S.idx = 0;
-  S.ratings = { hard: [], ok: [], easy: [] };
-  S.lvl = li;
+  S.results = { known: [], fuzzy: [], unknown: [] };
 
   showPanel('study');
   renderStudyCard();
 }
 
-/* Render the study panel content */
+/* Start round 2+: only pool words (learning + uncertain) */
+function _startNextRound(li) {
+  S.round++;
+  var pool = getPoolWords(li);
+  if (pool.length === 0) {
+    /* All mastered! */
+    _finishAllMastered();
+    return;
+  }
+  S.pairs = shuffle(pool);
+  S.idx = 0;
+  S.results = { known: [], fuzzy: [], unknown: [] };
+  renderStudyCard();
+}
+
+/* Render the scan card */
 function renderStudyCard() {
   if (S.idx >= S.pairs.length) { finishStudy(); return; }
 
@@ -32,126 +49,161 @@ function renderStudyCard() {
   html += '<div class="study-topbar">';
   html += '<button class="back-btn" onclick="openDeck(' + S.lvl + ')">\u2190</button>';
   html += '<div class="study-progress"><div class="study-progress-fill" style="width:' + progress + '%"></div></div>';
-  html += '<div class="study-count">' + (S.idx + 1) + ' / ' + S.pairs.length + '</div>';
+  html += '<div class="study-count">' + (S.idx + 1) + ' / ' + S.pairs.length;
+  if (S.round > 1) html += ' \u00b7 R' + S.round;
+  html += '</div>';
   html += '</div>';
 
-  /* Flashcard */
-  html += '<div class="fc-box" id="fc-box" role="button" tabindex="0" onclick="flipStudyCard()">';
-  html += '<div class="fc-inner">';
-  html += '<div class="fc-face fc-front">';
-  html += '<div class="fc-front-label">ENGLISH</div>';
-  html += '<div class="fc-front-word">' + escapeHtml(p.word) + '</div>';
-  html += '<div class="fc-front-hint">' + t('Tap to flip', '\u70b9\u51fb\u7ffb\u724c\u67e5\u770b\u91ca\u4e49') + '</div>';
+  /* Word card (no flip — show word, buttons reveal meaning) */
+  html += '<div class="scan-card" id="scan-card">';
+  html += '<div class="scan-word">' + escapeHtml(p.word) + '</div>';
+  html += '<div class="scan-def hidden" id="scan-def">' + escapeHtml(p.def) + '</div>';
   html += '</div>';
-  html += '<div class="fc-face fc-back">';
-  html += '<div class="fc-back-label">' + t('CHINESE', '\u4e2d\u6587') + '</div>';
-  html += '<div class="fc-back-def">' + escapeHtml(p.def) + '</div>';
-  html += '<div class="fc-back-word">' + escapeHtml(p.word) + '</div>';
-  html += '</div>';
-  html += '</div></div>';
 
-  /* Rating buttons */
-  html += '<div class="fc-actions hidden" id="fc-study-actions">';
-  html += '<button class="rate-btn rate-hard" onclick="rateStudy(\'hard\')">\ud83d\ude35 ' + t('Hard', '\u4e0d\u719f') + '</button>';
-  html += '<button class="rate-btn rate-ok" onclick="rateStudy(\'ok\')">\ud83e\udd14 ' + t('Okay', '\u6a21\u7cca') + '</button>';
-  html += '<button class="rate-btn rate-easy" onclick="rateStudy(\'easy\')">\u2705 ' + t('Easy', '\u638c\u63e1') + '</button>';
+  /* Three scan buttons */
+  html += '<div class="scan-actions" id="scan-actions">';
+  html += '<button class="scan-btn scan-known" data-scan="known">';
+  html += '<span class="scan-key">1</span> ' + t('Know it', '\u8ba4\u8bc6') + '</button>';
+  html += '<button class="scan-btn scan-fuzzy" data-scan="fuzzy">';
+  html += '<span class="scan-key">2</span> ' + t('Fuzzy', '\u6a21\u7cca') + '</button>';
+  html += '<button class="scan-btn scan-unknown" data-scan="unknown">';
+  html += '<span class="scan-key">3</span> ' + t("Don't know", '\u4e0d\u8ba4\u8bc6') + '</button>';
   html += '</div>';
 
   E('panel-study').innerHTML = html;
-}
 
-/* Flip card */
-function flipStudyCard() {
-  var box = E('fc-box');
-  if (box && !box.classList.contains('flipped')) {
-    box.classList.add('flipped');
-    var actions = E('fc-study-actions');
-    if (actions) actions.classList.remove('hidden');
+  /* Bind scan button clicks via delegation */
+  var actions = E('scan-actions');
+  if (actions && !actions._bound) {
+    actions._bound = true;
+    actions.addEventListener('click', function(e) {
+      var btn = e.target.closest('[data-scan]');
+      if (btn) rateScan(btn.dataset.scan);
+    });
   }
 }
 
-/* Rate word */
-function rateStudy(r) {
+/* Handle scan rating */
+function rateScan(verdict) {
   var p = S.pairs[S.idx];
   var key = wordKey(S.lvl, p.lid);
 
-  S.ratings[r].push(p);
+  S.results[verdict].push(p);
+  recordScan(key, verdict, S.round);
 
-  if (r === 'easy') {
-    recordAnswer(key, 'study-easy', true);
-    /* Spawn particles */
-    var box = E('fc-box');
-    if (box) {
-      var rc = box.getBoundingClientRect();
-      spawnP(rc.left + rc.width / 2, rc.top + rc.height / 2, 8);
-    }
-    playCorrect();
-  } else if (r === 'ok') {
-    recordAnswer(key, 'study-okay', null);
-  } else {
-    recordAnswer(key, 'study-hard', false);
-    playWrong();
+  /* Show definition briefly with visual feedback */
+  var def = E('scan-def');
+  var card = E('scan-card');
+  if (def) def.classList.remove('hidden');
+  if (card) {
+    card.classList.add('scan-' + verdict);
   }
 
-  S.idx++;
-  renderStudyCard();
+  /* Play sound */
+  if (verdict === 'known') playCorrect();
+  else if (verdict === 'unknown') playWrong();
+
+  /* Auto-advance after brief pause */
+  setTimeout(function() {
+    S.idx++;
+    renderStudyCard();
+  }, 600);
 }
 
-/* Finish study session */
+/* Finish round */
 function finishStudy() {
-  markModeDone(currentLvl, 'study');
+  var k = S.results.known.length;
+  var f = S.results.fuzzy.length;
+  var u = S.results.unknown.length;
+  var total = k + f + u;
+
+  /* Check if all words in level are mastered */
+  var pool = getPoolWords(S.lvl);
+  var allMastered = pool.length === 0;
+
+  if (allMastered) {
+    markModeDone(currentLvl, 'study');
+  }
   if (typeof checkSectionMilestone === 'function') checkSectionMilestone();
-  var h = S.ratings.hard.length;
-  var o = S.ratings.ok.length;
-  var e = S.ratings.easy.length;
-  var total = h + o + e;
 
   var html = '';
   html += '<div class="text-center">';
-  html += '<div class="result-emoji">\ud83c\udf93</div>';
-  html += '<div class="result-title">' + t('Study Complete!', '\u5b66\u4e60\u5b8c\u6210\uff01') + '</div>';
-  html += '<div class="result-sub">' + (h === 0 && o === 0 ? t('All mastered!', '\u5168\u90e8\u638c\u63e1\uff01') : t((h + o) + ' need review', '\u6709' + (h + o) + '\u4e2a\u9700\u8981\u5de9\u56fa')) + '</div>';
+  html += '<div class="result-emoji">' + (allMastered ? '\ud83c\udfc6' : '\ud83d\udcca') + '</div>';
+  html += '<div class="result-title">' + t('Round ' + S.round + ' Complete!', '\u7b2c ' + S.round + ' \u8f6e\u5b8c\u6210\uff01') + '</div>';
+  html += '<div class="result-sub">' + (allMastered
+    ? t('All words mastered!', '\u5168\u90e8\u638c\u63e1\uff01')
+    : t(pool.length + ' words remain in pool', '\u8fd8\u6709 ' + pool.length + ' \u4e2a\u8bcd\u5728\u5b66\u4e60\u6c60\u4e2d')) + '</div>';
   html += '</div>';
 
+  /* Result breakdown */
   html += '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:20px 0">';
-  html += '<div style="padding:12px;border-radius:var(--r);background:var(--c-danger-bg);text-align:center"><div style="font-size:22px;font-weight:800">' + h + '</div><div style="font-size:10px;font-weight:600">\ud83d\ude35 ' + t('Hard', '\u4e0d\u719f') + '</div></div>';
-  html += '<div style="padding:12px;border-radius:var(--r);background:var(--c-warning-bg);text-align:center"><div style="font-size:22px;font-weight:800">' + o + '</div><div style="font-size:10px;font-weight:600">\ud83e\udd14 ' + t('Okay', '\u6a21\u7cca') + '</div></div>';
-  html += '<div style="padding:12px;border-radius:var(--r);background:var(--c-success-bg);text-align:center"><div style="font-size:22px;font-weight:800">' + e + '</div><div style="font-size:10px;font-weight:600">\u2705 ' + t('Easy', '\u638c\u63e1') + '</div></div>';
+  html += '<div style="padding:12px;border-radius:var(--r);background:var(--c-success-bg);text-align:center"><div style="font-size:22px;font-weight:800">' + k + '</div><div style="font-size:10px;font-weight:600;color:var(--c-success)">' + t('Know it', '\u8ba4\u8bc6') + '</div></div>';
+  html += '<div style="padding:12px;border-radius:var(--r);background:var(--c-warning-bg);text-align:center"><div style="font-size:22px;font-weight:800">' + f + '</div><div style="font-size:10px;font-weight:600;color:var(--c-warning)">' + t('Fuzzy', '\u6a21\u7cca') + '</div></div>';
+  html += '<div style="padding:12px;border-radius:var(--r);background:var(--c-danger-bg);text-align:center"><div style="font-size:22px;font-weight:800">' + u + '</div><div style="font-size:10px;font-weight:600;color:var(--c-danger)">' + t("Don't know", '\u4e0d\u8ba4\u8bc6') + '</div></div>';
   html += '</div>';
 
-  var studyEmoji = (h === 0 && o === 0) ? '\ud83c\udfc6' : (h === 0 ? '\ud83c\udf89' : '\ud83d\udcaa');
-  _lastShareOpts = { mode: 'study', score: e, total: total, emoji: studyEmoji };
+  /* Pool progress bar */
+  var deckPairs = getPairs(LEVELS[S.lvl].vocabulary);
+  var totalWords = deckPairs.length;
+  var masteredN = totalWords - pool.length;
+  var masteredPct = totalWords > 0 ? Math.round(masteredN / totalWords * 100) : 100;
+  html += '<div class="pool-bar-wrap" style="margin:16px 0">';
+  html += '<div class="pool-bar">';
+  html += '<div class="pool-bar-mastered" style="width:' + masteredPct + '%"></div>';
+  html += '</div>';
+  html += '<div style="font-size:12px;color:var(--c-text2);margin-top:6px;text-align:center">';
+  html += t('Mastered', '\u5df2\u638c\u63e1') + ' ' + masteredN + ' / ' + totalWords + ' \u00b7 ' + masteredPct + '%';
+  html += '</div></div>';
+
+  var studyEmoji = allMastered ? '\ud83c\udfc6' : (u === 0 ? '\ud83c\udf89' : '\ud83d\udcaa');
+  _lastShareOpts = { mode: 'study', score: k, total: total, emoji: studyEmoji };
+
+  /* Actions */
+  html += '<div class="result-actions">';
+  if (!allMastered) {
+    html += '<button class="btn btn-primary" onclick="_startNextRound(' + S.lvl + ')">';
+    html += '\ud83d\udd04 ' + t('Continue Round ' + (S.round + 1), '\u7ee7\u7eed\u7b2c ' + (S.round + 1) + ' \u8f6e') + ' (' + pool.length + ' ' + t('words', '\u8bcd') + ')</button>';
+  }
 
   /* Context-aware next step */
   var _sectionStep = typeof sectionNextStepHTML === 'function' ? sectionNextStepHTML('study') : '';
-  html += _sectionStep || nextStepHTML('\u2753', t('Quiz to test yourself', '\u6d4b\u9a8c\u68c0\u9a8c\u5b66\u4e60\u6548\u679c'), 'startQuiz(' + currentLvl + ')');
-
-  html += '<div class="result-actions">';
-  var hw = S.ratings.hard.concat(S.ratings.ok);
-  if (hw.length > 0) {
-    html += '<button class="btn btn-secondary" onclick="restudyHard()">\ud83d\udcd6 ' + t('Restudy hard', '\u518d\u5b66\u4e0d\u719f\u7684') + '</button>';
+  if (_sectionStep) {
+    html += _sectionStep;
+  } else if (allMastered) {
+    html += nextStepHTML('\u2753', t('Quiz to reinforce', '\u6d4b\u9a8c\u5de9\u56fa'), 'startQuiz(' + currentLvl + ')');
   }
-  html += '<button class="btn btn-secondary" onclick="startStudy(' + currentLvl + ')">\ud83d\udd01 ' + t('Study again', '\u518d\u5b66\u4e00\u904d') + '</button>';
+
+  html += '<button class="btn btn-secondary" onclick="startStudy(' + currentLvl + ')">\ud83d\udd01 ' + t('Rescan all', '\u91cd\u65b0\u626b\u63cf') + '</button>';
   html += '<button class="btn btn-share" onclick="shareResult(_lastShareOpts)">\ud83d\udce4 ' + t('Share', '\u5206\u4eab') + '</button>';
   html += '<button class="btn btn-ghost" onclick="openDeck(' + currentLvl + ')">\u2190 ' + t('Back', '\u8fd4\u56de\u5361\u7ec4') + '</button>';
   html += '</div>';
 
   E('panel-study').innerHTML = html;
   updateSidebar();
-
-  /* Nudge: suggest quiz after first study */
-  if (typeof showNudge === 'function') {
-    showNudge('try_quiz', t('Try Quiz mode to test what you learned!', '试试测验模式检验学习效果'), t('Go', '去试试'), function() { startQuiz(currentLvl); });
-  }
-  /* Guest nudge after 5 study sessions */
-  if (typeof isGuest === 'function' && isGuest() && typeof showNudge === 'function') {
-    var gc = 0;
-    try { gc = parseInt(localStorage.getItem('wmatch_guest_study') || '0') + 1; localStorage.setItem('wmatch_guest_study', gc); } catch(e) {}
-    if (gc >= 5) showNudge('guest_sync', t('Register free to sync your progress across devices', '注册免费账号同步进度到云端'), t('Register', '注册'), function() { if (typeof showGuestSignupPrompt === 'function') showGuestSignupPrompt(); });
-  }
 }
 
+/* All mastered celebration */
+function _finishAllMastered() {
+  markModeDone(currentLvl, 'study');
+  if (typeof checkSectionMilestone === 'function') checkSectionMilestone();
+
+  var html = '<div class="text-center">';
+  html += '<div class="result-emoji">\ud83c\udfc6</div>';
+  html += '<div class="result-title">' + t('All Mastered!', '\u5168\u90e8\u638c\u63e1\uff01') + '</div>';
+  html += '<div class="result-sub">' + t('Great job! Try Quiz mode to reinforce your memory.', '\u592a\u68d2\u4e86\uff01\u8bd5\u8bd5\u6d4b\u9a8c\u6a21\u5f0f\u5de9\u56fa\u8bb0\u5fc6\u3002') + '</div>';
+  html += '</div>';
+
+  html += '<div class="result-actions">';
+  html += nextStepHTML('\u2753', t('Quiz to reinforce', '\u6d4b\u9a8c\u5de9\u56fa'), 'startQuiz(' + currentLvl + ')');
+  html += '<button class="btn btn-secondary" onclick="startStudy(' + currentLvl + ')">\ud83d\udd01 ' + t('Rescan all', '\u91cd\u65b0\u626b\u63cf') + '</button>';
+  html += '<button class="btn btn-ghost" onclick="openDeck(' + currentLvl + ')">\u2190 ' + t('Back', '\u8fd4\u56de\u5361\u7ec4') + '</button>';
+  html += '</div>';
+
+  E('panel-study').innerHTML = html;
+  updateSidebar();
+}
+
+/* Legacy function kept for backward compat */
 function restudyHard() {
-  var hw = S.ratings.hard.concat(S.ratings.ok);
-  startStudy(currentLvl, hw);
+  startStudy(currentLvl);
 }

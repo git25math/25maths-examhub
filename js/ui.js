@@ -37,7 +37,6 @@ function navTo(id) {
   showPanel(id);
   /* Render content for target panel */
   if (id === 'home') { if (typeof _currentSectionContext !== 'undefined') _currentSectionContext = null; renderHome(); }
-  else if (id === 'review-dash') renderReviewDash();
   else if (id === 'plan') renderTodaysPlan();
   else if (id === 'mistakes') renderMistakeBook();
   else if (id === 'import') renderImport();
@@ -61,15 +60,6 @@ function updateNav() {
   var langKey = appLang === 'en' ? 'en' : 'zh';
   document.querySelectorAll('[data-en][data-zh]').forEach(function(el) {
     el.textContent = el.dataset[langKey];
-  });
-  /* Review badge — only studied words that are due, not new/unseen */
-  var rc = typeof getStudiedDueCount === 'function' ? getStudiedDueCount() : getReviewCount();
-  var rvBadges = [E('nav-rv-badge'), E('bnav-rv-badge')];
-  rvBadges.forEach(function(b) {
-    if (b) {
-      b.textContent = rc;
-      b.style.display = rc > 0 ? 'inline-block' : 'none';
-    }
   });
   /* Mistake badge */
   var mc = 0;
@@ -173,7 +163,6 @@ function toggleLang() {
   if (appView === 'home') renderHome();
   else if (appView === 'deck') renderDeck(currentLvl);
   else if (appView === 'preview') renderPreview(currentLvl);
-  else if (appView === 'review-dash') renderReviewDash();
   else if (appView === 'plan') renderTodaysPlan();
   else if (appView === 'mistakes') renderMistakeBook();
   else if (appView === 'import') renderImport();
@@ -570,7 +559,7 @@ window.addEventListener('scroll', function() {
 /* ═══ SWIPE GESTURE FOR PANEL SWITCHING ═══ */
 var _touchStartX = 0;
 var _touchStartY = 0;
-var _navSeq = ['home', 'plan', 'review-dash', 'mistakes', 'stats'];
+var _navSeq = ['home', 'plan', 'mistakes', 'stats'];
 
 document.addEventListener('touchstart', function(e) {
   _touchStartX = e.touches[0].clientX;
@@ -871,8 +860,7 @@ function getUserStage() {
   var stage = mastered <= 10 ? 'new' : mastered <= 100 ? 'active' : mastered <= 500 ? 'intermediate' : 'advanced';
   var modesUsed = getDistinctModesUsed();
   var streak = typeof getStreakCount === 'function' ? getStreakCount() : 0;
-  var dueCount = typeof getDueWords === 'function' ? getDueWords().length : 0;
-  return { stage: stage, mastered: mastered, modesUsed: modesUsed, streak: streak, dueCount: dueCount };
+  return { stage: stage, mastered: mastered, modesUsed: modesUsed, streak: streak };
 }
 
 function getDistinctModesUsed() {
