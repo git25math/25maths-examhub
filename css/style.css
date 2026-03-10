@@ -931,6 +931,30 @@ input { font-family: inherit; }
   border-radius: var(--r);
   box-shadow: var(--shadow);
   border-left: 4px solid var(--c-primary);
+  cursor: pointer;
+  user-select: none;
+}
+.board-chevron {
+  margin-left: auto;
+  font-size: 12px;
+  color: var(--c-muted);
+  transition: transform 0.25s ease;
+}
+.board-body {
+  overflow: hidden;
+  opacity: 1;
+  transition: max-height 0.35s ease, opacity 0.25s ease;
+}
+.board-section.collapsed .board-chevron {
+  transform: rotate(-90deg);
+}
+.board-section.collapsed .board-header {
+  margin-bottom: 0;
+}
+.board-section.collapsed .board-body {
+  max-height: 0 !important;
+  opacity: 0;
+  overflow: hidden;
 }
 
 .board-emoji {
@@ -948,7 +972,6 @@ input { font-family: inherit; }
   font-size: 12px;
   font-weight: 600;
   color: var(--c-muted);
-  margin-left: auto;
   white-space: nowrap;
 }
 

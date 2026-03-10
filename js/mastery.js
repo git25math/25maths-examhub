@@ -111,6 +111,18 @@ var unitCollapsed = (function() {
   try { return JSON.parse(localStorage.getItem('wmatch_unitCollapsed')) || {}; } catch(e) { return {}; }
 })();
 
+/* Board section collapse state (default expanded) */
+var boardCollapsed = (function() {
+  try { return JSON.parse(localStorage.getItem('wmatch_boardCollapsed')) || {}; } catch(e) { return {}; }
+})();
+
+function toggleBoard(boardId) {
+  boardCollapsed[boardId] = !boardCollapsed[boardId];
+  var el = document.getElementById('board-' + boardId);
+  if (el) el.classList.toggle('collapsed', boardCollapsed[boardId]);
+  try { localStorage.setItem('wmatch_boardCollapsed', JSON.stringify(boardCollapsed)); } catch(e) {}
+}
+
 /* Sidebar board accordion state (per board) */
 var sidebarBoardOpen = {};
 
@@ -548,13 +560,14 @@ function renderHome() {
       var cieHtml = renderCIEHome();
       if (cieHtml) {
         hasAnyResult = true;
-        html += '<div class="board-section" id="board-cie">';
-        html += '<div class="board-header">';
+        html += '<div class="board-section' + (boardCollapsed['cie'] ? ' collapsed' : '') + '" id="board-cie">';
+        html += '<div class="board-header" role="button" tabindex="0" onclick="toggleBoard(\'cie\')">';
         html += '<span class="board-emoji">' + board.emoji + '</span>';
         html += '<span class="board-name">' + boardName(board) + '</span>';
         html += '<span class="board-code">' + board.code + '</span>';
+        html += '<span class="board-chevron">\u25bc</span>';
         html += '</div>';
-        html += cieHtml;
+        html += '<div class="board-body">' + cieHtml + '</div>';
         html += '</div>';
       }
       return;
@@ -565,13 +578,14 @@ function renderHome() {
       var edxHtml = renderEdexcelHome();
       if (edxHtml) {
         hasAnyResult = true;
-        html += '<div class="board-section" id="board-edx">';
-        html += '<div class="board-header">';
+        html += '<div class="board-section' + (boardCollapsed['edx'] ? ' collapsed' : '') + '" id="board-edx">';
+        html += '<div class="board-header" role="button" tabindex="0" onclick="toggleBoard(\'edx\')">';
         html += '<span class="board-emoji">' + board.emoji + '</span>';
         html += '<span class="board-name">' + boardName(board) + '</span>';
         html += '<span class="board-code">' + board.code + '</span>';
+        html += '<span class="board-chevron">\u25bc</span>';
         html += '</div>';
-        html += edxHtml;
+        html += '<div class="board-body">' + edxHtml + '</div>';
         html += '</div>';
       }
       return;
@@ -582,13 +596,14 @@ function renderHome() {
       var hhkHtml = renderHHKHome();
       if (hhkHtml) {
         hasAnyResult = true;
-        html += '<div class="board-section" id="board-25m">';
-        html += '<div class="board-header">';
+        html += '<div class="board-section' + (boardCollapsed['25m'] ? ' collapsed' : '') + '" id="board-25m">';
+        html += '<div class="board-header" role="button" tabindex="0" onclick="toggleBoard(\'25m\')">';
         html += '<span class="board-emoji">' + board.emoji + '</span>';
         html += '<span class="board-name">' + boardName(board) + '</span>';
         html += '<span class="board-code">' + board.code + '</span>';
+        html += '<span class="board-chevron">\u25bc</span>';
         html += '</div>';
-        html += hhkHtml;
+        html += '<div class="board-body">' + hhkHtml + '</div>';
         html += '</div>';
       }
       return;
@@ -713,14 +728,15 @@ function renderHome() {
 
     if (boardHtml) {
       hasAnyResult = true;
-      html += '<div class="board-section" id="board-' + board.id + '">';
-      html += '<div class="board-header">';
+      html += '<div class="board-section' + (boardCollapsed[board.id] ? ' collapsed' : '') + '" id="board-' + board.id + '">';
+      html += '<div class="board-header" role="button" tabindex="0" onclick="toggleBoard(\'' + board.id + '\')">';
       html += '<span class="board-emoji">' + board.emoji + '</span>';
       html += '<span class="board-name">' + boardName(board) + '</span>';
       html += '<span class="board-stats">' + boardMastered + '/' + boardTotal + ' \u2605 · ' + boardPct + '%</span>';
       html += '<span class="board-code">' + board.code + '</span>';
+      html += '<span class="board-chevron">\u25bc</span>';
       html += '</div>';
-      html += boardHtml;
+      html += '<div class="board-body">' + boardHtml + '</div>';
       html += '</div>'; /* close board-section */
     }
   });

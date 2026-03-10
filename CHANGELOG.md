@@ -1,5 +1,27 @@
 # Changelog
 
+## [4.3.7] - 2026-03-10 — 首页模块折叠
+
+### 折叠功能（js/mastery.js）
+- **`boardCollapsed` 状态**: localStorage 持久化，默认展开
+- **`toggleBoard(boardId)`**: 点击 board-header 折叠/展开，带动画
+- **四路覆盖**: CIE / Edexcel / HHK 三个考纲板块 + 非考纲通用板块
+
+### CSS（css/style.css）
+- `.board-chevron` 箭头（▼ 展开 / ◀ 折叠，旋转动画）
+- `.board-body` overflow + opacity transition
+- `.board-section.collapsed` 隐藏 body + 收起 header margin
+- `.board-header` cursor:pointer + user-select:none
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| js/mastery.js | boardCollapsed + toggleBoard + 4 处 board-header 改造 |
+| css/style.css | board 折叠样式 |
+| js/config.js | APP_VERSION → v4.3.7 |
+
+---
+
 ## [4.3.6] - 2026-03-10 — 修复 texHtml 覆盖编辑内容 bug
 
 ### BUG FIX（js/practice.js）
