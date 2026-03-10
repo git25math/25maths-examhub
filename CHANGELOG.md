@@ -1,5 +1,17 @@
 # Changelog
 
+## [4.4.5] - 2026-03-11 — 真题加载版本兼容修复
+
+### Bug 修复
+- **CIE 真题无法打开**: `loadPastPaperData()` 版本检查 `data.v === '2.0'` 不兼容 v3.0 格式，导致整个 JSON 对象被错误包装为 questions，所有真题加载静默失败
+- **修复**: 版本检查改为 `if (data.v)` 兼容所有带版本号的格式
+
+### 文件变更
+| 文件 | 变更类型 |
+|------|---------|
+| `js/practice.js` | 修复 — loadPastPaperData 版本检查 |
+| `js/app.bundle.min.js` | 重新构建 |
+
 ## [4.4.4] - 2026-03-11 — Mother Problem 标注试点 Phase 4 + Input Pattern Library
 
 ### Mother Problem 标注

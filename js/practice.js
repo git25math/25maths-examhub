@@ -1120,8 +1120,8 @@ function loadPastPaperData(board) {
   ]).then(function(results) {
     var data = results[0];
     var edits = results[1];
-    /* v2.0 format: { v, paperMeta, questions } */
-    if (data.v === '2.0') {
+    /* v2.0+ format: { v, paperMeta, questions } */
+    if (data.v) {
       _ppData[board] = data;
     } else {
       /* Legacy flat array fallback */
