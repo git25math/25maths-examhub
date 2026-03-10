@@ -195,6 +195,16 @@ function renderRepairWorksheet(ws) {
   html += '<div class="ws-question">' + ws.questionHtml + '</div>';
   html += '</div>';
 
+  /* ── Correction Steps (v4.0.0) ── */
+  if (typeof buildMistakeCorrectionCoach === 'function') {
+    try {
+      var _wsCoach = buildMistakeCorrectionCoach({ id: ws.questionId, marks: ws.marks }, ws.sectionId, ws.board);
+      if (_wsCoach && typeof renderMistakeCoachForPrint === 'function') {
+        html += renderMistakeCoachForPrint(_wsCoach);
+      }
+    } catch (e) {}
+  }
+
   /* ── Working Area ── */
   html += '<div class="ws-section">';
   html += '<div class="ws-section-title">Working Area</div>';

@@ -4516,3 +4516,23 @@ input { font-family: inherit; }
 .plan-card-explain-item { font-size:12px; line-height:1.4; color:var(--c-text2); margin-top:2px; }
 .plan-card-explain-item::before { content:'\2022 '; color:var(--c-primary); font-weight:700; }
 [data-theme="dark"] .plan-card-explain-item, [data-theme="dark"] .plan-card-explain-title { color:var(--c-text3, #aaa); }
+
+/* ═══ AI TUTOR BLOCK (v4.0.0) ═══ */
+.tutor-block { margin:10px 0; padding:10px 12px; border-radius:var(--r, 10px); background:var(--c-primary-bg, #EDEDFF); border-left:3px solid var(--c-primary); }
+.tutor-title { font-size:13px; font-weight:700; color:var(--c-primary); margin-bottom:6px; }
+.tutor-line { font-size:12px; line-height:1.45; color:var(--c-text2, #6B7280); margin-top:3px; }
+.tutor-line::before { content:'\2022 '; color:var(--c-primary); font-weight:700; }
+.tutor-scene-pack { background:var(--c-warning-bg, #FEF3C7); border-left-color:var(--c-warning, #F59E0B); }
+.tutor-scene-pack .tutor-title { color:var(--c-warning, #F59E0B); }
+.tutor-scene-pack .tutor-line::before { color:var(--c-warning, #F59E0B); }
+[data-theme="dark"] .tutor-block { background:var(--c-surface, #1E1E2E); }
+[data-theme="dark"] .tutor-scene-pack { background:var(--c-surface, #1E1E2E); }
+
+/* ═══ MISTAKE CORRECTION COACH (v4.0.0) ═══ */
+.mistake-coach-block { margin:10px 0; padding:10px 12px; border-radius:var(--r, 10px); background:var(--c-surface-alt, #F1F0FB); }
+.mistake-coach-title { font-size:13px; font-weight:700; color:var(--c-text); margin-bottom:8px; }
+.mistake-coach-step { display:flex; align-items:flex-start; gap:6px; margin-top:6px; font-size:12px; line-height:1.45; color:var(--c-text2, #6B7280); }
+.mistake-coach-num { flex-shrink:0; width:20px; height:20px; border-radius:50%; background:var(--c-primary); color:#fff; font-size:11px; font-weight:700; display:flex; align-items:center; justify-content:center; }
+.mistake-coach-icon { flex-shrink:0; }
+.mistake-coach-text { flex:1; }
+[data-theme="dark"] .mistake-coach-block { background:var(--c-surface, #1E1E2E); }

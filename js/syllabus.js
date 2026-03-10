@@ -2728,6 +2728,16 @@ function renderTodaysPlan() {
     try { var _gh = renderLearningGoalsCard(); if (_gh) html += _gh; } catch (e) {}
   }
 
+  /* AI Tutor — Plan guidance (v4.0.0) */
+  if (typeof getPlanTutorMessage === 'function') {
+    try {
+      var _tutorMsg = getPlanTutorMessage();
+      if (_tutorMsg && typeof renderTutorBlock === 'function') {
+        html += renderTutorBlock(_tutorMsg, 'plan');
+      }
+    } catch (e) {}
+  }
+
   /* Today's progress */
   var todayStr = new Date().toLocaleDateString('en-CA');
   var _planS = loadS();

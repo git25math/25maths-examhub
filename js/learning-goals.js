@@ -293,6 +293,16 @@ function renderLearningGoalsCard() {
     html += '</div>';
   }
 
+  /* AI Tutor — Goal guidance (v4.0.0) */
+  if (typeof getGoalTutorMessage === 'function') {
+    try {
+      var _goalTutor = getGoalTutorMessage();
+      if (_goalTutor && typeof renderTutorBlock === 'function') {
+        html += renderTutorBlock(_goalTutor, 'goal');
+      }
+    } catch (e) {}
+  }
+
   /* Next goal hint (v3.9.1) */
   if (state.lastGoalTransition && state.lastGoalTransition.at && (Date.now() - state.lastGoalTransition.at < 86400000)) {
     var nextGoal = null;

@@ -462,6 +462,17 @@
 ## v3.3 Print Repair Sheet [DONE]
 - [x] **单题打印修复单 (v3.3.0)**: worksheet.js 新窗口 A4 打印（题目+词汇+KP+留白+纠错+订正），从 Recovery Pack 触发
 
+## v4.0 AI Tutor Layer + Mistake Correction Coach [DONE]
+- [x] **AI Tutor (v4.0.0)**: 规则式引导引擎，4 个触点（Plan/Session/Pack/Goals），6 个消息生成器
+- [x] **Tutor Context**: profile/goals/backlog/streak/trend 聚合上下文
+- [x] **Plan Tutor**: Today's Plan 趋势/积压/薄弱/连续 建议
+- [x] **Session Tutor**: 开始内容提示 + 结束总结（延迟 toast 避免叠加）
+- [x] **Pack Tutor**: Recovery Pack 词汇/KP/类似题场景化建议
+- [x] **Goal Tutor**: Goals Card 个性化行动建议
+- [x] **Mistake Coach (v4.0.0)**: 5 规则纠错教练（vocab-gap/concept-gap/method/difficulty/reattempt）
+- [x] **Coach at Recovery Pack**: 编号步骤 UI 插入 action buttons 前
+- [x] **Coach at Print Sheet**: 打印版纠错步骤插入 Working Area 前
+
 ## v3.9 Learning Goals + Goal Explainability [DONE]
 - [x] **Learning Goals (v3.9.0)**: 系统自动生成 1-2 个 active goals（backlog/section-mastery/streak）
 - [x] **Goal Progress**: 实时计算 + Goals Card 渲染（progress bar + %）

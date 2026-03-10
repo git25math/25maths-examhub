@@ -367,7 +367,25 @@ function isSuperAdmin() {
 }
 
 /* App version */
-var APP_VERSION = 'v3.9.1';
+var APP_VERSION = 'v4.0.0';
+
+/* AI Tutor configuration */
+var AI_TUTOR_CONFIG = {
+  enablePlanTutor: true,
+  enableSessionTutor: true,
+  enablePackTutor: true,
+  enableGoalTutor: true,
+  maxTutorLines: 3,
+  tutorIcon: '\ud83d\udca1',
+  tutorName: { en: 'Study Tip', zh: '\u5b66\u4e60\u63d0\u793a' }
+};
+
+/* Mistake Correction Coach configuration */
+var MISTAKE_COACH_CONFIG = {
+  enabled: true,
+  maxSteps: 4,
+  coachIcon: '\ud83c\udfaf'
+};
 
 /* Learning Goals configuration */
 var LEARNING_GOALS_CONFIG = {

@@ -2133,6 +2133,26 @@ function _ppShowRecoveryPack(q) {
     html += '</div>';
   }
 
+  /* AI Tutor — Recovery Pack hint (v4.0.0) */
+  if (typeof getRecoveryPackTutorMessage === 'function') {
+    try {
+      var _tutorPack = getRecoveryPackTutorMessage(q, sectionId, board, recovery);
+      if (_tutorPack && typeof renderTutorBlock === 'function') {
+        html += renderTutorBlock(_tutorPack, 'pack');
+      }
+    } catch (e) {}
+  }
+
+  /* Mistake Correction Coach (v4.0.0) */
+  if (typeof buildMistakeCorrectionCoach === 'function') {
+    try {
+      var _coach = buildMistakeCorrectionCoach(q, sectionId, board);
+      if (_coach && typeof renderMistakeCoachBlock === 'function') {
+        html += renderMistakeCoachBlock(_coach);
+      }
+    } catch (e) {}
+  }
+
   /* Action buttons */
   html += '<div class="recovery-pack-actions">';
   html += '<button class="btn btn-sm" data-action="recoverPrint">';

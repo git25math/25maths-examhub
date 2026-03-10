@@ -83,6 +83,17 @@ function startRecoverySession() {
     startedAt: Date.now(),
     summaryReasons: summaryReasons
   };
+
+  /* AI Tutor — session start hint (v4.0.0) */
+  try {
+    if (typeof getSessionStartTutorMessage === 'function') {
+      var _tutorStart = getSessionStartTutorMessage(queue);
+      if (_tutorStart && _tutorStart.lines && _tutorStart.lines.length > 0) {
+        if (typeof showToast === 'function') showToast(_tutorStart.lines[0]);
+      }
+    }
+  } catch (e) {}
+
   _runCurrentRecoveryItem();
 }
 
@@ -241,9 +252,21 @@ function _endRecoverySession() {
   if (_toastNote) {
     msg += ' \u00b7 ' + _toastNote;
   } else if (reasons.length > 0) {
-    msg += ' \u00b7 ' + t('Focus', '重点') + ': ' + reasons.join(t(', ', '、'));
+    msg += ' \u00b7 ' + t('Focus', '\u91cd\u70b9') + ': ' + reasons.join(t(', ', '\u3001'));
   }
   if (typeof showToast === 'function') showToast(msg, 'success');
+
+  /* AI Tutor — session end feedback (v4.0.0) */
+  try {
+    if (typeof getSessionEndTutorMessage === 'function') {
+      var _tutorEnd = getSessionEndTutorMessage(results, duration);
+      if (_tutorEnd && _tutorEnd.lines && _tutorEnd.lines.length > 0) {
+        setTimeout(function() {
+          if (typeof showToast === 'function') showToast(_tutorEnd.lines[0]);
+        }, 2000);
+      }
+    }
+  } catch (e) {}
 }
 
 /* Check if a recovery session is currently active */

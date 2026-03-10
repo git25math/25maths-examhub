@@ -1,5 +1,59 @@
 # Changelog
 
+## [4.0.0] - 2026-03-10 — AI Tutor Layer + Mistake Correction Coach
+
+### AI Tutor 规则式引导（js/ai-tutor.js 新增）
+- `buildTutorContext()` — 聚合 profile/goals/backlog/streak/trend/weakSections 为统一上下文
+- `getPlanTutorMessage()` — Today's Plan 个性化学习建议（趋势/积压/薄弱/连续）
+- `getSessionStartTutorMessage(queue)` — 复查开始时显示内容提示 + 激励
+- `getSessionEndTutorMessage(results, duration)` — 复查结束时总结 + 目标进度提示
+- `getRecoveryPackTutorMessage(q, sectionId, board, recovery)` — Recovery Pack 场景化建议
+- `getGoalTutorMessage()` — Goals Card 下方个性化目标行动建议
+- `renderTutorBlock(message, scene)` — 统一渲染器，5 种 scene 样式
+
+### Mistake Correction Coach 纠错教练（js/mistake-coach.js 新增）
+- `buildMistakeCorrectionCoach(q, sectionId, board)` — 5 条纠错规则引擎
+  - Rule 1: vocab-gap（弱词汇 → 复习关键术语）
+  - Rule 2: concept-gap（弱KP → 学习核心概念）
+  - Rule 3: method-practice（类似题 → 方法巩固）
+  - Rule 4: difficulty-note（高分题 → 分步检查）
+  - Rule 5: reattempt（复习后重做）
+- `renderMistakeCoachBlock(coach)` — Recovery Pack 内纠错步骤 UI（编号圆点 + 图标）
+- `renderMistakeCoachForPrint(coach)` — Print Repair Sheet 打印版纠错步骤
+
+### 集成触点
+- **Today's Plan** (syllabus.js): Goals Card 后插入 Plan Tutor Block
+- **Recovery Session** (recovery-session.js): 开始 toast + 结束延迟 toast
+- **Recovery Pack** (practice.js): Tutor Hint + Coach Steps 插入 action buttons 前
+- **Print Repair Sheet** (worksheet.js): Coach Steps 插入 Working Area 前
+- **Goals Card** (learning-goals.js): Goal Tutor 插入 next hint 前
+
+### CSS（css/style.css）
+- `.tutor-block` 系列：紫色主题引导卡片 + pack 场景金色变体 + 暗色适配
+- `.mistake-coach-block` 系列：编号圆点 + 步骤布局 + 暗色适配
+
+### 配置（js/config.js）
+- `AI_TUTOR_CONFIG` — 4 个场景开关 + maxTutorLines + 图标/标题
+- `MISTAKE_COACH_CONFIG` — enabled + maxSteps + coachIcon
+- `APP_VERSION` → v4.0.0
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| js/config.js | +AI_TUTOR_CONFIG, +MISTAKE_COACH_CONFIG, version bump |
+| js/ai-tutor.js | **新增** ~180 行（6 个消息生成器 + 渲染器） |
+| js/mistake-coach.js | **新增** ~100 行（5 规则教练 + 2 个渲染器） |
+| js/syllabus.js | +Plan Tutor Block 插入 |
+| js/recovery-session.js | +session start/end tutor toast |
+| js/practice.js | +Recovery Pack tutor hint + coach block |
+| js/worksheet.js | +Print coach steps |
+| js/learning-goals.js | +Goal Tutor Block 插入 |
+| css/style.css | +tutor-block + mistake-coach 样式 |
+| scripts/minify.sh | +ai-tutor.js + mistake-coach.js 加入 bundle |
+| CLAUDE.md | version + JS load order 29 files |
+
+---
+
 ## [3.9.1] - 2026-03-10 — Learning Goals + Goal Explainability & Completion UX
 
 ### Learning Goals 系统（js/learning-goals.js 新增）
