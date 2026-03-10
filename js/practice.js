@@ -1602,23 +1602,25 @@ function _ppAnswerLine(prefix, suffix, tpl) {
     }
     /* Generic template mode: replace each ____ with a dotted blank span
        Support \n for multi-line answer areas (e.g. "a = ____\nb = ____\nc = ____")
-       Single-blank lines use flex stretch (dots right-aligned); multi-blank lines use inline blanks */
+       Trailing blank on each line uses flex stretch (right-aligned dots);
+       non-trailing blanks use inline fixed-width */
     var lines = tpl.split('\\n');
     var multiLine = lines.length > 1;
     var out = multiLine ? '<div class="pp-answer-rows">' : '';
     for (var li = 0; li < lines.length; li++) {
-      var blankCount = (lines[li].match(/_{3,}/g) || []).length;
-      if (blankCount === 1) {
-        /* Single blank: flex row with prefix + stretching dots + suffix */
-        var segs = lines[li].split(/_{3,}/);
+      var line = lines[li];
+      var endsWithBlank = /_{3,}\s*$/.test(line);
+      if (endsWithBlank) {
+        /* Strip trailing blank, render remaining inline blanks, then flex dots at end */
+        var stripped = line.replace(/_{3,}\s*$/, '');
+        var before = stripped.replace(/_{3,}/g, '<span class="pp-answer-blank"></span>');
         out += '<div class="pp-answer-line">';
-        if (segs[0]) out += '<span class="pp-answer-prefix">' + segs[0] + '</span>';
+        if (before) out += '<span class="pp-answer-prefix">' + before + '</span>';
         out += '<span class="pp-answer-dots"></span>';
-        if (segs[1]) out += '<span class="pp-answer-suffix">' + segs[1] + '</span>';
         out += '</div>';
       } else {
-        /* Multi-blank: inline fixed-width blanks */
-        var rendered = lines[li].replace(/_{3,}/g, '<span class="pp-answer-blank"></span>');
+        /* No trailing blank: all blanks are inline fixed-width */
+        var rendered = line.replace(/_{3,}/g, '<span class="pp-answer-blank"></span>');
         out += '<div class="pp-answer-line pp-answer-tpl">' + rendered + '</div>';
       }
     }
