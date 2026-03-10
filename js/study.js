@@ -93,7 +93,7 @@ function _renderRefreshCard() {
   html += '<button class="scan-btn scan-fuzzy" data-scan="fuzzy">';
   html += '<span class="scan-key">2</span> ' + t('Fuzzy', '\u6a21\u7cca') + '</button>';
   html += '<button class="scan-btn scan-unknown" data-scan="unknown">';
-  html += '<span class="scan-key">3</span> ' + t("Don't know", '\u4e0d\u8ba4\u8bc6') + '</button>';
+  html += '<span class="scan-key">3</span> ' + t('Still learning', '\u8fd8\u5728\u5b66') + '</button>';
   html += '</div>';
 
   E('panel-study').innerHTML = html;
@@ -127,7 +127,7 @@ function _finishRefreshScan() {
   html += '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:20px 0">';
   html += '<div style="padding:12px;border-radius:var(--r);background:var(--c-success-bg);text-align:center"><div style="font-size:22px;font-weight:800">' + k + '</div><div style="font-size:10px;font-weight:600;color:var(--c-success)">' + t('Still know', '\u4ecd\u8ba4\u8bc6') + '</div></div>';
   html += '<div style="padding:12px;border-radius:var(--r);background:var(--c-warning-bg);text-align:center"><div style="font-size:22px;font-weight:800">' + f + '</div><div style="font-size:10px;font-weight:600;color:var(--c-warning)">' + t('Fuzzy', '\u6a21\u7cca') + '</div></div>';
-  html += '<div style="padding:12px;border-radius:var(--r);background:var(--c-danger-bg);text-align:center"><div style="font-size:22px;font-weight:800">' + u + '</div><div style="font-size:10px;font-weight:600;color:var(--c-danger)">' + t('Forgot', '\u5fd8\u8bb0') + '</div></div>';
+  html += '<div style="padding:12px;border-radius:var(--r);background:var(--c-danger-bg);text-align:center"><div style="font-size:22px;font-weight:800">' + u + '</div><div style="font-size:10px;font-weight:600;color:var(--c-danger)">' + t('Needs another round', '\u518d\u7ec3\u4e00\u8f6e') + '</div></div>';
   html += '</div>';
 
   if (f + u > 0) {
@@ -244,16 +244,16 @@ function _finishKPRefreshScan() {
   var html = '<div class="text-center">';
   html += '<div class="result-emoji">\ud83d\udd04</div>';
   html += '<div class="result-title">' + t('KP Refresh Complete!', '知识点复查完成！') + '</div>';
-  html += '<div class="result-sub">' + t('Checked ' + (k + f + u) + ' stale KPs', '检查了 ' + (k + f + u) + ' 个衰退知识点') + '</div>';
+  html += '<div class="result-sub">' + t('Reviewed ' + (k + f + u) + ' knowledge points', '复查了 ' + (k + f + u) + ' 个知识点') + '</div>';
   html += '</div>';
   html += '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:20px 0">';
   html += '<div style="padding:12px;border-radius:var(--r);background:var(--c-success-bg);text-align:center"><div style="font-size:22px;font-weight:800">' + k + '</div><div style="font-size:10px;font-weight:600;color:var(--c-success)">' + t('Still know', '仍认识') + '</div></div>';
   html += '<div style="padding:12px;border-radius:var(--r);background:var(--c-warning-bg);text-align:center"><div style="font-size:22px;font-weight:800">' + f + '</div><div style="font-size:10px;font-weight:600;color:var(--c-warning)">' + t('Fuzzy', '模糊') + '</div></div>';
-  html += '<div style="padding:12px;border-radius:var(--r);background:var(--c-danger-bg);text-align:center"><div style="font-size:22px;font-weight:800">' + u + '</div><div style="font-size:10px;font-weight:600;color:var(--c-danger)">' + t('Forgot', '忘记') + '</div></div>';
+  html += '<div style="padding:12px;border-radius:var(--r);background:var(--c-danger-bg);text-align:center"><div style="font-size:22px;font-weight:800">' + u + '</div><div style="font-size:10px;font-weight:600;color:var(--c-danger)">' + t('Needs another round', '\u518d\u7ec3\u4e00\u8f6e') + '</div></div>';
   html += '</div>';
   if (f + u > 0) {
     html += '<div style="font-size:13px;color:var(--c-text2);text-align:center;margin:8px 0">';
-    html += t((f + u) + ' KPs returned to learning', (f + u) + ' 个知识点已回流到学习池');
+    html += t((f + u) + ' KPs returned to learning pool', (f + u) + ' \u4e2a\u77e5\u8bc6\u70b9\u5df2\u56de\u5230\u5b66\u4e60\u6c60');
     html += '</div>';
   }
   html += '<div class="result-actions">';
@@ -308,7 +308,7 @@ function renderStudyCard() {
   html += '<button class="scan-btn scan-fuzzy" data-scan="fuzzy">';
   html += '<span class="scan-key">2</span> ' + t('Fuzzy', '\u6a21\u7cca') + '</button>';
   html += '<button class="scan-btn scan-unknown" data-scan="unknown">';
-  html += '<span class="scan-key">3</span> ' + t("Don't know", '\u4e0d\u8ba4\u8bc6') + '</button>';
+  html += '<span class="scan-key">3</span> ' + t('Still learning', '\u8fd8\u5728\u5b66') + '</button>';
   html += '</div>';
 
   E('panel-study').innerHTML = html;
@@ -390,7 +390,7 @@ function finishStudy() {
   html += '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:20px 0">';
   html += '<div style="padding:12px;border-radius:var(--r);background:var(--c-success-bg);text-align:center"><div style="font-size:22px;font-weight:800">' + k + '</div><div style="font-size:10px;font-weight:600;color:var(--c-success)">' + t('Know it', '\u8ba4\u8bc6') + '</div></div>';
   html += '<div style="padding:12px;border-radius:var(--r);background:var(--c-warning-bg);text-align:center"><div style="font-size:22px;font-weight:800">' + f + '</div><div style="font-size:10px;font-weight:600;color:var(--c-warning)">' + t('Fuzzy', '\u6a21\u7cca') + '</div></div>';
-  html += '<div style="padding:12px;border-radius:var(--r);background:var(--c-danger-bg);text-align:center"><div style="font-size:22px;font-weight:800">' + u + '</div><div style="font-size:10px;font-weight:600;color:var(--c-danger)">' + t("Don't know", '\u4e0d\u8ba4\u8bc6') + '</div></div>';
+  html += '<div style="padding:12px;border-radius:var(--r);background:var(--c-danger-bg);text-align:center"><div style="font-size:22px;font-weight:800">' + u + '</div><div style="font-size:10px;font-weight:600;color:var(--c-danger)">' + t('Still learning', '\u8fd8\u5728\u5b66') + '</div></div>';
   html += '</div>';
 
   /* Pool progress bar */

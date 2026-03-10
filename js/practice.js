@@ -1074,7 +1074,7 @@ function _pqFindQ(qid, board) {
 }
 
 /* ══════════════════════════════════════════════════════════════
-   PAST PAPER MODULE — Practice + Exam + Wrong Book
+   PAST PAPER MODULE — Practice + Exam + Review Book
    ══════════════════════════════════════════════════════════════ */
 
 /* Past paper access guard: CIE/Edexcel locked to super admin until QA complete */
@@ -1446,7 +1446,7 @@ function _renderPPRefreshCard() {
   html += '<div class="scan-actions" id="pp-scan-actions">';
   html += '<button class="scan-btn scan-known" data-pp-scan="known"><span class="scan-key">1</span> ' + t('Know it', '认识') + '</button>';
   html += '<button class="scan-btn scan-fuzzy" data-pp-scan="fuzzy"><span class="scan-key">2</span> ' + t('Fuzzy', '模糊') + '</button>';
-  html += '<button class="scan-btn scan-unknown" data-pp-scan="unknown"><span class="scan-key">3</span> ' + t("Don't know", '不认识') + '</button>';
+  html += '<button class="scan-btn scan-unknown" data-pp-scan="unknown"><span class="scan-key">3</span> ' + t('Still learning', '还在学') + '</button>';
   html += '</div>';
   E('panel-practice').innerHTML = html;
   if (typeof renderMathInElement === 'function') renderMathInElement(E('panel-practice'));
@@ -1485,12 +1485,12 @@ function _finishPPRefreshScan() {
   var html = '<div class="text-center">';
   html += '<div class="result-emoji">\ud83d\udd04</div>';
   html += '<div class="result-title">' + t('PP Refresh Complete!', '真题复查完成！') + '</div>';
-  html += '<div class="result-sub">' + t('Checked ' + (k + f + u) + ' stale questions', '检查了 ' + (k + f + u) + ' 个衰退真题') + '</div>';
+  html += '<div class="result-sub">' + t('Reviewed ' + (k + f + u) + ' questions', '复查了 ' + (k + f + u) + ' 个真题') + '</div>';
   html += '</div>';
   html += '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:20px 0">';
   html += '<div style="padding:12px;border-radius:var(--r);background:var(--c-success-bg);text-align:center"><div style="font-size:22px;font-weight:800">' + k + '</div><div style="font-size:10px;font-weight:600;color:var(--c-success)">' + t('Still know', '仍认识') + '</div></div>';
   html += '<div style="padding:12px;border-radius:var(--r);background:var(--c-warning-bg);text-align:center"><div style="font-size:22px;font-weight:800">' + f + '</div><div style="font-size:10px;font-weight:600;color:var(--c-warning)">' + t('Fuzzy', '模糊') + '</div></div>';
-  html += '<div style="padding:12px;border-radius:var(--r);background:var(--c-danger-bg);text-align:center"><div style="font-size:22px;font-weight:800">' + u + '</div><div style="font-size:10px;font-weight:600;color:var(--c-danger)">' + t('Forgot', '忘记') + '</div></div>';
+  html += '<div style="padding:12px;border-radius:var(--r);background:var(--c-danger-bg);text-align:center"><div style="font-size:22px;font-weight:800">' + u + '</div><div style="font-size:10px;font-weight:600;color:var(--c-danger)">' + t('Needs another round', '再练一轮') + '</div></div>';
   html += '</div>';
   if (f + u > 0) {
     html += '<div style="font-size:13px;color:var(--c-text2);text-align:center;margin:8px 0">';
@@ -2131,7 +2131,7 @@ function renderPPCard() {
     html += '</div>';
     html += '<div class="pp-rate-row">';
     html += '<button class="pp-rate-btn needs-work' + (mastery === 'needs_work' ? ' selected' : '') + '" onclick="ppRate(\'needs_work\')">';
-    html += '\ud83d\udd34 ' + t('Needs Work', '\u8fd8\u6709\u95ee\u9898') + '</button>';
+    html += '\ud83d\udd34 ' + t('Keep Practicing', '\u7ee7\u7eed\u52a0\u6cb9') + '</button>';
     html += '<button class="pp-rate-btn partial' + (mastery === 'partial' ? ' selected' : '') + '" onclick="ppRate(\'partial\')">';
     html += '\ud83d\udfe1 ' + t('Partial', '\u90e8\u5206\u638c\u63e1') + '</button>';
     html += '<button class="pp-rate-btn mastered' + (mastery === 'mastered' ? ' selected' : '') + '" onclick="ppRate(\'mastered\')">';
@@ -2425,7 +2425,7 @@ function ppBack() {
   /* Confirm before leaving an active exam */
   if (_ppSession && _ppSession.mode === 'exam' && _ppSession.startTime) {
     var html = '<h3 class="section-title">' + t('Quit Exam?', '\u9000\u51fa\u8003\u8bd5\uff1f') + '</h3>';
-    html += '<p style="color:var(--c-text2);margin:12px 0">' + t('Your progress will be lost.', '\u8fdb\u5ea6\u5c06\u4e22\u5931\uff0c\u786e\u5b9a\u9000\u51fa\u5417\uff1f') + '</p>';
+    html += '<p style="color:var(--c-text2);margin:12px 0">' + t('Your progress won\'t be saved. Continue anyway?', '\u8fdb\u5ea6\u5c06\u4e0d\u4f1a\u4fdd\u5b58\uff0c\u786e\u5b9a\u7ee7\u7eed\u5417\uff1f') + '</p>';
     html += '<div class="btn-row btn-row--gap12 btn-row--end btn-row--mt16">';
     html += '<button class="btn btn-ghost" onclick="hideModal()">' + t('Cancel', '\u53d6\u6d88') + '</button>';
     html += '<button class="btn btn-primary" onclick="hideModal();ppForceBack()">' + t('Quit', '\u786e\u5b9a\u9000\u51fa') + '</button>';
@@ -2511,7 +2511,7 @@ function startDiagnostic(board) {
   /* Decay warning (#9) */
   var _overdueDiag = typeof getDueWords === 'function' ? getDueWords().length : 0;
   if (_overdueDiag > 20) {
-    showToast(t('You have ' + _overdueDiag + ' words overdue for review', '你有 ' + _overdueDiag + ' 个词已过期待复习'));
+    showToast(t('You have ' + _overdueDiag + ' words ready for another round', '你有 ' + _overdueDiag + ' 个词可以再练一轮了'));
   }
 
   showToast(t('Preparing diagnostic...', '\u51c6\u5907\u8bca\u65ad\u6d4b\u8bd5\u4e2d...'));
@@ -3001,7 +3001,7 @@ function ppShowMarking() {
     html += '<div class="pp-rate-row mb-8">';
     html += '<button class="pp-rate-btn mastered" onclick="ppMarkRate(' + i + ',\'correct\',this)">\u2705 ' + t('All correct', '\u5168\u5bf9') + '</button>';
     html += '<button class="pp-rate-btn partial" onclick="ppMarkRate(' + i + ',\'partial\',this)">\ud83d\udfe1 ' + t('Partial', '\u90e8\u5206') + '</button>';
-    html += '<button class="pp-rate-btn needs-work" onclick="ppMarkRate(' + i + ',\'wrong\',this)">\ud83d\udd34 ' + t('Wrong', '\u9519\u8bef') + '</button>';
+    html += '<button class="pp-rate-btn needs-work" onclick="ppMarkRate(' + i + ',\'wrong\',this)">\ud83d\udd34 ' + t('Not yet', '\u8fd8\u6ca1\u638c\u63e1') + '</button>';
     html += '</div>';
 
     /* Score input */
@@ -3826,7 +3826,7 @@ function ppShowResults(exam, conceptErrors) {
         html += nextStepHTML('\ud83d\udcdd', t('Review Vocabulary', '\u590d\u4e60\u8bcd\u6c47'), 'openDeck(' + _nsLi + ')');
       }
     } else if (pct < 80) {
-      html += nextStepHTML('\ud83d\udcd5', t('Review Wrong Questions', '\u590d\u4e60\u9519\u9898'), 'ppShowWrongBook(\'' + _nsSecId + '\',\'' + _nsBoard + '\')');
+      html += nextStepHTML('\ud83d\udcd5', t('Review these questions', '\u590d\u4e60\u8fd9\u4e9b\u9898\u76ee'), 'ppShowWrongBook(\'' + _nsSecId + '\',\'' + _nsBoard + '\')');
     } else {
       var _nextSec = _getNextSection(_nsSecId, _nsBoard);
       if (_nextSec) {
@@ -3844,7 +3844,7 @@ function ppShowResults(exam, conceptErrors) {
     html += '\ud83d\udd04 ' + t('Try Again', '\u518d\u6765\u4e00\u8f6e') + '</button>';
   } else if (_ppSession) {
     html += '<button class="btn btn-ghost" onclick="ppShowWrongBook(\'' + _ppSession.sectionId + '\',\'' + _ppSession.board + '\')">';
-    html += '\ud83d\udcd5 ' + t('Wrong Book', '\u9519\u9898\u672c') + '</button>';
+    html += '\ud83d\udcd5 ' + t('Review Book', '\u590d\u4e60\u672c') + '</button>';
     html += '<button class="btn btn-primary" onclick="ppStartExam(\'' + _ppSession.sectionId + '\',\'' + _ppSession.board + '\')">';
     html += '\ud83d\udd04 ' + t('Try Again', '\u518d\u6765\u4e00\u8f6e') + '</button>';
   }
@@ -3879,7 +3879,7 @@ function ppShowWrongBook(sectionId, board) {
     var html = '';
     html += '<div class="page-header">';
     html += '<button class="btn btn-ghost btn-sm" onclick="ppBack()">\u2190 ' + t('Back', '\u8fd4\u56de') + '</button>';
-    html += '<h3 class="mt-0 mb-0 flex-1">\ud83d\udcd5 ' + t('Wrong Book', '\u9519\u9898\u672c') + '</h3>';
+    html += '<h3 class="mt-0 mb-0 flex-1">\ud83d\udcd5 ' + t('Review Book', '\u590d\u4e60\u672c') + '</h3>';
     html += '</div>';
 
     if (wrongItems.length === 0) {
@@ -4346,7 +4346,7 @@ function ppShowMockSetup(board) {
   /* Decay warning (#9) */
   var _overdueMock = typeof getDueWords === 'function' ? getDueWords().length : 0;
   if (_overdueMock > 20) {
-    showToast(t('You have ' + _overdueMock + ' words overdue for review', '你有 ' + _overdueMock + ' 个词已过期待复习'));
+    showToast(t('You have ' + _overdueMock + ' words ready for another round', '你有 ' + _overdueMock + ' 个词可以再练一轮了'));
   }
 
   Promise.all([loadPastPaperData(board), loadKaTeX()]).then(function() {
@@ -4393,7 +4393,7 @@ function ppShowMockSetup(board) {
     html += '<span>' + t('Focus', '\u91cd\u70b9') + '</span>';
     html += '<div class="pp-setup-options" id="mock-focus">';
     html += '<div class="pp-setup-opt active" role="button" tabindex="0" onclick="ppMockSetOpt(this,\'focus\',\'balanced\')">' + t('Balanced', '\u5747\u8861') + '</div>';
-    html += '<div class="pp-setup-opt" role="button" tabindex="0" onclick="ppMockSetOpt(this,\'focus\',\'weak\')">' + t('Weak Areas', '\u8584\u5f31\u9879') + '</div>';
+    html += '<div class="pp-setup-opt" role="button" tabindex="0" onclick="ppMockSetOpt(this,\'focus\',\'weak\')">' + t('Focus Areas', '\u91cd\u70b9\u5173\u6ce8') + '</div>';
     html += '<div class="pp-setup-opt" role="button" tabindex="0" onclick="ppMockSetOpt(this,\'focus\',\'random\')">' + t('Random', '\u968f\u673a') + '</div>';
     html += '</div></div>';
 

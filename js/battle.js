@@ -203,7 +203,7 @@ function endBattle(won) {
     ? (appLang === 'en'
       ? ['Amazing!', 'Perfect!', 'Incredible!', 'Unstoppable!'][~~(Math.random() * 4)]
       : ['\u592a\u795e\u4e86\uff01', '\u5b8c\u7f8e\uff01', '\u4f60\u592a\u5f3a\u4e86\uff01', '\u65e0\u654c\uff01'][~~(Math.random() * 4)])
-    : t("Time's up!", '\u65f6\u95f4\u5230\uff01');
+    : t("Time's up! Great effort!", '\u65f6\u95f4\u5230\uff01\u8868\u73b0\u4e0d\u9519\uff01');
 
   var modalHtml = '';
   modalHtml += '<div class="result-emoji">' + emoji + '</div>';

@@ -19,15 +19,15 @@ function generateDefaultLearningGoals(profile, backlogCount) {
       id: 'goal-backlog',
       type: 'recovery',
       key: 'backlog',
-      title: 'Reduce backlog below ' + (cfg.backlogTargetDefault || 3),
-      titleZh: '\u5C06\u79EF\u538B\u4EFB\u52A1\u964D\u5230 ' + (cfg.backlogTargetDefault || 3) + ' \u4EE5\u4E0B',
+      title: 'Complete ' + (cfg.backlogTargetDefault || 3) + ' review items',
+      titleZh: '\u5B8C\u6210 ' + (cfg.backlogTargetDefault || 3) + ' \u9879\u590D\u4E60\u5185\u5BB9',
       target: cfg.backlogTargetDefault || 3,
       current: backlogCount,
       progress: 0,
       isCompleted: false,
       createdAt: new Date().toISOString(),
       reasons: [
-        { key: 'backlog', en: 'Backlog is high', zh: '\u5F53\u524D\u79EF\u538B\u8F83\u9AD8' }
+        { key: 'backlog', en: 'Plenty to review', zh: '\u6709\u5F88\u591A\u5185\u5BB9\u53EF\u4EE5\u590D\u4E60' }
       ]
     });
   }
@@ -196,7 +196,7 @@ function refreshLearningGoals() {
 function _refreshGoalReasons(goal, profile, backlog) {
   if (!goal) return;
   if (goal.key === 'backlog') {
-    goal.reasons = [{ key: 'backlog', en: 'Backlog is high (' + (backlog || 0) + ' items)', zh: '\u5F53\u524D\u79EF\u538B\u8F83\u9AD8\uFF08' + (backlog || 0) + ' \u9879\uFF09' }];
+    goal.reasons = [{ key: 'backlog', en: 'Plenty to review (' + (backlog || 0) + ' items)', zh: '\u6709\u5F88\u591A\u5185\u5BB9\u53EF\u4EE5\u590D\u4E60\uFF08' + (backlog || 0) + ' \u9879\uFF09' }];
   } else if (goal.key === 'section-mastery') {
     var pct = goal.current || 0;
     goal.reasons = [{ key: 'weak-section', en: (goal.sectionId || '') + ' mastery is ' + pct + '%', zh: (goal.sectionId || '') + ' \u638C\u63E1\u5EA6\u4E3A ' + pct + '%' }];

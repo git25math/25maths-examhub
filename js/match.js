@@ -63,7 +63,7 @@ function renderMatchBoard() {
 
   /* Timer */
   var elapsed = Math.round((Date.now() - MT.startTime) / 1000);
-  html += '<div class="match-timer">\u2139\ufe0f ' + t('Time: ', '\u5df2\u7528\u65f6: ') + elapsed + 's | ' + t('Errors: ', '\u9519\u8bef: ') + MT.errors + '</div>';
+  html += '<div class="match-timer">\u2139\ufe0f ' + t('Time: ', '\u5df2\u7528\u65f6: ') + elapsed + 's | ' + t('Tries: ', '\u5c1d\u8bd5: ') + MT.errors + '</div>';
 
   E('panel-match').innerHTML = html;
 }
@@ -161,7 +161,7 @@ function finishMatch() {
   html += nextStepHTML('\u2753', t('Quiz to test yourself', '\u6d4b\u9a8c\u68c0\u9a8c\u6548\u679c'), 'startQuiz(' + currentLvl + ')');
   html += '<div class="result-actions">';
   if (MT.errors > 0) {
-    html += '<button class="btn btn-secondary" onclick="studyWrongMatch()">\ud83d\udcd6 ' + t('Study wrong words', '\u53ea\u5b66\u9519\u7684\u8bcd') + '</button>';
+    html += '<button class="btn btn-secondary" onclick="studyWrongMatch()">\ud83d\udcd6 ' + t('Review missed words', '\u590d\u4e60\u5f85\u52a0\u5f3a\u7684\u8bcd') + '</button>';
   }
   html += '<button class="btn btn-primary" onclick="startMatch(' + currentLvl + ')">\ud83d\udd01 ' + t('Try again', '\u518d\u6765\u4e00\u6b21') + '</button>';
   html += '<button class="btn btn-share" onclick="shareResult(_lastShareOpts)">\ud83d\udce4 ' + t('Share', '\u5206\u4eab') + '</button>';

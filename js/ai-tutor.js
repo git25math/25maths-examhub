@@ -61,21 +61,21 @@ function getPlanTutorMessage() {
   if (ctx.trend === 'up') {
     lines.push(t('Your accuracy is improving — keep this momentum!', '你的准确率在提升——保持这个势头！'));
   } else if (ctx.trend === 'down') {
-    lines.push(t("Your accuracy has dipped recently. Today's plan focuses on reinforcement.", '你的准确率最近有所下降。今天的计划侧重巩固。'));
+    lines.push(t("Let's strengthen your foundation today — the plan is designed to help!", '今天来巩固一下基础——计划已为你安排好！'));
   } else {
     lines.push(t("Staying consistent is key. Let's keep building on your progress.", '保持一致性是关键。让我们继续巩固你的进度。'));
   }
 
   /* Backlog warning */
   if (ctx.backlog > 5) {
-    lines.push(t('You have ' + ctx.backlog + ' items pending — try to clear a few today.', '你有 ' + ctx.backlog + ' 个待复查项——今天试着清除一些。'));
+    lines.push(t('You have ' + ctx.backlog + ' items ready for review — even a few will make a difference!', '有 ' + ctx.backlog + ' 个内容可以复习——哪怕几个也会有进步！'));
   }
 
   /* Weak section hint */
   if (ctx.weakSections.length > 0) {
     var ws = ctx.weakSections[0];
     var wsName = ws.title || ws.id || '';
-    lines.push(t(wsName + ' needs more attention — the plan includes it.', wsName + ' 需要更多关注——计划已包含。'));
+    lines.push(t('The plan includes ' + wsName + ' to help you build confidence there.', '计划包含了 ' + wsName + '，帮你在这块更有信心。'));
   }
 
   /* Streak encouragement */
@@ -92,17 +92,17 @@ function getPlanTutorMessage() {
     var _epKey = _epPrimary.key;
     /* Only show strong language for high confidence; softer for medium; skip low */
     if (_epBand === 'high') {
-      if (_epKey === 'concept-gap') lines.push(t('Your mistakes often stem from concept gaps. Rebuild the idea before retrying.', '\u4f60\u7684\u9519\u8bef\u5e38\u6e90\u4e8e\u6982\u5ff5\u8584\u5f31\u3002\u5148\u8865\u6982\u5ff5\u518d\u56de\u9898\u3002'));
-      else if (_epKey === 'careless-reading') lines.push(t('Reading errors are a clear pattern. Re-read the question carefully before solving.', '\u8bfb\u9898\u7c97\u5fc3\u5df2\u662f\u660e\u663e\u6a21\u5f0f\u3002\u505a\u9898\u524d\u5148\u5b8c\u6574\u91cd\u8bfb\u3002'));
-      else if (_epKey === 'vocab-misunderstanding') lines.push(t('Vocabulary confusion is a recurring pattern. Review key terms before each session.', '\u8bcd\u6c47\u56f0\u60d1\u662f\u53cd\u590d\u51fa\u73b0\u7684\u6a21\u5f0f\u3002\u6bcf\u6b21\u590d\u67e5\u524d\u5148\u786e\u8ba4\u5173\u952e\u8bcd\u3002'));
-      else if (_epKey === 'careless-calculation') lines.push(t('Calculation slips are a consistent pattern. Check your work line by line.', '\u8ba1\u7b97\u5931\u8bef\u5df2\u662f\u7a33\u5b9a\u6a21\u5f0f\u3002\u9010\u6b65\u68c0\u67e5\u8ba1\u7b97\u8fc7\u7a0b\u3002'));
-      else if (_epKey === 'method-confusion') lines.push(t('Method confusion is a clear pattern. Follow a fixed step-by-step approach.', '\u65b9\u6cd5\u6df7\u4e71\u5df2\u662f\u660e\u663e\u6a21\u5f0f\u3002\u6309\u56fa\u5b9a\u6b65\u9aa4\u89e3\u9898\u3002'));
+      if (_epKey === 'concept-gap') lines.push(t('Building a stronger concept foundation will help — let\'s review the key ideas first.', '打牢概念基础会很有帮助——先回顾核心要点。'));
+      else if (_epKey === 'careless-reading') lines.push(t('Careful reading makes a big difference — try reading the question twice before solving.', '仔细审题效果显著——解题前试着把题目读两遍。'));
+      else if (_epKey === 'vocab-misunderstanding') lines.push(t('Strengthening key terms will boost your confidence — review them before each session.', '巩固关键词汇会提升你的信心——每次复习前先过一遍。'));
+      else if (_epKey === 'careless-calculation') lines.push(t('Double-checking calculations is a great habit — try going through each step.', '检查计算是个好习惯——试着逐步验算每一步。'));
+      else if (_epKey === 'method-confusion') lines.push(t('A consistent step-by-step approach works wonders — let\'s build that habit.', '固定的解题步骤非常有效——让我们养成这个习惯。'));
     } else if (_epBand === 'medium') {
-      if (_epKey === 'concept-gap') lines.push(t('Your recent mistakes may involve concept gaps. Try reviewing the key idea first.', '\u4f60\u6700\u8fd1\u7684\u9519\u8bef\u53ef\u80fd\u6d89\u53ca\u6982\u5ff5\u8584\u5f31\u3002\u5148\u590d\u4e60\u6838\u5fc3\u6982\u5ff5\u3002'));
-      else if (_epKey === 'careless-reading') lines.push(t('Some mistakes may come from reading too quickly. Try re-reading before solving.', '\u90e8\u5206\u9519\u8bef\u53ef\u80fd\u6765\u81ea\u8bfb\u9898\u8fc7\u5feb\u3002\u5c1d\u8bd5\u505a\u9898\u524d\u5148\u91cd\u8bfb\u3002'));
-      else if (_epKey === 'vocab-misunderstanding') lines.push(t('Some errors may relate to vocabulary. Consider reviewing key terms.', '\u90e8\u5206\u9519\u8bef\u53ef\u80fd\u4e0e\u8bcd\u6c47\u6709\u5173\u3002\u5efa\u8bae\u590d\u4e60\u5173\u952e\u672f\u8bed\u3002'));
-      else if (_epKey === 'careless-calculation') lines.push(t('Some mistakes may be calculation slips. Try estimating answers first.', '\u90e8\u5206\u9519\u8bef\u53ef\u80fd\u662f\u8ba1\u7b97\u5931\u8bef\u3002\u5c1d\u8bd5\u5148\u4f30\u7b97\u7b54\u6848\u3002'));
-      else if (_epKey === 'method-confusion') lines.push(t('Some errors may come from method confusion. Try a structured approach.', '\u90e8\u5206\u9519\u8bef\u53ef\u80fd\u6765\u81ea\u65b9\u6cd5\u6df7\u4e71\u3002\u5c1d\u8bd5\u7ed3\u6784\u5316\u89e3\u9898\u3002'));
+      if (_epKey === 'concept-gap') lines.push(t('Reviewing core concepts could help — let\'s strengthen that foundation.', '回顾核心概念会有帮助——一起巩固基础。'));
+      else if (_epKey === 'careless-reading') lines.push(t('Taking a moment to read carefully can help — try it next time.', '多花一点时间审题会有帮助——下次试试看。'));
+      else if (_epKey === 'vocab-misunderstanding') lines.push(t('Reviewing key terms can make a difference — they\'re worth another look.', '复习关键词汇会有帮助——值得再过一遍。'));
+      else if (_epKey === 'careless-calculation') lines.push(t('A quick double-check of each step can catch small errors — great habit to build.', '逐步验算能发现小错误——养成这个好习惯。'));
+      else if (_epKey === 'method-confusion') lines.push(t('Practicing a consistent method will build your confidence.', '练习固定的解题方法会让你更有信心。'));
     }
   }
 
@@ -162,7 +162,7 @@ function getSessionEndTutorMessage(results, durationSec) {
   }
 
   if (skipped > 0) {
-    lines.push(t("You skipped " + skipped + " — they'll carry over to tomorrow.", '你跳过了 ' + skipped + ' 项——它们会结转到明天。'));
+    lines.push(t(skipped + ' item' + (skipped > 1 ? 's' : '') + ' saved for tomorrow — no rush, you\'re making progress!', skipped + ' 项留到明天——不着急，你已经在进步！'));
   }
 
   /* Time feedback */
@@ -229,7 +229,7 @@ function getGoalTutorMessage() {
   for (var i = 0; i < ctx.goals.activeGoals.length; i++) {
     var g = ctx.goals.activeGoals[i];
     if (g.key === 'backlog' && g.current > g.target) {
-      lines.push(t('Focus on clearing your backlog — ' + g.current + ' items remain.', '专注清除积压——还有 ' + g.current + ' 项待处理。'));
+      lines.push(t('You have ' + g.current + ' items ready to review — keep up the great work!', '有 ' + g.current + ' 项内容可以复习——继续保持！'));
     } else if (g.key === 'section-mastery' && g.current < g.target) {
       var gap = g.target - g.current;
       lines.push(t('Raise ' + (g.sectionId || '') + ' by ' + gap + '% to reach your goal.', '将 ' + (g.sectionId || '') + ' 提升 ' + gap + '% 即可达成目标。'));

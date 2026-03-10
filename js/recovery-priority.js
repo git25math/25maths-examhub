@@ -213,12 +213,12 @@ function computeRecoveryPriority(unit) {
   /* Explainability — structured reasons for UI display */
   unit.reason = [];
   if (unit.errorWeight > 20) {
-    unit.reason.push({ key: 'error', weight: unit.errorWeight, label: t('High error rate', '错误率高') });
+    unit.reason.push({ key: 'error', weight: unit.errorWeight, label: t('Needs more practice', '需要多练习') });
   } else if (unit.errorWeight > 0) {
-    unit.reason.push({ key: 'error', weight: unit.errorWeight, label: t('Some errors', '有错误记录') });
+    unit.reason.push({ key: 'error', weight: unit.errorWeight, label: t('Room to grow', '还有提升空间') });
   }
   if (unit.decayWeight > 20) {
-    unit.reason.push({ key: 'decay', weight: unit.decayWeight, label: t('Overdue ' + (unit.raw.daysSince || 0) + ' days', '过期' + (unit.raw.daysSince || 0) + '天') });
+    unit.reason.push({ key: 'decay', weight: unit.decayWeight, label: t('Ready for ' + (unit.raw.daysSince || 0) + ' days', '已准备好' + (unit.raw.daysSince || 0) + '天') });
   } else if (unit.decayWeight > 0) {
     unit.reason.push({ key: 'decay', weight: unit.decayWeight, label: t('Not reviewed recently', '近期未复习') });
   }
@@ -228,9 +228,9 @@ function computeRecoveryPriority(unit) {
     unit.reason.push({ key: 'exam', weight: unit.examWeight, label: t('Exam relevant', '考试相关') });
   }
   if (unit.healthPenalty > 8) {
-    unit.reason.push({ key: 'health', weight: unit.healthPenalty, label: t('Weak section', '章节偏弱') });
+    unit.reason.push({ key: 'health', weight: unit.healthPenalty, label: t('Focus section', '重点章节') });
   } else if (unit.healthPenalty > 0) {
-    unit.reason.push({ key: 'health', weight: unit.healthPenalty, label: t('Section needs work', '章节需加强') });
+    unit.reason.push({ key: 'health', weight: unit.healthPenalty, label: t('Section to strengthen', '待加强章节') });
   }
 
   /* Clean up temp field */

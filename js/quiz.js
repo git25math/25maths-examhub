@@ -151,7 +151,7 @@ function finishQuiz() {
   var step = _sectionStep || nextStepHTML('\ud83e\udde0', t('Review to consolidate', '\u590d\u4e60\u5de9\u56fa\u8bb0\u5fc6'), 'startReview(' + currentLvl + ')');
   var wrongBtn = '';
   if (Q.wrongPairs.length > 0) {
-    wrongBtn = '<button class="btn btn-secondary" onclick="studyWrongQuiz()">\ud83d\udcd6 ' + t('Study wrong words', '\u53ea\u5b66\u9519\u7684\u8bcd') + '</button>';
+    wrongBtn = '<button class="btn btn-secondary" onclick="studyWrongQuiz()">\ud83d\udcd6 ' + t('Review missed words', '\u590d\u4e60\u5f85\u52a0\u5f3a\u7684\u8bcd') + '</button>';
   }
   var html = '<div class="text-center">';
   html += raw.replace('<div class="result-actions">', step + '<div class="result-actions">' + wrongBtn);

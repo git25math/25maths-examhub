@@ -332,7 +332,7 @@ function _renderMasteryStability() {
   html += '<div class="stat-card"><div class="stat-num">' + mastered + '</div><div class="stat-label">' + t('Mastered', '\u5df2\u638c\u63e1') + '</div></div>';
   html += '<div class="stat-card"><div class="stat-num">' + stale + '</div><div class="stat-label">' + t('Due for Review', '\u5f85\u590d\u67e5') + '</div></div>';
   html += '<div class="stat-card"><div class="stat-num">' + stablePct + '%</div><div class="stat-label">' + t('Stable', '\u7a33\u5b9a') + '</div></div>';
-  html += '<div class="stat-card"><div class="stat-num">' + reflowed + '</div><div class="stat-label">' + t('Reflowed', '\u56de\u6d41') + '</div></div>';
+  html += '<div class="stat-card"><div class="stat-num">' + reflowed + '</div><div class="stat-label">' + t('Reviewing', '\u590d\u4e60\u4e2d') + '</div></div>';
   html += '</div></div>';
   return html;
 }

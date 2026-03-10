@@ -236,7 +236,7 @@ function _endRecoverySession() {
   var secs = duration % 60;
   var timeStr = mins > 0 ? mins + 'm ' + secs + 's' : secs + 's';
   var msg = done + ' ' + t('scans completed', '轮扫描完成');
-  if (skipped > 0) msg += ', ' + skipped + ' ' + t('skipped', '跳过');
+  if (skipped > 0) msg += ', ' + skipped + ' ' + t('saved for later', '留待下次');
   msg += ' (' + timeStr + ')';
   /* Personalized explainability in toast (v3.8.1) */
   var _toastNote = '';

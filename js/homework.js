@@ -529,10 +529,10 @@ function showCreateCustomHwModal(classId, studentUserId, studentName, wrongWords
   /* wrongWords: [{word, def}] - max 10 */
   var wordsToUse = wrongWords.slice(0, 10);
 
-  var html = '<div class="section-title">' + t('Custom Vocab Assignment', '自定义错词作业') + '</div>';
+  var html = '<div class="section-title">' + t('Custom Vocab Assignment', '自定义词汇复习作业') + '</div>';
   html += '<div class="text-sm text-muted mb-12">' + t('For: ', '学生：') + '<strong>' + studentName + '</strong></div>';
   html += '<label class="settings-label">' + t('Title', '标题') + '</label>';
-  html += '<input class="auth-input" id="chw-title" value="' + t('Error Words Review', '错词复习') + '">';
+  html += '<input class="auth-input" id="chw-title" value="' + t('Words to Strengthen', '待加强词汇复习') + '">';
 
   html += '<label class="settings-label">' + t('Words', '词汇') + ' (' + wordsToUse.length + '/' + t('max 10', '最多10') + ')</label>';
   html += '<div class="hw-scroll-list">';
@@ -803,7 +803,7 @@ async function renderHwProgress(hwId, classId) {
     html += '<th>' + t('Score', '成绩') + '</th>';
     html += '<th>' + t('Accuracy', '正确率') + '</th>';
     html += '<th>' + t('Attempts', '尝试') + '</th>';
-    html += '<th>' + t('Wrong Words', '错词') + '</th>';
+    html += '<th>' + t('Words to Review', '待复习词') + '</th>';
     html += '<th>' + t('Action', '操作') + '</th>';
     html += '</tr></thead><tbody>';
 
@@ -856,7 +856,7 @@ async function exportHwCSV(hwId, classId) {
     results.forEach(function(r) { resultMap[r.user_id] = r; });
 
     var rows = [];
-    rows.push([t('Name','姓名'), t('Status','状态'), t('Score','成绩'), t('Total','总题'), t('Accuracy','正确率'), t('Attempts','尝试次数'), t('Wrong Words','错词'), t('Completed At','完成时间')].join(','));
+    rows.push([t('Name','姓名'), t('Status','状态'), t('Score','成绩'), t('Total','总题'), t('Accuracy','正确率'), t('Attempts','尝试次数'), t('Words to Review','待复习词'), t('Completed At','完成时间')].join(','));
 
     students.forEach(function(s) {
       var r = resultMap[s.user_id];
@@ -903,7 +903,7 @@ async function showStudentHwDetail(hwId, studentUserId, studentName, classId) {
   html += '</div>';
 
   if (wrongWords.length > 0) {
-    html += '<label class="settings-label text-danger">' + t('Wrong Words', '错词') + ' (' + wrongWords.length + ')</label>';
+    html += '<label class="settings-label text-danger">' + t('Words to Review', '待复习词') + ' (' + wrongWords.length + ')</label>';
     html += '<div class="hw-scroll-list mb-12">';
     wrongWords.forEach(function(w) {
       html += '<div style="padding:4px 0;font-size:13px;border-bottom:1px solid var(--c-border-light)">';
@@ -914,10 +914,10 @@ async function showStudentHwDetail(hwId, studentUserId, studentName, classId) {
 
     _pendingCustomHwData = { classId: classId, userId: studentUserId, name: studentName, words: wrongWords };
     html += '<button class="btn btn-primary btn-sm" style="margin-bottom:12px" onclick="hideModal();showCreateCustomHwFromCache()">';
-    html += t('Create error-word assignment', '布置错词作业');
+    html += t('Create review assignment', '布置复习作业');
     html += '</button>';
   } else {
-    html += '<div style="font-size:13px;color:var(--c-success);margin-bottom:12px">' + t('No wrong words!', '没有错词！') + '</div>';
+    html += '<div style="font-size:13px;color:var(--c-success);margin-bottom:12px">' + t('All words looking good!', '所有词汇都掌握得不错！') + '</div>';
   }
 
   html += '<button class="btn btn-ghost btn-block" onclick="hideModal()">' + t('Close', '关闭') + '</button>';
@@ -1062,7 +1062,7 @@ async function showStudentHwPage() {
       html += '<span style="font-size:12px;color:var(--c-primary);font-weight:600">' + pct + '%</span>';
     }
     html += '<span class="hw-list-deadline" style="' + (isOverdue ? 'color:var(--c-danger)' : '') + '">';
-    html += (isOverdue ? t('Overdue', '\u5df2\u903e\u671f') + ' ' : '') + deadline.toLocaleDateString();
+    html += (isOverdue ? t('Pending', '待完成') + ' ' : '') + deadline.toLocaleDateString();
     html += '</span>';
     html += '<button class="btn btn-primary btn-sm" data-action="hw-go" data-hwid="' + hw.id + '" data-practice="' + (isPractice ? '1' : '0') + '">GO \u2192</button>';
     html += '</div>';
@@ -1097,7 +1097,7 @@ async function showStudentHwPage() {
     /* Study suggestion based on score */
     var tip = '';
     if (pct >= 90) tip = t('Excellent! Move to next topic', '\u5f88\u68d2\uff01\u53ef\u4ee5\u7ee7\u7eed\u4e0b\u4e00\u4e13\u9898');
-    else if (pct >= 70) tip = isPractice2 ? t('Good! Try harder questions', '\u4e0d\u9519\uff01\u8bd5\u8bd5\u66f4\u96be\u7684\u9898') : t('Good! Review wrong words', '\u4e0d\u9519\uff01\u590d\u4e60\u4e00\u4e0b\u9519\u8bcd');
+    else if (pct >= 70) tip = isPractice2 ? t('Good! Try harder questions', '\u4e0d\u9519\uff01\u8bd5\u8bd5\u66f4\u96be\u7684\u9898') : t('Good! Let\'s strengthen these words', '不错！来巩固一下这些词');
     else tip = isPractice2 ? t('Review the sections and try again', '\u590d\u4e60\u77e5\u8bc6\u70b9\u540e\u518d\u8bd5') : t('Keep practicing this group', '\u7ee7\u7eed\u7ec3\u4e60\u8fd9\u4e2a\u8bcd\u7ec4');
 
     html += '<div class="hw-list-item hw-list-item-wrap">';
@@ -1313,10 +1313,10 @@ async function finishHwTest() {
     'homework'
   );
 
-  /* Add wrong words review section */
+  /* Add words-to-review section */
   if (t_.wrongWords.length > 0) {
     resultHtml += '<div style="margin-top:16px;text-align:left">';
-    resultHtml += '<div class="hw-section-title text-danger">' + t('Wrong Words', '错词') + ' (' + t_.wrongWords.length + ')</div>';
+    resultHtml += '<div class="hw-section-title text-danger">' + t('Words to Review', '待复习词') + ' (' + t_.wrongWords.length + ')</div>';
     t_.wrongWords.forEach(function(w) {
       resultHtml += '<div style="padding:6px 0;font-size:13px;border-bottom:1px solid var(--c-border-light)">';
       resultHtml += '<strong>' + escapeHtml(w.word) + '</strong> — ' + escapeHtml(w.def);
@@ -1351,7 +1351,7 @@ function saveWrongWordsAsDeck() {
   });
 
   var level = {
-    title: ww.title + ' - ' + t('Wrong Words', '错词'),
+    title: ww.title + ' - ' + t('Words to Review', '待复习词'),
     timer: Math.max(60, ww.words.length * 10),
     comboBonus: 3,
     vocabulary: vocab,
@@ -1364,7 +1364,7 @@ function saveWrongWordsAsDeck() {
   _pendingWrongWords = null;
 
   showToast(t('Saved! ' + ww.words.length + ' words added as study deck',
-    '已保存！' + ww.words.length + ' 个错词已添加为学习卡组'));
+    '已保存！' + ww.words.length + ' 个待复习词已添加为学习卡组'));
 
   var btns = document.querySelectorAll('[onclick="saveWrongWordsAsDeck()"]');
   btns.forEach(function(b) {
@@ -1564,7 +1564,7 @@ async function finishHwPractice() {
   /* Wrong questions review */
   if (s.wrongQuestions.length > 0) {
     resultHtml += '<div style="margin-top:16px;text-align:left">';
-    resultHtml += '<div class="hw-section-title text-danger">' + t('Wrong Questions', '\u9519\u9898') + ' (' + s.wrongQuestions.length + ')</div>';
+    resultHtml += '<div class="hw-section-title text-danger">' + t('Questions to Review', '待复习题') + ' (' + s.wrongQuestions.length + ')</div>';
     s.wrongQuestions.forEach(function(w) {
       resultHtml += '<div style="padding:6px 0;font-size:13px;border-bottom:1px solid var(--c-border-light)">';
       resultHtml += '<div>' + pqRender(w.q) + '</div>';

@@ -771,7 +771,7 @@ function renderHome() {
         if (hrsAgo >= 20 && hrsAgo <= 48) {
           var today = new Date().toISOString().slice(0, 10);
           if (st.last !== today && typeof showNudge === 'function') {
-            showNudge('streak_risk', t('Your ' + st.cur + '-day streak is at risk! Do a Daily Challenge to keep it going', '\u4f60\u7684 ' + st.cur + ' \u5929\u8fde\u7eed\u5b66\u4e60\u5373\u5c06\u4e2d\u65ad\uff01\u505a\u4e2a\u6bcf\u65e5\u6311\u6218\u7ee7\u7eed\u4fdd\u6301'), t('Go', '\u53bb\u6311\u6218'), function() { if (typeof startDailyChallenge === 'function') startDailyChallenge(); });
+            showNudge('streak_risk', t('Keep your ' + st.cur + '-day streak alive! A quick Daily Challenge will do it', '\u4f60\u5df2\u8fde\u7eed\u5b66\u4e60 ' + st.cur + ' \u5929\uff0c\u5feb\u6765\u5ef6\u7eed\u5427\uff01\u505a\u4e2a\u6bcf\u65e5\u6311\u6218\u5373\u53ef\u4fdd\u6301'), t('Go', '\u53bb\u6311\u6218'), function() { if (typeof startDailyChallenge === 'function') startDailyChallenge(); });
           }
         }
       }
@@ -937,7 +937,7 @@ function renderDeck(idx) {
 
   /* Sort bar */
   html += '<div class="sort-bar">';
-  [['default', t('Default', '\u9ed8\u8ba4')], ['az', 'A-Z'], ['random', t('Random', '\u968f\u673a')], ['hard', t('Hard first', '\u96be\u8bcd\u4f18\u5148')]].forEach(function(s) {
+  [['default', t('Default', '\u9ed8\u8ba4')], ['az', 'A-Z'], ['random', t('Random', '\u968f\u673a')], ['hard', t('Challenge first', '\u6311\u6218\u4f18\u5148')]].forEach(function(s) {
     html += '<button class="sort-btn' + (appSort === s[0] ? ' active' : '') + '" onclick="setSort(\'' + s[0] + '\',' + idx + ')">' + s[1] + '</button>';
   });
   html += '</div>';

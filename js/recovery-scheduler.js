@@ -190,7 +190,7 @@ function buildPersonalizationReasons(profile, budget, caps) {
   /* Budget was lowered */
   if (budget && budget._adjustedFrom && budget.maxUnitsPerDay < budget._adjustedFrom) {
     if ((profile.backlogPressure || 0) >= ((typeof RECOVERY_PERSONALIZATION_CONFIG !== 'undefined' ? RECOVERY_PERSONALIZATION_CONFIG.carryOverWarningThreshold : 6) || 6)) {
-      reasons.push({ key: 'backlog', en: 'Backlog is high \u2014 lighter load today', zh: '\u5F53\u524D\u79EF\u538B\u8F83\u9AD8\uFF0C\u4ECA\u65E5\u4EFB\u52A1\u91CF\u5DF2\u964D\u4F4E' });
+      reasons.push({ key: 'backlog', en: 'Lighter session today \u2014 consistency matters most!', zh: '\u4ECA\u65E5\u8F7B\u91CF\u7EC3\u4E60\u2014\u2014\u4FDD\u6301\u8282\u594F\u6700\u91CD\u8981\uFF01' });
     }
     if ((profile.skipRate || 0) >= 0.3) {
       reasons.push({ key: 'skip-rate', en: 'High skip rate \u2014 reducing load to stay on track', zh: '\u8DF3\u8FC7\u7387\u8F83\u9AD8\uFF0C\u5DF2\u964D\u4F4E\u4EFB\u52A1\u91CF\u4EE5\u4FDD\u6301\u8282\u594F' });

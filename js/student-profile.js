@@ -280,7 +280,7 @@ function renderStudentProfileCard() {
     var tCls = 'profile-trend-' + profile.trend.direction;
     var tIcon = profile.trend.direction === 'up' ? '\u2191' : (profile.trend.direction === 'down' ? '\u2193' : '\u2192');
     var tLabel = profile.trend.direction === 'up' ? t('Improving', '\u8FDB\u6B65\u4E2D')
-      : (profile.trend.direction === 'down' ? t('Declining', '\u4E0B\u964D\u4E2D') : t('Stable', '\u7A33\u5B9A'));
+      : (profile.trend.direction === 'down' ? t('Changing', '\u6CE2\u52A8\u4E2D') : t('Stable', '\u7A33\u5B9A'));
     html += '<span class="profile-trend-pill ' + tCls + '">' + tIcon + ' ' + tLabel + '</span>';
   }
   html += '</div>';
@@ -305,7 +305,7 @@ function renderStudentProfileCard() {
     var _epPills = _epd ? _epd.persistent.slice(0, 2) : (profile.dominantPatterns || []);
     if (_epPills.length > 0) {
       html += '<div class="student-profile-weak">';
-      html += '<div class="profile-weak-label">' + t('Error patterns', '\u9519\u8bef\u6a21\u5f0f') + '</div>';
+      html += '<div class="profile-weak-label">' + t('Learning patterns', '\u5b66\u4e60\u6a21\u5f0f') + '</div>';
       html += renderErrorPatternPills(_epPills);
       html += '</div>';
     }
@@ -324,7 +324,7 @@ function renderStudentProfileCard() {
   /* Weak sections pills */
   if (profile.weakSections.length > 0) {
     html += '<div class="student-profile-weak">';
-    html += '<div class="profile-weak-label">' + t('Needs work', '\u5F85\u52A0\u5F3A') + '</div>';
+    html += '<div class="profile-weak-label">' + t('Focus areas', '\u91CD\u70B9\u5173\u6CE8') + '</div>';
     html += '<div class="profile-weak-pills">';
     for (var i = 0; i < profile.weakSections.length; i++) {
       html += '<span class="profile-weak-pill">' + escapeHtml(profile.weakSections[i].title) + '</span>';

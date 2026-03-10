@@ -720,7 +720,7 @@ function sectionNextStepHTML(currentMode, scoreRate) {
     var modesUsed = getDistinctModesUsed();
     if (scoreRate < 0.5) {
       /* Low score → review wrong words */
-      emoji = '\ud83d\udcd6'; label = t('Review the words you missed', '复习刚才错的词');
+      emoji = '\ud83d\udcd6'; label = t('Review words to strengthen', '复习待加强的词');
       action = li >= 0 ? 'startStudy(' + li + ')' : 'openSection(\'' + ctx.sectionId + '\',\'' + ctx.board + '\')';
     } else if (scoreRate <= 0.8) {
       /* Medium → try again or spell */

@@ -1411,7 +1411,7 @@ function _renderPPSectionModule(slot, secId, board) {
   if (ppStats.learning > 0) h += '<span class="pp-module-stat learning">' + ppStats.learning + ' ' + t('Learning', '\u5b66\u4e60\u4e2d') + '</span>';
   if (ppStats.uncertain > 0) h += '<span class="pp-module-stat uncertain">' + ppStats.uncertain + ' ' + t('Uncertain', '\u4e0d\u786e\u5b9a') + '</span>';
   if (ppStats.mastered > 0) h += '<span class="pp-module-stat mastered-stat">\u2705 ' + ppStats.mastered + ' ' + t('Mastered', '\u5df2\u638c\u63e1') + '</span>';
-  if (ppStats.stale > 0) h += '<span class="pp-module-stat stale">\u26a0 ' + ppStats.stale + ' ' + t('Stale', '\u8870\u9000') + '</span>';
+  if (ppStats.stale > 0) h += '<span class="pp-module-stat stale">\u26a0 ' + ppStats.stale + ' ' + t('Due', '\u5f85\u590d\u67e5') + '</span>';
   h += '</div>';
 
   /* Vocab progress for this section */
@@ -1499,7 +1499,7 @@ function _renderPPSectionModule(slot, secId, board) {
   h += '\u23f1 ' + t('Exam Mode', '\u5b9e\u6218\u6a21\u5f0f') + '</button>';
   if (ppStats.wrongActive > 0) {
     h += '<button class="btn btn-sm btn-danger sec-mod-btn-flex" data-pp-start data-sec="' + secId + '" data-board="' + board + '" data-mode="wrongbook">';
-    h += '\ud83d\udcd5 ' + t('Wrong Book', '\u9519\u9898\u672c') + ' (' + ppStats.wrongActive + ')</button>';
+    h += '\ud83d\udcd5 ' + t('Review Book', '\u590d\u4e60\u672c') + ' (' + ppStats.wrongActive + ')</button>';
   }
   h += '</div>';
   h += '</div>';
@@ -1615,7 +1615,7 @@ function _renderMasterQSummary(slot, secId, board) {
   h += '<div class="btn-row btn-row--wrap">';
   if (unmasteredCount > 0) {
     h += '<button class="btn btn-primary btn-sm" onclick="startPracticeUnmastered(\'' + secId + '\',\'' + board + '\')" class="flex-1">';
-    h += t('Practice Unmastered', '\u53EA\u7EC3\u672A\u638C\u63E1') + ' (' + unmasteredCount + ')</button>';
+    h += t('Practice to strengthen', '\u7ec3\u4e60\u5f85\u52a0\u5f3a\u7684') + ' (' + unmasteredCount + ')</button>';
   }
   h += '<button class="btn btn-ghost btn-sm" onclick="startPastPaper(\'' + secId + '\',\'' + board + '\',\'practice\')" class="flex-1">';
   h += t('Practice All', '\u5168\u90E8\u7EC3\u4E60') + '</button>';
@@ -2501,7 +2501,7 @@ function _renderPlanInsights() {
   } else if (info.stage === 'active') {
     msg = '\ud83d\udca1 ' + t('You\'ve used ' + info.modesUsed + '/7 modes. More variety strengthens learning!', '\u5df2\u7528 ' + info.modesUsed + '/7 \u79cd\u6a21\u5f0f\uff0c\u591a\u6837\u5316\u7ec3\u4e60\u8ba9\u638c\u63e1\u66f4\u725b\u56fa\uff01');
   } else if (info.stage === 'intermediate') {
-    msg = '\ud83d\udca1 ' + t('Focus 10 min on your weakest topic for the best improvement.', '花 10 分钟攻克最弱知识点效果最佳。');
+    msg = '\ud83d\udca1 ' + t('10 minutes on a focus topic can make a real difference!', '花 10 分钟专注一个知识点，进步会很明显！');
   } else {
     if (info.dueCount > 0) {
       msg = '\ud83d\udca1 ' + t(info.dueCount + ' words need another round of review.', info.dueCount + ' \u4e2a\u8bcd\u9700\u8981\u518d\u590d\u4e60\u4e00\u8f6e\u3002');
@@ -2554,7 +2554,7 @@ function renderTodaysPlan() {
     html += '<span class="plan-card-icon">\ud83d\udd04</span>';
     html += '<span class="plan-card-title">' + t('Refresh Review', '\u8f7b\u91cf\u590d\u67e5') + '</span>';
     html += '</div>';
-    html += '<div class="plan-card-count">' + staleN + ' ' + t('mastered words getting stale', '\u4e2a\u5df2\u638c\u63e1\u8bcd\u6c47\u6b63\u5728\u8870\u9000') + '</div>';
+    html += '<div class="plan-card-count">' + staleN + ' ' + t('mastered words ready for review', '\u4e2a\u5df2\u638c\u63e1\u8bcd\u6c47\u53ef\u4ee5\u590d\u67e5') + '</div>';
     html += '<button class="btn btn-primary btn-sm" data-action="start-refresh">' + t('Quick Scan', '\u5feb\u901f\u590d\u67e5') + '</button>';
     html += '</div>';
   }
@@ -2567,7 +2567,7 @@ function renderTodaysPlan() {
     html += '<span class="plan-card-icon">\ud83d\udcd6</span>';
     html += '<span class="plan-card-title">' + t('Knowledge Point Review', '\u77e5\u8bc6\u70b9\u590d\u67e5') + '</span>';
     html += '</div>';
-    html += '<div class="plan-card-count">' + staleKPN + ' ' + t('mastered KPs getting stale', '\u4e2a\u5df2\u638c\u63e1\u77e5\u8bc6\u70b9\u6b63\u5728\u8870\u9000') + '</div>';
+    html += '<div class="plan-card-count">' + staleKPN + ' ' + t('mastered KPs ready for review', '\u4e2a\u5df2\u638c\u63e1\u77e5\u8bc6\u70b9\u53ef\u4ee5\u590d\u67e5') + '</div>';
     html += '<button class="btn btn-primary btn-sm" data-action="start-kp-refresh">' + t('Quick Scan', '\u5feb\u901f\u590d\u67e5') + '</button>';
     html += '</div>';
   }
@@ -2580,7 +2580,7 @@ function renderTodaysPlan() {
     html += '<span class="plan-card-icon">\ud83d\udcc4</span>';
     html += '<span class="plan-card-title">' + t('Past Paper Review', '\u771f\u9898\u590d\u67e5') + '</span>';
     html += '</div>';
-    html += '<div class="plan-card-count">' + stalePPN + ' ' + t('mastered questions getting stale', '\u4e2a\u5df2\u638c\u63e1\u771f\u9898\u6b63\u5728\u8870\u9000') + '</div>';
+    html += '<div class="plan-card-count">' + stalePPN + ' ' + t('mastered questions ready for review', '\u4e2a\u5df2\u638c\u63e1\u771f\u9898\u53ef\u4ee5\u590d\u67e5') + '</div>';
     html += '<button class="btn btn-primary btn-sm" data-action="start-pp-refresh">' + t('Quick Scan', '\u5feb\u901f\u590d\u67e5') + '</button>';
     html += '</div>';
   }
@@ -2619,7 +2619,7 @@ function renderTodaysPlan() {
           html += '<div class="plan-card-carryover">' + _rsPlan.carryOverCount + ' ' + t('carried over', '\u9879\u7ed3\u8f6c\u81ea\u6628\u65e5') + '</div>';
         }
         if (_rsPlan.backlogCount > 0) {
-          html += '<div class="plan-card-backlog">' + _rsPlan.backlogCount + ' ' + t('more in backlog', '\u9879\u5728\u5f85\u529e\u5217\u8868\u4e2d') + '</div>';
+          html += '<div class="plan-card-backlog">' + _rsPlan.backlogCount + ' ' + t('more items to explore', '\u9879\u5185\u5bb9\u5f85\u63a2\u7d22') + '</div>';
         }
         if (_rsPlan.reasons && _rsPlan.reasons.length > 0) {
           html += '<div class="plan-card-reason">' + t('Focus', '\u91cd\u70b9') + ': ' + _rsPlan.reasons.join(' \u00b7 ') + '</div>';
@@ -2637,9 +2637,9 @@ function renderTodaysPlan() {
           html += '</div>';
         } else if (_rsPlan.personalizationNote) {
           var _pnMap = {
-            'lighter-load': t('Adjusted for you: lighter load today due to backlog', '\u4E2A\u6027\u5316\u8C03\u6574\uFF1A\u56E0\u79EF\u538B\u8F83\u591A\uFF0C\u4ECA\u65E5\u4EFB\u52A1\u91CF\u5DF2\u964D\u4F4E'),
-            'weak-type-bias': t('Focus boost: more practice in your weakest type', '\u4E2A\u6027\u5316\u8C03\u6574\uFF1A\u5DF2\u589E\u52A0\u4F60\u6700\u8584\u5F31\u7C7B\u578B\u7684\u7EC3\u4E60'),
-            'weak-section-bias': t('Focus boost: more items from your weakest sections', '\u4E2A\u6027\u5316\u8C03\u6574\uFF1A\u5DF2\u4F18\u5148\u5B89\u6392\u4F60\u8F83\u5F31\u7AE0\u8282\u7684\u4EFB\u52A1')
+            'lighter-load': t('Adjusted for you: a lighter session today \u2014 great for consistency!', '\u4E2A\u6027\u5316\u8C03\u6574\uFF1A\u4ECA\u65E5\u8F7B\u91CF\u7EC3\u4E60\u2014\u2014\u4FDD\u6301\u8282\u594F\u6700\u91CD\u8981\uFF01'),
+            'weak-type-bias': t('Focus boost: extra practice where it helps most!', '\u4E2A\u6027\u5316\u8C03\u6574\uFF1A\u5728\u6700\u6709\u5E2E\u52A9\u7684\u5730\u65B9\u52A0\u91CF\u7EC3\u4E60\uFF01'),
+            'weak-section-bias': t('Focus boost: extra items from your focus sections!', '\u4E2A\u6027\u5316\u8C03\u6574\uFF1A\u5DF2\u4F18\u5148\u5B89\u6392\u91CD\u70B9\u7AE0\u8282\u7684\u5185\u5BB9\uFF01')
           };
           var _pnText = _pnMap[_rsPlan.personalizationNote] || '';
           if (_pnText) html += '<div class="plan-card-personalized">' + _pnText + '</div>';
@@ -2929,7 +2929,7 @@ function renderMistakeBook() {
         var w = vocabMistakes[i];
         html += '<div class="mistake-row">';
         html += '<div class="mistake-word">' + escapeHtml(w.word || '');
-        if (w.src === 'reflow') html += '<span class="reflow-tag">' + t('Reflowed', '\u56de\u6d41') + '</span>';
+        if (w.src === 'reflow') html += '<span class="reflow-tag">' + t('Reviewing', '\u590d\u4e60\u4e2d') + '</span>';
         html += '</div>';
         html += '<div class="mistake-def">' + escapeHtml(w.def || '') + '</div>';
         html += '<div class="mistake-fail">\u2717 ' + w.fail + '</div>';
@@ -2939,7 +2939,7 @@ function renderMistakeBook() {
         html += '</div>';
       }
       html += '<div class="text-center mt-12">';
-      html += '<button class="btn btn-primary btn-sm" onclick="startMistakeReview(\'vocab\')">' + t('Re-scan Wrong Words', '\u91cd\u65b0\u626b\u63cf\u9519\u8bcd') + '</button>';
+      html += '<button class="btn btn-primary btn-sm" onclick="startMistakeReview(\'vocab\')">' + t('Re-scan words to strengthen', '\u91cd\u65b0\u626b\u63cf\u5f85\u52a0\u5f3a\u8bcd\u6c47') + '</button>';
       html += '</div>';
       html += '</div>';
     } else if (_mistakeTab === 'vocab') {
