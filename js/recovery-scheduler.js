@@ -276,6 +276,12 @@ function buildDailyRecoveryPlan(board) {
     applyProfileBias(merged, _pProfile);
   }
 
+  /* Goal bias (v3.9.0) */
+  if (typeof applyGoalBias === 'function') {
+    var _gState = (typeof getLearningGoalsState === 'function') ? getLearningGoalsState() : null;
+    applyGoalBias(merged, _gState);
+  }
+
   /* Sort by adjusted priority */
   if (typeof sortRecoveryUnits === 'function') {
     sortRecoveryUnits(merged);

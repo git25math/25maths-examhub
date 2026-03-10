@@ -367,7 +367,19 @@ function isSuperAdmin() {
 }
 
 /* App version */
-var APP_VERSION = 'v3.8.1';
+var APP_VERSION = 'v3.9.1';
+
+/* Learning Goals configuration */
+var LEARNING_GOALS_CONFIG = {
+  maxActiveGoals: 2,
+  masteryTargetDefault: 0.7,
+  backlogTargetDefault: 3,
+  streakTargetDefault: 5,
+  weakSectionGoalThreshold: 0.65,
+  maxGoalReasons: 2,
+  showCompletionToast: true,
+  autoGenerateNextGoal: true
+};
 
 /* Personalized Explainability configuration */
 var RECOVERY_EXPLAINABILITY_CONFIG = {

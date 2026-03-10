@@ -462,6 +462,13 @@
 ## v3.3 Print Repair Sheet [DONE]
 - [x] **单题打印修复单 (v3.3.0)**: worksheet.js 新窗口 A4 打印（题目+词汇+KP+留白+纠错+订正），从 Recovery Pack 触发
 
+## v3.9 Learning Goals + Goal Explainability [DONE]
+- [x] **Learning Goals (v3.9.0)**: 系统自动生成 1-2 个 active goals（backlog/section-mastery/streak）
+- [x] **Goal Progress**: 实时计算 + Goals Card 渲染（progress bar + %）
+- [x] **Scheduler Goal Bias**: section-mastery +6, backlog carry-over +4 轻量偏置
+- [x] **Goal Explainability (v3.9.1)**: 每个目标附带 reasons 解释 + 实时数值
+- [x] **Completion UX (v3.9.1)**: 完成 toast + 自动替代 + next hint
+
 ## v3.8.1 Personalized Explainability [DONE]
 - [x] **结构化解释 (v3.8.1)**: buildPersonalizationReasons 生成因果解释列表（6 种 reason）
 - [x] **Today's Recovery explain block**: "Why this plan" + 最多 2 条因果文案

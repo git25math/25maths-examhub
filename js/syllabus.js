@@ -2720,6 +2720,14 @@ function renderTodaysPlan() {
     try { var _ph = renderStudentProfileCard(); if (_ph) html += _ph; } catch (e) {}
   }
 
+  /* Learning Goals Card (v3.9.0) */
+  if (typeof refreshLearningGoals === 'function') {
+    try { refreshLearningGoals(); } catch (e) {}
+  }
+  if (typeof renderLearningGoalsCard === 'function') {
+    try { var _gh = renderLearningGoalsCard(); if (_gh) html += _gh; } catch (e) {}
+  }
+
   /* Today's progress */
   var todayStr = new Date().toLocaleDateString('en-CA');
   var _planS = loadS();

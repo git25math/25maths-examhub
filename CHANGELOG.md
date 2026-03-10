@@ -1,5 +1,49 @@
 # Changelog
 
+## [3.9.1] - 2026-03-10 — Learning Goals + Goal Explainability & Completion UX
+
+### Learning Goals 系统（js/learning-goals.js 新增）
+- `generateDefaultLearningGoals()` — 规则式自动生成 1-2 个 active goals（backlog/section-mastery/streak）
+- `computeGoalProgress()` — 计算 backlog/section-mastery/streak 三类目标进度
+- `refreshLearningGoals()` — 刷新进度 + 完成检测 + 自动生成替代目标 + 完成 UX
+- `applyGoalBias()` — scheduler 轻量偏置（section mastery +6, backlog carry-over +4）
+- `renderLearningGoalsCard()` — Goals Card 渲染（title + progress bar + explain + next hint）
+
+### Goal Explainability (v3.9.1)
+- `_refreshGoalReasons()` — 每次刷新时更新 goal reasons（含实时数值）
+- `getGoalNarrative()` — UI 可直接消费的 goal 描述对象
+- Goals Card 每项显示 reasons 解释（为什么是这个目标）
+- 新完成目标后显示 "New goal" next hint（24h 内有效）
+
+### Goal Completion UX (v3.9.1)
+- `handleGoalCompletion()` — 完成时弹 toast
+- Recovery Session 结束后自动触发 `refreshLearningGoals()` 检测完成
+- `lastGoalTransition` 记录目标衔接信息
+
+### Scheduler 集成（js/recovery-scheduler.js）
+- `buildDailyRecoveryPlan()` 新增 goal bias 步骤（profile bias 之后）
+
+### 持久化（js/storage.js）
+- `getLearningGoalsState()` / `setLearningGoalsState()` — 存储在 wmatch_v3.learningGoals
+
+### 配置（js/config.js）
+- `LEARNING_GOALS_CONFIG` — 8 个参数（maxActiveGoals/targets/thresholds/UX 开关）
+- `APP_VERSION` → v3.9.1
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| js/config.js | +LEARNING_GOALS_CONFIG, version bump |
+| js/storage.js | +getLearningGoalsState/setLearningGoalsState |
+| js/learning-goals.js | **新增** ~230 行（goal 生成/进度/刷新/渲染/bias/completion） |
+| js/recovery-scheduler.js | buildDailyRecoveryPlan +goal bias 步骤 |
+| js/recovery-session.js | session end 后触发 refreshLearningGoals |
+| js/syllabus.js | Today's Plan 插入 Goals Card |
+| css/style.css | +learning-goals-card/goal-item/progress/explain + dark mode |
+| scripts/minify.sh | +learning-goals.js in bundle |
+
+---
+
 ## [3.8.1] - 2026-03-10 — Personalized Explainability
 
 ### 结构化解释引擎（js/recovery-scheduler.js）

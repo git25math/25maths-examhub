@@ -729,6 +729,21 @@ async function syncFromCloud() {
   }
 }
 
+/* ═══ LEARNING GOALS PERSISTENCE (v3.9.0) ═══ */
+function getLearningGoalsState() {
+  var s = loadS();
+  if (!s.learningGoals) {
+    s.learningGoals = { updatedAt: '', activeGoals: [], completedGoals: [] };
+    writeS(s);
+  }
+  return s.learningGoals;
+}
+function setLearningGoalsState(next) {
+  var s = loadS();
+  s.learningGoals = next;
+  writeS(s);
+}
+
 /* ═══ LEARNING HISTORY ═══ */
 function getHistory() {
   return loadS().history || [];

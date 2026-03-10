@@ -209,6 +209,11 @@ function _endRecoverySession() {
   _recoverySession = null;
   if (typeof _profileCacheTs !== 'undefined') _profileCacheTs = 0;
 
+  /* Refresh goals to detect completions (v3.9.1) */
+  if (typeof refreshLearningGoals === 'function') {
+    try { refreshLearningGoals(); } catch (e) {}
+  }
+
   if (typeof navTo === 'function') navTo('plan');
 
   var done = 0, skipped = 0;

@@ -4,7 +4,7 @@ Bilingual math vocabulary learning platform (双语数学词汇学习平台) for
 
 - **Live**: https://git25math.github.io/25maths-keywords/
 - **Repo**: https://github.com/git25math/25maths-keywords
-- **Version**: v3.8.1 (2026-03-10)
+- **Version**: v3.9.1 (2026-03-10)
 - **Scale**: 3 boards, 275 levels + 72 CIE sections + 39 Edexcel sections, 2,200 words + 5,962 真题 + 3,578 练习题
 - **Supabase**: shared with 25maths-website (ref: `jjjigohjvmyewasmmmyf`)
 - **See also**: [CHANGELOG.md](CHANGELOG.md) | [ROADMAP.md](ROADMAP.md)
@@ -31,7 +31,7 @@ python3 scripts/extract-vocab.py
 python3 scripts/build-single.py
 ```
 
-## JS Load Order (26 files)
+## JS Load Order (27 files)
 
 Scripts are loaded via `<script>` tags in this order (each depends on previous):
 1. config.js — App constants, theme tokens, global state, breakpoint detection
@@ -55,11 +55,12 @@ Scripts are loaded via `<script>` tags in this order (each depends on previous):
 19. recovery-priority.js — Smart Recovery Priority Engine (4-dimension scoring + type grouping)
 20. recovery-scheduler.js — Adaptive Recovery Scheduler (daily budget + backlog + carry-over)
 21. student-profile.js — Student Recovery Profile (accuracy/mastery/trend/weak sections)
-22. recovery-session.js — Recovery Session orchestration (scheduler → smart → legacy fallback)
-23. admin.js — Teacher management (classes, students, grades, school overview)
-24. vocab-admin.js — Super-admin vocabulary CRUD (vocab_levels table)
-25. homework.js — Homework assignments + notifications + student submissions
-26. app.js — Init, leaderboard, URL deep linking, iOS share recovery
+22. learning-goals.js — Learning Goals (system-generated goals + progress + scheduler bias + completion UX)
+23. recovery-session.js — Recovery Session orchestration (scheduler → smart → legacy fallback)
+24. admin.js — Teacher management (classes, students, grades, school overview)
+25. vocab-admin.js — Super-admin vocabulary CRUD (vocab_levels table)
+26. homework.js — Homework assignments + notifications + student submissions
+27. app.js — Init, leaderboard, URL deep linking, iOS share recovery
 
 ## Layout Architecture
 
