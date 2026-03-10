@@ -1,4 +1,4 @@
-# 25Maths-Keywords 项目严格审查报告
+# 25Maths-ExamHub 项目严格审查报告
 
 **版本**: v1.9.8 | **审查日期**: 2026-03-07 | **规模**: 21 JS 文件 / 16,523 行 / 13 JSON 数据文件
 
@@ -142,7 +142,7 @@
 
 ### 部署配置
 
-- CNAME: `keywords.25maths.com`
+- CNAME: `examhub.25maths.com`
 - GitHub Pages 自动部署（push main 触发）
 - Supabase 迁移 20 个，时间戳正确排序
 - `.gitignore` 覆盖 node_modules / .DS_Store / __pycache__ 等，但缺 `.env*`

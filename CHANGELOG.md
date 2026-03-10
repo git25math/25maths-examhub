@@ -5569,7 +5569,7 @@ finishHwTest() → 暂存错词到 _pendingWrongWords
 ## [0.2.1] - 2026-03-04 — 跨站认证修复
 
 ### 认证系统
-- 修复注册后重定向到主站的问题：`signUp()` 添加 `emailRedirectTo` 参数，确认邮件链接回 keywords.25maths.com
+- 修复注册后重定向到主站的问题：`signUp()` 添加 `emailRedirectTo` 参数，确认邮件链接回 examhub.25maths.com
 - 新增 `recoverSessionFromUrl()` — 自动从回调 URL 恢复 session（支持 access_token / PKCE code / OTP token_hash 三种模式）
 - 修复登出竞态条件：`doLogout()` 改为 async，await `syncToCloud()` + `signOut()` 顺序执行
 - 注册后若需邮箱验证，显示 Toast 提示而非静默失败
@@ -5585,7 +5585,7 @@ finishHwTest() → 暂存错词到 _pendingWrongWords
 - `js/app.js` — 初始化流程前置 `recoverSessionFromUrl()` 调用
 
 ### 配置要求
-- Supabase Dashboard → Authentication → URL Configuration 需添加 `https://keywords.25maths.com/`
+- Supabase Dashboard → Authentication → URL Configuration 需添加 `https://examhub.25maths.com/`
 
 ---
 
@@ -5674,5 +5674,5 @@ finishHwTest() → 暂存错词到 _pendingWrongWords
 - Original prototypes archived in `prototypes/`
 
 ### Deployment
-- GitHub Pages: https://git25math.github.io/25maths-keywords/
-- Repository: https://github.com/git25math/25maths-keywords
+- GitHub Pages: https://git25math.github.io/25maths-examhub/
+- Repository: https://github.com/git25math/25maths-examhub

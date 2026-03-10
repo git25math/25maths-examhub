@@ -1,9 +1,9 @@
-# 25Maths-Keywords
+# 25Maths-ExamHub
 
-Bilingual math vocabulary learning platform (双语数学词汇学习平台) for CIE 0580 / Edexcel 4MA1 / Harrow Haikou Y7-11.
+Bilingual math learning platform (双语数学学习平台) for CIE 0580 / Edexcel 4MA1 / Harrow Haikou Y7-11.
 
-- **Live**: https://git25math.github.io/25maths-keywords/
-- **Repo**: https://github.com/git25math/25maths-keywords
+- **Live**: https://git25math.github.io/25maths-examhub/
+- **Repo**: https://github.com/git25math/25maths-examhub
 - **Version**: v4.3.7 (2026-03-10)
 - **Scale**: 3 boards, 275 levels + 72 CIE sections + 39 Edexcel sections, 2,200 words + 5,962 真题 + 3,578 练习题
 - **Supabase**: shared with 25maths-website (ref: `jjjigohjvmyewasmmmyf`)

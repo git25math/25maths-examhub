@@ -323,7 +323,7 @@ function exportAnki() {
     var tag = w.level.replace(/\s+/g, '_');
     lines.push(front + '\t' + back + '\t' + tag);
   });
-  downloadBlob(new Blob([lines.join('\n')], { type: 'text/tab-separated-values;charset=utf-8;' }), '25maths-keywords-anki.txt');
+  downloadBlob(new Blob([lines.join('\n')], { type: 'text/tab-separated-values;charset=utf-8;' }), '25maths-examhub-anki.txt');
   showToast(t('Anki file exported — import as TSV in Anki', 'Anki \u6587\u4ef6\u5df2\u5bfc\u51fa \u2014 \u5728 Anki \u4e2d\u4ee5 TSV \u5bfc\u5165'));
 }
 

@@ -662,7 +662,7 @@ async function submitBugReport() {
 
   /* Guest: mailto fallback */
   var userType = isGuest() ? 'Guest' : 'Unknown';
-  var subject = '[Bug] ' + type + ' - 25Maths Keywords';
+  var subject = '[Bug] ' + type + ' - 25Maths ExamHub';
   var body = 'Bug Type: ' + type + '\n\n' +
     'Description:\n' + desc + '\n\n' +
     (steps ? 'Steps to Reproduce:\n' + steps + '\n\n' : '') +

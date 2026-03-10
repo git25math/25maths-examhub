@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════════════════════════
-   Service Worker — 25Maths Keywords PWA
+   Service Worker — 25Maths ExamHub PWA
    Strategy: Cache-first for app shell, network-first for data
    ══════════════════════════════════════════════════════════════ */
 

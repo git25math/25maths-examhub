@@ -19,7 +19,7 @@
 - [x] Toast / Modal / 排序控制 / 预览模式
 
 ## Phase 2.1 — 跨站认证修复 [DONE]
-- [x] signUp 添加 emailRedirectTo，回调重定向到 keywords 子站
+- [x] signUp 添加 emailRedirectTo，回调重定向到 examhub 子站
 - [x] recoverSessionFromUrl() 支持 3 种回调模式
 - [x] 修复登出竞态（async await signOut）
 - [x] 登录按钮加载状态 + 中文错误翻译

@@ -1,4 +1,4 @@
-# 25Maths Keywords — Scoring & Mastery Spec v1.0
+# 25Maths ExamHub — Scoring & Mastery Spec v1.0
 
 ## 0. Goals & Principles
 
