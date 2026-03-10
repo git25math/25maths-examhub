@@ -462,6 +462,11 @@
 ## v3.3 Print Repair Sheet [DONE]
 - [x] **单题打印修复单 (v3.3.0)**: worksheet.js 新窗口 A4 打印（题目+词汇+KP+留白+纠错+订正），从 Recovery Pack 触发
 
+## v4.3.2 真题展示增强 [DONE]
+- [x] **Edexcel parts 归一化**: `{p,m}` → `{label,marks}` 修复子题渲染崩溃
+- [x] **答题线**: practice/browse 模式虚线答题线（exam 模式不显示）
+- [x] **折叠改名**: Mark Scheme → Answers / 答案
+
 ## v4.3 Confidence Layer & Time Decay [DONE]
 - [x] **Error Pattern v2 (v4.3.0)**: 结构化状态 + 信号推断 + 时间衰退 + 置信度分带
 - [x] **Confidence Bands**: high(≥0.65)/medium(≥0.45)/low(<0.45) 门控 UI/Tutor/Coach 语言强度

@@ -1140,6 +1140,16 @@ function loadPastPaperData(board) {
         if (ed.g !== undefined) qs[qi].g = ed.g;
         if (ed.parts !== undefined) qs[qi].parts = ed.parts;
       }
+      /* Normalize Edexcel parts {p, m} → {label, marks} (v4.3.2) */
+      if (qs[qi].parts) {
+        for (var pi = 0; pi < qs[qi].parts.length; pi++) {
+          var pt = qs[qi].parts[pi];
+          if (pt.p !== undefined && pt.label === undefined) {
+            pt.label = '(' + pt.p + ')';
+            pt.marks = pt.m || 0;
+          }
+        }
+      }
     }
     return _ppData[board];
   });
@@ -1426,7 +1436,7 @@ function _renderPPRefreshCard() {
   if (q.marks > 0) html += '<span class="pp-marks-badge">[' + q.marks + ' ' + t('marks', '分') + ']</span>';
   if (q.src) html += '<span style="font-size:11px;color:var(--c-text3)">' + escapeHtml(q.src) + '</span>';
   html += '</div>';
-  html += '<div class="pp-scan-body">' + _ppRenderWithMarks(q) + '</div>';
+  html += '<div class="pp-scan-body">' + _ppRenderWithMarks(q, true) + '</div>';
   html += _ppRenderFigures(q);
   html += '</div>';
   html += '<div class="scan-actions" id="pp-scan-actions">';
@@ -1568,26 +1578,28 @@ function _ppRenderTex(texOrQ) {
 
 /* ═══ Render question with right-aligned marks (PDF-style) ═══ */
 
-function _ppRenderWithMarks(q) {
+function _ppRenderWithMarks(q, showAnswerLine) {
   var html = _ppRenderTex(q);
+  var ansLine = showAnswerLine ? '<div class="pp-answer-line"><span class="pp-answer-dots"></span></div>' : '';
   if (!q.parts || !q.parts.length) {
     /* No parts — show total marks right-aligned at end (skip if marks=0) */
     var totalMarksHtml = (q.marks > 0)
       ? '<span class="pp-marks-right">[' + q.marks + ']</span>' : '';
     return '<div class="pp-part-block"><div class="pp-part-content">' + html +
-      '</div>' + totalMarksHtml + '</div>';
+      ansLine + '</div>' + totalMarksHtml + '</div>';
   }
   /* Build parts lookup: "(a)" → marks */
   var partsMap = {};
   for (var i = 0; i < q.parts.length; i++) {
     partsMap[q.parts[i].label.toLowerCase()] = q.parts[i].marks;
   }
-  return _ppInsertPartMarks(html, partsMap);
+  return _ppInsertPartMarks(html, partsMap, showAnswerLine);
 }
 
-function _ppInsertPartMarks(html, partsMap) {
+function _ppInsertPartMarks(html, partsMap, showAnswerLine) {
   var labels = Object.keys(partsMap);
   if (!labels.length) return html;
+  var ansLine = showAnswerLine ? '<div class="pp-answer-line"><span class="pp-answer-dots"></span></div>' : '';
   /* Build dynamic regex matching only labels present in partsMap */
   /* Require label at line start (or after newline) to avoid matching f(x), g(x) etc. */
   var escaped = labels.map(function(l) {
@@ -1616,7 +1628,7 @@ function _ppInsertPartMarks(html, partsMap) {
     /* Trim trailing whitespace from content */
     content = content.replace(/\s+$/, '');
     result += '<div class="pp-part-block"><span class="pp-part-label">' + label + '</span>' +
-      '<div class="pp-part-content">' + content + '</div>' + marksHtml + '</div>';
+      '<div class="pp-part-content">' + content + ansLine + '</div>' + marksHtml + '</div>';
   }
   return result;
 }
@@ -1853,18 +1865,19 @@ function renderPPCard() {
 
   /* Card body: question with PDF-style right-aligned marks */
   html += '<div class="pp-card-body" id="pp-question-body">';
-  html += _ppRenderWithMarks(q);
+  var _showAnsLine = _ppSession.mode !== 'exam';
+  html += _ppRenderWithMarks(q, _showAnsLine);
   html += _ppRenderFigures(q);
   html += '</div>';
 
   /* Mark Scheme toggle (practice mode only) */
   if (_ppSession.mode === 'practice') {
     html += '<div class="pp-ms-toggle" role="button" tabindex="0" data-action="toggleMS">';
-    html += '<span id="pp-ms-arrow">\u25b6</span> ' + t('Mark Scheme', '\u8bc4\u5206\u6807\u51c6');
+    html += '<span id="pp-ms-arrow">\u25b6</span> ' + t('Answers', '\u7b54\u6848');
     html += '</div>';
     html += '<div class="pp-ms-content" id="pp-ms-body">';
     html += '<div class="pp-ms-placeholder">';
-    html += t('Mark Scheme coming soon \u2014 use self-assessment for now', '\u8bc4\u5206\u6807\u51c6\u5373\u5c06\u63a8\u51fa\uff0c\u8bf7\u5148\u81ea\u8bc4');
+    html += t('Coming soon \u2014 use self-assessment for now', '\u5373\u5c06\u63a8\u51fa\uff0c\u8bf7\u5148\u81ea\u8bc4');
     html += '</div></div>';
   }
 

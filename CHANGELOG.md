@@ -1,5 +1,26 @@
 # Changelog
 
+## [4.3.2] - 2026-03-10 — 真题展示增强
+
+### 真题布局优化（js/practice.js）
+- **BUG FIX**: Edexcel parts 归一化 — `{p:'a', m:1}` → `{label:'(a)', marks:1}`，修复子题渲染崩溃
+- **答题线**: practice/browse 模式每个子题（及无子题单体题）末尾追加虚线答题线，模拟真实试卷
+- **exam 模式**: 不显示答题线（保持干净考试界面）
+- **折叠改名**: Mark Scheme → Answers / 答案（文案更清晰）
+
+### CSS（css/style.css）
+- `.pp-answer-line` + `.pp-answer-dots` 答题线样式（flex 布局 + dotted border）
+- 暗色模式自动适配（继承 `--c-muted`）
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| js/practice.js | parts 归一化 + 答题线渲染 + 答案折叠改名 |
+| css/style.css | 答题线样式 |
+| js/config.js | APP_VERSION → v4.3.2 |
+
+---
+
 ## [4.3.1] - 2026-03-10 — Error Pattern Audit Fix
 
 ### 审计发现 & 修复（js/error-patterns.js）
