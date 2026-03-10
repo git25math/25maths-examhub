@@ -569,7 +569,7 @@ function submitPracticeReport() {
   }
 
   /* Guest: mailto fallback */
-  var subject = '[Question Error] #' + q.id + ' - 25Maths ExamHub';
+  var subject = '[Question Error] #' + q.id + ' - 25Maths Exam Support Hub';
   var body = 'Question ID: ' + q.id + '\nBoard: ' + board +
     '\nError type: ' + type + '\n\nDescription:\n' + desc +
     '\n\n--- Question Data ---\n' + q.q +
@@ -3183,7 +3183,7 @@ function submitPPReport(qid) {
   }
 
   /* Guest: mailto fallback */
-  var subject = '[Past Paper Error] #' + qid + ' - 25Maths ExamHub';
+  var subject = '[Past Paper Error] #' + qid + ' - 25Maths Exam Support Hub';
   var body = 'Question ID: ' + qid + '\nSource: ' + q.src +
     '\nError type: ' + type + '\n\nDescription:\n' + desc +
     '\n\n--- Question ---\n' + q.tex.substring(0, 500);

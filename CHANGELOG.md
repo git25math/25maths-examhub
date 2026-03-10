@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.4.0-brand] - 2026-03-10 — 品牌升级 ExamHub → Exam Support Hub
+
+### 品牌文案
+- **用户可见文案**: 全站 "25Maths ExamHub" → "25Maths Exam Support Hub"
+- **域名/仓库名**: 保持 `examhub`（`examhub.25maths.com`、`25maths-examhub`）不变
+- **涉及文件**: index.html（title/auth-title/brand-sub）、manifest.json、quiz.js（水印+分享）、ui.js/practice.js/syllabus.js（邮件主题）、sw.js/style.css（注释头）
+
 ## [4.4.0] - 2026-03-10 — 真题结构解耦（Block-based + Answer Layout System）
 
 ### 数据迁移（scripts/migrate-hierarchical.py）

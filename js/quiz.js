@@ -432,7 +432,7 @@ function drawShareCard(opts) {
   ctx.fillStyle = '#fff';
   ctx.font = '600 20px "Bricolage Grotesque", "DM Sans", sans-serif';
   ctx.textAlign = 'center';
-  ctx.fillText('25Maths ExamHub', W / 2, 48);
+  ctx.fillText('25Maths Exam Support Hub', W / 2, 48);
 
   /* Mode pill */
   var modeLabels = {
@@ -539,8 +539,8 @@ function shareResult(opts) {
         try { sessionStorage.setItem('wmatch_share_lvl', LEVELS[currentLvl] ? LEVELS[currentLvl].slug : '' + currentLvl); } catch(e) {}
         navigator.share({
           files: [file],
-          title: '25Maths ExamHub',
-          text: t('My result on 25Maths ExamHub!', '\u6211\u5728 25Maths ExamHub \u7684\u6210\u7ee9\uff01')
+          title: '25Maths Exam Support Hub',
+          text: t('My result on 25Maths Exam Support Hub!', '\u6211\u5728 25Maths Exam Support Hub \u7684\u6210\u7ee9\uff01')
         }).then(function() {
           try { sessionStorage.removeItem('wmatch_share_lvl'); } catch(e) {}
         }).catch(function() {

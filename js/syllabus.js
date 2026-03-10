@@ -2395,7 +2395,7 @@ function submitSectionReport(sectionId, moduleType, board) {
   }
 
   /* Guest: mailto fallback */
-  var subject = '[Section Error] ' + sectionId + ' ' + moduleType + ' - 25Maths ExamHub (' + board + ')';
+  var subject = '[Section Error] ' + sectionId + ' ' + moduleType + ' - 25Maths Exam Support Hub (' + board + ')';
   var body = 'Board: ' + board +
     '\nSection: ' + sectionId + ' - ' + sectionTitle +
     '\nModule: ' + moduleType +
