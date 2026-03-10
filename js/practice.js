@@ -1135,7 +1135,7 @@ function loadPastPaperData(board) {
       var ed = edits[qs[qi].id];
       if (ed) {
         if (ed.marks !== undefined) qs[qi].marks = ed.marks;
-        if (ed.tex !== undefined) qs[qi].tex = ed.tex;
+        if (ed.tex !== undefined) { qs[qi].tex = ed.tex; delete qs[qi].texHtml; }
         if (ed.d !== undefined) qs[qi].d = ed.d;
         if (ed.g !== undefined) qs[qi].g = ed.g;
         if (ed.parts !== undefined) qs[qi].parts = ed.parts;
@@ -3522,6 +3522,7 @@ function _ppEdRollback(qid, idx) {
         var f = fields[fi];
         if (rollbackData[f] !== undefined) q[f] = rollbackData[f];
       }
+      if (rollbackData.tex !== undefined) delete q.texHtml;
     }
     _pqEditsCache[_ppSession.board] = null;
     hideModal();
@@ -3597,6 +3598,7 @@ function submitPPEdit(qid) {
 
     /* Apply change locally for current session */
     q.tex = newTex;
+    if (editData.tex !== undefined) delete q.texHtml; /* force re-render from edited tex */
     q.marks = newMarks;
     q.d = newDiff;
     q.g = newGroup;

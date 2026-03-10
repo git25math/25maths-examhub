@@ -1,5 +1,20 @@
 # Changelog
 
+## [4.3.6] - 2026-03-10 — 修复 texHtml 覆盖编辑内容 bug
+
+### BUG FIX（js/practice.js）
+- **texHtml 优先级 bug**: `_ppRenderTex()` 优先用预转换的 `texHtml`，编辑 tex 后旧 texHtml 仍存在导致修改不生效
+- **修复**: 编辑 tex 后 `delete q.texHtml`，强制使用新 tex 重新渲染
+- **三处修复**: loadPastPaperData merge / submitPPEdit 本地回写 / rollback 回滚
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| js/practice.js | 3 处 delete texHtml 修复 |
+| js/config.js | APP_VERSION → v4.3.6 |
+
+---
+
 ## [4.3.5] - 2026-03-10 — 编辑历史查看 + 回滚
 
 ### 版本历史功能（js/practice.js）
