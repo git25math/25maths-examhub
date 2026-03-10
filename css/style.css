@@ -4460,6 +4460,8 @@ input { font-family: inherit; }
 .pp-answer-line { display:flex; align-items:baseline; margin-top:6px; gap:4px; }
 .pp-answer-prefix, .pp-answer-suffix { font-size:13px; font-weight:600; color:var(--c-text2); white-space:nowrap; }
 .pp-answer-dots { flex:1; border-bottom:1px dotted var(--c-muted); min-width:60px; height:1.2em; }
+.pp-answer-tpl { font-size:14px; font-weight:600; color:var(--c-text2); gap:2px; }
+.pp-answer-blank { display:inline-block; border-bottom:1px dotted var(--c-muted); width:48px; height:1.2em; vertical-align:baseline; margin:0 2px; }
 .pp-figure-placeholder { border:2px dashed var(--c-border); border-radius:var(--r); padding:20px; text-align:center; color:var(--c-muted); margin:12px 0; font-size:13px; }
 .pp-figure-placeholder a { color:var(--c-primary); text-decoration:underline; }
 .pp-ed-toolbar { display:flex; gap:4px; margin-bottom:4px; }

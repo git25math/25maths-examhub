@@ -1578,10 +1578,17 @@ function _ppRenderTex(texOrQ) {
 
 /* ═══ Render question with right-aligned marks (PDF-style) ═══ */
 
-/* Build answer line HTML with optional prefix/suffix (v4.3.2)
-   Data fields: part.ansPrefix ("x="), part.ansSuffix ("cm")
-   No-parts questions: q.ansPrefix, q.ansSuffix */
-function _ppAnswerLine(prefix, suffix) {
+/* Build answer line HTML (v4.3.2)
+   Data fields on part or question object:
+   - ansPrefix ("x="), ansSuffix ("cm")  → prefix + dots + suffix
+   - ansTpl ("(____, ____)")             → template with ____ replaced by dotted blanks
+   Priority: ansTpl > ansPrefix/ansSuffix > plain dots */
+function _ppAnswerLine(prefix, suffix, tpl) {
+  if (tpl) {
+    /* Template mode: replace each ____ with a dotted blank span */
+    var rendered = tpl.replace(/_{3,}/g, '<span class="pp-answer-blank"></span>');
+    return '<div class="pp-answer-line pp-answer-tpl">' + rendered + '</div>';
+  }
   var h = '<div class="pp-answer-line">';
   if (prefix) h += '<span class="pp-answer-prefix">' + prefix + '</span>';
   h += '<span class="pp-answer-dots"></span>';
@@ -1595,7 +1602,7 @@ function _ppRenderWithMarks(q, showAnswerLine) {
     /* No parts — show total marks right-aligned at end (skip if marks=0) */
     var totalMarksHtml = (q.marks > 0)
       ? '<span class="pp-marks-right">[' + q.marks + ']</span>' : '';
-    var ansLine = showAnswerLine ? _ppAnswerLine(q.ansPrefix, q.ansSuffix) : '';
+    var ansLine = showAnswerLine ? _ppAnswerLine(q.ansPrefix, q.ansSuffix, q.ansTpl) : '';
     return '<div class="pp-part-block"><div class="pp-part-content">' + html +
       ansLine + '</div>' + totalMarksHtml + '</div>';
   }
@@ -1639,7 +1646,7 @@ function _ppInsertPartMarks(html, partsMap, showAnswerLine) {
     /* Trim trailing whitespace from content */
     content = content.replace(/\s+$/, '');
     /* Answer line with per-part prefix/suffix (e.g. "x=" prefix, "cm" suffix) */
-    var ansLine = showAnswerLine ? _ppAnswerLine(pt && pt.ansPrefix, pt && pt.ansSuffix) : '';
+    var ansLine = showAnswerLine ? _ppAnswerLine(pt && pt.ansPrefix, pt && pt.ansSuffix, pt && pt.ansTpl) : '';
     result += '<div class="pp-part-block"><span class="pp-part-label">' + label + '</span>' +
       '<div class="pp-part-content">' + content + ansLine + '</div>' + marksHtml + '</div>';
   }
