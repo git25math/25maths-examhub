@@ -1,0 +1,294 @@
+{
+  "total_questions": 4107,
+  "total_parts": 7717,
+  "source_found": 4107,
+  "source_missing": 0,
+  "part_count_mismatch": 78,
+  "parse_failed": 0,
+  "overrides_skipped": 25,
+  "questions_modified": 1991,
+  "enriched": {
+    "prefix_added": 1020,
+    "suffix_added": 1253,
+    "no_answerline_in_source": 2513,
+    "type_number": 2124,
+    "type_multiline": 611,
+    "type_coordinate": 32,
+    "type_expression": 83,
+    "type_table_input": 108,
+    "type_vector": 20
+  },
+  "matched_by_pattern": {
+    "single_plain": 3968,
+    "single_suffix": 1104,
+    "multiline_same_prefix": 468,
+    "single_prefix": 871,
+    "coordinate_pair": 22,
+    "multiline_distinct_prefix": 143,
+    "coordinate_pair_double": 6,
+    "or_pattern": 46,
+    "multi_short_inline": 34,
+    "single_prefix_suffix": 149,
+    "table_with_answerlines": 108,
+    "reason_pattern": 11,
+    "ratio_pair": 3,
+    "vector_pmatrix": 20,
+    "coordinate_dotfill_prefix": 3,
+    "coordinate_pair_multi": 1
+  },
+  "missing_ids": [],
+  "parse_errors": [],
+  "mismatch_details_sample": [
+    {
+      "id": "0580-2025March-Paper32-Q11",
+      "json_parts": 4,
+      "tex_segments": 3
+    },
+    {
+      "id": "0580-2025MayJune-Paper22-Q13",
+      "json_parts": 2,
+      "tex_segments": 4
+    },
+    {
+      "id": "0580-2025MayJune-Paper42-Q01",
+      "json_parts": 2,
+      "tex_segments": 1
+    },
+    {
+      "id": "0580-2024March-Paper32-Q01",
+      "json_parts": 10,
+      "tex_segments": 5
+    },
+    {
+      "id": "0580-2024MayJune-Paper42-Q08",
+      "json_parts": 4,
+      "tex_segments": 7
+    },
+    {
+      "id": "0580-2024OctNov-Paper22-Q04",
+      "json_parts": 6,
+      "tex_segments": 5
+    },
+    {
+      "id": "0580-2024OctNov-Paper23-Q14",
+      "json_parts": 4,
+      "tex_segments": 3
+    },
+    {
+      "id": "0580-2023March-Paper32-Q08",
+      "json_parts": 7,
+      "tex_segments": 9
+    },
+    {
+      "id": "0580-2023March-Paper42-Q01",
+      "json_parts": 2,
+      "tex_segments": 3
+    },
+    {
+      "id": "0580-2023March-Paper42-Q04",
+      "json_parts": 3,
+      "tex_segments": 4
+    },
+    {
+      "id": "0580-2023MayJune-Paper31-Q01",
+      "json_parts": 4,
+      "tex_segments": 2
+    },
+    {
+      "id": "0580-2023MayJune-Paper32-Q06",
+      "json_parts": 8,
+      "tex_segments": 7
+    },
+    {
+      "id": "0580-2023MayJune-Paper33-Q01",
+      "json_parts": 9,
+      "tex_segments": 1
+    },
+    {
+      "id": "0580-2023MayJune-Paper33-Q03",
+      "json_parts": 4,
+      "tex_segments": 1
+    },
+    {
+      "id": "0580-2023MayJune-Paper33-Q04",
+      "json_parts": 7,
+      "tex_segments": 1
+    },
+    {
+      "id": "0580-2023MayJune-Paper33-Q07",
+      "json_parts": 5,
+      "tex_segments": 1
+    },
+    {
+      "id": "0580-2023MayJune-Paper41-Q01",
+      "json_parts": 6,
+      "tex_segments": 1
+    },
+    {
+      "id": "0580-2023MayJune-Paper41-Q03",
+      "json_parts": 6,
+      "tex_segments": 1
+    },
+    {
+      "id": "0580-2023MayJune-Paper41-Q04",
+      "json_parts": 4,
+      "tex_segments": 1
+    },
+    {
+      "id": "0580-2023MayJune-Paper41-Q05",
+      "json_parts": 8,
+      "tex_segments": 6
+    },
+    {
+      "id": "0580-2023MayJune-Paper41-Q06",
+      "json_parts": 4,
+      "tex_segments": 1
+    },
+    {
+      "id": "0580-2023MayJune-Paper41-Q07",
+      "json_parts": 2,
+      "tex_segments": 1
+    },
+    {
+      "id": "0580-2023MayJune-Paper43-Q01",
+      "json_parts": 3,
+      "tex_segments": 1
+    },
+    {
+      "id": "0580-2023OctNov-Paper11-Q06",
+      "json_parts": 7,
+      "tex_segments": 6
+    },
+    {
+      "id": "0580-2023OctNov-Paper31-Q09",
+      "json_parts": 10,
+      "tex_segments": 6
+    },
+    {
+      "id": "0580-2023OctNov-Paper32-Q01",
+      "json_parts": 6,
+      "tex_segments": 2
+    },
+    {
+      "id": "0580-2023OctNov-Paper33-Q03",
+      "json_parts": 11,
+      "tex_segments": 7
+    },
+    {
+      "id": "0580-2023OctNov-Paper42-Q10",
+      "json_parts": 4,
+      "tex_segments": 3
+    },
+    {
+      "id": "0580-2022March-Paper32-Q01",
+      "json_parts": 14,
+      "tex_segments": 8
+    },
+    {
+      "id": "0580-2022March-Paper32-Q02",
+      "json_parts": 3,
+      "tex_segments": 1
+    },
+    {
+      "id": "0580-2022March-Paper32-Q03",
+      "json_parts": 7,
+      "tex_segments": 4
+    },
+    {
+      "id": "0580-2022March-Paper32-Q04",
+      "json_parts": 6,
+      "tex_segments": 2
+    },
+    {
+      "id": "0580-2022March-Paper32-Q05",
+      "json_parts": 4,
+      "tex_segments": 1
+    },
+    {
+      "id": "0580-2022March-Paper32-Q06",
+      "json_parts": 8,
+      "tex_segments": 2
+    },
+    {
+      "id": "0580-2022March-Paper32-Q07",
+      "json_parts": 4,
+      "tex_segments": 1
+    },
+    {
+      "id": "0580-2022March-Paper32-Q08",
+      "json_parts": 6,
+      "tex_segments": 2
+    },
+    {
+      "id": "0580-2022March-Paper32-Q09",
+      "json_parts": 5,
+      "tex_segments": 1
+    },
+    {
+      "id": "0580-2022MayJune-Paper32-Q03",
+      "json_parts": 5,
+      "tex_segments": 4
+    },
+    {
+      "id": "0580-2022MayJune-Paper32-Q08",
+      "json_parts": 7,
+      "tex_segments": 5
+    },
+    {
+      "id": "0580-2022MayJune-Paper41-Q05",
+      "json_parts": 4,
+      "tex_segments": 3
+    },
+    {
+      "id": "0580-2022MayJune-Paper43-Q03",
+      "json_parts": 4,
+      "tex_segments": 3
+    },
+    {
+      "id": "0580-2022MayJune-Paper43-Q04",
+      "json_parts": 5,
+      "tex_segments": 4
+    },
+    {
+      "id": "0580-2022OctNov-Paper42-Q11",
+      "json_parts": 3,
+      "tex_segments": 5
+    },
+    {
+      "id": "0580-2022OctNov-Paper43-Q10",
+      "json_parts": 3,
+      "tex_segments": 5
+    },
+    {
+      "id": "0580-2021March-Paper32-Q09",
+      "json_parts": 7,
+      "tex_segments": 3
+    },
+    {
+      "id": "0580-2021MayJune-Paper13-Q20",
+      "json_parts": 5,
+      "tex_segments": 4
+    },
+    {
+      "id": "0580-2021MayJune-Paper31-Q07",
+      "json_parts": 10,
+      "tex_segments": 6
+    },
+    {
+      "id": "0580-2021MayJune-Paper41-Q01",
+      "json_parts": 5,
+      "tex_segments": 3
+    },
+    {
+      "id": "0580-2021MayJune-Paper42-Q05",
+      "json_parts": 8,
+      "tex_segments": 7
+    },
+    {
+      "id": "0580-2021MayJune-Paper43-Q01",
+      "json_parts": 5,
+      "tex_segments": 3
+    }
+  ],
+  "mismatch_details_total": 78
+}

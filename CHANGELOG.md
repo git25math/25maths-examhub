@@ -1,5 +1,31 @@
 # Changelog
 
+## [4.4.2] - 2026-03-10 — CIE 真题 Answer 元数据富化 Phase 1
+
+### 数据富化
+- **新脚本**: `scripts/enrich-answers-cie.py` — 从源 LaTeX `\AnswerLine[prefix][suffix]` 提取精确 answer 元数据
+- **papers-cie.json**: 4,107 题全量扫描，1,991 题 answer 对象富化
+  - prefix 添加: 1,020 个（如 `x =`、`d =`、`g⁻¹(x) =`）
+  - suffix 添加: 1,253 个（如 `cm`、`cm²`、`°`、`%`、`years`）
+  - coordinate 类型: 32 个（含双坐标 `( __ , __ ) and ( __ , __ )`）
+  - vector 类型: 20 个（pmatrix 列向量）
+  - multiline 类型: 611 个（多变量求解）
+  - expression 类型: 83 个（含 or 模式、比例 a:b）
+  - table_input 类型: 108 个
+- **100% 源文件命中**: 4,107/4,107 题找到对应 QuestionStatement.tex
+- **17 个已有手动富化答案全部保留**（merge 策略：非默认值不覆盖）
+- **78 个 part 数量不匹配的题目跳过**（安全策略：避免错位赋值）
+
+### 质量报告
+- 输出 `scripts/output/enrich-cie-report.json`（含 pattern 分布、mismatch 详情）
+
+### 文件变更
+| 文件 | 变更类型 |
+|------|---------|
+| `scripts/enrich-answers-cie.py` | 新增 |
+| `scripts/output/enrich-cie-report.json` | 新增 |
+| `data/papers-cie.json` | 修改 — answer 对象富化 |
+
 ## [4.4.1] - 2026-03-10 — Edexcel Board Key 统一（数据层 `edx`，显示层 `Edexcel`）
 
 ### 数据文件
