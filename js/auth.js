@@ -664,7 +664,7 @@ function showRankGuide() {
     html += '<div class="rank-row-emoji">' + r.emoji + '</div>';
     html += '<div class="rank-row-info">';
     html += '<div class="rank-row-name" style="color:' + r.color + '">' + rankName(r) + '</div>';
-    html += '<div class="rank-row-req">' + t('Master \u2265' + r.min + '% vocab' + (total > 0 ? ' (approx. ' + needed + ' words)' : ''), '掌握 \u2265' + r.min + '% 词汇' + (total > 0 ? '（约 ' + needed + ' 词）' : '')) + '</div>';
+    html += '<div class="rank-row-req">' + t('Mastery \u2265' + r.min + '%' + (total > 0 ? ' (approx. ' + needed + ' words)' : ''), '精通率 \u2265' + r.min + '%' + (total > 0 ? '（约 ' + needed + ' 词）' : '')) + '</div>';
     html += '</div>';
     if (isCurrent) html += '<span class="rank-row-badge">' + t('Current', '当前') + '</span>';
     html += '</div>';
@@ -676,7 +676,7 @@ function showRankGuide() {
     var remaining = Math.max(nextNeeded - mastered, 0);
     var progressPct = total > 0 ? Math.min(Math.round(mastered / nextNeeded * 100), 100) : 0;
     html += '<div class="rank-progress-section">';
-    html += '<div class="rank-progress-label">' + t('<strong>' + remaining + '</strong> more words to reach ' + next.emoji + ' ' + rankName(next), '距 ' + next.emoji + ' ' + rankName(next) + ' 还需掌握 <strong>' + remaining + '</strong> 词') + '</div>';
+    html += '<div class="rank-progress-label">' + t('<strong>' + remaining + '</strong> more to reach ' + next.emoji + ' ' + rankName(next), '距 ' + next.emoji + ' ' + rankName(next) + ' 还需掌握 <strong>' + remaining + '</strong> 个') + '</div>';
     html += '<div class="rank-progress-bar"><div class="rank-progress-fill" style="width:' + progressPct + '%;background:' + next.color + '"></div></div>';
     html += '<div class="rank-progress-pct">' + pct + '% \u2192 ' + next.min + '%</div>';
     html += '</div>';
@@ -687,9 +687,10 @@ function showRankGuide() {
   /* Tips */
   html += '<div class="guide-tip">';
   html += '<div class="guide-tip-title">' + t('How to rank up?', '如何升级？') + '</div>';
-  html += '<div class="guide-tip-item">' + t('1. Practice vocabulary with 7 study modes', '1. 通过 7 种学习模式练习词汇') + '</div>';
-  html += '<div class="guide-tip-item">' + t('2. Rate "Got it" in review to mark as mastered', '2. 复习时评为"搞定了"将词汇标记为已掌握') + '</div>';
-  html += '<div class="guide-tip-item">' + t('3. Higher mastery % = auto rank up', '3. 掌握率提升 → 自动晋升段位') + '</div>';
+  html += '<div class="guide-tip-item">' + t('1. Master vocabulary across study modes', '1. 通过多种模式掌握词汇') + '</div>';
+  html += '<div class="guide-tip-item">' + t('2. Practice past paper questions', '2. 练习真题巩固知识点') + '</div>';
+  html += '<div class="guide-tip-item">' + t('3. Complete knowledge point exercises', '3. 完成知识点练习') + '</div>';
+  html += '<div class="guide-tip-item">' + t('4. Follow your recovery plan daily', '4. 每日跟进复习计划') + '</div>';
   html += '</div>';
 
   html += '<button class="btn btn-ghost btn-block mt-16" onclick="hideModal()">' + t('Close', '关闭') + '</button>';

@@ -368,9 +368,9 @@ function showScoreGuide() {
   /* Section 4 — Tips */
   html += '<div class="guide-tip">';
   html += '<div class="guide-tip-title">\ud83d\udca1 ' + t('Tips', '\u5c0f\u8d34\u58eb') + '</div>';
-  html += '<div class="guide-tip-item">' + t('Practice across multiple modes to boost correct count', '\u591a\u6a21\u5f0f\u7ec3\u4e60\u63d0\u5347\u7b54\u5bf9\u6b21\u6570') + '</div>';
-  html += '<div class="guide-tip-item">' + t('Keep accuracy \u2265 60% to unlock 4 stars', '\u4fdd\u6301\u6b63\u786e\u7387 \u2265 60% \u89e3\u9501 4 \u661f') + '</div>';
-  html += '<div class="guide-tip-item">' + t('Mastery % determines your rank progression', '\u7cbe\u901a\u7387\u51b3\u5b9a\u6bb5\u4f4d\u664b\u5347') + '</div>';
+  html += '<div class="guide-tip-item">' + t('Master vocabulary, past papers & knowledge points', '\u638c\u63e1\u8bcd\u6c47\u3001\u771f\u9898\u548c\u77e5\u8bc6\u70b9') + '</div>';
+  html += '<div class="guide-tip-item">' + t('Follow your daily recovery plan', '\u6bcf\u65e5\u8ddf\u8fdb\u590d\u4e60\u8ba1\u5212') + '</div>';
+  html += '<div class="guide-tip-item">' + t('Higher mastery % = auto rank up', '\u7cbe\u901a\u7387\u63d0\u5347 \u2192 \u81ea\u52a8\u664b\u5347\u6bb5\u4f4d') + '</div>';
   html += '</div>';
 
   html += '<button class="btn btn-ghost btn-block mt-16" onclick="hideModal()">' + t('Close', '\u5173\u95ed') + '</button>';
