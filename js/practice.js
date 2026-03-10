@@ -1582,10 +1582,25 @@ function _ppRenderTex(texOrQ) {
    Data fields on part or question object:
    - ansPrefix ("x="), ansSuffix ("cm")  → prefix + dots + suffix
    - ansTpl ("(____, ____)")             → template with ____ replaced by dotted blanks
+   - ansTpl "vector" / "vector(3)"       → column vector with large braces
    Priority: ansTpl > ansPrefix/ansSuffix > plain dots */
 function _ppAnswerLine(prefix, suffix, tpl) {
   if (tpl) {
-    /* Template mode: replace each ____ with a dotted blank span */
+    /* Vector mode: "vector" (2 rows) or "vector(N)" */
+    var vecMatch = tpl.match(/^vector(?:\((\d+)\))?$/);
+    if (vecMatch) {
+      var rows = parseInt(vecMatch[1] || '2', 10);
+      var h = '<div class="pp-answer-line pp-answer-vector">';
+      if (prefix) h += '<span class="pp-answer-prefix">' + prefix + '</span>';
+      h += '<span class="pp-vector-brace">(</span><div class="pp-vector-stack">';
+      for (var ri = 0; ri < rows; ri++) {
+        h += '<span class="pp-answer-blank"></span>';
+      }
+      h += '</div><span class="pp-vector-brace">)</span>';
+      if (suffix) h += '<span class="pp-answer-suffix">' + suffix + '</span>';
+      return h + '</div>';
+    }
+    /* Generic template mode: replace each ____ with a dotted blank span */
     var rendered = tpl.replace(/_{3,}/g, '<span class="pp-answer-blank"></span>');
     return '<div class="pp-answer-line pp-answer-tpl">' + rendered + '</div>';
   }
