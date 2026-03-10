@@ -790,9 +790,9 @@ function renderHome() {
       if (curIdx > prevIdx && prevIdx >= 0) {
         localStorage.setItem('wmatch_user_stage', us.stage);
         var msgs = {
-          active: t('You\'ve mastered 10+ words! Keep exploring different modes', '\u5df2\u638c\u63e1 10+ \u8bcd\u6c47\uff01\u7ee7\u7eed\u63a2\u7d22\u4e0d\u540c\u6a21\u5f0f'),
-          intermediate: t('100+ words mastered! You\'re becoming a math vocab expert', '\u638c\u63e1 100+ \u8bcd\u6c47\uff01\u4f60\u6b63\u5728\u6210\u4e3a\u6570\u5b66\u8bcd\u6c47\u8fbe\u4eba'),
-          advanced: t('500+ words! You\'re a true math vocabulary master', '500+ \u8bcd\u6c47\uff01\u4f60\u662f\u771f\u6b63\u7684\u6570\u5b66\u8bcd\u6c47\u5927\u5e08')
+          active: t('10+ words down! Explore more learning modes', '\u5df2\u638c\u63e1 10+ \u8bcd\u6c47\uff01\u63a2\u7d22\u66f4\u591a\u5b66\u4e60\u6a21\u5f0f'),
+          intermediate: t('100+ words mastered! You\'re becoming a math expert', '\u638c\u63e1 100+ \u8bcd\u6c47\uff01\u4f60\u6b63\u5728\u6210\u4e3a\u6570\u5b66\u8fbe\u4eba'),
+          advanced: t('500+ words! You\'re a true math master', '500+ \u8bcd\u6c47\uff01\u4f60\u662f\u771f\u6b63\u7684\u6570\u5b66\u5927\u5e08')
         };
         if (typeof showNudge === 'function' && msgs[us.stage]) {
           showNudge('stage_' + us.stage, msgs[us.stage]);
