@@ -1,5 +1,19 @@
 # Changelog
 
+## [4.5.1] - 2026-03-11 — 移除"全部课程"选项
+
+### 变更
+- **课程选择**: 移除 "All Courses / 全部课程" 选项，登录页只显示 CIE、Edexcel 和哈罗各年级 7 个选项
+- **教师默认**: 新注册教师默认课程从 `all` 改为 `cie`
+- **Super Admin**: 仍保留内部 `all` 逻辑（不影响全局可见性）
+
+### 文件变更
+| 文件 | 变更类型 |
+|------|---------|
+| `js/config.js` | 修改 — BOARD_OPTIONS 移除 all |
+| `js/auth.js` | 修改 — 教师默认 board 改为 cie |
+| `js/app.bundle.min.js` | 重新构建 |
+
 ## [4.5.0] - 2026-03-11 — 真题结构 v4.0 层级化 Parts + Subparts + List Blocks
 
 ### 数据迁移 (papers-cie.json v3.0 → v4.0)

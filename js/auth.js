@@ -212,7 +212,7 @@ async function afterLogin() {
     }
     if (meta.role === 'teacher') {
       /* Teacher: init admin panel after app shows */
-      if (!userBoard) userBoard = 'all';
+      if (!userBoard) userBoard = 'cie';
       if (meta.class_id) userClassId = meta.class_id;
       if (meta.school_id) userSchoolId = meta.school_id;
       try { localStorage.setItem('userBoard', userBoard); } catch (e) {}
@@ -632,8 +632,8 @@ async function doTeacherRegister() {
     }
 
     currentUser = { email: email, id: res.data.user.id, nickname: name };
-    userBoard = 'all';
-    try { localStorage.setItem('userBoard', 'all'); } catch (e) {}
+    userBoard = 'cie';
+    try { localStorage.setItem('userBoard', 'cie'); } catch (e) {}
     btn.disabled = false;
     btn.textContent = t('Register Teacher Account', '注册教师账号');
     afterLogin();

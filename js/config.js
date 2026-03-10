@@ -110,9 +110,8 @@ function matchWord(w, q) {
          w.def.toLowerCase().indexOf(q) >= 0;
 }
 
-/* Board selection options (8 choices) */
+/* Board selection options (7 choices — no "All Courses") */
 var BOARD_OPTIONS = [
-  { value: 'all',     emoji: '\ud83c\udf10', name: 'All Courses',        nameZh: '\u5168\u90e8\u8bfe\u7a0b' },
   { value: 'cie',     emoji: '\ud83d\udcda', name: 'CIE IGCSE 0580',    nameZh: '\u5251\u6865 IGCSE 0580' },
   { value: 'edx',     emoji: '\ud83d\udcd8', name: 'Edexcel IGCSE 4MA1', nameZh: '\u7231\u5fb7\u601d IGCSE 4MA1' },
   { value: '25m-y7',  emoji: '\u24fb',  name: 'Harrow Haikou Year 7',  nameZh: '\u54c8\u7f57\u6d77\u53e3 \u516d\u5e74\u7ea7' },
