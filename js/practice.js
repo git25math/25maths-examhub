@@ -1600,6 +1600,29 @@ function _ppAnswerLine(prefix, suffix, tpl) {
       if (suffix) h += '<span class="pp-answer-suffix">' + suffix + '</span>';
       return h + '</div>';
     }
+    /* Table mode: "table:x|-2|-1|0|1|2\ny|____|____|____|____|____"
+       | separates cells, \n separates rows, ____ becomes dotted blank
+       Cell content supports LaTeX (rendered by KaTeX via renderMath) */
+    if (tpl.indexOf('table:') === 0) {
+      var tblRows = tpl.slice(6).split('\\n');
+      var h = '<table class="pp-answer-table"><tbody>';
+      for (var tr = 0; tr < tblRows.length; tr++) {
+        var cells = tblRows[tr].split('|');
+        h += '<tr>';
+        for (var tc = 0; tc < cells.length; tc++) {
+          var cell = cells[tc];
+          var isBlank = /^_{3,}$/.test(cell.trim());
+          var tag = tr === 0 ? 'th' : 'td';
+          if (isBlank) {
+            h += '<' + tag + '><span class="pp-answer-blank"></span></' + tag + '>';
+          } else {
+            h += '<' + tag + '>' + cell + '</' + tag + '>';
+          }
+        }
+        h += '</tr>';
+      }
+      return h + '</tbody></table>';
+    }
     /* Generic template mode: replace each ____ with a dotted blank span
        Support \n for multi-line answer areas (e.g. "a = ____\nb = ____\nc = ____")
        Trailing blank on each line uses flex stretch (right-aligned dots);

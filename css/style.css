@@ -4464,6 +4464,11 @@ input { font-family: inherit; }
 .pp-answer-rows { display:flex; flex-direction:column; gap:10px; margin-top:6px; }
 .pp-answer-rows > .pp-answer-line { margin-top:0; }
 .pp-answer-blank { display:inline-block; border-bottom:1px dotted var(--c-muted); width:48px; height:1.2em; vertical-align:baseline; margin:0 2px; }
+/* Answer table (v4.3.2) */
+.pp-answer-table { border-collapse:collapse; margin-top:8px; width:auto; }
+.pp-answer-table th, .pp-answer-table td { border:1px solid var(--c-border); padding:6px 12px; text-align:center; min-width:44px; font-size:14px; }
+.pp-answer-table th { background:var(--c-bg2); font-weight:600; }
+.pp-answer-table .pp-answer-blank { width:40px; margin:0; }
 /* Column vector with large braces (v4.3.2) */
 .pp-answer-vector { align-items:center; gap:0; }
 .pp-vector-brace { font-size:2.4em; font-weight:200; line-height:1; color:var(--c-text2); align-self:stretch; display:flex; align-items:center; }
