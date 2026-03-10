@@ -4494,3 +4494,10 @@ input { font-family: inherit; }
 /* ═══ PERSONALIZED SCHEDULING NOTE (v3.8.0) ═══ */
 .plan-card-personalized { margin-top:4px; font-size:12px; color:var(--c-primary); line-height:1.35; }
 [data-theme="dark"] .plan-card-personalized { color:#b8b4ff; }
+
+/* ═══ PERSONALIZED EXPLAINABILITY (v3.8.1) ═══ */
+.plan-card-explain { margin-top:8px; padding-top:8px; border-top:1px dashed var(--c-border-light); }
+.plan-card-explain-title { font-size:12px; font-weight:600; color:var(--c-text2); margin-bottom:4px; }
+.plan-card-explain-item { font-size:12px; line-height:1.4; color:var(--c-text2); margin-top:2px; }
+.plan-card-explain-item::before { content:'\2022 '; color:var(--c-primary); font-weight:700; }
+[data-theme="dark"] .plan-card-explain-item, [data-theme="dark"] .plan-card-explain-title { color:var(--c-text3, #aaa); }

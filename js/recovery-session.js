@@ -222,7 +222,20 @@ function _endRecoverySession() {
   var msg = done + ' ' + t('scans completed', '轮扫描完成');
   if (skipped > 0) msg += ', ' + skipped + ' ' + t('skipped', '跳过');
   msg += ' (' + timeStr + ')';
-  if (reasons.length > 0) {
+  /* Personalized explainability in toast (v3.8.1) */
+  var _toastNote = '';
+  if (_dailyPlanCache && _dailyPlanCache.personalization && _dailyPlanCache.personalization.reasons) {
+    var _tReasons = _dailyPlanCache.personalization.reasons;
+    var _tMax = (typeof RECOVERY_EXPLAINABILITY_CONFIG !== 'undefined') ? (RECOVERY_EXPLAINABILITY_CONFIG.maxReasonsOnSummary || 2) : 2;
+    var _tParts = [];
+    for (var _ti = 0; _ti < Math.min(_tReasons.length, _tMax); _ti++) {
+      _tParts.push(t(_tReasons[_ti].en, _tReasons[_ti].zh));
+    }
+    if (_tParts.length > 0) _toastNote = _tParts.join(t('; ', '\uFF1B'));
+  }
+  if (_toastNote) {
+    msg += ' \u00b7 ' + _toastNote;
+  } else if (reasons.length > 0) {
     msg += ' \u00b7 ' + t('Focus', '重点') + ': ' + reasons.join(t(', ', '、'));
   }
   if (typeof showToast === 'function') showToast(msg, 'success');

@@ -462,6 +462,12 @@
 ## v3.3 Print Repair Sheet [DONE]
 - [x] **单题打印修复单 (v3.3.0)**: worksheet.js 新窗口 A4 打印（题目+词汇+KP+留白+纠错+订正），从 Recovery Pack 触发
 
+## v3.8.1 Personalized Explainability [DONE]
+- [x] **结构化解释 (v3.8.1)**: buildPersonalizationReasons 生成因果解释列表（6 种 reason）
+- [x] **Today's Recovery explain block**: "Why this plan" + 最多 2 条因果文案
+- [x] **Session toast 增强**: 完成 toast 使用结构化 reasons
+- [x] **Debug 增强**: profile/budget/reasons 日志输出
+
 ## v3.8 Personalized Scheduling [DONE]
 - [x] **Dynamic Budget (v3.8.0)**: improving+高 recovery→budget +2, declining/高 skip/高 backlog→budget -1~-4
 - [x] **Type Caps (v3.8.0)**: weakType 对应类型配额 +1（vocab/kp/pp）

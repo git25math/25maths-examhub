@@ -1,5 +1,38 @@
 # Changelog
 
+## [3.8.1] - 2026-03-10 — Personalized Explainability
+
+### 结构化解释引擎（js/recovery-scheduler.js）
+- `buildPersonalizationReasons(profile, budget, caps)` — 根据实际生效的个性化调整生成因果解释列表
+- 6 种 reason key：backlog / skip-rate / improving / strong-recovery / weak-type / weak-section / declining
+- plan 输出升级为 `personalization: { note, reasons[] }` 结构
+- Debug 日志增加 profile/budget/reasons 输出
+
+### Today's Recovery 解释块（js/syllabus.js）
+- 替换单行 personalized note 为结构化 `.plan-card-explain` 块
+- 显示 "Why this plan" 标题 + 最多 2 条因果解释
+- 保留 v3.8.0 单行 note 作为 fallback
+
+### Session 完成 toast 增强（js/recovery-session.js）
+- 优先使用结构化 personalization reasons 替代固定 focus 文案
+- 最多 2 条原因拼接到完成 toast
+
+### 配置（js/config.js）
+- `RECOVERY_EXPLAINABILITY_CONFIG.maxReasonsOnCard` — 卡片最大显示条数（默认 2）
+- `RECOVERY_EXPLAINABILITY_CONFIG.maxReasonsOnSummary` — toast 最大条数（默认 2）
+- `APP_VERSION` → v3.8.1
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| js/config.js | +RECOVERY_EXPLAINABILITY_CONFIG, version bump |
+| js/recovery-scheduler.js | +buildPersonalizationReasons, plan.personalization 结构, debug 增强 |
+| js/syllabus.js | Today's Recovery explain block 替换单行 note |
+| js/recovery-session.js | session end toast 使用结构化 reasons |
+| css/style.css | +plan-card-explain / explain-title / explain-item + dark mode |
+
+---
+
 ## [3.8.0] - 2026-03-10 — Personalized Scheduling
 
 ### 个性化调度引擎（js/recovery-scheduler.js）

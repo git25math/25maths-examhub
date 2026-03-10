@@ -367,7 +367,14 @@ function isSuperAdmin() {
 }
 
 /* App version */
-var APP_VERSION = 'v3.8.0';
+var APP_VERSION = 'v3.8.1';
+
+/* Personalized Explainability configuration */
+var RECOVERY_EXPLAINABILITY_CONFIG = {
+  maxReasonsOnCard: 2,
+  maxReasonsOnSummary: 2,
+  showProfileLinking: true
+};
 
 /* Personalized Scheduling configuration */
 var RECOVERY_PERSONALIZATION_CONFIG = {

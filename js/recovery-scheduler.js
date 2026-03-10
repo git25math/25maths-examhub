@@ -180,6 +180,52 @@ function _inferPersonalizationNote(budget, caps, profile) {
   return '';
 }
 
+/* Build structured personalization reasons (v3.8.1) */
+function buildPersonalizationReasons(profile, budget, caps) {
+  var reasons = [];
+  if (!profile) return reasons;
+
+  var _typeLabels = { vocab: ['Vocabulary', '\u8BCD\u6C47'], kp: ['Knowledge Points', '\u77E5\u8BC6\u70B9'], pp: ['Practice Questions', '\u7EC3\u4E60\u9898'] };
+
+  /* Budget was lowered */
+  if (budget && budget._adjustedFrom && budget.maxUnitsPerDay < budget._adjustedFrom) {
+    if ((profile.backlogPressure || 0) >= ((typeof RECOVERY_PERSONALIZATION_CONFIG !== 'undefined' ? RECOVERY_PERSONALIZATION_CONFIG.carryOverWarningThreshold : 6) || 6)) {
+      reasons.push({ key: 'backlog', en: 'Backlog is high \u2014 lighter load today', zh: '\u5F53\u524D\u79EF\u538B\u8F83\u9AD8\uFF0C\u4ECA\u65E5\u4EFB\u52A1\u91CF\u5DF2\u964D\u4F4E' });
+    }
+    if ((profile.skipRate || 0) >= 0.3) {
+      reasons.push({ key: 'skip-rate', en: 'High skip rate \u2014 reducing load to stay on track', zh: '\u8DF3\u8FC7\u7387\u8F83\u9AD8\uFF0C\u5DF2\u964D\u4F4E\u4EFB\u52A1\u91CF\u4EE5\u4FDD\u6301\u8282\u594F' });
+    }
+  }
+
+  /* Budget was raised */
+  if (budget && budget._adjustedFrom && budget.maxUnitsPerDay > budget._adjustedFrom) {
+    if (profile.learningTrend === 'up') {
+      reasons.push({ key: 'improving', en: 'You\'re improving \u2014 slightly more tasks today', zh: '\u4F60\u5728\u8FDB\u6B65\u4E2D\uFF0C\u4ECA\u65E5\u4EFB\u52A1\u91CF\u5DF2\u8F7B\u5FAE\u63D0\u9AD8' });
+    }
+    if ((profile.recoveryRate || 0) >= 0.75) {
+      reasons.push({ key: 'strong-recovery', en: 'Strong recovery rate \u2014 a bit more to keep momentum', zh: '\u590D\u67E5\u5B8C\u6210\u7387\u9AD8\uFF0C\u5DF2\u9002\u5EA6\u589E\u52A0\u4EFB\u52A1\u4FDD\u6301\u52BF\u5934' });
+    }
+  }
+
+  /* Weak type cap boost */
+  if (profile.weakType) {
+    var tl = _typeLabels[profile.weakType] || [profile.weakType, profile.weakType];
+    reasons.push({ key: 'weak-type', en: tl[0] + ' is your weakest area \u2014 more added today', zh: tl[1] + '\u662F\u4F60\u5F53\u524D\u6700\u8584\u5F31\u7C7B\u578B\uFF0C\u5DF2\u589E\u52A0\u5BF9\u5E94\u4EFB\u52A1' });
+  }
+
+  /* Weak section bias */
+  if (profile.weakSections && profile.weakSections.length > 0 && !profile.weakType) {
+    reasons.push({ key: 'weak-section', en: 'Weak sections prioritized in today\'s plan', zh: '\u4ECA\u65E5\u8BA1\u5212\u5DF2\u4F18\u5148\u5B89\u6392\u8F83\u5F31\u7AE0\u8282' });
+  }
+
+  /* Declining trend */
+  if (profile.learningTrend === 'down') {
+    reasons.push({ key: 'declining', en: 'Recent accuracy dipped \u2014 load adjusted', zh: '\u8FD1\u671F\u51C6\u786E\u7387\u4E0B\u6ED1\uFF0C\u5DF2\u8C03\u6574\u4EFB\u52A1\u91CF' });
+  }
+
+  return reasons;
+}
+
 /* ═══ DAILY PLAN BUILDER ═══ */
 
 /* Cache to avoid rebuilding within same render cycle */
@@ -260,6 +306,7 @@ function buildDailyRecoveryPlan(board) {
   }
 
   var _pNote = _inferPersonalizationNote(_pBudget, _pCaps, _pProfile);
+  var _pReasons = buildPersonalizationReasons(_pProfile, _pBudget, _pCaps);
 
   var plan = {
     date: today,
@@ -271,7 +318,11 @@ function buildDailyRecoveryPlan(board) {
     carryOverCount: carryOverCount,
     backlogCount: result.overflow.length,
     reasons: reasons,
-    personalizationNote: _pNote
+    personalizationNote: _pNote,
+    personalization: {
+      note: _pNote,
+      reasons: _pReasons
+    }
   };
 
   /* Update state: save overflow as new backlog */
@@ -309,6 +360,9 @@ function buildDailyRecoveryPlan(board) {
     console.log('Budget: ' + plan.total + ' items (V:' + plan.vocab + ' K:' + plan.kp + ' P:' + plan.pp + ')');
     console.log('Carry-over: ' + plan.carryOverCount + ', Backlog: ' + plan.backlogCount);
     if (plan.reasons.length) console.log('Focus: ' + plan.reasons.join(', '));
+    if (_pProfile) console.log('Profile:', _pProfile);
+    if (_pBudget) console.log('Adjusted budget:', _pBudget._adjustedFrom, '->', _pBudget.maxUnitsPerDay);
+    if (_pReasons.length) console.log('Personalization reasons:', _pReasons.map(function(r) { return r.key; }));
     console.groupEnd();
   }
 
