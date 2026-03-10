@@ -4493,6 +4493,13 @@ input { font-family: inherit; }
 /* Part extra content in card */
 .pp-part-extra-tex { margin-top:6px; white-space:pre-line; }
 .pp-part-extra-table { margin-top:6px; }
+/* Version history (v4.3.5) */
+.pp-ed-history-list { display:flex; flex-direction:column; gap:4px; margin-top:6px; }
+.pp-ed-history-item { display:flex; justify-content:space-between; align-items:center; gap:8px; padding:6px 8px; background:var(--c-surface-alt); border-radius:var(--r); font-size:12px; }
+.pp-ed-history-meta { display:flex; flex-direction:column; gap:2px; min-width:0; }
+.pp-ed-history-time { font-weight:600; }
+.pp-ed-history-fields { color:var(--c-muted); font-size:11px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.pp-ed-history-actions { display:flex; gap:4px; flex-shrink:0; }
 .pp-q-topic-cell { flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
 .text-muted-sm { font-size:11px; color:var(--c-muted); }
 /* syllabus.js helpers */

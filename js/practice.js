@@ -3223,6 +3223,12 @@ function editPastPaperQ(qIdx) {
   html += '<div id="pp-ed-preview" style="padding:12px;background:var(--c-surface-alt);border-radius:var(--r);font-size:13px;line-height:1.6;max-height:200px;overflow:auto;white-space:pre-line"></div>';
   html += '</div>';
 
+  /* History panel (v4.3.5) */
+  html += '<div class="mt-12">';
+  html += '<button class="btn btn-sm btn-ghost" type="button" onclick="_ppEdToggleHistory(\'' + escapeHtml(q.id) + '\')">\ud83d\udcdc ' + t('Version History', '版本历史') + '</button>';
+  html += '<div id="pp-ed-history" style="display:none"></div>';
+  html += '</div>';
+
   /* Submit as correction */
   html += '<div id="pp-ed-msg" style="font-size:13px;margin:8px 0;min-height:20px;color:var(--c-danger)"></div>';
   html += '<div class="btn-row">';
@@ -3424,6 +3430,106 @@ function _ppEdCollectModuleOrder() {
     order.push(rows[i].dataset.mod);
   }
   return order;
+}
+
+/* ═══ Version History (v4.3.5) ═══ */
+
+function _ppEdToggleHistory(qid) {
+  var panel = E('pp-ed-history');
+  if (!panel) return;
+  if (panel.style.display !== 'none') {
+    panel.style.display = 'none';
+    return;
+  }
+  panel.style.display = '';
+  panel.innerHTML = '<div class="text-center text-muted" style="padding:12px">' + t('Loading...', '加载中...') + '</div>';
+  if (!sb) { panel.innerHTML = '<div class="text-muted" style="padding:8px">No database connection</div>'; return; }
+  sb.from('question_edits_history').select('*').eq('qid', qid)
+    .order('archived_at', { ascending: false }).limit(7)
+    .then(function(res) {
+      if (!res.data || !res.data.length) {
+        panel.innerHTML = '<div class="text-muted" style="padding:8px;font-size:12px">' + t('No history yet', '暂无历史版本') + '</div>';
+        return;
+      }
+      var h = '<div class="pp-ed-history-list">';
+      for (var i = 0; i < res.data.length; i++) {
+        var row = res.data[i];
+        var ts = new Date(row.archived_at);
+        var timeStr = ts.toLocaleDateString() + ' ' + ts.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        var fields = row.data ? Object.keys(row.data).filter(function(k) { return k !== 'status'; }) : [];
+        h += '<div class="pp-ed-history-item">';
+        h += '<div class="pp-ed-history-meta">';
+        h += '<span class="pp-ed-history-time">' + timeStr + '</span>';
+        h += '<span class="pp-ed-history-fields">' + (fields.length ? fields.join(', ') : '-') + '</span>';
+        h += '</div>';
+        h += '<div class="pp-ed-history-actions">';
+        h += '<button class="btn btn-sm btn-ghost" type="button" onclick="_ppEdPreviewHistory(' + i + ')">' + t('Preview', '预览') + '</button>';
+        h += '<button class="btn btn-sm btn-ghost" type="button" onclick="_ppEdRollback(\'' + escapeHtml(qid) + '\',' + i + ')" style="color:var(--c-warning)">' + t('Rollback', '回滚') + '</button>';
+        h += '</div></div>';
+      }
+      h += '</div>';
+      panel.innerHTML = h;
+      panel._historyData = res.data;
+    }).catch(function(e) {
+      panel.innerHTML = '<div style="padding:8px;color:var(--c-danger);font-size:12px">Error: ' + e.message + '</div>';
+    });
+}
+
+function _ppEdPreviewHistory(idx) {
+  var panel = E('pp-ed-history');
+  if (!panel || !panel._historyData || !panel._historyData[idx]) return;
+  var data = panel._historyData[idx].data;
+  /* Show in preview area */
+  var prev = E('pp-ed-preview');
+  if (!prev) return;
+  var tex = data.tex || '(no tex change in this version)';
+  tex = _ppConvertTabularRuntime(tex);
+  prev.innerHTML = '<div style="border-left:3px solid var(--c-warning);padding-left:8px;margin-bottom:8px;font-size:11px;color:var(--c-warning)">' +
+    t('Previewing history version', '预览历史版本') + ' #' + (idx + 1) + '</div>' + _ppRenderTex(tex);
+  renderMath(prev);
+  prev.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function _ppEdRollback(qid, idx) {
+  var panel = E('pp-ed-history');
+  if (!panel || !panel._historyData || !panel._historyData[idx]) return;
+  var histRow = panel._historyData[idx];
+  var ts = new Date(histRow.archived_at);
+  var timeStr = ts.toLocaleDateString() + ' ' + ts.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  if (!confirm(t('Rollback to version from ' + timeStr + '?', '回滚到 ' + timeStr + ' 的版本？'))) return;
+
+  var rollbackData = histRow.data;
+  sb.from('question_edits').upsert({
+    qid: qid,
+    board: histRow.board,
+    data: rollbackData,
+    status: histRow.status || 'active',
+    updated_by: currentUser.id,
+    updated_at: new Date().toISOString()
+  }, { onConflict: 'qid' }).then(function(res) {
+    if (res.error) {
+      showToast(t('Rollback failed: ', '回滚失败：') + res.error.message);
+      return;
+    }
+    /* Apply locally */
+    var q = null;
+    for (var i = 0; i < _ppSession.questions.length; i++) {
+      if (_ppSession.questions[i].id === qid) { q = _ppSession.questions[i]; break; }
+    }
+    if (q && rollbackData) {
+      var fields = ['tex', 'marks', 'd', 'g', 'parts', 'ansPrefix', 'ansSuffix', 'ansTpl', 'moduleOrder'];
+      for (var fi = 0; fi < fields.length; fi++) {
+        var f = fields[fi];
+        if (rollbackData[f] !== undefined) q[f] = rollbackData[f];
+      }
+    }
+    _pqEditsCache[_ppSession.board] = null;
+    hideModal();
+    showToast(t('Rolled back successfully!', '回滚成功！'));
+    renderPPCard();
+  }).catch(function(e) {
+    showToast(t('Network error', '网络错误'));
+  });
 }
 
 function submitPPEdit(qid) {

@@ -1,5 +1,25 @@
 # Changelog
 
+## [4.3.5] - 2026-03-10 — 编辑历史查看 + 回滚
+
+### 版本历史功能（js/practice.js）
+- **查看历史**: 编辑器底部「📜 版本历史」按钮，点击从 Supabase 拉取最近 7 个版本
+- **预览**: 每个历史版本可预览 tex 内容（显示在预览区，带黄色标识）
+- **回滚**: 一键回滚到任意历史版本（confirm 确认 → upsert 覆盖 → 本地即时生效）
+- **字段显示**: 每个版本显示时间戳 + 修改过的字段列表
+
+### CSS（css/style.css）
+- `.pp-ed-history-list` / `.pp-ed-history-item` / `.pp-ed-history-meta` / `.pp-ed-history-actions` 样式
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| js/practice.js | _ppEdToggleHistory + _ppEdPreviewHistory + _ppEdRollback |
+| css/style.css | 历史版本列表样式 |
+| js/config.js | APP_VERSION → v4.3.5 |
+
+---
+
 ## [4.3.4] - 2026-03-10 — 小题编辑器增强
 
 ### 小题详情编辑（js/practice.js）
