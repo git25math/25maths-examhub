@@ -4461,6 +4461,8 @@ input { font-family: inherit; }
 .pp-answer-prefix, .pp-answer-suffix { font-size:13px; font-weight:600; color:var(--c-text2); white-space:nowrap; }
 .pp-answer-dots { flex:1; border-bottom:1px dotted var(--c-muted); min-width:60px; height:1.2em; }
 .pp-answer-tpl { font-size:14px; font-weight:600; color:var(--c-text2); gap:2px; }
+.pp-answer-rows { display:flex; flex-direction:column; gap:10px; margin-top:6px; }
+.pp-answer-rows > .pp-answer-line { margin-top:0; }
 .pp-answer-blank { display:inline-block; border-bottom:1px dotted var(--c-muted); width:48px; height:1.2em; vertical-align:baseline; margin:0 2px; }
 /* Column vector with large braces (v4.3.2) */
 .pp-answer-vector { align-items:center; gap:0; }
