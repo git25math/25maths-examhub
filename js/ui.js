@@ -780,7 +780,7 @@ var TOUR_STEPS = [
     desc: function() { return t('Switch between Home, Review, Import, Leaderboard and Stats.', '\u5728\u9996\u9875\u3001\u590d\u4e60\u3001\u5bfc\u5165\u3001\u6392\u884c\u699c\u548c\u7edf\u8ba1\u4e4b\u95f4\u5207\u6362\u3002'); } },
   { sel: '.home-rank-hint',
     title: function() { return t('Rank Up!', '\u6bb5\u4f4d\u664b\u5347'); },
-    desc: function() { return t('Learn more words to climb the ranks from Bronze to Word King!', '\u5b66\u4e60\u66f4\u591a\u8bcd\u6c47\uff0c\u4ece\u9752\u94dc\u5347\u7ea7\u5230\u5355\u8bcd\u738b\u8005\uff01'); } }
+    desc: function() { return t('Master vocab, past papers & knowledge points to climb from Bronze to Math Champion!', '\u638c\u63e1\u8bcd\u6c47\u3001\u771f\u9898\u548c\u77e5\u8bc6\u70b9\uff0c\u4ece\u9752\u94dc\u5347\u7ea7\u5230\u6570\u5b66\u738b\u8005\uff01'); } }
 ];
 
 var _tourStep = 0;
