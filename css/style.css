@@ -4477,7 +4477,14 @@ input { font-family: inherit; }
 .pp-figure-placeholder { border:2px dashed var(--c-border); border-radius:var(--r); padding:20px; text-align:center; color:var(--c-muted); margin:12px 0; font-size:13px; }
 .pp-figure-placeholder a { color:var(--c-primary); text-decoration:underline; }
 .pp-ed-toolbar { display:flex; gap:4px; margin-bottom:4px; }
-.pp-ed-part-row { display:flex; gap:6px; align-items:center; margin-bottom:4px; }
+.pp-ed-part-row { display:flex; gap:6px; align-items:center; margin-bottom:4px; flex-wrap:wrap; }
+/* Module order editor (v4.3.3) */
+.pp-ed-module-list { display:flex; flex-direction:column; gap:4px; }
+.pp-ed-module-row { display:flex; align-items:center; gap:6px; padding:6px 8px; background:var(--c-surface-alt); border-radius:var(--r); font-size:13px; }
+.pp-ed-module-row button { padding:2px 6px; font-size:12px; }
+/* Part row answer line fields */
+.pp-ed-part-ans { display:flex; gap:4px; margin-top:2px; width:100%; }
+.pp-ed-part-ans input { font-size:11px; padding:2px 4px; width:80px; }
 .pp-q-topic-cell { flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
 .text-muted-sm { font-size:11px; color:var(--c-muted); }
 /* syllabus.js helpers */

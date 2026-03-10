@@ -1139,6 +1139,10 @@ function loadPastPaperData(board) {
         if (ed.d !== undefined) qs[qi].d = ed.d;
         if (ed.g !== undefined) qs[qi].g = ed.g;
         if (ed.parts !== undefined) qs[qi].parts = ed.parts;
+        if (ed.ansPrefix !== undefined) qs[qi].ansPrefix = ed.ansPrefix;
+        if (ed.ansSuffix !== undefined) qs[qi].ansSuffix = ed.ansSuffix;
+        if (ed.ansTpl !== undefined) qs[qi].ansTpl = ed.ansTpl;
+        if (ed.moduleOrder !== undefined) qs[qi].moduleOrder = ed.moduleOrder;
       }
       /* Normalize Edexcel parts {p, m} → {label, marks} (v4.3.2) */
       if (qs[qi].parts) {
@@ -1862,6 +1866,83 @@ function startPastPaper(sectionId, board, mode, groupFilter, cmdFilter) {
   });
 }
 
+/* ═══ CARD MODULE RENDERERS (v4.3.3) ═══ */
+
+function _ppRenderBodyModule(q, showAnsLine) {
+  var h = '<div class="pp-card-body" id="pp-question-body">';
+  h += _ppRenderWithMarks(q, showAnsLine);
+  h += _ppRenderFigures(q);
+  h += '</div>';
+  return h;
+}
+
+function _ppRenderAnswersModule(q) {
+  if (_ppSession.mode !== 'practice') return '';
+  var h = '<div class="pp-ms-toggle" role="button" tabindex="0" data-action="toggleMS">';
+  h += '<span id="pp-ms-arrow">\u25b6</span> ' + t('Answers', '\u7b54\u6848');
+  h += '</div>';
+  h += '<div class="pp-ms-content" id="pp-ms-body">';
+  h += '<div class="pp-ms-placeholder">';
+  h += t('Coming soon \u2014 use self-assessment for now', '\u5373\u5c06\u63a8\u51fa\uff0c\u8bf7\u5148\u81ea\u8bc4');
+  h += '</div></div>';
+  return h;
+}
+
+function _ppRenderVocabModule(q) {
+  if (_ppSession.mode !== 'practice' || !q.s) return '';
+  var vocabInfo = _ppGetSectionVocab(q.s, _ppSession.board);
+  if (!vocabInfo || !vocabInfo.words.length) return '';
+  var h = '<div class="pp-ms-toggle" role="button" tabindex="0" data-action="toggleVocab">';
+  h += '<span id="pp-vocab-arrow">\u25b6</span> ';
+  h += t('Related Vocabulary', '\u76f8\u5173\u8bcd\u6c47');
+  h += ' <span class="text-muted-sm">(' + vocabInfo.words.length + ')</span>';
+  h += '</div>';
+  h += '<div class="pp-ms-content" id="pp-vocab-body">';
+  for (var vi = 0; vi < vocabInfo.words.length; vi++) {
+    var vw = vocabInfo.words[vi];
+    h += '<div class="pp-vocab-row">';
+    h += '<span class="pp-vocab-word">' + vw.word + '</span>';
+    h += '<span class="pp-vocab-def">' + vw.def + '</span>';
+    if (vw.stars < 0) {
+      h += '<span class="pp-vocab-new">new</span>';
+    } else {
+      h += '<span class="pp-vocab-stars">';
+      for (var si = 0; si < vw.stars; si++) h += '\u2605';
+      if (vw.stars === 0) h += '\u2606';
+      h += '</span>';
+    }
+    h += '</div>';
+  }
+  h += '<div class="text-center" style="padding:8px">';
+  h += '<button class="btn btn-sm" onclick="openDeck(' + vocabInfo.levelIdx + ')">';
+  h += '\ud83d\udcd6 ' + t('Study Vocabulary', '\u5b66\u4e60\u8bcd\u6c47') + '</button></div>';
+  h += '</div>';
+  return h;
+}
+
+function _ppRenderKPModule(q) {
+  if (_ppSession.mode !== 'practice' || !q.s || typeof getQuestionKPs !== 'function') return '';
+  var relKPs = getQuestionKPs(q.s, _ppSession.board);
+  if (!relKPs.length) return '';
+  var h = '<div class="pp-ms-toggle" role="button" tabindex="0" data-action="toggleKP">';
+  h += '<span id="pp-kp-arrow">\u25b6</span> ';
+  h += t('Related Knowledge Points', '\u76f8\u5173\u77e5\u8bc6\u70b9');
+  h += ' <span class="text-muted-sm">(' + relKPs.length + ')</span>';
+  h += '</div>';
+  h += '<div class="pp-ms-content" id="pp-kp-body">';
+  for (var ki = 0; ki < relKPs.length; ki++) {
+    var rkp = relKPs[ki];
+    var kpBadge = rkp.fs === 'mastered' ? '\u2705' : rkp.fs === 'uncertain' ? '\ud83d\udfe1' : rkp.fs === 'learning' ? '\ud83d\udfe2' : '\u26aa';
+    h += '<div class="pp-vocab-row">';
+    h += '<span class="pp-vocab-word">' + escapeHtml(rkp.title) + '</span>';
+    if (rkp.title_zh) h += '<span class="pp-vocab-def">' + escapeHtml(rkp.title_zh) + '</span>';
+    h += '<span class="pp-kp-badge">' + kpBadge + '</span>';
+    h += '</div>';
+  }
+  h += '</div>';
+  return h;
+}
+
 /* ═══ PRACTICE MODE ═══ */
 
 function renderPPCard() {
@@ -1944,76 +2025,16 @@ function renderPPCard() {
     html += '<div style="padding:4px 16px 0;font-size:11px;color:var(--c-muted)">' + _ppGroupLabel(q.g) + '</div>';
   }
 
-  /* Card body: question with PDF-style right-aligned marks */
-  html += '<div class="pp-card-body" id="pp-question-body">';
+  /* Render card modules in configurable order (v4.3.3) */
+  var _ppDefaultModOrder = ['body', 'answers', 'vocab', 'kp'];
+  var _modOrder = q.moduleOrder || _ppDefaultModOrder;
   var _showAnsLine = _ppSession.mode !== 'exam';
-  html += _ppRenderWithMarks(q, _showAnsLine);
-  html += _ppRenderFigures(q);
-  html += '</div>';
-
-  /* Mark Scheme toggle (practice mode only) */
-  if (_ppSession.mode === 'practice') {
-    html += '<div class="pp-ms-toggle" role="button" tabindex="0" data-action="toggleMS">';
-    html += '<span id="pp-ms-arrow">\u25b6</span> ' + t('Answers', '\u7b54\u6848');
-    html += '</div>';
-    html += '<div class="pp-ms-content" id="pp-ms-body">';
-    html += '<div class="pp-ms-placeholder">';
-    html += t('Coming soon \u2014 use self-assessment for now', '\u5373\u5c06\u63a8\u51fa\uff0c\u8bf7\u5148\u81ea\u8bc4');
-    html += '</div></div>';
-  }
-
-  /* Related Vocabulary toggle (practice mode + has section) */
-  if (_ppSession.mode === 'practice' && q.s) {
-    var vocabInfo = _ppGetSectionVocab(q.s, _ppSession.board);
-    if (vocabInfo && vocabInfo.words.length > 0) {
-      html += '<div class="pp-ms-toggle" role="button" tabindex="0" data-action="toggleVocab">';
-      html += '<span id="pp-vocab-arrow">\u25b6</span> ';
-      html += t('Related Vocabulary', '\u76f8\u5173\u8bcd\u6c47');
-      html += ' <span class="text-muted-sm">(' + vocabInfo.words.length + ')</span>';
-      html += '</div>';
-      html += '<div class="pp-ms-content" id="pp-vocab-body">';
-      for (var vi = 0; vi < vocabInfo.words.length; vi++) {
-        var vw = vocabInfo.words[vi];
-        html += '<div class="pp-vocab-row">';
-        html += '<span class="pp-vocab-word">' + vw.word + '</span>';
-        html += '<span class="pp-vocab-def">' + vw.def + '</span>';
-        if (vw.stars < 0) {
-          html += '<span class="pp-vocab-new">new</span>';
-        } else {
-          html += '<span class="pp-vocab-stars">';
-          for (var si = 0; si < vw.stars; si++) html += '\u2605';
-          if (vw.stars === 0) html += '\u2606';
-          html += '</span>';
-        }
-        html += '</div>';
-      }
-      html += '<div class="text-center" style="padding:8px">';
-      html += '<button class="btn btn-sm" onclick="openDeck(' + vocabInfo.levelIdx + ')">';
-      html += '\ud83d\udcd6 ' + t('Study Vocabulary', '\u5b66\u4e60\u8bcd\u6c47') + '</button></div>';
-      html += '</div>';
-    }
-  }
-
-  /* Related Knowledge Points toggle (practice mode + has section + graph available) */
-  if (_ppSession.mode === 'practice' && q.s && typeof getQuestionKPs === 'function') {
-    var relKPs = getQuestionKPs(q.s, _ppSession.board);
-    if (relKPs.length > 0) {
-      html += '<div class="pp-ms-toggle" role="button" tabindex="0" data-action="toggleKP">';
-      html += '<span id="pp-kp-arrow">\u25b6</span> ';
-      html += t('Related Knowledge Points', '\u76f8\u5173\u77e5\u8bc6\u70b9');
-      html += ' <span class="text-muted-sm">(' + relKPs.length + ')</span>';
-      html += '</div>';
-      html += '<div class="pp-ms-content" id="pp-kp-body">';
-      for (var ki = 0; ki < relKPs.length; ki++) {
-        var rkp = relKPs[ki];
-        var kpBadge = rkp.fs === 'mastered' ? '\u2705' : rkp.fs === 'uncertain' ? '\ud83d\udfe1' : rkp.fs === 'learning' ? '\ud83d\udfe2' : '\u26aa';
-        html += '<div class="pp-vocab-row">';
-        html += '<span class="pp-vocab-word">' + escapeHtml(rkp.title) + '</span>';
-        if (rkp.title_zh) html += '<span class="pp-vocab-def">' + escapeHtml(rkp.title_zh) + '</span>';
-        html += '<span class="pp-kp-badge">' + kpBadge + '</span>';
-        html += '</div>';
-      }
-      html += '</div>';
+  for (var _moi = 0; _moi < _modOrder.length; _moi++) {
+    switch (_modOrder[_moi]) {
+      case 'body':    html += _ppRenderBodyModule(q, _showAnsLine); break;
+      case 'answers': html += _ppRenderAnswersModule(q); break;
+      case 'vocab':   html += _ppRenderVocabModule(q); break;
+      case 'kp':      html += _ppRenderKPModule(q); break;
     }
   }
 
@@ -3161,10 +3182,35 @@ function editPastPaperQ(qIdx) {
   html += '<div id="pp-ed-parts">';
   var _edParts = q.parts || [];
   for (var _pi = 0; _pi < _edParts.length; _pi++) {
-    html += _ppEdPartRow(_edParts[_pi].label, _edParts[_pi].marks, _pi);
+    html += _ppEdPartRow(_edParts[_pi].label, _edParts[_pi].marks, _pi, _edParts[_pi].ansPrefix, _edParts[_pi].ansSuffix, _edParts[_pi].ansTpl);
   }
   html += '</div>';
   html += '<button class="btn btn-sm btn-ghost" type="button" onclick="_ppEdAddPart()">+ ' + t('Add Part', '\u6dfb\u52a0\u5c0f\u9898') + '</button>';
+
+  /* Question-level answer line (for questions without parts) */
+  html += '<div id="pp-ed-ansline-wrap" style="margin-top:10px' + (_edParts.length > 0 ? ';display:none' : '') + '">';
+  html += '<label class="settings-label">' + t('Answer Line (no-parts questions)', '答题线（无小题）') + '</label>';
+  html += '<div class="pp-ed-part-ans">';
+  html += '<input type="text" class="bug-select" id="pp-ed-ans-prefix" value="' + escapeHtml(q.ansPrefix || '') + '" placeholder="prefix (e.g. x=)">';
+  html += '<input type="text" class="bug-select" id="pp-ed-ans-suffix" value="' + escapeHtml(q.ansSuffix || '') + '" placeholder="suffix (e.g. cm)">';
+  html += '<input type="text" class="bug-select" id="pp-ed-ans-tpl" value="' + escapeHtml(q.ansTpl || '') + '" placeholder="template (e.g. (____,____))">';
+  html += '</div></div>';
+
+  /* Module order editor (v4.3.3) */
+  var DEFAULT_MODULE_ORDER = ['body', 'answers', 'vocab', 'kp'];
+  var _edModuleOrder = q.moduleOrder || DEFAULT_MODULE_ORDER;
+  var _modLabels = { body: '\ud83d\udcdd Question Body', answers: '\ud83d\udccb Answers', vocab: '\ud83d\udcd6 Related Vocabulary', kp: '\ud83e\udde0 Knowledge Points' };
+  html += '<label class="settings-label" style="margin-top:10px">' + t('Module Order', '模块排序') + '</label>';
+  html += '<div class="pp-ed-module-list" id="pp-ed-modules">';
+  for (var _mi = 0; _mi < _edModuleOrder.length; _mi++) {
+    var _mk = _edModuleOrder[_mi];
+    html += '<div class="pp-ed-module-row" data-mod="' + _mk + '">';
+    html += '<button class="btn btn-sm btn-ghost" type="button" onclick="_ppEdMoveModule(this,-1)" title="Move up">\u25b2</button>';
+    html += '<button class="btn btn-sm btn-ghost" type="button" onclick="_ppEdMoveModule(this,1)" title="Move down">\u25bc</button>';
+    html += '<span>' + (_modLabels[_mk] || _mk) + '</span>';
+    html += '</div>';
+  }
+  html += '</div>';
 
   /* Preview */
   html += '<div class="mt-12">';
@@ -3265,12 +3311,16 @@ function _ppEdInsertTable() {
   if (texEl.oninput) texEl.oninput();
 }
 
-function _ppEdPartRow(label, marks, idx) {
+function _ppEdPartRow(label, marks, idx, ansPrefix, ansSuffix, ansTpl) {
   return '<div class="pp-ed-part-row" data-idx="' + idx + '">' +
     '<input type="text" class="bug-select pp-ed-part-label" value="' + escapeHtml(label) + '" style="width:60px" placeholder="(a)">' +
     '<input type="number" class="bug-select pp-ed-part-marks" value="' + marks + '" min="0" max="20" style="width:60px" placeholder="marks">' +
     '<button class="btn btn-sm btn-ghost" type="button" onclick="this.parentElement.remove()" title="Remove">\u2716</button>' +
-    '</div>';
+    '<div class="pp-ed-part-ans">' +
+    '<input type="text" class="bug-select pp-ed-part-prefix" value="' + escapeHtml(ansPrefix || '') + '" placeholder="prefix (e.g. x=)">' +
+    '<input type="text" class="bug-select pp-ed-part-suffix" value="' + escapeHtml(ansSuffix || '') + '" placeholder="suffix (e.g. cm)">' +
+    '<input type="text" class="bug-select pp-ed-part-tpl" value="' + escapeHtml(ansTpl || '') + '" placeholder="template (e.g. (____,____))">' +
+    '</div></div>';
 }
 
 function _ppEdAddPart() {
@@ -3293,9 +3343,39 @@ function _ppEdCollectParts() {
   for (var i = 0; i < rows.length; i++) {
     var label = rows[i].querySelector('.pp-ed-part-label').value.trim();
     var marks = parseInt(rows[i].querySelector('.pp-ed-part-marks').value) || 0;
-    if (label) parts.push({ label: label, marks: marks });
+    if (!label) continue;
+    var part = { label: label, marks: marks };
+    var pfx = rows[i].querySelector('.pp-ed-part-prefix');
+    var sfx = rows[i].querySelector('.pp-ed-part-suffix');
+    var tpl = rows[i].querySelector('.pp-ed-part-tpl');
+    if (pfx && pfx.value.trim()) part.ansPrefix = pfx.value.trim();
+    if (sfx && sfx.value.trim()) part.ansSuffix = sfx.value.trim();
+    if (tpl && tpl.value.trim()) part.ansTpl = tpl.value.trim();
+    parts.push(part);
   }
   return parts;
+}
+
+function _ppEdMoveModule(btn, dir) {
+  var row = btn.closest('.pp-ed-module-row');
+  var list = row.parentElement;
+  var rows = Array.from(list.children);
+  var idx = rows.indexOf(row);
+  var newIdx = idx + dir;
+  if (newIdx < 0 || newIdx >= rows.length) return;
+  if (dir === -1) list.insertBefore(row, rows[newIdx]);
+  else list.insertBefore(rows[newIdx], row);
+}
+
+function _ppEdCollectModuleOrder() {
+  var container = E('pp-ed-modules');
+  if (!container) return null;
+  var rows = container.querySelectorAll('.pp-ed-module-row');
+  var order = [];
+  for (var i = 0; i < rows.length; i++) {
+    order.push(rows[i].dataset.mod);
+  }
+  return order;
 }
 
 function submitPPEdit(qid) {
@@ -3312,6 +3392,14 @@ function submitPPEdit(qid) {
   var newGroup = E('pp-ed-group') ? E('pp-ed-group').value : q.g;
   var newParts = _ppEdCollectParts();
 
+  /* Question-level answer line (no-parts questions) */
+  var newAnsPrefix = E('pp-ed-ans-prefix') ? E('pp-ed-ans-prefix').value.trim() : '';
+  var newAnsSuffix = E('pp-ed-ans-suffix') ? E('pp-ed-ans-suffix').value.trim() : '';
+  var newAnsTpl = E('pp-ed-ans-tpl') ? E('pp-ed-ans-tpl').value.trim() : '';
+  /* Module order */
+  var DEFAULT_MODULE_ORDER = ['body', 'answers', 'vocab', 'kp'];
+  var newModuleOrder = _ppEdCollectModuleOrder();
+
   /* Build diff description */
   var changes = [];
   if (newTex !== q.tex) changes.push('tex');
@@ -3319,6 +3407,10 @@ function submitPPEdit(qid) {
   if (newDiff !== q.d) changes.push('diff: ' + q.d + '\u2192' + newDiff);
   if (newGroup !== q.g) changes.push('group: ' + q.g + '\u2192' + newGroup);
   if (newParts !== null && JSON.stringify(newParts) !== JSON.stringify(q.parts || [])) changes.push('parts');
+  if (newAnsPrefix !== (q.ansPrefix || '')) changes.push('ansPrefix');
+  if (newAnsSuffix !== (q.ansSuffix || '')) changes.push('ansSuffix');
+  if (newAnsTpl !== (q.ansTpl || '')) changes.push('ansTpl');
+  if (newModuleOrder && JSON.stringify(newModuleOrder) !== JSON.stringify(q.moduleOrder || DEFAULT_MODULE_ORDER)) changes.push('moduleOrder');
 
   if (changes.length === 0) {
     E('pp-ed-msg').textContent = t('No changes detected', '\u672a\u68c0\u6d4b\u5230\u4fee\u6539');
@@ -3331,6 +3423,10 @@ function submitPPEdit(qid) {
   if (newDiff !== q.d) editData.d = newDiff;
   if (newGroup !== q.g) editData.g = newGroup;
   if (newParts !== null && JSON.stringify(newParts) !== JSON.stringify(q.parts || [])) editData.parts = newParts;
+  if (newAnsPrefix !== (q.ansPrefix || '')) editData.ansPrefix = newAnsPrefix || null;
+  if (newAnsSuffix !== (q.ansSuffix || '')) editData.ansSuffix = newAnsSuffix || null;
+  if (newAnsTpl !== (q.ansTpl || '')) editData.ansTpl = newAnsTpl || null;
+  if (newModuleOrder && JSON.stringify(newModuleOrder) !== JSON.stringify(q.moduleOrder || DEFAULT_MODULE_ORDER)) editData.moduleOrder = newModuleOrder;
 
   sb.from('question_edits').upsert({
     qid: q.id,
@@ -3350,6 +3446,11 @@ function submitPPEdit(qid) {
     q.marks = newMarks;
     q.d = newDiff;
     q.g = newGroup;
+    if (editData.parts !== undefined) q.parts = newParts;
+    if (editData.ansPrefix !== undefined) q.ansPrefix = editData.ansPrefix;
+    if (editData.ansSuffix !== undefined) q.ansSuffix = editData.ansSuffix;
+    if (editData.ansTpl !== undefined) q.ansTpl = editData.ansTpl;
+    if (editData.moduleOrder !== undefined) q.moduleOrder = editData.moduleOrder;
     /* Invalidate edits cache so next load picks up the change */
     _pqEditsCache[_ppSession.board] = null;
 

@@ -1,5 +1,39 @@
 # Changelog
 
+## [4.3.3] - 2026-03-10 — 超管题卡模块编辑 + 排序
+
+### 答题线编辑（js/practice.js）
+- **Parts 答题线字段**: 每个 part 行新增 ansPrefix / ansSuffix / ansTpl 输入框
+- **无 parts 题答题线**: 编辑器中增加题目级 prefix / suffix / template 输入区
+- **收集逻辑扩展**: `_ppEdCollectParts()` 收集每个 part 的答题线字段
+
+### 模块排序编辑器（js/practice.js）
+- **排序 UI**: 编辑器底部新增 4 行模块排序区（body/answers/vocab/kp），▲/▼ 交换相邻项
+- **`_ppEdMoveModule()`**: DOM 层面交换模块行
+- **`_ppEdCollectModuleOrder()`**: 读取 DOM 顺序生成模块排列数组
+
+### renderPPCard 模块化重构（js/practice.js）
+- **4 个模块渲染函数**: `_ppRenderBodyModule()` / `_ppRenderAnswersModule()` / `_ppRenderVocabModule()` / `_ppRenderKPModule()`
+- **按 moduleOrder 循环渲染**: pp-card 内部 4 段代码提取为函数，按 `q.moduleOrder` 排列
+
+### 数据存储扩展（js/practice.js）
+- **submitPPEdit**: 收集并保存 ansPrefix / ansSuffix / ansTpl / moduleOrder
+- **loadPastPaperData**: merge 扩展支持新字段
+- **本地回写**: 编辑后即时更新当前 session 数据
+
+### CSS（css/style.css）
+- `.pp-ed-module-list` / `.pp-ed-module-row` 排序编辑器样式
+- `.pp-ed-part-ans` 答题线字段行样式
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| js/practice.js | 答题线编辑 + 模块排序 UI + submitPPEdit 扩展 + loadPastPaperData merge + renderPPCard 模块化 |
+| css/style.css | 排序编辑器 + 答题线字段样式 |
+| js/config.js | APP_VERSION → v4.3.3 |
+
+---
+
 ## [4.3.2] - 2026-03-10 — 真题展示增强
 
 ### 真题布局优化（js/practice.js）
