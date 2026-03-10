@@ -155,6 +155,8 @@ function getVisibleBoards() {
   if (!userBoard) return base;
   if (userBoard === 'all') return base;
   return base.filter(function(b) {
+    /* Super admin always sees CIE + Edexcel boards */
+    if (isSuperAdmin() && (b.id === 'cie' || b.id === 'edx')) return true;
     /* CIE/Edexcel: show entire board */
     if (userBoard === 'cie' && b.id === 'cie') return true;
     if (userBoard === 'edx' && b.id === 'edx') return true;
