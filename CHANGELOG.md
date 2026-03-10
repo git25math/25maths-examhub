@@ -1,5 +1,27 @@
 # Changelog
 
+## [4.4.3] - 2026-03-11 — Mother Problem 基础设施 Phase 2-3
+
+### 新增数据文件
+- **`data/answer-space-library.json`** — AnswerSpace Library v1（13 模板，覆盖 98.8% 答题格式）
+- **`data/ask-pattern-library.json`** — Ask Pattern Library v1（63 问法模式，10 个领域分组）
+- **`data/mother-problem-matrix.json`** — Mother Problem 映射矩阵（58 个 Ask+Answer→MP 映射）
+- **`scripts/output/paper42-2024mj-tagging.json`** — Paper42 2024MJ 母题标注试点数据
+
+### 数据质量优化
+- **prefix/suffix 正规化**: 370 个值清理（`\text{cm}`→`cm`、`x=`→`x =`、`$x$ =`→`x =`、`\degree`→`°`）
+- **enrichment 脚本增强**: 新增 `\text{}`/`\overrightarrow{}`/`\vec{}` 清理规则
+
+### 文件变更
+| 文件 | 变更类型 |
+|------|---------|
+| `data/answer-space-library.json` | 新增 |
+| `data/ask-pattern-library.json` | 新增 |
+| `data/mother-problem-matrix.json` | 新增 |
+| `scripts/output/paper42-2024mj-tagging.json` | 新增 |
+| `data/papers-cie.json` | 修改 — prefix/suffix 正规化 |
+| `scripts/enrich-answers-cie.py` | 修改 — 清理规则增强 |
+
 ## [4.4.2] - 2026-03-10 — CIE 真题 Answer 元数据富化 Phase 1
 
 ### 数据富化

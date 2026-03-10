@@ -1,0 +1,151 @@
+{
+  "v": "1.0",
+  "description": "Ask Pattern Library — standardized question action patterns for IGCSE",
+  "patterns": {
+    "READ": {
+      "label": "Retrieve / Write Down",
+      "description": "Direct read or state from given information",
+      "patterns": [
+        {"id": "ASK-READ-VALUE", "stem_keywords": ["write down", "state the value", "read off"], "typical_answer": "AL-NUM"},
+        {"id": "ASK-READ-COORDINATE", "stem_keywords": ["write down the coordinates", "state the coordinates"], "typical_answer": "AL-COORD-2"},
+        {"id": "ASK-READ-GRADIENT", "stem_keywords": ["write down the gradient", "state the gradient"], "typical_answer": "AL-NUM"},
+        {"id": "ASK-READ-FREQUENCY", "stem_keywords": ["write down the frequency", "how many"], "typical_answer": "AL-NUM"},
+        {"id": "ASK-READ-SCALE", "stem_keywords": ["write down the scale", "scale factor"], "typical_answer": "AL-NUM"},
+        {"id": "ASK-READ-LABEL", "stem_keywords": ["write down the name", "mathematical name"], "typical_answer": "AL-MULTI-2"},
+        {"id": "ASK-READ-ANGLE", "stem_keywords": ["write down the angle", "state the angle"], "typical_answer": "AL-NUM"},
+        {"id": "ASK-READ-PROBABILITY", "stem_keywords": ["write down the probability"], "typical_answer": "AL-NUM"},
+        {"id": "ASK-READ-INTERCEPT", "stem_keywords": ["write down the intercept", "y-intercept"], "typical_answer": "AL-NUM"},
+        {"id": "ASK-READ-TERM", "stem_keywords": ["write down the next term", "next two terms"], "typical_answer": "AL-NUM"}
+      ]
+    },
+    "ALG": {
+      "label": "Algebra — Solve / Find / Manipulate",
+      "description": "Algebraic operations and equation solving",
+      "patterns": [
+        {"id": "ASK-ALG-SOLVE_LINEAR", "stem_keywords": ["solve the equation", "find the value of x"], "typical_answer": "AL-NUM-P"},
+        {"id": "ASK-ALG-SOLVE_QUADRATIC", "stem_keywords": ["solve the quadratic", "solve x²"], "typical_answer": "AL-EXPR-2"},
+        {"id": "ASK-ALG-SOLVE_SIMULTANEOUS", "stem_keywords": ["solve the simultaneous", "solve these equations"], "typical_answer": "AL-MULTI-2"},
+        {"id": "ASK-ALG-SOLVE_INEQUALITY", "stem_keywords": ["solve the inequality"], "typical_answer": "AL-NUM-P"},
+        {"id": "ASK-ALG-FIND_TERM", "stem_keywords": ["find the nth term", "find the 10th term"], "typical_answer": "AL-NUM"},
+        {"id": "ASK-ALG-FIND_EXPRESSION", "stem_keywords": ["find an expression", "write an expression"], "typical_answer": "AL-NUM-P"},
+        {"id": "ASK-ALG-FACTORISE", "stem_keywords": ["factorise"], "typical_answer": "AL-NUM"},
+        {"id": "ASK-ALG-EXPAND", "stem_keywords": ["expand", "expand and simplify"], "typical_answer": "AL-NUM"},
+        {"id": "ASK-ALG-SIMPLIFY", "stem_keywords": ["simplify"], "typical_answer": "AL-NUM"},
+        {"id": "ASK-ALG-MAKE_SUBJECT", "stem_keywords": ["make x the subject", "rearrange"], "typical_answer": "AL-NUM-P"},
+        {"id": "ASK-ALG-FIND_INTEGER_VALUES", "stem_keywords": ["write down the integer values", "list the integer values"], "typical_answer": "AL-EXPR-2"},
+        {"id": "ASK-ALG-DIFFERENTIATE", "stem_keywords": ["differentiate", "find dy/dx"], "typical_answer": "AL-NUM"}
+      ]
+    },
+    "NUM": {
+      "label": "Number — Calculate",
+      "description": "Numerical calculations and conversions",
+      "patterns": [
+        {"id": "ASK-NUM-CALCULATE", "stem_keywords": ["calculate", "work out"], "typical_answer": "AL-NUM"},
+        {"id": "ASK-NUM-FIND_PERCENTAGE", "stem_keywords": ["percentage", "as a percentage"], "typical_answer": "AL-NUM-S"},
+        {"id": "ASK-NUM-FIND_RATIO", "stem_keywords": ["ratio", "simplest form"], "typical_answer": "AL-EXPR-2"},
+        {"id": "ASK-NUM-FIND_FRACTION", "stem_keywords": ["as a fraction", "write as a fraction"], "typical_answer": "AL-NUM"},
+        {"id": "ASK-NUM-FIND_MULTIPLIER", "stem_keywords": ["multiplier", "scale factor"], "typical_answer": "AL-NUM"},
+        {"id": "ASK-NUM-FIND_CHANGE", "stem_keywords": ["change", "difference"], "typical_answer": "AL-NUM-S"},
+        {"id": "ASK-NUM-FIND_RATE", "stem_keywords": ["rate", "speed", "km/h"], "typical_answer": "AL-NUM-S"},
+        {"id": "ASK-NUM-CALC_COMPOUND_INTEREST", "stem_keywords": ["compound interest", "after n years"], "typical_answer": "AL-NUM-S"},
+        {"id": "ASK-NUM-CONVERT", "stem_keywords": ["convert", "write in standard form"], "typical_answer": "AL-NUM"},
+        {"id": "ASK-NUM-ESTIMATE", "stem_keywords": ["estimate", "correct to"], "typical_answer": "AL-NUM"},
+        {"id": "ASK-NUM-FIND_HCF_LCM", "stem_keywords": ["highest common factor", "lowest common multiple", "HCF", "LCM"], "typical_answer": "AL-NUM"}
+      ]
+    },
+    "GEO": {
+      "label": "Geometry — Measure and Coordinate",
+      "description": "Geometric measures and coordinate geometry",
+      "patterns": [
+        {"id": "ASK-GEO-FIND_LENGTH", "stem_keywords": ["find the length", "calculate the length"], "typical_answer": "AL-NUM-S"},
+        {"id": "ASK-GEO-FIND_DISTANCE", "stem_keywords": ["find the distance"], "typical_answer": "AL-NUM-S"},
+        {"id": "ASK-GEO-FIND_PERIMETER", "stem_keywords": ["find the perimeter", "calculate the perimeter"], "typical_answer": "AL-NUM-S"},
+        {"id": "ASK-GEO-FIND_AREA", "stem_keywords": ["find the area", "calculate the area"], "typical_answer": "AL-NUM-S"},
+        {"id": "ASK-GEO-FIND_VOLUME", "stem_keywords": ["find the volume", "calculate the volume"], "typical_answer": "AL-NUM-S"},
+        {"id": "ASK-GEO-FIND_ANGLE", "stem_keywords": ["find angle", "calculate angle", "work out angle"], "typical_answer": "AL-NUM-S"},
+        {"id": "ASK-GEO-FIND_RADIUS", "stem_keywords": ["find the radius"], "typical_answer": "AL-NUM-S"},
+        {"id": "ASK-GEO-FIND_GRADIENT", "stem_keywords": ["find the gradient", "calculate the gradient"], "typical_answer": "AL-NUM"},
+        {"id": "ASK-GEO-FIND_MIDPOINT", "stem_keywords": ["find the midpoint"], "typical_answer": "AL-COORD-2"},
+        {"id": "ASK-GEO-FIND_DISTANCE_COORD", "stem_keywords": ["find the distance between"], "typical_answer": "AL-NUM"},
+        {"id": "ASK-GEO-FIND_EQUATION_LINE", "stem_keywords": ["find the equation of the line", "equation of the perpendicular"], "typical_answer": "AL-NUM-P"},
+        {"id": "ASK-GEO-FIND_INTERSECTION", "stem_keywords": ["find the intersection", "find the coordinates of"], "typical_answer": "AL-COORD-2"},
+        {"id": "ASK-GEO-FIND_COORDINATE", "stem_keywords": ["find the coordinates", "write down the coordinates"], "typical_answer": "AL-COORD-2"},
+        {"id": "ASK-GEO-FIND_TRANSLATION_VECTOR", "stem_keywords": ["find the translation vector", "column vector"], "typical_answer": "AL-VEC-2"},
+        {"id": "ASK-GEO-FIND_BEARING", "stem_keywords": ["find the bearing", "bearing of"], "typical_answer": "AL-NUM-S"}
+      ]
+    },
+    "TRANS": {
+      "label": "Transformation",
+      "description": "Geometric transformations",
+      "patterns": [
+        {"id": "ASK-TRANS-DESCRIBE", "stem_keywords": ["describe fully", "describe the transformation", "describe the single transformation"], "typical_answer": "AL-MULTI-2"},
+        {"id": "ASK-TRANS-FIND_VECTOR", "stem_keywords": ["translation vector", "column vector for the translation"], "typical_answer": "AL-VEC-2"},
+        {"id": "ASK-TRANS-FIND_SCALE_FACTOR", "stem_keywords": ["scale factor of the enlargement"], "typical_answer": "AL-NUM"},
+        {"id": "ASK-TRANS-FIND_CENTRE", "stem_keywords": ["centre of enlargement", "centre of rotation"], "typical_answer": "AL-COORD-2"},
+        {"id": "ASK-TRANS-IDENTIFY", "stem_keywords": ["what type of transformation", "name the transformation"], "typical_answer": "AL-MULTI-2"},
+        {"id": "ASK-TRANS-DRAW_IMAGE", "stem_keywords": ["draw the image", "draw the reflection", "draw the rotation"], "typical_answer": null}
+      ]
+    },
+    "STAT": {
+      "label": "Statistics",
+      "description": "Statistical measures and data representation",
+      "patterns": [
+        {"id": "ASK-STAT-CALC_MEAN", "stem_keywords": ["calculate the mean", "find the mean"], "typical_answer": "AL-NUM"},
+        {"id": "ASK-STAT-CALC_MEDIAN", "stem_keywords": ["find the median"], "typical_answer": "AL-NUM"},
+        {"id": "ASK-STAT-CALC_MODE", "stem_keywords": ["find the mode", "write down the mode"], "typical_answer": "AL-NUM"},
+        {"id": "ASK-STAT-CALC_RANGE", "stem_keywords": ["find the range"], "typical_answer": "AL-NUM"},
+        {"id": "ASK-STAT-CALC_INTERQUARTILE", "stem_keywords": ["interquartile range", "IQR"], "typical_answer": "AL-NUM"},
+        {"id": "ASK-STAT-FIND_QUARTILE", "stem_keywords": ["find the lower quartile", "find the upper quartile", "find the median from the cumulative frequency"], "typical_answer": "AL-NUM"},
+        {"id": "ASK-STAT-COMPLETE_TABLE", "stem_keywords": ["complete the table", "complete the frequency table"], "typical_answer": "AL-TABLE"},
+        {"id": "ASK-STAT-DRAW_GRAPH", "stem_keywords": ["draw the histogram", "draw the bar chart", "draw the pie chart", "draw the cumulative frequency"], "typical_answer": null},
+        {"id": "ASK-STAT-INTERPRET_GRAPH", "stem_keywords": ["use your graph", "read from the graph", "estimate from the graph"], "typical_answer": "AL-NUM"},
+        {"id": "ASK-STAT-COMPLETE_DIAGRAM", "stem_keywords": ["complete the stem-and-leaf", "complete the diagram"], "typical_answer": "AL-TABLE"}
+      ]
+    },
+    "PROB": {
+      "label": "Probability",
+      "description": "Probability calculations",
+      "patterns": [
+        {"id": "ASK-PROB-CALCULATE", "stem_keywords": ["find the probability", "calculate the probability"], "typical_answer": "AL-NUM"},
+        {"id": "ASK-PROB-FIND_EVENT", "stem_keywords": ["probability that", "P("], "typical_answer": "AL-NUM"},
+        {"id": "ASK-PROB-FIND_COMPLEMENT", "stem_keywords": ["probability that it does not", "complement"], "typical_answer": "AL-NUM"},
+        {"id": "ASK-PROB-COMPLETE_TREE", "stem_keywords": ["complete the tree diagram", "complete the probability tree"], "typical_answer": "AL-TABLE"},
+        {"id": "ASK-PROB-FIND_OUTCOME", "stem_keywords": ["how many outcomes", "number of outcomes"], "typical_answer": "AL-NUM"},
+        {"id": "ASK-PROB-RELATIVE_FREQUENCY", "stem_keywords": ["relative frequency", "experimental probability"], "typical_answer": "AL-NUM"}
+      ]
+    },
+    "TRIG": {
+      "label": "Trigonometry",
+      "description": "Trigonometric calculations",
+      "patterns": [
+        {"id": "ASK-TRIG-FIND_SIDE", "stem_keywords": ["find the length", "calculate AB", "using trigonometry"], "typical_answer": "AL-NUM-S"},
+        {"id": "ASK-TRIG-FIND_ANGLE", "stem_keywords": ["find angle", "calculate the angle"], "typical_answer": "AL-NUM-S"},
+        {"id": "ASK-TRIG-SOLVE_EQUATION", "stem_keywords": ["solve the trigonometric equation", "solve sin", "solve cos", "solve tan"], "typical_answer": "AL-EXPR-2"},
+        {"id": "ASK-TRIG-FIND_HEIGHT", "stem_keywords": ["find the height", "height of the tower"], "typical_answer": "AL-NUM-S"},
+        {"id": "ASK-TRIG-SINE_COSINE_RULE", "stem_keywords": ["using the sine rule", "using the cosine rule"], "typical_answer": "AL-NUM-S"}
+      ]
+    },
+    "REASON": {
+      "label": "Explain / Reason",
+      "description": "Reasoning and proof questions",
+      "patterns": [
+        {"id": "ASK-REASON-EXPLAIN", "stem_keywords": ["explain why", "give a reason"], "typical_answer": "AL-MULTI-2"},
+        {"id": "ASK-REASON-JUSTIFY", "stem_keywords": ["justify", "give a mathematical reason"], "typical_answer": "AL-MULTI-2"},
+        {"id": "ASK-REASON-SHOW_THAT", "stem_keywords": ["show that", "prove that"], "typical_answer": "AL-MULTI-3"},
+        {"id": "ASK-REASON-WHY", "stem_keywords": ["why", "because"], "typical_answer": "AL-MULTI-2"},
+        {"id": "ASK-REASON-IS_CORRECT", "stem_keywords": ["is he correct", "do you agree", "is this true"], "typical_answer": "AL-MULTI-2"}
+      ]
+    },
+    "CONSTRUCT": {
+      "label": "Draw / Construct / Complete",
+      "description": "Graphical or construction tasks (no written answer)",
+      "patterns": [
+        {"id": "ASK-CONSTRUCT-DRAW_GRAPH", "stem_keywords": ["draw the graph", "plot the points", "complete the graph"], "typical_answer": null},
+        {"id": "ASK-CONSTRUCT-DRAW_SHAPE", "stem_keywords": ["draw the image", "draw the net", "construct"], "typical_answer": null},
+        {"id": "ASK-CONSTRUCT-COMPLETE_TABLE", "stem_keywords": ["complete the table of values"], "typical_answer": "AL-TABLE"},
+        {"id": "ASK-CONSTRUCT-DRAW_LINE", "stem_keywords": ["draw the line of best fit", "draw a tangent"], "typical_answer": null}
+      ]
+    }
+  },
+  "total_patterns": 63
+}

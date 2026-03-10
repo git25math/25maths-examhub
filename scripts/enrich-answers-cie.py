@@ -27,24 +27,32 @@ REPORT_PATH = SCRIPT_DIR / "output" / "enrich-cie-report.json"
 
 # ── LaTeX → Unicode cleanup maps ─────────────────────────────────────────────
 LATEX_CLEANUP = [
-    # Superscripts
-    (r'\$\^\{?\\circ\}?\$', '°'),
+    # Superscripts with units (must come before generic superscript rules)
+    (r'cm\$?\^\{?2\}?\$?', 'cm²'),
+    (r'km\$?\^\{?2\}?\$?', 'km²'),
+    (r'cm\$?\^\{?3\}?\$?', 'cm³'),
+    (r'm/s\$?\^\{?2\}?\$?', 'm/s²'),
+    (r'm\$?\^\{?2\}?\$?', 'm²'),
+    (r'm\$?\^\{?3\}?\$?', 'm³'),
+    # Degree symbol variants
+    (r'\$?\^\{?\\circ\}?\$?', '°'),
     (r'\\circ', '°'),
-    (r'\$\^2\$', '²'),
-    (r'cm\$\^2\$', 'cm²'),
-    (r'cm\$\^\{?2\}?\$', 'cm²'),
-    (r'm\$\^2\$', 'm²'),
-    (r'km\$\^2\$', 'km²'),
-    (r'\$\^3\$', '³'),
-    (r'cm\$\^3\$', 'cm³'),
-    (r'm\$\^3\$', 'm³'),
-    (r'm/s\$\^2\$', 'm/s²'),
-    (r'm/s\$\^\{?2\}?\$', 'm/s²'),
-    # Superscript expressions
+    (r'\\degree', '°'),
+    # Generic superscripts
+    (r'\$?\^2\$?', '²'),
+    (r'\$?\^3\$?', '³'),
     (r'\^\{-1\}', '⁻¹'),
     (r'\^\{-2\}', '⁻²'),
+    # LaTeX text commands
+    (r'\\text\{([^}]*)\}', r'\1'),
+    (r'\\textbf\{([^}]*)\}', r'\1'),
+    (r'\\mathrm\{([^}]*)\}', r'\1'),
     # Special chars
     (r'\\%', '%'),
+    (r'\\\$', '$'),
+    # Overrightarrow → plain
+    (r'\\overrightarrow\{([^}]*)\}', r'\1'),
+    (r'\\vec\{([^}]*)\}', r'\1'),
     # Strip math-mode delimiters (outermost $ pair)
     (r'^\$\s*(.*?)\s*\$$', r'\1'),
 ]
@@ -62,6 +70,9 @@ def clean_latex(s):
         s = s[1:-1].strip()
     # Normalize whitespace
     s = re.sub(r'\s+', ' ', s).strip()
+    # Normalize "var =" spacing: "x=" → "x ="
+    s = re.sub(r'^([a-zA-Z]\w*(?:⁻¹)?\(?\w*\)?)=\s*$', r'\1 =', s)
+    s = re.sub(r'^([a-zA-Z]\w*(?:⁻¹)?\(?\w*\)?)\s+=\s*$', r'\1 =', s)
     return s if s else None
 
 

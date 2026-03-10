@@ -1,0 +1,134 @@
+{
+  "v": "1.0",
+  "description": "AnswerSpace Library — standardized answer format templates for IGCSE questions",
+  "templates": [
+    {
+      "id": "AL-NUM",
+      "type": "number",
+      "description": "Plain numeric answer, no prefix/suffix",
+      "count": 6935,
+      "coverage": "69.8%",
+      "example": "____"
+    },
+    {
+      "id": "AL-NUM-S",
+      "type": "number",
+      "variant": "suffix",
+      "description": "Numeric answer with unit suffix",
+      "count": 1111,
+      "coverage": "11.2%",
+      "top_suffixes": ["cm", "cm²", "%", "m", "°", "cm³", "km/h", "km", "min", "°C", "$", "kg", "m²", "g", "h", "s", "litres", "m/s²", "m/s", "mm"],
+      "example": "____ cm"
+    },
+    {
+      "id": "AL-NUM-P",
+      "type": "number",
+      "variant": "prefix",
+      "description": "Numeric answer with variable prefix",
+      "count": 881,
+      "coverage": "8.9%",
+      "top_prefixes": ["x =", "y =", "n =", "r =", "k =", "p =", "f⁻¹(x) =", "h =", "m =", "BC =", "AB =", "t =", "w ="],
+      "example": "x = ____"
+    },
+    {
+      "id": "AL-NUM-PS",
+      "type": "number",
+      "variant": "prefix+suffix",
+      "description": "Numeric answer with both prefix and suffix",
+      "count": 150,
+      "coverage": "1.5%",
+      "example": "EF = ____ cm"
+    },
+    {
+      "id": "AL-MULTI-2",
+      "type": "multiline",
+      "lines": 2,
+      "layout": "column",
+      "description": "Two-line answer (multi-step, simultaneous, or describe)",
+      "count": 417,
+      "coverage": "4.2%",
+      "top_templates": ["____\\n____", "x = ____\\ny = ____", "a = ____\\nb = ____"],
+      "example": "x = ____\\ny = ____"
+    },
+    {
+      "id": "AL-MULTI-3",
+      "type": "multiline",
+      "lines": 3,
+      "layout": "column",
+      "description": "Three-line answer",
+      "count": 102,
+      "coverage": "1.0%",
+      "example": "____\\n____\\n____"
+    },
+    {
+      "id": "AL-TABLE",
+      "type": "table_input",
+      "description": "Table with fillable cells",
+      "count": 109,
+      "coverage": "1.1%",
+      "example": "Header|A|B|C\\nRow|____|____|____"
+    },
+    {
+      "id": "AL-EXPR-2",
+      "type": "expression",
+      "fields": 2,
+      "layout": "row",
+      "description": "Two-field inline expression (or, ratio, etc.)",
+      "count": 65,
+      "coverage": "0.7%",
+      "top_templates": ["x = ____ or x = ____", "____ : ____"],
+      "example": "x = ____ or x = ____"
+    },
+    {
+      "id": "AL-COORD-2",
+      "type": "coordinate",
+      "fields": 2,
+      "layout": "row",
+      "description": "Coordinate pair (x, y)",
+      "count": 25,
+      "coverage": "0.3%",
+      "example": "( ____ , ____ )"
+    },
+    {
+      "id": "AL-VEC-2",
+      "type": "vector",
+      "fields": 2,
+      "layout": "column",
+      "description": "Column vector (2 components)",
+      "count": 20,
+      "coverage": "0.2%",
+      "example": "pmatrix(____, ____)"
+    },
+    {
+      "id": "AL-MULTI-N",
+      "type": "multiline",
+      "lines": "4+",
+      "layout": "column",
+      "description": "Four or more lines (extended working, multi-step)",
+      "count": 91,
+      "coverage": "0.9%"
+    },
+    {
+      "id": "AL-EXPR-3",
+      "type": "expression",
+      "fields": 3,
+      "layout": "row",
+      "description": "Three-field expression (triple ratio, etc.)",
+      "count": 12,
+      "coverage": "0.1%",
+      "example": "____ : ____ : ____"
+    },
+    {
+      "id": "AL-COORD-4",
+      "type": "coordinate",
+      "fields": 4,
+      "layout": "row",
+      "description": "Two coordinate pairs",
+      "count": 6,
+      "coverage": "0.06%",
+      "example": "( ____ , ____ ) and ( ____ , ____ )"
+    }
+  ],
+  "total_answer_slots": 9938,
+  "top10_coverage": "98.8%"
+}
