@@ -329,7 +329,7 @@ function showCreateHwModal(classId) {
   html += '<label class="settings-label mt-0" style="white-space:nowrap">' + t('Board', '考试局') + '</label>';
   html += '<select id="hw-pq-board" class="auth-input mt-0 flex-1" onchange="_renderHwSections(this.value)">';
   html += '<option value="cie">CIE 0580</option>';
-  html += '<option value="edexcel">Edexcel 4MA1</option>';
+  html += '<option value="edx">Edexcel 4MA1</option>';
   html += '</select>';
   html += '</div>';
   html += '<div class="flex gap-8 mb-8">';
@@ -369,12 +369,10 @@ function _isPracticeHw(hw) {
 
 async function _loadHwPracticeData() {
   var board = E('hw-pq-board') ? E('hw-pq-board').value : 'cie';
-  var dataBoard = board === 'edexcel' ? 'edx' : board;
   try {
-    await loadPracticeData(dataBoard);
-    var syllabusBoard = board;
+    await loadPracticeData(board);
     if (board === 'cie' && !BOARD_SYLLABUS.cie) await loadCIESyllabus();
-    if (board === 'edexcel' && !BOARD_SYLLABUS.edexcel) await loadEdexcelSyllabus();
+    if (board === 'edx' && !BOARD_SYLLABUS.edx) await loadEdxSyllabus();
   } catch (e) { /* ignore */ }
   _renderHwSections(board);
 }
@@ -383,15 +381,14 @@ function _renderHwSections(board) {
   var ct = E('hw-pq-sections');
   if (!ct) return;
   var syllabus = BOARD_SYLLABUS[board];
-  var dataBoard = board === 'edexcel' ? 'edx' : board;
-  var questions = _pqData[dataBoard] || [];
+  var questions = _pqData[board] || [];
 
   if (!syllabus || !syllabus.chapters) {
     /* Try loading */
     ct.innerHTML = '<div class="text-muted text-sm">' + t('Loading...', '加载中...') + '</div>';
-    var loadFn = board === 'cie' ? loadCIESyllabus : loadEdexcelSyllabus;
+    var loadFn = board === 'cie' ? loadCIESyllabus : loadEdxSyllabus;
     loadFn().then(function() {
-      loadPracticeData(dataBoard).then(function() { _renderHwSections(board); });
+      loadPracticeData(board).then(function() { _renderHwSections(board); });
     });
     return;
   }
@@ -679,7 +676,8 @@ async function renderClassHwList(classId) {
       if (isPractice) {
         /* Show config summary for practice HW */
         var cfg2 = hw.custom_vocabulary;
-        var boardLabel = cfg2.board === 'edexcel' ? 'Edexcel 4MA1' : 'CIE 0580';
+        if (cfg2.board === 'edexcel') cfg2.board = 'edx'; /* normalize legacy */
+        var boardLabel = cfg2.board === 'edx' ? 'Edexcel 4MA1' : 'CIE 0580';
         var diffLabel = cfg2.difficulty === 1 ? 'Core' : cfg2.difficulty === 2 ? 'Extended' : t('All', '全部');
         html += '<div class="text-xs text-muted mt-4" style="width:100%">';
         html += boardLabel + ' | ' + t('Sections', '知识点') + ': ' + (hw.deck_slugs || []).join(', ') + ' | ' + t('Difficulty', '难度') + ': ' + diffLabel;
@@ -756,7 +754,8 @@ async function renderHwProgress(hwId, classId) {
     /* Content preview */
     if (_isPracticeHw(hw)) {
       var cfg = hw.custom_vocabulary;
-      var boardLabel = cfg.board === 'edexcel' ? 'Edexcel 4MA1' : 'CIE 0580';
+      if (cfg.board === 'edexcel') cfg.board = 'edx'; /* normalize legacy */
+      var boardLabel = cfg.board === 'edx' ? 'Edexcel 4MA1' : 'CIE 0580';
       var diffLabel = cfg.difficulty === 1 ? 'Core' : cfg.difficulty === 2 ? 'Extended' : t('All', '\u5168\u90e8');
       html += '<div style="margin-bottom:16px;padding:10px 14px;border:1px solid var(--c-border);border-radius:8px;background:var(--c-surface);font-size:13px">';
       html += '<div class="hw-section-title" style="margin-bottom:6px">\u270f\ufe0f ' + t('Practice MCQ', '\u7ec3\u4e60\u9898') + '</div>';
@@ -1392,9 +1391,11 @@ async function startHwPractice(hwId) {
       startHwTest(hwId);
       return;
     }
+    /* Normalize legacy 'edexcel' → 'edx' from old DB records */
+    if (config.board === 'edexcel') config.board = 'edx';
 
     var sectionIds = hw.deck_slugs || [];
-    var dataBoard = config.board === 'edexcel' ? 'edx' : config.board;
+    var dataBoard = config.board;
 
     await Promise.all([loadPracticeData(dataBoard), loadKaTeX()]);
 

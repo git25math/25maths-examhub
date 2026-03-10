@@ -10,7 +10,7 @@
 /**
  * Get all vocab slugs for a section (from syllabus vocabSlugs + KP vocabLinks, de-duped).
  * @param {string} sectionId  e.g. "1.1" or "N1"
- * @param {string} board      e.g. "cie" or "edexcel"
+ * @param {string} board      e.g. "cie" or "edx"
  * @returns {string[]}        e.g. ["cie-1-1", "cie-1-2"]
  */
 function _lgGetSectionVocabSlugs(sectionId, board) {

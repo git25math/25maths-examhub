@@ -201,7 +201,7 @@ function _getNextAction(dueCount) {
   var nextNew = null;
   for (var i = 0; i < boards.length; i++) {
     var bid = boards[i].id;
-    var syllabusBoard = bid === 'edx' ? 'edexcel' : bid === '25m' ? 'hhk' : bid;
+    var syllabusBoard = bid === '25m' ? 'hhk' : bid;
     var syllabus = typeof BOARD_SYLLABUS !== 'undefined' ? BOARD_SYLLABUS[syllabusBoard] : null;
     if (!syllabus) continue;
     for (var ci = 0; ci < syllabus.chapters.length; ci++) {
@@ -574,8 +574,8 @@ function renderHome() {
     }
 
     /* ── Edexcel board: syllabus-driven rendering ── */
-    if (board.id === 'edx' && typeof renderEdexcelHome === 'function' && _edxDataReady) {
-      var edxHtml = renderEdexcelHome();
+    if (board.id === 'edx' && typeof renderEdxHome === 'function' && _edxDataReady) {
+      var edxHtml = renderEdxHome();
       if (edxHtml) {
         hasAnyResult = true;
         html += '<div class="board-section' + (boardCollapsed['edx'] ? ' collapsed' : '') + '" id="board-edx">';

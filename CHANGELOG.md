@@ -1,5 +1,36 @@
 # Changelog
 
+## [4.4.1] - 2026-03-10 — Edexcel Board Key 统一（数据层 `edx`，显示层 `Edexcel`）
+
+### 数据文件
+- **重命名**: `syllabus-edexcel.json` → `syllabus-edx.json`、`vocabulary-edexcel.json` → `vocabulary-edx.json`
+- **删除**: `knowledge-edexcel.json`（已有 `knowledge-edx.json` 副本）
+
+### JS 数据层统一（~40 处，6 个文件）
+- **syllabus.js**: 全局对象 key `edexcel` → `edx`，函数重命名 `loadEdexcelSyllabus` → `loadEdxSyllabus`、`renderEdexcelHome` → `renderEdxHome`，删除 11 处正向桥接 + 2 处反向桥接
+- **practice.js**: 删除 3 处 `edexcel→edx` 桥接
+- **homework.js**: `<option value>` 改为 `edx`，删除 3 处桥接，添加 3 处旧数据 normalize（`'edexcel'→'edx'`）
+- **mastery.js**: 删除 1 处反向桥接，更新函数调用 `renderEdxHome`
+- **levels-loader.js**: `_initBoardLevels('edexcel')` → `('edx')`
+- **learning-graph.js**: JSDoc 注释更新
+
+### 兼容性
+- Supabase `kw_assignments` 历史数据中 `board:'edexcel'` 通过 homework.js 读取时 normalize 兼容
+- 显示层所有 "Edexcel" 文本保持不变
+
+### 文件变更
+| 文件 | 变更类型 |
+|------|---------|
+| `data/syllabus-edx.json` | 重命名 |
+| `data/vocabulary-edx.json` | 重命名 |
+| `data/knowledge-edexcel.json` | 删除 |
+| `js/syllabus.js` | ~25 处修改 |
+| `js/practice.js` | 3 处修改 |
+| `js/homework.js` | ~8 处修改 |
+| `js/mastery.js` | 2 处修改 |
+| `js/levels-loader.js` | 1 处修改 |
+| `js/learning-graph.js` | 1 处修改 |
+
 ## [4.4.0-brand] - 2026-03-10 — 品牌升级 ExamHub → Exam Support Hub
 
 ### 品牌文案

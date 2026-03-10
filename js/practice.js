@@ -249,9 +249,7 @@ function startPractice(li) {
 
   Promise.all([loadPracticeData(board), loadKaTeX()]).then(function() {
     var questions;
-    /* Resolve practice board (edexcel syllabus uses 'edx' for questions) */
     var pqBoard = board;
-    if (window._practiceBoard === 'edexcel') pqBoard = 'edx';
     /* Capture section context before clearing (for smart next-step) */
     var _capturedSection = window._practiceSection || null;
     var _capturedBoard = window._practiceBoard || null;
@@ -452,7 +450,7 @@ function finishPractice() {
   if (s.kpReturn) {
     step = nextStepHTML('\ud83d\udcd6', t('Back to Knowledge Point', '\u8fd4\u56de\u77e5\u8bc6\u70b9'), 'openKnowledgePoint(\'' + s.kpReturn.kpId + '\',\'' + s.kpReturn.board + '\')');
   } else {
-    var _ppBoardKey = s.sectionBoard === 'edexcel' ? 'edx' : s.sectionBoard;
+    var _ppBoardKey = s.sectionBoard;
     if (s.sectionId && typeof startPastPaper === 'function' && typeof _ppData !== 'undefined' && _ppData[_ppBoardKey] && _ppAccessAllowed(_ppBoardKey)) {
       var _ppCheck = getPPBySection(_ppBoardKey, s.sectionId);
       if (_ppCheck && _ppCheck.length > 0) {
@@ -1912,7 +1910,7 @@ function startPastPaper(sectionId, board, mode, groupFilter, cmdFilter) {
   board = board || 'cie';
   mode = mode || 'practice';
 
-  var _ppBK = board === 'edexcel' ? 'edx' : board === 'hhk' ? '25m' : board;
+  var _ppBK = board === 'hhk' ? '25m' : board;
   if (!_ppAccessAllowed(_ppBK)) {
     showToast(t('Past papers are under review. Coming soon!', '真题模块正在验收中，敬请期待！'));
     return;

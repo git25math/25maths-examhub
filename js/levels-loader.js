@@ -54,7 +54,7 @@ function _rebuildLevels() {
     _initBoardLevels('cie');
   }
   if (typeof _edxDataReady !== 'undefined' && _edxDataReady && typeof _initBoardLevels === 'function') {
-    _initBoardLevels('edexcel');
+    _initBoardLevels('edx');
   }
   if (typeof _hhkDataReady !== 'undefined' && _hhkDataReady && typeof _initBoardLevels === 'function') {
     _initBoardLevels('hhk');

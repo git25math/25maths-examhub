@@ -5,10 +5,10 @@
    ══════════════════════════════════════════════════════════════ */
 
 /* ═══ GLOBALS ═══ */
-var BOARD_SYLLABUS = {};      /* { cie: {...}, edexcel: {...}, hhk: {...} } */
-var BOARD_VOCAB = {};         /* { cie: {...}, edexcel: {...}, hhk: {...} } */
-var _boardSectionLevelMap = {};  /* { cie: {id→idx}, edexcel: {id→idx}, hhk: {id→idx} } */
-var _sectionEditsCache = {};  /* { cie: { secId: { module: data } }, edexcel: ..., hhk: ... } */
+var BOARD_SYLLABUS = {};      /* { cie: {...}, edx: {...}, hhk: {...} } */
+var BOARD_VOCAB = {};         /* { cie: {...}, edx: {...}, hhk: {...} } */
+var _boardSectionLevelMap = {};  /* { cie: {id→idx}, edx: {id→idx}, hhk: {id→idx} } */
+var _sectionEditsCache = {};  /* { cie: { secId: { module: data } }, edx: ..., hhk: ... } */
 var _sectionInfoCache = {};   /* { 'board:sectionId' → {chapter,section,sectionIndex,board} } */
 
 /* Legacy aliases — keep existing code working */
@@ -16,8 +16,8 @@ var CIE_SYLLABUS = null;
 var CIE_VOCAB = null;
 var _cieSectionLevelMap = {};
 
-var _boardReady = { cie: false, edexcel: false, hhk: false };
-var _boardLoading = { cie: null, edexcel: null, hhk: null };
+var _boardReady = { cie: false, edx: false, hhk: false };
+var _boardLoading = { cie: null, edx: null, hhk: null };
 var _cieDataReady = false;
 var _edxDataReady = false;
 var _hhkDataReady = false;
@@ -72,8 +72,8 @@ function loadCIESyllabus() {
   return _loadBoardSyllabus('cie');
 }
 
-function loadEdexcelSyllabus() {
-  return _loadBoardSyllabus('edexcel');
+function loadEdxSyllabus() {
+  return _loadBoardSyllabus('edx');
 }
 
 function loadHHKSyllabus() {
@@ -128,7 +128,7 @@ function _loadBoardSyllabus(board) {
 function _setBoardReady(board) {
   _boardReady[board] = true;
   if (board === 'cie') _cieDataReady = true;
-  else if (board === 'edexcel') _edxDataReady = true;
+  else if (board === 'edx') _edxDataReady = true;
   else if (board === 'hhk') _hhkDataReady = true;
 }
 
@@ -148,7 +148,7 @@ function _vocabToLevelsFormat(words) {
 function _initBoardLevels(board) {
   var syllabus = BOARD_SYLLABUS[board];
   var vocab = BOARD_VOCAB[board];
-  var boardKey = board === 'edexcel' ? 'edx' : board === 'hhk' ? '25m' : board;  /* LEVELS uses 'edx'/'25m' */
+  var boardKey = board === 'hhk' ? '25m' : board;  /* LEVELS uses 'edx'/'25m' */
 
   /* HHK special path: don't create virtual levels, map to existing 25m levels */
   if (board === 'hhk') {
@@ -216,7 +216,7 @@ function _initBoardLevels(board) {
         vocabulary: _vocabToLevelsFormat(words),
         _section: sec.id,
         _isSection: true,
-        _board: board  /* 'cie' or 'edexcel' — for syllabus lookups */
+        _board: board  /* 'cie' or 'edx' — for syllabus lookups */
       };
       var idx = LEVELS.length;
       LEVELS.push(newLevel);
@@ -257,7 +257,7 @@ function getSectionLevelIdx(sectionId, board) {
 function getSectionInfo(sectionId, board) {
   var cacheKey = (board || '') + ':' + sectionId;
   if (_sectionInfoCache[cacheKey]) return _sectionInfoCache[cacheKey];
-  var boards = board ? [board] : ['cie', 'edexcel', 'hhk'];
+  var boards = board ? [board] : ['cie', 'edx', 'hhk'];
   for (var bi = 0; bi < boards.length; bi++) {
     var syl = BOARD_SYLLABUS[boards[bi]];
     if (!syl) continue;
@@ -285,8 +285,8 @@ function _renderBoardHome(board) {
   var html = '';
 
   /* Past Papers (Full) entry — CIE/Edexcel only, gated by access check */
-  var _ppBoardKey = board === 'edexcel' ? 'edx' : board === 'hhk' ? '25m' : board;
-  if ((board === 'cie' || board === 'edexcel') && typeof ppShowPaperBrowse === 'function' && typeof _ppAccessAllowed === 'function' && _ppAccessAllowed(_ppBoardKey)) {
+  var _ppBoardKey = board === 'hhk' ? '25m' : board;
+  if ((board === 'cie' || board === 'edx') && typeof ppShowPaperBrowse === 'function' && typeof _ppAccessAllowed === 'function' && _ppAccessAllowed(_ppBoardKey)) {
     var _ppSub = board === 'cie'
       ? t('228 papers \u00b7 4,110 questions \u00b7 2018\u20132025', '228\u5957\u5377 \u00b7 4,110\u9053\u9898 \u00b7 2018\u20132025')
       : t('76 papers \u00b7 1,855 questions \u00b7 2017\u20132025', '76\u5957\u5377 \u00b7 1,855\u9053\u9898 \u00b7 2017\u20132025');
@@ -410,9 +410,9 @@ function renderCIEHome() {
   return _renderBoardHome('cie');
 }
 
-function renderEdexcelHome() {
-  if (!_edxDataReady || !BOARD_SYLLABUS.edexcel) return '';
-  return _renderBoardHome('edexcel');
+function renderEdxHome() {
+  if (!_edxDataReady || !BOARD_SYLLABUS.edx) return '';
+  return _renderBoardHome('edx');
 }
 
 function renderHHKHome() {
@@ -524,7 +524,7 @@ function renderSectionDetail(ch, sec, secIdx, board) {
 
   /* Count practice questions for this section */
   var qCount = 0;
-  var pqBoard = board === 'edexcel' ? 'edx' : board === 'hhk' ? '25m' : board;
+  var pqBoard = board === 'hhk' ? '25m' : board;
   if (typeof _pqData !== 'undefined' && _pqData && _pqData[pqBoard]) {
     _pqData[pqBoard].forEach(function(q) { if (q.s === sec.id) qCount++; });
   }
@@ -610,7 +610,7 @@ function renderSectionDetail(ch, sec, secIdx, board) {
   html += '<button class="sec-module-report" onclick="reportSectionModule(\'' + sec.id + '\',\'syllabus\',\'' + board + '\')" title="' + t('Report error', '\u62a5\u544a\u9519\u8bef') + '">\ud83d\udea9</button>';
   html += '</div></div>';
 
-  if (board === 'edexcel') {
+  if (board === 'edx') {
     /* Edexcel uses foundation_content / higher_content */
     var fc = (syllabusEdit && syllabusEdit.foundation_content) || sec.foundation_content;
     var hc = (syllabusEdit && syllabusEdit.higher_content) || sec.higher_content;
@@ -678,7 +678,7 @@ function renderSectionDetail(ch, sec, secIdx, board) {
     _jQuizDone = isModeDone(li, 'quiz');
   }
   var _jPracticeDone = li >= 0 && isModeDone(li, 'practice');
-  var _jHasPP = (board === 'cie' || board === 'edexcel') && typeof loadPastPaperData === 'function';
+  var _jHasPP = (board === 'cie' || board === 'edx') && typeof loadPastPaperData === 'function';
   var _jHasPractice = qCount > 0;
 
   /* Determine current step: first incomplete step gets pulse */
@@ -779,8 +779,7 @@ function renderSectionDetail(ch, sec, secIdx, board) {
   }
 
   /* Past Papers module — between Practice and Knowledge Card (gated) */
-  var _secPPKey = board === 'edexcel' ? 'edx' : board;
-  if ((board === 'cie' || board === 'edexcel') && typeof loadPastPaperData === 'function' && typeof _ppAccessAllowed === 'function' && _ppAccessAllowed(_secPPKey)) {
+  if ((board === 'cie' || board === 'edx') && typeof loadPastPaperData === 'function' && typeof _ppAccessAllowed === 'function' && _ppAccessAllowed(board)) {
     html += '<div id="pp-section-module" data-section="' + sec.id + '" data-board="' + board + '"></div>';
     html += '<div id="mq-summary-slot" data-section="' + sec.id + '" data-board="' + board + '"></div>';
   }
@@ -1084,7 +1083,7 @@ function getSectionHealth(sectionId, board) {
   }
 
   /* PP score from FLM states: mastered=1.0, uncertain=0.5, learning=0.2 */
-  var ppBoard = board === 'edexcel' ? 'edx' : board === 'hhk' ? null : board;
+  var ppBoard = board === 'hhk' ? null : board;
   if (ppBoard && typeof ppGetSectionStats === 'function' && typeof _ppData !== 'undefined' && _ppData[ppBoard]) {
     var ps = ppGetSectionStats(ppBoard, sectionId);
     if (ps.total > 0) {
@@ -1257,7 +1256,7 @@ function renderSmartPath() {
   for (var i = 0; i < boards.length; i++) {
     var bid = boards[i].id;
     /* Map board id to syllabus key */
-    var syllabusBoard = bid === 'edx' ? 'edexcel' : bid === '25m' ? 'hhk' : bid;
+    var syllabusBoard = bid === '25m' ? 'hhk' : bid;
     if (!BOARD_SYLLABUS[syllabusBoard]) continue;
     var weak = getWeakestSections(syllabusBoard, 10);
     for (var j = 0; j < weak.length; j++) {
@@ -1305,7 +1304,7 @@ function renderSmartPath() {
       spRec = 'vocab'; spLi = h.levelIdx;
     } else if (h.rec === 'review_words' && h.levelIdx >= 0) {
       spRec = 'review_words'; spLi = h.levelIdx;
-    } else if (h.rec === 'past_papers' && typeof startPastPaper === 'function' && typeof _ppAccessAllowed === 'function' && _ppAccessAllowed(h.board === 'edexcel' ? 'edx' : h.board)) {
+    } else if (h.rec === 'past_papers' && typeof startPastPaper === 'function' && typeof _ppAccessAllowed === 'function' && _ppAccessAllowed(h.board)) {
       spRec = 'past_papers';
     } else {
       spRec = 'section';
@@ -1337,7 +1336,7 @@ function renderReviewPlan() {
   var candidates = [];
   for (var i = 0; i < boards.length; i++) {
     var bid = boards[i].id;
-    var syllabusBoard = bid === 'edx' ? 'edexcel' : bid === '25m' ? 'hhk' : bid;
+    var syllabusBoard = bid === '25m' ? 'hhk' : bid;
     if (!BOARD_SYLLABUS[syllabusBoard]) continue;
     var syllabus = BOARD_SYLLABUS[syllabusBoard];
     for (var ci = 0; ci < syllabus.chapters.length; ci++) {
@@ -1772,7 +1771,7 @@ function editSectionModule(sectionId, module, board) {
   html += '<div class="pq-editor-fields">';
 
   if (module === 'syllabus') {
-    if (board === 'edexcel') {
+    if (board === 'edx') {
       var fVal = (existing && existing.foundation_content) || sec.foundation_content || '';
       var hVal = (existing && existing.higher_content) || sec.higher_content || '';
       html += _pqFieldGroup('Foundation', 'se-ed-f1', fVal, 4);
@@ -1840,8 +1839,8 @@ function _seUpdatePreview(module, board) {
 
   var h = '';
   if (module === 'syllabus') {
-    var l1 = board === 'edexcel' ? 'Foundation' : 'Core';
-    var l2 = board === 'edexcel' ? 'Higher' : 'Extended';
+    var l1 = board === 'edx' ? 'Foundation' : 'Core';
+    var l2 = board === 'edx' ? 'Higher' : 'Extended';
     if (f1) {
       h += '<div class="pq-preview-section"><div class="pq-preview-label">' + l1 + '</div>';
       h += '<div class="pq-preview-content">' + pqRender(f1) + '</div></div>';
@@ -1874,7 +1873,7 @@ function saveSectionEdit(sectionId, module, board) {
 
   var data = {};
   if (module === 'syllabus') {
-    if (board === 'edexcel') {
+    if (board === 'edx') {
       data.foundation_content = f1;
       data.higher_content = f2;
     } else {
@@ -2467,7 +2466,7 @@ function startPracticeByChapter(chNum, board) {
       openDeck(parseInt(li, 10));
     } else if (rec === 'review_words' && li !== '') {
       appSort = 'hard'; openDeck(parseInt(li, 10));
-    } else if (rec === 'past_papers' && typeof startPastPaper === 'function' && typeof _ppAccessAllowed === 'function' && _ppAccessAllowed(sp.dataset.spBoard === 'edexcel' ? 'edx' : sp.dataset.spBoard)) {
+    } else if (rec === 'past_papers' && typeof startPastPaper === 'function' && typeof _ppAccessAllowed === 'function' && _ppAccessAllowed(sp.dataset.spBoard)) {
       startPastPaper(sp.dataset.spSec, sp.dataset.spBoard, 'practice');
     } else {
       openSection(sp.dataset.spSec, sp.dataset.spBoard);
@@ -3563,9 +3562,9 @@ document.addEventListener('keydown', function(e) {
 /* ═══ INIT ═══ */
 /* Auto-load all board data on script load */
 loadCIESyllabus();
-loadEdexcelSyllabus();
+loadEdxSyllabus();
 loadHHKSyllabus();
 /* Pre-load knowledge point data for active boards */
 loadKnowledgeData('cie');
 loadKnowledgeData('hhk');
-loadKnowledgeData('edexcel');
+loadKnowledgeData('edx');
