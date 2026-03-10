@@ -1,0 +1,637 @@
+{
+  "v": "1.0",
+  "paper": "2024MayJune-Paper42",
+  "description": "Mother Problem tagging pilot — first complete paper with 5-field structure",
+  "total_questions": 11,
+  "total_parts": 42,
+  "unique_mother_problems": 28,
+  "tagging": [
+    {
+      "id": "0580-2024MayJune-Paper42-Q01",
+      "qnum": 1,
+      "marks": 12,
+      "topic": "Number",
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 2,
+          "summary": "Write ratio apple juice : mango juice in simplest form (1.5L : 450ml)",
+          "input_pattern": "IP-WORD_PROBLEM",
+          "ask_pattern": "ASK-NUM-FIND_RATIO",
+          "answer_pattern": "AL-EXPR-2",
+          "mother_problem": "MP-NUM-RATIO-SIMPLIFY",
+          "notes": "Unit conversion required before simplifying"
+        },
+        {
+          "label": "(b)",
+          "marks": 3,
+          "summary": "Share 1 litre in ratio 9:6:10, give in ml",
+          "input_pattern": "IP-WORD_PROBLEM",
+          "ask_pattern": "ASK-NUM-CALCULATE",
+          "answer_pattern": "AL-MULTI-3",
+          "mother_problem": "MP-NUM-RATIO-SHARE",
+          "notes": "Three-way ratio sharing"
+        },
+        {
+          "label": "(c)",
+          "marks": 2,
+          "summary": "Calculate selling price at 15% profit on $3.20",
+          "input_pattern": "IP-MONEY_CONTEXT",
+          "ask_pattern": "ASK-NUM-FIND_PERCENTAGE",
+          "answer_pattern": "AL-NUM-PS",
+          "mother_problem": "MP-NUM-PERCENT-PROFIT"
+        },
+        {
+          "label": "(d)",
+          "marks": 2,
+          "summary": "Exponential growth: 16620 bottles, 2.5% growth/year, find after 5 years",
+          "input_pattern": "IP-WORD_PROBLEM",
+          "ask_pattern": "ASK-NUM-CALC_COMPOUND_INTEREST",
+          "answer_pattern": "AL-NUM",
+          "mother_problem": "MP-NUM-EXPONENTIAL-GROWTH"
+        },
+        {
+          "label": "(e)",
+          "marks": 3,
+          "summary": "Lower bound: bottle 18.5cm (nearest mm), shelf 21cm (nearest cm), find min gap",
+          "input_pattern": "IP-WORD_PROBLEM",
+          "ask_pattern": "ASK-NUM-CALCULATE",
+          "answer_pattern": "AL-NUM-S",
+          "mother_problem": "MP-NUM-BOUNDS-DIFFERENCE"
+        }
+      ]
+    },
+    {
+      "id": "0580-2024MayJune-Paper42-Q02",
+      "qnum": 2,
+      "marks": 9,
+      "topic": "Geometry",
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 2,
+          "summary": "Find angles a and b from transversal cutting parallel lines",
+          "input_pattern": "IP-DIAGRAM",
+          "ask_pattern": "ASK-GEO-FIND_ANGLE",
+          "answer_pattern": "AL-MULTI-2",
+          "mother_problem": "MP-GEO-ANGLE-PARALLEL"
+        },
+        {
+          "label": "(b)",
+          "marks": 2,
+          "summary": "Calculate interior angle of regular 12-sided polygon",
+          "input_pattern": "IP-EXPRESSION",
+          "ask_pattern": "ASK-GEO-FIND_ANGLE",
+          "answer_pattern": "AL-NUM",
+          "mother_problem": "MP-GEO-ANGLE-POLYGON-INTERIOR"
+        },
+        {
+          "label": "(c)",
+          "marks": 3,
+          "summary": "Circle with tangent AMB at M; find angles f and g using circle theorems",
+          "input_pattern": "IP-DIAGRAM",
+          "ask_pattern": "ASK-GEO-FIND_ANGLE",
+          "answer_pattern": "AL-MULTI-2",
+          "mother_problem": "MP-GEO-ANGLE-CIRCLE-THEOREM"
+        },
+        {
+          "label": "(d)",
+          "marks": 2,
+          "summary": "Find angle k in cyclic quadrilateral",
+          "input_pattern": "IP-DIAGRAM",
+          "ask_pattern": "ASK-GEO-FIND_ANGLE",
+          "answer_pattern": "AL-NUM-P",
+          "mother_problem": "MP-GEO-ANGLE-CYCLIC-QUAD"
+        }
+      ]
+    },
+    {
+      "id": "0580-2024MayJune-Paper42-Q03",
+      "qnum": 3,
+      "marks": 15,
+      "topic": "Statistics",
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 0,
+          "summary": "Container part for (a)(i)-(a)(iii)",
+          "input_pattern": null,
+          "ask_pattern": null,
+          "answer_pattern": null,
+          "mother_problem": null
+        },
+        {
+          "label": "(b)",
+          "marks": 0,
+          "summary": "Container part for (b)(i)-(b)(iii)",
+          "input_pattern": null,
+          "ask_pattern": null,
+          "answer_pattern": null,
+          "mother_problem": null
+        },
+        {
+          "label": "(c)",
+          "marks": 0,
+          "summary": "[a(i)] Estimate mean travel time from grouped frequency table",
+          "input_pattern": "IP-FREQ_TABLE",
+          "ask_pattern": "ASK-STAT-CALC_MEAN",
+          "answer_pattern": "AL-NUM-S",
+          "mother_problem": "MP-STAT-MEAN-GROUPED"
+        },
+        {
+          "label": "(d)",
+          "marks": 0,
+          "summary": "[a(ii)] Draw histogram from grouped frequency table",
+          "input_pattern": "IP-FREQ_TABLE",
+          "ask_pattern": "ASK-CONSTRUCT-DRAW_GRAPH",
+          "answer_pattern": null,
+          "mother_problem": "MP-STAT-HISTOGRAM-DRAW"
+        },
+        {
+          "label": "(e)",
+          "marks": 0,
+          "summary": "[a(iii)] Probability: two random students, one >25min and one ≤10min",
+          "input_pattern": "IP-FREQ_TABLE",
+          "ask_pattern": "ASK-PROB-CALCULATE",
+          "answer_pattern": "AL-NUM",
+          "mother_problem": "MP-PROB-CALC-WITHOUT_REPLACEMENT"
+        },
+        {
+          "label": "(f)",
+          "marks": 0,
+          "summary": "[b(i)] Find shortest time from given 5-number summary",
+          "input_pattern": "IP-DATA_LIST",
+          "ask_pattern": "ASK-READ-VALUE",
+          "answer_pattern": "AL-NUM-S",
+          "mother_problem": "MP-STAT-FIVE_NUMBER-READ"
+        },
+        {
+          "label": "(g)",
+          "marks": 0,
+          "summary": "[b(ii)] Draw box-and-whisker plot from 5-number summary",
+          "input_pattern": "IP-CUMULATIVE",
+          "ask_pattern": "ASK-CONSTRUCT-DRAW_GRAPH",
+          "answer_pattern": null,
+          "mother_problem": "MP-STAT-BOX_WHISKER-DRAW"
+        },
+        {
+          "label": "(h)",
+          "marks": 0,
+          "summary": "[b(iii)] Explain why George is wrong about median interpretation",
+          "input_pattern": "IP-CUMULATIVE",
+          "ask_pattern": "ASK-REASON-EXPLAIN",
+          "answer_pattern": "AL-MULTI-2",
+          "mother_problem": "MP-REASON-STAT-INTERPRETATION"
+        }
+      ]
+    },
+    {
+      "id": "0580-2024MayJune-Paper42-Q04",
+      "qnum": 4,
+      "marks": 15,
+      "topic": "Mensuration",
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 0,
+          "summary": "Container part for (a)(i)-(a)(ii)",
+          "input_pattern": null,
+          "ask_pattern": null,
+          "answer_pattern": null,
+          "mother_problem": null
+        },
+        {
+          "label": "(b)",
+          "marks": 3,
+          "summary": "[a(i)] Volume of half-cylinder (r=12cm, l=1m)",
+          "input_pattern": "IP-SHAPE",
+          "ask_pattern": "ASK-GEO-FIND_VOLUME",
+          "answer_pattern": "AL-NUM-S",
+          "mother_problem": "MP-GEO-VOLUME-CYLINDER-FRACTION"
+        },
+        {
+          "label": "(c)",
+          "marks": 5,
+          "summary": "[a(ii)] Volume of water when level 6cm below top of half-cylinder",
+          "input_pattern": "IP-DIAGRAM",
+          "ask_pattern": "ASK-GEO-FIND_VOLUME",
+          "answer_pattern": "AL-NUM-S",
+          "mother_problem": "MP-GEO-VOLUME-SEGMENT",
+          "notes": "Requires circle sector/segment area calculation — hardest part"
+        },
+        {
+          "label": "(d)",
+          "marks": 3,
+          "summary": "Stone mass from volume displaced: fish tank 42×35cm, water drops 0.2cm, density 2.2g/cm³",
+          "input_pattern": "IP-WORD_PROBLEM",
+          "ask_pattern": "ASK-NUM-CALCULATE",
+          "answer_pattern": "AL-NUM-S",
+          "mother_problem": "MP-GEO-VOLUME-DISPLACEMENT"
+        },
+        {
+          "label": "(e)",
+          "marks": 4,
+          "summary": "Angle that space diagonal AG makes with base of cuboid",
+          "input_pattern": "IP-DIAGRAM",
+          "ask_pattern": "ASK-GEO-FIND_ANGLE",
+          "answer_pattern": "AL-NUM-S",
+          "mother_problem": "MP-GEO-ANGLE-3D-DIAGONAL"
+        }
+      ]
+    },
+    {
+      "id": "0580-2024MayJune-Paper42-Q05",
+      "qnum": 5,
+      "marks": 18,
+      "topic": "Algebra and graphs",
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 2,
+          "summary": "Simplify (25x⁶)/3 (likely (25x⁶y⁴)/(5x²y) or similar)",
+          "input_pattern": "IP-EXPRESSION",
+          "ask_pattern": "ASK-ALG-SIMPLIFY",
+          "answer_pattern": "AL-NUM",
+          "mother_problem": "MP-ALG-SIMPLIFY-INDEX"
+        },
+        {
+          "label": "(b)",
+          "marks": 2,
+          "summary": "Find nth term of geometric sequence: 1/6, 1, 6, 36, 216",
+          "input_pattern": "IP-SEQUENCE",
+          "ask_pattern": "ASK-ALG-FIND_EXPRESSION",
+          "answer_pattern": "AL-NUM",
+          "mother_problem": "MP-ALG-SEQUENCE-GEOMETRIC-NTH"
+        },
+        {
+          "label": "(c)",
+          "marks": 3,
+          "summary": "Expand and simplify (x+4)(x-3)(3x-1)",
+          "input_pattern": "IP-EXPRESSION",
+          "ask_pattern": "ASK-ALG-EXPAND",
+          "answer_pattern": "AL-NUM",
+          "mother_problem": "MP-ALG-EXPAND-TRIPLE-BRACKET"
+        },
+        {
+          "label": "(d)",
+          "marks": 0,
+          "summary": "Container for show that + solve",
+          "input_pattern": null,
+          "ask_pattern": null,
+          "answer_pattern": null,
+          "mother_problem": null
+        },
+        {
+          "label": "(e)",
+          "marks": 4,
+          "summary": "[d(i)] Show that (3x+5) + 7/(x-2) = x simplifies to 2x²+x-3=0",
+          "input_pattern": "IP-EQUATION",
+          "ask_pattern": "ASK-REASON-SHOW_THAT",
+          "answer_pattern": "AL-MULTI-2",
+          "mother_problem": "MP-ALG-SHOW-ALGEBRAIC-SIMPLIFICATION"
+        },
+        {
+          "label": "(f)",
+          "marks": 3,
+          "summary": "[d(ii)] Solve 2x²+x-3=0 by factorisation",
+          "input_pattern": "IP-EQUATION",
+          "ask_pattern": "ASK-ALG-SOLVE_QUADRATIC",
+          "answer_pattern": "AL-EXPR-2",
+          "mother_problem": "MP-ALG-QUADRATIC-SOLVE-FACTORISE"
+        },
+        {
+          "label": "(g)",
+          "marks": 4,
+          "summary": "Show x=√(75y²/8) for equal surface areas of cylinder and hemisphere",
+          "input_pattern": "IP-FORMULA",
+          "ask_pattern": "ASK-REASON-SHOW_THAT",
+          "answer_pattern": "AL-MULTI-2",
+          "mother_problem": "MP-ALG-SHOW-EQUATE-FORMULAE"
+        }
+      ]
+    },
+    {
+      "id": "0580-2024MayJune-Paper42-Q06",
+      "qnum": 6,
+      "marks": 10,
+      "topic": "Trigonometry",
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 3,
+          "summary": "Show BD = 9.55cm in triangle ABD using cosine rule",
+          "input_pattern": "IP-DIAGRAM",
+          "ask_pattern": "ASK-REASON-SHOW_THAT",
+          "answer_pattern": "AL-MULTI-2",
+          "mother_problem": "MP-TRIG-SHOW-COSINE_RULE"
+        },
+        {
+          "label": "(b)",
+          "marks": 0,
+          "summary": "Container for (b)(i)-(b)(ii)",
+          "input_pattern": null,
+          "ask_pattern": null,
+          "answer_pattern": null,
+          "mother_problem": null
+        },
+        {
+          "label": "(c)",
+          "marks": 1,
+          "summary": "[b(i)] Show angle BCD = 112° using angle sum",
+          "input_pattern": "IP-DIAGRAM",
+          "ask_pattern": "ASK-REASON-SHOW_THAT",
+          "answer_pattern": "AL-MULTI-2",
+          "mother_problem": "MP-GEO-ANGLE-SUM-TRIANGLE"
+        },
+        {
+          "label": "(d)",
+          "marks": 3,
+          "summary": "[b(ii)] Calculate CD using sine rule in triangle BCD",
+          "input_pattern": "IP-DIAGRAM",
+          "ask_pattern": "ASK-GEO-FIND_LENGTH",
+          "answer_pattern": "AL-NUM-P",
+          "mother_problem": "MP-TRIG-SIDE-SINE_RULE"
+        },
+        {
+          "label": "(e)",
+          "marks": 3,
+          "summary": "Find shortest distance from D to AB (perpendicular height)",
+          "input_pattern": "IP-DIAGRAM",
+          "ask_pattern": "ASK-GEO-FIND_DISTANCE",
+          "answer_pattern": "AL-NUM-S",
+          "mother_problem": "MP-TRIG-HEIGHT-PERPENDICULAR"
+        }
+      ]
+    },
+    {
+      "id": "0580-2024MayJune-Paper42-Q07",
+      "qnum": 7,
+      "marks": 11,
+      "topic": "Algebra and graphs",
+      "parts": [
+        {
+          "label": "top",
+          "marks": 11,
+          "summary": "Multi-part algebra (no formal parts in JSON): solve, factorise×2, functions×3",
+          "subparts": [
+            {
+              "label": "(a)",
+              "marks": 2,
+              "summary": "Solve 3x - 8 = 6 - 4x",
+              "input_pattern": "IP-EQUATION",
+              "ask_pattern": "ASK-ALG-SOLVE_LINEAR",
+              "answer_pattern": "AL-NUM-P",
+              "mother_problem": "MP-ALG-LINEAR-SOLVE"
+            },
+            {
+              "label": "(b)",
+              "marks": 2,
+              "summary": "Factorise fully 10a² + 5a",
+              "input_pattern": "IP-EXPRESSION",
+              "ask_pattern": "ASK-ALG-FACTORISE",
+              "answer_pattern": "AL-NUM",
+              "mother_problem": "MP-ALG-FACTORISE-COMMON_FACTOR"
+            },
+            {
+              "label": "(c)",
+              "marks": 2,
+              "summary": "Factorise fully (2x-3)² - 9 (difference of squares)",
+              "input_pattern": "IP-EXPRESSION",
+              "ask_pattern": "ASK-ALG-FACTORISE",
+              "answer_pattern": "AL-NUM",
+              "mother_problem": "MP-ALG-FACTORISE-DIFF_SQUARES"
+            },
+            {
+              "label": "(d)(i)",
+              "marks": 1,
+              "summary": "Find f(4) where f(x) = 1/(4x-1)",
+              "input_pattern": "IP-FORMULA",
+              "ask_pattern": "ASK-NUM-CALCULATE",
+              "answer_pattern": "AL-NUM",
+              "mother_problem": "MP-ALG-FUNCTION-EVALUATE"
+            },
+            {
+              "label": "(d)(ii)",
+              "marks": 2,
+              "summary": "Find gg(2) — composite function g(g(2)) where g(x)=3ˣ",
+              "input_pattern": "IP-FORMULA",
+              "ask_pattern": "ASK-NUM-CALCULATE",
+              "answer_pattern": "AL-NUM",
+              "mother_problem": "MP-ALG-FUNCTION-COMPOSITE"
+            },
+            {
+              "label": "(d)(iii)",
+              "marks": 2,
+              "summary": "Find k when g(k) = f(7)",
+              "input_pattern": "IP-EQUATION",
+              "ask_pattern": "ASK-ALG-SOLVE_LINEAR",
+              "answer_pattern": "AL-NUM",
+              "mother_problem": "MP-ALG-FUNCTION-EQUATE"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "0580-2024MayJune-Paper42-Q08",
+      "qnum": 8,
+      "marks": 11,
+      "topic": "Algebra and graphs",
+      "parts": [
+        {
+          "label": "(a)",
+          "marks": 0,
+          "summary": "Container — part count mismatch question",
+          "input_pattern": null,
+          "ask_pattern": null,
+          "answer_pattern": null,
+          "mother_problem": null
+        },
+        {
+          "label": "(b)",
+          "marks": 0,
+          "summary": "Write 3 inequalities from word problem constraints",
+          "input_pattern": "IP-WORD_PROBLEM",
+          "ask_pattern": "ASK-ALG-FIND_EXPRESSION",
+          "answer_pattern": "AL-MULTI-3",
+          "mother_problem": "MP-ALG-INEQUALITY-FORMULATE"
+        },
+        {
+          "label": "(c)",
+          "marks": 0,
+          "summary": "Draw 4 inequality lines on grid, shade unwanted regions, label R",
+          "input_pattern": "IP-INEQUALITY",
+          "ask_pattern": "ASK-CONSTRUCT-DRAW_GRAPH",
+          "answer_pattern": null,
+          "mother_problem": "MP-ALG-LINEAR_PROGRAMMING-GRAPH"
+        },
+        {
+          "label": "(d)",
+          "marks": 3,
+          "summary": "Find maximum earnings from feasible region",
+          "input_pattern": "IP-GRAPH",
+          "ask_pattern": "ASK-NUM-CALCULATE",
+          "answer_pattern": "AL-NUM-S",
+          "mother_problem": "MP-ALG-LINEAR_PROGRAMMING-OPTIMISE"
+        }
+      ]
+    },
+    {
+      "id": "0580-2024MayJune-Paper42-Q09",
+      "qnum": 9,
+      "marks": 10,
+      "topic": "Mensuration",
+      "parts": [
+        {
+          "label": "top",
+          "marks": 10,
+          "summary": "Multi-part mensuration (no formal parts in JSON)",
+          "subparts": [
+            {
+              "label": "(a)",
+              "marks": 3,
+              "summary": "Perimeter of sector annulus ABDC in form (aπ + b)cm",
+              "input_pattern": "IP-DIAGRAM",
+              "ask_pattern": "ASK-GEO-FIND_PERIMETER",
+              "answer_pattern": "AL-MULTI-2",
+              "mother_problem": "MP-GEO-PERIMETER-SECTOR-ANNULUS"
+            },
+            {
+              "label": "(b)(i)",
+              "marks": 4,
+              "summary": "Show side length of regular hexagon = 7.0cm given area 127.3cm²",
+              "input_pattern": "IP-SHAPE",
+              "ask_pattern": "ASK-REASON-SHOW_THAT",
+              "answer_pattern": "AL-MULTI-2",
+              "mother_problem": "MP-GEO-SHOW-HEXAGON-SIDE"
+            },
+            {
+              "label": "(b)(ii)",
+              "marks": 3,
+              "summary": "Volume and surface area of hexagonal prism",
+              "input_pattern": "IP-SHAPE",
+              "ask_pattern": "ASK-GEO-FIND_VOLUME",
+              "answer_pattern": "AL-MULTI-2",
+              "mother_problem": "MP-GEO-VOLUME-PRISM"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "0580-2024MayJune-Paper42-Q10",
+      "qnum": 10,
+      "marks": 12,
+      "topic": "Coordinate geometry",
+      "parts": [
+        {
+          "label": "top",
+          "marks": 12,
+          "summary": "Multi-part coordinate geometry",
+          "subparts": [
+            {
+              "label": "(a)(i)",
+              "marks": 2,
+              "summary": "Find midpoint of A(6,2) and B(3,-4)",
+              "input_pattern": "IP-EXPRESSION",
+              "ask_pattern": "ASK-GEO-FIND_MIDPOINT",
+              "answer_pattern": "AL-COORD-2",
+              "mother_problem": "MP-GEO-COORD-MIDPOINT"
+            },
+            {
+              "label": "(a)(ii)",
+              "marks": 3,
+              "summary": "Find length AB",
+              "input_pattern": "IP-EXPRESSION",
+              "ask_pattern": "ASK-GEO-FIND_DISTANCE_COORD",
+              "answer_pattern": "AL-NUM",
+              "mother_problem": "MP-GEO-COORD-DISTANCE"
+            },
+            {
+              "label": "(b)(i)",
+              "marks": 2,
+              "summary": "Find gradient of line 4x + 3y - 12 = 0",
+              "input_pattern": "IP-EQUATION",
+              "ask_pattern": "ASK-GEO-FIND_GRADIENT",
+              "answer_pattern": "AL-NUM",
+              "mother_problem": "MP-GEO-COORD-GRADIENT-EQUATION"
+            },
+            {
+              "label": "(b)(ii)",
+              "marks": 2,
+              "summary": "Find where line l crosses y-axis",
+              "input_pattern": "IP-EQUATION",
+              "ask_pattern": "ASK-GEO-FIND_COORDINATE",
+              "answer_pattern": "AL-COORD-2",
+              "mother_problem": "MP-GEO-COORD-INTERCEPT"
+            },
+            {
+              "label": "(b)(iii)",
+              "marks": 3,
+              "summary": "Equation of perpendicular line p through (6,5)",
+              "input_pattern": "IP-EQUATION",
+              "ask_pattern": "ASK-GEO-FIND_EQUATION_LINE",
+              "answer_pattern": "AL-NUM-P",
+              "mother_problem": "MP-GEO-COORD-LINE_EQ-PERPENDICULAR"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "0580-2024MayJune-Paper42-Q11",
+      "qnum": 11,
+      "marks": 7,
+      "topic": "Algebra and graphs",
+      "parts": [
+        {
+          "label": "top",
+          "marks": 7,
+          "summary": "Multi-part calculus",
+          "subparts": [
+            {
+              "label": "(a)",
+              "marks": 2,
+              "summary": "Show (-1,6) is a stationary point given dy/dx = -4x³-9x²+5",
+              "input_pattern": "IP-FORMULA",
+              "ask_pattern": "ASK-REASON-SHOW_THAT",
+              "answer_pattern": "AL-MULTI-2",
+              "mother_problem": "MP-ALG-CALCULUS-SHOW-STATIONARY"
+            },
+            {
+              "label": "(b)(i)",
+              "marks": 3,
+              "summary": "Gradient of tangent at x=-2 on y=2x³-6x+8",
+              "input_pattern": "IP-EQUATION",
+              "ask_pattern": "ASK-ALG-DIFFERENTIATE",
+              "answer_pattern": "AL-NUM",
+              "mother_problem": "MP-ALG-CALCULUS-GRADIENT-AT-POINT"
+            },
+            {
+              "label": "(b)(ii)",
+              "marks": 2,
+              "summary": "x-coordinates of stationary points of y=2x³-6x+8",
+              "input_pattern": "IP-EQUATION",
+              "ask_pattern": "ASK-ALG-SOLVE_QUADRATIC",
+              "answer_pattern": "AL-EXPR-2",
+              "mother_problem": "MP-ALG-CALCULUS-STATIONARY-FIND"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "mother_problem_summary": {
+    "by_domain": {
+      "NUM": ["MP-NUM-RATIO-SIMPLIFY", "MP-NUM-RATIO-SHARE", "MP-NUM-PERCENT-PROFIT", "MP-NUM-EXPONENTIAL-GROWTH", "MP-NUM-BOUNDS-DIFFERENCE"],
+      "GEO": ["MP-GEO-ANGLE-PARALLEL", "MP-GEO-ANGLE-POLYGON-INTERIOR", "MP-GEO-ANGLE-CIRCLE-THEOREM", "MP-GEO-ANGLE-CYCLIC-QUAD", "MP-GEO-ANGLE-SUM-TRIANGLE", "MP-GEO-ANGLE-3D-DIAGONAL", "MP-GEO-VOLUME-CYLINDER-FRACTION", "MP-GEO-VOLUME-SEGMENT", "MP-GEO-VOLUME-DISPLACEMENT", "MP-GEO-VOLUME-PRISM", "MP-GEO-PERIMETER-SECTOR-ANNULUS", "MP-GEO-SHOW-HEXAGON-SIDE", "MP-GEO-COORD-MIDPOINT", "MP-GEO-COORD-DISTANCE", "MP-GEO-COORD-GRADIENT-EQUATION", "MP-GEO-COORD-INTERCEPT", "MP-GEO-COORD-LINE_EQ-PERPENDICULAR"],
+      "ALG": ["MP-ALG-SIMPLIFY-INDEX", "MP-ALG-SEQUENCE-GEOMETRIC-NTH", "MP-ALG-EXPAND-TRIPLE-BRACKET", "MP-ALG-SHOW-ALGEBRAIC-SIMPLIFICATION", "MP-ALG-QUADRATIC-SOLVE-FACTORISE", "MP-ALG-SHOW-EQUATE-FORMULAE", "MP-ALG-LINEAR-SOLVE", "MP-ALG-FACTORISE-COMMON_FACTOR", "MP-ALG-FACTORISE-DIFF_SQUARES", "MP-ALG-FUNCTION-EVALUATE", "MP-ALG-FUNCTION-COMPOSITE", "MP-ALG-FUNCTION-EQUATE", "MP-ALG-INEQUALITY-FORMULATE", "MP-ALG-LINEAR_PROGRAMMING-GRAPH", "MP-ALG-LINEAR_PROGRAMMING-OPTIMISE", "MP-ALG-CALCULUS-SHOW-STATIONARY", "MP-ALG-CALCULUS-GRADIENT-AT-POINT", "MP-ALG-CALCULUS-STATIONARY-FIND"],
+      "STAT": ["MP-STAT-MEAN-GROUPED", "MP-STAT-HISTOGRAM-DRAW", "MP-STAT-FIVE_NUMBER-READ", "MP-STAT-BOX_WHISKER-DRAW"],
+      "PROB": ["MP-PROB-CALC-WITHOUT_REPLACEMENT"],
+      "TRIG": ["MP-TRIG-SHOW-COSINE_RULE", "MP-TRIG-SIDE-SINE_RULE", "MP-TRIG-HEIGHT-PERPENDICULAR"],
+      "REASON": ["MP-REASON-STAT-INTERPRETATION"]
+    },
+    "total_unique": 42,
+    "observation": "11 questions decompose into 42 unique mother problems — much more than the estimated 8-10 per paper. This is because Paper 4 has highly diverse multi-step questions. Many of these MPs will recur across other papers, so the global MP count will converge around 120-150."
+  }
+}

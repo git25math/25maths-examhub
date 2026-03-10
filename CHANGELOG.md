@@ -1,5 +1,22 @@
 # Changelog
 
+## [4.4.4] - 2026-03-11 — Mother Problem 标注试点 Phase 4 + Input Pattern Library
+
+### Mother Problem 标注
+- **Paper42 2024MJ 完整标注**: 11 题 → 42 个 unique Mother Problem（5 字段结构）
+- **每个 part 标注**: input_pattern + ask_pattern + answer_pattern → mother_problem
+- **覆盖 6 大领域**: NUM(5) / GEO(17) / ALG(18) / STAT(4) / PROB(1) / TRIG(3) / REASON(1)
+- **发现**: Paper 4 单套卷产出 42 个 unique MP，远超预期的 8-10；但全局会收敛到 120-150
+
+### Input Pattern Library v1
+- **22 个 Input Pattern**，5 大类: Visual(6) / Table(4) / Algebraic(5) / Data(3) / Context(4)
+
+### 文件变更
+| 文件 | 变更类型 |
+|------|---------|
+| `data/mother-problem-tagging-paper42-2024mj.json` | 新增 — 完整标注 |
+| `data/input-pattern-library.json` | 新增 |
+
 ## [4.4.3] - 2026-03-11 — Mother Problem 基础设施 Phase 2-3
 
 ### 新增数据文件

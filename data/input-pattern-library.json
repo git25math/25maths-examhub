@@ -1,0 +1,39 @@
+{
+  "v": "1.0",
+  "description": "Input Pattern Library — what the question gives the student as starting context",
+  "patterns": {
+    "VISUAL": [
+      {"id": "IP-GRID", "description": "Coordinate grid with plotted points/shapes", "keywords": ["grid", "coordinate axes"]},
+      {"id": "IP-GRAPH", "description": "Pre-drawn function graph or curve", "keywords": ["graph", "curve", "sketch"]},
+      {"id": "IP-DIAGRAM", "description": "Geometric diagram (angles, shapes, circles)", "keywords": ["diagram", "figure", "not to scale"]},
+      {"id": "IP-SHAPE", "description": "Named shape with labeled measurements", "keywords": ["triangle", "rectangle", "circle", "sector"]},
+      {"id": "IP-NUMBERLINE", "description": "Number line with marked regions", "keywords": ["number line"]},
+      {"id": "IP-NET", "description": "3D shape net or cross-section", "keywords": ["net", "cross-section"]}
+    ],
+    "TABLE": [
+      {"id": "IP-TABLE", "description": "Simple data table or table of values", "keywords": ["table", "values"]},
+      {"id": "IP-FREQ_TABLE", "description": "Frequency table (discrete or grouped)", "keywords": ["frequency", "class interval"]},
+      {"id": "IP-TWO_WAY", "description": "Two-way table or contingency table", "keywords": ["two-way table"]},
+      {"id": "IP-STEM_LEAF", "description": "Stem-and-leaf diagram", "keywords": ["stem-and-leaf", "stem and leaf"]}
+    ],
+    "ALGEBRAIC": [
+      {"id": "IP-EQUATION", "description": "Algebraic equation to solve", "keywords": ["solve", "equation"]},
+      {"id": "IP-EXPRESSION", "description": "Algebraic expression to manipulate", "keywords": ["simplify", "factorise", "expand"]},
+      {"id": "IP-FORMULA", "description": "Given formula to apply or rearrange", "keywords": ["formula", "given that"]},
+      {"id": "IP-INEQUALITY", "description": "Inequality or region constraint", "keywords": ["inequality", "≤", "≥"]},
+      {"id": "IP-SEQUENCE", "description": "Number sequence or pattern", "keywords": ["sequence", "pattern", "next term"]}
+    ],
+    "DATA": [
+      {"id": "IP-DATA_LIST", "description": "Raw list of numbers/values", "keywords": ["data", "list", "results"]},
+      {"id": "IP-GROUPED_DATA", "description": "Grouped data with class intervals", "keywords": ["grouped", "class", "interval"]},
+      {"id": "IP-CUMULATIVE", "description": "Cumulative frequency data or diagram", "keywords": ["cumulative", "box-and-whisker", "percentile"]}
+    ],
+    "CONTEXT": [
+      {"id": "IP-WORD_PROBLEM", "description": "Real-world word problem with numbers in text", "keywords": ["shop", "journey", "price", "cost"]},
+      {"id": "IP-GEO_CONTEXT", "description": "Real-world geometry (tower, building, field)", "keywords": ["tower", "building", "field", "height"]},
+      {"id": "IP-MONEY_CONTEXT", "description": "Financial context (interest, exchange, profit)", "keywords": ["interest", "exchange", "profit", "cost"]},
+      {"id": "IP-PROBABILITY_CONTEXT", "description": "Probability scenario (bag, dice, cards, spinner)", "keywords": ["bag", "dice", "spinner", "cards", "random"]}
+    ]
+  },
+  "total_patterns": 22
+}
