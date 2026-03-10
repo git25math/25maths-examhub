@@ -1,5 +1,28 @@
 # Changelog
 
+## [4.3.1] - 2026-03-10 — Error Pattern Audit Fix
+
+### 审计发现 & 修复（js/error-patterns.js）
+- **BUG FIX**: `secHealth.overall` → `secHealth.score`（.overall 不存在，careless-reading 一直是死代码）
+- **规则重构**: method-confusion 从"无知识缺口就触发"改为"无任何信号才触发"（真正的兜底）
+- **`diag` 字段利用**: 25m 题目的 diagnostic 标签（calc/concept/vocab/logic）作为弱辅助信号
+  - `diag=vocab` → vocab-misunderstanding 0.4 权重（当无 weak vocab 映射时）
+  - `diag=concept` → concept-gap 0.4 权重（当无 weak KP 映射时）
+  - `diag=calc` → careless-calculation 0.35 权重（当无知识缺口时）
+- **置信度校准**: evidence 饱和从 5→8 次，score 饱和从 4→6 分
+  - 1-2 次事件 → 始终 low band（不显示强建议）
+  - 3 次事件 → MEDIUM（仅显示软建议）
+  - 5+ 次事件 → HIGH（可给出确定性建议）
+- **method-confusion 权重**: 0.8 → 0.6（降低兜底模式的累计速度）
+- **调试工具**: `epDebugTrace()` + `epDebugDumpState()` + `DEBUG_ERROR_PATTERNS` 开关
+
+### 模拟验证（3 类学生 × 999 道错题）
+- method-confusion 占比: advanced 45%→22%, mid 33%→21%, new 12%→9%
+- 多信号事件: advanced 54%→15%, mid 34%→16%, new 38%→33%
+- 置信度红旗: 3 次事件不再达到 HIGH band（0.69→0.50）
+
+---
+
 ## [4.3.0] - 2026-03-10 — Confidence Layer & Time Decay
 
 ### Error Pattern v2 核心重写（js/error-patterns.js）

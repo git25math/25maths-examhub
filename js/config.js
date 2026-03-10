@@ -401,7 +401,7 @@ var ERROR_PATTERN_CONFIG = {
   weights: {
     vocabSignal: 0.9,
     conceptSignal: 1.0,
-    methodSignal: 0.8,
+    methodSignal: 0.6,
     readingSignal: 0.7,
     calculationSignal: 0.6
   }

@@ -68,27 +68,51 @@ function inferPatternSignals(q, recovery, meta) {
   var hasVocab = recovery && recovery.weakVocab && recovery.weakVocab.length > 0;
   var hasKP = recovery && recovery.weakKPs && recovery.weakKPs.length > 0;
   var hasSiblings = recovery && recovery.siblingQuestions && recovery.siblingQuestions.length > 0;
+  var diag = (q && q.diag) || '';
 
-  if (hasVocab) {
-    signals.push({ type: 'vocab-misunderstanding', weight: weights.vocabSignal || 0.9, reason: 'weak vocab' });
-  }
-  if (hasKP) {
-    signals.push({ type: 'concept-gap', weight: weights.conceptSignal || 1.0, reason: 'weak KP' });
-  }
+  /* ── Careless signals (check first — override fallback if matched) ── */
+  var hasCareless = false;
+
+  /* Careless-reading: strong section + siblings + no knowledge gap */
   if (!hasVocab && !hasKP) {
-    signals.push({ type: 'method-confusion', weight: weights.methodSignal || 0.8, reason: 'no clear mapping' });
-  }
-  if (hasSiblings && !hasVocab && !hasKP) {
     var secHealth = null;
     if (typeof getSectionHealth === 'function' && q && q.s) {
       secHealth = getSectionHealth(q.s, (meta && meta.board) || '');
     }
-    if (secHealth && secHealth.overall >= 50) {
+    if (hasSiblings && secHealth && secHealth.score >= 50) {
       signals.push({ type: 'careless-reading', weight: weights.readingSignal || 0.7, reason: 'strong section but miss' });
+      hasCareless = true;
     }
   }
+
+  /* Careless-calculation: explicit errorType tag or calc-type question */
   if (meta && meta.errorType === 'calculation') {
-    signals.push({ type: 'careless-calculation', weight: weights.calculationSignal || 0.6, reason: 'calc signal' });
+    signals.push({ type: 'careless-calculation', weight: weights.calculationSignal || 0.6, reason: 'explicit calc error' });
+    hasCareless = true;
+  } else if (diag === 'calc' && !hasVocab && !hasKP) {
+    signals.push({ type: 'careless-calculation', weight: 0.35, reason: 'question tests calc' });
+    hasCareless = true;
+  }
+
+  /* ── Primary knowledge signals from learning graph data ── */
+  if (hasVocab) {
+    signals.push({ type: 'vocab-misunderstanding', weight: weights.vocabSignal || 0.9, reason: 'weak vocab linked' });
+  }
+  if (hasKP) {
+    signals.push({ type: 'concept-gap', weight: weights.conceptSignal || 1.0, reason: 'weak KP linked' });
+  }
+
+  /* ── Secondary: question diagnostic hint (25m only, weak signal) ── */
+  if (diag === 'vocab' && !hasVocab) {
+    signals.push({ type: 'vocab-misunderstanding', weight: 0.4, reason: 'question tests vocab' });
+  }
+  if (diag === 'concept' && !hasKP) {
+    signals.push({ type: 'concept-gap', weight: 0.4, reason: 'question tests concept' });
+  }
+
+  /* ── Fallback: method-confusion ONLY when no other signal matched ── */
+  if (signals.length === 0) {
+    signals.push({ type: 'method-confusion', weight: weights.methodSignal || 0.6, reason: 'no clear mapping' });
   }
 
   /* Merge duplicates */
@@ -193,8 +217,10 @@ function _epRecomputeRecent(state, now, cfg) {
 
 function _epCalculateConfidence(stat, now) {
   if (!stat.lastSeenAt || stat.evidenceCount <= 0) return 0;
-  var evidenceFactor = Math.min(stat.evidenceCount / 5, 1);
-  var scoreFactor = Math.min(stat.persistentScore / 4, 1);
+  /* evidence needs 8+ observations to fully saturate (was 5) */
+  var evidenceFactor = Math.min(stat.evidenceCount / 8, 1);
+  /* score needs ~6 cumulative weight to fully saturate (was 4) */
+  var scoreFactor = Math.min(stat.persistentScore / 6, 1);
   var daysSince = (now - stat.lastSeenAt) / 86400000;
   var recencyFactor = Math.max(0.6, 1 - daysSince / 30);
   return Math.round((0.45 * evidenceFactor + 0.40 * scoreFactor + 0.15 * recencyFactor) * 100) / 100;
@@ -358,4 +384,53 @@ function renderErrorPatternPills(patterns) {
   }
   html += '</div>';
   return html;
+}
+
+/* ═══ DEBUG AUDIT ═══ */
+
+var DEBUG_ERROR_PATTERNS = false;
+
+function epDebugTrace(q, recovery, meta) {
+  if (!DEBUG_ERROR_PATTERNS) return;
+  var signals = inferPatternSignals(q, recovery, meta);
+  var state = typeof getErrorPatternState === 'function' ? getErrorPatternState() : null;
+  var display = state ? getDisplayPatterns(state) : null;
+  var row = {
+    qid: (q && q.id) || '-',
+    section: (q && q.s) || '-',
+    diag: (q && q.diag) || '-',
+    weakVocab: recovery && recovery.weakVocab ? recovery.weakVocab.length : 0,
+    weakKP: recovery && recovery.weakKPs ? recovery.weakKPs.length : 0,
+    siblings: recovery && recovery.siblingQuestions ? recovery.siblingQuestions.length : 0,
+    signals: signals.map(function(s) { return s.type + ':' + s.weight; }).join(', '),
+    primary: display && display.primaryPersistent ? display.primaryPersistent.key + '(' + display.primaryPersistent.confidence + ')' : '-',
+    recent: display && display.recentTrend ? display.recentTrend.key + '(' + display.recentTrend.score + ')' : '-',
+    events: state ? state.recentEvents.length : 0
+  };
+  console.table([row]);
+}
+
+function epDebugDumpState() {
+  var state = typeof getErrorPatternState === 'function' ? getErrorPatternState() : null;
+  if (!state) { console.log('[EP] No state'); return; }
+  var rows = [];
+  for (var k in state.patternStats) {
+    if (!state.patternStats.hasOwnProperty(k)) continue;
+    var s = state.patternStats[k];
+    rows.push({
+      pattern: k,
+      persistent: s.persistentScore,
+      recent: s.recentScore,
+      evidence: s.evidenceCount,
+      recentEvidence: s.recentEvidenceCount,
+      confidence: s.confidence,
+      band: getConfidenceBand(s.confidence),
+      lastSeen: s.lastSeenAt ? new Date(s.lastSeenAt).toLocaleDateString() : '-'
+    });
+  }
+  console.table(rows);
+  console.log('[EP] recentEvents: ' + state.recentEvents.length + '/' + (typeof ERROR_PATTERN_CONFIG !== 'undefined' ? ERROR_PATTERN_CONFIG.maxRecentEvents : 80));
+  var display = getDisplayPatterns(state);
+  console.log('[EP] Primary:', display.primaryPersistent ? display.primaryPersistent.key : 'none');
+  console.log('[EP] Recent trend:', display.recentTrend ? display.recentTrend.key : 'none');
 }

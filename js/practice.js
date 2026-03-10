@@ -2046,6 +2046,8 @@ function ppRate(level) {
         var _epBoard = _ppSession.board || '';
         var _epRecovery = typeof getRecoveryCandidates === 'function' ? getRecoveryCandidates(q.id, _epSec, _epBoard) : null;
         var _epSignals = inferPatternSignals(q, _epRecovery, { board: _epBoard });
+        /* Debug audit trace (v4.3.0) */
+        if (typeof epDebugTrace === 'function') epDebugTrace(q, _epRecovery, { board: _epBoard });
         var _epEvent = typeof createPatternEvent === 'function' ? createPatternEvent(q, _epSec, _epSignals) : null;
         if (_epEvent) {
           var _epState = typeof getErrorPatternState === 'function' ? getErrorPatternState() : null;
