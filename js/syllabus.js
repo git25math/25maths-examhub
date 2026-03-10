@@ -1372,7 +1372,7 @@ function renderReviewPlan() {
     html += '<div class="review-plan-item" role="button" tabindex="0" onclick="openSection(\'' + c.sectionId + '\',\'' + c.board + '\')">';
     html += '<span class="review-plan-sec">' + c.sectionId + '</span>';
     html += '<span class="review-plan-name">' + title + '</span>';
-    var retLabel = c.retentionScore >= 50 ? t('Fading', '\u6de1\u5fd8\u4e2d') : t('Needs refresh', '\u9700\u8981\u590d\u4e60');
+    var retLabel = c.retentionScore >= 50 ? t('Review soon', '\u5f85\u590d\u4e60') : t('Needs practice', '\u9700\u8981\u7ec3\u4e60');
     html += '<span class="review-plan-ret" style="color:' + retColor + '">\ud83d\udd04 ' + retLabel + '</span>';
     html += '</div>';
   }
@@ -2499,12 +2499,12 @@ function _renderPlanInsights() {
   if (info.stage === 'new') {
     msg = '\ud83d\udca1 ' + t('You\'ve learned ' + info.mastered + ' words this week. Keep going!', '本周学了 ' + info.mastered + ' 词，继续加油！');
   } else if (info.stage === 'active') {
-    msg = '\ud83d\udca1 ' + t('You\'ve used ' + info.modesUsed + '/7 modes. Try more for better retention!', '已用 ' + info.modesUsed + '/7 种模式，多种模式有助记忆！');
+    msg = '\ud83d\udca1 ' + t('You\'ve used ' + info.modesUsed + '/7 modes. More variety strengthens learning!', '\u5df2\u7528 ' + info.modesUsed + '/7 \u79cd\u6a21\u5f0f\uff0c\u591a\u6837\u5316\u7ec3\u4e60\u8ba9\u638c\u63e1\u66f4\u725b\u56fa\uff01');
   } else if (info.stage === 'intermediate') {
     msg = '\ud83d\udca1 ' + t('Focus 10 min on your weakest topic for the best improvement.', '花 10 分钟攻克最弱知识点效果最佳。');
   } else {
     if (info.dueCount > 0) {
-      msg = '\ud83d\udca1 ' + t(info.dueCount + ' words due for SRS review. Retention is key!', info.dueCount + ' 词待 SRS 复习，记忆保持是关键！');
+      msg = '\ud83d\udca1 ' + t(info.dueCount + ' words need another round of review.', info.dueCount + ' \u4e2a\u8bcd\u9700\u8981\u518d\u590d\u4e60\u4e00\u8f6e\u3002');
     } else {
       msg = '\ud83d\udca1 ' + t('Great mastery! Challenge yourself with mock exams.', '掌握出色！试试模拟卷挑战自己。');
     }

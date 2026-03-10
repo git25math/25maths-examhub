@@ -120,7 +120,7 @@ function _finishRefreshScan() {
   var html = '<div class="text-center">';
   html += '<div class="result-emoji">\ud83d\udd04</div>';
   html += '<div class="result-title">' + t('Refresh Complete!', '\u590d\u67e5\u5b8c\u6210\uff01') + '</div>';
-  html += '<div class="result-sub">' + t('Checked ' + (k + f + u) + ' stale words', '\u68c0\u67e5\u4e86 ' + (k + f + u) + ' \u4e2a\u8870\u9000\u8bcd\u6c47') + '</div>';
+  html += '<div class="result-sub">' + t('Reviewed ' + (k + f + u) + ' words', '\u590d\u67e5\u4e86 ' + (k + f + u) + ' \u4e2a\u8bcd\u6c47') + '</div>';
   html += '</div>';
 
   /* Result breakdown */
@@ -167,7 +167,7 @@ function startKPRefreshScan() {
   }
   Promise.all(promises).then(function() {
     var staleList = typeof getStaleKPs === 'function' ? getStaleKPs() : [];
-    if (staleList.length === 0) { showToast(t('No stale KPs', '没有衰退的知识点')); return; }
+    if (staleList.length === 0) { showToast(t('All KPs up to date', '\u6240\u6709\u77e5\u8bc6\u70b9\u5747\u5df2\u590d\u67e5')); return; }
     var items = staleList.slice(0, cap);
     /* Resolve KP details from _kpData */
     var resolved = [];

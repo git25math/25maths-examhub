@@ -1391,7 +1391,7 @@ function startPPRefreshScan() {
   Promise.all(promises).then(function() {
     var cap = typeof REFRESH_CAP !== 'undefined' ? REFRESH_CAP : 20;
     var staleList = typeof getStalePPQuestions === 'function' ? getStalePPQuestions() : [];
-    if (staleList.length === 0) { showToast(t('No stale questions', '没有衰退的真题')); return; }
+    if (staleList.length === 0) { showToast(t('All questions up to date', '\u6240\u6709\u771f\u9898\u5747\u5df2\u590d\u67e5')); return; }
     var items = staleList.slice(0, cap);
     /* Resolve qid → full question object */
     var resolved = [];

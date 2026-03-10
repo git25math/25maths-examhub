@@ -265,7 +265,7 @@ function _renderReturnRecap() {
   var dueCount = typeof getDueWords === 'function' ? getDueWords().length : 0;
   var msg = t('Welcome back!', '欢迎回来！');
   var details = [];
-  if (dueCount > 0) details.push(dueCount + ' ' + t('words to review', '词待复习'));
+  if (dueCount > 0) details.push(dueCount + ' ' + t('words to revisit', '\u8bcd\u5f85\u56de\u987e'));
   if (streak > 0) details.push(streak + ' ' + t('-day streak', '天连续'));
   details.push(gs.mastered + ' ' + t('words mastered', '词已掌握'));
   return '<div class="return-recap" role="status" aria-live="polite"><span>' + msg + ' ' + details.join(' · ') + '</span>' +
@@ -397,17 +397,17 @@ function _renderHeroAction() {
     html += t('GO', '\u5f00\u59cb') + ' \u2192</button>';
   } else if (action.type === 'refresh') {
     html += '<div class="hero-label">' + t('Refresh Review', '\u8f7b\u91cf\u590d\u67e5') + '</div>';
-    html += '<div class="hero-section">' + action.count + ' ' + t('mastered words getting stale', '\u4e2a\u5df2\u638c\u63e1\u8bcd\u6c47\u6b63\u5728\u8870\u9000') + '</div>';
+    html += '<div class="hero-section">' + action.count + ' ' + t('mastered words ready for another round', '\u4e2a\u5df2\u638c\u63e1\u8bcd\u6c47\u9700\u8981\u518d\u8fc7\u4e00\u8f6e') + '</div>';
     html += '<button class="btn btn-primary hero-btn" data-hero-action="refresh">';
     html += '\ud83d\udd04 ' + t('Quick Scan', '\u5feb\u901f\u590d\u67e5') + ' \u2192</button>';
   } else if (action.type === 'kp-refresh') {
     html += '<div class="hero-label">' + t('Knowledge Point Review', '\u77e5\u8bc6\u70b9\u590d\u67e5') + '</div>';
-    html += '<div class="hero-section">' + action.count + ' ' + t('mastered KPs getting stale', '\u4e2a\u5df2\u638c\u63e1\u77e5\u8bc6\u70b9\u6b63\u5728\u8870\u9000') + '</div>';
+    html += '<div class="hero-section">' + action.count + ' ' + t('mastered KPs ready for another round', '\u4e2a\u5df2\u638c\u63e1\u77e5\u8bc6\u70b9\u9700\u8981\u518d\u8fc7\u4e00\u8f6e') + '</div>';
     html += '<button class="btn btn-primary hero-btn" data-hero-action="kp-refresh">';
     html += '\ud83d\udd04 ' + t('Quick Scan', '\u5feb\u901f\u590d\u67e5') + ' \u2192</button>';
   } else if (action.type === 'pp-refresh') {
     html += '<div class="hero-label">' + t('Past Paper Review', '\u771f\u9898\u590d\u67e5') + '</div>';
-    html += '<div class="hero-section">' + action.count + ' ' + t('mastered questions getting stale', '\u4e2a\u5df2\u638c\u63e1\u771f\u9898\u6b63\u5728\u8870\u9000') + '</div>';
+    html += '<div class="hero-section">' + action.count + ' ' + t('mastered questions ready for another round', '\u4e2a\u5df2\u638c\u63e1\u771f\u9898\u9700\u8981\u518d\u8fc7\u4e00\u8f6e') + '</div>';
     html += '<button class="btn btn-primary hero-btn" data-hero-action="pp-refresh">';
     html += '\ud83d\udd04 ' + t('Quick Scan', '\u5feb\u901f\u590d\u67e5') + ' \u2192</button>';
   } else if (action.type === 'start') {
@@ -889,7 +889,7 @@ function renderDeck(idx) {
   if (_deckStale.length > 0) {
     html += '<div class="deck-refresh-banner">';
     html += '<span class="deck-refresh-icon">\ud83d\udd04</span>';
-    html += '<span class="deck-refresh-text">' + _deckStale.length + ' ' + t('words getting stale', '\u4e2a\u8bcd\u6b63\u5728\u8870\u9000') + '</span>';
+    html += '<span class="deck-refresh-text">' + _deckStale.length + ' ' + t('words due for another round', '\u4e2a\u8bcd\u9700\u8981\u518d\u8fc7\u4e00\u8f6e') + '</span>';
     html += '<button class="btn btn-primary btn-sm" data-action="deck-refresh" data-li="' + idx + '">' + t('Quick Refresh', '\u5feb\u901f\u590d\u67e5') + '</button>';
     html += '</div>';
   }

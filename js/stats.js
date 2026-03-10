@@ -330,7 +330,7 @@ function _renderMasteryStability() {
   html += '<div class="stats-section-title">' + t('Vocabulary Mastery', '\u8bcd\u6c47\u638c\u63e1\u5ea6') + '</div>';
   html += '<div class="stats-summary">';
   html += '<div class="stat-card"><div class="stat-num">' + mastered + '</div><div class="stat-label">' + t('Mastered', '\u5df2\u638c\u63e1') + '</div></div>';
-  html += '<div class="stat-card"><div class="stat-num">' + stale + '</div><div class="stat-label">' + t('Getting Stale', '\u6b63\u5728\u8870\u9000') + '</div></div>';
+  html += '<div class="stat-card"><div class="stat-num">' + stale + '</div><div class="stat-label">' + t('Due for Review', '\u5f85\u590d\u67e5') + '</div></div>';
   html += '<div class="stat-card"><div class="stat-num">' + stablePct + '%</div><div class="stat-label">' + t('Stable', '\u7a33\u5b9a') + '</div></div>';
   html += '<div class="stat-card"><div class="stat-num">' + reflowed + '</div><div class="stat-label">' + t('Reflowed', '\u56de\u6d41') + '</div></div>';
   html += '</div></div>';
@@ -358,7 +358,7 @@ function _renderKPMasteryStability() {
   html += '<div class="stats-section-title">' + t('Knowledge Point Mastery', '\u77e5\u8bc6\u70b9\u638c\u63e1\u5ea6') + '</div>';
   html += '<div class="stats-summary">';
   html += '<div class="stat-card"><div class="stat-num">' + mastered + '</div><div class="stat-label">' + t('Mastered', '\u5df2\u638c\u63e1') + '</div></div>';
-  html += '<div class="stat-card"><div class="stat-num">' + stale + '</div><div class="stat-label">' + t('Getting Stale', '\u6b63\u5728\u8870\u9000') + '</div></div>';
+  html += '<div class="stat-card"><div class="stat-num">' + stale + '</div><div class="stat-label">' + t('Due for Review', '\u5f85\u590d\u67e5') + '</div></div>';
   html += '<div class="stat-card"><div class="stat-num">' + stablePct + '%</div><div class="stat-label">' + t('Stable', '\u7a33\u5b9a') + '</div></div>';
   html += '</div></div>';
   return html;
@@ -385,7 +385,7 @@ function _renderPPMasteryStability() {
   html += '<div class="stats-section-title">' + t('Past Paper Mastery', '\u771f\u9898\u638c\u63e1\u5ea6') + '</div>';
   html += '<div class="stats-summary">';
   html += '<div class="stat-card"><div class="stat-num">' + mastered + '</div><div class="stat-label">' + t('Mastered', '\u5df2\u638c\u63e1') + '</div></div>';
-  html += '<div class="stat-card"><div class="stat-num">' + stale + '</div><div class="stat-label">' + t('Getting Stale', '\u6b63\u5728\u8870\u9000') + '</div></div>';
+  html += '<div class="stat-card"><div class="stat-num">' + stale + '</div><div class="stat-label">' + t('Due for Review', '\u5f85\u590d\u67e5') + '</div></div>';
   html += '<div class="stat-card"><div class="stat-num">' + stablePct + '%</div><div class="stat-label">' + t('Stable', '\u7a33\u5b9a') + '</div></div>';
   html += '</div></div>';
   return html;

@@ -1181,7 +1181,7 @@ var BADGES = [
   { id: 'daily_5',       icon: '\u26a1',       en: 'Daily 5',          zh: '\u6bcf\u65e5\u63505\u6b21', prereq: null, check: function(ctx) { return ctx.dailyCount >= 5; } },
   { id: 'quiz_perfect',  icon: '\ud83c\udfc6', en: 'Perfectionist',    zh: '\u5b8c\u7f8e\u4e3b\u4e49', prereq: 'first_word', check: function(ctx) { return ctx.perfectQuiz; } },
   { id: 'first_section', icon: '\u2705',       en: 'First Section',    zh: '\u7b2c\u4e00\u4e2a\u77e5\u8bc6\u70b9', prereq: 'first_word', check: function(ctx) { return ctx.sectionsCleared >= 1; } },
-  { id: 'srs_master',    icon: '\ud83e\udde0', en: 'Memory Master',    zh: '\u8bb0\u5fc6\u5927\u5e08', prereq: 'first_word', check: function(ctx) { return ctx.masteredCount >= 50; } },
+  { id: 'srs_master',    icon: '\ud83e\udde0', en: 'Mastery Pro',       zh: '\u7cbe\u901a\u8fbe\u4eba', prereq: 'first_word', check: function(ctx) { return ctx.masteredCount >= 50; } },
   { id: 'five_hundred',  icon: '\ud83d\ude80', en: '500 Words',        zh: '500\u8bcd\u8fbe\u6210', prereq: 'hundred_club', check: function(ctx) { return ctx.mastered >= 500; } },
   { id: 'all_modes',     icon: '\ud83c\udf08', en: 'Explorer',         zh: '\u63a2\u7d22\u8005', prereq: 'first_word', check: function(ctx) { return ctx.modesUsed >= 5; }, reward: { id: 'custom_theme', en: 'Custom Theme unlocked!', zh: '\u81ea\u5b9a\u4e49\u4e3b\u9898\u5df2\u89e3\u9501\uff01' } },
   /* Hidden badges */
