@@ -1,5 +1,31 @@
 # Changelog
 
+## [4.5.0] - 2026-03-11 — 真题结构 v4.0 层级化 Parts + Subparts + List Blocks
+
+### 数据迁移 (papers-cie.json v3.0 → v4.0)
+- **层级化重构**: 543 题从扁平 parts 重建为 parent/subpart 层级结构
+- **804 个容器 part** 获得 `subparts[]` 数组，共 2,074 个子问题
+- **marks 恢复**: marks=0 容器 part 从 1,081 降至 223（仅剩 47 个不匹配题保留 v3.0）
+- **List block**: 2 个 `\begin{itemize}` 转为 `{"type":"list","style":"bullet","items":[...]}`
+- **安全策略**: 源文件找不到或 part 数量不匹配 → 保留 v3.0 结构不变
+
+### 前端渲染
+- **subparts 渲染**: `_ppRenderWithMarksBlocks` 支持容器 part + 缩进子问题 + 独立 marks
+- **list block 渲染**: `_ppRenderBlocks` 支持 `<ul class="pp-list">` 列表
+- **marks 信息栏**: `_ppPartsInfo` 展开为 `(a)(i) 3 marks · (a)(ii) 4 marks · (b) 3 marks`
+- **CSS**: `.pp-subparts` 缩进 + `.pp-subpart-label` 字号 + `.pp-list` 列表样式
+
+### 文件变更
+| 文件 | 变更类型 |
+|------|---------|
+| `scripts/migrate-v4.py` | 新增 — v4.0 迁移脚本 |
+| `data/papers-cie.json` | 修改 — v3.0 → v4.0 层级化 |
+| `js/practice.js` | 修改 — subparts + list 渲染 |
+| `js/config.js` | 修改 — APP_VERSION v4.5.0 |
+| `css/style.css` | 修改 — subpart + list 样式 |
+| `js/app.bundle.min.js` | 重新构建 |
+| `css/style.min.css` | 重新构建 |
+
 ## [4.4.5] - 2026-03-11 — 真题加载版本兼容修复
 
 ### Bug 修复

@@ -462,6 +462,14 @@
 ## v3.3 Print Repair Sheet [DONE]
 - [x] **单题打印修复单 (v3.3.0)**: worksheet.js 新窗口 A4 打印（题目+词汇+KP+留白+纠错+订正），从 Recovery Pack 触发
 
+## v4.5.0 真题结构 v4.0 — 层级化 Parts + Subparts + List Blocks [DONE]
+- [x] **层级化 Parts**: 543 题从扁平 parts 重建为 parent/subpart 结构（804 个容器 part + 2,074 个子问题）
+- [x] **marks 恢复**: marks=0 容器 part 从 1,081 降至 223
+- [x] **List block**: `\begin{itemize}` → `{"type":"list","style":"bullet","items":[...]}`
+- [x] **subparts 渲染**: 容器 part 缩进子问题 + 独立 marks 显示
+- [x] **迁移脚本**: `scripts/migrate-v4.py` 从源 LaTeX 解析层级结构合并到 JSON
+- [x] **向后兼容**: 无 subparts 的 part 走原有逻辑，papers-edx.json 保持 v3.0
+
 ## v4.4.0 真题结构解耦 — Block-based + Answer Layout System [DONE]
 - [x] **Block-based 内容模型**: `tex` → `stem` (Block[]) + `parts[].content` (Block[])，3 种 block 类型（text/table/figure）
 - [x] **Answer Layout System**: 10 种标准答题空间类型替代 ansPrefix/ansSuffix/ansTpl

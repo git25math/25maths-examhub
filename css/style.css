@@ -4479,6 +4479,13 @@ input { font-family: inherit; }
 .pp-part-label { font-weight:600; margin-right:4px; flex-shrink:0; }
 .pp-part-content { flex:1; min-width:0; }
 .pp-marks-right { margin-left:auto; align-self:flex-start; font-weight:700; font-size:13px; color:var(--c-text2); font-family:var(--font-mono); white-space:nowrap; padding-left:12px; }
+/* Subparts (v4.5.0) */
+.pp-subparts { margin-left:20px; margin-top:6px; }
+.pp-subpart-block { margin-bottom:4px; }
+.pp-subpart-label { font-size:13px; }
+/* List blocks (v4.5.0) */
+.pp-list { margin:4px 0 4px 20px; padding:0; }
+.pp-list li { margin-bottom:2px; }
 /* Answer line (v4.3.2) */
 .pp-answer-line { display:flex; align-items:baseline; margin-top:6px; gap:4px; }
 .pp-answer-prefix, .pp-answer-suffix { font-size:13px; font-weight:600; color:var(--c-text2); white-space:nowrap; }

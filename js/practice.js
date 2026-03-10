@@ -1606,7 +1606,7 @@ function _ppRenderFigureBlock(block, q) {
 }
 
 function _ppRenderBlocks(blocks, q) {
-  /* Render Block[] to HTML */
+  /* Render Block[] to HTML (v4.5.0: + list block) */
   if (!blocks || !blocks.length) return '';
   var html = '';
   for (var i = 0; i < blocks.length; i++) {
@@ -1617,6 +1617,13 @@ function _ppRenderBlocks(blocks, q) {
       html += _ppConvertTabularRuntime(b.content);
     } else if (b.type === 'figure') {
       html += _ppRenderFigureBlock(b, q);
+    } else if (b.type === 'list') {
+      var tag = b.style === 'number' ? 'ol' : 'ul';
+      var listHtml = '<' + tag + ' class="pp-list">';
+      for (var li = 0; li < b.items.length; li++) {
+        listHtml += '<li>' + _ppRenderTexStr(b.items[li]) + '</li>';
+      }
+      html += listHtml + '</' + tag + '>';
     }
   }
   return html;
@@ -1735,7 +1742,7 @@ function _ppRenderWithMarks(q, showAnswerLine) {
   return _ppInsertPartMarks(html, partsMap, showAnswerLine);
 }
 
-/* Block-based rendering path (v4.4.0) */
+/* Block-based rendering path (v4.5.0: + subparts support) */
 function _ppRenderWithMarksBlocks(q, showAnswerLine) {
   var stemHtml = _ppRenderBlocks(q.stem, q);
   if (!q.parts || !q.parts.length) {
@@ -1751,17 +1758,40 @@ function _ppRenderWithMarksBlocks(q, showAnswerLine) {
   if (stemHtml) result += '<div class="pp-part-intro">' + stemHtml + '</div>';
   for (var i = 0; i < q.parts.length; i++) {
     var pt = q.parts[i];
-    var marks = pt.marks || 0;
-    var marksHtml = (marks > 0)
-      ? '<span class="pp-marks-right">[' + marks + ']</span>' : '';
     var contentHtml = _ppRenderBlocks(pt.content, q);
     /* Part-level extra content from editor overrides (v4.3.4) */
     if (pt.tex) contentHtml += '<div class="pp-part-extra-tex">' + _ppRenderTexStr(pt.tex) + '</div>';
     if (pt.table) contentHtml += '<div class="pp-part-extra-table">' + _ppConvertTabularRuntime(pt.table) + '</div>';
     if (pt.figUrl) contentHtml += '<div class="pp-figures"><img class="pp-fig" src="' + pt.figUrl + '?v=' + APP_VERSION + '" alt="Part diagram" loading="lazy"></div>';
-    var ansLine = showAnswerLine ? _ppAnswerLine(pt.answer || pt.ansPrefix, pt.ansSuffix, pt.ansTpl) : '';
-    result += '<div class="pp-part-block"><span class="pp-part-label">' + pt.label + '</span>' +
-      '<div class="pp-part-content">' + contentHtml + ansLine + '</div>' + marksHtml + '</div>';
+
+    if (pt.subparts && pt.subparts.length) {
+      /* Container part with subparts */
+      result += '<div class="pp-part-block pp-part-container"><span class="pp-part-label">' + pt.label + '</span>';
+      result += '<div class="pp-part-content">' + contentHtml;
+      result += '<div class="pp-subparts">';
+      for (var si = 0; si < pt.subparts.length; si++) {
+        var sp = pt.subparts[si];
+        var spMarks = sp.marks || 0;
+        var spMarksHtml = (spMarks > 0)
+          ? '<span class="pp-marks-right">[' + spMarks + ']</span>' : '';
+        var spContent = _ppRenderBlocks(sp.content, q);
+        if (sp.tex) spContent += '<div class="pp-part-extra-tex">' + _ppRenderTexStr(sp.tex) + '</div>';
+        if (sp.table) spContent += '<div class="pp-part-extra-table">' + _ppConvertTabularRuntime(sp.table) + '</div>';
+        if (sp.figUrl) spContent += '<div class="pp-figures"><img class="pp-fig" src="' + sp.figUrl + '?v=' + APP_VERSION + '" alt="Part diagram" loading="lazy"></div>';
+        var spAns = showAnswerLine ? _ppAnswerLine(sp.answer || sp.ansPrefix, sp.ansSuffix, sp.ansTpl) : '';
+        result += '<div class="pp-part-block pp-subpart-block"><span class="pp-part-label pp-subpart-label">' + sp.label + '</span>' +
+          '<div class="pp-part-content">' + spContent + spAns + '</div>' + spMarksHtml + '</div>';
+      }
+      result += '</div></div></div>';
+    } else {
+      /* Regular part without subparts */
+      var marks = pt.marks || 0;
+      var marksHtml = (marks > 0)
+        ? '<span class="pp-marks-right">[' + marks + ']</span>' : '';
+      var ansLine = showAnswerLine ? _ppAnswerLine(pt.answer || pt.ansPrefix, pt.ansSuffix, pt.ansTpl) : '';
+      result += '<div class="pp-part-block"><span class="pp-part-label">' + pt.label + '</span>' +
+        '<div class="pp-part-content">' + contentHtml + ansLine + '</div>' + marksHtml + '</div>';
+    }
   }
   return result;
 }
@@ -1843,7 +1873,19 @@ function _ppDiffLabel(d, board) {
 
 function _ppPartsInfo(q) {
   if (!q.parts || !q.parts.length) return '';
-  return q.parts.map(function(p) { return p.label + ' ' + p.marks + (p.marks === 1 ? ' mark' : ' marks'); }).join('  \u00b7  ');
+  var items = [];
+  for (var i = 0; i < q.parts.length; i++) {
+    var p = q.parts[i];
+    if (p.subparts && p.subparts.length) {
+      for (var j = 0; j < p.subparts.length; j++) {
+        var sp = p.subparts[j];
+        items.push(p.label + sp.label + ' ' + sp.marks + (sp.marks === 1 ? ' mark' : ' marks'));
+      }
+    } else {
+      items.push(p.label + ' ' + p.marks + (p.marks === 1 ? ' mark' : ' marks'));
+    }
+  }
+  return items.join('  \u00b7  ');
 }
 
 /* ═══ GROUP LABELS ═══ */
