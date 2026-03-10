@@ -462,6 +462,14 @@
 ## v3.3 Print Repair Sheet [DONE]
 - [x] **单题打印修复单 (v3.3.0)**: worksheet.js 新窗口 A4 打印（题目+词汇+KP+留白+纠错+订正），从 Recovery Pack 触发
 
+## v4.4.0 真题结构解耦 — Block-based + Answer Layout System [DONE]
+- [x] **Block-based 内容模型**: `tex` → `stem` (Block[]) + `parts[].content` (Block[])，3 种 block 类型（text/table/figure）
+- [x] **Answer Layout System**: 10 种标准答题空间类型替代 ansPrefix/ansSuffix/ansTpl
+- [x] **数据迁移**: CIE 4,107 题 + Edexcel 1,855 题全量迁移，Edexcel parts 标准化
+- [x] **渲染引擎重写**: `_ppRenderBlocks()` + `_ppRenderWithMarksBlocks()` + `_ppRenderFigureBlock()`
+- [x] **Legacy fallback**: `q.stem` 不存在时回退到 `q.tex` 正则路径，编辑器零改动
+- [x] **移除 answers 模块**: `_ppRenderAnswersModule` + `ppToggleMS` + 模块排序清理
+
 ## v4.3.2 真题展示增强 [DONE]
 - [x] **Edexcel parts 归一化**: `{p,m}` → `{label,marks}` 修复子题渲染崩溃
 - [x] **答题线**: practice/browse 模式虚线答题线（exam 模式不显示）

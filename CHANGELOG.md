@@ -1,5 +1,41 @@
 # Changelog
 
+## [4.4.0] - 2026-03-10 — 真题结构解耦（Block-based + Answer Layout System）
+
+### 数据迁移（scripts/migrate-hierarchical.py）
+- **Block-based 内容模型**: `tex` 字符串拆分为 `stem` (Block[]) + `parts[].content` (Block[])
+- **Block 类型**: `text`（LaTeX 文本）、`table`（tabular 环境）、`figure`（图片/占位符）
+- **Answer Layout System**: `answer` 对象替代 `ansPrefix/ansSuffix/ansTpl`
+- **Answer 类型**: number（含 prefix/suffix）、vector、table_input、coordinate、multiline、expression
+- **Edexcel 标准化**: 数据层 `{p, m}` → `{label, marks}` 格式统一
+- **覆盖**: CIE 4,107 题（1,877/1,886 parts 分割成功）+ Edexcel 1,855 题（742/742）
+- **删除字段**: `texHtml`、`ansPrefix`、`ansSuffix`、`ansTpl`（保留 `tex` 供编辑器使用）
+
+### 渲染引擎重写（js/practice.js）
+- **`_ppRenderBlocks(blocks, q)`**: Block[] → HTML 渲染（text/table/figure 分发）
+- **`_ppRenderTexStr(str)`**: 纯文本渲染（从 `_ppRenderTex` 拆出）
+- **`_ppRenderFigureBlock(block, q)`**: 图片 block 渲染（实际图片或占位符）
+- **`_ppRenderWithMarksBlocks(q, showAnsLine)`**: 基于 blocks 的新渲染路径
+- **`_ppAnswerLine()`**: 支持 answer 对象参数（向后兼容旧 prefix/suffix/tpl 参数）
+- **Legacy fallback**: `q.stem` 不存在时自动回退到 `q.tex` 正则分割路径
+- **编辑器兼容**: tex 编辑后自动清除 `stem` 强制回退，rollback 同理
+
+### 移除
+- **`_ppRenderAnswersModule()`**: 已删除（答题线已内联到每个 part）
+- **`ppToggleMS()`**: 已删除
+- **`'answers'` 模块**: 从 `_ppDefaultModOrder` 移除（旧 moduleOrder 自动过滤）
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| scripts/migrate-hierarchical.py | **新建** — 数据迁移脚本 |
+| data/papers-cie.json | Block-based 层级化 (4,107 题, v3.0) |
+| data/papers-edx.json | Block-based 层级化 (1,855 题, v3.0) |
+| js/practice.js | 渲染引擎重写 + 移除 answers 模块 |
+| js/config.js | APP_VERSION → v4.4.0 |
+
+---
+
 ## [4.3.8] - 2026-03-10 — 学生板块锁定 + Year 11→CIE + localStorage 账号隔离
 
 ### Part A: 学生板块锁定 + Year 11 映射

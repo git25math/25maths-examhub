@@ -1135,7 +1135,7 @@ function loadPastPaperData(board) {
       var ed = edits[qs[qi].id];
       if (ed) {
         if (ed.marks !== undefined) qs[qi].marks = ed.marks;
-        if (ed.tex !== undefined) { qs[qi].tex = ed.tex; delete qs[qi].texHtml; }
+        if (ed.tex !== undefined) { qs[qi].tex = ed.tex; delete qs[qi].texHtml; delete qs[qi].stem; }
         if (ed.d !== undefined) qs[qi].d = ed.d;
         if (ed.g !== undefined) qs[qi].g = ed.g;
         if (ed.parts !== undefined) qs[qi].parts = ed.parts;
@@ -1570,25 +1570,87 @@ function _ppSaveExam(exam) {
 
 /* ═══ HELPER: render tex safely ═══ */
 
-function _ppRenderTex(texOrQ) {
-  /* Accept a question object (prefer texHtml) or raw string */
-  var tex = (typeof texOrQ === 'object' && texOrQ !== null) ? (texOrQ.texHtml || texOrQ.tex) : texOrQ;
-  /* Clean LaTeX remnants before rendering */
-  var html = tex.replace(/\[leftmargin[^\]]*\]/g, '');
-  /* Convert markdown bold; keep \n intact (CSS white-space: pre-line handles display) */
+function _ppRenderTexStr(str) {
+  /* Render a raw tex/html string: clean remnants, convert markdown bold */
+  if (!str) return '';
+  var html = str.replace(/\[leftmargin[^\]]*\]/g, '');
   html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+  return html;
+}
+
+function _ppRenderTex(texOrQ) {
+  /* Accept a question object (prefer texHtml) or raw string — legacy compat */
+  var tex = (typeof texOrQ === 'object' && texOrQ !== null) ? (texOrQ.texHtml || texOrQ.tex) : texOrQ;
+  return _ppRenderTexStr(tex);
+}
+
+/* ═══ Block-based rendering (v4.4.0) ═══ */
+
+function _ppRenderFigureBlock(block, q) {
+  /* Render a single figure block */
+  if (block.ref) {
+    return '<div class="pp-figures"><img class="pp-fig" src="data/' + block.ref + '?v=' + APP_VERSION + '" alt="Question diagram" loading="lazy"></div>';
+  }
+  if (block.hasFigure) {
+    var figH = '<div class="pp-figure-placeholder">';
+    figH += '<div style="font-size:24px;margin-bottom:6px">\ud83d\uddbc\ufe0f</div>';
+    figH += t('This question includes a diagram', '\u672c\u9898\u5305\u542b\u56fe\u8868');
+    if (q && q.paper && q.year) {
+      var baseUrl = q.id && q.id.indexOf('4MA1') === 0
+        ? 'https://papers.gceguide.cc/Edexcel/International%20GCSE/Mathematics%20(4MA1)/' + q.year + '/'
+        : 'https://papers.gceguide.cc/Cambridge%20IGCSE/Mathematics%20(0580)/' + q.year + '/';
+      figH += '<br><a href="' + baseUrl + '" target="_blank" rel="noopener">' + t('View original paper \u2197', '\u67e5\u770b\u539f\u5377 \u2197') + '</a>';
+    }
+    figH += '</div>';
+    return figH;
+  }
+  return '';
+}
+
+function _ppRenderBlocks(blocks, q) {
+  /* Render Block[] to HTML */
+  if (!blocks || !blocks.length) return '';
+  var html = '';
+  for (var i = 0; i < blocks.length; i++) {
+    var b = blocks[i];
+    if (b.type === 'text') {
+      html += _ppRenderTexStr(b.content);
+    } else if (b.type === 'table') {
+      html += _ppConvertTabularRuntime(b.content);
+    } else if (b.type === 'figure') {
+      html += _ppRenderFigureBlock(b, q);
+    }
+  }
   return html;
 }
 
 /* ═══ Render question with right-aligned marks (PDF-style) ═══ */
 
-/* Build answer line HTML (v4.3.2)
-   Data fields on part or question object:
-   - ansPrefix ("x="), ansSuffix ("cm")  → prefix + dots + suffix
-   - ansTpl ("(____, ____)")             → template with ____ replaced by dotted blanks
-   - ansTpl "vector" / "vector(3)"       → column vector with large braces
-   Priority: ansTpl > ansPrefix/ansSuffix > plain dots */
-function _ppAnswerLine(prefix, suffix, tpl) {
+/* Build answer line HTML (v4.4.0)
+   Accepts either:
+   - answerObj: { type, prefix, suffix, fields, layout, lines, template }
+   - Legacy: (prefix, suffix, tpl) positional args
+   Priority: template/vector/table_input > prefix+suffix > plain dots */
+function _ppAnswerLine(prefixOrObj, suffix, tpl) {
+  var prefix, ansObj;
+  if (typeof prefixOrObj === 'object' && prefixOrObj !== null) {
+    ansObj = prefixOrObj;
+    prefix = ansObj.prefix || null;
+    suffix = ansObj.suffix || null;
+    /* Map answer object types to legacy tpl format */
+    if (ansObj.type === 'vector') {
+      tpl = 'vector' + (ansObj.fields && ansObj.fields !== 2 ? '(' + ansObj.fields + ')' : '');
+    } else if (ansObj.type === 'table_input') {
+      tpl = 'table:' + (ansObj.template || '');
+    } else if (ansObj.type === 'coordinate') {
+      tpl = '(' + Array(ansObj.fields || 2).join('____, ') + '____)';
+    } else if (ansObj.type === 'multiline' || ansObj.type === 'expression') {
+      tpl = ansObj.template || null;
+    }
+    /* number type: no tpl, just prefix/suffix */
+  } else {
+    prefix = prefixOrObj;
+  }
   if (tpl) {
     /* Vector mode: "vector" (2 rows) or "vector(N)" */
     var vecMatch = tpl.match(/^vector(?:\((\d+)\))?$/);
@@ -1604,9 +1666,7 @@ function _ppAnswerLine(prefix, suffix, tpl) {
       if (suffix) h += '<span class="pp-answer-suffix">' + suffix + '</span>';
       return h + '</div>';
     }
-    /* Table mode: "table:x|-2|-1|0|1|2\ny|____|____|____|____|____"
-       | separates cells, \n separates rows, ____ becomes dotted blank
-       Cell content supports LaTeX (rendered by KaTeX via renderMath) */
+    /* Table mode: "table:x|-2|-1|0|1|2\ny|____|____|____|____|____" */
     if (tpl.indexOf('table:') === 0) {
       var tblRows = tpl.slice(6).split('\\n');
       var h = '<table class="pp-answer-table"><tbody>';
@@ -1627,10 +1687,7 @@ function _ppAnswerLine(prefix, suffix, tpl) {
       }
       return h + '</tbody></table>';
     }
-    /* Generic template mode: replace each ____ with a dotted blank span
-       Support \n for multi-line answer areas (e.g. "a = ____\nb = ____\nc = ____")
-       Trailing blank on each line uses flex stretch (right-aligned dots);
-       non-trailing blanks use inline fixed-width */
+    /* Generic template mode */
     var lines = tpl.split('\\n');
     var multiLine = lines.length > 1;
     var out = multiLine ? '<div class="pp-answer-rows">' : '';
@@ -1638,7 +1695,6 @@ function _ppAnswerLine(prefix, suffix, tpl) {
       var line = lines[li];
       var endsWithBlank = /_{3,}\s*$/.test(line);
       if (endsWithBlank) {
-        /* Strip trailing blank, render remaining inline blanks, then flex dots at end */
         var stripped = line.replace(/_{3,}\s*$/, '');
         var before = stripped.replace(/_{3,}/g, '<span class="pp-answer-blank"></span>');
         out += '<div class="pp-answer-line">';
@@ -1646,7 +1702,6 @@ function _ppAnswerLine(prefix, suffix, tpl) {
         out += '<span class="pp-answer-dots"></span>';
         out += '</div>';
       } else {
-        /* No trailing blank: all blanks are inline fixed-width */
         var rendered = line.replace(/_{3,}/g, '<span class="pp-answer-blank"></span>');
         out += '<div class="pp-answer-line pp-answer-tpl">' + rendered + '</div>';
       }
@@ -1662,16 +1717,19 @@ function _ppAnswerLine(prefix, suffix, tpl) {
 }
 
 function _ppRenderWithMarks(q, showAnswerLine) {
+  /* New block-based path (v4.4.0) */
+  if (q.stem) {
+    return _ppRenderWithMarksBlocks(q, showAnswerLine);
+  }
+  /* Legacy fallback: tex-based rendering */
   var html = _ppRenderTex(q);
   if (!q.parts || !q.parts.length) {
-    /* No parts — show total marks right-aligned at end (skip if marks=0) */
     var totalMarksHtml = (q.marks > 0)
       ? '<span class="pp-marks-right">[' + q.marks + ']</span>' : '';
     var ansLine = showAnswerLine ? _ppAnswerLine(q.ansPrefix, q.ansSuffix, q.ansTpl) : '';
     return '<div class="pp-part-block"><div class="pp-part-content">' + html +
       ansLine + '</div>' + totalMarksHtml + '</div>';
   }
-  /* Build parts lookup: "(a)" → part object */
   var partsMap = {};
   for (var i = 0; i < q.parts.length; i++) {
     partsMap[q.parts[i].label.toLowerCase()] = q.parts[i];
@@ -1679,43 +1737,64 @@ function _ppRenderWithMarks(q, showAnswerLine) {
   return _ppInsertPartMarks(html, partsMap, showAnswerLine);
 }
 
+/* Block-based rendering path (v4.4.0) */
+function _ppRenderWithMarksBlocks(q, showAnswerLine) {
+  var stemHtml = _ppRenderBlocks(q.stem, q);
+  if (!q.parts || !q.parts.length) {
+    /* No parts — stem + answer line + total marks */
+    var totalMarksHtml = (q.marks > 0)
+      ? '<span class="pp-marks-right">[' + q.marks + ']</span>' : '';
+    var ansLine = showAnswerLine ? _ppAnswerLine(q.answer || q.ansPrefix, q.ansSuffix, q.ansTpl) : '';
+    return '<div class="pp-part-block"><div class="pp-part-content">' + stemHtml +
+      ansLine + '</div>' + totalMarksHtml + '</div>';
+  }
+  /* Has parts — render stem intro + each part with content + answer line */
+  var result = '';
+  if (stemHtml) result += '<div class="pp-part-intro">' + stemHtml + '</div>';
+  for (var i = 0; i < q.parts.length; i++) {
+    var pt = q.parts[i];
+    var marks = pt.marks || 0;
+    var marksHtml = (marks > 0)
+      ? '<span class="pp-marks-right">[' + marks + ']</span>' : '';
+    var contentHtml = _ppRenderBlocks(pt.content, q);
+    /* Part-level extra content from editor overrides (v4.3.4) */
+    if (pt.tex) contentHtml += '<div class="pp-part-extra-tex">' + _ppRenderTexStr(pt.tex) + '</div>';
+    if (pt.table) contentHtml += '<div class="pp-part-extra-table">' + _ppConvertTabularRuntime(pt.table) + '</div>';
+    if (pt.figUrl) contentHtml += '<div class="pp-figures"><img class="pp-fig" src="' + pt.figUrl + '?v=' + APP_VERSION + '" alt="Part diagram" loading="lazy"></div>';
+    var ansLine = showAnswerLine ? _ppAnswerLine(pt.answer || pt.ansPrefix, pt.ansSuffix, pt.ansTpl) : '';
+    result += '<div class="pp-part-block"><span class="pp-part-label">' + pt.label + '</span>' +
+      '<div class="pp-part-content">' + contentHtml + ansLine + '</div>' + marksHtml + '</div>';
+  }
+  return result;
+}
+
+/* Legacy regex-based part splitting (kept for backward compat with tex-only data) */
 function _ppInsertPartMarks(html, partsMap, showAnswerLine) {
   var labels = Object.keys(partsMap);
   if (!labels.length) return html;
-  /* Build dynamic regex matching only labels present in partsMap */
-  /* Require label at line start (or after newline) to avoid matching f(x), g(x) etc. */
   var escaped = labels.map(function(l) {
     return l.replace(/[()]/g, '\\$&');
   });
   var re = new RegExp('((?:^|\\n)\\s*(' + escaped.join('|') + '))', 'gi');
   var parts = html.split(re);
-  /* split with capture groups: [intro, fullMatch, labelOnly, content, fullMatch, labelOnly, content, ...] */
-  /* Each match produces 2 capture groups, so stride is 3 */
   if (parts.length < 4) {
-    /* No part labels found in text — just show as-is */
     return html;
   }
   var result = '';
-  /* First segment is the intro (before any part label) */
   var intro = parts[0].replace(/\s+$/, '');
   if (intro) result += '<div class="pp-part-intro">' + intro + '</div>';
-  /* Process groups: fullMatch(i) + labelOnly(i+1) + content(i+2) */
   for (var i = 1; i < parts.length; i += 3) {
-    var label = parts[i + 1]; /* the clean label like "(a)" */
+    var label = parts[i + 1];
     var content = (i + 2 < parts.length) ? parts[i + 2] : '';
     var pt = partsMap[label.toLowerCase()];
     var marks = pt ? pt.marks : 0;
-    /* marks=0 means "not extracted" — don't display [0] */
     var marksHtml = (marks != null && marks > 0)
       ? '<span class="pp-marks-right">[' + marks + ']</span>' : '';
-    /* Trim trailing whitespace from content */
     content = content.replace(/\s+$/, '');
-    /* Part-level extra content: tex, table, figure (v4.3.4) */
     var partExtra = '';
-    if (pt && pt.tex) partExtra += '<div class="pp-part-extra-tex">' + _ppRenderTex(pt.tex) + '</div>';
+    if (pt && pt.tex) partExtra += '<div class="pp-part-extra-tex">' + _ppRenderTexStr(pt.tex) + '</div>';
     if (pt && pt.table) partExtra += '<div class="pp-part-extra-table">' + _ppConvertTabularRuntime(pt.table) + '</div>';
     if (pt && pt.figUrl) partExtra += '<div class="pp-figures"><img class="pp-fig" src="' + pt.figUrl + '?v=' + APP_VERSION + '" alt="Part diagram" loading="lazy"></div>';
-    /* Answer line with per-part prefix/suffix (e.g. "x=" prefix, "cm" suffix) */
     var ansLine = showAnswerLine ? _ppAnswerLine(pt && pt.ansPrefix, pt && pt.ansSuffix, pt && pt.ansTpl) : '';
     result += '<div class="pp-part-block"><span class="pp-part-label">' + label + '</span>' +
       '<div class="pp-part-content">' + content + partExtra + ansLine + '</div>' + marksHtml + '</div>';
@@ -1724,6 +1803,15 @@ function _ppInsertPartMarks(html, partsMap, showAnswerLine) {
 }
 
 function _ppRenderFigures(q) {
+  /* For block-based questions, figures are embedded in stem blocks — skip legacy rendering
+     unless hasFigure is set but no figure block exists in stem */
+  if (q.stem) {
+    var hasFigBlock = false;
+    for (var i = 0; i < q.stem.length; i++) {
+      if (q.stem[i].type === 'figure') { hasFigBlock = true; break; }
+    }
+    if (hasFigBlock) return '';
+  }
   var figs = _ppFigures[q.id];
   if (figs && figs.length > 0) {
     var h = '<div class="pp-figures">';
@@ -1881,17 +1969,6 @@ function _ppRenderBodyModule(q, showAnsLine) {
   return h;
 }
 
-function _ppRenderAnswersModule(q) {
-  if (_ppSession.mode !== 'practice') return '';
-  var h = '<div class="pp-ms-toggle" role="button" tabindex="0" data-action="toggleMS">';
-  h += '<span id="pp-ms-arrow">\u25b6</span> ' + t('Answers', '\u7b54\u6848');
-  h += '</div>';
-  h += '<div class="pp-ms-content" id="pp-ms-body">';
-  h += '<div class="pp-ms-placeholder">';
-  h += t('Coming soon \u2014 use self-assessment for now', '\u5373\u5c06\u63a8\u51fa\uff0c\u8bf7\u5148\u81ea\u8bc4');
-  h += '</div></div>';
-  return h;
-}
 
 function _ppRenderVocabModule(q) {
   if (_ppSession.mode !== 'practice' || !q.s) return '';
@@ -2031,13 +2108,14 @@ function renderPPCard() {
   }
 
   /* Render card modules in configurable order (v4.3.3) */
-  var _ppDefaultModOrder = ['body', 'answers', 'vocab', 'kp'];
+  var _ppDefaultModOrder = ['body', 'vocab', 'kp'];
   var _modOrder = q.moduleOrder || _ppDefaultModOrder;
+  /* Filter out legacy 'answers' module from old moduleOrder overrides */
+  _modOrder = _modOrder.filter(function(m) { return m !== 'answers'; });
   var _showAnsLine = _ppSession.mode !== 'exam';
   for (var _moi = 0; _moi < _modOrder.length; _moi++) {
     switch (_modOrder[_moi]) {
       case 'body':    html += _ppRenderBodyModule(q, _showAnsLine); break;
-      case 'answers': html += _ppRenderAnswersModule(q); break;
       case 'vocab':   html += _ppRenderVocabModule(q); break;
       case 'kp':      html += _ppRenderKPModule(q); break;
     }
@@ -2114,8 +2192,7 @@ function renderPPCard() {
       var target = e.target.closest('[data-action]');
       if (!target) return;
       var action = target.dataset.action;
-      if (action === 'toggleMS') ppToggleMS();
-      else if (action === 'toggleVocab') ppToggleVocab();
+      if (action === 'toggleVocab') ppToggleVocab();
       else if (action === 'toggleKP') ppToggleKP();
       else if (action === 'toggleMarkBody') ppToggleMarkBody(Number(target.dataset.idx));
       else if (action === 'recoverVocab') openDeck(Number(target.dataset.levelIdx));
@@ -2141,13 +2218,6 @@ function renderPPCard() {
   }
 }
 
-function ppToggleMS() {
-  var body = document.getElementById('pp-ms-body');
-  var arrow = document.getElementById('pp-ms-arrow');
-  if (!body) return;
-  body.classList.toggle('show');
-  if (arrow) arrow.textContent = body.classList.contains('show') ? '\u25bc' : '\u25b6';
-}
 
 function ppRate(level) {
   if (!_ppSession || _ppSession.mode !== 'practice') return;
@@ -3202,9 +3272,9 @@ function editPastPaperQ(qIdx) {
   html += '</div></div>';
 
   /* Module order editor (v4.3.3) */
-  var DEFAULT_MODULE_ORDER = ['body', 'answers', 'vocab', 'kp'];
+  var DEFAULT_MODULE_ORDER = ['body', 'vocab', 'kp'];
   var _edModuleOrder = q.moduleOrder || DEFAULT_MODULE_ORDER;
-  var _modLabels = { body: '\ud83d\udcdd Question Body', answers: '\ud83d\udccb Answers', vocab: '\ud83d\udcd6 Related Vocabulary', kp: '\ud83e\udde0 Knowledge Points' };
+  var _modLabels = { body: '\ud83d\udcdd Question Body', vocab: '\ud83d\udcd6 Related Vocabulary', kp: '\ud83e\udde0 Knowledge Points' };
   html += '<label class="settings-label" style="margin-top:10px">' + t('Module Order', '模块排序') + '</label>';
   html += '<div class="pp-ed-module-list" id="pp-ed-modules">';
   for (var _mi = 0; _mi < _edModuleOrder.length; _mi++) {
@@ -3522,7 +3592,7 @@ function _ppEdRollback(qid, idx) {
         var f = fields[fi];
         if (rollbackData[f] !== undefined) q[f] = rollbackData[f];
       }
-      if (rollbackData.tex !== undefined) delete q.texHtml;
+      if (rollbackData.tex !== undefined) { delete q.texHtml; delete q.stem; }
     }
     _pqEditsCache[_ppSession.board] = null;
     hideModal();
@@ -3552,7 +3622,7 @@ function submitPPEdit(qid) {
   var newAnsSuffix = E('pp-ed-ans-suffix') ? E('pp-ed-ans-suffix').value.trim() : '';
   var newAnsTpl = E('pp-ed-ans-tpl') ? E('pp-ed-ans-tpl').value.trim() : '';
   /* Module order */
-  var DEFAULT_MODULE_ORDER = ['body', 'answers', 'vocab', 'kp'];
+  var DEFAULT_MODULE_ORDER = ['body', 'vocab', 'kp'];
   var newModuleOrder = _ppEdCollectModuleOrder();
 
   /* Build diff description */
@@ -3598,7 +3668,7 @@ function submitPPEdit(qid) {
 
     /* Apply change locally for current session */
     q.tex = newTex;
-    if (editData.tex !== undefined) delete q.texHtml; /* force re-render from edited tex */
+    if (editData.tex !== undefined) { delete q.texHtml; delete q.stem; } /* force re-render from edited tex */
     q.marks = newMarks;
     q.d = newDiff;
     q.g = newGroup;
