@@ -22,6 +22,8 @@ function buildTutorContext() {
   var weakSections = profile ? (profile.weakSections || []) : [];
   var weakType = typeof inferWeakType === 'function' && profile ? inferWeakType(profile) : null;
 
+  var errorPatterns = typeof getDominantErrorPatterns === 'function' ? getDominantErrorPatterns() : [];
+
   return {
     profile: profile,
     goals: goals,
@@ -32,6 +34,7 @@ function buildTutorContext() {
     mastery: mastery,
     weakSections: weakSections,
     weakType: weakType,
+    errorPatterns: errorPatterns,
     hasData: !!(profile && (profile.activeDays > 0 || profile.totalWords > 0))
   };
 }
@@ -69,9 +72,23 @@ function getPlanTutorMessage() {
 
   /* Streak encouragement */
   if (ctx.streak >= 3 && ctx.streak < 7) {
-    lines.push(t('Nice ' + ctx.streak + '-day streak! A few more days to build a strong habit.', '不错的 ' + ctx.streak + ' 天连续！再坚持几天就能养成好习惯。'));
+    lines.push(t('Nice ' + ctx.streak + '-day streak! A few more days to build a strong habit.', '\u4e0d\u9519\u7684 ' + ctx.streak + ' \u5929\u8fde\u7eed\uff01\u518d\u575a\u6301\u51e0\u5929\u5c31\u80fd\u517b\u6210\u597d\u4e60\u60ef\u3002'));
   } else if (ctx.streak >= 7) {
-    lines.push(t('Amazing ' + ctx.streak + "-day streak! You're building a great habit.", '了不起的 ' + ctx.streak + ' 天连续！你正在养成好习惯。'));
+    lines.push(t('Amazing ' + ctx.streak + "-day streak! You're building a great habit.", '\u4e86\u4e0d\u8d77\u7684 ' + ctx.streak + ' \u5929\u8fde\u7eed\uff01\u4f60\u6b63\u5728\u517b\u6210\u597d\u4e60\u60ef\u3002'));
+  }
+
+  /* Error pattern awareness (v4.2.0) */
+  if (ctx.errorPatterns && ctx.errorPatterns.length > 0) {
+    var _epKey = ctx.errorPatterns[0].key;
+    if (_epKey === 'concept-gap') {
+      lines.push(t('Your recent mistakes are more conceptual. Slow down and rebuild the idea before retrying.', '\u4f60\u6700\u8fd1\u7684\u9519\u8bef\u66f4\u504f\u6982\u5ff5\u95ee\u9898\u3002\u5148\u8865\u6982\u5ff5\uff0c\u518d\u56de\u9898\u76ee\u3002'));
+    } else if (_epKey === 'careless-reading') {
+      lines.push(t('Your recent mistakes often come from reading too fast. Re-read the question before solving.', '\u4f60\u6700\u8fd1\u7684\u9519\u8bef\u5e38\u51fa\u5728\u8bfb\u9898\u8fc7\u5feb\u3002\u505a\u9898\u524d\u5148\u5b8c\u6574\u91cd\u8bfb\u9898\u5e72\u3002'));
+    } else if (_epKey === 'vocab-misunderstanding') {
+      lines.push(t('Vocabulary seems to be a recurring issue. Review key terms before each session.', '\u8bcd\u6c47\u7406\u89e3\u4f3c\u4e4e\u662f\u53cd\u590d\u51fa\u73b0\u7684\u95ee\u9898\u3002\u6bcf\u6b21\u590d\u67e5\u524d\u5148\u590d\u4e60\u5173\u952e\u8bcd\u3002'));
+    } else if (_epKey === 'careless-calculation') {
+      lines.push(t('Calculation errors are frequent. Check your work line by line.', '\u8ba1\u7b97\u9519\u8bef\u8f83\u591a\u3002\u9010\u6b65\u68c0\u67e5\u4f60\u7684\u8ba1\u7b97\u8fc7\u7a0b\u3002'));
+    }
   }
 
   if (lines.length === 0) return null;

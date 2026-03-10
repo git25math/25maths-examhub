@@ -462,6 +462,16 @@
 ## v3.3 Print Repair Sheet [DONE]
 - [x] **单题打印修复单 (v3.3.0)**: worksheet.js 新窗口 A4 打印（题目+词汇+KP+留白+纠错+订正），从 Recovery Pack 触发
 
+## v4.2 Error Pattern Memory [DONE]
+- [x] **Error Pattern Engine (v4.2.0)**: 5 类错误模式推断 + 全局/section 计数 + recent 日志
+- [x] **Pattern Inference**: vocab-misunderstanding/concept-gap/method-confusion/careless-reading/careless-calculation
+- [x] **Dominant Pattern Query**: 超阈值(30%)主要模式输出，供 Tutor/Coach/Profile 消费
+- [x] **Practice Integration**: ppRate(needs_work) 自动推断 + 记录
+- [x] **Profile Integration**: dominantPatterns 字段 + Profile Card 胶囊标签
+- [x] **Tutor Integration**: Plan Tutor 根据 dominant pattern 输出针对性建议
+- [x] **Coach Integration**: Mistake Coach 根据 dominant pattern 前置额外步骤
+- [x] **Worksheet Integration**: Print Repair Sheet "Likely Error Pattern" 区块
+
 ## v4.0 AI Tutor Layer + Mistake Correction Coach [DONE]
 - [x] **AI Tutor (v4.0.0)**: 规则式引导引擎，4 个触点（Plan/Session/Pack/Goals），6 个消息生成器
 - [x] **Tutor Context**: profile/goals/backlog/streak/trend 聚合上下文

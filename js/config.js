@@ -367,7 +367,7 @@ function isSuperAdmin() {
 }
 
 /* App version */
-var APP_VERSION = 'v4.0.0';
+var APP_VERSION = 'v4.2.0';
 
 /* AI Tutor configuration */
 var AI_TUTOR_CONFIG = {
@@ -385,6 +385,13 @@ var MISTAKE_COACH_CONFIG = {
   enabled: true,
   maxSteps: 4,
   coachIcon: '\ud83c\udfaf'
+};
+
+/* Error Pattern Memory configuration */
+var ERROR_PATTERN_CONFIG = {
+  recentWindow: 20,
+  dominantThreshold: 0.3,
+  maxPatternTagsOnUI: 2
 };
 
 /* Learning Goals configuration */

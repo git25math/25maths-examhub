@@ -21,6 +21,9 @@ function rebuildStudentProfile() {
   var weak = _computeProfileWeakSections();
   var trend = _computeProfileTrend();
 
+  /* Dominant error patterns (v4.2.0) */
+  var dominantPatterns = typeof getDominantErrorPatterns === 'function' ? getDominantErrorPatterns() : [];
+
   _profileCache = {
     accuracy: stats.accuracy,
     activeDays: stats.activeDays,
@@ -29,6 +32,7 @@ function rebuildStudentProfile() {
     recovery: recovery,
     weakSections: weak,
     trend: trend,
+    dominantPatterns: dominantPatterns,
     ts: Date.now()
   };
   _profileCacheTs = Date.now();
@@ -287,6 +291,14 @@ function renderStudentProfileCard() {
     html += _profileMetric(t('Active Days', '\u6D3B\u8DC3\u5929\u6570'), '' + profile.activeDays);
   }
   html += '</div>';
+
+  /* Error pattern pills (v4.2.0) */
+  if (profile.dominantPatterns && profile.dominantPatterns.length > 0 && typeof renderErrorPatternPills === 'function') {
+    html += '<div class="student-profile-weak">';
+    html += '<div class="profile-weak-label">' + t('Error patterns', '\u9519\u8bef\u6a21\u5f0f') + '</div>';
+    html += renderErrorPatternPills(profile.dominantPatterns);
+    html += '</div>';
+  }
 
   /* Weak sections pills */
   if (profile.weakSections.length > 0) {

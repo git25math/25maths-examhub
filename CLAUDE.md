@@ -4,7 +4,7 @@ Bilingual math vocabulary learning platform (双语数学词汇学习平台) for
 
 - **Live**: https://git25math.github.io/25maths-keywords/
 - **Repo**: https://github.com/git25math/25maths-keywords
-- **Version**: v4.0.0 (2026-03-10)
+- **Version**: v4.2.0 (2026-03-10)
 - **Scale**: 3 boards, 275 levels + 72 CIE sections + 39 Edexcel sections, 2,200 words + 5,962 真题 + 3,578 练习题
 - **Supabase**: shared with 25maths-website (ref: `jjjigohjvmyewasmmmyf`)
 - **See also**: [CHANGELOG.md](CHANGELOG.md) | [ROADMAP.md](ROADMAP.md)
@@ -31,7 +31,7 @@ python3 scripts/extract-vocab.py
 python3 scripts/build-single.py
 ```
 
-## JS Load Order (29 files)
+## JS Load Order (30 files)
 
 Scripts are loaded via `<script>` tags in this order (each depends on previous):
 1. config.js — App constants, theme tokens, global state, breakpoint detection
@@ -57,12 +57,13 @@ Scripts are loaded via `<script>` tags in this order (each depends on previous):
 21. student-profile.js — Student Recovery Profile (accuracy/mastery/trend/weak sections)
 22. learning-goals.js — Learning Goals (system-generated goals + progress + scheduler bias + completion UX)
 23. ai-tutor.js — Rule-based AI Tutor (contextual guidance at 4 touchpoints)
-24. mistake-coach.js — Mistake Correction Coach (step-by-step correction at Recovery Pack + Print)
-25. recovery-session.js — Recovery Session orchestration (scheduler → smart → legacy fallback)
-26. admin.js — Teacher management (classes, students, grades, school overview)
-27. vocab-admin.js — Super-admin vocabulary CRUD (vocab_levels table)
-28. homework.js — Homework assignments + notifications + student submissions
-29. app.js — Init, leaderboard, URL deep linking, iOS share recovery
+24. error-patterns.js — Error Pattern Memory (5-type mistake tracking + dominant pattern query)
+25. mistake-coach.js — Mistake Correction Coach (step-by-step correction at Recovery Pack + Print)
+26. recovery-session.js — Recovery Session orchestration (scheduler → smart → legacy fallback)
+27. admin.js — Teacher management (classes, students, grades, school overview)
+28. vocab-admin.js — Super-admin vocabulary CRUD (vocab_levels table)
+29. homework.js — Homework assignments + notifications + student submissions
+30. app.js — Init, leaderboard, URL deep linking, iOS share recovery
 
 ## Layout Architecture
 

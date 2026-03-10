@@ -70,6 +70,27 @@ function buildMistakeCorrectionCoach(q, sectionId, board) {
     zh: '\u590d\u4e60\u5b8c\u6bd5\u540e\uff0c\u4e0d\u770b\u8bc4\u5206\u65b9\u6848\u91cd\u65b0\u5c1d\u8bd5\u8fd9\u9053\u9898\u3002'
   });
 
+  /* Error pattern awareness (v4.2.0): prepend a step based on dominant pattern */
+  if (typeof getDominantErrorPatterns === 'function') {
+    try {
+      var _epDom = getDominantErrorPatterns(sectionId);
+      if (_epDom && _epDom.length > 0) {
+        var _epKey = _epDom[0].key;
+        var _epStep = null;
+        if (_epKey === 'careless-reading') {
+          _epStep = { rule: 'pattern-reading', icon: '\ud83d\udc41\ufe0f', en: 'Re-read the question slowly and underline key quantities.', zh: '\u6162\u901f\u91cd\u8bfb\u9898\u76ee\uff0c\u5e76\u5708\u51fa\u5173\u952e\u4fe1\u606f\u3002' };
+        } else if (_epKey === 'careless-calculation') {
+          _epStep = { rule: 'pattern-calc', icon: '\ud83e\uddee', en: 'Check your calculation line by line before finalizing.', zh: '\u7b54\u6848\u5b8c\u6210\u524d\uff0c\u9010\u6b65\u68c0\u67e5\u8ba1\u7b97\u8fc7\u7a0b\u3002' };
+        } else if (_epKey === 'vocab-misunderstanding' && !steps.some(function(s) { return s.rule === 'vocab-gap'; })) {
+          _epStep = { rule: 'pattern-vocab', icon: '\ud83d\udcd6', en: 'Your error pattern suggests vocabulary issues. Double-check key terms.', zh: '\u4f60\u7684\u9519\u8bef\u6a21\u5f0f\u663e\u793a\u8bcd\u6c47\u95ee\u9898\u3002\u518d\u6b21\u786e\u8ba4\u5173\u952e\u672f\u8bed\u3002' };
+        }
+        if (_epStep) {
+          steps.unshift(_epStep);
+        }
+      }
+    } catch (e) {}
+  }
+
   if (steps.length === 0) return null;
   return {
     questionId: q.id || '',

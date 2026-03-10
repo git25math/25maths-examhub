@@ -1,5 +1,53 @@
 # Changelog
 
+## [4.2.0] - 2026-03-10 — Error Pattern Memory
+
+### Error Pattern 引擎（js/error-patterns.js 新增）
+- `inferErrorPattern(q, recovery, meta)` — 5 类错误模式推断规则引擎
+  - vocab-misunderstanding（弱词汇明显）
+  - concept-gap（弱KP明显）
+  - method-confusion（无明显映射/兜底）
+  - careless-reading（section 不弱但反复错）
+  - careless-calculation（计算信号）
+- `recordErrorPattern(q, sectionId, pattern)` — 全局/section 计数 + recent 日志（窗口 20）
+- `getDominantErrorPatterns(sectionId)` — 超过阈值(30%)的主要模式 + 按频次排序
+- `getErrorPatternLabel/Labels()` — 中英文标签映射
+- `renderErrorPatternPills(patterns)` — UI 胶囊标签渲染
+
+### 持久化（js/storage.js）
+- `getErrorPatternState()` / `setErrorPatternState()` — 存储在 wmatch_v3.errorPatternMemory
+
+### 集成触点
+- **practice.js**: ppRate('needs_work') 时自动推断 + 记录 error pattern
+- **student-profile.js**: rebuildStudentProfile 增加 dominantPatterns 字段 + Profile Card 显示
+- **ai-tutor.js**: buildTutorContext 增加 errorPatterns + Plan Tutor 根据 dominant pattern 输出针对性建议
+- **mistake-coach.js**: Coach 根据 dominant pattern 前置额外步骤（reading/calc/vocab）
+- **worksheet.js**: Print Repair Sheet 增加 "Likely Error Pattern" 区块
+
+### CSS（css/style.css）
+- `.error-pattern-pills` + `.error-pattern-pill` 胶囊样式 + 暗色适配
+
+### 配置（js/config.js）
+- `ERROR_PATTERN_CONFIG` — recentWindow/dominantThreshold/maxPatternTagsOnUI
+- `APP_VERSION` → v4.2.0
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| js/config.js | +ERROR_PATTERN_CONFIG, version bump |
+| js/storage.js | +getErrorPatternState/setErrorPatternState |
+| js/error-patterns.js | **新增** ~140 行（推断/记录/查询/渲染） |
+| js/practice.js | +ppRate needs_work 时记录 error pattern |
+| js/student-profile.js | +dominantPatterns 字段 + Profile Card pills |
+| js/ai-tutor.js | +errorPatterns context + pattern-aware tutor |
+| js/mistake-coach.js | +pattern-aware step 前置 |
+| js/worksheet.js | +Likely Error Pattern 打印区块 |
+| css/style.css | +error-pattern-pill 样式 |
+| scripts/minify.sh | +error-patterns.js 加入 bundle |
+| CLAUDE.md | version + JS load order 30 files |
+
+---
+
 ## [4.0.0] - 2026-03-10 — AI Tutor Layer + Mistake Correction Coach
 
 ### AI Tutor 规则式引导（js/ai-tutor.js 新增）

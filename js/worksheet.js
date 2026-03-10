@@ -211,6 +211,23 @@ function renderRepairWorksheet(ws) {
   html += '<div class="ws-working"></div>';
   html += '</div>';
 
+  /* ── Likely Error Pattern (v4.2.0) ── */
+  if (typeof getDominantErrorPatterns === 'function') {
+    try {
+      var _wsPatterns = getDominantErrorPatterns(ws.sectionId);
+      if (_wsPatterns && _wsPatterns.length > 0) {
+        html += '<div class="ws-section">';
+        html += '<div class="ws-section-title">\ud83d\udccd Likely Error Pattern</div>';
+        for (var _epi = 0; _epi < _wsPatterns.length; _epi++) {
+          var _epInfo = typeof getErrorPatternLabel === 'function' ? getErrorPatternLabel(_wsPatterns[_epi].key) : null;
+          var _epLabel = _epInfo ? _epInfo.en : _wsPatterns[_epi].key;
+          html += '<div class="ws-item"><span class="ws-item-word">\u2022 ' + esc(_epLabel) + '</span></div>';
+        }
+        html += '</div>';
+      }
+    } catch (e) {}
+  }
+
   /* ── Error Analysis ── */
   html += '<div class="ws-section">';
   html += '<div class="ws-section-title">Error Analysis</div>';

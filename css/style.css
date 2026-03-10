@@ -4536,3 +4536,8 @@ input { font-family: inherit; }
 .mistake-coach-icon { flex-shrink:0; }
 .mistake-coach-text { flex:1; }
 [data-theme="dark"] .mistake-coach-block { background:var(--c-surface, #1E1E2E); }
+
+/* ═══ ERROR PATTERN PILLS (v4.2.0) ═══ */
+.error-pattern-pills { margin-top:4px; display:flex; flex-wrap:wrap; gap:4px; }
+.error-pattern-pill { padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background:var(--c-warning-bg, #FEF3C7); color:var(--c-warning, #D97706); }
+[data-theme="dark"] .error-pattern-pill { background:var(--c-surface, #1E1E2E); color:var(--c-warning, #F59E0B); }

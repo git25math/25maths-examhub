@@ -744,6 +744,26 @@ function setLearningGoalsState(next) {
   writeS(s);
 }
 
+/* ═══ ERROR PATTERN MEMORY PERSISTENCE (v4.2.0) ═══ */
+function getErrorPatternState() {
+  var s = loadS();
+  if (!s.errorPatternMemory) {
+    s.errorPatternMemory = {
+      updatedAt: '',
+      global: {},
+      bySection: {},
+      recent: []
+    };
+    writeS(s);
+  }
+  return s.errorPatternMemory;
+}
+function setErrorPatternState(next) {
+  var s = loadS();
+  s.errorPatternMemory = next;
+  writeS(s);
+}
+
 /* ═══ LEARNING HISTORY ═══ */
 function getHistory() {
   return loadS().history || [];
