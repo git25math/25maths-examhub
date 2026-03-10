@@ -1578,20 +1578,31 @@ function _ppRenderTex(texOrQ) {
 
 /* ═══ Render question with right-aligned marks (PDF-style) ═══ */
 
+/* Build answer line HTML with optional prefix/suffix (v4.3.2)
+   Data fields: part.ansPrefix ("x="), part.ansSuffix ("cm")
+   No-parts questions: q.ansPrefix, q.ansSuffix */
+function _ppAnswerLine(prefix, suffix) {
+  var h = '<div class="pp-answer-line">';
+  if (prefix) h += '<span class="pp-answer-prefix">' + prefix + '</span>';
+  h += '<span class="pp-answer-dots"></span>';
+  if (suffix) h += '<span class="pp-answer-suffix">' + suffix + '</span>';
+  return h + '</div>';
+}
+
 function _ppRenderWithMarks(q, showAnswerLine) {
   var html = _ppRenderTex(q);
-  var ansLine = showAnswerLine ? '<div class="pp-answer-line"><span class="pp-answer-dots"></span></div>' : '';
   if (!q.parts || !q.parts.length) {
     /* No parts — show total marks right-aligned at end (skip if marks=0) */
     var totalMarksHtml = (q.marks > 0)
       ? '<span class="pp-marks-right">[' + q.marks + ']</span>' : '';
+    var ansLine = showAnswerLine ? _ppAnswerLine(q.ansPrefix, q.ansSuffix) : '';
     return '<div class="pp-part-block"><div class="pp-part-content">' + html +
       ansLine + '</div>' + totalMarksHtml + '</div>';
   }
-  /* Build parts lookup: "(a)" → marks */
+  /* Build parts lookup: "(a)" → part object */
   var partsMap = {};
   for (var i = 0; i < q.parts.length; i++) {
-    partsMap[q.parts[i].label.toLowerCase()] = q.parts[i].marks;
+    partsMap[q.parts[i].label.toLowerCase()] = q.parts[i];
   }
   return _ppInsertPartMarks(html, partsMap, showAnswerLine);
 }
@@ -1599,7 +1610,6 @@ function _ppRenderWithMarks(q, showAnswerLine) {
 function _ppInsertPartMarks(html, partsMap, showAnswerLine) {
   var labels = Object.keys(partsMap);
   if (!labels.length) return html;
-  var ansLine = showAnswerLine ? '<div class="pp-answer-line"><span class="pp-answer-dots"></span></div>' : '';
   /* Build dynamic regex matching only labels present in partsMap */
   /* Require label at line start (or after newline) to avoid matching f(x), g(x) etc. */
   var escaped = labels.map(function(l) {
@@ -1621,12 +1631,15 @@ function _ppInsertPartMarks(html, partsMap, showAnswerLine) {
   for (var i = 1; i < parts.length; i += 3) {
     var label = parts[i + 1]; /* the clean label like "(a)" */
     var content = (i + 2 < parts.length) ? parts[i + 2] : '';
-    var marks = partsMap[label.toLowerCase()];
+    var pt = partsMap[label.toLowerCase()];
+    var marks = pt ? pt.marks : 0;
     /* marks=0 means "not extracted" — don't display [0] */
     var marksHtml = (marks != null && marks > 0)
       ? '<span class="pp-marks-right">[' + marks + ']</span>' : '';
     /* Trim trailing whitespace from content */
     content = content.replace(/\s+$/, '');
+    /* Answer line with per-part prefix/suffix (e.g. "x=" prefix, "cm" suffix) */
+    var ansLine = showAnswerLine ? _ppAnswerLine(pt && pt.ansPrefix, pt && pt.ansSuffix) : '';
     result += '<div class="pp-part-block"><span class="pp-part-label">' + label + '</span>' +
       '<div class="pp-part-content">' + content + ansLine + '</div>' + marksHtml + '</div>';
   }

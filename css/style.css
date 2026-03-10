@@ -4458,6 +4458,7 @@ input { font-family: inherit; }
 .pp-marks-right { margin-left:auto; align-self:flex-start; font-weight:700; font-size:13px; color:var(--c-text2); font-family:var(--font-mono); white-space:nowrap; padding-left:12px; }
 /* Answer line (v4.3.2) */
 .pp-answer-line { display:flex; align-items:baseline; margin-top:6px; gap:4px; }
+.pp-answer-prefix, .pp-answer-suffix { font-size:13px; font-weight:600; color:var(--c-text2); white-space:nowrap; }
 .pp-answer-dots { flex:1; border-bottom:1px dotted var(--c-muted); min-width:60px; height:1.2em; }
 .pp-figure-placeholder { border:2px dashed var(--c-border); border-radius:var(--r); padding:20px; text-align:center; color:var(--c-muted); margin:12px 0; font-size:13px; }
 .pp-figure-placeholder a { color:var(--c-primary); text-decoration:underline; }
