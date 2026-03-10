@@ -21,8 +21,14 @@ function rebuildStudentProfile() {
   var weak = _computeProfileWeakSections();
   var trend = _computeProfileTrend();
 
-  /* Dominant error patterns (v4.2.0) */
-  var dominantPatterns = typeof getDominantErrorPatterns === 'function' ? getDominantErrorPatterns() : [];
+  /* Error pattern display (v4.3.0: structured selectors) */
+  var epDisplay = null;
+  try {
+    if (typeof getErrorPatternState === 'function' && typeof getDisplayPatterns === 'function') {
+      epDisplay = getDisplayPatterns(getErrorPatternState());
+    }
+  } catch (e) {}
+  var dominantPatterns = epDisplay ? epDisplay.persistent : (typeof getDominantErrorPatterns === 'function' ? getDominantErrorPatterns() : []);
 
   _profileCache = {
     accuracy: stats.accuracy,
@@ -33,6 +39,7 @@ function rebuildStudentProfile() {
     weakSections: weak,
     trend: trend,
     dominantPatterns: dominantPatterns,
+    epDisplay: epDisplay,
     ts: Date.now()
   };
   _profileCacheTs = Date.now();
@@ -292,12 +299,26 @@ function renderStudentProfileCard() {
   }
   html += '</div>';
 
-  /* Error pattern pills (v4.2.0) */
-  if (profile.dominantPatterns && profile.dominantPatterns.length > 0 && typeof renderErrorPatternPills === 'function') {
-    html += '<div class="student-profile-weak">';
-    html += '<div class="profile-weak-label">' + t('Error patterns', '\u9519\u8bef\u6a21\u5f0f') + '</div>';
-    html += renderErrorPatternPills(profile.dominantPatterns);
-    html += '</div>';
+  /* Error pattern pills (v4.3.0: persistent + recent trend) */
+  if (typeof renderErrorPatternPills === 'function') {
+    var _epd = profile.epDisplay;
+    var _epPills = _epd ? _epd.persistent.slice(0, 2) : (profile.dominantPatterns || []);
+    if (_epPills.length > 0) {
+      html += '<div class="student-profile-weak">';
+      html += '<div class="profile-weak-label">' + t('Error patterns', '\u9519\u8bef\u6a21\u5f0f') + '</div>';
+      html += renderErrorPatternPills(_epPills);
+      html += '</div>';
+    }
+    /* Recent trend (if different from primary persistent) */
+    if (_epd && _epd.recentTrend && (!_epd.primaryPersistent || _epd.recentTrend.key !== _epd.primaryPersistent.key)) {
+      var _rtLabel = typeof getErrorPatternLabel === 'function' ? getErrorPatternLabel(_epd.recentTrend.key) : null;
+      if (_rtLabel) {
+        html += '<div class="student-profile-weak">';
+        html += '<div class="profile-weak-label">' + t('Recent trend', '\u8fd1\u671f\u8d8b\u52bf') + '</div>';
+        html += renderErrorPatternPills([_epd.recentTrend]);
+        html += '</div>';
+      }
+    }
   }
 
   /* Weak sections pills */

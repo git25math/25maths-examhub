@@ -744,16 +744,18 @@ function setLearningGoalsState(next) {
   writeS(s);
 }
 
-/* ═══ ERROR PATTERN MEMORY PERSISTENCE (v4.2.0) ═══ */
+/* ═══ ERROR PATTERN MEMORY PERSISTENCE (v4.3.0: v2 structured state + migration) ═══ */
 function getErrorPatternState() {
   var s = loadS();
   if (!s.errorPatternMemory) {
-    s.errorPatternMemory = {
-      updatedAt: '',
-      global: {},
-      bySection: {},
-      recent: []
-    };
+    s.errorPatternMemory = typeof createDefaultErrorPatternState === 'function'
+      ? createDefaultErrorPatternState()
+      : { version: '2', updatedAt: Date.now(), recentEvents: [], patternStats: {} };
+    writeS(s);
+  }
+  /* Migrate v1 → v2 */
+  if (s.errorPatternMemory && s.errorPatternMemory.version !== '2') {
+    s.errorPatternMemory = _migrateErrorPatternV1toV2(s.errorPatternMemory);
     writeS(s);
   }
   return s.errorPatternMemory;
@@ -762,6 +764,35 @@ function setErrorPatternState(next) {
   var s = loadS();
   s.errorPatternMemory = next;
   writeS(s);
+}
+function _migrateErrorPatternV1toV2(old) {
+  var state = typeof createDefaultErrorPatternState === 'function'
+    ? createDefaultErrorPatternState()
+    : { version: '2', updatedAt: Date.now(), recentEvents: [], patternStats: {} };
+  /* Carry over global counts as initial persistent scores */
+  var g = (old && old.global) || {};
+  for (var k in g) {
+    if (g.hasOwnProperty(k) && state.patternStats[k]) {
+      state.patternStats[k].persistentScore = g[k] || 0;
+      state.patternStats[k].evidenceCount = g[k] || 0;
+      state.patternStats[k].lastSeenAt = Date.now();
+    }
+  }
+  /* Convert old recent array to events */
+  var recent = (old && old.recent) || [];
+  for (var ri = 0; ri < recent.length; ri++) {
+    var r = recent[ri];
+    if (r && r.pattern) {
+      state.recentEvents.push({
+        ts: r.ts || Date.now(),
+        qid: r.qid || '',
+        sectionId: r.sectionId || '',
+        signals: [{ type: r.pattern, weight: 1.0, reason: 'migrated' }]
+      });
+    }
+  }
+  state.updatedAt = Date.now();
+  return state;
 }
 
 /* ═══ LEARNING HISTORY ═══ */

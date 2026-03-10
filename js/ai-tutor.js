@@ -23,6 +23,13 @@ function buildTutorContext() {
   var weakType = typeof inferWeakType === 'function' && profile ? inferWeakType(profile) : null;
 
   var errorPatterns = typeof getDominantErrorPatterns === 'function' ? getDominantErrorPatterns() : [];
+  /* v4.3.0: structured error display with confidence */
+  var epDisplay = null;
+  try {
+    if (typeof getErrorPatternState === 'function' && typeof getDisplayPatterns === 'function') {
+      epDisplay = getDisplayPatterns(getErrorPatternState());
+    }
+  } catch (e) {}
 
   return {
     profile: profile,
@@ -35,6 +42,7 @@ function buildTutorContext() {
     weakSections: weakSections,
     weakType: weakType,
     errorPatterns: errorPatterns,
+    epDisplay: epDisplay,
     hasData: !!(profile && (profile.activeDays > 0 || profile.totalWords > 0))
   };
 }
@@ -77,17 +85,24 @@ function getPlanTutorMessage() {
     lines.push(t('Amazing ' + ctx.streak + "-day streak! You're building a great habit.", '\u4e86\u4e0d\u8d77\u7684 ' + ctx.streak + ' \u5929\u8fde\u7eed\uff01\u4f60\u6b63\u5728\u517b\u6210\u597d\u4e60\u60ef\u3002'));
   }
 
-  /* Error pattern awareness (v4.2.0) */
-  if (ctx.errorPatterns && ctx.errorPatterns.length > 0) {
-    var _epKey = ctx.errorPatterns[0].key;
-    if (_epKey === 'concept-gap') {
-      lines.push(t('Your recent mistakes are more conceptual. Slow down and rebuild the idea before retrying.', '\u4f60\u6700\u8fd1\u7684\u9519\u8bef\u66f4\u504f\u6982\u5ff5\u95ee\u9898\u3002\u5148\u8865\u6982\u5ff5\uff0c\u518d\u56de\u9898\u76ee\u3002'));
-    } else if (_epKey === 'careless-reading') {
-      lines.push(t('Your recent mistakes often come from reading too fast. Re-read the question before solving.', '\u4f60\u6700\u8fd1\u7684\u9519\u8bef\u5e38\u51fa\u5728\u8bfb\u9898\u8fc7\u5feb\u3002\u505a\u9898\u524d\u5148\u5b8c\u6574\u91cd\u8bfb\u9898\u5e72\u3002'));
-    } else if (_epKey === 'vocab-misunderstanding') {
-      lines.push(t('Vocabulary seems to be a recurring issue. Review key terms before each session.', '\u8bcd\u6c47\u7406\u89e3\u4f3c\u4e4e\u662f\u53cd\u590d\u51fa\u73b0\u7684\u95ee\u9898\u3002\u6bcf\u6b21\u590d\u67e5\u524d\u5148\u590d\u4e60\u5173\u952e\u8bcd\u3002'));
-    } else if (_epKey === 'careless-calculation') {
-      lines.push(t('Calculation errors are frequent. Check your work line by line.', '\u8ba1\u7b97\u9519\u8bef\u8f83\u591a\u3002\u9010\u6b65\u68c0\u67e5\u4f60\u7684\u8ba1\u7b97\u8fc7\u7a0b\u3002'));
+  /* Error pattern awareness (v4.3.0: confidence-gated language) */
+  var _epPrimary = ctx.epDisplay ? ctx.epDisplay.primaryPersistent : (ctx.errorPatterns && ctx.errorPatterns[0] ? ctx.errorPatterns[0] : null);
+  if (_epPrimary) {
+    var _epBand = typeof getConfidenceBand === 'function' ? getConfidenceBand(_epPrimary.confidence || 0) : 'low';
+    var _epKey = _epPrimary.key;
+    /* Only show strong language for high confidence; softer for medium; skip low */
+    if (_epBand === 'high') {
+      if (_epKey === 'concept-gap') lines.push(t('Your mistakes often stem from concept gaps. Rebuild the idea before retrying.', '\u4f60\u7684\u9519\u8bef\u5e38\u6e90\u4e8e\u6982\u5ff5\u8584\u5f31\u3002\u5148\u8865\u6982\u5ff5\u518d\u56de\u9898\u3002'));
+      else if (_epKey === 'careless-reading') lines.push(t('Reading errors are a clear pattern. Re-read the question carefully before solving.', '\u8bfb\u9898\u7c97\u5fc3\u5df2\u662f\u660e\u663e\u6a21\u5f0f\u3002\u505a\u9898\u524d\u5148\u5b8c\u6574\u91cd\u8bfb\u3002'));
+      else if (_epKey === 'vocab-misunderstanding') lines.push(t('Vocabulary confusion is a recurring pattern. Review key terms before each session.', '\u8bcd\u6c47\u56f0\u60d1\u662f\u53cd\u590d\u51fa\u73b0\u7684\u6a21\u5f0f\u3002\u6bcf\u6b21\u590d\u67e5\u524d\u5148\u786e\u8ba4\u5173\u952e\u8bcd\u3002'));
+      else if (_epKey === 'careless-calculation') lines.push(t('Calculation slips are a consistent pattern. Check your work line by line.', '\u8ba1\u7b97\u5931\u8bef\u5df2\u662f\u7a33\u5b9a\u6a21\u5f0f\u3002\u9010\u6b65\u68c0\u67e5\u8ba1\u7b97\u8fc7\u7a0b\u3002'));
+      else if (_epKey === 'method-confusion') lines.push(t('Method confusion is a clear pattern. Follow a fixed step-by-step approach.', '\u65b9\u6cd5\u6df7\u4e71\u5df2\u662f\u660e\u663e\u6a21\u5f0f\u3002\u6309\u56fa\u5b9a\u6b65\u9aa4\u89e3\u9898\u3002'));
+    } else if (_epBand === 'medium') {
+      if (_epKey === 'concept-gap') lines.push(t('Your recent mistakes may involve concept gaps. Try reviewing the key idea first.', '\u4f60\u6700\u8fd1\u7684\u9519\u8bef\u53ef\u80fd\u6d89\u53ca\u6982\u5ff5\u8584\u5f31\u3002\u5148\u590d\u4e60\u6838\u5fc3\u6982\u5ff5\u3002'));
+      else if (_epKey === 'careless-reading') lines.push(t('Some mistakes may come from reading too quickly. Try re-reading before solving.', '\u90e8\u5206\u9519\u8bef\u53ef\u80fd\u6765\u81ea\u8bfb\u9898\u8fc7\u5feb\u3002\u5c1d\u8bd5\u505a\u9898\u524d\u5148\u91cd\u8bfb\u3002'));
+      else if (_epKey === 'vocab-misunderstanding') lines.push(t('Some errors may relate to vocabulary. Consider reviewing key terms.', '\u90e8\u5206\u9519\u8bef\u53ef\u80fd\u4e0e\u8bcd\u6c47\u6709\u5173\u3002\u5efa\u8bae\u590d\u4e60\u5173\u952e\u672f\u8bed\u3002'));
+      else if (_epKey === 'careless-calculation') lines.push(t('Some mistakes may be calculation slips. Try estimating answers first.', '\u90e8\u5206\u9519\u8bef\u53ef\u80fd\u662f\u8ba1\u7b97\u5931\u8bef\u3002\u5c1d\u8bd5\u5148\u4f30\u7b97\u7b54\u6848\u3002'));
+      else if (_epKey === 'method-confusion') lines.push(t('Some errors may come from method confusion. Try a structured approach.', '\u90e8\u5206\u9519\u8bef\u53ef\u80fd\u6765\u81ea\u65b9\u6cd5\u6df7\u4e71\u3002\u5c1d\u8bd5\u7ed3\u6784\u5316\u89e3\u9898\u3002'));
     }
   }
 

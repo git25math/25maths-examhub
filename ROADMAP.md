@@ -462,6 +462,15 @@
 ## v3.3 Print Repair Sheet [DONE]
 - [x] **单题打印修复单 (v3.3.0)**: worksheet.js 新窗口 A4 打印（题目+词汇+KP+留白+纠错+订正），从 Recovery Pack 触发
 
+## v4.3 Confidence Layer & Time Decay [DONE]
+- [x] **Error Pattern v2 (v4.3.0)**: 结构化状态 + 信号推断 + 时间衰退 + 置信度分带
+- [x] **Confidence Bands**: high(≥0.65)/medium(≥0.45)/low(<0.45) 门控 UI/Tutor/Coach 语言强度
+- [x] **Time Decay**: persistentScore 每 7 天衰减 8%，避免旧数据主导
+- [x] **Signal Pipeline**: inferPatternSignals → createPatternEvent → updateErrorPatternState
+- [x] **Display Selectors**: getDisplayPatterns (primary/secondary persistent + recent trend)
+- [x] **Solve Habit**: getPatternMeta 返回 solveHabit 行动建议，Print Sheet 直接输出
+- [x] **Storage Migration**: v1→v2 自动迁移（global/bySection → patternStats/recentEvents）
+
 ## v4.2 Error Pattern Memory [DONE]
 - [x] **Error Pattern Engine (v4.2.0)**: 5 类错误模式推断 + 全局/section 计数 + recent 日志
 - [x] **Pattern Inference**: vocab-misunderstanding/concept-gap/method-confusion/careless-reading/careless-calculation

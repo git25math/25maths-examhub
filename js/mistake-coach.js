@@ -70,26 +70,46 @@ function buildMistakeCorrectionCoach(q, sectionId, board) {
     zh: '\u590d\u4e60\u5b8c\u6bd5\u540e\uff0c\u4e0d\u770b\u8bc4\u5206\u65b9\u6848\u91cd\u65b0\u5c1d\u8bd5\u8fd9\u9053\u9898\u3002'
   });
 
-  /* Error pattern awareness (v4.2.0): prepend a step based on dominant pattern */
-  if (typeof getDominantErrorPatterns === 'function') {
-    try {
-      var _epDom = getDominantErrorPatterns(sectionId);
-      if (_epDom && _epDom.length > 0) {
-        var _epKey = _epDom[0].key;
+  /* Error pattern awareness (v4.3.0: confidence-gated step) */
+  try {
+    var _epState = typeof getErrorPatternState === 'function' ? getErrorPatternState() : null;
+    var _epDisplay = _epState && typeof getDisplayPatterns === 'function' ? getDisplayPatterns(_epState) : null;
+    var _epPrimary = _epDisplay ? _epDisplay.primaryPersistent : null;
+    if (!_epPrimary && typeof getDominantErrorPatterns === 'function') {
+      var _epLegacy = getDominantErrorPatterns(sectionId);
+      if (_epLegacy && _epLegacy.length > 0) _epPrimary = _epLegacy[0];
+    }
+    if (_epPrimary) {
+      var _epBand = typeof getConfidenceBand === 'function' ? getConfidenceBand(_epPrimary.confidence || 0) : 'low';
+      if (_epBand !== 'low') {
+        var _epKey = _epPrimary.key;
         var _epStep = null;
+        var _epStrong = _epBand === 'high';
         if (_epKey === 'careless-reading') {
-          _epStep = { rule: 'pattern-reading', icon: '\ud83d\udc41\ufe0f', en: 'Re-read the question slowly and underline key quantities.', zh: '\u6162\u901f\u91cd\u8bfb\u9898\u76ee\uff0c\u5e76\u5708\u51fa\u5173\u952e\u4fe1\u606f\u3002' };
+          _epStep = { rule: 'pattern-reading', icon: '\ud83d\udc41\ufe0f',
+            en: _epStrong ? 'Re-read the question slowly and underline key quantities.' : 'Try re-reading the question carefully before solving.',
+            zh: _epStrong ? '\u6162\u901f\u91cd\u8bfb\u9898\u76ee\uff0c\u5e76\u5708\u51fa\u5173\u952e\u4fe1\u606f\u3002' : '\u5c1d\u8bd5\u505a\u9898\u524d\u4ed4\u7ec6\u91cd\u8bfb\u9898\u76ee\u3002' };
         } else if (_epKey === 'careless-calculation') {
-          _epStep = { rule: 'pattern-calc', icon: '\ud83e\uddee', en: 'Check your calculation line by line before finalizing.', zh: '\u7b54\u6848\u5b8c\u6210\u524d\uff0c\u9010\u6b65\u68c0\u67e5\u8ba1\u7b97\u8fc7\u7a0b\u3002' };
+          _epStep = { rule: 'pattern-calc', icon: '\ud83e\uddee',
+            en: _epStrong ? 'Check your calculation line by line before finalizing.' : 'Consider estimating first, then checking your calculation.',
+            zh: _epStrong ? '\u7b54\u6848\u5b8c\u6210\u524d\uff0c\u9010\u6b65\u68c0\u67e5\u8ba1\u7b97\u8fc7\u7a0b\u3002' : '\u5efa\u8bae\u5148\u4f30\u7b97\uff0c\u518d\u68c0\u67e5\u8ba1\u7b97\u3002' };
         } else if (_epKey === 'vocab-misunderstanding' && !steps.some(function(s) { return s.rule === 'vocab-gap'; })) {
-          _epStep = { rule: 'pattern-vocab', icon: '\ud83d\udcd6', en: 'Your error pattern suggests vocabulary issues. Double-check key terms.', zh: '\u4f60\u7684\u9519\u8bef\u6a21\u5f0f\u663e\u793a\u8bcd\u6c47\u95ee\u9898\u3002\u518d\u6b21\u786e\u8ba4\u5173\u952e\u672f\u8bed\u3002' };
+          _epStep = { rule: 'pattern-vocab', icon: '\ud83d\udcd6',
+            en: _epStrong ? 'Vocabulary confusion is a pattern. Double-check key terms.' : 'Some errors may relate to vocabulary. Consider reviewing key terms.',
+            zh: _epStrong ? '\u8bcd\u6c47\u56f0\u60d1\u5df2\u6210\u6a21\u5f0f\u3002\u518d\u6b21\u786e\u8ba4\u5173\u952e\u672f\u8bed\u3002' : '\u90e8\u5206\u9519\u8bef\u53ef\u80fd\u4e0e\u8bcd\u6c47\u6709\u5173\u3002\u5efa\u8bae\u590d\u4e60\u5173\u952e\u8bcd\u3002' };
+        } else if (_epKey === 'concept-gap') {
+          _epStep = { rule: 'pattern-concept', icon: '\ud83d\udca1',
+            en: _epStrong ? 'This is likely a concept gap. Review the key idea with a simple example.' : 'Consider reviewing the core concept before retrying.',
+            zh: _epStrong ? '\u8fd9\u53ef\u80fd\u662f\u6982\u5ff5\u8584\u5f31\u3002\u7528\u7b80\u5355\u4f8b\u5b50\u590d\u4e60\u6838\u5fc3\u6982\u5ff5\u3002' : '\u5efa\u8bae\u5148\u590d\u4e60\u6838\u5fc3\u6982\u5ff5\u518d\u91cd\u8bd5\u3002' };
+        } else if (_epKey === 'method-confusion') {
+          _epStep = { rule: 'pattern-method', icon: '\ud83d\udcdd',
+            en: _epStrong ? 'Method confusion is a pattern. Follow a fixed step-by-step approach.' : 'Try following a structured solving method.',
+            zh: _epStrong ? '\u65b9\u6cd5\u6df7\u4e71\u5df2\u6210\u6a21\u5f0f\u3002\u6309\u56fa\u5b9a\u6b65\u9aa4\u89e3\u9898\u3002' : '\u5c1d\u8bd5\u6309\u7ed3\u6784\u5316\u65b9\u6cd5\u89e3\u9898\u3002' };
         }
-        if (_epStep) {
-          steps.unshift(_epStep);
-        }
+        if (_epStep) steps.unshift(_epStep);
       }
-    } catch (e) {}
-  }
+    }
+  } catch (e) {}
 
   if (steps.length === 0) return null;
   return {

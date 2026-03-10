@@ -4537,7 +4537,13 @@ input { font-family: inherit; }
 .mistake-coach-text { flex:1; }
 [data-theme="dark"] .mistake-coach-block { background:var(--c-surface, #1E1E2E); }
 
-/* ═══ ERROR PATTERN PILLS (v4.2.0) ═══ */
+/* ═══ ERROR PATTERN PILLS (v4.3.0: confidence bands) ═══ */
 .error-pattern-pills { margin-top:4px; display:flex; flex-wrap:wrap; gap:4px; }
 .error-pattern-pill { padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background:var(--c-warning-bg, #FEF3C7); color:var(--c-warning, #D97706); }
+.error-pattern-pill.ep-high { background:var(--c-danger-bg, #FEE2E2); color:var(--c-danger, #EF4444); }
+.error-pattern-pill.ep-medium { background:var(--c-warning-bg, #FEF3C7); color:var(--c-warning, #D97706); }
+.error-pattern-pill.ep-low { background:var(--c-surface-alt, #F1F0FB); color:var(--c-text2, #6B7280); }
 [data-theme="dark"] .error-pattern-pill { background:var(--c-surface, #1E1E2E); color:var(--c-warning, #F59E0B); }
+[data-theme="dark"] .error-pattern-pill.ep-high { background:rgba(239,68,68,0.15); color:#F87171; }
+[data-theme="dark"] .error-pattern-pill.ep-medium { background:rgba(245,158,11,0.15); color:#FBBF24; }
+[data-theme="dark"] .error-pattern-pill.ep-low { background:var(--c-surface, #1E1E2E); color:var(--c-muted, #9CA3AF); }

@@ -367,7 +367,7 @@ function isSuperAdmin() {
 }
 
 /* App version */
-var APP_VERSION = 'v4.2.0';
+var APP_VERSION = 'v4.3.0';
 
 /* AI Tutor configuration */
 var AI_TUTOR_CONFIG = {
@@ -387,11 +387,24 @@ var MISTAKE_COACH_CONFIG = {
   coachIcon: '\ud83c\udfaf'
 };
 
-/* Error Pattern Memory configuration */
+/* Error Pattern Memory configuration (v4.3.0: confidence + decay) */
 var ERROR_PATTERN_CONFIG = {
-  recentWindow: 20,
+  recentWindowDays: 7,
+  maxRecentEvents: 80,
+  minEvidenceForDisplay: 3,
+  minConfidenceForStrongAdvice: 0.65,
+  minConfidenceForWeakAdvice: 0.45,
+  persistentDecayPer7Days: 0.08,
+  maxPatternTagsOnUI: 2,
   dominantThreshold: 0.3,
-  maxPatternTagsOnUI: 2
+  recentWindow: 20,
+  weights: {
+    vocabSignal: 0.9,
+    conceptSignal: 1.0,
+    methodSignal: 0.8,
+    readingSignal: 0.7,
+    calculationSignal: 0.6
+  }
 };
 
 /* Learning Goals configuration */

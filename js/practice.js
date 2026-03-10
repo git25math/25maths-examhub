@@ -2039,14 +2039,21 @@ function ppRate(level) {
   if (level === 'needs_work') {
     ppAddToWrongBook(q.id, '', '', _ppSession.sectionId || q.s || '', _ppSession.board || '');
 
-    /* Record error pattern (v4.2.0) */
+    /* Record error pattern (v4.3.0: signal-based pipeline) */
     try {
-      if (typeof inferErrorPattern === 'function' && typeof recordErrorPattern === 'function') {
+      if (typeof inferPatternSignals === 'function' && typeof updateErrorPatternState === 'function') {
         var _epSec = _ppSession.sectionId || q.s || '';
         var _epBoard = _ppSession.board || '';
         var _epRecovery = typeof getRecoveryCandidates === 'function' ? getRecoveryCandidates(q.id, _epSec, _epBoard) : null;
-        var _epPattern = inferErrorPattern(q, _epRecovery, { board: _epBoard });
-        recordErrorPattern(q, _epSec, _epPattern);
+        var _epSignals = inferPatternSignals(q, _epRecovery, { board: _epBoard });
+        var _epEvent = typeof createPatternEvent === 'function' ? createPatternEvent(q, _epSec, _epSignals) : null;
+        if (_epEvent) {
+          var _epState = typeof getErrorPatternState === 'function' ? getErrorPatternState() : null;
+          if (_epState) {
+            _epState = updateErrorPatternState(_epState, _epEvent);
+            if (typeof setErrorPatternState === 'function') setErrorPatternState(_epState);
+          }
+        }
       }
     } catch (e) {}
 

@@ -1,5 +1,49 @@
 # Changelog
 
+## [4.3.0] - 2026-03-10 — Confidence Layer & Time Decay
+
+### Error Pattern v2 核心重写（js/error-patterns.js）
+- **结构化 v2 状态模型**: `patternStats` 含 persistentScore/recentScore/evidenceCount/confidence/lastSeenAt
+- **信号推断**: `inferPatternSignals()` 返回加权信号数组（替代单字符串）
+- **更新管线**: `updateErrorPatternState()` — decay → append → stats → recent → confidence 五阶段
+- **时间衰退**: `_epApplyDecay()` — 每 7 天 8% 衰减，避免旧数据永久主导
+- **置信度计算**: `_epCalculateConfidence()` — 0.45×evidence + 0.40×score + 0.15×recency
+- **置信度分带**: `getConfidenceBand()` — high(≥0.65) / medium(≥0.45) / low(<0.45)
+- **显示选择器**: `getDisplayPatterns()` → primaryPersistent / secondaryPersistent / recentTrend
+- **模式元数据**: `getPatternMeta()` 返回 label + shortHint + solveHabit
+- **后向兼容**: `inferErrorPattern()` / `recordErrorPattern()` / `getDominantErrorPatterns()` 包装器保留
+
+### 存储迁移（js/storage.js）
+- `_migrateErrorPatternV1toV2()` — v1 global/bySection/recent → v2 patternStats/recentEvents 自动迁移
+
+### 集成升级
+- **practice.js**: ppRate 改用 inferPatternSignals → createPatternEvent → updateErrorPatternState 流水线
+- **student-profile.js**: 使用 `getDisplayPatterns()` 选择器，显示 persistent + recent trend 两区
+- **ai-tutor.js**: Plan Tutor 根据置信带调节语言强度（high=肯定, medium=建议, low=不显示）
+- **mistake-coach.js**: Coach 步骤根据置信带切换强/弱措辞 + 新增 concept-gap/method-confusion 步骤
+- **worksheet.js**: Print Repair Sheet 置信度门控显示 + solveHabit 输出
+
+### CSS（css/style.css）
+- `.ep-high` / `.ep-medium` / `.ep-low` 置信度分带样式 + 暗色适配
+
+### 配置（js/config.js）
+- `ERROR_PATTERN_CONFIG` 扩展: recentWindowDays, maxRecentEvents, minEvidenceForDisplay, minConfidenceForStrongAdvice, minConfidenceForWeakAdvice, persistentDecayPer7Days, weights
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| js/config.js | +ERROR_PATTERN_CONFIG v2 字段, version→v4.3.0 |
+| js/error-patterns.js | 完整重写 v2（362 行） |
+| js/storage.js | +v1→v2 迁移 |
+| js/practice.js | 信号化记录流 |
+| js/student-profile.js | +epDisplay + recent trend |
+| js/ai-tutor.js | +epDisplay + 置信带语言 |
+| js/mistake-coach.js | +置信带措辞 + 2 新模式 |
+| js/worksheet.js | +置信门控 + solveHabit |
+| css/style.css | +ep-high/medium/low 样式 |
+
+---
+
 ## [4.2.0] - 2026-03-10 — Error Pattern Memory
 
 ### Error Pattern 引擎（js/error-patterns.js 新增）

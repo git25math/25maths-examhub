@@ -211,22 +211,31 @@ function renderRepairWorksheet(ws) {
   html += '<div class="ws-working"></div>';
   html += '</div>';
 
-  /* ── Likely Error Pattern (v4.2.0) ── */
-  if (typeof getDominantErrorPatterns === 'function') {
-    try {
-      var _wsPatterns = getDominantErrorPatterns(ws.sectionId);
-      if (_wsPatterns && _wsPatterns.length > 0) {
+  /* ── Likely Error Pattern (v4.3.0: confidence-gated + solveHabit) ── */
+  try {
+    var _wsEpState = typeof getErrorPatternState === 'function' ? getErrorPatternState() : null;
+    var _wsEpDisplay = _wsEpState && typeof getDisplayPatterns === 'function' ? getDisplayPatterns(_wsEpState) : null;
+    var _wsEpPrimary = _wsEpDisplay ? _wsEpDisplay.primaryPersistent : null;
+    if (!_wsEpPrimary && typeof getDominantErrorPatterns === 'function') {
+      var _wsLegacy = getDominantErrorPatterns(ws.sectionId);
+      if (_wsLegacy && _wsLegacy.length > 0) _wsEpPrimary = _wsLegacy[0];
+    }
+    if (_wsEpPrimary) {
+      var _wsBand = typeof getConfidenceBand === 'function' ? getConfidenceBand(_wsEpPrimary.confidence || 0) : 'low';
+      if (_wsBand !== 'low') {
         html += '<div class="ws-section">';
         html += '<div class="ws-section-title">\ud83d\udccd Likely Error Pattern</div>';
-        for (var _epi = 0; _epi < _wsPatterns.length; _epi++) {
-          var _epInfo = typeof getErrorPatternLabel === 'function' ? getErrorPatternLabel(_wsPatterns[_epi].key) : null;
-          var _epLabel = _epInfo ? _epInfo.en : _wsPatterns[_epi].key;
-          html += '<div class="ws-item"><span class="ws-item-word">\u2022 ' + esc(_epLabel) + '</span></div>';
-        }
+        var _wsMeta = typeof getPatternMeta === 'function' ? getPatternMeta(_wsEpPrimary.key) : null;
+        var _wsLabel = _wsMeta ? _wsMeta.label.en : _wsEpPrimary.key;
+        var _wsHint = _wsMeta ? _wsMeta.shortHint.en : '';
+        var _wsHabit = _wsMeta ? _wsMeta.solveHabit.en : '';
+        html += '<div class="ws-item"><span class="ws-item-word">\u2022 ' + esc(_wsLabel) + '</span></div>';
+        if (_wsHint) html += '<div class="ws-item"><span class="ws-item-def" style="font-style:italic">' + esc(_wsHint) + '</span></div>';
+        if (_wsHabit) html += '<div class="ws-item"><span class="ws-item-def">\ud83d\udca1 ' + esc(_wsHabit) + '</span></div>';
         html += '</div>';
       }
-    } catch (e) {}
-  }
+    }
+  } catch (e) {}
 
   /* ── Error Analysis ── */
   html += '<div class="ws-section">';
