@@ -1710,10 +1710,15 @@ function _ppInsertPartMarks(html, partsMap, showAnswerLine) {
       ? '<span class="pp-marks-right">[' + marks + ']</span>' : '';
     /* Trim trailing whitespace from content */
     content = content.replace(/\s+$/, '');
+    /* Part-level extra content: tex, table, figure (v4.3.4) */
+    var partExtra = '';
+    if (pt && pt.tex) partExtra += '<div class="pp-part-extra-tex">' + _ppRenderTex(pt.tex) + '</div>';
+    if (pt && pt.table) partExtra += '<div class="pp-part-extra-table">' + _ppConvertTabularRuntime(pt.table) + '</div>';
+    if (pt && pt.figUrl) partExtra += '<div class="pp-figures"><img class="pp-fig" src="' + pt.figUrl + '?v=' + APP_VERSION + '" alt="Part diagram" loading="lazy"></div>';
     /* Answer line with per-part prefix/suffix (e.g. "x=" prefix, "cm" suffix) */
     var ansLine = showAnswerLine ? _ppAnswerLine(pt && pt.ansPrefix, pt && pt.ansSuffix, pt && pt.ansTpl) : '';
     result += '<div class="pp-part-block"><span class="pp-part-label">' + label + '</span>' +
-      '<div class="pp-part-content">' + content + ansLine + '</div>' + marksHtml + '</div>';
+      '<div class="pp-part-content">' + content + partExtra + ansLine + '</div>' + marksHtml + '</div>';
   }
   return result;
 }
@@ -3182,7 +3187,7 @@ function editPastPaperQ(qIdx) {
   html += '<div id="pp-ed-parts">';
   var _edParts = q.parts || [];
   for (var _pi = 0; _pi < _edParts.length; _pi++) {
-    html += _ppEdPartRow(_edParts[_pi].label, _edParts[_pi].marks, _pi, _edParts[_pi].ansPrefix, _edParts[_pi].ansSuffix, _edParts[_pi].ansTpl);
+    html += _ppEdPartRow(_edParts[_pi].label, _edParts[_pi].marks, _pi, _edParts[_pi]);
   }
   html += '</div>';
   html += '<button class="btn btn-sm btn-ghost" type="button" onclick="_ppEdAddPart()">+ ' + t('Add Part', '\u6dfb\u52a0\u5c0f\u9898') + '</button>';
@@ -3311,16 +3316,49 @@ function _ppEdInsertTable() {
   if (texEl.oninput) texEl.oninput();
 }
 
-function _ppEdPartRow(label, marks, idx, ansPrefix, ansSuffix, ansTpl) {
-  return '<div class="pp-ed-part-row" data-idx="' + idx + '">' +
-    '<input type="text" class="bug-select pp-ed-part-label" value="' + escapeHtml(label) + '" style="width:60px" placeholder="(a)">' +
-    '<input type="number" class="bug-select pp-ed-part-marks" value="' + marks + '" min="0" max="20" style="width:60px" placeholder="marks">' +
-    '<button class="btn btn-sm btn-ghost" type="button" onclick="this.parentElement.remove()" title="Remove">\u2716</button>' +
-    '<div class="pp-ed-part-ans">' +
-    '<input type="text" class="bug-select pp-ed-part-prefix" value="' + escapeHtml(ansPrefix || '') + '" placeholder="prefix (e.g. x=)">' +
-    '<input type="text" class="bug-select pp-ed-part-suffix" value="' + escapeHtml(ansSuffix || '') + '" placeholder="suffix (e.g. cm)">' +
-    '<input type="text" class="bug-select pp-ed-part-tpl" value="' + escapeHtml(ansTpl || '') + '" placeholder="template (e.g. (____,____))">' +
-    '</div></div>';
+function _ppEdPartRow(label, marks, idx, part) {
+  part = part || {};
+  var h = '<div class="pp-ed-part-row" data-idx="' + idx + '">';
+  /* Row 1: label + marks + expand/collapse + remove */
+  h += '<div class="pp-ed-part-head">';
+  h += '<input type="text" class="bug-select pp-ed-part-label" value="' + escapeHtml(label) + '" style="width:60px" placeholder="(a)">';
+  h += '<input type="number" class="bug-select pp-ed-part-marks" value="' + marks + '" min="0" max="20" style="width:60px" placeholder="marks">';
+  h += '<button class="btn btn-sm btn-ghost" type="button" onclick="_ppEdTogglePartDetail(this)" title="Expand">\u25bc</button>';
+  h += '<button class="btn btn-sm btn-ghost" type="button" onclick="this.closest(\'.pp-ed-part-row\').remove()" title="Remove">\u2716</button>';
+  h += '</div>';
+  /* Row 2: expandable detail (tex + table + figure + answer line) — collapsed by default unless has data */
+  var hasDetail = part.tex || part.table || part.figUrl || part.ansPrefix || part.ansSuffix || part.ansTpl;
+  h += '<div class="pp-ed-part-detail"' + (hasDetail ? '' : ' style="display:none"') + '>';
+  /* Part tex */
+  h += '<textarea class="bug-textarea font-mono-sm pp-ed-part-tex" rows="2" placeholder="' + t('Part text (LaTeX, optional)', '小题题干（LaTeX，可选）') + '">' + escapeHtml(part.tex || '') + '</textarea>';
+  /* Table */
+  h += '<div class="pp-ed-part-field-row">';
+  h += '<label class="pp-ed-part-field-label">' + t('Table', '表格') + '</label>';
+  h += '<input type="text" class="bug-select pp-ed-part-table" value="' + escapeHtml(part.table || '') + '" placeholder="' + t('tabular LaTeX (e.g. \\\\begin{tabular}...)', '表格 LaTeX') + '" style="flex:1">';
+  h += '</div>';
+  /* Figure URL */
+  h += '<div class="pp-ed-part-field-row">';
+  h += '<label class="pp-ed-part-field-label">' + t('Figure', '图片') + '</label>';
+  h += '<input type="text" class="bug-select pp-ed-part-fig" value="' + escapeHtml(part.figUrl || '') + '" placeholder="' + t('Image URL (e.g. figures/xxx.svg)', '图片路径') + '" style="flex:1">';
+  h += '</div>';
+  /* Answer line */
+  h += '<div class="pp-ed-part-ans">';
+  h += '<input type="text" class="bug-select pp-ed-part-prefix" value="' + escapeHtml(part.ansPrefix || '') + '" placeholder="prefix (e.g. x=)">';
+  h += '<input type="text" class="bug-select pp-ed-part-suffix" value="' + escapeHtml(part.ansSuffix || '') + '" placeholder="suffix (e.g. cm)">';
+  h += '<input type="text" class="bug-select pp-ed-part-tpl" value="' + escapeHtml(part.ansTpl || '') + '" placeholder="template (e.g. (____,____))">';
+  h += '</div>';
+  h += '</div>'; /* end detail */
+  h += '</div>';
+  return h;
+}
+
+function _ppEdTogglePartDetail(btn) {
+  var row = btn.closest('.pp-ed-part-row');
+  var detail = row.querySelector('.pp-ed-part-detail');
+  if (!detail) return;
+  var hidden = detail.style.display === 'none';
+  detail.style.display = hidden ? '' : 'none';
+  btn.textContent = hidden ? '\u25b2' : '\u25bc';
 }
 
 function _ppEdAddPart() {
@@ -3330,8 +3368,11 @@ function _ppEdAddPart() {
   /* Auto-suggest next label */
   var nextLabel = '(' + String.fromCharCode(97 + idx) + ')';
   var div = document.createElement('div');
-  div.innerHTML = _ppEdPartRow(nextLabel, 1, idx);
+  div.innerHTML = _ppEdPartRow(nextLabel, 1, idx, {});
   container.appendChild(div.firstChild);
+  /* Show/hide question-level answer line */
+  var wrap = E('pp-ed-ansline-wrap');
+  if (wrap) wrap.style.display = 'none';
 }
 
 function _ppEdCollectParts() {
@@ -3351,6 +3392,13 @@ function _ppEdCollectParts() {
     if (pfx && pfx.value.trim()) part.ansPrefix = pfx.value.trim();
     if (sfx && sfx.value.trim()) part.ansSuffix = sfx.value.trim();
     if (tpl && tpl.value.trim()) part.ansTpl = tpl.value.trim();
+    /* Part-level tex, table, figure (v4.3.4) */
+    var ptTex = rows[i].querySelector('.pp-ed-part-tex');
+    var ptTable = rows[i].querySelector('.pp-ed-part-table');
+    var ptFig = rows[i].querySelector('.pp-ed-part-fig');
+    if (ptTex && ptTex.value.trim()) part.tex = ptTex.value.trim();
+    if (ptTable && ptTable.value.trim()) part.table = ptTable.value.trim();
+    if (ptFig && ptFig.value.trim()) part.figUrl = ptFig.value.trim();
     parts.push(part);
   }
   return parts;

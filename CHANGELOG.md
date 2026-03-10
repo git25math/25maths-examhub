@@ -1,5 +1,33 @@
 # Changelog
 
+## [4.3.4] - 2026-03-10 — 小题编辑器增强
+
+### 小题详情编辑（js/practice.js）
+- **题干编辑**: 每个 part 可展开编辑独立题干（LaTeX textarea）
+- **表格编辑**: 每个 part 可添加 tabular LaTeX 表格
+- **图片编辑**: 每个 part 可设置 figUrl 图片路径
+- **答题线**: 每个 part 的 ansPrefix/ansSuffix/ansTpl（沿用 v4.3.3）
+- **折叠/展开**: ▼/▲ 按钮切换详情区域，有数据时自动展开
+
+### 渲染扩展（js/practice.js）
+- **`_ppInsertPartMarks`**: 每个 part 渲染时追加 part-level tex / table / figure
+- **table**: 复用 `_ppConvertTabularRuntime()` 实时转 HTML
+- **figure**: 复用 `.pp-fig` 图片样式
+
+### CSS（css/style.css）
+- `.pp-ed-part-row` 改为纵向布局（卡片式）
+- `.pp-ed-part-head` / `.pp-ed-part-detail` / `.pp-ed-part-field-row` 新增
+- `.pp-part-extra-tex` / `.pp-part-extra-table` 渲染样式
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| js/practice.js | _ppEdPartRow 重构 + _ppEdTogglePartDetail + _ppEdCollectParts 扩展 + _ppInsertPartMarks 渲染 |
+| css/style.css | 小题编辑器卡片式布局 + part 额外内容渲染样式 |
+| js/config.js | APP_VERSION → v4.3.4 |
+
+---
+
 ## [4.3.3] - 2026-03-10 — 超管题卡模块编辑 + 排序
 
 ### 答题线编辑（js/practice.js）
