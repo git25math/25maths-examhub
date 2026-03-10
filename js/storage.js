@@ -637,6 +637,11 @@ async function _doSyncToCloud() {
     var ppRaw = localStorage.getItem('pp_mastery');
     if (ppRaw) payload._ppMastery = JSON.parse(ppRaw);
   } catch(e) {}
+  /* Bridge pp_wrong_book for cross-device sync */
+  try {
+    var wbRaw = localStorage.getItem('pp_wrong_book');
+    if (wbRaw) payload._ppWrongBook = JSON.parse(wbRaw);
+  } catch(e) {}
   var vpRes = await sb.from('vocab_progress').upsert(
     { user_id: currentUser.id, data: JSON.stringify(payload), updated_at: now },
     { onConflict: 'user_id' }
@@ -702,6 +707,13 @@ async function syncToCloud() {
 
 async function syncFromCloud() {
   if (!sb || !isLoggedIn()) return;
+  /* Clear unsynced residual data from previous user (crash-safe) */
+  var _unsyncedKeys = ['pp_wrong_book', 'pp_exam_history', 'pp_paper_results',
+    'diag_history', 'wmatch_badges', 'wmatch_weekly',
+    'recovery_schedule', 'student_profile'];
+  _unsyncedKeys.forEach(function(k) {
+    try { localStorage.removeItem(k); } catch(e) {}
+  });
   try {
     var res = await sb.from('vocab_progress').select('data, updated_at').eq('user_id', currentUser.id).single();
     if (res.data && res.data.data) {
@@ -715,6 +727,11 @@ async function syncFromCloud() {
           try { localStorage.setItem('pp_mastery', JSON.stringify(cloud._ppMastery)); } catch(e) {}
         }
         delete cloud._ppMastery;
+        /* Restore wrong book from cloud bridge */
+        if (cloud && typeof cloud === 'object' && cloud._ppWrongBook && typeof cloud._ppWrongBook === 'object') {
+          try { localStorage.setItem('pp_wrong_book', JSON.stringify(cloud._ppWrongBook)); } catch(e) {}
+        }
+        delete cloud._ppWrongBook;
         writeS(cloud);
         invalidateCache();
         try { localStorage.setItem('wmatch_last_sync', cloudTime); } catch (e) {}

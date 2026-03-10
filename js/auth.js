@@ -162,14 +162,27 @@ E('auth-skip').addEventListener('click', function() {
   afterLogin();
 });
 
-/* Logout — await signOut + final sync */
+/* Logout — await signOut + final sync + clear user data */
+var _userDataKeys = [
+  'wmatch_v3', 'wmatch_last_sync', 'wmatch_login_ts',
+  'pp_mastery', 'pp_wrong_book', 'pp_exam_history', 'pp_paper_results',
+  'diag_history', 'wmatch_badges', 'wmatch_weekly',
+  'recovery_schedule', 'student_profile',
+  'wmatch_catCollapsed', 'wmatch_boardCollapsed',
+  'wmatch_unitCollapsed', 'wmatch_chapterCollapsed'
+];
+
 async function doLogout() {
   invalidateGuestCache();
-  try { localStorage.removeItem('wmatch_login_ts'); } catch(e) {}
   if (sb && isLoggedIn()) {
     await syncToCloud();
     await sb.auth.signOut();
   }
+  /* Clear all user-specific localStorage (keep UI prefs: lang/dark/sound/translate/userBoard) */
+  _userDataKeys.forEach(function(k) {
+    try { localStorage.removeItem(k); } catch(e) {}
+  });
+  invalidateCache();
   currentUser = null;
   E('app-shell').style.display = 'none';
   E('ov-auth').style.display = 'flex';
@@ -338,6 +351,13 @@ async function selectBoard(value) {
   syncToCloud();
 }
 
+/* Check if current user is a locked student (board managed by school) */
+function _isStudentLocked() {
+  if (!isLoggedIn() || isGuest()) return false;
+  if (isTeacher() || isSuperAdmin()) return false;
+  return !!userClassId;
+}
+
 function changeBoardFromSettings() {
   hideModal();
   E('app-shell').style.display = 'none';
@@ -455,7 +475,8 @@ function showSettings() {
     '<div class="settings-section">' +
     '<label class="settings-label">' + t('Course / Year', '\u8003\u8bd5\u5c40 / \u5e74\u7ea7') + '</label>' +
     '<div class="settings-board-current">' + boardDisplay + '</div>' +
-    (isSubdomainLocked() ? '' : '<button class="btn btn-ghost btn-sm" onclick="changeBoardFromSettings()">' + t('Change', '\u66f4\u6362') + '</button>') +
+    (isSubdomainLocked() || _isStudentLocked() ? '' : '<button class="btn btn-ghost btn-sm" onclick="changeBoardFromSettings()">' + t('Change', '\u66f4\u6362') + '</button>') +
+    (_isStudentLocked() ? '<div class="text-sm text-sub" style="margin-top:4px">' + t('Managed by your school. Contact your teacher to change.', '由学校管理员设定，如需更改请联系老师') + '</div>' : '') +
     '</div>' +
     '<div class="settings-divider"></div>' +
     '<div class="settings-section">' +

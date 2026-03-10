@@ -1,5 +1,39 @@
 # Changelog
 
+## [4.3.8] - 2026-03-10 — 学生板块锁定 + Year 11→CIE + localStorage 账号隔离
+
+### Part A: 学生板块锁定 + Year 11 映射
+
+#### 学生设置页锁定（js/auth.js）
+- **`_isStudentLocked()`**: 已登录 + 非 guest/教师/超管 + 有 classId → 锁定
+- **设置页**: 锁定学生隐藏「更换」按钮，显示提示「由学校管理员设定，如需更改请联系老师」
+
+#### Year 11→CIE 映射（js/config.js）
+- **`isLevelVisible()`**: `userBoard === '25m-y11'` → 显示 CIE 考纲内容
+- **`getVisibleBoards()`**: Y11 用户看到 CIE board
+
+### Part B: localStorage 账号隔离
+
+#### 登出清理（js/auth.js）
+- **`doLogout()`**: syncToCloud 后清除 14 个用户数据 key（保留 UI 偏好）
+- **清除列表**: wmatch_v3, pp_mastery, pp_wrong_book, pp_exam_history, pp_paper_results, diag_history, wmatch_badges, wmatch_weekly, recovery_schedule, student_profile, 4 个折叠状态
+
+#### 登入清理（js/storage.js）
+- **`syncFromCloud()`**: 开头先清除 8 个未同步残留 key，再从云端拉取
+
+#### pp_wrong_book 云同步（js/storage.js）
+- **`_doSyncToCloud()`**: 错题本通过 `_ppWrongBook` 桥接字段上传
+- **`syncFromCloud()`**: 从云端恢复错题本到 localStorage
+
+### 文件变更
+| 文件 | 变更 |
+|------|------|
+| js/config.js | isLevelVisible + getVisibleBoards Y11→CIE 映射, APP_VERSION → v4.3.8 |
+| js/auth.js | _isStudentLocked + 设置页锁定 + doLogout 清除用户数据 |
+| js/storage.js | syncFromCloud 登入清理 + pp_wrong_book 云同步桥接 |
+
+---
+
 ## [4.3.7] - 2026-03-10 — 首页模块折叠
 
 ### 折叠功能（js/mastery.js）
