@@ -536,6 +536,19 @@ function _renderKPScanCard() {
   else _renderKPScanQuiz();
 }
 
+/* Keyboard handler for KP/PP scan (1=known, 2=fuzzy, 3=unknown) */
+function _kpScanKeyHandler(e) {
+  if (!_kpScan || !S._kpScanMode) return;
+  if (e.key === '1' || e.key === '2' || e.key === '3') {
+    e.preventDefault();
+    if (_kpScan.round === 1) {
+      var map = { '1': 'known', '2': 'fuzzy', '3': 'unknown' };
+      _rateKPScan(map[e.key]);
+    }
+    /* Quiz mode uses option buttons, not 1/2/3 shortcuts */
+  }
+}
+
 function _renderKPScanPreview() {
   var item = _kpScan.pool[_kpScan.idx];
   var progress = _kpScan.pool.length > 0 ? Math.round(_kpScan.idx / _kpScan.pool.length * 100) : 0;
@@ -576,6 +589,9 @@ function _renderKPScanPreview() {
       if (btn) _rateKPScan(btn.dataset.kpscan);
     });
   }
+  /* Bind keyboard shortcuts */
+  document.removeEventListener('keydown', _kpScanKeyHandler);
+  document.addEventListener('keydown', _kpScanKeyHandler);
 }
 
 function _rateKPScan(rating) {
@@ -609,6 +625,12 @@ function _renderKPScanQuiz() {
     return;
   }
   var tq = item.testYourself[_kpScan.qIdx];
+  /* Guard against malformed quiz data */
+  if (!tq || !tq.o || tq.o.length === 0) {
+    _kpScan.qIdx++;
+    _renderKPScanCard();
+    return;
+  }
   var progress = _kpScan.pool.length > 0 ? Math.round(_kpScan.idx / _kpScan.pool.length * 100) : 0;
   var html = '';
   html += '<div class="study-topbar">';
@@ -646,8 +668,8 @@ function _renderKPScanQuiz() {
 function _answerKPScanQuiz(optIdx) {
   var item = _kpScan.pool[_kpScan.idx];
   var tq = item.testYourself[_kpScan.qIdx];
-  var ansIdx = tq.a;
-  var isCorrect = optIdx === ansIdx;
+  var ansIdx = tq.a !== undefined ? tq.a : -1;
+  var isCorrect = ansIdx >= 0 && optIdx === ansIdx;
   if (isCorrect) _kpScan.qScore++;
   var allOpts = document.querySelectorAll('#kp-scan-options .kp-quiz-opt');
   for (var i = 0; i < allOpts.length; i++) {
@@ -662,7 +684,7 @@ function _answerKPScanQuiz(optIdx) {
   if (!isCorrect && typeof playWrong === 'function') playWrong();
   _logScanEvent('kp', item.kpId, isCorrect ? 'known' : 'unknown', _kpScan.round, _kpScan.sectionId, _kpScan.board);
   var isZh = typeof appLang !== 'undefined' && appLang !== 'en';
-  var expText = isZh && tq.e_zh ? tq.e_zh : tq.e;
+  var expText = (isZh && tq.e_zh) ? tq.e_zh : (tq.e || '');
   var expEl = E('kp-scan-explain');
   if (expEl && expText) {
     expEl.innerHTML = (typeof kpMarkdown === 'function' ? kpMarkdown(expText) : escapeHtml(expText));
@@ -724,13 +746,15 @@ function _finishKPScanRound() {
 
 function _finishKPScan() {
   S._kpScanMode = false;
+  document.removeEventListener('keydown', _kpScanKeyHandler);
   var mastered = 0, total = _kpScan.items.length;
   for (var i = 0; i < _kpScan.items.length; i++) {
     var item = _kpScan.items[i];
-    if (item.status === 'mastered' && item.testYourself && item.testYourself.length > 0) {
-      if (typeof saveKPResult === 'function') saveKPResult(item.kpId, item.testYourself.length, item.testYourself.length);
-      mastered++;
-    }
+    if (!item.testYourself || item.testYourself.length === 0) continue;
+    var totalQ = item.testYourself.length;
+    var correctQ = item.status === 'mastered' ? totalQ : (item.status === 'uncertain' ? Math.floor(totalQ * 0.6) : 0);
+    if (typeof saveKPResult === 'function') saveKPResult(item.kpId, totalQ, correctQ);
+    if (item.status === 'mastered') mastered++;
   }
   var _isRecovery = typeof isRecoverySessionActive === 'function' && isRecoverySessionActive();
   var statusCounts = { mastered: 0, uncertain: 0, learning: 0 };
@@ -768,7 +792,13 @@ function _finishKPScan() {
 function _exitKPScan() {
   S._kpScanMode = false;
   _kpScan = null;
-  navTo('section');
+  document.removeEventListener('keydown', _kpScanKeyHandler);
+  if (typeof isRecoverySessionActive === 'function' && isRecoverySessionActive()) {
+    _recordRecoveryResult('kp');
+    _advanceRecoverySession();
+  } else {
+    navTo('section');
+  }
 }
 
 /* ══════════════════════════════════════════════════════════════

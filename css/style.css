@@ -1359,7 +1359,7 @@ input { font-family: inherit; }
 
 /* KP/PP Scan cards */
 .scan-round-badge {
-  font-size: 12px; background: var(--c-primary-light, #EDE9FE); color: var(--c-primary);
+  font-size: 12px; background: var(--c-primary-light, #EDE9FE); color: var(--c-primary, #5248C9);
   padding: 3px 10px; border-radius: 10px; text-align: center; margin-bottom: 12px;
   font-weight: 600;
 }

@@ -15,6 +15,17 @@ function _cleanupActiveMode() {
   if (typeof DC !== 'undefined' && DC && DC.timer) { clearInterval(DC.timer); DC.timer = null; }
   /* Review search timeout */
   if (typeof _rvSearchTimer !== 'undefined' && _rvSearchTimer) { clearTimeout(_rvSearchTimer); _rvSearchTimer = null; }
+  /* KP Scan state cleanup */
+  if (typeof _kpScan !== 'undefined' && _kpScan) {
+    if (typeof _kpScanKeyHandler === 'function') document.removeEventListener('keydown', _kpScanKeyHandler);
+    _kpScan = null;
+    if (typeof S !== 'undefined' && S) S._kpScanMode = false;
+  }
+  /* PP Scan state cleanup */
+  if (typeof _ppScanState !== 'undefined' && _ppScanState) {
+    if (typeof _ppScanKeyHandler === 'function') document.removeEventListener('keydown', _ppScanKeyHandler);
+    _ppScanState = null;
+  }
 }
 
 function showPanel(id) {

@@ -821,6 +821,7 @@ function renderSectionDetail(ch, sec, secIdx, board) {
       }
       html += '</div>';
     }
+    html += '</div>'; /* close kp-list */
     /* Scan & Quiz button */
     html += '<div class="btn-row mt-4" style="padding:0 12px">';
     html += '<button class="btn btn-sm btn-primary" onclick="event.stopPropagation();if(typeof startKPScan===\'function\')startKPScan(\'' + sec.id + '\',\'' + board + '\')">';
@@ -828,8 +829,7 @@ function renderSectionDetail(ch, sec, secIdx, board) {
     html += '<button class="btn btn-sm btn-ghost" onclick="event.stopPropagation();if(typeof renderScanOverview===\'function\')renderScanOverview(\'' + board + '\')">';
     html += '\ud83d\udcca ' + t('Scan Overview', '\u626b\u63cf\u603b\u89c8') + '</button>';
     html += '</div>';
-    html += '</div>';
-    html += '</div>';
+    html += '</div>'; /* close sec-module-content */
   } else {
     /* Fallback to old knowledge card if no KP data */
     var knowledgeEdit = _getSectionEdit(board, sec.id, 'knowledge');
