@@ -1375,11 +1375,24 @@ function _showQuickRate(listId, type, ref, anchorEl) {
 }
 
 /* ══════════════════════════════════════════════════════════════
-   LIST STUDY MODE — Unified sequential learning within a custom list.
-   Renders vocab/KP/PP content cards in a single flow with prev/next.
+   LIST STUDY MODE — Tab Workbench (v5.0.1)
+   Each type (vocab/KP/PP) gets its own tab with native rendering.
    ══════════════════════════════════════════════════════════════ */
 
-var _listStudy = null; /* { listId, items[], idx, rated{} } */
+var _listStudy = null;
+/* {
+  listId, listTitle,
+  tabs: { vocab:{items[],idx,rated{}}, kp:{...}, pp:{...} },
+  activeTab: 'vocab'|'kp'|'pp',
+  allItems: []   // flat reference for session recording
+} */
+
+var _LS_TAB_ORDER = ['vocab', 'kp', 'pp'];
+var _LS_TAB_LABELS = {
+  vocab: { en: 'Vocab', zh: '\u8bcd\u6c47' },
+  kp:    { en: 'Knowledge', zh: '\u77e5\u8bc6\u70b9' },
+  pp:    { en: 'Past Paper', zh: '\u771f\u9898' }
+};
 
 function startListStudy(listId) {
   var list = typeof getCustomList === 'function' ? getCustomList(listId) : null;
@@ -1389,7 +1402,7 @@ function startListStudy(listId) {
   }
 
   /* Build enriched items array with resolved content */
-  var items = [];
+  var allItems = [];
   var allW = typeof getAllWords === 'function' ? getAllWords() : [];
   var wMap = {};
   for (var wi = 0; wi < allW.length; wi++) wMap[allW[wi].key] = allW[wi];
@@ -1412,19 +1425,32 @@ function startListStudy(listId) {
       entry.board = _detectItemBoard('pp', it.ref);
       entry.question = _findPPQuestion(it.ref, entry.board);
     }
-    items.push(entry);
+    allItems.push(entry);
+  }
+
+  /* Split into tabs by type */
+  var tabs = { vocab: { items: [], idx: 0, rated: {} }, kp: { items: [], idx: 0, rated: {} }, pp: { items: [], idx: 0, rated: {} } };
+  for (var ai = 0; ai < allItems.length; ai++) {
+    var tp = allItems[ai].type;
+    if (tabs[tp]) tabs[tp].items.push(allItems[ai]);
+  }
+
+  /* Find first non-empty tab */
+  var activeTab = 'vocab';
+  for (var ti = 0; ti < _LS_TAB_ORDER.length; ti++) {
+    if (tabs[_LS_TAB_ORDER[ti]].items.length > 0) { activeTab = _LS_TAB_ORDER[ti]; break; }
   }
 
   _listStudy = {
     listId: listId,
     listTitle: list.title,
-    items: items,
-    idx: 0,
-    rated: {} /* { 'vocab:key': 'known', ... } */
+    tabs: tabs,
+    activeTab: activeTab,
+    allItems: allItems
   };
 
   if (typeof showPanel === 'function') showPanel('study');
-  _renderListStudyCard();
+  _renderListStudyWorkbench();
 }
 
 function _findKP(kpId, board) {
@@ -1451,48 +1477,63 @@ function _findPPQuestion(qid, board) {
   return null;
 }
 
-function _renderListStudyCard() {
+/* ─── Main Workbench Renderer ─── */
+
+function _renderListStudyWorkbench() {
   if (!_listStudy) return;
   var panel = E('panel-study');
   if (!panel) return;
   var ls = _listStudy;
   var zh = (appLang !== 'en');
-  var total = ls.items.length;
-  var idx = ls.idx;
-  var item = ls.items[idx];
-  var progress = total > 0 ? Math.round((idx + 1) / total * 100) : 0;
-  var fs = _resolveItemFLM(item.type, item.ref);
+  var tab = ls.tabs[ls.activeTab];
+  var item = tab.items[tab.idx];
+  var fs = item ? _resolveItemFLM(item.type, item.ref) : null;
+
+  /* Count non-empty tabs */
+  var nonEmptyTabs = [];
+  for (var ti = 0; ti < _LS_TAB_ORDER.length; ti++) {
+    if (ls.tabs[_LS_TAB_ORDER[ti]].items.length > 0) nonEmptyTabs.push(_LS_TAB_ORDER[ti]);
+  }
+  var multiTab = nonEmptyTabs.length > 1;
 
   var html = '';
 
-  /* Top bar */
+  /* Top bar: back + list title */
   html += '<div class="study-topbar">';
   html += '<button class="back-btn" id="ls-back">\u2190</button>';
-  html += '<div class="study-progress"><div class="study-progress-fill" style="width:' + progress + '%"></div></div>';
-  html += '<div class="study-count">' + (idx + 1) + ' / ' + total + '</div>';
+  html += '<div class="ls-wb-title">' + _escList(ls.listTitle) + '</div>';
+  if (fs) html += _fsChip(fs);
   html += '</div>';
 
-  /* Type badge + list title */
-  html += '<div class="ls-header">';
-  var typeBadge = item.type === 'vocab' ? (zh ? '\u8bcd\u6c47' : 'Vocab')
-    : item.type === 'kp' ? (zh ? '\u77e5\u8bc6\u70b9' : 'KP')
-    : (zh ? '\u771f\u9898' : 'PP');
-  html += '<span class="ls-type-badge ls-type-' + item.type + '">' + typeBadge + '</span>';
-  html += '<span class="ls-list-title">' + _escList(ls.listTitle) + '</span>';
-  html += ' ' + _fsChip(fs);
-  html += '</div>';
-
-  /* Content card — type-specific rendering */
-  html += '<div class="ls-card">';
-
-  if (item.type === 'vocab') {
-    html += _renderListStudyVocab(item);
-  } else if (item.type === 'kp') {
-    html += _renderListStudyKP(item);
-  } else if (item.type === 'pp') {
-    html += _renderListStudyPP(item);
+  /* Tab row (hidden for single type) */
+  if (multiTab) {
+    html += '<div class="ls-tab-row">';
+    for (var tbi = 0; tbi < _LS_TAB_ORDER.length; tbi++) {
+      var tabId = _LS_TAB_ORDER[tbi];
+      var tabData = ls.tabs[tabId];
+      if (tabData.items.length === 0) continue;
+      var ratedCount = Object.keys(tabData.rated).length;
+      var isActive = tabId === ls.activeTab;
+      var lbl = zh ? _LS_TAB_LABELS[tabId].zh : _LS_TAB_LABELS[tabId].en;
+      html += '<button class="ls-study-tab' + (isActive ? ' active' : '') + '" data-ls-tab="' + tabId + '">';
+      html += lbl + ' <span class="ls-tab-progress">' + ratedCount + '/' + tabData.items.length;
+      if (ratedCount > 0) html += '\u2713';
+      html += '</span></button>';
+    }
+    html += '</div>';
+  } else {
+    /* Single type: show type badge */
+    var singleType = nonEmptyTabs[0] || ls.activeTab;
+    var badge = zh ? _LS_TAB_LABELS[singleType].zh : _LS_TAB_LABELS[singleType].en;
+    html += '<div class="ls-header">';
+    html += '<span class="ls-type-badge ls-type-' + singleType + '">' + badge + '</span>';
+    html += '<span class="ls-list-title">' + (tab.idx + 1) + ' / ' + tab.items.length + '</span>';
+    html += '</div>';
   }
 
+  /* Content area */
+  html += '<div class="ls-card" id="ls-tab-content">';
+  html += _renderLsTabContent();
   html += '</div>';
 
   /* Rating buttons */
@@ -1508,43 +1549,41 @@ function _renderListStudyCard() {
 
   /* Navigation */
   html += '<div class="ls-nav-row">';
-  html += '<button class="btn btn-ghost ls-nav-btn" id="ls-prev"' + (idx <= 0 ? ' disabled' : '') + '>';
+  html += '<button class="btn btn-ghost ls-nav-btn" id="ls-prev"' + (tab.idx <= 0 ? ' disabled' : '') + '>';
   html += '\u2190 ' + (zh ? '\u4e0a\u4e00\u9879' : 'Prev') + '</button>';
   html += '<button class="btn btn-ghost ls-nav-btn" id="ls-skip">';
   html += (zh ? '\u8df3\u8fc7' : 'Skip') + '</button>';
-  html += '<button class="btn btn-primary ls-nav-btn" id="ls-next"' + (idx >= total - 1 ? ' disabled' : '') + '>';
+  html += '<button class="btn btn-primary ls-nav-btn" id="ls-next"' + (tab.idx >= tab.items.length - 1 ? ' disabled' : '') + '>';
   html += (zh ? '\u4e0b\u4e00\u9879' : 'Next') + ' \u2192</button>';
   html += '</div>';
+
+  /* Complete button */
+  html += '<button class="btn btn-ghost ls-complete-btn" id="ls-complete">';
+  html += (zh ? '\u5b8c\u6210\u5b66\u4e60' : 'Finish Study') + '</button>';
+
   html += '</div>';
 
   panel.innerHTML = html;
-
-  /* Bind events */
   _bindListStudyEvents(panel);
-
-  /* KaTeX render */
-  try {
-    if (typeof renderMathInElement === 'function') {
-      renderMathInElement(panel, {
-        delimiters: [
-          { left: '$$', right: '$$', display: true },
-          { left: '$', right: '$', display: false },
-          { left: '\\(', right: '\\)', display: false },
-          { left: '\\[', right: '\\]', display: true }
-        ], throwOnError: false
-      });
-    }
-  } catch(e) {}
-
-  /* pqRender for inline KaTeX if available */
-  try {
-    if (typeof pqRender === 'function') pqRender(panel);
-  } catch(e) {}
+  _lsRenderMath(panel);
 }
 
-/* ─── Type-specific card renderers ─── */
+/* ─── Tab content dispatcher ─── */
 
-function _renderListStudyVocab(item) {
+function _renderLsTabContent() {
+  if (!_listStudy) return '';
+  var tab = _listStudy.tabs[_listStudy.activeTab];
+  if (!tab || tab.items.length === 0) return '<div style="color:var(--c-text3);padding:20px;text-align:center">' + (appLang !== 'en' ? '\u6b64\u7c7b\u578b\u6ca1\u6709\u5185\u5bb9' : 'No items of this type') + '</div>';
+  var item = tab.items[tab.idx];
+  if (_listStudy.activeTab === 'vocab') return _renderLsVocabCard(item);
+  if (_listStudy.activeTab === 'kp') return _renderLsKPCard(item);
+  if (_listStudy.activeTab === 'pp') return _renderLsPPCard(item);
+  return '';
+}
+
+/* ─── Vocab card (flashcard style) ─── */
+
+function _renderLsVocabCard(item) {
   var html = '<div class="ls-vocab-card">';
   html += '<div class="ls-vocab-word">' + _escList(item.word) + '</div>';
   html += '<div class="ls-vocab-def" id="ls-reveal" style="visibility:hidden">' + _escList(item.def) + '</div>';
@@ -1554,7 +1593,9 @@ function _renderListStudyVocab(item) {
   return html;
 }
 
-function _renderListStudyKP(item) {
+/* ─── KP card (full detail: explanation + exam patterns + examples + MCQ) ─── */
+
+function _renderLsKPCard(item) {
   var html = '<div class="ls-kp-card">';
   if (!item.kp) {
     html += '<div class="ls-kp-title">' + _escList(item.ref) + '</div>';
@@ -1563,43 +1604,98 @@ function _renderListStudyKP(item) {
     return html;
   }
   var kp = item.kp;
-  html += '<div class="ls-kp-title">' + _escList(kp.title || item.ref) + '</div>';
-  if (kp.title_zh) html += '<div class="ls-kp-title-zh">' + _escList(kp.title_zh) + '</div>';
+  var isZh = (appLang !== 'en');
 
+  /* Title */
+  html += '<div class="kp-hero-title" style="font-size:18px">' + (typeof pqRender === 'function' ? pqRender(kp.title || item.ref) : _escList(kp.title || item.ref)) + '</div>';
+  if (kp.title_zh) html += '<div class="kp-hero-sub">' + _escList(kp.title_zh) + '</div>';
+
+  /* ① Explanation — concept cards */
   if (kp.explanation) {
-    html += '<div class="ls-kp-section">';
-    html += '<div class="ls-kp-section-title">' + (appLang !== 'en' ? '\u89e3\u91ca' : 'Explanation') + '</div>';
-    html += '<div class="ls-kp-text">' + _escList(kp.explanation) + '</div>';
-    html += '</div>';
-  }
-  if (kp.explanation_zh) {
-    html += '<div class="ls-kp-section">';
-    html += '<div class="ls-kp-text" style="color:var(--c-text2)">' + _escList(kp.explanation_zh) + '</div>';
-    html += '</div>';
-  }
-  if (kp.exam_mode) {
-    html += '<div class="ls-kp-section">';
-    html += '<div class="ls-kp-section-title">' + (appLang !== 'en' ? '\u8003\u8bd5\u6a21\u5f0f' : 'Exam Pattern') + '</div>';
-    html += '<div class="ls-kp-text">' + _escList(kp.exam_mode) + '</div>';
-    html += '</div>';
+    var expText = typeof kp.explanation === 'string' ? kp.explanation : (isZh && kp.explanation.zh ? kp.explanation.zh : (kp.explanation.en || ''));
+    if (expText) {
+      html += '<div class="kp-section">';
+      html += '<div class="kp-section-header"><div class="kp-section-num">1</div>';
+      html += '<div class="kp-section-labels"><div class="kp-section-label">' + (isZh ? '\u77e5\u8bc6\u70b9\u7cbe\u6790' : 'Explanation') + '</div></div></div>';
+      var parsed = (typeof _splitExplanation === 'function') ? _splitExplanation(expText) : { intro: expText, concepts: [] };
+      if (parsed.intro) {
+        html += '<div class="kp-section-body">' + (typeof kpMarkdown === 'function' ? kpMarkdown(parsed.intro) : _escList(parsed.intro)) + '</div>';
+      }
+      if (parsed.concepts && parsed.concepts.length > 0) {
+        html += '<div class="kp-concepts">';
+        for (var ci = 0; ci < parsed.concepts.length; ci++) {
+          var con = parsed.concepts[ci];
+          html += '<div class="kp-concept">';
+          html += '<div class="kp-concept-title">' + (typeof pqRender === 'function' ? pqRender(con.title) : _escList(con.title)) + '</div>';
+          if (con.body) html += '<div class="kp-concept-body">' + (typeof kpMarkdown === 'function' ? kpMarkdown(con.body) : _escList(con.body)) + '</div>';
+          html += '</div>';
+        }
+        html += '</div>';
+      } else if (!parsed.intro) {
+        html += '<div class="kp-section-body">' + (typeof kpMarkdown === 'function' ? kpMarkdown(expText) : _escList(expText)) + '</div>';
+      }
+      html += '</div>';
+    }
   }
 
-  /* MCQ questions if available */
-  if (kp.questions && kp.questions.length > 0) {
-    html += '<div class="ls-kp-section">';
-    html += '<div class="ls-kp-section-title">' + (appLang !== 'en' ? '\u7ec3\u4e60\u9898' : 'Practice') + '</div>';
-    for (var qi = 0; qi < Math.min(kp.questions.length, 3); qi++) {
-      var q = kp.questions[qi];
-      html += '<div class="ls-kp-mcq" data-ls-mcq="' + qi + '">';
-      html += '<div class="ls-kp-mcq-stem">' + _escList(q.question || q.stem || '') + '</div>';
-      if (q.options) {
-        for (var oi = 0; oi < q.options.length; oi++) {
-          html += '<button class="ls-kp-mcq-opt" data-ls-mcq-q="' + qi + '" data-ls-mcq-opt="' + oi + '">';
-          html += String.fromCharCode(65 + oi) + '. ' + _escList(q.options[oi]);
-          html += '</button>';
-        }
+  /* ② Exam Patterns */
+  if (kp.examPatterns && kp.examPatterns.length > 0) {
+    html += '<div class="kp-section">';
+    html += '<div class="kp-section-header"><div class="kp-section-num">2</div>';
+    html += '<div class="kp-section-labels"><div class="kp-section-label">' + (isZh ? '\u5178\u578b\u8003\u6cd5' : 'Exam Patterns') + '</div></div></div>';
+    html += '<div class="kp-section-body">';
+    for (var pi = 0; pi < kp.examPatterns.length; pi++) {
+      var ep = kp.examPatterns[pi];
+      html += '<div class="kp-pattern">';
+      html += '<div class="kp-pattern-label">' + (typeof kpMarkdown === 'function' ? kpMarkdown(isZh && ep.label_zh ? ep.label_zh : ep.label) : _escList(ep.label)) + '</div>';
+      var epDesc = isZh && ep.description_zh ? ep.description_zh : ep.description;
+      if (epDesc) html += '<div class="kp-pattern-desc">' + (typeof kpMarkdown === 'function' ? kpMarkdown(epDesc) : _escList(epDesc)) + '</div>';
+      html += '</div>';
+    }
+    html += '</div></div>';
+  }
+
+  /* ③ Worked Examples */
+  if (kp.examples && kp.examples.length > 0) {
+    html += '<div class="kp-section">';
+    html += '<div class="kp-section-header"><div class="kp-section-num">3</div>';
+    html += '<div class="kp-section-labels"><div class="kp-section-label">' + (isZh ? '\u5178\u578b\u4f8b\u9898' : 'Worked Examples') + '</div></div></div>';
+    html += '<div class="kp-section-body">';
+    for (var ei = 0; ei < kp.examples.length; ei++) {
+      var ex = kp.examples[ei];
+      html += '<div class="kp-example">';
+      html += '<div class="kp-example-header">';
+      html += '<span class="kp-example-num">' + (isZh ? '\u4f8b\u9898' : 'Example') + ' ' + (ei + 1) + '</span>';
+      if (ex.source) html += '<span class="kp-example-source">' + _escList(ex.source) + '</span>';
+      html += '</div>';
+      html += '<div class="kp-example-q">' + (typeof kpMarkdown === 'function' ? kpMarkdown(isZh && ex.question_zh ? ex.question_zh : ex.question) : _escList(ex.question)) + '</div>';
+      html += '<button class="kp-example-toggle" aria-expanded="false" data-ls-kp-sol="' + ei + '">' + (isZh ? '\u663e\u793a\u89e3\u6790' : 'Show Solution') + ' \u25bc</button>';
+      html += '<div class="kp-example-solution" id="ls-kp-sol-' + ei + '">';
+      html += (typeof kpMarkdown === 'function' ? kpMarkdown(isZh && ex.solution_zh ? ex.solution_zh : ex.solution) : _escList(ex.solution || ''));
+      html += '</div>';
+      html += '</div>';
+    }
+    html += '</div></div>';
+  }
+
+  /* ④ Test Yourself MCQ */
+  if (kp.testYourself && kp.testYourself.length > 0) {
+    html += '<div class="kp-section">';
+    html += '<div class="kp-section-header"><div class="kp-section-num">4</div>';
+    html += '<div class="kp-section-labels"><div class="kp-section-label">' + (isZh ? '\u81ea\u6d4b' : 'Test Yourself') + '</div></div></div>';
+    html += '<div class="kp-quiz-stack" data-ls-kp-quiz-id="' + kp.id + '" data-ls-kp-quiz-total="' + kp.testYourself.length + '">';
+    for (var qi = 0; qi < kp.testYourself.length; qi++) {
+      var tq = kp.testYourself[qi];
+      if (!tq) continue;
+      html += '<div class="kp-quiz-card" data-ls-kp-q-idx="' + qi + '">';
+      html += '<div class="kp-quiz-q-num">' + (isZh ? '\u7b2c' : 'Q') + (qi + 1) + '</div>';
+      html += '<div class="kp-quiz-question">' + (typeof kpMarkdown === 'function' ? kpMarkdown(isZh && tq.q_zh ? tq.q_zh : tq.q) : _escList(tq.q || '')) + '</div>';
+      html += '<div class="kp-quiz-options">';
+      for (var oi = 0; oi < tq.o.length; oi++) {
+        html += '<button class="kp-quiz-opt" data-ls-kp-q="' + qi + '" data-ls-kp-opt="' + oi + '">' + (typeof pqRender === 'function' ? pqRender(tq.o[oi]) : _escList(tq.o[oi])) + '</button>';
       }
-      html += '<div class="ls-kp-mcq-result" id="ls-mcq-result-' + qi + '" style="display:none"></div>';
+      html += '</div>';
+      html += '<div class="kp-quiz-explain d-none" id="ls-kp-exp-' + qi + '"></div>';
       html += '</div>';
     }
     html += '</div>';
@@ -1609,7 +1705,9 @@ function _renderListStudyKP(item) {
   return html;
 }
 
-function _renderListStudyPP(item) {
+/* ─── PP card (past paper style) ─── */
+
+function _renderLsPPCard(item) {
   var html = '<div class="ls-pp-card">';
   if (!item.question) {
     html += '<div style="color:var(--c-text3);padding:16px">' + (appLang !== 'en' ? '\u771f\u9898\u6570\u636e\u672a\u52a0\u8f7d' : 'PP data not loaded') + '</div>';
@@ -1636,6 +1734,26 @@ function _renderListStudyPP(item) {
   html += '<div class="ls-pp-body">' + qHtml + '</div>';
   html += '</div>';
   return html;
+}
+
+/* ─── KaTeX rendering helper ─── */
+
+function _lsRenderMath(el) {
+  try {
+    if (typeof renderMathInElement === 'function') {
+      renderMathInElement(el, {
+        delimiters: [
+          { left: '$$', right: '$$', display: true },
+          { left: '$', right: '$', display: false },
+          { left: '\\(', right: '\\)', display: false },
+          { left: '\\[', right: '\\]', display: true }
+        ], throwOnError: false
+      });
+    }
+  } catch(e) {}
+  try {
+    if (typeof pqRender === 'function') pqRender(el);
+  } catch(e) {}
 }
 
 /* ─── Event binding ─── */
@@ -1672,14 +1790,40 @@ function _bindListStudyEvents(panel) {
   var skipBtn = panel.querySelector('#ls-skip');
   if (skipBtn) skipBtn.addEventListener('click', function() { _lsGo(1); });
 
-  /* MCQ option buttons */
-  panel.querySelectorAll('.ls-kp-mcq-opt').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      _handleListStudyMCQ(btn, panel);
+  /* Complete button */
+  var completeBtn = panel.querySelector('#ls-complete');
+  if (completeBtn) completeBtn.addEventListener('click', function() { _finishListStudy(); });
+
+  /* Tab switching */
+  panel.querySelectorAll('[data-ls-tab]').forEach(function(tabBtn) {
+    tabBtn.addEventListener('click', function() {
+      _switchLsTab(tabBtn.dataset.lsTab);
     });
   });
 
-  /* Keyboard: 1/2/3 for rating, ←/→ for nav */
+  /* KP solution toggle (delegated) */
+  panel.querySelectorAll('[data-ls-kp-sol]').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var solIdx = btn.getAttribute('data-ls-kp-sol');
+      var solEl = document.getElementById('ls-kp-sol-' + solIdx);
+      if (solEl) {
+        var isOpen = solEl.classList.toggle('open');
+        var isZh = (appLang !== 'en');
+        btn.textContent = isOpen ? ((isZh ? '\u9690\u85cf\u89e3\u6790' : 'Hide Solution') + ' \u25b2') : ((isZh ? '\u663e\u793a\u89e3\u6790' : 'Show Solution') + ' \u25bc');
+        btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        if (isOpen) _lsRenderMath(solEl);
+      }
+    });
+  });
+
+  /* KP MCQ option buttons */
+  panel.querySelectorAll('[data-ls-kp-opt]').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      _handleLsKPMCQ(btn, panel);
+    });
+  });
+
+  /* Keyboard: 1/2/3 for rating, ←/→ for nav, Escape to exit */
   if (_lsKeyHandler) document.removeEventListener('keydown', _lsKeyHandler);
   _lsKeyHandler = function(e) {
     if (!_listStudy) return;
@@ -1694,37 +1838,78 @@ function _bindListStudyEvents(panel) {
   document.addEventListener('keydown', _lsKeyHandler);
 }
 
-function _handleListStudyMCQ(btn, panel) {
-  var qi = parseInt(btn.dataset.lsMcqQ);
-  var oi = parseInt(btn.dataset.lsMcqOpt);
-  if (!_listStudy) return;
-  var item = _listStudy.items[_listStudy.idx];
-  if (!item.kp || !item.kp.questions) return;
-  var q = item.kp.questions[qi];
-  if (!q) return;
-  var correct = q.answer === oi || q.correct === oi;
+/* ─── KP MCQ handler (scoped to list study) ─── */
 
-  /* Disable all opts for this question */
-  panel.querySelectorAll('[data-ls-mcq-q="' + qi + '"]').forEach(function(ob) {
-    ob.disabled = true;
-    var oIdx = parseInt(ob.dataset.lsMcqOpt);
-    if (oIdx === (q.answer != null ? q.answer : q.correct)) ob.style.background = 'var(--c-success-bg, #D1FAE5)';
-    if (oIdx === oi && !correct) ob.style.background = 'var(--c-danger-bg, #FEE2E2)';
-  });
-  var resultEl = panel.querySelector('#ls-mcq-result-' + qi);
-  if (resultEl) {
-    resultEl.style.display = 'block';
-    resultEl.innerHTML = correct
-      ? '<span style="color:var(--c-success)">\u2713 ' + (appLang !== 'en' ? '\u6b63\u786e' : 'Correct') + '</span>'
-      : '<span style="color:var(--c-danger)">\u2717 ' + (appLang !== 'en' ? '\u9519\u8bef' : 'Wrong') + (q.explanation ? ' — ' + _escList(q.explanation) : '') + '</span>';
+function _handleLsKPMCQ(btn, panel) {
+  var qi = parseInt(btn.getAttribute('data-ls-kp-q'));
+  var oi = parseInt(btn.getAttribute('data-ls-kp-opt'));
+  if (!_listStudy) return;
+  var tab = _listStudy.tabs.kp;
+  var item = tab.items[tab.idx];
+  if (!item || !item.kp || !item.kp.testYourself) return;
+  var tq = item.kp.testYourself[qi];
+  if (!tq) return;
+
+  /* Prevent re-answering */
+  var qCard = btn.closest('.kp-quiz-card');
+  if (qCard && qCard.classList.contains('answered')) return;
+  if (qCard) qCard.classList.add('answered');
+
+  var ansIdx = tq.a;
+  var isCorrect = oi === ansIdx;
+
+  /* Highlight correct/wrong */
+  var allOpts = panel.querySelectorAll('[data-ls-kp-q="' + qi + '"]');
+  for (var oii = 0; oii < allOpts.length; oii++) {
+    allOpts[oii].disabled = true;
+    if (parseInt(allOpts[oii].getAttribute('data-ls-kp-opt')) === ansIdx) allOpts[oii].classList.add('correct');
+  }
+  if (!isCorrect) btn.classList.add('wrong');
+
+  /* Sound */
+  if (isCorrect && typeof playCorrect === 'function') playCorrect();
+  if (!isCorrect && typeof playWrong === 'function') playWrong();
+
+  /* Show explanation */
+  var isZh = (appLang !== 'en');
+  var expText = isZh && tq.e_zh ? tq.e_zh : tq.e;
+  var expEl = document.getElementById('ls-kp-exp-' + qi);
+  if (expEl && expText) {
+    var mark = isCorrect ? '\u2705 ' : '\u274c ';
+    expEl.innerHTML = mark + '<strong>' + (isZh ? '\u89e3\u6790' : 'Explanation') + ':</strong> ' + (typeof kpMarkdown === 'function' ? kpMarkdown(expText) : _escList(expText));
+    expEl.classList.remove('d-none');
+    _lsRenderMath(expEl);
   }
 }
 
-/* ─── Rating + Navigation ─── */
+/* ─── Tab switching ─── */
+
+function _switchLsTab(tabId) {
+  if (!_listStudy || !_listStudy.tabs[tabId] || _listStudy.tabs[tabId].items.length === 0) return;
+  if (_listStudy.activeTab === tabId) return;
+  _listStudy.activeTab = tabId;
+  _renderListStudyWorkbench();
+}
+
+function _getNextUnratedTab() {
+  if (!_listStudy) return null;
+  for (var ti = 0; ti < _LS_TAB_ORDER.length; ti++) {
+    var tabId = _LS_TAB_ORDER[ti];
+    var tabData = _listStudy.tabs[tabId];
+    if (tabData.items.length === 0) continue;
+    if (Object.keys(tabData.rated).length < tabData.items.length) return tabId;
+  }
+  return null;
+}
+
+/* ─── Rating (tab-scoped) ─── */
 
 function _rateListStudyItem(newFs) {
   if (!_listStudy) return;
-  var item = _listStudy.items[_listStudy.idx];
+  var tabId = _listStudy.activeTab;
+  var tab = _listStudy.tabs[tabId];
+  var item = tab.items[tab.idx];
+  if (!item) return;
   var ref = item.ref;
   var type = item.type;
 
@@ -1746,10 +1931,10 @@ function _rateListStudyItem(newFs) {
   /* Update learnedAt */
   if (typeof updateItemLearnedAt === 'function') updateItemLearnedAt(_listStudy.listId, type, ref);
 
-  /* Record rated state for this session */
-  _listStudy.rated[type + ':' + ref] = newFs;
+  /* Record rated state in current tab */
+  tab.rated[type + ':' + ref] = newFs;
 
-  /* Visual feedback + auto advance */
+  /* Visual feedback */
   var card = document.querySelector('.ls-card');
   if (card) {
     var feedbackClass = newFs === 'mastered' ? 'ls-flash-green' : newFs === 'uncertain' ? 'ls-flash-amber' : 'ls-flash-purple';
@@ -1758,31 +1943,53 @@ function _rateListStudyItem(newFs) {
 
   if (typeof playCorrect === 'function' && newFs === 'mastered') playCorrect();
 
+  /* Auto advance after delay */
   setTimeout(function() {
-    if (_listStudy && _listStudy.idx < _listStudy.items.length - 1) {
-      _listStudy.idx++;
-      _renderListStudyCard();
+    if (!_listStudy) return;
+    var curTab = _listStudy.tabs[_listStudy.activeTab];
+    if (curTab.idx < curTab.items.length - 1) {
+      /* Next item in current tab */
+      curTab.idx++;
+      _renderListStudyWorkbench();
     } else {
-      _finishListStudy();
+      /* Current tab exhausted — find next unrated tab */
+      var nextTab = _getNextUnratedTab();
+      if (nextTab && nextTab !== _listStudy.activeTab) {
+        _listStudy.activeTab = nextTab;
+        _renderListStudyWorkbench();
+      } else if (!nextTab || Object.keys(curTab.rated).length >= curTab.items.length) {
+        /* All tabs complete */
+        _finishListStudy();
+      } else {
+        _renderListStudyWorkbench();
+      }
     }
   }, 500);
 }
 
+/* ─── Navigation (tab-scoped) ─── */
+
 function _lsGo(delta) {
   if (!_listStudy) return;
-  var newIdx = _listStudy.idx + delta;
-  if (newIdx < 0 || newIdx >= _listStudy.items.length) return;
-  _listStudy.idx = newIdx;
-  _renderListStudyCard();
+  var tab = _listStudy.tabs[_listStudy.activeTab];
+  var newIdx = tab.idx + delta;
+  if (newIdx < 0 || newIdx >= tab.items.length) return;
+  tab.idx = newIdx;
+  _renderListStudyWorkbench();
 }
+
+/* ─── Exit / Finish ─── */
 
 function _exitListStudy() {
   if (!_listStudy) return;
   var listId = _listStudy.listId;
 
   /* Record session if any items were rated */
-  var ratedCount = Object.keys(_listStudy.rated).length;
-  if (ratedCount > 0) {
+  var anyRated = false;
+  for (var ti = 0; ti < _LS_TAB_ORDER.length; ti++) {
+    if (Object.keys(_listStudy.tabs[_LS_TAB_ORDER[ti]].rated).length > 0) { anyRated = true; break; }
+  }
+  if (anyRated) {
     var list = typeof getCustomList === 'function' ? getCustomList(listId) : null;
     if (list) {
       var results = { mastered: 0, uncertain: 0, learning: 0, 'new': 0 };
@@ -1807,24 +2014,52 @@ function _finishListStudy() {
   var panel = E('panel-study');
   if (!panel) return;
 
-  /* Tally results */
-  var counts = { mastered: 0, uncertain: 0, learning: 0, skipped: 0 };
-  for (var i = 0; i < ls.items.length; i++) {
-    var key = ls.items[i].type + ':' + ls.items[i].ref;
-    var r = ls.rated[key];
-    if (r) counts[r] = (counts[r] || 0) + 1;
-    else counts.skipped++;
+  /* Tally results per type */
+  var typeCounts = {};
+  var totalCounts = { mastered: 0, uncertain: 0, learning: 0, skipped: 0 };
+  for (var ti = 0; ti < _LS_TAB_ORDER.length; ti++) {
+    var tabId = _LS_TAB_ORDER[ti];
+    var tabData = ls.tabs[tabId];
+    if (tabData.items.length === 0) continue;
+    var tc = { mastered: 0, uncertain: 0, learning: 0, skipped: 0 };
+    for (var ii = 0; ii < tabData.items.length; ii++) {
+      var key = tabData.items[ii].type + ':' + tabData.items[ii].ref;
+      var r = tabData.rated[key];
+      if (r) { tc[r] = (tc[r] || 0) + 1; totalCounts[r]++; }
+      else { tc.skipped++; totalCounts.skipped++; }
+    }
+    typeCounts[tabId] = tc;
   }
+
+  var totalItems = ls.allItems.length;
 
   var html = '<div class="ls-finish">';
   html += '<h2>' + (zh ? '\u6e05\u5355\u5b66\u4e60\u5b8c\u6210!' : 'List Study Complete!') + '</h2>';
-  html += '<div class="ls-finish-title">' + _escList(ls.listTitle) + ' (' + ls.items.length + (zh ? ' \u9879)' : ' items)') + '</div>';
+  html += '<div class="ls-finish-title">' + _escList(ls.listTitle) + ' (' + totalItems + (zh ? ' \u9879)' : ' items)') + '</div>';
 
+  /* Per-type breakdown */
+  html += '<div class="ls-finish-breakdown">';
+  for (var fi = 0; fi < _LS_TAB_ORDER.length; fi++) {
+    var ftId = _LS_TAB_ORDER[fi];
+    if (!typeCounts[ftId]) continue;
+    var ftc = typeCounts[ftId];
+    var ftLabel = zh ? _LS_TAB_LABELS[ftId].zh : _LS_TAB_LABELS[ftId].en;
+    html += '<div class="ls-finish-type-row">';
+    html += '<span class="ls-type-badge ls-type-' + ftId + '" style="font-size:10px">' + ftLabel + '</span>';
+    if (ftc.mastered) html += ' <span style="color:var(--c-success)">' + ftc.mastered + ' ' + (zh ? '\u638c\u63e1' : 'M') + '</span>';
+    if (ftc.uncertain) html += ' <span style="color:var(--c-warning)">' + ftc.uncertain + ' ' + (zh ? '\u6a21\u7cca' : 'U') + '</span>';
+    if (ftc.learning) html += ' <span style="color:var(--c-primary)">' + ftc.learning + ' ' + (zh ? '\u5b66\u4e60\u4e2d' : 'L') + '</span>';
+    if (ftc.skipped) html += ' <span style="color:var(--c-text3)">' + ftc.skipped + ' ' + (zh ? '\u8df3\u8fc7' : 'Skip') + '</span>';
+    html += '</div>';
+  }
+  html += '</div>';
+
+  /* Total summary */
   html += '<div class="ls-finish-stats">';
-  if (counts.mastered) html += '<div class="ls-finish-stat" style="color:var(--c-success)">' + counts.mastered + ' ' + (zh ? '\u638c\u63e1' : 'Mastered') + '</div>';
-  if (counts.uncertain) html += '<div class="ls-finish-stat" style="color:var(--c-warning)">' + counts.uncertain + ' ' + (zh ? '\u6a21\u7cca' : 'Uncertain') + '</div>';
-  if (counts.learning) html += '<div class="ls-finish-stat" style="color:var(--c-primary)">' + counts.learning + ' ' + (zh ? '\u5b66\u4e60\u4e2d' : 'Learning') + '</div>';
-  if (counts.skipped) html += '<div class="ls-finish-stat" style="color:var(--c-text3)">' + counts.skipped + ' ' + (zh ? '\u8df3\u8fc7' : 'Skipped') + '</div>';
+  if (totalCounts.mastered) html += '<div class="ls-finish-stat" style="color:var(--c-success)">' + totalCounts.mastered + ' ' + (zh ? '\u638c\u63e1' : 'Mastered') + '</div>';
+  if (totalCounts.uncertain) html += '<div class="ls-finish-stat" style="color:var(--c-warning)">' + totalCounts.uncertain + ' ' + (zh ? '\u6a21\u7cca' : 'Uncertain') + '</div>';
+  if (totalCounts.learning) html += '<div class="ls-finish-stat" style="color:var(--c-primary)">' + totalCounts.learning + ' ' + (zh ? '\u5b66\u4e60\u4e2d' : 'Learning') + '</div>';
+  if (totalCounts.skipped) html += '<div class="ls-finish-stat" style="color:var(--c-text3)">' + totalCounts.skipped + ' ' + (zh ? '\u8df3\u8fc7' : 'Skipped') + '</div>';
   html += '</div>';
 
   html += '<div class="ls-finish-actions">';

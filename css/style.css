@@ -4806,13 +4806,14 @@ input { font-family: inherit; }
 [data-theme="dark"] .cl-detail-row td { background:var(--c-surface, #1E1E2E); }
 [data-theme="dark"] .cl-rate-popup { background:var(--c-surface, #1E1E2E); border-color:var(--c-border); }
 
-/* ═══ LIST STUDY MODE ═══ */
+/* ═══ LIST STUDY MODE (Tab Workbench) ═══ */
 .ls-header { display:flex; align-items:center; gap:8px; padding:8px 0; flex-wrap:wrap; }
 .ls-type-badge { font-size:11px; font-weight:700; padding:3px 10px; border-radius:999px; text-transform:uppercase; letter-spacing:0.5px; }
 .ls-type-vocab { background:var(--c-success-bg,#D1FAE5); color:var(--c-success,#059669); }
 .ls-type-kp { background:var(--c-primary-bg,#EDEDFF); color:var(--c-primary,#5248C9); }
 .ls-type-pp { background:var(--c-warning-bg,#FEF3C7); color:var(--c-warning,#D97706); }
 .ls-list-title { font-size:13px; color:var(--c-text2); }
+.ls-wb-title { font-size:14px; font-weight:600; color:var(--c-text); flex:1; text-align:center; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
 .ls-card { min-height:200px; padding:20px; margin:8px 0; border:1px solid var(--c-border,#e5e7eb); border-radius:var(--r,10px); background:var(--c-bg,#fff); transition:background 0.3s; overflow-y:auto; max-height:55vh; }
 .ls-actions { padding:12px 0; }
 .ls-rate-row { display:flex; gap:8px; margin-bottom:12px; }
@@ -4820,24 +4821,31 @@ input { font-family: inherit; }
 .ls-nav-row { display:flex; gap:8px; justify-content:center; }
 .ls-nav-btn { min-width:90px; }
 
+/* Tab row */
+.ls-tab-row { display:flex; gap:0; border-bottom:2px solid var(--c-border,#e5e7eb); margin-bottom:12px; }
+.ls-study-tab { padding:10px 14px; font-size:13px; font-weight:600; color:var(--c-text2); background:none; border:none; cursor:pointer; border-bottom:2px solid transparent; margin-bottom:-2px; transition:color 0.2s, border-color 0.2s; }
+.ls-study-tab:hover { color:var(--c-text); }
+.ls-study-tab.active { color:var(--c-primary); border-bottom-color:var(--c-primary); }
+.ls-tab-progress { font-size:11px; font-weight:400; color:var(--c-text3); margin-left:4px; }
+.ls-complete-btn { display:block; width:100%; margin-top:8px; }
+
 /* Vocab card */
 .ls-vocab-card { text-align:center; padding:24px 0; }
 .ls-vocab-word { font-size:28px; font-weight:700; margin-bottom:20px; color:var(--c-text); }
 .ls-vocab-def { font-size:18px; color:var(--c-text2); margin-bottom:12px; min-height:32px; }
 .ls-reveal-btn { margin-top:8px; font-size:14px; }
 
-/* KP card */
+/* KP card (uses existing .kp-section, .kp-concept etc. from syllabus) */
 .ls-kp-card { padding:4px 0; }
 .ls-kp-title { font-size:20px; font-weight:700; margin-bottom:4px; }
-.ls-kp-title-zh { font-size:16px; color:var(--c-text2); margin-bottom:12px; }
-.ls-kp-section { margin-bottom:14px; }
-.ls-kp-section-title { font-size:12px; font-weight:700; text-transform:uppercase; color:var(--c-text3); letter-spacing:0.5px; margin-bottom:4px; }
-.ls-kp-text { font-size:14px; line-height:1.6; white-space:pre-line; }
-.ls-kp-mcq { margin-bottom:12px; padding:10px; background:var(--c-surface-alt,#f8f7ff); border-radius:8px; }
-.ls-kp-mcq-stem { font-weight:600; margin-bottom:8px; }
-.ls-kp-mcq-opt { display:block; width:100%; text-align:left; padding:8px 12px; margin:4px 0; border:1px solid var(--c-border); border-radius:6px; background:var(--c-bg,#fff); cursor:pointer; font-size:14px; }
-.ls-kp-mcq-opt:hover:not(:disabled) { border-color:var(--c-primary); }
-.ls-kp-mcq-result { padding:6px 0; font-size:13px; }
+.ls-card .kp-section { margin-bottom:16px; }
+.ls-card .kp-hero-title { font-size:18px; }
+.ls-card .kp-hero-sub { font-size:14px; color:var(--c-text2); margin-bottom:12px; }
+.ls-card .kp-section-header { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+.ls-card .kp-section-num { width:22px; height:22px; border-radius:50%; background:var(--c-primary); color:#fff; font-size:12px; font-weight:700; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.ls-card .kp-section-label { font-size:13px; font-weight:700; color:var(--c-text); }
+.ls-card .kp-example-solution { display:none; padding:12px; background:var(--c-surface-alt,#f8f7ff); border-radius:8px; margin-top:8px; }
+.ls-card .kp-example-solution.open { display:block; }
 
 /* PP card */
 .ls-pp-card { padding:4px 0; }
@@ -4861,14 +4869,17 @@ input { font-family: inherit; }
 .ls-finish { text-align:center; padding:40px 16px; }
 .ls-finish h2 { font-size:22px; margin-bottom:8px; }
 .ls-finish-title { font-size:14px; color:var(--c-text2); margin-bottom:20px; }
+.ls-finish-breakdown { margin-bottom:16px; }
+.ls-finish-type-row { display:flex; align-items:center; justify-content:center; gap:8px; padding:4px 0; font-size:14px; font-weight:600; }
 .ls-finish-stats { display:flex; justify-content:center; gap:16px; margin-bottom:24px; flex-wrap:wrap; }
 .ls-finish-stat { font-size:18px; font-weight:700; }
 .ls-finish-actions { display:flex; gap:8px; justify-content:center; }
 
 /* Dark mode */
 [data-theme="dark"] .ls-card { background:var(--c-surface,#1E1E2E); border-color:var(--c-border); }
-[data-theme="dark"] .ls-kp-mcq { background:var(--c-surface,#1E1E2E); }
-[data-theme="dark"] .ls-kp-mcq-opt { background:var(--c-bg,#0F0F1A); border-color:var(--c-border); }
+[data-theme="dark"] .ls-card .kp-example-solution { background:var(--c-surface,#1E1E2E); }
+[data-theme="dark"] .ls-study-tab { color:var(--c-text3); }
+[data-theme="dark"] .ls-study-tab.active { color:var(--c-primary); }
 [data-theme="dark"] .ls-flash-green { background:rgba(34,197,94,0.15) !important; }
 [data-theme="dark"] .ls-flash-amber { background:rgba(245,158,11,0.15) !important; }
 [data-theme="dark"] .ls-flash-purple { background:rgba(82,72,201,0.15) !important; }
@@ -4879,6 +4890,7 @@ input { font-family: inherit; }
   .ls-vocab-def { font-size:16px; }
   .ls-rate-row { flex-direction:column; }
   .ls-card { max-height:45vh; padding:14px; }
+  .ls-study-tab { padding:8px 10px; font-size:12px; }
 }
 
 /* Print */

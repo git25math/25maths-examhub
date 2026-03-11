@@ -460,6 +460,7 @@
 - [x] **三种打印 (Phase B)**: 打印模式选择弹窗 + 项目详情打印（词汇表/KP 卡片/PP 题目）+ 离线勾选清单（4 列 M/U/L/N + ref ID）
 - [x] **数据补录 (Phase C)**: 补录按钮 + 全宽补录界面 + write-through 到全局 FLM + session 记录
 - [x] **聚焦增强 (Phase D)**: 预览表增加标题/加入时间/上次学习 + 行内详情展开（KaTeX）+ FLM 统计条 + 单项快速评分
+- [x] **Tab 工作台 (v5.0.1)**: 学习模式重构为 Tab 工作台 — 词汇/KP/PP 各自独立 Tab + KP 完整渲染（概念卡片/考法/例题/MCQ）+ 分类型完成统计
 
 ## v4.7 FLM 完备性审计 + 自定义清单 + 遗忘追踪 + 列表/打印视图 [DONE]
 - [x] **遗忘追踪 (v4.7.0)**: reforget_log 记录 6 个降级点 + getReforgetCount/Timeline 查询 + 云同步桥接
