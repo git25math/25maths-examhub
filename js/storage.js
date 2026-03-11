@@ -246,7 +246,10 @@ function recordScan(key, verdict, round) {
 
   /* Re-forget tracking: mastered demoted */
   if (_prevFsForReforget === 'mastered' && fs !== 'mastered') {
-    _logReforget(key, 'vocab', 'mastered', fs, '', '');
+    var _rfSlug = key.replace(/^L_/, '').replace(/_W\d+$/, '');
+    var _rfBoard = '';
+    for (var _rfi = 0; _rfi < LEVELS.length; _rfi++) { if (LEVELS[_rfi].slug === _rfSlug) { _rfBoard = LEVELS[_rfi].board || ''; break; } }
+    _logReforget(key, 'vocab', 'mastered', fs, _rfSlug, _rfBoard);
   }
 
   /* Bump weekly goal when word first leaves 'new' */
@@ -405,7 +408,8 @@ function getAllWords() {
         fr: d ? (d.fr || 0) : 0,
         src: d ? (d.src || '') : '',
         rc: d ? (d.rc || 0) : 0,
-        fmt: d ? (d.fmt || null) : null
+        fmt: d ? (d.fmt || null) : null,
+        lr: d ? (d.lr || null) : null
       });
     }
   });
@@ -477,7 +481,10 @@ function recordRefreshScan(key, verdict) {
 
   /* Re-forget tracking */
   if (_prevFsRefresh === 'mastered' && fs !== 'mastered') {
-    _logReforget(key, 'vocab', 'mastered', fs, '', '');
+    var _rfSlug2 = key.replace(/^L_/, '').replace(/_W\d+$/, '');
+    var _rfBoard2 = '';
+    for (var _rfi2 = 0; _rfi2 < LEVELS.length; _rfi2++) { if (LEVELS[_rfi2].slug === _rfSlug2) { _rfBoard2 = LEVELS[_rfi2].board || ''; break; } }
+    _logReforget(key, 'vocab', 'mastered', fs, _rfSlug2, _rfBoard2);
   }
 
   var st = fs === 'mastered' ? 'mastered' : fs === 'new' ? 'new' : 'learning';
@@ -732,7 +739,7 @@ async function syncFromCloud() {
   /* Clear unsynced residual data from previous user (crash-safe) */
   var _unsyncedKeys = ['pp_wrong_book', 'pp_exam_history', 'pp_paper_results',
     'diag_history', 'wmatch_badges', 'wmatch_weekly',
-    'recovery_schedule', 'student_profile'];
+    'recovery_schedule', 'student_profile', 'reforget_log', 'custom_lists'];
   _unsyncedKeys.forEach(function(k) {
     try { localStorage.removeItem(k); } catch(e) {}
   });
@@ -1016,7 +1023,8 @@ function saveKPResult(kpId, score, total) {
     cs = 0;
     if (fs === 'mastered') {
       /* Re-forget tracking */
-      _logReforget(kpId, 'kp', 'mastered', 'uncertain', '', '');
+      var _kpParts = kpId.split('.'); var _kpSec = _kpParts.length >= 2 ? ('S' + _kpParts[0] + '.' + _kpParts[1]) : '';
+      _logReforget(kpId, 'kp', 'mastered', 'uncertain', _kpSec, '');
       fs = 'uncertain';
     }
     else if (fs === 'new') fs = 'learning';
@@ -1125,7 +1133,8 @@ function recordKPRefreshScan(kpId, verdict) {
   else if (verdict === 'unknown') { fs = 'learning'; prev.cs = 0; prev.src = 'reflow'; }
   /* Re-forget tracking */
   if (_prevFsKPR === 'mastered' && fs !== 'mastered') {
-    _logReforget(kpId, 'kp', 'mastered', fs, '', '');
+    var _kpParts2 = kpId.split('.'); var _kpSec2 = _kpParts2.length >= 2 ? ('S' + _kpParts2[0] + '.' + _kpParts2[1]) : '';
+    _logReforget(kpId, 'kp', 'mastered', fs, _kpSec2, '');
   }
   s.kpDone[kpId] = {
     score: prev.score || 0, total: prev.total || 0, pct: prev.pct || 0,
@@ -1388,17 +1397,34 @@ function _logReforget(itemId, type, fromStatus, toStatus, section, board) {
   /* Trim oldest when over limit */
   if (log.length > _REFORGET_MAX) log = log.slice(log.length - _REFORGET_MAX);
   try { localStorage.setItem(_REFORGET_KEY, JSON.stringify(log)); } catch(e) {}
+  _invalidateReforgetCache();
 }
 
+var _reforgetCache = null;
+var _reforgetCountMap = null;
+
+function _invalidateReforgetCache() { _reforgetCache = null; _reforgetCountMap = null; }
+
 function getReforgetLog() {
-  try { return JSON.parse(localStorage.getItem(_REFORGET_KEY)) || []; } catch(e) { return []; }
+  if (_reforgetCache) return _reforgetCache;
+  try { _reforgetCache = JSON.parse(localStorage.getItem(_REFORGET_KEY)) || []; } catch(e) { _reforgetCache = []; }
+  return _reforgetCache;
+}
+
+function _buildReforgetCountMap() {
+  if (_reforgetCountMap) return _reforgetCountMap;
+  var log = getReforgetLog();
+  _reforgetCountMap = {};
+  for (var i = 0; i < log.length; i++) {
+    var id = log[i].id;
+    _reforgetCountMap[id] = (_reforgetCountMap[id] || 0) + 1;
+  }
+  return _reforgetCountMap;
 }
 
 function getReforgetCount(itemId) {
-  var log = getReforgetLog();
-  var count = 0;
-  for (var i = 0; i < log.length; i++) { if (log[i].id === itemId) count++; }
-  return count;
+  var map = _buildReforgetCountMap();
+  return map[itemId] || 0;
 }
 
 function getReforgetTimeline(itemId) {

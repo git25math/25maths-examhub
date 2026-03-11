@@ -1292,7 +1292,8 @@ function _ppSetMastery(qid, level, opts) {
   } else if (level === 'needs_work') {
     if (fs === 'mastered') {
       /* Re-forget tracking */
-      if (typeof _logReforget === 'function') _logReforget(qid, 'pp', 'mastered', 'uncertain', '', '');
+      var _ppBoard = qid.indexOf('0580') === 0 ? 'cie' : qid.indexOf('4ma1') === 0 ? 'edx' : '';
+      if (typeof _logReforget === 'function') _logReforget(qid, 'pp', 'mastered', 'uncertain', '', _ppBoard);
       fs = 'uncertain';
     }
     else fs = 'learning';
@@ -1367,7 +1368,8 @@ function recordPPRefreshScan(qid, verdict) {
   }
   /* Re-forget tracking */
   if (_prevFsPPR === 'mastered' && fs !== 'mastered') {
-    if (typeof _logReforget === 'function') _logReforget(qid, 'pp', 'mastered', fs, '', '');
+    var _ppBoard2 = qid.indexOf('0580') === 0 ? 'cie' : qid.indexOf('4ma1') === 0 ? 'edx' : '';
+    if (typeof _logReforget === 'function') _logReforget(qid, 'pp', 'mastered', fs, '', _ppBoard2);
   }
   m[qid] = {
     m: fs === 'mastered' ? 'mastered' : fs === 'uncertain' ? 'partial' : 'needs_work',
@@ -1823,6 +1825,14 @@ function _finishPPScan() {
     var actionsDiv = panel ? panel.querySelector('.result-actions') : null;
     if (actionsDiv) actionsDiv.outerHTML = _renderRecoveryStepBar() + _renderRecoveryResultButtons();
   }
+  /* List Scan: replace buttons with list-scan controls */
+  if (!_isRecovery && typeof isListScanActive === 'function' && isListScanActive()) {
+    var lsPP = E('panel-practice');
+    var lsPPAct = lsPP ? lsPP.querySelector('.result-actions') : null;
+    if (lsPPAct && typeof _renderListScanButtons === 'function') {
+      lsPPAct.outerHTML = _renderListScanButtons();
+    }
+  }
   _ppScanState = null;
 }
 
@@ -1832,6 +1842,8 @@ function _exitPPScan() {
   if (typeof isRecoverySessionActive === 'function' && isRecoverySessionActive()) {
     _recordRecoveryResult('pp');
     _advanceRecoverySession();
+  } else if (typeof isListScanActive === 'function' && isListScanActive()) {
+    advanceListScan();
   } else {
     navTo('section');
   }

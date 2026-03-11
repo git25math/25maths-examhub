@@ -29,12 +29,24 @@
 - **4 种打印**: printWordList / printKPList / printPPList / printCustomList
 - **Session 历史**: 自定义清单打印包含 session 历史表格
 
+### 质量修复（9 项审计 Bug Fix）
+- **P0-1**: `_getKPsForSection` 数据结构修复 — `_kpData[board]` 为扁平数组，不再错误访问 `.kps`
+- **P0-2**: `getReforgetCount` 性能优化 — 新增 `_reforgetCountMap` 缓存，避免 2000+ 次 JSON.parse
+- **P1-1**: List Scan 完整接入 — 4 个 hook 点（vocab/KP/PP 完成+退出）正确链式推进 + 按钮注入
+- **P1-2**: Section 筛选下拉 — 动态收集 LEVELS slug / BOARD_SYLLABUS section 构建下拉选项
+- **P1-3**: 词汇 `lr` 字段修复 — `getAllWords()` 返回 `lr`（last review），列表视图使用 `lr` 而非 `fmt`
+- **P1-4**: 清单项删除按钮 — My Lists 展开表格增加 ✕ 删除列，委托 `removeItemFromList`
+- **P2-1**: Tab 切换重置筛选 — 切换 tab 时清空 `_listFilters` 防止跨 tab 筛选残留
+- **P2-2**: 遗忘日志 section/board 上下文 — 6 个注入点传入实际 section/board（词汇从 key 提取 slug，KP 从 id 推断 section，PP 从 qid 推断 board）
+- **P2-3**: 云同步清理补全 — `_unsyncedKeys` 新增 `reforget_log` + `custom_lists`
+
 ### 文件变更
 | 文件 | 变更类型 |
 |------|---------|
-| `js/storage.js` | 修改 — 遗忘追踪 + 自定义清单 + 4 注入点 + 云同步（+194 行）|
-| `js/practice.js` | 修改 — 遗忘追踪 2 注入点（+11 行）|
-| `js/lists.js` | **新建** — 列表视图面板 + 筛选引擎 + 清单 UI（~630 行）|
+| `js/storage.js` | 修改 — 遗忘追踪 + 自定义清单 + 4 注入点 + 云同步 + `lr` 字段 + section/board 上下文 + 缓存优化（+210 行）|
+| `js/practice.js` | 修改 — 遗忘追踪 2 注入点 + PP Scan list hook + board 上下文（+20 行）|
+| `js/lists.js` | **新建** — 列表视图面板 + 筛选引擎 + 清单 UI + Section 下拉 + 删除按钮 + Tab 重置（~810 行）|
+| `js/study.js` | 修改 — KP Scan list hook 2 处（+18 行）|
 | `js/worksheet.js` | 修改 — 4 种打印函数 + 通用构建器（+202 行）|
 | `js/ui.js` | 修改 — navTo 'lists' 路由（+1 行）|
 | `js/config.js` | 修改 — APP_VERSION v4.7.0 |

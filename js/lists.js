@@ -57,6 +57,7 @@ function renderListView() {
       _listPage = 0;
       _listSelected = {};
       _listSort = { col: 'word', asc: true };
+      _listFilters = { status: 'all', section: 'all', board: 'all', dateFrom: '', dateTo: '', reforget: 'all', search: '', listId: '' };
       renderListView();
     });
   });
@@ -98,6 +99,15 @@ function _renderListFilters(zh) {
     html += '</select>';
   }
 
+  /* Section filter — populated dynamically from current tab data */
+  html += '<select class="list-filter-select" id="lf-section">';
+  html += '<option value="all">' + (zh ? '全部章节' : 'All Sections') + '</option>';
+  var secSet = _collectSections();
+  for (var si2 = 0; si2 < secSet.length; si2++) {
+    html += '<option value="' + secSet[si2] + '"' + (_listFilters.section === secSet[si2] ? ' selected' : '') + '>' + secSet[si2] + '</option>';
+  }
+  html += '</select>';
+
   /* Re-forget filter */
   html += '<select class="list-filter-select" id="lf-reforget">';
   html += '<option value="all">' + (zh ? '\u5168\u90e8\u9057\u5fd8' : 'Re-forget: All') + '</option>';
@@ -119,8 +129,8 @@ function _renderListFilters(zh) {
 }
 
 function _bindListFilters(el) {
-  var selectors = ['lf-status', 'lf-board', 'lf-reforget', 'lf-date-from', 'lf-date-to', 'lf-search'];
-  var keys = ['status', 'board', 'reforget', 'dateFrom', 'dateTo', 'search'];
+  var selectors = ['lf-status', 'lf-section', 'lf-board', 'lf-reforget', 'lf-date-from', 'lf-date-to', 'lf-search'];
+  var keys = ['status', 'section', 'board', 'reforget', 'dateFrom', 'dateTo', 'search'];
   for (var i = 0; i < selectors.length; i++) {
     var input = el.querySelector('#' + selectors[i]);
     if (input) {
@@ -136,15 +146,45 @@ function _bindListFilters(el) {
 
 /* ═══ DATA SOURCES ═══ */
 
+function _collectSections() {
+  var seen = {};
+  var result = [];
+  if (_listTab === 'words') {
+    if (typeof LEVELS !== 'undefined') {
+      for (var i = 0; i < LEVELS.length; i++) {
+        var s = LEVELS[i].slug || '';
+        if (s && !seen[s]) { seen[s] = true; result.push(s); }
+      }
+    }
+  } else if (_listTab === 'kps' || _listTab === 'pps') {
+    var boards = typeof getVisibleBoards === 'function' ? getVisibleBoards() : [];
+    for (var bi = 0; bi < boards.length; bi++) {
+      var b = boards[bi];
+      if (b !== 'cie' && b !== 'edx') continue;
+      var syl = (typeof BOARD_SYLLABUS !== 'undefined') ? BOARD_SYLLABUS[b] : null;
+      if (!syl || !syl.chapters) continue;
+      for (var ci = 0; ci < syl.chapters.length; ci++) {
+        var secs = syl.chapters[ci].sections || [];
+        for (var si = 0; si < secs.length; si++) {
+          var sid = secs[si].id;
+          if (sid && !seen[sid]) { seen[sid] = true; result.push(sid); }
+        }
+      }
+    }
+  }
+  return result;
+}
+
 function _getFilteredWords() {
   var all = typeof getAllWords === 'function' ? getAllWords() : [];
   var items = [];
   for (var i = 0; i < all.length; i++) {
     var w = all[i];
+    var lvObj = LEVELS[w.level];
     items.push({
       _type: 'vocab', _ref: w.key, _id: 'vocab:' + w.key,
       word: w.word || '', def: w.def || '', fs: w.fs || 'new',
-      section: '', lr: w.fmt || null, rc: w.rc || 0,
+      section: lvObj ? (lvObj.slug || '') : '', lr: w.lr || null, rc: w.rc || 0,
       reforget: typeof getReforgetCount === 'function' ? getReforgetCount(w.key) : 0
     });
   }
@@ -188,16 +228,13 @@ function _getFilteredKPs() {
 }
 
 function _getKPsForSection(sectionId, board) {
-  /* Try knowledge data first */
-  var kpData = (typeof _kpData !== 'undefined') ? _kpData[board] : null;
-  if (kpData && kpData.kps) {
-    var result = [];
-    for (var i = 0; i < kpData.kps.length; i++) {
-      if (kpData.kps[i].section === sectionId) result.push(kpData.kps[i]);
-    }
-    if (result.length > 0) return result;
+  /* _kpData[board] is a flat array of {id, section, title, title_zh, ...} */
+  var pts = (typeof _kpData !== 'undefined') ? (_kpData[board] || []) : [];
+  var result = [];
+  for (var i = 0; i < pts.length; i++) {
+    if (pts[i].section === sectionId) result.push(pts[i]);
   }
-  return [];
+  return result;
 }
 
 function _getFilteredPPs() {
@@ -236,6 +273,9 @@ function _applyListFilters(items) {
 
     /* Status filter */
     if (f.status !== 'all' && item.fs !== f.status) continue;
+
+    /* Section filter */
+    if (f.section !== 'all' && (item.section || '') !== f.section) continue;
 
     /* Board filter */
     if (f.board !== 'all' && item._board && item._board !== f.board) continue;
@@ -727,6 +767,19 @@ function _renderMyLists() {
       if (list && typeof printCustomList === 'function') printCustomList(list);
     });
   });
+
+  /* Remove item from list */
+  el.querySelectorAll('[data-rm-list]').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var listId = btn.dataset.rmList;
+      var type = btn.dataset.rmType;
+      var ref = btn.dataset.rmRef;
+      if (typeof removeItemFromList === 'function') {
+        removeItemFromList(listId, type, ref);
+        _renderMyLists();
+      }
+    });
+  });
 }
 
 function _countListItems(cl) {
@@ -741,12 +794,14 @@ function _countListItems(cl) {
 
 function _renderListItemsPreview(cl) {
   var html = '<table class="list-table" style="font-size:12px;margin-top:8px"><thead><tr>';
-  html += '<th>Type</th><th>ID</th><th>Status</th>';
+  html += '<th>Type</th><th>ID</th><th>Status</th><th></th>';
   html += '</tr></thead><tbody>';
   for (var i = 0; i < cl.items.length; i++) {
     var item = cl.items[i];
     var fs = _resolveItemFLM(item.type, item.ref);
-    html += '<tr><td>' + item.type + '</td><td>' + _escList(item.ref) + '</td><td>' + _fsChip(fs) + '</td></tr>';
+    html += '<tr><td>' + item.type + '</td><td>' + _escList(item.ref) + '</td><td>' + _fsChip(fs) + '</td>';
+    html += '<td><button class="btn btn-ghost" style="padding:2px 6px;font-size:11px;color:var(--c-danger)" data-rm-list="' + _escList(cl.id) + '" data-rm-type="' + item.type + '" data-rm-ref="' + _escList(item.ref) + '">✕</button></td>';
+    html += '</tr>';
   }
   html += '</tbody></table>';
   return html;
@@ -773,6 +828,8 @@ function _resolveItemFLM(type, ref) {
 
 var _listScanSession = null;
 
+function isListScanActive() { return _listScanSession !== null; }
+
 function startListScan(listId) {
   var list = typeof getCustomList === 'function' ? getCustomList(listId) : null;
   if (!list || list.items.length === 0) {
@@ -780,34 +837,33 @@ function startListScan(listId) {
     return;
   }
 
-  /* Group items by type */
-  var vocabItems = [], kpItems = [], ppItems = [];
+  /* Group items by type, determine board from KP/PP items */
+  var vocabKeys = [], kpIds = [], ppIds = [];
+  var board = typeof userBoard !== 'undefined' ? userBoard : 'cie';
   for (var i = 0; i < list.items.length; i++) {
     var it = list.items[i];
-    if (it.type === 'vocab') vocabItems.push(it.ref);
-    else if (it.type === 'kp') kpItems.push(it.ref);
-    else if (it.type === 'pp') ppItems.push(it.ref);
+    if (it.type === 'vocab') vocabKeys.push(it.ref);
+    else if (it.type === 'kp') kpIds.push(it.ref);
+    else if (it.type === 'pp') ppIds.push(it.ref);
   }
 
   var phases = [];
-  if (vocabItems.length > 0) phases.push({ type: 'vocab', items: vocabItems });
-  if (kpItems.length > 0) phases.push({ type: 'kp', items: kpItems });
-  if (ppItems.length > 0) phases.push({ type: 'pp', items: ppItems });
+  if (vocabKeys.length > 0) phases.push({ type: 'vocab', items: vocabKeys });
+  if (kpIds.length > 0) phases.push({ type: 'kp', items: kpIds, board: board });
+  if (ppIds.length > 0) phases.push({ type: 'pp', items: ppIds, board: board });
 
   if (phases.length === 0) return;
 
   _listScanSession = {
     listId: listId,
     phases: phases,
-    phaseIdx: 0,
-    results: { mastered: 0, uncertain: 0, learning: 0 }
+    phaseIdx: 0
   };
 
-  /* Start first phase — for vocab, launch into study panel with custom word list */
-  _advanceListScanPhase();
+  _runListScanPhase();
 }
 
-function _advanceListScanPhase() {
+function _runListScanPhase() {
   if (!_listScanSession) return;
   if (_listScanSession.phaseIdx >= _listScanSession.phases.length) {
     _finishListScan();
@@ -815,33 +871,75 @@ function _advanceListScanPhase() {
   }
 
   var phase = _listScanSession.phases[_listScanSession.phaseIdx];
-  var zh = (typeof getLang === 'function' ? getLang() : 'en') === 'zh';
 
   if (phase.type === 'vocab') {
-    if (typeof showToast === 'function') showToast(zh ? '\u8bcd\u6c47 Scan \u5f00\u59cb' : 'Vocab Scan starting...');
-    /* Set up a custom scan context for these words and navigate to study */
-    if (typeof _startCustomVocabScan === 'function') {
-      _startCustomVocabScan(phase.items, function() { _onListScanPhaseComplete(); });
+    /* Build word objects from keys for startRefreshScan */
+    var allW = typeof getAllWords === 'function' ? getAllWords() : [];
+    var keySet = {};
+    for (var ki = 0; ki < phase.items.length; ki++) keySet[phase.items[ki]] = true;
+    var wordObjs = [];
+    for (var wi = 0; wi < allW.length; wi++) {
+      if (keySet[allW[wi].key]) {
+        wordObjs.push({ word: allW[wi].word, def: allW[wi].def, key: allW[wi].key, lid: allW[wi].level });
+      }
+    }
+    if (wordObjs.length > 0 && typeof startRefreshScan === 'function') {
+      startRefreshScan(wordObjs);
     } else {
-      /* Fallback: skip this phase */
       _listScanSession.phaseIdx++;
-      _advanceListScanPhase();
+      _runListScanPhase();
     }
   } else if (phase.type === 'kp') {
-    if (typeof showToast === 'function') showToast(zh ? '\u77e5\u8bc6\u70b9\u590d\u4e60\u5f00\u59cb' : 'KP review starting...');
-    _listScanSession.phaseIdx++;
-    _advanceListScanPhase();
+    if (typeof startKPScanByIds === 'function') {
+      startKPScanByIds(phase.items, phase.board);
+    } else {
+      _listScanSession.phaseIdx++;
+      _runListScanPhase();
+    }
   } else if (phase.type === 'pp') {
-    if (typeof showToast === 'function') showToast(zh ? '\u771f\u9898\u590d\u4e60\u5f00\u59cb' : 'PP review starting...');
-    _listScanSession.phaseIdx++;
-    _advanceListScanPhase();
+    if (typeof startPPScanByIds === 'function') {
+      startPPScanByIds(phase.items, phase.board);
+    } else {
+      _listScanSession.phaseIdx++;
+      _runListScanPhase();
+    }
   }
 }
 
-function _onListScanPhaseComplete() {
+/* Called from finish hooks in study.js / practice.js to advance to next phase */
+function advanceListScan() {
   if (!_listScanSession) return;
   _listScanSession.phaseIdx++;
-  setTimeout(function() { _advanceListScanPhase(); }, 500);
+  setTimeout(function() { _runListScanPhase(); }, 600);
+}
+
+/* Render list-scan-aware buttons for result screens */
+function _renderListScanButtons() {
+  if (!_listScanSession) return '';
+  var zh = (typeof getLang === 'function' ? getLang() : 'en') === 'zh';
+  var cur = _listScanSession.phaseIdx;
+  var total = _listScanSession.phases.length;
+  var isLast = (cur >= total - 1);
+
+  var html = '<div class="result-actions">';
+  if (isLast) {
+    html += '<button class="btn btn-primary" onclick="advanceListScan()">';
+    html += (zh ? '\u5b8c\u6210\u6e05\u5355 Scan' : 'Finish List Scan') + '</button>';
+  } else {
+    var nextType = _listScanSession.phases[cur + 1].type;
+    var nextLabel = nextType === 'vocab' ? (zh ? '\u8bcd\u6c47' : 'Vocab') : nextType === 'kp' ? (zh ? '\u77e5\u8bc6\u70b9' : 'KP') : (zh ? '\u771f\u9898' : 'PP');
+    html += '<button class="btn btn-primary" onclick="advanceListScan()">';
+    html += (zh ? '\u4e0b\u4e00\u6b65' : 'Next') + ': ' + nextLabel + ' \u2192</button>';
+  }
+  html += '<button class="btn btn-ghost" onclick="exitListScan()">';
+  html += (zh ? '\u9000\u51fa' : 'Exit') + '</button>';
+  html += '</div>';
+  return html;
+}
+
+function exitListScan() {
+  _listScanSession = null;
+  if (typeof navTo === 'function') navTo('lists');
 }
 
 function _finishListScan() {
@@ -867,7 +965,5 @@ function _finishListScan() {
   }
 
   _listScanSession = null;
-
-  /* Return to lists view */
   if (typeof navTo === 'function') navTo('lists');
 }

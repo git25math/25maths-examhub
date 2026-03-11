@@ -154,6 +154,14 @@ function _finishRefreshScan() {
       actionsDiv.outerHTML = _renderRecoveryStepBar() + _renderRecoveryResultButtons();
     }
   }
+  /* List Scan: replace buttons with list-scan controls */
+  if (!_isRecovery && typeof isListScanActive === 'function' && isListScanActive()) {
+    var lsPanel = E('panel-study');
+    var lsActions = lsPanel ? lsPanel.querySelector('.result-actions') : null;
+    if (lsActions && typeof _renderListScanButtons === 'function') {
+      lsActions.outerHTML = _renderListScanButtons();
+    }
+  }
 }
 
 /* ═══ KP REFRESH SCAN (knowledge point decay review) ═══ */
@@ -786,6 +794,14 @@ function _finishKPScan() {
     var actionsDiv = panel ? panel.querySelector('.result-actions') : null;
     if (actionsDiv) actionsDiv.outerHTML = _renderRecoveryStepBar() + _renderRecoveryResultButtons();
   }
+  /* List Scan: replace buttons with list-scan controls */
+  if (!_isRecovery && typeof isListScanActive === 'function' && isListScanActive()) {
+    var lsPanel2 = E('panel-study');
+    var lsActions2 = lsPanel2 ? lsPanel2.querySelector('.result-actions') : null;
+    if (lsActions2 && typeof _renderListScanButtons === 'function') {
+      lsActions2.outerHTML = _renderListScanButtons();
+    }
+  }
   _kpScan = null;
 }
 
@@ -796,6 +812,8 @@ function _exitKPScan() {
   if (typeof isRecoverySessionActive === 'function' && isRecoverySessionActive()) {
     _recordRecoveryResult('kp');
     _advanceRecoverySession();
+  } else if (typeof isListScanActive === 'function' && isListScanActive()) {
+    advanceListScan();
   } else {
     navTo('section');
   }
