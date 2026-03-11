@@ -49,12 +49,14 @@ DATA_FILES = {
     "_offlineVocabEdx": "data/vocabulary-edexcel.json",
     "_offlinePapersCie": "data/papers-cie.json",
     "_offlinePapersEdx": "data/papers-edx.json",
+    "_offlineVocabHhk": "data/vocabulary-hhk.json",
 }
 
 # Optional data files (skip if missing)
 OPTIONAL_DATA = {
     "_offlineFigures": "data/figures/manifest.json",
     "_offlinePastpapersCie": "data/pastpapers-cie.json",
+    "_offlineVocabUidMap": "data/vocab-uid-map.json",
 }
 
 
@@ -136,7 +138,9 @@ var _dataMap = {
   'data/papers-cie.json': typeof _offlinePapersCie !== 'undefined' ? _offlinePapersCie : null,
   'data/papers-edx.json': typeof _offlinePapersEdx !== 'undefined' ? _offlinePapersEdx : null,
   'data/figures/manifest.json': typeof _offlineFigures !== 'undefined' ? _offlineFigures : null,
-  'data/pastpapers-cie.json': typeof _offlinePastpapersCie !== 'undefined' ? _offlinePastpapersCie : null
+  'data/pastpapers-cie.json': typeof _offlinePastpapersCie !== 'undefined' ? _offlinePastpapersCie : null,
+  'data/vocabulary-hhk.json': typeof _offlineVocabHhk !== 'undefined' ? _offlineVocabHhk : null,
+  'data/vocab-uid-map.json': typeof _offlineVocabUidMap !== 'undefined' ? _offlineVocabUidMap : null
 };
 window.fetch = function(url, opts) {
   var key = typeof url === 'string' ? url.split('?')[0] : '';
