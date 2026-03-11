@@ -80,16 +80,19 @@ function renderSpellCard() {
   if (appSound && canSpeak()) {
     setTimeout(function() { speakWord(p.word); }, 300);
   }
-  if (input) input.addEventListener('keydown', function(e) {
-    if (e.key === 'Enter') {
-      if (SP.answered) {
-        SP.idx++;
-        renderSpellCard();
-      } else {
-        checkSpell();
+  if (input && !input._bound) {
+    input._bound = true;
+    input.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        if (SP.answered) {
+          SP.idx++;
+          renderSpellCard();
+        } else {
+          checkSpell();
+        }
       }
-    }
-  });
+    });
+  }
 }
 
 function checkSpell() {

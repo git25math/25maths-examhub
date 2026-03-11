@@ -1,5 +1,30 @@
 # Changelog
 
+## [4.7.5] - 2026-03-11 — 残余 onclick XSS + 事件监听器泄漏修复
+
+### 安全修复
+- **auth.js**: `opt.value` 包裹 `escapeHtml()`（Board 选择按钮）
+- **mastery.js**: `cat.id`、`unitKey`、`board.id` 3 处包裹 `escapeHtml()`（分类/单元/考试局折叠）
+- **study.js**: `_kpScan.board`、`board` 3 处包裹 `escapeHtml()`（Scan Overview + Focused Study 按钮）
+- **homework.js**: `hw.id` 包裹 `escapeHtml()`（作业 banner 点击）
+- **vocab-admin.js**: `boardId`/`catId`/`fb.id` 5 处包裹 `escapeHtml()`（词组添加 + 反馈管理）
+
+### Bug 修复
+- **spell.js 事件监听器泄漏（P0）**: `renderSpellCard()` 每次调用都新增 keydown 监听器导致重复触发，添加 `_bound` 标志位仅首次绑定
+
+### 文件变更
+| 文件 | 变更类型 |
+|------|---------|
+| `js/auth.js` | 修改 — 1 处 onclick escapeHtml |
+| `js/mastery.js` | 修改 — 3 处 onclick escapeHtml |
+| `js/study.js` | 修改 — 3 处 onclick escapeHtml |
+| `js/homework.js` | 修改 — 1 处 onclick escapeHtml |
+| `js/vocab-admin.js` | 修改 — 5 处 onclick escapeHtml |
+| `js/spell.js` | 修改 — keydown 监听器 `_bound` 防重复绑定 |
+| `js/config.js` | 修改 — `APP_VERSION` → `'v4.7.5'` |
+
+---
+
 ## [4.7.4] - 2026-03-11 — onclick XSS 全量转义（第五轮安全审计）
 
 ### 安全修复

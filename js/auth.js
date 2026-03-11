@@ -311,7 +311,7 @@ function showBoardSelection() {
   var html = '<div class="board-sel-grid">';
   var opts = userSchoolId ? BOARD_OPTIONS : getPublicBoardOptions();
   opts.forEach(function(opt) {
-    html += '<button class="board-sel-btn" onclick="selectBoard(\'' + opt.value + '\')">';
+    html += '<button class="board-sel-btn" onclick="selectBoard(\'' + escapeHtml(opt.value) + '\')">';
     html += '<span class="board-sel-emoji">' + opt.emoji + '</span>';
     html += '<span class="board-sel-name">' + t(opt.name, opt.nameZh) + '</span>';
     html += '</button>';

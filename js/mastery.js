@@ -647,7 +647,7 @@ function renderHome() {
 
       var collapsed = appSearch ? false : (catCollapsed[cat.id] ? true : false);
       boardHtml += '<div class="category-section' + (collapsed ? ' collapsed' : '') + '" id="cat-' + cat.id + '">';
-      boardHtml += '<div class="category-header" role="button" tabindex="0" onclick="toggleCategory(\'' + cat.id + '\')">';
+      boardHtml += '<div class="category-header" role="button" tabindex="0" onclick="toggleCategory(\'' + escapeHtml(cat.id) + '\')">';
       boardHtml += '<span class="category-emoji">' + cat.emoji + '</span>';
       boardHtml += '<span class="category-name">' + catName(cat) + '</span>';
 
@@ -699,7 +699,7 @@ function renderHome() {
           if (appLang !== 'en' && ug.unitTitleZh) unitLabel += ' ' + ug.unitTitleZh;
 
           boardHtml += '<div class="unit-section' + (uCollapsed ? ' collapsed' : '') + '" id="unit-' + unitKey + '">';
-          boardHtml += '<div class="unit-header" role="button" tabindex="0" onclick="toggleUnit(\'' + unitKey + '\')">';
+          boardHtml += '<div class="unit-header" role="button" tabindex="0" onclick="toggleUnit(\'' + escapeHtml(unitKey) + '\')">';
           boardHtml += '<span class="unit-name">' + unitLabel + '</span>';
           boardHtml += '<span class="unit-count">' + ug.levels.length + ' ' + t('groups', '\u7ec4') + '</span>';
           boardHtml += '<span class="unit-chevron">\u25bc</span>';
@@ -729,7 +729,7 @@ function renderHome() {
     if (boardHtml) {
       hasAnyResult = true;
       html += '<div class="board-section' + (boardCollapsed[board.id] ? ' collapsed' : '') + '" id="board-' + board.id + '">';
-      html += '<div class="board-header" role="button" tabindex="0" onclick="toggleBoard(\'' + board.id + '\')">';
+      html += '<div class="board-header" role="button" tabindex="0" onclick="toggleBoard(\'' + escapeHtml(board.id) + '\')">';
       html += '<span class="board-emoji">' + board.emoji + '</span>';
       html += '<span class="board-name">' + boardName(board) + '</span>';
       html += '<span class="board-stats">' + boardMastered + '/' + boardTotal + ' \u2605 · ' + boardPct + '%</span>';

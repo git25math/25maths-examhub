@@ -453,6 +453,7 @@
 - [x] **列表视图深度修复 (v4.7.2)**: arguments.callee 消除 + search XSS + session cap 50 + debounce + 分页滑窗 + 打印双语 + 展开箭头 + tab 响应式
 - [x] **列表视图第四轮修复 (v4.7.3)**: board 反查修复 + cl.id 全量转义 + raw data 缓存 + Show All 安全 + CSV 增列 + 打印状态着色
 - [x] **onclick XSS 全量转义 (v4.7.4)**: practice/syllabus/homework/admin 4 文件 56 处 onclick 动态变量全部 escapeHtml 包裹
+- [x] **残余 XSS + 泄漏修复 (v4.7.5)**: auth/mastery/study/homework/vocab-admin 5 文件 13 处 escapeHtml + spell.js keydown 监听器泄漏修复
 
 ## v4.6 FLM Scan Preview + 全览模式 + Block 编辑器 [DONE]
 - [x] **KP Scan Preview (v4.6.0)**: Round 1 三按钮预览 + Round 2+ testYourself MCQ 聚焦测验 + 多轮筛选 + FLM 写入

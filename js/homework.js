@@ -978,7 +978,7 @@ async function renderHomeworkBanner() {
     var dateStr = deadline.toLocaleDateString();
     var hasResult = hw._result && hw._result.attempts > 0;
 
-    var bannerAction = _isPracticeHw(hw) ? 'startHwPractice(\'' + hw.id + '\')' : 'startHwTest(\'' + hw.id + '\')';
+    var bannerAction = _isPracticeHw(hw) ? 'startHwPractice(\'' + escapeHtml(hw.id) + '\')' : 'startHwTest(\'' + escapeHtml(hw.id) + '\')';
     html += '<div class="hw-banner-item" onclick="event.stopPropagation();' + bannerAction + '">';
     html += '<span>' + (_isPracticeHw(hw) ? '\u270f\ufe0f ' : '') + escapeHtml(hw.title) + '</span>';
     if (hasResult) {

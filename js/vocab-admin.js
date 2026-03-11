@@ -11,7 +11,7 @@ function vocabAdminBtns(idx) {
 }
 
 function vocabAdminAddBtn(boardId, catId) {
-  return '<div class="va-add-row" onclick="showAddDeckModal(\'' + boardId + '\', \'' + catId + '\')">' +
+  return '<div class="va-add-row" onclick="showAddDeckModal(\'' + escapeHtml(boardId) + '\', \'' + escapeHtml(catId) + '\')">' +
     '+ ' + t('Add group', '添加词组') +
     '</div>';
 }
@@ -201,7 +201,7 @@ function showAddDeckModal(boardId, catId) {
 
   html += '<div id="va-msg" class="settings-msg mt-8"></div>';
   html += '<div class="btn-row">';
-  html += '<button class="btn btn-primary" onclick="vaCreateDeck(\'' + boardId + '\', \'' + catId + '\')">' + t('Create', '创建') + '</button>';
+  html += '<button class="btn btn-primary" onclick="vaCreateDeck(\'' + escapeHtml(boardId) + '\', \'' + escapeHtml(catId) + '\')">' + t('Create', '创建') + '</button>';
   html += '<button class="btn btn-ghost" onclick="hideModal()">' + t('Cancel', '取消') + '</button>';
   html += '</div>';
 
@@ -288,7 +288,7 @@ async function renderFeedbackList() {
       html += '<span class="fb-desc">' + escapeHtml((fb.description || '').substring(0, 80)) + '</span>';
       html += '<span class="fb-meta">' + escapeHtml(fb.user_email || t('Anonymous', '匿名')) + ' · ' + date + '</span>';
       html += '<span class="fb-status ' + (fb.status || 'new') + '">' + (fb.status || 'new') + '</span>';
-      html += '<button class="btn btn-ghost btn-sm" style="margin-left:4px" onclick="showFeedbackDetail(\'' + fb.id + '\')">' + t('View', '查看') + '</button>';
+      html += '<button class="btn btn-ghost btn-sm" style="margin-left:4px" onclick="showFeedbackDetail(\'' + escapeHtml(fb.id) + '\')">' + t('View', '查看') + '</button>';
       html += '</div>';
     });
 
@@ -332,12 +332,12 @@ async function showFeedbackDetail(id) {
     html += '<div class="flex gap-6 mb-12">';
     ['new', 'in_progress', 'done', 'dismissed'].forEach(function(st) {
       var active = fb.status === st ? ' style="border-color:var(--c-primary);background:var(--c-primary-bg)"' : '';
-      html += '<button class="btn btn-ghost btn-sm"' + active + ' onclick="updateFeedbackStatus(\'' + fb.id + '\', \'' + st + '\')">' + st + '</button>';
+      html += '<button class="btn btn-ghost btn-sm"' + active + ' onclick="updateFeedbackStatus(\'' + escapeHtml(fb.id) + '\', \'' + st + '\')">' + st + '</button>';
     });
     html += '</div>';
 
     html += '<div class="btn-row btn-row--mt0">';
-    html += '<button class="btn btn-primary" onclick="saveFeedbackNotes(\'' + fb.id + '\')">' + t('Save Notes', '保存备注') + '</button>';
+    html += '<button class="btn btn-primary" onclick="saveFeedbackNotes(\'' + escapeHtml(fb.id) + '\')">' + t('Save Notes', '保存备注') + '</button>';
     html += '<button class="btn btn-ghost" onclick="hideModal();renderFeedbackList()">' + t('Close', '关闭') + '</button>';
     html += '</div>';
 

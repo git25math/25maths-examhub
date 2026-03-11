@@ -783,7 +783,7 @@ function _finishKPScan() {
   html += '</div>';
   html += '<div class="result-actions">';
   html += '<button class="btn btn-primary" onclick="navTo(\'section\')">' + t('Back to Section', '\u8fd4\u56de\u77e5\u8bc6\u70b9') + '</button>';
-  html += '<button class="btn btn-secondary" onclick="renderScanOverview(\'' + _kpScan.board + '\')">' + t('Scan Overview', '\u626b\u63cf\u603b\u89c8') + '</button>';
+  html += '<button class="btn btn-secondary" onclick="renderScanOverview(\'' + escapeHtml(_kpScan.board) + '\')">' + t('Scan Overview', '\u626b\u63cf\u603b\u89c8') + '</button>';
   html += '<button class="btn btn-ghost" onclick="navTo(\'home\')">' + t('Home', '\u9996\u9875') + '</button>';
   html += '</div>';
   E('panel-study').innerHTML = html;
@@ -940,11 +940,11 @@ function renderScanOverview(board) {
   /* Action buttons */
   html += '<div class="scan-ov-actions">';
   if (fuzzyN > 0) {
-    html += '<button class="btn btn-sm btn-warning" onclick="_startFocusedFromOverview(\'fuzzy\',\'' + board + '\')">';
+    html += '<button class="btn btn-sm btn-warning" onclick="_startFocusedFromOverview(\'fuzzy\',\'' + escapeHtml(board) + '\')">';
     html += t('Study Fuzzy', '\u5b66\u4e60\u6a21\u7cca\u9879') + ' (' + fuzzyN + ')</button>';
   }
   if (unknownN > 0) {
-    html += '<button class="btn btn-sm btn-danger" onclick="_startFocusedFromOverview(\'unknown\',\'' + board + '\')">';
+    html += '<button class="btn btn-sm btn-danger" onclick="_startFocusedFromOverview(\'unknown\',\'' + escapeHtml(board) + '\')">';
     html += t('Study Unknown', '\u5b66\u4e60\u4e0d\u4f1a\u9879') + ' (' + unknownN + ')</button>';
   }
   html += '</div>';
