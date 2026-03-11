@@ -1,5 +1,40 @@
 # Changelog
 
+## [4.6.1] - 2026-03-11 — Block-based 结构化编辑器 + Subsubpart 支持
+
+### Block-based 编辑器
+- **题干 Block 编辑**: 题干从单一 textarea 改为 Block 列表（text/table/figure/list），每个 block 支持添加/删除/上下移动
+- **部件 Block 内容**: Parts/Subparts/Subsubparts 统一使用 Block 列表编辑，支持富内容编排
+- **答题线配置**: 所有层级（stem/part/subpart/subsubpart）统一答题线类型选择器（none/number/vector/coordinate/expression/multiline/table_input）
+- **实时预览**: 编辑器内所有 block 和答题线变更即时反映到预览区
+
+### Subsubpart 三层嵌套
+- **渲染器扩展**: `_ppRenderWithMarksBlocks()` 支持 subpart 下嵌套 subsubparts（第 4 层级）
+- **编辑器嵌套**: Part → Subpart → Subsubpart 三层展开/折叠编辑，每层独立 block 内容 + 答题线 + 分数
+- **数据合并**: edit merge 和 rollback 增加 `stem` + `answer` 字段支持
+
+### 新增函数（11 个）
+- `_ppEdBlockList()` / `_ppEdBlockRow()` / `_ppEdAddBlock()` / `_ppEdMoveBlock()` / `_ppEdCollectBlocks()` — Block 列表 CRUD
+- `_ppEdAnswerConfig()` / `_ppEdCollectAnswer()` / `_ppEdAnsTypeChanged()` — 答题线配置
+- `_ppEdSubpartRow()` / `_ppEdSubsubpartRow()` / `_ppEdAddSubpart()` / `_ppEdAddSubsubpart()` — 嵌套层级编辑行
+
+### 修改函数（8 个）
+- `editPastPaperQ()` — block 编辑器替代 textarea
+- `_ppEdPartRow()` — block 内容 + 答题线配置 + subpart 嵌套
+- `_ppEdCollectParts()` — 递归收集 parts/subparts/subsubparts + blocks + answers
+- `_ppUpdateEditPreview()` — 从 blocks 构建实时预览
+- `submitPPEdit()` — 增加 stem + answer 字段
+- `_ppRenderWithMarksBlocks()` — subsubpart 渲染
+- edit merge loop — 增加 stem + answer 字段合并
+- rollback fields — 增加 stem + answer
+
+### 文件变更
+| 文件 | 变更类型 |
+|------|---------|
+| `js/practice.js` | 修改 — 编辑器重写 + 渲染器扩展（+350 行） |
+| `css/style.css` | 修改 — block 编辑器 + subsubpart 样式（已含于 v4.6.0） |
+| `js/app.bundle.min.js` | 重新构建 |
+
 ## [4.6.0] - 2026-03-11 — FLM Scan Preview + 全览模式
 
 ### KP Scan Preview + Focused Quiz

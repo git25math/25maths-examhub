@@ -443,13 +443,16 @@
 - [x] **教师作业解锁**: diagnostic/mock 作业自动注入 featureOverride → v2.5.0
 - [x] **全面取消路径锁定**: 所有模式/知识点直接开放，删除 FEATURE_THRESHOLD + Test Out + 锁定 UI → v2.5.1
 
-## v4.6 FLM Scan Preview + 全览模式 [DONE]
+## v4.6 FLM Scan Preview + 全览模式 + Block 编辑器 [DONE]
 - [x] **KP Scan Preview (v4.6.0)**: Round 1 三按钮预览 + Round 2+ testYourself MCQ 聚焦测验 + 多轮筛选 + FLM 写入
 - [x] **PP Scan Preview (v4.6.0)**: Round 1 parts 概览 + Round 2+ 完整题目自评 + cs 累积 mastered + FLM 写入
 - [x] **Scan 历史日志 (v4.6.0)**: 时间戳记录每次扫描评分 + scan_log localStorage + 上限 5000 条
 - [x] **跨专题全览模式 (v4.6.0)**: 全览面板（类型/状态/模糊次数三维筛选）+ 日期历史 + 趋势点 + 聚焦学习
 - [x] **Recovery Session 集成 (v4.6.0)**: new 项走 Scan Preview，stale 项走 Refresh Scan
 - [x] **入口按钮 (v4.6.0)**: KP「Scan & Quiz」+ PP「Scan & Practice」+ 全览按钮
+- [x] **Block-based 编辑器 (v4.6.1)**: 题干/Part/Subpart/Subsubpart 统一 Block 列表编辑器 + 答题线类型选择器
+- [x] **Subsubpart 三层嵌套 (v4.6.1)**: Part → Subpart → Subsubpart 渲染器 + 编辑器 + 数据合并
+- [x] **stem 字段 (v4.6.1)**: 编辑器保存 stem Block[] 替代 tex，merge/rollback 增加 stem + answer 字段
 
 ## v3.0 真题接入 FLM — Learning Unit Phase 2 [DONE]
 - [x] **PP FLM 集成**: _ppSetMastery FLM-aware + practice/exam source 区分 + 旧数据迁移 → v3.0.0

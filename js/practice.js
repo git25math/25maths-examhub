@@ -1127,16 +1127,18 @@ function loadPastPaperData(board) {
       /* Legacy flat array fallback */
       _ppData[board] = { paperMeta: {}, questions: data };
     }
-    /* Merge question_edits overrides (marks, tex, d, g) */
+    /* Merge question_edits overrides (v4.6.0: + stem, answer) */
     var qs = _ppData[board].questions || [];
     for (var qi = 0; qi < qs.length; qi++) {
       var ed = edits[qs[qi].id];
       if (ed) {
         if (ed.marks !== undefined) qs[qi].marks = ed.marks;
+        if (ed.stem !== undefined) { qs[qi].stem = ed.stem; delete qs[qi].tex; delete qs[qi].texHtml; }
         if (ed.tex !== undefined) { qs[qi].tex = ed.tex; delete qs[qi].texHtml; delete qs[qi].stem; }
         if (ed.d !== undefined) qs[qi].d = ed.d;
         if (ed.g !== undefined) qs[qi].g = ed.g;
         if (ed.parts !== undefined) qs[qi].parts = ed.parts;
+        if (ed.answer !== undefined) qs[qi].answer = ed.answer;
         if (ed.ansPrefix !== undefined) qs[qi].ansPrefix = ed.ansPrefix;
         if (ed.ansSuffix !== undefined) qs[qi].ansSuffix = ed.ansSuffix;
         if (ed.ansTpl !== undefined) qs[qi].ansTpl = ed.ansTpl;
@@ -1603,10 +1605,10 @@ function _renderPPScanPreview() {
       if (pt.subparts && pt.subparts.length > 0) {
         for (var si = 0; si < pt.subparts.length; si++) {
           var sp = pt.subparts[si];
-          html += '<div class="scan-pp-part-row">' + pt.label + sp.label + ' \u2014 ' + (sp.marks || 0) + ' ' + t('marks', '\u5206') + '</div>';
+          html += '<div class="scan-pp-part-row">' + (pt.label || '') + (sp.label || '') + ' \u2014 ' + (sp.marks || 0) + ' ' + t('marks', '\u5206') + '</div>';
         }
       } else {
-        html += '<div class="scan-pp-part-row">' + pt.label + ' \u2014 ' + (pt.marks || 0) + ' ' + t('marks', '\u5206') + '</div>';
+        html += '<div class="scan-pp-part-row">' + (pt.label || '') + ' \u2014 ' + (pt.marks || 0) + ' ' + t('marks', '\u5206') + '</div>';
       }
     }
     html += '</div>';
@@ -1797,7 +1799,12 @@ function _finishPPScan() {
 
 function _exitPPScan() {
   _ppScanState = null;
-  navTo('section');
+  if (typeof isRecoverySessionActive === 'function' && isRecoverySessionActive()) {
+    _recordRecoveryResult('pp');
+    _advanceRecoverySession();
+  } else {
+    navTo('section');
+  }
 }
 
 /* ═══ WRONG BOOK STORAGE ═══ */
@@ -3549,15 +3556,10 @@ function editPastPaperQ(qIdx) {
   if (q.g) html += ' · ' + _ppGroupLabel(q.g);
   html += '</div>';
 
-  /* Editable fields */
-  html += '<label class="settings-label">' + t('Question Text (LaTeX)', '\u9898\u76ee\u6587\u672c (LaTeX)') + '</label>';
-  /* Toolbar */
-  html += '<div class="pp-ed-toolbar">';
-  html += '<button class="btn btn-sm btn-ghost" type="button" onclick="_ppEdInsertTable()" title="' + t('Insert Table', '\u63d2\u5165\u8868\u683c') + '">\ud83d\udcca ' + t('Table', '\u8868\u683c') + '</button>';
-  html += '<button class="btn btn-sm btn-ghost" type="button" onclick="_ppEdInsertAtCursor(\'$\',\'$\')" title="Math">$x$</button>';
-  html += '<button class="btn btn-sm btn-ghost" type="button" onclick="_ppEdInsertAtCursor(\'\\\\textbf{\',\'}\')" title="Bold"><strong>B</strong></button>';
-  html += '</div>';
-  html += '<textarea class="bug-textarea font-mono-sm" id="pp-ed-tex" rows="8">' + escapeHtml(q.tex) + '</textarea>';
+  /* Stem blocks (v4.6.0) */
+  html += '<label class="settings-label">' + t('Question Stem (Blocks)', '\u9898\u5e72\u5185\u5bb9 (Block)') + '</label>';
+  var stemBlocks = q.stem || (q.tex ? [{ type: 'text', content: q.tex }] : [{ type: 'text', content: '' }]);
+  html += _ppEdBlockList(stemBlocks, 'stem');
 
   html += '<div class="btn-row btn-row--gap12">';
 
@@ -3605,14 +3607,18 @@ function editPastPaperQ(qIdx) {
   html += '</div>';
   html += '<button class="btn btn-sm btn-ghost" type="button" onclick="_ppEdAddPart()">+ ' + t('Add Part', '\u6dfb\u52a0\u5c0f\u9898') + '</button>';
 
-  /* Question-level answer line (for questions without parts) */
+  /* Question-level answer config (for questions without parts) (v4.6.0) */
+  var qAnswer = q.answer || null;
+  if (!qAnswer && (q.ansPrefix || q.ansSuffix || q.ansTpl)) {
+    qAnswer = { type: 'number' };
+    if (q.ansPrefix) qAnswer.prefix = q.ansPrefix;
+    if (q.ansSuffix) qAnswer.suffix = q.ansSuffix;
+    if (q.ansTpl) qAnswer.template = q.ansTpl;
+  }
   html += '<div id="pp-ed-ansline-wrap" style="margin-top:10px' + (_edParts.length > 0 ? ';display:none' : '') + '">';
   html += '<label class="settings-label">' + t('Answer Line (no-parts questions)', '答题线（无小题）') + '</label>';
-  html += '<div class="pp-ed-part-ans">';
-  html += '<input type="text" class="bug-select" id="pp-ed-ans-prefix" value="' + escapeHtml(q.ansPrefix || '') + '" placeholder="prefix (e.g. x=)">';
-  html += '<input type="text" class="bug-select" id="pp-ed-ans-suffix" value="' + escapeHtml(q.ansSuffix || '') + '" placeholder="suffix (e.g. cm)">';
-  html += '<input type="text" class="bug-select" id="pp-ed-ans-tpl" value="' + escapeHtml(q.ansTpl || '') + '" placeholder="template (e.g. (____,____))">';
-  html += '</div></div>';
+  html += _ppEdAnswerConfig(qAnswer, 'stem');
+  html += '</div>';
 
   /* Module order editor (v4.3.3) */
   var DEFAULT_MODULE_ORDER = ['body', 'vocab', 'kp'];
@@ -3651,24 +3657,29 @@ function editPastPaperQ(qIdx) {
 
   showModal(html);
 
-  /* Live preview (use onX to avoid listener accumulation) */
+  /* Live preview (v4.6.0: delegate input events from block editors) */
   setTimeout(function() {
-    var texEl = E('pp-ed-tex');
-    if (texEl) {
-      texEl.oninput = _ppUpdateEditPreview;
-      _ppUpdateEditPreview();
-    }
+    _ppUpdateEditPreview();
+    /* Attach delegated input listener on the modal for all block/answer edits */
+    var modal = document.querySelector('.modal-overlay');
+    if (modal) modal.addEventListener('input', _ppUpdateEditPreview);
   }, 50);
 }
 
 function _ppUpdateEditPreview() {
   var prev = E('pp-ed-preview');
-  var texEl = E('pp-ed-tex');
-  if (!prev || !texEl) return;
-  var tex = texEl.value;
-  /* Runtime tabular → HTML conversion for preview */
-  tex = _ppConvertTabularRuntime(tex);
-  prev.innerHTML = _ppRenderTex(tex);
+  if (!prev) return;
+  /* Build a temporary question object from editor state (v4.6.0) */
+  var previewQ = {
+    stem: _ppEdCollectBlocks('stem'),
+    marks: parseInt((E('pp-ed-marks') || {}).value) || 0,
+    parts: _ppEdCollectParts() || []
+  };
+  /* Question-level answer */
+  if (!previewQ.parts.length) {
+    previewQ.answer = _ppEdCollectAnswer('stem');
+  }
+  prev.innerHTML = _ppRenderWithMarksBlocks(previewQ, true);
   renderMath(prev);
 }
 
@@ -3735,8 +3746,229 @@ function _ppEdInsertTable() {
   if (texEl.oninput) texEl.oninput();
 }
 
+/* ═══ Block editor components (v4.6.0) ═══ */
+
+function _ppEdBlockList(blocks, idPrefix) {
+  blocks = blocks || [{ type: 'text', content: '' }];
+  var h = '<div class="pp-ed-block-list" id="pp-ed-blocks-' + idPrefix + '">';
+  for (var i = 0; i < blocks.length; i++) {
+    h += _ppEdBlockRow(blocks[i], idPrefix, i);
+  }
+  h += '</div>';
+  h += '<button class="btn btn-sm btn-ghost" type="button" onclick="_ppEdAddBlock(\'' + idPrefix + '\')">+ Block</button>';
+  return h;
+}
+
+function _ppEdBlockRow(block, idPrefix, idx) {
+  block = block || { type: 'text', content: '' };
+  var rowId = idPrefix + '-blk-' + idx;
+  var h = '<div class="pp-ed-block-row" data-block-idx="' + idx + '">';
+  h += '<select class="bug-select pp-ed-block-type" onchange="_ppEdBlockTypeChanged(this)">';
+  var types = ['text', 'table', 'figure', 'list'];
+  for (var i = 0; i < types.length; i++) {
+    h += '<option value="' + types[i] + '"' + (block.type === types[i] ? ' selected' : '') + '>' + types[i] + '</option>';
+  }
+  h += '</select>';
+  h += '<div class="pp-ed-block-content">';
+  if (block.type === 'figure') {
+    h += '<input type="text" class="bug-select pp-ed-block-val" value="' + escapeHtml(block.src || '') + '" placeholder="figures/xxx.svg">';
+  } else if (block.type === 'list') {
+    h += '<textarea class="bug-textarea font-mono-sm pp-ed-block-val" rows="2" placeholder="One item per line">' + escapeHtml((block.items || []).join('\n')) + '</textarea>';
+  } else {
+    h += '<textarea class="bug-textarea font-mono-sm pp-ed-block-val" rows="2" placeholder="' + (block.type === 'table' ? '\\\\begin{tabular}...' : 'Text content (LaTeX)') + '">' + escapeHtml(block.content || '') + '</textarea>';
+  }
+  h += '</div>';
+  h += '<div class="pp-ed-block-actions">';
+  h += '<button class="btn btn-sm btn-ghost" type="button" onclick="_ppEdMoveBlock(this,-1)" title="Up">\u25b2</button>';
+  h += '<button class="btn btn-sm btn-ghost" type="button" onclick="_ppEdMoveBlock(this,1)" title="Down">\u25bc</button>';
+  h += '<button class="btn btn-sm btn-ghost" type="button" onclick="this.closest(\'.pp-ed-block-row\').remove()" title="Remove">\u2716</button>';
+  h += '</div></div>';
+  return h;
+}
+
+function _ppEdBlockTypeChanged(sel) {
+  var row = sel.closest('.pp-ed-block-row');
+  var contentDiv = row.querySelector('.pp-ed-block-content');
+  var type = sel.value;
+  if (type === 'figure') {
+    contentDiv.innerHTML = '<input type="text" class="bug-select pp-ed-block-val" value="" placeholder="figures/xxx.svg">';
+  } else if (type === 'list') {
+    contentDiv.innerHTML = '<textarea class="bug-textarea font-mono-sm pp-ed-block-val" rows="2" placeholder="One item per line"></textarea>';
+  } else {
+    contentDiv.innerHTML = '<textarea class="bug-textarea font-mono-sm pp-ed-block-val" rows="2" placeholder="' + (type === 'table' ? '\\begin{tabular}...' : 'Text content (LaTeX)') + '"></textarea>';
+  }
+}
+
+function _ppEdAddBlock(idPrefix) {
+  var list = E('pp-ed-blocks-' + idPrefix);
+  if (!list) return;
+  var idx = list.children.length;
+  var div = document.createElement('div');
+  div.innerHTML = _ppEdBlockRow({ type: 'text', content: '' }, idPrefix, idx);
+  list.appendChild(div.firstChild);
+}
+
+function _ppEdMoveBlock(btn, dir) {
+  var row = btn.closest('.pp-ed-block-row');
+  var list = row.parentElement;
+  var rows = Array.from(list.children);
+  var idx = rows.indexOf(row);
+  var newIdx = idx + dir;
+  if (newIdx < 0 || newIdx >= rows.length) return;
+  if (dir === -1) list.insertBefore(row, rows[newIdx]);
+  else list.insertBefore(rows[newIdx], row);
+}
+
+function _ppEdCollectBlocks(idPrefix) {
+  var list = E('pp-ed-blocks-' + idPrefix);
+  if (!list) return [];
+  var rows = list.querySelectorAll('.pp-ed-block-row');
+  var blocks = [];
+  for (var i = 0; i < rows.length; i++) {
+    var type = rows[i].querySelector('.pp-ed-block-type').value;
+    var valEl = rows[i].querySelector('.pp-ed-block-val');
+    var val = valEl ? valEl.value : '';
+    if (!val.trim()) continue;
+    if (type === 'figure') {
+      blocks.push({ type: 'figure', src: val.trim() });
+    } else if (type === 'list') {
+      var items = val.split('\n').map(function(s) { return s.trim(); }).filter(function(s) { return s; });
+      if (items.length) blocks.push({ type: 'list', style: 'bullet', items: items });
+    } else {
+      blocks.push({ type: type, content: val.trim() });
+    }
+  }
+  return blocks;
+}
+
+/* Answer config editor (v4.6.0) */
+
+function _ppEdAnswerConfig(answer, idPrefix) {
+  answer = answer || null;
+  var aType = answer ? (answer.type || 'number') : 'none';
+  var h = '<div class="pp-ed-answer-config" id="pp-ed-ans-' + idPrefix + '">';
+  h += '<label>Answer:</label>';
+  h += '<select class="bug-select pp-ed-ans-type" onchange="_ppEdAnsTypeChanged(\'' + idPrefix + '\')">';
+  var aTypes = ['none', 'number', 'vector', 'coordinate', 'expression', 'multiline', 'table_input'];
+  for (var i = 0; i < aTypes.length; i++) {
+    h += '<option value="' + aTypes[i] + '"' + (aType === aTypes[i] ? ' selected' : '') + '>' + aTypes[i] + '</option>';
+  }
+  h += '</select>';
+  h += '<span class="pp-ed-ans-fields" ' + (aType === 'none' ? 'style="display:none"' : '') + '>';
+  h += '<input type="text" class="bug-select pp-ed-ans-prefix" value="' + escapeHtml(answer ? (answer.prefix || '') : '') + '" placeholder="prefix" style="width:60px">';
+  h += '<input type="text" class="bug-select pp-ed-ans-suffix" value="' + escapeHtml(answer ? (answer.suffix || '') : '') + '" placeholder="suffix" style="width:60px">';
+  h += '<input type="text" class="bug-select pp-ed-ans-template" value="' + escapeHtml(answer ? (answer.template || '') : '') + '" placeholder="template" style="width:80px">';
+  var showFields = (aType === 'vector' || aType === 'coordinate');
+  h += '<input type="number" class="bug-select pp-ed-ans-numfields" value="' + (answer ? (answer.fields || 2) : 2) + '" min="2" max="6" style="width:45px' + (showFields ? '' : ';display:none') + '" placeholder="fields">';
+  h += '</span></div>';
+  return h;
+}
+
+function _ppEdAnsTypeChanged(idPrefix) {
+  var wrap = E('pp-ed-ans-' + idPrefix);
+  if (!wrap) return;
+  var type = wrap.querySelector('.pp-ed-ans-type').value;
+  var fields = wrap.querySelector('.pp-ed-ans-fields');
+  var numFields = wrap.querySelector('.pp-ed-ans-numfields');
+  if (type === 'none') {
+    fields.style.display = 'none';
+  } else {
+    fields.style.display = '';
+    numFields.style.display = (type === 'vector' || type === 'coordinate') ? '' : 'none';
+  }
+}
+
+function _ppEdCollectAnswer(idPrefix) {
+  var wrap = E('pp-ed-ans-' + idPrefix);
+  if (!wrap) return null;
+  var type = wrap.querySelector('.pp-ed-ans-type').value;
+  if (type === 'none') return null;
+  var ans = { type: type };
+  var pfx = wrap.querySelector('.pp-ed-ans-prefix').value.trim();
+  var sfx = wrap.querySelector('.pp-ed-ans-suffix').value.trim();
+  var tpl = wrap.querySelector('.pp-ed-ans-template').value.trim();
+  var nf = parseInt(wrap.querySelector('.pp-ed-ans-numfields').value) || 2;
+  if (pfx) ans.prefix = pfx;
+  if (sfx) ans.suffix = sfx;
+  if (tpl) ans.template = tpl;
+  if (type === 'vector' || type === 'coordinate') ans.fields = nf;
+  return ans;
+}
+
+/* ═══ Part/Subpart/Subsubpart editor rows (v4.6.0) ═══ */
+
+function _ppEdSubsubpartRow(ssp, idx, parentPrefix) {
+  ssp = ssp || {};
+  var prefix = parentPrefix + '-ssp-' + idx;
+  var h = '<div class="pp-ed-part-row pp-ed-ssp-row" data-idx="' + idx + '">';
+  h += '<div class="pp-ed-part-head">';
+  h += '<input type="text" class="bug-select pp-ed-part-label" value="' + escapeHtml(ssp.label || '') + '" style="width:50px" placeholder="(p)">';
+  h += '<input type="number" class="bug-select pp-ed-part-marks" value="' + (ssp.marks || 0) + '" min="0" max="20" style="width:50px" placeholder="marks">';
+  h += '<button class="btn btn-sm btn-ghost" type="button" onclick="this.closest(\'.pp-ed-ssp-row\').remove()" title="Remove">\u2716</button>';
+  h += '</div>';
+  h += _ppEdBlockList(ssp.content || [{ type: 'text', content: '' }], prefix);
+  h += _ppEdAnswerConfig(ssp.answer || null, prefix);
+  h += '</div>';
+  return h;
+}
+
+function _ppEdSubpartRow(sp, idx, parentPrefix) {
+  sp = sp || {};
+  var prefix = parentPrefix + '-sp-' + idx;
+  var hasDetail = sp.content || sp.tex || sp.table || sp.figUrl || sp.answer || (sp.subsubparts && sp.subsubparts.length);
+  var h = '<div class="pp-ed-part-row pp-ed-sp-row" data-idx="' + idx + '">';
+  h += '<div class="pp-ed-part-head">';
+  h += '<input type="text" class="bug-select pp-ed-part-label" value="' + escapeHtml(sp.label || '') + '" style="width:50px" placeholder="(i)">';
+  h += '<input type="number" class="bug-select pp-ed-part-marks" value="' + (sp.marks || 0) + '" min="0" max="20" style="width:50px" placeholder="marks">';
+  h += '<button class="btn btn-sm btn-ghost" type="button" onclick="_ppEdTogglePartDetail(this)" title="Expand">\u25bc</button>';
+  h += '<button class="btn btn-sm btn-ghost" type="button" onclick="this.closest(\'.pp-ed-sp-row\').remove()" title="Remove">\u2716</button>';
+  h += '</div>';
+  h += '<div class="pp-ed-part-detail"' + (hasDetail ? '' : ' style="display:none"') + '>';
+  /* Block content */
+  var spBlocks = sp.content || (sp.tex ? [{ type: 'text', content: sp.tex }] : [{ type: 'text', content: '' }]);
+  h += _ppEdBlockList(spBlocks, prefix);
+  h += _ppEdAnswerConfig(sp.answer || null, prefix);
+  /* Subsubparts */
+  h += '<div class="pp-ed-subsubparts" id="pp-ed-ssps-' + prefix + '">';
+  var ssps = sp.subsubparts || [];
+  for (var si = 0; si < ssps.length; si++) {
+    h += _ppEdSubsubpartRow(ssps[si], si, prefix);
+  }
+  h += '</div>';
+  h += '<button class="btn btn-sm btn-ghost" type="button" onclick="_ppEdAddSubsubpart(\'' + prefix + '\')">+ Subsubpart</button>';
+  h += '</div></div>';
+  return h;
+}
+
+function _ppEdAddSubsubpart(parentPrefix) {
+  var container = E('pp-ed-ssps-' + parentPrefix);
+  if (!container) return;
+  var idx = container.querySelectorAll('.pp-ed-ssp-row').length;
+  var nextLabel = '(' + String.fromCharCode(112 + idx) + ')'; /* p, q, r, ... */
+  var div = document.createElement('div');
+  div.innerHTML = _ppEdSubsubpartRow({ label: nextLabel, marks: 1 }, idx, parentPrefix);
+  container.appendChild(div.firstChild);
+}
+
+function _ppEdAddSubpart(parentPrefix) {
+  var container = E('pp-ed-sps-' + parentPrefix);
+  if (!container) return;
+  var idx = container.querySelectorAll('.pp-ed-sp-row').length;
+  var nextLabel = '(' + _ppRomanNumeral(idx + 1) + ')';
+  var div = document.createElement('div');
+  div.innerHTML = _ppEdSubpartRow({ label: nextLabel, marks: 1 }, idx, parentPrefix);
+  container.appendChild(div.firstChild);
+}
+
+function _ppRomanNumeral(n) {
+  var numerals = ['i', 'ii', 'iii', 'iv', 'v', 'vi', 'vii', 'viii', 'ix', 'x'];
+  return numerals[n - 1] || String(n);
+}
+
 function _ppEdPartRow(label, marks, idx, part) {
   part = part || {};
+  var prefix = 'part-' + idx;
+  var hasDetail = part.content || part.tex || part.table || part.figUrl || part.answer || part.ansPrefix || (part.subparts && part.subparts.length);
   var h = '<div class="pp-ed-part-row" data-idx="' + idx + '">';
   /* Row 1: label + marks + expand/collapse + remove */
   h += '<div class="pp-ed-part-head">';
@@ -3745,27 +3977,30 @@ function _ppEdPartRow(label, marks, idx, part) {
   h += '<button class="btn btn-sm btn-ghost" type="button" onclick="_ppEdTogglePartDetail(this)" title="Expand">\u25bc</button>';
   h += '<button class="btn btn-sm btn-ghost" type="button" onclick="this.closest(\'.pp-ed-part-row\').remove()" title="Remove">\u2716</button>';
   h += '</div>';
-  /* Row 2: expandable detail (tex + table + figure + answer line) — collapsed by default unless has data */
-  var hasDetail = part.tex || part.table || part.figUrl || part.ansPrefix || part.ansSuffix || part.ansTpl;
+  /* Row 2: expandable detail — block content + answer config + subparts */
   h += '<div class="pp-ed-part-detail"' + (hasDetail ? '' : ' style="display:none"') + '>';
-  /* Part tex */
-  h += '<textarea class="bug-textarea font-mono-sm pp-ed-part-tex" rows="2" placeholder="' + t('Part text (LaTeX, optional)', '小题题干（LaTeX，可选）') + '">' + escapeHtml(part.tex || '') + '</textarea>';
-  /* Table */
-  h += '<div class="pp-ed-part-field-row">';
-  h += '<label class="pp-ed-part-field-label">' + t('Table', '表格') + '</label>';
-  h += '<input type="text" class="bug-select pp-ed-part-table" value="' + escapeHtml(part.table || '') + '" placeholder="' + t('tabular LaTeX (e.g. \\\\begin{tabular}...)', '表格 LaTeX') + '" style="flex:1">';
+  /* Block content */
+  var partBlocks = part.content || (part.tex ? [{ type: 'text', content: part.tex }] : [{ type: 'text', content: '' }]);
+  if (part.table && !part.content) partBlocks.push({ type: 'table', content: part.table });
+  if (part.figUrl && !part.content) partBlocks.push({ type: 'figure', src: part.figUrl });
+  h += _ppEdBlockList(partBlocks, prefix);
+  /* Answer config */
+  var partAnswer = part.answer || null;
+  if (!partAnswer && (part.ansPrefix || part.ansSuffix || part.ansTpl)) {
+    partAnswer = { type: 'number' };
+    if (part.ansPrefix) partAnswer.prefix = part.ansPrefix;
+    if (part.ansSuffix) partAnswer.suffix = part.ansSuffix;
+    if (part.ansTpl) partAnswer.template = part.ansTpl;
+  }
+  h += _ppEdAnswerConfig(partAnswer, prefix);
+  /* Subparts */
+  h += '<div class="pp-ed-subparts" id="pp-ed-sps-' + prefix + '">';
+  var sps = part.subparts || [];
+  for (var si = 0; si < sps.length; si++) {
+    h += _ppEdSubpartRow(sps[si], si, prefix);
+  }
   h += '</div>';
-  /* Figure URL */
-  h += '<div class="pp-ed-part-field-row">';
-  h += '<label class="pp-ed-part-field-label">' + t('Figure', '图片') + '</label>';
-  h += '<input type="text" class="bug-select pp-ed-part-fig" value="' + escapeHtml(part.figUrl || '') + '" placeholder="' + t('Image URL (e.g. figures/xxx.svg)', '图片路径') + '" style="flex:1">';
-  h += '</div>';
-  /* Answer line */
-  h += '<div class="pp-ed-part-ans">';
-  h += '<input type="text" class="bug-select pp-ed-part-prefix" value="' + escapeHtml(part.ansPrefix || '') + '" placeholder="prefix (e.g. x=)">';
-  h += '<input type="text" class="bug-select pp-ed-part-suffix" value="' + escapeHtml(part.ansSuffix || '') + '" placeholder="suffix (e.g. cm)">';
-  h += '<input type="text" class="bug-select pp-ed-part-tpl" value="' + escapeHtml(part.ansTpl || '') + '" placeholder="template (e.g. (____,____))">';
-  h += '</div>';
+  h += '<button class="btn btn-sm btn-ghost" type="button" onclick="_ppEdAddSubpart(\'' + prefix + '\')">+ Subpart</button>';
   h += '</div>'; /* end detail */
   h += '</div>';
   return h;
@@ -3797,27 +4032,61 @@ function _ppEdAddPart() {
 function _ppEdCollectParts() {
   var container = E('pp-ed-parts');
   if (!container) return null;
-  var rows = container.querySelectorAll('.pp-ed-part-row');
+  /* Only collect direct child part rows (not nested subpart/subsubpart rows) */
+  var rows = container.querySelectorAll(':scope > .pp-ed-part-row');
   if (!rows.length) return [];
   var parts = [];
   for (var i = 0; i < rows.length; i++) {
-    var label = rows[i].querySelector('.pp-ed-part-label').value.trim();
-    var marks = parseInt(rows[i].querySelector('.pp-ed-part-marks').value) || 0;
+    var label = rows[i].querySelector(':scope > .pp-ed-part-head > .pp-ed-part-label').value.trim();
+    var marks = parseInt(rows[i].querySelector(':scope > .pp-ed-part-head > .pp-ed-part-marks').value) || 0;
     if (!label) continue;
+    var prefix = 'part-' + i;
     var part = { label: label, marks: marks };
-    var pfx = rows[i].querySelector('.pp-ed-part-prefix');
-    var sfx = rows[i].querySelector('.pp-ed-part-suffix');
-    var tpl = rows[i].querySelector('.pp-ed-part-tpl');
-    if (pfx && pfx.value.trim()) part.ansPrefix = pfx.value.trim();
-    if (sfx && sfx.value.trim()) part.ansSuffix = sfx.value.trim();
-    if (tpl && tpl.value.trim()) part.ansTpl = tpl.value.trim();
-    /* Part-level tex, table, figure (v4.3.4) */
-    var ptTex = rows[i].querySelector('.pp-ed-part-tex');
-    var ptTable = rows[i].querySelector('.pp-ed-part-table');
-    var ptFig = rows[i].querySelector('.pp-ed-part-fig');
-    if (ptTex && ptTex.value.trim()) part.tex = ptTex.value.trim();
-    if (ptTable && ptTable.value.trim()) part.table = ptTable.value.trim();
-    if (ptFig && ptFig.value.trim()) part.figUrl = ptFig.value.trim();
+    /* Block content (v4.6.0) */
+    part.content = _ppEdCollectBlocks(prefix);
+    /* Answer config (v4.6.0) */
+    var ans = _ppEdCollectAnswer(prefix);
+    if (ans) part.answer = ans;
+    /* Subparts */
+    var spContainer = rows[i].querySelector('#pp-ed-sps-' + prefix);
+    if (spContainer) {
+      var spRows = spContainer.querySelectorAll(':scope > .pp-ed-sp-row');
+      if (spRows.length) {
+        part.subparts = [];
+        for (var si = 0; si < spRows.length; si++) {
+          var spLabel = spRows[si].querySelector(':scope > .pp-ed-part-head > .pp-ed-part-label').value.trim();
+          var spMarks = parseInt(spRows[si].querySelector(':scope > .pp-ed-part-head > .pp-ed-part-marks').value) || 0;
+          if (!spLabel) continue;
+          var spPrefix = prefix + '-sp-' + si;
+          var sp = { label: spLabel, marks: spMarks };
+          sp.content = _ppEdCollectBlocks(spPrefix);
+          var spAns = _ppEdCollectAnswer(spPrefix);
+          if (spAns) sp.answer = spAns;
+          /* Subsubparts */
+          var sspContainer = spRows[si].querySelector('#pp-ed-ssps-' + spPrefix);
+          if (sspContainer) {
+            var sspRows = sspContainer.querySelectorAll(':scope > .pp-ed-ssp-row');
+            if (sspRows.length) {
+              sp.subsubparts = [];
+              for (var ssi = 0; ssi < sspRows.length; ssi++) {
+                var sspLabel = sspRows[ssi].querySelector(':scope > .pp-ed-part-head > .pp-ed-part-label').value.trim();
+                var sspMarks = parseInt(sspRows[ssi].querySelector(':scope > .pp-ed-part-head > .pp-ed-part-marks').value) || 0;
+                if (!sspLabel) continue;
+                var sspPrefix = spPrefix + '-ssp-' + ssi;
+                var ssp = { label: sspLabel, marks: sspMarks };
+                ssp.content = _ppEdCollectBlocks(sspPrefix);
+                var sspAns = _ppEdCollectAnswer(sspPrefix);
+                if (sspAns) ssp.answer = sspAns;
+                sp.subsubparts.push(ssp);
+              }
+              if (!sp.subsubparts.length) delete sp.subsubparts;
+            }
+          }
+          part.subparts.push(sp);
+        }
+        if (!part.subparts.length) delete part.subparts;
+      }
+    }
     parts.push(part);
   }
   return parts;
@@ -3930,12 +4199,13 @@ function _ppEdRollback(qid, idx) {
       if (_ppSession.questions[i].id === qid) { q = _ppSession.questions[i]; break; }
     }
     if (q && rollbackData) {
-      var fields = ['tex', 'marks', 'd', 'g', 'parts', 'ansPrefix', 'ansSuffix', 'ansTpl', 'moduleOrder'];
+      var fields = ['tex', 'stem', 'marks', 'd', 'g', 'parts', 'answer', 'ansPrefix', 'ansSuffix', 'ansTpl', 'moduleOrder'];
       for (var fi = 0; fi < fields.length; fi++) {
         var f = fields[fi];
         if (rollbackData[f] !== undefined) q[f] = rollbackData[f];
       }
       if (rollbackData.tex !== undefined) { delete q.texHtml; delete q.stem; }
+      if (rollbackData.stem !== undefined) { delete q.tex; delete q.texHtml; }
     }
     _pqEditsCache[_ppSession.board] = null;
     hideModal();
@@ -3954,30 +4224,27 @@ function submitPPEdit(qid) {
   }
   if (!q) { hideModal(); return; }
 
-  var newTex = E('pp-ed-tex') ? E('pp-ed-tex').value : q.tex;
+  /* Collect stem blocks (v4.6.0) */
+  var newStem = _ppEdCollectBlocks('stem');
   var newMarks = E('pp-ed-marks') ? parseInt(E('pp-ed-marks').value) || q.marks : q.marks;
   var newDiff = E('pp-ed-diff') ? parseInt(E('pp-ed-diff').value) || q.d : q.d;
   var newGroup = E('pp-ed-group') ? E('pp-ed-group').value : q.g;
   var newParts = _ppEdCollectParts();
 
-  /* Question-level answer line (no-parts questions) */
-  var newAnsPrefix = E('pp-ed-ans-prefix') ? E('pp-ed-ans-prefix').value.trim() : '';
-  var newAnsSuffix = E('pp-ed-ans-suffix') ? E('pp-ed-ans-suffix').value.trim() : '';
-  var newAnsTpl = E('pp-ed-ans-tpl') ? E('pp-ed-ans-tpl').value.trim() : '';
+  /* Question-level answer (v4.6.0) */
+  var newAnswer = _ppEdCollectAnswer('stem');
   /* Module order */
   var DEFAULT_MODULE_ORDER = ['body', 'vocab', 'kp'];
   var newModuleOrder = _ppEdCollectModuleOrder();
 
   /* Build diff description */
   var changes = [];
-  if (newTex !== q.tex) changes.push('tex');
+  if (JSON.stringify(newStem) !== JSON.stringify(q.stem || [])) changes.push('stem');
   if (newMarks !== q.marks) changes.push('marks: ' + q.marks + '\u2192' + newMarks);
   if (newDiff !== q.d) changes.push('diff: ' + q.d + '\u2192' + newDiff);
   if (newGroup !== q.g) changes.push('group: ' + q.g + '\u2192' + newGroup);
   if (newParts !== null && JSON.stringify(newParts) !== JSON.stringify(q.parts || [])) changes.push('parts');
-  if (newAnsPrefix !== (q.ansPrefix || '')) changes.push('ansPrefix');
-  if (newAnsSuffix !== (q.ansSuffix || '')) changes.push('ansSuffix');
-  if (newAnsTpl !== (q.ansTpl || '')) changes.push('ansTpl');
+  if (JSON.stringify(newAnswer) !== JSON.stringify(q.answer || null)) changes.push('answer');
   if (newModuleOrder && JSON.stringify(newModuleOrder) !== JSON.stringify(q.moduleOrder || DEFAULT_MODULE_ORDER)) changes.push('moduleOrder');
 
   if (changes.length === 0) {
@@ -3986,14 +4253,12 @@ function submitPPEdit(qid) {
   }
 
   var editData = {};
-  if (newTex !== q.tex) editData.tex = newTex;
+  if (JSON.stringify(newStem) !== JSON.stringify(q.stem || [])) editData.stem = newStem;
   if (newMarks !== q.marks) editData.marks = newMarks;
   if (newDiff !== q.d) editData.d = newDiff;
   if (newGroup !== q.g) editData.g = newGroup;
   if (newParts !== null && JSON.stringify(newParts) !== JSON.stringify(q.parts || [])) editData.parts = newParts;
-  if (newAnsPrefix !== (q.ansPrefix || '')) editData.ansPrefix = newAnsPrefix || null;
-  if (newAnsSuffix !== (q.ansSuffix || '')) editData.ansSuffix = newAnsSuffix || null;
-  if (newAnsTpl !== (q.ansTpl || '')) editData.ansTpl = newAnsTpl || null;
+  if (JSON.stringify(newAnswer) !== JSON.stringify(q.answer || null)) editData.answer = newAnswer;
   if (newModuleOrder && JSON.stringify(newModuleOrder) !== JSON.stringify(q.moduleOrder || DEFAULT_MODULE_ORDER)) editData.moduleOrder = newModuleOrder;
 
   sb.from('question_edits').upsert({
@@ -4009,16 +4274,13 @@ function submitPPEdit(qid) {
       return;
     }
 
-    /* Apply change locally for current session */
-    q.tex = newTex;
-    if (editData.tex !== undefined) { delete q.texHtml; delete q.stem; } /* force re-render from edited tex */
+    /* Apply change locally for current session (v4.6.0) */
+    if (editData.stem !== undefined) { q.stem = editData.stem; delete q.tex; delete q.texHtml; }
     q.marks = newMarks;
     q.d = newDiff;
     q.g = newGroup;
     if (editData.parts !== undefined) q.parts = newParts;
-    if (editData.ansPrefix !== undefined) q.ansPrefix = editData.ansPrefix;
-    if (editData.ansSuffix !== undefined) q.ansSuffix = editData.ansSuffix;
-    if (editData.ansTpl !== undefined) q.ansTpl = editData.ansTpl;
+    if (editData.answer !== undefined) q.answer = editData.answer;
     if (editData.moduleOrder !== undefined) q.moduleOrder = editData.moduleOrder;
     /* Invalidate edits cache so next load picks up the change */
     _pqEditsCache[_ppSession.board] = null;
