@@ -1462,6 +1462,7 @@ function _ratePPScan(verdict) {
   var item = _ppRefreshItems[_ppRefreshIdx];
   _ppRefreshResults[verdict].push(item);
   recordPPRefreshScan(item.qid, verdict);
+  if (typeof _logScanEvent === 'function') _logScanEvent('pp', item.qid, verdict, 1, '', item.board || '');
   var card = E('scan-card');
   if (card) card.classList.add('scan-' + verdict);
   if (verdict === 'known' && typeof playCorrect === 'function') playCorrect();
@@ -1512,6 +1513,291 @@ function _finishPPRefreshScan() {
       actionsDiv.outerHTML = _renderRecoveryStepBar() + _renderRecoveryResultButtons();
     }
   }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   PP SCAN PREVIEW + FOCUSED PRACTICE
+   Round 1: Preview question stems → Can Do / Unsure / Need Help
+   Round 2+: Full question + answer → self-assess Got it / Needs Work
+   ══════════════════════════════════════════════════════════════ */
+
+var _ppScanState = null;
+
+function startPPScan(sectionId, board) {
+  if (typeof loadPastPaperData !== 'function') return;
+  loadPastPaperData(board).then(function() {
+    var qs = typeof getPPBySection === 'function' ? getPPBySection(board, sectionId) : [];
+    if (!qs || qs.length === 0) {
+      if (typeof showToast === 'function') showToast(t('No questions available', '\u6ca1\u6709\u53ef\u7528\u7684\u9898\u76ee'));
+      return;
+    }
+    var items = [];
+    for (var i = 0; i < qs.length; i++) {
+      items.push({ qId: qs[i].id, q: qs[i], status: 'new', cs: 0 });
+    }
+    _ppScanState = {
+      items: items, pool: items.slice(), round: 1, idx: 0,
+      sectionId: sectionId, board: board, showAnswer: false,
+      results: { known: [], fuzzy: [], unknown: [] }
+    };
+    _ppSession = null;
+    showPanel('practice');
+    loadKaTeX().then(function() { _renderPPScanCard(); });
+  });
+}
+
+/* Start PP scan from a pre-filtered list of question IDs (cross-topic) */
+function startPPScanByIds(qIds, board) {
+  if (typeof loadPastPaperData !== 'function') return;
+  loadPastPaperData(board).then(function() {
+    var allQ = getPPQuestions(board);
+    var items = [];
+    for (var i = 0; i < allQ.length; i++) {
+      if (qIds.indexOf(allQ[i].id) >= 0) {
+        items.push({ qId: allQ[i].id, q: allQ[i], status: 'new', cs: 0 });
+      }
+    }
+    if (items.length === 0) { showToast(t('No items found', '\u672a\u627e\u5230\u9879\u76ee')); return; }
+    _ppScanState = {
+      items: items, pool: items.slice(), round: 2, idx: 0,
+      sectionId: '', board: board, showAnswer: false,
+      results: { known: [], fuzzy: [], unknown: [] }
+    };
+    _ppSession = null;
+    showPanel('practice');
+    loadKaTeX().then(function() { _renderPPScanCard(); });
+  });
+}
+
+function _renderPPScanCard() {
+  if (!_ppScanState) return;
+  if (_ppScanState.idx >= _ppScanState.pool.length) { _finishPPScanRound(); return; }
+  if (_ppScanState.round === 1) _renderPPScanPreview();
+  else _renderPPScanPractice();
+}
+
+function _renderPPScanPreview() {
+  var item = _ppScanState.pool[_ppScanState.idx];
+  var q = item.q;
+  var progress = _ppScanState.pool.length > 0 ? Math.round(_ppScanState.idx / _ppScanState.pool.length * 100) : 0;
+  var html = '';
+  html += '<div class="study-topbar">';
+  html += '<button class="back-btn" onclick="_exitPPScan()">\u2190</button>';
+  html += '<div class="study-progress"><div class="study-progress-fill" style="width:' + progress + '%"></div></div>';
+  html += '<div class="study-count">' + (_ppScanState.idx + 1) + ' / ' + _ppScanState.pool.length + '</div>';
+  html += '</div>';
+  if (typeof isRecoverySessionActive === 'function' && isRecoverySessionActive()) {
+    html += _renderRecoveryStepBar();
+  }
+  html += '<div class="scan-round-badge">' + t('Round 1 \u2014 Preview', '\u7b2c 1 \u8f6e \u2014 \u9884\u89c8') + '</div>';
+  html += '<div class="scan-card pp-scan-card" id="scan-card">';
+  html += '<div class="pp-card-header">';
+  if (q.src) html += '<span style="font-size:12px;color:var(--c-text3)">' + escapeHtml(q.src) + '</span>';
+  if (q.marks > 0) html += '<span class="pp-marks-badge">[' + q.marks + ' ' + t('marks', '\u5206') + ']</span>';
+  html += '</div>';
+  /* Show parts overview only (no full content in preview) */
+  if (q.parts && q.parts.length > 0) {
+    html += '<div class="scan-pp-parts">';
+    for (var pi = 0; pi < q.parts.length; pi++) {
+      var pt = q.parts[pi];
+      if (pt.subparts && pt.subparts.length > 0) {
+        for (var si = 0; si < pt.subparts.length; si++) {
+          var sp = pt.subparts[si];
+          html += '<div class="scan-pp-part-row">' + pt.label + sp.label + ' \u2014 ' + (sp.marks || 0) + ' ' + t('marks', '\u5206') + '</div>';
+        }
+      } else {
+        html += '<div class="scan-pp-part-row">' + pt.label + ' \u2014 ' + (pt.marks || 0) + ' ' + t('marks', '\u5206') + '</div>';
+      }
+    }
+    html += '</div>';
+  } else {
+    html += '<div class="scan-pp-parts"><div class="scan-pp-part-row">' + q.marks + ' ' + t('marks', '\u5206') + '</div></div>';
+  }
+  html += '</div>';
+  html += '<div class="scan-actions" id="pp-scan-actions">';
+  html += '<button class="scan-btn scan-known" data-ppscan="known"><span class="scan-key">1</span> ' + t('Can Do', '\u4f1a\u505a') + '</button>';
+  html += '<button class="scan-btn scan-fuzzy" data-ppscan="fuzzy"><span class="scan-key">2</span> ' + t('Unsure', '\u4e0d\u786e\u5b9a') + '</button>';
+  html += '<button class="scan-btn scan-unknown" data-ppscan="unknown"><span class="scan-key">3</span> ' + t('Need Help', '\u9700\u8981\u5e2e\u52a9') + '</button>';
+  html += '</div>';
+  E('panel-practice').innerHTML = html;
+  if (typeof renderMathInElement === 'function') renderMathInElement(E('panel-practice'));
+  var actions = E('pp-scan-actions');
+  if (actions && !actions._bound) {
+    actions._bound = true;
+    actions.addEventListener('click', function(e) {
+      var btn = e.target.closest('[data-ppscan]');
+      if (btn) _ratePPScanPreview(btn.dataset.ppscan);
+    });
+  }
+}
+
+function _ratePPScanPreview(rating) {
+  var item = _ppScanState.pool[_ppScanState.idx];
+  var statusMap = { known: 'mastered', fuzzy: 'uncertain', unknown: 'learning' };
+  item.status = statusMap[rating] || 'new';
+  _ppScanState.results[rating].push(item);
+  if (typeof _logScanEvent === 'function') _logScanEvent('pp', item.qId, rating, _ppScanState.round, _ppScanState.sectionId, _ppScanState.board);
+  var card = E('scan-card');
+  if (card) card.classList.add('scan-' + rating);
+  if (rating === 'known' && typeof playCorrect === 'function') playCorrect();
+  else if (rating === 'unknown' && typeof playWrong === 'function') playWrong();
+  setTimeout(function() { _ppScanState.idx++; _renderPPScanCard(); }, 600);
+}
+
+function _renderPPScanPractice() {
+  var item = _ppScanState.pool[_ppScanState.idx];
+  var q = item.q;
+  var progress = _ppScanState.pool.length > 0 ? Math.round(_ppScanState.idx / _ppScanState.pool.length * 100) : 0;
+  var html = '';
+  html += '<div class="study-topbar">';
+  html += '<button class="back-btn" onclick="_exitPPScan()">\u2190</button>';
+  html += '<div class="study-progress"><div class="study-progress-fill" style="width:' + progress + '%"></div></div>';
+  html += '<div class="study-count">' + (_ppScanState.idx + 1) + ' / ' + _ppScanState.pool.length + '</div>';
+  html += '</div>';
+  if (typeof isRecoverySessionActive === 'function' && isRecoverySessionActive()) {
+    html += _renderRecoveryStepBar();
+  }
+  html += '<div class="scan-round-badge">' + t('Round', '\u7b2c') + ' ' + _ppScanState.round + ' \u2014 ' + t('Practice', '\u7ec3\u4e60') + '</div>';
+  html += '<div class="scan-card pp-scan-card" id="scan-card">';
+  html += '<div class="pp-card-header">';
+  html += _ppDiffLabel(q.d || 1, _ppScanState.board);
+  if (q.marks > 0) html += '<span class="pp-marks-badge">[' + q.marks + ' ' + t('marks', '\u5206') + ']</span>';
+  if (q.src) html += '<span style="font-size:11px;color:var(--c-text3)">' + escapeHtml(q.src) + '</span>';
+  html += '</div>';
+  html += '<div class="pp-scan-body" id="pp-scan-body">' + _ppRenderWithMarks(q, false) + '</div>';
+  html += _ppRenderFigures(q);
+  /* Show Answer toggle */
+  html += '<div class="scan-pp-answer-toggle">';
+  html += '<button class="btn btn-sm btn-secondary" id="pp-scan-show-ans" onclick="_ppScanToggleAnswer()">' + t('Show Answer', '\u663e\u793a\u7b54\u6848') + '</button>';
+  html += '</div>';
+  html += '<div class="pp-scan-answer d-none" id="pp-scan-answer">' + _ppRenderWithMarks(q, true) + '</div>';
+  html += '</div>';
+  /* Self-assess */
+  html += '<div class="scan-actions" id="pp-scan-rate">';
+  html += '<button class="scan-btn scan-known" data-ppscan-rate="mastered"><span class="scan-key">1</span> ' + t('Got it', '\u5b8c\u5168\u638c\u63e1') + '</button>';
+  html += '<button class="scan-btn scan-fuzzy" data-ppscan-rate="partial"><span class="scan-key">2</span> ' + t('Partial', '\u90e8\u5206\u638c\u63e1') + '</button>';
+  html += '<button class="scan-btn scan-unknown" data-ppscan-rate="needs_work"><span class="scan-key">3</span> ' + t('Needs Work', '\u9700\u8981\u52a0\u5f3a') + '</button>';
+  html += '</div>';
+  E('panel-practice').innerHTML = html;
+  renderMath(E('panel-practice'));
+  var rateRow = E('pp-scan-rate');
+  if (rateRow && !rateRow._bound) {
+    rateRow._bound = true;
+    rateRow.addEventListener('click', function(e) {
+      var btn = e.target.closest('[data-ppscan-rate]');
+      if (btn) _ratePPScanPractice(btn.dataset.ppscanRate);
+    });
+  }
+}
+
+function _ppScanToggleAnswer() {
+  var ansDiv = E('pp-scan-answer');
+  var btn = E('pp-scan-show-ans');
+  if (ansDiv) {
+    var hidden = ansDiv.classList.toggle('d-none');
+    if (btn) btn.textContent = hidden ? t('Show Answer', '\u663e\u793a\u7b54\u6848') : t('Hide Answer', '\u9690\u85cf\u7b54\u6848');
+    if (!hidden) renderMath(ansDiv);
+  }
+}
+
+function _ratePPScanPractice(verdict) {
+  var item = _ppScanState.pool[_ppScanState.idx];
+  if (verdict === 'mastered') {
+    item.cs = (item.cs || 0) + 1;
+    if (item.cs >= 2) item.status = 'mastered';
+    else if (item.status === 'new' || item.status === 'learning') item.status = 'uncertain';
+  } else if (verdict === 'partial') {
+    item.cs = 0;
+    item.status = 'uncertain';
+  } else {
+    item.cs = 0;
+    item.status = item.status === 'mastered' ? 'uncertain' : 'learning';
+  }
+  var ratingMap = { mastered: 'known', partial: 'fuzzy', needs_work: 'unknown' };
+  if (typeof _logScanEvent === 'function') _logScanEvent('pp', item.qId, ratingMap[verdict] || 'unknown', _ppScanState.round, _ppScanState.sectionId, _ppScanState.board);
+  var card = E('scan-card');
+  if (card) card.classList.add('scan-' + (ratingMap[verdict] || 'unknown'));
+  if (verdict === 'mastered' && typeof playCorrect === 'function') playCorrect();
+  else if (verdict === 'needs_work' && typeof playWrong === 'function') playWrong();
+  setTimeout(function() { _ppScanState.idx++; _renderPPScanCard(); }, 600);
+}
+
+function _finishPPScanRound() {
+  if (!_ppScanState) return;
+  if (_ppScanState.round === 1) {
+    var pool = [];
+    for (var i = 0; i < _ppScanState.items.length; i++) {
+      if (_ppScanState.items[i].status !== 'mastered') pool.push(_ppScanState.items[i]);
+    }
+    if (pool.length === 0) { _finishPPScan(); return; }
+    _ppScanState.pool = pool;
+    _ppScanState.round = 2;
+    _ppScanState.idx = 0;
+    _ppScanState.showAnswer = false;
+    _ppScanState.results = { known: [], fuzzy: [], unknown: [] };
+    _renderPPScanCard();
+  } else {
+    var remaining = [];
+    for (var j = 0; j < _ppScanState.pool.length; j++) {
+      if (_ppScanState.pool[j].status !== 'mastered') remaining.push(_ppScanState.pool[j]);
+    }
+    if (remaining.length === 0 || _ppScanState.round >= 5) { _finishPPScan(); return; }
+    _ppScanState.pool = remaining;
+    _ppScanState.round++;
+    _ppScanState.idx = 0;
+    _renderPPScanCard();
+  }
+}
+
+function _finishPPScan() {
+  var mastered = 0, total = _ppScanState.items.length;
+  for (var i = 0; i < _ppScanState.items.length; i++) {
+    var item = _ppScanState.items[i];
+    if (item.status === 'mastered') {
+      _ppSetMastery(item.qId, 'mastered', { source: 'practice' });
+      mastered++;
+    } else if (item.status === 'uncertain') {
+      _ppSetMastery(item.qId, 'partial', { source: 'practice' });
+    } else if (item.status === 'learning') {
+      _ppSetMastery(item.qId, 'needs_work', { source: 'practice' });
+    }
+  }
+  var _isRecovery = typeof isRecoverySessionActive === 'function' && isRecoverySessionActive();
+  var statusCounts = { mastered: 0, uncertain: 0, learning: 0 };
+  for (var j = 0; j < _ppScanState.items.length; j++) {
+    var st = _ppScanState.items[j].status;
+    if (statusCounts[st] !== undefined) statusCounts[st]++;
+  }
+  var html = '<div class="text-center">';
+  html += '<div class="result-emoji">' + (mastered === total ? '\ud83c\udfc6' : '\ud83d\udcca') + '</div>';
+  html += '<div class="result-title">' + t('PP Scan Complete!', '\u771f\u9898\u626b\u63cf\u5b8c\u6210\uff01') + '</div>';
+  html += '<div class="result-sub">' + t('Scanned ' + total + ' questions', '\u626b\u63cf\u4e86 ' + total + ' \u9053\u771f\u9898') + '</div>';
+  html += '</div>';
+  html += '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:20px 0">';
+  html += '<div style="padding:12px;border-radius:var(--r);background:var(--c-success-bg);text-align:center"><div style="font-size:22px;font-weight:800">' + statusCounts.mastered + '</div><div style="font-size:10px;font-weight:600;color:var(--c-success)">' + t('Mastered', '\u5df2\u638c\u63e1') + '</div></div>';
+  html += '<div style="padding:12px;border-radius:var(--r);background:var(--c-warning-bg);text-align:center"><div style="font-size:22px;font-weight:800">' + statusCounts.uncertain + '</div><div style="font-size:10px;font-weight:600;color:var(--c-warning)">' + t('Partial', '\u90e8\u5206') + '</div></div>';
+  html += '<div style="padding:12px;border-radius:var(--r);background:var(--c-danger-bg);text-align:center"><div style="font-size:22px;font-weight:800">' + statusCounts.learning + '</div><div style="font-size:10px;font-weight:600;color:var(--c-danger)">' + t('Needs Work', '\u9700\u52a0\u5f3a') + '</div></div>';
+  html += '</div>';
+  html += '<div class="result-actions">';
+  html += '<button class="btn btn-primary" onclick="navTo(\'section\')">' + t('Back to Section', '\u8fd4\u56de\u77e5\u8bc6\u70b9') + '</button>';
+  html += '<button class="btn btn-secondary" onclick="typeof renderScanOverview===\'function\'&&renderScanOverview(\'' + _ppScanState.board + '\')">' + t('Scan Overview', '\u626b\u63cf\u603b\u89c8') + '</button>';
+  html += '<button class="btn btn-ghost" onclick="navTo(\'home\')">' + t('Home', '\u9996\u9875') + '</button>';
+  html += '</div>';
+  E('panel-practice').innerHTML = html;
+  if (typeof updateSidebar === 'function') updateSidebar();
+  if (typeof _profileCacheTs !== 'undefined') _profileCacheTs = 0;
+  if (_isRecovery) {
+    _recordRecoveryResult('pp');
+    var panel = E('panel-practice');
+    var actionsDiv = panel ? panel.querySelector('.result-actions') : null;
+    if (actionsDiv) actionsDiv.outerHTML = _renderRecoveryStepBar() + _renderRecoveryResultButtons();
+  }
+  _ppScanState = null;
+}
+
+function _exitPPScan() {
+  _ppScanState = null;
+  navTo('section');
 }
 
 /* ═══ WRONG BOOK STORAGE ═══ */
@@ -1771,16 +2057,33 @@ function _ppRenderWithMarksBlocks(q, showAnswerLine) {
       result += '<div class="pp-subparts">';
       for (var si = 0; si < pt.subparts.length; si++) {
         var sp = pt.subparts[si];
-        var spMarks = sp.marks || 0;
-        var spMarksHtml = (spMarks > 0)
-          ? '<span class="pp-marks-right">[' + spMarks + ']</span>' : '';
         var spContent = _ppRenderBlocks(sp.content, q);
         if (sp.tex) spContent += '<div class="pp-part-extra-tex">' + _ppRenderTexStr(sp.tex) + '</div>';
         if (sp.table) spContent += '<div class="pp-part-extra-table">' + _ppConvertTabularRuntime(sp.table) + '</div>';
         if (sp.figUrl) spContent += '<div class="pp-figures"><img class="pp-fig" src="' + sp.figUrl + '?v=' + APP_VERSION + '" alt="Part diagram" loading="lazy"></div>';
-        var spAns = showAnswerLine ? _ppAnswerLine(sp.answer || sp.ansPrefix, sp.ansSuffix, sp.ansTpl) : '';
-        result += '<div class="pp-part-block pp-subpart-block"><span class="pp-part-label pp-subpart-label">' + sp.label + '</span>' +
-          '<div class="pp-part-content">' + spContent + spAns + '</div>' + spMarksHtml + '</div>';
+        if (sp.subsubparts && sp.subsubparts.length) {
+          /* Container subpart with subsubparts (v4.6.0) */
+          result += '<div class="pp-part-block pp-subpart-block pp-part-container"><span class="pp-part-label pp-subpart-label">' + sp.label + '</span>';
+          result += '<div class="pp-part-content">' + spContent;
+          result += '<div class="pp-subsubparts">';
+          for (var ssi = 0; ssi < sp.subsubparts.length; ssi++) {
+            var ssp = sp.subsubparts[ssi];
+            var sspMarks = ssp.marks || 0;
+            var sspMarksHtml = (sspMarks > 0) ? '<span class="pp-marks-right">[' + sspMarks + ']</span>' : '';
+            var sspContent = _ppRenderBlocks(ssp.content, q);
+            var sspAns = showAnswerLine ? _ppAnswerLine(ssp.answer, null, null) : '';
+            result += '<div class="pp-part-block pp-subsubpart-block"><span class="pp-part-label pp-subsubpart-label">' + ssp.label + '</span>' +
+              '<div class="pp-part-content">' + sspContent + sspAns + '</div>' + sspMarksHtml + '</div>';
+          }
+          result += '</div></div></div>';
+        } else {
+          var spMarks = sp.marks || 0;
+          var spMarksHtml = (spMarks > 0)
+            ? '<span class="pp-marks-right">[' + spMarks + ']</span>' : '';
+          var spAns = showAnswerLine ? _ppAnswerLine(sp.answer || sp.ansPrefix, sp.ansSuffix, sp.ansTpl) : '';
+          result += '<div class="pp-part-block pp-subpart-block"><span class="pp-part-label pp-subpart-label">' + sp.label + '</span>' +
+            '<div class="pp-part-content">' + spContent + spAns + '</div>' + spMarksHtml + '</div>';
+        }
       }
       result += '</div></div></div>';
     } else {

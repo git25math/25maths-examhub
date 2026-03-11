@@ -1,5 +1,43 @@
 # Changelog
 
+## [4.6.0] - 2026-03-11 — FLM Scan Preview + 全览模式
+
+### KP Scan Preview + Focused Quiz
+- **KP 扫描预览**: Round 1 三按钮快速评估知识点（Know/Fuzzy/Learning），不写 FLM
+- **KP 聚焦测验**: Round 2+ 对未掌握 KP 展示 testYourself MCQ 逐题测验
+- **多轮筛选**: 每轮结束过滤已掌握项，最多 5 轮自动收敛
+- **FLM 写入**: 全部完成后通过 `saveKPResult()` 写入 FLM 状态
+
+### PP Scan Preview + Focused Practice
+- **PP 扫描预览**: Round 1 展示题目 parts 概览 + 三按钮评估（Can Do/Unsure/Need Help）
+- **PP 聚焦练习**: Round 2+ 完整展示题目 + Show Answer + 自评三按钮（Got it/Partial/Needs Work）
+- **cs 累积**: 连续 2 次 Got it 标记 mastered，通过 `_ppSetMastery()` 写入 FLM
+
+### 跨专题全览模式 (Scan Overview)
+- **Scan 历史日志**: 每次扫描评分自动记录时间戳（localStorage `scan_log`，上限 5000 条）
+- **全览面板**: 跨专题查看所有已扫描项的 FLM 状态，支持三维筛选（类型/状态/模糊次数）
+- **日期历史**: 按日期分组查看扫描记录（哪天学了什么，标记了什么）
+- **模糊追踪**: 每项显示模糊标记次数 + 最近 8 次评分趋势点
+- **聚焦学习**: 从全览面板一键启动针对模糊/不会项的跨专题学习
+
+### Recovery Session 集成
+- **新项路由**: Recovery Session 中 new KP/PP 项走 Scan Preview，stale 项走 Refresh Scan
+
+### 入口按钮
+- **KP 模块**: 知识点展开区新增「Scan & Quiz / 扫描测验」+ 「Scan Overview / 扫描总览」按钮
+- **PP 模块**: Past Papers 操作区新增「Scan & Practice / 扫描练习」按钮
+
+### 文件变更
+| 文件 | 变更类型 |
+|------|---------|
+| `js/study.js` | 修改 — KP Scan 模式 + Scan 历史日志 + 全览模式（+577 行） |
+| `js/practice.js` | 修改 — PP Scan 模式（+286 行） |
+| `js/syllabus.js` | 修改 — KP/PP 入口按钮 |
+| `js/recovery-session.js` | 修改 — new 项走 Scan 路由 |
+| `css/style.css` | 修改 — Scan 卡片 + 全览面板样式（+75 行） |
+| `js/app.bundle.min.js` | 重新构建 |
+| `css/style.min.css` | 重新构建 |
+
 ## [4.5.1] - 2026-03-11 — 移除"全部课程"选项
 
 ### 变更

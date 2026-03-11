@@ -106,10 +106,20 @@ function _runCurrentRecoveryItem() {
   try {
     if (item.type === 'vocab' && typeof startRefreshScan === 'function') {
       startRefreshScan(item.data);
-    } else if (item.type === 'kp' && typeof startKPRefreshScan === 'function') {
-      startKPRefreshScan();
-    } else if (item.type === 'pp' && typeof startPPRefreshScan === 'function') {
-      startPPRefreshScan();
+    } else if (item.type === 'kp') {
+      /* New KP items → Scan Preview; stale items → Refresh Scan */
+      if (item.isNew && typeof startKPScan === 'function' && item.sectionId) {
+        startKPScan(item.sectionId, item.board || 'cie');
+      } else if (typeof startKPRefreshScan === 'function') {
+        startKPRefreshScan();
+      } else { _recoverySession.results.push({ type: 'kp', status: 'skipped' }); _advanceRecoverySession(); return; }
+    } else if (item.type === 'pp') {
+      /* New PP items → Scan Preview; stale items → Refresh Scan */
+      if (item.isNew && typeof startPPScan === 'function' && item.sectionId) {
+        startPPScan(item.sectionId, item.board || 'cie');
+      } else if (typeof startPPRefreshScan === 'function') {
+        startPPRefreshScan();
+      } else { _recoverySession.results.push({ type: 'pp', status: 'skipped' }); _advanceRecoverySession(); return; }
     } else {
       _recoverySession.results.push({ type: item.type, status: 'skipped' });
       _advanceRecoverySession();

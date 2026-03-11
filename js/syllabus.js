@@ -821,6 +821,13 @@ function renderSectionDetail(ch, sec, secIdx, board) {
       }
       html += '</div>';
     }
+    /* Scan & Quiz button */
+    html += '<div class="btn-row mt-4" style="padding:0 12px">';
+    html += '<button class="btn btn-sm btn-primary" onclick="event.stopPropagation();if(typeof startKPScan===\'function\')startKPScan(\'' + sec.id + '\',\'' + board + '\')">';
+    html += '\ud83d\udd0d ' + t('Scan & Quiz', '\u626b\u63cf\u6d4b\u9a8c') + '</button>';
+    html += '<button class="btn btn-sm btn-ghost" onclick="event.stopPropagation();if(typeof renderScanOverview===\'function\')renderScanOverview(\'' + board + '\')">';
+    html += '\ud83d\udcca ' + t('Scan Overview', '\u626b\u63cf\u603b\u89c8') + '</button>';
+    html += '</div>';
     html += '</div>';
     html += '</div>';
   } else {
@@ -1494,6 +1501,8 @@ function _renderPPSectionModule(slot, secId, board) {
   h += '<div class="btn-row btn-row--wrap mt-4">';
   h += '<button class="btn btn-sm sec-mod-btn-flex" data-pp-start data-sec="' + secId + '" data-board="' + board + '" data-mode="practice">';
   h += '\ud83d\udcd6 ' + t('Practice Mode', '\u7ec3\u4e60\u6a21\u5f0f') + '</button>';
+  h += '<button class="btn btn-sm btn-secondary sec-mod-btn-flex" onclick="event.stopPropagation();if(typeof startPPScan===\'function\')startPPScan(\'' + secId + '\',\'' + board + '\')">';
+  h += '\ud83d\udd0d ' + t('Scan & Practice', '\u626b\u63cf\u7ec3\u4e60') + '</button>';
   h += '<button class="btn btn-sm btn-warning sec-mod-btn-flex" data-pp-start data-sec="' + secId + '" data-board="' + board + '" data-mode="exam">';
   h += '\u23f1 ' + t('Exam Mode', '\u5b9e\u6218\u6a21\u5f0f') + '</button>';
   if (ppStats.wrongActive > 0) {
