@@ -1,5 +1,22 @@
 # Changelog
 
+## [5.3.0] - 2026-03-12 — 列表视图筛选重构：Board 优先 + 多选 + 条件筛选
+
+### 核心变更
+- **Board 一级芯片切换**: 3 个 toggle chip（哈罗海口/CIE 0580/Edexcel 4MA1），可多选，全不选=显示全部
+- **多选下拉组件**: 新建通用 `_renderMultiDrop()` 组件，所有筛选器从单选变为多选（空=全部，非空=OR 匹配）
+- **条件二级筛选**: Board 选择驱动二级筛选动态显示 — 25m 显示年级+单元，CIE/EDX 显示章节+年份/考季/试卷（仅 PP Tab）
+- **数据增强**: 词汇项增加 `_board`/`_category` 字段，PP 项增加 `_year`/`_session`/`_paper` 字段
+- **级联更新**: Board 变更清空不相关子筛选，Grade 变更重新收集 Unit 选项
+- **移除日期范围筛选**: 删除 dateFrom/dateTo（低使用率）
+
+### 文件变更
+| 文件 | 变更类型 |
+|------|---------|
+| `js/lists.js` | 修改 — `_listFilters` 全部改为数组 + `_renderMultiDrop` 组件 + `_renderListFilters`/`_bindListFilters`/`_applyListFilters` 全部重写 + 新增 `_collectUnits`/`_collectYears`/`_collectSeasons`/`_collectPapers`/`_cascadeBoardChange`/`_refreshDropBtn` |
+| `css/style.css` | 修改 — 新增 `.lf-board-bar`/`.lf-board-chip`/`.lf-drop-*` 样式 + 暗色模式 + 响应式 |
+| `js/config.js` | 修改 — 版本号 v5.3.0 |
+
 ## [5.2.0] - 2026-03-12 — 学习项目筛选 UX 优化 + 清单按类型自动拆分
 
 ### 核心变更

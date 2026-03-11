@@ -5,7 +5,7 @@
    ══════════════════════════════════════════════════════════════ */
 
 var _listTab = 'words';   /* words | kps | pps | mylists */
-var _listFilters = { status: 'all', section: 'all', board: 'all', dateFrom: '', dateTo: '', reforget: 'all', search: '' };
+var _listFilters = { board: [], grade: [], unit: [], year: [], season: [], paper: [], section: [], status: [], reforget: [], search: '' };
 var _listSort = { col: 'word', asc: true };
 var _listSelected = {};   /* { 'vocab:L_3_W12': true, ... } */
 var _listPage = 0;
@@ -62,7 +62,7 @@ function renderListView() {
       _listSelected = {};
       _listRawCache = null;
       _listSort = { col: 'word', asc: true };
-      _listFilters = { status: 'all', section: 'all', board: 'all', dateFrom: '', dateTo: '', reforget: 'all', search: '' };
+      _listFilters = { board: [], grade: [], unit: [], year: [], season: [], paper: [], section: [], status: [], reforget: [], search: '' };
       renderListView();
     });
   });
@@ -80,110 +80,307 @@ function renderListView() {
 
 /* ═══ FILTER BAR ═══ */
 
+function _renderMultiDrop(id, label, options, selected) {
+  var count = selected.length;
+  var btnText = count > 0 ? label + ' (' + count + ')' : label;
+  var html = '<div class="lf-drop" id="lf-drop-' + id + '">';
+  html += '<button class="lf-drop-btn' + (count > 0 ? ' has-selection' : '') + '" type="button">' + _escList(btnText) + ' \u25be</button>';
+  html += '<div class="lf-drop-menu">';
+  for (var i = 0; i < options.length; i++) {
+    var o = options[i];
+    var val = typeof o === 'object' ? o.value : o;
+    var lbl = typeof o === 'object' ? o.label : o;
+    var chk = selected.indexOf(val) !== -1 ? ' checked' : '';
+    html += '<label class="lf-drop-item"><input type="checkbox" value="' + _escList(String(val)) + '"' + chk + '> ' + _escList(String(lbl)) + '</label>';
+  }
+  html += '</div></div>';
+  return html;
+}
+
 function _renderListFilters(zh) {
-  var html = '<div class="list-filter-bar">';
+  var f = _listFilters;
+  var html = '';
 
-  /* Status filter */
-  html += '<select class="list-filter-select" id="lf-status">';
-  html += '<option value="all">' + (zh ? '\u5168\u90e8\u72b6\u6001' : 'All Status') + '</option>';
-  html += '<option value="mastered"' + (_listFilters.status === 'mastered' ? ' selected' : '') + '>' + (zh ? '\u5df2\u638c\u63e1' : 'Mastered') + '</option>';
-  html += '<option value="uncertain"' + (_listFilters.status === 'uncertain' ? ' selected' : '') + '>' + (zh ? '\u4e0d\u786e\u5b9a' : 'Uncertain') + '</option>';
-  html += '<option value="learning"' + (_listFilters.status === 'learning' ? ' selected' : '') + '>' + (zh ? '\u5b66\u4e60\u4e2d' : 'Learning') + '</option>';
-  html += '<option value="new"' + (_listFilters.status === 'new' ? ' selected' : '') + '>' + (zh ? '\u65b0' : 'New') + '</option>';
-  html += '</select>';
+  /* ── Level 1: Board chip bar ── */
+  var boards = typeof getVisibleBoards === 'function' ? getVisibleBoards() : [];
+  var boardLabels = { '25m': (zh ? '\u54c8\u7f57\u6d77\u53e3' : 'Harrow HK'), cie: 'CIE 0580', edx: 'Edexcel 4MA1' };
+  html += '<div class="lf-board-bar">';
+  for (var bi = 0; bi < boards.length; bi++) {
+    var bid = boards[bi].id || boards[bi];
+    var active = f.board.indexOf(bid) !== -1;
+    html += '<button class="lf-board-chip' + (active ? ' active' : '') + '" data-board="' + bid + '" type="button">' + (boardLabels[bid] || bid) + '</button>';
+  }
+  html += '</div>';
 
-  /* Board filter (for kps/pps) */
-  if (_listTab === 'kps' || _listTab === 'pps') {
-    html += '<select class="list-filter-select" id="lf-board">';
-    html += '<option value="all">' + (zh ? '\u5168\u90e8\u8003\u8bd5\u5c40' : 'All Boards') + '</option>';
-    var boards = typeof getVisibleBoards === 'function' ? getVisibleBoards() : [];
-    for (var bi = 0; bi < boards.length; bi++) {
-      var bid = boards[bi].id || boards[bi];
-      var bl = bid === 'cie' ? 'CIE 0580' : bid === 'edx' ? 'Edexcel 4MA1' : bid;
-      html += '<option value="' + bid + '"' + (_listFilters.board === bid ? ' selected' : '') + '>' + bl + '</option>';
+  /* ── Level 2: Conditional filters ── */
+  var has25m = f.board.indexOf('25m') !== -1 || f.board.length === 0;
+  var hasCieEdx = f.board.indexOf('cie') !== -1 || f.board.indexOf('edx') !== -1 || f.board.length === 0;
+
+  html += '<div class="list-filter-bar">';
+
+  /* 25m: Grade + Unit (for Words/KPs tabs) */
+  if (has25m && (_listTab === 'words' || _listTab === 'kps')) {
+    var gradeOpts = typeof GRADE_OPTIONS !== 'undefined' ? GRADE_OPTIONS.map(function(g) { return { value: g.value, label: g.emoji + ' ' + (zh ? g.nameZh : g.name) }; }) : [];
+    html += _renderMultiDrop('grade', (zh ? '\u5e74\u7ea7' : 'Grade'), gradeOpts, f.grade);
+    if (_listTab === 'words') {
+      var unitOpts = _collectUnits(f.grade);
+      html += _renderMultiDrop('unit', (zh ? '\u5355\u5143' : 'Unit'), unitOpts, f.unit);
     }
-    html += '</select>';
   }
 
-  /* Section filter — populated dynamically from current tab data */
-  html += '<select class="list-filter-select" id="lf-section">';
-  html += '<option value="all">' + (zh ? '全部章节' : 'All Sections') + '</option>';
-  var secSet = _collectSections();
-  for (var si2 = 0; si2 < secSet.length; si2++) {
-    html += '<option value="' + secSet[si2] + '"' + (_listFilters.section === secSet[si2] ? ' selected' : '') + '>' + secSet[si2] + '</option>';
+  /* CIE/EDX: Section (for Words/KPs/PPs) */
+  if (hasCieEdx) {
+    var secOpts = _collectSections();
+    html += _renderMultiDrop('section', (zh ? '\u7ae0\u8282' : 'Section'), secOpts, f.section);
   }
-  html += '</select>';
 
-  /* Re-forget filter */
-  html += '<select class="list-filter-select" id="lf-reforget">';
-  html += '<option value="all">' + (zh ? '\u5168\u90e8\u9057\u5fd8' : 'Re-forget: All') + '</option>';
-  html += '<option value="1"' + (_listFilters.reforget === '1' ? ' selected' : '') + '>1+</option>';
-  html += '<option value="2"' + (_listFilters.reforget === '2' ? ' selected' : '') + '>2+</option>';
-  html += '<option value="3"' + (_listFilters.reforget === '3' ? ' selected' : '') + '>3+</option>';
-  html += '</select>';
+  /* CIE/EDX: Year/Season/Paper (for PPs tab only) */
+  if (hasCieEdx && _listTab === 'pps') {
+    var yearOpts = _collectYears(f.board);
+    html += _renderMultiDrop('year', (zh ? '\u5e74\u4efd' : 'Year'), yearOpts, f.year);
+    var seasonOpts = _collectSeasons(f.board);
+    html += _renderMultiDrop('season', (zh ? '\u8003\u5b63' : 'Season'), seasonOpts, f.season);
+    var paperOpts = _collectPapers(f.board);
+    html += _renderMultiDrop('paper', (zh ? '\u8bd5\u5377' : 'Paper'), paperOpts, f.paper);
+  }
 
-  /* Date range */
-  html += '<input type="date" class="list-filter-select list-date-input" id="lf-date-from" value="' + (_listFilters.dateFrom || '') + '" title="' + (zh ? '\u4ece' : 'From') + '">';
-  html += '<span class="list-date-sep">~</span>';
-  html += '<input type="date" class="list-filter-select list-date-input" id="lf-date-to" value="' + (_listFilters.dateTo || '') + '" title="' + (zh ? '\u5230' : 'To') + '">';
+  /* ── Level 3: Universal filters ── */
+  var statusOpts = [
+    { value: 'mastered', label: zh ? '\u5df2\u638c\u63e1' : 'Mastered' },
+    { value: 'uncertain', label: zh ? '\u4e0d\u786e\u5b9a' : 'Uncertain' },
+    { value: 'learning', label: zh ? '\u5b66\u4e60\u4e2d' : 'Learning' },
+    { value: 'new', label: zh ? '\u65b0' : 'New' }
+  ];
+  html += _renderMultiDrop('status', (zh ? 'FLM' : 'Status'), statusOpts, f.status);
+
+  var reforgetOpts = [{ value: 1, label: '1+' }, { value: 2, label: '2+' }, { value: 3, label: '3+' }];
+  html += _renderMultiDrop('reforget', (zh ? '\u9057\u5fd8' : 'Re-forget'), reforgetOpts, f.reforget);
 
   /* Search */
-  html += '<input type="text" class="list-search" id="lf-search" placeholder="' + (zh ? '\u641c\u7d22...' : 'Search...') + '" value="' + _escList(_listFilters.search || '') + '">';
+  html += '<input type="text" class="list-search" id="lf-search" placeholder="' + (zh ? '\u641c\u7d22...' : 'Search...') + '" value="' + _escList(f.search || '') + '">';
 
   html += '</div>';
   return html;
 }
 
 function _bindListFilters(el) {
-  var selectors = ['lf-status', 'lf-section', 'lf-board', 'lf-reforget', 'lf-date-from', 'lf-date-to', 'lf-search'];
-  var keys = ['status', 'section', 'board', 'reforget', 'dateFrom', 'dateTo', 'search'];
-  for (var i = 0; i < selectors.length; i++) {
-    var input = el.querySelector('#' + selectors[i]);
-    if (input) {
-      (function(key) {
-        input.addEventListener('change', function() { _listFilters[key] = this.value; _listPage = 0; _renderListTable(); });
-        if (key === 'search') {
-          var _searchTimer = null;
-          input.addEventListener('input', function() {
-            _listFilters[key] = this.value; _listPage = 0;
-            clearTimeout(_searchTimer);
-            _searchTimer = setTimeout(_renderListTable, 250);
-          });
-        }
-      })(keys[i]);
+  /* Board chips */
+  el.querySelectorAll('.lf-board-chip').forEach(function(chip) {
+    chip.addEventListener('click', function() {
+      var bid = chip.dataset.board;
+      var idx = _listFilters.board.indexOf(bid);
+      if (idx === -1) _listFilters.board.push(bid);
+      else _listFilters.board.splice(idx, 1);
+      /* Cascade: clear irrelevant sub-filters */
+      _cascadeBoardChange();
+      _listPage = 0;
+      _listRawCache = null;
+      renderListView();
+    });
+  });
+
+  /* Multi-drop toggle + checkbox change */
+  el.querySelectorAll('.lf-drop').forEach(function(drop) {
+    var btn = drop.querySelector('.lf-drop-btn');
+    var menu = drop.querySelector('.lf-drop-menu');
+    if (btn && menu) {
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        /* Close all other menus first */
+        el.querySelectorAll('.lf-drop-menu.open').forEach(function(m) { if (m !== menu) m.classList.remove('open'); });
+        menu.classList.toggle('open');
+      });
     }
+    var dropId = drop.id.replace('lf-drop-', '');
+    drop.querySelectorAll('input[type="checkbox"]').forEach(function(cb) {
+      cb.addEventListener('change', function(e) {
+        e.stopPropagation();
+        _updateDropFilter(dropId, cb.value, cb.checked);
+      });
+    });
+  });
+
+  /* Click outside → close all dropdowns (remove old listener first to avoid leaks) */
+  document.removeEventListener('click', _closeAllDropdowns);
+  document.addEventListener('click', _closeAllDropdowns);
+
+  /* Search */
+  var searchInput = el.querySelector('#lf-search');
+  if (searchInput) {
+    var _searchTimer = null;
+    searchInput.addEventListener('input', function() {
+      _listFilters.search = this.value;
+      _listPage = 0;
+      clearTimeout(_searchTimer);
+      _searchTimer = setTimeout(_renderListTable, 250);
+    });
   }
+}
+
+function _closeAllDropdowns() {
+  document.querySelectorAll('.lf-drop-menu.open').forEach(function(m) { m.classList.remove('open'); });
+}
+
+function _updateDropFilter(key, value, checked) {
+  var arr = _listFilters[key];
+  if (!arr) return;
+  /* Coerce number types */
+  if (key === 'year' || key === 'reforget' || key === 'paper') value = parseInt(value) || value;
+  if (checked) {
+    if (arr.indexOf(value) === -1) arr.push(value);
+  } else {
+    var idx = arr.indexOf(value);
+    if (idx !== -1) arr.splice(idx, 1);
+  }
+  /* Cascade for grade → unit */
+  if (key === 'grade') {
+    var validUnits = _collectUnits(_listFilters.grade);
+    var validVals = validUnits.map(function(u) { return u.value; });
+    _listFilters.unit = _listFilters.unit.filter(function(u) { return validVals.indexOf(u) !== -1; });
+    /* Grade change requires full re-render to update unit dropdown options */
+    _listPage = 0;
+    _listRawCache = null;
+    renderListView();
+    return;
+  }
+  /* Update button text to reflect new count */
+  _refreshDropBtn(key);
+  _listPage = 0;
+  _renderListTable();
+}
+
+function _refreshDropBtn(key) {
+  var drop = document.getElementById('lf-drop-' + key);
+  if (!drop) return;
+  var btn = drop.querySelector('.lf-drop-btn');
+  if (!btn) return;
+  var arr = _listFilters[key] || [];
+  var zh = (appLang !== 'en');
+  var labels = {
+    grade: zh ? '\u5e74\u7ea7' : 'Grade', unit: zh ? '\u5355\u5143' : 'Unit',
+    section: zh ? '\u7ae0\u8282' : 'Section', year: zh ? '\u5e74\u4efd' : 'Year',
+    season: zh ? '\u8003\u5b63' : 'Season', paper: zh ? '\u8bd5\u5377' : 'Paper',
+    status: zh ? 'FLM' : 'Status', reforget: zh ? '\u9057\u5fd8' : 'Re-forget'
+  };
+  var base = labels[key] || key;
+  btn.textContent = arr.length > 0 ? base + ' (' + arr.length + ') \u25be' : base + ' \u25be';
+  if (arr.length > 0) btn.classList.add('has-selection');
+  else btn.classList.remove('has-selection');
+}
+
+function _cascadeBoardChange() {
+  var f = _listFilters;
+  var has25m = f.board.indexOf('25m') !== -1 || f.board.length === 0;
+  var hasCieEdx = f.board.indexOf('cie') !== -1 || f.board.indexOf('edx') !== -1 || f.board.length === 0;
+  if (!has25m) { f.grade = []; f.unit = []; }
+  if (!hasCieEdx) { f.section = []; f.year = []; f.season = []; f.paper = []; }
 }
 
 /* ═══ DATA SOURCES ═══ */
 
 function _collectSections() {
+  /* Collect CIE/EDX sections from BOARD_SYLLABUS, filtered by selected boards */
   var seen = {};
   var result = [];
-  if (_listTab === 'words') {
-    if (typeof LEVELS !== 'undefined') {
-      for (var i = 0; i < LEVELS.length; i++) {
-        var s = LEVELS[i].slug || '';
-        if (s && !seen[s]) { seen[s] = true; result.push(s); }
-      }
-    }
-  } else if (_listTab === 'kps' || _listTab === 'pps') {
-    var boards = typeof getVisibleBoards === 'function' ? getVisibleBoards() : [];
-    for (var bi = 0; bi < boards.length; bi++) {
-      var b = boards[bi].id || boards[bi];
-      if (b !== 'cie' && b !== 'edx') continue;
-      var syl = (typeof BOARD_SYLLABUS !== 'undefined') ? BOARD_SYLLABUS[b] : null;
-      if (!syl || !syl.chapters) continue;
-      for (var ci = 0; ci < syl.chapters.length; ci++) {
-        var secs = syl.chapters[ci].sections || [];
-        for (var si = 0; si < secs.length; si++) {
-          var sid = secs[si].id;
-          if (sid && !seen[sid]) { seen[sid] = true; result.push(sid); }
-        }
+  var fb = _listFilters.board;
+  var targetBoards = [];
+  if (fb.length === 0) { targetBoards = ['cie', 'edx']; }
+  else {
+    if (fb.indexOf('cie') !== -1) targetBoards.push('cie');
+    if (fb.indexOf('edx') !== -1) targetBoards.push('edx');
+  }
+  for (var bi = 0; bi < targetBoards.length; bi++) {
+    var b = targetBoards[bi];
+    var syl = (typeof BOARD_SYLLABUS !== 'undefined') ? BOARD_SYLLABUS[b] : null;
+    if (!syl || !syl.chapters) continue;
+    for (var ci = 0; ci < syl.chapters.length; ci++) {
+      var secs = syl.chapters[ci].sections || [];
+      for (var si = 0; si < secs.length; si++) {
+        var sid = secs[si].id;
+        if (sid && !seen[sid]) { seen[sid] = true; result.push(sid); }
       }
     }
   }
   return result;
+}
+
+function _collectUnits(grades) {
+  /* Collect 25m unit slugs from LEVELS, filtered by selected grades */
+  if (typeof LEVELS === 'undefined') return [];
+  var result = [];
+  var seen = {};
+  for (var i = 0; i < LEVELS.length; i++) {
+    var lv = LEVELS[i];
+    if (lv.board !== '25m') continue;
+    if (grades.length > 0 && grades.indexOf(lv.category) === -1) continue;
+    var slug = lv.slug || '';
+    if (slug && !seen[slug]) {
+      seen[slug] = true;
+      var label = lv.unitTitle || lv.title || slug;
+      result.push({ value: slug, label: label });
+    }
+  }
+  return result;
+}
+
+function _collectYears(boardArr) {
+  var seen = {};
+  var result = [];
+  var targets = _ppTargetBoards(boardArr);
+  for (var bi = 0; bi < targets.length; bi++) {
+    var ppB = (typeof _ppData !== 'undefined') ? _ppData[targets[bi]] : null;
+    if (!ppB || !ppB.questions) continue;
+    for (var qi = 0; qi < ppB.questions.length; qi++) {
+      var y = ppB.questions[qi].year;
+      if (y && !seen[y]) { seen[y] = true; result.push(y); }
+    }
+  }
+  result.sort(function(a, b) { return b - a; });
+  return result;
+}
+
+function _collectSeasons(boardArr) {
+  var seen = {};
+  var result = [];
+  var targets = _ppTargetBoards(boardArr);
+  for (var bi = 0; bi < targets.length; bi++) {
+    var ppB = (typeof _ppData !== 'undefined') ? _ppData[targets[bi]] : null;
+    if (!ppB || !ppB.questions) continue;
+    for (var qi = 0; qi < ppB.questions.length; qi++) {
+      var s = ppB.questions[qi].session;
+      if (s && !seen[s]) { seen[s] = true; result.push(s); }
+    }
+  }
+  return result;
+}
+
+function _collectPapers(boardArr) {
+  var seen = {};
+  var result = [];
+  var targets = _ppTargetBoards(boardArr);
+  for (var bi = 0; bi < targets.length; bi++) {
+    var ppB = (typeof _ppData !== 'undefined') ? _ppData[targets[bi]] : null;
+    if (!ppB || !ppB.questions) continue;
+    for (var qi = 0; qi < ppB.questions.length; qi++) {
+      var p = ppB.questions[qi].paper;
+      /* Extract paper number from e.g. "2025March-Paper12" → "12" */
+      if (p) {
+        var m = p.match(/Paper(\d+)/);
+        var pNum = m ? parseInt(m[1]) : p;
+        if (!seen[pNum]) { seen[pNum] = true; result.push(pNum); }
+      }
+    }
+  }
+  result.sort(function(a, b) { return a - b; });
+  return result;
+}
+
+function _ppTargetBoards(boardArr) {
+  if (!boardArr || boardArr.length === 0) return ['cie', 'edx'];
+  var r = [];
+  if (boardArr.indexOf('cie') !== -1) r.push('cie');
+  if (boardArr.indexOf('edx') !== -1) r.push('edx');
+  return r.length > 0 ? r : ['cie', 'edx'];
 }
 
 function _getFilteredWords() {
@@ -194,6 +391,8 @@ function _getFilteredWords() {
     var lvObj = (typeof LEVELS !== 'undefined' && w.level >= 0 && w.level < LEVELS.length) ? LEVELS[w.level] : null;
     items.push({
       _type: 'vocab', _ref: w.key, _id: 'vocab:' + w.key,
+      _board: lvObj ? (lvObj.board || '') : '',
+      _category: lvObj ? (lvObj.category || '') : '',
       word: w.word || '', def: w.def || '', fs: w.fs || 'new',
       section: lvObj ? (lvObj.slug || '') : '', lr: w.lr || null, rc: w.rc || 0,
       reforget: typeof getReforgetCount === 'function' ? getReforgetCount(w.key) : 0
@@ -260,11 +459,13 @@ function _getFilteredPPs() {
     for (var qi = 0; qi < ppBoard.questions.length; qi++) {
       var q = ppBoard.questions[qi];
       var m = mastery[q.id] || {};
+      var paperMatch = (q.paper || '').match(/Paper(\d+)/);
       items.push({
         _type: 'pp', _ref: q.id, _id: 'pp:' + q.id, _board: board,
         word: q.id, def: q.src || '', fs: m.fs || 'new',
         section: q.section || '', lr: m.t || null, rc: m.rc || 0,
-        marks: q.marks || 0,
+        marks: q.marks || 0, _year: q.year || 0, _session: q.session || '',
+        _paper: paperMatch ? parseInt(paperMatch[1]) : 0,
         reforget: typeof getReforgetCount === 'function' ? getReforgetCount(q.id) : 0
       });
     }
@@ -281,34 +482,38 @@ function _applyListFilters(items) {
 
   for (var i = 0; i < items.length; i++) {
     var item = items[i];
+    var board = item._board || '';
 
-    /* Status filter */
-    if (f.status !== 'all' && item.fs !== f.status) continue;
+    /* 1. Board filter (empty = all pass) */
+    if (f.board.length > 0 && board && f.board.indexOf(board) === -1) continue;
 
-    /* Section filter */
-    if (f.section !== 'all' && (item.section || '') !== f.section) continue;
+    /* 2. Board-specific filters */
+    if (board === '25m') {
+      /* Grade filter */
+      if (f.grade.length > 0 && f.grade.indexOf(item._category || '') === -1) continue;
+      /* Unit filter */
+      if (f.unit.length > 0 && f.unit.indexOf(item.section || '') === -1) continue;
+    } else if (board === 'cie' || board === 'edx') {
+      /* Section filter */
+      if (f.section.length > 0 && f.section.indexOf(item.section || '') === -1) continue;
+      /* Year/Season/Paper (PP items only) */
+      if (item._type === 'pp') {
+        if (f.year.length > 0 && f.year.indexOf(item._year) === -1) continue;
+        if (f.season.length > 0 && f.season.indexOf(item._session) === -1) continue;
+        if (f.paper.length > 0 && f.paper.indexOf(item._paper) === -1) continue;
+      }
+    }
 
-    /* Board filter */
-    if (f.board !== 'all' && item._board && item._board !== f.board) continue;
+    /* 3. Status filter */
+    if (f.status.length > 0 && f.status.indexOf(item.fs || 'new') === -1) continue;
 
-    /* Re-forget filter */
-    if (f.reforget !== 'all') {
-      var minRf = parseInt(f.reforget) || 0;
+    /* 4. Re-forget filter (min of selected values) */
+    if (f.reforget.length > 0) {
+      var minRf = Math.min.apply(null, f.reforget);
       if ((item.reforget || 0) < minRf) continue;
     }
 
-    /* Date range filter (based on lr) */
-    if (f.dateFrom && item.lr) {
-      var fromTs = new Date(f.dateFrom).getTime();
-      if (item.lr < fromTs) continue;
-    }
-    if (f.dateTo && item.lr) {
-      var toTs = new Date(f.dateTo).getTime() + 86400000;
-      if (item.lr > toTs) continue;
-    }
-    if ((f.dateFrom || f.dateTo) && !item.lr) continue;
-
-    /* Search filter */
+    /* 5. Search filter */
     if (searchLower) {
       var haystack = ((item.word || '') + ' ' + (item.def || '') + ' ' + (item.defZh || '') + ' ' + (item.section || '')).toLowerCase();
       if (haystack.indexOf(searchLower) === -1) continue;
