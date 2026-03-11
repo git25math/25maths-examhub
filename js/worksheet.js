@@ -332,7 +332,8 @@ function _buildListPrintDoc(title, subtitle, bodyHtml, motto) {
   html += '.ws-list-title { font-size: 12pt; font-weight: 600; color: #444; }';
   html += '.ws-list-meta { font-size: 9pt; color: #666; text-align: right; }';
   html += '.ws-user-name { font-size: 11pt; font-weight: 700; color: #5248C9; }';
-  html += '.ws-motto { font-size: 8pt; color: #888; margin-top: 3px; font-style: italic; white-space: nowrap; }';
+  html += '.ws-motto-bar { text-align: center; font-size: 9pt; font-style: italic; color: #5248C9;';
+  html += '  background: #f5f3ff; padding: 6px 12px; border-radius: 6px; margin-bottom: 10px; }';
   html += '.ws-list-table { width: 100%; border-collapse: collapse; font-size: 10pt; }';
   html += '.ws-list-table th { background: #f5f3ff; padding: 6px 8px; border: 1px solid #e5e7eb;';
   html += '  text-align: left; font-weight: 600; font-size: 9pt; white-space: nowrap; }';
@@ -352,9 +353,10 @@ function _buildListPrintDoc(title, subtitle, bodyHtml, motto) {
   html += '<div class="ws-list-meta">';
   if (userName) html += '<div class="ws-user-name">' + esc(userName) + '</div>';
   html += '<div>' + dateStr + '</div>';
-  if (motto) html += '<div class="ws-motto">' + motto + '</div>';
   html += '</div>';
   html += '</div>';
+
+  if (motto) html += '<div class="ws-motto-bar">\u201c' + motto + '\u201d</div>';
 
   html += bodyHtml;
 
@@ -556,7 +558,8 @@ function _buildPPListPrintDoc(title, subtitle, bodyHtml, userName) {
   html += '.ws-list-title { font-size: 11pt; font-weight: 600; color: #444; }';
   html += '.ws-list-meta { font-size: 8pt; color: #666; text-align: right; }';
   html += '.ws-user-name { font-size: 11pt; font-weight: 700; color: #5248C9; }';
-  html += '.ws-motto { font-size: 8pt; color: #888; margin-top: 3px; font-style: italic; white-space: nowrap; }';
+  html += '.ws-motto-bar { text-align: center; font-size: 9pt; font-style: italic; color: #5248C9;';
+  html += '  background: #f5f3ff; padding: 5px 12px; border-radius: 6px; margin-bottom: 8px; }';
   html += '.ws-pp-table { width: 100%; border-collapse: collapse; font-size: 9pt; }';
   html += '.ws-pp-table th { background: #f5f3ff; padding: 5px 6px; border: 1px solid #d1d5db;';
   html += '  text-align: left; font-weight: 600; font-size: 8pt; white-space: nowrap; }';
@@ -574,6 +577,10 @@ function _buildPPListPrintDoc(title, subtitle, bodyHtml, userName) {
   html += '@media print { body { padding: 0; } }';
   html += '</style></head><body>';
 
+  var ppMotto = zh
+    ? '\u6bcf\u9053\u9519\u9898\u90fd\u662f\u8fdb\u6b65\u7684\u8d77\u70b9\u2014\u2014\u6807\u8bb0\u3001\u53cd\u601d\u3001\u91cd\u7ec3\uff0c\u76f4\u5230\u771f\u6b63\u638c\u63e1\u3002'
+    : 'Every mistake is a stepping stone\u2014mark it, reflect, re-practice, until truly mastered.';
+
   html += '<div class="ws-list-header">';
   html += '<div><div class="ws-list-brand">25Maths</div>';
   html += '<div class="ws-list-title">' + esc(title) + '</div>';
@@ -582,11 +589,10 @@ function _buildPPListPrintDoc(title, subtitle, bodyHtml, userName) {
   html += '<div class="ws-list-meta">';
   if (userName) html += '<div class="ws-user-name">' + esc(userName) + '</div>';
   html += '<div>' + dateStr + '</div>';
-  html += '<div class="ws-motto">' + (zh
-    ? '\u6bcf\u9053\u9519\u9898\u90fd\u662f\u8fdb\u6b65\u7684\u8d77\u70b9\u2014\u2014\u6807\u8bb0\u3001\u53cd\u601d\u3001\u91cd\u7ec3\uff0c\u76f4\u5230\u771f\u6b63\u638c\u63e1\u3002'
-    : 'Every mistake is a stepping stone\u2014mark it, reflect, re-practice, until truly mastered.') + '</div>';
   html += '</div>';
   html += '</div>';
+
+  html += '<div class="ws-motto-bar">\u201c' + ppMotto + '\u201d</div>';
 
   html += bodyHtml;
 
