@@ -307,6 +307,19 @@ function renderStudyCard() {
 
   /* Word card (no flip — show word, buttons reveal meaning) */
   html += '<div class="scan-card" id="scan-card">';
+
+  /* Prior FLM status hint — show if word was already studied via global uid */
+  var _scanKey = wordKey(S.lvl, p.lid);
+  var _scanWd = getWordData()[_scanKey];
+  var _scanFs = _scanWd ? (_scanWd.fs || 'new') : 'new';
+  if (_scanFs !== 'new' && S.round === 1) {
+    var _hintClass = _scanFs === 'mastered' ? 'scan-hint-mastered' : _scanFs === 'uncertain' ? 'scan-hint-fuzzy' : 'scan-hint-learning';
+    var _hintLabel = _scanFs === 'mastered' ? t('Mastered', '\u5df2\u638c\u63e1')
+                   : _scanFs === 'uncertain' ? t('Fuzzy', '\u6a21\u7cca')
+                   : t('Learning', '\u5b66\u4e60\u4e2d');
+    html += '<div class="scan-prior-hint ' + _hintClass + '">' + _hintLabel + '</div>';
+  }
+
   html += '<div class="scan-word">' + escapeHtml(p.word) + '</div>';
   html += '<div class="scan-def hidden" id="scan-def">' + escapeHtml(p.def) + '</div>';
   html += '</div>';

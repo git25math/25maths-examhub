@@ -1319,6 +1319,15 @@ input { font-family: inherit; }
 .scan-card.scan-fuzzy { border-color: #F59E0B; background: #F59E0B10; }
 .scan-card.scan-unknown { border-color: #EF4444; background: #EF444410; }
 
+/* Prior FLM status hint badge (global uid dedup) */
+.scan-prior-hint { font-size: 11px; font-weight: 700; padding: 2px 10px; border-radius: 10px; margin-bottom: 8px; letter-spacing: 0.3px; }
+.scan-hint-mastered { background: #22C55E20; color: #16A34A; }
+.scan-hint-fuzzy { background: #F59E0B20; color: #D97706; }
+.scan-hint-learning { background: #3B82F620; color: #2563EB; }
+[data-theme="dark"] .scan-hint-mastered { background: #22C55E18; color: #4ADE80; }
+[data-theme="dark"] .scan-hint-fuzzy { background: #F59E0B18; color: #FBBF24; }
+[data-theme="dark"] .scan-hint-learning { background: #3B82F618; color: #60A5FA; }
+
 .pp-scan-card { min-height: 120px; white-space: pre-line; font-size: 14px; line-height: 1.6; text-align: left; }
 .pp-scan-card .pp-card-header { font-size: 12px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center; gap: 8px; }
 .pp-scan-card .pp-marks-badge { font-size: 11px; }
