@@ -443,6 +443,13 @@
 - [x] **教师作业解锁**: diagnostic/mock 作业自动注入 featureOverride → v2.5.0
 - [x] **全面取消路径锁定**: 所有模式/知识点直接开放，删除 FEATURE_THRESHOLD + Test Out + 锁定 UI → v2.5.1
 
+## v4.7 FLM 完备性审计 + 自定义清单 + 遗忘追踪 + 列表/打印视图 [DONE]
+- [x] **遗忘追踪 (v4.7.0)**: reforget_log 记录 6 个降级点 + getReforgetCount/Timeline 查询 + 云同步桥接
+- [x] **自定义清单 (v4.7.0)**: CRUD + Session 记录 + 全局 FLM 引用 + 云同步桥接
+- [x] **列表视图 (v4.7.0)**: 4 Tab + 7 维筛选 + 可排序表格 + 批量操作 + 分页 + 侧栏/底栏入口
+- [x] **My Lists (v4.7.0)**: 卡片网格 + Session 时间线 + 链式 Scan + Rename/Delete/Print
+- [x] **打印视图 (v4.7.0)**: 4 种列表打印（Word/KP/PP/Custom）+ 通用 A4 构建器
+
 ## v4.6 FLM Scan Preview + 全览模式 + Block 编辑器 [DONE]
 - [x] **KP Scan Preview (v4.6.0)**: Round 1 三按钮预览 + Round 2+ testYourself MCQ 聚焦测验 + 多轮筛选 + FLM 写入
 - [x] **PP Scan Preview (v4.6.0)**: Round 1 parts 概览 + Round 2+ 完整题目自评 + cs 累积 mastered + FLM 写入

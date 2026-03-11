@@ -303,3 +303,205 @@ function printRepairWorksheet(q, sectionId, board) {
   win.document.close();
   /* KaTeX rendering + print triggered by onload in the HTML itself */
 }
+
+/* ══════════════════════════════════════════════════════════════
+   LIST PRINT VIEWS (v4.7.0)
+   Generates printable A4 tables for filtered learning items.
+   ══════════════════════════════════════════════════════════════ */
+
+function _buildListPrintDoc(title, subtitle, bodyHtml) {
+  var esc = typeof escapeHtml === 'function' ? escapeHtml : function(s) { return s; };
+  var dateStr = new Date().toLocaleDateString('en-CA');
+
+  var html = '<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">';
+  html += '<title>' + esc(title) + '</title>';
+  html += '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">';
+  html += '<style>';
+  html += '@page { size: A4; margin: 12mm; }';
+  html += '*, *::before, *::after { box-sizing: border-box; }';
+  html += 'body { font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;';
+  html += '  font-size: 10pt; line-height: 1.4; color: #000; background: #fff; margin: 0; padding: 16px; }';
+  html += '.ws-list-header { display: flex; justify-content: space-between; align-items: flex-start;';
+  html += '  border-bottom: 2px solid #333; padding-bottom: 6px; margin-bottom: 10px; }';
+  html += '.ws-list-brand { font-size: 14pt; font-weight: 700; }';
+  html += '.ws-list-title { font-size: 12pt; font-weight: 600; color: #444; }';
+  html += '.ws-list-meta { font-size: 9pt; color: #666; text-align: right; }';
+  html += '.ws-list-table { width: 100%; border-collapse: collapse; font-size: 10pt; }';
+  html += '.ws-list-table th { background: #f5f3ff; padding: 6px 8px; border: 1px solid #e5e7eb;';
+  html += '  text-align: left; font-weight: 600; font-size: 9pt; white-space: nowrap; }';
+  html += '.ws-list-table td { padding: 5px 8px; border: 1px solid #e5e7eb; word-break: break-word; }';
+  html += '.ws-list-table tr:nth-child(even) { background: #faf9ff; }';
+  html += '.ws-list-table tr { break-inside: avoid; }';
+  html += '.ws-list-footer { margin-top: 12px; padding-top: 6px; border-top: 1px solid #ddd;';
+  html += '  font-size: 8pt; color: #888; display: flex; justify-content: space-between; }';
+  html += '@media print { body { padding: 0; } }';
+  html += '</style></head><body>';
+
+  html += '<div class="ws-list-header">';
+  html += '<div><div class="ws-list-brand">25Maths</div>';
+  html += '<div class="ws-list-title">' + esc(title) + '</div>';
+  if (subtitle) html += '<div style="font-size:9pt;color:#666">' + esc(subtitle) + '</div>';
+  html += '</div>';
+  html += '<div class="ws-list-meta"><div>' + dateStr + '</div></div>';
+  html += '</div>';
+
+  html += bodyHtml;
+
+  html += '<div class="ws-list-footer">';
+  html += '<div>25Maths Exam Support Hub</div>';
+  html += '<div>Generated ' + dateStr + '</div>';
+  html += '</div>';
+
+  /* KaTeX + print trigger */
+  html += '<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"><\/script>';
+  html += '<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"><\/script>';
+  html += '<script>';
+  html += 'window.addEventListener("load", function() {';
+  html += '  try { renderMathInElement(document.body, {';
+  html += '    delimiters: [';
+  html += '      { left: "$$", right: "$$", display: true },';
+  html += '      { left: "\\\\[", right: "\\\\]", display: true },';
+  html += '      { left: "$", right: "$", display: false },';
+  html += '      { left: "\\\\(", right: "\\\\)", display: false }';
+  html += '    ], throwOnError: false';
+  html += '  }); } catch(e) {}';
+  html += '  setTimeout(function() { try { window.focus(); window.print(); } catch(e) {} }, 300);';
+  html += '});';
+  html += '<\/script>';
+
+  html += '</body></html>';
+  return html;
+}
+
+function _openPrintWindow(html) {
+  var win = window.open('', '_blank');
+  if (!win) {
+    if (typeof showToast === 'function') {
+      showToast(typeof t === 'function'
+        ? t('Please allow pop-ups to print', '\u8bf7\u5141\u8bb8\u5f39\u7a97\u4ee5\u6253\u5370')
+        : 'Please allow pop-ups to print');
+    }
+    return;
+  }
+  win.document.open();
+  win.document.write(html);
+  win.document.close();
+}
+
+/* ═══ WORD LIST PRINT ═══ */
+
+function printWordList(words) {
+  var esc = typeof escapeHtml === 'function' ? escapeHtml : function(s) { return s; };
+  var body = '<table class="ws-list-table"><thead><tr>';
+  body += '<th>#</th><th>Word</th><th>Definition</th><th>Status</th><th>Last Reviewed</th><th>Re-forget</th>';
+  body += '</tr></thead><tbody>';
+  for (var i = 0; i < words.length; i++) {
+    var w = words[i];
+    body += '<tr>';
+    body += '<td>' + (i + 1) + '</td>';
+    body += '<td><strong>' + esc(w.word || '') + '</strong></td>';
+    body += '<td>' + esc(w.def || '') + '</td>';
+    body += '<td>' + (w.fs || 'new') + '</td>';
+    body += '<td>' + (w.lr ? new Date(w.lr).toLocaleDateString() : '-') + '</td>';
+    body += '<td>' + (w.reforget || 0) + '</td>';
+    body += '</tr>';
+  }
+  body += '</tbody></table>';
+  var html = _buildListPrintDoc('Word List', words.length + ' items', body);
+  _openPrintWindow(html);
+}
+
+/* ═══ KP LIST PRINT ═══ */
+
+function printKPList(kps) {
+  var esc = typeof escapeHtml === 'function' ? escapeHtml : function(s) { return s; };
+  var body = '<table class="ws-list-table"><thead><tr>';
+  body += '<th>#</th><th>KP ID</th><th>Title (EN)</th><th>Title (ZH)</th><th>Status</th><th>Section</th><th>Re-forget</th>';
+  body += '</tr></thead><tbody>';
+  for (var i = 0; i < kps.length; i++) {
+    var k = kps[i];
+    body += '<tr>';
+    body += '<td>' + (i + 1) + '</td>';
+    body += '<td>' + esc(k.word || '') + '</td>';
+    body += '<td>' + esc(k.def || '') + '</td>';
+    body += '<td>' + esc(k.defZh || '') + '</td>';
+    body += '<td>' + (k.fs || 'new') + '</td>';
+    body += '<td>' + esc(k.section || '') + '</td>';
+    body += '<td>' + (k.reforget || 0) + '</td>';
+    body += '</tr>';
+  }
+  body += '</tbody></table>';
+  var html = _buildListPrintDoc('Knowledge Points', kps.length + ' items', body);
+  _openPrintWindow(html);
+}
+
+/* ═══ PP LIST PRINT ═══ */
+
+function printPPList(pps) {
+  var esc = typeof escapeHtml === 'function' ? escapeHtml : function(s) { return s; };
+  var body = '<table class="ws-list-table"><thead><tr>';
+  body += '<th>#</th><th>Q ID</th><th>Source</th><th>Marks</th><th>Status</th><th>Section</th><th>Re-forget</th>';
+  body += '</tr></thead><tbody>';
+  for (var i = 0; i < pps.length; i++) {
+    var p = pps[i];
+    body += '<tr>';
+    body += '<td>' + (i + 1) + '</td>';
+    body += '<td>' + esc(p.word || '') + '</td>';
+    body += '<td>' + esc(p.def || '') + '</td>';
+    body += '<td>' + (p.marks || '-') + '</td>';
+    body += '<td>' + (p.fs || 'new') + '</td>';
+    body += '<td>' + esc(p.section || '') + '</td>';
+    body += '<td>' + (p.reforget || 0) + '</td>';
+    body += '</tr>';
+  }
+  body += '</tbody></table>';
+  var html = _buildListPrintDoc('Past Paper Questions', pps.length + ' items', body);
+  _openPrintWindow(html);
+}
+
+/* ═══ CUSTOM LIST PRINT ═══ */
+
+function printCustomList(list) {
+  var esc = typeof escapeHtml === 'function' ? escapeHtml : function(s) { return s; };
+  var body = '<table class="ws-list-table"><thead><tr>';
+  body += '<th>#</th><th>Type</th><th>ID</th><th>Status</th><th>Re-forget</th>';
+  body += '</tr></thead><tbody>';
+  for (var i = 0; i < list.items.length; i++) {
+    var item = list.items[i];
+    var fs = 'new';
+    if (typeof _resolveItemFLM === 'function') fs = _resolveItemFLM(item.type, item.ref);
+    var rfCount = typeof getReforgetCount === 'function' ? getReforgetCount(item.ref) : 0;
+    body += '<tr>';
+    body += '<td>' + (i + 1) + '</td>';
+    body += '<td>' + esc(item.type) + '</td>';
+    body += '<td>' + esc(item.ref) + '</td>';
+    body += '<td>' + fs + '</td>';
+    body += '<td>' + rfCount + '</td>';
+    body += '</tr>';
+  }
+  body += '</tbody></table>';
+
+  /* Session history */
+  if (list.sessions && list.sessions.length > 0) {
+    body += '<div style="margin-top:16px"><strong>Session History</strong></div>';
+    body += '<table class="ws-list-table"><thead><tr>';
+    body += '<th>#</th><th>Date</th><th>Mastered</th><th>Uncertain</th><th>Learning</th><th>New</th>';
+    body += '</tr></thead><tbody>';
+    for (var si = 0; si < list.sessions.length; si++) {
+      var sess = list.sessions[si];
+      var r = sess.results || {};
+      body += '<tr>';
+      body += '<td>' + (si + 1) + '</td>';
+      body += '<td>' + (sess.ts || '').slice(0, 10) + '</td>';
+      body += '<td>' + (r.mastered || 0) + '</td>';
+      body += '<td>' + (r.uncertain || 0) + '</td>';
+      body += '<td>' + (r.learning || 0) + '</td>';
+      body += '<td>' + (r['new'] || 0) + '</td>';
+      body += '</tr>';
+    }
+    body += '</tbody></table>';
+  }
+
+  var html = _buildListPrintDoc(list.title || 'Custom List', list.items.length + ' items', body);
+  _openPrintWindow(html);
+}

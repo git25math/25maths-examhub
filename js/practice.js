@@ -1290,7 +1290,11 @@ function _ppSetMastery(qid, level, opts) {
     fs = 'uncertain';
     cs = 0;
   } else if (level === 'needs_work') {
-    if (fs === 'mastered') fs = 'uncertain';
+    if (fs === 'mastered') {
+      /* Re-forget tracking */
+      if (typeof _logReforget === 'function') _logReforget(qid, 'pp', 'mastered', 'uncertain', '', '');
+      fs = 'uncertain';
+    }
     else fs = 'learning';
     cs = 0;
   }
@@ -1351,6 +1355,7 @@ function recordPPRefreshScan(qid, verdict) {
   var prev = m[qid] || {};
   var now = Date.now();
   var fs = prev.fs || 'mastered';
+  var _prevFsPPR = fs;
   var rc = prev.rc || 0;
   if (verdict === 'known') {
     rc = Math.min(rc + 1, MAX_RC);
@@ -1359,6 +1364,10 @@ function recordPPRefreshScan(qid, verdict) {
     fs = 'uncertain'; prev.cs = 0;
   } else if (verdict === 'unknown') {
     fs = 'learning'; prev.cs = 0;
+  }
+  /* Re-forget tracking */
+  if (_prevFsPPR === 'mastered' && fs !== 'mastered') {
+    if (typeof _logReforget === 'function') _logReforget(qid, 'pp', 'mastered', fs, '', '');
   }
   m[qid] = {
     m: fs === 'mastered' ? 'mastered' : fs === 'uncertain' ? 'partial' : 'needs_work',

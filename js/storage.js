@@ -230,6 +230,7 @@ function recordScan(key, verdict, round) {
   var ok = prev.ok || 0;
   var fail = prev.fail || 0;
   var fs = prev.fs || 'new';
+  var _prevFsForReforget = fs;
 
   if (verdict === 'known') {
     fs = 'mastered';
@@ -241,6 +242,11 @@ function recordScan(key, verdict, round) {
     fs = 'learning';
     prev.fr = round || 1;
     fail += 1;
+  }
+
+  /* Re-forget tracking: mastered demoted */
+  if (_prevFsForReforget === 'mastered' && fs !== 'mastered') {
+    _logReforget(key, 'vocab', 'mastered', fs, '', '');
   }
 
   /* Bump weekly goal when word first leaves 'new' */
@@ -450,6 +456,7 @@ function recordRefreshScan(key, verdict) {
   var prev = s.words[key] || {};
   var rc = prev.rc || 0;
   var fs = prev.fs || 'mastered';
+  var _prevFsRefresh = fs;
   var ok = prev.ok || 0;
   var fail = prev.fail || 0;
 
@@ -466,6 +473,11 @@ function recordRefreshScan(key, verdict) {
     fail += 1;
     prev.src = 'reflow';
     prev.cs = 0;
+  }
+
+  /* Re-forget tracking */
+  if (_prevFsRefresh === 'mastered' && fs !== 'mastered') {
+    _logReforget(key, 'vocab', 'mastered', fs, '', '');
   }
 
   var st = fs === 'mastered' ? 'mastered' : fs === 'new' ? 'new' : 'learning';
@@ -642,6 +654,16 @@ async function _doSyncToCloud() {
     var wbRaw = localStorage.getItem('pp_wrong_book');
     if (wbRaw) payload._ppWrongBook = JSON.parse(wbRaw);
   } catch(e) {}
+  /* Bridge reforget log for cross-device sync */
+  try {
+    var rfRaw = localStorage.getItem(_REFORGET_KEY);
+    if (rfRaw) payload._reforgetLog = JSON.parse(rfRaw);
+  } catch(e) {}
+  /* Bridge custom lists for cross-device sync */
+  try {
+    var clRaw = localStorage.getItem(_CUSTOM_LISTS_KEY);
+    if (clRaw) payload._customLists = JSON.parse(clRaw);
+  } catch(e) {}
   var vpRes = await sb.from('vocab_progress').upsert(
     { user_id: currentUser.id, data: JSON.stringify(payload), updated_at: now },
     { onConflict: 'user_id' }
@@ -732,6 +754,16 @@ async function syncFromCloud() {
           try { localStorage.setItem('pp_wrong_book', JSON.stringify(cloud._ppWrongBook)); } catch(e) {}
         }
         delete cloud._ppWrongBook;
+        /* Restore reforget log from cloud bridge */
+        if (cloud && typeof cloud === 'object' && cloud._reforgetLog && Array.isArray(cloud._reforgetLog)) {
+          try { localStorage.setItem(_REFORGET_KEY, JSON.stringify(cloud._reforgetLog)); } catch(e) {}
+        }
+        delete cloud._reforgetLog;
+        /* Restore custom lists from cloud bridge */
+        if (cloud && typeof cloud === 'object' && cloud._customLists && typeof cloud._customLists === 'object') {
+          try { localStorage.setItem(_CUSTOM_LISTS_KEY, JSON.stringify(cloud._customLists)); } catch(e) {}
+        }
+        delete cloud._customLists;
         writeS(cloud);
         invalidateCache();
         try { localStorage.setItem('wmatch_last_sync', cloudTime); } catch (e) {}
@@ -982,7 +1014,11 @@ function saveKPResult(kpId, score, total) {
   } else {
     /* Failed session — demote, reset cs */
     cs = 0;
-    if (fs === 'mastered') fs = 'uncertain';
+    if (fs === 'mastered') {
+      /* Re-forget tracking */
+      _logReforget(kpId, 'kp', 'mastered', 'uncertain', '', '');
+      fs = 'uncertain';
+    }
     else if (fs === 'new') fs = 'learning';
     /* uncertain/learning stay as-is */
   }
@@ -1083,9 +1119,14 @@ function recordKPRefreshScan(kpId, verdict) {
   var prev = s.kpDone[kpId] || {};
   var rc = prev.rc || 0;
   var fs = prev.fs || 'mastered';
+  var _prevFsKPR = fs;
   if (verdict === 'known') { rc = Math.min(rc + 1, MAX_RC); prev.fmt = now; }
   else if (verdict === 'fuzzy') { fs = 'uncertain'; prev.cs = 0; prev.src = 'reflow'; }
   else if (verdict === 'unknown') { fs = 'learning'; prev.cs = 0; prev.src = 'reflow'; }
+  /* Re-forget tracking */
+  if (_prevFsKPR === 'mastered' && fs !== 'mastered') {
+    _logReforget(kpId, 'kp', 'mastered', fs, '', '');
+  }
   s.kpDone[kpId] = {
     score: prev.score || 0, total: prev.total || 0, pct: prev.pct || 0,
     t: now, fs: fs, cs: prev.cs || 0, fmt: prev.fmt || null, rc: rc,
@@ -1327,4 +1368,155 @@ function bumpWeeklyGoal(count) {
   wg.learned = (wg.learned || 0) + (count || 1);
   try { localStorage.setItem('wmatch_weekly', JSON.stringify(wg)); } catch(e) {}
   return wg;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   RE-FORGET TRACKING (v4.7.0)
+   Logs every mastered→non-mastered demotion across all 3 unit types.
+   ══════════════════════════════════════════════════════════════ */
+
+var _REFORGET_KEY = 'reforget_log';
+var _REFORGET_MAX = 2000;
+
+function _logReforget(itemId, type, fromStatus, toStatus, section, board) {
+  var log = [];
+  try { log = JSON.parse(localStorage.getItem(_REFORGET_KEY)) || []; } catch(e) { log = []; }
+  log.push({
+    id: itemId, type: type, from: fromStatus, to: toStatus,
+    ts: Date.now(), sec: section || '', board: board || ''
+  });
+  /* Trim oldest when over limit */
+  if (log.length > _REFORGET_MAX) log = log.slice(log.length - _REFORGET_MAX);
+  try { localStorage.setItem(_REFORGET_KEY, JSON.stringify(log)); } catch(e) {}
+}
+
+function getReforgetLog() {
+  try { return JSON.parse(localStorage.getItem(_REFORGET_KEY)) || []; } catch(e) { return []; }
+}
+
+function getReforgetCount(itemId) {
+  var log = getReforgetLog();
+  var count = 0;
+  for (var i = 0; i < log.length; i++) { if (log[i].id === itemId) count++; }
+  return count;
+}
+
+function getReforgetTimeline(itemId) {
+  var log = getReforgetLog();
+  var timeline = [];
+  for (var i = 0; i < log.length; i++) { if (log[i].id === itemId) timeline.push(log[i]); }
+  return timeline;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   CUSTOM PRACTICE LISTS (v4.7.0)
+   User-created collections of vocab/KP/PP items with session history.
+   FLM state stays global — lists are reference-only views.
+   ══════════════════════════════════════════════════════════════ */
+
+var _CUSTOM_LISTS_KEY = 'custom_lists';
+
+function _loadCustomLists() {
+  try {
+    var d = JSON.parse(localStorage.getItem(_CUSTOM_LISTS_KEY));
+    if (d && d.lists) return d;
+  } catch(e) {}
+  return { lists: [] };
+}
+
+function _saveCustomLists(data) {
+  try { localStorage.setItem(_CUSTOM_LISTS_KEY, JSON.stringify(data)); } catch(e) {}
+}
+
+function createCustomList(title) {
+  var data = _loadCustomLists();
+  var id = 'cl_' + Date.now() + '_' + Math.floor(Math.random() * 65536).toString(16);
+  var now = new Date().toISOString();
+  var list = { id: id, title: title || 'Untitled', createdAt: now, updatedAt: now, items: [], sessions: [] };
+  data.lists.push(list);
+  _saveCustomLists(data);
+  debouncedSync();
+  return list;
+}
+
+function renameCustomList(listId, newTitle) {
+  var data = _loadCustomLists();
+  for (var i = 0; i < data.lists.length; i++) {
+    if (data.lists[i].id === listId) {
+      data.lists[i].title = newTitle;
+      data.lists[i].updatedAt = new Date().toISOString();
+      _saveCustomLists(data);
+      debouncedSync();
+      return true;
+    }
+  }
+  return false;
+}
+
+function deleteCustomList(listId) {
+  var data = _loadCustomLists();
+  data.lists = data.lists.filter(function(l) { return l.id !== listId; });
+  _saveCustomLists(data);
+  debouncedSync();
+}
+
+function addItemsToList(listId, items) {
+  var data = _loadCustomLists();
+  for (var i = 0; i < data.lists.length; i++) {
+    if (data.lists[i].id === listId) {
+      var existing = data.lists[i].items;
+      for (var j = 0; j < items.length; j++) {
+        var dup = false;
+        for (var k = 0; k < existing.length; k++) {
+          if (existing[k].type === items[j].type && existing[k].ref === items[j].ref) { dup = true; break; }
+        }
+        if (!dup) existing.push(items[j]);
+      }
+      data.lists[i].updatedAt = new Date().toISOString();
+      _saveCustomLists(data);
+      debouncedSync();
+      return true;
+    }
+  }
+  return false;
+}
+
+function removeItemFromList(listId, type, ref) {
+  var data = _loadCustomLists();
+  for (var i = 0; i < data.lists.length; i++) {
+    if (data.lists[i].id === listId) {
+      data.lists[i].items = data.lists[i].items.filter(function(it) {
+        return !(it.type === type && it.ref === ref);
+      });
+      data.lists[i].updatedAt = new Date().toISOString();
+      _saveCustomLists(data);
+      debouncedSync();
+      return true;
+    }
+  }
+  return false;
+}
+
+function getCustomList(listId) {
+  var data = _loadCustomLists();
+  for (var i = 0; i < data.lists.length; i++) {
+    if (data.lists[i].id === listId) return data.lists[i];
+  }
+  return null;
+}
+
+function getCustomLists() { return _loadCustomLists().lists; }
+
+function recordListSession(listId, results) {
+  var data = _loadCustomLists();
+  for (var i = 0; i < data.lists.length; i++) {
+    if (data.lists[i].id === listId) {
+      data.lists[i].sessions.push({ ts: new Date().toISOString(), results: results });
+      data.lists[i].updatedAt = new Date().toISOString();
+      _saveCustomLists(data);
+      debouncedSync();
+      return true;
+    }
+  }
+  return false;
 }

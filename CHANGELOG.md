@@ -1,5 +1,47 @@
 # Changelog
 
+## [4.7.0] - 2026-03-11 — FLM 完备性审计 + 自定义清单 + 遗忘追踪 + 列表/打印视图
+
+### 遗忘追踪 (Re-forget Tracking)
+- **遗忘日志**: `reforget_log` localStorage 记录所有 mastered→非mastered 降级事件（上限 2000 条）
+- **6 个注入点**: recordScan / recordRefreshScan / recordKPRefreshScan / saveKPResult / _ppSetMastery / recordPPRefreshScan
+- **查询 API**: `getReforgetLog()` / `getReforgetCount(id)` / `getReforgetTimeline(id)`
+- **云同步桥接**: `_reforgetLog` 字段通过 _doSyncToCloud / syncFromCloud 跨设备同步
+
+### 自定义练习清单 (Custom Lists)
+- **CRUD 函数**: createCustomList / renameCustomList / deleteCustomList / addItemsToList / removeItemFromList
+- **Session 记录**: recordListSession 记录每次清单 Scan 的 FLM 快照
+- **全局 FLM**: 清单为引用视图，FLM 状态保持全局不做 per-list 独立
+- **云同步桥接**: `_customLists` 字段跨设备同步
+
+### 列表视图面板 (Learning Items Panel)
+- **四个 Tab**: Words / Knowledge Points / Past Papers / My Lists
+- **7 维筛选引擎**: FLM 状态 / Board / 日期范围 / 遗忘次数 / 搜索 / Section（动态）/ 自定义清单
+- **可排序表格**: Word/Status/Section/Last Reviewed/Re-forget 五列可点击排序
+- **批量操作**: 多选 → 加入清单 / 导出 CSV / 打印
+- **分页控制**: 50/100/All 三档
+- **My Lists**: 卡片网格 + Session 历史时间线 + Scan/Rename/Delete/Print 操作
+- **清单 Scan**: 链式执行 vocab→KP→PP 分 phase 推进 + 完成后记录 session
+- **侧栏/底栏**: 新增 Learning Items 导航入口
+
+### 打印视图 (List Print Views)
+- **通用构建器**: `_buildListPrintDoc()` A4 打印文档模板（KaTeX + 自动 print）
+- **4 种打印**: printWordList / printKPList / printPPList / printCustomList
+- **Session 历史**: 自定义清单打印包含 session 历史表格
+
+### 文件变更
+| 文件 | 变更类型 |
+|------|---------|
+| `js/storage.js` | 修改 — 遗忘追踪 + 自定义清单 + 4 注入点 + 云同步（+194 行）|
+| `js/practice.js` | 修改 — 遗忘追踪 2 注入点（+11 行）|
+| `js/lists.js` | **新建** — 列表视图面板 + 筛选引擎 + 清单 UI（~630 行）|
+| `js/worksheet.js` | 修改 — 4 种打印函数 + 通用构建器（+202 行）|
+| `js/ui.js` | 修改 — navTo 'lists' 路由（+1 行）|
+| `js/config.js` | 修改 — APP_VERSION v4.7.0 |
+| `css/style.css` | 修改 — 列表视图 + 清单卡片 + 暗色 + 响应式 + 打印（+60 行）|
+| `index.html` | 修改 — panel-lists + 侧栏/底栏导航 |
+| `scripts/minify.sh` | 修改 — lists.js 加入 bundle |
+
 ## [4.6.1] - 2026-03-11 — Block-based 结构化编辑器 + Subsubpart 支持
 
 ### Block-based 编辑器

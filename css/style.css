@@ -4714,3 +4714,63 @@ input { font-family: inherit; }
 [data-theme="dark"] .error-pattern-pill.ep-high { background:rgba(239,68,68,0.15); color:#F87171; }
 [data-theme="dark"] .error-pattern-pill.ep-medium { background:rgba(245,158,11,0.15); color:#FBBF24; }
 [data-theme="dark"] .error-pattern-pill.ep-low { background:var(--c-surface, #1E1E2E); color:var(--c-muted, #9CA3AF); }
+
+/* ═══ LIST VIEW (v4.7.0) ═══ */
+.list-view { max-width:1200px; }
+.list-tabs { display:flex; gap:0; border-bottom:2px solid var(--c-border, #e5e7eb); margin-bottom:12px; }
+.list-tab { padding:10px 16px; font-size:14px; font-weight:600; color:var(--c-text2); background:none; border:none; cursor:pointer; border-bottom:2px solid transparent; margin-bottom:-2px; transition:color 0.15s, border-color 0.15s; }
+.list-tab:hover { color:var(--c-text); }
+.list-tab.active { color:var(--c-primary); border-bottom-color:var(--c-primary); }
+.list-filter-bar { display:flex; flex-wrap:wrap; gap:8px; padding:8px 0 12px; align-items:center; }
+.list-filter-select { padding:6px 10px; font-size:13px; border:1px solid var(--c-border, #e5e7eb); border-radius:var(--r, 8px); background:var(--c-bg, #fff); color:var(--c-text); }
+.list-date-input { width:130px; }
+.list-date-sep { color:var(--c-text3); font-size:13px; }
+.list-search { padding:6px 10px; font-size:13px; border:1px solid var(--c-border, #e5e7eb); border-radius:var(--r, 8px); background:var(--c-bg, #fff); color:var(--c-text); flex:1; min-width:120px; }
+.list-stats { font-size:13px; color:var(--c-text2); padding:4px 0 8px; }
+.list-bulk-bar { display:flex; gap:8px; padding:8px 0; flex-wrap:wrap; }
+.list-table-wrap { overflow-x:auto; }
+.list-table { width:100%; border-collapse:collapse; font-size:14px; }
+.list-table th { padding:10px 8px; border-bottom:2px solid var(--c-border, #e5e7eb); text-align:left; font-size:13px; white-space:nowrap; user-select:none; }
+.list-th-sort { cursor:pointer; }
+.list-th-sort:hover { background:var(--c-surface-alt, #f3f4f6); }
+.list-table td { padding:8px; border-bottom:1px solid var(--c-border-light, #f3f4f6); }
+.list-row:hover { background:var(--c-surface-alt, #f9fafb); }
+.list-row-selected { background:var(--c-primary-bg, #EDEDFF) !important; }
+.list-pagination { display:flex; gap:4px; padding:12px 0; flex-wrap:wrap; }
+
+/* Custom List cards */
+.cl-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); gap:12px; }
+.cl-card { padding:14px; border:1px solid var(--c-border, #e5e7eb); border-radius:var(--r, 10px); background:var(--c-bg, #fff); }
+.cl-card-title { font-weight:700; font-size:15px; color:var(--c-text); margin-bottom:4px; }
+.cl-card-meta { font-size:12px; color:var(--c-text2); margin-top:2px; }
+.cl-card-actions { display:flex; gap:6px; margin-top:10px; flex-wrap:wrap; }
+.cl-session-timeline { display:flex; gap:6px; margin-top:8px; }
+.cl-session-dot { font-size:11px; color:var(--c-text3); padding:2px 6px; background:var(--c-surface-alt, #f3f4f6); border-radius:999px; }
+
+/* Re-forget badge */
+.reforget-badge { font-size:11px; background:var(--c-danger-bg, #FEE2E2); color:var(--c-danger, #EF4444); padding:2px 6px; border-radius:8px; font-weight:600; display:inline-block; }
+
+/* Dark mode */
+[data-theme="dark"] .list-tab { color:var(--c-text3); }
+[data-theme="dark"] .list-tab.active { color:var(--c-primary); }
+[data-theme="dark"] .list-filter-select, [data-theme="dark"] .list-search { background:var(--c-surface, #1E1E2E); border-color:var(--c-border); color:var(--c-text); }
+[data-theme="dark"] .list-table th { border-color:var(--c-border); }
+[data-theme="dark"] .list-table td { border-color:var(--c-border-light, #2a2a3e); }
+[data-theme="dark"] .list-th-sort:hover { background:var(--c-surface, #1E1E2E); }
+[data-theme="dark"] .list-row:hover { background:var(--c-surface-alt, #252538); }
+[data-theme="dark"] .list-row-selected { background:rgba(82,72,201,0.15) !important; }
+[data-theme="dark"] .cl-card { background:var(--c-surface, #1E1E2E); border-color:var(--c-border); }
+[data-theme="dark"] .cl-session-dot { background:var(--c-surface, #1E1E2E); }
+[data-theme="dark"] .reforget-badge { background:rgba(239,68,68,0.15); color:#F87171; }
+
+/* Responsive */
+@media (max-width:639px) {
+  .list-filter-bar { flex-direction:column; }
+  .list-table { font-size:13px; }
+  .list-table th, .list-table td { padding:6px 4px; }
+  .list-date-input { width:100%; }
+  .cl-grid { grid-template-columns:1fr; }
+}
+
+/* Print */
+@media print { .list-bulk-bar, .list-filter-bar, .list-tabs, .list-pagination, .list-stats { display:none !important; } }
