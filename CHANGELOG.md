@@ -1,5 +1,39 @@
 # Changelog
 
+## [4.7.2] - 2026-03-11 — 列表视图深度修复（第三轮审计 14 项）
+
+### 安全修复
+- **arguments.callee 消除**: Modal 事件绑定改用命名函数 + 最多重试 5 次（防无限循环）
+- **搜索输入 XSS**: `_listFilters.search` 注入 value 属性前增加 `_escList()` 转义
+- **Session 无上限**: `recordListSession` 每清单最多保留 50 条最新 session（防 localStorage 溢出）
+
+### Bug 修复
+- **搜索防抖**: 搜索输入增加 250ms debounce，避免每次按键触发全量重渲染
+- **"Show All"不再持久化**: 99999 不写入 localStorage，防止后续访问加载数千行 DOM
+- **分页改进**: 去掉 20 页硬上限，改为 prev/next + 滑窗 9 页 + 首末页 + 省略号
+- **清单名空格**: 创建/重命名清单时 trim 空白字符，阻止纯空格名称
+- **死字段清理**: 移除 `_listFilters.listId`（从未使用）
+
+### 体验优化
+- **Session 时间线倒序**: 卡片显示最近 5 次 session（非最旧 5 次）
+- **重命名预填名称**: rename prompt 预填当前清单名
+- **展开箭头**: 清单卡片标题增加 ▶/▼ 可视箭头指示可展开
+- **打印双语表头**: 4 种列表打印（Word/KP/PP/Custom）表头及标题支持中英双语
+- **Tab 栏响应式**: 添加 overflow-x:auto + white-space:nowrap 防止手机端换行
+- **select-all aria-label**: 全选复选框增加中英双语 aria-label
+- **排序列 aria-sort**: 当前排序列增加 `aria-sort="ascending/descending"` 属性
+
+### 文件变更
+| 文件 | 变更类型 |
+|------|---------|
+| `js/lists.js` | 修改 — 10 项修复（+28 行）|
+| `js/storage.js` | 修改 — session 上限 cap（+1 行）|
+| `js/worksheet.js` | 修改 — 4 种打印双语表头（+14 行）|
+| `css/style.css` | 修改 — 展开箭头样式 + tab 响应式（+4 行）|
+| `js/config.js` | 修改 — `APP_VERSION` → `'v4.7.2'` |
+
+---
+
 ## [4.7.1] - 2026-03-11 — 列表视图质量修复（第二轮审计 11 项）
 
 ### 安全修复

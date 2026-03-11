@@ -4717,8 +4717,8 @@ input { font-family: inherit; }
 
 /* ═══ LIST VIEW (v4.7.0) ═══ */
 .list-view { max-width:1200px; }
-.list-tabs { display:flex; gap:0; border-bottom:2px solid var(--c-border, #e5e7eb); margin-bottom:12px; }
-.list-tab { padding:10px 16px; font-size:14px; font-weight:600; color:var(--c-text2); background:none; border:none; cursor:pointer; border-bottom:2px solid transparent; margin-bottom:-2px; transition:color 0.15s, border-color 0.15s; }
+.list-tabs { display:flex; gap:0; border-bottom:2px solid var(--c-border, #e5e7eb); margin-bottom:12px; overflow-x:auto; -webkit-overflow-scrolling:touch; }
+.list-tab { padding:10px 16px; font-size:14px; font-weight:600; color:var(--c-text2); background:none; border:none; cursor:pointer; border-bottom:2px solid transparent; margin-bottom:-2px; transition:color 0.15s, border-color 0.15s; white-space:nowrap; }
 .list-tab:hover { color:var(--c-text); }
 .list-tab.active { color:var(--c-primary); border-bottom-color:var(--c-primary); }
 .list-filter-bar { display:flex; flex-wrap:wrap; gap:8px; padding:8px 0 12px; align-items:center; }
@@ -4741,7 +4741,8 @@ input { font-family: inherit; }
 /* Custom List cards */
 .cl-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); gap:12px; }
 .cl-card { padding:14px; border:1px solid var(--c-border, #e5e7eb); border-radius:var(--r, 10px); background:var(--c-bg, #fff); }
-.cl-card-title { font-weight:700; font-size:15px; color:var(--c-text); margin-bottom:4px; }
+.cl-card-title { font-weight:700; font-size:15px; color:var(--c-text); margin-bottom:4px; cursor:pointer; }
+.cl-expand-arrow { font-size:11px; color:var(--c-text3); display:inline-block; margin-right:2px; }
 .cl-card-meta { font-size:12px; color:var(--c-text2); margin-top:2px; }
 .cl-card-actions { display:flex; gap:6px; margin-top:10px; flex-wrap:wrap; }
 .cl-session-timeline { display:flex; gap:6px; margin-top:8px; }

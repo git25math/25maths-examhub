@@ -392,8 +392,9 @@ function _openPrintWindow(html) {
 
 function printWordList(words) {
   var esc = typeof escapeHtml === 'function' ? escapeHtml : function(s) { return s; };
+  var zh = (typeof appLang !== 'undefined' && appLang !== 'en');
   var body = '<table class="ws-list-table"><thead><tr>';
-  body += '<th>#</th><th>Word</th><th>Definition</th><th>Status</th><th>Last Reviewed</th><th>Re-forget</th>';
+  body += '<th>#</th><th>' + (zh ? '\u8bcd\u6c47' : 'Word') + '</th><th>' + (zh ? '\u5b9a\u4e49' : 'Definition') + '</th><th>' + (zh ? '\u72b6\u6001' : 'Status') + '</th><th>' + (zh ? '\u4e0a\u6b21\u590d\u4e60' : 'Last Reviewed') + '</th><th>' + (zh ? '\u9057\u5fd8' : 'Re-forget') + '</th>';
   body += '</tr></thead><tbody>';
   for (var i = 0; i < words.length; i++) {
     var w = words[i];
@@ -407,7 +408,7 @@ function printWordList(words) {
     body += '</tr>';
   }
   body += '</tbody></table>';
-  var html = _buildListPrintDoc('Word List', words.length + ' items', body);
+  var html = _buildListPrintDoc(zh ? '\u8bcd\u6c47\u5217\u8868' : 'Word List', words.length + (zh ? ' \u9879' : ' items'), body);
   _openPrintWindow(html);
 }
 
@@ -415,8 +416,9 @@ function printWordList(words) {
 
 function printKPList(kps) {
   var esc = typeof escapeHtml === 'function' ? escapeHtml : function(s) { return s; };
+  var zh = (typeof appLang !== 'undefined' && appLang !== 'en');
   var body = '<table class="ws-list-table"><thead><tr>';
-  body += '<th>#</th><th>KP ID</th><th>Title (EN)</th><th>Title (ZH)</th><th>Status</th><th>Section</th><th>Re-forget</th>';
+  body += '<th>#</th><th>' + (zh ? '\u77e5\u8bc6\u70b9' : 'KP ID') + '</th><th>' + (zh ? '\u82f1\u6587\u6807\u9898' : 'Title (EN)') + '</th><th>' + (zh ? '\u4e2d\u6587\u6807\u9898' : 'Title (ZH)') + '</th><th>' + (zh ? '\u72b6\u6001' : 'Status') + '</th><th>' + (zh ? '\u5c0f\u4e13\u9898' : 'Section') + '</th><th>' + (zh ? '\u9057\u5fd8' : 'Re-forget') + '</th>';
   body += '</tr></thead><tbody>';
   for (var i = 0; i < kps.length; i++) {
     var k = kps[i];
@@ -431,7 +433,7 @@ function printKPList(kps) {
     body += '</tr>';
   }
   body += '</tbody></table>';
-  var html = _buildListPrintDoc('Knowledge Points', kps.length + ' items', body);
+  var html = _buildListPrintDoc(zh ? '\u77e5\u8bc6\u70b9\u5217\u8868' : 'Knowledge Points', kps.length + (zh ? ' \u9879' : ' items'), body);
   _openPrintWindow(html);
 }
 
@@ -439,8 +441,9 @@ function printKPList(kps) {
 
 function printPPList(pps) {
   var esc = typeof escapeHtml === 'function' ? escapeHtml : function(s) { return s; };
+  var zh = (typeof appLang !== 'undefined' && appLang !== 'en');
   var body = '<table class="ws-list-table"><thead><tr>';
-  body += '<th>#</th><th>Q ID</th><th>Source</th><th>Marks</th><th>Status</th><th>Section</th><th>Re-forget</th>';
+  body += '<th>#</th><th>' + (zh ? '\u9898\u53f7' : 'Q ID') + '</th><th>' + (zh ? '\u6765\u6e90' : 'Source') + '</th><th>' + (zh ? '\u5206\u503c' : 'Marks') + '</th><th>' + (zh ? '\u72b6\u6001' : 'Status') + '</th><th>' + (zh ? '\u5c0f\u4e13\u9898' : 'Section') + '</th><th>' + (zh ? '\u9057\u5fd8' : 'Re-forget') + '</th>';
   body += '</tr></thead><tbody>';
   for (var i = 0; i < pps.length; i++) {
     var p = pps[i];
@@ -455,7 +458,7 @@ function printPPList(pps) {
     body += '</tr>';
   }
   body += '</tbody></table>';
-  var html = _buildListPrintDoc('Past Paper Questions', pps.length + ' items', body);
+  var html = _buildListPrintDoc(zh ? '\u771f\u9898\u5217\u8868' : 'Past Paper Questions', pps.length + (zh ? ' \u9879' : ' items'), body);
   _openPrintWindow(html);
 }
 
@@ -463,8 +466,9 @@ function printPPList(pps) {
 
 function printCustomList(list) {
   var esc = typeof escapeHtml === 'function' ? escapeHtml : function(s) { return s; };
+  var zh = (typeof appLang !== 'undefined' && appLang !== 'en');
   var body = '<table class="ws-list-table"><thead><tr>';
-  body += '<th>#</th><th>Type</th><th>ID</th><th>Status</th><th>Re-forget</th>';
+  body += '<th>#</th><th>' + (zh ? '\u7c7b\u578b' : 'Type') + '</th><th>ID</th><th>' + (zh ? '\u72b6\u6001' : 'Status') + '</th><th>' + (zh ? '\u9057\u5fd8' : 'Re-forget') + '</th>';
   body += '</tr></thead><tbody>';
   for (var i = 0; i < list.items.length; i++) {
     var item = list.items[i];
@@ -483,9 +487,9 @@ function printCustomList(list) {
 
   /* Session history */
   if (list.sessions && list.sessions.length > 0) {
-    body += '<div style="margin-top:16px"><strong>Session History</strong></div>';
+    body += '<div style="margin-top:16px"><strong>' + (zh ? '\u7ec3\u4e60\u8bb0\u5f55' : 'Session History') + '</strong></div>';
     body += '<table class="ws-list-table"><thead><tr>';
-    body += '<th>#</th><th>Date</th><th>Mastered</th><th>Uncertain</th><th>Learning</th><th>New</th>';
+    body += '<th>#</th><th>' + (zh ? '\u65e5\u671f' : 'Date') + '</th><th>' + (zh ? '\u5df2\u638c\u63e1' : 'Mastered') + '</th><th>' + (zh ? '\u4e0d\u786e\u5b9a' : 'Uncertain') + '</th><th>' + (zh ? '\u5b66\u4e60\u4e2d' : 'Learning') + '</th><th>' + (zh ? '\u65b0' : 'New') + '</th>';
     body += '</tr></thead><tbody>';
     for (var si = 0; si < list.sessions.length; si++) {
       var sess = list.sessions[si];
@@ -502,6 +506,6 @@ function printCustomList(list) {
     body += '</tbody></table>';
   }
 
-  var html = _buildListPrintDoc(list.title || 'Custom List', list.items.length + ' items', body);
+  var html = _buildListPrintDoc(list.title || (zh ? '\u81ea\u5b9a\u4e49\u6e05\u5355' : 'Custom List'), list.items.length + (zh ? ' \u9879' : ' items'), body);
   _openPrintWindow(html);
 }

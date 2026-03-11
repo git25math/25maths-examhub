@@ -1538,6 +1538,7 @@ function recordListSession(listId, results) {
   for (var i = 0; i < data.lists.length; i++) {
     if (data.lists[i].id === listId) {
       data.lists[i].sessions.push({ ts: new Date().toISOString(), results: results });
+      if (data.lists[i].sessions.length > 50) data.lists[i].sessions = data.lists[i].sessions.slice(-50);
       data.lists[i].updatedAt = new Date().toISOString();
       _saveCustomLists(data);
       debouncedSync();
