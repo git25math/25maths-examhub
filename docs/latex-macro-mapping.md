@@ -1,3 +1,6 @@
+---
+render_with_liquid: false
+---
 # CIE 0580 LaTeX 宏 → JSON Block 完整映射表
 
 > **来源**: `CIE-0580-Master-Style.sty` → 加载 6 个子模块

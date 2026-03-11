@@ -1,3 +1,6 @@
+---
+render_with_liquid: false
+---
 # Supabase ↔ JSON ↔ LaTeX 双向同步调研报告
 
 > 日期: 2026-03-11 | 版本: v1.0
