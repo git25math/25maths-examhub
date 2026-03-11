@@ -94,10 +94,11 @@ function _renderListFilters(zh) {
   if (_listTab === 'kps' || _listTab === 'pps') {
     html += '<select class="list-filter-select" id="lf-board">';
     html += '<option value="all">' + (zh ? '\u5168\u90e8\u8003\u8bd5\u5c40' : 'All Boards') + '</option>';
-    var boards = typeof getVisibleBoards === 'function' ? getVisibleBoards() : ['cie'];
+    var boards = typeof getVisibleBoards === 'function' ? getVisibleBoards() : [];
     for (var bi = 0; bi < boards.length; bi++) {
-      var bl = boards[bi] === 'cie' ? 'CIE 0580' : boards[bi] === 'edx' ? 'Edexcel 4MA1' : boards[bi].toUpperCase();
-      html += '<option value="' + boards[bi] + '"' + (_listFilters.board === boards[bi] ? ' selected' : '') + '>' + bl + '</option>';
+      var bid = boards[bi].id || boards[bi];
+      var bl = bid === 'cie' ? 'CIE 0580' : bid === 'edx' ? 'Edexcel 4MA1' : bid;
+      html += '<option value="' + bid + '"' + (_listFilters.board === bid ? ' selected' : '') + '>' + bl + '</option>';
     }
     html += '</select>';
   }
@@ -167,7 +168,7 @@ function _collectSections() {
   } else if (_listTab === 'kps' || _listTab === 'pps') {
     var boards = typeof getVisibleBoards === 'function' ? getVisibleBoards() : [];
     for (var bi = 0; bi < boards.length; bi++) {
-      var b = boards[bi];
+      var b = boards[bi].id || boards[bi];
       if (b !== 'cie' && b !== 'edx') continue;
       var syl = (typeof BOARD_SYLLABUS !== 'undefined') ? BOARD_SYLLABUS[b] : null;
       if (!syl || !syl.chapters) continue;
@@ -203,7 +204,7 @@ function _getFilteredKPs() {
   var items = [];
   var boards = typeof getVisibleBoards === 'function' ? getVisibleBoards() : [];
   for (var bi = 0; bi < boards.length; bi++) {
-    var board = boards[bi];
+    var board = boards[bi].id || boards[bi];
     if (board !== 'cie' && board !== 'edx') continue;
     var syllabus = (typeof BOARD_SYLLABUS !== 'undefined') ? BOARD_SYLLABUS[board] : null;
     if (!syllabus || !syllabus.chapters) continue;
@@ -249,7 +250,7 @@ function _getFilteredPPs() {
   var items = [];
   var boards = typeof getVisibleBoards === 'function' ? getVisibleBoards() : [];
   for (var bi = 0; bi < boards.length; bi++) {
-    var board = boards[bi];
+    var board = boards[bi].id || boards[bi];
     if (board !== 'cie' && board !== 'edx') continue;
     var ppBoard = (typeof _ppData !== 'undefined') ? _ppData[board] : null;
     if (!ppBoard || !ppBoard.questions) continue;
