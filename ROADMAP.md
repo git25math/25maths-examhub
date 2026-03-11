@@ -462,6 +462,13 @@
 - [x] **聚焦增强 (Phase D)**: 预览表增加标题/加入时间/上次学习 + 行内详情展开（KaTeX）+ FLM 统计条 + 单项快速评分
 - [x] **Tab 工作台 (v5.0.1)**: 学习模式重构为 Tab 工作台 — 词汇/KP/PP 各自独立 Tab + KP 完整渲染（概念卡片/考法/例题/MCQ）+ 分类型完成统计
 
+## v5.1 25m 单元词汇合并 [DONE]
+- [x] **单元合并 (v5.1.0)**: 173 个子卡组合并为 55 个（每单元 1 个卡组）+ 合并脚本 merge-25m-units.js
+- [x] **数据迁移 (v5.1.0)**: modeDone slug 迁移 + hw_templates slug 迁移 + vocab-uid-map 键重建
+- [x] **slug 回退 (v5.1.0)**: getLevelBySlug/getLevelIdxBySlug 旧 slug → 新 slug 自动映射（deep link 兼容）
+- [x] **首页简化 (v5.1.0)**: 移除 unit 折叠分组，25m 改为与 CIE/EDX 相同的扁平 deck 列表
+- [x] **知识点详情 (v5.1.0)**: vocab 关联区域从多行子卡组改为单个可点击模块
+
 ## v4.7 FLM 完备性审计 + 自定义清单 + 遗忘追踪 + 列表/打印视图 [DONE]
 - [x] **遗忘追踪 (v4.7.0)**: reforget_log 记录 6 个降级点 + getReforgetCount/Timeline 查询 + 云同步桥接
 - [x] **自定义清单 (v4.7.0)**: CRUD + Session 记录 + 全局 FLM 引用 + 云同步桥接

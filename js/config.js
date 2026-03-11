@@ -281,12 +281,24 @@ function _ensureSlugMap() {
 function getLevelBySlug(slug) {
   _ensureSlugMap();
   var entry = _levelSlugMap[slug];
-  return entry ? entry.level : null;
+  if (entry) return entry.level;
+  /* Fallback: old slug → merged slug */
+  if (typeof _slugMergeMap !== 'undefined' && _slugMergeMap && _slugMergeMap[slug]) {
+    entry = _levelSlugMap[_slugMergeMap[slug]];
+    if (entry) return entry.level;
+  }
+  return null;
 }
 function getLevelIdxBySlug(slug) {
   _ensureSlugMap();
   var entry = _levelSlugMap[slug];
-  return entry ? entry.idx : -1;
+  if (entry) return entry.idx;
+  /* Fallback: old slug → merged slug */
+  if (typeof _slugMergeMap !== 'undefined' && _slugMergeMap && _slugMergeMap[slug]) {
+    entry = _levelSlugMap[_slugMergeMap[slug]];
+    if (entry) return entry.idx;
+  }
+  return -1;
 }
 
 /* ═══ i18n HELPERS ═══ */
@@ -362,7 +374,7 @@ function isSuperAdmin() {
 }
 
 /* App version */
-var APP_VERSION = 'v5.0.1';
+var APP_VERSION = 'v5.1.0';
 
 /* AI Tutor configuration */
 var AI_TUTOR_CONFIG = {

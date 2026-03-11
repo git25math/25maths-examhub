@@ -1942,7 +1942,7 @@ function _ppRenderFigureBlock(block, q) {
 }
 
 function _ppRenderBlocks(blocks, q) {
-  /* Render Block[] to HTML (v4.5.0: + list block) */
+  /* Render Block[] to HTML (v4.5.0: + list block, v5.0.0: + newline/space) */
   if (!blocks || !blocks.length) return '';
   var html = '';
   for (var i = 0; i < blocks.length; i++) {
@@ -1960,6 +1960,12 @@ function _ppRenderBlocks(blocks, q) {
         listHtml += '<li>' + _ppRenderTexStr(b.items[li]) + '</li>';
       }
       html += listHtml + '</' + tag + '>';
+    } else if (b.type === 'newline') {
+      var count = Math.max(1, parseInt(b.lines) || 1);
+      for (var ni = 0; ni < count; ni++) html += '<br>';
+    } else if (b.type === 'space') {
+      var cm = parseFloat(b.height) || 2;
+      html += '<div class="pp-answer-space" style="height:' + cm + 'cm;border:1px dotted #ccc;border-radius:4px;margin:8px 0"></div>';
     }
   }
   return html;
@@ -3808,7 +3814,7 @@ function _ppEdBlockRow(block, idPrefix, idx) {
   var rowId = idPrefix + '-blk-' + idx;
   var h = '<div class="pp-ed-block-row" data-block-idx="' + idx + '">';
   h += '<select class="bug-select pp-ed-block-type" onchange="_ppEdBlockTypeChanged(this)">';
-  var types = ['text', 'table', 'figure', 'list'];
+  var types = ['text', 'table', 'figure', 'list', 'newline', 'space'];
   for (var i = 0; i < types.length; i++) {
     h += '<option value="' + types[i] + '"' + (block.type === types[i] ? ' selected' : '') + '>' + types[i] + '</option>';
   }
@@ -3818,6 +3824,10 @@ function _ppEdBlockRow(block, idPrefix, idx) {
     h += '<input type="text" class="bug-select pp-ed-block-val" value="' + escapeHtml(block.src || '') + '" placeholder="figures/xxx.svg">';
   } else if (block.type === 'list') {
     h += '<textarea class="bug-textarea font-mono-sm pp-ed-block-val" rows="2" placeholder="One item per line">' + escapeHtml((block.items || []).join('\n')) + '</textarea>';
+  } else if (block.type === 'newline') {
+    h += '<input type="number" class="bug-select pp-ed-block-val" value="' + (block.lines || 1) + '" min="1" max="10" style="width:80px" placeholder="lines"> <span style="color:var(--c-text-muted);font-size:0.85em">blank lines</span>';
+  } else if (block.type === 'space') {
+    h += '<input type="number" class="bug-select pp-ed-block-val" value="' + (block.height || 2) + '" min="0.5" max="20" step="0.5" style="width:80px" placeholder="cm"> <span style="color:var(--c-text-muted);font-size:0.85em">cm answer space</span>';
   } else {
     h += '<textarea class="bug-textarea font-mono-sm pp-ed-block-val" rows="2" placeholder="' + (block.type === 'table' ? '\\\\begin{tabular}...' : 'Text content (LaTeX)') + '">' + escapeHtml(block.content || '') + '</textarea>';
   }
@@ -3838,6 +3848,10 @@ function _ppEdBlockTypeChanged(sel) {
     contentDiv.innerHTML = '<input type="text" class="bug-select pp-ed-block-val" value="" placeholder="figures/xxx.svg">';
   } else if (type === 'list') {
     contentDiv.innerHTML = '<textarea class="bug-textarea font-mono-sm pp-ed-block-val" rows="2" placeholder="One item per line"></textarea>';
+  } else if (type === 'newline') {
+    contentDiv.innerHTML = '<input type="number" class="bug-select pp-ed-block-val" value="1" min="1" max="10" style="width:80px" placeholder="lines"> <span style="color:var(--c-text-muted);font-size:0.85em">blank lines</span>';
+  } else if (type === 'space') {
+    contentDiv.innerHTML = '<input type="number" class="bug-select pp-ed-block-val" value="2" min="0.5" max="20" step="0.5" style="width:80px" placeholder="cm"> <span style="color:var(--c-text-muted);font-size:0.85em">cm answer space</span>';
   } else {
     contentDiv.innerHTML = '<textarea class="bug-textarea font-mono-sm pp-ed-block-val" rows="2" placeholder="' + (type === 'table' ? '\\begin{tabular}...' : 'Text content (LaTeX)') + '"></textarea>';
   }
@@ -3872,6 +3886,14 @@ function _ppEdCollectBlocks(idPrefix) {
     var type = rows[i].querySelector('.pp-ed-block-type').value;
     var valEl = rows[i].querySelector('.pp-ed-block-val');
     var val = valEl ? valEl.value : '';
+    if (type === 'newline') {
+      blocks.push({ type: 'newline', lines: Math.max(1, parseInt(val) || 1) });
+      continue;
+    }
+    if (type === 'space') {
+      blocks.push({ type: 'space', height: Math.max(0.5, parseFloat(val) || 2) });
+      continue;
+    }
     if (!val.trim()) continue;
     if (type === 'figure') {
       blocks.push({ type: 'figure', src: val.trim() });

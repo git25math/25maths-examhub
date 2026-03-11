@@ -665,21 +665,13 @@ function renderHome() {
       boardHtml += '<span class="category-emoji">' + cat.emoji + '</span>';
       boardHtml += '<span class="category-name">' + catName(cat) + '</span>';
 
-      /* 25m: show unit count; Edexcel: show group count */
-      if (is25m) {
-        var unitSet = {};
-        catLevels.forEach(function(cl) { if (cl.lv.unitNum) unitSet[cl.lv.unitNum] = true; });
-        var unitCount = Object.keys(unitSet).length;
-        boardHtml += '<span class="category-count">' + unitCount + ' ' + t('units', '\u5355\u5143') + '</span>';
-      } else {
-        boardHtml += '<span class="category-count">' + catLevels.length + ' ' + t('groups', '\u7ec4') + '</span>';
-      }
+      boardHtml += '<span class="category-count">' + catLevels.length + ' ' + t('groups', '\u7ec4') + '</span>';
       boardHtml += '<span class="category-chevron">\u25bc</span>';
       boardHtml += '</div>';
 
       boardHtml += '<div class="deck-list category-body">';
 
-      /* Practice actions for Edexcel categories */
+      /* Practice actions for non-25m categories */
       if (!is25m && catLevels.length > 0) {
         var firstIdx = catLevels[0].idx;
         boardHtml += '<div class="pq-cat-actions">';
@@ -690,48 +682,10 @@ function renderHome() {
         boardHtml += '</div>';
       }
 
-      if (is25m) {
-        /* Group levels by unitNum, preserving order */
-        var unitGroups = [];
-        var unitMap = {};
-        catLevels.forEach(function(cl) {
-          var uNum = cl.lv.unitNum || 0;
-          if (!unitMap[uNum]) {
-            unitMap[uNum] = { unitNum: uNum, unitTitle: cl.lv.unitTitle || '', unitTitleZh: cl.lv.unitTitleZh || '', levels: [] };
-            unitGroups.push(unitMap[uNum]);
-          }
-          unitMap[uNum].levels.push(cl);
-        });
-
-        unitGroups.forEach(function(ug) {
-          var unitKey = cat.id + '-u' + ug.unitNum;
-          /* Default collapsed unless searching */
-          if (!(unitKey in unitCollapsed)) unitCollapsed[unitKey] = true;
-          var uCollapsed = appSearch ? false : unitCollapsed[unitKey];
-
-          var unitLabel = 'Unit ' + ug.unitNum + ' \u00b7 ' + ug.unitTitle;
-          if (appLang !== 'en' && ug.unitTitleZh) unitLabel += ' ' + ug.unitTitleZh;
-
-          boardHtml += '<div class="unit-section' + (uCollapsed ? ' collapsed' : '') + '" id="unit-' + unitKey + '">';
-          boardHtml += '<div class="unit-header" role="button" tabindex="0" onclick="toggleUnit(\'' + escapeHtml(unitKey) + '\')">';
-          boardHtml += '<span class="unit-name">' + unitLabel + '</span>';
-          boardHtml += '<span class="unit-count">' + ug.levels.length + ' ' + t('groups', '\u7ec4') + '</span>';
-          boardHtml += '<span class="unit-chevron">\u25bc</span>';
-          boardHtml += '</div>';
-
-          boardHtml += '<div class="unit-body">';
-          ug.levels.forEach(function(cl) {
-            boardHtml += renderDeckRow(cl, cat, _levelLocked, _levelStats);
-          });
-          boardHtml += '</div>';
-          boardHtml += '</div>';
-        });
-      } else {
-        /* Non-25m: flat rendering */
-        catLevels.forEach(function(cl) {
-          boardHtml += renderDeckRow(cl, cat, _levelLocked, _levelStats);
-        });
-      }
+      /* Flat rendering for all boards (25m units merged, no sub-grouping needed) */
+      catLevels.forEach(function(cl) {
+        boardHtml += renderDeckRow(cl, cat, _levelLocked, _levelStats);
+      });
 
       if (typeof isSuperAdmin === 'function' && isSuperAdmin() && typeof vocabAdminAddBtn === 'function') {
         boardHtml += vocabAdminAddBtn(board.id, cat.id);

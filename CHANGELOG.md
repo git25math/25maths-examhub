@@ -1,5 +1,33 @@
 # Changelog
 
+## [5.1.0] - 2026-03-12 — 25m 单元词汇合并（173→55 卡组）
+
+### 核心变更
+- **单元合并**: 25m（哈罗）173 个子卡组合并为 55 个（每单元 1 个卡组，平均 ~15 词/组，最大 ~65 词）
+  - FLM 筛选机制让已掌握词自动过滤，大卡组不会造成负担
+  - 总级别数从 275 → 157（CIE 55 + EDX 47 + 25m 55）
+- **数据迁移**: 词汇进度（全局 UID）零影响；`modeDone` 完成标记自动迁移旧 slug → 新 slug
+- **slug 回退**: `getLevelBySlug()` / `getLevelIdxBySlug()` 支持旧 slug 自动映射到新 slug（deep link 兼容）
+- **首页简化**: 移除 25m 单元折叠分组（unitMap/unitCollapsed/toggleUnit），改为与 CIE/EDX 相同的扁平 deck 列表
+- **知识点详情**: vocab 关联区域从多行子卡组列表改为单个可点击模块
+- **Homework 模板迁移**: `hw_templates` localStorage 中旧 slug 自动替换
+
+### 文件变更
+| 文件 | 变更类型 |
+|------|---------|
+| `scripts/merge-25m-units.js` | **新建** — 合并脚本（读取 levels.js → 输出合并后数据 + slug 映射） |
+| `js/levels.js` | **重写** — 173 → 55 个 25m 级别（由脚本生成） |
+| `js/config.js` | 修改 — 版本号 v5.1.0 + slug 回退查找 |
+| `js/storage.js` | 修改 — `_migrateModeDoneForMerge()` + `_migrateHwTemplateSlugs()` |
+| `js/levels-loader.js` | 修改 — 加载 `data/slug-merge-map.json` |
+| `js/mastery.js` | 修改 — 移除 25m 单元折叠分组，改为扁平渲染 |
+| `js/syllabus.js` | 修改 — 简化 vocabSlugs 区域为单个模块 |
+| `data/levels-25m.json` | **重写** — 由 split-levels.js 重新生成（173 → 55 条） |
+| `data/slug-merge-map.json` | **新建** — 旧→新 slug 映射（173 条） |
+| `data/vocab-uid-map.json` | **更新** — 旧 slug 键替换为新 slug 键 |
+| `data/syllabus-hhk.json` | **更新** — vocabSlugs 数组从多个子 slug 合并为单个 |
+| `CLAUDE.md` | 更新 — 版本号 + levels 数量 |
+
 ## [5.0.1] - 2026-03-12 — 清单学习 Tab 工作台重构
 
 ### 核心变更

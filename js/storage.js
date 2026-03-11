@@ -18,6 +18,8 @@ function loadS() {
   _migrateToGlobalKeys(_sCache);
   /* One-time custom list ref normalization */
   _normalizeCustomListRefs();
+  /* One-time modeDone slug migration for 25m unit merge */
+  _migrateModeDoneForMerge(_sCache);
   return _sCache;
 }
 
@@ -1077,6 +1079,77 @@ function mergeVocabLevels(base, dbRows) {
   });
 
   return merged;
+}
+
+/* ═══ ONE-TIME: MIGRATE modeDone FOR 25m UNIT MERGE ═══ */
+function _migrateModeDoneForMerge(s) {
+  if (!s || s._mdMerged) return;
+  var map = (typeof _slugMergeMap !== 'undefined') ? _slugMergeMap : null;
+  if (!map) {
+    /* Regex fallback: strip trailing -N from 25m slugs */
+    if (!s.modeDone) return;
+    var changed = false;
+    var md = s.modeDone;
+    var keys = Object.keys(md);
+    for (var i = 0; i < keys.length; i++) {
+      var k = keys[i];
+      if (k.indexOf('25m-') !== 0) continue;
+      var colonIdx = k.lastIndexOf(':');
+      if (colonIdx < 0) continue;
+      var slug = k.substring(0, colonIdx);
+      var mode = k.substring(colonIdx + 1);
+      var newSlug = slug.replace(/-\d+$/, '');
+      if (newSlug !== slug) {
+        md[newSlug + ':' + mode] = true;
+        delete md[k];
+        changed = true;
+      }
+    }
+    if (changed) { s._mdMerged = true; writeS(s); }
+    return;
+  }
+  if (!s.modeDone) { s._mdMerged = true; return; }
+  var md = s.modeDone;
+  var keys = Object.keys(md);
+  var changed = false;
+  for (var i = 0; i < keys.length; i++) {
+    var k = keys[i];
+    var colonIdx = k.lastIndexOf(':');
+    if (colonIdx < 0) continue;
+    var slug = k.substring(0, colonIdx);
+    var mode = k.substring(colonIdx + 1);
+    if (map[slug]) {
+      md[map[slug] + ':' + mode] = true;
+      delete md[k];
+      changed = true;
+    }
+  }
+  s._mdMerged = true;
+  if (changed) writeS(s);
+  /* Also migrate hw_templates slugs */
+  _migrateHwTemplateSlugs(map);
+}
+
+function _migrateHwTemplateSlugs(map) {
+  if (!map) return;
+  try {
+    var raw = localStorage.getItem('hw_templates');
+    if (!raw) return;
+    var tpls = JSON.parse(raw);
+    var changed = false;
+    tpls.forEach(function(tpl) {
+      if (!tpl.slugs) return;
+      var seen = {};
+      var newSlugs = [];
+      tpl.slugs.forEach(function(slug) {
+        var mapped = map[slug] || slug;
+        if (!seen[mapped]) { seen[mapped] = true; newSlugs.push(mapped); }
+        if (mapped !== slug) changed = true;
+      });
+      tpl.slugs = newSlugs;
+    });
+    if (changed) localStorage.setItem('hw_templates', JSON.stringify(tpls));
+  } catch(e) { /* ignore */ }
 }
 
 /* ═══ MODE COMPLETION TRACKING ═══ */

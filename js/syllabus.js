@@ -742,29 +742,15 @@ function renderSectionDetail(ch, sec, secIdx, board) {
 
   /* Vocabulary module — HHK shows sub-deck list */
   if (board === 'hhk' && sec.vocabSlugs && sec.vocabSlugs.length > 0) {
-    html += '<div class="sec-module sec-module-col">';
+    /* Single merged deck per unit — show as clickable module */
+    var _hhkLi = getLevelIdxBySlug(sec.vocabSlugs[0]);
+    html += '<div class="sec-module" role="button" tabindex="0"' + (_hhkLi >= 0 ? ' onclick="openDeck(' + _hhkLi + ')"' : '') + '>';
     if (_jVocabDone) html += '<div class="sec-module-done">\u2713</div>';
-    html += '<div class="sec-module-row">';
     html += '<div class="sec-module-icon">\ud83d\udcdd</div>';
     html += '<div class="sec-module-info">';
     html += '<div class="sec-module-title">' + t('Vocabulary', '\u6838\u5fc3\u8bcd\u6c47') + '</div>';
-    html += '<div class="sec-module-sub">' + stats.total + ' ' + t('words', '\u8bcd') + ' \u00b7 ' + sec.vocabSlugs.length + ' ' + t('groups', '\u7ec4') + '</div>';
-    html += '</div></div>';
-    /* Sub-deck rows */
-    var wd = getWordData();
-    sec.vocabSlugs.forEach(function(slug, si) {
-      var _li = getLevelIdxBySlug(slug);
-      if (_li < 0) return;
-      var subStats = getDeckStats(_li, wd);
-      var subTitle = LEVELS[_li].title || ('Group ' + (si + 1));
-      html += '<div class="deck-row sec-deck-row-flush" role="button" tabindex="0" onclick="openDeck(' + _li + ')">';
-      html += '<span class="deck-row-tag">' + (si + 1) + '</span>';
-      html += '<span class="deck-row-name">' + escapeHtml(subTitle) + '</span>';
-      html += '<span class="deck-row-count">' + subStats.started + '/' + subStats.total + '</span>';
-      html += '<span class="deck-row-progress"><span class="deck-row-progress-fill" style="width:' + subStats.pct + '%"></span></span>';
-      html += '<span class="deck-row-pct">' + subStats.pct + '%</span>';
-      html += '</div>';
-    });
+    html += '<div class="sec-module-sub">' + stats.total + ' ' + t('words', '\u8bcd') + ' \u00b7 ' + stats.mastered + ' ' + t('mastered', '\u5df2\u638c\u63e1') + '</div>';
+    html += '</div>';
     html += '</div>';
   } else if (words.length > 0 && li >= 0) {
     html += '<div class="sec-module" role="button" tabindex="0" onclick="openDeck(' + li + ')">';

@@ -116,11 +116,16 @@ function ensureAllBoardsLoaded() {
     else window._vocabUidMap = data;
   }).catch(function() { /* optional — migration skipped if missing */ });
 
+  /* Load slug-merge-map.json for old→new slug fallback (non-blocking) */
+  var slugMapPromise = _fetchJson('data/slug-merge-map.json').then(function(data) {
+    window._slugMergeMap = data;
+  }).catch(function() { /* optional — fallback skipped if missing */ });
+
   Promise.all(urls.map(function(item) {
     return _fetchJson(item.url).then(function(data) {
       _loadedData[item.bk] = data;
     });
-  }).concat([uidMapPromise])).then(function() {
+  }).concat([uidMapPromise, slugMapPromise])).then(function() {
     _rebuildLevels();
     _levelsReady = true;
     _levelsCallbacks.forEach(function(fn) { try { fn(); } catch(e) { console.error(e); } });
