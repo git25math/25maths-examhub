@@ -104,9 +104,14 @@ function _renderListFilters(zh) {
   /* ── Level 1: Board chip bar ── */
   var boards = typeof getVisibleBoards === 'function' ? getVisibleBoards() : [];
   var boardLabels = { '25m': (zh ? '\u54c8\u7f57\u6d77\u53e3' : 'Harrow HK'), cie: 'CIE 0580', edx: 'Edexcel 4MA1' };
+  /* KPs/PPs only have CIE/EDX data — hide 25m chip for those tabs */
+  var tabBoards = boards;
+  if (_listTab === 'kps' || _listTab === 'pps') {
+    tabBoards = boards.filter(function(b) { var id = b.id || b; return id !== '25m'; });
+  }
   html += '<div class="lf-board-bar">';
-  for (var bi = 0; bi < boards.length; bi++) {
-    var bid = boards[bi].id || boards[bi];
+  for (var bi = 0; bi < tabBoards.length; bi++) {
+    var bid = tabBoards[bi].id || tabBoards[bi];
     var active = f.board.indexOf(bid) !== -1;
     html += '<button class="lf-board-chip' + (active ? ' active' : '') + '" data-board="' + bid + '" type="button">' + (boardLabels[bid] || bid) + '</button>';
   }
