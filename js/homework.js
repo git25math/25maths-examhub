@@ -452,19 +452,21 @@ async function doCreateHw(classId) {
     slugs = sectionIds;
     customVocab = { _type: 'practice', board: pBoard, count: pCount, difficulty: pDiff ? parseInt(pDiff) : null };
   } else if (_hwMode === 'custom') {
-    /* Collect custom rows */
+    /* Collect custom rows — generate semantic UIDs for consistency */
     var vocab = [];
-    var vid = 1;
+    var _hwcSeen = {};
     document.querySelectorAll('.hw-custom-row').forEach(function(row) {
       var w = row.querySelector('.hw-cw').value.trim();
       var d = row.querySelector('.hw-cd').value.trim();
       if (!w && !d) return;
-      vocab.push({ id: vid, type: 'word', content: w });
-      vocab.push({ id: vid, type: 'def', content: d });
-      vid++;
+      var uid = typeof _vaMakeUid === 'function' ? _vaMakeUid(w) : w.toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
+      if (_hwcSeen[uid]) { var n = 2; while (_hwcSeen[uid + '-' + n]) n++; uid = uid + '-' + n; }
+      _hwcSeen[uid] = true;
+      vocab.push({ id: uid, type: 'word', content: w });
+      vocab.push({ id: uid, type: 'def', content: d });
     });
     if (vocab.length < 4) { msg.textContent = t('At least 2 words required', '至少输入2个词'); msg.className = 'settings-msg error'; return; }
-    if (vid > 21) { msg.textContent = t('Max 20 words allowed', '最多20个词'); msg.className = 'settings-msg error'; return; }
+    if (vocab.length > 40) { msg.textContent = t('Max 20 words allowed', '最多20个词'); msg.className = 'settings-msg error'; return; }
     customVocab = vocab;
   } else {
     document.querySelectorAll('.hw-deck-cb:checked').forEach(function(cb) {
@@ -562,17 +564,20 @@ async function doCreateCustomHw(classId, studentUserId) {
   if (!title) { msg.textContent = t('Title required', '请填写标题'); msg.className = 'settings-msg error'; return; }
   if (!deadline) { msg.textContent = t('Deadline required', '请设置截止日期'); msg.className = 'settings-msg error'; return; }
 
-  /* Collect selected words */
+  /* Collect selected words — generate semantic UIDs for consistency */
   var vocab = [];
-  var id = 1;
+  var _hwSeen = {};
   document.querySelectorAll('.chw-word-cb:checked').forEach(function(cb) {
-    vocab.push({ id: id, type: 'word', content: cb.getAttribute('data-word') });
-    vocab.push({ id: id, type: 'def', content: cb.getAttribute('data-def') });
-    id++;
+    var w = cb.getAttribute('data-word');
+    var uid = typeof _vaMakeUid === 'function' ? _vaMakeUid(w) : w.toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
+    if (_hwSeen[uid]) { var n = 2; while (_hwSeen[uid + '-' + n]) n++; uid = uid + '-' + n; }
+    _hwSeen[uid] = true;
+    vocab.push({ id: uid, type: 'word', content: w });
+    vocab.push({ id: uid, type: 'def', content: cb.getAttribute('data-def') });
   });
 
   if (vocab.length < 4) { msg.textContent = t('Select at least 2 words', '至少选择2个词'); msg.className = 'settings-msg error'; return; }
-  if (id > 11) { msg.textContent = t('Max 10 words allowed', '最多选择10个词'); msg.className = 'settings-msg error'; return; }
+  if (vocab.length > 20) { msg.textContent = t('Max 10 words allowed', '最多选择10个词'); msg.className = 'settings-msg error'; return; }
 
   msg.textContent = t('Creating...', '创建中...');
   msg.className = 'settings-msg';
