@@ -11,12 +11,15 @@ var _listSelected = {};   /* { 'vocab:L_3_W12': true, ... } */
 var _listPage = 0;
 var _listPageSize = (function() { try { var v = parseInt(localStorage.getItem('list_pagesize')); return v > 0 ? v : 50; } catch(e) { return 50; } })();
 var _listData = [];       /* current filtered+sorted data */
+var _listRawCache = null; /* { tab, data } — raw items cache, invalidated on tab switch */
 
 /* ═══ ENTRY POINT ═══ */
 
 function renderListView() {
   var el = document.getElementById('panel-lists');
   if (!el) return;
+  _listSelected = {};
+  _listRawCache = null;
   var zh = (appLang !== 'en');
   var html = '<div class="list-view">';
 
@@ -55,6 +58,7 @@ function renderListView() {
       _listTab = btn.dataset.listtab;
       _listPage = 0;
       _listSelected = {};
+      _listRawCache = null;
       _listSort = { col: 'word', asc: true };
       _listFilters = { status: 'all', section: 'all', board: 'all', dateFrom: '', dateTo: '', reforget: 'all', search: '' };
       renderListView();
@@ -343,12 +347,17 @@ function _renderListTable() {
   if (!el) return;
   var zh = (appLang !== 'en');
 
-  /* Get data */
+  /* Get data (cached per tab to avoid rebuilding on sort/page/check) */
   var raw;
-  if (_listTab === 'words') raw = _getFilteredWords();
-  else if (_listTab === 'kps') raw = _getFilteredKPs();
-  else if (_listTab === 'pps') raw = _getFilteredPPs();
-  else raw = [];
+  if (_listRawCache && _listRawCache.tab === _listTab) {
+    raw = _listRawCache.data;
+  } else {
+    if (_listTab === 'words') raw = _getFilteredWords();
+    else if (_listTab === 'kps') raw = _getFilteredKPs();
+    else if (_listTab === 'pps') raw = _getFilteredPPs();
+    else raw = [];
+    _listRawCache = { tab: _listTab, data: raw };
+  }
 
   /* Empty state for KP/PP when no boards configured */
   if ((_listTab === 'kps' || _listTab === 'pps') && raw.length === 0) {
@@ -430,7 +439,7 @@ function _renderListTable() {
     var item = _listData[ri];
     var sel = _listSelected[item._id] ? true : false;
     html += '<tr class="list-row' + (sel ? ' list-row-selected' : '') + '" data-listid="' + item._id + '">';
-    html += '<td><input type="checkbox" class="list-row-check"' + (sel ? ' checked' : '') + '></td>';
+    html += '<td><input type="checkbox" class="list-row-check" aria-label="' + _escList(item.word) + '"' + (sel ? ' checked' : '') + '></td>';
     html += '<td>' + _escList(item.word) + '</td>';
     html += '<td>' + _escList(item.def) + (item.defZh ? ' <span style="color:var(--c-text3)">' + _escList(item.defZh) + '</span>' : '') + '</td>';
     html += '<td>' + _fsChip(item.fs) + '</td>';
@@ -464,8 +473,8 @@ function _renderListTable() {
     }
     if (pgEnd < totalPages) html += '<span style="padding:0 4px;color:var(--c-text3)">\u2026</span><button class="btn btn-sm btn-ghost" data-listpage="' + (totalPages - 1) + '">' + totalPages + '</button>';
     if (_listPage < totalPages - 1) html += '<button class="btn btn-sm btn-ghost" data-listpage="' + (_listPage + 1) + '">' + (zh ? '\u4e0b\u4e00\u9875' : 'Next') + ' \u203a</button>';
-    html += '<button class="btn btn-sm btn-ghost" data-listpagesize="100">' + (zh ? '\u663e\u793a100' : 'Show 100') + '</button>';
-    html += '<button class="btn btn-sm btn-ghost" data-listpagesize="all">' + (zh ? '\u5168\u90e8' : 'Show All') + '</button>';
+    if (_listData.length > 100 && _listPageSize < 100) html += '<button class="btn btn-sm btn-ghost" data-listpagesize="100">' + (zh ? '\u663e\u793a100' : 'Show 100') + '</button>';
+    if (_listData.length <= 500) html += '<button class="btn btn-sm btn-ghost" data-listpagesize="all">' + (zh ? '\u5168\u90e8' : 'Show All') + '</button>';
     html += '</div>';
   }
 
@@ -542,6 +551,25 @@ function _bindListTableEvents(el) {
 }
 
 /* ═══ HELPERS ═══ */
+
+function _detectItemBoard(type, ref) {
+  var bds = ['cie', 'edx'];
+  if (type === 'kp' && typeof _kpData !== 'undefined') {
+    for (var i = 0; i < bds.length; i++) {
+      var pts = _kpData[bds[i]] || [];
+      for (var j = 0; j < pts.length; j++) { if (pts[j].id === ref) return bds[i]; }
+    }
+  }
+  if (type === 'pp' && typeof _ppData !== 'undefined') {
+    for (var i2 = 0; i2 < bds.length; i2++) {
+      var ppB = _ppData[bds[i2]];
+      if (ppB && ppB.questions) {
+        for (var j2 = 0; j2 < ppB.questions.length; j2++) { if (ppB.questions[j2].id === ref) return bds[i2]; }
+      }
+    }
+  }
+  return 'cie';
+}
 
 function _escList(s) {
   if (!s) return '';
@@ -631,11 +659,11 @@ function _doAddSelectedToList(listId) {
 function _exportSelectedCSV() {
   var keys = Object.keys(_listSelected);
   if (keys.length === 0) return;
-  var rows = [['Type', 'ID', 'Word/Title', 'Definition', 'Status', 'Re-forget']];
+  var rows = [['Type', 'ID', 'Word/Title', 'Definition', 'Status', 'Section', 'Board', 'Re-forget']];
   for (var i = 0; i < _listData.length; i++) {
     var d = _listData[i];
     if (!_listSelected[d._id]) continue;
-    rows.push([d._type, d._ref, d.word || '', d.def || '', d.fs || '', String(d.reforget || 0)]);
+    rows.push([d._type, d._ref, d.word || '', d.def || '', d.fs || '', d.section || '', d._board || '', String(d.reforget || 0)]);
   }
   var csv = rows.map(function(r) {
     return r.map(function(c) { return '"' + String(c).replace(/"/g, '""') + '"'; }).join(',');
@@ -695,7 +723,7 @@ function _renderMyLists() {
       var cl = lists[i];
       var itemCounts = _countListItems(cl);
       var lastSession = cl.sessions && cl.sessions.length > 0 ? cl.sessions[cl.sessions.length - 1] : null;
-      html += '<div class="cl-card" data-clid="' + cl.id + '">';
+      html += '<div class="cl-card" data-clid="' + _escList(cl.id) + '">';
       html += '<div class="cl-card-title"><span class="cl-expand-arrow">\u25b6</span> ' + _escList(cl.title) + '</div>';
       html += '<div class="cl-card-meta">' + cl.items.length + ' ' + (zh ? '\u9879' : 'items');
       if (itemCounts.v) html += ' (' + itemCounts.v + 'V';
@@ -722,14 +750,14 @@ function _renderMyLists() {
       }
 
       html += '<div class="cl-card-actions">';
-      html += '<button class="btn btn-sm btn-primary cl-scan-btn" data-clid="' + cl.id + '">' + (zh ? '\u5f00\u59cb Scan' : 'Scan') + '</button>';
-      html += '<button class="btn btn-sm btn-ghost cl-rename-btn" data-clid="' + cl.id + '" aria-label="' + (zh ? '\u91cd\u547d\u540d' : 'Rename') + '">\u270f\ufe0f</button>';
-      html += '<button class="btn btn-sm btn-ghost cl-delete-btn" data-clid="' + cl.id + '" aria-label="' + (zh ? '\u5220\u9664' : 'Delete') + '">\ud83d\uddd1\ufe0f</button>';
-      html += '<button class="btn btn-sm btn-ghost cl-print-btn" data-clid="' + cl.id + '" aria-label="' + (zh ? '\u6253\u5370' : 'Print') + '">\ud83d\udda8\ufe0f</button>';
+      html += '<button class="btn btn-sm btn-primary cl-scan-btn" data-clid="' + _escList(cl.id) + '">' + (zh ? '\u5f00\u59cb Scan' : 'Scan') + '</button>';
+      html += '<button class="btn btn-sm btn-ghost cl-rename-btn" data-clid="' + _escList(cl.id) + '" aria-label="' + (zh ? '\u91cd\u547d\u540d' : 'Rename') + '">\u270f\ufe0f</button>';
+      html += '<button class="btn btn-sm btn-ghost cl-delete-btn" data-clid="' + _escList(cl.id) + '" aria-label="' + (zh ? '\u5220\u9664' : 'Delete') + '">\ud83d\uddd1\ufe0f</button>';
+      html += '<button class="btn btn-sm btn-ghost cl-print-btn" data-clid="' + _escList(cl.id) + '" aria-label="' + (zh ? '\u6253\u5370' : 'Print') + '">\ud83d\udda8\ufe0f</button>';
       html += '</div>';
 
       /* Expandable item list */
-      html += '<div class="cl-card-items" id="cl-items-' + cl.id + '" style="display:none">';
+      html += '<div class="cl-card-items" id="cl-items-' + _escList(cl.id) + '" style="display:none">';
       html += _renderListItemsPreview(cl);
       html += '</div>';
 
@@ -828,8 +856,9 @@ function _countListItems(cl) {
 }
 
 function _renderListItemsPreview(cl) {
+  var zh = (appLang !== 'en');
   var html = '<table class="list-table" style="font-size:12px;margin-top:8px"><thead><tr>';
-  html += '<th>Type</th><th>ID</th><th>Status</th><th></th>';
+  html += '<th>' + (zh ? '\u7c7b\u578b' : 'Type') + '</th><th>ID</th><th>' + (zh ? '\u72b6\u6001' : 'Status') + '</th><th></th>';
   html += '</tr></thead><tbody>';
   for (var i = 0; i < cl.items.length; i++) {
     var item = cl.items[i];
@@ -872,20 +901,27 @@ function startListScan(listId) {
     return;
   }
 
-  /* Group items by type, determine board from KP/PP items */
-  var vocabKeys = [], kpIds = [], ppIds = [];
-  var board = typeof userBoard !== 'undefined' ? userBoard : 'cie';
+  /* Group items by type and detect board per item from _kpData/_ppData */
+  var vocabKeys = [], kpByBoard = {}, ppByBoard = {};
   for (var i = 0; i < list.items.length; i++) {
     var it = list.items[i];
-    if (it.type === 'vocab') vocabKeys.push(it.ref);
-    else if (it.type === 'kp') kpIds.push(it.ref);
-    else if (it.type === 'pp') ppIds.push(it.ref);
+    if (it.type === 'vocab') { vocabKeys.push(it.ref); continue; }
+    var detBoard = _detectItemBoard(it.type, it.ref);
+    if (it.type === 'kp') {
+      if (!kpByBoard[detBoard]) kpByBoard[detBoard] = [];
+      kpByBoard[detBoard].push(it.ref);
+    } else if (it.type === 'pp') {
+      if (!ppByBoard[detBoard]) ppByBoard[detBoard] = [];
+      ppByBoard[detBoard].push(it.ref);
+    }
   }
 
   var phases = [];
   if (vocabKeys.length > 0) phases.push({ type: 'vocab', items: vocabKeys });
-  if (kpIds.length > 0) phases.push({ type: 'kp', items: kpIds, board: board });
-  if (ppIds.length > 0) phases.push({ type: 'pp', items: ppIds, board: board });
+  var bKeys = Object.keys(kpByBoard);
+  for (var bi = 0; bi < bKeys.length; bi++) phases.push({ type: 'kp', items: kpByBoard[bKeys[bi]], board: bKeys[bi] });
+  bKeys = Object.keys(ppByBoard);
+  for (var bi2 = 0; bi2 < bKeys.length; bi2++) phases.push({ type: 'pp', items: ppByBoard[bKeys[bi2]], board: bKeys[bi2] });
 
   if (phases.length === 0) return;
 

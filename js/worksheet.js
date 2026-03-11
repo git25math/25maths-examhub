@@ -388,6 +388,14 @@ function _openPrintWindow(html) {
   win.document.close();
 }
 
+function _printStatus(fs, zh) {
+  var colors = { mastered: '#059669', uncertain: '#D97706', learning: '#5248C9', 'new': '#9CA3AF' };
+  var labels = zh ? { mastered: '\u5df2\u638c\u63e1', uncertain: '\u4e0d\u786e\u5b9a', learning: '\u5b66\u4e60\u4e2d', 'new': '\u65b0' }
+    : { mastered: 'Mastered', uncertain: 'Uncertain', learning: 'Learning', 'new': 'New' };
+  var s = fs || 'new';
+  return '<span style="color:' + (colors[s] || '#9CA3AF') + ';font-weight:600">' + (labels[s] || s) + '</span>';
+}
+
 /* ═══ WORD LIST PRINT ═══ */
 
 function printWordList(words) {
@@ -402,7 +410,7 @@ function printWordList(words) {
     body += '<td>' + (i + 1) + '</td>';
     body += '<td><strong>' + esc(w.word || '') + '</strong></td>';
     body += '<td>' + esc(w.def || '') + '</td>';
-    body += '<td>' + (w.fs || 'new') + '</td>';
+    body += '<td>' + _printStatus(w.fs, zh) + '</td>';
     body += '<td>' + (w.lr ? new Date(w.lr).toLocaleDateString() : '-') + '</td>';
     body += '<td>' + (w.reforget || 0) + '</td>';
     body += '</tr>';
@@ -427,7 +435,7 @@ function printKPList(kps) {
     body += '<td>' + esc(k.word || '') + '</td>';
     body += '<td>' + esc(k.def || '') + '</td>';
     body += '<td>' + esc(k.defZh || '') + '</td>';
-    body += '<td>' + (k.fs || 'new') + '</td>';
+    body += '<td>' + _printStatus(k.fs, zh) + '</td>';
     body += '<td>' + esc(k.section || '') + '</td>';
     body += '<td>' + (k.reforget || 0) + '</td>';
     body += '</tr>';
@@ -452,7 +460,7 @@ function printPPList(pps) {
     body += '<td>' + esc(p.word || '') + '</td>';
     body += '<td>' + esc(p.def || '') + '</td>';
     body += '<td>' + (p.marks || '-') + '</td>';
-    body += '<td>' + (p.fs || 'new') + '</td>';
+    body += '<td>' + _printStatus(p.fs, zh) + '</td>';
     body += '<td>' + esc(p.section || '') + '</td>';
     body += '<td>' + (p.reforget || 0) + '</td>';
     body += '</tr>';
@@ -479,7 +487,7 @@ function printCustomList(list) {
     body += '<td>' + (i + 1) + '</td>';
     body += '<td>' + esc(item.type) + '</td>';
     body += '<td>' + esc(item.ref) + '</td>';
-    body += '<td>' + fs + '</td>';
+    body += '<td>' + _printStatus(fs, zh) + '</td>';
     body += '<td>' + rfCount + '</td>';
     body += '</tr>';
   }

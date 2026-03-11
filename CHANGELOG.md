@@ -1,5 +1,34 @@
 # Changelog
 
+## [4.7.3] - 2026-03-11 — 列表视图第四轮修复（12 项）
+
+### 安全修复
+- **Board 检测修复**: List Scan 不再依赖 `userBoard` 全局变量（可能为 `null`/`'all'`/`'25m-y7'`），改为从 `_kpData`/`_ppData` 反查每个 item 的实际 board
+- **`cl.id` 全量转义**: `data-clid` 和 `id="cl-items-"` 属性统一使用 `_escList()` 转义（与 `data-rm-list` 一致）
+
+### 性能优化
+- **Raw data 缓存**: `_listRawCache` 缓存 raw items，sort/page/checkbox 操作不再重复调用 `_getFilteredWords()`/`_getFilteredKPs()`/`_getFilteredPPs()`
+- **"Show All" 安全**: 仅在 ≤500 项时显示 "Show All"；"Show 100" 仅在 >100 项时显示
+
+### Bug 修复
+- **选中态泄漏**: `renderListView()` 入口清空 `_listSelected` 和 `_listRawCache`，防止跨面板残留
+- **CSV 缺列**: 导出 CSV 增加 Section 和 Board 两列
+
+### 体验优化
+- **打印状态着色**: 4 种打印的 Status 列改为彩色文字（绿/黄/紫/灰）+ 双语标签
+- **预览表头双语**: 清单展开预览表格 Type/Status 表头双语
+- **行复选框 aria-label**: 每行复选框 `aria-label` 设为该行 word/ID
+
+### 文件变更
+| 文件 | 变更类型 |
+|------|---------|
+| `js/lists.js` | 修改 — board 检测重写 + `_detectItemBoard` + `cl.id` 转义 + raw cache + 选中态清空 + CSV 列 + 分页条件 + aria-label + 预览双语（+42 行）|
+| `js/storage.js` | 无变更（上轮已修复）|
+| `js/worksheet.js` | 修改 — `_printStatus` 彩色标签 + 4 处打印状态替换（+14 行）|
+| `js/config.js` | 修改 — `APP_VERSION` → `'v4.7.3'` |
+
+---
+
 ## [4.7.2] - 2026-03-11 — 列表视图深度修复（第三轮审计 14 项）
 
 ### 安全修复

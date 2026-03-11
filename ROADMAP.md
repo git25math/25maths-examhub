@@ -451,6 +451,7 @@
 - [x] **打印视图 (v4.7.0)**: 4 种列表打印（Word/KP/PP/Custom）+ 通用 A4 构建器
 - [x] **列表视图质量修复 (v4.7.1)**: getLang→appLang 10 处 + onclick XSS 消除 3 处 + 双击锁 + Modal 竞态 + LEVELS null 安全 + aria-label + 分页持久化 + 空 board 提示
 - [x] **列表视图深度修复 (v4.7.2)**: arguments.callee 消除 + search XSS + session cap 50 + debounce + 分页滑窗 + 打印双语 + 展开箭头 + tab 响应式
+- [x] **列表视图第四轮修复 (v4.7.3)**: board 反查修复 + cl.id 全量转义 + raw data 缓存 + Show All 安全 + CSV 增列 + 打印状态着色
 
 ## v4.6 FLM Scan Preview + 全览模式 + Block 编辑器 [DONE]
 - [x] **KP Scan Preview (v4.6.0)**: Round 1 三按钮预览 + Round 2+ testYourself MCQ 聚焦测验 + 多轮筛选 + FLM 写入
