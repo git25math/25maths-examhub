@@ -1,0 +1,206 @@
+[
+  {
+    "id": "hv0432",
+    "cat": "geometry",
+    "topic": "Vectors",
+    "q": "If $\\mathbf{u} = \\binom{5}{12}$, what is $|\\mathbf{u}|$?",
+    "o": [
+      "$7$",
+      "$13$",
+      "$\\sqrt{17}$",
+      "$17$"
+    ],
+    "a": 1,
+    "e": "$|\\mathbf{u}| = \\sqrt{5^2+12^2} = \\sqrt{25+144} = \\sqrt{169} = 13$.",
+    "d": 1,
+    "s": "Y11.10",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0433",
+    "cat": "geometry",
+    "topic": "Vectors",
+    "q": "If $\\mathbf{v} = \\binom{-8}{6}$, what is $|\\mathbf{v}|$?",
+    "o": [
+      "$2$",
+      "$14$",
+      "$\\sqrt{28}$",
+      "$10$"
+    ],
+    "a": 3,
+    "e": "$|\\mathbf{v}| = \\sqrt{(-8)^2+6^2} = \\sqrt{64+36} = \\sqrt{100} = 10$.",
+    "d": 1,
+    "s": "Y11.10",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0434",
+    "cat": "geometry",
+    "topic": "Vectors",
+    "q": "If $\\mathbf{w} = \\binom{4}{-3}$, what is $|\\mathbf{w}|$?",
+    "o": [
+      "$5$",
+      "$1$",
+      "$\\sqrt{7}$",
+      "$7$"
+    ],
+    "a": 0,
+    "e": "$|\\mathbf{w}| = \\sqrt{4^2+(-3)^2} = \\sqrt{16+9} = \\sqrt{25} = 5$.",
+    "d": 1,
+    "s": "Y11.10",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0435",
+    "cat": "geometry",
+    "topic": "Vectors",
+    "q": "$\\mathbf{a} = \\binom{5}{-2}$ and $\\mathbf{b} = \\binom{3}{6}$. Find $\\mathbf{a} + \\mathbf{b}$.",
+    "o": [
+      "$\\binom{2}{-8}$",
+      "$\\binom{8}{8}$",
+      "$\\binom{8}{4}$",
+      "$\\binom{-2}{4}$"
+    ],
+    "a": 2,
+    "e": "$\\mathbf{a}+\\mathbf{b} = \\binom{5+3}{-2+6} = \\binom{8}{4}$.",
+    "d": 1,
+    "s": "Y11.10",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0436",
+    "cat": "geometry",
+    "topic": "Vectors",
+    "q": "$\\mathbf{u} = \\binom{-3}{4}$ and $\\mathbf{v} = \\binom{7}{2}$. Find $\\mathbf{u} + \\mathbf{v}$.",
+    "o": [
+      "$\\binom{4}{6}$",
+      "$\\binom{-10}{2}$",
+      "$\\binom{10}{6}$",
+      "$\\binom{4}{2}$"
+    ],
+    "a": 0,
+    "e": "$\\mathbf{u}+\\mathbf{v} = \\binom{-3+7}{4+2} = \\binom{4}{6}$.",
+    "d": 1,
+    "s": "Y11.10",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0437",
+    "cat": "geometry",
+    "topic": "Vectors",
+    "q": "$\\mathbf{x} = \\binom{1}{5}$ and $\\mathbf{y} = \\binom{-4}{-2}$. Find $\\mathbf{x} + \\mathbf{y}$.",
+    "o": [
+      "$\\binom{5}{7}$",
+      "$\\binom{-3}{7}$",
+      "$\\binom{3}{-3}$",
+      "$\\binom{-3}{3}$"
+    ],
+    "a": 3,
+    "e": "$\\mathbf{x}+\\mathbf{y} = \\binom{1+(-4)}{5+(-2)} = \\binom{-3}{3}$.",
+    "d": 1,
+    "s": "Y11.10",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0438",
+    "cat": "geometry",
+    "topic": "Vectors",
+    "q": "$\\overrightarrow{OP} = \\mathbf{p}$ and $\\overrightarrow{OQ} = \\mathbf{q}$. Express $\\overrightarrow{PQ}$ in terms of $\\mathbf{p}$ and $\\mathbf{q}$.",
+    "o": [
+      "$\\mathbf{p} - \\mathbf{q}$",
+      "$\\mathbf{q} - \\mathbf{p}$",
+      "$\\mathbf{p} + \\mathbf{q}$",
+      "$2\\mathbf{q} - \\mathbf{p}$"
+    ],
+    "a": 1,
+    "e": "$\\overrightarrow{PQ} = \\overrightarrow{PO} + \\overrightarrow{OQ} = -\\mathbf{p} + \\mathbf{q} = \\mathbf{q} - \\mathbf{p}$.",
+    "d": 2,
+    "s": "Y11.10",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0439",
+    "cat": "geometry",
+    "topic": "Vectors",
+    "q": "$\\overrightarrow{OX} = \\mathbf{x}$ and $\\overrightarrow{OY} = \\mathbf{y}$. Express $\\overrightarrow{YX}$ in terms of $\\mathbf{x}$ and $\\mathbf{y}$.",
+    "o": [
+      "$\\mathbf{x} - \\mathbf{y}$",
+      "$\\mathbf{y} - \\mathbf{x}$",
+      "$\\mathbf{x} + \\mathbf{y}$",
+      "$-\\mathbf{x} - \\mathbf{y}$"
+    ],
+    "a": 0,
+    "e": "$\\overrightarrow{YX} = \\overrightarrow{YO} + \\overrightarrow{OX} = -\\mathbf{y} + \\mathbf{x} = \\mathbf{x} - \\mathbf{y}$.",
+    "d": 2,
+    "s": "Y11.10",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0440",
+    "cat": "geometry",
+    "topic": "Vectors",
+    "q": "$\\overrightarrow{OC} = \\mathbf{c}$ and $\\overrightarrow{OD} = \\mathbf{d}$. Express $\\overrightarrow{CD}$ in terms of $\\mathbf{c}$ and $\\mathbf{d}$.",
+    "o": [
+      "$\\mathbf{c} + \\mathbf{d}$",
+      "$\\mathbf{c} - \\mathbf{d}$",
+      "$2\\mathbf{d}$",
+      "$\\mathbf{d} - \\mathbf{c}$"
+    ],
+    "a": 3,
+    "e": "$\\overrightarrow{CD} = \\overrightarrow{CO} + \\overrightarrow{OD} = -\\mathbf{c} + \\mathbf{d} = \\mathbf{d} - \\mathbf{c}$.",
+    "d": 2,
+    "s": "Y11.10",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0441",
+    "cat": "geometry",
+    "topic": "Vectors",
+    "q": "$N$ is the midpoint of $XY$. If $\\overrightarrow{OX} = \\mathbf{x}$ and $\\overrightarrow{OY} = \\mathbf{y}$, find $\\overrightarrow{ON}$.",
+    "o": [
+      "$\\mathbf{x} + \\mathbf{y}$",
+      "$\\frac{1}{2}(\\mathbf{x} + \\mathbf{y})$",
+      "$\\frac{1}{2}(\\mathbf{x} - \\mathbf{y})$",
+      "$\\frac{1}{2}\\mathbf{y}$"
+    ],
+    "a": 1,
+    "e": "$\\overrightarrow{ON} = \\overrightarrow{OX} + \\frac{1}{2}\\overrightarrow{XY} = \\mathbf{x} + \\frac{1}{2}(\\mathbf{y}-\\mathbf{x}) = \\frac{1}{2}(\\mathbf{x}+\\mathbf{y})$.",
+    "d": 2,
+    "s": "Y11.10",
+    "diag": "logic"
+  },
+  {
+    "id": "hv0442",
+    "cat": "geometry",
+    "topic": "Vectors",
+    "q": "$P$ is the midpoint of $AB$. If $\\overrightarrow{OA} = \\mathbf{a}$ and $\\overrightarrow{OB} = \\mathbf{b}$, find $\\overrightarrow{OP}$.",
+    "o": [
+      "$\\frac{1}{2}(\\mathbf{a} + \\mathbf{b})$",
+      "$\\frac{1}{2}(\\mathbf{a} - \\mathbf{b})$",
+      "$\\mathbf{a} - \\frac{1}{2}\\mathbf{b}$",
+      "$\\mathbf{b} - \\mathbf{a}$"
+    ],
+    "a": 0,
+    "e": "$\\overrightarrow{OP} = \\overrightarrow{OA} + \\frac{1}{2}\\overrightarrow{AB} = \\mathbf{a} + \\frac{1}{2}(\\mathbf{b}-\\mathbf{a}) = \\frac{1}{2}(\\mathbf{a}+\\mathbf{b})$.",
+    "d": 2,
+    "s": "Y11.10",
+    "diag": "logic"
+  },
+  {
+    "id": "hv0443",
+    "cat": "geometry",
+    "topic": "Vectors",
+    "q": "$K$ is the midpoint of $PQ$. If $\\overrightarrow{OP} = \\mathbf{p}$ and $\\overrightarrow{OQ} = \\mathbf{q}$, find $\\overrightarrow{OK}$.",
+    "o": [
+      "$\\mathbf{p} + \\mathbf{q}$",
+      "$\\frac{1}{2}\\mathbf{p} + \\mathbf{q}$",
+      "$\\frac{1}{2}\\mathbf{q} - \\frac{1}{2}\\mathbf{p}$",
+      "$\\frac{1}{2}(\\mathbf{p} + \\mathbf{q})$"
+    ],
+    "a": 3,
+    "e": "$\\overrightarrow{OK} = \\overrightarrow{OP} + \\frac{1}{2}\\overrightarrow{PQ} = \\mathbf{p} + \\frac{1}{2}(\\mathbf{q}-\\mathbf{p}) = \\frac{1}{2}(\\mathbf{p}+\\mathbf{q})$.",
+    "d": 2,
+    "s": "Y11.10",
+    "diag": "logic"
+  }
+]

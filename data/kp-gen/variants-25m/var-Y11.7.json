@@ -1,0 +1,206 @@
+[
+  {
+    "id": "hv0516",
+    "cat": "geometry",
+    "topic": "Further Trigonometry",
+    "q": "In triangle $ABC$, $a = 10$, $b = 12$, $C = 30°$. Find the area.",
+    "o": [
+      "$60$",
+      "$30$",
+      "$120$",
+      "$15$"
+    ],
+    "a": 1,
+    "e": "Area $= \\frac{1}{2}ab\\sin C = \\frac{1}{2}(10)(12)\\sin 30° = 60 \\times 0.5 = 30$.",
+    "d": 1,
+    "s": "Y11.7",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0517",
+    "cat": "geometry",
+    "topic": "Further Trigonometry",
+    "q": "In triangle $ABC$, $a = 4$, $b = 5$, $C = 45°$. Find the area.",
+    "o": [
+      "$10\\sqrt{2}$",
+      "$5\\sqrt{2}$",
+      "$20\\sqrt{2}$",
+      "$10$"
+    ],
+    "a": 1,
+    "e": "Area $= \\frac{1}{2}ab\\sin C = \\frac{1}{2}(4)(5)\\sin 45° = 10 \\times \\frac{\\sqrt{2}}{2} = 5\\sqrt{2}$.",
+    "d": 1,
+    "s": "Y11.7",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0518",
+    "cat": "geometry",
+    "topic": "Further Trigonometry",
+    "q": "In triangle $ABC$, $a = 6$, $b = 10$, $C = 120°$. Find the area.",
+    "o": [
+      "$30\\sqrt{3}$",
+      "$15\\sqrt{3}$",
+      "$15$",
+      "$30$"
+    ],
+    "a": 1,
+    "e": "Area $= \\frac{1}{2}ab\\sin C = \\frac{1}{2}(6)(10)\\sin 120° = 30 \\times \\frac{\\sqrt{3}}{2} = 15\\sqrt{3}$.",
+    "d": 1,
+    "s": "Y11.7",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0519",
+    "cat": "geometry",
+    "topic": "Further Trigonometry",
+    "q": "In triangle $PQR$, $p = 8$, $q = 5$, $R = 60°$. Which expression gives $r^2$?",
+    "o": [
+      "$89 - 80\\cos 60°$",
+      "$39$",
+      "$89 + 80\\cos 60°$",
+      "$64 - 80\\cos 60°$"
+    ],
+    "a": 0,
+    "e": "$r^2 = p^2+q^2-2pq\\cos R = 64+25-2(8)(5)\\cos 60° = 89-80\\cos 60°$.",
+    "d": 1,
+    "s": "Y11.7",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0520",
+    "cat": "geometry",
+    "topic": "Further Trigonometry",
+    "q": "In triangle $PQR$, $p = 6$, $q = 9$, $R = 30°$. Which expression gives $r^2$?",
+    "o": [
+      "$117 - 108\\cos 30°$",
+      "$45$",
+      "$117 + 108\\cos 30°$",
+      "$81 - 108\\cos 30°$"
+    ],
+    "a": 0,
+    "e": "$r^2 = p^2+q^2-2pq\\cos R = 36+81-2(6)(9)\\cos 30° = 117-108\\cos 30°$.",
+    "d": 1,
+    "s": "Y11.7",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0521",
+    "cat": "geometry",
+    "topic": "Further Trigonometry",
+    "q": "In triangle $PQR$, $p = 12$, $q = 5$, $R = 45°$. Which expression gives $r^2$?",
+    "o": [
+      "$169 - 120\\cos 45°$",
+      "$119$",
+      "$169 + 120\\cos 45°$",
+      "$144 - 120\\cos 45°$"
+    ],
+    "a": 0,
+    "e": "$r^2 = p^2+q^2-2pq\\cos R = 144+25-2(12)(5)\\cos 45° = 169-120\\cos 45°$.",
+    "d": 1,
+    "s": "Y11.7",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0522",
+    "cat": "geometry",
+    "topic": "Further Trigonometry",
+    "q": "Using the sine rule: if $a=15$, $A=40°$, $B=70°$, find $b$ to 1 d.p.",
+    "o": [
+      "$21.9$",
+      "$10.3$",
+      "$18.5$",
+      "$24.2$"
+    ],
+    "a": 0,
+    "e": "$\\frac{15}{\\sin 40°} = \\frac{b}{\\sin 70°}$. $b = \\frac{15 \\times \\sin 70°}{\\sin 40°} \\approx \\frac{15 \\times 0.9397}{0.6428} \\approx 21.9$.",
+    "d": 2,
+    "s": "Y11.7",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0523",
+    "cat": "geometry",
+    "topic": "Further Trigonometry",
+    "q": "Using the sine rule: if $a=20$, $A=25°$, $B=55°$, find $b$ to 1 d.p.",
+    "o": [
+      "$38.8$",
+      "$14.6$",
+      "$42.1$",
+      "$31.5$"
+    ],
+    "a": 0,
+    "e": "$\\frac{20}{\\sin 25°} = \\frac{b}{\\sin 55°}$. $b = \\frac{20 \\times \\sin 55°}{\\sin 25°} \\approx \\frac{20 \\times 0.8192}{0.4226} \\approx 38.8$.",
+    "d": 2,
+    "s": "Y11.7",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0524",
+    "cat": "geometry",
+    "topic": "Further Trigonometry",
+    "q": "Using the sine rule: if $a=10$, $A=35°$, $B=65°$, find $b$ to 1 d.p.",
+    "o": [
+      "$15.8$",
+      "$8.4$",
+      "$12.2$",
+      "$19.1$"
+    ],
+    "a": 0,
+    "e": "$\\frac{10}{\\sin 35°} = \\frac{b}{\\sin 65°}$. $b = \\frac{10 \\times \\sin 65°}{\\sin 35°} \\approx \\frac{10 \\times 0.9063}{0.5736} \\approx 15.8$.",
+    "d": 2,
+    "s": "Y11.7",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0525",
+    "cat": "geometry",
+    "topic": "Further Trigonometry",
+    "q": "A wire runs from the top of a $12$ m vertical pole to a point $20$ m from its base on flat ground. What angle does the wire make with the ground?",
+    "o": [
+      "$59.0°$",
+      "$36.9°$",
+      "$25.4°$",
+      "$31.0°$"
+    ],
+    "a": 3,
+    "e": "$\\tan \\theta = \\frac{12}{20} = 0.6$. $\\theta = \\arctan(0.6) \\approx 31.0°$.",
+    "d": 2,
+    "s": "Y11.7",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0526",
+    "cat": "geometry",
+    "topic": "Further Trigonometry",
+    "q": "A ladder leans against a wall. The top of the ladder is $5$ m up the wall and the base is $8$ m from the wall. What angle does the ladder make with the ground?",
+    "o": [
+      "$58.0°$",
+      "$28.6°$",
+      "$40.2°$",
+      "$32.0°$"
+    ],
+    "a": 3,
+    "e": "$\\tan \\theta = \\frac{5}{8} = 0.625$. $\\theta = \\arctan(0.625) \\approx 32.0°$.",
+    "d": 2,
+    "s": "Y11.7",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0527",
+    "cat": "geometry",
+    "topic": "Further Trigonometry",
+    "q": "A ramp rises $7$ m over a horizontal distance of $10$ m. What angle does the ramp make with the horizontal?",
+    "o": [
+      "$55.0°$",
+      "$44.4°$",
+      "$31.2°$",
+      "$35.0°$"
+    ],
+    "a": 3,
+    "e": "$\\tan \\theta = \\frac{7}{10} = 0.7$. $\\theta = \\arctan(0.7) \\approx 35.0°$.",
+    "d": 2,
+    "s": "Y11.7",
+    "diag": "calc"
+  }
+]

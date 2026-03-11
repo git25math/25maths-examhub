@@ -1,0 +1,443 @@
+[
+  {
+    "id": "kp-1.9-01",
+    "section": "1.9",
+    "order": 1,
+    "title": "Order of Operations (BODMAS/BIDMAS)",
+    "title_zh": "运算顺序 (BODMAS/BIDMAS)",
+    "explanation": {
+      "en": "When a calculation involves multiple operations, they must be performed in a specific order.\n\n**BODMAS** stands for Brackets, Orders (powers/roots), Division and Multiplication (left to right), and Addition and Subtraction (left to right).\n\n**Brackets** should always be evaluated first to simplify the expression inside. If there are nested brackets, start from the innermost ones.\n\n**Orders** refer to indices such as $x^2$ or $\\sqrt{x}$, which take precedence over multiplication and division.",
+      "zh": "当计算涉及多个运算符时，必须按照特定顺序进行。\n\n**BODMAS** 代表括号 (Brackets)、次数 (Orders，即平方/开方)、除法和乘法 (从左到右)、加法和减法 (从左到右)。\n\n**括号** 应最先计算以简化内部表达式。如果有嵌套括号，从最内层开始计算。\n\n**次数** 指的是指数，如 $x^2$ 或 $\\sqrt{x}$，它们的优先级高于乘法和除法。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-calc-order",
+        "label": "Evaluate multi-step expressions",
+        "label_zh": "计算多步骤表达式",
+        "description": "Calculate the value of an expression involving brackets, powers, and various arithmetic operators.",
+        "description_zh": "计算包含括号、幂和各种算术运算符的表达式的值。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-calc-order",
+        "question": "Work out: $5 + 2 \\times (8 - 3)^2$",
+        "question_zh": "计算：$5 + 2 \\times (8 - 3)^2$",
+        "solution": "**Step 1:** Brackets first. $8 - 3 = 5$. Expression becomes $5 + 2 \\times 5^2$.\n\n**Step 2:** Orders (indices). $5^2 = 25$. Expression becomes $5 + 2 \\times 25$.\n\n**Step 3:** Multiplication. $2 \\times 25 = 50$. Expression becomes $5 + 50$.\n\n**Step 4:** Addition. $5 + 50 = 55$.\n\n**Answer:** $55$",
+        "solution_zh": "**步骤 1：** 先算括号。$8 - 3 = 5$。表达式变为 $5 + 2 \\times 5^2$。\n\n**步骤 2：** 计算次数（指数）。$5^2 = 25$。表达式变为 $5 + 2 \\times 25$。\n\n**步骤 3：** 计算乘法。$2 \\times 25 = 50$。表达式变为 $5 + 50$。\n\n**步骤 4：** 计算加法。$5 + 50 = 55$。\n\n**答案：** $55$",
+        "source": "Adapted from 0580/12/O/N/20"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "Evaluate $12 - 6 \\div 2 + 3$",
+        "q_zh": "计算 $12 - 6 \\div 2 + 3$",
+        "o": [
+          "6",
+          "12",
+          "4",
+          "3"
+        ],
+        "a": 1,
+        "e": "Division comes before addition and subtraction. $6 \\div 2 = 3$. Then calculate left to right: $12 - 3 + 3 = 12$.",
+        "e_zh": "除法优先于加减法。$6 \\div 2 = 3$。然后从左到 right 计算：$12 - 3 + 3 = 12$。"
+      }
+    ],
+    "vocabLinks": [
+      "arithmetic-ops"
+    ],
+    "tier": "both"
+  },
+  {
+    "id": "kp-1.10-01",
+    "section": "1.10",
+    "order": 1,
+    "title": "Rounding and Estimation",
+    "title_zh": "舍入与估算",
+    "explanation": {
+      "en": "Rounding simplifies numbers to make them easier to work with while keeping their value close to the original.\n\n**Decimal places** (dp) counts digits after the decimal point. For example, $3.1415$ to 2 dp is $3.14$.\n\n**Significant figures** (sf) counts the number of digits that contribute to the precision of a number. Start counting from the first non-zero digit.\n\n**Estimation** involves rounding each number in a calculation to 1 significant figure to find an approximate answer quickly. This is useful for checking if a calculator result is reasonable.",
+      "zh": "舍入通过简化数字使其更易处理，同时保持其值接近原始值。\n\n**小数位数** (dp) 计算小数点后的位数。例如，$3.1415$ 保留两位小数是 $3.14$。\n\n**有效数字** (sf) 计算对数字精度有贡献的位数。从第一个非零数字开始计数。\n\n**估算** 涉及将计算中的每个数字舍入到 1 位有效数字，以便快速找到近似答案。这对于检查计算器结果是否合理非常有用。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-estimate-calc",
+        "label": "Estimate the value of a complex calculation",
+        "label_zh": "估算复杂计算的值",
+        "description": "Round each number to 1 significant figure to estimate the result of a multi-step arithmetic problem.",
+        "description_zh": "将每个数字舍入到 1 位有效数字，以估算多步算术问题的结果。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-estimate-calc",
+        "question": "Show that $\\frac{41.3 \\times 19.7}{9.85}$ is approximately $80$.",
+        "question_zh": "证明 $\\frac{41.3 \\times 19.7}{9.85}$ 大约等于 $80$。",
+        "solution": "**Step 1:** Round each number to 1 significant figure.\n$41.3 \\approx 40$\n$19.7 \\approx 20$\n$9.85 \\approx 10$\n\n**Step 2:** Perform the calculation with rounded values.\n$\\frac{40 \\times 20}{10} = \\frac{800}{10} = 80$.\n\n**Conclusion:** The estimate is $80$. ✓",
+        "solution_zh": "**步骤 1：** 将每个数字舍入到 1 位有效数字。\n$41.3 \\approx 40$\n$19.7 \\approx 20$\n$9.85 \\approx 10$\n\n**步骤 2：** 使用舍入后的值进行计算。\n$\\frac{40 \\times 20}{10} = \\frac{800}{10} = 80$。\n\n**结论：** 估算值为 $80$。✓",
+        "source": "Adapted from 0580/21/M/J/18"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "Round $0.004567$ to 2 significant figures.",
+        "q_zh": "将 $0.004567$ 保留 2 位有效数字。",
+        "o": [
+          "0.00",
+          "0.0046",
+          "0.0045",
+          "0.01"
+        ],
+        "a": 1,
+        "e": "The first non-zero digit is 4. The next digit is 5. Since the third digit (6) is 5 or more, we round up the 5 to 6. So, $0.0046$.",
+        "e_zh": "第一个非零数字是 4。下一个数字是 5。因为第三位数字 (6) 大于等于 5，我们将 5 进位为 6。因此是 $0.0046$。"
+      }
+    ],
+    "vocabLinks": [
+      "rounding-estimation"
+    ],
+    "tier": "both"
+  },
+  {
+    "id": "kp-1.11-01",
+    "section": "1.11",
+    "order": 1,
+    "title": "Limits of Accuracy (Bounds)",
+    "title_zh": "精确度极限 (上下界)",
+    "explanation": {
+      "en": "When a number is rounded, it represents a range of possible actual values.\n\n**Lower Bound** (LB) is the smallest value that would round to the given number. It is usually found by subtracting half of the rounding unit.\n\n**Upper Bound** (UB) is the smallest value that would *not* round to the given number (it's the upper limit of the interval). It is found by adding half of the rounding unit.\n\n**Error Interval** is the range written as $LB \\le x < UB$. Note the strict inequality for the upper bound.",
+      "zh": "当一个数字被舍入时，它代表了一系列可能的实际值。\n\n**下界** (LB) 是可以舍入到给定数字的最小值。通常通过减去舍入单位的一半来找到。\n\n**上界** (UB) 是*不能*舍入到给定数字的最小值（它是区间的上限）。通过加上舍入单位的一半来找到。\n\n**误差区间** 是写成 $LB \\le x < UB$ 的范围。注意上界使用的是严格不等号。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-find-bounds",
+        "label": "Find upper and lower bounds",
+        "label_zh": "查找上界和下界",
+        "description": "Given a rounded number and its degree of accuracy, determine the LB and UB.",
+        "description_zh": "给定一个舍入后的数字及其精确度，确定其下界 (LB) 和上界 (UB)。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-find-bounds",
+        "question": "A length $l$ is $15\\text{ cm}$ correct to the nearest centimetre. Write down the error interval for $l$.",
+        "question_zh": "长度 $l$ 为 $15\\text{ cm}$，精确到厘米。写出 $l$ 的误差区间。",
+        "solution": "**Step 1:** Identify the rounding unit. 'Nearest centimetre' means unit is $1\\text{ cm}$.\n\n**Step 2:** Find half the unit. $1 \\div 2 = 0.5\\text{ cm}$.\n\n**Step 3:** Subtract/Add to find bounds.\n$LB = 15 - 0.5 = 14.5\\text{ cm}$\n$UB = 15 + 0.5 = 15.5\\text{ cm}$\n\n**Step 4:** Write the interval. $14.5 \\le l < 15.5$.\n\n**Answer:** $14.5 \\le l < 15.5$",
+        "solution_zh": "**步骤 1：** 确定舍入单位。“精确到厘米”意味着单位是 $1\\text{ cm}$。\n\n**步骤 2：** 找到单位的一半。$1 \\div 2 = 0.5\\text{ cm}$。\n\n**步骤 3：** 减去/加上该值以找到边界。\n$LB = 15 - 0.5 = 14.5\\text{ cm}$\n$UB = 15 + 0.5 = 15.5\\text{ cm}$\n\n**步骤 4：** 写出区间。$14.5 \\le l < 15.5$。\n\n**答案：** $14.5 \\le l < 15.5$",
+        "source": "0580/22/M/J/19"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "If $x = 4.7$ correct to 1 decimal place, what is the upper bound of $x$?",
+        "q_zh": "如果 $x = 4.7$ 精确到小数点后 1 位，那么 $x$ 的上界是多少？",
+        "o": [
+          "4.75",
+          "4.74",
+          "4.8",
+          "4.65"
+        ],
+        "a": 0,
+        "e": "The unit is $0.1$. Half the unit is $0.05$. $UB = 4.7 + 0.05 = 4.75$.",
+        "e_zh": "单位是 $0.1$。单位的一半是 $0.05$。$UB = 4.7 + 0.05 = 4.75$。"
+      }
+    ],
+    "vocabLinks": [
+      "accuracy-bounds"
+    ],
+    "tier": "both"
+  },
+  {
+    "id": "kp-1.12-01",
+    "section": "1.12",
+    "order": 1,
+    "title": "Ratio and Sharing",
+    "title_zh": "比与分配",
+    "explanation": {
+      "en": "A **Ratio** compares two or more quantities. It is usually written in its simplest form (e.g., $2:3$).\n\nTo **Share a quantity in a ratio**, first find the total number of parts by adding the numbers in the ratio. Then divide the total quantity by the total parts to find the value of one 'part'. Finally, multiply each part of the ratio by this value.\n\n**Map Scales** are often given as ratios $1:n$. This means $1$ unit on the map represents $n$ units in real life. Ensure units are consistent (e.g., both in cm) before calculating.",
+      "zh": "**比** (Ratio) 比较两个或多个量。通常写成最简形式（例如 $2:3$）。\n\n要**按比例分配数量**，首先通过加总比中的数字找到总份数。然后用总量除以总份数，找到“一份”的值。最后，将比中的每一项乘以这个值。\n\n**地图比例尺** 通常给出为比例 $1:n$。这意味着地图上的 $1$ 个单位代表现实生活中的 $n$ 个单位。在计算前确保单位一致（例如，都使用厘米）。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-share-ratio",
+        "label": "Share an amount in a given ratio",
+        "label_zh": "按给定比例分配金额",
+        "description": "Divide a total sum into parts defined by a ratio $a:b:c$.",
+        "description_zh": "将总金额按比例 $a:b:c$ 分成几部分。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-share-ratio",
+        "question": "Share $\\$600$ in the ratio $7:5$.",
+        "question_zh": "按 $7:5$ 的比例分配 $\\$600$。",
+        "solution": "**Step 1:** Find total parts. $7 + 5 = 12$ parts.\n\n**Step 2:** Find the value of one part. $\\$600 \\div 12 = \\$50$.\n\n**Step 3:** Multiply parts by the value.\nPart 1: $7 \\times 50 = \\$350$\nPart 2: $5 \\times 50 = \\$250$\n\n**Answer:** $\\$350$ and $\\$250$",
+        "solution_zh": "**步骤 1：** 找到总份数。$7 + 5 = 12$ 份。\n\n**步骤 2：** 找到一份的值。$\\$600 \\div 12 = \\$50$。\n\n**步骤 3：** 将份数乘以该值。\n第 1 部分：$7 \\times 50 = \\$350$\n第 2 部分：$5 \\times 50 = \\$250$\n\n**答案：** $\\$350$ 和 $\\$250$",
+        "source": "Adapted from 0580/11/M/J/17"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "The ratio of boys to girls in a class is $3:4$. If there are 28 girls, how many boys are there?",
+        "q_zh": "班级中男女生的比例是 $3:4$。如果有 28 名女生，那么有多少名男生？",
+        "o": [
+          "21",
+          "12",
+          "16",
+          "37"
+        ],
+        "a": 0,
+        "e": "4 parts = 28 girls, so 1 part = $28 \\div 4 = 7$. Boys = 3 parts = $3 \\times 7 = 21$.",
+        "e_zh": "4 份 = 28 名女生，所以 1 份 = $28 \\div 4 = 7$。男生 = 3 份 = $3 \\times 7 = 21$。"
+      }
+    ],
+    "vocabLinks": [
+      "ratio-proportion"
+    ],
+    "tier": "both"
+  },
+  {
+    "id": "kp-1.13-01",
+    "section": "1.13",
+    "order": 1,
+    "title": "Percentage Change & Reverse Percentages",
+    "title_zh": "百分比变化与逆百分比",
+    "explanation": {
+      "en": "**Percentage change** measures how much a value has increased or decreased relative to its original value. Formula: $\\frac{\\text{change}}{\\text{original}} \\times 100\\%$.\n\n**Reverse Percentages** are used to find the original value after a percentage increase or decrease has occurred. Do NOT simply calculate the percentage of the final value. Instead, use: $\\text{Original Value} = \\frac{\\text{Final Value}}{\\text{Multiplier}}$.\n\nFor an increase of $r\\%$, the multiplier is $1 + \\frac{r}{100}$. For a decrease, it is $1 - \\frac{r}{100}$.",
+      "zh": "**百分比变化** 衡量一个值相对于原始值增加或减少了多少。公式：$\\frac{\\text{变化量}}{\\text{原始值}} \\times 100\\%$\n\n**逆百分比** 用于在百分比增加或减少发生后寻找原始值。不要简单地计算最终值的百分比。相反，使用公式：$\\text{原始值} = \\frac{\\text{最终值}}{\\text{倍率}}$。\n\n对于 $r\\%$ 的增加，倍率是 $1 + \\frac{r}{100}$。对于减少，倍率是 $1 - \\frac{r}{100}$。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-reverse-pct",
+        "label": "Find original value (Reverse Percentage)",
+        "label_zh": "查找原始值 (逆百分比)",
+        "description": "Calculate the original price or amount given the value after a percentage change.",
+        "description_zh": "已知百分比变化后的值，计算原始价格或金额。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-reverse-pct",
+        "question": "The price of a book is reduced by $15\\%$ in a sale. The sale price is $\\$12.75$. Calculate the original price.",
+        "question_zh": "一本书在促销中降价了 $15\\%$。促销价为 $\\$12.75$。计算原价。",
+        "solution": "**Step 1:** Identify the final value and the change. Final = $12.75$. Decrease = $15\\%$.\n\n**Step 2:** Find the multiplier. $100\\% - 15\\% = 85\\%$, or $0.85$.\n\n**Step 3:** Divide final value by multiplier.\n$Original = 12.75 \\div 0.85 = 15$.\n\n**Answer:** $\\$15$",
+        "solution_zh": "**步骤 1：** 确定最终值和变化。最终值 = $12.75$。减少量 = $15\\%$。\n\n**步骤 2：** 找到倍率。$100\\% - 15\\% = 85\\%$，即 $0.85$。\n\n**步骤 3：** 用最终值除以倍率。\n$原价 = 12.75 \\div 0.85 = 15$。\n\n**答案：** $\\$15$",
+        "source": "0580/21/M/J/20"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "A car's value increases by 10% to $13,200. What was its original value?",
+        "q_zh": "一辆车的价值增加了 10%，达到 $13,200。它的原价是多少？",
+        "o": [
+          "$11,880",
+          "$12,000",
+          "$14,520",
+          "$11,000"
+        ],
+        "a": 1,
+        "e": "Multiplier = $1.10$. Original = $13200 \\div 1.1 = 12000$.",
+        "e_zh": "倍率 = $1.10$。原价 = $13200 \\div 1.1 = 12000$。"
+      }
+    ],
+    "vocabLinks": [
+      "percentages"
+    ],
+    "tier": "both"
+  },
+  {
+    "id": "kp-1.15-01",
+    "section": "1.15",
+    "order": 1,
+    "title": "Speed, Distance and Time",
+    "title_zh": "速度、路程与时间",
+    "explanation": {
+      "en": "The relationship between speed, distance, and time is fundamental to kinematics.\n\n**Average Speed** is calculated as $\\text{Speed} = \\frac{\\text{Total Distance}}{\\text{Total Time}}$.\n\n**Time Conversion** is critical. When time is given in minutes, divide by 60 to convert to hours before using speed in km/h. For example, 45 minutes is $\\frac{45}{60} = 0.75$ hours.\n\n**Compound Units** like m/s can be converted to km/h by multiplying by $3.6$ (since $1\\text{ m/s} = 3.6\\text{ km/h}$), or by converting distance and time separately.",
+      "zh": "速度、路程和时间之间的关系是运动学的基础。\n\n**平均速度** 的计算公式为 $\\text{速度} = \\frac{\\text{总路程}}{\\text{总时间}}$。\n\n**时间单位转换** 至关重要。当时间以分钟给出时，在使用 km/h 速度前，需除以 60 转换为小时。例如，45 分钟是 $\\frac{45}{60} = 0.75$ 小时。\n\n**复合单位**（如 m/s）可以通过乘以 $3.6$ 转换为 km/h（因为 $1\\text{ m/s} = 3.6\\text{ km/h}$），或者分别转换距离和时间单位。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-calc-speed",
+        "label": "Calculate speed with time conversions",
+        "label_zh": "带单位转换的速度计算",
+        "description": "Find average speed when time is given in hours and minutes.",
+        "description_zh": "当时间以小时和分钟给出时，寻找平均速度。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-calc-speed",
+        "question": "A train travels $210\\text{ km}$ in $2$ hours and $30$ minutes. Calculate its average speed in $\\text{km/h}$.",
+        "question_zh": "一列火车在 $2$ 小时 $30$ 分钟内行驶了 $210\\text{ km}$。计算其平均速度（$\\text{km/h}$）。",
+        "solution": "**Step 1:** Convert time to hours. $30$ mins $= 0.5$ hours. Total time $= 2.5$ hours.\n\n**Step 2:** Use the formula $\\text{Speed} = \\frac{\\text{Distance}}{\\text{Time}}$.\n$\\text{Speed} = \\frac{210}{2.5} = 84$.\n\n**Answer:** $84\\text{ km/h}$",
+        "solution_zh": "**步骤 1：** 将时间转换为小时。$30$ 分钟 $= 0.5$ 小时。总时间 $= 2.5$ 小时。\n\n**步骤 2：** 使用公式 $\\text{速度} = \\frac{\\text{距离}}{\\text{时间}}$。\n$\\text{速度} = \\frac{210}{2.5} = 84$。\n\n**答案：** $84\\text{ km/h}$",
+        "source": "Adapted from 0580/23/M/J/21"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "Convert $20\\text{ m/s}$ to $\\text{km/h}$.",
+        "q_zh": "将 $20\\text{ m/s}$ 转换为 $\\text{km/h}$。",
+        "o": [
+          "72",
+          "36",
+          "120",
+          "5.5"
+        ],
+        "a": 0,
+        "e": "$20\\text{ m/s} \\times 3.6 = 72\\text{ km/h}$. Alternatively, $20\\text{ m} = 0.02\\text{ km}$, $1\\text{ sec} = 1/3600\\text{ hr}$. $0.02 \\div (1/3600) = 72$.",
+        "e_zh": "$20\\text{ m/s} \\times 3.6 = 72\\text{ km/h}$。或者，$20\\text{ m} = 0.02\\text{ km}$，$1\\text{ 秒} = 1/3600\\text{ 小时}$。$0.02 \\div (1/3600) = 72$。"
+      }
+    ],
+    "vocabLinks": [
+      "kinematics"
+    ],
+    "tier": "both"
+  },
+  {
+    "id": "kp-1.16-01",
+    "section": "1.16",
+    "order": 1,
+    "title": "Simple and Compound Interest",
+    "title_zh": "单利与复利",
+    "explanation": {
+      "en": "**Simple Interest** is calculated only on the original amount (principal). Formula: $I = \\frac{PRT}{100}$, where $P$ is principal, $R$ is rate per annum, and $T$ is time in years.\n\n**Compound Interest** is calculated on the principal and also on the interest accumulated from previous periods. Formula for total amount $A$: $A = P\\left(1 + \\frac{r}{100}\\right)^n$, where $n$ is the number of years. To find interest alone, calculate $A - P$.",
+      "zh": "**单利** 仅根据原始金额（本金）计算。公式：$I = \\frac{PRT}{100}$，其中 $P$ 是本金，$R$ 是年利率，$T$ 是以年为单位的时间。\n\n**复利** 根据本金以及之前周期积累的利息计算。总金额 $A$ 的公式：$A = P\\left(1 + \\frac{r}{100}\\right)^n$，其中 $n$ 是年数。若要单独计算利息，计算 $A - P$。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-calc-interest",
+        "label": "Calculate total interest or amount",
+        "label_zh": "计算总利息或总金额",
+        "description": "Compare or calculate values using simple or compound interest formulas.",
+        "description_zh": "使用单利或复利公式比较或计算值。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-calc-interest",
+        "question": "$\\$500$ is invested at a rate of $2\\%$ per year compound interest. Calculate the total amount after $3$ years.",
+        "question_zh": "$\\$500$ 以每年 $2\\%$ 的复利进行投资。计算 $3$ 年后的总金额。",
+        "solution": "**Step 1:** Identify variables. $P = 500$, $r = 2$, $n = 3$.\n\n**Step 2:** Use formula $A = P(1 + \\frac{r}{100})^n$.\n$A = 500(1 + 0.02)^3$\n$A = 500(1.02)^3$\n\n**Step 3:** Calculate. $A = 500 \\times 1.061208 = 530.604$.\n\n**Step 4:** Round to 2 decimal places for money.\n**Answer:** $\\$530.60$",
+        "solution_zh": "**步骤 1：** 确定变量。$P = 500$，$r = 2$，$n = 3$。\n\n**步骤 2：** 使用公式 $A = P(1 + \\frac{r}{100})^n$。\n$A = 500(1 + 0.02)^3$\n$A = 500(1.02)^3$\n\n**步骤 3：** 计算。$A = 500 \\times 1.061208 = 530.604$。\n\n**步骤 4：** 货币保留两位小数。\n**答案：** $\\$530.60$",
+        "source": "Adapted from 0580/22/O/N/19"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "How much simple interest is earned on $1000 at 5% for 4 years?",
+        "q_zh": "$1000 以 5% 的年利率存 4 年，单利是多少？",
+        "o": [
+          "$200",
+          "$250",
+          "$1200",
+          "$50"
+        ],
+        "a": 0,
+        "e": "$I = (1000 \\times 5 \\times 4) / 100 = 200$.",
+        "e_zh": "$I = (1000 \\times 5 \\times 4) / 100 = 200$。"
+      }
+    ],
+    "vocabLinks": [
+      "finance-interest"
+    ],
+    "tier": "both"
+  },
+  {
+    "id": "kp-1.17-01",
+    "section": "1.17",
+    "order": 1,
+    "title": "Exponential Growth and Decay",
+    "title_zh": "指数增长与衰减",
+    "explanation": {
+      "en": "Exponential growth or decay occurs when a quantity increases or decreases by the same percentage over equal time intervals.\n\n**Growth Formula**: $Value = P\\left(1 + \\frac{r}{100}\\right)^n$\n\n**Decay Formula**: $Value = P\\left(1 - \\frac{r}{100}\\right)^n$\n\nThis is commonly used for population growth, bacteria culture, or depreciation of assets (like car value).",
+      "zh": "当一个量在相等的时间间隔内按相同的百分比增加或减少时，就会发生指数级增长或衰减。\n\n**增长公式**：$Value = P\\left(1 + \\frac{r}{100}\\right)^n$\n\n**衰减公式**：$Value = P\\left(1 - \\frac{r}{100}\\right)^n$\n\n这通常用于人口增长、细菌培养或资产折旧（如汽车价值）。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-depreciation",
+        "label": "Calculate depreciation over time",
+        "label_zh": "计算随时间变化的折旧",
+        "description": "Find the value of an item after several years of percentage decrease.",
+        "description_zh": "寻找经过数年百分比下降后的物品价值。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-depreciation",
+        "question": "A car worth $\\$12,000$ depreciates at a rate of $15\\%$ per year. Calculate its value after $4$ years.",
+        "question_zh": "一辆价值 $\\$12,000$ 的汽车每年贬值 $15\\%$。计算 $4$ 年后的价值。",
+        "solution": "**Step 1:** Identify variables. $P = 12000$, $r = 15$, $n = 4$.\n\n**Step 2:** Use decay formula $P(1 - \\frac{r}{100})^n$.\n$Value = 12000 \\times (0.85)^4$.\n\n**Step 3:** Calculate $(0.85)^4 \\approx 0.522$.\n$Value = 12000 \\times 0.52200625 = 6264.075$.\n\n**Answer:** $\\$6264.08$ (to 2 dp)",
+        "solution_zh": "**步骤 1：** 确定变量。$P = 12000$，$r = 15$，$n = 4$。\n\n**步骤 2：** 使用衰减公式 $P(1 - \\frac{r}{100})^n$。\n$Value = 12000 \\times (0.85)^4$。\n\n**步骤 3：** 计算 $(0.85)^4 \\approx 0.522$。\n$Value = 12000 \\times 0.52200625 = 6264.075$。\n\n**答案：** $\\$6264.08$ (保留两位小数)",
+        "source": "0580/22/M/J/18"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "The population of a town is 50,000 and grows at 2% per year. What is the population after 2 years?",
+        "q_zh": "一个小镇的人口为 50,000，每年增长 2%。2 年后的人口是多少？",
+        "o": [
+          "52,000",
+          "52,020",
+          "50,200",
+          "51,000"
+        ],
+        "a": 1,
+        "e": "$50000 \\times (1.02)^2 = 50000 \\times 1.0404 = 52020$.",
+        "e_zh": "$50000 \\times (1.02)^2 = 50000 \\times 1.0404 = 52020$。"
+      }
+    ],
+    "vocabLinks": [
+      "growth-decay"
+    ],
+    "tier": "extended"
+  },
+  {
+    "id": "kp-1.18-01",
+    "section": "1.18",
+    "order": 1,
+    "title": "Simplifying Surds and Rationalising",
+    "title_zh": "根式化简与分母有理化",
+    "explanation": {
+      "en": "**Surds** are irrational numbers involving square roots. \n\nTo **simplify** a surd, look for the largest square number factor of the number under the root. Formula: $\\sqrt{ab} = \\sqrt{a} \\times \\sqrt{b}$.\n\n**Rationalising the denominator** means removing the surd from the bottom of a fraction. For $\\frac{1}{\\sqrt{a}}$, multiply both numerator and denominator by $\\sqrt{a}$. For $\\frac{k}{a+\\sqrt{b}}$, multiply by the conjugate $a-\\sqrt{b}$.",
+      "zh": "**根式** (Surds) 是涉及平方根的无理数。\n\n要**化简**根式，寻找根号下数字的最大平方数因子。公式：$\\sqrt{ab} = \\sqrt{a} \\times \\sqrt{b}$。\n\n**分母有理化** 意味着移除分数底部的根式。对于 $\\frac{1}{\\sqrt{a}}$，分子和分母同乘 $\\sqrt{a}$。对于 $\\frac{k}{a+\\sqrt{b}}$，乘其共轭式 $a-\\sqrt{b}$。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-simplify-surd",
+        "label": "Simplify a surd",
+        "label_zh": "化简根式",
+        "description": "Express a square root in the form $k\\sqrt{a}$ where $a$ is as small as possible.",
+        "description_zh": "将平方根表示为 $k\\sqrt{a}$ 的形式，其中 $a$ 尽可能小。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-simplify-surd",
+        "question": "Simplify $\\sqrt{72}$.",
+        "question_zh": "化简 $\\sqrt{72}$。",
+        "solution": "**Step 1:** Find square factors of 72. $72 = 36 \\times 2$.\n\n**Step 2:** Use the rule $\\sqrt{ab} = \\sqrt{a}\\sqrt{b}$.\n$\\sqrt{72} = \\sqrt{36} \\times \\sqrt{2}$.\n\n**Step 3:** Evaluate $\\sqrt{36}$.\n$\\sqrt{36} = 6$.\n\n**Answer:** $6\\sqrt{2}$",
+        "solution_zh": "**步骤 1：** 找到 72 的平方因子。$72 = 36 \\times 2$。\n\n**步骤 2：** 使用规则 $\\sqrt{ab} = \\sqrt{a}\\sqrt{b}$。\n$\\sqrt{72} = \\sqrt{36} \\times \\sqrt{2}$。\n\n**步骤 3：** 计算 $\\sqrt{36}$。\n$\\sqrt{36} = 6$。\n\n**答案：** $6\\sqrt{2}$",
+        "source": "0580/42/M/J/20"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "Rationalise the denominator of $\\frac{3}{\\sqrt{5}}$.",
+        "q_zh": "将 $\\frac{3}{\\sqrt{5}}$ 的分母有理化。",
+        "o": [
+          "$\\frac{\\sqrt{5}}{3}$",
+          "$\\frac{3\\sqrt{5}}{5}$",
+          "$3\\sqrt{5}$",
+          "$\\frac{9}{5}$"
+        ],
+        "a": 1,
+        "e": "Multiply top and bottom by $\\sqrt{5}$: $\\frac{3 \\times \\sqrt{5}}{\\sqrt{5} \\times \\sqrt{5}} = \\frac{3\\sqrt{5}}{5}$.",
+        "e_zh": "分子分母同乘 $\\sqrt{5}$：$\\frac{3 \\times \\sqrt{5}}{\\sqrt{5} \\times \\sqrt{5}} = \\frac{3\\sqrt{5}}{5}$。"
+      }
+    ],
+    "vocabLinks": [
+      "surds"
+    ],
+    "tier": "extended"
+  }
+]

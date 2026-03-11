@@ -1,0 +1,257 @@
+[
+  {
+    "id": "hv0654",
+    "cat": "number",
+    "topic": "Review of Numbers",
+    "q": "Round $7283$ to the nearest hundred.",
+    "o": [
+      "$7200$",
+      "$7300$",
+      "$7280$",
+      "$7000$"
+    ],
+    "a": 1,
+    "e": "The tens digit is $8$ (≥5), so round up the hundreds digit: $7283 \\approx 7300$.",
+    "d": 1,
+    "s": "Y8.1",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0655",
+    "cat": "number",
+    "topic": "Review of Numbers",
+    "q": "Round $1942$ to the nearest hundred.",
+    "o": [
+      "$1900$",
+      "$2000$",
+      "$1940$",
+      "$1000$"
+    ],
+    "a": 0,
+    "e": "The tens digit is $4$ (<5), so round down (keep the hundreds digit): $1942 \\approx 1900$.",
+    "d": 1,
+    "s": "Y8.1",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0656",
+    "cat": "number",
+    "topic": "Review of Numbers",
+    "q": "Round $5079$ to the nearest hundred.",
+    "o": [
+      "$5000$",
+      "$5100$",
+      "$5080$",
+      "$6000$"
+    ],
+    "a": 1,
+    "e": "The tens digit is $7$ (≥5), so round up the hundreds digit: $5079 \\approx 5100$.",
+    "d": 1,
+    "s": "Y8.1",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0657",
+    "cat": "number",
+    "topic": "Review of Numbers",
+    "q": "Which of these numbers is written in standard form?",
+    "o": [
+      "$45 \\times 10^2$",
+      "$4.5 \\times 10^3$",
+      "$0.45 \\times 10^4$",
+      "$450 \\times 10^1$"
+    ],
+    "a": 1,
+    "e": "Standard form requires $1 \\leq a < 10$. Only $4.5 \\times 10^3$ satisfies this condition.",
+    "d": 1,
+    "s": "Y8.1",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0658",
+    "cat": "number",
+    "topic": "Review of Numbers",
+    "q": "Which of these numbers is written in standard form?",
+    "o": [
+      "$0.71 \\times 10^{-1}$",
+      "$71 \\times 10^{-3}$",
+      "$7.1 \\times 10^{-2}$",
+      "$710 \\times 10^{-4}$"
+    ],
+    "a": 2,
+    "e": "Standard form requires $1 \\leq a < 10$. Only $7.1 \\times 10^{-2}$ satisfies this.",
+    "d": 1,
+    "s": "Y8.1",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0659",
+    "cat": "number",
+    "topic": "Review of Numbers",
+    "q": "Which of these numbers is written in standard form?",
+    "o": [
+      "$1.08 \\times 10^6$",
+      "$10.8 \\times 10^5$",
+      "$0.108 \\times 10^7$",
+      "$108 \\times 10^4$"
+    ],
+    "a": 0,
+    "e": "Standard form requires $1 \\leq a < 10$. Only $1.08 \\times 10^6$ satisfies this.",
+    "d": 1,
+    "s": "Y8.1",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0660",
+    "cat": "number",
+    "topic": "Review of Numbers",
+    "q": "Estimate $61.2 \\times 3.87$ by rounding each number to $1$ significant figure.",
+    "o": [
+      "$180$",
+      "$200$",
+      "$240$",
+      "$250$"
+    ],
+    "a": 2,
+    "e": "$61.2 \\approx 60$ and $3.87 \\approx 4$, so $60 \\times 4 = 240$.",
+    "d": 1,
+    "s": "Y8.1",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0661",
+    "cat": "number",
+    "topic": "Review of Numbers",
+    "q": "Estimate $19.4 \\times 5.21$ by rounding each number to $1$ significant figure.",
+    "o": [
+      "$100$",
+      "$120$",
+      "$80$",
+      "$150$"
+    ],
+    "a": 0,
+    "e": "$19.4 \\approx 20$ and $5.21 \\approx 5$, so $20 \\times 5 = 100$.",
+    "d": 1,
+    "s": "Y8.1",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0662",
+    "cat": "number",
+    "topic": "Review of Numbers",
+    "q": "Estimate $78.9 \\times 2.05$ by rounding each number to $1$ significant figure.",
+    "o": [
+      "$140$",
+      "$160$",
+      "$180$",
+      "$200$"
+    ],
+    "a": 1,
+    "e": "$78.9 \\approx 80$ and $2.05 \\approx 2$, so $80 \\times 2 = 160$.",
+    "d": 1,
+    "s": "Y8.1",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0663",
+    "cat": "number",
+    "topic": "Review of Numbers",
+    "q": "What is $0.000429$ written in standard form?",
+    "o": [
+      "$4.29 \\times 10^4$",
+      "$42.9 \\times 10^{-5}$",
+      "$4.29 \\times 10^{-4}$",
+      "$0.429 \\times 10^{-3}$"
+    ],
+    "a": 2,
+    "e": "Move the decimal $4$ places right to get $4.29$. So, $0.000429 = 4.29 \\times 10^{-4}$.",
+    "d": 2,
+    "s": "Y8.1",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0664",
+    "cat": "number",
+    "topic": "Review of Numbers",
+    "q": "What is $0.00815$ written in standard form?",
+    "o": [
+      "$8.15 \\times 10^{-3}$",
+      "$81.5 \\times 10^{-4}$",
+      "$8.15 \\times 10^3$",
+      "$0.815 \\times 10^{-2}$"
+    ],
+    "a": 0,
+    "e": "Move the decimal $3$ places right to get $8.15$. So, $0.00815 = 8.15 \\times 10^{-3}$.",
+    "d": 2,
+    "s": "Y8.1",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0665",
+    "cat": "number",
+    "topic": "Review of Numbers",
+    "q": "What is $0.000067$ written in standard form?",
+    "o": [
+      "$6.7 \\times 10^{-4}$",
+      "$0.67 \\times 10^{-4}$",
+      "$67 \\times 10^{-6}$",
+      "$6.7 \\times 10^{-5}$"
+    ],
+    "a": 3,
+    "e": "Move the decimal $5$ places right to get $6.7$. So, $0.000067 = 6.7 \\times 10^{-5}$.",
+    "d": 2,
+    "s": "Y8.1",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0666",
+    "cat": "number",
+    "topic": "Review of Numbers",
+    "q": "Put these in order from smallest to largest: $0.42,\\ 0.4,\\ 0.407$",
+    "o": [
+      "$0.4,\\ 0.407,\\ 0.42$",
+      "$0.407,\\ 0.4,\\ 0.42$",
+      "$0.42,\\ 0.407,\\ 0.4$",
+      "$0.4,\\ 0.42,\\ 0.407$"
+    ],
+    "a": 0,
+    "e": "Write with same decimal places: $0.4 = 0.400$, $0.407 = 0.407$, $0.42 = 0.420$. The order is $0.4 < 0.407 < 0.42$.",
+    "d": 2,
+    "s": "Y8.1",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0667",
+    "cat": "number",
+    "topic": "Review of Numbers",
+    "q": "Put these in order from smallest to largest: $0.15,\\ 0.105,\\ 0.1$",
+    "o": [
+      "$0.105,\\ 0.1,\\ 0.15$",
+      "$0.1,\\ 0.105,\\ 0.15$",
+      "$0.15,\\ 0.105,\\ 0.1$",
+      "$0.1,\\ 0.15,\\ 0.105$"
+    ],
+    "a": 1,
+    "e": "Write with same decimal places: $0.1 = 0.100$, $0.105 = 0.105$, $0.15 = 0.150$. The order is $0.1 < 0.105 < 0.15$.",
+    "d": 2,
+    "s": "Y8.1",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0668",
+    "cat": "number",
+    "topic": "Review of Numbers",
+    "q": "Put these in order from smallest to largest: $0.78,\\ 0.7,\\ 0.708$",
+    "o": [
+      "$0.7,\\ 0.78,\\ 0.708$",
+      "$0.708,\\ 0.7,\\ 0.78$",
+      "$0.7,\\ 0.708,\\ 0.78$",
+      "$0.78,\\ 0.708,\\ 0.7$"
+    ],
+    "a": 2,
+    "e": "Write with same decimal places: $0.7 = 0.700$, $0.708 = 0.708$, $0.78 = 0.780$. The order is $0.7 < 0.708 < 0.78$.",
+    "d": 2,
+    "s": "Y8.1",
+    "diag": "concept"
+  }
+]

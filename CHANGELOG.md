@@ -1,5 +1,34 @@
 # Changelog
 
+## [4.7.6] - 2026-03-11 — 3 端高保真同步管道（tex↔JSON↔PDF）
+
+### 新增
+- **fix-hifi-blocks.py**: 高保真 LaTeX 解析器 — 从 QuestionStatement.tex 提取结构化 Block[] + 17 个格式标志，保留原始排版信息
+- **export-latex-dryrun.py**: JSON→LaTeX 导出器 — 从 Block[] 重建 LaTeX，支持 raw/blocks/auto 三种模式，含逐字比对验证
+- **export-compile-test.py**: 编译验证器 — 导出 LaTeX→XeLaTeX 编译→PDF 大小比对，验证完整闭环
+- **data/kp-gen/**: 知识点生成数据（CIE 9 章 + Edexcel + HHK 变体）
+- **data/syllabus-edx.json, vocabulary-edx.json**: Edexcel 考纲 + 词汇数据
+- **docs/latex-macro-mapping.md, sync-research.md**: LaTeX 宏映射 + 同步研究文档
+
+### 验证结果
+- **2025OctNov 12 份试卷**: 317/317 题 100% 逐字匹配（raw + blocks 模式）
+- **编译验证**: 12/12 份 PDF 编译通过，大小差异 ≤0.2%（XeLaTeX 非确定性）
+- **CIE 修复**: Paper21-Q20 TreeDiagram 图片引用修复（PDF→PNG）
+
+### 文件变更
+| 文件 | 变更类型 |
+|------|---------|
+| `scripts/fix-hifi-blocks.py` | 新增 — 高保真 LaTeX 解析器 |
+| `scripts/export-latex-dryrun.py` | 新增 — JSON→LaTeX 导出+验证 |
+| `scripts/export-compile-test.py` | 新增 — 编译闭环验证 |
+| `data/kp-gen/*` | 新增 — 知识点生成数据 |
+| `data/syllabus-edx.json` | 新增 — Edexcel 考纲 |
+| `data/vocabulary-edx.json` | 新增 — Edexcel 词汇 |
+| `docs/latex-macro-mapping.md` | 新增 — LaTeX 宏映射 |
+| `docs/sync-research.md` | 新增 — 同步研究 |
+
+---
+
 ## [4.7.5] - 2026-03-11 — 残余 onclick XSS + 事件监听器泄漏修复
 
 ### 安全修复

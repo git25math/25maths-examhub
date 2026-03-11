@@ -1,0 +1,206 @@
+[
+  {
+    "id": "hv0336",
+    "cat": "algebra",
+    "topic": "Quadratic Equations",
+    "q": "Solve $x^2 - 7x + 12 = 0$.",
+    "o": [
+      "$x=3$ or $x=4$",
+      "$x=-3$ or $x=-4$",
+      "$x=2$ or $x=6$",
+      "$x=-2$ or $x=-6$"
+    ],
+    "a": 0,
+    "e": "$x^2-7x+12=(x-3)(x-4)=0$, so $x=3$ or $x=4$.",
+    "d": 1,
+    "s": "Y10.3",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0337",
+    "cat": "algebra",
+    "topic": "Quadratic Equations",
+    "q": "Solve $x^2 + 4x - 5 = 0$.",
+    "o": [
+      "$x=5$ or $x=-1$",
+      "$x=-5$ or $x=1$",
+      "$x=1$ or $x=5$",
+      "$x=-1$ or $x=-5$"
+    ],
+    "a": 1,
+    "e": "$x^2+4x-5=(x+5)(x-1)=0$, so $x=-5$ or $x=1$.",
+    "d": 1,
+    "s": "Y10.3",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0338",
+    "cat": "algebra",
+    "topic": "Quadratic Equations",
+    "q": "Solve $x^2 - 8x + 15 = 0$.",
+    "o": [
+      "$x=-3$ or $x=-5$",
+      "$x=1$ or $x=15$",
+      "$x=3$ or $x=5$",
+      "$x=-1$ or $x=-15$"
+    ],
+    "a": 2,
+    "e": "$x^2-8x+15=(x-3)(x-5)=0$, so $x=3$ or $x=5$.",
+    "d": 1,
+    "s": "Y10.3",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0339",
+    "cat": "algebra",
+    "topic": "Quadratic Equations",
+    "q": "What is the discriminant of $3x^2 - 4x + 1 = 0$?",
+    "o": [
+      "$4$",
+      "$-4$",
+      "$28$",
+      "$-28$"
+    ],
+    "a": 0,
+    "e": "Discriminant $= b^2-4ac = (-4)^2 - 4(3)(1) = 16-12 = 4$.",
+    "d": 1,
+    "s": "Y10.3",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0340",
+    "cat": "algebra",
+    "topic": "Quadratic Equations",
+    "q": "What is the discriminant of $x^2 + 6x + 9 = 0$?",
+    "o": [
+      "$72$",
+      "$36$",
+      "$0$",
+      "$18$"
+    ],
+    "a": 2,
+    "e": "Discriminant $= b^2-4ac = 6^2 - 4(1)(9) = 36-36 = 0$.",
+    "d": 1,
+    "s": "Y10.3",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0341",
+    "cat": "algebra",
+    "topic": "Quadratic Equations",
+    "q": "What is the discriminant of $2x^2 + x + 3 = 0$?",
+    "o": [
+      "$25$",
+      "$-25$",
+      "$23$",
+      "$-23$"
+    ],
+    "a": 3,
+    "e": "Discriminant $= b^2-4ac = 1^2 - 4(2)(3) = 1-24 = -23$.",
+    "d": 1,
+    "s": "Y10.3",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0342",
+    "cat": "algebra",
+    "topic": "Quadratic Equations",
+    "q": "Express $x^2 - 4x + 10$ in completed square form.",
+    "o": [
+      "$(x-2)^2 + 6$",
+      "$(x+2)^2 + 6$",
+      "$(x-2)^2 - 6$",
+      "$(x-4)^2 + 6$"
+    ],
+    "a": 0,
+    "e": "$x^2-4x+10 = (x-2)^2 - 4 + 10 = (x-2)^2 + 6$.",
+    "d": 2,
+    "s": "Y10.3",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0343",
+    "cat": "algebra",
+    "topic": "Quadratic Equations",
+    "q": "Express $x^2 + 8x - 3$ in completed square form.",
+    "o": [
+      "$(x+4)^2 + 13$",
+      "$(x-4)^2 - 19$",
+      "$(x+4)^2 - 19$",
+      "$(x+8)^2 - 67$"
+    ],
+    "a": 2,
+    "e": "$x^2+8x-3 = (x+4)^2 - 16 - 3 = (x+4)^2 - 19$.",
+    "d": 2,
+    "s": "Y10.3",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0344",
+    "cat": "algebra",
+    "topic": "Quadratic Equations",
+    "q": "Express $x^2 - 2x - 5$ in completed square form.",
+    "o": [
+      "$(x+1)^2 - 6$",
+      "$(x-1)^2 + 6$",
+      "$(x-2)^2 - 9$",
+      "$(x-1)^2 - 6$"
+    ],
+    "a": 3,
+    "e": "$x^2-2x-5 = (x-1)^2 - 1 - 5 = (x-1)^2 - 6$.",
+    "d": 2,
+    "s": "Y10.3",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0345",
+    "cat": "algebra",
+    "topic": "Quadratic Equations",
+    "q": "If the discriminant of a quadratic equation is zero, the equation has:",
+    "o": [
+      "two equal real roots",
+      "two distinct real roots",
+      "no real roots",
+      "infinitely many roots"
+    ],
+    "a": 0,
+    "e": "A discriminant of zero ($b^2-4ac = 0$) means the quadratic has two equal real roots (or one repeated real root).",
+    "d": 2,
+    "s": "Y10.3",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0346",
+    "cat": "algebra",
+    "topic": "Quadratic Equations",
+    "q": "If the discriminant of a quadratic equation is positive, the equation has:",
+    "o": [
+      "no real roots",
+      "two distinct real roots",
+      "two equal real roots",
+      "one imaginary root"
+    ],
+    "a": 1,
+    "e": "A positive discriminant ($b^2-4ac > 0$) means the quadratic has two distinct real roots.",
+    "d": 2,
+    "s": "Y10.3",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0347",
+    "cat": "algebra",
+    "topic": "Quadratic Equations",
+    "q": "A quadratic equation $ax^2 + bx + c = 0$ has no real roots if:",
+    "o": [
+      "$b^2 - 4ac = 0$",
+      "$b^2 - 4ac > 0$",
+      "$b^2 - 4ac < 0$",
+      "$b^2 + 4ac < 0$"
+    ],
+    "a": 2,
+    "e": "For a quadratic to have no real roots, the value under the square root in the quadratic formula, $b^2-4ac$, must be negative.",
+    "d": 2,
+    "s": "Y10.3",
+    "diag": "concept"
+  }
+]

@@ -1,0 +1,206 @@
+[
+  {
+    "id": "hv0812",
+    "cat": "algebra",
+    "topic": "Co-ordinates and Plotting Linear Graphs",
+    "q": "What is the gradient of the line $y = 4x - 7$?",
+    "o": [
+      "$4$",
+      "$-7$",
+      "$7$",
+      "$-4$"
+    ],
+    "a": 0,
+    "e": "In $y = mx + c$, the gradient $m = 4$.",
+    "d": 1,
+    "s": "Y8.8",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0813",
+    "cat": "algebra",
+    "topic": "Co-ordinates and Plotting Linear Graphs",
+    "q": "What is the gradient of the line $y = -5x + 2$?",
+    "o": [
+      "$2$",
+      "$-5$",
+      "$5$",
+      "$-2$"
+    ],
+    "a": 1,
+    "e": "In $y = mx + c$, the gradient $m = -5$.",
+    "d": 1,
+    "s": "Y8.8",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0814",
+    "cat": "algebra",
+    "topic": "Co-ordinates and Plotting Linear Graphs",
+    "q": "What is the gradient of the line $y = \\frac{1}{2}x + 3$?",
+    "o": [
+      "$3$",
+      "$2$",
+      "$\\frac{1}{2}$",
+      "$-\\frac{1}{2}$"
+    ],
+    "a": 2,
+    "e": "In $y = mx + c$, the gradient $m = \\frac{1}{2}$.",
+    "d": 1,
+    "s": "Y8.8",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0815",
+    "cat": "algebra",
+    "topic": "Co-ordinates and Plotting Linear Graphs",
+    "q": "What is the $y$-intercept of $y = 2x - 9$?",
+    "o": [
+      "$2$",
+      "$9$",
+      "$-2$",
+      "$-9$"
+    ],
+    "a": 3,
+    "e": "In $y = mx + c$, the $y$-intercept is $c = -9$.",
+    "d": 1,
+    "s": "Y8.8",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0816",
+    "cat": "algebra",
+    "topic": "Co-ordinates and Plotting Linear Graphs",
+    "q": "What is the $y$-intercept of $y = -3x + 12$?",
+    "o": [
+      "$12$",
+      "$-3$",
+      "$3$",
+      "$-12$"
+    ],
+    "a": 0,
+    "e": "In $y = mx + c$, the $y$-intercept is $c = 12$.",
+    "d": 1,
+    "s": "Y8.8",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0817",
+    "cat": "algebra",
+    "topic": "Co-ordinates and Plotting Linear Graphs",
+    "q": "What is the $y$-intercept of $y = 5x - 4$?",
+    "o": [
+      "$5$",
+      "$-4$",
+      "$4$",
+      "$-5$"
+    ],
+    "a": 1,
+    "e": "In $y = mx + c$, the $y$-intercept is $c = -4$.",
+    "d": 1,
+    "s": "Y8.8",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0818",
+    "cat": "algebra",
+    "topic": "Co-ordinates and Plotting Linear Graphs",
+    "q": "A line passes through $(0, 4)$ and $(2, 14)$. What is its gradient?",
+    "o": [
+      "$5$",
+      "$\\frac{2}{10} = \\frac{1}{5}$",
+      "$\\frac{14}{2} = 7$",
+      "$\\frac{18}{2} = 9$"
+    ],
+    "a": 0,
+    "e": "Gradient $= \\frac{14 - 4}{2 - 0} = \\frac{10}{2} = 5$.",
+    "d": 2,
+    "s": "Y8.8",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0819",
+    "cat": "algebra",
+    "topic": "Co-ordinates and Plotting Linear Graphs",
+    "q": "A line passes through $(0, -1)$ and $(3, 5)$. What is its gradient?",
+    "o": [
+      "$\\frac{4}{3}$",
+      "$3$",
+      "$2$",
+      "$\\frac{1}{2}$"
+    ],
+    "a": 2,
+    "e": "Gradient $= \\frac{5 - (-1)}{3 - 0} = \\frac{6}{3} = 2$.",
+    "d": 2,
+    "s": "Y8.8",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0820",
+    "cat": "algebra",
+    "topic": "Co-ordinates and Plotting Linear Graphs",
+    "q": "A line passes through $(1, 2)$ and $(4, 11)$. What is its gradient?",
+    "o": [
+      "$\\frac{13}{5}$",
+      "$\\frac{3}{9} = \\frac{1}{3}$",
+      "$\\frac{9}{5}$",
+      "$3$"
+    ],
+    "a": 3,
+    "e": "Gradient $= \\frac{11 - 2}{4 - 1} = \\frac{9}{3} = 3$.",
+    "d": 2,
+    "s": "Y8.8",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0821",
+    "cat": "algebra",
+    "topic": "Co-ordinates and Plotting Linear Graphs",
+    "q": "Which point lies on the line $y = 3x + 4$?",
+    "o": [
+      "$(1, 6)$",
+      "$(1, 7)$",
+      "$(0, 0)$",
+      "$(2, 9)$"
+    ],
+    "a": 1,
+    "e": "Substitute $x = 1$: $y = 3(1) + 4 = 7$. So $(1, 7)$ lies on the line.",
+    "d": 2,
+    "s": "Y8.8",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0822",
+    "cat": "algebra",
+    "topic": "Co-ordinates and Plotting Linear Graphs",
+    "q": "Which point lies on the line $y = 2x - 5$?",
+    "o": [
+      "$(0, 5)$",
+      "$(3, 2)$",
+      "$(4, 3)$",
+      "$(1, -1)$"
+    ],
+    "a": 2,
+    "e": "Substitute $x = 4$: $y = 2(4) - 5 = 3$. So $(4, 3)$ lies on the line.",
+    "d": 2,
+    "s": "Y8.8",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0823",
+    "cat": "algebra",
+    "topic": "Co-ordinates and Plotting Linear Graphs",
+    "q": "Which point lies on the line $y = x + 6$?",
+    "o": [
+      "$(2, 8)$",
+      "$(0, 0)$",
+      "$(1, 5)$",
+      "$(3, 10)$"
+    ],
+    "a": 0,
+    "e": "Substitute $x = 2$: $y = (2) + 6 = 8$. So $(2, 8)$ lies on the line.",
+    "d": 2,
+    "s": "Y8.8",
+    "diag": "calc"
+  }
+]

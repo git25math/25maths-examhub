@@ -1,0 +1,206 @@
+[
+  {
+    "id": "hv0903",
+    "cat": "probability",
+    "topic": "Graphical Representation of Statistical Data",
+    "q": "In a histogram with unequal class widths, which feature of a bar is used to represent the frequency of the data?",
+    "o": [
+      "The height of the bar",
+      "The width of the bar",
+      "The area of the bar",
+      "The midpoint of the bar"
+    ],
+    "a": 2,
+    "e": "In a histogram, the area of each bar is proportional to the frequency of that class, which is essential when class widths are unequal.",
+    "d": 1,
+    "s": "Y9.9",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0904",
+    "cat": "probability",
+    "topic": "Graphical Representation of Statistical Data",
+    "q": "When frequency density is plotted on the vertical axis of a histogram, how is the number of items in a class interval determined?",
+    "o": [
+      "By the horizontal position",
+      "By the vertical height only",
+      "By calculating the area of the bar",
+      "By the distance from the origin"
+    ],
+    "a": 2,
+    "e": "Frequency is calculated as the area of the bar (frequency density $\\times$ class width).",
+    "d": 1,
+    "s": "Y9.9",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0905",
+    "cat": "probability",
+    "topic": "Graphical Representation of Statistical Data",
+    "q": "If a histogram represents the distribution of ages in a population, what does the total area of all the bars combined represent?",
+    "o": [
+      "The maximum age",
+      "The total frequency (total population)",
+      "The mean age",
+      "The age range"
+    ],
+    "a": 1,
+    "e": "Since the area of each bar represents the frequency of that class, the sum of all areas represents the total frequency or total population size.",
+    "d": 1,
+    "s": "Y9.9",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0906",
+    "cat": "probability",
+    "topic": "Graphical Representation of Statistical Data",
+    "q": "Which type of statistical diagram is specifically designed to help estimate the interquartile range (IQR) of a large data set?",
+    "o": [
+      "A pie chart",
+      "A bar chart",
+      "A cumulative frequency graph",
+      "A stem-and-leaf plot"
+    ],
+    "a": 2,
+    "e": "Cumulative frequency graphs allow us to find $Q_1$ (at $25\\%$) and $Q_3$ (at $75\\%$), which are needed to calculate the IQR.",
+    "d": 1,
+    "s": "Y9.9",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0907",
+    "cat": "probability",
+    "topic": "Graphical Representation of Statistical Data",
+    "q": "A cumulative frequency curve is particularly useful for finding which of the following measures of central tendency?",
+    "o": [
+      "The mean",
+      "The mode",
+      "The median",
+      "The weighted mean"
+    ],
+    "a": 2,
+    "e": "The median is estimated by finding the value on the horizontal axis corresponding to the $50\\%$ mark (the middle value) on the cumulative frequency axis.",
+    "d": 1,
+    "s": "Y9.9",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0908",
+    "cat": "probability",
+    "topic": "Graphical Representation of Statistical Data",
+    "q": "Beyond the median and quartiles, cumulative frequency graphs are often used to estimate which of the following?",
+    "o": [
+      "Percentiles",
+      "Standard deviation",
+      "Frequency density",
+      "Class midpoints"
+    ],
+    "a": 0,
+    "e": "Cumulative frequency graphs can be used to estimate any percentile (e.g., the $10$th or $90$th percentile) by reading across from the corresponding percentage of the total frequency.",
+    "d": 1,
+    "s": "Y9.9",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0909",
+    "cat": "probability",
+    "topic": "Graphical Representation of Statistical Data",
+    "q": "A histogram bar has a class width of $10$ and a frequency density of $2.4$. Calculate the frequency of this class.",
+    "o": [
+      "$0.24$",
+      "$12.4$",
+      "$24$",
+      "$7.6$"
+    ],
+    "a": 2,
+    "e": "Frequency $=$ frequency density $\\times$ class width $= 2.4 \\times 10 = 24$.",
+    "d": 2,
+    "s": "Y9.9",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0910",
+    "cat": "probability",
+    "topic": "Graphical Representation of Statistical Data",
+    "q": "On a histogram, a class interval $20 < x \\le 30$ has a frequency density of $1.5$. What is the frequency for this class?",
+    "o": [
+      "$1.5$",
+      "$15$",
+      "$10$",
+      "$11.5$"
+    ],
+    "a": 1,
+    "e": "Class width $= 30 - 20 = 10$. Frequency $=$ frequency density $\\times$ class width $= 1.5 \\times 10 = 15$.",
+    "d": 2,
+    "s": "Y9.9",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0911",
+    "cat": "probability",
+    "topic": "Graphical Representation of Statistical Data",
+    "q": "A histogram bar representing a group of students has a width of $8$ units and a frequency density of $0.5$. How many students are in this group?",
+    "o": [
+      "$4$",
+      "$16$",
+      "$7.5$",
+      "$8.5$"
+    ],
+    "a": 0,
+    "e": "Frequency $=$ frequency density $\\times$ class width $= 0.5 \\times 8 = 4$.",
+    "d": 2,
+    "s": "Y9.9",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0912",
+    "cat": "probability",
+    "topic": "Graphical Representation of Statistical Data",
+    "q": "In a standard box plot, what do the ends of the two 'whiskers' typically represent?",
+    "o": [
+      "The lower and upper quartiles",
+      "The minimum and maximum values",
+      "The mean and the mode",
+      "The range and the interquartile range"
+    ],
+    "a": 1,
+    "e": "In a box plot, the whiskers extend from the box to the minimum and maximum values in the dataset (excluding outliers).",
+    "d": 2,
+    "s": "Y9.9",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0913",
+    "cat": "probability",
+    "topic": "Graphical Representation of Statistical Data",
+    "q": "Which statistical value is indicated by the vertical line positioned inside the rectangular box of a box plot?",
+    "o": [
+      "The mean",
+      "The lower quartile",
+      "The median",
+      "The upper quartile"
+    ],
+    "a": 2,
+    "e": "The line inside the box represents the median ($Q_2$), dividing the middle $50\\%$ of the data into two equal halves.",
+    "d": 2,
+    "s": "Y9.9",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0914",
+    "cat": "probability",
+    "topic": "Graphical Representation of Statistical Data",
+    "q": "In a box plot, which part of the diagram represents the middle $50\\%$ of the data?",
+    "o": [
+      "The total length of the whiskers",
+      "The width of the box",
+      "The distance from zero to the median",
+      "The height of the box"
+    ],
+    "a": 1,
+    "e": "The box is drawn from the lower quartile ($Q_1$) to the upper quartile ($Q_3$), thereby containing the middle $50\\%$ of the data values.",
+    "d": 2,
+    "s": "Y9.9",
+    "diag": "concept"
+  }
+]

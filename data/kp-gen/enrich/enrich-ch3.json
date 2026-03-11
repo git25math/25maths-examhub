@@ -1,0 +1,226 @@
+[
+  {
+    "id": "kp-3.1-01",
+    "addQuiz": [
+      {
+        "q": "A rectangle has vertices at $(1, 2)$, $(5, 2)$, and $(5, -3)$. What are the coordinates of the fourth vertex?",
+        "q_zh": "一个长方形的三个顶点坐标分别为 $(1, 2)$, $(5, 2)$ 和 $(5, -3)$。第四个顶点的坐标是多少？",
+        "o": [
+          "$(1, -3)$",
+          "$(1, 3)$",
+          "$(5, 3)$",
+          "$(-1, -3)$"
+        ],
+        "a": 0,
+        "e": "In a rectangle with sides parallel to the axes, the x-coordinates and y-coordinates must repeat. The existing x-coordinates are 1 and 5. The existing y-coordinates are 2 and -3. The missing point must be $(1, -3)$.",
+        "e_zh": "在边平行于坐标轴的长方形中，x 坐标和 y 坐标必须成对出现。已知的 x 坐标有 1 和 5，已知的 y 坐标有 2 和 -3。因此，缺失的顶点坐标必须是 $(1, -3)$。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-read-plot",
+        "question": "The coordinates of point $A$ are $(-2, 3)$ and point $B$ is obtained by reflecting $A$ in the $x$-axis. Find the coordinates of $B$.",
+        "question_zh": "点 $A$ 的坐标为 $(-2, 3)$，点 $B$ 是点 $A$ 关于 $x$ 轴对称得到的点。求点 $B$ 的坐标。",
+        "solution": "When a point $(x, y)$ is reflected in the $x$-axis, its $x$-coordinate remains the same and its $y$-coordinate changes sign. \\\\ $B = (-2, -3)$",
+        "solution_zh": "当点 $(x, y)$ 关于 $x$ 轴对称时，其 $x$ 坐标保持不变，而 $y$ 坐标变为其相反数。 \\\\ 因此 $B = (-2, -3)$。",
+        "source": "Adapted from 0580/21/M/J/21"
+      }
+    ]
+  },
+  {
+    "id": "kp-3.2-01",
+    "addQuiz": [
+      {
+        "q": "Which of these points lies on the line with equation $y = 3x - 4$?",
+        "q_zh": "下列哪个点位于方程为 $y = 3x - 4$ 的直线上？",
+        "o": [
+          "$(1, 1)$",
+          "$(2, 2)$",
+          "$(0, 4)$",
+          "$(3, 5)$"
+        ],
+        "a": 1,
+        "e": "Substitute the x-coordinate into the equation: $y = 3(2) - 4 = 6 - 4 = 2$. So $(2, 2)$ lies on the line.",
+        "e_zh": "将 x 坐标代入方程：$y = 3(2) - 4 = 6 - 4 = 2$。因此点 $(2, 2)$ 在直线上。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-table-plot",
+        "question": "Complete the table of values for $y = \\frac{1}{2}x + 1$ and identify the coordinates to plot.\\\\ \n| $x$ | $-2$ | $0$ | $4$ |\n|---|---|---|---|\n| $y$ | | | |",
+        "question_zh": "完成 $y = \\frac{1}{2}x + 1$ 的数值表并确定绘图所需的坐标。\\\\ \n| $x$ | $-2$ | $0$ | $4$ |\n|---|---|---|---|\n| $y$ | | | |",
+        "solution": "For $x = -2$: $y = \\frac{1}{2}(-2) + 1 = -1 + 1 = 0$ \\\\ For $x = 0$: $y = \\frac{1}{2}(0) + 1 = 1$ \\\\ For $x = 4$: $y = \\frac{1}{2}(4) + 1 = 2 + 1 = 3$ \\\\ The points are $(-2, 0), (0, 1), (4, 3)$.",
+        "solution_zh": "当 $x = -2$ 时：$y = \\frac{1}{2}(-2) + 1 = -1 + 1 = 0$ \\\\ 当 $x = 0$ 时：$y = \\frac{1}{2}(0) + 1 = 1$ \\\\ 当 $x = 4$ 时：$y = \\frac{1}{2}(4) + 1 = 2 + 1 = 3$ \\\\ 得到的坐标点为 $(-2, 0), (0, 1), (4, 3)$。",
+        "source": "0580/32/M/J/19"
+      }
+    ]
+  },
+  {
+    "id": "kp-3.3-01",
+    "addQuiz": [
+      {
+        "q": "Find the gradient of the line passing through the points $(2, -5)$ and $(-1, 4)$.",
+        "q_zh": "求通过点 $(2, -5)$ 和 $(-1, 4)$ 的直线的斜率。",
+        "o": [
+          "$-3$",
+          "$3$",
+          "$-\\frac{1}{3}$",
+          "$\frac{1}{3}$"
+        ],
+        "a": 0,
+        "e": "Gradient $m = \\frac{y_2 - y_1}{x_2 - x_1} = \\frac{4 - (-5)}{-1 - 2} = \\frac{9}{-3} = -3$.",
+        "e_zh": "斜率 $m = \\frac{y_2 - y_1}{x_2 - x_1} = \\frac{4 - (-5)}{-1 - 2} = \\frac{9}{-3} = -3$。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-calc-gradient",
+        "question": "A line passes through the points $P(4, 7)$ and $Q(8, k)$. The gradient of the line is $2.5$. Find the value of $k$.",
+        "question_zh": "一条直线通过点 $P(4, 7)$ 和 $Q(8, k)$。该直线的斜率为 $2.5$。求 $k$ 的值。",
+        "solution": "Gradient $m = \\frac{k - 7}{8 - 4} = 2.5$ \\\\ $\\frac{k - 7}{4} = 2.5$ \\\\ $k - 7 = 10$ \\\\ $k = 17$",
+        "solution_zh": "斜率 $m = \\frac{k - 7}{8 - 4} = 2.5$ \\\\ $\\frac{k - 7}{4} = 2.5$ \\\\ $k - 7 = 10$ \\\\ $k = 17$。",
+        "source": "Adapted from 0580/42/O/N/18"
+      }
+    ]
+  },
+  {
+    "id": "kp-3.4-01",
+    "addQuiz": [
+      {
+        "q": "What is the length of the line segment joining the origin $(0, 0)$ and the point $(-8, 15)$?",
+        "q_zh": "连接原点 $(0, 0)$ 和点 $(-8, 15)$ 的线段长度是多少？",
+        "o": [
+          "$7$",
+          "$17$",
+          "$23$",
+          "$\\sqrt{161}$"
+        ],
+        "a": 1,
+        "e": "Distance $= \\sqrt{(-8 - 0)^2 + (15 - 0)^2} = \\sqrt{64 + 225} = \\sqrt{289} = 17$.",
+        "e_zh": "距离 $= \\sqrt{(-8 - 0)^2 + (15 - 0)^2} = \\sqrt{64 + 225} = \\sqrt{289} = 17$。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-distance",
+        "question": "Calculate the length of the line segment $AB$ where $A$ is $(2, -3)$ and $B$ is $(-4, 5)$. Give your answer to 2 decimal places.",
+        "question_zh": "计算线段 $AB$ 的长度，其中 $A$ 点坐标为 $(2, -3)$，$B$ 点坐标为 $(-4, 5)$。结果保留两位小数。",
+        "solution": "$Length = \\sqrt{(-4 - 2)^2 + (5 - (-3))^2}$ \\\\ $= \\sqrt{(-6)^2 + 8^2}$ \\\\ $= \\sqrt{36 + 64} = \\sqrt{100} = 10.00$",
+        "solution_zh": "$长度 = \\sqrt{(-4 - 2)^2 + (5 - (-3))^2}$ \\\\ $= \\sqrt{(-6)^2 + 8^2}$ \\\\ $= \\sqrt{36 + 64} = \\sqrt{100} = 10.00$。",
+        "source": "0580/22/F/M/20"
+      }
+    ]
+  },
+  {
+    "id": "kp-3.4-02",
+    "addQuiz": [
+      {
+        "q": "Find the midpoint of the line segment joining $C(-5, 12)$ and $D(3, -4)$.",
+        "q_zh": "求连接 $C(-5, 12)$ 和 $D(3, -4)$ 的线段的中点坐标。",
+        "o": [
+          "$(-1, 4)$",
+          "$(-4, 8)$",
+          "$(4, 4)$",
+          "$(-1, 8)$"
+        ],
+        "a": 0,
+        "e": "Midpoint $= (\\frac{-5 + 3}{2}, \\frac{12 + (-4)}{2}) = (\\frac{-2}{2}, \\frac{8}{2}) = (-1, 4)$.",
+        "e_zh": "中点 $= (\\frac{-5 + 3}{2}, \\frac{12 + (-4)}{2}) = (\\frac{-2}{2}, \\frac{8}{2}) = (-1, 4)$。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-endpoint",
+        "question": "$M(2, 5)$ is the midpoint of the line segment $AB$. If the coordinates of $A$ are $(1, 2)$, find the coordinates of $B$.",
+        "question_zh": "$M(2, 5)$ 是线段 $AB$ 的中点。如果 $A$ 点的坐标是 $(1, 2)$，求 $B$ 点的坐标。",
+        "solution": "Let $B = (x, y)$. \\\\ $\\frac{1 + x}{2} = 2 \\Rightarrow 1 + x = 4 \\Rightarrow x = 3$ \\\\ $\\frac{2 + y}{2} = 5 \\Rightarrow 2 + y = 10 \\Rightarrow y = 8$ \\\\ So $B = (3, 8)$.",
+        "solution_zh": "设 $B$ 点坐标为 $(x, y)$。 \\\\ $\\frac{1 + x}{2} = 2 \\Rightarrow 1 + x = 4 \\Rightarrow x = 3$ \\\\ $\\frac{2 + y}{2} = 5 \\Rightarrow 2 + y = 10 \\Rightarrow y = 8$ \\\\ 因此 $B = (3, 8)$。",
+        "source": "Adapted from 0580/23/M/J/17"
+      }
+    ]
+  },
+  {
+    "id": "kp-3.5-01",
+    "addQuiz": [
+      {
+        "q": "What are the gradient ($m$) and $y$-intercept ($c$) of the line $2y = 6x - 10$?",
+        "q_zh": "直线 $2y = 6x - 10$ 的斜率 ($m$) 和 $y$ 轴截距 ($c$) 分别是多少？",
+        "o": [
+          "$m = 6, c = -10$",
+          "$m = 3, c = -10$",
+          "$m = 3, c = -5$",
+          "$m = 6, c = -5$"
+        ],
+        "a": 2,
+        "e": "Divide the whole equation by 2 to get $y = mx + c$ form: $y = 3x - 5$. So $m = 3$ and $c = -5$.",
+        "e_zh": "将整个方程除以 2 以得到 $y = mx + c$ 的形式：$y = 3x - 5$。因此 $m = 3$ 且 $c = -5$。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-find-eq-points",
+        "question": "Find the equation of the line passing through $(0, 4)$ and $(2, 10)$.",
+        "question_zh": "求通过点 $(0, 4)$ 和 $(2, 10)$ 的直线方程。",
+        "solution": "The $y$-intercept is $c = 4$ (from point $(0, 4)$). \\\\ Gradient $m = \\frac{10 - 4}{2 - 0} = \\frac{6}{2} = 3$. \\\\ The equation is $y = 3x + 4$.",
+        "solution_zh": "$y$ 轴截距为 $c = 4$（根据点 $(0, 4)$ 可知）。 \\\\ 斜率 $m = \\frac{10 - 4}{2 - 0} = \\frac{6}{2} = 3$。 \\\\ 因此直线方程为 $y = 3x + 4$。",
+        "source": "0580/21/O/N/20"
+      }
+    ]
+  },
+  {
+    "id": "kp-3.6-01",
+    "addQuiz": [
+      {
+        "q": "Which of the following lines is parallel to $y = -2x + 5$?",
+        "q_zh": "下列哪条直线与 $y = -2x + 5$ 平行？",
+        "o": [
+          "$y = 2x + 5$",
+          "$y = -2x - 3$",
+          "$y = \\frac{1}{2}x + 5$",
+          "$2y = -x + 5$"
+        ],
+        "a": 1,
+        "e": "Parallel lines have the same gradient. The gradient of the given line is $-2$. $y = -2x - 3$ also has a gradient of $-2$.",
+        "e_zh": "平行线具有相同的斜率。已知直线的斜率为 $-2$。直线 $y = -2x - 3$ 的斜率也是 $-2$。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-parallel-eq",
+        "question": "Find the equation of the line parallel to $y = 4x - 1$ that passes through the point $(2, 15)$.",
+        "question_zh": "求与直线 $y = 4x - 1$ 平行且经过点 $(2, 15)$ 的直线方程。",
+        "solution": "The gradient is $m = 4$ (same as the parallel line). \\\\ Use $y = mx + c$: $15 = 4(2) + c$ \\\\ $15 = 8 + c \\Rightarrow c = 7$ \\\\ Equation: $y = 4x + 7$",
+        "solution_zh": "斜率为 $m = 4$（与平行线相同）。 \\\\ 使用 $y = mx + c$：$15 = 4(2) + c$ \\\\ $15 = 8 + c \\Rightarrow c = 7$ \\\\ 因此方程为：$y = 4x + 7$。",
+        "source": "0580/22/M/J/18"
+      }
+    ]
+  },
+  {
+    "id": "kp-3.7-01",
+    "addQuiz": [
+      {
+        "q": "If line $L_1$ has the equation $y = \\frac{3}{4}x + 2$, what is the gradient of a line perpendicular to $L_1$?",
+        "q_zh": "如果直线 $L_1$ 的方程为 $y = \\frac{3}{4}x + 2$，那么垂直于 $L_1$ 的直线的斜率是多少？",
+        "o": [
+          "$\\frac{3}{4}$",
+          "$-\\frac{3}{4}$",
+          "$\\frac{4}{3}$",
+          "$-\\frac{4}{3}$"
+        ],
+        "a": 3,
+        "e": "The product of the gradients of perpendicular lines is $-1$. $m_2 = -\\frac{1}{m_1} = -\\frac{1}{3/4} = -\\frac{4}{3}$.",
+        "e_zh": "垂直直线的斜率乘积为 $-1$。$m_2 = -\\frac{1}{m_1} = -\\frac{1}{3/4} = -\\frac{4}{3}$。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-perp-eq",
+        "question": "Find the equation of the line perpendicular to $y = 2x + 5$ that passes through the point $(4, 7)$.",
+        "question_zh": "求与直线 $y = 2x + 5$ 垂直且经过点 $(4, 7)$ 的直线方程。",
+        "solution": "Gradient of original line $m_1 = 2$. \\\\ Perpendicular gradient $m_2 = -\\frac{1}{2}$. \\\\ Use $y = mx + c$ with $(4, 7)$: $7 = -\\frac{1}{2}(4) + c$ \\\\ $7 = -2 + c \\Rightarrow c = 9$ \\\\ Equation: $y = -\\frac{1}{2}x + 9$",
+        "solution_zh": "原直线的斜率 $m_1 = 2$。 \\\\ 垂直直线的斜率 $m_2 = -\\frac{1}{2}$。 \\\\ 将点 $(4, 7)$ 代入 $y = mx + c$：$7 = -\\frac{1}{2}(4) + c$ \\\\ $7 = -2 + c \\Rightarrow c = 9$ \\\\ 因此方程为：$y = -\\frac{1}{2}x + 9$。",
+        "source": "0580/41/M/J/20"
+      }
+    ]
+  }
+]

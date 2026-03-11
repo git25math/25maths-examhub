@@ -1,0 +1,206 @@
+[
+  {
+    "id": "hv0661",
+    "cat": "algebra",
+    "topic": "Algebraic Formula",
+    "q": "If $y = 2x + 5$, find $y$ when $x = 3$.",
+    "o": [
+      "$11$",
+      "$10$",
+      "$16$",
+      "$8$"
+    ],
+    "a": 0,
+    "e": "$y = 2(3) + 5 = 6 + 5 = 11$.",
+    "d": 1,
+    "s": "Y8.3",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0662",
+    "cat": "algebra",
+    "topic": "Algebraic Formula",
+    "q": "If $y = 5x - 4$, find $y$ when $x = 2$.",
+    "o": [
+      "$14$",
+      "$6$",
+      "$10$",
+      "$2$"
+    ],
+    "a": 1,
+    "e": "$y = 5(2) - 4 = 10 - 4 = 6$.",
+    "d": 1,
+    "s": "Y8.3",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0663",
+    "cat": "algebra",
+    "topic": "Algebraic Formula",
+    "q": "If $P = 4s + 1$, find $P$ when $s = 5$.",
+    "o": [
+      "$20$",
+      "$21$",
+      "$9$",
+      "$24$"
+    ],
+    "a": 1,
+    "e": "$P = 4(5) + 1 = 20 + 1 = 21$.",
+    "d": 1,
+    "s": "Y8.3",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0671",
+    "cat": "algebra",
+    "topic": "Algebraic Formula",
+    "q": "If $V = lwh$, find $V$ when $l = 3$, $w = 2$, and $h = 4$.",
+    "o": [
+      "$9$",
+      "$14$",
+      "$24$",
+      "$12$"
+    ],
+    "a": 2,
+    "e": "$V = 3 \\times 2 \\times 4 = 24$.",
+    "d": 1,
+    "s": "Y8.3",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0672",
+    "cat": "algebra",
+    "topic": "Algebraic Formula",
+    "q": "If $E = \\frac{1}{2}mv^2$, find $E$ when $m = 4$ and $v = 3$.",
+    "o": [
+      "$18$",
+      "$36$",
+      "$12$",
+      "$6$"
+    ],
+    "a": 0,
+    "e": "$E = \\frac{1}{2} \\times 4 \\times 3^2 = 2 \\times 9 = 18$.",
+    "d": 1,
+    "s": "Y8.3",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0673",
+    "cat": "algebra",
+    "topic": "Algebraic Formula",
+    "q": "If $A = \\frac{1}{2}(a+b)h$, find $A$ when $a=3$, $b=5$, and $h=4$.",
+    "o": [
+      "$32$",
+      "$16$",
+      "$60$",
+      "$12$"
+    ],
+    "a": 1,
+    "e": "$A = \\frac{1}{2}(3+5) \\times 4 = \\frac{1}{2}(8) \\times 4 = 4 \\times 4 = 16$.",
+    "d": 1,
+    "s": "Y8.3",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0681",
+    "cat": "algebra",
+    "topic": "Algebraic Formula",
+    "q": "A plumber charges a fixed fee of $\\$40$ plus $\\$25$ per hour. Which formula gives the cost $C$ for $h$ hours?",
+    "o": [
+      "$C = 25 + 40h$",
+      "$C = 40 + 25h$",
+      "$C = 65h$",
+      "$C = 40h + 25$"
+    ],
+    "a": 1,
+    "e": "The fixed charge is $\\$40$ and each hour costs $\\$25$, so $C = 40 + 25h$.",
+    "d": 2,
+    "s": "Y8.3",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0682",
+    "cat": "algebra",
+    "topic": "Algebraic Formula",
+    "q": "A car rental company charges $\\$60$ per day plus a $\\$10$ booking fee. Which formula gives the total cost $T$ for $d$ days?",
+    "o": [
+      "$T = 60d + 10$",
+      "$T = 60 + 10d$",
+      "$T = 70d$",
+      "$T = 10d - 60$"
+    ],
+    "a": 0,
+    "e": "The daily rate is $\\$60$ multiplied by days $d$, plus the fixed $\\$10$, so $T = 60d + 10$.",
+    "d": 2,
+    "s": "Y8.3",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0683",
+    "cat": "algebra",
+    "topic": "Algebraic Formula",
+    "q": "A water tank contains $100$ litres and fills at a rate of $5$ litres per minute. Which formula gives the volume $V$ after $m$ minutes?",
+    "o": [
+      "$V = 5 + 100m$",
+      "$V = 100 - 5m$",
+      "$V = 105m$",
+      "$V = 100 + 5m$"
+    ],
+    "a": 3,
+    "e": "The starting volume is $100$ and it increases by $5$ for every minute $m$, so $V = 100 + 5m$.",
+    "d": 2,
+    "s": "Y8.3",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0691",
+    "cat": "algebra",
+    "topic": "Algebraic Formula",
+    "q": "Make $x$ the subject of $y = 2x + 1$.",
+    "o": [
+      "$x = \\frac{y - 1}{2}$",
+      "$x = \\frac{y + 1}{2}$",
+      "$x = 2y - 1$",
+      "$x = y - 0.5$"
+    ],
+    "a": 0,
+    "e": "$y = 2x + 1 \\Rightarrow y - 1 = 2x \\Rightarrow x = \\frac{y-1}{2}$.",
+    "d": 2,
+    "s": "Y8.3",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0692",
+    "cat": "algebra",
+    "topic": "Algebraic Formula",
+    "q": "Make $x$ the subject of $y = 3x - 5$.",
+    "o": [
+      "$x = \\frac{y - 5}{3}$",
+      "$x = 3y + 5$",
+      "$x = \\frac{y + 5}{3}$",
+      "$x = 3(y + 5)$"
+    ],
+    "a": 2,
+    "e": "$y = 3x - 5 \\Rightarrow y + 5 = 3x \\Rightarrow x = \\frac{y+5}{3}$.",
+    "d": 2,
+    "s": "Y8.3",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0693",
+    "cat": "algebra",
+    "topic": "Algebraic Formula",
+    "q": "Make $x$ the subject of $y = 4x + 2$.",
+    "o": [
+      "$x = \\frac{y + 2}{4}$",
+      "$x = 4y - 2$",
+      "$x = \\frac{y}{4} - 2$",
+      "$x = \\frac{y - 2}{4}$"
+    ],
+    "a": 3,
+    "e": "$y = 4x + 2 \\Rightarrow y - 2 = 4x \\Rightarrow x = \\frac{y-2}{4}$.",
+    "d": 2,
+    "s": "Y8.3",
+    "diag": "calc"
+  }
+]

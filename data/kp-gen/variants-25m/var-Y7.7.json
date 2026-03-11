@@ -1,0 +1,155 @@
+[
+  {
+    "id": "hv0621",
+    "cat": "geometry",
+    "topic": "Circle",
+    "q": "What is the circumference of a circle with radius $14$ cm? (Use $\\pi \\approx \\frac{22}{7}$)",
+    "o": [
+      "$44$ cm",
+      "$88$ cm",
+      "$176$ cm",
+      "$616$ cm"
+    ],
+    "a": 1,
+    "e": "$C = 2\\pi r = 2 \\times \\frac{22}{7} \\times 14 = 2 \\times 22 \\times 2 = 88$ cm.",
+    "d": 1,
+    "s": "Y7.7",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0622",
+    "cat": "geometry",
+    "topic": "Circle",
+    "q": "A circular plate has a radius of $21$ cm. Find its circumference. (Use $\\pi \\approx \\frac{22}{7}$)",
+    "o": [
+      "$66$ cm",
+      "$264$ cm",
+      "$132$ cm",
+      "$1386$ cm"
+    ],
+    "a": 2,
+    "e": "$C = 2\\pi r = 2 \\times \\frac{22}{7} \\times 21 = 2 \\times 22 \\times 3 = 132$ cm.",
+    "d": 1,
+    "s": "Y7.7",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0623",
+    "cat": "geometry",
+    "topic": "Circle",
+    "q": "What is the circumference of a circle with radius $3.5$ cm? (Use $\\pi \\approx \\frac{22}{7}$)",
+    "o": [
+      "$22$ cm",
+      "$11$ cm",
+      "$44$ cm",
+      "$38.5$ cm"
+    ],
+    "a": 0,
+    "e": "$C = 2\\pi r = 2 \\times \\frac{22}{7} \\times 3.5 = 22$ cm.",
+    "d": 1,
+    "s": "Y7.7",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0624",
+    "cat": "geometry",
+    "topic": "Circle",
+    "q": "Find the area of a circle with a diameter of $20$ cm. (Use $\\pi \\approx 3.14$)",
+    "o": [
+      "$62.8$ cm$^2$",
+      "$314$ cm$^2$",
+      "$1256$ cm$^2$",
+      "$100$ cm$^2$"
+    ],
+    "a": 1,
+    "e": "Radius $= 10$ cm. Area $= \\pi r^2 = 3.14 \\times 10^2 = 3.14 \\times 100 = 314$ cm$^2$.",
+    "d": 1,
+    "s": "Y7.7",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0625",
+    "cat": "geometry",
+    "topic": "Circle",
+    "q": "Calculate the area of a circle with a diameter of $6$ cm. (Use $\\pi \\approx 3.14$)",
+    "o": [
+      "$28.26$ cm$^2$",
+      "$113.04$ cm$^2$",
+      "$18.84$ cm$^2$",
+      "$9.42$ cm$^2$"
+    ],
+    "a": 0,
+    "e": "Radius $= 3$ cm. Area $= \\pi r^2 = 3.14 \\times 3^2 = 3.14 \\times 9 = 28.26$ cm$^2$.",
+    "d": 1,
+    "s": "Y7.7",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0626",
+    "cat": "geometry",
+    "topic": "Circle",
+    "q": "Find the area of a circular rug with a diameter of $4$ m. (Use $\\pi \\approx 3.14$)",
+    "o": [
+      "$50.24$ m$^2$",
+      "$6.28$ m$^2$",
+      "$25.12$ m$^2$",
+      "$12.56$ m$^2$"
+    ],
+    "a": 3,
+    "e": "Radius $= 2$ m. Area $= \\pi r^2 = 3.14 \\times 2^2 = 3.14 \\times 4 = 12.56$ m$^2$.",
+    "d": 1,
+    "s": "Y7.7",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0627",
+    "cat": "geometry",
+    "topic": "Circle",
+    "q": "Which term describes a straight line passing through the centre of a circle, connecting two points on the circumference?",
+    "o": [
+      "Radius",
+      "Diameter",
+      "Chord",
+      "Arc"
+    ],
+    "a": 1,
+    "e": "The diameter is a straight line that passes through the centre of the circle and has its endpoints on the circumference.",
+    "d": 1,
+    "s": "Y7.7",
+    "diag": "vocab"
+  },
+  {
+    "id": "hv0628",
+    "cat": "geometry",
+    "topic": "Circle",
+    "q": "What is the name of a straight line segment that joins any two points on the circumference of a circle, but does not necessarily pass through the centre?",
+    "o": [
+      "Tangent",
+      "Radius",
+      "Chord",
+      "Diameter"
+    ],
+    "a": 2,
+    "e": "A chord is a straight line segment whose endpoints both lie on a circle circumference.",
+    "d": 1,
+    "s": "Y7.7",
+    "diag": "vocab"
+  },
+  {
+    "id": "hv0629",
+    "cat": "geometry",
+    "topic": "Circle",
+    "q": "Which word is used to describe the total linear distance around the outside of a circle?",
+    "o": [
+      "Diameter",
+      "Circumference",
+      "Area",
+      "Radius"
+    ],
+    "a": 1,
+    "e": "The circumference is the name given to the perimeter of a circle.",
+    "d": 1,
+    "s": "Y7.7",
+    "diag": "vocab"
+  }
+]

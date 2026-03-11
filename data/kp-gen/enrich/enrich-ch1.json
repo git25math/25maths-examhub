@@ -1,0 +1,464 @@
+[
+  {
+    "id": "kp-1.1-01",
+    "addQuiz": [],
+    "addExamples": [
+      {
+        "patternId": "ep-irrational",
+        "question": "From the list of numbers: $\\sqrt{4}, \\pi, \\frac{22}{7}, \\sqrt{5}, 0.33$, identify all the irrational numbers.",
+        "question_zh": "从以下数字列表中：$\\sqrt{4}, \\pi, \\frac{22}{7}, \\sqrt{5}, 0.33$，识别出所有的无理数。",
+        "solution": "1. $\\sqrt{4} = 2$ (Integer, Rational).\n2. $\\pi$ is a non-terminating, non-recurring decimal (Irrational).\n3. $\\frac{22}{7}$ is a fraction (Rational).\n4. $\\sqrt{5}$ is the square root of a non-perfect square (Irrational).\n5. $0.33$ is a terminating decimal (Rational).\nIrrational numbers: $\\pi, \\sqrt{5}$.",
+        "solution_zh": "1. $\\sqrt{4} = 2$（整数，有理数）。\n2. $\\pi$ 是无限不循环小数（无理数）。\n3. $\\frac{22}{7}$ 是分数（有理数）。\n4. $\\sqrt{5}$ 是非完全平方数的平方根（无理数）。\n5. $0.33$ 是有限小数（有理数）。\n无理数为：$\\pi, \\sqrt{5}$。",
+        "source": "Adapted from 0580/21/M/J/19"
+      }
+    ]
+  },
+  {
+    "id": "kp-1.1-02",
+    "addQuiz": [],
+    "addExamples": [
+      {
+        "patternId": "ep-pick-prime",
+        "question": "Find the sum of all prime numbers between 10 and 20.",
+        "question_zh": "求10到20之间所有质数的和。",
+        "solution": "The prime numbers between 10 and 20 are 11, 13, 17, and 19.\nSum = $11 + 13 + 17 + 19 = 60$.",
+        "solution_zh": "10到20之间的质数有 11, 13, 17 和 19。\n和 = $11 + 13 + 17 + 19 = 60$。",
+        "source": "0580/12/O/N/21"
+      }
+    ]
+  },
+  {
+    "id": "kp-1.1-03",
+    "addQuiz": [],
+    "addExamples": [
+      {
+        "patternId": "ep-hcf-lcm",
+        "question": "Two bells ring at intervals of 15 minutes and 20 minutes respectively. If they ring together at 08:00, what is the next time they will ring together?",
+        "question_zh": "两只铃分别每隔15分钟和20分钟响一次。如果它们在08:00同时响起，下一次它们同时响起是什么时间？",
+        "solution": "We need to find the Least Common Multiple (LCM) of 15 and 20.\nPrime factors: $15 = 3 \\times 5$, $20 = 2^2 \\times 5$.\nLCM = $2^2 \\times 3 \\times 5 = 4 \\times 3 \\times 5 = 60$ minutes.\n60 minutes = 1 hour.\nThe next time they ring together is 09:00.",
+        "solution_zh": "我们需要求15和20的最小公倍数 (LCM)。\n质因数分解：$15 = 3 \\times 5$，$20 = 2^2 \\times 5$。\nLCM = $2^2 \\times 3 \\times 5 = 4 \\times 3 \\times 5 = 60$ 分钟。\n60 分钟 = 1 小时。\n下一次同时响起的时间是 09:00。",
+        "source": "Adapted from 0580/22/F/M/22"
+      }
+    ]
+  },
+  {
+    "id": "kp-1.2-01",
+    "addQuiz": [],
+    "addExamples": [
+      {
+        "patternId": "ep-complete",
+        "question": "In a group of 30 students, 18 like Football (F) and 15 like Cricket (C). If 5 students like neither, find the number of students who like both.",
+        "question_zh": "在30名学生中，18人喜欢足球 (F)，15人喜欢板球 (C)。如果5人两个都不喜欢，求两个都喜欢的人数。",
+        "solution": "Total students = 30. Students who like F or C = $30 - 5 = 25$.\nUsing the formula $n(F \\cup C) = n(F) + n(C) - n(F \\cap C)$:\n$25 = 18 + 15 - n(F \\cap C)$\n$25 = 33 - n(F \\cap C)$\n$n(F \\cap C) = 33 - 25 = 8$.\n8 students like both.",
+        "solution_zh": "学生总数 = 30。喜欢 F 或 C 的学生 = $30 - 5 = 25$。\n使用公式 $n(F \\cup C) = n(F) + n(C) - n(F \\cap C)$：\n$25 = 18 + 15 - n(F \\cap C)$\n$25 = 33 - n(F \\cap C)$\n$n(F \\cap C) = 33 - 25 = 8$。\n8名学生两个都喜欢。",
+        "source": "0580/41/M/J/20"
+      }
+    ]
+  },
+  {
+    "id": "kp-1.2-02",
+    "addQuiz": [],
+    "addExamples": [
+      {
+        "patternId": "ep-shade",
+        "question": "Describe the shaded region in terms of set notation: A region that is inside set $C$ but outside both sets $A$ and $B$.",
+        "question_zh": "用集合表示法描述阴影区域：在集合 $C$ 内部，但在集合 $A$ 和 $B$ 外部的区域。",
+        "solution": "The region outside $A$ and $B$ is $(A \\cup B)'$. \nThe region inside $C$ and outside $A$ and $B$ is the intersection: $C \\cap (A \\cup B)'$ or $C \\cap A' \\cap B'$.",
+        "solution_zh": "在 $A$ 和 $B$ 外部的区域是 $(A \\cup B)'$。\n在 $C$ 内部且在 $A, B$ 外部的区域是它们的交集：$C \\cap (A \\cup B)'$ 或 $C \\cap A' \\cap B'$。",
+        "source": "Adapted from 0580/23/O/N/21"
+      }
+    ]
+  },
+  {
+    "id": "kp-1.3-01",
+    "addQuiz": [],
+    "addExamples": [
+      {
+        "patternId": "ep-evaluate",
+        "question": "Calculate $\\sqrt[3]{-64} + 5^2$.",
+        "question_zh": "计算 $\\sqrt[3]{-64} + 5^2$。",
+        "solution": "$\\sqrt[3]{-64} = -4$ because $(-4)^3 = -64$.\n$5^2 = 25$.\n$-4 + 25 = 21$.",
+        "solution_zh": "$\\sqrt[3]{-64} = -4$ 因为 $(-4)^3 = -64$。\n$5^2 = 25$。\n$-4 + 25 = 21$。",
+        "source": "0580/11/M/J/22"
+      }
+    ]
+  },
+  {
+    "id": "kp-1.3-02",
+    "addQuiz": [],
+    "addExamples": [
+      {
+        "patternId": "ep-simplify",
+        "question": "Simplify $(16x^{12})^{\\frac{3}{4}}$.",
+        "question_zh": "化简 $(16x^{12})^{\\frac{3}{4}}$。",
+        "solution": "Apply the power to each factor: $16^{\\frac{3}{4}} \\times (x^{12})^{\\frac{3}{4}}$.\n$16^{\\frac{3}{4}} = (\\sqrt[4]{16})^3 = 2^3 = 8$.\n$(x^{12})^{\\frac{3}{4}} = x^{12 \\times \\frac{3}{4}} = x^9$.\nResult: $8x^9$.",
+        "solution_zh": "对每个因子应用指数：$16^{\\frac{3}{4}} \\times (x^{12})^{\\frac{3}{4}}$。\n$16^{\\frac{3}{4}} = (\\sqrt[4]{16})^3 = 2^3 = 8$。\n$(x^{12})^{\\frac{3}{4}} = x^{12 \\times \\frac{3}{4}} = x^9$。\n结果：$8x^9$。",
+        "source": "0580/22/O/N/20"
+      }
+    ]
+  },
+  {
+    "id": "kp-1.4-01",
+    "addQuiz": [],
+    "addExamples": [
+      {
+        "patternId": "ep-calc",
+        "question": "At midnight the temperature was $-8^\\circ\\text{C}$. By noon, the temperature had risen by $15^\\circ\\text{C}$. What was the temperature at noon?",
+        "question_zh": "午夜时的温度是 $-8^\\circ\\text{C}$。到中午时，温度上升了 $15^\\circ\\text{C}$。中午的温度是多少？",
+        "solution": "Temperature at noon = Initial temperature + Change\n$= -8 + 15 = 7^\\circ\\text{C}$.",
+        "solution_zh": "中午温度 = 初始温度 + 变化量\n$= -8 + 15 = 7^\\circ\\text{C}$。",
+        "source": "0580/12/M/J/21"
+      }
+    ]
+  },
+  {
+    "id": "kp-1.5-01",
+    "addQuiz": [],
+    "addExamples": [
+      {
+        "patternId": "ep-arithmetic",
+        "question": "Work out $2\\frac{1}{3} \\div \\frac{7}{9}$. Give your answer as a fraction in its simplest form.",
+        "question_zh": "计算 $2\\frac{1}{3} \\div \\frac{7}{9}$。以最简分数形式给出答案。",
+        "solution": "1. Convert mixed number to improper fraction: $2\\frac{1}{3} = \\frac{7}{3}$.\n2. Divide by multiplying by the reciprocal: $\\frac{7}{3} \\times \\frac{9}{7}$.\n3. Simplify: $\\frac{7}{3} \\times \\frac{9}{7} = \\frac{9}{3} = 3$.",
+        "solution_zh": "1. 将带分数转换为假分数：$2\\frac{1}{3} = \\frac{7}{3}$。\n2. 除法变为乘以倒数：$\\frac{7}{3} \\times \\frac{9}{7}$。\n3. 化简：$\\frac{7}{3} \\times \\frac{9}{7} = \\frac{9}{3} = 3$。",
+        "source": "0580/21/O/N/22"
+      }
+    ]
+  },
+  {
+    "id": "kp-1.5-02",
+    "addQuiz": [],
+    "addExamples": [
+      {
+        "patternId": "ep-recurring",
+        "question": "Write the recurring decimal $0.\\dot{4}\\dot{5}$ as a fraction in its simplest form.",
+        "question_zh": "将循环小数 $0.\\dot{4}\\dot{5}$ 写成最简分数。",
+        "solution": "Let $x = 0.454545...$\nThen $100x = 45.454545...$\nSubtracting the first equation from the second:\n$100x - x = 45.4545... - 0.4545...$\n$99x = 45$\n$x = \\frac{45}{99} = \\frac{5}{11}$.",
+        "solution_zh": "设 $x = 0.454545...$\n则 $100x = 45.454545...$\n两式相减：\n$100x - x = 45.4545... - 0.4545...$\n$99x = 45$\n$x = \\frac{45}{99} = \\frac{5}{11}$。",
+        "source": "0580/22/M/J/21"
+      }
+    ]
+  },
+  {
+    "id": "kp-1.6-01",
+    "addQuiz": [],
+    "addExamples": [
+      {
+        "patternId": "ep-evaluate",
+        "question": "Work out: $12 + 6 \\div (5 - 2)$.",
+        "question_zh": "计算：$12 + 6 \\div (5 - 2)$。",
+        "solution": "1. Brackets first: $5 - 2 = 3$.\n2. Division next: $6 \\div 3 = 2$.\n3. Addition last: $12 + 2 = 14$.",
+        "solution_zh": "1. 先算括号：$5 - 2 = 3$。\n2. 再算除法：$6 \\div 3 = 2$。\n3. 最后算加法：$12 + 2 = 14$。",
+        "source": "0580/11/O/N/22"
+      }
+    ]
+  },
+  {
+    "id": "kp-1.7-01",
+    "addQuiz": [],
+    "addExamples": [
+      {
+        "patternId": "ep-round",
+        "question": "Round 0.0045672 to 3 significant figures.",
+        "question_zh": "将 0.0045672 保留 3 位有效数字。",
+        "solution": "The first significant figure is 4.\nThe first three are 4, 5, 6.\nThe next digit is 7, so we round up the 6 to 7.\nAnswer: 0.00457.",
+        "solution_zh": "第一个有效数字是 4。\n前三位是 4, 5, 6。\n下一位数字是 7，所以将 6 进位到 7。\n答案：0.00457。",
+        "source": "0580/23/M/J/21"
+      }
+    ]
+  },
+  {
+    "id": "kp-1.7-02",
+    "addQuiz": [],
+    "addExamples": [
+      {
+        "patternId": "ep-calc-bounds",
+        "question": "The mass of a box is $5.4\\text{ kg}$, correct to the nearest $0.1\\text{ kg}$. Find the lower bound for the total mass of 10 such boxes.",
+        "question_zh": "一个盒子的质量是 $5.4\\text{ kg}$，精确到 $0.1\\text{ kg}$。求10个这样盒子的总质量下界。",
+        "solution": "The degree of accuracy is $0.1$, so the error interval is $\\pm 0.05$.\nLower bound of one box = $5.4 - 0.05 = 5.35\\text{ kg}$.\nLower bound of 10 boxes = $10 \\times 5.35 = 53.5\\text{ kg}$.",
+        "solution_zh": "精确度为 $0.1$，所以误差范围是 $\\pm 0.05$。\n一个盒子的质量下界 = $5.4 - 0.05 = 5.35\\text{ kg}$。\n10个盒子的总质量下界 = $10 \\times 5.35 = 53.5\\text{ kg}$。",
+        "source": "0580/22/F/M/21"
+      }
+    ]
+  },
+  {
+    "id": "kp-1.8-01",
+    "addQuiz": [],
+    "addExamples": [
+      {
+        "patternId": "ep-calc",
+        "question": "Work out $(4 \\times 10^{-5}) \\times (6 \\times 10^{12})$. Give your answer in standard form.",
+        "question_zh": "计算 $(4 \\times 10^{-5}) \\times (6 \\times 10^{12})$。以标准式给出答案。",
+        "solution": "$(4 \\times 6) \\times (10^{-5} \\times 10^{12}) = 24 \\times 10^7$.\nIn standard form, the first number must be between 1 and 10.\n$24 \\times 10^7 = 2.4 \\times 10^1 \\times 10^7 = 2.4 \\times 10^8$.",
+        "solution_zh": "$(4 \\times 6) \\times (10^{-5} \\times 10^{12}) = 24 \\times 10^7$。\n在标准式中，第一个数必须在1到10之间。\n$24 \\times 10^7 = 2.4 \\times 10^1 \\times 10^7 = 2.4 \\times 10^8$。",
+        "source": "0580/21/M/J/22"
+      }
+    ]
+  },
+  {
+    "id": "kp-1.9-01",
+    "addQuiz": [
+      {
+        "q": "Evaluate: $20 - 2 \\times (3 + 4)$",
+        "q_zh": "计算：$20 - 2 \\times (3 + 4)$",
+        "o": [
+          "126",
+          "6",
+          "11",
+          "14"
+        ],
+        "a": 1,
+        "e": "BIDMAS: $20 - 2 \\times 7 = 20 - 14 = 6$.",
+        "e_zh": "BIDMAS原则：$20 - 2 \\times 7 = 20 - 14 = 6$。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-calc-order",
+        "question": "Calculate $\\frac{4 + 8 \\times 2}{2^2 + 1}$.",
+        "question_zh": "计算 $\\frac{4 + 8 \\times 2}{2^2 + 1}$。",
+        "solution": "Numerator: $4 + (8 \\times 2) = 4 + 16 = 20$.\nDenominator: $2^2 + 1 = 4 + 1 = 5$.\nFraction: $\\frac{20}{5} = 4$.",
+        "solution_zh": "分子：$4 + (8 \\times 2) = 4 + 16 = 20$。\n分母：$2^2 + 1 = 4 + 1 = 5$。\n分数值：$\\frac{20}{5} = 4$。",
+        "source": "Adapted from 0580/11/M/J/20"
+      }
+    ]
+  },
+  {
+    "id": "kp-1.10-01",
+    "addQuiz": [
+      {
+        "q": "Estimate the value of $\\frac{19.8 \\times 3.02}{0.49}$ by rounding each number to 1 significant figure.",
+        "q_zh": "通过将每个数保留 1 位有效数字，估算 $\\frac{19.8 \\times 3.02}{0.49}$ 的值。",
+        "o": [
+          "12",
+          "120",
+          "1200",
+          "1.2"
+        ],
+        "a": 1,
+        "e": "Rounding: $20 \\times 3 \\div 0.5 = 60 \\div 0.5 = 120$.",
+        "e_zh": "舍入：$20 \\times 3 \\div 0.5 = 60 \\div 0.5 = 120$。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-estimate-calc",
+        "question": "Estimate the value of $\\frac{\\sqrt{103.4}}{9.72 - 5.14}$ by rounding to the nearest integer.",
+        "question_zh": "通过舍入到最接近的整数，估算 $\\frac{\\sqrt{103.4}}{9.72 - 5.14}$ 的值。",
+        "solution": "Rounding to integers: $\\sqrt{103.4} \\approx \\sqrt{100} = 10$.\n$9.72 - 5.14 \\approx 10 - 5 = 5$.\nEstimate = $\\frac{10}{5} = 2$.",
+        "solution_zh": "舍入到整数：$\\sqrt{103.4} \\approx \\sqrt{100} = 10$。\n$9.72 - 5.14 \\approx 10 - 5 = 5$。\n估算值 = $\\frac{10}{5} = 2$。",
+        "source": "Adapted from 0580/22/O/N/21"
+      }
+    ]
+  },
+  {
+    "id": "kp-1.11-01",
+    "addQuiz": [
+      {
+        "q": "A side of a square is $6\\text{ cm}$ correct to the nearest centimeter. What is the lower bound of its area?",
+        "q_zh": "一个正方形的边长是 $6\\text{ cm}$（精确到厘米）。其面积的下界是多少？",
+        "o": [
+          "30.25",
+          "36",
+          "25",
+          "30.25"
+        ],
+        "a": 0,
+        "e": "Lower bound of side = $5.5\\text{ cm}$. Area LB = $5.5^2 = 30.25\\text{ cm}^2$.",
+        "e_zh": "边长的下界 = $5.5\\text{ cm}$。面积下界 = $5.5^2 = 30.25\\text{ cm}^2$。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-find-bounds",
+        "question": "A runner completes a 400m race in 52 seconds. Both values are correct to the nearest unit. Calculate the upper bound for the runner's average speed.",
+        "question_zh": "一名跑者在52秒内跑完400米。两个数值均精确到个位数。计算该跑者平均速度的上界。",
+        "solution": "Distance LB = 399.5m, UB = 400.5m. \nTime LB = 51.5s, UB = 52.5s. \nSpeed UB = $\\frac{\\text{Distance UB}}{\\text{Time LB}} = \\frac{400.5}{51.5} \\approx 7.7767... \\text{ m/s}$.",
+        "solution_zh": "路程下界 = 399.5m，上界 = 400.5m。\n时间下界 = 51.5s，上界 = 52.5s。\n速度上界 = $\\frac{\\text{路程上界}}{\\text{时间下界}} = \\frac{400.5}{51.5} \\approx 7.7767... \\text{ m/s}$。",
+        "source": "0580/42/M/J/22"
+      }
+    ]
+  },
+  {
+    "id": "kp-1.12-01",
+    "addQuiz": [
+      {
+        "q": "Divide $120$ in the ratio $3:5$. What is the smaller share?",
+        "q_zh": "将 $120$ 按 $3:5$ 的比例分配。较小的一份是多少？",
+        "o": [
+          "45",
+          "75",
+          "15",
+          "40"
+        ],
+        "a": 0,
+        "e": "Total parts = $3+5=8$. One part = $120/8 = 15$. Smaller part = $15 \\times 3 = 45$.",
+        "e_zh": "总份数 = $3+5=8$。一份 = $120/8 = 15$。较小的一份 = $15 \\times 3 = 45$。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-share-ratio",
+        "question": "The ratio of boys to girls in a school is $4:7$. If there are 280 boys, how many students are there in total?",
+        "question_zh": "学校里男生和女生的比例是 $4:7$。如果有280名男生，总共有多少名学生？",
+        "solution": "4 parts = 280 boys.\n1 part = $280 \\div 4 = 70$.\nTotal parts = $4 + 7 = 11$.\nTotal students = $11 \\times 70 = 770$.",
+        "solution_zh": "4 份 = 280 名男生。\n1 份 = $280 \\div 4 = 70$。\n总份数 = $4 + 7 = 11$。\n总学生数 = $11 \\times 70 = 770$。",
+        "source": "0580/22/F/M/21"
+      }
+    ]
+  },
+  {
+    "id": "kp-1.13-01",
+    "addQuiz": [
+      {
+        "q": "A shirt is sold for $\\$24$ after a $20\\%$ discount. What was the original price?",
+        "q_zh": "一件衬衫在打八折（优惠 $20\\%$）后售价为 $\\$24$。原价是多少？",
+        "o": [
+          "$\\$30$",
+          "$\\$28.80$",
+          "$\\$19.20$",
+          "$\\$44$"
+        ],
+        "a": 0,
+        "e": "Let original price be $x$. $0.8x = 24$, so $x = 24 / 0.8 = 30$.",
+        "e_zh": "设原价为 $x$。$0.8x = 24$，所以 $x = 24 / 0.8 = 30$。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-reverse-pct",
+        "question": "A car's value increases by $15\\%$ to $\\$13,800$. Calculate the value before the increase.",
+        "question_zh": "一辆汽车的价格上涨了 $15\\%$，达到 $\\$13,800$。计算上涨前的价格。",
+        "solution": "Let the original value be $V$.\n$V \\times (1 + 0.15) = 13,800$\n$1.15V = 13,800$\n$V = 13,800 \\div 1.15 = \\$12,000$.",
+        "solution_zh": "设原价为 $V$。\n$V \\times (1 + 0.15) = 13,800$\n$1.15V = 13,800$\n$V = 13,800 \\div 1.15 = \\$12,000$。",
+        "source": "0580/21/O/N/20"
+      }
+    ]
+  },
+  {
+    "id": "kp-1.14-01",
+    "addQuiz": [],
+    "addExamples": [
+      {
+        "patternId": "ep-1.14-01",
+        "question": "Use your calculator to find the value of $\\frac{\\sqrt{3.4^2 + 5.2^2}}{1.8}$. Write down all the figures on your calculator display.",
+        "question_zh": "使用计算器计算 $\\frac{\\sqrt{3.4^2 + 5.2^2}}{1.8}$ 的值。写下计算器显示屏上的所有数字。",
+        "solution": "1. Calculate $3.4^2 + 5.2^2 = 11.56 + 27.04 = 38.6$.\n2. Square root: $\\sqrt{38.6} \\approx 6.2128898...$\n3. Divide by 1.8: $\\approx 3.4516054...$\nResult: 3.4516054... (exact display depends on model).",
+        "solution_zh": "1. 计算 $3.4^2 + 5.2^2 = 11.56 + 27.04 = 38.6$。\n2. 开平方：$\\sqrt{38.6} \\approx 6.2128898...$\n3. 除以 1.8：$\\approx 3.4516054...$\n结果：3.4516054...（具体显示取决于型号）。",
+        "source": "Adapted from 0580/12/M/J/22"
+      }
+    ]
+  },
+  {
+    "id": "kp-1.15-01",
+    "addQuiz": [
+      {
+        "q": "A car travels 150km in 2 hours and 30 minutes. What is its average speed?",
+        "q_zh": "一辆车在2小时30分钟内行驶了150公里。它的平均速度是多少？",
+        "o": [
+          "75 km/h",
+          "60 km/h",
+          "100 km/h",
+          "50 km/h"
+        ],
+        "a": 1,
+        "e": "Time = 2.5 hours. Speed = $150 / 2.5 = 60$ km/h.",
+        "e_zh": "时间 = 2.5 小时。速度 = $150 / 2.5 = 60$ km/h。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-calc-speed",
+        "question": "A train travels at an average speed of 120 km/h for 45 minutes. How far does it travel?",
+        "question_zh": "一列火车以120 km/h的平均速度行驶了45分钟。它行驶了多远？",
+        "solution": "1. Convert time to hours: 45 minutes = $45/60 = 0.75$ hours.\n2. Distance = Speed $\\times$ Time = $120 \\times 0.75 = 90$ km.",
+        "solution_zh": "1. 将时间转换为小时：45 分钟 = $45/60 = 0.75$ 小时。\n2. 路程 = 速度 $\\times$ 时间 = $120 \\times 0.75 = 90$ km。",
+        "source": "0580/13/O/N/20"
+      }
+    ]
+  },
+  {
+    "id": "kp-1.16-01",
+    "addQuiz": [
+      {
+        "q": "Calculate the simple interest on $\\$500$ at $4\\%$ per year for 3 years.",
+        "q_zh": "计算 $\\$500$ 以 $4\\%$ 的年利率存放3年的单利。",
+        "o": [
+          "$\\$60$",
+          "$\\$560$",
+          "$\\$20$",
+          "$\\$15$"
+        ],
+        "a": 0,
+        "e": "Simple Interest $I = PRT / 100 = 500 \\times 4 \\times 3 / 100 = 60$.",
+        "e_zh": "单利 $I = PRT / 100 = 500 \\times 4 \\times 3 / 100 = 60$。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-calc-interest",
+        "question": "Invest $\\$2000$ at a rate of $2\\%$ per year compound interest. Calculate the total value after 5 years.",
+        "question_zh": "将 $\\$2000$ 以 $2\\%$ 的年复利率进行投资。计算5年后的总价值。",
+        "solution": "$A = P(1 + r/100)^n = 2000(1 + 0.02)^5$\n$A = 2000(1.02)^5 \\approx 2000 \\times 1.10408 = \\$2208.16$.",
+        "solution_zh": "$A = P(1 + r/100)^n = 2000(1 + 0.02)^5$\n$A = 2000(1.02)^5 \\approx 2000 \\times 1.10408 = \\$2208.16$。",
+        "source": "0580/41/O/N/21"
+      }
+    ]
+  },
+  {
+    "id": "kp-1.17-01",
+    "addQuiz": [
+      {
+        "q": "A population of 1000 bacteria increases by $10\\%$ every hour. What is the population after 2 hours?",
+        "q_zh": "1000个细菌的种群每小时增加 $10\\%$。2小时后种群数量是多少？",
+        "o": [
+          "1200",
+          "1210",
+          "1100",
+          "1020"
+        ],
+        "a": 1,
+        "e": "Population = $1000 \\times (1.1)^2 = 1000 \\times 1.21 = 1210$.",
+        "e_zh": "种群数 = $1000 \\times (1.1)^2 = 1000 \\times 1.21 = 1210$。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-depreciation",
+        "question": "A machine costs $\\$5000$. Its value depreciates exponentially at a rate of $8\\%$ per year. Calculate its value after 4 years.",
+        "question_zh": "一台机器价值 $\\$5000$。其价值以每年 $8\\%$ 的速率呈指数级贬值。计算4年后的价值。",
+        "solution": "$V = P(1 - r/100)^n = 5000(1 - 0.08)^4$\n$V = 5000(0.92)^4 \\approx 5000 \\times 0.71639 = \\$3581.96$.",
+        "solution_zh": "$V = P(1 - r/100)^n = 5000(1 - 0.08)^4$\n$V = 5000(0.92)^4 \\approx 5000 \\times 0.71639 = \\$3581.96$。",
+        "source": "0580/42/M/J/21"
+      }
+    ]
+  },
+  {
+    "id": "kp-1.18-01",
+    "addQuiz": [
+      {
+        "q": "Simplify $\\sqrt{48}$.",
+        "q_zh": "化简 $\\sqrt{48}$。",
+        "o": [
+          "$6\\sqrt{8}$",
+          "$2\\sqrt{12}$",
+          "$4\\sqrt{3}$",
+          "$16\\sqrt{3}$"
+        ],
+        "a": 2,
+        "e": "$\\sqrt{48} = \\sqrt{16 \\times 3} = \\sqrt{16} \\times \\sqrt{3} = 4\\sqrt{3}$.",
+        "e_zh": "$\\sqrt{48} = \\sqrt{16 \\times 3} = \\sqrt{16} \\times \\sqrt{3} = 4\\sqrt{3}$。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-simplify-surd",
+        "question": "Rationalise the denominator and simplify: $\\frac{10}{\\sqrt{5}}$.",
+        "question_zh": "分母有理化并化简：$\\frac{10}{\\sqrt{5}}$。",
+        "solution": "Multiply numerator and denominator by $\\sqrt{5}$:\n$\\frac{10}{\\sqrt{5}} \\times \\frac{\\sqrt{5}}{\\sqrt{5}} = \\frac{10\\sqrt{5}}{5} = 2\\sqrt{5}$.",
+        "solution_zh": "分子分母同时乘以 $\\sqrt{5}$：\n$\\frac{10}{\\sqrt{5}} \\times \\frac{\\sqrt{5}}{\\sqrt{5}} = \\frac{10\\sqrt{5}}{5} = 2\\sqrt{5}$。",
+        "source": "Adapted from 0580/22/M/J/22"
+      }
+    ]
+  }
+]

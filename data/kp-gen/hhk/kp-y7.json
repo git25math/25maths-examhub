@@ -1,0 +1,750 @@
+[
+  {
+    "id": "kp-Y7.1-01",
+    "section": "Y7.1",
+    "order": 1,
+    "title": "Multiplication of Fractions",
+    "title_zh": "分数的乘法",
+    "explanation": {
+      "en": "**Multiplying fractions** involves multiplying the numerators together and the denominators together. The formula is $\\frac{a}{b} \\times \\frac{c}{d} = \\frac{a \\times c}{b \\times d}$.\n\n**Simplification** is often easier if you cross-cancel common factors before multiplying. This keeps the numbers smaller and more manageable.\n\n**Mixed numbers** must be converted into improper fractions before they can be multiplied. For example, $1\\frac{1}{2}$ becomes $\\frac{3}{2}$.",
+      "zh": "**分数的乘法**涉及将分子相乘作为新分子，分母相乘作为新分母。公式为：$\\frac{a}{b} \\times \\frac{c}{d} = \\frac{a \\times c}{b \\times d}$。\n\n**约分**如果在乘法之前进行交叉约分（抵消公因数），通常会更简单。这可以使数字保持较小且易于计算。\n\n**带分数**在相乘之前必须转换为假分数。例如，$1\\frac{1}{2}$ 变为 $\\frac{3}{2}$。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-multiply-simple",
+        "label": "Multiply proper fractions",
+        "label_zh": "真分数相乘",
+        "description": "Calculate the product of two or more proper fractions and simplify the result.",
+        "description_zh": "计算两个或多个真分数的乘积并化简结果。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-multiply-simple",
+        "question": "Calculate $\\frac{3}{4} \\times \\frac{2}{5}$ and give your answer in its simplest form.",
+        "question_zh": "计算 $\\frac{3}{4} \\times \\frac{2}{5}$ 并给出最简形式的答案。",
+        "solution": "**Step 1:** Multiply the numerators: $3 \\times 2 = 6$.\n\n**Step 2:** Multiply the denominators: $4 \\times 5 = 20$.\n\n**Step 3:** Simplify the fraction $\\frac{6}{20}$ by dividing both by 2: $\\frac{3}{10}$.\n\n**Answer:** $\\frac{3}{10}$",
+        "solution_zh": "**步骤 1：** 分子相乘：$3 \\times 2 = 6$。\n\n**步骤 2：** 分母相乘：$4 \\times 5 = 20$。\n\n**步骤 3：** 通过同时除以 2 来化简分数 $\\frac{6}{20}$：$\\frac{3}{10}$。\n\n**答案：** $\\frac{3}{10}$",
+        "source": "Year 7 Assessment"
+      },
+      {
+        "patternId": "ep-multiply-simple",
+        "question": "Work out $1\\frac{1}{3} \\times \\frac{3}{8}$.",
+        "question_zh": "计算 $1\\frac{1}{3} \\times \\frac{3}{8}$。",
+        "solution": "**Step 1:** Convert $1\\frac{1}{3}$ to an improper fraction: $\\frac{4}{3}$.\n\n**Step 2:** Multiply: $\\frac{4}{3} \\times \\frac{3}{8}$.\n\n**Step 3:** Cross-cancel the 3s and the 4/8: $\\frac{1}{1} \\times \\frac{1}{2} = \\frac{1}{2}$.\n\n**Answer:** $\\frac{1}{2}$",
+        "solution_zh": "**步骤 1：** 将 $1\\frac{1}{3}$ 转换为假分数：$\\frac{4}{3}$。\n\n**步骤 2：** 相乘：$\\frac{4}{3} \\times \\frac{3}{8}$。\n\n**步骤 3：** 交叉约分 3 和 4/8：$\\frac{1}{1} \\times \\frac{1}{2} = \\frac{1}{2}$。\n\n**答案：** $\\frac{1}{2}$",
+        "source": "Adapted from Y7 curriculum"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "What is $\\frac{2}{7} \\times \\frac{3}{4}$ in its simplest form?",
+        "q_zh": "$\\frac{2}{7} \\times \\frac{3}{4}$ 的最简形式是多少？",
+        "o": [
+          "$\\frac{5}{11}$",
+          "$\\frac{6}{28}$",
+          "$\\frac{3}{14}$",
+          "$\\frac{6}{11}$"
+        ],
+        "a": 2,
+        "e": "$\\frac{2 \\times 3}{7 \\times 4} = \\frac{6}{28}$. Dividing both by 2 gives $\\frac{3}{14}$.",
+        "e_zh": "$\\frac{2 \\times 3}{7 \\times 4} = \\frac{6}{28}$。分子分母同时除以 2 得到 $\\frac{3}{14}$。"
+      },
+      {
+        "q": "Calculate $\\frac{5}{6} \\times 12$.",
+        "q_zh": "计算 $\\frac{5}{6} \\times 12$。",
+        "o": [
+          "10",
+          "72",
+          "$\\frac{60}{6}$",
+          "12"
+        ],
+        "a": 0,
+        "e": "Think of 12 as $\\frac{12}{1}$. So $\\frac{5 \\times 12}{6 \\times 1} = \\frac{60}{6} = 10$.",
+        "e_zh": "将 12 看作 $\\frac{12}{1}$。所以 $\\frac{5 \\times 12}{6 \\times 1} = \\frac{60}{6} = 10$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-Y7.2-01",
+    "section": "Y7.2",
+    "order": 1,
+    "title": "Division of Fractions",
+    "title_zh": "分数的除法",
+    "explanation": {
+      "en": "**Dividing fractions** is performed using the 'Keep-Change-Flip' rule. Keep the first fraction, change the division sign to multiplication, and flip the second fraction to its reciprocal.\n\n**Reciprocal** of a fraction $\\frac{a}{b}$ is $\\frac{b}{a}$. For a whole number $n$, the reciprocal is $\\frac{1}{n}$.\n\n**Standard Algorithm**: $\\frac{a}{b} \\div \\frac{c}{d} = \\frac{a}{b} \\times \\frac{d}{c}$.",
+      "zh": "**分数的除法**使用“保持-改变-翻转”（Keep-Change-Flip）规则进行。保持第一个分数不变，将除号改为乘号，然后将第二个分数翻转为其倒数。\n\n**倒数**：分数 $\\frac{a}{b}$ 的倒数是 $\\frac{b}{a}$。对于整数 $n$，倒数是 $\\frac{1}{n}$。\n\n**标准算法**：$\\frac{a}{b} \\div \\frac{c}{d} = \\frac{a}{b} \\times \\frac{d}{c}$。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-divide-fractions",
+        "label": "Divide two fractions",
+        "label_zh": "两个分数相除",
+        "description": "Use the reciprocal rule to divide fractions and simplify.",
+        "description_zh": "利用倒数规则进行分数除法并化简。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-divide-fractions",
+        "question": "Find the value of $\\frac{2}{3} \\div \\frac{4}{9}$.",
+        "question_zh": "求 $\\frac{2}{3} \\div \\frac{4}{9}$ 的值。",
+        "solution": "**Step 1:** Keep $\\frac{2}{3}$, Change $\\div$ to $\\times$, Flip $\\frac{4}{9}$ to $\\frac{9}{4}$.\n\n**Step 2:** Calculation: $\\frac{2}{3} \\times \\frac{9}{4} = \\frac{18}{12}$.\n\n**Step 3:** Simplify $\\frac{18}{12}$ to $\\frac{3}{2}$ or $1\\frac{1}{2}$.\n\n**Answer:** $1\\frac{1}{2}$",
+        "solution_zh": "**步骤 1：** 保持 $\\frac{2}{3}$，将 $\\div$ 改为 $\\times$，将 $\\frac{4}{9}$ 翻转为 $\\frac{9}{4}$。\n\n**步骤 2：** 计算：$\\frac{2}{3} \\times \\frac{9}{4} = \\frac{18}{12}$。\n\n**步骤 3：** 将 $\\frac{18}{12}$ 化简为 $\\frac{3}{2}$ 或 $1\\frac{1}{2}$。\n\n**答案：** $1\\frac{1}{2}$",
+        "source": "Year 7 Assessment"
+      },
+      {
+        "patternId": "ep-divide-fractions",
+        "question": "Divide 5 by $\\frac{1}{4}$.",
+        "question_zh": "计算 $5 \\div \\frac{1}{4}$。",
+        "solution": "**Step 1:** Write 5 as $\\frac{5}{1}$.\n\n**Step 2:** Multiply by the reciprocal of $\\frac{1}{4}$, which is 4.\n\n**Step 3:** $5 \\times 4 = 20$.\n\n**Answer:** 20",
+        "solution_zh": "**步骤 1：** 将 5 写成 $\\frac{5}{1}$。\n\n**步骤 2：** 乘以 $\\frac{1}{4}$ 的倒数，即 4。\n\n**步骤 3：** $5 \\times 4 = 20$。\n\n**答案：** 20",
+        "source": "Adapted from Y7 curriculum"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "What is the reciprocal of $\\frac{5}{8}$?",
+        "q_zh": "$\\frac{5}{8}$ 的倒数是多少？",
+        "o": [
+          "$\\frac{8}{5}$",
+          "$1\\frac{3}{5}$",
+          "0.625",
+          "Both A and B"
+        ],
+        "a": 3,
+        "e": "The reciprocal of $\\frac{5}{8}$ is $\\frac{8}{5}$, which can also be written as the mixed number $1\\frac{3}{5}$.",
+        "e_zh": "$\\frac{5}{8}$ 的倒数是 $\\frac{8}{5}$，也可以写成带分数 $1\\frac{3}{5}$。"
+      },
+      {
+        "q": "Calculate $\\frac{3}{5} \\div 3$.",
+        "q_zh": "计算 $\\frac{3}{5} \\div 3$。",
+        "o": [
+          "$\\frac{9}{5}$",
+          "$\\frac{1}{5}$",
+          "$\\frac{3}{15}$",
+          "1"
+        ],
+        "a": 1,
+        "e": "$\\frac{3}{5} \\div 3 = \\frac{3}{5} \\times \\frac{1}{3} = \\frac{3}{15} = \\frac{1}{5}$.",
+        "e_zh": "$\\frac{3}{5} \\div 3 = \\frac{3}{5} \\times \\frac{1}{3} = \\frac{3}{15} = \\frac{1}{5}$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-Y7.3-01",
+    "section": "Y7.3",
+    "order": 1,
+    "title": "Negative Numbers",
+    "title_zh": "负数",
+    "explanation": {
+      "en": "**Negative numbers** are numbers less than zero, represented with a minus sign ($-$).\n\n**Addition and Subtraction** can be visualized on a number line. Adding a negative is the same as subtracting a positive: $a + (-b) = a - b$. Subtracting a negative is the same as adding a positive: $a - (-b) = a + b$.\n\n**Multiplication and Division** follow sign rules: Same signs result in a positive ($+ \\times + = +$ and $- \\times - = +$). Different signs result in a negative ($+ \\times - = -$ and $- \\times + = -$).",
+      "zh": "**负数**是小于零的数，用减号（$-$）表示。\n\n**加法和减法**可以在数轴上直观表示。加上一个负数等于减去一个正数：$a + (-b) = a - b$。减去一个负数等于加上一个正数：$a - (-b) = a + b$。\n\n**乘法和除法**遵循符号规则：同号得正（$+ \\times + = +$ 和 $- \\times - = +$），异号得负（$+ \\times - = -$ 和 $- \\times + = -$）。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-neg-calc",
+        "label": "Calculate with negative numbers",
+        "label_zh": "负数的计算",
+        "description": "Perform basic arithmetic operations involving negative integers.",
+        "description_zh": "进行涉及负整数的基础四则运算。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-neg-calc",
+        "question": "Calculate: (a) $-5 + 8$ (b) $3 - (-7)$ (c) $-4 \\times (-3)$",
+        "question_zh": "计算：(a) $-5 + 8$ (b) $3 - (-7)$ (c) $-4 \\times (-3)$",
+        "solution": "(a) Start at $-5$ on the number line, move 8 steps right: $3$.\n(b) $3 - (-7) = 3 + 7 = 10$.\n(c) Two negatives multiply to a positive: $4 \\times 3 = 12$.\n\n**Answers:** (a) 3 (b) 10 (c) 12",
+        "solution_zh": "(a) 在数轴上从 $-5$ 开始，向右移动 8 步：$3$。\n(b) $3 - (-7) = 3 + 7 = 10$。\n(c) 两个负数相乘得正数：$4 \\times 3 = 12$。\n\n**答案：** (a) 3 (b) 10 (c) 12",
+        "source": "Year 7 Assessment"
+      },
+      {
+        "patternId": "ep-neg-calc",
+        "question": "Work out $-20 \\div 5$.",
+        "question_zh": "计算 $-20 \\div 5$。",
+        "solution": "**Step 1:** Identify the signs. $-20$ is negative, $5$ is positive (different signs).\n\n**Step 2:** The result will be negative.\n\n**Step 3:** $20 \\div 5 = 4$. So, the answer is $-4$.\n\n**Answer:** $-4$",
+        "solution_zh": "**步骤 1：** 识别符号。$-20$ 是负数，$5$ 是正数（异号）。\n\n**步骤 2：** 结果将为负数。\n\n**步骤 3：** $20 \\div 5 = 4$。所以答案是 $-4$。\n\n**答案：** $-4$",
+        "source": "Adapted from Y7 curriculum"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "What is $-12 - (-4)$?",
+        "q_zh": "$-12 - (-4)$ 是多少？",
+        "o": [
+          "-16",
+          "-8",
+          "8",
+          "16"
+        ],
+        "a": 1,
+        "e": "$-12 - (-4) = -12 + 4 = -8$.",
+        "e_zh": "$-12 - (-4) = -12 + 4 = -8$。"
+      },
+      {
+        "q": "Which of these expressions gives a negative result?",
+        "q_zh": "下列哪个表达式的结果是负数？",
+        "o": [
+          "$-3 \\times (-2)$",
+          "$-10 \\div (-2)$",
+          "$-5 + 2$",
+          "$-4 - (-6)$"
+        ],
+        "a": 2,
+        "e": "A: $(-3) \\times (-2) = 6$; B: $(-10) \\div (-2) = 5$; C: $-5 + 2 = -3$; D: $-4 + 6 = 2$. Only C is negative.",
+        "e_zh": "A: $(-3) \\times (-2) = 6$; B: $(-10) \\div (-2) = 5$; C: $-5 + 2 = -3$; D: $-4 + 6 = 2$。只有 C 的结果是负数。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-Y7.4-01",
+    "section": "Y7.4",
+    "order": 1,
+    "title": "Position and Direction",
+    "title_zh": "位置和方向",
+    "explanation": {
+      "en": "**Coordinates** are used to describe position on a grid. They are written as $(x, y)$, where $x$ is the horizontal position and $y$ is the vertical position.\n\n**Four Quadrants** are formed by the x-axis and y-axis. The origin is $(0,0)$.\n- 1st Quadrant: $(+, +)$\n- 2nd Quadrant: $(-, +)$\n- 3rd Quadrant: $(-, -)$\n- 4th Quadrant: $(+, -)$\n\n**Translations** describe moving a shape by a certain distance in a certain direction, usually given as a vector $\\begin{pmatrix} x \\\\ y \\end{pmatrix}$.",
+      "zh": "**坐标**用于描述网格上的位置。坐标写为 $(x, y)$，其中 $x$ 是水平位置，$y$ 是垂直位置。\n\n**四个象限**由 x 轴和 y 轴形成。原点是 $(0,0)$。\n- 第一象限：$(+, +)$\n- 第二象限：$(-, +)$\n- 第三象限：$(-, -)$\n- 第四象限：$(+, -)$\n\n**平移**描述了将形状沿特定方向移动特定距离，通常以向量 $\\begin{pmatrix} x \\\\ y \\end{pmatrix}$ 的形式给出。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-coords",
+        "label": "Read and plot coordinates",
+        "label_zh": "读取并绘制坐标",
+        "description": "Identify the coordinates of points or plot points in all four quadrants.",
+        "description_zh": "识别点的坐标或在所有四个象限中绘制点。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-coords",
+        "question": "Point $A$ is at $(3, -2)$. If it is translated 4 units left and 5 units up, what are its new coordinates?",
+        "question_zh": "点 $A$ 的坐标为 $(3, -2)$。如果将其向左平移 4 个单位，向上平移 5 个单位，它的新坐标是多少？",
+        "solution": "**Step 1:** '4 units left' means subtract 4 from the x-coordinate: $3 - 4 = -1$.\n\n**Step 2:** '5 units up' means add 5 to the y-coordinate: $-2 + 5 = 3$.\n\n**Step 3:** Combine the new coordinates.\n\n**Answer:** $(-1, 3)$",
+        "solution_zh": "**步骤 1：** “向左 4 个单位”意味着从 x 坐标中减去 4：$3 - 4 = -1$。\n\n**步骤 2：** “向上 5 个单位”意味着在 y 坐标中加上 5：$-2 + 5 = 3$。\n\n**步骤 3：** 组合新坐标。\n\n**答案：** $(-1, 3)$",
+        "source": "Year 7 Assessment"
+      },
+      {
+        "patternId": "ep-coords",
+        "question": "In which quadrant does the point $(-4, -7)$ lie?",
+        "question_zh": "点 $(-4, -7)$ 位于哪个象限？",
+        "solution": "**Step 1:** Check the sign of the x-coordinate: negative.\n\n**Step 2:** Check the sign of the y-coordinate: negative.\n\n**Step 3:** Both signs being negative corresponds to the 3rd Quadrant.\n\n**Answer:** 3rd Quadrant",
+        "solution_zh": "**步骤 1：** 检查 x 坐标的符号：负号。\n\n**步骤 2：** 检查 y 坐标的符号：负号。\n\n**步骤 3：** 两个符号都为负对应于第三象限。\n\n**答案：** 第三象限",
+        "source": "Adapted from Y7 curriculum"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "What are the coordinates of the origin?",
+        "q_zh": "原点的坐标是多少？",
+        "o": [
+          "$(1, 1)$",
+          "$(0, 0)$",
+          "$(0, 1)$",
+          "$(1, 0)$"
+        ],
+        "a": 1,
+        "e": "The origin is the point where the x-axis and y-axis intersect, defined as (0, 0).",
+        "e_zh": "原点是 x 轴和 y 轴相交的点，定义为 (0, 0)。"
+      },
+      {
+        "q": "Starting at $(2, 3)$, you move 5 units down. What is the new point?",
+        "q_zh": "从 $(2, 3)$ 开始，向下移动 5 个单位。新点坐标是多少？",
+        "o": [
+          "$(7, 3)$",
+          "$(2, 8)$",
+          "$(2, -2)$",
+          "$(-3, 3)$"
+        ],
+        "a": 2,
+        "e": "Moving down affects the y-coordinate: $3 - 5 = -2$. The x-coordinate remains 2.",
+        "e_zh": "向下移动会影响 y 坐标：$3 - 5 = -2$。x 坐标保持 2。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-Y7.5-01",
+    "section": "Y7.5",
+    "order": 1,
+    "title": "Ratio and Proportion",
+    "title_zh": "比率和比例",
+    "explanation": {
+      "en": "**Ratio** compares the sizes of two or more quantities. It is written using a colon, e.g., $2:3$.\n\n**Simplifying ratios** is done by dividing all parts of the ratio by their highest common factor. For example, $10:15$ simplifies to $2:3$.\n\n**Sharing in a ratio** involves three steps: \n1. Add the parts to find the total number of shares.\n2. Divide the total quantity by the number of shares to find the value of one share.\n3. Multiply each part of the ratio by the value of one share.",
+      "zh": "**比率**（Ratio）用于比较两个或多个量的大小。它使用冒号书写，例如 $2:3$。\n\n**化简比率**：通过将比率的所有部分除以它们的最大公因数来进行。例如，$10:15$ 化简为 $2:3$。\n\n**按比率分配**涉及三个步骤：\n1. 将各部分相加，求出总份数。\n2. 用总量除以总份数，求出一份的值。\n3. 用比率的各部分乘以一份的值。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-share-ratio",
+        "label": "Share an amount in a ratio",
+        "label_zh": "按比率分配数量",
+        "description": "Divide a given total into parts according to a specific ratio.",
+        "description_zh": "根据特定比率将给定的总量分为几部分。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-share-ratio",
+        "question": "Share £60 in the ratio $2:3$.",
+        "question_zh": "按 $2:3$ 的比率分配 £60。",
+        "solution": "**Step 1:** Total parts = $2 + 3 = 5$.\n\n**Step 2:** Value of 1 part = $£60 \\div 5 = £12$.\n\n**Step 3:** \n2 parts = $2 \\times £12 = £24$.\n3 parts = $3 \\times £12 = £36$.\n\n**Answer:** £24 and £36",
+        "solution_zh": "**步骤 1：** 总份数 = $2 + 3 = 5$。\n\n**步骤 2：** 一份的值 = $£60 \\div 5 = £12$。\n\n**步骤 3：** \n2 份 = $2 \\times £12 = £24$。\n3 份 = $3 \\times £12 = £36$。\n\n**答案：** £24 和 £36",
+        "source": "Year 7 Assessment"
+      },
+      {
+        "patternId": "ep-share-ratio",
+        "question": "Simplify the ratio $24cm : 36cm$.",
+        "question_zh": "化简比率 $24cm : 36cm$。",
+        "solution": "**Step 1:** Find the highest common factor of 24 and 36, which is 12.\n\n**Step 2:** Divide both sides by 12: $24 \\div 12 = 2$ and $36 \\div 12 = 3$.\n\n**Answer:** $2:3$",
+        "solution_zh": "**步骤 1：** 找出 24 和 36 的最大公因数，即 12。\n\n**步骤 2：** 两边同时除以 12：$24 \\div 12 = 2$，$36 \\div 12 = 3$。\n\n**答案：** $2:3$",
+        "source": "Adapted from Y7 curriculum"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "A map scale is $1:50000$. What distance on the ground does 2cm on the map represent?",
+        "q_zh": "地图比例尺为 $1:50000$。地图上的 2cm 代表地面上的实际距离是多少？",
+        "o": [
+          "100m",
+          "1km",
+          "10km",
+          "500m"
+        ],
+        "a": 1,
+        "e": "$2 \\times 50000 = 100000cm$. Converting to meters: $1000m$. Converting to kilometers: $1km$.",
+        "e_zh": "$2 \\times 50000 = 100000cm$。转换为米：$1000m$。转换为千米：$1km$。"
+      },
+      {
+        "q": "Simplify the ratio $1.5 : 3$.",
+        "q_zh": "化简比率 $1.5 : 3$。",
+        "o": [
+          "$15:30$",
+          "$3:6$",
+          "$1:2$",
+          "$5:10$"
+        ],
+        "a": 2,
+        "e": "Multiply both by 10 to get $15:30$, then divide by 15 to get $1:2$.",
+        "e_zh": "两边同时乘以 10 得到 $15:30$，然后除以 15 得到 $1:2$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-Y7.6-01",
+    "section": "Y7.6",
+    "order": 1,
+    "title": "Percentage",
+    "title_zh": "百分比",
+    "explanation": {
+      "en": "**Percentage** means 'out of 100'. It can be written as a fraction with denominator 100 or as a decimal.\n\n**Finding a percentage of an amount** can be done by converting the percentage to a decimal and multiplying: $x\\% \\text{ of } Y = \\frac{x}{100} \\times Y$.\n\n**Percentage increase or decrease** is calculated by finding the amount of change and then adding to or subtracting from the original value, or by using a multiplier (e.g., a 20% increase is a multiplier of 1.20).",
+      "zh": "**百分比**（Percentage）意为“百分之几”。它可以写成分母为 100 的分数，或写成小数。\n\n**求一个数量的百分之几**：可以通过将百分比转换为小数然后相乘来计算：$Y$ 的 $x\\% = \\frac{x}{100} \\times Y$。\n\n**百分比增长或减少**：通过计算变化量然后加到原值或从原值中减去来计算；或者使用倍数（例如，增长 20% 对应倍数 1.20）。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-perc-amount",
+        "label": "Find percentage of an amount",
+        "label_zh": "计算数量的百分比",
+        "description": "Calculate a specific percentage of a given value.",
+        "description_zh": "计算给定数值的特定百分比。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-perc-amount",
+        "question": "Calculate $15\\%$ of $80$.",
+        "question_zh": "计算 $80$ 的 $15\\%$。",
+        "solution": "**Method 1 (Decimal):** $0.15 \\times 80 = 12$.\n\n**Method 2 (Step-by-step):** \n$10\\%$ of $80 = 8$.\n$5\\%$ of $80 = 4$.\n$15\\% = 8 + 4 = 12$.\n\n**Answer:** 12",
+        "solution_zh": "**方法 1（小数）：** $0.15 \\times 80 = 12$。\n\n**方法 2（分步）：** \n$80$ 的 $10\\% = 8$。\n$80$ 的 $5\\% = 4$。\n$15\\% = 8 + 4 = 12$。\n\n**答案：** 12",
+        "source": "Year 7 Assessment"
+      },
+      {
+        "patternId": "ep-perc-amount",
+        "question": "A shirt costs $25. It is reduced by $20\\%$ in a sale. What is the new price?",
+        "question_zh": "一件衬衫原价 $25。打八折（减少 20%）销售。新价格是多少？",
+        "solution": "**Step 1:** Find $20\\%$ of $25$: $0.20 \\times 25 = 5$.\n\n**Step 2:** Subtract from original: $25 - 5 = 20$.\n\n**Answer:** $20",
+        "solution_zh": "**步骤 1：** 求 $25$ 的 $20\\%$：$0.20 \\times 25 = 5$。\n\n**步骤 2：** 从原价中减去：$25 - 5 = 20$。\n\n**答案：** $20",
+        "source": "Adapted from Y7 curriculum"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "Express $\\frac{3}{5}$ as a percentage.",
+        "q_zh": "将 $\\frac{3}{5}$ 表示为百分比。",
+        "o": [
+          "30%",
+          "50%",
+          "60%",
+          "75%"
+        ],
+        "a": 2,
+        "e": "$\\frac{3}{5} = \\frac{60}{100} = 60\\%$. Or $3 \\div 5 = 0.6 = 60\\%$.",
+        "e_zh": "$\\frac{3}{5} = \\frac{60}{100} = 60\\%$。或者 $3 \\div 5 = 0.6 = 60\\%$。"
+      },
+      {
+        "q": "What is $120\\%$ of 50?",
+        "q_zh": "50 的 $120\\%$ 是多少？",
+        "o": [
+          "60",
+          "70",
+          "50",
+          "100"
+        ],
+        "a": 0,
+        "e": "$1.2 \\times 50 = 60$.",
+        "e_zh": "$1.2 \\times 50 = 60$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-Y7.7-01",
+    "section": "Y7.7",
+    "order": 1,
+    "title": "Circles: Circumference and Area",
+    "title_zh": "圆：周长和面积",
+    "explanation": {
+      "en": "**Circumference** is the distance around the outside of a circle. The formula is $C = \\pi d$ or $C = 2\\pi r$, where $d$ is diameter and $r$ is radius.\n\n**Area** is the space inside a circle. The formula is $A = \\pi r^2$.\n\n**Radius and Diameter** are related: $d = 2r$. The radius is from the center to the edge; the diameter passes through the center from edge to edge.",
+      "zh": "**周长**（Circumference）是圆一周的距离。公式为 $C = \\pi d$ 或 $C = 2\\pi r$，其中 $d$ 是直径，$r$ 是半径。\n\n**面积**（Area）是圆内部的空间。公式为 $A = \\pi r^2$。\n\n**半径与直径**的关系是：$d = 2r$。半径是从圆心到边缘的距离；直径是穿过圆心连接边缘两点的距离。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-circle-calc",
+        "label": "Calculate circumference and area",
+        "label_zh": "计算周长和面积",
+        "description": "Given the radius or diameter, find the circumference or area of a circle.",
+        "description_zh": "已知半径或直径，求圆的周长或面积。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-circle-calc",
+        "question": "A circle has a radius of $5cm$. Find its circumference. Use $\\pi = 3.14$.",
+        "question_zh": "一个圆的半径为 $5cm$。求其周长。取 $\\pi = 3.14$。",
+        "solution": "**Step 1:** Use the formula $C = 2\\pi r$.\n\n**Step 2:** Substitute the values: $C = 2 \\times 3.14 \\times 5$.\n\n**Step 3:** Calculate: $C = 10 \\times 3.14 = 31.4$.\n\n**Answer:** $31.4cm$",
+        "solution_zh": "**步骤 1：** 使用公式 $C = 2\\pi r$。\n\n**步骤 2：** 代入数值：$C = 2 \\times 3.14 \\times 5$。\n\n**步骤 3：** 计算：$C = 10 \\times 3.14 = 31.4$。\n\n**答案：** $31.4cm$",
+        "source": "Year 7 Assessment"
+      },
+      {
+        "patternId": "ep-circle-calc",
+        "question": "Find the area of a circle with a diameter of $8cm$. Give your answer in terms of $\\pi$.",
+        "question_zh": "求直径为 $8cm$ 的圆的面积。答案用 $\\pi$ 表示。",
+        "solution": "**Step 1:** Find the radius: $r = 8 \\div 2 = 4cm$.\n\n**Step 2:** Use the area formula: $A = \\pi r^2$.\n\n**Step 3:** Calculate: $A = \\pi \\times 4^2 = 16\\pi$.\n\n**Answer:** $16\\pi \\ cm^2$",
+        "solution_zh": "**步骤 1：** 求半径：$r = 8 \\div 2 = 4cm$。\n\n**步骤 2：** 使用面积公式：$A = \\pi r^2$。\n\n**步骤 3：** 计算：$A = \\pi \\times 4^2 = 16\\pi$。\n\n**答案：** $16\\pi \\ cm^2$",
+        "source": "Adapted from Y7 curriculum"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "If the radius of a circle doubles, what happens to the circumference?",
+        "q_zh": "如果圆的半径翻倍，周长会发生什么变化？",
+        "o": [
+          "It stays the same",
+          "It doubles",
+          "It triples",
+          "It quadruples"
+        ],
+        "a": 1,
+        "e": "Since $C = 2\\pi r$, if $r$ is replaced by $2r$, the new circumference is $2\\pi(2r) = 2(2\\pi r)$, which is double the original.",
+        "e_zh": "因为 $C = 2\\pi r$，如果 $r$ 变为 $2r$，新周长为 $2\\pi(2r) = 2(2\\pi r)$，即为原来的两倍。"
+      },
+      {
+        "q": "A circle has an area of $25\\pi$. What is its radius?",
+        "q_zh": "一个圆的面积是 $25\\pi$。它的半径是多少？",
+        "o": [
+          "5",
+          "10",
+          "25",
+          "50"
+        ],
+        "a": 0,
+        "e": "$A = \\pi r^2 = 25\\pi$. So $r^2 = 25$, which means $r = \\sqrt{25} = 5$.",
+        "e_zh": "$A = \\pi r^2 = 25\\pi$。因此 $r^2 = 25$，意味着 $r = \\sqrt{25} = 5$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-Y7.8-01",
+    "section": "Y7.8",
+    "order": 1,
+    "title": "Cylinders and Cones",
+    "title_zh": "圆柱和圆锥",
+    "explanation": {
+      "en": "**Cylinder Volume** is found by multiplying the area of the circular base by the height: $V = \\pi r^2 h$.\n\n**Surface Area of a Cylinder** consists of two circular bases and a rectangular curved surface (the side). The side's width is the circle's circumference $2\\pi r$, and its height is $h$. Total $SA = 2\\pi r^2 + 2\\pi rh$.\n\n**Cones** have a volume that is exactly one-third the volume of a cylinder with the same base and height: $V = \\frac{1}{3}\\pi r^2 h$.",
+      "zh": "**圆柱体体积**：通过圆底面积乘以高来计算：$V = \\pi r^2 h$。\n\n**圆柱体表面积**：由两个圆形底面和一个矩形侧面（展开后）组成。侧面的宽度是圆的周长 $2\\pi r$，高度是 $h$。总表面积 $SA = 2\\pi r^2 + 2\\pi rh$。\n\n**圆锥体**：其体积正好是具有相同底面和高度的圆柱体体积的三分之一：$V = \\frac{1}{3}\\pi r^2 h$。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-cyl-vol",
+        "label": "Calculate volume of a cylinder",
+        "label_zh": "计算圆柱体的体积",
+        "description": "Find the volume using the radius and height.",
+        "description_zh": "利用半径和高求体积。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-cyl-vol",
+        "question": "A cylinder has a radius of $3cm$ and a height of $10cm$. Calculate its volume. Leave your answer in terms of $\\pi$.",
+        "question_zh": "一个圆柱体的半径为 $3cm$，高为 $10cm$。计算其体积。答案用 $\\pi$ 表示。",
+        "solution": "**Step 1:** Area of base $= \\pi r^2 = \\pi \\times 3^2 = 9\\pi$.\n\n**Step 2:** Volume $= \\text{Base Area} \\times \\text{height} = 9\\pi \\times 10 = 90\\pi$.\n\n**Answer:** $90\\pi \\ cm^3$",
+        "solution_zh": "**步骤 1：** 底面积 $= \\pi r^2 = \\pi \\times 3^2 = 9\\pi$。\n\n**步骤 2：** 体积 $= \\text{底面积} \\times \\text{高} = 9\\pi \\times 10 = 90\\pi$。\n\n**答案：** $90\\pi \\ cm^3$",
+        "source": "Year 7 Assessment"
+      },
+      {
+        "patternId": "ep-cyl-vol",
+        "question": "A cone has the same base radius ($3cm$) and height ($10cm$) as the cylinder above. What is its volume?",
+        "question_zh": "一个圆锥体与上述圆柱体具有相同的底面半径（$3cm$）和高度（$10cm$）。它的体积是多少？",
+        "solution": "**Step 1:** Use the formula $V = \\frac{1}{3} \\pi r^2 h$.\n\n**Step 2:** We know $\\pi r^2 h = 90\\pi$ from the previous example.\n\n**Step 3:** $V = \\frac{1}{3} \\times 90\\pi = 30\\pi$.\n\n**Answer:** $30\\pi \\ cm^3$",
+        "solution_zh": "**步骤 1：** 使用公式 $V = \\frac{1}{3} \\pi r^2 h$。\n\n**步骤 2：** 根据上一个例子，我们知道 $\\pi r^2 h = 90\\pi$。\n\n**步骤 3：** $V = \\frac{1}{3} \\times 90\\pi = 30\\pi$。\n\n**答案：** $30\\pi \\ cm^3$",
+        "source": "Adapted from Y7 curriculum"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "What is the shape of the 'net' of the side of a cylinder?",
+        "q_zh": "圆柱体侧面的“展开图”是什么形状？",
+        "o": [
+          "Circle",
+          "Triangle",
+          "Rectangle",
+          "Square"
+        ],
+        "a": 2,
+        "e": "When the curved side of a cylinder is flattened, it forms a rectangle.",
+        "e_zh": "当圆柱体的弯曲侧面被展平时，它会形成一个矩形。"
+      },
+      {
+        "q": "If a cylinder's height is doubled but its radius stays the same, the volume...",
+        "q_zh": "如果圆柱体的高度翻倍但半径保持不变，体积会...",
+        "o": [
+          "Stays the same",
+          "Doubles",
+          "Triples",
+          "Quadruples"
+        ],
+        "a": 1,
+        "e": "Volume is proportional to height ($h$), so doubling $h$ doubles the volume.",
+        "e_zh": "体积与高度（$h$）成正比，因此 $h$ 翻倍，体积也翻倍。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-Y7.9-01",
+    "section": "Y7.9",
+    "order": 1,
+    "title": "Linear Sequences",
+    "title_zh": "等差序列",
+    "explanation": {
+      "en": "**Linear sequences** (or arithmetic sequences) have a constant difference between consecutive terms.\n\n**Term-to-term rule** describes how to get from one term to the next (e.g., 'add 3').\n\n**nth term rule** is a formula that lets you calculate any term in the sequence based on its position $n$. For a sequence with first term $a$ and common difference $d$, the rule is $dn + (a - d)$.",
+      "zh": "**等差序列**（或算术序列）中相邻两项之间的差是一个常数。\n\n**项与项之间的规则**描述了如何从一项得到下一项（例如，“加 3”）。\n\n**第 n 项公式**是一个允许你根据位置 $n$ 计算序列中任何项的公式。对于首项为 $a$、公差为 $d$ 的序列，公式为 $dn + (a - d)$。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-nth-term",
+        "label": "Find the nth term rule",
+        "label_zh": "求第 n 项公式",
+        "description": "Find the general formula for a given linear sequence.",
+        "description_zh": "求给定等差序列的通用公式。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-nth-term",
+        "question": "Find the nth term for the sequence: $5, 8, 11, 14, \\ldots$",
+        "question_zh": "求序列 $5, 8, 11, 14, \\ldots$ 的第 n 项公式。",
+        "solution": "**Step 1:** Find the common difference: $8 - 5 = 3$. So the formula starts with $3n$.\n\n**Step 2:** Compare $3n$ to the sequence:\nWhen $n=1$, $3(1) = 3$. We need 5. $3 + 2 = 5$.\n\n**Step 3:** The nth term is $3n + 2$.\n\n**Answer:** $3n + 2$",
+        "solution_zh": "**步骤 1：** 找出公差：$8 - 5 = 3$。所以公式以 $3n$ 开头。\n\n**步骤 2：** 将 $3n$ 与序列进行比较：\n当 $n=1$ 时，$3(1) = 3$。我们需要 5。$3 + 2 = 5$。\n\n**步骤 3：** 第 n 项是 $3n + 2$。\n\n**答案：** $3n + 2$",
+        "source": "Year 7 Assessment"
+      },
+      {
+        "patternId": "ep-nth-term",
+        "question": "The nth term of a sequence is $5n - 2$. What is the 10th term?",
+        "question_zh": "一个序列的第 n 项是 $5n - 2$。第 10 项是多少？",
+        "solution": "**Step 1:** Substitute $n = 10$ into the formula.\n\n**Step 2:** $5(10) - 2 = 50 - 2 = 48$.\n\n**Answer:** 48",
+        "solution_zh": "**步骤 1：** 将 $n = 10$ 代入公式。\n\n**步骤 2：** $5(10) - 2 = 50 - 2 = 48$。\n\n**答案：** 48",
+        "source": "Adapted from Y7 curriculum"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "What is the next term in the sequence $17, 13, 9, 5, \\ldots$?",
+        "q_zh": "序列 $17, 13, 9, 5, \\ldots$ 的下一项是多少？",
+        "o": [
+          "1",
+          "2",
+          "0",
+          "-1"
+        ],
+        "a": 0,
+        "e": "The common difference is $-4$. $5 - 4 = 1$.",
+        "e_zh": "公差是 $-4$。$5 - 4 = 1$。"
+      },
+      {
+        "q": "Which nth term rule describes $7, 9, 11, 13, \\ldots$?",
+        "q_zh": "哪个第 n 项公式描述了 $7, 9, 11, 13, \\ldots$？",
+        "o": [
+          "$n + 6$",
+          "$2n + 5$",
+          "$7n$",
+          "$2n + 7$"
+        ],
+        "a": 1,
+        "e": "Difference is 2 ($2n$). For $n=1$, $2(1)+5=7$.",
+        "e_zh": "公差是 2 ($2n$)。当 $n=1$ 时，$2(1)+5=7$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-Y7.10-01",
+    "section": "Y7.10",
+    "order": 1,
+    "title": "Probability",
+    "title_zh": "概率",
+    "explanation": {
+      "en": "**Probability** is the measure of the likelihood that an event will occur, ranging from 0 (impossible) to 1 (certain).\n\n**Theoretical Probability** is calculated as $P(E) = \\frac{\\text{number of successful outcomes}}{\\text{total number of possible outcomes}}$.\n\n**Complementary Events** are events where one must happen if the other doesn't. $P(\\text{not A}) = 1 - P(A)$.",
+      "zh": "**概率**（Probability）是衡量事件发生的可能性的尺度，范围从 0（不可能）到 1（必然发生）。\n\n**理论概率**的计算公式为：$P(E) = \\frac{\\text{理想结果的数量}}{\\text{所有可能结果的总数}}$。\n\n**互补事件**是指如果一个不发生，另一个就必然发生的事件。$P(\\text{非 A}) = 1 - P(A)$。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-prob-calc",
+        "label": "Calculate basic probability",
+        "label_zh": "计算基础概率",
+        "description": "Find the probability of a single event occurring.",
+        "description_zh": "求单个事件发生的概率。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-prob-calc",
+        "question": "A fair six-sided die is rolled. What is the probability of rolling an even number?",
+        "question_zh": "掷一个公平的六面骰子。掷出偶数的概率是多少？",
+        "solution": "**Step 1:** List total outcomes: $\\{1, 2, 3, 4, 5, 6\\}$. Total = 6.\n\n**Step 2:** List successful outcomes (even numbers): $\\{2, 4, 6\\}$. Successful = 3.\n\n**Step 3:** Use formula: $P(\\text{even}) = \\frac{3}{6} = \\frac{1}{2}$ or $0.5$.\n\n**Answer:** $0.5$",
+        "solution_zh": "**步骤 1：** 列出总结果：$\\{1, 2, 3, 4, 5, 6\\}$。总数 = 6。\n\n**步骤 2：** 列出理想结果（偶数）：$\\{2, 4, 6\\}$。理想结果数 = 3。\n\n**步骤 3：** 使用公式：$P(\\text{偶数}) = \\frac{3}{6} = \\frac{1}{2}$ 或 $0.5$。\n\n**答案：** $0.5$",
+        "source": "Year 7 Assessment"
+      },
+      {
+        "patternId": "ep-prob-calc",
+        "question": "The probability of winning a game is $0.35$. What is the probability of not winning?",
+        "question_zh": "在一场游戏中获胜的概率是 $0.35$。不获胜的概率是多少？",
+        "solution": "**Step 1:** Use the complement rule: $P(\\text{not winning}) = 1 - P(\\text{winning})$.\n\n**Step 2:** Calculate: $1 - 0.35 = 0.65$.\n\n**Answer:** 0.65",
+        "solution_zh": "**步骤 1：** 使用互补规则：$P(\\text{不获胜}) = 1 - P(\\text{获胜})$。\n\n**步骤 2：** 计算：$1 - 0.35 = 0.65$。\n\n**答案：** 0.65",
+        "source": "Adapted from Y7 curriculum"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "Which of these probabilities represents an 'impossible' event?",
+        "q_zh": "下列哪个概率代表“不可能发生”的事件？",
+        "o": [
+          "0",
+          "0.5",
+          "1",
+          "-1"
+        ],
+        "a": 0,
+        "e": "A probability of 0 means the event cannot happen. Probabilities cannot be negative.",
+        "e_zh": "概率为 0 意味着事件不可能发生。概率不能为负数。"
+      },
+      {
+        "q": "A bag has 3 red and 7 blue marbles. Probability of picking a red one is...",
+        "q_zh": "袋子里有 3 个红球和 7 个蓝球。摸到红球的概率是...",
+        "o": [
+          "0.3",
+          "0.7",
+          "$\\frac{3}{7}$",
+          "3"
+        ],
+        "a": 0,
+        "e": "Total marbles = $3 + 7 = 10$. Red marbles = 3. $P(\\text{red}) = \\frac{3}{10} = 0.3$.",
+        "e_zh": "总球数 = $3 + 7 = 10$。红球数 = 3。$P(\\text{红球}) = \\frac{3}{10} = 0.3$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-Y7.11-01",
+    "section": "Y7.11",
+    "order": 1,
+    "title": "Constructions",
+    "title_zh": "作图",
+    "explanation": {
+      "en": "**Constructions** are accurate drawings of shapes and lines using only a compass and a straightedge.\n\n**Perpendicular Bisector** is a line that cuts another line in half at a $90^{\\circ}$ angle. To construct it, draw two arcs of the same radius from each end of the line.\n\n**Angle Bisector** is a line that cuts an angle exactly in half. Arcs are drawn from the vertex and the points where a first arc crosses the angle's arms.",
+      "zh": "**作图**（Constructions）是指仅使用圆规和直尺精确绘制形状和线条。\n\n**垂直平分线**（中垂线）是一条以 $90^{\\circ}$ 角平分另一条线段的直线。作图时，分别从线段两端以相同的半径画两个圆弧。\n\n**角平分线**是将一个角精确一分为二的直线。作图时，从顶点和第一个圆弧与角两边相交的点开始画圆弧。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-bisect-line",
+        "label": "Construct a perpendicular bisector",
+        "label_zh": "作垂直平分线",
+        "description": "Bisect a given line segment using a compass and ruler.",
+        "description_zh": "使用圆规和直尺平分给定的线段。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-bisect-line",
+        "question": "Describe the steps to bisect a line $AB$.",
+        "question_zh": "描述平分线段 $AB$ 的步骤。",
+        "solution": "**Step 1:** Place the compass on point $A$. Open it to more than half the length of $AB$.\n\n**Step 2:** Draw arcs above and below the line.\n\n**Step 3:** Keep the same compass width and repeat from point $B$.\n\n**Step 4:** Draw a straight line through the two points where the arcs cross.\n\n**Answer:** This line is the perpendicular bisector.",
+        "solution_zh": "**步骤 1：** 将圆规放在 $A$ 点。将其张开至大于 $AB$ 长度一半的距离。\n\n**步骤 2：** 在线段上方和下方画弧。\n\n**步骤 3：** 保持圆规宽度不变，在 $B$ 点重复上述操作。\n\n**步骤 4：** 通过圆弧相交的两个点画一条直线。\n\n**答案：** 这条线即为垂直平分线。",
+        "source": "Year 7 Assessment"
+      },
+      {
+        "patternId": "ep-bisect-line",
+        "question": "What tools are allowed for a standard geometric construction?",
+        "question_zh": "标准几何作图允许使用哪些工具？",
+        "solution": "**Step 1:** In classic geometry, only two tools are used.\n\n**Step 2:** A straightedge (ruler without markings, though a standard ruler is often used) for straight lines.\n\n**Step 3:** A compass for circles and arcs.\n\n**Answer:** Compass and Straightedge/Ruler",
+        "solution_zh": "**步骤 1：** 在经典几何中，仅使用两种工具。\n\n**步骤 2：** 直尺（用于画直线）。\n\n**步骤 3：** 圆规（用于画圆和弧）。\n\n**答案：** 圆规和直尺",
+        "source": "Adapted from Y7 curriculum"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "When bisecting a line, why must the compass be open to more than half the length?",
+        "q_zh": "平分线段时，为什么圆规张开的宽度必须大于长度的一半？",
+        "o": [
+          "To make the drawing neat",
+          "So that the arcs will intersect",
+          "To save time",
+          "Because the ruler says so"
+        ],
+        "a": 1,
+        "e": "If the width is less than half, the arcs from each end will never touch or cross each other.",
+        "e_zh": "如果宽度小于一半，从两端画出的圆弧将永远不会接触或相交。"
+      },
+      {
+        "q": "What angle is formed between a line and its perpendicular bisector?",
+        "q_zh": "直线与其垂直平分线之间形成什么角度？",
+        "o": [
+          "$45^{\\circ}$",
+          "$60^{\\circ}$",
+          "$90^{\\circ}$",
+          "$180^{\\circ}$"
+        ],
+        "a": 2,
+        "e": "'Perpendicular' means at a right angle, which is 90 degrees.",
+        "e_zh": "“垂直”（Perpendicular）意为成直角，即 90 度。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  }
+]

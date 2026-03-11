@@ -1,0 +1,155 @@
+[
+  {
+    "id": "hv0276",
+    "cat": "geometry",
+    "topic": "Position and Direction",
+    "q": "A point is translated 4 units left and 3 units up from $(2, 5)$. What are the new coordinates?",
+    "o": [
+      "$(-2, 8)$",
+      "$(6, 8)$",
+      "$(-2, 2)$",
+      "$(6, 2)$"
+    ],
+    "a": 0,
+    "e": "Subtract 4 from x: $2-4=-2$. Add 3 to y: $5+3=8$. New point: $(-2, 8)$.",
+    "d": 1,
+    "s": "Y7.4",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0277",
+    "cat": "geometry",
+    "topic": "Position and Direction",
+    "q": "A point is translated 5 units right and 4 units down from $(-3, 1)$. What are the new coordinates?",
+    "o": [
+      "$(-8, 5)$",
+      "$(2, -3)$",
+      "$(2, 5)$",
+      "$(-8, -3)$"
+    ],
+    "a": 1,
+    "e": "Add 5 to x: $-3+5=2$. Subtract 4 from y: $1-4=-3$. New point: $(2, -3)$.",
+    "d": 1,
+    "s": "Y7.4",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0278",
+    "cat": "geometry",
+    "topic": "Position and Direction",
+    "q": "A point is translated 2 units left and 6 units down from $(0, -2)$. What are the new coordinates?",
+    "o": [
+      "$(2, 4)$",
+      "$(-2, 4)$",
+      "$(-2, -8)$",
+      "$(2, -8)$"
+    ],
+    "a": 2,
+    "e": "Subtract 2 from x: $0-2=-2$. Subtract 6 from y: $-2-6=-8$. New point: $(-2, -8)$.",
+    "d": 1,
+    "s": "Y7.4",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0279",
+    "cat": "geometry",
+    "topic": "Position and Direction",
+    "q": "What is the reflection of the point $(4, 7)$ in the x-axis?",
+    "o": [
+      "$(-4, 7)$",
+      "$(-4, -7)$",
+      "$(7, 4)$",
+      "$(4, -7)$"
+    ],
+    "a": 3,
+    "e": "Reflection in the x-axis changes the sign of y: $(4, 7) \\to (4, -7)$.",
+    "d": 1,
+    "s": "Y7.4",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0280",
+    "cat": "geometry",
+    "topic": "Position and Direction",
+    "q": "What is the reflection of the point $(-5, 3)$ in the y-axis?",
+    "o": [
+      "$(5, 3)$",
+      "$(-5, -3)$",
+      "$(5, -3)$",
+      "$(3, -5)$"
+    ],
+    "a": 0,
+    "e": "Reflection in the y-axis changes the sign of x: $(-5, 3) \\to (5, 3)$.",
+    "d": 1,
+    "s": "Y7.4",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0281",
+    "cat": "geometry",
+    "topic": "Position and Direction",
+    "q": "What is the reflection of the point $(-2, -6)$ in the x-axis?",
+    "o": [
+      "$(2, -6)$",
+      "$(-2, 6)$",
+      "$(2, 6)$",
+      "$(-6, -2)$"
+    ],
+    "a": 1,
+    "e": "Reflection in the x-axis changes the sign of y: $(-2, -6) \\to (-2, 6)$.",
+    "d": 1,
+    "s": "Y7.4",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0282",
+    "cat": "geometry",
+    "topic": "Position and Direction",
+    "q": "A shape is rotated $90^\\circ$ clockwise about the origin. The point $(4, 1)$ moves to:",
+    "o": [
+      "$(-1, 4)$",
+      "$(-4, -1)$",
+      "$(1, -4)$",
+      "$(4, -1)$"
+    ],
+    "a": 2,
+    "e": "$90^\\circ$ clockwise rotation: $(x,y) \\to (y,-x)$. So $(4,1) \\to (1,-4)$.",
+    "d": 2,
+    "s": "Y7.4",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0283",
+    "cat": "geometry",
+    "topic": "Position and Direction",
+    "q": "A shape is rotated $90^\\circ$ anti-clockwise about the origin. The point $(5, 2)$ moves to:",
+    "o": [
+      "$(2, -5)$",
+      "$(-5, -2)$",
+      "$(2, 5)$",
+      "$(-2, 5)$"
+    ],
+    "a": 3,
+    "e": "$90^\\circ$ anti-clockwise rotation: $(x,y) \\to (-y,x)$. So $(5,2) \\to (-2,5)$.",
+    "d": 2,
+    "s": "Y7.4",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0284",
+    "cat": "geometry",
+    "topic": "Position and Direction",
+    "q": "A shape is rotated $90^\\circ$ clockwise about the origin. The point $(-3, 4)$ moves to:",
+    "o": [
+      "$(4, 3)$",
+      "$(-4, -3)$",
+      "$(3, 4)$",
+      "$(-3, -4)$"
+    ],
+    "a": 0,
+    "e": "$90^\\circ$ clockwise rotation: $(x,y) \\to (y,-x)$. So $(-3,4) \\to (4, -(-3)) \\to (4,3)$.",
+    "d": 2,
+    "s": "Y7.4",
+    "diag": "concept"
+  }
+]

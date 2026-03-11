@@ -1,0 +1,206 @@
+[
+  {
+    "id": "hv0879",
+    "cat": "percentage",
+    "topic": "Percentages",
+    "q": "A coat costs £80 and is reduced by $25\\%$. What is the sale price?",
+    "o": [
+      "$£55$",
+      "$£60$",
+      "$£20$",
+      "$£75$"
+    ],
+    "a": 1,
+    "e": "Discount $= 0.25 \\times 80 = £20$. Sale price $= 80 - 20 = £60$.",
+    "d": 1,
+    "s": "Y9.7",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0880",
+    "cat": "percentage",
+    "topic": "Percentages",
+    "q": "A bike costs £240 and is reduced by $10\\%$. What is the sale price?",
+    "o": [
+      "$£216$",
+      "$£230$",
+      "$£24$",
+      "$£264$"
+    ],
+    "a": 0,
+    "e": "Discount $= 0.10 \\times 240 = £24$. Sale price $= 240 - 24 = £216$.",
+    "d": 1,
+    "s": "Y9.7",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0881",
+    "cat": "percentage",
+    "topic": "Percentages",
+    "q": "A video game costs £60 and is reduced by $20\\%$. What is the sale price?",
+    "o": [
+      "$£52$",
+      "$£40$",
+      "$£48$",
+      "$£12$"
+    ],
+    "a": 2,
+    "e": "Discount $= 0.20 \\times 60 = £12$. Sale price $= 60 - 12 = £48$.",
+    "d": 1,
+    "s": "Y9.7",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0882",
+    "cat": "percentage",
+    "topic": "Percentages",
+    "q": "School enrollment increases from $400$ to $480$ students. What is the percentage increase?",
+    "o": [
+      "$15\\%$",
+      "$20\\%$",
+      "$80\\%$",
+      "$25\\%$"
+    ],
+    "a": 1,
+    "e": "Increase $= 480 - 400 = 80$. Percentage increase $= \\dfrac{80}{400} \\times 100 = 20\\%$.",
+    "d": 1,
+    "s": "Y9.7",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0883",
+    "cat": "percentage",
+    "topic": "Percentages",
+    "q": "The price of a ticket increases from $£20$ to $£25$. What is the percentage increase?",
+    "o": [
+      "$20\\%$",
+      "$5\\%$",
+      "$30\\%$",
+      "$25\\%$"
+    ],
+    "a": 3,
+    "e": "Increase $= 25 - 20 = 5$. Percentage increase $= \\dfrac{5}{20} \\times 100 = 25\\%$.",
+    "d": 1,
+    "s": "Y9.7",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0884",
+    "cat": "percentage",
+    "topic": "Percentages",
+    "q": "The weight of a parcel increases from $80$kg to $92$kg. What is the percentage increase?",
+    "o": [
+      "$15\\%$",
+      "$12\\%$",
+      "$20\\%$",
+      "$18\\%$"
+    ],
+    "a": 0,
+    "e": "Increase $= 92 - 80 = 12$. Percentage increase $= \\dfrac{12}{80} \\times 100 = 15\\%$.",
+    "d": 1,
+    "s": "Y9.7",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0885",
+    "cat": "percentage",
+    "topic": "Percentages",
+    "q": "After a $10\\%$ increase, the price of a watch is £55. What was the original price?",
+    "o": [
+      "$£45$",
+      "$£49.50$",
+      "$£50$",
+      "$£60.50$"
+    ],
+    "a": 2,
+    "e": "Original $\\times 1.10 = 55$. Original $= \\dfrac{55}{1.10} = £50$.",
+    "d": 2,
+    "s": "Y9.7",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0886",
+    "cat": "percentage",
+    "topic": "Percentages",
+    "q": "After a $25\\%$ increase, a gym membership is £150. What was the original price?",
+    "o": [
+      "$£120$",
+      "$£112.50$",
+      "$£125$",
+      "$£130$"
+    ],
+    "a": 0,
+    "e": "Original $\\times 1.25 = 150$. Original $= \\dfrac{150}{1.25} = £120$.",
+    "d": 2,
+    "s": "Y9.7",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0887",
+    "cat": "percentage",
+    "topic": "Percentages",
+    "q": "After a $15\\%$ increase, a monthly bill is £230. What was the original price?",
+    "o": [
+      "$£215$",
+      "$£195.50$",
+      "$£200$",
+      "$£210$"
+    ],
+    "a": 2,
+    "e": "Original $\\times 1.15 = 230$. Original $= \\dfrac{230}{1.15} = £200$.",
+    "d": 2,
+    "s": "Y9.7",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0888",
+    "cat": "percentage",
+    "topic": "Percentages",
+    "q": "£1000 is invested at $4\\%$ compound interest per annum. What is the value after 2 years?",
+    "o": [
+      "$£1080$",
+      "$£1081.60$",
+      "$£1040$",
+      "$£1083.20$"
+    ],
+    "a": 1,
+    "e": "After 2 years: $1000 \\times 1.04^2 = 1000 \\times 1.0816 = £1081.60$.",
+    "d": 2,
+    "s": "Y9.7",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0889",
+    "cat": "percentage",
+    "topic": "Percentages",
+    "q": "£5000 is invested at $2\\%$ compound interest per annum. What is the value after 2 years?",
+    "o": [
+      "$£5202$",
+      "$£5200$",
+      "$£5100$",
+      "$£5204.04$"
+    ],
+    "a": 0,
+    "e": "After 2 years: $5000 \\times 1.02^2 = 5000 \\times 1.0404 = £5202$.",
+    "d": 2,
+    "s": "Y9.7",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0890",
+    "cat": "percentage",
+    "topic": "Percentages",
+    "q": "£3000 is invested at $5\\%$ compound interest per annum. What is the value after 2 years?",
+    "o": [
+      "$£3300$",
+      "$£3150$",
+      "$£3307.50$",
+      "$£3315.25$"
+    ],
+    "a": 2,
+    "e": "After 2 years: $3000 \\times 1.05^2 = 3000 \\times 1.1025 = £3307.50$.",
+    "d": 2,
+    "s": "Y9.7",
+    "diag": "calc"
+  }
+]

@@ -1,0 +1,206 @@
+[
+  {
+    "id": "hv0831",
+    "cat": "algebra",
+    "topic": "Algebraic Functions",
+    "q": "If $f(x) = 4x + 3$, find $f(5)$.",
+    "o": [
+      "$23$",
+      "$20$",
+      "$17$",
+      "$32$"
+    ],
+    "a": 0,
+    "e": "$f(5) = 4(5) + 3 = 20 + 3 = 23$.",
+    "d": 1,
+    "s": "Y9.3",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0832",
+    "cat": "algebra",
+    "topic": "Algebraic Functions",
+    "q": "If $f(x) = 2x + 9$, find $f(8)$.",
+    "o": [
+      "$17$",
+      "$25$",
+      "$34$",
+      "$16$"
+    ],
+    "a": 1,
+    "e": "$f(8) = 2(8) + 9 = 16 + 9 = 25$.",
+    "d": 1,
+    "s": "Y9.3",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0833",
+    "cat": "algebra",
+    "topic": "Algebraic Functions",
+    "q": "If $f(x) = 6x - 4$, find $f(3)$.",
+    "o": [
+      "$18$",
+      "$10$",
+      "$22$",
+      "$14$"
+    ],
+    "a": 3,
+    "e": "$f(3) = 6(3) - 4 = 18 - 4 = 14$.",
+    "d": 1,
+    "s": "Y9.3",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0834",
+    "cat": "algebra",
+    "topic": "Algebraic Functions",
+    "q": "If $f(x) = x^2 + 5$, find $f(-4)$.",
+    "o": [
+      "$21$",
+      "$-11$",
+      "$11$",
+      "$-21$"
+    ],
+    "a": 0,
+    "e": "$f(-4) = (-4)^2 + 5 = 16 + 5 = 21$.",
+    "d": 1,
+    "s": "Y9.3",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0835",
+    "cat": "algebra",
+    "topic": "Algebraic Functions",
+    "q": "If $f(x) = x^2 - 3$, find $f(-5)$.",
+    "o": [
+      "$-13$",
+      "$22$",
+      "$-28$",
+      "$28$"
+    ],
+    "a": 1,
+    "e": "$f(-5) = (-5)^2 - 3 = 25 - 3 = 22$.",
+    "d": 1,
+    "s": "Y9.3",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0836",
+    "cat": "algebra",
+    "topic": "Algebraic Functions",
+    "q": "If $f(x) = x^2 + 2$, find $f(-2)$.",
+    "o": [
+      "$-2$",
+      "$2$",
+      "$6$",
+      "$-6$"
+    ],
+    "a": 2,
+    "e": "$f(-2) = (-2)^2 + 2 = 4 + 2 = 6$.",
+    "d": 1,
+    "s": "Y9.3",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0837",
+    "cat": "algebra",
+    "topic": "Algebraic Functions",
+    "q": "If $f(x) = 3x + 4$, find $f^{-1}(x)$.",
+    "o": [
+      "$\\dfrac{x+4}{3}$",
+      "$\\dfrac{x-4}{3}$",
+      "$3x - 4$",
+      "$\\dfrac{3}{x-4}$"
+    ],
+    "a": 1,
+    "e": "Let $y = 3x + 4$. Swap: $x = 3y + 4$. Solve: $y = \\dfrac{x-4}{3}$.",
+    "d": 2,
+    "s": "Y9.3",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0838",
+    "cat": "algebra",
+    "topic": "Algebraic Functions",
+    "q": "If $f(x) = 4x - 7$, find $f^{-1}(x)$.",
+    "o": [
+      "$\\dfrac{x+7}{4}$",
+      "$\\dfrac{x-7}{4}$",
+      "$4x + 7$",
+      "$\\dfrac{4}{x+7}$"
+    ],
+    "a": 0,
+    "e": "Let $y = 4x - 7$. Swap: $x = 4y - 7$. Solve: $y = \\dfrac{x+7}{4}$.",
+    "d": 2,
+    "s": "Y9.3",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0839",
+    "cat": "algebra",
+    "topic": "Algebraic Functions",
+    "q": "If $f(x) = 5x + 2$, find $f^{-1}(x)$.",
+    "o": [
+      "$\\dfrac{x+2}{5}$",
+      "$\\dfrac{5}{x-2}$",
+      "$5x - 2$",
+      "$\\dfrac{x-2}{5}$"
+    ],
+    "a": 3,
+    "e": "Let $y = 5x + 2$. Swap: $x = 5y + 2$. Solve: $y = \\dfrac{x-2}{5}$.",
+    "d": 2,
+    "s": "Y9.3",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0840",
+    "cat": "algebra",
+    "topic": "Algebraic Functions",
+    "q": "If $f(x) = 2x + 3$ and $g(x) = x^2$, what is $fg(3)$?",
+    "o": [
+      "$81$",
+      "$21$",
+      "$39$",
+      "$15$"
+    ],
+    "a": 1,
+    "e": "$g(3) = 3^2 = 9$, then $f(9) = 2(9) + 3 = 21$.",
+    "d": 2,
+    "s": "Y9.3",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0841",
+    "cat": "algebra",
+    "topic": "Algebraic Functions",
+    "q": "If $f(x) = 3x - 5$ and $g(x) = x^2$, what is $fg(4)$?",
+    "o": [
+      "$43$",
+      "$121$",
+      "$7$",
+      "$48$"
+    ],
+    "a": 0,
+    "e": "$g(4) = 4^2 = 16$, then $f(16) = 3(16) - 5 = 43$.",
+    "d": 2,
+    "s": "Y9.3",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0842",
+    "cat": "algebra",
+    "topic": "Algebraic Functions",
+    "q": "If $f(x) = 5x + 1$ and $g(x) = x^2$, what is $fg(2)$?",
+    "o": [
+      "$441$",
+      "$11$",
+      "$21$",
+      "$25$"
+    ],
+    "a": 2,
+    "e": "$g(2) = 2^2 = 4$, then $f(4) = 5(4) + 1 = 21$.",
+    "d": 2,
+    "s": "Y9.3",
+    "diag": "calc"
+  }
+]

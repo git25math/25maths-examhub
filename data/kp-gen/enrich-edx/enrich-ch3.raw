@@ -1,0 +1,170 @@
+[
+  {
+    "id": "kp-E3.1-02",
+    "addQuiz": [
+      {
+        "q": "Find the $n$th term expression for the quadratic sequence: $2, 9, 20, 35, 54, ...$",
+        "q_zh": "求二次数列 $2, 9, 20, 35, 54, ...$ 的第 $n$ 项表达式。",
+        "o": [
+          "$n^2 + n$",
+          "$2n^2 + n - 1$",
+          "$2n^2 - n + 1$",
+          "$n^2 + 3n - 2$"
+        ],
+        "a": 1,
+        "e": "First differences: $7, 11, 15, 19$. Second difference is constant $4$. Since $2a = 4$, then $a = 2$. Subtracting $2n^2$ from the sequence ($2, 8, 18, 32, 50$) gives $0, 1, 2, 3, 4$, which follows the rule $n-1$. Thus, the $n$th term is $2n^2 + n - 1$.",
+        "e_zh": "一阶差为：$7, 11, 15, 19$。二阶差为常数 $4$。因为 $2a = 4$，所以 $a = 2$。从原数列中减去 $2n^2$ 项 ($2, 8, 18, 32, 50$) 得到 $0, 1, 2, 3, 4$，其规律为 $n-1$。因此，第 $n$ 项表达式为 $2n^2 + n - 1$。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-nth-term-quadratic",
+        "question": "The first five terms of a quadratic sequence are $6, 13, 24, 39, 58$. Find an expression, in terms of $n$, for the $n$th term of this sequence.",
+        "question_zh": "一个二次数列的前五项为 $6, 13, 24, 39, 58$。求该数列关于 $n$ 的第 $n$ 项表达式。",
+        "solution": "1. Find first differences: $7, 11, 15, 19$. \n2. Find second differences: $4, 4, 4$. \n3. $2a = 4 \\implies a = 2$. The $n^2$ part is $2n^2$. \n4. Subtract $2n^2$ from the original terms: $(6-2), (13-8), (24-18), (39-32), (58-50) = 4, 5, 6, 7, 8$. \n5. The linear sequence $4, 5, 6, 7, 8$ has $n$th term $n+3$. \n6. Final expression: $2n^2 + n + 3$.",
+        "solution_zh": "1. 求一阶差：$7, 11, 15, 19$。\n2. 求二阶差：$4, 4, 4$。\n3. $2a = 4 \\implies a = 2$。$n^2$ 部分为 $2n^2$。\n4. 从原数列中减去 $2n^2$：$(6-2), (13-8), (24-18), (39-32), (58-50) = 4, 5, 6, 7, 8$。\n5. 线性数列 $4, 5, 6, 7, 8$ 的第 $n$ 项为 $n+3$。\n6. 最终表达式为：$2n^2 + n + 3$。",
+        "source": "4MA1/2H/Jan/2021"
+      }
+    ]
+  },
+  {
+    "id": "kp-E3.2-01",
+    "addQuiz": [
+      {
+        "q": "Given $f(x) = 2x - 5$ and $g(x) = x^2$, find the value of $gf(-3)$.",
+        "q_zh": "已知 $f(x) = 2x - 5$ 且 $g(x) = x^2$，求 $gf(-3)$ 的值。",
+        "o": [
+          "$121$",
+          "$-11$",
+          "$31$",
+          "$11$"
+        ],
+        "a": 0,
+        "e": "First find $f(-3) = 2(-3) - 5 = -11$. Then substitute this into $g(x)$: $g(-11) = (-11)^2 = 121$.",
+        "e_zh": "首先求 $f(-3) = 2(-3) - 5 = -11$。然后将其代入 $g(x)$：$g(-11) = (-11)^2 = 121$。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-composite-expr",
+        "question": "Functions $f$ and $g$ are defined as $f(x) = 5x - 2$ and $g(x) = \\frac{x+3}{2}$. Find an expression for $gf(x)$.",
+        "question_zh": "函数 $f$ 和 $g$ 定义为 $f(x) = 5x - 2$ 和 $g(x) = \\frac{x+3}{2}$。求 $gf(x)$ 的表达式。",
+        "solution": "$gf(x) = g(f(x)) = g(5x - 2) = \\frac{(5x - 2) + 3}{2} = \\frac{5x + 1}{2}$.",
+        "solution_zh": "$gf(x) = g(f(x)) = g(5x - 2) = \\frac{(5x - 2) + 3}{2} = \\frac{5x + 1}{2}$。",
+        "source": "Adapted from 4MA1/1H/Jan/2020"
+      }
+    ]
+  },
+  {
+    "id": "kp-E3.2-02",
+    "addQuiz": [
+      {
+        "q": "Find the inverse function $f^{-1}(x)$ for $f(x) = \\frac{4}{x-3}$.",
+        "q_zh": "求 $f(x) = \\frac{4}{x-3}$ 的反函数 $f^{-1}(x)$。",
+        "o": [
+          "$f^{-1}(x) = \\frac{4}{x} + 3$",
+          "$f^{-1}(x) = \\frac{x-3}{4}$",
+          "$f^{-1}(x) = \\frac{4}{x+3}$",
+          "$f^{-1}(x) = 3x - 4$"
+        ],
+        "a": 0,
+        "e": "Let $y = \\frac{4}{x-3}$. Rearrange to make $x$ the subject: $x-3 = \\frac{4}{y} \\implies x = \\frac{4}{y} + 3$. Swapping $x$ and $y$ gives $f^{-1}(x) = \\frac{4}{x} + 3$.",
+        "e_zh": "设 $y = \\frac{4}{x-3}$。整理方程使 $x$ 成为主元：$x-3 = \\frac{4}{y} \\implies x = \\frac{4}{y} + 3$。交换 $x$ 和 $y$ 得到 $f^{-1}(x) = \\frac{4}{x} + 3$。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-find-inverse",
+        "question": "The function $f$ is such that $f(x) = \\frac{3x-1}{x+2}$. Find $f^{-1}(x)$.",
+        "question_zh": "函数 $f$ 满足 $f(x) = \\frac{3x-1}{x+2}$。求 $f^{-1}(x)$。",
+        "solution": "Let $y = \\frac{3x-1}{x+2}$.\n$y(x+2) = 3x - 1 \\implies yx + 2y = 3x - 1$\n$2y + 1 = 3x - yx \\implies 2y + 1 = x(3-y)$\n$x = \\frac{2y+1}{3-y}$. \nThus $f^{-1}(x) = \\frac{2x+1}{3-x}$.",
+        "solution_zh": "设 $y = \\frac{3x-1}{x+2}$。\n$y(x+2) = 3x - 1 \\implies yx + 2y = 3x - 1$\n$2y + 1 = 3x - yx \\implies 2y + 1 = x(3-y)$\n$x = \\frac{2y+1}{3-y}$。\n因此 $f^{-1}(x) = \\frac{2x+1}{3-x}$。",
+        "source": "4MA1/2H/June/2018"
+      }
+    ]
+  },
+  {
+    "id": "kp-E3.3-01",
+    "addQuiz": [
+      {
+        "q": "Find the gradient of the straight line with equation $5x - 2y = 10$.",
+        "q_zh": "求方程为 $5x - 2y = 10$ 的直线的斜率。",
+        "o": [
+          "$5$",
+          "$-5$",
+          "$2.5$",
+          "$-2.5$"
+        ],
+        "a": 2,
+        "e": "Rearrange the equation into $y = mx + c$ form: $2y = 5x - 10 \\implies y = 2.5x - 5$. The gradient $m$ is $2.5$.",
+        "e_zh": "将方程整理为 $y = mx + c$ 形式：$2y = 5x - 10 \\implies y = 2.5x - 5$。斜率 $m$ 为 $2.5$。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-line-equation",
+        "question": "Find the equation of the line that passes through the points $(-2, 1)$ and $(4, 10)$.",
+        "question_zh": "求通过点 $(-2, 1)$ 和 $(4, 10)$ 的直线方程。",
+        "solution": "1. Find the gradient $m = \\frac{y_2 - y_1}{x_2 - x_1} = \\frac{10 - 1}{4 - (-2)} = \\frac{9}{6} = 1.5$.\n2. Use the point-slope form $y - y_1 = m(x - x_1)$ with $(-2, 1)$: $y - 1 = 1.5(x + 2)$.\n3. $y = 1.5x + 3 + 1 \\implies y = 1.5x + 4$.",
+        "solution_zh": "1. 求斜率 $m = \\frac{y_2 - y_1}{x_2 - x_1} = \\frac{10 - 1}{4 - (-2)} = \\frac{9}{6} = 1.5$。\n2. 使用点斜式 $y - y_1 = m(x - x_1)$ 以及点 $(-2, 1)$：$y - 1 = 1.5(x + 2)$。\n3. $y = 1.5x + 3 + 1 \\implies y = 1.5x + 4$。",
+        "source": "Adapted from 4MA1/1F/Jan/2020"
+      }
+    ]
+  },
+  {
+    "id": "kp-E3.4-01",
+    "addQuiz": [
+      {
+        "q": "If $y = \\frac{2}{x^2} + 4x$, find $\\frac{dy}{dx}$.",
+        "q_zh": "如果 $y = \\frac{2}{x^2} + 4x$，求 $\\frac{dy}{dx}$。",
+        "o": [
+          "$-\\frac{4}{x^3} + 4$",
+          "$-\\frac{4}{x} + 4$",
+          "$\\frac{4}{x^3} + 4$",
+          "$-\\frac{2}{x^3} + 4$"
+        ],
+        "a": 0,
+        "e": "$y$ can be written as $2x^{-2} + 4x$. Differentiating gives $\\frac{dy}{dx} = 2(-2)x^{-3} + 4 = -4x^{-3} + 4 = -\\frac{4}{x^3} + 4$.",
+        "e_zh": "$y$ 可以写为 $2x^{-2} + 4x$。微分得到 $\\frac{dy}{dx} = 2(-2)x^{-3} + 4 = -4x^{-3} + 4 = -\\frac{4}{x^3} + 4$。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-differentiate",
+        "question": "A curve has equation $y = (x+3)(x-5)$. Find $\\frac{dy}{dx}$.",
+        "question_zh": "一条曲线的方程为 $y = (x+3)(x-5)$。求 $\\frac{dy}{dx}$。",
+        "solution": "1. Expand the brackets first: $y = x^2 - 5x + 3x - 15 = x^2 - 2x - 15$.\n2. Differentiate term by term: $\\frac{dy}{dx} = 2x - 2$.",
+        "solution_zh": "1. 首先展开括号：$y = x^2 - 5x + 3x - 15 = x^2 - 2x - 15$。\n2. 逐项求导：$\\frac{dy}{dx} = 2x - 2$。",
+        "source": "4MA1/2H/June/2019"
+      }
+    ]
+  },
+  {
+    "id": "kp-E3.4-02",
+    "addQuiz": [
+      {
+        "q": "Find the $x$-coordinate of the stationary point for the curve $y = x^2 + 6x - 1$.",
+        "q_zh": "求曲线 $y = x^2 + 6x - 1$ 驻点的 $x$ 坐标。",
+        "o": [
+          "$3$",
+          "$-3$",
+          "$6$",
+          "$-6$"
+        ],
+        "a": 1,
+        "e": "Differentiate to get $\\frac{dy}{dx} = 2x + 6$. At the stationary point, $\\frac{dy}{dx} = 0$. Solving $2x + 6 = 0$ gives $x = -3$.",
+        "e_zh": "求导得到 $\\frac{dy}{dx} = 2x + 6$。在驻点处，$\\frac{dy}{dx} = 0$。解 $2x + 6 = 0$ 得到 $x = -3$。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-turning-points",
+        "question": "Find the coordinates of the stationary points on the curve with equation $y = x^3 - 3x^2 - 9x + 5$.",
+        "question_zh": "求曲线 $y = x^3 - 3x^2 - 9x + 5$ 上驻点的坐标。",
+        "solution": "1. $\\frac{dy}{dx} = 3x^2 - 6x - 9$.\n2. Set $\\frac{dy}{dx} = 0$: $3(x^2 - 2x - 3) = 0 \\implies (x-3)(x+1) = 0$, so $x = 3$ or $x = -1$.\n3. When $x = 3, y = 3^3 - 3(3^2) - 9(3) + 5 = -22$. Stationary point is $(3, -22)$.\n4. When $x = -1, y = (-1)^3 - 3(-1)^2 - 9(-1) + 5 = 10$. Stationary point is $(-1, 10)$.",
+        "solution_zh": "1. $\\frac{dy}{dx} = 3x^2 - 6x - 9$。\n2. 令 $\\frac{dy}{dx} = 0$：$3(x^2 - 2x - 3) = 0 \\implies (x-3)(x+1) = 0$，所以 $x = 3$ 或 $x = -1$。\n3. 当 $x = 3$ 时，$y = 3^3 - 3(3^2) - 9(3) + 5 = -22$。驻点为 $(3, -22)$。\n4. 当 $x = -1$ 时，$y = (-1)^3 - 3(-1)^2 - 9(-1) + 5 = 10$。驻点为 $(-1, 10)$。",
+        "source": "4MA1/1H/Jan/2021"
+      }
+    ]
+  }
+]

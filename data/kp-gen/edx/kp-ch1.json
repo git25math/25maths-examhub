@@ -1,0 +1,778 @@
+[
+  {
+    "id": "kp-E1.1-01",
+    "section": "1.1",
+    "order": 1,
+    "title": "Prime Factors, HCF and LCM",
+    "title_zh": "质因数、最大公约数与最小公倍数",
+    "explanation": {
+      "en": "Every positive integer can be expressed as a product of its prime factors. This is known as **Prime Factorization**.\n\nThe **Highest Common Factor (HCF)** of two numbers is the largest number that divides into both of them exactly. It is found by multiplying the common prime factors.\n\nThe **Lowest Common Multiple (LCM)** of two numbers is the smallest number that is a multiple of both. It is found by multiplying the HCF by the remaining unique prime factors from both numbers.",
+      "zh": "每个正整数都可以表示为其质因数的乘积，这被称为**质因数分解**。\n\n**最大公约数 (HCF)** 是指能同时整除两个数的最大整数。可以通过将两个数共有的质因数相乘来求得。\n\n**最小公倍数 (LCM)** 是指同时为两个数的倍数的最小整数。可以通过将 HCF 与两个数各自剩余的独特质因数相乘来求得。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-prime-factor",
+        "label": "Express a number as a product of prime factors",
+        "label_zh": "将一个数表示为质因数的乘积",
+        "description": "Write a number in index form using only prime numbers as bases.",
+        "description_zh": "使用质数作为底数，以指数形式写出一个数。"
+      },
+      {
+        "id": "ep-hcf-lcm",
+        "label": "Find HCF and LCM of two numbers",
+        "label_zh": "求两个数的 HCF 和 LCM",
+        "description": "Use prime factor trees or Venn diagrams to identify HCF and LCM.",
+        "description_zh": "使用质因数树或韦恩图来确定 HCF 和 LCM。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-prime-factor",
+        "question": "Express 120 as a product of its prime factors. Give your answer in index form.",
+        "question_zh": "将 120 表示为其质因数的乘积。以指数形式给出答案。",
+        "solution": "**Step 1:** Use a factor tree: $120 = 2 \\times 60 = 2 \\times 2 \\times 30 = 2 \\times 2 \\times 2 \\times 15 = 2 \\times 2 \\times 2 \\times 3 \\times 5$.\n**Step 2:** Group the factors: $2^3 \\times 3 \\times 5$.\n\n**Answer:** $2^3 \\times 3 \\times 5$",
+        "solution_zh": "**步骤1：** 使用因数树：$120 = 2 \\times 60 = 2 \\times 2 \\times 30 = 2 \\times 2 \\times 2 \\times 15 = 2 \\times 2 \\times 2 \\times 3 \\times 5$。\n**步骤2：** 分组整理：$2^3 \\times 3 \\times 5$。\n\n**答案：** $2^3 \\times 3 \\times 5$",
+        "source": "Adapted from 4MA1/1H/Jan/2021"
+      },
+      {
+        "patternId": "ep-hcf-lcm",
+        "question": "Find the HCF and LCM of 48 and 60.",
+        "question_zh": "求 48 和 60 的 HCF 和 LCM。",
+        "solution": "**Step 1:** Prime factorization: $48 = 2^4 \\times 3$; $60 = 2^2 \\times 3 \\times 5$.\n**Step 2:** HCF = $2^2 \\times 3 = 12$ (common factors).\n**Step 3:** LCM = $2^4 \\times 3 \\times 5 = 240$ (all factors at highest power).\n\n**Answers:** HCF = 12, LCM = 240",
+        "solution_zh": "**步骤1：** 质因数分解：$48 = 2^4 \\times 3$；$60 = 2^2 \\times 3 \\times 5$。\n**步骤2：** HCF = $2^2 \\times 3 = 12$（共有因数）。\n**步骤3：** LCM = $2^4 \\times 3 \\times 5 = 240$（取所有因数的最高幂次）。\n\n**答案：** HCF = 12, LCM = 240",
+        "source": "Adapted from 4MA1/2F/June/2019"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "What is the HCF of $2^3 \\times 3^2 \\times 5$ and $2^2 \\times 3 \\times 7$?",
+        "q_zh": "$2^3 \\times 3^2 \\times 5$ 和 $2^2 \\times 3 \\times 7$ 的最大公约数 (HCF) 是多少？",
+        "o": [
+          "$2^2 \\times 3$",
+          "$2^3 \\times 3^2$",
+          "$2^2 \\times 3 \\times 5 \\times 7$",
+          "$2^3 \\times 3^2 \\times 5 \\times 7$"
+        ],
+        "a": 0,
+        "e": "HCF is found by taking the common prime factors with the lowest power. $2^2$ is common, and $3^1$ is common. So, HCF = $2^2 \\times 3 = 12$.",
+        "e_zh": "HCF 通过取共有质因数的最低幂次求得。共有 $2^2$ 和 $3^1$。因此，HCF = $2^2 \\times 3 = 12$。"
+      },
+      {
+        "q": "If $A = 2^2 \\times 5$ and $B = 2 \\times 3 \\times 5$, find the LCM of $A$ and $B$.",
+        "q_zh": "如果 $A = 2^2 \\times 5$ 且 $B = 2 \\times 3 \\times 5$，求 $A$ 和 $B$ 的最小公倍数 (LCM)。",
+        "o": [
+          "10",
+          "20",
+          "30",
+          "60"
+        ],
+        "a": 3,
+        "e": "LCM is found by taking all prime factors with the highest power: $2^2 \\times 3 \\times 5 = 4 \\times 3 \\times 5 = 60$.",
+        "e_zh": "LCM 通过取所有质因数的最高幂次求得：$2^2 \\times 3 \\times 5 = 4 \\times 3 \\times 5 = 60$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-E1.2-01",
+    "section": "1.2",
+    "order": 1,
+    "title": "Fraction Operations",
+    "title_zh": "分数运算",
+    "explanation": {
+      "en": "To add or subtract fractions, you must first find a **Common Denominator**.\n\nTo multiply fractions, multiply the numerators together and the denominators together.\n\nTo divide fractions, multiply the first fraction by the **Reciprocal** (invert) of the second fraction (Keep-Change-Flip).",
+      "zh": "要进行分数的加减运算，必须先找到**公分母**。\n\n要进行分数的乘法运算，将分子相乘，分母相乘。\n\n要进行分数的除法运算，将第一个分数乘以第二个分数的**倒数**（保持-改变-翻转）。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-mixed-ops",
+        "label": "Show that a fraction calculation results in a specific value",
+        "label_zh": "证明分数计算的结果为特定值",
+        "description": "Step-by-step working must be shown for mixed numbers or multi-step operations.",
+        "description_zh": "对于带分数或多步运算，必须展示完整的解题步骤。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-mixed-ops",
+        "question": "Show that $3 \\frac{1}{2} \\div 1 \\frac{1}{4} = 2 \\frac{4}{5}$",
+        "question_zh": "证明 $3 \\frac{1}{2} \\div 1 \\frac{1}{4} = 2 \\frac{4}{5}$",
+        "solution": "**Step 1:** Convert to improper fractions: $3 \\frac{1}{2} = \\frac{7}{2}$ and $1 \\frac{1}{4} = \\frac{5}{4}$.\n**Step 2:** Change division to multiplication by the reciprocal: $\\frac{7}{2} \\times \\frac{4}{5}$.\n**Step 3:** Multiply: $\\frac{7 \\times 4}{2 \\times 5} = \\frac{28}{10}$.\n**Step 4:** Simplify and convert back: $\\frac{14}{5} = 2 \\frac{4}{5}$.\n\n**Answer:** $2 \\frac{4}{5}$ as shown.",
+        "solution_zh": "**步骤1：** 转换为假分数：$3 \\frac{1}{2} = \\frac{7}{2}$ 且 $1 \\frac{1}{4} = \\frac{5}{4}$。\n**步骤2：** 将除法改为乘以倒数：$\\frac{7}{2} \\times \\frac{4}{5}$。\n**步骤3：** 相乘：$\\frac{7 \\times 4}{2 \\times 5} = \\frac{28}{10}$。\n**步骤4：** 约分并转换回带分数：$\\frac{14}{5} = 2 \\frac{4}{5}$。\n\n**答案：** 如图所示为 $2 \\frac{4}{5}$。",
+        "source": "4MA1/1H/June/2018"
+      },
+      {
+        "patternId": "ep-mixed-ops",
+        "question": "Work out $1 \\frac{1}{5} + 2 \\frac{1}{3}$. Give your answer as a mixed number.",
+        "question_zh": "计算 $1 \\frac{1}{5} + 2 \\frac{1}{3}$。以带分数形式给出答案。",
+        "solution": "**Step 1:** Convert to improper: $\\frac{6}{5} + \\frac{7}{3}$.\n**Step 2:** Find common denominator (15): $\\frac{18}{15} + \\frac{35}{15}$.\n**Step 3:** Add: $\\frac{53}{15} = 3 \\frac{8}{15}$.\n\n**Answer:** $3 \\frac{8}{15}$",
+        "solution_zh": "**步骤1：** 转换为假分数：$\\frac{6}{5} + \\frac{7}{3}$。\n**步骤2：** 找公分母 (15)：$\\frac{18}{15} + \\frac{35}{15}$。\n**步骤3：** 相加：$\\frac{53}{15} = 3 \\frac{8}{15}$。\n\n**答案：** $3 \\frac{8}{15}$",
+        "source": "Adapted from 4MA1/2F/Jan/2020"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "What is $\\frac{2}{3} \\times \\frac{5}{8}$ in its simplest form?",
+        "q_zh": "$\\frac{2}{3} \\times \\frac{5}{8}$ 的最简形式是多少？",
+        "o": [
+          "$\\frac{10}{24}$",
+          "$\\frac{5}{12}$",
+          "$\\frac{7}{11}$",
+          "$\\frac{16}{15}$"
+        ],
+        "a": 1,
+        "e": "$\\frac{2 \\times 5}{3 \\times 8} = \\frac{10}{24}$. Dividing both numerator and denominator by 2 gives $\\frac{5}{12}$.",
+        "e_zh": "$\\frac{2 \\times 5}{3 \\times 8} = \\frac{10}{24}$。分子分母同时除以 2 得到 $\\frac{5}{12}$。"
+      },
+      {
+        "q": "What is $2 \\div \\frac{1}{4}$?",
+        "q_zh": "$2 \\div \\frac{1}{4}$ 是多少？",
+        "o": [
+          "$\\frac{1}{2}$",
+          "$\\frac{1}{8}$",
+          "2",
+          "8"
+        ],
+        "a": 3,
+        "e": "$2 \\div \\frac{1}{4} = 2 \\times \\frac{4}{1} = 8$.",
+        "e_zh": "$2 \\div \\frac{1}{4} = 2 \\times \\frac{4}{1} = 8$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-E1.3-01",
+    "section": "1.3",
+    "order": 1,
+    "title": "Recurring Decimals to Fractions",
+    "title_zh": "循环小数化分数",
+    "explanation": {
+      "en": "A **Recurring Decimal** can always be written as a fraction. \n\nTo convert $0.\\dot{x}$ to a fraction, we let $x$ equal the decimal, multiply by a power of 10 to create another decimal with the same recurring part, and subtract the two equations to cancel the recurring digits.",
+      "zh": "**循环小数**总可以写成分数形式。\n\n要将 $0.\\dot{x}$ 转换为分数，我们设 $x$ 等于该小数，乘以 10 的幂以产生另一个具有相同循环部分的数值，然后将两个等式相减以消除循环数字。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-recurring-convert",
+        "label": "Convert recurring decimal to fraction",
+        "label_zh": "将循环小数转换为分数",
+        "description": "Algebraic proof is required to show the fractional equivalent.",
+        "description_zh": "需要使用代数证明来展示等值分数。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-recurring-convert",
+        "question": "Use algebra to show that $0.\\dot{4}\\dot{5} = \\frac{5}{11}$",
+        "question_zh": "使用代数方法证明 $0.\\dot{4}\\dot{5} = \\frac{5}{11}$",
+        "solution": "**Step 1:** Let $x = 0.454545...$\n**Step 2:** Multiply by 100 (since 2 digits repeat): $100x = 45.454545...$\n**Step 3:** Subtract $x$ from $100x$: $100x - x = 45.4545... - 0.4545...$\n**Step 4:** $99x = 45 \\Rightarrow x = \\frac{45}{99}$.\n**Step 5:** Simplify: $x = \\frac{5}{11}$.\n\n**Answer:** $\\frac{5}{11}$ as shown.",
+        "solution_zh": "**步骤1：** 设 $x = 0.454545...$\n**步骤2：** 乘以 100（因为有两位循环）：$100x = 45.454545...$\n**步骤3：** 从 $100x$ 中减去 $x$：$100x - x = 45.4545... - 0.4545...$\n**步骤4：** $99x = 45 \\Rightarrow x = \\frac{45}{99}$。\n**步骤5：** 约分：$x = \\frac{5}{11}$。\n\n**答案：** 如图所示为 $\\frac{5}{11}$。",
+        "source": "4MA1/1H/Jan/2020"
+      },
+      {
+        "patternId": "ep-recurring-convert",
+        "question": "Convert $0.2\\dot{7}$ to a fraction.",
+        "question_zh": "将 $0.2\\dot{7}$ 转换为分数。",
+        "solution": "**Step 1:** Let $x = 0.2777...$\n**Step 2:** Multiply by 10: $10x = 2.777...$\n**Step 3:** Multiply by 100: $100x = 27.777...$\n**Step 4:** Subtract: $100x - 10x = 27.777 - 2.777 \\Rightarrow 90x = 25$.\n**Step 5:** $x = \\frac{25}{90} = \\frac{5}{18}$.\n\n**Answer:** $\\frac{5}{18}$",
+        "solution_zh": "**步骤1：** 设 $x = 0.2777...$\n**步骤2：** 乘以 10：$10x = 2.777...$\n**步骤3：** 乘以 100：$100x = 27.777...$\n**步骤4：** 相减：$100x - 10x = 27.777 - 2.777 \\Rightarrow 90x = 25$。\n**步骤5：** $x = \\frac{25}{90} = \\frac{5}{18}$。\n\n**答案：** $\\frac{5}{18}$",
+        "source": "Adapted from 4MA1/2H/June/2019"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "What is $0.\\dot{7}$ as a fraction?",
+        "q_zh": "$0.\\dot{7}$ 化为分数是多少？",
+        "o": [
+          "$\\frac{7}{10}$",
+          "$\\frac{7}{9}$",
+          "$\\frac{7}{99}$",
+          "$\\frac{70}{99}$"
+        ],
+        "a": 1,
+        "e": "Let $x = 0.777...$, then $10x = 7.777...$. Subtracting gives $9x = 7$, so $x = \\frac{7}{9}$.",
+        "e_zh": "设 $x = 0.777...$，则 $10x = 7.777...$。相减得到 $9x = 7$，所以 $x = \\frac{7}{9}$。"
+      },
+      {
+        "q": "Convert $0.\\dot{1}\\dot{2}$ to a fraction in simplest form.",
+        "q_zh": "将 $0.\\dot{1}\\dot{2}$ 转换为最简分数。",
+        "o": [
+          "$\\frac{12}{100}$",
+          "$\\frac{12}{99}$",
+          "$\\frac{4}{33}$",
+          "$\\frac{3}{25}$"
+        ],
+        "a": 2,
+        "e": "$0.\\dot{1}\\dot{2} = \\frac{12}{99}$. Dividing both by 3 gives $\\frac{4}{33}$.",
+        "e_zh": "$0.\\dot{1}\\dot{2} = \\frac{12}{99}$。分子分母同时除以 3 得到 $\\frac{4}{33}$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-E1.4-01",
+    "section": "1.4",
+    "order": 1,
+    "title": "Index Laws",
+    "title_zh": "指数法则",
+    "explanation": {
+      "en": "Indices (powers) follow specific rules:\n\n**Multiplication Rule**: $a^m \\times a^n = a^{m+n}$\n\n**Division Rule**: $a^m \\div a^n = a^{m-n}$\n\n**Power of a Power**: $(a^m)^n = a^{mn}$\n\n**Negative Indices**: $a^{-n} = \\frac{1}{a^n}$\n\n**Fractional Indices**: $a^{\\frac{1}{n}} = \\sqrt[n]{a}$ and $a^{\\frac{m}{n}} = (\\sqrt[n]{a})^m$",
+      "zh": "指数（幂）遵循特定规则：\n\n**乘法法则**：$a^m \\times a^n = a^{m+n}$\n\n**除法法则**：$a^m \\div a^n = a^{m-n}$\n\n**幂的幂**：$(a^m)^n = a^{mn}$\n\n**负指数**：$a^{-n} = \\frac{1}{a^n}$\n\n**分数指数**：$a^{\\frac{1}{n}} = \\sqrt[n]{a}$ 且 $a^{\\frac{m}{n}} = (\\sqrt[n]{a})^m$"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-index-simplify",
+        "label": "Simplify expressions using index laws",
+        "label_zh": "使用指数法则简化表达式",
+        "description": "Combine terms with the same base.",
+        "description_zh": "合并底数相同的项。"
+      },
+      {
+        "id": "ep-fractional-index",
+        "label": "Evaluate numerical expressions with fractional/negative indices",
+        "label_zh": "求含有分数/负指数的数值表达式的值",
+        "description": "Calculate the square/cube root or reciprocal of a number.",
+        "description_zh": "计算一个数的平方根/立方根或倒数。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-index-simplify",
+        "question": "Simplify $(2a^3)^4$",
+        "question_zh": "简化 $(2a^3)^4$",
+        "solution": "**Step 1:** Apply the power to both the coefficient and the variable: $2^4 \\times (a^3)^4$.\n**Step 2:** Calculate $2^4 = 16$.\n**Step 3:** Multiply indices for $(a^3)^4 = a^{3 \\times 4} = a^{12}$.\n\n**Answer:** $16a^{12}$",
+        "solution_zh": "**步骤1：** 将幂应用于系数和变量：$2^4 \\times (a^3)^4$。\n**步骤2：** 计算 $2^4 = 16$。\n**步骤3：** 对于 $(a^3)^4$，指数相乘得到 $a^{3 \\times 4} = a^{12}$。\n\n**答案：** $16a^{12}$",
+        "source": "Adapted from 4MA1/1F/June/2021"
+      },
+      {
+        "patternId": "ep-fractional-index",
+        "question": "Find the value of $25^{-\\frac{3}{2}}$",
+        "question_zh": "求 $25^{-\\frac{3}{2}}$ 的值",
+        "solution": "**Step 1:** Handle the negative index first: $\\frac{1}{25^{\\frac{3}{2}}}$.\n**Step 2:** Handle the root: $25^{\\frac{1}{2}} = \\sqrt{25} = 5$.\n**Step 3:** Handle the power: $5^3 = 125$.\n**Step 4:** Final result: $\\frac{1}{125}$.\n\n**Answer:** $\\frac{1}{125}$",
+        "solution_zh": "**步骤1：** 先处理负指数：$\\frac{1}{25^{\\frac{3}{2}}}$。\n**步骤2：** 处理根号：$25^{\\frac{1}{2}} = \\sqrt{25} = 5$。\n**步骤3：** 处理幂：$5^3 = 125$。\n**步骤4：** 最终结果：$\\frac{1}{125}$。\n\n**答案：** $\\frac{1}{125}$",
+        "source": "4MA1/1H/June/2018"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "Simplify $x^5 \\div x^{-2}$",
+        "q_zh": "简化 $x^5 \\div x^{-2}$",
+        "o": [
+          "$x^3$",
+          "$x^7$",
+          "$x^{-10}$",
+          "$x^{2.5}$"
+        ],
+        "a": 1,
+        "e": "Using the division rule: $x^{5 - (-2)} = x^{5 + 2} = x^7$.",
+        "e_zh": "使用除法法则：$x^{5 - (-2)} = x^{5 + 2} = x^7$。"
+      },
+      {
+        "q": "Calculate $16^{\\frac{3}{4}}$",
+        "q_zh": "计算 $16^{\\frac{3}{4}}$",
+        "o": [
+          "8",
+          "12",
+          "4",
+          "6"
+        ],
+        "a": 0,
+        "e": "$16^{\\frac{3}{4}} = (\\sqrt[4]{16})^3 = 2^3 = 8$.",
+        "e_zh": "$16^{\\frac{3}{4}} = (\\sqrt[4]{16})^3 = 2^3 = 8$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-E1.5-01",
+    "section": "1.5",
+    "order": 1,
+    "title": "Set Notation and Venn Diagrams",
+    "title_zh": "集合符号与韦恩图",
+    "explanation": {
+      "en": "Sets are collections of objects (elements). Key symbols include:\n\n**Intersection** ($A \\cap B$): elements in both A and B.\n\n**Union** ($A \\cup B$): elements in A or B or both.\n\n**Complement** ($A'$): elements not in set A.\n\n**Universal Set** ($\\xi$): the set containing all elements under consideration.",
+      "zh": "集合是对象（元素）的汇集。关键符号包括：\n\n**交集** ($A \\cap B$)：同时属于 A 和 B 的元素。\n\n**并集** ($A \\cup B$)：属于 A 或 B 或同时属于两者的元素。\n\n**补集** ($A'$)：不属于集合 A 的元素。\n\n**全集** ($\\xi$)：包含所考虑的所有元素的集合。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-venn-elements",
+        "label": "Place elements into a Venn diagram",
+        "label_zh": "将元素填入韦恩图",
+        "description": "Categorize numbers based on properties like multiples, factors, or primes.",
+        "description_zh": "根据倍数、因数或质数等性质对数字进行分类。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-venn-elements",
+        "question": "$\\xi = \\{1, 2, 3, 4, 5, 6, 7, 8, 9, 10\\}$\n$A = \\{\\text{multiples of 2}\\}$, $B = \\{\\text{multiples of 3}\\}$.\nList the members of $(A \\cup B)'$.",
+        "question_zh": "$\\xi = \\{1, 2, 3, 4, 5, 6, 7, 8, 9, 10\\}$\n$A = \\{\\text{2 的倍数}\\}$，$B = \\{\\text{3 的倍数}\\}$。\n列出 $(A \\cup B)'$ 的元素。",
+        "solution": "**Step 1:** List elements of $A$: $\\{2, 4, 6, 8, 10\\}$.\n**Step 2:** List elements of $B$: $\\{3, 6, 9\\}$.\n**Step 3:** Find the union $A \\cup B$: $\\{2, 3, 4, 6, 8, 9, 10\\}$.\n**Step 4:** Find the complement (elements in $\\xi$ not in $A \\cup B$): $\\{1, 5, 7\\}$.\n\n**Answer:** $\\{1, 5, 7\\}$",
+        "solution_zh": "**步骤1：** 列出 $A$ 的元素：$\\{2, 4, 6, 8, 10\\}$。\n**步骤2：** 列出 $B$ 的元素：$\\{3, 6, 9\\}$。\n**步骤3：** 求并集 $A \\cup B$：$\\{2, 3, 4, 6, 8, 9, 10\\}$。\n**步骤4：** 求补集（在 $\\xi$ 中但不在 $A \\cup B$ 中的元素）：$\\{1, 5, 7\\}$。\n\n**答案：** $\\{1, 5, 7\\}$",
+        "source": "Adapted from 4MA1/2H/Jan/2021"
+      },
+      {
+        "patternId": "ep-venn-elements",
+        "question": "In a class of 30 students, 15 like Math (M) and 20 like English (E). If 10 like both, how many like neither?",
+        "question_zh": "一个班级有 30 名学生，15 人喜欢数学 (M)，20 人喜欢英语 (E)。如果 10 人两者都喜欢，有多少人两者都不喜欢？",
+        "solution": "**Step 1:** Intersection $n(M \\cap E) = 10$.\n**Step 2:** Only Math = $15 - 10 = 5$.\n**Step 3:** Only English = $20 - 10 = 10$.\n**Step 4:** Total liking at least one = $5 + 10 + 10 = 25$.\n**Step 5:** Neither = $30 - 25 = 5$.\n\n**Answer:** 5",
+        "solution_zh": "**步骤1：** 交集 $n(M \\cap E) = 10$。\n**步骤2：** 只喜欢数学 = $15 - 10 = 5$。\n**步骤3：** 只喜欢英语 = $20 - 10 = 10$。\n**步骤4：** 至少喜欢一门的总人数 = $5 + 10 + 10 = 25$。\n**步骤5：** 两者都不喜欢 = $30 - 25 = 5$。\n\n**答案：** 5",
+        "source": "Adapted from 4MA1/2F/June/2018"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "What does $A \\cap B = \\emptyset$ mean?",
+        "q_zh": "$A \\cap B = \\emptyset$ 是什么意思？",
+        "o": [
+          "Sets A and B are the same",
+          "Set A is a subset of B",
+          "Sets A and B have no common elements",
+          "The union of A and B is empty"
+        ],
+        "a": 2,
+        "e": "$\\emptyset$ is the empty set. If the intersection is empty, the sets have no elements in common (disjoint).",
+        "e_zh": "$\\emptyset$ 是空集。如果交集为空，说明两个集合没有共同元素（互斥）。"
+      },
+      {
+        "q": "If $x \\in A'$, which of the following is true?",
+        "q_zh": "如果 $x \\in A'$，下列哪项是正确的？",
+        "o": [
+          "$x$ is in A",
+          "$x$ is not in the universal set",
+          "$x$ is in the intersection of A and B",
+          "$x$ is not in A"
+        ],
+        "a": 3,
+        "e": "The symbol $A'$ denotes the complement of A, which contains all elements NOT in set A.",
+        "e_zh": "符号 $A'$ 表示 A 的补集，包含所有不在集合 A 中的元素。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-E1.6-01",
+    "section": "1.6",
+    "order": 1,
+    "title": "Compound Interest and Reverse Percentages",
+    "title_zh": "复利与逆百分比",
+    "explanation": {
+      "en": "For **Compound Interest**, the amount is calculated using $P(1 + \\frac{r}{100})^n$, where $P$ is the principal, $r$ is the rate, and $n$ is the number of years.\n\n**Reverse Percentages** are used to find the original value after a percentage increase or decrease. You divide by the multiplier (e.g., if a price increased by 20%, divide by 1.2).",
+      "zh": "**复利**的金额计算公式为 $P(1 + \\frac{r}{100})^n$，其中 $P$ 是本金，$r$ 是利率，$n$ 是年数。\n\n**逆百分比**用于计算百分比增加或减少后的原始值。你需要除以倍数（例如，如果价格上涨了 20%，则除以 1.2）。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-reverse-perc",
+        "label": "Find the original value",
+        "label_zh": "求原始值",
+        "description": "Calculate the price before a sale or before tax was added.",
+        "description_zh": "计算打折前或加税前的价格。"
+      },
+      {
+        "id": "ep-compound-interest",
+        "label": "Calculate value after n years",
+        "label_zh": "计算 n 年后的价值",
+        "description": "Apply compound interest or depreciation multipliers.",
+        "description_zh": "应用复利或折旧倍数。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-reverse-perc",
+        "question": "A coat is sold for $72 in a sale. This is a 20% reduction. What was the original price?",
+        "question_zh": "一件外套在促销中卖 72 美元。这是降价 20% 后的价格。原价是多少？",
+        "solution": "**Step 1:** The sale price is $100\\% - 20\\% = 80\\%$ of the original price.\n**Step 2:** Multiplier = 0.8.\n**Step 3:** Original price = $72 \\div 0.8 = 90$.\n\n**Answer:** $90",
+        "solution_zh": "**步骤1：** 促销价是原价的 $100\\% - 20\\% = 80\\%$。\n**步骤2：** 倍数 = 0.8。\n**步骤3：** 原价 = $72 \\div 0.8 = 90$。\n\n**答案：** 90 美元",
+        "source": "4MA1/2H/Jan/2021"
+      },
+      {
+        "patternId": "ep-compound-interest",
+        "question": "Invest $500 at 3% compound interest for 4 years. Calculate the total value.",
+        "question_zh": "投资 500 美元，复利 3%，期限 4 年。计算总价值。",
+        "solution": "**Step 1:** Multiplier = $1 + 0.03 = 1.03$.\n**Step 2:** Calculation = $500 \\times 1.03^4$.\n**Step 3:** $500 \\times 1.1255... = 562.75$.\n\n**Answer:** $562.75",
+        "solution_zh": "**步骤1：** 倍数 = $1 + 0.03 = 1.03$。\n**步骤2：** 计算式 = $500 \\times 1.03^4$。\n**步骤3：** $500 \\times 1.1255... = 562.75$。\n\n**答案：** 562.75 美元",
+        "source": "Adapted from 4MA1/1F/June/2019"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "A TV costs $480 after 20% VAT is added. What is the price before VAT?",
+        "q_zh": "一台电视在加入 20% 的增值税 (VAT) 后价格为 480 美元。加税前的价格是多少？",
+        "o": [
+          "$384",
+          "$400",
+          "$576",
+          "$460"
+        ],
+        "a": 1,
+        "e": "Price before VAT = $480 \\div 1.2 = 400$.",
+        "e_zh": "加税前价格 = $480 \\div 1.2 = 400$。"
+      },
+      {
+        "q": "What is the multiplier for a 5% decrease?",
+        "q_zh": "减少 5% 的倍数是多少？",
+        "o": [
+          "1.05",
+          "0.5",
+          "0.95",
+          "0.05"
+        ],
+        "a": 2,
+        "e": "$100\\% - 5\\% = 95\\%$, so the multiplier is 0.95.",
+        "e_zh": "$100\\% - 5\\% = 95\\%$，所以倍数是 0.95。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-E1.7-01",
+    "section": "1.7",
+    "order": 1,
+    "title": "Ratio and Proportion",
+    "title_zh": "比与比例",
+    "explanation": {
+      "en": "A **Ratio** compares quantities. To divide an amount into a ratio, add the total parts, divide the amount by total parts to find one part, then multiply by the required parts.\n\n**Direct Proportion** means as one variable increases, the other increases at the same rate ($y = kx$). \n\n**Inverse Proportion** means as one increases, the other decreases ($y = \\frac{k}{x}$).",
+      "zh": "**比**用于比较数量。要按比例分配金额，先将总份数相加，用金额除以总份数求出一份的量，然后乘以所需的份数。\n\n**正比例**意味着一个变量增加，另一个变量以相同的速率增加 ($y = kx$)。\n\n**反比例**意味着一个增加，另一个减少 ($y = \\frac{k}{x}$)。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-divide-ratio",
+        "label": "Divide a quantity into a given ratio",
+        "label_zh": "按给定比例分配数量",
+        "description": "Calculate specific amounts for each part of the ratio.",
+        "description_zh": "计算比例中每一部分的具体金额。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-divide-ratio",
+        "question": "Divide $450 in the ratio 2 : 3 : 4$.",
+        "question_zh": "将 450 美元按 2 : 3 : 4 的比例分配。",
+        "solution": "**Step 1:** Total parts = $2 + 3 + 4 = 9$.\n**Step 2:** Value of one part = $450 \\div 9 = 50$.\n**Step 3:** Multiply each part: $2 \\times 50 = 100$; $3 \\times 50 = 150$; $4 \\times 50 = 200$.\n\n**Answer:** $100, $150, $200",
+        "solution_zh": "**步骤1：** 总份数 = $2 + 3 + 4 = 9$。\n**步骤2：** 一份的价值 = $450 \\div 9 = 50$。\n**步骤3：** 分别乘以各份数：$2 \\times 50 = 100$；$3 \\times 50 = 150$；$4 \\times 50 = 200$。\n\n**答案：** 100 美元, 150 美元, 200 美元",
+        "source": "Adapted from 4MA1/2F/Jan/2020"
+      },
+      {
+        "patternId": "ep-divide-ratio",
+        "question": "The ratio of boys to girls is 4 : 5. There are 20 more girls than boys. How many students are there in total?",
+        "question_zh": "男女生比例为 4 : 5。女生比男生多 20 人。总共有多少名学生？",
+        "solution": "**Step 1:** Difference in parts = $5 - 4 = 1$ part.\n**Step 2:** 1 part = 20 students.\n**Step 3:** Total parts = $4 + 5 = 9$ parts.\n**Step 4:** Total students = $9 \\times 20 = 180$.\n\n**Answer:** 180",
+        "solution_zh": "**步骤1：** 份数差 = $5 - 4 = 1$ 份。\n**步骤2：** 1 份 = 20 名学生。\n**步骤3：** 总份数 = $4 + 5 = 9$ 份。\n**步骤4：** 总学生数 = $9 \\times 20 = 180$。\n\n**答案：** 180",
+        "source": "Adapted from 4MA1/1H/June/2021"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "If 5 pens cost $3.50, how much do 8 pens cost?",
+        "q_zh": "如果 5 支笔卖 3.50 美元，8 支笔卖多少钱？",
+        "o": [
+          "$5.60",
+          "$4.80",
+          "$7.00",
+          "$5.40"
+        ],
+        "a": 0,
+        "e": "Cost per pen = $3.50 \\div 5 = 0.70$. Cost for 8 pens = $0.70 \\times 8 = 5.60$.",
+        "e_zh": "每支笔的价格 = $3.50 \\div 5 = 0.70$。8 支笔的价格 = $0.70 \\times 8 = 5.60$。"
+      },
+      {
+        "q": "A map has a scale of 1 : 50,000. What distance on the ground does 2 cm on the map represent?",
+        "q_zh": "地图比例尺为 1 : 50,000。地图上的 2 厘米代表地面上的多少距离？",
+        "o": [
+          "100 m",
+          "1 km",
+          "10 km",
+          "100 km"
+        ],
+        "a": 1,
+        "e": "2 cm represents $2 \\times 50,000 = 100,000$ cm. $100,000$ cm = $1,000$ m = $1$ km.",
+        "e_zh": "2 厘米代表 $2 \\times 50,000 = 100,000$ 厘米。$100,000$ 厘米 = $1,000$ 米 = $1$ 千米。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-E1.8-01",
+    "section": "1.8",
+    "order": 1,
+    "title": "Rounding and Bounds",
+    "title_zh": "舍入与界限",
+    "explanation": {
+      "en": "Numbers can be rounded to a specific number of **Decimal Places (dp)** or **Significant Figures (sf)**.\n\nWhen a number is rounded, it has a range of possible actual values. The **Lower Bound** is the smallest possible value, and the **Upper Bound** is the smallest value that is too large.",
+      "zh": "数字可以舍入到特定的**小数位数 (dp)** 或**有效数字 (sf)**。\n\n当一个数字被舍入时，它有一个可能的实际值范围。**下界 (Lower Bound)** 是可能的最小值，**上界 (Upper Bound)** 是刚好过大的最小值。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-upper-lower-bound",
+        "label": "Find bounds for a rounded number",
+        "label_zh": "求舍入数字的界限",
+        "description": "Determine the maximum and minimum possible values.",
+        "description_zh": "确定最大和最小可能值。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-upper-lower-bound",
+        "question": "A length is given as 15 cm correct to the nearest cm. Write down the lower and upper bounds.",
+        "question_zh": "一个长度给定为 15 厘米（精确到厘米）。写出下界和上界。",
+        "solution": "**Step 1:** The degree of accuracy is 1 cm. Half of this is 0.5 cm.\n**Step 2:** Lower Bound = $15 - 0.5 = 14.5$ cm.\n**Step 3:** Upper Bound = $15 + 0.5 = 15.5$ cm.\n\n**Answers:** LB = 14.5, UB = 15.5",
+        "solution_zh": "**步骤1：** 精确度为 1 厘米。其一半为 0.5 厘米。\n**步骤2：** 下界 = $15 - 0.5 = 14.5$ 厘米。\n**步骤3：** 上界 = $15 + 0.5 = 15.5$ 厘米。\n\n**答案：** LB = 14.5, UB = 15.5",
+        "source": "Adapted from 4MA1/1F/Jan/2021"
+      },
+      {
+        "patternId": "ep-upper-lower-bound",
+        "question": "$x = 4.7$ correct to 1 decimal place. $y = 12$ correct to the nearest integer. Calculate the upper bound of $y - x$.",
+        "question_zh": "$x = 4.7$（精确到 1 位小数）。$y = 12$（精确到整数）。计算 $y - x$ 的上界。",
+        "solution": "**Step 1:** Bounds for $x$: $4.65 \\le x < 4.75$.\n**Step 2:** Bounds for $y$: $11.5 \\le y < 12.5$.\n**Step 3:** To maximize a subtraction ($y - x$), use the Upper Bound of $y$ and the Lower Bound of $x$.\n**Step 4:** UB($y-x$) = $12.5 - 4.65 = 7.85$.\n\n**Answer:** 7.85",
+        "solution_zh": "**步骤1：** $x$ 的界限：$4.65 \\le x < 4.75$。\n**步骤2：** $y$ 的界限：$11.5 \\le y < 12.5$。\n**步骤3：** 为了使减法 ($y - x$) 结果最大，使用 $y$ 的上界和 $x$ 的下界。\n**步骤4：** UB($y-x$) = $12.5 - 4.65 = 7.85$。\n\n**答案：** 7.85",
+        "source": "4MA1/1H/June/2019"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "Round 0.04567 to 2 significant figures.",
+        "q_zh": "将 0.04567 舍入到 2 位有效数字。",
+        "o": [
+          "0.05",
+          "0.045",
+          "0.046",
+          "0.04"
+        ],
+        "a": 2,
+        "e": "The first significant figure is 4. The second is 5. Since the next digit is 6, we round up to 0.046.",
+        "e_zh": "第一位有效数字是 4。第二位是 5。因为下一位是 6，所以进位得到 0.046。"
+      },
+      {
+        "q": "If a weight $w = 50$ kg correct to the nearest 10 kg, what is the lower bound?",
+        "q_zh": "如果重量 $w = 50$ 公斤（精确到 10 公斤），下界是多少？",
+        "o": [
+          "49.5 kg",
+          "45 kg",
+          "40 kg",
+          "49.9 kg"
+        ],
+        "a": 1,
+        "e": "Half of 10 kg is 5 kg. Lower bound = $50 - 5 = 45$ kg.",
+        "e_zh": "10 公斤的一半是 5 公斤。下界 = $50 - 5 = 45$ 公斤。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-E1.9-01",
+    "section": "1.9",
+    "order": 1,
+    "title": "Standard Form",
+    "title_zh": "标准式",
+    "explanation": {
+      "en": "Standard form is used to write very large or very small numbers. It is written as $A \\times 10^n$, where $1 \\le A < 10$ and $n$ is an integer.\n\nPositive $n$ represents large numbers, while negative $n$ represents small decimals.",
+      "zh": "标准式用于书写极大或极小的数字。其形式为 $A \\times 10^n$，其中 $1 \\le A < 10$ 且 $n$ 为整数。\n\n正的 $n$ 表示大数，负的 $n$ 表示极小的小数。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-standard-convert",
+        "label": "Convert between ordinary numbers and standard form",
+        "label_zh": "普通数字与标准式之间的转换",
+        "description": "Shift the decimal point and determine the correct power of 10.",
+        "description_zh": "移动小数点并确定正确的 10 的幂。"
+      },
+      {
+        "id": "ep-standard-calc",
+        "label": "Calculate using standard form",
+        "label_zh": "使用标准式进行计算",
+        "description": "Perform multiplication, division, addition, or subtraction.",
+        "description_zh": "进行乘、除、加或减法运算。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-standard-convert",
+        "question": "(a) Write 4,500,000 in standard form.\n(b) Write $3.2 \\times 10^{-4}$ as an ordinary number.",
+        "question_zh": "(a) 将 4,500,000 写成标准式。\n(b) 将 $3.2 \\times 10^{-4}$ 写成普通数字。",
+        "solution": "**(a) Step 1:** Move decimal point 6 places left: $4.5$.\n**Step 2:** Power of 10 is $10^6$.\n**Answer:** $4.5 \\times 10^6$.\n\n**(b) Step 1:** Move decimal point 4 places right (start from 3.2): $0.00032$.\n**Answer:** $0.00032$",
+        "solution_zh": "**(a) 步骤1：** 将小数点向左移动 6 位：$4.5$。\n**步骤2：** 10 的幂为 $10^6$。\n**答案：** $4.5 \\times 10^6$。\n\n**(b) 步骤1：** 将小数点向右移动 4 位（从 3.2 开始）：$0.00032$。\n**答案：** $0.00032$",
+        "source": "4MA1/1F/Jan/2021"
+      },
+      {
+        "patternId": "ep-standard-calc",
+        "question": "Work out $(2 \\times 10^3) \\times (4 \\times 10^5)$. Give your answer in standard form.",
+        "question_zh": "计算 $(2 \\times 10^3) \\times (4 \\times 10^5)$。以标准式给出答案。",
+        "solution": "**Step 1:** Multiply the numbers: $2 \\times 4 = 8$.\n**Step 2:** Multiply the powers of 10 by adding indices: $10^3 \\times 10^5 = 10^8$.\n**Step 3:** Combine: $8 \\times 10^8$.\n\n**Answer:** $8 \\times 10^8$",
+        "solution_zh": "**步骤1：** 数字相乘：$2 \\times 4 = 8$。\n**步骤2：** 指数相加计算 10 的幂：$10^3 \\times 10^5 = 10^8$。\n**步骤3：** 合并：$8 \\times 10^8$。\n\n**答案：** $8 \\times 10^8$",
+        "source": "Adapted from 4MA1/2H/June/2018"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "Which of these is correctly written in standard form?",
+        "q_zh": "下列哪项标准式的写法是正确的？",
+        "o": [
+          "$12 \\times 10^4$",
+          "$0.5 \\times 10^{-3}$",
+          "$7.2 \\times 10^5$",
+          "$8.1 \\times 10^{2.5}$"
+        ],
+        "a": 2,
+        "e": "In standard form $A \\times 10^n$, $1 \\le A < 10$. Only 7.2 fits this condition. Also, $n$ must be an integer.",
+        "e_zh": "在标准式 $A \\times 10^n$ 中，$1 \\le A < 10$。只有 7.2 符合这个条件。此外，$n$ 必须是整数。"
+      },
+      {
+        "q": "What is $(6 \\times 10^8) \\div (3 \\times 10^2)$?",
+        "q_zh": "$(6 \\times 10^8) \\div (3 \\times 10^2)$ 是多少？",
+        "o": [
+          "$2 \\times 10^4$",
+          "$2 \\times 10^6$",
+          "$18 \\times 10^{10}$",
+          "$2 \\times 10^{10}$"
+        ],
+        "a": 1,
+        "e": "$6 \\div 3 = 2$ and $10^8 \\div 10^2 = 10^{8-2} = 10^6$. Result is $2 \\times 10^6$.",
+        "e_zh": "$6 \\div 3 = 2$ 且 $10^8 \\div 10^2 = 10^{8-2} = 10^6$。结果是 $2 \\times 10^6$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-E1.10-01",
+    "section": "1.10",
+    "order": 1,
+    "title": "Estimation",
+    "title_zh": "估算",
+    "explanation": {
+      "en": "To estimate the value of a complex calculation, round every number to **One Significant Figure** before performing the operations.",
+      "zh": "要估算复杂计算的值，请在进行运算前将每个数字舍入到**一位有效数字**。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-estimate-calc",
+        "label": "Estimate the value of an expression",
+        "label_zh": "估算表达式的值",
+        "description": "Use 1 sf rounding to provide an approximate answer.",
+        "description_zh": "使用 1 位有效数字舍入法提供近似答案。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-estimate-calc",
+        "question": "Estimate the value of $\\frac{41.3 \\times 19.8}{0.49}$",
+        "question_zh": "估算 $\\frac{41.3 \\times 19.8}{0.49}$ 的值",
+        "solution": "**Step 1:** Round each number to 1 sf: $41.3 \\to 40$; $19.8 \\to 20$; $0.49 \\to 0.5$.\n**Step 2:** Substitute: $\\frac{40 \\times 20}{0.5}$.\n**Step 3:** Calculate: $\\frac{800}{0.5} = 1600$.\n\n**Answer:** 1600",
+        "solution_zh": "**步骤1：** 将每个数字舍入到 1 位有效数字：$41.3 \\to 40$；$19.8 \\to 20$；$0.49 \\to 0.5$。\n**步骤2：** 代入：$\\frac{40 \\times 20}{0.5}$。\n**步骤3：** 计算：$\\frac{800}{0.5} = 1600$。\n\n**答案：** 1600",
+        "source": "Adapted from 4MA1/1F/June/2018"
+      },
+      {
+        "patternId": "ep-estimate-calc",
+        "question": "Estimate the value of $\\sqrt{98.5 \\times 4.1^2}$",
+        "question_zh": "估算 $\\sqrt{98.5 \\times 4.1^2}$ 的值",
+        "solution": "**Step 1:** Round to 1 sf: $98.5 \\to 100$; $4.1 \\to 4$.\n**Step 2:** Substitute: $\\sqrt{100 \\times 4^2}$.\n**Step 3:** Calculate: $\\sqrt{100 \\times 16} = \\sqrt{1600} = 40$.\n\n**Answer:** 40",
+        "solution_zh": "**步骤1：** 舍入到 1 位有效数字：$98.5 \\to 100$；$4.1 \\to 4$。\n**步骤2：** 代入：$\\sqrt{100 \\times 4^2}$。\n**步骤3：** 计算：$\\sqrt{100 \\times 16} = \\sqrt{1600} = 40$。\n\n**答案：** 40",
+        "source": "Adapted from 4MA1/2F/Jan/2021"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "Estimate $\\frac{302 \\times 4.96}{0.185}$",
+        "q_zh": "估算 $\\frac{302 \\times 4.96}{0.185}$",
+        "o": [
+          "7500",
+          "750",
+          "1500",
+          "150"
+        ],
+        "a": 0,
+        "e": "$\\frac{300 \\times 5}{0.2} = \\frac{1500}{0.2} = 7500$.",
+        "e_zh": "$\\frac{300 \\times 5}{0.2} = \\frac{1500}{0.2} = 7500$。"
+      },
+      {
+        "q": "Is an estimate of 200 for $19.1 \\times 11.2$ an overestimate or underestimate?",
+        "q_zh": "对于 $19.1 \\times 11.2$ 得到估算值 200，这是高估还是低估？",
+        "o": [
+          "Overestimate",
+          "Underestimate",
+          "Exactly correct",
+          "Cannot tell"
+        ],
+        "a": 0,
+        "e": "1 sf rounding: $20 \\times 10 = 200$. Actual: $19.1 \\times 11.2 = 213.92$. Wait, $20$ is an increase but $10$ is a decrease. Actually $19.1 < 20$ and $11.2 > 10$. In this case, 200 is less than 213, so it is an underestimate.",
+        "e_zh": "1 位有效数字舍入：$20 \\times 10 = 200$。实际值：$19.1 \\times 11.2 = 213.92$。由于 200 小于 213.92，所以这是低估（Underestimate）。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-E1.11-01",
+    "section": "1.11",
+    "order": 1,
+    "title": "Calculator Use and BODMAS",
+    "title_zh": "计算器使用与运算顺序",
+    "explanation": {
+      "en": "Calculators follow the **BODMAS** order of operations: Brackets, Orders (indices), Division/Multiplication, and Addition/Subtraction. \n\nAlways enter complex fractions using the fraction button to ensure correct evaluation.",
+      "zh": "计算器遵循 **BODMAS** 运算顺序：括号 (Brackets)、指数 (Orders)、乘除 (Division/Multiplication) 以及加减 (Addition/Subtraction)。\n\n务必使用分数按钮输入复杂分数，以确保计算结果正确。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-calc-efficiency",
+        "label": "Evaluate complex numerical expressions",
+        "label_zh": "计算数值表达式的值",
+        "description": "Write down all digits from the calculator display before rounding.",
+        "description_zh": "在舍入之前，先写下计算器屏幕上显示的所有数字。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-calc-efficiency",
+        "question": "Use your calculator to work out $\\frac{\\sqrt{12.5 + 2.8^2}}{4.1 - 0.7}$. Write down all the figures on your calculator display.",
+        "question_zh": "使用计算器计算 $\\frac{\\sqrt{12.5 + 2.8^2}}{4.1 - 0.7}$。写下计算器显示屏上的所有数字。",
+        "solution": "**Step 1:** Calculate numerator: $\\sqrt{12.5 + 7.84} = \\sqrt{20.34} \\approx 4.5099889...$\n**Step 2:** Calculate denominator: $4.1 - 0.7 = 3.4$.\n**Step 3:** Divide: $4.5099889... \\div 3.4 = 1.3264673...$\n\n**Answer:** 1.326467332 (may vary slightly by model)",
+        "solution_zh": "**步骤1：** 计算分子：$\\sqrt{12.5 + 7.84} = \\sqrt{20.34} \\approx 4.5099889...$\n**步骤2：** 计算分母：$4.1 - 0.7 = 3.4$。\n**步骤3：** 相除：$4.5099889... \\div 3.4 = 1.3264673...$。\n\n**答案：** 1.326467332（可能因型号略有不同）",
+        "source": "4MA1/1F/June/2019"
+      },
+      {
+        "patternId": "ep-calc-efficiency",
+        "question": "Work out $5.4^3$. Give your answer correct to 1 decimal place.",
+        "question_zh": "计算 $5.4^3$。将答案精确到 1 位小数。",
+        "solution": "**Step 1:** Enter $5.4$ and use the $x^y$ or $x^3$ button.\n**Step 2:** Calculator displays $157.464$.\n**Step 3:** Round to 1 dp: $157.5$.\n\n**Answer:** 157.5",
+        "solution_zh": "**步骤1：** 输入 $5.4$ 并使用 $x^y$ 或 $x^3$ 按钮。\n**步骤2：** 计算器显示 $157.464$。\n**步骤3：** 舍入到 1 位小数：$157.5$。\n\n**答案：** 157.5",
+        "source": "Adapted from 4MA1/2F/Jan/2021"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "According to BODMAS, what is $10 - 2 \\times 3$?",
+        "q_zh": "根据 BODMAS， $10 - 2 \\times 3$ 的结果是多少？",
+        "o": [
+          "24",
+          "4",
+          "8",
+          "16"
+        ],
+        "a": 1,
+        "e": "Multiplication comes before subtraction. $10 - 6 = 4$.",
+        "e_zh": "先乘法后减法。$10 - 6 = 4$。"
+      },
+      {
+        "q": "How do you enter $\\frac{1}{2 + 3}$ into a calculator without using the fraction button?",
+        "q_zh": "在不使用分数按钮的情况下，如何在计算器中输入 $\\frac{1}{2 + 3}$？",
+        "o": [
+          "1 / 2 + 3",
+          "1 / (2 + 3)",
+          "1 / 2 / 3",
+          "(1 / 2) + 3"
+        ],
+        "a": 1,
+        "e": "You must use brackets for the denominator to ensure the addition happens first. $1 \\div (2 + 3) = 1 \\div 5 = 0.2$.",
+        "e_zh": "必须对分母使用括号，以确保先进行加法。$1 \\div (2 + 3) = 1 \\div 5 = 0.2$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "id": "kp-2.7-02",
+    "addQuiz": [],
+    "addExamples": [
+      {
+        "patternId": "ep-quad-formula",
+        "question": "Solve $2x^2 + 5x - 4 = 0$. Give your solutions correct to 3 significant figures.",
+        "question_zh": "解方程 $2x^2 + 5x - 4 = 0$。结果保留三位有效数字。",
+        "solution": "Compare $2x^2 + 5x - 4 = 0$ with $ax^2 + bx + c = 0$: \\\\ $a = 2, b = 5, c = -4$ \\\\ Using the quadratic formula: \\\\ $x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$ \\\\ $x = \\frac{-5 \\pm \\sqrt{5^2 - 4(2)(-4)}}{2(2)}$ \\\\ $x = \\frac{-5 \\pm \\sqrt{57}}{4}$ \\\\ $x = 0.637$ or $x = -3.14$ (to 3 sig figs)",
+        "solution_zh": "将 $2x^2 + 5x - 4 = 0$ 与 $ax^2 + bx + c = 0$ 比较：\\\\ $a = 2, b = 5, c = -4$ \\\\ 使用二次方程求根公式：\\\\ $x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$ \\\\ $x = \\frac{-5 \\pm \\sqrt{5^2 - 4(2)(-4)}}{2(2)}$ \\\\ $x = \\frac{-5 \\pm \\sqrt{57}}{4}$ \\\\ $x = 0.637$ 或 $x = -3.14$（保留三位有效数字）",
+        "source": "Adapted from 4MA1/1H/Jan/2021"
+      }
+    ]
+  }
+]

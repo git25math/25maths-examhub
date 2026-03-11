@@ -1,0 +1,825 @@
+[
+  {
+    "id": "kp-Y10.1-01",
+    "section": "Y10.1",
+    "order": 1,
+    "title": "Upper and Lower Bounds",
+    "title_zh": "上界与下界",
+    "explanation": {
+      "en": "When a number is rounded, the **bounds** represent the range of possible values the original number could have been.\n\n**Lower bound** is the smallest possible value that would round to the given number. For a number rounded to the nearest $x$, the lower bound is $value - \\frac{1}{2}x$.\n\n**Upper bound** is the smallest value that would *not* round down to the given number (often treated as the limit). It is calculated as $value + \\frac{1}{2}x$.\n\n**Accuracy in calculations** requires finding the bounds of the result. For a product $A \\times B$, the maximum value is $Upper(A) \\times Upper(B)$, while for a quotient $\\frac{A}{B}$, the maximum value is $\\frac{Upper(A)}{Lower(B)}$.",
+      "zh": "当一个数被取近似值时，**界限**表示原始数字可能存在的取值范围。\n\n**下界**是能够舍入到给定数字的最小可能值。对于舍入到最近 $x$ 单位的数，下界为 $value - \\frac{1}{2}x$。\n\n**上界**是恰好不能舍入到该数的最小值（通常被视为上限）。计算公式为 $value + \\frac{1}{2}x$。\n\n**计算中的精确度**要求找到结果的界限。对于乘积 $A \\times B$，最大值为 $Upper(A) \\times Upper(B)$；而对于商 $\\frac{A}{B}$，最大值为 $\\frac{Upper(A)}{Lower(B)}$。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-bounds-calc",
+        "label": "Calculate bounds for measurement results",
+        "label_zh": "计算测量结果的界限",
+        "description": "Find the maximum or minimum possible value for a calculated quantity given the precision of measurements.",
+        "description_zh": "根据测量精度，计算某一测量量可能的最大值或最小值。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-bounds-calc",
+        "question": "A rectangle has length $L = 8.4$ cm and width $W = 5.2$ cm, both rounded to 1 decimal place. Calculate the upper bound for the area of the rectangle.",
+        "question_zh": "一个长方形的长 $L = 8.4$ cm，宽 $W = 5.2$ cm，均保留一位小数。计算该长方形面积的上界。",
+        "solution": "**Step 1:** Find the bounds for each measurement. Since they are to 1 d.p. ($0.1$), the margin is $\\pm 0.05$.\n$Upper(L) = 8.4 + 0.05 = 8.45$\n$Upper(W) = 5.2 + 0.05 = 5.25$\n\n**Step 2:** Calculate the upper bound for the area.\n$Area_{max} = 8.45 \\times 5.25 = 44.3625$ cm$^2$.\n\n**Answer:** $44.3625$ cm$^2$",
+        "solution_zh": "**步骤1：** 找到每个测量值的界限。因为保留一位小数（$0.1$），误差范围是 $\\pm 0.05$。\n$Upper(L) = 8.4 + 0.05 = 8.45$\n$Upper(W) = 5.2 + 0.05 = 5.25$\n\n**步骤2：** 计算面积的上界。\n$Area_{max} = 8.45 \\times 5.25 = 44.3625$ cm$^2$。\n\n**答案：** $44.3625$ cm$^2$",
+        "source": "Year 10 Assessment"
+      },
+      {
+        "patternId": "ep-bounds-calc",
+        "question": "The speed of a car is $v = \\frac{d}{t}$. If $d = 100$ m (to the nearest 10 m) and $t = 12.4$ s (to the nearest 0.1 s), calculate the lower bound of the speed.",
+        "question_zh": "汽车的速度公式为 $v = \\frac{d}{t}$。如果 $d = 100$ m（精确到 10 m），$t = 12.4$ s（精确到 0.1 s），计算速度的下界。",
+        "solution": "**Step 1:** Find bounds for $d$ and $t$.\n$Lower(d) = 100 - 5 = 95$ m\n$Upper(t) = 12.4 + 0.05 = 12.45$ s\n\n**Step 2:** To minimize a fraction, use $Lower(Numerator) / Upper(Denominator)$.\n$v_{min} = \\frac{95}{12.45} \\approx 7.63$ m/s.\n\n**Answer:** $7.63$ m/s (3 s.f.)",
+        "solution_zh": "**步骤1：** 找到 $d$ 和 $t$ 的界限。\n$Lower(d) = 100 - 5 = 95$ m\n$Upper(t) = 12.4 + 0.05 = 12.45$ s\n\n**步骤2：** 要使分数最小，应使用 $分子下界 / 分母上界$。\n$v_{min} = \\frac{95}{12.45} \\approx 7.63$ m/s。\n\n**答案：** $7.63$ m/s（保留3位有效数字）",
+        "source": "Adapted from Y10 curriculum"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "A mass $m$ is $50$ kg correct to the nearest $5$ kg. What is the lower bound of $m$?",
+        "q_zh": "质量 $m$ 为 $50$ kg，精确到最近的 $5$ kg。$m$ 的下界是多少？",
+        "o": [
+          "45 kg",
+          "47.5 kg",
+          "49.5 kg",
+          "52.5 kg"
+        ],
+        "a": 1,
+        "e": "The rounding unit is 5 kg, so the margin is $\\pm 2.5$ kg. $50 - 2.5 = 47.5$ kg.",
+        "e_zh": "舍入单位是 5 kg，所以误差范围是 $\\pm 2.5$ kg。$50 - 2.5 = 47.5$ kg。"
+      },
+      {
+        "q": "To calculate the upper bound of $x = A - B$, which formula should be used?",
+        "q_zh": "计算 $x = A - B$ 的上界时，应该使用哪个公式？",
+        "o": [
+          "$Upper(A) - Upper(B)$",
+          "$Lower(A) - Lower(B)$",
+          "$Upper(A) - Lower(B)$",
+          "$Lower(A) - Upper(B)$"
+        ],
+        "a": 2,
+        "e": "To maximize a difference, you take the largest possible value of the first number and subtract the smallest possible value of the second.",
+        "e_zh": "要使差值最大，应取第一个数的最大可能值减去第二个数的最小可能值。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-Y10.2-01",
+    "section": "Y10.2",
+    "order": 1,
+    "title": "Simplifying Algebraic Fractions",
+    "title_zh": "代数分数的化简",
+    "explanation": {
+      "en": "**Simplifying algebraic fractions** involves factoring the numerator and the denominator completely and then cancelling common factors.\n\n**Multiplication and Division** follow the same rules as numerical fractions: $\\frac{a}{b} \\times \\frac{c}{d} = \\frac{ac}{bd}$ and $\\frac{a}{b} \\div \\frac{c}{d} = \\frac{a}{b} \\times \\frac{d}{c}$. Always factorize before multiplying to see if terms cancel.\n\n**Addition and Subtraction** require a **common denominator**. Multiply the numerator and denominator of each fraction by the necessary factors to make the denominators identical, then combine the numerators over the common denominator.",
+      "zh": "**化简代数分数**需要对分子和分母进行完全因式分解，然后约去公共因子。\n\n**乘法和除法**遵循与数值分数相同的规则：$\\frac{a}{b} \\times \\frac{c}{d} = \\frac{ac}{bd}$ 以及 $\\frac{a}{b} \\div \\frac{c}{d} = \\frac{a}{b} \\times \\frac{d}{c}$。在相乘之前务必先进行因式分解，以便观察是否有项可以约去。\n\n**加法和减法**需要**公共分母（通分）**。将每个分数的分子和分母乘以必要的因子，使分母相同，然后将分子合并写在公共分母上。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-frac-simplify",
+        "label": "Simplify complex fractions using factoring",
+        "label_zh": "利用因式分解化简复杂分数",
+        "description": "Simplify fractions where both numerator and denominator are quadratic expressions.",
+        "description_zh": "化简分子和分母均为二次表达式的分数。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-frac-simplify",
+        "question": "Simplify: $\\frac{x^2 - 9}{x^2 + x - 6}$",
+        "question_zh": "化简：$\\frac{x^2 - 9}{x^2 + x - 6}$",
+        "solution": "**Step 1:** Factor the numerator. $x^2 - 9$ is a difference of squares: $(x-3)(x+3)$.\n\n**Step 2:** Factor the denominator. $x^2 + x - 6 = (x+3)(x-2)$.\n\n**Step 3:** Cancel the common factor $(x+3)$.\n$\\frac{(x-3)(x+3)}{(x+3)(x-2)} = \\frac{x-3}{x-2}$.\n\n**Answer:** $\\frac{x-3}{x-2}$",
+        "solution_zh": "**步骤1：** 分解分子。$x^2 - 9$ 是平方差公式：$(x-3)(x+3)$。\n\n**步骤2：** 分解分母。$x^2 + x - 6 = (x+3)(x-2)$。\n\n**步骤3：** 约去公共因子 $(x+3)$。\n$\\frac{(x-3)(x+3)}{(x+3)(x-2)} = \\frac{x-3}{x-2}$。\n\n**答案：** $\\frac{x-3}{x-2}$",
+        "source": "Year 10 Assessment"
+      },
+      {
+        "patternId": "ep-frac-simplify",
+        "question": "Write as a single fraction in its simplest form: $\\frac{3}{x+1} - \\frac{2}{x-2}$",
+        "question_zh": "化简为最简形式的单个分数：$\\frac{3}{x+1} - \\frac{2}{x-2}$",
+        "solution": "**Step 1:** Find the common denominator: $(x+1)(x-2)$.\n\n**Step 2:** Adjust the numerators:\n$\\frac{3(x-2)}{(x+1)(x-2)} - \\frac{2(x+1)}{(x+1)(x-2)}$\n\n**Step 3:** Combine and expand:\n$\\frac{3x - 6 - (2x + 2)}{(x+1)(x-2)} = \\frac{3x - 6 - 2x - 2}{(x+1)(x-2)} = \\frac{x - 8}{(x+1)(x-2)}$.\n\n**Answer:** $\\frac{x - 8}{(x+1)(x-2)}$",
+        "solution_zh": "**步骤1：** 找到公共分母：$(x+1)(x-2)$。\n\n**步骤2：** 调整分子：\n$\\frac{3(x-2)}{(x+1)(x-2)} - \\frac{2(x+1)}{(x+1)(x-2)}$\n\n**步骤3：** 合并并展开：\n$\\frac{3x - 6 - (2x + 2)}{(x+1)(x-2)} = \\frac{3x - 6 - 2x - 2}{(x+1)(x-2)} = \\frac{x - 8}{(x+1)(x-2)}$。\n\n**答案：** $\\frac{x - 8}{(x+1)(x-2)}$",
+        "source": "Adapted from Y10 curriculum"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "What is the result of $\\frac{x}{2} \\div \\frac{x^2}{4}$?",
+        "q_zh": "$\\frac{x}{2} \\div \\frac{x^2}{4}$ 的结果是什么？",
+        "o": [
+          "$\\frac{x^3}{8}$",
+          "$\\frac{2}{x}$",
+          "$\\frac{x}{2}$",
+          "$\\frac{8}{x^3}$"
+        ],
+        "a": 1,
+        "e": "$\\frac{x}{2} \\times \\frac{4}{x^2} = \\frac{4x}{2x^2} = \\frac{2}{x}$.",
+        "e_zh": "$\\frac{x}{2} \\times \\frac{4}{x^2} = \\frac{4x}{2x^2} = \\frac{2}{x}$。"
+      },
+      {
+        "q": "Simplify $\\frac{5x}{x^2 - x}$",
+        "q_zh": "化简 $\\frac{5x}{x^2 - x}$",
+        "o": [
+          "$\\frac{5}{x}$",
+          "$\\frac{5}{x-1}$",
+          "$5x - 5$",
+          "$\\frac{5x}{x(x-1)}$"
+        ],
+        "a": 1,
+        "e": "Factor the denominator: $x^2 - x = x(x-1)$. Then $\\frac{5x}{x(x-1)} = \\frac{5}{x-1}$ after cancelling $x$.",
+        "e_zh": "分解分母：$x^2 - x = x(x-1)$。然后约去 $x$ 得到 $\\frac{5}{x-1}$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-Y10.3-01",
+    "section": "Y10.3",
+    "order": 1,
+    "title": "Solving Quadratic Equations",
+    "title_zh": "解二次方程",
+    "explanation": {
+      "en": "A **quadratic equation** is of the form $ax^2 + bx + c = 0$.\n\n**Solving by Factoring** works when the expression can be split into two linear brackets. If $(x-p)(x-q) = 0$, then $x=p$ or $x=q$.\n\n**The Quadratic Formula** can be used for any quadratic equation: $x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$. This is especially useful when the equation does not factorize easily and requires solutions to be given to a certain number of decimal places.\n\n**Completing the Square** involves rewriting $x^2 + bx$ as $(x + \\frac{b}{2})^2 - (\\frac{b}{2})^2$. This is useful for finding the turning point of a graph or solving equations.",
+      "zh": "**二次方程**的形式为 $ax^2 + bx + c = 0$。\n\n**因式分解法**适用于表达式可以拆分为两个线性括号的情况。如果 $(x-p)(x-q) = 0$，则 $x=p$ 或 $x=q$。\n\n**求根公式法**可用于任何二次方程：$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$。当方程不易分解因式，且要求保留特定小数位数时，此方法非常有用。\n\n**配方法**涉及将 $x^2 + bx$ 改写为 $(x + \\frac{b}{2})^2 - (\\frac{b}{2})^2$。这对于寻找图像的顶点或解方程非常有帮助。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-quad-formula",
+        "label": "Use the quadratic formula",
+        "label_zh": "使用求根公式",
+        "description": "Solve quadratic equations that do not factorize, giving answers to 2 decimal places.",
+        "description_zh": "解不能分解因式的二次方程，结果保留两位小数。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-quad-formula",
+        "question": "Solve $2x^2 - 5x - 4 = 0$. Give your answers to 2 decimal places.",
+        "question_zh": "解方程 $2x^2 - 5x - 4 = 0$。结果保留两位小数。",
+        "solution": "**Step 1:** Identify $a=2, b=-5, c=-4$.\n\n**Step 2:** Substitute into the formula:\n$x = \\frac{-(-5) \\pm \\sqrt{(-5)^2 - 4(2)(-4)}}{2(2)}$\n$x = \\frac{5 \\pm \\sqrt{25 + 32}}{4} = \\frac{5 \\pm \\sqrt{57}}{4}$\n\n**Step 3:** Calculate the two values:\n$x_1 = \\frac{5 + 7.550}{4} \\approx 3.14$\n$x_2 = \\frac{5 - 7.550}{4} \\approx -0.64$\n\n**Answer:** $x = 3.14$ or $x = -0.64$",
+        "solution_zh": "**步骤1：** 确定 $a=2, b=-5, c=-4$。\n\n**步骤2：** 代入公式：\n$x = \\frac{-(-5) \\pm \\sqrt{(-5)^2 - 4(2)(-4)}}{2(2)}$\n$x = \\frac{5 \\pm \\sqrt{25 + 32}}{4} = \\frac{5 \\pm \\sqrt{57}}{4}$。\n\n**步骤3：** 计算两个值：\n$x_1 = \\frac{5 + 7.550}{4} \\approx 3.14$\n$x_2 = \\frac{5 - 7.550}{4} \\approx -0.64$。\n\n**答案：** $x = 3.14$ 或 $x = -0.64$",
+        "source": "Year 10 Assessment"
+      },
+      {
+        "patternId": "ep-quad-formula",
+        "question": "Solve by factoring: $x^2 + 7x + 10 = 0$",
+        "question_zh": "用因式分解法解方程：$x^2 + 7x + 10 = 0$",
+        "solution": "**Step 1:** Find two numbers that multiply to $10$ and add to $7$. These are $2$ and $5$.\n\n**Step 2:** Factorize: $(x+2)(x+5) = 0$.\n\n**Step 3:** Solve: $x+2=0 \\implies x=-2$; $x+5=0 \\implies x=-5$.\n\n**Answer:** $x = -2$ or $x = -5$",
+        "solution_zh": "**步骤1：** 找到两个数，积为 $10$，和为 $7$。这两个数是 $2$ 和 $5$。\n\n**步骤2：** 因式分解：$(x+2)(x+5) = 0$。\n\n**步骤3：** 解得：$x+2=0 \\implies x=-2$；$x+5=0 \\implies x=-5$。\n\n**答案：** $x = -2$ 或 $x = -5$",
+        "source": "Adapted from Y10 curriculum"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "What is the discriminant ($b^2 - 4ac$) of the equation $x^2 + 4x + 4 = 0$?",
+        "q_zh": "方程 $x^2 + 4x + 4 = 0$ 的判别式 ($b^2 - 4ac$) 是多少？",
+        "o": [
+          "0",
+          "8",
+          "16",
+          "-16"
+        ],
+        "a": 0,
+        "e": "$4^2 - 4(1)(4) = 16 - 16 = 0$. This means the equation has one repeated root.",
+        "e_zh": "$4^2 - 4(1)(4) = 16 - 16 = 0$。这意味着方程有一个重根。"
+      },
+      {
+        "q": "If $x^2 - 6x + 5 = 0$, what are the values of $x$?",
+        "q_zh": "如果 $x^2 - 6x + 5 = 0$，$x$ 的值是多少？",
+        "o": [
+          "2 and 3",
+          "-1 and -5",
+          "1 and 5",
+          "0 and 5"
+        ],
+        "a": 2,
+        "e": "$(x-1)(x-5) = 0$, so $x=1$ or $x=5$.",
+        "e_zh": "$(x-1)(x-5) = 0$，所以 $x=1$ 或 $x=5$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-Y10.4-01",
+    "section": "Y10.4",
+    "order": 1,
+    "title": "Linear and Non-Linear Simultaneous Equations",
+    "title_zh": "线性与非线性联立方程组",
+    "explanation": {
+      "en": "**Simultaneous equations** are a set of equations that are solved together to find common values for the variables.\n\n**Linear + Non-linear** systems are best solved using the **Substitution Method**. Rearrange the linear equation to make one variable the subject, then substitute this expression into the quadratic (non-linear) equation.\n\n**Solving the resulting quadratic** will typically give two possible values for the first variable. You must then substitute both back into the linear equation to find the corresponding two values for the second variable.",
+      "zh": "**联立方程组**是一组共同求解以找到变量公共值的方程。\n\n**线性 + 非线性**系统最好使用**代入法**求解。整理线性方程，使其中一个变量成为主元，然后将此表达式代入二次（非线性）方程中。\n\n**求解得到的二次方程**通常会给出第一个变量的两个可能值。然后，你必须将这两个值代回线性方程，以找到第二个变量对应的两个值。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-sim-sub",
+        "label": "Solve linear and quadratic systems",
+        "label_zh": "解线性与二次方程组",
+        "description": "Find the intersection points of a line and a curve by solving simultaneous equations.",
+        "description_zh": "通过解联立方程组找到直线与曲线的交点。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-sim-sub",
+        "question": "Solve the simultaneous equations:\n$y = x^2 - 4$\n$y = 2x - 1$",
+        "question_zh": "解联立方程组：\n$y = x^2 - 4$\n$y = 2x - 1$",
+        "solution": "**Step 1:** Substitute $2x - 1$ for $y$ in the first equation:\n$2x - 1 = x^2 - 4$\n\n**Step 2:** Rearrange into a standard quadratic form:\n$x^2 - 2x - 3 = 0$\n\n**Step 3:** Factor and solve for $x$:\n$(x - 3)(x + 1) = 0 \\implies x = 3, x = -1$\n\n**Step 4:** Find $y$ for each $x$ using $y = 2x - 1$:\nIf $x = 3, y = 2(3) - 1 = 5$\nIf $x = -1, y = 2(-1) - 1 = -3$\n\n**Answer:** $(3, 5)$ and $(-1, -3)$ ",
+        "solution_zh": "**步骤1：** 将 $2x - 1$ 代入第一个方程中的 $y$：\n$2x - 1 = x^2 - 4$\n\n**步骤2：** 整理成标准二次形式：\n$x^2 - 2x - 3 = 0$\n\n**步骤3：** 因式分解并求出 $x$：\n$(x - 3)(x + 1) = 0 \\implies x = 3, x = -1$\n\n**步骤4：** 使用 $y = 2x - 1$ 为每个 $x$ 找到对应的 $y$：\n如果 $x = 3, y = 2(3) - 1 = 5$\n如果 $x = -1, y = 2(-1) - 1 = -3$\n\n**答案：** $(3, 5)$ 和 $(-1, -3)$ ",
+        "source": "Year 10 Assessment"
+      },
+      {
+        "patternId": "ep-sim-sub",
+        "question": "Solve: $x + y = 5$ and $x^2 + y^2 = 13$",
+        "question_zh": "解：$x + y = 5$ 且 $x^2 + y^2 = 13$",
+        "solution": "**Step 1:** Rearrange linear: $y = 5 - x$.\n\n**Step 2:** Substitute into quadratic: $x^2 + (5 - x)^2 = 13$.\n$x^2 + 25 - 10x + x^2 = 13 \\implies 2x^2 - 10x + 12 = 0$.\n\n**Step 3:** Simplify and solve: $x^2 - 5x + 6 = 0 \\implies (x-2)(x-3)=0$. So $x=2, x=3$.\n\n**Step 4:** Find $y$: If $x=2, y=3$; if $x=3, y=2$.\n\n**Answer:** $(2, 3)$ and $(3, 2)$ ",
+        "solution_zh": "**步骤1：** 整理线性方程：$y = 5 - x$。\n\n**步骤2：** 代入二次方程：$x^2 + (5 - x)^2 = 13$。\n$x^2 + 25 - 10x + x^2 = 13 \\implies 2x^2 - 10x + 12 = 0$。\n\n**步骤3：** 化简并求解：$x^2 - 5x + 6 = 0 \\implies (x-2)(x-3)=0$。故 $x=2, x=3$。\n\n**步骤4：** 寻找 $y$：若 $x=2, y=3$；若 $x=3, y=2$。\n\n**答案：** $(2, 3)$ 和 $(3, 2)$ ",
+        "source": "Adapted from Y10 curriculum"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "When solving $y = x+1$ and $x^2 + y^2 = 5$, what quadratic in $x$ is formed?",
+        "q_zh": "在解 $y = x+1$ 和 $x^2 + y^2 = 5$ 时，会形成关于 $x$ 的哪个二次方程？",
+        "o": [
+          "$2x^2 + 2x - 4 = 0$",
+          "$x^2 + x - 4 = 0$",
+          "$2x^2 + 2x + 6 = 0$",
+          "$2x^2 + 1 = 5$"
+        ],
+        "a": 0,
+        "e": "$x^2 + (x+1)^2 = 5 \\implies x^2 + x^2 + 2x + 1 = 5 \\implies 2x^2 + 2x - 4 = 0$.",
+        "e_zh": "$x^2 + (x+1)^2 = 5 \\implies x^2 + x^2 + 2x + 1 = 5 \\implies 2x^2 + 2x - 4 = 0$。"
+      },
+      {
+        "q": "How many pairs of solutions do linear-quadratic simultaneous equations usually have?",
+        "q_zh": "线性-二次联立方程组通常有多少组解？",
+        "o": [
+          "Exactly 1",
+          "Up to 2",
+          "Exactly 3",
+          "Infinitely many"
+        ],
+        "a": 1,
+        "e": "A line can intersect a curve at most at two points, so there are up to 2 pairs of $(x, y)$ solutions.",
+        "e_zh": "一条直线与一条曲线最多交于两点，因此最多有 2 组 $(x, y)$ 解。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-Y10.5-01",
+    "section": "Y10.5",
+    "order": 1,
+    "title": "Composite and Inverse Functions",
+    "title_zh": "复合函数与反函数",
+    "explanation": {
+      "en": "**Functions** are rules that map an input $x$ to an output $f(x)$.\n\n**Composite functions** like $fg(x)$ mean you apply $g$ first, then apply $f$ to the result: $f(g(x))$. Note that the order matters: $fg(x)$ is generally not the same as $gf(x)$.\n\n**Inverse functions** $f^{-1}(x)$ reverse the action of the function. If $f(x) = y$, then $f^{-1}(y) = x$. To find the expression for an inverse, set $y = f(x)$, rearrange the equation to make $x$ the subject, and then swap $x$ and $y$.",
+      "zh": "**函数**是将输入 $x$ 映射到输出 $f(x)$ 的规则。\n\n**复合函数**如 $fg(x)$ 表示先应用 $g$，然后将结果应用到 $f$：$f(g(x))$。注意顺序很重要：$fg(x)$ 通常与 $gf(x)$ 不同。\n\n**反函数** $f^{-1}(x)$ 撤销函数的作用。如果 $f(x) = y$，那么 $f^{-1}(y) = x$。要找到反函数的表达式，设 $y = f(x)$，整理方程使 $x$ 成为主元，最后交换 $x$ 和 $y$。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-func-comp",
+        "label": "Evaluate and simplify composite functions",
+        "label_zh": "求值并化简复合函数",
+        "description": "Calculate values like $fg(2)$ or find the algebraic expression for $fg(x)$.",
+        "description_zh": "计算如 $fg(2)$ 的值，或找到 $fg(x)$ 的代数表达式。"
+      },
+      {
+        "id": "ep-func-inv",
+        "label": "Find the inverse of a linear function",
+        "label_zh": "求线性函数的反函数",
+        "description": "Find $f^{-1}(x)$ for a given function $f(x)$.",
+        "description_zh": "为给定的函数 $f(x)$ 找到 $f^{-1}(x)$。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-func-comp",
+        "question": "If $f(x) = x^2$ and $g(x) = 2x + 3$, find $fg(x)$.",
+        "question_zh": "如果 $f(x) = x^2$ 且 $g(x) = 2x + 3$，求 $fg(x)$。",
+        "solution": "**Step 1:** $fg(x)$ means $f(g(x))$. Replace $x$ in $f$ with the entire expression for $g(x)$.\n\n**Step 2:** $f(2x + 3) = (2x + 3)^2$.\n\n**Step 3:** Expand the bracket (optional unless requested): $4x^2 + 12x + 9$.\n\n**Answer:** $fg(x) = (2x + 3)^2$",
+        "solution_zh": "**步骤1：** $fg(x)$ 表示 $f(g(x))$。将 $f$ 中的 $x$ 替换为 $g(x)$ 的整个表达式。\n\n**步骤2：** $f(2x + 3) = (2x + 3)^2$。\n\n**步骤3：** 展开括号（除非要求，否则可选）：$4x^2 + 12x + 9$。\n\n**答案：** $fg(x) = (2x + 3)^2$",
+        "source": "Year 10 Assessment"
+      },
+      {
+        "patternId": "ep-func-inv",
+        "question": "Find the inverse function $f^{-1}(x)$ for $f(x) = \\frac{2x - 5}{3}$.",
+        "question_zh": "求 $f(x) = \\frac{2x - 5}{3}$ 的反函数 $f^{-1}(x)$。",
+        "solution": "**Step 1:** Let $y = \\frac{2x - 5}{3}$.\n\n**Step 2:** Solve for $x$: \n$3y = 2x - 5$\n$3y + 5 = 2x$\n$x = \\frac{3y + 5}{2}$\n\n**Step 3:** Replace $y$ with $x$ to write the final function: $f^{-1}(x) = \\frac{3x + 5}{2}$.\n\n**Answer:** $f^{-1}(x) = \\frac{3x + 5}{2}$",
+        "solution_zh": "**步骤1：** 设 $y = \\frac{2x - 5}{3}$。\n\n**步骤2：** 解出 $x$：\n$3y = 2x - 5$\n$3y + 5 = 2x$\n$x = \\frac{3y + 5}{2}$。\n\n**步骤3：** 将 $y$ 换回 $x$ 得到最终函数：$f^{-1}(x) = \\frac{3x + 5}{2}$。\n\n**答案：** $f^{-1}(x) = \\frac{3x + 5}{2}$",
+        "source": "Adapted from Y10 curriculum"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "If $f(x) = 5x - 2$, what is $f(3)$?",
+        "q_zh": "如果 $f(x) = 5x - 2$，$f(3)$ 是多少？",
+        "o": [
+          "13",
+          "17",
+          "15",
+          "1"
+        ],
+        "a": 0,
+        "e": "$5(3) - 2 = 15 - 2 = 13$.",
+        "e_zh": "$5(3) - 2 = 15 - 2 = 13$。"
+      },
+      {
+        "q": "What is $f^{-1}(f(x))$ equal to?",
+        "q_zh": "$f^{-1}(f(x))$ 等于多少？",
+        "o": [
+          "1",
+          "$x^2$",
+          "$x$",
+          "0"
+        ],
+        "a": 2,
+        "e": "An inverse function reverses the original function, so the output is the original input $x$.",
+        "e_zh": "反函数撤销原函数的作用，因此输出就是原始输入 $x$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-Y10.6-01",
+    "section": "Y10.6",
+    "order": 1,
+    "title": "Sine and Cosine Rules",
+    "title_zh": "正弦与余弦定理",
+    "explanation": {
+      "en": "For non-right-angled triangles with sides $a, b, c$ opposite angles $A, B, C$:\n\n**The Sine Rule** is $\\frac{a}{\\sin A} = \\frac{b}{\\sin B} = \\frac{c}{\\sin C}$. Use this when you know an opposite side-angle pair.\n\n**The Cosine Rule** is $a^2 = b^2 + c^2 - 2bc \\cos A$. Use this when you have SAS (two sides and the included angle) to find the third side, or SSS (three sides) to find an angle.\n\n**Area of a triangle** can be calculated using $\\text{Area} = \\frac{1}{2}ab \\sin C$.",
+      "zh": "对于边长为 $a, b, c$ 且对应角为 $A, B, C$ 的非直角三角形：\n\n**正弦定理**为 $\\frac{a}{\\sin A} = \\frac{b}{\\sin B} = \\frac{c}{\\sin C}$。当你已知一组对应的边角对时使用此定理。\n\n**余弦定理**为 $a^2 = b^2 + c^2 - 2bc \\cos A$。当你已知 SAS（两边及其夹角）求第三边，或已知 SSS（三边）求角时使用此定理。\n\n**三角形面积**可以使用公式 $\\text{面积} = \\frac{1}{2}ab \\sin C$ 计算。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-trig-rules",
+        "label": "Solve non-right-angled triangles",
+        "label_zh": "解非直角三角形",
+        "description": "Calculate missing lengths and angles using Sine or Cosine rules.",
+        "description_zh": "使用正弦或余弦定理计算缺失的边长和角度。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-trig-rules",
+        "question": "In triangle $ABC$, $AB = 7$ cm, $BC = 10$ cm, and angle $ABC = 60^\\circ$. Find the length of $AC$.",
+        "question_zh": "在三角形 $ABC$ 中，$AB = 7$ cm，$BC = 10$ cm，且角 $ABC = 60^\\circ$。求 $AC$ 的长度。",
+        "solution": "**Step 1:** We have two sides and the included angle (SAS), so use the Cosine Rule.\n$AC^2 = 7^2 + 10^2 - 2(7)(10) \\cos 60^\\circ$\n\n**Step 2:** Calculate values:\n$AC^2 = 49 + 100 - 140(0.5)$\n$AC^2 = 149 - 70 = 79$\n\n**Step 3:** Take the square root:\n$AC = \\sqrt{79} \\approx 8.89$ cm.\n\n**Answer:** $8.89$ cm",
+        "solution_zh": "**步骤1：** 我们已知两边及其夹角 (SAS)，因此使用余弦定理。\n$AC^2 = 7^2 + 10^2 - 2(7)(10) \\cos 60^\\circ$。\n\n**步骤2：** 计算数值：\n$AC^2 = 49 + 100 - 140(0.5)$\n$AC^2 = 149 - 70 = 79$。\n\n**步骤3：** 开平方：\n$AC = \\sqrt{79} \\approx 8.89$ cm。\n\n**答案：** $8.89$ cm",
+        "source": "Year 10 Assessment"
+      },
+      {
+        "patternId": "ep-trig-rules",
+        "question": "In triangle $PQR$, angle $P = 40^\\circ$, angle $Q = 80^\\circ$, and $QR = 5$ cm. Find the length of $PR$.",
+        "question_zh": "在三角形 $PQR$ 中，角 $P = 40^\\circ$，角 $Q = 80^\\circ$，且 $QR = 5$ cm。求 $PR$ 的长度。",
+        "solution": "**Step 1:** Use the Sine Rule. Side $QR$ is opposite angle $P$, and side $PR$ is opposite angle $Q$.\n$\\frac{PR}{\\sin 80^\\circ} = \\frac{5}{\\sin 40^\\circ}$\n\n**Step 2:** Rearrange to find $PR$:\n$PR = \\frac{5 \\sin 80^\\circ}{\\sin 40^\\circ}$\n\n**Step 3:** Calculate:\n$PR \\approx \\frac{5 \\times 0.9848}{0.6428} \\approx 7.66$ cm.\n\n**Answer:** $7.66$ cm",
+        "solution_zh": "**步骤1：** 使用正弦定理。边 $QR$ 对应角 $P$，边 $PR$ 对应角 $Q$。\n$\\frac{PR}{\\sin 80^\\circ} = \\frac{5}{\\sin 40^\\circ}$。\n\n**步骤2：** 整理求 $PR$：\n$PR = \\frac{5 \\sin 80^\\circ}{\\sin 40^\\circ}$。\n\n**步骤3：** 计算：\n$PR \\approx \\frac{5 \\times 0.9848}{0.6428} \\approx 7.66$ cm。\n\n**答案：** $7.66$ cm",
+        "source": "Adapted from Y10 curriculum"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "Which rule is best for finding an angle if you know all three sides of a triangle?",
+        "q_zh": "如果已知三角形的三条边，哪种定理最适合求角？",
+        "o": [
+          "Sine Rule",
+          "Cosine Rule",
+          "Pythagoras' Theorem",
+          "SOH CAH TOA"
+        ],
+        "a": 1,
+        "e": "The Cosine Rule ($a^2 = b^2 + c^2 - 2bc \\cos A$) can be rearranged to solve for the angle when all sides are known.",
+        "e_zh": "余弦定理 ($a^2 = b^2 + c^2 - 2bc \\cos A$) 可以变形，在已知所有边的情况下求解角度。"
+      },
+      {
+        "q": "What is the area of a triangle with sides 6 cm and 8 cm and an included angle of $30^\\circ$?",
+        "q_zh": "一个两边长分别为 6 cm 和 8 cm 且夹角为 $30^\\circ$ 的三角形面积是多少？",
+        "o": [
+          "24 cm$^2$",
+          "12 cm$^2$",
+          "6 cm$^2$",
+          "48 cm$^2$"
+        ],
+        "a": 2,
+        "e": "Area = $\\frac{1}{2} \\times 6 \\times 8 \\times \\sin 30^\\circ = 24 \\times 0.5 = 12$ cm$^2$. wait, $\\frac{1}{2} \\times 48 \\times 0.5 = 12$. Correct.",
+        "e_zh": "面积 = $\\frac{1}{2} \\times 6 \\times 8 \\times \\sin 30^\\circ = 24 \\times 0.5 = 12$ cm$^2$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-Y10.7-01",
+    "section": "Y10.7",
+    "order": 1,
+    "title": "Circle Theorems",
+    "title_zh": "圆的几何定理",
+    "explanation": {
+      "en": "**Circle theorems** describe the geometric properties of angles and lines associated with circles.\n\n**Angle at the center** is twice the angle at the circumference standing on the same arc.\n\n**Angles in the same segment** are equal.\n\n**Angle in a semicircle** is always $90^\\circ$.\n\n**Cyclic quadrilaterals** have opposite angles that sum to $180^\\circ$.\n\n**Alternate segment theorem** states that the angle between a tangent and a chord is equal to the angle in the alternate segment.",
+      "zh": "**圆的定理**描述了与圆相关的角和线的几何性质。\n\n**圆心角**等于同弧所对圆周角的两倍。\n\n**同弧所对的圆周角**相等。\n\n**直径所对的圆周角**始终为 $90^\\circ$。\n\n**圆内接四边形**的对角之和为 $180^\\circ$。\n\n**弦切角定理**规定，切线与弦之间的夹角等于该弦所对的圆周角（交错弧上的角）。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-circle-geom",
+        "label": "Find missing angles in circles",
+        "label_zh": "寻找圆中的缺失角",
+        "description": "Calculate angles by applying one or more circle theorems, giving reasons.",
+        "description_zh": "应用一个或多个圆定理计算角度，并给出理由。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-circle-geom",
+        "question": "A, B, and C are points on a circle with center O. If angle $AOC = 130^\\circ$, find angle $ABC$.",
+        "question_zh": "A, B, C 是圆心为 O 的圆上的点。如果角 $AOC = 130^\\circ$，求角 $ABC$。",
+        "solution": "**Step 1:** Identify the theorem. The angle at the center ($AOC$) is twice the angle at the circumference ($ABC$).\n\n**Step 2:** Calculate: Angle $ABC = 130^\\circ \\div 2 = 65^\\circ$.\n\n**Answer:** $65^\\circ$ (Reason: Angle at center is twice angle at circumference)",
+        "solution_zh": "**步骤1：** 识别定理。圆心角 ($AOC$) 是圆周角 ($ABC$) 的两倍。\n\n**步骤2：** 计算：角 $ABC = 130^\\circ \\div 2 = 65^\\circ$。\n\n**答案：** $65^\\circ$（理由：圆心角是圆周角的两倍）",
+        "source": "Year 10 Assessment"
+      },
+      {
+        "patternId": "ep-circle-geom",
+        "question": "ABCD is a cyclic quadrilateral. If angle $A = 85^\\circ$ and angle $B = 110^\\circ$, find angles $C$ and $D$.",
+        "question_zh": "ABCD 是圆内接四边形。如果角 $A = 85^\\circ$，角 $B = 110^\\circ$，求角 $C$ 和角 $D$。",
+        "solution": "**Step 1:** Use the theorem: opposite angles of a cyclic quadrilateral sum to $180^\\circ$.\n\n**Step 2:** Angle $C = 180^\\circ - 85^\\circ = 95^\\circ$.\n\n**Step 3:** Angle $D = 180^\\circ - 110^\\circ = 70^\\circ$.\n\n**Answer:** $C = 95^\\circ, D = 70^\\circ$",
+        "solution_zh": "**步骤1：** 使用定理：圆内接四边形的对角之和为 $180^\\circ$。\n\n**步骤2：** 角 $C = 180^\\circ - 85^\\circ = 95^\\circ$。\n\n**步骤3：** 角 $D = 180^\\circ - 110^\\circ = 70^\\circ$。\n\n**答案：** $C = 95^\\circ, D = 70^\\circ$",
+        "source": "Adapted from Y10 curriculum"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "What is the angle between a radius and a tangent at the point of contact?",
+        "q_zh": "在切点处，半径与切线之间的夹角是多少？",
+        "o": [
+          "$45^\\circ$",
+          "$90^\\circ$",
+          "$180^\\circ$",
+          "It varies"
+        ],
+        "a": 1,
+        "e": "A tangent is always perpendicular ($90^\\circ$) to the radius at the point of contact.",
+        "e_zh": "切线在切点处始终垂直于半径 ($90^\\circ$)。"
+      },
+      {
+        "q": "If angle in the same segment are equal, what can we say about two angles subtended by the same arc?",
+        "q_zh": "如果同弧所对的圆周角相等，那么由同一段弧所对的两个角有什么关系？",
+        "o": [
+          "They are supplementary",
+          "They are complementary",
+          "They are equal",
+          "One is twice the other"
+        ],
+        "a": 2,
+        "e": "This is the definition of the theorem: angles subtended by the same arc at the circumference are equal.",
+        "e_zh": "这是定理的定义：同弧所对的圆周角相等。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-Y10.8-01",
+    "section": "Y10.8",
+    "order": 1,
+    "title": "Loci and Basic Constructions",
+    "title_zh": "轨迹与基本作图",
+    "explanation": {
+      "en": "A **locus** (plural: loci) is a set of points that satisfy a specific rule.\n\n**Perpendicular bisector** is the locus of points equidistant from two fixed points. To construct it, draw two intersecting arcs of the same radius centered at the two points.\n\n**Angle bisector** is the locus of points equidistant from two intersecting lines. Construct it by drawing an arc across the lines and then two more arcs from those intersection points.\n\n**Locus at a distance $d$** from a point is a circle. From a line, it consists of two parallel lines.",
+      "zh": "**轨迹**是满足特定规则的所有点的集合。\n\n**垂直平分线**是到两个定点距离相等的点的轨迹。作图方法：以两个定点为圆心，以相同半径画弧，使两弧相交，连接交点。\n\n**角平分线**是到两条相交直线距离相等的点的轨迹。作图方法：在角两边画一段弧，再从弧与边的交点出发画两段相交的弧。\n\n**到定点距离为 $d$ 的轨迹**是一个圆。到定直线距离为 $d$ 的轨迹是两条平行线。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-loci-regions",
+        "label": "Shade regions satisfying multiple loci",
+        "label_zh": "阴影表示满足多个轨迹条件的区域",
+        "description": "Construct loci and shade the region that meets all inequalities (e.g., closer to A than B AND less than 5cm from C).",
+        "description_zh": "作出轨迹并阴影表示满足所有不等式条件的区域（例如，离 A 比离 B 近，且离 C 小于 5cm）。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-loci-regions",
+        "question": "Construct the perpendicular bisector of a line segment AB of length 6 cm.",
+        "question_zh": "作长度为 6 cm 的线段 AB 的垂直平分线。",
+        "solution": "**Step 1:** Set your compass to a width greater than half of 6 cm (e.g., 4 cm).\n\n**Step 2:** Place the point of the compass on A and draw arcs above and below the line.\n\n**Step 3:** Without changing the compass width, place the point on B and draw arcs that intersect the first two arcs.\n\n**Step 4:** Draw a straight line through the two intersection points.\n\n**Answer:** This line is the perpendicular bisector.",
+        "solution_zh": "**步骤1：** 将圆规宽度设置为大于 6 cm 的一半（例如 4 cm）。\n\n**步骤2：** 将圆规针尖放在 A 点，在线段上方和下方画弧。\n\n**步骤3：** 在不改变圆规宽度的情况下，将针尖放在 B 点，画弧使之与前两段弧相交。\n\n**步骤4：** 过两个交点画一条直线。\n\n**答案：** 这条直线即为垂直平分线。",
+        "source": "Year 10 Assessment"
+      },
+      {
+        "patternId": "ep-loci-regions",
+        "question": "Describe the locus of points that are exactly 3 cm from a fixed point P.",
+        "question_zh": "描述到定点 P 的距离恰好为 3 cm 的点的轨迹。",
+        "solution": "The set of points at a constant distance from a fixed point forms a circle.\n\n**Answer:** A circle with center P and radius 3 cm.",
+        "solution_zh": "到定点距离恒定的点集构成一个圆。\n\n**答案：** 以 P 为圆心，半径为 3 cm 的圆。",
+        "source": "Adapted from Y10 curriculum"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "Which construction is used to find points equidistant from two lines that meet at a vertex?",
+        "q_zh": "哪种作图方法用于寻找离相交于顶点的两条直线距离相等的点？",
+        "o": [
+          "Perpendicular bisector",
+          "Angle bisector",
+          "Parallel line",
+          "Circle"
+        ],
+        "a": 1,
+        "e": "The angle bisector is the locus of all points equidistant from the two lines forming the angle.",
+        "e_zh": "角平分线是到构成该角的两条直线距离相等的点的轨迹。"
+      },
+      {
+        "q": "If a point moves such that it is always 2 cm from a line segment AB, what shape does the locus take at the ends of the segment?",
+        "q_zh": "如果一个动点到线段 AB 的距离始终为 2 cm，那么该轨迹在线段端点处呈现什么形状？",
+        "o": [
+          "Square corners",
+          "Semicircles",
+          "Triangles",
+          "Parallel lines only"
+        ],
+        "a": 1,
+        "e": "The locus consists of parallel lines along the segment and semicircles at the ends A and B.",
+        "e_zh": "该轨迹由沿线段的平行线和端点 A、B 处的半圆组成。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-Y10.9-01",
+    "section": "Y10.9",
+    "order": 1,
+    "title": "Similarity in Area and Volume",
+    "title_zh": "面积与体积的相似性",
+    "explanation": {
+      "en": "When two shapes are **mathematically similar**, their corresponding lengths are in the same ratio $k$ (the scale factor).\n\n**Area Scale Factor** is $k^2$. If the length increases by factor $k$, the area increases by $k^2$.\n\n**Volume Scale Factor** is $k^3$. If the length increases by factor $k$, the volume increases by $k^3$.\n\nThis principle applies to all similar 2D shapes and 3D solids, regardless of their complexity.",
+      "zh": "当两个图形**数学相似**时，它们的对应长度之比为 $k$（比例因子）。\n\n**面积比例因子**为 $k^2$。如果长度增加 $k$ 倍，则面积增加 $k^2$ 倍。\n\n**体积比例因子**为 $k^3$。如果长度增加 $k$ 倍，则体积增加 $k^3$ 倍。\n\n无论其复杂程度如何，这一原理适用于所有相似的平面图形和立体图形。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-sim-av",
+        "label": "Calculate area or volume of similar shapes",
+        "label_zh": "计算相似图形的面积或体积",
+        "description": "Use the length ratio to find missing areas or volumes, or vice-versa.",
+        "description_zh": "利用长度比寻找缺失的面积或体积，反之亦然。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-sim-av",
+        "question": "Two similar triangles have corresponding sides of 4 cm and 12 cm. If the area of the smaller triangle is 10 cm$^2$, find the area of the larger triangle.",
+        "question_zh": "两个相似三角形的对应边长分别为 4 cm 和 12 cm。如果较小三角形的面积为 10 cm$^2$，求较大三角形的面积。",
+        "solution": "**Step 1:** Find the length scale factor $k$. \n$k = 12 \\div 4 = 3$.\n\n**Step 2:** Find the area scale factor $k^2$. \n$k^2 = 3^2 = 9$.\n\n**Step 3:** Calculate the larger area.\n$Area = 10 \\times 9 = 90$ cm$^2$.\n\n**Answer:** $90$ cm$^2$",
+        "solution_zh": "**步骤1：** 找到长度比例因子 $k$。\n$k = 12 \\div 4 = 3$。\n\n**步骤2：** 找到面积比例因子 $k^2$。\n$k^2 = 3^2 = 9$。\n\n**步骤3：** 计算较大图形的面积。\n$Area = 10 \\times 9 = 90$ cm$^2$。\n\n**答案：** $90$ cm$^2$",
+        "source": "Year 10 Assessment"
+      },
+      {
+        "patternId": "ep-sim-av",
+        "question": "Two similar vases have volumes of 200 cm$^3$ and 1600 cm$^3$. If the smaller vase is 15 cm tall, how tall is the larger vase?",
+        "question_zh": "两个相似花瓶的体积分别为 200 cm$^3$ 和 1600 cm$^3$。如果较小的花瓶高 15 cm，较大的花瓶有多高？",
+        "solution": "**Step 1:** Find the volume scale factor $k^3$. \n$k^3 = 1600 \\div 200 = 8$.\n\n**Step 2:** Find the length scale factor $k$ by taking the cube root.\n$k = \\sqrt[3]{8} = 2$.\n\n**Step 3:** Calculate the height of the larger vase.\n$Height = 15 \\times 2 = 30$ cm.\n\n**Answer:** $30$ cm",
+        "solution_zh": "**步骤1：** 找到体积比例因子 $k^3$。\n$k^3 = 1600 \\div 200 = 8$。\n\n**步骤2：** 通过开立方根找到长度比例因子 $k$。\n$k = \\sqrt[3]{8} = 2$。\n\n**步骤3：** 计算较大花瓶的高度。\n$Height = 15 \\times 2 = 30$ cm。\n\n**答案：** $30$ cm",
+        "source": "Adapted from Y10 curriculum"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "If the length scale factor between two similar shapes is 5, what is the area scale factor?",
+        "q_zh": "如果两个相似图形的长度比例因子是 5，面积比例因子是多少？",
+        "o": [
+          "5",
+          "10",
+          "25",
+          "125"
+        ],
+        "a": 2,
+        "e": "Area scale factor is $k^2$, so $5^2 = 25$.",
+        "e_zh": "面积比例因子是 $k^2$，所以 $5^2 = 25$。"
+      },
+      {
+        "q": "The areas of two similar circles are 4 cm$^2$ and 36 cm$^2$. What is the ratio of their radii?",
+        "q_zh": "两个相似圆的面积分别为 4 cm$^2$ 和 36 cm$^2$。它们的半径比是多少？",
+        "o": [
+          "1 : 3",
+          "1 : 9",
+          "1 : 2",
+          "1 : 4"
+        ],
+        "a": 0,
+        "e": "Area ratio is $36/4 = 9$. Length ratio is $\\sqrt{9} = 3$. So ratio is 1:3.",
+        "e_zh": "面积比为 $36/4 = 9$。长度比为 $\\sqrt{9} = 3$。因此比例为 1:3。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-Y10.10-01",
+    "section": "Y10.10",
+    "order": 1,
+    "title": "Combined Transformations",
+    "title_zh": "组合图形变换",
+    "explanation": {
+      "en": "Transformations include **translation**, **reflection**, **rotation**, and **enlargement**.\n\n**Translation** moves every point of a shape by a vector $\\begin{pmatrix} x \\\\ y \\end{pmatrix}$.\n\n**Reflection** flips a shape over a mirror line (e.g., $y=x$ or $x=2$).\n\n**Rotation** turns a shape around a center point by a specific angle and direction.\n\n**Enlargement** changes the size of a shape from a center point using a scale factor $k$. If $0 < k < 1$, the shape gets smaller. If $k$ is negative, the shape is inverted on the opposite side of the center.",
+      "zh": "图形变换包括**平移**、**反射**、**旋转**和**位似变换（放大/缩小）**。\n\n**平移**按照向量 $\\begin{pmatrix} x \\\\ y \\end{pmatrix}$ 移动图形的每个点。\n\n**反射**将图形沿镜面线（如 $y=x$ 或 $x=2$）翻转。\n\n**旋转**绕中心点按特定角度和方向旋转图形。\n\n**位似变换**利用比例因子 $k$ 从中心点改变图形的大小。如果 $0 < k < 1$，图形变小。如果 $k$ 为负数，图形将在中心点的另一侧倒置。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-trans-describe",
+        "label": "Describe a single transformation",
+        "label_zh": "描述单个变换",
+        "description": "Identify the type and give full details (vector for translation, line for reflection, etc.) that maps shape A to B.",
+        "description_zh": "识别变换类型并给出完整细节（平移的向量、反射的镜面线等），使图形 A 映射到 B。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-trans-describe",
+        "question": "Describe fully the single transformation that maps triangle A with vertices (1,1), (1,2), (2,1) to triangle B with vertices (-1,1), (-1,2), (-2,1).",
+        "question_zh": "完整描述将顶点为 (1,1), (1,2), (2,1) 的三角形 A 映射到顶点为 (-1,1), (-1,2), (-2,1) 的三角形 B 的单个变换。",
+        "solution": "**Step 1:** Observe the change. The x-coordinates have changed sign, but y-coordinates are the same.\n\n**Step 2:** This is a flip across the vertical axis.\n\n**Answer:** Reflection in the line $x = 0$ (or the y-axis).",
+        "solution_zh": "**步骤1：** 观察变化。x 坐标符号改变，但 y 坐标保持不变。\n\n**步骤2：** 这是沿纵轴的翻转。\n\n**答案：** 沿直线 $x = 0$（或 y 轴）的反射。",
+        "source": "Year 10 Assessment"
+      },
+      {
+        "patternId": "ep-trans-describe",
+        "question": "Enlarge a square with vertices (0,0), (1,0), (1,1), (0,1) by scale factor 2 with center (0,0).",
+        "question_zh": "以 (0,0) 为中心，比例因子为 2，放大顶点为 (0,0), (1,0), (1,1), (0,1) 的正方形。",
+        "solution": "**Step 1:** Multiply the distance from the center to each vertex by 2.\n$(0,0) \\to (0,0)$\n$(1,0) \\to (2,0)$\n$(1,1) \\to (2,2)$\n$(0,1) \\to (0,2)$\n\n**Answer:** New vertices are (0,0), (2,0), (2,2), (0,2).",
+        "solution_zh": "**步骤1：** 将中心到每个顶点的距离乘以 2。\n$(0,0) \\to (0,0)$\n$(1,0) \\to (2,0)$\n$(1,1) \\to (2,2)$\n$(0,1) \\to (0,2)$\n\n**答案：** 新顶点为 (0,0), (2,0), (2,2), (0,2)。",
+        "source": "Adapted from Y10 curriculum"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "Which transformation requires a center and an angle?",
+        "q_zh": "哪种变换需要中心点和角度？",
+        "o": [
+          "Translation",
+          "Reflection",
+          "Rotation",
+          "Enlargement"
+        ],
+        "a": 2,
+        "e": "Rotation is defined by a center of rotation and an angle (with direction).",
+        "e_zh": "旋转是由旋转中心和角度（及方向）定义的。"
+      },
+      {
+        "q": "If the scale factor of an enlargement is $-1$, what happens to the shape?",
+        "q_zh": "如果位似变换的比例因子是 $-1$，图形会发生什么变化？",
+        "o": [
+          "It stays the same size but moves",
+          "It gets smaller",
+          "It is rotated $180^\\circ$ about the center",
+          "It is reflected only"
+        ],
+        "a": 2,
+        "e": "A scale factor of $-1$ is equivalent to a rotation of $180^\\circ$ about the center of enlargement.",
+        "e_zh": "比例因子为 $-1$ 等同于绕位似中心旋转 $180^\\circ$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-Y10.11-01",
+    "section": "Y10.11",
+    "order": 1,
+    "title": "Combined Events and Tree Diagrams",
+    "title_zh": "组合事件与树状图",
+    "explanation": {
+      "en": "**Probability** measures the likelihood of an event occurring, ranging from 0 to 1.\n\n**Combined events** involve two or more actions. For independent events $A$ and $B$, $P(A \\text{ and } B) = P(A) \\times P(B)$.\n\n**Tree diagrams** are useful for visualizing all possible outcomes. Multiply probabilities along the branches to find the probability of a specific path. Add the probabilities of different paths if they all satisfy the condition.\n\n**Conditional probability** (without replacement) occurs when the outcome of the first event affects the total number of items and the count of specific items for the second event.",
+      "zh": "**概率**衡量事件发生的可能性，范围从 0 到 1。\n\n**组合事件**涉及两个或更多动作。对于相互独立事件 $A$ 和 $B$，$P(A \\text{ 且 } B) = P(A) \\times P(B)$。\n\n**树状图**对于可视化所有可能结果非常有用。沿分支相乘概率可找到特定路径的概率。如果多个不同路径都满足条件，则将它们的概率相加。\n\n**条件概率**（不放回）发生在第一个事件的结果影响第二个事件的总数和特定项计数的情况下。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-prob-tree",
+        "label": "Solve probability problems using tree diagrams",
+        "label_zh": "利用树状图解决概率问题",
+        "description": "Calculate probabilities for multiple events, often involving 'at least' or 'without replacement'.",
+        "description_zh": "计算多个事件的概率，通常涉及“至少”或“不放回”情况。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-prob-tree",
+        "question": "A bag contains 5 red balls and 3 blue balls. Two balls are taken at random without replacement. Find the probability that both balls are red.",
+        "question_zh": "一个袋子里有 5 个红球和 3 个蓝球。随机取出两个球（不放回）。求两个球都是红色的概率。",
+        "solution": "**Step 1:** Probability of first red ball: $P(R1) = \\frac{5}{8}$.\n\n**Step 2:** Since it's without replacement, there are now 4 red balls left out of 7 total. \nProbability of second red ball: $P(R2) = \\frac{4}{7}$.\n\n**Step 3:** Multiply probabilities: $P(R1 \\text{ and } R2) = \\frac{5}{8} \\times \\frac{4}{7} = \\frac{20}{56} = \\frac{5}{14}$.\n\n**Answer:** $\\frac{5}{14}$",
+        "solution_zh": "**步骤1：** 第一个是红球的概率：$P(R1) = \\frac{5}{8}$。\n\n**步骤2：** 由于是不放回取出，现在总共剩下 7 个球，其中 4 个是红球。\n第二个是红球的概率：$P(R2) = \\frac{4}{7}$。\n\n**步骤3：** 概率相乘：$P(R1 \\text{ 且 } R2) = \\frac{5}{8} \\times \\frac{4}{7} = \\frac{20}{56} = \\frac{5}{14}$。\n\n**答案：** $\\frac{5}{14}$",
+        "source": "Year 10 Assessment"
+      },
+      {
+        "patternId": "ep-prob-tree",
+        "question": "The probability that it rains tomorrow is 0.3. If it rains, the probability I carry an umbrella is 0.8. If it doesn't rain, the probability is 0.1. What is the probability I carry an umbrella tomorrow?",
+        "question_zh": "明天下雨的概率是 0.3。如果下雨，我带伞的概率是 0.8。如果不下雨，我带伞的概率是 0.1。明天我带伞的概率是多少？",
+        "solution": "**Step 1:** Identify paths where I carry an umbrella:\nPath 1: Rains AND Umbrella: $0.3 \\times 0.8 = 0.24$.\nPath 2: No Rain AND Umbrella: $0.7 \\times 0.1 = 0.07$.\n\n**Step 2:** Add the probabilities: $0.24 + 0.07 = 0.31$.\n\n**Answer:** $0.31$",
+        "solution_zh": "**步骤1：** 确定带伞的路径：\n路径 1：下雨且带伞：$0.3 \\times 0.8 = 0.24$。\n路径 2：不下雨且带伞：$0.7 \\times 0.1 = 0.07$。\n\n**步骤2：** 将概率相加：$0.24 + 0.07 = 0.31$。\n\n**答案：** $0.31$",
+        "source": "Adapted from Y10 curriculum"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "If two events are independent and $P(A) = 0.4$, $P(B) = 0.5$, what is $P(A \\text{ and } B)$?",
+        "q_zh": "如果两个事件独立，且 $P(A) = 0.4$，$P(B) = 0.5$，$P(A \\text{ 且 } B)$ 是多少？",
+        "o": [
+          "0.9",
+          "0.1",
+          "0.2",
+          "0.45"
+        ],
+        "a": 2,
+        "e": "For independent events, multiply the probabilities: $0.4 \\times 0.5 = 0.2$.",
+        "e_zh": "对于独立事件，将概率相乘：$0.4 \\times 0.5 = 0.2$。"
+      },
+      {
+        "q": "In a tree diagram, what must the sum of probabilities on branches from a single point be?",
+        "q_zh": "在树状图中，从单点出发的所有分支概率之和必须是多少？",
+        "o": [
+          "0.5",
+          "1",
+          "Depends on the number of branches",
+          "100"
+        ],
+        "a": 1,
+        "e": "The sum of probabilities for all possible outcomes from a single event must equal 1.",
+        "e_zh": "单个事件所有可能结果的概率之和必须等于 1。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-Y10.12-01",
+    "section": "Y10.12",
+    "order": 1,
+    "title": "Volumes of Cones, Spheres and Pyramids",
+    "title_zh": "圆锥、球体与棱锥的体积",
+    "explanation": {
+      "en": "**3D Geometry** involves calculating the surface area and volume of three-dimensional solids.\n\n**Volume of a pyramid or cone** is given by $V = \\frac{1}{3} \\times \\text{base area} \\times \\text{vertical height}$. For a cone, $V = \\frac{1}{3}\\pi r^2 h$.\n\n**Volume of a sphere** is $V = \\frac{4}{3}\\pi r^3$.\n\n**Surface area of a sphere** is $A = 4\\pi r^2$.\n\n**Curved surface area of a cone** is $\\pi r l$, where $l$ is the slant height. Use Pythagoras' theorem to find $l$ if only $r$ and vertical height $h$ are given ($l^2 = r^2 + h^2$).",
+      "zh": "**立体几何**涉及计算三维立体的表面积和体积。\n\n**棱锥或圆锥的体积**公式为 $V = \\frac{1}{3} \\times \\text{底面积} \\times \\text{垂直高度}$。对于圆锥，$V = \\frac{1}{3}\\pi r^2 h$。\n\n**球体的体积**为 $V = \\frac{4}{3}\\pi r^3$。\n\n**球体的表面积**为 $A = 4\\pi r^2$。\n\n**圆锥的侧面积**为 $\\pi r l$，其中 $l$ 是斜高。如果只给出半径 $r$ 和垂直高度 $h$，可使用勾股定理求 $l$（$l^2 = r^2 + h^2$）。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-3d-calc",
+        "label": "Calculate volume/area of complex solids",
+        "label_zh": "计算复杂几何体的体积/面积",
+        "description": "Calculate dimensions for cones, spheres, and composite solids.",
+        "description_zh": "计算圆锥、球体和组合几何体的相关尺寸。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-3d-calc",
+        "question": "Calculate the volume of a sphere with a radius of 3 cm. Leave your answer in terms of $\\pi$.",
+        "question_zh": "计算半径为 3 cm 的球体体积。结果保留 $\\pi$。",
+        "solution": "**Step 1:** Use the formula $V = \\frac{4}{3}\\pi r^3$.\n\n**Step 2:** Substitute $r = 3$: \n$V = \\frac{4}{3} \\times \\pi \\times 3^3 = \\frac{4}{3} \\times \\pi \\times 27$.\n\n**Step 3:** Simplify: $4 \\times \\pi \\times 9 = 36\\pi$ cm$^3$.\n\n**Answer:** $36\\pi$ cm$^3$",
+        "solution_zh": "**步骤1：** 使用公式 $V = \\frac{4}{3}\\pi r^3$。\n\n**步骤2：** 代入 $r = 3$：\n$V = \\frac{4}{3} \\times \\pi \\times 3^3 = \\frac{4}{3} \\times \\pi \\times 27$。\n\n**步骤3：** 化简：$4 \\times \\pi \\times 9 = 36\\pi$ cm$^3$。\n\n**答案：** $36\\pi$ cm$^3$",
+        "source": "Year 10 Assessment"
+      },
+      {
+        "patternId": "ep-3d-calc",
+        "question": "A cone has a radius of 5 cm and a vertical height of 12 cm. Find its slant height $l$ and its volume.",
+        "question_zh": "一个圆锥的半径为 5 cm，垂直高度为 12 cm。求其斜高 $l$ 和体积。",
+        "solution": "**Step 1:** Find slant height $l$ using $l^2 = r^2 + h^2$. \n$l^2 = 5^2 + 12^2 = 25 + 144 = 169 \\implies l = 13$ cm.\n\n**Step 2:** Find volume using $V = \\frac{1}{3}\\pi r^2 h$. \n$V = \\frac{1}{3} \\times \\pi \\times 5^2 \\times 12 = \\frac{1}{3} \\times 25 \\times 12 \\times \\pi = 100\\pi \\approx 314$ cm$^3$.\n\n**Answer:** Slant height = $13$ cm, Volume $\\approx 314$ cm$^3$",
+        "solution_zh": "**步骤1：** 利用 $l^2 = r^2 + h^2$ 求斜高 $l$。\n$l^2 = 5^2 + 12^2 = 25 + 144 = 169 \\implies l = 13$ cm。\n\n**步骤2：** 利用 $V = \\frac{1}{3}\\pi r^2 h$ 求体积。\n$V = \\frac{1}{3} \\times \\pi \\times 5^2 \\times 12 = \\frac{1}{3} \\times 25 \\times 12 \\times \\pi = 100\\pi \\approx 314$ cm$^3$。\n\n**答案：** 斜高 = $13$ cm，体积 $\\approx 314$ cm$^3$",
+        "source": "Adapted from Y10 curriculum"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "What is the volume of a pyramid with a square base of side 4 cm and a height of 6 cm?",
+        "q_zh": "一个底面边长为 4 cm、高为 6 cm 的正四棱锥体积是多少？",
+        "o": [
+          "96 cm$^3$",
+          "32 cm$^3$",
+          "48 cm$^3$",
+          "16 cm$^3$"
+        ],
+        "a": 1,
+        "e": "$V = \\frac{1}{3} \\times (4 \\times 4) \\times 6 = \\frac{1}{3} \\times 16 \\times 6 = 32$ cm$^3$.",
+        "e_zh": "$V = \\frac{1}{3} \\times (4 \\times 4) \\times 6 = \\frac{1}{3} \\times 16 \\times 6 = 32$ cm$^3$。"
+      },
+      {
+        "q": "If the radius of a sphere is doubled, what happens to its volume?",
+        "q_zh": "如果球体的半径加倍，其体积会发生什么变化？",
+        "o": [
+          "It doubles",
+          "It quadruples",
+          "It increases by 8 times",
+          "It stays the same"
+        ],
+        "a": 2,
+        "e": "Volume is proportional to $r^3$, so $2^3 = 8$. The volume increases by 8 times.",
+        "e_zh": "体积与 $r^3$ 成正比，所以 $2^3 = 8$。体积增加到原来的 8 倍。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  }
+]

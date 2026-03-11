@@ -1,0 +1,825 @@
+[
+  {
+    "id": "kp-4.1-01",
+    "section": "4.1",
+    "order": 1,
+    "title": "Angle Properties of Lines and Triangles",
+    "title_zh": "线与三角形的角度性质",
+    "explanation": {
+      "en": "Angles are measured in degrees and follow specific rules based on their position.\n\n**Angles on a straight line** always sum to $180^\\circ$. **Angles at a point** sum to $360^\\circ$. **Vertically opposite angles** are equal.\n\n**Parallel lines** create specific angle pairs when cut by a transversal: **Alternate angles** are equal (Z-shape), **Corresponding angles** are equal (F-shape), and **Co-interior angles** sum to $180^\\circ$ (C-shape).\n\n**Triangles** have an interior angle sum of $180^\\circ$. An **exterior angle** of a triangle is equal to the sum of the two opposite interior angles.",
+      "zh": "角度以度为单位，并根据其位置遵循特定的规则。\n\n**直在线的角度**之和总是 $180^\\circ$。**点周围的角度**之和为 $360^\\circ$。**对顶角**相等。\n\n**平行线**被截线相交时产生特定的角对：**内错角**相等（Z形），**同位角**相等（F形），**同旁内角**之和为 $180^\\circ$（C形）。\n\n**三角形**的内角和为 $180^\\circ$。三角形的**外角**等于两个不相邻内角之和。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-parallel-angles",
+        "label": "Calculate angles in parallel lines",
+        "label_zh": "计算平行线中的角度",
+        "description": "Find missing angles using alternate, corresponding, or co-interior angle properties, often requiring multiple steps.",
+        "description_zh": "利用内错角、同位角或同旁内角的性质求缺失的角度，通常需要多个步骤。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-parallel-angles",
+        "question": "Two parallel lines are crossed by a transversal. One angle is $75^\\circ$. Find the size of its co-interior angle.",
+        "question_zh": "两条平行线被一条截线相交。其中一个角是 $75^\\circ$。求其同旁内角的大小。",
+        "solution": "**Step 1:** Recall the property of co-interior angles.\nCo-interior angles sum to $180^\\circ$.\n\n**Step 2:** Subtract the given angle from $180^\\circ$.\n$180^\\circ - 75^\\circ = 105^\\circ$.\n\n**Answer:** $105^\\circ$.",
+        "solution_zh": "**步骤1：** 回忆同旁内角的性质。\n同旁内角之和为 $180^\\circ$。\n\n**步骤2：** 从 $180^\\circ$ 中减去已知角。\n$180^\\circ - 75^\\circ = 105^\\circ$。\n\n**答案：** $105^\\circ$。",
+        "source": "Adapted from 4MA1/1F/May/2019"
+      },
+      {
+        "patternId": "ep-parallel-angles",
+        "question": "In triangle $ABC$, angle $A = 40^\\circ$ and angle $B = 85^\\circ$. Find the exterior angle at $C$.",
+        "question_zh": "在三角形 $ABC$ 中，角 $A = 40^\\circ$，角 $B = 85^\\circ$。求 $C$ 点处的外角。",
+        "solution": "**Step 1:** Use the exterior angle theorem.\nExterior angle = Sum of opposite interior angles.\n\n**Step 2:** Calculate the sum.\n$40^\\circ + 85^\\circ = 125^\\circ$.\n\n**Answer:** $125^\\circ$.",
+        "solution_zh": "**步骤1：** 使用三角形外角定理。\n外角 = 不相邻内角之和。\n\n**步骤2：** 计算总和。\n$40^\\circ + 85^\\circ = 125^\\circ$。\n\n**答案：** $125^\\circ$。",
+        "source": "Adapted from 4MA1"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "What is the sum of angles in a triangle?",
+        "q_zh": "三角形的内角和是多少？",
+        "o": [
+          "$90^\\circ$",
+          "$180^\\circ$",
+          "$270^\\circ$",
+          "$360^\\circ$"
+        ],
+        "a": 1,
+        "e": "The angles in any triangle always add up to $180^\\circ$.",
+        "e_zh": "任何三角形的内角和总是 $180^\\circ$。"
+      },
+      {
+        "q": "Which type of angles are equal and form a 'Z' shape on parallel lines?",
+        "q_zh": "在平行线上，哪种类型的角相等并形成“Z”字形？",
+        "o": [
+          "Corresponding angles",
+          "Co-interior angles",
+          "Alternate angles",
+          "Vertically opposite angles"
+        ],
+        "a": 2,
+        "e": "Alternate angles are equal and can be identified by a Z-shape formed by the parallel lines and the transversal.",
+        "e_zh": "内错角相等，可以通过平行线和截线形成的 Z 字形来识别。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-4.2-01",
+    "section": "4.2",
+    "order": 1,
+    "title": "Angles in Polygons",
+    "title_zh": "多边形中的角度",
+    "explanation": {
+      "en": "Polygons follow general formulas for their interior and exterior angles.\n\n**Sum of interior angles** for an $n$-sided polygon is $(n-2) \\times 180^\\circ$. For a **regular polygon**, each interior angle is $\\frac{(n-2) \\times 180^\\circ}{n}$.\n\n**Sum of exterior angles** for any polygon is always $360^\\circ$. For a regular polygon, each exterior angle is $\\frac{360^\\circ}{n}$.\n\n**Interior and exterior angles** at any vertex of a polygon always sum to $180^\\circ$ as they lie on a straight line.",
+      "zh": "多边形的内角和外角遵循通用的公式。\n\n**n 边形的内角和**为 $(n-2) \\times 180^\\circ$。对于**正多边形**，每个内角为 $\\frac{(n-2) \\times 180^\\circ}{n}$。\n\n任何多边形的**外角和**总是 $360^\\circ$。对于正多边形，每个外角为 $\\frac{360^\\circ}{n}$。\n\n在多边形的任何顶点处，**内角与外角**之和总是 $180^\\circ$，因为它们位于一条直线上。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-polygon-sides",
+        "label": "Find the number of sides of a regular polygon",
+        "label_zh": "求正多边形的边数",
+        "description": "Given an interior or exterior angle, calculate $n$ using the formulas.",
+        "description_zh": "已知一个内角或外角，利用公式计算边数 $n$。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-polygon-sides",
+        "question": "A regular polygon has an exterior angle of $40^\\circ$. Calculate the number of sides it has.",
+        "question_zh": "一个正多边形的一个外角是 $40^\\circ$。计算它的边数。",
+        "solution": "**Step 1:** Use the exterior angle formula: Exterior angle $= \\frac{360^\\circ}{n}$.\n\n**Step 2:** Substitute the given value and solve for $n$.\n$40^\\circ = \\frac{360^\\circ}{n}$\n$n = \\frac{360}{40} = 9$.\n\n**Answer:** $9$ sides.",
+        "solution_zh": "**步骤1：** 使用外角公式：外角 $= \\frac{360^\\circ}{n}$。\n\n**步骤2：** 代入已知值并解 $n$。\n$40^\\circ = \\frac{360^\\circ}{n}$\n$n = \\frac{360}{40} = 9$。\n\n**答案：** $9$ 条边。",
+        "source": "Adapted from 4MA1/2H/Jan/2020"
+      },
+      {
+        "patternId": "ep-polygon-sum",
+        "question": "Calculate the sum of the interior angles of a hexagon.",
+        "question_zh": "计算六边形的内角和。",
+        "solution": "**Step 1:** Identify the number of sides. A hexagon has $n=6$.\n\n**Step 2:** Apply the formula $(n-2) \\times 180^\\circ$.\n$(6-2) \\times 180^\\circ = 4 \\times 180^\\circ = 720^\\circ$.\n\n**Answer:** $720^\\circ$.",
+        "solution_zh": "**步骤1：** 确定边数。六边形有 $n=6$。\n\n**步骤2：** 应用公式 $(n-2) \\times 180^\\circ$。\n$(6-2) \\times 180^\\circ = 4 \\times 180^\\circ = 720^\\circ$。\n\n**答案：** $720^\\circ$。",
+        "source": "Adapted from 4MA1"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "What is the exterior angle of a regular octagon?",
+        "q_zh": "正八边形的一个外角是多少？",
+        "o": [
+          "$45^\\circ$",
+          "$60^\\circ$",
+          "$135^\\circ$",
+          "$360^\\circ$"
+        ],
+        "a": 0,
+        "e": "For an octagon, $n=8$. Exterior angle $= 360 / 8 = 45^\\circ$.",
+        "e_zh": "对于八边形，$n=8$。外角 $= 360 / 8 = 45^\\circ$。"
+      },
+      {
+        "q": "If the sum of interior angles is $1080^\\circ$, how many sides does the polygon have?",
+        "q_zh": "如果内角和是 $1080^\\circ$，这个多边形有多少条边？",
+        "o": [
+          "6",
+          "7",
+          "8",
+          "10"
+        ],
+        "a": 2,
+        "e": "$(n-2) \\times 180 = 1080 \\Rightarrow n-2 = 6 \\Rightarrow n = 8$.",
+        "e_zh": "$(n-2) \\times 180 = 1080 \\Rightarrow n-2 = 6 \\Rightarrow n = 8$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-4.3-01",
+    "section": "4.3",
+    "order": 1,
+    "title": "Symmetry",
+    "title_zh": "对称",
+    "explanation": {
+      "en": "Symmetry describes how a shape can be transformed while looking the same.\n\n**Line symmetry** (Reflectional symmetry) occurs if a shape can be folded along a line so that the two halves match exactly. The fold line is called the **line of symmetry**.\n\n**Rotational symmetry** occurs if a shape looks exactly the same after being rotated by an angle less than $360^\\circ$ about its center. The **order of rotational symmetry** is the number of times the shape looks the same during a full $360^\\circ$ turn.",
+      "zh": "对称描述了一个图形在变换后保持外观不变的性质。\n\n**轴对称**（反射对称）：如果一个图形可以沿一条直线折叠，使两半完全重合，则称其具有轴对称。折痕被称为**对称轴**。\n\n**旋转对称**：如果一个图形绕其中心旋转小于 $360^\\circ$ 的角度后外观完全相同，则称其具有旋转对称。**旋转对称的阶数**是指在旋转 $360^\\circ$ 的过程中，图形看起来相同的次数。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-symmetry-properties",
+        "label": "Identify symmetry in 2D shapes",
+        "label_zh": "识别 2D 图形的对称性",
+        "description": "State the number of lines of symmetry and the order of rotational symmetry for a given shape.",
+        "description_zh": "说明给定图形的对称轴数量和旋转对称阶数。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-symmetry-properties",
+        "question": "A square is drawn. Write down:\n(a) the number of lines of symmetry\n(b) the order of rotational symmetry",
+        "question_zh": "画出一个正方形。写出：\n(a) 对称轴的数量\n(b) 旋转对称的阶数",
+        "solution": "(a) A square has 4 lines of symmetry (2 through midpoints of sides, 2 diagonals).\n(b) A square has rotational symmetry of order 4 (looks the same every $90^\\circ$ turn).\n\n**Answers:** (a) $4$ (b) $4$",
+        "solution_zh": "(a) 正方形有 4 条对称轴（2 条通过对边中点，2 条是对角线）。\n(b) 正方形的旋转对称阶数为 4（每旋转 $90^\\circ$ 外观相同一次）。\n\n**答案：** (a) $4$ (b) $4$",
+        "source": "Adapted from 4MA1"
+      },
+      {
+        "patternId": "ep-symmetry-properties",
+        "question": "State the order of rotational symmetry of a regular pentagon.",
+        "question_zh": "说明正五边形的旋转对称阶数。",
+        "solution": "**Step 1:** For any regular $n$-gon, the order of rotational symmetry is $n$.\n\n**Step 2:** A pentagon has $n=5$.\n\n**Answer:** $5$.",
+        "solution_zh": "**步骤1：** 对于任何正 $n$ 边形，旋转对称的阶数就是 $n$。\n\n**步骤2：** 五边形 $n=5$。\n\n**答案：** $5$。",
+        "source": "Adapted from 4MA1"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "How many lines of symmetry does an isosceles triangle have?",
+        "q_zh": "等腰三角形有多少条对称轴？",
+        "o": [
+          "0",
+          "1",
+          "2",
+          "3"
+        ],
+        "a": 1,
+        "e": "An isosceles triangle has 1 line of symmetry (through the vertex between equal sides).",
+        "e_zh": "等腰三角形有 1 条对称轴（通过两条等边之间的顶点）。"
+      },
+      {
+        "q": "What is the order of rotational symmetry of a parallelogram?",
+        "q_zh": "平行四边形的旋转对称阶数是多少？",
+        "o": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "a": 1,
+        "e": "A parallelogram looks the same at $0^\\circ$ and $180^\\circ$, so the order is 2.",
+        "e_zh": "平行四边形在 $0^\\circ$ 和 $180^\\circ$ 时看起来相同，所以阶数为 2。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-4.4-01",
+    "section": "4.4",
+    "order": 1,
+    "title": "Measures and Bearings",
+    "title_zh": "测量与方位角",
+    "explanation": {
+      "en": "Measures involve units of length, mass, and capacity, as well as the concept of bearings.\n\n**Bearings** are angles measured from North ($000^\\circ$) in a **clockwise** direction. They must always be written as **three digits** (e.g., $045^\\circ$ instead of $45^\\circ$).\n\n**Back bearings** (bearing of $A$ from $B$ given the bearing of $B$ from $A$) can be found by adding or subtracting $180^\\circ$.",
+      "zh": "测量涉及长度、质量和容量的单位，以及方位角的概念。\n\n**方位角**是从正北方向（$000^\\circ$）开始**顺时针**测量的角度。它们必须始终写成**三位数字**（例如 $045^\\circ$ 而非 $45^\\circ$）。\n\n**反向方位角**（已知 $A$ 到 $B$ 的方位角，求 $B$ 到 $A$ 的方位角）可以通过加上或减去 $180^\\circ$ 来求得。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-bearing-calc",
+        "label": "Calculate bearings using geometry",
+        "label_zh": "利用几何知识计算方位角",
+        "description": "Find bearings between points using parallel line properties (alternate/co-interior angles).",
+        "description_zh": "利用平行线性质（内错角/同旁内角）求两点间的方位角。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-bearing-calc",
+        "question": "The bearing of ship $B$ from ship $A$ is $120^\\circ$. Find the bearing of ship $A$ from ship $B$.",
+        "question_zh": "船 $B$ 在船 $A$ 的 $120^\\circ$ 方向。求船 $A$ 在船 $B$ 的方位角。",
+        "solution": "**Step 1:** Draw North lines at $A$ and $B$. These are parallel.\n\n**Step 2:** Use co-interior angles. The interior angle between the North line at $B$ and the line $AB$ is $180^\\circ - 120^\\circ = 60^\\circ$.\n\n**Step 3:** The bearing is measured clockwise from North. Bearing $= 360^\\circ - 60^\\circ = 300^\\circ$. (Alternatively: $120^\\circ + 180^\\circ = 300^\\circ$ since $120 < 180$).\n\n**Answer:** $300^\\circ$.",
+        "solution_zh": "**步骤1：** 在 $A$ 和 $B$ 点画出北线。它们是平行的。\n\n**步骤2：** 使用同旁内角。$B$ 点北线与直线 $AB$ 之间的内角为 $180^\\circ - 120^\\circ = 60^\\circ$。\n\n**步骤3：** 方位角是顺时针测量的。方位角 $= 360^\\circ - 60^\\circ = 300^\\circ$。（或者：由于 $120 < 180$，直接用 $120^\\circ + 180^\\circ = 300^\\circ$）。\n\n**答案：** $300^\\circ$。",
+        "source": "Adapted from 4MA1/1H/Jan/2021"
+      },
+      {
+        "patternId": "ep-unit-conv",
+        "question": "Convert $5.4$ km to meters.",
+        "question_zh": "将 $5.4$ 千米转换为米。",
+        "solution": "**Step 1:** Know that $1$ km $= 1000$ m.\n\n**Step 2:** Multiply by $1000$.\n$5.4 \\times 1000 = 5400$.\n\n**Answer:** $5400$ m.",
+        "solution_zh": "**步骤1：** 已知 $1$ km $= 1000$ m。\n\n**步骤2：** 乘以 $1000$。\n$5.4 \\times 1000 = 5400$。\n\n**答案：** $5400$ m。",
+        "source": "Adapted from 4MA1"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "What is the bearing of South-West?",
+        "q_zh": "西南方向的方位角是多少？",
+        "o": [
+          "$045^\\circ$",
+          "$135^\\circ$",
+          "$225^\\circ$",
+          "$315^\\circ$"
+        ],
+        "a": 2,
+        "e": "South is $180^\\circ$ and West is $270^\\circ$. South-West is exactly halfway: $225^\\circ$.",
+        "e_zh": "正南是 $180^\\circ$，正西是 $270^\\circ$。西南正处于中间：$225^\\circ$。"
+      },
+      {
+        "q": "If the bearing of $X$ from $Y$ is $070^\\circ$, what is the bearing of $Y$ from $X$?",
+        "q_zh": "如果 $Y$ 到 $X$ 的方位角是 $070^\\circ$，那么 $X$ 到 $Y$ 的方位角是多少？",
+        "o": [
+          "$110^\\circ$",
+          "$250^\\circ$",
+          "$290^\\circ$",
+          "$070^\\circ$"
+        ],
+        "a": 1,
+        "e": "Add $180^\\circ$ to the bearing: $70^\\circ + 180^\\circ = 250^\\circ$.",
+        "e_zh": "在方位角上加上 $180^\\circ$：$70^\\circ + 180^\\circ = 250^\\circ$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-4.5-01",
+    "section": "4.5",
+    "order": 1,
+    "title": "Constructions and Loci",
+    "title_zh": "作图与轨迹",
+    "explanation": {
+      "en": "Construction involves drawing accurate diagrams using only a ruler and compasses. **Construction arcs** must always be visible.\n\n**Perpendicular bisector** is the set of points equidistant from two fixed points. **Angle bisector** is the set of points equidistant from two intersecting lines.\n\n**Loci** (plural of locus) refer to the set of points that satisfy a particular rule. For example, a locus of points at a fixed distance from a point is a circle. A locus of points at a fixed distance from a line consists of two parallel lines with semi-circles at the ends.",
+      "zh": "作图涉及仅使用直尺和圆规绘制精确的图表。**作图弧线**必须始终保持可见。\n\n**垂直平分线**是到两个定点距离相等的点的集合。**角平分线**是到两条相交直线距离相等的点的集合。\n\n**轨迹**（locus 的复数）是指满足特定规则的点的集合。例如，到定点距离固定的点的轨迹是一个圆。到直线距离固定的点的轨迹由两条平行线和两端的半圆组成。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-locus-region",
+        "label": "Shade a region based on loci",
+        "label_zh": "根据轨迹阴影化区域",
+        "description": "Construct multiple loci (e.g., bisectors) and shade the region that satisfies conditions like 'closer to A than B'.",
+        "description_zh": "构造多个轨迹（如平分线）并为满足“离 A 比离 B 近”等条件的区域涂色。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-locus-region",
+        "question": "Points $A$ and $B$ are $8$ cm apart. Construct the locus of points that are exactly $5$ cm from $A$.",
+        "question_zh": "$A$ 点和 $B$ 点相距 $8$ 厘米。作图求到 $A$ 点距离恰好为 $5$ 厘米的点的轨迹。",
+        "solution": "**Step 1:** Use a ruler to set your compasses to a width of $5$ cm.\n\n**Step 2:** Place the compass needle on point $A$.\n\n**Step 3:** Draw a full circle (or arc) around $A$.\n\n**Answer:** A circle of radius $5$ cm with center $A$.",
+        "solution_zh": "**步骤1：** 使用直尺将圆规半径设置为 $5$ 厘米。\n\n**步骤2：** 将圆规尖端置于 $A$ 点。\n\n**步骤3：** 围绕 $A$ 画一个完整的圆（或圆弧）。\n\n**答案：** 以 $A$ 为圆心，半径为 $5$ 厘米的圆。",
+        "source": "Adapted from 4MA1"
+      },
+      {
+        "patternId": "ep-bisector",
+        "question": "On a map, shade the region that is less than $3$ km from point $C$ and closer to line $AB$ than line $AD$.",
+        "question_zh": "在地图上，对距离 $C$ 点小于 $3$ 公里且距离直线 $AB$ 比距离直线 $AD$ 近的区域进行阴影处理。",
+        "solution": "**Step 1:** Construct a circle around $C$ with radius representing $3$ km (using scale).\n\n**Step 2:** Construct the angle bisector of angle $BAD$ to find points equidistant from $AB$ and $AD$.\n\n**Step 3:** Shade the area inside the circle and on the $AB$ side of the bisector.\n\n**Result:** Region satisfies both boundaries.",
+        "solution_zh": "**步骤1：** 以 $C$ 为圆心，以代表 $3$ 公里的半径画圆（使用比例尺）。\n\n**步骤2：** 作角 $BAD$ 的角平分线，找到到 $AB$ 和 $AD$ 距离相等的点。\n\n**步骤3：** 在圆内且在角平分线靠近 $AB$ 一侧的区域涂上阴影。\n\n**结果：** 满足两个边界条件的区域。",
+        "source": "Adapted from 4MA1/2H/May/2018"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "The perpendicular bisector of a line segment $AB$ is the locus of all points that are...",
+        "q_zh": "线段 $AB$ 的垂直平分线是所有满足以下条件的点的轨迹...",
+        "o": [
+          "Fixed distance from A",
+          "Equidistant from A and B",
+          "Equidistant from line AB",
+          "On the line AB"
+        ],
+        "a": 1,
+        "e": "The perpendicular bisector consists of all points that are the same distance from $A$ as they are from $B$.",
+        "e_zh": "垂直平分线由到 $A$ 的距离与到 $B$ 的距离相等的所有点组成。"
+      },
+      {
+        "q": "What shape is the locus of points $2$ cm from a fixed point $P$?",
+        "q_zh": "到定点 $P$ 距离为 $2$ 厘米的点的轨迹是什么形状？",
+        "o": [
+          "A square",
+          "A straight line",
+          "A circle",
+          "A triangle"
+        ],
+        "a": 2,
+        "e": "A circle is the locus of all points at a set distance from a single center point.",
+        "e_zh": "圆是到单个中心点距离固定的一组点的轨迹。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-4.6-01",
+    "section": "4.6",
+    "order": 1,
+    "title": "Circle Theorems",
+    "title_zh": "圆的几何定理",
+    "explanation": {
+      "en": "Circle theorems are rules describing the relationships between angles, lines, and circles.\n\n**Angle at the centre** is twice the angle at the circumference standing on the same arc. **Angle in a semi-circle** is always $90^\\circ$.\n\n**Angles in the same segment** are equal. **Cyclic quadrilaterals** have opposite angles that sum to $180^\\circ$.\n\n**Alternate segment theorem** states that the angle between a tangent and a chord is equal to the angle in the alternate segment.",
+      "zh": "圆的定理是描述角、线和圆之间关系的规则。\n\n**圆心角**是同一段弧所对圆周角的两倍。**半圆上的圆周角**总是 $90^\\circ$。\n\n**同弧所对的圆周角**相等。**圆内接四边形**的对角之和为 $180^\\circ$。\n\n**弦切角定理**（交错弓形定理）指出：切线与弦之间的夹角等于该弦所对的内错弓形角。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-circle-proof",
+        "label": "Calculate angles using circle theorems",
+        "label_zh": "利用圆定理计算角度",
+        "description": "Find a missing angle and give reasons for each step of your working.",
+        "description_zh": "求缺失的角度，并为计算的每一步给出理由。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-circle-proof",
+        "question": "Points $A, B, C$ are on a circle with center $O$. Angle $ABC = 40^\\circ$. Find angle $AOC$.",
+        "question_zh": "$A, B, C$ 点在以 $O$ 为圆心的圆上。角 $ABC = 40^\\circ$。求角 $AOC$。",
+        "solution": "**Step 1:** Identify the relevant theorem.\nThe angle at the center is twice the angle at the circumference.\n\n**Step 2:** Calculate the angle.\nAngle $AOC = 2 \\times 40^\\circ = 80^\\circ$.\n\n**Answer:** $80^\\circ$ (Reason: Angle at center is twice angle at circumference).",
+        "solution_zh": "**步骤1：** 识别相关定理。\n圆心角是圆周角的两倍。\n\n**步骤2：** 计算角度。\n角 $AOC = 2 \\times 40^\\circ = 80^\\circ$。\n\n**答案：** $80^\\circ$（理由：同弧所对圆心角是圆周角的两倍）。",
+        "source": "Adapted from 4MA1/1H/May/2022"
+      },
+      {
+        "patternId": "ep-circle-proof",
+        "question": "$ABCD$ is a cyclic quadrilateral. Angle $A = 110^\\circ$. Find angle $C$.",
+        "question_zh": "$ABCD$ 是圆内接四边形。角 $A = 110^\\circ$。求角 $C$。",
+        "solution": "**Step 1:** Recall the cyclic quadrilateral property.\nOpposite angles sum to $180^\\circ$.\n\n**Step 2:** Calculate.\nAngle $C = 180^\\circ - 110^\\circ = 70^\\circ$.\n\n**Answer:** $70^\\circ$.",
+        "solution_zh": "**步骤1：** 回忆圆内接四边形的性质。\n对角之和为 $180^\\circ$。\n\n**步骤2：** 计算。\n角 $C = 180^\\circ - 110^\\circ = 70^\\circ$。\n\n**答案：** $70^\\circ$。",
+        "source": "Adapted from 4MA1"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "What is the angle in a semi-circle?",
+        "q_zh": "半圆所对的圆周角是多少度？",
+        "o": [
+          "$45^\\circ$",
+          "$90^\\circ$",
+          "$180^\\circ$",
+          "Depends on the radius"
+        ],
+        "a": 1,
+        "e": "Any angle inscribed in a semi-circle (where the chord is the diameter) is always a right angle ($90^\\circ$).",
+        "e_zh": "任何内接于半圆（弦为直径）的角总是直角（$90^\\circ$）。"
+      },
+      {
+        "q": "According to the alternate segment theorem, the angle between a tangent and a chord is equal to...",
+        "q_zh": "根据弦切角定理，切线与弦之间的夹角等于...",
+        "o": [
+          "The angle at the center",
+          "The angle in the alternate segment",
+          "$90^\\circ$",
+          "The opposite interior angle"
+        ],
+        "a": 1,
+        "e": "The theorem states that the angle between the tangent and chord equals the angle subtended by the chord in the other (alternate) segment.",
+        "e_zh": "该定理指出，切线与弦之间的夹角等于该弦在另一个（交错）弓形中所对的圆周角。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-4.7-01",
+    "section": "4.7",
+    "order": 1,
+    "title": "Geometrical Reasoning and Proof",
+    "title_zh": "几何推理与证明",
+    "explanation": {
+      "en": "Geometrical reasoning involves using known properties to deduce new information or prove statements.\n\n**Congruent triangles** are identical in shape and size. The four criteria for congruence are: **SSS** (Side-Side-Side), **SAS** (Side-Angle-Side), **ASA** (Angle-Side-Angle), and **RHS** (Right-angle, Hypotenuse, Side).\n\n**Similar triangles** have the same shape but different sizes. Their corresponding angles are equal, and their corresponding sides are in the same ratio.",
+      "zh": "几何推理涉及利用已知性质来推导新信息或证明命题。\n\n**全等三角形**在形状和大小上完全相同。全等的四个判定标准是：**SSS**（边边边）、**SAS**（边角边）、**ASA**（角边角）和 **RHS**（直角、斜边、边）。\n\n**相似三角形**形状相同但大小不同。它们的对应角相等，对应边成比例。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-congruence-proof",
+        "label": "Prove two triangles are congruent",
+        "label_zh": "证明两个三角形全等",
+        "description": "State the criteria used (e.g., SAS) and justify each part of the proof.",
+        "description_zh": "说明所用的判定标准（如 SAS），并为证明的每一部分提供理由。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-congruence-proof",
+        "question": "In triangles $ABC$ and $DEF$, $AB = DE$, $AC = DF$, and angle $A = $ angle $D$. Why are they congruent?",
+        "question_zh": "在三角形 $ABC$ 和 $DEF$ 中，$AB = DE$，$AC = DF$，且角 $A =$ 角 $D$。为什么它们全等？",
+        "solution": "**Step 1:** Compare the given parts. We have two sides and the included angle.\n\n**Step 2:** Match with a congruence criterion.\nSAS (Side-Angle-Side).\n\n**Answer:** They are congruent by SAS.",
+        "solution_zh": "**步骤1：** 比较已知部分。我们有两条边和它们的夹角。\n\n**步骤2：** 匹配全等判定标准。\nSAS（边角边）。\n\n**答案：** 根据 SAS，它们全等。",
+        "source": "Adapted from 4MA1"
+      },
+      {
+        "patternId": "ep-similarity-ratio",
+        "question": "Triangle $ABC$ is similar to triangle $PQR$. $AB = 4$ cm, $PQ = 12$ cm. If $BC = 5$ cm, find $QR$.",
+        "question_zh": "三角形 $ABC$ 相似于三角形 $PQR$。$AB = 4$ 厘米，$PQ = 12$ 厘米。如果 $BC = 5$ 厘米，求 $QR$。",
+        "solution": "**Step 1:** Find the scale factor.\nScale Factor $= \\frac{PQ}{AB} = \\frac{12}{4} = 3$.\n\n**Step 2:** Multiply the corresponding side by the scale factor.\n$QR = BC \\times 3 = 5 \\times 3 = 15$.\n\n**Answer:** $15$ cm.",
+        "solution_zh": "**步骤1：** 求比例因子。\n比例因子 $= \\frac{PQ}{AB} = \\frac{12}{4} = 3$。\n\n**步骤2：** 将对应边乘以比例因子。\n$QR = BC \\times 3 = 5 \\times 3 = 15$。\n\n**答案：** $15$ 厘米。",
+        "source": "Adapted from 4MA1/2F/Jan/2021"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "Which of these is NOT a criterion for triangle congruence?",
+        "q_zh": "下列哪项不是三角形全等的判定标准？",
+        "o": [
+          "SSS",
+          "AAA",
+          "SAS",
+          "RHS"
+        ],
+        "a": 1,
+        "e": "AAA (Angle-Angle-Angle) proves similarity, not necessarily congruence, as the triangles could be different sizes.",
+        "e_zh": "AAA（角角角）证明的是相似，而不一定是全等，因为三角形的大小可能不同。"
+      },
+      {
+        "q": "If two triangles are similar, their corresponding sides are...",
+        "q_zh": "如果两个三角形相似，它们的对应边...",
+        "o": [
+          "Equal",
+          "Parallel",
+          "In the same ratio",
+          "Perpendicular"
+        ],
+        "a": 2,
+        "e": "Similarity means the sides are proportional, meaning they are in the same ratio.",
+        "e_zh": "相似意味着边成比例，即它们处于相同的比例。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-4.8-01",
+    "section": "4.8",
+    "order": 1,
+    "title": "Pythagoras and Right-Angled Trig",
+    "title_zh": "勾股定理与直角三角函数",
+    "explanation": {
+      "en": "For right-angled triangles, we use Pythagoras' theorem and Trigonometric ratios (SOH CAH TOA).\n\n**Pythagoras' Theorem** states that $a^2 + b^2 = c^2$, where $c$ is the hypotenuse (the longest side opposite the right angle).\n\n**Trigonometric ratios** relate angles and sides:\n$\\sin(\\theta) = \\frac{\\text{Opposite}}{\\text{Hypotenuse}}$\n$\\cos(\\theta) = \\frac{\\text{Adjacent}}{\\text{Hypotenuse}}$\n$\\tan(\\theta) = \\frac{\\text{Opposite}}{\\text{Adjacent}}$",
+      "zh": "对于直角三角形，我们使用勾股定理和三角函数比（SOH CAH TOA）。\n\n**勾股定理**指出 $a^2 + b^2 = c^2$，其中 $c$ 是斜边（直角所对的最长边）。\n\n**三角函数比**将角度与边长联系起来：\n$\\sin(\\theta) = \\frac{\\text{对边}}{\\text{斜边}}$\n$\\cos(\\theta) = \\frac{\\text{邻边}}{\\text{斜边}}$\n$\\tan(\\theta) = \\frac{\\text{对边}}{\\text{邻边}}$"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-pythag-calc",
+        "label": "Calculate a missing side in a right-angled triangle",
+        "label_zh": "计算直角三角形中缺失的边",
+        "description": "Use Pythagoras to find the hypotenuse or a shorter side.",
+        "description_zh": "利用勾股定理求斜边或直角边。"
+      },
+      {
+        "id": "ep-trig-angle",
+        "label": "Find a missing angle using SOHCAHTOA",
+        "label_zh": "利用 SOHCAHTOA 求缺失的角度",
+        "description": "Use inverse trig functions (e.g., $\\sin^{-1}$) to calculate an angle.",
+        "description_zh": "使用反三角函数（如 $\\sin^{-1}$）计算角度。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-pythag-calc",
+        "question": "A right-angled triangle has sides of $5$ cm and $12$ cm. Calculate the length of the hypotenuse.",
+        "question_zh": "一个直角三角形的直角边分别为 $5$ 厘米和 $12$ 厘米。计算斜边的长度。",
+        "solution": "**Step 1:** Use $a^2 + b^2 = c^2$.\n$5^2 + 12^2 = c^2$\n\n**Step 2:** Calculate squares and sum.\n$25 + 144 = 169$\n\n**Step 3:** Take the square root.\n$c = \\sqrt{169} = 13$.\n\n**Answer:** $13$ cm.",
+        "solution_zh": "**步骤1：** 使用 $a^2 + b^2 = c^2$。\n$5^2 + 12^2 = c^2$\n\n**步骤2：** 计算平方和。\n$25 + 144 = 169$\n\n**步骤3：** 开平方根。\n$c = \\sqrt{169} = 13$。\n\n**答案：** $13$ 厘米。",
+        "source": "Adapted from 4MA1"
+      },
+      {
+        "patternId": "ep-trig-angle",
+        "question": "In a right-angled triangle, the opposite side is $3$ cm and the adjacent side is $4$ cm. Find the angle $\\theta$.",
+        "question_zh": "在一个直角三角形中，对边为 $3$ 厘米，邻边为 $4$ 厘米。求角度 $\\theta$。",
+        "solution": "**Step 1:** Choose the correct ratio. Opposite and Adjacent involves $\\tan$.\n$\\tan(\\theta) = \\frac{3}{4} = 0.75$\n\n**Step 2:** Use the inverse function.\n$\\theta = \\tan^{-1}(0.75)$\n\n**Step 3:** Calculate (using a calculator).\n$\\theta \\approx 36.9^\\circ$.\n\n**Answer:** $36.9^\\circ$ (1 d.p.).",
+        "solution_zh": "**步骤1：** 选择正确的比例。对边和邻边涉及 $\\tan$。\n$\\tan(\\theta) = \\frac{3}{4} = 0.75$\n\n**步骤2：** 使用反函数。\n$\\theta = \\tan^{-1}(0.75)$\n\n**步骤3：** 计算（使用计算器）。\n$\\theta \\approx 36.9^\\circ$。\n\n**答案：** $36.9^\\circ$（保留一位小数）。",
+        "source": "Adapted from 4MA1/1H/Jan/2021"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "Which ratio is defined as Adjacent over Hypotenuse?",
+        "q_zh": "哪个比例定义为邻边除以斜边？",
+        "o": [
+          "Sine",
+          "Cosine",
+          "Tangent",
+          "Pythagoras"
+        ],
+        "a": 1,
+        "e": "CAH stands for $\\cos = \\text{Adjacent} / \\text{Hypotenuse}$.",
+        "e_zh": "CAH 代表 $\\cos = \\text{邻边} / \\text{斜边}$。"
+      },
+      {
+        "q": "If $a=6$ and $c=10$ in a right triangle (where $c$ is hypotenuse), what is $b$?",
+        "q_zh": "如果直角三角形中 $a=6, c=10$（$c$ 为斜边），那么 $b$ 是多少？",
+        "o": [
+          "4",
+          "8",
+          "16",
+          "13.6"
+        ],
+        "a": 1,
+        "e": "$6^2 + b^2 = 10^2 \\Rightarrow 36 + b^2 = 100 \\Rightarrow b^2 = 64 \\Rightarrow b = 8$.",
+        "e_zh": "$6^2 + b^2 = 10^2 \\Rightarrow 36 + b^2 = 100 \\Rightarrow b^2 = 64 \\Rightarrow b = 8$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-4.8-02",
+    "section": "4.8",
+    "order": 2,
+    "title": "Sine and Cosine Rules",
+    "title_zh": "正弦定理与余弦定理",
+    "explanation": {
+      "en": "For non-right-angled triangles, we use the Sine Rule and the Cosine Rule.\n\n**Sine Rule** is used when we have 'opposite pairs' of sides and angles: $\\frac{a}{\\sin A} = \\frac{b}{\\sin B} = \\frac{c}{\\sin C}$. Use it when you know two angles and one side, or two sides and a non-included angle.\n\n**Cosine Rule** is used for 'SAS' (Side-Angle-Side) or 'SSS' (Side-Side-Side) situations:\n$a^2 = b^2 + c^2 - 2bc \\cos A$\nTo find an angle: $\\cos A = \\frac{b^2 + c^2 - a^2}{2bc}$.\n\n**Area of a triangle** can be calculated using $\\frac{1}{2}ab \\sin C$.",
+      "zh": "对于非直角三角形，我们使用正弦定理和余弦定理。\n\n**正弦定理**用于已知边角“对应对”的情况：$\\frac{a}{\\sin A} = \\frac{b}{\\sin B} = \\frac{c}{\\sin C}$。当已知两个角和一条边，或已知两条边和其中一边的对角时使用。\n\n**余弦定理**用于“SAS”（边角边）或“SSS”（边边边）的情况：\n$a^2 = b^2 + c^2 - 2bc \\cos A$\n求角度公式：$\\cos A = \\frac{b^2 + c^2 - a^2}{2bc}$。\n\n**三角形的面积**可以使用 $\\frac{1}{2}ab \\sin C$ 来计算。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-sine-rule",
+        "label": "Calculate a side using the Sine Rule",
+        "label_zh": "利用正弦定理计算边长",
+        "description": "Identify an opposite pair and solve the proportion.",
+        "description_zh": "识别对应边角对并解比例。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-sine-rule",
+        "question": "In triangle $ABC$, $A = 40^\\circ, B = 60^\\circ$ and side $a = 10$ cm. Find side $b$.",
+        "question_zh": "在三角形 $ABC$ 中，$A = 40^\\circ, B = 60^\\circ$，边 $a = 10$ 厘米。求边 $b$。",
+        "solution": "**Step 1:** Use the Sine Rule: $\\frac{a}{\\sin A} = \\frac{b}{\\sin B}$.\n$\\frac{10}{\\sin 40^\\circ} = \\frac{b}{\\sin 60^\\circ}$\n\n**Step 2:** Rearrange to solve for $b$.\n$b = \\frac{10 \\times \\sin 60^\\circ}{\\sin 40^\\circ}$\n\n**Step 3:** Calculate.\n$b \\approx \\frac{10 \\times 0.866}{0.643} \\approx 13.5$ cm.\n\n**Answer:** $13.5$ cm (3 s.f.).",
+        "solution_zh": "**步骤1：** 使用正弦定理：$\\frac{a}{\\sin A} = \\frac{b}{\\sin B}$。\n$\\frac{10}{\\sin 40^\\circ} = \\frac{b}{\\sin 60^\\circ}$\n\n**步骤2：** 变形求 $b$。\n$b = \\frac{10 \\times \\sin 60^\\circ}{\\sin 40^\\circ}$\n\n**步骤3：** 计算。\n$b \\approx \\frac{10 \\times 0.866}{0.643} \\approx 13.5$ 厘米。\n\n**答案：** $13.5$ 厘米（保留 3 位有效数字）。",
+        "source": "Adapted from 4MA1/2H/May/2019"
+      },
+      {
+        "patternId": "ep-cosine-rule",
+        "question": "In triangle $XYZ$, $XY = 7$ cm, $XZ = 10$ cm and angle $X = 80^\\circ$. Calculate the length of $YZ$.",
+        "question_zh": "在三角形 $XYZ$ 中，$XY = 7$ 厘米，$XZ = 10$ 厘米，角 $X = 80^\\circ$。计算 $YZ$ 的长度。",
+        "solution": "**Step 1:** This is SAS, so use the Cosine Rule: $a^2 = b^2 + c^2 - 2bc \\cos A$.\n$YZ^2 = 7^2 + 10^2 - 2(7)(10)\\cos 80^\\circ$\n\n**Step 2:** Simplify.\n$YZ^2 = 49 + 100 - 140 \\times 0.1736$\n$YZ^2 = 149 - 24.3 = 124.7$\n\n**Step 3:** Square root.\n$YZ = \\sqrt{124.7} \\approx 11.2$.\n\n**Answer:** $11.2$ cm.",
+        "solution_zh": "**步骤1：** 这是 SAS 情况，使用余弦定理：$a^2 = b^2 + c^2 - 2bc \\cos A$。\n$YZ^2 = 7^2 + 10^2 - 2(7)(10)\\cos 80^\\circ$\n\n**步骤2：** 化简。\n$YZ^2 = 49 + 100 - 140 \\times 0.1736$\n$YZ^2 = 149 - 24.3 = 124.7$\n\n**步骤3：** 开平方根。\n$YZ = \\sqrt{124.7} \\approx 11.2$。\n\n**答案：** $11.2$ 厘米。",
+        "source": "Adapted from 4MA1/1H/Jan/2020"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "When do you use the Cosine Rule to find a side?",
+        "q_zh": "什么时候使用余弦定理来求边长？",
+        "o": [
+          "When you have two angles and a side",
+          "When you have three angles",
+          "When you have two sides and the included angle (SAS)",
+          "When you have one side and one angle"
+        ],
+        "a": 2,
+        "e": "The Cosine Rule is required for SAS (Side-Angle-Side) or SSS (Side-Side-Side) cases.",
+        "e_zh": "余弦定理适用于 SAS（边角边）或 SSS（边边边）的情况。"
+      },
+      {
+        "q": "What is the formula for the area of a triangle using trig?",
+        "q_zh": "使用三角函数计算三角形面积的公式是什么？",
+        "o": [
+          "$\\frac{1}{2} \\times \\text{base} \\times \\text{height}$",
+          "$\\frac{1}{2} ab \\cos C$",
+          "$\\frac{1}{2} ab \\sin C$",
+          "$ab \\sin C$"
+        ],
+        "a": 2,
+        "e": "Area $= \\frac{1}{2} ab \\sin C$ where $C$ is the angle between sides $a$ and $b$.",
+        "e_zh": "面积 $= \\frac{1}{2} ab \\sin C$，其中 $C$ 是边 $a$ 和 $b$ 之间的夹角。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "higher"
+  },
+  {
+    "id": "kp-4.9-01",
+    "section": "4.9",
+    "order": 1,
+    "title": "Arc Length and Sector Area",
+    "title_zh": "弧长与扇形面积",
+    "explanation": {
+      "en": "A sector is a portion of a circle defined by two radii and an arc.\n\n**Arc length** is a fraction of the circumference: $L = \\frac{\\theta}{360} \\times 2\\pi r$.\n\n**Sector area** is a fraction of the circle area: $A = \\frac{\\theta}{360} \\times \\pi r^2$.\n\nHere, $\\theta$ is the angle at the center in degrees, and $r$ is the radius.",
+      "zh": "扇形是由两条半径和一段弧围成的圆的一部分。\n\n**弧长**是圆周的一部分：$L = \\frac{\\theta}{360} \\times 2\\pi r$。\n\n**扇形面积**是圆面积的一部分：$A = \\frac{\\theta}{360} \\times \\pi r^2$。\n\n其中，$\\theta$ 是以度为单位的圆心角，$r$ 是半径。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-sector-calc",
+        "label": "Calculate area or perimeter of a sector",
+        "label_zh": "计算扇形的面积或周长",
+        "description": "Remember to add the two radii if asked for the perimeter of the sector.",
+        "description_zh": "如果要求扇形的周长，请记得加上两条半径。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-sector-calc",
+        "question": "A sector has radius $6$ cm and angle $60^\\circ$. Calculate its area in terms of $\\pi$.",
+        "question_zh": "一个扇形的半径为 $6$ 厘米，圆心角为 $60^\\circ$。用 $\\pi$ 表示其面积。",
+        "solution": "**Step 1:** Use the sector area formula.\nArea $= \\frac{60}{360} \\times \\pi \\times 6^2$\n\n**Step 2:** Simplify the fraction and square.\nArea $= \\frac{1}{6} \\times \\pi \\times 36$\n\n**Step 3:** Calculate the final value.\nArea $= 6\\pi$.\n\n**Answer:** $6\\pi$ cm$^2$.",
+        "solution_zh": "**步骤1：** 使用扇形面积公式。\n面积 $= \\frac{60}{360} \\times \\pi \\times 6^2$\n\n**步骤2：** 化简分数并计算平方。\n面积 $= \\frac{1}{6} \\times \\pi \\times 36$\n\n**步骤3：** 计算最终值。\n面积 $= 6\\pi$。\n\n**答案：** $6\\pi$ cm$^2$。",
+        "source": "Adapted from 4MA1"
+      },
+      {
+        "patternId": "ep-sector-calc",
+        "question": "Calculate the perimeter of a sector with radius $10$ cm and center angle $72^\\circ$. Give your answer to 3 s.f.",
+        "question_zh": "计算一个半径为 $10$ 厘米、圆心角为 $72^\\circ$ 的扇形的周长。保留 3 位有效数字。",
+        "solution": "**Step 1:** Calculate the arc length.\nArc $= \\frac{72}{360} \\times 2 \\times \\pi \\times 10 = \\frac{1}{5} \\times 20\\pi = 4\\pi \\approx 12.57$ cm.\n\n**Step 2:** Add the two radii to the arc length for perimeter.\nPerimeter $= 12.57 + 10 + 10 = 32.57$ cm.\n\n**Answer:** $32.6$ cm (3 s.f.).",
+        "solution_zh": "**步骤1：** 计算弧长。\n弧长 $= \\frac{72}{360} \\times 2 \\times \\pi \\times 10 = \\frac{1}{5} \\times 20\\pi = 4\\pi \\approx 12.57$ 厘米。\n\n**步骤2：** 将两条半径加到弧长上得到周长。\n周长 $= 12.57 + 10 + 10 = 32.57$ 厘米。\n\n**答案：** $32.6$ 厘米（保留 3 位有效数字）。",
+        "source": "Adapted from 4MA1/1H/Jan/2021"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "What fraction of a circle is a sector with a $90^\\circ$ angle?",
+        "q_zh": "圆心角为 $90^\\circ$ 的扇形占圆的几分之几？",
+        "o": [
+          "1/2",
+          "1/3",
+          "1/4",
+          "1/6"
+        ],
+        "a": 2,
+        "e": "$90 / 360 = 1/4$.",
+        "e_zh": "$90 / 360 = 1/4$。"
+      },
+      {
+        "q": "If the radius is $r$ and the angle is $\\theta$, what is the arc length formula?",
+        "q_zh": "如果半径为 $r$，角度为 $\\theta$，弧长公式是什么？",
+        "o": [
+          "$\\frac{\\theta}{360} \\times \\pi r^2$",
+          "$\\frac{\\theta}{360} \\times 2\\pi r$",
+          "$2\\pi r$",
+          "$\\frac{\\theta}{180} \\times \\pi r^2$"
+        ],
+        "a": 1,
+        "e": "Arc length is the proportion $(\\theta/360)$ of the circumference ($2\\pi r$).",
+        "e_zh": "弧长是圆周长（$2\\pi r$）的比例部分（$\\theta/360$）。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-4.10-01",
+    "section": "4.10",
+    "order": 1,
+    "title": "3D Shapes: Volume and Surface Area",
+    "title_zh": "3D 图形：体积与表面积",
+    "explanation": {
+      "en": "Volume measures the space inside a 3D object, while surface area measures the total area of all its faces.\n\n**Prisms** (including cylinders) have Volume $= \\text{Area of cross-section} \\times \\text{length}$.\n\n**Pyramids and Cones** have Volume $= \\frac{1}{3} \\times \\text{Base Area} \\times \\text{Vertical Height}$.\n\n**Spheres** have Volume $= \\frac{4}{3}\\pi r^3$ and Surface Area $= 4\\pi r^2$. These formulas are often provided in the exam formula sheet.",
+      "zh": "体积测量 3D 物体内部的空间，而表面积测量其所有面的总面积。\n\n**柱体**（包括圆柱体）的体积 $= \\text{横截面积} \\times \\text{长度}$。\n\n**锥体与圆锥体**的体积 $= \\frac{1}{3} \\times \\text{底面积} \\times \\text{垂直高度}$。\n\n**球体**的体积 $= \\frac{4}{3}\\pi r^3$，表面积 $= 4\\pi r^2$。这些公式通常在考试公式表中提供。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-compound-volume",
+        "label": "Calculate volume of a compound 3D shape",
+        "label_zh": "计算组合 3D 图形的体积",
+        "description": "Find the volume of a shape made of two or more parts, like a hemisphere on top of a cylinder.",
+        "description_zh": "求由两个或多个部分组成的图形的体积，例如圆柱体顶部的半球。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-compound-volume",
+        "question": "A cone has a base radius of $5$ cm and a vertical height of $12$ cm. Calculate its volume.",
+        "question_zh": "一个圆锥的底面半径为 $5$ 厘米，垂直高度为 $12$ 厘米。计算它的体积。",
+        "solution": "**Step 1:** Use the formula $V = \\frac{1}{3} \\pi r^2 h$.\n$V = \\frac{1}{3} \\times \\pi \\times 5^2 \\times 12$\n\n**Step 2:** Simplify.\n$V = \\frac{1}{3} \\times \\pi \\times 25 \\times 12 = 4 \\times 25\\pi = 100\\pi$\n\n**Step 3:** Calculate decimal value if needed.\n$V \\approx 314$ cm$^3$.\n\n**Answer:** $100\\pi$ cm$^3$ or $314$ cm$^3$.",
+        "solution_zh": "**步骤1：** 使用公式 $V = \\frac{1}{3} \\pi r^2 h$。\n$V = \\frac{1}{3} \\times \\pi \\times 5^2 \\times 12$\n\n**步骤2：** 化简。\n$V = \\frac{1}{3} \\times \\pi \\times 25 \\times 12 = 4 \\times 25\\pi = 100\\pi$\n\n**步骤3：** 如果需要，计算小数。 \n$V \\approx 314$ cm$^3$。\n\n**答案：** $100\\pi$ cm$^3$ 或 $314$ cm$^3$。",
+        "source": "Adapted from 4MA1/1H/May/2022"
+      },
+      {
+        "patternId": "ep-sphere-area",
+        "question": "A sphere has a diameter of $10$ cm. Calculate its surface area in terms of $\\pi$.",
+        "question_zh": "一个球体的直径为 $10$ 厘米。用 $\\pi$ 表示其表面积。",
+        "solution": "**Step 1:** Find the radius. $r = 10 / 2 = 5$ cm.\n\n**Step 2:** Use the formula $SA = 4\\pi r^2$.\n$SA = 4 \\times \\pi \\times 5^2 = 4 \\times 25\\pi = 100\\pi$.\n\n**Answer:** $100\\pi$ cm$^2$.",
+        "solution_zh": "**步骤1：** 求半径。$r = 10 / 2 = 5$ 厘米。\n\n**步骤2：** 使用公式 $SA = 4\\pi r^2$。\n$SA = 4 \\times \\pi \\times 5^2 = 4 \\times 25\\pi = 100\\pi$。\n\n**答案：** $100\\pi$ cm$^2$。",
+        "source": "Adapted from 4MA1"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "What is the formula for the volume of a sphere?",
+        "q_zh": "球体的体积公式是什么？",
+        "o": [
+          "$4\\pi r^2$",
+          "$\\frac{4}{3}\\pi r^3$",
+          "$\\frac{1}{3}\\pi r^2 h$",
+          "$\\pi r^2 h$"
+        ],
+        "a": 1,
+        "e": "The volume of a sphere is $\\frac{4}{3}\\pi r^3$.",
+        "e_zh": "球体的体积为 $\\frac{4}{3}\\pi r^3$。"
+      },
+      {
+        "q": "If a cylinder has radius $r$ and height $h$, what is its volume?",
+        "q_zh": "如果圆柱体的半径为 $r$，高度为 $h$，它的体积是多少？",
+        "o": [
+          "$\\pi r^2 h$",
+          "$2\\pi r h$",
+          "$\\frac{1}{3}\\pi r^2 h$",
+          "$2\\pi r^2 + 2\\pi r h$"
+        ],
+        "a": 0,
+        "e": "Volume of a cylinder = base area ($\\pi r^2$) $\\times$ height ($h$).",
+        "e_zh": "圆柱体的体积 = 底面积（$\\pi r^2$）$\\times$ 高度（$h$）。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-4.11-01",
+    "section": "4.11",
+    "order": 1,
+    "title": "Similarity: Length, Area, and Volume",
+    "title_zh": "相似：长度、面积与体积",
+    "explanation": {
+      "en": "When two shapes are mathematically similar, their corresponding dimensions are in the same ratio.\n\nIf the **linear scale factor** is $k$, then the **area scale factor** is $k^2$ and the **volume scale factor** is $k^3$.\n\nFor example, if the lengths of a similar shape are doubled ($k=2$), the area becomes $2^2 = 4$ times larger, and the volume becomes $2^3 = 8$ times larger.",
+      "zh": "当两个图形在数学上相似时，它们的对应尺寸处于相同的比例。\n\n如果**长度比例因子**是 $k$，那么**面积比例因子**就是 $k^2$，**体积比例因子**就是 $k^3$。\n\n例如，如果相似图形的长度翻倍（$k=2$），则面积变为原来的 $2^2 = 4$ 倍，体积变为原来的 $2^3 = 8$ 倍。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-sim-volume",
+        "label": "Calculate volume using similarity",
+        "label_zh": "利用相似性计算体积",
+        "description": "Given two similar objects and their lengths, find the volume of one using the volume scale factor.",
+        "description_zh": "已知两个相似物体及其长度，利用体积比例因子求其中一个的体积。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-sim-volume",
+        "question": "Two similar jugs have heights of $10$ cm and $20$ cm. The smaller jug holds $500$ ml. How much does the larger jug hold?",
+        "question_zh": "两个相似的水壶高度分别为 $10$ 厘米和 $20$ 厘米。较小的水壶容量为 $500$ 毫升。较大的水壶容量是多少？",
+        "solution": "**Step 1:** Find the linear scale factor $k$.\n$k = \\frac{20}{10} = 2$.\n\n**Step 2:** Find the volume scale factor $k^3$.\n$k^3 = 2^3 = 8$.\n\n**Step 3:** Multiply the smaller volume by $k^3$.\nVolume $= 500 \\times 8 = 4000$ ml.\n\n**Answer:** $4000$ ml (or $4$ litres).",
+        "solution_zh": "**步骤1：** 求长度比例因子 $k$。\n$k = \\frac{20}{10} = 2$。\n\n**步骤2：** 求体积比例因子 $k^3$。\n$k^3 = 2^3 = 8$。\n\n**步骤3：** 将较小的体积乘以 $k^3$。\n体积 $= 500 \\times 8 = 4000$ 毫升。\n\n**答案：** $4000$ 毫升（或 $4$ 升）。",
+        "source": "Adapted from 4MA1/2H/Jan/2020"
+      },
+      {
+        "patternId": "ep-sim-area",
+        "question": "Two similar triangles have areas of $10$ cm$^2$ and $90$ cm$^2$. If the base of the smaller triangle is $4$ cm, find the base of the larger triangle.",
+        "question_zh": "两个相似三角形的面积分别为 $10$ cm$^2$ 和 $90$ cm$^2$。如果较小三角形的底边为 $4$ 厘米，求较大三角形的底边。",
+        "solution": "**Step 1:** Find the area scale factor ($k^2$).\n$k^2 = \\frac{90}{10} = 9$.\n\n**Step 2:** Find the linear scale factor ($k$) by taking the square root.\n$k = \\sqrt{9} = 3$.\n\n**Step 3:** Multiply the smaller base by $k$.\nBase $= 4 \\times 3 = 12$.\n\n**Answer:** $12$ cm.",
+        "solution_zh": "**步骤1：** 求面积比例因子（$k^2$）。\n$k^2 = \\frac{90}{10} = 9$。\n\n**步骤2：** 通过开平方求长度比例因子（$k$）。\n$k = \\sqrt{9} = 3$。\n\n**步骤3：** 将较小的底边乘以 $k$。\n底边 $= 4 \\times 3 = 12$。\n\n**答案：** $12$ 厘米。",
+        "source": "Adapted from 4MA1/1H/Jan/2021"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "If the linear scale factor is $3$, what is the volume scale factor?",
+        "q_zh": "如果长度比例因子是 $3$，体积比例因子是多少？",
+        "o": [
+          "3",
+          "6",
+          "9",
+          "27"
+        ],
+        "a": 3,
+        "e": "Volume scale factor $= k^3 = 3^3 = 27$.",
+        "e_zh": "体积比例因子 $= k^3 = 3^3 = 27$。"
+      },
+      {
+        "q": "To find the linear scale factor from the area scale factor, you should...",
+        "q_zh": "要从面积比例因子求长度比例因子，你应该...",
+        "o": [
+          "Square the value",
+          "Divide by 2",
+          "Take the square root",
+          "Take the cube root"
+        ],
+        "a": 2,
+        "e": "Since area ratio is $k^2$, the linear ratio $k$ is $\\sqrt{\\text{area ratio}}$.",
+        "e_zh": "由于面积比是 $k^2$，所以长度比 $k$ 是 $\\sqrt{\\text{面积比}}$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  }
+]

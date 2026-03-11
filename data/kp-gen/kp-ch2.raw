@@ -1,0 +1,796 @@
+[
+  {
+    "id": "kp-2.1-01",
+    "section": "2.1",
+    "order": 1,
+    "title": "Algebraic Notation & Substitution",
+    "title_zh": "代数表示与代入",
+    "explanation": {
+      "en": "Algebra uses letters to represent numbers. Understanding notation and how to substitute values is fundamental.\n\n**Algebraic Notation** follows specific rules: $3 \\times x$ is written as $3x$, $x \\times y$ as $xy$, and $a \\div b$ as $\\frac{a}{b}$. We write $x \\times x$ as $x^2$.\n\n**Substitution** is the process of replacing variables with specific numbers to calculate the value of an expression. Always use brackets when substituting negative numbers to avoid sign errors, e.g., if $x = -2$, then $x^2 = (-2)^2 = 4$.",
+      "zh": "代数使用字母来表示数。理解代数表示法以及如何代入数值是基础。\n\n**代数表示法** 遵循特定规则：$3 \\times x$ 写为 $3x$，$x \\times y$ 写为 $xy$，$a \\div b$ 写为 $\\frac{a}{b}$。我们把 $x \\times x$ 写为 $x^2$。\n\n**代入法** 是将变量替换为具体的数值以计算表达式值的过程。代入负数时务必使用括号以避免符号错误，例如：若 $x = -2$，则 $x^2 = (-2)^2 = 4$。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-sub-simple",
+        "label": "Evaluate expressions with given values",
+        "label_zh": "代入给定值求表达式的值",
+        "description": "Calculate the numerical value of an algebraic expression by substituting provided integers or decimals.",
+        "description_zh": "通过代入给定的整数或小数，计算代数表达式的数值。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-sub-simple",
+        "question": "Find the value of $3a - 2b$ when $a = 5$ and $b = -4$.",
+        "question_zh": "当 $a = 5$，$b = -4$ 时，求 $3a - 2b$ 的值。",
+        "solution": "**Step 1:** Substitute $a$ with $5$ and $b$ with $(-4)$.\n$3(5) - 2(-4)$\n\n**Step 2:** Multiply the terms.\n$15 - (-8)$\n\n**Step 3:** Simplify the double negative.\n$15 + 8 = 23$\n\n**Answer:** $23$",
+        "solution_zh": "**步骤1：** 将 $a$ 替换为 $5$，$b$ 替换为 $(-4)$。\n$3(5) - 2(-4)$\n\n**步骤2：** 计算乘法项。\n$15 - (-8)$\n\n**步骤3：** 化简双重负号。\n$15 + 8 = 23$\n\n**答案：** $23$",
+        "source": "Adapted from 0580/21/M/J/18"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "Evaluate $x^2 - 5x$ when $x = -3$.",
+        "q_zh": "当 $x = -3$ 时，计算 $x^2 - 5x$ 的值。",
+        "o": [
+          "$-24$",
+          "$24$",
+          "$-6$",
+          "$6$"
+        ],
+        "a": 1,
+        "e": "$(-3)^2 - 5(-3) = 9 + 15 = 24$.",
+        "e_zh": "$(-3)^2 - 5(-3) = 9 + 15 = 24$。"
+      }
+    ],
+    "vocabLinks": [
+      "algebra-terms"
+    ],
+    "tier": "both"
+  },
+  {
+    "id": "kp-2.2-01",
+    "section": "2.2",
+    "order": 1,
+    "title": "Rearranging Formulae",
+    "title_zh": "公式变换",
+    "explanation": {
+      "en": "Rearranging a formula means changing its **subject** — the single variable on one side of the equals sign.\n\nTo change the subject, perform inverse operations to isolate the target variable. If the variable appears inside a square root, square both sides. If it is in the denominator, multiply across to bring it to the numerator.\n\n**Common steps** include: \n1. Clear fractions by multiplying.\n2. Expand brackets if the variable is inside.\n3. Collect all terms containing the target variable on one side.\n4. Factorise if the variable appears in multiple terms.",
+      "zh": "变换公式意味着改变它的 **主元（Subject）** —— 即等号一侧的单个变量。\n\n要改变主元，需执行逆运算以孤立目标变量。如果变量在平方根内，则两侧平方。如果变量在分母中，则通过乘法将其移至分子。\n\n**常用步骤** 包括：\n1. 通过乘法消除分式。\n2. 如果变量在括号内，则展开括号。\n3. 将所有包含目标变量的项移至等号一侧。\n4. 如果变量出现在多项中，则进行因式分解。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-change-subject",
+        "label": "Change the subject of a formula",
+        "label_zh": "变换公式主元",
+        "description": "Rearrange a formula to isolate a different variable, possibly involving squares or roots.",
+        "description_zh": "对公式进行变形以孤立不同的变量，可能涉及平方或根号。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-change-subject",
+        "question": "Make $x$ the subject of the formula: $y = \\frac{x + 3}{5}$",
+        "question_zh": "将 $x$ 设为公式 $y = \\frac{x + 3}{5}$ 的主元。",
+        "solution": "**Step 1:** Multiply both sides by $5$ to remove the denominator.\n$5y = x + 3$\n\n**Step 2:** Subtract $3$ from both sides to isolate $x$.\n$5y - 3 = x$\n\n**Answer:** $x = 5y - 3$",
+        "solution_zh": "**步骤1：** 两边同时乘以 $5$ 以消去分母。\n$5y = x + 3$\n\n**步骤2：** 两边同时减去 $3$ 以孤立 $x$。\n$5y - 3 = x$\n\n**答案：** $x = 5y - 3$",
+        "source": "0580/22/O/N/19"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "Make $r$ the subject of $A = \\pi r^2$ (given $r > 0$).",
+        "q_zh": "将 $r$ 设为 $A = \\pi r^2$ 的主元（已知 $r > 0$）。",
+        "o": [
+          "$r = \\frac{A}{\\pi}$",
+          "$r = \\sqrt{A - \\pi}$",
+          "$r = \\sqrt{\\frac{A}{\\pi}}$",
+          "$r = (\\frac{A}{\\pi})^2$"
+        ],
+        "a": 2,
+        "e": "Divide by $\\pi$ to get $r^2 = A/\\pi$, then take the square root.",
+        "e_zh": "两边除以 $\\pi$ 得到 $r^2 = A/\\pi$，然后开平方根。"
+      }
+    ],
+    "vocabLinks": [
+      "formula-subject"
+    ],
+    "tier": "both"
+  },
+  {
+    "id": "kp-2.3-01",
+    "section": "2.3",
+    "order": 1,
+    "title": "Expansion & Simple Factorisation",
+    "title_zh": "展开与基础因式分解",
+    "explanation": {
+      "en": "Algebraic manipulation involves rewriting expressions in different forms.\n\n**Expanding Brackets** means multiplying every term inside the bracket by the term outside: $a(b + c) = ab + ac$.\n\n**Factorising** is the inverse of expanding. **Common Factor** factorisation involves finding the highest common factor (HCF) of all terms and placing it outside the bracket: $4x^2 + 6x = 2x(2x + 3)$.",
+      "zh": "代数运算涉及以不同形式重写表达式。\n\n**展开括号** 意味着将括号内的每一项乘以括号外的项：$a(b + c) = ab + ac$。\n\n**因式分解** 是展开的逆过程。**公因式** 分解涉及找到所有项的最大公因式（HCF），并将其放在括号外：$4x^2 + 6x = 2x(2x + 3)$。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-expand-simplify",
+        "label": "Expand and simplify expressions",
+        "label_zh": "展开并化简表达式",
+        "description": "Multiply out brackets and collect like terms.",
+        "description_zh": "展开括号并合并同类项。"
+      },
+      {
+        "id": "ep-factorise-common",
+        "label": "Factorise completely (Common factors)",
+        "label_zh": "彻底因式分解（公因式）",
+        "description": "Extract the highest common factor from an expression.",
+        "description_zh": "从表达式中提取最大公因式。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-expand-simplify",
+        "question": "Expand and simplify: $3(2x - 1) - 2(x + 5)$",
+        "question_zh": "展开并化简：$3(2x - 1) - 2(x + 5)$",
+        "solution": "**Step 1:** Expand the first bracket.\n$6x - 3$\n\n**Step 2:** Expand the second bracket (watch the minus sign).\n$-2x - 10$\n\n**Step 3:** Collect like terms.\n$(6x - 2x) + (-3 - 10) = 4x - 13$\n\n**Answer:** $4x - 13$",
+        "solution_zh": "**步骤1：** 展开第一个括号。\n$6x - 3$\n\n**步骤2：** 展开第二个括号（注意负号）。\n$-2x - 10$\n\n**步骤3：** 合并同类项。\n$(6x - 2x) + (-3 - 10) = 4x - 13$\n\n**答案：** $4x - 13$",
+        "source": "0580/21/M/J/17"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "Factorise completely: $15y^2 - 10y$",
+        "q_zh": "彻底因式分解：$15y^2 - 10y$",
+        "o": [
+          "$y(15y - 10)$",
+          "$5(3y^2 - 2y)$",
+          "$5y(3y - 2)$",
+          "$10y(1.5y - 1)$"
+        ],
+        "a": 2,
+        "e": "The HCF of $15$ and $10$ is $5$. The HCF of $y^2$ and $y$ is $y$. So, factor out $5y$.",
+        "e_zh": "$15$ 和 $10$ 的最大公约数是 $5$。$y^2$ 和 $y$ 的最高公因式是 $y$。因此提出 $5y$。"
+      }
+    ],
+    "vocabLinks": [
+      "factorise",
+      "expand"
+    ],
+    "tier": "both"
+  },
+  {
+    "id": "kp-2.3-02",
+    "section": "2.3",
+    "order": 2,
+    "title": "Advanced Factorisation & Quadractics",
+    "title_zh": "高级因式分解与二次型",
+    "explanation": {
+      "en": "More complex expressions require specific factorisation techniques.\n\n**Difference of Two Squares** uses the identity: $a^2 - b^2 = (a - b)(a + b)$. This only applies to a subtraction of two perfect squares.\n\n**Quadratic Factorisation** for $x^2 + bx + c$ involves finding two numbers that multiply to $c$ and add to $b$.\n\n**Factorising by Grouping** (Extended) involves splitting four terms into two pairs and extracting common factors from each pair: $ax + ay + bx + by = a(x + y) + b(x + y) = (a + b)(x + y)$. ",
+      "zh": "更复杂的表达式需要特定的因式分解技巧。\n\n**平方差公式** 使用恒等式：$a^2 - b^2 = (a - b)(a + b)$。这仅适用于两完全平方项相减。\n\n**二次三项式分解** 对于 $x^2 + bx + c$，涉及找到两个数，它们的积为 $c$，和为 $b$。\n\n**分组分解法**（进阶）涉及将四项分成两对，并从每对中提取公因式：$ax + ay + bx + by = a(x + y) + b(x + y) = (a + b)(x + y)$。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-diff-squares",
+        "label": "Factorise difference of squares",
+        "label_zh": "利用平方差公式因式分解",
+        "description": "Recognise and factorise expressions in the form $x^2 - k^2$.",
+        "description_zh": "识别并分解 $x^2 - k^2$ 形式的表达式。"
+      },
+      {
+        "id": "ep-fact-quad",
+        "label": "Factorise quadratics",
+        "label_zh": "分解二次三项式",
+        "description": "Factorise expressions like $x^2 + 5x + 6$ into two brackets.",
+        "description_zh": "将类似 $x^2 + 5x + 6$ 的表达式分解为两个括号。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-fact-quad",
+        "question": "Factorise: $x^2 - 5x + 6$",
+        "question_zh": "因式分解：$x^2 - 5x + 6$",
+        "solution": "**Step 1:** Look for two numbers that multiply to $+6$ and add to $-5$.\nPossible pairs: $(1, 6), (2, 3), (-1, -6), (-2, -3)$.\n\n**Step 2:** Select the pair that adds to $-5$.\n$-2 + (-3) = -5$. Correct.\n\n**Step 3:** Write in brackets.\n$(x - 2)(x - 3)$\n\n**Answer:** $(x - 2)(x - 3)$ ",
+        "solution_zh": "**步骤1：** 寻找两个数，乘积为 $+6$，且和为 $-5$。\n可能组合：$(1, 6), (2, 3), (-1, -6), (-2, -3)$。\n\n**步骤2：** 选择和为 $-5$ 的组合。\n$-2 + (-3) = -5$。正确。\n\n**步骤3：** 写进括号中。\n$(x - 2)(x - 3)$\n\n**答案：** $(x - 2)(x - 3)$ ",
+        "source": "0580/22/F/M/20"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "Factorise $9x^2 - 16$.",
+        "q_zh": "因式分解 $9x^2 - 16$。",
+        "o": [
+          "$(3x - 4)^2$",
+          "$(3x - 4)(3x + 4)$",
+          "$(9x - 16)(x + 1)$",
+          "$(3x + 4)^2$"
+        ],
+        "a": 1,
+        "e": "This is a difference of two squares: $(3x)^2 - (4)^2 = (3x-4)(3x+4)$.",
+        "e_zh": "这是平方差：$(3x)^2 - (4)^2 = (3x-4)(3x+4)$。"
+      }
+    ],
+    "vocabLinks": [
+      "quadratic",
+      "difference-of-squares"
+    ],
+    "tier": "both"
+  },
+  {
+    "id": "kp-2.4-01",
+    "section": "2.4",
+    "order": 1,
+    "title": "Algebraic Fractions",
+    "title_zh": "代数分式",
+    "explanation": {
+      "en": "Algebraic fractions follow the same rules as numerical fractions.\n\n**Simplifying Fractions** is done by factorising the numerator and denominator first, then cancelling common factors. **Never** cancel terms that are added or subtracted; only cancel factors.\n\n**Addition and Subtraction** requires a common denominator. Multiply the numerator and denominator of each fraction to reach the least common multiple (LCM) of the denominators.\n\n**Multiplication and Division** involve multiplying numerators and denominators, or flipping the second fraction (reciprocal) and multiplying.",
+      "zh": "代数分式遵循与数值分数相同的规则。\n\n**约分化简** 是通过先对分子和分母进行因式分解，然后约去公因式。**千万不要** 约去加减连接的项，只能约去乘积形式的因式。\n\n**加减运算** 需要通分（寻找公分母）。将每个分数的分子和分母扩大，以达到分母的最小公倍数（LCM）。\n\n**乘除运算** 涉及分子乘分子、分母乘分母，或者将第二个分数翻转（求倒数）后相乘。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-simplify-fraction",
+        "label": "Simplify algebraic fractions",
+        "label_zh": "化简代数分式",
+        "description": "Factorise and cancel factors to simplify a complex fraction.",
+        "description_zh": "通过因式分解和约分来化简复杂的代数分式。"
+      },
+      {
+        "id": "ep-add-fractions",
+        "label": "Add/Subtract fractions",
+        "label_zh": "代数分式加减",
+        "description": "Combine two fractions into a single fraction.",
+        "description_zh": "将两个分式合并为一个分式。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-simplify-fraction",
+        "question": "Simplify: $\\frac{x^2 - 9}{2x + 6}$",
+        "question_zh": "化简：$\\frac{x^2 - 9}{2x + 6}$",
+        "solution": "**Step 1:** Factorise the numerator (Difference of squares).\n$x^2 - 9 = (x - 3)(x + 3)$\n\n**Step 2:** Factorise the denominator (Common factor).\n$2x + 6 = 2(x + 3)$\n\n**Step 3:** Cancel the common factor $(x + 3)$.\n$\\frac{(x - 3)(x + 3)}{2(x + 3)} = \\frac{x - 3}{2}$\n\n**Answer:** $\\frac{x - 3}{2}$",
+        "solution_zh": "**步骤1：** 分解分子（平方差公式）。\n$x^2 - 9 = (x - 3)(x + 3)$\n\n**步骤2：** 分解分母（公因式）。\n$2x + 6 = 2(x + 3)$\n\n**步骤3：** 约去公因式 $(x + 3)$。\n$\\frac{(x - 3)(x + 3)}{2(x + 3)} = \\frac{x - 3}{2}$\n\n**答案：** $\\frac{x - 3}{2}$",
+        "source": "0580/42/M/J/19"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "Write as a single fraction: $\\frac{1}{x} + \\frac{1}{y}$",
+        "q_zh": "合并为一个分式：$\\frac{1}{x} + \\frac{1}{y}$",
+        "o": [
+          "$\\frac{2}{x + y}$",
+          "$\\frac{1}{xy}$",
+          "$\\frac{x + y}{xy}$",
+          "$\\frac{xy}{x + y}$"
+        ],
+        "a": 2,
+        "e": "The common denominator is $xy$. $\\frac{1}{x} = \\frac{y}{xy}$ and $\\frac{1}{y} = \\frac{x}{xy}$. Sum = $\\frac{y+x}{xy}$.",
+        "e_zh": "公分母是 $xy$。$\\frac{1}{x} = \\frac{y}{xy}$ 且 $\\frac{1}{y} = \\frac{x}{xy}$。和为 $\\frac{y+x}{xy}$。"
+      }
+    ],
+    "vocabLinks": [
+      "fraction-simplify"
+    ],
+    "tier": "extended"
+  },
+  {
+    "id": "kp-2.5-01",
+    "section": "2.5",
+    "order": 1,
+    "title": "Linear & Simultaneous Equations",
+    "title_zh": "线性方程与二元一次方程组",
+    "explanation": {
+      "en": "An equation is a mathematical statement that two expressions are equal.\n\n**Linear Equations** involve solving for $x$ by performing the same operation on both sides to isolate the variable.\n\n**Simultaneous Equations** are a pair of equations with two variables. They can be solved by **Elimination** (adding or subtracting equations to remove one variable) or **Substitution** (expressing one variable in terms of the other and substituting it into the second equation).",
+      "zh": "方程是表示两个表达式相等的数学陈述。\n\n**线性方程（一元一次方程）** 涉及通过在等号两边执行相同的操作来孤立变量，从而求得 $x$。\n\n**联立方程组（二元一次方程组）** 是包含两个变量的一组方程。可以通过 **消元法**（通过相加或相减消去一个变量）或 **代入法**（用一个变量表示另一个变量，然后代入第二个方程）来求解。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-solve-linear",
+        "label": "Solve linear equations",
+        "label_zh": "解线性方程",
+        "description": "Solve equations involving brackets and variables on both sides.",
+        "description_zh": "求解涉及括号且变量出现在等号两侧的方程。"
+      },
+      {
+        "id": "ep-simultaneous",
+        "label": "Solve simultaneous equations",
+        "label_zh": "解联立方程组",
+        "description": "Find the values of $x$ and $y$ that satisfy two linear equations.",
+        "description_zh": "求满足两个线性方程的 $x$ 和 $y$ 的值。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-simultaneous",
+        "question": "Solve the simultaneous equations:\n$3x + 2y = 7$\n$x - 2y = 5$",
+        "question_zh": "解联立方程组：\n$3x + 2y = 7$\n$x - 2y = 5$",
+        "solution": "**Step 1:** Observe that the coefficients of $y$ are opposites ($+2$ and $-2$). Add the two equations.\n$(3x + x) + (2y - 2y) = 7 + 5$\n$4x = 12$\n\n**Step 2:** Solve for $x$.\n$x = 3$\n\n**Step 3:** Substitute $x = 3$ back into the second equation to find $y$.\n$3 - 2y = 5$\n$-2y = 2$\n$y = -1$\n\n**Answer:** $x = 3, y = -1$",
+        "solution_zh": "**步骤1：** 观察到 $y$ 的系数是相反数（$+2$ 和 $-2$）。将两个方程相加。\n$(3x + x) + (2y - 2y) = 7 + 5$\n$4x = 12$\n\n**步骤2：** 求出 $x$。\n$x = 3$\n\n**步骤3：** 将 $x = 3$ 代回第二个方程以求出 $y$。\n$3 - 2y = 5$\n$-2y = 2$\n$y = -1$\n\n**答案：** $x = 3, y = -1$",
+        "source": "0580/22/M/J/18"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "Solve: $2(x - 3) = 10$",
+        "q_zh": "解方程：$2(x - 3) = 10$",
+        "o": [
+          "$x = 5$",
+          "$x = 8$",
+          "$x = 6.5$",
+          "$x = 13$"
+        ],
+        "a": 1,
+        "e": "$2x - 6 = 10 \\Rightarrow 2x = 16 \\Rightarrow x = 8$. Or divide by 2 first: $x - 3 = 5 \\Rightarrow x = 8$.",
+        "e_zh": "$2x - 6 = 10 \\Rightarrow 2x = 16 \\Rightarrow x = 8$。或者先除以 2：$x - 3 = 5 \\Rightarrow x = 8$。"
+      }
+    ],
+    "vocabLinks": [
+      "simultaneous-equations"
+    ],
+    "tier": "both"
+  },
+  {
+    "id": "kp-2.5-02",
+    "section": "2.5",
+    "order": 2,
+    "title": "Quadratic Equations",
+    "title_zh": "二次方程",
+    "explanation": {
+      "en": "A quadratic equation is in the form $ax^2 + bx + c = 0$.\n\n**Methods to Solve**:\n1. **Factorisation**: Set each bracket to zero. (e.g., $(x-2)(x+3)=0 \\Rightarrow x=2, x=-3$).\n2. **Quadratic Formula** (Extended): $x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$. Useful when the equation does not factorise easily.\n3. **Completing the Square** (Extended): Rewriting as $(x+p)^2 + q = 0$.\n\nAlways ensure the equation is equal to zero before solving.",
+      "zh": "二次方程的形式为 $ax^2 + bx + c = 0$。\n\n**求解方法**：\n1. **因式分解法**：令每个括号为零（例如：$(x-2)(x+3)=0 \\Rightarrow x=2, x=-3$）。\n2. **求根公式**（进阶）：$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$。当方程不易分解时非常有用。\n3. **配方法**（进阶）：重写为 $(x+p)^2 + q = 0$ 的形式。\n\n在求解之前，务必确保方程的一侧等于零。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-solve-quad-formula",
+        "label": "Solve using quadratic formula",
+        "label_zh": "利用求根公式解方程",
+        "description": "Solve $ax^2 + bx + c = 0$ and give answers to 2 decimal places.",
+        "description_zh": "求解 $ax^2 + bx + c = 0$ 并将答案保留两位小数。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-solve-quad-formula",
+        "question": "Solve $2x^2 + 5x - 4 = 0$. Give your answers to 2 decimal places.",
+        "question_zh": "解方程 $2x^2 + 5x - 4 = 0$。结果保留两位小数。",
+        "solution": "**Step 1:** Identify $a=2, b=5, c=-4$.\n\n**Step 2:** Use formula $x = \\frac{-5 \\pm \\sqrt{5^2 - 4(2)(-4)}}{2(2)}$.\n\n**Step 3:** Simplify the discriminant.\n$x = \\frac{-5 \\pm \\sqrt{25 + 32}}{4} = \\frac{-5 \\pm \\sqrt{57}}{4}$\n\n**Step 4:** Calculate two values.\n$x = 0.64$ or $x = -3.14$\n\n**Answer:** $0.64, -3.14$",
+        "solution_zh": "**步骤1：** 确定 $a=2, b=5, c=-4$。\n\n**步骤2：** 代入公式 $x = \\frac{-5 \\pm \\sqrt{5^2 - 4(2)(-4)}}{2(2)}$。\n\n**步骤3：** 计算根号内的判别式。\n$x = \\frac{-5 \\pm \\sqrt{25 + 32}}{4} = \\frac{-5 \\pm \\sqrt{57}}{4}$\n\n**步骤4：** 计算两个数值。\n$x = 0.64$ 或 $x = -3.14$\n\n**答案：** $0.64, -3.14$",
+        "source": "0580/41/M/J/20"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "What are the solutions to $x^2 - 9 = 0$?",
+        "q_zh": "方程 $x^2 - 9 = 0$ 的解是什么？",
+        "o": [
+          "$3$",
+          "$-3$",
+          "$3$ and $-3$",
+          "$9$ and $-9$"
+        ],
+        "a": 2,
+        "e": "$x^2 = 9$, so $x = \\sqrt{9}$ or $x = -\\sqrt{9}$.",
+        "e_zh": "$x^2 = 9$，所以 $x = \\sqrt{9}$ 或 $x = -\\sqrt{9}$。"
+      }
+    ],
+    "vocabLinks": [
+      "quadratic-formula"
+    ],
+    "tier": "both"
+  },
+  {
+    "id": "kp-2.6-01",
+    "section": "2.6",
+    "order": 1,
+    "title": "Inequalities & Regions",
+    "title_zh": "不等式与区域",
+    "explanation": {
+      "en": "Inequalities use signs like $<$ (less than), $>$ (greater than), $\\le$ (less than or equal), and $\\ge$ (greater than or equal).\n\n**Solving Inequalities** is similar to solving equations, with one critical rule: **When you multiply or divide by a negative number, you MUST reverse the inequality sign.**\n\n**Graphical Inequalities** represent regions on a coordinate plane. $y > x + 1$ is the region above the line $y = x + 1$. Solid lines are used for $\\le$ or $\\ge$, and dashed (broken) lines for $<$ or $>$.",
+      "zh": "不等式使用如下符号：$<$（小于）、$>$（大于）、$\\le$（小于或等于）以及 $\\ge$（大于或等于）。\n\n**解不等式** 与解方程类似，但有一个关键规则：**当你乘以或除以一个负数时，必须反转不等号的方向。**\n\n**图形不等式** 在坐标平面上表示区域。$y > x + 1$ 是直线 $y = x + 1$ 上方的区域。实线用于 $\\le$ 或 $\\ge$，虚线用于 $<$ 或 $>$。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-solve-ineq",
+        "label": "Solve linear inequalities",
+        "label_zh": "解线性不等式",
+        "description": "Find the range of values for $x$ that satisfy an inequality.",
+        "description_zh": "求出满足不等式的 $x$ 的值范围。"
+      },
+      {
+        "id": "ep-shaded-regions",
+        "label": "Identify regions by inequalities",
+        "label_zh": "通过不等式识别区域",
+        "description": "Write down the inequalities that define a shaded region on a graph.",
+        "description_zh": "写出定义图中阴影区域的不等式。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-solve-ineq",
+        "question": "Solve the inequality: $7 - 2x \\le 11$",
+        "question_zh": "解不等式：$7 - 2x \\le 11$",
+        "solution": "**Step 1:** Subtract $7$ from both sides.\n$-2x \\le 4$\n\n**Step 2:** Divide by $-2$ and **reverse the sign**.\n$x \\ge \\frac{4}{-2}$\n$x \\ge -2$\n\n**Answer:** $x \\ge -2$",
+        "solution_zh": "**步骤1：** 两边同时减去 $7$。\n$-2x \\le 4$\n\n**步骤2：** 除以 $-2$ 并 **反转符号**。\n$x \\ge \\frac{4}{-2}$\n$x \\ge -2$\n\n**答案：** $x \\ge -2$",
+        "source": "0580/21/M/J/19"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "Which inequality represents the set of integers $\\{ -2, -1, 0, 1 \\}$?",
+        "q_zh": "哪个不等式代表整数集 $\\{ -2, -1, 0, 1 \\}$？",
+        "o": [
+          "$-2 < x < 1$",
+          "$-2 \\le x < 2$",
+          "$-3 < x \\le 1$",
+          "$-2 < x \\le 2$"
+        ],
+        "a": 1,
+        "e": "$-2 \\le x < 2$ includes $-2, -1, 0, 1$.",
+        "e_zh": "$-2 \\le x < 2$ 包含 $-2, -1, 0, 1$。"
+      }
+    ],
+    "vocabLinks": [
+      "inequality",
+      "region"
+    ],
+    "tier": "both"
+  },
+  {
+    "id": "kp-2.7-01",
+    "section": "2.7",
+    "order": 1,
+    "title": "Sequences & Nth Term",
+    "title_zh": "数列与第 n 项",
+    "explanation": {
+      "en": "A sequence is a list of numbers following a pattern. The $n$th term ($u_n$) is a formula to find any number in the sequence.\n\n**Linear Sequences** have a constant difference $d$. The formula is $u_n = an + b$, where $a = d$.\n\n**Quadratic Sequences** (Extended) have differences that change by a constant amount (second differences are constant). The formula is $u_n = an^2 + bn + c$.\n\n**Geometric Sequences** involve multiplying by a constant ratio $r$. The formula is $u_n = a \\times r^{n-1}$.",
+      "zh": "数列是按规律排列的一组数。第 $n$ 项 ($u_n$) 是用于计算数列中任意项的公式。\n\n**等差数列（线性数列）** 具有恒定的公差 $d$。公式为 $u_n = an + b$，其中 $a = d$。\n\n**二阶等差数列（二次数列）**（进阶）的差值按恒定量变化（二阶差恒定）。公式为 $u_n = an^2 + bn + c$。\n\n**等比数列** 涉及乘以恒定的公比 $r$。公式为 $u_n = a \\times r^{n-1}$。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-nth-term-linear",
+        "label": "Find the nth term of a linear sequence",
+        "label_zh": "求线性数列的第 n 项",
+        "description": "Determine the formula for a sequence with a common difference.",
+        "description_zh": "确定具有公差的数列的公式。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-nth-term-linear",
+        "question": "Find the $n$th term of the sequence: $5, 8, 11, 14, \\ldots$",
+        "question_zh": "求数列 $5, 8, 11, 14, \\ldots$ 的第 $n$ 项公式。",
+        "solution": "**Step 1:** Find the common difference.\n$8 - 5 = 3, 11 - 8 = 3$. The difference is $+3$, so the formula starts with $3n$.\n\n**Step 2:** Find the '0th term' (the term before the first).\n$5 - 3 = 2$.\n\n**Step 3:** Combine into the formula.\n$u_n = 3n + 2$\n\n**Answer:** $3n + 2$",
+        "solution_zh": "**步骤1：** 寻找公差。\n$8 - 5 = 3, 11 - 8 = 3$。公差是 $+3$，所以公式以 $3n$ 开头。\n\n**步骤2：** 寻找“第0项”（第一项之前的项）。\n$5 - 3 = 2$。\n\n**步骤3：** 组合成公式。\n$u_n = 3n + 2$\n\n**答案：** $3n + 2$",
+        "source": "0580/21/O/N/18"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "What is the 10th term of the sequence with $n$th term $n^2 - 1$?",
+        "q_zh": "第 $n$ 项公式为 $n^2 - 1$ 的数列，其第 10 项是多少？",
+        "o": [
+          "$19$",
+          "$99$",
+          "$101$",
+          "$81$"
+        ],
+        "a": 1,
+        "e": "Substitute $n = 10$: $10^2 - 1 = 100 - 1 = 99$.",
+        "e_zh": "代入 $n = 10$：$10^2 - 1 = 100 - 1 = 99$。"
+      }
+    ],
+    "vocabLinks": [
+      "sequence",
+      "nth-term"
+    ],
+    "tier": "both"
+  },
+  {
+    "id": "kp-2.8-01",
+    "section": "2.8",
+    "order": 1,
+    "title": "Direct & Inverse Proportion",
+    "title_zh": "正比例与反比例",
+    "explanation": {
+      "en": "Proportion describes the relationship between two variables.\n\n**Direct Proportion** means $y$ increases as $x$ increases. Written as $y \\propto x$ or $y = kx$, where $k$ is the constant of proportionality.\n\n**Inverse Proportion** means $y$ decreases as $x$ increases. Written as $y \\propto \\frac{1}{x}$ or $y = \\frac{k}{x}$.\n\nRelationships can involve powers, such as $y \\propto x^2$ (direct to the square of $x$) or $y \\propto \\frac{1}{\\sqrt{x}}$ (inverse to the square root of $x$). Always find $k$ first using given values.",
+      "zh": "比例描述了两个变量之间的关系。\n\n**正比例** 意味着 $y$ 随着 $x$ 的增加而增加。记作 $y \\propto x$ 或 $y = kx$，其中 $k$ 是比例常数。\n\n**反比例** 意味着 $y$ 随着 $x$ 的增加而减少。记作 $y \\propto \\frac{1}{x}$ 或 $y = \\frac{k}{x}$。\n\n关系可以涉及幂次，例如 $y \\propto x^2$（与 $x$ 的平方成正比）或 $y \\propto \\frac{1}{\\sqrt{x}}$（与 $x$ 的平方根成反比）。解题时务必先利用已知值求出 $k$。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-prop-solve",
+        "label": "Solve proportion problems",
+        "label_zh": "解决比例问题",
+        "description": "Find the value of $y$ for a given $x$, after finding the constant $k$.",
+        "description_zh": "在求出常数 $k$ 后，计算给定 $x$ 对应的 $y$ 值。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-prop-solve",
+        "question": "$y$ is inversely proportional to $x$. When $x = 4, y = 3$. Find $y$ when $x = 6$.",
+        "question_zh": "$y$ 与 $x$ 成反比。当 $x = 4$ 时，$y = 3$。求当 $x = 6$ 时 $y$ 的值。",
+        "solution": "**Step 1:** Write the equation.\n$y = \\frac{k}{x}$\n\n**Step 2:** Find $k$ using $x=4, y=3$.\n$3 = \\frac{k}{4} \\Rightarrow k = 12$\n\n**Step 3:** Write the full formula.\n$y = \\frac{12}{x}$\n\n**Step 4:** Substitute $x = 6$.\n$y = \\frac{12}{6} = 2$\n\n**Answer:** $2$",
+        "solution_zh": "**步骤1：** 写出方程。\n$y = \\frac{k}{x}$\n\n**步骤2：** 利用 $x=4, y=3$ 求出 $k$。\n$3 = \\frac{k}{4} \\Rightarrow k = 12$\n\n**步骤3：** 写出完整公式。\n$y = \\frac{12}{x}$\n\n**步骤4：** 代入 $x = 6$。\n$y = \\frac{12}{6} = 2$\n\n**答案：** $2$",
+        "source": "0580/21/M/J/20"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "If $y \\propto x^2$ and $y=18$ when $x=3$, what is $y$ when $x=5$?",
+        "q_zh": "如果 $y \\propto x^2$，且当 $x=3$ 时 $y=18$，那么当 $x=5$ 时 $y$ 是多少？",
+        "o": [
+          "$30$",
+          "$50$",
+          "$10$",
+          "$25$"
+        ],
+        "a": 1,
+        "e": "$18 = k(3^2) \\Rightarrow 18 = 9k \\Rightarrow k = 2$. Then $y = 2(5^2) = 2(25) = 50$.",
+        "e_zh": "$18 = k(3^2) \\Rightarrow 18 = 9k \\Rightarrow k = 2$。因此 $y = 2(5^2) = 2(25) = 50$。"
+      }
+    ],
+    "vocabLinks": [
+      "proportion",
+      "inverse-proportion"
+    ],
+    "tier": "both"
+  },
+  {
+    "id": "kp-2.9-01",
+    "section": "2.9",
+    "order": 1,
+    "title": "Graphs in Practical Situations (Kinematics)",
+    "title_zh": "实际问题图像（运动学）",
+    "explanation": {
+      "en": "Graphs can represent motion over time.\n\n**Distance-Time Graphs**: The **gradient** represents the **speed**. A flat line means the object is stationary.\n\n**Speed-Time Graphs**: The **gradient** represents the **acceleration**. The **area under the graph** represents the **total distance travelled**. A horizontal line represents constant speed.",
+      "zh": "图像可以表示随时间变化的运动。\n\n**距离-时间图像**：**斜率（梯度）** 代表 **速度**。水平线表示物体静止。\n\n**速度-时间图像**：**斜率（梯度）** 代表 **加速度**。**图像下方的面积** 代表 **总行程**。水平线表示匀速运动。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-dist-travelled",
+        "label": "Calculate distance from speed-time graph",
+        "label_zh": "从速度-时间图像计算路程",
+        "description": "Calculate the area of triangles, rectangles, or trapeziums under the curve.",
+        "description_zh": "计算曲线下方三角形、矩形或梯形的面积。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-dist-travelled",
+        "question": "A car accelerates from $0$ to $20\\text{ m/s}$ in $10\\text{ seconds}$, then travels at $20\\text{ m/s}$ for $30\\text{ seconds}$. Calculate the total distance.",
+        "question_zh": "一辆车在 $10$ 秒内从 $0$ 加速到 $20\\text{ m/s}$，然后以 $20\\text{ m/s}$ 的速度行驶 $30$ 秒。计算总路程。",
+        "solution": "**Step 1:** Distance during acceleration (Triangle area).\n$\\frac{1}{2} \\times \\text{base} \\times \\text{height} = \\frac{1}{2} \\times 10 \\times 20 = 100\\text{ m}$\n\n**Step 2:** Distance during constant speed (Rectangle area).\n$\\text{base} \\times \\text{height} = 30 \\times 20 = 600\\text{ m}$\n\n**Step 3:** Total distance.\n$100 + 600 = 700\\text{ m}$\n\n**Answer:** $700\\text{ m}$",
+        "solution_zh": "**步骤1：** 加速阶段的路程（三角形面积）。\n$\\frac{1}{2} \\times \\text{底} \\times \\text{高} = \\frac{1}{2} \\times 10 \\times 20 = 100\\text{ 米}$\n\n**步骤2：** 匀速阶段的路程（矩形面积）。\n$\\text{底} \\times \\text{高} = 30 \\times 20 = 600\\text{ 米}$\n\n**步骤3：** 总路程。\n$100 + 600 = 700\\text{ 米}$\n\n**答案：** $700\\text{ 米}$",
+        "source": "Adapted from 0580/22/M/J/17"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "What does the gradient of a speed-time graph represent?",
+        "q_zh": "速度-时间图像的斜率代表什么？",
+        "o": [
+          "Speed",
+          "Distance",
+          "Acceleration",
+          "Time"
+        ],
+        "a": 2,
+        "e": "Acceleration is the rate of change of speed, which is the gradient.",
+        "e_zh": "加速度是速度的变化率，即斜率。"
+      }
+    ],
+    "vocabLinks": [
+      "gradient",
+      "acceleration"
+    ],
+    "tier": "both"
+  },
+  {
+    "id": "kp-2.10-01",
+    "section": "2.10",
+    "order": 1,
+    "title": "Graphs of Functions",
+    "title_zh": "函数图像",
+    "explanation": {
+      "en": "Graphs show the relationship between $x$ and $y$ for various functions.\n\n**Linear Graphs** are straight lines ($y = mx + c$).\n\n**Quadratic Graphs** are parabolas ($y = ax^2 + bx + c$).\n\n**Solving Equations Graphically**: To solve $f(x) = k$, find the $x$-coordinates where the curve $y = f(x)$ intersects the line $y = k$. To solve $f(x) = g(x)$, find where the two curves intersect.",
+      "zh": "图像展示了各种函数中 $x$ 与 $y$ 之间的关系。\n\n**线性图像** 是直线 ($y = mx + c$)。\n\n**二次函数图像** 是抛物线 ($y = ax^2 + bx + c$)。\n\n**图解法解方程**：要求解 $f(x) = k$，需找到曲线 $y = f(x)$ 与直线 $y = k$ 相交处的 $x$ 坐标。要求解 $f(x) = g(x)$，需找到两条曲线相交的位置。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-solve-graphical",
+        "label": "Solve equations using a graph",
+        "label_zh": "利用图像解方程",
+        "description": "Estimate solutions by reading $x$-values from intersections on a provided graph.",
+        "description_zh": "通过读取给定图像上交点的 $x$ 值来估算解。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-solve-graphical",
+        "question": "Use the graph of $y = x^3 - 3x$ to solve $x^3 - 3x = 1$.",
+        "question_zh": "利用 $y = x^3 - 3x$ 的图像来求解 $x^3 - 3x = 1$。",
+        "solution": "**Step 1:** Draw or identify the horizontal line $y = 1$ on the graph.\n\n**Step 2:** Locate all points where the curve $y = x^3 - 3x$ crosses $y = 1$.\n\n**Step 3:** Read the $x$-coordinates of these intersection points from the $x$-axis.\n\n**Answer:** (Numerical values depend on the specific graph provided in the exam).",
+        "solution_zh": "**步骤1：** 在图中画出或识别水平线 $y = 1$。\n\n**步骤2：** 找出曲线 $y = x^3 - 3x$ 与 $y = 1$ 相交的所有点。\n\n**步骤3：** 从 $x$ 轴读取这些交点的 $x$ 坐标。\n\n**答案：** （具体数值取决于考试中提供的图像）。",
+        "source": "0580/42/O/N/19"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "At which point(s) does the graph of $y = x^2 - 4$ cross the $x$-axis?",
+        "q_zh": "图像 $y = x^2 - 4$ 在哪些点穿过 $x$ 轴？",
+        "o": [
+          "$(0, -4)$",
+          "$(2, 0)$ and $(-2, 0)$",
+          "$(4, 0)$ and $(-4, 0)$",
+          "$(0, 2)$"
+        ],
+        "a": 1,
+        "e": "Crossing the $x$-axis means $y=0$. $x^2 - 4 = 0 \\Rightarrow x^2 = 4 \\Rightarrow x = \\pm 2$.",
+        "e_zh": "穿过 $x$ 轴意味着 $y=0$。$x^2 - 4 = 0 \\Rightarrow x^2 = 4 \\Rightarrow x = \\pm 2$。"
+      }
+    ],
+    "vocabLinks": [
+      "parabola",
+      "intersection"
+    ],
+    "tier": "both"
+  },
+  {
+    "id": "kp-2.11-01",
+    "section": "2.11",
+    "order": 1,
+    "title": "Sketching Curves",
+    "title_zh": "曲线草图",
+    "explanation": {
+      "en": "Sketching means drawing the general shape without plotting every point accurately.\n\n**Cubic Graphs** ($y = ax^3 + \\ldots$) have an 'S' shape. If $a > 0$, it goes from bottom-left to top-right.\n\n**Reciprocal Graphs** ($y = \\frac{a}{x}$) have two branches and asymptotes (lines the curve approaches but never touches, usually the axes).\n\n**Exponential Graphs** ($y = a^x$) grow very quickly and pass through $(0, 1)$ if no translation is applied.",
+      "zh": "草图意味着在不精确描点的情况下画出大致形状。\n\n**三次函数图像** ($y = ax^3 + \\ldots$) 呈“S”形。若 $a > 0$，则从左下向右上延伸。\n\n**反比例函数图像** ($y = \\frac{a}{x}$) 有两个分支且有渐近线（曲线无限接近但永不触碰的直线，通常是坐标轴）。\n\n**指数函数图像** ($y = a^x$) 增长非常快，若无平移，则经过点 $(0, 1)$。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-recognise-graph",
+        "label": "Match equations to sketches",
+        "label_zh": "将方程与草图匹配",
+        "description": "Identify which equation corresponds to a given curve shape.",
+        "description_zh": "识别哪个方程对应于给定的曲线形状。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-recognise-graph",
+        "question": "Which of these equations represents a curve that never touches the $x$-axis: $y = 3x - 1, y = x^2, y = 2^x, y = x^3$?",
+        "question_zh": "下列哪个方程代表的曲线永不触碰 $x$ 轴：$y = 3x - 1, y = x^2, y = 2^x, y = x^3$？",
+        "solution": "**Step 1:** Consider $y = 3x - 1$ (linear). Crosses $x$-axis at $1/3$.\n**Step 2:** Consider $y = x^2$ (quadratic). Touches $x$-axis at $0$.\n**Step 3:** Consider $y = 2^x$ (exponential). $2^x$ is always positive and approaches $0$ but never reaches it.\n**Step 4:** Consider $y = x^3$ (cubic). Crosses $x$-axis at $0$.\n\n**Answer:** $y = 2^x$",
+        "solution_zh": "**步骤1：** 考虑 $y = 3x - 1$（线性）。在 $1/3$ 处穿过 $x$ 轴。\n**步骤2：** 考虑 $y = x^2$（二次）。在 $0$ 处触碰 $x$ 轴。\n**步骤3：** 考虑 $y = 2^x$（指数）。$2^x$ 始终为正且接近 $0$ 但永不达到 $0$。\n**步骤4：** 考虑 $y = x^3$（三次）。在 $0$ 处穿过 $x$ 轴。\n\n**答案：** $y = 2^x$",
+        "source": "Adapted from 0580 syllabus"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "What is the shape of the graph $y = \\frac{5}{x}$?",
+        "q_zh": "图像 $y = \\frac{5}{x}$ 的形状是什么？",
+        "o": [
+          "A straight line",
+          "A parabola",
+          "A hyperbola (Reciprocal)",
+          "An S-shape"
+        ],
+        "a": 2,
+        "e": "Graphs of $y = k/x$ are called hyperbolas or reciprocal curves.",
+        "e_zh": "$y = k/x$ 的图像被称为双曲线或反比例曲线。"
+      }
+    ],
+    "vocabLinks": [
+      "reciprocal",
+      "asymptote"
+    ],
+    "tier": "both"
+  },
+  {
+    "id": "kp-2.12-01",
+    "section": "2.12",
+    "order": 1,
+    "title": "Differentiation",
+    "title_zh": "微分",
+    "explanation": {
+      "en": "Differentiation is used to find the **gradient** (slope) of a curve at any point.\n\n**Power Rule**: For $y = ax^n$, the derivative is $\\frac{dy}{dx} = nax^{n-1}$. For example, if $y = 3x^2$, then $\\frac{dy}{dx} = 6x$.\n\n**Stationary Points**: These occur where the gradient is zero ($\\frac{dy}{dx} = 0$). This helps find the maximum or minimum points (turning points) of a function.",
+      "zh": "微分用于寻找曲线在任意点处的 **梯度（斜率）**。\n\n**幂规则**：对于 $y = ax^n$，导数为 $\\frac{dy}{dx} = nax^{n-1}$。例如，若 $y = 3x^2$，则 $\\frac{dy}{dx} = 6x$。\n\n**驻点**：发生在梯度为零时（$\\frac{dy}{dx} = 0$）。这有助于找到函数的最大值或最小值点（转折点）。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-find-derivative",
+        "label": "Find the derivative",
+        "label_zh": "求导数",
+        "description": "Apply the power rule to differentiate a polynomial.",
+        "description_zh": "利用幂规则对多项式求导。"
+      },
+      {
+        "id": "ep-stat-points",
+        "label": "Find stationary points",
+        "label_zh": "求驻点",
+        "description": "Solve $\\frac{dy}{dx} = 0$ to find coordinates of turning points.",
+        "description_zh": "通过求解 $\\frac{dy}{dx} = 0$ 来寻找转折点的坐标。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-stat-points",
+        "question": "Find the coordinates of the stationary point of $y = x^2 - 6x + 5$.",
+        "question_zh": "求 $y = x^2 - 6x + 5$ 驻点的坐标。",
+        "solution": "**Step 1:** Differentiate the function.\n$\\frac{dy}{dx} = 2x - 6$\n\n**Step 2:** Set the derivative to zero and solve for $x$.\n$2x - 6 = 0 \\Rightarrow 2x = 6 \\Rightarrow x = 3$\n\n**Step 3:** Substitute $x = 3$ back into the original equation to find $y$.\n$y = (3)^2 - 6(3) + 5 = 9 - 18 + 5 = -4$\n\n**Answer:** $(3, -4)$ ",
+        "solution_zh": "**步骤1：** 对函数求导。\n$\\frac{dy}{dx} = 2x - 6$\n\n**步骤2：** 令导数为零并求解 $x$。\n$2x - 6 = 0 \\Rightarrow 2x = 6 \\Rightarrow x = 3$\n\n**步骤3：** 将 $x = 3$ 代回原方程以求出 $y$。\n$y = (3)^2 - 6(3) + 5 = 9 - 18 + 5 = -4$\n\n**答案：** $(3, -4)$ ",
+        "source": "0580/42/M/J/20"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "What is the derivative of $y = 5x^3 - 4x$?",
+        "q_zh": "$y = 5x^3 - 4x$ 的导数是什么？",
+        "o": [
+          "$15x^2 - 4$",
+          "$15x^2 - 4x$",
+          "$5x^2 - 4$",
+          "$15x^3 - 4$"
+        ],
+        "a": 0,
+        "e": "Using the power rule: $3 \\times 5x^{3-1} - 1 \\times 4x^{1-1} = 15x^2 - 4$.",
+        "e_zh": "利用幂规则：$3 \\times 5x^{3-1} - 1 \\times 4x^{1-1} = 15x^2 - 4$。"
+      }
+    ],
+    "vocabLinks": [
+      "derivative",
+      "stationary-point"
+    ],
+    "tier": "extended"
+  },
+  {
+    "id": "kp-2.13-01",
+    "section": "2.13",
+    "order": 1,
+    "title": "Function Notation, Composite & Inverse",
+    "title_zh": "函数符号、复合函数与反函数",
+    "explanation": {
+      "en": "Functions are like machines that take an input and produce an output.\n\n**Notation**: $f(x) = 2x + 3$. $f(5)$ means substitute $5$ into the function.\n\n**Composite Functions**: $fg(x)$ means $f(g(x))$. You apply $g$ first, then put the result into $f$. **Order matters!** $fg(x)$ is usually not the same as $gf(x)$.\n\n**Inverse Functions**: $f^{-1}(x)$ 'undoes' the function. To find it, let $y = f(x)$, swap $x$ and $y$, and solve for the new $y$.",
+      "zh": "函数就像机器，输入一个值并产生一个输出值。\n\n**符号**：$f(x) = 2x + 3$。$f(5)$ 表示将 $5$ 代入函数。\n\n**复合函数**：$fg(x)$ 表示 $f(g(x))$。先应用 $g$，然后将结果代入 $f$。**顺序很重要！** $fg(x)$ 通常不等于 $gf(x)$。\n\n**反函数**：$f^{-1}(x)$ 是函数的“撤销”操作。要求反函数，令 $y = f(x)$，交换 $x$ 和 $y$，然后解出新的 $y$。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-composite",
+        "label": "Evaluate composite functions",
+        "label_zh": "计算复合函数",
+        "description": "Calculate $fg(a)$ for a given number $a$.",
+        "description_zh": "针对给定的数 $a$，计算 $fg(a)$。"
+      },
+      {
+        "id": "ep-inverse",
+        "label": "Find the inverse function",
+        "label_zh": "求反函数",
+        "description": "Determine the formula for $f^{-1}(x)$.",
+        "description_zh": "确定 $f^{-1}(x)$ 的公式。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-inverse",
+        "question": "If $f(x) = 4x - 7$, find $f^{-1}(x)$.",
+        "question_zh": "若 $f(x) = 4x - 7$，求 $f^{-1}(x)$。",
+        "solution": "**Step 1:** Let $y = 4x - 7$.\n\n**Step 2:** Swap $x$ and $y$.\n$x = 4y - 7$\n\n**Step 3:** Solve for $y$.\n$x + 7 = 4y$\n$y = \\frac{x + 7}{4}$\n\n**Answer:** $f^{-1}(x) = \\frac{x + 7}{4}$",
+        "solution_zh": "**步骤1：** 令 $y = 4x - 7$。\n\n**步骤2：** 交换 $x$ 和 $y$。\n$x = 4y - 7$\n\n**步骤3：** 解出 $y$。\n$x + 7 = 4y$\n$y = \\frac{x + 7}{4}$\n\n**答案：** $f^{-1}(x) = \\frac{x + 7}{4}$",
+        "source": "0580/22/O/N/18"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "If $f(x) = 2x$ and $g(x) = x + 3$, what is $fg(4)$?",
+        "q_zh": "若 $f(x) = 2x$ 且 $g(x) = x + 3$，那么 $fg(4)$ 是多少？",
+        "o": [
+          "$14$",
+          "$11$",
+          "$10$",
+          "$8$"
+        ],
+        "a": 0,
+        "e": "First find $g(4) = 4 + 3 = 7$. Then find $f(7) = 2 \\times 7 = 14$.",
+        "e_zh": "先求 $g(4) = 4 + 3 = 7$。然后求 $f(7) = 2 \\times 7 = 14$。"
+      }
+    ],
+    "vocabLinks": [
+      "composite-function",
+      "inverse-function"
+    ],
+    "tier": "extended"
+  }
+]

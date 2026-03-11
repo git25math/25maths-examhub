@@ -1,0 +1,206 @@
+[
+  {
+    "id": "hv0807",
+    "cat": "geometry",
+    "topic": "Congruence and Similarity",
+    "q": "Which of the following criteria does NOT prove that two triangles are congruent?",
+    "o": [
+      "SSS",
+      "SAS",
+      "SSA",
+      "ASA"
+    ],
+    "a": 2,
+    "e": "SSA (side-side-angle) is not a condition for congruence because the angle is not included between the two sides, which can lead to two different possible triangles (the ambiguous case).",
+    "d": 1,
+    "s": "Y9.12",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0808",
+    "cat": "geometry",
+    "topic": "Congruence and Similarity",
+    "q": "Two triangles have all three corresponding angles equal. This information alone proves that the triangles are:",
+    "o": [
+      "Congruent",
+      "Similar but not necessarily congruent",
+      "Equilateral",
+      "Right-angled"
+    ],
+    "a": 1,
+    "e": "AAA (angle-angle-angle) proves similarity, meaning the triangles have the same shape, but they can be different sizes and therefore not congruent.",
+    "d": 1,
+    "s": "Y9.12",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0809",
+    "cat": "geometry",
+    "topic": "Congruence and Similarity",
+    "q": "Which of these is NOT a valid reason for triangle congruence?",
+    "o": [
+      "RHS",
+      "SAS",
+      "AAA",
+      "SSS"
+    ],
+    "a": 2,
+    "e": "AAA ensures triangles are similar (same shape) but does not guarantee they are the same size (congruent).",
+    "d": 1,
+    "s": "Y9.12",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0810",
+    "cat": "geometry",
+    "topic": "Congruence and Similarity",
+    "q": "Two similar cylinders have a radius ratio of $4:1$. What is the ratio of their surface areas?",
+    "o": [
+      "$4:1$",
+      "$8:1$",
+      "$16:1$",
+      "$64:1$"
+    ],
+    "a": 2,
+    "e": "Area ratio $=$ (length scale factor)$^2 = 4^2 = 16$. So the ratio is $16:1$.",
+    "d": 1,
+    "s": "Y9.12",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0811",
+    "cat": "geometry",
+    "topic": "Congruence and Similarity",
+    "q": "A model car is built with a length scale factor of $5$. How many times larger is the surface area of the model compared to the original?",
+    "o": [
+      "$5$",
+      "$10$",
+      "$15$",
+      "$25$"
+    ],
+    "a": 3,
+    "e": "Area scale factor $=$ (length scale factor)$^2 = 5^2 = 25$.",
+    "d": 1,
+    "s": "Y9.12",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0812",
+    "cat": "geometry",
+    "topic": "Congruence and Similarity",
+    "q": "The linear scale factor between two similar polygons is $1.5$. Find the ratio of their areas.",
+    "o": [
+      "$1.5:1$",
+      "$2.25:1$",
+      "$3:1$",
+      "$3.375:1$"
+    ],
+    "a": 1,
+    "e": "Area ratio $=$ (linear scale factor)$^2 = 1.5^2 = 2.25$. So the ratio is $2.25:1$.",
+    "d": 1,
+    "s": "Y9.12",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0813",
+    "cat": "geometry",
+    "topic": "Congruence and Similarity",
+    "q": "The ratio of the areas of two similar rectangles is $49:81$. What is the ratio of their perimeters?",
+    "o": [
+      "$49:81$",
+      "$7:9$",
+      "$24.5:40.5$",
+      "$\\sqrt{7}:\\sqrt{9}$"
+    ],
+    "a": 1,
+    "e": "The ratio of perimeters is the same as the side ratio. Side ratio $= \\sqrt{\\text{area ratio}} = \\sqrt{49}:\\sqrt{81} = 7:9$.",
+    "d": 2,
+    "s": "Y9.12",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0814",
+    "cat": "geometry",
+    "topic": "Congruence and Similarity",
+    "q": "Two similar solids have surface areas in the ratio $100:64$. What is the ratio of their corresponding lengths?",
+    "o": [
+      "$100:64$",
+      "$50:32$",
+      "$10:8$",
+      "$1000:512$"
+    ],
+    "a": 2,
+    "e": "Length ratio $= \\sqrt{\\text{area ratio}} = \\sqrt{100}:\\sqrt{64} = 10:8$.",
+    "d": 2,
+    "s": "Y9.12",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0815",
+    "cat": "geometry",
+    "topic": "Congruence and Similarity",
+    "q": "The area of triangle $X$ is $144$ cm$^2$ and the area of a similar triangle $Y$ is $4$ cm$^2$. What is the scale factor relating the sides of $X$ to $Y$?",
+    "o": [
+      "$36$",
+      "$12$",
+      "$6$",
+      "$72$"
+    ],
+    "a": 2,
+    "e": "First, find the area ratio: $144 \\div 4 = 36$. The side scale factor is $\\sqrt{\\text{area scale factor}} = \\sqrt{36} = 6$.",
+    "d": 2,
+    "s": "Y9.12",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0816",
+    "cat": "geometry",
+    "topic": "Congruence and Similarity",
+    "q": "Triangle $PQR$ is similar to triangle $STU$. $PQ = 5$ cm, $ST = 15$ cm, and $QR = 4$ cm. Find the length of $TU$.",
+    "o": [
+      "$12$ cm",
+      "$10$ cm",
+      "$20$ cm",
+      "$9$ cm"
+    ],
+    "a": 0,
+    "e": "Scale factor $= \\dfrac{ST}{PQ} = \\dfrac{15}{5} = 3$. $TU = QR \\times 3 = 4 \\times 3 = 12$ cm.",
+    "d": 2,
+    "s": "Y9.12",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0817",
+    "cat": "geometry",
+    "topic": "Congruence and Similarity",
+    "q": "Rectangles $A$ and $B$ are similar. The width of $A$ is $8$ cm and its length is $12$ cm. If the width of $B$ is $10$ cm, find its length.",
+    "o": [
+      "$15$ cm",
+      "$14$ cm",
+      "$13.3$ cm",
+      "$20$ cm"
+    ],
+    "a": 0,
+    "e": "Scale factor $= \\dfrac{10}{8} = 1.25$. Length of $B = 12 \\times 1.25 = 15$ cm.",
+    "d": 2,
+    "s": "Y9.12",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0818",
+    "cat": "geometry",
+    "topic": "Congruence and Similarity",
+    "q": "Triangle $ABC$ is similar to triangle $XYZ$. $AC = 10$, $XZ = 5$, and $BC = 14$. Find $YZ$.",
+    "o": [
+      "$7$",
+      "$28$",
+      "$9$",
+      "$4$"
+    ],
+    "a": 0,
+    "e": "Scale factor $= \\dfrac{XZ}{AC} = \\dfrac{5}{10} = 0.5$. $YZ = BC \\times 0.5 = 14 \\times 0.5 = 7$.",
+    "d": 2,
+    "s": "Y9.12",
+    "diag": "calc"
+  }
+]

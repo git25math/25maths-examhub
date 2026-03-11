@@ -1,0 +1,206 @@
+[
+  {
+    "id": "hv0480",
+    "cat": "algebra",
+    "topic": "Quadratic Sequences",
+    "q": "A sequence has terms $4, 11, 22, 37, \\ldots$ What is the second difference?",
+    "o": [
+      "$4$",
+      "$7$",
+      "$11$",
+      "$3$"
+    ],
+    "a": 0,
+    "e": "First differences: $11-4=7, 22-11=11, 37-22=15, \\ldots$ Second differences: $11-7=4, 15-11=4, \\ldots$ The second difference is $4$.",
+    "d": 1,
+    "s": "Y11.4",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0481",
+    "cat": "algebra",
+    "topic": "Quadratic Sequences",
+    "q": "A sequence has terms $6, 15, 30, 51, \\ldots$ What is the second difference?",
+    "o": [
+      "$9$",
+      "$3$",
+      "$6$",
+      "$5$"
+    ],
+    "a": 2,
+    "e": "First differences: $15-6=9, 30-15=15, 51-30=21, \\ldots$ Second differences: $15-9=6, 21-15=6, \\ldots$ The second difference is $6$.",
+    "d": 1,
+    "s": "Y11.4",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0482",
+    "cat": "algebra",
+    "topic": "Quadratic Sequences",
+    "q": "A sequence has terms $10, 18, 34, 58, \\ldots$ What is the second difference?",
+    "o": [
+      "$4$",
+      "$8$",
+      "$10$",
+      "$16$"
+    ],
+    "a": 1,
+    "e": "First differences: $8, 16, 24, \\ldots$ Second differences: $16-8=8, 24-16=8, \\ldots$ The second difference is $8$.",
+    "d": 1,
+    "s": "Y11.4",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0483",
+    "cat": "algebra",
+    "topic": "Quadratic Sequences",
+    "q": "The $n$th term of a quadratic sequence is $an^2 + bn + c$. If the second difference is $8$, what is $a$?",
+    "o": [
+      "$8$",
+      "$4$",
+      "$16$",
+      "$2$"
+    ],
+    "a": 1,
+    "e": "For a quadratic $an^2+bn+c$, the second difference is always equal to $2a$. If $2a=8$, then $a = 8 \\div 2 = 4$.",
+    "d": 1,
+    "s": "Y11.4",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0484",
+    "cat": "algebra",
+    "topic": "Quadratic Sequences",
+    "q": "The $n$th term of a quadratic sequence is $an^2 + bn + c$. If the second difference is $12$, what is $a$?",
+    "o": [
+      "$12$",
+      "$3$",
+      "$6$",
+      "$24$"
+    ],
+    "a": 2,
+    "e": "For a quadratic $an^2+bn+c$, the second difference is $2a$. Given $2a=12$, solving for $a$ gives $a=6$.",
+    "d": 1,
+    "s": "Y11.4",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0485",
+    "cat": "algebra",
+    "topic": "Quadratic Sequences",
+    "q": "The $n$th term of a quadratic sequence is $an^2 + bn + c$. If the second difference is $20$, what is $a$?",
+    "o": [
+      "$20$",
+      "$10$",
+      "$5$",
+      "$2$"
+    ],
+    "a": 1,
+    "e": "The coefficient $a$ in $an^2+bn+c$ is half of the second difference. Half of $20$ is $10$, so $a=10$.",
+    "d": 1,
+    "s": "Y11.4",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0486",
+    "cat": "algebra",
+    "topic": "Quadratic Sequences",
+    "q": "Find the $n$th term of the sequence $3, 9, 19, 33, 51, \\ldots$",
+    "o": [
+      "$2n^2 + 1$",
+      "$n^2 + 2$",
+      "$2n^2 - 1$",
+      "$3n^2 - 1$"
+    ],
+    "a": 0,
+    "e": "First differences: $6, 10, 14, 18$. Second difference: $4$. Thus $a = 4 \\div 2 = 2$. Looking at $2n^2$: $2, 8, 18, 32, 50$. The difference between our sequence and $2n^2$ is always $1$. So the $n$th term is $2n^2 + 1$.",
+    "d": 2,
+    "s": "Y11.4",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0487",
+    "cat": "algebra",
+    "topic": "Quadratic Sequences",
+    "q": "Find the $n$th term of the sequence $5, 12, 23, 38, 57, \\ldots$",
+    "o": [
+      "$n^2 + 4$",
+      "$2n^2 + 2$",
+      "$n^2 + 3n + 1$",
+      "$2n^2 + n + 2$"
+    ],
+    "a": 3,
+    "e": "First differences: $7, 11, 15, 19$. Second difference: $4$. Thus $a = 2$. $2n^2$ gives $2, 8, 18, 32, 50$. Subtracting $2n^2$ from our sequence: $3, 4, 5, 6, 7$. This linear part is $n+2$. Total $n$th term: $2n^2 + n + 2$.",
+    "d": 2,
+    "s": "Y11.4",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0488",
+    "cat": "algebra",
+    "topic": "Quadratic Sequences",
+    "q": "Find the $n$th term of the sequence $4, 10, 18, 28, 40, \\ldots$",
+    "o": [
+      "$n^2 + 3n$",
+      "$n^2 + n + 2$",
+      "$2n^2 + 2$",
+      "$n^2 + 2n + 1$"
+    ],
+    "a": 0,
+    "e": "First differences: $6, 8, 10, 12$. Second difference: $2$. Thus $a = 1$. $n^2$ gives $1, 4, 9, 16, 25$. Subtracting $n^2$ from the sequence: $3, 6, 9, 12, 15$. This linear part is $3n$. Total $n$th term: $n^2 + 3n$.",
+    "d": 2,
+    "s": "Y11.4",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0489",
+    "cat": "algebra",
+    "topic": "Quadratic Sequences",
+    "q": "The $n$th term of a sequence is $3n^2 - n + 2$. What is the 4th term?",
+    "o": [
+      "$50$",
+      "$46$",
+      "$36$",
+      "$48$"
+    ],
+    "a": 1,
+    "e": "Substitute $n=4$: $3(4^2) - 4 + 2 = 3(16) - 4 + 2 = 48 - 4 + 2 = 46$.",
+    "d": 2,
+    "s": "Y11.4",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0490",
+    "cat": "algebra",
+    "topic": "Quadratic Sequences",
+    "q": "The $n$th term of a sequence is $n^2 + 5n - 1$. What is the 8th term?",
+    "o": [
+      "$95$",
+      "$103$",
+      "$113$",
+      "$87$"
+    ],
+    "a": 1,
+    "e": "Substitute $n=8$: $8^2 + 5(8) - 1 = 64 + 40 - 1 = 104 - 1 = 103$.",
+    "d": 2,
+    "s": "Y11.4",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0491",
+    "cat": "algebra",
+    "topic": "Quadratic Sequences",
+    "q": "The $n$th term of a sequence is $4n^2 - 2n + 5$. What is the 3rd term?",
+    "o": [
+      "$45$",
+      "$31$",
+      "$35$",
+      "$29$"
+    ],
+    "a": 2,
+    "e": "Substitute $n=3$: $4(3^2) - 2(3) + 5 = 4(9) - 6 + 5 = 36 - 6 + 5 = 35$.",
+    "d": 2,
+    "s": "Y11.4",
+    "diag": "calc"
+  }
+]

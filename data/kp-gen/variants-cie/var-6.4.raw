@@ -1,0 +1,112 @@
+[
+  {
+    "id": "cv1696",
+    "cat": "trigonometry",
+    "topic": "Trigonometry",
+    "q": "Solve the equation $\\cos(x) = 0.5$ for an acute angle $x$. Give your answer to one decimal place.",
+    "o": ["60.0°", "30.0°", "45.0°", "1.0°"],
+    "a": 0,
+    "e": "Use the inverse cosine function: $x = \\cos^{-1}(0.5)$. A calculator gives $x = 60.0°$. This is because $\\cos(60°) = 0.5$ is an exact value.",
+    "d": 2,
+    "s": "6.4"
+  },
+  {
+    "id": "cv1697",
+    "cat": "trigonometry",
+    "topic": "Trigonometry",
+    "q": "Solve the equation $\\tan(y) = 1$ for an acute angle $y$. Give your answer to one decimal place.",
+    "o": ["30.0°", "60.0°", "45.0°", "90.0°"],
+    "a": 2,
+    "e": "Use the inverse tangent function: $y = \\tan^{-1}(1)$. A calculator gives $y = 45.0°$. This corresponds to the exact value where the opposite and adjacent sides are equal.",
+    "d": 2,
+    "s": "6.4"
+  },
+  {
+    "id": "cv1698",
+    "cat": "trigonometry",
+    "topic": "Trigonometry",
+    "q": "Solve the equation $\\sin(A) = 0.707$ for an acute angle $A$. Give your answer to one decimal place.",
+    "o": ["30.0°", "45.0°", "60.0°", "0.7°"],
+    "a": 1,
+    "e": "Use the inverse sine function: $A = \\sin^{-1}(0.707)$. A calculator gives $A \\approx 45.0°$. This is because $\\frac{1}{\\sqrt{2}} \\approx 0.707$, which is the exact value for $\\sin(45°)$.",
+    "d": 2,
+    "s": "6.4"
+  },
+  {
+    "id": "cv1699",
+    "cat": "trigonometry",
+    "topic": "Trigonometry",
+    "q": "Solve the equation $\\cos(\\theta) = 0.866$ for an acute angle $\\theta$. Give your answer to one decimal place.",
+    "o": ["30.0°", "60.0°", "0.9°", "45.0°"],
+    "a": 0,
+    "e": "Use the inverse cosine function: $\\theta = \\cos^{-1}(0.866)$. A calculator gives $\\theta \\approx 30.0°$. This is because $\\frac{\\sqrt{3}}{2} \\approx 0.866$, which is the exact value for $\\cos(30°)$.",
+    "d": 2,
+    "s": "6.4"
+  },
+  {
+    "id": "cv1700",
+    "cat": "trigonometry",
+    "topic": "Trigonometry",
+    "q": "Solve the equation $\\tan(x) = 1.732$ for an acute angle $x$. Give your answer to one decimal place.",
+    "o": ["30.0°", "45.0°", "1.7°", "60.0°"],
+    "a": 3,
+    "e": "Use the inverse tangent function: $x = \\tan^{-1}(1.732)$. A calculator gives $x \\approx 60.0°$. This is because $\\sqrt{3} \\approx 1.732$, which is the exact value for $\\tan(60°)$.",
+    "d": 2,
+    "s": "6.4"
+  },
+  {
+    "id": "cv1701",
+    "cat": "trigonometry",
+    "topic": "Trigonometry",
+    "q": "Solve $\\sin(x) = 0.866$ for $0° \\le x \\le 180°$.",
+    "o": ["60° and 120°", "60° and 300°", "60° only", "30° and 150°"],
+    "a": 0,
+    "e": "The principal value is $x = \\sin^{-1}(0.866) = 60°$. Since $\\sin(x)$ is positive, the second solution in the range $0° \\le x \\le 180°$ is found using the identity $\\sin(x) = \\sin(180° - x)$, which gives $180° - 60° = 120°$.",
+    "d": 2,
+    "s": "6.4"
+  },
+  {
+    "id": "cv1702",
+    "cat": "trigonometry",
+    "topic": "Trigonometry",
+    "q": "Solve $\\sin(\\theta) = 0.707$ for $0° \\le \\theta \\le 180°$.",
+    "o": ["45° and 315°", "45° and 135°", "45° only", "60° and 120°"],
+    "a": 1,
+    "e": "The principal value is $\\theta = \\sin^{-1}(0.707) = 45°$. Since $\\sin(\\theta)$ is positive, the second solution in the range $0° \\le \\theta \\le 180°$ is $180° - 45° = 135°$.",
+    "d": 2,
+    "s": "6.4"
+  },
+  {
+    "id": "cv1703",
+    "cat": "trigonometry",
+    "topic": "Trigonometry",
+    "q": "Solve $\\sin(A) = 0.25$ for $0° \\le A \\le 180°$. Give answers to one decimal place.",
+    "o": ["14.5° and 194.5°", "14.5° only", "14.5° and 165.5°", "75.5° and 104.5°"],
+    "a": 2,
+    "e": "The principal value is $A = \\sin^{-1}(0.25) \\approx 14.5°$. The second solution in the range $0° \\le A \\le 180°$ is $180° - 14.5° = 165.5°$.",
+    "d": 2,
+    "s": "6.4"
+  },
+  {
+    "id": "cv1704",
+    "cat": "trigonometry",
+    "topic": "Trigonometry",
+    "q": "Solve $\\sin(y) = 0.940$ for $0° \\le y \\le 180°$. Give answers to the nearest degree.",
+    "o": ["70° and 110°", "70° and 290°", "70° only", "20° and 160°"],
+    "a": 0,
+    "e": "The principal value is $y = \\sin^{-1}(0.940) \\approx 70°$. The second solution in the range $0° \\le y \\le 180°$ is $180° - 70° = 110°$.",
+    "d": 2,
+    "s": "6.4"
+  },
+  {
+    "id": "cv1705",
+    "cat": "trigonometry",
+    "topic": "Trigonometry",
+    "q": "Solve $\\sin(\\phi) = 0.342$ for $0° \\le \\phi \\le 180°$. Give answers to the nearest degree.",
+    "o": ["20° and 340°", "20° only", "70° and 110°", "20° and 160°"],
+    "a": 3,
+    "e": "The principal value is $\\phi = \\sin^{-1}(0.342) \\approx 20°$. The second solution in the range $0° \\le \\phi \\le 180°$ is $180° - 20° = 160°$.",
+    "d": 2,
+    "s": "6.4"
+  }
+]

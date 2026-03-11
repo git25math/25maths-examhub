@@ -1,0 +1,818 @@
+[
+  {
+    "id": "kp-Y9.1-01",
+    "section": "Y9.1",
+    "order": 1,
+    "title": "Simplifying Surds",
+    "title_zh": "化简根式",
+    "explanation": {
+      "en": "**Surds** are irrational numbers that are expressed as roots of rational numbers. They cannot be written as exact fractions or terminating decimals.\n\n**Simplifying surds** involves finding a square factor of the number under the root. We use the rule $\\sqrt{ab} = \\sqrt{a} \\times \\sqrt{b}$. For example, $\\sqrt{12} = \\sqrt{4 \\times 3} = 2\\sqrt{3}$.\n\n**Adding and subtracting surds** is only possible if they are 'like surds' (have the same number under the root sign). You treat the surd part like an algebraic variable, e.g., $3\\sqrt{5} + 2\\sqrt{5} = 5\\sqrt{5}$.",
+      "zh": "**根式**是以有理数的根形式表示的无理数。它们不能写成精确的分数或有限小数。\n\n**化简根式**涉及寻找根号下数字的平方数因数。我们使用法则 $\\sqrt{ab} = \\sqrt{a} \\times \\sqrt{b}$。例如，$\\sqrt{12} = \\sqrt{4 \\times 3} = 2\\sqrt{3}$。\n\n**根式的加减法**仅在它们是“同类根式”（根号下的数字相同）时才可行。将根式部分视为代数变量，例如：$3\\sqrt{5} + 2\\sqrt{5} = 5\\sqrt{5}$。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-surd-simple",
+        "label": "Simplify a surd expression",
+        "label_zh": "化简根式表达式",
+        "description": "Convert a surd into the form $k\\sqrt{n}$ where $k$ is an integer and $n$ is as small as possible.",
+        "description_zh": "将根式转换为 $k\\sqrt{n}$ 的形式，其中 $k$ 为整数且 $n$ 尽可能小。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-surd-simple",
+        "question": "Simplify $\\sqrt{75} + \\sqrt{27}$.",
+        "question_zh": "化简 $\\sqrt{75} + \\sqrt{27}$。",
+        "solution": "**Step 1:** Find square factors for each surd.\n$\\sqrt{75} = \\sqrt{25 \\times 3} = 5\\sqrt{3}$\n$\\sqrt{27} = \\sqrt{9 \\times 3} = 3\\sqrt{3}$\n\n**Step 2:** Add the like surds.\n$5\\sqrt{3} + 3\\sqrt{3} = 8\\sqrt{3}$",
+        "solution_zh": "**步骤1：** 寻找每个根式的平方因数。\n$\\sqrt{75} = \\sqrt{25 \\times 3} = 5\\sqrt{3}$\n$\\sqrt{27} = \\sqrt{9 \\times 3} = 3\\sqrt{3}$\n\n**步骤2：** 将同类根式相加。\n$5\\sqrt{3} + 3\\sqrt{3} = 8\\sqrt{3}$",
+        "source": "Year 9 Assessment"
+      },
+      {
+        "patternId": "ep-surd-simple",
+        "question": "Show that $\\sqrt{50} - \\sqrt{8}$ can be written in the form $a\\sqrt{b}$.",
+        "question_zh": "证明 $\\sqrt{50} - \\sqrt{8}$ 可以写成 $a\\sqrt{b}$ 的形式。",
+        "solution": "1. $\\sqrt{50} = \\sqrt{25 \\times 2} = 5\\sqrt{2}$\n2. $\\sqrt{8} = \\sqrt{4 \\times 2} = 2\\sqrt{2}$\n3. $5\\sqrt{2} - 2\\sqrt{2} = 3\\sqrt{2}$\nHere $a=3$ and $b=2$.",
+        "solution_zh": "1. $\\sqrt{50} = \\sqrt{25 \\times 2} = 5\\sqrt{2}$\n2. $\\sqrt{8} = \\sqrt{4 \\times 2} = 2\\sqrt{2}$\n3. $5\\sqrt{2} - 2\\sqrt{2} = 3\\sqrt{2}$\n此处 $a=3$，$b=2$。",
+        "source": "Adapted from Y9 curriculum"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "What is $\\sqrt{48}$ in its simplest form?",
+        "q_zh": "$\\sqrt{48}$ 的最简形式是什么？",
+        "o": [
+          "$2\\sqrt{12}$",
+          "$4\\sqrt{3}$",
+          "$3\\sqrt{4}$",
+          "$16\\sqrt{3}$"
+        ],
+        "a": 1,
+        "e": "$\\sqrt{48} = \\sqrt{16 \\times 3} = 4\\sqrt{3}$.",
+        "e_zh": "$\\sqrt{48} = \\sqrt{16 \\times 3} = 4\\sqrt{3}$。"
+      },
+      {
+        "q": "Simplify $2\\sqrt{5} + \\sqrt{45}$.",
+        "q_zh": "化简 $2\\sqrt{5} + \\sqrt{45}$。",
+        "o": [
+          "$3\\sqrt{5}$",
+          "$7\\sqrt{5}$",
+          "$5\\sqrt{5}$",
+          "$\\sqrt{50}$"
+        ],
+        "a": 2,
+        "e": "$\\sqrt{45} = \\sqrt{9 \\times 5} = 3\\sqrt{5}$. So, $2\\sqrt{5} + 3\\sqrt{5} = 5\\sqrt{5}$.",
+        "e_zh": "$\\sqrt{45} = \\sqrt{9 \\times 5} = 3\\sqrt{5}$。因此，$2\\sqrt{5} + 3\\sqrt{5} = 5\\sqrt{5}$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-Y9.2-01",
+    "section": "Y9.2",
+    "order": 1,
+    "title": "Factorizing Quadratic Expressions",
+    "title_zh": "因式分解二次表达式",
+    "explanation": {
+      "en": "**Quadratic expressions** take the form $ax^2 + bx + c$. Factorizing is the process of writing these as a product of two linear brackets.\n\n**Trinomials** with $a=1$ (form $x^2 + bx + c$) are factorized by finding two numbers that **multiply** to give $c$ and **add** to give $b$. For example, for $x^2 + 5x + 6$, we need numbers that multiply to 6 and add to 5, which are 2 and 3. So, $(x+2)(x+3)$.\n\n**Difference of two squares** is a special case: $a^2 - b^2 = (a-b)(a+b)$. For example, $x^2 - 16 = (x-4)(x+4)$.",
+      "zh": "**二次表达式** 的形式为 $ax^2 + bx + c$。因式分解是将这些表达式写成两个线性括号乘积的过程。\n\n**三项式** 当 $a=1$（形式为 $x^2 + bx + c$）时，通过寻找两个数，使它们的**乘积**等于 $c$ 且**和**等于 $b$ 来进行分解。例如，$x^2 + 5x + 6$，我们需要乘积为 6 且和为 5 的两个数，即 2 和 3。因此得到 $(x+2)(x+3)$。\n\n**平方差公式** 是一个特殊情况：$a^2 - b^2 = (a-b)(a+b)$。例如，$x^2 - 16 = (x-4)(x+4)$。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-fact-quad",
+        "label": "Factorize $x^2 + bx + c$",
+        "label_zh": "分解 $x^2 + bx + c$",
+        "description": "Identify the two integers needed to complete the brackets $(x+p)(x+q)$.",
+        "description_zh": "确定完成括号 $(x+p)(x+q)$ 所需的两个整数。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-fact-quad",
+        "question": "Factorize $x^2 - 7x + 10$.",
+        "question_zh": "因式分解 $x^2 - 7x + 10$。",
+        "solution": "**Step 1:** Find two numbers that multiply to $+10$ and add to $-7$.\nPairs for 10: (1,10), (2,5), (-1,-10), (-2,-5).\n**Step 2:** Check sums.\n$-2 + (-5) = -7$. This works.\n**Step 3:** Write in brackets.\n$(x - 2)(x - 5)$.",
+        "solution_zh": "**步骤1：** 寻找两个乘积为 $+10$ 且和为 $-7$ 的数。\n10 的因数对：(1,10), (2,5), (-1,-10), (-2,-5)。\n**步骤2：** 检查和。\n$-2 + (-5) = -7$。符合条件。\n**步骤3：** 写进括号。\n$(x - 2)(x - 5)$。",
+        "source": "Year 9 Assessment"
+      },
+      {
+        "patternId": "ep-fact-quad",
+        "question": "Factorize $y^2 - 25$.",
+        "question_zh": "因式分解 $y^2 - 25$。",
+        "solution": "This is a **difference of two squares**.\n$y^2$ is the square of $y$.\n$25$ is the square of $5$.\nResult: $(y - 5)(y + 5)$.",
+        "solution_zh": "这是一个**平方差公式**。\n$y^2$ 是 $y$ 的平方。\n$25$ 是 $5$ 的平方。\n结果：$(y - 5)(y + 5)$。",
+        "source": "Adapted from Y9 curriculum"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "Factorize $x^2 + 2x - 8$.",
+        "q_zh": "分解 $x^2 + 2x - 8$。",
+        "o": [
+          "$(x+4)(x-2)$",
+          "$(x-4)(x+2)$",
+          "$(x+8)(x-1)$",
+          "$(x+2)(x-4)$"
+        ],
+        "a": 0,
+        "e": "We need numbers that multiply to $-8$ and add to $+2$. $4 \\times (-2) = -8$ and $4 + (-2) = 2$. So $(x+4)(x-2)$.",
+        "e_zh": "我们需要乘积为 $-8$ 且和为 $+2$ 的两个数。$4 \\times (-2) = -8$ 且 $4 + (-2) = 2$。因此是 $(x+4)(x-2)$。"
+      },
+      {
+        "q": "Which of these is the factorization of $4x^2 - 9$?",
+        "q_zh": "下列哪个是 $4x^2 - 9$ 的因式分解？",
+        "o": [
+          "$(4x-3)(x+3)$",
+          "$(2x-3)^2$",
+          "$(2x-3)(2x+3)$",
+          "$(2x+3)^2$"
+        ],
+        "a": 2,
+        "e": "$4x^2 = (2x)^2$ and $9 = 3^2$. Using $a^2-b^2 = (a-b)(a+b)$, we get $(2x-3)(2x+3)$.",
+        "e_zh": "$4x^2 = (2x)^2$ 且 $9 = 3^2$。使用 $a^2-b^2 = (a-b)(a+b)$，得到 $(2x-3)(2x+3)$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-Y9.3-01",
+    "section": "Y9.3",
+    "order": 1,
+    "title": "Function Notation",
+    "title_zh": "函数符号",
+    "explanation": {
+      "en": "A **function** is a rule that relates an input to exactly one output. We often use the notation $f(x)$ to represent a function of $x$.\n\n**Substitution** involves replacing the variable $x$ with a specific value to find the output. If $f(x) = 2x + 3$, then $f(5) = 2(5) + 3 = 13$.\n\n**Solving equations** with functions involves finding the input $x$ that gives a specific output. If $f(x) = 11$, you set up the equation $2x + 3 = 11$ and solve for $x$.",
+      "zh": "**函数**是将一个输入对应到唯一输出的规则。我们通常使用符号 $f(x)$ 来表示 $x$ 的函数。\n\n**代入法**涉及将变量 $x$ 替换为特定值以寻找输出。如果 $f(x) = 2x + 3$，那么 $f(5) = 2(5) + 3 = 13$。\n\n**解方程**涉及寻找产生特定输出的输入值 $x$。如果 $f(x) = 11$，你需要列出方程 $2x + 3 = 11$ 并解出 $x$。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-func-eval",
+        "label": "Evaluate a function",
+        "label_zh": "求函数值",
+        "description": "Find the value of $f(k)$ for a given constant $k$.",
+        "description_zh": "对于给定的常数 $k$，求 $f(k)$ 的值。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-func-eval",
+        "question": "Given $f(x) = x^2 - 4x$, find $f(-3)$.",
+        "question_zh": "已知 $f(x) = x^2 - 4x$，求 $f(-3)$。",
+        "solution": "**Step 1:** Substitute $-3$ into the expression for every $x$.\n$f(-3) = (-3)^2 - 4(-3)$\n**Step 2:** Calculate carefully.\n$f(-3) = 9 + 12 = 21$",
+        "solution_zh": "**步骤1：** 将 $-3$ 代入表达式中所有的 $x$。\n$f(-3) = (-3)^2 - 4(-3)$\n**步骤2：** 仔细计算。\n$f(-3) = 9 + 12 = 21$",
+        "source": "Year 9 Assessment"
+      },
+      {
+        "patternId": "ep-func-eval",
+        "question": "If $g(x) = \\frac{10}{x-1}$, find the value of $x$ such that $g(x) = 2$.",
+        "question_zh": "如果 $g(x) = \\frac{10}{x-1}$，求使得 $g(x) = 2$ 的 $x$ 值。",
+        "solution": "1. Set the function equal to 2: $\\frac{10}{x-1} = 2$\n2. Multiply both sides by $(x-1)$: $10 = 2(x-1)$\n3. Expand: $10 = 2x - 2$\n4. Add 2: $12 = 2x$\n5. Divide by 2: $x = 6$",
+        "solution_zh": "1. 令函数等于 2：$\\frac{10}{x-1} = 2$\n2. 两边同时乘以 $(x-1)$：$10 = 2(x-1)$\n3. 展开：$10 = 2x - 2$\n4. 加 2：$12 = 2x$\n5. 除以 2：$x = 6$",
+        "source": "Adapted from Y9 curriculum"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "If $f(x) = 3x - 5$, what is $f(4)$?",
+        "q_zh": "如果 $f(x) = 3x - 5$，那么 $f(4)$ 是多少？",
+        "o": [
+          "7",
+          "12",
+          "17",
+          "1"
+        ],
+        "a": 0,
+        "e": "$f(4) = 3(4) - 5 = 12 - 5 = 7$.",
+        "e_zh": "$f(4) = 3(4) - 5 = 12 - 5 = 7$。"
+      },
+      {
+        "q": "For $h(x) = x^2 + 1$, find the input that gives an output of 26.",
+        "q_zh": "对于 $h(x) = x^2 + 1$，求产生输出 26 的输入值。",
+        "o": [
+          "5 only",
+          "25",
+          "5 or -5",
+          "27"
+        ],
+        "a": 2,
+        "e": "$x^2 + 1 = 26 \\Rightarrow x^2 = 25 \\Rightarrow x = \\pm 5$. Both positive and negative 5 square to 25.",
+        "e_zh": "$x^2 + 1 = 26 \\Rightarrow x^2 = 25 \\Rightarrow x = \\pm 5$。正 5 和负 5 的平方都是 25。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-Y9.4-01",
+    "section": "Y9.4",
+    "order": 1,
+    "title": "Angles in Polygons",
+    "title_zh": "多边形中的角度",
+    "explanation": {
+      "en": "For any polygon with $n$ sides:\n\n**Interior angles sum** is given by the formula $(n - 2) \\times 180^\\circ$. This is because any polygon can be split into $n-2$ triangles.\n\n**Exterior angles sum** of any convex polygon is always $360^\\circ$, regardless of the number of sides.\n\n**Regular polygons** have all interior angles equal and all exterior angles equal. For a regular polygon, one exterior angle $= \\frac{360^\\circ}{n}$ and one interior angle $= 180^\\circ - \\text{exterior angle}$.",
+      "zh": "对于任何具有 $n$ 条边的多边形：\n\n**内角和** 由公式 $(n - 2) \\times 180^\\circ$ 给出。这是因为任何多边形都可以被分割成 $n-2$ 个三角形。\n\n任何凸多边形的 **外角和** 总是 $360^\\circ$，无论边数多少。\n\n**正多边形** 的所有内角相等且所有外角相等。对于正多边形，一个外角 $= \\frac{360^\\circ}{n}$，一个内角 $= 180^\\circ - \\text{外角}$。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-poly-angles",
+        "label": "Calculate missing angles in a polygon",
+        "label_zh": "计算多边形中缺失的角度",
+        "description": "Use sum rules to find one unknown angle in a given shape.",
+        "description_zh": "利用求和规则寻找给定图形中的一个未知角。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-poly-angles",
+        "question": "Calculate the interior angle sum of a hexagon (6 sides).",
+        "question_zh": "计算六边形（6 条边）的内角和。",
+        "solution": "**Step 1:** Identify the number of sides, $n = 6$.\n**Step 2:** Use the formula $(n - 2) \\times 180^\\circ$.\n$(6 - 2) \\times 180^\\circ = 4 \\times 180^\\circ = 720^\\circ$.",
+        "solution_zh": "**步骤1：** 确定边数，$n = 6$。\n**步骤2：** 使用公式 $(n - 2) \\times 180^\\circ$。\n$(6 - 2) \\times 180^\\circ = 4 \\times 180^\\circ = 720^\\circ$。",
+        "source": "Year 9 Assessment"
+      },
+      {
+        "patternId": "ep-poly-angles",
+        "question": "A regular polygon has an exterior angle of $40^\\circ$. How many sides does it have?",
+        "question_zh": "一个正多边形的一个外角是 $40^\\circ$。它有多少条边？",
+        "solution": "1. Sum of exterior angles $= 360^\\circ$\n2. Number of sides $n = \\frac{360}{\\text{one exterior angle}}$\n3. $n = \\frac{360}{40} = 9$\nIt is a nonagon.",
+        "solution_zh": "1. 外角和 $= 360^\\circ$\n2. 边数 $n = \\frac{360}{\\text{一个外角}}$\n3. $n = \\frac{360}{40} = 9$\n它是一个九边形。",
+        "source": "Adapted from Y9 curriculum"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "What is the size of each interior angle of a regular octagon (8 sides)?",
+        "q_zh": "正八边形（8 条边）的每个内角是多少度？",
+        "o": [
+          "$1080^\\circ$",
+          "$135^\\circ$",
+          "$45^\\circ$",
+          "$150^\\circ$"
+        ],
+        "a": 1,
+        "e": "Exterior angle $= 360 / 8 = 45^\\circ$. Interior angle $= 180 - 45 = 135^\\circ$.",
+        "e_zh": "外角 $= 360 / 8 = 45^\\circ$。内角 $= 180 - 45 = 135^\\circ$。"
+      },
+      {
+        "q": "If the sum of interior angles of a polygon is $1260^\\circ$, how many sides does it have?",
+        "q_zh": "如果一个多边形的内角和是 $1260^\\circ$，它有多少条边？",
+        "o": [
+          "7",
+          "8",
+          "9",
+          "10"
+        ],
+        "a": 2,
+        "e": "$(n-2) \\times 180 = 1260 \\Rightarrow n-2 = 1260/180 = 7 \\Rightarrow n = 9$.",
+        "e_zh": "$(n-2) \\times 180 = 1260 \\Rightarrow n-2 = 1260/180 = 7 \\Rightarrow n = 9$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-Y9.5-01",
+    "section": "Y9.5",
+    "order": 1,
+    "title": "Pythagoras Theorem in 2D",
+    "title_zh": "二维勾股定理",
+    "explanation": {
+      "en": "**Pythagoras' Theorem** states that in a right-angled triangle, the square of the hypotenuse ($c$) is equal to the sum of the squares of the other two sides ($a$ and $b$): $a^2 + b^2 = c^2$.\n\n**The hypotenuse** is the longest side and is always opposite the right angle.\n\n**Distance between points** $(x_1, y_1)$ and $(x_2, y_2)$ on a coordinate plane can be found using Pythagoras: $d = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$.",
+      "zh": "**勾股定理** 表明在直角三角形中，斜边 ($c$) 的平方等于另外两条直角边 ($a$ 和 $b$) 的平方和：$a^2 + b^2 = c^2$。\n\n**斜边** 是最长的边，且总是位于直角的对边。\n\n坐标平面上两点 $(x_1, y_1)$ 和 $(x_2, y_2)$ 之间的 **距离** 可以使用勾股定理求得：$d = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-pythag-find",
+        "label": "Find a missing side length",
+        "label_zh": "求缺失的边长",
+        "description": "Calculate the length of the hypotenuse or a shorter side in a right-angled triangle.",
+        "description_zh": "计算直角三角形中斜边或较短边的长度。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-pythag-find",
+        "question": "A triangle has sides $5\\text{cm}$ and $12\\text{cm}$ at right angles. Find the length of the hypotenuse.",
+        "question_zh": "一个三角形的两条直角边分别为 $5\\text{cm}$ 和 $12\\text{cm}$。求斜边的长度。",
+        "solution": "**Step 1:** Identify $a=5$ and $b=12$.\n**Step 2:** Apply formula: $c^2 = 5^2 + 12^2 = 25 + 144 = 169$.\n**Step 3:** Square root: $c = \\sqrt{169} = 13\\text{cm}$.",
+        "solution_zh": "**步骤1：** 确定 $a=5$ 和 $b=12$。\n**步骤2：** 应用公式：$c^2 = 5^2 + 12^2 = 25 + 144 = 169$。\n**步骤3：** 开平方：$c = \\sqrt{169} = 13\\text{cm}$。",
+        "source": "Year 9 Assessment"
+      },
+      {
+        "patternId": "ep-pythag-find",
+        "question": "Calculate the distance between points $A(1, 2)$ and $B(4, 6)$.",
+        "question_zh": "计算点 $A(1, 2)$ 和 $B(4, 6)$ 之间的距离。",
+        "solution": "1. Horizontal change (base) $= 4 - 1 = 3$\n2. Vertical change (height) $= 6 - 2 = 4$\n3. $d^2 = 3^2 + 4^2 = 9 + 16 = 25$\n4. $d = \\sqrt{25} = 5$ units.",
+        "solution_zh": "1. 水平变化（底）$= 4 - 1 = 3$\n2. 垂直变化（高）$= 6 - 2 = 4$\n3. $d^2 = 3^2 + 4^2 = 9 + 16 = 25$\n4. $d = \\sqrt{25} = 5$ 个单位。",
+        "source": "Adapted from Y9 curriculum"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "In a right-angled triangle, the hypotenuse is $10\\text{cm}$ and one side is $6\\text{cm}$. What is the length of the third side?",
+        "q_zh": "在直角三角形中，斜边为 $10\\text{cm}$，一条直角边为 $6\\text{cm}$。第三条边的长度是多少？",
+        "o": [
+          "$16\\text{cm}$",
+          "$8\\text{cm}$",
+          "$\\sqrt{136}\\text{cm}$",
+          "$4\\text{cm}$"
+        ],
+        "a": 1,
+        "e": "$6^2 + b^2 = 10^2 \\Rightarrow 36 + b^2 = 100 \\Rightarrow b^2 = 64 \\Rightarrow b = 8$.",
+        "e_zh": "$6^2 + b^2 = 10^2 \\Rightarrow 36 + b^2 = 100 \\Rightarrow b^2 = 64 \\Rightarrow b = 8$。"
+      },
+      {
+        "q": "Which of these sets of side lengths forms a right-angled triangle?",
+        "q_zh": "下列哪组边长可以构成直角三角形？",
+        "o": [
+          "2, 3, 4",
+          "5, 6, 7",
+          "8, 15, 17",
+          "1, 1, 2"
+        ],
+        "a": 2,
+        "e": "Check $a^2 + b^2 = c^2$. $8^2 + 15^2 = 64 + 225 = 289$. $17^2 = 289$. It works.",
+        "e_zh": "检查 $a^2 + b^2 = c^2$。$8^2 + 15^2 = 64 + 225 = 289$。$17^2 = 289$。符合条件。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-Y9.6-01",
+    "section": "Y9.6",
+    "order": 1,
+    "title": "Area and Perimeter of Sectors",
+    "title_zh": "扇形的面积与周长",
+    "explanation": {
+      "en": "A **sector** is a portion of a circle enclosed by two radii and an arc.\n\n**Arc length** is a fraction of the circumference: $L = \\frac{\\theta}{360} \\times 2\\pi r$.\n\n**Sector area** is a fraction of the total area: $A = \\frac{\\theta}{360} \\times \\pi r^2$.\n\n**Perimeter of a sector** includes the arc length PLUS the two radii: $P = \\text{Arc length} + 2r$.",
+      "zh": "**扇形** 是由两条半径和一段弧围成的圆的一部分。\n\n**弧长** 是圆周长的一部分：$L = \\frac{\\theta}{360} \\times 2\\pi r$。\n\n**扇形面积** 是总面积的一部分：$A = \\frac{\\theta}{360} \\times \\pi r^2$。\n\n**扇形的周长** 包括弧长加上两条半径：$P = \\text{弧长} + 2r$。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-sector-calc",
+        "label": "Calculate sector area or arc length",
+        "label_zh": "计算扇形面积或弧长",
+        "description": "Given the radius and the central angle $\\theta$, find the dimensions of the sector.",
+        "description_zh": "给定半径和中心角 $\\theta$，求扇形的尺寸。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-sector-calc",
+        "question": "A sector has a radius of $6\\text{cm}$ and a central angle of $60^\\circ$. Find the area of the sector in terms of $\\pi$.",
+        "question_zh": "一个扇形的半径为 $6\\text{cm}$，中心角为 $60^\\circ$。用 $\\pi$ 表示扇形的面积。",
+        "solution": "**Step 1:** Use area formula $A = \\frac{\\theta}{360} \\pi r^2$.\n**Step 2:** Substitute $\\theta = 60$ and $r = 6$.\n$A = \\frac{60}{360} \\times \\pi \\times 6^2 = \\frac{1}{6} \\times 36\\pi = 6\\pi \\text{cm}^2$.",
+        "solution_zh": "**步骤1：** 使用面积公式 $A = \\frac{\\theta}{360} \\pi r^2$。\n**步骤2：** 代入 $\\theta = 60$ 且 $r = 6$。\n$A = \\frac{60}{360} \\times \\pi \\times 6^2 = \\frac{1}{6} \\times 36\\pi = 6\\pi \\text{cm}^2$。",
+        "source": "Year 9 Assessment"
+      },
+      {
+        "patternId": "ep-sector-calc",
+        "question": "Find the perimeter of a sector with radius $10\\text{cm}$ and angle $72^\\circ$. Use $\\pi = 3.142$.",
+        "question_zh": "求半径为 $10\\text{cm}$、角度为 $72^\\circ$ 的扇形周长。使用 $\\pi = 3.142$。",
+        "solution": "1. Arc length $= \\frac{72}{360} \\times 2 \\times 3.142 \\times 10 = 0.2 \\times 62.84 = 12.568\\text{cm}$.\n2. Perimeter $= \\text{Arc} + 2r = 12.568 + 2(10) = 32.568\\text{cm}$.",
+        "solution_zh": "1. 弧长 $= \\frac{72}{360} \\times 2 \\times 3.142 \\times 10 = 0.2 \\times 62.84 = 12.568\\text{cm}$。\n2. 周长 $= \\text{弧长} + 2r = 12.568 + 2(10) = 32.568\\text{cm}$。",
+        "source": "Adapted from Y9 curriculum"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "The area of a circle is $100\\text{cm}^2$. What is the area of a $90^\\circ$ sector of this circle?",
+        "q_zh": "圆的面积是 $100\\text{cm}^2$。该圆一个 $90^\\circ$ 扇形的面积是多少？",
+        "o": [
+          "$25\\text{cm}^2$",
+          "$50\\text{cm}^2$",
+          "$10\\pi\\text{cm}^2$",
+          "$90\\text{cm}^2$"
+        ],
+        "a": 0,
+        "e": "A $90^\\circ$ sector is exactly one quarter ($90/360$) of the circle. $100 / 4 = 25$.",
+        "e_zh": "$90^\\circ$ 的扇形恰好是圆的四分之一 ($90/360$)。$100 / 4 = 25$。"
+      },
+      {
+        "q": "If the arc length of a sector is $4\\pi$ and the radius is $12$, what is the angle of the sector?",
+        "q_zh": "如果扇形的弧长是 $4\\pi$，半径是 $12$，扇形的角度是多少？",
+        "o": [
+          "$30^\\circ$",
+          "$60^\\circ$",
+          "$90^\\circ$",
+          "$45^\\circ$"
+        ],
+        "a": 1,
+        "e": "$4\\pi = (\\theta / 360) \\times 24\\pi \\Rightarrow 4/24 = \\theta / 360 \\Rightarrow 1/6 = \\theta / 360 \\Rightarrow \\theta = 60^\\circ$.",
+        "e_zh": "$4\\pi = (\\theta / 360) \\times 24\\pi \\Rightarrow 4/24 = \\theta / 360 \\Rightarrow 1/6 = \\theta / 360 \\Rightarrow \\theta = 60^\\circ$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-Y9.7-01",
+    "section": "Y9.7",
+    "order": 1,
+    "title": "Compound Interest",
+    "title_zh": "复利",
+    "explanation": {
+      "en": "**Compound interest** is calculated on the principal amount and also on the accumulated interest of previous periods.\n\n**The multiplier method** is the most efficient way to solve percentage increase/decrease problems. An increase of $r\\%$ corresponds to a multiplier of $(1 + \\frac{r}{100})$.\n\n**Compound interest formula**: $Value = P \\times (1 + \\frac{r}{100})^n$, where $P$ is the principal, $r$ is the interest rate per period, and $n$ is the number of periods.",
+      "zh": "**复利** 是根据本金以及之前各期累积的利息计算的利息。\n\n**倍数法** 是解决百分比增加/减少问题最有效的方法。增加 $r\\%$ 对应于倍数 $(1 + \\frac{r}{100})$。\n\n**复利公式**：$价值 = P \\times (1 + \\frac{r}{100})^n$，其中 $P$ 是本金，$r$ 是每期利率，$n$ 是期数。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-comp-interest",
+        "label": "Calculate total value after $n$ years",
+        "label_zh": "计算 $n$ 年后的总价值",
+        "description": "Find the final amount in a bank account or the value of a depreciating asset.",
+        "description_zh": "寻找银行账户中的最终金额或贬值资产的价值。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-comp-interest",
+        "question": "Invest $\\pounds 2000$ at $3\\%$ compound interest per year for $4$ years. Calculate the total value.",
+        "question_zh": "将 $\\pounds 2000$ 以每年 $3\\%$ 的复利投资 $4$ 年。计算总价值。",
+        "solution": "**Step 1:** Multiplier for $3\\%$ increase is $1.03$.\n**Step 2:** Apply formula $2000 \\times (1.03)^4$.\n**Step 3:** Calculate: $2000 \\times 1.125508... = \\pounds 2251.02$ (to 2 d.p.).",
+        "solution_zh": "**步骤1：** $3\\%$ 增加的倍数是 $1.03$。\n**步骤2：** 应用公式 $2000 \\times (1.03)^4$。\n**步骤3：** 计算：$2000 \\times 1.125508... = \\pounds 2251.02$（保留两位小数）。",
+        "source": "Year 9 Assessment"
+      },
+      {
+        "patternId": "ep-comp-interest",
+        "question": "A car worth $\\pounds 15000$ depreciates by $10\\%$ each year. Find its value after 3 years.",
+        "question_zh": "一辆价值 $\\pounds 15000$ 的汽车每年贬值 $10\\%$。求 3 年后的价值。",
+        "solution": "1. Multiplier for $10\\%$ decrease is $1 - 0.10 = 0.90$.\n2. $Value = 15000 \\times (0.9)^3$.\n3. $Value = 15000 \\times 0.729 = \\pounds 10935$.",
+        "solution_zh": "1. $10\\%$ 减少的倍数是 $1 - 0.10 = 0.90$。\n2. $价值 = 15000 \\times (0.9)^3$。\n3. $价值 = 15000 \\times 0.729 = \\pounds 10935$。",
+        "source": "Adapted from Y9 curriculum"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "Which calculation gives the total value of $\\pounds 500$ invested at $2\\%$ compound interest for 5 years?",
+        "q_zh": "哪项计算可以得出 $\\pounds 500$ 以 $2\\%$ 复利投资 5 年后的总价值？",
+        "o": [
+          "$500 \\times 1.02 \\times 5$",
+          "$500 \\times (1.02)^5$",
+          "$500 \\times (0.02)^5$",
+          "$500 \\times 1.2^5$"
+        ],
+        "a": 1,
+        "e": "The multiplier for $2\\%$ is $1.02$. For 5 years, we raise this to the power of 5.",
+        "e_zh": "$2\\%$ 的倍数是 $1.02$。对于 5 年，我们需要将其乘方为 5 次。"
+      },
+      {
+        "q": "If an investment grows from $\\pounds 100$ to $\\pounds 121$ in 2 years, what was the annual compound interest rate?",
+        "q_zh": "如果一项投资在 2 年内从 $\\pounds 100$ 增长到 $\\pounds 121$，那么年复利是多少？",
+        "o": [
+          "$10.5\\%$",
+          "$21\\%$",
+          "$10\\%$",
+          "$5\\%$"
+        ],
+        "a": 2,
+        "e": "$100 \\times x^2 = 121 \\Rightarrow x^2 = 1.21 \\Rightarrow x = \\sqrt{1.21} = 1.1$. A multiplier of $1.1$ means $10\\%$.",
+        "e_zh": "$100 \\times x^2 = 121 \\Rightarrow x^2 = 1.21 \\Rightarrow x = \\sqrt{1.21} = 1.1$。倍数 $1.1$ 意味着 $10\\% $。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-Y9.8-01",
+    "section": "Y9.8",
+    "order": 1,
+    "title": "Sampling Methods",
+    "title_zh": "抽样方法",
+    "explanation": {
+      "en": "To find out about a **population**, we often take a **sample** (a smaller group).\n\n**Simple Random Sampling** ensures every member of the population has an equal chance of being chosen. This avoids bias.\n\n**Stratified Sampling** ensures that sub-groups (strata) in the sample are represented in the same proportion as they appear in the population. Formula: $\\text{Sample size of layer} = \\frac{\\text{Layer size}}{\\text{Total population}} \\times \\text{Total sample size}$.",
+      "zh": "为了解 **总体**，我们通常选取一个 **样本**（一个小群体）。\n\n**简单随机抽样** 确保总体的每个成员都有平等的机会被选中。这可以避免偏见。\n\n**分层抽样** 确保样本中的子群体（层）所占比例与它们在总体中出现的比例相同。公式：$\\text{该层样本量} = \\frac{\\text{该层总体数量}}{\\text{总体总量}} \\times \\text{总样本量}$。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-strat-sample",
+        "label": "Calculate stratified sample sizes",
+        "label_zh": "计算分层样本量",
+        "description": "Work out how many people from a specific group should be in the sample.",
+        "description_zh": "算出样本中应包含特定群体中的多少人。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-strat-sample",
+        "question": "A school has 400 students in Year 7 and 600 students in Year 8. A stratified sample of 50 students is needed. How many Year 8 students should be chosen?",
+        "question_zh": "一所学校七年级有 400 名学生，八年级有 600 名学生。需要进行 50 名学生的分层抽样。应该选择多少名八年级学生？",
+        "solution": "**Step 1:** Find total population: $400 + 600 = 1000$.\n**Step 2:** Use the ratio for Year 8: $\\frac{600}{1000}$.\n**Step 3:** Multiply by sample size: $\\frac{600}{1000} \\times 50 = 0.6 \\times 50 = 30$ students.",
+        "solution_zh": "**步骤1：** 计算总人数：$400 + 600 = 1000$。\n**步骤2：** 使用八年级的比例：$\\frac{600}{1000}$。\n**步骤3：** 乘以样本量：$\\frac{600}{1000} \\times 50 = 0.6 \\times 50 = 30$ 名学生。",
+        "source": "Year 9 Assessment"
+      },
+      {
+        "patternId": "ep-strat-sample",
+        "question": "Explain why a sample of the first 10 people entering a shop might be biased.",
+        "question_zh": "解释为什么对进入商店的前 10 个人进行抽样可能存在偏见。",
+        "solution": "This is **convenience sampling**. It is biased because people who arrive early might have different shopping habits (e.g., they might be older or not working) compared to the rest of the population.",
+        "solution_zh": "这是**便利抽样**。它存在偏见，因为早到的人与其他人相比，可能有不同的购物习惯（例如，他们可能年纪较大或没有工作）。",
+        "source": "Adapted from Y9 curriculum"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "What is the primary advantage of random sampling?",
+        "q_zh": "随机抽样的主要优点是什么？",
+        "o": [
+          "It is the fastest method",
+          "It ensures the sample is biased",
+          "It eliminates selection bias",
+          "It only uses small groups"
+        ],
+        "a": 2,
+        "e": "Random sampling gives everyone an equal chance, which helps eliminate human bias in selection.",
+        "e_zh": "随机抽样给每个人平等的机会，这有助于消除选择过程中的人为偏见。"
+      },
+      {
+        "q": "A village has 120 men and 80 women. In a stratified sample of 20 people, how many should be women?",
+        "q_zh": "一个村庄有 120 名男性和 80 名女性。在 20 人的分层抽样中，应该有多少名女性？",
+        "o": [
+          "10",
+          "12",
+          "8",
+          "5"
+        ],
+        "a": 2,
+        "e": "Total $= 200$. Women's proportion $= 80/200 = 0.4$. Sample $= 0.4 \\times 20 = 8$.",
+        "e_zh": "总数 $= 200$。女性比例 $= 80/200 = 0.4$。样本数 $= 0.4 \\times 20 = 8$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-Y9.9-01",
+    "section": "Y9.9",
+    "order": 1,
+    "title": "Cumulative Frequency",
+    "title_zh": "累积频数",
+    "explanation": {
+      "en": "**Cumulative frequency** is a running total of frequencies. It tells you 'how many items are less than or equal to' a certain value.\n\n**Cumulative frequency diagrams** are plotted by using the **upper bound** of each class interval on the x-axis and the cumulative frequency on the y-axis.\n\n**The Median** is found by going to $n/2$ on the y-axis, moving across to the curve, and reading down to the x-axis. **Interquartile Range (IQR)** is $Q_3 - Q_1$, where $Q_1$ is at $n/4$ and $Q_3$ is at $3n/4$.",
+      "zh": "**累积频数** 是频数的连续总计。它告诉你“有多少项目小于或等于”某个特定值。\n\n**累积频数图** 的绘制方法是：x 轴使用每个组距的 **上限**，y 轴使用累积频数。\n\n**中位数** 的求法是：在 y 轴找到 $n/2$ 的位置，水平移动到曲线上，然后向下读取 x 轴的值。**四分位距 (IQR)** 是 $Q_3 - Q_1$，其中 $Q_1$ 位于 $n/4$ 处，$Q_3$ 位于 $3n/4$ 处。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-cum-freq",
+        "label": "Draw and interpret a cumulative frequency graph",
+        "label_zh": "绘制并解释累积频数图",
+        "description": "Calculate cumulative frequencies from a table and use the graph to estimate the median.",
+        "description_zh": "从表格计算累积频数，并使用图表估计中位数。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-cum-freq",
+        "question": "A frequency table shows times: $0<t\\le 10$ (freq 5), $10<t\\le 20$ (freq 15), $20<t\\le 30$ (freq 20). Find the cumulative frequencies.",
+        "question_zh": "频数表显示时间：$0<t\\le 10$ (频数 5)，$10<t\\le 20$ (频数 15)，$20<t\\le 30$ (频数 20)。求累积频数。",
+        "solution": "1. For $t \\le 10$: $5$\n2. For $t \\le 20$: $5 + 15 = 20$\n3. For $t \\le 30$: $20 + 20 = 40$\nCumulative frequencies: 5, 20, 40.",
+        "solution_zh": "1. 对于 $t \\le 10$：$5$\n2. 对于 $t \\le 20$：$5 + 15 = 20$\n3. 对于 $t \\le 30$：$20 + 20 = 40$\n累积频数：5, 20, 40。",
+        "source": "Year 9 Assessment"
+      },
+      {
+        "patternId": "ep-cum-freq",
+        "question": "On a cumulative frequency graph with 80 data points, at what frequency value do you find the lower quartile?",
+        "question_zh": "在具有 80 个数据点的累积频数图上，你在哪个频数值处寻找下四分位数？",
+        "solution": "Lower quartile ($Q_1$) is at $1/4$ of the total frequency.\n$80 \\times 0.25 = 20$.",
+        "solution_zh": "下四分位数 ($Q_1$) 位于总频数的 $1/4$ 处。\n$80 \\times 0.25 = 20$。",
+        "source": "Adapted from Y9 curriculum"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "Which point should be plotted for the interval $20 < x \\le 30$ with a cumulative frequency of 45?",
+        "q_zh": "对于区间 $20 < x \\le 30$ 且累积频数为 45，应该绘制哪个点？",
+        "o": [
+          "(25, 45)",
+          "(30, 45)",
+          "(20, 45)",
+          "(45, 30)"
+        ],
+        "a": 1,
+        "e": "Always plot the cumulative frequency against the **upper bound** of the interval.",
+        "e_zh": "始终根据区间的 **上限** 绘制累积频数。"
+      },
+      {
+        "q": "The total frequency is 120. The interquartile range is the difference between the values at which two cumulative frequencies?",
+        "q_zh": "总频数为 120。四分位距是哪两个累积频数对应值之间的差？",
+        "o": [
+          "30 and 90",
+          "60 and 120",
+          "0 and 120",
+          "30 and 60"
+        ],
+        "a": 0,
+        "e": "$1/4$ of 120 is 30. $3/4$ of 120 is 90.",
+        "e_zh": "120 的 $1/4$ 是 30。120 的 $3/4$ 是 90。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-Y9.10-01",
+    "section": "Y9.10",
+    "order": 1,
+    "title": "Simplifying Algebraic Fractions",
+    "title_zh": "约分代数分数",
+    "explanation": {
+      "en": "To **simplify** an algebraic fraction, you must factorize the numerator and denominator first, then cancel out common factors.\n\n**Addition and subtraction** require a common denominator. Multiply the top and bottom of each fraction to reach the least common multiple of the denominators.\n\n**Multiplication** is done by multiplying numerators together and denominators together. **Division** involves 'flipping' the second fraction (taking the reciprocal) and then multiplying.",
+      "zh": "**约分**代数分数时，你必须先对分子和分母进行因式分解，然后约去公共因子。\n\n**加法和减法** 需要通分（共同的分母）。将每个分数的分子和分母乘以适当的数，以达到分母的最小公倍数。\n\n**乘法** 是通过分子相乘、分母相乘来完成的。**除法** 涉及“翻转”第二个分数（取倒数），然后进行乘法。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-alg-frac-sim",
+        "label": "Simplify an algebraic fraction",
+        "label_zh": "约分代数分数",
+        "description": "Factorize quadratics to cancel common terms.",
+        "description_zh": "因式分解二次式以约去共同项。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-alg-frac-sim",
+        "question": "Simplify $\\frac{x^2 - 9}{x^2 + 5x + 6}$.",
+        "question_zh": "约分 $\\frac{x^2 - 9}{x^2 + 5x + 6}$。",
+        "solution": "**Step 1:** Factorize the top (difference of two squares).\n$x^2 - 9 = (x-3)(x+3)$\n**Step 2:** Factorize the bottom.\n$x^2 + 5x + 6 = (x+2)(x+3)$\n**Step 3:** Cancel common factor $(x+3)$.\nResult: $\\frac{x-3}{x+2}$.",
+        "solution_zh": "**步骤1：** 分解分子（平方差公式）。\n$x^2 - 9 = (x-3)(x+3)$\n**步骤2：** 分解分母。\n$x^2 + 5x + 6 = (x+2)(x+3)$\n**步骤3：** 约去公共因子 $(x+3)$。\n结果：$\\frac{x-3}{x+2}$。",
+        "source": "Year 9 Assessment"
+      },
+      {
+        "patternId": "ep-alg-frac-sim",
+        "question": "Express as a single fraction: $\\frac{2}{x} + \\frac{3}{x+1}$.",
+        "question_zh": "写成单个分数：$\\frac{2}{x} + \\frac{3}{x+1}$。",
+        "solution": "1. Common denominator is $x(x+1)$.\n2. Rewrite: $\\frac{2(x+1)}{x(x+1)} + \\frac{3x}{x(x+1)}$.\n3. Combine: $\\frac{2x+2+3x}{x(x+1)} = \\frac{5x+2}{x(x+1)}$.",
+        "solution_zh": "1. 公共分母是 $x(x+1)$。\n2. 重写：$\\frac{2(x+1)}{x(x+1)} + \\frac{3x}{x(x+1)}$。\n3. 合并：$\\frac{2x+2+3x}{x(x+1)} = \\frac{5x+2}{x(x+1)}$。",
+        "source": "Adapted from Y9 curriculum"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "Simplify $\\frac{10x^2y}{5xy^2}$.",
+        "q_zh": "约分 $\\frac{10x^2y}{5xy^2}$。",
+        "o": [
+          "$\\frac{2x}{y}$",
+          "$2xy$",
+          "$\\frac{2y}{x}$",
+          "$5x$"
+        ],
+        "a": 0,
+        "e": "$10/5 = 2$, $x^2/x = x$, $y/y^2 = 1/y$. Combined: $2x/y$.",
+        "e_zh": "$10/5 = 2$，$x^2/x = x$，$y/y^2 = 1/y$。组合后：$2x/y$。"
+      },
+      {
+        "q": "What is $\\frac{a}{b} \\div \\frac{c}{d}$ equal to?",
+        "q_zh": "$\\frac{a}{b} \\div \\frac{c}{d}$ 等于什么？",
+        "o": [
+          "$\\frac{ac}{bd}$",
+          "$\\frac{ad}{bc}$",
+          "$\\frac{ab}{cd}$",
+          "$\\frac{bc}{ad}$"
+        ],
+        "a": 1,
+        "e": "Flip the second fraction and multiply: $\\frac{a}{b} \\times \\frac{d}{c} = \\frac{ad}{bc}$.",
+        "e_zh": "翻转第二个分数并相乘：$\\frac{a}{b} \\times \\frac{d}{c} = \\frac{ad}{bc}$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-Y9.11-01",
+    "section": "Y9.11",
+    "order": 1,
+    "title": "Loci and Constructions",
+    "title_zh": "轨迹与尺规作图",
+    "explanation": {
+      "en": "A **locus** (plural: loci) is a set of points that satisfy a specific rule.\n\n**Equidistant from a point**: This forms a circle around that point.\n\n**Equidistant from two points**: This forms the perpendicular bisector of the line segment joining the two points.\n\n**Equidistant from two lines**: This forms the angle bisector of the angle between the two lines.",
+      "zh": "**轨迹** 是满足特定规则的点集。\n\n**到定点等距离**：这在该点周围形成一个圆。\n\n**到两个定点等距离**：这形成连接两点的线段的垂直平分线。\n\n**到两条线等距离**：这形成两条线之间夹角的角平分线。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-loci-draw",
+        "label": "Identify the shaded region",
+        "label_zh": "识别阴影区域",
+        "description": "Combine multiple loci rules to shade an area, e.g., 'less than 5cm from A and closer to line AB than line AC'.",
+        "description_zh": "结合多种轨迹规则为某个区域涂色，例如：“距离 A 小于 5cm 且距离直线 AB 比直线 AC 近”。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-loci-draw",
+        "question": "Describe the locus of points that are exactly $3\\text{cm}$ from a fixed point $P$.",
+        "question_zh": "描述到定点 $P$ 的距离恰好为 $3\\text{cm}$ 的点的轨迹。",
+        "solution": "The locus is a **circle** with center $P$ and radius $3\\text{cm}$.",
+        "solution_zh": "该轨迹是一个以 $P$ 为圆心、半径为 $3\\text{cm}$ 的**圆**。",
+        "source": "Year 9 Assessment"
+      },
+      {
+        "patternId": "ep-loci-draw",
+        "question": "Which construction is used to find points equidistant from two points $A$ and $B$?",
+        "question_zh": "使用哪种尺规作图来寻找与点 $A$ 和点 $B$ 等距离的点？",
+        "solution": "The **perpendicular bisector** of the line $AB$.",
+        "solution_zh": "直线 $AB$ 的**垂直平分线**。",
+        "source": "Adapted from Y9 curriculum"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "To find points equidistant from two intersecting lines, you must construct...",
+        "q_zh": "要寻找与两条相交直线等距离的点，你必须构造...",
+        "o": [
+          "A perpendicular bisector",
+          "An angle bisector",
+          "A circle",
+          "A parallel line"
+        ],
+        "a": 1,
+        "e": "The angle bisector creates points that are the same distance from both lines.",
+        "e_zh": "角平分线创建了到两条直线距离相等的点。"
+      },
+      {
+        "q": "The region 'less than $5\\text{cm}$ from $X$' is bounded by what shape?",
+        "q_zh": "“到 $X$ 的距离小于 $5\\text{cm}$”的区域是由什么图形围成的？",
+        "o": [
+          "A square",
+          "A straight line",
+          "A circle",
+          "A triangle"
+        ],
+        "a": 2,
+        "e": "All points at a fixed distance from a point form a circle.",
+        "e_zh": "到定点距离固定的所有点构成一个圆。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-Y9.12-01",
+    "section": "Y9.12",
+    "order": 1,
+    "title": "Similarity and Scale Factors",
+    "title_zh": "相似与比例因子",
+    "explanation": {
+      "en": "Two shapes are **similar** if they have the same shape but different sizes. All corresponding angles are equal, and all corresponding sides are in the same ratio.\n\n**Length scale factor ($k$)** is the ratio of corresponding lengths: $k = \\frac{\\text{New length}}{\\text{Original length}}$.\n\n**Area scale factor ($k^2$)**: If the length scale factor is $k$, the area increases by $k^2$.\n\n**Volume scale factor ($k^3$)**: If the length scale factor is $k$, the volume increases by $k^3$.",
+      "zh": "如果两个图形形状相同但大小不同，则它们是 **相似** 的。所有对应角相等，且所有对应边的比例相同。\n\n**长度比例因子 ($k$)** 是对应长度的比值：$k = \\frac{\\text{新长度}}{\\text{原长度}}$。\n\n**面积比例因子 ($k^2$)**：如果长度比例因子是 $k$，则面积增加 $k^2$ 倍。\n\n**体积比例因子 ($k^3$)**：如果长度比例因子是 $k$，则体积增加 $k^3$ 倍。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-sim-sides",
+        "label": "Calculate a missing side in similar shapes",
+        "label_zh": "计算相似图形中缺失的边",
+        "description": "Find the scale factor and use it to find an unknown length.",
+        "description_zh": "寻找比例因子并使用它求未知长度。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-sim-sides",
+        "question": "Triangle A has sides $3, 4, 5$. Triangle B is similar to A and its longest side is $15$. Find its shortest side.",
+        "question_zh": "三角形 A 的边长为 $3, 4, 5$。三角形 B 与 A 相似，且其最长边为 $15$。求其最短边。",
+        "solution": "**Step 1:** Find length scale factor $k$. Longest sides are 5 and 15. $k = 15/5 = 3$.\n**Step 2:** Multiply shortest side of A by $k$. Shortest side $= 3 \\times 3 = 9$.",
+        "solution_zh": "**步骤1：** 寻找长度比例因子 $k$。最长边分别为 5 和 15。$k = 15/5 = 3$。\n**步骤2：** 将 A 的最短边乘以 $k$。最短边 $= 3 \\times 3 = 9$。",
+        "source": "Year 9 Assessment"
+      },
+      {
+        "patternId": "ep-sim-sides",
+        "question": "Two similar rectangles have lengths $4\\text{cm}$ and $12\\text{cm}$. If the area of the smaller one is $10\\text{cm}^2$, what is the area of the larger one?",
+        "question_zh": "两个相似矩形的长度分别为 $4\\text{cm}$ 和 $12\\text{cm}$。如果较小矩形的面积是 $10\\text{cm}^2$，较大矩形的面积是多少？",
+        "solution": "1. Length scale factor $k = 12/4 = 3$.\n2. Area scale factor $= k^2 = 3^2 = 9$.\n3. Larger area $= 10 \\times 9 = 90\\text{cm}^2$.",
+        "solution_zh": "1. 长度比例因子 $k = 12/4 = 3$。\n2. 面积比例因子 $= k^2 = 3^2 = 9$。\n3. 较大面积 $= 10 \\times 9 = 90\\text{cm}^2$。",
+        "source": "Adapted from Y9 curriculum"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "If the length scale factor between two similar solids is 2, what is the volume scale factor?",
+        "q_zh": "如果两个相似立体图形之间的长度比例因子是 2，体积比例因子是多少？",
+        "o": [
+          "2",
+          "4",
+          "6",
+          "8"
+        ],
+        "a": 3,
+        "e": "Volume scale factor is $k^3$. $2^3 = 8$.",
+        "e_zh": "体积比例因子是 $k^3$。$2^3 = 8$。"
+      },
+      {
+        "q": "Which condition is NOT sufficient to prove two triangles are congruent?",
+        "q_zh": "下列哪种条件不足以证明两个三角形全等？",
+        "o": [
+          "SSS (Side-Side-Side)",
+          "SAS (Side-Angle-Side)",
+          "AAA (Angle-Angle-Angle)",
+          "RHS (Right-angle-Hypotenuse-Side)"
+        ],
+        "a": 2,
+        "e": "AAA proves similarity, not congruence. The triangles could be different sizes.",
+        "e_zh": "AAA 证明的是相似，而不是全等。三角形的大小可能不同。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  }
+]

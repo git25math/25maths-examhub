@@ -1,0 +1,359 @@
+[
+  {
+    "id": "kp-3.1-01",
+    "section": "3.1",
+    "order": 1,
+    "title": "Arithmetic Sequences",
+    "title_zh": "等差数列",
+    "explanation": {
+      "en": "An **arithmetic sequence** (or linear sequence) is a sequence of numbers where the difference between consecutive terms is constant.\n\nThe **$n^{th}$ term formula** for a linear sequence is $u_n = an + b$, where $a$ is the common difference and $b$ is the value of the term before the first one ($u_0$).\n\nAlternatively, you can use $u_n = a + (n-1)d$, where $a$ is the first term and $d$ is the common difference.",
+      "zh": "**等差数列**（或线性数列）是项与项之间差值为常数的数列。\n\n线性数列的 **第 $n$ 项公式** 为 $u_n = an + b$，其中 $a$ 是公差，$b$ 是首项之前的虚拟项（第 $0$ 项）的值。\n\n或者，你可以使用公式 $u_n = a + (n-1)d$，其中 $a$ 是首项，$d$ 是公差。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-nth-term-linear",
+        "label": "Find the nth term of a linear sequence",
+        "label_zh": "求线性数列的第 n 项公式",
+        "description": "Given a list of numbers, find the general formula in terms of $n$.",
+        "description_zh": "给出一段数字，求出以 $n$ 表示的通项公式。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-nth-term-linear",
+        "question": "Find the $n^{th}$ term of the sequence: $5, 9, 13, 17, 21, \\ldots$",
+        "question_zh": "求数列 $5, 9, 13, 17, 21, \\ldots$ 的第 $n$ 项公式。",
+        "solution": "**Step 1:** Find the common difference ($d$).\n$9 - 5 = 4$; $13 - 9 = 4$. The difference is $+4$.\n\n**Step 2:** Start the formula with $4n$.\n\n**Step 3:** Find the correction constant ($b$).\nWhen $n=1$, $4(1) + b = 5 \\Rightarrow b = 1$.\n\n**Answer:** $4n + 1$",
+        "solution_zh": "**步骤1：** 求公差 ($d$)。\n$9 - 5 = 4$；$13 - 9 = 4$。公差为 $+4$。\n\n**步骤2：** 公式以 $4n$ 开头。\n\n**步骤3：** 求修正常数 ($b$)。\n当 $n=1$ 时，$4(1) + b = 5 \\Rightarrow b = 1$。\n\n**答案：** $4n + 1$",
+        "source": "Adapted from 4MA1/1F/Jan/2020"
+      },
+      {
+        "patternId": "ep-nth-term-linear",
+        "question": "The $n^{th}$ term of a sequence is $7n - 3$. Is $142$ a term in this sequence?",
+        "question_zh": "一个数列的第 $n$ 项公式是 $7n - 3$。$142$ 是这个数列中的项吗？",
+        "solution": "**Step 1:** Set the expression equal to $142$.\n$7n - 3 = 142$\n\n**Step 2:** Solve for $n$.\n$7n = 145$\n$n = \\frac{145}{7} \\approx 20.71$\n\n**Step 3:** Conclusion.\nSince $n$ is not an integer, $142$ is not a term in the sequence.",
+        "solution_zh": "**步骤1：** 令表达式等于 $142$。\n$7n - 3 = 142$\n\n**步骤2：** 解出 $n$。\n$7n = 145$\n$n = \\frac{145}{7} \\approx 20.71$\n\n**步骤3：** 结论。\n由于 $n$ 不是整数，因此 $142$ 不是该数列中的项。",
+        "source": "Adapted from 4MA1/2H/June/2019"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "What is the $n^{th}$ term of the sequence $10, 7, 4, 1, \\ldots$?",
+        "q_zh": "数列 $10, 7, 4, 1, \\ldots$ 的第 $n$ 项公式是什么？",
+        "o": [
+          "$-3n + 10$",
+          "$-3n + 13$",
+          "$3n + 7$",
+          "$10n - 3$"
+        ],
+        "a": 1,
+        "e": "The common difference is $-3$. The formula starts with $-3n$. When $n=1$, $-3(1) + b = 10 \\Rightarrow b = 13$. So the formula is $-3n + 13$.",
+        "e_zh": "公差为 $-3$。公式以 $-3n$ 开头。当 $n=1$ 时，$-3(1) + b = 10 \\Rightarrow b = 13$。因此公式为 $-3n + 13$。"
+      },
+      {
+        "q": "Find the $50^{th}$ term of the sequence with $n^{th}$ term $4n - 5$.",
+        "q_zh": "求通项公式为 $4n - 5$ 的数列的第 $50$ 项。",
+        "o": [
+          "195",
+          "205",
+          "200",
+          "190"
+        ],
+        "a": 0,
+        "e": "Substitute $n = 50$: $4(50) - 5 = 200 - 5 = 195$.",
+        "e_zh": "代入 $n = 50$：$4(50) - 5 = 200 - 5 = 195$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-3.1-02",
+    "section": "3.1",
+    "order": 2,
+    "title": "Quadratic Sequences",
+    "title_zh": "二次数列",
+    "explanation": {
+      "en": "A **quadratic sequence** has a $n^{th}$ term in the form $an^2 + bn + c$.\n\nTo identify a quadratic sequence, look at the **second difference** (the difference between the differences). If the second difference is constant, the sequence is quadratic.\n\nThe constant second difference is equal to $2a$. For example, if the second difference is $4$, then $2a = 4$, so $a = 2$.",
+      "zh": "**二次数列** 的第 $n$ 项公式形式为 $an^2 + bn + c$。\n\n要识别二次数列，请观察 **二阶差**（差值的差）。如果二阶差是常数，则该数列是二次数列。\n\n常数二阶差等于 $2a$。例如，如果二阶差是 $4$，则 $2a = 4$，即 $a = 2$。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-nth-term-quadratic",
+        "label": "Find the nth term of a quadratic sequence",
+        "label_zh": "求二次数列的第 n 项公式",
+        "description": "Find the expression $an^2 + bn + c$ for a given sequence.",
+        "description_zh": "求给定数列的表达式 $an^2 + bn + c$。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-nth-term-quadratic",
+        "question": "Find the $n^{th}$ term of the sequence: $2, 9, 20, 35, 54, \\ldots$",
+        "question_zh": "求数列 $2, 9, 20, 35, 54, \\ldots$ 的第 $n$ 项公式。",
+        "solution": "**Step 1:** Find the first and second differences.\n1st diffs: $7, 11, 15, 19$\n2nd diffs: $4, 4, 4$\n\n**Step 2:** Find $a$.\n$2a = 4 \\Rightarrow a = 2$. The term is $2n^2$.\n\n**Step 3:** Subtract $2n^2$ from the original sequence.\nSeq: $2, 9, 20, 35, \\ldots$\n$2n^2$: $2, 8, 18, 32, \\ldots$\nRemainder: $0, 1, 2, 3, \\ldots$\n\n**Step 4:** Find the $n^{th}$ term of the remainder.\nThis is a linear sequence $n - 1$.\n\n**Answer:** $2n^2 + n - 1$",
+        "solution_zh": "**步骤1：** 求一阶差和二阶差。\n一阶差：$7, 11, 15, 19$\n二阶差：$4, 4, 4$\n\n**步骤2：** 求 $a$。\n$2a = 4 \\Rightarrow a = 2$。项为 $2n^2$。\n\n**步骤3：** 从原数列中减去 $2n^2$。\n原数列：$2, 9, 20, 35, \\ldots$\n$2n^2$ 项：$2, 8, 18, 32, \\ldots$\n剩余项：$0, 1, 2, 3, \\ldots$\n\n**步骤4：** 求剩余项的第 $n$ 项公式。\n这是一个线性数列 $n - 1$。\n\n**答案：** $2n^2 + n - 1$",
+        "source": "4MA1/1H/Jan/2022"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "If the second difference of a quadratic sequence is $6$, what is the coefficient of $n^2$?",
+        "q_zh": "如果一个二次数列的二阶差是 $6$，那么 $n^2$ 的系数是多少？",
+        "o": [
+          "6",
+          "12",
+          "3",
+          "1"
+        ],
+        "a": 2,
+        "e": "The second difference is $2a$. If $2a = 6$, then $a = 3$.",
+        "e_zh": "二阶差等于 $2a$。如果 $2a = 6$，则 $a = 3$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "higher"
+  },
+  {
+    "id": "kp-3.2-01",
+    "section": "3.2",
+    "order": 1,
+    "title": "Functions & Composite Functions",
+    "title_zh": "函数与复合函数",
+    "explanation": {
+      "en": "**Function notation** uses $f(x)$ to represent an output for a given input $x$. To evaluate $f(3)$, substitute $x = 3$ into the expression.\n\n**Composite functions** involve applying one function to the result of another. $fg(x)$ means \"apply $g$ first, then apply $f$ to the result\": $f(g(x))$.\n\nOrder matters: $fg(x)$ is generally NOT the same as $gf(x)$.",
+      "zh": "**函数符号** 使用 $f(x)$ 表示给定输入 $x$ 的输出。要求 $f(3)$，只需将 $x = 3$ 代入表达式。\n\n**复合函数** 涉及将一个函数应用于另一个函数的结果。$fg(x)$ 表示“先应用 $g$，然后将 $f$ 应用于其结果”：即 $f(g(x))$。\n\n顺序很重要：$fg(x)$ 通常不等于 $gf(x)$。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-composite-eval",
+        "label": "Evaluate composite functions",
+        "label_zh": "计算复合函数的值",
+        "description": "Calculate $fg(k)$ for a given number $k$.",
+        "description_zh": "给定数字 $k$，计算 $fg(k)$。"
+      },
+      {
+        "id": "ep-composite-expr",
+        "label": "Find an expression for fg(x)",
+        "label_zh": "求 fg(x) 的表达式",
+        "description": "Combine two functions into a single algebraic expression.",
+        "description_zh": "将两个函数合并为一个代数表达式。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-composite-expr",
+        "question": "Given $f(x) = 2x + 5$ and $g(x) = x^2 - 1$, find $fg(x)$.",
+        "question_zh": "已知 $f(x) = 2x + 5$ 且 $g(x) = x^2 - 1$，求 $fg(x)$。",
+        "solution": "**Step 1:** Write $fg(x)$ as $f(g(x))$.\n$fg(x) = f(x^2 - 1)$\n\n**Step 2:** Substitute $(x^2 - 1)$ into the $f(x)$ formula where $x$ is.\n$fg(x) = 2(x^2 - 1) + 5$\n\n**Step 3:** Simplify.\n$fg(x) = 2x^2 - 2 + 5 = 2x^2 + 3$\n\n**Answer:** $2x^2 + 3$",
+        "solution_zh": "**步骤1：** 将 $fg(x)$ 写成 $f(g(x))$。\n$fg(x) = f(x^2 - 1)$\n\n**步骤2：** 将 $(x^2 - 1)$ 代入 $f(x)$ 公式中的 $x$ 位置。\n$fg(x) = 2(x^2 - 1) + 5$\n\n**步骤3：** 化简。\n$fg(x) = 2x^2 - 2 + 5 = 2x^2 + 3$\n\n**答案：** $2x^2 + 3$",
+        "source": "4MA1/1H/June/2021"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "If $f(x) = 3x - 1$ and $g(x) = \\frac{1}{x}$, what is $fg(2)$?",
+        "q_zh": "如果 $f(x) = 3x - 1$ 且 $g(x) = \\frac{1}{x}$，那么 $fg(2)$ 是多少？",
+        "o": [
+          "0.5",
+          "5",
+          "2.5",
+          "0.2"
+        ],
+        "a": 0,
+        "e": "$g(2) = \\frac{1}{2} = 0.5$. Then $f(0.5) = 3(0.5) - 1 = 1.5 - 1 = 0.5$.",
+        "e_zh": "$g(2) = \\frac{1}{2} = 0.5$。然后 $f(0.5) = 3(0.5) - 1 = 1.5 - 1 = 0.5$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "higher"
+  },
+  {
+    "id": "kp-3.2-02",
+    "section": "3.2",
+    "order": 2,
+    "title": "Inverse Functions",
+    "title_zh": "反函数",
+    "explanation": {
+      "en": "An **inverse function**, denoted $f^{-1}(x)$, reverses the process of function $f$. If $f(x) = y$, then $f^{-1}(y) = x$.\n\nTo find the expression for $f^{-1}(x)$:\n1. Set $y = f(x)$.\n2. Rearrange the equation to make $x$ the subject.\n3. Replace $y$ with $x$ and call it $f^{-1}(x)$.",
+      "zh": "**反函数** 记作 $f^{-1}(x)$，它会撤销函数 $f$ 的过程。如果 $f(x) = y$，那么 $f^{-1}(y) = x$。\n\n要求 $f^{-1}(x)$ 的表达式：\n1. 令 $y = f(x)$。\n2. 重组方程，使 $x$ 成为主元。\n3. 将 $y$ 替换为 $x$，并记作 $f^{-1}(x)$。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-find-inverse",
+        "label": "Find the inverse of a function",
+        "label_zh": "求函数的反函数",
+        "description": "Rearrange a function to find $f^{-1}(x)$. Often involves algebraic fractions.",
+        "description_zh": "重组函数以求得 $f^{-1}(x)$。通常涉及代数分式。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-find-inverse",
+        "question": "Find $f^{-1}(x)$ for $f(x) = \\frac{2x - 3}{x + 5}$.",
+        "question_zh": "求 $f(x) = \\frac{2x - 3}{x + 5}$ 的反函数 $f^{-1}(x)$。",
+        "solution": "**Step 1:** Let $y = \\frac{2x - 3}{x + 5}$.\n\n**Step 2:** Rearrange to make $x$ the subject.\n$y(x + 5) = 2x - 3$\n$yx + 5y = 2x - 3$\n$yx - 2x = -3 - 5y$\n$x(y - 2) = -3 - 5y$\n$x = \\frac{-3 - 5y}{y - 2}$ or $x = \\frac{5y + 3}{2 - y}$.\n\n**Step 3:** Switch to $x$.\n$f^{-1}(x) = \\frac{5x + 3}{2 - x}$.",
+        "solution_zh": "**步骤1：** 令 $y = \\frac{2x - 3}{x + 5}$。\n\n**步骤2：** 重组方程使 $x$ 成为主元。\n$y(x + 5) = 2x - 3$\n$yx + 5y = 2x - 3$\n$yx - 2x = -3 - 5y$\n$x(y - 2) = -3 - 5y$\n$x = \\frac{-3 - 5y}{y - 2}$ 或 $x = \\frac{5y + 3}{2 - y}$。\n\n**步骤3：** 换回 $x$。\n$f^{-1}(x) = \\frac{5x + 3}{2 - x}$。",
+        "source": "4MA1/2H/Jan/2021"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "What is the inverse of $f(x) = 4x - 7$?",
+        "q_zh": "$f(x) = 4x - 7$ 的反函数是什么？",
+        "o": [
+          "$f^{-1}(x) = \\frac{x - 7}{4}$",
+          "$f^{-1}(x) = \\frac{x + 7}{4}$",
+          "$f^{-1}(x) = 7x - 4$",
+          "$f^{-1}(x) = \\frac{4}{x + 7}$"
+        ],
+        "a": 1,
+        "e": "Let $y = 4x - 7 \\Rightarrow y + 7 = 4x \\Rightarrow x = \\frac{y + 7}{4}$.",
+        "e_zh": "令 $y = 4x - 7 \\Rightarrow y + 7 = 4x \\Rightarrow x = \\frac{y + 7}{4}$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "higher"
+  },
+  {
+    "id": "kp-3.3-01",
+    "section": "3.3",
+    "order": 1,
+    "title": "Straight Line Graphs",
+    "title_zh": "直线图像",
+    "explanation": {
+      "en": "The general equation of a straight line is **$y = mx + c$**, where $m$ is the **gradient** (slope) and $c$ is the **$y$-intercept**.\n\nTo find the gradient ($m$) between two points $(x_1, y_1)$ and $(x_2, y_2)$, use the formula:\n$m = \\frac{y_2 - y_1}{x_2 - x_1}$\n\n**Parallel lines** have the same gradient ($m_1 = m_2$).\n\n**Perpendicular lines** have gradients that multiply to $-1$ ($m_1 \\times m_2 = -1$).",
+      "zh": "直线的一般方程为 **$y = mx + c$**，其中 $m$ 是 **斜率** (gradient)，$c$ 是 **$y$ 轴截距**。\n\n要求两点 $(x_1, y_1)$ 和 $(x_2, y_2)$ 之间的斜率 ($m$)，使用公式：\n$m = \\frac{y_2 - y_1}{x_2 - x_1}$\n\n**平行线** 具有相同的斜率 ($m_1 = m_2$)。\n\n**垂直线** 的斜率乘积为 $-1$ ($m_1 \\times m_2 = -1$)。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-line-equation",
+        "label": "Find the equation of a line",
+        "label_zh": "求直线方程",
+        "description": "Find $y = mx + c$ given two points or a point and a gradient.",
+        "description_zh": "根据两点或一点和斜率求 $y = mx + c$。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-line-equation",
+        "question": "Find the equation of the line that passes through $(2, 5)$ and is parallel to $y = 3x - 1$.",
+        "question_zh": "求经过点 $(2, 5)$ 且与 $y = 3x - 1$ 平行的直线方程。",
+        "solution": "**Step 1:** Identify the gradient ($m$).\nParallel lines have same gradient, so $m = 3$.\n\n**Step 2:** Use $y = mx + c$ with the point $(2, 5)$.\n$5 = 3(2) + c$\n$5 = 6 + c \\Rightarrow c = -1$.\n\n**Answer:** $y = 3x - 1$",
+        "solution_zh": "**步骤1：** 确定斜率 ($m$)。\n平行线斜率相同，所以 $m = 3$。\n\n**步骤2：** 将点 $(2, 5)$ 代入 $y = mx + c$。\n$5 = 3(2) + c$\n$5 = 6 + c \\Rightarrow c = -1$。\n\n**答案：** $y = 3x - 1$",
+        "source": "Adapted from 4MA1"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "What is the gradient of a line perpendicular to $y = -2x + 4$?",
+        "q_zh": "与 $y = -2x + 4$ 垂直的直线的斜率是多少？",
+        "o": [
+          "-2",
+          "2",
+          "0.5",
+          "-0.5"
+        ],
+        "a": 2,
+        "e": "The gradient of the given line is $-2$. Perpendicular gradient $m_2 = -1 \\div (-2) = 0.5$.",
+        "e_zh": "给定直线的斜率为 $-2$。垂直斜率 $m_2 = -1 \\div (-2) = 0.5$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-3.4-01",
+    "section": "3.4",
+    "order": 1,
+    "title": "Differentiation",
+    "title_zh": "微分",
+    "explanation": {
+      "en": "**Differentiation** is used to find the rate of change or the **gradient of a curve** at any point.\n\nIf $y = ax^n$, then the derivative is:\n$\\frac{dy}{dx} = anx^{n-1}$\n\nRemember:\n- The derivative of a constant (like $5$) is $0$.\n- The derivative of $x$ is $1$.\n- You must convert roots and fractions into index form (e.g., $\\frac{1}{x^2} = x^{-2}$) before differentiating.",
+      "zh": "**微分** 用于求曲线在任意一点的变化率或 **斜率**。\n\n如果 $y = ax^n$，则导数为：\n$\\frac{dy}{dx} = anx^{n-1}$\n\n注意：\n- 常数（如 $5$）的导数为 $0$。\n- $x$ 的导数为 $1$。\n- 在微分之前，必须将根号和分式转换为指数形式（例如 $\\frac{1}{x^2} = x^{-2}$）。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-differentiate",
+        "label": "Differentiate a function",
+        "label_zh": "对函数求导",
+        "description": "Find dy/dx for a polynomial or simple rational expression.",
+        "description_zh": "求多项式或简单有理表达式的 dy/dx。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-differentiate",
+        "question": "Differentiate $y = 4x^3 - 5x + \\frac{2}{x}$.",
+        "question_zh": "对 $y = 4x^3 - 5x + \\frac{2}{x}$ 求导。",
+        "solution": "**Step 1:** Rewrite in index form.\n$y = 4x^3 - 5x + 2x^{-1}$\n\n**Step 2:** Apply the rule $anx^{n-1}$ to each term.\n$\\frac{dy}{dx} = (4 \\times 3)x^{3-1} - (5 \\times 1)x^{1-1} + (2 \\times -1)x^{-1-1}$\n$\\frac{dy}{dx} = 12x^2 - 5 - 2x^{-2}$\n\n**Answer:** $12x^2 - 5 - \\frac{2}{x^2}$",
+        "solution_zh": "**步骤1：** 改写为指数形式。\n$y = 4x^3 - 5x + 2x^{-1}$\n\n**步骤2：** 对每一项应用 $anx^{n-1}$ 规则。\n$\\frac{dy}{dx} = (4 \\times 3)x^{3-1} - (5 \\times 1)x^{1-1} + (2 \\times -1)x^{-1-1}$\n$\\frac{dy}{dx} = 12x^2 - 5 - 2x^{-2}$\n\n**答案：** $12x^2 - 5 - \\frac{2}{x^2}$",
+        "source": "4MA1/1H/Jan/2020"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "What is $\\frac{dy}{dx}$ if $y = x^2 - 6x + 9$?",
+        "q_zh": "如果 $y = x^2 - 6x + 9$，那么 $\\frac{dy}{dx}$ 是多少？",
+        "o": [
+          "$x - 6$",
+          "$2x - 6$",
+          "$2x$",
+          "$2x - 6 + 9$"
+        ],
+        "a": 1,
+        "e": "Differentiating $x^2$ gives $2x$. Differentiating $-6x$ gives $-6$. Differentiating $9$ gives $0$. Total: $2x - 6$.",
+        "e_zh": "$x^2$ 求导得 $2x$。$-6x$ 求导得 $-6$。$9$ 求导得 $0$。总计：$2x - 6$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "higher"
+  },
+  {
+    "id": "kp-3.4-02",
+    "section": "3.4",
+    "order": 2,
+    "title": "Stationary Points (Turning Points)",
+    "title_zh": "驻点（拐点/转折点）",
+    "explanation": {
+      "en": "A **stationary point** (or turning point) occurs on a curve where the gradient is zero.\n\nTo find the coordinates of stationary points:\n1. Find the derivative $\\frac{dy}{dx}$.\n2. Set $\\frac{dy}{dx} = 0$ and solve for $x$.\n3. Substitute the $x$ values back into the *original* equation to find the $y$ coordinates.",
+      "zh": "**驻点**（或转折点）出现在曲线上斜率为零的地方。\n\n求驻点坐标的步骤：\n1. 求导数 $\\frac{dy}{dx}$。\n2. 令 $\\frac{dy}{dx} = 0$ 并解出 $x$。\n3. 将 $x$ 的值代回 *原* 方程以求得 $y$ 坐标。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-turning-points",
+        "label": "Find stationary points",
+        "label_zh": "求驻点",
+        "description": "Calculate the $(x, y)$ coordinates where the gradient of a curve is zero.",
+        "description_zh": "计算曲线斜率为零的 $(x, y)$ 坐标。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-turning-points",
+        "question": "Find the coordinates of the turning points on the curve $y = x^3 - 3x^2 + 4$.",
+        "question_zh": "求曲线 $y = x^3 - 3x^2 + 4$ 的转折点坐标。",
+        "solution": "**Step 1:** Differentiate.\n$\\frac{dy}{dx} = 3x^2 - 6x$\n\n**Step 2:** Set to zero.\n$3x^2 - 6x = 0$\n$3x(x - 2) = 0$\n$x = 0$ or $x = 2$\n\n**Step 3:** Find $y$ coordinates.\nIf $x = 0, y = (0)^3 - 3(0)^2 + 4 = 4$. Point: $(0, 4)$\nIf $x = 2, y = (2)^3 - 3(2)^2 + 4 = 8 - 12 + 4 = 0$. Point: $(2, 0)$\n\n**Answer:** $(0, 4)$ and $(2, 0)$ ",
+        "solution_zh": "**步骤1：** 求导。\n$\\frac{dy}{dx} = 3x^2 - 6x$\n\n**步骤2：** 令导数为零。\n$3x^2 - 6x = 0$\n$3x(x - 2) = 0$\n$x = 0$ 或 $x = 2$\n\n**步骤3：** 求 $y$ 坐标。\n若 $x = 0, y = (0)^3 - 3(0)^2 + 4 = 4$。点：$(0, 4)$\n若 $x = 2, y = (2)^3 - 3(2)^2 + 4 = 8 - 12 + 4 = 0$。点：$(2, 0)$\n\n**答案：** $(0, 4)$ 和 $(2, 0)$ ",
+        "source": "4MA1/2H/June/2022"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "At a stationary point, what is the value of $\\frac{dy}{dx}$?",
+        "q_zh": "在驻点处，$\\frac{dy}{dx}$ 的值是多少？",
+        "o": [
+          "1",
+          "-1",
+          "0",
+          "It depends on the function"
+        ],
+        "a": 2,
+        "e": "By definition, the gradient (dy/dx) is zero at any stationary point (maximum, minimum, or point of inflection).",
+        "e_zh": "根据定义，在任何驻点（极大值、极小值或拐点）处，斜率 (dy/dx) 均为零。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "higher"
+  }
+]

@@ -1,0 +1,226 @@
+[
+  {
+    "id": "kp-6.1-01",
+    "addQuiz": [
+      {
+        "q": "A rectangular field measures 120 m by 50 m. What is the length of the diagonal path across the field?",
+        "q_zh": "一个长方形场地长120米，宽50米。穿过该场地的对角线路径的长度是多少？",
+        "o": [
+          "130 m",
+          "170 m",
+          "11900 m",
+          "6000 m"
+        ],
+        "a": 0,
+        "e": "Using Pythagoras' Theorem: $d = \\sqrt{120^2 + 50^2} = \\sqrt{14400 + 2500} = \\sqrt{16900} = 130$ m.",
+        "e_zh": "使用勾股定理：$d = \\sqrt{120^2 + 50^2} = \\sqrt{14400 + 2500} = \\sqrt{16900} = 130$ 米。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-find-side",
+        "question": "A right-angled triangle has a hypotenuse of 25 cm and one side of 7 cm. Calculate the length of the third side.",
+        "question_zh": "一个直角三角形的斜边为25厘米，其中一条直角边为7厘米。计算第三条边的长度。",
+        "solution": "Using $a^2 + b^2 = c^2$, let $c = 25$ and $a = 7$: \\\\ $7^2 + b^2 = 25^2$ \\\\ $49 + b^2 = 625$ \\\\ $b^2 = 625 - 49 = 576$ \\\\ $b = \\sqrt{576} = 24$ cm.",
+        "solution_zh": "使用 $a^2 + b^2 = c^2$，设 $c = 25$，$a = 7$：\\\\ $7^2 + b^2 = 25^2$ \\\\ $49 + b^2 = 625$ \\\\ $b^2 = 625 - 49 = 576$ \\\\ $b = \\sqrt{576} = 24$ 厘米。",
+        "source": "Adapted from 0580/21/M/J/21"
+      }
+    ]
+  },
+  {
+    "id": "kp-6.2-01",
+    "addQuiz": [
+      {
+        "q": "In a right-angled triangle, the side opposite to angle $\\theta$ is 8 cm and the adjacent side is 15 cm. Find $\\theta$ to 1 decimal place.",
+        "q_zh": "在一个直角三角形中，角 $\\theta$ 的对边是8厘米，邻边是15厘米。求 $\\theta$ 的值（保留1位小数）。",
+        "o": [
+          "28.1°",
+          "32.2°",
+          "57.8°",
+          "61.9°"
+        ],
+        "a": 0,
+        "e": "Using $\\tan \\theta = \\frac{Opposite}{Adjacent}$: $\\tan \\theta = \\frac{8}{15}$, so $\\theta = \\tan^{-1}(\\frac{8}{15}) \\approx 28.07^\\circ$.",
+        "e_zh": "使用 $\\tan \\theta = \\frac{对边}{邻边}$：$\\tan \\theta = \\frac{8}{15}$，因此 $\\theta = \\tan^{-1}(\\frac{8}{15}) \\approx 28.07^\\circ$。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-find-side-trig",
+        "question": "In triangle ABC, angle B = 90°, angle A = 35° and side AB = 12 cm. Calculate the length of BC.",
+        "question_zh": "在三角形ABC中，角B = 90°，角A = 35°，边AB = 12厘米。计算BC的长度。",
+        "solution": "$\tan A = \\frac{BC}{AB}$ \\\\ $\tan 35^\\circ = \\frac{BC}{12}$ \\\\ $BC = 12 \\times \\tan 35^\\circ \\approx 8.40$ cm (3 s.f.).",
+        "solution_zh": "$\tan A = \\frac{BC}{AB}$ \\\\ $\tan 35^\\circ = \\frac{BC}{12}$ \\\\ $BC = 12 \\times \\tan 35^\\circ \\approx 8.40$ 厘米（保留3位有效数字）。",
+        "source": "0580/22/F/M/22"
+      }
+    ]
+  },
+  {
+    "id": "kp-6.3-01",
+    "addQuiz": [
+      {
+        "q": "What is the exact value of $\\sin 60^\\circ \\times \\cos 30^\\circ$?",
+        "q_zh": "$\\sin 60^\\circ \\times \\cos 30^\\circ$ 的确切值是多少？",
+        "o": [
+          "\\frac{3}{4}",
+          "\\frac{1}{2}",
+          "\\frac{\\sqrt{3}}{2}",
+          "\\frac{1}{4}"
+        ],
+        "a": 0,
+        "e": "$\\sin 60^\\circ = \\frac{\\sqrt{3}}{2}$ and $\\cos 30^\\circ = \\frac{\\sqrt{3}}{2}$. Their product is $\\frac{\\sqrt{3}}{2} \\times \\frac{\\sqrt{3}}{2} = \\frac{3}{4}$.",
+        "e_zh": "$\\sin 60^\\circ = \\frac{\\sqrt{3}}{2}$ 且 $\\cos 30^\\circ = \\frac{\\sqrt{3}}{2}$。它们的乘积是 $\\frac{\\sqrt{3}}{2} \\times \\frac{\\sqrt{3}}{2} = \\frac{3}{4}$。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-exact-eval",
+        "question": "Show that $(\\sin 45^\\circ + \\cos 45^\\circ)^2 = 2$.",
+        "question_zh": "证明 $(\\sin 45^\\circ + \\cos 45^\\circ)^2 = 2$。",
+        "solution": "$\\sin 45^\\circ = \\frac{\\sqrt{2}}{2}$ and $\\cos 45^\\circ = \\frac{\\sqrt{2}}{2}$. \\\\ $(\\frac{\\sqrt{2}}{2} + \\frac{\\sqrt{2}}{2})^2 = (\\frac{2\\sqrt{2}}{2})^2 = (\\sqrt{2})^2 = 2$.",
+        "solution_zh": "$\\sin 45^\\circ = \\frac{\\sqrt{2}}{2}$ 且 $\\cos 45^\\circ = \\frac{\\sqrt{2}}{2}$。\\\\ $(\\frac{\\sqrt{2}}{2} + \\frac{\\sqrt{2}}{2})^2 = (\\frac{2\\sqrt{2}}{2})^2 = (\\sqrt{2})^2 = 2$。",
+        "source": "Adapted from 0580/41/O/N/23"
+      }
+    ]
+  },
+  {
+    "id": "kp-6.4-01",
+    "addQuiz": [
+      {
+        "q": "Which of the following is the period of the function $y = \\tan x$?",
+        "q_zh": "下列哪项是函数 $y = \\tan x$ 的周期？",
+        "o": [
+          "180°",
+          "360°",
+          "90°",
+          "270°"
+        ],
+        "a": 0,
+        "e": "The tangent function repeats every 180°, while sine and cosine functions repeat every 360°.",
+        "e_zh": "正切函数每180°重复一次，而正弦和余弦函数每360°重复一次。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-solve-trig-eq",
+        "question": "Solve $2 \\sin x = \\sqrt{3}$ for $0^\\circ \\le x \\le 360^\\circ$.",
+        "question_zh": "在 $0^\\circ \\le x \\le 360^\\circ$ 范围内解方程 $2 \\sin x = \\sqrt{3}$。",
+        "solution": "$\\sin x = \\frac{\\sqrt{3}}{2}$ \\\\ The reference angle is $\\sin^{-1}(\\frac{\\sqrt{3}}{2}) = 60^\\circ$. \\\\ Since sine is positive in the 1st and 2nd quadrants: \\\\ $x = 60^\\circ$ or $x = 180^\\circ - 60^\\circ = 120^\\circ$.",
+        "solution_zh": "$\\sin x = \\frac{\\sqrt{3}}{2}$ \\\\ 参考角为 $\\sin^{-1}(\\frac{\\sqrt{3}}{2}) = 60^\\circ$。\\\\ 由于正弦在第一和第二象限为正：\\\\ $x = 60^\\circ$ 或 $x = 180^\\circ - 60^\\circ = 120^\\circ$。",
+        "source": "0580/42/M/J/20"
+      }
+    ]
+  },
+  {
+    "id": "kp-6.5-01",
+    "addQuiz": [
+      {
+        "q": "In triangle PQR, PQ = 10 cm, angle QPR = 40° and angle PRQ = 70°. Calculate the length of QR.",
+        "q_zh": "在三角形PQR中，PQ = 10厘米，角QPR = 40°，角PRQ = 70°。计算QR的长度。",
+        "o": [
+          "6.84 cm",
+          "14.6 cm",
+          "10.6 cm",
+          "9.40 cm"
+        ],
+        "a": 0,
+        "e": "Using the Sine Rule: $\\frac{QR}{\\sin 40^\\circ} = \\frac{10}{\\sin 70^\\circ}$, so $QR = \\frac{10 \\times \\sin 40^\\circ}{\\sin 70^\\circ} \\approx 6.84$ cm.",
+        "e_zh": "使用正弦定理：$\\frac{QR}{\\sin 40^\\circ} = \\frac{10}{\\sin 70^\\circ}$，因此 $QR = \\frac{10 \\times \\sin 40^\\circ}{\\sin 70^\\circ} \\approx 6.84$ 厘米。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-sine-side",
+        "question": "In triangle ABC, AC = 8.5 cm, BC = 10.2 cm and angle BAC = 65°. Calculate angle ABC.",
+        "question_zh": "在三角形ABC中，AC = 8.5厘米，BC = 10.2厘米，角BAC = 65°。计算角ABC。",
+        "solution": "Using the Sine Rule: $\\frac{\\sin ABC}{8.5} = \\frac{\\sin 65^\\circ}{10.2}$ \\\\ $\\sin ABC = \\frac{8.5 \\times \\sin 65^\\circ}{10.2} \\approx 0.7553$ \\\\ $angle ABC = \\sin^{-1}(0.7553) \\approx 49.1^\\circ$.",
+        "solution_zh": "使用正弦定理：$\\frac{\\sin ABC}{8.5} = \\frac{\\sin 65^\\circ}{10.2}$ \\\\ $\\sin ABC = \\frac{8.5 \\times \\sin 65^\\circ}{10.2} \\approx 0.7553$ \\\\ $angle ABC = \\sin^{-1}(0.7553) \\approx 49.1^\\circ$。",
+        "source": "0580/41/M/J/19"
+      }
+    ]
+  },
+  {
+    "id": "kp-6.5-02",
+    "addQuiz": [
+      {
+        "q": "In triangle XYZ, XY = 5 cm, YZ = 7 cm and XZ = 8 cm. Calculate angle XYZ.",
+        "q_zh": "在三角形XYZ中，XY = 5厘米，YZ = 7厘米，XZ = 8厘米。计算角XYZ。",
+        "o": [
+          "81.8°",
+          "60°",
+          "38.2°",
+          "98.2°"
+        ],
+        "a": 0,
+        "e": "Using the Cosine Rule: $\\cos Y = \\frac{5^2 + 7^2 - 8^2}{2(5)(7)} = \\frac{25+49-64}{70} = \\frac{10}{70} = \\frac{1}{7}$. So $Y = \\cos^{-1}(\\frac{1}{7}) \\approx 81.8^\\circ$.",
+        "e_zh": "使用余弦定理：$\\cos Y = \\frac{5^2 + 7^2 - 8^2}{2(5)(7)} = \\frac{25+49-64}{70} = \\frac{10}{70} = \\frac{1}{7}$。因此 $Y = \\cos^{-1}(\\frac{1}{7}) \\approx 81.8^\\circ$。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-cosine-side",
+        "question": "A triangle has two sides of lengths 11 cm and 13 cm, and the angle between them is 50°. Calculate the length of the third side.",
+        "question_zh": "一个三角形有两条边，长度分别为11厘米和13厘米，它们之间的夹角为50°。计算第三条边的长度。",
+        "solution": "Using $a^2 = b^2 + c^2 - 2bc \\cos A$: \\\\ $a^2 = 11^2 + 13^2 - 2(11)(13) \\cos 50^\\circ$ \\\\ $a^2 = 121 + 169 - 286 \\cos 50^\\circ$ \\\\ $a^2 = 290 - 183.84 = 106.16$ \\\\ $a = \\sqrt{106.16} \\approx 10.3$ cm.",
+        "solution_zh": "使用 $a^2 = b^2 + c^2 - 2bc \\cos A$：\\\\ $a^2 = 11^2 + 13^2 - 2(11)(13) \\cos 50^\\circ$ \\\\ $a^2 = 121 + 169 - 286 \\cos 50^\\circ$ \\\\ $a^2 = 290 - 183.84 = 106.16$ \\\\ $a = \\sqrt{106.16} \\approx 10.3$ 厘米。",
+        "source": "0580/43/O/N/21"
+      }
+    ]
+  },
+  {
+    "id": "kp-6.5-03",
+    "addQuiz": [
+      {
+        "q": "The area of a triangle with sides 6 cm and 9 cm is 20 cm². Calculate the acute angle between these two sides.",
+        "q_zh": "一个两条边长分别为6厘米和9厘米的三角形面积为20平方厘米。计算这两条边之间的锐角。",
+        "o": [
+          "47.8°",
+          "21.7°",
+          "42.2°",
+          "68.3°"
+        ],
+        "a": 0,
+        "e": "Using $Area = \\frac{1}{2}ab \\sin C$: $20 = \\frac{1}{2}(6)(9) \\sin C$, so $20 = 27 \\sin C$. $\\sin C = \\frac{20}{27}$, $C = \\sin^{-1}(\\frac{20}{27}) \\approx 47.8^\\circ$.",
+        "e_zh": "使用 $面积 = \\frac{1}{2}ab \\sin C$：$20 = \\frac{1}{2}(6)(9) \\sin C$，即 $20 = 27 \\sin C$。$\\sin C = \\frac{20}{27}$，$C = \\sin^{-1}(\\frac{20}{27}) \\approx 47.8^\\circ$。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-area-trig",
+        "question": "Calculate the area of triangle PQR where PQ = 15 cm, PR = 20 cm and angle QPR = 110°.",
+        "question_zh": "计算三角形PQR的面积，其中PQ = 15厘米，PR = 20厘米，且角QPR = 110°。",
+        "solution": "$Area = \\frac{1}{2} \\times PQ \\times PR \\times \\sin QPR$ \\\\ $Area = \\frac{1}{2} \\times 15 \\times 20 \\times \\sin 110^\\circ$ \\\\ $Area = 150 \\times \\sin 110^\\circ \\approx 141$ cm².",
+        "solution_zh": "$面积 = \\frac{1}{2} \\times PQ \\times PR \\times \\sin QPR$ \\\\ $面积 = \\frac{1}{2} \\times 15 \\times 20 \\times \\sin 110^\\circ$ \\\\ $面积 = 150 \\times \\sin 110^\\circ \\approx 141$ 平方厘米。",
+        "source": "0580/42/M/J/18"
+      }
+    ]
+  },
+  {
+    "id": "kp-6.6-01",
+    "addQuiz": [
+      {
+        "q": "A cuboid has dimensions 8 cm by 6 cm by 5 cm. Calculate the length of the internal diagonal of the cuboid.",
+        "q_zh": "一个长方体的尺寸为8厘米、6厘米、5厘米。计算该长方体的内部对角线长度。",
+        "o": [
+          "11.2 cm",
+          "14.1 cm",
+          "10.0 cm",
+          "19.0 cm"
+        ],
+        "a": 0,
+        "e": "Using 3D Pythagoras: $d = \\sqrt{l^2 + w^2 + h^2} = \\sqrt{8^2 + 6^2 + 5^2} = \\sqrt{64 + 36 + 25} = \\sqrt{125} \\approx 11.2$ cm.",
+        "e_zh": "使用三维勾股定理：$d = \\sqrt{l^2 + w^2 + h^2} = \\sqrt{8^2 + 6^2 + 5^2} = \\sqrt{64 + 36 + 25} = \\sqrt{125} \\approx 11.2$ 厘米。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-line-plane-angle",
+        "question": "A vertical pole AG of height 5 m stands at corner A of a horizontal rectangular base ABCD. AB = 10 m and BC = 6 m. Calculate the angle of elevation of G from C.",
+        "question_zh": "一根高5米的垂直电线杆AG立在水平长方形底面ABCD的顶点A处。AB = 10米，BC = 6米。计算从C点看G点的仰角。",
+        "solution": "1. Find length AC (diagonal of base): $AC = \\sqrt{10^2 + 6^2} = \\sqrt{136} \\approx 11.66$ m. \\\\ 2. In right-angled triangle GAC, $AG = 5$ m and $AC = 11.66$ m. \\\\ 3. $\tan GCA = \\frac{AG}{AC} = \\frac{5}{11.66}$. \\\\ 4. $angle GCA = \\tan^{-1}(\\frac{5}{11.66}) \\approx 23.2^\\circ$.",
+        "solution_zh": "1. 计算AC的长度（底面对角线）：$AC = \\sqrt{10^2 + 6^2} = \\sqrt{136} \\approx 11.66$ 米。\\\\ 2. 在直角三角形GAC中，$AG = 5$ 米，$AC = 11.66$ 米。\\\\ 3. $\tan GCA = \\frac{AG}{AC} = \\frac{5}{11.66}$。\\\\ 4. $angle GCA = \\tan^{-1}(\\frac{5}{11.66}) \\approx 23.2^\\circ$。",
+        "source": "Adapted from 0580/42/O/N/22"
+      }
+    ]
+  }
+]

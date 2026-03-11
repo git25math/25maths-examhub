@@ -1,0 +1,162 @@
+[
+  {
+    "id": "cv1696",
+    "cat": "algebra",
+    "topic": "Introduction To Algebra",
+    "q": "The formula for the distance traveled by an accelerating object is $S = \\frac{1}{2}(u + v)t$. Make $t$ the subject of the formula.",
+    "o": [
+      "$t = 2S / (u + v)$",
+      "t = S / (u + v) - $\\frac{1}{2}$",
+      "$t = 2S(u + v)$",
+      "t = S / (2(u + v))"
+    ],
+    "a": 0,
+    "e": "Multiply both sides by 2: $2S = (u + v)t$. Then, divide both sides by $(u + v)$ to isolate $t$: $t = 2S / (u + v)$.",
+    "d": 2,
+    "s": "2.2"
+  },
+  {
+    "id": "cv1697",
+    "cat": "algebra",
+    "topic": "Introduction To Algebra",
+    "q": "The formula for the area of a trapezoid is $A = \\frac{1}{2}(x + y)h$. Make $h$ the subject of the formula.",
+    "o": [
+      "$h = 2A / (x + y)$",
+      "h = A / (x + y) - 0.5",
+      "$h = 2A(x + y)$",
+      "h = A / (2x + 2y)"
+    ],
+    "a": 0,
+    "e": "Multiply both sides by 2: $2A = (x + y)h$. Then, divide both sides by $(x + y)$ to isolate $h$: $h = 2A / (x + y)$.",
+    "d": 2,
+    "s": "2.2"
+  },
+  {
+    "id": "cv1698",
+    "cat": "algebra",
+    "topic": "Introduction To Algebra",
+    "q": "In coordinate geometry, the area of a specific shape is given by $M = \\frac{1}{2}(p + q)r$. Make $r$ the subject of the formula.",
+    "o": [
+      "$r = 2M / (p + q)$",
+      "r = M / (p + q) - $\\frac{1}{2}$",
+      "$r = 2M(p + q)$",
+      "r = M / (2(p + q))"
+    ],
+    "a": 0,
+    "e": "Multiply both sides by 2: $2M = (p + q)r$. Then, divide both sides by $(p + q)$ to isolate $r$: $r = 2M / (p + q)$.",
+    "d": 2,
+    "s": "2.2"
+  },
+  {
+    "id": "cv1699",
+    "cat": "algebra",
+    "topic": "Introduction To Algebra",
+    "q": "The sum of terms in a sequence is given by $P = \\frac{1}{2}(a + b)n$. Make $n$ the subject of the formula.",
+    "o": [
+      "$n = 2P / (a + b)$",
+      "n = P / (a + b) - 0.5",
+      "$n = 2P(a + b)$",
+      "n = P / (2a + 2b)"
+    ],
+    "a": 0,
+    "e": "Multiply both sides by 2: $2P = (a + b)n$. Then, divide both sides by $(a + b)$ to isolate $n$: $n = 2P / (a + b)$.",
+    "d": 2,
+    "s": "2.2"
+  },
+  {
+    "id": "cv1700",
+    "cat": "algebra",
+    "topic": "Introduction To Algebra",
+    "q": "A general formula for a system is $K = \\frac{1}{2}(X + Y)Z$. Make $Z$ the subject of the formula.",
+    "o": [
+      "$Z = 2K / (X + Y)$",
+      "Z = K / (X + Y) - $\\frac{1}{2}$",
+      "$Z = 2K(X + Y)$",
+      "Z = K / (2(X + Y))"
+    ],
+    "a": 0,
+    "e": "Multiply both sides by 2: $2K = (X + Y)Z$. Then, divide both sides by $(X + Y)$ to isolate $Z$: $Z = 2K / (X + Y)$.",
+    "d": 2,
+    "s": "2.2"
+  },
+  {
+    "id": "cv1701",
+    "cat": "algebra",
+    "topic": "Algebraic Manipulation",
+    "q": "Make 'n' the subject of the formula $y = mx + \\frac{1}{2}nx^2$.",
+    "o": [
+      "n = 2(y - mx) / $x^2$",
+      "n = (y - mx) / (2$x^2$)",
+      "n = 2y - mx / $x^2$",
+      "n = 2(y + mx) / $x^2$"
+    ],
+    "a": 0,
+    "e": "First, subtract 'mx' from both sides: y - mx = $\\frac{1}{2}nx^2$. Then multiply by 2: 2(y - mx) = $nx^2$. Finally, divide by $x^2$ to isolate 'n': n = 2(y - mx) / $x^2$.",
+    "d": 2,
+    "s": "2.2"
+  },
+  {
+    "id": "cv1702",
+    "cat": "algebra",
+    "topic": "Algebraic Manipulation",
+    "q": "Make 'k' the subject of the formula $W = Fd + \\frac{1}{2}kd^2$.",
+    "o": [
+      "k = 2(W - Fd) / $d^2$",
+      "k = (W - Fd) / (2$d^2$)",
+      "k = 2W - Fd / $d^2$",
+      "k = 2(W + Fd) / $d^2$"
+    ],
+    "a": 0,
+    "e": "First, subtract 'Fd' from both sides: W - Fd = $\\frac{1}{2}kd^2$. Then multiply by 2: 2(W - Fd) = $kd^2$. Finally, divide by $d^2$ to isolate 'k': k = 2(W - Fd) / $d^2$.",
+    "d": 2,
+    "s": "2.2"
+  },
+  {
+    "id": "cv1703",
+    "cat": "algebra",
+    "topic": "Algebraic Manipulation",
+    "q": "Make 'c' the subject of the formula $H = ab + \\frac{1}{2}cb^2$.",
+    "o": [
+      "c = 2(H - ab) / $b^2$",
+      "c = (H - ab) / (2$b^2$)",
+      "c = 2H - ab / $b^2$",
+      "c = 2(H + ab) / $b^2$"
+    ],
+    "a": 0,
+    "e": "First, subtract 'ab' from both sides: H - ab = $\\frac{1}{2}cb^2$. Then multiply by 2: 2(H - ab) = $cb^2$. Finally, divide by $b^2$ to isolate 'c': c = 2(H - ab) / $b^2$.",
+    "d": 2,
+    "s": "2.2"
+  },
+  {
+    "id": "cv1704",
+    "cat": "algebra",
+    "topic": "Algebraic Manipulation",
+    "q": "Make 'Z' the subject of the formula $P = XY + \\frac{1}{2}ZY^2$.",
+    "o": [
+      "Z = 2(P - XY) / $Y^2$",
+      "Z = (P - XY) / (2$Y^2$)",
+      "Z = 2P - XY / $Y^2$",
+      "Z = 2(P + XY) / $Y^2$"
+    ],
+    "a": 0,
+    "e": "First, subtract 'XY' from both sides: P - XY = $\\frac{1}{2}ZY^2$. Then multiply by 2: 2(P - XY) = $ZY^2$. Finally, divide by $Y^2$ to isolate 'Z': Z = 2(P - XY) / $Y^2$.",
+    "d": 2,
+    "s": "2.2"
+  },
+  {
+    "id": "cv1705",
+    "cat": "algebra",
+    "topic": "Algebraic Manipulation",
+    "q": "Make 'r' the subject of the formula $E = pQ + \\frac{1}{2}rQ^2$.",
+    "o": [
+      "r = 2(E - pQ) / $Q^2$",
+      "r = (E - pQ) / (2$Q^2$)",
+      "r = 2E - pQ / $Q^2$",
+      "r = 2(E + pQ) / $Q^2$"
+    ],
+    "a": 0,
+    "e": "First, subtract 'pQ' from both sides: E - pQ = $\\frac{1}{2}rQ^2$. Then multiply by 2: 2(E - pQ) = $rQ^2$. Finally, divide by $Q^2$ to isolate 'r': r = 2(E - pQ) / $Q^2$.",
+    "d": 2,
+    "s": "2.2"
+  }
+]

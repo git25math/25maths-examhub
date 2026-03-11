@@ -1,0 +1,98 @@
+[
+  {
+    "id": "cv1630",
+    "cat": "trigonometry",
+    "topic": "Exact Trigonometric Values",
+    "q": "What is the exact value of cos(60°)?",
+    "o": [
+      "$\\frac{1}{2}$",
+      "$\\sqrt{3}/2$",
+      "$1/\\sqrt{2}$",
+      "$1$"
+    ],
+    "a": 0,
+    "e": "The value of cos(60°) is a standard exact value. In an equilateral triangle of side 2, the altitude creates a 30-60-90 triangle where the side adjacent to 60° is 1. Thus, cos(60°) = $\\frac{1}{2}$.",
+    "d": 2,
+    "s": "6.3"
+  },
+  {
+    "id": "cv1631",
+    "cat": "trigonometry",
+    "topic": "Exact Trigonometric Values",
+    "q": "What is the exact value of sin(45°)?",
+    "o": [
+      "$\\frac{1}{2}$",
+      "$\\sqrt{3}/2$",
+      "$1/\\sqrt{2}$",
+      "$1$"
+    ],
+    "a": 2,
+    "e": "The value of sin(45°) is a standard exact value. In an isosceles right-angled triangle with hypotenuse 1, the opposite side is $1/\\sqrt{2}$.",
+    "d": 2,
+    "s": "6.3"
+  },
+  {
+    "id": "cv1632",
+    "cat": "trigonometry",
+    "topic": "Exact Trigonometric Values",
+    "q": "What is the exact value of tan(45°)?",
+    "o": [
+      "$0$",
+      "$1/\\sqrt{3}$",
+      "$1$",
+      "$\\sqrt{3}$"
+    ],
+    "a": 2,
+    "e": "In an isosceles right-angled triangle (45-45-90), the opposite and adjacent sides are equal. Therefore, tan(45°) = opposite/adjacent = $1$.",
+    "d": 2,
+    "s": "6.3"
+  },
+  {
+    "id": "cv1633",
+    "cat": "trigonometry",
+    "topic": "Exact Trigonometric Values",
+    "q": "What is the exact value of sin(60°)?",
+    "o": [
+      "$\\frac{1}{2}$",
+      "$\\sqrt{3}/2$",
+      "$1/\\sqrt{2}$",
+      "$\\sqrt{3}$"
+    ],
+    "a": 1,
+    "e": "The value of sin(60°) is a standard exact value derived from an equilateral triangle. sin(60°) = $\\sqrt{3}/2$.",
+    "d": 2,
+    "s": "6.3"
+  },
+  {
+    "id": "cv1634",
+    "cat": "trigonometry",
+    "topic": "Exact Trigonometric Values",
+    "q": "What is the exact value of tan(30°)?",
+    "o": [
+      "$1/\\sqrt{3}$",
+      "$\\sqrt{3}$",
+      "$1$",
+      "$1/2$"
+    ],
+    "a": 0,
+    "e": "The value of tan(30°) can be found by dividing sin(30°) by cos(30°). $\\frac{1/2}{\\sqrt{3}/2} = 1/\\sqrt{3}$.",
+    "d": 2,
+    "s": "6.3"
+  },
+  {
+    "id": "cv1635",
+    "cat": "trigonometry",
+    "topic": "Exact Trigonometric Values",
+    "q": "What is the exact value of cos(30°)?",
+    "o": [
+      "$\\frac{1}{2}$",
+      "$\\sqrt{3}/2$",
+      "$1/\\sqrt{2}$",
+      "$0$"
+    ],
+    "a": 1,
+    "e": "The value of cos(30°) is a standard exact value. In a 30-60-90 triangle with hypotenuse 1, the side adjacent to 30° is $\\sqrt{3}/2$.",
+    "d": 2,
+    "s": "6.3"
+  }
+]

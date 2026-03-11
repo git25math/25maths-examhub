@@ -1,0 +1,324 @@
+[
+  {
+    "id": "kp-9.1-01",
+    "addQuiz": [
+      {
+        "q": "Which of the following is an example of discrete data?",
+        "q_zh": "下列哪项是离散数据的例子？",
+        "o": [
+          "The weight of a bag of apples",
+          "The temperature of a room",
+          "The number of students in a class",
+          "The time taken to run 100 metres"
+        ],
+        "a": 2,
+        "e": "Discrete data can only take specific values (usually integers) and is often counted. The number of students must be a whole number, whereas weight, temperature, and time are measured and can take any value on a scale (continuous).",
+        "e_zh": "离散数据只能取特定值（通常是整数），通常通过计数获得。学生的数量必须是整数，而重量、温度和时间是测量得出的，可以在刻度上取任何值（连续数据）。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-classify-data",
+        "question": "State whether each of the following is discrete or continuous:\\n(a) The capacity of a fuel tank.\\n(b) The number of goals scored in a football match.\\n(c) The distance between two cities.",
+        "question_zh": "指出下列各项是离散数据还是连续数据：\\n(a) 燃料箱的容量。\\n(b) 足球比赛中的进球数。\\n(c) 两个城市之间的距离。",
+        "solution": "(a) Capacity is measured, so it is **continuous**.\\n(b) Goals are counted as whole numbers, so it is **discrete**.\\n(c) Distance is measured, so it is **continuous**.",
+        "solution_zh": "(a) 容量是通过测量得到的，因此是**连续数据**。\\n(b) 进球数是通过计数得到的整数，因此是**离散数据**。\\n(c) 距离是通过测量得到的，因此是**连续数据**。",
+        "source": "Adapted from 0580/21/M/J/21"
+      }
+    ]
+  },
+  {
+    "id": "kp-9.1-02",
+    "addQuiz": [
+      {
+        "q": "A student records the scores of 20 dice rolls. In a frequency table, the 'Tally' column for the score '4' shows \\\\cancel{||||} ||. What is the frequency of the score '4'?",
+        "q_zh": "一名学生记录了20次掷骰子的得分。在频数表中，得分“4”的“划记(Tally)”列显示为 \\\\cancel{||||} ||。得分“4”的频数是多少？",
+        "o": [
+          "2",
+          "5",
+          "7",
+          "10"
+        ],
+        "a": 2,
+        "e": "In a tally system, a group with a diagonal line (\\\\cancel{||||}) represents 5, and the two extra lines represent 2. Total frequency = 5 + 2 = 7.",
+        "e_zh": "在划记法中，带斜线的一组（\\\\cancel{||||}）代表5，额外的两条线代表2。总频数 = 5 + 2 = 7。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-complete-table",
+        "question": "The ages of 15 children are: 5, 7, 5, 6, 8, 7, 5, 9, 6, 7, 5, 8, 7, 6, 5. Complete the frequency table.\\n\\\\begin{array}{|c|c|} \\\\hline \\\\text{Age} & \\\\text{Frequency} \\\\\\\\ \\\\hline 5 & \\\\dots \\\\\\\\ \\\\hline 6 & \\\\dots \\\\\\\\ \\\\hline 7 & \\\\dots \\\\\\\\ \\\\hline 8 & \\\\dots \\\\\\\\ \\\\hline 9 & \\\\dots \\\\\\\\ \\\\hline \\\\end{array}",
+        "question_zh": "15名儿童的年龄分别为：5, 7, 5, 6, 8, 7, 5, 9, 6, 7, 5, 8, 7, 6, 5。完成频数表。\\n\\\\begin{array}{|c|c|} \\\\hline \\\\text{年龄} & \\\\text{频数} \\\\\\\\ \\\\hline 5 & \\\\dots \\\\\\\\ \\\\hline 6 & \\\\dots \\\\\\\\ \\\\hline 7 & \\\\dots \\\\\\\\ \\\\hline 8 & \\\\dots \\\\\\\\ \\\\hline 9 & \\\\dots \\\\\\\\ \\\\hline \\\\end{array}",
+        "solution": "Count the occurrence of each age:\\nAge 5: 5 times\\nAge 6: 3 times\\nAge 7: 4 times\\nAge 8: 2 times\\nAge 9: 1 time\\nCheck sum: 5+3+4+2+1 = 15. Correct.",
+        "solution_zh": "统计每个年龄出现的次数：\\n年龄 5: 5 次\\n年龄 6: 3 次\\n年龄 7: 4 次\\n年龄 8: 2 次\\n年龄 9: 1 次\\n检查总和：5+3+4+2+1 = 15。正确。",
+        "source": "0580/12/O/N/19"
+      }
+    ]
+  },
+  {
+    "id": "kp-9.2-01",
+    "addQuiz": [],
+    "addExamples": [
+      {
+        "patternId": "ep-9.2-01",
+        "question": "The travel times (in minutes) for 100 students to get to school are recorded. Group A has a median of 15 minutes and a range of 10 minutes. Group B has a median of 22 minutes and a range of 25 minutes. Compare the two groups.",
+        "question_zh": "记录了100名学生上学所需的时间（分钟）。A组的中位数为15分钟，极差为10分钟。B组的中位数为22分钟，极差为25分钟。比较这两组数据。",
+        "solution": "1. **Average**: On average, students in Group B take longer to get to school (higher median: 22 > 15).\\n2. **Consistency**: Group A's travel times are more consistent or less varied (smaller range: 10 < 25).",
+        "solution_zh": "1. **平均情况**：平均而言，B组学生上学所需时间更长（中位数更高：22 > 15）。\\n2. **一致性**：A组的上学时间更一致或波动更小（极差更小：10 < 25）。",
+        "source": "Adapted from 0580/42/M/J/22"
+      }
+    ]
+  },
+  {
+    "id": "kp-9.3-01",
+    "addQuiz": [
+      {
+        "q": "The weights of 5 boxes are 2 kg, 5 kg, 5 kg, 8 kg, and 10 kg. If a 6th box weighing 12 kg is added, which average will increase the most?",
+        "q_zh": "5个箱子的重量分别是 2 kg, 5 kg, 5 kg, 8 kg, 和 10 kg。如果增加第6个重量为 12 kg 的箱子，哪种统计量增加得最多？",
+        "o": [
+          "Mean",
+          "Median",
+          "Mode",
+          "Range"
+        ],
+        "a": 3,
+        "e": "Original stats: Mean=6, Median=5, Mode=5, Range=8. \\nNew stats (2, 5, 5, 8, 10, 12): Mean=7 (+1), Median=6.5 (+1.5), Mode=5 (+0), Range=10 (+2). \\nRange increases by 2, which is the largest increase.",
+        "e_zh": "原始统计量：平均数=6，中位数=5，众数=5，极差=8。\\n新统计量 (2, 5, 5, 8, 10, 12)：平均数=7 (+1)，中位数=6.5 (+1.5)，众数=5 (+0)，极差=10 (+2)。\\n极差增加了2，增幅最大。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-averages-list",
+        "question": "For the list of numbers: 3, 8, 11, 15, 15, 20, 23. Find (a) the range, (b) the median, and (c) the mean.",
+        "question_zh": "对于数字列表：3, 8, 11, 15, 15, 20, 23。求 (a) 极差，(b) 中位数，以及 (c) 平均数。",
+        "solution": "(a) Range = Largest - Smallest = 23 - 3 = 20.\\n(b) The list is ordered. There are 7 numbers. The middle (4th) number is 15. Median = 15.\\n(c) Mean = \\\\frac{3+8+11+15+15+20+23}{7} = \\\\frac{95}{7} \\\\approx 13.57.",
+        "solution_zh": "(a) 极差 = 最大值 - 最小值 = 23 - 3 = 20。\\n(b) 列表已排序。共有7个数字。中间（第4个）数字是15。中位数 = 15。\\n(c) 平均数 = \\\\frac{3+8+11+15+15+20+23}{7} = \\\\frac{95}{7} \\\\approx 13.57。",
+        "source": "0580/22/M/J/18"
+      }
+    ]
+  },
+  {
+    "id": "kp-9.3-02",
+    "addQuiz": [
+      {
+        "q": "In a frequency table with grouped data, which value is used as the 'representative' for each class when estimating the mean?",
+        "q_zh": "在分组数据的频数表中，估算平均数时使用哪个值作为每个类别的“代表”？",
+        "o": [
+          "The lower class boundary",
+          "The upper class boundary",
+          "The class width",
+          "The class midpoint"
+        ],
+        "a": 3,
+        "e": "We use the class midpoint (mid-interval value) to represent all values in that group, assuming they are evenly distributed.",
+        "e_zh": "我们使用组中值（类中点）来代表该组中的所有数值，假设它们是均匀分布的。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-estimate-mean",
+        "question": "The table shows the time, $t$ minutes, taken by students to solve a puzzle.\\n\\\\begin{array}{|c|c|c|c|} \\\\hline \\\\text{Time } (t) & 0 < t \\\\le 10 & 10 < t \\\\le 20 & 20 < t \\\\le 40 \\\\\\\\ \\\\hline \\\\text{Frequency} & 5 & 12 & 8 \\\\\\\\ \\\\hline \\\\end{array}\\nCalculate an estimate of the mean time.",
+        "question_zh": "下表显示了学生解决谜题所需的时间 $t$ 分钟。\\n\\\\begin{array}{|c|c|c|c|} \\\\hline \\\\text{时间 } (t) & 0 < t \\\\le 10 & 10 < t \\\\le 20 & 20 < t \\\\le 40 \\\\\\\\ \\\\hline \\\\text{频数} & 5 & 12 & 8 \\\\\\\\ \\\\hline \\\\end{array}\\n计算平均时间的估计值。",
+        "solution": "1. Find midpoints ($x$): 5, 15, 30.\\n2. Calculate $fx$: $5 \\\\times 5 = 25$, $12 \\\\times 15 = 180$, $8 \\\\times 30 = 240$.\\n3. Sum $fx$: $25 + 180 + 240 = 445$.\\n4. Sum $f$: $5 + 12 + 8 = 25$.\\n5. Estimated Mean = $445 \\\\div 25 = 17.8$ minutes.",
+        "solution_zh": "1. 找出组中值 ($x$)：5, 15, 30。\\n2. 计算 $fx$：$5 \\\\times 5 = 25$, $12 \\\\times 15 = 180$, $8 \\\\times 30 = 240$。\\n3. 计算 $fx$ 总和：$25 + 180 + 240 = 445$。\\n4. 计算频数总和 $f$：$5 + 12 + 8 = 25$。\\n5. 估计平均数 = $445 \\\\div 25 = 17.8$ 分钟。",
+        "source": "0580/41/O/N/20"
+      }
+    ]
+  },
+  {
+    "id": "kp-9.4-01",
+    "addQuiz": [
+      {
+        "q": "In a pie chart representing 120 people, a sector has an angle of $72^\\\\circ$. How many people does this sector represent?",
+        "q_zh": "在一个代表120人的饼图中，一个扇形的圆心角为 $72^\\\\circ$。这个扇形代表多少人？",
+        "o": [
+          "12",
+          "24",
+          "36",
+          "72"
+        ],
+        "a": 1,
+        "e": "Number of people = \\\\frac{72}{360} \\\\times 120 = 24.",
+        "e_zh": "人数 = \\\\frac{72}{360} \\\\times 120 = 24。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-pie-angle",
+        "question": "A survey of 60 students about their favourite fruit gave these results: Apple (25), Banana (20), Orange (15). Calculate the sector angle for 'Banana' in a pie chart.",
+        "question_zh": "对60名学生关于最喜欢的水果的调查结果如下：苹果 (25)，香蕉 (20)，橙子 (15)。计算饼图中“香蕉”对应的扇形角度。",
+        "solution": "Sector angle = \\\\frac{20}{60} \\\\times 360^\\\\circ = 120^\\\\circ$.",
+        "solution_zh": "扇形角度 = \\\\frac{20}{60} \\\\times 360^\\\\circ = 120^\\\\circ$。",
+        "source": "0580/23/M/J/17"
+      }
+    ]
+  },
+  {
+    "id": "kp-9.4-02",
+    "addQuiz": [
+      {
+        "q": "A stem-and-leaf diagram has a key: $2 | 3$ represents 23. What value is represented by $5 | 0$?",
+        "q_zh": "一个茎叶图的图例为：$2 | 3$ 代表 23。$5 | 0$ 代表什么数值？",
+        "o": [
+          "5",
+          "5.0",
+          "50",
+          "0.5"
+        ],
+        "a": 2,
+        "e": "Following the key $2 | 3 = 23$, the stem '5' is the tens digit and the leaf '0' is the units digit. So $5 | 0 = 50$.",
+        "e_zh": "根据图例 $2 | 3 = 23$，茎“5”是十位数，叶“0”是个位数。因此 $5 | 0 = 50$。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-read-stem",
+        "question": "Find the median of the data shown in this stem-and-leaf diagram:\\n\\\\begin{array}{r|l} 1 & 2, 5, 8 \\\\ 2 & 1, 3, 3, 7 \\\\ 3 & 0, 4 \\\\end{array} \\\\quad \\\\text{Key: } 1 | 2 = 12",
+        "question_zh": "求该茎叶图所示数据的中位数：\\n\\\\begin{array}{r|l} 1 & 2, 5, 8 \\\\ 2 & 1, 3, 3, 7 \\\\ 3 & 0, 4 \\\\end{array} \\\\quad \\\\text{图例: } 1 | 2 = 12",
+        "solution": "There are 9 data points in total. The median is the $\\\\frac{9+1}{2} = 5$th value. \\nList the values: 12, 15, 18, 21, 23, 23, 27, 30, 34. \\nThe 5th value is 23. Median = 23.",
+        "solution_zh": "总共有9个数据点。中位数是第 $\\\\frac{9+1}{2} = 5$ 个值。\\n列出数值：12, 15, 18, 21, 23, 23, 27, 30, 34。\\n第5个值是23。中位数 = 23。",
+        "source": "0580/22/O/N/21"
+      }
+    ]
+  },
+  {
+    "id": "kp-9.5-01",
+    "addQuiz": [
+      {
+        "q": "In a scatter diagram, as the value of $x$ increases, the value of $y$ generally decreases. What type of correlation is this?",
+        "q_zh": "在散点图中，随着 $x$ 值的增加，$y$ 值通常会减少。这是哪种类型的相关性？",
+        "o": [
+          "Positive correlation",
+          "Negative correlation",
+          "No correlation",
+          "Direct correlation"
+        ],
+        "a": 1,
+        "e": "Negative correlation occurs when one variable increases while the other decreases.",
+        "e_zh": "当一个变量增加而另一个变量减少时，就会出现负相关。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-type-corr",
+        "question": "Describe the type of correlation you would expect between:\\n(a) The outside temperature and sales of ice cream.\\n(b) The age of a car and its value.\\n(c) A person's height and their hair color.",
+        "question_zh": "描述下列各项之间预期的相关性类型：\\n(a) 室外温度与冰淇淋销量。\\n(b) 汽车的年龄与其价值。\\n(c) 一个人的身高与其头发颜色。",
+        "solution": "(a) **Positive correlation** (hotter weather leads to more sales).\\n(b) **Negative correlation** (older cars are usually worth less).\\n(c) **No correlation** (hair color is independent of height).",
+        "solution_zh": "(a) **正相关**（天气越热，销量越多）。\\n(b) **负相关**（车龄越长，价值通常越低）。\\n(c) **无相关**（头发颜色与身高无关）。",
+        "source": "Adapted from 0580/32/M/J/20"
+      }
+    ]
+  },
+  {
+    "id": "kp-9.5-02",
+    "addQuiz": [
+      {
+        "q": "When drawing a line of best fit on a scatter diagram, which of the following is TRUE?",
+        "q_zh": "在散点图上绘制最佳拟合线时，下列哪项是正确的？",
+        "o": [
+          "The line must pass through the origin (0,0)",
+          "The line must connect the first and last points",
+          "The line should have roughly equal numbers of points on either side",
+          "The line must pass through every point on the diagram"
+        ],
+        "a": 2,
+        "e": "A line of best fit should follow the trend of the data and aim to have an approximately equal number of points above and below it.",
+        "e_zh": "最佳拟合线应遵循数据趋势，并力求使其上方和下方的点数大致相等。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-draw-estimate",
+        "question": "A scatter diagram shows the relationship between hours studied ($h$) and test score ($s$). The line of best fit passes through (2, 40) and (10, 80). Use this to estimate the score for a student who studied for 7 hours.",
+        "question_zh": "散点图显示了学习时间 ($h$) 与考试成绩 ($s$) 之间的关系。最佳拟合线穿过 (2, 40) 和 (10, 80)。利用此信息估计学习了 7 小时的学生的成绩。",
+        "solution": "1. Find the gradient $m = \\\\frac{80-40}{10-2} = 5$.\\n2. Equation: $s = 5h + 30$.\\n3. For $h=7$: $s = 5(7) + 30 = 65$.",
+        "solution_zh": "1. 计算斜率 $m = \\\\frac{80-40}{10-2} = 5$。\\n2. 方程：$s = 5h + 30$。\\n3. 当 $h=7$ 时：$s = 5(7) + 30 = 65$。",
+        "source": "0580/42/M/J/19"
+      }
+    ]
+  },
+  {
+    "id": "kp-9.6-01",
+    "addQuiz": [
+      {
+        "q": "When plotting a cumulative frequency curve, the cumulative frequency values are plotted against which value for each class?",
+        "q_zh": "绘制累积频率曲线时，累积频率值应对应每个组别的哪个值进行绘制？",
+        "o": [
+          "The lower class boundary",
+          "The upper class boundary",
+          "The class midpoint",
+          "The class width"
+        ],
+        "a": 1,
+        "e": "Cumulative frequency represents the total frequency 'up to' a certain point, so it is always plotted at the upper boundary of the class interval.",
+        "e_zh": "累积频率代表“截止到”某一点的总频率，因此它总是对应类区间的上边界进行绘制。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-plot-cf",
+        "question": "Complete the cumulative frequency table from the given frequency table:\\n\\\\begin{array}{|c|c|c|} \\\\hline \\\\text{Mass } (m \\\\text{ kg}) & \\\\text{Frequency} & \\\\text{Cumulative Frequency} \\\\\\\\ \\\\hline 0 < m \\\\le 10 & 8 & 8 \\\\\\\\ \\\\hline 10 < m \\\\le 20 & 15 & \\\\dots \\\\\\\\ \\\\hline 20 < m \\\\le 30 & 12 & \\\\dots \\\\\\\\ \\\\hline 30 < m \\\\le 40 & 5 & \\\\dots \\\\\\\\ \\\\hline \\\\end{array}",
+        "question_zh": "根据给定的频数表完成累积频数表：\\n\\\\begin{array}{|c|c|c|} \\\\hline \\\\text{质量 } (m \\\\text{ kg}) & \\\\text{频数} & \\\\text{累积频数} \\\\\\\\ \\\\hline 0 < m \\\\le 10 & 8 & 8 \\\\\\\\ \\\\hline 10 < m \\\\le 20 & 15 & \\\\dots \\\\\\\\ \\\\hline 20 < m \\\\le 30 & 12 & \\\\dots \\\\\\\\ \\\\hline 30 < m \\\\le 40 & 5 & \\\\dots \\\\\\\\ \\\\hline \\\\end{array}",
+        "solution": "Add frequencies successively:\\n$m \\\\le 20$: $8 + 15 = 23$\\n$m \\\\le 30$: $23 + 12 = 35$\\n$m \\\\le 40$: $35 + 5 = 40$",
+        "solution_zh": "逐次相加频数：\\n$m \\\\le 20$: $8 + 15 = 23$\\n$m \\\\le 30$: $23 + 12 = 35$\\n$m \\\\le 40$: $35 + 5 = 40$",
+        "source": "0580/43/O/N/21"
+      }
+    ]
+  },
+  {
+    "id": "kp-9.6-02",
+    "addQuiz": [
+      {
+        "q": "On a cumulative frequency curve for 200 items, at what cumulative frequency value do you read to find the lower quartile ($Q_1$)?",
+        "q_zh": "在包含200个项目的累积频率曲线上，你应该读取哪个累积频率值来找到下四分位数 ($Q_1$)？",
+        "o": [
+          "25",
+          "50",
+          "100",
+          "150"
+        ],
+        "a": 1,
+        "e": "The lower quartile ($Q_1$) is at 25% of the total frequency. $0.25 \\\\times 200 = 50$.",
+        "e_zh": "下四分位数 ($Q_1$) 位于总频率的 25% 处。$0.25 \\\\times 200 = 50$。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-read-cf-stats",
+        "question": "A cumulative frequency curve for the marks of 80 students is drawn. The reading at cumulative frequency 20 is 35 marks, and at cumulative frequency 60 is 75 marks. Find the interquartile range (IQR).",
+        "question_zh": "绘制了80名学生成绩的累积频率曲线。在累积频率为20处读取的值为35分，在累积频率为60处读取的值为75分。求四分位距 (IQR)。",
+        "solution": "1. Lower Quartile ($Q_1$) is at $0.25 \\\\times 80 = 20$. So $Q_1 = 35$.\\n2. Upper Quartile ($Q_3$) is at $0.75 \\\\times 80 = 60$. So $Q_3 = 75$.\\n3. IQR = $Q_3 - Q_1 = 75 - 35 = 40$.",
+        "solution_zh": "1. 下四分位数 ($Q_1$) 位于 $0.25 \\\\times 80 = 20$ 处。因此 $Q_1 = 35$。\\n2. 上四分位数 ($Q_3$) 位于 $0.75 \\\\times 80 = 60$ 处。因此 $Q_3 = 75$。\\n3. IQR = $Q_3 - Q_1 = 75 - 35 = 40$。",
+        "source": "0580/41/M/J/22"
+      }
+    ]
+  },
+  {
+    "id": "kp-9.7-01",
+    "addQuiz": [
+      {
+        "q": "In a histogram, a class interval $10 < x \\\\le 25$ has a frequency of 30. What is the frequency density for this bar?",
+        "q_zh": "在直方图中，类区间 $10 < x \\\\le 25$ 的频数为 30。该矩形的频数密度是多少？",
+        "o": [
+          "0.5",
+          "2",
+          "3",
+          "450"
+        ],
+        "a": 1,
+        "e": "Frequency Density = Frequency \\\\div Class Width. Width = $25 - 10 = 15$. FD = $30 \\\\div 15 = 2$.",
+        "e_zh": "频数密度 = 频数 \\\\div 组距。组距 = $25 - 10 = 15$。频数密度 = $30 \\\\div 15 = 2$。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-calc-fd",
+        "question": "The table shows the heights of plants. Calculate the frequency density for each class.\\n\\\\begin{array}{|c|c|c|} \\\\hline \\\\text{Height } (h \\\\text{ cm}) & \\\\text{Frequency} & \\\\text{FD} \\\\\\\\ \\\\hline 0 < h \\\\le 5 & 10 & \\\\dots \\\\\\\\ \\\\hline 5 < h \\\\le 15 & 30 & \\\\dots \\\\\\\\ \\\\hline 15 < h \\\\le 25 & 15 & \\\\dots \\\\\\\\ \\\\hline \\\\end{array}",
+        "question_zh": "下表显示了植物的高度。计算每个类别的频数密度。\\n\\\\begin{array}{|c|c|c|} \\\\hline \\\\text{高度 } (h \\\\text{ cm}) & \\\\text{频数} & \\\\text{频数密度} \\\\\\\\ \\\\hline 0 < h \\\\le 5 & 10 & \\\\dots \\\\\\\\ \\\\hline 5 < h \\\\le 15 & 30 & \\\\dots \\\\\\\\ \\\\hline 15 < h \\\\le 25 & 15 & \\\\dots \\\\\\\\ \\\\hline \\\\end{array}",
+        "solution": "1. Width 5: FD = $10 \\\\div 5 = 2$\\n2. Width 10: FD = $30 \\\\div 10 = 3$\\n3. Width 10: FD = $15 \\\\div 10 = 1.5$",
+        "solution_zh": "1. 组距 5：频数密度 = $10 \\\\div 5 = 2$\\n2. 组距 10：频数密度 = $30 \\\\div 10 = 3$\\n3. 组距 10：频数密度 = $15 \\\\div 10 = 1.5$",
+        "source": "0580/42/O/N/20"
+      }
+    ]
+  }
+]

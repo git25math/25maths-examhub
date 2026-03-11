@@ -1,0 +1,154 @@
+[
+  {
+    "id": "kp-5.1-01",
+    "addQuiz": [],
+    "addExamples": [
+      {
+        "patternId": "ep-unit-conv",
+        "question": "The volume of a container is $0.35\\text{ m}^3$. Calculate its volume in cubic centimetres $(\\text{cm}^3)$.",
+        "question_zh": "一个容器的体积是 $0.35\\text{ m}^3$。请计算该体积是多少立方厘米 $(\\text{cm}^3)$。",
+        "solution": "$1\\text{ m} = 100\\text{ cm}$. \\\\ $1\\text{ m}^3 = (100\\text{ cm})^3 = 1,000,000\\text{ cm}^3$. \\\\ Volume $= 0.35 \\times 1,000,000 = 350,000\\text{ cm}^3$.",
+        "solution_zh": "$1\\text{ m} = 100\\text{ cm}$。 \\\\ $1\\text{ m}^3 = (100\\text{ cm})^3 = 1,000,000\\text{ cm}^3$。 \\\\ 体积 $= 0.35 \\times 1,000,000 = 350,000\\text{ cm}^3$。",
+        "source": "0580/22/M/J/21"
+      }
+    ]
+  },
+  {
+    "id": "kp-5.2-01",
+    "addQuiz": [
+      {
+        "q": "A trapezium has parallel sides of length $12\\text{ cm}$ and $18\\text{ cm}$. The area is $120\\text{ cm}^2$. Calculate the perpendicular height between the parallel sides.",
+        "q_zh": "一个梯形的平行边长分别为 $12\\text{ cm}$ 和 $18\\text{ cm}$。其面积为 $120\\text{ cm}^2$。计算两条平行边之间的垂直高度。",
+        "o": ["$8\\text{ cm}$", "$4\\text{ cm}$", "$16\\text{ cm}$", "$10\\text{ cm}$"],
+        "a": 0,
+        "e": "Area $= \\frac{1}{2}(a+b)h$. \\\\ $120 = \\frac{1}{2}(12+18)h \\Rightarrow 120 = 15h \\Rightarrow h = 8\\text{ cm}$.",
+        "e_zh": "面积 $= \\frac{1}{2}(a+b)h$。 \\\\ $120 = \\frac{1}{2}(12+18)h \\Rightarrow 120 = 15h \\Rightarrow h = 8\\text{ cm}$。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-trapezium-area",
+        "question": "Calculate the area of a trapezium where the parallel sides are $7.4\\text{ cm}$ and $10.6\\text{ cm}$, and the height is $5\\text{ cm}$.",
+        "question_zh": "计算一个梯形的面积，其平行边长分别为 $7.4\\text{ cm}$ 和 $10.6\\text{ cm}$，高度为 $5\\text{ cm}$。",
+        "solution": "Area $= \\frac{1}{2}(7.4 + 10.6) \\times 5 = \\frac{1}{2}(18) \\times 5 = 9 \\times 5 = 45\\text{ cm}^2$.",
+        "solution_zh": "面积 $= \\frac{1}{2}(7.4 + 10.6) \\times 5 = \\frac{1}{2}(18) \\times 5 = 9 \\times 5 = 45\\text{ cm}^2$。",
+        "source": "Adapted from 0580/41/O/N/20"
+      }
+    ]
+  },
+  {
+    "id": "kp-5.3-01",
+    "addQuiz": [
+      {
+        "q": "The circumference of a circle is $20\\pi\\text{ cm}$. Calculate the area of the circle in terms of $\\pi$.",
+        "q_zh": "一个圆的周长是 $20\\pi\\text{ cm}$。以 $\\pi$ 表示该圆的面积。",
+        "o": ["$100\\pi\\text{ cm}^2$", "$10\\pi\\text{ cm}^2$", "$400\\pi\\text{ cm}^2$", "$40\\pi\\text{ cm}^2$"],
+        "a": 0,
+        "e": "$C = 2\\pi r = 20\\pi \\Rightarrow r = 10$. \\\\ Area $= \\pi r^2 = \\pi(10)^2 = 100\\pi$.",
+        "e_zh": "$C = 2\\pi r = 20\\pi \\Rightarrow r = 10$。 \\\\ 面积 $= \\pi r^2 = \\pi(10)^2 = 100\\pi$。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-circle-calc",
+        "question": "A circle has an area of $154\\text{ cm}^2$. Calculate its circumference. (Use $\\pi = \\frac{22}{7}$).",
+        "question_zh": "一个圆的面积为 $154\\text{ cm}^2$。计算其周长。（取 $\\pi = \\frac{22}{7}$）。",
+        "solution": "Area $= \\pi r^2 = 154 \\Rightarrow \\frac{22}{7}r^2 = 154 \\Rightarrow r^2 = 154 \\times \\frac{7}{22} = 49 \\Rightarrow r = 7$. \\\\ Circumference $= 2 \\times \\frac{22}{7} \\times 7 = 44\\text{ cm}$.",
+        "solution_zh": "面积 $= \\pi r^2 = 154 \\Rightarrow \\frac{22}{7}r^2 = 154 \\Rightarrow r^2 = 154 \\times \\frac{7}{22} = 49 \\Rightarrow r = 7$。 \\\\ 周长 $= 2 \\times \\frac{22}{7} \\times 7 = 44\\text{ cm}$。",
+        "source": "0580/23/O/N/18"
+      }
+    ]
+  },
+  {
+    "id": "kp-5.3-02",
+    "addQuiz": [
+      {
+        "q": "A sector of a circle with radius $9\\text{ cm}$ has an angle of $40^\\circ$. Calculate the area of the sector in terms of $\\pi$.",
+        "q_zh": "一个半径为 $9\\text{ cm}$ 的扇形，其圆心角为 $40^\\circ$。以 $\\pi$ 表示该扇形的面积。",
+        "o": ["$9\\pi\\text{ cm}^2$", "$18\\pi\\text{ cm}^2$", "$2\\pi\\text{ cm}^2$", "$81\\pi\\text{ cm}^2$"],
+        "a": 0,
+        "e": "Area $= \\frac{\\theta}{360} \\times \\pi r^2 = \\frac{40}{360} \\times \\pi \\times 9^2 = \\frac{1}{9} \\times 81\\pi = 9\\pi$.",
+        "e_zh": "面积 $= \\frac{\\theta}{360} \\times \\pi r^2 = \\frac{40}{360} \\times \\pi \\times 9^2 = \\frac{1}{9} \\times 81\\pi = 9\\pi$。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-sector-reverse",
+        "question": "The arc length of a sector is $4\\pi\\text{ cm}$ and the radius is $12\\text{ cm}$. Find the angle of the sector.",
+        "question_zh": "一个扇形的弧长为 $4\\pi\\text{ cm}$，半径为 $12\\text{ cm}$。求该扇形的圆心角。",
+        "solution": "Arc Length $= \\frac{\\theta}{360} \\times 2\\pi r \\Rightarrow 4\\pi = \\frac{\\theta}{360} \\times 2\\pi(12) \\Rightarrow 4 = \\frac{24\\theta}{360} \\Rightarrow \\theta = \\frac{4 \\times 360}{24} = 60^\\circ$.",
+        "solution_zh": "弧长 $= \\frac{\\theta}{360} \\times 2\\pi r \\Rightarrow 4\\pi = \\frac{\\theta}{360} \\times 2\\pi(12) \\Rightarrow 4 = \\frac{24\\theta}{360} \\Rightarrow \\theta = \\frac{4 \\times 360}{24} = 60^\\circ$。",
+        "source": "0580/21/M/J/22"
+      }
+    ]
+  },
+  {
+    "id": "kp-5.4-01",
+    "addQuiz": [
+      {
+        "q": "A cylinder has a base diameter of $10\\text{ cm}$ and a height of $15\\text{ cm}$. Calculate its curved surface area in terms of $\\pi$.",
+        "q_zh": "一个圆柱体的底面直径为 $10\\text{ cm}$，高度为 $15\\text{ cm}$。以 $\\pi$ 表示其侧面积。",
+        "o": ["$150\\pi\\text{ cm}^2$", "$300\\pi\\text{ cm}^2$", "$75\\pi\\text{ cm}^2$", "$1500\\pi\\text{ cm}^2$"],
+        "a": 0,
+        "e": "Radius $= 5\\text{ cm}$. Curved Surface Area $= 2\\pi rh = 2 \\times \\pi \\times 5 \\times 15 = 150\\pi$.",
+        "e_zh": "半径 $= 5\\text{ cm}$。侧面积 $= 2\\pi rh = 2 \\times \\pi \\times 5 \\times 15 = 150\\pi$。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-cylinder-volume",
+        "question": "A cylinder has a volume of $72\\pi\\text{ cm}^3$ and a height of $8\\text{ cm}$. Calculate its radius.",
+        "question_zh": "一个圆柱体的体积为 $72\\pi\\text{ cm}^3$，高度为 $8\\text{ cm}$。计算其半径。",
+        "solution": "$V = \\pi r^2 h \\Rightarrow 72\\pi = \\pi r^2 (8) \\Rightarrow 72 = 8r^2 \\Rightarrow r^2 = 9 \\Rightarrow r = 3\\text{ cm}$.",
+        "solution_zh": "$V = \\pi r^2 h \\Rightarrow 72\\pi = \\pi r^2 (8) \\Rightarrow 72 = 8r^2 \\Rightarrow r^2 = 9 \\Rightarrow r = 3\\text{ cm}$。",
+        "source": "0580/42/O/N/19"
+      }
+    ]
+  },
+  {
+    "id": "kp-5.4-02",
+    "addQuiz": [
+      {
+        "q": "A cone has a radius of $6\\text{ cm}$ and a height of $10\\text{ cm}$. Calculate its volume. (Give your answer to 1 decimal place).",
+        "q_zh": "一个圆锥的半径为 $6\\text{ cm}$，高度为 $10\\text{ cm}$。计算其体积。（保留一位小数）。",
+        "o": ["$377.0\\text{ cm}^3$", "$1131.0\\text{ cm}^3$", "$188.5\\text{ cm}^3$", "$120.0\\text{ cm}^3$"],
+        "a": 0,
+        "e": "$V = \\frac{1}{3}\\pi r^2 h = \\frac{1}{3} \\times \\pi \\times 6^2 \\times 10 = 120\\pi \\approx 376.99 \\dots$",
+        "e_zh": "$V = \\frac{1}{3}\\pi r^2 h = \\frac{1}{3} \\times \\pi \\times 6^2 \\times 10 = 120\\pi \\approx 376.99 \\dots$"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-sphere-calc",
+        "question": "A sphere has a volume of $36\\pi\\text{ cm}^3$. Find its surface area in terms of $\\pi$.",
+        "question_zh": "一个球体的体积为 $36\\pi\\text{ cm}^3$。以 $\\pi$ 表示其表面积。",
+        "solution": "$V = \\frac{4}{3}\\pi r^3 = 36\\pi \\Rightarrow r^3 = 27 \\Rightarrow r = 3$. \\\\ Surface Area $= 4\\pi r^2 = 4\\pi(3^2) = 36\\pi\\text{ cm}^2$.",
+        "solution_zh": "$V = \\frac{4}{3}\\pi r^3 = 36\\pi \\Rightarrow r^3 = 27 \\Rightarrow r = 3$。 \\\\ 表面积 $= 4\\pi r^2 = 4\\pi(3^2) = 36\\pi\\text{ cm}^2$。",
+        "source": "Adapted from 0580/43/M/J/21"
+      }
+    ]
+  },
+  {
+    "id": "kp-5.5-01",
+    "addQuiz": [
+      {
+        "q": "A rectangle measures $12\\text{ cm}$ by $8\\text{ cm}$. A square of side $4\\text{ cm}$ is removed from one corner. Calculate the remaining area.",
+        "q_zh": "一个长方形的长宽分别为 $12\\text{ cm}$ 和 $8\\text{ cm}$。从一个角切掉一个边长为 $4\\text{ cm}$ 的正方形。计算剩余部分的面积。",
+        "o": ["$80\\text{ cm}^2$", "$96\\text{ cm}^2$", "$64\\text{ cm}^2$", "$112\\text{ cm}^2$"],
+        "a": 0,
+        "e": "Area of rectangle $= 12 \\times 8 = 96$. Area of square $= 4 \\times 4 = 16$. Remaining area $= 96 - 16 = 80$.",
+        "e_zh": "长方形面积 $= 12 \\times 8 = 96$。正方形面积 $= 4 \\times 4 = 16$。剩余面积 $= 96 - 16 = 80$。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-shaded-area",
+        "question": "A circle is inscribed in a square of side $10\\text{ cm}$. Calculate the shaded area between the square and the circle. (Use $\\pi = 3.142$).",
+        "question_zh": "一个边长为 $10\\text{ cm}$ 的正方形内切一个圆。计算正方形与圆之间的阴影部分面积。（取 $\\pi = 3.142$）。",
+        "solution": "Area of square $= 10 \\times 10 = 100$. Radius of circle $= 5$. Area of circle $= \\pi \\times 5^2 = 25\\pi \\approx 78.55$. Shaded area $= 100 - 78.55 = 21.45\\text{ cm}^2$.",
+        "solution_zh": "正方形面积 $= 10 \\times 10 = 100$。圆的半径 $= 5$。圆的面积 $= \\pi \\times 5^2 = 25\\pi \\approx 78.55$。阴影面积 $= 100 - 78.55 = 21.45\\text{ cm}^2$。",
+        "source": "0580/42/M/J/20"
+      }
+    ]
+  }
+]

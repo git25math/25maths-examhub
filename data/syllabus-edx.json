@@ -1,0 +1,599 @@
+{
+  "version": "1.0.0",
+  "syllabus": "Edexcel 4MA1 Mathematics (Specification A)",
+  "chapters": [
+    {
+      "id": "ch1",
+      "num": 1,
+      "title": "Numbers and the number system",
+      "title_zh": "数与数系",
+      "teachingUnits": [
+        { "unit": 1, "title": "Integers and place value", "tier": "foundation", "hours": 4, "sections": ["1.1"] },
+        { "unit": 2, "title": "Decimals", "tier": "foundation", "hours": 4, "sections": ["1.3", "1.8", "1.11"] },
+        { "unit": 3, "title": "Special numbers and powers", "tier": "foundation", "hours": 7, "sections": ["1.1", "1.4"] },
+        { "unit": 4, "title": "Fractions", "tier": "foundation", "hours": 4, "sections": ["1.2"] },
+        { "unit": 5, "title": "Percentages", "tier": "foundation", "hours": 9, "sections": ["1.6"] },
+        { "unit": 6, "title": "Ratio and proportion", "tier": "foundation", "hours": 7, "sections": ["1.7", "1.10"] },
+        { "unit": 7, "title": "Arithmetic of fractions", "tier": "foundation", "hours": 4, "sections": ["1.2"] },
+        { "unit": 8, "title": "Set language and Venn diagrams", "tier": "foundation", "hours": 7, "sections": ["1.5"] },
+        { "unit": 9, "title": "Indices and standard form", "tier": "foundation", "hours": 5, "sections": ["1.4", "1.9"] },
+        { "unit": 1, "title": "Decimals", "tier": "higher", "hours": 4, "sections": ["1.3"] },
+        { "unit": 2, "title": "Special numbers, powers and roots", "tier": "higher", "hours": 6, "sections": ["1.4"] },
+        { "unit": 3, "title": "Fractions", "tier": "higher", "hours": 4, "sections": ["1.2"] },
+        { "unit": 4, "title": "Percentages", "tier": "higher", "hours": 5, "sections": ["1.6"] },
+        { "unit": 5, "title": "Ratio and proportion", "tier": "higher", "hours": 3, "sections": ["1.7"] },
+        { "unit": 6, "title": "Indices and standard form", "tier": "higher", "hours": 4, "sections": ["1.4", "1.9"] },
+        { "unit": 7, "title": "Degree of accuracy", "tier": "higher", "hours": 4, "sections": ["1.8"] },
+        { "unit": 8, "title": "Set language and Venn diagrams", "tier": "higher", "hours": 6, "sections": ["1.5"] }
+      ],
+      "sections": [
+        {
+          "id": "1.1",
+          "title": "Integers",
+          "title_zh": "整数",
+          "slug": "edx-1-1",
+          "tier": "both",
+          "foundation_content": "Understand and use integers, both positive and negative. Understand place value. Use directed numbers in practical situations. Order integers. Use the four rules of addition, subtraction, multiplication and division. Use brackets and the hierarchy of operations (BIDMAS/BODMAS). Identify and use: odd numbers, even numbers, prime numbers, factors, multiples. Find common factors, common multiples, HCF, LCM. Express a number as a product of its prime factors.",
+          "higher_content": "See Foundation tier.",
+          "vocabSlugs": ["edx-num-integers"],
+          "questionTopics": ["Integers"],
+          "sow": { "foundation": [1], "higher": [1] }
+        },
+        {
+          "id": "1.2",
+          "title": "Fractions",
+          "title_zh": "分数",
+          "slug": "edx-1-2",
+          "tier": "both",
+          "foundation_content": "Understand and use equivalent fractions, simplifying a fraction by cancelling common factors. Add, subtract, multiply and divide fractions and mixed numbers. Convert a fraction to a decimal or a percentage. Understand and use unit fractions as multiplicative inverses. Order fractions using a common denominator. Use fractions to represent recurring decimals.",
+          "higher_content": "See Foundation tier.",
+          "vocabSlugs": ["edx-num-fractions"],
+          "questionTopics": ["Fractions"],
+          "sow": { "foundation": [2, 4], "higher": [2] }
+        },
+        {
+          "id": "1.3",
+          "title": "Decimals",
+          "title_zh": "小数",
+          "slug": "edx-1-3",
+          "tier": "both",
+          "foundation_content": "Understand place value in decimals. Add, subtract, multiply and divide decimals. Order decimals. Convert between fractions, decimals and percentages. Recognise that a terminating decimal is a fraction. Use decimals appropriately and efficiently.",
+          "higher_content": "Convert a recurring decimal to a fraction.",
+          "vocabSlugs": ["edx-num-decimals"],
+          "questionTopics": ["Decimals"],
+          "sow": { "foundation": [2], "higher": [2] }
+        },
+        {
+          "id": "1.4",
+          "title": "Powers and roots",
+          "title_zh": "幂与根",
+          "slug": "edx-1-4",
+          "tier": "both",
+          "foundation_content": "Identify square numbers, cube numbers and triangular numbers. Calculate squares, square roots, cubes and cube roots. Use index notation and index laws for multiplication, division, and raising a power to a power (positive integer indices). Express integers as a product of powers of prime factors.",
+          "higher_content": "Use surds and manipulate surds, including rationalising a denominator. Use and understand fractional indices (e.g. $a^{\\frac{1}{2}} = \\sqrt{a}$). Use and understand negative indices (e.g. $a^{-n} = \\frac{1}{a^n}$).",
+          "vocabSlugs": ["edx-num-powers"],
+          "questionTopics": ["Powers And Roots"],
+          "sow": { "foundation": [3, 5], "higher": [3] }
+        },
+        {
+          "id": "1.5",
+          "title": "Set language and notation",
+          "title_zh": "集合语言与符号",
+          "slug": "edx-1-5",
+          "tier": "both",
+          "foundation_content": "Understand the definition of a set. Use set notation: ∈, ∉, ∅ (or {}). Understand and use the universal set, subsets, intersection (∩) and union (∪). Use Venn diagrams to represent sets and their relationships. List or describe subsets of a given set.",
+          "higher_content": "Use sets defined algebraically. Calculate $n(A)$, $n(A \\cup B)$, $n(A \\cap B)$. Use systematic listing strategies, including the product rule for counting. Use Venn diagrams to solve problems involving three sets.",
+          "vocabSlugs": ["edx-num-sets"],
+          "questionTopics": ["Set Language And Notation"],
+          "sow": { "foundation": [10], "higher": [10, 11] }
+        },
+        {
+          "id": "1.6",
+          "title": "Percentages",
+          "title_zh": "百分比",
+          "slug": "edx-1-6",
+          "tier": "both",
+          "foundation_content": "Understand percentage as 'per hundred'. Express one quantity as a percentage of another. Calculate a percentage of a given quantity. Increase and decrease by a given percentage. Calculate percentage increase and decrease. Express percentage change. Calculate original value given the result after a percentage change (reverse percentage).",
+          "higher_content": "Calculate repeated percentage change (e.g. compound interest, depreciation). Solve problems involving compound interest and depreciation.",
+          "vocabSlugs": ["edx-num-pct"],
+          "questionTopics": ["Percentages"],
+          "sow": { "foundation": [4, 19], "higher": [4, 5] }
+        },
+        {
+          "id": "1.7",
+          "title": "Ratio and proportion",
+          "title_zh": "比与比例",
+          "slug": "edx-1-7",
+          "tier": "both",
+          "foundation_content": "Use ratio notation, including reduction to simplest form. Divide a quantity in a given ratio. Use proportion (direct and inverse). Calculate using exchange rates and map scales. Use a calculator efficiently and appropriately for multi-step calculations.",
+          "higher_content": "See Foundation tier.",
+          "vocabSlugs": ["edx-num-ratio"],
+          "questionTopics": ["Ratio And Proportion"],
+          "sow": { "foundation": [11, 19], "higher": [11, 12] }
+        },
+        {
+          "id": "1.8",
+          "title": "Degree of accuracy",
+          "title_zh": "精确度",
+          "slug": "edx-1-8",
+          "tier": "both",
+          "foundation_content": "Round numbers to a given number of decimal places. Round numbers to a given number of significant figures. Identify upper and lower bounds of a rounded value. Use estimation to evaluate approximations to numerical calculations.",
+          "higher_content": "Solve problems using upper and lower bounds where values have been rounded, including in the context of measurement.",
+          "vocabSlugs": ["edx-num-accuracy"],
+          "questionTopics": ["Degree Of Accuracy"],
+          "sow": { "foundation": [3, 28], "higher": [9, 30] }
+        },
+        {
+          "id": "1.9",
+          "title": "Standard form",
+          "title_zh": "标准式",
+          "slug": "edx-1-9",
+          "tier": "both",
+          "foundation_content": "Use standard form to represent large and small numbers. Calculate with numbers in standard form.",
+          "higher_content": "Solve problems involving standard form calculations.",
+          "vocabSlugs": ["edx-num-standard"],
+          "questionTopics": ["Standard Form"],
+          "sow": { "foundation": [5], "higher": [3] }
+        },
+        {
+          "id": "1.10",
+          "title": "Applying number",
+          "title_zh": "数的应用",
+          "slug": "edx-1-10",
+          "tier": "both",
+          "foundation_content": "Use the four operations in practical situations including money, time, mass and length. Use metric units of mass, length, area, volume and capacity. Convert between metric units and between common imperial and metric units. Understand and use compound measures including speed, density and pressure.",
+          "higher_content": "See Foundation tier.",
+          "vocabSlugs": ["edx-num-applying"],
+          "questionTopics": ["Applying Number"],
+          "sow": { "foundation": [11, 18], "higher": [11] }
+        },
+        {
+          "id": "1.11",
+          "title": "Electronic calculators",
+          "title_zh": "计算器使用",
+          "slug": "edx-1-11",
+          "tier": "both",
+          "foundation_content": "Use a scientific calculator efficiently. Interpret the calculator display. Use function keys for reciprocals, squares, powers, roots and fractions. Enter a range of calculations including those involving standard form and statistical functions.",
+          "higher_content": "See Foundation tier.",
+          "vocabSlugs": ["edx-num-calculator"],
+          "questionTopics": ["Electronic Calculators"],
+          "sow": { "foundation": [3, 28], "higher": [9] }
+        }
+      ]
+    },
+    {
+      "id": "ch2",
+      "num": 2,
+      "title": "Equations, formulae and identities",
+      "title_zh": "方程、公式与恒等式",
+      "teachingUnits": [
+        { "unit": 10, "title": "Algebraic manipulation", "tier": "foundation", "hours": 5, "sections": ["2.1", "2.2"] },
+        { "unit": 11, "title": "Expressions and formulae", "tier": "foundation", "hours": 6, "sections": ["2.3"] },
+        { "unit": 12, "title": "Linear equations and inequalities", "tier": "foundation", "hours": 8, "sections": ["2.4", "2.8"] },
+        { "unit": 16, "title": "Quadratic equations and graphs", "tier": "foundation", "hours": 5, "sections": ["2.7"] },
+        { "unit": 17, "title": "Simultaneous equations", "tier": "foundation", "hours": 4, "sections": ["2.6"] },
+        { "unit": 9, "title": "Algebraic manipulation", "tier": "higher", "hours": 8, "sections": ["2.2"] },
+        { "unit": 10, "title": "Expressions and formulae", "tier": "higher", "hours": 6, "sections": ["2.3"] },
+        { "unit": 11, "title": "Linear equations and inequalities", "tier": "higher", "hours": 4, "sections": ["2.4", "2.8"] },
+        { "unit": 15, "title": "Quadratic equations and graphs", "tier": "higher", "hours": 8, "sections": ["2.7"] },
+        { "unit": 17, "title": "Simultaneous equations", "tier": "higher", "hours": 5, "sections": ["2.6"] }
+      ],
+      "sections": [
+        {
+          "id": "2.1",
+          "title": "Use of symbols",
+          "title_zh": "符号使用",
+          "slug": "edx-2-1",
+          "tier": "both",
+          "foundation_content": "Understand that symbols may be used to represent numbers in equations, inequalities, expressions and formulae. Understand and use the conventions for representing multiplication, division and powers. Evaluate expressions by substituting numerical values for letters. Use index laws in algebra (positive integer indices).",
+          "higher_content": "Use index laws with fractional, negative and zero indices in algebraic expressions.",
+          "vocabSlugs": ["edx-alg-expr"],
+          "questionTopics": ["Use Of Symbols"],
+          "sow": { "foundation": [6, 12], "higher": [6, 13] }
+        },
+        {
+          "id": "2.2",
+          "title": "Algebraic manipulation",
+          "title_zh": "代数运算",
+          "slug": "edx-2-2",
+          "tier": "both",
+          "foundation_content": "Collect like terms. Multiply a single term over a bracket. Take out common factors. Expand the product of two linear expressions. Factorise quadratic expressions of the form $x^2 + bx + c$. Factorise the difference of two squares.",
+          "higher_content": "Expand the product of three linear expressions. Factorise quadratics of the form $ax^2 + bx + c$. Simplify and manipulate algebraic fractions. Complete the square for a quadratic expression. Construct and use algebraic proofs and arguments.",
+          "vocabSlugs": ["edx-alg-manip"],
+          "questionTopics": ["Algebraic Manipulation"],
+          "sow": { "foundation": [6, 12, 13], "higher": [6, 13, 14] }
+        },
+        {
+          "id": "2.3",
+          "title": "Expressions and formulae",
+          "title_zh": "表达式与公式",
+          "slug": "edx-2-3",
+          "tier": "both",
+          "foundation_content": "Understand that a letter may represent an unknown number or a variable. Use correct notation for expressions, equations, formulae and identities. Substitute numbers into expressions and formulae. Derive and use formulae. Change the subject of a formula where the subject only appears once.",
+          "higher_content": "Change the subject of a formula where the subject appears twice or as a power.",
+          "vocabSlugs": ["edx-alg-expr", "edx-alg-linear"],
+          "questionTopics": ["Expressions And Formulae"],
+          "sow": { "foundation": [6, 12], "higher": [6, 13, 14] }
+        },
+        {
+          "id": "2.4",
+          "title": "Linear equations",
+          "title_zh": "一次方程",
+          "slug": "edx-2-4",
+          "tier": "both",
+          "foundation_content": "Solve linear equations in one unknown, with integer, fractional or negative coefficients. Set up and solve linear equations from word problems or geometric contexts.",
+          "higher_content": "See Foundation tier.",
+          "vocabSlugs": ["edx-alg-linear"],
+          "questionTopics": ["Linear Equations", "Equations"],
+          "sow": { "foundation": [6, 12], "higher": [6] }
+        },
+        {
+          "id": "2.5",
+          "title": "Proportion",
+          "title_zh": "比例（代数）",
+          "slug": "edx-2-5",
+          "tier": "higher",
+          "foundation_content": "",
+          "higher_content": "Set up and use equations to solve problems involving direct and inverse proportion. Recognise and interpret graphs that illustrate direct and inverse proportion.",
+          "vocabSlugs": ["edx-alg-proportion"],
+          "questionTopics": ["Proportion"],
+          "sow": { "foundation": [], "higher": [12] }
+        },
+        {
+          "id": "2.6",
+          "title": "Simultaneous linear equations",
+          "title_zh": "联立方程",
+          "slug": "edx-2-6",
+          "tier": "both",
+          "foundation_content": "Solve simultaneous linear equations in two unknowns algebraically.",
+          "higher_content": "Interpret the solution of simultaneous equations graphically as the intersection of two lines. Solve linear simultaneous equations where one equation may need to be multiplied.",
+          "vocabSlugs": ["edx-alg-simul"],
+          "questionTopics": ["Simultaneous Linear Equations"],
+          "sow": { "foundation": [14], "higher": [15] }
+        },
+        {
+          "id": "2.7",
+          "title": "Quadratic equations",
+          "title_zh": "二次方程",
+          "slug": "edx-2-7",
+          "tier": "both",
+          "foundation_content": "Solve quadratic equations by factorisation.",
+          "higher_content": "Solve quadratic equations by using the quadratic formula. Solve quadratic equations by completing the square. Set up and solve quadratic equations from context. Solve simultaneous equations where one is linear and one is quadratic.",
+          "vocabSlugs": ["edx-alg-quadratic"],
+          "questionTopics": ["Quadratic Equations"],
+          "sow": { "foundation": [14, 15], "higher": [14, 15, 22] }
+        },
+        {
+          "id": "2.8",
+          "title": "Inequalities",
+          "title_zh": "不等式",
+          "slug": "edx-2-8",
+          "tier": "both",
+          "foundation_content": "Understand and use the symbols >, <, ≥, ≤. Solve simple linear inequalities in one variable. Represent the solution set on a number line. List integer values that satisfy an inequality. Represent inequalities graphically and identify regions.",
+          "higher_content": "Solve quadratic inequalities in one variable. Identify harder regions satisfying multiple inequalities.",
+          "vocabSlugs": ["edx-alg-ineq"],
+          "questionTopics": ["Inequalities"],
+          "sow": { "foundation": [15, 23], "higher": [22, 23] }
+        }
+      ]
+    },
+    {
+      "id": "ch3",
+      "num": 3,
+      "title": "Sequences, functions and graphs",
+      "title_zh": "数列、函数与图像",
+      "teachingUnits": [
+        { "unit": 13, "title": "Sequences", "tier": "foundation", "hours": 5, "sections": ["3.1"] },
+        { "unit": 14, "title": "Real life graphs", "tier": "foundation", "hours": 4, "sections": ["3.3"] },
+        { "unit": 15, "title": "Linear graphs", "tier": "foundation", "hours": 6, "sections": ["3.3"] },
+        { "unit": 16, "title": "Quadratic equations and graphs", "tier": "foundation", "hours": 5, "sections": ["3.3"] },
+        { "unit": 12, "title": "Sequences", "tier": "higher", "hours": 4, "sections": ["3.1"] },
+        { "unit": 13, "title": "Real life graphs", "tier": "higher", "hours": 2, "sections": ["3.3"] },
+        { "unit": 14, "title": "Linear graphs", "tier": "higher", "hours": 7, "sections": ["3.3"] },
+        { "unit": 15, "title": "Quadratic equations and graphs", "tier": "higher", "hours": 8, "sections": ["3.3"] },
+        { "unit": 16, "title": "Harder graphs and transformations", "tier": "higher", "hours": 7, "sections": ["3.3"] },
+        { "unit": 18, "title": "Function notation", "tier": "higher", "hours": 7, "sections": ["3.2"] },
+        { "unit": 19, "title": "Calculus", "tier": "higher", "hours": 8, "sections": ["3.4"] }
+      ],
+      "sections": [
+        {
+          "id": "3.1",
+          "title": "Sequences",
+          "title_zh": "数列",
+          "slug": "edx-3-1",
+          "tier": "both",
+          "foundation_content": "Generate terms of a sequence using a term-to-term rule or a position-to-term rule. Find and use the nth term of a linear sequence. Recognise and use Fibonacci-type sequences, quadratic sequences and geometric sequences.",
+          "higher_content": "Derive the formula for the nth term of an arithmetic sequence. Find the sum of the first n terms of an arithmetic series. Derive the formula for the nth term of a quadratic sequence.",
+          "vocabSlugs": ["edx-fn-seq"],
+          "questionTopics": ["Sequences"],
+          "sow": { "foundation": [7, 16], "higher": [7, 16, 17] }
+        },
+        {
+          "id": "3.2",
+          "title": "Function notation",
+          "title_zh": "函数符号",
+          "slug": "edx-3-2",
+          "tier": "higher",
+          "foundation_content": "",
+          "higher_content": "Understand and use function notation. Find the domain and range of a function. Find composite functions. Find inverse functions.",
+          "vocabSlugs": ["edx-fn-notation"],
+          "questionTopics": ["Function Notation"],
+          "sow": { "foundation": [], "higher": [17, 32] }
+        },
+        {
+          "id": "3.3",
+          "title": "Graphs",
+          "title_zh": "图像",
+          "slug": "edx-3-3",
+          "tier": "both",
+          "foundation_content": "Use and interpret coordinates in all four quadrants. Draw and interpret straight-line graphs including gradient and y-intercept. Recognise, plot and draw graphs of $y = mx + c$. Find the equation of a straight line from its graph. Generate points and plot graphs of quadratic functions. Interpret graphs of linear and quadratic functions. Read values from real-life graphs (distance–time, speed–time). Calculate the gradient of a straight line from coordinates.",
+          "higher_content": "Plot and recognise graphs of cubic, reciprocal, exponential and trigonometric functions. Apply transformations to graphs: $f(x) + a$, $f(x + a)$, $af(x)$, $f(ax)$. Find the gradient of a curve at a point using a tangent. Find the intersection of a line and a curve. Determine the equation of a line parallel or perpendicular to a given line.",
+          "vocabSlugs": ["edx-fn-linear", "edx-fn-nonlinear", "edx-fn-transform"],
+          "questionTopics": ["Geometry"],
+          "sow": { "foundation": [7, 8, 9, 16, 17], "higher": [7, 8, 16, 17, 26, 27, 28] }
+        },
+        {
+          "id": "3.4",
+          "title": "Calculus",
+          "title_zh": "微积分",
+          "slug": "edx-3-4",
+          "tier": "higher",
+          "foundation_content": "",
+          "higher_content": "Understand the concept of a variable rate of change. Differentiate integer powers of x. Determine gradients, rates of change, stationary points, and turning points by differentiation. Apply differentiation to kinematics (displacement, velocity, acceleration).",
+          "vocabSlugs": ["edx-fn-calculus"],
+          "questionTopics": ["Calculus"],
+          "sow": { "foundation": [], "higher": [28, 29] }
+        }
+      ]
+    },
+    {
+      "id": "ch4",
+      "num": 4,
+      "title": "Geometry and trigonometry",
+      "title_zh": "几何与三角",
+      "teachingUnits": [
+        { "unit": 18, "title": "Measures, bearings and scale drawings", "tier": "foundation", "hours": 5, "sections": ["4.4"] },
+        { "unit": 19, "title": "Symmetry, shapes, angles", "tier": "foundation", "hours": 8, "sections": ["4.1", "4.2", "4.3"] },
+        { "unit": 20, "title": "Interior/exterior angles of polygons", "tier": "foundation", "hours": 5, "sections": ["4.2"] },
+        { "unit": 21, "title": "Compound measures", "tier": "foundation", "hours": 5, "sections": ["4.4"] },
+        { "unit": 22, "title": "Perimeter, area and volume", "tier": "foundation", "hours": 6, "sections": ["4.9", "4.10"] },
+        { "unit": 23, "title": "Circles and cylinders", "tier": "foundation", "hours": 6, "sections": ["4.6", "4.9", "4.10"] },
+        { "unit": 24, "title": "Transformations", "tier": "foundation", "hours": 7, "sections": ["4.8"] },
+        { "unit": 25, "title": "Pythagoras and trigonometry", "tier": "foundation", "hours": 12, "sections": ["4.8"] },
+        { "unit": 26, "title": "Similarity and congruence", "tier": "foundation", "hours": 5, "sections": ["4.11"] },
+        { "unit": 27, "title": "Constructions", "tier": "foundation", "hours": 4, "sections": ["4.5"] },
+        { "unit": 20, "title": "Compound measures", "tier": "higher", "hours": 5, "sections": ["4.4"] },
+        { "unit": 21, "title": "Geometry of shapes", "tier": "higher", "hours": 6, "sections": ["4.1", "4.2", "4.3", "4.7"] },
+        { "unit": 22, "title": "Constructions and bearings", "tier": "higher", "hours": 4, "sections": ["4.4", "4.5"] },
+        { "unit": 23, "title": "Perimeter, area and volume", "tier": "higher", "hours": 8, "sections": ["4.9", "4.10"] },
+        { "unit": 24, "title": "Pythagoras and trigonometry", "tier": "higher", "hours": 8, "sections": ["4.8"] },
+        { "unit": 26, "title": "Circle properties", "tier": "higher", "hours": 6, "sections": ["4.6"] },
+        { "unit": 27, "title": "Advanced trigonometry", "tier": "higher", "hours": 8, "sections": ["4.8"] },
+        { "unit": 28, "title": "Similar shapes", "tier": "higher", "hours": 7, "sections": ["4.11"] }
+      ],
+      "sections": [
+        {
+          "id": "4.1",
+          "title": "Angles, lines and triangles",
+          "title_zh": "角、线与三角形",
+          "slug": "edx-4-1",
+          "tier": "both",
+          "foundation_content": "Use and interpret the geometrical terms: point, line, plane, parallel, perpendicular, bearing. Understand and use angle properties: angles at a point, angles on a straight line, vertically opposite angles, angles formed by parallel lines and a transversal (corresponding, alternate, co-interior). Understand the properties of triangles including angle sum. Use the properties of special triangles: equilateral, isosceles, right-angled.",
+          "higher_content": "See Foundation tier.",
+          "vocabSlugs": ["edx-geo-angles", "edx-geo-parallel", "edx-geo-shapes"],
+          "questionTopics": ["Angles, Lines And Triangles"],
+          "sow": { "foundation": [18, 20], "higher": [20, 21] }
+        },
+        {
+          "id": "4.2",
+          "title": "Polygons",
+          "title_zh": "多边形",
+          "slug": "edx-4-2",
+          "tier": "both",
+          "foundation_content": "Understand and use the properties of quadrilaterals: square, rectangle, parallelogram, trapezium, rhombus, kite. Calculate the sum of interior angles of a polygon. Calculate interior and exterior angles of regular polygons. Use the angle sum of a polygon to solve problems. Understand congruence of triangles and other shapes.",
+          "higher_content": "See Foundation tier.",
+          "vocabSlugs": ["edx-geo-shapes", "edx-geo-polygons"],
+          "questionTopics": ["Polygons"],
+          "sow": { "foundation": [20, 21], "higher": [20, 21] }
+        },
+        {
+          "id": "4.3",
+          "title": "Symmetry",
+          "title_zh": "对称",
+          "slug": "edx-4-3",
+          "tier": "both",
+          "foundation_content": "Recognise and use line symmetry and rotational symmetry of 2D shapes.",
+          "higher_content": "See Foundation tier.",
+          "vocabSlugs": ["edx-geo-polygons"],
+          "questionTopics": ["Symmetry"],
+          "sow": { "foundation": [20], "higher": [20] }
+        },
+        {
+          "id": "4.4",
+          "title": "Measures",
+          "title_zh": "测量",
+          "slug": "edx-4-4",
+          "tier": "both",
+          "foundation_content": "Interpret scales and read measurements. Use metric units of mass, length, area, volume and capacity. Convert between units in the metric system. Know approximate metric/imperial conversions. Understand and use compound measures: speed, density, pressure. Use maps, scale drawings and scale factors. Read and use timetables and time calculations.",
+          "higher_content": "See Foundation tier.",
+          "vocabSlugs": ["edx-geo-measures"],
+          "questionTopics": ["Measures"],
+          "sow": { "foundation": [18, 19], "higher": [11, 20] }
+        },
+        {
+          "id": "4.5",
+          "title": "Construction",
+          "title_zh": "作图",
+          "slug": "edx-4-5",
+          "tier": "both",
+          "foundation_content": "Measure and draw lines and angles. Construct perpendicular bisectors, angle bisectors, perpendicular from a point to a line, perpendicular at a point on a line. Construct triangles and other 2D shapes from given information. Use ruler and compasses for standard constructions. Find and describe loci.",
+          "higher_content": "See Foundation tier.",
+          "vocabSlugs": ["edx-geo-construct"],
+          "questionTopics": ["Construction"],
+          "sow": { "foundation": [22], "higher": [25] }
+        },
+        {
+          "id": "4.6",
+          "title": "Circle properties",
+          "title_zh": "圆的性质",
+          "slug": "edx-4-6",
+          "tier": "both",
+          "foundation_content": "Understand and use the terms: centre, radius, diameter, circumference, chord, arc, sector, segment, tangent. Understand that a tangent to a circle is perpendicular to the radius at the point of contact.",
+          "higher_content": "Understand and use circle theorems: angle at the centre is twice the angle at the circumference; angle in a semicircle is 90°; angles in the same segment are equal; opposite angles of a cyclic quadrilateral sum to 180°; alternate segment theorem.",
+          "vocabSlugs": ["edx-geo-circles", "edx-geo-circle-thm"],
+          "questionTopics": ["Circle Properties"],
+          "sow": { "foundation": [22], "higher": [25, 26] }
+        },
+        {
+          "id": "4.7",
+          "title": "Geometrical reasoning",
+          "title_zh": "几何推理",
+          "slug": "edx-4-7",
+          "tier": "both",
+          "foundation_content": "Give informal reasons and simple proofs for geometrical results (angles, parallel lines, polygons).",
+          "higher_content": "Give formal proofs using circle theorems and other geometrical results.",
+          "vocabSlugs": ["edx-geo-reasoning"],
+          "questionTopics": ["Geometry"],
+          "sow": { "foundation": [20, 22], "higher": [20, 25] }
+        },
+        {
+          "id": "4.8",
+          "title": "Trigonometry and Pythagoras' theorem",
+          "title_zh": "三角与勾股定理",
+          "slug": "edx-4-8",
+          "tier": "both",
+          "foundation_content": "Know and use Pythagoras' theorem. Know and use sine, cosine and tangent ratios for right-angled triangles (SOHCAHTOA). Apply Pythagoras and trigonometry in 2D contexts.",
+          "higher_content": "Use trigonometry with obtuse angles. Understand angles of elevation and depression. Know and use the sine rule and cosine rule. Know and use the formula for area of a triangle $= \\frac{1}{2}ab\\sin C$. Apply Pythagoras and trigonometry in 3D contexts.",
+          "vocabSlugs": ["edx-geo-trig"],
+          "questionTopics": ["Trigonometry And Pythagoras' Theorem"],
+          "sow": { "foundation": [24, 25], "higher": [23, 24, 27] }
+        },
+        {
+          "id": "4.9",
+          "title": "Mensuration of 2D shapes",
+          "title_zh": "2D面积",
+          "slug": "edx-4-9",
+          "tier": "both",
+          "foundation_content": "Know and use the formulae for: perimeter and area of a rectangle, triangle, parallelogram, trapezium. Calculate the circumference and area of a circle. Calculate perimeter and area of compound shapes. Convert between metric units of area.",
+          "higher_content": "Calculate arc length and area of a sector. Calculate perimeter and area of compound shapes involving sectors.",
+          "vocabSlugs": ["edx-mens-area", "edx-mens-circles"],
+          "questionTopics": ["Mensuration Of 2D Shapes", "Mensuration"],
+          "sow": { "foundation": [18, 21, 29], "higher": [20, 21, 30] }
+        },
+        {
+          "id": "4.10",
+          "title": "3D shapes and volume",
+          "title_zh": "3D体积",
+          "slug": "edx-4-10",
+          "tier": "both",
+          "foundation_content": "Recognise and name 3D shapes: cube, cuboid, prism, cylinder, pyramid, cone, sphere. Calculate the surface area and volume of cuboids, prisms, cylinders and pyramids. Convert between units of volume. Sketch and interpret 3D shapes from 2D representations (plans and elevations).",
+          "higher_content": "Calculate the surface area and volume of spheres, cones, and frustums.",
+          "vocabSlugs": ["edx-mens-volume"],
+          "questionTopics": ["3D Shapes And Volume"],
+          "sow": { "foundation": [21, 29, 30], "higher": [21, 30, 31] }
+        },
+        {
+          "id": "4.11",
+          "title": "Similarity",
+          "title_zh": "相似",
+          "slug": "edx-4-11",
+          "tier": "both",
+          "foundation_content": "Understand and use similarity of shapes. Identify similar triangles. Calculate missing lengths using similarity (linear scale factor).",
+          "higher_content": "Use the relationship between area scale factor and linear scale factor ($k^2$). Use the relationship between volume scale factor and linear scale factor ($k^3$). Solve problems involving similar shapes.",
+          "vocabSlugs": ["edx-mens-similarity"],
+          "questionTopics": ["Geometry"],
+          "sow": { "foundation": [29, 30], "higher": [30, 31] }
+        }
+      ]
+    },
+    {
+      "id": "ch5",
+      "num": 5,
+      "title": "Vectors and transformation geometry",
+      "title_zh": "向量与变换几何",
+      "teachingUnits": [
+        { "unit": 24, "title": "Transformations", "tier": "foundation", "hours": 7, "sections": ["5.2"] },
+        { "unit": 25, "title": "Transformations", "tier": "higher", "hours": 5, "sections": ["5.2"] },
+        { "unit": 29, "title": "Vectors", "tier": "higher", "hours": 6, "sections": ["5.1"] }
+      ],
+      "sections": [
+        {
+          "id": "5.1",
+          "title": "Vectors",
+          "title_zh": "向量",
+          "slug": "edx-5-1",
+          "tier": "higher",
+          "foundation_content": "",
+          "higher_content": "Understand and use vector notation. Represent vectors as column vectors. Add and subtract vectors. Multiply a vector by a scalar. Calculate the magnitude of a vector. Use vectors to construct geometric arguments and proofs, including showing that points are collinear or that lines are parallel.",
+          "vocabSlugs": ["edx-vec-basics", "edx-vec-ops"],
+          "questionTopics": ["Vectors"],
+          "sow": { "foundation": [], "higher": [18, 19, 29] }
+        },
+        {
+          "id": "5.2",
+          "title": "Transformation geometry",
+          "title_zh": "变换几何",
+          "slug": "edx-5-2",
+          "tier": "both",
+          "foundation_content": "Understand and use: reflection (specifying mirror line), rotation (specifying centre, angle, direction), translation (specifying column vector), enlargement (specifying centre, positive integer and fractional scale factors). Describe transformations fully. Understand that reflections and rotations preserve shape and size. Understand that an enlargement preserves shape but changes size. Recognise that two or more transformations may be combined.",
+          "higher_content": "See Foundation tier (negative scale factors included at Higher).",
+          "vocabSlugs": ["edx-vec-transform", "edx-vec-combined"],
+          "questionTopics": ["Transformation Geometry"],
+          "sow": { "foundation": [22, 23, 24, 25, 26, 27], "higher": [24, 25] }
+        }
+      ]
+    },
+    {
+      "id": "ch6",
+      "num": 6,
+      "title": "Statistics and probability",
+      "title_zh": "统计与概率",
+      "teachingUnits": [
+        { "unit": 28, "title": "Graphical representation", "tier": "foundation", "hours": 7, "sections": ["6.1"] },
+        { "unit": 29, "title": "Statistical measures", "tier": "foundation", "hours": 7, "sections": ["6.2"] },
+        { "unit": 30, "title": "Probability", "tier": "foundation", "hours": 9, "sections": ["6.3"] },
+        { "unit": 30, "title": "Graphical representation", "tier": "higher", "hours": 5, "sections": ["6.1"] },
+        { "unit": 31, "title": "Statistical measures", "tier": "higher", "hours": 4, "sections": ["6.2"] },
+        { "unit": 32, "title": "Probability", "tier": "higher", "hours": 6, "sections": ["6.3"] }
+      ],
+      "sections": [
+        {
+          "id": "6.1",
+          "title": "Graphical representation of data",
+          "title_zh": "数据图表",
+          "slug": "edx-6-1",
+          "tier": "both",
+          "foundation_content": "Draw and interpret bar charts, pie charts, pictograms, frequency tables, two-way tables. Draw and interpret line graphs, frequency polygons, scatter diagrams. Understand correlation (positive, negative, none) and draw a line of best fit.",
+          "higher_content": "Draw and interpret histograms (with unequal class intervals and frequency density). Draw and interpret cumulative frequency diagrams. Construct and interpret box plots.",
+          "vocabSlugs": ["edx-stat-data", "edx-stat-diagrams"],
+          "questionTopics": ["Graphical Representation Of Data", "Statistics"],
+          "sow": { "foundation": [10, 11, 28], "higher": [9, 10, 30, 31] }
+        },
+        {
+          "id": "6.2",
+          "title": "Statistical measures",
+          "title_zh": "统计量",
+          "slug": "edx-6-2",
+          "tier": "both",
+          "foundation_content": "Calculate the mean, median, mode and range for a set of discrete data. Calculate the mean from a grouped frequency table (estimated mean). Identify the modal class and the class containing the median. Compare distributions using averages and measures of spread.",
+          "higher_content": "Use cumulative frequency diagrams to find the median and quartiles. Calculate and interpret the interquartile range (IQR). Identify outliers.",
+          "vocabSlugs": ["edx-stat-averages"],
+          "questionTopics": ["Statistical Measures"],
+          "sow": { "foundation": [10, 28], "higher": [9, 10, 31] }
+        },
+        {
+          "id": "6.3",
+          "title": "Probability",
+          "title_zh": "概率",
+          "slug": "edx-6-3",
+          "tier": "both",
+          "foundation_content": "Understand and use the probability scale from 0 to 1. Understand and use the terms: event, outcome, equally likely, sample space, theoretical probability, relative frequency, expected frequency. Calculate probabilities of single events. Use sample space diagrams, two-way tables. Calculate the probability of an event not happening: $P(\\text{not } A) = 1 - P(A)$. Understand that the sum of all probabilities for mutually exclusive outcomes is 1. List all outcomes systematically. Know that for independent events: $P(A \\text{ and } B) = P(A) \\times P(B)$. Know that for mutually exclusive events: $P(A \\text{ or } B) = P(A) + P(B)$.",
+          "higher_content": "Use tree diagrams to calculate probabilities of successive events (with and without replacement). Calculate conditional probabilities from tree diagrams, two-way tables and Venn diagrams. Apply the addition and multiplication rules for probability.",
+          "vocabSlugs": ["edx-stat-prob", "edx-stat-prob-comb"],
+          "questionTopics": ["Probability"],
+          "sow": { "foundation": [10, 26, 27], "higher": [10, 26, 27] }
+        }
+      ]
+    }
+  ]
+}

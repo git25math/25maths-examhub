@@ -1,0 +1,98 @@
+[
+  {
+    "id": "cv1642",
+    "cat": "trigonometry",
+    "topic": "Non-Right-Angled Triangles",
+    "q": "In triangle XYZ, angle X = 35°, angle Y = 75°, and side y = 12 cm. Find the length of side x, correct to 3 significant figures.",
+    "o": [
+      "7.13 cm",
+      "11.2 cm",
+      "8.45 cm",
+      "6.28 cm"
+    ],
+    "a": 0,
+    "e": "Use the sine rule: $x/\\sin(X) = y/\\sin(Y)$. Rearranging gives $x = y \\times \\sin(X) / \\sin(Y)$. So, $x = 12 \\times \\sin(35°) / \\sin(75°) = 12 \\times 0.5735... / 0.9659... = 7.1257...$ cm, which is 7.13 cm to 3 s.f.",
+    "d": 2,
+    "s": "6.5"
+  },
+  {
+    "id": "cv1643",
+    "cat": "trigonometry",
+    "topic": "Non-Right-Angled Triangles",
+    "q": "In triangle PQR, angle P = 42°, angle Q = 58°, and side q = 15 m. Find the length of side p, correct to 3 significant figures.",
+    "o": [
+      "13.4 m",
+      "11.8 m",
+      "10.2 m",
+      "12.7 m"
+    ],
+    "a": 1,
+    "e": "Use the sine rule: $p/\\sin(P) = q/\\sin(Q)$. Rearranging gives $p = q \\times \\sin(P) / \\sin(Q)$. So, $p = 15 \\times \\sin(42°) / \\sin(58°) = 15 \\times 0.6691... / 0.8480... = 11.835...$ m, which is 11.8 m to 3 s.f.",
+    "d": 2,
+    "s": "6.5"
+  },
+  {
+    "id": "cv1644",
+    "cat": "trigonometry",
+    "topic": "Non-Right-Angled Triangles",
+    "q": "In triangle DEF, angle D = 50°, angle E = 70°, and side e = 8.5 cm. Find the length of side d, correct to 3 significant figures.",
+    "o": [
+      "7.52 cm",
+      "8.14 cm",
+      "5.96 cm",
+      "6.93 cm"
+    ],
+    "a": 3,
+    "e": "Use the sine rule: $d/\\sin(D) = e/\\sin(E)$. Rearranging gives $d = e \\times \\sin(D) / \\sin(E)$. So, $d = 8.5 \\times \\sin(50°) / \\sin(70°) = 8.5 \\times 0.7660... / 0.9396... = 6.928...$ cm, which is 6.93 cm to 3 s.f.",
+    "d": 2,
+    "s": "6.5"
+  },
+  {
+    "id": "cv1645",
+    "cat": "trigonometry",
+    "topic": "Non-Right-Angled Triangles",
+    "q": "In triangle ABC, side a = 7 cm, side b = 9 cm, and angle B = 65°. Find the size of angle A, correct to 1 decimal place.",
+    "o": [
+      "44.8°",
+      "52.4°",
+      "39.7°",
+      "41.2°"
+    ],
+    "a": 0,
+    "e": "Use the sine rule: $\\sin(A)/a = \\sin(B)/b$. Rearranging gives $\\sin(A) = a \\times \\sin(B) / b$. So, $\\sin(A) = 7 \\times \\sin(65°) / 9 = 0.7049...$ Angle $A = \\arcsin(0.7049...) = 44.82...°$, which is 44.8° to 1 d.p.",
+    "d": 2,
+    "s": "6.5"
+  },
+  {
+    "id": "cv1646",
+    "cat": "trigonometry",
+    "topic": "Non-Right-Angled Triangles",
+    "q": "In triangle LMN, side l = 12 m, side m = 18 m, and angle M = 110°. Find the size of angle L, correct to 1 decimal place.",
+    "o": [
+      "40.1°",
+      "38.8°",
+      "35.5°",
+      "42.3°"
+    ],
+    "a": 1,
+    "e": "Use the sine rule: $\\sin(L)/l = \\sin(M)/m$. Rearranging gives $\\sin(L) = l \\times \\sin(M) / m$. So, $\\sin(L) = 12 \\times \\sin(110°) / 18 = 0.6264...$ Angle $L = \\arcsin(0.6264...) = 38.79...°$, which is 38.8° to 1 d.p.",
+    "d": 2,
+    "s": "6.5"
+  },
+  {
+    "id": "cv1647",
+    "cat": "trigonometry",
+    "topic": "Non-Right-Angled Triangles",
+    "q": "In triangle XYZ, side x = 5.4 cm, side y = 7.2 cm, and angle Y = 48°. Find the size of angle X, correct to 1 decimal place.",
+    "o": [
+      "31.2°",
+      "35.8°",
+      "33.9°",
+      "29.4°"
+    ],
+    "a": 2,
+    "e": "Use the sine rule: $\\sin(X)/x = \\sin(Y)/y$. Rearranging gives $\\sin(X) = x \\times \\sin(Y) / y$. So, $\\sin(X) = 5.4 \\times \\sin(48°) / 7.2 = 0.5573...$ Angle $X = \\arcsin(0.5573...) = 33.87...°$, which is 33.9° to 1 d.p.",
+    "d": 2,
+    "s": "6.5"
+  }
+]

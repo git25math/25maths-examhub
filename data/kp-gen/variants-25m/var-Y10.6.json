@@ -1,0 +1,206 @@
+[
+  {
+    "id": "hv0372",
+    "cat": "geometry",
+    "topic": "Further Trigonometry",
+    "q": "Which of the following represents the area of a triangle with sides $x$ and $y$ and included angle $Z$?",
+    "o": [
+      "$\\frac{1}{2}xy\\sin Z$",
+      "$xy\\sin Z$",
+      "$\\frac{1}{2}xy\\cos Z$",
+      "$\\frac{1}{2}xy\\tan Z$"
+    ],
+    "a": 0,
+    "e": "The area of a triangle is given by the formula $\\frac{1}{2}ab\\sin C$, where $a$ and $b$ are two sides and $C$ is the included angle. Here, the sides are $x$ and $y$ and the angle is $Z$.",
+    "d": 1,
+    "s": "Y10.6",
+    "diag": "vocab"
+  },
+  {
+    "id": "hv0373",
+    "cat": "geometry",
+    "topic": "Further Trigonometry",
+    "q": "The area of a triangle $PQR$ with sides $p$, $q$ and included angle $R$ is calculated as:",
+    "o": [
+      "$\\frac{1}{2}pq\\cos R$",
+      "$\\frac{1}{2}pq\\sin R$",
+      "$pq\\sin R$",
+      "$pq\\cos R$"
+    ],
+    "a": 1,
+    "e": "Using the trigonometric area formula $\\frac{1}{2}ab\\sin C$, for sides $p$ and $q$ with included angle $R$, the area is $\\frac{1}{2}pq\\sin R$.",
+    "d": 1,
+    "s": "Y10.6",
+    "diag": "vocab"
+  },
+  {
+    "id": "hv0374",
+    "cat": "geometry",
+    "topic": "Further Trigonometry",
+    "q": "In triangle $LMN$, the area can be found using the formula:",
+    "o": [
+      "$lm\\sin N$",
+      "$\\frac{1}{2}lm\\cos N$",
+      "$\\frac{1}{2}lm\\sin N$",
+      "$\\frac{1}{2}lm\\tan N$"
+    ],
+    "a": 2,
+    "e": "The area of any triangle is half the product of two sides and the sine of the angle between them. For sides $l$ and $m$, the included angle is $N$, so the area is $\\frac{1}{2}lm\\sin N$.",
+    "d": 1,
+    "s": "Y10.6",
+    "diag": "vocab"
+  },
+  {
+    "id": "hv0375",
+    "cat": "geometry",
+    "topic": "Further Trigonometry",
+    "q": "Find the area of a triangle with sides $a=4$ cm, $b=12$ cm and included angle $C=30°$.",
+    "o": [
+      "$12$ cm²",
+      "$24$ cm²",
+      "$48$ cm²",
+      "$6$ cm²"
+    ],
+    "a": 0,
+    "e": "Area $= \\frac{1}{2}(4)(12)\\sin 30° = 24 \\times 0.5 = 12$ cm².",
+    "d": 1,
+    "s": "Y10.6",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0376",
+    "cat": "geometry",
+    "topic": "Further Trigonometry",
+    "q": "Find the area of a triangle with sides $x=10$ cm, $y=14$ cm and included angle $Z=30°$.",
+    "o": [
+      "$70$ cm²",
+      "$35$ cm²",
+      "$140$ cm²",
+      "$17.5$ cm²"
+    ],
+    "a": 1,
+    "e": "Area $= \\frac{1}{2}(10)(14)\\sin 30° = 70 \\times 0.5 = 35$ cm².",
+    "d": 1,
+    "s": "Y10.6",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0377",
+    "cat": "geometry",
+    "topic": "Further Trigonometry",
+    "q": "Find the area of a triangle with sides $p=8$ cm, $q=15$ cm and included angle $R=30°$.",
+    "o": [
+      "$60$ cm²",
+      "$15$ cm²",
+      "$120$ cm²",
+      "$30$ cm²"
+    ],
+    "a": 3,
+    "e": "Area $= \\frac{1}{2}(8)(15)\\sin 30° = 60 \\times 0.5 = 30$ cm².",
+    "d": 1,
+    "s": "Y10.6",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0378",
+    "cat": "geometry",
+    "topic": "Further Trigonometry",
+    "q": "In triangle $ABC$, $a=10$, $A=45°$, $B=60°$. Using the sine rule, find $b$ to 1 d.p.",
+    "o": [
+      "$12.2$",
+      "$15.0$",
+      "$8.7$",
+      "$10.0$"
+    ],
+    "a": 0,
+    "e": "$\\frac{a}{\\sin A} = \\frac{b}{\\sin B}$. $\\frac{10}{\\sin 45°} = \\frac{b}{\\sin 60°}$. $b = \\frac{10 \\times \\sin 60°}{\\sin 45°} = \\frac{10 \\times 0.8660}{0.7071} = 12.2$.",
+    "d": 2,
+    "s": "Y10.6",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0379",
+    "cat": "geometry",
+    "topic": "Further Trigonometry",
+    "q": "In triangle $XYZ$, $x=12$, $X=40°$, $Y=70°$. Using the sine rule, find $y$ to 1 d.p.",
+    "o": [
+      "$11.3$",
+      "$18.2$",
+      "$17.5$",
+      "$15.6$"
+    ],
+    "a": 2,
+    "e": "$\\frac{x}{\\sin X} = \\frac{y}{\\sin Y}$. $\\frac{12}{\\sin 40°} = \\frac{y}{\\sin 70°}$. $y = \\frac{12 \\times \\sin 70°}{\\sin 40°} = \\frac{12 \\times 0.9397}{0.6428} = 17.5$.",
+    "d": 2,
+    "s": "Y10.6",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0380",
+    "cat": "geometry",
+    "topic": "Further Trigonometry",
+    "q": "In triangle $PQR$, $p=6$, $P=25°$, $Q=55°$. Using the sine rule, find $q$ to 1 d.p.",
+    "o": [
+      "$8.4$",
+      "$11.6$",
+      "$13.1$",
+      "$9.8$"
+    ],
+    "a": 1,
+    "e": "$\\frac{p}{\\sin P} = \\frac{q}{\\sin Q}$. $\\frac{6}{\\sin 25°} = \\frac{q}{\\sin 55°}$. $q = \\frac{6 \\times \\sin 55°}{\\sin 25°} = \\frac{6 \\times 0.8192}{0.4226} = 11.6$.",
+    "d": 2,
+    "s": "Y10.6",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0381",
+    "cat": "geometry",
+    "topic": "Further Trigonometry",
+    "q": "In triangle $ABC$, $a=4$, $b=6$, $C=60°$. Find $c$ using the cosine rule.",
+    "o": [
+      "$\\sqrt{52}$",
+      "$\\sqrt{28}$",
+      "$\\sqrt{76}$",
+      "$\\sqrt{40}$"
+    ],
+    "a": 1,
+    "e": "$c^2 = a^2+b^2-2ab\\cos C = 16+36-2(4)(6)\\cos 60° = 52-48(0.5) = 52-24 = 28$. So $c=\\sqrt{28}$.",
+    "d": 2,
+    "s": "Y10.6",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0382",
+    "cat": "geometry",
+    "topic": "Further Trigonometry",
+    "q": "In triangle $XYZ$, $x=2$, $y=5$, $Z=60°$. Find $z$ using the cosine rule.",
+    "o": [
+      "$\\sqrt{29}$",
+      "$\\sqrt{19}$",
+      "$\\sqrt{39}$",
+      "$\\sqrt{21}$"
+    ],
+    "a": 1,
+    "e": "$z^2 = x^2+y^2-2xy\\cos Z = 4+25-2(2)(5)\\cos 60° = 29-20(0.5) = 29-10 = 19$. So $z=\\sqrt{19}$.",
+    "d": 2,
+    "s": "Y10.6",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0383",
+    "cat": "geometry",
+    "topic": "Further Trigonometry",
+    "q": "In triangle $PQR$, $p=8$, $q=10$, $R=60°$. Find $r$ using the cosine rule.",
+    "o": [
+      "$\\sqrt{164}$",
+      "$\\sqrt{144}$",
+      "$\\sqrt{184}$",
+      "$\\sqrt{84}$"
+    ],
+    "a": 3,
+    "e": "$r^2 = p^2+q^2-2pq\\cos R = 64+100-2(8)(10)\\cos 60° = 164-160(0.5) = 164-80 = 84$. So $r=\\sqrt{84}$.",
+    "d": 2,
+    "s": "Y10.6",
+    "diag": "calc"
+  }
+]

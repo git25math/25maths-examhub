@@ -1,0 +1,370 @@
+[
+  {
+    "id": "kp-6.1-01",
+    "section": "6.1",
+    "order": 1,
+    "title": "Histograms",
+    "title_zh": "直方图",
+    "explanation": {
+      "en": "**Histograms** are used to represent continuous data, particularly when class widths are unequal. Unlike bar charts, the area of the bar represents the frequency, not the height.\n\n**Frequency density** is the vertical axis of a histogram. It is calculated using the formula: $\\text{Frequency density} = \\frac{\\text{Frequency}}{\\text{Class width}}$.\n\n**Area and Frequency** relationship is fundamental: $\\text{Frequency} = \\text{Frequency density} \\times \\text{Class width}$. To find the total frequency from a histogram, you must calculate and sum the areas of all the bars.",
+      "zh": "**直方图** (Histograms) 用于表示连续数据，特别是在组距（class widths）不等的情况下。与条形图不同，直方图中条形的面积代表频数，而不是高度。\n\n**频数密度** (Frequency density) 是直方图的纵轴。其计算公式为：$\\text{频数密度} = \\frac{\\text{频数}}{\\text{组距}}$。\n\n**面积与频数**的关系是核心：$\\text{频数} = \\text{频数密度} \\times \\text{组距}$。要从直方图中找出总频数，必须计算并累加所有条形的面积。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-draw-histogram",
+        "label": "Drawing a histogram from a frequency table",
+        "label_zh": "根据频数表绘制直方图",
+        "description": "Calculate frequency densities for each class and draw bars with heights corresponding to these densities.",
+        "description_zh": "计算每组的频数密度，并绘制高度对应这些密度的条形。"
+      },
+      {
+        "id": "ep-read-histogram",
+        "label": "Calculating frequency from a histogram",
+        "label_zh": "从直方图中计算频数",
+        "description": "Use the area of bars (width $\\times$ height) to find missing frequencies or total values.",
+        "description_zh": "利用条形的面积（宽度 $\\times$ 高度）来计算缺失的频数或总量。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-draw-histogram",
+        "question": "A table shows the weights of 40 parcels. For the class $0 < w \\leq 10$, the frequency is 15. For $10 < w \\leq 25$, the frequency is 12. Calculate the frequency density for both classes.",
+        "question_zh": "下表显示了40个包裹的重量。对于 $0 < w \\leq 10$ 组，频数为15。对于 $10 < w \\leq 25$ 组，频数为12。计算这两组的频数密度。",
+        "solution": "**Step 1:** Identify class widths.\nFor $0 < w \\leq 10$, width = $10 - 0 = 10$.\nFor $10 < w \\leq 25$, width = $25 - 10 = 15$.\n\n**Step 2:** Apply the formula $\\text{FD} = \\frac{\\text{Frequency}}{\\text{Width}}$.\nFD for first class = $\\frac{15}{10} = 1.5$.\nFD for second class = $\\frac{12}{15} = 0.8$.\n\n**Answers:** 1.5 and 0.8",
+        "solution_zh": "**步骤1：** 确定组距。\n对于 $0 < w \\leq 10$，组距 = $10 - 0 = 10$。\n对于 $10 < w \\leq 25$，组距 = $25 - 10 = 15$。\n\n**步骤2：** 使用公式 $\\text{FD} = \\frac{\\text{频数}}{\\text{组距}}$。\n第一组的频数密度 = $\\frac{15}{10} = 1.5$。\n第二组的频数密度 = $\\frac{12}{15} = 0.8$。\n\n**答案：** 1.5 和 0.8",
+        "source": "Adapted from 4MA1/1H/Jan/2021"
+      },
+      {
+        "patternId": "ep-read-histogram",
+        "question": "In a histogram, the bar for $20 < x \\leq 30$ has a frequency density of 4.2. Calculate the frequency of this class.",
+        "question_zh": "在直方图中，$20 < x \\leq 30$ 组条形的频数密度为 4.2。计算该组的频数。",
+        "solution": "**Step 1:** Calculate class width.\nWidth = $30 - 20 = 10$.\n\n**Step 2:** Calculate frequency using area.\n$\\text{Frequency} = \\text{Width} \\times \\text{Frequency Density}$\n$\\text{Frequency} = 10 \\times 4.2 = 42$.\n\n**Answer:** 42",
+        "solution_zh": "**步骤1：** 计算组距。\n组距 = $30 - 20 = 10$。\n\n**步骤2：** 利用面积计算频数。\n$\\text{频数} = \\text{组距} \\times \\text{频数密度}$\n$\\text{频数} = 10 \\times 4.2 = 42$。\n\n**答案：** 42",
+        "source": "Adapted from 4MA1/2H/June/2020"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "What does the vertical axis represent in a histogram?",
+        "q_zh": "在直方图中，纵轴代表什么？",
+        "o": [
+          "Frequency",
+          "Cumulative Frequency",
+          "Frequency Density",
+          "Class Width"
+        ],
+        "a": 2,
+        "e": "In a histogram, the vertical axis is always frequency density. Frequency is represented by the area of the bars.",
+        "e_zh": "在直方图中，纵轴始终是频数密度。频数由条形的面积表示。"
+      },
+      {
+        "q": "If a bar has a width of 5 and represents a frequency of 20, what is its height on the histogram?",
+        "q_zh": "如果一个条形的宽度为5，代表的频数为20，那么它在直方图上的高度是多少？",
+        "o": [
+          "100",
+          "4",
+          "0.25",
+          "15"
+        ],
+        "a": 1,
+        "e": "Height = Frequency Density = Frequency / Width = $20 / 5 = 4$.",
+        "e_zh": "高度 = 频数密度 = 频数 / 组距 = $20 / 5 = 4$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "higher"
+  },
+  {
+    "id": "kp-6.1-02",
+    "section": "6.1",
+    "order": 2,
+    "title": "Cumulative Frequency and Box Plots",
+    "title_zh": "累积频数与箱线图",
+    "explanation": {
+      "en": "**Cumulative frequency** is the running total of frequencies. It is plotted at the **upper class boundary** of each interval to create a cumulative frequency graph.\n\n**Median and Quartiles** can be estimated from the graph. The median ($Q_2$) is at the $\\frac{n}{2}$ position, the lower quartile ($Q_1$) is at $\\frac{n}{4}$, and the upper quartile ($Q_3$) is at $\\frac{3n}{4}$.\n\n**Box plots** (or box-and-whisker diagrams) are a visual summary of the five-number summary: minimum, lower quartile, median, upper quartile, and maximum. The **Interquartile Range (IQR)** is $Q_3 - Q_1$, representing the spread of the middle 50% of the data.",
+      "zh": "**累积频数** (Cumulative frequency) 是频数的逐项累加。在绘制累积频数图时，点应标在每个组限的**上限**处。\n\n**中位数与四分位数**可以通过图形估算。中位数 ($Q_2$) 位于 $\\frac{n}{2}$ 处，下四分位数 ($Q_1$) 位于 $\\frac{n}{4}$ 处，上四分位数 ($Q_3$) 位于 $\\frac{3n}{4}$ 处。\n\n**箱线图** (Box plots) 是五数概括法的视觉总结：最小值、下四分位数、中位数、上四分位数和最大值。**四分位距 (IQR)** 为 $Q_3 - Q_1$，代表中间 50% 数据的离散程度。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-estimate-cf",
+        "label": "Estimating statistics from a CF graph",
+        "label_zh": "从累积频数图中估算统计量",
+        "description": "Find the median, quartiles, or the number of values above/below a certain point.",
+        "description_zh": "找出中位数、四分位数，或高于/低于某一点的数值个数。"
+      },
+      {
+        "id": "ep-compare-boxplots",
+        "label": "Comparing distributions using box plots",
+        "label_zh": "使用箱线图比较分布",
+        "description": "Compare two data sets using the median (average) and IQR (consistency/spread).",
+        "description_zh": "使用中位数（平均水平）和四分位距（一致性/离散度）比较两组数据。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-estimate-cf",
+        "question": "A cumulative frequency curve is drawn for 80 students' marks. From the graph, the 20th value is 35, the 40th value is 52, and the 60th value is 71. State the median and find the IQR.",
+        "question_zh": "绘制了80名学生成绩的累积频数曲线。从图中可知，第20个值是35，第40个值是52，第60个值是71。写出中位数并求四分位距 (IQR)。",
+        "solution": "**Step 1:** The median is the $\\frac{80}{2} = 40$th value.\nMedian = 52.\n\n**Step 2:** Find the quartiles.\n$Q_1$ (lower quartile) = $\\frac{80}{4} = 20$th value = 35.\n$Q_3$ (upper quartile) = $\\frac{3 \\times 80}{4} = 60$th value = 71.\n\n**Step 3:** Calculate IQR.\n$IQR = Q_3 - Q_1 = 71 - 35 = 36$.\n\n**Answers:** Median = 52, IQR = 36",
+        "solution_zh": "**步骤1：** 中位数是第 $\\frac{80}{2} = 40$ 个值。\n中位数 = 52。\n\n**步骤2：** 找出四分位数。\n$Q_1$ (下四分位数) = 第 $\\frac{80}{4} = 20$ 个值 = 35。\n$Q_3$ (上四分位数) = 第 $\\frac{3 \\times 80}{4} = 60$ 个值 = 71。\n\n**步骤3：** 计算 IQR。\n$IQR = Q_3 - Q_1 = 71 - 35 = 36$。\n\n**答案：** 中位数 = 52, IQR = 36",
+        "source": "Adapted from 4MA1/2H/June/2019"
+      },
+      {
+        "patternId": "ep-compare-boxplots",
+        "question": "Two box plots show the heights of girls and boys. Girls: Median = 155cm, IQR = 10cm. Boys: Median = 162cm, IQR = 15cm. Compare the distributions.",
+        "question_zh": "两张箱线图显示了女孩和男孩的身高。女孩：中位数 = 155cm，IQR = 10cm。男孩：中位数 = 162cm，IQR = 15cm。比较这两组分布。",
+        "solution": "1. **Compare average:** The boys are taller on average because their median (162cm) is higher than the girls' median (155cm).\n2. **Compare spread:** The girls' heights are more consistent (less spread out) because their IQR (10cm) is smaller than the boys' IQR (15cm).",
+        "solution_zh": "1. **比较平均水平：** 男孩平均更高，因为他们的中位数 (162cm) 高于女孩的中位数 (155cm)。\n2. **比较离散度：** 女孩的身高更一致（离散度更小），因为她们的 IQR (10cm) 小于男孩的 IQR (15cm)。",
+        "source": "Adapted from 4MA1"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "Where should points be plotted on a cumulative frequency graph?",
+        "q_zh": "在累积频数图中，点应该标在何处？",
+        "o": [
+          "Midpoint of the class",
+          "Lower class boundary",
+          "Upper class boundary",
+          "Frequency density"
+        ],
+        "a": 2,
+        "e": "Cumulative frequency represents the total frequency 'up to' a certain value, so it must be plotted at the upper class boundary.",
+        "e_zh": "累积频数代表“直到”某个值的总频数，因此必须标在组限的上限处。"
+      },
+      {
+        "q": "What does a smaller Interquartile Range (IQR) indicate about a data set?",
+        "q_zh": "较小的四分位距 (IQR) 说明数据集的什么特征？",
+        "o": [
+          "The data is higher on average",
+          "The data is more spread out",
+          "The data is more consistent",
+          "The data has a higher maximum"
+        ],
+        "a": 2,
+        "e": "A smaller IQR means the middle 50% of the data is closer together, indicating greater consistency or less spread.",
+        "e_zh": "较小的 IQR 意味着中间 50% 的数据更接近，表明数据更一致或离散度更小。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-6.2-01",
+    "section": "6.2",
+    "order": 1,
+    "title": "Mean for Grouped Data",
+    "title_zh": "分组数据的平均数",
+    "explanation": {
+      "en": "When data is grouped in a frequency table, we don't know the exact values. We use the **midpoint** of each class as an estimate for all values in that class.\n\nTo find the **estimate of the mean** ($\\bar{x}$):\n1. Find the **midpoint** ($x$) of each class interval.\n2. Multiply each midpoint by its corresponding **frequency** ($f$) to get $f \\times x$.\n3. Sum all the $fx$ values ($\\sum fx$).\n4. Divide by the **total frequency** ($n$ or $\\sum f$).\n\nFormula: $\\text{Mean} \\approx \\frac{\\sum (f \\times x)}{\\sum f}$",
+      "zh": "当数据在频数表中分组时，我们不知道确切的数值。我们使用每组的**中点** (midpoint) 作为该组所有数值的估算值。\n\n计算**平均数估算值** ($\\bar{x}$) 的步骤：\n1. 找出每个组区间的**中点** ($x$)。\n2. 将每个中点乘以其对应的**频数** ($f$)，得到 $f \\times x$。\n3. 将所有 $fx$ 值求和 ($\\sum fx$)。\n4. 除以**总频数** ($n$ 或 $\\sum f$)。\n\n公式：$\\text{平均数} \\approx \\frac{\\sum (f \\times x)}{\\sum f}$"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-calc-mean-grouped",
+        "label": "Calculate estimate of the mean",
+        "label_zh": "计算平均数估算值",
+        "description": "Given a table of grouped data, find the midpoints and calculate the mean.",
+        "description_zh": "给出分组数据表，找出中点并计算平均数。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-calc-mean-grouped",
+        "question": "Find the estimate for the mean of the following data:\n\n| Height ($h$ cm) | Frequency ($f$) |\n| :--- | :--- |\n| $140 < h \\leq 150$ | 4 |\n| $150 < h \\leq 160$ | 10 |\n| $160 < h \\leq 170$ | 6 |",
+        "question_zh": "计算下列数据的平均数估算值：\n\n| 身高 ($h$ cm) | 频数 ($f$) |\n| :--- | :--- |\n| $140 < h \\leq 150$ | 4 |\n| $150 < h \\leq 160$ | 10 |\n| $160 < h \\leq 170$ | 6 |",
+        "solution": "**Step 1:** Find midpoints ($x$): 145, 155, 165.\n\n**Step 2:** Calculate $f \\times x$:\n$4 \\times 145 = 580$\n$10 \\times 155 = 1550$\n$6 \\times 165 = 990$\n\n**Step 3:** Sum frequencies and $fx$ values:\n$\\sum f = 4 + 10 + 6 = 20$\n$\\sum fx = 580 + 1550 + 990 = 3120$\n\n**Step 4:** Divide:\nMean = $3120 / 20 = 156$.\n\n**Answer:** 156 cm",
+        "solution_zh": "**步骤1：** 找出中点 ($x$)：145, 155, 165。\n\n**步骤2：** 计算 $f \\times x$：\n$4 \\times 145 = 580$\n$10 \\times 155 = 1550$\n$6 \\times 165 = 990$\n\n**步骤3：** 对频数和 $fx$ 值求和：\n$\\sum f = 4 + 10 + 6 = 20$\n$\\sum fx = 580 + 1550 + 990 = 3120$\n\n**步骤4：** 相除：\n平均数 = $3120 / 20 = 156$。\n\n**答案：** 156 cm",
+        "source": "Adapted from 4MA1/1F/Jan/2020"
+      },
+      {
+        "patternId": "ep-calc-mean-grouped",
+        "question": "A frequency table has a modal class. If the classes are $0-10, 10-20, 20-30$ with frequencies $5, 12, 8$, which class is the modal class?",
+        "question_zh": "一个频数表有众数组。如果各组为 $0-10, 10-20, 20-30$，频数分别为 $5, 12, 8$，哪一组是众数组？",
+        "solution": "The **modal class** is the class with the highest frequency.\nFrequency 12 is the highest.\nThe corresponding class is $10-20$.\n\n**Answer:** $10-20$",
+        "solution_zh": "**众数组** (Modal class) 是频数最高的组。\n频数 12 是最高的。\n对应的组是 $10-20$。\n\n**答案：** $10-20$",
+        "source": "Adapted from 4MA1"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "Why is the mean from a grouped frequency table called an 'estimate'?",
+        "q_zh": "为什么分组频率表的平均数被称为“估算值”？",
+        "o": [
+          "Because the calculation is rounded",
+          "Because we don't know the exact values within each class",
+          "Because the total frequency might be wrong",
+          "Because midpoints are not real numbers"
+        ],
+        "a": 1,
+        "e": "We use midpoints because the raw data values are unknown, making the final result an estimate rather than an exact mean.",
+        "e_zh": "我们使用中点是因为原始数据值未知，这使得最终结果是估算值而非精确平均数。"
+      },
+      {
+        "q": "What is the midpoint of the class interval $25 < x \\leq 40$?",
+        "q_zh": "组区间 $25 < x \\leq 40$ 的中点是多少？",
+        "o": [
+          "32",
+          "33",
+          "32.5",
+          "15"
+        ],
+        "a": 2,
+        "e": "Midpoint = $(25 + 40) / 2 = 65 / 2 = 32.5$.",
+        "e_zh": "中点 = $(25 + 40) / 2 = 65 / 2 = 32.5$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-6.3-01",
+    "section": "6.3",
+    "order": 1,
+    "title": "Combined Events and Tree Diagrams",
+    "title_zh": "复合事件与树状图",
+    "explanation": {
+      "en": "**Combined events** involve two or more actions (e.g., flipping a coin twice). The total probability of all possible outcomes always sums to 1.\n\n**Tree diagrams** are used to calculate probabilities for multiple stages:\n1. **Multiply** probabilities along the branches to find the probability of a specific sequence of outcomes (AND rule).\n2. **Add** the probabilities of different branches if more than one outcome satisfies the condition (OR rule).\n\n**Replacement:** If an object is replaced, probabilities remain the same for the second event (independent). If **not replaced**, the total number of outcomes and the count of specific items decrease (dependent).",
+      "zh": "**复合事件**涉及两个或更多动作（例如，掷两次硬币）。所有可能结果的总概率始终等于1。\n\n**树状图**用于计算多个阶段的概率：\n1. 沿分支**相乘**概率，以找出特定结果序列的概率（“且”规则）。\n2. 如果有多个结果满足条件，将不同分支的概率**相加**（“或”规则）。\n\n**放回与不放回：** 如果物体被放回，第二次事件的概率保持不变（独立事件）。如果**不放回**，总结果数和特定物品的数量都会减少（相关事件）。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-tree-diagram",
+        "label": "Completing and using tree diagrams",
+        "label_zh": "完成并使用树状图",
+        "description": "Fill in missing probabilities on branches and calculate the probability of combined outcomes.",
+        "description_zh": "填写分支上缺失的概率，并计算复合结果的概率。"
+      },
+      {
+        "id": "ep-without-replacement",
+        "label": "Probability without replacement",
+        "label_zh": "不放回抽样的概率",
+        "description": "Handle changes in denominators and numerators for sequential events.",
+        "description_zh": "处理连续事件中分母和分子的变化。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-tree-diagram",
+        "question": "A bag contains 7 blue and 3 red counters. Two counters are taken at random with replacement. Calculate the probability that both counters are red.",
+        "question_zh": "一个袋子里有7个蓝色和3个红色筹码。随机取出两个筹码，有放回。计算两个筹码都是红色的概率。",
+        "solution": "**Step 1:** Probability of Red on 1st pick = $\\frac{3}{10}$.\n\n**Step 2:** Since it is with replacement, Probability of Red on 2nd pick = $\\frac{3}{10}$.\n\n**Step 3:** Multiply for 'Red AND Red'.\n$P(RR) = \\frac{3}{10} \\times \\frac{3}{10} = \\frac{9}{100}$.\n\n**Answer:** 0.09",
+        "solution_zh": "**步骤1：** 第一次取到红色的概率 = $\\frac{3}{10}$。\n\n**步骤2：** 因为是有放回，第二次取到红色的概率 = $\\frac{3}{10}$。\n\n**步骤3：** 将“红色且红色”的概率相乘。\n$P(RR) = \\frac{3}{10} \\times \\frac{3}{10} = \\frac{9}{100}$。\n\n**答案：** 0.09",
+        "source": "Adapted from 4MA1/2F/Jan/2021"
+      },
+      {
+        "patternId": "ep-without-replacement",
+        "question": "A box contains 5 green and 4 yellow sweets. Two sweets are taken without replacement. Find the probability that they are different colors.",
+        "question_zh": "盒子里有5个绿色和4个黄色糖果。不放回地取出两个糖果。求它们颜色不同的概率。",
+        "solution": "**Step 1:** Identify paths for different colors: (Green, Yellow) OR (Yellow, Green).\n\n**Step 2:** Calculate $P(GY)$:\n$\\frac{5}{9} \\times \\frac{4}{8} = \\frac{20}{72}$.\n\n**Step 3:** Calculate $P(YG)$:\n$\\frac{4}{9} \\times \\frac{5}{8} = \\frac{20}{72}$.\n\n**Step 4:** Add the probabilities:\n$\\frac{20}{72} + \\frac{20}{72} = \\frac{40}{72} = \\frac{5}{9}$.\n\n**Answer:** $\\frac{5}{9}$",
+        "solution_zh": "**步骤1：** 确定颜色不同的路径：(绿, 黄) 或 (黄, 绿)。\n\n**步骤2：** 计算 $P(绿黄)$：\n$\\frac{5}{9} \\times \\frac{4}{8} = \\frac{20}{72}$。\n\n**步骤3：** 计算 $P(黄绿)$：\n$\\frac{4}{9} \\times \\frac{5}{8} = \\frac{20}{72}$。\n\n**步骤4：** 将概率相加：\n$\\frac{20}{72} + \\frac{20}{72} = \\frac{40}{72} = \\frac{5}{9}$。\n\n**答案：** $\\frac{5}{9}$",
+        "source": "Adapted from 4MA1/1H/June/2019"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "If $P(A) = 0.3$ and $P(B) = 0.4$, and they are independent, what is $P(A \\text{ and } B)$?",
+        "q_zh": "如果 $P(A) = 0.3$，$P(B) = 0.4$，且它们是独立事件，那么 $P(A \\text{ 且 } B)$ 是多少？",
+        "o": [
+          "0.7",
+          "0.12",
+          "0.1",
+          "0.75"
+        ],
+        "a": 1,
+        "e": "For independent events, $P(A \\cap B) = P(A) \\times P(B) = 0.3 \\times 0.4 = 0.12$.",
+        "e_zh": "对于独立事件，$P(A \\cap B) = P(A) \\times P(B) = 0.3 \\times 0.4 = 0.12$。"
+      },
+      {
+        "q": "In a tree diagram, what must the probabilities on any set of branches from a single point sum to?",
+        "q_zh": "在树状图中，从单一点出发的一组分支的概率之和必须是多少？",
+        "o": [
+          "0",
+          "0.5",
+          "1",
+          "100"
+        ],
+        "a": 2,
+        "e": "The sum of probabilities for all possible outcomes from a single event must always be 1.",
+        "e_zh": "单个事件所有可能结果的概率之和必须始终为 1。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-6.3-02",
+    "section": "6.3",
+    "order": 2,
+    "title": "Conditional Probability and Venn Diagrams",
+    "title_zh": "条件概率与韦恩图",
+    "explanation": {
+      "en": "**Conditional probability** is the probability of an event occurring given that another event has already occurred. It is written as $P(A|B)$, which means 'the probability of A given B'.\n\n**The Formula** for conditional probability is: $P(A|B) = \\frac{P(A \\cap B)}{P(B)}$. This is often used with Venn diagrams by restricting the sample space to only circle B.\n\n**Venn Diagrams** help visualize overlapping sets. The intersection ($A \\cap B$) represents both events happening. The union ($A \\cup B$) represents at least one event happening. The complement ($A'$) represents the event not happening.",
+      "zh": "**条件概率** (Conditional probability) 是指在已知另一个事件已发生的情况下，某个事件发生的概率。记作 $P(A|B)$，意思是“在 B 发生的条件下 A 发生的概率”。\n\n**公式** 为：$P(A|B) = \\frac{P(A \\cap B)}{P(B)}$。在韦恩图中，这通常意味着将样本空间限制在圆圈 B 内。\n\n**韦恩图** (Venn Diagrams) 有助于可视化重叠的集合。交集 ($A \\cap B$) 代表两个事件同时发生。并集 ($A \\cup B$) 代表至少有一个事件发生。补集 ($A'$) 代表事件不发生。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-venn-prob",
+        "label": "Calculating probability from Venn diagrams",
+        "label_zh": "从韦恩图中计算概率",
+        "description": "Find $P(A \\cap B)$, $P(A \\cup B)$, or conditional probabilities using numbers or frequencies in a Venn diagram.",
+        "description_zh": "利用韦恩图中的数值或频数，计算 $P(A \\cap B)$、$P(A \\cup B)$ 或条件概率。"
+      },
+      {
+        "id": "ep-conditional-logic",
+        "label": "Solving conditional probability problems",
+        "label_zh": "解决条件概率问题",
+        "description": "Using the formula or logic (like tree diagrams without replacement) to find $P(A|B)$.",
+        "description_zh": "使用公式或逻辑（如不放回抽样的树状图）来求 $P(A|B)$。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-venn-prob",
+        "question": "In a Venn diagram, circle A contains 10 elements, circle B contains 15 elements, and their intersection contains 4 elements. There are 30 elements in total. Find $P(A|B)$.",
+        "question_zh": "在韦恩图中，圆 A 包含 10 个元素，圆 B 包含 15 个元素，它们的交集包含 4 个元素。总共有 30 个元素。求 $P(A|B)$。",
+        "solution": "**Step 1:** Identify $P(A \\cap B)$ and $P(B)$.\nNumber of elements in $A \\cap B = 4$.\nNumber of elements in $B = 15$.\n\n**Step 2:** Apply the conditional probability formula.\n$P(A|B) = \\frac{\\text{Number in } A \\cap B}{\\text{Number in } B} = \\frac{4}{15}$.\n\n**Answer:** $\\frac{4}{15}$",
+        "solution_zh": "**步骤1：** 确定 $A \\cap B$ 和 $B$ 的元素数。\n$A \\cap B$ 的元素数 = 4。\n$B$ 的元素数 = 15。\n\n**步骤2：** 应用条件概率公式。\n$P(A|B) = \\frac{A \\cap B \\text{ 的数量}}{B \\text{ 的数量}} = \\frac{4}{15}$。\n\n**答案：** $\\frac{4}{15}$",
+        "source": "Adapted from 4MA1/2H/Jan/2020"
+      },
+      {
+        "patternId": "ep-conditional-logic",
+        "question": "Given $P(X) = 0.6$, $P(Y) = 0.5$ and $P(X \\cup Y) = 0.8$. Calculate $P(X|Y)$.",
+        "question_zh": "已知 $P(X) = 0.6$，$P(Y) = 0.5$ 且 $P(X \\cup Y) = 0.8$。计算 $P(X|Y)$。",
+        "solution": "**Step 1:** Find $P(X \\cap Y)$ using the formula $P(X \\cup Y) = P(X) + P(Y) - P(X \\cap Y)$.\n$0.8 = 0.6 + 0.5 - P(X \\cap Y)$\n$0.8 = 1.1 - P(X \\cap Y)$\n$P(X \\cap Y) = 0.3$.\n\n**Step 2:** Calculate $P(X|Y)$.\n$P(X|Y) = \\frac{P(X \\cap Y)}{P(Y)} = \\frac{0.3}{0.5} = 0.6$.\n\n**Answer:** 0.6",
+        "solution_zh": "**步骤1：** 使用公式 $P(X \\cup Y) = P(X) + P(Y) - P(X \\cap Y)$ 找出 $P(X \\cap Y)$。\n$0.8 = 0.6 + 0.5 - P(X \\cap Y)$\n$0.8 = 1.1 - P(X \\cap Y)$\n$P(X \\cap Y) = 0.3$。\n\n**步骤2：** 计算 $P(X|Y)$。\n$P(X|Y) = \\frac{P(X \\cap Y)}{P(Y)} = \\frac{0.3}{0.5} = 0.6$。\n\n**答案：** 0.6",
+        "source": "Adapted from 4MA1"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "What is the meaning of $P(B|A)$?",
+        "q_zh": "$P(B|A)$ 是什么意思？",
+        "o": [
+          "Probability of A and B happening",
+          "Probability of B happening given A has happened",
+          "Probability of A happening given B has happened",
+          "Probability of neither A nor B happening"
+        ],
+        "a": 1,
+        "e": "$P(B|A)$ is the conditional probability of event B occurring, under the condition that event A has already occurred.",
+        "e_zh": "$P(B|A)$ 是在事件 A 已经发生的条件下，事件 B 发生的条件概率。"
+      },
+      {
+        "q": "If $A \\cap B = \\emptyset$ (mutually exclusive), what is $P(A|B)$?",
+        "q_zh": "如果 $A \\cap B = \\emptyset$（互斥事件），那么 $P(A|B)$ 是多少？",
+        "o": [
+          "1",
+          "0.5",
+          "0",
+          "Cannot be determined"
+        ],
+        "a": 2,
+        "e": "If events are mutually exclusive, they cannot happen at the same time, so $P(A \\cap B) = 0$, which makes $P(A|B) = 0$.",
+        "e_zh": "如果事件是互斥的，它们不能同时发生，所以 $P(A \\cap B) = 0$，这使得 $P(A|B) = 0$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "higher"
+  }
+]

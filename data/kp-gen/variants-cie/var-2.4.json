@@ -1,0 +1,98 @@
+[
+  {
+    "id": "cv1588",
+    "cat": "algebra",
+    "topic": "Algebraic Fractions",
+    "q": "Simplify the algebraic fraction $(15a^3b) / (20ab^2)$.",
+    "o": [
+      "$(3a^2) / (4b)$",
+      "$(3b) / (4a^2)$",
+      "$(5a^2) / (4b)$",
+      "$(3a^2) / (5b)$"
+    ],
+    "a": 0,
+    "e": "Divide the numerator and denominator by their greatest common divisor, which is $5ab$. This gives $(15a^3b / 5ab) / (20ab^2 / 5ab) = (3a^2) / (4b)$. \\\\frac{15a^3b}{20ab^2} = \\\\frac{3a^2}{4b}$.",
+    "d": 2,
+    "s": "2.4"
+  },
+  {
+    "id": "cv1589",
+    "cat": "algebra",
+    "topic": "Algebraic Fractions",
+    "q": "Simplify the algebraic fraction $(14m^2n^4) / (21m^3n)$.",
+    "o": [
+      "$(2n^3) / (3m)$",
+      "$(2m) / (3n^3)$",
+      "$(7n^3) / (3m)$",
+      "$(2n^4) / (3m^2)$"
+    ],
+    "a": 0,
+    "e": "Divide the numerator and denominator by their greatest common divisor, which is $7m^2n$. This gives $(14m^2n^4 / 7m^2n) / (21m^3n / 7m^2n) = (2n^3) / (3m)$. \\\\frac{14m^2n^4}{21m^3n} = \\\\frac{2n^3}{3m}$.",
+    "d": 2,
+    "s": "2.4"
+  },
+  {
+    "id": "cv1590",
+    "cat": "algebra",
+    "topic": "Algebraic Fractions",
+    "q": "Simplify the algebraic fraction $(24pq^2) / (32p^2q^3)$.",
+    "o": [
+      "$3 / (4pq)$",
+      "$(3p) / (4q)$",
+      "$(3q) / (4p)$",
+      "$3 / (4p^2q^2)$"
+    ],
+    "a": 0,
+    "e": "Divide the numerator and denominator by their greatest common divisor, which is $8pq^2$. This gives $(24pq^2 / 8pq^2) / (32p^2q^3 / 8pq^2) = 3 / (4pq)$. \\\\frac{24pq^2}{32p^2q^3} = \\\\frac{3}{4pq}$.",
+    "d": 2,
+    "s": "2.4"
+  },
+  {
+    "id": "cv1591",
+    "cat": "algebra",
+    "topic": "Algebraic Fractions",
+    "q": "Which value of $x$ must be excluded for the expression $8 / (x + 9)$ to be defined?",
+    "o": [
+      "0",
+      "8",
+      "9",
+      "-9"
+    ],
+    "a": 3,
+    "e": "The expression is undefined when the denominator is zero. Set $x + 9 = 0$ and solve for $x$, which gives $x = -9$.",
+    "d": 2,
+    "s": "2.4"
+  },
+  {
+    "id": "cv1592",
+    "cat": "algebra",
+    "topic": "Algebraic Fractions",
+    "q": "Which value of $x$ must be excluded for the expression $k / (3x - 12)$ to be defined?",
+    "o": [
+      "0",
+      "3",
+      "4",
+      "12"
+    ],
+    "a": 2,
+    "e": "The expression is undefined when the denominator is zero. Set $3x - 12 = 0$. Adding 12 to both sides gives $3x = 12$, and dividing by 3 gives $x = 12 / 3 = 4$.",
+    "d": 2,
+    "s": "2.4"
+  },
+  {
+    "id": "cv1593",
+    "cat": "algebra",
+    "topic": "Algebraic Fractions",
+    "q": "Which value of $x$ must be excluded for the expression $10 / (25 - 5x)$ to be defined?",
+    "o": [
+      "0",
+      "5",
+      "10",
+      "-5"
+    ],
+    "a": 1,
+    "e": "The expression is undefined when the denominator is zero. Set $25 - 5x = 0$. This implies $5x = 25$, so $x = 25 / 5 = 5$.",
+    "d": 2,
+    "s": "2.4"
+  }
+]

@@ -1,0 +1,799 @@
+[
+  {
+    "id": "kp-Y11.1-01",
+    "section": "Y11.1",
+    "order": 1,
+    "title": "Upper and Lower Bounds",
+    "title_zh": "上下界限",
+    "explanation": {
+      "en": "**Rounding and Error Intervals** occur when a value is given to a certain degree of accuracy. The true value lies within a range defined by its bounds.\n\n**Lower Bound** (LB) is the smallest possible value that would round to the given number. To find it, subtract half of the degree of accuracy from the value.\n\n**Upper Bound** (UB) is the smallest value that would round *up* to the next level (the true value $x$ satisfies $LB \\le x < UB$). To find it, add half of the degree of accuracy to the value.\n\n**Calculated Bounds** require careful logic. For a sum $A+B$, the Max is $UB_A + UB_B$. For a quotient $\\frac{A}{B}$, the Max is $\\frac{UB_A}{LB_B}$ and the Min is $\\frac{LB_A}{UB_B}$.",
+      "zh": "**舍入与误差区间**发生在数值被精确到一定程度时。真实值落在由界限定义的范围内。\n\n**下界** (LB) 是能舍入到给定数值的最小可能值。计算方法是：从原值中减去精确度的一半。\n\n**上界** (UB) 是能舍入到下一个级别的最小值（真实值 $x$ 满足 $LB \\le x < UB$）。计算方法是：在原值上加上精确度的一半。\n\n**计算界限**需要逻辑推理。对于和 $A+B$，最大值是 $UB_A + UB_B$。对于商 $\\frac{A}{B}$，最大值是 $\\frac{UB_A}{LB_B}$，最小值是 $\\frac{LB_A}{UB_B}$。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-find-bounds",
+        "label": "Identify bounds of a single measurement",
+        "label_zh": "识别单个测量值的界限",
+        "description": "Given a number rounded to decimal places or significant figures, state its upper and lower bounds.",
+        "description_zh": "给定一个舍入到小数位或有效数字的数，说明其上下界。"
+      },
+      {
+        "id": "ep-calc-bounds",
+        "label": "Calculate bounds for a formula",
+        "label_zh": "计算公式的界限范围",
+        "description": "Calculate the maximum or minimum possible value for a calculated quantity involving division or subtraction.",
+        "description_zh": "计算涉及除法或减法的运算结果的最大或最小可能值。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-find-bounds",
+        "question": "The length of a field is given as $70$ m, correct to the nearest $10$ m. Write down the error interval for the length $L$.",
+        "question_zh": "一块场地的长度为 $70$ 米（精确到最接近的 $10$ 米）。写出长度 $L$ 的误差区间。",
+        "solution": "**Step 1:** Identify the degree of accuracy ($10$ m).\n**Step 2:** Find the half-unit: $10 \\div 2 = 5$ m.\n**Step 3:** Lower Bound = $70 - 5 = 65$ m.\n**Step 4:** Upper Bound = $70 + 5 = 75$ m.\n**Answer:** $65 \\le L < 75$",
+        "solution_zh": "**步骤1：** 确定精确度（$10$ 米）。\n**步骤2：** 计算单位的一半：$10 \\div 2 = 5$ 米。\n**步骤3：** 下界 = $70 - 5 = 65$ 米。\n**步骤4：** 上界 = $70 + 5 = 75$ 米。\n**答案：** $65 \\le L < 75$",
+        "source": "Year 11 Assessment"
+      },
+      {
+        "patternId": "ep-calc-bounds",
+        "question": "A car travels $d = 100$ km (to 3 sig figs) in time $t = 1.2$ hours (to 1 d.p.). Calculate the upper bound for the average speed.",
+        "question_zh": "一辆汽车行驶了 $d = 100$ 千米（保留3位有效数字），用时 $t = 1.2$ 小时（精确到0.1位）。计算平均速度的上界。",
+        "solution": "**Step 1:** Find bounds for $d$. Accuracy is $1$ km. $LB_d = 99.5$, $UB_d = 100.5$.\n**Step 2:** Find bounds for $t$. Accuracy is $0.1$. $LB_t = 1.15$, $UB_t = 1.25$.\n**Step 3:** Formula for Speed $S = d/t$. For Max Speed, use $UB_d / LB_t$.\n**Step 4:** $S_{max} = 100.5 \\div 1.15 \\approx 87.39$ km/h.\n**Answer:** $87.4$ km/h (to 3 sig figs).",
+        "solution_zh": "**步骤1：** 找出 $d$ 的界限。精确度为 $1$。$LB_d = 99.5, UB_d = 100.5$。\n**步骤2：** 找出 $t$ 的界限。精确度为 $0.1$。$LB_t = 1.15, UB_t = 1.25$。\n**步骤3：** 速度公式 $S = d/t$。为求最大速度，使用 $UB_d / LB_t$。\n**步骤4：** $S_{max} = 100.5 \\div 1.15 \\approx 87.39$ 千米/小时。\n**答案：** $87.4$ 千米/小时（保留3位有效数字）。",
+        "source": "Year 11 Assessment"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "The mass of a box is $5.4$ kg correct to 1 decimal place. What is the upper bound?",
+        "q_zh": "一个盒子的质量为 $5.4$ 千克（精确到小数点后一位）。它的上界是多少？",
+        "o": [
+          "$5.45$ kg",
+          "$5.44$ kg",
+          "$5.5$ kg",
+          "$5.35$ kg"
+        ],
+        "a": 0,
+        "e": "The accuracy is $0.1$. Half is $0.05$. $5.4 + 0.05 = 5.45$.",
+        "e_zh": "精确度是 $0.1$。一半是 $0.05$。$5.4 + 0.05 = 5.45$。"
+      },
+      {
+        "q": "To calculate the minimum value of $x - y$, you should use:",
+        "q_zh": "为了计算 $x - y$ 的最小值，你应该使用：",
+        "o": [
+          "$UB_x - UB_y$",
+          "$LB_x - LB_y$",
+          "$LB_x - UB_y$",
+          "$UB_x - LB_y$"
+        ],
+        "a": 2,
+        "e": "To make a difference as small as possible, start with the smallest $x$ (LB) and subtract the largest $y$ (UB).",
+        "e_zh": "为了使差值尽可能小，应从最小的 $x$ (LB) 中减去最大的 $y$ (UB)。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-Y11.2-01",
+    "section": "Y11.2",
+    "order": 1,
+    "title": "Set Notation & Venn Diagrams",
+    "title_zh": "集合符号与韦恩图",
+    "explanation": {
+      "en": "**Set notation** allows us to define groups of objects precisely. $A \\cap B$ is the **intersection** (elements in both), while $A \\cup B$ is the **union** (elements in either or both).\n\n**Complement** of set $A$, denoted $A'$, consists of all elements in the universal set $\\xi$ that are NOT in $A$.\n\n**Subsets** are indicated by $A \\subset B$ (every element of $A$ is in $B$). The number of elements in $A$ is written as $n(A)$.\n\n**Venn Diagrams** visually represent these relationships. Regions can be shaded to represent complex sets like $(A \\cup B) \\cap C'$.",
+      "zh": "**集合符号**让我们能精确地定义对象组。$A \\cap B$ 是**交集**（同时属于两者的元素），而 $A \\cup B$ 是**并集**（属于其中之一或两者的元素）。\n\n**补集**（记作 $A'$）包含全集 $\\xi$ 中所有不属于 $A$ 的元素。\n\n**子集**用 $A \\subset B$ 表示（$A$ 中的每个元素都在 $B$ 中）。集合 $A$ 中元素的数量记作 $n(A)$。\n\n**韦恩图**直观地展示了这些关系。可以通过阴影部分来表示复杂的集合，例如 $(A \\cup B) \\cap C'$。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-venn-prob",
+        "label": "Solve problems using Venn diagrams",
+        "label_zh": "使用韦恩图解决问题",
+        "description": "Use given numbers or frequencies to fill in a Venn diagram and find missing values.",
+        "description_zh": "利用给定的数值或频数填充韦恩图，并找出缺失的值。"
+      },
+      {
+        "id": "ep-set-shade",
+        "label": "Shade regions in a Venn diagram",
+        "label_zh": "在韦恩图中涂色区域",
+        "description": "Identify and shade the region corresponding to a specific set notation.",
+        "description_zh": "识别并涂出对应于特定集合符号的区域。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-set-shade",
+        "question": "In a Venn diagram with two sets $A$ and $B$, shade the region represented by $A' \\cap B$.",
+        "question_zh": "在包含两个集合 $A$ 和 $B$ 的韦恩图中，涂出表示 $A' \\cap B$ 的区域。",
+        "solution": "**Step 1:** $A'$ represents everything outside circle $A$.\n**Step 2:** $B$ represents everything inside circle $B$.\n**Step 3:** $\\cap$ means intersection (the overlap).\n**Answer:** The region that is inside $B$ but outside $A$ (the crescent part of $B$).",
+        "solution_zh": "**步骤1：** $A'$ 表示圆 $A$ 之外的所有部分。\n**步骤2：** $B$ 表示圆 $B$ 之内的所有部分。\n**步骤3：** $\\cap$ 表示交集（重叠部分）。\n**答案：** 位于 $B$ 内部但在 $A$ 外部的区域（即 $B$ 的月牙形部分）。",
+        "source": "Year 11 Assessment"
+      },
+      {
+        "patternId": "ep-venn-prob",
+        "question": "In a class of 30 students, 18 study Music (M), 15 study Art (A), and 7 study neither. Find $n(M \\cap A)$.",
+        "question_zh": "在一个30人的班级中，18人学习音乐 (M)，15人学习美术 (A)，7人两者都不学。求 $n(M \\cap A)$。",
+        "solution": "**Step 1:** Students studying at least one subject $n(M \\cup A) = 30 - 7 = 23$.\n**Step 2:** Use the formula $n(M \\cup A) = n(M) + n(A) - n(M \\cap A)$.\n**Step 3:** $23 = 18 + 15 - n(M \\cap A)$.\n**Step 4:** $23 = 33 - n(M \\cap A) \\implies n(M \\cap A) = 10$.\n**Answer:** 10 students.",
+        "solution_zh": "**步骤1：** 至少学习一门科目的学生 $n(M \\cup A) = 30 - 7 = 23$。\n**步骤2：** 使用公式 $n(M \\cup A) = n(M) + n(A) - n(M \\cap A)$。\n**步骤3：** $23 = 18 + 15 - n(M \\cap A)$。\n**步骤4：** $23 = 33 - n(M \\cap A) \\implies n(M \\cap A) = 10$。\n**答案：** 10名学生。",
+        "source": "Year 11 Assessment"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "What does the notation $x \\in A$ mean?",
+        "q_zh": "符号 $x \\in A$ 是什么意思？",
+        "o": [
+          "$x$ is a subset of $A$",
+          "$x$ is an element of $A$",
+          "$x$ is not in $A$",
+          "The number of elements in $A$ is $x$"
+        ],
+        "a": 1,
+        "e": "The symbol $\\in$ means 'is an element of' or 'belongs to'.",
+        "e_zh": "符号 $\\in$ 的意思是“是...的元素”或“属于”。"
+      },
+      {
+        "q": "If $\\xi = \\{1, 2, 3, 4, 5\\}$ and $A = \\{1, 2, 3\\}$, what is $A'$?",
+        "q_zh": "如果 $\\xi = \\{1, 2, 3, 4, 5\\}$ 且 $A = \\{1, 2, 3\\}$，那么 $A'$ 是多少？",
+        "o": [
+          "$\\{4, 5\\}$",
+          "$\\{1, 2, 3, 4, 5\\}$",
+          "$\\{\\}$",
+          "$\\{1, 2, 3\\}$"
+        ],
+        "a": 0,
+        "e": "$A'$ contains all elements in the universal set that are not in $A$.",
+        "e_zh": "$A'$ 包含全集中所有不属于 $A$ 的元素。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-Y11.3-01",
+    "section": "Y11.3",
+    "order": 1,
+    "title": "Simultaneous Equations: Linear and Quadratic",
+    "title_zh": "联立方程组：线性与二次",
+    "explanation": {
+      "en": "**Simultaneous Equations** involving one linear and one quadratic equation usually result in two pairs of solutions.\n\n**Substitution Method** is the standard approach. Rearrange the linear equation to make one variable the subject (e.g., $y = mx + c$), then substitute this expression into the quadratic equation.\n\n**Solving the Quadratic** involves expanding, simplifying to $ax^2 + bx + c = 0$, and solving via factoring or the quadratic formula. Finally, substitute the $x$ values back into the *linear* equation to find the corresponding $y$ values.",
+      "zh": "包含一个线性方程和一个二次方程的**联立方程组**通常会产生两组解。\n\n**代入法**是标准方法。整理线性方程，使其中一个变量成为主元（例如 $y = mx + c$），然后将该表达式代入二次方程中。\n\n**解二次方程**包括展开、化简为 $ax^2 + bx + c = 0$，并利用因式分解或求根公式求解。最后，将求得的 $x$ 值代回*线性*方程中，以找到对应的 $y$ 值。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-sub-solve",
+        "label": "Solve linear and quadratic pairs",
+        "label_zh": "解线性与二次方程组",
+        "description": "Solve a pair of equations where one is linear (e.g., $x+y=5$) and one is quadratic (e.g., $x^2+y^2=13$).",
+        "description_zh": "解一对方程，其中一个是线性的（如 $x+y=5$），一个是二次的（如 $x^2+y^2=13$）。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-sub-solve",
+        "question": "Solve simultaneously:\n$y = x + 1$\n$x^2 + y^2 = 5$",
+        "question_zh": "解联立方程组：\n$y = x + 1$\n$x^2 + y^2 = 5$",
+        "solution": "**Step 1:** Substitute $y = x + 1$ into the second equation: $x^2 + (x+1)^2 = 5$.\n**Step 2:** Expand: $x^2 + x^2 + 2x + 1 = 5 \\implies 2x^2 + 2x - 4 = 0$.\n**Step 3:** Divide by 2: $x^2 + x - 2 = 0$.\n**Step 4:** Factor: $(x+2)(x-1) = 0 \\implies x = -2$ or $x = 1$.\n**Step 5:** Find $y$ using $y = x + 1$:\nIf $x = -2, y = -2 + 1 = -1$.\nIf $x = 1, y = 1 + 1 = 2$.\n**Answer:** $(-2, -1)$ and $(1, 2)$.",
+        "solution_zh": "**步骤1：** 将 $y = x + 1$ 代入第二个方程：$x^2 + (x+1)^2 = 5$。\n**步骤2：** 展开：$x^2 + x^2 + 2x + 1 = 5 \\implies 2x^2 + 2x - 4 = 0$。\n**步骤3：** 除以 2：$x^2 + x - 2 = 0$。\n**步骤4：** 因式分解：$(x+2)(x-1) = 0 \\implies x = -2$ 或 $x = 1$。\n**步骤5：** 使用 $y = x + 1$ 找出 $y$：\n若 $x = -2, y = -2 + 1 = -1$。\n若 $x = 1, y = 1 + 1 = 2$。\n**答案：** $(-2, -1)$ 和 $(1, 2)$。",
+        "source": "Year 11 Assessment"
+      },
+      {
+        "patternId": "ep-sub-solve",
+        "question": "Solve:\n$2x + y = 7$\n$y = x^2 - 3x + 1$",
+        "question_zh": "求解：\n$2x + y = 7$\n$y = x^2 - 3x + 1$",
+        "solution": "**Step 1:** Rearrange linear: $y = 7 - 2x$.\n**Step 2:** Equate: $7 - 2x = x^2 - 3x + 1$.\n**Step 3:** Set to zero: $x^2 - x - 6 = 0$.\n**Step 4:** Factor: $(x-3)(x+2) = 0 \\implies x = 3, x = -2$.\n**Step 5:** Find $y$: \nIf $x = 3, y = 7 - 2(3) = 1$.\nIf $x = -2, y = 7 - 2(-2) = 11$.\n**Answer:** $(3, 1)$ and $(-2, 11)$.",
+        "solution_zh": "**步骤1：** 整理线性方程：$y = 7 - 2x$。\n**步骤2：** 联立：$7 - 2x = x^2 - 3x + 1$。\n**步骤3：** 化为零：$x^2 - x - 6 = 0$。\n**步骤4：** 因式分解：$(x-3)(x+2) = 0 \\implies x = 3, x = -2$。\n**步骤5：** 找出 $y$：\n若 $x = 3, y = 7 - 2(3) = 1$。\n若 $x = -2, y = 7 - 2(-2) = 11$。\n**答案：** $(3, 1)$ 和 $(-2, 11)$。",
+        "source": "Year 11 Assessment"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "How many pairs of solutions do a line and a circle typically have if they intersect?",
+        "q_zh": "如果一条直线和一个圆相交，通常会有几组解？",
+        "o": [
+          "1",
+          "2",
+          "3",
+          "Infinite"
+        ],
+        "a": 1,
+        "e": "A line intersects a circle at most at two points, giving two pairs of $(x, y)$ solutions.",
+        "e_zh": "直线与圆最多交于两点，因此有两组 $(x, y)$ 解。"
+      },
+      {
+        "q": "When solving $y = 2x$ and $x^2 + y^2 = 20$, what is the resulting equation in $x$?",
+        "q_zh": "求解 $y = 2x$ 和 $x^2 + y^2 = 20$ 时，得到的关于 $x$ 的方程是什么？",
+        "o": [
+          "$3x^2 = 20$",
+          "$5x^2 = 20$",
+          "$x^2 + 2x = 20$",
+          "$2x^2 = 20$"
+        ],
+        "a": 1,
+        "e": "$x^2 + (2x)^2 = 20 \\implies x^2 + 4x^2 = 20 \\implies 5x^2 = 20$.",
+        "e_zh": "$x^2 + (2x)^2 = 20 \\implies x^2 + 4x^2 = 20 \\implies 5x^2 = 20$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-Y11.4-01",
+    "section": "Y11.4",
+    "order": 1,
+    "title": "Quadratic Sequences",
+    "title_zh": "二次数列",
+    "explanation": {
+      "en": "**Quadratic Sequences** have a common **second difference**. The $n$th term formula is in the form $u_n = an^2 + bn + c$.\n\n**Method of Differences**:\n1. Find the first differences between terms.\n2. Find the second differences. The second difference is constant and equals $2a$.\n3. Solve for $a$ ($a = \\text{second difference} \\div 2$).\n4. Subtract $an^2$ from the original sequence to get a linear sequence.\n5. Find the $n$th term of this linear sequence to get $bn + c$.",
+      "zh": "**二次数列**具有相同的**二阶差**。其第 $n$ 项公式的形式为 $u_n = an^2 + bn + c$。\n\n**差分法**：\n1. 找出项之间的阶差（一阶差）。\n2. 找出二阶差。二阶差是常数且等于 $2a$。\n3. 解出 $a$（$a = \\text{二阶差} \\div 2$）。\n4. 从原数列中减去 $an^2$，得到一个等差数列（线性数列）。\n5. 找出这个线性数列的第 $n$ 项公式，得到 $bn + c$。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-nth-quad",
+        "label": "Find the nth term of a quadratic sequence",
+        "label_zh": "求二次数列的第 n 项",
+        "description": "Determine the formula $an^2 + bn + c$ for a given sequence of numbers.",
+        "description_zh": "确定给定数字序列的公式 $an^2 + bn + c$。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-nth-quad",
+        "question": "Find the $n$th term for the sequence: $2, 9, 20, 35, 54, \\ldots$",
+        "question_zh": "求数列的第 $n$ 项：$2, 9, 20, 35, 54, \\ldots$",
+        "solution": "**Step 1:** First diffs: $7, 11, 15, 19$. Second diffs: $4, 4, 4$.\n**Step 2:** $2a = 4 \\implies a = 2$. Term starts with $2n^2$.\n**Step 3:** Subtract $2n^2$ from terms:\n$n=1: 2 - 2(1)^2 = 0$\n$n=2: 9 - 2(2)^2 = 1$\n$n=3: 20 - 2(3)^2 = 2$\nLinear sequence is $0, 1, 2, \\ldots$, which is $n-1$.\n**Step 4:** Combine: $u_n = 2n^2 + n - 1$.",
+        "solution_zh": "**步骤1：** 一阶差：$7, 11, 15, 19$。二阶差：$4, 4, 4$。\n**步骤2：** $2a = 4 \\implies a = 2$。项以 $2n^2$ 开头。\n**步骤3：** 从各基项中减去 $2n^2$：\n$n=1: 2 - 2(1)^2 = 0$\n$n=2: 9 - 2(2)^2 = 1$\n$n=3: 20 - 2(3)^2 = 2$\n线性数列为 $0, 1, 2, \\ldots$，即 $n-1$。\n**步骤4：** 合并：$u_n = 2n^2 + n - 1$。",
+        "source": "Year 11 Assessment"
+      },
+      {
+        "patternId": "ep-nth-quad",
+        "question": "Find the 10th term of the sequence with $n$th term $n^2 - 3n + 5$.",
+        "question_zh": "求第 $n$ 项为 $n^2 - 3n + 5$ 的数列的第 10 项。",
+        "solution": "**Step 1:** Substitute $n = 10$ into the formula.\n**Step 2:** $u_{10} = 10^2 - 3(10) + 5 = 100 - 30 + 5 = 75$.\n**Answer:** 75.",
+        "solution_zh": "**步骤1：** 将 $n = 10$ 代入公式。\n**步骤2：** $u_{10} = 10^2 - 3(10) + 5 = 100 - 30 + 5 = 75$。\n**答案：** 75。",
+        "source": "Year 11 Assessment"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "If the second difference of a sequence is 6, what is the value of 'a' in $an^2 + bn + c$?",
+        "q_zh": "如果一个数列的二阶差是 6，那么 $an^2 + bn + c$ 中的 'a' 是多少？",
+        "o": [
+          "6",
+          "3",
+          "12",
+          "1"
+        ],
+        "a": 1,
+        "e": "$2a = \\text{second difference} \\implies 2a = 6 \\implies a = 3$.",
+        "e_zh": "$2a = \\text{二阶差} \\implies 2a = 6 \\implies a = 3$。"
+      },
+      {
+        "q": "Which of these is a quadratic sequence?",
+        "q_zh": "下列哪个是二次数列？",
+        "o": [
+          "$2, 4, 6, 8, \\ldots$",
+          "$1, 4, 9, 16, \\ldots$",
+          "$3, 6, 12, 24, \\ldots$",
+          "$1, 8, 27, 64, \\ldots$"
+        ],
+        "a": 1,
+        "e": "$1, 4, 9, 16$ are square numbers ($n^2$), which is a quadratic sequence with second difference 2.",
+        "e_zh": "$1, 4, 9, 16$ 是平方数 ($n^2$)，这是一个二阶差为 2 的二次数列。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-Y11.5-01",
+    "section": "Y11.5",
+    "order": 1,
+    "title": "Composite and Inverse Functions",
+    "title_zh": "复合函数与反函数",
+    "explanation": {
+      "en": "**Composite Functions** are formed by applying one function to the result of another. $fg(x)$ means apply $g$ first, then apply $f$ to that result: $f(g(x))$. Note that $fg(x) \\neq gf(x)$ in general.\n\n**Inverse Functions** ($f^{-1}(x)$) \"undo\" the action of a function. To find it, let $y = f(x)$, swap $x$ and $y$, then solve for the new $y$.\n\n**Function Notation** $f: x \\to 2x+3$ is equivalent to $f(x) = 2x+3$. The domain is the set of possible input values, and the range is the set of output values.",
+      "zh": "**复合函数**是通过将一个函数应用于另一个函数的结果而形成的。$fg(x)$ 表示先应用 $g$，然后将 $f$ 应用于该结果：$f(g(x))$。注意通常 $fg(x) \\neq gf(x)$。\n\n**反函数** ($f^{-1}(x)$) “撤销”原函数的操作。找反函数的方法是：令 $y = f(x)$，交换 $x$ 和 $y$，然后解出新的 $y$。\n\n**函数符号** $f: x \\to 2x+3$ 等同于 $f(x) = 2x+3$。定义域是所有可能输入值的集合，值域是输出值的集合。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-comp-func",
+        "label": "Calculate composite functions",
+        "label_zh": "计算复合函数",
+        "description": "Evaluate $fg(2)$ or find the expression for $fg(x)$ given $f(x)$ and $g(x)$.",
+        "description_zh": "给定 $f(x)$ 和 $g(x)$，求 $fg(2)$ 的值或 $fg(x)$ 的表达式。"
+      },
+      {
+        "id": "ep-inv-func",
+        "label": "Find inverse functions",
+        "label_zh": "求反函数",
+        "description": "Determine the algebraic expression for $f^{-1}(x)$.",
+        "description_zh": "确定 $f^{-1}(x)$ 的代数表达式。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-comp-func",
+        "question": "Given $f(x) = x^2$ and $g(x) = x + 3$, find $fg(x)$ and $gf(x)$.",
+        "question_zh": "已知 $f(x) = x^2$ 且 $g(x) = x + 3$，求 $fg(x)$ 和 $gf(x)$。",
+        "solution": "**Step 1:** $fg(x) = f(g(x)) = f(x+3)$.\n**Step 2:** Replace $x$ in $f$ with $(x+3)$: $fg(x) = (x+3)^2 = x^2 + 6x + 9$.\n**Step 3:** $gf(x) = g(f(x)) = g(x^2)$.\n**Step 4:** Replace $x$ in $g$ with $x^2$: $gf(x) = x^2 + 3$.",
+        "solution_zh": "**步骤1：** $fg(x) = f(g(x)) = f(x+3)$。\n**步骤2：** 将 $f$ 中的 $x$ 替换为 $(x+3)$：$fg(x) = (x+3)^2 = x^2 + 6x + 9$。\n**步骤3：** $gf(x) = g(f(x)) = g(x^2)$。\n**步骤4：** 将 $g$ 中的 $x$ 替换为 $x^2$：$gf(x) = x^2 + 3$。",
+        "source": "Year 11 Assessment"
+      },
+      {
+        "patternId": "ep-inv-func",
+        "question": "Find the inverse of $f(x) = \\frac{2x - 1}{3}$.",
+        "question_zh": "求 $f(x) = \\frac{2x - 1}{3}$ 的反函数。",
+        "solution": "**Step 1:** Let $y = \\frac{2x - 1}{3}$.\n**Step 2:** Swap $x$ and $y$: $x = \\frac{2y - 1}{3}$.\n**Step 3:** Solve for $y$: $3x = 2y - 1 \\implies 3x + 1 = 2y \\implies y = \\frac{3x + 1}{2}$.\n**Answer:** $f^{-1}(x) = \\frac{3x + 1}{2}$.",
+        "solution_zh": "**步骤1：** 令 $y = \\frac{2x - 1}{3}$。\n**步骤2：** 交换 $x$ 和 $y$：$x = \\frac{2y - 1}{3}$。\n**步骤3：** 解出 $y$：$3x = 2y - 1 \\implies 3x + 1 = 2y \\implies y = \\frac{3x + 1}{2}$。\n**答案：** $f^{-1}(x) = \\frac{3x + 1}{2}$。",
+        "source": "Year 11 Assessment"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "If $f(x) = 5x$, what is $ff(x)$?",
+        "q_zh": "如果 $f(x) = 5x$，那么 $ff(x)$ 是多少？",
+        "o": [
+          "$5x$",
+          "$25x$",
+          "$10x$",
+          "$5x^2$"
+        ],
+        "a": 1,
+        "e": "$ff(x) = f(5x) = 5(5x) = 25x$.",
+        "e_zh": "$ff(x) = f(5x) = 5(5x) = 25x$。"
+      },
+      {
+        "q": "What is the inverse of $f(x) = x + 10$?",
+        "q_zh": "$f(x) = x + 10$ 的反函数是什么？",
+        "o": [
+          "$x - 10$",
+          "$10x$",
+          "$\\frac{1}{x+10}$",
+          "$10 - x$"
+        ],
+        "a": 0,
+        "e": "Swap $x$ and $y$: $x = y + 10 \\implies y = x - 10$.",
+        "e_zh": "交换 $x$ 和 $y$：$x = y + 10 \\implies y = x - 10$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-Y11.6-01",
+    "section": "Y11.6",
+    "order": 1,
+    "title": "Introduction to Differentiation",
+    "title_zh": "微分入门",
+    "explanation": {
+      "en": "**Differentiation** is the process of finding the rate of change or the **gradient** of a curve at any point. The derivative is denoted as $\\frac{dy}{dx}$ or $f'(x)$.\n\n**The Power Rule**: For a term $y = ax^n$, the derivative is $\\frac{dy}{dx} = anx^{n-1}$. You multiply by the power and then decrease the power by 1.\n\n**Special Cases**: The derivative of a constant (like 5) is 0. The derivative of $ax$ is simply $a$.\n\n**Applications**: The value of $\\frac{dy}{dx}$ at a specific $x$-coordinate gives the gradient of the **tangent** to the curve at that point.",
+      "zh": "**微分**是寻找曲线上任意一点的变化率或**梯度**的过程。导数记作 $\\frac{dy}{dx}$ 或 $f'(x)$。\n\n**幂法则**：对于项 $y = ax^n$，其导数为 $\\frac{dy}{dx} = anx^{n-1}$。即先乘以原指数，然后将指数减 1。\n\n**特殊情况**：常数（如 5）的导数是 0。$ax$ 的导数仅为 $a$。\n\n**应用**：在特定 $x$ 坐标处的 $\\frac{dy}{dx}$ 值给出了曲线在该点处的**切线**梯度。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-diff-poly",
+        "label": "Differentiate a polynomial",
+        "label_zh": "对多项式求导",
+        "description": "Find $\\frac{dy}{dx}$ for expressions involving several terms of $x$.",
+        "description_zh": "求包含多个 $x$ 项的表达式的 $\\frac{dy}{dx}$。"
+      },
+      {
+        "id": "ep-grad-point",
+        "label": "Find gradient at a point",
+        "label_zh": "求某点处的梯度",
+        "description": "Find the gradient of a curve at a given $x$ value by differentiating and substituting.",
+        "description_zh": "通过求导并代入给定的 $x$ 值来计算曲线在该点处的梯度。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-diff-poly",
+        "question": "Find $\\frac{dy}{dx}$ if $y = 3x^4 - 5x^2 + 7x - 2$.",
+        "question_zh": "若 $y = 3x^4 - 5x^2 + 7x - 2$，求 $\\frac{dy}{dx}$。",
+        "solution": "**Step 1:** Differentiate $3x^4 \\to 3 \\times 4x^3 = 12x^3$.\n**Step 2:** Differentiate $-5x^2 \\to -5 \\times 2x^1 = -10x$.\n**Step 3:** Differentiate $7x \\to 7$.\n**Step 4:** Differentiate $-2 \\to 0$.\n**Answer:** $\\frac{dy}{dx} = 12x^3 - 10x + 7$.",
+        "solution_zh": "**步骤1：** 对 $3x^4$ 求导 $\\to 3 \\times 4x^3 = 12x^3$。\n**步骤2：** 对 $-5x^2$ 求导 $\\to -5 \\times 2x^1 = -10x$。\n**步骤3：** 对 $7x$ 求导 $\\to 7$。\n**步骤4：** 对 $-2$ 求导 $\\to 0$。\n**答案：** $\\frac{dy}{dx} = 12x^3 - 10x + 7$。",
+        "source": "Year 11 Assessment"
+      },
+      {
+        "patternId": "ep-grad-point",
+        "question": "Calculate the gradient of the curve $y = x^2 + 4x$ at the point where $x = 3$.",
+        "question_zh": "计算曲线 $y = x^2 + 4x$ 在 $x = 3$ 处的梯度。",
+        "solution": "**Step 1:** Find the derivative: $\\frac{dy}{dx} = 2x + 4$.\n**Step 2:** Substitute $x = 3$ into the derivative.\n**Step 3:** Gradient $= 2(3) + 4 = 10$.\n**Answer:** 10.",
+        "solution_zh": "**步骤1：** 求导：$\\frac{dy}{dx} = 2x + 4$。\n**步骤2：** 将 $x = 3$ 代入导数中。\n**步骤3：** 梯度 $= 2(3) + 4 = 10$。\n**答案：** 10。",
+        "source": "Year 11 Assessment"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "What is the derivative of $y = 10$?",
+        "q_zh": "$y = 10$ 的导数是什么？",
+        "o": [
+          "10",
+          "1",
+          "0",
+          "$10x$"
+        ],
+        "a": 2,
+        "e": "The derivative of any constant is 0 because constants do not change.",
+        "e_zh": "任何常数的导数都是 0，因为常数不会改变。"
+      },
+      {
+        "q": "If $y = x^3$, what is $\\frac{dy}{dx}$?",
+        "q_zh": "如果 $y = x^3$，那么 $\\frac{dy}{dx}$ 是多少？",
+        "o": [
+          "$x^2$",
+          "$3x^2$",
+          "$3x^3$",
+          "$\\frac{1}{4}x^4$"
+        ],
+        "a": 1,
+        "e": "Using the power rule: $3 \\times x^{3-1} = 3x^2$.",
+        "e_zh": "使用幂法则：$3 \\times x^{3-1} = 3x^2$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-Y11.7-01",
+    "section": "Y11.7",
+    "order": 1,
+    "title": "Sine and Cosine Rules",
+    "title_zh": "正弦定理与余弦定理",
+    "explanation": {
+      "en": "**The Sine Rule** relates sides and angles in any triangle: $\\frac{a}{\\sin A} = \\frac{b}{\\sin B} = \\frac{c}{\\sin C}$. Use this when you know an opposite pair (side and angle) and one other piece of information.\n\n**The Cosine Rule** relates three sides and one angle: $a^2 = b^2 + c^2 - 2bc\\cos A$. Use this when you have Side-Angle-Side (SAS) or three sides (SSS).\n\n**Area of a Triangle** can be found using the formula $\\text{Area} = \\frac{1}{2}ab\\sin C$. This requires two sides and the included angle.",
+      "zh": "**正弦定理**将三角形中的边与角联系起来：$\\frac{a}{\\sin A} = \\frac{b}{\\sin B} = \\frac{c}{\\sin C}$。当你已知一组对边对角以及另一个已知量时使用此定理。\n\n**余弦定理**将三条边和一个角联系起来：$a^2 = b^2 + c^2 - 2bc\\cos A$。当你已知边-角-边 (SAS) 或三条边 (SSS) 时使用此定理。\n\n**三角形面积**可以使用公式 $\\text{Area} = \\frac{1}{2}ab\\sin C$ 计算。这需要两条边及其夹角。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-sine-rule",
+        "label": "Calculate missing side or angle (Sine)",
+        "label_zh": "计算缺失的边或角（正弦）",
+        "description": "Apply the Sine rule to solve for an unknown side or angle.",
+        "description_zh": "应用正弦定理求解未知边或角。"
+      },
+      {
+        "id": "ep-cosine-rule",
+        "label": "Calculate missing side or angle (Cosine)",
+        "label_zh": "计算缺失的边或角（余弦）",
+        "description": "Apply the Cosine rule to solve for an unknown side or angle (SSS or SAS).",
+        "description_zh": "应用余弦定理求解未知边或角（SSS 或 SAS 情况）。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-sine-rule",
+        "question": "In triangle $ABC$, $a = 8$ cm, angle $A = 30^\\circ$, and angle $B = 45^\\circ$. Find side $b$.",
+        "question_zh": "在三角形 $ABC$ 中，$a = 8$ 厘米，角 $A = 30^\\circ$，角 $B = 45^\\circ$。求边 $b$。",
+        "solution": "**Step 1:** Use Sine Rule: $\\frac{b}{\\sin 45^\\circ} = \\frac{8}{\\sin 30^\\circ}$.\n**Step 2:** $b = \\frac{8 \\times \\sin 45^\\circ}{\\sin 30^\\circ}$.\n**Step 3:** $\\sin 45^\\circ = \\frac{\\sqrt{2}}{2}, \\sin 30^\\circ = 0.5$.\n**Step 4:** $b = \\frac{8 \\times 0.7071}{0.5} = 11.31$ cm.\n**Answer:** $11.3$ cm (to 3 sig figs).",
+        "solution_zh": "**步骤1：** 使用正弦定理：$\\frac{b}{\\sin 45^\\circ} = \\frac{8}{\\sin 30^\\circ}$。\n**步骤2：** $b = \\frac{8 \\times \\sin 45^\\circ}{\\sin 30^\\circ}$。\n**步骤3：** $\\sin 45^\\circ \\approx 0.7071, \\sin 30^\\circ = 0.5$。\n**步骤4：** $b = \\frac{8 \\times 0.7071}{0.5} = 11.31$ 厘米。\n**答案：** $11.3$ 厘米（保留3位有效数字）。",
+        "source": "Year 11 Assessment"
+      },
+      {
+        "patternId": "ep-cosine-rule",
+        "question": "Find the length of side $x$ in a triangle with sides $5$ cm and $7$ cm and an included angle of $60^\\circ$.",
+        "question_zh": "在两条边长分别为 $5$ 厘米和 $7$ 厘米、夹角为 $60^\\circ$ 的三角形中，求第三条边 $x$ 的长度。",
+        "solution": "**Step 1:** Use Cosine Rule: $x^2 = 5^2 + 7^2 - 2(5)(7)\\cos 60^\\circ$.\n**Step 2:** $x^2 = 25 + 49 - 70(0.5)$.\n**Step 3:** $x^2 = 74 - 35 = 39$.\n**Step 4:** $x = \\sqrt{39} \\approx 6.24$ cm.\n**Answer:** $6.24$ cm.",
+        "solution_zh": "**步骤1：** 使用余弦定理：$x^2 = 5^2 + 7^2 - 2(5)(7)\\cos 60^\\circ$。\n**步骤2：** $x^2 = 25 + 49 - 70(0.5)$。\n**步骤3：** $x^2 = 74 - 35 = 39$。\n**步骤4：** $x = \\sqrt{39} \\approx 6.24$ 厘米。\n**答案：** $6.24$ 厘米。",
+        "source": "Year 11 Assessment"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "Which rule would you use to find an angle when you know all three sides?",
+        "q_zh": "当你已知三条边时，你会用哪个定理来求一个角？",
+        "o": [
+          "Sine Rule",
+          "Cosine Rule",
+          "Pythagoras' Theorem",
+          "Tangent Ratio"
+        ],
+        "a": 1,
+        "e": "The Cosine Rule in the form $\\cos A = \\frac{b^2+c^2-a^2}{2bc}$ is used for SSS cases.",
+        "e_zh": "余弦定理的变形公式 $\\cos A = \\frac{b^2+c^2-a^2}{2bc}$ 用于 SSS（已知三边）的情况。"
+      },
+      {
+        "q": "What is the area of a triangle with sides $4$ cm and $5$ cm and an included angle of $30^\\circ$?",
+        "q_zh": "两条边分别为 $4$ 厘米和 $5$ 厘米、夹角为 $30^\\circ$ 的三角形面积是多少？",
+        "o": [
+          "$10$ cm$^2$",
+          "$5$ cm$^2$",
+          "$20$ cm$^2$",
+          "$8.66$ cm$^2$"
+        ],
+        "a": 1,
+        "e": "Area $= \\frac{1}{2} \\times 4 \\times 5 \\times \\sin 30^\\circ = 10 \\times 0.5 = 5$.",
+        "e_zh": "面积 $= \\frac{1}{2} \\times 4 \\times 5 \\times \\sin 30^\\circ = 10 \\times 0.5 = 5$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-Y11.8-01",
+    "section": "Y11.8",
+    "order": 1,
+    "title": "Graphs of Trigonometric Functions",
+    "title_zh": "三角函数图像",
+    "explanation": {
+      "en": "**Trigonometric Graphs** show how sine, cosine, and tangent values change with the angle $\\theta$.\n\n**The Sine Wave** ($y = \\sin \\theta$) starts at $(0,0)$, peaks at $(90,1)$, and repeats every $360^\\circ$. Its range is $-1 \\le y \\le 1$.\n\n**The Cosine Wave** ($y = \\cos \\theta$) starts at $(0,1)$, crosses zero at $90^\\circ$, and peaks at $180^\\circ$. It also repeats every $360^\\circ$.\n\n**The Tangent Graph** ($y = \\tan \\theta$) has **asymptotes** (lines the graph never touches) at $90^\\circ, 270^\\circ, \\ldots$ and repeats every $180^\\circ$.",
+      "zh": "**三角函数图像**展示了正弦、余弦和正切值随角度 $\\theta$ 变化的情况。\n\n**正弦波** ($y = \\sin \\theta$) 始于 $(0,0)$，在 $90^\\circ$ 处达到峰值 $1$，每 $360^\\circ$ 循环一次。其值域为 $-1 \\le y \\le 1$。\n\n**余弦波** ($y = \\cos \\theta$) 始于 $(0,1)$，在 $90^\\circ$ 处过零点，在 $180^\\circ$ 处达到波谷 $-1$。它也是每 $360^\\circ$ 循环一次。\n\n**正切图** ($y = \\tan \\theta$) 在 $90^\\circ, 270^\\circ, \\ldots$ 处有**渐近线**（图像永不触及的线），且每 $180^\\circ$ 循环一次。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-ident-trig",
+        "label": "Identify trig graphs",
+        "label_zh": "识别三角函数图像",
+        "description": "Recognize the sketch of sine, cosine, or tangent functions.",
+        "description_zh": "识别正弦、余弦或正切函数的草图。"
+      },
+      {
+        "id": "ep-solve-trig",
+        "label": "Solve trig equations using graphs",
+        "label_zh": "利用图像解三角方程",
+        "description": "Find multiple solutions for $\\sin \\theta = k$ within a range like $0^\\circ \\le \\theta \\le 360^\\circ$.",
+        "description_zh": "在 $0^\\circ \\le \\theta \\le 360^\\circ$ 范围内寻找 $\\sin \\theta = k$ 的多个解。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-solve-trig",
+        "question": "Solve $\\sin \\theta = 0.5$ for $0^\\circ \\le \\theta \\le 360^\\circ$.",
+        "question_zh": "在 $0^\\circ \\le \\theta \\le 360^\\circ$ 范围内求解 $\\sin \\theta = 0.5$。",
+        "solution": "**Step 1:** Find the first solution using a calculator: $\\theta = \\sin^{-1}(0.5) = 30^\\circ$.\n**Step 2:** Use the sine graph symmetry: the second solution is $180^\\circ - 30^\\circ = 150^\\circ$.\n**Answer:** $\\theta = 30^\\circ$ or $150^\\circ$.",
+        "solution_zh": "**步骤1：** 使用计算器求第一个解：$\\theta = \\sin^{-1}(0.5) = 30^\\circ$。\n**步骤2：** 利用正弦图像的对称性：第二个解是 $180^\\circ - 30^\\circ = 150^\\circ$。\n**答案：** $\\theta = 30^\\circ$ 或 $150^\\circ$。",
+        "source": "Year 11 Assessment"
+      },
+      {
+        "patternId": "ep-ident-trig",
+        "question": "Which function is zero at $90^\\circ, 180^\\circ, 270^\\circ$? Check $\\sin \\theta$ and $\\cos \\theta$.",
+        "question_zh": "哪个函数在 $90^\\circ, 180^\\circ, 270^\\circ$ 处为零？检查 $\\sin \\theta$ 和 $\\cos \\theta$。",
+        "solution": "1. $\\sin(90) = 1, \\sin(180) = 0, \\sin(270) = -1$.\n2. $\\cos(90) = 0, \\cos(180) = -1, \\cos(270) = 0$.\n**Answer:** Neither. Only $\\cos$ is zero at 90 and 270. Only $\\sin$ is zero at 180.",
+        "solution_zh": "1. $\\sin(90) = 1, \\sin(180) = 0, \\sin(270) = -1$。\n2. $\\cos(90) = 0, \\cos(180) = -1, \\cos(270) = 0$。\n**答案：** 都没有。只有 $\\cos$ 在 90 和 270 处为零。只有 $\\sin$ 在 180 处为零。",
+        "source": "Year 11 Assessment"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "What is the period of the function $y = \\tan \\theta$?",
+        "q_zh": "函数 $y = \\tan \\theta$ 的周期是多少？",
+        "o": [
+          "$90^\\circ$",
+          "$180^\\circ$",
+          "$360^\\circ$",
+          "$720^\\circ$"
+        ],
+        "a": 1,
+        "e": "The tangent graph repeats every $180^\\circ$.",
+        "e_zh": "正切图像每 $180^\\circ$ 重复一次。"
+      },
+      {
+        "q": "What is the maximum value of $y = 3\\cos \\theta$?",
+        "q_zh": "$y = 3\\cos \\theta$ 的最大值是多少？",
+        "o": [
+          "1",
+          "3",
+          "0",
+          "360"
+        ],
+        "a": 1,
+        "e": "Since the max value of $\\cos \\theta$ is 1, the max value of $3\\cos \\theta$ is $3 \\times 1 = 3$.",
+        "e_zh": "因为 $\\cos \\theta$ 的最大值是 1，所以 $3\\cos \\theta$ 的最大值是 $3 \\times 1 = 3$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-Y11.9-01",
+    "section": "Y11.9",
+    "order": 1,
+    "title": "Regions & Inequalities",
+    "title_zh": "区域与不等式",
+    "explanation": {
+      "en": "**Linear Inequalities** can define regions on a coordinate grid. \n\n**The Boundary Line** is drawn first. Use a **solid line** for $\\le$ or $\\ge$, and a **dashed (broken) line** for $<$ or $>$.\n\n**Shading Regions**: To decide which side to shade, test a point (usually $(0,0)$). If the inequality holds true, shade that side (or the opposite side if asked to shade the *unwanted* region).\n\n**Systems of Inequalities** define a common feasible region where all conditions are met simultaneously.",
+      "zh": "**线性不等式**可以在坐标网格上定义区域。\n\n**边界线**首先被画出。对于 $\\le$ 或 $\\ge$ 使用**实线**，对于 $<$ 或 $>$ 使用**虚线**。\n\n**阴影区域**：要决定涂哪一侧，可以代入一个测试点（通常是 $(0,0)$）。如果不等式成立，则涂该侧（或者如果要求涂*非目标*区域，则涂相反一侧）。\n\n**不等式组**定义了一个共同的可行区域，该区域同时满足所有条件。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-shade-region",
+        "label": "Identify the region R",
+        "label_zh": "识别区域 R",
+        "description": "Given a set of inequalities, identify the region that satisfies all of them.",
+        "description_zh": "给定一组不等式，识别出满足所有条件的区域。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-shade-region",
+        "question": "Describe the region shaded by the inequalities: $x \\ge 1, y \\ge 2, x + y \\le 6$.",
+        "question_zh": "描述由以下不等式定义的阴影区域：$x \\ge 1, y \\ge 2, x + y \\le 6$。",
+        "solution": "**Step 1:** The line $x = 1$ is a vertical solid line. We want the right side.\n**Step 2:** The line $y = 2$ is a horizontal solid line. We want the upper side.\n**Step 3:** The line $x + y = 6$ passes through $(0,6)$ and $(6,0)$. Test $(0,0)$: $0+0 \\le 6$ is true. We want the side containing $(0,0)$.\n**Answer:** A triangle with vertices at $(1,2), (4,2), (1,5)$.",
+        "solution_zh": "**步骤1：** 直线 $x = 1$ 是一条垂直实线。我们需要右侧。\n**步骤2：** 直线 $y = 2$ 是一条水平实线。我们需要上方。\n**步骤3：** 直线 $x + y = 6$ 经过 $(0,6)$ 和 $(6,0)$。代入 $(0,0)$：$0+0 \\le 6$ 成立。我们需要包含 $(0,0)$ 的那一侧。\n**答案：** 一个顶点分别为 $(1,2), (4,2), (1,5)$ 的三角形。",
+        "source": "Year 11 Assessment"
+      },
+      {
+        "patternId": "ep-shade-region",
+        "question": "Is the point $(2,3)$ in the region defined by $y > 2x$?",
+        "question_zh": "点 $(2,3)$ 是否位于 $y > 2x$ 定义的区域内？",
+        "solution": "**Step 1:** Substitute $x = 2$ and $y = 3$ into the inequality.\n**Step 2:** $3 > 2(2) \\implies 3 > 4$.\n**Step 3:** The statement $3 > 4$ is false.\n**Answer:** No, the point is not in the region.",
+        "solution_zh": "**步骤1：** 将 $x = 2$ 且 $y = 3$ 代入不等式。\n**步骤2：** $3 > 2(2) \\implies 3 > 4$。\n**步骤3：** 语句 $3 > 4$ 是错误的。\n**答案：** 不是，该点不在该区域内。",
+        "source": "Year 11 Assessment"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "Which type of line is used for the inequality $y < 5$?",
+        "q_zh": "对于不等式 $y < 5$，应使用哪种类型的线？",
+        "o": [
+          "Solid line",
+          "Dashed/Broken line",
+          "No line",
+          "Bold line"
+        ],
+        "a": 1,
+        "e": "Inequalities without the 'equal to' part ($<$ or $>$) use dashed lines.",
+        "e_zh": "不包含“等于”部分的不等式（$<$ 或 $>$）使用虚线。"
+      },
+      {
+        "q": "Which inequality represents the region to the left of $x = 3$?",
+        "q_zh": "哪个不等式表示直线 $x = 3$ 左侧的区域？",
+        "o": [
+          "$x > 3$",
+          "$x < 3$",
+          "$y < 3$",
+          "$y > 3$"
+        ],
+        "a": 1,
+        "e": "The $x$-coordinate values decrease to the left, so $x < 3$.",
+        "e_zh": "$x$ 坐标值向左减小，因此是 $x < 3$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-Y11.10-01",
+    "section": "Y11.10",
+    "order": 1,
+    "title": "Vectors and Geometry",
+    "title_zh": "向量与几何",
+    "explanation": {
+      "en": "**Vectors** represent quantities with both magnitude and direction. A column vector $\\begin{pmatrix} x \\\\ y \\end{pmatrix}$ shows a movement of $x$ units right and $y$ units up.\n\n**Vector Addition** involves adding corresponding components. Geometrically, $\\vec{AB} + \\vec{BC} = \\vec{AC}$ (the triangle law).\n\n**Scalar Multiplication** $k\\mathbf{a}$ changes the magnitude by factor $k$. If $k$ is negative, the direction reverses. **Parallel vectors** are multiples of each other.\n\n**Magnitude** of vector $\\mathbf{a} = \\begin{pmatrix} x \\\\ y \\end{pmatrix}$ is found using Pythagoras: $|\\mathbf{a}| = \\sqrt{x^2 + y^2}$.",
+      "zh": "**向量**表示既有大小又有方向的量。列向量 $\\begin{pmatrix} x \\\\ y \\end{pmatrix}$ 表示向右移动 $x$ 单位，向上移动 $y$ 单位。\n\n**向量加法**涉及对应分量的相加。几何上，$\\vec{AB} + \\vec{BC} = \\vec{AC}$（三角形法则）。\n\n**数乘** $k\\mathbf{a}$ 将大小改变 $k$ 倍。如果 $k$ 为负，方向反转。**平行向量**互为倍数关系。\n\n**向量的模**（长度）$\\mathbf{a} = \\begin{pmatrix} x \\\\ y \\end{pmatrix}$ 可以利用勾股定理求得：$|\\mathbf{a}| = \\sqrt{x^2 + y^2}$。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-vec-arith",
+        "label": "Vector arithmetic",
+        "label_zh": "向量运算",
+        "description": "Perform addition, subtraction, and scalar multiplication with column vectors.",
+        "description_zh": "对列向量进行加法、减法和数乘运算。"
+      },
+      {
+        "id": "ep-vec-geom",
+        "label": "Geometric vector proofs",
+        "label_zh": "几何向量证明",
+        "description": "Express paths in a diagram in terms of given vectors $\\mathbf{a}$ and $\\mathbf{b}$.",
+        "description_zh": "根据给定的向量 $\\mathbf{a}$ 和 $\\mathbf{b}$ 表示图中路径。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-vec-arith",
+        "question": "If $\\mathbf{a} = \\begin{pmatrix} 3 \\\\ -2 \\end{pmatrix}$ and $\\mathbf{b} = \\begin{pmatrix} 1 \\\\ 4 \\end{pmatrix}$, find $2\\mathbf{a} - \\mathbf{b}$.",
+        "question_zh": "若 $\\mathbf{a} = \\begin{pmatrix} 3 \\\\ -2 \\end{pmatrix}$ 且 $\\mathbf{b} = \\begin{pmatrix} 1 \\\\ 4 \\end{pmatrix}$，求 $2\\mathbf{a} - \\mathbf{b}$。",
+        "solution": "**Step 1:** Calculate $2\\mathbf{a} = 2 \\times \\begin{pmatrix} 3 \\\\ -2 \\end{pmatrix} = \\begin{pmatrix} 6 \\\\ -4 \\end{pmatrix}$.\n**Step 2:** Subtract $\\mathbf{b}$: $\\begin{pmatrix} 6 \\\\ -4 \\end{pmatrix} - \\begin{pmatrix} 1 \\\\ 4 \\end{pmatrix} = \\begin{pmatrix} 6-1 \\\\ -4-4 \\end{pmatrix}$.\n**Answer:** $\\begin{pmatrix} 5 \\\\ -8 \\end{pmatrix}$.",
+        "solution_zh": "**步骤1：** 计算 $2\\mathbf{a} = 2 \\times \\begin{pmatrix} 3 \\\\ -2 \\end{pmatrix} = \\begin{pmatrix} 6 \\\\ -4 \\end{pmatrix}$。\n**步骤2：** 减去 $\\mathbf{b}$：$\\begin{pmatrix} 6 \\\\ -4 \\end{pmatrix} - \\begin{pmatrix} 1 \\\\ 4 \\end{pmatrix} = \\begin{pmatrix} 6-1 \\\\ -4-4 \\end{pmatrix}$。\n**答案：** $\\begin{pmatrix} 5 \\\\ -8 \\end{pmatrix}$。",
+        "source": "Year 11 Assessment"
+      },
+      {
+        "patternId": "ep-vec-geom",
+        "question": "In triangle $OAB$, $\\vec{OA} = \\mathbf{a}$ and $\\vec{OB} = \\mathbf{b}$. $M$ is the midpoint of $AB$. Find $\\vec{OM}$ in terms of $\\mathbf{a}$ and $\\mathbf{b}$.",
+        "question_zh": "在三角形 $OAB$ 中，$\\vec{OA} = \\mathbf{a}$ 且 $\\vec{OB} = \\mathbf{b}$。$M$ 是 $AB$ 的中点。用 $\\mathbf{a}$ 和 $\\mathbf{b}$ 表示 $\\vec{OM}$。",
+        "solution": "**Step 1:** Find $\\vec{AB} = \\vec{AO} + \\vec{OB} = -\\mathbf{a} + \\mathbf{b}$.\n**Step 2:** $\\vec{AM} = \\frac{1}{2}\\vec{AB} = \\frac{1}{2}(-\\mathbf{a} + \\mathbf{b})$.\n**Step 3:** $\\vec{OM} = \\vec{OA} + \\vec{AM} = \\mathbf{a} + \\frac{1}{2}(-\\mathbf{a} + \\mathbf{b}) = \\frac{1}{2}\\mathbf{a} + \\frac{1}{2}\\mathbf{b}$.\n**Answer:** $\\frac{1}{2}(\\mathbf{a} + \\mathbf{b})$.",
+        "solution_zh": "**步骤1：** 找出 $\\vec{AB} = \\vec{AO} + \\vec{OB} = -\\mathbf{a} + \\mathbf{b}$。\n**步骤2：** $\\vec{AM} = \\frac{1}{2}\\vec{AB} = \\frac{1}{2}(-\\mathbf{a} + \\mathbf{b})$。\n**步骤3：** $\\vec{OM} = \\vec{OA} + \\vec{AM} = \\mathbf{a} + \\frac{1}{2}(-\\mathbf{a} + \\mathbf{b}) = \\frac{1}{2}\\mathbf{a} + \\frac{1}{2}\\mathbf{b}$。\n**答案：** $\\frac{1}{2}(\\mathbf{a} + \\mathbf{b})$。",
+        "source": "Year 11 Assessment"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "What is the magnitude of the vector $\\begin{pmatrix} 3 \\\\ 4 \\end{pmatrix}$?",
+        "q_zh": "向量 $\\begin{pmatrix} 3 \\\\ 4 \\end{pmatrix}$ 的模是多少？",
+        "o": [
+          "7",
+          "5",
+          "25",
+          "12"
+        ],
+        "a": 1,
+        "e": "$\\sqrt{3^2 + 4^2} = \\sqrt{9 + 16} = \\sqrt{25} = 5$.",
+        "e_zh": "$\\sqrt{3^2 + 4^2} = \\sqrt{9 + 16} = \\sqrt{25} = 5$。"
+      },
+      {
+        "q": "Two vectors are parallel if:",
+        "q_zh": "两个向量平行的条件是：",
+        "o": [
+          "They have the same magnitude",
+          "Their sum is zero",
+          "One is a scalar multiple of the other",
+          "They are perpendicular"
+        ],
+        "a": 2,
+        "e": "Parallel vectors have the same or opposite direction and can be written as $\\mathbf{a} = k\\mathbf{b}$.",
+        "e_zh": "平行向量具有相同或相反的方向，可以写成 $\\mathbf{a} = k\\mathbf{b}$ 的形式。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-Y11.11-01",
+    "section": "Y11.11",
+    "order": 1,
+    "title": "Probability Tree Diagrams",
+    "title_zh": "概率树状图",
+    "explanation": {
+      "en": "**Probability Tree Diagrams** are used to calculate the probability of combined events. Each branch represents a possible outcome.\n\n**Rules of Trees**:\n1. The probabilities on any set of branches must sum to 1.\n2. **Multiply** probabilities along a path to find the probability of successive events occurring (the 'AND' rule).\n3. **Add** probabilities of different paths to find the total probability of an outcome that can happen in multiple ways (the 'OR' rule).\n\n**Conditional Probability** occurs when the outcome of the first event affects the second (e.g., picking without replacement).",
+      "zh": "**概率树状图**用于计算组合事件的概率。每一条分支代表一个可能的结果。\n\n**树状图规则**：\n1. 任何一组分支上的概率之和必须为 1。\n2. 沿路径**相乘**概率，以计算连续事件发生的概率（“且”规则）。\n3. 将不同路径的概率**相加**，以计算可以通过多种方式发生的结果的总概率（“或”规则）。\n\n**条件概率**发生在第一个事件的结果影响第二个事件时（例如，不放回抽样）。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-tree-diag",
+        "label": "Complete and use a tree diagram",
+        "label_zh": "完成并使用树状图",
+        "description": "Fill in missing probabilities and calculate the chance of a specific combined outcome.",
+        "description_zh": "填写缺失的概率并计算特定组合结果的概率。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-tree-diag",
+        "question": "A bag contains 3 red balls and 7 blue balls. Two balls are picked at random **without replacement**. Find the probability that both are red.",
+        "question_zh": "一个袋子里有3个红球和7个蓝球。随机抽取两个球且**不放回**。求两个球都是红色的概率。",
+        "solution": "**Step 1:** Prob of 1st ball being red $P(R1) = \\frac{3}{10}$.\n**Step 2:** After 1 red is gone, 2 red and 7 blue remain (9 total).\n**Step 3:** Prob of 2nd ball being red $P(R2|R1) = \\frac{2}{9}$.\n**Step 4:** Multiply: $P(R1 \\text{ and } R2) = \\frac{3}{10} \\times \\frac{2}{9} = \\frac{6}{90} = \\frac{1}{15}$.\n**Answer:** $\\frac{1}{15}$.",
+        "solution_zh": "**步骤1：** 第一个球是红色的概率 $P(R1) = \\frac{3}{10}$。\n**步骤2：** 拿走一个红球后，剩2个红球和7个蓝球（共9个）。\n**步骤3：** 第二个球是红色的概率 $P(R2|R1) = \\frac{2}{9}$。\n**步骤4：** 相乘：$P(R1 \\text{ 且 } R2) = \\frac{3}{10} \\times \\frac{2}{9} = \\frac{6}{90} = \\frac{1}{15}$。\n**答案：** $\\frac{1}{15}$。",
+        "source": "Year 11 Assessment"
+      },
+      {
+        "patternId": "ep-tree-diag",
+        "question": "The probability that it rains is 0.3. If it rains, the probability I carry an umbrella is 0.8. If it doesn't rain, it is 0.1. Find the probability I carry an umbrella.",
+        "question_zh": "下雨的概率是 0.3。如果下雨，我带伞的概率是 0.8。如果不下雨，我带伞的概率是 0.1。求我带伞的概率。",
+        "solution": "**Step 1:** Path 1 (Rain and Umbrella): $0.3 \\times 0.8 = 0.24$.\n**Step 2:** Path 2 (No Rain and Umbrella): $0.7 \\times 0.1 = 0.07$.\n**Step 3:** Add paths: $0.24 + 0.07 = 0.31$.\n**Answer:** 0.31.",
+        "solution_zh": "**步骤1：** 路径1（下雨且带伞）：$0.3 \\times 0.8 = 0.24$。\n**步骤2：** 路径2（没下雨且带伞）：$0.7 \\times 0.1 = 0.07$。\n**步骤3：** 路径相加：$0.24 + 0.07 = 0.31$。\n**答案：** 0.31。",
+        "source": "Year 11 Assessment"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "If events A and B are independent, $P(A \\text{ and } B) = \\ldots$",
+        "q_zh": "如果事件 A 和 B 是相互独立的，那么 $P(A \\text{ 且 } B) = \\ldots$",
+        "o": [
+          "$P(A) + P(B)$",
+          "$P(A) \\times P(B)$",
+          "$P(A) - P(B)$",
+          "1"
+        ],
+        "a": 1,
+        "e": "For independent events, we multiply the individual probabilities.",
+        "e_zh": "对于独立事件，我们将各自的概率相乘。"
+      },
+      {
+        "q": "A coin is flipped twice. What is the probability of getting exactly one Head?",
+        "q_zh": "一枚硬币抛掷两次。恰好得到一个正面的概率是多少？",
+        "o": [
+          "0.25",
+          "0.5",
+          "0.75",
+          "1"
+        ],
+        "a": 1,
+        "e": "Paths are HT (0.25) and TH (0.25). Total $= 0.25 + 0.25 = 0.5$.",
+        "e_zh": "符合条件的路径有 HT (0.25) 和 TH (0.25)。总计 $= 0.25 + 0.25 = 0.5$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  }
+]

@@ -1,0 +1,206 @@
+[
+  {
+    "id": "hv0867",
+    "cat": "geometry",
+    "topic": "2D Shape",
+    "q": "Find the area of a trapezium with parallel sides $6$ cm and $10$ cm, and height $4$ cm.",
+    "o": [
+      "$32$ cm²",
+      "$64$ cm²",
+      "$16$ cm²",
+      "$40$ cm²"
+    ],
+    "a": 0,
+    "e": "Area $= \\dfrac{1}{2}(6 + 10) \\times 4 = \\dfrac{1}{2} \\times 16 \\times 4 = 32$ cm².",
+    "d": 1,
+    "s": "Y9.6",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0868",
+    "cat": "geometry",
+    "topic": "2D Shape",
+    "q": "A trapezium has parallel sides $7$ cm and $13$ cm. If the perpendicular distance between them is $6$ cm, calculate its area.",
+    "o": [
+      "$60$ cm²",
+      "$120$ cm²",
+      "$40$ cm²",
+      "$30$ cm²"
+    ],
+    "a": 0,
+    "e": "Area $= \\dfrac{1}{2}(7 + 13) \\times 6 = \\dfrac{1}{2} \\times 20 \\times 6 = 60$ cm².",
+    "d": 1,
+    "s": "Y9.6",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0869",
+    "cat": "geometry",
+    "topic": "2D Shape",
+    "q": "Calculate the area of a trapezium with a height of $8$ cm and parallel sides of length $9$ cm and $15$ cm.",
+    "o": [
+      "$192$ cm²",
+      "$100$ cm²",
+      "$96$ cm²",
+      "$120$ cm²"
+    ],
+    "a": 2,
+    "e": "Area $= \\dfrac{1}{2}(9 + 15) \\times 8 = \\dfrac{1}{2} \\times 24 \\times 8 = 96$ cm².",
+    "d": 1,
+    "s": "Y9.6",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0870",
+    "cat": "geometry",
+    "topic": "2D Shape",
+    "q": "A parallelogram has base $8$ cm and perpendicular height $7$ cm. What is its area?",
+    "o": [
+      "$15$ cm²",
+      "$28$ cm²",
+      "$30$ cm²",
+      "$56$ cm²"
+    ],
+    "a": 3,
+    "e": "Area of parallelogram $= \\text{base} \\times \\text{height} = 8 \\times 7 = 56$ cm².",
+    "d": 1,
+    "s": "Y9.6",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0871",
+    "cat": "geometry",
+    "topic": "2D Shape",
+    "q": "Find the area of a parallelogram with a base of $12$ cm and a perpendicular height of $5$ cm.",
+    "o": [
+      "$30$ cm²",
+      "$60$ cm²",
+      "$17$ cm²",
+      "$34$ cm²"
+    ],
+    "a": 1,
+    "e": "Area of parallelogram $= \\text{base} \\times \\text{height} = 12 \\times 5 = 60$ cm².",
+    "d": 1,
+    "s": "Y9.6",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0872",
+    "cat": "geometry",
+    "topic": "2D Shape",
+    "q": "What is the area of a parallelogram that has a perpendicular height of $8$ cm and a base of $11$ cm?",
+    "o": [
+      "$44$ cm²",
+      "$19$ cm²",
+      "$88$ cm²",
+      "$40$ cm²"
+    ],
+    "a": 2,
+    "e": "Area of parallelogram $= \\text{base} \\times \\text{height} = 11 \\times 8 = 88$ cm².",
+    "d": 1,
+    "s": "Y9.6",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0873",
+    "cat": "geometry",
+    "topic": "2D Shape",
+    "q": "A compound shape is formed by a rectangle $8$ cm by $6$ cm with a semicircle of diameter $6$ cm attached to one side. Find its area. (Use $\\pi = 3.14$)",
+    "o": [
+      "$62.13$ cm²",
+      "$48$ cm²",
+      "$76.26$ cm²",
+      "$57.42$ cm²"
+    ],
+    "a": 0,
+    "e": "Rectangle area $= 8 \\times 6 = 48$ cm². Semicircle area $= \\dfrac{1}{2} \\pi r^2 = \\dfrac{1}{2} \\times 3.14 \\times 3^2 = 14.13$ cm². Total $= 48 + 14.13 = 62.13$ cm².",
+    "d": 2,
+    "s": "Y9.6",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0874",
+    "cat": "geometry",
+    "topic": "2D Shape",
+    "q": "Find the area of a compound shape consisting of a rectangle $12$ cm by $10$ cm and a semicircle with a diameter of $10$ cm attached. (Use $\\pi = 3.14$)",
+    "o": [
+      "$120$ cm²",
+      "$159.25$ cm²",
+      "$198.5$ cm²",
+      "$135.7$ cm²"
+    ],
+    "a": 1,
+    "e": "Rectangle area $= 12 \\times 10 = 120$ cm². Semicircle area $= \\dfrac{1}{2} \\pi r^2 = \\dfrac{1}{2} \\times 3.14 \\times 5^2 = 39.25$ cm². Total $= 120 + 39.25 = 159.25$ cm².",
+    "d": 2,
+    "s": "Y9.6",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0875",
+    "cat": "geometry",
+    "topic": "2D Shape",
+    "q": "A rectangle measures $6$ cm by $4$ cm. A semicircle with a diameter of $4$ cm is joined to one of the $4$ cm sides. Calculate the total area. (Use $\\pi = 3.14$)",
+    "o": [
+      "$24$ cm²",
+      "$36.56$ cm²",
+      "$30.28$ cm²",
+      "$32.14$ cm²"
+    ],
+    "a": 2,
+    "e": "Rectangle area $= 6 \\times 4 = 24$ cm². Semicircle area $= \\dfrac{1}{2} \\pi r^2 = \\dfrac{1}{2} \\times 3.14 \\times 2^2 = 6.28$ cm². Total $= 24 + 6.28 = 30.28$ cm².",
+    "d": 2,
+    "s": "Y9.6",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0876",
+    "cat": "geometry",
+    "topic": "2D Shape",
+    "q": "A triangle has a base of $12$ cm and an area of $48$ cm². Find its perpendicular height.",
+    "o": [
+      "$4$ cm",
+      "$8$ cm",
+      "$12$ cm",
+      "$6$ cm"
+    ],
+    "a": 1,
+    "e": "Area $= \\dfrac{1}{2} \\times b \\times h$. So $48 = \\dfrac{1}{2} \\times 12 \\times h$, which means $48 = 6h$. $h = \\dfrac{48}{6} = 8$ cm.",
+    "d": 2,
+    "s": "Y9.6",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0877",
+    "cat": "geometry",
+    "topic": "2D Shape",
+    "q": "The area of a triangle is $40$ cm² and its base is $16$ cm. What is the perpendicular height of the triangle?",
+    "o": [
+      "$2.5$ cm",
+      "$10$ cm",
+      "$5$ cm",
+      "$8$ cm"
+    ],
+    "a": 2,
+    "e": "Area $= \\dfrac{1}{2} \\times b \\times h$. So $40 = \\dfrac{1}{2} \\times 16 \\times h$, which means $40 = 8h$. $h = \\dfrac{40}{8} = 5$ cm.",
+    "d": 2,
+    "s": "Y9.6",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0878",
+    "cat": "geometry",
+    "topic": "2D Shape",
+    "q": "Find the perpendicular height of a triangle with a base of $10$ cm and an area of $35$ cm².",
+    "o": [
+      "$7$ cm",
+      "$3.5$ cm",
+      "$14$ cm",
+      "$10$ cm"
+    ],
+    "a": 0,
+    "e": "Area $= \\dfrac{1}{2} \\times b \\times h$. So $35 = \\dfrac{1}{2} \\times 10 \\times h$, which means $35 = 5h$. $h = \\dfrac{35}{5} = 7$ cm.",
+    "d": 2,
+    "s": "Y9.6",
+    "diag": "calc"
+  }
+]

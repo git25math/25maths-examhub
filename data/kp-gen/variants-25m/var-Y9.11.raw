@@ -1,0 +1,206 @@
+[
+  {
+    "id": "hv0795",
+    "cat": "geometry",
+    "topic": "Practice with Constructions",
+    "q": "A point $M$ moves such that it is always equidistant from two fixed points $X$ and $Y$. What is the locus of $M$?",
+    "o": [
+      "A circle with diameter $XY$",
+      "The perpendicular bisector of the line $XY$",
+      "The angle bisector of $X$ and $Y$",
+      "A line parallel to $XY$ passing through $M$"
+    ],
+    "a": 1,
+    "e": "The set of points equidistant from two fixed points is defined as the perpendicular bisector of the line segment connecting them.",
+    "d": 1,
+    "s": "Y9.11",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0796",
+    "cat": "geometry",
+    "topic": "Practice with Constructions",
+    "q": "Which construction is used to find all points that are the same distance from point $P$ as they are from point $Q$?",
+    "o": [
+      "An arc centred at $P$ passing through $Q$",
+      "The perpendicular bisector of segment $PQ$",
+      "A line parallel to $PQ$",
+      "The bisector of an angle at $P$"
+    ],
+    "a": 1,
+    "e": "To find points equidistant from two specific points $P$ and $Q$, you must construct the perpendicular bisector of the line segment $PQ$.",
+    "d": 1,
+    "s": "Y9.11",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0797",
+    "cat": "geometry",
+    "topic": "Practice with Constructions",
+    "q": "On a map, a transmitter is to be placed exactly halfway between two towns, $A$ and $B$. Any point on which line would satisfy the condition of being equidistant from both towns?",
+    "o": [
+      "The angle bisector of $A$ and $B$",
+      "The perpendicular bisector of the line segment $AB$",
+      "A circle with radius $AB$ centred at $A$",
+      "A line parallel to $AB$ passing through the midpoint"
+    ],
+    "a": 1,
+    "e": "The locus of points equidistant from two fixed points $A$ and $B$ is the perpendicular bisector of the segment $AB$.",
+    "d": 1,
+    "s": "Y9.11",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0798",
+    "cat": "geometry",
+    "topic": "Practice with Constructions",
+    "q": "What is the locus of a point that moves so it is always $5$ cm away from a fixed point $O$?",
+    "o": [
+      "A straight line $5$ cm long",
+      "A square with side length $10$ cm",
+      "A circle with radius $5$ cm and centre $O$",
+      "Two parallel lines $5$ cm apart"
+    ],
+    "a": 2,
+    "e": "The locus of points at a constant distance from a single fixed point is a circle with that point as its centre.",
+    "d": 1,
+    "s": "Y9.11",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0799",
+    "cat": "geometry",
+    "topic": "Practice with Constructions",
+    "q": "A goat is tied to a stake at point $G$ by a $3$ m rope. What shape describes the boundary of the maximum area the goat can reach?",
+    "o": [
+      "A semi-circle",
+      "A perpendicular bisector",
+      "A circle centred at $G$",
+      "A square centred at $G$"
+    ],
+    "a": 2,
+    "e": "Since the rope length is fixed, the goat's maximum distance from the stake $G$ is constant, forming a circle with $G$ as the centre.",
+    "d": 1,
+    "s": "Y9.11",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0800",
+    "cat": "geometry",
+    "topic": "Practice with Constructions",
+    "q": "If a point $S$ moves such that its distance from a fixed point $C$ is always $r$, the path of $S$ is:",
+    "o": [
+      "The perpendicular bisector of $r$",
+      "A line through $C$",
+      "A circle with centre $C$ and radius $r$",
+      "An angle bisector"
+    ],
+    "a": 2,
+    "e": "By definition, a circle is the locus of all points in a plane that are at a fixed distance (radius) from a fixed point (centre).",
+    "d": 1,
+    "s": "Y9.11",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0801",
+    "cat": "geometry",
+    "topic": "Practice with Constructions",
+    "q": "To construct an angle of $60^{\\circ}$ without a protractor, which geometric shape is essentially being constructed?",
+    "o": [
+      "An equilateral triangle",
+      "A right-angled triangle",
+      "A square",
+      "An isosceles triangle with a $90^{\\circ}$ angle"
+    ],
+    "a": 0,
+    "e": "An equilateral triangle has three equal angles of $60^{\\circ}$ each. Constructing one using a compass creates an accurate $60^{\\circ}$ angle.",
+    "d": 2,
+    "s": "Y9.11",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0802",
+    "cat": "geometry",
+    "topic": "Practice with Constructions",
+    "q": "A student draws a line $AB$, then uses a compass to draw an arc from $A$ with radius $AB$ and another arc from $B$ with the same radius. If the arcs intersect at $C$, what is the size of angle $CAB$?",
+    "o": [
+      "$60^{\\circ}$",
+      "$45^{\\circ}$",
+      "$90^{\\circ}$",
+      "$30^{\\circ}$"
+    ],
+    "a": 0,
+    "e": "The construction creates a triangle $ABC$ where $AB = AC = BC$. This is an equilateral triangle, so all its internal angles are $60^{\\circ}$.",
+    "d": 2,
+    "s": "Y9.11",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0803",
+    "cat": "geometry",
+    "topic": "Practice with Constructions",
+    "q": "When constructing a $60^{\\circ}$ angle at point $X$ on line $XY$, after drawing an arc from $X$ that crosses $XY$ at $P$, what is the next correct step?",
+    "o": [
+      "Draw an arc from $P$ with the same radius to intersect the first arc",
+      "Draw a perpendicular line from $P$",
+      "Draw an arc from $Y$ with a larger radius",
+      "Bisect the line segment $XP$"
+    ],
+    "a": 0,
+    "e": "To complete the construction of an equilateral triangle (and thus a $60^{\\circ}$ angle), you must mark the third vertex by drawing an arc from the intersection point $P$ using the same radius.",
+    "d": 2,
+    "s": "Y9.11",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0804",
+    "cat": "geometry",
+    "topic": "Practice with Constructions",
+    "q": "A path is designed to be equidistant from two straight fences that meet at a corner. What geometric construction represents this path?",
+    "o": [
+      "A perpendicular bisector",
+      "A circle",
+      "A line parallel to one fence",
+      "An angle bisector"
+    ],
+    "a": 3,
+    "e": "The locus of points equidistant from two intersecting lines (the fences) is the angle bisector of the angle between them.",
+    "d": 2,
+    "s": "Y9.11",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0805",
+    "cat": "geometry",
+    "topic": "Practice with Constructions",
+    "q": "What is the locus of points that are the same distance from two lines $L_1$ and $L_2$ which intersect at point $X$?",
+    "o": [
+      "The perpendicular bisector of $X$",
+      "A circle with centre $X$",
+      "Two parallel lines",
+      "The angle bisectors of the angles formed at $X$"
+    ],
+    "a": 3,
+    "e": "Points equidistant from two intersecting lines lie on the angle bisectors of the angles formed by the intersection.",
+    "d": 2,
+    "s": "Y9.11",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0806",
+    "cat": "geometry",
+    "topic": "Practice with Constructions",
+    "q": "To find a point that is the same distance from the sides $AB$ and $BC$ of a triangle $ABC$, which construction is required?",
+    "o": [
+      "The perpendicular bisector of side $AC$",
+      "The perpendicular bisector of side $BC$",
+      "A circle through vertices $A, B,$ and $C$",
+      "The bisector of angle $\\angle ABC$"
+    ],
+    "a": 3,
+    "e": "The sides $AB$ and $BC$ meet at vertex $B$. The locus of points equidistant from these two lines is the angle bisector of $\\angle ABC$.",
+    "d": 2,
+    "s": "Y9.11",
+    "diag": "concept"
+  }
+]

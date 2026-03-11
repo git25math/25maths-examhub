@@ -1,0 +1,146 @@
+[
+  {
+    "id": "cv1561",
+    "cat": "number",
+    "topic": "Bounds and Rounding",
+    "q": "Truncate 5.926 to 1 decimal place.",
+    "o": [
+      "5.9",
+      "6.0",
+      "5.92",
+      "5.93"
+    ],
+    "a": 0,
+    "e": "Truncation means cutting off digits without rounding. Truncating to 1 d.p. gives 5.9.",
+    "d": 1,
+    "s": "1.7"
+  },
+  {
+    "id": "cv1562",
+    "cat": "number",
+    "topic": "Bounds and Rounding",
+    "q": "Truncate 12.783 to 1 decimal place.",
+    "o": [
+      "12.7",
+      "12.8",
+      "12.78",
+      "12.79"
+    ],
+    "a": 0,
+    "e": "Truncation means cutting off digits without rounding. Truncating to 1 d.p. gives 12.7.",
+    "d": 1,
+    "s": "1.7"
+  },
+  {
+    "id": "cv1563",
+    "cat": "number",
+    "topic": "Bounds and Rounding",
+    "q": "Truncate 0.459 to 1 decimal place.",
+    "o": [
+      "0.4",
+      "0.5",
+      "0.45",
+      "0.46"
+    ],
+    "a": 0,
+    "e": "Truncation means cutting off digits without rounding. Truncating to 1 d.p. gives 0.4.",
+    "d": 1,
+    "s": "1.7"
+  },
+  {
+    "id": "cv1564",
+    "cat": "number",
+    "topic": "Bounds and Rounding",
+    "q": "A distance is measured as 45 km, correct to the nearest km. What is the lower bound?",
+    "o": [
+      "44 km",
+      "44.5 km",
+      "45.5 km",
+      "44.9 km"
+    ],
+    "a": 1,
+    "e": "When rounded to the nearest km, the lower bound is $45 - 0.5 = 44.5$ km.",
+    "d": 2,
+    "s": "1.7"
+  },
+  {
+    "id": "cv1565",
+    "cat": "number",
+    "topic": "Bounds and Rounding",
+    "q": "The height of a door is 210 cm, correct to the nearest cm. What is the lower bound?",
+    "o": [
+      "209 cm",
+      "209.5 cm",
+      "210.5 cm",
+      "209.95 cm"
+    ],
+    "a": 1,
+    "e": "When rounded to the nearest cm, the lower bound is $210 - 0.5 = 209.5$ cm.",
+    "d": 2,
+    "s": "1.7"
+  },
+  {
+    "id": "cv1566",
+    "cat": "number",
+    "topic": "Bounds and Rounding",
+    "q": "A length of rope is 8 m, correct to the nearest m. What is the lower bound?",
+    "o": [
+      "7 m",
+      "7.5 m",
+      "8.5 m",
+      "7.95 m"
+    ],
+    "a": 1,
+    "e": "When rounded to the nearest m, the lower bound is $8 - 0.5 = 7.5$ m.",
+    "d": 2,
+    "s": "1.7"
+  },
+  {
+    "id": "cv1567",
+    "cat": "number",
+    "topic": "Bounds and Rounding",
+    "q": "The capacity of a bottle is 1.5 litres, correct to 1 decimal place. What is the upper bound?",
+    "o": [
+      "1.6 litres",
+      "1.55 litres",
+      "1.54 litres",
+      "1.45 litres"
+    ],
+    "a": 1,
+    "e": "Correct to 1 d.p. means accuracy of 0.1. Upper bound = $1.5 + 0.05 = 1.55$ litres.",
+    "d": 2,
+    "s": "1.7"
+  },
+  {
+    "id": "cv1568",
+    "cat": "number",
+    "topic": "Bounds and Rounding",
+    "q": "A temperature is recorded as 38.2°C, correct to 1 decimal place. What is the upper bound?",
+    "o": [
+      "38.3°C",
+      "38.25°C",
+      "38.24°C",
+      "38.15°C"
+    ],
+    "a": 1,
+    "e": "Correct to 1 d.p. means accuracy of 0.1. Upper bound = $38.2 + 0.05 = 38.25$°C.",
+    "d": 2,
+    "s": "1.7"
+  },
+  {
+    "id": "cv1569",
+    "cat": "number",
+    "topic": "Bounds and Rounding",
+    "q": "A time is measured as 10.4 seconds, correct to 1 decimal place. What is the upper bound?",
+    "o": [
+      "10.5 seconds",
+      "10.45 seconds",
+      "10.49 seconds",
+      "10.35 seconds"
+    ],
+    "a": 1,
+    "e": "Correct to 1 d.p. means accuracy of 0.1. Upper bound = $10.4 + 0.05 = 10.45$ seconds.",
+    "d": 2,
+    "s": "1.7"
+  }
+]

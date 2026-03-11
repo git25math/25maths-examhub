@@ -1,0 +1,677 @@
+[
+  {
+    "id": "kp-Y8.1-01",
+    "section": "Y8.1",
+    "order": 1,
+    "title": "Rounding and Estimation",
+    "title_zh": "舍入与估算",
+    "explanation": {
+      "en": "**Rounding** to a specific number of decimal places (d.p.) or significant figures (s.f.) helps simplify numbers while keeping their value close to the original.\n\n**Significant figures** start from the first non-zero digit. For example, in $0.00405$, the first significant figure is $4$. Zeros between non-zero digits are significant, but leading zeros are not.\n\n**Estimation** involves rounding all numbers in a calculation to $1$ significant figure to find an approximate answer quickly. This is useful for checking the reasonableness of a result.",
+      "zh": "**舍入**到指定的小数位数 (d.p.) 或有效数字 (s.f.) 有助于简化数字，同时保持其数值接近原始值。\n\n**有效数字**从第一个非零数字开始计数。例如，在 $0.00405$ 中，第一个有效数字是 $4$。非零数字之间的零是有效的，但前导零不是。\n\n**估算**涉及将计算中的所有数字舍入到 $1$ 位有效数字，以快速找到近似答案。这对于检查结果的合理性非常有用。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-round-sf",
+        "label": "Rounding to significant figures",
+        "label_zh": "舍入至有效数字",
+        "description": "Round a given number to a specified number of significant figures.",
+        "description_zh": "将给定的数字舍入到指定的有效数字位数。"
+      },
+      {
+        "id": "ep-estimate",
+        "label": "Estimating complex calculations",
+        "label_zh": "估算复杂计算",
+        "description": "Approximate the value of a calculation by rounding each term to 1 s.f.",
+        "description_zh": "通过将每项舍入到 1 位有效数字来估算计算值。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-round-sf",
+        "question": "Round $0.038452$ to $3$ significant figures.",
+        "question_zh": "将 $0.038452$ 舍入到 $3$ 位有效数字。",
+        "solution": "**Step 1:** Identify the first non-zero digit. It is $3$.\n**Step 2:** Count three digits from there: $3, 8, 4$.\n**Step 3:** Look at the next digit ($5$). Since it is $5$ or more, round up the last digit ($4$ becomes $5$).\n**Answer:** $0.0385$",
+        "solution_zh": "**步骤1：** 确定第一个非零数字，是 $3$。\n**步骤2：** 从该位起数三位：$3, 8, 4$。\n**步骤3：** 查看下一位数字 ($5$)。因为是 $5$ 或更大，所以进位（$4$ 变为 $5$）。\n**答案：** $0.0385$",
+        "source": "Year 8 Assessment"
+      },
+      {
+        "patternId": "ep-estimate",
+        "question": "Estimate the value of $\\frac{41.2 \\times 2.94}{0.485}$.",
+        "question_zh": "估算 $\\frac{41.2 \\times 2.94}{0.485}$ 的值。",
+        "solution": "**Step 1:** Round each number to $1$ significant figure.\n$41.2 \\approx 40$\n$2.94 \\approx 3$\n$0.485 \\approx 0.5$\n**Step 2:** Perform the calculation: $\\frac{40 \\times 3}{0.5} = \\frac{120}{0.5} = 240$.\n**Answer:** $240$",
+        "solution_zh": "**步骤1：** 将每个数字舍入到 $1$ 位有效数字。\n$41.2 \\approx 40$\n$2.94 \\approx 3$\n$0.485 \\approx 0.5$\n**步骤2：** 进行计算：$\\frac{40 \\times 3}{0.5} = \\frac{120}{0.5} = 240$。\n**答案：** $240$",
+        "source": "Adapted from Y8 curriculum"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "What is $4057$ rounded to $2$ significant figures?",
+        "q_zh": "将 $4057$ 舍入到 $2$ 位有效数字是多少？",
+        "o": [
+          "40",
+          "41",
+          "4000",
+          "4100"
+        ],
+        "a": 3,
+        "e": "The first two significant figures are 4 and 0. The next digit is 5, so round up. 40 becomes 41, and we keep the place value with zeros: 4100.",
+        "e_zh": "前两位有效数字是 4 和 0。下一位是 5，所以进位。40 变成 41，用零占位保持数位：4100。"
+      },
+      {
+        "q": "Estimate $\\sqrt{98.4} + (3.1)^2$.",
+        "q_zh": "估算 $\\sqrt{98.4} + (3.1)^2$。",
+        "o": [
+          "13",
+          "19",
+          "25",
+          "109"
+        ],
+        "a": 1,
+        "e": "Rounding to 1 s.f.: $\\sqrt{100} + 3^2 = 10 + 9 = 19$.",
+        "e_zh": "舍入到 1 位有效数字：$\\sqrt{100} + 3^2 = 10 + 9 = 19$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-Y8.2-01",
+    "section": "Y8.2",
+    "order": 1,
+    "title": "HCF, LCM and Prime Factorization",
+    "title_zh": "最高公因数、最低公倍数与质因数分解",
+    "explanation": {
+      "en": "**Prime factorization** is the process of expressing a composite number as a product of its prime factors (e.g., $12 = 2^2 \\times 3$).\n\n**Highest Common Factor (HCF)** is the largest number that divides exactly into two or more numbers. It is found by multiplying the lowest powers of common prime factors.\n\n**Lowest Common Multiple (LCM)** is the smallest number that is a multiple of two or more numbers. It is found by multiplying the highest powers of all prime factors involved.",
+      "zh": "**质因数分解**是将一个合数表示为其质因数乘积的过程（例如，$12 = 2^2 \\times 3$）。\n\n**最高公因数 (HCF)** 是指能整除两个或多个数的最大共有正整数。通过将共有质因数的最低幂相乘来找到。\n\n**最低公倍数 (LCM)** 是指作为两个或多个数的倍数的最小正整数。通过将涉及的所有质因数的最高幂相乘来找到。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-prime-factor",
+        "label": "Find prime factors in index form",
+        "label_zh": "以指数形式写出质因数",
+        "description": "Use a factor tree to find the prime decomposition of a number.",
+        "description_zh": "使用因数树找到一个数的质因数分解。"
+      },
+      {
+        "id": "ep-hcf-lcm",
+        "label": "Calculate HCF and LCM",
+        "label_zh": "计算 HCF 和 LCM",
+        "description": "Find HCF and LCM for two or three numbers using prime factors.",
+        "description_zh": "利用质因数找到两个或三个数的 HCF 和 LCM。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-prime-factor",
+        "question": "Write $120$ as a product of its prime factors in index form.",
+        "question_zh": "将 $120$ 以指数形式写成质因数的乘积。",
+        "solution": "**Step 1:** Use a factor tree: $120 = 10 \\times 12$.\n**Step 2:** $10 = 2 \\times 5$; $12 = 2 \\times 2 \\times 3$.\n**Step 3:** Collect all factors: $2, 2, 2, 3, 5$.\n**Answer:** $2^3 \\times 3 \\times 5$",
+        "solution_zh": "**步骤1：** 使用因数树：$120 = 10 \\times 12$。\n**步骤2：** $10 = 2 \\times 5$；$12 = 2 \\times 2 \\times 3$。\n**步骤3：** 汇总所有因数：$2, 2, 2, 3, 5$。\n**答案：** $2^3 \\times 3 \\times 5$",
+        "source": "Year 8 Assessment"
+      },
+      {
+        "patternId": "ep-hcf-lcm",
+        "question": "Given $A = 2^2 \\times 3 \\times 5$ and $B = 2 \\times 3^2$, find the HCF and LCM of $A$ and $B$.",
+        "question_zh": "已知 $A = 2^2 \\times 3 \\times 5$ 且 $B = 2 \\times 3^2$，求 $A$ 和 $B$ 的 HCF 和 LCM。",
+        "solution": "**Step 1 for HCF:** Take the lowest power of common primes ($2^1$ and $3^1$). HCF $= 2 \\times 3 = 6$.\n**Step 2 for LCM:** Take the highest power of all primes ($2^2, 3^2, 5^1$). LCM $= 4 \\times 9 \\times 5 = 180$.\n**Answers:** HCF $= 6$, LCM $= 180$",
+        "solution_zh": "**HCF 步骤1：** 取共有质因数的最低幂 ($2^1$ 和 $3^1$)。HCF $= 2 \\times 3 = 6$。\n**LCM 步骤2：** 取所有质因数的最高幂 ($2^2, 3^2, 5^1$)。LCM $= 4 \\times 9 \\times 5 = 180$。\n**答案：** HCF $= 6$, LCM $= 180$",
+        "source": "Adapted from Y8 curriculum"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "Which of these is the prime factorization of 72?",
+        "q_zh": "下列哪项是 72 的质因数分解？",
+        "o": [
+          "$2 \\times 3^2$",
+          "$2^3 \\times 3^2$",
+          "$8 \\times 9$",
+          "$2^2 \\times 3^3$"
+        ],
+        "a": 1,
+        "e": "$72 = 8 \\times 9 = (2 \\times 2 \\times 2) \\times (3 \\times 3) = 2^3 \\times 3^2$.",
+        "e_zh": "$72 = 8 \\times 9 = (2 \\times 2 \\times 2) \\times (3 \\times 3) = 2^3 \\times 3^2$。"
+      },
+      {
+        "q": "What is the LCM of 12 and 15?",
+        "q_zh": "12 和 15 的最低公倍数 (LCM) 是多少？",
+        "o": [
+          "3",
+          "30",
+          "60",
+          "180"
+        ],
+        "a": 2,
+        "e": "$12 = 2^2 \\times 3$, $15 = 3 \\times 5$. LCM $= 2^2 \\times 3 \\times 5 = 60$.",
+        "e_zh": "$12 = 2^2 \\times 3$，$15 = 3 \\times 5$。LCM $= 2^2 \\times 3 \\times 5 = 60$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-Y8.3-01",
+    "section": "Y8.3",
+    "order": 1,
+    "title": "Substitution and Rearranging Formulas",
+    "title_zh": "代入求值与公式变形",
+    "explanation": {
+      "en": "**Substitution** involves replacing letters in a formula with given numbers to calculate a final value. Always use brackets when substituting negative numbers.\n\n**Changing the subject** of a formula means rearranging it so that a different variable is isolated on one side (usually the left). Use inverse operations (the opposite of BIDMAS in reverse order) to isolate the target variable.",
+      "zh": "**代入求值**涉及将公式中的字母替换为给定的数字以计算最终数值。代入负数时务必使用括号。\n\n**公式变形（改变主元）**意味着重新排列公式，使不同的变量单独位于等号的一侧（通常是左侧）。使用逆运算（按 BIDMAS 相反顺序的逆操作）来孤立目标变量。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-substitute",
+        "label": "Substitute into complex formulas",
+        "label_zh": "代入复杂公式",
+        "description": "Calculate the value of a variable given values for all other variables in a formula.",
+        "description_zh": "已知公式中所有其他变量的值，计算某个变量的值。"
+      },
+      {
+        "id": "ep-rearrange",
+        "label": "Change the subject of the formula",
+        "label_zh": "改变公式的主元",
+        "description": "Rearrange a formula like $v = u + at$ to make another letter (e.g., $a$) the subject.",
+        "description_zh": "将如 $v = u + at$ 的公式变形，使另一个字母（如 $a$）成为主元。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-substitute",
+        "question": "If $s = ut + \\frac{1}{2}at^2$, find $s$ when $u = 5, t = 4$ and $a = 10$.",
+        "question_zh": "如果 $s = ut + \\frac{1}{2}at^2$，当 $u = 5, t = 4, a = 10$ 时，求 $s$。",
+        "solution": "**Step 1:** Substitute values: $s = (5)(4) + \\frac{1}{2}(10)(4^2)$.\n**Step 2:** Calculate: $s = 20 + 5(16) = 20 + 80 = 100$.\n**Answer:** $100$",
+        "solution_zh": "**步骤1：** 代入数值：$s = (5)(4) + \\frac{1}{2}(10)(4^2)$。\n**步骤2：** 计算：$s = 20 + 5(16) = 20 + 80 = 100$。\n**答案：** $100$",
+        "source": "Year 8 Assessment"
+      },
+      {
+        "patternId": "ep-rearrange",
+        "question": "Make $x$ the subject of the formula: $y = 3x - 7$.",
+        "question_zh": "将公式 $y = 3x - 7$ 的主元变为 $x$。",
+        "solution": "**Step 1:** Add $7$ to both sides: $y + 7 = 3x$.\n**Step 2:** Divide both sides by $3$: $\\frac{y + 7}{3} = x$.\n**Answer:** $x = \\frac{y + 7}{3}$",
+        "solution_zh": "**步骤1：** 等号两边同时加 $7$：$y + 7 = 3x$。\n**步骤2：** 等号两边同时除以 $3$：$\\frac{y + 7}{3} = x$。\n**答案：** $x = \\frac{y + 7}{3}$",
+        "source": "Adapted from Y8 curriculum"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "If $v^2 = u^2 + 2as$, find $v$ when $u=3, a=2, s=4$ (take positive root).",
+        "q_zh": "如果 $v^2 = u^2 + 2as$，当 $u=3, a=2, s=4$ 时，求 $v$（取正根）。",
+        "o": [
+          "5",
+          "25",
+          "7",
+          "16"
+        ],
+        "a": 0,
+        "e": "$v^2 = 3^2 + 2(2)(4) = 9 + 16 = 25$. So $v = \\sqrt{25} = 5$.",
+        "e_zh": "$v^2 = 3^2 + 2(2)(4) = 9 + 16 = 25$。因此 $v = \\sqrt{25} = 5$。"
+      },
+      {
+        "q": "Rearrange $A = \\pi r^2$ to make $r$ the subject.",
+        "q_zh": "将 $A = \\pi r^2$ 变形，使 $r$ 成为主元。",
+        "o": [
+          "$r = \\frac{A}{\\pi}$",
+          "$r = \\sqrt{A \\pi}$",
+          "$r = \\sqrt{\\frac{A}{\\pi}}$",
+          "$r = (\\frac{A}{\\pi})^2$"
+        ],
+        "a": 2,
+        "e": "Divide by $\\pi$ first to get $r^2 = A/\\pi$, then take the square root of both sides.",
+        "e_zh": "先除以 $\\pi$ 得到 $r^2 = A/\\pi$，然后对两边开平方。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-Y8.4-01",
+    "section": "Y8.4",
+    "order": 1,
+    "title": "Solving Linear Inequalities",
+    "title_zh": "解线性不等式",
+    "explanation": {
+      "en": "**Inequalities** use symbols like $<$ (less than), $>$ (greater than), $\\leq$ (less than or equal to), and $\\geq$ (greater than or equal to).\n\n**Solving inequalities** is similar to solving equations, with one critical rule: if you multiply or divide by a **negative number**, you must **flip the inequality sign**.\n\n**Number lines** are used to represent solutions. Use an open circle $\\circ$ for $<$ or $>$, and a closed circle $\\bullet$ for $\\leq$ or $\\geq$.",
+      "zh": "**不等式**使用符号如 $<$（小于）、$>$（大于）、$\\leq$（小于或等于）和 $\\geq$（大于或等于）。\n\n**解不等式**与解方程类似，但有一个关键规则：如果你乘以或除以一个**负数**，必须**翻转不等号方向**。\n\n**数轴**用于表示解集。使用空心圆圈 $\\circ$ 表示 $<$ 或 $>$，使用实心圆圈 $\\bullet$ 表示 $\\leq$ 或 $\\geq$。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-solve-ineq",
+        "label": "Solve linear inequalities",
+        "label_zh": "解线性不等式",
+        "description": "Find the range of values for $x$ that satisfy an inequality.",
+        "description_zh": "找到满足不等式的 $x$ 的取值范围。"
+      },
+      {
+        "id": "ep-number-line",
+        "label": "Represent on a number line",
+        "label_zh": "在数轴上表示",
+        "description": "Graph the solution of an inequality on a provided number line.",
+        "description_zh": "在给出的数轴上画出不等式的解。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-solve-ineq",
+        "question": "Solve the inequality: $5x - 3 > 17$.",
+        "question_zh": "解不等式：$5x - 3 > 17$。",
+        "solution": "**Step 1:** Add $3$ to both sides: $5x > 20$.\n**Step 2:** Divide both sides by $5$: $x > 4$.\n**Answer:** $x > 4$",
+        "solution_zh": "**步骤1：** 等号两边同时加 $3$：$5x > 20$。\n**步骤2：** 等号两边同时除以 $5$：$x > 4$。\n**答案：** $x > 4$",
+        "source": "Year 8 Assessment"
+      },
+      {
+        "patternId": "ep-solve-ineq",
+        "question": "Solve $10 - 2x \\leq 4$.",
+        "question_zh": "解 $10 - 2x \\leq 4$。",
+        "solution": "**Step 1:** Subtract $10$: $-2x \\leq -6$.\n**Step 2:** Divide by $-2$ and flip the sign: $x \\geq 3$.\n**Answer:** $x \\geq 3$",
+        "solution_zh": "**步骤1：** 减去 $10$：$-2x \\leq -6$。\n**步骤2：** 除以 $-2$ 并翻转符号：$x \\geq 3$。\n**答案：** $x \\geq 3$",
+        "source": "Adapted from Y8 curriculum"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "Solve $3x + 1 \\leq 10$.",
+        "q_zh": "解 $3x + 1 \\leq 10$。",
+        "o": [
+          "$x \\leq 3$",
+          "$x \\geq 3$",
+          "$x < 3$",
+          "$x \\leq 11/3$"
+        ],
+        "a": 0,
+        "e": "$3x \\leq 9$, so $x \\leq 3$.",
+        "e_zh": "$3x \\leq 9$，所以 $x \\leq 3$。"
+      },
+      {
+        "q": "Which inequality is represented by a closed circle at 5 with an arrow pointing to the left?",
+        "q_zh": "哪个不等式由 5 处的实心圆圈和向左的箭头表示？",
+        "o": [
+          "$x < 5$",
+          "$x > 5$",
+          "$x \\leq 5$",
+          "$x \\geq 5$"
+        ],
+        "a": 2,
+        "e": "Closed circle means 'equal to' included ($\\leq$ or $\\geq$). Arrow to the left means 'less than'. So $x \\leq 5$.",
+        "e_zh": "实心圆圈表示包含“等于”（$\\leq$ 或 $\\geq$）。向左的箭头表示“小于”。所以是 $x \\leq 5$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-Y8.5-01",
+    "section": "Y8.5",
+    "order": 1,
+    "title": "Pythagoras' Theorem",
+    "title_zh": "勾股定理",
+    "explanation": {
+      "en": "**Pythagoras' Theorem** states that in a right-angled triangle, the square of the hypotenuse ($c$) is equal to the sum of the squares of the other two sides ($a$ and $b$): $$a^2 + b^2 = c^2$$\n\n**The hypotenuse** is the longest side, located opposite the right angle ($90^\\circ$).\n\nTo find a **shorter side**, rearrange the formula: $a^2 = c^2 - b^2$. Always remember to take the square root at the end.",
+      "zh": "**勾股定理**指出，在直角三角形中，斜边 ($c$) 的平方等于另外两条直角边 ($a$ 和 $b$) 的平方和：$$a^2 + b^2 = c^2$$\n\n**斜边**是直角三角形中最长的边，位于直角 ($90^\\circ$) 的对面。\n\n要求**直角边**，需变形公式：$a^2 = c^2 - b^2$。务必记得最后开平方根。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-find-hypotenuse",
+        "label": "Calculate the hypotenuse",
+        "label_zh": "计算斜边",
+        "description": "Given two shorter sides, find the length of the longest side.",
+        "description_zh": "已知两条直角边，求最长边的长度。"
+      },
+      {
+        "id": "ep-find-side",
+        "label": "Calculate a shorter side",
+        "label_zh": "计算直角边",
+        "description": "Given the hypotenuse and one side, find the missing side.",
+        "description_zh": "已知斜边和一条直角边，求缺失的另一条边。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-find-hypotenuse",
+        "question": "A right-angled triangle has sides of $5\\text{ cm}$ and $12\\text{ cm}$. Find the length of the hypotenuse.",
+        "question_zh": "一个直角三角形的直角边分别为 $5\\text{ cm}$ 和 $12\\text{ cm}$。求斜边的长度。",
+        "solution": "**Step 1:** Identify $a=5, b=12$.\n**Step 2:** Use $c^2 = a^2 + b^2 = 5^2 + 12^2 = 25 + 144 = 169$.\n**Step 3:** $c = \\sqrt{169} = 13$.\n**Answer:** $13\\text{ cm}$",
+        "solution_zh": "**步骤1：** 确定 $a=5, b=12$。\n**步骤2：** 使用 $c^2 = a^2 + b^2 = 5^2 + 12^2 = 25 + 144 = 169$。\n**步骤3：** $c = \\sqrt{169} = 13$。\n**答案：** $13\\text{ cm}$",
+        "source": "Year 8 Assessment"
+      },
+      {
+        "patternId": "ep-find-side",
+        "question": "A right-angled triangle has a hypotenuse of $10\\text{ cm}$ and one side of $8\\text{ cm}$. Find the length of the third side.",
+        "question_zh": "一个直角三角形的斜边为 $10\\text{ cm}$，一条直角边为 $8\\text{ cm}$。求第三条边的长度。",
+        "solution": "**Step 1:** Identify $c=10, b=8$.\n**Step 2:** Use $a^2 = c^2 - b^2 = 10^2 - 8^2 = 100 - 64 = 36$.\n**Step 3:** $a = \\sqrt{36} = 6$.\n**Answer:** $6\\text{ cm}$",
+        "solution_zh": "**步骤1：** 确定 $c=10, b=8$。\n**步骤2：** 使用 $a^2 = c^2 - b^2 = 10^2 - 8^2 = 100 - 64 = 36$。\n**步骤3：** $a = \\sqrt{36} = 6$。\n**答案：** $6\\text{ cm}$",
+        "source": "Adapted from Y8 curriculum"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "What is the length of the hypotenuse in a triangle with sides 3 and 4?",
+        "q_zh": "直角边为 3 和 4 的三角形中，斜边的长度是多少？",
+        "o": [
+          "5",
+          "7",
+          "25",
+          "12"
+        ],
+        "a": 0,
+        "e": "$3^2 + 4^2 = 9 + 16 = 25$. $\\sqrt{25} = 5$.",
+        "e_zh": "$3^2 + 4^2 = 9 + 16 = 25$。$\\sqrt{25} = 5$。"
+      },
+      {
+        "q": "Can a triangle with side lengths 6, 8, 11 be right-angled?",
+        "q_zh": "边长为 6, 8, 11 的三角形可以是直角三角形吗？",
+        "o": [
+          "Yes, because 6+8 > 11",
+          "No, because $6^2 + 8^2 \\neq 11^2$",
+          "Yes, because 11 is the hypotenuse",
+          "No, because all sides must be odd"
+        ],
+        "a": 1,
+        "e": "$6^2 + 8^2 = 36 + 64 = 100$, but $11^2 = 121$. Since $100 \\neq 121$, it is not a right-angled triangle.",
+        "e_zh": "$6^2 + 8^2 = 36 + 64 = 100$，但 $11^2 = 121$。因为 $100 \\neq 121$，所以它不是直角三角形。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-Y8.6-01",
+    "section": "Y8.6",
+    "order": 1,
+    "title": "Angles in Parallel Lines",
+    "title_zh": "平行线中的角",
+    "explanation": {
+      "en": "When a line (transversal) crosses two parallel lines, specific angle relationships are formed:\n\n**Alternate angles** are equal and form a 'Z' shape.\n\n**Corresponding angles** are equal and form an 'F' shape.\n\n**Co-interior angles** (allied angles) add up to $180^\\circ$ and form a 'C' or 'U' shape.\n\n**Vertically opposite angles** are equal whenever two lines intersect.",
+      "zh": "当一条直线（截线）穿过两条平行线时，会形成特定的角关系：\n\n**内错角**相等，形成“Z”形。\n\n**同位角**相等，形成“F”形。\n\n**同旁内角**之和为 $180^\\circ$，形成“C”或“U”形。\n\n**对顶角**在两条直线相交时相等。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-angle-calc",
+        "label": "Calculate missing angles",
+        "label_zh": "计算缺失的角",
+        "description": "Use parallel line rules to find the size of unknown angles.",
+        "description_zh": "利用平行线规则求未知角的大小。"
+      },
+      {
+        "id": "ep-angle-reason",
+        "label": "Give geometric reasons",
+        "label_zh": "给出几何理由",
+        "description": "State the rule (e.g., 'alternate angles') used to find an answer.",
+        "description_zh": "陈述用于求得答案的规则（如“内错角”）。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-angle-calc",
+        "question": "Two parallel lines are cut by a transversal. If one angle is $70^\\circ$, find its corresponding angle.",
+        "question_zh": "两条平行线被一条截线所截。如果一个角是 $70^\\circ$，求它的同位角。",
+        "solution": "**Step 1:** Recall the rule for corresponding angles.\n**Step 2:** Corresponding angles are equal.\n**Answer:** $70^\\circ$",
+        "solution_zh": "**步骤1：** 回想同位角的规则。\n**步骤2：** 同位角相等。\n**答案：** $70^\\circ$",
+        "source": "Year 8 Assessment"
+      },
+      {
+        "patternId": "ep-angle-calc",
+        "question": "An angle in a 'C' shape with $x$ is $115^\\circ$ between parallel lines. Find $x$.",
+        "question_zh": "平行线之间一个与 $x$ 构成“C”形的角是 $115^\\circ$。求 $x$。",
+        "solution": "**Step 1:** The 'C' shape indicates co-interior angles.\n**Step 2:** Co-interior angles sum to $180^\\circ$.\n**Step 3:** $x = 180^\\circ - 115^\\circ = 65^\\circ$.\n**Answer:** $65^\\circ$",
+        "solution_zh": "**步骤1：** “C”形表示同旁内角。\n**步骤2：** 同旁内角之和为 $180^\\circ$。\n**步骤3：** $x = 180^\\circ - 115^\\circ = 65^\\circ$。\n**答案：** $65^\\circ$",
+        "source": "Adapted from Y8 curriculum"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "Which type of angles form a 'Z' shape and are equal?",
+        "q_zh": "哪种类型的角形成“Z”形且相等？",
+        "o": [
+          "Corresponding",
+          "Alternate",
+          "Co-interior",
+          "Vertically opposite"
+        ],
+        "a": 1,
+        "e": "Alternate angles form a 'Z' shape and are equal when lines are parallel.",
+        "e_zh": "当直线平行时，内错角形成“Z”形且相等。"
+      },
+      {
+        "q": "If two co-interior angles are $x$ and $2x$, what is the value of $x$?",
+        "q_zh": "如果两个同旁内角分别是 $x$ 和 $2x$，那么 $x$ 的值是多少？",
+        "o": [
+          "60",
+          "90",
+          "120",
+          "180"
+        ],
+        "a": 0,
+        "e": "$x + 2x = 180 \\Rightarrow 3x = 180 \\Rightarrow x = 60$.",
+        "e_zh": "$x + 2x = 180 \\Rightarrow 3x = 180 \\Rightarrow x = 60$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-Y8.7-01",
+    "section": "Y8.7",
+    "order": 1,
+    "title": "Expanding and Factoring Expressions",
+    "title_zh": "表达式的展开与因式分解",
+    "explanation": {
+      "en": "**Expanding brackets** means multiplying the term outside the bracket by every term inside (e.g., $3(x + 4) = 3x + 12$).\n\n**Double brackets** are expanded using the **FOIL** method (First, Outer, Inner, Last).\n\n**Factorising** is the inverse of expanding. It involves finding the Highest Common Factor (HCF) of all terms and placing it outside the bracket (e.g., $6x + 9 = 3(2x + 3)$).",
+      "zh": "**展开括号**意味着将括号外的项与括号内的每一项相乘（例如，$3(x + 4) = 3x + 12$）。\n\n**双重括号**使用 **FOIL** 法展开（第一项、外层、内层、最后一项）。\n\n**因式分解**是展开的逆过程。它涉及找到所有项的最高公因数 (HCF)，并将其提取到括号外（例如，$6x + 9 = 3(2x + 3)$）。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-expand-double",
+        "label": "Expand double brackets",
+        "label_zh": "展开双重括号",
+        "description": "Simplify expressions like $(x+3)(x-5)$.",
+        "description_zh": "简化如 $(x+3)(x-5)$ 的表达式。"
+      },
+      {
+        "id": "ep-factorise-simple",
+        "label": "Factorise by taking out HCF",
+        "label_zh": "提取公因数进行因式分解",
+        "description": "Identify common factors to factorise linear expressions.",
+        "description_zh": "识别公因数以对线性表达式进行因式分解。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-expand-double",
+        "question": "Expand and simplify: $(x + 4)(x + 3)$.",
+        "question_zh": "展开并简化：$(x + 4)(x + 3)$。",
+        "solution": "**Step 1:** Multiply First terms: $x \\times x = x^2$.\n**Step 2:** Multiply Outer terms: $x \\times 3 = 3x$.\n**Step 3:** Multiply Inner terms: $4 \\times x = 4x$.\n**Step 4:** Multiply Last terms: $4 \\times 3 = 12$.\n**Step 5:** Combine like terms: $x^2 + 7x + 12$.\n**Answer:** $x^2 + 7x + 12$",
+        "solution_zh": "**步骤1：** 相乘第一项：$x \\times x = x^2$。\n**步骤2：** 相乘外层项：$x \\times 3 = 3x$。\n**步骤3：** 相乘内层项：$4 \\times x = 4x$。\n**步骤4：** 相乘最后一项：$4 \\times 3 = 12$。\n**步骤5：** 合并同类项：$x^2 + 7x + 12$。\n**答案：** $x^2 + 7x + 12$",
+        "source": "Year 8 Assessment"
+      },
+      {
+        "patternId": "ep-factorise-simple",
+        "question": "Factorise fully: $12x^2 - 8x$.",
+        "question_zh": "彻底因式分解：$12x^2 - 8x$。",
+        "solution": "**Step 1:** Find HCF of $12$ and $8$, which is $4$.\n**Step 2:** Find HCF of $x^2$ and $x$, which is $x$.\n**Step 3:** Total HCF is $4x$.\n**Step 4:** Divide each term by $4x$: $12x^2 \\div 4x = 3x$ and $-8x \\div 4x = -2$.\n**Answer:** $4x(3x - 2)$",
+        "solution_zh": "**步骤1：** 找到 $12$ 和 $8$ 的 HCF，是 $4$。\n**步骤2：** 找到 $x^2$ 和 $x$ 的 HCF，是 $x$。\n**步骤3：** 总的 HCF 是 $4x$。\n**步骤4：** 将每一项除以 $4x$：$12x^2 \\div 4x = 3x$ 以及 $-8x \\div 4x = -2$。\n**答案：** $4x(3x - 2)$",
+        "source": "Adapted from Y8 curriculum"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "Expand $5(2x - 3)$.",
+        "q_zh": "展开 $5(2x - 3)$。",
+        "o": [
+          "$10x - 3$",
+          "$10x - 15$",
+          "$7x - 8$",
+          "$10x + 15$"
+        ],
+        "a": 1,
+        "e": "Multiply 5 by both terms: $5 \\times 2x = 10x$ and $5 \\times -3 = -15$.",
+        "e_zh": "用 5 乘以两项：$5 \\times 2x = 10x$ 且 $5 \\times -3 = -15$。"
+      },
+      {
+        "q": "What is the result of expanding $(x-2)(x+2)$?",
+        "q_zh": "展开 $(x-2)(x+2)$ 的结果是什么？",
+        "o": [
+          "$x^2 - 4$",
+          "$x^2 + 4$",
+          "$x^2 - 4x + 4$",
+          "$x^2 + 4x - 4$"
+        ],
+        "a": 0,
+        "e": "Using FOIL: $x^2 + 2x - 2x - 4$. The middle terms cancel out, leaving $x^2 - 4$.",
+        "e_zh": "使用 FOIL 法：$x^2 + 2x - 2x - 4$。中间项抵消，剩下 $x^2 - 4$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-Y8.8-01",
+    "section": "Y8.8",
+    "order": 1,
+    "title": "Linear Graphs ($y = mx + c$)",
+    "title_zh": "线性图表 ($y = mx + c$)",
+    "explanation": {
+      "en": "The equation of a straight line is usually written as **$y = mx + c$**.\n\n**$m$** represents the **gradient** (slope), calculated as $\\text{gradient} = \\frac{\\text{change in } y}{\\text{change in } x}$.\n\n**$c$** represents the **$y$-intercept**, which is the point where the line crosses the $y$-axis (where $x = 0$).\n\nTo plot a graph, create a table of values for $x$, calculate the corresponding $y$ values, and join the points with a straight line.",
+      "zh": "直线的方程通常写为 **$y = mx + c$**。\n\n**$m$** 代表**斜率**（梯度），计算公式为 $\\text{斜率} = \\frac{y \\text{ 的变化量}}{x \\text{ 的变化量}}$。\n\n**$c$** 代表**纵截距 ($y$-intercept)**，即直线与 $y$ 轴相交的点（此时 $x = 0$）。\n\n要绘制图表，请为 $x$ 创建一个数值表，计算相应的 $y$ 值，然后用直线连接这些点。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-find-mc",
+        "label": "Identify m and c",
+        "label_zh": "识别 m 和 c",
+        "description": "State the gradient and y-intercept from an equation or a graph.",
+        "description_zh": "从方程或图中指出斜率和纵截距。"
+      },
+      {
+        "id": "ep-plot-linear",
+        "label": "Plot a linear graph",
+        "label_zh": "绘制线性图表",
+        "description": "Draw a straight line graph from a given equation using coordinates.",
+        "description_zh": "根据给定的方程利用坐标画出直线图。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-find-mc",
+        "question": "For the line $y = -2x + 5$, state the gradient and the $y$-intercept.",
+        "question_zh": "对于直线 $y = -2x + 5$，指出斜率和纵截距。",
+        "solution": "**Step 1:** Compare with $y = mx + c$.\n**Step 2:** $m = -2$ and $c = 5$.\n**Answer:** Gradient $= -2$, $y$-intercept $= 5$",
+        "solution_zh": "**步骤1：** 与 $y = mx + c$ 比较。\n**步骤2：** $m = -2$ 且 $c = 5$。\n**答案：** 斜率 $= -2$，纵截距 $= 5$",
+        "source": "Year 8 Assessment"
+      },
+      {
+        "patternId": "ep-plot-linear",
+        "question": "Find the equation of a line that passes through $(0, 3)$ and $(2, 7)$.",
+        "question_zh": "求通过点 $(0, 3)$ 和 $(2, 7)$ 的直线方程。",
+        "solution": "**Step 1:** The $y$-intercept $c$ is $3$ (since it passes through $(0, 3)$).\n**Step 2:** Calculate gradient $m = \\frac{y_2 - y_1}{x_2 - x_1} = \\frac{7 - 3}{2 - 0} = \\frac{4}{2} = 2$.\n**Step 3:** Substitute $m$ and $c$ into $y = mx + c$.\n**Answer:** $y = 2x + 3$",
+        "solution_zh": "**步骤1：** 纵截距 $c$ 为 $3$（因为它通过 $(0, 3)$）。\n**步骤2：** 计算斜率 $m = \\frac{y_2 - y_1}{x_2 - x_1} = \\frac{7 - 3}{2 - 0} = \\frac{4}{2} = 2$。\n**步骤3：** 将 $m$ 和 $c$ 代入 $y = mx + c$。\n**答案：** $y = 2x + 3$",
+        "source": "Adapted from Y8 curriculum"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "What is the gradient of the line $y = \\frac{1}{2}x - 4$?",
+        "q_zh": "直线 $y = \\frac{1}{2}x - 4$ 的斜率是多少？",
+        "o": [
+          "1",
+          "2",
+          "0.5",
+          "-4"
+        ],
+        "a": 2,
+        "e": "The coefficient of $x$ is $1/2$ or $0.5$.",
+        "e_zh": "$x$ 的系数是 $1/2$ 或 $0.5$。"
+      },
+      {
+        "q": "A line has a gradient of 3 and passes through $(0, -2)$. What is its equation?",
+        "q_zh": "一条直线的斜率为 3 且通过点 $(0, -2)$。它的方程是什么？",
+        "o": [
+          "$y = -2x + 3$",
+          "$y = 3x - 2$",
+          "$y = 3x + 2$",
+          "$y = 2x - 3$"
+        ],
+        "a": 1,
+        "e": "$m = 3, c = -2$, so $y = 3x - 2$.",
+        "e_zh": "$m = 3, c = -2$，所以 $y = 3x - 2$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-Y8.9-01",
+    "section": "Y8.9",
+    "order": 1,
+    "title": "Mean from Frequency Tables",
+    "title_zh": "从频数表计算平均数",
+    "explanation": {
+      "en": "To find the **mean** from a frequency table, you must multiply each value ($x$) by its frequency ($f$) to get $fx$.\n\nThe formula for the mean is: $$\\text{Mean} = \\frac{\\sum fx}{\\sum f}$$\nwhere $\\sum fx$ is the total sum of all data values and $\\sum f$ is the total frequency (total number of items).",
+      "zh": "要从频数表中找到**平均数**，必须将每个数值 ($x$) 乘以其对应的频数 ($f$) 以获得 $fx$。\n\n平均数的计算公式为：$$\\text{平均数} = \\frac{\\sum fx}{\\sum f}$$\n其中 $\\sum fx$ 是所有数据值的总和，$\\sum f$ 是总频数（项目总数）。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-mean-table",
+        "label": "Calculate mean from discrete data",
+        "label_zh": "计算离散数据的平均数",
+        "description": "Use a table of scores and frequencies to find the mean score.",
+        "description_zh": "利用得分和频数表求平均分。"
+      },
+      {
+        "id": "ep-mode-table",
+        "label": "Identify mode from a table",
+        "label_zh": "从表中识别众数",
+        "description": "Find the value with the highest frequency.",
+        "description_zh": "找到频数最高的数值。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-mean-table",
+        "question": "The table shows the number of goals scored in 10 matches: \nGoals ($x$): 0, 1, 2, 3 \nFreq ($f$): 2, 4, 3, 1 \nCalculate the mean number of goals.",
+        "question_zh": "表显示了 10 场比赛中的进球数：\n进球数 ($x$): 0, 1, 2, 3 \n频数 ($f$): 2, 4, 3, 1 \n计算平均进球数。",
+        "solution": "**Step 1:** Calculate $fx$ values: $0(2)=0, 1(4)=4, 2(3)=6, 3(1)=3$.\n**Step 2:** Find $\\sum fx = 0 + 4 + 6 + 3 = 13$.\n**Step 3:** Find $\\sum f = 2 + 4 + 3 + 1 = 10$.\n**Step 4:** Mean $= 13 \\div 10 = 1.3$.\n**Answer:** $1.3$ goals",
+        "solution_zh": "**步骤1：** 计算 $fx$ 值：$0(2)=0, 1(4)=4, 2(3)=6, 3(1)=3$。\n**步骤2：** 求 $\\sum fx = 0 + 4 + 6 + 3 = 13$。\n**步骤3：** 求 $\\sum f = 2 + 4 + 3 + 1 = 10$。\n**步骤4：** 平均数 $= 13 \\div 10 = 1.3$。\n**答案：** $1.3$ 个进球",
+        "source": "Year 8 Assessment"
+      },
+      {
+        "patternId": "ep-mode-table",
+        "question": "Using the table from the previous example, identify the modal number of goals.",
+        "question_zh": "使用上一个例子中的表，识别进球数的众数。",
+        "solution": "**Step 1:** Look for the highest frequency. The highest frequency is $4$.\n**Step 2:** Identify the goal number corresponding to frequency $4$. It is $1$.\n**Answer:** $1$ goal",
+        "solution_zh": "**步骤1：** 寻找最高频数。最高频数是 $4$。\n**步骤2：** 识别频数 $4$ 对应的进球数，是 $1$。\n**答案：** $1$ 个进球",
+        "source": "Adapted from Y8 curriculum"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "In a frequency table, if $\\sum f = 20$ and $\\sum fx = 100$, what is the mean?",
+        "q_zh": "在频数表中，如果 $\\sum f = 20$ 且 $\\sum fx = 100$，平均数是多少？",
+        "o": [
+          "5",
+          "20",
+          "80",
+          "2000"
+        ],
+        "a": 0,
+        "e": "Mean $= 100 / 20 = 5$.",
+        "e_zh": "平均数 $= 100 / 20 = 5$。"
+      },
+      {
+        "q": "What is the mode of a dataset where the frequencies of values 5, 6, and 7 are 10, 15, and 12 respectively?",
+        "q_zh": "如果数值 5, 6, 7 的频数分别为 10, 15, 12，那么该数据集的众数是多少？",
+        "o": [
+          "15",
+          "6",
+          "7",
+          "12"
+        ],
+        "a": 1,
+        "e": "The value 6 has the highest frequency (15), so it is the mode.",
+        "e_zh": "数值 6 的频数最高 (15)，因此它是众数。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  }
+]

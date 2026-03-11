@@ -1,0 +1,368 @@
+[
+  {
+    "id": "kp-8.1-01",
+    "section": "8.1",
+    "order": 1,
+    "title": "Basic Probability & Probability Scale",
+    "title_zh": "基础概率与概率值范围",
+    "explanation": {
+      "en": "The **Probability** of an event is a measure of how likely it is to occur.\n\n**Probability Scale** ranges from $0$ (impossible) to $1$ (certain). Probabilities can be written as fractions, decimals, or percentages (e.g., $0.5$, $\\frac{1}{2}$, or $50\\%$).\n\n**Theoretical Probability** is calculated when all outcomes are equally likely using the formula: $P(E) = \\frac{\\text{number of successful outcomes}}{\\text{total number of possible outcomes}}$. For example, the probability of rolling a $4$ on a fair six-sided die is $\\frac{1}{6}$.",
+      "zh": "**概率**是衡量一个事件发生可能性大小的指标。\n\n**概率值范围**介于 $0$（不可能发生）和 $1$（必然发生）之间。概率可以用分数、小数或百分比表示（例如：$0.5$, $\\frac{1}{2}$ 或 $50\\%$）。\n\n**理论概率**在所有结果出现可能性相等时计算，公式为：$P(E) = \\frac{\\text{有利结果数}}{\\text{所有可能结果的总数}}$。例如，掷一枚均匀的六面骰子，掷出 $4$ 的概率是 $\\frac{1}{6}$。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-calc-basic",
+        "label": "Calculate simple probability",
+        "label_zh": "计算简单概率",
+        "description": "Finding the probability of a single event from a set of outcomes (e.g., picking a ball from a bag).",
+        "description_zh": "从一组结果中找出单个事件发生的概率（如：从袋子里摸球）。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-calc-basic",
+        "question": "A bag contains $5$ red, $3$ blue, and $2$ yellow marbles. A marble is chosen at random. Find the probability that it is blue.",
+        "question_zh": "一个袋子里有 $5$ 个红球，$3$ 个蓝球和 $2$ 个黄球。随机摸出一个球，求摸出蓝球的概率。",
+        "solution": "**Step 1:** Calculate the total number of marbles.\n$5 + 3 + 2 = 10$\n\n**Step 2:** Identify the number of successful outcomes (blue marbles).\nNumber of blue marbles = $3$\n\n**Step 3:** Use the formula $P(E) = \\frac{n(E)}{n(S)}$.\n$P(\\text{blue}) = \\frac{3}{10}$ or $0.3$\n\n**Answer:** $\\frac{3}{10}$",
+        "solution_zh": "**步骤1：** 计算球的总数。\n$5 + 3 + 2 = 10$\n\n**步骤2：** 确定有利结果的数量（蓝球数量）。\n蓝球数量 = $3$\n\n**步骤3：** 使用公式 $P(E) = \\frac{n(E)}{n(S)}$。\n$P(\\text{蓝色}) = \\frac{3}{10}$ 或 $0.3$\n\n**答案：** $\\frac{3}{10}$",
+        "source": "Adapted from 0580/21/M/J/18"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "Which of the following values cannot represent a probability?",
+        "q_zh": "下列哪个数值不能表示概率？",
+        "o": [
+          "$0.001$",
+          "$\\frac{4}{3}$",
+          "$15\\%$",
+          "$0$"
+        ],
+        "a": 1,
+        "e": "A probability must be between $0$ and $1$ inclusive. $\\frac{4}{3} > 1$, so it is not a valid probability.",
+        "e_zh": "概率必须在 $0$ 到 $1$ 之间（包含 $0$ 和 $1$）。$\\frac{4}{3} > 1$，因此它不是一个有效的概率值。"
+      },
+      {
+        "q": "A fair spinner is divided into $8$ equal sectors numbered $1$ to $8$. What is the probability of spinning a prime number?",
+        "q_zh": "一个均匀的转盘被分成 $8$ 个等大的扇形，编号为 $1$ 到 $8$。转到质数的概率是多少？",
+        "o": [
+          "$\\frac{1}{2}$",
+          "$\\frac{3}{8}$",
+          "$\\frac{5}{8}$",
+          "$\\frac{1}{4}$"
+        ],
+        "a": 0,
+        "e": "The prime numbers between $1$ and $8$ are $2, 3, 5, 7$ (Total 4 numbers). The total number of sectors is $8$. $P(\\text{prime}) = \\frac{4}{8} = \\frac{1}{2}$. Note: $1$ is not a prime number.",
+        "e_zh": "$1$ 到 $8$ 之间的质数有 $2, 3, 5, 7$（共 4 个）。扇形总数为 $8$。$P(\\text{质数}) = \\frac{4}{8} = \\frac{1}{2}$。注意：$1$ 不是质数。"
+      }
+    ],
+    "vocabLinks": [
+      "prob-intro"
+    ],
+    "tier": "both"
+  },
+  {
+    "id": "kp-8.1-02",
+    "section": "8.1",
+    "order": 2,
+    "title": "Complementary Events",
+    "title_zh": "互补事件",
+    "explanation": {
+      "en": "**Complementary Events** are events where one must happen if the other does not. For any event $A$, its complement is denoted as $A'$ or \"not $A$\".\n\n**Sum of Probabilities** of an event and its complement is always $1$: $P(A) + P(A') = 1$. This is because it is certain that either $A$ happens or it doesn't.\n\n**Calculating the Complement** is useful when it's easier to find the probability of something NOT happening: $P(A') = 1 - P(A)$.",
+      "zh": "**互补事件**是指两个事件中，如果一个不发生，另一个就必然发生。对于任何事件 $A$，其互补事件记为 $A'$ 或 “非 $A$”。\n\n**概率之和**：一个事件及其互补事件的概率之和总是 $1$：$P(A) + P(A') = 1$。这是因为 $A$ 发生或不发生是必然的。\n\n**计算互补概率**：当计算“某事不发生”的概率更容易时，这个性质非常有用：$P(A') = 1 - P(A)$。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-prob-complement",
+        "label": "Using P(not A) = 1 - P(A)",
+        "label_zh": "使用 P(非 A) = 1 - P(A)",
+        "description": "Given the probability of an event, find the probability that it does not occur.",
+        "description_zh": "已知一个事件发生的概率，求它不发生的概率。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-prob-complement",
+        "question": "The probability that it will rain tomorrow is $0.24$. Find the probability that it will not rain tomorrow.",
+        "question_zh": "明天明天下雨的概率是 $0.24$。求明天不下雨的概率。",
+        "solution": "**Step 1:** Use the rule $P(\\text{not } A) = 1 - P(A)$.\n$P(\\text{not rain}) = 1 - 0.24$\n\n**Step 2:** Calculate the result.\n$1 - 0.24 = 0.76$\n\n**Answer:** $0.76$",
+        "solution_zh": "**步骤1：** 使用规则 $P(\\text{非 } A) = 1 - P(A)$。\n$P(\\text{不下雨}) = 1 - 0.24$\n\n**步骤2：** 计算结果。\n$1 - 0.24 = 0.76$\n\n**答案：** $0.76$",
+        "source": "0580/12/M/J/19"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "The probability of a train being late is $\\frac{2}{7}$. What is the probability that the train is on time?",
+        "q_zh": "一列火车晚点的概率是 $\\frac{2}{7}$。这列火车准点的概率是多少？",
+        "o": [
+          "$\\frac{2}{7}$",
+          "$\\frac{1}{7}$",
+          "$\\frac{5}{7}$",
+          "$\\frac{7}{2}$"
+        ],
+        "a": 2,
+        "e": "Being 'on time' is the complement of 'being late'. $P(\\text{on time}) = 1 - P(\\text{late}) = 1 - \\frac{2}{7} = \\frac{5}{7}$.",
+        "e_zh": "“准点”是“晚点”的互补事件。$P(\\text{准点}) = 1 - P(\\text{晚点}) = 1 - \\frac{2}{7} = \\frac{5}{7}$。"
+      }
+    ],
+    "vocabLinks": [
+      "prob-complement"
+    ],
+    "tier": "both"
+  },
+  {
+    "id": "kp-8.2-01",
+    "section": "8.2",
+    "order": 1,
+    "title": "Relative & Expected Frequencies",
+    "title_zh": "相对频率与期望频率",
+    "explanation": {
+      "en": "**Relative Frequency** (also called Experimental Probability) is an estimate of probability based on data from an experiment: $\\text{Relative Frequency} = \\frac{\\text{frequency of event}}{\\text{total number of trials}}$.\n\n**Law of Large Numbers** states that as the number of trials increases, the relative frequency gets closer to the theoretical probability.\n\n**Expected Frequency** is the number of times we expect an event to occur in a certain number of trials ($n$). It is calculated as: $\\text{Expected Frequency} = n \\times P(\\text{event})$.",
+      "zh": "**相对频率**（也称为实验概率）是根据实验数据对概率进行的估算：$\\text{相对频率} = \\frac{\\text{事件发生的频数}}{\\text{实验总次数}}$。\n\n**大数定律**指出，随着实验次数的增加，相对频率会越来越接近理论概率。\n\n**期望频率**是在一定次数（$n$）的实验中，我们预见某事件发生的次数。计算公式为：$\\text{期望频数} = n \\times P(\\text{事件})$。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-expected-freq",
+        "label": "Calculate expected occurrences",
+        "label_zh": "计算期望发生的次数",
+        "description": "Using a given probability to predict outcomes over many trials.",
+        "description_zh": "利用给定的概率来预测多次实验中的结果。"
+      },
+      {
+        "id": "ep-relative-freq",
+        "label": "Calculate relative frequency from a table",
+        "label_zh": "根据表格计算相对频率",
+        "description": "Determining experimental probability from a set of recorded results.",
+        "description_zh": "从一组记录的结果中确定实验概率。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-expected-freq",
+        "question": "The probability that a seed will germinate is $0.85$. If $400$ seeds are planted, how many would you expect to germinate?",
+        "question_zh": "一颗种子发芽的概率是 $0.85$。如果种下 $400$ 颗种子，预计会有多少颗发芽？",
+        "solution": "**Step 1:** Identify $P(\\text{germinate}) = 0.85$ and $n = 400$.\n\n**Step 2:** Multiply the probability by the number of trials.\n$\\text{Expected number} = 400 \\times 0.85 = 340$\n\n**Answer:** $340$",
+        "solution_zh": "**步骤1：** 确定 $P(\\text{发芽}) = 0.85$ 且 $n = 400$。\n\n**步骤2：** 将概率乘以实验次数。\n$\\text{期望数量} = 400 \\times 0.85 = 340$\n\n**答案：** $340$",
+        "source": "0580/22/O/N/17"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "A biased coin is tossed $200$ times. It lands on heads $120$ times. What is the relative frequency of getting heads?",
+        "q_zh": "一枚不均匀的硬币被抛掷了 $200$ 次。其中正面朝上 $120$ 次。得到正面的相对频率是多少？",
+        "o": [
+          "$0.5$",
+          "$0.6$",
+          "$0.4$",
+          "$1.2$"
+        ],
+        "a": 1,
+        "e": "Relative frequency = frequency / total trials = $120 / 200 = 0.6$.",
+        "e_zh": "相对频率 = 频数 / 总次数 = $120 / 200 = 0.6$。"
+      },
+      {
+        "q": "The probability of winning a prize in a game is $0.05$. If $500$ people play the game, how many prizes are expected to be won?",
+        "q_zh": "在游戏中获胜领奖的概率是 $0.05$。如果有 $500$ 人玩这个游戏，预计会发出多少份奖品？",
+        "o": [
+          "$5$",
+          "$25$",
+          "$50$",
+          "$100$"
+        ],
+        "a": 1,
+        "e": "Expected number = $n \\times P = 500 \\times 0.05 = 25$.",
+        "e_zh": "期望数量 = $n \\times P = 500 \\times 0.05 = 25$。"
+      }
+    ],
+    "vocabLinks": [
+      "prob-expected"
+    ],
+    "tier": "both"
+  },
+  {
+    "id": "kp-8.3-01",
+    "section": "8.3",
+    "order": 1,
+    "title": "Diagrams for Combined Events",
+    "title_zh": "组合事件图示法",
+    "explanation": {
+      "en": "When dealing with two or more events, diagrams help visualize all possible outcomes.\n\n**Possibility Diagrams** (or sample space diagrams) are useful for two events with a limited number of outcomes, such as rolling two dice. Outcomes are listed on a grid.\n\n**Tree Diagrams** are used for successive events (one after another). \n- Multiply probabilities along the **branches** to find the probability of a specific path (e.g., $P(\\text{Head and Head})$).\n- Add the probabilities of different **paths** to find the total probability of an outcome (e.g., $P(\\text{One of each colour})$).",
+      "zh": "在处理两个或多个事件时，图示法可以帮助直观地展示所有可能的结果。\n\n**可能结果图**（或样本空间图）适用于结果数量有限的两个事件，例如掷两个骰子。结果通常列在网格中。\n\n**树状图**用于表示连续发生的事件（先后发生）。\n- 沿着**树枝**相乘，可以求出特定路径的概率（例如：$P(\\text{正面且正面})$）。\n- 将不同**路径**的概率相加，可以求出某种结果的总概率（例如：$P(\\text{每种颜色各一个})$）。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-tree-diagram",
+        "label": "Complete and use a tree diagram",
+        "label_zh": "完成并使用树状图",
+        "description": "Filling in missing probabilities on branches and calculating the probability of combined outcomes.",
+        "description_zh": "在树枝上填入缺失的概率，并计算组合结果的概率。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-tree-diagram",
+        "question": "The probability that Aima passes her driving test is $0.7$. If she fails, she takes it again. The probability she passes the second time is $0.8$. Draw a tree diagram and find the probability she passes within two attempts.",
+        "question_zh": "Aima 通过驾驶考试的概率是 $0.7$。如果她失败了，她会再考一次。第二次通过的概率是 $0.8$。画出树状图并求出她在两次尝试内通过的概率。",
+        "solution": "**Step 1:** Construct the tree. \n- 1st attempt: Pass ($0.7$), Fail ($0.3$)\n- 2nd attempt (only if failed 1st): Pass ($0.8$), Fail ($0.2$)\n\n**Step 2:** Identify successful paths:\n- Path 1: Passes 1st time. $P = 0.7$\n- Path 2: Fails 1st, Passes 2nd. $P = 0.3 \\times 0.8 = 0.24$\n\n**Step 3:** Add probabilities of successful paths.\n$P(\\text{Passes}) = 0.7 + 0.24 = 0.94$\n\n**Answer:** $0.94$",
+        "solution_zh": "**步骤1：** 绘制树状图。\n- 第一次：通过 ($0.7$)，失败 ($0.3$)\n- 第二次（仅当第一次失败）：通过 ($0.8$)，失败 ($0.2$)\n\n**步骤2：** 确定成功的路径：\n- 路径 1：第一次通过。$P = 0.7$\n- 路径 2：第一次失败，第二次通过。$P = 0.3 \\times 0.8 = 0.24$\n\n**步骤3：** 将成功路径的概率相加。\n$P(\\text{通过}) = 0.7 + 0.24 = 0.94$\n\n**答案：** $0.94$",
+        "source": "Adapted from 0580/22/M/J/20"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "In a tree diagram, if the probability of the first branch is $0.4$, what is the probability of its complementary branch?",
+        "q_zh": "在树状图中，如果第一个分支的概率是 $0.4$，那么它的互补分支的概率是多少？",
+        "o": [
+          "$0.4$",
+          "$0.6$",
+          "$1.4$",
+          "$0.16$"
+        ],
+        "a": 1,
+        "e": "Branches from the same point must add up to $1$. $1 - 0.4 = 0.6$.",
+        "e_zh": "从同一点发出的分支概率之和必须等于 $1$。$1 - 0.4 = 0.6$。"
+      },
+      {
+        "q": "Two fair coins are tossed. Using a possibility diagram or tree, what is the probability of getting exactly one Head and one Tail?",
+        "q_zh": "抛掷两枚均匀的硬币。通过图示法或树状图，求恰好得到一个正面和一个反面的概率是多少？",
+        "o": [
+          "$\\frac{1}{4}$",
+          "$\\frac{1}{2}$",
+          "$\\frac{3}{4}$",
+          "$\\frac{1}{3}$"
+        ],
+        "a": 1,
+        "e": "Outcomes are HH, HT, TH, TT. Successful outcomes are HT and TH (2 out of 4). $P = 2/4 = 1/2$.",
+        "e_zh": "可能的结果有 HH, HT, TH, TT。成功的结果是 HT 和 TH（4 个中的 2 个）。$P = 2/4 = 1/2$。"
+      }
+    ],
+    "vocabLinks": [
+      "prob-tree"
+    ],
+    "tier": "both"
+  },
+  {
+    "id": "kp-8.3-02",
+    "section": "8.3",
+    "order": 2,
+    "title": "Mutually Exclusive & Independent Events",
+    "title_zh": "互斥事件与独立事件",
+    "explanation": {
+      "en": "**Mutually Exclusive Events** are events that cannot happen at the same time (e.g., rolling a $3$ and a $5$ on a single die). \n- **Addition Rule (OR)**: $P(A \\text{ or } B) = P(A) + P(B)$.\n\n**Independent Events** are events where the outcome of one does not affect the outcome of the other (e.g., rolling a die and tossing a coin).\n- **Multiplication Rule (AND)**: $P(A \\text{ and } B) = P(A) \\times P(B)$.",
+      "zh": "**互斥事件**是指不能同时发生的事件（例如：在一次掷骰子中掷出 $3$ 和 $5$）。\n- **加法法则 (或)**：$P(A \\text{ 或 } B) = P(A) + P(B)$。\n\n**独立事件**是指一个事件的结果不会影响另一个事件结果的事件（例如：掷骰子的同时抛硬币）。\n- **乘法法则 (且)**：$P(A \\text{ 且 } B) = P(A) \\times P(B)$。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-and-or-rules",
+        "label": "Apply AND/OR rules",
+        "label_zh": "应用且/或法则",
+        "description": "Deciding whether to add or multiply probabilities based on the context of the question.",
+        "description_zh": "根据题目情境决定是相加还是相乘概率。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-and-or-rules",
+        "question": "The probability that a student is late for school is $0.1$. The probability that a student forgets their homework is $0.15$. Assuming these events are independent, find the probability that a student is late AND forgets their homework.",
+        "question_zh": "一名学生上学迟到的概率是 $0.1$。一名学生忘记带作业的概率是 $0.15$。假设这两个事件是相互独立的，求一名学生既迟到又忘记带作业的概率。",
+        "solution": "**Step 1:** Identify that the events are independent.\n\n**Step 2:** Use the Multiplication Rule for 'AND'.\n$P(\\text{Late and No Homework}) = 0.1 \\times 0.15 = 0.015$\n\n**Answer:** $0.015$",
+        "solution_zh": "**步骤1：** 确定这两个事件是独立的。\n\n**步骤2：** 对“且”使用乘法法则。\n$P(\\text{迟到且没带作业}) = 0.1 \\times 0.15 = 0.015$\n\n**答案：** $0.015$",
+        "source": "Adapted from 0580/42/O/N/21"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "If $P(A) = 0.3$ and $P(B) = 0.4$, and $A$ and $B$ are mutually exclusive, what is $P(A \\cup B)$?",
+        "q_zh": "如果 $P(A) = 0.3$ 且 $P(B) = 0.4$，并且 $A$ 和 $B$ 是互斥的，那么 $P(A \\cup B)$ 是多少？",
+        "o": [
+          "$0.12$",
+          "$0.7$",
+          "$0.1$",
+          "$0.5$"
+        ],
+        "a": 1,
+        "e": "For mutually exclusive events, $P(A \\text{ or } B) = P(A) + P(B) = 0.3 + 0.4 = 0.7$.",
+        "e_zh": "对于互斥事件，$P(A \\text{ 或 } B) = P(A) + P(B) = 0.3 + 0.4 = 0.7$。"
+      },
+      {
+        "q": "A card is drawn from a deck and a coin is flipped. These events are...",
+        "q_zh": "从一副牌中抽一张牌并抛一枚硬币。这些事件是……",
+        "o": [
+          "Mutually Exclusive",
+          "Independent",
+          "Dependent",
+          "Impossible"
+        ],
+        "a": 1,
+        "e": "The result of the card draw does not affect the result of the coin flip, so they are independent.",
+        "e_zh": "抽牌的结果不会影响抛硬币的结果，所以它们是独立的。"
+      }
+    ],
+    "vocabLinks": [
+      "prob-independent"
+    ],
+    "tier": "both"
+  },
+  {
+    "id": "kp-8.4-01",
+    "section": "8.4",
+    "order": 1,
+    "title": "Conditional Probability (Without Replacement)",
+    "title_zh": "条件概率（不放回）",
+    "explanation": {
+      "en": "**Conditional Probability** occurs when the probability of an event changes depending on the outcome of a previous event. This is most common in problems involving selection **without replacement**.\n\nWhen items are selected and not put back:\n1. The **Total** number of items decreases by $1$ for the second selection.\n2. The number of the **Specific** type of item selected also decreases by $1$ if that same type was chosen first.\n\nIn tree diagrams, the probabilities on the second set of branches will be different from the first set.",
+      "zh": "**条件概率**发生在当一个事件的概率随前一个事件的结果而变化时。这在涉及**不放回**抽样的题目中最为常见。\n\n当物品被选中且不放回时：\n1. 第二次抽取时物品的**总数**减少 $1$。\n2. 如果第一次选中了某类特定物品，那么第二次抽取时该类**特定**物品的数量也会减少 $1$。\n\n在树状图中，第二组树枝上的概率将与第一组不同。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-without-replacement",
+        "label": "Selection without replacement",
+        "label_zh": "不放回抽取",
+        "description": "Calculating probabilities for two or more selections where the items are not replaced.",
+        "description_zh": "计算两次或多次不放回抽取时的概率。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-without-replacement",
+        "question": "A box contains $7$ red apples and $3$ green apples. Two apples are taken at random without replacement. Find the probability that both apples are red.",
+        "question_zh": "一个盒子里有 $7$ 个红苹果和 $3$ 个绿苹果。随机取出两个苹果且不放回。求两个苹果都是红色的概率。",
+        "solution": "**Step 1:** Probability the 1st apple is red:\n$P(R1) = \\frac{7}{10}$\n\n**Step 2:** Probability the 2nd apple is red, given the 1st was red:\nNow there are $6$ red apples left out of a total of $9$.\n$P(R2 | R1) = \\frac{6}{9}$\n\n**Step 3:** Multiply the probabilities.\n$P(\\text{Both Red}) = \\frac{7}{10} \\times \\frac{6}{9} = \\frac{42}{90} = \\frac{7}{15}$\n\n**Answer:** $\\frac{7}{15}$",
+        "solution_zh": "**步骤1：** 第一个苹果是红色的概率：\n$P(R1) = \\frac{7}{10}$\n\n**步骤2：** 在第一个是红色的前提下，第二个也是红色的概率：\n现在剩下 $6$ 个红苹果，总数变为 $9$ 个。\n$P(R2 | R1) = \\frac{6}{9}$\n\n**步骤3：** 将概率相乘。\n$P(\\text{两个都红}) = \\frac{7}{10} \\times \\frac{6}{9} = \\frac{42}{90} = \\frac{7}{15}$\n\n**答案：** $\\frac{7}{15}$",
+        "source": "0580/42/M/J/19"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "A bag has $5$ white and $5$ black balls. If two balls are drawn without replacement, what is the probability that the second ball is white given the first was black?",
+        "q_zh": "一个袋子里有 $5$ 个白球和 $5$ 个黑球。如果不放回地取出两个球，已知第一个是黑球，第二个是白球的概率是多少？",
+        "o": [
+          "$\\frac{5}{10}$",
+          "$\\frac{5}{9}$",
+          "$\\frac{4}{9}$",
+          "$\\frac{1}{2}$"
+        ],
+        "a": 1,
+        "e": "After taking one black ball, there are still $5$ white balls left, but the total number of balls is now $9$. So $P = 5/9$.",
+        "e_zh": "取走一个黑球后，还剩下 $5$ 个白球，但球的总数变成了 $9$。因此 $P = 5/9$。"
+      },
+      {
+        "q": "In 'without replacement' problems, what happens to the denominator of the second probability branch?",
+        "q_zh": "在“不放回”问题中，第二个概率分支的分母会发生什么变化？",
+        "o": [
+          "It stays the same",
+          "It increases by 1",
+          "It decreases by 1",
+          "It doubles"
+        ],
+        "a": 2,
+        "e": "Since one item is removed and not replaced, the total number of outcomes (the denominator) decreases by $1$.",
+        "e_zh": "因为取走了一个物品且不放回，所以总结果数（分母）会减少 $1$。"
+      }
+    ],
+    "vocabLinks": [
+      "prob-conditional"
+    ],
+    "tier": "extended"
+  }
+]

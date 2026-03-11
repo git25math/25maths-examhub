@@ -1,0 +1,338 @@
+[
+  {
+    "id": "kp-4.1-01",
+    "addQuiz": [
+      {
+        "q": "What is the name of a regular polygon where each exterior angle is $40^\\circ$?",
+        "q_zh": "每个外角为 $40^\\circ$ 的正多边形的名称是什么？",
+        "o": [
+          "Hexagon",
+          "Heptagon",
+          "Octagon",
+          "Nonagon"
+        ],
+        "a": 3,
+        "e": "Number of sides $n = 360^\\circ \\div 40^\\circ = 9$. A 9-sided polygon is a nonagon.",
+        "e_zh": "边数 $n = 360^\\circ \\div 40^\\circ = 9$。九边形被称为 nonagon。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-shape-prop",
+        "question": "A regular polygon has an interior angle of $144^\\circ$. Calculate the number of sides of this polygon.",
+        "question_zh": "一个正多边形的内角为 $144^\\circ$。计算该多边形的边数。",
+        "solution": "1. Find the exterior angle: $180^\\circ - 144^\\circ = 36^\\circ$.\n2. Use the sum of exterior angles ($360^\\circ$): $n = 360^\\circ \\div 36^\\circ = 10$.",
+        "solution_zh": "1. 计算外角：$180^\\circ - 144^\\circ = 36^\\circ$。\n2. 利用外角和（$360^\\circ$）：$n = 360^\\circ \\div 36^\\circ = 10$。",
+        "source": "0580/22/M/J/19"
+      }
+    ]
+  },
+  {
+    "id": "kp-4.2-01",
+    "addQuiz": [
+      {
+        "q": "Which geometric construction is used to find the set of points that are equidistant from two intersecting lines?",
+        "q_zh": "哪种几何作图用于寻找与两条相交直线距离相等的点集？",
+        "o": [
+          "Perpendicular bisector",
+          "Angle bisector",
+          "Circle with fixed radius",
+          "Parallel line construction"
+        ],
+        "a": 1,
+        "e": "The angle bisector consists of all points equidistant from the two lines forming the angle.",
+        "e_zh": "角平分线上的所有点到构成该角的两条直线的距离相等。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-construct-bisect",
+        "question": "Using a ruler and compasses only, construct the perpendicular bisector of a line $AB$ of length $8\\text{ cm}$.",
+        "question_zh": "仅使用直尺和圆规，作长度为 $8\\text{ cm}$ 的线段 $AB$ 的垂直平分线。",
+        "solution": "1. Draw line $AB = 8\\text{ cm}$.\n2. Place compass at $A$, set width to more than half of $AB$ (e.g., $5\\text{ cm}$), and draw arcs above and below the line.\n3. Keeping the same width, place compass at $B$ and draw arcs to intersect the first ones.\n4. Draw a straight line through the two intersection points.",
+        "solution_zh": "1. 画出线段 $AB = 8\\text{ cm}$。\n2. 将圆规置于 $A$ 点，半径设为大于 $AB$ 一半的长度（如 $5\\text{ cm}$），在线段上方和下方各画一段弧。\n3. 保持半径不变，将圆规置于 $B$ 点，画弧与之前的弧相交。\n4. 连接两个交点画出直线。",
+        "source": "Adapted from 0580/31/O/N/21"
+      }
+    ]
+  },
+  {
+    "id": "kp-4.3-01",
+    "addQuiz": [
+      {
+        "q": "On a map with a scale of $1:250000$, a road is represented by a line $6\\text{ cm}$ long. Calculate the actual length of the road in kilometres.",
+        "q_zh": "在比例尺为 $1:250000$ 的地图上，一条道路由一段 $6\\text{ cm}$ 长的线段表示。计算该道路的实际长度（单位：千米）。",
+        "o": [
+          "1.5 km",
+          "15 km",
+          "150 km",
+          "1500 km"
+        ],
+        "a": 1,
+        "e": "Actual length $= 6 \\times 250000 = 1,500,000\\text{ cm} = 15,000\\text{ m} = 15\\text{ km}$.",
+        "e_zh": "实际长度 $= 6 \\times 250000 = 1,500,000\\text{ cm} = 15,000\\text{ m} = 15\\text{ km}$。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-scale-calc",
+        "question": "A rectangular field has an actual area of $1.2\\text{ km}^2$. On a map, the field is represented by a rectangle with an area of $30\\text{ cm}^2$. Find the scale of the map in the form $1:n$.",
+        "question_zh": "一块矩形场地的实际面积为 $1.2\\text{ km}^2$。在地图上，该场地由一个面积为 $30\\text{ cm}^2$ 的矩形表示。求地图的比例尺，以 $1:n$ 的形式表示。",
+        "solution": "1. Convert units: $1.2\\text{ km}^2 = 1.2 \\times 10^{10}\\text{ cm}^2$.\n2. Area scale factor $k^2 = \\frac{1.2 \\times 10^{10}}{30} = 4 \\times 10^8$.\n3. Linear scale factor $k = \\sqrt{4 \\times 10^8} = 20000$.\n4. Scale is $1:20000$.",
+        "solution_zh": "1. 单位换算：$1.2\\text{ km}^2 = 1.2 \\times 10^{10}\\text{ cm}^2$。\n2. 面积比例系数 $k^2 = \\frac{1.2 \\times 10^{10}}{30} = 4 \\times 10^8$。\n3. 长度比例系数 $k = \\sqrt{4 \\times 10^8} = 20000$。\n4. 比例尺为 $1:20000$。",
+        "source": "0580/41/M/J/20"
+      }
+    ]
+  },
+  {
+    "id": "kp-4.3-02",
+    "addQuiz": [
+      {
+        "q": "The bearing of point $X$ from point $Y$ is $235^\\circ$. Calculate the bearing of $Y$ from $X$.",
+        "q_zh": "从点 $Y$ 看点 $X$ 的方位角是 $235^\\circ$。计算从点 $X$ 看点 $Y$ 的方位角。",
+        "o": [
+          "035°",
+          "055°",
+          "125°",
+          "145°"
+        ],
+        "a": 1,
+        "e": "Back bearing $= 235^\\circ - 180^\\circ = 055^\\circ$.",
+        "e_zh": "后方方位角 $= 235^\\circ - 180^\\circ = 055^\\circ$。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-bearing-calc",
+        "question": "A ship sails $50\\text{ km}$ on a bearing of $060^\\circ$ from port $P$ to point $A$, then $80\\text{ km}$ on a bearing of $150^\\circ$ to point $B$. Calculate the distance $PB$.",
+        "question_zh": "一艘船从港口 $P$ 出发，按 $060^\\circ$ 的方位角航行 $50\\text{ km}$ 到达 $A$ 点，然后按 $150^\\circ$ 的方位角航行 $80\\text{ km}$ 到达 $B$ 点。计算距离 $PB$。",
+        "solution": "1. The angle between the two paths at $A$ is $180^\\circ - (180^\\circ - 60^\\circ) - (150^\\circ - 180^\\circ)$ or simply observe the change in direction is $150 - 60 = 90^\\circ$.\n2. Since $\\angle PAB = 90^\\circ$, use Pythagoras: $PB = \\sqrt{50^2 + 80^2} = \\sqrt{2500 + 6400} = \\sqrt{8900} \\approx 94.3\\text{ km}$.",
+        "solution_zh": "1. 两条路径在 $A$ 点的夹角：观察到方向变化为 $150^\\circ - 60^\\circ = 90^\\circ$。\n2. 因为 $\\angle PAB = 90^\\circ$，使用勾股定理：$PB = \\sqrt{50^2 + 80^2} = \\sqrt{2500 + 6400} = \\sqrt{8900} \\approx 94.3\\text{ km}$。",
+        "source": "0580/42/O/N/18"
+      }
+    ]
+  },
+  {
+    "id": "kp-4.4-01",
+    "addQuiz": [
+      {
+        "q": "Two triangles are congruent if they have which of the following sets of equal parts?",
+        "q_zh": "如果两个三角形具有以下哪组相等的对应部分，则它们全等？",
+        "o": [
+          "Three equal angles (AAA)",
+          "Two sides and a non-included angle (SSA)",
+          "Two angles and a corresponding side (AAS)",
+          "Two sides and any angle"
+        ],
+        "a": 2,
+        "e": "AAS (or ASA) is a valid congruence criterion. AAA only guarantees similarity, and SSA is not sufficient.",
+        "e_zh": "AAS（或 ASA）是有效的全等判定标准。AAA 只能保证相似，而 SSA 不足以判定全等。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-similar-side",
+        "question": "Two mathematically similar triangles have base lengths of $4\\text{ cm}$ and $10\\text{ cm}$. If the height of the smaller triangle is $6\\text{ cm}$, find the height of the larger triangle.",
+        "question_zh": "两个数学相似的三角形底边长度分别为 $4\\text{ cm}$ 和 $10\\text{ cm}$。如果较小三角形的高是 $6\\text{ cm}$，求较大三角形的高。",
+        "solution": "1. Find the scale factor $k = 10 \\div 4 = 2.5$.\n2. Height of larger triangle $= 6 \\times 2.5 = 15\\text{ cm}$.",
+        "solution_zh": "1. 找出比例系数 $k = 10 \\div 4 = 2.5$。\n2. 较大三角形的高 $= 6 \\times 2.5 = 15\\text{ cm}$。",
+        "source": "Adapted from 0580/21/M/J/22"
+      }
+    ]
+  },
+  {
+    "id": "kp-4.4-02",
+    "addQuiz": [
+      {
+        "q": "The volumes of two similar solids are $16\\text{ cm}^3$ and $54\\text{ cm}^3$. What is the ratio of their surface areas?",
+        "q_zh": "两个相似立体的体积分别为 $16\\text{ cm}^3$ 和 $54\\text{ cm}^3$。它们的表面积之比是多少？",
+        "o": [
+          "4 : 9",
+          "8 : 27",
+          "2 : 3",
+          "16 : 81"
+        ],
+        "a": 0,
+        "e": "Volume ratio $= 16:54 = 8:27$. Linear ratio $= \\sqrt[3]{8}:\\sqrt[3]{27} = 2:3$. Area ratio $= 2^2:3^2 = 4:9$.",
+        "e_zh": "体积比 $= 16:54 = 8:27$。长度比 $= \\sqrt[3]{8}:\\sqrt[3]{27} = 2:3$。面积比 $= 2^2:3^2 = 4:9$。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-similar-area-vol",
+        "question": "Two similar water tanks have capacities of $250$ litres and $128$ litres. If the surface area of the larger tank is $1.5\\text{ m}^2$, find the surface area of the smaller tank.",
+        "question_zh": "两个相似水箱的容量分别为 $250$ 升和 $128$ 升。如果较大水箱的表面积是 $1.5\\text{ m}^2$，求较小水箱的表面积。",
+        "solution": "1. Volume ratio $= 250 : 128 = 125 : 64$.\n2. Linear scale factor $k = \\sqrt[3]{125/64} = 5/4 = 1.25$.\n3. Area ratio $= (5/4)^2 = 25/16$.\n4. Area of smaller tank $= 1.5 \\div (25/16) = 1.5 \\times \\frac{16}{25} = 0.96\\text{ m}^2$.",
+        "solution_zh": "1. 体积比 $= 250 : 128 = 125 : 64$。\n2. 长度比例系数 $k = \\sqrt[3]{125/64} = 5/4 = 1.25$。\n3. 面积比 $= (5/4)^2 = 25/16$。\n4. 较小水箱面积 $= 1.5 \\div (25/16) = 1.5 \\times \\frac{16}{25} = 0.96\\text{ m}^2$。",
+        "source": "0580/42/M/J/21"
+      }
+    ]
+  },
+  {
+    "id": "kp-4.5-01",
+    "addQuiz": [
+      {
+        "q": "Which of these shapes has exactly 2 lines of symmetry and rotational symmetry of order 2?",
+        "q_zh": "以下哪种图形恰好有 2 条对称轴且旋转对称阶数为 2？",
+        "o": [
+          "Square",
+          "Equilateral triangle",
+          "Rectangle",
+          "Regular hexagon"
+        ],
+        "a": 2,
+        "e": "A rectangle has 2 lines of symmetry (through midpoints of opposite sides) and rotational symmetry of order 2.",
+        "e_zh": "矩形有 2 条对称轴（通过对边中点）且旋转对称阶数为 2。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-symm-count",
+        "question": "State the order of rotational symmetry and the number of lines of symmetry for a regular octagon.",
+        "question_zh": "写出正八边形的旋转对称阶数和对称轴条数。",
+        "solution": "A regular polygon with $n$ sides has $n$ lines of symmetry and rotational symmetry of order $n$. For a regular octagon ($n=8$), the order is 8 and there are 8 lines of symmetry.",
+        "solution_zh": "一个 $n$ 边的正多边形有 $n$ 条对称轴，旋转对称阶数为 $n$。对于正八边形（$n=8$），阶数为 8，对称轴有 8 条。",
+        "source": "Adapted from 0580/23/O/N/20"
+      }
+    ]
+  },
+  {
+    "id": "kp-4.6-01",
+    "addQuiz": [
+      {
+        "q": "Two parallel lines are intersected by a transversal. If one interior angle is $x$, what is the sum of the two co-interior angles?",
+        "q_zh": "两条平行线被一条截线所截。如果一个同旁内角是 $x$，那么这两个同旁内角的和是多少？",
+        "o": [
+          "90°",
+          "180°",
+          "270°",
+          "360°"
+        ],
+        "a": 1,
+        "e": "Co-interior angles (also called allied angles) are supplementary, meaning they sum to $180^\\circ$.",
+        "e_zh": "同旁内角（也称为 allied angles）是互补的，即它们的和为 $180^\\circ$。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-parallel-angle",
+        "question": "Line $L_1$ is parallel to $L_2$. A transversal intersects them such that an alternate angle is $3a + 20^\\circ$ and its corresponding alternate angle is $2a + 50^\\circ$. Find the value of $a$.",
+        "question_zh": "直线 $L_1$ 平行于 $L_2$。一条截线与之相交，使得一对内错角分别为 $3a + 20^\\circ$ 和 $2a + 50^\\circ$。求 $a$ 的值。",
+        "solution": "1. Alternate angles are equal when lines are parallel.\n2. $3a + 20 = 2a + 50$.\n3. $3a - 2a = 50 - 20 \\implies a = 30$.",
+        "solution_zh": "1. 直线平行时，内错角相等。\n2. $3a + 20 = 2a + 50$。\n3. $3a - 2a = 50 - 20 \\implies a = 30$。",
+        "source": "Adapted from 0580/21/M/J/17"
+      }
+    ]
+  },
+  {
+    "id": "kp-4.6-02",
+    "addQuiz": [
+      {
+        "q": "What is the sum of the interior angles of a hexagon?",
+        "q_zh": "六边形的内角和是多少？",
+        "o": [
+          "360°",
+          "540°",
+          "720°",
+          "900°"
+        ],
+        "a": 2,
+        "e": "Sum of interior angles $= (n-2) \\times 180^\\circ = (6-2) \\times 180^\\circ = 4 \\times 180^\\circ = 720^\\circ$.",
+        "e_zh": "内角和 $= (n-2) \\times 180^\\circ = (6-2) \\times 180^\\circ = 4 \\times 180^\\circ = 720^\\circ$。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-polygon-sides",
+        "question": "The interior angles of a pentagon are $x^\\circ$, $2x^\\circ$, $(x+40)^\\circ$, $110^\\circ$ and $130^\\circ$. Calculate the value of $x$.",
+        "question_zh": "一个五边形的内角分别为 $x^\\circ$，$2x^\\circ$，$(x+40)^\\circ$，$110^\\circ$ 和 $130^\\circ$。计算 $x$ 的值。",
+        "solution": "1. Sum of interior angles of a pentagon $= (5-2) \\times 180 = 540^\\circ$.\n2. $x + 2x + (x+40) + 110 + 130 = 540$.\n3. $4x + 280 = 540 \\implies 4x = 260 \\implies x = 65$.",
+        "solution_zh": "1. 五边形内角和 $= (5-2) \\times 180 = 540^\\circ$。\n2. $x + 2x + (x+40) + 110 + 130 = 540$。\n3. $4x + 280 = 540 \\implies 4x = 260 \\implies x = 65$。",
+        "source": "0580/22/M/J/21"
+      }
+    ]
+  },
+  {
+    "id": "kp-4.7-01",
+    "addQuiz": [
+      {
+        "q": "Points $A, B, C$ lie on a circle. $AC$ is the diameter. What is the size of angle $\\angle ABC$?",
+        "q_zh": "点 $A, B, C$ 在圆上。$AC$ 是直径。角 $\\angle ABC$ 的度数是多少？",
+        "o": [
+          "45°",
+          "60°",
+          "90°",
+          "180°"
+        ],
+        "a": 2,
+        "e": "The angle in a semi-circle is always $90^\\circ$.",
+        "e_zh": "半圆上的圆周角总是 $90^\\circ$。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-circle-angle",
+        "question": "$A, B, C$ and $D$ are points on a circle. $\\angle ADC = 105^\\circ$. Calculate the size of the opposite interior angle $\\angle ABC$.",
+        "question_zh": "$A, B, C$ 和 $D$ 是圆上的点。$\\angle ADC = 105^\\circ$。计算其对角 $\\angle ABC$ 的度数。",
+        "solution": "1. $ABCD$ is a cyclic quadrilateral.\n2. Opposite angles of a cyclic quadrilateral sum to $180^\\circ$.\n3. $\\angle ABC = 180^\\circ - 105^\\circ = 75^\\circ$.",
+        "solution_zh": "1. $ABCD$ 是圆内接四边形。\n2. 圆内接四边形的对角和为 $180^\\circ$。\n3. $\\angle ABC = 180^\\circ - 105^\\circ = 75^\\circ$。",
+        "source": "0580/21/O/N/19"
+      }
+    ]
+  },
+  {
+    "id": "kp-4.7-02",
+    "addQuiz": [
+      {
+        "q": "According to the Alternate Segment Theorem, the angle between a tangent and a chord is equal to:",
+        "q_zh": "根据弦切角定理（Alternate Segment Theorem），切线与弦之间的角等于：",
+        "o": [
+          "The angle at the centre",
+          "The angle in the alternate segment",
+          "90 degrees",
+          "The angle between the radius and the chord"
+        ],
+        "a": 1,
+        "e": "The Alternate Segment Theorem states the angle between a tangent and a chord through the point of contact is equal to the angle subtended by the chord in the alternate segment.",
+        "e_zh": "弦切角定理规定，切线与通过切点的弦之间的夹角等于该弦在交错弓形中所对的圆周角。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-alt-segment",
+        "question": "A tangent $TP$ touches a circle at $P$. $PQ$ is a chord. If the angle between the tangent $TP$ and chord $PQ$ is $62^\\circ$, and $R$ is a point on the major arc $PQ$, find $\\angle PRQ$.",
+        "question_zh": "切线 $TP$ 与圆切于 $P$ 点。$PQ$ 是一条弦。如果切线 $TP$ 与弦 $PQ$ 之间的夹角为 $62^\\circ$，且 $R$ 是优弧 $PQ$ 上的一点，求 $\\angle PRQ$。",
+        "solution": "By the Alternate Segment Theorem, the angle between the tangent and the chord ($\\angle TPQ$) is equal to the angle in the alternate segment ($\\angle PRQ$). Therefore, $\\angle PRQ = 62^\\circ$.",
+        "solution_zh": "根据弦切角定理，切线与弦的夹角（$\\angle TPQ$）等于交错弓形中的圆周角（$\\angle PRQ$）。因此，$\\angle PRQ = 62^\\circ$。",
+        "source": "Adapted from 0580/42/M/J/16"
+      }
+    ]
+  },
+  {
+    "id": "kp-4.8-01",
+    "addQuiz": [
+      {
+        "q": "What is the locus of points that are at a constant distance of $5\\text{ cm}$ from a fixed point $C$?",
+        "q_zh": "与定点 $C$ 保持 $5\\text{ cm}$ 固定距离的点轨迹是什么？",
+        "o": [
+          "A straight line",
+          "A pair of parallel lines",
+          "A circle with radius 5 cm",
+          "A sphere"
+        ],
+        "a": 2,
+        "e": "The set of points at a fixed distance from a point forms a circle in 2D geometry.",
+        "e_zh": "在二维几何中，到某一点距离固定的点集构成一个圆。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-locus-region",
+        "question": "Points $A$ and $B$ are $10\\text{ cm}$ apart. Describe the locus of points that are closer to $A$ than to $B$.",
+        "question_zh": "点 $A$ 和点 $B$ 相距 $10\\text{ cm}$。描述到 $A$ 点距离小于到 $B$ 点距离的点轨迹。",
+        "solution": "1. Construct the perpendicular bisector of the line segment $AB$.\n2. The locus is the region (half-plane) on the side of the perpendicular bisector that contains point $A$.",
+        "solution_zh": "1. 作线段 $AB$ 的垂直平分线。\n2. 该轨迹是垂直平分线靠近 $A$ 点那一侧的区域（半平面）。",
+        "source": "Adapted from 0580/32/O/N/20"
+      }
+    ]
+  }
+]

@@ -1,0 +1,562 @@
+[
+  {
+    "id": "kp-9.1-01",
+    "section": "9.1",
+    "order": 1,
+    "title": "Types of Data",
+    "title_zh": "数据类型",
+    "explanation": {
+      "en": "Data can be classified into different types based on what they represent and how they are measured.\n\n**Qualitative data** (Categorical) describes qualities or characteristics that are not numerical, such as colors, car brands, or names.\n\n**Quantitative data** (Numerical) represents quantities and can be further divided into two types:\n\n**Discrete data** can only take specific, isolated values, often as a result of counting. Examples include the number of children in a family ($0, 1, 2, \\ldots$) or shoe sizes ($6, 6.5, 7, \\ldots$).\n\n**Continuous data** can take any value within a range, often as a result of measuring. Examples include height ($165.4$ cm), weight ($52.18$ kg), or time ($12.5$ seconds).",
+      "zh": "数据可以根据其代表的内容和测量方式进行分类。\n\n**定性数据**（分类数据）描述的是非数值的性质或特征，例如颜色、汽车品牌或姓名。\n\n**定量数据**（数值数据）代表数量，可以进一步分为两种类型：\n\n**离散数据** 只能取特定的、孤立的值，通常是计数的结果。例如家庭中孩子的数量（$0, 1, 2, \\ldots$）或鞋码（$6, 6.5, 7, \\ldots$）。\n\n**连续数据** 可以在某个范围内取任何值，通常是测量的结果。例如身高（$165.4$ cm）、体重（$52.18$ kg）或时间（$12.5$ 秒）。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-classify-data",
+        "label": "Classify data as discrete or continuous",
+        "label_zh": "将数据分类为离散或连续",
+        "description": "Identify whether a given set of data (like time, number of people, or length) is discrete or continuous.",
+        "description_zh": "辨别给定的一组数据（如时间、人数或长度）是离散的还是连续的。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-classify-data",
+        "question": "State whether each of the following is discrete or continuous:\n(a) The number of goals scored in a football match.\n(b) The mass of an apple.\n(c) The temperature in a classroom.",
+        "question_zh": "说明下列各项是离散数据还是连续数据：\n(a) 足球比赛中的进球数。\n(b) 一个苹果的质量。\n(c) 教室里的温度。",
+        "solution": "**Step 1:** Analyze (a). Goals are counted ($0, 1, 2, \\ldots$). You cannot have $1.5$ goals. So, it is **discrete**. ✓\n\n**Step 2:** Analyze (b). Mass is measured and can take any value like $150.2$ g or $150.25$ g. So, it is **continuous**. ✓\n\n**Step 3:** Analyze (c). Temperature is measured on a scale and can take any value. So, it is **continuous**. ✓",
+        "solution_zh": "**步骤1：** 分析 (a)。进球数是通过计数的（$0, 1, 2, \\ldots$），不可能有 $1.5$ 个进球。因此它是**离散的**。✓\n\n**步骤2：** 分析 (b)。质量是通过测量的，可以取任何值，如 $150.2$ 克或 $150.25$ 克。因此它是**连续的**。✓\n\n**步骤3：** 分析 (c)。温度是在刻度上测量的，可以取任何值。因此它是**连续的**。✓",
+        "source": "Adapted from 0580/21/M/J/20"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "Which of the following is an example of discrete data?",
+        "q_zh": "下列哪项是离散数据的例子？",
+        "o": [
+          "The height of a tree",
+          "The time taken to run 100m",
+          "The number of books on a shelf",
+          "The capacity of a water bottle"
+"
+        ],
+        "a": 2,
+        "e": "The number of books must be a whole number (you count them), so it is discrete. Height, time, and capacity are all measured and are continuous.",
+        "e_zh": "书的数量必须是整数（通过计数得到），所以它是离散的。身高、时间和容量都是通过测量得到的，属于连续数据。"
+      }
+    ],
+    "vocabLinks": [
+      "discrete-data",
+      "continuous-data"
+    ],
+    "tier": "both"
+  },
+  {
+    "id": "kp-9.1-02",
+    "section": "9.1",
+    "order": 2,
+    "title": "Frequency Tables",
+    "title_zh": "频数表",
+    "explanation": {
+      "en": "A frequency table is used to organize data by showing how many times each value or range of values occurs.\n\n**Tally marks** are often used to record data as it is collected. Four vertical lines with a diagonal fifth line represent a group of five (e.g., ||||).\n\n**Frequency** ($f$) is the total count of tally marks for a particular category.\n\n**Grouped frequency tables** are used for large sets of data or continuous data. Data is placed into intervals called **classes** (e.g., $0 < x \\leq 10$). Intervals should not overlap.",
+      "zh": "频数表用于组织数据，显示每个值或数值范围出现的次数。\n\n**计数符号**（Tally）通常用于在收集数据时进行记录。四条垂直线加一条对角线代表一组五个（例如 ||||）。\n\n**频数** ($f$) 是特定类别计数符号的总数。\n\n**分组频数表** 用于处理大型数据集或连续数据。数据被放入称为**组别**（Classes）的区间中（例如 $0 < x \\leq 10$）。区间不应重叠。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-complete-table",
+        "label": "Complete a frequency table from raw data",
+        "label_zh": "根据原始数据完成频数表",
+        "description": "Given a list of values, use tally marks to find the frequency of each category and complete the table.",
+        "description_zh": "给定一组数值，使用计数符号找出每个类别的频数并完成表格。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-complete-table",
+        "question": "The ages of 15 children are: $5, 7, 5, 6, 8, 7, 5, 9, 6, 7, 5, 8, 7, 6, 7$.\nComplete the frequency table for the age 7.\n\n| Age | Tally | Frequency |\n|---|---|---|\n| 7 | ? | ? |",
+        "question_zh": "15个孩子的年龄分别是：$5, 7, 5, 6, 8, 7, 5, 9, 6, 7, 5, 8, 7, 6, 7$。\n完成年龄为 7 的频数表。\n\n| 年龄 | 计数 | 频数 |\n|---|---|---|\n| 7 | ? | ? |",
+        "solution": "**Step 1:** Count how many times the number '7' appears in the list.\nThe list contains: $5, \\mathbf{7}, 5, 6, 8, \\mathbf{7}, 5, 9, 6, \\mathbf{7}, 5, 8, \\mathbf{7}, 6, \\mathbf{7}$.\nThere are 5 occurrences.\n\n**Step 2:** Write the tally marks for 5: ||||\n\n**Step 3:** Write the frequency as 5. ✓",
+        "solution_zh": "**步骤1：** 数一下列表中数字 '7' 出现了多少次。\n列表包含：$5, \\mathbf{7}, 5, 6, 8, \\mathbf{7}, 5, 9, 6, \\mathbf{7}, 5, 8, \\mathbf{7}, 6, \\mathbf{7}$。\n共出现了 5 次。\n\n**步骤2：** 写出 5 的计数符号：||||\n\n**步骤3：** 写出频数为 5。✓",
+        "source": "Adapted from 0580/12/O/N/19"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "In a grouped frequency table, what does the class $10 < h \\leq 20$ represent?",
+        "q_zh": "在分组频数表中，组别 $10 < h \\leq 20$ 代表什么？",
+        "o": [
+          "Heights from 10 to 20 including both",
+          "Heights greater than 10 up to and including 20",
+          "Heights from 10 up to but not including 20",
+          "Heights exactly 10 or exactly 20"
+        ],
+        "a": 1,
+        "e": "The symbol '<' means 'greater than' and '$\\leq$' means 'less than or equal to'. So it includes 20 but not 10.",
+        "e_zh": "符号 '<' 表示 '大于'，'$\\leq$' 表示 '小于或等于'。因此它包含 20 但不包含 10。"
+      }
+    ],
+    "vocabLinks": [
+      "frequency",
+      "tally"
+    ],
+    "tier": "both"
+  },
+  {
+    "id": "kp-9.3-01",
+    "section": "9.3",
+    "order": 1,
+    "title": "Mean, Median, Mode and Range",
+    "title_zh": "平均数、中位数、众数和极差",
+    "explanation": {
+      "en": "These measures summarize a data set by describing its center and spread.\n\n**Mean** is the arithmetic average. Calculated by: $\\text{Mean} = \\frac{\\sum x}{n}$ (sum of all values divided by the number of values).\n\n**Median** is the middle value when data is arranged in order. If there are $n$ values, the position is $\\frac{n+1}{2}$. If $n$ is even, it's the mean of the two middle values.\n\n**Mode** is the value that occurs most frequently. A data set can have no mode, one mode, or be bimodal.\n\n**Range** is the difference between the highest and lowest values: $\\text{Range} = \\text{Highest} - \\text{Lowest}$. It measures the spread of the data.",
+      "zh": "这些指标通过描述数据集的中心和离散程度来总结数据集。\n\n**平均数** (Mean) 是算术平均值。计算公式为：$\\text{Mean} = \\frac{\\sum x}{n}$（所有数值之和除以数值个数）。\n\n**中位数** (Median) 是数据按顺序排列时的中间值。如果有 $n$ 个数值，位置在 $\\frac{n+1}{2}$。如果 $n$ 是偶数，则是中间两个数的平均值。\n\n**众数** (Mode) 是出现频率最高的值。一个数据集可以没有众数、一个众数，或者是双峰的（有两个众数）。\n\n**极差** (Range) 是最大值与最小值之差：$\\text{极差} = \\text{最大值} - \\text{最小值}$。它衡量数据的离散程度。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-averages-list",
+        "label": "Calculate averages from a list of numbers",
+        "label_zh": "从数字列表计算统计量",
+        "description": "Find the mean, median, mode, or range for a given small set of raw data.",
+        "description_zh": "针对给出的一组小型原始数据，找出其平均数、中位数、众数或极差。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-averages-list",
+        "question": "For the list of numbers: $2, 8, 5, 2, 3, 10, 4$, find:\n(a) the mode\n(b) the median\n(c) the mean",
+        "question_zh": "对于数字列表：$2, 8, 5, 2, 3, 10, 4$，找出：\n(a) 众数\n(b) 中位数\n(c) 平均数",
+        "solution": "**Step 1: Find the Mode.** The number $2$ appears twice, others appear once. Mode = $2$.\n\n**Step 2: Find the Median.** Arrange in order: $2, 2, 3, 4, 5, 8, 10$. There are 7 numbers. The middle one (4th) is $4$. Median = $4$.\n\n**Step 3: Find the Mean.** Sum = $2+8+5+2+3+10+4 = 34$. Mean = $34 \\div 7 \\approx 4.86$. ✓",
+        "solution_zh": "**步骤1：找众数。** 数字 $2$ 出现了两次，其他数字各出现一次。众数 = $2$。\n\n**步骤2：找中位数。** 按顺序排列：$2, 2, 3, 4, 5, 8, 10$。共有 7 个数字。中间的一个（第4个）是 $4$。中位数 = $4$。\n\n**步骤3：找平均数。** 总和 = $2+8+5+2+3+10+4 = 34$。平均数 = $34 \\div 7 \\approx 4.86$。✓",
+        "source": "0580/22/M/J/18"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "What is the range of these temperatures: $-3^{\\circ}\\text{C}, 5^{\\circ}\\text{C}, 12^{\\circ}\\text{C}, -8^{\\circ}\\text{C}, 0^{\\circ}\\text{C}$?",
+        "q_zh": "这些温度的极差是多少：$-3^{\\circ}\\text{C}, 5^{\\circ}\\text{C}, 12^{\\circ}\\text{C}, -8^{\\circ}\\text{C}, 0^{\\circ}\\text{C}$？",
+        "o": [
+          "$4^{\\circ}\\text{C}$",
+          "$12^{\\circ}\\text{C}$",
+          "$20^{\\circ}\\text{C}$",
+          "$15^{\\circ}\\text{C}$"
+        ],
+        "a": 2,
+        "e": "Range = Highest - Lowest = $12 - (-8) = 12 + 8 = 20$.",
+        "e_zh": "极差 = 最大值 - 最小值 = $12 - (-8) = 12 + 8 = 20$。"
+      }
+    ],
+    "vocabLinks": [
+      "mean",
+      "median",
+      "mode",
+      "range"
+    ],
+    "tier": "both"
+  },
+  {
+    "id": "kp-9.3-02",
+    "section": "9.3",
+    "order": 2,
+    "title": "Averages from Frequency Tables",
+    "title_zh": "频数表的平均数计算",
+    "explanation": {
+      "en": "When data is presented in a table, we use the frequencies to find averages.\n\n**Mean from discrete frequency table**: Sum up the product of each value ($x$) and its frequency ($f$), then divide by the total frequency: $\\text{Mean} = \\frac{\\sum f x}{\\sum f}$.\n\n**Estimated Mean from grouped data**: Since we don't know the exact values in a class, we use the **mid-interval value** ($m$) as an estimate: $\\text{Estimated Mean} = \\frac{\\sum f m}{\\sum f}$.\n\n**Modal Class**: The class interval with the highest frequency.",
+      "zh": "当数据以表格形式呈现时，我们使用频数来计算平均指标。\n\n**离散频数表的平均数**：将每个数值 ($x$) 与其频数 ($f$) 的乘积相加，然后除以总频数：$\\text{Mean} = \\frac{\\sum f x}{\\sum f}$。\n\n**分组数据的估计平均数**：由于我们不知道组内数值的精确大小，我们使用**组中值** ($m$) 作为估计值：$\\text{估计平均数} = \\frac{\\sum f m}{\\sum f}$。\n\n**众数组** (Modal Class)：频数最高的组别区间。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-estimate-mean",
+        "label": "Estimate the mean of grouped data",
+        "label_zh": "估计分组数据的平均数",
+        "description": "Use mid-interval values and frequencies to calculate an estimate for the mean of a continuous data set.",
+        "description_zh": "利用组中值和频数计算连续数据集平均数的估计值。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-estimate-mean",
+        "question": "The table shows the time, $t$ minutes, spent by students on homework.\n\n| Time ($t$) | Frequency ($f$) |\n|---|---|\n| $0 < t \\leq 20$ | 5 |\n| $20 < t \\leq 40$ | 8 |\n| $40 < t \\leq 60$ | 7 |\n\nCalculate an estimate for the mean time.",
+        "question_zh": "下表显示了学生做作业的时间 $t$ 分钟。\n\n| 时间 ($t$) | 频数 ($f$) |\n|---|---|\n| $0 < t \\leq 20$ | 5 |\n| $20 < t \\leq 40$ | 8 |\n| $40 < t \\leq 60$ | 7 |\n\n计算平均时间的估计值。",
+        "solution": "**Step 1: Find mid-values ($m$).** \nClasses: $(0+20)/2 = 10$; $(20+40)/2 = 30$; $(40+60)/2 = 50$.\n\n**Step 2: Calculate $f \\times m$.**\n$5 \\times 10 = 50$\n$8 \\times 30 = 240$\n$7 \\times 50 = 350$\n\n**Step 3: Sum them up.** $\\sum f m = 50 + 240 + 350 = 640$.\n\n**Step 4: Divide by total frequency.** $\\sum f = 5 + 8 + 7 = 20$.\nMean $\\approx 640 \\div 20 = 32$ minutes. ✓",
+        "solution_zh": "**步骤1：找到组中值 ($m$)。** \n各组：$(0+20)/2 = 10$；$(20+40)/2 = 30$；$(40+60)/2 = 50$。\n\n**步骤2：计算 $f \\times m$。**\n$5 \\times 10 = 50$\n$8 \\times 30 = 240$\n$7 \\times 50 = 350$\n\n**步骤3：求和。** $\\sum f m = 50 + 240 + 350 = 640$。\n\n**步骤4：除以总频数。** $\\sum f = 5 + 8 + 7 = 20$。\n平均数 $\\approx 640 \\div 20 = 32$ 分钟。✓",
+        "source": "0580/41/M/J/21"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "Why is the mean from a grouped frequency table called an 'estimate'?",
+        "q_zh": "为什么分组频数表的平均数被称为“估计值”？",
+        "o": [
+          "Because the math is usually wrong",
+          "Because we don't know the exact values within each class interval",
+          "Because the class intervals are too wide",
+          "Because we use a calculator"
+        ],
+        "a": 1,
+        "e": "We use the mid-value of each class because the original individual data points are lost in the grouping process, so we can't find the exact total.",
+        "e_zh": "我们使用每组的组中值，是因为原始的单个数据点在分组过程中丢失了，所以我们无法算出准确的总和。"
+      }
+    ],
+    "vocabLinks": [
+      "modal-class",
+      "mid-interval-value"
+    ],
+    "tier": "both"
+  },
+  {
+    "id": "kp-9.4-01",
+    "section": "9.4",
+    "order": 1,
+    "title": "Pie Charts and Bar Charts",
+    "title_zh": "饼图与条形图",
+    "explanation": {
+      "en": "These diagrams are used to visually represent and compare categorical or discrete data.\n\n**Bar Charts** use the height (or length) of bars to represent frequency. Bars should be of equal width and usually have gaps between them for categorical data.\n\n**Pie Charts** use sectors of a circle to show proportions. The angle of each sector is proportional to the frequency: $\\text{Angle} = \\frac{\\text{Frequency}}{\\text{Total Frequency}} \\times 360^{\\circ}$.",
+      "zh": "这些图表用于直观地表示和比较分类数据或离散数据。\n\n**条形图** 利用条形的高度（或长度）来表示频数。条形应宽度相等，分类数据之间通常留有间隙。\n\n**饼图** 利用圆形的扇区来显示比例。每个扇区的角度与频数成正比：$\\text{角度} = \\frac{\\text{频数}}{\\text{总频数}} \\times 360^{\\circ}$。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-pie-angle",
+        "label": "Calculate angles for a pie chart",
+        "label_zh": "计算饼图的角度",
+        "description": "Convert frequencies into sector angles for drawing or interpreting a pie chart.",
+        "description_zh": "将频数转换为扇区角度，以便绘制或解读饼图。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-pie-angle",
+        "question": "A class of 30 students vote for their favorite color. 12 students chose Blue. Calculate the sector angle for Blue in a pie chart.",
+        "question_zh": "一个有 30 名学生的班级投票选出最喜欢的颜色。12 名学生选择蓝色。计算饼图中蓝色的扇区角度。",
+        "solution": "**Step 1: Identify frequency and total frequency.** Frequency = $12$, Total = $30$.\n\n**Step 2: Use the formula.** $\\text{Angle} = \\frac{12}{30} \\times 360^{\\circ}$.\n\n**Step 3: Calculate.** $\\frac{12}{30} = 0.4$. \n$0.4 \\times 360^{\\circ} = 144^{\\circ}$. ✓",
+        "solution_zh": "**步骤1：确定频数和总频数。** 频数 = $12$，总数 = $30$。\n\n**步骤2：使用公式。** $\\text{角度} = \\frac{12}{30} \\times 360^{\\circ}$。\n\n**步骤3：计算。** $\\frac{12}{30} = 0.4$。\n$0.4 \\times 360^{\\circ} = 144^{\\circ}$。✓",
+        "source": "Adapted from 0580/22/F/M/17"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "If a pie chart sector has an angle of $90^{\\circ}$, what fraction of the total frequency does it represent?",
+        "q_zh": "如果饼图的一个扇区角度为 $90^{\\circ}$，它占总频数的几分之几？",
+        "o": [
+          "$\\frac{1}{2}$",
+          "$\\frac{1}{3}$",
+          "$\\frac{1}{4}$",
+          "$\\frac{1}{10}$"
+        ],
+        "a": 2,
+        "e": "A full circle is $360^{\\circ}$. $\\frac{90}{360} = \\frac{1}{4}$.",
+        "e_zh": "整个圆是 $360^{\\circ}$。$\\frac{90}{360} = \\frac{1}{4}$。"
+      }
+    ],
+    "vocabLinks": [
+      "pie-chart",
+      "bar-chart"
+    ],
+    "tier": "both"
+  },
+  {
+    "id": "kp-9.4-02",
+    "section": "9.4",
+    "order": 2,
+    "title": "Stem-and-Leaf Diagrams",
+    "title_zh": "茎叶图",
+    "explanation": {
+      "en": "A stem-and-leaf diagram organizes data by dividing each number into a 'stem' (the leading digits) and a 'leaf' (the last digit).\n\n**Order**: Leaves must be arranged in ascending order on each row.\n\n**Key**: Every stem-and-leaf diagram MUST have a key to explain the values (e.g., $2 | 3$ means $23$).\n\nIt is useful for seeing the distribution of the data while keeping all original values.",
+      "zh": "茎叶图通过将每个数字分为“茎”（前几位数字）和“叶”（最后一位数字）来组织数据。\n\n**顺序**：每一行中的叶子必须按升序排列。\n\n**图例** (Key)：每个茎叶图必须有一个图例来解释数值（例如，$2 | 3$ 表示 $23$）。\n\n茎叶图在保留所有原始数值的同时，能很好地展示数据的分布。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-read-stem",
+        "label": "Extract information from a stem-and-leaf diagram",
+        "label_zh": "从茎叶图中提取信息",
+        "description": "Find the median, mode, or range from a given stem-and-leaf plot.",
+        "description_zh": "从给定的茎叶图中找出中位数、众数或极差。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-read-stem",
+        "question": "The diagram shows the heights of 10 plants:\n$1 | 2, 5, 8$\n$2 | 0, 3, 3, 7$\n$3 | 1, 4, 6$\nKey: $1 | 2 = 12$ cm\nFind the median height.",
+        "question_zh": "图表显示了 10 株植物的高度：\n$1 | 2, 5, 8$\n$2 | 0, 3, 3, 7$\n$3 | 1, 4, 6$\n图例：$1 | 2 = 12$ 厘米\n找出中位数高度。",
+        "solution": "**Step 1: Count total values.** $n = 10$.\n\n**Step 2: Find the middle positions.** Since 10 is even, we need the average of the 5th and 6th values.\n\n**Step 3: Locate values.** \n1st: 12, 2nd: 15, 3rd: 18, 4th: 20, **5th: 23**, **6th: 23**.\n\n**Step 4: Calculate median.** $(23 + 23) / 2 = 23$ cm. ✓",
+        "solution_zh": "**步骤1：统计总数。** $n = 10$。\n\n**步骤2：找到中间位置。** 因为 10 是偶数，我们需要第 5 个和第 6 个数值的平均数。\n\n**步骤3：确定数值。** \n第1个：12，第2个：15，第3个：18，第4个：20，**第5个：23**，**第6个：23**。\n\n**步骤4：计算中位数。** $(23 + 23) / 2 = 23$ 厘米。✓",
+        "source": "Adapted from 0580/21/O/N/20"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "What is the mode of this data set?\n$0 | 5, 8$\n$1 | 2, 2, 9$\n$2 | 1, 4$\nKey: $1 | 2 = 12$",
+        "q_zh": "这组数据的众数是多少？\n$0 | 5, 8$\n$1 | 2, 2, 9$\n$2 | 1, 4$\n图例：$1 | 2 = 12$",
+        "o": [
+          "2",
+          "12",
+          "22",
+          "No mode"
+        ],
+        "a": 1,
+        "e": "The leaf '2' appears twice in the stem '1' row, representing '12'. No other value repeats.",
+        "e_zh": "叶子 '2' 在茎 '1' 的行中出现了两次，代表 '12'。没有其他重复的值。"
+      }
+    ],
+    "vocabLinks": [
+      "stem-and-leaf"
+    ],
+    "tier": "both"
+  },
+  {
+    "id": "kp-9.5-01",
+    "section": "9.5",
+    "order": 1,
+    "title": "Scatter Diagrams and Correlation",
+    "title_zh": "散点图与相关性",
+    "explanation": {
+      "en": "A scatter diagram plots pairs of data to look for a relationship between two variables.\n\n**Correlation** describes the relationship. \n- **Positive correlation**: As one variable increases, the other also increases (points go 'up').\n- **Negative correlation**: As one variable increases, the other decreases (points go 'down').\n- **No correlation**: No clear pattern exists between the variables.\n\nCorrelation can be strong (points are close to a line) or weak (points are spread out).",
+      "zh": "散点图通过绘制数据对来寻找两个变量之间的关系。\n\n**相关性** 用于描述这种关系：\n- **正相关**：随着一个变量增加，另一个变量也随之增加（点呈上升趋势）。\n- **负相关**：随着一个变量增加，另一个变量随之减少（点呈下降趋势）。\n- **无相关**：变量之间没有明显的规律。\n\n相关性可以是强的（点非常接近一条线）或弱的（点比较分散）。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-type-corr",
+        "label": "Identify type of correlation",
+        "label_zh": "识别相关性类型",
+        "description": "Look at a scatter graph and describe the correlation (positive, negative, or none).",
+        "description_zh": "观察散点图并描述其相关性（正相关、负相关或无相关）。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-type-corr",
+        "question": "A student plots the age of a car against its price. What type of correlation would you expect?",
+        "question_zh": "一名学生绘制了汽车车龄与价格的关系图。你预期会有哪种相关性？",
+        "solution": "**Step 1: Think about the relationship.** Generally, as a car gets older (age increases), its value decreases.\n\n**Step 2: Conclusion.** One variable goes up while the other goes down. This is **negative correlation**. ✓",
+        "solution_zh": "**步骤1：思考两者关系。** 通常情况下，随着车龄增长（车龄增加），其价值会降低。\n\n**步骤2：结论。** 一个变量增加，另一个变量减少。这是**负相关**。✓",
+        "source": "Adapted from 0580/23/M/J/19"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "If the points on a scatter diagram go from bottom-left to top-right, the correlation is:",
+        "q_zh": "如果散点图上的点从左下方向右上方延伸，则该相关性为：",
+        "o": [
+          "Negative",
+          "Zero",
+          "Positive",
+          "Vertical"
+        ],
+        "a": 2,
+        "e": "Bottom-left to top-right means both variables increase together, which is positive correlation.",
+        "e_zh": "从左下到右上意味着两个变量同时增加，即正相关。"
+      }
+    ],
+    "vocabLinks": [
+      "scatter-diagram",
+      "correlation",
+      "positive-correlation",
+      "negative-correlation"
+    ],
+    "tier": "both"
+  },
+  {
+    "id": "kp-9.5-02",
+    "section": "9.5",
+    "order": 2,
+    "title": "Line of Best Fit",
+    "title_zh": "最佳拟合线",
+    "explanation": {
+      "en": "A **Line of Best Fit** is a straight line drawn through the center of the points on a scatter diagram to show the general trend.\n\nIt should have roughly an equal number of points above and below it. It does not need to pass through the origin or every point.\n\nIt is used for **Interpolation** (estimating a value within the data range) and **Extrapolation** (estimating a value outside the data range, which is less reliable).",
+      "zh": "**最佳拟合线** 是在散点图上穿过点群中心的一条直线，用于显示总体趋势。\n\n线上方和下方的点数应大致相等。它不需要经过原点或每一个点。\n\n它用于**内插法**（估计数据范围内的值）和**外推法**（估计数据范围之外的值，后者不太可靠）。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-draw-estimate",
+        "label": "Draw and use a line of best fit",
+        "label_zh": "绘制并利用最佳拟合线",
+        "description": "Draw the line and use it to estimate the value of one variable given the other.",
+        "description_zh": "绘制直线，并在已知一个变量的情况下利用它估计另一个变量的值。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-draw-estimate",
+        "question": "Given a scatter plot of height vs arm span, use your line of best fit to estimate the arm span of a person who is $170$ cm tall.",
+        "question_zh": "已知身高与臂展的散点图，利用你的最佳拟合线估计一名身高 $170$ 厘米的人的臂展。",
+        "solution": "**Step 1: Locate the value on the axis.** Find $170$ on the 'Height' axis.\n\n**Step 2: Go to the line.** Draw a vertical line from $170$ up to your Line of Best Fit.\n\n**Step 3: Read the answer.** Go horizontally from the line to the 'Arm Span' axis and read the value. (e.g., $168$ cm). ✓",
+        "solution_zh": "**步骤1：在轴上定位。** 在“身高”轴上找到 $170$。\n\n**步骤2：对应到直线。** 从 $170$ 向上画一条垂直线直到你的最佳拟合线。\n\n**步骤3：读取答案。** 从该点水平向“臂展”轴画线并读取数值（例如，$168$ 厘米）。✓",
+        "source": "0580/42/M/J/20"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "Which of these is TRUE about a line of best fit?",
+        "q_zh": "关于最佳拟合线，下列哪项是正确的？",
+        "o": [
+          "It must pass through $(0,0)$",
+          "It must pass through every point",
+          "It should follow the trend of the data points",
+          "It can only be used for positive correlation"
+        ],
+        "a": 2,
+        "e": "The line shows the trend. It doesn't have to start at $(0,0)$ and rarely passes through all points. It can be used for both positive and negative correlation.",
+        "e_zh": "这条线反映了趋势。它不必从 $(0,0)$ 开始，也很少经过所有点。正相关和负相关都可以使用最佳拟合线。"
+      }
+    ],
+    "vocabLinks": [
+      "line-of-best-fit"
+    ],
+    "tier": "both"
+  },
+  {
+    "id": "kp-9.6-01",
+    "section": "9.6",
+    "order": 1,
+    "title": "Cumulative Frequency Curves",
+    "title_zh": "累积频率曲线",
+    "explanation": {
+      "en": "Cumulative frequency is the 'running total' of frequencies.\n\nTo draw a **Cumulative Frequency Curve**:\n1. Create a cumulative frequency table by adding up frequencies as you go.\n2. Plot the cumulative frequency against the **upper class boundary** of each interval.\n3. Join the points with a smooth curve.\n\nThe curve always starts at $(L, 0)$, where $L$ is the lower boundary of the first class, and always goes upwards.",
+      "zh": "累积频率是频数的“累计总和”。\n\n绘制**累积频率曲线**的步骤：\n1. 通过不断累加频数来创建累积频率表。\n2. 将累积频率对应每个组别的**上边界**（Upper boundary）进行描点。\n3. 用平滑的曲线连接各点。\n\n曲线总是从 $(L, 0)$ 开始（$L$ 是第一组的下边界），并且总是呈上升趋势。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-plot-cf",
+        "label": "Plot a cumulative frequency curve",
+        "label_zh": "绘制累积频率曲线",
+        "description": "Complete a cumulative frequency table and use the values to plot the curve on a grid.",
+        "description_zh": "完成累积频率表，并利用这些数值在坐标网格上绘制曲线。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-plot-cf",
+        "question": "A table shows frequencies for mass ($m$): $0<m\\leq 10$ ($f=4$), $10<m\\leq 20$ ($f=10$). Write down the coordinates to plot for these two classes.",
+        "question_zh": "表格显示了质量 ($m$) 的频数：$0<m\\leq 10$ ($f=4$)，$10<m\\leq 20$ ($f=10$)。写出这两组对应的描点坐标。",
+        "solution": "**Step 1: Calculate cumulative frequency.** \nFirst point: $4$. \nSecond point: $4 + 10 = 14$.\n\n**Step 2: Use upper boundaries.** \nUpper boundaries are $10$ and $20$.\n\n**Step 3: Write coordinates.** \n$(10, 4)$ and $(20, 14)$. (Also start at $(0, 0)$). ✓",
+        "solution_zh": "**步骤1：计算累积频率。** \n第一个点：$4$。\n第二个点：$4 + 10 = 14$。\n\n**步骤2：使用上边界。** \n上边界分别为 $10$ 和 $20$。\n\n**步骤3：写出坐标。** \n$(10, 4)$ 和 $(20, 14)$。（通常也从 $(0, 0)$ 开始）。✓",
+        "source": "0580/42/M/J/18"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "Cumulative frequency is plotted against which value?",
+        "q_zh": "累积频率是对应哪个数值进行描点的？",
+        "o": [
+          "Lower class boundary",
+          "Mid-interval value",
+          "Upper class boundary",
+          "The frequency"
+        ],
+        "a": 2,
+        "e": "We plot against the upper boundary because the cumulative frequency represents the total number of items 'up to' that value.",
+        "e_zh": "我们对应上边界描点，是因为累积频率代表了“直到”该数值为止的所有项目总数。"
+      }
+    ],
+    "vocabLinks": [
+      "cumulative-frequency"
+    ],
+    "tier": "extended"
+  },
+  {
+    "id": "kp-9.6-02",
+    "section": "9.6",
+    "order": 2,
+    "title": "Quartiles and IQR",
+    "title_zh": "四分位数与四分位距",
+    "explanation": {
+      "en": "From a cumulative frequency curve, we can estimate the median and quartiles.\n\n**Median** ($Q_2$) is the value at $50\\%$ of the total frequency ($n$).\n\n**Lower Quartile** ($Q_1$) is the value at $25\\%$ of the total frequency.\n\n**Upper Quartile** ($Q_3$) is the value at $75\\%$ of the total frequency.\n\n**Interquartile Range** (IQR) = $Q_3 - Q_1$. It measures the spread of the middle $50\\%$ of the data and is less affected by outliers than the range.",
+      "zh": "从累积频率曲线中，我们可以估计中位数和四分位数。\n\n**中位数** ($Q_2$) 是总频数 ($n$) $50\\%$ 处对应的数值。\n\n**下四分位数** ($Q_1$) 是总频数 $25\\%$ 处对应的数值。\n\n**上四分位数** ($Q_3$) 是总频数 $75\\%$ 处对应的数值。\n\n**四分位距** (IQR) = $Q_3 - Q_1$。它衡量中间 $50\\%$ 数据的离散程度，比极差更不容易受异常值（离群点）的影响。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-read-cf-stats",
+        "label": "Find median and IQR from a curve",
+        "label_zh": "从曲线中寻找中位数和四分位距",
+        "description": "Read the values on the x-axis corresponding to $0.25n, 0.5n,$ and $0.75n$ on the y-axis.",
+        "description_zh": "读取 y 轴上 $0.25n, 0.5n$ 和 $0.75n$ 位置在 x 轴上对应的数值。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-read-cf-stats",
+        "question": "For a total frequency of 80, the lower quartile is found at a cumulative frequency of 20, which corresponds to 15 kg on the x-axis. The upper quartile is found at 60, which corresponds to 42 kg. Find the IQR.",
+        "question_zh": "总频数为 80，下四分位数在累积频率 20 处找到，对应 x 轴 15 千克；上四分位数在 60 处找到，对应 42 千克。求四分位距 (IQR)。",
+        "solution": "**Step 1: Identify $Q_1$ and $Q_3$.** $Q_1 = 15$, $Q_3 = 42$.\n\n**Step 2: Use the formula.** $IQR = Q_3 - Q_1 = 42 - 15$.\n\n**Step 3: Calculate.** $IQR = 27$ kg. ✓",
+        "solution_zh": "**步骤1：确定 $Q_1$ 和 $Q_3$。** $Q_1 = 15$，$Q_3 = 42$。\n\n**步骤2：使用公式。** $IQR = Q_3 - Q_1 = 42 - 15$。\n\n**步骤3：计算。** $IQR = 27$ 千克。✓",
+        "source": "0580/41/O/N/17"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "If $n=200$, what cumulative frequency do you use to find the upper quartile?",
+        "q_zh": "如果 $n=200$，你使用哪个累积频率来寻找上四分位数？",
+        "o": [
+          "50",
+          "100",
+          "150",
+          "175"
+        ],
+        "a": 2,
+        "e": "Upper Quartile is at $75\\%$ of total. $0.75 \\times 200 = 150$.",
+        "e_zh": "上四分位数位于总量的 $75\\%$ 处。$0.75 \\times 200 = 150$。"
+      }
+    ],
+    "vocabLinks": [
+      "lower-quartile",
+      "upper-quartile",
+      "interquartile-range"
+    ],
+    "tier": "extended"
+  },
+  {
+    "id": "kp-9.7-01",
+    "section": "9.7",
+    "order": 1,
+    "title": "Histograms",
+    "title_zh": "直方图",
+    "explanation": {
+      "en": "Histograms are used to represent grouped continuous data, especially when class widths are unequal.\n\nIn a histogram, the **area** of the bar represents the frequency. \n\n**Frequency Density** is plotted on the vertical axis: $\\text{Frequency Density} = \\frac{\\text{Frequency}}{\\text{Class Width}}$.\n\nUnlike bar charts, there are no gaps between the bars.",
+      "zh": "直方图用于表示分组连续数据，特别是当组距（组别宽度）不等时。\n\n在直方图中，条形的**面积**代表频数。\n\n**频数密度** (Frequency Density) 绘制在纵轴上：$\\text{频数密度} = \\frac{\\text{频数}}{\\text{组距}}$。\n\n与条形图不同，直方图的条形之间没有间隙。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-calc-fd",
+        "label": "Calculate frequency density",
+        "label_zh": "计算频数密度",
+        "description": "Calculate the height of a bar for a histogram given the frequency and class interval.",
+        "description_zh": "已知频数和组别区间，计算直方图条形的高度。"
+      },
+      {
+        "id": "ep-complete-histogram",
+        "label": "Complete a histogram",
+        "label_zh": "完成直方图",
+        "description": "Draw the bars of a histogram or find missing frequencies using the area of the bars.",
+        "description_zh": "绘制直方图条形，或利用条形面积找出缺失的频数。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-calc-fd",
+        "question": "A class interval is $10 < x \\leq 25$ and its frequency is $30$. Calculate the frequency density.",
+        "question_zh": "组别区间为 $10 < x \\leq 25$，频数为 $30$。计算频数密度。",
+        "solution": "**Step 1: Find the class width.** $25 - 10 = 15$.\n\n**Step 2: Use the formula.** $\\text{FD} = \\frac{\\text{Frequency}}{\\text{Width}} = \\frac{30}{15}$.\n\n**Step 3: Calculate.** $\\text{FD} = 2$. ✓",
+        "solution_zh": "**步骤1：找到组距。** $25 - 10 = 15$。\n\n**步骤2：使用公式。** $\\text{FD} = \\frac{\\text{频数}}{\\text{组距}} = \\frac{30}{15}$。\n\n**步骤3：计算。** $\\text{FD} = 2$。✓",
+        "source": "0580/42/O/N/19"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "What does the area of a bar in a histogram represent?",
+        "q_zh": "直方图中条形的面积代表什么？",
+        "o": [
+          "Class Width",
+          "Frequency Density",
+          "Frequency",
+          "Mean"
+        ],
+        "a": 2,
+        "e": "By definition, $\\text{Area} = \\text{Width} \\times \\text{Height} = \\text{Width} \\times \\text{Frequency Density} = \\text{Frequency}$.",
+        "e_zh": "根据定义，$\\text{面积} = \\text{宽度} \\times \\text{高度} = \\text{组距} \\times \\text{频数密度} = \\text{频数}$。"
+      }
+    ],
+    "vocabLinks": [
+      "histogram",
+      "frequency-density"
+    ],
+    "tier": "extended"
+  }
+]

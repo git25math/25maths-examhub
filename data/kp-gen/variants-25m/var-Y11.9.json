@@ -1,0 +1,206 @@
+[
+  {
+    "id": "hv0540",
+    "cat": "algebra",
+    "topic": "Regions & Inequalities",
+    "q": "Which inequality represents the region above the line $y = 3x - 2$?",
+    "o": [
+      "$y < 3x - 2$",
+      "$y \\leq 3x - 2$",
+      "$y > 3x - 2$",
+      "$y = 3x - 2$"
+    ],
+    "a": 2,
+    "e": "Above the line means $y$ is greater than the expression $3x - 2$, so $y > 3x - 2$.",
+    "d": 1,
+    "s": "Y11.9",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0541",
+    "cat": "algebra",
+    "topic": "Regions & Inequalities",
+    "q": "Which inequality represents the region below the line $y = -2x + 5$?",
+    "o": [
+      "$y > -2x + 5$",
+      "$y < -2x + 5$",
+      "$y \\geq -2x + 5$",
+      "$y = -2x + 5$"
+    ],
+    "a": 1,
+    "e": "Below the line means $y$ is less than the expression $-2x + 5$, so $y < -2x + 5$.",
+    "d": 1,
+    "s": "Y11.9",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0542",
+    "cat": "algebra",
+    "topic": "Regions & Inequalities",
+    "q": "Which inequality represents the region strictly above the line $y = \\frac{1}{2}x + 4$?",
+    "o": [
+      "$y > \\frac{1}{2}x + 4$",
+      "$y < \\frac{1}{2}x + 4$",
+      "$y \\geq \\frac{1}{2}x + 4$",
+      "$y \\leq \\frac{1}{2}x + 4$"
+    ],
+    "a": 0,
+    "e": "Strictly above means $y$ is greater than $\\frac{1}{2}x + 4$, using the $>$ symbol.",
+    "d": 1,
+    "s": "Y11.9",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0543",
+    "cat": "algebra",
+    "topic": "Regions & Inequalities",
+    "q": "A region is defined by $x \\geq 0, y \\geq 0, x \\leq 6$, and $y \\leq 6$. What shape is this region?",
+    "o": [
+      "Triangle",
+      "Rectangle",
+      "Square",
+      "Circle"
+    ],
+    "a": 2,
+    "e": "The region is bounded by the axes and the lines $x=6$ and $y=6$, forming a square with side length 6.",
+    "d": 1,
+    "s": "Y11.9",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0544",
+    "cat": "algebra",
+    "topic": "Regions & Inequalities",
+    "q": "A region is defined by the inequalities $x \\geq 0, y \\geq 0, x \\leq 4$, and $y \\leq 2$. What shape is this region?",
+    "o": [
+      "Triangle",
+      "Square",
+      "Rectangle",
+      "Trapezium"
+    ],
+    "a": 2,
+    "e": "The constraints define a rectangle with vertices $(0,0), (4,0), (4,2)$, and $(0,2)$.",
+    "d": 1,
+    "s": "Y11.9",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0545",
+    "cat": "algebra",
+    "topic": "Regions & Inequalities",
+    "q": "A region is defined by $x \\geq 0, y \\geq 0$, and $x + y \\leq 8$. What shape is this region?",
+    "o": [
+      "Square",
+      "Triangle",
+      "Hexagon",
+      "Circle"
+    ],
+    "a": 1,
+    "e": "The region is a triangle with vertices at $(0,0), (8,0)$, and $(0,8)$.",
+    "d": 1,
+    "s": "Y11.9",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0546",
+    "cat": "algebra",
+    "topic": "Regions & Inequalities",
+    "q": "The point $(1, 4)$ satisfies which set of inequalities?",
+    "o": [
+      "$x > 2,\\; y < 4$",
+      "$x + y > 6,\\; x < 0$",
+      "$x > 0,\\; y > 0,\\; y > 2x,\\; x + y < 7$",
+      "$x > 0,\\; y > 0,\\; y < x$"
+    ],
+    "a": 2,
+    "e": "Check $(1,4)$: $x=1>0$ (yes), $y=4>0$ (yes), $y=4 > 2(1)=2$ (yes), $x+y=1+4=5 < 7$ (yes). Option C holds.",
+    "d": 2,
+    "s": "Y11.9",
+    "diag": "logic"
+  },
+  {
+    "id": "hv0547",
+    "cat": "algebra",
+    "topic": "Regions & Inequalities",
+    "q": "The point $(3, 2)$ satisfies which set of inequalities?",
+    "o": [
+      "$x > 0,\\; y > 0,\\; x + y \\leq 6,\\; x > y$",
+      "$x < 2,\\; y > 3$",
+      "$x + y > 8$",
+      "$x < 0,\\; y < 0$"
+    ],
+    "a": 0,
+    "e": "Check $(3,2)$: $3>0$ (yes), $2>0$ (yes), $3+2=5 \\leq 6$ (yes), $3 > 2$ (yes). Option A holds.",
+    "d": 2,
+    "s": "Y11.9",
+    "diag": "logic"
+  },
+  {
+    "id": "hv0548",
+    "cat": "algebra",
+    "topic": "Regions & Inequalities",
+    "q": "The point $(2, 5)$ satisfies which set of inequalities?",
+    "o": [
+      "$x > 5,\\; y < 2$",
+      "$x + y < 6$",
+      "$x > 0,\\; y > 0,\\; y < 2x$",
+      "$x > 0,\\; y > 0,\\; x + y \\leq 10,\\; y > x$"
+    ],
+    "a": 3,
+    "e": "Check $(2,5)$: $2>0$ (yes), $5>0$ (yes), $2+5=7 \\leq 10$ (yes), $5 > 2$ (yes). Option D holds.",
+    "d": 2,
+    "s": "Y11.9",
+    "diag": "logic"
+  },
+  {
+    "id": "hv0549",
+    "cat": "algebra",
+    "topic": "Regions & Inequalities",
+    "q": "In a linear programming problem, $P = 2x + 5y$. At which vertex is $P$ maximised: $(0,4), (3,2), (5,0), (0,0)$?",
+    "o": [
+      "$(0,4)$",
+      "$(3,2)$",
+      "$(5,0)$",
+      "$(0,0)$"
+    ],
+    "a": 0,
+    "e": "Evaluate $P$ at each vertex: $P(0,4) = 2(0)+5(4)=20$; $P(3,2) = 2(3)+5(2)=16$; $P(5,0) = 2(5)+5(0)=10$; $P(0,0)=0$. Maximum is 20 at $(0,4)$.",
+    "d": 2,
+    "s": "Y11.9",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0550",
+    "cat": "algebra",
+    "topic": "Regions & Inequalities",
+    "q": "In a linear programming problem, $P = 4x + y$. At which vertex is $P$ maximised: $(0,6), (4,3), (8,0), (0,0)$?",
+    "o": [
+      "$(0,6)$",
+      "$(4,3)$",
+      "$(8,0)$",
+      "$(0,0)$"
+    ],
+    "a": 2,
+    "e": "Evaluate $P$ at each vertex: $P(0,6) = 6$; $P(4,3) = 4(4)+3=19$; $P(8,0) = 4(8)+0=32$; $P(0,0)=0$. Maximum is 32 at $(8,0)$.",
+    "d": 2,
+    "s": "Y11.9",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0551",
+    "cat": "algebra",
+    "topic": "Regions & Inequalities",
+    "q": "In a linear programming problem, $P = x + 3y$. At which vertex is $P$ maximised: $(0,10), (6,4), (12,0), (0,0)$?",
+    "o": [
+      "$(0,10)$",
+      "$(6,4)$",
+      "$(12,0)$",
+      "$(0,0)$"
+    ],
+    "a": 0,
+    "e": "Evaluate $P$ at each vertex: $P(0,10) = 10(3)=30$; $P(6,4) = 6+3(4)=18$; $P(12,0) = 12$; $P(0,0)=0$. Maximum is 30 at $(0,10)$.",
+    "d": 2,
+    "s": "Y11.9",
+    "diag": "calc"
+  }
+]

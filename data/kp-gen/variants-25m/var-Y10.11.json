@@ -1,0 +1,206 @@
+[
+  {
+    "id": "hv0300",
+    "cat": "probability",
+    "topic": "Probability",
+    "q": "Events $A$ and $B$ are independent. $P(A)=0.2$ and $P(B)=0.8$. Find $P(A \\text{ and } B)$.",
+    "o": [
+      "$0.16$",
+      "$1.0$",
+      "$0.6$",
+      "$0.25$"
+    ],
+    "a": 0,
+    "e": "For independent events, $P(A \\cap B) = P(A) \\times P(B) = 0.2 \\times 0.8 = 0.16$.",
+    "d": 1,
+    "s": "Y10.11",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0301",
+    "cat": "probability",
+    "topic": "Probability",
+    "q": "Events $C$ and $D$ are independent. $P(C)=0.7$ and $P(D)=0.5$. Find $P(C \\cap D)$.",
+    "o": [
+      "$0.2$",
+      "$0.35$",
+      "$0.5$",
+      "$1.2$"
+    ],
+    "a": 1,
+    "e": "For independent events, $P(C \\cap D) = P(C) \\times P(D) = 0.7 \\times 0.5 = 0.35$.",
+    "d": 1,
+    "s": "Y10.11",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0302",
+    "cat": "probability",
+    "topic": "Probability",
+    "q": "Events $X$ and $Y$ are independent. $P(X)=0.6$ and $P(Y)=0.1$. Find $P(X \\text{ and } Y)$.",
+    "o": [
+      "$0.7$",
+      "$0.5$",
+      "$0.06$",
+      "$0.6$"
+    ],
+    "a": 2,
+    "e": "For independent events, $P(X \\cap Y) = P(X) \\times P(Y) = 0.6 \\times 0.1 = 0.06$.",
+    "d": 1,
+    "s": "Y10.11",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0303",
+    "cat": "probability",
+    "topic": "Probability",
+    "q": "In a Venn diagram, $P(A)=0.6$, $P(B)=0.3$, $P(A \\cap B)=0.1$. Find $P(A \\cup B)$.",
+    "o": [
+      "$0.8$",
+      "$0.9$",
+      "$0.7$",
+      "$0.18$"
+    ],
+    "a": 0,
+    "e": "$P(A \\cup B) = P(A)+P(B)-P(A \\cap B) = 0.6+0.3-0.1 = 0.8$.",
+    "d": 1,
+    "s": "Y10.11",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0304",
+    "cat": "probability",
+    "topic": "Probability",
+    "q": "Given $P(M)=0.45$, $P(N)=0.35$, and $P(M \\cap N)=0.15$. Calculate $P(M \\cup N)$.",
+    "o": [
+      "$0.8$",
+      "$0.95$",
+      "$0.7$",
+      "$0.65$"
+    ],
+    "a": 3,
+    "e": "$P(M \\cup N) = P(M)+P(N)-P(M \\cap N) = 0.45+0.35-0.15 = 0.65$.",
+    "d": 1,
+    "s": "Y10.11",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0305",
+    "cat": "probability",
+    "topic": "Probability",
+    "q": "In a group, the probability of liking tea is $0.7$, liking coffee is $0.5$, and liking both is $0.3$. What is the probability of liking tea or coffee?",
+    "o": [
+      "$1.2$",
+      "$1.0$",
+      "$0.9$",
+      "$0.5$"
+    ],
+    "a": 2,
+    "e": "$P(T \\cup C) = P(T)+P(C)-P(T \\cap C) = 0.7+0.5-0.3 = 0.9$.",
+    "d": 1,
+    "s": "Y10.11",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0306",
+    "cat": "probability",
+    "topic": "Probability",
+    "q": "A bag contains $4$ red and $6$ blue balls. Two balls are drawn at random without replacement. What is the probability that both are red?",
+    "o": [
+      "$\\frac{4}{25}$",
+      "$\\frac{2}{15}$",
+      "$\\frac{2}{5}$",
+      "$\\frac{3}{25}$"
+    ],
+    "a": 1,
+    "e": "$P(\\text{both red}) = \\frac{4}{10} \\times \\frac{3}{9} = \\frac{12}{90} = \\frac{2}{15}$.",
+    "d": 2,
+    "s": "Y10.11",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0307",
+    "cat": "probability",
+    "topic": "Probability",
+    "q": "A box contains $2$ red and $4$ green pens. If two pens are picked without replacement, find $P(\\text{both red})$.",
+    "o": [
+      "$\\frac{1}{9}$",
+      "$\\frac{8}{15}$",
+      "$\\frac{1}{3}$",
+      "$\\frac{1}{15}$"
+    ],
+    "a": 3,
+    "e": "$P(\\text{both red}) = \\frac{2}{6} \\times \\frac{1}{5} = \\frac{2}{30} = \\frac{1}{15}$.",
+    "d": 2,
+    "s": "Y10.11",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0308",
+    "cat": "probability",
+    "topic": "Probability",
+    "q": "There are $5$ red and $3$ blue marbles in a jar. Two marbles are selected without replacement. What is the probability of choosing two red marbles?",
+    "o": [
+      "$\\frac{5}{14}$",
+      "$\\frac{25}{64}$",
+      "$\\frac{5}{8}$",
+      "$\\frac{15}{56}$"
+    ],
+    "a": 0,
+    "e": "$P(\\text{both red}) = \\frac{5}{8} \\times \\frac{4}{7} = \\frac{20}{56} = \\frac{5}{14}$.",
+    "d": 2,
+    "s": "Y10.11",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0309",
+    "cat": "probability",
+    "topic": "Probability",
+    "q": "A biased coin has $P(\\text{Head})=0.7$. If the coin is tossed 3 times, what is the probability of getting exactly 2 Heads?",
+    "o": [
+      "$0.343$",
+      "$0.189$",
+      "$0.441$",
+      "$0.49$"
+    ],
+    "a": 2,
+    "e": "$P(\\text{2H}) = \\binom{3}{2}(0.7)^2(0.3)^1 = 3 \\times 0.49 \\times 0.3 = 0.441$.",
+    "d": 2,
+    "s": "Y10.11",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0310",
+    "cat": "probability",
+    "topic": "Probability",
+    "q": "A fair coin is tossed 3 times. What is the probability of obtaining exactly 2 Heads?",
+    "o": [
+      "$0.5$",
+      "$0.375$",
+      "$0.25$",
+      "$0.125$"
+    ],
+    "a": 1,
+    "e": "$P(\\text{2H}) = \\binom{3}{2}(0.5)^2(0.5)^1 = 3 \\times 0.25 \\times 0.5 = 0.375$.",
+    "d": 2,
+    "s": "Y10.11",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0311",
+    "cat": "probability",
+    "topic": "Probability",
+    "q": "A shooter has a probability of $0.8$ of hitting a target. If they take 3 shots, what is the probability they hit the target exactly twice?",
+    "o": [
+      "$0.512$",
+      "$0.096$",
+      "$0.64$",
+      "$0.384$"
+    ],
+    "a": 3,
+    "e": "$P(\\text{2 hits}) = \\binom{3}{2}(0.8)^2(0.2)^1 = 3 \\times 0.64 \\times 0.2 = 0.384$.",
+    "d": 2,
+    "s": "Y10.11",
+    "diag": "calc"
+  }
+]

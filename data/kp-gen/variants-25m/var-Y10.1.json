@@ -1,0 +1,206 @@
+[
+  {
+    "id": "hv0276",
+    "cat": "number",
+    "topic": "Real Numbers",
+    "q": "Which of the following is an irrational number?",
+    "o": [
+      "$3.14$",
+      "$\\frac{22}{7}$",
+      "$\\sqrt{10}$",
+      "$-0.\\overline{6}$"
+    ],
+    "a": 2,
+    "e": "$\\sqrt{10}$ cannot be written as a simple fraction of two integers, so it is irrational. $3.14$ and $\\frac{22}{7}$ are rational approximations, and $-0.\\overline{6}$ is a recurring decimal which is rational.",
+    "d": 1,
+    "s": "Y10.1",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0277",
+    "cat": "number",
+    "topic": "Real Numbers",
+    "q": "Identify the irrational number from the list below.",
+    "o": [
+      "$\\sqrt{4}$",
+      "$\\pi$",
+      "$\\frac{1}{3}$",
+      "$0.25$"
+    ],
+    "a": 1,
+    "e": "$\\pi$ is a non-repeating, non-terminating decimal, so it is irrational. $\\sqrt{4} = 2$, $\\frac{1}{3} = 0.\\overline{3}$, and $0.25 = \\frac{1}{4}$ are all rational numbers.",
+    "d": 1,
+    "s": "Y10.1",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0278",
+    "cat": "number",
+    "topic": "Real Numbers",
+    "q": "Which of the following numbers is irrational?",
+    "o": [
+      "$\\frac{5}{9}$",
+      "$-2.5$",
+      "$1.\\overline{23}$",
+      "$\\sqrt{3}$"
+    ],
+    "a": 3,
+    "e": "$\\sqrt{3}$ is the square root of a non-perfect square, making it irrational. The other options are either fractions, terminating decimals, or recurring decimals, all of which are rational.",
+    "d": 1,
+    "s": "Y10.1",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0279",
+    "cat": "number",
+    "topic": "Real Numbers",
+    "q": "Simplify $\\sqrt{72}$.",
+    "o": [
+      "$6\\sqrt{2}$",
+      "$2\\sqrt{6}$",
+      "$36\\sqrt{2}$",
+      "$12\\sqrt{6}$"
+    ],
+    "a": 0,
+    "e": "$\\sqrt{72} = \\sqrt{36 \\times 2} = \\sqrt{36} \\times \\sqrt{2} = 6\\sqrt{2}$.",
+    "d": 1,
+    "s": "Y10.1",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0280",
+    "cat": "number",
+    "topic": "Real Numbers",
+    "q": "Simplify $\\sqrt{20}$.",
+    "o": [
+      "$5\\sqrt{2}$",
+      "$2\\sqrt{5}$",
+      "$10\\sqrt{2}$",
+      "$4\\sqrt{5}$"
+    ],
+    "a": 1,
+    "e": "$\\sqrt{20} = \\sqrt{4 \\times 5} = \\sqrt{4} \\times \\sqrt{5} = 2\\sqrt{5}$.",
+    "d": 1,
+    "s": "Y10.1",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0281",
+    "cat": "number",
+    "topic": "Real Numbers",
+    "q": "Simplify $\\sqrt{48}$.",
+    "o": [
+      "$16\\sqrt{3}$",
+      "$3\\sqrt{4}$",
+      "$4\\sqrt{3}$",
+      "$4\\sqrt{6}$"
+    ],
+    "a": 2,
+    "e": "$\\sqrt{48} = \\sqrt{16 \\times 3} = \\sqrt{16} \\times \\sqrt{3} = 4\\sqrt{3}$.",
+    "d": 1,
+    "s": "Y10.1",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0282",
+    "cat": "number",
+    "topic": "Real Numbers",
+    "q": "Simplify $3^2 \\times 3^{-6}$.",
+    "o": [
+      "$3^{-12}$",
+      "$3^8$",
+      "$3^4$",
+      "$3^{-4}$"
+    ],
+    "a": 3,
+    "e": "Using the index law $a^m \\times a^n = a^{m+n}$: $3^2 \\times 3^{-6} = 3^{2+(-6)} = 3^{-4}$.",
+    "d": 2,
+    "s": "Y10.1",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0283",
+    "cat": "number",
+    "topic": "Real Numbers",
+    "q": "Simplify $5^{-3} \\times 5^1$.",
+    "o": [
+      "$5^{-2}$",
+      "$5^{-4}$",
+      "$5^{-3}$",
+      "$25^{-2}$"
+    ],
+    "a": 0,
+    "e": "Using the index law $a^m \\times a^n = a^{m+n}$: $5^{-3} \\times 5^1 = 5^{-3+1} = 5^{-2}$.",
+    "d": 2,
+    "s": "Y10.1",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0284",
+    "cat": "number",
+    "topic": "Real Numbers",
+    "q": "Simplify $10^5 \\times 10^{-2}$.",
+    "o": [
+      "$10^{-10}$",
+      "$10^3$",
+      "$10^7$",
+      "$100^3$"
+    ],
+    "a": 1,
+    "e": "Using the index law $a^m \\times a^n = a^{m+n}$: $10^5 \\times 10^{-2} = 10^{5+(-2)} = 10^3$.",
+    "d": 2,
+    "s": "Y10.1",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0285",
+    "cat": "number",
+    "topic": "Real Numbers",
+    "q": "Which statement is true about $\\sqrt{36} + \\sqrt{64}$?",
+    "o": [
+      "It equals $\\sqrt{100}$",
+      "It equals $10$",
+      "It equals $14$",
+      "It equals $48$"
+    ],
+    "a": 2,
+    "e": "$\\sqrt{36} + \\sqrt{64} = 6 + 8 = 14$. Note that $\\sqrt{100} = 10$ is the result of $\\sqrt{36+64}$, but $\\sqrt{a} + \\sqrt{b} \\neq \\sqrt{a+b}$.",
+    "d": 2,
+    "s": "Y10.1",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0286",
+    "cat": "number",
+    "topic": "Real Numbers",
+    "q": "Which statement is true about $\\sqrt{25} + \\sqrt{144}$?",
+    "o": [
+      "It equals $13$",
+      "It equals $\\sqrt{169}$",
+      "It equals $17$",
+      "It equals $60$"
+    ],
+    "a": 2,
+    "e": "$\\sqrt{25} + \\sqrt{144} = 5 + 12 = 17$. The values $13$ and $\\sqrt{169}$ come from the common misconception that $\\sqrt{25} + \\sqrt{144} = \\sqrt{25+144} = \\sqrt{169} = 13$.",
+    "d": 2,
+    "s": "Y10.1",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0287",
+    "cat": "number",
+    "topic": "Real Numbers",
+    "q": "Which statement is true about $\\sqrt{4} + \\sqrt{9}$?",
+    "o": [
+      "It equals $5$",
+      "It equals $\\sqrt{13}$",
+      "It equals $13$",
+      "It equals $6$"
+    ],
+    "a": 0,
+    "e": "$\\sqrt{4} + \\sqrt{9} = 2 + 3 = 5$. Summing the radicals directly is incorrect, so it does not equal $\\sqrt{4+9} = \\sqrt{13}$.",
+    "d": 2,
+    "s": "Y10.1",
+    "diag": "concept"
+  }
+]

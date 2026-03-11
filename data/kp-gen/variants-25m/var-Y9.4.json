@@ -1,0 +1,206 @@
+[
+  {
+    "id": "hv0843",
+    "cat": "geometry",
+    "topic": "Mastery of Angles",
+    "q": "What is the sum of the interior angles of a pentagon?",
+    "o": [
+      "$360°$",
+      "$540°$",
+      "$720°$",
+      "$1080°$"
+    ],
+    "a": 1,
+    "e": "Sum of interior angles $= (n-2) \\times 180° = (5-2) \\times 180° = 540°$.",
+    "d": 1,
+    "s": "Y9.4",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0844",
+    "cat": "geometry",
+    "topic": "Mastery of Angles",
+    "q": "Find the sum of the interior angles of a heptagon (7-sided polygon).",
+    "o": [
+      "$900°$",
+      "$1080°$",
+      "$720°$",
+      "$1260°$"
+    ],
+    "a": 0,
+    "e": "Sum of interior angles $= (n-2) \\times 180° = (7-2) \\times 180° = 900°$.",
+    "d": 1,
+    "s": "Y9.4",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0845",
+    "cat": "geometry",
+    "topic": "Mastery of Angles",
+    "q": "Calculate the sum of the interior angles of an octagon.",
+    "o": [
+      "$1260°$",
+      "$720°$",
+      "$1080°$",
+      "$900°$"
+    ],
+    "a": 2,
+    "e": "Sum of interior angles $= (n-2) \\times 180° = (8-2) \\times 180° = 1080°$.",
+    "d": 1,
+    "s": "Y9.4",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0846",
+    "cat": "geometry",
+    "topic": "Mastery of Angles",
+    "q": "Each exterior angle of a regular polygon is $45°$. How many sides does it have?",
+    "o": [
+      "$4$",
+      "$6$",
+      "$8$",
+      "$10$"
+    ],
+    "a": 2,
+    "e": "Number of sides $= \\dfrac{360°}{45°} = 8$.",
+    "d": 1,
+    "s": "Y9.4",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0847",
+    "cat": "geometry",
+    "topic": "Mastery of Angles",
+    "q": "A regular polygon has exterior angles of $40°$. How many sides does this polygon have?",
+    "o": [
+      "$9$",
+      "$12$",
+      "$8$",
+      "$10$"
+    ],
+    "a": 0,
+    "e": "Number of sides $= \\dfrac{360°}{40°} = 9$.",
+    "d": 1,
+    "s": "Y9.4",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0848",
+    "cat": "geometry",
+    "topic": "Mastery of Angles",
+    "q": "The exterior angle of a regular polygon is $24°$. Determine the number of sides.",
+    "o": [
+      "$12$",
+      "$15$",
+      "$18$",
+      "$20$"
+    ],
+    "a": 1,
+    "e": "Number of sides $= \\dfrac{360°}{24°} = 15$.",
+    "d": 1,
+    "s": "Y9.4",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0849",
+    "cat": "geometry",
+    "topic": "Mastery of Angles",
+    "q": "What is the size of each interior angle of a regular decagon (10-sided polygon)?",
+    "o": [
+      "$144°$",
+      "$135°$",
+      "$150°$",
+      "$140°$"
+    ],
+    "a": 0,
+    "e": "Interior angle $= \\dfrac{(10-2) \\times 180°}{10} = \\dfrac{1440°}{10} = 144°$.",
+    "d": 2,
+    "s": "Y9.4",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0850",
+    "cat": "geometry",
+    "topic": "Mastery of Angles",
+    "q": "Calculate the size of each interior angle of a regular dodecagon (12-sided polygon).",
+    "o": [
+      "$144°$",
+      "$160°$",
+      "$156°$",
+      "$150°$"
+    ],
+    "a": 3,
+    "e": "Interior angle $= \\dfrac{(12-2) \\times 180°}{12} = \\dfrac{1800°}{12} = 150°$.",
+    "d": 2,
+    "s": "Y9.4",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0851",
+    "cat": "geometry",
+    "topic": "Mastery of Angles",
+    "q": "Find the size of each interior angle of a regular nonagon (9-sided polygon).",
+    "o": [
+      "$135°$",
+      "$140°$",
+      "$120°$",
+      "$144°$"
+    ],
+    "a": 1,
+    "e": "Interior angle $= \\dfrac{(9-2) \\times 180°}{9} = \\dfrac{1260°}{9} = 140°$.",
+    "d": 2,
+    "s": "Y9.4",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0852",
+    "cat": "geometry",
+    "topic": "Mastery of Angles",
+    "q": "Four interior angles of a pentagon are $100°$, $105°$, $115°$ and $125°$. Find the fifth angle, $x$ .",
+    "o": [
+      "$85$",
+      "$95$",
+      "$105$",
+      "$75$"
+    ],
+    "a": 1,
+    "e": "Sum $= (5-2) \\times 180° = 540°$. So $x = 540 - (100 + 105 + 115 + 125) = 540 - 445 = 95$.",
+    "d": 2,
+    "s": "Y9.4",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0853",
+    "cat": "geometry",
+    "topic": "Mastery of Angles",
+    "q": "The interior angles of a pentagon are $120°$, $110°$, $100°$, $90°$ and $x°$. Find the value of $x$.",
+    "o": [
+      "$120$",
+      "$110$",
+      "$130$",
+      "$100$"
+    ],
+    "a": 0,
+    "e": "Sum $= 540°$. So $x = 540 - (120 + 110 + 100 + 90) = 540 - 420 = 120$.",
+    "d": 2,
+    "s": "Y9.4",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0854",
+    "cat": "geometry",
+    "topic": "Mastery of Angles",
+    "q": "A pentagon has interior angles of $125°$, $95°$, $110°$, $100°$ and $x°$. Calculate the value of $x$.",
+    "o": [
+      "$100$",
+      "$120$",
+      "$110$",
+      "$115$"
+    ],
+    "a": 2,
+    "e": "Sum $= 540°$. So $x = 540 - (125 + 95 + 110 + 100) = 540 - 430 = 110$.",
+    "d": 2,
+    "s": "Y9.4",
+    "diag": "calc"
+  }
+]

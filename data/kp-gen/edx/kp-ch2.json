@@ -1,0 +1,674 @@
+[
+  {
+    "id": "kp-2.1-01",
+    "section": "2.1",
+    "order": 1,
+    "title": "Substitution and Algebraic Notation",
+    "title_zh": "代数代入与符号记法",
+    "explanation": {
+      "en": "**Substitution** involves replacing letters (variables) in an algebraic expression with specific numerical values to calculate a result.\n\n**Algebraic notation** follows specific rules: $ab$ means $a \\times b$, $a^2$ means $a \\times a$, and $\\frac{a}{b}$ means $a \\div b$. When substituting negative numbers, always use brackets to avoid sign errors, e.g., $(-3)^2 = 9$.\n\nAn **identity** is an equation that is true for all values of the variables, often denoted by the $\\equiv$ symbol.",
+      "zh": "**代入法**是指将代数式中的字母（变量）替换为具体的数值以计算结果。\n\n**代数记法**遵循特定规则：$ab$ 表示 $a \\times b$，$a^2$ 表示 $a \\times a$，$\\frac{a}{b}$ 表示 $a \\div b$。代入负数时，务必使用括号以避免符号错误，例如 $(-3)^2 = 9$。\n\n**恒等式**是指对变量的所有取值都成立的等式，通常用 $\\equiv$ 符号表示。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-sub-basic",
+        "label": "Basic substitution into expressions",
+        "label_zh": "基础代数式代入",
+        "description": "Calculate the value of an expression given values for all variables.",
+        "description_zh": "给定所有变量的值，计算代数式的值。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-sub-basic",
+        "question": "Given that $p = 5$ and $q = -3$, calculate the value of $p^2 - 2q$.",
+        "question_zh": "已知 $p = 5$ 且 $q = -3$，计算 $p^2 - 2q$ 的值。",
+        "solution": "**Step 1:** Substitute the values into the expression.\n$5^2 - 2(-3)$\n\n**Step 2:** Calculate each part.\n$25 - (-6)$\n\n**Step 3:** Simplify the signs.\n$25 + 6 = 31$\n\n**Answer:** 31",
+        "solution_zh": "**步骤1：** 将数值代入代数式。\n$5^2 - 2(-3)$\n\n**步骤2：** 分别计算各项。\n$25 - (-6)$\n\n**步骤3：** 化简符号。\n$25 + 6 = 31$\n\n**答案：** 31",
+        "source": "Adapted from 4MA1/1F/June/2019"
+      },
+      {
+        "patternId": "ep-sub-basic",
+        "question": "If $x = 4, y = 7$ and $z = -2$, find the value of $\\frac{x(y+z)}{2}$.",
+        "question_zh": "若 $x = 4, y = 7$ 且 $z = -2$，求 $\\frac{x(y+z)}{2}$ 的值。",
+        "solution": "**Step 1:** Substitute the values.\n$\\frac{4(7 + (-2))}{2}$\n\n**Step 2:** Work inside the brackets.\n$\\frac{4(5)}{2}$\n\n**Step 3:** Multiply and divide.\n$\\frac{20}{2} = 10$\n\n**Answer:** 10",
+        "solution_zh": "**步骤1：** 代入数值。\n$\\frac{4(7 + (-2))}{2}$\n\n**步骤2：** 先计算括号内的运算。\n$\\frac{4(5)}{2}$\n\n**步骤3：** 乘法与除法。\n$\\frac{20}{2} = 10$\n\n**答案：** 10",
+        "source": "Adapted from 4MA1/2F/Jan/2021"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "Evaluate $3a - b^2$ when $a = 4$ and $b = -5$.",
+        "q_zh": "当 $a = 4, b = -5$ 时，求 $3a - b^2$ 的值。",
+        "o": [
+          "37",
+          "13",
+          "-13",
+          "2"
+        ],
+        "a": 2,
+        "e": "$3(4) - (-5)^2 = 12 - 25 = -13$. Remember that $(-5)^2 = 25$.",
+        "e_zh": "$3(4) - (-5)^2 = 12 - 25 = -13$。注意 $(-5)^2 = 25$。"
+      },
+      {
+        "q": "Which symbol correctly completes the identity $2(x + 3) \\dots 2x + 6$?",
+        "q_zh": "哪个符号能正确完成恒等式 $2(x + 3) \\dots 2x + 6$？",
+        "o": [
+          "=",
+          "\\approx",
+          "\\equiv",
+          "<"
+        ],
+        "a": 2,
+        "e": "Since $2(x + 3)$ is equal to $2x + 6$ for all values of $x$, it is an identity ($\\equiv$).",
+        "e_zh": "因为 $2(x + 3)$ 对所有的 $x$ 值都等于 $2x + 6$，所以这是一个恒等式 ($\\equiv$)。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-2.2-01",
+    "section": "2.2",
+    "order": 1,
+    "title": "Expanding and Simplifying",
+    "title_zh": "展开与化简",
+    "explanation": {
+      "en": "**Expanding brackets** involves multiplying the term outside the bracket by every term inside it. \n\n**Double brackets** (e.g., $(x+a)(x+b)$) can be expanded using the **FOIL** method (First, Outside, Inside, Last) or a grid method.\n\n**Simplifying** means collecting **like terms** (terms with the same variables and powers). For example, $3x^2$ and $5x^2$ are like terms, but $3x^2$ and $3x$ are not.",
+      "zh": "**展开括号**是指将括号外的项与括号内的每一项相乘。\n\n**双重括号**（如 $(x+a)(x+b)$）可以使用 **FOIL** 法（首项、外项、内项、末项）或表格法展开。\n\n**化简**是指合并**同类项**（变量及其幂次完全相同的项）。例如，$3x^2$ 与 $5x^2$ 是同类项，但 $3x^2$ 与 $3x$ 不是。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-expand-simplify",
+        "label": "Expand and simplify expressions",
+        "label_zh": "展开并化简代数式",
+        "description": "Expand single or double brackets and collect like terms.",
+        "description_zh": "展开单括号或双括号，并合并同类项。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-expand-simplify",
+        "question": "Expand and simplify $3(2x - 5) - 2(x - 4)$.",
+        "question_zh": "展开并化简 $3(2x - 5) - 2(x - 4)$。",
+        "solution": "**Step 1:** Expand the first bracket.\n$6x - 15$\n\n**Step 2:** Expand the second bracket (be careful with the $-2$).\n$-2x + 8$\n\n**Step 3:** Collect like terms.\n$6x - 2x - 15 + 8 = 4x - 7$\n\n**Answer:** $4x - 7$",
+        "solution_zh": "**步骤1：** 展开第一个括号。\n$6x - 15$\n\n**步骤2：** 展开第二个括号（注意 $-2$ 的符号）。\n$-2x + 8$\n\n**步骤3：** 合并同类项。\n$6x - 2x - 15 + 8 = 4x - 7$\n\n**答案：** $4x - 7$",
+        "source": "Adapted from 4MA1/1H/Jan/2020"
+      },
+      {
+        "patternId": "ep-expand-simplify",
+        "question": "Expand and simplify $(x + 5)(x - 3)$.",
+        "question_zh": "展开并化简 $(x + 5)(x - 3)$。",
+        "solution": "**Step 1:** Use FOIL to multiply the terms.\nFirst: $x \\times x = x^2$\nOutside: $x \\times (-3) = -3x$\nInside: $5 \\times x = 5x$\nLast: $5 \\times (-3) = -15$\n\n**Step 2:** Combine the terms.\n$x^2 - 3x + 5x - 15$\n\n**Step 3:** Simplify like terms.\n$x^2 + 2x - 15$\n\n**Answer:** $x^2 + 2x - 15$",
+        "solution_zh": "**步骤1：** 使用 FOIL 法相乘。\n首项：$x \\times x = x^2$\n外项：$x \\times (-3) = -3x$\n内项：$5 \\times x = 5x$\n末项：$5 \\times (-3) = -15$\n\n**步骤2：** 组合各项。\n$x^2 - 3x + 5x - 15$\n\n**步骤3：** 合并同类项。\n$x^2 + 2x - 15$\n\n**答案：** $x^2 + 2x - 15$",
+        "source": "Adapted from 4MA1/2H/June/2018"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "Simplify $5x^2 + 3x - 2x^2 + x$.",
+        "q_zh": "化简 $5x^2 + 3x - 2x^2 + x$。",
+        "o": [
+          "7x^2 + 4x",
+          "3x^2 + 4x",
+          "3x^2 + 3x",
+          "7x^4"
+        ],
+        "a": 1,
+        "e": "Collect like terms: $(5x^2 - 2x^2) + (3x + x) = 3x^2 + 4x$.",
+        "e_zh": "合并同类项：$(5x^2 - 2x^2) + (3x + x) = 3x^2 + 4x$。"
+      },
+      {
+        "q": "Expand and simplify $(2x + 1)(x - 4)$.",
+        "q_zh": "展开并化简 $(2x + 1)(x - 4)$。",
+        "o": [
+          "2x^2 - 7x - 4",
+          "2x^2 - 8x - 4",
+          "2x^2 + 7x - 4",
+          "2x^2 - 4"
+        ],
+        "a": 0,
+        "e": "FOIL: $2x^2 - 8x + x - 4 = 2x^2 - 7x - 4$.",
+        "e_zh": "使用 FOIL 法：$2x^2 - 8x + x - 4 = 2x^2 - 7x - 4$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-2.2-02",
+    "section": "2.2",
+    "order": 2,
+    "title": "Factorising Expressions",
+    "title_zh": "代数式因式分解",
+    "explanation": {
+      "en": "**Factorising** is the reverse of expanding. It involves putting brackets back into an expression.\n\n**Common factors:** Identify the largest number and the variables that divide into all terms. Example: $6x^2 + 9x = 3x(2x + 3)$.\n\n**Quadratic factorisation:** Expressions in the form $x^2 + bx + c$ are factorised into $(x + p)(x + q)$ where $p+q=b$ and $p \\times q = c$.\n\n**Difference of two squares:** $a^2 - b^2 = (a - b)(a + b)$. This is a very common pattern in exams.",
+      "zh": "**因式分解**是展开的逆过程，即将代数式重新放入括号内。\n\n**公因式分解：** 找出能整除所有项的最大常数和变量。例如：$6x^2 + 9x = 3x(2x + 3)$。\n\n**二次项分解：** 形式为 $x^2 + bx + c$ 的代数式可以分解为 $(x + p)(x + q)$，其中 $p+q=b$ 且 $p \\times q = c$。\n\n**平方差公式：** $a^2 - b^2 = (a - b)(a + b)$。这是考试中非常常见的模式。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-factorise-fully",
+        "label": "Factorise completely",
+        "label_zh": "完全因式分解",
+        "description": "Extract all common factors or factorise a quadratic expression.",
+        "description_zh": "提取所有公因式或分解二次三项式。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-factorise-fully",
+        "question": "Factorise completely $12x^3y - 18x^2y^2$.",
+        "question_zh": "对 $12x^3y - 18x^2y^2$ 进行完全因式分解。",
+        "solution": "**Step 1:** Find the HCF of the coefficients (12 and 18). It is 6.\n\n**Step 2:** Find common variables with lowest powers ($x^2$ and $y$).\n\n**Step 3:** Divide each term by $6x^2y$.\n$12x^3y \\div 6x^2y = 2x$\n$18x^2y^2 \\div 6x^2y = 3y$\n\n**Answer:** $6x^2y(2x - 3y)$",
+        "solution_zh": "**步骤1：** 找出系数（12 和 18）的最大公约数，是 6。\n\n**步骤2：** 找出共有变量的最低幂次（$x^2$ 和 $y$）。\n\n**步骤3：** 将每一项除以 $6x^2y$。\n$12x^3y \\div 6x^2y = 2x$\n$18x^2y^2 \\div 6x^2y = 3y$\n\n**答案：** $6x^2y(2x - 3y)$",
+        "source": "Adapted from 4MA1/2H/Jan/2020"
+      },
+      {
+        "patternId": "ep-factorise-fully",
+        "question": "Factorise $x^2 - 9$.",
+        "question_zh": "因式分解 $x^2 - 9$。",
+        "solution": "**Step 1:** Recognize this as the Difference of Two Squares.\n$x^2$ is $(x)^2$ and $9$ is $(3)^2$.\n\n**Step 2:** Apply the rule $a^2 - b^2 = (a - b)(a + b)$.\n\n**Answer:** $(x - 3)(x + 3)$",
+        "solution_zh": "**步骤1：** 识别出这是一个平方差形式。\n$x^2$ 是 $(x)^2$，$9$ 是 $(3)^2$。\n\n**步骤2：** 应用公式 $a^2 - b^2 = (a - b)(a + b)$。\n\n**答案：** $(x - 3)(x + 3)$",
+        "source": "Adapted from 4MA1/1F/June/2017"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "Factorise $x^2 + 5x + 6$.",
+        "q_zh": "因式分解 $x^2 + 5x + 6$。",
+        "o": [
+          "(x + 1)(x + 6)",
+          "(x + 2)(x + 3)",
+          "(x - 2)(x - 3)",
+          "(x + 5)(x + 1)"
+        ],
+        "a": 1,
+        "e": "We need two numbers that add to 5 and multiply to 6. These are 2 and 3.",
+        "e_zh": "我们需要寻找两个数，其和为 5，积为 6。这两个数是 2 和 3。"
+      },
+      {
+        "q": "Factorise fully $4p^2 - 10p$.",
+        "q_zh": "完全因式分解 $4p^2 - 10p$。",
+        "o": [
+          "p(4p - 10)",
+          "2(2p^2 - 5p)",
+          "2p(2p - 5)",
+          "4p(p - 2.5)"
+        ],
+        "a": 2,
+        "e": "The highest common factor is $2p$. $4p^2 \\div 2p = 2p$ and $10p \\div 2p = 5$.",
+        "e_zh": "最大公因式是 $2p$。$4p^2 \\div 2p = 2p$，$10p \\div 2p = 5$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-2.3-01",
+    "section": "2.3",
+    "order": 1,
+    "title": "Changing the Subject of a Formula",
+    "title_zh": "公式变形（主元变换）",
+    "explanation": {
+      "en": "**Changing the subject** means rearranging a formula so that a different variable is on its own (usually on the left side).\n\nUse **inverse operations** to isolate the target variable. The order is generally the reverse of BIDMAS. If the target variable appears twice, you must **factorise** to isolate it. If it is inside a square root, you must square both sides.",
+      "zh": "**公式变形**是指重新排列公式，使另一个变量单独位于等号一侧（通常在左侧）。\n\n使用**逆运算**来隔离目标变量。运算顺序通常与 BIDMAS 相反。如果目标变量出现两次，必须通过**因式分解**将其隔离。如果它在根号内，则必须对等式两边进行平方。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-change-subject",
+        "label": "Make a variable the subject",
+        "label_zh": "将某个变量设为主元",
+        "description": "Rearrange a formula to solve for a specific letter.",
+        "description_zh": "重排公式以解出特定的字母。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-change-subject",
+        "question": "Make $t$ the subject of the formula $v = u + at$.",
+        "question_zh": "将公式 $v = u + at$ 中的 $t$ 设为主元。",
+        "solution": "**Step 1:** Subtract $u$ from both sides.\n$v - u = at$\n\n**Step 2:** Divide both sides by $a$.\n$\\frac{v - u}{a} = t$\n\n**Answer:** $t = \\frac{v - u}{a}$",
+        "solution_zh": "**步骤1：** 等号两边同时减去 $u$。\n$v - u = at$\n\n**步骤2：** 等号两边同时除以 $a$。\n$\\frac{v - u}{a} = t$\n\n**答案：** $t = \\frac{v - u}{a}$",
+        "source": "Adapted from 4MA1/1H/Jan/2021"
+      },
+      {
+        "patternId": "ep-change-subject",
+        "question": "Make $x$ the subject of $y = \\frac{2x + 1}{x - 3}$.",
+        "question_zh": "将 $y = \\frac{2x + 1}{x - 3}$ 中的 $x$ 设为主元。",
+        "solution": "**Step 1:** Multiply by the denominator.\n$y(x - 3) = 2x + 1$\n\n**Step 2:** Expand the bracket.\n$xy - 3y = 2x + 1$\n\n**Step 3:** Collect all $x$ terms on one side and others on the other.\n$xy - 2x = 3y + 1$\n\n**Step 4:** Factorise $x$.\n$x(y - 2) = 3y + 1$\n\n**Step 5:** Divide by $(y - 2)$.\n$x = \\frac{3y + 1}{y - 2}$\n\n**Answer:** $x = \\frac{3y + 1}{y - 2}$",
+        "solution_zh": "**步骤1：** 两边同乘分母。\n$y(x - 3) = 2x + 1$\n\n**步骤2：** 展开括号。\n$xy - 3y = 2x + 1$\n\n**步骤3：** 将所有含 $x$ 的项移到一侧，其余项移到另一侧。\n$xy - 2x = 3y + 1$\n\n**步骤4：** 提取公因式 $x$。\n$x(y - 2) = 3y + 1$\n\n**步骤5：** 除以 $(y - 2)$。\n$x = \\frac{3y + 1}{y - 2}$\n\n**答案：** $x = \\frac{3y + 1}{y - 2}$",
+        "source": "Adapted from 4MA1/2H/June/2019"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "Make $r$ the subject of $A = \\pi r^2$ (where $r > 0$).",
+        "q_zh": "将 $A = \\pi r^2$ 中的 $r$ 设为主元（假设 $r > 0$）。",
+        "o": [
+          "r = \\frac{A}{\\pi}",
+          "r = \\sqrt{\\frac{A}{\\pi}}",
+          "r = (\\frac{A}{\\pi})^2",
+          "r = \\sqrt{A \\pi}"
+        ],
+        "a": 1,
+        "e": "Divide by $\\pi$ to get $r^2 = A/\\pi$, then take the square root.",
+        "e_zh": "两边同除以 $\\pi$ 得到 $r^2 = A/\\pi$，然后开平方根。"
+      },
+      {
+        "q": "Rearrange $P = 2l + 2w$ for $w$.",
+        "q_zh": "将 $P = 2l + 2w$ 改写为以 $w$ 为主元的形式。",
+        "o": [
+          "w = P - 2l / 2",
+          "w = \\frac{P - 2l}{2}",
+          "w = \\frac{P}{2} + l",
+          "w = 2P - l"
+        ],
+        "a": 1,
+        "e": "$P - 2l = 2w$, then divide by 2: $w = (P - 2l)/2$.",
+        "e_zh": "$P - 2l = 2w$，然后除以 2：$w = (P - 2l)/2$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-2.4-01",
+    "section": "2.4",
+    "order": 1,
+    "title": "Solving Linear Equations",
+    "title_zh": "解一次方程",
+    "explanation": {
+      "en": "To **solve a linear equation**, the goal is to find the value of the unknown variable that makes the equation true.\n\n**Balance Method:** Perform the same operation on both sides of the equals sign to keep it balanced. \n\nIf the unknown appears on **both sides**, move all variable terms to one side (usually the side with more of the variable) and all constant terms to the other side. If the equation contains **fractions**, multiply every term by the common denominator to eliminate them.",
+      "zh": "**解一次方程**的目标是找到使等式成立的未知数的值。\n\n**平衡法：** 对等号两边执行相同的操作以保持平衡。\n\n如果未知数出现在**两边**，将所有含变量的项移到一侧（通常是变量系数较大的一侧），将所有常数项移到另一侧。如果方程包含**分数**，则将每一项乘以公分母以消去分母。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-solve-linear",
+        "label": "Solve linear equations",
+        "label_zh": "解一次方程",
+        "description": "Solve equations with brackets, unknowns on both sides, or fractions.",
+        "description_zh": "求解包含括号、两边都有未知数或包含分数的方程。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-solve-linear",
+        "question": "Solve $4(x - 3) = 2x + 8$.",
+        "question_zh": "解方程 $4(x - 3) = 2x + 8$。",
+        "solution": "**Step 1:** Expand the bracket.\n$4x - 12 = 2x + 8$\n\n**Step 2:** Subtract $2x$ from both sides.\n$2x - 12 = 8$\n\n**Step 3:** Add 12 to both sides.\n$2x = 20$\n\n**Step 4:** Divide by 2.\n$x = 10$\n\n**Answer:** $x = 10$",
+        "solution_zh": "**步骤1：** 展开括号。\n$4x - 12 = 2x + 8$\n\n**步骤2：** 两边同时减去 $2x$。\n$2x - 12 = 8$\n\n**步骤3：** 两边同时加上 12。\n$2x = 20$\n\n**步骤4：** 两边同时除以 2。\n$x = 10$\n\n**答案：** $x = 10$",
+        "source": "Adapted from 4MA1/2F/Jan/2020"
+      },
+      {
+        "patternId": "ep-solve-linear",
+        "question": "Solve $\\frac{2x + 1}{3} = \\frac{x - 2}{2}$.",
+        "question_zh": "解方程 $\\frac{2x + 1}{3} = \\frac{x - 2}{2}$。",
+        "solution": "**Step 1:** Cross-multiply (or multiply by the LCD, 6).\n$2(2x + 1) = 3(x - 2)$\n\n**Step 2:** Expand the brackets.\n$4x + 2 = 3x - 6$\n\n**Step 3:** Subtract $3x$ from both sides.\n$x + 2 = -6$\n\n**Step 4:** Subtract 2 from both sides.\n$x = -8$\n\n**Answer:** $x = -8$",
+        "solution_zh": "**步骤1：** 交叉相乘（或同乘公分母 6）。\n$2(2x + 1) = 3(x - 2)$\n\n**步骤2：** 展开括号。\n$4x + 2 = 3x - 6$\n\n**步骤3：** 两边同时减去 $3x$。\n$x + 2 = -6$\n\n**步骤4：** 两边同时减去 2。\n$x = -8$\n\n**答案：** $x = -8$",
+        "source": "Adapted from 4MA1/1H/June/2018"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "Solve $7x - 3 = 3x + 13$.",
+        "q_zh": "解方程 $7x - 3 = 3x + 13$。",
+        "o": [
+          "x = 2.5",
+          "x = 4",
+          "x = 10",
+          "x = 1.6"
+        ],
+        "a": 1,
+        "e": "$4x - 3 = 13 \\Rightarrow 4x = 16 \\Rightarrow x = 4$.",
+        "e_zh": "$4x - 3 = 13 \\Rightarrow 4x = 16 \\Rightarrow x = 4$。"
+      },
+      {
+        "q": "Solve $\\frac{x}{4} + 5 = 2$.",
+        "q_zh": "解方程 $\\frac{x}{4} + 5 = 2$。",
+        "o": [
+          "x = 12",
+          "x = -12",
+          "x = -28",
+          "x = -0.75"
+        ],
+        "a": 1,
+        "e": "$\\frac{x}{4} = 2 - 5 \\Rightarrow \\frac{x}{4} = -3 \\Rightarrow x = -12$.",
+        "e_zh": "$\\frac{x}{4} = 2 - 5 \\Rightarrow \\frac{x}{4} = -3 \\Rightarrow x = -12$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-2.5-01",
+    "section": "2.5",
+    "order": 1,
+    "title": "Algebraic Proportion",
+    "title_zh": "代数比例",
+    "explanation": {
+      "en": "**Direct proportion** ($y \\propto x$) means as $x$ increases, $y$ increases at a constant rate: $y = kx$. If $y$ is proportional to $x^2$, then $y = kx^2$.\n\n**Inverse proportion** ($y \\propto \\frac{1}{x}$) means as $x$ increases, $y$ decreases: $y = \\frac{k}{x}$. If $y$ is inversely proportional to $x^2$, then $y = \\frac{k}{x^2}$.\n\nThe constant $k$ is called the **constant of proportionality**. You must find $k$ first using given values of $x$ and $y$.",
+      "zh": "**正比例** ($y \\propto x$) 意味着随着 $x$ 增加，$y$ 以恒定速率增加：$y = kx$。如果 $y$ 与 $x^2$ 成正比，则 $y = kx^2$。\n\n**反比例** ($y \\propto \\frac{1}{x}$) 意味着随着 $x$ 增加，$y$ 减小：$y = \\frac{k}{x}$。如果 $y$ 与 $x^2$ 成反比，则 $y = \\frac{k}{x^2}$。\n\n常数 $k$ 称为**比例系数**。你必须首先利用给定的 $x$ 和 $y$ 值求出 $k$。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-proportion-calc",
+        "label": "Solve proportion problems",
+        "label_zh": "解决比例问题",
+        "description": "Find the equation connecting two variables and use it to find missing values.",
+        "description_zh": "找出连接两个变量的方程，并用它计算未知值。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-proportion-calc",
+        "question": "$y$ is directly proportional to $x^2$. When $x = 3$, $y = 36$. Find the value of $y$ when $x = 5$.",
+        "question_zh": "$y$ 与 $x^2$ 成正比。当 $x = 3$ 时，$y = 36$。求当 $x = 5$ 时 $y$ 的值。",
+        "solution": "**Step 1:** Write the general equation.\n$y = kx^2$\n\n**Step 2:** Substitute known values to find $k$.\n$36 = k(3^2) \\Rightarrow 36 = 9k \\Rightarrow k = 4$\n\n**Step 3:** Write the full formula.\n$y = 4x^2$\n\n**Step 4:** Substitute $x = 5$ to find $y$.\n$y = 4(5^2) = 4 \\times 25 = 100$\n\n**Answer:** 100",
+        "solution_zh": "**步骤1：** 写出一般方程。\n$y = kx^2$\n\n**步骤2：** 代入已知值求 $k$。\n$36 = k(3^2) \\Rightarrow 36 = 9k \\Rightarrow k = 4$\n\n**步骤3：** 写出完整公式。\n$y = 4x^2$\n\n**步骤4：** 代入 $x = 5$ 求 $y$。\n$y = 4(5^2) = 4 \\times 25 = 100$\n\n**答案：** 100",
+        "source": "Adapted from 4MA1/1H/Jan/2020"
+      },
+      {
+        "patternId": "ep-proportion-calc",
+        "question": "$P$ is inversely proportional to $V$. When $V = 8, P = 5$. Find $V$ when $P = 20$.",
+        "question_zh": "$P$ 与 $V$ 成反比。当 $V = 8$ 时，$P = 5$。求当 $P = 20$ 时 $V$ 的值。",
+        "solution": "**Step 1:** Write the general equation.\n$P = \\frac{k}{V}$\n\n**Step 2:** Find $k$.\n$5 = \\frac{k}{8} \\Rightarrow k = 40$\n\n**Step 3:** Write the formula.\n$P = \\frac{40}{V}$\n\n**Step 4:** Substitute $P = 20$ and solve for $V$.\n$20 = \\frac{40}{V} \\Rightarrow 20V = 40 \\Rightarrow V = 2$\n\n**Answer:** 2",
+        "solution_zh": "**步骤1：** 写出一般方程。\n$P = \\frac{k}{V}$\n\n**步骤2：** 求 $k$。\n$5 = \\frac{k}{8} \\Rightarrow k = 40$\n\n**步骤3：** 写出公式。\n$P = \\frac{40}{V}$\n\n**步骤4：** 代入 $P = 20$ 并解出 $V$。\n$20 = \\frac{40}{V} \\Rightarrow 20V = 40 \\Rightarrow V = 2$\n\n**答案：** 2",
+        "source": "Adapted from 4MA1/2H/June/2019"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "If $y \\propto x$, and $y=10$ when $x=2$, what is $y$ when $x=7$?",
+        "q_zh": "如果 $y \\propto x$，且当 $x=2$ 时 $y=10$，那么当 $x=7$ 时 $y$ 是多少？",
+        "o": [
+          "14",
+          "35",
+          "5",
+          "70"
+        ],
+        "a": 1,
+        "e": "$k = 10/2 = 5$. So $y = 5x$. When $x=7, y = 5 \\times 7 = 35$.",
+        "e_zh": "$k = 10/2 = 5$。所以 $y = 5x$。当 $x=7$ 时，$y = 5 \\times 7 = 35$。"
+      },
+      {
+        "q": "Which equation represents $y$ is inversely proportional to the square of $x$?",
+        "q_zh": "下列哪个方程表示 $y$ 与 $x$ 的平方成反比？",
+        "o": [
+          "y = kx^2",
+          "y = k / x",
+          "y = k / x^2",
+          "y = k \\sqrt{x}"
+        ],
+        "a": 2,
+        "e": "Inverse proportion means $y = k/(\\text{something})$, and the square of $x$ is $x^2$.",
+        "e_zh": "反比例表示 $y = k/(\\text{某项})$，而 $x$ 的平方是 $x^2$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-2.6-01",
+    "section": "2.6",
+    "order": 1,
+    "title": "Simultaneous Linear Equations",
+    "title_zh": "联立一次方程组",
+    "explanation": {
+      "en": "**Simultaneous equations** are a set of equations with multiple variables that are all true at the same time.\n\n**Elimination Method:** Multiply one or both equations by numbers so that the coefficients of one variable are the same (or opposite). Then add or subtract the equations to eliminate that variable.\n\n**Substitution Method:** Rearrange one equation to express one variable in terms of the other, then substitute this into the second equation.",
+      "zh": "**联立方程组**是指一组包含多个变量且同时成立的方程。\n\n**消元法：** 将其中一个或两个方程乘以某个数，使其中一个变量的系数相同（或互为相反数）。然后通过加减方程来消去该变量。\n\n**代入法：** 改写其中一个方程，用一个变量表示另一个变量，然后将其代入第二个方程中。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-solve-simultaneous",
+        "label": "Solve simultaneous equations",
+        "label_zh": "解联立方程组",
+        "description": "Find the values of $x$ and $y$ that satisfy both linear equations.",
+        "description_zh": "找出同时满足两个一次方程的 $x$ 和 $y$ 的值。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-solve-simultaneous",
+        "question": "Solve the simultaneous equations:\n$3x + 2y = 12$\n$x + y = 5$",
+        "question_zh": "解联立方程组：\n$3x + 2y = 12$\n$x + y = 5$",
+        "solution": "**Step 1:** Multiply the second equation by 2 to match the $y$ coefficients.\n$2x + 2y = 10$\n\n**Step 2:** Subtract this from the first equation.\n$(3x + 2y) - (2x + 2y) = 12 - 10$\n$x = 2$\n\n**Step 3:** Substitute $x = 2$ back into the simplest equation ($x + y = 5$).\n$2 + y = 5 \\Rightarrow y = 3$\n\n**Answer:** $x = 2, y = 3$",
+        "solution_zh": "**步骤1：** 将第二个方程乘以 2，使 $y$ 的系数匹配。\n$2x + 2y = 10$\n\n**步骤2：** 用第一个方程减去这个新方程。\n$(3x + 2y) - (2x + 2y) = 12 - 10$\n$x = 2$\n\n**步骤3：** 将 $x = 2$ 代回最简单的方程（$x + y = 5$）。\n$2 + y = 5 \\Rightarrow y = 3$\n\n**答案：** $x = 2, y = 3$",
+        "source": "Adapted from 4MA1/2F/June/2018"
+      },
+      {
+        "patternId": "ep-solve-simultaneous",
+        "question": "Solve:\n$5x - 2y = 19$\n$3x + 4y = 1$",
+        "question_zh": "解方程组：\n$5x - 2y = 19$\n$3x + 4y = 1$",
+        "solution": "**Step 1:** Multiply the first equation by 2.\n$10x - 4y = 38$\n\n**Step 2:** Add the equations to eliminate $y$ (since signs are different).\n$(10x - 4y) + (3x + 4y) = 38 + 1$\n$13x = 39 \\Rightarrow x = 3$\n\n**Step 3:** Substitute $x = 3$ into $3x + 4y = 1$.\n$3(3) + 4y = 1 \\Rightarrow 9 + 4y = 1$\n$4y = -8 \\Rightarrow y = -2$\n\n**Answer:** $x = 3, y = -2$",
+        "solution_zh": "**步骤1：** 将第一个方程乘以 2。\n$10x - 4y = 38$\n\n**步骤2：** 将两个方程相加消去 $y$（因为符号相反）。\n$(10x - 4y) + (3x + 4y) = 38 + 1$\n$13x = 39 \\Rightarrow x = 3$\n\n**步骤3：** 将 $x = 3$ 代入 $3x + 4y = 1$。\n$3(3) + 4y = 1 \\Rightarrow 9 + 4y = 1$\n$4y = -8 \\Rightarrow y = -2$\n\n**答案：** $x = 3, y = -2$",
+        "source": "Adapted from 4MA1/1H/Jan/2020"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "Solve $x + y = 10$ and $x - y = 4$.",
+        "q_zh": "解 $x + y = 10$ 和 $x - y = 4$。",
+        "o": [
+          "x=6, y=4",
+          "x=7, y=3",
+          "x=5, y=5",
+          "x=8, y=2"
+        ],
+        "a": 1,
+        "e": "Adding: $2x = 14 \\Rightarrow x=7$. Substituting: $7+y=10 \\Rightarrow y=3$.",
+        "e_zh": "相加得：$2x = 14 \\Rightarrow x=7$。代入得：$7+y=10 \\Rightarrow y=3$。"
+      },
+      {
+        "q": "In the equations $2x + 3y = 8$ and $3x - y = 1$, what is the best first step to eliminate $y$?",
+        "q_zh": "在方程 $2x + 3y = 8$ 和 $3x - y = 1$ 中，消去 $y$ 的最佳第一步是什么？",
+        "o": [
+          "Multiply the first equation by 3",
+          "Multiply the second equation by 3",
+          "Subtract the equations",
+          "Multiply the first equation by 2"
+        ],
+        "a": 1,
+        "e": "Multiplying the second equation by 3 gives $-3y$, which can then be added to $+3y$ to eliminate $y$.",
+        "e_zh": "将第二个方程乘以 3 得到 $-3y$，然后可以与 $+3y$ 相加消去 $y$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-2.7-01",
+    "section": "2.7",
+    "order": 1,
+    "title": "Solving Quadratic Equations by Factorising",
+    "title_zh": "用因式分解法解二次方程",
+    "explanation": {
+      "en": "A **quadratic equation** is an equation of the form $ax^2 + bx + c = 0$. \n\nTo solve by factorising:\n1. Ensure the equation equals **zero**.\n2. Factorise the quadratic expression into two brackets.\n3. Set each bracket to zero (Null Factor Law) and solve for $x$.\n\nA quadratic equation usually has **two solutions**.",
+      "zh": "**二次方程**是形式为 $ax^2 + bx + c = 0$ 的方程。\n\n用因式分解法求解：\n1. 确保方程等号一侧为**零**。\n2. 将二次代数式分解为两个括号相乘。\n3. 令每个括号分别为零（零乘积性质）并解出 $x$。\n\n二次方程通常有**两个解**。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-solve-quad-fact",
+        "label": "Solve quadratic by factorising",
+        "label_zh": "用因式分解法解二次方程",
+        "description": "Factorise and solve equations of the form $x^2 + bx + c = 0$.",
+        "description_zh": "分解并求解 $x^2 + bx + c = 0$ 形式的方程。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-solve-quad-fact",
+        "question": "Solve $x^2 - 5x + 6 = 0$.",
+        "question_zh": "解方程 $x^2 - 5x + 6 = 0$。",
+        "solution": "**Step 1:** Factorise the expression. We need numbers that multiply to $+6$ and add to $-5$. These are $-2$ and $-3$.\n$(x - 2)(x - 3) = 0$\n\n**Step 2:** Set each factor to zero.\n$x - 2 = 0 \\Rightarrow x = 2$\n$x - 3 = 0 \\Rightarrow x = 3$\n\n**Answer:** $x = 2, x = 3$",
+        "solution_zh": "**步骤1：** 因式分解。我们需要积为 $+6$ 且和为 $-5$ 的两个数。这两个数是 $-2$ 和 $-3$。\n$(x - 2)(x - 3) = 0$\n\n**步骤2：** 令每个因式为零。\n$x - 2 = 0 \\Rightarrow x = 2$\n$x - 3 = 0 \\Rightarrow x = 3$\n\n**答案：** $x = 2, x = 3$",
+        "source": "Adapted from 4MA1/1F/Jan/2021"
+      },
+      {
+        "patternId": "ep-solve-quad-fact",
+        "question": "Solve $x^2 + 4x = 21$.",
+        "question_zh": "解方程 $x^2 + 4x = 21$。",
+        "solution": "**Step 1:** Rearrange to equal zero.\n$x^2 + 4x - 21 = 0$\n\n**Step 2:** Factorise. Multipliers of $-21$ that add to $+4$ are $+7$ and $-3$.\n$(x + 7)(x - 3) = 0$\n\n**Step 3:** Solve.\n$x = -7$ or $x = 3$\n\n**Answer:** $x = -7, x = 3$",
+        "solution_zh": "**步骤1：** 移项使等式右侧为零。\n$x^2 + 4x - 21 = 0$\n\n**步骤2：** 因式分解。$-21$ 的因数中和为 $+4$ 的是 $+7$ 和 $-3$。\n$(x + 7)(x - 3) = 0$\n\n**步骤3：** 求解。\n$x = -7$ 或 $x = 3$\n\n**答案：** $x = -7, x = 3$",
+        "source": "Adapted from 4MA1/2H/June/2017"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "Solve $x^2 - 9 = 0$.",
+        "q_zh": "解方程 $x^2 - 9 = 0$。",
+        "o": [
+          "x = 3",
+          "x = -3",
+          "x = 3, x = -3",
+          "x = 9, x = -9"
+        ],
+        "a": 2,
+        "e": "This is $(x-3)(x+3)=0$, so $x=3$ or $x=-3$.",
+        "e_zh": "这是 $(x-3)(x+3)=0$，所以 $x=3$ 或 $x=-3$。"
+      },
+      {
+        "q": "Solve $x^2 + 7x = 0$.",
+        "q_zh": "解方程 $x^2 + 7x = 0$。",
+        "o": [
+          "x = 7",
+          "x = 0, x = 7",
+          "x = 0, x = -7",
+          "x = -7"
+        ],
+        "a": 2,
+        "e": "Factorise out $x$: $x(x + 7) = 0$. So $x = 0$ or $x = -7$.",
+        "e_zh": "提取公因式 $x$：$x(x + 7) = 0$。所以 $x = 0$ 或 $x = -7$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  },
+  {
+    "id": "kp-2.7-02",
+    "section": "2.7",
+    "order": 2,
+    "title": "The Quadratic Formula",
+    "title_zh": "二次方程求根公式",
+    "explanation": {
+      "en": "When a quadratic equation $ax^2 + bx + c = 0$ cannot be easily factorised, we use the **Quadratic Formula**:\n\n$$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$$\n\nIdentify the coefficients $a, b,$ and $c$ (including their signs) and substitute them carefully. The term $b^2 - 4ac$ is called the **discriminant**. If it is negative, there are no real solutions.",
+      "zh": "当二次方程 $ax^2 + bx + c = 0$ 不易因式分解时，我们使用**求根公式**：\n\n$$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$$\n\n确定系数 $a, b$ 和 $c$（包括其符号）并小心代入。$b^2 - 4ac$ 被称为**判别式**。如果判别式为负，则方程没有实数解。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-quad-formula",
+        "label": "Solve using the quadratic formula",
+        "label_zh": "利用求根公式求解",
+        "description": "Calculate roots to a given degree of accuracy (e.g., 3 significant figures).",
+        "description_zh": "计算根并保留指定的精度（如 3 位有效数字）。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-quad-formula",
+        "question": "Solve $3x^2 - 5x - 4 = 0$. Give your answers to 3 significant figures.",
+        "question_zh": "解方程 $3x^2 - 5x - 4 = 0$。结果保留 3 位有效数字。",
+        "solution": "**Step 1:** Identify $a, b, c$.\n$a = 3, b = -5, c = -4$\n\n**Step 2:** Substitute into the formula.\n$x = \\frac{-(-5) \\pm \\sqrt{(-5)^2 - 4(3)(-4)}}{2(3)}$\n$x = \\frac{5 \\pm \\sqrt{25 + 48}}{6} = \\frac{5 \\pm \\sqrt{73}}{6}$\n\n**Step 3:** Calculate two values.\n$x = \\frac{5 + 8.544...}{6} = 2.257...$\n$x = \\frac{5 - 8.544...}{6} = -0.5906...$\n\n**Answer:** $x = 2.26, x = -0.591$ (to 3 s.f.)",
+        "solution_zh": "**步骤1：** 确定 $a, b, c$。\n$a = 3, b = -5, c = -4$\n\n**步骤2：** 代入公式。\n$x = \\frac{-(-5) \\pm \\sqrt{(-5)^2 - 4(3)(-4)}}{2(3)}$\n$x = \\frac{5 \\pm \\sqrt{25 + 48}}{6} = \\frac{5 \\pm \\sqrt{73}}{6}$\n\n**步骤3：** 计算两个数值。\n$x = \\frac{5 + 8.544...}{6} = 2.257...$\n$x = \\frac{5 - 8.544...}{6} = -0.5906...$\n\n**答案：** $x = 2.26, x = -0.591$（保留 3 位有效数字）",
+        "source": "Adapted from 4MA1/1H/June/2019"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "What is the value of the discriminant for $x^2 + 4x + 4 = 0$?",
+        "q_zh": "方程 $x^2 + 4x + 4 = 0$ 的判别式是多少？",
+        "o": [
+          "16",
+          "0",
+          "32",
+          "8"
+        ],
+        "a": 1,
+        "e": "$b^2 - 4ac = 4^2 - 4(1)(4) = 16 - 16 = 0$.",
+        "e_zh": "$b^2 - 4ac = 4^2 - 4(1)(4) = 16 - 16 = 0$。"
+      },
+      {
+        "q": "Which values of $a, b, c$ are correct for $2x^2 - x = 5$?",
+        "q_zh": "对于方程 $2x^2 - x = 5$，下列哪组 $a, b, c$ 是正确的？",
+        "o": [
+          "a=2, b=-1, c=5",
+          "a=2, b=0, c=-5",
+          "a=2, b=-1, c=-5",
+          "a=2, b=1, c=-5"
+        ],
+        "a": 2,
+        "e": "Rearrange to $2x^2 - x - 5 = 0$. Thus $a=2, b=-1, c=-5$.",
+        "e_zh": "移项得 $2x^2 - x - 5 = 0$。因此 $a=2, b=-1, c=-5$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "higher"
+  },
+  {
+    "id": "kp-2.8-01",
+    "section": "2.8",
+    "order": 1,
+    "title": "Linear Inequalities",
+    "title_zh": "一次不等式",
+    "explanation": {
+      "en": "An **inequality** shows that one expression is greater than or less than another using symbols: $>$ (greater than), $<$ (less than), $\\ge$ (greater than or equal to), and $\\le$ (less than or equal to).\n\nSolve them just like equations, but **IMPORTANT**: If you multiply or divide both sides by a **negative number**, you must **flip the inequality sign**.\n\nSolutions can be represented on a **number line**: an open circle $\\circ$ for $>$ or $<$, and a solid circle $\\bullet$ for $\\ge$ or $\\le$.",
+      "zh": "**不等式**使用符号表示一个表达式大于或小于另一个表达式：$>$（大于）、$<$（小于）、$\\ge$（大于或等于）和 $\\le$（小于或等于）。\n\n求解方法与方程类似，但**重要提示**：如果两边同时乘以或除以一个**负数**，必须**反转不等号的方向**。\n\n解集可以用**数轴**表示：空心圆圈 $\\circ$ 表示 $>$ 或 $<$，实心圆点 $\\bullet$ 表示 $\\ge$ 或 $\\le$。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-solve-inequality",
+        "label": "Solve and represent inequalities",
+        "label_zh": "求解并表示不等式",
+        "description": "Solve linear inequalities and list integer solutions or show on a number line.",
+        "description_zh": "解一次不等式，列出整数解或在数轴上表示。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-solve-inequality",
+        "question": "Solve $5x - 7 < 3x + 9$.",
+        "question_zh": "解不等式 $5x - 7 < 3x + 9$。",
+        "solution": "**Step 1:** Subtract $3x$ from both sides.\n$2x - 7 < 9$\n\n**Step 2:** Add 7 to both sides.\n$2x < 16$\n\n**Step 3:** Divide by 2.\n$x < 8$\n\n**Answer:** $x < 8$",
+        "solution_zh": "**步骤1：** 两边同时减去 $3x$。\n$2x - 7 < 9$\n\n**步骤2：** 两边同时加上 7。\n$2x < 16$\n\n**步骤3：** 两边同时除以 2。\n$x < 8$\n\n**答案：** $x < 8$",
+        "source": "Adapted from 4MA1/2F/Jan/2021"
+      },
+      {
+        "patternId": "ep-solve-inequality",
+        "question": "Solve the inequality $10 - 2x \\le 4$.",
+        "question_zh": "解不等式 $10 - 2x \\le 4$。",
+        "solution": "**Step 1:** Subtract 10 from both sides.\n$-2x \\le -6$\n\n**Step 2:** Divide by $-2$ and **flip the sign**.\n$x \\ge \\frac{-6}{-2}$\n$x \\ge 3$\n\n**Answer:** $x \\ge 3$",
+        "solution_zh": "**步骤1：** 两边同时减去 10。\n$-2x \\le -6$\n\n**步骤2：** 除以 $-2$ 并**反转不等号**。\n$x \\ge \\frac{-6}{-2}$\n$x \\ge 3$\n\n**答案：** $x \\ge 3$",
+        "source": "Adapted from 4MA1/1H/June/2018"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "List the integer values of $n$ such that $-2 < n \\le 1$.",
+        "q_zh": "列出满足 $-2 < n \\le 1$ 的整数 $n$ 的值。",
+        "o": [
+          "-2, -1, 0, 1",
+          "-1, 0, 1",
+          "-1, 0",
+          "0, 1"
+        ],
+        "a": 1,
+        "e": "$n$ is greater than $-2$ (so $-1, 0, \\ldots$) and less than or equal to $1$ (so includes $1$).",
+        "e_zh": "$n$ 大于 $-2$（即 $-1, 0, \\ldots$）且小于或等于 $1$（包含 $1$）。"
+      },
+      {
+        "q": "Solve $3(x + 2) > 15$.",
+        "q_zh": "解不等式 $3(x + 2) > 15$。",
+        "o": [
+          "x > 5",
+          "x > 3",
+          "x < 3",
+          "x > 7"
+        ],
+        "a": 1,
+        "e": "$x + 2 > 5 \\Rightarrow x > 3$.",
+        "e_zh": "$x + 2 > 5 \\Rightarrow x > 3$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "both"
+  }
+]

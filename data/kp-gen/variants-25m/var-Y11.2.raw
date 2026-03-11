@@ -1,0 +1,206 @@
+[
+  {
+    "id": "hv0456",
+    "cat": "number",
+    "topic": "Set Notation & Venn Diagrams",
+    "q": "If $\\mathcal{U} = \\{1,2,3,4,5,6,7,8,9,10\\}$ and $A = \\{1,3,5,7,9\\}$, what is $A'$?",
+    "o": [
+      "$\\{2,4,6,8,10\\}$",
+      "$\\{1,3,5,7,9\\}$",
+      "$\\{1,2,3,4,5\\}$",
+      "$\\emptyset$"
+    ],
+    "a": 0,
+    "e": "$A'$ is the complement of $A$: all elements in $\\mathcal{U}$ not in $A$, which is $\\{2,4,6,8,10\\}$.",
+    "d": 1,
+    "s": "Y11.2",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0457",
+    "cat": "number",
+    "topic": "Set Notation & Venn Diagrams",
+    "q": "If $\\mathcal{U} = \\{a,b,c,d,e,f\\}$ and $B = \\{a,e\\}$, what is $B'$?",
+    "o": [
+      "$\\{a,e\\}$",
+      "$\\{b,c,d,f\\}$",
+      "$\\{a,b,c\\}$",
+      "$\\mathcal{U}$"
+    ],
+    "a": 1,
+    "e": "$B'$ is the complement of $B$: all elements in $\\mathcal{U}$ not in $B$, which is $\\{b,c,d,f\\}$.",
+    "d": 1,
+    "s": "Y11.2",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0458",
+    "cat": "number",
+    "topic": "Set Notation & Venn Diagrams",
+    "q": "If $\\mathcal{U} = \\{10,20,30,40,50\\}$ and $C = \\{20,40\\}$, what is $C'$?",
+    "o": [
+      "$\\{20,40\\}$",
+      "$\\{10,20,30\\}$",
+      "$\\{10,30,50\\}$",
+      "$\\emptyset$"
+    ],
+    "a": 2,
+    "e": "$C'$ is the complement of $C$: all elements in $\\mathcal{U}$ not in $C$, which is $\\{10,30,50\\}$.",
+    "d": 1,
+    "s": "Y11.2",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0459",
+    "cat": "number",
+    "topic": "Set Notation & Venn Diagrams",
+    "q": "Which symbol means 'set $A$ is a subset of set $B$'?",
+    "o": [
+      "$A \\subset B$",
+      "$A \\cup B$",
+      "$A \\cap B$",
+      "$A \\in B$"
+    ],
+    "a": 0,
+    "e": "The symbol $\\subset$ means 'is a subset of'.",
+    "d": 1,
+    "s": "Y11.2",
+    "diag": "vocab"
+  },
+  {
+    "id": "hv0460",
+    "cat": "number",
+    "topic": "Set Notation & Venn Diagrams",
+    "q": "Which symbol means 'the intersection of set $A$ and set $B$'?",
+    "o": [
+      "$A \\in B$",
+      "$A \\cap B$",
+      "$A \\cup B$",
+      "$A \\subset B$"
+    ],
+    "a": 1,
+    "e": "The symbol $\\cap$ means 'intersection'.",
+    "d": 1,
+    "s": "Y11.2",
+    "diag": "vocab"
+  },
+  {
+    "id": "hv0461",
+    "cat": "number",
+    "topic": "Set Notation & Venn Diagrams",
+    "q": "Which symbol means 'the union of set $A$ and set $B$'?",
+    "o": [
+      "$A \\in B$",
+      "$A \\subset B$",
+      "$A \\cap B$",
+      "$A \\cup B$"
+    ],
+    "a": 3,
+    "e": "The symbol $\\cup$ means 'union'.",
+    "d": 1,
+    "s": "Y11.2",
+    "diag": "vocab"
+  },
+  {
+    "id": "hv0462",
+    "cat": "number",
+    "topic": "Set Notation & Venn Diagrams",
+    "q": "In a Venn diagram, $n(A) = 20$, $n(B) = 15$, $n(A \\cap B) = 8$. What is $n(A \\cup B)$?",
+    "o": [
+      "$35$",
+      "$27$",
+      "$43$",
+      "$12$"
+    ],
+    "a": 1,
+    "e": "$n(A \\cup B) = n(A) + n(B) - n(A \\cap B) = 20 + 15 - 8 = 27$.",
+    "d": 2,
+    "s": "Y11.2",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0463",
+    "cat": "number",
+    "topic": "Set Notation & Venn Diagrams",
+    "q": "In a Venn diagram, $n(X) = 10$, $n(Y) = 25$, $n(X \\cap Y) = 4$. What is $n(X \\cup Y)$?",
+    "o": [
+      "$35$",
+      "$19$",
+      "$31$",
+      "$21$"
+    ],
+    "a": 2,
+    "e": "$n(X \\cup Y) = n(X) + n(Y) - n(X \\cap Y) = 10 + 25 - 4 = 31$.",
+    "d": 2,
+    "s": "Y11.2",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0464",
+    "cat": "number",
+    "topic": "Set Notation & Venn Diagrams",
+    "q": "In a Venn diagram, $n(P) = 30$, $n(Q) = 22$, $n(P \\cap Q) = 12$. What is $n(P \\cup Q)$?",
+    "o": [
+      "$40$",
+      "$52$",
+      "$64$",
+      "$38$"
+    ],
+    "a": 0,
+    "e": "$n(P \\cup Q) = n(P) + n(Q) - n(P \\cap Q) = 30 + 22 - 12 = 40$.",
+    "d": 2,
+    "s": "Y11.2",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0465",
+    "cat": "number",
+    "topic": "Set Notation & Venn Diagrams",
+    "q": "If $X \\subset Y$, which statement is always true?",
+    "o": [
+      "$X \\cup Y = X$",
+      "$X \\cup Y = Y$",
+      "$X \\cap Y = Y$",
+      "$X = Y$"
+    ],
+    "a": 1,
+    "e": "If $X \\subset Y$, then every element of $X$ is already in $Y$, so their union $X \\cup Y$ is just $Y$.",
+    "d": 2,
+    "s": "Y11.2",
+    "diag": "logic"
+  },
+  {
+    "id": "hv0466",
+    "cat": "number",
+    "topic": "Set Notation & Venn Diagrams",
+    "q": "If $P \\subset Q$, which statement is always true?",
+    "o": [
+      "$P \\cap Q = Q$",
+      "$P \\cup Q = P$",
+      "$P \\cap Q = P$",
+      "$P' = Q$"
+    ],
+    "a": 2,
+    "e": "If $P \\subset Q$, then every element of $P$ is in $Q$, so the intersection $P \\cap Q$ is $P$.",
+    "d": 2,
+    "s": "Y11.2",
+    "diag": "logic"
+  },
+  {
+    "id": "hv0467",
+    "cat": "number",
+    "topic": "Set Notation & Venn Diagrams",
+    "q": "If $B \\subset A$, which statement is always true?",
+    "o": [
+      "$A \\cap B = A$",
+      "$A \\cup B = B$",
+      "$A \\cap B = \\emptyset$",
+      "$A \\cup B = A$"
+    ],
+    "a": 3,
+    "e": "If $B \\subset A$, then every element of $B$ is in $A$, so their union $A \\cup B$ is $A$.",
+    "d": 2,
+    "s": "Y11.2",
+    "diag": "logic"
+  }
+]

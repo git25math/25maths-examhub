@@ -1,0 +1,98 @@
+[
+  {
+    "id": "cv1666",
+    "cat": "vectors",
+    "topic": "Vector Geometry",
+    "q": "Given the position vectors $O\\vec{P} = p$ and $O\\vec{Q} = q$, what is the vector $\\vec{PQ}$?",
+    "o": [
+      "$p + q$",
+      "$p - q$",
+      "$q - p$",
+      "$\\frac{1}{2}(p + q)$"
+    ],
+    "a": 2,
+    "e": "To find the vector $\\vec{PQ}$, we use the triangle law: $\\vec{PQ} = \\vec{PO} + O\\vec{Q}$. Since $O\\vec{P} = p$, $\\vec{PO} = -p$. Therefore, $\\vec{PQ} = -p + q = q - p$.",
+    "d": 2,
+    "s": "7.4"
+  },
+  {
+    "id": "cv1667",
+    "cat": "vectors",
+    "topic": "Vector Geometry",
+    "q": "Given the position vectors $O\\vec{X} = x$ and $O\\vec{Y} = y$, what is the vector $\\vec{YX}$?",
+    "o": [
+      "$x - y$",
+      "$y - x$",
+      "$x + y$",
+      "$-(x + y)$"
+    ],
+    "a": 0,
+    "e": "To find the vector $\\vec{YX}$, we navigate from Y to X via the origin O: $\\vec{YX} = \\vec{YO} + O\\vec{X}$. Given $O\\vec{Y} = y$, $\\vec{YO} = -y$. Thus, $\\vec{YX} = -y + x = x - y$.",
+    "d": 2,
+    "s": "7.4"
+  },
+  {
+    "id": "cv1668",
+    "cat": "vectors",
+    "topic": "Vector Geometry",
+    "q": "If the position vector of point $M$ is $m$ and the position vector of point $N$ is $n$, what is the vector $\\vec{MN}$?",
+    "o": [
+      "$n + m$",
+      "$m - n$",
+      "$n - m$",
+      "$\\frac{1}{2}(n - m)$"
+    ],
+    "a": 2,
+    "e": "The vector $\\vec{MN}$ is the difference between the position vector of the end point and the starting point: $\\vec{MN} = \\vec{ON} - \\vec{OM} = n - m$.",
+    "d": 2,
+    "s": "7.4"
+  },
+  {
+    "id": "cv1669",
+    "cat": "vectors",
+    "topic": "Vector Geometry",
+    "q": "In parallelogram $OXYZ$, $O\\vec{X} = x$ and $O\\vec{Z} = z$. $M$ is the midpoint of $OZ$. Find the vector $\\vec{XM}$ in terms of $x$ and $z$.",
+    "o": [
+      "$\\frac{1}{2}z - x$",
+      "$x - \\frac{1}{2}z$",
+      "$z - \\frac{1}{2}x$",
+      "$\\frac{1}{2}x - z$"
+    ],
+    "a": 0,
+    "e": "$\\vec{XM} = \\vec{XO} + O\\vec{M}$. We know $\\vec{XO} = -O\\vec{X} = -x$. Since $M$ is the midpoint of $OZ$, $O\\vec{M} = \\frac{1}{2}O\\vec{Z} = \\frac{1}{2}z$. Therefore, $\\vec{XM} = -x + \\frac{1}{2}z = \\frac{1}{2}z - x$.",
+    "d": 2,
+    "s": "7.4"
+  },
+  {
+    "id": "cv1670",
+    "cat": "vectors",
+    "topic": "Vector Geometry",
+    "q": "In parallelogram $OABC$, $O\\vec{A} = a$ and $O\\vec{C} = c$. $E$ is the midpoint of $OA$. Find the vector $\\vec{CE}$ in terms of $a$ and $c$.",
+    "o": [
+      "$\\frac{1}{2}a - c$",
+      "$c - \\frac{1}{2}a$",
+      "$\\frac{1}{2}c - a$",
+      "$a - \\frac{1}{2}c$"
+    ],
+    "a": 0,
+    "e": "$\\vec{CE} = \\vec{CO} + O\\vec{E}$. We have $\\vec{CO} = -O\\vec{C} = -c$. Since $E$ is the midpoint of $OA$, $O\\vec{E} = \\frac{1}{2}O\\vec{A} = \\frac{1}{2}a$. Thus, $\\vec{CE} = -c + \\frac{1}{2}a = \\frac{1}{2}a - c$.",
+    "d": 2,
+    "s": "7.4"
+  },
+  {
+    "id": "cv1671",
+    "cat": "vectors",
+    "topic": "Vector Geometry",
+    "q": "In parallelogram $OPQR$, $O\\vec{P} = p$ and $O\\vec{R} = r$. $S$ is the midpoint of $OR$. Find the vector $\\vec{PS}$ in terms of $p$ and $r$.",
+    "o": [
+      "$p - \\frac{1}{2}r$",
+      "$\\frac{1}{2}p - r$",
+      "$\\frac{1}{2}r - p$",
+      "$r - \\frac{1}{2}p$"
+    ],
+    "a": 2,
+    "e": "$\\vec{PS} = \\vec{PO} + O\\vec{S}$. Given $O\\vec{P} = p$, $\\vec{PO} = -p$. Since $S$ is the midpoint of $OR$, $O\\vec{S} = \\frac{1}{2}O\\vec{R} = \\frac{1}{2}r$. Therefore, $\\vec{PS} = -p + \\frac{1}{2}r = \\frac{1}{2}r - p$.",
+    "d": 2,
+    "s": "7.4"
+  }
+]

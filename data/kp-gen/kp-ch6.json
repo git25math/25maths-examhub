@@ -1,0 +1,403 @@
+[
+  {
+    "id": "kp-6.1-01",
+    "section": "6.1",
+    "order": 1,
+    "title": "Pythagoras' Theorem",
+    "title_zh": "勾股定理",
+    "explanation": {
+      "en": "**Pythagoras' theorem** states that in any right-angled triangle, the square of the length of the hypotenuse ($c$) is equal to the sum of the squares of the lengths of the other two sides ($a$ and $b$). The formula is $a^2 + b^2 = c^2$.\n\nThe **hypotenuse** is the longest side of a right-angled triangle and is always opposite the $90^\\circ$ angle.\n\nTo find the hypotenuse, use $c = \\sqrt{a^2 + b^2}$. To find a shorter side, use $a = \\sqrt{c^2 - b^2}$.",
+      "zh": "**勾股定理**指出，在任何直角三角形中，斜边（$c$）长度的平方等于另外两条直角边（$a$ 和 $b$）长度的平方和。公式为：$a^2 + b^2 = c^2$。\n\n**斜边**是直角三角形中最长的边，且总是位于 $90^\\circ$ 角的对侧。\n\n求斜边时，使用 $c = \\sqrt{a^2 + b^2}$；求直角边时，使用 $a = \\sqrt{c^2 - b^2}$。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-find-hypotenuse",
+        "label": "Calculate the length of the hypotenuse",
+        "label_zh": "计算斜边的长度",
+        "description": "Given two shorter sides, find the longest side.",
+        "description_zh": "已知两条直角边，求最长的斜边。"
+      },
+      {
+        "id": "ep-find-side",
+        "label": "Calculate the length of a shorter side",
+        "label_zh": "计算直角边的长度",
+        "description": "Given the hypotenuse and one side, find the remaining side.",
+        "description_zh": "已知斜边和一条直角边，求另一条边。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-find-hypotenuse",
+        "question": "A right-angled triangle has sides of 5 cm and 12 cm. Calculate the length of the hypotenuse.",
+        "question_zh": "一个直角三角形的直角边分别为 5 cm 和 12 cm。计算斜边的长度。",
+        "solution": "**Step 1:** Identify $a=5$ and $b=12$.\n**Step 2:** Apply formula $c^2 = 5^2 + 12^2 = 25 + 144 = 169$.\n**Step 3:** Calculate the square root: $c = \\sqrt{169} = 13$.\n\n**Answer:** 13 cm",
+        "solution_zh": "**步骤1：** 确定 $a=5$，$b=12$。\n**步骤2：** 应用公式 $c^2 = 5^2 + 12^2 = 25 + 144 = 169$。\n**步骤3：** 计算平方根：$c = \\sqrt{169} = 13$。\n\n**答案：** 13 cm",
+        "source": "Adapted from 0580/22/M/J/18"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "The hypotenuse of a right-angled triangle is 10 cm and one side is 6 cm. What is the length of the other side?",
+        "q_zh": "一个直角三角形的斜边为 10 cm，其中一条直角边为 6 cm。另一条直角边的长度是多少？",
+        "o": [
+          "16 cm",
+          "4 cm",
+          "8 cm",
+          "$\\sqrt{136}$ cm"
+        ],
+        "a": 2,
+        "e": "$a^2 = 10^2 - 6^2 = 100 - 36 = 64$. Thus, $a = \\sqrt{64} = 8$.",
+        "e_zh": "$a^2 = 10^2 - 6^2 = 100 - 36 = 64$。因此，$a = \\sqrt{64} = 8$。"
+      }
+    ],
+    "vocabLinks": [
+      "trig-basics"
+    ],
+    "tier": "both"
+  },
+  {
+    "id": "kp-6.2-01",
+    "section": "6.2",
+    "order": 1,
+    "title": "Trigonometric Ratios (SOH CAH TOA)",
+    "title_zh": "三角函数比 (SOH CAH TOA)",
+    "explanation": {
+      "en": "**Trigonometric ratios** relate the angles of a right-angled triangle to the ratios of its sides. We use the mnemonic **SOH CAH TOA**:\n\n**Sine**: $\\sin \\theta = \\frac{\\text{Opposite}}{\\text{Hypotenuse}}$\n\n**Cosine**: $\\cos \\theta = \\frac{\\text{Adjacent}}{\\text{Hypotenuse}}$\n\n**Tangent**: $\\tan \\theta = \\frac{\\text{Opposite}}{\\text{Adjacent}}$\n\nUse **inverse functions** ($\\sin^{-1}, \\cos^{-1}, \\tan^{-1}$) to find a missing angle when two sides are known.",
+      "zh": "**三角函数比**将直角三角形的角与其边长的比例联系起来。我们使用助记词 **SOH CAH TOA**：\n\n**正弦 (Sine)**：$\\sin \\theta = \\frac{\\text{对边 (Opp)}}{\\text{斜边 (Hyp)}}$\n\n**余弦 (Cosine)**：$\\cos \\theta = \\frac{\\text{邻边 (Adj)}}{\\text{斜边 (Hyp)}}$\n\n**正切 (Tangent)**：$\\tan \\theta = \\frac{\\text{对边 (Opp)}}{\\text{邻边 (Adj)}}$\n\n当已知两条边时，使用**反三角函数**（$\\sin^{-1}, \\cos^{-1}, \\tan^{-1}$）来求缺失的角。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-find-side-trig",
+        "label": "Find a missing side using trig ratios",
+        "label_zh": "利用三角函数比求边长",
+        "description": "Given one angle and one side, calculate another side length.",
+        "description_zh": "已知一个角和一条边，计算另一条边的长度。"
+      },
+      {
+        "id": "ep-find-angle-trig",
+        "label": "Find a missing angle using inverse trig",
+        "label_zh": "利用反三角函数求角度",
+        "description": "Given two sides, calculate the size of an interior angle.",
+        "description_zh": "已知两条边，计算内角的大小。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-find-angle-trig",
+        "question": "In a right-angled triangle, the opposite side is 4 cm and the adjacent side is 7 cm. Find the angle $\\theta$.",
+        "question_zh": "在一个直角三角形中，对边为 4 cm，邻边为 7 cm。求角度 $\\theta$。",
+        "solution": "**Step 1:** Since we have Opposite and Adjacent, use Tangent: $\\tan \\theta = \\frac{4}{7}$.\n**Step 2:** Use inverse tangent: $\\theta = \\tan^{-1}(\\frac{4}{7})$.\n**Step 3:** Calculate: $\\theta \\approx 29.7^\\circ$ (to 1 decimal place).\n\n**Answer:** $29.7^\\circ$",
+        "solution_zh": "**步骤1：** 因为已知对边和邻边，使用正切公式：$\\tan \\theta = \\frac{4}{7}$。\n**步骤2：** 使用反正切：$\\theta = \\tan^{-1}(\\frac{4}{7})$。\n**步骤3：** 计算得出：$\\theta \\approx 29.7^\\circ$（保留一位小数）。\n\n**答案：** $29.7^\\circ$",
+        "source": "Adapted from 0580/21/O/N/20"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "Which ratio would you use to find the hypotenuse if you are given the adjacent side and an angle?",
+        "q_zh": "如果已知邻边和角度，你会使用哪个比例来求斜边？",
+        "o": [
+          "Sine",
+          "Cosine",
+          "Tangent",
+          "Pythagoras"
+        ],
+        "a": 1,
+        "e": "CAH stands for $\\cos \\theta = \\frac{\\text{Adj}}{\\text{Hyp}}$. Thus, $\\text{Hyp} = \\frac{\\text{Adj}}{\\cos \\theta}$.",
+        "e_zh": "CAH 代表 $\\cos \\theta = \\frac{\\text{邻边}}{\\text{斜边}}$。因此，$\\text{斜边} = \\frac{\\text{邻边}}{\\cos \\theta}$。"
+      }
+    ],
+    "vocabLinks": [
+      "trig-ratios"
+    ],
+    "tier": "both"
+  },
+  {
+    "id": "kp-6.3-01",
+    "section": "6.3",
+    "order": 1,
+    "title": "Exact Trigonometric Values",
+    "title_zh": "特殊角的三角函数值",
+    "explanation": {
+      "en": "**Exact trigonometric values** are specific ratios for angles $0^\\circ, 30^\\circ, 45^\\circ, 60^\\circ,$ and $90^\\circ$. These are often required in non-calculator contexts or for precise algebraic work.\n\nKey values to memorize:\n- $\\sin 30^\\circ = \\frac{1}{2}$, $\\cos 30^\\circ = \\frac{\\sqrt{3}}{2}$, $\\tan 30^\\circ = \\frac{1}{\\sqrt{3}}$\n- $\\sin 45^\\circ = \\frac{1}{\\sqrt{2}}$, $\\cos 45^\\circ = \\frac{1}{\\sqrt{2}}$, $\\tan 45^\\circ = 1$\n- $\\sin 60^\\circ = \\frac{\\sqrt{3}}{2}$, $\\cos 60^\\circ = \\frac{1}{2}$, $\\tan 60^\\circ = \\sqrt{3}$",
+      "zh": "**特殊角的三角函数值**是针对 $0^\\circ, 30^\\circ, 45^\\circ, 60^\\circ$ 和 $90^\\circ$ 等角度的精确比例。这些值常用于非计算器考试或精确的代数计算中。\n\n需要记忆的关键值：\n- $\\sin 30^\\circ = \\frac{1}{2}$, $\\cos 30^\\circ = \\frac{\\sqrt{3}}{2}$, $\\tan 30^\\circ = \\frac{\\sqrt{3}}{3}$\n- $\\sin 45^\\circ = \\frac{\\sqrt{2}}{2}$, $\\cos 45^\\circ = \\frac{\\sqrt{2}}{2}$, $\\tan 45^\\circ = 1$\n- $\\sin 60^\\circ = \\frac{\\sqrt{3}}{2}$, $\\cos 60^\\circ = \\frac{1}{2}$, $\\tan 60^\\circ = \\sqrt{3}$"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-exact-eval",
+        "label": "Evaluate expressions without a calculator",
+        "label_zh": "不使用计算器求值",
+        "description": "Simplify expressions involving $\\sin, \\cos, \\tan$ of special angles.",
+        "description_zh": "化简包含特殊角正弦、余弦、正切值的表达式。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-exact-eval",
+        "question": "Calculate the exact value of $2\\cos 60^\\circ + \\tan 45^\\circ$.",
+        "question_zh": "计算 $2\\cos 60^\\circ + \\tan 45^\\circ$ 的精确值。",
+        "solution": "**Step 1:** Substitute exact values: $\\cos 60^\\circ = \\frac{1}{2}$ and $\\tan 45^\\circ = 1$.\n**Step 2:** $2(\\frac{1}{2}) + 1 = 1 + 1 = 2$.\n\n**Answer:** 2",
+        "solution_zh": "**步骤1：** 代入精确值：$\\cos 60^\\circ = \\frac{1}{2}$ 且 $\\tan 45^\\circ = 1$。\n**步骤2：** $2(\\frac{1}{2}) + 1 = 1 + 1 = 2$。\n\n**答案：** 2",
+        "source": "Adapted from 0580 Specimen"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "What is the value of $\\sin 45^\\circ$?",
+        "q_zh": "$\\sin 45^\\circ$ 的值是多少？",
+        "o": [
+          "$\\frac{1}{2}$",
+          "$\\frac{\\sqrt{3}}{2}$",
+          "$\\frac{1}{\\sqrt{2}}$",
+          "1"
+        ],
+        "a": 2,
+        "e": "$\\sin 45^\\circ = \\frac{1}{\\sqrt{2}}$ which is often written as $\\frac{\\sqrt{2}}{2}$ after rationalizing the denominator.",
+        "e_zh": "$\\sin 45^\\circ = \\frac{1}{\\sqrt{2}}$，分母有理化后通常写作 $\\frac{\\sqrt{2}}{2}$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "extended"
+  },
+  {
+    "id": "kp-6.4-01",
+    "section": "6.4",
+    "order": 1,
+    "title": "Trigonometric Graphs and Equations",
+    "title_zh": "三角函数图像与方程",
+    "explanation": {
+      "en": "**Trigonometric graphs** for $y = \\sin x$, $y = \\cos x$, and $y = \\tan x$ show the periodic nature of these functions over $0^\\circ$ to $360^\\circ$.\n\n**Symmetry properties** allow us to find multiple solutions for equations like $\\sin x = k$. For example, if $x$ is a solution for $\\sin x = k$, then $180^\\circ - x$ is also a solution.\n\nThe **Sine graph** starts at $(0,0)$, peaks at $90^\\circ$, and repeats every $360^\\circ$. The **Cosine graph** starts at $(0,1)$, crosses zero at $90^\\circ$ and $270^\\circ$. The **Tangent graph** has vertical asymptotes at $90^\\circ$ and $270^\\circ$.",
+      "zh": "**三角函数图像** $y = \\sin x$, $y = \\cos x$ 和 $y = \\tan x$ 展示了这些函数在 $0^\\circ$ 到 $360^\\circ$ 之间的周期性特征。\n\n**对称性质**允许我们求出类似 $\\sin x = k$ 方程的多个解。例如，如果 $x$ 是 $\\sin x = k$ 的一个解，那么 $180^\\circ - x$ 也是一个解。\n\n**正弦图像**从 $(0,0)$ 开始，在 $90^\\circ$ 处达到峰值，每 $360^\\circ$ 重复一次。**余弦图像**从 $(0,1)$ 开始，在 $90^\\circ$ 和 $270^\\circ$ 处穿过零点。**正切图像**在 $90^\\circ$ 和 $270^\\circ$ 处有垂直渐近线。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-solve-trig-eq",
+        "label": "Solve trigonometric equations",
+        "label_zh": "解三角方程",
+        "description": "Find all values of $x$ in a given range (usually $0^\\circ \\le x \\le 360^\\circ$) that satisfy an equation.",
+        "description_zh": "在给定范围内（通常为 $0^\\circ \\le x \\le 360^\\circ$）求满足方程的所有 $x$ 值。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-solve-trig-eq",
+        "question": "Solve $\\sin x = 0.5$ for $0^\\circ \\le x \\le 360^\\circ$.",
+        "question_zh": "解方程 $\\sin x = 0.5$，范围为 $0^\\circ \\le x \\le 360^\\circ$。",
+        "solution": "**Step 1:** Find the first solution using a calculator: $x = \\sin^{-1}(0.5) = 30^\\circ$.\n**Step 2:** Use the symmetry of the sine graph: the second solution is $180^\\circ - 30^\\circ = 150^\\circ$.\n**Step 3:** Check for other solutions in the range $0$ to $360$. No others exist.\n\n**Answer:** $30^\\circ, 150^\\circ$",
+        "solution_zh": "**步骤1：** 使用计算器求第一个解：$x = \\sin^{-1}(0.5) = 30^\\circ$。\n**步骤2：** 利用正弦图像的对称性：第二个解为 $180^\\circ - 30^\\circ = 150^\\circ$。\n**步骤3：** 检查 $0$ 到 $360$ 范围内是否有其他解。没有。 \n\n**答案：** $30^\\circ, 150^\\circ$",
+        "source": "Adapted from 0580/42/M/J/19"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "What is the value of $\\cos 300^\\circ$?",
+        "q_zh": "$\\cos 300^\\circ$ 的值是多少？",
+        "o": [
+          "0.5",
+          "-0.5",
+          "$\\frac{\\sqrt{3}}{2}$",
+          "$-\\frac{\\sqrt{3}}{2}$"
+        ],
+        "a": 0,
+        "e": "Using the unit circle or graph, $\\cos(360 - x) = \\cos x$. So $\\cos 300^\\circ = \\cos(360 - 60) = \\cos 60^\\circ = 0.5$.",
+        "e_zh": "利用单位圆或图像，$\\cos(360 - x) = \\cos x$。因此 $\\cos 300^\\circ = \\cos(360 - 60) = \\cos 60^\\circ = 0.5$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "extended"
+  },
+  {
+    "id": "kp-6.5-01",
+    "section": "6.5",
+    "order": 1,
+    "title": "The Sine Rule",
+    "title_zh": "正弦定理",
+    "explanation": {
+      "en": "The **Sine Rule** is used to find missing sides or angles in any triangle (not just right-angled ones). The formula is:\n$$\\frac{a}{\\sin A} = \\frac{b}{\\sin B} = \\frac{c}{\\sin C}$$\n\nUse the Sine Rule when you know a **matching pair** of a side and its opposite angle, plus one other piece of information (either another side or another angle).",
+      "zh": "**正弦定理**用于求解任何三角形（不限于直角三角形）中缺失的边长或角度。公式为：\n$$\\frac{a}{\\sin A} = \\frac{b}{\\sin B} = \\frac{c}{\\sin C}$$\n\n当你已知一组**对应的边角**（一条边及其对角）以及另一个信息（另一条边或另一个角）时，使用正弦定理。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-sine-side",
+        "label": "Find a side using Sine Rule",
+        "label_zh": "利用正弦定理求边长",
+        "description": "Given two angles and one side, find another side.",
+        "description_zh": "已知两个角和一条边，求另一条边。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-sine-side",
+        "question": "In triangle ABC, $A = 40^\\circ$, $B = 60^\\circ$, and $a = 8$ cm. Find side $b$.",
+        "question_zh": "在三角形 ABC 中，$A = 40^\\circ$，$B = 60^\\circ$，$a = 8$ cm。求边 $b$。",
+        "solution": "**Step 1:** Set up the Sine Rule: $\\frac{8}{\\sin 40^\\circ} = \\frac{b}{\\sin 60^\\circ}$.\n**Step 2:** Rearrange for $b$: $b = \\frac{8 \\times \\sin 60^\\circ}{\\sin 40^\\circ}$.\n**Step 3:** Calculate: $b \\approx 10.78$ cm.\n\n**Answer:** 10.8 cm (to 3 sig figs)",
+        "solution_zh": "**步骤1：** 列出正弦定理：$\\frac{8}{\\sin 40^\\circ} = \\frac{b}{\\sin 60^\\circ}$。\n**步骤2：** 变形求 $b$：$b = \\frac{8 \\times \\sin 60^\\circ}{\\sin 40^\\circ}$。\n**步骤3：** 计算得出：$b \\approx 10.78$ cm。\n\n**答案：** 10.8 cm（保留三位有效数字）",
+        "source": "Adapted from 0580/41/M/J/21"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "When should you use the Sine Rule instead of the Cosine Rule?",
+        "q_zh": "什么时候应该使用正弦定理而不是余弦定理？",
+        "o": [
+          "When you have three sides",
+          "When you have a matching side-angle pair",
+          "When you have two sides and the included angle",
+          "Only in right-angled triangles"
+        ],
+        "a": 1,
+        "e": "The Sine Rule requires at least one side and its opposite angle to be known (a matching pair).",
+        "e_zh": "正弦定理要求至少已知一条边及其对角（对应的一对边角）。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "extended"
+  },
+  {
+    "id": "kp-6.5-02",
+    "section": "6.5",
+    "order": 2,
+    "title": "The Cosine Rule",
+    "title_zh": "余弦定理",
+    "explanation": {
+      "en": "The **Cosine Rule** is used in two main scenarios:\n1. To find a missing side when you know **two sides and the included angle** (SAS).\n2. To find a missing angle when you know **all three sides** (SSS).\n\nFormula for side: $a^2 = b^2 + c^2 - 2bc \\cos A$\nFormula for angle: $\\cos A = \\frac{b^2 + c^2 - a^2}{2bc}$",
+      "zh": "**余弦定理**主要用于两种情况：\n1. 已知**两边及其夹角** (SAS) 时，求第三边。\n2. 已知**三条边** (SSS) 时，求角度。\n\n求边的公式：$a^2 = b^2 + c^2 - 2bc \\cos A$\n求角的公式：$\\cos A = \\frac{b^2 + c^2 - a^2}{2bc}$"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-cosine-side",
+        "label": "Find a side using Cosine Rule",
+        "label_zh": "利用余弦定理求边长",
+        "description": "Calculate the third side given two sides and the angle between them.",
+        "description_zh": "已知两边及其夹角，计算第三边的长度。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-cosine-side",
+        "question": "In triangle PQR, $PQ = 5$ cm, $QR = 7$ cm, and angle $Q = 110^\\circ$. Calculate $PR$.",
+        "question_zh": "在三角形 PQR 中，$PQ = 5$ cm，$QR = 7$ cm，角 $Q = 110^\\circ$。计算 $PR$。",
+        "solution": "**Step 1:** Use $a^2 = b^2 + c^2 - 2bc \\cos A$.\n**Step 2:** $PR^2 = 5^2 + 7^2 - 2(5)(7) \\cos 110^\\circ$.\n**Step 3:** $PR^2 = 25 + 49 - 70(-0.342) = 74 + 23.94 = 97.94$.\n**Step 4:** $PR = \\sqrt{97.94} \\approx 9.90$ cm.\n\n**Answer:** 9.90 cm",
+        "solution_zh": "**步骤1：** 使用 $a^2 = b^2 + c^2 - 2bc \\cos A$。\n**步骤2：** $PR^2 = 5^2 + 7^2 - 2(5)(7) \\cos 110^\\circ$。\n**步骤3：** $PR^2 = 25 + 49 - 70(-0.342) = 74 + 23.94 = 97.94$。\n**步骤4：** $PR = \\sqrt{97.94} \\approx 9.90$ cm。\n\n**答案：** 9.90 cm",
+        "source": "Adapted from 0580/42/O/N/21"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "Which rule is best to find the largest angle in a triangle with sides 5, 8, and 10?",
+        "q_zh": "在边长为 5, 8, 10 的三角形中，求最大角最好使用哪个定理？",
+        "o": [
+          "Sine Rule",
+          "Cosine Rule",
+          "Pythagoras' Theorem",
+          "SOH CAH TOA"
+        ],
+        "a": 1,
+        "e": "When all three sides are known (SSS), the Cosine Rule is used to find angles.",
+        "e_zh": "当已知三条边 (SSS) 时，使用余弦定理求角度。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "extended"
+  },
+  {
+    "id": "kp-6.5-03",
+    "section": "6.5",
+    "order": 3,
+    "title": "Area of a Triangle",
+    "title_zh": "三角形的面积",
+    "explanation": {
+      "en": "The **Area of a Triangle** can be calculated without knowing the height if you know two sides ($a$ and $b$) and the **included angle** ($C$).\n\nFormula: $\\text{Area} = \\frac{1}{2}ab \\sin C$\n\nThis formula is useful for non-right-angled triangles where the vertical height is not easily found.",
+      "zh": "如果已知三角形的两条边（$a$ 和 $b$）及其**夹角**（$C$），可以在不知道高的情况下计算**三角形的面积**。\n\n公式：$\\text{面积} = \\frac{1}{2}ab \\sin C$\n\n该公式对于难以求得垂高的非直角三角形非常有用。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-area-trig",
+        "label": "Calculate triangle area using sine",
+        "label_zh": "利用正弦计算三角形面积",
+        "description": "Find the area of a triangle given SAS (Side-Angle-Side).",
+        "description_zh": "已知两边及其夹角，求三角形面积。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-area-trig",
+        "question": "Find the area of a triangle with sides 6 cm and 9 cm and an included angle of $35^\\circ$.",
+        "question_zh": "一个三角形两边长分别为 6 cm 和 9 cm，夹角为 $35^\\circ$。求其面积。",
+        "solution": "**Step 1:** Use formula $\\text{Area} = \\frac{1}{2} \\times 6 \\times 9 \\times \\sin 35^\\circ$.\n**Step 2:** $\\text{Area} = 27 \\times 0.5736 \\approx 15.487$.\n\n**Answer:** 15.5 $\\text{cm}^2$",
+        "solution_zh": "**步骤1：** 使用公式 $\\text{面积} = \\frac{1}{2} \\times 6 \\times 9 \\times \\sin 35^\\circ$。\n**步骤2：** $\\text{面积} = 27 \\times 0.5736 \\approx 15.487$。\n\n**答案：** 15.5 $\\text{cm}^2$",
+        "source": "Adapted from 0580/23/M/J/22"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "If the area of a triangle is $20\\ \\text{cm}^2$, sides are 8 cm and 10 cm, what is the sine of the angle between them?",
+        "q_zh": "如果三角形面积为 $20\\ \\text{cm}^2$，两条边分别为 8 cm 和 10 cm，那么它们夹角的正弦值是多少？",
+        "o": [
+          "0.25",
+          "0.5",
+          "1.0",
+          "0.8"
+        ],
+        "a": 1,
+        "e": "$20 = \\frac{1}{2}(8)(10) \\sin C \\implies 20 = 40 \\sin C \\implies \\sin C = 0.5$.",
+        "e_zh": "$20 = \\frac{1}{2}(8)(10) \\sin C \\implies 20 = 40 \\sin C \\implies \\sin C = 0.5$。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "extended"
+  },
+  {
+    "id": "kp-6.6-01",
+    "section": "6.6",
+    "order": 1,
+    "title": "3D Trigonometry",
+    "title_zh": "三维三角",
+    "explanation": {
+      "en": "**3D Trigonometry** involves solving problems in three dimensions by identifying right-angled triangles within shapes like cuboids, pyramids, or cones.\n\nKey techniques include:\n- Using **Pythagoras' theorem in 3D**: $d^2 = x^2 + y^2 + z^2$ for the diagonal of a cuboid.\n- Identifying the **angle between a line and a plane** by dropping a perpendicular from the line to the plane.",
+      "zh": "**三维三角**涉及在三维空间中解决问题，方法是在长方体、棱锥或圆锥等几何体中识别出直角三角形。\n\n关键技术包括：\n- 使用**三维勾股定理**：长方体对角线公式 $d^2 = x^2 + y^2 + z^2$。\n- 通过从直线向平面作垂线来识别**直线与平面的夹角**。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-3d-diagonal",
+        "label": "Calculate the diagonal of a 3D shape",
+        "label_zh": "计算三维图形的对角线",
+        "description": "Find the distance between two opposite corners of a cuboid.",
+        "description_zh": "求长方体两个相对顶点之间的距离。"
+      },
+      {
+        "id": "ep-line-plane-angle",
+        "label": "Find the angle between a line and a plane",
+        "label_zh": "求直线与平面的夹角",
+        "description": "Calculate the angle a slope or diagonal makes with the base.",
+        "description_zh": "计算斜面或对角线与底面所成的角度。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-3d-diagonal",
+        "question": "A cuboid has dimensions 3 cm by 4 cm by 12 cm. Calculate the length of the space diagonal.",
+        "question_zh": "一个长方体的尺寸为 3 cm, 4 cm, 12 cm。计算其空间对角线的长度。",
+        "solution": "**Step 1:** Use the 3D Pythagoras formula: $d^2 = 3^2 + 4^2 + 12^2$.\n**Step 2:** $d^2 = 9 + 16 + 144 = 169$.\n**Step 3:** $d = \\sqrt{169} = 13$.\n\n**Answer:** 13 cm",
+        "solution_zh": "**步骤1：** 使用三维勾股公式：$d^2 = 3^2 + 4^2 + 12^2$。\n**步骤2：** $d^2 = 9 + 16 + 144 = 169$。\n**步骤3：** $d = \\sqrt{169} = 13$。\n\n**答案：** 13 cm",
+        "source": "Adapted from 0580/42/M/J/20"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "In 3D trig, the angle between a line and a plane is found by using which point on the line?",
+        "q_zh": "在三维三角中，直线与平面的夹角是通过直线上哪一点来确定的？",
+        "o": [
+          "The midpoint",
+          "Any point, by dropping a perpendicular to the plane",
+          "The endpoint only",
+          "The point closest to the origin"
+        ],
+        "a": 1,
+        "e": "To find the angle between a line and a plane, you drop a perpendicular from a point on the line to the plane and use the resulting right-angled triangle.",
+        "e_zh": "要求直线与平面的夹角，需从直线上一点向平面作垂线，并利用由此产生的直角三角形。"
+      }
+    ],
+    "vocabLinks": [],
+    "tier": "extended"
+  }
+]

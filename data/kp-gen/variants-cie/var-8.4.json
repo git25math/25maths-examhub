@@ -1,0 +1,98 @@
+[
+  {
+    "id": "cv1672",
+    "cat": "statistics",
+    "topic": "Conditional Probability",
+    "q": "Given that P(A and B) = 0.24 and P(B) = 0.6, what is P(A|B)?",
+    "o": [
+      "0.144",
+      "0.4",
+      "0.36",
+      "2.5"
+    ],
+    "a": 1,
+    "e": "Use the formula P(A|B) = P(A and B) / P(B). So, P(A|B) = \\frac{0.24}{0.6} = 0.4.",
+    "d": 2,
+    "s": "8.4"
+  },
+  {
+    "id": "cv1673",
+    "cat": "statistics",
+    "topic": "Conditional Probability",
+    "q": "Given that P(X and Y) = 0.12 and P(Y) = 0.8, find the value of P(X|Y).",
+    "o": [
+      "0.15",
+      "0.096",
+      "0.68",
+      "6.67"
+    ],
+    "a": 0,
+    "e": "Using the conditional probability formula P(X|Y) = P(X and Y) / P(Y), we get P(X|Y) = \\frac{0.12}{0.8} = 0.15.",
+    "d": 2,
+    "s": "8.4"
+  },
+  {
+    "id": "cv1674",
+    "cat": "statistics",
+    "topic": "Conditional Probability",
+    "q": "If P(E and F) = 0.35 and P(F) = 0.7, calculate P(E|F).",
+    "o": [
+      "0.245",
+      "0.35",
+      "2.0",
+      "0.5"
+    ],
+    "a": 3,
+    "e": "Apply the formula P(E|F) = P(E and F) / P(F). Substituting the values, P(E|F) = \\frac{0.35}{0.7} = 0.5.",
+    "d": 2,
+    "s": "8.4"
+  },
+  {
+    "id": "cv1675",
+    "cat": "statistics",
+    "topic": "Conditional Probability",
+    "q": "In a group of 40 students, 15 study Spanish and 20 study French. 8 students study both. Given that a student studies French, what is the probability they also study Spanish?",
+    "o": [
+      "\\frac{8}{15}",
+      "\\frac{8}{20}",
+      "\\frac{8}{40}",
+      "\\frac{20}{40}"
+    ],
+    "a": 1,
+    "e": "Let S be Spanish and F be French. We want P(S|F) = P(S and F) / P(F). There are 20 students studying French, and 8 of these also study Spanish. So the probability is \\frac{8}{20}.",
+    "d": 2,
+    "s": "8.4"
+  },
+  {
+    "id": "cv1676",
+    "cat": "statistics",
+    "topic": "Conditional Probability",
+    "q": "In a sports club of 50 members, 25 play Football and 30 play Basketball. 10 members play both. Given that a member plays Football, what is the probability they also play Basketball?",
+    "o": [
+      "\\frac{10}{25}",
+      "\\frac{10}{30}",
+      "\\frac{10}{50}",
+      "\\frac{25}{50}"
+    ],
+    "a": 0,
+    "e": "Let F be Football and B be Basketball. We need P(B|F) = P(B and F) / P(F). There are 25 members who play Football, and 10 of those also play Basketball. Thus, P(B|F) = \\frac{10}{25}.",
+    "d": 2,
+    "s": "8.4"
+  },
+  {
+    "id": "cv1677",
+    "cat": "statistics",
+    "topic": "Conditional Probability",
+    "q": "Out of 100 people surveyed, 60 drink Coffee and 40 drink Tea. 15 drink both. Given that a person drinks Tea, what is the probability they also drink Coffee?",
+    "o": [
+      "\\frac{15}{60}",
+      "\\frac{15}{100}",
+      "\\frac{40}{100}",
+      "\\frac{15}{40}"
+    ],
+    "a": 3,
+    "e": "Let C be Coffee and T be Tea. We seek P(C|T) = P(C and T) / P(T). There are 40 people who drink Tea, and 15 of them also drink Coffee. Therefore, the probability is \\frac{15}{40}.",
+    "d": 2,
+    "s": "8.4"
+  }
+]

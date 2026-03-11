@@ -1,0 +1,100 @@
+[
+  {
+    "id": "kp-8.1-01",
+    "addQuiz": [],
+    "addExamples": [
+      {
+        "patternId": "ep-calc-basic",
+        "question": "A bag contains 5 red, 3 blue, and 2 yellow marbles. A marble is picked at random. Find the probability that the marble is not red.",
+        "question_zh": "一个袋子里有5个红球，3个蓝球和2个黄球。随机抽取一个球。求抽到的不是红球的概率。",
+        "solution": "Total marbles = $5 + 3 + 2 = 10$. \\\\ The number of marbles that are not red (blue or yellow) = $3 + 2 = 5$. \\\\ $P(\\text{not red}) = \\frac{5}{10} = \\frac{1}{2}$.",
+        "solution_zh": "总球数 = $5 + 3 + 2 = 10$。\\\\ 非红球（蓝色或黄色）的数量 = $3 + 2 = 5$。\\\\ $P(\\text{非红}) = \\frac{5}{10} = \\frac{1}{2}$。",
+        "source": "Adapted from 0580/21/M/J/21"
+      }
+    ]
+  },
+  {
+    "id": "kp-8.1-02",
+    "addQuiz": [
+      {
+        "q": "The probability that it will rain tomorrow is 0.15. What is the probability that it will not rain tomorrow?",
+        "q_zh": "明天下雨的概率是0.15。明天不下雨的概率是多少？",
+        "o": [
+          "0.15",
+          "0.85",
+          "1.15",
+          "0"
+        ],
+        "a": 1,
+        "e": "Probabilities of complementary events sum to 1. $P(\\text{not rain}) = 1 - P(\\text{rain}) = 1 - 0.15 = 0.85$.",
+        "e_zh": "互补事件的概率之和为1。$P(\\text{不下雨}) = 1 - P(\\text{下雨}) = 1 - 0.15 = 0.85$。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-prob-complement",
+        "question": "In a game, the probability of winning is $x$, the probability of a draw is $2x$, and the probability of losing is $0.4$. Find the value of $x$.",
+        "question_zh": "在一个游戏中，获胜的概率是 $x$，平局的概率是 $2x$，失败的概率是 $0.4$。求 $x$ 的值。",
+        "solution": "The sum of all possible outcomes in a probability distribution is 1. \\\\ $x + 2x + 0.4 = 1$ \\\\ $3x + 0.4 = 1$ \\\\ $3x = 0.6$ \\\\ $x = 0.2$.",
+        "solution_zh": "概率分布中所有可能结果的和为1。\\\\ $x + 2x + 0.4 = 1$ \\\\ $3x + 0.4 = 1$ \\\\ $3x = 0.6$ \\\\ $x = 0.2$。",
+        "source": "0580/22/F/M/19"
+      }
+    ]
+  },
+  {
+    "id": "kp-8.2-01",
+    "addQuiz": [],
+    "addExamples": [
+      {
+        "patternId": "ep-expected-freq",
+        "question": "A biased coin is tossed 400 times. The relative frequency of landing on heads is 0.35. How many times would you expect the coin to land on heads?",
+        "question_zh": "一枚不均匀的硬币被抛掷400次。正面朝上的相对频率是0.35。你期望硬币正面朝上多少次？",
+        "solution": "Expected frequency = $\\text{Total trials} \\times \\text{Probability (or relative frequency)}$. \\\\ $\\text{Expected heads} = 400 \\times 0.35 = 140$.",
+        "solution_zh": "期望频率 = $\\text{总试验次数} \\times \\text{概率（或相对频率）}$。\\\\ $\\text{期望正面次数} = 400 \\times 0.35 = 140$。",
+        "source": "Adapted from 0580/41/O/N/21"
+      }
+    ]
+  },
+  {
+    "id": "kp-8.3-01",
+    "addQuiz": [],
+    "addExamples": [
+      {
+        "patternId": "ep-tree-diagram",
+        "question": "Sarah has two sets of cards. Set A has cards numbered 1, 2, 3. Set B has cards numbered 4, 5. She picks one card from each set. Find the probability that the sum of the numbers is 6.",
+        "question_zh": "Sarah有两组卡片。A组卡片编号为1, 2, 3。B组卡片编号为4, 5。她从每组中各取一张卡片。求卡片数字之和为6的概率。",
+        "solution": "Total outcomes = $3 \\times 2 = 6$. \\\\ The possible outcomes for (Set A, Set B) are: (1,4), (1,5), (2,4), (2,5), (3,4), (3,5). \\\\ The sums are: 5, 6, 6, 7, 7, 8. \\\\ There are 2 outcomes where the sum is 6: (1,5) and (2,4). \\\\ $P(\\text{sum is 6}) = \\frac{2}{6} = \\frac{1}{3}$.",
+        "solution_zh": "总结果数 = $3 \\times 2 = 6$。\\\\ (A组, B组) 的可能结果为：(1,4), (1,5), (2,4), (2,5), (3,4), (3,5)。\\\\ 对应的和分别为：5, 6, 6, 7, 7, 8。\\\\ 和为6的结果有2个：(1,5) 和 (2,4)。\\\\ $P(\\text{和为6}) = \\frac{2}{6} = \\frac{1}{3}$。",
+        "source": "0580/42/M/J/18"
+      }
+    ]
+  },
+  {
+    "id": "kp-8.3-02",
+    "addQuiz": [],
+    "addExamples": [
+      {
+        "patternId": "ep-and-or-rules",
+        "question": "Two independent events $A$ and $B$ have probabilities $P(A) = 0.4$ and $P(B) = 0.7$. Find the probability that event $A$ occurs but event $B$ does not occur.",
+        "question_zh": "两个独立事件 $A$ 和 $B$ 的概率分别为 $P(A) = 0.4$ 和 $P(B) = 0.7$。求事件 $A$ 发生但事件 $B$ 不发生的概率。",
+        "solution": "$P(\\text{not } B) = 1 - P(B) = 1 - 0.7 = 0.3$. \\\\ Since $A$ and $B$ are independent, $P(A \\text{ and not } B) = P(A) \\times P(\\text{not } B)$. \\\\ $P(A \\text{ and not } B) = 0.4 \\times 0.3 = 0.12$.",
+        "solution_zh": "$P(\\text{非 } B) = 1 - P(B) = 1 - 0.7 = 0.3$。\\\\ 由于 $A$ 和 $B$ 是独立的，$P(A \\text{ 且非 } B) = P(A) \\times P(\\text{非 } B)$。\\\\ $P(A \\text{ 且非 } B) = 0.4 \\times 0.3 = 0.12$。",
+        "source": "Adapted from 0580/23/O/N/20"
+      }
+    ]
+  },
+  {
+    "id": "kp-8.4-01",
+    "addQuiz": [],
+    "addExamples": [
+      {
+        "patternId": "ep-without-replacement",
+        "question": "A box contains 7 red pens and 3 blue pens. Two pens are taken at random without replacement. Find the probability that both pens are the same color.",
+        "question_zh": "一个盒子里有7支红笔和3支蓝笔。随机取出两支笔，不放回。求两支笔颜色相同的概率。",
+        "solution": "$P(\\text{Red, Red}) = \\frac{7}{10} \\times \\frac{6}{9} = \\frac{42}{90}$. \\\\ $P(\\text{Blue, Blue}) = \\frac{3}{10} \\times \\frac{2}{9} = \\frac{6}{90}$. \\\\ $P(\\text{Same Color}) = P(\\text{Red, Red}) + P(\\text{Blue, Blue}) = \\frac{42}{90} + \\frac{6}{90} = \\frac{48}{90} = \\frac{8}{15}$.",
+        "solution_zh": "$P(\\text{红, 红}) = \\frac{7}{10} \\times \\frac{6}{9} = \\frac{42}{90}$。\\\\ $P(\\text{蓝, 蓝}) = \\frac{3}{10} \\times \\frac{2}{9} = \\frac{6}{90}$。\\\\ $P(\\text{同色}) = P(\\text{红, 红}) + P(\\text{蓝, 蓝}) = \\frac{42}{90} + \\frac{6}{90} = \\frac{48}{90} = \\frac{8}{15}$。",
+        "source": "0580/42/M/J/22"
+      }
+    ]
+  }
+]

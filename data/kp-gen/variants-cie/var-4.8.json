@@ -1,0 +1,242 @@
+[
+  {
+    "id": "cv1615",
+    "cat": "geometry",
+    "topic": "Constructions and Loci",
+    "q": "To construct the perpendicular bisector of a line segment AB, the compass width must be set to:",
+    "o": [
+      "Exactly half the length of AB",
+      "Less than half the length of AB",
+      "More than half the length of AB",
+      "The full length of AB only"
+    ],
+    "a": 2,
+    "e": "To ensure the arcs intersect above and below the line, the compass must be opened to more than half the length of the segment. If it is less than half, the arcs will not meet.",
+    "d": 1,
+    "s": "4.8"
+  },
+  {
+    "id": "cv1616",
+    "cat": "geometry",
+    "topic": "Constructions and Loci",
+    "q": "Which tool(s) are required to accurately construct a perpendicular bisector without using a measuring scale?",
+    "o": [
+      "Protractor only",
+      "Ruler and protractor",
+      "Compass and straightedge",
+      "Set square and ruler"
+    ],
+    "a": 2,
+    "e": "Standard geometric constructions use only a compass (to draw arcs of equal radius) and a straightedge (to draw the lines).",
+    "d": 1,
+    "s": "4.8"
+  },
+  {
+    "id": "cv1617",
+    "cat": "geometry",
+    "topic": "Constructions and Loci",
+    "q": "When constructing the perpendicular bisector of segment PQ, where do the two arcs drawn from P and Q intersect?",
+    "o": [
+      "At the midpoint of PQ",
+      "On the line PQ itself",
+      "At two points, one on each side of the line PQ",
+      "At a single point above PQ"
+    ],
+    "a": 2,
+    "e": "Arcs are drawn from both endpoints with the same radius. They intersect at two distinct points, and the line connecting these points is the perpendicular bisector.",
+    "d": 1,
+    "s": "4.8"
+  },
+  {
+    "id": "cv1618",
+    "cat": "geometry",
+    "topic": "Constructions and Loci",
+    "q": "The set of all points that are the same distance from point X as they are from point Y is:",
+    "o": [
+      "A circle passing through X and Y",
+      "The line segment XY",
+      "The perpendicular bisector of the segment XY",
+      "A line parallel to the segment XY"
+    ],
+    "a": 2,
+    "e": "The locus of points equidistant from two fixed points is always the perpendicular bisector of the line segment joining those two points.",
+    "d": 1,
+    "s": "4.8"
+  },
+  {
+    "id": "cv1619",
+    "cat": "geometry",
+    "topic": "Constructions and Loci",
+    "q": "A new fence is to be built in a garden such that it is always equidistant from two trees, $T_1$ and $T_2$. What is the geometric description of the fence's path?",
+    "o": [
+      "A circle centered at $T_1$",
+      "A circle centered at $T_2$",
+      "The perpendicular bisector of the line segment $T_1T_2$",
+      "A straight line passing through both trees"
+    ],
+    "a": 2,
+    "e": "Points equidistant from two fixed locations ($T_1$ and $T_2$) form a straight line that bisects the segment $T_1T_2$ at $90^\\circ$.",
+    "d": 1,
+    "s": "4.8"
+  },
+  {
+    "id": "cv1620",
+    "cat": "geometry",
+    "topic": "Constructions and Loci",
+    "q": "If a point $M$ moves such that its distance from point $A$ is always equal to its distance from point $B$, the path of $M$ is:",
+    "o": [
+      "An angle bisector",
+      "A circle with diameter $AB$",
+      "The perpendicular bisector of $AB$",
+      "A line parallel to $AB$"
+    ],
+    "a": 2,
+    "e": "The condition $MA = MB$ defines the perpendicular bisector of the segment $AB$.",
+    "d": 1,
+    "s": "4.8"
+  },
+  {
+    "id": "cv1621",
+    "cat": "geometry",
+    "topic": "Constructions and Loci",
+    "q": "The locus of points that are exactly 8 cm from a fixed center $O$ is:",
+    "o": [
+      "A square with side 8 cm",
+      "A circle with center $O$ and radius 8 cm",
+      "A straight line 8 cm from $O$",
+      "Two parallel lines 8 cm apart"
+    ],
+    "a": 1,
+    "e": "A circle is defined as the set of all points in a plane that are at a fixed distance (radius) from a fixed point (center).",
+    "d": 1,
+    "s": "4.8"
+  },
+  {
+    "id": "cv1622",
+    "cat": "geometry",
+    "topic": "Constructions and Loci",
+    "q": "A goat is tethered to a post in a field by a rope 6 meters long. What is the locus of the furthest points the goat can reach?",
+    "o": [
+      "A straight line 6 meters long",
+      "A circle with the post as center and radius 6 m",
+      "A square with perimeter 24 m",
+      "A semicircle"
+    ],
+    "a": 1,
+    "e": "The rope allows the goat to move up to 6m in any direction from the post, forming a circular boundary.",
+    "d": 1,
+    "s": "4.8"
+  },
+  {
+    "id": "cv1623",
+    "cat": "geometry",
+    "topic": "Constructions and Loci",
+    "q": "What is the locus of all points in a plane that are at a constant distance of 3.5 units from a point $C$?",
+    "o": [
+      "The midpoint of a segment",
+      "A circle with center $C$ and radius 3.5",
+      "A line segment of length 7",
+      "A parabola with vertex $C$"
+    ],
+    "a": 1,
+    "e": "All points at a constant distance from a single point form a circle with that distance as the radius.",
+    "d": 1,
+    "s": "4.8"
+  },
+  {
+    "id": "cv1624",
+    "cat": "geometry",
+    "topic": "Constructions and Loci",
+    "q": "The locus of points equidistant from two intersecting lines $L_1$ and $L_2$ consists of:",
+    "o": [
+      "The perpendicular bisectors of the lines",
+      "A circle centered at the intersection",
+      "The angle bisectors of the two lines",
+      "A line parallel to both $L_1$ and $L_2$"
+    ],
+    "a": 2,
+    "e": "Points that are the same distance from two intersecting lines lie on the bisectors of the angles formed by the lines.",
+    "d": 2,
+    "s": "4.8"
+  },
+  {
+    "id": "cv1625",
+    "cat": "geometry",
+    "topic": "Constructions and Loci",
+    "q": "Two straight roads meet at an angle of $60^\\circ$. A treasure is buried at a point that is equidistant from both roads. This point must lie on:",
+    "o": [
+      "The perpendicular bisector of the roads",
+      "A circle centered at the junction",
+      "The angle bisector of the roads",
+      "A line 10m from the junction"
+    ],
+    "a": 2,
+    "e": "Equidistance from two lines (roads) is the defining property of an angle bisector.",
+    "d": 2,
+    "s": "4.8"
+  },
+  {
+    "id": "cv1626",
+    "cat": "geometry",
+    "topic": "Constructions and Loci",
+    "q": "To find the path of a point that stays exactly halfway between two crossing paths, which geometric construction is used?",
+    "o": [
+      "Perpendicular bisector",
+      "Median",
+      "Angle bisector",
+      "Circumcircle"
+    ],
+    "a": 2,
+    "e": "The angle bisector creates a path where every point is at an equal perpendicular distance from the two intersecting lines (paths).",
+    "d": 2,
+    "s": "4.8"
+  },
+  {
+    "id": "cv1627",
+    "cat": "geometry",
+    "topic": "Constructions and Loci",
+    "q": "When constructing a perpendicular from an external point $P$ to a line $L$, how many arcs are drawn with the compass centered at $P$?",
+    "o": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "a": 0,
+    "e": "Only one arc is drawn from the point $P$. This arc must be wide enough to intersect the line $L$ at two distinct points.",
+    "d": 2,
+    "s": "4.8"
+  },
+  {
+    "id": "cv1628",
+    "cat": "geometry",
+    "topic": "Constructions and Loci",
+    "q": "In the construction of a perpendicular from point $M$ to line $XY$, after drawing the first arc from $M$ that intersects $XY$ at points $A$ and $B$, what is the next step?",
+    "o": [
+      "Measure the distance $AB$",
+      "Draw arcs of equal radius centered at $A$ and $B$",
+      "Draw a line from $M$ to the midpoint of $XY$",
+      "Draw a circle centered at $M$ passing through $X$"
+    ],
+    "a": 1,
+    "e": "After finding the two intersection points on the line, you draw arcs from those points to find another point that helps define the perpendicular line.",
+    "d": 2,
+    "s": "4.8"
+  },
+  {
+    "id": "cv1629",
+    "cat": "geometry",
+    "topic": "Constructions and Loci",
+    "q": "What is the first step in dropping a perpendicular from a point $A$ to a line $BC$?",
+    "o": [
+      "Draw an arc from $A$ that intersects $BC$ at two points",
+      "Find the midpoint of $BC$ with a ruler",
+      "Draw an angle of $90^\\circ$ at point $B$",
+      "Connect $A$ to $B$ and $C$"
+    ],
+    "a": 0,
+    "e": "The first step is to draw an arc centered at the external point $A$ that crosses the line at two points, which then serve as centers for the subsequent arcs.",
+    "d": 2,
+    "s": "4.8"
+  }
+]

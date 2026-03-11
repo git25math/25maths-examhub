@@ -1,0 +1,206 @@
+[
+  {
+    "id": "hv0761",
+    "cat": "geometry",
+    "topic": "Intro to Pythagoras' Theorem",
+    "q": "A right-angled triangle has legs $6$ cm and $8$ cm. What is the length of the hypotenuse?",
+    "o": [
+      "$14$ cm",
+      "$10$ cm",
+      "$100$ cm",
+      "$48$ cm"
+    ],
+    "a": 1,
+    "e": "$c = \\sqrt{6^2 + 8^2} = \\sqrt{36 + 64} = \\sqrt{100} = 10$ cm.",
+    "d": 1,
+    "s": "Y8.5",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0762",
+    "cat": "geometry",
+    "topic": "Intro to Pythagoras' Theorem",
+    "q": "A right-angled triangle has legs $5$ cm and $12$ cm. Find the hypotenuse.",
+    "o": [
+      "$13$ cm",
+      "$17$ cm",
+      "$25$ cm",
+      "$119$ cm"
+    ],
+    "a": 0,
+    "e": "$c = \\sqrt{5^2 + 12^2} = \\sqrt{25 + 144} = \\sqrt{169} = 13$ cm.",
+    "d": 1,
+    "s": "Y8.5",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0763",
+    "cat": "geometry",
+    "topic": "Intro to Pythagoras' Theorem",
+    "q": "A right-angled triangle has two shorter sides of length $9$ cm and $12$ cm. Calculate the longest side.",
+    "o": [
+      "$21$ cm",
+      "$225$ cm",
+      "$108$ cm",
+      "$15$ cm"
+    ],
+    "a": 3,
+    "e": "$c = \\sqrt{9^2 + 12^2} = \\sqrt{81 + 144} = \\sqrt{225} = 15$ cm.",
+    "d": 1,
+    "s": "Y8.5",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0771",
+    "cat": "geometry",
+    "topic": "Intro to Pythagoras' Theorem",
+    "q": "In the Pythagoras' theorem formula $x^2 + y^2 = z^2$, which letter represents the hypotenuse?",
+    "o": [
+      "$x$",
+      "$y$",
+      "$z$",
+      "None of these"
+    ],
+    "a": 2,
+    "e": "In the standard form $a^2 + b^2 = c^2$ (or $x^2 + y^2 = z^2$), the single term on one side of the equals sign always represents the hypotenuse squared.",
+    "d": 1,
+    "s": "Y8.5",
+    "diag": "vocab"
+  },
+  {
+    "id": "hv0772",
+    "cat": "geometry",
+    "topic": "Intro to Pythagoras' Theorem",
+    "q": "Pythagoras' Theorem is a relationship between the sides of which type of triangle?",
+    "o": [
+      "Equilateral triangle",
+      "Isosceles triangle",
+      "Right-angled triangle",
+      "Scalene triangle"
+    ],
+    "a": 2,
+    "e": "Pythagoras' Theorem ONLY applies to right-angled triangles, where one angle is exactly $90^\\circ$.",
+    "d": 1,
+    "s": "Y8.5",
+    "diag": "vocab"
+  },
+  {
+    "id": "hv0773",
+    "cat": "geometry",
+    "topic": "Intro to Pythagoras' Theorem",
+    "q": "Which of the following best describes the hypotenuse of a right-angled triangle?",
+    "o": [
+      "The shortest side",
+      "The side adjacent to the right angle",
+      "The longest side, opposite the right angle",
+      "The vertical height of the triangle"
+    ],
+    "a": 2,
+    "e": "The hypotenuse is defined as the side opposite the right angle and is always the longest side of the triangle.",
+    "d": 1,
+    "s": "Y8.5",
+    "diag": "vocab"
+  },
+  {
+    "id": "hv0781",
+    "cat": "geometry",
+    "topic": "Intro to Pythagoras' Theorem",
+    "q": "A right-angled triangle has a hypotenuse of $10$ cm and one leg of $6$ cm. Find the length of the other leg.",
+    "o": [
+      "$8$ cm",
+      "$4$ cm",
+      "$16$ cm",
+      "$\\sqrt{136}$ cm"
+    ],
+    "a": 0,
+    "e": "$b = \\sqrt{10^2 - 6^2} = \\sqrt{100 - 36} = \\sqrt{64} = 8$ cm.",
+    "d": 2,
+    "s": "Y8.5",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0782",
+    "cat": "geometry",
+    "topic": "Intro to Pythagoras' Theorem",
+    "q": "In a right-angled triangle, the longest side is $17$ cm and another side is $15$ cm. What is the length of the third side?",
+    "o": [
+      "$2$ cm",
+      "$8$ cm",
+      "$32$ cm",
+      "$225$ cm"
+    ],
+    "a": 1,
+    "e": "$a = \\sqrt{17^2 - 15^2} = \\sqrt{289 - 225} = \\sqrt{64} = 8$ cm.",
+    "d": 2,
+    "s": "Y8.5",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0783",
+    "cat": "geometry",
+    "topic": "Intro to Pythagoras' Theorem",
+    "q": "Find the missing side of a right-angled triangle with hypotenuse $25$ cm and one side $24$ cm.",
+    "o": [
+      "$1$ cm",
+      "$49$ cm",
+      "$7$ cm",
+      "$31$ cm"
+    ],
+    "a": 2,
+    "e": "$b = \\sqrt{25^2 - 24^2} = \\sqrt{625 - 576} = \\sqrt{49} = 7$ cm.",
+    "d": 2,
+    "s": "Y8.5",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0791",
+    "cat": "geometry",
+    "topic": "Intro to Pythagoras' Theorem",
+    "q": "A $13$ m wire is attached to the top of a $12$ m tall vertical pole and stretched to a point on the ground. How far is that point from the base of the pole?",
+    "o": [
+      "$1$ m",
+      "$25$ m",
+      "$17.7$ m",
+      "$5$ m"
+    ],
+    "a": 3,
+    "e": "$d = \\sqrt{13^2 - 12^2} = \\sqrt{169 - 144} = \\sqrt{25} = 5$ m.",
+    "d": 2,
+    "s": "Y8.5",
+    "diag": "logic"
+  },
+  {
+    "id": "hv0792",
+    "cat": "geometry",
+    "topic": "Intro to Pythagoras' Theorem",
+    "q": "A rectangular field measures $30$ m by $40$ m. What is the length of the diagonal path from one corner to the opposite corner?",
+    "o": [
+      "$50$ m",
+      "$70$ m",
+      "$10$ m",
+      "$2500$ m"
+    ],
+    "a": 0,
+    "e": "The diagonal forms the hypotenuse: $d = \\sqrt{30^2 + 40^2} = \\sqrt{900 + 1600} = \\sqrt{2500} = 50$ m.",
+    "d": 2,
+    "s": "Y8.5",
+    "diag": "logic"
+  },
+  {
+    "id": "hv0793",
+    "cat": "geometry",
+    "topic": "Intro to Pythagoras' Theorem",
+    "q": "A boat travels $15$ km North and then $8$ km East. What is the direct distance from the starting point to the boat's current position?",
+    "o": [
+      "$23$ km",
+      "$17$ km",
+      "$289$ km",
+      "$13$ km"
+    ],
+    "a": 1,
+    "e": "The direct distance is the hypotenuse: $d = \\sqrt{15^2 + 8^2} = \\sqrt{225 + 64} = \\sqrt{289} = 17$ km.",
+    "d": 2,
+    "s": "Y8.5",
+    "diag": "logic"
+  }
+]

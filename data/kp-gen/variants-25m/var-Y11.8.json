@@ -1,0 +1,206 @@
+[
+  {
+    "id": "hv0528",
+    "cat": "algebra",
+    "topic": "Graphs of Trigonometric Functions",
+    "q": "What is the period of $y = \\cos x$?",
+    "o": [
+      "$360°$",
+      "$180°$",
+      "$90°$",
+      "$720°$"
+    ],
+    "a": 0,
+    "e": "The period of $\\cos x$ is $360°$.",
+    "d": 1,
+    "s": "Y11.8",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0529",
+    "cat": "algebra",
+    "topic": "Graphs of Trigonometric Functions",
+    "q": "What is the period of the function $y = 2\\sin x$?",
+    "o": [
+      "$360°$",
+      "$720°$",
+      "$180°$",
+      "$90°$"
+    ],
+    "a": 0,
+    "e": "The period of $\\sin x$ is $360°$. A vertical stretch (coefficient 2) does not change the period.",
+    "d": 1,
+    "s": "Y11.8",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0530",
+    "cat": "algebra",
+    "topic": "Graphs of Trigonometric Functions",
+    "q": "What is the period of $y = \\cos(x + 30°)$?",
+    "o": [
+      "$360°$",
+      "$180°$",
+      "$330°$",
+      "$390°$"
+    ],
+    "a": 0,
+    "e": "A horizontal translation does not affect the period. The period of $\\cos(x + 30°)$ is $360°$.",
+    "d": 1,
+    "s": "Y11.8",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0531",
+    "cat": "algebra",
+    "topic": "Graphs of Trigonometric Functions",
+    "q": "What is the amplitude of $y = 5\\sin x$?",
+    "o": [
+      "$1$",
+      "$5$",
+      "$10$",
+      "$0.2$"
+    ],
+    "a": 1,
+    "e": "The amplitude is the coefficient of $\\sin x$, which is $5$.",
+    "d": 1,
+    "s": "Y11.8",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0532",
+    "cat": "algebra",
+    "topic": "Graphs of Trigonometric Functions",
+    "q": "What is the amplitude of $y = 0.5\\cos x$?",
+    "o": [
+      "$1$",
+      "$0.25$",
+      "$0.5$",
+      "$2$"
+    ],
+    "a": 2,
+    "e": "The amplitude is the coefficient of the trigonometric function, which is $0.5$.",
+    "d": 1,
+    "s": "Y11.8",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0533",
+    "cat": "algebra",
+    "topic": "Graphs of Trigonometric Functions",
+    "q": "What is the amplitude of $y = -4\\sin x$?",
+    "o": [
+      "$-4$",
+      "$4$",
+      "$1$",
+      "$8$"
+    ],
+    "a": 1,
+    "e": "The amplitude is the absolute value of the coefficient: $|-4| = 4$.",
+    "d": 1,
+    "s": "Y11.8",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0534",
+    "cat": "algebra",
+    "topic": "Graphs of Trigonometric Functions",
+    "q": "The graph of $y = \\cos(3x)$ has what period?",
+    "o": [
+      "$360°$",
+      "$180°$",
+      "$120°$",
+      "$1080°$"
+    ],
+    "a": 2,
+    "e": "Period $= \\frac{360°}{3} = 120°$.",
+    "d": 2,
+    "s": "Y11.8",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0535",
+    "cat": "algebra",
+    "topic": "Graphs of Trigonometric Functions",
+    "q": "The graph of $y = \\sin(4x)$ has what period?",
+    "o": [
+      "$90°$",
+      "$180°$",
+      "$360°$",
+      "$1440°$"
+    ],
+    "a": 0,
+    "e": "Period $= \\frac{360°}{4} = 90°$.",
+    "d": 2,
+    "s": "Y11.8",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0536",
+    "cat": "algebra",
+    "topic": "Graphs of Trigonometric Functions",
+    "q": "The graph of $y = \\cos(0.5x)$ has what period?",
+    "o": [
+      "$180°$",
+      "$360°$",
+      "$540°$",
+      "$720°$"
+    ],
+    "a": 3,
+    "e": "Period $= \\frac{360°}{0.5} = 720°$.",
+    "d": 2,
+    "s": "Y11.8",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0537",
+    "cat": "algebra",
+    "topic": "Graphs of Trigonometric Functions",
+    "q": "The graph of $y = \\sin(x + 90°)$ is equivalent to which graph?",
+    "o": [
+      "$y = \\cos x$",
+      "$y = -\\cos x$",
+      "$y = \\sin x$",
+      "$y = -\\sin x$"
+    ],
+    "a": 0,
+    "e": "$\\sin(x + 90°) = \\cos x$ is a standard identity.",
+    "d": 2,
+    "s": "Y11.8",
+    "diag": "logic"
+  },
+  {
+    "id": "hv0538",
+    "cat": "algebra",
+    "topic": "Graphs of Trigonometric Functions",
+    "q": "The graph of $y = \\cos(x + 90°)$ is equivalent to which graph?",
+    "o": [
+      "$y = \\sin x$",
+      "$y = -\\sin x$",
+      "$y = \\cos x$",
+      "$y = -\\cos x$"
+    ],
+    "a": 1,
+    "e": "$\\cos(x + 90°) = -\\sin x$ is a standard identity.",
+    "d": 2,
+    "s": "Y11.8",
+    "diag": "logic"
+  },
+  {
+    "id": "hv0539",
+    "cat": "algebra",
+    "topic": "Graphs of Trigonometric Functions",
+    "q": "The graph of $y = \\sin(x - 90°)$ is equivalent to which graph?",
+    "o": [
+      "$y = \\sin x$",
+      "$y = -\\cos x$",
+      "$y = \\cos x$",
+      "$y = -\\sin x$"
+    ],
+    "a": 1,
+    "e": "$\\sin(x - 90°) = -\\cos x$ is a standard identity.",
+    "d": 2,
+    "s": "Y11.8",
+    "diag": "logic"
+  }
+]

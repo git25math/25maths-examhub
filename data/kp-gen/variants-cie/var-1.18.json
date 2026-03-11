@@ -1,0 +1,98 @@
+[
+  {
+    "id": "cv1525",
+    "cat": "number",
+    "topic": "Surds",
+    "q": "Simplify $\\sqrt{75}$.",
+    "o": [
+      "$5\\sqrt{3}$",
+      "$3\\sqrt{25}$",
+      "$25\\sqrt{3}$",
+      "$3\\sqrt{5}$"
+    ],
+    "a": 0,
+    "e": "To simplify $\\sqrt{75}$, find the largest square number that is a factor of 75. This is 25. So, $\\sqrt{75} = \\sqrt{25 \\times 3} = \\sqrt{25} \\times \\sqrt{3} = 5\\sqrt{3}$.",
+    "d": 2,
+    "s": "1.18"
+  },
+  {
+    "id": "cv1526",
+    "cat": "number",
+    "topic": "Surds",
+    "q": "Simplify $\\sqrt{72}$.",
+    "o": [
+      "$6\\sqrt{2}$",
+      "$3\\sqrt{8}$",
+      "$36\\sqrt{2}$",
+      "$2\\sqrt{6}$"
+    ],
+    "a": 0,
+    "e": "To simplify $\\sqrt{72}$, find the largest square number that is a factor of 72. This is 36. So, $\\sqrt{72} = \\sqrt{36 \\times 2} = \\sqrt{36} \\times \\sqrt{2} = 6\\sqrt{2}$.",
+    "d": 2,
+    "s": "1.18"
+  },
+  {
+    "id": "cv1527",
+    "cat": "number",
+    "topic": "Surds",
+    "q": "Simplify $\\sqrt{108}$.",
+    "o": [
+      "$6\\sqrt{3}$",
+      "$3\\sqrt{6}$",
+      "$18\\sqrt{3}$",
+      "$36\\sqrt{3}$"
+    ],
+    "a": 0,
+    "e": "To simplify $\\sqrt{108}$, find the largest square number that is a factor of 108. This is 36. So, $\\sqrt{108} = \\sqrt{36 \\times 3} = \\sqrt{36} \\times \\sqrt{3} = 6\\sqrt{3}$.",
+    "d": 2,
+    "s": "1.18"
+  },
+  {
+    "id": "cv1528",
+    "cat": "number",
+    "topic": "Surds",
+    "q": "Calculate $\\sqrt{20} + \\sqrt{45}$.",
+    "o": [
+      "$\\sqrt{65}$",
+      "$5\\sqrt{5}$",
+      "$13\\sqrt{5}$",
+      "$6\\sqrt{5}$"
+    ],
+    "a": 1,
+    "e": "First, simplify the surds: $\\sqrt{20} = \\sqrt{4 \\times 5} = 2\\sqrt{5}$ and $\\sqrt{45} = \\sqrt{9 \\times 5} = 3\\sqrt{5}$. Then, add the simplified surds: $2\\sqrt{5} + 3\\sqrt{5} = 5\\sqrt{5}$.",
+    "d": 2,
+    "s": "1.18"
+  },
+  {
+    "id": "cv1529",
+    "cat": "number",
+    "topic": "Surds",
+    "q": "Calculate $\\sqrt{12} + \\sqrt{27}$.",
+    "o": [
+      "$\\sqrt{39}$",
+      "$5\\sqrt{3}$",
+      "$6\\sqrt{3}$",
+      "$13\\sqrt{3}$"
+    ],
+    "a": 1,
+    "e": "First, simplify the surds: $\\sqrt{12} = \\sqrt{4 \\times 3} = 2\\sqrt{3}$ and $\\sqrt{27} = \\sqrt{9 \\times 3} = 3\\sqrt{3}$. Then, add the simplified surds: $2\\sqrt{3} + 3\\sqrt{3} = 5\\sqrt{3}$.",
+    "d": 2,
+    "s": "1.18"
+  },
+  {
+    "id": "cv1530",
+    "cat": "number",
+    "topic": "Surds",
+    "q": "Calculate $\\sqrt{32} + \\sqrt{8}$.",
+    "o": [
+      "$\\sqrt{40}$",
+      "$6\\sqrt{2}$",
+      "$2\\sqrt{2}$",
+      "$10\\sqrt{2}$"
+    ],
+    "a": 1,
+    "e": "First, simplify the surds: $\\sqrt{32} = \\sqrt{16 \\times 2} = 4\\sqrt{2}$ and $\\sqrt{8} = \\sqrt{4 \\times 2} = 2\\sqrt{2}$. Then, add the simplified surds: $4\\sqrt{2} + 2\\sqrt{2} = 6\\sqrt{2}$.",
+    "d": 2,
+    "s": "1.18"
+  }
+]

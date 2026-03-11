@@ -1,0 +1,206 @@
+[
+  {
+    "id": "hv0420",
+    "cat": "number",
+    "topic": "Estimation & Bounds",
+    "q": "A length is measured as $15.7$ cm to 1 decimal place. What is the upper bound?",
+    "o": [
+      "$15.8$ cm",
+      "$15.75$ cm",
+      "$15.79$ cm",
+      "$15.74$ cm"
+    ],
+    "a": 1,
+    "e": "To 1 d.p., the degree of accuracy is $0.1$ cm. The upper bound is $15.7 + \\frac{0.1}{2} = 15.7 + 0.05 = 15.75$ cm.",
+    "d": 1,
+    "s": "Y11.1",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0421",
+    "cat": "number",
+    "topic": "Estimation & Bounds",
+    "q": "A height is measured as $8.3$ m to 1 decimal place. What is the upper bound?",
+    "o": [
+      "$8.4$ m",
+      "$8.35$ m",
+      "$8.39$ m",
+      "$8.34$ m"
+    ],
+    "a": 1,
+    "e": "To 1 d.p., the upper bound is $8.3 + 0.05 = 8.35$ m.",
+    "d": 1,
+    "s": "Y11.1",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0422",
+    "cat": "number",
+    "topic": "Estimation & Bounds",
+    "q": "A time is recorded as $24.9$ s to 1 decimal place. What is the upper bound?",
+    "o": [
+      "$25.0$ s",
+      "$24.95$ s",
+      "$24.99$ s",
+      "$24.94$ s"
+    ],
+    "a": 1,
+    "e": "To 1 d.p., the upper bound is $24.9 + 0.05 = 24.95$ s.",
+    "d": 1,
+    "s": "Y11.1",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0423",
+    "cat": "number",
+    "topic": "Estimation & Bounds",
+    "q": "A mass is $5.8$ kg, correct to 1 decimal place. What is the error interval?",
+    "o": [
+      "$5.75 \\leq m < 5.85$",
+      "$5.7 \\leq m < 5.9$",
+      "$5.75 < m < 5.85$",
+      "$5.8 \\leq m \\leq 5.85$"
+    ],
+    "a": 0,
+    "e": "To 1 d.p., the lower bound is $5.8 - 0.05 = 5.75$ and the upper bound is $5.8 + 0.05 = 5.85$. The interval is $5.75 \\leq m < 5.85$.",
+    "d": 1,
+    "s": "Y11.1",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0424",
+    "cat": "number",
+    "topic": "Estimation & Bounds",
+    "q": "A length $l$ is $10.2$ cm, correct to 1 decimal place. What is the error interval?",
+    "o": [
+      "$10.15 \\leq l < 10.25$",
+      "$10.1 \\leq l < 10.3$",
+      "$10.15 < l < 10.25$",
+      "$10.2 \\leq l \\leq 10.25$"
+    ],
+    "a": 0,
+    "e": "To 1 d.p., the error interval is $10.2 \\pm 0.05$, which is $10.15 \\leq l < 10.25$.",
+    "d": 1,
+    "s": "Y11.1",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0425",
+    "cat": "number",
+    "topic": "Estimation & Bounds",
+    "q": "A volume $V$ is $4.5$ litres, correct to 1 decimal place. What is the error interval?",
+    "o": [
+      "$4.45 \\leq V < 4.55$",
+      "$4.4 \\leq V < 4.6$",
+      "$4.45 < V < 4.55$",
+      "$4.5 \\leq V \\leq 4.55$"
+    ],
+    "a": 0,
+    "e": "To 1 d.p., the error interval is $4.5 \\pm 0.05$, which is $4.45 \\leq V < 4.55$.",
+    "d": 1,
+    "s": "Y11.1",
+    "diag": "concept"
+  },
+  {
+    "id": "hv0426",
+    "cat": "number",
+    "topic": "Estimation & Bounds",
+    "q": "$x = 4.2$ correct to 1 d.p. and $y = 6.8$ correct to 1 d.p. What is the upper bound of $x + y$?",
+    "o": [
+      "$11.0$",
+      "$11.05$",
+      "$10.9$",
+      "$11.10$"
+    ],
+    "a": 3,
+    "e": "Upper bounds: $x < 4.25$, $y < 6.85$. Upper bound of $x + y$ is $4.25 + 6.85 = 11.10$.",
+    "d": 2,
+    "s": "Y11.1",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0427",
+    "cat": "number",
+    "topic": "Estimation & Bounds",
+    "q": "$a = 7.1$ correct to 1 d.p. and $b = 2.4$ correct to 1 d.p. What is the upper bound of $a + b$?",
+    "o": [
+      "$9.5$",
+      "$9.55$",
+      "$9.4$",
+      "$9.60$"
+    ],
+    "a": 3,
+    "e": "Upper bounds: $a < 7.15$, $b < 2.45$. Upper bound of $a + b$ is $7.15 + 2.45 = 9.60$.",
+    "d": 2,
+    "s": "Y11.1",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0428",
+    "cat": "number",
+    "topic": "Estimation & Bounds",
+    "q": "$p = 1.9$ correct to 1 d.p. and $q = 3.5$ correct to 1 d.p. What is the upper bound of $p + q$?",
+    "o": [
+      "$5.4$",
+      "$5.45$",
+      "$5.3$",
+      "$5.50$"
+    ],
+    "a": 3,
+    "e": "Upper bounds: $p < 1.95$, $q < 3.55$. Upper bound of $p + q$ is $1.95 + 3.55 = 5.50$.",
+    "d": 2,
+    "s": "Y11.1",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0429",
+    "cat": "number",
+    "topic": "Estimation & Bounds",
+    "q": "$x = 10.4$ correct to 1 d.p. and $y = 4.2$ correct to 1 d.p. What is the lower bound of $\\frac{x}{y}$?",
+    "o": [
+      "$\\frac{10.45}{4.15}$",
+      "$\\frac{10.35}{4.15}$",
+      "$\\frac{10.45}{4.25}$",
+      "$\\frac{10.35}{4.25}$"
+    ],
+    "a": 3,
+    "e": "Lower bound of $\\frac{x}{y}$ uses the lower bound of $x$ ($10.35$) and the upper bound of $y$ ($4.25$): $\\frac{10.35}{4.25}$.",
+    "d": 2,
+    "s": "Y11.1",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0430",
+    "cat": "number",
+    "topic": "Estimation & Bounds",
+    "q": "$a = 6.6$ correct to 1 d.p. and $b = 1.2$ correct to 1 d.p. What is the lower bound of $\\frac{a}{b}$?",
+    "o": [
+      "$\\frac{6.65}{1.15}$",
+      "$\\frac{6.55}{1.15}$",
+      "$\\frac{6.65}{1.25}$",
+      "$\\frac{6.55}{1.25}$"
+    ],
+    "a": 3,
+    "e": "Lower bound of $\\frac{a}{b} = \\frac{\\text{LB } a}{\\text{UB } b} = \\frac{6.55}{1.25}$.",
+    "d": 2,
+    "s": "Y11.1",
+    "diag": "calc"
+  },
+  {
+    "id": "hv0431",
+    "cat": "number",
+    "topic": "Estimation & Bounds",
+    "q": "$m = 9.8$ correct to 1 d.p. and $n = 3.0$ correct to 1 d.p. What is the lower bound of $\\frac{m}{n}$?",
+    "o": [
+      "$\\frac{9.85}{2.95}$",
+      "$\\frac{9.75}{2.95}$",
+      "$\\frac{9.85}{3.05}$",
+      "$\\frac{9.75}{3.05}$"
+    ],
+    "a": 3,
+    "e": "Lower bound of $\\frac{m}{n} = \\frac{\\text{LB } m}{\\text{UB } n} = \\frac{9.75}{3.05}$.",
+    "d": 2,
+    "s": "Y11.1",
+    "diag": "calc"
+  }
+]

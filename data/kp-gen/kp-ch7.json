@@ -1,0 +1,281 @@
+[
+  {
+    "id": "kp-7.1-01",
+    "section": "7.1",
+    "order": 1,
+    "title": "Translation, Reflection & Rotation",
+    "title_zh": "平移、反射与旋转",
+    "explanation": {
+      "en": "**Translation** moves an object by a certain distance in a specific direction without changing its shape or orientation. It is described by a column vector $\\begin{pmatrix} x \\\\ y \\end{pmatrix}$, where $x$ is the horizontal shift and $y$ is the vertical shift.\n\n**Reflection** creates a mirror image of an object across a line called the line of reflection (e.g., $y=x$ or $x=2$). Every point on the image is the same distance from the line as the corresponding point on the original object.\n\n**Rotation** turns an object around a fixed point called the center of rotation. To describe a rotation, you must state the angle (e.g., $90^\\circ$, $180^\\circ$), the direction (clockwise or anti-clockwise), and the center of rotation (e.g., the origin $(0,0)$).",
+      "zh": "**平移** (Translation) 将物体沿特定方向移动特定距离，不改变其形状或方向。平移由列向量 $\\begin{pmatrix} x \\\\ y \\end{pmatrix}$ 描述，其中 $x$ 是水平位移，$y$ 是垂直位移。\n\n**反射** (Reflection) 沿一条称为反射轴的直线（如 $y=x$ 或 $x=2$）创建物体的镜像。图像上的每个点到反射轴的距离与原物体上对应点到该轴的距离相等。\n\n**旋转** (Rotation) 绕一个称为旋转中心的固定点转动物体。描述旋转时，必须说明旋转角度（如 $90^\\circ$、$180^\\circ$）、方向（顺时针或逆时针）以及旋转中心（如原点 $(0,0)$）。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-describe-trans",
+        "label": "Describe a single transformation",
+        "label_zh": "描述单一变换",
+        "description": "Given an object and its image, identify if it is a translation, reflection, or rotation and provide the necessary parameters.",
+        "description_zh": "给出物体及其图像，辨别它是平移、反射还是旋转，并提供必要的参数。"
+      },
+      {
+        "id": "ep-draw-trans",
+        "label": "Draw the image after transformation",
+        "label_zh": "绘制变换后的图像",
+        "description": "Perform the specified transformation on a grid to draw the new image.",
+        "description_zh": "在网格上执行指定的变换以绘制新图像。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-describe-trans",
+        "question": "Triangle A is mapped onto Triangle B by a rotation. Describe fully the single transformation.",
+        "question_zh": "三角形 A 通过旋转映射到三角形 B。请完整描述该单一变换。",
+        "solution": "**Step 1:** Observe the orientation. The shape has turned $90^\\circ$ clockwise.\n\n**Step 2:** Find the center. By drawing perpendicular bisectors of lines connecting corresponding points, we find they intersect at $(0, 0)$.\n\n**Step 3:** State all three requirements.\n\n**Answer:** Rotation, $90^\\circ$ clockwise, center $(0, 0)$.",
+        "solution_zh": "**步骤1：** 观察方向。图形顺时针转动了 $90^\\circ$。\n\n**步骤2：** 寻找中心。通过绘制连接对应点的线段的垂直平分线，我们发现它们交于 $(0, 0)$。\n\n**步骤3：** 陈述所有三个要素。\n\n**答案：** 旋转，顺时针 $90^\\circ$，旋转中心 $(0, 0)$。",
+        "source": "0580/21/M/J/20"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "Which vector represents a translation of 3 units left and 2 units up?",
+        "q_zh": "哪个向量表示向左平移 3 个单位，向上平移 2 个单位？",
+        "o": [
+          "$\\begin{pmatrix} 3 \\\\ 2 \\end{pmatrix}$",
+          "$\\begin{pmatrix} -3 \\\\ 2 \\end{pmatrix}$",
+          "$\\begin{pmatrix} -3 \\\\ -2 \\end{pmatrix}$",
+          "$\\begin{pmatrix} 3 \\\\ -2 \\end{pmatrix}$"
+        ],
+        "a": 1,
+        "e": "Left is negative $x$ (-3) and up is positive $y$ (+2).",
+        "e_zh": "向左是负 $x$ (-3)，向上是正 $y$ (+2)。"
+      },
+      {
+        "q": "Triangle T is reflected in the line $y = x$. If a point on T is $(2, 5)$, what are the coordinates of the corresponding point on the image?",
+        "q_zh": "三角形 T 在直线 $y = x$ 中反射。如果 T 上一点是 $(2, 5)$，那么图像上对应点的坐标是多少？",
+        "o": [
+          "$(5, 2)$",
+          "$(-2, -5)$",
+          "$(2, -5)$",
+          "$(-5, -2)$"
+        ],
+        "a": 0,
+        "e": "In a reflection in $y = x$, the coordinates $(x, y)$ become $(y, x)$. So $(2, 5)$ becomes $(5, 2)$.",
+        "e_zh": "在 $y = x$ 的反射中，坐标 $(x, y)$ 变为 $(y, x)$。因此 $(2, 5)$ 变为 $(5, 2)$。"
+      }
+    ],
+    "vocabLinks": [
+      "transformations"
+    ],
+    "tier": "both"
+  },
+  {
+    "id": "kp-7.1-02",
+    "section": "7.1",
+    "order": 2,
+    "title": "Enlargement",
+    "title_zh": "位似变换 (放大与缩小)",
+    "explanation": {
+      "en": "**Enlargement** changes the size of an object while keeping its shape. It is defined by a **center of enlargement** and a **scale factor** ($k$).\n\n**Scale factor $k > 1$** makes the object larger and further from the center.\n\n**Scale factor $0 < k < 1$** makes the object smaller and closer to the center.\n\n**Negative scale factor $k < 0$** means the image is on the opposite side of the center and is inverted (turned upside down).",
+      "zh": "**位似变换** (Enlargement) 在保持形状不变的情况下改变物体的大小。它由**位似中心**和**比例因子** ($k$) 定义。\n\n**比例因子 $k > 1$** 使物体变大且远离中心。\n\n**比例因子 $0 < k < 1$** 使物体变小且靠近中心。\n\n**负比例因子 $k < 0$** 意味着图像位于中心的相反侧，并且是倒置的。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-find-center",
+        "label": "Find the center of enlargement",
+        "label_zh": "寻找位似中心",
+        "description": "Draw lines connecting corresponding vertices of the object and image; the point where they intersect is the center.",
+        "description_zh": "连接物体和图像的对应顶点并画线；它们的交点即为位似中心。"
+      },
+      {
+        "id": "ep-calc-sf",
+        "label": "Calculate scale factor",
+        "label_zh": "计算比例因子",
+        "description": "$k = \\frac{\\text{image side length}}{\\text{object side length}}$ or $k = \\frac{\\text{distance from center to image}}{\\text{distance from center to object}}$.",
+        "description_zh": "$k = \\frac{\\text{图像边长}}{\\text{物体边长}}$ 或 $k = \\frac{\\text{中心到图像的距离}}{\\text{中心到物体的距离}}$。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-calc-sf",
+        "question": "A rectangle with side length 4 cm is enlarged to a rectangle with side length 10 cm. Find the scale factor.",
+        "question_zh": "一个边长为 4 cm 的矩形被放大为边长为 10 cm 的矩形。求比例因子。",
+        "solution": "**Step 1:** Identify the image and object lengths.\nImage length = $10$ cm, Object length = $4$ cm.\n\n**Step 2:** Apply the formula $k = \\frac{\\text{Image}}{\\text{Object}}$.\n$k = \\frac{10}{4} = 2.5$.\n\n**Answer:** $2.5$",
+        "solution_zh": "**步骤1：** 确定图像和物体的长度。\n图像长度 = $10$ cm，物体长度 = $4$ cm。\n\n**步骤2：** 应用公式 $k = \\frac{\\text{图像}}{\\text{物体}}$。\n$k = \\frac{10}{4} = 2.5$。\n\n**答案：** $2.5$",
+        "source": "Adapted from 0580"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "An enlargement has a scale factor of $-2$. Which statement is true?",
+        "q_zh": "一个位似变换的比例因子为 $-2$。下列哪个说法是正确的？",
+        "o": [
+          "The image is half the size of the object",
+          "The image is twice the size and on the same side of the center",
+          "The image is twice the size and inverted on the opposite side of the center",
+          "The object and image are the same size"
+        ],
+        "a": 2,
+        "e": "A scale factor of 2 means it is twice as large. The negative sign means it is inverted and on the opposite side of the center.",
+        "e_zh": "比例因子为 2 表示物体放大两倍。负号表示图像是倒置的，并且位于中心的另一侧。"
+      }
+    ],
+    "vocabLinks": [
+      "transformations"
+    ],
+    "tier": "both"
+  },
+  {
+    "id": "kp-7.2-01",
+    "section": "7.2",
+    "order": 1,
+    "title": "Vectors in 2D",
+    "title_zh": "二维向量",
+    "explanation": {
+      "en": "A **vector** is a quantity that has both magnitude (size) and direction. In 2D, we often use **column vectors** $\\begin{pmatrix} x \\\\ y \\end{pmatrix}$.\n\n**Vector addition and subtraction** is done component-wise: $\\begin{pmatrix} a \\\\ b \\end{pmatrix} + \\begin{pmatrix} c \\\\ d \\end{pmatrix} = \\begin{pmatrix} a+c \\\\ b+d \\end{pmatrix}$.\n\n**Scalar multiplication** involves multiplying the vector by a number $k$: $k \\begin{pmatrix} x \\\\ y \\end{pmatrix} = \\begin{pmatrix} kx \\\\ ky \\end{pmatrix}$. This changes the length but keeps the direction (if $k>0$) or reverses it (if $k<0$).",
+      "zh": "**向量** (Vector) 是既有大小又有方向的量。在二维空间中，我们通常使用**列向量** $\\begin{pmatrix} x \\\\ y \\end{pmatrix}$。\n\n**向量的加减法** 按对应分量进行：$\\begin{pmatrix} a \\\\ b \\end{pmatrix} + \\begin{pmatrix} c \\\\ d \\end{pmatrix} = \\begin{pmatrix} a+c \\\\ b+d \\end{pmatrix}$。\n\n**数乘向量** (Scalar multiplication) 是将向量乘以一个数 $k$：$k \\begin{pmatrix} x \\\\ y \\end{pmatrix} = \\begin{pmatrix} kx \\\\ ky \\end{pmatrix}$。这会改变向量的长度，但保持方向（若 $k>0$）或反转方向（若 $k<0$）。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-vector-ops",
+        "label": "Perform vector arithmetic",
+        "label_zh": "进行向量运算",
+        "description": "Calculate $2\\mathbf{a} + \\mathbf{b}$ or similar expressions given column vectors.",
+        "description_zh": "给出列向量，计算 $2\\mathbf{a} + \\mathbf{b}$ 或类似的表达式。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-vector-ops",
+        "question": "If $\\mathbf{a} = \\begin{pmatrix} 3 \\\\ -1 \\end{pmatrix}$ and $\\mathbf{b} = \\begin{pmatrix} -2 \\\\ 5 \\end{pmatrix}$, find $2\\mathbf{a} - \\mathbf{b}$.",
+        "question_zh": "如果 $\\mathbf{a} = \\begin{pmatrix} 3 \\\\ -1 \\end{pmatrix}$ 且 $\\mathbf{b} = \\begin{pmatrix} -2 \\\\ 5 \\end{pmatrix}$，求 $2\\mathbf{a} - \\mathbf{b}$。",
+        "solution": "**Step 1:** Multiply $\\mathbf{a}$ by 2.\n$2\\mathbf{a} = 2 \\begin{pmatrix} 3 \\\\ -1 \\end{pmatrix} = \\begin{pmatrix} 6 \\\\ -2 \\end{pmatrix}$.\n\n**Step 2:** Subtract $\\mathbf{b}$.\n$2\\mathbf{a} - \\mathbf{b} = \\begin{pmatrix} 6 \\\\ -2 \\end{pmatrix} - \\begin{pmatrix} -2 \\\\ 5 \\end{pmatrix} = \\begin{pmatrix} 6 - (-2) \\\\ -2 - 5 \\end{pmatrix} = \\begin{pmatrix} 8 \\\\ -7 \\end{pmatrix}$.\n\n**Answer:** $\\begin{pmatrix} 8 \\\\ -7 \\end{pmatrix}$",
+        "solution_zh": "**步骤1：** 将 $\\mathbf{a}$ 乘以 2。\n$2\\mathbf{a} = 2 \\begin{pmatrix} 3 \\\\ -1 \\end{pmatrix} = \\begin{pmatrix} 6 \\\\ -2 \\end{pmatrix}$。\n\n**步骤2：** 减去 $\\mathbf{b}$。\n$2\\mathbf{a} - \\mathbf{b} = \\begin{pmatrix} 6 \\\\ -2 \\end{pmatrix} - \\begin{pmatrix} -2 \\\\ 5 \\end{pmatrix} = \\begin{pmatrix} 6 - (-2) \\\\ -2 - 5 \\end{pmatrix} = \\begin{pmatrix} 8 \\\\ -7 \\end{pmatrix}$。\n\n**答案：** $\\begin{pmatrix} 8 \\\\ -7 \\end{pmatrix}$",
+        "source": "0580/22/O/N/19"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "Calculate $3 \\begin{pmatrix} 4 \\\\ -2 \\end{pmatrix}$.",
+        "q_zh": "计算 $3 \\begin{pmatrix} 4 \\\\ -2 \\end{pmatrix}$。",
+        "o": [
+          "$\\begin{pmatrix} 12 \\\\ -2 \\end{pmatrix}$",
+          "$\\begin{pmatrix} 12 \\\\ -6 \\end{pmatrix}$",
+          "$\\begin{pmatrix} 7 \\\\ 1 \\end{pmatrix}$",
+          "$\\begin{pmatrix} 1.33 \\\\ -0.66 \\end{pmatrix}$"
+        ],
+        "a": 1,
+        "e": "Multiply both top and bottom numbers by 3: $3 \\times 4 = 12$ and $3 \\times (-2) = -6$.",
+        "e_zh": "将上下两个数都乘以 3：$3 \\times 4 = 12$ 且 $3 \\times (-2) = -6$。"
+      }
+    ],
+    "vocabLinks": [
+      "vectors"
+    ],
+    "tier": "both"
+  },
+  {
+    "id": "kp-7.3-01",
+    "section": "7.3",
+    "order": 1,
+    "title": "Magnitude of a vector",
+    "title_zh": "向量的模",
+    "explanation": {
+      "en": "The **magnitude** (or modulus) of a vector is its length. For a vector $\\mathbf{a} = \\begin{pmatrix} x \\\\ y \\end{pmatrix}$, the magnitude is denoted by $|\\mathbf{a}|$.\n\nIt is calculated using **Pythagoras' Theorem**: $|\\mathbf{a}| = \\sqrt{x^2 + y^2}$.\n\nMagnitude is always a scalar (a simple number) and is always non-negative.",
+      "zh": "向量的**模** (Magnitude/Modulus) 就是它的长度。对于向量 $\\mathbf{a} = \\begin{pmatrix} x \\\\ y \\end{pmatrix}$，其模记作 $|\\mathbf{a}|$。\n\n它是利用**勾股定理**计算的：$|\\mathbf{a}| = \\sqrt{x^2 + y^2}$。\n\n模始终是一个标量（一个普通数值），且始终为非负数。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-calc-mag",
+        "label": "Calculate the magnitude of a column vector",
+        "label_zh": "计算列向量的模",
+        "description": "Given a column vector, use the square root formula to find its length.",
+        "description_zh": "给出一个列向量，使用平方根公式求其长度。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-calc-mag",
+        "question": "Find the magnitude of the vector $\\begin{pmatrix} 5 \\\\ -12 \\end{pmatrix}$.",
+        "question_zh": "求向量 $\\begin{pmatrix} 5 \\\\ -12 \\end{pmatrix}$ 的模。",
+        "solution": "**Step 1:** Identify $x=5$ and $y=-12$.\n\n**Step 2:** Apply the formula $|\\mathbf{a}| = \\sqrt{x^2 + y^2}$.\n$|\\mathbf{a}| = \\sqrt{5^2 + (-12)^2} = \\sqrt{25 + 144} = \\sqrt{169} = 13$.\n\n**Answer:** $13$",
+        "solution_zh": "**步骤1：** 确定 $x=5$，$y=-12$。\n\n**步骤2：** 应用公式 $|\\mathbf{a}| = \\sqrt{x^2 + y^2}$。\n$|\\mathbf{a}| = \\sqrt{5^2 + (-12)^2} = \\sqrt{25 + 144} = \\sqrt{169} = 13$。\n\n**答案：** $13$",
+        "source": "Adapted from 0580"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "What is the magnitude of the vector $\\begin{pmatrix} -3 \\\\ 4 \\end{pmatrix}$?",
+        "q_zh": "向量 $\\begin{pmatrix} -3 \\\\ 4 \\end{pmatrix}$ 的模是多少？",
+        "o": [
+          "1",
+          "7",
+          "5",
+          "25"
+        ],
+        "a": 2,
+        "e": "$\\sqrt{(-3)^2 + 4^2} = \\sqrt{9 + 16} = \\sqrt{25} = 5$.",
+        "e_zh": "$\\sqrt{(-3)^2 + 4^2} = \\sqrt{9 + 16} = \\sqrt{25} = 5$。"
+      }
+    ],
+    "vocabLinks": [
+      "vectors"
+    ],
+    "tier": "both"
+  },
+  {
+    "id": "kp-7.4-01",
+    "section": "7.4",
+    "order": 1,
+    "title": "Vector Geometry",
+    "title_zh": "向量几何",
+    "explanation": {
+      "en": "**Position vectors** describe the position of a point relative to the origin $O$. For example, $\\vec{OA}$ is the position vector of point $A$.\n\nThe **Resultant vector** $\\vec{AB}$ can be found by traveling from $A$ to $B$ via $O$: $\\vec{AB} = \\vec{AO} + \\vec{OB} = -\\vec{OA} + \\vec{OB}$.\n\n**Parallel vectors** have the same direction. If two vectors $\\mathbf{a}$ and $\\mathbf{b}$ are parallel, then $\\mathbf{a} = k\\mathbf{b}$ for some constant $k$. If they also share a common point, they lie on a straight line (**collinear**).",
+      "zh": "**位置向量** (Position vectors) 描述一个点相对于原点 $O$ 的位置。例如，$\\vec{OA}$ 是点 $A$ 的位置向量。\n\n**合向量** (Resultant vector) $\\vec{AB}$ 可以通过从 $A$ 经由 $O$ 到达 $B$ 来找到：$\\vec{AB} = \\vec{AO} + \\vec{OB} = -\\vec{OA} + \\vec{OB}$。\n\n**平行向量**具有相同的方向。如果两个向量 $\\mathbf{a}$ 和 $\\mathbf{b}$ 平行，则 $\\mathbf{a} = k\\mathbf{b}$（$k$ 为常数）。如果它们还共有一个点，则它们位于同一直线上（**共线**）。"
+    },
+    "examPatterns": [
+      {
+        "id": "ep-vector-path",
+        "label": "Express a vector in terms of others",
+        "label_zh": "用其他向量表示一个向量",
+        "description": "Find a path between two points and express the result using given vectors $\\mathbf{a}$ and $\\mathbf{b}$.",
+        "description_zh": "寻找两点之间的路径，并使用给定的向量 $\\mathbf{a}$ 和 $\\mathbf{b}$ 表示结果。"
+      },
+      {
+        "id": "ep-prove-parallel",
+        "label": "Show vectors are parallel",
+        "label_zh": "证明向量平行",
+        "description": "Express two vectors in simplified form to show that one is a scalar multiple of the other.",
+        "description_zh": "以最简形式表示两个向量，以证明其中一个向量是另一个向量的数乘。"
+      }
+    ],
+    "examples": [
+      {
+        "patternId": "ep-vector-path",
+        "question": "In triangle $OAB$, $\\vec{OA} = \\mathbf{a}$ and $\\vec{OB} = \\mathbf{b}$. $M$ is the midpoint of $AB$. Find $\\vec{OM}$ in terms of $\\mathbf{a}$ and $\\mathbf{b}$.",
+        "question_zh": "在三角形 $OAB$ 中，$\\vec{OA} = \\mathbf{a}$ 且 $\\vec{OB} = \\mathbf{b}$。$M$ 是 $AB$ 的中点。用 $\\mathbf{a}$ 和 $\\mathbf{b}$ 表示 $\\vec{OM}$。",
+        "solution": "**Step 1:** Find $\\vec{AB}$.\n$\\vec{AB} = \\vec{AO} + \\vec{OB} = -\\mathbf{a} + \\mathbf{b}$.\n\n**Step 2:** Find $\\vec{AM}$.\nSince $M$ is the midpoint, $\\vec{AM} = \\frac{1}{2}\\vec{AB} = \\frac{1}{2}(\\mathbf{b} - \\mathbf{a})$.\n\n**Step 3:** Find $\\vec{OM}$.\n$\\vec{OM} = \\vec{OA} + \\vec{AM} = \\mathbf{a} + \\frac{1}{2}(\\mathbf{b} - \\mathbf{a}) = \\mathbf{a} + \\frac{1}{2}\\mathbf{b} - \\frac{1}{2}\\mathbf{a} = \\frac{1}{2}\\mathbf{a} + \\frac{1}{2}\\mathbf{b}$.\n\n**Answer:** $\\frac{1}{2}(\\mathbf{a} + \\mathbf{b})$",
+        "solution_zh": "**步骤1：** 求 $\\vec{AB}$。\n$\\vec{AB} = \\vec{AO} + \\vec{OB} = -\\mathbf{a} + \\mathbf{b}$。\n\n**步骤2：** 求 $\\vec{AM}$。\n因为 $M$ 是中点，$\\vec{AM} = \\frac{1}{2}\\vec{AB} = \\frac{1}{2}(\\mathbf{b} - \\mathbf{a})$。\n\n**步骤3：** 求 $\\vec{OM}$。\n$\\vec{OM} = \\vec{OA} + \\vec{AM} = \\mathbf{a} + \\frac{1}{2}(\\mathbf{b} - \\mathbf{a}) = \\mathbf{a} + \\frac{1}{2}\\mathbf{b} - \\frac{1}{2}\\mathbf{a} = \\frac{1}{2}\\mathbf{a} + \\frac{1}{2}\\mathbf{b}$。\n\n**答案：** $\\frac{1}{2}(\\mathbf{a} + \\mathbf{b})$",
+        "source": "0580/42/M/J/18"
+      }
+    ],
+    "testYourself": [
+      {
+        "q": "Given $\\vec{PQ} = 2\\mathbf{a} + 3\\mathbf{b}$ and $\\vec{RS} = 6\\mathbf{a} + 9\\mathbf{b}$, which statement is true?",
+        "q_zh": "已知 $\\vec{PQ} = 2\\mathbf{a} + 3\\mathbf{b}$ 且 $\\vec{RS} = 6\\mathbf{a} + 9\\mathbf{b}$，下列哪个说法正确？",
+        "o": [
+          "$\\vec{PQ}$ and $\\vec{RS}$ are perpendicular",
+          "$\\vec{PQ}$ and $\\vec{RS}$ are parallel",
+          "$\\vec{PQ}$ is longer than $\\vec{RS}$",
+          "They are the same vector"
+        ],
+        "a": 1,
+        "e": "$\\vec{RS} = 3(2\\mathbf{a} + 3\\mathbf{b}) = 3\\vec{PQ}$. Since one is a scalar multiple of the other, they are parallel.",
+        "e_zh": "$\\vec{RS} = 3(2\\mathbf{a} + 3\\mathbf{b}) = 3\\vec{PQ}$。因为其中一个向量是另一个向量的数乘，所以它们平行。"
+      }
+    ],
+    "vocabLinks": [
+      "vectors"
+    ],
+    "tier": "extended"
+  }
+]

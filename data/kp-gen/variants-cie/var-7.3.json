@@ -1,0 +1,98 @@
+[
+  {
+    "id": "cv1660",
+    "cat": "vectors",
+    "topic": "Magnitude Of A Vector",
+    "q": "Calculate the magnitude of the vector (6, 8).",
+    "o": [
+      "10",
+      "14",
+      "2",
+      "100"
+    ],
+    "a": 0,
+    "e": "The magnitude is calculated using Pythagoras' theorem: $\\sqrt{6^2 + 8^2} = \\sqrt{36 + 64} = \\sqrt{100} = 10$.",
+    "d": 2,
+    "s": "7.3"
+  },
+  {
+    "id": "cv1661",
+    "cat": "vectors",
+    "topic": "Magnitude Of A Vector",
+    "q": "Calculate the magnitude of the vector (8, 15).",
+    "o": [
+      "23",
+      "17",
+      "7",
+      "289"
+    ],
+    "a": 1,
+    "e": "The magnitude is calculated using Pythagoras' theorem: $\\sqrt{8^2 + 15^2} = \\sqrt{64 + 225} = \\sqrt{289} = 17$.",
+    "d": 2,
+    "s": "7.3"
+  },
+  {
+    "id": "cv1662",
+    "cat": "vectors",
+    "topic": "Magnitude Of A Vector",
+    "q": "Calculate the magnitude of the vector (20, 21).",
+    "o": [
+      "41",
+      "1",
+      "841",
+      "29"
+    ],
+    "a": 3,
+    "e": "The magnitude is calculated using Pythagoras' theorem: $\\sqrt{20^2 + 21^2} = \\sqrt{400 + 441} = \\sqrt{841} = 29$.",
+    "d": 2,
+    "s": "7.3"
+  },
+  {
+    "id": "cv1663",
+    "cat": "vectors",
+    "topic": "Magnitude Of A Vector",
+    "q": "Find the magnitude of the vector (-8, 6).",
+    "o": [
+      "2",
+      "14",
+      "10",
+      "100"
+    ],
+    "a": 2,
+    "e": "The magnitude is $\\sqrt{(-8)^2 + 6^2} = \\sqrt{64 + 36} = \\sqrt{100} = 10$. The negative sign of the component becomes positive when squared.",
+    "d": 2,
+    "s": "7.3"
+  },
+  {
+    "id": "cv1664",
+    "cat": "vectors",
+    "topic": "Magnitude Of A Vector",
+    "q": "Find the magnitude of the vector (7, -24).",
+    "o": [
+      "25",
+      "31",
+      "17",
+      "625"
+    ],
+    "a": 0,
+    "e": "The magnitude is $\\sqrt{7^2 + (-24)^2} = \\sqrt{49 + 576} = \\sqrt{625} = 25$. The negative sign becomes positive when squared.",
+    "d": 2,
+    "s": "7.3"
+  },
+  {
+    "id": "cv1665",
+    "cat": "vectors",
+    "topic": "Magnitude Of A Vector",
+    "q": "Find the magnitude of the vector (-9, 40).",
+    "o": [
+      "49",
+      "41",
+      "31",
+      "1681"
+    ],
+    "a": 1,
+    "e": "The magnitude is $\\sqrt{(-9)^2 + 40^2} = \\sqrt{81 + 1600} = \\sqrt{1681} = 41$. The squared negative component results in a positive value.",
+    "d": 2,
+    "s": "7.3"
+  }
+]

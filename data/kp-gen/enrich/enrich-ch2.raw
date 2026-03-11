@@ -1,0 +1,367 @@
+[
+  {
+    "id": "kp-2.1-01",
+    "addQuiz": [
+      {
+        "q": "Evaluate the expression \\frac{2a - b}{c^2} when a = 5, b = -4, and c = 2.",
+        "q_zh": "当 a = 5, b = -4, c = 2 时，求代数式 \\frac{2a - b}{c^2} 的值。",
+        "o": ["1.5", "3.5", "0.5", "2.5"],
+        "a": 1,
+        "e": "Substitute the values: \\frac{2(5) - (-4)}{2^2} = \\frac{10 + 4}{4} = \\frac{14}{4} = 3.5.",
+        "e_zh": "代入数值：\\frac{2(5) - (-4)}{2^2} = \\frac{10 + 4}{4} = \\frac{14}{4} = 3.5。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-sub-simple",
+        "question": "Given the formula v^2 = u^2 + 2as, calculate the value of s when v = 13, u = 5, and a = 6.",
+        "question_zh": "已知公式 v^2 = u^2 + 2as，当 v = 13, u = 5, a = 6 时，计算 s 的值。",
+        "solution": "1. Substitute the known values into the formula:\n13^2 = 5^2 + 2(6)s\n2. Calculate the squares:\n169 = 25 + 12s\n3. Subtract 25 from both sides:\n144 = 12s\n4. Divide by 12:\ns = 12",
+        "solution_zh": "1. 将已知数值代入公式：\n13^2 = 5^2 + 2(6)s\n2. 计算平方项：\n169 = 25 + 12s\n3. 等式两边同时减去 25：\n144 = 12s\n4. 除以 12：\ns = 12",
+        "source": "Adapted from 0580/21/M/J/21"
+      }
+    ]
+  },
+  {
+    "id": "kp-2.2-01",
+    "addQuiz": [
+      {
+        "q": "Make r the subject of the formula V = \\frac{4}{3}\\pi r^3.",
+        "q_zh": "将公式 V = \\frac{4}{3}\\pi r^3 变形，使 r 成为主元。",
+        "o": [
+          "r = \\sqrt[3]{\\frac{3V}{4\\pi}}",
+          "r = \\sqrt[3]{\\frac{4V}{3\\pi}}",
+          "r = \\frac{3V}{4\\pi}",
+          "r = \\sqrt{\\frac{3V}{4\\pi}}"
+        ],
+        "a": 0,
+        "e": "1. Multiply by 3: 3V = 4\\pi r^3. 2. Divide by 4\\pi: r^3 = \\frac{3V}{4\\pi}. 3. Take the cube root: r = \\sqrt[3]{\\frac{3V}{4\\pi}}.",
+        "e_zh": "1. 两边乘以 3：3V = 4\\pi r^3。2. 两边除以 4\\pi：r^3 = \\frac{3V}{4\\pi}。3. 开立方根：r = \\sqrt[3]{\\frac{3V}{4\\pi}}。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-change-subject",
+        "question": "Rearrange the formula to make x the subject: y = \\frac{x + 2}{x - 3}",
+        "question_zh": "将公式 y = \\frac{x + 2}{x - 3} 变形，使 x 成为主元。",
+        "solution": "1. Multiply both sides by (x - 3):\ny(x - 3) = x + 2\n2. Expand the bracket:\nxy - 3y = x + 2\n3. Collect terms with x on one side:\nxy - x = 3y + 2\n4. Factorise x:\nx(y - 1) = 3y + 2\n5. Divide by (y - 1):\nx = \\frac{3y + 2}{y - 1}",
+        "solution_zh": "1. 两边同时乘以 (x - 3)：\ny(x - 3) = x + 2\n2. 展开括号：\nxy - 3y = x + 2\n3. 将含 x 的项移到等式左边：\nxy - x = 3y + 2\n4. 提取公因式 x：\nx(y - 1) = 3y + 2\n5. 除以 (y - 1)：\nx = \\frac{3y + 2}{y - 1}",
+        "source": "0580/42/O/N/20"
+      }
+    ]
+  },
+  {
+    "id": "kp-2.3-01",
+    "addQuiz": [
+      {
+        "q": "Expand and simplify: (2x - 3)(x + 5)",
+        "q_zh": "展开并化简：(2x - 3)(x + 5)",
+        "o": [
+          "2x^2 + 7x - 15",
+          "2x^2 - 7x - 15",
+          "2x^2 + 13x - 15",
+          "2x^2 + 7x + 15"
+        ],
+        "a": 0,
+        "e": "(2x - 3)(x + 5) = 2x(x) + 2x(5) - 3(x) - 3(5) = 2x^2 + 10x - 3x - 15 = 2x^2 + 7x - 15.",
+        "e_zh": "(2x - 3)(x + 5) = 2x(x) + 2x(5) - 3(x) - 3(5) = 2x^2 + 10x - 3x - 15 = 2x^2 + 7x - 15。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-expand-simplify",
+        "question": "Expand and simplify: 3(2x - 1) - 2(x - 4)",
+        "question_zh": "展开并化简：3(2x - 1) - 2(x - 4)",
+        "solution": "1. Expand the first bracket: 6x - 3\n2. Expand the second bracket (careful with the sign): -2x + 8\n3. Combine like terms: (6x - 2x) + (-3 + 8)\n4. Simplify: 4x + 5",
+        "solution_zh": "1. 展开第一个括号：6x - 3\n2. 展开第二个括号（注意负号）：-2x + 8\n3. 合并同类项：(6x - 2x) + (-3 + 8)\n4. 化简：4x + 5",
+        "source": "0580/22/F/M/19"
+      }
+    ]
+  },
+  {
+    "id": "kp-2.3-02",
+    "addQuiz": [
+      {
+        "q": "Factorise completely: 9x^2 - 16y^2",
+        "q_zh": "彻底因式分解：9x^2 - 16y^2",
+        "o": [
+          "(3x - 4y)(3x + 4y)",
+          "(9x - 16y)(9x + 16y)",
+          "(3x - 4y)^2",
+          "3(x - y)(3x + 4y)"
+        ],
+        "a": 0,
+        "e": "This is a difference of two squares: a^2 - b^2 = (a - b)(a + b). Here a = 3x and b = 4y.",
+        "e_zh": "这是平方差公式：a^2 - b^2 = (a - b)(a + b)。这里 a = 3x 且 b = 4y。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-fact-quad",
+        "question": "Factorise completely: 2x^2 - 5x - 3",
+        "question_zh": "彻底因式分解：2x^2 - 5x - 3",
+        "solution": "1. Look for two numbers that multiply to (2 \\times -3) = -6 and add to -5.\n2. The numbers are -6 and 1.\n3. Split the middle term: 2x^2 - 6x + x - 3\n4. Factorise by grouping: 2x(x - 3) + 1(x - 3)\n5. Final factorisation: (2x + 1)(x - 3)",
+        "solution_zh": "1. 寻找两个数，使其乘积为 (2 \\times -3) = -6 且和为 -5。\n2. 这两个数是 -6 和 1。\n3. 拆分中间项：2x^2 - 6x + x - 3\n4. 分组分解：2x(x - 3) + 1(x - 3)\n5. 最终结果：(2x + 1)(x - 3)",
+        "source": "0580/23/O/N/21"
+      }
+    ]
+  },
+  {
+    "id": "kp-2.4-01",
+    "addQuiz": [
+      {
+        "q": "Simplify into a single fraction: \\frac{3}{x+2} - \\frac{2}{x-1}",
+        "q_zh": "化简为单个分式：\\frac{3}{x+2} - \\frac{2}{x-1}",
+        "o": [
+          "\\frac{x - 7}{(x+2)(x-1)}",
+          "\\frac{x + 7}{(x+2)(x-1)}",
+          "\\frac{1}{2x+1}",
+          "\\frac{x - 1}{(x+2)(x-1)}"
+        ],
+        "a": 0,
+        "e": "Common denominator is (x+2)(x-1). \\frac{3(x-1) - 2(x+2)}{(x+2)(x-1)} = \\frac{3x - 3 - 2x - 4}{(x+2)(x-1)} = \\frac{x - 7}{(x+2)(x-1)}.",
+        "e_zh": "公分母为 (x+2)(x-1)。\\frac{3(x-1) - 2(x+2)}{(x+2)(x-1)} = \\frac{3x - 3 - 2x - 4}{(x+2)(x-1)} = \\frac{x - 7}{(x+2)(x-1)}。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-simplify-fraction",
+        "question": "Simplify: \\frac{x^2 - 9}{2x^2 - 5x - 3}",
+        "question_zh": "化简：\\frac{x^2 - 9}{2x^2 - 5x - 3}",
+        "solution": "1. Factorise the numerator: (x - 3)(x + 3)\n2. Factorise the denominator: (2x + 1)(x - 3)\n3. Cancel the common factor (x - 3):\n\\frac{x + 3}{2x + 1}",
+        "solution_zh": "1. 分解分子：(x - 3)(x + 3)\n2. 分解分母：(2x + 1)(x - 3)\n3. 约去公因式 (x - 3)：\n\\frac{x + 3}{2x + 1}",
+        "source": "0580/41/M/J/22"
+      }
+    ]
+  },
+  {
+    "id": "kp-2.5-01",
+    "addQuiz": [
+      {
+        "q": "Solve the simultaneous equations: 3x + 2y = 12 and 2x - y = 1.",
+        "q_zh": "解二元一次方程组：3x + 2y = 12 和 2x - y = 1。",
+        "o": ["x = 2, y = 3", "x = 3, y = 2", "x = 4, y = 0", "x = 1, y = 1"],
+        "a": 0,
+        "e": "Multiply second equation by 2: 4x - 2y = 2. Add to first: 7x = 14 \\Rightarrow x = 2. Substitute x=2: 2(2) - y = 1 \\Rightarrow y = 3.",
+        "e_zh": "将第二个方程乘以 2：4x - 2y = 2。与第一个相加：7x = 14 \\Rightarrow x = 2。代入 x=2：2(2) - y = 1 \\Rightarrow y = 3。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-simultaneous",
+        "question": "Solve the simultaneous equations: 5x - 3y = 16 and 4x + 2y = 6.",
+        "question_zh": "解二元一次方程组：5x - 3y = 16 和 4x + 2y = 6。",
+        "solution": "1. Multiply first by 2: 10x - 6y = 32\n2. Multiply second by 3: 12x + 6y = 18\n3. Add the two equations: 22x = 50\n4. Solve for x: x = 50/22 = 25/11 (approx 2.27)\n5. Substitute to find y: 4(25/11) + 2y = 6 \\Rightarrow 100/11 + 2y = 66/11 \\Rightarrow 2y = -34/11 \\Rightarrow y = -17/11 (approx -1.55)",
+        "solution_zh": "1. 第一个方程乘以 2：10x - 6y = 32\n2. 第二个方程乘以 3：12x + 6y = 18\n3. 两式相加：22x = 50\n4. 解得 x：x = 25/11（约 2.27）\n5. 代入求 y：4(25/11) + 2y = 6 \\Rightarrow 100/11 + 2y = 66/11 \\Rightarrow 2y = -34/11 \\Rightarrow y = -17/11（约 -1.55）",
+        "source": "Adapted from 0580/42/M/J/18"
+      }
+    ]
+  },
+  {
+    "id": "kp-2.5-02",
+    "addQuiz": [
+      {
+        "q": "Solve x^2 - 5x + 6 = 0.",
+        "q_zh": "解方程 x^2 - 5x + 6 = 0。",
+        "o": ["x = 2, x = 3", "x = -2, x = -3", "x = 1, x = 6", "x = -1, x = -6"],
+        "a": 0,
+        "e": "Factorise: (x - 2)(x - 3) = 0. So x = 2 or x = 3.",
+        "e_zh": "因式分解：(x - 2)(x - 3) = 0。所以 x = 2 或 x = 3。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-solve-quad-formula",
+        "question": "Solve 3x^2 + 8x - 5 = 0. Give your answers correct to 2 decimal places.",
+        "question_zh": "解方程 3x^2 + 8x - 5 = 0。结果保留两位小数。",
+        "solution": "1. Use quadratic formula: x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}\n2. Substitute a=3, b=8, c=-5: x = \\frac{-8 \\pm \\sqrt{64 - 4(3)(-5)}}{6}\n3. Simplify: x = \\frac{-8 \\pm \\sqrt{124}}{6}\n4. Calculate roots: x \\approx 0.52 or x \\approx -3.19",
+        "solution_zh": "1. 使用求根公式：x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}\n2. 代入 a=3, b=8, c=-5：x = \\frac{-8 \\pm \\sqrt{64 - 4(3)(-5)}}{6}\n3. 化简：x = \\frac{-8 \\pm \\sqrt{124}}{6}\n4. 计算得：x \\approx 0.52 或 x \\approx -3.19",
+        "source": "0580/22/O/N/20"
+      }
+    ]
+  },
+  {
+    "id": "kp-2.6-01",
+    "addQuiz": [
+      {
+        "q": "Solve the inequality: 7 - 2x < 11.",
+        "q_zh": "解不等式：7 - 2x < 11。",
+        "o": ["x < -2", "x > -2", "x > 2", "x < 2"],
+        "a": 1,
+        "e": "1. Subtract 7: -2x < 4. 2. Divide by -2 (flip inequality): x > -2.",
+        "e_zh": "1. 减去 7：-2x < 4。2. 除以 -2（不等号变向）：x > -2。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-solve-ineq",
+        "question": "Find the integer values of n that satisfy: -5 < 2n - 1 \\leq 3.",
+        "question_zh": "求满足不等式 -5 < 2n - 1 \\leq 3 的所有整数 n 的值。",
+        "solution": "1. Add 1 to all parts: -4 < 2n \\leq 4\n2. Divide by 2: -2 < n \\leq 2\n3. List the integers: -1, 0, 1, 2",
+        "solution_zh": "1. 各项加 1：-4 < 2n \\leq 4\n2. 除以 2：-2 < n \\leq 2\n3. 列出整数值：-1, 0, 1, 2",
+        "source": "0580/21/M/J/17"
+      }
+    ]
+  },
+  {
+    "id": "kp-2.7-01",
+    "addQuiz": [
+      {
+        "q": "Find the nth term of the sequence: 4, 7, 10, 13, ...",
+        "q_zh": "求数列 4, 7, 10, 13, ... 的第 n 项表达式。",
+        "o": ["3n + 1", "3n + 4", "4n + 3", "n + 3"],
+        "a": 0,
+        "e": "Common difference is 3. Sequence starts at 4. Formula: a + (n-1)d = 4 + (n-1)3 = 3n + 1.",
+        "e_zh": "公差为 3。首项为 4。公式：a + (n-1)d = 4 + (n-1)3 = 3n + 1。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-nth-term-linear",
+        "question": "A linear sequence is 15, 11, 7, 3, ... Find the nth term and the 50th term.",
+        "question_zh": "一个线性数列为 15, 11, 7, 3, ... 求其第 n 项表达式和第 50 项的值。",
+        "solution": "1. Common difference d = 11 - 15 = -4.\n2. Use a + (n-1)d: 15 + (n-1)(-4) = 15 - 4n + 4 = 19 - 4n.\n3. For 50th term, substitute n = 50: 19 - 4(50) = 19 - 200 = -181.",
+        "solution_zh": "1. 公差 d = 11 - 15 = -4。\n2. 使用公式 a + (n-1)d：15 + (n-1)(-4) = 15 - 4n + 4 = 19 - 4n。\n3. 第 50 项，代入 n = 50：19 - 4(50) = 19 - 200 = -181。",
+        "source": "0580/22/M/J/19"
+      }
+    ]
+  },
+  {
+    "id": "kp-2.8-01",
+    "addQuiz": [
+      {
+        "q": "y is inversely proportional to x. When x = 4, y = 3. Find y when x = 6.",
+        "q_zh": "y 与 x 成反比。当 x = 4 时，y = 3。求当 x = 6 时 y 的值。",
+        "o": ["2", "4.5", "8", "1"],
+        "a": 0,
+        "e": "y = k/x. 3 = k/4 \\Rightarrow k = 12. When x = 6, y = 12/6 = 2.",
+        "e_zh": "y = k/x。3 = k/4 \\Rightarrow k = 12。当 x = 6 时，y = 12/6 = 2。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-prop-solve",
+        "question": "y is directly proportional to the square of x. When x = 3, y = 18. Find y when x = 5.",
+        "question_zh": "y 与 x 的平方成正比。当 x = 3 时，y = 18。求当 x = 5 时 y 的值。",
+        "solution": "1. Set up equation: y = kx^2\n2. Find k: 18 = k(3^2) \\Rightarrow 18 = 9k \\Rightarrow k = 2\n3. Use k to find new y: y = 2(5^2) = 2(25) = 50",
+        "solution_zh": "1. 建立方程：y = kx^2\n2. 求 k：18 = k(3^2) \\Rightarrow 18 = 9k \\Rightarrow k = 2\n3. 利用 k 求新的 y：y = 2(5^2) = 2(25) = 50",
+        "source": "0580/23/M/J/20"
+      }
+    ]
+  },
+  {
+    "id": "kp-2.9-01",
+    "addQuiz": [
+      {
+        "q": "What does the gradient of a speed-time graph represent?",
+        "q_zh": "速度-时间图像的斜率代表什么？",
+        "o": ["Distance", "Acceleration", "Average speed", "Displacement"],
+        "a": 1,
+        "e": "Gradient = Change in speed / Change in time = Acceleration.",
+        "e_zh": "斜率 = 速度变化量 / 时间变化量 = 加速度。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-dist-travelled",
+        "question": "A car travels at a constant speed of 20 m/s for 10 seconds, then decelerates uniformly to rest in 5 seconds. Find the total distance travelled.",
+        "question_zh": "一辆车以 20 m/s 的恒定速度行驶 10 秒，然后在 5 秒内均匀减速至停止。求总行驶距离。",
+        "solution": "1. Distance during constant speed: speed \\times time = 20 \\times 10 = 200 m\n2. Distance during deceleration (area of triangle): 0.5 \\times base \\times height = 0.5 \\times 5 \\times 20 = 50 m\n3. Total distance = 200 + 50 = 250 m",
+        "solution_zh": "1. 恒速阶段距离：速度 \\times 时间 = 20 \\times 10 = 200 m\n2. 减速阶段距离（三角形面积）：0.5 \\times 底 \\times 高 = 0.5 \\times 5 \\times 20 = 50 m\n3. 总距离 = 200 + 50 = 250 m",
+        "source": "0580/41/O/N/21"
+      }
+    ]
+  },
+  {
+    "id": "kp-2.10-01",
+    "addQuiz": [
+      {
+        "q": "To solve x^3 - 3x + 1 = 0 using the graph y = x^3, what line should you draw?",
+        "q_zh": "为了利用图像 y = x^3 求解 x^3 - 3x + 1 = 0，你应该画出哪条直线？",
+        "o": ["y = 3x - 1", "y = -3x + 1", "y = 3x + 1", "y = -3x - 1"],
+        "a": 0,
+        "e": "Rearrange x^3 - 3x + 1 = 0 to get x^3 = 3x - 1. So you intersect y = x^3 with y = 3x - 1.",
+        "e_zh": "将 x^3 - 3x + 1 = 0 变形得 x^3 = 3x - 1。因此你需要画 y = 3x - 1 并求其与 y = x^3 的交点。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-solve-graphical",
+        "question": "Using the graph of y = f(x), solve f(x) = 2.",
+        "question_zh": "利用函数 y = f(x) 的图像，求解方程 f(x) = 2。",
+        "solution": "1. Draw a horizontal line at y = 2.\n2. Identify the x-coordinates where this line intersects the curve y = f(x).\n3. State these x-values as the solution.",
+        "solution_zh": "1. 在 y = 2 处画一条水平直线。\n2. 找到该直线与曲线 y = f(x) 相交点的 x 坐标。\n3. 这些 x 值即为方程的解。",
+        "source": "Adapted from 0580/43/M/J/19"
+      }
+    ]
+  },
+  {
+    "id": "kp-2.11-01",
+    "addQuiz": [
+      {
+        "q": "Which of these functions represents a reciprocal graph?",
+        "q_zh": "下列哪个函数代表反比例函数图像？",
+        "o": ["y = x^2", "y = 3/x", "y = 2^x", "y = x^3"],
+        "a": 1,
+        "e": "A reciprocal graph has the form y = k/x.",
+        "e_zh": "反比例图像的形式为 y = k/x。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-recognise-graph",
+        "question": "Sketch the graph of y = (x - 1)(x + 2)(x - 3).",
+        "question_zh": "草绘函数 y = (x - 1)(x + 2)(x - 3) 的图像。",
+        "solution": "1. Identify roots: x = 1, -2, 3. These are the x-intercepts.\n2. Identify y-intercept: substitute x=0, y = (-1)(2)(-3) = 6.\n3. Determine shape: it is a positive cubic graph (starts bottom-left, ends top-right).\n4. Sketch the curve through these points.",
+        "solution_zh": "1. 确定根：x = 1, -2, 3。这些是 x 轴截距。\n2. 确定 y 轴截距：代入 x=0，y = (-1)(2)(-3) = 6。\n3. 确定形状：这是一个正三次函数图像（左下开始，右上结束）。\n4. 过这些点画出平滑曲线。",
+        "source": "Adapted from 0580"
+      }
+    ]
+  },
+  {
+    "id": "kp-2.12-01",
+    "addQuiz": [
+      {
+        "q": "Find the derivative of y = 4x^3 - 2x + 5.",
+        "q_zh": "求 y = 4x^3 - 2x + 5 的导数。",
+        "o": ["12x^2 - 2", "12x^2 - 2x", "4x^2 - 2", "12x^3 - 2"],
+        "a": 0,
+        "e": "dy/dx = 4(3)x^2 - 2(1)x^0 + 0 = 12x^2 - 2.",
+        "e_zh": "dy/dx = 4(3)x^2 - 2(1)x^0 + 0 = 12x^2 - 2。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-stat-points",
+        "question": "Find the coordinates of the stationary points on the curve y = x^3 - 3x + 2.",
+        "question_zh": "求曲线 y = x^3 - 3x + 2 上所有静止点（驻点）的坐标。",
+        "solution": "1. Find dy/dx: 3x^2 - 3\n2. Set dy/dx = 0: 3x^2 - 3 = 0 \\Rightarrow x^2 = 1 \\Rightarrow x = 1 or x = -1\n3. Find y for x = 1: y = 1^3 - 3(1) + 2 = 0. Point (1, 0)\n4. Find y for x = -1: y = (-1)^3 - 3(-1) + 2 = 4. Point (-1, 4)",
+        "solution_zh": "1. 求导 dy/dx：3x^2 - 3\n2. 令导数为 0：3x^2 - 3 = 0 \\Rightarrow x^2 = 1 \\Rightarrow x = 1 或 x = -1\n3. 当 x = 1 时，y = 1^3 - 3(1) + 2 = 0。点 (1, 0)\n4. 当 x = -1 时，y = (-1)^3 - 3(-1) + 2 = 4。点 (-1, 4)",
+        "source": "0580/42/M/J/21"
+      }
+    ]
+  },
+  {
+    "id": "kp-2.13-01",
+    "addQuiz": [
+      {
+        "q": "Given f(x) = 2x + 3 and g(x) = x^2, find fg(3).",
+        "q_zh": "已知 f(x) = 2x + 3 且 g(x) = x^2，求 fg(3)。",
+        "o": ["21", "81", "15", "45"],
+        "a": 0,
+        "e": "fg(3) means f(g(3)). g(3) = 3^2 = 9. f(9) = 2(9) + 3 = 18 + 3 = 21.",
+        "e_zh": "fg(3) 表示 f(g(3))。g(3) = 3^2 = 9。f(9) = 2(9) + 3 = 18 + 3 = 21。"
+      }
+    ],
+    "addExamples": [
+      {
+        "patternId": "ep-inverse",
+        "question": "Given f(x) = \\frac{2x - 1}{3}, find f^{-1}(x).",
+        "question_zh": "已知 f(x) = \\frac{2x - 1}{3}，求 f^{-1}(x)。",
+        "solution": "1. Let y = \\frac{2x - 1}{3}\n2. Multiply by 3: 3y = 2x - 1\n3. Add 1: 3y + 1 = 2x\n4. Divide by 2: x = \\frac{3y + 1}{2}\n5. Swap x and y: f^{-1}(x) = \\frac{3x + 1}{2}",
+        "solution_zh": "1. 令 y = \\frac{2x - 1}{3}\n2. 两边乘以 3：3y = 2x - 1\n3. 加 1：3y + 1 = 2x\n4. 除以 2：x = \\frac{3y + 1}{2}\n5. 交换 x 和 y：f^{-1}(x) = \\frac{3x + 1}{2}",
+        "source": "0580/21/O/N/19"
+      }
+    ]
+  }
+]
