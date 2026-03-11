@@ -1,5 +1,32 @@
 # Changelog
 
+## [4.8.0] - 2026-03-11 — 词库去重：全局 UID 词汇架构 Phase 1 (HHK)
+
+### 核心变更
+- **全局唯一词汇 ID**: HHK 词库从 1,501 词条去重至 833 个全局 UID（节省 44.5%），学生掌握一个词 = 所有 section 同步
+- **wordKey() 自动切换**: 新 uid 格式（含小写字母）返回 `W_{uid}`，旧数字格式保持 `L_{slug}_W{id}`，所有游戏模式零改动
+- **FLM 数据迁移**: `_migrateToGlobalKeys()` 一次性合并旧 key → 新 key（取更高 FLM 状态 + 累加 ok/fail + 最新时间戳），保留旧 key 兼容
+- **异义词消歧**: 9 组同名异义词自动加语义后缀（如 `degree-angle` / `degree-polynomial`，`square-shape` / `square-power`）
+- **跨 level 去重统计**: `getAllWords()` / `_getHHKSectionStats()` / `getSectionHealth()` 按 wordKey 去重，避免重复计数
+
+### 数据格式
+- **vocabulary-hhk.json**: 从 `{sectionId: [{word,def,id}]}` 重构为 `{words: {uid: {word,def}}, sections: {sectionId: [uid,...]}}`
+- **levels-25m.json**: vocabulary id 从数字 `"0"` 改为 uid `"fraction"`
+- **vocab-uid-map.json**: 新增 — 1,502 条 `"slug:oldId" → uid` 映射，供 FLM 迁移使用
+- **vocab-disambig.json**: 新增 — 72 个异义词候选（9 个已消歧 + 63 个同义合并）
+
+### 文件变更
+| 文件 | 变更类型 |
+|------|---------|
+| `js/storage.js` | 修改 — wordKey() uid 检测 + _migrateToGlobalKeys() + getAllWords() 去重 + getStaleWords() lid 兼容 + _slugBoardFromKey() |
+| `js/syllabus.js` | 修改 — _getVocabWords() 新格式适配 + _getHHKSectionStats() 去重 + getSectionHealth() 去重 + _renderSectionRow/_renderBoardHome 适配 |
+| `js/levels-loader.js` | 修改 — 启动时加载 vocab-uid-map.json |
+| `data/vocabulary-hhk.json` | 重写 — {words, sections} 新格式 |
+| `data/levels-25m.json` | 修改 — vocabulary id 改为 uid |
+| `data/vocab-uid-map.json` | 新增 — FLM 迁移映射表 |
+| `data/vocab-disambig.json` | 新增 — 异义词消歧报告 |
+| `scripts/dedup-vocab.py` | 新增 — 去重构建脚本 |
+
 ## [4.7.6] - 2026-03-11 — 引导系统审计修复 + 3 端高保真同步管道
 
 ### 引导系统修复

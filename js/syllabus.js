@@ -144,6 +144,24 @@ function _vocabToLevelsFormat(words) {
   return result;
 }
 
+/* Get words array from vocab data for a section (handles old and new formats).
+   Old format: { "sectionId": [{word,def,id}, ...] }
+   New format: { words: {uid: {word,def}}, sections: {sectionId: [uid,...]} }
+   Returns: [{word, def}, ...] */
+function _getVocabWords(vocab, sectionId) {
+  if (vocab && vocab.words && vocab.sections) {
+    var uids = vocab.sections[sectionId];
+    if (!uids) return [];
+    var result = [];
+    for (var i = 0; i < uids.length; i++) {
+      var w = vocab.words[uids[i]];
+      if (w) result.push(w);
+    }
+    return result;
+  }
+  return vocab && vocab[sectionId] ? vocab[sectionId] : [];
+}
+
 /* Mark old levels as hidden and create new virtual levels for a board (idempotent) */
 function _initBoardLevels(board) {
   var syllabus = BOARD_SYLLABUS[board];
@@ -319,7 +337,7 @@ function _renderBoardHome(board) {
     var visibleSections = [];
 
     ch.sections.forEach(function(sec) {
-      var words = vocab[sec.id];
+      var words = _getVocabWords(vocab, sec.id);
       var wordCount = words ? words.length : 0;
 
       /* Apply search filter */
@@ -437,20 +455,31 @@ function _ensureHHKSlugIdx() {
   return _hhkSlugIdx;
 }
 
-/* Get combined stats across all vocabSlug levels for an HHK section */
+/* Get combined stats across all vocabSlug levels for an HHK section.
+   Deduplicates by wordKey so global-uid words crossing multiple levels count once. */
 function _getHHKSectionStats(sec, _wd) {
   if (!sec.vocabSlugs || sec.vocabSlugs.length === 0) return { pct: 0, started: 0, total: 0, learningPct: 0, masteryPct: 0, mastered: 0 };
-  var totalWords = 0, totalStars = 0, mastered = 0, started = 0;
   var wd = _wd || getWordData();
   var slugIdx = _ensureHHKSlugIdx();
+  var seenKeys = {};
+  var totalWords = 0, totalStars = 0, mastered = 0, started = 0;
   for (var i = 0; i < sec.vocabSlugs.length; i++) {
     var si = slugIdx[sec.vocabSlugs[i]];
     if (si === undefined) continue;
-    var ds = getDeckStats(si, wd);
-    totalWords += ds.total;
-    mastered += ds.mastered;
-    started += ds.started;
-    totalStars += Math.round(ds.learningPct * ds.total * 4 / 100);
+    var pairs = getPairs(LEVELS[si].vocabulary);
+    for (var pi = 0; pi < pairs.length; pi++) {
+      var key = wordKey(si, pairs[pi].lid);
+      if (seenKeys[key]) continue;
+      seenKeys[key] = true;
+      totalWords++;
+      var d = wd[key];
+      var fs = d ? (d.fs || 'new') : 'new';
+      if (fs === 'mastered') mastered++;
+      if (d && ((d.ok || 0) >= 1 || fs !== 'new')) started++;
+      /* Star contribution: mastered=4, uncertain=3, learning=1, new=0 */
+      var starVal = fs === 'mastered' ? 4 : fs === 'uncertain' ? 3 : fs === 'learning' ? 1 : 0;
+      totalStars += starVal;
+    }
   }
   var maxStars = totalWords * 4;
   var learningPct = maxStars > 0 ? Math.round(totalStars / maxStars * 100) : 0;
@@ -463,7 +492,7 @@ function _renderSectionRow(sec, ch, board, _wd, secIdx, prevSecId, prevStats) {
   board = board || 'cie';
   var vocab = BOARD_VOCAB[board] || {};
   var li = getSectionLevelIdx(sec.id, board);
-  var words = vocab[sec.id] || [];
+  var words = _getVocabWords(vocab, sec.id);
   var stats;
   if (board === 'hhk') {
     stats = _getHHKSectionStats(sec, _wd);
@@ -514,7 +543,7 @@ function renderSectionDetail(ch, sec, secIdx, board) {
   board = board || 'cie';
   var vocab = BOARD_VOCAB[board] || {};
   var li = getSectionLevelIdx(sec.id, board);
-  var words = vocab[sec.id] || [];
+  var words = _getVocabWords(vocab, sec.id);
   var stats;
   if (board === 'hhk') {
     stats = _getHHKSectionStats(sec);
@@ -1011,21 +1040,25 @@ function getSectionHealth(sectionId, board) {
   var retentionScore = 0;
   var practiceScore = 0;
 
-  /* HHK: aggregate across all vocabSlug levels */
+  /* HHK: aggregate across all vocabSlug levels (deduplicated by wordKey) */
   if (board === 'hhk') {
     var secInfo = getSectionInfo(sectionId, 'hhk');
     if (secInfo && secInfo.section.vocabSlugs && secInfo.section.vocabSlugs.length > 0) {
       var hhkStats = _getHHKSectionStats(secInfo.section);
       vocabScore = hhkStats.learningPct || 0;
       hasVocab = hhkStats.total > 0;
-      /* Aggregate FLM data across all sub-levels */
+      /* Aggregate FLM data across all sub-levels (dedup by wordKey) */
       var wd = getWordData();
       var totalOk = 0, totalFail = 0, lastActive = 0, masteredN = 0, totalN = 0;
+      var _healthSeen = {};
       secInfo.section.vocabSlugs.forEach(function(slug) {
         var _si = getLevelIdxBySlug(slug);
         if (_si < 0) return;
         getPairs(LEVELS[_si].vocabulary).forEach(function(p) {
-          var d = wd[wordKey(_si, p.lid)];
+          var _wk = wordKey(_si, p.lid);
+          if (_healthSeen[_wk]) return;
+          _healthSeen[_wk] = true;
+          var d = wd[_wk];
           totalN++;
           if (d) {
             totalOk += d.ok || 0;

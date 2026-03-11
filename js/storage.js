@@ -14,6 +14,8 @@ function loadS() {
   catch (e) { _sCache = {}; }
   /* One-time SRS→FLM migration */
   _migrateSRStoFLM(_sCache);
+  /* One-time global UID migration (old slug-based keys → W_{uid}) */
+  _migrateToGlobalKeys(_sCache);
   return _sCache;
 }
 
@@ -62,10 +64,35 @@ function maxCleared() {
   return s.mc != null ? s.mc : -1;
 }
 
-/* Slug-based word key: "L_{slug}_W{wordId}" */
+/* Word key: global uid "W_{uid}" or legacy "L_{slug}_W{numericId}" */
 function wordKey(li, wid) {
+  /* New uid format: contains lowercase letters → global key */
+  if (typeof wid === 'string' && /[a-z]/.test(wid)) return 'W_' + wid;
   var slug = LEVELS[li] && LEVELS[li].slug ? LEVELS[li].slug : ('L' + li);
   return 'L_' + slug + '_W' + wid;
+}
+
+/* Extract slug and board from a word key (handles both old and new formats) */
+function _slugBoardFromKey(key) {
+  if (key.indexOf('L_') === 0) {
+    var slug = key.replace(/^L_/, '').replace(/_W.+$/, '');
+    var board = '';
+    for (var i = 0; i < LEVELS.length; i++) {
+      if (LEVELS[i].slug === slug) { board = LEVELS[i].board || ''; break; }
+    }
+    return { slug: slug, board: board };
+  }
+  /* New format W_{uid}: find first level containing this uid */
+  var uid = key.substring(2);
+  for (var j = 0; j < LEVELS.length; j++) {
+    var voc = LEVELS[j].vocabulary;
+    if (voc) for (var vi = 0; vi < voc.length; vi++) {
+      if (voc[vi].id === uid && voc[vi].type === 'word') {
+        return { slug: LEVELS[j].slug, board: LEVELS[j].board || '' };
+      }
+    }
+  }
+  return { slug: '', board: '' };
 }
 
 /* ═══ STAR CALCULATION (legacy, kept for backward compat) ═══ */
@@ -115,6 +142,59 @@ function _migrateSRStoFLM(s) {
   _flmMigrated = true;
   /* Write back migrated data */
   try { localStorage.setItem(SK, JSON.stringify(s)); } catch (e) {}
+}
+
+/* ═══ GLOBAL UID MIGRATION (one-time, L_{slug}_W{id} → W_{uid}) ═══ */
+var _vocabUidMap = null; /* loaded by levels-loader.js from vocab-uid-map.json */
+
+var _FLM_ORDER = { 'new': 0, 'learning': 1, 'uncertain': 2, 'mastered': 3 };
+
+function _migrateToGlobalKeys(s) {
+  if (s._gkMigrated) return;
+  if (!s.words || !_vocabUidMap) return;
+  var migrated = 0;
+  var keys = Object.keys(s.words);
+  for (var i = 0; i < keys.length; i++) {
+    var k = keys[i];
+    /* Only migrate old-format keys: L_{slug}_W{numericId} */
+    if (k.indexOf('L_') !== 0) continue;
+    var m = k.match(/^L_(.+)_W(\d+)$/);
+    if (!m) continue;
+    var slug = m[1], oldId = m[2];
+    var uid = _vocabUidMap[slug + ':' + oldId];
+    if (!uid) continue;
+    var newKey = 'W_' + uid;
+    var oldData = s.words[k];
+    var existing = s.words[newKey];
+    if (!existing) {
+      /* No collision — just copy */
+      s.words[newKey] = JSON.parse(JSON.stringify(oldData));
+    } else {
+      /* Merge: take higher FLM state, sum ok/fail, take max cs, latest timestamps */
+      var oFs = _FLM_ORDER[oldData.fs || 'new'] || 0;
+      var eFs = _FLM_ORDER[existing.fs || 'new'] || 0;
+      if (oFs > eFs) existing.fs = oldData.fs;
+      existing.ok = (existing.ok || 0) + (oldData.ok || 0);
+      existing.fail = (existing.fail || 0) + (oldData.fail || 0);
+      existing.cs = Math.max(existing.cs || 0, oldData.cs || 0);
+      if ((oldData.fmt || 0) > (existing.fmt || 0)) existing.fmt = oldData.fmt;
+      if ((oldData.lr || 0) > (existing.lr || 0)) existing.lr = oldData.lr;
+      existing.rc = Math.max(existing.rc || 0, oldData.rc || 0);
+      /* Recompute stars from merged counts */
+      existing.stars = computeStars(existing.ok, existing.fail);
+      /* Map fs to legacy st */
+      existing.st = existing.fs === 'mastered' ? 'mastered' : existing.fs === 'new' ? 'new' : 'learning';
+    }
+    /* Keep old key for backward compat during transition */
+    migrated++;
+  }
+  if (migrated > 0) {
+    s._gkMigrated = true;
+    try { localStorage.setItem(SK, JSON.stringify(s)); } catch (e) {}
+  } else {
+    /* No old keys found — mark as migrated to skip next time */
+    s._gkMigrated = true;
+  }
 }
 
 /* ═══ FLM UNIFIED ANSWER RECORDER ═══ */
@@ -246,10 +326,8 @@ function recordScan(key, verdict, round) {
 
   /* Re-forget tracking: mastered demoted */
   if (_prevFsForReforget === 'mastered' && fs !== 'mastered') {
-    var _rfSlug = key.replace(/^L_/, '').replace(/_W\d+$/, '');
-    var _rfBoard = '';
-    for (var _rfi = 0; _rfi < LEVELS.length; _rfi++) { if (LEVELS[_rfi].slug === _rfSlug) { _rfBoard = LEVELS[_rfi].board || ''; break; } }
-    _logReforget(key, 'vocab', 'mastered', fs, _rfSlug, _rfBoard);
+    var _rfInfo = _slugBoardFromKey(key);
+    _logReforget(key, 'vocab', 'mastered', fs, _rfInfo.slug, _rfInfo.board);
   }
 
   /* Bump weekly goal when word first leaves 'new' */
@@ -377,6 +455,7 @@ function getAllWords() {
   if (_allWordsCache && !_cacheDirty) return _allWordsCache;
   var all = [];
   var wd = getWordData();
+  var seen = {}; /* dedup: global uid keys appear only once */
   LEVELS.forEach(function(lv, li) {
     if (!isLevelVisible(lv)) return;
     if (isGuestLocked(li)) return;
@@ -387,6 +466,9 @@ function getAllWords() {
     });
     for (var k in m) {
       var key = wordKey(li, k);
+      /* Dedup: if this global key was already added from another level, skip */
+      if (seen[key]) continue;
+      seen[key] = true;
       var d = wd[key];
       var wOk = d ? (d.ok || 0) : 0;
       var wFail = d ? (d.fail || 0) : 0;
@@ -440,8 +522,9 @@ function getStaleWords() {
     var threshold = REFRESH_INTERVALS[Math.min(rc, REFRESH_INTERVALS.length - 1)];
     var daysSince = (now - w.fmt) / 86400000;
     if (daysSince >= threshold) {
+      var _lid = w.key.indexOf('W_') === 0 ? w.key.substring(2) : w.key.split('_W')[1];
       stale.push({ key: w.key, word: w.word, def: w.def, level: w.level,
-                   lid: w.key.split('_W')[1], rc: rc, daysSince: Math.floor(daysSince) });
+                   lid: _lid, rc: rc, daysSince: Math.floor(daysSince) });
     }
   }
   stale.sort(function(a, b) { return b.daysSince - a.daysSince; });
@@ -481,10 +564,8 @@ function recordRefreshScan(key, verdict) {
 
   /* Re-forget tracking */
   if (_prevFsRefresh === 'mastered' && fs !== 'mastered') {
-    var _rfSlug2 = key.replace(/^L_/, '').replace(/_W\d+$/, '');
-    var _rfBoard2 = '';
-    for (var _rfi2 = 0; _rfi2 < LEVELS.length; _rfi2++) { if (LEVELS[_rfi2].slug === _rfSlug2) { _rfBoard2 = LEVELS[_rfi2].board || ''; break; } }
-    _logReforget(key, 'vocab', 'mastered', fs, _rfSlug2, _rfBoard2);
+    var _rfInfo2 = _slugBoardFromKey(key);
+    _logReforget(key, 'vocab', 'mastered', fs, _rfInfo2.slug, _rfInfo2.board);
   }
 
   var st = fs === 'mastered' ? 'mastered' : fs === 'new' ? 'new' : 'learning';

@@ -443,6 +443,12 @@
 - [x] **教师作业解锁**: diagnostic/mock 作业自动注入 featureOverride → v2.5.0
 - [x] **全面取消路径锁定**: 所有模式/知识点直接开放，删除 FEATURE_THRESHOLD + Test Out + 锁定 UI → v2.5.1
 
+## v4.8 词库去重：全局 UID 词汇架构
+- [x] **Phase 1 HHK (v4.8.0)**: dedup-vocab.py 构建脚本 + 全局 uid 词库 + wordKey() 自动切换 + FLM 迁移 + 9 组异义词消歧 + 跨 level 去重统计（1,501→833，节省 44.5%）
+- [ ] **Phase 2 EDX**: 同样流程扩展到 Edexcel（387→338，节省 13%）
+- [ ] **Phase 3 CIE**: 同样流程扩展到 CIE（594→579，节省 2.5%）
+- [ ] **旧 key 清理**: 30 天后清除已迁移的旧格式 localStorage key
+
 ## v4.7 FLM 完备性审计 + 自定义清单 + 遗忘追踪 + 列表/打印视图 [DONE]
 - [x] **遗忘追踪 (v4.7.0)**: reforget_log 记录 6 个降级点 + getReforgetCount/Timeline 查询 + 云同步桥接
 - [x] **自定义清单 (v4.7.0)**: CRUD + Session 记录 + 全局 FLM 引用 + 云同步桥接

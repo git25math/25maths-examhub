@@ -110,11 +110,17 @@ function ensureAllBoardsLoaded() {
 
   var urls = keys.map(function(bk) { return { bk: bk, url: _urlForBoard(bk) }; });
 
+  /* Also load vocab-uid-map.json for FLM migration (non-blocking) */
+  var uidMapPromise = _fetchJson('data/vocab-uid-map.json').then(function(data) {
+    if (typeof _vocabUidMap !== 'undefined') _vocabUidMap = data;
+    else window._vocabUidMap = data;
+  }).catch(function() { /* optional — migration skipped if missing */ });
+
   Promise.all(urls.map(function(item) {
     return _fetchJson(item.url).then(function(data) {
       _loadedData[item.bk] = data;
     });
-  })).then(function() {
+  }).concat([uidMapPromise])).then(function() {
     _rebuildLevels();
     _levelsReady = true;
     _levelsCallbacks.forEach(function(fn) { try { fn(); } catch(e) { console.error(e); } });

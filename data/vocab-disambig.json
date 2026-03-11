@@ -1,0 +1,1071 @@
+{
+  "problem solving": {
+    "word": "Problem solving",
+    "defs": [
+      "解决问题",
+      "问题解决"
+    ],
+    "sections": [
+      "Y7.1",
+      "Y8.3"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "product": {
+    "word": "Product",
+    "defs": [
+      "乘积",
+      "积"
+    ],
+    "sections": [
+      "Y7.1",
+      "Y8.1",
+      "Y9.2",
+      "Y9.3"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "simplest form": {
+    "word": "Simplest form",
+    "defs": [
+      "最简分数",
+      "最简形式"
+    ],
+    "sections": [
+      "Y10.1",
+      "Y7.1",
+      "Y7.5",
+      "Y8.1"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "simplify": {
+    "word": "Simplify",
+    "defs": [
+      "化简",
+      "简化"
+    ],
+    "sections": [
+      "Y10.2",
+      "Y10.3",
+      "Y11.3",
+      "Y7.2",
+      "Y7.5",
+      "Y8.3",
+      "Y8.7",
+      "Y9.10",
+      "Y9.2"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "compass": {
+    "word": "Compass",
+    "defs": [
+      "圆规",
+      "指南针"
+    ],
+    "sections": [
+      "Y10.8",
+      "Y7.4",
+      "Y7.7",
+      "Y9.11"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "plot": {
+    "word": "Plot",
+    "defs": [
+      "描点",
+      "描点/绘制",
+      "绘制"
+    ],
+    "sections": [
+      "Y7.4",
+      "Y8.8",
+      "Y9.3"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "x-axis": {
+    "word": "X-axis",
+    "defs": [
+      "X轴",
+      "x轴"
+    ],
+    "sections": [
+      "Y10.10",
+      "Y7.4",
+      "Y8.8"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "y-axis": {
+    "word": "Y-axis",
+    "defs": [
+      "Y轴",
+      "y轴"
+    ],
+    "sections": [
+      "Y10.10",
+      "Y7.4",
+      "Y8.8"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "estimate": {
+    "word": "Estimate",
+    "defs": [
+      "估算",
+      "估计"
+    ],
+    "sections": [
+      "Y10.1",
+      "Y11.1",
+      "Y7.5",
+      "Y7.8",
+      "Y8.1",
+      "Y9.9"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "graph": {
+    "word": "Graph",
+    "defs": [
+      "图 / 图形",
+      "图像",
+      "图表"
+    ],
+    "sections": [
+      "Y10.3",
+      "Y10.5",
+      "Y11.5",
+      "Y7.5",
+      "Y8.7",
+      "Y9.3"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "proportion": {
+    "word": "Proportion",
+    "defs": [
+      "比例",
+      "比例关系",
+      "比例式"
+    ],
+    "sections": [
+      "Y10.10",
+      "Y10.6",
+      "Y10.9",
+      "Y7.5",
+      "Y7.7",
+      "Y8.9",
+      "Y9.7"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "ratio": {
+    "word": "Ratio",
+    "defs": [
+      "比例",
+      "比率"
+    ],
+    "sections": [
+      "Y10.10",
+      "Y10.6",
+      "Y10.9",
+      "Y11.2",
+      "Y7.5",
+      "Y9.12",
+      "Y9.3"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "scale": {
+    "word": "Scale",
+    "defs": [
+      "刻度",
+      "比例尺"
+    ],
+    "sections": [
+      "Y7.5",
+      "Y7.7"
+    ],
+    "action": "disambiguate",
+    "resolved_uids": {
+      "比例尺": "scale-ratio",
+      "刻度": "scale-reading"
+    }
+  },
+  "angle": {
+    "word": "Angle",
+    "defs": [
+      "角",
+      "角度"
+    ],
+    "sections": [
+      "Y7.11",
+      "Y7.7",
+      "Y8.6",
+      "Y9.11",
+      "Y9.4",
+      "Y9.6"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "arc": {
+    "word": "Arc",
+    "defs": [
+      "圆弧",
+      "弧"
+    ],
+    "sections": [
+      "Y10.7",
+      "Y10.8",
+      "Y7.11",
+      "Y7.7",
+      "Y7.8"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "axis": {
+    "word": "Axis",
+    "defs": [
+      "坐标轴",
+      "轴"
+    ],
+    "sections": [
+      "Y10.12",
+      "Y7.7"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "bias": {
+    "word": "Bias",
+    "defs": [
+      "偏差",
+      "偏差/偏倚"
+    ],
+    "sections": [
+      "Y7.7",
+      "Y9.8"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "class interval": {
+    "word": "Class Interval",
+    "defs": [
+      "类间隔",
+      "组距"
+    ],
+    "sections": [
+      "Y7.7",
+      "Y8.9",
+      "Y9.9"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "tangent": {
+    "word": "Tangent",
+    "defs": [
+      "切线",
+      "正切"
+    ],
+    "sections": [
+      "Y10.6",
+      "Y10.7",
+      "Y11.6",
+      "Y7.7"
+    ],
+    "action": "disambiguate",
+    "resolved_uids": {
+      "切线": "tangent-line",
+      "正切": "tangent-ratio"
+    }
+  },
+  "base": {
+    "word": "Base",
+    "defs": [
+      "底数",
+      "底面"
+    ],
+    "sections": [
+      "Y11.1",
+      "Y7.8",
+      "Y8.2",
+      "Y8.3",
+      "Y9.2"
+    ],
+    "action": "disambiguate",
+    "resolved_uids": {
+      "底数": "base-exponent",
+      "底面": "base-face"
+    }
+  },
+  "cone": {
+    "word": "Cone",
+    "defs": [
+      "圆锥",
+      "圆锥体"
+    ],
+    "sections": [
+      "Y10.12",
+      "Y7.8"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "cylinder": {
+    "word": "Cylinder",
+    "defs": [
+      "圆柱",
+      "圆柱体"
+    ],
+    "sections": [
+      "Y10.12",
+      "Y7.8"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "general form": {
+    "word": "General form",
+    "defs": [
+      "一般式",
+      "一般形式"
+    ],
+    "sections": [
+      "Y10.5",
+      "Y11.4",
+      "Y7.9"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "linear sequence": {
+    "word": "Linear sequence",
+    "defs": [
+      "等差序列",
+      "线性数列 / 等差数列"
+    ],
+    "sections": [
+      "Y11.4",
+      "Y7.9"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "pattern": {
+    "word": "Pattern",
+    "defs": [
+      "图案",
+      "模式",
+      "模式 / 规律"
+    ],
+    "sections": [
+      "Y11.4",
+      "Y7.9",
+      "Y9.6"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "position": {
+    "word": "Position",
+    "defs": [
+      "位置",
+      "项数"
+    ],
+    "sections": [
+      "Y10.6",
+      "Y11.4",
+      "Y7.9"
+    ],
+    "action": "disambiguate",
+    "resolved_uids": {
+      "项数": "position-term",
+      "位置": "position-location"
+    }
+  },
+  "sequence": {
+    "word": "Sequence",
+    "defs": [
+      "序列",
+      "数列"
+    ],
+    "sections": [
+      "Y11.4",
+      "Y7.9"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "likely": {
+    "word": "Likely",
+    "defs": [
+      "可能",
+      "可能的"
+    ],
+    "sections": [
+      "Y10.11",
+      "Y11.2",
+      "Y7.10"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "random": {
+    "word": "Random",
+    "defs": [
+      "随机",
+      "随机的"
+    ],
+    "sections": [
+      "Y11.2",
+      "Y7.10"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "unlikely": {
+    "word": "Unlikely",
+    "defs": [
+      "不太可能",
+      "不太可能的"
+    ],
+    "sections": [
+      "Y10.11",
+      "Y7.10"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "construction": {
+    "word": "Construction",
+    "defs": [
+      "作图",
+      "构造"
+    ],
+    "sections": [
+      "Y10.8",
+      "Y7.11",
+      "Y9.11"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "perpendicular": {
+    "word": "Perpendicular",
+    "defs": [
+      "垂直",
+      "垂直的",
+      "垂线/垂直的"
+    ],
+    "sections": [
+      "Y10.8",
+      "Y7.11",
+      "Y9.11",
+      "Y9.6"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "magnitude": {
+    "word": "Magnitude",
+    "defs": [
+      "大小/模",
+      "数量级"
+    ],
+    "sections": [
+      "Y11.1",
+      "Y11.10",
+      "Y8.1"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "index / power": {
+    "word": "Index / Power",
+    "defs": [
+      "指数",
+      "指数 / 幂"
+    ],
+    "sections": [
+      "Y8.3",
+      "Y9.2"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "isolate": {
+    "word": "Isolate",
+    "defs": [
+      "分离",
+      "隔离"
+    ],
+    "sections": [
+      "Y10.4",
+      "Y11.3",
+      "Y8.3"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "solve": {
+    "word": "Solve",
+    "defs": [
+      "求解",
+      "解"
+    ],
+    "sections": [
+      "Y11.3",
+      "Y8.3",
+      "Y8.4",
+      "Y8.7",
+      "Y9.5"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "range": {
+    "word": "Range",
+    "defs": [
+      "值域",
+      "极差",
+      "范围"
+    ],
+    "sections": [
+      "Y10.5",
+      "Y11.1",
+      "Y11.5",
+      "Y11.8",
+      "Y8.4",
+      "Y8.9",
+      "Y9.1",
+      "Y9.3",
+      "Y9.8",
+      "Y9.9"
+    ],
+    "action": "disambiguate",
+    "resolved_uids": {
+      "值域": "range-function",
+      "范围": "range-general",
+      "极差": "range-statistics"
+    }
+  },
+  "square": {
+    "word": "Square",
+    "defs": [
+      "平方",
+      "正方形"
+    ],
+    "sections": [
+      "Y8.5",
+      "Y9.11",
+      "Y9.2",
+      "Y9.5",
+      "Y9.6"
+    ],
+    "action": "disambiguate",
+    "resolved_uids": {
+      "正方形": "square-shape",
+      "平方": "square-power"
+    }
+  },
+  "corresponding angles": {
+    "word": "Corresponding angles",
+    "defs": [
+      "同位角",
+      "对应角"
+    ],
+    "sections": [
+      "Y10.6",
+      "Y10.9",
+      "Y8.6",
+      "Y9.12",
+      "Y9.4"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "degree": {
+    "word": "Degree",
+    "defs": [
+      "度",
+      "次数"
+    ],
+    "sections": [
+      "Y11.4",
+      "Y8.6"
+    ],
+    "action": "disambiguate",
+    "resolved_uids": {
+      "度": "degree-angle",
+      "次数": "degree-polynomial"
+    }
+  },
+  "interior angles": {
+    "word": "Interior angles",
+    "defs": [
+      "内角",
+      "同旁内角"
+    ],
+    "sections": [
+      "Y10.6",
+      "Y8.6",
+      "Y9.4"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "perpendicular lines": {
+    "word": "Perpendicular lines",
+    "defs": [
+      "垂直线",
+      "垂线"
+    ],
+    "sections": [
+      "Y8.6",
+      "Y9.3"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "rearrange": {
+    "word": "Rearrange",
+    "defs": [
+      "重排",
+      "重新排列/移项"
+    ],
+    "sections": [
+      "Y10.2",
+      "Y11.3",
+      "Y8.7",
+      "Y9.10"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "simultaneous equations": {
+    "word": "Simultaneous equations",
+    "defs": [
+      "联立方程",
+      "联立方程组"
+    ],
+    "sections": [
+      "Y10.3",
+      "Y10.4",
+      "Y11.3",
+      "Y11.4",
+      "Y8.7"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "gradient": {
+    "word": "Gradient",
+    "defs": [
+      "斜率",
+      "梯度 / 斜率"
+    ],
+    "sections": [
+      "Y11.6",
+      "Y8.8",
+      "Y9.3"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "linear graph": {
+    "word": "Linear graph",
+    "defs": [
+      "线性图像",
+      "线性图表"
+    ],
+    "sections": [
+      "Y8.8",
+      "Y9.3"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "reflection": {
+    "word": "Reflection",
+    "defs": [
+      "反射",
+      "反射/翻转",
+      "翻折"
+    ],
+    "sections": [
+      "Y10.10",
+      "Y8.8",
+      "Y9.6"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "x-intercept": {
+    "word": "x-intercept",
+    "defs": [
+      "X轴截距",
+      "x 截距",
+      "x截距"
+    ],
+    "sections": [
+      "Y10.5",
+      "Y8.8",
+      "Y9.3"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "y-intercept": {
+    "word": "y-intercept",
+    "defs": [
+      "Y轴截距",
+      "y 截距",
+      "y截距"
+    ],
+    "sections": [
+      "Y10.5",
+      "Y8.8",
+      "Y9.3"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "median": {
+    "word": "Median",
+    "defs": [
+      "中位数",
+      "中线"
+    ],
+    "sections": [
+      "Y10.8",
+      "Y11.11",
+      "Y8.9",
+      "Y9.11",
+      "Y9.8",
+      "Y9.9"
+    ],
+    "action": "disambiguate",
+    "resolved_uids": {
+      "中位数": "median-value",
+      "中线": "median-line"
+    }
+  },
+  "estimation": {
+    "word": "Estimation",
+    "defs": [
+      "估算",
+      "估计"
+    ],
+    "sections": [
+      "Y11.1",
+      "Y9.1"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "like surds": {
+    "word": "Like surds",
+    "defs": [
+      "同类二次根式",
+      "同类根式"
+    ],
+    "sections": [
+      "Y10.1",
+      "Y9.1"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "lower bound": {
+    "word": "Lower bound",
+    "defs": [
+      "下界",
+      "下限"
+    ],
+    "sections": [
+      "Y11.1",
+      "Y9.1"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "perfect square": {
+    "word": "Perfect square",
+    "defs": [
+      "完全平方",
+      "完全平方数"
+    ],
+    "sections": [
+      "Y9.1",
+      "Y9.2"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "rationalize the denominator": {
+    "word": "Rationalize the denominator",
+    "defs": [
+      "分母有理化",
+      "有理化分母"
+    ],
+    "sections": [
+      "Y10.1",
+      "Y9.1"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "unlike surds": {
+    "word": "Unlike surds",
+    "defs": [
+      "非同类二次根式",
+      "非同类根式"
+    ],
+    "sections": [
+      "Y10.1",
+      "Y9.1"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "upper bound": {
+    "word": "Upper bound",
+    "defs": [
+      "上界",
+      "上限"
+    ],
+    "sections": [
+      "Y11.1",
+      "Y9.1"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "scientific notation": {
+    "word": "Scientific notation",
+    "defs": [
+      "科学计数法",
+      "科学记数法"
+    ],
+    "sections": [
+      "Y11.1",
+      "Y9.2"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "standard form": {
+    "word": "Standard form",
+    "defs": [
+      "标准形式 / 科学计数法",
+      "科学计数法"
+    ],
+    "sections": [
+      "Y11.1",
+      "Y9.2"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "intersection": {
+    "word": "Intersection",
+    "defs": [
+      "交点",
+      "交点/交集",
+      "交集"
+    ],
+    "sections": [
+      "Y10.11",
+      "Y10.8",
+      "Y11.2",
+      "Y11.9",
+      "Y9.11",
+      "Y9.3"
+    ],
+    "action": "disambiguate",
+    "resolved_uids": {
+      "交点/交集": "intersection-point",
+      "交集": "intersection-set",
+      "交点": "intersection-point"
+    }
+  },
+  "slope": {
+    "word": "Slope",
+    "defs": [
+      "坡度",
+      "斜率"
+    ],
+    "sections": [
+      "Y10.10",
+      "Y9.3"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "compound shape": {
+    "word": "Compound Shape",
+    "defs": [
+      "复合图形",
+      "复合形状"
+    ],
+    "sections": [
+      "Y10.12",
+      "Y10.7",
+      "Y9.6"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "symmetry": {
+    "word": "Symmetry",
+    "defs": [
+      "对称",
+      "对称性"
+    ],
+    "sections": [
+      "Y10.5",
+      "Y9.6"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "bivariate data": {
+    "word": "Bivariate data",
+    "defs": [
+      "二元数据",
+      "双变量数据"
+    ],
+    "sections": [
+      "Y11.11",
+      "Y9.9"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "interquartile range (iqr)": {
+    "word": "Interquartile range (IQR)",
+    "defs": [
+      "四分位距",
+      "四分位距 (IQR)"
+    ],
+    "sections": [
+      "Y11.11",
+      "Y9.9"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "outlier": {
+    "word": "Outlier",
+    "defs": [
+      "异常值",
+      "离群点"
+    ],
+    "sections": [
+      "Y11.11",
+      "Y9.9"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "rhs (right-angle-hypotenuse-side)": {
+    "word": "RHS (Right-angle-Hypotenuse-Side)",
+    "defs": [
+      "直角、斜边、边",
+      "直角斜边边"
+    ],
+    "sections": [
+      "Y10.8",
+      "Y9.11"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "enlargement": {
+    "word": "Enlargement",
+    "defs": [
+      "放大",
+      "放缩"
+    ],
+    "sections": [
+      "Y10.10",
+      "Y9.12"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "similarity": {
+    "word": "Similarity",
+    "defs": [
+      "相似",
+      "相似性"
+    ],
+    "sections": [
+      "Y10.6",
+      "Y10.9",
+      "Y9.12"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "completing the square": {
+    "word": "Completing the square",
+    "defs": [
+      "配方法",
+      "配方法 / 完全平方法"
+    ],
+    "sections": [
+      "Y10.3",
+      "Y10.5"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "quadratic equation": {
+    "word": "Quadratic equation",
+    "defs": [
+      "一元二次方程",
+      "二次方程"
+    ],
+    "sections": [
+      "Y10.3",
+      "Y10.4",
+      "Y11.3"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  },
+  "certain": {
+    "word": "Certain",
+    "defs": [
+      "必然",
+      "确定"
+    ],
+    "sections": [
+      "Y10.11",
+      "Y11.2"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  }
+}
