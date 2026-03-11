@@ -142,10 +142,9 @@ function isLevelVisible(lv) {
   if (userBoard === 'edx') {
     return lv.board === userBoard;
   }
-  /* Year 11 → CIE mapping: Y11 students see CIE 0580 content */
-  if (userBoard === '25m-y11') return lv.board === 'cie';
-  /* 25m-yN: filter by category field */
-  return lv.category === userBoard;
+  /* Y11 sees CIE + all 25m; other 25m-yN sees all 25m */
+  if (userBoard === '25m-y11') return lv.board === 'cie' || lv.board === '25m';
+  if (userBoard.indexOf('25m-') === 0) return lv.board === '25m';
 }
 
 /* Get filtered BOARDS array based on userBoard */
@@ -164,15 +163,6 @@ function getVisibleBoards() {
     if (userBoard === '25m-y11' && b.id === 'cie') return true;
     if (userBoard.indexOf('25m-') === 0 && b.id === '25m') return true;
     return false;
-  }).map(function(b) {
-    /* For 25m-yN, filter to only the selected year category */
-    if (userBoard.indexOf('25m-') === 0 && b.id === '25m') {
-      return {
-        id: b.id, name: b.name, nameZh: b.nameZh, code: b.code, emoji: b.emoji,
-        categories: b.categories.filter(function(c) { return c.id === userBoard; })
-      };
-    }
-    return b;
   });
 }
 
@@ -372,7 +362,7 @@ function isSuperAdmin() {
 }
 
 /* App version */
-var APP_VERSION = 'v4.8.1';
+var APP_VERSION = 'v4.9.0';
 
 /* AI Tutor configuration */
 var AI_TUTOR_CONFIG = {

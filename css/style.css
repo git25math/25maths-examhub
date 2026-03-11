@@ -2098,6 +2098,19 @@ input { font-family: inherit; }
   font-size: 11px; color: var(--c-muted);
 }
 
+/* Growth dashboard */
+.growth-overview { display: flex; flex-direction: column; gap: 12px; margin-bottom: 16px; }
+.growth-card { background: var(--c-surface); border-radius: var(--r); padding: 14px 16px; box-shadow: var(--shadow); }
+.growth-card-header { display: flex; justify-content: space-between; align-items: center; font-size: 14px; font-weight: 600; margin-bottom: 8px; }
+.growth-card-num { font-family: var(--font-display); color: var(--c-primary); font-weight: 700; }
+.growth-bar { height: 8px; background: var(--c-border); border-radius: 4px; overflow: hidden; }
+.growth-bar-fill { height: 100%; background: var(--c-primary); border-radius: 4px; transition: width 0.3s; }
+.growth-milestones { display: flex; flex-direction: column; gap: 8px; }
+.milestone-row { display: flex; align-items: center; gap: 10px; padding: 8px 12px; background: var(--c-surface); border-radius: var(--r); box-shadow: var(--shadow); }
+.milestone-icon { font-size: 20px; width: 28px; text-align: center; }
+.milestone-name { flex: 1; font-size: 13px; font-weight: 500; }
+.milestone-date { font-size: 11px; color: var(--c-muted); }
+
 .board-scope-tabs {
   margin-bottom: 12px;
 }

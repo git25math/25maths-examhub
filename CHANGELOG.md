@@ -1,5 +1,29 @@
 # Changelog
 
+## [4.9.0] - 2026-03-11 — 哈罗全年级开放 + 成长足迹取代积分排行
+
+### 核心变更
+- **全年级开放**: 哈罗 25m-yN 学生可访问 Y7-Y11 全部内容（不再按 category 过滤），Y11 额外看到 CIE
+- **成长仪表盘**: panel-board 从排行榜重写为成长仪表盘（词汇/知识点进度条 + 成就徽章 + 里程碑时间线）
+- **显示替换**: Quick Stats 条、Hero 卡片 rank 行、侧栏菜单头部 — 积分/排名/百分比改为掌握数量（词汇 + 知识点 + 徽章）
+- **Header rank 点击**: 从 showRankGuide 改为跳转 stats 页面
+- **Supabase**: leaderboard 表新增 mastered_kps 列，syncToCloud 同步 KP 掌握数
+
+### 首页年级折叠
+- 用户所属年级 (userBoard) 默认展开，其余年级默认折叠
+- 已有 catCollapsed localStorage 记忆不受影响
+
+### 文件变更
+| 文件 | 变更类型 |
+|------|---------|
+| `js/config.js` | 修改 — isLevelVisible() 25m 分支扩展 + getVisibleBoards() 移除年级过滤 + 版本号 |
+| `js/mastery.js` | 修改 — getGlobalStats() 加 KP/badge 统计 + _renderQuickStats() 改文案 + hero rank 改文案 + catCollapsed 默认逻辑 |
+| `js/ui.js` | 修改 — updateSidebar() 菜单头改为掌握数 + hb-rank 点击改 stats |
+| `js/app.js` | 修改 — renderBoard() 重写为成长仪表盘 + _renderGrowthOverview() |
+| `js/storage.js` | 修改 — syncToCloud 加 mastered_kps |
+| `css/style.css` | 修改 — 新增 growth dashboard 样式 |
+| `supabase/migrations/20260311100000_add_mastered_kps.sql` | 新增 — leaderboard 加 mastered_kps 列 |
+
 ## [4.8.1] - 2026-03-11 — 全局 UID 架构 Phase 1.5 + Phase 2 (EDX 去重 + DRY + 旧 key 清理)
 
 ### 核心变更

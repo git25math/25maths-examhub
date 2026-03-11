@@ -4,7 +4,7 @@ Bilingual math learning platform (双语数学学习平台) for CIE 0580 / Edexc
 
 - **Live**: https://git25math.github.io/25maths-examhub/
 - **Repo**: https://github.com/git25math/25maths-examhub
-- **Version**: v4.8.1 (2026-03-11)
+- **Version**: v4.9.0 (2026-03-11)
 - **Scale**: 3 boards, 275 levels + 72 CIE sections + 39 Edexcel sections, 2,200 words + 5,962 真题 + 3,578 练习题
 - **Supabase**: shared with 25maths-website (ref: `jjjigohjvmyewasmmmyf`)
 - **See also**: [CHANGELOG.md](CHANGELOG.md) | [ROADMAP.md](ROADMAP.md)

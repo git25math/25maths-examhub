@@ -445,7 +445,7 @@ function updateSidebar() {
       E('hb-rank').onclick = null;
     } else {
       E('hb-rank').style.cursor = 'pointer';
-      E('hb-rank').onclick = showRankGuide;
+      E('hb-rank').onclick = function() { navTo('stats'); };
     }
   }
   if (E('hb-name')) E('hb-name').textContent = displayShort;
@@ -457,7 +457,13 @@ function updateSidebar() {
     if (currentUser.email && currentUser.email !== 'guest') {
       lines.push(currentUser.email);
     }
-    lines.push(isTeacher() ? t('Teacher Account', '\u6559\u5e08\u8d26\u53f7') : rankName(r) + ' \xb7 ' + pct + '%');
+    if (isTeacher()) {
+      lines.push(t('Teacher Account', '\u6559\u5e08\u8d26\u53f7'));
+    } else {
+      var gs = getGlobalStats();
+      lines.push(t(gs.mastered + ' words \u00b7 ' + gs.kpMastered + ' KPs \u00b7 ' + gs.badgeCount + ' badges',
+        '\u5df2\u638c\u63e1 ' + gs.mastered + ' \u8bcd \u00b7 ' + gs.kpMastered + ' \u77e5\u8bc6\u70b9 \u00b7 ' + gs.badgeCount + ' \u679a\u5fbd\u7ae0'));
+    }
     var boardOpt = getUserBoardOption();
     if (boardOpt) {
       lines.push(boardOpt.emoji + ' ' + t(boardOpt.name, boardOpt.nameZh));

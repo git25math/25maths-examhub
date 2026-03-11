@@ -29,15 +29,26 @@ function _setFLMFilter(key, idx) {
 /* FLM global stats */
 function getGlobalStats() {
   var all = getAllWords();
-  if (all.length === 0) return { total: 0, mastered: 0, learningPct: 0, masteryPct: 0 };
+  if (all.length === 0) return { total: 0, mastered: 0, learningPct: 0, masteryPct: 0, kpTotal: 0, kpMastered: 0, badgeCount: 0 };
   var mastered = 0;
   all.forEach(function(w) { if (w.fs === 'mastered') mastered++; });
   var masteryPct = Math.round(mastered / all.length * 100);
+  /* KP mastery stats */
+  var kpMastered = 0, kpTotal = 0;
+  var s = loadS();
+  if (s.kpDone) {
+    for (var k in s.kpDone) { kpTotal++; if (s.kpDone[k].fs === 'mastered') kpMastered++; }
+  }
+  /* Badge count */
+  var badgeCount = typeof getUnlockedBadges === 'function' ? getUnlockedBadges().length : 0;
   return {
     total: all.length,
     mastered: mastered,
     learningPct: masteryPct,
-    masteryPct: masteryPct
+    masteryPct: masteryPct,
+    kpTotal: kpTotal,
+    kpMastered: kpMastered,
+    badgeCount: badgeCount
   };
 }
 
@@ -101,7 +112,9 @@ var catCollapsed = {};
   try { saved = JSON.parse(localStorage.getItem('wmatch_catCollapsed')); } catch(e) {}
   BOARDS.forEach(function(b) {
     b.categories.forEach(function(c) {
-      catCollapsed[c.id] = saved && c.id in saved ? saved[c.id] : true;
+      /* 25m: user's own year default expanded, others collapsed */
+      var defaultCollapsed = (typeof userBoard !== 'undefined' && userBoard && c.id === userBoard) ? false : true;
+      catCollapsed[c.id] = saved && c.id in saved ? saved[c.id] : defaultCollapsed;
     });
   });
 })();
@@ -379,7 +392,9 @@ function _renderHeroAction() {
   if (wg) {
     html += '<span class="hero-weekly">' + t('Week', '\u672c\u5468') + ': ' + wg.learned + '/' + wg.target + '</span>';
   }
-  html += '<span class="hero-rank" data-hero-action="rank">' + homeRank.emoji + ' ' + rankName(homeRank) + '</span>';
+  html += '<span class="hero-rank" data-hero-action="stats">' + homeRank.emoji + ' '
+    + t(gs.mastered + ' words \u00b7 ' + gs.kpMastered + ' KPs mastered',
+        '\u5df2\u638c\u63e1 ' + gs.mastered + ' \u8bcd \u00b7 ' + gs.kpMastered + ' \u77e5\u8bc6\u70b9') + '</span>';
   html += '</div>';
 
   /* Main action area */
@@ -468,12 +483,11 @@ function _initHeroDelegation() {
 function _renderQuickStats() {
   var gs = getGlobalStats();
   var streakN = getStreakCount();
-  var homeRank = getRank();
   var html = '<div class="quick-stats" data-hero-action="stats">';
   html += '<span class="qs-pill">\ud83d\udd25 ' + streakN + t('d', '\u5929') + '</span>';
-  html += '<span class="qs-pill">\ud83d\udcca ' + gs.total + t(' words', '\u8bcd') + '</span>';
-  html += '<span class="qs-pill">\u2b50 ' + gs.masteryPct + '%</span>';
-  html += '<span class="qs-pill">' + homeRank.emoji + ' ' + rankName(homeRank) + '</span>';
+  html += '<span class="qs-pill">\ud83d\udcd6 ' + gs.mastered + t(' words mastered', '\u8bcd\u5df2\u638c\u63e1') + '</span>';
+  html += '<span class="qs-pill">\ud83e\udde0 ' + gs.kpMastered + t(' KPs', '\u77e5\u8bc6\u70b9') + '</span>';
+  html += '<span class="qs-pill">\ud83c\udfc5 ' + gs.badgeCount + t(' badges', '\u679a\u5fbd\u7ae0') + '</span>';
   html += '</div>';
   return html;
 }

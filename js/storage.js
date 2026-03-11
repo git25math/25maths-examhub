@@ -800,6 +800,7 @@ async function _doSyncToCloud() {
     var masteryPct = allW.length > 0 ? Math.round(masteredW / allW.length * 100) : 0;
     var r = getRank();
     var nick = getDisplayName();
+    var gs = getGlobalStats();
     var lbRow = {
       user_id: currentUser.id,
       nickname: nick,
@@ -808,6 +809,7 @@ async function _doSyncToCloud() {
       rank_emoji: r.emoji,
       total_words: allW.length,
       mastered_words: masteredW,
+      mastered_kps: gs.kpMastered,
       board: userBoard || '',
       updated_at: now
     };

@@ -126,183 +126,106 @@ async function _loadBoardClasses() {
 
 async function renderBoard() {
   var panel = E('panel-board');
+  var gs = getGlobalStats();
+  var streakN = typeof getStreakCount === 'function' ? getStreakCount() : 0;
 
-  /* Guest users — read-only Top 10 */
+  /* Teacher view: keep existing teacher account notice */
+  if (isTeacher()) {
+    panel.innerHTML = '<div class="section-title">\ud83c\udfeb ' + t('Teacher Account', '\u6559\u5e08\u8d26\u53f7') + '</div>' +
+      '<div class="text-center text-muted" style="padding:40px 0">' +
+      t('Use the Admin panel to view student progress.', '\u8bf7\u4f7f\u7528\u7ba1\u7406\u9762\u677f\u67e5\u770b\u5b66\u751f\u8fdb\u5ea6\u3002') + '</div>';
+    return;
+  }
+
+  /* Guest view: simplified growth + signup CTA */
   if (isGuest()) {
-    var gHtml = '<div class="section-title">\ud83c\udfc6 ' + t('Leaderboard', '\u6392\u884c\u699c') + '</div>';
-    gHtml += '<div class="text-xs text-muted mb-16">' + t('Live ranking \xb7 Based on mastery score', '\u5b9e\u65f6\u6392\u540d \xb7 \u57fa\u4e8e\u5355\u8bcd\u638c\u63e1\u7387\u8ba1\u5206') + '</div>';
-    /* Try fetching Top 10 */
-    var gRows = [];
-    if (sb) {
-      try {
-        var gRes = await sb.from('leaderboard')
-          .select('nickname,score,mastery_pct,rank_emoji')
-          .order('score', { ascending: false })
-          .limit(10);
-        if (gRes.data) gRows = gRes.data;
-      } catch (e) { /* fallback empty */ }
-    }
-    if (gRows.length > 0) {
-      var gMedals = ['\ud83e\udd47', '\ud83e\udd48', '\ud83e\udd49'];
-      gHtml += '<div class="board-list">';
-      gRows.forEach(function(row, i) {
-        gHtml += '<div class="board-row">';
-        gHtml += '<div class="board-rank">' + (i < 3 ? gMedals[i] : (i + 1)) + '</div>';
-        gHtml += '<div class="board-name">' + (row.rank_emoji || '') + ' ' + escapeHtml(row.nickname || t('Anonymous', '\u533f\u540d')) + '</div>';
-        gHtml += '<div class="board-score">' + row.score + '</div>';
-        gHtml += '<div class="board-streak">' + (row.mastery_pct != null ? row.mastery_pct + '%' : '') + '</div>';
-        gHtml += '</div>';
-      });
-      gHtml += '</div>';
-    } else {
-      gHtml += '<div class="text-center text-muted" style="padding:32px 0">' + t('No ranking data yet', '\u6682\u65e0\u6392\u540d\u6570\u636e') + '</div>';
-    }
-    /* Signup CTA */
+    var gHtml = '<div class="section-title">\ud83c\udf31 ' + t('My Growth', '\u6211\u7684\u6210\u957f') + '</div>';
+    gHtml += _renderGrowthOverview(gs, streakN);
     gHtml += '<div class="text-center mt-20" style="padding:20px;background:var(--c-surface);border-radius:var(--r-lg);box-shadow:var(--shadow)">';
     gHtml += '<div class="mb-8" style="font-size:24px">\u2728</div>';
-    gHtml += '<div class="text-sub mb-12" style="font-size:14px">' + t('Register to join the leaderboard!', '\u6ce8\u518c\u8d26\u53f7\u5373\u53ef\u52a0\u5165\u6392\u884c\u699c\uff01') + '</div>';
+    gHtml += '<div class="text-sub mb-12" style="font-size:14px">' + t('Register to save your progress!', '\u6ce8\u518c\u8d26\u53f7\u4fdd\u5b58\u4f60\u7684\u5b66\u4e60\u8fdb\u5ea6\uff01') + '</div>';
     gHtml += '<button class="btn btn-primary" onclick="doLogout()">' + t('Login / Register', '\u767b\u5f55 / \u6ce8\u518c') + '</button>';
     gHtml += '</div>';
     panel.innerHTML = gHtml;
     return;
   }
 
-  panel.innerHTML = '<div class="section-title flex items-center gap-8">\ud83c\udfc6 ' + t('Leaderboard', '\u6392\u884c\u699c') + ' <button class="btn-help" onclick="showScoreGuide()" title="' + t('About scoring', '\u4e86\u89e3\u79ef\u5206\u89c4\u5219') + '">\u2753</button></div>' +
-    '<div class="text-center text-muted" style="padding:40px 0">' + t('Loading...', '\u52a0\u8f7d\u4e2d...') + '</div>';
+  /* Student growth dashboard */
+  var html = '<div class="section-title">\ud83c\udf31 ' + t('My Growth', '\u6211\u7684\u6210\u957f') + '</div>';
+  html += _renderGrowthOverview(gs, streakN);
 
-  /* Pre-load classes if scope is 'class' */
-  var classList = [];
-  if (_boardScope === 'class' && userSchoolId) {
-    classList = await _loadBoardClasses();
-  }
-
-  /* Resolve default _boardSubKey per scope */
-  if (_boardSubKey === null) {
-    if (_boardScope === 'course') {
-      _boardSubKey = userBoard || BOARD_OPTIONS[0].value;
-    } else if (_boardScope === 'class') {
-      _boardSubKey = userClassId || (classList.length > 0 ? classList[0].id : null);
-    } else if (_boardScope === 'grade') {
-      /* Default to user's grade if it's a 25m-y* board */
-      _boardSubKey = (userBoard && userBoard.indexOf('25m-y') === 0) ? userBoard : GRADE_OPTIONS[0].value;
-    }
-    /* school scope has no sub key */
-  }
-
-  var rows = [];
-  var userId = currentUser ? currentUser.id : null;
-
-  /* Fetch cloud leaderboard */
-  if (sb && isLoggedIn()) {
-    try {
-      var qry = sb.from('leaderboard')
-        .select('user_id,nickname,score,mastery_pct,rank_emoji,mastered_words,total_words');
-
-      /* Apply filter based on scope + sub key */
-      if (_boardScope === 'class' && _boardSubKey) {
-        qry = qry.eq('class_id', _boardSubKey);
-      } else if (_boardScope === 'grade' && _boardSubKey && userSchoolId) {
-        qry = qry.eq('board', _boardSubKey).eq('school_id', userSchoolId);
-      } else if (_boardScope === 'school' && userSchoolId) {
-        qry = qry.eq('school_id', userSchoolId);
+  /* Achievements badge grid */
+  if (typeof _renderBadgeSection === 'function') {
+    html += _renderBadgeSection();
+  } else if (typeof BADGES !== 'undefined' && typeof getUnlockedBadges === 'function') {
+    var unlocked = getUnlockedBadges();
+    html += '<div class="section-title mt-24">' + t('Achievements', '\u6210\u5c31\u5fbd\u7ae0') + '</div>';
+    html += '<div class="badge-grid">';
+    BADGES.forEach(function(b) {
+      var isUnlocked = unlocked.indexOf(b.id) >= 0;
+      if (b.hidden && !isUnlocked) {
+        html += '<div class="badge-item badge-hidden"><span class="badge-icon">\u2753</span><span class="badge-name">???</span></div>';
       } else {
-        /* course scope */
-        if (_boardSubKey) qry = qry.eq('board', _boardSubKey);
+        html += '<div class="badge-item' + (isUnlocked ? ' unlocked' : '') + '"><span class="badge-icon">' + b.icon + '</span><span class="badge-name">' + t(b.en, b.zh) + '</span></div>';
       }
+    });
+    html += '</div>';
+  }
 
-      var res = await qry.order('score', { ascending: false }).limit(50);
-      if (res.data && res.data.length > 0) {
-        rows = res.data.map(function(r) {
-          return {
-            name: r.nickname || t('Anonymous', '\u533f\u540d'),
-            emoji: r.rank_emoji,
-            score: r.score,
-            pct: r.mastery_pct,
-            mastered: r.mastered_words,
-            total: r.total_words,
-            isMe: r.user_id === userId
-          };
-        });
+  /* Learning milestones — recent badge timeline */
+  var badges = [];
+  try {
+    var raw = JSON.parse(localStorage.getItem('wmatch_badges'));
+    if (raw && typeof raw === 'object') {
+      for (var bid in raw) {
+        if (raw[bid]) badges.push({ id: bid, ts: raw[bid] });
       }
-    } catch (e) { /* fallback below */ }
-  }
-
-  /* If no cloud data or guest, show local user only (skip teachers) */
-  if (rows.length === 0 && !isTeacher()) {
-    var userName = currentUser ? getDisplayName() : t('You', '\u4f60');
-    var userRank = getRank();
-    var pct = getMasteryPct();
-    rows.push({ name: userName, emoji: userRank.emoji, score: pct * 20, pct: pct, isMe: true });
-  }
-
-  /* Ensure current user is in the list (skip teachers) */
-  var hasMe = rows.some(function(r) { return r.isMe; });
-  if (!hasMe && isLoggedIn() && !isTeacher()) {
-    var myRank = getRank();
-    var myPct = getMasteryPct();
-    rows.push({
-      name: getDisplayName(),
-      emoji: myRank.emoji, score: myPct * 20, pct: myPct, isMe: true
-    });
-    rows.sort(function(a, b) { return b.score - a.score; });
-  }
-
-  /* Build HTML */
-  var html = '<div class="section-title flex items-center gap-8">\ud83c\udfc6 ' + t('Leaderboard', '\u6392\u884c\u699c') + ' <button class="btn-help" onclick="showScoreGuide()" title="' + t('About scoring', '\u4e86\u89e3\u79ef\u5206\u89c4\u5219') + '">\u2753</button></div>';
-
-  /* Scope tabs — only when userSchoolId exists */
-  if (userSchoolId) {
-    var scopes = [
-      { key: 'course', label: t('Course', '\u8bfe\u7a0b') },
-      { key: 'class',  label: t('Class', '\u73ed\u7ea7') },
-      { key: 'grade',  label: t('Grade', '\u5e74\u7ea7') },
-      { key: 'school', label: t('School', '\u5168\u6821') }
-    ];
-    html += '<div class="admin-tabs board-scope-tabs">';
-    scopes.forEach(function(s) {
-      html += '<button class="admin-tab' + (s.key === _boardScope ? ' active' : '') + '" data-board-scope="' + s.key + '">' + s.label + '</button>';
+      badges.sort(function(a, b) { return b.ts - a.ts; });
+      badges = badges.slice(0, 5);
+    }
+  } catch(e) {}
+  if (badges.length > 0 && typeof BADGES !== 'undefined') {
+    html += '<div class="section-title mt-24">' + t('Recent Milestones', '\u8fd1\u671f\u91cc\u7a0b\u7891') + '</div>';
+    html += '<div class="growth-milestones">';
+    badges.forEach(function(entry) {
+      var bDef = null;
+      BADGES.forEach(function(b) { if (b.id === entry.id) bDef = b; });
+      if (!bDef) return;
+      var d = new Date(entry.ts);
+      var dateStr = d.toLocaleDateString(appLang === 'zh' ? 'zh-CN' : 'en-US', { month: 'short', day: 'numeric' });
+      html += '<div class="milestone-row">';
+      html += '<span class="milestone-icon">' + bDef.icon + '</span>';
+      html += '<span class="milestone-name">' + t(bDef.en, bDef.zh) + '</span>';
+      html += '<span class="milestone-date">' + dateStr + '</span>';
+      html += '</div>';
     });
     html += '</div>';
   }
 
-  /* Sub pills per scope */
-  if (_boardScope === 'course') {
-    var boardOpts = userSchoolId ? BOARD_OPTIONS : getPublicBoardOptions();
-    html += '<div class="board-sub-pills">';
-    boardOpts.forEach(function(opt) {
-      html += '<button class="board-sub-pill' + (opt.value === _boardSubKey ? ' active' : '') + '" data-board-sub="' + opt.value + '">' + opt.emoji + ' ' + t(opt.name, opt.nameZh) + '</button>';
-    });
-    html += '</div>';
-  } else if (_boardScope === 'class' && classList.length > 0) {
-    html += '<div class="board-sub-pills">';
-    classList.forEach(function(c) {
-      html += '<button class="board-sub-pill' + (c.id === _boardSubKey ? ' active' : '') + '" data-board-sub="' + c.id + '">' + escapeHtml(c.name) + '</button>';
-    });
-    html += '</div>';
-  } else if (_boardScope === 'grade') {
-    html += '<div class="board-sub-pills">';
-    GRADE_OPTIONS.forEach(function(opt) {
-      html += '<button class="board-sub-pill' + (opt.value === _boardSubKey ? ' active' : '') + '" data-board-sub="' + opt.value + '">' + opt.emoji + ' ' + t(opt.name, opt.nameZh) + '</button>';
-    });
-    html += '</div>';
-  }
-  /* school scope: no sub pills */
-
-  html += '<div class="text-xs text-muted mb-16">' + t('Live ranking \xb7 Based on mastery score', '\u5b9e\u65f6\u6392\u540d \xb7 \u57fa\u4e8e\u5355\u8bcd\u638c\u63e1\u7387\u8ba1\u5206') + '</div>';
-  html += '<div class="board-list">';
-
-  var medals = ['\ud83e\udd47', '\ud83e\udd48', '\ud83e\udd49'];
-  rows.forEach(function(row, i) {
-    html += '<div class="board-row' + (row.isMe ? ' me' : '') + '">';
-    html += '<div class="board-rank">' + (i < 3 ? medals[i] : (i + 1)) + '</div>';
-    html += '<div class="board-name">' + row.emoji + ' ' + escapeHtml(row.name) + (row.isMe ? ' (' + t('you', '\u4f60') + ')' : '') + '</div>';
-    html += '<div class="board-score">' + row.score + '</div>';
-    html += '<div class="board-streak">' + (row.pct != null ? row.pct + '%' : '') + '</div>';
-    html += '</div>';
-  });
-
-  html += '</div>';
   panel.innerHTML = html;
+}
+
+/* Growth overview cards with progress bars */
+function _renderGrowthOverview(gs, streakN) {
+  var html = '<div class="growth-overview">';
+  /* Vocab progress */
+  var vocabPct = gs.total > 0 ? Math.round(gs.mastered / gs.total * 100) : 0;
+  html += '<div class="growth-card">';
+  html += '<div class="growth-card-header"><span>\ud83d\udcd6 ' + t('Vocabulary', '\u8bcd\u6c47') + '</span><span class="growth-card-num">' + gs.mastered + ' / ' + gs.total + '</span></div>';
+  html += '<div class="growth-bar"><div class="growth-bar-fill" style="width:' + vocabPct + '%"></div></div>';
+  html += '</div>';
+  /* KP progress */
+  var kpPct = gs.kpTotal > 0 ? Math.round(gs.kpMastered / gs.kpTotal * 100) : 0;
+  html += '<div class="growth-card">';
+  html += '<div class="growth-card-header"><span>\ud83e\udde0 ' + t('Knowledge Points', '\u77e5\u8bc6\u70b9') + '</span><span class="growth-card-num">' + gs.kpMastered + ' / ' + gs.kpTotal + '</span></div>';
+  html += '<div class="growth-bar"><div class="growth-bar-fill" style="width:' + kpPct + '%"></div></div>';
+  html += '</div>';
+  /* Streak */
+  html += '<div class="growth-card">';
+  html += '<div class="growth-card-header"><span>\ud83d\udd25 ' + t('Learning Streak', '\u8fde\u7eed\u5b66\u4e60') + '</span><span class="growth-card-num">' + streakN + t(' days', ' \u5929') + '</span></div>';
+  html += '</div>';
+  html += '</div>';
+  return html;
 }
 
 function switchBoardScope(scope) {

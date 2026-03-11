@@ -443,6 +443,12 @@
 - [x] **教师作业解锁**: diagnostic/mock 作业自动注入 featureOverride → v2.5.0
 - [x] **全面取消路径锁定**: 所有模式/知识点直接开放，删除 FEATURE_THRESHOLD + Test Out + 锁定 UI → v2.5.1
 
+## v4.9 哈罗全年级开放 + 成长足迹取代积分排行 [DONE]
+- [x] **全年级开放 (v4.9.0)**: isLevelVisible() 扩展 25m 分支 + getVisibleBoards() 移除年级过滤 + 首页年级折叠优化
+- [x] **成长仪表盘 (v4.9.0)**: renderBoard() 重写为词汇/KP 进度条 + 成就徽章 + 里程碑时间线
+- [x] **显示替换 (v4.9.0)**: Quick Stats + Hero rank + 侧栏菜单头 → 掌握数量（词汇 + 知识点 + 徽章）
+- [x] **Supabase (v4.9.0)**: leaderboard 表 mastered_kps 列 + syncToCloud 同步
+
 ## v4.8 词库去重：全局 UID 词汇架构
 - [x] **Phase 1 HHK (v4.8.0)**: dedup-vocab.py 构建脚本 + 全局 uid 词库 + wordKey() 自动切换 + FLM 迁移 + 9 组异义词消歧 + 跨 level 去重统计（1,501→833，节省 44.5%）
 - [x] **Phase 1.5 DRY + 清理 (v4.8.1)**: makeUid() 提取到 config.js + 旧 key 迁移后立即删除 + 自定义清单 ref 归一化
