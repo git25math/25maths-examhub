@@ -511,13 +511,19 @@ function printPPList(pps) {
   /* Use custom builder with extra PP-specific CSS */
   var title = zh ? '\u771f\u9898\u9519\u9898\u8bb0\u5f55' : 'Past Paper Error Log';
   var subtitle = pps.length + (zh ? ' \u9898' : ' questions');
-  var html = _buildPPListPrintDoc(title, subtitle, body);
+  var userName = '';
+  if (typeof currentUser !== 'undefined' && currentUser) {
+    userName = currentUser.nickname || currentUser.email || '';
+    if (userName === 'guest') userName = '';
+  }
+  var html = _buildPPListPrintDoc(title, subtitle, body, userName);
   _openPrintWindow(html);
 }
 
-function _buildPPListPrintDoc(title, subtitle, bodyHtml) {
+function _buildPPListPrintDoc(title, subtitle, bodyHtml, userName) {
   var esc = typeof escapeHtml === 'function' ? escapeHtml : function(s) { return s; };
   var dateStr = new Date().toLocaleDateString('en-CA');
+  var zh = (typeof appLang !== 'undefined' && appLang !== 'en');
 
   var html = '<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">';
   html += '<title>' + esc(title) + '</title>';
@@ -532,6 +538,8 @@ function _buildPPListPrintDoc(title, subtitle, bodyHtml) {
   html += '.ws-list-brand { font-size: 13pt; font-weight: 700; }';
   html += '.ws-list-title { font-size: 11pt; font-weight: 600; color: #444; }';
   html += '.ws-list-meta { font-size: 8pt; color: #666; text-align: right; }';
+  html += '.ws-user-name { font-size: 11pt; font-weight: 700; color: #5248C9; }';
+  html += '.ws-motto { font-size: 8pt; color: #888; margin-top: 3px; font-style: italic; line-height: 1.4; max-width: 220px; }';
   html += '.ws-pp-table { width: 100%; border-collapse: collapse; font-size: 9pt; }';
   html += '.ws-pp-table th { background: #f5f3ff; padding: 5px 6px; border: 1px solid #d1d5db;';
   html += '  text-align: left; font-weight: 600; font-size: 8pt; white-space: nowrap; }';
@@ -554,7 +562,13 @@ function _buildPPListPrintDoc(title, subtitle, bodyHtml) {
   html += '<div class="ws-list-title">' + esc(title) + '</div>';
   if (subtitle) html += '<div style="font-size:8pt;color:#666">' + esc(subtitle) + '</div>';
   html += '</div>';
-  html += '<div class="ws-list-meta"><div>' + dateStr + '</div></div>';
+  html += '<div class="ws-list-meta">';
+  if (userName) html += '<div class="ws-user-name">' + esc(userName) + '</div>';
+  html += '<div>' + dateStr + '</div>';
+  html += '<div class="ws-motto">' + (zh
+    ? '\u6bcf\u9053\u9519\u9898\u90fd\u662f\u8fdb\u6b65\u7684\u8d77\u70b9\u2014\u2014\u6807\u8bb0\u3001\u53cd\u601d\u3001\u91cd\u7ec3\uff0c\u76f4\u5230\u771f\u6b63\u638c\u63e1\u3002'
+    : 'Every mistake is a stepping stone\u2014mark it, reflect, re-practice, until truly mastered.') + '</div>';
+  html += '</div>';
   html += '</div>';
 
   html += bodyHtml;
