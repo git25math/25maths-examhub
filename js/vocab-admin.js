@@ -76,17 +76,32 @@ function vaRenum() {
   });
 }
 
+function _vaMakeUid(word) {
+  var uid = word.toLowerCase().trim();
+  uid = uid.replace(/[^a-z0-9\s-]/g, '');
+  uid = uid.replace(/\s+/g, '-');
+  uid = uid.replace(/-+/g, '-').replace(/^-|-$/g, '');
+  return uid;
+}
+
 function vaCollectCards() {
   var vocab = [];
   var rows = document.querySelectorAll('#va-cards .va-row');
-  var id = 1;
+  var seen = {};
   rows.forEach(function(tr) {
     var w = tr.querySelector('.va-word').value.trim();
     var d = tr.querySelector('.va-def').value.trim();
     if (w && d) {
-      vocab.push({ id: id, type: 'word', content: w });
-      vocab.push({ id: id, type: 'def', content: d });
-      id++;
+      var uid = _vaMakeUid(w);
+      /* Disambiguate duplicate UIDs within the same deck */
+      if (seen[uid]) {
+        var n = 2;
+        while (seen[uid + '-' + n]) n++;
+        uid = uid + '-' + n;
+      }
+      seen[uid] = true;
+      vocab.push({ id: uid, type: 'word', content: w });
+      vocab.push({ id: uid, type: 'def', content: d });
     }
   });
   return vocab;

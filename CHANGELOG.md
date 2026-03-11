@@ -26,6 +26,7 @@
 | `data/vocab-uid-map.json` | 新增 — FLM 迁移映射表 |
 | `data/vocab-disambig.json` | 新增 — 异义词消歧报告 |
 | `scripts/dedup-vocab.py` | 新增 — 去重构建脚本 |
+| `js/vocab-admin.js` | 修改 — vaCollectCards() 生成语义 UID 替代数字 ID，新增词自动进入全局去重体系 |
 
 ## [4.7.6] - 2026-03-11 — 引导系统审计修复 + 3 端高保真同步管道
 
