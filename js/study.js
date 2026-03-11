@@ -160,6 +160,7 @@ function _finishRefreshScan() {
     var lsActions = lsPanel ? lsPanel.querySelector('.result-actions') : null;
     if (lsActions && typeof _renderListScanButtons === 'function') {
       lsActions.outerHTML = _renderListScanButtons();
+      if (typeof _bindListScanButtons === 'function') _bindListScanButtons(lsPanel);
     }
   }
 }
@@ -800,6 +801,7 @@ function _finishKPScan() {
     var lsActions2 = lsPanel2 ? lsPanel2.querySelector('.result-actions') : null;
     if (lsActions2 && typeof _renderListScanButtons === 'function') {
       lsActions2.outerHTML = _renderListScanButtons();
+      if (typeof _bindListScanButtons === 'function') _bindListScanButtons(lsPanel2);
     }
   }
   _kpScan = null;

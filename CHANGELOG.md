@@ -1,5 +1,34 @@
 # Changelog
 
+## [4.7.1] - 2026-03-11 — 列表视图质量修复（第二轮审计 11 项）
+
+### 安全修复
+- **inline onclick XSS 消除**: `_renderListScanButtons()` 3 处 `onclick` 改为 `data-action` + `_bindListScanButtons()` 事件委托
+- **addlist ID 未转义**: `_showAddToListModal()` 中 `data-addlist` 值增加 `_escList()` 包装
+
+### Bug 修复
+- **`getLang()` 不存在**: 10 处调用改为 `appLang !== 'en'`（与 `t()` 函数一致），中文用户不再看到全英文
+- **advanceListScan 双击**: 添加 `_listScanAdvancing` 锁变量，防止快速双击跳过 phase
+- **`_resolveItemFLM` 返回 undefined**: `_finishListScan` 中 fs 赋值增加 `|| 'new'` fallback
+- **Modal 事件绑定竞态**: setTimeout 从 50ms 提升至 150ms + `modal-card` 不存在时自动重试
+- **LEVELS[w.level] null 安全**: 增加 typeof/bounds guard 防止越界访问
+
+### 体验优化
+- **emoji 按钮 aria-label**: ✏️🗑️🖨️ 按钮添加 `aria-label`（中英双语）
+- **分页大小持久化**: `_listPageSize` 存入 localStorage `list_pagesize`
+- **清单项删除 toast**: 移除清单项后显示 showToast 提示
+- **KP/PP 空 board 提示**: 无可用 board 时显示 empty state 提示文案
+
+### 文件变更
+| 文件 | 变更类型 |
+|------|---------|
+| `js/lists.js` | 修改 — 11 项质量修复（+36 行）|
+| `js/study.js` | 修改 — 2 处 `_bindListScanButtons` 调用（+2 行）|
+| `js/practice.js` | 修改 — 1 处 `_bindListScanButtons` 调用（+1 行）|
+| `js/config.js` | 修改 — `APP_VERSION` → `'v4.7.1'` |
+
+---
+
 ## [4.7.0] - 2026-03-11 — FLM 完备性审计 + 自定义清单 + 遗忘追踪 + 列表/打印视图
 
 ### 遗忘追踪 (Re-forget Tracking)

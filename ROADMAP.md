@@ -449,6 +449,7 @@
 - [x] **列表视图 (v4.7.0)**: 4 Tab + 7 维筛选 + 可排序表格 + 批量操作 + 分页 + 侧栏/底栏入口
 - [x] **My Lists (v4.7.0)**: 卡片网格 + Session 时间线 + 链式 Scan + Rename/Delete/Print
 - [x] **打印视图 (v4.7.0)**: 4 种列表打印（Word/KP/PP/Custom）+ 通用 A4 构建器
+- [x] **列表视图质量修复 (v4.7.1)**: getLang→appLang 10 处 + onclick XSS 消除 3 处 + 双击锁 + Modal 竞态 + LEVELS null 安全 + aria-label + 分页持久化 + 空 board 提示
 
 ## v4.6 FLM Scan Preview + 全览模式 + Block 编辑器 [DONE]
 - [x] **KP Scan Preview (v4.6.0)**: Round 1 三按钮预览 + Round 2+ testYourself MCQ 聚焦测验 + 多轮筛选 + FLM 写入

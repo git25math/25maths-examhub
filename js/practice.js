@@ -1831,6 +1831,7 @@ function _finishPPScan() {
     var lsPPAct = lsPP ? lsPP.querySelector('.result-actions') : null;
     if (lsPPAct && typeof _renderListScanButtons === 'function') {
       lsPPAct.outerHTML = _renderListScanButtons();
+      if (typeof _bindListScanButtons === 'function') _bindListScanButtons(lsPP);
     }
   }
   _ppScanState = null;

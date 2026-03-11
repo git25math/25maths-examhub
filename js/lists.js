@@ -9,7 +9,7 @@ var _listFilters = { status: 'all', section: 'all', board: 'all', dateFrom: '', 
 var _listSort = { col: 'word', asc: true };
 var _listSelected = {};   /* { 'vocab:L_3_W12': true, ... } */
 var _listPage = 0;
-var _listPageSize = 50;
+var _listPageSize = (function() { try { var v = parseInt(localStorage.getItem('list_pagesize')); return v > 0 ? v : 50; } catch(e) { return 50; } })();
 var _listData = [];       /* current filtered+sorted data */
 
 /* ═══ ENTRY POINT ═══ */
@@ -17,8 +17,7 @@ var _listData = [];       /* current filtered+sorted data */
 function renderListView() {
   var el = document.getElementById('panel-lists');
   if (!el) return;
-  var lang = typeof getLang === 'function' ? getLang() : 'en';
-  var zh = lang === 'zh';
+  var zh = (appLang !== 'en');
   var html = '<div class="list-view">';
 
   /* Header */
@@ -180,7 +179,7 @@ function _getFilteredWords() {
   var items = [];
   for (var i = 0; i < all.length; i++) {
     var w = all[i];
-    var lvObj = LEVELS[w.level];
+    var lvObj = (typeof LEVELS !== 'undefined' && w.level >= 0 && w.level < LEVELS.length) ? LEVELS[w.level] : null;
     items.push({
       _type: 'vocab', _ref: w.key, _id: 'vocab:' + w.key,
       word: w.word || '', def: w.def || '', fs: w.fs || 'new',
@@ -337,7 +336,7 @@ function _applyListSort(items) {
 function _renderListTable() {
   var el = document.getElementById('list-content');
   if (!el) return;
-  var zh = (typeof getLang === 'function' ? getLang() : 'en') === 'zh';
+  var zh = (appLang !== 'en');
 
   /* Get data */
   var raw;
@@ -345,6 +344,17 @@ function _renderListTable() {
   else if (_listTab === 'kps') raw = _getFilteredKPs();
   else if (_listTab === 'pps') raw = _getFilteredPPs();
   else raw = [];
+
+  /* Empty state for KP/PP when no boards configured */
+  if ((_listTab === 'kps' || _listTab === 'pps') && raw.length === 0) {
+    var boards = typeof getVisibleBoards === 'function' ? getVisibleBoards() : [];
+    if (boards.length === 0) {
+      el.innerHTML = '<div style="text-align:center;padding:48px;color:var(--c-text3)">' +
+        (zh ? '\u8bf7\u5148\u9009\u62e9\u8003\u8bd5\u5c40/\u8bfe\u7a0b\u4ee5\u67e5\u770b' + (_listTab === 'kps' ? '\u77e5\u8bc6\u70b9' : '\u771f\u9898') : 'Please select a board/course to view ' + (_listTab === 'kps' ? 'knowledge points' : 'past papers')) +
+        '</div>';
+      return;
+    }
+  }
 
   var filtered = _applyListFilters(raw);
   _listData = _applyListSort(filtered);
@@ -502,6 +512,7 @@ function _bindListTableEvents(el) {
       if (btn.dataset.listpagesize === 'all') { _listPageSize = 99999; }
       else { _listPageSize = parseInt(btn.dataset.listpagesize) || 50; }
       _listPage = 0;
+      try { localStorage.setItem('list_pagesize', String(_listPageSize)); } catch(e) {}
       _renderListTable();
     });
   });
@@ -539,7 +550,7 @@ function _fsChip(fs) {
 /* ═══ ADD TO LIST MODAL ═══ */
 
 function _showAddToListModal() {
-  var zh = (typeof getLang === 'function' ? getLang() : 'en') === 'zh';
+  var zh = (appLang !== 'en');
   var lists = typeof getCustomLists === 'function' ? getCustomLists() : [];
   var html = '<div style="padding:16px">';
   html += '<h3>' + (zh ? '\u52a0\u5165\u6e05\u5355' : 'Add to List') + '</h3>';
@@ -547,7 +558,7 @@ function _showAddToListModal() {
   if (lists.length > 0) {
     html += '<div style="margin:12px 0">';
     for (var i = 0; i < lists.length; i++) {
-      html += '<button class="btn btn-sm btn-ghost" style="margin:4px" data-addlist="' + lists[i].id + '">' + _escList(lists[i].title) + ' (' + lists[i].items.length + ')</button>';
+      html += '<button class="btn btn-sm btn-ghost" style="margin:4px" data-addlist="' + _escList(lists[i].id) + '">' + _escList(lists[i].title) + ' (' + lists[i].items.length + ')</button>';
     }
     html += '</div>';
     html += '<div class="sf-divider" style="margin:8px 0"></div>';
@@ -564,7 +575,7 @@ function _showAddToListModal() {
   /* Bind existing list buttons */
   setTimeout(function() {
     var card = document.getElementById('modal-card');
-    if (!card) return;
+    if (!card) { setTimeout(arguments.callee, 100); return; }
     card.querySelectorAll('[data-addlist]').forEach(function(btn) {
       btn.addEventListener('click', function() {
         _doAddSelectedToList(btn.dataset.addlist);
@@ -580,7 +591,7 @@ function _showAddToListModal() {
         if (typeof hideModal === 'function') hideModal();
       });
     }
-  }, 50);
+  }, 150);
 }
 
 function _doAddSelectedToList(listId) {
@@ -594,7 +605,7 @@ function _doAddSelectedToList(listId) {
   }
   if (items.length > 0 && typeof addItemsToList === 'function') {
     addItemsToList(listId, items);
-    var zh = (typeof getLang === 'function' ? getLang() : 'en') === 'zh';
+    var zh = (appLang !== 'en');
     if (typeof showToast === 'function') showToast(zh ? items.length + ' \u9879\u5df2\u52a0\u5165\u6e05\u5355' : items.length + ' items added');
   }
   _listSelected = {};
@@ -649,7 +660,7 @@ function _printSelectedItems() {
 function _renderMyLists() {
   var el = document.getElementById('list-content');
   if (!el) return;
-  var zh = (typeof getLang === 'function' ? getLang() : 'en') === 'zh';
+  var zh = (appLang !== 'en');
   var lists = typeof getCustomLists === 'function' ? getCustomLists() : [];
 
   var html = '<div style="padding:8px 0">';
@@ -697,9 +708,9 @@ function _renderMyLists() {
 
       html += '<div class="cl-card-actions">';
       html += '<button class="btn btn-sm btn-primary cl-scan-btn" data-clid="' + cl.id + '">' + (zh ? '\u5f00\u59cb Scan' : 'Scan') + '</button>';
-      html += '<button class="btn btn-sm btn-ghost cl-rename-btn" data-clid="' + cl.id + '">\u270f\ufe0f</button>';
-      html += '<button class="btn btn-sm btn-ghost cl-delete-btn" data-clid="' + cl.id + '">\ud83d\uddd1\ufe0f</button>';
-      html += '<button class="btn btn-sm btn-ghost cl-print-btn" data-clid="' + cl.id + '">\ud83d\udda8\ufe0f</button>';
+      html += '<button class="btn btn-sm btn-ghost cl-rename-btn" data-clid="' + cl.id + '" aria-label="' + (zh ? '\u91cd\u547d\u540d' : 'Rename') + '">\u270f\ufe0f</button>';
+      html += '<button class="btn btn-sm btn-ghost cl-delete-btn" data-clid="' + cl.id + '" aria-label="' + (zh ? '\u5220\u9664' : 'Delete') + '">\ud83d\uddd1\ufe0f</button>';
+      html += '<button class="btn btn-sm btn-ghost cl-print-btn" data-clid="' + cl.id + '" aria-label="' + (zh ? '\u6253\u5370' : 'Print') + '">\ud83d\udda8\ufe0f</button>';
       html += '</div>';
 
       /* Expandable item list */
@@ -719,7 +730,7 @@ function _renderMyLists() {
   var createBtn = el.querySelector('#cl-create-btn');
   if (createBtn) {
     createBtn.addEventListener('click', function() {
-      var zh2 = (typeof getLang === 'function' ? getLang() : 'en') === 'zh';
+      var zh2 = (appLang !== 'en');
       var title = prompt(zh2 ? '\u6e05\u5355\u540d\u79f0:' : 'List name:', '');
       if (title) {
         createCustomList(title);
@@ -745,7 +756,7 @@ function _renderMyLists() {
 
   el.querySelectorAll('.cl-rename-btn').forEach(function(btn) {
     btn.addEventListener('click', function() {
-      var zh2 = (typeof getLang === 'function' ? getLang() : 'en') === 'zh';
+      var zh2 = (appLang !== 'en');
       var newTitle = prompt(zh2 ? '\u65b0\u540d\u79f0:' : 'New name:', '');
       if (newTitle) { renameCustomList(btn.dataset.clid, newTitle); _renderMyLists(); }
     });
@@ -753,7 +764,7 @@ function _renderMyLists() {
 
   el.querySelectorAll('.cl-delete-btn').forEach(function(btn) {
     btn.addEventListener('click', function() {
-      var zh2 = (typeof getLang === 'function' ? getLang() : 'en') === 'zh';
+      var zh2 = (appLang !== 'en');
       if (confirm(zh2 ? '\u786e\u5b9a\u5220\u9664\u8fd9\u4e2a\u6e05\u5355\uff1f' : 'Delete this list?')) {
         deleteCustomList(btn.dataset.clid);
         _renderMyLists();
@@ -776,6 +787,8 @@ function _renderMyLists() {
       var ref = btn.dataset.rmRef;
       if (typeof removeItemFromList === 'function') {
         removeItemFromList(listId, type, ref);
+        var zh2 = (appLang !== 'en');
+        if (typeof showToast === 'function') showToast(zh2 ? '\u5df2\u79fb\u9664' : 'Item removed');
         _renderMyLists();
       }
     });
@@ -907,34 +920,52 @@ function _runListScanPhase() {
 }
 
 /* Called from finish hooks in study.js / practice.js to advance to next phase */
+var _listScanAdvancing = false;
 function advanceListScan() {
-  if (!_listScanSession) return;
+  if (!_listScanSession || _listScanAdvancing) return;
+  _listScanAdvancing = true;
   _listScanSession.phaseIdx++;
-  setTimeout(function() { _runListScanPhase(); }, 600);
+  setTimeout(function() { _listScanAdvancing = false; _runListScanPhase(); }, 600);
 }
 
 /* Render list-scan-aware buttons for result screens */
 function _renderListScanButtons() {
   if (!_listScanSession) return '';
-  var zh = (typeof getLang === 'function' ? getLang() : 'en') === 'zh';
+  var zh = (appLang !== 'en');
   var cur = _listScanSession.phaseIdx;
   var total = _listScanSession.phases.length;
   var isLast = (cur >= total - 1);
 
   var html = '<div class="result-actions">';
   if (isLast) {
-    html += '<button class="btn btn-primary" onclick="advanceListScan()">';
+    html += '<button class="btn btn-primary" data-action="advanceListScan">';
     html += (zh ? '\u5b8c\u6210\u6e05\u5355 Scan' : 'Finish List Scan') + '</button>';
   } else {
     var nextType = _listScanSession.phases[cur + 1].type;
     var nextLabel = nextType === 'vocab' ? (zh ? '\u8bcd\u6c47' : 'Vocab') : nextType === 'kp' ? (zh ? '\u77e5\u8bc6\u70b9' : 'KP') : (zh ? '\u771f\u9898' : 'PP');
-    html += '<button class="btn btn-primary" onclick="advanceListScan()">';
+    html += '<button class="btn btn-primary" data-action="advanceListScan">';
     html += (zh ? '\u4e0b\u4e00\u6b65' : 'Next') + ': ' + nextLabel + ' \u2192</button>';
   }
-  html += '<button class="btn btn-ghost" onclick="exitListScan()">';
+  html += '<button class="btn btn-ghost" data-action="exitListScan">';
   html += (zh ? '\u9000\u51fa' : 'Exit') + '</button>';
   html += '</div>';
   return html;
+}
+
+/* Bind list-scan button events after HTML injection */
+function _bindListScanButtons(panel) {
+  if (!panel) return;
+  var btns = panel.querySelectorAll('[data-action]');
+  for (var i = 0; i < btns.length; i++) {
+    (function(btn) {
+      var action = btn.dataset.action;
+      if (action === 'advanceListScan') {
+        btn.addEventListener('click', function() { advanceListScan(); });
+      } else if (action === 'exitListScan') {
+        btn.addEventListener('click', function() { exitListScan(); });
+      }
+    })(btns[i]);
+  }
 }
 
 function exitListScan() {
@@ -950,7 +981,7 @@ function _finishListScan() {
   var results = { mastered: 0, uncertain: 0, learning: 0, 'new': 0 };
   if (list) {
     for (var i = 0; i < list.items.length; i++) {
-      var fs = _resolveItemFLM(list.items[i].type, list.items[i].ref);
+      var fs = _resolveItemFLM(list.items[i].type, list.items[i].ref) || 'new';
       results[fs] = (results[fs] || 0) + 1;
     }
   }
@@ -959,7 +990,7 @@ function _finishListScan() {
     recordListSession(_listScanSession.listId, results);
   }
 
-  var zh = (typeof getLang === 'function' ? getLang() : 'en') === 'zh';
+  var zh = (appLang !== 'en');
   if (typeof showToast === 'function') {
     showToast(zh ? '\u6e05\u5355 Scan \u5b8c\u6210\uff01' : 'List Scan complete!');
   }
