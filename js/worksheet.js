@@ -309,9 +309,14 @@ function printRepairWorksheet(q, sectionId, board) {
    Generates printable A4 tables for filtered learning items.
    ══════════════════════════════════════════════════════════════ */
 
-function _buildListPrintDoc(title, subtitle, bodyHtml) {
+function _buildListPrintDoc(title, subtitle, bodyHtml, motto) {
   var esc = typeof escapeHtml === 'function' ? escapeHtml : function(s) { return s; };
   var dateStr = new Date().toLocaleDateString('en-CA');
+  var userName = '';
+  if (typeof currentUser !== 'undefined' && currentUser) {
+    userName = currentUser.nickname || currentUser.email || '';
+    if (userName === 'guest') userName = '';
+  }
 
   var html = '<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">';
   html += '<title>' + esc(title) + '</title>';
@@ -326,6 +331,8 @@ function _buildListPrintDoc(title, subtitle, bodyHtml) {
   html += '.ws-list-brand { font-size: 14pt; font-weight: 700; }';
   html += '.ws-list-title { font-size: 12pt; font-weight: 600; color: #444; }';
   html += '.ws-list-meta { font-size: 9pt; color: #666; text-align: right; }';
+  html += '.ws-user-name { font-size: 11pt; font-weight: 700; color: #5248C9; }';
+  html += '.ws-motto { font-size: 8pt; color: #888; margin-top: 3px; font-style: italic; line-height: 1.4; max-width: 220px; }';
   html += '.ws-list-table { width: 100%; border-collapse: collapse; font-size: 10pt; }';
   html += '.ws-list-table th { background: #f5f3ff; padding: 6px 8px; border: 1px solid #e5e7eb;';
   html += '  text-align: left; font-weight: 600; font-size: 9pt; white-space: nowrap; }';
@@ -342,7 +349,11 @@ function _buildListPrintDoc(title, subtitle, bodyHtml) {
   html += '<div class="ws-list-title">' + esc(title) + '</div>';
   if (subtitle) html += '<div style="font-size:9pt;color:#666">' + esc(subtitle) + '</div>';
   html += '</div>';
-  html += '<div class="ws-list-meta"><div>' + dateStr + '</div></div>';
+  html += '<div class="ws-list-meta">';
+  if (userName) html += '<div class="ws-user-name">' + esc(userName) + '</div>';
+  html += '<div>' + dateStr + '</div>';
+  if (motto) html += '<div class="ws-motto">' + motto + '</div>';
+  html += '</div>';
   html += '</div>';
 
   html += bodyHtml;
@@ -416,7 +427,10 @@ function printWordList(words) {
     body += '</tr>';
   }
   body += '</tbody></table>';
-  var html = _buildListPrintDoc(zh ? '\u8bcd\u6c47\u5217\u8868' : 'Word List', words.length + (zh ? ' \u9879' : ' items'), body);
+  var motto = zh
+    ? '\u8bcd\u6c47\u662f\u6570\u5b66\u7684\u94a5\u5319\u2014\u2014\u6bcf\u8ba4\u8bc6\u4e00\u4e2a\u8bcd\uff0c\u5c31\u79bb\u7406\u89e3\u66f4\u8fd1\u4e00\u6b65\u3002'
+    : 'Vocabulary is the key to math\u2014every word you learn brings you closer to understanding.';
+  var html = _buildListPrintDoc(zh ? '\u8bcd\u6c47\u5217\u8868' : 'Word List', words.length + (zh ? ' \u9879' : ' items'), body, motto);
   _openPrintWindow(html);
 }
 
@@ -441,7 +455,10 @@ function printKPList(kps) {
     body += '</tr>';
   }
   body += '</tbody></table>';
-  var html = _buildListPrintDoc(zh ? '\u77e5\u8bc6\u70b9\u5217\u8868' : 'Knowledge Points', kps.length + (zh ? ' \u9879' : ' items'), body);
+  var motto = zh
+    ? '\u77e5\u8bc6\u70b9\u662f\u89e3\u9898\u7684\u5730\u56fe\u2014\u2014\u628a\u6bcf\u4e2a\u70b9\u8fde\u8d77\u6765\uff0c\u96be\u9898\u4e5f\u4f1a\u53d8\u7b80\u5355\u3002'
+    : 'Knowledge points are your problem-solving map\u2014connect the dots, and hard problems become simple.';
+  var html = _buildListPrintDoc(zh ? '\u77e5\u8bc6\u70b9\u5217\u8868' : 'Knowledge Points', kps.length + (zh ? ' \u9879' : ' items'), body, motto);
   _openPrintWindow(html);
 }
 
