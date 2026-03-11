@@ -184,7 +184,7 @@ async function renderClassList() {
       totalStudents += count;
       var avgPct = count > 0 ? Math.round(students.reduce(function(sum, s) { return sum + (s.mastery_pct || 0); }, 0) / count) : 0;
 
-      cardsHtml += '<div class="admin-class-card" onclick="renderClassDetail(\'' + c.id + '\')">';
+      cardsHtml += '<div class="admin-class-card" onclick="renderClassDetail(\'' + escapeHtml(c.id) + '\')">';
       cardsHtml += '<div class="admin-class-name">' + escapeHtml(c.name) + '</div>';
       if (_saView && _schoolNames[c.school_id]) {
         cardsHtml += '<div class="admin-class-school">' + escapeHtml(_schoolNames[c.school_id]) + '</div>';
@@ -199,7 +199,7 @@ async function renderClassList() {
 
     var collapsed = _gradeListCollapsed[g.value] !== false;
     html += '<div class="grade-list-section' + (collapsed ? ' collapsed' : '') + '" id="grade-list-' + g.value + '">';
-    html += '<div class="grade-list-header" onclick="toggleGradeList(\'' + g.value + '\')">';
+    html += '<div class="grade-list-header" onclick="toggleGradeList(\'' + escapeHtml(g.value) + '\')">';
     html += '<span class="grade-list-chevron">&#9660;</span>';
     html += '<span>' + g.emoji + ' ' + gradeLabel + '</span>';
     html += '<span class="grade-list-meta">' + gradeClasses.length + ' ' + t('classes', '班级') + ' · ' + totalStudents + ' ' + t('students', '学生') + '</span>';
@@ -280,7 +280,7 @@ function showEditClassModal(classId, currentName, currentGrade) {
     '<select class="auth-input" id="ec-grade">' + gradeOpts + '</select>' +
     '<div id="ec-msg" class="settings-msg"></div>' +
     '<div class="btn-row btn-row--mt16">' +
-    '<button class="btn btn-primary" onclick="doEditClass(\'' + classId + '\', \'' + currentGrade + '\')">' + t('Save', '保存') + '</button>' +
+    '<button class="btn btn-primary" onclick="doEditClass(\'' + escapeHtml(classId) + '\', \'' + escapeHtml(currentGrade) + '\')">' + t('Save', '保存') + '</button>' +
     '<button class="btn btn-ghost" onclick="hideModal()">' + t('Cancel', '取消') + '</button>' +
     '</div>';
   showModal(html);
@@ -355,7 +355,7 @@ function showBatchCreateModal(classId) {
     '</div>' +
     '<div id="batch-msg" class="settings-msg mt-8"></div>' +
     '<div class="btn-row">' +
-    '<button class="btn btn-primary" id="batch-submit" onclick="doBatchCreate(\'' + classId + '\')">' + t('Create All', '创建全部') + '</button>' +
+    '<button class="btn btn-primary" id="batch-submit" onclick="doBatchCreate(\'' + escapeHtml(classId) + '\')">' + t('Create All', '创建全部') + '</button>' +
     '<button class="btn btn-ghost" onclick="hideModal()">' + t('Cancel', '取消') + '</button>' +
     '</div>';
   showModal(html);
@@ -512,7 +512,7 @@ async function renderClassDetail(classId) {
     '<button class="btn btn-ghost btn-sm" onclick="renderClassList()">' + t('\u2190 Back', '\u2190 返回') + '</button>' +
     '<div class="admin-detail-title">' + escapeHtml(cls.name) + ' <span class="admin-detail-grade">' + gradeLabel + '</span>' +
     (_saReadOnly ? '' : ' <button class="btn btn-ghost btn-sm text-sub" style="padding:2px 6px" data-action="editclass" data-cid="' + classId + '" data-cname="' + escapeHtml(cls.name) + '" data-grade="' + cls.grade + '">&#9998;</button>') + '</div>' +
-    (_saReadOnly ? '' : '<button class="btn btn-primary btn-sm" onclick="showBatchCreateModal(\'' + classId + '\')">' + t('+ Add Students', '+ 添加学生') + '</button>') +
+    (_saReadOnly ? '' : '<button class="btn btn-primary btn-sm" onclick="showBatchCreateModal(\'' + escapeHtml(classId) + '\')">' + t('+ Add Students', '+ 添加学生') + '</button>') +
     '</div>';
 
   if (students.length === 0) {
@@ -567,7 +567,7 @@ async function renderClassDetail(classId) {
   html += '<div class="hw-section">';
   html += '<div class="flex items-center gap-8 mb-12">';
   html += '<div class="hw-section-title">' + t('Homework', '作业') + '</div>';
-  html += '<button class="btn btn-primary btn-sm" onclick="showCreateHwModal(\'' + classId + '\')">' + t('+ Assign', '+ 布置作业') + '</button>';
+  html += '<button class="btn btn-primary btn-sm" onclick="showCreateHwModal(\'' + escapeHtml(classId) + '\')">' + t('+ Assign', '+ 布置作业') + '</button>';
   html += '</div>';
   html += '<div id="hw-list-area"><div class="admin-loading">' + t('Loading...', '加载中...') + '</div></div>';
   html += '</div>';
@@ -655,7 +655,7 @@ async function renderGradeOverview() {
     var gradeOpt = BOARD_OPTIONS.find(function(o) { return o.value === g; });
     var gradeLabel = gradeOpt ? t(gradeOpt.name, gradeOpt.nameZh) : g;
 
-    html += '<div class="admin-class-card" onclick="expandGrade(\'' + g + '\')">';
+    html += '<div class="admin-class-card" onclick="expandGrade(\'' + escapeHtml(g) + '\')">';
     html += '<div class="admin-class-name">' + gradeLabel + '</div>';
     html += '<div class="admin-class-stats">';
     html += '<span>' + classCount + ' ' + t('classes', '班级') + '</span>';
@@ -700,7 +700,7 @@ async function expandGrade(grade) {
     var count = c.students.length;
     var avgPct = count > 0 ? Math.round(c.students.reduce(function(sum, s) { return sum + (s.mastery_pct || 0); }, 0) / count) : 0;
     html += '<div class="admin-grade-class">';
-    html += '<div class="admin-grade-class-header" onclick="renderClassDetail(\'' + cid + '\')">';
+    html += '<div class="admin-grade-class-header" onclick="renderClassDetail(\'' + escapeHtml(cid) + '\')">';
     html += '<span class="admin-grade-class-name">' + escapeHtml(c.name) + '</span>';
     html += '<span>' + count + ' ' + t('students', '学生') + ' · ' + t('Avg', '平均') + ' ' + avgPct + '%</span>';
     html += '</div></div>';

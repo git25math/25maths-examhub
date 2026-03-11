@@ -290,7 +290,7 @@ function _renderBoardHome(board) {
     var _ppSub = board === 'cie'
       ? t('228 papers \u00b7 4,110 questions \u00b7 2018\u20132025', '228\u5957\u5377 \u00b7 4,110\u9053\u9898 \u00b7 2018\u20132025')
       : t('76 papers \u00b7 1,855 questions \u00b7 2017\u20132025', '76\u5957\u5377 \u00b7 1,855\u9053\u9898 \u00b7 2017\u20132025');
-    html += '<div class="pp-browse-entry" role="button" tabindex="0" onclick="ppShowPaperBrowse(\'' + _ppBoardKey + '\')">';
+    html += '<div class="pp-browse-entry" role="button" tabindex="0" onclick="ppShowPaperBrowse(\'' + escapeHtml(_ppBoardKey) + '\')">';
     html += '<span class="pp-browse-icon">\ud83d\udcdd</span>';
     html += '<div class="pp-browse-info">';
     html += '<div class="pp-browse-title">' + t('Past Papers', '\u5957\u5377\u7ec3\u4e60') + '</div>';
@@ -361,7 +361,7 @@ function _renderBoardHome(board) {
     if (visibleSections.length === 0) return;
 
     html += '<div class="category-section' + (collapsed ? ' collapsed' : '') + '" id="cat-' + catKey + '">';
-    html += '<div class="category-header" role="button" tabindex="0" onclick="toggleCIEChapter(\'' + catKey + '\')">';
+    html += '<div class="category-header" role="button" tabindex="0" onclick="toggleCIEChapter(\'' + escapeHtml(catKey) + '\')">';
     var _chEmoji = Array.isArray(emojis) ? (emojis[ch.num] || '\ud83d\udcda') : (emojis[ch.num] || '\ud83d\udcda');
     html += '<span class="category-emoji">' + _chEmoji + '</span>';
     if (board === 'hhk') {
@@ -386,7 +386,7 @@ function _renderBoardHome(board) {
       var firstLi = getSectionLevelIdx(firstSec.id, board);
       if (firstLi >= 0) {
         html += '<div class="pq-cat-actions">';
-        html += '<button class="sort-btn" onclick="startPracticeByChapter(' + ch.num + ',\'' + board + '\')">\ud83d\udcdd ' + t('Practice', '\u7ec3\u4e60') + '</button>';
+        html += '<button class="sort-btn" onclick="startPracticeByChapter(' + ch.num + ',\'' + escapeHtml(board) + '\')">\ud83d\udcdd ' + t('Practice', '\u7ec3\u4e60') + '</button>';
         html += '</div>';
       }
     }
@@ -478,7 +478,7 @@ function _renderSectionRow(sec, ch, board, _wd, secIdx, prevSecId, prevStats) {
   else if (sec.tier === 'foundation') tierBadge = ' <span class="tier-badge tier-foundation">F</span>';
 
   var h = '';
-  h += '<div class="deck-row" role="button" tabindex="0" onclick="openSection(\'' + sec.id + '\',\'' + board + '\')">';
+  h += '<div class="deck-row" role="button" tabindex="0" onclick="openSection(\'' + escapeHtml(sec.id) + '\',\'' + escapeHtml(board) + '\')">';
   h += '<span class="deck-row-tag sec-tag">' + sec.id + '</span>';
   h += '<span class="deck-row-name">' + escapeHtml(sec.title);
   if (appLang !== 'en') h += ' ' + escapeHtml(sec.title_zh);
@@ -605,9 +605,9 @@ function renderSectionDetail(ch, sec, secIdx, board) {
   html += '<div class="sec-syllabus-title">' + _syllTitle + '</div>';
   html += '<div class="sec-flex-gap4">';
   if (typeof isSuperAdmin === 'function' && isSuperAdmin()) {
-    html += '<button class="sec-module-edit" onclick="editSectionModule(\'' + sec.id + '\',\'syllabus\',\'' + board + '\')" title="' + t('Edit', '\u7f16\u8f91') + '">\u270f\ufe0f</button>';
+    html += '<button class="sec-module-edit" onclick="editSectionModule(\'' + escapeHtml(sec.id) + '\',\'syllabus\',\'' + escapeHtml(board) + '\')" title="' + t('Edit', '\u7f16\u8f91') + '">\u270f\ufe0f</button>';
   }
-  html += '<button class="sec-module-report" onclick="reportSectionModule(\'' + sec.id + '\',\'syllabus\',\'' + board + '\')" title="' + t('Report error', '\u62a5\u544a\u9519\u8bef') + '">\ud83d\udea9</button>';
+  html += '<button class="sec-module-report" onclick="reportSectionModule(\'' + escapeHtml(sec.id) + '\',\'syllabus\',\'' + escapeHtml(board) + '\')" title="' + t('Report error', '\u62a5\u544a\u9519\u8bef') + '">\ud83d\udea9</button>';
   html += '</div></div>';
 
   if (board === 'edx') {
@@ -749,7 +749,7 @@ function renderSectionDetail(ch, sec, secIdx, board) {
     if (typeof isSuperAdmin === 'function' && isSuperAdmin()) {
       html += '<button class="sec-module-edit" onclick="event.stopPropagation();openDeck(' + li + ')" title="' + t('Edit', '\u7f16\u8f91') + '">\u270f\ufe0f</button>';
     }
-    html += '<button class="sec-module-report" onclick="event.stopPropagation();reportSectionModule(\'' + sec.id + '\',\'vocabulary\',\'' + board + '\')" title="' + t('Report error', '\u62a5\u544a\u9519\u8bef') + '">\ud83d\udea9</button>';
+    html += '<button class="sec-module-report" onclick="event.stopPropagation();reportSectionModule(\'' + escapeHtml(sec.id) + '\',\'vocabulary\',\'' + escapeHtml(board) + '\')" title="' + t('Report error', '\u62a5\u544a\u9519\u8bef') + '">\ud83d\udea9</button>';
     html += '<div class="sec-module-arrow">\u2192</div>';
     html += '</div>';
   } else if (words.length === 0) {
@@ -763,7 +763,7 @@ function renderSectionDetail(ch, sec, secIdx, board) {
 
   /* Practice module */
   if (qCount > 0) {
-    html += '<div class="sec-module" role="button" tabindex="0" onclick="startPracticeBySection(\'' + sec.id + '\',\'' + board + '\')">';
+    html += '<div class="sec-module" role="button" tabindex="0" onclick="startPracticeBySection(\'' + escapeHtml(sec.id) + '\',\'' + escapeHtml(board) + '\')">';
     if (_jPracticeDone) html += '<div class="sec-module-done">\u2713</div>';
     html += '<div class="sec-module-icon">\u270f\ufe0f</div>';
     html += '<div class="sec-module-info">';
@@ -771,9 +771,9 @@ function renderSectionDetail(ch, sec, secIdx, board) {
     html += '<div class="sec-module-sub">' + qCount + ' ' + t('questions', '\u9898') + '</div>';
     html += '</div>';
     if (typeof isSuperAdmin === 'function' && isSuperAdmin()) {
-      html += '<button class="sec-module-edit" onclick="event.stopPropagation();startPracticeBySection(\'' + sec.id + '\',\'' + board + '\')" title="' + t('Edit', '\u7f16\u8f91') + '">\u270f\ufe0f</button>';
+      html += '<button class="sec-module-edit" onclick="event.stopPropagation();startPracticeBySection(\'' + escapeHtml(sec.id) + '\',\'' + escapeHtml(board) + '\')" title="' + t('Edit', '\u7f16\u8f91') + '">\u270f\ufe0f</button>';
     }
-    html += '<button class="sec-module-report" onclick="event.stopPropagation();reportSectionModule(\'' + sec.id + '\',\'practice\',\'' + board + '\')" title="' + t('Report error', '\u62a5\u544a\u9519\u8bef') + '">\ud83d\udea9</button>';
+    html += '<button class="sec-module-report" onclick="event.stopPropagation();reportSectionModule(\'' + escapeHtml(sec.id) + '\',\'practice\',\'' + escapeHtml(board) + '\')" title="' + t('Report error', '\u62a5\u544a\u9519\u8bef') + '">\ud83d\udea9</button>';
     html += '<div class="sec-module-arrow">\u2192</div>';
     html += '</div>';
   }
@@ -824,9 +824,9 @@ function renderSectionDetail(ch, sec, secIdx, board) {
     html += '</div>'; /* close kp-list */
     /* Scan & Quiz button */
     html += '<div class="btn-row mt-4" style="padding:0 12px">';
-    html += '<button class="btn btn-sm btn-primary" onclick="event.stopPropagation();if(typeof startKPScan===\'function\')startKPScan(\'' + sec.id + '\',\'' + board + '\')">';
+    html += '<button class="btn btn-sm btn-primary" onclick="event.stopPropagation();if(typeof startKPScan===\'function\')startKPScan(\'' + escapeHtml(sec.id) + '\',\'' + escapeHtml(board) + '\')">';
     html += '\ud83d\udd0d ' + t('Scan & Quiz', '\u626b\u63cf\u6d4b\u9a8c') + '</button>';
-    html += '<button class="btn btn-sm btn-ghost" onclick="event.stopPropagation();if(typeof renderScanOverview===\'function\')renderScanOverview(\'' + board + '\')">';
+    html += '<button class="btn btn-sm btn-ghost" onclick="event.stopPropagation();if(typeof renderScanOverview===\'function\')renderScanOverview(\'' + escapeHtml(board) + '\')">';
     html += '\ud83d\udcca ' + t('Scan Overview', '\u626b\u63cf\u603b\u89c8') + '</button>';
     html += '</div>';
     html += '</div>'; /* close sec-module-content */
@@ -870,9 +870,9 @@ function renderSectionDetail(ch, sec, secIdx, board) {
     html += '<div class="sec-module-sub">' + langExamples.length + ' ' + t('examples', '\u9053\u4f8b\u9898') + '</div>';
     html += '</div>';
     if (typeof isSuperAdmin === 'function' && isSuperAdmin()) {
-      html += '<button class="sec-module-edit" onclick="event.stopPropagation();editSectionModule(\'' + sec.id + '\',\'examples\',\'' + board + '\')" title="' + t('Edit', '\u7f16\u8f91') + '">\u270f\ufe0f</button>';
+      html += '<button class="sec-module-edit" onclick="event.stopPropagation();editSectionModule(\'' + escapeHtml(sec.id) + '\',\'examples\',\'' + escapeHtml(board) + '\')" title="' + t('Edit', '\u7f16\u8f91') + '">\u270f\ufe0f</button>';
     }
-    html += '<button class="sec-module-report" onclick="event.stopPropagation();reportSectionModule(\'' + sec.id + '\',\'examples\',\'' + board + '\')" title="' + t('Report error', '\u62a5\u544a\u9519\u8bef') + '">\ud83d\udea9</button>';
+    html += '<button class="sec-module-report" onclick="event.stopPropagation();reportSectionModule(\'' + escapeHtml(sec.id) + '\',\'examples\',\'' + escapeHtml(board) + '\')" title="' + t('Report error', '\u62a5\u544a\u9519\u8bef') + '">\ud83d\udea9</button>';
     html += '<div class="sec-module-arrow">\u25bc</div>';
     html += '</div>';
     html += '<div class="sec-module-content d-none">';
@@ -896,9 +896,9 @@ function renderSectionDetail(ch, sec, secIdx, board) {
     html += '<div class="sec-module-sub">' + t('Coming soon', '\u5373\u5c06\u63a8\u51fa') + '</div>';
     html += '</div>';
     if (typeof isSuperAdmin === 'function' && isSuperAdmin()) {
-      html += '<button class="sec-module-edit" onclick="event.stopPropagation();editSectionModule(\'' + sec.id + '\',\'examples\',\'' + board + '\')" title="' + t('Edit', '\u7f16\u8f91') + '">\u270f\ufe0f</button>';
+      html += '<button class="sec-module-edit" onclick="event.stopPropagation();editSectionModule(\'' + escapeHtml(sec.id) + '\',\'examples\',\'' + escapeHtml(board) + '\')" title="' + t('Edit', '\u7f16\u8f91') + '">\u270f\ufe0f</button>';
     }
-    html += '<button class="sec-module-report" onclick="event.stopPropagation();reportSectionModule(\'' + sec.id + '\',\'examples\',\'' + board + '\')" title="' + t('Report error', '\u62a5\u544a\u9519\u8bef') + '">\ud83d\udea9</button>';
+    html += '<button class="sec-module-report" onclick="event.stopPropagation();reportSectionModule(\'' + escapeHtml(sec.id) + '\',\'examples\',\'' + escapeHtml(board) + '\')" title="' + t('Report error', '\u62a5\u544a\u9519\u8bef') + '">\ud83d\udea9</button>';
     html += '</div>';
   }
 
@@ -908,13 +908,13 @@ function renderSectionDetail(ch, sec, secIdx, board) {
   html += '<div class="sec-nav">';
   if (secIdx > 0) {
     var prevSec = ch.sections[secIdx - 1];
-    html += '<button class="btn btn-ghost" onclick="openSection(\'' + prevSec.id + '\',\'' + board + '\')">\u2190 ' + prevSec.id + ' ' + escapeHtml(prevSec.title) + '</button>';
+    html += '<button class="btn btn-ghost" onclick="openSection(\'' + escapeHtml(prevSec.id) + '\',\'' + escapeHtml(board) + '\')">\u2190 ' + prevSec.id + ' ' + escapeHtml(prevSec.title) + '</button>';
   } else {
     html += '<span></span>';
   }
   if (secIdx < ch.sections.length - 1) {
     var nextSec = ch.sections[secIdx + 1];
-    html += '<button class="btn btn-ghost" onclick="openSection(\'' + nextSec.id + '\',\'' + board + '\')">' + nextSec.id + ' ' + escapeHtml(nextSec.title) + ' \u2192</button>';
+    html += '<button class="btn btn-ghost" onclick="openSection(\'' + escapeHtml(nextSec.id) + '\',\'' + escapeHtml(board) + '\')">' + nextSec.id + ' ' + escapeHtml(nextSec.title) + ' \u2192</button>';
   }
   html += '</div>';
 
@@ -1375,7 +1375,7 @@ function renderReviewPlan() {
     var info = getSectionInfo(c.sectionId, c.board);
     var title = info ? escapeHtml(info.section.title) : c.sectionId;
     var retColor = c.retentionScore >= 50 ? 'var(--c-warning)' : 'var(--c-danger)';
-    html += '<div class="review-plan-item" role="button" tabindex="0" onclick="openSection(\'' + c.sectionId + '\',\'' + c.board + '\')">';
+    html += '<div class="review-plan-item" role="button" tabindex="0" onclick="openSection(\'' + escapeHtml(c.sectionId) + '\',\'' + escapeHtml(c.board) + '\')">';
     html += '<span class="review-plan-sec">' + c.sectionId + '</span>';
     html += '<span class="review-plan-name">' + title + '</span>';
     var retLabel = c.retentionScore >= 50 ? t('Review soon', '\u5f85\u590d\u4e60') : t('Needs practice', '\u9700\u8981\u7ec3\u4e60');
@@ -1501,7 +1501,7 @@ function _renderPPSectionModule(slot, secId, board) {
   h += '<div class="btn-row btn-row--wrap mt-4">';
   h += '<button class="btn btn-sm sec-mod-btn-flex" data-pp-start data-sec="' + secId + '" data-board="' + board + '" data-mode="practice">';
   h += '\ud83d\udcd6 ' + t('Practice Mode', '\u7ec3\u4e60\u6a21\u5f0f') + '</button>';
-  h += '<button class="btn btn-sm btn-secondary sec-mod-btn-flex" onclick="event.stopPropagation();if(typeof startPPScan===\'function\')startPPScan(\'' + secId + '\',\'' + board + '\')">';
+  h += '<button class="btn btn-sm btn-secondary sec-mod-btn-flex" onclick="event.stopPropagation();if(typeof startPPScan===\'function\')startPPScan(\'' + escapeHtml(secId) + '\',\'' + escapeHtml(board) + '\')">';
   h += '\ud83d\udd0d ' + t('Scan & Practice', '\u626b\u63cf\u7ec3\u4e60') + '</button>';
   h += '<button class="btn btn-sm btn-warning sec-mod-btn-flex" data-pp-start data-sec="' + secId + '" data-board="' + board + '" data-mode="exam">';
   h += '\u23f1 ' + t('Exam Mode', '\u5b9e\u6218\u6a21\u5f0f') + '</button>';
@@ -1622,10 +1622,10 @@ function _renderMasterQSummary(slot, secId, board) {
   var unmasteredCount = totalTypes - masteredTypes;
   h += '<div class="btn-row btn-row--wrap">';
   if (unmasteredCount > 0) {
-    h += '<button class="btn btn-primary btn-sm" onclick="startPracticeUnmastered(\'' + secId + '\',\'' + board + '\')" class="flex-1">';
+    h += '<button class="btn btn-primary btn-sm" onclick="startPracticeUnmastered(\'' + escapeHtml(secId) + '\',\'' + escapeHtml(board) + '\')" class="flex-1">';
     h += t('Practice to strengthen', '\u7ec3\u4e60\u5f85\u52a0\u5f3a\u7684') + ' (' + unmasteredCount + ')</button>';
   }
-  h += '<button class="btn btn-ghost btn-sm" onclick="startPastPaper(\'' + secId + '\',\'' + board + '\',\'practice\')" class="flex-1">';
+  h += '<button class="btn btn-ghost btn-sm" onclick="startPastPaper(\'' + escapeHtml(secId) + '\',\'' + escapeHtml(board) + '\',\'practice\')" class="flex-1">';
   h += t('Practice All', '\u5168\u90E8\u7EC3\u4E60') + '</button>';
   h += '</div>';
 
@@ -2365,7 +2365,7 @@ function reportSectionModule(sectionId, moduleType, board) {
   html += '<div id="sec-report-msg" style="font-size:13px;margin:8px 0;min-height:20px;color:var(--c-danger)"></div>';
   html += '<div class="btn-row">';
   var submitLabel = (isLoggedIn() && !isGuest()) ? t('Submit', '\u63d0\u4ea4') : t('Submit via Email', '\u901a\u8fc7\u90ae\u4ef6\u63d0\u4ea4');
-  html += '<button class="btn btn-primary flex-1" onclick="submitSectionReport(\'' + sectionId + '\',\'' + moduleType + '\',\'' + board + '\')">' + submitLabel + '</button>';
+  html += '<button class="btn btn-primary flex-1" onclick="submitSectionReport(\'' + escapeHtml(sectionId) + '\',\'' + escapeHtml(moduleType) + '\',\'' + escapeHtml(board) + '\')">' + submitLabel + '</button>';
   html += '<button class="btn btn-ghost flex-1" onclick="hideModal()">' + t('Cancel', '\u53d6\u6d88') + '</button>';
   html += '</div>';
   showModal(html);

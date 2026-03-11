@@ -350,7 +350,7 @@ function showCreateHwModal(classId) {
   html += '<input class="auth-input" id="hw-deadline" type="datetime-local" value="' + deadlineDefault + '">';
   html += '<div id="hw-msg" class="settings-msg mt-8"></div>';
   html += '<div class="btn-row">';
-  html += '<button class="btn btn-primary" style="flex:2" onclick="doCreateHw(\'' + classId + '\')">' + t('Create', '创建') + '</button>';
+  html += '<button class="btn btn-primary" style="flex:2" onclick="doCreateHw(\'' + escapeHtml(classId) + '\')">' + t('Create', '创建') + '</button>';
   html += '<button class="btn btn-secondary btn-sm" onclick="hwSaveTemplate()">' + t('Save Template', '\u4fdd\u5b58\u6a21\u677f') + '</button>';
   html += '<button class="btn btn-ghost" onclick="hideModal()">' + t('Cancel', '取消') + '</button>';
   html += '</div>';
@@ -547,7 +547,7 @@ function showCreateCustomHwModal(classId, studentUserId, studentName, wrongWords
   html += '<input class="auth-input" id="chw-deadline" type="datetime-local" value="' + nextWeek.toISOString().slice(0, 16) + '">';
   html += '<div id="chw-msg" class="settings-msg mt-8"></div>';
   html += '<div class="btn-row">';
-  html += '<button class="btn btn-primary" onclick="doCreateCustomHw(\'' + classId + '\', \'' + studentUserId + '\')">' + t('Assign', '布置') + '</button>';
+  html += '<button class="btn btn-primary" onclick="doCreateCustomHw(\'' + escapeHtml(classId) + '\', \'' + escapeHtml(studentUserId) + '\')">' + t('Assign', '布置') + '</button>';
   html += '<button class="btn btn-ghost" onclick="hideModal()">' + t('Cancel', '取消') + '</button>';
   html += '</div>';
 
@@ -739,9 +739,9 @@ async function renderHwProgress(hwId, classId) {
     }
 
     var html = '<div class="admin-detail-header">';
-    html += '<button class="btn btn-ghost btn-sm" onclick="renderClassDetail(\'' + classId + '\')">' + t('\u2190 Back', '\u2190 返回') + '</button>';
+    html += '<button class="btn btn-ghost btn-sm" onclick="renderClassDetail(\'' + escapeHtml(classId) + '\')">' + t('\u2190 Back', '\u2190 返回') + '</button>';
     html += '<div class="admin-detail-title">' + escapeHtml(hw.title) + '</div>';
-    html += '<button class="btn btn-ghost btn-sm" onclick="exportHwCSV(\'' + hwId + '\', \'' + classId + '\')" style="margin-left:auto">\u2b07 ' + t('Export CSV', '\u5bfc\u51fa CSV') + '</button>';
+    html += '<button class="btn btn-ghost btn-sm" onclick="exportHwCSV(\'' + escapeHtml(hwId) + '\', \'' + escapeHtml(classId) + '\')" style="margin-left:auto">\u2b07 ' + t('Export CSV', '\u5bfc\u51fa CSV') + '</button>';
     html += '</div>';
 
     /* Summary cards */

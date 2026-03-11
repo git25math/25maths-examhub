@@ -308,7 +308,7 @@ function renderPracticeCard() {
   /* Top bar */
   html += '<div class="study-topbar">';
   if (s.kpReturn) {
-    html += '<button class="back-btn" onclick="openKnowledgePoint(\'' + s.kpReturn.kpId + '\',\'' + s.kpReturn.board + '\')">←</button>';
+    html += '<button class="back-btn" onclick="openKnowledgePoint(\'' + escapeHtml(s.kpReturn.kpId) + '\',\'' + escapeHtml(s.kpReturn.board) + '\')">←</button>';
   } else {
     html += '<button class="back-btn" onclick="openDeck(' + s.lvl + ')">←</button>';
   }
@@ -1813,7 +1813,7 @@ function _finishPPScan() {
   html += '</div>';
   html += '<div class="result-actions">';
   html += '<button class="btn btn-primary" onclick="navTo(\'section\')">' + t('Back to Section', '\u8fd4\u56de\u77e5\u8bc6\u70b9') + '</button>';
-  html += '<button class="btn btn-secondary" onclick="typeof renderScanOverview===\'function\'&&renderScanOverview(\'' + _ppScanState.board + '\')">' + t('Scan Overview', '\u626b\u63cf\u603b\u89c8') + '</button>';
+  html += '<button class="btn btn-secondary" onclick="typeof renderScanOverview===\'function\'&&renderScanOverview(\'' + escapeHtml(_ppScanState.board) + '\')">' + t('Scan Overview', '\u626b\u63cf\u603b\u89c8') + '</button>';
   html += '<button class="btn btn-ghost" onclick="navTo(\'home\')">' + t('Home', '\u9996\u9875') + '</button>';
   html += '</div>';
   E('panel-practice').innerHTML = html;
@@ -3053,7 +3053,7 @@ function _diagShowResults(exam, conceptErrors) {
     var secLabel = info ? info.section.title : sk;
 
     var spctColor = spct >= 80 ? 'var(--c-success)' : spct >= 40 ? 'var(--c-warning)' : 'var(--c-danger)';
-    html += '<div class="diag-section-row" role="button" tabindex="0" onclick="openSection(\'' + sk + '\',\'' + board + '\')">';
+    html += '<div class="diag-section-row" role="button" tabindex="0" onclick="openSection(\'' + escapeHtml(sk) + '\',\'' + escapeHtml(board) + '\')">';
     html += '<span class="diag-icon">' + icon + '</span>';
     html += '<div class="diag-label-col">';
     html += '<span class="diag-label">' + sk + ' ' + escapeHtml(secLabel) + '</span>';
@@ -3075,7 +3075,7 @@ function _diagShowResults(exam, conceptErrors) {
       var wk = weakSecs[wi];
       var wInfo = (typeof getSectionInfo === 'function') ? getSectionInfo(wk, board) : null;
       var wLabel = wInfo ? wInfo.section.title : wk;
-      html += '<div class="diag-rec-item" role="button" tabindex="0" onclick="openSection(\'' + wk + '\',\'' + board + '\')">';
+      html += '<div class="diag-rec-item" role="button" tabindex="0" onclick="openSection(\'' + escapeHtml(wk) + '\',\'' + escapeHtml(board) + '\')">';
       html += '<span>' + wk + ' ' + escapeHtml(wLabel) + '</span>';
       html += '<span class="diag-rec-go">' + t('Review', '\u53bb\u590d\u4e60') + ' \u2192</span>';
       html += '</div>';
@@ -3118,10 +3118,10 @@ function _diagShowResults(exam, conceptErrors) {
   /* Action buttons */
   html += '<div class="btn-row btn-row--gap12 btn-row--center btn-row--mt24 btn-row--wrap pb-40">';
   if (_isMockExam) {
-    html += '<button class="btn btn-primary" onclick="ppShowMockSetup(\'' + board + '\')">\ud83d\udd04 ' + t('New Mock', '\u65b0\u6a21\u62df\u5377') + '</button>';
+    html += '<button class="btn btn-primary" onclick="ppShowMockSetup(\'' + escapeHtml(board) + '\')">\ud83d\udd04 ' + t('New Mock', '\u65b0\u6a21\u62df\u5377') + '</button>';
   } else {
-    html += '<button class="btn btn-primary" onclick="startDiagnostic(\'' + board + '\')">\ud83d\udd04 ' + t('Retry', '\u91cd\u65b0\u6d4b\u8bd5') + '</button>';
-    html += '<button class="btn btn-ghost" onclick="ppShowMockSetup(\'' + board + '\')" style="border-color:var(--c-warning);color:var(--c-warning)">\ud83c\udfb2 ' + t('Mock Exam', '\u6a21\u62df\u5377') + '</button>';
+    html += '<button class="btn btn-primary" onclick="startDiagnostic(\'' + escapeHtml(board) + '\')">\ud83d\udd04 ' + t('Retry', '\u91cd\u65b0\u6d4b\u8bd5') + '</button>';
+    html += '<button class="btn btn-ghost" onclick="ppShowMockSetup(\'' + escapeHtml(board) + '\')" style="border-color:var(--c-warning);color:var(--c-warning)">\ud83c\udfb2 ' + t('Mock Exam', '\u6a21\u62df\u5377') + '</button>';
   }
   html += '<button class="btn btn-ghost" onclick="navTo(\'home\')">\u2190 ' + t('Home', '\u9996\u9875') + '</button>';
   html += '</div>';
@@ -3238,7 +3238,7 @@ function ppShowExamSetup(sectionId, board, questions) {
   html += '</div>';
 
   html += '<div class="mt-24">';
-  html += '<button class="btn btn-primary btn-lg" onclick="ppStartExam(\'' + sectionId + '\',\'' + board + '\')">';
+  html += '<button class="btn btn-primary btn-lg" onclick="ppStartExam(\'' + escapeHtml(sectionId) + '\',\'' + escapeHtml(board) + '\')">';
   html += '\u25b6 ' + t('Start Exam', '\u5f00\u59cb\u5b9e\u6218') + '</button>';
   html += '</div>';
 
@@ -3799,7 +3799,7 @@ function _ppEdBlockList(blocks, idPrefix) {
     h += _ppEdBlockRow(blocks[i], idPrefix, i);
   }
   h += '</div>';
-  h += '<button class="btn btn-sm btn-ghost" type="button" onclick="_ppEdAddBlock(\'' + idPrefix + '\')">+ Block</button>';
+  h += '<button class="btn btn-sm btn-ghost" type="button" onclick="_ppEdAddBlock(\'' + escapeHtml(idPrefix) + '\')">+ Block</button>';
   return h;
 }
 
@@ -4030,7 +4030,7 @@ function _ppEdSubpartRow(sp, idx, parentPrefix) {
     h += _ppEdSubsubpartRow(ssps[si], si, prefix);
   }
   h += '</div>';
-  h += '<button class="btn btn-sm btn-ghost" type="button" onclick="_ppEdAddSubsubpart(\'' + prefix + '\')">+ Subsubpart</button>';
+  h += '<button class="btn btn-sm btn-ghost" type="button" onclick="_ppEdAddSubsubpart(\'' + escapeHtml(prefix) + '\')">+ Subsubpart</button>';
   h += '</div></div>';
   return h;
 }
@@ -4095,7 +4095,7 @@ function _ppEdPartRow(label, marks, idx, part) {
     h += _ppEdSubpartRow(sps[si], si, prefix);
   }
   h += '</div>';
-  h += '<button class="btn btn-sm btn-ghost" type="button" onclick="_ppEdAddSubpart(\'' + prefix + '\')">+ Subpart</button>';
+  h += '<button class="btn btn-sm btn-ghost" type="button" onclick="_ppEdAddSubpart(\'' + escapeHtml(prefix) + '\')">+ Subpart</button>';
   h += '</div>'; /* end detail */
   h += '</div>';
   return h;
@@ -4538,14 +4538,14 @@ function ppShowResults(exam, conceptErrors) {
   /* Action buttons */
   html += '<div class="btn-row btn-row--gap12 btn-row--center btn-row--mt24 btn-row--wrap pb-40">';
   if (_ppSession && _ppSession.paperKey) {
-    html += '<button class="btn btn-ghost" onclick="ppShowPaperBrowse(\'' + _ppSession.board + '\')">';
+    html += '<button class="btn btn-ghost" onclick="ppShowPaperBrowse(\'' + escapeHtml(_ppSession.board) + '\')">';
     html += t('Back to Papers', '\u8fd4\u56de\u5957\u5377') + '</button>';
-    html += '<button class="btn btn-primary" onclick="ppStartFullPaper(\'' + _ppSession.paperKey + '\',\'' + _ppSession.board + '\',\'exam\')">';
+    html += '<button class="btn btn-primary" onclick="ppStartFullPaper(\'' + escapeHtml(_ppSession.paperKey) + '\',\'' + escapeHtml(_ppSession.board) + '\',\'exam\')">';
     html += '\ud83d\udd04 ' + t('Try Again', '\u518d\u6765\u4e00\u8f6e') + '</button>';
   } else if (_ppSession) {
-    html += '<button class="btn btn-ghost" onclick="ppShowWrongBook(\'' + _ppSession.sectionId + '\',\'' + _ppSession.board + '\')">';
+    html += '<button class="btn btn-ghost" onclick="ppShowWrongBook(\'' + escapeHtml(_ppSession.sectionId) + '\',\'' + escapeHtml(_ppSession.board) + '\')">';
     html += '\ud83d\udcd5 ' + t('Review Book', '\u590d\u4e60\u672c') + '</button>';
-    html += '<button class="btn btn-primary" onclick="ppStartExam(\'' + _ppSession.sectionId + '\',\'' + _ppSession.board + '\')">';
+    html += '<button class="btn btn-primary" onclick="ppStartExam(\'' + escapeHtml(_ppSession.sectionId) + '\',\'' + escapeHtml(_ppSession.board) + '\')">';
     html += '\ud83d\udd04 ' + t('Try Again', '\u518d\u6765\u4e00\u8f6e') + '</button>';
   }
   html += '<button class="btn btn-ghost" onclick="ppBack()">' + t('Back to Section', '\u8fd4\u56de\u77e5\u8bc6\u70b9') + '</button>';
@@ -4603,7 +4603,7 @@ function ppShowWrongBook(sectionId, board) {
           }
         }
 
-        html += '<div class="pp-wrong-item" role="button" tabindex="0" onclick="ppReviewWrongItem(\'' + item.q.id + '\',\'' + sectionId + '\',\'' + board + '\')">';
+        html += '<div class="pp-wrong-item" role="button" tabindex="0" onclick="ppReviewWrongItem(\'' + escapeHtml(item.q.id) + '\',\'' + escapeHtml(sectionId) + '\',\'' + escapeHtml(board) + '\')">';
         html += '<div class="pp-wrong-icon">\ud83d\udd34</div>';
         html += '<div class="pp-wrong-meta">';
         html += '<div style="font-size:13px;font-weight:600">' + item.q.src + ' <span class="pp-marks-badge">' + item.q.marks + ' mks</span></div>';
@@ -4632,7 +4632,7 @@ function ppShowWrongBook(sectionId, board) {
 
       /* Review all button */
       html += '<div class="text-center mt-20 pb-40">';
-      html += '<button class="btn btn-primary" onclick="ppStartWrongBookReview(\'' + sectionId + '\',\'' + board + '\')" style="padding:10px 28px">';
+      html += '<button class="btn btn-primary" onclick="ppStartWrongBookReview(\'' + escapeHtml(sectionId) + '\',\'' + escapeHtml(board) + '\')" style="padding:10px 28px">';
       html += '\ud83d\udd04 ' + t('Review All', '\u5168\u90e8\u590d\u4e60') + ' (' + wrongItems.length + ')</button>';
       html += '</div>';
     }
@@ -4763,7 +4763,7 @@ function ppShowPaperBrowse(board) {
     html += '<div class="page-header">';
     html += '<button class="btn-icon" onclick="ppBack()" title="Back">&larr;</button>';
     html += '<h2 class="mt-0 mb-0 flex-1">' + t('Past Papers', '\u5957\u5377\u7ec3\u4e60') + '</h2>';
-    html += '<button class="btn btn-sm btn-warning" onclick="ppShowMockSetup(\'' + board + '\')">\ud83c\udfb2 ' + t('Mock Exam', '\u6a21\u62df\u5377') + '</button>';
+    html += '<button class="btn btn-sm btn-warning" onclick="ppShowMockSetup(\'' + escapeHtml(board) + '\')">\ud83c\udfb2 ' + t('Mock Exam', '\u6a21\u62df\u5377') + '</button>';
     html += '</div>';
 
     /* Year tabs */
@@ -4771,7 +4771,7 @@ function ppShowPaperBrowse(board) {
     for (var yi = 0; yi < yearKeys.length; yi++) {
       var yr = yearKeys[yi];
       var cls = yi === 0 ? 'pp-year-tab active' : 'pp-year-tab';
-      html += '<button class="' + cls + '" onclick="ppSelectYear(' + yr + ',\'' + board + '\')" data-year="' + yr + '">' + yr + '</button>';
+      html += '<button class="' + cls + '" onclick="ppSelectYear(' + yr + ',\'' + escapeHtml(board) + '\')" data-year="' + yr + '">' + yr + '</button>';
     }
     html += '</div>';
 
@@ -4821,7 +4821,7 @@ function _ppRenderYearPapers(sessions, year, board, results) {
       var tl = PP_TYPE_LABELS[p.type] || { en: p.type, zh: p.type, cls: '' };
       var result = results[p.key];
 
-      html += '<div class="pp-paper-card" role="button" tabindex="0" onclick="ppShowPaperDetail(\'' + p.key + '\',\'' + board + '\')">';
+      html += '<div class="pp-paper-card" role="button" tabindex="0" onclick="ppShowPaperDetail(\'' + escapeHtml(p.key) + '\',\'' + escapeHtml(board) + '\')">';
       html += '<div class="pp-paper-card-top">';
       html += '<span class="pp-paper-type ' + tl.cls + '">' + t(tl.en, tl.zh) + '</span>';
       html += '<span class="pp-paper-num">Paper ' + p.paper + '</span>';
@@ -4857,7 +4857,7 @@ function ppShowPaperDetail(paperKey, board) {
 
   var html = '';
   html += '<div class="page-header">';
-  html += '<button class="btn-icon" onclick="ppShowPaperBrowse(\'' + board + '\')" title="Back">&larr;</button>';
+  html += '<button class="btn-icon" onclick="ppShowPaperBrowse(\'' + escapeHtml(board) + '\')" title="Back">&larr;</button>';
   html += '<h2 class="mt-0 mb-0 flex-1">Paper ' + meta.paper + '</h2>';
   html += '<span class="pp-paper-type ' + tl.cls + '">' + t(tl.en, tl.zh) + '</span>';
   html += '</div>';
@@ -4912,9 +4912,9 @@ function ppShowPaperDetail(paperKey, board) {
 
   /* Action buttons */
   html += '<div class="btn-row btn-row--gap12 btn-row--center btn-row--mt24 btn-row--wrap">';
-  html += '<button class="btn btn-primary" onclick="ppStartFullPaper(\'' + paperKey + '\',\'' + board + '\',\'practice\')">';
+  html += '<button class="btn btn-primary" onclick="ppStartFullPaper(\'' + escapeHtml(paperKey) + '\',\'' + escapeHtml(board) + '\',\'practice\')">';
   html += t('Practice', '练习模式') + '</button>';
-  html += '<button class="btn btn-ghost" onclick="ppStartFullPaper(\'' + paperKey + '\',\'' + board + '\',\'exam\')">';
+  html += '<button class="btn btn-ghost" onclick="ppStartFullPaper(\'' + escapeHtml(paperKey) + '\',\'' + escapeHtml(board) + '\',\'exam\')">';
   html += '\u23f1 ' + t('Exam Mode', '考试模式') + ' (' + meta.time + ' min)</button>';
   html += '</div>';
 
@@ -4924,7 +4924,7 @@ function ppShowPaperDetail(paperKey, board) {
     var q = questions[qi];
     var mastery = _ppGetQMastery(q.id);
     var mIcon = mastery === 'mastered' ? '✓' : mastery === 'partial' ? '◐' : mastery === 'needs_work' ? '✗' : '';
-    html += '<div class="pp-q-preview" role="button" tabindex="0" onclick="ppStartFullPaper(\'' + paperKey + '\',\'' + board + '\',\'practice\',' + qi + ')">';
+    html += '<div class="pp-q-preview" role="button" tabindex="0" onclick="ppStartFullPaper(\'' + escapeHtml(paperKey) + '\',\'' + escapeHtml(board) + '\',\'practice\',' + qi + ')">';
     html += '<span class="pp-q-num">Q' + q.qnum + '</span>';
     html += '<span class="pp-q-topic-cell">' + (q.topics || []).join(', ') + '</span>';
     html += '<span class="pp-marks-badge">' + q.marks + '</span>';
@@ -4982,7 +4982,7 @@ function ppShowPaperExamSetup(paperKey, board, questions, meta) {
 
   var html = '';
   html += '<div class="page-header page-header--mb20">';
-  html += '<button class="btn btn-ghost btn-sm" onclick="ppShowPaperBrowse(\'' + board + '\')">\u2190 ' + t('Back', '\u8fd4\u56de') + '</button>';
+  html += '<button class="btn btn-ghost btn-sm" onclick="ppShowPaperBrowse(\'' + escapeHtml(board) + '\')">\u2190 ' + t('Back', '\u8fd4\u56de') + '</button>';
   html += '</div>';
 
   html += '<div class="pp-setup">';
@@ -4997,7 +4997,7 @@ function ppShowPaperExamSetup(paperKey, board, questions, meta) {
   html += '</div>';
 
   html += '<div class="mt-24 text-center">';
-  html += '<button class="btn btn-primary btn-lg" onclick="ppStartPaperExam(\'' + paperKey + '\',\'' + board + '\')">';
+  html += '<button class="btn btn-primary btn-lg" onclick="ppStartPaperExam(\'' + escapeHtml(paperKey) + '\',\'' + escapeHtml(board) + '\')">';
   html += '\u25b6 ' + t('Start Exam', '\u5f00\u59cb\u8003\u8bd5') + '</button>';
   html += '</div>';
 
@@ -5068,7 +5068,7 @@ function ppShowMockSetup(board) {
 
     var html = '';
     html += '<div class="page-header page-header--mb20">';
-    html += '<button class="btn btn-ghost btn-sm" onclick="ppShowPaperBrowse(\'' + board + '\')">\u2190 ' + t('Back', '\u8fd4\u56de') + '</button>';
+    html += '<button class="btn btn-ghost btn-sm" onclick="ppShowPaperBrowse(\'' + escapeHtml(board) + '\')">\u2190 ' + t('Back', '\u8fd4\u56de') + '</button>';
     html += '</div>';
 
     html += '<div class="pp-setup">';
@@ -5104,7 +5104,7 @@ function ppShowMockSetup(board) {
     html += '</div>';
 
     html += '<div class="mt-24 text-center">';
-    html += '<button class="btn btn-primary btn-lg" onclick="ppStartMockExam(\'' + board + '\')">';
+    html += '<button class="btn btn-primary btn-lg" onclick="ppStartMockExam(\'' + escapeHtml(board) + '\')">';
     html += '\u25b6 ' + t('Generate & Start', '\u751f\u6210\u5e76\u5f00\u59cb') + '</button>';
     html += '</div>';
 

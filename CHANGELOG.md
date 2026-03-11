@@ -1,5 +1,25 @@
 # Changelog
 
+## [4.7.4] - 2026-03-11 — onclick XSS 全量转义（第五轮安全审计）
+
+### 安全修复
+- **practice.js onclick XSS**: 21 处 onclick 中的动态变量全部包裹 `escapeHtml()`（ppRate/ppShowPaperBrowse/ppMockSetOpt/startPractice 等）
+- **syllabus.js onclick XSS**: 23 处 onclick 中的动态变量全部包裹 `escapeHtml()`（openSection/reportSectionModule/editSectionModule/startPractice/startKPScan 等）
+- **homework.js onclick XSS**: 4 处 onclick 中的 classId/studentUserId/hwId 全部包裹 `escapeHtml()`
+- **admin.js onclick XSS**: 8 处 onclick 中的 classId/grade 全部包裹 `escapeHtml()`
+- **syllabus.js prev/next 导航**: `prevSec.id`/`nextSec.id`/`board` 3 个变量补充 `escapeHtml()` 转义
+
+### 文件变更
+| 文件 | 变更类型 |
+|------|---------|
+| `js/practice.js` | 修改 — 21 处 onclick escapeHtml 包裹 |
+| `js/syllabus.js` | 修改 — 23 处 onclick escapeHtml 包裹 |
+| `js/homework.js` | 修改 — 4 处 onclick escapeHtml 包裹 |
+| `js/admin.js` | 修改 — 8 处 onclick escapeHtml 包裹 |
+| `js/config.js` | 修改 — `APP_VERSION` → `'v4.7.4'` |
+
+---
+
 ## [4.7.3] - 2026-03-11 — 列表视图第四轮修复（12 项）
 
 ### 安全修复
