@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""Deduplicate HHK vocabulary: generate global UIDs, migration map, and updated levels.
+"""Deduplicate vocabulary: generate global UIDs, migration map, and updated levels.
 
 Usage:
-  python3 scripts/dedup-vocab.py               # Full run: rewrite data files
-  python3 scripts/dedup-vocab.py --verify       # Verify output integrity
-  python3 scripts/dedup-vocab.py --dry-run      # Preview without writing
+  python3 scripts/dedup-vocab.py                       # Full run: HHK (default)
+  python3 scripts/dedup-vocab.py --board edx            # Full run: Edexcel
+  python3 scripts/dedup-vocab.py --board edx --verify   # Verify EDX output
+  python3 scripts/dedup-vocab.py --dry-run              # Preview without writing
 """
 
 import json
@@ -15,6 +16,20 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / 'data'
+
+# ═══ Board configuration ═══
+BOARD_CONFIG = {
+    'hhk': {
+        'vocab_file': 'vocabulary-hhk.json',
+        'levels_file': 'levels-25m.json',
+        'board_key': '25m',
+    },
+    'edx': {
+        'vocab_file': 'vocabulary-edx.json',
+        'levels_file': 'levels-edx.json',
+        'board_key': 'edx',
+    },
+}
 
 # ═══ Disambiguation rules for true homonyms ═══
 # word_lower → { chinese_def_substring → uid_suffix }
@@ -44,6 +59,7 @@ DISAMBIG = {
         '值域': 'range-function',
         '极差': 'range-statistics',
         '范围': 'range-general',
+        '全距': 'range-statistics',
     },
     'scale': {
         '刻度': 'scale-reading',
@@ -91,25 +107,41 @@ def main():
     dry_run = '--dry-run' in sys.argv
     verify_mode = '--verify' in sys.argv
 
+    # Parse --board argument
+    board = 'hhk'
+    for i, arg in enumerate(sys.argv):
+        if arg == '--board' and i + 1 < len(sys.argv):
+            board = sys.argv[i + 1]
+
+    if board not in BOARD_CONFIG:
+        print(f'Unknown board: {board}. Available: {", ".join(BOARD_CONFIG.keys())}', file=sys.stderr)
+        sys.exit(1)
+
+    cfg = BOARD_CONFIG[board]
+    vocab_path = DATA / cfg['vocab_file']
+    levels_path = DATA / cfg['levels_file']
+    board_key = cfg['board_key']
+
+    print(f'Board: {board} ({board_key})', file=sys.stderr)
+
     # ═══ Load current data ═══
-    with open(DATA / 'vocabulary-hhk.json') as f:
+    with open(vocab_path) as f:
         old_vocab = json.load(f)
 
     # Detect if already in new format
     if 'words' in old_vocab and 'sections' in old_vocab:
         if verify_mode:
-            _verify({}, {}, [], {})
+            _verify(board, cfg)
             return
-        print('vocabulary-hhk.json is already in new format.', file=sys.stderr)
+        print(f'{cfg["vocab_file"]} is already in new format.', file=sys.stderr)
         if not dry_run:
             print('Use --verify to validate, or restore from git to re-run.', file=sys.stderr)
         return
 
-    with open(DATA / 'levels-25m.json') as f:
+    with open(levels_path) as f:
         levels = json.load(f)
 
     # ═══ Step 1: Build global word registry ═══
-    # Collect all unique words with resolved UIDs
     words_dict = {}       # uid → {word, def}
     sections_dict = {}    # section_id → [uid, ...]
     uid_map = {}          # "slug:old_id" → uid (for FLM migration)
@@ -151,15 +183,13 @@ def main():
                 section_uids.append(uid)
         sections_dict[section_id] = section_uids
 
-    # ═══ Step 3: Build migration map from levels-25m.json ═══
-    # We need slug + old numeric id → uid
+    # ═══ Step 3: Build migration map from levels JSON ═══
     for level in levels:
-        if level.get('board') != '25m':
+        if level.get('board') != board_key:
             continue
         slug = level['slug']
-        # Build id→word map from vocabulary entries
-        id_word = {}   # old_id → word content
-        id_def = {}    # old_id → def content
+        id_word = {}
+        id_def = {}
         for v in level['vocabulary']:
             if v['type'] == 'word':
                 id_word[v['id']] = v['content']
@@ -170,9 +200,9 @@ def main():
             uid = resolve_uid(word_content, defn)
             uid_map[slug + ':' + old_id] = uid
 
-    # ═══ Step 4: Update levels-25m.json vocabulary IDs ═══
+    # ═══ Step 4: Update levels JSON vocabulary IDs ═══
     for level in levels:
-        if level.get('board') != '25m':
+        if level.get('board') != board_key:
             continue
         slug = level['slug']
         new_vocab = []
@@ -218,7 +248,7 @@ def main():
     print(f'Migration map entries: {len(uid_map)}', file=sys.stderr)
 
     if verify_mode:
-        _verify(words_dict, sections_dict, levels, uid_map)
+        _verify(board, cfg)
         return
 
     if dry_run:
@@ -227,35 +257,46 @@ def main():
 
     # ═══ Write output files ═══
     new_vocab_data = {'words': words_dict, 'sections': sections_dict}
-    with open(DATA / 'vocabulary-hhk.json', 'w') as f:
+    with open(vocab_path, 'w') as f:
         json.dump(new_vocab_data, f, ensure_ascii=False, indent=2)
-    print(f'Wrote {DATA / "vocabulary-hhk.json"}', file=sys.stderr)
+    print(f'Wrote {vocab_path}', file=sys.stderr)
 
-    with open(DATA / 'levels-25m.json', 'w') as f:
+    with open(levels_path, 'w') as f:
         json.dump(levels, f, ensure_ascii=False, separators=(',', ':'))
-    print(f'Wrote {DATA / "levels-25m.json"}', file=sys.stderr)
+    print(f'Wrote {levels_path}', file=sys.stderr)
 
-    with open(DATA / 'vocab-uid-map.json', 'w') as f:
-        json.dump(uid_map, f, indent=2)
-    print(f'Wrote {DATA / "vocab-uid-map.json"}', file=sys.stderr)
+    # Append to existing uid map (merge with HHK entries if present)
+    uid_map_path = DATA / 'vocab-uid-map.json'
+    existing_map = {}
+    if uid_map_path.exists():
+        with open(uid_map_path) as f:
+            existing_map = json.load(f)
+    existing_map.update(uid_map)
+    with open(uid_map_path, 'w') as f:
+        json.dump(existing_map, f, indent=2)
+    print(f'Wrote {uid_map_path} (total {len(existing_map)} entries)', file=sys.stderr)
 
-    with open(DATA / 'vocab-disambig.json', 'w') as f:
-        json.dump(disambig_report, f, ensure_ascii=False, indent=2)
-    print(f'Wrote {DATA / "vocab-disambig.json"}', file=sys.stderr)
+    if disambig_report:
+        disambig_path = DATA / f'vocab-disambig-{board}.json'
+        with open(disambig_path, 'w') as f:
+            json.dump(disambig_report, f, ensure_ascii=False, indent=2)
+        print(f'Wrote {disambig_path}', file=sys.stderr)
 
 
-def _verify(words_dict, sections_dict, levels, uid_map):
+def _verify(board, cfg):
     """Verify output integrity. Works with already-converted data."""
     errors = []
+    vocab_path = DATA / cfg['vocab_file']
+    levels_path = DATA / cfg['levels_file']
+    board_key = cfg['board_key']
 
-    # Also load from disk to verify written files
-    with open(DATA / 'vocabulary-hhk.json') as f:
+    with open(vocab_path) as f:
         disk_vocab = json.load(f)
     disk_words = disk_vocab.get('words', {})
     disk_sections = disk_vocab.get('sections', {})
 
     # 1. UIDs globally unique
-    print(f'UIDs unique: {len(disk_words)}', file=sys.stderr)
+    print(f'[{board}] UIDs unique: {len(disk_words)}', file=sys.stderr)
 
     # 2. Every section uid exists in words dict
     for sec_id, uids in disk_sections.items():
@@ -263,19 +304,19 @@ def _verify(words_dict, sections_dict, levels, uid_map):
             if uid not in disk_words:
                 errors.append(f'Section {sec_id} references missing uid: {uid}')
 
-    # 3. levels-25m.json: every vocab entry has a valid uid
-    with open(DATA / 'levels-25m.json') as f:
+    # 3. levels JSON: every vocab entry has a valid uid
+    with open(levels_path) as f:
         disk_levels = json.load(f)
     for level in disk_levels:
-        if level.get('board') != '25m':
+        if level.get('board') != board_key:
             continue
         for v in level['vocabulary']:
             if v['type'] == 'word' and v['id'] not in disk_words:
                 errors.append(f'Level {level["slug"]} vocab id {v["id"]} not in words dict')
 
-    # 4. Word/def pairs in levels match words dict
+    # 4. Word/def pairs in levels match
     for level in disk_levels:
-        if level.get('board') != '25m':
+        if level.get('board') != board_key:
             continue
         word_ids = set()
         def_ids = set()
@@ -291,11 +332,16 @@ def _verify(words_dict, sections_dict, levels, uid_map):
         if orphans2:
             errors.append(f'Level {level["slug"]}: def without word: {orphans2}')
 
-    # 5. Migration map exists and has entries
-    if (DATA / 'vocab-uid-map.json').exists():
-        with open(DATA / 'vocab-uid-map.json') as f:
+    # 5. Migration map exists and has entries for this board
+    uid_map_path = DATA / 'vocab-uid-map.json'
+    if uid_map_path.exists():
+        with open(uid_map_path) as f:
             disk_map = json.load(f)
-        print(f'Migration map entries: {len(disk_map)}', file=sys.stderr)
+        # Count entries for this board's slugs
+        board_entries = sum(1 for k in disk_map if any(
+            level['slug'] in k for level in disk_levels if level.get('board') == board_key
+        ))
+        print(f'[{board}] Migration map entries: {board_entries} (total {len(disk_map)})', file=sys.stderr)
     else:
         errors.append('vocab-uid-map.json missing')
 
@@ -305,7 +351,7 @@ def _verify(words_dict, sections_dict, levels, uid_map):
             print(f'  ERROR: {e}', file=sys.stderr)
         sys.exit(1)
     else:
-        print('VERIFY OK', file=sys.stderr)
+        print(f'[{board}] VERIFY OK', file=sys.stderr)
 
 
 if __name__ == '__main__':

@@ -16,6 +16,8 @@ function loadS() {
   _migrateSRStoFLM(_sCache);
   /* One-time global UID migration (old slug-based keys → W_{uid}) */
   _migrateToGlobalKeys(_sCache);
+  /* One-time custom list ref normalization */
+  _normalizeCustomListRefs();
   return _sCache;
 }
 
@@ -185,7 +187,8 @@ function _migrateToGlobalKeys(s) {
       /* Map fs to legacy st */
       existing.st = existing.fs === 'mastered' ? 'mastered' : existing.fs === 'new' ? 'new' : 'learning';
     }
-    /* Keep old key for backward compat during transition */
+    /* Delete old key — data has been merged into W_{uid} */
+    delete s.words[k];
     migrated++;
   }
   if (migrated > 0) {
@@ -195,6 +198,37 @@ function _migrateToGlobalKeys(s) {
     /* No old keys found — mark as migrated to skip next time */
     s._gkMigrated = true;
   }
+}
+
+/* ═══ CUSTOM LIST REF NORMALIZATION (one-time, L_{slug}_W{id} → W_{uid}) ═══ */
+function _normalizeCustomListRefs() {
+  try {
+    if (localStorage.getItem('_clRefsNormalized')) return;
+    if (!_vocabUidMap) return;
+    var raw = localStorage.getItem('custom_lists');
+    if (!raw) { localStorage.setItem('_clRefsNormalized', '1'); return; }
+    var data = JSON.parse(raw);
+    if (!data || !data.lists) { localStorage.setItem('_clRefsNormalized', '1'); return; }
+    var changed = false;
+    for (var i = 0; i < data.lists.length; i++) {
+      var items = data.lists[i].items;
+      for (var j = 0; j < items.length; j++) {
+        var it = items[j];
+        if (it.type !== 'vocab') continue;
+        var ref = it.ref;
+        if (!ref || ref.indexOf('L_') !== 0) continue;
+        var m = ref.match(/^L_(.+)_W(\d+)$/);
+        if (!m) continue;
+        var uid = _vocabUidMap[m[1] + ':' + m[2]];
+        if (uid) {
+          it.ref = 'W_' + uid;
+          changed = true;
+        }
+      }
+    }
+    if (changed) localStorage.setItem('custom_lists', JSON.stringify(data));
+    localStorage.setItem('_clRefsNormalized', '1');
+  } catch (e) {}
 }
 
 /* ═══ FLM UNIFIED ANSWER RECORDER ═══ */

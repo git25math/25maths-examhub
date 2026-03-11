@@ -445,9 +445,9 @@
 
 ## v4.8 词库去重：全局 UID 词汇架构
 - [x] **Phase 1 HHK (v4.8.0)**: dedup-vocab.py 构建脚本 + 全局 uid 词库 + wordKey() 自动切换 + FLM 迁移 + 9 组异义词消歧 + 跨 level 去重统计（1,501→833，节省 44.5%）
-- [ ] **Phase 2 EDX**: 同样流程扩展到 Edexcel（387→338，节省 13%）
+- [x] **Phase 1.5 DRY + 清理 (v4.8.1)**: makeUid() 提取到 config.js + 旧 key 迁移后立即删除 + 自定义清单 ref 归一化
+- [x] **Phase 2 EDX (v4.8.1)**: dedup-vocab.py --board edx 扩展 + vocabulary-edx.json 新格式 + levels-edx.json uid 化 + 308 条迁移映射（387→338，节省 12.7%）
 - [ ] **Phase 3 CIE**: 同样流程扩展到 CIE（594→579，节省 2.5%）
-- [ ] **旧 key 清理**: 30 天后清除已迁移的旧格式 localStorage key
 
 ## v4.7 FLM 完备性审计 + 自定义清单 + 遗忘追踪 + 列表/打印视图 [DONE]
 - [x] **遗忘追踪 (v4.7.0)**: reforget_log 记录 6 个降级点 + getReforgetCount/Timeline 查询 + 云同步桥接

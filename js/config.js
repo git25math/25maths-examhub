@@ -372,7 +372,7 @@ function isSuperAdmin() {
 }
 
 /* App version */
-var APP_VERSION = 'v4.8.0';
+var APP_VERSION = 'v4.8.1';
 
 /* AI Tutor configuration */
 var AI_TUTOR_CONFIG = {
@@ -518,6 +518,15 @@ async function callEdgeFunction(name, body) {
   } catch (e) {
     return { error: e.message || 'Network error' };
   }
+}
+
+/* ═══ GLOBAL UID GENERATOR ═══ */
+function makeUid(word) {
+  var uid = word.toLowerCase().trim();
+  uid = uid.replace(/[^a-z0-9\s-]/g, '');
+  uid = uid.replace(/\s+/g, '-');
+  uid = uid.replace(/-+/g, '-').replace(/^-|-$/g, '');
+  return uid;
 }
 
 /* DOM helper */

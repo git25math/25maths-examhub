@@ -76,13 +76,8 @@ function vaRenum() {
   });
 }
 
-function _vaMakeUid(word) {
-  var uid = word.toLowerCase().trim();
-  uid = uid.replace(/[^a-z0-9\s-]/g, '');
-  uid = uid.replace(/\s+/g, '-');
-  uid = uid.replace(/-+/g, '-').replace(/^-|-$/g, '');
-  return uid;
-}
+/* Alias for backward compat (homework.js may check typeof _vaMakeUid) */
+var _vaMakeUid = makeUid;
 
 function vaCollectCards() {
   var vocab = [];

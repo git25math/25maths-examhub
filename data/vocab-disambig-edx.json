@@ -1,0 +1,31 @@
+{
+  "range": {
+    "word": "Range",
+    "defs": [
+      "值域",
+      "全距"
+    ],
+    "sections": [
+      "3.2",
+      "6.2"
+    ],
+    "action": "disambiguate",
+    "resolved_uids": {
+      "值域": "range-function",
+      "全距": "range-statistics"
+    }
+  },
+  "circumference": {
+    "word": "Circumference",
+    "defs": [
+      "圆周",
+      "圆周长"
+    ],
+    "sections": [
+      "4.6",
+      "4.9"
+    ],
+    "action": "merge",
+    "resolved_uids": {}
+  }
+}

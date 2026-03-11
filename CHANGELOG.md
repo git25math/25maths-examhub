@@ -1,5 +1,31 @@
 # Changelog
 
+## [4.8.1] - 2026-03-11 — 全局 UID 架构 Phase 1.5 + Phase 2 (EDX 去重 + DRY + 旧 key 清理)
+
+### 核心变更
+- **makeUid() DRY**: 从 `vocab-admin.js._vaMakeUid()` 提取到 `config.js.makeUid()`，`homework.js` 两处内联 fallback 简化为 `makeUid(w)`，算法统一
+- **EDX 词库去重**: Edexcel 387→338 个全局 UID（节省 12.7%），`vocabulary-edx.json` 重写为 `{words, sections}` 新格式
+- **旧 key 清理**: `_migrateToGlobalKeys()` 迁移完成后删除已转换的 `L_` 旧 key，减少 localStorage 体积
+- **自定义清单 ref 归一化**: `_normalizeCustomListRefs()` 将旧格式 `L_{slug}_W{id}` ref 转为 `W_{uid}`，修复去重后 Scan 找不到词的问题
+
+### EDX 去重详情
+- 49 个重复词条合并（跨 section 共享如 `parallelogram`、`trapezium` 等）
+- 2 个异义词检测：`range`（值域/全距）已消歧，`circumference`（圆周/圆周长）同义合并
+- `vocab-uid-map.json` 追加 308 条 EDX 映射（总计 1,810 条）
+
+### 文件变更
+| 文件 | 变更类型 |
+|------|---------|
+| `js/config.js` | 修改 — 新增 `makeUid()` 全局函数 |
+| `js/vocab-admin.js` | 修改 — `_vaMakeUid` 改为 `makeUid` 别名 |
+| `js/homework.js` | 修改 — 2 处内联 UID 生成简化为 `makeUid(w)` |
+| `js/storage.js` | 修改 — `_migrateToGlobalKeys()` 删除旧 key + 新增 `_normalizeCustomListRefs()` |
+| `scripts/dedup-vocab.py` | 修改 — 支持 `--board edx` 参数，board→文件路径映射 |
+| `data/vocabulary-edx.json` | 重写 — `{words, sections}` 新格式（338 uid + 39 sections） |
+| `data/levels-edx.json` | 修改 — vocabulary id 从数字改为 uid |
+| `data/vocab-uid-map.json` | 修改 — 追加 308 条 EDX 映射（总 1,810 条） |
+| `data/vocab-disambig-edx.json` | 新增 — EDX 异义词消歧报告 |
+
 ## [4.8.0] - 2026-03-11 — 词库去重：全局 UID 词汇架构 Phase 1 (HHK)
 
 ### 核心变更

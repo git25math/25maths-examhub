@@ -459,7 +459,7 @@ async function doCreateHw(classId) {
       var w = row.querySelector('.hw-cw').value.trim();
       var d = row.querySelector('.hw-cd').value.trim();
       if (!w && !d) return;
-      var uid = typeof _vaMakeUid === 'function' ? _vaMakeUid(w) : w.toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
+      var uid = makeUid(w);
       if (_hwcSeen[uid]) { var n = 2; while (_hwcSeen[uid + '-' + n]) n++; uid = uid + '-' + n; }
       _hwcSeen[uid] = true;
       vocab.push({ id: uid, type: 'word', content: w });
@@ -569,7 +569,7 @@ async function doCreateCustomHw(classId, studentUserId) {
   var _hwSeen = {};
   document.querySelectorAll('.chw-word-cb:checked').forEach(function(cb) {
     var w = cb.getAttribute('data-word');
-    var uid = typeof _vaMakeUid === 'function' ? _vaMakeUid(w) : w.toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
+    var uid = makeUid(w);
     if (_hwSeen[uid]) { var n = 2; while (_hwSeen[uid + '-' + n]) n++; uid = uid + '-' + n; }
     _hwSeen[uid] = true;
     vocab.push({ id: uid, type: 'word', content: w });
