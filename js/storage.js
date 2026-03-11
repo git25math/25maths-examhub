@@ -752,6 +752,18 @@ function debouncedSync() {
   _debounceSyncTimer = setTimeout(function() { syncToCloud(); }, 2000);
 }
 
+/* Flush pending sync on page unload to prevent data loss */
+window.addEventListener('visibilitychange', function() {
+  if (document.visibilityState === 'hidden' && _debounceSyncTimer) {
+    clearTimeout(_debounceSyncTimer);
+    _debounceSyncTimer = null;
+    if (typeof navigator.sendBeacon === 'function' && sb && typeof isLoggedIn === 'function' && isLoggedIn()) {
+      /* Best-effort: use sendBeacon for reliable delivery during unload */
+      try { syncToCloud(); } catch(e) {}
+    }
+  }
+});
+
 /* Cloud sync */
 var _lastSyncErrAt = 0;
 var _syncStatus = 'idle';   /* 'idle' | 'syncing' | 'ok' | 'error' */
@@ -867,6 +879,34 @@ async function syncFromCloud() {
       var cloudTime = new Date(res.data.updated_at).getTime();
       var localTime = 0;
       try { localTime = parseInt(localStorage.getItem('wmatch_last_sync')) || 0; } catch (e) {}
+
+      /* Custom lists: merge cloud lists with local (union by id) regardless of timestamp.
+         This prevents data loss when switching devices or when cloudTime <= localTime. */
+      if (cloud && typeof cloud === 'object' && cloud._customLists && cloud._customLists.lists) {
+        try {
+          var localCL = _loadCustomLists();
+          var localById = {};
+          for (var cli = 0; cli < localCL.lists.length; cli++) localById[localCL.lists[cli].id] = localCL.lists[cli];
+          var cloudLists = cloud._customLists.lists;
+          for (var cli2 = 0; cli2 < cloudLists.length; cli2++) {
+            var cList = cloudLists[cli2];
+            var lList = localById[cList.id];
+            if (!lList) {
+              /* Cloud-only list → add to local */
+              localCL.lists.push(cList);
+            } else if (cList.updatedAt > lList.updatedAt) {
+              /* Cloud newer → overwrite local */
+              for (var cli3 = 0; cli3 < localCL.lists.length; cli3++) {
+                if (localCL.lists[cli3].id === cList.id) { localCL.lists[cli3] = cList; break; }
+              }
+            }
+            /* else local newer or same → keep local */
+          }
+          _saveCustomLists(localCL);
+        } catch(e) {}
+      }
+      delete cloud._customLists;
+
       if (cloudTime > localTime) {
         /* Restore PP mastery from transitional bridge field */
         if (cloud && typeof cloud === 'object' && cloud._ppMastery && typeof cloud._ppMastery === 'object') {
@@ -883,11 +923,6 @@ async function syncFromCloud() {
           try { localStorage.setItem(_REFORGET_KEY, JSON.stringify(cloud._reforgetLog)); } catch(e) {}
         }
         delete cloud._reforgetLog;
-        /* Restore custom lists from cloud bridge */
-        if (cloud && typeof cloud === 'object' && cloud._customLists && typeof cloud._customLists === 'object') {
-          try { localStorage.setItem(_CUSTOM_LISTS_KEY, JSON.stringify(cloud._customLists)); } catch(e) {}
-        }
-        delete cloud._customLists;
         writeS(cloud);
         invalidateCache();
         try { localStorage.setItem('wmatch_last_sync', cloudTime); } catch (e) {}
