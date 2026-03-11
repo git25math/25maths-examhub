@@ -472,6 +472,238 @@ function printPPList(pps) {
 
 /* ═══ CUSTOM LIST PRINT ═══ */
 
+/* ═══ CUSTOM LIST — DETAILED PRINT ═══ */
+
+function _resolveItemTitle(type, ref) {
+  var esc = typeof escapeHtml === 'function' ? escapeHtml : function(s) { return s; };
+  if (type === 'vocab') {
+    var all = typeof getAllWords === 'function' ? getAllWords() : [];
+    for (var i = 0; i < all.length; i++) {
+      if (all[i].key === ref) return esc(all[i].word) + ' — ' + esc(all[i].def || '');
+    }
+    return esc(ref);
+  }
+  if (type === 'kp') {
+    var bds = ['cie', 'edx'];
+    for (var bi = 0; bi < bds.length; bi++) {
+      var pts = (typeof _kpData !== 'undefined') ? (_kpData[bds[bi]] || []) : [];
+      for (var ki = 0; ki < pts.length; ki++) {
+        if (pts[ki].id === ref) {
+          var t = pts[ki].title || ref;
+          if (pts[ki].title_zh) t += ' (' + pts[ki].title_zh + ')';
+          return esc(t);
+        }
+      }
+    }
+    return esc(ref);
+  }
+  if (type === 'pp') {
+    var bds2 = ['cie', 'edx'];
+    for (var bi2 = 0; bi2 < bds2.length; bi2++) {
+      var ppB = (typeof _ppData !== 'undefined') ? _ppData[bds2[bi2]] : null;
+      if (ppB && ppB.questions) {
+        for (var qi = 0; qi < ppB.questions.length; qi++) {
+          var q = ppB.questions[qi];
+          if (q.id === ref) {
+            return 'Q' + (q.num || ref) + ' (' + (q.marks || 0) + 'm) - ' + esc(q.src || '');
+          }
+        }
+      }
+    }
+    return esc(ref);
+  }
+  return esc(ref);
+}
+
+function _resolveItemDetailHtml(type, ref) {
+  if (type === 'vocab') {
+    var all = typeof getAllWords === 'function' ? getAllWords() : [];
+    for (var i = 0; i < all.length; i++) {
+      if (all[i].key === ref) {
+        var esc = typeof escapeHtml === 'function' ? escapeHtml : function(s) { return s; };
+        var wd = typeof getWordData === 'function' ? getWordData() : {};
+        var d = wd[ref] || {};
+        return '<div><strong>' + esc(all[i].word) + '</strong> — ' + esc(all[i].def || '') +
+          '<br><small>FLM: ' + (d.fs || 'new') + ' | ok: ' + (d.ok || 0) + ' | fail: ' + (d.fail || 0) + ' | cs: ' + (d.cs || 0) + '</small></div>';
+      }
+    }
+    return '<div>' + ref + '</div>';
+  }
+  if (type === 'kp') {
+    var bds = ['cie', 'edx'];
+    for (var bi = 0; bi < bds.length; bi++) {
+      var pts = (typeof _kpData !== 'undefined') ? (_kpData[bds[bi]] || []) : [];
+      for (var ki = 0; ki < pts.length; ki++) {
+        if (pts[ki].id === ref) {
+          var kp = pts[ki];
+          var h = '<div><strong>' + (kp.title || ref) + '</strong>';
+          if (kp.title_zh) h += ' <span style="color:#666">' + kp.title_zh + '</span>';
+          if (kp.explanation) h += '<br>' + kp.explanation;
+          if (kp.explanation_zh) h += '<br><span style="color:#666">' + kp.explanation_zh + '</span>';
+          if (kp.exam_mode) h += '<br><em>Exam: ' + kp.exam_mode + '</em>';
+          h += '</div>';
+          return h;
+        }
+      }
+    }
+    return '<div>' + ref + '</div>';
+  }
+  if (type === 'pp') {
+    var bds2 = ['cie', 'edx'];
+    for (var bi2 = 0; bi2 < bds2.length; bi2++) {
+      var ppB = (typeof _ppData !== 'undefined') ? _ppData[bds2[bi2]] : null;
+      if (ppB && ppB.questions) {
+        for (var qi = 0; qi < ppB.questions.length; qi++) {
+          var q = ppB.questions[qi];
+          if (q.id === ref) {
+            var qh = '';
+            try {
+              if (typeof _ppRenderWithMarks === 'function') qh += _ppRenderWithMarks(q, false);
+              if (typeof _ppRenderFigures === 'function') qh += _ppRenderFigures(q);
+            } catch(e) {}
+            return qh || '<div>' + ref + '</div>';
+          }
+        }
+      }
+    }
+    return '<div>' + ref + '</div>';
+  }
+  return '<div>' + ref + '</div>';
+}
+
+function printCustomListDetailed(list) {
+  var esc = typeof escapeHtml === 'function' ? escapeHtml : function(s) { return s; };
+  var zh = (typeof appLang !== 'undefined' && appLang !== 'en');
+  var body = '';
+
+  /* Group by type */
+  var vocabs = [], kps = [], pps = [];
+  for (var i = 0; i < list.items.length; i++) {
+    var it = list.items[i];
+    if (it.type === 'vocab') vocabs.push(it);
+    else if (it.type === 'kp') kps.push(it);
+    else if (it.type === 'pp') pps.push(it);
+  }
+
+  /* Vocab section */
+  if (vocabs.length > 0) {
+    body += '<div style="margin-bottom:16px"><strong style="font-size:12pt">' + (zh ? '\u8bcd\u6c47 (' + vocabs.length + ')' : 'Vocabulary (' + vocabs.length + ')') + '</strong></div>';
+    body += '<table class="ws-list-table"><thead><tr>';
+    body += '<th>#</th><th>' + (zh ? '\u8bcd\u6c47' : 'Word') + '</th><th>' + (zh ? '\u5b9a\u4e49' : 'Definition') + '</th><th>' + (zh ? '\u72b6\u6001' : 'Status') + '</th><th>' + (zh ? '\u9057\u5fd8' : 'Re-forget') + '</th>';
+    body += '</tr></thead><tbody>';
+    var allW = typeof getAllWords === 'function' ? getAllWords() : [];
+    var wMap = {};
+    for (var wi = 0; wi < allW.length; wi++) wMap[allW[wi].key] = allW[wi];
+    for (var vi = 0; vi < vocabs.length; vi++) {
+      var w = wMap[vocabs[vi].ref] || {};
+      var fs = typeof _resolveItemFLM === 'function' ? _resolveItemFLM('vocab', vocabs[vi].ref) : 'new';
+      var rf = typeof getReforgetCount === 'function' ? getReforgetCount(vocabs[vi].ref) : 0;
+      body += '<tr><td>' + (vi + 1) + '</td>';
+      body += '<td><strong>' + esc(w.word || vocabs[vi].ref) + '</strong></td>';
+      body += '<td>' + esc(w.def || '') + '</td>';
+      body += '<td>' + _printStatus(fs, zh) + '</td>';
+      body += '<td>' + rf + '</td></tr>';
+    }
+    body += '</tbody></table>';
+  }
+
+  /* KP section */
+  if (kps.length > 0) {
+    body += '<div style="margin-top:20px;margin-bottom:12px"><strong style="font-size:12pt">' + (zh ? '\u77e5\u8bc6\u70b9 (' + kps.length + ')' : 'Knowledge Points (' + kps.length + ')') + '</strong></div>';
+    for (var ki = 0; ki < kps.length; ki++) {
+      var kpHtml = _resolveItemDetailHtml('kp', kps[ki].ref);
+      var kpFs = typeof _resolveItemFLM === 'function' ? _resolveItemFLM('kp', kps[ki].ref) : 'new';
+      body += '<div style="padding:8px 10px;margin-bottom:8px;border:1px solid #e5e7eb;border-radius:6px;break-inside:avoid">';
+      body += '<div style="display:flex;justify-content:space-between;align-items:flex-start">';
+      body += '<div style="flex:1">' + kpHtml + '</div>';
+      body += '<div style="white-space:nowrap;margin-left:8px">' + _printStatus(kpFs, zh) + '</div>';
+      body += '</div></div>';
+    }
+  }
+
+  /* PP section */
+  if (pps.length > 0) {
+    body += '<div style="margin-top:20px;margin-bottom:12px"><strong style="font-size:12pt">' + (zh ? '\u771f\u9898 (' + pps.length + ')' : 'Past Papers (' + pps.length + ')') + '</strong></div>';
+    for (var pi = 0; pi < pps.length; pi++) {
+      var ppHtml = _resolveItemDetailHtml('pp', pps[pi].ref);
+      var ppFs = typeof _resolveItemFLM === 'function' ? _resolveItemFLM('pp', pps[pi].ref) : 'new';
+      body += '<div style="padding:10px;margin-bottom:10px;border:1px solid #ccc;border-radius:6px;background:#fafafa;break-inside:avoid">';
+      body += '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">';
+      body += '<strong>' + esc(pps[pi].ref) + '</strong>';
+      body += '<span>' + _printStatus(ppFs, zh) + '</span>';
+      body += '</div>';
+
+      /* PP rendering classes needed */
+      body += '<div class="ws-question">' + ppHtml + '</div>';
+      body += '</div>';
+    }
+  }
+
+  var title = list.title || (zh ? '\u81ea\u5b9a\u4e49\u6e05\u5355' : 'Custom List');
+  var subtitle = list.items.length + (zh ? ' \u9879 \u00b7 \u8be6\u7ec6\u5185\u5bb9' : ' items \u00b7 Detailed View');
+  var html = _buildListPrintDoc(title, subtitle, body);
+
+  /* Inject PP rendering styles into the doc */
+  html = html.replace('</style>', '.ws-question { padding:10px;border:1px solid #ccc;border-radius:4px;background:#fafafa; }' +
+    '.pp-part-block { display:flex;align-items:flex-start;gap:8px;margin-bottom:8px; }' +
+    '.pp-part-label { font-weight:700;min-width:24px;color:#333; }' +
+    '.pp-part-content { flex:1;white-space:pre-line;word-break:break-word; }' +
+    '.pp-part-intro { margin-bottom:8px;white-space:pre-line; }' +
+    '.pp-marks-right { font-size:10pt;font-weight:600;color:#666;white-space:nowrap;margin-left:8px; }' +
+    '.pp-figures { text-align:center;margin:10px 0; }' +
+    '.pp-fig { max-width:90%;max-height:200px; }' +
+    '.pp-subparts { margin-left:20px; }' +
+    '.pp-subpart-label { font-size:10pt; }' +
+    '</style>');
+
+  _openPrintWindow(html);
+}
+
+function printCustomListChecklist(list) {
+  var esc = typeof escapeHtml === 'function' ? escapeHtml : function(s) { return s; };
+  var zh = (typeof appLang !== 'undefined' && appLang !== 'en');
+  var body = '<table class="ws-list-table"><thead><tr>';
+  body += '<th>#</th><th>' + (zh ? '\u7c7b\u578b' : 'Type') + '</th><th>' + (zh ? '\u9879\u76ee' : 'Item') + '</th>';
+  body += '<th style="width:40px;text-align:center">' + (zh ? '\u638c\u63e1' : 'M') + '</th>';
+  body += '<th style="width:40px;text-align:center">' + (zh ? '\u6a21\u7cca' : 'U') + '</th>';
+  body += '<th style="width:40px;text-align:center">' + (zh ? '\u5b66\u4e60' : 'L') + '</th>';
+  body += '<th style="width:40px;text-align:center">' + (zh ? '\u672a\u5b66' : 'N') + '</th>';
+  body += '<th>' + (zh ? '\u5907\u6ce8' : 'Notes') + '</th>';
+  body += '</tr></thead><tbody>';
+
+  for (var i = 0; i < list.items.length; i++) {
+    var it = list.items[i];
+    var title = _resolveItemTitle(it.type, it.ref);
+    var typeLabel = it.type === 'vocab' ? 'V' : it.type === 'kp' ? 'K' : 'P';
+    body += '<tr>';
+    body += '<td>' + (i + 1) + '</td>';
+    body += '<td><strong>' + typeLabel + '</strong></td>';
+    body += '<td>' + title + '<br><span style="font-size:8pt;color:#999">' + esc(it.ref) + '</span></td>';
+    body += '<td style="text-align:center"><span class="ws-checkbox"></span></td>';
+    body += '<td style="text-align:center"><span class="ws-checkbox"></span></td>';
+    body += '<td style="text-align:center"><span class="ws-checkbox"></span></td>';
+    body += '<td style="text-align:center"><span class="ws-checkbox"></span></td>';
+    body += '<td style="min-width:80px"></td>';
+    body += '</tr>';
+  }
+  body += '</tbody></table>';
+
+  /* Notes area */
+  body += '<div style="margin-top:20px;border:1px solid #ccc;border-radius:4px;padding:12px;min-height:100px">';
+  body += '<div style="font-size:9pt;color:#888;margin-bottom:4px">' + (zh ? '\u8865\u5f55\u8bf4\u660e' : 'Re-entry Notes') + '</div>';
+  body += '</div>';
+
+  var title2 = list.title || (zh ? '\u81ea\u5b9a\u4e49\u6e05\u5355' : 'Custom List');
+  var subtitle = list.items.length + (zh ? ' \u9879 \u00b7 \u79bb\u7ebf\u52fe\u9009' : ' items \u00b7 Offline Checklist');
+
+  var html = _buildListPrintDoc(title2, subtitle, body);
+  /* Inject checkbox styles */
+  html = html.replace('</style>',
+    '.ws-checkbox { display:inline-block;width:14px;height:14px;border:1.5px solid #333;border-radius:2px; }' +
+    '</style>');
+  _openPrintWindow(html);
+}
+
 function printCustomList(list) {
   var esc = typeof escapeHtml === 'function' ? escapeHtml : function(s) { return s; };
   var zh = (typeof appLang !== 'undefined' && appLang !== 'en');

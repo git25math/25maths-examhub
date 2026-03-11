@@ -455,6 +455,12 @@
 - [x] **Phase 2 EDX (v4.8.1)**: dedup-vocab.py --board edx 扩展 + vocabulary-edx.json 新格式 + levels-edx.json uid 化 + 308 条迁移映射（387→338，节省 12.7%）
 - [ ] **Phase 3 CIE**: 同样流程扩展到 CIE（594→579，节省 2.5%）
 
+## v5.0 自定义清单专注学习工作台 [DONE]
+- [x] **数据层 (Phase A)**: addedAt/learnedAt 时间戳 + 旧数据迁移 + updateItemLearnedAt + Scan 完成批量打戳
+- [x] **三种打印 (Phase B)**: 打印模式选择弹窗 + 项目详情打印（词汇表/KP 卡片/PP 题目）+ 离线勾选清单（4 列 M/U/L/N + ref ID）
+- [x] **数据补录 (Phase C)**: 补录按钮 + 全宽补录界面 + write-through 到全局 FLM + session 记录
+- [x] **聚焦增强 (Phase D)**: 预览表增加标题/加入时间/上次学习 + 行内详情展开（KaTeX）+ FLM 统计条 + 单项快速评分
+
 ## v4.7 FLM 完备性审计 + 自定义清单 + 遗忘追踪 + 列表/打印视图 [DONE]
 - [x] **遗忘追踪 (v4.7.0)**: reforget_log 记录 6 个降级点 + getReforgetCount/Timeline 查询 + 云同步桥接
 - [x] **自定义清单 (v4.7.0)**: CRUD + Session 记录 + 全局 FLM 引用 + 云同步桥接

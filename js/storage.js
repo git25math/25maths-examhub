@@ -1562,9 +1562,24 @@ var _CUSTOM_LISTS_KEY = 'custom_lists';
 function _loadCustomLists() {
   try {
     var d = JSON.parse(localStorage.getItem(_CUSTOM_LISTS_KEY));
-    if (d && d.lists) return d;
+    if (d && d.lists) {
+      _migrateListItems(d);
+      return d;
+    }
   } catch(e) {}
   return { lists: [] };
+}
+
+function _migrateListItems(data) {
+  for (var i = 0; i < data.lists.length; i++) {
+    var cl = data.lists[i];
+    for (var j = 0; j < cl.items.length; j++) {
+      var it = cl.items[j];
+      /* Legacy items are plain {type, ref} — upgrade to include timestamps */
+      if (!it.addedAt) it.addedAt = cl.createdAt || new Date().toISOString();
+      if (it.learnedAt === undefined) it.learnedAt = null;
+    }
+  }
 }
 
 function _saveCustomLists(data) {
@@ -1613,7 +1628,7 @@ function addItemsToList(listId, items) {
         for (var k = 0; k < existing.length; k++) {
           if (existing[k].type === items[j].type && existing[k].ref === items[j].ref) { dup = true; break; }
         }
-        if (!dup) existing.push(items[j]);
+        if (!dup) existing.push({ type: items[j].type, ref: items[j].ref, addedAt: new Date().toISOString(), learnedAt: null });
       }
       data.lists[i].updatedAt = new Date().toISOString();
       _saveCustomLists(data);
@@ -1663,4 +1678,22 @@ function recordListSession(listId, results) {
     }
   }
   return false;
+}
+
+function updateItemLearnedAt(listId, type, ref) {
+  var data = _loadCustomLists();
+  for (var i = 0; i < data.lists.length; i++) {
+    if (data.lists[i].id === listId) {
+      for (var j = 0; j < data.lists[i].items.length; j++) {
+        var it = data.lists[i].items[j];
+        if (it.type === type && it.ref === ref) {
+          it.learnedAt = new Date().toISOString();
+        }
+      }
+      data.lists[i].updatedAt = new Date().toISOString();
+      _saveCustomLists(data);
+      debouncedSync();
+      return;
+    }
+  }
 }

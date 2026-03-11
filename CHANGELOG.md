@@ -1,5 +1,27 @@
 # Changelog
 
+## [5.0.0] - 2026-03-11 — 自定义清单专注学习工作台
+
+### 核心变更
+- **数据层增强 (Phase A)**: 清单项目新增 `addedAt`/`learnedAt` 时间戳，旧数据自动迁移回填
+- **三种打印模式 (Phase B)**: 打印按钮改为模式选择弹窗 — 项目详情（词汇对照/KP 内容/PP 完整题目）、离线勾选清单（4 列勾选框 M/U/L/N + ref ID）、摘要总览（原有功能）
+- **数据补录系统 (Phase C)**: 新增"补录"按钮（📝），全宽补录界面按类型分组，预选当前 FLM 状态，保存时 write-through 到全局 FLM（recordScan/saveKPResult/_ppSetMastery），自动记录 session
+- **聚焦学习增强 (Phase D)**: 项目预览表增加标题列/加入时间/上次学习列 + 行内详情展开（KaTeX 渲染）+ FLM 分布统计条（四色进度条 + stale 计数）+ 单项快速评分弹窗
+
+### 设计亮点
+- **Write-through**: 补录/快速评分直接写入各类型主存储，getSectionHealth/Smart Path/Recovery 自动联动
+- **离线闭环**: 打印离线勾选清单 → 手写学习 → 补录结果 → 全局同步
+- **辅助函数**: `_resolveItemTitle()`/`_resolveItemDetailHtml()` 统一跨类型内容解析
+
+### 文件变更
+| 文件 | 变更类型 |
+|------|---------|
+| `js/config.js` | 修改 — 版本号 v5.0.0 |
+| `js/storage.js` | 修改 — addedAt/learnedAt 字段 + _migrateListItems + updateItemLearnedAt |
+| `js/lists.js` | 修改 — 打印弹窗 + 补录系统 + 统计条 + 行内详情 + 快速评分 + 增强预览表 |
+| `js/worksheet.js` | 修改 — printCustomListDetailed + printCustomListChecklist + _resolveItemTitle + _resolveItemDetailHtml |
+| `css/style.css` | 修改 — 统计条 + 补录面板 + 行内详情 + 快速评分弹窗 + 暗色模式 |
+
 ## [4.9.0] - 2026-03-11 — 哈罗全年级开放 + 成长足迹取代积分排行
 
 ### 核心变更

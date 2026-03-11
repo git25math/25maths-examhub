@@ -736,6 +736,9 @@ function _renderMyLists() {
         html += '<div class="cl-card-meta">' + (zh ? '\u4e0a\u6b21: ' : 'Last: ') + lastSession.ts.slice(0, 10) + '</div>';
       }
 
+      /* FLM stats bar */
+      html += _renderListStatsBar(cl);
+
       /* Session history timeline */
       if (cl.sessions && cl.sessions.length > 0) {
         html += '<div class="cl-session-timeline">';
@@ -752,6 +755,7 @@ function _renderMyLists() {
 
       html += '<div class="cl-card-actions">';
       html += '<button class="btn btn-sm btn-primary cl-scan-btn" data-clid="' + _escList(cl.id) + '">' + (zh ? '\u5f00\u59cb Scan' : 'Scan') + '</button>';
+      html += '<button class="btn btn-sm btn-ghost cl-record-btn" data-clid="' + _escList(cl.id) + '" aria-label="' + (zh ? '\u8865\u5f55' : 'Record') + '" title="' + (zh ? '\u8865\u5f55\u5b66\u4e60\u7ed3\u679c' : 'Record Results') + '">\ud83d\udcdd</button>';
       html += '<button class="btn btn-sm btn-ghost cl-rename-btn" data-clid="' + _escList(cl.id) + '" aria-label="' + (zh ? '\u91cd\u547d\u540d' : 'Rename') + '">\u270f\ufe0f</button>';
       html += '<button class="btn btn-sm btn-ghost cl-delete-btn" data-clid="' + _escList(cl.id) + '" aria-label="' + (zh ? '\u5220\u9664' : 'Delete') + '">\ud83d\uddd1\ufe0f</button>';
       html += '<button class="btn btn-sm btn-ghost cl-print-btn" data-clid="' + _escList(cl.id) + '" aria-label="' + (zh ? '\u6253\u5370' : 'Print') + '">\ud83d\udda8\ufe0f</button>';
@@ -826,8 +830,12 @@ function _renderMyLists() {
   el.querySelectorAll('.cl-print-btn').forEach(function(btn) {
     btn.addEventListener('click', function() {
       var list = typeof getCustomList === 'function' ? getCustomList(btn.dataset.clid) : null;
-      if (list && typeof printCustomList === 'function') printCustomList(list);
+      if (list) _showPrintModeModal(list);
     });
+  });
+
+  el.querySelectorAll('.cl-record-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() { startListReEntry(btn.dataset.clid); });
   });
 
   /* Remove item from list */
@@ -842,6 +850,22 @@ function _renderMyLists() {
         if (typeof showToast === 'function') showToast(zh2 ? '\u5df2\u79fb\u9664' : 'Item removed');
         _renderMyLists();
       }
+    });
+  });
+
+  /* Detail expand */
+  el.querySelectorAll('.cl-item-detail-btn').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      _showListItemDetail(btn.dataset.detType, btn.dataset.detRef, btn.closest('tr'));
+    });
+  });
+
+  /* Quick rate */
+  el.querySelectorAll('.cl-item-rate-btn').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      _showQuickRate(btn.dataset.rateList, btn.dataset.rateType, btn.dataset.rateRef, btn);
     });
   });
 }
@@ -859,13 +883,30 @@ function _countListItems(cl) {
 function _renderListItemsPreview(cl) {
   var zh = (appLang !== 'en');
   var html = '<table class="list-table" style="font-size:12px;margin-top:8px"><thead><tr>';
-  html += '<th>' + (zh ? '\u7c7b\u578b' : 'Type') + '</th><th>ID</th><th>' + (zh ? '\u72b6\u6001' : 'Status') + '</th><th></th>';
+  html += '<th>' + (zh ? '\u7c7b\u578b' : 'Type') + '</th>';
+  html += '<th>' + (zh ? '\u6807\u9898' : 'Title') + '</th>';
+  html += '<th>' + (zh ? '\u72b6\u6001' : 'Status') + '</th>';
+  html += '<th>' + (zh ? '\u52a0\u5165' : 'Added') + '</th>';
+  html += '<th>' + (zh ? '\u5b66\u4e60' : 'Learned') + '</th>';
+  html += '<th></th>';
   html += '</tr></thead><tbody>';
   for (var i = 0; i < cl.items.length; i++) {
     var item = cl.items[i];
     var fs = _resolveItemFLM(item.type, item.ref);
-    html += '<tr><td>' + item.type + '</td><td>' + _escList(item.ref) + '</td><td>' + _fsChip(fs) + '</td>';
-    html += '<td><button class="btn btn-ghost" style="padding:2px 6px;font-size:11px;color:var(--c-danger)" data-rm-list="' + _escList(cl.id) + '" data-rm-type="' + item.type + '" data-rm-ref="' + _escList(item.ref) + '">✕</button></td>';
+    var title = typeof _resolveItemTitle === 'function' ? _resolveItemTitle(item.type, item.ref) : _escList(item.ref);
+    var addedStr = item.addedAt ? item.addedAt.slice(5, 10) : '-';
+    var learnedStr = item.learnedAt ? item.learnedAt.slice(5, 10) : '\u2014';
+    html += '<tr class="cl-preview-row" data-clid="' + _escList(cl.id) + '" data-item-type="' + item.type + '" data-item-ref="' + _escList(item.ref) + '">';
+    html += '<td>' + item.type + '</td>';
+    html += '<td class="cl-item-title-cell">' + title + '</td>';
+    html += '<td>' + _fsChip(fs) + '</td>';
+    html += '<td style="font-size:11px;color:var(--c-text3)">' + addedStr + '</td>';
+    html += '<td style="font-size:11px;color:var(--c-text3)">' + learnedStr + '</td>';
+    html += '<td style="white-space:nowrap">';
+    html += '<button class="btn btn-ghost cl-item-detail-btn" style="padding:2px 5px;font-size:10px" data-det-type="' + item.type + '" data-det-ref="' + _escList(item.ref) + '" title="' + (zh ? '\u8be6\u60c5' : 'Detail') + '">\ud83d\udd0d</button>';
+    html += '<button class="btn btn-ghost cl-item-rate-btn" style="padding:2px 5px;font-size:10px" data-rate-list="' + _escList(cl.id) + '" data-rate-type="' + item.type + '" data-rate-ref="' + _escList(item.ref) + '" title="' + (zh ? '\u8bc4\u5206' : 'Rate') + '">\u2b50</button>';
+    html += '<button class="btn btn-ghost" style="padding:2px 6px;font-size:11px;color:var(--c-danger)" data-rm-list="' + _escList(cl.id) + '" data-rm-type="' + item.type + '" data-rm-ref="' + _escList(item.ref) + '">\u2715</button>';
+    html += '</td>';
     html += '</tr>';
   }
   html += '</tbody></table>';
@@ -1035,13 +1076,17 @@ function exitListScan() {
 function _finishListScan() {
   if (!_listScanSession) return;
 
-  /* Tally current FLM state for all items in the list */
+  /* Tally current FLM state for all items in the list + batch update learnedAt */
   var list = typeof getCustomList === 'function' ? getCustomList(_listScanSession.listId) : null;
   var results = { mastered: 0, uncertain: 0, learning: 0, 'new': 0 };
   if (list) {
     for (var i = 0; i < list.items.length; i++) {
       var fs = _resolveItemFLM(list.items[i].type, list.items[i].ref) || 'new';
       results[fs] = (results[fs] || 0) + 1;
+      /* Stamp learnedAt for all scanned items */
+      if (typeof updateItemLearnedAt === 'function') {
+        updateItemLearnedAt(_listScanSession.listId, list.items[i].type, list.items[i].ref);
+      }
     }
   }
 
@@ -1056,4 +1101,270 @@ function _finishListScan() {
 
   _listScanSession = null;
   if (typeof navTo === 'function') navTo('lists');
+}
+
+/* ═══ PRINT MODE MODAL (Phase B1) ═══ */
+
+function _showPrintModeModal(list) {
+  var zh = (appLang !== 'en');
+  var html = '<div style="padding:16px">';
+  html += '<h3>' + (zh ? '\u9009\u62e9\u6253\u5370\u6a21\u5f0f' : 'Print Mode') + '</h3>';
+  html += '<div style="display:flex;flex-direction:column;gap:8px;margin-top:12px">';
+  html += '<button class="btn btn-primary" data-print-mode="detailed">' + (zh ? '\u9879\u76ee\u8be6\u60c5' : 'Detailed Content') + '</button>';
+  html += '<button class="btn btn-ghost" data-print-mode="checklist">' + (zh ? '\u79bb\u7ebf\u52fe\u9009\u6e05\u5355' : 'Offline Checklist') + '</button>';
+  html += '<button class="btn btn-ghost" data-print-mode="summary">' + (zh ? '\u6458\u8981\u603b\u89c8' : 'Summary Overview') + '</button>';
+  html += '</div></div>';
+
+  if (typeof showModal === 'function') showModal(html);
+  setTimeout(function() {
+    var card = document.getElementById('modal-card');
+    if (!card) return;
+    card.querySelectorAll('[data-print-mode]').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        if (typeof hideModal === 'function') hideModal();
+        var mode = btn.dataset.printMode;
+        if (mode === 'detailed' && typeof printCustomListDetailed === 'function') printCustomListDetailed(list);
+        else if (mode === 'checklist' && typeof printCustomListChecklist === 'function') printCustomListChecklist(list);
+        else if (typeof printCustomList === 'function') printCustomList(list);
+      });
+    });
+  }, 150);
+}
+
+/* ═══ RE-ENTRY SYSTEM (Phase C) ═══ */
+
+function startListReEntry(listId) {
+  var list = typeof getCustomList === 'function' ? getCustomList(listId) : null;
+  if (!list || list.items.length === 0) {
+    if (typeof showToast === 'function') showToast(typeof t === 'function' ? t('List is empty', '\u6e05\u5355\u4e3a\u7a7a') : 'List is empty');
+    return;
+  }
+  var el = document.getElementById('list-content');
+  if (!el) return;
+  var zh = (appLang !== 'en');
+
+  var html = '<div class="cl-reentry">';
+  html += '<h3 style="margin-bottom:12px">' + (zh ? '\ud83d\udcdd \u8865\u5f55\u5b66\u4e60\u7ed3\u679c: ' : '\ud83d\udcdd Record Results: ') + _escList(list.title) + '</h3>';
+
+  /* Group by type */
+  var groups = { vocab: [], kp: [], pp: [] };
+  for (var i = 0; i < list.items.length; i++) {
+    var it = list.items[i];
+    if (!groups[it.type]) groups[it.type] = [];
+    groups[it.type].push(it);
+  }
+
+  var types = [
+    { key: 'vocab', label: zh ? '\u8bcd\u6c47' : 'Vocabulary' },
+    { key: 'kp', label: zh ? '\u77e5\u8bc6\u70b9' : 'Knowledge Points' },
+    { key: 'pp', label: zh ? '\u771f\u9898' : 'Past Papers' }
+  ];
+
+  for (var ti = 0; ti < types.length; ti++) {
+    var items = groups[types[ti].key];
+    if (!items || items.length === 0) continue;
+    html += '<div style="margin-bottom:16px">';
+    html += '<div style="font-weight:700;margin-bottom:6px;font-size:14px">[' + types[ti].label + ']</div>';
+    html += '<div class="cl-reentry-group">';
+    for (var j = 0; j < items.length; j++) {
+      var ref = items[j].ref;
+      var type = items[j].type;
+      var fs = _resolveItemFLM(type, ref);
+      var title = typeof _resolveItemTitle === 'function' ? _resolveItemTitle(type, ref) : _escList(ref);
+      var nameBase = 're_' + type + '_' + ref.replace(/[^a-zA-Z0-9]/g, '_');
+      html += '<div class="cl-reentry-row" data-re-type="' + type + '" data-re-ref="' + _escList(ref) + '">';
+      html += '<span class="cl-reentry-title">' + title + '</span>';
+      html += '<span class="cl-reentry-radios">';
+      var opts = [
+        { val: 'mastered', label: 'M', full: zh ? '\u638c\u63e1' : 'Mastered' },
+        { val: 'uncertain', label: 'U', full: zh ? '\u4e0d\u786e\u5b9a' : 'Uncertain' },
+        { val: 'learning', label: 'L', full: zh ? '\u5b66\u4e60\u4e2d' : 'Learning' },
+        { val: 'new', label: 'N', full: zh ? '\u672a\u5b66' : 'New' }
+      ];
+      for (var oi = 0; oi < opts.length; oi++) {
+        var checked = (fs === opts[oi].val) ? ' checked' : '';
+        html += '<label class="cl-re-label" title="' + opts[oi].full + '">';
+        html += '<input type="radio" name="' + _escList(nameBase) + '" value="' + opts[oi].val + '"' + checked + '>';
+        html += ' ' + opts[oi].label + '</label>';
+      }
+      html += '</span>';
+      html += '</div>';
+    }
+    html += '</div></div>';
+  }
+
+  html += '<div style="display:flex;gap:8px;justify-content:center;margin-top:16px">';
+  html += '<button class="btn btn-primary" id="cl-reentry-save">' + (zh ? '\u4fdd\u5b58\u5e76\u8fd4\u56de' : 'Save & Return') + '</button>';
+  html += '<button class="btn btn-ghost" id="cl-reentry-cancel">' + (zh ? '\u53d6\u6d88' : 'Cancel') + '</button>';
+  html += '</div></div>';
+
+  el.innerHTML = html;
+
+  var saveBtn = el.querySelector('#cl-reentry-save');
+  if (saveBtn) saveBtn.addEventListener('click', function() { _commitReEntry(listId, el); });
+  var cancelBtn = el.querySelector('#cl-reentry-cancel');
+  if (cancelBtn) cancelBtn.addEventListener('click', function() { _renderMyLists(); });
+}
+
+function _commitReEntry(listId, container) {
+  var rows = container.querySelectorAll('.cl-reentry-row');
+  var changed = 0;
+  for (var i = 0; i < rows.length; i++) {
+    var type = rows[i].dataset.reType;
+    var ref = rows[i].dataset.reRef;
+    var checkedRadio = rows[i].querySelector('input[type="radio"]:checked');
+    if (!checkedRadio) continue;
+    var newFs = checkedRadio.value;
+    var oldFs = _resolveItemFLM(type, ref);
+    if (newFs === oldFs || newFs === 'new') continue;
+
+    /* Write-through to global FLM */
+    if (type === 'vocab') {
+      if (newFs === 'mastered' && typeof recordScan === 'function') recordScan(ref, 'known', 1);
+      else if (newFs === 'uncertain' && typeof recordScan === 'function') recordScan(ref, 'fuzzy', 1);
+      else if (newFs === 'learning' && typeof recordScan === 'function') recordScan(ref, 'unknown', 1);
+    } else if (type === 'kp') {
+      if (newFs === 'mastered' && typeof saveKPResult === 'function') saveKPResult(ref, 10, 10);
+      else if (newFs === 'uncertain' && typeof saveKPResult === 'function') saveKPResult(ref, 7, 10);
+      else if (newFs === 'learning' && typeof saveKPResult === 'function') saveKPResult(ref, 3, 10);
+    } else if (type === 'pp' && typeof _ppSetMastery === 'function') {
+      if (newFs === 'mastered') _ppSetMastery(ref, 'mastered', { source: 'practice' });
+      else if (newFs === 'uncertain') _ppSetMastery(ref, 'partial', { source: 'practice' });
+      else if (newFs === 'learning') _ppSetMastery(ref, 'needs_work', { source: 'practice' });
+    }
+
+    if (typeof updateItemLearnedAt === 'function') updateItemLearnedAt(listId, type, ref);
+    changed++;
+  }
+
+  /* Record session with final tally */
+  var list = typeof getCustomList === 'function' ? getCustomList(listId) : null;
+  if (list) {
+    var results = { mastered: 0, uncertain: 0, learning: 0, 'new': 0 };
+    for (var j = 0; j < list.items.length; j++) {
+      var fs = _resolveItemFLM(list.items[j].type, list.items[j].ref) || 'new';
+      results[fs] = (results[fs] || 0) + 1;
+    }
+    if (typeof recordListSession === 'function') recordListSession(listId, results);
+  }
+
+  var zh = (appLang !== 'en');
+  if (typeof showToast === 'function') showToast(zh ? '\u5df2\u66f4\u65b0 ' + changed + ' \u9879\u5b66\u4e60\u72b6\u6001' : changed + ' items updated');
+  _renderMyLists();
+}
+
+/* ═══ FLM STATS BAR (Phase D3) ═══ */
+
+function _renderListStatsBar(cl) {
+  if (!cl.items || cl.items.length === 0) return '';
+  var counts = { mastered: 0, uncertain: 0, learning: 0, 'new': 0 };
+  var stale = 0;
+  var now = Date.now();
+  var STALE_MS = 7 * 24 * 60 * 60 * 1000;
+  for (var i = 0; i < cl.items.length; i++) {
+    var fs = _resolveItemFLM(cl.items[i].type, cl.items[i].ref) || 'new';
+    counts[fs] = (counts[fs] || 0) + 1;
+    if (fs === 'mastered' && cl.items[i].learnedAt) {
+      if (now - new Date(cl.items[i].learnedAt).getTime() > STALE_MS) stale++;
+    }
+  }
+  var total = cl.items.length;
+  var pM = Math.round(counts.mastered / total * 100);
+  var pU = Math.round(counts.uncertain / total * 100);
+  var pL = Math.round(counts.learning / total * 100);
+  var pN = Math.max(0, 100 - pM - pU - pL);
+
+  var html = '<div class="cl-stats-bar">';
+  html += '<div class="cl-stats-track">';
+  if (counts.mastered > 0) html += '<div class="cl-stats-seg cl-stats-m" style="width:' + pM + '%"></div>';
+  if (counts.uncertain > 0) html += '<div class="cl-stats-seg cl-stats-u" style="width:' + pU + '%"></div>';
+  if (counts.learning > 0) html += '<div class="cl-stats-seg cl-stats-l" style="width:' + pL + '%"></div>';
+  if (counts['new'] > 0) html += '<div class="cl-stats-seg cl-stats-n" style="width:' + pN + '%"></div>';
+  html += '</div>';
+  html += '<div class="cl-stats-labels">' + counts.mastered + 'M / ' + counts.uncertain + 'U / ' + counts.learning + 'L / ' + counts['new'] + 'N';
+  if (stale > 0) html += ' <span style="color:var(--c-warning)">(' + stale + ' stale)</span>';
+  html += '</div></div>';
+  return html;
+}
+
+/* ═══ INLINE DETAIL EXPAND (Phase D2) ═══ */
+
+function _showListItemDetail(type, ref, rowEl) {
+  if (!rowEl) return;
+  var existing = rowEl.nextElementSibling;
+  if (existing && existing.classList.contains('cl-detail-row')) {
+    existing.remove();
+    return;
+  }
+  var detailHtml = typeof _resolveItemDetailHtml === 'function' ? _resolveItemDetailHtml(type, ref) : ref;
+  var tr = document.createElement('tr');
+  tr.className = 'cl-detail-row';
+  var td = document.createElement('td');
+  td.colSpan = 6;
+  td.innerHTML = '<div class="cl-detail-content">' + detailHtml + '</div>';
+  tr.appendChild(td);
+  rowEl.parentNode.insertBefore(tr, rowEl.nextSibling);
+  try {
+    if (typeof renderMathInElement === 'function') {
+      renderMathInElement(td, {
+        delimiters: [
+          { left: '$$', right: '$$', display: true },
+          { left: '$', right: '$', display: false },
+          { left: '\\(', right: '\\)', display: false },
+          { left: '\\[', right: '\\]', display: true }
+        ], throwOnError: false
+      });
+    }
+  } catch(e) {}
+}
+
+/* ═══ QUICK RATE (Phase D4) ═══ */
+
+function _showQuickRate(listId, type, ref, anchorEl) {
+  var old = document.querySelector('.cl-rate-popup');
+  if (old) old.remove();
+
+  var zh = (appLang !== 'en');
+  var popup = document.createElement('div');
+  popup.className = 'cl-rate-popup';
+  popup.innerHTML =
+    '<button data-qr="mastered" class="cl-qr-btn" style="background:var(--c-success-bg,#D1FAE5);color:var(--c-success,#059669)">M</button>' +
+    '<button data-qr="uncertain" class="cl-qr-btn" style="background:var(--c-warning-bg,#FEF3C7);color:var(--c-warning,#D97706)">U</button>' +
+    '<button data-qr="learning" class="cl-qr-btn" style="background:var(--c-primary-bg,#EDEDFF);color:var(--c-primary,#5248C9)">L</button>';
+
+  document.body.appendChild(popup);
+  var rect = anchorEl.getBoundingClientRect();
+  popup.style.position = 'fixed';
+  popup.style.top = (rect.bottom + 4) + 'px';
+  popup.style.left = rect.left + 'px';
+  popup.style.zIndex = '9999';
+
+  popup.querySelectorAll('[data-qr]').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var newFs = btn.dataset.qr;
+      if (type === 'vocab') {
+        if (newFs === 'mastered' && typeof recordScan === 'function') recordScan(ref, 'known', 1);
+        else if (newFs === 'uncertain' && typeof recordScan === 'function') recordScan(ref, 'fuzzy', 1);
+        else if (newFs === 'learning' && typeof recordScan === 'function') recordScan(ref, 'unknown', 1);
+      } else if (type === 'kp') {
+        if (newFs === 'mastered' && typeof saveKPResult === 'function') saveKPResult(ref, 10, 10);
+        else if (newFs === 'uncertain' && typeof saveKPResult === 'function') saveKPResult(ref, 7, 10);
+        else if (newFs === 'learning' && typeof saveKPResult === 'function') saveKPResult(ref, 3, 10);
+      } else if (type === 'pp' && typeof _ppSetMastery === 'function') {
+        if (newFs === 'mastered') _ppSetMastery(ref, 'mastered', { source: 'practice' });
+        else if (newFs === 'uncertain') _ppSetMastery(ref, 'partial', { source: 'practice' });
+        else if (newFs === 'learning') _ppSetMastery(ref, 'needs_work', { source: 'practice' });
+      }
+      if (typeof updateItemLearnedAt === 'function') updateItemLearnedAt(listId, type, ref);
+      popup.remove();
+      if (typeof showToast === 'function') showToast(zh ? '\u5df2\u66f4\u65b0' : 'Updated');
+      _renderMyLists();
+    });
+  });
+
+  setTimeout(function() {
+    document.addEventListener('click', function _dismiss(e) {
+      if (!popup.contains(e.target)) { popup.remove(); document.removeEventListener('click', _dismiss); }
+    });
+  }, 50);
 }
