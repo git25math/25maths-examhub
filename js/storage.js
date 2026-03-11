@@ -856,7 +856,7 @@ async function syncFromCloud() {
   /* Clear unsynced residual data from previous user (crash-safe) */
   var _unsyncedKeys = ['pp_wrong_book', 'pp_exam_history', 'pp_paper_results',
     'diag_history', 'wmatch_badges', 'wmatch_weekly',
-    'recovery_schedule', 'student_profile', 'reforget_log', 'custom_lists'];
+    'recovery_schedule', 'student_profile', 'reforget_log'];
   _unsyncedKeys.forEach(function(k) {
     try { localStorage.removeItem(k); } catch(e) {}
   });
