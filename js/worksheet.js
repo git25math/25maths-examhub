@@ -332,7 +332,7 @@ function _buildListPrintDoc(title, subtitle, bodyHtml, motto) {
   html += '.ws-list-title { font-size: 12pt; font-weight: 600; color: #444; }';
   html += '.ws-list-meta { font-size: 9pt; color: #666; text-align: right; }';
   html += '.ws-user-name { font-size: 11pt; font-weight: 700; color: #5248C9; }';
-  html += '.ws-motto { font-size: 8pt; color: #888; margin-top: 3px; font-style: italic; line-height: 1.4; max-width: 220px; }';
+  html += '.ws-motto { font-size: 8pt; color: #888; margin-top: 3px; font-style: italic; white-space: nowrap; }';
   html += '.ws-list-table { width: 100%; border-collapse: collapse; font-size: 10pt; }';
   html += '.ws-list-table th { background: #f5f3ff; padding: 6px 8px; border: 1px solid #e5e7eb;';
   html += '  text-align: left; font-weight: 600; font-size: 9pt; white-space: nowrap; }';
@@ -556,7 +556,7 @@ function _buildPPListPrintDoc(title, subtitle, bodyHtml, userName) {
   html += '.ws-list-title { font-size: 11pt; font-weight: 600; color: #444; }';
   html += '.ws-list-meta { font-size: 8pt; color: #666; text-align: right; }';
   html += '.ws-user-name { font-size: 11pt; font-weight: 700; color: #5248C9; }';
-  html += '.ws-motto { font-size: 8pt; color: #888; margin-top: 3px; font-style: italic; line-height: 1.4; max-width: 220px; }';
+  html += '.ws-motto { font-size: 8pt; color: #888; margin-top: 3px; font-style: italic; white-space: nowrap; }';
   html += '.ws-pp-table { width: 100%; border-collapse: collapse; font-size: 9pt; }';
   html += '.ws-pp-table th { background: #f5f3ff; padding: 5px 6px; border: 1px solid #d1d5db;';
   html += '  text-align: left; font-weight: 600; font-size: 8pt; white-space: nowrap; }';
