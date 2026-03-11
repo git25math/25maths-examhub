@@ -1571,6 +1571,21 @@ function startPPScanByIds(qIds, board) {
   });
 }
 
+/* Keyboard handler for PP scan (1/2/3) */
+function _ppScanKeyHandler(e) {
+  if (!_ppScanState) return;
+  if (e.key === '1' || e.key === '2' || e.key === '3') {
+    e.preventDefault();
+    if (_ppScanState.round === 1) {
+      var map = { '1': 'known', '2': 'fuzzy', '3': 'unknown' };
+      _ratePPScanPreview(map[e.key]);
+    } else {
+      var rateMap = { '1': 'mastered', '2': 'partial', '3': 'needs_work' };
+      _ratePPScanPractice(rateMap[e.key]);
+    }
+  }
+}
+
 function _renderPPScanCard() {
   if (!_ppScanState) return;
   if (_ppScanState.idx >= _ppScanState.pool.length) { _finishPPScanRound(); return; }
@@ -1631,6 +1646,8 @@ function _renderPPScanPreview() {
       if (btn) _ratePPScanPreview(btn.dataset.ppscan);
     });
   }
+  document.removeEventListener('keydown', _ppScanKeyHandler);
+  document.addEventListener('keydown', _ppScanKeyHandler);
 }
 
 function _ratePPScanPreview(rating) {
@@ -1690,6 +1707,8 @@ function _renderPPScanPractice() {
       if (btn) _ratePPScanPractice(btn.dataset.ppscanRate);
     });
   }
+  document.removeEventListener('keydown', _ppScanKeyHandler);
+  document.addEventListener('keydown', _ppScanKeyHandler);
 }
 
 function _ppScanToggleAnswer() {
@@ -1752,6 +1771,7 @@ function _finishPPScanRound() {
 }
 
 function _finishPPScan() {
+  document.removeEventListener('keydown', _ppScanKeyHandler);
   var mastered = 0, total = _ppScanState.items.length;
   for (var i = 0; i < _ppScanState.items.length; i++) {
     var item = _ppScanState.items[i];
@@ -1799,6 +1819,7 @@ function _finishPPScan() {
 
 function _exitPPScan() {
   _ppScanState = null;
+  document.removeEventListener('keydown', _ppScanKeyHandler);
   if (typeof isRecoverySessionActive === 'function' && isRecoverySessionActive()) {
     _recordRecoveryResult('pp');
     _advanceRecoverySession();
@@ -3548,7 +3569,8 @@ function editPastPaperQ(qIdx) {
   var q = (qIdx != null) ? _ppSession.questions[qIdx] : _ppSession.questions[_ppSession.current];
   if (!q) return;
 
-  var html = '<div class="section-title">\u270f\ufe0f ' + t('Edit Past Paper Question', '编辑真题') + ' <span style="color:var(--c-muted);font-size:13px">#' + escapeHtml(q.id) + '</span></div>';
+  var html = '<div class="section-title">\u270f\ufe0f ' + t('Edit Past Paper Question', '编辑真题') + ' <span style="color:var(--c-muted);font-size:13px">#' + escapeHtml(q.id) + '</span>' +
+    ' <button class="btn btn-sm btn-ghost" type="button" onclick="_ppEdShowHelp()" title="Help" style="vertical-align:middle;font-size:14px">\u2753</button></div>';
 
   /* Question info */
   html += '<div style="text-align:left;margin-bottom:12px;padding:10px;background:var(--c-surface-alt);border-radius:var(--r);font-size:12px">';
@@ -3893,6 +3915,57 @@ function _ppEdCollectAnswer(idPrefix) {
   if (tpl) ans.template = tpl;
   if (type === 'vector' || type === 'coordinate') ans.fields = nf;
   return ans;
+}
+
+/* ═══ Editor help modal (v4.6.1) ═══ */
+
+function _ppEdShowHelp() {
+  var h = '<div class="section-title">\u2753 ' + t('Editor Help', '编辑器帮助') + '</div>';
+  h += '<div style="text-align:left;font-size:13px;line-height:1.7;max-height:70vh;overflow:auto">';
+
+  h += '<h4 style="margin:12px 0 6px;color:var(--c-primary)">' + t('Block Types', 'Block 类型') + '</h4>';
+  h += '<table class="pp-table" style="font-size:12px;width:100%"><tr><th>' + t('Type','类型') + '</th><th>' + t('Usage','用法') + '</th></tr>';
+  h += '<tr><td><code>text</code></td><td>' + t('Text content, supports LaTeX math ($...$). Line breaks: use Enter for new paragraph, <code>\\\\\\\\</code> for line break within paragraph.', '文字内容，支持 LaTeX 数学公式（$...$）。换行：Enter 键分段，<code>\\\\\\\\</code> 段内换行。') + '</td></tr>';
+  h += '<tr><td><code>table</code></td><td>' + t('LaTeX tabular code, e.g. <code>\\\\begin{tabular}{|c|c|}...</code>', 'LaTeX 表格代码，如 <code>\\\\begin{tabular}{|c|c|}...</code>') + '</td></tr>';
+  h += '<tr><td><code>figure</code></td><td>' + t('Image path, e.g. <code>figures/q1.svg</code>', '图片路径，如 <code>figures/q1.svg</code>') + '</td></tr>';
+  h += '<tr><td><code>list</code></td><td>' + t('One item per line, rendered as bullet list', '每行一项，渲染为列表') + '</td></tr>';
+  h += '</table>';
+
+  h += '<h4 style="margin:12px 0 6px;color:var(--c-primary)">' + t('Block Ordering', 'Block 排序') + '</h4>';
+  h += '<p>' + t('Each block has ▲ ▼ ✖ buttons on the right. ▲/▼ move the block up/down, ✖ deletes it. Click "+ Block" to add a new block at the bottom.', '每个 Block 右侧有 ▲ ▼ ✖ 按钮。▲/▼ 上下移动 Block 顺序，✖ 删除。点「+ Block」在底部添加新 Block。') + '</p>';
+
+  h += '<h4 style="margin:12px 0 6px;color:var(--c-primary)">' + t('Answer Line Types', '答题线类型') + '</h4>';
+  h += '<table class="pp-table" style="font-size:12px;width:100%"><tr><th>' + t('Type','类型') + '</th><th>' + t('Renders as','渲染效果') + '</th></tr>';
+  h += '<tr><td><code>none</code></td><td>' + t('No answer line', '无答题线') + '</td></tr>';
+  h += '<tr><td><code>number</code></td><td>' + t('Single dotted line, optional prefix/suffix (e.g. x= ... cm)', '单行虚线，可选前缀/后缀（如 x= ... cm）') + '</td></tr>';
+  h += '<tr><td><code>vector</code></td><td>' + t('Column vector with N rows (set "fields")', '列向量，N 行（设置 fields 数量）') + '</td></tr>';
+  h += '<tr><td><code>coordinate</code></td><td>' + t('Coordinate pair (____, ____) with N fields', '坐标对 (____, ____)，N 个空') + '</td></tr>';
+  h += '<tr><td><code>expression</code></td><td>' + t('Single line with optional template', '单行，可选模板') + '</td></tr>';
+  h += '<tr><td><code>multiline</code></td><td>' + t('Multiple dotted lines', '多行虚线') + '</td></tr>';
+  h += '<tr><td><code>table_input</code></td><td>' + t('Fill-in table (template: header|val|val\\\\nrow|____|____)', '填表（模板：表头|值\\\\n行|____|____）') + '</td></tr>';
+  h += '</table>';
+
+  h += '<h4 style="margin:12px 0 6px;color:var(--c-primary)">' + t('Nesting Structure', '嵌套结构') + '</h4>';
+  h += '<p>' + t('Questions support up to 4 levels: <b>Stem</b> → <b>Part</b> (a)(b)(c) → <b>Subpart</b> (i)(ii)(iii) → <b>Subsubpart</b> (p)(q)(r). Each level has its own block content, answer line, and marks.', '题目支持最多 4 层：<b>题干</b> → <b>Part</b> (a)(b)(c) → <b>Subpart</b> (i)(ii)(iii) → <b>Subsubpart</b> (p)(q)(r)。每层有独立的 Block 内容、答题线和分数。') + '</p>';
+  h += '<p>' + t('Click ▼ to expand a part\'s detail. Use "+ Subpart" / "+ Subsubpart" to add nested levels.', '点 ▼ 展开小题详情。用「+ Subpart」/「+ Subsubpart」添加嵌套层级。') + '</p>';
+
+  h += '<h4 style="margin:12px 0 6px;color:var(--c-primary)">' + t('Text Formatting', '文字排版') + '</h4>';
+  h += '<ul style="margin:4px 0;padding-left:20px">';
+  h += '<li>' + t('Math: <code>$x^2+1$</code> for inline, <code>$$\\\\frac{a}{b}$$</code> for display', '数学公式：<code>$x^2+1$</code> 行内，<code>$$\\\\frac{a}{b}$$</code> 独行') + '</li>';
+  h += '<li>' + t('Bold: <code>\\\\textbf{text}</code>', '加粗：<code>\\\\textbf{text}</code>') + '</li>';
+  h += '<li>' + t('Line break: <code>\\\\\\\\</code> within same block', '换行：同一 Block 内用 <code>\\\\\\\\</code>') + '</li>';
+  h += '<li>' + t('New paragraph: add a separate text block', '新段落：添加独立的 text Block') + '</li>';
+  h += '</ul>';
+
+  h += '</div>';
+  h += '<div class="btn-row mt-12"><button class="btn btn-ghost" onclick="this.closest(\'.pp-ed-help-overlay\').remove()">' + t('Close', '关闭') + '</button></div>';
+
+  /* Overlay on top of existing modal (not showModal which would replace it) */
+  var overlay = document.createElement('div');
+  overlay.className = 'pp-ed-help-overlay';
+  overlay.innerHTML = '<div class="pp-ed-help-card">' + h + '</div>';
+  overlay.addEventListener('click', function(e) { if (e.target === overlay) overlay.remove(); });
+  document.body.appendChild(overlay);
 }
 
 /* ═══ Part/Subpart/Subsubpart editor rows (v4.6.0) ═══ */
