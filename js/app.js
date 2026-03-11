@@ -345,7 +345,7 @@ function showScoreGuide() {
   html += '<div class="guide-section">';
   html += '<div class="guide-tip-title">\ud83d\udcca ' + t('Score Calculation', '\u79ef\u5206\u8ba1\u7b97') + '</div>';
   html += '<div class="srs-row"><span class="srs-row-dot srs-row-dot--primary"></span><span class="srs-row-label">' + t('Learning %', '\u5b66\u4e60\u8fdb\u5ea6') + '</span><span class="srs-row-desc">' + t('total stars \u00f7 (words \u00d7 4) \u00d7 100%', '\u603b\u661f\u6570 \u00f7 (\u8bcd\u6c47\u6570 \u00d7 4) \u00d7 100%') + '</span></div>';
-  html += '<div class="srs-row"><span class="srs-row-dot srs-row-dot--light"></span><span class="srs-row-label">' + t('Score', '\u6392\u884c\u699c\u79ef\u5206') + '</span><span class="srs-row-desc">' + t('learning % \u00d7 20 (max 2000)', '\u5b66\u4e60\u8fdb\u5ea6 \u00d7 20\uff08\u6ee1\u5206 2000\uff09') + '</span></div>';
+  html += '<div class="srs-row"><span class="srs-row-dot srs-row-dot--light"></span><span class="srs-row-label">' + t('Score', '\u7efc\u5408\u79ef\u5206') + '</span><span class="srs-row-desc">' + t('learning % \u00d7 20 (max 2000)', '\u5b66\u4e60\u8fdb\u5ea6 \u00d7 20\uff08\u6ee1\u5206 2000\uff09') + '</span></div>';
   html += '<div class="srs-row"><span class="srs-row-dot srs-row-dot--success"></span><span class="srs-row-label">' + t('Mastery %', '\u7cbe\u901a\u7387') + '</span><span class="srs-row-desc">' + t('4\u2605 words \u00f7 total words \u00d7 100%', '4\u2605\u8bcd\u6c47\u6570 \u00f7 \u603b\u8bcd\u6c47\u6570 \u00d7 100%') + '</span></div>';
   html += '</div>';
 

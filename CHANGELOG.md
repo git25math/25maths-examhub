@@ -1,6 +1,21 @@
 # Changelog
 
-## [4.7.6] - 2026-03-11 — 3 端高保真同步管道（tex↔JSON↔PDF）
+## [4.7.6] - 2026-03-11 — 引导系统审计修复 + 3 端高保真同步管道
+
+### 引导系统修复
+- **Tour 步骤重写**: 5 步全部匹配当前首页结构（`.hero-card`/`.quick-stats`/`.deck-row`/nav/`.hero-rank`），修复 v2.0+ 重构后 3/5 步选择器失效问题
+- **Tour 导航描述更新**: "Home, Review, Import, Leaderboard and Stats" → "Home, Today's Plan, Mistake Book, Learning Items and Stats"
+- **Score Guide 标签修正**: `showScoreGuide()` 中 "排行榜积分" → "综合积分"
+- **Guest 提示文案更新**: `showGuestLockPrompt()` 移除 "join the leaderboard" 引用；`showGuestSignupPrompt()` "Join the leaderboard" → "Earn ranks & achievements"
+- **废弃 CSS 清理**: 删除 `.home-stats`/`.dc-home-banner`/`.home-rank-hint` 等 3 组死代码（无 JS 引用）
+
+### 文件变更
+| 文件 | 变更类型 |
+|------|---------|
+| `js/ui.js` | 修改 — TOUR_STEPS 5 步重写 |
+| `js/app.js` | 修改 — Score Guide 积分标签 |
+| `js/mastery.js` | 修改 — Guest 提示文案 ×2 |
+| `css/style.css` | 修改 — 删除 3 组废弃 CSS |
 
 ### 新增
 - **fix-hifi-blocks.py**: 高保真 LaTeX 解析器 — 从 QuestionStatement.tex 提取结构化 Block[] + 17 个格式标志，保留原始排版信息

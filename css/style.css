@@ -619,9 +619,6 @@ input { font-family: inherit; }
 
 
 /* ═══ HOME DASHBOARD ═══ */
-.home-stats {
-  display: flex; gap: 12px; margin-bottom: 24px; flex-wrap: wrap;
-}
 
 .stat-card {
   flex: 1; min-width: 100px;
@@ -2306,24 +2303,6 @@ input { font-family: inherit; }
 }
 .btn-help:hover { background: var(--c-primary-bg); }
 
-/* Home rank hint */
-.home-rank-hint {
-  display: flex; align-items: center; gap: 8px;
-  padding: 10px 14px; margin-bottom: 20px;
-  background: var(--c-surface); border-radius: var(--r);
-  box-shadow: var(--shadow); cursor: pointer;
-  transition: all 0.2s;
-}
-.home-rank-hint:hover { border-color: var(--c-primary-bg); transform: translateY(-1px); }
-
-.home-rank-emoji { font-size: 20px; }
-.home-rank-name { font-size: 13px; font-weight: 700; color: var(--c-text); }
-.home-rank-sep { color: var(--c-muted); }
-.home-rank-next { font-size: 12px; color: var(--c-text2); }
-.home-rank-link {
-  margin-left: auto; font-size: 12px; font-weight: 600;
-  color: var(--c-primary); white-space: nowrap;
-}
 
 
 /* ═══ SEARCH BAR ═══ */
@@ -2582,15 +2561,6 @@ input { font-family: inherit; }
 .btn-share:active { transform: translateY(0); }
 
 /* ═══ DAILY CHALLENGE ═══ */
-.dc-home-banner {
-  display: flex; align-items: center; gap: 10px;
-  background: linear-gradient(135deg, var(--c-streak), #FF8C5A);
-  color: #fff; border-radius: var(--r); padding: 14px 18px;
-  margin-bottom: 20px; cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
-  box-shadow: 0 2px 12px rgba(255,107,53,0.25);
-}
-.dc-home-banner:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255,107,53,0.35); }
 .dc-badge {
   font-size: 12px; font-weight: 700; background: rgba(255,255,255,0.25);
   padding: 3px 10px; border-radius: 20px; white-space: nowrap;
@@ -2670,7 +2640,6 @@ input { font-family: inherit; }
     padding-bottom: calc(var(--bnav-h) + 10px);
   }
 
-  .home-stats { flex-direction: column; }
   .stat-card { min-width: unset; }
 
   .deck-row { padding: 8px 10px 8px 20px; gap: 6px; }
@@ -3974,8 +3943,6 @@ input { font-family: inherit; }
 .pwa-install-icon { font-size: 20px; }
 .pwa-install-text { flex: 1; font-size: 13px; color: var(--c-text2); }
 .pwa-install-btn { padding: 4px 12px; border-radius: 6px; background: var(--c-primary); color: #fff; font-size: 12px; font-weight: 600; }
-.is-offline .home-stats::after { content: 'Offline'; position: absolute; top: 4px; right: 8px; font-size: 10px; color: var(--c-warning); font-weight: 600; }
-.home-stats { position: relative; }
 [data-theme="dark"] .pwa-install-hint { background: linear-gradient(135deg, rgba(82,72,201,0.12), rgba(82,72,201,0.04)); }
 
 /* ═══ MODE BREAKDOWN ═══ */

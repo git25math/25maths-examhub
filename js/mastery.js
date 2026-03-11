@@ -829,7 +829,7 @@ function showGuestLockPrompt() {
   var html = '<div class="ms-modal-center">';
   html += '<div class="ms-modal-emoji">\ud83d\udd12</div>';
   html += '<div class="section-title">' + t('Login to Unlock', '\u767b\u5f55\u89e3\u9501\u5168\u90e8\u8bcd\u7ec4') + '</div>';
-  html += '<p style="color:var(--c-text2);font-size:14px;margin:12px 0 20px">' + t('Create a free account to access all vocabulary groups, track progress, and join the leaderboard.', '\u514d\u8d39\u6ce8\u518c\u8d26\u53f7\u5373\u53ef\u89e3\u9501\u5168\u90e8\u8bcd\u7ec4\u3001\u8bb0\u5f55\u5b66\u4e60\u8fdb\u5ea6\u5e76\u52a0\u5165\u6392\u884c\u699c\u3002') + '</p>';
+  html += '<p style="color:var(--c-text2);font-size:14px;margin:12px 0 20px">' + t('Create a free account to access all vocabulary groups and track progress across devices.', '\u514d\u8d39\u6ce8\u518c\u8d26\u53f7\u5373\u53ef\u89e3\u9501\u5168\u90e8\u8bcd\u7ec4\u3001\u8bb0\u5f55\u5b66\u4e60\u8fdb\u5ea6\u5e76\u8de8\u8bbe\u5907\u540c\u6b65\u3002') + '</p>';
   html += '<div class="btn-row btn-row--mt0">';
   html += '<button class="btn btn-primary flex-1" onclick="hideModal();doLogout()">' + t('Login / Register', '\u767b\u5f55 / \u6ce8\u518c') + '</button>';
   html += '<button class="btn btn-ghost flex-1" onclick="hideModal()">' + t('Later', '\u7a0d\u540e') + '</button>';
@@ -844,7 +844,7 @@ function showGuestSignupPrompt() {
   html += '<div class="section-title">' + t('Register for Free', '\u514d\u8d39\u6ce8\u518c') + '</div>';
   html += '<div class="ms-benefits-list">';
   html += '<div>\u2705 ' + t('Sync progress across devices', '\u8de8\u8bbe\u5907\u540c\u6b65\u5b66\u4e60\u8fdb\u5ea6') + '</div>';
-  html += '<div>\ud83c\udfc6 ' + t('Join the leaderboard', '\u52a0\u5165\u6392\u884c\u699c\u7ade\u4e89') + '</div>';
+  html += '<div>\ud83c\udfc6 ' + t('Earn ranks & achievements', '\u83b7\u5f97\u6bb5\u4f4d\u4e0e\u6210\u5c31') + '</div>';
   html += '<div>\ud83d\udcca ' + t('Track your learning history', '\u8bb0\u5f55\u5b66\u4e60\u5386\u53f2\u6570\u636e') + '</div>';
   html += '</div>';
   html += '<div class="btn-row btn-row--mt0">';
