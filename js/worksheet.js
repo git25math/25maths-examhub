@@ -450,24 +450,138 @@ function printKPList(kps) {
 function printPPList(pps) {
   var esc = typeof escapeHtml === 'function' ? escapeHtml : function(s) { return s; };
   var zh = (typeof appLang !== 'undefined' && appLang !== 'en');
-  var body = '<table class="ws-list-table"><thead><tr>';
-  body += '<th>#</th><th>' + (zh ? '\u9898\u53f7' : 'Q ID') + '</th><th>' + (zh ? '\u6765\u6e90' : 'Source') + '</th><th>' + (zh ? '\u5206\u503c' : 'Marks') + '</th><th>' + (zh ? '\u72b6\u6001' : 'Status') + '</th><th>' + (zh ? '\u5c0f\u4e13\u9898' : 'Section') + '</th><th>' + (zh ? '\u9057\u5fd8' : 'Re-forget') + '</th>';
+
+  /* Error reason options */
+  var errOpts = zh
+    ? ['\u5ba1\u9898\u4e0d\u6e05', '\u6982\u5ff5\u6a21\u7cca', '\u65b9\u6cd5\u9519\u8bef', '\u8ba1\u7b97\u5931\u8bef', '\u7c97\u5fc3\u5927\u610f']
+    : ['Misread', 'Concept', 'Method', 'Calculation', 'Careless'];
+
+  /* Mastery options */
+  var masteryOpts = zh
+    ? ['\u5df2\u638c\u63e1', '\u4e0d\u786e\u5b9a', '\u5b66\u4e60\u4e2d', '\u672a\u5b66']
+    : ['Mastered', 'Uncertain', 'Learning', 'New'];
+
+  var body = '<table class="ws-list-table ws-pp-table"><thead><tr>';
+  body += '<th>#</th>';
+  body += '<th>' + (zh ? '\u9898\u53f7' : 'Q ID') + '</th>';
+  body += '<th>' + (zh ? '\u6240\u5c5e\u4e13\u9898' : 'Topic') + '</th>';
+  body += '<th>' + (zh ? '\u5206\u503c' : 'Marks') + '</th>';
+  body += '<th>' + (zh ? '\u9519\u56e0' : 'Error Reason') + '</th>';
+  body += '<th>' + (zh ? '\u6807\u6ce8\u65f6\u95f4' : 'Marked') + '</th>';
+  body += '<th>' + (zh ? '\u91cd\u5237\u8bb0\u5f55' : 'Re-practice') + '</th>';
+  body += '<th>' + (zh ? '\u638c\u63e1\u7a0b\u5ea6' : 'Mastery') + '</th>';
   body += '</tr></thead><tbody>';
+
   for (var i = 0; i < pps.length; i++) {
     var p = pps[i];
     body += '<tr>';
-    body += '<td>' + (i + 1) + '</td>';
+    body += '<td style="text-align:center">' + (i + 1) + '</td>';
     body += '<td>' + esc(p.word || '') + '</td>';
-    body += '<td>' + esc(p.def || '') + '</td>';
-    body += '<td>' + (p.marks || '-') + '</td>';
-    body += '<td>' + _printStatus(p.fs, zh) + '</td>';
     body += '<td>' + esc(p.section || '') + '</td>';
-    body += '<td>' + (p.reforget || 0) + '</td>';
+    body += '<td style="text-align:center">' + (p.marks || '-') + '</td>';
+
+    /* Error reason checkboxes */
+    body += '<td class="pp-check-cell">';
+    for (var ei = 0; ei < errOpts.length; ei++) {
+      body += '<label class="pp-check-label"><span class="pp-checkbox"></span>' + esc(errOpts[ei]) + '</label>';
+    }
+    body += '</td>';
+
+    /* Marked time (auto) */
+    body += '<td style="font-size:8pt;white-space:nowrap">' + (p.lr ? new Date(p.lr).toLocaleDateString() : '-') + '</td>';
+
+    /* Re-practice record (blank lines for user) */
+    body += '<td class="pp-repractice-cell">';
+    body += '<div class="pp-blank-line"></div>';
+    body += '<div class="pp-blank-line"></div>';
+    body += '<div class="pp-blank-line"></div>';
+    body += '</td>';
+
+    /* Mastery checkboxes */
+    body += '<td class="pp-check-cell">';
+    for (var mi = 0; mi < masteryOpts.length; mi++) {
+      body += '<label class="pp-check-label"><span class="pp-checkbox"></span>' + esc(masteryOpts[mi]) + '</label>';
+    }
+    body += '</td>';
+
     body += '</tr>';
   }
   body += '</tbody></table>';
-  var html = _buildListPrintDoc(zh ? '\u771f\u9898\u5217\u8868' : 'Past Paper Questions', pps.length + (zh ? ' \u9879' : ' items'), body);
+
+  /* Use custom builder with extra PP-specific CSS */
+  var title = zh ? '\u771f\u9898\u9519\u9898\u8bb0\u5f55' : 'Past Paper Error Log';
+  var subtitle = pps.length + (zh ? ' \u9898' : ' questions');
+  var html = _buildPPListPrintDoc(title, subtitle, body);
   _openPrintWindow(html);
+}
+
+function _buildPPListPrintDoc(title, subtitle, bodyHtml) {
+  var esc = typeof escapeHtml === 'function' ? escapeHtml : function(s) { return s; };
+  var dateStr = new Date().toLocaleDateString('en-CA');
+
+  var html = '<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">';
+  html += '<title>' + esc(title) + '</title>';
+  html += '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">';
+  html += '<style>';
+  html += '@page { size: A4 landscape; margin: 10mm; }';
+  html += '*, *::before, *::after { box-sizing: border-box; }';
+  html += 'body { font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;';
+  html += '  font-size: 9pt; line-height: 1.3; color: #000; background: #fff; margin: 0; padding: 12px; }';
+  html += '.ws-list-header { display: flex; justify-content: space-between; align-items: flex-start;';
+  html += '  border-bottom: 2px solid #333; padding-bottom: 6px; margin-bottom: 8px; }';
+  html += '.ws-list-brand { font-size: 13pt; font-weight: 700; }';
+  html += '.ws-list-title { font-size: 11pt; font-weight: 600; color: #444; }';
+  html += '.ws-list-meta { font-size: 8pt; color: #666; text-align: right; }';
+  html += '.ws-pp-table { width: 100%; border-collapse: collapse; font-size: 9pt; }';
+  html += '.ws-pp-table th { background: #f5f3ff; padding: 5px 6px; border: 1px solid #d1d5db;';
+  html += '  text-align: left; font-weight: 600; font-size: 8pt; white-space: nowrap; }';
+  html += '.ws-pp-table td { padding: 4px 6px; border: 1px solid #d1d5db; vertical-align: top; }';
+  html += '.ws-pp-table tr:nth-child(even) { background: #faf9ff; }';
+  html += '.ws-pp-table tr { break-inside: avoid; }';
+  html += '.pp-check-cell { padding: 3px 4px !important; }';
+  html += '.pp-check-label { display: block; font-size: 8pt; line-height: 1.6; white-space: nowrap; }';
+  html += '.pp-checkbox { display: inline-block; width: 10px; height: 10px; border: 1.5px solid #666;';
+  html += '  border-radius: 2px; margin-right: 3px; vertical-align: middle; position: relative; top: -1px; }';
+  html += '.pp-repractice-cell { min-width: 80px; }';
+  html += '.pp-blank-line { border-bottom: 1px solid #ccc; height: 18px; }';
+  html += '.ws-list-footer { margin-top: 8px; padding-top: 4px; border-top: 1px solid #ddd;';
+  html += '  font-size: 7pt; color: #888; display: flex; justify-content: space-between; }';
+  html += '@media print { body { padding: 0; } }';
+  html += '</style></head><body>';
+
+  html += '<div class="ws-list-header">';
+  html += '<div><div class="ws-list-brand">25Maths</div>';
+  html += '<div class="ws-list-title">' + esc(title) + '</div>';
+  if (subtitle) html += '<div style="font-size:8pt;color:#666">' + esc(subtitle) + '</div>';
+  html += '</div>';
+  html += '<div class="ws-list-meta"><div>' + dateStr + '</div></div>';
+  html += '</div>';
+
+  html += bodyHtml;
+
+  html += '<div class="ws-list-footer">';
+  html += '<div>25Maths Exam Support Hub</div>';
+  html += '<div>Generated ' + dateStr + '</div>';
+  html += '</div>';
+
+  html += '<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"><\/script>';
+  html += '<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"><\/script>';
+  html += '<script>';
+  html += 'window.addEventListener("load", function() {';
+  html += '  try { renderMathInElement(document.body, {';
+  html += '    delimiters: [';
+  html += '      { left: "$$", right: "$$", display: true },';
+  html += '      { left: "\\\\[", right: "\\\\]", display: true },';
+  html += '      { left: "$", right: "$", display: false },';
+  html += '      { left: "\\\\(", right: "\\\\)", display: false }';
+  html += '    ], throwOnError: false';
+  html += '  }); } catch(e) {}';
+  html += '  setTimeout(function() { try { window.focus(); window.print(); } catch(e) {} }, 300);';
+  html += '});';
+  html += '<\/script>';
+
+  html += '</body></html>';
+  return html;
 }
 
 /* ═══ CUSTOM LIST PRINT ═══ */
