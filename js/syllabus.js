@@ -3048,8 +3048,19 @@ function reviewAllMistakeQs() {
 
 function startMistakeReview(type) {
   if (type === 'vocab') {
-    /* SRS naturally prioritizes failed words (low stars → low SRS level → due first) */
-    navTo('review-dash');
+    var mistakes = _getVocabMistakes();
+    if (mistakes.length === 0) return;
+    /* Build word objects for startRefreshScan */
+    var wordObjs = [];
+    for (var i = 0; i < mistakes.length; i++) {
+      var w = mistakes[i];
+      wordObjs.push({ word: w.word, def: w.def, key: w.key, lid: w.level });
+    }
+    if (typeof startRefreshScan === 'function') {
+      startRefreshScan(wordObjs);
+    } else {
+      navTo('review-dash');
+    }
   }
 }
 
