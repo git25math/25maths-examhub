@@ -329,6 +329,7 @@ function recordAnswer(key, mode, isCorrect) {
   }
 
   writeS(s);
+  if (typeof invalidateRecoveryPlanCache === 'function') invalidateRecoveryPlanCache();
   if (newStreak) showToast('\ud83d\udd25 ' + t(getStreakCount() + '-day streak!', '\u8fde\u7eed\u5b66\u4e60 ' + getStreakCount() + ' \u5929\uff01'));
   clearTimeout(_badgeCheckTimer);
   _badgeCheckTimer = setTimeout(function() { if (typeof checkBadges === 'function') checkBadges(); }, 3000);
@@ -417,6 +418,7 @@ function recordScan(key, verdict, round) {
   }
 
   writeS(s);
+  if (typeof invalidateRecoveryPlanCache === 'function') invalidateRecoveryPlanCache();
   if (newStreak) showToast('\ud83d\udd25 ' + t(getStreakCount() + '-day streak!', '\u8fde\u7eed\u5b66\u4e60 ' + getStreakCount() + ' \u5929\uff01'));
   clearTimeout(_badgeCheckTimer);
   _badgeCheckTimer = setTimeout(function() { if (typeof checkBadges === 'function') checkBadges(); }, 3000);
@@ -651,6 +653,7 @@ function recordRefreshScan(key, verdict) {
   _staleCacheData = null;
   _cacheDirty = true;
   writeS(s);
+  if (typeof invalidateRecoveryPlanCache === 'function') invalidateRecoveryPlanCache();
   if (_newStreak) showToast('\ud83d\udd25 ' + t(getStreakCount() + '-day streak!', '\u8fde\u7eed\u5b66\u4e60 ' + getStreakCount() + ' \u5929\uff01'));
   clearTimeout(_badgeCheckTimer);
   _badgeCheckTimer = setTimeout(function() { if (typeof checkBadges === 'function') checkBadges(); }, 3000);
@@ -1295,6 +1298,7 @@ function saveKPResult(kpId, score, total) {
 
   invalidateCache();
   writeS(s);
+  if (typeof invalidateRecoveryPlanCache === 'function') invalidateRecoveryPlanCache();
   if (_newStreak) showToast('\ud83d\udd25 ' + t(getStreakCount() + '-day streak!', '\u8fde\u7eed\u5b66\u4e60 ' + getStreakCount() + ' \u5929\uff01'));
   clearTimeout(_badgeCheckTimer);
   _badgeCheckTimer = setTimeout(function() { if (typeof checkBadges === 'function') checkBadges(); }, 3000);
@@ -1368,6 +1372,7 @@ function recordKPRefreshScan(kpId, verdict) {
     src: prev.src || ''
   };
   writeS(s);
+  if (typeof invalidateRecoveryPlanCache === 'function') invalidateRecoveryPlanCache();
   _staleKPCache = null;
   invalidateCache();
   recordDailyHistory(null);

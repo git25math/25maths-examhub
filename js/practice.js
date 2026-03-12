@@ -1320,6 +1320,7 @@ function _ppSetMastery(qid, level, opts) {
   if (fs === 'mastered') ppResolveWrongBook(qid);
   /* Invalidate stale cache + sync */
   _stalePPCacheData = null;
+  if (typeof invalidateRecoveryPlanCache === 'function') invalidateRecoveryPlanCache();
   invalidateCache();
   recordDailyHistory(null);
   debouncedSync();
@@ -1387,6 +1388,7 @@ function recordPPRefreshScan(qid, verdict) {
   };
   try { localStorage.setItem(_ppMasteryKey(), JSON.stringify(m)); } catch (e) {}
   _stalePPCacheData = null;
+  if (typeof invalidateRecoveryPlanCache === 'function') invalidateRecoveryPlanCache();
   invalidateCache();
   recordDailyHistory(null);
   debouncedSync();
