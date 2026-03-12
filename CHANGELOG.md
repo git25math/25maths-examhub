@@ -1,13 +1,35 @@
 # Changelog
 
+## [5.9.1] - 2026-03-12 — KP 内容生成管线 + LaTeX 修复
+
+### 核心变更
+- **KP 内容批量生成**: Gemini 2.5 Flash 自动填充 201 个知识点的 `solutionMethod` + `commonMistakes`
+  - CIE 97/97、EDX 49/49、HHK 55/55，100% 覆盖
+  - 每个 KP 新增 3-5 步解题方法（中英双语）+ 2-3 个常见错误及纠正
+- **LaTeX 转义修复**: 4 个 KP 的 `\times`/`\text`/`\theta` 因 JSON `\t` 转义损坏，已修复（12 处）
+- **Knowledge Node Stage 3/4**: 现在读取真实的 `solutionMethod` 和 `commonMistakes` 数据，不再显示 fallback 内容
+
+### 新增文件
+| 文件 | 说明 |
+|------|------|
+| `scripts/kp-enrich.py` | Gemini KP 内容生成管线（支持 --test / --board / --dry-run） |
+
+### 修改文件
+| 文件 | 变更 |
+|------|------|
+| `data/knowledge-cie.json` | 97 个 KP 新增 solutionMethod + commonMistakes |
+| `data/knowledge-edx.json` | 49 个 KP 新增 solutionMethod + commonMistakes |
+| `data/knowledge-hhk.json` | 55 个 KP 新增 solutionMethod + commonMistakes |
+
 ## [5.9.0] - 2026-03-12 — Knowledge Node 知识点学习面板
 
 ### 核心变更
 - **Knowledge Node 面板**: 答错后出现"📖 Learn This"按钮，打开 6 阶段底部面板（动机→概念→考法→方法→例题→定向练习）
 - **weakest-KP 定位**: 根据 FLM 状态（new→learning→uncertain→mastered）自动选择最弱知识点
-- **定向练习**: 从知识点关联的 164 道真题中精选 5 道，直接进入 PP Scan 练习模式
+- **定向练习**: 从知识点关联的真题中精选 5 道，直接进入 PP Scan 练习模式（单轮模式）
 - **自测 MCQ**: testYourself 快速自测（数据驱动，来自 knowledge-*.json）
-- **startPPScanByIds 修复**: 修复 showPanel → _cleanupActiveMode 清除 _ppScanState 导致空白的时序 bug
+- **startPPScanByIds 时序修复**: showPanel → _cleanupActiveMode 清除 _ppScanState 导致空白
+- **singleRound 参数**: 定向练习做完一轮即结束，避免死循环
 - **meta tag 更新**: `apple-mobile-web-app-capable` → `mobile-web-app-capable`（消除 deprecation 警告）
 
 ### 新增文件
@@ -18,7 +40,7 @@
 ### 修改文件
 | 文件 | 变更 |
 |------|------|
-| `js/practice.js` | 新增 `_knBuildLearnButton` + ppRate 集成 + startPPScanByIds 时序修复 |
+| `js/practice.js` | 新增 `_knBuildLearnButton` + ppRate 集成 + startPPScanByIds 时序修复 + singleRound |
 | `js/config.js` | APP_VERSION → v5.9.0 |
 | `scripts/minify.sh` | 添加 knowledge-node.js 到 bundle 链 |
 | `index.html` | meta tag 更新 + cache-bust v5.9.0 |
