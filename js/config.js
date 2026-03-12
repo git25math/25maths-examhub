@@ -128,8 +128,7 @@ function isLevelVisible(lv) {
   if (lv._edxOld) return false;
   /* Super admin sees all modules */
   if (isSuperAdmin()) return true;
-  /* 25m content requires school_id (Harrow users only), unless guest full access is on */
-  if (!userSchoolId && !(GUEST_FULL_ACCESS && isGuest()) && lv.board === '25m') return false;
+  /* 25m content: open to all users */
   if (!userBoard) return true;
   if (userBoard === 'all') return true;
   /* Custom levels are always visible */
@@ -149,7 +148,7 @@ function isLevelVisible(lv) {
 
 /* Get filtered BOARDS array based on userBoard */
 function getVisibleBoards() {
-  var base = BOARDS.filter(function(b) { return isSuperAdmin() || userSchoolId || (GUEST_FULL_ACCESS && isGuest()) || b.id !== '25m'; });
+  var base = BOARDS.slice(); /* All boards visible to all users */
   if (!userBoard) return base;
   if (userBoard === 'all') return base;
   return base.filter(function(b) {
