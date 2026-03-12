@@ -598,6 +598,14 @@ function _renderListTable() {
   var html = '<div class="list-stats">';
   html += (zh ? '\u663e\u793a ' : 'Showing ') + _listData.length + (zh ? ' / ' : ' of ') + raw.length + (zh ? ' \u9879' : ' items');
   if (selCount > 0) html += ' &middot; ' + selCount + (zh ? ' \u5df2\u9009' : ' selected');
+  /* Board distribution debug (super admin only) */
+  if (typeof isSuperAdmin === 'function' && isSuperAdmin()) {
+    var _bd = {};
+    for (var _di = 0; _di < raw.length; _di++) { var _bk = raw[_di]._board || '?'; _bd[_bk] = (_bd[_bk] || 0) + 1; }
+    var _parts = [];
+    for (var _bkey in _bd) _parts.push(_bkey + ':' + _bd[_bkey]);
+    html += ' <span style="color:var(--c-text3);font-size:11px">[' + _parts.join(' ') + ']</span>';
+  }
   html += '</div>';
 
   /* Bulk action bar */
