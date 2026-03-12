@@ -137,7 +137,7 @@ async function renderClassList() {
   if (!ct) return;
   ct.innerHTML = '<div class="admin-loading">' + t('Loading...', '加载中...') + '</div>';
 
-  var _saView = !_teacherData && typeof isSuperAdmin === 'function' && isSuperAdmin();
+  var _isSA = !_teacherData && typeof isSuperAdmin === 'function' && isSuperAdmin();
   try {
   var res = await _adminSchoolFilter(sb.from('kw_classes')
     .select('id, name, grade, school_id, created_at'))
@@ -148,7 +148,7 @@ async function renderClassList() {
 
   /* Super admin: load school names for labeling */
   var _schoolNames = {};
-  if (_saView && classes.length > 0) {
+  if (_isSA && classes.length > 0) {
     var schoolIds = {};
     classes.forEach(function(c) { if (c.school_id) schoolIds[c.school_id] = true; });
     var sids = Object.keys(schoolIds);
@@ -159,7 +159,7 @@ async function renderClassList() {
   }
 
   var html = '';
-  if (!_saView) {
+  if (_teacherData || _isSA) {
     html += '<div class="admin-toolbar">' +
       '<button class="btn btn-primary btn-sm" onclick="showCreateClassModal()">' + t('+ Create Class', '+ 创建班级') + '</button>' +
       '</div>';
@@ -188,7 +188,7 @@ async function renderClassList() {
 
       cardsHtml += '<div class="admin-class-card" onclick="renderClassDetail(\'' + escapeHtml(c.id) + '\')">';
       cardsHtml += '<div class="admin-class-name">' + escapeHtml(c.name) + '</div>';
-      if (_saView && _schoolNames[c.school_id]) {
+      if (_isSA && _schoolNames[c.school_id]) {
         cardsHtml += '<div class="admin-class-school">' + escapeHtml(_schoolNames[c.school_id]) + '</div>';
       }
       cardsHtml += '<div class="admin-class-stats">';
@@ -830,6 +830,7 @@ async function renderSchoolOverview() {
 /* ═══ USER MANAGEMENT (super admin) ═══ */
 var _umData = null, _umPage = 1, _umPerPage = 50, _umTotal = 0;
 var _umSearch = '', _umRoleFilter = '', _umSort = 'created_at', _umSortAsc = false;
+var _umSelected = {}; /* { userId: true } */
 
 async function renderUserManagement() {
   var ct = E('admin-content');
@@ -887,6 +888,15 @@ function _umRenderTable() {
   html += '<button class="btn btn-ghost btn-sm" data-um-action="refresh">' + t('Refresh', '刷新') + '</button>';
   html += '</div>';
 
+  /* Batch action bar (visible when selection exists) */
+  var selCount = Object.keys(_umSelected).length;
+  html += '<div class="um-batch-bar' + (selCount > 0 ? ' visible' : '') + '" id="um-batch-bar">';
+  html += '<span>' + t('Selected', '已选') + ': <strong>' + selCount + '</strong></span>';
+  html += '<button class="btn btn-primary btn-sm" data-um-action="batch-assign">' + t('Batch Assign Class', '批量分配班级') + '</button>';
+  html += '<button class="btn btn-ghost btn-sm" data-um-action="batch-role">' + t('Batch Change Role', '批量修改角色') + '</button>';
+  html += '<button class="btn btn-ghost btn-sm" data-um-action="batch-clear">' + t('Clear Selection', '清除选择') + '</button>';
+  html += '</div>';
+
   /* Filter locally by role (if pills used after initial load) */
   var filtered = users;
   if (_umRoleFilter) filtered = filtered.filter(function(u) { return u.role === _umRoleFilter; });
@@ -929,7 +939,10 @@ function _umRenderTable() {
       { key: 'created_at', en: 'Registered', zh: '注册时间' },
       { key: 'last_sign_in_at', en: 'Last Login', zh: '最后登录' }
     ];
-    html += '<div class="admin-table-wrap"><table class="admin-student-table"><thead><tr><th>#</th>';
+    var allPageSelected = pageUsers.length > 0 && pageUsers.every(function(u) { return _umSelected[u.id]; });
+    html += '<div class="admin-table-wrap"><table class="admin-student-table"><thead><tr>';
+    html += '<th><input type="checkbox" data-um-action="select-all"' + (allPageSelected ? ' checked' : '') + '></th>';
+    html += '<th>#</th>';
     cols.forEach(function(c) {
       var arrow = _umSort === c.key ? (_umSortAsc ? ' ▲' : ' ▼') : '';
       html += '<th style="cursor:pointer" data-um-sort="' + c.key + '">' + t(c.en, c.zh) + arrow + '</th>';
@@ -944,7 +957,8 @@ function _umRenderTable() {
       var roleBadge = '<span class="um-badge-role um-role-' + (u.role || 'guest') + '">' + (u.role || 'guest') + '</span>';
       var statusHtml = u.banned_at ? '<span class="um-badge-banned">' + t('Banned', '封禁') + '</span>' : '<span class="um-badge-role um-role-active">' + t('Active', '正常') + '</span>';
 
-      html += '<tr>';
+      html += '<tr' + (_umSelected[u.id] ? ' class="um-row-selected"' : '') + '>';
+      html += '<td><input type="checkbox" data-um-action="select-one" data-uid="' + u.id + '"' + (_umSelected[u.id] ? ' checked' : '') + '></td>';
       html += '<td>' + (start + i + 1) + '</td>';
       html += '<td class="admin-td-name" style="font-size:12px">' + escapeHtml(u.email || '-') + '</td>';
       html += '<td>' + escapeHtml(u.nickname || '-') + '</td>';
@@ -1177,6 +1191,144 @@ async function doUserDelete(userId, email) {
   } catch (e) { msg.textContent = e.message; msg.className = 'settings-msg error'; }
 }
 
+/* ── Batch Operations ── */
+
+function _umGetSelectedIds() {
+  return Object.keys(_umSelected).filter(function(k) { return _umSelected[k]; });
+}
+
+function _umToggleSelect(uid, checked) {
+  if (checked) _umSelected[uid] = true;
+  else delete _umSelected[uid];
+  _umRenderTable();
+}
+
+function _umSelectAllPage(checked) {
+  /* Get current page users after filter/sort */
+  var filtered = _umGetFiltered();
+  var start = (_umPage - 1) * _umPerPage;
+  var pageUsers = filtered.slice(start, start + _umPerPage);
+  pageUsers.forEach(function(u) {
+    if (checked) _umSelected[u.id] = true;
+    else delete _umSelected[u.id];
+  });
+  _umRenderTable();
+}
+
+function _umGetFiltered() {
+  var users = _umData || [];
+  if (_umRoleFilter) users = users.filter(function(u) { return u.role === _umRoleFilter; });
+  if (_umSearch) {
+    var q = _umSearch.toLowerCase();
+    users = users.filter(function(u) {
+      return (u.email || '').toLowerCase().indexOf(q) >= 0 || (u.nickname || '').toLowerCase().indexOf(q) >= 0;
+    });
+  }
+  return users;
+}
+
+async function showBatchAssignClassModal() {
+  var ids = _umGetSelectedIds();
+  if (ids.length === 0) { showToast(t('No users selected', '未选择用户')); return; }
+
+  var res = await sb.from('kw_classes').select('id, name, grade, school_id, schools(name)').order('created_at', { ascending: true });
+  var classes = res.data || [];
+  if (classes.length === 0) { showToast(t('No classes available', '没有可用班级')); return; }
+
+  var opts = '';
+  classes.forEach(function(c) {
+    var schoolName = c.schools ? c.schools.name : '';
+    var gradeOpt = BOARD_OPTIONS.find(function(o) { return o.value === c.grade; });
+    var gradeLabel = gradeOpt ? t(gradeOpt.name, gradeOpt.nameZh) : c.grade;
+    opts += '<option value="' + c.id + '">' + escapeHtml(c.name) + ' — ' + gradeLabel + (schoolName ? ' (' + escapeHtml(schoolName) + ')' : '') + '</option>';
+  });
+
+  var html = '<div class="section-title">' + t('Batch Assign Class', '批量分配班级') + '</div>' +
+    '<p class="text-sm text-sub mb-12">' + t('Assign ', '将 ') + '<strong>' + ids.length + '</strong>' + t(' users to:', ' 个用户分配到：') + '</p>' +
+    '<select class="auth-input" id="ba-class">' + opts + '</select>' +
+    '<div id="ba-msg" class="settings-msg"></div>' +
+    '<div id="ba-progress" style="display:none"><div class="admin-progress" style="margin:8px 0"><div class="admin-progress-fill" id="ba-bar" style="width:0%"></div></div><span id="ba-pct" class="text-sm text-sub"></span></div>' +
+    '<div class="btn-row">' +
+    '<button class="btn btn-primary" data-um-action="do-batch-assign">' + t('Assign All', '全部分配') + '</button>' +
+    '<button class="btn btn-ghost" onclick="hideModal()">' + t('Cancel', '取消') + '</button>' +
+    '</div>';
+  showModal(html);
+}
+
+async function doBatchAssignClass() {
+  var classId = E('ba-class').value;
+  var msg = E('ba-msg');
+  var ids = _umGetSelectedIds();
+  var progress = E('ba-progress');
+  var bar = E('ba-bar');
+  var pct = E('ba-pct');
+  progress.style.display = '';
+
+  var ok = 0, fail = 0;
+  for (var i = 0; i < ids.length; i++) {
+    pct.textContent = (i + 1) + ' / ' + ids.length;
+    bar.style.width = Math.round((i + 1) / ids.length * 100) + '%';
+    try {
+      var res = await callEdgeFunction('admin-update-user', { action: 'assign_class', user_id: ids[i], class_id: classId });
+      if (res.error) { fail++; } else { ok++; }
+    } catch (e) { fail++; }
+  }
+
+  hideModal();
+  _umSelected = {};
+  showToast(t('Done: ', '完成：') + ok + t(' assigned', ' 已分配') + (fail > 0 ? ', ' + fail + t(' failed', ' 失败') : ''));
+  _umData = null; renderUserManagement();
+}
+
+async function showBatchChangeRoleModal() {
+  var ids = _umGetSelectedIds();
+  if (ids.length === 0) { showToast(t('No users selected', '未选择用户')); return; }
+
+  var roles = ['student', 'teacher', 'guest'];
+  var opts = '';
+  roles.forEach(function(r) {
+    opts += '<label class="settings-label" style="display:flex;align-items:center;gap:8px;cursor:pointer">' +
+      '<input type="radio" name="ba-role" value="' + r + '"' + (r === 'student' ? ' checked' : '') + '> ' + r + '</label>';
+  });
+
+  var html = '<div class="section-title">' + t('Batch Change Role', '批量修改角色') + '</div>' +
+    '<p class="text-sm text-sub mb-12">' + t('Change role for ', '修改 ') + '<strong>' + ids.length + '</strong>' + t(' users:', ' 个用户的角色：') + '</p>' +
+    opts +
+    '<div id="br-msg" class="settings-msg"></div>' +
+    '<div id="br-progress" style="display:none"><div class="admin-progress" style="margin:8px 0"><div class="admin-progress-fill" id="br-bar" style="width:0%"></div></div><span id="br-pct" class="text-sm text-sub"></span></div>' +
+    '<div class="btn-row">' +
+    '<button class="btn btn-primary" data-um-action="do-batch-role">' + t('Apply', '应用') + '</button>' +
+    '<button class="btn btn-ghost" onclick="hideModal()">' + t('Cancel', '取消') + '</button>' +
+    '</div>';
+  showModal(html);
+}
+
+async function doBatchChangeRole() {
+  var checked = document.querySelector('input[name="ba-role"]:checked');
+  if (!checked) return;
+  var role = checked.value;
+  var ids = _umGetSelectedIds();
+  var progress = E('br-progress');
+  var bar = E('br-bar');
+  var pct = E('br-pct');
+  progress.style.display = '';
+
+  var ok = 0, fail = 0;
+  for (var i = 0; i < ids.length; i++) {
+    pct.textContent = (i + 1) + ' / ' + ids.length;
+    bar.style.width = Math.round((i + 1) / ids.length * 100) + '%';
+    try {
+      var res = await callEdgeFunction('admin-update-user', { action: 'change_role', user_id: ids[i], role: role });
+      if (res.error) { fail++; } else { ok++; }
+    } catch (e) { fail++; }
+  }
+
+  hideModal();
+  _umSelected = {};
+  showToast(t('Done: ', '完成：') + ok + t(' updated', ' 已更新') + (fail > 0 ? ', ' + fail + t(' failed', ' 失败') : ''));
+  _umData = null; renderUserManagement();
+}
+
 /* ═══ ALL USERS (super admin) ═══ */
 var _auData = null;       /* cached leaderboard rows */
 var _auSort = 'updated_at'; /* sort column */
@@ -1388,6 +1540,15 @@ document.addEventListener('click', function(e) {
   else if (a === 'do-role') { doUserChangeRole(act.dataset.uid); }
   else if (a === 'do-ban') { doUserBan(act.dataset.uid, act.dataset.banAction); }
   else if (a === 'do-delete') { doUserDelete(act.dataset.uid, act.dataset.email || ''); }
+  /* Batch actions */
+  else if (a === 'batch-assign') { showBatchAssignClassModal(); }
+  else if (a === 'batch-role') { showBatchChangeRoleModal(); }
+  else if (a === 'batch-clear') { _umSelected = {}; _umRenderTable(); }
+  else if (a === 'do-batch-assign') { doBatchAssignClass(); }
+  else if (a === 'do-batch-role') { doBatchChangeRole(); }
+  /* Checkbox selection */
+  else if (a === 'select-all') { _umSelectAllPage(act.checked); }
+  else if (a === 'select-one') { _umToggleSelect(act.dataset.uid, act.checked); }
 });
 
 function summaryCard(label, value, color) {
