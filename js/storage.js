@@ -804,6 +804,11 @@ async function _doSyncToCloud() {
     var clRaw = localStorage.getItem(_CUSTOM_LISTS_KEY);
     if (clRaw) payload._customLists = JSON.parse(clRaw);
   } catch(e) {}
+  /* Bridge badges for cross-device sync */
+  try {
+    var bgRaw = localStorage.getItem('wmatch_badges');
+    if (bgRaw) payload._badges = JSON.parse(bgRaw);
+  } catch(e) {}
   var vpRes = await sb.from('vocab_progress').upsert(
     { user_id: currentUser.id, data: JSON.stringify(payload), updated_at: now },
     { onConflict: 'user_id' }
@@ -873,7 +878,7 @@ async function syncFromCloud() {
   if (!sb || !isLoggedIn()) return;
   /* Clear unsynced residual data from previous user (crash-safe) */
   var _unsyncedKeys = ['pp_wrong_book', 'pp_exam_history', 'pp_paper_results',
-    'diag_history', 'wmatch_badges', 'wmatch_weekly',
+    'diag_history', 'wmatch_weekly',
     'recovery_schedule', 'student_profile', 'reforget_log'];
   _unsyncedKeys.forEach(function(k) {
     try { localStorage.removeItem(k); } catch(e) {}
@@ -929,6 +934,16 @@ async function syncFromCloud() {
           try { localStorage.setItem(_REFORGET_KEY, JSON.stringify(cloud._reforgetLog)); } catch(e) {}
         }
         delete cloud._reforgetLog;
+        /* Restore badges from cloud bridge (merge: union of cloud + local) */
+        if (cloud && typeof cloud === 'object' && cloud._badges && Array.isArray(cloud._badges)) {
+          try {
+            var localBadges = JSON.parse(localStorage.getItem('wmatch_badges') || '[]');
+            var merged = localBadges.slice();
+            cloud._badges.forEach(function(b) { if (merged.indexOf(b) < 0) merged.push(b); });
+            localStorage.setItem('wmatch_badges', JSON.stringify(merged));
+          } catch(e) {}
+        }
+        delete cloud._badges;
         writeS(cloud);
         invalidateCache();
         try { localStorage.setItem('wmatch_last_sync', cloudTime); } catch (e) {}
