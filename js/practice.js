@@ -4157,13 +4157,13 @@ function _ppEdBlockRow(block, idPrefix, idx) {
       h += '<img class="pp-ed-fig-preview" src="' + escapeHtml(_figSrc) + '" alt="preview" onerror="this.style.display=\'none\'">';
     }
   } else if (block.type === 'list') {
-    h += '<textarea class="bug-textarea font-mono-sm pp-ed-block-val" rows="2" placeholder="One item per line">' + escapeHtml((block.items || []).join('\n')) + '</textarea>';
+    h += '<textarea class="bug-textarea font-mono-sm pp-ed-block-val" rows="6" placeholder="One item per line">' + escapeHtml((block.items || []).join('\n')) + '</textarea>';
   } else if (block.type === 'newline') {
     h += '<input type="number" class="bug-select pp-ed-block-val" value="' + (block.lines || 1) + '" min="1" max="10" style="width:80px" placeholder="lines"> <span style="color:var(--c-text-muted);font-size:0.85em">blank lines</span>';
   } else if (block.type === 'space') {
     h += '<input type="number" class="bug-select pp-ed-block-val" value="' + (block.height || 2) + '" min="0.5" max="20" step="0.5" style="width:80px" placeholder="cm"> <span style="color:var(--c-text-muted);font-size:0.85em">cm answer space</span>';
   } else {
-    h += '<textarea class="bug-textarea font-mono-sm pp-ed-block-val" rows="2" placeholder="' + (block.type === 'table' ? '\\\\begin{tabular}...' : 'Text content (LaTeX)') + '">' + escapeHtml(block.content || '') + '</textarea>';
+    h += '<textarea class="bug-textarea font-mono-sm pp-ed-block-val" rows="6" placeholder="' + (block.type === 'table' ? '\\\\begin{tabular}...' : 'Text content (LaTeX)') + '">' + escapeHtml(block.content || '') + '</textarea>';
   }
   h += '</div>';
   h += '<div class="pp-ed-block-actions">';
@@ -4181,13 +4181,13 @@ function _ppEdBlockTypeChanged(sel) {
   if (type === 'figure') {
     contentDiv.innerHTML = '<input type="text" class="bug-select pp-ed-block-val" value="" placeholder="https://...png or figures/xxx.svg" oninput="_ppEdFigPreview(this)">';
   } else if (type === 'list') {
-    contentDiv.innerHTML = '<textarea class="bug-textarea font-mono-sm pp-ed-block-val" rows="2" placeholder="One item per line"></textarea>';
+    contentDiv.innerHTML = '<textarea class="bug-textarea font-mono-sm pp-ed-block-val" rows="6" placeholder="One item per line"></textarea>';
   } else if (type === 'newline') {
     contentDiv.innerHTML = '<input type="number" class="bug-select pp-ed-block-val" value="1" min="1" max="10" style="width:80px" placeholder="lines"> <span style="color:var(--c-text-muted);font-size:0.85em">blank lines</span>';
   } else if (type === 'space') {
     contentDiv.innerHTML = '<input type="number" class="bug-select pp-ed-block-val" value="2" min="0.5" max="20" step="0.5" style="width:80px" placeholder="cm"> <span style="color:var(--c-text-muted);font-size:0.85em">cm answer space</span>';
   } else {
-    contentDiv.innerHTML = '<textarea class="bug-textarea font-mono-sm pp-ed-block-val" rows="2" placeholder="' + (type === 'table' ? '\\begin{tabular}...' : 'Text content (LaTeX)') + '"></textarea>';
+    contentDiv.innerHTML = '<textarea class="bug-textarea font-mono-sm pp-ed-block-val" rows="6" placeholder="' + (type === 'table' ? '\\begin{tabular}...' : 'Text content (LaTeX)') + '"></textarea>';
   }
 }
 
