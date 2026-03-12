@@ -76,7 +76,34 @@
       "vocabLinks": [
         "edx-num-integers"
       ],
-      "tier": "both"
+      "tier": "both",
+      "solutionMethod": {
+        "en": "Step 1: Perform prime factorization for each number.\nTo do this, break down each number into a product of its prime factors (numbers only divisible by 1 and themselves, like 2, 3, 5, 7, ...). You can use a factor tree or division method. Write each number in index form (e.g., $12 = 2^2 \\times 3$).\nStep 2: Find the Highest Common Factor (HCF).\nIdentify all prime factors that are common to *all* the numbers. For each common prime factor, choose the one with the *lowest* power from the prime factorizations. Multiply these chosen prime factors together to get the HCF.\nStep 3: Find the Lowest Common Multiple (LCM).\nIdentify all unique prime factors (both common and non-common) present in *any* of the numbers. For each unique prime factor, choose the one with the *highest* power from the prime factorizations. Multiply these chosen prime factors together to get the LCM.",
+        "zh": "第一步：对每个数进行质因数分解。\n将每个数分解成其质因数（只能被1和它本身整除的数，例如2、3、5、7等）的乘积。可以使用因数树或短除法。将每个数写成指数形式（例如，$12 = 2^2 \\times 3$）。\n第二步：找到最大公约数 (HCF)。\n找出所有数字共有的质因数。对于每个共有的质因数，选择其在质因数分解中出现过的*最低*次方。将这些选出的质因数相乘，即可得到HCF。\n第三步：找到最小公倍数 (LCM)。\n找出所有数字中出现过的所有独特质因数（包括共有和非共有的）。对于每个独特的质因数，选择其在质因数分解中出现过的*最高*次方。将这些选出的质因数相乘，即可得到LCM。"
+      },
+      "commonMistakes": [
+        {
+          "id": "cm-01",
+          "mistake": "Not fully factorising numbers into prime factors, stopping at composite numbers.",
+          "mistake_zh": "没有将数字完全分解成质因数，在合数处停止。",
+          "correction": "Always ensure every factor in your final product is a prime number; continue factoring until all branches of your factor tree end in primes.",
+          "correction_zh": "始终确保最终乘积中的每个因数都是质数；持续分解直到因数树的所有分支都以质数结尾。"
+        },
+        {
+          "id": "cm-02",
+          "mistake": "Confusing the rules for HCF and LCM, such as using the highest power for HCF or only common factors for LCM.",
+          "mistake_zh": "混淆HCF和LCM的规则，例如将最高次方用于HCF或仅使用共有因数来计算LCM。",
+          "correction": "Remember, HCF uses *common* prime factors with the *lowest* powers, while LCM uses *all* unique prime factors (common and non-common) with the *highest* powers.",
+          "correction_zh": "请记住，HCF使用*共有*质因数且取*最低*次方，而LCM使用*所有*独特的质因数（共有和非共有）且取*最高*次方。"
+        },
+        {
+          "id": "cm-03",
+          "mistake": "Including 1 as a prime factor or a factor to consider in HCF/LCM calculations.",
+          "mistake_zh": "将1作为质因数或在HCF/LCM计算中考虑的因数。",
+          "correction": "The number 1 is neither prime nor composite; prime factorization and HCF/LCM calculations only involve actual prime numbers (2, 3, 5, etc.).",
+          "correction_zh": "数字1既不是质数也不是合数；质因数分解和HCF/LCM计算只涉及实际的质数（2、3、5等）。"
+        }
+      ]
     },
     {
       "id": "kp-E1.2-01",
@@ -146,7 +173,34 @@
       "vocabLinks": [
         "edx-num-fractions"
       ],
-      "tier": "both"
+      "tier": "both",
+      "solutionMethod": {
+        "en": "Step 1: If there are mixed numbers in the problem, convert them into improper fractions first. For example, $3 \\frac{1}{2} = \\frac{7}{2}$.\nStep 2: Identify the type of operation:\n    - For addition or subtraction: Find a common denominator for all fractions, then add or subtract the numerators while keeping the common denominator.\n    - For multiplication: Multiply the numerators together and multiply the denominators together.\n    - For division: Keep the first fraction as it is, change the division sign to a multiplication sign, and flip (find the reciprocal of) the second fraction.\nStep 3: Perform the calculation as determined by the operation in Step 2.\nStep 4: Simplify the resulting fraction by dividing both the numerator and denominator by their greatest common factor. If the question requires, convert any improper fraction back into a mixed number.",
+        "zh": "第一步：如果题目中有带分数，请先将它们转换为假分数。例如，$3 \\frac{1}{2} = \\frac{7}{2}$。\n第二步：确定运算类型：\n    - 对于加法或减法：为所有分数找到公分母，然后加减分子并保持公分母不变。\n    - 对于乘法：将分子相乘，分母相乘。\n    - 对于除法：保持第一个分数不变，将除法符号改为乘法符号，然后翻转（求倒数）第二个分数。\n第三步：根据第二步确定的运算类型进行计算。\n第四步：通过将分子和分母除以它们的最大公因数来简化结果分数。如果题目要求，将任何假分数转换回带分数。"
+      },
+      "commonMistakes": [
+        {
+          "id": "cm-01",
+          "mistake": "For addition or subtraction, students often add or subtract numerators and denominators directly without finding a common denominator, e.g., $\\frac{1}{2} + \\frac{1}{3} = \\frac{2}{5}$.",
+          "mistake_zh": "在进行加减法时，学生经常不找公分母直接对分子和分母进行加减，例如 $\\frac{1}{2} + \\frac{1}{3} = \\frac{2}{5}$。",
+          "correction": "Always find a common denominator (the Lowest Common Multiple of the denominators) before adding or subtracting fractions.",
+          "correction_zh": "在进行分数加减法之前，务必先找到公分母（分母的最小公倍数）。"
+        },
+        {
+          "id": "cm-02",
+          "mistake": "When dividing fractions, students sometimes incorrectly invert the first fraction or invert both fractions instead of only the second one.",
+          "mistake_zh": "在分数除法中，学生有时会错误地颠倒第一个分数或同时颠倒两个分数，而不是只颠倒第二个分数。",
+          "correction": "Remember the 'Keep-Change-Flip' rule: keep the first fraction, change division to multiplication, and flip (find the reciprocal of) *only* the second fraction.",
+          "correction_zh": "记住'保持-改变-翻转'法则：保持第一个分数不变，将除法改为乘法，然后只翻转（求倒数）*第二个*分数。"
+        },
+        {
+          "id": "cm-03",
+          "mistake": "Students often attempt to multiply or divide mixed numbers directly without first converting them into improper fractions.",
+          "mistake_zh": "学生在进行带分数乘除法时，经常不先将其转换为假分数就直接计算。",
+          "correction": "Always convert any mixed numbers to improper fractions *before* performing multiplication or division to ensure correct calculations.",
+          "correction_zh": "在进行乘法或除法运算之前，务必将所有带分数转换为假分数，以确保计算正确。"
+        }
+      ]
     },
     {
       "id": "kp-E1.3-01",
@@ -216,7 +270,34 @@
       "vocabLinks": [
         "edx-num-decimals"
       ],
-      "tier": "both"
+      "tier": "both",
+      "solutionMethod": {
+        "en": "Step 1: Let the recurring decimal be equal to a variable, usually $x$. For example, if the decimal is $0.\\dot{4}\\dot{5}$, write $x = 0.454545...$.\nStep 2: Identify the number of digits that repeat. If there are 'n' repeating digits, multiply both sides of the equation from Step 1 by $10^n$. For $0.\\dot{4}\\dot{5}$ (2 repeating digits), multiply by $10^2 = 100$ to get $100x = 45.454545...$.\nStep 3: Subtract the original equation ($x = ...$) from the new equation ($10^n x = ...$). This will eliminate the recurring decimal part. For example, $100x - x = 45.454545... - 0.454545...$, which simplifies to $99x = 45$.\nStep 4: Solve the resulting equation for $x$ by dividing both sides by the coefficient of $x$. This will give you the decimal as a fraction, e.g., $x = \\frac{45}{99}$.\nStep 5: Simplify the fraction to its lowest terms by finding the greatest common divisor of the numerator and denominator and dividing both by it. For example, $\\frac{45}{99}$ simplifies to $\\frac{5}{11}$ by dividing both by 9.",
+        "zh": "第一步：将循环小数设为一个变量，通常是 $x$。例如，如果小数是 $0.\\dot{4}\\dot{5}$，则写成 $x = 0.454545...$。\n第二步：确定循环数字的位数。如果有 'n' 位循环数字，则将第一步中的等式两边乘以 $10^n$。对于 $0.\\dot{4}\\dot{5}$（两位循环），乘以 $10^2 = 100$，得到 $100x = 45.454545...$。\n第三步：用新的等式 ($10^n x = ...$) 减去原始等式 ($x = ...$)。这将消除循环小数部分。例如，$100x - x = 45.454545... - 0.454545...$，简化后得到 $99x = 45$。\n第四步：通过将等式两边除以 $x$ 的系数来解出 $x$。这将把小数表示为分数，例如 $x = \\frac{45}{99}$。\n第五步：找到分子和分母的最大公约数，并用它来同时除分子和分母，将分数化为最简形式。例如，$\\frac{45}{99}$ 通过同时除以 9 简化为 $\\frac{5}{11}$。"
+      },
+      "commonMistakes": [
+        {
+          "id": "cm-01",
+          "mistake": "Using the incorrect power of 10 to multiply the decimal, resulting in non-aligned recurring parts after subtraction.",
+          "mistake_zh": "使用错误的10的幂来乘以小数，导致相减后循环部分无法对齐。",
+          "correction": "Carefully count the number of repeating digits ('n') and multiply by $10^n$ to ensure the recurring parts align perfectly for subtraction.",
+          "correction_zh": "仔细数循环数字的位数（'n'），然后乘以 $10^n$，以确保在相减时循环部分完全对齐。"
+        },
+        {
+          "id": "cm-02",
+          "mistake": "Incorrectly subtracting the two equations, or forgetting to subtract the initial equation entirely, which fails to eliminate the recurring decimal.",
+          "mistake_zh": "错误地减去两个等式，或完全忘记减去初始等式，导致未能消除循环小数。",
+          "correction": "Always subtract the original equation ($x = ...$) from the multiplied equation ($10^n x = ...$) on both sides to correctly cancel out the recurring decimal part.",
+          "correction_zh": "始终将原始等式 ($x = ...$) 从乘以10的幂的等式 ($10^n x = ...$) 两边减去，以正确抵消循环小数部分。"
+        },
+        {
+          "id": "cm-03",
+          "mistake": "Leaving the final fraction in an unsimplified form instead of its lowest terms (e.g., $\\frac{45}{99}$ instead of $\\frac{5}{11}$).",
+          "mistake_zh": "将最终分数保留为未简化的形式，而不是最简形式（例如，$\\frac{45}{99}$ 而不是 $\\frac{5}{11}$）。",
+          "correction": "After finding the fraction, always simplify it to its lowest terms by dividing both the numerator and denominator by their greatest common divisor.",
+          "correction_zh": "在得到分数后，务必通过将分子和分母同时除以它们的最大公约数来将其化为最简形式。"
+        }
+      ]
     },
     {
       "id": "kp-E1.4-01",
@@ -293,7 +374,34 @@
       "vocabLinks": [
         "edx-num-powers"
       ],
-      "tier": "both"
+      "tier": "both",
+      "solutionMethod": {
+        "en": "Step 1: Identify the type of operation (multiplication, division, power of a power, negative/fractional indices) and the bases involved in the expression.\nStep 2: Apply the relevant index law: add powers for multiplication ($a^m \\times a^n = a^{m+n}$), subtract powers for division ($a^m \\div a^n = a^{m-n}$), or multiply powers for 'power of a power' ($(a^m)^n = a^{mn}$).\nStep 3: If negative or fractional indices remain, rewrite them using $a^{-n} = \\frac{1}{a^n}$ or $a^{\\frac{m}{n}} = (\\sqrt[n]{a})^m$ and evaluate any numerical parts to get the simplest form.",
+        "zh": "第一步：确定表达式中涉及的运算类型（乘法、除法、幂的幂、负指数/分数指数）以及底数。\n第二步：应用相关的指数法则：乘法时指数相加 ($a^m \\times a^n = a^{m+n}$)，除法时指数相减 ($a^m \\div a^n = a^{m-n}$)，“幂的幂”时指数相乘 ($(a^m)^n = a^{mn}$)。\n第三步：如果还存在负指数或分数指数，使用 $a^{-n} = \\frac{1}{a^n}$ 或 $a^{\\frac{m}{n}} = (\\sqrt[n]{a})^m$ 重新书写，并计算所有数值部分，得到最简形式。"
+      },
+      "commonMistakes": [
+        {
+          "id": "cm-01",
+          "mistake": "Students might multiply the bases when applying the multiplication rule, for example, $2^3 \\times 2^4 = 4^7$ instead of $2^7$.",
+          "mistake_zh": "学生在应用乘法法则时可能会将底数相乘，例如将 $2^3 \\times 2^4$ 错误地计算为 $4^7$ 而不是 $2^7$。",
+          "correction": "Remember that the base must be the same, and only the powers are added; the base itself remains unchanged, so $a^m \\times a^n = a^{m+n}$.",
+          "correction_zh": "请记住，底数必须相同，并且只有指数相加；底数本身保持不变，即 $a^m \\times a^n = a^{m+n}$。"
+        },
+        {
+          "id": "cm-02",
+          "mistake": "When an expression like $(2a^3)^4$ is raised to a power, students sometimes only apply the power to the variable and not to the coefficient, getting $2a^{12}$ instead of $16a^{12}$.",
+          "mistake_zh": "当表达式如 $(2a^3)^4$ 带有括号并被提高到某个幂时，学生有时只会将幂应用于变量而不是系数，从而得到 $2a^{12}$ 而不是 $16a^{12}$。",
+          "correction": "Ensure that the outer power is applied to every factor inside the bracket, so $(ab)^n = a^n b^n$.",
+          "correction_zh": "确保将外部的幂应用于括号内的每个因子，即 $(ab)^n = a^n b^n$。"
+        },
+        {
+          "id": "cm-03",
+          "mistake": "Students often misunderstand negative indices, thinking $a^{-n}$ means $-a^n$ or $-an$, instead of $\\frac{1}{a^n}$. For example, $2^{-3} \\neq -8$.",
+          "mistake_zh": "学生经常误解负指数，认为 $a^{-n}$ 表示 $-a^n$ 或 $-an$，而不是 $\\frac{1}{a^n}$。例如，$2^{-3} \\neq -8$。",
+          "correction": "A negative index indicates the reciprocal of the base raised to the positive power, so $a^{-n} = \\frac{1}{a^n}$.",
+          "correction_zh": "负指数表示底数的倒数，再将底数提高到正指数，即 $a^{-n} = \\frac{1}{a^n}$。"
+        }
+      ]
     },
     {
       "id": "kp-E1.5-01",
@@ -363,7 +471,34 @@
       "vocabLinks": [
         "edx-num-sets"
       ],
-      "tier": "both"
+      "tier": "both",
+      "solutionMethod": {
+        "en": "Step 1: Identify the Universal Set ($\\xi$) and all individual sets (e.g., A, B) given in the problem. List out all the elements that belong to each set clearly.\nStep 2: Look at the set notation (e.g., $A \\cap B$, $A \\cup B$, $A'$) and perform the operation step-by-step. If there are brackets, always start with the operation inside the brackets first.\nStep 3: Once all operations are completed, list the final unique elements that are part of the resulting set or shade the correct region in a Venn diagram, depending on what the question asks for.",
+        "zh": "第一步：识别问题中给出的全集 ($\\xi$) 以及所有单独的集合（例如，A、B）。清晰地列出每个集合包含的所有元素。\n第二步：查看集合符号（例如，$A \\cap B$, $A \\cup B$, $A'$），并逐步执行运算。如果存在括号，请始终先从括号内的运算开始。\n第三步：完成所有运算后，根据问题的要求，列出结果集合中最终的唯一元素，或在韦恩图中涂色表示正确的区域。"
+      },
+      "commonMistakes": [
+        {
+          "id": "cm-01",
+          "mistake": "Confusing the symbols for intersection ($A \\cap B$) and union ($A \\cup B$).",
+          "mistake_zh": "混淆了交集符号 ($A \\cap B$) 和并集符号 ($A \\cup B$)。",
+          "correction": "Remember that $A \\cap B$ includes elements common to *both* A and B, while $A \\cup B$ includes elements in A *or* B *or both*.",
+          "correction_zh": "记住 $A \\cap B$ 包含同时属于 A 和 B 的元素，而 $A \\cup B$ 包含属于 A 或 B 或同时属于两者的元素。"
+        },
+        {
+          "id": "cm-02",
+          "mistake": "Incorrectly identifying the elements of a complement ($A'$) by not exclusively referring to the Universal Set ($\\xi$).",
+          "mistake_zh": "在确定补集 ($A'$) 的元素时，没有只参考全集 ($\\xi$)，导致识别错误。",
+          "correction": "The complement $A'$ consists of all elements *in the Universal Set* ($\\xi$) that are *not* in set A.",
+          "correction_zh": "补集 $A'$ 包含所有在 *全集* ($\\xi$) 中但 *不* 属于集合 A 的元素。"
+        },
+        {
+          "id": "cm-03",
+          "mistake": "Including duplicate elements when listing the members of a union, or incorrectly placing common elements in a Venn diagram.",
+          "mistake_zh": "在列出并集的元素时包含重复项，或在韦恩图中错误放置共有元素。",
+          "correction": "Ensure each unique element is listed only once in a set; for Venn diagrams, elements common to multiple sets must be placed precisely in their overlapping region.",
+          "correction_zh": "确保集合中的每个唯一元素只列出一次；对于韦恩图，属于多个集合的元素必须准确地放置在它们的重叠区域。"
+        }
+      ]
     },
     {
       "id": "kp-E1.6-01",
@@ -440,7 +575,34 @@
       "vocabLinks": [
         "edx-num-pct"
       ],
-      "tier": "both"
+      "tier": "both",
+      "solutionMethod": {
+        "en": "Step 1: Understand the problem. Determine if you need to find a new value after a percentage change (e.g., compound interest) or the original value before a percentage change (e.g., reverse percentage).\nStep 2: Calculate the percentage multiplier. If there's an $r\\%$ increase, the multiplier is $(1 + \\frac{r}{100})$. If there's an $r\\%$ decrease, the multiplier is $(1 - \\frac{r}{100})$. For compound interest, this is the annual multiplier.\nStep 3: Apply the multiplier to solve. If finding a new value after $n$ periods (e.g., compound interest for $n$ years), multiply the initial value by $(\\text{multiplier})^n$. If finding the original value before a change (reverse percentage), divide the final value by the multiplier.\nStep 4: Perform the calculation and state your final answer with correct units.",
+        "zh": "第一步：理解问题。确定你是需要计算百分比变化后的新值（例如复利），还是需要计算百分比变化前的原始值（例如逆百分比）。\n第二步：计算百分比乘数。如果增加 $r\\%$，乘数是 $(1 + \\frac{r}{100})$。如果减少 $r\\%$，乘数是 $(1 - \\frac{r}{100})$。对于复利，这是每年的乘数。\n第三步：应用乘数进行计算。如果计算 $n$ 个周期后的新值（例如 $n$ 年的复利），将初始值乘以 $(\\text{乘数})^n$。如果计算变化前的原始值（逆百分比），将最终值除以乘数。\n第四步：完成计算并用正确的单位给出最终答案。"
+      },
+      "commonMistakes": [
+        {
+          "id": "cm-01",
+          "mistake": "For reverse percentage problems, students often multiply by the multiplier instead of dividing, or try to apply the percentage directly to the final value.",
+          "mistake_zh": "在逆百分比问题中，学生经常用最终值乘以百分比乘数，而不是除以它，或者直接将百分比应用于最终值。",
+          "correction": "Remember that the final value is the result of the percentage change from the original value, so you need to \"undo\" the change by dividing by the multiplier.",
+          "correction_zh": "请记住，最终值是原始值经过百分比变化后的结果，因此你需要通过除以乘数来“撤销”这个变化。"
+        },
+        {
+          "id": "cm-02",
+          "mistake": "Incorrectly calculating the multiplier for percentage increase or decrease, for example, using $r/100$ or $1 \\pm r$ instead of $1 \\pm r/100$.",
+          "mistake_zh": "错误地计算百分比增减的乘数，例如，使用 $r/100$ 或 $1 \\pm r$ 而不是 $1 \\pm r/100$。",
+          "correction": "Always express the percentage change as a decimal, then add it to 1 for an increase or subtract it from 1 for a decrease to get the correct multiplier.",
+          "correction_zh": "始终将百分比变化表示为小数，然后对于增加，将其加到 1 上；对于减少，将其从 1 中减去，以获得正确的乘数。"
+        },
+        {
+          "id": "cm-03",
+          "mistake": "For compound interest over multiple years, students sometimes multiply by the interest rate $n$ times instead of raising the multiplier to the power of $n$.",
+          "mistake_zh": "在计算多年复利时，学生有时会用利率乘以 $n$ 次，而不是将乘数提高到 $n$ 次方。",
+          "correction": "Compound interest means the interest is added to the principal each period, so the multiplier should be applied exponentially for each period.",
+          "correction_zh": "复利意味着每个周期的利息都会加到本金上，因此乘数应该以指数形式应用于每个周期。"
+        }
+      ]
     },
     {
       "id": "kp-E1.7-01",
@@ -510,7 +672,34 @@
       "vocabLinks": [
         "edx-num-ratio"
       ],
-      "tier": "both"
+      "tier": "both",
+      "solutionMethod": {
+        "en": "Step 1: Add all the numbers in the given ratio together to find the total number of parts.\nStep 2: Divide the total quantity (the amount to be shared) by the total number of parts found in Step 1. This gives you the value of one single part.\nStep 3: Multiply the value of one part (from Step 2) by each individual number in the original ratio to find the amount corresponding to each share.\nStep 4: As a final check, add up all the individual shares you calculated in Step 3 to ensure their sum equals the original total quantity.",
+        "zh": "第一步：将给定比例中的所有数字相加，得出总份数。\n第二步：将总数量（待分配的金额）除以第一步中得到的总份数，计算出一份的价值。\n第三步：将一份的价值（第二步的结果）分别乘以原始比例中的每个数字，以得出每一份具体的金额。\n第四步：作为最后的检查，将第三步计算出的所有单独份额相加，确保它们的总和等于原始的总数量。"
+      },
+      "commonMistakes": [
+        {
+          "id": "cm-01",
+          "mistake": "Students might divide the total quantity by one of the ratio numbers directly, instead of the sum of the ratio parts.",
+          "mistake_zh": "学生可能会直接用总数量除以比例中的一个数字，而不是除以比例所有部分的和。",
+          "correction": "Always add all the parts of the ratio together first to find the total number of shares before dividing the total quantity.",
+          "correction_zh": "在分配总数量之前，务必先将比例中的所有部分相加，得出总份数。"
+        },
+        {
+          "id": "cm-02",
+          "mistake": "After finding the value of one part, students may forget to multiply this value by *each* part of the ratio to find all the individual shares.",
+          "mistake_zh": "在计算出一份的价值后，学生可能会忘记将这个价值乘以比例中的*每个*数字，从而未能算出所有单独的份额。",
+          "correction": "Remember to multiply the value of one part by every number in the given ratio to ensure all portions are correctly calculated.",
+          "correction_zh": "请记住，将一份的价值乘以给定比例中的每个数字，以确保所有部分的计算都正确无误。"
+        },
+        {
+          "id": "cm-03",
+          "mistake": "Students often do not check their final answer by summing the calculated parts, which could lead to undetected arithmetic errors.",
+          "mistake_zh": "学生经常不通过将计算出的各部分相加来检查最终答案，这可能导致未能发现计算错误。",
+          "correction": "Always add up your final calculated amounts for each share to verify they sum to the original total quantity provided in the problem.",
+          "correction_zh": "务必将您计算出的每个份额相加，以验证它们的总和是否等于题目中给出的原始总数量。"
+        }
+      ]
     },
     {
       "id": "kp-E1.8-01",
@@ -580,7 +769,27 @@
       "vocabLinks": [
         "edx-num-accuracy"
       ],
-      "tier": "both"
+      "tier": "both",
+      "solutionMethod": {
+        "en": "Step 1: Identify the 'degree of accuracy' to which the number has been rounded. This is the smallest unit of measurement or place value specified (e.g., nearest whole number, 1 decimal place, nearest 10).\nStep 2: Calculate half of this degree of accuracy. This value is often called the 'tolerance' or 'half-interval'.\nStep 3: To find the Lower Bound, subtract the value from Step 2 from the given rounded number. To find the Upper Bound, add the value from Step 2 to the given rounded number.",
+        "zh": "第一步：确定数字被舍入到的“精确度”。这是指明的最小测量单位或位数（例如，到最接近的整数、到小数点后一位、到最接近的10）。\n第二步：计算第一步中精确度的一半。这个值通常被称为“容差”或“半区间”。\n第三步：要找到下界，从给定的舍入数字中减去第二步计算出的值。要找到上界，将第二步计算出的值加到给定的舍入数字上。"
+      },
+      "commonMistakes": [
+        {
+          "id": "cm-01",
+          "mistake": "Forgetting to halve the degree of accuracy before adding/subtracting to find the bounds.",
+          "mistake_zh": "在加减以求界限之前，忘记将精确度减半。",
+          "correction": "Always divide the degree of accuracy by 2 to find the correct tolerance to be added and subtracted.",
+          "correction_zh": "务必将精确度除以2，以找到正确的容差进行加减。"
+        },
+        {
+          "id": "cm-02",
+          "mistake": "Misunderstanding the Upper Bound as an inclusive value, for example, thinking the upper bound for 15 (nearest cm) is 15.49 instead of 15.5.",
+          "mistake_zh": "误解上界是包含在内的值，例如，认为15（精确到厘米）的上界是15.49而不是15.5。",
+          "correction": "The Upper Bound is defined as the smallest value that would round *up* or *away* from the given rounded number, meaning the actual value must be strictly less than the upper bound ($x < \text{UB}$).",
+          "correction_zh": "上界定义为将向上舍入或偏离给定舍入数字的最小值，这意味着实际值必须严格小于上界 ($x < \text{UB}$)。"
+        }
+      ]
     },
     {
       "id": "kp-E1.9-01",
@@ -657,7 +866,27 @@
       "vocabLinks": [
         "edx-num-standard"
       ],
-      "tier": "both"
+      "tier": "both",
+      "solutionMethod": {
+        "en": "Step 1: Identify the position of the decimal point in the ordinary number. If it's not explicitly written, it's at the very end of the number (e.g., 4500 has its decimal point after the last 0).\nStep 2: Move the decimal point to create a new number, $A$, such that $A$ is between 1 and 10 (i.e., $1 \\le A < 10$). There should be only one non-zero digit before the decimal point.\nStep 3: Count how many places the decimal point was moved. This count gives you the absolute value of the power $n$.\nStep 4: Determine the sign of $n$. If the original number was large (greater than or equal to 10) and you moved the decimal to the left, $n$ is positive. If the original number was small (between 0 and 1) and you moved the decimal to the right, $n$ is negative.\nStep 5: Write the final answer in the form $A \\times 10^n$.",
+        "zh": "第一步：确定普通数字中小数点的位置。如果未明确写出，则它在数字的末尾（例如，4500 的小数点在最后一个 0 之后）。\n第二步：移动小数点，创建一个新数字 $A$，使得 $A$ 介于 1 到 10 之间（即 $1 \\le A < 10$）。小数点前应该只有一个非零数字。\n第三步：数一数小数点移动了多少位。这个位数就是幂 $n$ 的绝对值。\n第四步：确定 $n$ 的正负号。如果原始数字很大（大于等于 10），并且你将小数点向左移动了，则 $n$ 是正数。如果原始数字很小（介于 0 到 1 之间），并且你将小数点向右移动了，则 $n$ 是负数。\n第五步：将最终答案写成 $A \\times 10^n$ 的形式。"
+      },
+      "commonMistakes": [
+        {
+          "id": "cm-02",
+          "mistake": "Getting the sign of the power 'n' wrong, often using a positive power for a small number or a negative power for a large number. For example, writing $0.00032$ as $3.2 \\times 10^4$ instead of $3.2 \\times 10^{-4}$.",
+          "mistake_zh": "搞错幂 $n$ 的符号，例如，将 $0.00032$ 写成 $3.2 \\times 10^4$ 而不是 $3.2 \\times 10^{-4}$。",
+          "correction": "Remember that large numbers (greater than 1) have positive powers of 10, and small numbers (between 0 and 1) have negative powers of 10.",
+          "correction_zh": "记住大数（大于 1）的 10 的幂是正数，小数（介于 0 到 1 之间）的 10 的幂是负数。"
+        },
+        {
+          "id": "cm-03",
+          "mistake": "Miscounting the number of places the decimal point has moved, leading to an incorrect power of 10. For example, writing $4,500,000$ as $4.5 \\times 10^5$ instead of $4.5 \\times 10^6$.",
+          "mistake_zh": "错误地计算了小数点移动的位数，导致 10 的幂不正确。例如，将 $4,500,000$ 写成 $4.5 \\times 10^5$ 而不是 $4.5 \\times 10^6$。",
+          "correction": "Carefully count each decimal place movement, especially when dealing with many zeros or converting from standard form to an ordinary number where adding zeros is required.",
+          "correction_zh": "仔细计算每一次小数点的移动，特别是在处理很多零或者将标准式转换成普通数字需要添加零时。"
+        }
+      ]
     },
     {
       "id": "kp-E1.10-01",
@@ -727,7 +956,34 @@
       "vocabLinks": [
         "edx-num-applying"
       ],
-      "tier": "both"
+      "tier": "both",
+      "solutionMethod": {
+        "en": "Step 1: Identify all individual numbers involved in the calculation.\nStep 2: Round each of these numbers individually to one significant figure (1 SF). Remember to apply standard rounding rules: if the digit after the first significant figure is 5 or greater, round up; otherwise, keep it the same. All subsequent digits become zeros.\nStep 3: Substitute the original numbers with their newly rounded 1 SF values back into the calculation.\nStep 4: Perform the simplified calculation using these rounded numbers to find the estimated value.",
+        "zh": "第一步：找出计算中涉及的所有单个数字。\n第二步：将每个数字单独舍入到一位有效数字 (1 SF)。请记住应用标准的舍入规则：如果第一位有效数字后的数字是 5 或更大，则向上舍入；否则，保持不变。所有后续数字都变为零。\n第三步：用舍入到 1 SF 后的新值替换原始数字，并代入计算式中。\n第四步：使用这些舍入后的数字进行简化的计算，以得出估算值。"
+      },
+      "commonMistakes": [
+        {
+          "id": "cm-01",
+          "mistake": "Not rounding every number to one significant figure (1 SF) before calculating, e.g., rounding to the nearest whole number or 2 significant figures.",
+          "mistake_zh": "在计算前没有将每个数字舍入到一位有效数字 (1 SF)，例如，舍入到最接近的整数或两位有效数字。",
+          "correction": "Always make sure to round *every single number* in the expression to exactly one significant figure *before* performing any mathematical operations.",
+          "correction_zh": "务必确保在进行任何数学运算*之前*，将表达式中的*每一个数字*都精确舍入到一位有效数字。"
+        },
+        {
+          "id": "cm-02",
+          "mistake": "Performing part of the calculation first and then rounding the intermediate or final result, rather than rounding all numbers initially.",
+          "mistake_zh": "先进行部分计算，然后舍入中间结果或最终结果，而不是最初就舍入所有数字。",
+          "correction": "The core rule for estimation in IGCSE/GCSE is to round *all original numbers* to one significant figure first, then proceed with the calculation using these rounded values.",
+          "correction_zh": "IGCSE/GCSE 估算的核心规则是，*首先*将*所有原始数字*舍入到一位有效数字，然后使用这些舍入后的值进行计算。"
+        },
+        {
+          "id": "cm-03",
+          "mistake": "Incorrectly rounding numbers to one significant figure, especially for numbers less than 1 or large numbers ending in zeros (e.g., $0.049$ rounded to $0.04$ instead of $0.05$, or $490$ rounded to $400$ instead of $500$).",
+          "mistake_zh": "错误地将数字舍入到一位有效数字，特别是对于小于 1 的数字或以零结尾的大数字（例如，将 $0.049$ 舍入为 $0.04$ 而不是 $0.05$，或将 $490$ 舍入为 $400$ 而不是 $500$）。",
+          "correction": "Carefully identify the first non-zero digit as the first significant figure and apply standard rounding rules to that position, ensuring all subsequent digits become zeros (or are dropped if they are after the decimal point and not significant).",
+          "correction_zh": "仔细识别第一个非零数字作为第一位有效数字，并对该位置应用标准舍入规则，确保所有后续数字都变为零（如果它们在小数点后且不重要，则可舍去）。"
+        }
+      ]
     },
     {
       "id": "kp-E1.11-01",
@@ -797,7 +1053,34 @@
       "vocabLinks": [
         "edx-num-calculator"
       ],
-      "tier": "both"
+      "tier": "both",
+      "solutionMethod": {
+        "en": "Step 1: Press the fraction button (often labelled $\\boxed{\\frac{\\square}{\\square}}$) on your calculator to set up the fraction format.\nStep 2: For the numerator, first press the square root button ($\\boxed{\\sqrt{\\phantom{}}}$). Inside the square root, type `12.5 + 2.8^2` (or `12.5 + 2.8^x` `2`). Ensure all terms are correctly within the square root symbol.\nStep 3: Use the navigation button (often a right arrow) to move the cursor to the denominator. Then, type `4.1 - 0.7`.\nStep 4: Press the 'equals' ($\\boxed{=}$) button to calculate the result. Write down all the digits shown on your calculator display.",
+        "zh": "第一步：按下计算器上的分数按钮（通常标记为 $\\boxed{\\frac{\\square}{\\square}}$），以设置分数格式。\n第二步：对于分子，首先按下平方根按钮（$\\boxed{\\sqrt{\\phantom{}}}$）。在平方根符号内，输入 `12.5 + 2.8^2`（或 `12.5 + 2.8^x` `2`）。确保所有项都在平方根符号内。\n第三步：使用导航按钮（通常是右箭头）将光标移至分母。然后，输入 `4.1 - 0.7`。\n第四步：按下“等于”按钮（$\\boxed{=}$）计算结果。记下计算器显示屏上显示的所有数字。"
+      },
+      "commonMistakes": [
+        {
+          "id": "cm-01",
+          "mistake": "Failing to use the fraction button or proper parentheses when inputting complex fractions, leading to incorrect order of operations for division.",
+          "mistake_zh": "在输入复杂分数时，未能使用分数按钮或正确的括号，导致除法运算顺序错误。",
+          "correction": "Always use the dedicated fraction button for expressions like $\\frac{A}{B}$, or enclose the entire numerator and denominator in parentheses, e.g., `(A) / (B)`.",
+          "correction_zh": "对于 $\\frac{A}{B}$ 这样的表达式，务必使用专用分数按钮，或者将整个分子和分母用括号括起来，例如 `(A) / (B)`。"
+        },
+        {
+          "id": "cm-02",
+          "mistake": "Rounding intermediate values or the final answer too early, which can lead to inaccuracies, especially when the question asks for all calculator digits.",
+          "mistake_zh": "过早地舍入中间值或最终答案，可能导致不准确，尤其当题目要求写下计算器显示的所有数字时。",
+          "correction": "Keep all digits on the calculator display for intermediate steps, or use the calculator's memory function, and only round at the very end if specified.",
+          "correction_zh": "在中间步骤中保留计算器显示的所有数字，或使用计算器的记忆功能，并且只有在题目明确要求时才进行最终舍入。"
+        },
+        {
+          "id": "cm-03",
+          "mistake": "Mis-entering the terms inside a square root or an exponent, for example, typing `sqrt(A) + B` instead of `sqrt(A + B)`, or `X * 2` instead of `X^2`.",
+          "mistake_zh": "错误地输入平方根内部或指数的项，例如输入 `sqrt(A) + B` 而不是 `sqrt(A + B)`，或输入 `X * 2` 而不是 `X^2`。",
+          "correction": "Carefully review the expression to ensure all terms meant to be under a root or as an exponent are correctly grouped by parentheses or symbol placement on the calculator.",
+          "correction_zh": "仔细检查表达式，确保所有应在根号下或作为指数的项都通过括号或计算器上的符号放置正确分组。"
+        }
+      ]
     },
     {
       "id": "kp-2.1-01",
@@ -867,7 +1150,34 @@
       "vocabLinks": [
         "edx-alg-expr"
       ],
-      "tier": "both"
+      "tier": "both",
+      "solutionMethod": {
+        "en": "Step 1: Clearly identify each variable in the algebraic expression and its corresponding numerical value provided in the problem.\nStep 2: Substitute each variable with its numerical value. When substituting negative numbers or fractions, always enclose them in brackets to ensure correct calculation and prevent sign errors.\nStep 3: Evaluate the expression by strictly following the order of operations (BIDMAS/PEMDAS: Brackets, Indices (powers), Division and Multiplication (from left to right), Addition and Subtraction (from left to right)).",
+        "zh": "第一步：明确识别代数式中的每个变量及其在题目中给出的对应数值。\n第二步：将每个变量替换为它的数值。在代入负数或分数时，务必使用括号将它们括起来，以确保计算正确并避免符号错误。\n第三步：严格按照运算顺序（BIDMAS/PEMDAS：括号、指数（幂）、除法和乘法（从左到右）、加法和减法（从左到右））计算表达式的值。"
+      },
+      "commonMistakes": [
+        {
+          "id": "cm-01",
+          "mistake": "Forgetting to use brackets when substituting negative numbers, leading to incorrect signs, e.g., calculating $-3^2$ as $-9$ instead of $(-3)^2 = 9$, or $2q$ becoming $2-3$ instead of $2 \\times (-3)$.",
+          "mistake_zh": "在代入负数时忘记使用括号，导致符号错误，例如将 $-3^2$ 计算为 $-9$ 而不是 $(-3)^2 = 9$，或者将 $2q$ 算成 $2-3$ 而不是 $2 \\times (-3)$。",
+          "correction": "Always enclose negative numbers in brackets when substituting them into an expression, especially before applying powers or multiplication, e.g., $p^2 - 2q$ becomes $5^2 - 2(-3)$.",
+          "correction_zh": "在将负数代入表达式时，务必将其用括号括起来，尤其是在应用幂运算或乘法之前，例如 $p^2 - 2q$ 变为 $5^2 - 2(-3)$。"
+        },
+        {
+          "id": "cm-02",
+          "mistake": "Not following BIDMAS/PEMDAS correctly, for example, performing addition or subtraction before multiplication or division.",
+          "mistake_zh": "未能正确遵循运算顺序（BIDMAS/PEMDAS），例如在乘除法之前进行加减法运算。",
+          "correction": "Remember the strict order: Brackets first, then Indices, then Division and Multiplication (left to right), and finally Addition and Subtraction (left to right).",
+          "correction_zh": "记住严格的运算顺序：先括号，再指数，然后是除法和乘法（从左到右），最后是加法和减法（从左到右）。"
+        },
+        {
+          "id": "cm-03",
+          "mistake": "Misinterpreting algebraic notation, forgetting that $ab$ means $a \\times b$, $2y$ means $2 \\times y$, or $\\frac{x}{y}$ means $x \\div y$.",
+          "mistake_zh": "误解代数记法，忘记 $ab$ 表示 $a \\times b$，$2y$ 表示 $2 \\times y$，或 $\\frac{x}{y}$ 表示 $x \\div y$。",
+          "correction": "Always remember that juxtaposition (letters next to each other or a number next to a letter) implies multiplication, and a fraction bar implies division.",
+          "correction_zh": "务必记住，并置（字母或数字并排）表示乘法，分数线表示除法。"
+        }
+      ]
     },
     {
       "id": "kp-2.2-01",
@@ -937,7 +1247,34 @@
       "vocabLinks": [
         "edx-alg-manip"
       ],
-      "tier": "both"
+      "tier": "both",
+      "solutionMethod": {
+        "en": "Step 1: Expand any single brackets by multiplying the term outside the bracket by each term inside it, remembering to apply the correct signs.\nStep 2: If there are double brackets (e.g., $(a+b)(c+d)$), expand them by multiplying every term in the first bracket by every term in the second bracket.\nStep 3: After expanding all brackets, identify 'like terms'. These are terms that have exactly the same variables raised to exactly the same powers.\nStep 4: Combine the coefficients of these like terms to simplify the expression. Constant terms should be combined with other constant terms.",
+        "zh": "第一步：展开所有单括号，将括号外的项与括号内的每一项相乘，并注意符号。\n第二步：如果存在双重括号（例如 $(a+b)(c+d)$），则将第一个括号中的每一项与第二个括号中的每一项相乘进行展开。\n第三步：展开所有括号后，识别“同类项”。同类项是指变量及其幂次都完全相同的项。\n第四步：合并这些同类项的系数，以化简表达式。常数项应与其他常数项合并。"
+      },
+      "commonMistakes": [
+        {
+          "id": "cm-01",
+          "mistake": "Failing to correctly handle negative signs when expanding brackets, especially when a negative number is outside the bracket, e.g., expanding $-2(x-4)$ as $-2x-8$.",
+          "mistake_zh": "展开括号时未能正确处理负号，特别是当括号外是负数时，例如将 $-2(x-4)$ 展开为 $-2x-8$。",
+          "correction": "Always remember that a negative multiplied by a negative results in a positive, so $-2(x-4)$ should be expanded to $-2x+8$.",
+          "correction_zh": "始终记住负数乘以负数结果为正数，因此 $-2(x-4)$ 应展开为 $-2x+8$。"
+        },
+        {
+          "id": "cm-02",
+          "mistake": "Only multiplying the first term inside a bracket by the term outside it, e.g., expanding $3(2x-5)$ as $6x-5$ instead of $6x-15$.",
+          "mistake_zh": "只将括号外的项乘以括号内的第一项，例如将 $3(2x-5)$ 展开为 $6x-5$ 而不是 $6x-15$。",
+          "correction": "Ensure you distribute the term outside the bracket to *every* term inside the bracket.",
+          "correction_zh": "确保将括号外的项与括号内的*每一项*都相乘。"
+        },
+        {
+          "id": "cm-03",
+          "mistake": "Incorrectly combining 'non-like terms', for example, trying to combine $3x^2$ and $5x$, or combining a constant with a variable term.",
+          "mistake_zh": "错误地合并“非同类项”，例如试图合并 $3x^2$ 和 $5x$，或合并常数项与变量项。",
+          "correction": "Only terms with *exactly the same variables* raised to *exactly the same powers* can be combined; constant terms can only be combined with other constant terms.",
+          "correction_zh": "只有拥有*完全相同的变量*和*完全相同的幂次*的项才能合并；常数项只能与其他的常数项合并。"
+        }
+      ]
     },
     {
       "id": "kp-2.2-02",
@@ -1007,7 +1344,34 @@
       "vocabLinks": [
         "edx-alg-manip"
       ],
-      "tier": "both"
+      "tier": "both",
+      "solutionMethod": {
+        "en": "Step 1: First, check if there's a **common factor** (a number or variable that divides into ALL terms). If yes, extract the largest common factor and write it outside a bracket, then divide each term by it and put the results inside the bracket.\nStep 2: After extracting common factors (or if there weren't any), look at the number of terms remaining. If there are **two terms** and it's a **difference of two squares** (e.g., $x^2 - 9$), factorise it into $(a - b)(a + b)$.\nStep 3: If there are **three terms** and it's a **quadratic expression** (e.g., $x^2 + 5x + 6$), find two numbers that multiply to give the constant term and add to give the coefficient of $x$, then write it as $(x+p)(x+q)$.\nStep 4: Always double-check your answer by expanding the factorised expression to see if it matches the original expression.",
+        "zh": "第一步：首先，检查是否存在**公因式**（可以整除所有项的数字或变量）。如果存在，提取最大的公因式，并将其写在括号外面，然后将每一项除以公因式，结果放入括号内。\n第二步：提取公因式后（或者如果没有公因式），观察剩余项的数量。如果是**两项**且是**平方差**形式（例如，$x^2 - 9$），则将其分解为 $(a - b)(a + b)$。\n第三步：如果是**三项**且是**二次表达式**（例如，$x^2 + 5x + 6$），找出两个数，使其乘积等于常数项，和等于 $x$ 项的系数，然后将其写成 $(x+p)(x+q)$ 的形式。\n第四步：始终通过展开因式分解后的表达式来检查你的答案，看它是否与原始表达式匹配。"
+      },
+      "commonMistakes": [
+        {
+          "id": "cm-01",
+          "mistake": "Failing to extract the greatest common factor (GCF) from all terms first, leading to an incompletely factorised expression.",
+          "mistake_zh": "没有首先从所有项中提取最大公因数 (GCF)，导致因式分解不完全。",
+          "correction": "Always start by identifying and extracting the largest common numerical and variable factor from every term before attempting other factorisation methods.",
+          "correction_zh": "在尝试其他因式分解方法之前，始终先识别并提取所有项中最大的公因数（包括数字和变量）。"
+        },
+        {
+          "id": "cm-02",
+          "mistake": "Making errors with the signs when factorising quadratic expressions, especially when the constant term or the $x$ term is negative.",
+          "mistake_zh": "在二次表达式因式分解时，特别是当常数项或 $x$ 项为负数时，符号出错。",
+          "correction": "Carefully check the signs of the two numbers $p$ and $q$ you choose to ensure both their sum ($p+q=b$) and product ($p \\times q = c$) match the original quadratic expression.",
+          "correction_zh": "仔细检查你选择的两个数 $p$ 和 $q$ 的符号，确保它们的和 ($p+q=b$) 和乘积 ($p \\times q = c$) 都与原始二次表达式匹配。"
+        },
+        {
+          "id": "cm-03",
+          "mistake": "Attempting to factorise expressions like $a^2 + b^2$ using the difference of two squares formula.",
+          "mistake_zh": "尝试使用平方差公式对形如 $a^2 + b^2$ 的表达式进行因式分解。",
+          "correction": "Remember that the difference of two squares formula, $a^2 - b^2 = (a - b)(a + b)$, only applies when there is a subtraction sign between the two perfect squares.",
+          "correction_zh": "请记住，平方差公式 $a^2 - b^2 = (a - b)(a + b)$ 仅适用于两个完全平方项之间是减号的情况。"
+        }
+      ]
     },
     {
       "id": "kp-2.3-01",
@@ -1078,7 +1442,34 @@
         "edx-alg-expr",
         "edx-alg-linear"
       ],
-      "tier": "both"
+      "tier": "both",
+      "solutionMethod": {
+        "en": "Step 1: Identify the variable you need to make the subject (the \"target variable\") and locate all terms containing it.\nStep 2: Use inverse operations to move any terms *not* containing the target variable to the other side of the equation. Remember to apply each operation to *both sides* of the equation.\nStep 3: Work backwards through the order of operations (reverse BIDMAS/PEMDAS). First undo any addition or subtraction, then multiplication or division. If the target variable is part of a fraction, multiply both sides by the denominator first. If it's inside a root, square both sides.\nStep 4: If the target variable appears in more than one term, collect all those terms on one side of the equation. Then, factorise the target variable out. Finally, divide by the bracket to isolate the target variable.",
+        "zh": "第一步：确定您需要设为主元的变量（“目标变量”），并找到所有包含该变量的项。\n第二步：使用逆运算将不包含目标变量的任何项移动到等式的另一侧。请记住，每次运算都必须应用于等式的**两边**。\n第三步：按照运算顺序的逆序（反向 BIDMAS/PEMDAS）进行操作。首先解除加法或减法，然后是乘法或除法。如果目标变量是分数的一部分，请首先将等式两边乘以分母。如果它在根号内，请将等式两边平方。\n第四步：如果目标变量出现在多个项中，请将所有这些项收集到等式的一侧。然后，将目标变量因式分解出来。最后，通过除以括号来隔离目标变量。"
+      },
+      "commonMistakes": [
+        {
+          "id": "cm-01",
+          "mistake": "Applying an inverse operation to only one side of the equation instead of both.",
+          "mistake_zh": "只对等式的一边而不是两边进行逆运算。",
+          "correction": "Always treat an equation like a balance; whatever operation you perform on one side, you must perform the exact same operation on the other side to maintain equality.",
+          "correction_zh": "始终将等式视为一个天平；无论您在等式的一侧执行何种运算，都必须在另一侧执行完全相同的运算以保持等式成立。"
+        },
+        {
+          "id": "cm-02",
+          "mistake": "Incorrectly applying the order of inverse operations, especially with fractions or when dealing with operations far from the target variable first.",
+          "mistake_zh": "错误地应用逆运算的顺序，特别是在处理分数或优先处理离目标变量较远的操作时。",
+          "correction": "Follow the reverse of BIDMAS/PEMDAS: undo addition/subtraction first, then multiplication/division, then powers/roots. For fractions, clear the denominator by multiplying before attempting to move terms from the numerator.",
+          "correction_zh": "遵循 BIDMAS/PEMDAS 的逆序：首先解除加法/减法，然后是乘法/除法，最后是幂/根号。对于分数，在尝试移动分子中的项之前，先通过乘法来清除分母。"
+        },
+        {
+          "id": "cm-03",
+          "mistake": "Failing to factorise the target variable when it appears in multiple terms.",
+          "mistake_zh": "当目标变量出现在多个项中时，未能将其因式分解。",
+          "correction": "If the variable you want to make the subject appears in two or more terms (e.g., $ax+b=cx$), collect all these terms on one side of the equation, then factorise the variable out (e.g., $x(a-c)=-b$).",
+          "correction_zh": "如果您想设为主元的变量出现在两个或更多项中（例如 $ax+b=cx$），请将所有这些项收集到等式的一侧，然后将该变量因式分解出来（例如 $x(a-c)=-b$）。"
+        }
+      ]
     },
     {
       "id": "kp-2.4-01",
@@ -1148,7 +1539,34 @@
       "vocabLinks": [
         "edx-alg-linear"
       ],
-      "tier": "both"
+      "tier": "both",
+      "solutionMethod": {
+        "en": "Step 1: If there are fractions, multiply every term on both sides of the equation by the lowest common multiple (LCM) of all denominators to eliminate them.\nStep 2: Expand any brackets by multiplying the term outside the bracket with every term inside.\nStep 3: Collect all terms containing the variable on one side of the equation and all constant terms on the other side by adding or subtracting terms from both sides.\nStep 4: Simplify both sides by combining like terms.\nStep 5: Divide both sides by the coefficient of the variable to find the value of the unknown.",
+        "zh": "第一步：如果方程中含有分数，将方程两边的每一项都乘以所有分母的最小公倍数 (LCM) 以消除分数。\n第二步：通过将括号外的项与括号内的每一项相乘来展开所有括号。\n第三步：通过在方程两边同时加或减去项，将所有含有变量的项移到方程的一边，将所有常数项移到另一边。\n第四步：通过合并同类项来简化方程的两边。\n第五步：将方程两边同时除以变量的系数，以求出未知数的值。"
+      },
+      "commonMistakes": [
+        {
+          "id": "cm-01",
+          "mistake": "Forgetting to change the sign of a term when moving it from one side of the equals sign to the other.",
+          "mistake_zh": "在将项从等号的一边移到另一边时，忘记改变该项的符号。",
+          "correction": "Remember that when a term 'crosses' the equals sign, its operation reverses (e.g., $+2x$ becomes $-2x$ on the other side).",
+          "correction_zh": "请记住，当一个项“跨越”等号时，它的运算会反转（例如，$+2x$ 移到另一边变为 $-2x$）。"
+        },
+        {
+          "id": "cm-02",
+          "mistake": "Failing to multiply *all* terms inside a bracket by the factor outside it during expansion.",
+          "mistake_zh": "在展开括号时，未能将括号外的因子乘以括号内的*所有*项。",
+          "correction": "Always use the distributive property to multiply the term outside the bracket by *every single term* inside the bracket (e.g., $4(x-3)$ is $4x-12$, not $4x-3$).",
+          "correction_zh": "始终使用分配律，将括号外的项乘以括号内的*每一个*项（例如，$4(x-3)$ 是 $4x-12$，而不是 $4x-3$）。"
+        },
+        {
+          "id": "cm-03",
+          "mistake": "When clearing fractions, forgetting to multiply *every term* on both sides of the equation by the common denominator, especially constant terms.",
+          "mistake_zh": "在消去分数时，忘记将方程两边的*每一项*（尤其是常数项）乘以公分母。",
+          "correction": "Ensure that *every single term* in the equation, including those without a visible denominator, is multiplied by the lowest common multiple of the denominators.",
+          "correction_zh": "确保方程中的*每一项*，包括那些没有可见分母的项，都乘以分母的最小公倍数。"
+        }
+      ]
     },
     {
       "id": "kp-2.5-01",
@@ -1218,7 +1636,34 @@
       "vocabLinks": [
         "edx-alg-proportion"
       ],
-      "tier": "both"
+      "tier": "both",
+      "solutionMethod": {
+        "en": "Step 1: Based on the problem statement, write down the general proportionality equation, including the constant $k$. For direct proportion, use $y = kx^n$; for inverse proportion, use $y = \\frac{k}{x^n}$.\nStep 2: Substitute the first given pair of values for $x$ and $y$ into your general equation from Step 1.\nStep 3: Solve the equation to find the numerical value of the constant of proportionality, $k$.\nStep 4: Write out the complete specific equation by replacing $k$ in the general equation with its found numerical value.\nStep 5: Use this complete specific equation and the new given value of $x$ (or $y$) to calculate the unknown value of the other variable.",
+        "zh": "第一步：根据题目描述，写出一般比例方程，包含常数 $k$。如果是正比例，使用 $y = kx^n$；如果是反比例，使用 $y = \\frac{k}{x^n}$。\n第二步：将题目中给定的一对 $x$ 和 $y$ 值代入你在第一步写出的一般方程中。\n第三步：解方程，求出比例系数 $k$ 的数值。\n第四步：将 $k$ 的数值代回一般方程，写出完整的特定比例方程。\n第五步：使用这个完整的特定方程，并代入新的 $x$ 值（或 $y$ 值），计算出另一个未知变量的值。"
+      },
+      "commonMistakes": [
+        {
+          "id": "cm-01",
+          "mistake": "Confusing direct and inverse proportion, or applying the wrong power to the variable.",
+          "mistake_zh": "混淆了正比例和反比例，或者对变量应用了错误的指数。",
+          "correction": "Carefully read the problem statement to identify if it's \"directly proportional\" ($y=kx^n$) or \"inversely proportional\" ($y=k/x^n$) and the exact power (e.g., $x$, $x^2$, $\\sqrt{x}$).",
+          "correction_zh": "仔细阅读题目，判断是“正比例” ($y=kx^n$) 还是“反比例” ($y=k/x^n$)，并确定变量的正确指数（例如 $x$，$x^2$，$\\sqrt{x}$）。"
+        },
+        {
+          "id": "cm-02",
+          "mistake": "Incorrectly calculating the constant of proportionality, $k$, or forgetting to find it first.",
+          "mistake_zh": "错误地计算了比例系数 $k$，或者忘记先求出 $k$。",
+          "correction": "Always use the initial complete pair of values for $x$ and $y$ to substitute into your general equation and solve for $k$ accurately.",
+          "correction_zh": "务必使用最初给定的一对完整的 $x$ 和 $y$ 值代入到你的一般方程中，并准确地解出 $k$。"
+        },
+        {
+          "id": "cm-03",
+          "mistake": "Making calculation errors when substituting the second set of values into the derived specific equation.",
+          "mistake_zh": "在将第二组值代入推导出的特定方程时出现计算错误。",
+          "correction": "Double-check all arithmetic, especially when dealing with squares, square roots, or fractions, to ensure the final answer is accurate.",
+          "correction_zh": "仔细核对所有算术计算，尤其是在处理平方、平方根或分数时，以确保最终答案的准确性。"
+        }
+      ]
     },
     {
       "id": "kp-2.6-01",
@@ -1288,7 +1733,34 @@
       "vocabLinks": [
         "edx-alg-simul"
       ],
-      "tier": "both"
+      "tier": "both",
+      "solutionMethod": {
+        "en": "Step 1: Choose a variable to eliminate. Look at the coefficients of both $x$ and $y$ in both equations and decide which variable is easier to make the coefficients the same or opposite.\nStep 2: Multiply one or both equations by a constant so that the chosen variable's coefficients are either identical (e.g., both $2x$ and $2x$) or opposite (e.g., $3y$ and $-3y$). Remember to multiply every term in the equation.\nStep 3: If the coefficients are identical, subtract one equation from the other. If the coefficients are opposite, add the equations. This will eliminate one variable, leaving a single equation with one unknown.\nStep 4: Solve the resulting single-variable equation to find the value of that variable (e.g., $x$).\nStep 5: Substitute the value you found (e.g., $x=2$) back into one of the *original* equations to find the value of the other variable (e.g., $y$). Finally, check your answers by substituting both values into the other original equation.",
+        "zh": "第一步：选择一个要消去的变量。观察两个方程中 $x$ 和 $y$ 的系数，决定哪个变量更容易使系数相同或互为相反数。\n第二步：将其中一个或两个方程乘以一个常数，使所选变量的系数相同（例如，都是 $2x$ 和 $2x$）或互为相反数（例如，$3y$ 和 $-3y$）。记住要将方程中的每一项都乘以该常数。\n第三步：如果系数相同，则用一个方程减去另一个方程。如果系数互为相反数，则将两个方程相加。这将消去一个变量，留下一个只含一个未知数的方程。\n第四步：求解这个只含一个变量的方程，找到该变量的值（例如，$x$）。\n第五步：将找到的变量值（例如，$x=2$）代回其中一个*原始*方程中，以找到另一个变量的值（例如，$y$）。最后，将这两个值代入另一个原始方程进行检验。"
+      },
+      "commonMistakes": [
+        {
+          "id": "cm-01",
+          "mistake": "Incorrectly adding or subtracting equations, especially with negative numbers or when coefficients are opposite.",
+          "mistake_zh": "在方程相加或相减时出错，尤其是在涉及负数或系数互为相反数的情况下。",
+          "correction": "Always check the signs of the coefficients; if they are identical, subtract the equations, and if they are opposite, add them. Pay careful attention to distributing negative signs when subtracting an entire equation.",
+          "correction_zh": "始终检查系数的符号；如果它们相同，则相减，如果它们互为相反数，则相加。在减去整个方程时，请特别注意分配负号。"
+        },
+        {
+          "id": "cm-02",
+          "mistake": "Stopping after finding the value of only one variable and forgetting to find the second variable.",
+          "mistake_zh": "只找到了一个变量的值就停止，忘记寻找第二个变量的值。",
+          "correction": "Remember that simultaneous equations require finding values for all variables (e.g., both $x$ and $y$); always substitute the first value back into an original equation to find the second.",
+          "correction_zh": "记住联立方程组需要找到所有变量的值（例如，$x$ 和 $y$）；务必将第一个变量的值代回原始方程中以找到第二个变量的值。"
+        },
+        {
+          "id": "cm-03",
+          "mistake": "Making arithmetic errors when multiplying an entire equation by a constant, failing to multiply every term.",
+          "mistake_zh": "将整个方程乘以一个常数时出现计算错误，未能将每一项都乘以该常数。",
+          "correction": "Carefully multiply *every single term* on both sides of the equation by the chosen constant to ensure accuracy before proceeding with addition or subtraction.",
+          "correction_zh": "在进行加减运算之前，仔细地将方程两边的*每一个项*都乘以所选的常数，以确保准确性。"
+        }
+      ]
     },
     {
       "id": "kp-2.7-01",
@@ -1358,7 +1830,34 @@
       "vocabLinks": [
         "edx-alg-quadratic"
       ],
-      "tier": "both"
+      "tier": "both",
+      "solutionMethod": {
+        "en": "Step 1: Ensure the quadratic equation is in the form $ax^2 + bx + c = 0$. If it isn't, rearrange all terms to one side of the equation, leaving zero on the other side.\nStep 2: Factorise the quadratic expression ($ax^2 + bx + c$) into two linear factors, typically in the form $(px+q)(rx+s)$. For simpler quadratics like $x^2 + bx + c = 0$, find two numbers that multiply to $c$ and add up to $b$.\nStep 3: Apply the Null Factor Law (also known as the Zero Product Property) by setting each of the two factorised brackets equal to zero.\nStep 4: Solve each of the two resulting simple linear equations separately to find the values of $x$. These are the solutions to the quadratic equation.",
+        "zh": "第一步：确保二次方程处于 $ax^2 + bx + c = 0$ 的形式。如果不是，请将所有项移到方程的一边，使另一边为零。\n第二步：将二次代数式 ($ax^2 + bx + c$) 分解为两个线性因式，通常形式为 $(px+q)(rx+s)$。对于简单的二次方程如 $x^2 + bx + c = 0$，找到两个数，它们的乘积等于 $c$，和等于 $b$。\n第三步：应用零乘积性质（也称零因子定律），将两个因式分解后的括号分别设为零。\n第四步：分别解出这两个简单的一次方程，找到 $x$ 的值。这些就是二次方程的解。"
+      },
+      "commonMistakes": [
+        {
+          "id": "cm-01",
+          "mistake": "Attempting to factorise or solve a quadratic equation when it is not set equal to zero.",
+          "mistake_zh": "在二次方程不等于零的情况下尝试进行因式分解或求解。",
+          "correction": "Always rearrange the equation to the standard form $ax^2 + bx + c = 0$ before starting the factorisation process.",
+          "correction_zh": "在开始因式分解过程之前，务必将方程重新排列成标准形式 $ax^2 + bx + c = 0$。"
+        },
+        {
+          "id": "cm-02",
+          "mistake": "Making errors in the factorisation process, such as finding incorrect numbers for the product and sum.",
+          "mistake_zh": "在因式分解过程中出现错误，例如找到乘积和加和不正确的数字。",
+          "correction": "After factorising the expression, always mentally (or physically) expand the brackets to check if it returns the original quadratic expression.",
+          "correction_zh": "将代数式因式分解后，务必在心里（或实际地）展开括号，检查其是否能得到原始的二次代数式。"
+        },
+        {
+          "id": "cm-03",
+          "mistake": "Forgetting to set each factor to zero or making sign errors when solving the resulting linear equations (e.g., $x-2=0$ leads to $x=-2$).",
+          "mistake_zh": "忘记将每个因式设为零，或者在解出的一次方程中出现符号错误（例如，$x-2=0$ 解为 $x=-2$）。",
+          "correction": "Remember the Null Factor Law states that if $(x-a)(x-b) = 0$, then it must be that $x-a=0$ (so $x=a$) or $x-b=0$ (so $x=b$), ensuring correct signs for the solutions.",
+          "correction_zh": "请记住零乘积性质规定，如果 $(x-a)(x-b) = 0$，那么必须是 $x-a=0$（所以 $x=a$）或者 $x-b=0$（所以 $x=b$），从而确保解的符号正确。"
+        }
+      ]
     },
     {
       "id": "kp-2.7-02",
@@ -1428,7 +1927,34 @@
       "vocabLinks": [
         "edx-alg-quadratic"
       ],
-      "tier": "higher"
+      "tier": "higher",
+      "solutionMethod": {
+        "en": "Step 1: Ensure the quadratic equation is in the standard form $ax^2 + bx + c = 0$. Then, carefully identify the values of $a, b,$ and $c$, making sure to include their correct positive or negative signs.\nStep 2: Write down the quadratic formula: $x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$. Substitute the identified values of $a, b,$ and $c$ into the formula, paying close attention to signs, especially when $b$ is negative.\nStep 3: First, calculate the value of the discriminant ($b^2 - 4ac$) under the square root. If this value is negative, there are no real solutions. Then, calculate the square root. Finally, calculate the two possible values for $x$ by performing the operation once with the '+' sign and once with the '-' sign in the numerator.\nStep 4: Round your final answers to the required degree of accuracy (e.g., 3 significant figures or 2 decimal places) as specified in the question.",
+        "zh": "第一步：确保二次方程是标准形式 $ax^2 + bx + c = 0$。然后，仔细确定 $a, b,$ 和 $c$ 的值，务必包括它们正确的正负符号。\n第二步：写下二次求根公式：$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$。将已确定的 $a, b,$ 和 $c$ 值代入公式，特别注意符号，尤其是当 $b$ 为负数时。\n第三步：首先，计算平方根内的判别式 ($b^2 - 4ac$) 的值。如果此值为负，则没有实数解。然后，计算平方根。最后，通过在分子中分别使用“+”号和“−”号计算，得出 $x$ 的两个可能值。\n第四步：将最终答案四舍五入到问题中要求的精确度（例如，3 位有效数字或 2 位小数）。"
+      },
+      "commonMistakes": [
+        {
+          "id": "cm-01",
+          "mistake": "Incorrectly identifying the signs of $b$ or $c$, especially when they are negative, leading to errors in substitution.",
+          "mistake_zh": "错误地识别 $b$ 或 $c$ 的符号，特别当它们为负数时，导致代入错误。",
+          "correction": "Always explicitly write down $a, b,$ and $c$ including their signs (e.g., $b = -5, c = -4$) before substituting them into the formula.",
+          "correction_zh": "在代入公式之前，务必明确写出 $a, b,$ 和 $c$ 的值及其符号（例如，$b = -5, c = -4$）。"
+        },
+        {
+          "id": "cm-02",
+          "mistake": "Making calculation errors with the discriminant $b^2 - 4ac$, such as forgetting that $(-b)^2$ is always positive or errors with negative numbers in $4ac$.",
+          "mistake_zh": "计算判别式 $b^2 - 4ac$ 时出现计算错误，例如忘记 $(-b)^2$ 总是正数，或 $4ac$ 中负数计算错误。",
+          "correction": "Use parentheses when substituting negative values into your calculator, e.g., $(-5)^2$, and calculate the term $b^2 - 4ac$ separately and carefully before finding its square root.",
+          "correction_zh": "将负值代入计算器时使用括号，例如 $(-5)^2$，并在求平方根之前单独且仔细地计算项 $b^2 - 4ac$。"
+        },
+        {
+          "id": "cm-03",
+          "mistake": "Not dividing the entire numerator ($-b \\pm \\sqrt{b^2 - 4ac}$) by $2a$, but only a part of it.",
+          "mistake_zh": "没有将整个分子 ($-b \\pm \\sqrt{b^2 - 4ac}$) 除以 $2a$，而只除以其中一部分。",
+          "correction": "Ensure that the entire expression in the numerator is calculated first, and only then is it divided by $2a$ to get the final values for $x$.",
+          "correction_zh": "确保先计算分子中的整个表达式，然后才将其除以 $2a$ 以获得 $x$ 的最终值。"
+        }
+      ]
     },
     {
       "id": "kp-2.8-01",
@@ -1498,7 +2024,27 @@
       "vocabLinks": [
         "edx-alg-ineq"
       ],
-      "tier": "both"
+      "tier": "both",
+      "solutionMethod": {
+        "en": "Step 1: Move all terms with the variable to one side of the inequality and all constant terms to the other side by adding or subtracting from both sides.\nStep 2: Simplify both sides of the inequality by combining like terms.\nStep 3: Isolate the variable by multiplying or dividing both sides by its coefficient. If you multiply or divide by a negative number, you **must flip the direction of the inequality sign**.\nStep 4: If required, represent the solution on a number line. Use an open circle ($\\circ$) for strict inequalities ($<$ or $>$) and a solid circle ($\\bullet$) for inclusive inequalities ($\\le$ or $\\ge$). Draw an arrow in the direction indicated by the inequality.",
+        "zh": "第一步：通过在两边同时加或减，将所有含有变量的项移到不等式的一侧，将所有常数项移到另一侧。\n第二步：通过合并同类项来简化不等式两边。\n第三步：通过将不等式两边同时乘以或除以变量的系数来分离变量。如果你乘以或除以一个负数，你**必须反转不等号的方向**。\n第四步：如果需要，在数轴上表示解集。对于严格不等式（$<$ 或 $>$），使用空心圆圈（$\\circ$）；对于非严格不等式（$\\le$ 或 $\\ge$），使用实心圆点（$\\bullet$）。画一个箭头指向不等式指示的方向。"
+      },
+      "commonMistakes": [
+        {
+          "id": "cm-01",
+          "mistake": "Forgetting to reverse the inequality sign when multiplying or dividing both sides by a negative number.",
+          "mistake_zh": "在不等式两边同时乘以或除以负数时，忘记反转不等号方向。",
+          "correction": "Always check the sign of the number you are multiplying or dividing by; if it's negative, flip the inequality sign immediately.",
+          "correction_zh": "务必检查你所乘或所除的数的符号；如果是负数，立即反转不等号的方向。"
+        },
+        {
+          "id": "cm-02",
+          "mistake": "Incorrectly representing the solution on a number line, such as using a solid circle for strict inequalities or pointing the arrow in the wrong direction.",
+          "mistake_zh": "在数轴上错误地表示解集，例如对严格不等式使用实心圆点或箭头方向错误。",
+          "correction": "Remember that $<$ and $>$ use an open circle ($\\circ$), $\\le$ and $\\ge$ use a solid circle ($\\bullet$), and the arrow always points in the direction of the values that satisfy the inequality.",
+          "correction_zh": "请记住，$<$ 和 $>$ 使用空心圆圈（$\\circ$），$\\le$ 和 $\\ge$ 使用实心圆点（$\\bullet$），并且箭头始终指向满足不等式的值的方向。"
+        }
+      ]
     },
     {
       "id": "kp-3.1-01",
@@ -1568,7 +2114,34 @@
       "vocabLinks": [
         "edx-fn-seq"
       ],
-      "tier": "both"
+      "tier": "both",
+      "solutionMethod": {
+        "en": "Step 1: Calculate the common difference ($d$) by subtracting any term from the term that immediately follows it (e.g., $u_2 - u_1$). Verify this difference is constant for the given sequence.\nStep 2: Start your $n^{th}$ term formula with $dn$, where $d$ is the common difference found in Step 1. For example, if $d=4$, the formula begins $4n$.\nStep 3: To find the constant term ($b$), compare your expression from Step 2 (e.g., $4n$) with the actual terms of the sequence. Specifically, for the first term ($n=1$), calculate $d \times 1$. The amount you need to add or subtract to this value to get the actual first term ($u_1$) is your constant $b$. The final formula is $u_n = dn + b$.",
+        "zh": "第一步：通过将数列中的任意一项减去它前面的一项来计算公差 ($d$) (例如，$u_2 - u_1$)。验证这个差值在给定数列中是恒定的。\n第二步：用 $dn$ 作为第 $n$ 项公式的开头，其中 $d$ 是你在第一步中找到的公差。例如，如果 $d=4$，公式就以 $4n$ 开头。\n第三步：为了找到常数项 ($b$)，将你在第二步中得到的表达式（例如 $4n$）与数列的实际项进行比较。具体来说，对于首项 ($n=1$)，计算 $d \times 1$。你需要在这个值上加上或减去多少才能得到实际的首项 ($u_1$)，这个值就是你的常数 $b$。最终公式为 $u_n = dn + b$。"
+      },
+      "commonMistakes": [
+        {
+          "id": "cm-01",
+          "mistake": "Incorrectly calculating the common difference, especially when the sequence is decreasing or involves negative numbers.",
+          "mistake_zh": "错误计算公差，尤其当数列递减或包含负数时。",
+          "correction": "Always subtract the previous term from the current term ($u_{n+1} - u_n$) and check this value for at least two pairs of terms to ensure it's consistent.",
+          "correction_zh": "始终用后一项减去前一项 ($u_{n+1} - u_n$)，并至少检查两对项以确保该值是一致的。"
+        },
+        {
+          "id": "cm-02",
+          "mistake": "Making an error when finding the constant term ($b$) by miscomparing $d \times 1$ with the first term $u_1$.",
+          "mistake_zh": "在求常数项 ($b$) 时出错，错误地将 $d \times 1$ 与首项 $u_1$ 进行比较。",
+          "correction": "After finding $dn$, substitute $n=1$ into it to get $d \times 1$; then calculate the constant $b$ by $u_1 - (d \times 1)$.",
+          "correction_zh": "在得到 $dn$ 后，将 $n=1$ 代入以得到 $d \times 1$；然后通过 $u_1 - (d \times 1)$ 来计算常数 $b$。"
+        },
+        {
+          "id": "cm-03",
+          "mistake": "Forgetting to write the final answer as a formula for $u_n$ in terms of $n$, or only giving the common difference.",
+          "mistake_zh": "忘记将最终答案写成关于 $n$ 的 $u_n$ 公式，或者只给出公差。",
+          "correction": "Ensure your final answer is a complete algebraic expression for the $n^{th}$ term, typically in the form $u_n = dn + b$.",
+          "correction_zh": "确保你的最终答案是第 $n$ 项的完整代数表达式，通常形式为 $u_n = dn + b$。"
+        }
+      ]
     },
     {
       "id": "kp-3.1-02",
@@ -1638,7 +2211,34 @@
       "vocabLinks": [
         "edx-fn-seq"
       ],
-      "tier": "higher"
+      "tier": "higher",
+      "solutionMethod": {
+        "en": "Step 1: Calculate the first differences between consecutive terms in the given sequence.\nStep 2: Calculate the second differences between consecutive first differences. If these second differences are constant, the sequence is quadratic.\nStep 3: Determine the value of $a$ using the constant second difference. The constant second difference is equal to $2a$, so divide the second difference by 2 to find $a$.\nStep 4: Create a new sequence by calculating the terms of $an^2$ for $n=1, 2, 3, \\ldots$. Subtract these $an^2$ values from the corresponding terms of the original sequence to find the remainder sequence.\nStep 5: Find the $n^{th}$ term of this remainder sequence. This will be a linear sequence of the form $bn+c$. Combine $an^2$ with $bn+c$ to get the final $n^{th}$ term of the quadratic sequence.",
+        "zh": "第一步：计算给定数列中相邻项之间的一阶差。\n第二步：计算相邻一阶差之间的二阶差。如果这些二阶差是常数，则该数列是二次数列。\n第三步：利用常数二阶差确定 $a$ 的值。常数二阶差等于 $2a$，因此将二阶差除以 2 即可求出 $a$。\n第四步：通过计算 $n=1, 2, 3, \\ldots$ 时的 $an^2$ 项来创建一个新数列。从原数列的对应项中减去这些 $an^2$ 值，以得到剩余数列。\n第五步：找出这个剩余数列的第 $n$ 项公式。这会是一个 $bn+c$ 形式的线性数列。将 $an^2$ 与 $bn+c$ 结合起来，得到二次数列的最终第 $n$ 项公式。"
+      },
+      "commonMistakes": [
+        {
+          "id": "cm-01",
+          "mistake": "Students often incorrectly assume the coefficient $a$ is equal to the constant second difference, rather than $2a$.",
+          "mistake_zh": "学生经常错误地认为系数 $a$ 等于常数二阶差，而不是 $2a$。",
+          "correction": "Always remember that the constant second difference is equal to $2a$, so you must divide the second difference by 2 to find the correct value of $a$.",
+          "correction_zh": "请务必记住常数二阶差等于 $2a$，因此必须将二阶差除以 2 才能找到 $a$ 的正确值。"
+        },
+        {
+          "id": "cm-02",
+          "mistake": "Making arithmetic errors when calculating differences or when subtracting the $an^2$ terms from the original sequence.",
+          "mistake_zh": "在计算差值或从原数列中减去 $an^2$ 项时出现算术错误。",
+          "correction": "Carefully double-check all subtraction and difference calculations to ensure the first differences, second differences, and the remainder sequence are accurate.",
+          "correction_zh": "仔细核对所有减法和差值计算，确保一阶差、二阶差和剩余数列的准确性。"
+        },
+        {
+          "id": "cm-03",
+          "mistake": "Incorrectly finding the $n^{th}$ term of the linear remainder sequence, especially if its first term is zero or negative.",
+          "mistake_zh": "错误地找出线性剩余数列的第 $n$ 项公式，特别是当其首项为零或负数时。",
+          "correction": "Treat the remainder sequence as a separate linear sequence and apply the standard method for finding its $n^{th}$ term: $d n + (a_1 - d)$, where $d$ is the common difference and $a_1$ is the first term of the remainder sequence.",
+          "correction_zh": "将剩余数列视为一个独立的线性数列，并应用标准的求其第 $n$ 项公式的方法：$d n + (a_1 - d)$，其中 $d$ 是公差，$a_1$ 是剩余数列的首项。"
+        }
+      ]
     },
     {
       "id": "kp-3.2-01",
@@ -1715,7 +2315,34 @@
       "vocabLinks": [
         "edx-fn-notation"
       ],
-      "tier": "higher"
+      "tier": "higher",
+      "solutionMethod": {
+        "en": "Step 1: Identify the order of functions. For $fg(x)$, it means applying function $g(x)$ first, then applying function $f$ to the result, which is written as $f(g(x))$.\nStep 2: Replace the inner function $g(x)$ with its given algebraic expression. For example, if $g(x) = x^2 - 1$, then $f(g(x))$ becomes $f(x^2 - 1)$.\nStep 3: Substitute the entire expression from Step 2 into the outer function $f(x)$, replacing every 'x' in $f(x)$ with this expression. Always use brackets around the substituted expression to ensure correct order of operations.\nStep 4: Expand and simplify the resulting algebraic expression to obtain the final composite function.",
+        "zh": "第一步：确定函数的应用顺序。对于 $fg(x)$，这意味着先应用函数 $g(x)$，然后将函数 $f$ 应用于其结果，写作 $f(g(x))$。\n第二步：将内部函数 $g(x)$ 替换为其给定的代数表达式。例如，如果 $g(x) = x^2 - 1$，那么 $f(g(x))$ 就变成 $f(x^2 - 1)$。\n第三步：将第二步得到的整个表达式代入外部函数 $f(x)$ 中，替换 $f(x)$ 中所有的 'x'。务必使用括号将代入的表达式括起来，以确保运算顺序正确。\n第四步：展开并化简所得的代数表达式，以得到最终的复合函数。"
+      },
+      "commonMistakes": [
+        {
+          "id": "cm-01",
+          "mistake": "Students often confuse the order of composite functions, calculating $gf(x)$ instead of $fg(x)$, or assuming $fg(x)$ means $f(x) \\times g(x)$.",
+          "mistake_zh": "学生经常混淆复合函数的顺序，将 $fg(x)$ 算成 $gf(x)$，或错误地认为 $fg(x)$ 意味着 $f(x) \\times g(x)$。",
+          "correction": "Always remember that $fg(x)$ means $f(g(x))$, where the function closest to 'x' ($g$) is applied first, and it is not a multiplication of functions.",
+          "correction_zh": "务必记住 $fg(x)$ 意为 $f(g(x))$，其中离 'x' 最近的函数 ($g$) 先被应用，它不是函数的乘法。"
+        },
+        {
+          "id": "cm-02",
+          "mistake": "Failing to substitute the entire inner function expression correctly into the outer function, often by forgetting to use parentheses.",
+          "mistake_zh": "未能将完整的内部函数表达式正确代入外部函数中，常因忘记使用括号。",
+          "correction": "Always use brackets to substitute the entire inner function expression into every 'x' position of the outer function to ensure all operations are applied correctly.",
+          "correction_zh": "始终使用括号将完整的内部函数表达式代入外部函数中所有的 'x' 位置，以确保所有运算都正确应用。"
+        },
+        {
+          "id": "cm-03",
+          "mistake": "Making algebraic simplification errors such as incorrect expansion of brackets or wrong combination of like terms after substitution.",
+          "mistake_zh": "在代入后进行代数化简时犯错误，例如括号展开不正确或合并同类项错误。",
+          "correction": "Pay close attention to distributive laws when expanding brackets and meticulously combine only like terms to arrive at the correct simplified composite function.",
+          "correction_zh": "在展开括号时要特别注意分配律，并仔细合并同类项，以得到正确的简化复合函数。"
+        }
+      ]
     },
     {
       "id": "kp-3.2-02",
@@ -1785,7 +2412,34 @@
       "vocabLinks": [
         "edx-fn-notation"
       ],
-      "tier": "higher"
+      "tier": "higher",
+      "solutionMethod": {
+        "en": "Step 1: Replace $f(x)$ with $y$ in the given function equation. For example, if $f(x) = 2x+1$, you would write $y = 2x+1$.\nStep 2: Rearrange the equation you just wrote to isolate $x$ on one side of the equals sign. This means getting $x$ by itself, making $x$ the subject of the formula.\nStep 3: Once $x$ is isolated, swap every $y$ with $x$ in the rearranged equation. The resulting expression is your inverse function, denoted as $f^{-1}(x)$.",
+        "zh": "第一步：将给定的函数方程中的 $f(x)$ 替换为 $y$。例如，如果 $f(x) = 2x+1$，则写成 $y = 2x+1$。\n第二步：重新整理你写下的方程，使 $x$ 独自在一边，即让 $x$ 成为方程的主元。\n第三步：当 $x$ 被独立出来后，将重新整理后的方程中的所有 $y$ 替换为 $x$。所得的表达式就是你的反函数，记作 $f^{-1}(x)$。"
+      },
+      "commonMistakes": [
+        {
+          "id": "cm-01",
+          "mistake": "Forgetting to swap $y$ back to $x$ in the final step, leaving the inverse function in terms of $y$.",
+          "mistake_zh": "在最后一步忘记将 $y$ 换回 $x$，导致反函数仍然以 $y$ 表示。",
+          "correction": "The final expression for an inverse function, $f^{-1}(x)$, must always be written in terms of $x$.",
+          "correction_zh": "反函数 $f^{-1}(x)$ 的最终表达式必须始终以 $x$ 表示。"
+        },
+        {
+          "id": "cm-02",
+          "mistake": "Making algebraic errors when rearranging the equation to make $x$ the subject, especially when dealing with fractions or terms involving $x$ on both sides.",
+          "mistake_zh": "在重组方程使 $x$ 成为主元时出现代数错误，尤其是在处理分数或两边都有 $x$ 的项时。",
+          "correction": "Show all intermediate algebraic steps clearly and carefully, especially when collecting terms involving $x$ and factoring it out.",
+          "correction_zh": "清楚且仔细地展示所有中间代数步骤，尤其是在合并包含 $x$ 的项并将其因式分解时。"
+        },
+        {
+          "id": "cm-03",
+          "mistake": "Confusing the inverse function notation $f^{-1}(x)$ with the reciprocal of the function, $1/f(x)$.",
+          "mistake_zh": "将反函数符号 $f^{-1}(x)$ 与函数 $f(x)$ 的倒数 $1/f(x)$ 混淆。",
+          "correction": "Remember that $f^{-1}(x)$ denotes the function that reverses $f(x)$; it does not mean $f(x)$ raised to the power of $-1$.",
+          "correction_zh": "请记住，$f^{-1}(x)$ 表示撤销 $f(x)$ 的函数，它不意味着 $f(x)$ 的负一次方。"
+        }
+      ]
     },
     {
       "id": "kp-3.3-01",
@@ -1857,7 +2511,34 @@
         "edx-fn-nonlinear",
         "edx-fn-transform"
       ],
-      "tier": "both"
+      "tier": "both",
+      "solutionMethod": {
+        "en": "Step 1: Identify or calculate the gradient ($m$) of the line.\n    - If two points $(x_1, y_1)$ and $(x_2, y_2)$ are given, use the formula $m = \\frac{y_2 - y_1}{x_2 - x_1}$.\n    - If the line is parallel to another line $y=Ax+B$, then its gradient is $m=A$.\n    - If the line is perpendicular to another line $y=Ax+B$, then its gradient is $m = -\\frac{1}{A}$.\nStep 2: Find the $y$-intercept ($c$) by substituting the gradient ($m$) and the coordinates of a known point $(x, y)$ into the equation $y = mx + c$. Solve the resulting equation for $c$.\nStep 3: Write the final equation of the straight line by combining the calculated gradient ($m$) and $y$-intercept ($c$) into the form $y = mx + c$.",
+        "zh": "第一步：确定或计算直线的斜率 ($m$)。\n    - 如果给出两点 $(x_1, y_1)$ 和 $(x_2, y_2)$，使用公式 $m = \\frac{y_2 - y_1}{x_2 - x_1}$。\n    - 如果直线平行于另一条直线 $y=Ax+B$，则其斜率 $m=A$。\n    - 如果直线垂直于另一条直线 $y=Ax+B$，则其斜率 $m = -\\frac{1}{A}$。\n第二步：将斜率 ($m$) 和已知点 $(x, y)$ 的坐标代入方程 $y = mx + c$ 中，求解 $c$ 以找到 $y$ 轴截距。\n第三步：将计算出的斜率 ($m$) 和 $y$ 轴截距 ($c$) 组合成 $y = mx + c$ 的形式，写出直线的最终方程。"
+      },
+      "commonMistakes": [
+        {
+          "id": "cm-01",
+          "mistake": "Incorrectly calculating the gradient by swapping $x$ and $y$ coordinates or not maintaining consistent order of points.",
+          "mistake_zh": "错误地计算斜率，例如混淆 $x$ 和 $y$ 坐标，或在计算时没有保持点坐标的顺序一致。",
+          "correction": "Always use the formula $m = \\frac{y_2 - y_1}{x_2 - x_1}$, ensuring $y$ values are in the numerator and $x$ values in the denominator, and the order of points is consistent.",
+          "correction_zh": "始终使用公式 $m = \\frac{y_2 - y_1}{x_2 - x_1}$，确保 $y$ 值在分子，$x$ 值在分母，并且点坐标的顺序保持一致。"
+        },
+        {
+          "id": "cm-02",
+          "mistake": "When finding the gradient of a perpendicular line, students might only negate the original gradient ($m_2 = -m_1$) instead of finding the negative reciprocal ($m_2 = -\\frac{1}{m_1}$).",
+          "mistake_zh": "在求垂直线的斜率时，学生可能会只取原斜率的负值 ($m_2 = -m_1$)，而忘记取负倒数 ($m_2 = -\\frac{1}{m_1}$)。",
+          "correction": "Remember that the product of the gradients of two perpendicular lines is $-1$, so the new gradient is the negative reciprocal of the original gradient.",
+          "correction_zh": "记住两条垂直线的斜率乘积为 $-1$，因此新斜率是原斜率的负倒数。"
+        },
+        {
+          "id": "cm-03",
+          "mistake": "Making algebraic errors when substituting a point and the gradient into $y = mx + c$ to solve for the $y$-intercept ($c$).",
+          "mistake_zh": "在将点和斜率代入 $y = mx + c$ 以求解 $y$ 轴截距 ($c$) 时，出现代数错误。",
+          "correction": "Carefully substitute the values for $x$, $y$, and $m$, then perform the arithmetic and solve for $c$ step-by-step to avoid calculation mistakes.",
+          "correction_zh": "仔细代入 $x$、$y$ 和 $m$ 的值，然后逐步进行算术运算并求解 $c$，以避免计算错误。"
+        }
+      ]
     },
     {
       "id": "kp-3.4-01",
@@ -1927,7 +2608,34 @@
       "vocabLinks": [
         "edx-fn-calculus"
       ],
-      "tier": "higher"
+      "tier": "higher",
+      "solutionMethod": {
+        "en": "Step 1: Rewrite all terms in the function so they are in the form $ax^n$. This includes converting fractions (e.g., $\\frac{1}{x^2}$ becomes $x^{-2}$) and roots (e.g., $\\sqrt{x}$ becomes $x^{\\frac{1}{2}}$) into index form.\nStep 2: For each term $ax^n$, apply the differentiation rule: multiply the coefficient $a$ by the power $n$, and then subtract 1 from the power ($anx^{n-1}$). If the term is a constant (e.g., $5$), its derivative is $0$.\nStep 3: Combine the differentiated terms to obtain the final expression for the derivative $\\frac{dy}{dx}$. Ensure to simplify any negative exponents back to fractions if required by the question (e.g., $x^{-2}$ becomes $\\frac{1}{x^2}$).",
+        "zh": "第一步：将函数中的所有项改写成 $ax^n$ 的形式。这包括将分数（例如 $\\frac{1}{x^2}$ 变为 $x^{-2}$）和根号（例如 $\\sqrt{x}$ 变为 $x^{\\frac{1}{2}}$）转换为指数形式。\n第二步：对于每一项 $ax^n$，应用微分法则：将系数 $a$ 乘以指数 $n$，然后将指数减去 1 ($anx^{n-1}$)。如果该项是常数（例如 $5$），其导数为 $0$。\n第三步：将所有微分后的项组合起来，得到最终的导数 $\\frac{dy}{dx}$ 表达式。如果题目要求，确保将负指数项简化回分数形式（例如 $x^{-2}$ 变为 $\\frac{1}{x^2}$）。"
+      },
+      "commonMistakes": [
+        {
+          "id": "cm-01",
+          "mistake": "Failing to convert terms with fractions or roots into index form ($ax^n$) before differentiating.",
+          "mistake_zh": "在微分之前，未能将带有分数或根号的项转换为指数形式 ($ax^n$)。",
+          "correction": "Always rewrite all terms (e.g., $\\frac{1}{x^3} = x^{-3}$, $\\sqrt{x} = x^{\\frac{1}{2}}$) into the $ax^n$ format first to correctly apply the power rule.",
+          "correction_zh": "始终先将所有项（例如 $\\frac{1}{x^3} = x^{-3}$，$\\sqrt{x} = x^{\\frac{1}{2}}$）改写为 $ax^n$ 形式，以便正确应用幂法则。"
+        },
+        {
+          "id": "cm-02",
+          "mistake": "Making errors when subtracting 1 from the power, especially with negative or fractional exponents.",
+          "mistake_zh": "在指数减 1 时出错，尤其是在负指数或分数指数的情况下。",
+          "correction": "Carefully perform the subtraction for the exponent, remembering that for $x^{-1}$, the new power is $-1-1 = -2$, and for $x^{\\frac{1}{2}}$, the new power is $\\frac{1}{2}-1 = -\\frac{1}{2}$.",
+          "correction_zh": "仔细进行指数的减法运算，记住对于 $x^{-1}$，新指数是 $-1-1 = -2$；对于 $x^{\\frac{1}{2}}$，新指数是 $\\frac{1}{2}-1 = -\\frac{1}{2}$。"
+        },
+        {
+          "id": "cm-03",
+          "mistake": "Incorrectly differentiating constant terms or simple 'x' terms.",
+          "mistake_zh": "错误地对常数项或简单的 'x' 项进行微分。",
+          "correction": "Remember that the derivative of any constant (e.g., $5$, $-7$) is $0$, and the derivative of $x$ (which is $x^1$) is $1$.",
+          "correction_zh": "请记住，任何常数（例如 $5$, $-7$）的导数都是 $0$，而 $x$（即 $x^1$）的导数是 $1$。"
+        }
+      ]
     },
     {
       "id": "kp-3.4-02",
@@ -1997,7 +2705,34 @@
       "vocabLinks": [
         "edx-fn-calculus"
       ],
-      "tier": "higher"
+      "tier": "higher",
+      "solutionMethod": {
+        "en": "Step 1: Differentiate the given equation $y = f(x)$ to find the expression for the gradient, $\\frac{dy}{dx}$.\nStep 2: Set the derivative $\\frac{dy}{dx}$ equal to zero and solve the resulting equation to find all possible $x$-coordinates for the stationary points.\nStep 3: Substitute each $x$-coordinate found in Step 2 back into the *original* equation of the curve, $y = f(x)$, to find its corresponding $y$-coordinate, thus determining the full coordinates $(x, y)$ of each stationary point.",
+        "zh": "第一步：对给定方程 $y = f(x)$ 求导，得到斜率的表达式 $\\frac{dy}{dx}$。\n第二步：将导数 $\\frac{dy}{dx}$ 设为零，并解出方程，以找到驻点的所有可能 $x$ 坐标。\n第三步：将第二步中找到的每个 $x$ 坐标代回曲线的 *原始* 方程 $y = f(x)$，以找出其对应的 $y$ 坐标，从而确定每个驻点的完整坐标 $(x, y)$。"
+      },
+      "commonMistakes": [
+        {
+          "id": "cm-01",
+          "mistake": "Substituting the $x$-coordinates back into the derivative $\\frac{dy}{dx}$ instead of the original function $y=f(x)$ to find the $y$-coordinates.",
+          "mistake_zh": "在找到 $x$ 坐标后，将其代入导数 $\\frac{dy}{dx}$ 而非原函数 $y=f(x)$ 中，以求 $y$ 坐标。",
+          "correction": "Always substitute the $x$-coordinates back into the *original equation* of the curve, $y=f(x)$, to correctly find the $y$-coordinates of the points on the curve.",
+          "correction_zh": "务必将 $x$ 坐标代回曲线的 *原始方程* $y=f(x)$ 中，才能正确找到曲线上点的 $y$ 坐标。"
+        },
+        {
+          "id": "cm-02",
+          "mistake": "Only providing the $x$-coordinates for the stationary points, forgetting that the question asks for \"coordinates.\"",
+          "mistake_zh": "只提供了驻点的 $x$ 坐标，忘记了题目要求的是“坐标”。",
+          "correction": "Remember that stationary points are specific locations on the curve, so they require both an $x$-coordinate and a $y$-coordinate, which should be presented as $(x, y)$.",
+          "correction_zh": "请记住驻点是曲线上具体的点，因此需要 $x$ 坐标和 $y$ 坐标，并应以 $(x, y)$ 的形式呈现。"
+        },
+        {
+          "id": "cm-03",
+          "mistake": "Incorrectly solving the equation $\\frac{dy}{dx} = 0$, for example, by dividing by a variable and missing a valid solution for $x$.",
+          "mistake_zh": "错误地解方程 $\\frac{dy}{dx} = 0$，例如，通过除以变量而遗漏了 $x$ 的有效解。",
+          "correction": "When solving polynomial equations for $x$, always factorize or use appropriate algebraic methods to ensure all possible solutions for $x$ are found, rather than dividing by a variable.",
+          "correction_zh": "在解多项式方程的 $x$ 值时，务必使用因式分解或其他适当的代数方法，以确保找到 $x$ 的所有可能解，而不是直接除以变量。"
+        }
+      ]
     },
     {
       "id": "kp-4.1-01",
@@ -2069,7 +2804,34 @@
         "edx-geo-parallel",
         "edx-geo-shapes"
       ],
-      "tier": "both"
+      "tier": "both",
+      "solutionMethod": {
+        "en": "Step 1: Carefully examine the diagram or description to identify the type of lines or shapes involved (e.g., straight lines, intersecting lines, parallel lines, triangles).\nStep 2: Locate the known angles and the unknown angle(s) you need to find. Mark them on the diagram if helpful.\nStep 3: Determine which angle property applies to the situation. For example, if you see a 'Z' shape with parallel lines, think 'alternate angles'. If it's a triangle, think 'sum of angles in a triangle'.\nStep 4: Use the identified property to set up an equation or perform a direct calculation to find the unknown angle. Remember the specific rules for each property (e.g., sum to $180^\\circ$, equal).\nStep 5: State your final answer, including the angle measure, and briefly mention the geometric reason used (e.g., 'Alternate angles are equal', 'Angles on a straight line sum to $180^\\circ$').",
+        "zh": "第一步：仔细审视图表或描述，识别其中涉及的直线或图形类型（例如，直线、相交线、平行线、三角形）。\n第二步：找出已知的角度以及你需要求解的未知角度。如果图表允许，可以在图上做标记。\n第三步：根据具体情况确定适用哪种角度性质。例如，如果看到平行线间的“Z”形，就考虑“内错角”；如果是三角形，就考虑“三角形内角和”。\n第四步：利用确定的性质建立方程或直接计算未知角度。记住每种性质的具体规则（例如，和为 $180^\\circ$，相等）。\n第五步：给出最终答案，包括角度的度数，并简要说明所使用的几何理由（例如，“内错角相等”，“直线上角的和为 $180^\\circ$”）。"
+      },
+      "commonMistakes": [
+        {
+          "id": "cm-01",
+          "mistake": "Confusing the properties of parallel line angles, such as assuming co-interior angles are equal instead of summing to $180^\\circ$.",
+          "mistake_zh": "混淆平行线角度的性质，例如，误认为同旁内角相等，而不是和为 $180^\\circ$。",
+          "correction": "Clearly identify the 'Z' (alternate), 'F' (corresponding), and 'C' (co-interior) shapes formed by parallel lines and remember their specific rules: alternate and corresponding angles are equal, while co-interior angles sum to $180^\\circ$.",
+          "correction_zh": "清晰地识别平行线形成的“Z”形（内错角）、“F”形（同位角）和“C”形（同旁内角），并记住它们的具体规则：内错角和同位角相等，而同旁内角之和为 $180^\\circ$。"
+        },
+        {
+          "id": "cm-02",
+          "mistake": "Applying parallel line angle properties (alternate, corresponding, co-interior) when the lines are not explicitly stated or marked as parallel.",
+          "mistake_zh": "在没有明确说明或标记为平行线的情况下，错误地应用平行线角度性质（内错角、同位角、同旁内角）。",
+          "correction": "Always check for parallel line markings (arrows on the lines) or explicit statements in the question before using parallel line angle theorems; if lines are not parallel, these properties do not apply.",
+          "correction_zh": "在使用平行线角定理之前，务必检查问题中是否有平行线标记（线上的箭头）或明确的说明；如果直线不平行，则这些性质不适用。"
+        },
+        {
+          "id": "cm-03",
+          "mistake": "Incorrectly applying the exterior angle theorem of a triangle, often by adding an adjacent interior angle or all three interior angles.",
+          "mistake_zh": "错误地应用三角形外角定理，经常将外角与相邻内角或所有三个内角相加。",
+          "correction": "Remember that an exterior angle of a triangle is equal to the sum of the *two opposite interior angles*, not the sum of an adjacent interior angle and an opposite one.",
+          "correction_zh": "请记住，三角形的一个外角等于其*两个不相邻的内角之和*，而不是与相邻内角和另一个内角之和。"
+        }
+      ]
     },
     {
       "id": "kp-4.2-01",
@@ -2140,7 +2902,34 @@
         "edx-geo-shapes",
         "edx-geo-polygons"
       ],
-      "tier": "both"
+      "tier": "both",
+      "solutionMethod": {
+        "en": "Step 1: Identify if the problem specifies a *regular* polygon. Then, determine if you are given an *interior angle* or an *exterior angle*.\nStep 2: If an *interior angle* is given, first calculate the *exterior angle* using the relationship: Exterior angle $= 180^\\circ - \\text{Interior angle}$. If an exterior angle is already given, proceed to the next step.\nStep 3: Use the formula for the exterior angle of a *regular* polygon: Exterior angle $= \\frac{360^\\circ}{n}$, where $n$ is the number of sides.\nStep 4: Substitute the known exterior angle into the formula and solve the equation for $n$. The result will be the number of sides.",
+        "zh": "第一步：确定问题是否指定了**正**多边形。然后，确定是给出了**内角**还是**外角**。\n第二步：如果给出了**内角**，首先使用关系式“外角 $= 180^\\circ - \\text{内角}$”计算**外角**。如果已经给出了外角，则继续下一步。\n第三步：使用**正**多边形外角的公式：外角 $= \\frac{360^\\circ}{n}$，其中 $n$ 是边数。\n第四步：将已知的外角代入公式，并解方程求出 $n$。结果就是边数。"
+      },
+      "commonMistakes": [
+        {
+          "id": "cm-01",
+          "mistake": "Students often directly use an interior angle value in the exterior angle formula $\\frac{360^\\circ}{n}$ when trying to find the number of sides $n$.",
+          "mistake_zh": "学生在尝试求边数 $n$ 时，常直接将内角值代入外角公式 $\\frac{360^\\circ}{n}$。",
+          "correction": "Always convert the interior angle to its corresponding exterior angle using the relationship Exterior angle $= 180^\\circ - \\text{Interior angle}$ before applying the exterior angle formula.",
+          "correction_zh": "在应用外角公式之前，务必使用关系式“外角 $= 180^\\circ - \\text{内角}$”将内角转换为对应的外角。"
+        },
+        {
+          "id": "cm-02",
+          "mistake": "Confusing the sum of interior angles with a single interior angle for a regular polygon, for instance, setting $(n-2) \\times 180^\\circ$ equal to one given interior angle.",
+          "mistake_zh": "混淆正多边形的内角和与单个内角，例如将 $(n-2) \\times 180^\\circ$ 等于一个给定的内角值。",
+          "correction": "Remember that $(n-2) \\times 180^\\circ$ is the *total sum* of all interior angles, so for a *regular* polygon, a single interior angle is $\\frac{(n-2) \\times 180^\\circ}{n}$.",
+          "correction_zh": "请记住 $(n-2) \\times 180^\\circ$ 是所有内角的**总和**，因此对于**正**多边形，每个内角是 $\\frac{(n-2) \\times 180^\\circ}{n}$。"
+        },
+        {
+          "id": "cm-03",
+          "mistake": "Making algebraic errors when rearranging the formula to solve for $n$, especially when $n$ is initially in the denominator.",
+          "mistake_zh": "在重新排列公式以求解 $n$ 时犯代数错误，尤其当 $n$ 最初在分母位置时。",
+          "correction": "Practice basic algebraic rearrangement; if $n$ is in the denominator (e.g., in $\\frac{360^\\circ}{n}$), first multiply both sides of the equation by $n$ to bring it to the numerator before isolating it.",
+          "correction_zh": "练习基本的代数重排；如果 $n$ 在分母中（例如在 $\\frac{360^\\circ}{n}$ 中），请先将等式两边都乘以 $n$，将其移到分子位置，然后再分离 $n$。"
+        }
+      ]
     },
     {
       "id": "kp-4.3-01",
@@ -2210,7 +2999,27 @@
       "vocabLinks": [
         "edx-geo-polygons"
       ],
-      "tier": "both"
+      "tier": "both",
+      "solutionMethod": {
+        "en": "Step 1: To find lines of symmetry, imagine folding the shape in half along a straight line. If the two halves match up perfectly, that line is a line of symmetry. Draw and count all such possible lines.\nStep 2: To find rotational symmetry, locate the center of the shape. Imagine rotating the shape around this center point.\nStep 3: Count how many distinct positions the shape looks exactly the same as its original orientation during a full $360^\\circ$ rotation. This count is the order of rotational symmetry.",
+        "zh": "第一步：要找出对称轴，想象沿着一条直线将图形对折。如果两半能完全重合，这条直线就是对称轴。画出并数清所有可能的对称轴。\n第二步：要找出旋转对称，确定图形的中心点。想象绕着这个中心点旋转图形。\n第三步：在 $360^\\circ$ 的完整旋转过程中，数一数图形有多少次看起来与它最初的方向完全相同。这个次数就是旋转对称的阶数。"
+      },
+      "commonMistakes": [
+        {
+          "id": "cm-01",
+          "mistake": "Students often miss some lines of symmetry, especially diagonal ones in shapes like rectangles (which have none) or rhombuses (which have two), or lines through midpoints/vertices in irregular shapes.",
+          "mistake_zh": "学生经常会遗漏一些对称轴，尤其是在矩形（没有对角线对称轴）或菱形（有两条对角线对称轴）中，或不规则图形中通过中点/顶点的对称轴。",
+          "correction": "Systematically check for lines of symmetry by considering folding across horizontal, vertical, and diagonal lines, or lines connecting midpoints or vertices of the shape.",
+          "correction_zh": "系统地检查对称轴，考虑沿水平线、垂直线和对角线折叠，或沿连接图形中点或顶点的直线折叠。"
+        },
+        {
+          "id": "cm-02",
+          "mistake": "Students might miscount the order of rotational symmetry, sometimes missing a valid matching position or incorrectly stating that a shape has an order of 0 when it always has at least order 1 (at $360^\\circ$).",
+          "mistake_zh": "学生可能会错误地计算旋转对称的阶数，有时会遗漏一个有效的匹配位置，或者错误地认为一个图形的阶数为 0，而实际上所有图形至少有 1 阶（在 $360^\\circ$ 旋转时）。",
+          "correction": "Mentally or physically rotate the shape $360^\\circ$, counting each unique position where it perfectly matches the original, including the initial $0^\\circ$ position (which is also the $360^\\circ$ position).",
+          "correction_zh": "在脑海中或实际旋转图形 $360^\\circ$，数出每次与原始图形完全匹配的独特位置，包括初始的 $0^\\circ$ 位置（也是 $360^\\circ$ 位置）。"
+        }
+      ]
     },
     {
       "id": "kp-4.4-01",
@@ -2280,7 +3089,34 @@
       "vocabLinks": [
         "edx-geo-measures"
       ],
-      "tier": "both"
+      "tier": "both",
+      "solutionMethod": {
+        "en": "Step 1: Identify the given bearing between two points, for example, the bearing of point B from point A.\nStep 2: Determine if the given bearing is less than or greater than $180^\\circ$.\nStep 3: If the given bearing is less than $180^\\circ$, add $180^\\circ$ to it to find the back bearing (bearing of A from B).\nStep 4: If the given bearing is greater than $180^\\circ$, subtract $180^\\circ$ from it to find the back bearing (bearing of A from B).\nStep 5: Ensure the final calculated bearing is written as a three-digit number, adding a leading zero if necessary (e.g., $045^\\circ$ instead of $45^\\circ$).",
+        "zh": "第一步：识别给定的两点之间的方位角，例如，点 B 相对于点 A 的方位角。\n第二步：判断给定的方位角是小于还是大于 $180^\\circ$。\n第三步：如果给定的方位角小于 $180^\\circ$，则加上 $180^\\circ$ 以求反向方位角（点 A 相对于点 B 的方位角）。\n第四步：如果给定的方位角大于 $180^\\circ$，则减去 $180^\\circ$ 以求反向方位角（点 A 相对于点 B 的方位角）。\n第五步：确保最终计算出的方位角写成三位数字，必要时补上前导零（例如，$045^\\circ$ 而非 $45^\\circ$）。"
+      },
+      "commonMistakes": [
+        {
+          "id": "cm-01",
+          "mistake": "Measuring bearings counter-clockwise or from a reference line other than North.",
+          "mistake_zh": "逆时针测量方位角或从非正北方向的线开始测量。",
+          "correction": "Always measure bearings clockwise from the North line ($000^\\circ$) at the point of origin.",
+          "correction_zh": "始终从起始点的正北方向（$000^\\circ$）顺时针测量方位角。"
+        },
+        {
+          "id": "cm-02",
+          "mistake": "Not writing bearings as three digits (e.g., $45^\\circ$ instead of $045^\\circ$).",
+          "mistake_zh": "方位角没有写成三位数字（例如，写 $45^\\circ$ 而不是 $045^\\circ$）。",
+          "correction": "Bearings must always be written as three-digit numbers, using a leading zero if the angle is less than $100^\\circ$.",
+          "correction_zh": "方位角必须始终写成三位数字，如果角度小于 $100^\\circ$ 则补上前导零。"
+        },
+        {
+          "id": "cm-03",
+          "mistake": "Incorrectly applying the $180^\\circ$ rule when calculating back bearings, for example, adding $180^\\circ$ when it should be subtracted.",
+          "mistake_zh": "在计算反向方位角时，错误地运用 $180^\\circ$ 规则，例如，在应该减去 $180^\\circ$ 时却加上。",
+          "correction": "Remember to add $180^\\circ$ if the original bearing is less than $180^\\circ$, and subtract $180^\\circ$ if it's greater than $180^\\circ$.",
+          "correction_zh": "记住，如果原始方位角小于 $180^\\circ$，则加上 $180^\\circ$；如果大于 $180^\\circ$，则减去 $180^\\circ$ 来求反向方位角。"
+        }
+      ]
     },
     {
       "id": "kp-4.5-01",
@@ -2350,7 +3186,34 @@
       "vocabLinks": [
         "edx-geo-construct"
       ],
-      "tier": "both"
+      "tier": "both",
+      "solutionMethod": {
+        "en": "Step 1: Open your compass to a width that is greater than half the distance between the two points you want to bisect.\nStep 2: Place the compass needle on the first point and draw an arc above and below the imaginary line segment connecting the two points.\nStep 3: Without changing the compass width, place the compass needle on the second point and draw another pair of arcs that intersect the first two arcs you drew.\nStep 4: Use a ruler to draw a straight line connecting the two points where the pairs of arcs intersect. This line is the perpendicular bisector and represents the locus of points equidistant from the two original points.",
+        "zh": "第一步：将圆规张开，使其宽度大于要平分的两点之间距离的一半。\n第二步：将圆规尖端置于第一个点上，在该两点连线假想线段的上方和下方各画一条弧线。\n第三步：保持圆规宽度不变，将圆规尖端置于第二个点上，再画一对弧线，使其与您之前画的两条弧线相交。\n第四步：使用直尺连接两对弧线的交点，画一条直线。这条直线就是垂直平分线，代表了到原始两点距离相等的点的轨迹。"
+      },
+      "commonMistakes": [
+        {
+          "id": "cm-01",
+          "mistake": "Failing to leave all construction arcs visible, which are essential for demonstrating the method used and for grading.",
+          "mistake_zh": "未能保留所有作图弧线可见，这些弧线对于展示所用方法和评分至关重要。",
+          "correction": "Always ensure all arcs and lines used to create the construction are clearly visible as part of your final answer.",
+          "correction_zh": "始终确保用于作图的所有弧线和直线都清晰可见，作为最终答案的一部分。"
+        },
+        {
+          "id": "cm-02",
+          "mistake": "Using an incorrect compass width for bisector constructions, such as less than half the distance for a perpendicular bisector, or changing the width during an angle bisector construction.",
+          "mistake_zh": "在作图平分线时使用错误的圆规宽度，例如对于垂直平分线宽度小于距离的一半，或者在作图角平分线时改变宽度。",
+          "correction": "For a perpendicular bisector, ensure the compass width is always set to *more than half* the distance; for an angle bisector, keep the compass width consistent between steps.",
+          "correction_zh": "对于垂直平分线，确保圆规宽度始终设置得*大于一半*的距离；对于角平分线，在不同步骤之间保持圆规宽度一致。"
+        },
+        {
+          "id": "cm-03",
+          "mistake": "Incorrectly drawing the locus of points at a fixed distance from a *line segment*, often forgetting the semi-circular ends.",
+          "mistake_zh": "错误地画出到*线段*固定距离的点的轨迹，经常忘记两端的半圆形。",
+          "correction": "Remember that the locus of points at a fixed distance from a line segment includes two parallel lines AND two semi-circles at the ends, centered at the segment's endpoints.",
+          "correction_zh": "请记住，到线段固定距离的点的轨迹包括两条平行线以及在两端以线段端点为圆心的两个半圆。"
+        }
+      ]
     },
     {
       "id": "kp-4.6-01",
@@ -2421,7 +3284,34 @@
         "edx-geo-circles",
         "edx-geo-circle-thm"
       ],
-      "tier": "both"
+      "tier": "both",
+      "solutionMethod": {
+        "en": "Step 1: Carefully examine the diagram to identify all given information, such as the center of the circle, radii, diameters, chords, tangents, and any known angles or side lengths.\nStep 2: Identify the angle or line segment you need to find. Then, recall the different circle theorems and look for patterns in the diagram that match these theorems (e.g., angles subtended by the same arc, angles in a semi-circle, angles in a cyclic quadrilateral, alternate segment theorem).\nStep 3: Apply the relevant circle theorem(s) to calculate the unknown value. You might need to use basic angle facts (like angles in a triangle summing to $180^\\circ$ or angles on a straight line summing to $180^\\circ$) in combination with circle theorems.\nStep 4: State your final answer clearly and, crucially, provide the exact name or description of each circle theorem used as your reason for each step of your calculation.",
+        "zh": "第一步：仔细观察图表，识别所有已知信息，例如圆心、半径、直径、弦、切线以及任何已知的角度或边长。\n第二步：确定你需要找到的角度或线段。然后，回顾不同的圆的几何定理，并在图表中寻找与这些定理相匹配的模式（例如，同弧所对的角、半圆上的角、圆内接四边形、弦切角定理）。\n第三步：应用相关的圆的几何定理来计算未知值。你可能需要将基本的角度事实（例如三角形内角和为 $180^\\circ$ 或直线上角为 $180^\\circ$）与圆的定理结合使用。\n第四步：清晰地写出你的最终答案，并且至关重要的是，为计算的每一步提供所使用的圆的几何定理的确切名称或描述作为理由。"
+      },
+      "commonMistakes": [
+        {
+          "id": "cm-01",
+          "mistake": "Confusing the \"angle at center is twice the angle at circumference\" theorem by incorrectly identifying the center or circumference angle, or applying the rule to angles subtended by different arcs.",
+          "mistake_zh": "在“圆心角是圆周角的两倍”定理中，错误地识别圆心角或圆周角，或将其应用于不同弧所对的角。",
+          "correction": "Always ensure that both the angle at the center and the angle at the circumference are subtended by the *exact same arc*. The vertex of the center angle is always at the circle's center ($O$), and the vertex of the circumference angle is on the circumference.",
+          "correction_zh": "始终确保圆心角和圆周角都由 *完全相同的弧* 所对。圆心角的顶点总是在圆心 ($O$)，而圆周角的顶点总是在圆周上。"
+        },
+        {
+          "id": "cm-02",
+          "mistake": "Forgetting to state the specific reason (circle theorem) for each step when calculating angles, which can lead to loss of marks in exams.",
+          "mistake_zh": "在计算角度时，忘记为每一步说明具体的理由（圆的几何定理），这可能导致考试失分。",
+          "correction": "Make it a habit to explicitly write down the name or description of the circle theorem you used for every angle calculation, as this is a standard requirement in IGCSE/GCSE mathematics exams.",
+          "correction_zh": "养成习惯，在每次角度计算后，明确写出所使用的圆的几何定理的名称或描述，因为这是IGCSE/GCSE数学考试的标准要求。"
+        },
+        {
+          "id": "cm-03",
+          "mistake": "Incorrectly identifying a cyclic quadrilateral by assuming all vertices are on the circumference when they are not, or misapplying the alternate segment theorem.",
+          "mistake_zh": "错误地将一个四边形视为圆内接四边形，因为它并非所有顶点都在圆周上，或错误地应用弦切角定理。",
+          "correction": "A cyclic quadrilateral *must* have all four vertices lying on the circumference of the circle. For the alternate segment theorem, carefully identify the chord, the tangent, and the angle in the segment *opposite* to the angle between the tangent and the chord.",
+          "correction_zh": "圆内接四边形 *必须* 具有所有四个顶点都位于圆周上。对于弦切角定理，请仔细识别弦、切线，以及与弦和切线之间夹角 *相对* 的弓形中的角。"
+        }
+      ]
     },
     {
       "id": "kp-4.7-01",
@@ -2491,7 +3381,34 @@
       "vocabLinks": [
         "edx-geo-reasoning"
       ],
-      "tier": "both"
+      "tier": "both",
+      "solutionMethod": {
+        "en": "Step 1: Identify the two triangles you need to prove congruent. Carefully look at the diagram and the information given in the problem.\nStep 2: List at least three pairs of corresponding sides or angles that are equal between the two triangles. For each pair, state a clear reason for its equality (e.g., given in the problem, common side, vertically opposite angles, alternate angles).\nStep 3: Check if these three equal pairs satisfy one of the four congruence criteria: SSS (Side-Side-Side), SAS (Side-Angle-Side), ASA (Angle-Side-Angle), or RHS (Right-angle, Hypotenuse, Side).\nStep 4: Write down the congruence statement, clearly indicating the correct correspondence of vertices (e.g., $\\triangle ABC \\cong \\triangle DEF$), and state the specific congruence criterion you used.",
+        "zh": "第一步：确定你需要证明全等的两个三角形。仔细观察图示和题目中给出的信息。\n第二步：列出两个三角形中至少三对相等的对应边或角。对于每一对，说明其相等的明确理由（例如，题目中给出、公共边、对顶角、内错角）。\n第三步：检查这三对相等的部分是否满足四个全等判定标准之一：SSS（边边边）、SAS（边角边）、ASA（角边角）或 RHS（直角、斜边、边）。\n第四步：写下全等声明，明确指出顶点的正确对应关系（例如，$\\triangle ABC \\cong \\triangle DEF$），并说明你所使用的具体全等判定标准。"
+      },
+      "commonMistakes": [
+        {
+          "id": "cm-01",
+          "mistake": "Confusing similar triangles with congruent triangles, often incorrectly using AAA (Angle-Angle-Angle) as a criterion for congruence.",
+          "mistake_zh": "将相似三角形与全等三角形混淆，经常错误地将 AAA（角角角）用作全等判定标准。",
+          "correction": "Remember that AAA proves triangles are *similar* (same shape) but not necessarily *congruent* (same shape and size); congruence requires at least one pair of equal corresponding sides to establish size equality.",
+          "correction_zh": "请记住，AAA 证明三角形是相似的（形状相同）但不一定是全等的（形状和大小都相同）；全等需要至少一对相等的对应边来确定大小相等。"
+        },
+        {
+          "id": "cm-02",
+          "mistake": "Incorrectly applying SAS by using an angle that is not *included* between the two sides, often mistaking it for SSA (Side-Side-Angle), which is not a general congruence criterion.",
+          "mistake_zh": "错误地应用 SAS，使用了不夹在两边之间的角，常将其与 SSA（边边角）混淆，而 SSA 并非通用的全等判定标准。",
+          "correction": "For SAS, the angle *must* be the included angle (the angle formed by the two given sides); always verify that the angle you use is positioned between the two sides.",
+          "correction_zh": "对于 SAS，该角*必须*是夹角（由两条已知边形成的角）；务必验证你所使用的角是否位于两条边之间。"
+        },
+        {
+          "id": "cm-03",
+          "mistake": "Forgetting to provide clear reasons for each statement of equality (e.g., equal sides or angles) when presenting a proof of congruence.",
+          "mistake_zh": "在提出全等证明时，忘记为每个相等陈述（例如，相等的边或角）提供明确的理由。",
+          "correction": "Every piece of information used in the proof must be justified with a reason, such as \"Given\" (已知), \"Common side\" (公共边), \"Vertically opposite angles\" (对顶角), or another valid geometric theorem.",
+          "correction_zh": "证明中使用的每一条信息都必须有理由支持，例如“已知”（Given）、“公共边”（Common side）、“对顶角”（Vertically opposite angles）或其他有效的几何定理。"
+        }
+      ]
     },
     {
       "id": "kp-4.8-01",
@@ -2568,7 +3485,34 @@
       "vocabLinks": [
         "edx-geo-trig"
       ],
-      "tier": "both"
+      "tier": "both",
+      "solutionMethod": {
+        "en": "Step 1: Carefully examine the right-angled triangle and the problem statement to identify which sides and angles are given, and which unknown value you need to find.\nStep 2: Choose the correct formula. If you know two sides and need the third side, use Pythagoras' Theorem ($a^2 + b^2 = c^2$). If you know an angle and a side, or two sides and need an angle, use SOH CAH TOA.\nStep 3: Label the sides of the triangle. For trigonometry, identify the Opposite, Adjacent, and Hypotenuse sides relative to the angle involved. For Pythagoras, identify the hypotenuse ($c$).\nStep 4: Substitute the known values into your chosen formula and solve for the unknown. If finding an angle, remember to use inverse trigonometric functions (e.g., $\\sin^{-1}$, $\\cos^{-1}$, $\\tan^{-1}$).\nStep 5: Write down your final answer with appropriate units and round it to the specified degree of accuracy if necessary.",
+        "zh": "第一步：仔细检查直角三角形和问题描述，确定已知哪些边和角，以及需要找到哪个未知值。\n第二步：选择正确的公式。如果你知道两条边并需要找到第三条边，使用勾股定理 ($a^2 + b^2 = c^2$)。如果你知道一个角和一条边，或两条边并需要找到一个角，使用三角函数比（SOH CAH TOA）。\n第三步：标记三角形的边。对于三角函数，根据涉及的角度，标记出对边、邻边和斜边。对于勾股定理，只需识别斜边 ($c$)。\n第四步：将已知值代入所选公式并解出未知数。如果要求角度，请记住使用反三角函数（例如，$\\sin^{-1}$、$\\cos^{-1}$、$\\tan^{-1}$）。\n第五步：写下你的最终答案，并附上适当的单位，如果需要，将其四舍五入到指定的精度。"
+      },
+      "commonMistakes": [
+        {
+          "id": "cm-01",
+          "mistake": "Incorrectly identifying the hypotenuse in Pythagoras' Theorem or confusing which side to subtract when finding a shorter leg.",
+          "mistake_zh": "在勾股定理中错误地识别斜边，或者在计算直角边时混淆了减数和被减数。",
+          "correction": "Always ensure the hypotenuse is the side opposite the right angle, and remember that when finding a shorter side, you must subtract the square of the known leg from the square of the hypotenuse (e.g., $a^2 = c^2 - b^2$).",
+          "correction_zh": "始终确保斜边是直角所对的边，并且请记住，在寻找较短的直角边时，必须用斜边的平方减去已知直角边的平方（例如，$a^2 = c^2 - b^2$）。"
+        },
+        {
+          "id": "cm-02",
+          "mistake": "Mislabeling the Opposite, Adjacent, or Hypotenuse sides when setting up a trigonometric ratio.",
+          "mistake_zh": "在设置三角函数比时，错误地标记对边、邻边或斜边。",
+          "correction": "First, identify the Hypotenuse (always opposite the right angle). Then, relative to the angle you are working with, identify the Opposite side (across from it) and the Adjacent side (next to it, but not the hypotenuse).",
+          "correction_zh": "首先，识别斜边（始终是直角所对的边）。然后，根据你正在使用的角度，识别对边（在它对面）和邻边（在它旁边，但不是斜边）。"
+        },
+        {
+          "id": "cm-03",
+          "mistake": "Using the wrong trigonometric ratio (sin, cos, tan) or forgetting to use the inverse trigonometric function when finding an angle.",
+          "mistake_zh": "使用了错误的三角函数比（sin, cos, tan），或者在计算角度时忘记使用反三角函数。",
+          "correction": "Use SOH CAH TOA to select the ratio that connects the two sides (or side and angle) you have or need, and always use $\\sin^{-1}$, $\\cos^{-1}$, or $\\tan^{-1}$ when the goal is to find an angle.",
+          "correction_zh": "使用 SOH CAH TOA 来选择连接你拥有或需要的两条边（或边和角）的三角函数比，并且当目标是找到一个角度时，务必使用 $\\sin^{-1}$、$\\cos^{-1}$ 或 $\\tan^{-1}$。"
+        }
+      ]
     },
     {
       "id": "kp-4.8-02",
@@ -2638,7 +3582,34 @@
       "vocabLinks": [
         "edx-geo-trig"
       ],
-      "tier": "higher"
+      "tier": "higher",
+      "solutionMethod": {
+        "en": "Step 1: Draw the triangle and label its vertices (A, B, C) and opposite sides (a, b, c) with all the given values.\nStep 2: Determine which rule to use:\n    - Use the Sine Rule (e.g., $\\frac{a}{\\sin A} = \\frac{b}{\\sin B}$) if you have a known side-angle pair and one other side or angle to find (AAS, ASA, SSA).\n    - Use the Cosine Rule (e.g., $a^2 = b^2 + c^2 - 2bc \\cos A$) if you have two sides and the included angle (SAS) to find a side, or all three sides (SSS) to find an angle.\nStep 3: Write down the specific formula for the chosen rule that includes the unknown variable you need to find.\nStep 4: Substitute all the known numerical values into the formula from Step 3.\nStep 5: Rearrange the formula if necessary and use a calculator to compute the unknown value, rounding your final answer to the specified precision (e.g., 3 significant figures).",
+        "zh": "第一步：画出三角形，并用所有已知值标记其顶点（A、B、C）和对边（a、b、c）。\n第二步：确定使用哪个定理：\n    - 如果你已知一组对边对角以及另一个要查找的边或角（角角边 AAS、角边角 ASA、边边角 SSA），请使用正弦定理（例如，$\\frac{a}{\\sin A} = \\frac{b}{\\sin B}$）。\n    - 如果你已知两条边和它们的夹角（SAS）来求边，或者已知三条边（SSS）来求角，请使用余弦定理（例如，$a^2 = b^2 + c^2 - 2bc \\cos A$）。\n第三步：写下所选定理中包含你需要查找的未知变量的具体公式。\n第四步：将所有已知数值代入第三步的公式中。\n第五步：如有必要，重新整理公式并使用计算器计算未知值，将最终答案四舍五入到指定精度（例如，3位有效数字）。"
+      },
+      "commonMistakes": [
+        {
+          "id": "cm-01",
+          "mistake": "Incorrectly choosing between the Sine Rule and Cosine Rule based on the given information.",
+          "mistake_zh": "错误地根据已知信息选择使用正弦定理或余弦定理。",
+          "correction": "Carefully identify if you have an 'opposite pair' (for Sine Rule) or 'SAS/SSS' (for Cosine Rule) before applying any formula.",
+          "correction_zh": "在应用任何公式之前，仔细识别你是否有一组“对边对角”（用于正弦定理）或“SAS/SSS”（用于余弦定理）。"
+        },
+        {
+          "id": "cm-02",
+          "mistake": "Making algebraic errors, especially when rearranging the Cosine Rule to find an angle (e.g., $\\cos A = \\frac{b^2 + c^2 - a^2}{2bc}$) or during substitution.",
+          "mistake_zh": "出现代数错误，尤其是在重新整理余弦定理以求角度（例如，$\\cos A = \\frac{b^2 + c^2 - a^2}{2bc}$）或进行代入时。",
+          "correction": "Write down the formula clearly, substitute values carefully, and use correct order of operations (BEDMAS/PEMDAS) and algebraic manipulation step by step.",
+          "correction_zh": "清晰地写下公式，仔细代入数值，并一步一步地使用正确的运算顺序（BEDMAS/PEMDAS）和代数运算。"
+        },
+        {
+          "id": "cm-03",
+          "mistake": "Forgetting to consider the ambiguous case when using the Sine Rule to find an angle, which might lead to missing a second possible obtuse angle.",
+          "mistake_zh": "使用正弦定理求解角度时，忘记考虑模糊情况，这可能导致遗漏第二个可能的钝角。",
+          "correction": "If you are given two sides and a non-included angle (SSA) and are solving for an angle using the Sine Rule, always check if $180^\\circ - \\text{calculated acute angle}$ is also a valid solution, especially if the side opposite the angle you are finding is shorter than the other known side.",
+          "correction_zh": "如果你已知两条边和一个非夹角（SSA），并使用正弦定理求解角度，请务必检查 $180^\\circ - \\text{计算出的锐角}$ 是否也是一个有效的解，特别是当要求解角度的对边比另一个已知边短时。"
+        }
+      ]
     },
     {
       "id": "kp-4.9-01",
@@ -2709,7 +3680,34 @@
         "edx-mens-area",
         "edx-mens-circles"
       ],
-      "tier": "both"
+      "tier": "both",
+      "solutionMethod": {
+        "en": "Step 1: Read the question carefully to identify what is being asked (arc length, sector area, or perimeter) and note the given values for the radius ($r$) and the central angle ($\\theta$) in degrees.\nStep 2: Choose the correct formula based on the question: for arc length, use $L = \\frac{\\theta}{360} \\times 2\\pi r$; for sector area, use $A = \\frac{\\theta}{360} \\times \\pi r^2$.\nStep 3: Substitute the known values of $r$ and $\\theta$ into the chosen formula.\nStep 4: Perform the calculation. If asked for the perimeter of the sector, add $2r$ to the calculated arc length ($P = L + 2r$).\nStep 5: State your final answer with appropriate units (e.g., cm, cm$^2$) and to the required degree of accuracy.",
+        "zh": "第一步：仔细阅读问题，确定要求计算什么（弧长、扇形面积或周长），并记下已知的半径 ($r$) 和以度为单位的圆心角 ($\\theta$)。\n第二步：根据问题选择正确的公式：计算弧长使用 $L = \\frac{\\theta}{360} \\times 2\\pi r$；计算扇形面积使用 $A = \\frac{\\theta}{360} \\times \\pi r^2$。\n第三步：将已知的 $r$ 和 $\\theta$ 值代入所选公式。\n第四步：进行计算。如果要求计算扇形的周长，将计算出的弧长加上 $2r$（即 $P = L + 2r$）。\n第五步：给出最终答案，并注明适当的单位（例如，厘米、平方厘米）和所需的精确度。"
+      },
+      "commonMistakes": [
+        {
+          "id": "cm-01",
+          "mistake": "Students often mix up the formulas for arc length and sector area, using $2\\pi r$ when $\\pi r^2$ is needed, or vice versa.",
+          "mistake_zh": "学生经常混淆弧长和扇形面积的公式，例如在需要 $\\pi r^2$ 时使用 $2\\pi r$，反之亦然。",
+          "correction": "Clearly identify whether the question asks for 'length' or 'area' and always double-check that you are using the corresponding formula ($L$ for length, $A$ for area).",
+          "correction_zh": "明确识别问题是要求计算“长度”还是“面积”，并始终仔细核对你使用的是对应的公式（$L$ 代表长度，$A$ 代表面积）。"
+        },
+        {
+          "id": "cm-02",
+          "mistake": "When asked for the 'perimeter of the sector', students sometimes only calculate the arc length and forget to add the two radii.",
+          "mistake_zh": "当要求计算“扇形周长”时，学生有时只计算弧长，而忘记加上两条半径。",
+          "correction": "Remember that the perimeter of a sector includes the arc length PLUS the two radii that form the sector ($P = L + 2r$).",
+          "correction_zh": "请记住，扇形的周长包括弧长加上构成扇形的两条半径（$P = L + 2r$）。"
+        },
+        {
+          "id": "cm-03",
+          "mistake": "Incorrectly calculating the fraction $\\frac{\\theta}{360}$ or substituting the wrong angle value into the formula.",
+          "mistake_zh": "错误地计算分数 $\\frac{\\theta}{360}$，或将错误的圆心角值代入公式。",
+          "correction": "Always double-check the given angle $\\theta$ from the question and ensure the fraction $\\frac{\\theta}{360}$ is simplified correctly before further calculation.",
+          "correction_zh": "始终仔细核对问题中给定的圆心角 $\\theta$，并确保分数 $\\frac{\\theta}{360}$ 在进一步计算之前被正确简化。"
+        }
+      ]
     },
     {
       "id": "kp-4.10-01",
@@ -2779,7 +3777,34 @@
       "vocabLinks": [
         "edx-mens-volume"
       ],
-      "tier": "both"
+      "tier": "both",
+      "solutionMethod": {
+        "en": "Step 1: Identify the 3D shape(s) involved (e.g., prism, cylinder, pyramid, cone, sphere) and determine whether you need to calculate volume or surface area.\nStep 2: Select the correct formula(s) for the identified shape(s) and the required measurement (volume or surface area). Remember that some formulas are provided in the exam.\nStep 3: Extract all necessary dimensions from the problem, such as radius, diameter, height, length, or base area, ensuring consistent units.\nStep 4: Substitute the identified dimensions into the chosen formula(s) and perform the calculation carefully.\nStep 5: State your final answer with the correct units (e.g., cm³ for volume, cm² for surface area) and to the required degree of accuracy.",
+        "zh": "第一步：识别所涉及的 3D 图形（例如，棱柱、圆柱、锥体、圆锥体、球体），并确定是需要计算体积还是表面积。\n第二步：为已识别的图形和所需测量（体积或表面积）选择正确的公式。请记住，有些公式在考试中会提供。\n第三步：从问题中提取所有必要的尺寸，例如半径、直径、高度、长度或底面积，并确保单位一致。\n第四步：将识别出的尺寸代入选定的公式中，并仔细进行计算。\n第五步：给出最终答案，附带正确的单位（例如，体积用 cm³，表面积用 cm²）并达到所需的精确度。"
+      },
+      "commonMistakes": [
+        {
+          "id": "cm-01",
+          "mistake": "Using the slant height ($l$) instead of the perpendicular (vertical) height ($h$) when calculating the volume of cones or pyramids.",
+          "mistake_zh": "在计算圆锥体或锥体体积时，使用斜高 ($l$) 而不是垂直高度 ($h$)。",
+          "correction": "Always use the vertical height ($h$) that is perpendicular to the base for volume calculations; use Pythagoras' theorem ($h^2 + r^2 = l^2$) if the slant height and radius are given to find $h$.",
+          "correction_zh": "在计算体积时，始终使用与底面垂直的垂直高度 ($h$)；如果已知斜高和半径，可以使用勾股定理 ($h^2 + r^2 = l^2$) 来求得 $h$。"
+        },
+        {
+          "id": "cm-02",
+          "mistake": "Swapping formulas between volume and surface area, especially for spheres (e.g., using $4\\pi r^2$ for volume instead of $\\frac{4}{3}\\pi r^3$).",
+          "mistake_zh": "混淆体积和表面积公式，尤其是在球体计算中（例如，使用 $4\\pi r^2$ 计算体积而不是 $\\frac{4}{3}\\pi r^3$）。",
+          "correction": "Pay close attention to the question (volume or surface area) and ensure you apply the correct formula for that specific measurement.",
+          "correction_zh": "仔细阅读问题（体积还是表面积），确保应用该特定测量的正确公式。"
+        },
+        {
+          "id": "cm-03",
+          "mistake": "Not dividing by two for hemispheres or half-cylinders when appropriate, or not accounting for the newly exposed flat surface when calculating surface area of a cut shape.",
+          "mistake_zh": "在适当情况下，计算半球或半圆柱体时忘记除以二，或者在计算切割图形的表面积时忘记计算新暴露的平面。",
+          "correction": "For partial shapes, remember to adjust the standard formula (e.g., divide by 2 for volume of a hemisphere) and carefully consider all exposed surfaces for surface area.",
+          "correction_zh": "对于部分图形，记住调整标准公式（例如，半球的体积需要除以 2），并在计算表面积时仔细考虑所有暴露的表面。"
+        }
+      ]
     },
     {
       "id": "kp-4.11-01",
@@ -2849,7 +3874,34 @@
       "vocabLinks": [
         "edx-mens-similarity"
       ],
-      "tier": "both"
+      "tier": "both",
+      "solutionMethod": {
+        "en": "Step 1: Identify two corresponding linear dimensions (e.g., lengths, heights, radii) from the similar shapes. Calculate the linear scale factor, $k$, by dividing the larger dimension by the smaller dimension, ensuring $k > 1$.\nStep 2: Determine whether the problem asks for an area or a volume. If it's an area, calculate the area scale factor as $k^2$. If it's a volume, calculate the volume scale factor as $k^3$.\nStep 3: Multiply the given area or volume of the smaller shape by the appropriate scale factor ($k^2$ for area, $k^3$ for volume) to find the corresponding area or volume of the larger shape.",
+        "zh": "第一步：确定相似图形中两个对应的线性尺寸（例如，长度、高度、半径）。用较大的尺寸除以较小的尺寸来计算长度比例因子 $k$，确保 $k > 1$。\n第二步：确定问题是关于面积还是体积。如果是关于面积，计算面积比例因子 $k^2$。如果是关于体积，计算体积比例因子 $k^3$。\n第三步：将较小图形的已知面积或体积乘以相应的比例因子（面积用 $k^2$，体积用 $k^3$），以求得较大图形的对应面积或体积。"
+      },
+      "commonMistakes": [
+        {
+          "id": "cm-01",
+          "mistake": "Students often use the linear scale factor $k$ directly for area or volume calculations instead of $k^2$ or $k^3$.",
+          "mistake_zh": "学生在计算面积或体积时，经常直接使用长度比例因子 $k$，而不是 $k^2$ 或 $k^3$。",
+          "correction": "Always remember the specific relationship: use $k$ for lengths, $k^2$ for areas, and $k^3$ for volumes.",
+          "correction_zh": "务必记住特定的关系：长度使用 $k$，面积使用 $k^2$，体积使用 $k^3$。"
+        },
+        {
+          "id": "cm-02",
+          "mistake": "Incorrectly applying the scale factor by multiplying when division is needed, or vice-versa (e.g., multiplying by $k^3$ when finding a smaller volume from a larger one).",
+          "mistake_zh": "错误地应用比例因子，在需要除法时使用乘法，反之亦然（例如，在已知较大体积求较小体积时却乘以 $k^3$）。",
+          "correction": "If you are finding a value for a larger shape, multiply by the appropriate scale factor ($k$, $k^2$, or $k^3$); if finding a value for a smaller shape, divide.",
+          "correction_zh": "如果要求较大图形的值，则乘以相应的比例因子（$k$、$k^2$ 或 $k^3$）；如果要求较小图形的值，则除以该比例因子。"
+        },
+        {
+          "id": "cm-03",
+          "mistake": "Forming the linear scale factor $k$ incorrectly, for example, by dividing non-corresponding lengths or by dividing in the wrong order.",
+          "mistake_zh": "计算长度比例因子 $k$ 时出错，例如，用不对应的长度进行除法，或者除法的顺序错误。",
+          "correction": "Carefully identify corresponding sides of the similar shapes and ensure the ratio is formed correctly, typically (larger dimension) / (smaller dimension) for $k > 1$.",
+          "correction_zh": "仔细识别相似图形的对应边，并确保比例形成正确，通常将（较大尺寸）除以（较小尺寸）以得到 $k > 1$。"
+        }
+      ]
     },
     {
       "id": "kp-5.1-01",
@@ -2927,7 +3979,27 @@
         "edx-vec-basics",
         "edx-vec-ops"
       ],
-      "tier": "both"
+      "tier": "both",
+      "solutionMethod": {
+        "en": "Step 1: Identify the given column vectors, for example, $\\mathbf{a} = \\begin{pmatrix} x_1 \\\\ y_1 \\end{pmatrix}$. If the problem involves scalar multiplication, multiply each component of the vector by the scalar (e.g., $k\\mathbf{a} = \\begin{pmatrix} kx_1 \\\\ ky_1 \\end{pmatrix}$). Remember that if two vectors are scalar multiples of each other, they are parallel.\nStep 2: For vector addition or subtraction, combine the corresponding $x$-components and $y$-components separately (e.g., $\\mathbf{a} + \\mathbf{b} = \\begin{pmatrix} x_1+x_2 \\\\ y_1+y_2 \\end{pmatrix}$). The $x$-component is the top number and the $y$-component is the bottom number.\nStep 3: To find the magnitude (length) of a vector $\\begin{pmatrix} x \\\\ y \\end{pmatrix}$, use the formula $|\\mathbf{v}| = \\sqrt{x^2 + y^2}$. Substitute the $x$ and $y$ components into the formula and calculate the square root.",
+        "zh": "第一步：识别给定的列向量，例如 $\\mathbf{a} = \\begin{pmatrix} x_1 \\\\ y_1 \\end{pmatrix}$。如果题目涉及向量的数量乘法，将向量的每个分量都乘以该数量（例如，$k\\mathbf{a} = \\begin{pmatrix} kx_1 \\\\ ky_1 \\end{pmatrix}$）。请记住，如果两个向量互为倍数关系，则它们是平行的。\n第二步：进行向量加法或减法时，分别将对应的 $x$ 分量和 $y$ 分量相加或相减（例如，$\\mathbf{a} + \\mathbf{b} = \\begin{pmatrix} x_1+x_2 \\\\ y_1+y_2 \\end{pmatrix}$）。$x$ 分量是上面的数字，$y$ 分量是下面的数字。\n第三步：要计算向量 $\\begin{pmatrix} x \\\\ y \\end{pmatrix}$ 的模（长度），使用公式 $|\\mathbf{v}| = \\sqrt{x^2 + y^2}$。将 $x$ 和 $y$ 分量代入公式并计算平方根。"
+      },
+      "commonMistakes": [
+        {
+          "id": "cm-02",
+          "mistake": "Incorrectly adding or subtracting vectors by mixing $x$ and $y$ components or performing scalar arithmetic on the vector.",
+          "mistake_zh": "错误地混合 $x$ 和 $y$ 分量进行向量加减法，或将向量当作标量进行算术运算。",
+          "correction": "Always add or subtract the corresponding $x$-components together and the $y$-components together separately to get the new resultant vector.",
+          "correction_zh": "始终将对应的 $x$ 分量相加或相减，以及对应的 $y$ 分量相加或相减，以得到新的结果向量。"
+        },
+        {
+          "id": "cm-03",
+          "mistake": "Forgetting to take the square root or making sign errors when squaring negative components in magnitude calculation.",
+          "mistake_zh": "在计算向量模时，忘记开平方根，或者在对负分量求平方时出现符号错误。",
+          "correction": "Always apply the full Pythagoras' Theorem formula $|\\mathbf{v}| = \\sqrt{x^2 + y^2}$, ensuring that squaring a negative number (e.g., $(-2)^2$) results in a positive value (e.g., 4).",
+          "correction_zh": "始终使用完整的勾股定理公式 $|\\mathbf{v}| = \\sqrt{x^2 + y^2}$，并确保负数平方（例如 $(-2)^2$）的结果是正数（例如 4）。"
+        }
+      ]
     },
     {
       "id": "kp-5.1-02",
@@ -3005,7 +4077,34 @@
         "edx-vec-basics",
         "edx-vec-ops"
       ],
-      "tier": "higher"
+      "tier": "higher",
+      "solutionMethod": {
+        "en": "Step 1: **Identify Known Vectors and Paths.** Carefully examine the diagram and identify all given vectors (e.g., $\\vec{OA} = \\mathbf{a}$, $\\vec{OB} = \\mathbf{b}$) and any known relationships (e.g., midpoints, ratios). Draw or trace paths to visualize the problem.\nStep 2: **Break Down the Target Vector.** To find a vector from one point to another (e.g., $\\vec{PQ}$), choose a clear path using known vectors. This often involves going via the origin ($O$) or other defined points. Remember the rule $\\vec{XY} = \\vec{XO} + \\vec{OY}$ or using position vectors $\\vec{XY} = \\vec{OY} - \\vec{OX}$.\nStep 3: **Substitute and Simplify.** Replace the path components with their vector expressions. Ensure you correctly handle vector directions (e.g., $\\vec{AO} = -\\vec{OA}$) and apply any given ratios (e.g., for a midpoint $M$ of $AB$, $\\vec{AM} = \\frac{1}{2}\\vec{AB}$). Simplify the resulting algebraic expression, collecting like terms, to express the target vector in terms of the initial given vectors (e.g., $\\mathbf{a}$ and $\\mathbf{b}$).\nStep 4: **For Proofs (Collinearity/Parallelism).**\n    *   **Collinearity (e.g., A, B, C):** Express two vectors involving these points (e.g., $\\vec{AB}$ and $\\vec{BC}$) in terms of given vectors. Show that one vector is a scalar multiple of the other (e.g., $\\vec{AB} = k \\vec{BC}$, where $k$ is a scalar). Finally, state that they share a common point (e.g., point $B$) to conclude collinearity.\n    *   **Parallelism:** Express the two vectors representing the lines in question. Show that one vector is a scalar multiple of the other (e.g., $\\vec{PQ} = k \\vec{RS}$, where $k$ is a scalar).",
+        "zh": "第一步：**确定已知向量和路径。** 仔细观察图表，识别所有给定的向量（例如，$\\vec{OA} = \\mathbf{a}$，$\\vec{OB} = \\mathbf{b}$）以及任何已知关系（例如，中点、比例）。通过绘制或描画路径来可视化问题。\n第二步：**分解目标向量。** 要找到从一个点到另一个点的向量（例如，$\\vec{PQ}$），选择一条由已知向量组成的清晰路径。这通常涉及通过原点 ($O$) 或其他已定义的点。记住规则 $\\vec{XY} = \\vec{XO} + \\vec{OY}$ 或使用位置向量 $\\vec{XY} = \\vec{OY} - \\vec{OX}$。\n第三步：**代入并简化。** 用它们的向量表达式替换路径的组成部分。确保正确处理向量方向（例如，$\\vec{AO} = -\\vec{OA}$），并应用任何给定比例（例如，如果 $M$ 是 $AB$ 的中点，则 $\\vec{AM} = \\frac{1}{2}\\vec{AB}$）。简化得到的代数表达式，合并同类项，以最初给定的向量（例如，$\\mathbf{a}$ 和 $\\mathbf{b}$）表示目标向量。\n第四步：**对于证明题（共线/平行）。**\n    *   **共线（例如，A, B, C）：** 用已知向量表示涉及这些点的两个向量（例如，$\\vec{AB}$ 和 $\\vec{BC}$）。证明其中一个向量是另一个向量的标量倍数（例如，$\\vec{AB} = k \\vec{BC}$，其中 $k$ 是一个标量）。最后，说明它们共享一个公共点（例如，点 $B$）以得出共线结论。\n    *   **平行：** 表示出所讨论的两条线的向量。证明其中一个向量是另一个向量的标量倍数（例如，$\\vec{PQ} = k \\vec{RS}$，其中 $k$ 是一个标量）。"
+      },
+      "commonMistakes": [
+        {
+          "id": "cm-01",
+          "mistake": "Forgetting to reverse the sign when changing the direction of a vector, e.g., using $\\vec{AO} = \\mathbf{a}$ instead of $\\vec{AO} = -\\mathbf{a}$ when $\\vec{OA} = \\mathbf{a}$.",
+          "mistake_zh": "忘记在改变向量方向时颠倒符号，例如当 $\\vec{OA} = \\mathbf{a}$ 时，使用 $\\vec{AO} = \\mathbf{a}$ 而不是 $\\vec{AO} = -\\mathbf{a}$。",
+          "correction": "Always remember that $\\vec{BA} = -\\vec{AB}$. If you reverse the order of the letters representing a vector, you must change the sign of the vector.",
+          "correction_zh": "始终记住 $\\vec{BA} = -\\vec{AB}$。如果颠倒表示向量的字母顺序，必须改变向量的符号。"
+        },
+        {
+          "id": "cm-02",
+          "mistake": "Incorrectly calculating a vector between two points using position vectors, often calculating $\\vec{AB} = \\vec{OA} - \\vec{OB}$ instead of the correct $\\vec{AB} = \\vec{OB} - \\vec{OA}$.",
+          "mistake_zh": "错误地使用位置向量计算两点之间的向量，通常使用 $\\vec{AB} = \\vec{OA} - \\vec{OB}$ 而不是正确的 $\\vec{AB} = \\vec{OB} - \\vec{OA}$。",
+          "correction": "The vector from point A to point B is always the position vector of the endpoint minus the position vector of the starting point: $\\vec{AB} = \\vec{OB} - \\vec{OA}$.",
+          "correction_zh": "从点 A 到点 B 的向量总是终点的位置向量减去起点的位置向量：$\\vec{AB} = \\vec{OB} - \\vec{OA}$。"
+        },
+        {
+          "id": "cm-03",
+          "mistake": "When proving three points $A, B, C$ are collinear, students often forget to state that the two parallel vectors (e.g., $\\vec{AB}$ and $\\vec{BC}$) share a common point $B$.",
+          "mistake_zh": "在证明三点 $A, B, C$ 共线时，学生常常忘记说明两个平行向量（例如 $\\vec{AB}$ 和 $\\vec{BC}$）共享一个公共点 $B$。",
+          "correction": "For three points to be collinear, you must show that two vectors representing segments between them are parallel (one is a scalar multiple of the other) AND that they share a common point.",
+          "correction_zh": "要使三点共线，你必须证明表示它们之间线段的两个向量平行（一个向量是另一个向量的标量倍数），并且它们共享一个公共点。"
+        }
+      ]
     },
     {
       "id": "kp-5.2-01",
@@ -3083,7 +4182,34 @@
         "edx-vec-transform",
         "edx-vec-combined"
       ],
-      "tier": "both"
+      "tier": "both",
+      "solutionMethod": {
+        "en": "Step 1: Identify the type of transformation (reflection, rotation, or translation) and all its specific properties (e.g., mirror line; center, angle, and direction; or translation vector).\nStep 2: Apply the transformation rule to each key point (vertex) of the shape. For reflection, find the mirror image; for rotation, use tracing paper pinned at the center; for translation, add the vector components to the coordinates.\nStep 3: Connect the transformed points to form the final image, ensuring it is congruent (same size and shape) to the original.",
+        "zh": "第一步：识别变换类型（反射、旋转或平移）及其所有具体属性（例如，镜面线；旋转中心、角度和方向；或平移向量）。\n第二步：将变换规则应用于图形的每个关键点（顶点）。对于反射，找到镜面像；对于旋转，使用描图纸并固定在旋转中心进行旋转；对于平移，将向量分量加到坐标上。\n第三步：连接变换后的点以形成最终图像，确保它与原始图形全等（大小和形状相同）。"
+      },
+      "commonMistakes": [
+        {
+          "id": "cm-01",
+          "mistake": "Incorrectly applying the reflection rule, especially for lines like $y=x$, $y=-x$, or lines not passing through the origin (e.g., $x=2$).",
+          "mistake_zh": "错误地应用反射规则，特别是对于像 $y=x$、$y=-x$ 或不经过原点的直线（例如 $x=2$）。",
+          "correction": "Double-check the mirror line. For lines like $y=x$, coordinates swap $(x,y) \\to (y,x)$. For vertical/horizontal lines (e.g., $x=a$ or $y=b$), count the perpendicular distance from each point to the line, then count the same distance on the other side.",
+          "correction_zh": "仔细检查镜面线。对于像 $y=x$ 这样的直线，坐标会互换 $(x,y) \\to (y,x)$。对于垂直/水平线（例如 $x=a$ 或 $y=b$），计算每个点到线的垂直距离，然后在另一侧数出相同的距离。"
+        },
+        {
+          "id": "cm-02",
+          "mistake": "Forgetting to use the specified center of rotation or rotating in the wrong direction (e.g., clockwise instead of anti-clockwise).",
+          "mistake_zh": "忘记使用指定的旋转中心或旋转方向错误（例如，顺时针而不是逆时针）。",
+          "correction": "Always identify the center of rotation, angle, and direction. Use tracing paper by pinning it accurately at the center of rotation and rotating carefully.",
+          "correction_zh": "务必识别旋转中心、角度和方向。使用描图纸，将其精确地固定在旋转中心，然后小心地旋转。"
+        },
+        {
+          "id": "cm-03",
+          "mistake": "Misinterpreting the translation vector, particularly with negative values, leading to movement in the wrong direction. For example, confusing $\\begin{pmatrix} -2 \\\\ 3 \\end{pmatrix}$ with $\\begin{pmatrix} 2 \\\\ -3 \\end{pmatrix}$.",
+          "mistake_zh": "错误地理解平移向量，特别是负值，导致移动方向错误。例如，将 $\\begin{pmatrix} -2 \\\\ 3 \\end{pmatrix}$ 与 $\\begin{pmatrix} 2 \\\\ -3 \\end{pmatrix}$ 混淆。",
+          "correction": "Remember that in a vector $\\begin{pmatrix} x \\\\ y \\end{pmatrix}$, $x$ indicates horizontal movement (positive is right, negative is left) and $y$ indicates vertical movement (positive is up, negative is down). Apply this consistently to all vertices.",
+          "correction_zh": "请记住，在向量 $\\begin{pmatrix} x \\\\ y \\end{pmatrix}$ 中，$x$ 表示水平移动（正值向右，负值向左），$y$ 表示垂直移动（正值向上，负值向下）。将此规则一致地应用于所有顶点。"
+        }
+      ]
     },
     {
       "id": "kp-5.2-02",
@@ -3161,7 +4287,34 @@
         "edx-vec-transform",
         "edx-vec-combined"
       ],
-      "tier": "both"
+      "tier": "both",
+      "solutionMethod": {
+        "en": "Step 1: Identify the center of enlargement $(c_x, c_y)$, the scale factor $k$, and the coordinates of each vertex of the original shape $(x, y)$.\nStep 2: For each vertex $(x, y)$, calculate the displacement vector from the center to the vertex: $(x - c_x, y - c_y)$.\nStep 3: Multiply this displacement vector by the scale factor $k$ to find the new displacement: $(k(x - c_x), k(y - c_y))$.\nStep 4: Add the center's coordinates back to the new displacement vector to find the coordinates of the image point $(x', y')$: $(x', y') = (c_x + k(x - c_x), c_y + k(y - c_y))$.\nStep 5: Repeat for all vertices and connect the image points to draw the enlarged shape.",
+        "zh": "第一步：确定位似中心 $(c_x, c_y)$、比例因子 $k$ 以及原图形每个顶点 $(x, y)$ 的坐标。\n第二步：对于每个顶点 $(x, y)$，计算从位似中心到顶点的位移向量：$(x - c_x, y - c_y)$。\n第三步：将此位移向量乘以比例因子 $k$，得到新的位移向量：$(k(x - c_x), k(y - c_y))$。\n第四步：将新的位移向量的坐标加上位似中心的坐标，得到像点 $(x', y')$ 的坐标：$(x', y') = (c_x + k(x - c_x), c_y + k(y - c_y))$。\n第五步：对所有顶点重复上述步骤，并连接像点以绘制位似变换后的图形。"
+      },
+      "commonMistakes": [
+        {
+          "id": "cm-01",
+          "mistake": "Assuming the center of enlargement is always the origin $(0,0)$ and simply multiplying all coordinates by the scale factor.",
+          "mistake_zh": "误以为位似中心总是原点 $(0,0)$，并直接将所有坐标乘以比例因子。",
+          "correction": "Always calculate the displacement vector from the center to the point, multiply *that vector* by the scale factor, then add the center's coordinates back: $(x', y') = \\text{Center} + k(\\text{Point} - \\text{Center})$.",
+          "correction_zh": "始终计算从位似中心到点的位移向量，将**该向量**乘以比例因子，然后将位似中心的坐标加回去：$(x', y') = \\text{中心} + k(\\text{点} - \\text{中心})$。"
+        },
+        {
+          "id": "cm-02",
+          "mistake": "Failing to place the image on the opposite side of the center and/or not inverting the shape when the scale factor is negative.",
+          "mistake_zh": "当比例因子为负数时，未能将像置于位似中心的另一侧或未将图形倒置。",
+          "correction": "A negative scale factor $k$ means the image will be on the opposite side of the center from the original shape, and it will be inverted (rotated $180^\\circ$).",
+          "correction_zh": "负比例因子 $k$ 意味着像将位于位似中心与原图形的相对一侧，并且是倒立的（围绕中心旋转 $180^\\circ$）。"
+        },
+        {
+          "id": "cm-03",
+          "mistake": "Using the linear scale factor $k$ directly to find the area of the enlarged shape instead of $k^2$.",
+          "mistake_zh": "错误地直接使用线性比例因子 $k$ 来计算位似变换后图形的面积，而不是 $k^2$。",
+          "correction": "Remember that if the linear scale factor is $k$, the area of the image is $k^2$ times the area of the original shape.",
+          "correction_zh": "请记住，如果线性比例因子是 $k$，则像的面积是原图形面积的 $k^2$ 倍。"
+        }
+      ]
     },
     {
       "id": "kp-6.1-01",
@@ -3239,7 +4392,34 @@
         "edx-stat-data",
         "edx-stat-diagrams"
       ],
-      "tier": "higher"
+      "tier": "higher",
+      "solutionMethod": {
+        "en": "Step 1: Understand that histograms represent continuous data using bars where the *area* of each bar corresponds to its frequency, not its height. The horizontal axis shows the data range (class interval), and the vertical axis shows 'Frequency Density'.\nStep 2: For each class interval, calculate the 'Class Width' by subtracting the lower boundary from the upper boundary (e.g., for $10 < x \\leq 20$, the width is $20 - 10 = 10$).\nStep 3: Calculate the 'Frequency Density' for each class using the formula: $\\text{Frequency Density} = \\frac{\\text{Frequency}}{\\text{Class Width}}$. This value determines the height of the bar for that specific class.\nStep 4: To either draw the histogram or find frequencies from one: when drawing, use the calculated class width as the base and frequency density as the height; when finding frequency from an existing histogram, remember that $\\text{Frequency} = \\text{Frequency Density} \\times \\text{Class Width}$ (Area of the bar).",
+        "zh": "第一步：理解直方图通过条形的*面积*来表示连续数据的频数，而不是其高度。水平轴表示数据范围（组距），垂直轴表示“频数密度”。\n第二步：对于每个组距，通过用上限减去下限来计算“组距宽度”（例如，对于 $10 < x \\leq 20$，宽度是 $20 - 10 = 10$）。\n第三步：使用公式 $\\text{频数密度} = \\frac{\\text{频数}}{\\text{组距宽度}}$ 计算每个组的“频数密度”。这个值决定了该组条形的高度。\n第四步：无论是绘制直方图还是从直方图中查找频数：绘制时，使用计算出的组距宽度作为底部，频数密度作为高度；从现有直方图中查找频数时，请记住 $\\text{频数} = \\text{频数密度} \\times \\text{组距宽度}}$（即条形的面积）。"
+      },
+      "commonMistakes": [
+        {
+          "id": "cm-01",
+          "mistake": "Confusing histograms with bar charts by using frequency directly as the height of the bar, especially with unequal class widths.",
+          "mistake_zh": "将直方图与条形图混淆，尤其是在组距不相等时，直接将频数作为条形图的高度。",
+          "correction": "Always calculate 'Frequency Density' ($\\text{Frequency} \\div \\text{Class Width}$) for histograms and use this value as the height of the bar; remember that the *area* represents frequency.",
+          "correction_zh": "对于直方图，务必计算“频数密度”（频数 $\\div$ 组距宽度），并将其用作条形的高度；请记住 *面积* 代表频数。"
+        },
+        {
+          "id": "cm-02",
+          "mistake": "Incorrectly calculating the class width, leading to errors in frequency density and subsequent calculations.",
+          "mistake_zh": "错误地计算组距宽度，导致频数密度和后续计算出现错误。",
+          "correction": "The class width is always the upper boundary minus the lower boundary of the class interval (e.g., for $10 < x \\leq 20$, width is $20 - 10 = 10$).",
+          "correction_zh": "组距宽度始终是组区间的上限减去下限（例如，对于 $10 < x \\leq 20$，宽度是 $20 - 10 = 10$）。"
+        },
+        {
+          "id": "cm-03",
+          "mistake": "Misinterpreting frequency from an existing histogram by simply reading the height of a bar instead of its area.",
+          "mistake_zh": "在读取现有直方图时，错误地将条形的高度而非其面积作为频数。",
+          "correction": "Always calculate frequency from a histogram by finding the area of the bar, which is $\\text{Frequency} = \\text{Frequency Density} \\times \\text{Class Width}$.",
+          "correction_zh": "在直方图中计算频数时，务必通过计算条形的面积来获得，即 $\\text{频数} = \\text{频数密度} \\times \\text{组距宽度}$。"
+        }
+      ]
     },
     {
       "id": "kp-6.1-02",
@@ -3317,7 +4497,34 @@
         "edx-stat-data",
         "edx-stat-diagrams"
       ],
-      "tier": "both"
+      "tier": "both",
+      "solutionMethod": {
+        "en": "Step 1: Construct a cumulative frequency table by adding a 'Cumulative Frequency' column to the given frequency distribution and determine the upper class boundary for each interval.\nStep 2: Plot the cumulative frequency graph by marking points at the upper class boundary of each interval on the x-axis and the corresponding cumulative frequency on the y-axis, then draw a smooth S-shaped curve through these points.\nStep 3: Estimate the median ($Q_2$), lower quartile ($Q_1$), and upper quartile ($Q_3$) from the graph by finding the positions $\\frac{n}{2}$, $\\frac{n}{4}$, and $\\frac{3n}{4}$ respectively on the cumulative frequency (y-axis) and reading the corresponding values on the x-axis.\nStep 4: Calculate the Interquartile Range (IQR) using the formula $IQR = Q_3 - Q_1$.",
+        "zh": "第一步：通过在给定频数分布中添加“累积频数”列来构建累积频数表，并确定每个区间的上限。\n第二步：绘制累积频数图，在x轴上标记每个区间的上限，在y轴上标记对应的累积频数，然后通过这些点绘制一条平滑的S形曲线。\n第三步：从图中估算中位数 ($Q_2$)、下四分位数 ($Q_1$) 和上四分位数 ($Q_3$)，方法是在累积频数（y轴）上找到 $\\frac{n}{2}$、$\\frac{n}{4}$ 和 $\\frac{3n}{4}$ 处的位置，并读取x轴上对应的值。\n第四步：使用公式 $IQR = Q_3 - Q_1$ 计算四分位距 (IQR)。"
+      },
+      "commonMistakes": [
+        {
+          "id": "cm-01",
+          "mistake": "Plotting cumulative frequency at the midpoint or lower class boundary of an interval instead of the upper class boundary.",
+          "mistake_zh": "将累积频数标记在区间的中间值或下限处，而不是上限处。",
+          "correction": "Always plot cumulative frequency against the *upper class boundary* of each interval to ensure the graph accurately represents the 'up to' nature of cumulative data.",
+          "correction_zh": "务必将累积频数标记在每个区间的*上限*处，以确保图表准确地表示累积数据的“直至”特性。"
+        },
+        {
+          "id": "cm-02",
+          "mistake": "Incorrectly calculating the positions for the median or quartiles, leading to errors in reading values from the graph.",
+          "mistake_zh": "错误地计算中位数或四分位数的位置，导致从图表中读取数值时出错。",
+          "correction": "Remember that the median ($Q_2$) is at the $\\frac{n}{2}$ position, the lower quartile ($Q_1$) is at $\\frac{n}{4}$, and the upper quartile ($Q_3$) is at $\\frac{3n}{4}$ of the total frequency ($n$).",
+          "correction_zh": "请记住，中位数 ($Q_2$) 位于总频数 ($n$) 的 $\\frac{n}{2}$ 处，下四分位数 ($Q_1$) 位于 $\\frac{n}{4}$ 处，上四分位数 ($Q_3$) 位于 $\\frac{3n}{4}$ 处。"
+        },
+        {
+          "id": "cm-03",
+          "mistake": "Connecting the plotted points on a cumulative frequency graph with straight lines rather than drawing a smooth curve.",
+          "mistake_zh": "在累积频数图上用直线连接点，而不是绘制平滑曲线。",
+          "correction": "Cumulative frequency graphs represent continuous data and should always be drawn as a smooth S-shaped curve passing through the plotted points.",
+          "correction_zh": "累积频数图表示连续数据，因此应始终绘制成一条穿过标记点的平滑S形曲线。"
+        }
+      ]
     },
     {
       "id": "kp-6.2-01",
@@ -3387,7 +4594,34 @@
       "vocabLinks": [
         "edx-stat-averages"
       ],
-      "tier": "both"
+      "tier": "both",
+      "solutionMethod": {
+        "en": "Step 1: For each class interval, calculate the midpoint ($x$). To do this, add the lower and upper bounds of the interval and divide by 2.\nStep 2: Create a new column in your table (or on scratch paper) for 'Frequency $\\times$ Midpoint' ($f \\times x$). For each class, multiply its frequency ($f$) by the midpoint ($x$) you just calculated.\nStep 3: Sum all the values in the 'Frequency $\\times$ Midpoint' column. This gives you the total sum, $\\sum (f \\times x)$.\nStep 4: Sum all the values in the 'Frequency' column. This gives you the total frequency, $\\sum f$.\nStep 5: Divide the total sum from Step 3 ($\\sum (f \\times x)$) by the total frequency from Step 4 ($\\sum f$). The result is the estimated mean.",
+        "zh": "第一步：对于每个分组区间，计算其中点 ($x$)。计算方法是将区间的下限和上限相加，然后除以2。\n第二步：在你的表格中（或草稿纸上）新建一列，用于记录“频数 $\\times$ 中点” ($f \\times x$)。对于每个分组，将其频数 ($f$) 乘以你刚刚计算出的中点 ($x$)。\n第三步：将“频数 $\\times$ 中点”列中的所有值相加。这将得到总和，即 $\\sum (f \\times x)$。\n第四步：将“频数”列中的所有值相加。这将得到总频数，即 $\\sum f$。\n第五步：将第三步得到的总和 ($\\sum (f \\times x)$) 除以第四步得到的总频数 ($\\sum f$)。结果就是估算的平均数。"
+      },
+      "commonMistakes": [
+        {
+          "id": "cm-01",
+          "mistake": "Using the lower or upper class boundary instead of the midpoint for calculations.",
+          "mistake_zh": "在计算时使用组的下限或上限，而不是中点。",
+          "correction": "Always find the midpoint ($x$) of each class interval by adding the lower and upper bounds and dividing by two before multiplying by the frequency.",
+          "correction_zh": "务必先将每个分组区间的下限和上限相加再除以2，找出中点 ($x$)，然后再乘以频数。"
+        },
+        {
+          "id": "cm-02",
+          "mistake": "Dividing the sum of $f \\times x$ by the number of class intervals (number of rows) instead of the total frequency.",
+          "mistake_zh": "用 $f \\times x$ 的总和除以分组区间的数量（行数），而不是总频数。",
+          "correction": "Remember that the denominator for the mean formula is always the total number of data points, which is the sum of all frequencies ($\\sum f$).",
+          "correction_zh": "请记住，平均数公式的分母始终是数据点的总数，即所有频数之和 ($\\sum f$)。"
+        },
+        {
+          "id": "cm-03",
+          "mistake": "Incorrectly calculating the midpoint for class intervals with different precisions (e.g., $1-5$ vs $1-5.9$).",
+          "mistake_zh": "错误计算具有不同精度（例如，$1-5$ 与 $1-5.9$）的分组区间的中点。",
+          "correction": "Ensure you correctly identify the true upper and lower bounds for each class before finding the midpoint; for example, if classes are $1-5$ and $6-10$, the midpoint for $1-5$ might be $(0.5+5.5)/2 = 3$ if the data is continuous, or $(1+5)/2 = 3$ if discrete.",
+          "correction_zh": "在计算中点之前，请确保正确识别每个分组的真实上下限；例如，如果分组是 $1-5$ 和 $6-10$，则 $1-5$ 的中点可能是 $(0.5+5.5)/2 = 3$（如果数据是连续的），或者 $(1+5)/2 = 3$（如果数据是离散的）。"
+        }
+      ]
     },
     {
       "id": "kp-6.3-01",
@@ -3465,7 +4699,34 @@
         "edx-stat-prob",
         "edx-stat-prob-comb"
       ],
-      "tier": "both"
+      "tier": "both",
+      "solutionMethod": {
+        "en": "Step 1: Identify all possible outcomes for each stage of the event and list their individual probabilities. If the event is 'without replacement', remember that probabilities change for subsequent stages.\nStep 2: Draw a tree diagram. For each stage, draw branches for all possible outcomes and write the probability on each branch. Ensure probabilities from a single point sum to 1.\nStep 3: To find the probability of a specific sequence of outcomes (e.g., getting Red then Blue), multiply the probabilities along the branches that form that path.\nStep 4: If the question asks for a condition that can be met by more than one sequence of outcomes (e.g., 'at least one red'), calculate the probability for each relevant sequence (Step 3) and then add these probabilities together.",
+        "zh": "第一步：确定事件每个阶段的所有可能结果，并列出它们各自的概率。如果事件是“不放回”的，请记住后续阶段的概率会发生变化。\n第二步：绘制树状图。对于每个阶段，画出所有可能结果的分支，并在每个分支上写出其概率。确保从同一点发出的所有分支的概率之和为1。\n第三步：要找到特定结果序列的概率（例如，先抽到红色再抽到蓝色），将该路径上所有分支的概率相乘。\n第四步：如果问题询问可以通过多个结果序列实现的情况（例如，“至少一个红色”），则计算每个相关序列的概率（第三步），然后将这些概率相加。"
+      },
+      "commonMistakes": [
+        {
+          "id": "cm-01",
+          "mistake": "Failing to adjust probabilities for 'without replacement' scenarios.",
+          "mistake_zh": "在“不放回”情境中，未能调整后续事件的概率。",
+          "correction": "When an item is not replaced, remember to decrease both the total number of items and the count of the specific item when calculating probabilities for the next stage.",
+          "correction_zh": "当物品不放回时，请记住在计算下一阶段的概率时，总物品数量和特定物品的数量都需要减少。"
+        },
+        {
+          "id": "cm-02",
+          "mistake": "Confusing when to multiply probabilities (for 'AND' events) and when to add them (for 'OR' events).",
+          "mistake_zh": "混淆何时相乘概率（对于“且”事件）以及何时相加概率（对于“或”事件）。",
+          "correction": "Multiply probabilities along the branches to find the probability of a sequence of events (AND), and add probabilities of different end paths that satisfy the condition (OR).",
+          "correction_zh": "沿分支相乘概率以找到一系列事件的概率（“且”），并将满足条件的不同最终路径的概率相加（“或”）。"
+        },
+        {
+          "id": "cm-03",
+          "mistake": "Incorrectly calculating branch probabilities, especially in the initial setup of the tree diagram.",
+          "mistake_zh": "计算分支概率时出错，尤其是在树状图的初始设置中。",
+          "correction": "Always double-check that the probabilities for all branches originating from a single point add up to 1.",
+          "correction_zh": "务必仔细检查从同一点发出的所有分支的概率之和是否为1。"
+        }
+      ]
     },
     {
       "id": "kp-6.3-02",
@@ -3543,7 +4804,34 @@
         "edx-stat-prob",
         "edx-stat-prob-comb"
       ],
-      "tier": "higher"
+      "tier": "higher",
+      "solutionMethod": {
+        "en": "Step 1: Identify the two events (A and B) and determine which event is the 'given' condition. For $P(A|B)$, B is the given condition.\nStep 2: Find the probability of both events A and B happening, which is $P(A \\cap B)$. This is the value in the overlapping region of the Venn diagram or the count of outcomes common to both A and B, divided by the total number of outcomes.\nStep 3: Find the probability of the given condition event B happening, which is $P(B)$. This is the total value within circle B of the Venn diagram or the count of all outcomes in B, divided by the total number of outcomes.\nStep 4: Use the formula $P(A|B) = \\frac{P(A \\cap B)}{P(B)}$ to calculate the conditional probability.",
+        "zh": "第一步：确定两个事件（A和B），并找出哪个事件是“已知”条件。对于 $P(A|B)$，B是已知条件。\n第二步：找出事件A和B同时发生的概率，即 $P(A \\cap B)$。这对应于韦恩图的重叠区域，或同时属于A和B的结果数量除以总结果数量。\n第三步：找出已知条件事件B发生的概率，即 $P(B)$。这对应于韦恩图圆B内的所有值，或事件B的所有结果数量除以总结果数量。\n第四步：使用公式 $P(A|B) = \\frac{P(A \\cap B)}{P(B)}$ 计算条件概率。"
+      },
+      "commonMistakes": [
+        {
+          "id": "cm-01",
+          "mistake": "Confusing $P(A|B)$ with $P(A \\cap B)$ or $P(B|A)$.",
+          "mistake_zh": "混淆 $P(A|B)$ 与 $P(A \\cap B)$ 或 $P(B|A)$。",
+          "correction": "Remember that in $P(A|B)$, event B is the given condition, meaning it has already occurred and limits the possible outcomes.",
+          "correction_zh": "记住在 $P(A|B)$ 中，事件 B 是已知条件，表示它已经发生并限制了可能的结局。"
+        },
+        {
+          "id": "cm-02",
+          "mistake": "Using the total probability or total count as the denominator instead of the probability or count of the conditioning event.",
+          "mistake_zh": "使用总概率或总数量作为分母，而不是条件事件的概率或数量。",
+          "correction": "For $P(A|B)$, the denominator must be $P(B)$ (or the count of elements in B), as the sample space is restricted to only outcomes where B has occurred.",
+          "correction_zh": "对于 $P(A|B)$，分母必须是 $P(B)$（或 B 中的元素数量），因为样本空间被限制在 B 发生的结局。"
+        },
+        {
+          "id": "cm-03",
+          "mistake": "Misinterpreting regions in a Venn diagram, especially when identifying the intersection or the full conditioning event.",
+          "mistake_zh": "错误地解释韦恩图中的区域，尤其是在识别交集或完整的条件事件时。",
+          "correction": "Carefully label each region of the Venn diagram and ensure you sum all parts that constitute $A \\cap B$ and $B$ (or any other required event).",
+          "correction_zh": "仔细标注韦恩图的每个区域，并确保你正确地加总构成 $A \\cap B$ 和 $B$（或任何其他所需事件）的所有部分。"
+        }
+      ]
     }
   ]
 }
