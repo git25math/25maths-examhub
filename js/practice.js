@@ -1915,10 +1915,11 @@ function _ppSaveExam(exam) {
 /* ═══ HELPER: render tex safely ═══ */
 
 function _ppRenderTexStr(str) {
-  /* Render a raw tex/html string: clean remnants, convert markdown bold */
+  /* Render a raw tex/html string: clean remnants, convert markdown bold, newline */
   if (!str) return '';
   var html = str.replace(/\[leftmargin[^\]]*\]/g, '');
   html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+  html = html.replace(/\\newline/g, '<br>');
   return html;
 }
 

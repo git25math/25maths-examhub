@@ -1,5 +1,20 @@
 # Changelog
 
+## [5.6.2] - 2026-03-12 — CIE 题目句末换行
+
+### 核心变更
+- **句末换行注入**: 4090 道 CIE 真题的 stem/parts/tex 文本中，句末句号后自动添加 `\newline`
+- **间距命令替换**: 所有 `\\[...cm]` 间距命令统一替换为 `\newline`
+- **渲染支持**: `_ppRenderTexStr` 新增 `\newline` → `<br>` 转换，确保换行在 HTML 中生效
+- **安全跳过**: 小数点（0.8）、省略号（...）、数学模式内句号均不受影响
+
+### 文件变更
+| 文件 | 变更类型 |
+|------|---------|
+| `data/papers-cie.json` | 4090 题文本内容添加 `\newline` |
+| `js/practice.js` | `_ppRenderTexStr` 新增 1 行 `\newline` → `<br>` |
+| `scripts/inject-newline.py` | 新建注入脚本 |
+
 ## [5.6.1] - 2026-03-12 — CIE 外部图片注入
 
 ### 核心变更
