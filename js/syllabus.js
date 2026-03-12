@@ -737,6 +737,13 @@ function renderSectionDetail(ch, sec, secIdx, board) {
   }
   html += '</div>';
 
+  /* Create Plan from this section */
+  html += '<div style="margin:10px 0">';
+  html += '<button class="btn btn-ghost btn-sm" id="sec-create-plan-btn" data-sec="' + sec.id + '" data-board="' + board + '">';
+  html += '+ ' + t('Create Study Plan', '\u521b\u5efa\u5b66\u4e60\u8ba1\u5212');
+  html += '</button>';
+  html += '</div>';
+
   /* Module cards: Vocabulary → Practice → Knowledge → Examples */
   html += '<div class="sec-modules">';
 
@@ -935,6 +942,16 @@ function renderSectionDetail(ch, sec, secIdx, board) {
 
   E('panel-section').innerHTML = html;
   loadKaTeX().then(function() { renderMath(E('panel-section')); });
+
+  /* Bind "Create Plan" button */
+  var secPlanBtn = document.getElementById('sec-create-plan-btn');
+  if (secPlanBtn) {
+    secPlanBtn.addEventListener('click', function() {
+      if (typeof _createPlanFromSection === 'function') {
+        _createPlanFromSection(secPlanBtn.dataset.sec, secPlanBtn.dataset.board);
+      }
+    });
+  }
 
   /* Async-load Past Papers data and populate module */
   var ppSlot = document.getElementById('pp-section-module');
@@ -2758,6 +2775,45 @@ function renderTodaysPlan() {
     try { var _gh = renderLearningGoalsCard(); if (_gh) html += _gh; } catch (e) {}
   }
 
+  /* Active Learning Plans (v5.2.0) */
+  if (typeof getActivePlans === 'function') {
+    var _activePlans = getActivePlans();
+    if (_activePlans.length > 0) {
+      var _apMax = Math.min(_activePlans.length, 3);
+      html += '<div class="plan-card">';
+      html += '<div class="plan-card-header">';
+      html += '<span class="plan-card-icon">\ud83d\udcdd</span>';
+      html += '<span class="plan-card-title">' + t('Active Plans', '\u8fdb\u884c\u4e2d\u7684\u8ba1\u5212') + '</span>';
+      html += '</div>';
+      for (var _api = 0; _api < _apMax; _api++) {
+        var _ap = _activePlans[_api];
+        var _apProg = typeof getPlanProgress === 'function' ? getPlanProgress(_ap.id) : { total: 0, mastered: 0, pct: 0 };
+        html += '<div style="padding:6px 0;border-bottom:1px solid var(--c-border-light, #f3f4f6)">';
+        html += '<div style="display:flex;align-items:center;justify-content:space-between">';
+        html += '<span style="font-weight:600;font-size:13px">' + (_ap.title.length > 20 ? _ap.title.substring(0, 20) + '...' : _ap.title) + '</span>';
+        html += '<span style="font-size:12px;color:var(--c-text3)">' + _apProg.mastered + '/' + _apProg.total + ' (' + _apProg.pct + '%)</span>';
+        html += '</div>';
+        html += '<div style="height:6px;border-radius:3px;background:var(--c-surface-alt, #f3f4f6);margin-top:4px;overflow:hidden">';
+        html += '<div style="height:100%;width:' + _apProg.pct + '%;background:var(--c-success, #22C55E);border-radius:3px;transition:width 0.3s"></div>';
+        html += '</div>';
+        if (_ap.targetDate) {
+          var _apToday = new Date().toLocaleDateString('en-CA');
+          var _apDays = Math.ceil((new Date(_ap.targetDate) - new Date(_apToday)) / 86400000);
+          var _apDStyle = _apDays < 0 ? 'color:var(--c-danger)' : _apDays <= 3 ? 'color:var(--c-warning)' : 'color:var(--c-text3)';
+          html += '<div style="font-size:11px;margin-top:2px;' + _apDStyle + '">' + _ap.targetDate;
+          html += _apDays < 0 ? (' \u00b7 ' + t('Overdue', '\u5df2\u8fc7\u671f')) : _apDays === 0 ? (' \u00b7 ' + t('Due today', '\u4eca\u5929\u622a\u6b62')) : (' \u00b7 ' + _apDays + t('d left', '\u5929'));
+          html += '</div>';
+        }
+        html += '<button class="btn btn-ghost btn-sm" style="margin-top:4px" data-action="start-plan-focus" data-plan-id="' + _ap.id + '">' + t('Continue', '\u7ee7\u7eed\u5b66\u4e60') + '</button>';
+        html += '</div>';
+      }
+      if (_activePlans.length > 3) {
+        html += '<div style="font-size:12px;color:var(--c-text3);padding-top:4px">+' + (_activePlans.length - 3) + ' ' + t('more', '\u66f4\u591a') + '</div>';
+      }
+      html += '</div>';
+    }
+  }
+
   /* AI Tutor — Plan guidance (v4.0.0) */
   if (typeof getPlanTutorMessage === 'function') {
     try {
@@ -2837,6 +2893,8 @@ function renderTodaysPlan() {
     if (ppRefreshBtn && typeof startPPRefreshScan === 'function') { startPPRefreshScan(); return; }
     var recoveryBtn = e.target.closest('[data-action="start-recovery"]');
     if (recoveryBtn && typeof startRecoverySession === 'function') { startRecoverySession(); return; }
+    var planFocusBtn = e.target.closest('[data-action="start-plan-focus"]');
+    if (planFocusBtn && typeof startPlanFocusStudy === 'function') { startPlanFocusStudy(planFocusBtn.dataset.planId); return; }
   };
   panel.addEventListener('click', panel._planHandler);
 }

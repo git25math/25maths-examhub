@@ -1118,69 +1118,61 @@ function _renderMyLists() {
   var zh = (appLang !== 'en');
   var lists = typeof getCustomLists === 'function' ? getCustomLists() : [];
 
+  /* Split into 3 groups */
+  var activePlans = [], regularLists = [], hiddenPlans = [];
+  for (var g = 0; g < lists.length; g++) {
+    if (lists[g].isPlan && lists[g].isHidden) hiddenPlans.push(lists[g]);
+    else if (lists[g].isPlan) activePlans.push(lists[g]);
+    else regularLists.push(lists[g]);
+  }
+
   var html = '<div style="padding:8px 0">';
 
-  /* Create button */
-  html += '<button class="btn btn-primary btn-sm" id="cl-create-btn" style="margin-bottom:12px">';
+  /* Action buttons row */
+  html += '<div style="display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap">';
+  html += '<button class="btn btn-primary btn-sm" id="cl-create-plan-btn">';
+  html += '+ ' + (zh ? '\u65b0\u5efa\u5b66\u4e60\u8ba1\u5212' : 'Create Learning Plan');
+  html += '</button>';
+  html += '<button class="btn btn-ghost btn-sm" id="cl-create-btn">';
   html += '+ ' + (zh ? '\u65b0\u5efa\u6e05\u5355' : 'Create New List');
   html += '</button>';
+  html += '</div>';
 
-  if (lists.length === 0) {
-    html += '<div style="text-align:center;padding:40px;color:var(--c-text3)">';
+  /* === Section 1: Active Plans === */
+  if (activePlans.length > 0) {
+    html += '<div class="cl-section-label">' + (zh ? '\u8fdb\u884c\u4e2d\u7684\u8ba1\u5212' : 'Active Plans') + '</div>';
+    html += '<div class="cl-grid">';
+    for (var pi = 0; pi < activePlans.length; pi++) {
+      html += _renderPlanCard(activePlans[pi], zh, false);
+    }
+    html += '</div>';
+  }
+
+  /* === Section 2: Custom Lists === */
+  html += '<div class="cl-section-label" style="margin-top:16px">' + (zh ? '\u81ea\u5b9a\u4e49\u6e05\u5355' : 'Custom Lists') + '</div>';
+  if (regularLists.length === 0) {
+    html += '<div style="text-align:center;padding:24px;color:var(--c-text3)">';
     html += zh ? '\u8fd8\u6ca1\u6709\u81ea\u5b9a\u4e49\u6e05\u5355' : 'No custom lists yet';
     html += '</div>';
   } else {
-    /* Card grid */
     html += '<div class="cl-grid">';
-    for (var i = 0; i < lists.length; i++) {
-      var cl = lists[i];
-      var itemCounts = _countListItems(cl);
-      var lastSession = cl.sessions && cl.sessions.length > 0 ? cl.sessions[cl.sessions.length - 1] : null;
-      html += '<div class="cl-card" data-clid="' + _escList(cl.id) + '">';
-      html += '<div class="cl-card-title"><span class="cl-expand-arrow">\u25b6</span> ' + _escList(cl.title) + '</div>';
-      html += '<div class="cl-card-meta">' + cl.items.length + ' ' + (zh ? '\u9879' : 'items');
-      if (itemCounts.v) html += ' (' + itemCounts.v + 'V';
-      if (itemCounts.k) html += '+' + itemCounts.k + 'K';
-      if (itemCounts.p) html += '+' + itemCounts.p + 'P';
-      if (itemCounts.v || itemCounts.k || itemCounts.p) html += ')';
-      html += '</div>';
-      if (lastSession) {
-        html += '<div class="cl-card-meta">' + (zh ? '\u4e0a\u6b21: ' : 'Last: ') + lastSession.ts.slice(0, 10) + '</div>';
-      }
-
-      /* FLM stats bar */
-      html += _renderListStatsBar(cl);
-
-      /* Session history timeline */
-      if (cl.sessions && cl.sessions.length > 0) {
-        html += '<div class="cl-session-timeline">';
-        var tlStart = Math.max(0, cl.sessions.length - 5);
-        for (var si = tlStart; si < cl.sessions.length; si++) {
-          var sess = cl.sessions[si];
-          var r = sess.results || {};
-          html += '<span class="cl-session-dot" title="' + sess.ts.slice(0, 10) + ': ' + (r.mastered || 0) + 'M/' + (r.uncertain || 0) + 'U/' + (r.learning || 0) + 'L">';
-          html += '#' + (si + 1);
-          html += '</span>';
-        }
-        html += '</div>';
-      }
-
-      html += '<div class="cl-card-actions">';
-      html += '<button class="btn btn-sm btn-primary cl-study-btn" data-clid="' + _escList(cl.id) + '">' + (zh ? '\u5f00\u59cb\u5b66\u4e60' : 'Study') + '</button>';
-      html += '<button class="btn btn-sm btn-ghost cl-scan-btn" data-clid="' + _escList(cl.id) + '">' + (zh ? '\u5feb\u901f Scan' : 'Quick Scan') + '</button>';
-      html += '<button class="btn btn-sm btn-ghost cl-record-btn" data-clid="' + _escList(cl.id) + '" aria-label="' + (zh ? '\u8865\u5f55' : 'Record') + '" title="' + (zh ? '\u8865\u5f55\u5b66\u4e60\u7ed3\u679c' : 'Record Results') + '">\ud83d\udcdd</button>';
-      html += '<button class="btn btn-sm btn-ghost cl-rename-btn" data-clid="' + _escList(cl.id) + '" aria-label="' + (zh ? '\u91cd\u547d\u540d' : 'Rename') + '">\u270f\ufe0f</button>';
-      html += '<button class="btn btn-sm btn-ghost cl-delete-btn" data-clid="' + _escList(cl.id) + '" aria-label="' + (zh ? '\u5220\u9664' : 'Delete') + '">\ud83d\uddd1\ufe0f</button>';
-      html += '<button class="btn btn-sm btn-ghost cl-print-btn" data-clid="' + _escList(cl.id) + '" aria-label="' + (zh ? '\u6253\u5370' : 'Print') + '">\ud83d\udda8\ufe0f</button>';
-      html += '</div>';
-
-      /* Expandable item list */
-      html += '<div class="cl-card-items" id="cl-items-' + _escList(cl.id) + '" style="display:none">';
-      html += _renderListItemsPreview(cl);
-      html += '</div>';
-
-      html += '</div>';
+    for (var i = 0; i < regularLists.length; i++) {
+      html += _renderRegularListCard(regularLists[i], zh);
     }
+    html += '</div>';
+  }
+
+  /* === Section 3: Hidden Plans === */
+  if (hiddenPlans.length > 0) {
+    html += '<div class="cl-hidden-section">';
+    html += '<div class="cl-section-label cl-hidden-toggle" id="cl-hidden-toggle" style="cursor:pointer;margin-top:16px">';
+    html += '<span class="cl-expand-arrow">\u25b6</span> ' + (zh ? '\u5df2\u5b8c\u6210\u8ba1\u5212' : 'Completed Plans') + ' (' + hiddenPlans.length + ')';
+    html += '</div>';
+    html += '<div class="cl-grid cl-hidden-grid" id="cl-hidden-grid" style="display:none">';
+    for (var hi = 0; hi < hiddenPlans.length; hi++) {
+      html += _renderPlanCard(hiddenPlans[hi], zh, true);
+    }
+    html += '</div>';
     html += '</div>';
   }
 
@@ -1199,6 +1191,45 @@ function _renderMyLists() {
       }
     });
   }
+
+  /* Create plan button */
+  var createPlanBtn = el.querySelector('#cl-create-plan-btn');
+  if (createPlanBtn) {
+    createPlanBtn.addEventListener('click', function() { _showCreatePlanModal(); });
+  }
+
+  /* Hidden plans toggle */
+  var hiddenToggle = el.querySelector('#cl-hidden-toggle');
+  if (hiddenToggle) {
+    hiddenToggle.addEventListener('click', function() {
+      var grid = document.getElementById('cl-hidden-grid');
+      var arrow = hiddenToggle.querySelector('.cl-expand-arrow');
+      if (grid) {
+        var show = grid.style.display === 'none';
+        grid.style.display = show ? 'grid' : 'none';
+        if (arrow) arrow.textContent = show ? '\u25bc' : '\u25b6';
+      }
+    });
+  }
+
+  /* Plan focus study */
+  el.querySelectorAll('.cl-plan-focus-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() { startPlanFocusStudy(btn.dataset.clid); });
+  });
+
+  /* Plan hide/unhide */
+  el.querySelectorAll('.cl-plan-hide-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      if (typeof hideLearningPlan === 'function') hideLearningPlan(btn.dataset.clid);
+      _renderMyLists();
+    });
+  });
+  el.querySelectorAll('.cl-plan-unhide-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      if (typeof unhideLearningPlan === 'function') unhideLearningPlan(btn.dataset.clid);
+      _renderMyLists();
+    });
+  });
 
   /* Card title click → expand */
   el.querySelectorAll('.cl-card-title').forEach(function(titleEl) {
@@ -1285,6 +1316,353 @@ function _renderMyLists() {
       _showQuickRate(btn.dataset.rateList, btn.dataset.rateType, btn.dataset.rateRef, btn);
     });
   });
+}
+
+/* ═══ PLAN CARD RENDERER ═══ */
+
+function _renderPlanCard(cl, zh, isHidden) {
+  var itemCounts = _countListItems(cl);
+  var prog = typeof getPlanProgress === 'function' ? getPlanProgress(cl.id) : { total: cl.items.length, mastered: 0, pct: 0 };
+  var html = '<div class="cl-card cl-plan-card" data-clid="' + _escList(cl.id) + '">';
+  html += '<div class="cl-card-title"><span class="cl-expand-arrow">\u25b6</span> ';
+  html += '<span class="cl-plan-badge">' + (zh ? '\u8ba1\u5212' : 'Plan') + '</span> ';
+  html += _escList(cl.title) + '</div>';
+  html += '<div class="cl-card-meta">' + cl.items.length + ' ' + (zh ? '\u9879' : 'items');
+  if (itemCounts.v) html += ' (' + itemCounts.v + 'V';
+  if (itemCounts.k) html += '+' + itemCounts.k + 'K';
+  if (itemCounts.p) html += '+' + itemCounts.p + 'P';
+  if (itemCounts.v || itemCounts.k || itemCounts.p) html += ')';
+  html += '</div>';
+
+  /* Target date */
+  if (cl.targetDate) {
+    var today = new Date().toLocaleDateString('en-CA');
+    var daysLeft = Math.ceil((new Date(cl.targetDate) - new Date(today)) / 86400000);
+    var dateClass = daysLeft < 0 ? 'cl-plan-target overdue' : daysLeft <= 3 ? 'cl-plan-target warning' : 'cl-plan-target';
+    var dateLabel = daysLeft < 0 ? (zh ? '\u5df2\u8fc7\u671f ' + (-daysLeft) + ' \u5929' : 'Overdue ' + (-daysLeft) + 'd')
+      : daysLeft === 0 ? (zh ? '\u4eca\u5929\u622a\u6b62' : 'Due today')
+      : (zh ? '\u5269\u4f59 ' + daysLeft + ' \u5929' : daysLeft + ' days left');
+    html += '<div class="' + dateClass + '">' + cl.targetDate + ' \u00b7 ' + dateLabel + '</div>';
+  }
+
+  /* Progress bar */
+  html += '<div class="cl-stats-bar">';
+  html += '<div class="cl-stats-track"><div class="cl-stats-seg cl-stats-m" style="width:' + prog.pct + '%"></div></div>';
+  html += '<div class="cl-stats-labels">' + prog.mastered + '/' + prog.total + ' ' + (zh ? '\u5df2\u638c\u63e1' : 'mastered') + ' (' + prog.pct + '%)</div>';
+  html += '</div>';
+
+  /* FLM detail bar */
+  html += _renderListStatsBar(cl);
+
+  html += '<div class="cl-card-actions">';
+  if (!isHidden) {
+    html += '<button class="btn btn-sm btn-primary cl-plan-focus-btn" data-clid="' + _escList(cl.id) + '">' + (zh ? '\u805a\u7126\u5b66\u4e60' : 'Focus Study') + '</button>';
+    html += '<button class="btn btn-sm btn-ghost cl-scan-btn" data-clid="' + _escList(cl.id) + '">' + (zh ? '\u5feb\u901f Scan' : 'Quick Scan') + '</button>';
+    html += '<button class="btn btn-sm btn-ghost cl-plan-hide-btn" data-clid="' + _escList(cl.id) + '" title="' + (zh ? '\u6807\u8bb0\u5b8c\u6210' : 'Mark Complete') + '">\u2705</button>';
+  } else {
+    html += '<button class="btn btn-sm btn-ghost cl-plan-unhide-btn" data-clid="' + _escList(cl.id) + '">' + (zh ? '\u6062\u590d\u8ba1\u5212' : 'Restore') + '</button>';
+  }
+  html += '<button class="btn btn-sm btn-ghost cl-delete-btn" data-clid="' + _escList(cl.id) + '" aria-label="' + (zh ? '\u5220\u9664' : 'Delete') + '">\ud83d\uddd1\ufe0f</button>';
+  html += '</div>';
+
+  /* Expandable item list */
+  html += '<div class="cl-card-items" id="cl-items-' + _escList(cl.id) + '" style="display:none">';
+  html += _renderListItemsPreview(cl);
+  html += '</div>';
+
+  html += '</div>';
+  return html;
+}
+
+function _renderRegularListCard(cl, zh) {
+  var itemCounts = _countListItems(cl);
+  var lastSession = cl.sessions && cl.sessions.length > 0 ? cl.sessions[cl.sessions.length - 1] : null;
+  var html = '<div class="cl-card" data-clid="' + _escList(cl.id) + '">';
+  html += '<div class="cl-card-title"><span class="cl-expand-arrow">\u25b6</span> ' + _escList(cl.title) + '</div>';
+  html += '<div class="cl-card-meta">' + cl.items.length + ' ' + (zh ? '\u9879' : 'items');
+  if (itemCounts.v) html += ' (' + itemCounts.v + 'V';
+  if (itemCounts.k) html += '+' + itemCounts.k + 'K';
+  if (itemCounts.p) html += '+' + itemCounts.p + 'P';
+  if (itemCounts.v || itemCounts.k || itemCounts.p) html += ')';
+  html += '</div>';
+  if (lastSession) {
+    html += '<div class="cl-card-meta">' + (zh ? '\u4e0a\u6b21: ' : 'Last: ') + lastSession.ts.slice(0, 10) + '</div>';
+  }
+  html += _renderListStatsBar(cl);
+  if (cl.sessions && cl.sessions.length > 0) {
+    html += '<div class="cl-session-timeline">';
+    var tlStart = Math.max(0, cl.sessions.length - 5);
+    for (var si = tlStart; si < cl.sessions.length; si++) {
+      var sess = cl.sessions[si];
+      var r = sess.results || {};
+      html += '<span class="cl-session-dot" title="' + sess.ts.slice(0, 10) + ': ' + (r.mastered || 0) + 'M/' + (r.uncertain || 0) + 'U/' + (r.learning || 0) + 'L">';
+      html += '#' + (si + 1);
+      html += '</span>';
+    }
+    html += '</div>';
+  }
+  html += '<div class="cl-card-actions">';
+  html += '<button class="btn btn-sm btn-primary cl-study-btn" data-clid="' + _escList(cl.id) + '">' + (zh ? '\u5f00\u59cb\u5b66\u4e60' : 'Study') + '</button>';
+  html += '<button class="btn btn-sm btn-ghost cl-scan-btn" data-clid="' + _escList(cl.id) + '">' + (zh ? '\u5feb\u901f Scan' : 'Quick Scan') + '</button>';
+  html += '<button class="btn btn-sm btn-ghost cl-record-btn" data-clid="' + _escList(cl.id) + '" aria-label="' + (zh ? '\u8865\u5f55' : 'Record') + '" title="' + (zh ? '\u8865\u5f55\u5b66\u4e60\u7ed3\u679c' : 'Record Results') + '">\ud83d\udcdd</button>';
+  html += '<button class="btn btn-sm btn-ghost cl-rename-btn" data-clid="' + _escList(cl.id) + '" aria-label="' + (zh ? '\u91cd\u547d\u540d' : 'Rename') + '">\u270f\ufe0f</button>';
+  html += '<button class="btn btn-sm btn-ghost cl-delete-btn" data-clid="' + _escList(cl.id) + '" aria-label="' + (zh ? '\u5220\u9664' : 'Delete') + '">\ud83d\uddd1\ufe0f</button>';
+  html += '<button class="btn btn-sm btn-ghost cl-print-btn" data-clid="' + _escList(cl.id) + '" aria-label="' + (zh ? '\u6253\u5370' : 'Print') + '">\ud83d\udda8\ufe0f</button>';
+  html += '</div>';
+  html += '<div class="cl-card-items" id="cl-items-' + _escList(cl.id) + '" style="display:none">';
+  html += _renderListItemsPreview(cl);
+  html += '</div>';
+  html += '</div>';
+  return html;
+}
+
+/* ═══ CREATE PLAN MODAL ═══ */
+
+function _showCreatePlanModal(prefillSectionId, prefillBoard) {
+  var zh = (appLang !== 'en');
+  var html = '<div style="max-height:70vh;overflow-y:auto;padding:4px">';
+
+  /* Title + date */
+  html += '<div style="margin-bottom:12px">';
+  html += '<label style="font-size:13px;font-weight:600">' + (zh ? '\u8ba1\u5212\u540d\u79f0' : 'Plan Title') + '</label>';
+  html += '<input type="text" id="plan-title-input" class="input" style="width:100%;margin-top:4px" placeholder="' + (zh ? '\u4f8b\u5982\uff1a\u4ee3\u6570\u590d\u4e60' : 'e.g. Algebra Review') + '">';
+  html += '</div>';
+  html += '<div style="margin-bottom:12px">';
+  html += '<label style="font-size:13px;font-weight:600">' + (zh ? '\u622a\u6b62\u65e5\u671f (\u53ef\u9009)' : 'Target Date (optional)') + '</label>';
+  html += '<input type="date" id="plan-date-input" class="input" style="width:100%;margin-top:4px">';
+  html += '</div>';
+
+  /* Status filter */
+  html += '<div style="margin-bottom:12px">';
+  html += '<label style="font-size:13px;font-weight:600">' + (zh ? '\u72b6\u6001\u8fc7\u6ee4' : 'Status Filter') + '</label>';
+  html += '<div style="display:flex;gap:6px;margin-top:4px;flex-wrap:wrap">';
+  html += '<label class="cl-re-label"><input type="radio" name="plan-status-filter" value="new" checked> ' + (zh ? '\u4ec5\u65b0\u8bcd' : 'New only') + '</label>';
+  html += '<label class="cl-re-label"><input type="radio" name="plan-status-filter" value="new+learning"> ' + (zh ? '\u65b0+\u5b66\u4e60\u4e2d' : 'New+Learning') + '</label>';
+  html += '<label class="cl-re-label"><input type="radio" name="plan-status-filter" value="all-unmastered"> ' + (zh ? '\u6240\u6709\u672a\u638c\u63e1' : 'All unmastered') + '</label>';
+  html += '</div></div>';
+
+  /* Section picker */
+  html += '<div style="margin-bottom:8px">';
+  html += '<label style="font-size:13px;font-weight:600">' + (zh ? '\u9009\u62e9\u5185\u5bb9' : 'Select Content') + '</label>';
+  html += '</div>';
+
+  /* Build sections with item counts */
+  var boards = typeof getVisibleBoards === 'function' ? getVisibleBoards() : ['cie'];
+  html += '<div id="plan-picker-sections">';
+  for (var bi = 0; bi < boards.length; bi++) {
+    var board = boards[bi];
+    var sylBoard = (board === '25m' || board === 'hhk') ? 'hhk' : board;
+    var syl = (typeof BOARD_SYLLABUS !== 'undefined') ? BOARD_SYLLABUS[sylBoard] : null;
+    if (!syl || !syl.chapters) continue;
+
+    html += '<div class="plan-picker-board"><strong>' + board.toUpperCase() + '</strong></div>';
+    for (var ci = 0; ci < syl.chapters.length; ci++) {
+      var ch = syl.chapters[ci];
+      var secs = ch.sections || [];
+      for (var si = 0; si < secs.length; si++) {
+        var sec = secs[si];
+        var secId = sec.id;
+        var checked = (prefillSectionId && secId === prefillSectionId && sylBoard === (prefillBoard === '25m' ? 'hhk' : prefillBoard)) ? ' checked' : '';
+        html += '<div class="plan-picker-section">';
+        html += '<label><input type="checkbox" class="plan-sec-check" data-sec="' + _escList(secId) + '" data-board="' + _escList(sylBoard) + '"' + checked + '> ';
+        html += '<strong>' + _escList(secId) + '</strong> ' + _escList(sec.title || sec.name || '') + '</label>';
+        html += '</div>';
+      }
+    }
+  }
+  html += '</div>';
+
+  html += '</div>';
+
+  if (typeof showModal === 'function') {
+    showModal(zh ? '\u521b\u5efa\u5b66\u4e60\u8ba1\u5212' : 'Create Learning Plan', html, function() {
+      _commitCreatePlan();
+    }, zh ? '\u521b\u5efa' : 'Create');
+  }
+}
+
+function _commitCreatePlan() {
+  var titleEl = document.getElementById('plan-title-input');
+  var dateEl = document.getElementById('plan-date-input');
+  var title = titleEl ? titleEl.value.trim() : '';
+  if (!title) {
+    if (typeof showToast === 'function') showToast(appLang !== 'en' ? '\u8bf7\u8f93\u5165\u8ba1\u5212\u540d\u79f0' : 'Please enter a plan title');
+    return;
+  }
+  var targetDate = dateEl && dateEl.value ? dateEl.value : null;
+
+  /* Get status filter */
+  var filterRadio = document.querySelector('input[name="plan-status-filter"]:checked');
+  var statusFilter = filterRadio ? filterRadio.value : 'new';
+
+  /* Collect checked sections */
+  var checks = document.querySelectorAll('.plan-sec-check:checked');
+  if (checks.length === 0) {
+    if (typeof showToast === 'function') showToast(appLang !== 'en' ? '\u8bf7\u9009\u62e9\u81f3\u5c11\u4e00\u4e2a\u7ae0\u8282' : 'Select at least one section');
+    return;
+  }
+
+  /* Create plan */
+  var plan = typeof createLearningPlan === 'function' ? createLearningPlan(title, targetDate) : null;
+  if (!plan) return;
+
+  /* Collect items from selected sections */
+  var items = [];
+  for (var ci = 0; ci < checks.length; ci++) {
+    var secId = checks[ci].dataset.sec;
+    var board = checks[ci].dataset.board;
+    _collectSectionItems(secId, board, statusFilter, items);
+  }
+
+  if (items.length > 0 && typeof addItemsToList === 'function') {
+    addItemsToList(plan.id, items);
+  }
+
+  if (typeof showToast === 'function') {
+    showToast((appLang !== 'en' ? '\u8ba1\u5212\u5df2\u521b\u5efa: ' : 'Plan created: ') + items.length + (appLang !== 'en' ? ' \u9879' : ' items'));
+  }
+  _renderMyLists();
+}
+
+function _collectSectionItems(sectionId, board, statusFilter, items) {
+  var seen = {};
+  for (var x = 0; x < items.length; x++) seen[items[x].type + ':' + items[x].ref] = true;
+
+  function _matchStatus(fs) {
+    if (statusFilter === 'new') return fs === 'new';
+    if (statusFilter === 'new+learning') return fs === 'new' || fs === 'learning';
+    return fs !== 'mastered';
+  }
+
+  /* Vocab: match by section mapping through levels */
+  var allWords = typeof getAllWords === 'function' ? getAllWords() : [];
+  var wordData = typeof getWordData === 'function' ? getWordData() : {};
+  for (var wi = 0; wi < allWords.length; wi++) {
+    var w = allWords[wi];
+    if (!w.key) continue;
+    /* Check if word belongs to this section via level */
+    var lvl = null;
+    if (typeof LEVELS !== 'undefined') {
+      for (var li = 0; li < LEVELS.length; li++) {
+        if (LEVELS[li].words) {
+          for (var wj = 0; wj < LEVELS[li].words.length; wj++) {
+            if (LEVELS[li].words[wj].key === w.key) { lvl = LEVELS[li]; break; }
+          }
+        }
+        if (lvl) break;
+      }
+    }
+    if (!lvl) continue;
+    var secMatch = false;
+    if (lvl.section === sectionId) secMatch = true;
+    if (lvl.sections && lvl.sections.indexOf(sectionId) !== -1) secMatch = true;
+    if (!secMatch) continue;
+    var fs = wordData[w.key] ? (wordData[w.key].fs || 'new') : 'new';
+    if (!_matchStatus(fs)) continue;
+    var key = 'vocab:' + w.key;
+    if (!seen[key]) { items.push({ type: 'vocab', ref: w.key }); seen[key] = true; }
+  }
+
+  /* KP */
+  if (typeof _kpData !== 'undefined' && _kpData[board]) {
+    var kpChapters = _kpData[board].chapters || [];
+    for (var kci = 0; kci < kpChapters.length; kci++) {
+      var kpSecs = kpChapters[kci].sections || [];
+      for (var ksi = 0; ksi < kpSecs.length; ksi++) {
+        if (kpSecs[ksi].id !== sectionId) continue;
+        var kps = kpSecs[ksi].knowledgePoints || [];
+        for (var kpi = 0; kpi < kps.length; kpi++) {
+          var kpId = kps[kpi].id;
+          var kpFs = typeof getKPFLM === 'function' ? getKPFLM(kpId) : 'new';
+          if (!_matchStatus(kpFs)) continue;
+          var kpKey = 'kp:' + kpId;
+          if (!seen[kpKey]) { items.push({ type: 'kp', ref: kpId }); seen[kpKey] = true; }
+        }
+      }
+    }
+  }
+
+  /* PP */
+  var ppBoard = board === 'hhk' ? 'cie' : board;
+  if (typeof _ppData !== 'undefined' && _ppData[ppBoard]) {
+    var qs = _ppData[ppBoard].questions || [];
+    var ppM = typeof _ppGetMastery === 'function' ? _ppGetMastery() : {};
+    for (var qi = 0; qi < qs.length; qi++) {
+      var q = qs[qi];
+      if (!q.subtopic || q.subtopic.indexOf(sectionId) === -1) continue;
+      var qid = q.id || q.qid;
+      if (!qid) continue;
+      var ppFs = ppM[qid] ? (ppM[qid].fs || 'new') : 'new';
+      if (!_matchStatus(ppFs)) continue;
+      var ppKey = 'pp:' + qid;
+      if (!seen[ppKey]) { items.push({ type: 'pp', ref: qid }); seen[ppKey] = true; }
+    }
+  }
+}
+
+/* ═══ PLAN FOCUS STUDY ═══ */
+
+var _planFocusMode = false;
+
+function startPlanFocusStudy(planId) {
+  var list = typeof getCustomList === 'function' ? getCustomList(planId) : null;
+  if (!list || !list.items || list.items.length === 0) {
+    if (typeof showToast === 'function') showToast(t('Plan is empty', '\u8ba1\u5212\u4e3a\u7a7a'));
+    return;
+  }
+
+  /* Filter to only unmastered items */
+  var unmasteredItems = [];
+  for (var i = 0; i < list.items.length; i++) {
+    var fs = _resolveItemFLM(list.items[i].type, list.items[i].ref);
+    if (fs !== 'mastered') unmasteredItems.push(list.items[i]);
+  }
+
+  if (unmasteredItems.length === 0) {
+    if (typeof showToast === 'function') showToast(t('All items mastered!', '\u5168\u90e8\u5df2\u638c\u63e1\uff01'));
+    return;
+  }
+
+  /* Create a temp filtered list for scanning */
+  _planFocusMode = true;
+
+  /* Build phases from unmastered items */
+  var vocabKeys = [], kpByBoard = {}, ppByBoard = {};
+  for (var j = 0; j < unmasteredItems.length; j++) {
+    var it = unmasteredItems[j];
+    if (it.type === 'vocab') { vocabKeys.push(it.ref); continue; }
+    var detBoard = _detectItemBoard(it.type, it.ref);
+    if (it.type === 'kp') {
+      if (!kpByBoard[detBoard]) kpByBoard[detBoard] = [];
+      kpByBoard[detBoard].push(it.ref);
+    } else if (it.type === 'pp') {
+      if (!ppByBoard[detBoard]) ppByBoard[detBoard] = [];
+      ppByBoard[detBoard].push(it.ref);
+    }
+  }
+
+  var phases = [];
+  if (vocabKeys.length > 0) phases.push({ type: 'vocab', items: vocabKeys });
+  var bKeys = Object.keys(kpByBoard);
+  for (var bi = 0; bi < bKeys.length; bi++) phases.push({ type: 'kp', items: kpByBoard[bKeys[bi]], board: bKeys[bi] });
+  bKeys = Object.keys(ppByBoard);
+  for (var bi2 = 0; bi2 < bKeys.length; bi2++) phases.push({ type: 'pp', items: ppByBoard[bKeys[bi2]], board: bKeys[bi2] });
+
+  if (phases.length === 0) return;
+
+  _listScanSession = {
+    listId: planId,
+    phases: phases,
+    phaseIdx: 0
+  };
+
+  _runListScanPhase();
+}
+
+/* ═══ CREATE PLAN FROM SECTION (called from syllabus.js) ═══ */
+
+function _createPlanFromSection(sectionId, board) {
+  _showCreatePlanModal(sectionId, board);
 }
 
 function _countListItems(cl) {
@@ -1815,9 +2193,25 @@ function startListStudy(listId) {
 
   /* Build enriched items array with resolved content */
   var allItems = [];
-  var allW = typeof getAllWords === 'function' ? getAllWords() : [];
+  /* Build complete word map from ALL levels (not just visible ones),
+     because custom lists may contain words from any board */
   var wMap = {};
-  for (var wi = 0; wi < allW.length; wi++) wMap[allW[wi].key] = allW[wi];
+  if (typeof LEVELS !== 'undefined' && typeof wordKey === 'function') {
+    for (var lvi = 0; lvi < LEVELS.length; lvi++) {
+      var lv = LEVELS[lvi];
+      if (!lv || !lv.vocabulary) continue;
+      var vm = {};
+      for (var vi = 0; vi < lv.vocabulary.length; vi++) {
+        var v = lv.vocabulary[vi];
+        if (!vm[v.id]) vm[v.id] = {};
+        vm[v.id][v.type] = v.content;
+      }
+      for (var wid in vm) {
+        var wk = wordKey(lvi, wid);
+        if (!wMap[wk]) wMap[wk] = { word: vm[wid].word || '', def: vm[wid].def || '' };
+      }
+    }
+  }
 
   for (var i = 0; i < list.items.length; i++) {
     var it = list.items[i];

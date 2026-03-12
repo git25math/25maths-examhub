@@ -1,5 +1,50 @@
 # Changelog
 
+## [5.6.0] - 2026-03-12 — 自定义学习计划
+
+### 核心变更
+- **学习计划数据模型**: 扩展 Custom Lists，新增 `isPlan`/`isHidden`/`targetDate` 字段，6 个计划函数（create/hide/unhide/getActive/getHidden/getProgress）
+- **计划管理 UI**: My Lists 标签页分区展示（进行中计划/自定义清单/已完成计划），计划卡片含进度条+截止日期+聚焦学习按钮
+- **计划创建弹窗**: 标题+截止日期+状态过滤（仅新词/新+学习中/所有未掌握）+按 section 选择内容，自动收集 vocab+KP+PP
+- **聚焦学习模式**: `startPlanFocusStudy()` 过滤已掌握项，只学未掌握内容，复用 List Scan 链式扫描
+- **今日计划集成**: 首页 Active Plans 卡片（最多 3 个），含迷你进度条+截止日期提示+继续学习按钮
+- **知识点详情页**: 新增"创建学习计划"按钮，一键收集该 section 下所有未掌握内容
+
+### 文件变更
+| 文件 | 变更类型 |
+|------|---------|
+| `js/storage.js` | 新增 6 个计划函数（~87 行） |
+| `js/lists.js` | 分区展示 + 计划卡片 + 创建弹窗 + 聚焦学习（~450 行） |
+| `js/syllabus.js` | 今日计划卡片 + section 创建按钮（~58 行） |
+| `css/style.css` | 计划相关样式（~20 行） |
+
+## [5.5.0] - 2026-03-12 — 逐题核心词汇提取
+
+### 核心变更
+- **逐题词汇映射**: 替代 section 级别的全量词汇，每道真题只显示 2-6 个直接相关的核心数学术语
+- **Gemini 批处理提取**: `scripts/extract-question-vocab.js` 按 section 分组调用 Gemini，自动提取逐题词汇并发现新词
+- **合并验证脚本**: `scripts/merge-question-vocab.js` 去重合并 + 新词入库 + 输出最终映射文件
+- **智能降级**: 无逐题映射的题目自动降级显示 section 全量词汇（标题区分"核心词汇"/"相关词汇"）
+- **生词库添加**: 每个未学习词汇显示"+ 添加"按钮，一键初始化 FLM 状态并记录添加次数
+- **UI 安全强化**: 词汇渲染使用 `escapeHtml()`，按钮改用 `data-action` 事件委托（消除 onclick XSS）
+
+### 数据
+- CIE 首批 295 题映射（4 sections: 1.1, 1.2, 1.3, 1.18），15 个新词入库
+- 平均每题 3.4 个核心词汇（median: 3）
+- 提取脚本支持增量运行（`--section`/`--dry-run`），已完成 section 自动跳过
+
+### 文件变更
+| 文件 | 变更类型 |
+|------|---------|
+| `scripts/extract-question-vocab.js` | **新建** — Gemini 批处理逐题词汇提取 |
+| `scripts/merge-question-vocab.js` | **新建** — 合并验证 + 新词入库 + 映射输出 |
+| `data/question-vocab-cie.json` | **新建** — CIE 逐题词汇映射（295 条，持续扩充） |
+| `data/question-vocab-edx.json` | **新建** — EDX 逐题词汇映射（待提取） |
+| `data/vocabulary-cie.json` | 修改 — 追加 15 个 Gemini 发现的新词 |
+| `js/practice.js` | 修改 — 加载 question-vocab + `_ppGetQuestionVocab` + `_resolveVocabUid` + `ppVocabBankAdd` + UI 改造 |
+| `css/style.css` | 修改 — `.pp-vocab-add` / `.pp-vocab-added` 按钮样式 |
+| `.gitignore` | 修改 — 排除 `data/qvocab-raw/` 中间数据 |
+
 ## [5.4.0] - 2026-03-12 — 智能通知系统
 
 ### 核心变更

@@ -1807,3 +1807,90 @@ function updateItemLearnedAt(listId, type, ref) {
     }
   }
 }
+
+/* ═══ LEARNING PLANS (extends Custom Lists) ═══ */
+
+function createLearningPlan(title, targetDate) {
+  var list = createCustomList(title);
+  if (!list) return null;
+  var data = _loadCustomLists();
+  for (var i = 0; i < data.lists.length; i++) {
+    if (data.lists[i].id === list.id) {
+      data.lists[i].isPlan = true;
+      data.lists[i].isHidden = false;
+      data.lists[i].targetDate = targetDate || null;
+      _saveCustomLists(data);
+      debouncedSync();
+      return data.lists[i];
+    }
+  }
+  return list;
+}
+
+function hideLearningPlan(planId) {
+  var data = _loadCustomLists();
+  for (var i = 0; i < data.lists.length; i++) {
+    if (data.lists[i].id === planId) {
+      data.lists[i].isHidden = true;
+      data.lists[i].updatedAt = new Date().toISOString();
+      _saveCustomLists(data);
+      debouncedSync();
+      return;
+    }
+  }
+}
+
+function unhideLearningPlan(planId) {
+  var data = _loadCustomLists();
+  for (var i = 0; i < data.lists.length; i++) {
+    if (data.lists[i].id === planId) {
+      data.lists[i].isHidden = false;
+      data.lists[i].updatedAt = new Date().toISOString();
+      _saveCustomLists(data);
+      debouncedSync();
+      return;
+    }
+  }
+}
+
+function getActivePlans() {
+  var lists = getCustomLists();
+  var result = [];
+  for (var i = 0; i < lists.length; i++) {
+    if (lists[i].isPlan && !lists[i].isHidden) result.push(lists[i]);
+  }
+  return result;
+}
+
+function getHiddenPlans() {
+  var lists = getCustomLists();
+  var result = [];
+  for (var i = 0; i < lists.length; i++) {
+    if (lists[i].isPlan && lists[i].isHidden) result.push(lists[i]);
+  }
+  return result;
+}
+
+function getPlanProgress(planId) {
+  var list = typeof getCustomList === 'function' ? getCustomList(planId) : null;
+  if (!list || !list.items || list.items.length === 0) return { total: 0, mastered: 0, uncertain: 0, learning: 0, 'new': 0, pct: 0 };
+  var counts = { mastered: 0, uncertain: 0, learning: 0, 'new': 0 };
+  for (var i = 0; i < list.items.length; i++) {
+    var fs = 'new';
+    var it = list.items[i];
+    if (it.type === 'vocab') {
+      var wd = typeof getWordData === 'function' ? getWordData() : {};
+      var d = wd[it.ref];
+      fs = d ? (d.fs || 'new') : 'new';
+    } else if (it.type === 'kp') {
+      var kpR = typeof getKPResult === 'function' ? getKPResult(it.ref) : null;
+      fs = kpR ? (kpR.fs || 'new') : 'new';
+    } else if (it.type === 'pp') {
+      var m = typeof _ppGetMastery === 'function' ? _ppGetMastery() : {};
+      fs = m[it.ref] ? (m[it.ref].fs || 'new') : 'new';
+    }
+    counts[fs] = (counts[fs] || 0) + 1;
+  }
+  var total = list.items.length;
+  return { total: total, mastered: counts.mastered, uncertain: counts.uncertain, learning: counts.learning, 'new': counts['new'], pct: total > 0 ? Math.round(counts.mastered / total * 100) : 0 };
+}

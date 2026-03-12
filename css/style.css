@@ -3598,6 +3598,10 @@ input { font-family: inherit; }
 .pp-vocab-stars { font-size: 11px; white-space: nowrap; color: var(--c-warning); }
 .pp-vocab-new { font-size: 10px; color: var(--c-muted); background: var(--c-border-light);
   padding: 1px 6px; border-radius: var(--r-sm); }
+.pp-vocab-add { font-size: 11px; color: var(--c-primary); background: none; border: 1px solid var(--c-primary);
+  padding: 1px 8px; border-radius: var(--r-sm); cursor: pointer; white-space: nowrap; }
+.pp-vocab-add:hover { background: var(--c-primary); color: #fff; }
+.pp-vocab-added { font-size: 11px; color: var(--c-success); white-space: nowrap; cursor: pointer; }
 .pp-kp-badge { font-size: 12px; white-space: nowrap; }
 .recovery-hint { font-size: 11px; color: var(--c-text2); margin-top: 3px;
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -4844,6 +4848,22 @@ input { font-family: inherit; }
 [data-theme="dark"] .cl-re-label:hover { background:var(--c-surface, #1E1E2E); }
 [data-theme="dark"] .cl-detail-row td { background:var(--c-surface, #1E1E2E); }
 [data-theme="dark"] .cl-rate-popup { background:var(--c-surface, #1E1E2E); border-color:var(--c-border); }
+
+/* ═══ LEARNING PLANS ═══ */
+.cl-section-label { font-size:13px; font-weight:700; color:var(--c-text2); margin-bottom:8px; }
+.cl-plan-badge { display:inline-block; font-size:10px; font-weight:700; padding:1px 6px; border-radius:999px; background:var(--c-primary-bg, #EDEDFF); color:var(--c-primary, #5248C9); text-transform:uppercase; letter-spacing:0.5px; vertical-align:middle; margin-right:4px; }
+.cl-plan-card { border-left:3px solid var(--c-primary, #5248C9); }
+.cl-plan-target { font-size:11px; color:var(--c-text3); margin-top:3px; }
+.cl-plan-target.warning { color:var(--c-warning, #F59E0B); }
+.cl-plan-target.overdue { color:var(--c-danger, #EF4444); font-weight:600; }
+.cl-hidden-section { margin-top:8px; }
+.cl-hidden-toggle { color:var(--c-text3); }
+.plan-picker-board { font-size:13px; margin:10px 0 4px; padding-bottom:4px; border-bottom:1px solid var(--c-border-light, #f3f4f6); }
+.plan-picker-section { padding:3px 0; font-size:13px; }
+.plan-picker-section label { display:flex; align-items:center; gap:4px; cursor:pointer; }
+[data-theme="dark"] .cl-plan-badge { background:var(--c-primary-bg, #2d2b52); }
+[data-theme="dark"] .cl-plan-card { border-left-color:var(--c-primary, #7C73E6); }
+[data-theme="dark"] .plan-picker-board { border-color:var(--c-border); }
 
 /* ═══ LIST STUDY MODE (Tab Workbench) ═══ */
 .ls-header { display:flex; align-items:center; gap:8px; padding:8px 0; flex-wrap:wrap; }

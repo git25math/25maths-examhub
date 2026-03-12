@@ -1082,6 +1082,7 @@ function _ppAccessAllowed(board) {
 }
 
 var _ppData = {};          /* { cie: { paperMeta: {}, questions: [] } } lazy-loaded */
+var _ppQuestionVocab = {};  /* { cie: { qid: [uid1, ...] }, edx: {...} } per-question vocab mapping */
 var _ppFigures = {};       /* { qid: ["figures/xxx.svg", ...] } from manifest.json */
 var _ppSession = null;     /* { questions, current, mode, startTime, results[], board, sectionId, paperKey, ... } */
 var _ppPaperResults = null; /* lazy-loaded paper results from localStorage */
@@ -1110,6 +1111,13 @@ function loadPastPaperData(board) {
       .then(function(r) { return r.ok ? r.json() : {}; })
       .then(function(m) { for (var k in m) _ppFigures[k] = m[k]; })
       .catch(function() {});
+  }
+  /* Load per-question vocab mapping (fire-and-forget) */
+  if (!_ppQuestionVocab[board]) {
+    fetch('data/question-vocab-' + board + '.json?v=' + APP_VERSION)
+      .then(function(r) { return r.ok ? r.json() : {}; })
+      .then(function(m) { _ppQuestionVocab[board] = m; })
+      .catch(function() { _ppQuestionVocab[board] = {}; });
   }
   return Promise.all([
     fetch(file).then(function(r) {
@@ -2371,32 +2379,49 @@ function _ppRenderBodyModule(q, showAnsLine) {
 
 function _ppRenderVocabModule(q) {
   if (_ppSession.mode !== 'practice' || !q.s) return '';
-  var vocabInfo = _ppGetSectionVocab(q.s, _ppSession.board);
+  var vocabInfo = _ppGetQuestionVocab(q.id, q.s, _ppSession.board);
   if (!vocabInfo || !vocabInfo.words.length) return '';
   var h = '<div class="pp-ms-toggle" role="button" tabindex="0" data-action="toggleVocab">';
   h += '<span id="pp-vocab-arrow">\u25b6</span> ';
-  h += t('Related Vocabulary', '\u76f8\u5173\u8bcd\u6c47');
+  h += vocabInfo.isPerQuestion
+    ? t('Key Vocabulary', '\u6838\u5fc3\u8bcd\u6c47')
+    : t('Related Vocabulary', '\u76f8\u5173\u8bcd\u6c47');
   h += ' <span class="text-muted-sm">(' + vocabInfo.words.length + ')</span>';
   h += '</div>';
   h += '<div class="pp-ms-content" id="pp-vocab-body">';
+  var bank = {};
+  try { bank = JSON.parse(localStorage.getItem('vocabBank')) || {}; } catch(e) {}
   for (var vi = 0; vi < vocabInfo.words.length; vi++) {
     var vw = vocabInfo.words[vi];
     h += '<div class="pp-vocab-row">';
-    h += '<span class="pp-vocab-word">' + vw.word + '</span>';
-    h += '<span class="pp-vocab-def">' + vw.def + '</span>';
-    if (vw.stars < 0) {
-      h += '<span class="pp-vocab-new">new</span>';
-    } else {
+    h += '<span class="pp-vocab-word">' + escapeHtml(vw.word) + '</span>';
+    h += '<span class="pp-vocab-def">' + escapeHtml(vw.def) + '</span>';
+    if (vw.stars >= 0) {
       h += '<span class="pp-vocab-stars">';
       for (var si = 0; si < vw.stars; si++) h += '\u2605';
       if (vw.stars === 0) h += '\u2606';
       h += '</span>';
+    } else if (vocabInfo.isPerQuestion && vw.uid && vw.key) {
+      var added = bank[vw.uid];
+      if (added) {
+        h += '<span class="pp-vocab-added" data-action="vocabBankAdd" data-uid="' + escapeHtml(vw.uid) + '" data-wkey="' + escapeHtml(vw.key) + '">';
+        h += '\u2713 ' + t('Added', '\u5df2\u6dfb\u52a0');
+        if (added.count > 1) h += ' (\u00d7' + added.count + ')';
+        h += '</span>';
+      } else {
+        h += '<button class="pp-vocab-add" data-action="vocabBankAdd" data-uid="' + escapeHtml(vw.uid) + '" data-wkey="' + escapeHtml(vw.key) + '">';
+        h += '+ ' + t('Add', '\u6dfb\u52a0') + '</button>';
+      }
+    } else {
+      h += '<span class="pp-vocab-new">new</span>';
     }
     h += '</div>';
   }
-  h += '<div class="text-center" style="padding:8px">';
-  h += '<button class="btn btn-sm" onclick="openDeck(' + vocabInfo.levelIdx + ')">';
-  h += '\ud83d\udcd6 ' + t('Study Vocabulary', '\u5b66\u4e60\u8bcd\u6c47') + '</button></div>';
+  if (!vocabInfo.isPerQuestion && vocabInfo.levelIdx !== undefined) {
+    h += '<div class="text-center" style="padding:8px">';
+    h += '<button class="btn btn-sm" data-action="openDeckFromVocab" data-li="' + vocabInfo.levelIdx + '">';
+    h += '\ud83d\udcd6 ' + t('Study Vocabulary', '\u5b66\u4e60\u8bcd\u6c47') + '</button></div>';
+  }
   h += '</div>';
   return h;
 }
@@ -2594,6 +2619,13 @@ function renderPPCard() {
       if (action === 'toggleVocab') ppToggleVocab();
       else if (action === 'toggleKP') ppToggleKP();
       else if (action === 'toggleMarkBody') ppToggleMarkBody(Number(target.dataset.idx));
+      else if (action === 'openDeckFromVocab') openDeck(Number(target.dataset.li));
+      else if (action === 'vocabBankAdd') {
+        var cnt = ppVocabBankAdd(target.dataset.uid, target.dataset.wkey);
+        target.className = 'pp-vocab-added';
+        target.innerHTML = '\u2713 ' + t('Added', '\u5df2\u6dfb\u52a0') + (cnt > 1 ? ' (\u00d7' + cnt + ')' : '');
+        showToast(t('Added to word bank', '\u5df2\u6dfb\u52a0\u5230\u751f\u8bcd\u5e93'));
+      }
       else if (action === 'recoverVocab') openDeck(Number(target.dataset.levelIdx));
       else if (action === 'recoverKP') openKnowledgePoint(target.dataset.kpId, target.dataset.board);
       else if (action === 'recoverQuestion') ppReviewWrongItem(target.dataset.qid, target.dataset.section, target.dataset.board);
@@ -3182,6 +3214,102 @@ function _ppGetSectionVocab(sectionId, board) {
     words.push({ word: item.content, def: def.content, stars: stars, key: key });
   }
   return { levelIdx: li, slug: lv.slug, title: lv.title, words: words };
+}
+
+/* ═══ PER-QUESTION VOCABULARY (v5.5.0) ═══ */
+
+function _resolveVocabUid(uid, sectionId, board) {
+  /* CIE: section-indexed vocab arrays in vocabulary-cie.json (loaded into LEVELS) */
+  if (board === 'cie') {
+    var map = (typeof _boardSectionLevelMap !== 'undefined') ? _boardSectionLevelMap[board] : null;
+    if (!map) return null;
+    /* Search the section's level first, then all levels */
+    var sectionsToSearch = sectionId && map[sectionId] !== undefined ? [map[sectionId]] : [];
+    /* Also scan all levels for cross-section words */
+    for (var li = 0; li < LEVELS.length; li++) {
+      if (sectionsToSearch.indexOf(li) === -1) sectionsToSearch.push(li);
+    }
+    for (var si = 0; si < sectionsToSearch.length; si++) {
+      var idx = sectionsToSearch[si];
+      var lv = LEVELS[idx];
+      if (!lv || !lv.vocabulary) continue;
+      for (var vi = 0; vi < lv.vocabulary.length; vi += 2) {
+        var item = lv.vocabulary[vi];
+        var def = lv.vocabulary[vi + 1];
+        if (makeUid(item.content) === uid) {
+          return { word: item.content, def: def.content, key: wordKey(idx, item.id), levelIdx: idx };
+        }
+      }
+    }
+    return null;
+  }
+  /* EDX: flat uid-keyed dict */
+  if (board === 'edx') {
+    var map2 = (typeof _boardSectionLevelMap !== 'undefined') ? _boardSectionLevelMap[board] : null;
+    /* Search all levels for the uid */
+    for (var li2 = 0; li2 < LEVELS.length; li2++) {
+      var lv2 = LEVELS[li2];
+      if (!lv2 || !lv2.vocabulary || lv2.board !== 'edx') continue;
+      for (var vi2 = 0; vi2 < lv2.vocabulary.length; vi2 += 2) {
+        var item2 = lv2.vocabulary[vi2];
+        var def2 = lv2.vocabulary[vi2 + 1];
+        if (item2.id === uid || makeUid(item2.content) === uid) {
+          return { word: item2.content, def: def2.content, key: wordKey(li2, item2.id), levelIdx: li2 };
+        }
+      }
+    }
+    return null;
+  }
+  return null;
+}
+
+function _ppGetQuestionVocab(questionId, sectionId, board) {
+  var qvMap = _ppQuestionVocab[board];
+  var uids = qvMap ? qvMap[questionId] : null;
+
+  /* No per-question mapping → fall back to section-level vocab */
+  if (!uids || !uids.length) return _ppGetSectionVocab(sectionId, board);
+
+  var wd = getWordData();
+  var words = [];
+  for (var i = 0; i < uids.length; i++) {
+    var resolved = _resolveVocabUid(uids[i], sectionId, board);
+    if (resolved) {
+      var d = wd[resolved.key] || {};
+      var stars = (d.ok !== undefined) ? computeStars(d.ok || 0, d.fail || 0) : -1;
+      words.push({
+        uid: uids[i], word: resolved.word, def: resolved.def,
+        stars: stars, key: resolved.key, levelIdx: resolved.levelIdx
+      });
+    }
+  }
+  /* If resolution failed for all uids, fall back */
+  if (!words.length) return _ppGetSectionVocab(sectionId, board);
+
+  return { words: words, isPerQuestion: true };
+}
+
+function ppVocabBankAdd(uid, wordKey) {
+  var wd = getWordData();
+  if (!wd[wordKey]) {
+    wd[wordKey] = { fs: 'new', st: 0, ok: 0, fail: 0 };
+    var s = loadS();
+    if (!s.words) s.words = {};
+    s.words[wordKey] = wd[wordKey];
+    writeS(s);
+  }
+  /* Track additions in vocabBank */
+  var bankKey = 'vocabBank';
+  var bank = {};
+  try { bank = JSON.parse(localStorage.getItem(bankKey)) || {}; } catch(e) {}
+  if (!bank[uid]) {
+    bank[uid] = { firstAdd: Date.now(), count: 1 };
+  } else {
+    bank[uid].count++;
+    bank[uid].lastAdd = Date.now();
+  }
+  localStorage.setItem(bankKey, JSON.stringify(bank));
+  return bank[uid].count;
 }
 
 function ppToggleVocab() {

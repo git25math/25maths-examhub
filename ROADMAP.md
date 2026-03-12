@@ -1,5 +1,12 @@
 # Development Roadmap
 
+## v5.6 — Custom Learning Plans [DONE]
+- [x] 学习计划数据模型（isPlan/isHidden/targetDate + 6 函数）
+- [x] My Lists 分区展示（进行中计划/自定义清单/已完成计划）
+- [x] 计划创建弹窗（section 选择器 + 状态过滤）
+- [x] 聚焦学习模式（过滤已掌握 + 复用 List Scan）
+- [x] 今日计划首页集成 + 知识点详情页创建按钮
+
 ## v5.4 — Smart Notification System [DONE]
 - [x] 通知基础设施从 homework.js 迁移到 smart-notif.js（core bundle）
 - [x] Guest 本地通知（localStorage，50 条上限）
@@ -350,6 +357,7 @@
 - [x] **Phase E 套卷练习**: 统一数据管道 + 套卷浏览 + 练习/考试模式 + 成绩持久化 → v1.9.0
 - [x] **Phase E+ 套卷 UX 优化**: 倒计时器 + 考试确认屏 + 退出确认 + header 试卷信息 + marks=0 过滤 + 暗色模式 → v1.9.1
 - [x] **Phase F 词汇联动**: 真题题卡"相关词汇"折叠区 + 知识点详情页词汇进度 + 跳转词汇卡组 → v1.9.7
+- [x] **Phase F+ 逐题核心词汇**: Gemini 提取逐题词汇映射 + 智能降级 + 生词库添加按钮 → v5.5.0
 - [x] **Phase G Edexcel 真题引擎**: 1,855 题 76 套卷 papers-edx.json + 考纲严格标注(39 sections) + SoW 教学流程 + UI 解锁 → v1.12.6
 
 ### Phase 10D — 智能学习路径（跨层整合）
