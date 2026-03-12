@@ -2932,6 +2932,59 @@ function _startMistakeReviewSession(qids) {
   });
 }
 
+function _collectAllReforgetItems() {
+  var map = typeof _buildReforgetCountMap === 'function' ? _buildReforgetCountMap() : {};
+  var items = [];
+  var ids = Object.keys(map);
+  for (var i = 0; i < ids.length; i++) {
+    if (map[ids[i]] <= 0) continue;
+    /* Determine type from reforget_log */
+    var log = typeof getReforgetLog === 'function' ? getReforgetLog() : [];
+    var type = 'vocab';
+    for (var li = log.length - 1; li >= 0; li--) {
+      if (log[li].id === ids[i]) { type = log[li].type || 'vocab'; break; }
+    }
+    var info = { id: ids[i], type: type, rc: map[ids[i]], label: '', sub: '', fs: 'new' };
+
+    if (type === 'vocab') {
+      var all = typeof getAllWords === 'function' ? getAllWords() : [];
+      for (var wi = 0; wi < all.length; wi++) {
+        if (all[wi].key === ids[i]) {
+          info.label = all[wi].word || ids[i];
+          info.sub = all[wi].def || '';
+          info.fs = all[wi].fs || 'new';
+          info._wordObj = all[wi];
+          break;
+        }
+      }
+      if (!info.label) info.label = ids[i];
+    } else if (type === 'kp') {
+      var bds = ['cie', 'edx'];
+      for (var bi = 0; bi < bds.length; bi++) {
+        var pts = (typeof _kpData !== 'undefined') ? (_kpData[bds[bi]] || []) : [];
+        for (var ki = 0; ki < pts.length; ki++) {
+          if (pts[ki].id === ids[i]) {
+            info.label = pts[ki].id;
+            info.sub = pts[ki].title || '';
+            if (pts[ki].title_zh) info.sub += ' / ' + pts[ki].title_zh;
+            var kpR = typeof getKPResult === 'function' ? getKPResult(ids[i]) : null;
+            info.fs = kpR ? (kpR.fs || 'new') : 'new';
+            break;
+          }
+        }
+      }
+      if (!info.label) info.label = ids[i];
+    } else if (type === 'pp') {
+      info.label = ids[i];
+      var mastery = typeof _ppGetMastery === 'function' ? _ppGetMastery() : {};
+      var m = mastery[ids[i]] || {};
+      info.fs = m.fs || 'new';
+    }
+    items.push(info);
+  }
+  return items;
+}
+
 function renderMistakeBook() {
   var panel = E('panel-mistakes');
   if (!panel) return;
@@ -2939,86 +2992,137 @@ function renderMistakeBook() {
 
   html += '<div class="section-title">' + t('Mistake Book', '\u9519\u9898\u672c') + '</div>';
 
-  /* Tabs */
+  /* Tabs: all | vocab | kp | pp | reforget */
   html += '<div class="mistake-tabs">';
   html += '<button class="mistake-tab' + (_mistakeTab === 'all' ? ' active' : '') + '" data-mtab="all">' + t('All', '\u5168\u90e8') + '</button>';
   html += '<button class="mistake-tab' + (_mistakeTab === 'vocab' ? ' active' : '') + '" data-mtab="vocab">' + t('Vocabulary', '\u8bcd\u6c47') + '</button>';
   html += '<button class="mistake-tab' + (_mistakeTab === 'practice' ? ' active' : '') + '" data-mtab="practice">' + t('Practice', '\u7ec3\u4e60') + '</button>';
+  html += '<button class="mistake-tab' + (_mistakeTab === 'reforget' ? ' active' : '') + '" data-mtab="reforget">' + t('Re-forget', '\u91cd\u5237\u9519\u9898') + '</button>';
   html += '</div>';
 
-  /* Vocab mistakes */
-  var vocabMistakes = _getVocabMistakes();
-  if (_mistakeTab === 'all' || _mistakeTab === 'vocab') {
-    if (vocabMistakes.length > 0) {
-      html += '<div class="mistake-section">';
-      html += '<div class="mistake-section-title">\ud83d\udcdd ' + t('Vocabulary', '\u8bcd\u6c47') + ' (' + vocabMistakes.length + ')</div>';
-      for (var i = 0; i < vocabMistakes.length; i++) {
-        var w = vocabMistakes[i];
-        html += '<div class="mistake-row">';
-        html += '<div class="mistake-word">' + escapeHtml(w.word || '');
-        if (w.src === 'reflow') html += '<span class="reflow-tag">' + t('Reviewing', '\u590d\u4e60\u4e2d') + '</span>';
-        html += '</div>';
-        html += '<div class="mistake-def">' + escapeHtml(w.def || '') + '</div>';
-        html += '<div class="mistake-fail">\u2717 ' + w.fail + '</div>';
-        html += '<div class="mistake-stars">';
-        for (var s = 0; s < w.stars; s++) html += '\u2605';
-        html += '</div>';
-        html += '</div>';
-      }
-      html += '<div class="text-center mt-12">';
-      html += '<button class="btn btn-primary btn-sm" onclick="startMistakeReview(\'vocab\')">' + t('Re-scan words to strengthen', '\u91cd\u65b0\u626b\u63cf\u5f85\u52a0\u5f3a\u8bcd\u6c47') + '</button>';
-      html += '</div>';
-      html += '</div>';
-    } else if (_mistakeTab === 'vocab') {
-      html += '<div class="mistake-empty">\ud83c\udf89 ' + t('No vocabulary mistakes!', '\u6ca1\u6709\u8bcd\u6c47\u9519\u9898\uff01') + '</div>';
-    }
-  }
+  /* ── Reforget Tab: group by reforget count ── */
+  if (_mistakeTab === 'reforget') {
+    var rfItems = _collectAllReforgetItems();
+    if (rfItems.length === 0) {
+      html += '<div class="mistake-empty">\ud83c\udf89 ' + t('No re-forgotten items!', '\u6ca1\u6709\u91cd\u5237\u9519\u9898\uff01') + '</div>';
+    } else {
+      /* Group by rc descending */
+      var maxRc = 0;
+      for (var ri = 0; ri < rfItems.length; ri++) { if (rfItems[ri].rc > maxRc) maxRc = rfItems[ri].rc; }
+      for (var rc = maxRc; rc >= 1; rc--) {
+        var group = [];
+        for (var gi = 0; gi < rfItems.length; gi++) { if (rfItems[gi].rc === rc) group.push(rfItems[gi]); }
+        if (group.length === 0) continue;
 
-  /* Practice mistakes (wrong book) */
-  var wb = typeof _ppGetWB === 'function' ? _ppGetWB() : {};
-  var ppItems = [];
-  for (var qid in wb) {
-    if (wb[qid].status === 'active') ppItems.push({ qid: qid, data: wb[qid] });
-  }
-  ppItems.sort(function(a, b) { return b.data.addedAt - a.data.addedAt; });
+        var dangerClass = rc >= 3 ? ' mistake-danger' : rc >= 2 ? ' mistake-warning' : '';
+        html += '<div class="mistake-section">';
+        html += '<div class="mistake-section-title' + dangerClass + '">';
+        html += '\ud83d\udd04 ' + t(rc + 'x Re-forget', rc + ' \u6b21\u91cd\u5237') + ' (' + group.length + ')';
+        html += '</div>';
 
-  if (_mistakeTab === 'all' || _mistakeTab === 'practice') {
-    if (ppItems.length > 0) {
-      html += '<div class="mistake-section">';
-      html += '<div class="mistake-section-title">\ud83d\udcdd ' + t('Practice / Past Papers', '\u7ec3\u4e60 / \u771f\u9898') + ' (' + ppItems.length + ')</div>';
-      for (var j = 0; j < ppItems.length; j++) {
-        var item = ppItems[j];
-        var errLabel = item.data.errorType || '';
-        if (typeof PP_ERROR_TYPES !== 'undefined' && errLabel) {
-          for (var ei = 0; ei < PP_ERROR_TYPES.length; ei++) {
-            if (PP_ERROR_TYPES[ei].id === errLabel) {
-              errLabel = t(PP_ERROR_TYPES[ei].en, PP_ERROR_TYPES[ei].zh);
-              break;
-            }
+        /* Sub-group by type */
+        var types = ['vocab', 'kp', 'pp'];
+        var typeLabels = { vocab: t('Vocab', '\u8bcd\u6c47'), kp: t('KP', '\u77e5\u8bc6\u70b9'), pp: t('PP', '\u771f\u9898') };
+        var typeIcons = { vocab: '\ud83d\udcdd', kp: '\ud83d\udca1', pp: '\ud83d\udcda' };
+        for (var ti = 0; ti < types.length; ti++) {
+          var typeItems = [];
+          for (var tii = 0; tii < group.length; tii++) { if (group[tii].type === types[ti]) typeItems.push(group[tii]); }
+          if (typeItems.length === 0) continue;
+          html += '<div style="font-size:12px;font-weight:600;color:var(--c-text2);padding:6px 0 2px">' + typeIcons[types[ti]] + ' ' + typeLabels[types[ti]] + ' (' + typeItems.length + ')</div>';
+          for (var ii = 0; ii < typeItems.length; ii++) {
+            var it = typeItems[ii];
+            html += '<div class="mistake-row">';
+            html += '<div class="mistake-word">' + escapeHtml(it.label);
+            html += ' <span class="reforget-badge">' + it.rc + '\u00d7</span>';
+            html += '</div>';
+            if (it.sub) html += '<div class="mistake-def">' + escapeHtml(it.sub) + '</div>';
+            html += '<div class="mistake-fail">' + _printMistakeFs(it.fs) + '</div>';
+            html += '</div>';
           }
         }
-        html += '<div class="mistake-row">';
-        html += '<div class="mistake-word">' + escapeHtml(item.qid) + '</div>';
-        if (errLabel) html += '<div class="mistake-def">' + escapeHtml(errLabel) + '</div>';
-        html += '<div class="mistake-fail">\u00d7' + (item.data.reviewCount || 0) + '</div>';
-        html += '<button class="btn btn-ghost btn-xs mistake-review-btn" onclick="reviewMistakeQ(\'' + escapeHtml(item.qid) + '\')">' + t('Review', '\u590d\u4e60') + '</button>';
         html += '</div>';
       }
-      html += '<div class="text-center mt-12">';
-      html += '<button class="btn btn-primary btn-sm" onclick="reviewAllMistakeQs()">' + t('Review All', '\u5168\u90e8\u590d\u4e60') + ' (' + ppItems.length + ')</button>';
-      html += '</div>';
-      html += '</div>';
-    } else if (_mistakeTab === 'practice') {
-      html += '<div class="mistake-empty">\ud83c\udf89 ' + t('No practice mistakes!', '\u6ca1\u6709\u7ec3\u4e60\u9519\u9898\uff01') + '</div>';
     }
   }
 
-  if (vocabMistakes.length === 0 && ppItems.length === 0) {
-    html += '<div class="mistake-empty">';
-    html += '<div style="font-size:48px;margin-bottom:16px">\ud83c\udf89</div>';
-    html += '<div style="font-size:18px;font-weight:600;margin-bottom:8px">' + t('All clear!', '\u5168\u90e8\u89e3\u51b3\uff01') + '</div>';
-    html += '<div>' + t('No mistakes to review \u2014 keep up the great work!', '\u6ca1\u6709\u9519\u9898\u9700\u8981\u590d\u4e60\uff0c\u7ee7\u7eed\u52a0\u6cb9\uff01') + '</div>';
-    html += '</div>';
+  /* ── Original tabs: all / vocab / practice ── */
+  if (_mistakeTab !== 'reforget') {
+    /* Vocab mistakes */
+    var vocabMistakes = _getVocabMistakes();
+    if (_mistakeTab === 'all' || _mistakeTab === 'vocab') {
+      if (vocabMistakes.length > 0) {
+        html += '<div class="mistake-section">';
+        html += '<div class="mistake-section-title">\ud83d\udcdd ' + t('Vocabulary', '\u8bcd\u6c47') + ' (' + vocabMistakes.length + ')</div>';
+        for (var i = 0; i < vocabMistakes.length; i++) {
+          var w = vocabMistakes[i];
+          var wRf = typeof getReforgetCount === 'function' ? getReforgetCount(w.key) : 0;
+          html += '<div class="mistake-row">';
+          html += '<div class="mistake-word">' + escapeHtml(w.word || '');
+          if (wRf > 0) html += ' <span class="reforget-badge">' + wRf + '\u00d7</span>';
+          if (w.src === 'reflow') html += '<span class="reflow-tag">' + t('Reviewing', '\u590d\u4e60\u4e2d') + '</span>';
+          html += '</div>';
+          html += '<div class="mistake-def">' + escapeHtml(w.def || '') + '</div>';
+          html += '<div class="mistake-fail">\u2717 ' + w.fail + '</div>';
+          html += '<div class="mistake-stars">';
+          for (var s = 0; s < w.stars; s++) html += '\u2605';
+          html += '</div>';
+          html += '</div>';
+        }
+        html += '<div class="text-center mt-12">';
+        html += '<button class="btn btn-primary btn-sm" onclick="startMistakeReview(\'vocab\')">' + t('Re-scan words to strengthen', '\u91cd\u65b0\u626b\u63cf\u5f85\u52a0\u5f3a\u8bcd\u6c47') + '</button>';
+        html += '</div>';
+        html += '</div>';
+      } else if (_mistakeTab === 'vocab') {
+        html += '<div class="mistake-empty">\ud83c\udf89 ' + t('No vocabulary mistakes!', '\u6ca1\u6709\u8bcd\u6c47\u9519\u9898\uff01') + '</div>';
+      }
+    }
+
+    /* Practice mistakes (wrong book) */
+    var wb = typeof _ppGetWB === 'function' ? _ppGetWB() : {};
+    var ppItems = [];
+    for (var qid in wb) {
+      if (wb[qid].status === 'active') ppItems.push({ qid: qid, data: wb[qid] });
+    }
+    ppItems.sort(function(a, b) { return b.data.addedAt - a.data.addedAt; });
+
+    if (_mistakeTab === 'all' || _mistakeTab === 'practice') {
+      if (ppItems.length > 0) {
+        html += '<div class="mistake-section">';
+        html += '<div class="mistake-section-title">\ud83d\udcdd ' + t('Practice / Past Papers', '\u7ec3\u4e60 / \u771f\u9898') + ' (' + ppItems.length + ')</div>';
+        for (var j = 0; j < ppItems.length; j++) {
+          var item = ppItems[j];
+          var errLabel = item.data.errorType || '';
+          if (typeof PP_ERROR_TYPES !== 'undefined' && errLabel) {
+            for (var ei = 0; ei < PP_ERROR_TYPES.length; ei++) {
+              if (PP_ERROR_TYPES[ei].id === errLabel) {
+                errLabel = t(PP_ERROR_TYPES[ei].en, PP_ERROR_TYPES[ei].zh);
+                break;
+              }
+            }
+          }
+          html += '<div class="mistake-row">';
+          html += '<div class="mistake-word">' + escapeHtml(item.qid) + '</div>';
+          if (errLabel) html += '<div class="mistake-def">' + escapeHtml(errLabel) + '</div>';
+          html += '<div class="mistake-fail">\u00d7' + (item.data.reviewCount || 0) + '</div>';
+          html += '<button class="btn btn-ghost btn-xs mistake-review-btn" onclick="reviewMistakeQ(\'' + escapeHtml(item.qid) + '\')">' + t('Review', '\u590d\u4e60') + '</button>';
+          html += '</div>';
+        }
+        html += '<div class="text-center mt-12">';
+        html += '<button class="btn btn-primary btn-sm" onclick="reviewAllMistakeQs()">' + t('Review All', '\u5168\u90e8\u590d\u4e60') + ' (' + ppItems.length + ')</button>';
+        html += '</div>';
+        html += '</div>';
+      } else if (_mistakeTab === 'practice') {
+        html += '<div class="mistake-empty">\ud83c\udf89 ' + t('No practice mistakes!', '\u6ca1\u6709\u7ec3\u4e60\u9519\u9898\uff01') + '</div>';
+      }
+    }
+
+    if (_mistakeTab === 'all' && vocabMistakes.length === 0 && ppItems.length === 0) {
+      html += '<div class="mistake-empty">';
+      html += '<div style="font-size:48px;margin-bottom:16px">\ud83c\udf89</div>';
+      html += '<div style="font-size:18px;font-weight:600;margin-bottom:8px">' + t('All clear!', '\u5168\u90e8\u89e3\u51b3\uff01') + '</div>';
+      html += '<div>' + t('No mistakes to review \u2014 keep up the great work!', '\u6ca1\u6709\u9519\u9898\u9700\u8981\u590d\u4e60\uff0c\u7ee7\u7eed\u52a0\u6cb9\uff01') + '</div>';
+      html += '</div>';
+    }
   }
 
   panel.innerHTML = html;
@@ -3034,6 +3138,13 @@ function renderMistakeBook() {
       }
     });
   }
+}
+
+function _printMistakeFs(fs) {
+  var colors = { mastered: 'var(--c-success)', uncertain: 'var(--c-warning)', learning: 'var(--c-primary)', 'new': 'var(--c-text3)' };
+  var labels = { mastered: t('M', '\u638c'), uncertain: t('U', '\u6a21'), learning: t('L', '\u5b66'), 'new': t('N', '\u65b0') };
+  var s = fs || 'new';
+  return '<span style="font-size:11px;font-weight:700;color:' + (colors[s] || 'var(--c-text3)') + '">' + (labels[s] || s) + '</span>';
 }
 
 function reviewAllMistakeQs() {

@@ -4014,6 +4014,8 @@ input { font-family: inherit; }
 .mistake-tab.active { background:var(--c-primary); color:#fff; border-color:var(--c-primary); }
 .mistake-section { margin-bottom:20px; }
 .mistake-section-title { font-weight:600; font-size:14px; margin-bottom:8px; color:var(--c-text2); }
+.mistake-section-title.mistake-warning { color:var(--c-warning, #D97706); }
+.mistake-section-title.mistake-danger { color:var(--c-danger, #EF4444); }
 .mistake-row { display:flex; align-items:center; gap:12px; padding:10px 0; border-bottom:1px solid var(--c-border); }
 .mistake-word { font-weight:600; flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
 .mistake-def { flex:2; color:var(--c-text2); font-size:13px; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
