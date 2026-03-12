@@ -4,7 +4,7 @@ Bilingual math learning platform (双语数学学习平台) for CIE 0580 / Edexc
 
 - **Live**: https://git25math.github.io/25maths-examhub/
 - **Repo**: https://github.com/git25math/25maths-examhub
-- **Version**: v5.7.3 (2026-03-12)
+- **Version**: v5.9.0 (2026-03-12)
 - **Scale**: 3 boards, 157 levels + 72 CIE sections + 39 Edexcel sections, 2,200 words + 5,962 真题 + 3,578 练习题
 - **Supabase**: shared with 25maths-website (ref: `jjjigohjvmyewasmmmyf`)
 - **See also**: [CHANGELOG.md](CHANGELOG.md) | [ROADMAP.md](ROADMAP.md)
@@ -31,7 +31,7 @@ python3 scripts/extract-vocab.py
 python3 scripts/build-single.py
 ```
 
-## JS Load Order (30 files)
+## JS Load Order (31 files)
 
 Scripts are loaded via `<script>` tags in this order (each depends on previous):
 1. config.js — App constants, theme tokens, global state, breakpoint detection
@@ -50,20 +50,21 @@ Scripts are loaded via `<script>` tags in this order (each depends on previous):
 14. export.js — Import (4 formats) + Export (CSV/JSON/Markdown)
 15. stats.js — Statistics dashboard, heatmap, trend chart
 16. practice.js — Exam practice mode (real MCQs from 25maths-website)
-17. learning-graph.js — Runtime query layer (questions ↔ vocab ↔ KPs via section codes)
-18. worksheet.js — Print Repair Sheet (single-question A4 printable from Recovery Pack)
-19. recovery-priority.js — Smart Recovery Priority Engine (4-dimension scoring + type grouping)
-20. recovery-scheduler.js — Adaptive Recovery Scheduler (daily budget + backlog + carry-over)
-21. student-profile.js — Student Recovery Profile (accuracy/mastery/trend/weak sections)
-22. learning-goals.js — Learning Goals (system-generated goals + progress + scheduler bias + completion UX)
-23. ai-tutor.js — Rule-based AI Tutor (contextual guidance at 4 touchpoints)
-24. error-patterns.js — Error Pattern Memory (5-type mistake tracking + dominant pattern query)
-25. mistake-coach.js — Mistake Correction Coach (step-by-step correction at Recovery Pack + Print)
-26. recovery-session.js — Recovery Session orchestration (scheduler → smart → legacy fallback)
-27. admin.js — Teacher management (classes, students, grades, school overview)
-28. vocab-admin.js — Super-admin vocabulary CRUD (vocab_levels table)
-29. homework.js — Homework assignments + notifications + student submissions
-30. app.js — Init, leaderboard, URL deep linking, iOS share recovery
+17. knowledge-node.js — Knowledge Node 6-stage learning panel (wrong answer → targeted practice)
+18. learning-graph.js — Runtime query layer (questions ↔ vocab ↔ KPs via section codes)
+19. worksheet.js — Print Repair Sheet (single-question A4 printable from Recovery Pack)
+20. recovery-priority.js — Smart Recovery Priority Engine (4-dimension scoring + type grouping)
+21. recovery-scheduler.js — Adaptive Recovery Scheduler (daily budget + backlog + carry-over)
+22. student-profile.js — Student Recovery Profile (accuracy/mastery/trend/weak sections)
+23. learning-goals.js — Learning Goals (system-generated goals + progress + scheduler bias + completion UX)
+24. ai-tutor.js — Rule-based AI Tutor (contextual guidance at 4 touchpoints)
+25. error-patterns.js — Error Pattern Memory (5-type mistake tracking + dominant pattern query)
+26. mistake-coach.js — Mistake Correction Coach (step-by-step correction at Recovery Pack + Print)
+27. recovery-session.js — Recovery Session orchestration (scheduler → smart → legacy fallback)
+28. admin.js — Teacher management (classes, students, grades, school overview)
+29. vocab-admin.js — Super-admin vocabulary CRUD (vocab_levels table)
+30. homework.js — Homework assignments + notifications + student submissions
+31. app.js — Init, leaderboard, URL deep linking, iOS share recovery
 
 ## Layout Architecture
 

@@ -1,5 +1,12 @@
 # Development Roadmap
 
+## v5.9 — Knowledge Node Learning Panel [DONE]
+- [x] 6 阶段知识点学习面板（动机→概念→考法→方法→例题→定向练习）
+- [x] 答错后 "Learn This" 按钮（weakest-KP 自动定位）
+- [x] 定向练习跳转（PP Scan by IDs）+ startPPScanByIds 时序修复
+- [x] testYourself MCQ 快速自测
+- [x] 自注入 CSS 底部面板 UI
+
 ## v5.8 — Past Paper Solution Module [DONE]
 - [x] `_ppRenderSolution(q)` 可折叠答案解析模块（默认收起）
 - [x] `_ppRenderSolSteps(steps, q)` 步骤渲染（编号徽章 + Block 富文本 + LaTeX）

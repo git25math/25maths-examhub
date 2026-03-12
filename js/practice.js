@@ -1570,7 +1570,7 @@ function startPPScan(sectionId, board) {
 }
 
 /* Start PP scan from a pre-filtered list of question IDs (cross-topic) */
-function startPPScanByIds(qIds, board) {
+function startPPScanByIds(qIds, board, singleRound) {
   if (typeof loadPastPaperData !== 'function') return;
   loadPastPaperData(board).then(function() {
     var allQ = getPPQuestions(board);
@@ -1581,13 +1581,13 @@ function startPPScanByIds(qIds, board) {
       }
     }
     if (items.length === 0) { showToast(t('No items found', '\u672a\u627e\u5230\u9879\u76ee')); return; }
+    _ppSession = null;
+    showPanel('practice');  // must come BEFORE setting _ppScanState (cleanup clears it)
     _ppScanState = {
-      items: items, pool: items.slice(), round: 2, idx: 0,
+      items: items, pool: items.slice(), round: singleRound ? 5 : 2, idx: 0,
       sectionId: '', board: board, showAnswer: false,
       results: { known: [], fuzzy: [], unknown: [] }
     };
-    _ppSession = null;
-    showPanel('practice');
     loadKaTeX().then(function() { _renderPPScanCard(); });
   });
 }
@@ -2808,8 +2808,23 @@ function ppRate(level) {
       }
     } catch (e) {}
 
+    /* Knowledge Node — Learn This button (injected into Recovery Pack) */
+    var _knBtn = _knBuildLearnButton(_epSec, _epBoard,
+      _epSignals && _epSignals[0] ? _epSignals[0].type : 'unknown');
+
     /* Show Recovery Pack instead of auto-advance */
     _ppShowRecoveryPack(q);
+
+    /* Insert Learn button at top of recovery pack */
+    if (_knBtn) {
+      var _knWrap = document.createElement('div');
+      _knWrap.innerHTML = _knBtn;
+      var _rrPack = document.getElementById('pp-recovery-pack');
+      if (_rrPack) {
+        var _rrInner = _rrPack.querySelector('.recovery-pack');
+        if (_rrInner) _rrInner.insertAdjacentHTML('afterbegin', _knBtn);
+      }
+    }
     return;
   }
 
@@ -2824,6 +2839,31 @@ function ppRate(level) {
 }
 
 /* ═══ RECOVERY PACK ═══ */
+
+/* ── Knowledge Node: "Learn This" button builder ── */
+
+function _knBuildLearnButton(sectionId, board, mistakeType) {
+  if (typeof getQuestionKPs !== 'function') return '';
+  var kps = getQuestionKPs(sectionId, board);
+  if (!kps || !kps.length) return '';
+  var target = kps.reduce(function(weakest, kp) {
+    var order = { 'new': 0, 'learning': 1, 'uncertain': 2, 'mastered': 3 };
+    return (order[kp.fs] || 0) < (order[weakest.fs] || 0) ? kp : weakest;
+  }, kps[0]);
+  var ctx = JSON.stringify({
+    sectionId: sectionId,
+    mistakeType: mistakeType || 'unknown',
+    board: board
+  }).replace(/'/g, '&#39;');
+  return (
+    '<div class="kn-learn-btn-wrap">' +
+      '<button class="kn-learn-btn" onclick=\'openKnowledgeNode("' +
+        target.id + '","' + board + '",' + ctx + ')\'>' +
+        '\ud83d\udcd6 Learn This \u2014 ' + escapeHtml(target.title || target.id) +
+      '</button>' +
+    '</div>'
+  );
+}
 
 var _ppRecoveryAdvancing = false;
 
