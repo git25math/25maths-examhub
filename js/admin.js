@@ -931,10 +931,11 @@ function _umRenderTable() {
   html += '<button class="dq-pill' + (_umRoleFilter === 'guest' ? ' active' : '') + '" data-um-filter="guest">' + t('Guest', '访客') + ' (' + totalGuests + ')</button>';
   html += '</div>';
 
-  /* Search + refresh */
+  /* Search + refresh + backup */
   html += '<div class="admin-filter-bar">';
   html += '<input type="text" class="auth-input" id="um-search" placeholder="' + t('Search email / name...', '搜索邮箱/姓名...') + '" value="' + escapeHtml(_umSearch) + '">';
   html += '<button class="btn btn-ghost btn-sm" data-um-action="refresh">' + t('Refresh', '刷新') + '</button>';
+  html += '<button class="btn btn-ghost btn-sm" data-um-action="backup">💾 ' + t('Backup DB', '备份数据') + '</button>';
   html += '</div>';
 
   /* Batch action bar (visible when selection exists) */
@@ -1240,6 +1241,34 @@ async function doUserDelete(userId, email) {
     hideModal(); showToast(t('User deleted', '用户已删除'));
     _umData = null; renderUserManagement();
   } catch (e) { msg.textContent = e.message; msg.className = 'settings-msg error'; }
+}
+
+/* ── Database Backup ── */
+
+async function doBackupDownload() {
+  showToast(t('Downloading backup...', '正在下载备份...'));
+  try {
+    var res = await callEdgeFunction('backup-data', {});
+    if (res.error) throw new Error(res.error);
+    var blob = new Blob([JSON.stringify(res, null, 2)], { type: 'application/json' });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = 'examhub-backup-' + new Date().toISOString().slice(0, 10) + '.json';
+    a.click();
+    URL.revokeObjectURL(url);
+    /* Summary */
+    var tables = 0, totalRows = 0;
+    Object.keys(res).forEach(function(k) {
+      if (res[k] && typeof res[k] === 'object' && 'count' in res[k]) {
+        tables++;
+        totalRows += res[k].count || 0;
+      }
+    });
+    showToast(t('Backup complete: ', '备份完成：') + tables + t(' tables, ', ' 张表，') + totalRows + t(' rows', ' 行'));
+  } catch (e) {
+    showToast(t('Backup failed: ', '备份失败：') + e.message);
+  }
 }
 
 /* ── Batch Operations ── */
@@ -1567,6 +1596,7 @@ document.addEventListener('click', function(e) {
   if (!act) return;
   var a = act.dataset.umAction;
   if (a === 'refresh') { _umData = null; renderUserManagement(); }
+  else if (a === 'backup') { doBackupDownload(); }
   else if (a === 'prev') { _umPage = Math.max(1, _umPage - 1); _umRenderTable(); }
   else if (a === 'next') { _umPage++; _umRenderTable(); }
   else if (a === 'edit') { showUserEditModal(act.dataset.uid, act.dataset.nickname || '', act.dataset.board || ''); }
