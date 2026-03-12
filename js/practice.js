@@ -1933,7 +1933,12 @@ function _ppRenderTex(texOrQ) {
 function _ppRenderFigureBlock(block, q) {
   /* Render a single figure block */
   if (block.ref) {
-    return '<div class="pp-figures"><img class="pp-fig" src="data/' + block.ref + '?v=' + APP_VERSION + '" alt="Question diagram" loading="lazy"></div>';
+    var src = block.ref.indexOf('http') === 0 ? block.ref : ('data/' + block.ref + '?v=' + APP_VERSION);
+    return '<div class="pp-figures"><img class="pp-fig" src="' + src + '" alt="Question diagram" loading="lazy"></div>';
+  }
+  if (q && q.figureUrls && q.figureUrls.length > 0 && block._figIdx != null) {
+    var url = q.figureUrls[block._figIdx];
+    if (url) return '<div class="pp-figures"><img class="pp-fig" src="' + url + '" alt="Question diagram" loading="lazy"></div>';
   }
   if (block.hasFigure) {
     var figH = '<div class="pp-figure-placeholder">';
@@ -1955,6 +1960,7 @@ function _ppRenderBlocks(blocks, q) {
   /* Render Block[] to HTML (v4.5.0: + list block, v5.0.0: + newline/space) */
   if (!blocks || !blocks.length) return '';
   var html = '';
+  var figIdx = 0;
   for (var i = 0; i < blocks.length; i++) {
     var b = blocks[i];
     if (b.type === 'text') {
@@ -1962,6 +1968,7 @@ function _ppRenderBlocks(blocks, q) {
     } else if (b.type === 'table') {
       html += _ppConvertTabularRuntime(b.content);
     } else if (b.type === 'figure') {
+      b._figIdx = figIdx++;
       html += _ppRenderFigureBlock(b, q);
     } else if (b.type === 'list') {
       var tag = b.style === 'number' ? 'ol' : 'ul';
@@ -2214,6 +2221,13 @@ function _ppRenderFigures(q) {
     var h = '<div class="pp-figures">';
     for (var i = 0; i < figs.length; i++) {
       h += '<img class="pp-fig" src="data/' + figs[i] + '?v=' + APP_VERSION + '" alt="Question diagram" loading="lazy">';
+    }
+    return h + '</div>';
+  }
+  if (q.figureUrls && q.figureUrls.length > 0) {
+    var h = '<div class="pp-figures">';
+    for (var i = 0; i < q.figureUrls.length; i++) {
+      h += '<img class="pp-fig" src="' + q.figureUrls[i] + '" alt="Question diagram" loading="lazy">';
     }
     return h + '</div>';
   }

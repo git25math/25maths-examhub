@@ -1,5 +1,20 @@
 # Changelog
 
+## [5.6.1] - 2026-03-12 — CIE 外部图片注入
+
+### 核心变更
+- **图片 URL 注入**: 1107 道 CIE 0580 真题注入外部图片 URL（来自 25maths-cie0580-figures GitHub Pages，共 1862 张图片）
+- **Block 渲染支持**: `_ppRenderFigureBlock` 支持 http 外部 URL + `figureUrls` 按 block 索引取图
+- **Legacy 渲染支持**: `_ppRenderFigures` 新增 `figureUrls` 降级路径，覆盖无 figure block 的 hasFigure 题
+- **注入脚本**: `scripts/inject-figure-urls.py` 一次性脚本，支持重复运行
+
+### 文件变更
+| 文件 | 变更类型 |
+|------|---------|
+| `data/papers-cie.json` | 1107 题新增 `figureUrls` 数组 |
+| `js/practice.js` | 3 处渲染函数修改（~16 行） |
+| `scripts/inject-figure-urls.py` | 新建注入脚本 |
+
 ## [5.6.0] - 2026-03-12 — 自定义学习计划
 
 ### 核心变更
