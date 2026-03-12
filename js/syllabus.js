@@ -311,7 +311,7 @@ function _renderBoardHome(board) {
     html += '<div class="pp-browse-entry" role="button" tabindex="0" onclick="ppShowPaperBrowse(\'' + escapeHtml(_ppBoardKey) + '\')">';
     html += '<span class="pp-browse-icon">\ud83d\udcdd</span>';
     html += '<div class="pp-browse-info">';
-    html += '<div class="pp-browse-title">' + t('Past Papers', '\u5957\u5377\u7ec3\u4e60') + '</div>';
+    html += '<div class="pp-browse-title">' + t('Past Papers', '\u5957\u5377/\u4e13\u9898\u7ec3\u4e60') + '</div>';
     html += '<div class="pp-browse-sub">' + _ppSub + '</div>';
     html += '</div>';
     html += '<span class="pp-browse-arrow">\u2192</span>';

@@ -1088,6 +1088,9 @@ var _ppSession = null;     /* { questions, current, mode, startTime, results[], 
 var _ppPaperResults = null; /* lazy-loaded paper results from localStorage */
 var _ppTimer = null;       /* exam timer interval */
 var _ppDelegated = false;  /* event delegation bound on panel-pastpaper */
+var _ppMSIndex = null;     /* { paper-key: { qnum: filename } } ms-only PDF index */
+var _ppQPMSIndex = null;   /* { paper-key: { qnum: filename } } qp+ms PDF index */
+var _ppBrowseTab = 'paper'; /* active browse tab: 'paper' or 'topic' */
 
 var PP_ERROR_TYPES = [
   { id: 'concept',     en: 'Concept gap',       zh: '\u6982\u5ff5\u4e0d\u6e05' },
@@ -1118,6 +1121,17 @@ function loadPastPaperData(board) {
       .then(function(r) { return r.ok ? r.json() : {}; })
       .then(function(m) { _ppQuestionVocab[board] = m; })
       .catch(function() { _ppQuestionVocab[board] = {}; });
+  }
+  /* Load mark scheme PDF indexes (fire-and-forget, CIE only) */
+  if (board === 'cie' && !_ppMSIndex) {
+    fetch('data/ms-index.json?v=' + APP_VERSION)
+      .then(function(r) { return r.ok ? r.json() : {}; })
+      .then(function(m) { _ppMSIndex = m; })
+      .catch(function() { _ppMSIndex = {}; });
+    fetch('data/qpms-index.json?v=' + APP_VERSION)
+      .then(function(r) { return r.ok ? r.json() : {}; })
+      .then(function(m) { _ppQPMSIndex = m; })
+      .catch(function() { _ppQPMSIndex = {}; });
   }
   return Promise.all([
     fetch(file).then(function(r) {
@@ -2513,6 +2527,56 @@ function _ppRenderKPModule(q) {
   }
 */
 
+/* ═══ MARK SCHEME PDF ═══ */
+
+var _PP_MS_BASE = 'https://git25math.github.io/25maths-cie0580-pdf-singlems/';
+var _PP_QPMS_BASE = 'https://git25math.github.io/25maths-cie0580-pdf-qpms/';
+
+/**
+ * Returns the best mark scheme PDF URL for a question, or null if unavailable.
+ * Priority: qp+ms > ms-only.
+ * Coverage: 2019OctNov–2024OctNov + 2025Specimen.
+ */
+function ppGetMarkSchemeURL(q) {
+  if (!q || !q.paper || !q.qnum) return null;
+  var paperKey = q.paper;   /* e.g. "2023March-Paper22" */
+  var qnum = String(q.qnum);
+
+  /* Try qp+ms index first */
+  if (_ppQPMSIndex) {
+    var qpmsMap = _ppQPMSIndex[paperKey];
+    if (qpmsMap && qpmsMap[qnum]) {
+      var parts = paperKey.split('-Paper');
+      return _PP_QPMS_BASE + parts[0] + '/Paper' + parts[1] + '/' + encodeURIComponent(qpmsMap[qnum]);
+    }
+  }
+
+  /* Fallback to ms-only index */
+  if (_ppMSIndex) {
+    var msMap = _ppMSIndex[paperKey];
+    if (msMap && msMap[qnum]) {
+      var parts2 = paperKey.split('-Paper');
+      return _PP_MS_BASE + parts2[0] + '/Paper' + parts2[1] + '/' + encodeURIComponent(msMap[qnum]);
+    }
+  }
+
+  return null;
+}
+
+/**
+ * Renders the mark scheme PDF button module (practice mode only).
+ */
+function _ppRenderMarkSchemeModule(q) {
+  var url = ppGetMarkSchemeURL(q);
+  if (!url) return '';
+  var h = '<div class="pp-ms-pdf-btn" role="button" tabindex="0" data-action="openMarkScheme" data-url="' + escapeHtml(url) + '">';
+  h += '<span class="pp-ms-pdf-icon">\ud83d\udccb</span> ';
+  h += t('View Mark Scheme', '\u67e5\u770b\u8bc4\u5206\u6807\u51c6');
+  h += ' <span class="pp-ms-pdf-arrow">\u2192</span>';
+  h += '</div>';
+  return h;
+}
+
 function _ppRenderSolution(q) {
   if (!q.solution) return '';
   var sol = q.solution;
@@ -2679,11 +2743,12 @@ function renderPPCard() {
   }
 
   /* Render card modules in configurable order (v4.3.3) */
-  var _ppDefaultModOrder = ['body', 'vocab', 'kp', 'solution'];
+  var _ppDefaultModOrder = ['body', 'vocab', 'kp', 'markscheme', 'solution'];
   var _modOrder = q.moduleOrder || _ppDefaultModOrder;
   /* Filter out legacy 'answers' module from old moduleOrder overrides */
   _modOrder = _modOrder.filter(function(m) { return m !== 'answers'; });
-  /* Ensure solution module is always included */
+  /* Ensure solution and markscheme modules are always included */
+  if (_modOrder.indexOf('markscheme') < 0) _modOrder.splice(_modOrder.indexOf('solution') >= 0 ? _modOrder.indexOf('solution') : _modOrder.length, 0, 'markscheme');
   if (_modOrder.indexOf('solution') < 0) _modOrder.push('solution');
   var _showAnsLine = _ppSession.mode !== 'exam';
   for (var _moi = 0; _moi < _modOrder.length; _moi++) {
@@ -2691,6 +2756,7 @@ function renderPPCard() {
       case 'body':     html += _ppRenderBodyModule(q, _showAnsLine); break;
       case 'vocab':    html += _ppRenderVocabModule(q); break;
       case 'kp':       html += _ppRenderKPModule(q); break;
+      case 'markscheme': if (_ppSession.mode !== 'exam') html += _ppRenderMarkSchemeModule(q); break;
       case 'solution': if (_ppSession.mode !== 'exam') html += _ppRenderSolution(q); break;
     }
   }
@@ -2787,6 +2853,10 @@ function renderPPCard() {
         }
       }
       else if (action === 'recoverSkip') _ppRecoverySkip();
+      else if (action === 'openMarkScheme') {
+        var msUrl = target.dataset.url;
+        if (msUrl) window.open(msUrl, '_blank');
+      }
     });
   }
 
@@ -5334,18 +5404,32 @@ function ppShowPaperBrowse(board) {
     html += '<button class="btn btn-sm btn-warning" onclick="ppShowMockSetup(\'' + escapeHtml(board) + '\')">\ud83c\udfb2 ' + t('Mock Exam', '\u6a21\u62df\u5377') + '</button>';
     html += '</div>';
 
-    /* Year tabs */
-    html += '<div class="pp-year-tabs" id="pp-year-tabs">';
-    for (var yi = 0; yi < yearKeys.length; yi++) {
-      var yr = yearKeys[yi];
-      var cls = yi === 0 ? 'pp-year-tab active' : 'pp-year-tab';
-      html += '<button class="' + cls + '" onclick="ppSelectYear(' + yr + ',\'' + escapeHtml(board) + '\')" data-year="' + yr + '">' + yr + '</button>';
-    }
+    /* Browse tabs: Paper / Topic */
+    var _tabPaper = _ppBrowseTab === 'paper' ? ' active' : '';
+    var _tabTopic = _ppBrowseTab === 'topic' ? ' active' : '';
+    html += '<div class="pp-browse-tabs">';
+    html += '<button class="pp-browse-tab' + _tabPaper + '" onclick="ppSelectBrowseTab(\'paper\',\'' + escapeHtml(board) + '\')">\ud83d\udcc4 ' + t('By Paper', '\u5957\u5377') + '</button>';
+    html += '<button class="pp-browse-tab' + _tabTopic + '" onclick="ppSelectBrowseTab(\'topic\',\'' + escapeHtml(board) + '\')">\ud83d\udcc2 ' + t('By Topic', '\u4e13\u9898') + '</button>';
     html += '</div>';
 
-    /* Paper cards for first year */
-    html += '<div id="pp-papers-body">';
-    html += _ppRenderYearPapers(years[yearKeys[0]], yearKeys[0], board, results);
+    html += '<div id="pp-browse-content">';
+    if (_ppBrowseTab === 'topic') {
+      html += _ppRenderTopicBrowse(board);
+    } else {
+      /* Year tabs */
+      html += '<div class="pp-year-tabs" id="pp-year-tabs">';
+      for (var yi = 0; yi < yearKeys.length; yi++) {
+        var yr = yearKeys[yi];
+        var cls = yi === 0 ? 'pp-year-tab active' : 'pp-year-tab';
+        html += '<button class="' + cls + '" onclick="ppSelectYear(' + yr + ',\'' + escapeHtml(board) + '\')" data-year="' + yr + '">' + yr + '</button>';
+      }
+      html += '</div>';
+
+      /* Paper cards for first year */
+      html += '<div id="pp-papers-body">';
+      html += _ppRenderYearPapers(years[yearKeys[0]], yearKeys[0], board, results);
+      html += '</div>';
+    }
     html += '</div>';
 
     /* Store data for tab switching */
@@ -5368,6 +5452,70 @@ function ppSelectYear(year, board) {
   if (!body || !window._ppYearsData) return;
   var results = _ppGetPaperResults();
   body.innerHTML = _ppRenderYearPapers(window._ppYearsData[year], year, board, results);
+}
+
+function ppSelectBrowseTab(tab, board) {
+  _ppBrowseTab = tab;
+  ppShowPaperBrowse(board);
+}
+
+function _ppRenderTopicBrowse(board) {
+  var syllabus = (typeof BOARD_SYLLABUS !== 'undefined') ? BOARD_SYLLABUS[board] : null;
+  if (!syllabus || !syllabus.chapters) return '<p style="padding:16px;color:var(--c-text2)">' + t('Loading syllabus...', '\u52a0\u8f7d\u4e2d...') + '</p>';
+
+  var chapters = syllabus.chapters;
+  var mastery = _ppGetMastery();
+  var allQ = getPPQuestions(board);
+
+  /* Build section question count map */
+  var secCount = {};
+  for (var qi = 0; qi < allQ.length; qi++) {
+    var sec = allQ[qi].s;
+    if (sec) secCount[sec] = (secCount[sec] || 0) + 1;
+  }
+
+  var html = '';
+  for (var ci = 0; ci < chapters.length; ci++) {
+    var ch = chapters[ci];
+    var sections = ch.sections || [];
+    var chTotal = 0;
+    for (var si = 0; si < sections.length; si++) {
+      chTotal += secCount[sections[si].id] || 0;
+    }
+    if (chTotal === 0) continue;
+
+    html += '<div class="pp-topic-chapter">';
+    html += '<div class="pp-topic-chapter-title">' + escapeHtml(ch.title || ch.id) + ' <span class="pp-topic-count">' + chTotal + ' ' + t('questions', '\u9898') + '</span></div>';
+
+    for (var sj = 0; sj < sections.length; sj++) {
+      var s = sections[sj];
+      var qc = secCount[s.id] || 0;
+      if (qc === 0) continue;
+
+      /* Calculate mastery progress */
+      var sQuestions = allQ.filter(function(q) { return q.s === s.id; });
+      var masteredCount = 0;
+      for (var mqi = 0; mqi < sQuestions.length; mqi++) {
+        var qm = mastery[sQuestions[mqi].id];
+        if (qm && qm.fs === 'mastered') masteredCount++;
+      }
+      var pct = qc > 0 ? Math.round(masteredCount / qc * 100) : 0;
+
+      html += '<div class="pp-topic-row" role="button" tabindex="0" onclick="startPastPaper(\'' + escapeHtml(s.id) + '\',\'' + escapeHtml(board) + '\',\'practice\')">';
+      html += '<div class="pp-topic-info">';
+      html += '<span class="pp-topic-id">' + escapeHtml(s.id) + '</span> ';
+      html += '<span class="pp-topic-name">' + escapeHtml(t(s.title, s.titleZh || s.title)) + '</span>';
+      html += '</div>';
+      html += '<div class="pp-topic-meta">';
+      html += '<span class="pp-topic-badge">' + qc + '</span>';
+      html += '<div class="pp-topic-progress"><div class="pp-topic-progress-fill" style="width:' + pct + '%"></div></div>';
+      html += '</div>';
+      html += '</div>';
+    }
+    html += '</div>';
+  }
+
+  return html;
 }
 
 function _ppRenderYearPapers(sessions, year, board, results) {

@@ -1,6 +1,36 @@
 # Changelog
 
-## [5.10.0] - 2026-03-13 — Answer Block 编辑器（答题区块化）
+## [5.10.0] - 2026-03-13 — Mark Scheme PDF + 专题刷题
+
+### 核心变更
+- **Mark Scheme PDF 链接**: 做题后可直接查看对应的评分标准 PDF
+  - 3 个 PDF 仓库拆分部署（qp-only / ms-only / qp+ms），共 8,010 个 PDF
+  - `ppGetMarkSchemeURL(q)` 根据索引文件映射题目到 PDF URL，优先 qp+ms
+  - 仅 practice 模式显示，exam 模式隐藏；无 PDF 时自动隐藏按钮
+  - 覆盖范围：2019OctNov–2024OctNov + 2025Specimen
+- **专题刷题 Tab**: 套卷浏览器新增 "按专题" 切换
+  - Tab 切换：📄 套卷 / 📂 专题
+  - 专题视图：章节分组 + 题数 badge + 掌握度进度条
+  - 点击直接进入该知识点的 practice 模式
+
+### 修改文件
+| 文件 | 变更 |
+|------|------|
+| `js/practice.js` | +`ppGetMarkSchemeURL` +`_ppRenderMarkSchemeModule` +`_ppRenderTopicBrowse` +`ppSelectBrowseTab`，模块顺序加 markscheme，事件处理加 openMarkScheme (~170行) |
+| `css/style.css` | +MS 按钮样式 +Tab 切换样式 +专题浏览样式 (~29行) |
+| `js/syllabus.js` | 首页卡片文案 "套卷练习" → "套卷/专题练习" |
+| `js/config.js` | 版本号 v5.9.0 → v5.10.0 |
+| `data/ms-index.json` | 新增：2,428 条 ms-only PDF 索引 |
+| `data/qpms-index.json` | 新增：2,462 条 qp+ms PDF 索引 |
+
+### PDF 仓库
+| 库名 | 文件数 | 大小 |
+|------|--------|------|
+| `25maths-cie0580-pdf-singlequestions` | 3,120 qp-only | 506 MB |
+| `25maths-cie0580-pdf-singlems` | 2,428 ms-only | 343 MB |
+| `25maths-cie0580-pdf-qpms` | 2,462 qp+ms | 700 MB |
+
+## [5.10.0-pre] - 2026-03-13 — Answer Block 编辑器（答题区块化）
 
 ### 核心变更
 - **Answer Block 列表编辑器**: 超管编辑器中答题线改造为 block 列表，支持在答题线之间插入文本或空白间距

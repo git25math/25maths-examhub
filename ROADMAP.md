@@ -1,5 +1,12 @@
 # Development Roadmap
 
+## v5.10 — Mark Scheme PDF + 专题刷题 [DONE]
+- [x] 8,010 个单题 PDF 拆分为 3 个 GitHub 仓库（qp-only / ms-only / qp+ms）+ Pages 部署
+- [x] `ppGetMarkSchemeURL(q)` 索引驱动的 PDF URL 映射（qp+ms 优先降级 ms-only）
+- [x] `_ppRenderMarkSchemeModule(q)` 评分标准按钮（practice 模式可见）
+- [x] 专题刷题 Tab 切换（📄 套卷 / 📂 专题）+ `_ppRenderTopicBrowse` 章节分组视图
+- [x] 专题视图：题数 badge + FLM 掌握度进度条 + 点击进入 practice
+
 ## v5.9 — Knowledge Node Learning Loop [DONE]
 - [x] 6 阶段知识点学习面板（动机→概念→考法→方法→例题→定向练习）
 - [x] 答错后 "Learn This" 按钮（weakest-KP 自动定位）
