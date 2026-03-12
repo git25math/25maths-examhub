@@ -106,6 +106,7 @@ function renderAdmin() {
   html += '<button class="admin-tab' + (_adminTab === 'grade' ? ' active' : '') + '" onclick="switchAdminTab(\'grade\')">' + t('By Grade', '年级概览') + '</button>';
   html += '<button class="admin-tab' + (_adminTab === 'school' ? ' active' : '') + '" onclick="switchAdminTab(\'school\')">' + t('School', '全校概览') + '</button>';
   if (typeof isSuperAdmin === 'function' && isSuperAdmin()) {
+    html += '<button class="admin-tab' + (_adminTab === 'users' ? ' active' : '') + '" onclick="switchAdminTab(\'users\')">' + t('Users', '用户管理') + '</button>';
     html += '<button class="admin-tab' + (_adminTab === 'allusers' ? ' active' : '') + '" onclick="switchAdminTab(\'allusers\')">' + t('All Users', '全部用户') + '</button>';
     html += '<button class="admin-tab' + (_adminTab === 'feedback' ? ' active' : '') + '" onclick="switchAdminTab(\'feedback\')">' + t('Feedback', '反馈') + '</button>';
     html += '<button class="admin-tab' + (_adminTab === 'dataquality' ? ' active' : '') + '" onclick="switchAdminTab(\'dataquality\')">' + t('Data Quality', '数据质量') + '</button>';
@@ -119,6 +120,7 @@ function renderAdmin() {
   if (_adminTab === 'classes') renderClassList();
   else if (_adminTab === 'grade') renderGradeOverview();
   else if (_adminTab === 'school') renderSchoolOverview();
+  else if (_adminTab === 'users') renderUserManagement();
   else if (_adminTab === 'allusers') renderAllUsers();
   else if (_adminTab === 'feedback' && typeof renderFeedbackList === 'function') renderFeedbackList();
   else if (_adminTab === 'dataquality' && typeof renderDataQuality === 'function') renderDataQuality();
@@ -825,6 +827,356 @@ async function renderSchoolOverview() {
   ct.innerHTML = html;
 }
 
+/* ═══ USER MANAGEMENT (super admin) ═══ */
+var _umData = null, _umPage = 1, _umPerPage = 50, _umTotal = 0;
+var _umSearch = '', _umRoleFilter = '', _umSort = 'created_at', _umSortAsc = false;
+
+async function renderUserManagement() {
+  var ct = E('admin-content');
+  if (!ct) return;
+
+  if (!_umData) {
+    ct.innerHTML = '<div class="admin-loading">' + t('Loading users...', '加载用户...') + '</div>';
+    try {
+      var res = await callEdgeFunction('list-users', {
+        page: _umPage, per_page: 1000, search: _umSearch, role_filter: _umRoleFilter
+      });
+      if (res.error) throw new Error(res.error);
+      _umData = res.users || [];
+      _umTotal = res.total || 0;
+    } catch (e) {
+      ct.innerHTML = '<div class="admin-empty">' + escapeHtml(e.message) + '</div>';
+      return;
+    }
+  }
+
+  _umRenderTable();
+}
+
+function _umRenderTable() {
+  var ct = E('admin-content');
+  if (!ct || !_umData) return;
+
+  var users = _umData;
+
+  /* Summary cards */
+  var totalStudents = users.filter(function(u) { return u.role === 'student'; }).length;
+  var totalTeachers = users.filter(function(u) { return u.role === 'teacher'; }).length;
+  var totalGuests = users.filter(function(u) { return u.role === 'guest' || !u.role; }).length;
+  var totalBanned = users.filter(function(u) { return !!u.banned_at; }).length;
+
+  var html = '<div class="admin-summary-grid">';
+  html += summaryCard(t('Total Users', '总用户'), users.length, 'var(--c-primary)');
+  html += summaryCard(t('Students', '学生'), totalStudents, 'var(--c-info)');
+  html += summaryCard(t('Teachers', '教师'), totalTeachers, 'var(--c-success)');
+  html += summaryCard(t('Guests', '访客'), totalGuests, 'var(--c-text2)');
+  if (totalBanned > 0) html += summaryCard(t('Banned', '封禁'), totalBanned, 'var(--c-danger)');
+  html += '</div>';
+
+  /* Role filter pills */
+  html += '<div class="dq-board-pills">';
+  html += '<button class="dq-pill' + (!_umRoleFilter ? ' active' : '') + '" data-um-filter="">' + t('All', '全部') + ' (' + users.length + ')</button>';
+  html += '<button class="dq-pill' + (_umRoleFilter === 'student' ? ' active' : '') + '" data-um-filter="student">' + t('Student', '学生') + ' (' + totalStudents + ')</button>';
+  html += '<button class="dq-pill' + (_umRoleFilter === 'teacher' ? ' active' : '') + '" data-um-filter="teacher">' + t('Teacher', '教师') + ' (' + totalTeachers + ')</button>';
+  html += '<button class="dq-pill' + (_umRoleFilter === 'guest' ? ' active' : '') + '" data-um-filter="guest">' + t('Guest', '访客') + ' (' + totalGuests + ')</button>';
+  html += '</div>';
+
+  /* Search + refresh */
+  html += '<div class="admin-filter-bar">';
+  html += '<input type="text" class="auth-input" id="um-search" placeholder="' + t('Search email / name...', '搜索邮箱/姓名...') + '" value="' + escapeHtml(_umSearch) + '">';
+  html += '<button class="btn btn-ghost btn-sm" data-um-action="refresh">' + t('Refresh', '刷新') + '</button>';
+  html += '</div>';
+
+  /* Filter locally by role (if pills used after initial load) */
+  var filtered = users;
+  if (_umRoleFilter) filtered = filtered.filter(function(u) { return u.role === _umRoleFilter; });
+  if (_umSearch) {
+    var q = _umSearch.toLowerCase();
+    filtered = filtered.filter(function(u) {
+      return (u.email || '').toLowerCase().indexOf(q) >= 0 || (u.nickname || '').toLowerCase().indexOf(q) >= 0;
+    });
+  }
+
+  /* Sort */
+  var sortKey = _umSort;
+  var asc = _umSortAsc;
+  filtered.sort(function(a, b) {
+    var va = a[sortKey], vb = b[sortKey];
+    if (va == null) va = '';
+    if (vb == null) vb = '';
+    if (typeof va === 'string') { va = va.toLowerCase(); vb = (vb || '').toLowerCase(); }
+    if (va < vb) return asc ? -1 : 1;
+    if (va > vb) return asc ? 1 : -1;
+    return 0;
+  });
+
+  /* Pagination */
+  var start = (_umPage - 1) * _umPerPage;
+  var pageUsers = filtered.slice(start, start + _umPerPage);
+  var totalPages = Math.ceil(filtered.length / _umPerPage) || 1;
+
+  /* Table */
+  if (filtered.length === 0) {
+    html += '<div class="admin-empty">' + t('No matching users', '无匹配用户') + '</div>';
+  } else {
+    var cols = [
+      { key: 'email', en: 'Email', zh: '邮箱' },
+      { key: 'nickname', en: 'Name', zh: '姓名' },
+      { key: 'role', en: 'Role', zh: '角色' },
+      { key: 'board', en: 'Board', zh: '课程' },
+      { key: 'class_name', en: 'Class', zh: '班级' },
+      { key: 'school_name', en: 'School', zh: '学校' },
+      { key: 'created_at', en: 'Registered', zh: '注册时间' },
+      { key: 'last_sign_in_at', en: 'Last Login', zh: '最后登录' }
+    ];
+    html += '<div class="admin-table-wrap"><table class="admin-student-table"><thead><tr><th>#</th>';
+    cols.forEach(function(c) {
+      var arrow = _umSort === c.key ? (_umSortAsc ? ' ▲' : ' ▼') : '';
+      html += '<th style="cursor:pointer" data-um-sort="' + c.key + '">' + t(c.en, c.zh) + arrow + '</th>';
+    });
+    html += '<th>' + t('Status', '状态') + '</th>';
+    html += '<th>' + t('Actions', '操作') + '</th>';
+    html += '</tr></thead><tbody>';
+
+    pageUsers.forEach(function(u, i) {
+      var regTime = u.created_at ? new Date(u.created_at).toLocaleDateString() : '-';
+      var lastLogin = u.last_sign_in_at ? timeAgo(u.last_sign_in_at) : t('Never', '从未');
+      var roleBadge = '<span class="um-badge-role um-role-' + (u.role || 'guest') + '">' + (u.role || 'guest') + '</span>';
+      var statusHtml = u.banned_at ? '<span class="um-badge-banned">' + t('Banned', '封禁') + '</span>' : '<span class="um-badge-role um-role-active">' + t('Active', '正常') + '</span>';
+
+      html += '<tr>';
+      html += '<td>' + (start + i + 1) + '</td>';
+      html += '<td class="admin-td-name" style="font-size:12px">' + escapeHtml(u.email || '-') + '</td>';
+      html += '<td>' + escapeHtml(u.nickname || '-') + '</td>';
+      html += '<td>' + roleBadge + '</td>';
+      html += '<td>' + escapeHtml(u.board || '-') + '</td>';
+      html += '<td>' + escapeHtml(u.class_name || '-') + '</td>';
+      html += '<td>' + escapeHtml(u.school_name || '-') + '</td>';
+      html += '<td class="admin-td-time">' + regTime + '</td>';
+      html += '<td class="admin-td-time">' + lastLogin + '</td>';
+      html += '<td>' + statusHtml + '</td>';
+      html += '<td><div class="action-dropdown">';
+      html += '<button class="btn btn-ghost btn-sm action-trigger" onclick="toggleActionMenu(this)">' + t('Actions', '操作') + ' ▾</button>';
+      html += '<div class="action-menu">';
+      html += '<button class="action-item" data-um-action="edit" data-uid="' + u.id + '" data-nickname="' + escapeHtml(u.nickname || '') + '" data-board="' + escapeHtml(u.board || '') + '">✏️ ' + t('Edit', '编辑') + '</button>';
+      html += '<button class="action-item" data-um-action="resetpw" data-uid="' + u.id + '" data-email="' + escapeHtml(u.email || '') + '">🔑 ' + t('Reset PW', '重置密码') + '</button>';
+      html += '<button class="action-item" data-um-action="assign" data-uid="' + u.id + '" data-nickname="' + escapeHtml(u.nickname || u.email || '') + '">📋 ' + t('Assign Class', '分配班级') + '</button>';
+      html += '<button class="action-item" data-um-action="role" data-uid="' + u.id + '" data-role="' + (u.role || 'guest') + '">👤 ' + t('Change Role', '修改角色') + '</button>';
+      if (u.banned_at) {
+        html += '<button class="action-item" data-um-action="unban" data-uid="' + u.id + '" data-email="' + escapeHtml(u.email || '') + '">✅ ' + t('Unban', '解封') + '</button>';
+      } else {
+        html += '<button class="action-item" data-um-action="ban" data-uid="' + u.id + '" data-email="' + escapeHtml(u.email || '') + '">🚫 ' + t('Ban', '封禁') + '</button>';
+      }
+      html += '<button class="action-item" style="color:var(--c-danger)" data-um-action="delete" data-uid="' + u.id + '" data-email="' + escapeHtml(u.email || '') + '">🗑️ ' + t('Delete', '删除') + '</button>';
+      html += '</div></div></td>';
+      html += '</tr>';
+    });
+    html += '</tbody></table></div>';
+
+    /* Pagination */
+    html += '<div class="um-pagination">';
+    html += '<span>' + t('Showing', '显示') + ' ' + (start + 1) + '-' + Math.min(start + _umPerPage, filtered.length) + ' / ' + filtered.length + '</span>';
+    html += '<div>';
+    if (_umPage > 1) html += '<button class="btn btn-ghost btn-sm" data-um-action="prev">' + t('Prev', '上一页') + '</button>';
+    html += '<span style="margin:0 8px">' + _umPage + ' / ' + totalPages + '</span>';
+    if (_umPage < totalPages) html += '<button class="btn btn-ghost btn-sm" data-um-action="next">' + t('Next', '下一页') + '</button>';
+    html += '</div></div>';
+  }
+
+  ct.innerHTML = html;
+
+  /* Bind search */
+  var inp = E('um-search');
+  if (inp) {
+    inp.addEventListener('input', function() {
+      clearTimeout(inp._t);
+      inp._t = setTimeout(function() { _umSearch = inp.value.trim(); _umPage = 1; _umRenderTable(); }, 300);
+    });
+  }
+}
+
+/* ── User Management Modals ── */
+
+function showUserEditModal(userId, nickname, board) {
+  var boardOpts = '';
+  BOARD_OPTIONS.forEach(function(b) {
+    boardOpts += '<option value="' + b.value + '"' + (b.value === board ? ' selected' : '') + '>' + t(b.name, b.nameZh) + '</option>';
+  });
+  var html = '<div class="section-title">' + t('Edit User', '编辑用户') + '</div>' +
+    '<label class="settings-label">' + t('Nickname', '昵称') + '</label>' +
+    '<input class="auth-input" id="ue-nickname" type="text" value="' + escapeHtml(nickname) + '">' +
+    '<label class="settings-label mt-12">' + t('Board', '课程') + '</label>' +
+    '<select class="auth-input" id="ue-board">' + boardOpts + '</select>' +
+    '<div id="ue-msg" class="settings-msg"></div>' +
+    '<div class="btn-row">' +
+    '<button class="btn btn-primary" data-um-action="do-edit" data-uid="' + userId + '">' + t('Save', '保存') + '</button>' +
+    '<button class="btn btn-ghost" onclick="hideModal()">' + t('Cancel', '取消') + '</button>' +
+    '</div>';
+  showModal(html);
+  setTimeout(function() { var inp = E('ue-nickname'); if (inp) { inp.focus(); inp.select(); } }, 100);
+}
+
+async function doUserEdit(userId) {
+  var nickname = E('ue-nickname').value.trim();
+  var board = E('ue-board').value;
+  var msg = E('ue-msg');
+  if (!nickname) { msg.textContent = t('Please enter a name', '请输入姓名'); msg.className = 'settings-msg error'; return; }
+  msg.textContent = t('Updating...', '更新中...'); msg.className = 'settings-msg';
+  try {
+    var res = await callEdgeFunction('admin-update-user', { action: 'update_metadata', user_id: userId, nickname: nickname, board: board });
+    if (res.error) throw new Error(res.error);
+    hideModal(); showToast(t('User updated!', '用户已更新！'));
+    _umData = null; renderUserManagement();
+  } catch (e) { msg.textContent = e.message; msg.className = 'settings-msg error'; }
+}
+
+function showUserResetPwModal(userId, email) {
+  var html = '<div class="section-title">' + t('Reset Password', '重置密码') + '</div>' +
+    '<p class="text-sm text-sub mb-12">' + escapeHtml(email) + '</p>' +
+    '<label class="settings-label">' + t('New Password', '新密码') + '</label>' +
+    '<input class="auth-input" id="up-pass" type="text" placeholder="' + t('Min 6 chars', '至少6位') + '">' +
+    '<div id="up-msg" class="settings-msg"></div>' +
+    '<div class="btn-row">' +
+    '<button class="btn btn-primary" data-um-action="do-resetpw" data-uid="' + userId + '">' + t('Reset', '重置') + '</button>' +
+    '<button class="btn btn-ghost" onclick="hideModal()">' + t('Cancel', '取消') + '</button>' +
+    '</div>';
+  showModal(html);
+  setTimeout(function() { var inp = E('up-pass'); if (inp) inp.focus(); }, 100);
+}
+
+async function doUserResetPw(userId) {
+  var pass = E('up-pass').value;
+  var msg = E('up-msg');
+  if (!pass || pass.length < 6) { msg.textContent = t('Password must be at least 6 characters', '密码至少6位'); msg.className = 'settings-msg error'; return; }
+  msg.textContent = t('Resetting...', '重置中...'); msg.className = 'settings-msg';
+  try {
+    var res = await callEdgeFunction('admin-update-user', { action: 'reset_password', user_id: userId, new_password: pass });
+    if (res.error) throw new Error(res.error);
+    hideModal(); showToast(t('Password reset!', '密码已重置！'));
+  } catch (e) { msg.textContent = e.message; msg.className = 'settings-msg error'; }
+}
+
+async function showUserAssignClassModal(userId, nickname) {
+  /* Load all classes grouped by school */
+  var res = await sb.from('kw_classes').select('id, name, grade, school_id, schools(name)').order('created_at', { ascending: true });
+  var classes = res.data || [];
+  if (classes.length === 0) { showToast(t('No classes available', '没有可用班级')); return; }
+
+  var opts = '';
+  classes.forEach(function(c) {
+    var schoolName = c.schools ? c.schools.name : '';
+    var gradeOpt = BOARD_OPTIONS.find(function(o) { return o.value === c.grade; });
+    var gradeLabel = gradeOpt ? t(gradeOpt.name, gradeOpt.nameZh) : c.grade;
+    opts += '<option value="' + c.id + '">' + escapeHtml(c.name) + ' — ' + gradeLabel + (schoolName ? ' (' + escapeHtml(schoolName) + ')' : '') + '</option>';
+  });
+
+  var html = '<div class="section-title">' + t('Assign to Class', '分配班级') + '</div>' +
+    '<p class="text-sm text-sub mb-12">' + escapeHtml(nickname) + '</p>' +
+    '<select class="auth-input" id="ua-class">' + opts + '</select>' +
+    '<div id="ua-msg" class="settings-msg"></div>' +
+    '<div class="btn-row">' +
+    '<button class="btn btn-primary" data-um-action="do-assign" data-uid="' + userId + '">' + t('Assign', '分配') + '</button>' +
+    '<button class="btn btn-ghost" onclick="hideModal()">' + t('Cancel', '取消') + '</button>' +
+    '</div>';
+  showModal(html);
+}
+
+async function doUserAssignClass(userId) {
+  var classId = E('ua-class').value;
+  var msg = E('ua-msg');
+  msg.textContent = t('Assigning...', '分配中...'); msg.className = 'settings-msg';
+  try {
+    var res = await callEdgeFunction('admin-update-user', { action: 'assign_class', user_id: userId, class_id: classId });
+    if (res.error) throw new Error(res.error);
+    hideModal(); showToast(t('Class assigned!', '班级已分配！'));
+    _umData = null; renderUserManagement();
+  } catch (e) { msg.textContent = e.message; msg.className = 'settings-msg error'; }
+}
+
+function showUserChangeRoleModal(userId, currentRole) {
+  var roles = ['student', 'teacher', 'guest'];
+  var opts = '';
+  roles.forEach(function(r) {
+    opts += '<label class="settings-label" style="display:flex;align-items:center;gap:8px;cursor:pointer">' +
+      '<input type="radio" name="um-role" value="' + r + '"' + (r === currentRole ? ' checked' : '') + '> ' + r + '</label>';
+  });
+  var html = '<div class="section-title">' + t('Change Role', '修改角色') + '</div>' +
+    opts +
+    '<div id="ur-msg" class="settings-msg"></div>' +
+    '<div class="btn-row">' +
+    '<button class="btn btn-primary" data-um-action="do-role" data-uid="' + userId + '">' + t('Save', '保存') + '</button>' +
+    '<button class="btn btn-ghost" onclick="hideModal()">' + t('Cancel', '取消') + '</button>' +
+    '</div>';
+  showModal(html);
+}
+
+async function doUserChangeRole(userId) {
+  var checked = document.querySelector('input[name="um-role"]:checked');
+  var msg = E('ur-msg');
+  if (!checked) { msg.textContent = t('Select a role', '请选择角色'); msg.className = 'settings-msg error'; return; }
+  msg.textContent = t('Updating...', '更新中...'); msg.className = 'settings-msg';
+  try {
+    var res = await callEdgeFunction('admin-update-user', { action: 'change_role', user_id: userId, role: checked.value });
+    if (res.error) throw new Error(res.error);
+    hideModal(); showToast(t('Role updated!', '角色已更新！'));
+    _umData = null; renderUserManagement();
+  } catch (e) { msg.textContent = e.message; msg.className = 'settings-msg error'; }
+}
+
+function showUserBanConfirm(userId, email, isBanned) {
+  var action = isBanned ? 'unban' : 'ban';
+  var title = isBanned ? t('Unban User', '解封用户') : t('Ban User', '封禁用户');
+  var desc = isBanned
+    ? t('Are you sure you want to unban ', '确定要解封 ') + email + '?'
+    : t('Are you sure you want to ban ', '确定要封禁 ') + email + '?';
+  var html = '<div class="section-title">' + title + '</div>' +
+    '<p class="text-sm text-sub mb-12">' + desc + '</p>' +
+    '<div id="ub-msg" class="settings-msg"></div>' +
+    '<div class="btn-row">' +
+    '<button class="btn ' + (isBanned ? 'btn-primary' : 'btn-danger') + '" data-um-action="do-ban" data-uid="' + userId + '" data-ban-action="' + action + '">' + t('Confirm', '确认') + '</button>' +
+    '<button class="btn btn-ghost" onclick="hideModal()">' + t('Cancel', '取消') + '</button>' +
+    '</div>';
+  showModal(html);
+}
+
+async function doUserBan(userId, action) {
+  var msg = E('ub-msg');
+  msg.textContent = t('Processing...', '处理中...'); msg.className = 'settings-msg';
+  try {
+    var res = await callEdgeFunction('admin-update-user', { action: action, user_id: userId });
+    if (res.error) throw new Error(res.error);
+    hideModal(); showToast(action === 'ban' ? t('User banned', '用户已封禁') : t('User unbanned', '用户已解封'));
+    _umData = null; renderUserManagement();
+  } catch (e) { msg.textContent = e.message; msg.className = 'settings-msg error'; }
+}
+
+function showUserDeleteConfirm(userId, email) {
+  var html = '<div class="section-title" style="color:var(--c-danger)">' + t('Delete User', '删除用户') + '</div>' +
+    '<p class="text-sm text-sub mb-12">' + t('This will permanently delete the user and all their data. Type the email to confirm:', '此操作将永久删除该用户及其所有数据。请输入邮箱确认：') + '</p>' +
+    '<p class="text-sm" style="font-weight:600;margin-bottom:8px">' + escapeHtml(email) + '</p>' +
+    '<input class="auth-input" id="ud-confirm" type="text" placeholder="' + t('Type email to confirm', '输入邮箱确认') + '">' +
+    '<div id="ud-msg" class="settings-msg"></div>' +
+    '<div class="btn-row">' +
+    '<button class="btn btn-danger" data-um-action="do-delete" data-uid="' + userId + '" data-email="' + escapeHtml(email) + '">' + t('Delete Forever', '永久删除') + '</button>' +
+    '<button class="btn btn-ghost" onclick="hideModal()">' + t('Cancel', '取消') + '</button>' +
+    '</div>';
+  showModal(html);
+  setTimeout(function() { var inp = E('ud-confirm'); if (inp) inp.focus(); }, 100);
+}
+
+async function doUserDelete(userId, email) {
+  var confirm = E('ud-confirm').value.trim();
+  var msg = E('ud-msg');
+  if (confirm !== email) { msg.textContent = t('Email does not match', '邮箱不匹配'); msg.className = 'settings-msg error'; return; }
+  msg.textContent = t('Deleting...', '删除中...'); msg.className = 'settings-msg';
+  try {
+    var res = await callEdgeFunction('admin-update-user', { action: 'delete', user_id: userId });
+    if (res.error) throw new Error(res.error);
+    hideModal(); showToast(t('User deleted', '用户已删除'));
+    _umData = null; renderUserManagement();
+  } catch (e) { msg.textContent = e.message; msg.className = 'settings-msg error'; }
+}
+
 /* ═══ ALL USERS (super admin) ═══ */
 var _auData = null;       /* cached leaderboard rows */
 var _auSort = 'updated_at'; /* sort column */
@@ -999,6 +1351,43 @@ document.addEventListener('click', function(e) {
   if (!act) return;
   if (act.dataset.auAction === 'refresh') { _auData = null; renderAllUsers(); }
   else if (act.dataset.auAction === 'csv') { _auExportCSV(); }
+});
+
+/* Event delegation for User Management */
+document.addEventListener('click', function(e) {
+  /* Filter pills */
+  var pill = e.target.closest('[data-um-filter]');
+  if (pill) { _umRoleFilter = pill.dataset.umFilter; _umPage = 1; _umRenderTable(); return; }
+
+  /* Sort headers */
+  var sort = e.target.closest('[data-um-sort]');
+  if (sort) {
+    var key = sort.dataset.umSort;
+    if (_umSort === key) _umSortAsc = !_umSortAsc;
+    else { _umSort = key; _umSortAsc = key === 'nickname' || key === 'email'; }
+    _umRenderTable(); return;
+  }
+
+  /* Actions */
+  var act = e.target.closest('[data-um-action]');
+  if (!act) return;
+  var a = act.dataset.umAction;
+  if (a === 'refresh') { _umData = null; renderUserManagement(); }
+  else if (a === 'prev') { _umPage = Math.max(1, _umPage - 1); _umRenderTable(); }
+  else if (a === 'next') { _umPage++; _umRenderTable(); }
+  else if (a === 'edit') { showUserEditModal(act.dataset.uid, act.dataset.nickname || '', act.dataset.board || ''); }
+  else if (a === 'resetpw') { showUserResetPwModal(act.dataset.uid, act.dataset.email || ''); }
+  else if (a === 'assign') { showUserAssignClassModal(act.dataset.uid, act.dataset.nickname || ''); }
+  else if (a === 'role') { showUserChangeRoleModal(act.dataset.uid, act.dataset.role || 'guest'); }
+  else if (a === 'ban') { showUserBanConfirm(act.dataset.uid, act.dataset.email || '', false); }
+  else if (a === 'unban') { showUserBanConfirm(act.dataset.uid, act.dataset.email || '', true); }
+  else if (a === 'delete') { showUserDeleteConfirm(act.dataset.uid, act.dataset.email || ''); }
+  else if (a === 'do-edit') { doUserEdit(act.dataset.uid); }
+  else if (a === 'do-resetpw') { doUserResetPw(act.dataset.uid); }
+  else if (a === 'do-assign') { doUserAssignClass(act.dataset.uid); }
+  else if (a === 'do-role') { doUserChangeRole(act.dataset.uid); }
+  else if (a === 'do-ban') { doUserBan(act.dataset.uid, act.dataset.banAction); }
+  else if (a === 'do-delete') { doUserDelete(act.dataset.uid, act.dataset.email || ''); }
 });
 
 function summaryCard(label, value, color) {

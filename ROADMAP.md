@@ -1,5 +1,11 @@
 # Development Roadmap
 
+## v5.7 — Super Admin User Management [DONE]
+- [x] `list-users` Edge Function（读取 auth.users + 关联班级/学校）
+- [x] `admin-update-user` Edge Function（6 种操作：编辑/重置密码/分配班级/改角色/封禁/删除）
+- [x] 用户管理标签页（摘要卡片 + 角色过滤 + 搜索 + 排序 + 分页）
+- [x] 完整弹窗系统（编辑/重置密码/分配班级/修改角色/封禁确认/删除二次确认）
+
 ## v5.6 — Custom Learning Plans [DONE]
 - [x] 学习计划数据模型（isPlan/isHidden/targetDate + 6 函数）
 - [x] My Lists 分区展示（进行中计划/自定义清单/已完成计划）

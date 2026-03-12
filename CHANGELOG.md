@@ -1,5 +1,21 @@
 # Changelog
 
+## [5.7.0] - 2026-03-12 — 超管用户管理系统
+
+### 核心变更
+- **用户管理标签页**: 超管可查看所有注册用户（含未学习的新用户），支持角色过滤、搜索、排序、分页
+- **Edge Function `list-users`**: 通过 `service_role` 读取 `auth.users`，关联班级/学校信息
+- **Edge Function `admin-update-user`**: 支持 6 种操作（编辑元数据、重置密码、分配班级、修改角色、封禁/解封、删除）
+- **完整弹窗系统**: 编辑、重置密码、分配班级、修改角色、封禁确认、删除二次确认（需输入邮箱）
+
+### 文件变更
+| 文件 | 变更类型 |
+|------|---------|
+| `supabase/functions/list-users/index.ts` | 新建 — 超管用户列表 API |
+| `supabase/functions/admin-update-user/index.ts` | 新建 — 超管用户操作 API（6 种 action） |
+| `js/admin.js` | 修改 — 新增用户管理标签页 + 渲染 + 弹窗 + 事件委托（~350 行） |
+| `css/style.css` | 修改 — 新增角色/封禁 badge + 分页样式 |
+
 ## [5.6.3] - 2026-03-12 — CIE 裸露 `\,` 修复
 
 ### 核心变更

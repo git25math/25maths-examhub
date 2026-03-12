@@ -4955,6 +4955,18 @@ input { font-family: inherit; }
 /* Print */
 @media print { .list-bulk-bar, .list-filter-bar, .list-tabs, .list-pagination, .list-stats { display:none !important; } }
 
+/* User Management badges + pagination */
+.um-badge-banned { display:inline-block; padding:2px 8px; font-size:11px; font-weight:600; border-radius:10px; background:var(--c-danger); color:#fff; }
+.um-badge-role { display:inline-block; padding:2px 8px; font-size:11px; font-weight:600; border-radius:10px; }
+.um-role-student { background:rgba(59,130,246,0.15); color:#3b82f6; }
+.um-role-teacher { background:rgba(34,197,94,0.15); color:#22c55e; }
+.um-role-guest { background:rgba(148,163,184,0.15); color:var(--c-text2); }
+.um-role-active { background:rgba(34,197,94,0.1); color:#22c55e; }
+.um-pagination { display:flex; align-items:center; justify-content:space-between; padding:12px 0; font-size:13px; color:var(--c-text2); }
+.um-pagination div { display:flex; align-items:center; }
+.btn-danger { background:var(--c-danger); color:#fff; border:none; }
+.btn-danger:hover { opacity:0.9; }
+
 /* Smart notification type colors */
 .notif-item[data-ntypec="milestone"] .notif-dot.active { background: var(--c-warning); }
 .notif-item[data-ntypec="plan"] .notif-dot.active { background: var(--c-primary); }
