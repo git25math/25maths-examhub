@@ -1,5 +1,18 @@
 # Changelog
 
+## [5.8.1] - 2026-03-12 — CIE 图片 Block 数据修复
+
+### 核心变更
+- **Figure Block 注入**: 552 题缺失的 figure block 自动注入，覆盖率 64.9% → 97.4%
+- **智能定位**: 按 URL 文件名匹配 part 标签（Q01a→part(a)），其余注入 stem
+- **Table 去重**: 已有 table block 的题跳过对应 table 渲染图（BarChart/StemLeaf 等 9 题）
+- **注入统计**: stem 639 个 + parts 280 个 = 共 919 个 figure block
+
+### 文件变更
+| 文件 | 变更类型 |
+|------|---------|
+| `data/papers-cie.json` | 修改 — 552 题注入 919 个 figure block |
+
 ## [5.8.0] - 2026-03-12 — 真题答案解析模块
 
 ### 核心变更
