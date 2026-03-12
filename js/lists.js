@@ -93,15 +93,50 @@ function _renderMultiDrop(id, label, options, selected) {
   var html = '<div class="lf-drop" id="lf-drop-' + id + '">';
   html += '<button class="lf-drop-btn' + (count > 0 ? ' has-selection' : '') + '" type="button">' + _escList(btnText) + ' \u25be</button>';
   html += '<div class="lf-drop-menu">';
+  var lastGroup = null;
   for (var i = 0; i < options.length; i++) {
     var o = options[i];
     var val = typeof o === 'object' ? o.value : o;
     var lbl = typeof o === 'object' ? o.label : o;
+    var grp = (typeof o === 'object' && o.group) ? o.group : null;
+    /* Group separator */
+    if (grp && grp !== lastGroup) {
+      lastGroup = grp;
+      html += '<div class="lf-drop-group">' + _escList(grp) + '</div>';
+    }
     var chk = selected.indexOf(val) !== -1 ? ' checked' : '';
-    html += '<label class="lf-drop-item"><input type="checkbox" value="' + _escList(String(val)) + '"' + chk + '> ' + _escList(String(lbl)) + '</label>';
+    html += '<label class="lf-drop-item' + (grp ? ' lf-drop-grouped' : '') + '"><input type="checkbox" value="' + _escList(String(val)) + '"' + chk + '> ' + _escList(String(lbl)) + '</label>';
   }
   html += '</div></div>';
   return html;
+}
+
+function _getBoardCounts() {
+  /* Count raw items per board for current tab — lightweight, no caching needed */
+  var counts = {};
+  if (_listTab === 'words') {
+    var all = typeof getAllWords === 'function' ? getAllWords() : [];
+    for (var i = 0; i < all.length; i++) {
+      var lvObj = (typeof LEVELS !== 'undefined' && all[i].level >= 0 && all[i].level < LEVELS.length) ? LEVELS[all[i].level] : null;
+      var b = lvObj ? (lvObj.board || '') : '';
+      if (b) counts[b] = (counts[b] || 0) + 1;
+    }
+  } else if (_listTab === 'kps') {
+    var boards = typeof getVisibleBoards === 'function' ? getVisibleBoards() : [];
+    for (var bi = 0; bi < boards.length; bi++) {
+      var board = boards[bi].id || boards[bi];
+      var sylKey = board === '25m' ? 'hhk' : board;
+      var pts = (typeof _kpData !== 'undefined') ? (_kpData[sylKey] || []) : [];
+      if (pts.length > 0) counts[board] = pts.length;
+    }
+  } else if (_listTab === 'pps') {
+    var ppBoards = ['cie', 'edx'];
+    for (var pi = 0; pi < ppBoards.length; pi++) {
+      var ppB = (typeof _ppData !== 'undefined') ? _ppData[ppBoards[pi]] : null;
+      if (ppB && ppB.questions) counts[ppBoards[pi]] = ppB.questions.length;
+    }
+  }
+  return counts;
 }
 
 function _renderListFilters(zh) {
@@ -111,16 +146,20 @@ function _renderListFilters(zh) {
   /* ── Level 1: Board chip bar ── */
   var boards = typeof getVisibleBoards === 'function' ? getVisibleBoards() : [];
   var boardLabels = { '25m': (zh ? '\u54c8\u7f57\u6d77\u53e3' : 'Harrow HK'), cie: 'CIE 0580', edx: 'Edexcel 4MA1' };
-  /* KPs/PPs only have CIE/EDX data — hide 25m chip for those tabs */
+  /* PPs only have CIE/EDX data — hide 25m chip for PPs tab */
   var tabBoards = boards;
-  if (_listTab === 'kps' || _listTab === 'pps') {
+  if (_listTab === 'pps') {
     tabBoards = boards.filter(function(b) { var id = b.id || b; return id !== '25m'; });
   }
+  /* Pre-count items per board for chip labels */
+  var boardCounts = _getBoardCounts();
   html += '<div class="lf-board-bar">';
   for (var bi = 0; bi < tabBoards.length; bi++) {
     var bid = tabBoards[bi].id || tabBoards[bi];
     var active = f.board.indexOf(bid) !== -1;
-    html += '<button class="lf-board-chip' + (active ? ' active' : '') + '" data-board="' + bid + '" type="button">' + (boardLabels[bid] || bid) + '</button>';
+    var chipLabel = (boardLabels[bid] || bid);
+    if (boardCounts[bid] !== undefined) chipLabel += ' (' + boardCounts[bid] + ')';
+    html += '<button class="lf-board-chip' + (active ? ' active' : '') + '" data-board="' + bid + '" type="button">' + chipLabel + '</button>';
   }
   html += '</div>';
 
@@ -140,8 +179,8 @@ function _renderListFilters(zh) {
     }
   }
 
-  /* CIE/EDX: Section (for Words/KPs/PPs) */
-  if (hasCieEdx) {
+  /* Section filter (CIE/EDX always; 25m on KPs tab for hhk sections) */
+  if (hasCieEdx || (has25m && _listTab === 'kps')) {
     var secOpts = _collectSections();
     html += _renderMultiDrop('section', (zh ? '\u7ae0\u8282' : 'Section'), secOpts, f.section);
   }
@@ -170,6 +209,9 @@ function _renderListFilters(zh) {
 
   /* Search */
   html += '<input type="text" class="list-search" id="lf-search" placeholder="' + (zh ? '\u641c\u7d22...' : 'Search...') + '" value="' + _escList(f.search || '') + '">';
+
+  /* Reset button */
+  html += '<button class="btn btn-sm lf-reset-btn" id="lf-reset" type="button" title="' + (zh ? '\u91cd\u7f6e\u7b5b\u9009' : 'Reset filters') + '">\u2715 ' + (zh ? '\u91cd\u7f6e' : 'Reset') + '</button>';
 
   html += '</div>';
   return html;
@@ -225,6 +267,17 @@ function _bindListFilters(el) {
       _listPage = 0;
       clearTimeout(_searchTimer);
       _searchTimer = setTimeout(_renderListTable, 250);
+    });
+  }
+
+  /* Reset button */
+  var resetBtn = el.querySelector('#lf-reset');
+  if (resetBtn) {
+    resetBtn.addEventListener('click', function() {
+      _listFilters = { board: [], grade: [], unit: [], year: [], season: [], paper: [], section: [], status: [], reforget: [], search: '' };
+      _listPage = 0;
+      _listRawCache = null;
+      renderListView();
     });
   }
 }
@@ -291,25 +344,30 @@ function _cascadeBoardChange() {
 /* ═══ DATA SOURCES ═══ */
 
 function _collectSections() {
-  /* Collect CIE/EDX sections from BOARD_SYLLABUS, filtered by selected boards */
+  /* Collect sections from BOARD_SYLLABUS, filtered by selected boards, grouped by chapter */
   var seen = {};
   var result = [];
   var fb = _listFilters.board;
   var targetBoards = [];
-  if (fb.length === 0) { targetBoards = ['cie', 'edx']; }
+  if (fb.length === 0) { targetBoards = ['cie', 'edx', 'hhk']; }
   else {
     if (fb.indexOf('cie') !== -1) targetBoards.push('cie');
     if (fb.indexOf('edx') !== -1) targetBoards.push('edx');
+    if (fb.indexOf('25m') !== -1) targetBoards.push('hhk');
   }
   for (var bi = 0; bi < targetBoards.length; bi++) {
     var b = targetBoards[bi];
     var syl = (typeof BOARD_SYLLABUS !== 'undefined') ? BOARD_SYLLABUS[b] : null;
     if (!syl || !syl.chapters) continue;
     for (var ci = 0; ci < syl.chapters.length; ci++) {
+      var chTitle = syl.chapters[ci].title || syl.chapters[ci].name || '';
       var secs = syl.chapters[ci].sections || [];
       for (var si = 0; si < secs.length; si++) {
         var sid = secs[si].id;
-        if (sid && !seen[sid]) { seen[sid] = true; result.push(sid); }
+        if (sid && !seen[sid]) {
+          seen[sid] = true;
+          result.push({ value: sid, label: sid + (secs[si].title ? ' ' + secs[si].title : ''), group: chTitle });
+        }
       }
     }
   }
@@ -418,8 +476,9 @@ function _getFilteredKPs() {
   var boards = typeof getVisibleBoards === 'function' ? getVisibleBoards() : [];
   for (var bi = 0; bi < boards.length; bi++) {
     var board = boards[bi].id || boards[bi];
-    if (board !== 'cie' && board !== 'edx') continue;
-    var syllabus = (typeof BOARD_SYLLABUS !== 'undefined') ? BOARD_SYLLABUS[board] : null;
+    /* Map 25m → hhk for syllabus/kpData lookup */
+    var sylKey = board === '25m' ? 'hhk' : board;
+    var syllabus = (typeof BOARD_SYLLABUS !== 'undefined') ? BOARD_SYLLABUS[sylKey] : null;
     if (!syllabus || !syllabus.chapters) continue;
     for (var ci = 0; ci < syllabus.chapters.length; ci++) {
       var ch = syllabus.chapters[ci];
@@ -427,12 +486,13 @@ function _getFilteredKPs() {
       for (var si = 0; si < ch.sections.length; si++) {
         var sec = ch.sections[si];
         /* Get KP data for this section if available */
-        var kpList = _getKPsForSection(sec.id, board);
+        var kpList = _getKPsForSection(sec.id, sylKey);
         for (var ki = 0; ki < kpList.length; ki++) {
           var kp = kpList[ki];
           var kpResult = typeof getKPResult === 'function' ? getKPResult(kp.id) : null;
           items.push({
             _type: 'kp', _ref: kp.id, _id: 'kp:' + kp.id, _board: board,
+            _category: board === '25m' ? (sec.id.match(/^(Y\d+)/) ? sec.id.match(/^(Y\d+)/)[1].toLowerCase().replace('y', '25m-y') : '') : '',
             word: kp.id, def: kp.title || '', defZh: kp.title_zh || '',
             fs: kpResult ? (kpResult.fs || 'new') : 'new',
             section: sec.id, lr: kpResult ? (kpResult.lr || kpResult.t || null) : null,
@@ -503,8 +563,10 @@ function _applyListFilters(items) {
     if (board === '25m') {
       /* Grade filter */
       if (f.grade.length > 0 && f.grade.indexOf(item._category || '') === -1) continue;
-      /* Unit filter */
+      /* Unit filter (vocab) */
       if (f.unit.length > 0 && f.unit.indexOf(item.section || '') === -1) continue;
+      /* Section filter (KPs — hhk sections like Y7.1) */
+      if (item._type === 'kp' && f.section.length > 0 && f.section.indexOf(item.section || '') === -1) continue;
     } else if (board === 'cie' || board === 'edx') {
       /* Section filter */
       if (f.section.length > 0 && f.section.indexOf(item.section || '') === -1) continue;

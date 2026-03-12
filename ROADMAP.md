@@ -462,11 +462,16 @@
 - [x] **聚焦增强 (Phase D)**: 预览表增加标题/加入时间/上次学习 + 行内详情展开（KaTeX）+ FLM 统计条 + 单项快速评分
 - [x] **Tab 工作台 (v5.0.1)**: 学习模式重构为 Tab 工作台 — 词汇/KP/PP 各自独立 Tab + KP 完整渲染（概念卡片/考法/例题/MCQ）+ 分类型完成统计
 
-## v5.3 列表视图筛选重构：Board 优先 + 多选 + 条件筛选 [DONE]
+## v5.3 列表视图筛选重构：Board 优先 + 多选 + 条件筛选 + HHK KP 接入 [DONE]
 - [x] **Board 芯片一级筛选 (v5.3.0)**: 3 toggle chip 多选切换，驱动二级条件筛选动态显示/隐藏
 - [x] **多选下拉组件 (v5.3.0)**: `_renderMultiDrop` 通用组件，所有筛选器支持多选 OR 匹配
 - [x] **条件二级筛选 (v5.3.0)**: 25m→年级+单元，CIE/EDX→章节+年份/考季/试卷(PPs)
 - [x] **级联更新 + 数据增强 (v5.3.0)**: Board→子筛选清空，Grade→Unit 联动，vocab 增 _board，PP 增 year/session/paper
+- [x] **KPs tab 接入 HHK 知识点 (v5.3.1)**: 25m→hhk 映射，55 个知识点可浏览/筛选/年级过滤
+- [x] **Board chip 计数 (v5.3.1)**: 每个 chip 显示当前 tab 数据量
+- [x] **Section 按 chapter 分组 (v5.3.1)**: 下拉选项按章节标题分组，group 分隔线
+- [x] **筛选栏重置按钮 (v5.3.1)**: 一键清空所有筛选条件
+- [x] **HHK section 收集/过滤 (v5.3.1)**: `_collectSections` 加入 hhk，`_applyListFilters` 适配 25m section
 
 ## v5.2 学习项目筛选 UX 优化 + 清单按类型自动拆分 [DONE]
 - [x] **固定筛选栏 (v5.2.0)**: `.list-view` flex 布局，header 固定 + `#list-content` 可滚动，手机端适配

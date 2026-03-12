@@ -1,5 +1,23 @@
 # Changelog
 
+## [5.3.1] - 2026-03-12 — 列表视图优化：HHK 知识点接入 + UX 增强
+
+### 核心变更
+- **KPs tab 接入 HHK 知识点**: `_getFilteredKPs()` 增加 `25m→hhk` 映射，从 `BOARD_SYLLABUS['hhk']` 和 `_kpData['hhk']` 获取 55 个知识点，年级筛选 `_category` 自动映射（`Y7.1` → `25m-y7`）
+- **Board chip 显示计数**: 每个 Board 芯片旁显示当前 tab 的原始数据量（如 `CIE 0580 (72)`），新增 `_getBoardCounts()` 轻量计数函数
+- **Section 下拉按 chapter 分组**: `_collectSections()` 返回 `{value, label, group}` 格式，`_renderMultiDrop()` 支持 group 分隔标题（`.lf-drop-group` + `.lf-drop-grouped` 缩进），72+ section 按章节分组更易查找
+- **筛选栏重置按钮**: filter bar 末尾新增 `✕ 重置` 按钮，一键清空所有筛选条件
+- **`_collectSections()` 加入 hhk**: 选中 25m 或无选择时，section 下拉包含 hhk 章节（Y7.1~Y11.10）
+- **`_applyListFilters()` 适配 hhk**: 25m KP 项支持 section 过滤（hhk section 格式 `Y7.1` 与 CIE `1.1` 互不冲突）
+- **KPs tab 恢复 25m chip**: 板块切换不再隐藏 25m（仅 PPs tab 隐藏）
+
+### 文件变更
+| 文件 | 变更类型 |
+|------|---------|
+| `js/lists.js` | 修改 — `_getFilteredKPs` 25m→hhk 映射 + `_getBoardCounts` 新增 + `_renderMultiDrop` group 支持 + `_renderListFilters` chip 计数/重置/25m 恢复 + `_collectSections` hhk+group + `_applyListFilters` 25m section + `_bindListFilters` 重置事件 |
+| `css/style.css` | 修改 — 新增 `.lf-drop-group`/`.lf-drop-grouped`/`.lf-reset-btn` 样式 + 暗色模式 |
+| `js/config.js` | 修改 — 版本号 v5.3.1 |
+
 ## [5.3.0] - 2026-03-12 — 列表视图筛选重构：Board 优先 + 多选 + 条件筛选
 
 ### 核心变更
