@@ -47,20 +47,37 @@ serve(async (req) => {
     })
     if (listErr) throw listErr
 
-    // Get class/school info for all users
+    // Get class/school info for all users (separate queries to avoid nested join issues)
     const { data: classStudents } = await supabaseAdmin
       .from('kw_class_students')
-      .select('user_id, class_id, student_name, kw_classes(id, name, grade, school_id, schools(id, name))')
+      .select('user_id, class_id, student_name')
+
+    const { data: allClasses } = await supabaseAdmin
+      .from('kw_classes')
+      .select('id, name, grade, school_id')
+
+    const { data: allSchools } = await supabaseAdmin
+      .from('schools')
+      .select('id, name')
 
     // Build lookup maps
+    const schoolLookup: Record<string, string> = {}
+    if (allSchools) allSchools.forEach((s: any) => { schoolLookup[s.id] = s.name })
+
+    const classLookup: Record<string, any> = {}
+    if (allClasses) allClasses.forEach((c: any) => {
+      classLookup[c.id] = { name: c.name, grade: c.grade, school_id: c.school_id, school_name: schoolLookup[c.school_id] || null }
+    })
+
     const classMap: Record<string, any> = {}
     if (classStudents) {
       classStudents.forEach((cs: any) => {
+        const cls = classLookup[cs.class_id] || {}
         classMap[cs.user_id] = {
           class_id: cs.class_id,
-          class_name: cs.kw_classes?.name || null,
-          school_id: cs.kw_classes?.school_id || null,
-          school_name: cs.kw_classes?.schools?.name || null
+          class_name: cls.name || null,
+          school_id: cls.school_id || null,
+          school_name: cls.school_name || null
         }
       })
     }
