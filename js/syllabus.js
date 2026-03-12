@@ -2934,33 +2934,43 @@ function _startMistakeReviewSession(qids) {
 
 function _collectAllReforgetItems() {
   var map = typeof _buildReforgetCountMap === 'function' ? _buildReforgetCountMap() : {};
+  var log = typeof getReforgetLog === 'function' ? getReforgetLog() : [];
+  var allWords = typeof getAllWords === 'function' ? getAllWords() : [];
+  var ppMastery = typeof _ppGetMastery === 'function' ? _ppGetMastery() : {};
+
+  /* Build type lookup from log (last occurrence wins) */
+  var typeMap = {};
+  for (var li = 0; li < log.length; li++) {
+    typeMap[log[li].id] = log[li].type || 'vocab';
+  }
+
+  /* Build word lookup */
+  var wordMap = {};
+  for (var wi = 0; wi < allWords.length; wi++) {
+    wordMap[allWords[wi].key] = allWords[wi];
+  }
+
   var items = [];
   var ids = Object.keys(map);
   for (var i = 0; i < ids.length; i++) {
     if (map[ids[i]] <= 0) continue;
-    /* Determine type from reforget_log */
-    var log = typeof getReforgetLog === 'function' ? getReforgetLog() : [];
-    var type = 'vocab';
-    for (var li = log.length - 1; li >= 0; li--) {
-      if (log[li].id === ids[i]) { type = log[li].type || 'vocab'; break; }
-    }
+    var type = typeMap[ids[i]] || 'vocab';
     var info = { id: ids[i], type: type, rc: map[ids[i]], label: '', sub: '', fs: 'new' };
 
     if (type === 'vocab') {
-      var all = typeof getAllWords === 'function' ? getAllWords() : [];
-      for (var wi = 0; wi < all.length; wi++) {
-        if (all[wi].key === ids[i]) {
-          info.label = all[wi].word || ids[i];
-          info.sub = all[wi].def || '';
-          info.fs = all[wi].fs || 'new';
-          info._wordObj = all[wi];
-          break;
-        }
+      var w = wordMap[ids[i]];
+      if (w) {
+        info.label = w.word || ids[i];
+        info.sub = w.def || '';
+        info.fs = w.fs || 'new';
+        info._wordObj = w;
+      } else {
+        info.label = ids[i];
       }
-      if (!info.label) info.label = ids[i];
     } else if (type === 'kp') {
+      var found = false;
       var bds = ['cie', 'edx'];
-      for (var bi = 0; bi < bds.length; bi++) {
+      for (var bi = 0; bi < bds.length && !found; bi++) {
         var pts = (typeof _kpData !== 'undefined') ? (_kpData[bds[bi]] || []) : [];
         for (var ki = 0; ki < pts.length; ki++) {
           if (pts[ki].id === ids[i]) {
@@ -2969,6 +2979,7 @@ function _collectAllReforgetItems() {
             if (pts[ki].title_zh) info.sub += ' / ' + pts[ki].title_zh;
             var kpR = typeof getKPResult === 'function' ? getKPResult(ids[i]) : null;
             info.fs = kpR ? (kpR.fs || 'new') : 'new';
+            found = true;
             break;
           }
         }
@@ -2976,8 +2987,7 @@ function _collectAllReforgetItems() {
       if (!info.label) info.label = ids[i];
     } else if (type === 'pp') {
       info.label = ids[i];
-      var mastery = typeof _ppGetMastery === 'function' ? _ppGetMastery() : {};
-      var m = mastery[ids[i]] || {};
+      var m = ppMastery[ids[i]] || {};
       info.fs = m.fs || 'new';
     }
     items.push(info);
