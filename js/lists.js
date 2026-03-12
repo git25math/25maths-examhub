@@ -1447,10 +1447,13 @@ function _showCreatePlanModal(prefillSectionId, prefillBoard) {
   html += '</div>';
 
   /* Build sections with item counts */
-  var boards = typeof getVisibleBoards === 'function' ? getVisibleBoards() : ['cie'];
+  var boardObjs = typeof getVisibleBoards === 'function' ? getVisibleBoards() : [];
+  var boardIds = [];
+  for (var boi = 0; boi < boardObjs.length; boi++) boardIds.push(typeof boardObjs[boi] === 'string' ? boardObjs[boi] : boardObjs[boi].id);
+  if (boardIds.length === 0) boardIds = ['cie'];
   html += '<div id="plan-picker-sections">';
-  for (var bi = 0; bi < boards.length; bi++) {
-    var board = boards[bi];
+  for (var bi = 0; bi < boardIds.length; bi++) {
+    var board = boardIds[bi];
     var sylBoard = (board === '25m' || board === 'hhk') ? 'hhk' : board;
     var syl = (typeof BOARD_SYLLABUS !== 'undefined') ? BOARD_SYLLABUS[sylBoard] : null;
     if (!syl || !syl.chapters) continue;
@@ -1474,10 +1477,23 @@ function _showCreatePlanModal(prefillSectionId, prefillBoard) {
 
   html += '</div>';
 
+  /* Wrap with title + submit button since showModal only takes HTML */
+  var fullHtml = '<div class="section-title">' + (zh ? '\u521b\u5efa\u5b66\u4e60\u8ba1\u5212' : 'Create Learning Plan') + '</div>';
+  fullHtml += html;
+  fullHtml += '<div style="text-align:right;margin-top:12px">';
+  fullHtml += '<button class="btn btn-primary btn-sm" id="plan-submit-btn">' + (zh ? '\u521b\u5efa' : 'Create') + '</button>';
+  fullHtml += '</div>';
+
   if (typeof showModal === 'function') {
-    showModal(zh ? '\u521b\u5efa\u5b66\u4e60\u8ba1\u5212' : 'Create Learning Plan', html, function() {
-      _commitCreatePlan();
-    }, zh ? '\u521b\u5efa' : 'Create');
+    showModal(fullHtml);
+    /* Bind submit after modal renders */
+    var submitBtn = document.getElementById('plan-submit-btn');
+    if (submitBtn) {
+      submitBtn.addEventListener('click', function() {
+        _commitCreatePlan();
+        if (typeof hideModal === 'function') hideModal();
+      });
+    }
   }
 }
 
