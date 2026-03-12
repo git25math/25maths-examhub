@@ -1,5 +1,12 @@
 # Development Roadmap
 
+## v5.11 — 三态语言支持 [DONE]
+- [x] `appLang` 扩展为三态 `'en' | 'zh' | 'bilingual'`
+- [x] `t()` / `biText()` / `boardName` / `rankName` / `catName` / `lvTitle` 三态适配
+- [x] `toggleLang()` / `toggleAuthLang()` 三态循环 (en → zh → bilingual → en)
+- [x] `updateNav()` data-en/data-zh 三态处理
+- [x] syllabus.js 6 处 + mastery.js 2 处内联拼接改为三态感知
+
 ## v5.10 — Mark Scheme PDF + 专题刷题 [DONE]
 - [x] 8,010 个单题 PDF 拆分为 3 个 GitHub 仓库（qp-only / ms-only / qp+ms）+ Pages 部署
 - [x] `ppGetMarkSchemeURL(q)` 索引驱动的 PDF URL 映射（qp+ms 优先降级 ms-only）

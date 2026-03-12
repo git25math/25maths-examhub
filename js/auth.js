@@ -5,19 +5,21 @@
 
 /* ═══ AUTH LANGUAGE TOGGLE ═══ */
 function toggleAuthLang() {
-  appLang = appLang === 'en' ? 'bilingual' : 'en';
+  var LANG_CYCLE = { en: 'zh', zh: 'bilingual', bilingual: 'en' };
+  appLang = LANG_CYCLE[appLang] || 'en';
   try { localStorage.setItem('wmatch_lang', appLang); } catch(e) {}
   if (appLang !== 'en') loadCJKFont();
   updateAuthLang();
 }
 
 function updateAuthLang() {
-  var isEn = appLang === 'en';
+  var LANG_LABELS = { en: '中文', zh: 'EN/中', bilingual: 'EN' };
+  var label = LANG_LABELS[appLang] || '中文';
   /* Toggle button text */
   var btn = E('auth-lang-toggle');
-  if (btn) btn.textContent = isEn ? '中/EN' : 'EN';
+  if (btn) btn.textContent = label;
   /* Header bar lang button */
-  if (E('lang-toggle-hb')) E('lang-toggle-hb').textContent = isEn ? '中/EN' : 'EN';
+  if (E('lang-toggle-hb')) E('lang-toggle-hb').textContent = label;
   /* Update all data-en/data-zh elements */
   updateNav();
   /* Placeholders */
@@ -31,7 +33,7 @@ function updateAuthLang() {
   };
   for (var id in ph) {
     var el = E(id);
-    if (el) el.placeholder = isEn ? ph[id][0] : ph[id][0] + ' ' + ph[id][1];
+    if (el) el.placeholder = t(ph[id][0], ph[id][1]);
   }
 }
 

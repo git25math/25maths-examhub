@@ -1,5 +1,24 @@
 # Changelog
 
+## [5.11.0] - 2026-03-13 — 三态语言支持（EN / ZH / Bilingual）
+
+### 核心变更
+- **三态语言切换**: 新增纯中文模式 `'zh'`，循环顺序 EN → ZH → Bilingual → EN
+  - EN 模式：所有导航/标签/按钮显示纯英文
+  - ZH 模式：导航/标签显示纯中文，题目内容保持英文
+  - Bilingual 模式：导航显示 `"English 中文"` 双语格式（原有行为）
+- **`biText()` helper**: 新增用于内联拼接场景，三态感知的文本选择函数
+- **按钮标签优化**: EN→`中文` / ZH→`EN/中` / Bilingual→`EN`
+
+### 修改文件
+| 文件 | 变更 |
+|------|------|
+| `js/config.js` | appLang 三态 + `t()` 三态 + `biText()` 新增 + `boardName`/`rankName`/`catName`/`lvTitle` ZH 分支 + 版本号 v5.11.0 |
+| `js/ui.js` | `toggleLang()` 三态循环 + `updateNav()` 三态 data-en/data-zh 处理 |
+| `js/auth.js` | `toggleAuthLang()` 三态循环 + `updateAuthLang()` 标签/placeholder 适配 |
+| `js/syllabus.js` | 6 处内联拼接 → `biText()` / 三态直接判断 |
+| `js/mastery.js` | 2 处 hero 区域 → ZH 模式显示中文标签，bilingual 显示双行 |
+
 ## [5.10.0] - 2026-03-13 — Mark Scheme PDF + 专题刷题
 
 ### 核心变更

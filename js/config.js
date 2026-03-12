@@ -49,10 +49,10 @@ var THEME = {
 var appLang = (function() {
   try {
     var stored = localStorage.getItem('wmatch_lang');
-    if (stored === 'bilingual') return 'bilingual';
+    if (stored === 'bilingual' || stored === 'zh') return stored;
   } catch (e) {}
   return 'en';
-})();          /* 'en' | 'bilingual' */
+})();          /* 'en' | 'zh' | 'bilingual' */
 var appView = 'home';        /* current panel id */
 var appSort = 'default';     /* 'default' | 'az' | 'random' | 'hard' */
 var appBP = 'desktop';       /* 'phone' | 'tablet' | 'desktop' */
@@ -250,6 +250,7 @@ function getBoardInfo(boardId) {
 
 /* Get board display name */
 function boardName(b) {
+  if (appLang === 'zh') return b.nameZh;
   if (appLang === 'en') return b.name;
   return b.name + ' ' + b.nameZh;
 }
@@ -303,24 +304,36 @@ function getLevelIdxBySlug(slug) {
 /* ═══ i18n HELPERS ═══ */
 /* Returns en or zh text based on current appLang */
 function t(en, zh) {
+  if (appLang === 'zh') return zh;
+  if (appLang === 'en') return en;
+  return en + ' ' + zh;
+}
+
+/* biText — for inline title concatenation (Pattern C) */
+function biText(en, zh) {
+  if (!zh) return en;
+  if (appLang === 'zh') return zh;
   if (appLang === 'en') return en;
   return en + ' ' + zh;
 }
 
 /* Returns rank display name */
 function rankName(r) {
+  if (appLang === 'zh') return r.name;
   if (appLang === 'en') return r.nameEn;
   return r.nameEn + ' ' + r.name;
 }
 
 /* Returns category display name */
 function catName(cat) {
+  if (appLang === 'zh') return cat.nameZh;
   if (appLang === 'en') return cat.name;
   return cat.name + ' ' + cat.nameZh;
 }
 
 /* Returns level display title */
 function lvTitle(lv) {
+  if (appLang === 'zh' && lv.titleZh) return lv.titleZh;
   if (appLang === 'en' || !lv.titleZh) return lv.title;
   return lv.title + ' ' + lv.titleZh;
 }
@@ -375,7 +388,7 @@ function isSuperAdmin() {
 }
 
 /* App version */
-var APP_VERSION = 'v5.10.0';
+var APP_VERSION = 'v5.11.0';
 
 /* AI Tutor configuration */
 var AI_TUTOR_CONFIG = {

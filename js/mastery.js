@@ -401,8 +401,8 @@ function _renderHeroAction() {
   html += '<div class="hero-main">';
   if (action.type === 'continue') {
     html += '<div class="hero-label">' + t('Continue', '\u7ee7\u7eed\u5b66\u4e60') + '</div>';
-    html += '<div class="hero-section">' + escapeHtml(action.label) + '</div>';
-    if (appLang !== 'en' && action.labelZh) html += '<div class="hero-section-zh">' + escapeHtml(action.labelZh) + '</div>';
+    html += '<div class="hero-section">' + escapeHtml(appLang === 'zh' && action.labelZh ? action.labelZh : action.label) + '</div>';
+    if (appLang === 'bilingual' && action.labelZh) html += '<div class="hero-section-zh">' + escapeHtml(action.labelZh) + '</div>';
     html += '<button class="btn btn-primary hero-btn" data-hero-action="continue" data-hero-sec="' + action.section.id + '" data-hero-board="' + action.board + '">';
     html += t('Continue Learning', '\u7ee7\u7eed\u5b66\u4e60') + ' \u2192</button>';
   } else if (action.type === 'daily') {
@@ -427,8 +427,8 @@ function _renderHeroAction() {
     html += '\ud83d\udd04 ' + t('Quick Scan', '\u5feb\u901f\u590d\u67e5') + ' \u2192</button>';
   } else if (action.type === 'start') {
     html += '<div class="hero-label">' + t('Up next', '\u4e0b\u4e00\u7ad9') + '</div>';
-    html += '<div class="hero-section">' + escapeHtml(action.label) + '</div>';
-    if (appLang !== 'en' && action.labelZh) html += '<div class="hero-section-zh">' + escapeHtml(action.labelZh) + '</div>';
+    html += '<div class="hero-section">' + escapeHtml(appLang === 'zh' && action.labelZh ? action.labelZh : action.label) + '</div>';
+    if (appLang === 'bilingual' && action.labelZh) html += '<div class="hero-section-zh">' + escapeHtml(action.labelZh) + '</div>';
     html += '<button class="btn btn-primary hero-btn" data-hero-action="start" data-hero-sec="' + action.section.id + '" data-hero-board="' + action.board + '">';
     html += t('Start Learning', '\u5f00\u59cb\u5b66\u4e60') + ' \u2192</button>';
   } else {

@@ -383,14 +383,10 @@ function _renderBoardHome(board) {
     var _chEmoji = Array.isArray(emojis) ? (emojis[ch.num] || '\ud83d\udcda') : (emojis[ch.num] || '\ud83d\udcda');
     html += '<span class="category-emoji">' + _chEmoji + '</span>';
     if (board === 'hhk') {
-      html += '<span class="category-name">' + ch.title;
-      if (appLang !== 'en') html += ' ' + ch.title_zh;
-      html += '</span>';
+      html += '<span class="category-name">' + biText(ch.title, ch.title_zh) + '</span>';
       html += '<span class="category-count">' + ch.sections.length + ' ' + t('units', '\u5355\u5143') + '</span>';
     } else {
-      html += '<span class="category-name">' + ch.num + '. ' + ch.title;
-      if (appLang !== 'en') html += ' ' + ch.title_zh;
-      html += '</span>';
+      html += '<span class="category-name">' + ch.num + '. ' + biText(ch.title, ch.title_zh) + '</span>';
       html += '<span class="category-count">' + ch.sections.length + ' ' + t('sections', '\u8282') + '</span>';
     }
     html += '<span class="category-chevron">\u25bc</span>';
@@ -509,9 +505,7 @@ function _renderSectionRow(sec, ch, board, _wd, secIdx, prevSecId, prevStats) {
   var h = '';
   h += '<div class="deck-row" role="button" tabindex="0" onclick="openSection(\'' + escapeHtml(sec.id) + '\',\'' + escapeHtml(board) + '\')">';
   h += '<span class="deck-row-tag sec-tag">' + sec.id + '</span>';
-  h += '<span class="deck-row-name">' + escapeHtml(sec.title);
-  if (appLang !== 'en') h += ' ' + escapeHtml(sec.title_zh);
-  h += tierBadge + '</span>';
+  h += '<span class="deck-row-name">' + biText(escapeHtml(sec.title), escapeHtml(sec.title_zh)) + tierBadge + '</span>';
   if (words.length > 0) {
     /* 3-state indicator: empty=not started, half=in progress, full=mastered */
     var _dotClass = stats.started === 0 ? 'sec-dot-empty' : (stats.pct >= 80 ? 'sec-dot-full' : 'sec-dot-half');
@@ -564,13 +558,9 @@ function renderSectionDetail(ch, sec, secIdx, board) {
   html += '<div class="deck-header">';
   html += '<button class="back-btn" onclick="navTo(\'home\')">\u2190</button>';
   if (board === 'hhk') {
-    html += '<div class="deck-title">' + ch.title;
-    if (appLang !== 'en') html += ' ' + ch.title_zh;
-    html += '</div>';
+    html += '<div class="deck-title">' + biText(ch.title, ch.title_zh) + '</div>';
   } else {
-    html += '<div class="deck-title">' + ch.num + '. ' + ch.title;
-    if (appLang !== 'en') html += ' ' + ch.title_zh;
-    html += '</div>';
+    html += '<div class="deck-title">' + ch.num + '. ' + biText(ch.title, ch.title_zh) + '</div>';
   }
   html += '<div class="sec-position">' + sec.id + ' / ' + ch.sections.length + '</div>';
   html += '</div>';
@@ -2393,8 +2383,9 @@ function reportSectionModule(sectionId, moduleType, board) {
 
   var html = '<div class="section-title">\ud83d\udea9 ' + t('Report Error', '\u62a5\u544a\u9519\u8bef') + ' \u2014 ' + sec.id + ' ' + modLabel + '</div>';
   html += '<div style="text-align:left;margin-bottom:12px;padding:10px;background:var(--c-surface-alt);border-radius:var(--r);font-size:12px">';
-  html += '<strong>' + escapeHtml(sec.id) + '</strong> \u00b7 ' + escapeHtml(sec.title);
-  if (appLang !== 'en' && sec.title_zh) html += ' \u00b7 ' + escapeHtml(sec.title_zh);
+  html += '<strong>' + escapeHtml(sec.id) + '</strong> \u00b7 ';
+  if (appLang === 'zh' && sec.title_zh) html += escapeHtml(sec.title_zh);
+  else { html += escapeHtml(sec.title); if (appLang === 'bilingual' && sec.title_zh) html += ' \u00b7 ' + escapeHtml(sec.title_zh); }
   html += '<br><span class="text-sub">' + t('Module', '\u6a21\u5757') + ': ' + modLabel + '</span>';
   html += '</div>';
   html += '<label class="settings-label">' + t('Error type', '\u9519\u8bef\u7c7b\u578b') + '</label>';

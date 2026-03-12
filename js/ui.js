@@ -76,11 +76,9 @@ function updateNav() {
   });
   /* i18n nav labels */
   document.querySelectorAll('[data-en][data-zh]').forEach(function(el) {
-    if (appLang === 'en') {
-      el.textContent = el.dataset.en;
-    } else {
-      el.textContent = el.dataset.en + ' ' + el.dataset.zh;
-    }
+    if (appLang === 'zh') el.textContent = el.dataset.zh;
+    else if (appLang === 'en') el.textContent = el.dataset.en;
+    else el.textContent = el.dataset.en + ' ' + el.dataset.zh;
   });
   /* Mistake badge */
   var mc = 0;
@@ -183,9 +181,12 @@ E('modal-overlay').addEventListener('click', function(e) {
 
 /* ═══ LANGUAGE TOGGLE ═══ */
 function toggleLang() {
-  appLang = appLang === 'bilingual' ? 'en' : 'bilingual';
+  var LANG_CYCLE = { en: 'zh', zh: 'bilingual', bilingual: 'en' };
+  appLang = LANG_CYCLE[appLang] || 'en';
   try { localStorage.setItem('wmatch_lang', appLang); } catch(e) {}
-  var label = appLang === 'en' ? '中/EN' : 'EN';
+  if (appLang !== 'en') loadCJKFont();
+  var LANG_LABELS = { en: '中文', zh: 'EN/中', bilingual: 'EN' };
+  var label = LANG_LABELS[appLang];
   /* Sidebar menu item label handled by updateNav() via data-en/data-zh */
   if (E('lang-toggle-hb')) E('lang-toggle-hb').textContent = label;
   /* Sync auth overlay toggle button */
