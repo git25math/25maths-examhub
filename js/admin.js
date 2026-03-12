@@ -878,6 +878,7 @@ async function renderSchoolOverview() {
 var _umData = null, _umPage = 1, _umPerPage = 50, _umTotal = 0;
 var _umSearch = '', _umRoleFilter = '', _umSort = 'created_at', _umSortAsc = false;
 var _umSelected = {}; /* { userId: true } */
+var _umClasses = null; /* cached class list from Edge Function */
 
 async function renderUserManagement() {
   var ct = E('admin-content');
@@ -892,6 +893,7 @@ async function renderUserManagement() {
       if (res.error) throw new Error(res.error);
       _umData = res.users || [];
       _umTotal = res.total || 0;
+      _umClasses = res.classes || [];
     } catch (e) {
       ct.innerHTML = '<div class="admin-empty">' + escapeHtml(e.message) + '</div>';
       return;
@@ -1117,30 +1119,20 @@ async function doUserResetPw(userId) {
   } catch (e) { msg.textContent = e.message; msg.className = 'settings-msg error'; }
 }
 
-async function _umLoadClassOptions() {
-  var res = await sb.from('kw_classes').select('id, name, grade, school_id').order('created_at', { ascending: true });
-  var classes = res.data || [];
+function _umBuildClassOptions() {
+  var classes = _umClasses || [];
   if (classes.length === 0) return '';
-  /* Load schools separately */
-  var schoolIds = [];
-  classes.forEach(function(c) { if (c.school_id && schoolIds.indexOf(c.school_id) < 0) schoolIds.push(c.school_id); });
-  var schoolMap = {};
-  if (schoolIds.length > 0) {
-    var sRes = await sb.from('schools').select('id, name').in('id', schoolIds);
-    if (sRes.data) sRes.data.forEach(function(s) { schoolMap[s.id] = s.name; });
-  }
   var opts = '';
   classes.forEach(function(c) {
-    var schoolName = schoolMap[c.school_id] || '';
     var gradeOpt = BOARD_OPTIONS.find(function(o) { return o.value === c.grade; });
-    var gradeLabel = gradeOpt ? t(gradeOpt.name, gradeOpt.nameZh) : c.grade;
-    opts += '<option value="' + c.id + '">' + escapeHtml(c.name) + ' — ' + gradeLabel + (schoolName ? ' (' + escapeHtml(schoolName) + ')' : '') + '</option>';
+    var gradeLabel = gradeOpt ? t(gradeOpt.name, gradeOpt.nameZh) : (c.grade || '');
+    opts += '<option value="' + c.id + '">' + escapeHtml(c.name) + ' — ' + gradeLabel + (c.school_name ? ' (' + escapeHtml(c.school_name) + ')' : '') + '</option>';
   });
   return opts;
 }
 
 async function showUserAssignClassModal(userId, nickname) {
-  var opts = await _umLoadClassOptions();
+  var opts = _umBuildClassOptions();
   if (!opts) { showToast(t('No classes available', '没有可用班级')); return; }
 
   var html = '<div class="section-title">' + t('Assign to Class', '分配班级') + '</div>' +
@@ -1290,7 +1282,7 @@ async function showBatchAssignClassModal() {
   var ids = _umGetSelectedIds();
   if (ids.length === 0) { showToast(t('No users selected', '未选择用户')); return; }
 
-  var opts = await _umLoadClassOptions();
+  var opts = _umBuildClassOptions();
   if (!opts) { showToast(t('No classes available', '没有可用班级')); return; }
 
   var html = '<div class="section-title">' + t('Batch Assign Class', '批量分配班级') + '</div>' +

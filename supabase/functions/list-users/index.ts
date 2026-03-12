@@ -114,7 +114,13 @@ serve(async (req) => {
       )
     }
 
-    return new Response(JSON.stringify({ users, total: users.length }), {
+    // Build classes list for assign dropdowns
+    const classList = (allClasses || []).map((c: any) => ({
+      id: c.id, name: c.name, grade: c.grade,
+      school_name: schoolLookup[c.school_id] || null
+    }))
+
+    return new Response(JSON.stringify({ users, total: users.length, classes: classList }), {
       status: 200, headers: { ...corsHeaders, 'Content-Type': 'application/json' }
     })
 
