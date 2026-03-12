@@ -44,6 +44,26 @@ function startRefreshScan(staleWords) {
   var words = staleWords.slice(0, cap);
 
   S._refreshMode = true;
+  S._mistakeMode = false;
+  S.lvl = -1;
+  S.round = 1;
+  S.idx = 0;
+  S.results = { known: [], fuzzy: [], unknown: [] };
+  S.pairs = [];
+  for (var i = 0; i < words.length; i++) {
+    S.pairs.push({ word: words[i].word, def: words[i].def, lid: words[i].lid, _key: words[i].key });
+  }
+
+  showPanel('study');
+  renderStudyCard();
+}
+
+function startMistakeScan(mistakeWords) {
+  if (!mistakeWords || mistakeWords.length === 0) return;
+  var words = mistakeWords.slice(0, 30);
+
+  S._refreshMode = true;
+  S._mistakeMode = true;
   S.lvl = -1;
   S.round = 1;
   S.idx = 0;
@@ -78,7 +98,11 @@ function _renderRefreshCard() {
   }
 
   /* Refresh label */
-  html += '<div class="study-refresh-label">\ud83d\udd04 ' + t('Refresh Review', '\u8f7b\u91cf\u590d\u67e5') + '</div>';
+  if (S._mistakeMode) {
+    html += '<div class="study-refresh-label">\ud83d\udcdd ' + t('Mistake Review', '\u9519\u9898\u590d\u4e60') + '</div>';
+  } else {
+    html += '<div class="study-refresh-label">\ud83d\udd04 ' + t('Refresh Review', '\u8f7b\u91cf\u590d\u67e5') + '</div>';
+  }
 
   /* Word card */
   html += '<div class="scan-card" id="scan-card">';
@@ -113,7 +137,9 @@ function _finishRefreshScan() {
   var f = S.results.fuzzy.length;
   var u = S.results.unknown.length;
 
+  var _wasMistakeMode = S._mistakeMode;
   S._refreshMode = false;
+  S._mistakeMode = false;
 
   var _isRecovery = typeof isRecoverySessionActive === 'function' && isRecoverySessionActive();
 
@@ -357,6 +383,9 @@ function rateScan(verdict) {
   if (S._kpRefreshMode) {
     recordKPRefreshScan(p._kpId, verdict);
     _logScanEvent('kp', p._kpId, verdict, S.round, '', '');
+  } else if (S._refreshMode && S._mistakeMode) {
+    recordScan(p._key, verdict, S.round);
+    _logScanEvent('vocab', p._key, verdict, S.round, '', '');
   } else if (S._refreshMode) {
     recordRefreshScan(p._key, verdict);
     _logScanEvent('vocab', p._key, verdict, S.round, '', '');

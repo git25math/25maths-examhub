@@ -3050,14 +3050,13 @@ function startMistakeReview(type) {
   if (type === 'vocab') {
     var mistakes = _getVocabMistakes();
     if (mistakes.length === 0) return;
-    /* Build word objects for startRefreshScan */
     var wordObjs = [];
     for (var i = 0; i < mistakes.length; i++) {
       var w = mistakes[i];
-      wordObjs.push({ word: w.word, def: w.def, key: w.key, lid: w.level });
+      wordObjs.push({ word: w.word, def: w.def, key: w.key, lid: w.key });
     }
-    if (typeof startRefreshScan === 'function') {
-      startRefreshScan(wordObjs);
+    if (typeof startMistakeScan === 'function') {
+      startMistakeScan(wordObjs);
     } else {
       navTo('review-dash');
     }
