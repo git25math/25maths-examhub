@@ -1268,6 +1268,9 @@ function checkSectionMilestone() {
   if (msgs[ms]) {
     if (typeof showToast === 'function') showToast(msgs[ms]);
     if (ms === 'mastered' && typeof spawnP === 'function') spawnP(window.innerWidth / 2, window.innerHeight / 3, 30);
+    if (ms === 'mastered' && typeof _notifSectionMastered === 'function' && _currentSectionContext) {
+      _notifSectionMastered(_currentSectionContext.sectionId, _currentSectionContext.board);
+    }
   }
 }
 

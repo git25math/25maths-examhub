@@ -4934,3 +4934,10 @@ input { font-family: inherit; }
 
 /* Print */
 @media print { .list-bulk-bar, .list-filter-bar, .list-tabs, .list-pagination, .list-stats { display:none !important; } }
+
+/* Smart notification type colors */
+.notif-item[data-ntypec="milestone"] .notif-dot.active { background: var(--c-warning); }
+.notif-item[data-ntypec="plan"] .notif-dot.active { background: var(--c-primary); }
+.notif-item[data-ntypec="weakness"] .notif-dot.active { background: var(--c-danger); }
+.notif-item[data-ntypec="reforget"] .notif-dot.active { background: #e74c3c; }
+.notif-item[data-ntypec="hw_deadline"] .notif-dot.active { background: var(--c-warning); }

@@ -1,5 +1,38 @@
 # Changelog
 
+## [5.4.0] - 2026-03-12 — 智能通知系统
+
+### 核心变更
+- **通知基础设施迁移**: 从 `homework.js` 迁移到新建 `smart-notif.js`（core bundle），所有用户（含 Guest）可见铃铛和通知
+- **Guest 本地通知**: `localStorage` 存储（key: `local_notifications`，上限 50 条 FIFO），与 Supabase 行结构一致
+- **节流/去重系统**: `notif_sent_today` 每日自动重置，按 subtype 防止重复发送
+- **5 类智能触发器**:
+  - 🏅 `milestone` — 徽章解锁 + 连续天数 [3,7,14,30,60,100] + 知识点 mastered
+  - 📋 `plan` — 每日首次生成复习计划时通知（N 词汇 + N 知识点 + N 真题）
+  - ⚠️ `weakness` — 正确率下降趋势 + 反复错误模式 + 薄弱知识点
+  - ⏰ `hw_deadline` — 24h 内到期且未提交的作业提醒（仅有班级的登录学生）
+  - 🔄 `reforget` — 遗忘 3 次以上的项目预警
+- **扩展通知路由**: `handleNotifClick` 新增 `plan`/`stats`/`section`/`mistakes`/`daily` 导航
+- **通知类型颜色**: `data-ntypec` 属性驱动 `.notif-dot` 颜色区分（milestone=warning, weakness=danger 等）
+- **内置 timeAgo**: `_notifTimeAgo()` 独立实现，不依赖 lazy-loaded `admin.js`
+
+### Hook 插入点
+- `storage.js` `checkBadges()` — 徽章解锁时调用 `_notifBadgeUnlock(b)`
+- `storage.js` `recordActivity()` — 活动记录后调用 `_notifStreakAchievement(streak)`
+- `syllabus.js` `checkSectionMilestone()` — mastered 时调用 `_notifSectionMastered()`
+
+### 文件变更
+| 文件 | 变更类型 |
+|------|---------|
+| `js/smart-notif.js` | **新建** — 通知基础设施 + Guest 支持 + 节流 + 5 类触发器 |
+| `js/homework.js` | 删减 — 移除 lines 5-135 的通知函数（迁移到 smart-notif.js） |
+| `js/storage.js` | 插入 — `checkBadges` + `recordActivity` 两处 hook |
+| `js/syllabus.js` | 插入 — `checkSectionMilestone` mastered hook |
+| `js/ui.js` | 修改 — `showApp()` 对所有用户显示铃铛 + 延迟初始化智能通知 |
+| `scripts/minify.sh` | 修改 — core bundle 添加 `smart-notif.js` |
+| `css/style.css` | 追加 — 通知类型颜色 CSS |
+| `js/config.js` | 修改 — 版本号 v5.4.0 |
+
 ## [5.3.1] - 2026-03-12 — 列表视图优化 + 套卷详情交互筛选
 
 ### 核心变更（列表视图）

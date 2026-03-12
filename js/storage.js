@@ -744,6 +744,7 @@ function recordActivity() {
   if (s.streak.cur > (s.streak.max || 0)) s.streak.max = s.streak.cur;
   s.streak.last = today;
   writeS(s);
+  if (typeof _notifStreakAchievement === 'function') _notifStreakAchievement(s.streak.cur);
   return true;
 }
 
@@ -1557,6 +1558,7 @@ function checkBadges() {
         } else if (typeof showToast === 'function') {
           showToast(b.icon + ' ' + t(b.en, b.zh) + ' ' + t('unlocked!', '\u89e3\u9501\uff01'));
         }
+        if (typeof _notifBadgeUnlock === 'function') _notifBadgeUnlock(b);
         if (b.reward && typeof showToast === 'function') {
           setTimeout(function() {
             showToast('\ud83c\udf81 ' + t(b.reward.en, b.reward.zh));

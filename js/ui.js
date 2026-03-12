@@ -390,12 +390,14 @@ function showApp() {
   if (appBP === 'desktop') expandSidebar();
   navTo('home');
 
-  /* Show notification bell + load notifications for logged-in users */
-  if (isLoggedIn() && !isGuest()) {
-    var sn = E('sidebar-notif'); if (sn) sn.style.display = '';
-    var nb = E('notif-bell-hb'); if (nb) nb.style.display = '';
-    if (typeof loadNotifications === 'function') loadNotifications();
-  }
+  /* Show notification bell for ALL users (including guests) */
+  var sn = E('sidebar-notif'); if (sn) sn.style.display = '';
+  var nb = E('notif-bell-hb'); if (nb) nb.style.display = '';
+  if (typeof loadNotifications === 'function') loadNotifications();
+  /* Init smart notifications after data loads */
+  setTimeout(function() {
+    if (typeof initSmartNotifications === 'function') initSmartNotifications();
+  }, 2000);
 
   /* Show homework nav for logged-in students with a class */
   if (isLoggedIn() && !isGuest() && userClassId && !isTeacher()) {

@@ -1,5 +1,14 @@
 # Development Roadmap
 
+## v5.4 — Smart Notification System [DONE]
+- [x] 通知基础设施从 homework.js 迁移到 smart-notif.js（core bundle）
+- [x] Guest 本地通知（localStorage，50 条上限）
+- [x] 节流/去重系统（每日自动重置）
+- [x] 5 类智能触发器（milestone / plan / weakness / hw_deadline / reforget）
+- [x] 扩展通知路由（plan / stats / section / mistakes / daily）
+- [x] 通知类型颜色区分
+- [x] 所有用户（含 Guest）铃铛可见
+
 ## Phase 1 — Core Launch [DONE]
 - [x] Multi-file architecture refactor
 - [x] Supabase auth + cloud sync (`vocab_progress` table)
