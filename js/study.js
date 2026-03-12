@@ -43,6 +43,8 @@ function startRefreshScan(staleWords) {
   var cap = typeof REFRESH_CAP !== 'undefined' ? REFRESH_CAP : 20;
   var words = staleWords.slice(0, cap);
 
+  S._kpScanMode = false;
+  S._kpRefreshMode = false;
   S._refreshMode = true;
   S._mistakeMode = false;
   S.lvl = -1;
@@ -62,6 +64,8 @@ function startMistakeScan(mistakeWords) {
   if (!mistakeWords || mistakeWords.length === 0) return;
   var words = mistakeWords.slice(0, 30);
 
+  S._kpScanMode = false;
+  S._kpRefreshMode = false;
   S._refreshMode = true;
   S._mistakeMode = true;
   S.lvl = -1;

@@ -2567,7 +2567,7 @@ function renderTodaysPlan() {
   html += '</div>';
   if (dueCount > 0) {
     html += '<div class="plan-card-count">' + dueCount + ' ' + t('words', '\u4e2a\u8bcd') + '</div>';
-    html += '<button class="btn btn-primary btn-sm" onclick="navTo(\'review-dash\')">' + t('Start Review', '\u5f00\u59cb\u590d\u4e60') + '</button>';
+    html += '<button class="btn btn-primary btn-sm" data-action="start-due-review">' + t('Start Review', '\u5f00\u59cb\u590d\u4e60') + '</button>';
   } else {
     html += '<div class="plan-card-count plan-done">\u2713 ' + t('All caught up!', '\u5168\u90e8\u5b8c\u6210\uff01') + '</div>';
   }
@@ -2814,19 +2814,28 @@ function renderTodaysPlan() {
 
   panel.innerHTML = html;
 
-  /* Delegation for plan actions */
-  panel.addEventListener('click', function(e) {
+  /* Delegation for plan actions — remove old listener to prevent stacking */
+  if (panel._planHandler) panel.removeEventListener('click', panel._planHandler);
+  panel._planHandler = function(e) {
+    var dueBtn = e.target.closest('[data-action="start-due-review"]');
+    if (dueBtn && typeof startMistakeScan === 'function' && typeof getDueWords === 'function') {
+      var due = getDueWords();
+      if (due.length > 0) startMistakeScan(due);
+      return;
+    }
     var refreshBtn = e.target.closest('[data-action="start-refresh"]');
     if (refreshBtn && typeof startRefreshScan === 'function' && typeof getStaleWords === 'function') {
       startRefreshScan(getStaleWords());
+      return;
     }
     var kpRefreshBtn = e.target.closest('[data-action="start-kp-refresh"]');
-    if (kpRefreshBtn && typeof startKPRefreshScan === 'function') startKPRefreshScan();
+    if (kpRefreshBtn && typeof startKPRefreshScan === 'function') { startKPRefreshScan(); return; }
     var ppRefreshBtn = e.target.closest('[data-action="start-pp-refresh"]');
-    if (ppRefreshBtn && typeof startPPRefreshScan === 'function') startPPRefreshScan();
+    if (ppRefreshBtn && typeof startPPRefreshScan === 'function') { startPPRefreshScan(); return; }
     var recoveryBtn = e.target.closest('[data-action="start-recovery"]');
-    if (recoveryBtn && typeof startRecoverySession === 'function') startRecoverySession();
-  });
+    if (recoveryBtn && typeof startRecoverySession === 'function') { startRecoverySession(); return; }
+  };
+  panel.addEventListener('click', panel._planHandler);
 }
 
 /* ═══ MISTAKE BOOK PANEL ═══ */
