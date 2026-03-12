@@ -4709,6 +4709,8 @@ input { font-family: inherit; }
 .list-view > .list-header-sticky { flex-shrink:0; }
 #list-content { flex:1; overflow-y:auto; min-height:0; }
 .list-header-sticky { position:sticky; top:0; z-index:10; background:var(--c-bg, #fff); padding-bottom:4px; border-bottom:1px solid var(--c-border-light, #f3f4f6); }
+.list-help-btn { width:24px; height:24px; padding:0; border-radius:50%; font-size:13px; font-weight:700; color:var(--c-primary); border:1.5px solid var(--c-primary); background:none; cursor:pointer; display:inline-flex; align-items:center; justify-content:center; flex-shrink:0; }
+.list-help-btn:hover { background:var(--c-primary-bg, #EDEDFF); }
 .list-tabs { display:flex; gap:0; border-bottom:2px solid var(--c-border, #e5e7eb); margin-bottom:12px; overflow-x:auto; -webkit-overflow-scrolling:touch; }
 .list-tab { padding:10px 16px; font-size:14px; font-weight:600; color:var(--c-text2); background:none; border:none; cursor:pointer; border-bottom:2px solid transparent; margin-bottom:-2px; transition:color 0.15s, border-color 0.15s; white-space:nowrap; }
 .list-tab:hover { color:var(--c-text); }

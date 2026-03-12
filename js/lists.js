@@ -25,7 +25,10 @@ function renderListView() {
 
   /* Sticky header: title + tabs + filters */
   html += '<div class="list-header-sticky">';
-  html += '<h2 class="section-title">' + (zh ? '\u5b66\u4e60\u9879\u76ee' : 'Learning Items') + '</h2>';
+  html += '<div style="display:flex;align-items:center;gap:8px">';
+  html += '<h2 class="section-title" style="margin:0">' + (zh ? '\u5b66\u4e60\u9879\u76ee' : 'Learning Items') + '</h2>';
+  html += '<button class="btn btn-sm btn-ghost list-help-btn" id="list-help-btn" aria-label="Help" title="' + (zh ? '\u4f7f\u7528\u8bf4\u660e' : 'How to use') + '">?</button>';
+  html += '</div>';
 
   /* Tab bar */
   html += '<div class="list-tabs">';
@@ -66,6 +69,10 @@ function renderListView() {
       renderListView();
     });
   });
+
+  /* Help button */
+  var helpBtn = el.querySelector('#list-help-btn');
+  if (helpBtn) helpBtn.addEventListener('click', _showListHelp);
 
   /* Bind filter changes */
   _bindListFilters(el);
@@ -779,6 +786,92 @@ function _detectItemBoard(type, ref) {
     }
   }
   return 'cie';
+}
+
+function _showListHelp() {
+  var zh = (appLang !== 'en');
+  var html = '<div style="padding:20px;max-width:520px;font-size:14px;line-height:1.7">';
+
+  html += '<h3 style="margin:0 0 12px;font-size:17px">' + (zh ? '\ud83d\udcd6 \u5b66\u4e60\u9879\u76ee\u4f7f\u7528\u8bf4\u660e' : '\ud83d\udcd6 Learning Items Guide') + '</h3>';
+
+  /* Tabs */
+  html += '<div style="margin-bottom:14px">';
+  html += '<div style="font-weight:700;margin-bottom:4px">' + (zh ? '\u56db\u4e2a Tab \u5206\u9875' : 'Four Tabs') + '</div>';
+  if (zh) {
+    html += '<div>\u2022 <b>\u8bcd\u6c47</b> \u2014 \u5168\u90e8\u82f1\u6587\u6570\u5b66\u672f\u8bed\uff0c\u53ef\u6309\u72b6\u6001/\u7ae0\u8282/\u9057\u5fd8\u7b5b\u9009</div>';
+    html += '<div>\u2022 <b>\u77e5\u8bc6\u70b9</b> \u2014 CIE/Edexcel \u8003\u7eb2\u77e5\u8bc6\u70b9\uff0c\u53ef\u6309\u8003\u8bd5\u5c40/\u4e13\u9898\u7b5b\u9009</div>';
+    html += '<div>\u2022 <b>\u771f\u9898</b> \u2014 \u5386\u5e74\u771f\u9898\uff0c\u53ef\u6309\u5206\u503c/\u72b6\u6001/\u4e13\u9898\u7b5b\u9009</div>';
+    html += '<div>\u2022 <b>\u6211\u7684\u6e05\u5355</b> \u2014 \u81ea\u5b9a\u4e49\u5b66\u4e60\u6e05\u5355\uff0c\u652f\u6301\u5206\u7c7b\u5b66\u4e60\u548c\u6253\u5370</div>';
+  } else {
+    html += '<div>\u2022 <b>Words</b> \u2014 All math vocabulary, filter by status/section/re-forget</div>';
+    html += '<div>\u2022 <b>Knowledge Points</b> \u2014 CIE/Edexcel syllabus KPs, filter by board/section</div>';
+    html += '<div>\u2022 <b>Past Papers</b> \u2014 Real exam questions, filter by marks/status/topic</div>';
+    html += '<div>\u2022 <b>My Lists</b> \u2014 Custom study lists with focused learning & print</div>';
+  }
+  html += '</div>';
+
+  /* FLM Status */
+  html += '<div style="margin-bottom:14px">';
+  html += '<div style="font-weight:700;margin-bottom:4px">' + (zh ? 'FLM \u56db\u6001\u7b5b\u9009\u5faa\u73af' : 'FLM Status Cycle') + '</div>';
+  html += '<table style="width:100%;border-collapse:collapse;font-size:13px">';
+  html += '<tr style="border-bottom:1px solid #e5e7eb"><td style="padding:4px 8px"><span style="color:#5248C9;font-weight:700">L</span></td>';
+  html += '<td style="padding:4px"><b>' + (zh ? '\u5b66\u4e60\u4e2d Learning' : 'Learning') + '</b></td>';
+  html += '<td style="padding:4px;color:#666">' + (zh ? '\u521a\u5f00\u59cb\u63a5\u89e6\uff0c\u9700\u8981\u53cd\u590d\u7ec3\u4e60' : 'Just started, needs repeated practice') + '</td></tr>';
+  html += '<tr style="border-bottom:1px solid #e5e7eb"><td style="padding:4px 8px"><span style="color:#D97706;font-weight:700">U</span></td>';
+  html += '<td style="padding:4px"><b>' + (zh ? '\u4e0d\u786e\u5b9a Uncertain' : 'Uncertain') + '</b></td>';
+  html += '<td style="padding:4px;color:#666">' + (zh ? '\u6709\u65f6\u5bf9\u6709\u65f6\u9519\uff0c\u8fd8\u4e0d\u7a33\u5b9a' : 'Sometimes right, sometimes wrong') + '</td></tr>';
+  html += '<tr style="border-bottom:1px solid #e5e7eb"><td style="padding:4px 8px"><span style="color:#059669;font-weight:700">M</span></td>';
+  html += '<td style="padding:4px"><b>' + (zh ? '\u5df2\u638c\u63e1 Mastered' : 'Mastered') + '</b></td>';
+  html += '<td style="padding:4px;color:#666">' + (zh ? '\u8fde\u7eed\u6b63\u786e\uff0c\u771f\u6b63\u5b66\u4f1a\u4e86' : 'Consistently correct, truly learned') + '</td></tr>';
+  html += '<tr><td style="padding:4px 8px"><span style="color:#9CA3AF;font-weight:700">N</span></td>';
+  html += '<td style="padding:4px"><b>' + (zh ? '\u65b0 New' : 'New') + '</b></td>';
+  html += '<td style="padding:4px;color:#666">' + (zh ? '\u8fd8\u672a\u5b66\u4e60\u8fc7' : 'Not yet studied') + '</td></tr>';
+  html += '</table>';
+  if (zh) {
+    html += '<div style="margin-top:6px;font-size:12px;color:#888">\u5faa\u73af\u8def\u5f84\uff1aN \u2192 L \u2192 U \u2192 M\uff0c\u5df2\u638c\u63e1\u7684\u9879\u76ee\u4f1a\u5b9a\u671f\u590d\u67e5\uff0c\u9057\u5fd8\u65f6\u81ea\u52a8\u56de\u6d41\u5230 U</div>';
+  } else {
+    html += '<div style="margin-top:6px;font-size:12px;color:#888">Cycle: N \u2192 L \u2192 U \u2192 M. Mastered items are periodically reviewed; if forgotten, they flow back to U.</div>';
+  }
+  html += '</div>';
+
+  /* Re-forget */
+  html += '<div style="margin-bottom:14px">';
+  html += '<div style="font-weight:700;margin-bottom:4px">' + (zh ? '\u9057\u5fd8\u6b21\u6570 (Re-forget)' : 'Re-forget Count') + '</div>';
+  if (zh) {
+    html += '<div style="font-size:13px;color:#666">\u8bb0\u5f55\u5df2\u638c\u63e1\u540e\u53c8\u9057\u5fd8\u7684\u6b21\u6570\u3002\u6b21\u6570\u8d8a\u591a\uff0c\u8bf4\u660e\u8fd9\u4e2a\u77e5\u8bc6\u70b9\u662f\u4f60\u7684\u201c\u987a\u56fa\u96be\u70b9\u201d\uff0c\u9700\u8981\u91cd\u70b9\u653b\u514b\u3002\u6253\u5370\u65f6\u4f1a\u81ea\u52a8\u628a\u9057\u5fd8\u6b21\u6570\u591a\u7684\u6392\u5728\u524d\u9762\u3002</div>';
+  } else {
+    html += '<div style="font-size:13px;color:#666">Tracks how many times a mastered item was forgotten. Higher count = stubborn weak spot. Printed lists auto-sort these to the top.</div>';
+  }
+  html += '</div>';
+
+  /* Actions */
+  html += '<div style="margin-bottom:14px">';
+  html += '<div style="font-weight:700;margin-bottom:4px">' + (zh ? '\u64cd\u4f5c\u6309\u94ae' : 'Actions') + '</div>';
+  if (zh) {
+    html += '<div>\u2022 <b>\u2610 \u52fe\u9009</b> \u2014 \u52fe\u9009\u591a\u4e2a\u9879\u76ee\u540e\u51fa\u73b0\u64cd\u4f5c\u680f</div>';
+    html += '<div>\u2022 <b>+ \u52a0\u5165\u6e05\u5355</b> \u2014 \u52fe\u9009\u9879\u52a0\u5165\u81ea\u5b9a\u4e49\u6e05\u5355\uff0c\u6df7\u5408\u7c7b\u578b\u81ea\u52a8\u62c6\u5206\u4e3a\u8bcd\u6c47/\u77e5\u8bc6\u70b9/\u771f\u9898\u72ec\u7acb\u6e05\u5355</div>';
+    html += '<div>\u2022 <b>\u5bfc\u51fa CSV</b> \u2014 \u5c06\u52fe\u9009\u9879\u5bfc\u51fa\u4e3a\u8868\u683c\u6587\u4ef6</div>';
+    html += '<div>\u2022 <b>\u6253\u5370</b> \u2014 \u751f\u6210 A4 \u6253\u5370\u9875\uff0c\u81ea\u52a8\u6309\u91cd\u5237\u6b21\u6570\u6392\u5e8f\uff0c\u590d\u6742\u9879\u6392\u6700\u524d</div>';
+  } else {
+    html += '<div>\u2022 <b>\u2610 Select</b> \u2014 Check items to reveal the action bar</div>';
+    html += '<div>\u2022 <b>+ Add to List</b> \u2014 Add to a custom list; mixed types auto-split into separate lists</div>';
+    html += '<div>\u2022 <b>Export CSV</b> \u2014 Download selected items as a spreadsheet</div>';
+    html += '<div>\u2022 <b>Print</b> \u2014 Generate A4 printable, auto-sorted by re-forget count</div>';
+  }
+  html += '</div>';
+
+  /* My Lists */
+  html += '<div>';
+  html += '<div style="font-weight:700;margin-bottom:4px">' + (zh ? '\u6211\u7684\u6e05\u5355' : 'My Lists') + '</div>';
+  if (zh) {
+    html += '<div style="font-size:13px;color:#666">\u6e05\u5355\u662f\u4f60\u7684\u4e13\u5c5e\u5b66\u4e60\u8ba1\u5212\u3002\u521b\u5efa\u6e05\u5355 \u2192 \u52fe\u9009\u52a0\u5165 \u2192 \u5f00\u59cb\u5b66\u4e60/\u5feb\u901f Scan\u3002\u6bcf\u6b21\u5b66\u4e60\u8bb0\u5f55\u4f1a\u4fdd\u7559\uff0c\u5e2e\u4f60\u8ffd\u8e2a\u8fdb\u5ea6\u3002</div>';
+  } else {
+    html += '<div style="font-size:13px;color:#666">Lists are your personal study plans. Create \u2192 Add items \u2192 Study/Quick Scan. Session history is saved to track your progress.</div>';
+  }
+  html += '</div>';
+
+  html += '</div>';
+  if (typeof showModal === 'function') showModal(html);
 }
 
 function _escList(s) {
