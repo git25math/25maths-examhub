@@ -39,13 +39,21 @@ serve(async (req) => {
       })
     }
 
-    // Verify caller is teacher
-    const { data: teacher } = await supabaseAdmin
-      .from('teachers').select('id, school_id').eq('user_id', caller.id).single()
-    if (!teacher) {
-      return new Response(JSON.stringify({ error: 'Not a teacher' }), {
-        status: 403, headers: { ...corsHeaders, 'Content-Type': 'application/json' }
-      })
+    // Check if caller is super admin
+    const SUPER_ADMIN_EMAIL = 'zhuxingda86@hotmail.com'
+    const isSA = caller.email === SUPER_ADMIN_EMAIL
+
+    // Verify caller is teacher (skip for super admin)
+    let teacher: any = null
+    if (!isSA) {
+      const { data: t } = await supabaseAdmin
+        .from('teachers').select('id, school_id').eq('user_id', caller.id).single()
+      if (!t) {
+        return new Response(JSON.stringify({ error: 'Not a teacher' }), {
+          status: 403, headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+        })
+      }
+      teacher = t
     }
 
     const { class_id, students } = await req.json()
@@ -63,7 +71,12 @@ serve(async (req) => {
     // Get class info (grade, school_id)
     const { data: cls } = await supabaseAdmin
       .from('kw_classes').select('grade, school_id').eq('id', class_id).single()
-    if (!cls || cls.school_id !== teacher.school_id) {
+    if (!cls) {
+      return new Response(JSON.stringify({ error: 'Class not found' }), {
+        status: 404, headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+      })
+    }
+    if (!isSA && cls.school_id !== teacher.school_id) {
       return new Response(JSON.stringify({ error: 'Class not found or not yours' }), {
         status: 403, headers: { ...corsHeaders, 'Content-Type': 'application/json' }
       })

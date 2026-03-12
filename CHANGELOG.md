@@ -1,5 +1,23 @@
 # Changelog
 
+## [5.7.2] - 2026-03-12 — Super Admin 全权限用户管理
+
+### 核心变更
+- **前端解除只读**: Super Admin 在管理面板可创建班级、添加学生、编辑班级、改名、重置密码、移动班级
+- **创建班级增强**: Super Admin 创建班级时新增学校+教师选择器（因无 `_teacherData`）
+- **Edge Function SA 绕过**: `create-students`、`reset-student-password`、`update-student` 三个函数添加 Super Admin 邮箱检测，跳过教师/学校校验
+- **RLS 写入策略**: `kw_classes`、`kw_class_students`、`leaderboard` 新增 INSERT/UPDATE/DELETE 策略
+- **update_class RPC**: 添加 `is_super_admin()` 检查，允许编辑任意班级
+
+### 文件变更
+| 文件 | 变更类型 |
+|------|---------|
+| `js/admin.js` | 修改 — 解除 `_saReadOnly` 限制、`showCreateClassModal` 增加 SA 字段、`doCreateClass` 支持 SA |
+| `supabase/functions/create-students/index.ts` | 修改 — 添加 SA 绕过 |
+| `supabase/functions/reset-student-password/index.ts` | 修改 — 添加 SA 绕过 |
+| `supabase/functions/update-student/index.ts` | 修改 — 添加 SA 绕过 |
+| `supabase/migrations/20260312100000_superadmin_write_access.sql` | 新建 — RLS + RPC 更新 |
+
 ## [5.7.1] - 2026-03-12 — 用户管理批量操作
 
 ### 核心变更

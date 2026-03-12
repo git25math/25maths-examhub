@@ -223,8 +223,17 @@ function showCreateClassModal() {
     gradeOpts += '<option value="' + g.value + '">' + g.emoji + ' ' + t(g.name, g.nameZh) + '</option>';
   });
 
+  var saFields = '';
+  if (!_teacherData && typeof isSuperAdmin === 'function' && isSuperAdmin()) {
+    saFields = '<label class="settings-label">' + t('School', '学校') + '</label>' +
+      '<select class="auth-input" id="cc-school" onchange="loadTeachersForSchool(this.value)"><option value="">' + t('Loading schools...', '加载学校...') + '</option></select>' +
+      '<label class="settings-label mt-12">' + t('Teacher', '教师') + '</label>' +
+      '<select class="auth-input" id="cc-teacher"><option value="">' + t('Select school first', '请先选择学校') + '</option></select>';
+  }
+
   var html = '<div class="section-title">' + t('Create Class', '创建班级') + '</div>' +
-    '<label class="settings-label">' + t('Class Name', '班级名称') + '</label>' +
+    saFields +
+    '<label class="settings-label' + (saFields ? ' mt-12' : '') + '">' + t('Class Name', '班级名称') + '</label>' +
     '<input class="auth-input" id="cc-name" type="text" placeholder="' + t('e.g. 7A', '如 7A') + '">' +
     '<label class="settings-label mt-12">' + t('Grade / Year', '年级') + '</label>' +
     '<select class="auth-input" id="cc-grade">' + gradeOpts + '</select>' +
@@ -234,6 +243,31 @@ function showCreateClassModal() {
     '<button class="btn btn-ghost" onclick="hideModal()">' + t('Cancel', '取消') + '</button>' +
     '</div>';
   showModal(html);
+
+  /* Super Admin: load schools list */
+  if (!_teacherData && typeof isSuperAdmin === 'function' && isSuperAdmin()) {
+    sb.from('schools').select('id, name').order('name').then(function(res) {
+      var sel = E('cc-school');
+      if (!sel) return;
+      sel.innerHTML = '<option value="">' + t('-- Select --', '-- 选择 --') + '</option>';
+      (res.data || []).forEach(function(s) {
+        sel.innerHTML += '<option value="' + s.id + '">' + escapeHtml(s.name) + '</option>';
+      });
+    });
+  }
+}
+
+/* Helper: load teachers for a given school (used by SA create class modal) */
+async function loadTeachersForSchool(schoolId) {
+  var sel = E('cc-teacher');
+  if (!sel) return;
+  if (!schoolId) { sel.innerHTML = '<option value="">' + t('Select school first', '请先选择学校') + '</option>'; return; }
+  sel.innerHTML = '<option value="">' + t('Loading...', '加载中...') + '</option>';
+  var res = await sb.from('teachers').select('id, display_name').eq('school_id', schoolId);
+  sel.innerHTML = '<option value="">' + t('-- Select --', '-- 选择 --') + '</option>';
+  (res.data || []).forEach(function(tc) {
+    sel.innerHTML += '<option value="' + tc.id + '">' + escapeHtml(tc.display_name) + '</option>';
+  });
 }
 
 async function doCreateClass() {
@@ -241,12 +275,26 @@ async function doCreateClass() {
   var grade = E('cc-grade').value;
   var msg = E('cc-msg');
   if (!name) { msg.textContent = t('Please enter class name', '请输入班级名称'); msg.className = 'settings-msg error'; return; }
-  if (!_teacherData) { msg.textContent = t('No school context (super admin view-only)', '无学校上下文（超管仅查看）'); msg.className = 'settings-msg error'; return; }
+
+  var schoolId, teacherId;
+  if (_teacherData) {
+    schoolId = _teacherData.school_id;
+    teacherId = _teacherData.id;
+  } else if (typeof isSuperAdmin === 'function' && isSuperAdmin()) {
+    var selSchool = E('cc-school');
+    var selTeacher = E('cc-teacher');
+    schoolId = selSchool ? selSchool.value : '';
+    teacherId = selTeacher ? selTeacher.value : '';
+    if (!schoolId) { msg.textContent = t('Please select a school', '请选择学校'); msg.className = 'settings-msg error'; return; }
+    if (!teacherId) { msg.textContent = t('Please select a teacher', '请选择教师'); msg.className = 'settings-msg error'; return; }
+  } else {
+    msg.textContent = t('No permission', '无权限'); msg.className = 'settings-msg error'; return;
+  }
 
   try {
     var res = await sb.from('kw_classes').insert({
-      school_id: _teacherData.school_id,
-      teacher_id: _teacherData.id,
+      school_id: schoolId,
+      teacher_id: teacherId,
       name: name,
       grade: grade
     });
@@ -509,12 +557,11 @@ async function renderClassDetail(classId) {
   var activity = await loadActivityData(true);
   var students = activity.filter(function(s) { return s.class_id === classId; });
 
-  var _saReadOnly = !_teacherData && typeof isSuperAdmin === 'function' && isSuperAdmin();
   var html = '<div class="admin-detail-header">' +
     '<button class="btn btn-ghost btn-sm" onclick="renderClassList()">' + t('\u2190 Back', '\u2190 返回') + '</button>' +
     '<div class="admin-detail-title">' + escapeHtml(cls.name) + ' <span class="admin-detail-grade">' + gradeLabel + '</span>' +
-    (_saReadOnly ? '' : ' <button class="btn btn-ghost btn-sm text-sub" style="padding:2px 6px" data-action="editclass" data-cid="' + classId + '" data-cname="' + escapeHtml(cls.name) + '" data-grade="' + cls.grade + '">&#9998;</button>') + '</div>' +
-    (_saReadOnly ? '' : '<button class="btn btn-primary btn-sm" onclick="showBatchCreateModal(\'' + escapeHtml(classId) + '\')">' + t('+ Add Students', '+ 添加学生') + '</button>') +
+    ' <button class="btn btn-ghost btn-sm text-sub" style="padding:2px 6px" data-action="editclass" data-cid="' + classId + '" data-cname="' + escapeHtml(cls.name) + '" data-grade="' + cls.grade + '">&#9998;</button></div>' +
+    '<button class="btn btn-primary btn-sm" onclick="showBatchCreateModal(\'' + escapeHtml(classId) + '\')">' + t('+ Add Students', '+ 添加学生') + '</button>' +
     '</div>';
 
   if (students.length === 0) {

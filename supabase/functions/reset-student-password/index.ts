@@ -36,13 +36,21 @@ serve(async (req) => {
       })
     }
 
-    // Verify caller is teacher
-    const { data: teacher } = await supabaseAdmin
-      .from('teachers').select('id, school_id').eq('user_id', caller.id).single()
-    if (!teacher) {
-      return new Response(JSON.stringify({ error: 'Not a teacher' }), {
-        status: 403, headers: { ...corsHeaders, 'Content-Type': 'application/json' }
-      })
+    // Check if caller is super admin
+    const SUPER_ADMIN_EMAIL = 'zhuxingda86@hotmail.com'
+    const isSA = caller.email === SUPER_ADMIN_EMAIL
+
+    // Verify caller is teacher (skip for super admin)
+    let teacher: any = null
+    if (!isSA) {
+      const { data: t } = await supabaseAdmin
+        .from('teachers').select('id, school_id').eq('user_id', caller.id).single()
+      if (!t) {
+        return new Response(JSON.stringify({ error: 'Not a teacher' }), {
+          status: 403, headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+        })
+      }
+      teacher = t
     }
 
     const { student_user_id, new_password } = await req.json()
@@ -52,18 +60,20 @@ serve(async (req) => {
       })
     }
 
-    // Verify student belongs to same school
-    const { data: student } = await supabaseAdmin
-      .from('kw_class_students')
-      .select('id, class_id, kw_classes!inner(school_id)')
-      .eq('user_id', student_user_id)
-      .limit(1)
-      .single()
+    // Verify student belongs to same school (skip for super admin)
+    if (!isSA) {
+      const { data: student } = await supabaseAdmin
+        .from('kw_class_students')
+        .select('id, class_id, kw_classes!inner(school_id)')
+        .eq('user_id', student_user_id)
+        .limit(1)
+        .single()
 
-    if (!student || (student as any).kw_classes.school_id !== teacher.school_id) {
-      return new Response(JSON.stringify({ error: 'Student not in your school' }), {
-        status: 403, headers: { ...corsHeaders, 'Content-Type': 'application/json' }
-      })
+      if (!student || (student as any).kw_classes.school_id !== teacher.school_id) {
+        return new Response(JSON.stringify({ error: 'Student not in your school' }), {
+          status: 403, headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+        })
+      }
     }
 
     // Reset password

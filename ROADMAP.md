@@ -5,6 +5,7 @@
 - [x] `admin-update-user` Edge Function（6 种操作：编辑/重置密码/分配班级/改角色/封禁/删除）
 - [x] 用户管理标签页（摘要卡片 + 角色过滤 + 搜索 + 排序 + 分页）
 - [x] 完整弹窗系统（编辑/重置密码/分配班级/修改角色/封禁确认/删除二次确认）
+- [x] Super Admin 全权限：班级 CRUD + 学生管理 + Edge Function SA 绕过 + RLS 写入策略
 
 ## v5.6 — Custom Learning Plans [DONE]
 - [x] 学习计划数据模型（isPlan/isHidden/targetDate + 6 函数）
