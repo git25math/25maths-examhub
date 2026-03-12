@@ -1992,6 +1992,29 @@ function _ppRenderBlocks(blocks, q) {
 
 /* ═══ Render question with right-aligned marks (PDF-style) ═══ */
 
+/* Render answerBlocks array (v5.10.0) — returns combined HTML for multi-line answers */
+function _ppRenderAnswerBlocks(answerBlocks) {
+  var h = '';
+  for (var i = 0; i < answerBlocks.length; i++) {
+    var ab = answerBlocks[i];
+    if (ab.type === 'answer_line') {
+      h += _ppAnswerLine({ type: ab.ansType, prefix: ab.prefix, suffix: ab.suffix, template: ab.template, fields: ab.fields });
+    } else if (ab.type === 'text') {
+      h += '<div class="math-content pp-ansblock-text">' + (ab.content || '') + '</div>';
+    } else if (ab.type === 'space') {
+      h += '<div style="height:' + (ab.height || 1) + 'cm"></div>';
+    }
+  }
+  return h;
+}
+
+/* Render answer for a part/question: prefer answerBlocks, fallback to legacy answer */
+function _ppRenderAns(obj, showAnswerLine) {
+  if (!showAnswerLine) return '';
+  if (obj.answerBlocks && obj.answerBlocks.length) return _ppRenderAnswerBlocks(obj.answerBlocks);
+  return _ppAnswerLine(obj.answer || obj.ansPrefix, obj.ansSuffix, obj.ansTpl);
+}
+
 /* Build answer line HTML (v4.4.0)
    Accepts either:
    - answerObj: { type, prefix, suffix, fields, layout, lines, template }
@@ -2110,7 +2133,7 @@ function _ppRenderWithMarksBlocks(q, showAnswerLine) {
     /* No parts — stem + answer line + total marks */
     var totalMarksHtml = (q.marks > 0)
       ? '<span class="pp-marks-right">[' + q.marks + ']</span>' : '';
-    var ansLine = showAnswerLine ? _ppAnswerLine(q.answer || q.ansPrefix, q.ansSuffix, q.ansTpl) : '';
+    var ansLine = _ppRenderAns(q, showAnswerLine);
     return '<div class="pp-part-block"><div class="pp-part-content">' + stemHtml +
       ansLine + '</div>' + totalMarksHtml + '</div>';
   }
@@ -2146,7 +2169,7 @@ function _ppRenderWithMarksBlocks(q, showAnswerLine) {
             var sspMarks = ssp.marks || 0;
             var sspMarksHtml = (sspMarks > 0) ? '<span class="pp-marks-right">[' + sspMarks + ']</span>' : '';
             var sspContent = _ppRenderBlocks(ssp.content, q);
-            var sspAns = showAnswerLine ? _ppAnswerLine(ssp.answer, null, null) : '';
+            var sspAns = _ppRenderAns(ssp, showAnswerLine);
             result += '<div class="pp-part-block pp-subsubpart-block"><span class="pp-part-label pp-subsubpart-label">' + ssp.label + '</span>' +
               '<div class="pp-part-content">' + sspContent + sspAns + '</div>' + sspMarksHtml + '</div>';
           }
@@ -2155,7 +2178,7 @@ function _ppRenderWithMarksBlocks(q, showAnswerLine) {
           var spMarks = sp.marks || 0;
           var spMarksHtml = (spMarks > 0)
             ? '<span class="pp-marks-right">[' + spMarks + ']</span>' : '';
-          var spAns = showAnswerLine ? _ppAnswerLine(sp.answer || sp.ansPrefix, sp.ansSuffix, sp.ansTpl) : '';
+          var spAns = _ppRenderAns(sp, showAnswerLine);
           result += '<div class="pp-part-block pp-subpart-block"><span class="pp-part-label pp-subpart-label">' + sp.label + '</span>' +
             '<div class="pp-part-content">' + spContent + spAns + '</div>' + spMarksHtml + '</div>';
         }
@@ -2166,7 +2189,7 @@ function _ppRenderWithMarksBlocks(q, showAnswerLine) {
       var marks = pt.marks || 0;
       var marksHtml = (marks > 0)
         ? '<span class="pp-marks-right">[' + marks + ']</span>' : '';
-      var ansLine = showAnswerLine ? _ppAnswerLine(pt.answer || pt.ansPrefix, pt.ansSuffix, pt.ansTpl) : '';
+      var ansLine = _ppRenderAns(pt, showAnswerLine);
       result += '<div class="pp-part-block"><span class="pp-part-label">' + pt.label + '</span>' +
         '<div class="pp-part-content">' + contentHtml + ansLine + '</div>' + marksHtml + '</div>';
     }
@@ -3973,7 +3996,7 @@ function editPastPaperQ(qIdx) {
   }
   html += '<div id="pp-ed-ansline-wrap" style="margin-top:10px' + (_edParts.length > 0 ? ';display:none' : '') + '">';
   html += '<label class="settings-label">' + t('Answer Line (no-parts questions)', '答题线（无小题）') + '</label>';
-  html += _ppEdAnswerConfig(qAnswer, 'stem');
+  html += _ppEdAnswerBlockList(q.answerBlocks || null, qAnswer, 'stem');
   html += '</div>';
 
   /* Module order editor (v4.3.3) */
@@ -4031,9 +4054,11 @@ function _ppUpdateEditPreview() {
     marks: parseInt((E('pp-ed-marks') || {}).value) || 0,
     parts: _ppEdCollectParts() || []
   };
-  /* Question-level answer */
+  /* Question-level answer (v5.10.0: answerBlocks) */
   if (!previewQ.parts.length) {
-    previewQ.answer = _ppEdCollectAnswer('stem');
+    var prevAbResult = _ppEdCollectAnswerBlocks('stem');
+    previewQ.answer = prevAbResult.answer;
+    if (prevAbResult.answerBlocks) previewQ.answerBlocks = prevAbResult.answerBlocks;
   }
   prev.innerHTML = _ppRenderWithMarksBlocks(previewQ, true);
   renderMath(prev);
@@ -4256,7 +4281,7 @@ function _ppEdCollectBlocks(idPrefix) {
   return blocks;
 }
 
-/* Answer config editor (v4.6.0) */
+/* Answer config editor (v4.6.0) — single-line legacy */
 
 function _ppEdAnswerConfig(answer, idPrefix) {
   answer = answer || null;
@@ -4308,6 +4333,170 @@ function _ppEdCollectAnswer(idPrefix) {
   if (tpl) ans.template = tpl;
   if (type === 'vector' || type === 'coordinate') ans.fields = nf;
   return ans;
+}
+
+/* ═══ Answer Block List editor (v5.10.0) ═══ */
+
+function _ppEdAnswerBlockList(answerBlocks, answer, idPrefix) {
+  var blocks;
+  if (answerBlocks && answerBlocks.length) {
+    blocks = answerBlocks;
+  } else if (answer && answer.type) {
+    blocks = [{ type: 'answer_line', ansType: answer.type, prefix: answer.prefix, suffix: answer.suffix, template: answer.template, fields: answer.fields }];
+  } else {
+    blocks = [{ type: 'answer_line', ansType: 'none' }];
+  }
+  var h = '<div class="pp-ed-ansblock-wrap" id="pp-ed-ansblocks-' + idPrefix + '">';
+  h += '<label>Answer Blocks:</label>';
+  h += '<div class="pp-ed-ansblock-list">';
+  for (var i = 0; i < blocks.length; i++) {
+    h += _ppEdAnswerBlockRow(blocks[i], idPrefix, i);
+  }
+  h += '</div>';
+  h += '<button class="btn btn-sm btn-ghost" type="button" onclick="_ppEdAddAnswerBlock(\'' + escapeHtml(idPrefix) + '\')">+ Answer Block</button>';
+  h += '</div>';
+  return h;
+}
+
+function _ppEdAnswerBlockRow(block, idPrefix, idx) {
+  block = block || { type: 'answer_line', ansType: 'none' };
+  var bType = block.type || 'answer_line';
+  var h = '<div class="pp-ed-ansblock-row" style="display:flex;gap:4px;align-items:flex-start;margin:4px 0;padding:4px;border:1px solid var(--c-border,#ddd);border-radius:4px">';
+  /* Block type selector */
+  h += '<select class="bug-select pp-ed-abstype" onchange="_ppEdAnsBlockTypeChanged(this)" style="width:90px">';
+  var bTypes = ['answer_line', 'text', 'space'];
+  for (var i = 0; i < bTypes.length; i++) {
+    h += '<option value="' + bTypes[i] + '"' + (bType === bTypes[i] ? ' selected' : '') + '>' + bTypes[i] + '</option>';
+  }
+  h += '</select>';
+  /* Block-type-specific content */
+  h += '<div class="pp-ed-absblock-content" style="flex:1">';
+  h += _ppEdAnsBlockContent(block);
+  h += '</div>';
+  /* Move / delete buttons */
+  h += '<div style="display:flex;flex-direction:column;gap:1px">';
+  h += '<button class="btn btn-sm btn-ghost" type="button" onclick="_ppEdMoveAnswerBlock(this,-1)" title="Up">\u25b2</button>';
+  h += '<button class="btn btn-sm btn-ghost" type="button" onclick="_ppEdMoveAnswerBlock(this,1)" title="Down">\u25bc</button>';
+  h += '<button class="btn btn-sm btn-ghost" type="button" onclick="this.closest(\'.pp-ed-ansblock-row\').remove()" title="Remove">\u2716</button>';
+  h += '</div></div>';
+  return h;
+}
+
+function _ppEdAnsBlockContent(block) {
+  var bType = block.type || 'answer_line';
+  if (bType === 'answer_line') {
+    var aType = block.ansType || 'none';
+    var h = '<select class="bug-select pp-ed-abs-anstype" onchange="_ppEdAnsBlockAnsTypeChanged(this)" style="width:80px">';
+    var aTypes = ['none', 'number', 'vector', 'coordinate', 'expression', 'multiline', 'table_input'];
+    for (var i = 0; i < aTypes.length; i++) {
+      h += '<option value="' + aTypes[i] + '"' + (aType === aTypes[i] ? ' selected' : '') + '>' + aTypes[i] + '</option>';
+    }
+    h += '</select>';
+    h += '<span class="pp-ed-abs-fields" ' + (aType === 'none' ? 'style="display:none"' : '') + '>';
+    h += '<input type="text" class="bug-select pp-ed-abs-prefix" value="' + escapeHtml(block.prefix || '') + '" placeholder="prefix" style="width:55px">';
+    h += '<input type="text" class="bug-select pp-ed-abs-suffix" value="' + escapeHtml(block.suffix || '') + '" placeholder="suffix" style="width:55px">';
+    h += '<input type="text" class="bug-select pp-ed-abs-template" value="' + escapeHtml(block.template || '') + '" placeholder="template" style="width:70px">';
+    var showF = (aType === 'vector' || aType === 'coordinate');
+    h += '<input type="number" class="bug-select pp-ed-abs-numfields" value="' + (block.fields || 2) + '" min="2" max="6" style="width:45px' + (showF ? '' : ';display:none') + '" placeholder="fields">';
+    h += '</span>';
+    return h;
+  } else if (bType === 'text') {
+    return '<input type="text" class="bug-select pp-ed-abs-text" value="' + escapeHtml(block.content || '') + '" placeholder="Text / LaTeX" style="width:100%">';
+  } else if (bType === 'space') {
+    return '<input type="number" class="bug-select pp-ed-abs-height" value="' + (block.height || 1) + '" min="0.5" max="10" step="0.5" style="width:60px" placeholder="cm"> <span style="color:var(--c-text-muted);font-size:0.85em">cm</span>';
+  }
+  return '';
+}
+
+function _ppEdAnsBlockTypeChanged(sel) {
+  var row = sel.closest('.pp-ed-ansblock-row');
+  var contentDiv = row.querySelector('.pp-ed-absblock-content');
+  var type = sel.value;
+  var block = { type: type };
+  if (type === 'answer_line') block.ansType = 'number';
+  contentDiv.innerHTML = _ppEdAnsBlockContent(block);
+}
+
+function _ppEdAnsBlockAnsTypeChanged(sel) {
+  var row = sel.closest('.pp-ed-ansblock-row');
+  var fields = row.querySelector('.pp-ed-abs-fields');
+  var numFields = row.querySelector('.pp-ed-abs-numfields');
+  var type = sel.value;
+  if (type === 'none') {
+    fields.style.display = 'none';
+  } else {
+    fields.style.display = '';
+    numFields.style.display = (type === 'vector' || type === 'coordinate') ? '' : 'none';
+  }
+}
+
+function _ppEdAddAnswerBlock(idPrefix) {
+  var wrap = E('pp-ed-ansblocks-' + idPrefix);
+  if (!wrap) return;
+  var list = wrap.querySelector('.pp-ed-ansblock-list');
+  var idx = list.children.length;
+  var div = document.createElement('div');
+  div.innerHTML = _ppEdAnswerBlockRow({ type: 'answer_line', ansType: 'number' }, idPrefix, idx);
+  list.appendChild(div.firstChild);
+}
+
+function _ppEdMoveAnswerBlock(btn, dir) {
+  var row = btn.closest('.pp-ed-ansblock-row');
+  var list = row.parentElement;
+  var rows = Array.from(list.children);
+  var idx = rows.indexOf(row);
+  var newIdx = idx + dir;
+  if (newIdx < 0 || newIdx >= rows.length) return;
+  if (dir === -1) list.insertBefore(row, rows[newIdx]);
+  else list.insertBefore(rows[newIdx], row);
+}
+
+function _ppEdCollectAnswerBlocks(idPrefix) {
+  var wrap = E('pp-ed-ansblocks-' + idPrefix);
+  if (!wrap) return { answer: null, answerBlocks: null };
+  var rows = wrap.querySelectorAll('.pp-ed-ansblock-list > .pp-ed-ansblock-row');
+  if (!rows.length) return { answer: null, answerBlocks: null };
+  var blocks = [];
+  for (var i = 0; i < rows.length; i++) {
+    var bType = rows[i].querySelector('.pp-ed-abstype').value;
+    if (bType === 'answer_line') {
+      var aType = rows[i].querySelector('.pp-ed-abs-anstype').value;
+      if (aType === 'none') continue;
+      var ab = { type: 'answer_line', ansType: aType };
+      var pfx = rows[i].querySelector('.pp-ed-abs-prefix').value.trim();
+      var sfx = rows[i].querySelector('.pp-ed-abs-suffix').value.trim();
+      var tpl = rows[i].querySelector('.pp-ed-abs-template').value.trim();
+      var nf = parseInt(rows[i].querySelector('.pp-ed-abs-numfields').value) || 2;
+      if (pfx) ab.prefix = pfx;
+      if (sfx) ab.suffix = sfx;
+      if (tpl) ab.template = tpl;
+      if (aType === 'vector' || aType === 'coordinate') ab.fields = nf;
+      blocks.push(ab);
+    } else if (bType === 'text') {
+      var txt = rows[i].querySelector('.pp-ed-abs-text').value.trim();
+      if (txt) blocks.push({ type: 'text', content: txt });
+    } else if (bType === 'space') {
+      var ht = parseFloat(rows[i].querySelector('.pp-ed-abs-height').value) || 1;
+      blocks.push({ type: 'space', height: ht });
+    }
+  }
+  if (!blocks.length) return { answer: null, answerBlocks: null };
+  /* Legacy answer = first answer_line block */
+  var firstAL = null;
+  for (var j = 0; j < blocks.length; j++) {
+    if (blocks[j].type === 'answer_line') { firstAL = blocks[j]; break; }
+  }
+  var legacyAns = null;
+  if (firstAL) {
+    legacyAns = { type: firstAL.ansType };
+    if (firstAL.prefix) legacyAns.prefix = firstAL.prefix;
+    if (firstAL.suffix) legacyAns.suffix = firstAL.suffix;
+    if (firstAL.template) legacyAns.template = firstAL.template;
+    if (firstAL.ansType === 'vector' || firstAL.ansType === 'coordinate') legacyAns.fields = firstAL.fields;
+  }
+  /* If only one answer_line and no other blocks → keep data simple */
+  var hasExtra = blocks.length > 1 || (blocks.length === 1 && blocks[0].type !== 'answer_line');
+  return { answer: legacyAns, answerBlocks: hasExtra ? blocks : null };
 }
 
 /* ═══ Editor help modal (v4.6.1) ═══ */
@@ -4373,7 +4562,7 @@ function _ppEdSubsubpartRow(ssp, idx, parentPrefix) {
   h += '<button class="btn btn-sm btn-ghost" type="button" onclick="this.closest(\'.pp-ed-ssp-row\').remove()" title="Remove">\u2716</button>';
   h += '</div>';
   h += _ppEdBlockList(ssp.content || [{ type: 'text', content: '' }], prefix);
-  h += _ppEdAnswerConfig(ssp.answer || null, prefix);
+  h += _ppEdAnswerBlockList(ssp.answerBlocks || null, ssp.answer || null, prefix);
   h += '</div>';
   return h;
 }
@@ -4393,7 +4582,7 @@ function _ppEdSubpartRow(sp, idx, parentPrefix) {
   /* Block content */
   var spBlocks = sp.content || (sp.tex ? [{ type: 'text', content: sp.tex }] : [{ type: 'text', content: '' }]);
   h += _ppEdBlockList(spBlocks, prefix);
-  h += _ppEdAnswerConfig(sp.answer || null, prefix);
+  h += _ppEdAnswerBlockList(sp.answerBlocks || null, sp.answer || null, prefix);
   /* Subsubparts */
   h += '<div class="pp-ed-subsubparts" id="pp-ed-ssps-' + prefix + '">';
   var ssps = sp.subsubparts || [];
@@ -4458,7 +4647,7 @@ function _ppEdPartRow(label, marks, idx, part) {
     if (part.ansSuffix) partAnswer.suffix = part.ansSuffix;
     if (part.ansTpl) partAnswer.template = part.ansTpl;
   }
-  h += _ppEdAnswerConfig(partAnswer, prefix);
+  h += _ppEdAnswerBlockList(part.answerBlocks || null, partAnswer, prefix);
   /* Subparts */
   h += '<div class="pp-ed-subparts" id="pp-ed-sps-' + prefix + '">';
   var sps = part.subparts || [];
@@ -4510,9 +4699,10 @@ function _ppEdCollectParts() {
     var part = { label: label, marks: marks };
     /* Block content (v4.6.0) */
     part.content = _ppEdCollectBlocks(prefix);
-    /* Answer config (v4.6.0) */
-    var ans = _ppEdCollectAnswer(prefix);
-    if (ans) part.answer = ans;
+    /* Answer config (v5.10.0: answerBlocks) */
+    var abResult = _ppEdCollectAnswerBlocks(prefix);
+    if (abResult.answer) part.answer = abResult.answer;
+    if (abResult.answerBlocks) part.answerBlocks = abResult.answerBlocks;
     /* Subparts */
     var spContainer = rows[i].querySelector('#pp-ed-sps-' + prefix);
     if (spContainer) {
@@ -4526,8 +4716,9 @@ function _ppEdCollectParts() {
           var spPrefix = prefix + '-sp-' + si;
           var sp = { label: spLabel, marks: spMarks };
           sp.content = _ppEdCollectBlocks(spPrefix);
-          var spAns = _ppEdCollectAnswer(spPrefix);
-          if (spAns) sp.answer = spAns;
+          var spAbResult = _ppEdCollectAnswerBlocks(spPrefix);
+          if (spAbResult.answer) sp.answer = spAbResult.answer;
+          if (spAbResult.answerBlocks) sp.answerBlocks = spAbResult.answerBlocks;
           /* Subsubparts */
           var sspContainer = spRows[si].querySelector('#pp-ed-ssps-' + spPrefix);
           if (sspContainer) {
@@ -4541,8 +4732,9 @@ function _ppEdCollectParts() {
                 var sspPrefix = spPrefix + '-ssp-' + ssi;
                 var ssp = { label: sspLabel, marks: sspMarks };
                 ssp.content = _ppEdCollectBlocks(sspPrefix);
-                var sspAns = _ppEdCollectAnswer(sspPrefix);
-                if (sspAns) ssp.answer = sspAns;
+                var sspAbResult = _ppEdCollectAnswerBlocks(sspPrefix);
+                if (sspAbResult.answer) ssp.answer = sspAbResult.answer;
+                if (sspAbResult.answerBlocks) ssp.answerBlocks = sspAbResult.answerBlocks;
                 sp.subsubparts.push(ssp);
               }
               if (!sp.subsubparts.length) delete sp.subsubparts;
@@ -4697,8 +4889,10 @@ function submitPPEdit(qid) {
   var newGroup = E('pp-ed-group') ? E('pp-ed-group').value : q.g;
   var newParts = _ppEdCollectParts();
 
-  /* Question-level answer (v4.6.0) */
-  var newAnswer = _ppEdCollectAnswer('stem');
+  /* Question-level answer (v5.10.0: answerBlocks) */
+  var stemAbResult = _ppEdCollectAnswerBlocks('stem');
+  var newAnswer = stemAbResult.answer;
+  var newAnswerBlocks = stemAbResult.answerBlocks;
   /* Module order */
   var DEFAULT_MODULE_ORDER = ['body', 'vocab', 'kp'];
   var newModuleOrder = _ppEdCollectModuleOrder();
@@ -4711,6 +4905,7 @@ function submitPPEdit(qid) {
   if (newGroup !== q.g) changes.push('group: ' + q.g + '\u2192' + newGroup);
   if (newParts !== null && JSON.stringify(newParts) !== JSON.stringify(q.parts || [])) changes.push('parts');
   if (JSON.stringify(newAnswer) !== JSON.stringify(q.answer || null)) changes.push('answer');
+  if (JSON.stringify(newAnswerBlocks || null) !== JSON.stringify(q.answerBlocks || null)) changes.push('answerBlocks');
   if (newModuleOrder && JSON.stringify(newModuleOrder) !== JSON.stringify(q.moduleOrder || DEFAULT_MODULE_ORDER)) changes.push('moduleOrder');
 
   if (changes.length === 0) {
@@ -4725,6 +4920,7 @@ function submitPPEdit(qid) {
   if (newGroup !== q.g) editData.g = newGroup;
   if (newParts !== null && JSON.stringify(newParts) !== JSON.stringify(q.parts || [])) editData.parts = newParts;
   if (JSON.stringify(newAnswer) !== JSON.stringify(q.answer || null)) editData.answer = newAnswer;
+  if (JSON.stringify(newAnswerBlocks || null) !== JSON.stringify(q.answerBlocks || null)) editData.answerBlocks = newAnswerBlocks;
   if (newModuleOrder && JSON.stringify(newModuleOrder) !== JSON.stringify(q.moduleOrder || DEFAULT_MODULE_ORDER)) editData.moduleOrder = newModuleOrder;
 
   sb.from('question_edits').upsert({
@@ -4747,6 +4943,7 @@ function submitPPEdit(qid) {
     q.g = newGroup;
     if (editData.parts !== undefined) q.parts = newParts;
     if (editData.answer !== undefined) q.answer = editData.answer;
+    if (editData.answerBlocks !== undefined) q.answerBlocks = editData.answerBlocks;
     if (editData.moduleOrder !== undefined) q.moduleOrder = editData.moduleOrder;
     /* Invalidate edits cache so next load picks up the change */
     _pqEditsCache[_ppSession.board] = null;

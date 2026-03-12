@@ -1,5 +1,20 @@
 # Changelog
 
+## [5.10.0] - 2026-03-13 — Answer Block 编辑器（答题区块化）
+
+### 核心变更
+- **Answer Block 列表编辑器**: 超管编辑器中答题线改造为 block 列表，支持在答题线之间插入文本或空白间距
+  - 3 种 block 类型：`answer_line`（答题线）、`text`（文字/LaTeX）、`space`（空白间距）
+  - 每行支持 ▲ ▼ ✖ 操作（移动/删除），`+ Answer Block` 添加新行
+  - 向后兼容：保留 `answer` 字段，新增 `answerBlocks` 数组，渲染优先读 `answerBlocks`
+  - 单一 answer_line 时只保存 `answer`（不生成 `answerBlocks`），保持数据简洁
+- **统一渲染**: `_ppRenderAns()` 统一入口，自动判断 answerBlocks vs legacy answer
+
+### 修改文件
+| 文件 | 变更 |
+|------|------|
+| `js/practice.js` | 新增 ~150 行（`_ppEdAnswerBlockList`/`_ppEdAnswerBlockRow`/`_ppEdCollectAnswerBlocks`/`_ppRenderAnswerBlocks`/`_ppRenderAns` 等），修改 ~30 行（4 个编辑器调用点 + 3 个收集点 + 4 个渲染点 + 保存流程） |
+
 ## [5.9.1] - 2026-03-12 — KP 内容生成管线 + LaTeX 修复
 
 ### 核心变更
