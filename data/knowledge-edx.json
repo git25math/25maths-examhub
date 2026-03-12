@@ -786,8 +786,8 @@
           "id": "cm-02",
           "mistake": "Misunderstanding the Upper Bound as an inclusive value, for example, thinking the upper bound for 15 (nearest cm) is 15.49 instead of 15.5.",
           "mistake_zh": "误解上界是包含在内的值，例如，认为15（精确到厘米）的上界是15.49而不是15.5。",
-          "correction": "The Upper Bound is defined as the smallest value that would round *up* or *away* from the given rounded number, meaning the actual value must be strictly less than the upper bound ($x < \text{UB}$).",
-          "correction_zh": "上界定义为将向上舍入或偏离给定舍入数字的最小值，这意味着实际值必须严格小于上界 ($x < \text{UB}$)。"
+          "correction": "The Upper Bound is defined as the smallest value that would round *up* or *away* from the given rounded number, meaning the actual value must be strictly less than the upper bound ($x < \\text{UB}$).",
+          "correction_zh": "上界定义为将向上舍入或偏离给定舍入数字的最小值，这意味着实际值必须严格小于上界 ($x < \\text{UB}$)。"
         }
       ]
     },
@@ -2116,8 +2116,8 @@
       ],
       "tier": "both",
       "solutionMethod": {
-        "en": "Step 1: Calculate the common difference ($d$) by subtracting any term from the term that immediately follows it (e.g., $u_2 - u_1$). Verify this difference is constant for the given sequence.\nStep 2: Start your $n^{th}$ term formula with $dn$, where $d$ is the common difference found in Step 1. For example, if $d=4$, the formula begins $4n$.\nStep 3: To find the constant term ($b$), compare your expression from Step 2 (e.g., $4n$) with the actual terms of the sequence. Specifically, for the first term ($n=1$), calculate $d \times 1$. The amount you need to add or subtract to this value to get the actual first term ($u_1$) is your constant $b$. The final formula is $u_n = dn + b$.",
-        "zh": "第一步：通过将数列中的任意一项减去它前面的一项来计算公差 ($d$) (例如，$u_2 - u_1$)。验证这个差值在给定数列中是恒定的。\n第二步：用 $dn$ 作为第 $n$ 项公式的开头，其中 $d$ 是你在第一步中找到的公差。例如，如果 $d=4$，公式就以 $4n$ 开头。\n第三步：为了找到常数项 ($b$)，将你在第二步中得到的表达式（例如 $4n$）与数列的实际项进行比较。具体来说，对于首项 ($n=1$)，计算 $d \times 1$。你需要在这个值上加上或减去多少才能得到实际的首项 ($u_1$)，这个值就是你的常数 $b$。最终公式为 $u_n = dn + b$。"
+        "en": "Step 1: Calculate the common difference ($d$) by subtracting any term from the term that immediately follows it (e.g., $u_2 - u_1$). Verify this difference is constant for the given sequence.\nStep 2: Start your $n^{th}$ term formula with $dn$, where $d$ is the common difference found in Step 1. For example, if $d=4$, the formula begins $4n$.\nStep 3: To find the constant term ($b$), compare your expression from Step 2 (e.g., $4n$) with the actual terms of the sequence. Specifically, for the first term ($n=1$), calculate $d \\times 1$. The amount you need to add or subtract to this value to get the actual first term ($u_1$) is your constant $b$. The final formula is $u_n = dn + b$.",
+        "zh": "第一步：通过将数列中的任意一项减去它前面的一项来计算公差 ($d$) (例如，$u_2 - u_1$)。验证这个差值在给定数列中是恒定的。\n第二步：用 $dn$ 作为第 $n$ 项公式的开头，其中 $d$ 是你在第一步中找到的公差。例如，如果 $d=4$，公式就以 $4n$ 开头。\n第三步：为了找到常数项 ($b$)，将你在第二步中得到的表达式（例如 $4n$）与数列的实际项进行比较。具体来说，对于首项 ($n=1$)，计算 $d \\times 1$。你需要在这个值上加上或减去多少才能得到实际的首项 ($u_1$)，这个值就是你的常数 $b$。最终公式为 $u_n = dn + b$。"
       },
       "commonMistakes": [
         {
@@ -2129,10 +2129,10 @@
         },
         {
           "id": "cm-02",
-          "mistake": "Making an error when finding the constant term ($b$) by miscomparing $d \times 1$ with the first term $u_1$.",
-          "mistake_zh": "在求常数项 ($b$) 时出错，错误地将 $d \times 1$ 与首项 $u_1$ 进行比较。",
-          "correction": "After finding $dn$, substitute $n=1$ into it to get $d \times 1$; then calculate the constant $b$ by $u_1 - (d \times 1)$.",
-          "correction_zh": "在得到 $dn$ 后，将 $n=1$ 代入以得到 $d \times 1$；然后通过 $u_1 - (d \times 1)$ 来计算常数 $b$。"
+          "mistake": "Making an error when finding the constant term ($b$) by miscomparing $d \\times 1$ with the first term $u_1$.",
+          "mistake_zh": "在求常数项 ($b$) 时出错，错误地将 $d \\times 1$ 与首项 $u_1$ 进行比较。",
+          "correction": "After finding $dn$, substitute $n=1$ into it to get $d \\times 1$; then calculate the constant $b$ by $u_1 - (d \\times 1)$.",
+          "correction_zh": "在得到 $dn$ 后，将 $n=1$ 代入以得到 $d \\times 1$；然后通过 $u_1 - (d \\times 1)$ 来计算常数 $b$。"
         },
         {
           "id": "cm-03",
