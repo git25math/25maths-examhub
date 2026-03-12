@@ -4972,6 +4972,22 @@ input { font-family: inherit; }
 .btn-danger { background:var(--c-danger); color:#fff; border:none; }
 .btn-danger:hover { opacity:0.9; }
 
+/* Solution / Answer Explanation module */
+.pp-solution-toggle { color:var(--c-primary); font-weight:600; }
+.pp-solution-body { display:none; }
+.pp-solution-inner { padding:12px 0; }
+.pp-sol-part { margin-bottom:16px; }
+.pp-sol-part-label { font-weight:700; font-size:14px; color:var(--c-text); margin-bottom:6px; }
+.pp-sol-subpart { margin-left:20px; margin-top:10px; }
+.pp-sol-subpart-label { font-size:13px; color:var(--c-text2); }
+.pp-sol-steps { margin:4px 0; }
+.pp-sol-step { display:flex; gap:10px; align-items:flex-start; margin-bottom:8px; }
+.pp-sol-step-num { flex-shrink:0; width:22px; height:22px; border-radius:50%; background:var(--c-primary); color:#fff; font-size:12px; font-weight:700; display:flex; align-items:center; justify-content:center; margin-top:1px; }
+.pp-sol-step-content { flex:1; font-size:14px; line-height:1.6; color:var(--c-text); }
+.pp-sol-block { margin:8px 0 8px 32px; }
+.pp-sol-final { margin-top:10px; padding:8px 12px; background:var(--c-success-bg, rgba(34,197,94,0.08)); border-left:3px solid var(--c-success, #22c55e); border-radius:0 var(--r) var(--r) 0; font-weight:600; font-size:14px; }
+[data-theme="dark"] .pp-sol-final { background:rgba(34,197,94,0.1); }
+
 /* Smart notification type colors */
 .notif-item[data-ntypec="milestone"] .notif-dot.active { background: var(--c-warning); }
 .notif-item[data-ntypec="plan"] .notif-dot.active { background: var(--c-primary); }

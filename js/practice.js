@@ -1711,6 +1711,7 @@ function _renderPPScanPractice() {
   html += '<button class="btn btn-sm btn-secondary" id="pp-scan-show-ans" onclick="_ppScanToggleAnswer()">' + t('Show Answer', '\u663e\u793a\u7b54\u6848') + '</button>';
   html += '</div>';
   html += '<div class="pp-scan-answer d-none" id="pp-scan-answer">' + _ppRenderWithMarks(q, true) + '</div>';
+  html += _ppRenderSolution(q);
   html += '</div>';
   /* Self-assess */
   html += '<div class="scan-actions" id="pp-scan-rate">';
@@ -2466,6 +2467,112 @@ function _ppRenderKPModule(q) {
   return h;
 }
 
+/* ═══ SOLUTION / ANSWER EXPLANATION MODULE ═══ */
+
+/*
+  Solution data model (on question object):
+  q.solution = {
+    // For simple questions (no parts):
+    steps: Block[],       // step-by-step working (text/table/figure/list blocks)
+    final: "string",      // final answer (LaTeX string)
+
+    // For questions with parts:
+    parts: [
+      {
+        label: "(a)",
+        steps: Block[],
+        final: "string",
+        subparts: [         // optional, mirrors q.parts[].subparts
+          { label: "(i)", steps: Block[], final: "string" }
+        ]
+      }
+    ]
+  }
+*/
+
+function _ppRenderSolution(q) {
+  if (!q.solution) return '';
+  var sol = q.solution;
+  var h = '<div class="pp-ms-toggle pp-solution-toggle" role="button" tabindex="0" data-action="toggleSolution">';
+  h += '<span id="pp-sol-arrow">\u25b6</span> ';
+  h += t('Solution & Explanation', '\u7b54\u6848\u89e3\u6790');
+  h += '</div>';
+  h += '<div class="pp-ms-content pp-solution-body" id="pp-solution-body">';
+  h += '<div class="pp-solution-inner">';
+
+  if (sol.parts && sol.parts.length) {
+    /* Multi-part solution */
+    for (var pi = 0; pi < sol.parts.length; pi++) {
+      var sp = sol.parts[pi];
+      h += '<div class="pp-sol-part">';
+      h += '<div class="pp-sol-part-label">' + escapeHtml(sp.label || '') + '</div>';
+      h += _ppRenderSolSteps(sp.steps, q);
+      if (sp.final) h += '<div class="pp-sol-final">' + _ppRenderTexStr(sp.final) + '</div>';
+      /* Subparts */
+      if (sp.subparts && sp.subparts.length) {
+        for (var si = 0; si < sp.subparts.length; si++) {
+          var ssp = sp.subparts[si];
+          h += '<div class="pp-sol-subpart">';
+          h += '<div class="pp-sol-part-label pp-sol-subpart-label">' + escapeHtml(ssp.label || '') + '</div>';
+          h += _ppRenderSolSteps(ssp.steps, q);
+          if (ssp.final) h += '<div class="pp-sol-final">' + _ppRenderTexStr(ssp.final) + '</div>';
+          h += '</div>';
+        }
+      }
+      h += '</div>';
+    }
+  } else if (sol.steps && sol.steps.length) {
+    /* Simple question solution */
+    h += _ppRenderSolSteps(sol.steps, q);
+    if (sol.final) h += '<div class="pp-sol-final">' + _ppRenderTexStr(sol.final) + '</div>';
+  }
+
+  h += '</div></div>';
+  return h;
+}
+
+function _ppRenderSolSteps(steps, q) {
+  if (!steps || !steps.length) return '';
+  var h = '<div class="pp-sol-steps">';
+  var stepNum = 0;
+  for (var i = 0; i < steps.length; i++) {
+    var b = steps[i];
+    if (b.type === 'text') {
+      stepNum++;
+      h += '<div class="pp-sol-step">';
+      h += '<span class="pp-sol-step-num">' + stepNum + '</span>';
+      h += '<div class="pp-sol-step-content">' + _ppRenderTexStr(b.content) + '</div>';
+      h += '</div>';
+    } else if (b.type === 'table') {
+      h += '<div class="pp-sol-block">' + _ppConvertTabularRuntime(b.content) + '</div>';
+    } else if (b.type === 'figure') {
+      h += '<div class="pp-sol-block">' + _ppRenderFigureBlock(b, q) + '</div>';
+    } else if (b.type === 'list') {
+      var tag = b.style === 'number' ? 'ol' : 'ul';
+      var listHtml = '<' + tag + ' class="pp-list">';
+      for (var li = 0; li < b.items.length; li++) {
+        listHtml += '<li>' + _ppRenderTexStr(b.items[li]) + '</li>';
+      }
+      h += '<div class="pp-sol-block">' + listHtml + '</' + tag + '></div>';
+    } else if (b.type === 'newline') {
+      h += '<br>';
+    }
+  }
+  h += '</div>';
+  return h;
+}
+
+function ppToggleSolution() {
+  var body = E('pp-solution-body');
+  var arrow = E('pp-sol-arrow');
+  if (body) {
+    var hidden = body.style.display === 'none' || !body.style.display;
+    body.style.display = hidden ? 'block' : 'none';
+    if (arrow) arrow.textContent = hidden ? '\u25bc' : '\u25b6';
+    if (hidden) renderMath(body);
+  }
+}
+
 /* ═══ PRACTICE MODE ═══ */
 
 function renderPPCard() {
@@ -2549,16 +2656,19 @@ function renderPPCard() {
   }
 
   /* Render card modules in configurable order (v4.3.3) */
-  var _ppDefaultModOrder = ['body', 'vocab', 'kp'];
+  var _ppDefaultModOrder = ['body', 'vocab', 'kp', 'solution'];
   var _modOrder = q.moduleOrder || _ppDefaultModOrder;
   /* Filter out legacy 'answers' module from old moduleOrder overrides */
   _modOrder = _modOrder.filter(function(m) { return m !== 'answers'; });
+  /* Ensure solution module is always included */
+  if (_modOrder.indexOf('solution') < 0) _modOrder.push('solution');
   var _showAnsLine = _ppSession.mode !== 'exam';
   for (var _moi = 0; _moi < _modOrder.length; _moi++) {
     switch (_modOrder[_moi]) {
-      case 'body':    html += _ppRenderBodyModule(q, _showAnsLine); break;
-      case 'vocab':   html += _ppRenderVocabModule(q); break;
-      case 'kp':      html += _ppRenderKPModule(q); break;
+      case 'body':     html += _ppRenderBodyModule(q, _showAnsLine); break;
+      case 'vocab':    html += _ppRenderVocabModule(q); break;
+      case 'kp':       html += _ppRenderKPModule(q); break;
+      case 'solution': if (_ppSession.mode !== 'exam') html += _ppRenderSolution(q); break;
     }
   }
 
@@ -2635,6 +2745,7 @@ function renderPPCard() {
       var action = target.dataset.action;
       if (action === 'toggleVocab') ppToggleVocab();
       else if (action === 'toggleKP') ppToggleKP();
+      else if (action === 'toggleSolution') ppToggleSolution();
       else if (action === 'toggleMarkBody') ppToggleMarkBody(Number(target.dataset.idx));
       else if (action === 'openDeckFromVocab') openDeck(Number(target.dataset.li));
       else if (action === 'vocabBankAdd') {

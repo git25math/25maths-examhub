@@ -1,5 +1,13 @@
 # Development Roadmap
 
+## v5.8 — Past Paper Solution Module [DONE]
+- [x] `_ppRenderSolution(q)` 可折叠答案解析模块（默认收起）
+- [x] `_ppRenderSolSteps(steps, q)` 步骤渲染（编号徽章 + Block 富文本 + LaTeX）
+- [x] 支持多层结构：parts[] + subparts[] + steps[] + final answer
+- [x] 复用 Block 渲染管线（text/table/figure/list）+ KaTeX 数学渲染
+- [x] 集成到 practice card 模块顺序 `['body', 'vocab', 'kp', 'solution']`
+- [x] Scan 模式同步集成（Show Answer 后展示解析入口）
+
 ## v5.7 — Super Admin User Management [DONE]
 - [x] `list-users` Edge Function（读取 auth.users + 关联班级/学校）
 - [x] `admin-update-user` Edge Function（6 种操作：编辑/重置密码/分配班级/改角色/封禁/删除）
