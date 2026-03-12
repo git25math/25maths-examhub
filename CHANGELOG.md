@@ -1,8 +1,8 @@
 # Changelog
 
-## [5.3.1] - 2026-03-12 — 列表视图优化：HHK 知识点接入 + UX 增强
+## [5.3.1] - 2026-03-12 — 列表视图优化 + 套卷详情交互筛选
 
-### 核心变更
+### 核心变更（列表视图）
 - **KPs tab 接入 HHK 知识点**: `_getFilteredKPs()` 增加 `25m→hhk` 映射，从 `BOARD_SYLLABUS['hhk']` 和 `_kpData['hhk']` 获取 55 个知识点，年级筛选 `_category` 自动映射（`Y7.1` → `25m-y7`）
 - **Board chip 显示计数**: 每个 Board 芯片旁显示当前 tab 的原始数据量（如 `CIE 0580 (72)`），新增 `_getBoardCounts()` 轻量计数函数
 - **Section 下拉按 chapter 分组**: `_collectSections()` 返回 `{value, label, group}` 格式，`_renderMultiDrop()` 支持 group 分隔标题（`.lf-drop-group` + `.lf-drop-grouped` 缩进），72+ section 按章节分组更易查找
@@ -11,11 +11,20 @@
 - **`_applyListFilters()` 适配 hhk**: 25m KP 项支持 section 过滤（hhk section 格式 `Y7.1` 与 CIE `1.1` 互不冲突）
 - **KPs tab 恢复 25m chip**: 板块切换不再隐藏 25m（仅 PPs tab 隐藏）
 
+### 核心变更（套卷详情交互筛选）
+- **知识点分布点击筛选**: 套卷详情页的知识点 chip 可点击切换，点击后题目列表实时过滤只显示包含该知识点的题目，再次点击取消筛选
+- **指令动词分布点击筛选**: 指令动词 badge 可点击切换，筛选逻辑与知识点相同，两者可同时组合筛选
+- **题目列表实时更新**: 新增 `_ppRenderDetailQList()` 独立渲染题目列表区域，筛选时仅更新题目区域不重建整页
+- **筛选计数提示**: 筛选激活时标题显示 `(N/M)` 匹配数量
+- **题目行增加 cmd 标签**: 每个题目行显示对应的指令动词 badge，便于区分
+- **安全重构**: 题目行 onclick 改为 addEventListener 事件委托（消除 XSS）
+
 ### 文件变更
 | 文件 | 变更类型 |
 |------|---------|
 | `js/lists.js` | 修改 — `_getFilteredKPs` 25m→hhk 映射 + `_getBoardCounts` 新增 + `_renderMultiDrop` group 支持 + `_renderListFilters` chip 计数/重置/25m 恢复 + `_collectSections` hhk+group + `_applyListFilters` 25m section + `_bindListFilters` 重置事件 |
-| `css/style.css` | 修改 — 新增 `.lf-drop-group`/`.lf-drop-grouped`/`.lf-reset-btn` 样式 + 暗色模式 |
+| `js/practice.js` | 修改 — `ppShowPaperDetail` 重构为交互式筛选 + 新增 `_ppDetailFilter`/`_ppRenderDetailQList`/`_ppBindDetailChips` |
+| `css/style.css` | 修改 — 新增 `.lf-drop-group`/`.lf-drop-grouped`/`.lf-reset-btn` + `.pp-detail-cmd-chip` selected 样式 + 暗色模式 |
 | `js/config.js` | 修改 — 版本号 v5.3.1 |
 
 ## [5.3.0] - 2026-03-12 — 列表视图筛选重构：Board 优先 + 多选 + 条件筛选

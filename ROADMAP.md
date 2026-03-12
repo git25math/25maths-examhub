@@ -472,6 +472,7 @@
 - [x] **Section 按 chapter 分组 (v5.3.1)**: 下拉选项按章节标题分组，group 分隔线
 - [x] **筛选栏重置按钮 (v5.3.1)**: 一键清空所有筛选条件
 - [x] **HHK section 收集/过滤 (v5.3.1)**: `_collectSections` 加入 hhk，`_applyListFilters` 适配 25m section
+- [x] **套卷详情交互筛选 (v5.3.1)**: 知识点/指令动词 chip 点击筛选题目列表，组合过滤，实时更新
 
 ## v5.2 学习项目筛选 UX 优化 + 清单按类型自动拆分 [DONE]
 - [x] **固定筛选栏 (v5.2.0)**: `.list-view` flex 布局，header 固定 + `#list-content` 可滚动，手机端适配

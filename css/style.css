@@ -3583,7 +3583,11 @@ input { font-family: inherit; }
 .pp-error-chip.selected { background: var(--c-primary-bg); border-color: var(--c-primary);
   color: var(--c-primary); font-weight: 600; }
 .pp-cmd-badge { display: inline-block; padding: 2px 8px; border-radius: var(--r-sm);
-  font-size: 11px; background: var(--c-primary-bg); color: var(--c-primary); margin-left: 6px; }
+  font-size: 11px; background: var(--c-primary-bg); color: var(--c-primary); margin-left: 6px; transition: all 0.15s; }
+.pp-detail-cmd-chip { cursor: pointer; border: 1px solid transparent; }
+.pp-detail-cmd-chip:hover { border-color: var(--c-primary); }
+.pp-detail-cmd-chip.selected { background: var(--c-primary); color: #fff; border-color: var(--c-primary); }
+.pp-detail-cmd-chip.selected b { color: #fff; }
 
 /* Related Vocabulary */
 .pp-vocab-row { display: flex; align-items: center; gap: 8px; padding: 6px 16px;

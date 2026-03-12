@@ -4868,11 +4868,15 @@ function _ppRenderYearPapers(sessions, year, board, results) {
 
 /* ─── Paper detail / mode selection ─── */
 
+/* Active filters for paper detail question list */
+var _ppDetailFilter = { topic: null, cmd: null };
+
 function ppShowPaperDetail(paperKey, board) {
   board = board || 'cie';
   var meta = getPaperMeta(board)[paperKey];
   if (!meta) return;
 
+  _ppDetailFilter = { topic: null, cmd: null };
   var questions = getPPByPaper(board, paperKey);
   var tl = PP_TYPE_LABELS[meta.type] || { en: meta.type, zh: meta.type, cls: '' };
   var result = _ppGetPaperResults()[paperKey];
@@ -4895,7 +4899,7 @@ function ppShowPaperDetail(paperKey, board) {
   }
   html += '</div>';
 
-  /* Topic breakdown */
+  /* Topic breakdown — clickable chips */
   var topicCounts = {};
   for (var i = 0; i < questions.length; i++) {
     var ts = questions[i].topics || [];
@@ -4905,14 +4909,14 @@ function ppShowPaperDetail(paperKey, board) {
   }
   if (Object.keys(topicCounts).length > 0) {
     html += '<h4 class="pp-section-h4">' + t('Topics', '知识点分布') + '</h4>';
-    html += '<div class="pp-topic-chips">';
+    html += '<div class="pp-topic-chips" id="pp-detail-topic-chips">';
     for (var tp in topicCounts) {
-      html += '<span class="pp-error-chip">' + tp + ' (' + topicCounts[tp] + ')</span>';
+      html += '<span class="pp-error-chip pp-detail-topic-chip" data-topic="' + escapeHtml(tp) + '">' + escapeHtml(tp) + ' (' + topicCounts[tp] + ')</span>';
     }
     html += '</div>';
   }
 
-  /* Command word distribution */
+  /* Command word distribution — clickable badges */
   var cmdCounts = {};
   for (var ci = 0; ci < questions.length; ci++) {
     var ck = questions[ci].cmd || 'other';
@@ -4920,14 +4924,14 @@ function ppShowPaperDetail(paperKey, board) {
   }
   if (Object.keys(cmdCounts).length > 1) {
     html += '<h4 class="pp-section-h4">' + t('Command Words', '\u6307\u4ee4\u52a8\u8bcd\u5206\u5e03') + '</h4>';
-    html += '<div class="pp-topic-chips">';
+    html += '<div class="pp-topic-chips" id="pp-detail-cmd-chips">';
     var cmdOrd = (typeof PP_CMD_ORDER !== 'undefined') ? PP_CMD_ORDER : Object.keys(cmdCounts);
     for (var coi = 0; coi < cmdOrd.length; coi++) {
       var cmk = cmdOrd[coi];
       if (!cmdCounts[cmk]) continue;
       var cml = (typeof PP_CMD_LABELS !== 'undefined' && PP_CMD_LABELS[cmk]) ? PP_CMD_LABELS[cmk] : null;
       var cmLabel = cml ? t(cml.en, cml.zh) : cmk;
-      html += '<span class="pp-cmd-badge" style="padding:3px 10px;cursor:default">' + cmLabel + ' <b>' + cmdCounts[cmk] + '</b></span>';
+      html += '<span class="pp-cmd-badge pp-detail-cmd-chip" data-cmd="' + escapeHtml(cmk) + '" style="padding:3px 10px;cursor:pointer">' + escapeHtml(cmLabel) + ' <b>' + cmdCounts[cmk] + '</b></span>';
     }
     html += '</div>';
   }
@@ -4940,24 +4944,104 @@ function ppShowPaperDetail(paperKey, board) {
   html += '\u23f1 ' + t('Exam Mode', '考试模式') + ' (' + meta.time + ' min)</button>';
   html += '</div>';
 
-  /* Question list preview */
-  html += '<h4 class="pp-section-h4">' + t('Questions', '题目列表') + '</h4>';
+  /* Question list preview (rendered into a container for live filtering) */
+  html += '<div id="pp-detail-qlist"></div>';
+
+  var el = E('panel-papers');
+  if (el) el.innerHTML = html;
+  showPanel('papers');
+
+  /* Render question list */
+  _ppRenderDetailQList(paperKey, board, questions);
+
+  /* Bind chip click events */
+  _ppBindDetailChips(paperKey, board, questions);
+}
+
+/* Render filtered question list in paper detail */
+function _ppRenderDetailQList(paperKey, board, questions) {
+  var wrap = E('pp-detail-qlist');
+  if (!wrap) return;
+  var ft = _ppDetailFilter.topic;
+  var fc = _ppDetailFilter.cmd;
+
+  /* Filter questions */
+  var filtered = [];
+  var idxMap = []; /* original index for onclick */
   for (var qi = 0; qi < questions.length; qi++) {
     var q = questions[qi];
+    if (ft && (q.topics || []).indexOf(ft) === -1) continue;
+    if (fc && (q.cmd || 'other') !== fc) continue;
+    filtered.push(q);
+    idxMap.push(qi);
+  }
+
+  var html = '<h4 class="pp-section-h4">' + t('Questions', '题目列表');
+  if (ft || fc) {
+    html += ' <span style="font-weight:400;font-size:12px;color:var(--c-text3)">(' + filtered.length + '/' + questions.length + ')</span>';
+  }
+  html += '</h4>';
+
+  for (var fi = 0; fi < filtered.length; fi++) {
+    var q = filtered[fi];
     var mastery = _ppGetQMastery(q.id);
-    var mIcon = mastery === 'mastered' ? '✓' : mastery === 'partial' ? '◐' : mastery === 'needs_work' ? '✗' : '';
-    html += '<div class="pp-q-preview" role="button" tabindex="0" onclick="ppStartFullPaper(\'' + escapeHtml(paperKey) + '\',\'' + escapeHtml(board) + '\',\'practice\',' + qi + ')">';
+    var mIcon = mastery === 'mastered' ? '\u2713' : mastery === 'partial' ? '\u25d0' : mastery === 'needs_work' ? '\u2717' : '';
+    html += '<div class="pp-q-preview" role="button" tabindex="0" data-paperkey="' + escapeHtml(paperKey) + '" data-board="' + escapeHtml(board) + '" data-qidx="' + idxMap[fi] + '">';
     html += '<span class="pp-q-num">Q' + q.qnum + '</span>';
     html += '<span class="pp-q-topic-cell">' + (q.topics || []).join(', ') + '</span>';
+    if (q.cmd && q.cmd !== 'other') {
+      var cmdL = (typeof PP_CMD_LABELS !== 'undefined' && PP_CMD_LABELS[q.cmd]) ? PP_CMD_LABELS[q.cmd] : null;
+      html += '<span class="pp-cmd-badge" style="margin-left:0">' + (cmdL ? t(cmdL.en, cmdL.zh) : q.cmd) + '</span>';
+    }
     html += '<span class="pp-marks-badge">' + q.marks + '</span>';
     if (mIcon) html += '<span class="pp-q-mastery">' + mIcon + '</span>';
     html += '</div>';
   }
 
+  if (filtered.length === 0) {
+    html += '<div style="text-align:center;padding:24px;color:var(--c-text3)">' + t('No matching questions', '没有匹配的题目') + '</div>';
+  }
+
+  wrap.innerHTML = html;
+
+  /* Bind question row clicks */
+  wrap.querySelectorAll('.pp-q-preview').forEach(function(row) {
+    row.addEventListener('click', function() {
+      ppStartFullPaper(row.dataset.paperkey, row.dataset.board, 'practice', parseInt(row.dataset.qidx));
+    });
+  });
+}
+
+/* Bind topic/cmd chip click events for live filtering */
+function _ppBindDetailChips(paperKey, board, questions) {
   var el = E('panel-papers');
-  if (el) el.innerHTML = html;
-  showPanel('papers');
-  /* KaTeX not needed for this view */
+  if (!el) return;
+
+  /* Topic chips */
+  el.querySelectorAll('.pp-detail-topic-chip').forEach(function(chip) {
+    chip.addEventListener('click', function() {
+      var val = chip.dataset.topic;
+      _ppDetailFilter.topic = (_ppDetailFilter.topic === val) ? null : val;
+      /* Update chip visual state */
+      el.querySelectorAll('.pp-detail-topic-chip').forEach(function(c) {
+        c.classList.toggle('selected', c.dataset.topic === _ppDetailFilter.topic);
+      });
+      _ppRenderDetailQList(paperKey, board, questions);
+    });
+  });
+
+  /* Command word chips */
+  el.querySelectorAll('.pp-detail-cmd-chip').forEach(function(chip) {
+    chip.addEventListener('click', function() {
+      var val = chip.dataset.cmd;
+      _ppDetailFilter.cmd = (_ppDetailFilter.cmd === val) ? null : val;
+      /* Update chip visual state */
+      el.querySelectorAll('.pp-detail-cmd-chip').forEach(function(c) {
+        c.classList.toggle('selected', c.dataset.cmd === _ppDetailFilter.cmd);
+      });
+      _ppRenderDetailQList(paperKey, board, questions);
+    });
+  });
 }
 
 /* ─── Start full paper practice/exam ─── */
