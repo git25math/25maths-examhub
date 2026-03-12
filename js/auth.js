@@ -15,23 +15,23 @@ function updateAuthLang() {
   var isEn = appLang === 'en';
   /* Toggle button text */
   var btn = E('auth-lang-toggle');
-  if (btn) btn.textContent = isEn ? '中文' : 'EN';
+  if (btn) btn.textContent = isEn ? '中/EN' : 'EN';
   /* Header bar lang button */
-  if (E('lang-toggle-hb')) E('lang-toggle-hb').textContent = isEn ? '中文' : 'EN';
+  if (E('lang-toggle-hb')) E('lang-toggle-hb').textContent = isEn ? '中/EN' : 'EN';
   /* Update all data-en/data-zh elements */
   updateNav();
   /* Placeholders */
   var ph = {
-    'auth-email': [isEn, 'Email', '邮箱地址'],
-    'auth-pass': [isEn, 'Password (min 6 chars)', '密码 (至少6位)'],
-    'tr-name': [isEn, 'Name', '姓名'],
-    'tr-email': [isEn, 'Email', '邮箱'],
-    'tr-pass': [isEn, 'Password (min 6)', '密码 (至少6位)'],
-    'tr-code': [isEn, 'School Code', '学校注册码']
+    'auth-email': ['Email', '邮箱地址'],
+    'auth-pass': ['Password (min 6 chars)', '密码 (至少6位)'],
+    'tr-name': ['Name', '姓名'],
+    'tr-email': ['Email', '邮箱'],
+    'tr-pass': ['Password (min 6)', '密码 (至少6位)'],
+    'tr-code': ['School Code', '学校注册码']
   };
   for (var id in ph) {
     var el = E(id);
-    if (el) el.placeholder = ph[id][0] ? ph[id][1] : ph[id][2];
+    if (el) el.placeholder = isEn ? ph[id][0] : ph[id][0] + ' ' + ph[id][1];
   }
 }
 

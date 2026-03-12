@@ -303,12 +303,14 @@ function getLevelIdxBySlug(slug) {
 /* ═══ i18n HELPERS ═══ */
 /* Returns en or zh text based on current appLang */
 function t(en, zh) {
-  return appLang === 'en' ? en : zh;
+  if (appLang === 'en') return en;
+  return en + ' ' + zh;
 }
 
 /* Returns rank display name */
 function rankName(r) {
-  return appLang === 'en' ? r.nameEn : r.name;
+  if (appLang === 'en') return r.nameEn;
+  return r.nameEn + ' ' + r.name;
 }
 
 /* Returns category display name */
@@ -373,7 +375,7 @@ function isSuperAdmin() {
 }
 
 /* App version */
-var APP_VERSION = 'v5.6.0';
+var APP_VERSION = 'v5.7.3';
 
 /* AI Tutor configuration */
 var AI_TUTOR_CONFIG = {

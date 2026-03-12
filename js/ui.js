@@ -75,9 +75,12 @@ function updateNav() {
     n.classList.toggle('active', n.dataset.panel === appView);
   });
   /* i18n nav labels */
-  var langKey = appLang === 'en' ? 'en' : 'zh';
   document.querySelectorAll('[data-en][data-zh]').forEach(function(el) {
-    el.textContent = el.dataset[langKey];
+    if (appLang === 'en') {
+      el.textContent = el.dataset.en;
+    } else {
+      el.textContent = el.dataset.en + ' ' + el.dataset.zh;
+    }
   });
   /* Mistake badge */
   var mc = 0;
@@ -182,7 +185,7 @@ E('modal-overlay').addEventListener('click', function(e) {
 function toggleLang() {
   appLang = appLang === 'bilingual' ? 'en' : 'bilingual';
   try { localStorage.setItem('wmatch_lang', appLang); } catch(e) {}
-  var label = appLang === 'en' ? '中文' : 'EN';
+  var label = appLang === 'en' ? '中/EN' : 'EN';
   /* Sidebar menu item label handled by updateNav() via data-en/data-zh */
   if (E('lang-toggle-hb')) E('lang-toggle-hb').textContent = label;
   /* Sync auth overlay toggle button */

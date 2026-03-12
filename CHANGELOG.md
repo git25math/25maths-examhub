@@ -1,5 +1,23 @@
 # Changelog
 
+## [5.7.3] - 2026-03-12 — i18n 双语英中并列显示
+
+### 核心变更
+- **`t()` 空格拼接**: 双语模式下 `t('Study','学习')` 返回 `"Study 学习"` 而非纯中文，覆盖 ~2,850 调用点
+- **`rankName()` 并列**: 双语模式显示 `"Bronze Learner 青铜学员"` 而非纯中文
+- **导航栏并列**: `data-en/data-zh` 元素双语模式显示 `"Home 首页"` 格式
+- **语言切换按钮**: EN 模式显示 `"中/EN"`，双语模式显示 `"EN"`
+- **登录页占位符**: 双语模式显示 `"Email 邮箱地址"` 格式
+- **按钮防溢出**: `.btn` 添加 `white-space:nowrap; overflow:hidden; text-overflow:ellipsis`
+
+### 文件变更
+| 文件 | 变更类型 |
+|------|---------|
+| `js/config.js` | 修改 — `t()` 空格拼接 + `rankName()` 并列 |
+| `js/ui.js` | 修改 — `updateNav()` 双语并列 + `toggleLang()` 按钮标签 |
+| `js/auth.js` | 修改 — `updateAuthLang()` 按钮标签 + 占位符并列 |
+| `css/style.css` | 修改 — `.btn` 防溢出 |
+
 ## [5.7.2] - 2026-03-12 — Super Admin 全权限用户管理
 
 ### 核心变更
