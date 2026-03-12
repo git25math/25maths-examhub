@@ -102,12 +102,13 @@ serve(async (req) => {
         // Get user nickname
         const { data: { user: targetUser } } = await supabaseAdmin.auth.admin.getUserById(user_id)
         const nickname = targetUser?.user_metadata?.nickname || targetUser?.email || ''
-        // Upsert class_students
-        await supabaseAdmin.from('kw_class_students').upsert({
+        // Remove from old class, then insert into new class
+        await supabaseAdmin.from('kw_class_students').delete().eq('user_id', user_id)
+        await supabaseAdmin.from('kw_class_students').insert({
           class_id: body.class_id,
           user_id: user_id,
           student_name: nickname
-        }, { onConflict: 'user_id' })
+        })
         // Update auth metadata
         await supabaseAdmin.auth.admin.updateUserById(user_id, {
           user_metadata: { class_id: body.class_id, school_id: cls.school_id, board: cls.grade }
@@ -149,7 +150,10 @@ serve(async (req) => {
       }
 
       case 'delete': {
-        // Cascade delete related data first
+        // Cascade delete related data first (order matters for FK constraints)
+        await supabaseAdmin.from('assignment_results').delete().eq('student_id', user_id)
+        await supabaseAdmin.from('notifications').delete().eq('user_id', user_id)
+        await supabaseAdmin.from('feedback').delete().eq('user_id', user_id)
         await supabaseAdmin.from('leaderboard').delete().eq('user_id', user_id)
         await supabaseAdmin.from('kw_class_students').delete().eq('user_id', user_id)
         await supabaseAdmin.from('vocab_progress').delete().eq('user_id', user_id)
