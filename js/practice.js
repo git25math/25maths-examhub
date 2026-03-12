@@ -3754,6 +3754,7 @@ function editPastPaperQ(qIdx) {
   /* Stem blocks (v4.6.0) */
   html += '<label class="settings-label">' + t('Question Stem (Blocks)', '\u9898\u5e72\u5185\u5bb9 (Block)') + '</label>';
   var stemBlocks = q.stem || (q.tex ? [{ type: 'text', content: q.tex }] : [{ type: 'text', content: '' }]);
+  stemBlocks = _ppEdResolveFigureUrls(stemBlocks, q);
   html += _ppEdBlockList(stemBlocks, 'stem');
 
   html += '<div class="btn-row btn-row--gap12">';
@@ -3792,12 +3793,21 @@ function editPastPaperQ(qIdx) {
   html += '</select></div>';
   html += '</div>';
 
-  /* Parts editor */
+  /* Parts editor — resolve figure URLs in part/subpart content */
   html += '<label class="settings-label">' + t('Parts (sub-questions)', '\u5c0f\u9898') + '</label>';
   html += '<div id="pp-ed-parts">';
   var _edParts = q.parts || [];
   for (var _pi = 0; _pi < _edParts.length; _pi++) {
-    html += _ppEdPartRow(_edParts[_pi].label, _edParts[_pi].marks, _pi, _edParts[_pi]);
+    var _ep = Object.assign({}, _edParts[_pi]);
+    if (_ep.content) _ep.content = _ppEdResolveFigureUrls(_ep.content, q);
+    if (_ep.subparts) {
+      _ep.subparts = _ep.subparts.map(function(sp) {
+        var sp2 = Object.assign({}, sp);
+        if (sp2.content) sp2.content = _ppEdResolveFigureUrls(sp2.content, q);
+        return sp2;
+      });
+    }
+    html += _ppEdPartRow(_ep.label, _ep.marks, _pi, _ep);
   }
   html += '</div>';
   html += '<button class="btn btn-sm btn-ghost" type="button" onclick="_ppEdAddPart()">+ ' + t('Add Part', '\u6dfb\u52a0\u5c0f\u9898') + '</button>';
@@ -3943,6 +3953,30 @@ function _ppEdInsertTable() {
 
 /* ═══ Block editor components (v4.6.0) ═══ */
 
+/* Resolve figure block src: replace .tex paths with actual figureUrls (v5.7.3) */
+function _ppEdResolveFigureUrls(blocks, q) {
+  if (!blocks || !blocks.length) return blocks;
+  var urls = (q && q.figureUrls) || [];
+  if (!urls.length) return blocks;
+  blocks = blocks.map(function(b) { return Object.assign({}, b); }); /* shallow clone */
+  for (var i = 0; i < blocks.length; i++) {
+    if (blocks[i].type !== 'figure') continue;
+    var src = blocks[i].src || '';
+    /* Already an http URL — keep as-is */
+    if (src.indexOf('http') === 0) continue;
+    /* Extract filename stem: "Figures/Q01-Grid.tex" → "Q01-Grid" */
+    var stem = src.replace(/^.*\//, '').replace(/\.\w+$/, '');
+    if (!stem) { if (urls[0]) blocks[i].src = urls[0]; continue; }
+    /* Find matching URL by filename stem */
+    var matched = false;
+    for (var u = 0; u < urls.length; u++) {
+      if (urls[u].indexOf(stem) !== -1) { blocks[i].src = urls[u]; matched = true; break; }
+    }
+    if (!matched && urls.length === 1) blocks[i].src = urls[0]; /* single URL fallback */
+  }
+  return blocks;
+}
+
 function _ppEdBlockList(blocks, idPrefix) {
   blocks = blocks || [{ type: 'text', content: '' }];
   var h = '<div class="pp-ed-block-list" id="pp-ed-blocks-' + idPrefix + '">';
@@ -3966,7 +4000,11 @@ function _ppEdBlockRow(block, idPrefix, idx) {
   h += '</select>';
   h += '<div class="pp-ed-block-content">';
   if (block.type === 'figure') {
-    h += '<input type="text" class="bug-select pp-ed-block-val" value="' + escapeHtml(block.src || '') + '" placeholder="figures/xxx.svg">';
+    var _figSrc = block.src || '';
+    h += '<input type="text" class="bug-select pp-ed-block-val" value="' + escapeHtml(_figSrc) + '" placeholder="https://...png or figures/xxx.svg" oninput="_ppEdFigPreview(this)">';
+    if (_figSrc && _figSrc.indexOf('http') === 0) {
+      h += '<img class="pp-ed-fig-preview" src="' + escapeHtml(_figSrc) + '" alt="preview" onerror="this.style.display=\'none\'">';
+    }
   } else if (block.type === 'list') {
     h += '<textarea class="bug-textarea font-mono-sm pp-ed-block-val" rows="2" placeholder="One item per line">' + escapeHtml((block.items || []).join('\n')) + '</textarea>';
   } else if (block.type === 'newline') {
@@ -3990,7 +4028,7 @@ function _ppEdBlockTypeChanged(sel) {
   var contentDiv = row.querySelector('.pp-ed-block-content');
   var type = sel.value;
   if (type === 'figure') {
-    contentDiv.innerHTML = '<input type="text" class="bug-select pp-ed-block-val" value="" placeholder="figures/xxx.svg">';
+    contentDiv.innerHTML = '<input type="text" class="bug-select pp-ed-block-val" value="" placeholder="https://...png or figures/xxx.svg" oninput="_ppEdFigPreview(this)">';
   } else if (type === 'list') {
     contentDiv.innerHTML = '<textarea class="bug-textarea font-mono-sm pp-ed-block-val" rows="2" placeholder="One item per line"></textarea>';
   } else if (type === 'newline') {
@@ -3999,6 +4037,21 @@ function _ppEdBlockTypeChanged(sel) {
     contentDiv.innerHTML = '<input type="number" class="bug-select pp-ed-block-val" value="2" min="0.5" max="20" step="0.5" style="width:80px" placeholder="cm"> <span style="color:var(--c-text-muted);font-size:0.85em">cm answer space</span>';
   } else {
     contentDiv.innerHTML = '<textarea class="bug-textarea font-mono-sm pp-ed-block-val" rows="2" placeholder="' + (type === 'table' ? '\\begin{tabular}...' : 'Text content (LaTeX)') + '"></textarea>';
+  }
+}
+
+/* Live preview update when editing figure URL */
+function _ppEdFigPreview(input) {
+  var url = input.value.trim();
+  var prev = input.nextElementSibling;
+  if (prev && prev.classList.contains('pp-ed-fig-preview')) prev.remove();
+  if (url && url.indexOf('http') === 0) {
+    var img = document.createElement('img');
+    img.className = 'pp-ed-fig-preview';
+    img.src = url;
+    img.alt = 'preview';
+    img.onerror = function() { this.style.display = 'none'; };
+    input.parentElement.appendChild(img);
   }
 }
 

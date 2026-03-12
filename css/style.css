@@ -4613,6 +4613,7 @@ input { font-family: inherit; }
 .pp-ed-block-content textarea, .pp-ed-block-content input { width:100%; font-size:11px; padding:2px 4px; box-sizing:border-box; }
 .pp-ed-block-actions { display:flex; gap:2px; flex-shrink:0; }
 .pp-ed-block-actions button { padding:1px 4px; font-size:11px; min-width:auto; }
+.pp-ed-fig-preview { display:block; max-width:180px; max-height:120px; margin-top:4px; border:1px solid var(--c-border); border-radius:var(--r-sm,4px); object-fit:contain; background:#fff; }
 /* Answer config (v4.6.0) */
 .pp-ed-answer-config { display:flex; flex-wrap:wrap; gap:4px; margin-top:4px; padding:6px; background:var(--c-bg2,var(--c-surface-alt)); border-radius:var(--r-sm,4px); }
 .pp-ed-answer-config select, .pp-ed-answer-config input { font-size:11px; padding:2px 4px; }

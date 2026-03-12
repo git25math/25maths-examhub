@@ -1,5 +1,19 @@
 # Changelog
 
+## [5.7.4] - 2026-03-12 — 编辑器 Figure Block 可视化编辑
+
+### 核心变更
+- **Figure URL 解析**: 编辑器中 figure block 的 `.tex` 路径自动替换为实际 GitHub 图片 URL（按文件名匹配）
+- **图片缩略图预览**: figure block 编辑时显示实时缩略图，URL 修改后自动刷新
+- **Part/Subpart 支持**: 小题和子题中的 figure block 同样解析并可编辑
+- **自由移动**: figure block 与其他 block 一样支持 ▲▼ 上下移动
+
+### 文件变更
+| 文件 | 变更类型 |
+|------|---------|
+| `js/practice.js` | 修改 — 新增 `_ppEdResolveFigureUrls` + `_ppEdFigPreview` + 编辑器 figure 预览 |
+| `css/style.css` | 修改 — 新增 `.pp-ed-fig-preview` 缩略图样式 |
+
 ## [5.7.3] - 2026-03-12 — i18n 双语英中并列显示
 
 ### 核心变更
