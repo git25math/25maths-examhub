@@ -989,7 +989,7 @@ function renderDeck(idx) {
     }
 
     html += '<div class="word-en">' + escapeHtml(p.word) + '</div>';
-    if (appLang === 'bilingual') {
+    if (appLang !== 'en') {
       html += '<div class="word-zh">' + escapeHtml(p.def) + '</div>';
     }
 
@@ -1140,7 +1140,7 @@ function renderPreview(idx) {
     html += '<div class="preview-card">';
     html += '<div class="preview-num">#' + (i + 1) + '</div>';
     html += '<div class="preview-en">' + escapeHtml(p.word) + '</div>';
-    if (appLang === 'bilingual') {
+    if (appLang !== 'en') {
       html += '<div class="preview-zh">' + escapeHtml(p.def) + '</div>';
     }
     html += '</div>';
