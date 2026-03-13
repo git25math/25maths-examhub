@@ -1,0 +1,1126 @@
+[
+  {
+    "id": "0580-2021MayJune-Paper31-Q01",
+    "paper": "2021MayJune-Paper31",
+    "qnum": 1,
+    "marks": 16,
+    "topics": [
+      "Number"
+    ],
+    "s": null,
+    "d": 1,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/31/M/J/21 Q01",
+    "year": 2021,
+    "session": "MayJune",
+    "tex": "(a) Strawberries cost \\$4.20 per kilogram and cream costs \\$8.56 per litre.\n\\newline\n\\\\\nVenus buys $1.2\\,\\text{kg}$ of strawberries and $125\\,\\text{ml}$ of cream.\n\\newline\n\nWork out the total cost.\n\\newline\n\n(b) Ravi has \\$20.\n\\newline\n\\\\\nA pineapple costs \\$1.45.\n\\newline\n\nWork out the largest number of pineapples Ravi can buy and the change he receives.\n\\newline\n\nNumber of pineapples \n\n(c) Abraham has a box of 72 biscuits.\n\\newline\n\\\\\nHe gives $\\dfrac{2}{9}$ of the biscuits to his grandmother.\n\\newline\n\\\\\nHe then gives $\\dfrac{3}{7}$ of the biscuits that are left to his cousin.\n\\newline\n\nWork out how many biscuits Abraham has now.\n\\newline\n\n(d) Flo makes 84 cakes.\n\\newline\n\\\\\nShe sells 35 of these cakes.\n\\newline\n\nCalculate the percentage of the cakes that she sells.\n\\newline\n\n(e) A bag contains 132 sweets.\n\\newline\n\\\\\nThe sweets are shared between Beatrix and Volker in the ratio Beatrix : Volker $= 5 : 7$.\n\\newline\n\nWork out the number of sweets they each receive.\n\\newline\n\nBeatrix \n\n(f) Jed sells desserts for \\$24 each.\n\\newline\n\\\\\nEach dessert costs \\$12.80 to make.\n\\newline\n\n(i)  Work out his percentage profit.\n\\newline\n\n The cost to make each dessert increases to \\$13.60.\n\\newline\n\\\\\nJed wants to make the same percentage profit.\n\\newline\n\nWork out the new selling price.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Strawberries cost \\$4.20 per kilogram and cream costs \\$8.56 per litre.\n\\newline\n\\\\\nVenus buys $1.2\\,\\text{kg}$ of strawberries and $125\\,\\text{ml}$ of cream.\n\\newline\n\nWork out the total cost.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "\\$",
+          "space": {
+            "type": "working",
+            "height": "5cm",
+            "cmd": "WorkingSpace"
+          }
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Ravi has \\$20.\n\\newline\n\\\\\nA pineapple costs \\$1.45.\n\\newline\n\nWork out the largest number of pineapples Ravi can buy and the change he receives.\n\\newline\n\n\\WorkingSpace{5cm}\n\nNumber of pineapples \\makebox[4cm]{\\dotfill}"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "Change \\$"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Abraham has a box of 72 biscuits.\n\\newline\n\\\\\nHe gives $\\dfrac{2}{9}$ of the biscuits to his grandmother.\n\\newline\n\\\\\nHe then gives $\\dfrac{3}{7}$ of the biscuits that are left to his cousin.\n\\newline\n\nWork out how many biscuits Abraham has now.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "space": {
+            "type": "working",
+            "height": "5cm",
+            "cmd": "WorkingSpace"
+          }
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Flo makes 84 cakes.\n\\newline\n\\\\\nShe sells 35 of these cakes.\n\\newline\n\nCalculate the percentage of the cakes that she sells.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "\\%",
+          "space": {
+            "type": "working",
+            "height": "3cm",
+            "cmd": "WorkingSpace"
+          }
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(e)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "A bag contains 132 sweets.\n\\newline\n\\\\\nThe sweets are shared between Beatrix and Volker in the ratio Beatrix : Volker $= 5 : 7$.\n\\newline\n\nWork out the number of sweets they each receive.\n\\newline\n\n\\WorkingSpace{4cm}\n\nBeatrix \\makebox[4cm]{\\dotfill}"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "Volker"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(f)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Jed sells desserts for \\$24 each.\n\\newline\n\\\\\nEach dessert costs \\$12.80 to make.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Work out his percentage profit.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "\\%",
+              "space": {
+                "type": "working",
+                "height": "4cm",
+                "cmd": "WorkingSpace"
+              }
+            },
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "The cost to make each dessert increases to \\$13.60.\n\\newline\n\\\\\nJed wants to make the same percentage profit.\n\\newline\n\nWork out the new selling price.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "\\$",
+              "space": {
+                "type": "working",
+                "height": "4cm",
+                "cmd": "WorkingSpace"
+              }
+            },
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ]
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "",
+    "cmd": "calculate",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Strawberries cost \\$4.20 per kilogram and cream costs \\$8.56 per litre.\\\\\nVenus buys 1.2\\,kg of strawberries and 125\\,ml of cream.\n\nWork out the total cost.\n\n\\WorkingSpace{5cm}\n\n\\AnswerLine[\\$][]\n\\Marks{3}\n\n\\item Ravi has \\$20.\\\\\nA pineapple costs \\$1.45.\n\nWork out the largest number of pineapples Ravi can buy and the change he receives.\n\n\\WorkingSpace{5cm}\n\nNumber of pineapples \\makebox[4cm]{\\dotfill}\n\n\\AnswerLine[Change \\$][]\n\\Marks{3}\n\n\\item Abraham has a box of 72 biscuits.\\\\\nHe gives $\\dfrac{2}{9}$ of the biscuits to his grandmother.\\\\\nHe then gives $\\dfrac{3}{7}$ of the biscuits that are left to his cousin.\n\nWork out how many biscuits Abraham has now.\n\n\\WorkingSpace{5cm}\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\item Flo makes 84 cakes.\\\\\nShe sells 35 of these cakes.\n\nCalculate the percentage of the cakes that she sells.\n\n\\WorkingSpace{3cm}\n\n\\AnswerLine[][\\%]\n\\Marks{1}\n\n\\item A bag contains 132 sweets.\\\\\nThe sweets are shared between Beatrix and Volker in the ratio Beatrix : Volker $= 5 : 7$.\n\nWork out the number of sweets they each receive.\n\n\\WorkingSpace{4cm}\n\nBeatrix \\makebox[4cm]{\\dotfill}\n\n\\AnswerLine[Volker][]\n\\Marks{2}\n\n\\item Jed sells desserts for \\$24 each.\\\\\nEach dessert costs \\$12.80 to make.\n\n\\begin{subparts}\n\\subpart Work out his percentage profit.\n\n\\WorkingSpace{4cm}\n\n\\AnswerLine[][\\%]\n\\Marks{2}\n\n\\subpart The cost to make each dessert increases to \\$13.60.\\\\\nJed wants to make the same percentage profit.\n\nWork out the new selling price.\n\n\\WorkingSpace{4cm}\n\n\\AnswerLine[\\$][]\n\\Marks{2}\n\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2021MayJune-Paper31-Q02",
+    "paper": "2021MayJune-Paper31",
+    "qnum": 2,
+    "marks": 9,
+    "topics": [
+      "Mensuration",
+      "Probability",
+      "Statistics"
+    ],
+    "s": "5.3",
+    "d": 1,
+    "cat": "mensuration",
+    "topic": "Surface area",
+    "qtype": "circles, arcs and sectors",
+    "g": "mixed",
+    "src": "0580/31/M/J/21 Q02",
+    "year": 2021,
+    "session": "MayJune",
+    "tex": "(a) Anika asks 15 friends how many marbles they have.\n\\newline\n\\\\\nThe results are shown in the table.\n\\newline\n\n\\begin{tabular}{|c|c|c|}\n\\hline\nNumber of marbles & Frequency & Pie chart sector angle \\\\\n\\hline\n0 & 2 & \\\\\n\\hline\n1 to 10 & 8 & \\\\\n\\hline\n11 to 50 & 4 & \\\\\n\\hline\nMore than 50 & 1 & \\\\\n\\hline\n\\end{tabular}\n(i)  Complete the table.\n\\newline\n\n Complete the pie chart.\n\\newline\n\n(b) \nBag $A$ contains 2 black marbles and 3 white marbles.\n\\newline\n\\\\\nBag $B$ contains 5 black marbles and 8 white marbles.\n\\newline\n\n(i)  Write down the probability that a marble picked at random from bag $A$ is black.\n\\newline\n\n Toby says,\n\n\\begin{quote}\n`You are more likely to pick a black marble at random from bag $B$ than from bag $A$ because bag $B$ has more black marbles.\n\\newline\n'\n\\end{quote}\n\nIs Toby correct?\\\\\nGive a reason for your answer.\n\\newline\n\n because \n\n Toby adds some marbles to bag $B$.\n\\newline\n\\\\\nThe probability of picking a black marble at random from either bag is now the same.\n\\newline\n\nWork out the smallest number of black marbles and white marbles he adds to bag $B$.\n\\newline\n\nBlack",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Anika asks 15 friends how many marbles they have.\n\\newline\n\\\\\nThe results are shown in the table.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{center}\n\\begin{tabular}{|c|c|c|}\n\\hline\nNumber of marbles & Frequency & Pie chart sector angle \\\\\n\\hline\n0 & 2 & \\\\\n\\hline\n1 to 10 & 8 & \\\\\n\\hline\n11 to 50 & 4 & \\\\\n\\hline\nMore than 50 & 1 & \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Complete the table.\n\\newline\n"
+              }
+            ],
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Complete the pie chart.\n\\newline\n\n\\begin{center}\n\\begin{tikzpicture}[scale=1.2]\n\\draw (0,0) circle (2.5cm);\n\\draw (0,0) -- (0,-2.5);\n\\end{tikzpicture}\n\\end{center}"
+              }
+            ],
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n% Bag A\n\\draw[thick] (-3,0) .. controls (-3.5,1) and (-3.5,2.5) .. (-3,3);\n\\draw[thick] (-3,0) .. controls (-2.5,1) and (-2.5,2.5) .. (-3,3);\n\\draw[thick] (-3,3) -- (-3,3.5);\n\\fill[black] (-3.2,1) circle (0.15);\n\\fill[black] (-2.8,1.5) circle (0.15);\n\\draw (-3.3,2) circle (0.15);\n\\draw (-2.7,2) circle (0.15);\n\\draw (-3,2.5) circle (0.15);\n\\node at (-3,-0.5) {Bag $A$};\n\n% Bag B\n\\draw[thick] (3,0) .. controls (2.5,1) and (2.5,2.5) .. (3,3);\n\\draw[thick] (3,0) .. controls (3.5,1) and (3.5,2.5) .. (3,3);\n\\draw[thick] (3,3) -- (3,3.5);\n\\fill[black] (2.7,1) circle (0.15);\n\\fill[black] (3.3,1) circle (0.15);\n\\fill[black] (2.7,1.5) circle (0.15);\n\\fill[black] (3.3,1.5) circle (0.15);\n\\fill[black] (3,1.8) circle (0.15);\n\\draw (2.7,2.2) circle (0.15);\n\\draw (3.3,2.2) circle (0.15);\n\\draw (2.7,2.6) circle (0.15);\n\\draw (3.3,2.6) circle (0.15);\n\\draw (3,2.4) circle (0.15);\n\\draw (2.9,1.2) circle (0.15);\n\\draw (3.1,0.8) circle (0.15);\n\\draw (3,2.9) circle (0.15);\n\\node at (3,-0.5) {Bag $B$};\n\\end{tikzpicture}\n\\end{center}\n\nBag $A$ contains 2 black marbles and 3 white marbles.\n\\newline\n\\\\\nBag $B$ contains 5 black marbles and 8 white marbles.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Write down the probability that a marble picked at random from bag $A$ is black.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Toby says,\n\n\\begin{quote}\n`You are more likely to pick a black marble at random from bag $B$ than from bag $A$ because bag $B$ has more black marbles.\n\\newline\n'\n\\end{quote}\n\nIs Toby correct?\\\\\nGive a reason for your answer.\n\\newline\n\n\\makebox[2cm]{\\dotfill} because \\makebox[10cm]{\\dotfill}"
+              }
+            ],
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Toby adds some marbles to bag $B$.\n\\newline\n\\\\\nThe probability of picking a black marble at random from either bag is now the same.\n\\newline\n\nWork out the smallest number of black marbles and white marbles he adds to bag $B$.\n\\newline\n\n\\WorkingSpace{4cm}\n\nBlack \\makebox[4cm]{\\dotfill}"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "White"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ],
+        "_itemNewline": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "explain",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Anika asks 15 friends how many marbles they have.\\\\\nThe results are shown in the table.\n\n\\begin{center}\n\\begin{tabular}{|c|c|c|}\n\\hline\nNumber of marbles & Frequency & Pie chart sector angle \\\\\n\\hline\n0 & 2 & \\\\\n\\hline\n1 to 10 & 8 & \\\\\n\\hline\n11 to 50 & 4 & \\\\\n\\hline\nMore than 50 & 1 & \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\begin{subparts}\n\\subpart Complete the table.\n\\Marks{2}\n\n\\subpart Complete the pie chart.\n\n\\begin{center}\n\\begin{tikzpicture}[scale=1.2]\n\\draw (0,0) circle (2.5cm);\n\\draw (0,0) -- (0,-2.5);\n\\end{tikzpicture}\n\\end{center}\n\\Marks{2}\n\n\\end{subparts}\n\n\\item\n\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n% Bag A\n\\draw[thick] (-3,0) .. controls (-3.5,1) and (-3.5,2.5) .. (-3,3);\n\\draw[thick] (-3,0) .. controls (-2.5,1) and (-2.5,2.5) .. (-3,3);\n\\draw[thick] (-3,3) -- (-3,3.5);\n\\fill[black] (-3.2,1) circle (0.15);\n\\fill[black] (-2.8,1.5) circle (0.15);\n\\draw (-3.3,2) circle (0.15);\n\\draw (-2.7,2) circle (0.15);\n\\draw (-3,2.5) circle (0.15);\n\\node at (-3,-0.5) {Bag $A$};\n\n% Bag B\n\\draw[thick] (3,0) .. controls (2.5,1) and (2.5,2.5) .. (3,3);\n\\draw[thick] (3,0) .. controls (3.5,1) and (3.5,2.5) .. (3,3);\n\\draw[thick] (3,3) -- (3,3.5);\n\\fill[black] (2.7,1) circle (0.15);\n\\fill[black] (3.3,1) circle (0.15);\n\\fill[black] (2.7,1.5) circle (0.15);\n\\fill[black] (3.3,1.5) circle (0.15);\n\\fill[black] (3,1.8) circle (0.15);\n\\draw (2.7,2.2) circle (0.15);\n\\draw (3.3,2.2) circle (0.15);\n\\draw (2.7,2.6) circle (0.15);\n\\draw (3.3,2.6) circle (0.15);\n\\draw (3,2.4) circle (0.15);\n\\draw (2.9,1.2) circle (0.15);\n\\draw (3.1,0.8) circle (0.15);\n\\draw (3,2.9) circle (0.15);\n\\node at (3,-0.5) {Bag $B$};\n\\end{tikzpicture}\n\\end{center}\n\nBag $A$ contains 2 black marbles and 3 white marbles.\\\\\nBag $B$ contains 5 black marbles and 8 white marbles.\n\n\\begin{subparts}\n\\subpart Write down the probability that a marble picked at random from bag $A$ is black.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\subpart Toby says,\n\n\\begin{quote}\n`You are more likely to pick a black marble at random from bag $B$ than from bag $A$ because bag $B$ has more black marbles.'\n\\end{quote}\n\nIs Toby correct?\\\\\nGive a reason for your answer.\n\n\\makebox[2cm]{\\dotfill} because \\makebox[10cm]{\\dotfill}\n\\Marks{2}\n\n\\subpart Toby adds some marbles to bag $B$.\\\\\nThe probability of picking a black marble at random from either bag is now the same.\n\nWork out the smallest number of black marbles and white marbles he adds to bag $B$.\n\n\\WorkingSpace{4cm}\n\nBlack \\makebox[4cm]{\\dotfill}\n\n\\AnswerLine[White][]\n\\Marks{2}\n\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_compactItems": true
+  },
+  {
+    "id": "0580-2021MayJune-Paper31-Q03",
+    "paper": "2021MayJune-Paper31",
+    "qnum": 3,
+    "marks": 11,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.3",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Symmetry",
+    "qtype": "scale drawings and bearings",
+    "g": "mixed",
+    "src": "0580/31/M/J/21 Q03",
+    "year": 2021,
+    "session": "MayJune",
+    "tex": "The scale drawing shows the position of town $R$ on a map.\n\\newline\n\\\\\nThe scale is 1 centimetre represents 5 kilometres.\n\\newline\n\n(a) Town $M$ is $36\\,\\text{km}$ from $R$ on a bearing of 163°.\n\\newline\n\nMark the position of $M$ on the map.\n\\newline\n\n(b) A railway track, $36\\,\\text{km}$ long, is to be built in a straight line from $R$ to $M$.\n\\newline\n\n(i)  The track costs \\$1070 per metre to build.\n\\newline\n\nWork out the cost of building the track.\n\\newline\n\n 15 people can build 60 metres of track per day.\n\\newline\n\nWork out how many days it will take 45 people to build the whole track.\n\\newline\n\n(c) Trains will travel the $36\\,\\text{km}$ at an average speed of $75\\,\\text{km/h}$.\n\\newline\n\nWork out the journey time.\n\\newline\n\\\\\nGive your answer in minutes.\n\\newline\n\n(d) Town $K$ is on a bearing of 312° from $R$.\n\\newline\n\nWork out the bearing of $R$ from $K$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Town $M$ is $36\\,\\text{km}$ from $R$ on a bearing of 163°.\n\\newline\n\nMark the position of $M$ on the map.\n\\newline\n"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "A railway track, $36\\,\\text{km}$ long, is to be built in a straight line from $R$ to $M$.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "The track costs \\$1070 per metre to build.\n\\newline\n\nWork out the cost of building the track.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "\\$",
+              "space": {
+                "type": "working",
+                "height": "4cm",
+                "cmd": "WorkingSpace"
+              }
+            },
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "15 people can build 60 metres of track per day.\n\\newline\n\nWork out how many days it will take 45 people to build the whole track.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "days",
+              "space": {
+                "type": "working",
+                "height": "5cm",
+                "cmd": "WorkingSpace"
+              }
+            },
+            "marks": 3,
+            "_compactMarks": true
+          }
+        ]
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Trains will travel the $36\\,\\text{km}$ at an average speed of $75\\,\\text{km/h}$.\n\\newline\n\nWork out the journey time.\n\\newline\n\\\\\nGive your answer in minutes.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "min",
+          "space": {
+            "type": "working",
+            "height": "4cm",
+            "cmd": "WorkingSpace"
+          }
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Town $K$ is on a bearing of 312° from $R$.\n\\newline\n\nWork out the bearing of $R$ from $K$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "space": {
+            "type": "working",
+            "height": "4cm",
+            "cmd": "WorkingSpace"
+          }
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The scale drawing shows the position of town $R$ on a map.\n\\newline\n\\\\\nThe scale is 1 centimetre represents 5 kilometres.\n\\newline\n\n\\begin{center}\n\\begin{tikzpicture}[scale=1]\n\\draw[->] (0,0) -- (0,4) node[above] {North};\n\\fill (0,0) circle (2pt) node[below right] {$R$};\n\\node at (4,-0.5) {Scale : $1\\,\\text{cm}$ to $5\\,\\text{km}$};\n\\end{tikzpicture}\n\\end{center}"
+      }
+    ],
+    "_rawBody": "The scale drawing shows the position of town $R$ on a map.\\\\\nThe scale is 1 centimetre represents 5 kilometres.\n\n\\begin{center}\n\\begin{tikzpicture}[scale=1]\n\\draw[->] (0,0) -- (0,4) node[above] {North};\n\\fill (0,0) circle (2pt) node[below right] {$R$};\n\\node at (4,-0.5) {Scale : 1\\,cm to 5\\,km};\n\\end{tikzpicture}\n\\end{center}\n\n\\begin{parts}\n\\item Town $M$ is 36\\,km from $R$ on a bearing of 163°.\n\nMark the position of $M$ on the map.\n\\Marks{2}\n\n\\item A railway track, 36\\,km long, is to be built in a straight line from $R$ to $M$.\n\n\\begin{subparts}\n\\subpart The track costs \\$1070 per metre to build.\n\nWork out the cost of building the track.\n\n\\WorkingSpace{4cm}\n\n\\AnswerLine[\\$][]\n\\Marks{2}\n\n\\subpart 15 people can build 60 metres of track per day.\n\nWork out how many days it will take 45 people to build the whole track.\n\n\\WorkingSpace{5cm}\n\n\\AnswerLine[][days]\n\\Marks{3}\n\n\\end{subparts}\n\n\\item Trains will travel the 36\\,km at an average speed of 75\\,km/h.\n\nWork out the journey time.\\\\\nGive your answer in minutes.\n\n\\WorkingSpace{4cm}\n\n\\AnswerLine[][min]\n\\Marks{2}\n\n\\item Town $K$ is on a bearing of 312° from $R$.\n\nWork out the bearing of $R$ from $K$.\n\n\\WorkingSpace{4cm}\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2021MayJune-Paper31-Q04",
+    "paper": "2021MayJune-Paper31",
+    "qnum": 4,
+    "marks": 9,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "3.7",
+    "d": 1,
+    "cat": "coord",
+    "topic": "Coordinate geometry extended",
+    "qtype": "perpendicular lines",
+    "g": "mixed",
+    "src": "0580/31/M/J/21 Q04",
+    "year": 2021,
+    "session": "MayJune",
+    "tex": "The diagram shows a line $L$ and two points, $A$ and $B$, on a grid.\n\\newline\n\n(a) Write down the coordinates of point $A$.\n\\newline\n\n{...} ,  $)$][]\n\n(b) (i)  Find the gradient of line $L$.\n\\newline\n\n Write down the equation of line $L$ in the form $y = mx + c$.\n\\newline\n\n(c) (i)  Draw a line that is perpendicular to line $L$ and passes through the point $A$.\n\\newline\n\n This line crosses the $x$-axis at point $C$.\n\\newline\n\nMark point $C$ on the grid and write down the coordinates of point $C$.\n\\newline\n\n{...} ,  $)$][]\n\n Find, by measuring, the perimeter of triangle $ABC$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down the coordinates of point $A$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$($ \\makebox[1cm]{\\dotfill} , \\makebox[1cm]{\\dotfill} $)$"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the gradient of line $L$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Write down the equation of line $L$ in the form $y = mx + c$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$y =$"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ],
+        "_itemNewline": true
+      },
+      {
+        "label": "(c)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Draw a line that is perpendicular to line $L$ and passes through the point $A$.\n\\newline\n"
+              }
+            ],
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "This line crosses the $x$-axis at point $C$.\n\\newline\n\nMark point $C$ on the grid and write down the coordinates of point $C$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$($ \\makebox[1cm]{\\dotfill} , \\makebox[1cm]{\\dotfill} $)$"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Find, by measuring, the perimeter of triangle $ABC$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "cm"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ],
+        "_itemNewline": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The diagram shows a line $L$ and two points, $A$ and $B$, on a grid.\n\\newline\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.6]\n\\draw[help lines, gray!30] (-6,-2) grid (8,6);\n\\draw[thick,->] (-6,0) -- (8.5,0) node[right] {$x$};\n\\draw[thick,->] (0,-2) -- (0,6.5) node[above] {$y$};\n\\foreach \\x in {-6,-5,-4,-3,-2,-1,1,2,3,4,5,6,7,8}\n    \\draw (\\x,0.1) -- (\\x,-0.1) node[below] {\\small $\\x$};\n\\foreach \\y in {-2,-1,1,2,3,4,5,6}\n    \\draw (0.1,\\y) -- (-0.1,\\y) node[left] {\\small $\\y$};\n\\node at (0,0) [below left] {$0$};\n\n% Line L: passes through (-6,6) and (4,1) approximately - gradient -1/2\n\\draw[thick] (-6,6) -- (8,0);\n\\node at (-5.5,5.5) [above right] {$L$};\n\n% Point A at (-3,4)\n\\fill (-3,4) circle (3pt) node[above right] {$A$};\n\n% Point B at (7,0.5) approximately\n\\fill (7,0.5) circle (3pt) node[above right] {$B$};\n\\end{tikzpicture}\n\\end{center}"
+      }
+    ],
+    "_rawBody": "The diagram shows a line $L$ and two points, $A$ and $B$, on a grid.\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.6]\n\\draw[help lines, gray!30] (-6,-2) grid (8,6);\n\\draw[thick,->] (-6,0) -- (8.5,0) node[right] {$x$};\n\\draw[thick,->] (0,-2) -- (0,6.5) node[above] {$y$};\n\\foreach \\x in {-6,-5,-4,-3,-2,-1,1,2,3,4,5,6,7,8}\n    \\draw (\\x,0.1) -- (\\x,-0.1) node[below] {\\small $\\x$};\n\\foreach \\y in {-2,-1,1,2,3,4,5,6}\n    \\draw (0.1,\\y) -- (-0.1,\\y) node[left] {\\small $\\y$};\n\\node at (0,0) [below left] {$0$};\n\n% Line L: passes through (-6,6) and (4,1) approximately - gradient -1/2\n\\draw[thick] (-6,6) -- (8,0);\n\\node at (-5.5,5.5) [above right] {$L$};\n\n% Point A at (-3,4)\n\\fill (-3,4) circle (3pt) node[above right] {$A$};\n\n% Point B at (7,0.5) approximately\n\\fill (7,0.5) circle (3pt) node[above right] {$B$};\n\\end{tikzpicture}\n\\end{center}\n\n\\begin{parts}\n\\item Write down the coordinates of point $A$.\n\n\\AnswerLine[$($ \\makebox[1cm]{\\dotfill} , \\makebox[1cm]{\\dotfill} $)$][]\n\\Marks{1}\n\n\\item\n\\begin{subparts}\n\\subpart Find the gradient of line $L$.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\subpart Write down the equation of line $L$ in the form $y = mx + c$.\n\n\\AnswerLine[$y =$][]\n\\Marks{2}\n\n\\end{subparts}\n\n\\item\n\\begin{subparts}\n\\subpart Draw a line that is perpendicular to line $L$ and passes through the point $A$.\n\\Marks{1}\n\n\\subpart This line crosses the $x$-axis at point $C$.\n\nMark point $C$ on the grid and write down the coordinates of point $C$.\n\n\\AnswerLine[$($ \\makebox[1cm]{\\dotfill} , \\makebox[1cm]{\\dotfill} $)$][]\n\\Marks{1}\n\n\\subpart Find, by measuring, the perimeter of triangle $ABC$.\n\n\\AnswerLine[][cm]\n\\Marks{2}\n\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2021MayJune-Paper31-Q05",
+    "paper": "2021MayJune-Paper31",
+    "qnum": 5,
+    "marks": 10,
+    "topics": [
+      "Algebra and graphs",
+      "Geometry"
+    ],
+    "s": "2.10",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Graphs of functions",
+    "qtype": "interpreting graphs of reciprocal functions and substitution",
+    "g": "function",
+    "src": "0580/31/M/J/21 Q05",
+    "year": 2021,
+    "session": "MayJune",
+    "tex": "The diagram shows the graph of $y = \\dfrac{k}{x}$ for $1 \\leqslant x \\leqslant 8$.\n\\newline\n\n(a) Use the graph to find the value of $x$ when $y = 4$.\n\\newline\n\n(b) (i)  Show that $k = 8$.\n\\newline\n\n Calculate the value of $y$ when $x = 250$.\n\\newline\n\n(c) (i)  Complete this table of values for $y = \\dfrac{8}{x}$.\n\\newline\n\n\\begin{tabular}{|c|c|c|c|c|}\n\\hline\n$x$ & $-8$ & $-4$ & $-2$ & $-1$ \\\\\n\\hline\n$y$ & & & & \\\\\n\\hline\n\\end{tabular}\n\n On the grid, draw the graph of $y = \\dfrac{8}{x}$ for $-8 \\leqslant x \\leqslant -1$.\n\\newline\n\n(d) Write down the equation of each line of symmetry of the graph.\n\\newline\n\n{...} and ][]",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Use the graph to find the value of $x$ when $y = 4$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x =$"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Show that $k = 8$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "none",
+              "space": {
+                "type": "working",
+                "height": "2cm",
+                "cmd": "WorkingSpace"
+              }
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate the value of $y$ when $x = 250$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$y =$"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          }
+        ],
+        "_itemNewline": true
+      },
+      {
+        "label": "(c)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Complete this table of values for $y = \\dfrac{8}{x}$.\n\\newline\n"
+              },
+              {
+                "type": "table",
+                "content": "\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|}\n\\hline\n$x$ & $-8$ & $-4$ & $-2$ & $-1$ \\\\\n\\hline\n$y$ & & & & \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+              }
+            ],
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "On the grid, draw the graph of $y = \\dfrac{8}{x}$ for $-8 \\leqslant x \\leqslant -1$.\n\\newline\n"
+              }
+            ],
+            "marks": 3,
+            "_compactMarks": true
+          }
+        ],
+        "_itemNewline": true
+      },
+      {
+        "label": "(d)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down the equation of each line of symmetry of the graph.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "\\makebox[3cm]{\\dotfill} and \\makebox[3cm]{\\dotfill}"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "show",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.5]\n\\draw[help lines, gray!30] (-8,-8) grid (8,8);\n\\draw[thick,->] (-8,0) -- (8.5,0) node[right] {$x$};\n\\draw[thick,->] (0,-8) -- (0,8.5) node[above] {$y$};\n\\foreach \\x in {-8,-6,-4,-2,2,4,6,8}\n    \\draw (\\x,0.1) -- (\\x,-0.1) node[below] {\\small $\\x$};\n\\foreach \\y in {-8,-6,-4,-2,2,4,6,8}\n    \\draw (0.1,\\y) -- (-0.1,\\y) node[left] {\\small $\\y$};\n\\node at (0,0) [below left] {$0$};\n\n% Graph of y = 8/x for x > 0\n\\draw[thick, domain=1:8, samples=100] plot (\\x, {8/\\x});\n\\end{tikzpicture}\n\\end{center}\n\nThe diagram shows the graph of $y = \\dfrac{k}{x}$ for $1 \\leqslant x \\leqslant 8$.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "\\begin{center}\n\\begin{tikzpicture}[scale=0.5]\n\\draw[help lines, gray!30] (-8,-8) grid (8,8);\n\\draw[thick,->] (-8,0) -- (8.5,0) node[right] {$x$};\n\\draw[thick,->] (0,-8) -- (0,8.5) node[above] {$y$};\n\\foreach \\x in {-8,-6,-4,-2,2,4,6,8}\n    \\draw (\\x,0.1) -- (\\x,-0.1) node[below] {\\small $\\x$};\n\\foreach \\y in {-8,-6,-4,-2,2,4,6,8}\n    \\draw (0.1,\\y) -- (-0.1,\\y) node[left] {\\small $\\y$};\n\\node at (0,0) [below left] {$0$};\n\n% Graph of y = 8/x for x > 0\n\\draw[thick, domain=1:8, samples=100] plot (\\x, {8/\\x});\n\\end{tikzpicture}\n\\end{center}\n\nThe diagram shows the graph of $y = \\dfrac{k}{x}$ for $1 \\leqslant x \\leqslant 8$.\n\n\\begin{parts}\n\\item Use the graph to find the value of $x$ when $y = 4$.\n\n\\AnswerLine[$x =$][]\n\\Marks{1}\n\n\\item\n\\begin{subparts}\n\\subpart Show that $k = 8$.\n\n\\WorkingSpace{2cm}\n\\Marks{1}\n\n\\subpart Calculate the value of $y$ when $x = 250$.\n\n\\AnswerLine[$y =$][]\n\\Marks{1}\n\n\\end{subparts}\n\n\\item\n\\begin{subparts}\n\\subpart Complete this table of values for $y = \\dfrac{8}{x}$.\n\n\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|}\n\\hline\n$x$ & $-8$ & $-4$ & $-2$ & $-1$ \\\\\n\\hline\n$y$ & & & & \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\\Marks{2}\n\n\\subpart On the grid, draw the graph of $y = \\dfrac{8}{x}$ for $-8 \\leqslant x \\leqslant -1$.\n\\Marks{3}\n\n\\end{subparts}\n\n\\item Write down the equation of each line of symmetry of the graph.\n\n\\AnswerLine[\\makebox[3cm]{\\dotfill} and \\makebox[3cm]{\\dotfill}][]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2021MayJune-Paper31-Q06",
+    "paper": "2021MayJune-Paper31",
+    "qnum": 6,
+    "marks": 12,
+    "topics": [
+      "Geometry",
+      "Trigonometry",
+      "Transformations and vectors"
+    ],
+    "s": "4.4",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Circle theorems",
+    "qtype": "similarity and congruence",
+    "g": "mixed",
+    "src": "0580/31/M/J/21 Q06",
+    "year": 2021,
+    "session": "MayJune",
+    "tex": "The diagram shows three triangles, $A$, $B$ and $C$, on a $1\\,\\text{cm}^2$ grid.\n\\newline\n\n(a) Describe fully the **single** transformation that maps\n\n(i)  triangle $A$ onto triangle $B$,\n\n triangle $A$ onto triangle $C$.\n\\newline\n\n(b) On the grid, draw the image of\n\n(i)  triangle $A$ after a translation by the vector $\\begin{pmatrix} -5 \\\\ 4 \\end{pmatrix}$,\n\n triangle $A$ after a reflection in the line $x = -4.5$.\n\\newline\n\n(c) The diagram also shows an angle $b$ in triangle $B$.\n\\newline\n\nUse trigonometry to show that angle $b$ is 63.4°, correct to 1 decimal place.\n\\newline\n\n(d) \nTwo new triangles, $D$ and $E$, are made from triangle $B$, as shown in the diagram.\n\\newline\n\nAre all three triangles similar?\\\\\nGive a reason for your answer.\n\\newline\n\n because",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Describe fully the \\textbf{single} transformation that maps"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "triangle $A$ onto triangle $B$,\n\n\\makebox[14cm]{\\dotfill}\n\n\\makebox[14cm]{\\dotfill}"
+              }
+            ],
+            "marks": 3,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "triangle $A$ onto triangle $C$.\n\\newline\n\n\\makebox[14cm]{\\dotfill}\n\n\\makebox[14cm]{\\dotfill}"
+              }
+            ],
+            "marks": 3,
+            "_compactMarks": true
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "On the grid, draw the image of"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "triangle $A$ after a translation by the vector $\\begin{pmatrix} -5 \\\\ 4 \\end{pmatrix}$,"
+              }
+            ],
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "triangle $A$ after a reflection in the line $x = -4.5$.\n\\newline\n"
+              }
+            ],
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ]
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "The diagram also shows an angle $b$ in triangle $B$.\n\\newline\n\nUse trigonometry to show that angle $b$ is 63.4°, correct to 1 decimal place.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "none",
+          "space": {
+            "type": "working",
+            "height": "4cm",
+            "cmd": "WorkingSpace"
+          }
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.6]\n% Triangle B\n\\draw[thick] (0,0) -- (3,0) -- (0,6) -- cycle;\n\\node at (1,2) {$B$};\n\\draw (0.5,0) arc (0:63.4:0.5);\n\\node at (0.8,0.3) {\\small 63.4°};\n\n% Triangle E and D (combined from B)\n\\begin{scope}[xshift=5cm]\n\\draw[thick] (0,0) -- (3,0) -- (0,6) -- cycle;\n\\draw[thick] (0,0) -- (1.5,3);\n\\node at (0.5,1) {$E$};\n\\node at (1.5,2.5) {$D$};\n\\draw (0.5,0) arc (0:63.4:0.5);\n\\node at (0.8,0.3) {\\small 63.4°};\n\\end{scope}\n\\end{tikzpicture}\n\\end{center}\n\nTwo new triangles, $D$ and $E$, are made from triangle $B$, as shown in the diagram.\n\\newline\n\nAre all three triangles similar?\\\\\nGive a reason for your answer.\n\\newline\n\n\\makebox[2cm]{\\dotfill} because \\makebox[10cm]{\\dotfill}\n\n\\makebox[14cm]{\\dotfill}"
+          }
+        ],
+        "_compactMarks": true,
+        "_itemNewline": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "analyse",
+    "cmd": "show",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The diagram shows three triangles, $A$, $B$ and $C$, on a $1\\,\\text{cm}^2$ grid.\n\\newline\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.5]\n\\draw[help lines, gray!30] (-9,-7) grid (5,4);\n\\draw[thick,->] (-9,0) -- (5.5,0) node[right] {$x$};\n\\draw[thick,->] (0,-7) -- (0,4.5) node[above] {$y$};\n\\foreach \\x in {-9,-8,-7,-6,-5,-4,-3,-2,-1,1,2,3,4,5}\n    \\draw (\\x,0.1) -- (\\x,-0.1);\n\\foreach \\y in {-7,-6,-5,-4,-3,-2,-1,1,2,3,4}\n    \\draw (0.1,\\y) -- (-0.1,\\y);\n\\node at (0,0) [below left] {\\small $0$};\n\\node at (-8,-0.5) {\\small $-8$};\n\\node at (-4,-0.5) {\\small $-4$};\n\\node at (4,-0.5) {\\small $4$};\n\\node at (-0.5,-4) {\\small $-4$};\n\\node at (-0.5,4) {\\small $4$};\n\n% Triangle C at top left\n\\draw[thick] (-6,2) -- (-4,2) -- (-6,3) -- cycle;\n\\node at (-5,2.5) {$C$};\n\n% Triangle A at center-left bottom\n\\draw[thick] (-3,-4) -- (-1,-4) -- (-3,-5) -- cycle;\n\\node at (-2.5,-4.5) {$A$};\n\n% Small triangle b near A\n\\draw[thick] (-1,-4) -- (0,-4) -- (-1,-5) -- cycle;\n\\node at (-0.5,-4.5) {$b$};\n\n% Triangle B at right\n\\draw[thick] (2,-2) -- (4,-2) -- (2,-3) -- cycle;\n\\node at (3,-2.5) {$B$};\n\\end{tikzpicture}\n\\end{center}"
+      }
+    ],
+    "_rawBody": "The diagram shows three triangles, $A$, $B$ and $C$, on a 1\\,cm$^2$ grid.\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.5]\n\\draw[help lines, gray!30] (-9,-7) grid (5,4);\n\\draw[thick,->] (-9,0) -- (5.5,0) node[right] {$x$};\n\\draw[thick,->] (0,-7) -- (0,4.5) node[above] {$y$};\n\\foreach \\x in {-9,-8,-7,-6,-5,-4,-3,-2,-1,1,2,3,4,5}\n    \\draw (\\x,0.1) -- (\\x,-0.1);\n\\foreach \\y in {-7,-6,-5,-4,-3,-2,-1,1,2,3,4}\n    \\draw (0.1,\\y) -- (-0.1,\\y);\n\\node at (0,0) [below left] {\\small $0$};\n\\node at (-8,-0.5) {\\small $-8$};\n\\node at (-4,-0.5) {\\small $-4$};\n\\node at (4,-0.5) {\\small $4$};\n\\node at (-0.5,-4) {\\small $-4$};\n\\node at (-0.5,4) {\\small $4$};\n\n% Triangle C at top left\n\\draw[thick] (-6,2) -- (-4,2) -- (-6,3) -- cycle;\n\\node at (-5,2.5) {$C$};\n\n% Triangle A at center-left bottom\n\\draw[thick] (-3,-4) -- (-1,-4) -- (-3,-5) -- cycle;\n\\node at (-2.5,-4.5) {$A$};\n\n% Small triangle b near A\n\\draw[thick] (-1,-4) -- (0,-4) -- (-1,-5) -- cycle;\n\\node at (-0.5,-4.5) {$b$};\n\n% Triangle B at right\n\\draw[thick] (2,-2) -- (4,-2) -- (2,-3) -- cycle;\n\\node at (3,-2.5) {$B$};\n\\end{tikzpicture}\n\\end{center}\n\n\\begin{parts}\n\\item Describe fully the \\textbf{single} transformation that maps\n\n\\begin{subparts}\n\\subpart triangle $A$ onto triangle $B$,\n\n\\makebox[14cm]{\\dotfill}\n\n\\makebox[14cm]{\\dotfill}\n\\Marks{3}\n\n\\subpart triangle $A$ onto triangle $C$.\n\n\\makebox[14cm]{\\dotfill}\n\n\\makebox[14cm]{\\dotfill}\n\\Marks{3}\n\n\\end{subparts}\n\n\\item On the grid, draw the image of\n\n\\begin{subparts}\n\\subpart triangle $A$ after a translation by the vector $\\begin{pmatrix} -5 \\\\ 4 \\end{pmatrix}$,\n\\Marks{2}\n\n\\subpart triangle $A$ after a reflection in the line $x = -4.5$.\n\\Marks{2}\n\n\\end{subparts}\n\n\\item The diagram also shows an angle $b$ in triangle $B$.\n\nUse trigonometry to show that angle $b$ is 63.4°, correct to 1 decimal place.\n\n\\WorkingSpace{4cm}\n\\Marks{2}\n\n\\item\n\\begin{center}\n\\begin{tikzpicture}[scale=0.6]\n% Triangle B\n\\draw[thick] (0,0) -- (3,0) -- (0,6) -- cycle;\n\\node at (1,2) {$B$};\n\\draw (0.5,0) arc (0:63.4:0.5);\n\\node at (0.8,0.3) {\\small 63.4°};\n\n% Triangle E and D (combined from B)\n\\begin{scope}[xshift=5cm]\n\\draw[thick] (0,0) -- (3,0) -- (0,6) -- cycle;\n\\draw[thick] (0,0) -- (1.5,3);\n\\node at (0.5,1) {$E$};\n\\node at (1.5,2.5) {$D$};\n\\draw (0.5,0) arc (0:63.4:0.5);\n\\node at (0.8,0.3) {\\small 63.4°};\n\\end{scope}\n\\end{tikzpicture}\n\\end{center}\n\nTwo new triangles, $D$ and $E$, are made from triangle $B$, as shown in the diagram.\n\nAre all three triangles similar?\\\\\nGive a reason for your answer.\n\n\\makebox[2cm]{\\dotfill} because \\makebox[10cm]{\\dotfill}\n\n\\makebox[14cm]{\\dotfill}\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2021MayJune-Paper31-Q07",
+    "paper": "2021MayJune-Paper31",
+    "qnum": 7,
+    "marks": 14,
+    "topics": [
+      "Number",
+      "Geometry"
+    ],
+    "s": null,
+    "d": 1,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/31/M/J/21 Q07",
+    "year": 2021,
+    "session": "MayJune",
+    "tex": "(a) Martin, Suki and Pierre make clocks.\n\\newline\n\\\\\nIn one week\n(b) Martin makes $x$ clocks.\n\\newline\n\n(c) Suki makes 3 fewer clocks than Martin.\n\\newline\n\n(d) Pierre makes twice as many clocks as Suki.\n\\newline\n\n(i)  Write an expression for the total number of clocks they make in one week.\n\\newline\n\\\\\nGive your expression in its simplest form.\n\\newline\n\n The total number of clocks they make in one week is 35.\n\\newline\n\n(a) Work out the value of $x$.\n\\newline\n\n(b) Work out how many more clocks Pierre makes than Martin.\n\\newline\n\n(i)  Complete the clock diagram to show the time $2.30\\,\\text{pm}$.\n\\newline\n\n Calculate the obtuse angle between the hands of the clock at $2.30\\,\\text{pm}$.\n\\newline\n\nWork out the number of seconds in 10 days.\n\\newline\n\\\\\nGive your answer in standard form.\n\\newline\n\nA clock is started at 15$\\,$00.\n\\newline\n\\\\\nThe clock is not working correctly and is slow.\n\\newline\n\\\\\nThe clock loses 8 minutes every hour so after one hour the clock shows 15$\\,$52.\n\\newline\n\nWhat time will the clock show $3\\dfrac{1}{2}$ hours after it is started?\n\nThe times on two clocks are checked regularly.\n\\newline\n\\\\\nOne clock is checked every 6 days.\n\\newline\n\\\\\nThe other clock is checked every 8 days.\n\\newline\n\\\\\nBoth clocks are checked on 1st January 2021.\n\\newline\n\nFind the number of days during 2021 when both clocks will be checked on the same day.\n\\newline\n\n{[}There are 365 days in 2021.\n\\newline\n{]}",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "text",
+            "content": "Martin, Suki and Pierre make clocks.\n\\newline\n\\\\\nIn one week\n\\begin{parts}"
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "text",
+            "content": "Martin makes $x$ clocks.\n\\newline\n"
+          }
+        ]
+      },
+      {
+        "label": "(c)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "text",
+            "content": "Suki makes 3 fewer clocks than Martin.\n\\newline\n"
+          }
+        ]
+      },
+      {
+        "label": "(d)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "text",
+            "content": "Pierre makes twice as many clocks as Suki.\n\\newline\n"
+          }
+        ]
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "",
+    "cmd": "complete",
+    "stem": [],
+    "_v4_skip": true,
+    "_rawBody": "\\begin{parts}\n\\item Martin, Suki and Pierre make clocks.\\\\\nIn one week\n\\begin{parts}\n\\item Martin makes $x$ clocks.\n\\item Suki makes 3 fewer clocks than Martin.\n\\item Pierre makes twice as many clocks as Suki.\n\\end{parts}\n\n\\begin{subparts}\n\\subpart Write an expression for the total number of clocks they make in one week.\\\\\nGive your expression in its simplest form.\n\n\\WorkingSpace{5cm}\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\subpart The total number of clocks they make in one week is 35.\n\n\\begin{parts}\n\\item Work out the value of $x$.\n\n\\WorkingSpace{4cm}\n\n\\AnswerLine[$x =$][]\n\\Marks{3}\n\n\\item Work out how many more clocks Pierre makes than Martin.\n\n\\WorkingSpace{3cm}\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{parts}\n\n\\end{subparts}\n\n\\item\n\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n\\draw[thick] (0,0) circle (2cm);\n\\foreach \\i in {1,...,12} {\n    \\draw ({90-30*\\i}:1.7) -- ({90-30*\\i}:2);\n    \\node at ({90-30*\\i}:1.4) {\\i};\n}\n\\fill (0,0) circle (2pt);\n\\end{tikzpicture}\n\\end{center}\n\n\\begin{subparts}\n\\subpart Complete the clock diagram to show the time 2.30\\,pm.\n\\Marks{1}\n\n\\subpart Calculate the obtuse angle between the hands of the clock at 2.30\\,pm.\n\n\\WorkingSpace{4cm}\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{subparts}\n\n\\item Work out the number of seconds in 10 days.\\\\\nGive your answer in standard form.\n\n\\WorkingSpace{4cm}\n\n\\AnswerLine[][seconds]\n\\Marks{2}\n\n\\item A clock is started at 15\\,00.\\\\\nThe clock is not working correctly and is slow.\\\\\nThe clock loses 8 minutes every hour so after one hour the clock shows 15\\,52.\n\nWhat time will the clock show $3\\dfrac{1}{2}$ hours after it is started?\n\n\\WorkingSpace{5cm}\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item The times on two clocks are checked regularly.\\\\\nOne clock is checked every 6 days.\\\\\nThe other clock is checked every 8 days.\\\\\nBoth clocks are checked on 1st January 2021.\n\nFind the number of days during 2021 when both clocks will be checked on the same day.\\\\[0.2cm]\n{[}There are 365 days in 2021.{]}\n\n\\WorkingSpace{6cm}\n\n\\AnswerLine[][]\n\\Marks{4}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "_postParts": [
+      {
+        "type": "text",
+        "content": "\\begin{subparts}\n\\subpart Write an expression for the total number of clocks they make in one week.\\\\\nGive your expression in its simplest form.\n\n\\WorkingSpace{5cm}\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\subpart The total number of clocks they make in one week is 35.\n\n\\begin{parts}\n\\item Work out the value of $x$.\n\n\\WorkingSpace{4cm}\n\n\\AnswerLine[$x =$][]\n\\Marks{3}\n\n\\item Work out how many more clocks Pierre makes than Martin.\n\n\\WorkingSpace{3cm}\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{parts}\n\n\\end{subparts}\n\n\\item\n\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n\\draw[thick] (0,0) circle (2cm);\n\\foreach \\i in {1,...,12} {\n    \\draw ({90-30*\\i}:1.7) -- ({90-30*\\i}:2);\n    \\node at ({90-30*\\i}:1.4) {\\i};\n}\n\\fill (0,0) circle (2pt);\n\\end{tikzpicture}\n\\end{center}\n\n\\begin{subparts}\n\\subpart Complete the clock diagram to show the time 2.30\\,pm.\n\\Marks{1}\n\n\\subpart Calculate the obtuse angle between the hands of the clock at 2.30\\,pm.\n\n\\WorkingSpace{4cm}\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{subparts}\n\n\\item Work out the number of seconds in 10 days.\\\\\nGive your answer in standard form.\n\n\\WorkingSpace{4cm}\n\n\\AnswerLine[][seconds]\n\\Marks{2}\n\n\\item A clock is started at 15\\,00.\\\\\nThe clock is not working correctly and is slow.\\\\\nThe clock loses 8 minutes every hour so after one hour the clock shows 15\\,52.\n\nWhat time will the clock show $3\\dfrac{1}{2}$ hours after it is started?\n\n\\WorkingSpace{5cm}\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item The times on two clocks are checked regularly.\\\\\nOne clock is checked every 6 days.\\\\\nThe other clock is checked every 8 days.\\\\\nBoth clocks are checked on 1st January 2021.\n\nFind the number of days during 2021 when both clocks will be checked on the same day."
+      },
+      {
+        "type": "text",
+        "content": "\\begin{subparts}\n\\subpart Write an expression for the total number of clocks they make in one week.\\\\\nGive your expression in its simplest form.\n\n\\WorkingSpace{5cm}\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\subpart The total number of clocks they make in one week is 35.\n\n\\begin{parts}\n\\item Work out the value of $x$.\n\n\\WorkingSpace{4cm}\n\n\\AnswerLine[$x =$][]\n\\Marks{3}\n\n\\item Work out how many more clocks Pierre makes than Martin.\n\n\\WorkingSpace{3cm}\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{parts}\n\n\\end{subparts}\n\n\\item\n\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n\\draw[thick] (0,0) circle (2cm);\n\\foreach \\i in {1,...,12} {\n    \\draw ({90-30*\\i}:1.7) -- ({90-30*\\i}:2);\n    \\node at ({90-30*\\i}:1.4) {\\i};\n}\n\\fill (0,0) circle (2pt);\n\\end{tikzpicture}\n\\end{center}\n\n\\begin{subparts}\n\\subpart Complete the clock diagram to show the time 2.30\\,pm.\n\\Marks{1}\n\n\\subpart Calculate the obtuse angle between the hands of the clock at 2.30\\,pm.\n\n\\WorkingSpace{4cm}\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{subparts}\n\n\\item Work out the number of seconds in 10 days.\\\\\nGive your answer in standard form.\n\n\\WorkingSpace{4cm}\n\n\\AnswerLine[][seconds]\n\\Marks{2}\n\n\\item A clock is started at 15\\,00.\\\\\nThe clock is not working correctly and is slow.\\\\\nThe clock loses 8 minutes every hour so after one hour the clock shows 15\\,52.\n\nWhat time will the clock show $3\\dfrac{1}{2}$ hours after it is started?\n\n\\WorkingSpace{5cm}\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item The times on two clocks are checked regularly.\\\\\nOne clock is checked every 6 days.\\\\\nThe other clock is checked every 8 days.\\\\\nBoth clocks are checked on 1st January 2021.\n\nFind the number of days during 2021 when both clocks will be checked on the same day.\\\\[0.2cm]"
+      },
+      {
+        "type": "text",
+        "content": "{[}There are 365 days in 2021.{]}\n\n\\WorkingSpace{6cm}\n\n\\AnswerLine[][]\n\\Marks{4}\n\n\\end{parts}"
+      }
+    ],
+    "_compactItems": true
+  },
+  {
+    "id": "0580-2021MayJune-Paper31-Q08",
+    "paper": "2021MayJune-Paper31",
+    "qnum": 8,
+    "marks": 9,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "3.1",
+    "d": 1,
+    "cat": "coord",
+    "topic": "Coordinates",
+    "qtype": "coordinates reading/plotting",
+    "g": "graph",
+    "src": "0580/31/M/J/21 Q08",
+    "year": 2021,
+    "session": "MayJune",
+    "tex": "(a) \n$A$, $B$ and $C$ lie on a circle, centre $O$, diameter $AC$.\n\\newline\n\n(i)  Complete this statement.\n\\newline\n\nAngle $ABC$ is 90° because \n\n Work out the area of triangle $ABC$.\n\\newline\n\n Work out $AC$.\n\\newline\n\n(b) Make $r$ the subject of the formula $A = \\pi r^2$.\n\\newline\n\n(c) \nThe diagram shows a circle inside a square.\n\\newline\n\\\\\nThe circle touches the four sides of the square.\n\\newline\n\\\\\nThe area of the square is $81\\,\\text{cm}^2$.\n\\newline\n\nCalculate the shaded area.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.5]\n\\draw[thick] (0,0) circle (4cm);\n\\fill (0,0) circle (3pt) node[below] {$O$};\n\n% Points on circle\n\\coordinate (A) at (-3.2,2.4);\n\\coordinate (B) at (0,4);\n\\coordinate (C) at (3.2,-2.4);\n\n\\fill (A) circle (3pt) node[above left] {$A$};\n\\fill (B) circle (3pt) node[above] {$B$};\n\\fill (C) circle (3pt) node[below right] {$C$};\n\n\\draw[thick] (A) -- (B) -- (C) -- (A);\n\\draw[thick] (A) -- (C);\n\n% Labels\n\\node at (-2,3.5) {$6\\,\\text{cm}$};\n\\node at (2.5,1.5) {$10\\,\\text{cm}$};\n\n\\node at (6,3) {NOT TO};\n\\node at (6,2) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\n$A$, $B$ and $C$ lie on a circle, centre $O$, diameter $AC$.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Complete this statement.\n\\newline\n\nAngle $ABC$ is 90° because \\makebox[8cm]{\\dotfill}"
+              }
+            ],
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Work out the area of triangle $ABC$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "cm$^2$",
+              "space": {
+                "type": "working",
+                "height": "4cm",
+                "cmd": "WorkingSpace"
+              }
+            },
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Work out $AC$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$AC =$",
+              "suffix": "cm"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ],
+        "_itemNewline": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Make $r$ the subject of the formula $A = \\pi r^2$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$r =$",
+          "space": {
+            "type": "working",
+            "height": "4cm",
+            "cmd": "WorkingSpace"
+          }
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "text",
+            "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.6]\n\\draw[thick] (0,0) rectangle (5,5);\n\\draw[thick, fill=gray!30] (0,0) rectangle (5,5);\n\\draw[thick, fill=white] (2.5,2.5) circle (2.5cm);\n\n\\node at (7,4) {NOT TO};\n\\node at (7,3) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nThe diagram shows a circle inside a square.\n\\newline\n\\\\\nThe circle touches the four sides of the square.\n\\newline\n\\\\\nThe area of the square is $81\\,\\text{cm}^2$.\n\\newline\n\nCalculate the shaded area.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "cm$^2$",
+          "space": {
+            "type": "working",
+            "height": "6cm",
+            "cmd": "WorkingSpace"
+          }
+        },
+        "_compactMarks": true,
+        "_itemNewline": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item\n\\begin{center}\n\\begin{tikzpicture}[scale=0.5]\n\\draw[thick] (0,0) circle (4cm);\n\\fill (0,0) circle (3pt) node[below] {$O$};\n\n% Points on circle\n\\coordinate (A) at (-3.2,2.4);\n\\coordinate (B) at (0,4);\n\\coordinate (C) at (3.2,-2.4);\n\n\\fill (A) circle (3pt) node[above left] {$A$};\n\\fill (B) circle (3pt) node[above] {$B$};\n\\fill (C) circle (3pt) node[below right] {$C$};\n\n\\draw[thick] (A) -- (B) -- (C) -- (A);\n\\draw[thick] (A) -- (C);\n\n% Labels\n\\node at (-2,3.5) {6\\,cm};\n\\node at (2.5,1.5) {10\\,cm};\n\n\\node at (6,3) {NOT TO};\n\\node at (6,2) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\n$A$, $B$ and $C$ lie on a circle, centre $O$, diameter $AC$.\n\n\\begin{subparts}\n\\subpart Complete this statement.\n\nAngle $ABC$ is 90° because \\makebox[8cm]{\\dotfill}\n\\Marks{1}\n\n\\subpart Work out the area of triangle $ABC$.\n\n\\WorkingSpace{4cm}\n\n\\AnswerLine[][cm$^2$]\n\\Marks{2}\n\n\\subpart Work out $AC$.\n\n\\AnswerLine[$AC =$][cm]\n\\Marks{2}\n\n\\end{subparts}\n\n\\item Make $r$ the subject of the formula $A = \\pi r^2$.\n\n\\WorkingSpace{4cm}\n\n\\AnswerLine[$r =$][]\n\\Marks{2}\n\n\\item\n\\begin{center}\n\\begin{tikzpicture}[scale=0.6]\n\\draw[thick] (0,0) rectangle (5,5);\n\\draw[thick, fill=gray!30] (0,0) rectangle (5,5);\n\\draw[thick, fill=white] (2.5,2.5) circle (2.5cm);\n\n\\node at (7,4) {NOT TO};\n\\node at (7,3) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nThe diagram shows a circle inside a square.\\\\\nThe circle touches the four sides of the square.\\\\\nThe area of the square is 81\\,cm$^2$.\n\nCalculate the shaded area.\n\n\\WorkingSpace{6cm}\n\n\\AnswerLine[][cm$^2$]\n\\Marks{4}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2021MayJune-Paper31-Q09",
+    "paper": "2021MayJune-Paper31",
+    "qnum": 9,
+    "marks": 6,
+    "topics": [
+      "Number",
+      "Geometry",
+      "Probability"
+    ],
+    "s": null,
+    "d": 1,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/31/M/J/21 Q09",
+    "year": 2021,
+    "session": "MayJune",
+    "tex": "(a) $\\mathscr{E} = \\{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12\\}$\\\\\n$E = \\{x: x \\text{ is an even number}\\}$\\\\\n$M = \\{x: x \\text{ is a multiple of 3}\\}$\n\n(i)  Complete the Venn diagram.\n\\newline\n\n Write down $\\text{n}(E \\cup M)$.\n\\newline\n\n A number is chosen at random from the universal set $\\mathscr{E}$.\n\\newline\n\nWrite down the probability that the number is in the set $E \\cap M$.\n\\newline\n\n(b) Meg says that an even number cannot be a prime number.\n\\newline\n\nIs she correct?\\\\\nGive a reason for your answer.\n\\newline\n\n because",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "$\\mathscr{E} = \\{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12\\}$\\\\\n$E = \\{x: x \\text{ is an even number}\\}$\\\\\n$M = \\{x: x \\text{ is a multiple of 3}\\}$\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n\\draw[thick] (-3,-2) rectangle (4,3);\n\\node at (-2.5,2.5) {$\\mathscr{E}$};\n\\draw[thick] (-1,0.5) circle (1.5cm);\n\\draw[thick] (1.5,0.5) circle (1.5cm);\n\\node at (-2,2) {$E$};\n\\node at (3,2) {$M$};\n\\end{tikzpicture}\n\\end{center}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Complete the Venn diagram.\n\\newline\n"
+              }
+            ],
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Write down $\\text{n}(E \\cup M)$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "A number is chosen at random from the universal set $\\mathscr{E}$.\n\\newline\n\nWrite down the probability that the number is in the set $E \\cap M$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Meg says that an even number cannot be a prime number.\n\\newline\n\nIs she correct?\\\\\nGive a reason for your answer.\n\\newline\n\n\\makebox[2cm]{\\dotfill} because \\makebox[10cm]{\\dotfill}"
+          }
+        ],
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "",
+    "cmd": "explain",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item $\\mathscr{E} = \\{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12\\}$\\\\\n$E = \\{x: x \\text{ is an even number}\\}$\\\\\n$M = \\{x: x \\text{ is a multiple of 3}\\}$\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n\\draw[thick] (-3,-2) rectangle (4,3);\n\\node at (-2.5,2.5) {$\\mathscr{E}$};\n\\draw[thick] (-1,0.5) circle (1.5cm);\n\\draw[thick] (1.5,0.5) circle (1.5cm);\n\\node at (-2,2) {$E$};\n\\node at (3,2) {$M$};\n\\end{tikzpicture}\n\\end{center}\n\n\\begin{subparts}\n\\subpart Complete the Venn diagram.\n\\Marks{2}\n\n\\subpart Write down $\\text{n}(E \\cup M)$.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\subpart A number is chosen at random from the universal set $\\mathscr{E}$.\n\nWrite down the probability that the number is in the set $E \\cap M$.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{subparts}\n\n\\item Meg says that an even number cannot be a prime number.\n\nIs she correct?\\\\\nGive a reason for your answer.\n\n\\makebox[2cm]{\\dotfill} because \\makebox[10cm]{\\dotfill}\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true
+  }
+]

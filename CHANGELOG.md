@@ -1,5 +1,30 @@
 # Changelog
 
+## [5.13.1] - 2026-03-13 — 图片仓库清理 + 试卷数据拆分
+
+### 图片仓库清理 (25maths-cie0580-figures)
+- 删除 9 个异常 `.png/` 目录（文件名被误作目录名）
+- 删除 42 个 MD5 完全相同的冗余副本
+- 删除 10 个占位图（2023MayJune/Paper21，均为 3142b 假图）
+- 删除 36 个损坏/占位文件（<4KB 批量生成的 stub）
+- 重命名 531 个单图描述文件为标准格式（如 `Q07-VennDiagram.png` → `Q07.png`）
+- 保留 342 个多图描述文件（同一题多张不同图，描述用于区分）
+
+### 试卷数据拆分 (ExamHub)
+- 新增 `scripts/split-papers-cie.js`：按试卷拆分 papers-cie.json
+- 新增 `data/papers-cie/` 目录：228 套试卷独立 JSON 文件（按 qnum 升序）
+- 新增 `data/papers-index-cie.json`：试卷索引（paper/year/session/variant/count/file）
+- 格式化 `data/papers-cie.json` 为多行可读 JSON
+- 数据验证：4,107 题，0 重复
+
+### 修改文件
+| 文件 | 变更 |
+|------|------|
+| `scripts/split-papers-cie.js` | **新建**：试卷拆分脚本 |
+| `data/papers-cie/*.json` | **新建**：228 个独立试卷文件 |
+| `data/papers-index-cie.json` | **新建**：试卷索引 |
+| `data/papers-cie.json` | 格式化为多行 JSON（内容不变） |
+
 ## [5.13.0] - 2026-03-13 — 安全加固：RLS + 登录注册拆分 + 邮箱验证
 
 ### 安全修复

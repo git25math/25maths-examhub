@@ -1,0 +1,1318 @@
+[
+  {
+    "id": "0580-2022OctNov-Paper42-Q01",
+    "paper": "2022OctNov-Paper42",
+    "qnum": 1,
+    "marks": 16,
+    "topics": [
+      "Number",
+      "Mensuration"
+    ],
+    "s": null,
+    "d": 2,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/42/O/N/22 Q01",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "(a) \nt\n(i)  At a football club, season tickets are sold for seated areas and for standing areas.\n\\newline\n\nThe cost of season tickets are in the ratio seated : standing $= 5 : 3$.\n\\newline\n\nThe cost of a season ticket for the standing area is \\$45.\n\\newline\n\nFind the cost of a season ticket for the seated area.\n\\newline\n\n In 2021, the value of the team's players was \\$2.65 million.\n\\newline\n\nIn 2022 this value has decreased by 12\\%.\n\\newline\n\nFind the value in 2022.\n\\newline\n\n The number of people at a football match is 1455.\n\\newline\n\nThis is 6.25\\% of the total number of people allowed in the stadium.\n\\newline\n\nFind the total number of people allowed in the stadium.\n\\newline\n\n The average attendance increased exponentially by 4\\% each year for the three years from 2016 to 2019.\n\\newline\n\nIn 2019 the average attendance was 1631.\n\\newline\n\nFind the average attendance for 2016.\n\\newline\n\nAnother club sells season tickets for individuals and for families.\n\\newline\n\nIn 2018, the number of season tickets sold is in the ratio family : individual $= 2 : 7$.\n\\newline\n\n(i)  The number of family season tickets sold is $x$.\n\\newline\n\nWrite an expression, in terms of $x$, for the number of individual season tickets sold.\n\\newline\n\n In 2019, the number of family season tickets sold increases by 12 and the number of individual season tickets sold decreases by 26.\n\\newline\n\nComplete the table by writing expressions, in terms of $x$, for the number of tickets sold each year.\n\\newline\n\n\\begin{tabular}{|c|c|c|}\n\\hline\nYear & Family tickets & Individual tickets \\\\\n\\hline\n2018 & $x$ & \\\\\n\\hline\n2019 & & \\\\\n\\hline\n\\end{tabular}\n\n In 2019, the number of individual season tickets sold is 3 times the number of family season tickets sold.\n\\newline\n\nWrite an equation in $x$ and solve it to find the number of family tickets sold in 2018.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "At a football club, season tickets are sold for seated areas and for standing areas.\n\\newline\n\nThe cost of season tickets are in the ratio seated : standing $= 5 : 3$.\n\\newline\n\nThe cost of a season ticket for the standing area is \\$45.\n\\newline\n\nFind the cost of a season ticket for the seated area.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "\\$"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "In 2021, the value of the team's players was \\$2.65 million.\n\\newline\n\nIn 2022 this value has decreased by 12\\%.\n\\newline\n\nFind the value in 2022.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "\\$",
+              "suffix": "million"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "The number of people at a football match is 1455.\n\\newline\n\nThis is 6.25\\% of the total number of people allowed in the stadium.\n\\newline\n\nFind the total number of people allowed in the stadium.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iv)",
+            "content": [
+              {
+                "type": "text",
+                "content": "The average attendance increased exponentially by 4\\% each year for the three years from 2016 to 2019.\n\\newline\n\nIn 2019 the average attendance was 1631.\n\\newline\n\nFind the average attendance for 2016.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 3,
+            "_compactMarks": true
+          }
+        ],
+        "_itemNewline": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper42/Q01/Q10b.png"
+          },
+          {
+            "type": "text",
+            "content": "Another club sells season tickets for individuals and for families.\n\\newline\n\nIn 2018, the number of season tickets sold is in the ratio family : individual $= 2 : 7$.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "The number of family season tickets sold is $x$.\n\\newline\n\nWrite an expression, in terms of $x$, for the number of individual season tickets sold.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "In 2019, the number of family season tickets sold increases by 12 and the number of individual season tickets sold decreases by 26.\n\\newline\n\nComplete the table by writing expressions, in terms of $x$, for the number of tickets sold each year.\n\\newline\n"
+              },
+              {
+                "type": "table",
+                "content": "\\begin{center}\n\\begin{tabular}{|c|c|c|}\n\\hline\nYear & Family tickets & Individual tickets \\\\\n\\hline\n2018 & $x$ & \\\\\n\\hline\n2019 & & \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+              }
+            ],
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "In 2019, the number of individual season tickets sold is 3 times the number of family season tickets sold.\n\\newline\n\nWrite an equation in $x$ and solve it to find the number of family tickets sold in 2018.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$x =$"
+            },
+            "marks": 4,
+            "_compactMarks": true
+          }
+        ]
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper42/Q01/Q11.png"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper42/Q01/Q10c.png"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper42/Q01/Q01bii.png"
+      }
+    ],
+    "_rawBody": "\\begin{parts}\n\\part\n\\begin{subparts}\n\\subpart At a football club, season tickets are sold for seated areas and for standing areas.\n\nThe cost of season tickets are in the ratio seated : standing $= 5 : 3$.\n\nThe cost of a season ticket for the standing area is \\$45.\n\nFind the cost of a season ticket for the seated area.\n\n\\AnswerLine[\\$][]\n\\Marks{2}\n\n\\subpart In 2021, the value of the team's players was \\$2.65 million.\n\nIn 2022 this value has decreased by 12\\%.\n\nFind the value in 2022.\n\n\\AnswerLine[\\$][million]\n\\Marks{2}\n\n\\subpart The number of people at a football match is 1455.\n\nThis is 6.25\\% of the total number of people allowed in the stadium.\n\nFind the total number of people allowed in the stadium.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\subpart The average attendance increased exponentially by 4\\% each year for the three years from 2016 to 2019.\n\nIn 2019 the average attendance was 1631.\n\nFind the average attendance for 2016.\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\end{subparts}\n\n\\part Another club sells season tickets for individuals and for families.\n\nIn 2018, the number of season tickets sold is in the ratio family : individual $= 2 : 7$.\n\n\\begin{subparts}\n\\subpart The number of family season tickets sold is $x$.\n\nWrite an expression, in terms of $x$, for the number of individual season tickets sold.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\subpart In 2019, the number of family season tickets sold increases by 12 and the number of individual season tickets sold decreases by 26.\n\nComplete the table by writing expressions, in terms of $x$, for the number of tickets sold each year.\n\n\\begin{center}\n\\begin{tabular}{|c|c|c|}\n\\hline\nYear & Family tickets & Individual tickets \\\\\n\\hline\n2018 & $x$ & \\\\\n\\hline\n2019 & & \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\\Marks{2}\n\n\\subpart In 2019, the number of individual season tickets sold is 3 times the number of family season tickets sold.\n\nWrite an equation in $x$ and solve it to find the number of family tickets sold in 2018.\n\n\\AnswerLine[$x =$][]\n\\Marks{4}\n\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true,
+    "_compactItems": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper42/Q01/Q01bii.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper42/Q01/Q10b.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper42/Q01/Q10c.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper42/Q01/Q11.png"
+    ]
+  },
+  {
+    "id": "0580-2022OctNov-Paper42-Q02",
+    "paper": "2022OctNov-Paper42",
+    "qnum": 2,
+    "marks": 12,
+    "topics": [
+      "Algebra and graphs",
+      "Mensuration"
+    ],
+    "s": "2.1",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Algebra basics",
+    "qtype": "evaluating algebraic expressions, function values",
+    "g": "function",
+    "src": "0580/42/O/N/22 Q02",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "All the lengths in this question are measured in centimetres.\n\\newline\n\nThe diagram shows a solid cuboid with a square base.\n\\newline\n\n(a) \nThe volume, $V\\,\\text{cm}^3$, of the cuboid is $V = x^2(9-x)$.\n\\newline\n\nThe table shows some values of $V$ for $0 \\leqslant x \\leqslant 9$.\n\\newline\n\n\\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}\n\\hline\n$x$ & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\\\\n\\hline\n$V$ & 0 & 8 & & 54 & 80 & 100 & 108 & 98 & 64 & 0 \\\\\n\\hline\n\\end{tabular}\n(i)  Complete the table.\n\\newline\n\n On the grid, draw the graph of $V = x^2(9-x)$ for $0 \\leqslant x \\leqslant 9$.\n\\newline\n\n Find the values of $x$ when the volume of the cuboid is $44\\,\\text{cm}^3$.\n\\newline\n\n{---} or $x =$][]\n\nt\n(i)  Show that the total surface area of the cuboid is $(36x - 2x^2)\\,\\text{cm}^2$.\n\\newline\n\n Find the surface area when the volume of the cuboid is a maximum.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper42/Q02/Q02a.png"
+          },
+          {
+            "type": "text",
+            "content": "The volume, $V\\,\\text{cm}^3$, of the cuboid is $V = x^2(9-x)$.\n\\newline\n\nThe table shows some values of $V$ for $0 \\leqslant x \\leqslant 9$.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}\n\\hline\n$x$ & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\\\\n\\hline\n$V$ & 0 & 8 & & 54 & 80 & 100 & 108 & 98 & 64 & 0 \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Complete the table.\n\\newline\n"
+              }
+            ],
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "On the grid, draw the graph of $V = x^2(9-x)$ for $0 \\leqslant x \\leqslant 9$.\n\\newline\n"
+              }
+            ],
+            "marks": 4,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the values of $x$ when the volume of the cuboid is $44\\,\\text{cm}^3$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$x =$ \\makebox[1cm]{\\hrulefill} or $x =$"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Show that the total surface area of the cuboid is $(36x - 2x^2)\\,\\text{cm}^2$.\n\\newline\n"
+              }
+            ],
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the surface area when the volume of the cuboid is a maximum.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "cm$^2$"
+            },
+            "marks": 3,
+            "_compactMarks": true
+          }
+        ],
+        "_itemNewline": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "show",
+    "stem": [
+      {
+        "type": "text",
+        "content": "All the lengths in this question are measured in centimetres.\n\\newline\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.6]\n% Cuboid\n\\draw (0,0) -- (3,0) -- (3,4) -- (0,4) -- cycle;\n\\draw (3,0) -- (4.5,1.5) -- (4.5,5.5) -- (3,4);\n\\draw (0,4) -- (1.5,5.5) -- (4.5,5.5);\n\\draw[dashed] (0,0) -- (1.5,1.5) -- (4.5,1.5);\n\\draw[dashed] (1.5,1.5) -- (1.5,5.5);\n\n% Labels\n\\node[below] at (1.5,0) {$x$};\n\\node[right] at (3.75,0.75) {$x$};\n\\node[right] at (4.5,3.5) {$9-x$};\n\n% NOT TO SCALE\n\\node at (7,3) {NOT TO};\n\\node at (7,2.5) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nThe diagram shows a solid cuboid with a square base.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper42/Q02/Q02aiii.png"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper42/Q02/Q02.png"
+      }
+    ],
+    "_rawBody": "All the lengths in this question are measured in centimetres.\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.6]\n% Cuboid\n\\draw (0,0) -- (3,0) -- (3,4) -- (0,4) -- cycle;\n\\draw (3,0) -- (4.5,1.5) -- (4.5,5.5) -- (3,4);\n\\draw (0,4) -- (1.5,5.5) -- (4.5,5.5);\n\\draw[dashed] (0,0) -- (1.5,1.5) -- (4.5,1.5);\n\\draw[dashed] (1.5,1.5) -- (1.5,5.5);\n\n% Labels\n\\node[below] at (1.5,0) {$x$};\n\\node[right] at (3.75,0.75) {$x$};\n\\node[right] at (4.5,3.5) {$9-x$};\n\n% NOT TO SCALE\n\\node at (7,3) {NOT TO};\n\\node at (7,2.5) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nThe diagram shows a solid cuboid with a square base.\n\n\\begin{parts}\n\\part The volume, $V$\\,cm$^3$, of the cuboid is $V = x^2(9-x)$.\n\nThe table shows some values of $V$ for $0 \\leqslant x \\leqslant 9$.\n\n\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}\n\\hline\n$x$ & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\\\\n\\hline\n$V$ & 0 & 8 & & 54 & 80 & 100 & 108 & 98 & 64 & 0 \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\begin{subparts}\n\\subpart Complete the table.\n\\Marks{1}\n\n\\subpart On the grid, draw the graph of $V = x^2(9-x)$ for $0 \\leqslant x \\leqslant 9$.\n\\Marks{4}\n\n\\subpart Find the values of $x$ when the volume of the cuboid is 44\\,cm$^3$.\n\n\\AnswerLine[$x =$ \\makebox[1cm]{\\hrulefill} or $x =$][]\n\\Marks{2}\n\n\\end{subparts}\n\n\\part\n\\begin{subparts}\n\\subpart Show that the total surface area of the cuboid is $(36x - 2x^2)$\\,cm$^2$.\n\\Marks{2}\n\n\\subpart Find the surface area when the volume of the cuboid is a maximum.\n\n\\AnswerLine[][cm$^2$]\n\\Marks{3}\n\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true,
+    "_compactItems": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper42/Q02/Q02.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper42/Q02/Q02a.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper42/Q02/Q02aiii.png"
+    ]
+  },
+  {
+    "id": "0580-2022OctNov-Paper42-Q03",
+    "paper": "2022OctNov-Paper42",
+    "qnum": 3,
+    "marks": 15,
+    "topics": [
+      "Number",
+      "Probability",
+      "Statistics"
+    ],
+    "s": null,
+    "d": 2,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/42/O/N/22 Q03",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "Kai and Ann carry out a survey on the distances travelled, in kilometres, by 200 cars.\n\\newline\n\nKai completes this frequency table for the data collected.\n\\newline\n\n\\begin{tabular}{|c|c|c|c|c|c|}\n\\hline\nDistance ($d\\,\\text{km}$) & $80 < d \\leqslant 100$ & $100 < d \\leqslant 150$ & $150 < d \\leqslant 200$ & $200 < d \\leqslant 300$ & $300 < d \\leqslant 400$ \\\\\n\\hline\nFrequency & 7 & 33 & 76 & 52 & 32 \\\\\n\\hline\n\\end{tabular}\n(a) \nt\n(i)  Calculate an estimate of the mean.\n\\newline\n\n Ann uses this frequency table for the same data.\n\\newline\n\nThere is a different interval for the final group.\n\\newline\n\n\\begin{tabular}{|c|c|c|c|c|c|}\n\\hline\nDistance ($d\\,\\text{km}$) & $80 < d \\leqslant 100$ & $100 < d \\leqslant 150$ & $150 < d \\leqslant 200$ & $200 < d \\leqslant 300$ & $300 < d \\leqslant 360$ \\\\\n\\hline\nFrequency & 7 & 33 & 76 & 52 & 32 \\\\\n\\hline\n\\end{tabular}\nWithout calculating an estimate of the mean for this data, find the difference between Ann's and Kai's estimate of the mean.\n\\newline\n\nYou must show all your working.\n\\newline\n\n A histogram is drawn showing the information in **Kai's** frequency table.\n\\newline\n\nThe height of the block for the interval $200 < d \\leqslant 300$ is $2.6\\,\\text{cm}$.\n\\newline\n\nCalculate the height of the block for each of the following intervals.\n\\newline\n\nOne car is picked at random.\n\\newline\n\nFind the probability that the car has travelled more than $300\\,\\text{km}$.\n\\newline\n\nTwo of the 200 cars are picked at random.\n\\newline\n\nFind the probability that\n\n(i)  both cars have travelled $150\\,\\text{km}$ or less,\n\n one car has travelled more than $200\\,\\text{km}$ and the other car has travelled $100\\,\\text{km}$ or less.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate an estimate of the mean.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "km"
+            },
+            "marks": 4,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Ann uses this frequency table for the same data.\n\\newline\n\nThere is a different interval for the final group.\n\\newline\n"
+              },
+              {
+                "type": "table",
+                "content": "\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|c|}\n\\hline\nDistance ($d$\\,km) & $80 < d \\leqslant 100$ & $100 < d \\leqslant 150$ & $150 < d \\leqslant 200$ & $200 < d \\leqslant 300$ & $300 < d \\leqslant 360$ \\\\\n\\hline\nFrequency & 7 & 33 & 76 & 52 & 32 \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+              },
+              {
+                "type": "text",
+                "content": "Without calculating an estimate of the mean for this data, find the difference between Ann's and Kai's estimate of the mean.\n\\newline\n\nYou must show all your working.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "km"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "A histogram is drawn showing the information in \\textbf{Kai's} frequency table.\n\\newline\n\nThe height of the block for the interval $200 < d \\leqslant 300$ is $2.6\\,\\text{cm}$.\n\\newline\n\nCalculate the height of the block for each of the following intervals.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "multiline",
+              "lines": 3,
+              "template": "$80 < d \\leqslant 100$ ____ cm\\n$150 < d \\leqslant 200$ ____ cm\\n$300 < d \\leqslant 400$ ____ cm",
+              "lineSep": "blank"
+            },
+            "marks": 3,
+            "_compactMarks": true
+          }
+        ],
+        "_itemNewline": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "One car is picked at random.\n\\newline\n\nFind the probability that the car has travelled more than $300\\,\\text{km}$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "marks": 1,
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Two of the 200 cars are picked at random.\n\\newline\n\nFind the probability that"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "both cars have travelled $150\\,\\text{km}$ or less,"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "one car has travelled more than $200\\,\\text{km}$ and the other car has travelled $100\\,\\text{km}$ or less.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 3,
+            "_compactMarks": true
+          }
+        ]
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Kai and Ann carry out a survey on the distances travelled, in kilometres, by 200 cars.\n\\newline\n\nKai completes this frequency table for the data collected.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper42/Q03/Q03aii.png"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper42/Q03/Q03.png"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|c|}\n\\hline\nDistance ($d$\\,km) & $80 < d \\leqslant 100$ & $100 < d \\leqslant 150$ & $150 < d \\leqslant 200$ & $200 < d \\leqslant 300$ & $300 < d \\leqslant 400$ \\\\\n\\hline\nFrequency & 7 & 33 & 76 & 52 & 32 \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+      }
+    ],
+    "_rawBody": "Kai and Ann carry out a survey on the distances travelled, in kilometres, by 200 cars.\n\nKai completes this frequency table for the data collected.\n\n\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|c|}\n\\hline\nDistance ($d$\\,km) & $80 < d \\leqslant 100$ & $100 < d \\leqslant 150$ & $150 < d \\leqslant 200$ & $200 < d \\leqslant 300$ & $300 < d \\leqslant 400$ \\\\\n\\hline\nFrequency & 7 & 33 & 76 & 52 & 32 \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\begin{parts}\n\\part\n\\begin{subparts}\n\\subpart Calculate an estimate of the mean.\n\n\\AnswerLine[][km]\n\\Marks{4}\n\n\\subpart Ann uses this frequency table for the same data.\n\nThere is a different interval for the final group.\n\n\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|c|}\n\\hline\nDistance ($d$\\,km) & $80 < d \\leqslant 100$ & $100 < d \\leqslant 150$ & $150 < d \\leqslant 200$ & $200 < d \\leqslant 300$ & $300 < d \\leqslant 360$ \\\\\n\\hline\nFrequency & 7 & 33 & 76 & 52 & 32 \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\nWithout calculating an estimate of the mean for this data, find the difference between Ann's and Kai's estimate of the mean.\n\nYou must show all your working.\n\n\\AnswerLine[][km]\n\\Marks{2}\n\n\\subpart A histogram is drawn showing the information in \\textbf{Kai's} frequency table.\n\nThe height of the block for the interval $200 < d \\leqslant 300$ is 2.6\\,cm.\n\nCalculate the height of the block for each of the following intervals.\n\n\\AnswerLine[$80 < d \\leqslant 100$][cm]\n\\AnswerLine[$150 < d \\leqslant 200$][cm]\n\\AnswerLine[$300 < d \\leqslant 400$][cm]\n\\Marks{3}\n\n\\end{subparts}\n\n\\part One car is picked at random.\n\nFind the probability that the car has travelled more than 300\\,km.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\part Two of the 200 cars are picked at random.\n\nFind the probability that\n\n\\begin{subparts}\n\\subpart both cars have travelled 150\\,km or less,\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\subpart one car has travelled more than 200\\,km and the other car has travelled 100\\,km or less.\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper42/Q03/Q03.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper42/Q03/Q03aii.png"
+    ]
+  },
+  {
+    "id": "0580-2022OctNov-Paper42-Q04",
+    "paper": "2022OctNov-Paper42",
+    "qnum": 4,
+    "marks": 10,
+    "topics": [
+      "Transformations and vectors"
+    ],
+    "s": "7.1",
+    "d": 2,
+    "cat": "vectors",
+    "topic": "Translation",
+    "qtype": "transformations",
+    "g": "mixed",
+    "src": "0580/42/O/N/22 Q04",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "(a) \nDescribe fully the **single** transformation that maps\n\n(i)  shape $A$ onto shape $B$,\n\n\\AnswerBlank\n\\AnswerBlank\n\n shape $A$ onto shape $C$,\n\n\\AnswerBlank\n\\AnswerBlank\n\n shape $A$ onto shape $D$.\n\\newline\n\n\\AnswerBlank\n\\AnswerBlank\n\nOn the grid, draw the image of shape $A$ after a reflection in the line $y = x + 8$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Describe fully the \\textbf{single} transformation that maps"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "shape $A$ onto shape $B$,\n\n\\AnswerBlank\n\\AnswerBlank"
+              }
+            ],
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "shape $A$ onto shape $C$,\n\n\\AnswerBlank\n\\AnswerBlank"
+              }
+            ],
+            "marks": 3,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "shape $A$ onto shape $D$.\n\\newline\n\n\\AnswerBlank\n\\AnswerBlank"
+              }
+            ],
+            "marks": 3,
+            "_compactMarks": true
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "On the grid, draw the image of shape $A$ after a reflection in the line $y = x + 8$.\n\\newline\n"
+          }
+        ],
+        "marks": 2,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "recall",
+    "cmd": "describe",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.45]\n% Grid\n\\draw[very thin, gray] (-8,-6) grid (6,8);\n\\draw[thick,->] (-8,0) -- (6.5,0) node[right] {$x$};\n\\draw[thick,->] (0,-6) -- (0,8.5) node[above] {$y$};\n\n% Axis labels\n\\foreach \\x in {-8,-7,-6,-5,-4,-3,-2,-1,1,2,3,4,5,6}\n    \\node[below, font=\\tiny] at (\\x,0) {\\x};\n\\foreach \\y in {-6,-5,-4,-3,-2,-1,1,2,3,4,5,6,7,8}\n    \\node[left, font=\\tiny] at (0,\\y) {\\y};\n\n% Shape A\n\\draw[thick, fill=gray!30] (-5,5) -- (-3,5) -- (-3,7) -- (-5,7) -- cycle;\n\\node at (-4,6) {$A$};\n\n% Shape B\n\\draw[thick, fill=gray!30] (2,-2) -- (4,-2) -- (5,-4) -- (3,-4) -- cycle;\n\\node at (3.5,-3) {$B$};\n\n% Shape C\n\\draw[thick, fill=gray!30] (3,3) -- (5,3) -- (6,5) -- (4,5) -- cycle;\n\\node at (4.5,4) {$C$};\n\n% Shape D\n\\draw[thick, fill=gray!30] (-4,0) -- (-3,0) -- (-3,1) -- (-2,1) -- (-4,1) -- cycle;\n\\node at (-3,0.5) {$D$};\n\\end{tikzpicture}\n\\end{center}"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper42/Q04/Q04.png"
+      }
+    ],
+    "_rawBody": "\\begin{center}\n\\begin{tikzpicture}[scale=0.45]\n% Grid\n\\draw[very thin, gray] (-8,-6) grid (6,8);\n\\draw[thick,->] (-8,0) -- (6.5,0) node[right] {$x$};\n\\draw[thick,->] (0,-6) -- (0,8.5) node[above] {$y$};\n\n% Axis labels\n\\foreach \\x in {-8,-7,-6,-5,-4,-3,-2,-1,1,2,3,4,5,6}\n    \\node[below, font=\\tiny] at (\\x,0) {\\x};\n\\foreach \\y in {-6,-5,-4,-3,-2,-1,1,2,3,4,5,6,7,8}\n    \\node[left, font=\\tiny] at (0,\\y) {\\y};\n\n% Shape A\n\\draw[thick, fill=gray!30] (-5,5) -- (-3,5) -- (-3,7) -- (-5,7) -- cycle;\n\\node at (-4,6) {$A$};\n\n% Shape B\n\\draw[thick, fill=gray!30] (2,-2) -- (4,-2) -- (5,-4) -- (3,-4) -- cycle;\n\\node at (3.5,-3) {$B$};\n\n% Shape C\n\\draw[thick, fill=gray!30] (3,3) -- (5,3) -- (6,5) -- (4,5) -- cycle;\n\\node at (4.5,4) {$C$};\n\n% Shape D\n\\draw[thick, fill=gray!30] (-4,0) -- (-3,0) -- (-3,1) -- (-2,1) -- (-4,1) -- cycle;\n\\node at (-3,0.5) {$D$};\n\\end{tikzpicture}\n\\end{center}\n\n\\begin{parts}\n\\part Describe fully the \\textbf{single} transformation that maps\n\n\\begin{subparts}\n\\subpart shape $A$ onto shape $B$,\n\n\\AnswerBlank\n\\AnswerBlank\n\\Marks{2}\n\n\\subpart shape $A$ onto shape $C$,\n\n\\AnswerBlank\n\\AnswerBlank\n\\Marks{3}\n\n\\subpart shape $A$ onto shape $D$.\n\n\\AnswerBlank\n\\AnswerBlank\n\\Marks{3}\n\n\\end{subparts}\n\n\\part On the grid, draw the image of shape $A$ after a reflection in the line $y = x + 8$.\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper42/Q04/Q04.png"
+    ]
+  },
+  {
+    "id": "0580-2022OctNov-Paper42-Q05",
+    "paper": "2022OctNov-Paper42",
+    "qnum": 5,
+    "marks": 8,
+    "topics": [
+      "Number"
+    ],
+    "s": null,
+    "d": 2,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/42/O/N/22 Q05",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "(a) \nThe diagram shows the speed--time graph for part of a journey for two vehicles, a car and a bus.\n\\newline\n\n(i)  Calculate the acceleration of the car during the first 18 seconds.\n\\newline\n\n In the first 40 seconds the car travelled $134\\,\\text{m}$ more than the bus.\n\\newline\n\nCalculate the constant speed, $v$, of the bus.\n\\newline\n\nA train takes 10 minutes 30 seconds to travel $16\\,240\\,\\text{m}$.\n\\newline\n\nCalculate the average speed of the train.\n\\newline\n\nGive your answer in kilometres per hour.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper42/Q05/Q05a.png"
+          },
+          {
+            "type": "text",
+            "content": "The diagram shows the speed--time graph for part of a journey for two vehicles, a car and a bus.\n\\newline\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.08]\n% Axes\n\\draw[thick,->] (0,0) -- (45,0) node[right] {Time (seconds)};\n\\draw[thick,->] (0,0) -- (0,28) node[above] {Speed (m/s)};\n\n% Grid lines\n\\draw[very thin, gray] (0,0) grid[step=5] (40,25);\n\n% Axis labels\n\\node[below] at (18,0) {18};\n\\node[below] at (40,0) {40};\n\\node[left] at (0,10) {10};\n\\node[left] at (0,24) {24};\n\n% Car line (accelerates then constant)\n\\draw[thick] (0,0) -- (18,24) -- (40,24);\n\\node[right] at (40,24) {Car};\n\n% Bus line (constant speed v)\n\\draw[thick] (0,15) -- (40,15);\n\\node[right] at (40,15) {Bus};\n\\node[left] at (0,15) {$v$};\n\n% NOT TO SCALE\n\\node at (55,15) {NOT TO};\n\\node at (55,12) {SCALE};\n\\end{tikzpicture}\n\\end{center}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate the acceleration of the car during the first 18 seconds.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "m/s$^2$"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "In the first 40 seconds the car travelled $134\\,\\text{m}$ more than the bus.\n\\newline\n\nCalculate the constant speed, $v$, of the bus.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$v =$",
+              "suffix": "m/s"
+            },
+            "marks": 4,
+            "_compactMarks": true
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "A train takes 10 minutes 30 seconds to travel $16\\,240\\,\\text{m}$.\n\\newline\n\nCalculate the average speed of the train.\n\\newline\n\nGive your answer in kilometres per hour.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "km/h"
+        },
+        "marks": 3,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "",
+    "cmd": "calculate",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\part The diagram shows the speed--time graph for part of a journey for two vehicles, a car and a bus.\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.08]\n% Axes\n\\draw[thick,->] (0,0) -- (45,0) node[right] {Time (seconds)};\n\\draw[thick,->] (0,0) -- (0,28) node[above] {Speed (m/s)};\n\n% Grid lines\n\\draw[very thin, gray] (0,0) grid[step=5] (40,25);\n\n% Axis labels\n\\node[below] at (18,0) {18};\n\\node[below] at (40,0) {40};\n\\node[left] at (0,10) {10};\n\\node[left] at (0,24) {24};\n\n% Car line (accelerates then constant)\n\\draw[thick] (0,0) -- (18,24) -- (40,24);\n\\node[right] at (40,24) {Car};\n\n% Bus line (constant speed v)\n\\draw[thick] (0,15) -- (40,15);\n\\node[right] at (40,15) {Bus};\n\\node[left] at (0,15) {$v$};\n\n% NOT TO SCALE\n\\node at (55,15) {NOT TO};\n\\node at (55,12) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\n\\begin{subparts}\n\\subpart Calculate the acceleration of the car during the first 18 seconds.\n\n\\AnswerLine[][m/s$^2$]\n\\Marks{1}\n\n\\subpart In the first 40 seconds the car travelled 134\\,m more than the bus.\n\nCalculate the constant speed, $v$, of the bus.\n\n\\AnswerLine[$v =$][m/s]\n\\Marks{4}\n\n\\end{subparts}\n\n\\part A train takes 10 minutes 30 seconds to travel 16\\,240\\,m.\n\nCalculate the average speed of the train.\n\nGive your answer in kilometres per hour.\n\n\\AnswerLine[][km/h]\n\\Marks{3}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper42/Q05/Q05a.png"
+    ]
+  },
+  {
+    "id": "0580-2022OctNov-Paper42-Q06",
+    "paper": "2022OctNov-Paper42",
+    "qnum": 6,
+    "marks": 21,
+    "topics": [
+      "Number",
+      "Algebra and graphs"
+    ],
+    "s": "2.5",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Equations",
+    "qtype": "solving linear and quadratic equations, factorisation, algebraic fractions, indices, proportion",
+    "g": "quadratic",
+    "src": "0580/42/O/N/22 Q06",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "(a) \nSolve.\n\\newline\n\\[4x + 15 = 9\\]\n\nFactorise.\n\\newline\n\\[a^2 - 9\\]\n\nWrite as a single fraction in its simplest form.\n\\newline\n\\[\\frac{4a}{5} \\div \\frac{3ad}{10c}\\]\n\n$5^n + 5^n + 5^n + 5^n + 5^n = 5^m$\n\nFind an expression for $m$ in terms of $n$.\n\\newline\n\nSolve by factorisation.\n\\newline\n\\[4x^2 + 8x - 5 = 0\\]\n\n{---} or $x =$][]\n\nt\n(i)  $y$ is directly proportional to $(x + 3)^3$.\n\\newline\n\nWhen $x = 2$, $y = 13.5$.\n\\newline\n\nFind $x$ when $y = 108$.\n\\newline\n\n $g$ is inversely proportional to the square of $d$.\n\\newline\n\nWhen $d$ is halved, the value of $g$ is multiplied by a factor $n$.\n\\newline\n\nFind $n$.\n\\newline\n\nExpand and simplify.\n\\newline\n\\[(2x + 3)(x - 1)(x + 3)\\]\n\nFind the derivative, $\\dfrac{\\mathrm{d}y}{\\mathrm{d}x}$, of $y = 3x^2 + 4x - 1$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Solve.\n\\newline\n\\[4x + 15 = 9\\]"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x =$"
+        },
+        "marks": 2,
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Factorise.\n\\newline\n\\[a^2 - 9\\]"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "marks": 1,
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Write as a single fraction in its simplest form.\n\\newline\n\\[\\frac{4a}{5} \\div \\frac{3ad}{10c}\\]"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "marks": 3,
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "content": [
+          {
+            "type": "text",
+            "content": "$5^n + 5^n + 5^n + 5^n + 5^n = 5^m$\n\nFind an expression for $m$ in terms of $n$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$m =$"
+        },
+        "marks": 2,
+        "_compactMarks": true
+      },
+      {
+        "label": "(e)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Solve by factorisation.\n\\newline\n\\[4x^2 + 8x - 5 = 0\\]"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x =$ \\makebox[1cm]{\\hrulefill} or $x =$"
+        },
+        "marks": 3,
+        "_compactMarks": true
+      },
+      {
+        "label": "(f)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "$y$ is directly proportional to $(x + 3)^3$.\n\\newline\n\nWhen $x = 2$, $y = 13.5$.\n\\newline\n\nFind $x$ when $y = 108$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$x =$"
+            },
+            "marks": 3,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "$g$ is inversely proportional to the square of $d$.\n\\newline\n\nWhen $d$ is halved, the value of $g$ is multiplied by a factor $n$.\n\\newline\n\nFind $n$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$n =$"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ],
+        "_itemNewline": true
+      },
+      {
+        "label": "(g)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Expand and simplify.\n\\newline\n\\[(2x + 3)(x - 1)(x + 3)\\]"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "marks": 3,
+        "_compactMarks": true
+      },
+      {
+        "label": "(h)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the derivative, $\\dfrac{\\mathrm{d}y}{\\mathrm{d}x}$, of $y = 3x^2 + 4x - 1$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "marks": 2,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\part Solve.\n\\[4x + 15 = 9\\]\n\n\\AnswerLine[$x =$][]\n\\Marks{2}\n\n\\part Factorise.\n\\[a^2 - 9\\]\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\part Write as a single fraction in its simplest form.\n\\[\\frac{4a}{5} \\div \\frac{3ad}{10c}\\]\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\part $5^n + 5^n + 5^n + 5^n + 5^n = 5^m$\n\nFind an expression for $m$ in terms of $n$.\n\n\\AnswerLine[$m =$][]\n\\Marks{2}\n\n\\part Solve by factorisation.\n\\[4x^2 + 8x - 5 = 0\\]\n\n\\AnswerLine[$x =$ \\makebox[1cm]{\\hrulefill} or $x =$][]\n\\Marks{3}\n\n\\part\n\\begin{subparts}\n\\subpart $y$ is directly proportional to $(x + 3)^3$.\n\nWhen $x = 2$, $y = 13.5$.\n\nFind $x$ when $y = 108$.\n\n\\AnswerLine[$x =$][]\n\\Marks{3}\n\n\\subpart $g$ is inversely proportional to the square of $d$.\n\nWhen $d$ is halved, the value of $g$ is multiplied by a factor $n$.\n\nFind $n$.\n\n\\AnswerLine[$n =$][]\n\\Marks{2}\n\n\\end{subparts}\n\n\\part Expand and simplify.\n\\[(2x + 3)(x - 1)(x + 3)\\]\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\part Find the derivative, $\\dfrac{\\mathrm{d}y}{\\mathrm{d}x}$, of $y = 3x^2 + 4x - 1$.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper42-Q07",
+    "paper": "2022OctNov-Paper42",
+    "qnum": 7,
+    "marks": 18,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "3.4",
+    "d": 2,
+    "cat": "coord",
+    "topic": "Equation of a line",
+    "qtype": "length and midpoint",
+    "g": "mixed",
+    "src": "0580/42/O/N/22 Q07",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "(a) \nt\n\n(i)  Calculate angle $QPR$.\n\\newline\n\n Find the shortest distance from $Q$ to $PR$.\n\\newline\n\nThe diagram shows a cuboid.\n\\newline\n\n(i)  Calculate the length $AG$.\n\\newline\n\n Calculate the angle between $AG$ and the base $ABCD$.\n\\newline\n\nt\n\nThe diagram shows the positions of a lighthouse, $L$, and two ships, $K$ and $M$.\n\\newline\n\nThe bearing of $L$ from $K$ is $155°$ and $KL = 112\\,\\text{km}$.\n\\newline\n\nThe bearing of $K$ from $M$ is $010°$ and angle $KML = 96°$.\n\\newline\n\nFind the bearing and distance of ship $M$ from the lighthouse, $L$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper42/Q07/Q07a.png"
+          },
+          {
+            "type": "text",
+            "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.06]\n% Triangle\n\\coordinate (P) at (0,0);\n\\coordinate (Q) at (46.5,0);\n\\coordinate (R) at (23,30);\n\n\\draw (P) -- (Q) -- (R) -- cycle;\n\n% Labels\n\\node[below left] at (P) {$P$};\n\\node[below right] at (Q) {$Q$};\n\\node[above] at (R) {$R$};\n\n% Side lengths\n\\node[below] at (23.25,0) {$46.5\\,\\text{cm}$};\n\\node[above left] at (11.5,15) {$39.4\\,\\text{cm}$};\n\\node[above right] at (34.75,15) {$38.2\\,\\text{cm}$};\n\n% NOT TO SCALE\n\\node at (60,15) {NOT TO};\n\\node at (60,10) {SCALE};\n\\end{tikzpicture}\n\\end{center}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate angle $QPR$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "Angle $QPR =$"
+            },
+            "marks": 4,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the shortest distance from $Q$ to $PR$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "cm"
+            },
+            "marks": 3,
+            "_compactMarks": true
+          }
+        ],
+        "_itemNewline": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper42/Q07/Q07b.png"
+          },
+          {
+            "type": "text",
+            "content": "The diagram shows a cuboid.\n\\newline\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.08]\n% Base\n\\coordinate (A) at (0,0);\n\\coordinate (B) at (29,0);\n\\coordinate (C) at (35,8);\n\\coordinate (D) at (6,8);\n\n% Top\n\\coordinate (E) at (0,21);\n\\coordinate (F) at (29,21);\n\\coordinate (G) at (35,29);\n\\coordinate (H) at (6,29);\n\n% Draw cuboid\n\\draw (A) -- (B) -- (C) -- (D) -- cycle;\n\\draw (E) -- (F) -- (G) -- (H) -- cycle;\n\\draw (A) -- (E);\n\\draw (B) -- (F);\n\\draw (C) -- (G);\n\\draw (D) -- (H);\n\n% Diagonal\n\\draw[dashed] (A) -- (G);\n\n% Labels\n\\node[below left] at (A) {$A$};\n\\node[below right] at (B) {$B$};\n\\node[right] at (C) {$C$};\n\\node[left] at (D) {$D$};\n\\node[left] at (E) {$E$};\n\\node[below right] at (F) {$F$};\n\\node[above right] at (G) {$G$};\n\\node[above left] at (H) {$H$};\n\n% Dimensions\n\\node[below] at (14.5,0) {$29\\,\\text{cm}$};\n\\node[right] at (35,18.5) {$20\\,\\text{cm}$};\n\\node[right] at (32,4) {$21\\,\\text{cm}$};\n\n% NOT TO SCALE\n\\node at (50,15) {NOT TO};\n\\node at (50,10) {SCALE};\n\\end{tikzpicture}\n\\end{center}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate the length $AG$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$AG =$",
+              "suffix": "cm"
+            },
+            "marks": 3,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate the angle between $AG$ and the base $ABCD$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 3,
+            "_compactMarks": true
+          }
+        ]
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper42/Q07/Q07c.png"
+          },
+          {
+            "type": "text",
+            "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.04]\n% Points\n\\coordinate (K) at (0,60);\n\\coordinate (M) at (0,0);\n\\coordinate (L) at (50,-50);\n\n% Draw lines\n\\draw (K) -- (M) -- (L);\n\\draw (K) -- (L);\n\n% North arrows\n\\draw[->] (K) -- (0,80) node[above] {North};\n\\draw[->] (M) -- (0,20) node[above] {North};\n\n% Angle at M\n\\draw (M) ++ (0,8) arc (90:306:8);\n\\node at (-5,-8) {$96°$};\n\n% Labels\n\\node[right] at (K) {$K$};\n\\node[left] at (M) {$M$};\n\\node[below] at (L) {$L$};\n\n% Distance\n\\node[right] at (25,5) {$112\\,\\text{km}$};\n\n% NOT TO SCALE\n\\node at (70,30) {NOT TO};\n\\node at (70,25) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nThe diagram shows the positions of a lighthouse, $L$, and two ships, $K$ and $M$.\n\\newline\n\nThe bearing of $L$ from $K$ is $155°$ and $KL = 112\\,\\text{km}$.\n\\newline\n\nThe bearing of $K$ from $M$ is $010°$ and angle $KML = 96°$.\n\\newline\n\nFind the bearing and distance of ship $M$ from the lighthouse, $L$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "multiline",
+          "lines": 2,
+          "template": "Bearing ____\\nDistance ____ km",
+          "lineSep": "blank"
+        },
+        "marks": 5,
+        "_compactMarks": true,
+        "_itemNewline": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\part\n\\begin{center}\n\\begin{tikzpicture}[scale=0.06]\n% Triangle\n\\coordinate (P) at (0,0);\n\\coordinate (Q) at (46.5,0);\n\\coordinate (R) at (23,30);\n\n\\draw (P) -- (Q) -- (R) -- cycle;\n\n% Labels\n\\node[below left] at (P) {$P$};\n\\node[below right] at (Q) {$Q$};\n\\node[above] at (R) {$R$};\n\n% Side lengths\n\\node[below] at (23.25,0) {46.5\\,cm};\n\\node[above left] at (11.5,15) {39.4\\,cm};\n\\node[above right] at (34.75,15) {38.2\\,cm};\n\n% NOT TO SCALE\n\\node at (60,15) {NOT TO};\n\\node at (60,10) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\n\\begin{subparts}\n\\subpart Calculate angle $QPR$.\n\n\\AnswerLine[Angle $QPR =$][]\n\\Marks{4}\n\n\\subpart Find the shortest distance from $Q$ to $PR$.\n\n\\AnswerLine[][cm]\n\\Marks{3}\n\n\\end{subparts}\n\n\\part The diagram shows a cuboid.\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.08]\n% Base\n\\coordinate (A) at (0,0);\n\\coordinate (B) at (29,0);\n\\coordinate (C) at (35,8);\n\\coordinate (D) at (6,8);\n\n% Top\n\\coordinate (E) at (0,21);\n\\coordinate (F) at (29,21);\n\\coordinate (G) at (35,29);\n\\coordinate (H) at (6,29);\n\n% Draw cuboid\n\\draw (A) -- (B) -- (C) -- (D) -- cycle;\n\\draw (E) -- (F) -- (G) -- (H) -- cycle;\n\\draw (A) -- (E);\n\\draw (B) -- (F);\n\\draw (C) -- (G);\n\\draw (D) -- (H);\n\n% Diagonal\n\\draw[dashed] (A) -- (G);\n\n% Labels\n\\node[below left] at (A) {$A$};\n\\node[below right] at (B) {$B$};\n\\node[right] at (C) {$C$};\n\\node[left] at (D) {$D$};\n\\node[left] at (E) {$E$};\n\\node[below right] at (F) {$F$};\n\\node[above right] at (G) {$G$};\n\\node[above left] at (H) {$H$};\n\n% Dimensions\n\\node[below] at (14.5,0) {29\\,cm};\n\\node[right] at (35,18.5) {20\\,cm};\n\\node[right] at (32,4) {21\\,cm};\n\n% NOT TO SCALE\n\\node at (50,15) {NOT TO};\n\\node at (50,10) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\n\\begin{subparts}\n\\subpart Calculate the length $AG$.\n\n\\AnswerLine[$AG =$][cm]\n\\Marks{3}\n\n\\subpart Calculate the angle between $AG$ and the base $ABCD$.\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\end{subparts}\n\n\\part\n\\begin{center}\n\\begin{tikzpicture}[scale=0.04]\n% Points\n\\coordinate (K) at (0,60);\n\\coordinate (M) at (0,0);\n\\coordinate (L) at (50,-50);\n\n% Draw lines\n\\draw (K) -- (M) -- (L);\n\\draw (K) -- (L);\n\n% North arrows\n\\draw[->] (K) -- (0,80) node[above] {North};\n\\draw[->] (M) -- (0,20) node[above] {North};\n\n% Angle at M\n\\draw (M) ++ (0,8) arc (90:306:8);\n\\node at (-5,-8) {$96°$};\n\n% Labels\n\\node[right] at (K) {$K$};\n\\node[left] at (M) {$M$};\n\\node[below] at (L) {$L$};\n\n% Distance\n\\node[right] at (25,5) {112\\,km};\n\n% NOT TO SCALE\n\\node at (70,30) {NOT TO};\n\\node at (70,25) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nThe diagram shows the positions of a lighthouse, $L$, and two ships, $K$ and $M$.\n\nThe bearing of $L$ from $K$ is $155°$ and $KL = 112$\\,km.\n\nThe bearing of $K$ from $M$ is $010°$ and angle $KML = 96°$.\n\nFind the bearing and distance of ship $M$ from the lighthouse, $L$.\n\n\\AnswerLine[Bearing][]\n\\AnswerLine[Distance][km]\n\\Marks{5}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper42/Q07/Q07a.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper42/Q07/Q07b.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper42/Q07/Q07c.png"
+    ]
+  },
+  {
+    "id": "0580-2022OctNov-Paper42-Q08",
+    "paper": "2022OctNov-Paper42",
+    "qnum": 8,
+    "marks": 9,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "3.7",
+    "d": 2,
+    "cat": "coord",
+    "topic": "Coordinate geometry extended",
+    "qtype": "perpendicular lines",
+    "g": "mixed",
+    "src": "0580/42/O/N/22 Q08",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "$AB$ is a line with midpoint $M$.\n\\newline\n\n$A$ is the point $(2, 3)$ and $M$ is the point $(12, 7)$.\n\\newline\n\n(a) \nFind the coordinates of $B$.\n\\newline\n\n{---} ,  )][]\n\nShow that the equation of the perpendicular bisector of $AB$ is $2y + 5x = 74$.\n\\newline\n\nThe perpendicular bisector of $AB$ passes through the point $N$.\n\\newline\n\nThe point $N$ has coordinates $(2, n)$.\n\\newline\n\nFind the value of $n$.\n\\newline\n\nPoints $A$, $M$ and $N$ form a triangle.\n\\newline\n\nFind the area of the triangle.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the coordinates of $B$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "( \\makebox[1cm]{\\hrulefill} , \\makebox[1cm]{\\hrulefill} )"
+        },
+        "marks": 2,
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Show that the equation of the perpendicular bisector of $AB$ is $2y + 5x = 74$.\n\\newline\n"
+          }
+        ],
+        "marks": 4,
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The perpendicular bisector of $AB$ passes through the point $N$.\n\\newline\n\nThe point $N$ has coordinates $(2, n)$.\n\\newline\n\nFind the value of $n$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$n =$"
+        },
+        "marks": 1,
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Points $A$, $M$ and $N$ form a triangle.\n\\newline\n\nFind the area of the triangle.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "marks": 2,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "analyse",
+    "cmd": "show",
+    "stem": [
+      {
+        "type": "text",
+        "content": "$AB$ is a line with midpoint $M$.\n\\newline\n\n$A$ is the point $(2, 3)$ and $M$ is the point $(12, 7)$.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "$AB$ is a line with midpoint $M$.\n\n$A$ is the point $(2, 3)$ and $M$ is the point $(12, 7)$.\n\n\\begin{parts}\n\\part Find the coordinates of $B$.\n\n\\AnswerLine[( \\makebox[1cm]{\\hrulefill} , \\makebox[1cm]{\\hrulefill} )][]\n\\Marks{2}\n\n\\part Show that the equation of the perpendicular bisector of $AB$ is $2y + 5x = 74$.\n\\Marks{4}\n\n\\part The perpendicular bisector of $AB$ passes through the point $N$.\n\nThe point $N$ has coordinates $(2, n)$.\n\nFind the value of $n$.\n\n\\AnswerLine[$n =$][]\n\\Marks{1}\n\n\\part Points $A$, $M$ and $N$ form a triangle.\n\nFind the area of the triangle.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper42-Q09",
+    "paper": "2022OctNov-Paper42",
+    "qnum": 9,
+    "marks": 5,
+    "topics": [
+      "Algebra and graphs",
+      "Trigonometry"
+    ],
+    "s": "2.10",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Graphs of functions",
+    "qtype": "sketching trigonometric graphs, solving trigonometric equations",
+    "g": "graph",
+    "src": "0580/42/O/N/22 Q09",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "(a) \nOn the diagram, sketch the graph of $y = \\sin x$ for $0° \\leqslant x \\leqslant 360°$.\n\\newline\n\nSolve the equation $5\\sin x + 4 = 0$ for $0° \\leqslant x \\leqslant 360°$.\n\\newline\n\n{---} or $x =$][]",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "On the diagram, sketch the graph of $y = \\sin x$ for $0° \\leqslant x \\leqslant 360°$.\n\\newline\n"
+          }
+        ],
+        "marks": 2,
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Solve the equation $5\\sin x + 4 = 0$ for $0° \\leqslant x \\leqslant 360°$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x =$ \\makebox[1.5cm]{\\hrulefill} or $x =$"
+        },
+        "marks": 3,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "sketch",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.012]\n% Axes\n\\draw[thick,->] (0,0) -- (380,0) node[right] {$x$};\n\\draw[thick,->] (0,-120) -- (0,150) node[above] {$y$};\n\n% Y-axis labels\n\\node[left] at (0,100) {1};\n\\node[left] at (0,-100) {$-1$};\n\\node[left] at (0,0) {0};\n\n% X-axis label\n\\node[below] at (360,0) {$360°$};\n\\end{tikzpicture}\n\\end{center}"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper42/Q09/Q09.png"
+      }
+    ],
+    "_rawBody": "\\begin{center}\n\\begin{tikzpicture}[scale=0.012]\n% Axes\n\\draw[thick,->] (0,0) -- (380,0) node[right] {$x$};\n\\draw[thick,->] (0,-120) -- (0,150) node[above] {$y$};\n\n% Y-axis labels\n\\node[left] at (0,100) {1};\n\\node[left] at (0,-100) {$-1$};\n\\node[left] at (0,0) {0};\n\n% X-axis label\n\\node[below] at (360,0) {$360°$};\n\\end{tikzpicture}\n\\end{center}\n\n\\begin{parts}\n\\part On the diagram, sketch the graph of $y = \\sin x$ for $0° \\leqslant x \\leqslant 360°$.\n\\Marks{2}\n\n\\part Solve the equation $5\\sin x + 4 = 0$ for $0° \\leqslant x \\leqslant 360°$.\n\n\\AnswerLine[$x =$ \\makebox[1.5cm]{\\hrulefill} or $x =$][]\n\\Marks{3}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper42/Q09/Q09.png"
+    ]
+  },
+  {
+    "id": "0580-2022OctNov-Paper42-Q10",
+    "paper": "2022OctNov-Paper42",
+    "qnum": 10,
+    "marks": 8,
+    "topics": [
+      "Number",
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": null,
+    "d": 2,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/42/O/N/22 Q10",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "(a) \nThe lengths of the sides of a triangle are $11.4\\,\\text{cm}$, $14.8\\,\\text{cm}$ and $15.7\\,\\text{cm}$, all correct to 1 decimal place.\n\\newline\n\nCalculate the upper bound of the perimeter of the triangle.\n\\newline\n\nt\n\nThe diagram shows a circle, radius $15.6\\,\\text{cm}$.\n\\newline\n\nThe angle of the minor sector is $150°$.\n\\newline\n\nCalculate the area of the minor sector.\n\\newline\n\nt\n\nThe diagram shows a circle, radius $r\\,\\text{cm}$ and minor sector angle $x°$.\n\\newline\n\nThe **perimeter** of the major sector is three times the **perimeter** of the minor sector.\n\\newline\n\nShow that $x = \\dfrac{90(\\pi - 2)}{\\pi}$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The lengths of the sides of a triangle are $11.4\\,\\text{cm}$, $14.8\\,\\text{cm}$ and $15.7\\,\\text{cm}$, all correct to 1 decimal place.\n\\newline\n\nCalculate the upper bound of the perimeter of the triangle.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "cm"
+        },
+        "marks": 2,
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.1]\n% Circle\n\\draw (0,0) circle (15.6);\n\n% Sector\n\\draw (0,0) -- (150:15.6);\n\\draw (0,0) -- (0:15.6);\n\n% Arc for angle\n\\draw (0:3) arc (0:150:3);\n\\node at (75:5) {$150°$};\n\n% Radius label\n\\node at (-30:8) {$15.6\\,\\text{cm}$};\n\n% NOT TO SCALE\n\\node at (25,0) {NOT TO};\n\\node at (25,-3) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nThe diagram shows a circle, radius $15.6\\,\\text{cm}$.\n\\newline\n\nThe angle of the minor sector is $150°$.\n\\newline\n\nCalculate the area of the minor sector.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "cm$^2$"
+        },
+        "marks": 2,
+        "_compactMarks": true,
+        "_itemNewline": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.15]\n% Circle\n\\draw (0,0) circle (10);\n\n% Sector\n\\draw (0,0) -- (60:10);\n\\draw (0,0) -- (0:10);\n\n% Arc for angle\n\\draw (0:2) arc (0:60:2);\n\\node at (30:3.5) {$x°$};\n\n% Radius label\n\\node at (70:6) {$r\\,\\text{cm}$};\n\n% NOT TO SCALE\n\\node at (18,5) {NOT TO};\n\\node at (18,3) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nThe diagram shows a circle, radius $r\\,\\text{cm}$ and minor sector angle $x°$.\n\\newline\n\nThe \\textbf{perimeter} of the major sector is three times the \\textbf{perimeter} of the minor sector.\n\\newline\n\nShow that $x = \\dfrac{90(\\pi - 2)}{\\pi}$.\n\\newline\n"
+          }
+        ],
+        "marks": 4,
+        "_compactMarks": true,
+        "_itemNewline": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "",
+    "cmd": "show",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\part The lengths of the sides of a triangle are 11.4\\,cm, 14.8\\,cm and 15.7\\,cm, all correct to 1 decimal place.\n\nCalculate the upper bound of the perimeter of the triangle.\n\n\\AnswerLine[][cm]\n\\Marks{2}\n\n\\part\n\\begin{center}\n\\begin{tikzpicture}[scale=0.1]\n% Circle\n\\draw (0,0) circle (15.6);\n\n% Sector\n\\draw (0,0) -- (150:15.6);\n\\draw (0,0) -- (0:15.6);\n\n% Arc for angle\n\\draw (0:3) arc (0:150:3);\n\\node at (75:5) {$150°$};\n\n% Radius label\n\\node at (-30:8) {15.6\\,cm};\n\n% NOT TO SCALE\n\\node at (25,0) {NOT TO};\n\\node at (25,-3) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nThe diagram shows a circle, radius 15.6\\,cm.\n\nThe angle of the minor sector is $150°$.\n\nCalculate the area of the minor sector.\n\n\\AnswerLine[][cm$^2$]\n\\Marks{2}\n\n\\part\n\\begin{center}\n\\begin{tikzpicture}[scale=0.15]\n% Circle\n\\draw (0,0) circle (10);\n\n% Sector\n\\draw (0,0) -- (60:10);\n\\draw (0,0) -- (0:10);\n\n% Arc for angle\n\\draw (0:2) arc (0:60:2);\n\\node at (30:3.5) {$x°$};\n\n% Radius label\n\\node at (70:6) {$r$\\,cm};\n\n% NOT TO SCALE\n\\node at (18,5) {NOT TO};\n\\node at (18,3) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nThe diagram shows a circle, radius $r$\\,cm and minor sector angle $x°$.\n\nThe \\textbf{perimeter} of the major sector is three times the \\textbf{perimeter} of the minor sector.\n\nShow that $x = \\dfrac{90(\\pi - 2)}{\\pi}$.\n\\Marks{4}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper42-Q11",
+    "paper": "2022OctNov-Paper42",
+    "qnum": 11,
+    "marks": 8,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry",
+      "Transformations and vectors"
+    ],
+    "s": "3.6",
+    "d": 2,
+    "cat": "coord",
+    "topic": "Position vectors",
+    "qtype": "parallel lines",
+    "g": "mixed",
+    "src": "0580/42/O/N/22 Q11",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "(a) \n$\\left| \\begin{pmatrix} 9m \\\\ 40m \\end{pmatrix} \\right| = \\dfrac{205}{2}$\n\nFind the two possible values of $m$.\n\\newline\n\n{---} or][]\n\nt\n\n$OABC$ is a parallelogram.\n\\newline\n\n$\\overrightarrow{OA} = \\mathbf{a}$ and $\\overrightarrow{OC} = \\mathbf{c}$.\n\\newline\n\n$P$ is the point on $CB$ such that $CP : PB = 3 : 1$.\n\\newline\n\n(i)  Find, in terms of $\\mathbf{a}$ and/or $\\mathbf{c}$, in their simplest form,\n\n(b) $\\overrightarrow{AC}$,\n\n(c) $\\overrightarrow{CP}$,\n\n(d) $\\overrightarrow{OP}$.\n\\newline\n\n $OP$ and $AB$ are extended to meet at $Q$.\n\\newline\n\nFind the position vector of $Q$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "$\\left| \\begin{pmatrix} 9m \\\\ 40m \\end{pmatrix} \\right| = \\dfrac{205}{2}$\n\nFind the two possible values of $m$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$m =$ \\makebox[1.5cm]{\\hrulefill} or"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "text",
+            "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.7]\n% Parallelogram\n\\coordinate (O) at (0,0);\n\\coordinate (C) at (4,0);\n\\coordinate (A) at (1.5,2);\n\\coordinate (B) at (5.5,2);\n\n% Point P on CB\n\\coordinate (P) at (4.5,1.5);\n\n\\draw (O) -- (A) -- (B) -- (C) -- cycle;\n\\draw (O) -- (C);\n\\draw (C) -- (B);\n\n% Vector arrows\n\\draw[->,thick] (O) -- (0.75,1) node[midway,left] {\\textbf{a}};\n\\draw[->,thick] (O) -- (2,0) node[midway,below] {\\textbf{c}};\n\n% Point P\n\\fill (P) circle (2pt);\n\\node[right] at (P) {$P$};\n\n% Labels\n\\node[below left] at (O) {$O$};\n\\node[above left] at (A) {$A$};\n\\node[above right] at (B) {$B$};\n\\node[below right] at (C) {$C$};\n\n% NOT TO SCALE\n\\node at (7,1) {NOT TO};\n\\node at (7,0.5) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\n$OABC$ is a parallelogram.\n\\newline\n\n$\\overrightarrow{OA} = \\mathbf{a}$ and $\\overrightarrow{OC} = \\mathbf{c}$.\n\\newline\n\n$P$ is the point on $CB$ such that $CP : PB = 3 : 1$.\n\\newline\n\n\\begin{subparts}\n\\subpart Find, in terms of $\\mathbf{a}$ and/or $\\mathbf{c}$, in their simplest form,\n\n\\begin{parts}"
+          }
+        ],
+        "_itemNewline": true
+      },
+      {
+        "label": "(c)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "$\\overrightarrow{AC}$,"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$\\overrightarrow{AC} =$"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "content": [
+          {
+            "type": "text",
+            "content": "$\\overrightarrow{CP}$,"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$\\overrightarrow{CP} =$"
+        },
+        "marks": 1,
+        "_compactMarks": true
+      },
+      {
+        "label": "(e)",
+        "content": [
+          {
+            "type": "text",
+            "content": "$\\overrightarrow{OP}$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$\\overrightarrow{OP} =$"
+        },
+        "marks": 1,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\part $\\left| \\begin{pmatrix} 9m \\\\ 40m \\end{pmatrix} \\right| = \\dfrac{205}{2}$\n\nFind the two possible values of $m$.\n\n\\AnswerLine[$m =$ \\makebox[1.5cm]{\\hrulefill} or][]\n\\Marks{3}\n\n\\part\n\\begin{center}\n\\begin{tikzpicture}[scale=0.7]\n% Parallelogram\n\\coordinate (O) at (0,0);\n\\coordinate (C) at (4,0);\n\\coordinate (A) at (1.5,2);\n\\coordinate (B) at (5.5,2);\n\n% Point P on CB\n\\coordinate (P) at (4.5,1.5);\n\n\\draw (O) -- (A) -- (B) -- (C) -- cycle;\n\\draw (O) -- (C);\n\\draw (C) -- (B);\n\n% Vector arrows\n\\draw[->,thick] (O) -- (0.75,1) node[midway,left] {\\textbf{a}};\n\\draw[->,thick] (O) -- (2,0) node[midway,below] {\\textbf{c}};\n\n% Point P\n\\fill (P) circle (2pt);\n\\node[right] at (P) {$P$};\n\n% Labels\n\\node[below left] at (O) {$O$};\n\\node[above left] at (A) {$A$};\n\\node[above right] at (B) {$B$};\n\\node[below right] at (C) {$C$};\n\n% NOT TO SCALE\n\\node at (7,1) {NOT TO};\n\\node at (7,0.5) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\n$OABC$ is a parallelogram.\n\n$\\overrightarrow{OA} = \\mathbf{a}$ and $\\overrightarrow{OC} = \\mathbf{c}$.\n\n$P$ is the point on $CB$ such that $CP : PB = 3 : 1$.\n\n\\begin{subparts}\n\\subpart Find, in terms of $\\mathbf{a}$ and/or $\\mathbf{c}$, in their simplest form,\n\n\\begin{parts}\n\\item $\\overrightarrow{AC}$,\n\n\\AnswerLine[$\\overrightarrow{AC} =$][]\n\\Marks{1}\n\n\\item $\\overrightarrow{CP}$,\n\n\\AnswerLine[$\\overrightarrow{CP} =$][]\n\\Marks{1}\n\n\\item $\\overrightarrow{OP}$.\n\n\\AnswerLine[$\\overrightarrow{OP} =$][]\n\\Marks{1}\n\n\\end{parts}\n\n\\subpart $OP$ and $AB$ are extended to meet at $Q$.\n\nFind the position vector of $Q$.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_postParts": [
+      {
+        "type": "text",
+        "content": "\\subpart $OP$ and $AB$ are extended to meet at $Q$.\n\nFind the position vector of $Q$.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{subparts}\n\n\\end{parts}"
+      }
+    ],
+    "_partCmd": true
+  }
+]

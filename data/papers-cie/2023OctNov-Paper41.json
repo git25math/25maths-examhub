@@ -1,0 +1,1556 @@
+[
+  {
+    "id": "0580-2023OctNov-Paper41-Q01",
+    "paper": "2023OctNov-Paper41",
+    "qnum": 1,
+    "marks": 9,
+    "topics": [
+      "Number",
+      "Transformations and vectors"
+    ],
+    "s": null,
+    "d": 2,
+    "cat": "number",
+    "topic": null,
+    "qtype": "Transformation Geometry",
+    "g": "mixed",
+    "src": "0580/41/O/N/23 Q01",
+    "year": 2023,
+    "session": "OctNov",
+    "tex": "\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\n(a) Describe fully the single transformation that maps\n\n(i) (b) shape $A$ onto shape $B$,\n\n(c) shape $A$ onto shape $C$.\n\\newline\n\n(d) On the grid, draw the image of\n\n(i) (e) shape $A$ after a reflection in the line $y = 2$,\n\n(f) shape $A$ after an enlargement, scale factor $-\\frac{1}{2}$, centre $(0, 0)$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Describe fully the single transformation that maps"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "shape $A$ onto shape $B$,"
+              }
+            ],
+            "answer": {
+              "type": "multiline",
+              "lines": 1
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "shape $A$ onto shape $C$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "multiline",
+              "lines": 1
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "On the grid, draw the image of"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "shape $A$ after a reflection in the line $y = 2$,"
+              }
+            ],
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "shape $A$ after an enlargement, scale factor $-\\frac{1}{2}$, centre $(0, 0)$.\n\\newline\n"
+              }
+            ],
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "describe",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper41/Q01/Q01-TransformationGrid.png"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{InsertScreenShot}\n\t\\relinput{Figures/Q01-TransformationGrid.tex}\n\\end{InsertScreenShot}"
+      }
+    ],
+    "_rawBody": "\\begin{InsertScreenShot}\n\t\\relinput{Figures/Q01-TransformationGrid.tex}\n\\end{InsertScreenShot}\n\n\\begin{parts}\n\\item Describe fully the single transformation that maps\n\n\\begin{subparts}\n\\item shape $A$ onto shape $B$,\n\n\\answerlines[1]\n\\Marks{2}\n\n\\item shape $A$ onto shape $C$.\n\n\\answerlines[1]\n\\Marks{3}\n\\end{subparts}\n\n\\item On the grid, draw the image of\n\n\\begin{subparts}\n\\item shape $A$ after a reflection in the line $y = 2$,\n\\Marks{2}\n\n\\item shape $A$ after an enlargement, scale factor $-\\frac{1}{2}$, centre $(0, 0)$.\n\\Marks{2}\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_compactItems": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper41/Q01/Q01-TransformationGrid.png"
+    ]
+  },
+  {
+    "id": "0580-2023OctNov-Paper41-Q02",
+    "paper": "2023OctNov-Paper41",
+    "qnum": 2,
+    "marks": 12,
+    "topics": [
+      "Number",
+      "Algebra and graphs"
+    ],
+    "s": "2.2",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Rearranging formulae",
+    "qtype": "substitution, solving linear equations, expanding and simplifying, rearranging formula with powers, factorisation by grouping",
+    "g": "rearrange",
+    "src": "0580/41/O/N/23 Q02",
+    "year": 2023,
+    "session": "OctNov",
+    "tex": "(a) $s = \\frac{1}{2}at^2$\n\nFind the value of $s$ when $a = 9.8$ and $t = 20$.\n\\newline\n\n(b) Solve.\n\\newline\n\\[ 5(4y - 3) = 15 \\]\n\n(c) Expand and simplify.\n\\newline\n\n\\[ 3(5x - 8) - 2(3x - 7) \\]\n\n(d) Rearrange $A = 2b^2 - 3c^3$ to make $c$ the subject.\n\\newline\n\n(e) Factorise completely.\n\\newline\n\n\\[ 6pq - 4q - 3p + 2 \\]",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "$s = \\frac{1}{2}at^2$\n\nFind the value of $s$ when $a = 9.8$ and $t = 20$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$s = $"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Solve.\n\\newline\n\\[ 5(4y - 3) = 15 \\]"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$y = $"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Expand and simplify.\n\\newline\n\n\\[ 3(5x - 8) - 2(3x - 7) \\]"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Rearrange $A = 2b^2 - 3c^3$ to make $c$ the subject.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$c = $"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(e)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Factorise completely.\n\\newline\n\n\\[ 6pq - 4q - 3p + 2 \\]"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item $s = \\frac{1}{2}at^2$\n\nFind the value of $s$ when $a = 9.8$ and $t = 20$.\n\n\\AnswerLine[$s = $][]\n\\Marks{2}\n\n\\item Solve.\n\\[ 5(4y - 3) = 15 \\]\n\n\\AnswerLine[$y = $][]\n\\Marks{3}\n\n\\item Expand and simplify.\n\n\\[ 3(5x - 8) - 2(3x - 7) \\]\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item Rearrange $A = 2b^2 - 3c^3$ to make $c$ the subject.\n\n\\AnswerLine[$c = $][]\n\\Marks{3}\n\n\\item Factorise completely.\n\n\\[ 6pq - 4q - 3p + 2 \\]\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_compactBegin": true,
+    "_compactEnd": true
+  },
+  {
+    "id": "0580-2023OctNov-Paper41-Q03",
+    "paper": "2023OctNov-Paper41",
+    "qnum": 3,
+    "marks": 13,
+    "topics": [
+      "Number",
+      "Mensuration",
+      "Statistics"
+    ],
+    "s": "1.8",
+    "d": 2,
+    "cat": "number",
+    "topic": "Ratio, rate and proportion",
+    "qtype": "Standard form conversion, percentage of quantity calculation",
+    "g": "mixed",
+    "src": "0580/41/O/N/23 Q03",
+    "year": 2023,
+    "session": "OctNov",
+    "tex": "(a) The table shows information about some of the planets in the solar system.\n\\newline\n\n\\begin{tabular}{|l|c|c|}\n\\hline\nPlanet & Diameter (km) & Average distance from the Sun (km) \\\\\n\\hline\nEarth & 12 800 & $1.496 \\times 10^8$ \\\\\nMars & 6 800 & $2.279 \\times 10^8$ \\\\\nJupiter & 143 000 & $7.786 \\times 10^8$ \\\\\nSaturn & 120 500 & $1.434 \\times 10^9$ \\\\\nNeptune & 49 500 & $4.495 \\times 10^9$ \\\\\n\\hline\n\\end{tabular}\n(i) (b) The average distance of Mars from the Sun is $2.279 \\times 10^8$ km.\n\\newline\n\nWrite this distance as an ordinary number.\n\\newline\n\n(c) The planet Uranus has a diameter that is $35.8\\%$ of the diameter of Jupiter.\n\\newline\n\nCalculate the diameter of Uranus.\n\\newline\n\n(d) The ratio diameter of Neptune : diameter of Saturn can be written in the form $1 : n$.\n\\newline\n\nFind the value of $n$.\n\\newline\n\n(e) Find the average distance of Neptune from the Sun as a percentage of the average distance of the Earth from the Sun.\n\\newline\n\n(f) Distances within the solar system are also measured in astronomical units (AU).\n\\newline\n\nThe average distance of Jupiter from the Sun is 5.20 AU.\n\\newline\n\nCalculate the average distance of Mars from the Sun in astronomical units.\n\\newline\n\n(g) The diameter of Mars is $39.2\\%$ greater than the diameter of Mercury.\n\\newline\n\nCalculate the diameter of Mercury.\n\\newline\n\n(h) One light year is the distance that light travels in a year of 365.25 days.\n\\newline\n\nThe speed of light is $2.9979 \\times 10^5$ kilometres per second.\n\\newline\n\n(i) (i) Show that one light year is $9.461 \\times 10^{12}$ km, correct to 4 significant figures.\n\\newline\n\n(j) The distance from the Andromeda Galaxy to Earth is $2.40 \\times 10^{19}$ km.\n\\newline\n\nCalculate the time taken for light to travel from this galaxy to Earth.\n\\newline\n\nGive your answer in millions of years.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The table shows information about some of the planets in the solar system.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{center}\n\\begin{tabular}{|l|c|c|}\n\\hline\nPlanet & Diameter (km) & Average distance from the Sun (km) \\\\\n\\hline\nEarth & 12 800 & $1.496 \\times 10^8$ \\\\\nMars & 6 800 & $2.279 \\times 10^8$ \\\\\nJupiter & 143 000 & $7.786 \\times 10^8$ \\\\\nSaturn & 120 500 & $1.434 \\times 10^9$ \\\\\nNeptune & 49 500 & $4.495 \\times 10^9$ \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "The average distance of Mars from the Sun is $2.279 \\times 10^8$ km.\n\\newline\n"
+              },
+              {
+                "type": "space",
+                "height": "0.8em",
+                "cmd": "vgap"
+              },
+              {
+                "type": "text",
+                "content": "Write this distance as an ordinary number.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "km"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "The planet Uranus has a diameter that is $35.8\\%$ of the diameter of Jupiter.\n\\newline\n"
+              },
+              {
+                "type": "space",
+                "height": "0.8em",
+                "cmd": "vgap"
+              },
+              {
+                "type": "text",
+                "content": "Calculate the diameter of Uranus.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "km"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "The ratio diameter of Neptune : diameter of Saturn can be written in the form $1 : n$.\n\\newline\n"
+              },
+              {
+                "type": "space",
+                "height": "0.8em",
+                "cmd": "vgap"
+              },
+              {
+                "type": "text",
+                "content": "Find the value of $n$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$n = $"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iv)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the average distance of Neptune from the Sun as a percentage of the average distance of the Earth from the Sun.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "\\%"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(v)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Distances within the solar system are also measured in astronomical units (AU).\n\\newline\n\nThe average distance of Jupiter from the Sun is 5.20 AU.\n\\newline\n"
+              },
+              {
+                "type": "space",
+                "height": "0.8em",
+                "cmd": "vgap"
+              },
+              {
+                "type": "text",
+                "content": "Calculate the average distance of Mars from the Sun in astronomical units.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "AU"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(vi)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "The diameter of Mars is $39.2\\%$ greater than the diameter of Mercury.\n\\newline\n"
+              },
+              {
+                "type": "space",
+                "height": "0.8em",
+                "cmd": "vgap"
+              },
+              {
+                "type": "text",
+                "content": "Calculate the diameter of Mercury.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "km"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "One light year is the distance that light travels in a year of 365.25 days.\n\\newline\n\nThe speed of light is $2.9979 \\times 10^5$ kilometres per second.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Show that one light year is $9.461 \\times 10^{12}$ km, correct to 4 significant figures.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "none",
+              "space": {
+                "type": "drawing",
+                "height": "2cm",
+                "cmd": "Answerspace"
+              }
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "The distance from the Andromeda Galaxy to Earth is $2.40 \\times 10^{19}$ km.\n\\newline\n"
+              },
+              {
+                "type": "space",
+                "height": "0.8em",
+                "cmd": "vgap"
+              },
+              {
+                "type": "text",
+                "content": "Calculate the time taken for light to travel from this galaxy to Earth.\n\\newline\n\nGive your answer in millions of years.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "million years"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "show",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item The table shows information about some of the planets in the solar system.\n\n\\begin{center}\n\\begin{tabular}{|l|c|c|}\n\\hline\nPlanet & Diameter (km) & Average distance from the Sun (km) \\\\\n\\hline\nEarth & 12 800 & $1.496 \\times 10^8$ \\\\\nMars & 6 800 & $2.279 \\times 10^8$ \\\\\nJupiter & 143 000 & $7.786 \\times 10^8$ \\\\\nSaturn & 120 500 & $1.434 \\times 10^9$ \\\\\nNeptune & 49 500 & $4.495 \\times 10^9$ \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\begin{subparts}\n\\item The average distance of Mars from the Sun is $2.279 \\times 10^8$ km.\n\n\\vgap\n\nWrite this distance as an ordinary number.\n\n\\AnswerLine[][km]\n\\Marks{1}\n\n\\item The planet Uranus has a diameter that is $35.8\\%$ of the diameter of Jupiter.\n\n\\vgap\n\nCalculate the diameter of Uranus.\n\n\\AnswerLine[][km]\n\\Marks{2}\n\n\\item The ratio diameter of Neptune : diameter of Saturn can be written in the form $1 : n$.\n\n\\vgap\n\nFind the value of $n$.\n\n\\AnswerLine[$n = $]\n\\Marks{1}\n\n\\item Find the average distance of Neptune from the Sun as a percentage of the average distance of the Earth from the Sun.\n\n\\AnswerLine[][\\%]\n\\Marks{2}\n\n\\item Distances within the solar system are also measured in astronomical units (AU).\n\nThe average distance of Jupiter from the Sun is 5.20 AU.\n\n\\vgap\n\nCalculate the average distance of Mars from the Sun in astronomical units.\n\n\\AnswerLine[][AU]\n\\Marks{2}\n\n\\item The diameter of Mars is $39.2\\%$ greater than the diameter of Mercury.\n\n\\vgap\n\nCalculate the diameter of Mercury.\n\n\\AnswerLine[][km]\n\\Marks{2}\n\\end{subparts}\n\n\\item One light year is the distance that light travels in a year of 365.25 days.\n\nThe speed of light is $2.9979 \\times 10^5$ kilometres per second.\n\n\\begin{subparts}\n\\item Show that one light year is $9.461 \\times 10^{12}$ km, correct to 4 significant figures.\n\n\\Answerspace[2cm]\n\\Marks{2}\n\n\\item The distance from the Andromeda Galaxy to Earth is $2.40 \\times 10^{19}$ km.\n\n\\vgap\n\nCalculate the time taken for light to travel from this galaxy to Earth.\n\nGive your answer in millions of years.\n\n\\AnswerLine[][million years]\n\\Marks{2}\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_compactBegin": true,
+    "_compactEnd": true,
+    "_compactItems": true
+  },
+  {
+    "id": "0580-2023OctNov-Paper41-Q04",
+    "paper": "2023OctNov-Paper41",
+    "qnum": 4,
+    "marks": 11,
+    "topics": [
+      "Number",
+      "Probability"
+    ],
+    "s": null,
+    "d": 2,
+    "cat": "number",
+    "topic": null,
+    "qtype": "Probability",
+    "g": "mixed",
+    "src": "0580/41/O/N/23 Q04",
+    "year": 2023,
+    "session": "OctNov",
+    "tex": "(a) Lucia has two fair spinners.\n\\newline\n\nSpinner $A$ is five-sided and is numbered 1, 2, 3, 4, 5.\n\\newline\n\nSpinner $B$ is nine-sided and is numbered 3, 3, 3, 4, 4, 4, 4, 5, 5.\n\\newline\n\nLucia spins the two spinners and records whether they land on a prime number.\n\\newline\n\n(i) (b) Complete the tree diagram.\n\\newline\n\n(c) Find the probability that\n\n\\begin{subsubparts}\n\n(d) the two numbers are both prime,\n\n(e) the two numbers are not both prime.\n\\newline\n\n\\end{subsubparts}\n\n(f) Lucia spins Spinner $A$ 120 times.\n\\newline\n\nFind the expected number of times the spinner lands on a prime number.\n\\newline\n\n(g) Lucia spins Spinner $B$ twice.\n\\newline\n\nFind the probability that the two numbers it lands on add up to 9 or more.\n\\newline\n\n(h) Lucia keeps spinning Spinner $B$ until it lands on a 4.\n\\newline\n\nFind an expression, in terms of $n$, for the probability that this happens on the $n$th spin.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Lucia has two fair spinners.\n\\newline\n\nSpinner $A$ is five-sided and is numbered 1, 2, 3, 4, 5.\n\\newline\n\nSpinner $B$ is nine-sided and is numbered 3, 3, 3, 4, 4, 4, 4, 5, 5.\n\\newline\n\nLucia spins the two spinners and records whether they land on a prime number.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Complete the tree diagram.\n\\newline\n"
+              },
+              {
+                "type": "figure",
+                "src": "Figures/Q04a-TreeDiagram.tex"
+              }
+            ]
+          },
+          {
+            "label": "(ii)",
+            "marks": 0,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the probability that"
+              }
+            ],
+            "subsubparts": [
+              {
+                "label": "(p)",
+                "content": [
+                  {
+                    "type": "text",
+                    "content": "the two numbers are both prime,"
+                  }
+                ],
+                "answer": {
+                  "type": "number"
+                },
+                "marks": 2
+              },
+              {
+                "label": "(q)",
+                "content": [
+                  {
+                    "type": "text",
+                    "content": "the two numbers are not both prime."
+                  }
+                ],
+                "answer": {
+                  "type": "number"
+                },
+                "marks": 1
+              }
+            ]
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Lucia spins Spinner $A$ 120 times.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "text",
+            "content": "Find the expected number of times the spinner lands on a prime number.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Lucia spins Spinner $B$ twice.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "text",
+            "content": "Find the probability that the two numbers it lands on add up to 9 or more.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Lucia keeps spinning Spinner $B$ until it lands on a 4.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "text",
+            "content": "Find an expression, in terms of $n$, for the probability that this happens on the $n$th spin.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Lucia has two fair spinners.\n\nSpinner $A$ is five-sided and is numbered 1, 2, 3, 4, 5.\n\nSpinner $B$ is nine-sided and is numbered 3, 3, 3, 4, 4, 4, 4, 5, 5.\n\nLucia spins the two spinners and records whether they land on a prime number.\n\n\\begin{subparts}\n\\item Complete the tree diagram.\n\n\\relinput{Figures/Q04a-TreeDiagram.tex}\n\n\\Marks{2}\n\n\\item Find the probability that\n\n\\begin{subsubparts}\n\\item the two numbers are both prime,\n\n\\AnswerLine\n\\Marks{2}\n\n\\item the two numbers are not both prime.\n\n\\AnswerLine\n\\Marks{1}\n\\end{subsubparts}\n\\end{subparts}\n\n\\item Lucia spins Spinner $A$ 120 times.\n\n\\vgap\n\nFind the expected number of times the spinner lands on a prime number.\n\n\\AnswerLine\n\\Marks{1}\n\n\\item Lucia spins Spinner $B$ twice.\n\n\\vgap\n\nFind the probability that the two numbers it lands on add up to 9 or more.\n\n\\AnswerLine\n\\Marks{3}\n\n\\item Lucia keeps spinning Spinner $B$ until it lands on a 4.\n\n\\vgap\n\nFind an expression, in terms of $n$, for the probability that this happens on the $n$th spin.\n\n\\AnswerLine\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_compactBegin": true,
+    "_compactEnd": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper41/Q04/Q04a-TreeDiagram.png"
+    ]
+  },
+  {
+    "id": "0580-2023OctNov-Paper41-Q05",
+    "paper": "2023OctNov-Paper41",
+    "qnum": 5,
+    "marks": 14,
+    "topics": [
+      "Number",
+      "Geometry"
+    ],
+    "s": null,
+    "d": 2,
+    "cat": "number",
+    "topic": null,
+    "qtype": "Geometry, Trigonometry",
+    "g": "mixed",
+    "src": "0580/41/O/N/23 Q05",
+    "year": 2023,
+    "session": "OctNov",
+    "tex": "(a) \\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\n$ACD$ is a right-angled triangle.\n\\newline\n\n$B$ is on $AC$ and $BC = 54.5$ m.\n\\newline\n\n$AD = 83.2$ m and angle $ABD = 38^{\\circ}$.\n\\newline\n\nCalculate angle $ACD$.\n\\newline\n\n(b) \\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\n$EFG$ is a right-angled triangle.\n\\newline\n\nA circle can be drawn that passes through the three vertices of the triangle.\n\\newline\n\nOn the diagram, mark the position of the centre of the circle with a cross.\n\\newline\n\nExplain how you decide.\n\\newline\n\n(c) \\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\nIn triangle $LMN$, the ratio angle $L$ : angle $M$ : angle $N = 4 : 5 : 6$.\n\\newline\n\nIn triangle $PQR$, $PQ = 6$ cm, $PR = 4$ cm and $QR = 5$ cm.\n\\newline\n\nCalculate the difference between the largest angle in triangle $PQR$ and the largest angle in triangle $LMN$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 5,
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper41/Q05/Q05a-Triangle.png"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{InsertScreenShot}\n\t\\relinput{Figures/Q05a-Triangle.tex}\n\\end{InsertScreenShot}"
+          },
+          {
+            "type": "text",
+            "content": "$ACD$ is a right-angled triangle.\n\\newline\n\n$B$ is on $AC$ and $BC = 54.5$ m.\n\\newline\n\n$AD = 83.2$ m and angle $ABD = 38^{\\circ}$.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "text",
+            "content": "Calculate angle $ACD$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "Angle $ACD = $"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper41/Q05/Q05b-CircleTriangle.png"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{InsertScreenShot}\n\t\\relinput{Figures/Q05b-CircleTriangle.tex}\n\\end{InsertScreenShot}"
+          },
+          {
+            "type": "text",
+            "content": "$EFG$ is a right-angled triangle.\n\\newline\n\nA circle can be drawn that passes through the three vertices of the triangle.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "text",
+            "content": "On the diagram, mark the position of the centre of the circle with a cross.\n\\newline\n\nExplain how you decide.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          }
+        ],
+        "answer": {
+          "type": "multiline",
+          "lines": 2
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 7,
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper41/Q05/Q05c-TrianglesRatio.png"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{InsertScreenShot}\n\t\\relinput{Figures/Q05c-TrianglesRatio.tex}\n\\end{InsertScreenShot}"
+          },
+          {
+            "type": "text",
+            "content": "In triangle $LMN$, the ratio angle $L$ : angle $M$ : angle $N = 4 : 5 : 6$.\n\\newline\n\nIn triangle $PQR$, $PQ = 6$ cm, $PR = 4$ cm and $QR = 5$ cm.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "text",
+            "content": "Calculate the difference between the largest angle in triangle $PQR$ and the largest angle in triangle $LMN$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "explain",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item \n\\begin{InsertScreenShot}\n\t\\relinput{Figures/Q05a-Triangle.tex}\n\\end{InsertScreenShot}\n\n$ACD$ is a right-angled triangle.\n\n$B$ is on $AC$ and $BC = 54.5$ m.\n\n$AD = 83.2$ m and angle $ABD = 38^{\\circ}$.\n\n\\vgap\n\nCalculate angle $ACD$.\n\n\\AnswerLine[Angle $ACD = $][]\n\\Marks{5}\n\n\\item \n\\begin{InsertScreenShot}\n\t\\relinput{Figures/Q05b-CircleTriangle.tex}\n\\end{InsertScreenShot}\n\n$EFG$ is a right-angled triangle.\n\nA circle can be drawn that passes through the three vertices of the triangle.\n\n\\vgap\n\nOn the diagram, mark the position of the centre of the circle with a cross.\n\nExplain how you decide.\n\n\\vgap\n\n\\answerlines[2]\n\\Marks{2}\n\n\\item \n\\begin{InsertScreenShot}\n\t\\relinput{Figures/Q05c-TrianglesRatio.tex}\n\\end{InsertScreenShot}\n\nIn triangle $LMN$, the ratio angle $L$ : angle $M$ : angle $N = 4 : 5 : 6$.\n\nIn triangle $PQR$, $PQ = 6$ cm, $PR = 4$ cm and $QR = 5$ cm.\n\n\\vgap\n\nCalculate the difference between the largest angle in triangle $PQR$ and the largest angle in triangle $LMN$.\n\n\\AnswerLine[][]\n\\Marks{7}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_compactBegin": true,
+    "_compactEnd": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper41/Q05/Q05a-Triangle.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper41/Q05/Q05b-CircleTriangle.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper41/Q05/Q05c-TrianglesRatio.png"
+    ]
+  },
+  {
+    "id": "0580-2023OctNov-Paper41-Q06",
+    "paper": "2023OctNov-Paper41",
+    "qnum": 6,
+    "marks": 11,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.7",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Sequences",
+    "qtype": "finding nth term of linear and quadratic sequences, sum of terms",
+    "g": "quadratic",
+    "src": "0580/41/O/N/23 Q06",
+    "year": 2023,
+    "session": "OctNov",
+    "tex": "(a) ~\n\\begin{tabular}{|l|*{6}{c|}}\n\\hline\nSequence & 1st term & 2nd term & 3rd term & 4th term & 5th term & $n$th term \\\\\n\\hline\nA & -7 & -3 & 1 & 5 & \\dots\\dots & \\dots\\dots \\\\\n\\hline\nB & 7 & 13 & 23 & 37 & \\dots\\dots & \\dots\\dots \\\\\n\\hline\nC & 27 & 81 & 243 & 729 & \\dots\\dots & \\dots\\dots \\\\\n\\hline\n\\end{tabular}\n\nComplete the table for the three sequences.\n\\newline\n\n(b) In a sequence, the sum of the first 49 terms is 7644.\n\\newline\n\nThe sum of the first 50 terms is 7975.\n\\newline\n\nFind the 50th term of this sequence.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 10,
+        "content": [
+          {
+            "type": "text",
+            "content": "~"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{tabular}{|l|*{6}{c|}}\n\\hline\nSequence & 1st term & 2nd term & 3rd term & 4th term & 5th term & $n$th term \\\\\n\\hline\nA & -7 & -3 & 1 & 5 & \\dots\\dots & \\dots\\dots \\\\\n\\hline\nB & 7 & 13 & 23 & 37 & \\dots\\dots & \\dots\\dots \\\\\n\\hline\nC & 27 & 81 & 243 & 729 & \\dots\\dots & \\dots\\dots \\\\\n\\hline\n\\end{tabular}"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "text",
+            "content": "Complete the table for the three sequences.\n\\newline\n"
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "In a sequence, the sum of the first 49 terms is 7644.\n\\newline\n\nThe sum of the first 50 terms is 7975.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "text",
+            "content": "Find the 50th term of this sequence.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item ~\n\\begin{tabular}{|l|*{6}{c|}}\n\\hline\nSequence & 1st term & 2nd term & 3rd term & 4th term & 5th term & $n$th term \\\\\n\\hline\nA & -7 & -3 & 1 & 5 & \\dots\\dots & \\dots\\dots \\\\\n\\hline\nB & 7 & 13 & 23 & 37 & \\dots\\dots & \\dots\\dots \\\\\n\\hline\nC & 27 & 81 & 243 & 729 & \\dots\\dots & \\dots\\dots \\\\\n\\hline\n\\end{tabular}\n\n\\vgap\n\nComplete the table for the three sequences.\n\n\\Marks{10}\n\n\\item In a sequence, the sum of the first 49 terms is 7644.\n\nThe sum of the first 50 terms is 7975.\n\n\\vgap\n\nFind the 50th term of this sequence.\n\n\\AnswerLine\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_compactBegin": true,
+    "_compactEnd": true
+  },
+  {
+    "id": "0580-2023OctNov-Paper41-Q07",
+    "paper": "2023OctNov-Paper41",
+    "qnum": 7,
+    "marks": 7,
+    "topics": [
+      "Number",
+      "Statistics"
+    ],
+    "s": null,
+    "d": 2,
+    "cat": "number",
+    "topic": null,
+    "qtype": "Statistics (mean, histogram)",
+    "g": "mixed",
+    "src": "0580/41/O/N/23 Q07",
+    "year": 2023,
+    "session": "OctNov",
+    "tex": "The frequency table shows the time of each of 42 athletes in a race.\n\\newline\n\n\\begin{tabular}{|c|c|}\n\\hline\nTime ($t$ seconds) & Number of athletes \\\\\n\\hline\n$216 < t \\leqslant 219$ & 9 \\\\\n\\hline\n$219 < t \\leqslant 224$ & 14 \\\\\n\\hline\n$224 < t \\leqslant 234$ & 14 \\\\\n\\hline\n$234 < t \\leqslant 244$ & 2 \\\\\n\\hline\n$244 < t \\leqslant 264$ & 3 \\\\\n\\hline\n\\end{tabular}\n\n(a) Calculate an estimate of the mean time.\n\\newline\n\n(b) Complete the histogram to show the information in the frequency table.\n\\newline\n\nTwo of the blocks have been drawn for you.\n\\newline\n\n\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "text",
+            "content": "Calculate an estimate of the mean time.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "seconds"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Complete the histogram to show the information in the frequency table.\n\\newline\n\nTwo of the blocks have been drawn for you.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{InsertScreenShot}\n\\relinput{Figures/Q07-Histogram.tex}\n\\end{InsertScreenShot}"
+          }
+        ],
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The frequency table shows the time of each of 42 athletes in a race.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{tabular}{|c|c|}\n\\hline\nTime ($t$ seconds) & Number of athletes \\\\\n\\hline\n$216 < t \\leqslant 219$ & 9 \\\\\n\\hline\n$219 < t \\leqslant 224$ & 14 \\\\\n\\hline\n$224 < t \\leqslant 234$ & 14 \\\\\n\\hline\n$234 < t \\leqslant 244$ & 2 \\\\\n\\hline\n$244 < t \\leqslant 264$ & 3 \\\\\n\\hline\n\\end{tabular}"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      }
+    ],
+    "_rawBody": "The frequency table shows the time of each of 42 athletes in a race.\n\n\\vgap\n\n\\begin{tabular}{|c|c|}\n\\hline\nTime ($t$ seconds) & Number of athletes \\\\\n\\hline\n$216 < t \\leqslant 219$ & 9 \\\\\n\\hline\n$219 < t \\leqslant 224$ & 14 \\\\\n\\hline\n$224 < t \\leqslant 234$ & 14 \\\\\n\\hline\n$234 < t \\leqslant 244$ & 2 \\\\\n\\hline\n$244 < t \\leqslant 264$ & 3 \\\\\n\\hline\n\\end{tabular}\n\n\\vgap\n\n\\begin{parts}\n\\item Calculate an estimate of the mean time.\n\n\\AnswerLine[][seconds]\n\\Marks{4}\n\n\\item Complete the histogram to show the information in the frequency table.\n\nTwo of the blocks have been drawn for you.\n\n\\vgap\n\n\\begin{InsertScreenShot}\n\\relinput{Figures/Q07-Histogram.tex}\n\\end{InsertScreenShot}\n\\Marks{3}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEnd": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper41/Q07/Q07-Histogram.png"
+    ]
+  },
+  {
+    "id": "0580-2023OctNov-Paper41-Q08",
+    "paper": "2023OctNov-Paper41",
+    "qnum": 8,
+    "marks": 14,
+    "topics": [
+      "Number",
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "1.6",
+    "d": 2,
+    "cat": "number",
+    "topic": "Standard form",
+    "qtype": "Calculation of volume and mass for similar solids; Mensuration",
+    "g": "mixed",
+    "src": "0580/41/O/N/23 Q08",
+    "year": 2023,
+    "session": "OctNov",
+    "tex": "(a) ~\n\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\nThe diagram shows a solid formed by joining two hemispheres and a cylinder.\n\\newline\n\nThe radius of the large hemisphere is 5.4 cm.\n\\newline\n\nThe radius of the small hemisphere and the radius of the cylinder are both 3.6 cm.\n\\newline\n\nThe height of the cylinder is 6.5 cm.\n\\newline\n\n(i) (b) Show that the volume of the solid is 692 cm$^3$, correct to the nearest cubic centimetre.\n\\newline\n\n[The volume, $V$, of a sphere with radius $r$ is $V = \\frac{4}{3}\\pi r^3$.\n\\newline\n]\n\n(c) A mathematically similar solid is made of silver.\n\\newline\n\nIn this solid, the cylinder has radius 0.6 cm.\n\\newline\n\n1 cm$^3$ of silver has a mass of 10.49 grams.\n\\newline\n\nCalculate the total mass of this silver solid.\n\\newline\n\n(d) ~\n\n\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\n$AOB$ is a sector of a circle, centre $O$.\n\\newline\n\n$AO = 10$ cm and the sector angle is $216^{\\circ}$.\n\\newline\n\n(i) (e) Calculate the length of the arc of this sector.\n\\newline\n\nGive your answer as a multiple of $\\pi$.\n\\newline\n\n(f) A cone is made from this sector by joining $OA$ to $OB$.\n\\newline\n\nCalculate the volume of the cone.\n\\newline\n\n[The volume, $V$, of a cone with radius $r$ and height $h$ is $V = \\frac{1}{3}\\pi r^2 h$.\n\\newline\n]",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper41/Q08/Q08a-Solid.png"
+          },
+          {
+            "type": "text",
+            "content": "~"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{InsertScreenShot}\n\\relinput{Figures/Q08a-Solid.tex}\n\\end{InsertScreenShot}"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "text",
+            "content": "The diagram shows a solid formed by joining two hemispheres and a cylinder.\n\\newline\n\nThe radius of the large hemisphere is 5.4 cm.\n\\newline\n\nThe radius of the small hemisphere and the radius of the cylinder are both 3.6 cm.\n\\newline\n\nThe height of the cylinder is 6.5 cm.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 4,
+            "content": [
+              {
+                "type": "text",
+                "content": "Show that the volume of the solid is 692 cm$^3$, correct to the nearest cubic centimetre.\n\\newline\n\n[The volume, $V$, of a sphere with radius $r$ is $V = \\frac{4}{3}\\pi r^3$.\n\\newline\n]"
+              }
+            ],
+            "answer": {
+              "type": "none",
+              "space": {
+                "type": "drawing",
+                "height": "4cm",
+                "cmd": "Answerspace"
+              }
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 4,
+            "content": [
+              {
+                "type": "text",
+                "content": "A mathematically similar solid is made of silver.\n\\newline\n\nIn this solid, the cylinder has radius 0.6 cm.\n\\newline\n\n1 cm$^3$ of silver has a mass of 10.49 grams.\n\\newline\n"
+              },
+              {
+                "type": "space",
+                "height": "0.8em",
+                "cmd": "vgap"
+              },
+              {
+                "type": "text",
+                "content": "Calculate the total mass of this silver solid.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "g"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper41/Q08/Q08b-Sector.png"
+          },
+          {
+            "type": "text",
+            "content": "~"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{InsertScreenShot}\n\\relinput{Figures/Q08b-Sector.tex}\n\\end{InsertScreenShot}"
+          },
+          {
+            "type": "text",
+            "content": "$AOB$ is a sector of a circle, centre $O$.\n\\newline\n\n$AO = 10$ cm and the sector angle is $216^{\\circ}$.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate the length of the arc of this sector.\n\\newline\n\nGive your answer as a multiple of $\\pi$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "cm"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 4,
+            "content": [
+              {
+                "type": "text",
+                "content": "A cone is made from this sector by joining $OA$ to $OB$.\n\\newline\n"
+              },
+              {
+                "type": "space",
+                "height": "0.8em",
+                "cmd": "vgap"
+              },
+              {
+                "type": "text",
+                "content": "Calculate the volume of the cone.\n\\newline\n\n[The volume, $V$, of a cone with radius $r$ and height $h$ is $V = \\frac{1}{3}\\pi r^2 h$.\n\\newline\n]"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "cm$^3$"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "show",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item ~\n\\begin{InsertScreenShot}\n\\relinput{Figures/Q08a-Solid.tex}\n\\end{InsertScreenShot}\n\n\\vgap\n\nThe diagram shows a solid formed by joining two hemispheres and a cylinder.\n\nThe radius of the large hemisphere is 5.4 cm.\n\nThe radius of the small hemisphere and the radius of the cylinder are both 3.6 cm.\n\nThe height of the cylinder is 6.5 cm.\n\n\\begin{subparts}\n\\item Show that the volume of the solid is 692 cm$^3$, correct to the nearest cubic centimetre.\n\n[The volume, $V$, of a sphere with radius $r$ is $V = \\frac{4}{3}\\pi r^3$.]\n\n\\Answerspace[4cm]\n\\Marks{4}\n\n\\item A mathematically similar solid is made of silver.\n\nIn this solid, the cylinder has radius 0.6 cm.\n\n1 cm$^3$ of silver has a mass of 10.49 grams.\n\n\\vgap\n\nCalculate the total mass of this silver solid.\n\n\\AnswerLine[][g]\n\\Marks{4}\n\\end{subparts}\n\n\\item ~\n\n\\begin{InsertScreenShot}\n\\relinput{Figures/Q08b-Sector.tex}\n\\end{InsertScreenShot}\n\n$AOB$ is a sector of a circle, centre $O$.\n\n$AO = 10$ cm and the sector angle is $216^{\\circ}$.\n\n\\begin{subparts}\n\\item Calculate the length of the arc of this sector.\n\nGive your answer as a multiple of $\\pi$.\n\n\\AnswerLine[][cm]\n\\Marks{2}\n\n\\item A cone is made from this sector by joining $OA$ to $OB$.\n\n\\vgap\n\nCalculate the volume of the cone.\n\n[The volume, $V$, of a cone with radius $r$ and height $h$ is $V = \\frac{1}{3}\\pi r^2 h$.]\n\n\\AnswerLine[][cm$^3$]\n\\Marks{4}\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_compactBegin": true,
+    "_compactEnd": true,
+    "_compactItems": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper41/Q08/Q08a-Solid.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper41/Q08/Q08b-Sector.png"
+    ]
+  },
+  {
+    "id": "0580-2023OctNov-Paper41-Q09",
+    "paper": "2023OctNov-Paper41",
+    "qnum": 9,
+    "marks": 10,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.13",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Functions",
+    "qtype": "function evaluation, inverse functions, composite functions, solving equations with functions, simplifying algebraic expressions, expanding polynomials",
+    "g": "function",
+    "src": "0580/41/O/N/23 Q09",
+    "year": 2023,
+    "session": "OctNov",
+    "tex": "\\[ f(x) = (3x + 1)(x + 5)(x - 4)     g(x) = 2x - 3     h(x) = 4^{2x - 1} \\]\n\n(a) Find\n\n(i) (b) $f(0)$,\n\n(c) $g^{-1}(x)$,\n\n(d) $gh(2)$.\n\\newline\n\n(e) $g(2x) = 7$\n\nFind the value of $x$.\n\\newline\n\n(f) Simplify $g(x^2) + gg(x) + 1$.\n\\newline\n\n(g) Find $h^{-1}(16)$.\n\\newline\n\n(h) $f(x) = (3x + 1)(x + 5)(x - 4)$\n\nThis can be written in the form $f(x) = ax^3 + bx^2 + cx + d$.\n\\newline\n\nFind the value of each of $a$, $b$, $c$ and $d$.\n\\newline\n\n ~,~ ~,~ ~,~",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Find"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "$f(0)$,"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "$g^{-1}(x)$,"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$g^{-1}(x) = $"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "$gh(2)$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "$g(2x) = 7$"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "text",
+            "content": "Find the value of $x$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x = $"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Simplify $g(x^2) + gg(x) + 1$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find $h^{-1}(16)$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(e)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "$f(x) = (3x + 1)(x + 5)(x - 4)$"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "text",
+            "content": "This can be written in the form $f(x) = ax^3 + bx^2 + cx + d$.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "text",
+            "content": "Find the value of each of $a$, $b$, $c$ and $d$.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          }
+        ],
+        "answer": {
+          "type": "expression",
+          "fields": 4,
+          "_rawAnswer": "\\hfill \\AnswerLineShort[$a =$][]~,~ \\AnswerLineShort[$b =$][]~,~ \\AnswerLineShort[$c =$][]~,~ \\AnswerLineShort[$d =$][]"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "\\[ f(x) = (3x + 1)(x + 5)(x - 4) \\quad \\quad g(x) = 2x - 3 \\quad \\quad h(x) = 4^{2x - 1} \\]"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      }
+    ],
+    "_rawBody": "\\vgap\n\n\\[ f(x) = (3x + 1)(x + 5)(x - 4) \\quad \\quad g(x) = 2x - 3 \\quad \\quad h(x) = 4^{2x - 1} \\]\n\n\\vgap\n\n\\begin{parts}\n\\item Find\n\n\\begin{subparts}\n\\item $f(0)$,\n\n\\AnswerLine\n\\Marks{1}\n\n\\item $g^{-1}(x)$,\n\n\\AnswerLine[$g^{-1}(x) = $]\n\\Marks{2}\n\n\\item $gh(2)$.\n\n\\AnswerLine\n\\Marks{2}\n\\end{subparts}\n\n\\item $g(2x) = 7$\n\n\\vgap\n\nFind the value of $x$.\n\n\\AnswerLine[$x = $]\n\\Marks{2}\n\n\\item Simplify $g(x^2) + gg(x) + 1$.\n\n\\AnswerLine\n\\Marks{3}\n\n\\item Find $h^{-1}(16)$.\n\n\\AnswerLine\n\\Marks{2}\n\n\\item $f(x) = (3x + 1)(x + 5)(x - 4)$\n\n\\vgap\n\nThis can be written in the form $f(x) = ax^3 + bx^2 + cx + d$.\n\n\\vgap\n\nFind the value of each of $a$, $b$, $c$ and $d$.\n\n\\vgap\n\n\\hfill \\AnswerLineShort[$a =$][]~,~ \\AnswerLineShort[$b =$][]~,~ \\AnswerLineShort[$c =$][]~,~ \\AnswerLineShort[$d =$][]\n\\Marks{3}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEnd": true
+  },
+  {
+    "id": "0580-2023OctNov-Paper41-Q10",
+    "paper": "2023OctNov-Paper41",
+    "qnum": 10,
+    "marks": 13,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry",
+      "Transformations and vectors"
+    ],
+    "s": "3.1",
+    "d": 2,
+    "cat": "coord",
+    "topic": "Coordinates",
+    "qtype": "coordinates reading/plotting",
+    "g": "graph",
+    "src": "0580/41/O/N/23 Q10",
+    "year": 2023,
+    "session": "OctNov",
+    "tex": "(a) $ABC$ is a triangle.\n\\newline\n$B$ is the point $(1, -10)$, $A$ is the point $(4, 14)$ and $\\vec{CA} = \\binom{-11}{8}$.\n\\newline\n\n(i) (b) Find the coordinates of $C$.\n\\newline\n\n(c) Find $\\vec{BA}$.\n\\newline\n\n(d) Find $|\\vec{CA}|$.\n\\newline\n\n(e) ~\n\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\n$OMN$ is a triangle.\n\\newline\n\n$\\vec{OM} = \\mathbf{a}$ and $\\vec{ON} = \\mathbf{b}$.\n\\newline\n\n$R$ is a point on $MN$ such that $MR : RN = 3 : 2$.\n\\newline\n\n$ORT$ is a straight line.\n\\newline\n\n(i) (f) Show that $\\vec{OR} = \\frac{2}{5}\\mathbf{a} + \\frac{3}{5}\\mathbf{b}$.\n\\newline\n\n(g) \\begin{subsubparts}\n\n(h) $\\vec{NT} = 4\\mathbf{a} + k\\mathbf{b}$ and $\\vec{OT} = c\\vec{OR}$.\n\\newline\n\nFind the value of $k$ and the value of $c$.\n\\newline\n\n ~,~\n\n(i) Find $\\vec{MT}$.\n\\newline\n\n\\end{subsubparts}",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "$ABC$ is a triangle.\n\\newline\n$B$ is the point $(1, -10)$, $A$ is the point $(4, 14)$ and $\\vec{CA} = \\binom{-11}{8}$.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the coordinates of $C$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find $\\vec{BA}$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$\\vec{BA} = $"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find $|\\vec{CA}|$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper41/Q10/Q10b-Vectors.png"
+          },
+          {
+            "type": "text",
+            "content": "~"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{InsertScreenShot}\n\t\\relinput{Figures/Q10b-Vectors.tex}\n\\end{InsertScreenShot}"
+          },
+          {
+            "type": "text",
+            "content": "$OMN$ is a triangle.\n\\newline\n\n$\\vec{OM} = \\mathbf{a}$ and $\\vec{ON} = \\mathbf{b}$.\n\\newline\n\n$R$ is a point on $MN$ such that $MR : RN = 3 : 2$.\n\\newline\n\n$ORT$ is a straight line.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "Show that $\\vec{OR} = \\frac{2}{5}\\mathbf{a} + \\frac{3}{5}\\mathbf{b}$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "none",
+              "space": {
+                "type": "drawing",
+                "height": "3cm",
+                "cmd": "Answerspace"
+              }
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 0,
+            "content": [],
+            "subsubparts": [
+              {
+                "label": "(p)",
+                "content": [
+                  {
+                    "type": "text",
+                    "content": "$\\vec{NT} = 4\\mathbf{a} + k\\mathbf{b}$ and $\\vec{OT} = c\\vec{OR}$."
+                  },
+                  {
+                    "type": "space",
+                    "height": "0.8em",
+                    "cmd": "vgap"
+                  },
+                  {
+                    "type": "text",
+                    "content": "Find the value of $k$ and the value of $c$."
+                  }
+                ],
+                "answer": {
+                  "type": "expression",
+                  "fields": 2,
+                  "_rawAnswer": "\\hfill \\AnswerLineShort[$k =$][]~,~\\AnswerLineShort[$c =$][]"
+                },
+                "marks": 4
+              },
+              {
+                "label": "(q)",
+                "content": [
+                  {
+                    "type": "text",
+                    "content": "Find $\\vec{MT}$."
+                  }
+                ],
+                "answer": {
+                  "type": "number",
+                  "prefix": "$\\vec{MT} =$"
+                },
+                "marks": 1
+              }
+            ]
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "analyse",
+    "cmd": "show",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item $ABC$ is a triangle.\n$B$ is the point $(1, -10)$, $A$ is the point $(4, 14)$ and $\\vec{CA} = \\binom{-11}{8}$.\n\n\\begin{subparts}\n\\item Find the coordinates of $C$.\n\n\\AnswerLine\n\\Marks{2}\n\n\\item Find $\\vec{BA}$.\n\n\\AnswerLine[$\\vec{BA} = $]\n\\Marks{1}\n\n\\item Find $|\\vec{CA}|$.\n\n\\AnswerLine\n\\Marks{2}\n\\end{subparts}\n\n\\item ~\n\\begin{InsertScreenShot}\n\t\\relinput{Figures/Q10b-Vectors.tex}\n\\end{InsertScreenShot}\n\n$OMN$ is a triangle.\n\n$\\vec{OM} = \\mathbf{a}$ and $\\vec{ON} = \\mathbf{b}$.\n\n$R$ is a point on $MN$ such that $MR : RN = 3 : 2$.\n\n$ORT$ is a straight line.\n\n\\begin{subparts}\n\\item Show that $\\vec{OR} = \\frac{2}{5}\\mathbf{a} + \\frac{3}{5}\\mathbf{b}$.\n\n\\Answerspace[3cm]\n\\Marks{3}\n\n\\item \n\\begin{subsubparts}\n\\item $\\vec{NT} = 4\\mathbf{a} + k\\mathbf{b}$ and $\\vec{OT} = c\\vec{OR}$.\n\n\n\\vgap\n\nFind the value of $k$ and the value of $c$.\n\n\\hfill \\AnswerLineShort[$k =$][]~,~\\AnswerLineShort[$c =$][]\n\\Marks{4}\n\n\\item Find $\\vec{MT}$.\n\n\\AnswerLine[$\\vec{MT} =$]\n\\Marks{1}\n\\end{subsubparts}\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_compactBegin": true,
+    "_compactEnd": true,
+    "_compactItems": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper41/Q10/Q10b-Vectors.png"
+    ]
+  },
+  {
+    "id": "0580-2023OctNov-Paper41-Q11",
+    "paper": "2023OctNov-Paper41",
+    "qnum": 11,
+    "marks": 10,
+    "topics": [
+      "Coordinate geometry"
+    ],
+    "s": "3.5",
+    "d": 2,
+    "cat": "coord",
+    "topic": "Parallel and perpendicular lines",
+    "qtype": "equation of a straight line",
+    "g": "mixed",
+    "src": "0580/41/O/N/23 Q11",
+    "year": 2023,
+    "session": "OctNov",
+    "tex": "(a) Differentiate $x^3 - 4x^2 - 3x$.\n\\newline\n\n(b) A curve has equation $y = x^3 - 4x^2 - 3x$.\n\\newline\n\nWork out the coordinates of the two stationary points.\n\\newline\n\nShow all your working.\n\\newline\n\n(c) Determine whether each stationary point is a maximum or a minimum.\n\\newline\n\nShow all your working.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Differentiate $x^3 - 4x^2 - 3x$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 5,
+        "content": [
+          {
+            "type": "text",
+            "content": "A curve has equation $y = x^3 - 4x^2 - 3x$.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "text",
+            "content": "Work out the coordinates of the two stationary points.\n\\newline\n\nShow all your working.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "multiline",
+          "lines": 1
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Determine whether each stationary point is a maximum or a minimum.\n\\newline\n\nShow all your working.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "none",
+          "space": {
+            "type": "drawing",
+            "height": "3cm",
+            "cmd": "Answerspace"
+          }
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Differentiate $x^3 - 4x^2 - 3x$.\n\n\\AnswerLine\n\\Marks{2}\n\n\\item A curve has equation $y = x^3 - 4x^2 - 3x$.\n\n\\vgap\nWork out the coordinates of the two stationary points.\n\nShow all your working.\n\n\\AnswerLine\n\\answerlines[1]\n\\Marks{5}\n\n\\item Determine whether each stationary point is a maximum or a minimum.\n\nShow all your working.\n\n\\Answerspace[3cm]\n\\Marks{3}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_compactBegin": true,
+    "_compactEnd": true
+  }
+]

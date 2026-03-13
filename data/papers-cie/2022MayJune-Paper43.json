@@ -1,0 +1,1136 @@
+[
+  {
+    "id": "0580-2022MayJune-Paper43-Q01",
+    "paper": "2022MayJune-Paper43",
+    "qnum": 1,
+    "marks": 9,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.15",
+    "d": 2,
+    "cat": "number",
+    "topic": "Speed, distance, time",
+    "qtype": "Timetable reading, time duration calculation",
+    "g": "mixed",
+    "src": "0580/43/M/J/22 Q01",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "Here is part of a bus timetable.\n\\newline\n\n\\begin{tabular}{|l|c|c|c|}\n\\hline\nAbbots & 06 50 & 08 25 & 09 20 \\\\\n\\hline\nCallet & 07 12 & 08 47 & 09 42 \\\\\n\\hline\nNorth Moor & 07 30 & 09 05 & 10 00 \\\\\n\\hline\nSouth Moor & 07 37 & 09 12 & 10 07 \\\\\n\\hline\nCentre Point & 08 00 & 09 35 & 10 30 \\\\\n\\hline\n\\end{tabular}\n(a) Rashid catches the 09 20 bus at Abbots.\n\\newline\n\nFind the time the bus arrives at South Moor.\n\\newline\n\n(b) Annisa leaves home at $8.27\\,\\text{am}$ and takes 25 minutes to walk to the bus stop at Callet.\n\\newline\n\\\\\nShe catches the next bus to Centre Point.\n\\newline\n\nFind the total time, in minutes, for her journey from leaving home to arriving at Centre Point.\n\\newline\n\n(c) The distance from Abbots to Centre Point is $29.4\\,\\text{km}$.\n\\newline\n\\\\\nEach bus takes the same time for the journey.\n\\newline\n\nCalculate the average speed of a bus for this journey.\n\\newline\n\\\\\nGive your answer in kilometres per hour.\n\\newline\n\n(d) On one journey, all 56 seats on the bus are filled.\n\\newline\n\\\\\nThe ratio of adults to children on this journey is   adults : children $= 5 : 3$.\n\\newline\n\\\\\nThe cost for an adult ticket is \\$2.80.\n\\newline\n\\\\\nThe cost for a child ticket is $\\dfrac{3}{4}$ of the adult cost.\n\\newline\n\nWork out the total cost of the tickets for this journey.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Rashid catches the 09 20 bus at Abbots.\n\\newline\n\nFind the time the bus arrives at South Moor.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Annisa leaves home at $8.27\\,\\text{am}$ and takes 25 minutes to walk to the bus stop at Callet.\n\\newline\n\\\\\nShe catches the next bus to Centre Point.\n\\newline\n\nFind the total time, in minutes, for her journey from leaving home to arriving at Centre Point.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "min"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "The distance from Abbots to Centre Point is $29.4\\,\\text{km}$.\n\\newline\n\\\\\nEach bus takes the same time for the journey.\n\\newline\n\nCalculate the average speed of a bus for this journey.\n\\newline\n\\\\\nGive your answer in kilometres per hour.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "km/h"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "text",
+            "content": "On one journey, all 56 seats on the bus are filled.\n\\newline\n\\\\\nThe ratio of adults to children on this journey is \\quad adults : children $= 5 : 3$.\n\\newline\n\\\\\nThe cost for an adult ticket is \\$2.80.\n\\newline\n\\\\\nThe cost for a child ticket is $\\dfrac{3}{4}$ of the adult cost.\n\\newline\n\nWork out the total cost of the tickets for this journey.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "\\$"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Here is part of a bus timetable.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2022MayJune/Paper43/Q01/Q01.png"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{center}\n\\begin{tabular}{|l|c|c|c|}\n\\hline\nAbbots & 06 50 & 08 25 & 09 20 \\\\\n\\hline\nCallet & 07 12 & 08 47 & 09 42 \\\\\n\\hline\nNorth Moor & 07 30 & 09 05 & 10 00 \\\\\n\\hline\nSouth Moor & 07 37 & 09 12 & 10 07 \\\\\n\\hline\nCentre Point & 08 00 & 09 35 & 10 30 \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+      }
+    ],
+    "_rawBody": "Here is part of a bus timetable.\n\n\\begin{center}\n\\begin{tabular}{|l|c|c|c|}\n\\hline\nAbbots & 06 50 & 08 25 & 09 20 \\\\\n\\hline\nCallet & 07 12 & 08 47 & 09 42 \\\\\n\\hline\nNorth Moor & 07 30 & 09 05 & 10 00 \\\\\n\\hline\nSouth Moor & 07 37 & 09 12 & 10 07 \\\\\n\\hline\nCentre Point & 08 00 & 09 35 & 10 30 \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\begin{parts}\n\\item Rashid catches the 09 20 bus at Abbots.\n\nFind the time the bus arrives at South Moor.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Annisa leaves home at 8.27\\,am and takes 25 minutes to walk to the bus stop at Callet.\\\\\nShe catches the next bus to Centre Point.\n\nFind the total time, in minutes, for her journey from leaving home to arriving at Centre Point.\n\n\\AnswerLine[][min]\n\\Marks{2}\n\n\\item The distance from Abbots to Centre Point is 29.4\\,km.\\\\\nEach bus takes the same time for the journey.\n\nCalculate the average speed of a bus for this journey.\\\\\nGive your answer in kilometres per hour.\n\n\\AnswerLine[][km/h]\n\\Marks{2}\n\n\\item On one journey, all 56 seats on the bus are filled.\\\\\nThe ratio of adults to children on this journey is \\quad adults : children $= 5 : 3$.\\\\\nThe cost for an adult ticket is \\$2.80.\\\\\nThe cost for a child ticket is $\\dfrac{3}{4}$ of the adult cost.\n\nWork out the total cost of the tickets for this journey.\n\n\\AnswerLine[\\$][]\n\\Marks{4}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2022MayJune/Paper43/Q01/Q01.png"
+    ]
+  },
+  {
+    "id": "0580-2022MayJune-Paper43-Q02",
+    "paper": "2022MayJune-Paper43",
+    "qnum": 2,
+    "marks": 9,
+    "topics": [
+      "Geometry",
+      "Mensuration",
+      "Transformations and vectors"
+    ],
+    "s": "4.4",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Circle theorems",
+    "qtype": "similarity and congruence",
+    "g": "mixed",
+    "src": "0580/43/M/J/22 Q02",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "(a) \n\n(i)  Draw the image of triangle $T$ after a reflection in the line $y = x$.\n\\newline\n\n Draw the image of triangle $T$ after a translation by the vector $\\begin{pmatrix} -1 \\\\ 3 \\end{pmatrix}$.\n\\newline\n\n Describe fully the **single** transformation that maps triangle $T$ onto triangle $A$.\n\\newline\n\n(b) A quadrilateral $P$ is enlarged by a scale factor of 1.2 to give quadrilateral $Q$.\n\\newline\n\\\\\nThe area of quadrilateral $P$ is $20\\,\\text{cm}^2$.\n\\newline\n\nCalculate the area of quadrilateral $Q$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "figure",
+            "src": "Figures/Q02a-Triangles.tex"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Draw the image of triangle $T$ after a reflection in the line $y = x$.\n\\newline\n"
+              }
+            ],
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Draw the image of triangle $T$ after a translation by the vector $\\begin{pmatrix} -1 \\\\ 3 \\end{pmatrix}$.\n\\newline\n"
+              }
+            ],
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Describe fully the \\textbf{single} transformation that maps triangle $T$ onto triangle $A$.\n\\newline\n\n\\makebox[14cm]{\\dotfill}\n\n\\makebox[14cm]{\\dotfill}"
+              }
+            ],
+            "marks": 3,
+            "_compactMarks": true
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "A quadrilateral $P$ is enlarged by a scale factor of 1.2 to give quadrilateral $Q$.\n\\newline\n\\\\\nThe area of quadrilateral $P$ is $20\\,\\text{cm}^2$.\n\\newline\n\nCalculate the area of quadrilateral $Q$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "cm$^2$"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "describe",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item \\relinput{Figures/Q02a-Triangles.tex}\n\n\\begin{subparts}\n\\subpart Draw the image of triangle $T$ after a reflection in the line $y = x$.\n\\Marks{2}\n\n\\subpart Draw the image of triangle $T$ after a translation by the vector $\\begin{pmatrix} -1 \\\\ 3 \\end{pmatrix}$.\n\\Marks{2}\n\n\\subpart Describe fully the \\textbf{single} transformation that maps triangle $T$ onto triangle $A$.\n\n\\makebox[14cm]{\\dotfill}\n\n\\makebox[14cm]{\\dotfill}\n\\Marks{3}\n\n\\end{subparts}\n\n\\item A quadrilateral $P$ is enlarged by a scale factor of 1.2 to give quadrilateral $Q$.\\\\\nThe area of quadrilateral $P$ is 20\\,cm$^2$.\n\nCalculate the area of quadrilateral $Q$.\n\n\\AnswerLine[][cm$^2$]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_compactBegin": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2022MayJune/Paper43/Q02/Q02a-Triangles.png"
+    ]
+  },
+  {
+    "id": "0580-2022MayJune-Paper43-Q03",
+    "paper": "2022MayJune-Paper43",
+    "qnum": 3,
+    "marks": 13,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.11",
+    "d": 2,
+    "cat": "number",
+    "topic": "Money and finance",
+    "qtype": "Percentage calculation from data, simplifying ratios",
+    "g": "simplify",
+    "src": "0580/43/M/J/22 Q03",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "(a) The table shows the numbers of tigers reported to be living in the wild in the year 2014 in some countries.\n\\newline\n\n\\begin{tabular}{|l|c|}\n\\hline\nCountry & Number \\\\\n\\hline\nIndia & 2226 \\\\\n\\hline\nIndonesia & 371 \\\\\n\\hline\nNepal & 198 \\\\\n\\hline\nBangladesh & 106 \\\\\n\\hline\n\\end{tabular}\n(i)  Using the table,\n\n(b) find the number of tigers in Nepal as a percentage of the number of tigers in Bangladesh,\n\n(c) find the ratio   tigers in Bangladesh : tigers in Indonesia : tigers in India,   giving your answer in its simplest form.\n\\newline\n\n{...} : ]\n\n Five years later, the number of tigers reported in India was 2967.\n\\newline\n\nFind the percentage increase in the population of tigers in India.\n\\newline\n\n The number of tigers in India in the year 2014 is approximately 30.48\\% greater than in the year 2010.\n\\newline\n\nFind the number of tigers in India in the year 2010.\n\\newline\n\\\\\nGive your answer correct to the nearest integer.\n\\newline\n\nAt the start of June, a hive has a population of 2000 bees.\n\\newline\n\\\\\nThree months after the start of June the hive has a population of 2662 bees.\n\\newline\n\nThe population of this hive can be calculated using the formula\n\\[P = ab^x,\\]\nwhere $P$ is the population of the hive $x$ months after the start of June.\n\\newline\n\nBy finding the value of $a$ and the value of $b$, calculate the population of the hive 7 months after the start of June.\n\\newline\n\\\\\nGive your answer correct to the nearest integer.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2022MayJune/Paper43/Q03/Q03a.png"
+          },
+          {
+            "type": "text",
+            "content": "The table shows the numbers of tigers reported to be living in the wild in the year 2014 in some countries.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{center}\n\\begin{tabular}{|l|c|}\n\\hline\nCountry & Number \\\\\n\\hline\nIndia & 2226 \\\\\n\\hline\nIndonesia & 371 \\\\\n\\hline\nNepal & 198 \\\\\n\\hline\nBangladesh & 106 \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+          },
+          {
+            "type": "text",
+            "content": "\\begin{subparts}\n\\subpart Using the table,\n\n\\begin{parts}"
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "find the number of tigers in Nepal as a percentage of the number of tigers in Bangladesh,"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "\\%"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "find the ratio \\quad tigers in Bangladesh : tigers in Indonesia : tigers in India, \\quad giving your answer in its simplest form.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": " : \\makebox[1.5cm]{\\dotfill} : \\makebox[1.5cm]{\\dotfill}"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [],
+    "_v4_skip": true,
+    "_rawBody": "\\begin{parts}\n\\item The table shows the numbers of tigers reported to be living in the wild in the year 2014 in some countries.\n\n\\begin{center}\n\\begin{tabular}{|l|c|}\n\\hline\nCountry & Number \\\\\n\\hline\nIndia & 2226 \\\\\n\\hline\nIndonesia & 371 \\\\\n\\hline\nNepal & 198 \\\\\n\\hline\nBangladesh & 106 \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\begin{subparts}\n\\subpart Using the table,\n\n\\begin{parts}\n\\item find the number of tigers in Nepal as a percentage of the number of tigers in Bangladesh,\n\n\\AnswerLine[][\\%]\n\\Marks{1}\n\n\\item find the ratio \\quad tigers in Bangladesh : tigers in Indonesia : tigers in India, \\quad giving your answer in its simplest form.\n\n\\AnswerLine[][ : \\makebox[1.5cm]{\\dotfill} : \\makebox[1.5cm]{\\dotfill}]\n\\Marks{2}\n\\end{parts}\n\n\\subpart Five years later, the number of tigers reported in India was 2967.\n\nFind the percentage increase in the population of tigers in India.\n\n\\AnswerLine[][\\%]\n\\Marks{2}\n\n\\subpart The number of tigers in India in the year 2014 is approximately 30.48\\% greater than in the year 2010.\n\nFind the number of tigers in India in the year 2010.\\\\\nGive your answer correct to the nearest integer.\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\end{subparts}\n\n\\item At the start of June, a hive has a population of 2000 bees.\\\\\nThree months after the start of June the hive has a population of 2662 bees.\n\nThe population of this hive can be calculated using the formula\n\\[P = ab^x,\\]\nwhere $P$ is the population of the hive $x$ months after the start of June.\n\nBy finding the value of $a$ and the value of $b$, calculate the population of the hive 7 months after the start of June.\\\\\nGive your answer correct to the nearest integer.\n\n\\AnswerLine[][]\n\\Marks{5}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "_postParts": [
+      {
+        "type": "text",
+        "content": "\\subpart Five years later, the number of tigers reported in India was 2967.\n\nFind the percentage increase in the population of tigers in India.\n\n\\AnswerLine[][\\%]\n\\Marks{2}\n\n\\subpart The number of tigers in India in the year 2014 is approximately 30.48\\% greater than in the year 2010.\n\nFind the number of tigers in India in the year 2010.\\\\\nGive your answer correct to the nearest integer.\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\end{subparts}\n\n\\item At the start of June, a hive has a population of 2000 bees.\\\\\nThree months after the start of June the hive has a population of 2662 bees.\n\nThe population of this hive can be calculated using the formula\n\\[P = ab^x,\\]\nwhere $P$ is the population of the hive $x$ months after the start of June.\n\nBy finding the value of $a$ and the value of $b$, calculate the population of the hive 7 months after the start of June.\\\\\nGive your answer correct to the nearest integer.\n\n\\AnswerLine[][]\n\\Marks{5}\n\n\\end{parts}"
+      }
+    ],
+    "_compactBegin": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2022MayJune/Paper43/Q03/Q03a.png"
+    ]
+  },
+  {
+    "id": "0580-2022MayJune-Paper43-Q04",
+    "paper": "2022MayJune-Paper43",
+    "qnum": 4,
+    "marks": 11,
+    "topics": [
+      "Number",
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": null,
+    "d": 2,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/43/M/J/22 Q04",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "A regular 12-sided polygon has side length $6\\,\\text{cm}$.\n\\newline\n\n(a) Show that one interior angle of the polygon is $150°$.\n\\newline\n\n(b) The polygon is enclosed by a circle, centre $O$, so that each vertex touches the circumference of the circle.\n\\newline\n\n(i)  Show that the radius, $AO$, of the circle is $11.6\\,\\text{cm}$, correct to 1 decimal place.\n\\newline\n\n Calculate\n\n(c) the circumference of the circle,\n\n(d) the perimeter of the shaded **minor** segment formed by the chord $AB$.\n\\newline\n\nThe regular 12-sided polygon is the cross-section of a prism of length $2\\,\\text{cm}$.\n\\newline\n\nCalculate the volume of the prism.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Show that one interior angle of the polygon is $150°$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "none",
+          "space": {
+            "type": "working",
+            "height": "2cm",
+            "cmd": "WorkingSpace"
+          }
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "text",
+            "content": "The polygon is enclosed by a circle, centre $O$, so that each vertex touches the circumference of the circle.\n\\newline\n"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q04a-Polygon.tex"
+          },
+          {
+            "type": "text",
+            "content": "\\begin{subparts}\n\\subpart Show that the radius, $AO$, of the circle is $11.6\\,\\text{cm}$, correct to 1 decimal place.\n\\newline\n\n\\WorkingSpace{4cm}\n\\Marks{3}\n\n\\subpart Calculate\n\n\\begin{parts}"
+          }
+        ]
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "the circumference of the circle,"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "cm"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "the perimeter of the shaded \\textbf{minor} segment formed by the chord $AB$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "cm"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "",
+    "cmd": "show",
+    "stem": [
+      {
+        "type": "text",
+        "content": "A regular 12-sided polygon has side length $6\\,\\text{cm}$.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "A regular 12-sided polygon has side length 6\\,cm.\n\n\\begin{parts}\n\\item Show that one interior angle of the polygon is $150°$.\n\n\\WorkingSpace{2cm}\n\\Marks{1}\n\n\\item The polygon is enclosed by a circle, centre $O$, so that each vertex touches the circumference of the circle.\n\n\\relinput{Figures/Q04a-Polygon.tex}\n\n\\begin{subparts}\n\\subpart Show that the radius, $AO$, of the circle is 11.6\\,cm, correct to 1 decimal place.\n\n\\WorkingSpace{4cm}\n\\Marks{3}\n\n\\subpart Calculate\n\n\\begin{parts}\n\\item the circumference of the circle,\n\n\\AnswerLine[][cm]\n\\Marks{2}\n\n\\item the perimeter of the shaded \\textbf{minor} segment formed by the chord $AB$.\n\n\\AnswerLine[][cm]\n\\Marks{2}\n\\end{parts}\n\n\\end{subparts}\n\n\\item The regular 12-sided polygon is the cross-section of a prism of length 2\\,cm.\n\nCalculate the volume of the prism.\n\n\\AnswerLine[][cm$^3$]\n\\Marks{3}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "_postParts": [
+      {
+        "type": "text",
+        "content": "\\end{subparts}\n\n\\item The regular 12-sided polygon is the cross-section of a prism of length 2\\,cm.\n\nCalculate the volume of the prism.\n\n\\AnswerLine[][cm$^3$]\n\\Marks{3}\n\n\\end{parts}"
+      }
+    ],
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2022MayJune/Paper43/Q04/Q04a-Polygon.png"
+    ]
+  },
+  {
+    "id": "0580-2022MayJune-Paper43-Q05",
+    "paper": "2022MayJune-Paper43",
+    "qnum": 5,
+    "marks": 19,
+    "topics": [
+      "Number",
+      "Probability",
+      "Statistics"
+    ],
+    "s": null,
+    "d": 2,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/43/M/J/22 Q05",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "The time, $t$ minutes, taken by each of 80 people to travel to work is recorded.\n\\newline\n\\\\\nThe table shows information about these times.\n\\newline\n\n\\begin{tabular}{|c|c|c|c|c|c|}\n\\hline\nTime ($t$ minutes) & $0 < t \\leqslant 5$ & $5 < t \\leqslant 10$ & $10 < t \\leqslant 20$ & $20 < t \\leqslant 35$ & $35 < t \\leqslant 60$ \\\\\n\\hline\nFrequency & 3 & 7 & 18 & 28 & 24 \\\\\n\\hline\n\\end{tabular}\n(a) (i)  Write down the class interval containing the median time.\n\\newline\n\n{...}]\n\n Calculate an estimate of the mean time.\n\\newline\n\n(b) (i)  One of these 80 people is chosen at random.\n\\newline\n\nFind the probability that this person took longer than 10 minutes to travel to work.\n\\newline\n\\\\\nGive your answer as a fraction in its simplest form.\n\\newline\n\n Two people are chosen at random from those taking 20 minutes or less to travel to work.\n\\newline\n\nCalculate the probability that one of these people took 5 minutes or less and the other took more than 5 minutes.\n\\newline\n\n(c) (i)  Use the frequency table to complete the cumulative frequency table.\n\\newline\n\n\\begin{tabular}{|c|c|c|c|c|c|}\n\\hline\nTime ($t$ minutes) & $t \\leqslant 5$ & $t \\leqslant 10$ & $t \\leqslant 20$ & $t \\leqslant 35$ & $t \\leqslant 60$ \\\\\n\\hline\nCumulative frequency & 3 & 10 & & & 80 \\\\\n\\hline\n\\end{tabular}\n\n On the grid, draw a cumulative frequency diagram to show this information.\n\\newline\n\n Find an estimate for the 80th percentile.\n\\newline\n\n Find an estimate for the percentage of people who took longer than 45 minutes to travel to work.\n\\newline\n\\\\\nShow all your working.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2022MayJune/Paper43/Q05/Q05a-CumulativeFreq.png"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Write down the class interval containing the median time.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "$< t \\leqslant$ \\makebox[1.5cm]{\\dotfill}"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate an estimate of the mean time.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "min"
+            },
+            "marks": 4,
+            "_compactMarks": true
+          }
+        ],
+        "_itemInlineSubparts": true
+      },
+      {
+        "label": "(b)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "One of these 80 people is chosen at random.\n\\newline\n\nFind the probability that this person took longer than 10 minutes to travel to work.\n\\newline\n\\\\\nGive your answer as a fraction in its simplest form.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Two people are chosen at random from those taking 20 minutes or less to travel to work.\n\\newline\n\nCalculate the probability that one of these people took 5 minutes or less and the other took more than 5 minutes.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 3,
+            "_compactMarks": true
+          }
+        ],
+        "_itemInlineSubparts": true
+      },
+      {
+        "label": "(c)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Use the frequency table to complete the cumulative frequency table.\n\\newline\n"
+              },
+              {
+                "type": "table",
+                "content": "\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|c|}\n\\hline\nTime ($t$ minutes) & $t \\leqslant 5$ & $t \\leqslant 10$ & $t \\leqslant 20$ & $t \\leqslant 35$ & $t \\leqslant 60$ \\\\\n\\hline\nCumulative frequency & 3 & 10 & & & 80 \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+              }
+            ],
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "On the grid, draw a cumulative frequency diagram to show this information.\n\\newline\n"
+              },
+              {
+                "type": "figure",
+                "src": "Figures/Q05a-CumulativeFreq.tex"
+              }
+            ],
+            "marks": 3,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Find an estimate for the 80th percentile.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "min"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iv)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Find an estimate for the percentage of people who took longer than 45 minutes to travel to work.\n\\newline\n\\\\\nShow all your working.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "\\%"
+            },
+            "marks": 3,
+            "_compactMarks": true
+          }
+        ],
+        "_itemInlineSubparts": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The time, $t$ minutes, taken by each of 80 people to travel to work is recorded.\n\\newline\n\\\\\nThe table shows information about these times.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2022MayJune/Paper43/Q05/Q05cii.png"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2022MayJune/Paper43/Q05/Q05ci.png"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|c|}\n\\hline\nTime ($t$ minutes) & $0 < t \\leqslant 5$ & $5 < t \\leqslant 10$ & $10 < t \\leqslant 20$ & $20 < t \\leqslant 35$ & $35 < t \\leqslant 60$ \\\\\n\\hline\nFrequency & 3 & 7 & 18 & 28 & 24 \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+      }
+    ],
+    "_rawBody": "The time, $t$ minutes, taken by each of 80 people to travel to work is recorded.\\\\\nThe table shows information about these times.\n\n\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|c|}\n\\hline\nTime ($t$ minutes) & $0 < t \\leqslant 5$ & $5 < t \\leqslant 10$ & $10 < t \\leqslant 20$ & $20 < t \\leqslant 35$ & $35 < t \\leqslant 60$ \\\\\n\\hline\nFrequency & 3 & 7 & 18 & 28 & 24 \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\begin{parts}\n\\item \\begin{subparts}\n\\subpart Write down the class interval containing the median time.\n\n\\AnswerLine[][$< t \\leqslant$ \\makebox[1.5cm]{\\dotfill}]\n\\Marks{1}\n\n\\subpart Calculate an estimate of the mean time.\n\n\\AnswerLine[][min]\n\\Marks{4}\n\n\\end{subparts}\n\n\\item \\begin{subparts}\n\\subpart One of these 80 people is chosen at random.\n\nFind the probability that this person took longer than 10 minutes to travel to work.\\\\\nGive your answer as a fraction in its simplest form.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\subpart Two people are chosen at random from those taking 20 minutes or less to travel to work.\n\nCalculate the probability that one of these people took 5 minutes or less and the other took more than 5 minutes.\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\end{subparts}\n\n\\item \\begin{subparts}\n\\subpart Use the frequency table to complete the cumulative frequency table.\n\n\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|c|}\n\\hline\nTime ($t$ minutes) & $t \\leqslant 5$ & $t \\leqslant 10$ & $t \\leqslant 20$ & $t \\leqslant 35$ & $t \\leqslant 60$ \\\\\n\\hline\nCumulative frequency & 3 & 10 & & & 80 \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\\Marks{1}\n\n\\subpart On the grid, draw a cumulative frequency diagram to show this information.\n\n\\relinput{Figures/Q05a-CumulativeFreq.tex}\n\\Marks{3}\n\n\\subpart Find an estimate for the 80th percentile.\n\n\\AnswerLine[][min]\n\\Marks{2}\n\n\\subpart Find an estimate for the percentage of people who took longer than 45 minutes to travel to work.\\\\\nShow all your working.\n\n\\AnswerLine[][\\%]\n\\Marks{3}\n\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_compactItems": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2022MayJune/Paper43/Q05/Q05.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2022MayJune/Paper43/Q05/Q05a-CumulativeFreq.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2022MayJune/Paper43/Q05/Q05ci.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2022MayJune/Paper43/Q05/Q05cii.png"
+    ]
+  },
+  {
+    "id": "0580-2022MayJune-Paper43-Q06",
+    "paper": "2022MayJune-Paper43",
+    "qnum": 6,
+    "marks": 14,
+    "topics": [
+      "Number",
+      "Algebra and graphs"
+    ],
+    "s": "2.2",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Rearranging formulae",
+    "qtype": "simplifying expressions, expanding and simplifying, combining algebraic fractions, solving linear equations, changing the subject of a formula",
+    "g": "linear",
+    "src": "0580/43/M/J/22 Q06",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "(a) Simplify.\n\\newline\n\\[a - 2b - 3a + 7b\\]\n\n(b) Expand and simplify.\n\\newline\n\\[4(x - 5) - (3 - 2x)\\]\n\n(c) Write as a single fraction in its simplest form.\n\\newline\n\\[\\frac{3}{x - 5} - \\frac{7}{2x}\\]\n\n(d) Solve.\n\\newline\n\\[\\frac{13 - 4x}{3} = 6 - x\\]\n\n(e) Make $x$ the subject of the formula.\n\\newline\n\\[y = \\frac{5(p - 2x)}{x}\\]",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Simplify.\n\\newline\n\\[a - 2b - 3a + 7b\\]"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Expand and simplify.\n\\newline\n\\[4(x - 5) - (3 - 2x)\\]"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write as a single fraction in its simplest form.\n\\newline\n\\[\\frac{3}{x - 5} - \\frac{7}{2x}\\]"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Solve.\n\\newline\n\\[\\frac{13 - 4x}{3} = 6 - x\\]"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x = $"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(e)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "text",
+            "content": "Make $x$ the subject of the formula.\n\\newline\n\\[y = \\frac{5(p - 2x)}{x}\\]"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x = $"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Simplify.\n\\[a - 2b - 3a + 7b\\]\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item Expand and simplify.\n\\[4(x - 5) - (3 - 2x)\\]\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item Write as a single fraction in its simplest form.\n\\[\\frac{3}{x - 5} - \\frac{7}{2x}\\]\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\item Solve.\n\\[\\frac{13 - 4x}{3} = 6 - x\\]\n\n\\AnswerLine[$x = $][]\n\\Marks{3}\n\n\\item Make $x$ the subject of the formula.\n\\[y = \\frac{5(p - 2x)}{x}\\]\n\n\\AnswerLine[$x = $][]\n\\Marks{4}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_compactBegin": true
+  },
+  {
+    "id": "0580-2022MayJune-Paper43-Q07",
+    "paper": "2022MayJune-Paper43",
+    "qnum": 7,
+    "marks": 14,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "3.5",
+    "d": 2,
+    "cat": "coord",
+    "topic": "Parallel and perpendicular lines",
+    "qtype": "equation of a straight line",
+    "g": "mixed",
+    "src": "0580/43/M/J/22 Q07",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "The diagram shows a field $ABC$.\n\\newline\n\n(a) Calculate $BC$.\n\\newline\n\n(b) Calculate angle $ACB$.\n\\newline\n\n(c) A gate, $G$, lies on $AB$ at the shortest distance from $C$.\n\\newline\n\nCalculate $AG$.\n\\newline\n\n(d) A different triangular field $PQR$ has the same area as $ABC$.\n\\newline\n\\\\\n$PQ = 90\\,\\text{m}$ and $QR = 60\\,\\text{m}$.\n\\newline\n\nWork out the two possible values of angle $PQR$.\n\\newline\n\n{...}]",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2022MayJune/Paper43/Q07/Q07a-TriangleABC.png"
+          },
+          {
+            "type": "text",
+            "content": "Calculate $BC$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$BC = $",
+          "suffix": "m"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Calculate angle $ACB$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "Angle $ACB = $"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "A gate, $G$, lies on $AB$ at the shortest distance from $C$.\n\\newline\n\nCalculate $AG$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$AG = $",
+          "suffix": "m"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 5,
+        "content": [
+          {
+            "type": "text",
+            "content": "A different triangular field $PQR$ has the same area as $ABC$.\n\\newline\n\\\\\n$PQ = 90\\,\\text{m}$ and $QR = 60\\,\\text{m}$.\n\\newline\n\nWork out the two possible values of angle $PQR$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "Angle $PQR = $",
+          "suffix": " or \\makebox[2cm]{\\dotfill}"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q07a-TriangleABC.tex"
+      },
+      {
+        "type": "text",
+        "content": "The diagram shows a field $ABC$.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "\\relinput{Figures/Q07a-TriangleABC.tex}\n\nThe diagram shows a field $ABC$.\n\n\\begin{parts}\n\\item Calculate $BC$.\n\n\\AnswerLine[$BC = $][m]\n\\Marks{3}\n\n\\item Calculate angle $ACB$.\n\n\\AnswerLine[Angle $ACB = $][]\n\\Marks{3}\n\n\\item A gate, $G$, lies on $AB$ at the shortest distance from $C$.\n\nCalculate $AG$.\n\n\\AnswerLine[$AG = $][m]\n\\Marks{3}\n\n\\item A different triangular field $PQR$ has the same area as $ABC$.\\\\\n$PQ = 90$\\,m and $QR = 60$\\,m.\n\nWork out the two possible values of angle $PQR$.\n\n\\AnswerLine[Angle $PQR = $][ or \\makebox[2cm]{\\dotfill}]\n\\Marks{5}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2022MayJune/Paper43/Q07/Q07.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2022MayJune/Paper43/Q07/Q07a-TriangleABC.png"
+    ]
+  },
+  {
+    "id": "0580-2022MayJune-Paper43-Q08",
+    "paper": "2022MayJune-Paper43",
+    "qnum": 8,
+    "marks": 18,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry",
+      "Transformations and vectors"
+    ],
+    "s": "3.7",
+    "d": 2,
+    "cat": "coord",
+    "topic": "Coordinate geometry extended",
+    "qtype": "perpendicular lines",
+    "g": "mixed",
+    "src": "0580/43/M/J/22 Q08",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "(a) $A$ has coordinates $(-2, 7)$, $B$ has coordinates $(1, -5)$ and $C$ has coordinates $(5, 4)$.\n\\newline\n\n(i)  Find the coordinates of the midpoint of the line $AB$.\n\\newline\n\n{...} )]\n\n Find $\\overrightarrow{AC}$.\n\\newline\n\n\\[\\overrightarrow{AC} = \\begin{pmatrix}  \\\\  \\end{pmatrix}\\]\n\n Find $|\\overrightarrow{AC}|$.\n\\newline\n\n Find the equation of the line $AB$.\n\\newline\n\\\\\nGive your answer in the form $y = mx + c$.\n\\newline\n\n Find the equation of the line perpendicular to $AB$ that passes through $C$.\n\\newline\n\\\\\nGive your answer in the form $y = mx + c$.\n\\newline\n\n(b) The graphs of $y + 5x = 8$ and $y = 2x^2 + 6x - 13$ intersect at the points $P$ and $Q$.\n\\newline\n\nFind the coordinates of $P$ and the coordinates of $Q$.\n\\newline\n\\\\\nShow all your working.\n\\newline\n\n$P$ (  ,  )\n\n$Q$ (  ,  )",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "$A$ has coordinates $(-2, 7)$, $B$ has coordinates $(1, -5)$ and $C$ has coordinates $(5, 4)$.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the coordinates of the midpoint of the line $AB$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "( ",
+              "suffix": " , \\makebox[1.5cm]{\\dotfill} )"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Find $\\overrightarrow{AC}$.\n\\newline\n\n\\[\\overrightarrow{AC} = \\begin{pmatrix} \\phantom{00} \\\\ \\phantom{00} \\end{pmatrix}\\]"
+              }
+            ],
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Find $|\\overrightarrow{AC}|$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iv)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the equation of the line $AB$.\n\\newline\n\\\\\nGive your answer in the form $y = mx + c$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$y = $"
+            },
+            "marks": 3,
+            "_compactMarks": true
+          },
+          {
+            "label": "(v)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the equation of the line perpendicular to $AB$ that passes through $C$.\n\\newline\n\\\\\nGive your answer in the form $y = mx + c$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$y = $"
+            },
+            "marks": 3,
+            "_compactMarks": true
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "marks": 6,
+        "content": [
+          {
+            "type": "text",
+            "content": "The graphs of $y + 5x = 8$ and $y = 2x^2 + 6x - 13$ intersect at the points $P$ and $Q$.\n\\newline\n\nFind the coordinates of $P$ and the coordinates of $Q$.\n\\newline\n\\\\\nShow all your working.\n\\newline\n\n$P$ ( \\makebox[1.5cm]{\\dotfill} , \\makebox[1.5cm]{\\dotfill} )\n\n$Q$ ( \\makebox[1.5cm]{\\dotfill} , \\makebox[1.5cm]{\\dotfill} )"
+          }
+        ],
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item $A$ has coordinates $(-2, 7)$, $B$ has coordinates $(1, -5)$ and $C$ has coordinates $(5, 4)$.\n\n\\begin{subparts}\n\\subpart Find the coordinates of the midpoint of the line $AB$.\n\n\\AnswerLine[( ][ , \\makebox[1.5cm]{\\dotfill} )]\n\\Marks{2}\n\n\\subpart Find $\\overrightarrow{AC}$.\n\n\\[\\overrightarrow{AC} = \\begin{pmatrix} \\phantom{00} \\\\ \\phantom{00} \\end{pmatrix}\\]\n\\Marks{2}\n\n\\subpart Find $|\\overrightarrow{AC}|$.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\subpart Find the equation of the line $AB$.\\\\\nGive your answer in the form $y = mx + c$.\n\n\\AnswerLine[$y = $][]\n\\Marks{3}\n\n\\subpart Find the equation of the line perpendicular to $AB$ that passes through $C$.\\\\\nGive your answer in the form $y = mx + c$.\n\n\\AnswerLine[$y = $][]\n\\Marks{3}\n\n\\end{subparts}\n\n\\item The graphs of $y + 5x = 8$ and $y = 2x^2 + 6x - 13$ intersect at the points $P$ and $Q$.\n\nFind the coordinates of $P$ and the coordinates of $Q$.\\\\\nShow all your working.\n\n$P$ ( \\makebox[1.5cm]{\\dotfill} , \\makebox[1.5cm]{\\dotfill} )\n\n$Q$ ( \\makebox[1.5cm]{\\dotfill} , \\makebox[1.5cm]{\\dotfill} )\n\\Marks{6}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_compactBegin": true
+  },
+  {
+    "id": "0580-2022MayJune-Paper43-Q09",
+    "paper": "2022MayJune-Paper43",
+    "qnum": 9,
+    "marks": 16,
+    "topics": [
+      "Number",
+      "Algebra and graphs",
+      "Coordinate geometry"
+    ],
+    "s": "2.11",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Differentiation",
+    "qtype": "sketching cubic graphs, expanding algebraic expressions, finding turning points using differentiation, analyzing number of solutions from graph",
+    "g": "graph",
+    "src": "0580/43/M/J/22 Q09",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "(a) Sketch the graph of $y = (x + 1)(3 - x)(3 + x)$, indicating the coordinates of the points where the graph crosses the $x$-axis and the $y$-axis.\n\\newline\n\n(b) (i)  Show that $y = (x + 1)(3 - x)(3 + x)$ can be written as $y = 9 + 9x - x^2 - x^3$.\n\\newline\n\n Calculate the $x$-values of the turning points of $y = 9 + 9x - x^2 - x^3$.\n\\newline\n\\\\\nShow all your working and give your answers correct to 2 decimal places.\n\\newline\n\n{...}]\n\n The equation $9 + 9x - x^2 - x^3 = k$ has one solution only when $k < a$ and when $k > b$, where $a$ and $b$ are integers.\n\\newline\n\nFind the maximum value of $a$ and the minimum value of $b$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2022MayJune/Paper43/Q09/Q09a.png"
+          },
+          {
+            "type": "text",
+            "content": "Sketch the graph of $y = (x + 1)(3 - x)(3 + x)$, indicating the coordinates of the points where the graph crosses the $x$-axis and the $y$-axis.\n\\newline\n"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q09a-SketchAxes.tex"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Show that $y = (x + 1)(3 - x)(3 + x)$ can be written as $y = 9 + 9x - x^2 - x^3$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "none",
+              "space": {
+                "type": "working",
+                "height": "4cm",
+                "cmd": "WorkingSpace"
+              }
+            },
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate the $x$-values of the turning points of $y = 9 + 9x - x^2 - x^3$.\n\\newline\n\\\\\nShow all your working and give your answers correct to 2 decimal places.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$x = $",
+              "suffix": " , $x = $ \\makebox[2cm]{\\dotfill}",
+              "space": {
+                "type": "working",
+                "height": "8cm",
+                "cmd": "WorkingSpace"
+              }
+            },
+            "marks": 7,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "The equation $9 + 9x - x^2 - x^3 = k$ has one solution only when $k < a$ and when $k > b$, where $a$ and $b$ are integers.\n\\newline\n\nFind the maximum value of $a$ and the minimum value of $b$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "multiline",
+              "lines": 2,
+              "template": "$a = $ ____\\n$b = $ ____",
+              "lineSep": "blank",
+              "space": {
+                "type": "working",
+                "height": "3cm",
+                "cmd": "WorkingSpace"
+              }
+            },
+            "marks": 3,
+            "_compactMarks": true
+          }
+        ],
+        "_itemInlineSubparts": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "show",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Sketch the graph of $y = (x + 1)(3 - x)(3 + x)$, indicating the coordinates of the points where the graph crosses the $x$-axis and the $y$-axis.\n\n\\relinput{Figures/Q09a-SketchAxes.tex}\n\\Marks{4}\n\n\\item \\begin{subparts}\n\\subpart Show that $y = (x + 1)(3 - x)(3 + x)$ can be written as $y = 9 + 9x - x^2 - x^3$.\n\n\\WorkingSpace{4cm}\n\\Marks{2}\n\n\\subpart Calculate the $x$-values of the turning points of $y = 9 + 9x - x^2 - x^3$.\\\\\nShow all your working and give your answers correct to 2 decimal places.\n\n\\WorkingSpace{8cm}\n\n\\AnswerLine[$x = $][ , $x = $ \\makebox[2cm]{\\dotfill}]\n\\Marks{7}\n\n\\subpart The equation $9 + 9x - x^2 - x^3 = k$ has one solution only when $k < a$ and when $k > b$, where $a$ and $b$ are integers.\n\nFind the maximum value of $a$ and the minimum value of $b$.\n\n\\WorkingSpace{3cm}\n\n\\AnswerLine[$a = $][]\n\n\\AnswerLine[$b = $][]\n\\Marks{3}\n\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_compactBegin": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2022MayJune/Paper43/Q09/Q09a-SketchAxes.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2022MayJune/Paper43/Q09/Q09a.png"
+    ]
+  },
+  {
+    "id": "0580-2022MayJune-Paper43-Q10",
+    "paper": "2022MayJune-Paper43",
+    "qnum": 10,
+    "marks": 7,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "3.5",
+    "d": 2,
+    "cat": "coord",
+    "topic": "Parallel and perpendicular lines",
+    "qtype": "equation of a straight line",
+    "g": "mixed",
+    "src": "0580/43/M/J/22 Q10",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "The diagram shows a cuboid $ABCDEFGH$.\n\\newline\n\\\\\n$CG = 6\\,\\text{cm}$, $AG = 24\\,\\text{cm}$ and $AB = 2BC$.\n\\newline\n\n(a) Calculate $AB$.\n\\newline\n\n(b) Calculate the angle between $AG$ and the base $ABCD$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2022MayJune/Paper43/Q10/Q10a-Cuboid.png"
+          },
+          {
+            "type": "text",
+            "content": "Calculate $AB$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$AB = $",
+          "suffix": "cm",
+          "space": {
+            "type": "working",
+            "height": "6cm",
+            "cmd": "WorkingSpace"
+          }
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Calculate the angle between $AG$ and the base $ABCD$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "space": {
+            "type": "working",
+            "height": "5cm",
+            "cmd": "WorkingSpace"
+          }
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q10a-Cuboid.tex"
+      },
+      {
+        "type": "text",
+        "content": "The diagram shows a cuboid $ABCDEFGH$.\n\\newline\n\\\\\n$CG = 6\\,\\text{cm}$, $AG = 24\\,\\text{cm}$ and $AB = 2BC$.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "\\relinput{Figures/Q10a-Cuboid.tex}\n\nThe diagram shows a cuboid $ABCDEFGH$.\\\\\n$CG = 6$\\,cm, $AG = 24$\\,cm and $AB = 2BC$.\n\n\\begin{parts}\n\\item Calculate $AB$.\n\n\\WorkingSpace{6cm}\n\n\\AnswerLine[$AB = $][cm]\n\\Marks{4}\n\n\\item Calculate the angle between $AG$ and the base $ABCD$.\n\n\\WorkingSpace{5cm}\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2022MayJune/Paper43/Q10/Q10.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2022MayJune/Paper43/Q10/Q10a-Cuboid.png"
+    ]
+  }
+]

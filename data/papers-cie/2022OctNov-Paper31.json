@@ -1,0 +1,1160 @@
+[
+  {
+    "id": "0580-2022OctNov-Paper31-Q01",
+    "paper": "2022OctNov-Paper31",
+    "qnum": 1,
+    "marks": 12,
+    "topics": [
+      "Number",
+      "Mensuration"
+    ],
+    "s": "1.16",
+    "d": 1,
+    "cat": "number",
+    "topic": "Upper and lower bounds",
+    "qtype": "money calculations, ratio problem",
+    "g": "mixed",
+    "src": "0580/31/O/N/22 Q01",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "Helga buys some items to do some knitting.\n\\newline\n\n(a) Complete Helga's bill from one shop.\n\\newline\n\n\\begin{tabular}{|l|c|}\n\\hline\nItem & Cost (\\$) \\\\\n\\hline\n2 pairs of knitting needles at \\$4.95 a pair & \\\\\n\\hline\n6 buttons at \\$0.65 each & \\\\\n\\hline\n1 knitting pattern at \\$3.60 & 3.60 \\\\\n\\hline\n Total & \\\\\n\\hline\n\\end{tabular}\n\n(b) Helga also buys 8 balls of wool from another shop.\n\\newline\n\nEach ball costs \\$3.12.\n\\newline\n\nHelga pays with a \\$50 note.\n\\newline\n\nWork out the amount of change she receives.\n\\newline\n\n(c) Helga knits some squares.\n\\newline\n\nEach square is either white, pink or blue.\n\\newline\n\nThe number of squares are in the ratio white : pink : blue $= 5 : 3 : 2$.\n\\newline\n\n30 squares are blue.\n\\newline\n\nShow that Helga knits 150 squares.\n\\newline\n\n(d) Helga uses some of the squares to make a rectangular blanket.\n\\newline\n\nThe blanket is 6 squares long and 4 squares wide.\n\\newline\n\n(i)  Calculate the percentage of the 150 squares she uses to make this blanket.\n\\newline\n\n Each square has side length $15\\,\\text{cm}$.\n\\newline\n\nWork out the perimeter of this blanket.\n\\newline\n\nGive your answer in metres.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Complete Helga's bill from one shop.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{center}\n\\begin{tabular}{|l|c|}\n\\hline\nItem & Cost (\\$) \\\\\n\\hline\n2 pairs of knitting needles at \\$4.95 a pair & \\\\\n\\hline\n6 buttons at \\$0.65 each & \\\\\n\\hline\n1 knitting pattern at \\$3.60 & 3.60 \\\\\n\\hline\n\\hfill Total & \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Helga also buys 8 balls of wool from another shop.\n\\newline\n\nEach ball costs \\$3.12.\n\\newline\n\nHelga pays with a \\$50 note.\n\\newline\n\nWork out the amount of change she receives.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "\\$"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Helga knits some squares.\n\\newline\n\nEach square is either white, pink or blue.\n\\newline\n\nThe number of squares are in the ratio white : pink : blue $= 5 : 3 : 2$.\n\\newline\n\n30 squares are blue.\n\\newline\n\nShow that Helga knits 150 squares.\n\\newline\n"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Helga uses some of the squares to make a rectangular blanket.\n\\newline\n\nThe blanket is 6 squares long and 4 squares wide.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate the percentage of the 150 squares she uses to make this blanket.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "\\%"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Each square has side length $15\\,\\text{cm}$.\n\\newline\n\nWork out the perimeter of this blanket.\n\\newline\n\nGive your answer in metres.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "m"
+            },
+            "marks": 3,
+            "_compactMarks": true
+          }
+        ]
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "show",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Helga buys some items to do some knitting.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "Helga buys some items to do some knitting.\n\n\\begin{parts}\n\\item Complete Helga's bill from one shop.\n\n\\begin{center}\n\\begin{tabular}{|l|c|}\n\\hline\nItem & Cost (\\$) \\\\\n\\hline\n2 pairs of knitting needles at \\$4.95 a pair & \\\\\n\\hline\n6 buttons at \\$0.65 each & \\\\\n\\hline\n1 knitting pattern at \\$3.60 & 3.60 \\\\\n\\hline\n\\hfill Total & \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\\Marks{3}\n\n\\item Helga also buys 8 balls of wool from another shop.\n\nEach ball costs \\$3.12\\,.\n\nHelga pays with a \\$50 note.\n\nWork out the amount of change she receives.\n\n\\AnswerLine[\\$][]\n\\Marks{2}\n\n\\item Helga knits some squares.\n\nEach square is either white, pink or blue.\n\nThe number of squares are in the ratio white : pink : blue $= 5 : 3 : 2$.\n\n30 squares are blue.\n\nShow that Helga knits 150 squares.\n\\Marks{2}\n\n\\item Helga uses some of the squares to make a rectangular blanket.\n\nThe blanket is 6 squares long and 4 squares wide.\n\n\\begin{subparts}\n\\subpart Calculate the percentage of the 150 squares she uses to make this blanket.\n\n\\AnswerLine[][\\%]\n\\Marks{2}\n\n\\subpart Each square has side length 15\\,cm.\n\nWork out the perimeter of this blanket.\n\nGive your answer in metres.\n\n\\AnswerLine[][m]\n\\Marks{3}\n\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper31-Q02",
+    "paper": "2022OctNov-Paper31",
+    "qnum": 2,
+    "marks": 10,
+    "topics": [
+      "Geometry",
+      "Transformations and vectors"
+    ],
+    "s": "4.6",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/31/O/N/22 Q02",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "Triangles $A$, $B$ and $C$ are shown on the grid.\n\\newline\n\n(a) \nDescribe fully the **single** transformation that maps\n\n(i)  triangle $A$ onto triangle $B$,\n\n triangle $A$ onto triangle $C$.\n\\newline\n\nOn the grid,\n\n(i)  reflect triangle $A$ in the line $y = 0$,\n\n translate triangle $A$ by the vector $\\displaystyle\\binom{-7}{1}$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Describe fully the \\textbf{single} transformation that maps"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "triangle $A$ onto triangle $B$,"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 3,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "triangle $A$ onto triangle $C$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 3,
+            "_compactMarks": true
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "On the grid,"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "reflect triangle $A$ in the line $y = 0$,"
+              }
+            ],
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "translate triangle $A$ by the vector $\\displaystyle\\binom{-7}{1}$.\n\\newline\n"
+              }
+            ],
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ]
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "describe",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Triangles $A$, $B$ and $C$ are shown on the grid.\n\\newline\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.5]\n% Grid\n\\draw[gray!50, very thin] (-6,-6) grid (6,6);\n\n% Axes\n\\draw[thick,->] (-6,0) -- (6.5,0) node[right] {$x$};\n\\draw[thick,->] (0,-6) -- (0,6.5) node[above] {$y$};\n\n% Axis labels\n\\foreach \\x in {-6,-5,-4,-3,-2,-1,1,2,3,4,5,6} {\n    \\node[below, font=\\tiny] at (\\x,0) {\\x};\n}\n\\foreach \\y in {-6,-5,-4,-3,-2,-1,1,2,3,4,5,6} {\n    \\node[left, font=\\tiny] at (0,\\y) {\\y};\n}\n\n% Triangle A\n\\fill[gray!30] (3,1) -- (5,1) -- (5,5) -- cycle;\n\\draw (3,1) -- (5,1) -- (5,5) -- cycle;\n\\node at (4.5,2) {$A$};\n\n% Triangle B\n\\fill[gray!30] (-5,-2) -- (-3,-2) -- (-3,-6) -- cycle;\n\\draw (-5,-2) -- (-3,-2) -- (-3,-6) -- cycle;\n\\node at (-3.5,-3) {$B$};\n\n% Triangle C\n\\fill[gray!30] (-1,1) -- (1,1) -- (1,3) -- cycle;\n\\draw (-1,1) -- (1,1) -- (1,3) -- cycle;\n\\node at (0,1.5) {$C$};\n\\end{tikzpicture}\n\\end{center}"
+      }
+    ],
+    "_rawBody": "Triangles $A$, $B$ and $C$ are shown on the grid.\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.5]\n% Grid\n\\draw[gray!50, very thin] (-6,-6) grid (6,6);\n\n% Axes\n\\draw[thick,->] (-6,0) -- (6.5,0) node[right] {$x$};\n\\draw[thick,->] (0,-6) -- (0,6.5) node[above] {$y$};\n\n% Axis labels\n\\foreach \\x in {-6,-5,-4,-3,-2,-1,1,2,3,4,5,6} {\n    \\node[below, font=\\tiny] at (\\x,0) {\\x};\n}\n\\foreach \\y in {-6,-5,-4,-3,-2,-1,1,2,3,4,5,6} {\n    \\node[left, font=\\tiny] at (0,\\y) {\\y};\n}\n\n% Triangle A\n\\fill[gray!30] (3,1) -- (5,1) -- (5,5) -- cycle;\n\\draw (3,1) -- (5,1) -- (5,5) -- cycle;\n\\node at (4.5,2) {$A$};\n\n% Triangle B\n\\fill[gray!30] (-5,-2) -- (-3,-2) -- (-3,-6) -- cycle;\n\\draw (-5,-2) -- (-3,-2) -- (-3,-6) -- cycle;\n\\node at (-3.5,-3) {$B$};\n\n% Triangle C\n\\fill[gray!30] (-1,1) -- (1,1) -- (1,3) -- cycle;\n\\draw (-1,1) -- (1,1) -- (1,3) -- cycle;\n\\node at (0,1.5) {$C$};\n\\end{tikzpicture}\n\\end{center}\n\n\\begin{parts}\n\\part Describe fully the \\textbf{single} transformation that maps\n\n\\begin{subparts}\n\\subpart triangle $A$ onto triangle $B$,\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\subpart triangle $A$ onto triangle $C$.\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\end{subparts}\n\n\\part On the grid,\n\n\\begin{subparts}\n\\subpart reflect triangle $A$ in the line $y = 0$,\n\\Marks{2}\n\n\\subpart translate triangle $A$ by the vector $\\displaystyle\\binom{-7}{1}$.\n\\Marks{2}\n\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true,
+    "_compactItems": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper31-Q03",
+    "paper": "2022OctNov-Paper31",
+    "qnum": 3,
+    "marks": 14,
+    "topics": [
+      "Mensuration"
+    ],
+    "s": "5.4",
+    "d": 1,
+    "cat": "mensuration",
+    "topic": "Volume",
+    "qtype": "surface area and volume",
+    "g": "mixed",
+    "src": "0580/31/O/N/22 Q03",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "Miguel works in an office.\n\\newline\n\n(a) \nIt takes Miguel 40 minutes to drive to work.\n\\newline\n\n(i)  He leaves home at 07$\\,$45.\n\\newline\n\nWhat time does he arrive at work?\n\n Miguel drives to work at an average speed of $57\\,\\text{km/h}$.\n\\newline\n\nShow that he drives $38\\,\\text{km}$.\n\\newline\n\nWhite paper costs $w$ cents per sheet and pink paper costs $p$ cents per sheet.\n\\newline\n\nMiguel uses 56 sheets of white paper and 21 sheets of pink paper.\n\\newline\n\nWrite down an expression, in terms of $w$ and $p$, for the total cost, in cents, of the paper he uses.\n\\newline\n\nMiguel has a closed box of pens.\n\\newline\n\nThe box is in the shape of a cuboid measuring $20\\,\\text{cm}$ by $12\\,\\text{cm}$ by $7\\,\\text{cm}$.\n\\newline\n\nCalculate the surface area of the box.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "It takes Miguel 40 minutes to drive to work.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "He leaves home at 07$\\,$45.\n\\newline\n\nWhat time does he arrive at work?"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Miguel drives to work at an average speed of $57\\,\\text{km/h}$.\n\\newline\n\nShow that he drives $38\\,\\text{km}$.\n\\newline\n"
+              }
+            ],
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "White paper costs $w$ cents per sheet and pink paper costs $p$ cents per sheet.\n\\newline\n\nMiguel uses 56 sheets of white paper and 21 sheets of pink paper.\n\\newline\n\nWrite down an expression, in terms of $w$ and $p$, for the total cost, in cents, of the paper he uses.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "cents"
+        },
+        "marks": 2,
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Miguel has a closed box of pens.\n\\newline\n\nThe box is in the shape of a cuboid measuring $20\\,\\text{cm}$ by $12\\,\\text{cm}$ by $7\\,\\text{cm}$.\n\\newline\n\nCalculate the surface area of the box.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "\\text{cm}^2"
+        },
+        "marks": 3,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "analyse",
+    "cmd": "show",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Miguel works in an office.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "Miguel works in an office.\n\n\\begin{parts}\n\\part It takes Miguel 40 minutes to drive to work.\n\n\\begin{subparts}\n\\subpart He leaves home at 07\\,45.\n\nWhat time does he arrive at work?\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\subpart Miguel drives to work at an average speed of 57\\,km/h.\n\nShow that he drives 38\\,km.\n\\Marks{2}\n\n\\end{subparts}\n\n\\part White paper costs $w$ cents per sheet and pink paper costs $p$ cents per sheet.\n\nMiguel uses 56 sheets of white paper and 21 sheets of pink paper.\n\nWrite down an expression, in terms of $w$ and $p$, for the total cost, in cents, of the paper he uses.\n\n\\AnswerLine[][cents]\n\\Marks{2}\n\n\\part Miguel has a closed box of pens.\n\nThe box is in the shape of a cuboid measuring 20\\,cm by 12\\,cm by 7\\,cm.\n\nCalculate the surface area of the box.\n\n\\AnswerLine[][\\text{cm}^2]\n\\Marks{3}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper31-Q04",
+    "paper": "2022OctNov-Paper31",
+    "qnum": 4,
+    "marks": 12,
+    "topics": [
+      "Statistics"
+    ],
+    "s": "9.4",
+    "d": 1,
+    "cat": "statistics",
+    "topic": "Charts and graphs",
+    "qtype": "statistical charts",
+    "g": "mixed",
+    "src": "0580/31/O/N/22 Q04",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "Miguel records the length of time of each telephone call he receives, correct to the nearest minute.\n\\newline\n\n\\begin{tabular}{cccccccccc}\n7 & 15 & 6 & 28 & 8 & 21 & 17 & 19 & 20 & 12 \\\\\n11 & 19 & 12 & 3 & 20 & 23 & 14 & 9 & 4 & 18 \\\\\n\\end{tabular}\n(a) \nComplete the frequency table.\n\\newline\n\nYou may use the tally column to help you.\n\\newline\n\n\\begin{tabular}{|c|c|c|}\n\\hline\nTime (minutes) & Tally & Frequency \\\\\n\\hline\n$0 - 5$ & & \\\\\n\\hline\n$6 - 10$ & & \\\\\n\\hline\n$11 - 15$ & & \\\\\n\\hline\n$16 - 20$ & & \\\\\n\\hline\n$21 - 25$ & & \\\\\n\\hline\n$26 - 30$ & & \\\\\n\\hline\n\\end{tabular}\n\nDraw a bar chart to show this information.\n\\newline\n\nComplete the scale on the frequency axis.\n\\newline\n\nUse the bar chart to write down the modal group.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Complete the frequency table.\n\\newline\n\nYou may use the tally column to help you.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{center}\n\\begin{tabular}{|c|c|c|}\n\\hline\nTime (minutes) & Tally & Frequency \\\\\n\\hline\n$0 - 5$ & & \\\\\n\\hline\n$6 - 10$ & & \\\\\n\\hline\n$11 - 15$ & & \\\\\n\\hline\n$16 - 20$ & & \\\\\n\\hline\n$21 - 25$ & & \\\\\n\\hline\n$26 - 30$ & & \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+          }
+        ],
+        "marks": 2,
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Draw a bar chart to show this information.\n\\newline\n\nComplete the scale on the frequency axis.\n\\newline\n"
+          }
+        ],
+        "marks": 3,
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Use the bar chart to write down the modal group.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "marks": 1,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Miguel records the length of time of each telephone call he receives, correct to the nearest minute.\n\\newline\n"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{center}\n\\begin{tabular}{cccccccccc}\n7 & 15 & 6 & 28 & 8 & 21 & 17 & 19 & 20 & 12 \\\\\n11 & 19 & 12 & 3 & 20 & 23 & 14 & 9 & 4 & 18 \\\\\n\\end{tabular}\n\\end{center}"
+      }
+    ],
+    "_rawBody": "Miguel records the length of time of each telephone call he receives, correct to the nearest minute.\n\n\\begin{center}\n\\begin{tabular}{cccccccccc}\n7 & 15 & 6 & 28 & 8 & 21 & 17 & 19 & 20 & 12 \\\\\n11 & 19 & 12 & 3 & 20 & 23 & 14 & 9 & 4 & 18 \\\\\n\\end{tabular}\n\\end{center}\n\n\\begin{parts}\n\\part Complete the frequency table.\n\nYou may use the tally column to help you.\n\n\\begin{center}\n\\begin{tabular}{|c|c|c|}\n\\hline\nTime (minutes) & Tally & Frequency \\\\\n\\hline\n$0 - 5$ & & \\\\\n\\hline\n$6 - 10$ & & \\\\\n\\hline\n$11 - 15$ & & \\\\\n\\hline\n$16 - 20$ & & \\\\\n\\hline\n$21 - 25$ & & \\\\\n\\hline\n$26 - 30$ & & \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\\Marks{2}\n\n\\part Draw a bar chart to show this information.\n\nComplete the scale on the frequency axis.\n\\Marks{3}\n\n\\part Use the bar chart to write down the modal group.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper31-Q05",
+    "paper": "2022OctNov-Paper31",
+    "qnum": 5,
+    "marks": 13,
+    "topics": [
+      "Number",
+      "Mensuration"
+    ],
+    "s": "1.1",
+    "d": 1,
+    "cat": "number",
+    "topic": "Types of number",
+    "qtype": "identifying number types, fraction of quantity, powers and roots, basic operations",
+    "g": "indices",
+    "src": "0580/31/O/N/22 Q05",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "(a) \nFind\n\n(i)  a multiple of 3 between 70 and 80,\n\n a factor of 63 between 5 and 10,\n\n a cube number between 60 and 90,\n\n the reciprocal of 7.\n\\newline\n\nWork out $\\displaystyle\\frac{2}{7}$ of 84.\n\\newline\n\nFind the value of\n\n(i)  $\\sqrt[3]{3375}$,\n\n $12^0$.\n\\newline\n\nRana hires a car.\n\\newline\n\nThe cost is \\$74 per day plus a delivery cost of \\$17.50.\n\\newline\n\nRana pays a total of \\$461.50.\n\\newline\n\nCalculate the number of days that Rana hires the car.\n\\newline\n\nA train to town $A$ leaves a station every 25 minutes.\n\\newline\n\nA train to town $B$ leaves the same station every 45 minutes.\n\\newline\n\nBoth trains leave at 08$\\,$00.\n\\newline\n\nFind the next time both trains leave together.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Find"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "a multiple of 3 between 70 and 80,"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "a factor of 63 between 5 and 10,"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "a cube number between 60 and 90,"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iv)",
+            "content": [
+              {
+                "type": "text",
+                "content": "the reciprocal of 7.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Work out $\\displaystyle\\frac{2}{7}$ of 84.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "marks": 1,
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the value of"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "$\\sqrt[3]{3375}$,"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "$12^0$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          }
+        ]
+      },
+      {
+        "label": "(d)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Rana hires a car.\n\\newline\n\nThe cost is \\$74 per day plus a delivery cost of \\$17.50.\n\\newline\n\nRana pays a total of \\$461.50.\n\\newline\n\nCalculate the number of days that Rana hires the car.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "days"
+        },
+        "marks": 2,
+        "_compactMarks": true
+      },
+      {
+        "label": "(e)",
+        "content": [
+          {
+            "type": "text",
+            "content": "A train to town $A$ leaves a station every 25 minutes.\n\\newline\n\nA train to town $B$ leaves the same station every 45 minutes.\n\\newline\n\nBoth trains leave at 08$\\,$00.\n\\newline\n\nFind the next time both trains leave together.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "marks": 3,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "calculate",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\part Find\n\n\\begin{subparts}\n\\subpart a multiple of 3 between 70 and 80,\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\subpart a factor of 63 between 5 and 10,\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\subpart a cube number between 60 and 90,\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\subpart the reciprocal of 7.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{subparts}\n\n\\part Work out $\\displaystyle\\frac{2}{7}$ of 84.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\part Find the value of\n\n\\begin{subparts}\n\\subpart $\\sqrt[3]{3375}$,\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\subpart $12^0$.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{subparts}\n\n\\part Rana hires a car.\n\nThe cost is \\$74 per day plus a delivery cost of \\$17.50\\,.\n\nRana pays a total of \\$461.50\\,.\n\nCalculate the number of days that Rana hires the car.\n\n\\AnswerLine[][days]\n\\Marks{2}\n\n\\part A train to town $A$ leaves a station every 25 minutes.\n\nA train to town $B$ leaves the same station every 45 minutes.\n\nBoth trains leave at 08\\,00.\n\nFind the next time both trains leave together.\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper31-Q06",
+    "paper": "2022OctNov-Paper31",
+    "qnum": 6,
+    "marks": 12,
+    "topics": [
+      "Mensuration",
+      "Probability",
+      "Statistics"
+    ],
+    "s": "5.2",
+    "d": 1,
+    "cat": "mensuration",
+    "topic": "Circles",
+    "qtype": "area and perimeter",
+    "g": "mixed",
+    "src": "0580/31/O/N/22 Q06",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "(a) \nThe table shows the number of items sold to each of 60 customers in a shop.\n\\newline\n\n\\begin{tabular}{|c|c|}\n\\hline\nNumber of items sold & Frequency \\\\\n\\hline\n0 & 3 \\\\\n\\hline\n1 & 6 \\\\\n\\hline\n2 & 12 \\\\\n\\hline\n3 & 8 \\\\\n\\hline\n4 & 14 \\\\\n\\hline\n5 & 10 \\\\\n\\hline\n6 & 3 \\\\\n\\hline\n7 & 4 \\\\\n\\hline\n\\end{tabular}\n(i)  Find the range.\n\\newline\n\n Calculate the mean.\n\\newline\n\n Find the probability that a customer picked at random buys more than 4 items.\n\\newline\n\nCarlotta buys a bicycle.\n\\newline\n\n(i)  The length, $l\\,\\text{cm}$, of the bicycle is $96\\,\\text{cm}$, correct to the nearest centimetre.\n\\newline\n\nComplete this statement about the value of $l$.\n\\newline\n\n{---} $\\leqslant l <$ ][]\n\n The diameter of each bicycle wheel is $46\\,\\text{cm}$.\n\\newline\n\nCarlotta rides the bicycle a distance of $1.4\\,\\text{km}$.\n\\newline\n\nCalculate the number of complete revolutions that a wheel makes during this journey.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The table shows the number of items sold to each of 60 customers in a shop.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{center}\n\\begin{tabular}{|c|c|}\n\\hline\nNumber of items sold & Frequency \\\\\n\\hline\n0 & 3 \\\\\n\\hline\n1 & 6 \\\\\n\\hline\n2 & 12 \\\\\n\\hline\n3 & 8 \\\\\n\\hline\n4 & 14 \\\\\n\\hline\n5 & 10 \\\\\n\\hline\n6 & 3 \\\\\n\\hline\n7 & 4 \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the range.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate the mean.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 3,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the probability that a customer picked at random buys more than 4 items.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Carlotta buys a bicycle.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "The length, $l\\,\\text{cm}$, of the bicycle is $96\\,\\text{cm}$, correct to the nearest centimetre.\n\\newline\n\nComplete this statement about the value of $l$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "\\makebox[1cm]{\\hrulefill} $\\leqslant l <$ \\makebox[1cm]{\\hrulefill}"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "The diameter of each bicycle wheel is $46\\,\\text{cm}$.\n\\newline\n\nCarlotta rides the bicycle a distance of $1.4\\,\\text{km}$.\n\\newline\n\nCalculate the number of complete revolutions that a wheel makes during this journey.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 5,
+            "_compactMarks": true
+          }
+        ]
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\part The table shows the number of items sold to each of 60 customers in a shop.\n\n\\begin{center}\n\\begin{tabular}{|c|c|}\n\\hline\nNumber of items sold & Frequency \\\\\n\\hline\n0 & 3 \\\\\n\\hline\n1 & 6 \\\\\n\\hline\n2 & 12 \\\\\n\\hline\n3 & 8 \\\\\n\\hline\n4 & 14 \\\\\n\\hline\n5 & 10 \\\\\n\\hline\n6 & 3 \\\\\n\\hline\n7 & 4 \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\begin{subparts}\n\\subpart Find the range.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\subpart Calculate the mean.\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\subpart Find the probability that a customer picked at random buys more than 4 items.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{subparts}\n\n\\part Carlotta buys a bicycle.\n\n\\begin{subparts}\n\\subpart The length, $l$\\,cm, of the bicycle is 96\\,cm, correct to the nearest centimetre.\n\nComplete this statement about the value of $l$.\n\n\\AnswerLine[\\makebox[1cm]{\\hrulefill} $\\leqslant l <$ \\makebox[1cm]{\\hrulefill}][]\n\\Marks{2}\n\n\\subpart The diameter of each bicycle wheel is 46\\,cm.\n\nCarlotta rides the bicycle a distance of 1.4\\,km.\n\nCalculate the number of complete revolutions that a wheel makes during this journey.\n\n\\AnswerLine[][]\n\\Marks{5}\n\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true,
+    "_compactItems": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper31-Q07",
+    "paper": "2022OctNov-Paper31",
+    "qnum": 7,
+    "marks": 15,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry",
+      "Mensuration",
+      "Trigonometry"
+    ],
+    "s": "3.2",
+    "d": 1,
+    "cat": "coord",
+    "topic": "Gradient",
+    "qtype": "drawing linear graphs",
+    "g": "graph",
+    "src": "0580/31/O/N/22 Q07",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "(a) \nt\n\nWrite down the mathematical name of this solid.\n\\newline\n\nt\n\nThe diagram shows triangle $BCE$ and a straight line $ABCD$.\n\\newline\n\n$BE = CE$ and angle $ABE = 104°$.\n\\newline\n\nFind the value of $x$.\n\\newline\n\nWork out the size of one interior angle of a regular polygon with 15 sides.\n\\newline\n\nt\n\n$A$, $B$ and $C$ are points on a circle, centre $O$.\n\\newline\n\n(i)  Write down the mathematical name of the line $BC$.\n\\newline\n\n Draw a tangent to the circle at point $B$.\n\\newline\n\n The area of the circle is $245.5\\,\\text{cm}^2$.\n\\newline\n\nCalculate $AB$.\n\\newline\n\n Find the value of $y$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.5]\n% Cylinder\n\\draw (0,3) ellipse (1 and 0.3);\n\\draw (-1,3) -- (-1,0);\n\\draw (1,3) -- (1,0);\n\\draw (-1,0) arc (180:360:1 and 0.3);\n\\draw[dashed] (-1,0) arc (180:0:1 and 0.3);\n\\end{tikzpicture}\n\\end{center}\n\nWrite down the mathematical name of this solid.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "marks": 1,
+        "_compactMarks": true,
+        "_itemNewline": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.6]\n% Line ABCD\n\\draw (-1,0) -- (6,0);\n\\node[above] at (-0.5,0) {$A$};\n\\node[above] at (1.5,0) {$B$};\n\\node[above] at (4,0) {$C$};\n\\node[above] at (5.5,0) {$D$};\n\n% Triangle BCE\n\\draw (1.5,0) -- (2.75,-2.5) -- (4,0);\n\\node[below] at (2.75,-2.5) {$E$};\n\n% Equal marks\n\\draw ($(1.5,0)!0.5!(2.75,-2.5) + (-0.1,0.1)$) -- ($(1.5,0)!0.5!(2.75,-2.5) + (0.1,-0.1)$);\n\\draw ($(4,0)!0.5!(2.75,-2.5) + (-0.1,-0.1)$) -- ($(4,0)!0.5!(2.75,-2.5) + (0.1,0.1)$);\n\n% Angles\n\\node at (0.8,-0.4) {$104°$};\n\\node at (3,-1.8) {$x°$};\n\n% NOT TO SCALE\n\\node at (7,0) {NOT TO};\n\\node at (7,-0.5) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nThe diagram shows triangle $BCE$ and a straight line $ABCD$.\n\\newline\n\n$BE = CE$ and angle $ABE = 104°$.\n\\newline\n\nFind the value of $x$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x =$"
+        },
+        "marks": 2,
+        "_compactMarks": true,
+        "_itemNewline": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Work out the size of one interior angle of a regular polygon with 15 sides.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "marks": 2,
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "content": [
+          {
+            "type": "text",
+            "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.5]\n% Circle\n\\draw (0,0) circle (2.5);\n\\node at (0,0) {$O$};\n\n% Points\n\\coordinate (A) at (-2.3,-1);\n\\coordinate (B) at (1.5,2);\n\\coordinate (C) at (1.5,-2);\n\n% Lines\n\\draw (A) -- (B) -- (C);\n\\draw (0,0) -- (B);\n\n% Labels\n\\node[left] at (A) {$A$};\n\\node[above right] at (B) {$B$};\n\\node[below right] at (C) {$C$};\n\n% Angles\n\\node at (-1.5,-0.5) {$38°$};\n\\node at (0.8,1.2) {$y°$};\n\n% NOT TO SCALE\n\\node at (4,1) {NOT TO};\n\\node at (4,0.5) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\n$A$, $B$ and $C$ are points on a circle, centre $O$.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Write down the mathematical name of the line $BC$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Draw a tangent to the circle at point $B$.\n\\newline\n"
+              }
+            ],
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "The area of the circle is $245.5\\,\\text{cm}^2$.\n\\newline\n\nCalculate $AB$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$AB =$",
+              "suffix": "cm"
+            },
+            "marks": 3,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iv)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the value of $y$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$y =$"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ],
+        "_itemNewline": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\part\n\\begin{center}\n\\begin{tikzpicture}[scale=0.5]\n% Cylinder\n\\draw (0,3) ellipse (1 and 0.3);\n\\draw (-1,3) -- (-1,0);\n\\draw (1,3) -- (1,0);\n\\draw (-1,0) arc (180:360:1 and 0.3);\n\\draw[dashed] (-1,0) arc (180:0:1 and 0.3);\n\\end{tikzpicture}\n\\end{center}\n\nWrite down the mathematical name of this solid.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\part\n\\begin{center}\n\\begin{tikzpicture}[scale=0.6]\n% Line ABCD\n\\draw (-1,0) -- (6,0);\n\\node[above] at (-0.5,0) {$A$};\n\\node[above] at (1.5,0) {$B$};\n\\node[above] at (4,0) {$C$};\n\\node[above] at (5.5,0) {$D$};\n\n% Triangle BCE\n\\draw (1.5,0) -- (2.75,-2.5) -- (4,0);\n\\node[below] at (2.75,-2.5) {$E$};\n\n% Equal marks\n\\draw ($(1.5,0)!0.5!(2.75,-2.5) + (-0.1,0.1)$) -- ($(1.5,0)!0.5!(2.75,-2.5) + (0.1,-0.1)$);\n\\draw ($(4,0)!0.5!(2.75,-2.5) + (-0.1,-0.1)$) -- ($(4,0)!0.5!(2.75,-2.5) + (0.1,0.1)$);\n\n% Angles\n\\node at (0.8,-0.4) {$104°$};\n\\node at (3,-1.8) {$x°$};\n\n% NOT TO SCALE\n\\node at (7,0) {NOT TO};\n\\node at (7,-0.5) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nThe diagram shows triangle $BCE$ and a straight line $ABCD$.\n\n$BE = CE$ and angle $ABE = 104°$.\n\nFind the value of $x$.\n\n\\AnswerLine[$x =$][]\n\\Marks{2}\n\n\\part Work out the size of one interior angle of a regular polygon with 15 sides.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\part\n\\begin{center}\n\\begin{tikzpicture}[scale=0.5]\n% Circle\n\\draw (0,0) circle (2.5);\n\\node at (0,0) {$O$};\n\n% Points\n\\coordinate (A) at (-2.3,-1);\n\\coordinate (B) at (1.5,2);\n\\coordinate (C) at (1.5,-2);\n\n% Lines\n\\draw (A) -- (B) -- (C);\n\\draw (0,0) -- (B);\n\n% Labels\n\\node[left] at (A) {$A$};\n\\node[above right] at (B) {$B$};\n\\node[below right] at (C) {$C$};\n\n% Angles\n\\node at (-1.5,-0.5) {$38°$};\n\\node at (0.8,1.2) {$y°$};\n\n% NOT TO SCALE\n\\node at (4,1) {NOT TO};\n\\node at (4,0.5) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\n$A$, $B$ and $C$ are points on a circle, centre $O$.\n\n\\begin{subparts}\n\\subpart Write down the mathematical name of the line $BC$.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\subpart Draw a tangent to the circle at point $B$.\n\\Marks{1}\n\n\\subpart The area of the circle is 245.5\\,cm$^2$.\n\nCalculate $AB$.\n\n\\AnswerLine[$AB =$][cm]\n\\Marks{3}\n\n\\subpart Find the value of $y$.\n\n\\AnswerLine[$y =$][]\n\\Marks{2}\n\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper31-Q08",
+    "paper": "2022OctNov-Paper31",
+    "qnum": 8,
+    "marks": 10,
+    "topics": [
+      "Number",
+      "Algebra and graphs"
+    ],
+    "s": "2.5",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Equations",
+    "qtype": "simplifying expressions, substitution, factorisation, solving linear equations, indices laws, forming and solving equations",
+    "g": "linear",
+    "src": "0580/31/O/N/22 Q08",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "(a) \nSimplify.\n\\newline\n\\[5g - 3h - 7g + 6h\\]\n\n$j = 4k + 7m$\n\nFind the value of $j$ when $k = -5$ and $m = 6$.\n\\newline\n\nFactorise completely.\n\\newline\n\\[14x^3 + 49x\\]\n\nSolve.\n\\newline\n\\[8(3t - 9) = 108\\]\n\nt\n(i)  $9^{24} \\div 9^w = 9^5$\n\nFind the value of $w$.\n\\newline\n\n $4x^2 = 256$\n\nFind the value of $x$.\n\\newline\n\nRanjit's age is $x$ years.\n\\newline\n\nSuzi's age is 3 times Ranjit's age.\n\\newline\n\nJuan's age is 4 years more than Suzi's age.\n\\newline\n\nThe total of their ages is 46 years.\n\\newline\n\nUse this information to write down an equation and solve it to find the value of $x$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Simplify.\n\\newline\n\\[5g - 3h - 7g + 6h\\]"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "marks": 2,
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "$j = 4k + 7m$\n\nFind the value of $j$ when $k = -5$ and $m = 6$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$j =$"
+        },
+        "marks": 2,
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Factorise completely.\n\\newline\n\\[14x^3 + 49x\\]"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "marks": 2,
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Solve.\n\\newline\n\\[8(3t - 9) = 108\\]"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$t =$"
+        },
+        "marks": 3,
+        "_compactMarks": true
+      },
+      {
+        "label": "(e)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "$9^{24} \\div 9^w = 9^5$\n\nFind the value of $w$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$w =$"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "$4x^2 = 256$\n\nFind the value of $x$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$x =$"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          }
+        ],
+        "_itemNewline": true
+      },
+      {
+        "label": "(f)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Ranjit's age is $x$ years.\n\\newline\n\nSuzi's age is 3 times Ranjit's age.\n\\newline\n\nJuan's age is 4 years more than Suzi's age.\n\\newline\n\nThe total of their ages is 46 years.\n\\newline\n\nUse this information to write down an equation and solve it to find the value of $x$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x =$"
+        },
+        "marks": 4,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\part Simplify.\n\\[5g - 3h - 7g + 6h\\]\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\part $j = 4k + 7m$\n\nFind the value of $j$ when $k = -5$ and $m = 6$.\n\n\\AnswerLine[$j =$][]\n\\Marks{2}\n\n\\part Factorise completely.\n\\[14x^3 + 49x\\]\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\part Solve.\n\\[8(3t - 9) = 108\\]\n\n\\AnswerLine[$t =$][]\n\\Marks{3}\n\n\\part\n\\begin{subparts}\n\\subpart $9^{24} \\div 9^w = 9^5$\n\nFind the value of $w$.\n\n\\AnswerLine[$w =$][]\n\\Marks{1}\n\n\\subpart $4x^2 = 256$\n\nFind the value of $x$.\n\n\\AnswerLine[$x =$][]\n\\Marks{1}\n\n\\end{subparts}\n\n\\part Ranjit's age is $x$ years.\n\nSuzi's age is 3 times Ranjit's age.\n\nJuan's age is 4 years more than Suzi's age.\n\nThe total of their ages is 46 years.\n\nUse this information to write down an equation and solve it to find the value of $x$.\n\n\\AnswerLine[$x =$][]\n\\Marks{4}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper31-Q09",
+    "paper": "2022OctNov-Paper31",
+    "qnum": 9,
+    "marks": 6,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry"
+    ],
+    "s": "3.6",
+    "d": 1,
+    "cat": "coord",
+    "topic": "Position vectors",
+    "qtype": "parallel lines",
+    "g": "mixed",
+    "src": "0580/31/O/N/22 Q09",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "(a) \n$\\mathbf{a} = \\displaystyle\\binom{-3}{5}$ \\qquad $\\mathbf{b} = \\displaystyle\\binom{7}{-4}$\n\nWork out.\n\\newline\n\n(i)  $4\\mathbf{a}$\n\n $2\\mathbf{a} - \\mathbf{b}$\n\nt\n\n(i)  Write down the coordinates of point $P$.\n\\newline\n\n{---} ,  )][]\n\n On the grid, plot point $Q$ at $(-4, 2)$.\n\\newline\n\n $\\overrightarrow{PR} = \\displaystyle\\binom{-2}{1}$\n\nOn the grid, plot point $R$.\n\\newline\n\n On the grid, draw the line $y = 3$.\n\\newline\n\nt\n\nLine $L$ is shown on the grid.\n\\newline\n\n(i)  Find the equation of line $L$ in the form $y = mx + c$.\n\\newline\n\n Write down the equation of a line parallel to line $L$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "$\\mathbf{a} = \\displaystyle\\binom{-3}{5}$ \\qquad $\\mathbf{b} = \\displaystyle\\binom{7}{-4}$\n\nWork out.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "$4\\mathbf{a}$"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "$2\\mathbf{a} - \\mathbf{b}$"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.5]\n% Grid\n\\draw[gray!50, very thin] (-6,-4) grid (6,4);\n\n% Axes\n\\draw[thick,->] (-6,0) -- (6.5,0) node[right] {$x$};\n\\draw[thick,->] (0,-4) -- (0,4.5) node[above] {$y$};\n\n% Axis labels\n\\foreach \\x in {-6,-5,-4,-3,-2,-1,1,2,3,4,5,6} {\n    \\node[below, font=\\tiny] at (\\x,0) {\\x};\n}\n\\foreach \\y in {-4,-3,-2,-1,1,2,3,4} {\n    \\node[left, font=\\tiny] at (0,\\y) {\\y};\n}\n\n% Point P\n\\node[cross] at (3,1) {};\n\\node[above right] at (3,1) {$P$};\n\\end{tikzpicture}\n\\end{center}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Write down the coordinates of point $P$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "( \\makebox[0.8cm]{\\hrulefill} , \\makebox[0.8cm]{\\hrulefill} )"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "On the grid, plot point $Q$ at $(-4, 2)$.\n\\newline\n"
+              }
+            ],
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "$\\overrightarrow{PR} = \\displaystyle\\binom{-2}{1}$\n\nOn the grid, plot point $R$.\n\\newline\n"
+              }
+            ],
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iv)",
+            "content": [
+              {
+                "type": "text",
+                "content": "On the grid, draw the line $y = 3$.\n\\newline\n"
+              }
+            ],
+            "marks": 1,
+            "_compactMarks": true
+          }
+        ],
+        "_itemNewline": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n% Grid\n\\draw[gray!50, very thin] (-1,-5) grid (3,3);\n\n% Axes\n\\draw[thick,->] (-1,0) -- (3.5,0) node[right] {$x$};\n\\draw[thick,->] (0,-5) -- (0,3.5) node[above] {$y$};\n\n% Line L\n\\draw[thick] (-0.5,-5) -- (3,3);\n\\node[right] at (3,3) {$L$};\n\n% Axis labels\n\\foreach \\x in {-1,1,2,3} {\n    \\node[below, font=\\tiny] at (\\x,0) {\\x};\n}\n\\foreach \\y in {-5,-4,-3,-2,-1,1,2,3} {\n    \\node[left, font=\\tiny] at (0,\\y) {\\y};\n}\n\\end{tikzpicture}\n\\end{center}\n\nLine $L$ is shown on the grid.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the equation of line $L$ in the form $y = mx + c$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$y =$"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Write down the equation of a line parallel to line $L$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$y =$"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          }
+        ],
+        "_itemNewline": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\part $\\mathbf{a} = \\displaystyle\\binom{-3}{5}$ \\qquad $\\mathbf{b} = \\displaystyle\\binom{7}{-4}$\n\nWork out.\n\n\\begin{subparts}\n\\subpart $4\\mathbf{a}$\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\subpart $2\\mathbf{a} - \\mathbf{b}$\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{subparts}\n\n\\part\n\\begin{center}\n\\begin{tikzpicture}[scale=0.5]\n% Grid\n\\draw[gray!50, very thin] (-6,-4) grid (6,4);\n\n% Axes\n\\draw[thick,->] (-6,0) -- (6.5,0) node[right] {$x$};\n\\draw[thick,->] (0,-4) -- (0,4.5) node[above] {$y$};\n\n% Axis labels\n\\foreach \\x in {-6,-5,-4,-3,-2,-1,1,2,3,4,5,6} {\n    \\node[below, font=\\tiny] at (\\x,0) {\\x};\n}\n\\foreach \\y in {-4,-3,-2,-1,1,2,3,4} {\n    \\node[left, font=\\tiny] at (0,\\y) {\\y};\n}\n\n% Point P\n\\node[cross] at (3,1) {};\n\\node[above right] at (3,1) {$P$};\n\\end{tikzpicture}\n\\end{center}\n\n\\begin{subparts}\n\\subpart Write down the coordinates of point $P$.\n\n\\AnswerLine[( \\makebox[0.8cm]{\\hrulefill} , \\makebox[0.8cm]{\\hrulefill} )][]\n\\Marks{1}\n\n\\subpart On the grid, plot point $Q$ at $(-4, 2)$.\n\\Marks{1}\n\n\\subpart $\\overrightarrow{PR} = \\displaystyle\\binom{-2}{1}$\n\nOn the grid, plot point $R$.\n\\Marks{1}\n\n\\subpart On the grid, draw the line $y = 3$.\n\\Marks{1}\n\n\\end{subparts}\n\n\\part\n\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n% Grid\n\\draw[gray!50, very thin] (-1,-5) grid (3,3);\n\n% Axes\n\\draw[thick,->] (-1,0) -- (3.5,0) node[right] {$x$};\n\\draw[thick,->] (0,-5) -- (0,3.5) node[above] {$y$};\n\n% Line L\n\\draw[thick] (-0.5,-5) -- (3,3);\n\\node[right] at (3,3) {$L$};\n\n% Axis labels\n\\foreach \\x in {-1,1,2,3} {\n    \\node[below, font=\\tiny] at (\\x,0) {\\x};\n}\n\\foreach \\y in {-5,-4,-3,-2,-1,1,2,3} {\n    \\node[left, font=\\tiny] at (0,\\y) {\\y};\n}\n\\end{tikzpicture}\n\\end{center}\n\nLine $L$ is shown on the grid.\n\n\\begin{subparts}\n\\subpart Find the equation of line $L$ in the form $y = mx + c$.\n\n\\AnswerLine[$y =$][]\n\\Marks{2}\n\n\\subpart Write down the equation of a line parallel to line $L$.\n\n\\AnswerLine[$y =$][]\n\\Marks{1}\n\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true,
+    "_compactItems": true
+  }
+]

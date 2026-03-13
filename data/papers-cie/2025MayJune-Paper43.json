@@ -1,0 +1,1481 @@
+[
+  {
+    "id": "0580-2025MayJune-Paper43-Q01",
+    "paper": "2025MayJune-Paper43",
+    "qnum": 1,
+    "marks": 1,
+    "topics": [
+      "Statistics"
+    ],
+    "s": "9.3",
+    "d": 2,
+    "cat": "statistics",
+    "topic": "Frequency tables",
+    "qtype": "averages and spread",
+    "g": "mixed",
+    "src": "0580/43/M/J/25 Q01",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "Find the median of these numbers.\n\\newline\n\n5 \\qquad 11 \\qquad 11 \\qquad 13 \\qquad 17 \\qquad 21",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Find the median of these numbers.\n\\newline\n\n\\begin{center}\n5 \\qquad 11 \\qquad 11 \\qquad 13 \\qquad 17 \\qquad 21\n\\end{center}"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Find the median of these numbers.\n\n\\begin{center}\n5 \\qquad 11 \\qquad 11 \\qquad 13 \\qquad 17 \\qquad 21\n\\end{center}\n\n\\AnswerLine[][]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper43-Q02",
+    "paper": "2025MayJune-Paper43",
+    "qnum": 2,
+    "marks": 3,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.3",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Symmetry",
+    "qtype": "scale drawings and bearings",
+    "g": "mixed",
+    "src": "0580/43/M/J/25 Q02",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "In triangle $ABC$, $AC = 21\\,\\text{m}$ and $BC = 15.9\\,\\text{m}$.\n\\newline\n\n**Using a ruler and compasses only**, complete the scale drawing of the triangle.\n\\newline\n\nUse a scale of $1\\,\\text{cm}$ to represent $3\\,\\text{m}$.\n\\newline\n\nThe side $AB$ is drawn for you.\n\\newline\n",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "recall",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "In triangle $ABC$, $AC = 21\\,\\text{m}$ and $BC = 15.9\\,\\text{m}$.\n\\newline\n\n\\textbf{Using a ruler and compasses only}, complete the scale drawing of the triangle.\n\\newline\n\nUse a scale of $1\\,\\text{cm}$ to represent $3\\,\\text{m}$.\n\\newline\n\nThe side $AB$ is drawn for you.\n\\newline\n\n\\begin{center}"
+      },
+      {
+        "type": "figure",
+        "src": "Figures/Q02-LineSegmentAB.tex"
+      },
+      {
+        "type": "text",
+        "content": "\\end{center}"
+      }
+    ],
+    "_rawBody": "In triangle $ABC$, $AC = 21$\\,m and $BC = 15.9$\\,m.\n\n\\textbf{Using a ruler and compasses only}, complete the scale drawing of the triangle.\n\nUse a scale of 1\\,cm to represent 3\\,m.\n\nThe side $AB$ is drawn for you.\n\n\\begin{center}\n\n\\relinput{Figures/Q02-LineSegmentAB.tex}\n\n\\end{center}\n\n\\Marks{3}",
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper43/Q02/Q02-LineSegmentAB.png"
+    ]
+  },
+  {
+    "id": "0580-2025MayJune-Paper43-Q03",
+    "paper": "2025MayJune-Paper43",
+    "qnum": 3,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": null,
+    "d": 2,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/43/M/J/25 Q03",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "From this list, write down\n\n(a) a natural number\n\n(b) an irrational number.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "a natural number"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "an irrational number.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "",
+    "cmd": "write",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q03-NumberCards.tex"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "From this list, write down"
+      }
+    ],
+    "_rawBody": "\\relinput{Figures/Q03-NumberCards.tex}\n\n\\vgap\n\nFrom this list, write down\n\n\\begin{parts}\n\n\n\\item a natural number\n\\AnswerLine[][]\n\\Marks{1}\n\n\n\\item an irrational number.\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{parts}",
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper43/Q03/Q03-NumberCards.png"
+    ]
+  },
+  {
+    "id": "0580-2025MayJune-Paper43-Q04",
+    "paper": "2025MayJune-Paper43",
+    "qnum": 4,
+    "marks": 3,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.4",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Circle theorems",
+    "qtype": "similarity and congruence",
+    "g": "mixed",
+    "src": "0580/43/M/J/25 Q04",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "The diagram shows a pentagon made from two congruent trapeziums.\n\\newline\n\nThe area of the pentagon is $130.2\\,\\text{cm}^2$.\n\\newline\n\nCalculate the value of $x$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The diagram shows a pentagon made from two congruent trapeziums.\n\\newline\n\n\\begin{center}"
+      },
+      {
+        "type": "figure",
+        "src": "Figures/Q04-PentagonShape.tex"
+      },
+      {
+        "type": "text",
+        "content": "\\end{center}\n\nThe area of the pentagon is $130.2\\,\\text{cm}^2$.\n\\newline\n\nCalculate the value of $x$.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "$x = $"
+    },
+    "_rawBody": "The diagram shows a pentagon made from two congruent trapeziums.\n\n\\begin{center}\n\n\\relinput{Figures/Q04-PentagonShape.tex}\n\n\\end{center}\n\nThe area of the pentagon is 130.2\\,cm$^2$.\n\nCalculate the value of $x$.\n\n\\AnswerLine[$x = $][]\n\\Marks{3}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper43/Q04/Q04-PentagonShape.png"
+    ]
+  },
+  {
+    "id": "0580-2025MayJune-Paper43-Q05",
+    "paper": "2025MayJune-Paper43",
+    "qnum": 5,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": null,
+    "d": 2,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/43/M/J/25 Q05",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "(a) Convert $780\\,\\text{cm}^2$ into m$^2$.\n\\newline\n\n(b) Convert $0.037\\,\\text{m}^3$ into cm$^3$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Convert $780\\,\\text{cm}^2$ into m$^2$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "m$^2$",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Convert $0.037\\,\\text{m}^3$ into cm$^3$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "cm$^3$",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "",
+    "cmd": "calculate",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\n\n\\item Convert 780\\,cm$^2$ into m$^2$.\n\\AnswerLine[][m$^2$]\n\\Marks{1}\n\n\n\\item Convert 0.037\\,m$^3$ into cm$^3$.\n\\AnswerLine[][cm$^3$]\n\\Marks{1}\n\n\\end{parts}"
+  },
+  {
+    "id": "0580-2025MayJune-Paper43-Q06",
+    "paper": "2025MayJune-Paper43",
+    "qnum": 6,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.8",
+    "d": 2,
+    "cat": "number",
+    "topic": "Ratio, rate and proportion",
+    "qtype": "Calculations with standard form and unit conversion",
+    "g": "mixed",
+    "src": "0580/43/M/J/25 Q06",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "One titanium atom has a mass of $7.95 \\times 10^{-23}$ grams.\n\\newline\n\nCalculate the number of titanium atoms in $1\\,\\text{kg}$ of titanium.\n\\newline\n\nGive your answer in standard form.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "One titanium atom has a mass of $7.95 \\times 10^{-23}$ grams.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "Calculate the number of titanium atoms in $1\\,\\text{kg}$ of titanium.\n\\newline\n\nGive your answer in standard form.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "One titanium atom has a mass of $7.95 \\times 10^{-23}$ grams.\n\n\\vgap\n\nCalculate the number of titanium atoms in 1\\,kg of titanium.\n\nGive your answer in standard form.\n\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper43-Q07",
+    "paper": "2025MayJune-Paper43",
+    "qnum": 7,
+    "marks": 3,
+    "topics": [
+      "Number"
+    ],
+    "s": null,
+    "d": 2,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/43/M/J/25 Q07",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "$\\mathscr{E} = \\{x : x \\text{ is an integer and } 1 \\leqslant x \\leqslant 12\\}$\n\n$E = \\{\\text{even numbers}\\}$\n\n$M = \\{\\text{multiples of 3}\\}$\n\n(a) Find n$(M)$.\n\\newline\n\n(b) Write down the set $E \\cap M$.\n\\newline\n\n(c) $y \\in (E \\cup M)'$\n\nWrite down a possible value of $y$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find n$(M)$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down the set $E \\cap M$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$\\{$",
+          "suffix": "$\\}$",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "$y \\in (E \\cup M)'$\n\nWrite down a possible value of $y$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "$\\mathscr{E} = \\{x : x \\text{ is an integer and } 1 \\leqslant x \\leqslant 12\\}$\n\n$E = \\{\\text{even numbers}\\}$\n\n$M = \\{\\text{multiples of 3}\\}$"
+      }
+    ],
+    "_rawBody": "$\\mathscr{E} = \\{x : x \\text{ is an integer and } 1 \\leqslant x \\leqslant 12\\}$\n\n$E = \\{\\text{even numbers}\\}$\n\n$M = \\{\\text{multiples of 3}\\}$\n\n\\begin{parts}\n\n\n\\item Find n$(M)$.\n\\AnswerLine[][]\n\\Marks{1}\n\n\n\\item Write down the set $E \\cap M$.\n\\AnswerLine[$\\{$][$\\}$]\n\\Marks{1}\n\n\n\\item $y \\in (E \\cup M)'$\n\nWrite down a possible value of $y$.\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{parts}"
+  },
+  {
+    "id": "0580-2025MayJune-Paper43-Q08",
+    "paper": "2025MayJune-Paper43",
+    "qnum": 8,
+    "marks": 4,
+    "topics": [
+      "Number",
+      "Algebra and graphs"
+    ],
+    "s": "2.2",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Rearranging formulae",
+    "qtype": "factorisation by common factor and grouping",
+    "g": "simplify",
+    "src": "0580/43/M/J/25 Q08",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "Factorise.\n\\newline\n\n(a) $28xy - 12x$\n\n(b) $y - 6x + 2xy - 3$",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "$28xy - 12x$"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "$y - 6x + 2xy - 3$"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Factorise.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "Factorise.\n\n\\begin{parts}\n\n\n\\item $28xy - 12x$\n\\AnswerLine[][]\n\\Marks{2}\n\n\n\\item $y - 6x + 2xy - 3$\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{parts}"
+  },
+  {
+    "id": "0580-2025MayJune-Paper43-Q09",
+    "paper": "2025MayJune-Paper43",
+    "qnum": 9,
+    "marks": 3,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.4",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Algebraic fractions",
+    "qtype": "simplifying expressions with indices and solving index equation",
+    "g": "simplify",
+    "src": "0580/43/M/J/25 Q09",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "(a) Simplify.\n\\newline\n\n$5x^5y \\times 7x^3y^2$\n\n(b) $7^n = \\sqrt[5]{7}$\n\nFind the value of $n$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Simplify.\n\\newline\n\n$5x^5y \\times 7x^3y^2$"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "$7^n = \\sqrt[5]{7}$\n\nFind the value of $n$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$n = $",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\n\n\\item Simplify.\n\n$5x^5y \\times 7x^3y^2$\n\\AnswerLine[][]\n\\Marks{2}\n\n\n\\item $7^n = \\sqrt[5]{7}$\n\nFind the value of $n$.\n\\AnswerLine[$n = $][]\n\\Marks{1}\n\n\\end{parts}"
+  },
+  {
+    "id": "0580-2025MayJune-Paper43-Q10",
+    "paper": "2025MayJune-Paper43",
+    "qnum": 10,
+    "marks": 5,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.2",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Rearranging formulae",
+    "qtype": "expanding and simplifying algebraic expressions",
+    "g": "simplify",
+    "src": "0580/43/M/J/25 Q10",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "Expand and simplify.\n\\newline\n\n(a) $2x - x(5 - x^2)$\n\n(b) $(x + 4)(x - 5)(x + 3)$",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "$2x - x(5 - x^2)$"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "$(x + 4)(x - 5)(x + 3)$"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Expand and simplify.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "Expand and simplify.\n\n\\begin{parts}\n\n\\item $2x - x(5 - x^2)$\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item $(x + 4)(x - 5)(x + 3)$\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\end{parts}"
+  },
+  {
+    "id": "0580-2025MayJune-Paper43-Q11",
+    "paper": "2025MayJune-Paper43",
+    "qnum": 11,
+    "marks": 8,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.7",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Sequences",
+    "qtype": "finding nth term of linear, rational and exponential sequences",
+    "g": "sequence",
+    "src": "0580/43/M/J/25 Q11",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "The table shows three sequences.\n\\newline\n\n\\begin{tabular}{|l|c|c|c|c|c|c|c|}\n\\hline\n& 1st term & 2nd term & 3rd term & 4th term & 5th term & 6th term & $n$th term \\\\\n\\hline\nSequence $A$ & 28 & 22 & 16 & 10 & 4 & & \\\\\n\\hline\nSequence $B$ & $\\dfrac{1}{6}$ & $\\dfrac{2}{7}$ & $\\dfrac{3}{8}$ & $\\dfrac{4}{9}$ & $\\dfrac{1}{2}$ & & \\\\\n\\hline\nSequence $C$ & $\\dfrac{1}{4}$ & $\\dfrac{1}{2}$ & 1 & 2 & 4 & & \\\\\n\\hline\n\\end{tabular}\nComplete the table.\n\\newline\n",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "analyse",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The table shows three sequences.\n\\newline\n"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{center}\n\\begin{tabular}{|l|c|c|c|c|c|c|c|}\n\\hline\n& 1st term & 2nd term & 3rd term & 4th term & 5th term & 6th term & $n$th term \\\\\n\\hline\nSequence $A$ & 28 & 22 & 16 & 10 & 4 & & \\\\\n\\hline\nSequence $B$ & $\\dfrac{1}{6}$ & $\\dfrac{2}{7}$ & $\\dfrac{3}{8}$ & $\\dfrac{4}{9}$ & $\\dfrac{1}{2}$ & & \\\\\n\\hline\nSequence $C$ & $\\dfrac{1}{4}$ & $\\dfrac{1}{2}$ & 1 & 2 & 4 & & \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+      },
+      {
+        "type": "text",
+        "content": "Complete the table.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "The table shows three sequences.\n\n\\begin{center}\n\\begin{tabular}{|l|c|c|c|c|c|c|c|}\n\\hline\n& 1st term & 2nd term & 3rd term & 4th term & 5th term & 6th term & $n$th term \\\\\n\\hline\nSequence $A$ & 28 & 22 & 16 & 10 & 4 & & \\\\\n\\hline\nSequence $B$ & $\\dfrac{1}{6}$ & $\\dfrac{2}{7}$ & $\\dfrac{3}{8}$ & $\\dfrac{4}{9}$ & $\\dfrac{1}{2}$ & & \\\\\n\\hline\nSequence $C$ & $\\dfrac{1}{4}$ & $\\dfrac{1}{2}$ & 1 & 2 & 4 & & \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\nComplete the table.\n\n\\Marks{8}",
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper43/Q11/Q11-SequenceTable.png"
+    ]
+  },
+  {
+    "id": "0580-2025MayJune-Paper43-Q12",
+    "paper": "2025MayJune-Paper43",
+    "qnum": 12,
+    "marks": 3,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.7",
+    "d": 2,
+    "cat": "number",
+    "topic": "Estimation and limits",
+    "qtype": "Applying index laws to simplify expression and find power",
+    "g": "simplify",
+    "src": "0580/43/M/J/25 Q12",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "\\[ \\sqrt{\\frac{10^{400}}{10^{220} \\times 10^{80}}} = 10^k \\]\n\nFind the value of $k$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\[ \\sqrt{\\frac{10^{400}}{10^{220} \\times 10^{80}}} = 10^k \\]\n\nFind the value of $k$.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "$k = $"
+    },
+    "_rawBody": "\\[ \\sqrt{\\frac{10^{400}}{10^{220} \\times 10^{80}}} = 10^k \\]\n\nFind the value of $k$.\n\n\\AnswerLine[$k = $][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper43-Q13",
+    "paper": "2025MayJune-Paper43",
+    "qnum": 13,
+    "marks": 6,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry"
+    ],
+    "s": "3.7",
+    "d": 2,
+    "cat": "coord",
+    "topic": "Coordinate geometry extended",
+    "qtype": "perpendicular lines",
+    "g": "mixed",
+    "src": "0580/43/M/J/25 Q13",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "Line $L$ has the equation $y = 2(x - 5)$.\n\\newline\n\n(a) Find the coordinates of the point where line $L$ intersects the $y$-axis.\n\\newline\n\n (  ,  )\n\n(b) Find the $x$-coordinate of the point where line $L$ intersects the line $y = 19$.\n\\newline\n\n(c) Line $P$ is perpendicular to line $L$.\n\\newline\n\nLine $P$ passes through the point $(2, 3)$.\n\\newline\n\nFind the equation of line $P$.\n\\newline\n\nGive your answer in the form $y = mx + c$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the coordinates of the point where line $L$ intersects the $y$-axis.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "coordinate",
+          "fields": 2,
+          "_rawAnswer": "\\hfill ( \\AnswerLineShort[][] , \\AnswerLineShort[][] )"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the $x$-coordinate of the point where line $L$ intersects the line $y = 19$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x = $"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Line $P$ is perpendicular to line $L$.\n\\newline\n\nLine $P$ passes through the point $(2, 3)$.\n\\newline\n\nFind the equation of line $P$.\n\\newline\n\nGive your answer in the form $y = mx + c$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$y = $",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Line $L$ has the equation $y = 2(x - 5)$.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "Line $L$ has the equation $y = 2(x - 5)$.\n\n\\begin{parts}\n\n\\item Find the coordinates of the point where line $L$ intersects the $y$-axis.\n\n\\hfill ( \\AnswerLineShort[][] , \\AnswerLineShort[][] )\n\\Marks{1}\n\n\\item Find the $x$-coordinate of the point where line $L$ intersects the line $y = 19$.\n\n\\AnswerLine[$x = $][]\n\\Marks{2}\n\n\\item Line $P$ is perpendicular to line $L$.\n\nLine $P$ passes through the point $(2, 3)$.\n\nFind the equation of line $P$.\n\nGive your answer in the form $y = mx + c$.\n\\AnswerLine[$y = $][]\n\\Marks{3}\n\n\\end{parts}"
+  },
+  {
+    "id": "0580-2025MayJune-Paper43-Q14",
+    "paper": "2025MayJune-Paper43",
+    "qnum": 14,
+    "marks": 3,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.13",
+    "d": 2,
+    "cat": "number",
+    "topic": "Electronic calculators",
+    "qtype": "Finding compound interest rate",
+    "g": "mixed",
+    "src": "0580/43/M/J/25 Q14",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "Jess invests \\$1400 in an account.\n\\newline\n\nThe account pays compound interest at a rate of $r$\\% per year.\n\\newline\n\nAt the end of 4 years the value of her investment is \\$1523.15 .\n\\newline\n\nFind the value of $r$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "analyse",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Jess invests \\$1400 in an account.\n\\newline\n\nThe account pays compound interest at a rate of $r$\\% per year.\n\\newline\n\nAt the end of 4 years the value of her investment is \\$1523.15 .\n\\newline\n\nFind the value of $r$.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "$r = $"
+    },
+    "_rawBody": "Jess invests \\$1400 in an account.\n\nThe account pays compound interest at a rate of $r$\\% per year.\n\nAt the end of 4 years the value of her investment is \\$1523.15 .\n\nFind the value of $r$.\n\n\\AnswerLine[$r = $][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper43-Q15",
+    "paper": "2025MayJune-Paper43",
+    "qnum": 15,
+    "marks": 3,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.8",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Proportion",
+    "qtype": "inverse proportion problem solving",
+    "g": "function",
+    "src": "0580/43/M/J/25 Q15",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "$m$ is inversely proportional to the square root of $(t + 2)$.\n\\newline\n\n$m = 0.5$ when $t = 23$ .\n\\newline\n\nFind $m$ when $t = 98$ .\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "$m$ is inversely proportional to the square root of $(t + 2)$.\n\\newline\n\n$m = 0.5$ when $t = 23$ .\n\\newline\n\nFind $m$ when $t = 98$ .\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "$m = $"
+    },
+    "_rawBody": "$m$ is inversely proportional to the square root of $(t + 2)$.\n\n$m = 0.5$ when $t = 23$ .\n\nFind $m$ when $t = 98$ .\n\n\\AnswerLine[$m = $][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper43-Q16",
+    "paper": "2025MayJune-Paper43",
+    "qnum": 16,
+    "marks": 5,
+    "topics": [
+      "Algebra and graphs",
+      "Coordinate geometry"
+    ],
+    "s": "2.6",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Inequalities",
+    "qtype": "graphing linear inequalities to define a region",
+    "g": "graph",
+    "src": "0580/43/M/J/25 Q16",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "By shading the **unwanted** regions of the grid, draw and label the region $R$ which satisfies these three inequalities.\n\\newline\n\n\\[ y < 3 \\qquad x \\leqslant 2 \\qquad y < x + 3 \\]",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{center}"
+      },
+      {
+        "type": "figure",
+        "src": "Figures/Q16-CoordinateGrid.tex"
+      },
+      {
+        "type": "text",
+        "content": "\\end{center}\n\nBy shading the \\textbf{unwanted} regions of the grid, draw and label the region $R$ which satisfies these three inequalities.\n\\newline\n\n\\[ y < 3 \\qquad x \\leqslant 2 \\qquad y < x + 3 \\]"
+      }
+    ],
+    "_rawBody": "\\begin{center}\n\n\\relinput{Figures/Q16-CoordinateGrid.tex}\n\n\\end{center}\n\nBy shading the \\textbf{unwanted} regions of the grid, draw and label the region $R$ which satisfies these three inequalities.\n\n\\[ y < 3 \\qquad x \\leqslant 2 \\qquad y < x + 3 \\]\n\n\\Marks{5}",
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper43/Q16/Q16-CoordinateGrid.png"
+    ]
+  },
+  {
+    "id": "0580-2025MayJune-Paper43-Q17",
+    "paper": "2025MayJune-Paper43",
+    "qnum": 17,
+    "marks": 1,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.2",
+    "d": 2,
+    "cat": "number",
+    "topic": "Squares, cubes and roots",
+    "qtype": "Shading Venn diagram regions",
+    "g": "mixed",
+    "src": "0580/43/M/J/25 Q17",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "In the Venn diagram, shade the region $(A \\cup B) \\cap C'$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "text",
+        "content": "In the Venn diagram, shade the region $(A \\cup B) \\cap C'$.\n\\newline\n\n\\begin{center}"
+      },
+      {
+        "type": "figure",
+        "src": "Figures/Q17-VennDiagramABC.tex"
+      },
+      {
+        "type": "text",
+        "content": "\\end{center}"
+      }
+    ],
+    "_rawBody": "In the Venn diagram, shade the region $(A \\cup B) \\cap C'$.\n\n\\begin{center}\n\n\\relinput{Figures/Q17-VennDiagramABC.tex}\n\n\\end{center}\n\n\\Marks{1}",
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper43/Q17/Q17-VennDiagramABC.png"
+    ]
+  },
+  {
+    "id": "0580-2025MayJune-Paper43-Q18",
+    "paper": "2025MayJune-Paper43",
+    "qnum": 18,
+    "marks": 8,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.6",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/43/M/J/25 Q18",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "The diagram shows a solid cuboid with sides of length $4.5\\,\\text{cm}$, $8\\,\\text{cm}$ and $13.2\\,\\text{cm}$.\n\\newline\n\n(a) Calculate the volume of the cuboid.\n\\newline\n\n(b) Calculate the total surface area of the cuboid.\n\\newline\n\n(c) \n\nCalculate the angle between $AB$ and the horizontal base of the cuboid.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Calculate the volume of the cuboid.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "cm$^3$"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Calculate the total surface area of the cuboid.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "cm$^2$"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "text",
+            "content": "\\begin{center}"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q18c-CuboidAB.tex"
+          },
+          {
+            "type": "text",
+            "content": "\\end{center}\n\nCalculate the angle between $AB$ and the horizontal base of the cuboid.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true,
+        "_itemNewline": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{center}"
+      },
+      {
+        "type": "figure",
+        "src": "Figures/Q18-Cuboid.tex"
+      },
+      {
+        "type": "text",
+        "content": "\\end{center}\n\nThe diagram shows a solid cuboid with sides of length $4.5\\,\\text{cm}$, $8\\,\\text{cm}$ and $13.2\\,\\text{cm}$.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "\\begin{center}\n\n\\relinput{Figures/Q18-Cuboid.tex}\n\n\\end{center}\n\nThe diagram shows a solid cuboid with sides of length 4.5\\,cm, 8\\,cm and 13.2\\,cm.\n\n\\begin{parts}\n\n\\item Calculate the volume of the cuboid.\n\n\\AnswerLine[][cm$^3$]\n\\Marks{1}\n\n\\item Calculate the total surface area of the cuboid.\n\n\\AnswerLine[][cm$^2$]\n\\Marks{3}\n\n\\item\n\\begin{center}\n\n\\relinput{Figures/Q18c-CuboidAB.tex}\n\n\\end{center}\n\nCalculate the angle between $AB$ and the horizontal base of the cuboid.\n\n\\AnswerLine[][]\n\\Marks{4}\n\n\\end{parts}",
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper43/Q18/Q18-Cuboid.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper43/Q18/Q18c-CuboidAB.png"
+    ]
+  },
+  {
+    "id": "0580-2025MayJune-Paper43-Q19",
+    "paper": "2025MayJune-Paper43",
+    "qnum": 19,
+    "marks": 4,
+    "topics": [
+      "Number",
+      "Statistics"
+    ],
+    "s": null,
+    "d": 2,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/43/M/J/25 Q19",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "The table shows some information about the heights of 200 plants.\n\\newline\n\n(a) Draw a cumulative frequency diagram to show this information.\n\\newline\n\n(b) Find an estimate of the 75th percentile.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Draw a cumulative frequency diagram to show this information.\n\\newline\n\n\\begin{center}"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q19a-CumulativeFreqGrid.tex"
+          },
+          {
+            "type": "text",
+            "content": "\\end{center}"
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find an estimate of the 75th percentile.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "cm",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The table shows some information about the heights of 200 plants.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "figure",
+        "src": "Figures/Q19-CumulativeFreqTable.tex"
+      }
+    ],
+    "_rawBody": "The table shows some information about the heights of 200 plants.\n\n\\vgap\n\n\\relinput{Figures/Q19-CumulativeFreqTable.tex}\n\n\\begin{parts}\n\n\\item Draw a cumulative frequency diagram to show this information.\n\n\\begin{center}\n\n\\relinput{Figures/Q19a-CumulativeFreqGrid.tex}\n\n\\end{center}\n\n\\Marks{3}\n\n\\item Find an estimate of the 75th percentile.\n\\AnswerLine[][cm]\n\\Marks{1}\n\n\\end{parts}",
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper43/Q19/Q19-CumulativeFreqTable.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper43/Q19/Q19a-CumulativeFreqGrid.png"
+    ]
+  },
+  {
+    "id": "0580-2025MayJune-Paper43-Q20",
+    "paper": "2025MayJune-Paper43",
+    "qnum": 20,
+    "marks": 5,
+    "topics": [
+      "Probability"
+    ],
+    "s": "8.3",
+    "d": 2,
+    "cat": "probability",
+    "topic": "Tree diagrams",
+    "qtype": "combined events",
+    "g": "mixed",
+    "src": "0580/43/M/J/25 Q20",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "Stephan has two bags, $A$ and $B$, each containing red sweets and yellow sweets only.\n\\newline\n\nHe picks two sweets at random, one from bag $A$ and the other from bag $B$.\n\\newline\n\nThe probability that Stephan picks a red sweet from bag $A$ is $\\dfrac{3}{5}$.\n\\newline\n\nThe probability that Stephan picks a red sweet from bag $A$ and a red sweet from bag $B$ is $\\dfrac{2}{15}$.\n\\newline\n\n(a) Find the probability that Stephan picks a red sweet from bag $B$.\n\\newline\n\n(b) Find the probability that Stephan picks a yellow sweet from bag $A$ and a yellow sweet from bag $B$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the probability that Stephan picks a red sweet from bag $B$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the probability that Stephan picks a yellow sweet from bag $A$ and a yellow sweet from bag $B$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Stephan has two bags, $A$ and $B$, each containing red sweets and yellow sweets only.\n\\newline\n\nHe picks two sweets at random, one from bag $A$ and the other from bag $B$.\n\\newline\n\nThe probability that Stephan picks a red sweet from bag $A$ is $\\dfrac{3}{5}$.\n\\newline\n\nThe probability that Stephan picks a red sweet from bag $A$ and a red sweet from bag $B$ is $\\dfrac{2}{15}$.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "Stephan has two bags, $A$ and $B$, each containing red sweets and yellow sweets only.\n\nHe picks two sweets at random, one from bag $A$ and the other from bag $B$.\n\nThe probability that Stephan picks a red sweet from bag $A$ is $\\dfrac{3}{5}$.\n\nThe probability that Stephan picks a red sweet from bag $A$ and a red sweet from bag $B$ is $\\dfrac{2}{15}$.\n\n\\begin{parts}\n\n\n\\item Find the probability that Stephan picks a red sweet from bag $B$.\n\\AnswerLine[][]\n\\Marks{2}\n\n\n\\item Find the probability that Stephan picks a yellow sweet from bag $A$ and a yellow sweet from bag $B$.\n\\AnswerLine[][]\n\\Marks{3}\n\n\\end{parts}"
+  },
+  {
+    "id": "0580-2025MayJune-Paper43-Q21",
+    "paper": "2025MayJune-Paper43",
+    "qnum": 21,
+    "marks": 4,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.6",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/43/M/J/25 Q21",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "The diagram shows an equilateral triangle $ABC$ with all sides of length $12\\,\\text{cm}$.\n\\newline\n\n$ANP$ is a sector of a circle, centre $A$.\n\\newline\n\n$N$ lies on $AC$ such that $AN : NC = 2 : 1$.\n\\newline\n\n$P$ lies on $AB$ such that $AP : PB = 2 : 1$.\n\\newline\n\nCalculate the area of the shaded region.\n\\newline\n",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{center}"
+      },
+      {
+        "type": "figure",
+        "src": "Figures/Q21-TriangleSegment.tex"
+      },
+      {
+        "type": "text",
+        "content": "\\end{center}\n\nThe diagram shows an equilateral triangle $ABC$ with all sides of length $12\\,\\text{cm}$.\n\\newline\n\n$ANP$ is a sector of a circle, centre $A$.\n\\newline\n\n$N$ lies on $AC$ such that $AN : NC = 2 : 1$.\n\\newline\n\n$P$ lies on $AB$ such that $AP : PB = 2 : 1$.\n\\newline\n\nCalculate the area of the shaded region.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "cm$^2$"
+    },
+    "_rawBody": "\\begin{center}\n\n\\relinput{Figures/Q21-TriangleSegment.tex}\n\n\\end{center}\n\nThe diagram shows an equilateral triangle $ABC$ with all sides of length 12\\,cm.\n\n$ANP$ is a sector of a circle, centre $A$.\n\n$N$ lies on $AC$ such that $AN : NC = 2 : 1$.\n\n$P$ lies on $AB$ such that $AP : PB = 2 : 1$.\n\nCalculate the area of the shaded region.\n\n\\AnswerLine[][cm$^2$]\n\\Marks{4}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper43/Q21/Q21-TriangleSegment.png"
+    ]
+  },
+  {
+    "id": "0580-2025MayJune-Paper43-Q22",
+    "paper": "2025MayJune-Paper43",
+    "qnum": 22,
+    "marks": 4,
+    "topics": [
+      "Number",
+      "Mensuration"
+    ],
+    "s": "1.10",
+    "d": 2,
+    "cat": "number",
+    "topic": "Time",
+    "qtype": "Calculating upper and lower bounds for measurements and density",
+    "g": "mixed",
+    "src": "0580/43/M/J/25 Q22",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "A metal cube has mass $14.2\\,\\text{g}$, correct to 1 decimal place.\n\\newline\n\n(a) Find the lower bound of the mass of the cube.\n\\newline\n\n(b) The side length of the cube is $1.3\\,\\text{cm}$, correct to 1 decimal place.\n\\newline\n\nCalculate the upper bound of the density of the metal.\n\\newline\n\n$[\\text{Density} = \\text{mass} \\div \\text{volume}]$",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the lower bound of the mass of the cube.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "g",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "The side length of the cube is $1.3\\,\\text{cm}$, correct to 1 decimal place.\n\\newline\n\nCalculate the upper bound of the density of the metal.\n\\newline\n\n$[\\text{Density} = \\text{mass} \\div \\text{volume}]$"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "g/cm$^3$",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "A metal cube has mass $14.2\\,\\text{g}$, correct to 1 decimal place.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "A metal cube has mass 14.2\\,g, correct to 1 decimal place.\n\n\\begin{parts}\n\n\n\\item Find the lower bound of the mass of the cube.\n\\AnswerLine[][g]\n\\Marks{1}\n\n\n\\item The side length of the cube is 1.3\\,cm, correct to 1 decimal place.\n\nCalculate the upper bound of the density of the metal.\n\n$[\\text{Density} = \\text{mass} \\div \\text{volume}]$\n\\AnswerLine[][g/cm$^3$]\n\\Marks{3}\n\n\\end{parts}"
+  },
+  {
+    "id": "0580-2025MayJune-Paper43-Q23",
+    "paper": "2025MayJune-Paper43",
+    "qnum": 23,
+    "marks": 4,
+    "topics": [
+      "Mensuration"
+    ],
+    "s": "5.5",
+    "d": 2,
+    "cat": "mensuration",
+    "topic": "Compound shapes",
+    "qtype": "compound shapes",
+    "g": "mixed",
+    "src": "0580/43/M/J/25 Q23",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "The diagram shows a frustum made by removing a small cone from a large cone.\n\\newline\n\nThe height of the small cone is $7.5\\,\\text{cm}$.\n\\newline\n\nThe height of the frustum is $4.5\\,\\text{cm}$.\n\\newline\n\nThe radius of the large cone is $4.2\\,\\text{cm}$.\n\\newline\n\nWork out the volume of the frustum.\n\\newline\n",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{center}"
+      },
+      {
+        "type": "figure",
+        "src": "Figures/Q23-ConeFrustum.tex"
+      },
+      {
+        "type": "text",
+        "content": "\\end{center}\n\nThe diagram shows a frustum made by removing a small cone from a large cone.\n\\newline\n\nThe height of the small cone is $7.5\\,\\text{cm}$.\n\\newline\n\nThe height of the frustum is $4.5\\,\\text{cm}$.\n\\newline\n\nThe radius of the large cone is $4.2\\,\\text{cm}$.\n\\newline\n\nWork out the volume of the frustum.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "cm$^3$"
+    },
+    "_rawBody": "\\begin{center}\n\n\\relinput{Figures/Q23-ConeFrustum.tex}\n\n\\end{center}\n\nThe diagram shows a frustum made by removing a small cone from a large cone.\n\nThe height of the small cone is 7.5\\,cm.\n\nThe height of the frustum is 4.5\\,cm.\n\nThe radius of the large cone is 4.2\\,cm.\n\nWork out the volume of the frustum.\n\n\\AnswerLine[][cm$^3$]\n\\Marks{4}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper43/Q23/Q23-ConeFrustum.png"
+    ]
+  },
+  {
+    "id": "0580-2025MayJune-Paper43-Q24",
+    "paper": "2025MayJune-Paper43",
+    "qnum": 24,
+    "marks": 4,
+    "topics": [
+      "Number",
+      "Statistics"
+    ],
+    "s": null,
+    "d": 2,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/43/M/J/25 Q24",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "The histogram shows information about the distance some people travel to work.\n\\newline\n\n(a) Use the histogram to complete the table.\n\\newline\n\n(b) The people who travel a distance greater than $35\\,\\text{km}$ to work have a car allowance.\n\\newline\n\nCalculate an estimate of the number of these people who have a car allowance.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Use the histogram to complete the table.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q24a-DistanceTable.tex"
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "The people who travel a distance greater than $35\\,\\text{km}$ to work have a car allowance.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "text",
+            "content": "Calculate an estimate of the number of these people who have a car allowance.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The histogram shows information about the distance some people travel to work.\n\\newline\n\n\\begin{center}"
+      },
+      {
+        "type": "figure",
+        "src": "Figures/Q24-FrequencyDensityHistogram.tex"
+      },
+      {
+        "type": "text",
+        "content": "\\end{center}"
+      }
+    ],
+    "_rawBody": "The histogram shows information about the distance some people travel to work.\n\n\\begin{center}\n\n\\relinput{Figures/Q24-FrequencyDensityHistogram.tex}\n\n\\end{center}\n\n\\begin{parts}\n\n\\item Use the histogram to complete the table.\n\n\\vgap\n\n\\relinput{Figures/Q24a-DistanceTable.tex}\n\n\\Marks{3}\n\n\n\\item The people who travel a distance greater than 35\\,km to work have a car allowance.\n\n\\vgap \n\nCalculate an estimate of the number of these people who have a car allowance.\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{parts}",
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper43/Q24/Q24-FrequencyDensityHistogram.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper43/Q24/Q24a-DistanceTable.png"
+    ]
+  },
+  {
+    "id": "0580-2025MayJune-Paper43-Q25",
+    "paper": "2025MayJune-Paper43",
+    "qnum": 25,
+    "marks": 5,
+    "topics": [
+      "Algebra and graphs",
+      "Trigonometry"
+    ],
+    "s": "2.10",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Graphs of functions",
+    "qtype": "sketching sine curve and solving trigonometric equation",
+    "g": "graph",
+    "src": "0580/43/M/J/25 Q25",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "(a) On the axes, sketch the graph of $y = \\sin x$ for $0^\\circ \\leqslant x \\leqslant 360^\\circ$.\n\\newline\n\n(b) Solve the equation $2 + 5\\sin x = 1$ for $0^\\circ \\leqslant x \\leqslant 360^\\circ$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "On the axes, sketch the graph of $y = \\sin x$ for $0^\\circ \\leqslant x \\leqslant 360^\\circ$.\n\\newline\n\n\\begin{center}"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q25-TrigonometricAxes.tex"
+          },
+          {
+            "type": "text",
+            "content": "\\end{center}"
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Solve the equation $2 + 5\\sin x = 1$ for $0^\\circ \\leqslant x \\leqslant 360^\\circ$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "sketch",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\n\n\\item On the axes, sketch the graph of $y = \\sin x$ for $0^\\circ \\leqslant x \\leqslant 360^\\circ$.\n\n\\begin{center}\n\n\\relinput{Figures/Q25-TrigonometricAxes.tex}\n\n\\end{center}\n\n\\Marks{2}\n\n\n\\item Solve the equation $2 + 5\\sin x = 1$ for $0^\\circ \\leqslant x \\leqslant 360^\\circ$.\n\\AnswerLine[][]\n\\Marks{3}\n\n\\end{parts}",
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper43/Q25/Q25-TrigonometricAxes.png"
+    ]
+  },
+  {
+    "id": "0580-2025MayJune-Paper43-Q26",
+    "paper": "2025MayJune-Paper43",
+    "qnum": 26,
+    "marks": 5,
+    "topics": [
+      "Number",
+      "Geometry",
+      "Transformations and vectors"
+    ],
+    "s": null,
+    "d": 2,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/43/M/J/25 Q26",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "$OXPY$ is a quadrilateral.\n\\newline\n\n$\\overrightarrow{OX} = 3\\mathbf{a}$, $\\overrightarrow{OY} = 12\\mathbf{b}$ and $\\overrightarrow{YP} = 5\\mathbf{a} - 2\\mathbf{b}$.\n\\newline\n\n$T$ is the point where the diagonals $XY$ and $OP$ intersect.\n\\newline\n\n(a) Find $\\overrightarrow{XY}$ in terms of $\\mathbf{a}$ and $\\mathbf{b}$.\n\\newline\n\n(b) $XT : TY = 1 : 2$\n\nFind the ratio $OT : TP$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find $\\overrightarrow{XY}$ in terms of $\\mathbf{a}$ and $\\mathbf{b}$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "text",
+            "content": "$XT : TY = 1 : 2$\n\nFind the ratio $OT : TP$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{center}"
+      },
+      {
+        "type": "figure",
+        "src": "Figures/Q26-VectorDiagram.tex"
+      },
+      {
+        "type": "text",
+        "content": "\\end{center}\n\n$OXPY$ is a quadrilateral.\n\\newline\n\n$\\overrightarrow{OX} = 3\\mathbf{a}$, $\\overrightarrow{OY} = 12\\mathbf{b}$ and $\\overrightarrow{YP} = 5\\mathbf{a} - 2\\mathbf{b}$.\n\\newline\n\n$T$ is the point where the diagonals $XY$ and $OP$ intersect.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "\\begin{center}\n\n\\relinput{Figures/Q26-VectorDiagram.tex}\n\n\\end{center}\n\n$OXPY$ is a quadrilateral.\n\n$\\overrightarrow{OX} = 3\\mathbf{a}$, $\\overrightarrow{OY} = 12\\mathbf{b}$ and $\\overrightarrow{YP} = 5\\mathbf{a} - 2\\mathbf{b}$.\n\n$T$ is the point where the diagonals $XY$ and $OP$ intersect.\n\n\\begin{parts}\n\n\n\\item Find $\\overrightarrow{XY}$ in terms of $\\mathbf{a}$ and $\\mathbf{b}$.\n\\AnswerLine[][]\n\\Marks{1}\n\n\n\\item $XT : TY = 1 : 2$\n\nFind the ratio $OT : TP$.\n\\AnswerLine[][]\n\\Marks{4}\n\n\\end{parts}",
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper43/Q26/Q26-VectorDiagram.png"
+    ]
+  }
+]

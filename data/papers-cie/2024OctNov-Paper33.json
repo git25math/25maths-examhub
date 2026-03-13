@@ -1,0 +1,1473 @@
+[
+  {
+    "id": "0580-2024OctNov-Paper33-Q01",
+    "paper": "2024OctNov-Paper33",
+    "qnum": 1,
+    "marks": 13,
+    "topics": [
+      "Mensuration",
+      "Statistics"
+    ],
+    "s": "5.4",
+    "d": 1,
+    "cat": "mensuration",
+    "topic": "Volume",
+    "qtype": "surface area and volume",
+    "g": "mixed",
+    "src": "0580/33/O/N/24 Q01",
+    "year": 2024,
+    "session": "OctNov",
+    "tex": "**[2024 Oct/Nov, 0580/33, Question 1]**\n\n(a) (i) (b) Li has \\$20.\n\\newline\n \\\\\n    A box of cereal costs \\$2.29.\n\\newline\n \\\\\n    Work out the maximum number of boxes of cereal that Li can buy.\n\\newline\n\n    \n\n(c) Each box of cereal has mass 615~g.\n\\newline\n \\\\\n    Work out the total mass of 5 boxes of cereal.\n\\newline\n \\\\\n    Give your answer in kilograms.\n\\newline\n\n    \n\n(d) The box of cereal is a cuboid.\n\\newline\n \\\\\n    The cuboid measures 25~cm by 20~cm by 5~cm.\n\\newline\n \\\\\n    Work out the volume of the cuboid.\n\\newline\n\n    \n\n(e) A cereal bar is in a box.\n\\newline\n \\\\\nThe box is a cuboid measuring 6~cm by 3~cm by 1~cm.\n\\newline\n\nOn the 1~cm$^2$ grid, complete a net of the cuboid.\n\\newline\n \\\\\nOne face has been drawn for you.\n\\newline\n\n(f) The cereal contains fat, protein, carbohydrate and fibre.\n\\newline\n \\\\\nThe pie chart shows the information about the masses of fat and protein.\n\\newline\n\n(i) (g) Work out the percentage of the mass of the cereal that is fat.\n\\newline\n\n    \n\n(h) 60\\% of the mass of the cereal is carbohydrate.\n\\newline\n \\\\\n    Complete the pie chart.\n\\newline\n\n(i) Work out the mass of protein in 30~g of the cereal.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Li has \\$20.\n\\newline\n \\\\\n    A box of cereal costs \\$2.29.\n\\newline\n \\\\\n    Work out the maximum number of boxes of cereal that Li can buy.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "_compactAnswer": true
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Each box of cereal has mass 615~g.\n\\newline\n \\\\\n    Work out the total mass of 5 boxes of cereal.\n\\newline\n \\\\\n    Give your answer in kilograms.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "\\text{kg}",
+              "_compactAnswer": true
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "The box of cereal is a cuboid.\n\\newline\n \\\\\n    The cuboid measures 25~cm by 20~cm by 5~cm.\n\\newline\n \\\\\n    Work out the volume of the cuboid.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "$\\text{cm}^3$",
+              "_compactAnswer": true
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true,
+        "_itemInlineSubparts": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2024OctNov/Paper33/Q01/Q01b-Grid.png"
+          },
+          {
+            "type": "text",
+            "content": "A cereal bar is in a box.\n\\newline\n \\\\\nThe box is a cuboid measuring 6~cm by 3~cm by 1~cm.\n\\newline\n"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q01b-1.tex"
+          },
+          {
+            "type": "text",
+            "content": "On the 1~cm$^2$ grid, complete a net of the cuboid.\n\\newline\n \\\\\nOne face has been drawn for you.\n\\newline\n"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q01b-2.tex"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2024OctNov/Paper33/Q01/Q01c.png"
+          },
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2024OctNov/Paper33/Q01/Q01c-PieChart.png"
+          },
+          {
+            "type": "text",
+            "content": "The cereal contains fat, protein, carbohydrate and fibre.\n\\newline\n \\\\\nThe pie chart shows the information about the masses of fat and protein.\n\\newline\n"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q01c.tex"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Work out the percentage of the mass of the cereal that is fat.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "\\%",
+              "_compactAnswer": true
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "60\\% of the mass of the cereal is carbohydrate.\n\\newline\n \\\\\n    Complete the pie chart.\n\\newline\n"
+              }
+            ],
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Work out the mass of protein in 30~g of the cereal.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "\\text{g}",
+              "_compactAnswer": true
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true,
+        "_compactContentSubparts": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\noindent\\textbf{[2024 Oct/Nov, 0580/33, Question 1]}\\par"
+      }
+    ],
+    "_rawBody": "\\noindent\\textbf{[2024 Oct/Nov, 0580/33, Question 1]}\\par\n\n\\begin{parts}\n\\item \n\\begin{subparts}\n    \\item Li has \\$20. \\\\\n    A box of cereal costs \\$2.29. \\\\\n    Work out the maximum number of boxes of cereal that Li can buy.\n    \\AnswerLine[][]\n    \\Marks{2}\n    \n    \\item Each box of cereal has mass 615~g. \\\\\n    Work out the total mass of 5 boxes of cereal. \\\\\n    Give your answer in kilograms.\n    \\AnswerLine[][\\text{kg}]\n    \\Marks{2}\n    \n    \\item The box of cereal is a cuboid. \\\\\n    The cuboid measures 25~cm by 20~cm by 5~cm. \\\\\n    Work out the volume of the cuboid.\n    \\AnswerLine[][$\\text{cm}^3$]\n    \\Marks{1}\n\\end{subparts}\n\n\\item A cereal bar is in a box. \\\\\nThe box is a cuboid measuring 6~cm by 3~cm by 1~cm.\n\\relinput{Figures/Q01b-1.tex}\nOn the 1~cm$^2$ grid, complete a net of the cuboid. \\\\\nOne face has been drawn for you.\n\\relinput{Figures/Q01b-2.tex}\n\\Marks{3}\n\n\\item The cereal contains fat, protein, carbohydrate and fibre. \\\\\nThe pie chart shows the information about the masses of fat and protein.\n\\relinput{Figures/Q01c.tex}\n\\begin{subparts}\n    \\item Work out the percentage of the mass of the cereal that is fat.\n    \\AnswerLine[][\\%]\n    \\Marks{1}\n    \n    \\item 60\\% of the mass of the cereal is carbohydrate. \\\\\n    Complete the pie chart.\n    \\Marks{2}\n    \n    \\item Work out the mass of protein in 30~g of the cereal.\n    \\AnswerLine[][\\text{g}]\n    \\Marks{2}\n\\end{subparts}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2024OctNov/Paper33/Q01/Q01b-1.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2024OctNov/Paper33/Q01/Q01b-2.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2024OctNov/Paper33/Q01/Q01b-Cuboid.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2024OctNov/Paper33/Q01/Q01b-Grid.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2024OctNov/Paper33/Q01/Q01c-PieChart.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2024OctNov/Paper33/Q01/Q01c.png"
+    ]
+  },
+  {
+    "id": "0580-2024OctNov-Paper33-Q02",
+    "paper": "2024OctNov-Paper33",
+    "qnum": 2,
+    "marks": 15,
+    "topics": [
+      "Number",
+      "Algebra and graphs"
+    ],
+    "s": "2.5",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Equations",
+    "qtype": "linear equation solving",
+    "g": "linear",
+    "src": "0580/33/O/N/24 Q02",
+    "year": 2024,
+    "session": "OctNov",
+    "tex": "**[2024 Oct/Nov, 0580/33, Question 2]**\n\n(a) Write the number $845\\,024$ in words.\n\\newline\n\n(b) Write these numbers in order, starting with the smallest.\n\\newline\n\\[ \\frac{7}{18}   39\\%   0.388   \\frac{15}{40} \\]\n\n(c) Find the value of\n(i) (d) $4^5$\n\n    \n\n(e) $6^0$\n\n    \n\n(f) $\\sqrt{16 \\times 49}$\n\n    \n\n(g) Solve.\n\\newline\n\\[ 6x + 5 = 29 \\]\n\n(h) By writing each number in the calculation correct to 1 significant figure, find an estimate for the value of\n\\[ \\frac{2.7 \\times 42.4}{8.6 - 4.3} \\]\nYou must show all your working.\n\\newline\n\n(i) $3^5 \\times 3^x = 3^{20}$.\n\\newline\n \\\\\nFind the value of $x$.\n\\newline\n\n(j) Simplify $(x^4)^3$.\n\\newline\n\n(k) A boat to town $A$ leaves a port every 16 minutes.\n\\newline\n \\\\\nA boat to town $B$ leaves the same port every 34 minutes.\n\\newline\n \\\\\nBoth boats leave the port at 07 30.\n\\newline\n \\\\\nWork out the next time both boats leave the port together.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write the number $845\\,024$ in words.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write these numbers in order, starting with the smallest.\n\\newline\n\\[ \\frac{7}{18} \\quad 39\\% \\quad 0.388 \\quad \\frac{15}{40} \\]"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "\\dots < \\dots < \\dots < \\dots",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the value of"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "$4^5$"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "_compactAnswer": true
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "$6^0$"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "_compactAnswer": true
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "$\\sqrt{16 \\times 49}$"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "_compactAnswer": true
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true,
+        "_compactContentSubparts": true
+      },
+      {
+        "label": "(d)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Solve.\n\\newline\n\\[ 6x + 5 = 29 \\]"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "x =",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(e)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "By writing each number in the calculation correct to 1 significant figure, find an estimate for the value of\n\\[ \\frac{2.7 \\times 42.4}{8.6 - 4.3} \\]\nYou must show all your working.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(f)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "$3^5 \\times 3^x = 3^{20}$.\n\\newline\n \\\\\nFind the value of $x$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "x =",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(g)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Simplify $(x^4)^3$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(h)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "A boat to town $A$ leaves a port every 16 minutes.\n\\newline\n \\\\\nA boat to town $B$ leaves the same port every 34 minutes.\n\\newline\n \\\\\nBoth boats leave the port at 07 30.\n\\newline\n \\\\\nWork out the next time both boats leave the port together.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\noindent\\textbf{[2024 Oct/Nov, 0580/33, Question 2]}\\par"
+      }
+    ],
+    "_rawBody": "\\noindent\\textbf{[2024 Oct/Nov, 0580/33, Question 2]}\\par\n\n\\begin{parts}\n\\item Write the number 845\\,024 in words.\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Write these numbers in order, starting with the smallest.\n\\[ \\frac{7}{18} \\quad 39\\% \\quad 0.388 \\quad \\frac{15}{40} \\]\n\\AnswerLine[][\\dots < \\dots < \\dots < \\dots]\n\\Marks{2}\n\n\\item Find the value of\n\\begin{subparts}\n    \\item $4^5$\n    \\AnswerLine[][]\n    \\Marks{1}\n    \n    \\item $6^0$\n    \\AnswerLine[][]\n    \\Marks{1}\n    \n    \\item $\\sqrt{16 \\times 49}$\n    \\AnswerLine[][]\n    \\Marks{1}\n\\end{subparts}\n\n\\item Solve.\n\\[ 6x + 5 = 29 \\]\n\\AnswerLine[][x =]\n\\Marks{2}\n\n\\item By writing each number in the calculation correct to 1 significant figure, find an estimate for the value of\n\\[ \\frac{2.7 \\times 42.4}{8.6 - 4.3} \\]\nYou must show all your working.\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item $3^5 \\times 3^x = 3^{20}$. \\\\\nFind the value of $x$.\n\\AnswerLine[][x =]\n\\Marks{1}\n\n\\item Simplify $(x^4)^3$.\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item A boat to town $A$ leaves a port every 16 minutes. \\\\\nA boat to town $B$ leaves the same port every 34 minutes. \\\\\nBoth boats leave the port at 07 30. \\\\\nWork out the next time both boats leave the port together.\n\\AnswerLine[][]\n\\Marks{3}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2024OctNov-Paper33-Q03",
+    "paper": "2024OctNov-Paper33",
+    "qnum": 3,
+    "marks": 9,
+    "topics": [
+      "Geometry",
+      "Probability",
+      "Statistics"
+    ],
+    "s": "4.5",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Similarity and congruence",
+    "qtype": "symmetry",
+    "g": "mixed",
+    "src": "0580/33/O/N/24 Q03",
+    "year": 2024,
+    "session": "OctNov",
+    "tex": "**[2024 Oct/Nov, 0580/33, Question 3]**\n\n(a) A wedding invitation is in the shape of a rectangle.\n\\newline\n \\\\\nDraw the lines of symmetry on this rectangle.\n\\newline\n\n(b) There are 98 adults and 56 children at the wedding.\n\\newline\n \\\\\nFind the fraction of people who are children.\n\\newline\n \\\\\nGive your fraction in its simplest form.\n\\newline\n\n(c) The wedding meal starts at 13 15 and lasts for 2 hours 50 minutes.\n\\newline\n \\\\\nFind the time the meal ends.\n\\newline\n\n(d) The probability that it will rain at the wedding is 0.12.\n\\newline\n \\\\\nFind the probability that it will not rain.\n\\newline\n\n(e) (i) (f) These are the ages of the staff at the wedding.\n\\newline\n    \\[ 16   24   39   28   17   48   31   33   17   29   40   25 \\]\n    Complete the stem-and-leaf diagram.\n\\newline\n\n    \n\n(g) Find the range.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "A wedding invitation is in the shape of a rectangle.\n\\newline\n \\\\\nDraw the lines of symmetry on this rectangle.\n\\newline\n"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q03a.tex"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "There are 98 adults and 56 children at the wedding.\n\\newline\n \\\\\nFind the fraction of people who are children.\n\\newline\n \\\\\nGive your fraction in its simplest form.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "The wedding meal starts at 13 15 and lasts for 2 hours 50 minutes.\n\\newline\n \\\\\nFind the time the meal ends.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "The probability that it will rain at the wedding is 0.12.\n\\newline\n \\\\\nFind the probability that it will not rain.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(e)",
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2024OctNov/Paper33/Q03/Q03e-StemLeaf.png"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "These are the ages of the staff at the wedding.\n\\newline\n    \\[ 16 \\quad 24 \\quad 39 \\quad 28 \\quad 17 \\quad 48 \\quad 31 \\quad 33 \\quad 17 \\quad 29 \\quad 40 \\quad 25 \\]\n    Complete the stem-and-leaf diagram.\n\\newline\n"
+              },
+              {
+                "type": "figure",
+                "src": "Figures/Q03ei.tex"
+              }
+            ],
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the range.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "_compactAnswer": true
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true,
+        "_itemInlineSubparts": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\noindent\\textbf{[2024 Oct/Nov, 0580/33, Question 3]}\\par"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2024OctNov/Paper33/Q03/Q03ei.png"
+      }
+    ],
+    "_rawBody": "\\noindent\\textbf{[2024 Oct/Nov, 0580/33, Question 3]}\\par\n\n\\begin{parts}\n\\item A wedding invitation is in the shape of a rectangle. \\\\\nDraw the lines of symmetry on this rectangle.\n\\relinput{Figures/Q03a.tex}\n\\Marks{2}\n\n\\item There are 98 adults and 56 children at the wedding. \\\\\nFind the fraction of people who are children. \\\\\nGive your fraction in its simplest form.\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item The wedding meal starts at 13 15 and lasts for 2 hours 50 minutes. \\\\\nFind the time the meal ends.\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item The probability that it will rain at the wedding is 0.12. \\\\\nFind the probability that it will not rain.\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item \n\\begin{subparts}\n    \\item These are the ages of the staff at the wedding.\n    \\[ 16 \\quad 24 \\quad 39 \\quad 28 \\quad 17 \\quad 48 \\quad 31 \\quad 33 \\quad 17 \\quad 29 \\quad 40 \\quad 25 \\]\n    Complete the stem-and-leaf diagram.\n    \\relinput{Figures/Q03ei.tex}\n    \\Marks{2}\n    \n    \\item Find the range.\n    \\AnswerLine[][]\n    \\Marks{1}\n\\end{subparts}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2024OctNov/Paper33/Q03/Q03a-Rectangle.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2024OctNov/Paper33/Q03/Q03a.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2024OctNov/Paper33/Q03/Q03e-StemLeaf.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2024OctNov/Paper33/Q03/Q03ei.png"
+    ]
+  },
+  {
+    "id": "0580-2024OctNov-Paper33-Q04",
+    "paper": "2024OctNov-Paper33",
+    "qnum": 4,
+    "marks": 10,
+    "topics": [
+      "Number",
+      "Algebra and graphs"
+    ],
+    "s": "2.5",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Equations",
+    "qtype": "substitution, factorisation, forming expressions, simultaneous equations",
+    "g": "simul-linear",
+    "src": "0580/33/O/N/24 Q04",
+    "year": 2024,
+    "session": "OctNov",
+    "tex": "**[2024 Oct/Nov, 0580/33, Question 4]**\n\n(a) $n = 15r + 20c$ \\\\\nFind the value of $r$ when $n = 180$ and $c = 3$.\n\\newline\n\n(b) Factorise completely.\n\\newline\n\\[ 20p^2q - 5p \\]\n\n(c) Apples cost 35 cents each and bananas cost 14 cents each.\n\\newline\n \\\\\nWrite down an expression for the total cost, in cents, of $x$ apples and $y$ bananas.\n\\newline\n\n(d) Solve the simultaneous equations.\n\\newline\n \\\\\nYou must show all your working.\n\\newline\n\\begin{align*}\n    8x + 3y &= 59 \\\\\n    5x + 7y &= 83\n\\end{align*}",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "$n = 15r + 20c$ \\\\\nFind the value of $r$ when $n = 180$ and $c = 3$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "r =",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Factorise completely.\n\\newline\n\\[ 20p^2q - 5p \\]"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Apples cost 35 cents each and bananas cost 14 cents each.\n\\newline\n \\\\\nWrite down an expression for the total cost, in cents, of $x$ apples and $y$ bananas.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "\\text{cents}",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "text",
+            "content": "Solve the simultaneous equations.\n\\newline\n \\\\\nYou must show all your working.\n\\newline\n\\begin{align*}\n    8x + 3y &= 59 \\\\\n    5x + 7y &= 83\n\\end{align*}"
+          }
+        ],
+        "answer": {
+          "type": "multiline",
+          "lines": 2,
+          "template": "____ x =\\n____ y =",
+          "lineSep": "blank",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\noindent\\textbf{[2024 Oct/Nov, 0580/33, Question 4]}\\par"
+      }
+    ],
+    "_rawBody": "\\noindent\\textbf{[2024 Oct/Nov, 0580/33, Question 4]}\\par\n\n\\begin{parts}\n\\item $n = 15r + 20c$ \\\\\nFind the value of $r$ when $n = 180$ and $c = 3$.\n\\AnswerLine[][r =]\n\\Marks{2}\n\n\\item Factorise completely.\n\\[ 20p^2q - 5p \\]\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item Apples cost 35 cents each and bananas cost 14 cents each. \\\\\nWrite down an expression for the total cost, in cents, of $x$ apples and $y$ bananas.\n\\AnswerLine[][\\text{cents}]\n\\Marks{2}\n\n\\item Solve the simultaneous equations. \\\\\nYou must show all your working.\n\\begin{align*}\n    8x + 3y &= 59 \\\\\n    5x + 7y &= 83\n\\end{align*}\n\\AnswerLine[][x =]\n\\AnswerLine[][y =]\n\\Marks{4}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2024OctNov-Paper33-Q05",
+    "paper": "2024OctNov-Paper33",
+    "qnum": 5,
+    "marks": 11,
+    "topics": [
+      "Number",
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "1.16",
+    "d": 1,
+    "cat": "number",
+    "topic": "Upper and lower bounds",
+    "qtype": "currency conversion calculation",
+    "g": "mixed",
+    "src": "0580/33/O/N/24 Q05",
+    "year": 2024,
+    "session": "OctNov",
+    "tex": "**[2024 Oct/Nov, 0580/33, Question 5]**\n\n(a) Kurt owns some toy cars of different colours.\n\\newline\n \\\\\nThe pictogram shows the number of each colour.\n\\newline\n\n(i) (b) Write down the colour of toy car that Kurt owns most of.\n\\newline\n\n    \n\n(c) Find the number of yellow toy cars that Kurt owns.\n\\newline\n\n    \n\n(d) Find how many more red toy cars than white toy cars Kurt owns.\n\\newline\n\n    \n\n(e) Leo buys 75 cars.\n\\newline\n \\\\\nThe cost of each car is 1.48 euros.\n\\newline\n \\\\\nThe exchange rate is 1 euro = \\$1.07.\n\\newline\n \\\\\nWork out the total cost of the 75 cars in dollars.\n\\newline\n\n(f) Leo owns some toy vehicles.\n\\newline\n \\\\\nHe owns 57 cars, 12 bicycles and 42 trucks.\n\\newline\n \\\\\nFind the ratio of the number of $cars : bicycles : trucks$ in its simplest form.\n\\newline\n\n(g) Leo keeps his toy vehicles on a shelf.\n\\newline\n(i) (h) The shelf is in the shape of a right-angled triangle.\n\\newline\n\n    The area of the shelf is 0.3~m$^2$.\n\\newline\n \\\\\n    Calculate the value of $y$.\n\\newline\n\n    \n\n(i) The shelf is 1.35 metres from the floor.\n\\newline\n \\\\\n    Change 1.35 metres into centimetres.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Kurt owns some toy cars of different colours.\n\\newline\n \\\\\nThe pictogram shows the number of each colour.\n\\newline\n"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q05a.tex"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Write down the colour of toy car that Kurt owns most of.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "_compactAnswer": true
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the number of yellow toy cars that Kurt owns.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "_compactAnswer": true
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find how many more red toy cars than white toy cars Kurt owns.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "_compactAnswer": true
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true,
+        "_compactContentSubparts": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Leo buys 75 cars.\n\\newline\n \\\\\nThe cost of each car is 1.48 euros.\n\\newline\n \\\\\nThe exchange rate is 1 euro = \\$1.07.\n\\newline\n \\\\\nWork out the total cost of the 75 cars in dollars.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "\\$",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Leo owns some toy vehicles.\n\\newline\n \\\\\nHe owns 57 cars, 12 bicycles and 42 trucks.\n\\newline\n \\\\\nFind the ratio of the number of $\\text{cars} : \\text{bicycles} : \\text{trucks}$ in its simplest form.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "\\dots : \\dots : \\dots",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2024OctNov/Paper33/Q05/Q05d-Triangle.png"
+          },
+          {
+            "type": "text",
+            "content": "Leo keeps his toy vehicles on a shelf.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "The shelf is in the shape of a right-angled triangle.\n\\newline\n"
+              },
+              {
+                "type": "figure",
+                "src": "Figures/Q05di.tex"
+              },
+              {
+                "type": "text",
+                "content": "The area of the shelf is 0.3~m$^2$.\n\\newline\n \\\\\n    Calculate the value of $y$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "y =",
+              "_compactAnswer": true
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "The shelf is 1.35 metres from the floor.\n\\newline\n \\\\\n    Change 1.35 metres into centimetres.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "\\text{cm}",
+              "_compactAnswer": true
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true,
+        "_compactContentSubparts": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\noindent\\textbf{[2024 Oct/Nov, 0580/33, Question 5]}\\par"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2024OctNov/Paper33/Q05/Q05di.png"
+      }
+    ],
+    "_rawBody": "\\noindent\\textbf{[2024 Oct/Nov, 0580/33, Question 5]}\\par\n\n\\begin{parts}\n\\item Kurt owns some toy cars of different colours. \\\\\nThe pictogram shows the number of each colour.\n\\relinput{Figures/Q05a.tex}\n\\begin{subparts}\n    \\item Write down the colour of toy car that Kurt owns most of.\n    \\AnswerLine[][]\n    \\Marks{1}\n    \n    \\item Find the number of yellow toy cars that Kurt owns.\n    \\AnswerLine[][]\n    \\Marks{1}\n    \n    \\item Find how many more red toy cars than white toy cars Kurt owns.\n    \\AnswerLine[][]\n    \\Marks{1}\n\\end{subparts}\n\n\\item Leo buys 75 cars. \\\\\nThe cost of each car is 1.48 euros. \\\\\nThe exchange rate is 1 euro = \\$1.07. \\\\\nWork out the total cost of the 75 cars in dollars.\n\\AnswerLine[][\\$]\n\\Marks{3}\n\n\\item Leo owns some toy vehicles. \\\\\nHe owns 57 cars, 12 bicycles and 42 trucks. \\\\\nFind the ratio of the number of $\\text{cars} : \\text{bicycles} : \\text{trucks}$ in its simplest form.\n\\AnswerLine[][\\dots : \\dots : \\dots]\n\\Marks{2}\n\n\\item Leo keeps his toy vehicles on a shelf.\n\\begin{subparts}\n    \\item The shelf is in the shape of a right-angled triangle.\n    \\relinput{Figures/Q05di.tex}\n    The area of the shelf is 0.3~m$^2$. \\\\\n    Calculate the value of $y$.\n    \\AnswerLine[][y =]\n    \\Marks{2}\n    \n    \\item The shelf is 1.35 metres from the floor. \\\\\n    Change 1.35 metres into centimetres.\n    \\AnswerLine[][\\text{cm}]\n    \\Marks{1}\n\\end{subparts}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2024OctNov/Paper33/Q05/Q05a-Pictogram.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2024OctNov/Paper33/Q05/Q05a.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2024OctNov/Paper33/Q05/Q05d-Triangle.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2024OctNov/Paper33/Q05/Q05di.png"
+    ]
+  },
+  {
+    "id": "0580-2024OctNov-Paper33-Q06",
+    "paper": "2024OctNov-Paper33",
+    "qnum": 6,
+    "marks": 13,
+    "topics": [
+      "Number",
+      "Mensuration"
+    ],
+    "s": "1.6",
+    "d": 1,
+    "cat": "number",
+    "topic": "Standard form",
+    "qtype": "integer operations with temperature",
+    "g": "mixed",
+    "src": "0580/33/O/N/24 Q06",
+    "year": 2024,
+    "session": "OctNov",
+    "tex": "**[2024 Oct/Nov, 0580/33, Question 6]**\n\n(a) The diagram shows a plan of Zak's garden.\n\\newline\n\nFind the perimeter of the garden.\n\\newline\n\n(b) Zak records the temperature in his garden each night for one week.\n\\newline\n\n\\begin{tabular}{|c|c|c|c|c|c|c|}\n\\hline\nSunday & Monday & Tuesday & Wednesday & Thursday & Friday & Saturday \\\\ \\hline\n$4^\\circ\\text{C}$ & $1^\\circ\\text{C}$ & $-2^\\circ\\text{C}$ & $2^\\circ\\text{C}$ & $-5^\\circ\\text{C}$ & $3^\\circ\\text{C}$ & $-4^\\circ\\text{C}$ \\\\ \\hline\n\\end{tabular}\n(i) (c) Which night was coldest?\n\n    \n\n(d) Find the difference in temperature between Friday night and Saturday night.\n\\newline\n\n    \n\n(e) Zak buys pea plants, bean plants and sunflower plants in the ratio \\\\\n$\\text{peas} : \\text{beans} : \\text{sunflowers} = 7 : 5 : 2$.\n\\newline\n \\\\\nHe buys 45 bean plants.\n\\newline\n \\\\\nShow that the total number of plants he buys is 126.\n\\newline\n\n(f) Zak has a water barrel.\n\\newline\n \\\\\nOn Monday the barrel contains 120 litres of water.\n\\newline\n \\\\\nOn Friday the barrel contains 43.2 litres of water.\n\\newline\n \\\\\nCalculate the percentage decrease of the water in the barrel.\n\\newline\n\n(g) Zak drives to a shop.\n\\newline\n \\\\\nThe journey takes $1\\frac{1}{4}$ hours.\n\\newline\n \\\\\nHe drives at an average speed of 57~km/h.\n\\newline\n \\\\\nCalculate the distance he drives.\n\\newline\n\n(h) Zak pays \\$69.80 to hire a machine.\n\\newline\n\n\\begin{tabular}{|l|c|}\n\\hline\n\\multicolumn{2}{|c|}{Machine hire charges} \\\\ \\hline\n1st day               & \\$22.60             \\\\ \\hline\nEach additional day   & \\$11.80             \\\\ \\hline\n\\end{tabular}\nCalculate the number of days he hires it for.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "The diagram shows a plan of Zak's garden.\n\\newline\n"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q06a.tex"
+          },
+          {
+            "type": "text",
+            "content": "Find the perimeter of the garden.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "\\text{m}",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Zak records the temperature in his garden each night for one week.\n\\newline\n"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q06b.tex"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|c|c|}\n\\hline\nSunday & Monday & Tuesday & Wednesday & Thursday & Friday & Saturday \\\\ \\hline\n$4^\\circ\\text{C}$ & $1^\\circ\\text{C}$ & $-2^\\circ\\text{C}$ & $2^\\circ\\text{C}$ & $-5^\\circ\\text{C}$ & $3^\\circ\\text{C}$ & $-4^\\circ\\text{C}$ \\\\ \\hline\n\\end{tabular}\n\\end{center}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Which night was coldest?"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "_compactAnswer": true
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the difference in temperature between Friday night and Saturday night.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "$^\\circ\\text{C}$",
+              "_compactAnswer": true
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Zak buys pea plants, bean plants and sunflower plants in the ratio \\\\\n$\\text{peas} : \\text{beans} : \\text{sunflowers} = 7 : 5 : 2$.\n\\newline\n \\\\\nHe buys 45 bean plants.\n\\newline\n \\\\\nShow that the total number of plants he buys is 126.\n\\newline\n"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Zak has a water barrel.\n\\newline\n \\\\\nOn Monday the barrel contains 120 litres of water.\n\\newline\n \\\\\nOn Friday the barrel contains 43.2 litres of water.\n\\newline\n \\\\\nCalculate the percentage decrease of the water in the barrel.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "\\%",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(e)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Zak drives to a shop.\n\\newline\n \\\\\nThe journey takes $1\\frac{1}{4}$ hours.\n\\newline\n \\\\\nHe drives at an average speed of 57~km/h.\n\\newline\n \\\\\nCalculate the distance he drives.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "\\text{km}",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(f)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2024OctNov/Paper33/Q06/Q06f.png"
+          },
+          {
+            "type": "text",
+            "content": "Zak pays \\$69.80 to hire a machine.\n\\newline\n"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q06f.tex"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{center}\n\\begin{tabular}{|l|c|}\n\\hline\n\\multicolumn{2}{|c|}{Machine hire charges} \\\\ \\hline\n1st day               & \\$22.60             \\\\ \\hline\nEach additional day   & \\$11.80             \\\\ \\hline\n\\end{tabular}\n\\end{center}"
+          },
+          {
+            "type": "text",
+            "content": "Calculate the number of days he hires it for.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "\\text{days}",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "show",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\noindent\\textbf{[2024 Oct/Nov, 0580/33, Question 6]}\\par"
+      }
+    ],
+    "_rawBody": "\\noindent\\textbf{[2024 Oct/Nov, 0580/33, Question 6]}\\par\n\n\\begin{parts}\n\\item The diagram shows a plan of Zak's garden.\n\\relinput{Figures/Q06a.tex}\nFind the perimeter of the garden.\n\\AnswerLine[][\\text{m}]\n\\Marks{2}\n\n\\item Zak records the temperature in his garden each night for one week.\n\\relinput{Figures/Q06b.tex}\n\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|c|c|}\n\\hline\nSunday & Monday & Tuesday & Wednesday & Thursday & Friday & Saturday \\\\ \\hline\n$4^\\circ\\text{C}$ & $1^\\circ\\text{C}$ & $-2^\\circ\\text{C}$ & $2^\\circ\\text{C}$ & $-5^\\circ\\text{C}$ & $3^\\circ\\text{C}$ & $-4^\\circ\\text{C}$ \\\\ \\hline\n\\end{tabular}\n\\end{center}\n\n\\begin{subparts}\n    \\item Which night was coldest?\n    \\AnswerLine[][]\n    \\Marks{1}\n    \n    \\item Find the difference in temperature between Friday night and Saturday night.\n    \\AnswerLine[][$^\\circ\\text{C}$]\n    \\Marks{1}\n\\end{subparts}\n\n\\item Zak buys pea plants, bean plants and sunflower plants in the ratio \\\\\n$\\text{peas} : \\text{beans} : \\text{sunflowers} = 7 : 5 : 2$. \\\\\nHe buys 45 bean plants. \\\\\nShow that the total number of plants he buys is 126.\n\\Marks{2}\n\n\\item Zak has a water barrel. \\\\\nOn Monday the barrel contains 120 litres of water. \\\\\nOn Friday the barrel contains 43.2 litres of water. \\\\\nCalculate the percentage decrease of the water in the barrel.\n\\AnswerLine[][\\%]\n\\Marks{2}\n\n\\item Zak drives to a shop. \\\\\nThe journey takes $1\\frac{1}{4}$ hours. \\\\\nHe drives at an average speed of 57~km/h. \\\\\nCalculate the distance he drives.\n\\AnswerLine[][\\text{km}]\n\\Marks{2}\n\n\\item Zak pays \\$69.80 to hire a machine.\n\\relinput{Figures/Q06f.tex}\n\\begin{center}\n\\begin{tabular}{|l|c|}\n\\hline\n\\multicolumn{2}{|c|}{Machine hire charges} \\\\ \\hline\n1st day               & \\$22.60             \\\\ \\hline\nEach additional day   & \\$11.80             \\\\ \\hline\n\\end{tabular}\n\\end{center}\nCalculate the number of days he hires it for.\n\\AnswerLine[][\\text{days}]\n\\Marks{3}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2024OctNov/Paper33/Q06/Q06a-Garden.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2024OctNov/Paper33/Q06/Q06a.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2024OctNov/Paper33/Q06/Q06b.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2024OctNov/Paper33/Q06/Q06f.png"
+    ]
+  },
+  {
+    "id": "0580-2024OctNov-Paper33-Q07",
+    "paper": "2024OctNov-Paper33",
+    "qnum": 7,
+    "marks": 12,
+    "topics": [
+      "Number",
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": null,
+    "d": 1,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/33/O/N/24 Q07",
+    "year": 2024,
+    "session": "OctNov",
+    "tex": "**[2024 Oct/Nov, 0580/33, Question 7]**\n\n(a) \nWrite down the mathematical name for this solid.\n\\newline\n\n(b) \n(i) (c) Measure the size of angle $x$.\n\\newline\n\n    \n\n(d) Write down the mathematical name for this type of angle.\n\\newline\n\n    \n\n(e) \nPoints $A$, $B$ and $C$ lie on the circle, centre $O$.\n\\newline\n \\\\\n$AB = 11$~cm and $BC = 5$~cm.\n\\newline\n(i) (f) Give a geometrical reason why angle $ACB$ is $90^\\circ$.\n\\newline\n\n    \n\n(g) Calculate the circumference of the circle.\n\\newline\n\n    \n\n(h) Show that $AC$ is 9.8~cm, correct to 2 significant figures.\n\\newline\n\n(i) The surface area of a sphere is 250~cm$^2$.\n\\newline\n \\\\\nCalculate the radius of the sphere.\n\\newline\n \\\\\n{[The surface area, $A$, of a sphere with radius $r$ is $A = 4\\pi r^2$.\n\\newline\n]}",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "figure",
+            "src": "Figures/Q07a.tex"
+          },
+          {
+            "type": "text",
+            "content": "Write down the mathematical name for this solid.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true,
+        "_itemNewline": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2024OctNov/Paper33/Q07/Q07b.png"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q07b.tex"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Measure the size of angle $x$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "_compactAnswer": true
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Write down the mathematical name for this type of angle.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "_compactAnswer": true
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_itemNewline": true,
+        "_compactEndSubparts": true,
+        "_compactContentSubparts": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2024OctNov/Paper33/Q07/Q07c.png"
+          },
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2024OctNov/Paper33/Q07/Q07c-Circle.png"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q07c.tex"
+          },
+          {
+            "type": "text",
+            "content": "Points $A$, $B$ and $C$ lie on the circle, centre $O$.\n\\newline\n \\\\\n$AB = 11$~cm and $BC = 5$~cm.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Give a geometrical reason why angle $ACB$ is $90^\\circ$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "_compactAnswer": true
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate the circumference of the circle.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "\\text{cm}",
+              "_compactAnswer": true
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "Show that $AC$ is 9.8~cm, correct to 2 significant figures.\n\\newline\n"
+              }
+            ],
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_itemNewline": true,
+        "_compactEndSubparts": true,
+        "_compactContentSubparts": true
+      },
+      {
+        "label": "(d)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "The surface area of a sphere is 250~cm$^2$.\n\\newline\n \\\\\nCalculate the radius of the sphere.\n\\newline\n \\\\\n{[The surface area, $A$, of a sphere with radius $r$ is $A = 4\\pi r^2$.\n\\newline\n]}"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "\\text{cm}",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "",
+    "cmd": "show",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\noindent\\textbf{[2024 Oct/Nov, 0580/33, Question 7]}\\par"
+      }
+    ],
+    "_rawBody": "\\noindent\\textbf{[2024 Oct/Nov, 0580/33, Question 7]}\\par\n\n\\begin{parts}\n\\item\n\\relinput{Figures/Q07a.tex}\nWrite down the mathematical name for this solid.\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item\n\\relinput{Figures/Q07b.tex}\n\\begin{subparts}\n    \\item Measure the size of angle $x$.\n    \\AnswerLine[][]\n    \\Marks{1}\n    \n    \\item Write down the mathematical name for this type of angle.\n    \\AnswerLine[][]\n    \\Marks{1}\n\\end{subparts}\n\n\\item\n\\relinput{Figures/Q07c.tex}\nPoints $A$, $B$ and $C$ lie on the circle, centre $O$. \\\\\n$AB = 11$~cm and $BC = 5$~cm.\n\\begin{subparts}\n    \\item Give a geometrical reason why angle $ACB$ is $90^\\circ$.\n    \\AnswerLine[][]\n    \\Marks{1}\n    \n    \\item Calculate the circumference of the circle.\n    \\AnswerLine[][\\text{cm}]\n    \\Marks{2}\n    \n    \\item Show that $AC$ is 9.8~cm, correct to 2 significant figures.\n    \\Marks{3}\n\\end{subparts}\n\n\\item The surface area of a sphere is 250~cm$^2$. \\\\\nCalculate the radius of the sphere. \\\\\n{[The surface area, $A$, of a sphere with radius $r$ is $A = 4\\pi r^2$.]}\n\\AnswerLine[][\\text{cm}]\n\\Marks{3}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2024OctNov/Paper33/Q07/Q07a-Cylinder.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2024OctNov/Paper33/Q07/Q07a.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2024OctNov/Paper33/Q07/Q07b-Angle.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2024OctNov/Paper33/Q07/Q07b.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2024OctNov/Paper33/Q07/Q07c-Circle.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2024OctNov/Paper33/Q07/Q07c.png"
+    ]
+  },
+  {
+    "id": "0580-2024OctNov-Paper33-Q08",
+    "paper": "2024OctNov-Paper33",
+    "qnum": 8,
+    "marks": 11,
+    "topics": [
+      "Algebra and graphs",
+      "Coordinate geometry"
+    ],
+    "s": "2.10",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Graphs of functions",
+    "qtype": "drawing quadratic graphs, solving equations graphically, finding equation of a line",
+    "g": "quadratic",
+    "src": "0580/33/O/N/24 Q08",
+    "year": 2024,
+    "session": "OctNov",
+    "tex": "**[2024 Oct/Nov, 0580/33, Question 8]**\n\n(a) (i) (b) Complete the table of values for $y = 4x - x^2$.\n\\newline\n\n    \\begin{tabular}{|l|c|c|c|c|c|c|c|c|}\n    \\hline\n    $x$ & $-1$ & 0 & 1 & 2 & 3 & 4 & 5 & 6 \\\\ \\hline\n    $y$ & $-5$ & 0 & 3 & 4 & 3 &   & $-5$ & \\\\ \\hline\n    \\end{tabular}\n\n(c) On the grid, draw the graph of $y = 4x - x^2$ for $-1 \\le x \\le 6$.\n\\newline\n\n    \n\n(d) Use your graph to solve the equation $4x - x^2 = 1$.\n\\newline\n\n    \n\n(e) The line $L$ is shown on the grid.\n\\newline\n\nFind the equation of line $L$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Complete the table of values for $y = 4x - x^2$.\n\\newline\n"
+              },
+              {
+                "type": "figure",
+                "src": "Figures/Q08ai.tex"
+              },
+              {
+                "type": "table",
+                "content": "\\begin{center}\n    \\begin{tabular}{|l|c|c|c|c|c|c|c|c|}\n    \\hline\n    $x$ & $-1$ & 0 & 1 & 2 & 3 & 4 & 5 & 6 \\\\ \\hline\n    $y$ & $-5$ & 0 & 3 & 4 & 3 &   & $-5$ & \\\\ \\hline\n    \\end{tabular}\n    \\end{center}"
+              }
+            ],
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 4,
+            "content": [
+              {
+                "type": "text",
+                "content": "On the grid, draw the graph of $y = 4x - x^2$ for $-1 \\le x \\le 6$.\n\\newline\n"
+              },
+              {
+                "type": "figure",
+                "src": "Figures/Q08aii.tex"
+              }
+            ],
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Use your graph to solve the equation $4x - x^2 = 1$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "x = \\dots \\text{ or } x = \\dots",
+              "_compactAnswer": true
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true,
+        "_itemInlineSubparts": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2024OctNov/Paper33/Q08/Q08b.png"
+          },
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2024OctNov/Paper33/Q08/Q08b-LineGrid.png"
+          },
+          {
+            "type": "text",
+            "content": "The line $L$ is shown on the grid.\n\\newline\n"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q08b.tex"
+          },
+          {
+            "type": "text",
+            "content": "Find the equation of line $L$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\noindent\\textbf{[2024 Oct/Nov, 0580/33, Question 8]}\\par"
+      }
+    ],
+    "_rawBody": "\\noindent\\textbf{[2024 Oct/Nov, 0580/33, Question 8]}\\par\n\n\\begin{parts}\n\\item \n\\begin{subparts}\n    \\item Complete the table of values for $y = 4x - x^2$.\n    \\relinput{Figures/Q08ai.tex}\n    \\begin{center}\n    \\begin{tabular}{|l|c|c|c|c|c|c|c|c|}\n    \\hline\n    $x$ & $-1$ & 0 & 1 & 2 & 3 & 4 & 5 & 6 \\\\ \\hline\n    $y$ & $-5$ & 0 & 3 & 4 & 3 &   & $-5$ & \\\\ \\hline\n    \\end{tabular}\n    \\end{center}\n    \\Marks{2}\n    \n    \\item On the grid, draw the graph of $y = 4x - x^2$ for $-1 \\le x \\le 6$.\n    \\relinput{Figures/Q08aii.tex}\n    \\Marks{4}\n    \n    \\item Use your graph to solve the equation $4x - x^2 = 1$.\n    \\AnswerLine[][x = \\dots \\text{ or } x = \\dots]\n    \\Marks{2}\n\\end{subparts}\n\n\\item The line $L$ is shown on the grid.\n\\relinput{Figures/Q08b.tex}\nFind the equation of line $L$.\n\\AnswerLine[][]\n\\Marks{3}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2024OctNov/Paper33/Q08/Q08a-ParabolaGrid.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2024OctNov/Paper33/Q08/Q08ai.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2024OctNov/Paper33/Q08/Q08aii.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2024OctNov/Paper33/Q08/Q08b-LineGrid.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2024OctNov/Paper33/Q08/Q08b.png"
+    ]
+  },
+  {
+    "id": "0580-2024OctNov-Paper33-Q09",
+    "paper": "2024OctNov-Paper33",
+    "qnum": 9,
+    "marks": 10,
+    "topics": [
+      "Transformations and vectors"
+    ],
+    "s": "7.1",
+    "d": 1,
+    "cat": "vectors",
+    "topic": "Translation",
+    "qtype": "transformations",
+    "g": "mixed",
+    "src": "0580/33/O/N/24 Q09",
+    "year": 2024,
+    "session": "OctNov",
+    "tex": "**[2024 Oct/Nov, 0580/33, Question 9]**\n\nShapes $A$, $B$ and $C$ are shown on the grid.\n\\newline\n\n(a) Write down the mathematical name of shape $A$.\n\\newline\n\n(b) Describe fully the single transformation that maps shape $A$ onto shape $B$.\n\\newline\n\n(c) Describe fully the single transformation that maps shape $A$ onto shape $C$.\n\\newline\n\n(d) Draw the image of shape $A$ after a rotation, $90^\\circ$ clockwise, centre $(0, 0)$.\n\\newline\n\n(e) Draw the image of shape $A$ after a reflection in the line $x = 1$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down the mathematical name of shape $A$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Describe fully the single transformation that maps shape $A$ onto shape $B$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Describe fully the single transformation that maps shape $A$ onto shape $C$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Draw the image of shape $A$ after a rotation, $90^\\circ$ clockwise, centre $(0, 0)$.\n\\newline\n"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(e)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Draw the image of shape $A$ after a reflection in the line $x = 1$.\n\\newline\n"
+          }
+        ],
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "recall",
+    "cmd": "describe",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\noindent\\textbf{[2024 Oct/Nov, 0580/33, Question 9]}\\par\n\nShapes $A$, $B$ and $C$ are shown on the grid.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2024OctNov/Paper33/Q09/Q09.png"
+      },
+      {
+        "type": "figure",
+        "src": "Figures/Q09.tex"
+      }
+    ],
+    "_rawBody": "\\noindent\\textbf{[2024 Oct/Nov, 0580/33, Question 9]}\\par\n\nShapes $A$, $B$ and $C$ are shown on the grid.\n\\relinput{Figures/Q09.tex}\n\n\\begin{parts}\n\\item Write down the mathematical name of shape $A$.\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Describe fully the single transformation that maps shape $A$ onto shape $B$.\n\\AnswerLine[][]\n\\Marks{3}\n\n\\item Describe fully the single transformation that maps shape $A$ onto shape $C$.\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item Draw the image of shape $A$ after a rotation, $90^\\circ$ clockwise, centre $(0, 0)$.\n\\Marks{2}\n\n\\item Draw the image of shape $A$ after a reflection in the line $x = 1$.\n\\Marks{2}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2024OctNov/Paper33/Q09/Q09-Transformation.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2024OctNov/Paper33/Q09/Q09.png"
+    ]
+  }
+]

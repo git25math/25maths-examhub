@@ -1,0 +1,1221 @@
+[
+  {
+    "id": "0580-2018MayJune-Paper33-Q01",
+    "paper": "2018MayJune-Paper33",
+    "qnum": 1,
+    "marks": 17,
+    "topics": [
+      "Mensuration"
+    ],
+    "s": "5.2",
+    "d": 1,
+    "cat": "mensuration",
+    "topic": "Circles",
+    "qtype": "area and perimeter",
+    "g": "mixed",
+    "src": "0580/33/M/J/18 Q01",
+    "year": 2018,
+    "session": "MayJune",
+    "tex": "(a) The table shows the temperature at Lexford Station at 10 00 each day for a week.\n\\newline\n\n\\begin{tabular}{|l|c|c|c|c|c|c|c|}\n\\hline\nDay & Mon & Tue & Wed & Thu & Fri & Sat & Sun \\\\\n\\hline\nTemperature ($^\\circ$C) & -3 & 4 & -1 & 0 & -5 & 2 & 1 \\\\\n\\hline\n\\end{tabular}\n\n(i) (b) Write down the day which had the coldest temperature.\n\\newline\n\n(c) Work out the difference in the temperature between Monday and Tuesday.\n\\newline\n\n$^\\circ$C\n\n(d) The temperature falls 6$^\\circ$C from 10 00 to midnight on Sunday.\n\\newline\n\nWork out the temperature at midnight.\n\\newline\n\n$^\\circ$C\n\n(e) The distance between Lexford Station and Crowton Station is 6.5 km.\n\\newline\n\n(i) (f) A train travels between these stations at an average speed of 39 km/h.\n\\newline\n\nWork out how long, in minutes, it takes the train to travel between these stations.\n\\newline\n\n min\n\n(g) Each wheel on the train has a diameter of 1.8 m.\n\\newline\n\nWork out the number of complete turns each wheel makes in travelling the 6.5 km.\n\\newline\n\n(h) A northbound train leaves Lexford Station every 30 minutes.\n\\newline\nA bus leaves Lexford Station every 45 minutes.\n\\newline\n\nAt 11 40 a northbound train and a bus leave the station together.\n\\newline\n\nFind the next time when this happens.\n\\newline\n\n(i) Here is part of a timetable for trains going east to west from Lexford Station.\n\\newline\n\n\\begin{tabular}{|l|c|c|c|c|c|c|}\n\\hline\n& Lexford & 09 14 & 09 47 & 10 21 & 11 15 & 11 48 \\\\\n\\hline\n& Crowton & 09 26 & 09 59 & 10 33 & 11 27 & 12 00 \\\\\n\\hline\n& Doniton Halt & 09 42 & 10 15 & 10 49 & 11 43 & 12 16 \\\\\n\\hline\n& Mosshead & 10 01 & 10 34 & 11 08 & 12 02 & 12 35 \\\\\n\\hline\n\\end{tabular}\n\n(i) (j) Work out the number of minutes the 09 14 train takes to travel from Lexford to Mosshead.\n\\newline\n\n min\n\n(k) Freda must arrive at Mosshead by 11 30.\n\\newline\n\nWrite down the latest time she can catch a train from Lexford.\n\\newline\n\n(l) 437 people go on a coach trip.\n\\newline\nEach coach seats 62 people.\n\\newline\n\nHow many coaches are needed?",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The table shows the temperature at Lexford Station at 10 00 each day for a week.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{tabular}{|l|c|c|c|c|c|c|c|}\n\\hline\nDay & Mon & Tue & Wed & Thu & Fri & Sat & Sun \\\\\n\\hline\nTemperature ($^\\circ$C) & -3 & 4 & -1 & 0 & -5 & 2 & 1 \\\\\n\\hline\n\\end{tabular}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Write down the day which had the coldest temperature.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Work out the difference in the temperature between Monday and Tuesday.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "The temperature falls 6$^\\circ$C from 10 00 to midnight on Sunday.\n\\newline\n\nWork out the temperature at midnight.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The distance between Lexford Station and Crowton Station is 6.5 km.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "A train travels between these stations at an average speed of 39 km/h.\n\\newline\n\nWork out how long, in minutes, it takes the train to travel between these stations.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 4,
+            "content": [
+              {
+                "type": "text",
+                "content": "Each wheel on the train has a diameter of 1.8 m.\n\\newline\n\nWork out the number of complete turns each wheel makes in travelling the 6.5 km.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(c)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "A northbound train leaves Lexford Station every 30 minutes.\n\\newline\nA bus leaves Lexford Station every 45 minutes.\n\\newline\n\nAt 11 40 a northbound train and a bus leave the station together.\n\\newline\n\nFind the next time when this happens.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Here is part of a timetable for trains going east to west from Lexford Station.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{tabular}{|l|c|c|c|c|c|c|}\n\\hline\n& Lexford & 09 14 & 09 47 & 10 21 & 11 15 & 11 48 \\\\\n\\hline\n& Crowton & 09 26 & 09 59 & 10 33 & 11 27 & 12 00 \\\\\n\\hline\n& Doniton Halt & 09 42 & 10 15 & 10 49 & 11 43 & 12 16 \\\\\n\\hline\n& Mosshead & 10 01 & 10 34 & 11 08 & 12 02 & 12 35 \\\\\n\\hline\n\\end{tabular}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Work out the number of minutes the 09 14 train takes to travel from Lexford to Mosshead.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Freda must arrive at Mosshead by 11 30.\n\\newline\n\nWrite down the latest time she can catch a train from Lexford.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(e)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "437 people go on a coach trip.\n\\newline\nEach coach seats 62 people.\n\\newline\n\nHow many coaches are needed?"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item The table shows the temperature at Lexford Station at 10 00 each day for a week.\n\n\\begin{tabular}{|l|c|c|c|c|c|c|c|}\n\\hline\nDay & Mon & Tue & Wed & Thu & Fri & Sat & Sun \\\\\n\\hline\nTemperature ($^\\circ$C) & -3 & 4 & -1 & 0 & -5 & 2 & 1 \\\\\n\\hline\n\\end{tabular}\n\n\\begin{subparts}\n\\item Write down the day which had the coldest temperature.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Work out the difference in the temperature between Monday and Tuesday.\n\n\\AnswerLine[][]$^\\circ$C\n\\Marks{1}\n\n\\item The temperature falls 6$^\\circ$C from 10 00 to midnight on Sunday.\n\nWork out the temperature at midnight.\n\n\\AnswerLine[][]$^\\circ$C\n\\Marks{1}\n\\end{subparts}\n\n\\item The distance between Lexford Station and Crowton Station is 6.5 km.\n\n\\begin{subparts}\n\\item A train travels between these stations at an average speed of 39 km/h.\n\nWork out how long, in minutes, it takes the train to travel between these stations.\n\n\\AnswerLine[][] min\n\\Marks{3}\n\n\\item Each wheel on the train has a diameter of 1.8 m.\n\nWork out the number of complete turns each wheel makes in travelling the 6.5 km.\n\n\\AnswerLine[][]\n\\Marks{4}\n\\end{subparts}\n\n\\item A northbound train leaves Lexford Station every 30 minutes.\nA bus leaves Lexford Station every 45 minutes.\n\nAt 11 40 a northbound train and a bus leave the station together.\n\nFind the next time when this happens.\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\item Here is part of a timetable for trains going east to west from Lexford Station.\n\n\\begin{tabular}{|l|c|c|c|c|c|c|}\n\\hline\n& Lexford & 09 14 & 09 47 & 10 21 & 11 15 & 11 48 \\\\\n\\hline\n& Crowton & 09 26 & 09 59 & 10 33 & 11 27 & 12 00 \\\\\n\\hline\n& Doniton Halt & 09 42 & 10 15 & 10 49 & 11 43 & 12 16 \\\\\n\\hline\n& Mosshead & 10 01 & 10 34 & 11 08 & 12 02 & 12 35 \\\\\n\\hline\n\\end{tabular}\n\n\\begin{subparts}\n\\item Work out the number of minutes the 09 14 train takes to travel from Lexford to Mosshead.\n\n\\AnswerLine[][] min\n\\Marks{1}\n\n\\item Freda must arrive at Mosshead by 11 30.\n\nWrite down the latest time she can catch a train from Lexford.\n\n\\AnswerLine[][]\n\\Marks{1}\n\\end{subparts}\n\n\\item 437 people go on a coach trip.\nEach coach seats 62 people.\n\nHow many coaches are needed?\n\n\\AnswerLine[][]\n\\Marks{2}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2018MayJune-Paper33-Q02",
+    "paper": "2018MayJune-Paper33",
+    "qnum": 2,
+    "marks": 15,
+    "topics": [
+      "Geometry",
+      "Mensuration",
+      "Trigonometry"
+    ],
+    "s": "4.7",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Nets and 3D shapes",
+    "qtype": "circle theorems",
+    "g": "mixed",
+    "src": "0580/33/M/J/18 Q02",
+    "year": 2018,
+    "session": "MayJune",
+    "tex": "(a) Draw all the lines of symmetry on each shape.\n\\newline\n\n(b) The diagram shows an isosceles triangle and a straight line AB.\n\\newline\n\nFind the value of x and the value of y.\n\\newline\n\nx = \n\ny = \n\n(c) Find the size of one interior angle of a regular decagon.\n\\newline\n\n$^\\circ$\n\n(d) The points A, B and C lie on the circumference of a circle, centre O.\n\\newline\nPBR is a tangent to the circle and angle BAC = 37$^\\circ$.\n\\newline\n\nFind the value of j and the value of k.\n\\newline\n\nj = $^\\circ$\n\nk = $^\\circ$\n\n(e) ABC and ADE are isosceles triangles, each with perpendicular height 18 cm.\n\\newline\nBC = 35 cm and DE = 27 cm.\n\\newline\n\nFind the total area of the two shaded parts of the diagram.\n\\newline\n\n cm$^2$",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "text",
+            "content": "Draw all the lines of symmetry on each shape.\n\\newline\n"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q02-Shapes.tex"
+          }
+        ],
+        "answer": {
+          "type": "none",
+          "space": {
+            "type": "drawing",
+            "height": "4cm",
+            "cmd": "Answerspace"
+          }
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "The diagram shows an isosceles triangle and a straight line AB.\n\\newline\n"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q02-Triangle.tex"
+          },
+          {
+            "type": "text",
+            "content": "Find the value of x and the value of y.\n\\newline\n\nx = \\AnswerLine[][]\n\ny = \\AnswerLine[][]"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the size of one interior angle of a regular decagon.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "The points A, B and C lie on the circumference of a circle, centre O.\n\\newline\nPBR is a tangent to the circle and angle BAC = 37$^\\circ$.\n\\newline\n"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q02-Circle.tex"
+          },
+          {
+            "type": "text",
+            "content": "Find the value of j and the value of k.\n\\newline\n\nj = \\AnswerLine[][]$^\\circ$\n\nk = \\AnswerLine[][]$^\\circ$"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(e)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "ABC and ADE are isosceles triangles, each with perpendicular height 18 cm.\n\\newline\nBC = 35 cm and DE = 27 cm.\n\\newline\n"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q02-Triangles.tex"
+          },
+          {
+            "type": "text",
+            "content": "Find the total area of the two shaded parts of the diagram.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Draw all the lines of symmetry on each shape.\n\n\\relinput{Figures/Q02-Shapes.tex}\n\n\\Answerspace[4cm]\n\\Marks{4}\n\n\\item The diagram shows an isosceles triangle and a straight line AB.\n\n\\relinput{Figures/Q02-Triangle.tex}\n\nFind the value of x and the value of y.\n\nx = \\AnswerLine[][]\n\ny = \\AnswerLine[][]\n\\Marks{2}\n\n\\item Find the size of one interior angle of a regular decagon.\n\n\\AnswerLine[][]$^\\circ$\n\\Marks{3}\n\n\\item The points A, B and C lie on the circumference of a circle, centre O.\nPBR is a tangent to the circle and angle BAC = 37$^\\circ$.\n\n\\relinput{Figures/Q02-Circle.tex}\n\nFind the value of j and the value of k.\n\nj = \\AnswerLine[][]$^\\circ$\n\nk = \\AnswerLine[][]$^\\circ$\n\\Marks{3}\n\n\\item ABC and ADE are isosceles triangles, each with perpendicular height 18 cm.\nBC = 35 cm and DE = 27 cm.\n\n\\relinput{Figures/Q02-Triangles.tex}\n\nFind the total area of the two shaded parts of the diagram.\n\n\\AnswerLine[][] cm$^2$\n\\Marks{3}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2018MayJune/Paper33/Q02/Q02-Circle.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2018MayJune/Paper33/Q02/Q02-Shapes.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2018MayJune/Paper33/Q02/Q02-Triangle.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2018MayJune/Paper33/Q02/Q02-Triangles.png"
+    ]
+  },
+  {
+    "id": "0580-2018MayJune-Paper33-Q03",
+    "paper": "2018MayJune-Paper33",
+    "qnum": 3,
+    "marks": 15,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.15",
+    "d": 1,
+    "cat": "number",
+    "topic": "Speed, distance, time",
+    "qtype": "Time duration calculation, money calculation (total cost)",
+    "g": "mixed",
+    "src": "0580/33/M/J/18 Q03",
+    "year": 2018,
+    "session": "MayJune",
+    "tex": "(a) A museum's opening times are shown in this table.\n\\newline\n\n\\begin{tabular}{|l|l|}\n\\hline\nDay & Opening times \\\\\n\\hline\nMonday to Thursday & 09 00 to 17 00 \\\\\n\\hline\nFriday & 08 30 to 18 00 \\\\\n\\hline\nSaturday & 09 00 to 19 00 \\\\\n\\hline\nSunday & Closed \\\\\n\\hline\n\\end{tabular}\n\nWork out how many hours in a week the museum is open for.\n\\newline\n\n hours\n\n(b) The table shows the cost of tickets for the museum.\n\\newline\n\n\\begin{tabular}{|l|l|}\n\\hline\n & Cost \\\\\n\\hline\nAdult & \\$4.20 \\\\\n\\hline\nSenior (aged over 60) & \\$2.80 \\\\\n\\hline\nChild (aged 5 to 15) & \\$1.80 \\\\\n\\hline\nChild (aged under 5) & Free \\\\\n\\hline\n\\end{tabular}\n\nThe Reeve family visit the museum.\n\\newline\nMrs Reeve is aged 36, her father is 67, her mother is 65, and her three children are 2, 7 and 12.\n\\newline\n\nWork out the total cost for these six people to visit the museum.\n\\newline\n\n\\$ \n\n(c) Mrs Reeve buys 6 ice creams.\n\\newline\nEach ice cream costs \\$1.30.\n\\newline\n\nHow much change does she receive from \\$10?\n\n\\$ \n\n(d) Last year, the museum had twenty seven thousand and fifty three visitors.\n\\newline\n\nWrite this number in figures.\n\\newline\n\n(e) In 2015, there were 12 400 visitors to the museum.\n\\newline\nIn 2016, there were 14 100 visitors to the museum.\n\\newline\n\nCalculate the percentage increase in the number of visitors from 2015 to 2016.\n\\newline\n\n \\%\n\n(f) The door to the museum has an 8-digit code to unlock it.\n\\newline\n\n\\begin{tabular}{|l|c|c|c|c|c|c|c|c|}\n\\hline\nDigit & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\\\\n\\hline\nCode & 3 & 7 &  &  &  &  &  &  \\\\\n\\hline\n\\end{tabular}\n\n• The next odd number after 35 gives digits 1 and 2.\n\\newline\n \\\\\n• The next prime number after 23 gives digits 3 and 4.\n\\newline\n \\\\\n• The square root of 225 gives digits 5 and 6.\n\\newline\n \\\\\n• The value of 26 gives digits 7 and 8.\n\\newline\n\nUse this information to complete the door code.\n\\newline\nDigits 1 and 2 have been completed for you.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "A museum's opening times are shown in this table.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{tabular}{|l|l|}\n\\hline\nDay & Opening times \\\\\n\\hline\nMonday to Thursday & 09 00 to 17 00 \\\\\n\\hline\nFriday & 08 30 to 18 00 \\\\\n\\hline\nSaturday & 09 00 to 19 00 \\\\\n\\hline\nSunday & Closed \\\\\n\\hline\n\\end{tabular}"
+          },
+          {
+            "type": "text",
+            "content": "Work out how many hours in a week the museum is open for.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "The table shows the cost of tickets for the museum.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{tabular}{|l|l|}\n\\hline\n & Cost \\\\\n\\hline\nAdult & \\$4.20 \\\\\n\\hline\nSenior (aged over 60) & \\$2.80 \\\\\n\\hline\nChild (aged 5 to 15) & \\$1.80 \\\\\n\\hline\nChild (aged under 5) & Free \\\\\n\\hline\n\\end{tabular}"
+          },
+          {
+            "type": "text",
+            "content": "The Reeve family visit the museum.\n\\newline\nMrs Reeve is aged 36, her father is 67, her mother is 65, and her three children are 2, 7 and 12.\n\\newline\n\nWork out the total cost for these six people to visit the museum.\n\\newline\n\n\\$ \\AnswerLine[][]"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Mrs Reeve buys 6 ice creams.\n\\newline\nEach ice cream costs \\$1.30.\n\\newline\n\nHow much change does she receive from \\$10?\n\n\\$ \\AnswerLine[][]"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Last year, the museum had twenty seven thousand and fifty three visitors.\n\\newline\n\nWrite this number in figures.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(e)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "In 2015, there were 12 400 visitors to the museum.\n\\newline\nIn 2016, there were 14 100 visitors to the museum.\n\\newline\n\nCalculate the percentage increase in the number of visitors from 2015 to 2016.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(f)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "The door to the museum has an 8-digit code to unlock it.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{tabular}{|l|c|c|c|c|c|c|c|c|}\n\\hline\nDigit & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\\\\n\\hline\nCode & 3 & 7 &  &  &  &  &  &  \\\\\n\\hline\n\\end{tabular}"
+          },
+          {
+            "type": "text",
+            "content": "• The next odd number after 35 gives digits 1 and 2.\n\\newline\n \\\\\n• The next prime number after 23 gives digits 3 and 4.\n\\newline\n \\\\\n• The square root of 225 gives digits 5 and 6.\n\\newline\n \\\\\n• The value of 26 gives digits 7 and 8.\n\\newline\n\nUse this information to complete the door code.\n\\newline\nDigits 1 and 2 have been completed for you.\n\\newline\n"
+          }
+        ]
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item A museum's opening times are shown in this table.\n\n\\begin{tabular}{|l|l|}\n\\hline\nDay & Opening times \\\\\n\\hline\nMonday to Thursday & 09 00 to 17 00 \\\\\n\\hline\nFriday & 08 30 to 18 00 \\\\\n\\hline\nSaturday & 09 00 to 19 00 \\\\\n\\hline\nSunday & Closed \\\\\n\\hline\n\\end{tabular}\n\nWork out how many hours in a week the museum is open for.\n\n\\AnswerLine[][] hours\n\\Marks{3}\n\n\\item The table shows the cost of tickets for the museum.\n\n\\begin{tabular}{|l|l|}\n\\hline\n & Cost \\\\\n\\hline\nAdult & \\$4.20 \\\\\n\\hline\nSenior (aged over 60) & \\$2.80 \\\\\n\\hline\nChild (aged 5 to 15) & \\$1.80 \\\\\n\\hline\nChild (aged under 5) & Free \\\\\n\\hline\n\\end{tabular}\n\nThe Reeve family visit the museum.\nMrs Reeve is aged 36, her father is 67, her mother is 65, and her three children are 2, 7 and 12.\n\nWork out the total cost for these six people to visit the museum.\n\n\\$ \\AnswerLine[][]\n\\Marks{3}\n\n\\item Mrs Reeve buys 6 ice creams.\nEach ice cream costs \\$1.30.\n\nHow much change does she receive from \\$10?\n\n\\$ \\AnswerLine[][]\n\\Marks{2}\n\n\\item Last year, the museum had twenty seven thousand and fifty three visitors.\n\nWrite this number in figures.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item In 2015, there were 12 400 visitors to the museum.\nIn 2016, there were 14 100 visitors to the museum.\n\nCalculate the percentage increase in the number of visitors from 2015 to 2016.\n\n\\AnswerLine[][] \\%\n\\Marks{3}\n\n\\item The door to the museum has an 8-digit code to unlock it.\n\n\\begin{tabular}{|l|c|c|c|c|c|c|c|c|}\n\\hline\nDigit & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\\\\n\\hline\nCode & 3 & 7 &  &  &  &  &  &  \\\\\n\\hline\n\\end{tabular}\n\n• The next odd number after 35 gives digits 1 and 2. \\\\\n• The next prime number after 23 gives digits 3 and 4. \\\\\n• The square root of 225 gives digits 5 and 6. \\\\\n• The value of 26 gives digits 7 and 8.\n\nUse this information to complete the door code.\nDigits 1 and 2 have been completed for you.\n\n\\Marks{3}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2018MayJune-Paper33-Q04",
+    "paper": "2018MayJune-Paper33",
+    "qnum": 4,
+    "marks": 12,
+    "topics": [
+      "Number",
+      "Algebra and graphs"
+    ],
+    "s": "2.2",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Rearranging formulae",
+    "qtype": "algebraic manipulation, solving equations, index laws",
+    "g": "indices",
+    "src": "0580/33/M/J/18 Q04",
+    "year": 2018,
+    "session": "MayJune",
+    "tex": "(a) Solve these equations.\n\\newline\n\n(i) (b) $3x = 18$\n\n$x = $ \n\n(c) $8x - 15 = 6x + 2$\n\n$x = $ \n\n(d) Factorise.\n\\newline\n$5x - 15$\n\n(e) Simplify.\n\\newline\n$2x - 6y + 3x + 2y$\n\n(f) Find the value of $5u - 2v$ when $u = 11$ and $v = -3$.\n\\newline\n\n(g) Make $p$ the subject of this formula.\n\\newline\n$H = 7p - 3$\n\n$p = $ \n\n(h) (i) (i) Find the value of $k$ when $x^{10} \\times x^{k} = x^{3}$.\n\\newline\n\n$k = $ \n\n(j) Find the value of $n$ when $y^{10} \\div y^{n} = 1$.\n\\newline\n\n$n = $",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Solve these equations.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "$3x = 18$\n\n$x = $ \\AnswerLine[][]"
+              }
+            ],
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "$8x - 15 = 6x + 2$\n\n$x = $ \\AnswerLine[][]"
+              }
+            ],
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Factorise.\n\\newline\n$5x - 15$"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Simplify.\n\\newline\n$2x - 6y + 3x + 2y$"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the value of $5u - 2v$ when $u = 11$ and $v = -3$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(e)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Make $p$ the subject of this formula.\n\\newline\n$H = 7p - 3$\n\n$p = $ \\AnswerLine[][]"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(f)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the value of $k$ when $x^{10} \\times x^{k} = x^{3}$.\n\\newline\n\n$k = $ \\AnswerLine[][]"
+              }
+            ],
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the value of $n$ when $y^{10} \\div y^{n} = 1$.\n\\newline\n\n$n = $ \\AnswerLine[][]"
+              }
+            ],
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_itemNewline": true,
+        "_compactEndSubparts": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Solve these equations.\n\n\\begin{subparts}\n\\item $3x = 18$\n\n$x = $ \\AnswerLine[][]\n\\Marks{1}\n\n\\item $8x - 15 = 6x + 2$\n\n$x = $ \\AnswerLine[][]\n\\Marks{2}\n\\end{subparts}\n\n\\item Factorise.\n$5x - 15$\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Simplify.\n$2x - 6y + 3x + 2y$\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item Find the value of $5u - 2v$ when $u = 11$ and $v = -3$.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item Make $p$ the subject of this formula.\n$H = 7p - 3$\n\n$p = $ \\AnswerLine[][]\n\\Marks{2}\n\n\\item\n\\begin{subparts}\n\\item Find the value of $k$ when $x^{10} \\times x^{k} = x^{3}$.\n\n$k = $ \\AnswerLine[][]\n\\Marks{1}\n\n\\item Find the value of $n$ when $y^{10} \\div y^{n} = 1$.\n\n$n = $ \\AnswerLine[][]\n\\Marks{1}\n\\end{subparts}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2018MayJune-Paper33-Q05",
+    "paper": "2018MayJune-Paper33",
+    "qnum": 5,
+    "marks": 12,
+    "topics": [
+      "Geometry",
+      "Mensuration",
+      "Statistics"
+    ],
+    "s": "4.6",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/33/M/J/18 Q05",
+    "year": 2018,
+    "session": "MayJune",
+    "tex": "(a) Geoff keeps a record of the number of goals scored in the first eight games played by his football team.\n\\newline\n\n3   1   8   5   7   2   1   6\n\nFind\n\n(i) (b) the mode,\n\n(c) the range,\n\n(d) the median.\n\\newline\n\n(e) The table shows the number of goals scored by Geoff's team in each game during one season.\n\\newline\n\n\\begin{tabular}{|l|c|c|c|c|c|c|c|c|c|}\n\\hline\nNumber of goals & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\\\\n\\hline\nNumber of games & 5 & 7 & 8 & 10 & 6 & 4 & 5 & 3 & 2 \\\\\n\\hline\n\\end{tabular}\n\n(i) (f) How many games did the team play?\n\n(g) Work out the mean number of goals scored per game.\n\\newline\n\n(h) Geoff asks some supporters to choose a new colour for the team's shirts.\n\\newline\nThe results are to be shown in a pie chart.\n\\newline\nThe table shows some of this information.\n\\newline\n\n\\begin{tabular}{|c|c|c|}\n\\hline\nColour & Frequency & Pie chart sector angle \\\\\n\\hline\nRed & 41 & 123$^\\circ$ \\\\\n\\hline\nBlue &  & 69$^\\circ$ \\\\\n\\hline\nGreen &  &  \\\\\n\\hline\nOther & 18 & 54$^\\circ$ \\\\\n\\hline\n\\end{tabular}\n\n(i) (i) Complete the table.\n\\newline\n\n(j) Complete the pie chart.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Geoff keeps a record of the number of goals scored in the first eight games played by his football team.\n\\newline\n\n3 \\quad 1 \\quad 8 \\quad 5 \\quad 7 \\quad 2 \\quad 1 \\quad 6\n\nFind"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "the mode,"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "the range,"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "the median.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The table shows the number of goals scored by Geoff's team in each game during one season.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{tabular}{|l|c|c|c|c|c|c|c|c|c|}\n\\hline\nNumber of goals & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\\\\n\\hline\nNumber of games & 5 & 7 & 8 & 10 & 6 & 4 & 5 & 3 & 2 \\\\\n\\hline\n\\end{tabular}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "How many games did the team play?"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "Work out the mean number of goals scored per game.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Geoff asks some supporters to choose a new colour for the team's shirts.\n\\newline\nThe results are to be shown in a pie chart.\n\\newline\nThe table shows some of this information.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{tabular}{|c|c|c|}\n\\hline\nColour & Frequency & Pie chart sector angle \\\\\n\\hline\nRed & 41 & 123$^\\circ$ \\\\\n\\hline\nBlue &  & 69$^\\circ$ \\\\\n\\hline\nGreen &  &  \\\\\n\\hline\nOther & 18 & 54$^\\circ$ \\\\\n\\hline\n\\end{tabular}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "Complete the table.\n\\newline\n"
+              }
+            ]
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Complete the pie chart.\n\\newline\n"
+              },
+              {
+                "type": "figure",
+                "src": "Figures/Q05-PieChart.tex"
+              }
+            ]
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Geoff keeps a record of the number of goals scored in the first eight games played by his football team.\n\n3 \\quad 1 \\quad 8 \\quad 5 \\quad 7 \\quad 2 \\quad 1 \\quad 6\n\nFind\n\n\\begin{subparts}\n\\item the mode,\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item the range,\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item the median.\n\n\\AnswerLine[][]\n\\Marks{2}\n\\end{subparts}\n\n\\item The table shows the number of goals scored by Geoff's team in each game during one season.\n\n\\begin{tabular}{|l|c|c|c|c|c|c|c|c|c|}\n\\hline\nNumber of goals & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\\\\n\\hline\nNumber of games & 5 & 7 & 8 & 10 & 6 & 4 & 5 & 3 & 2 \\\\\n\\hline\n\\end{tabular}\n\n\\begin{subparts}\n\\item How many games did the team play?\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Work out the mean number of goals scored per game.\n\n\\AnswerLine[][]\n\\Marks{3}\n\\end{subparts}\n\n\\item Geoff asks some supporters to choose a new colour for the team's shirts.\nThe results are to be shown in a pie chart.\nThe table shows some of this information.\n\n\\begin{tabular}{|c|c|c|}\n\\hline\nColour & Frequency & Pie chart sector angle \\\\\n\\hline\nRed & 41 & 123$^\\circ$ \\\\\n\\hline\nBlue &  & 69$^\\circ$ \\\\\n\\hline\nGreen &  &  \\\\\n\\hline\nOther & 18 & 54$^\\circ$ \\\\\n\\hline\n\\end{tabular}\n\n\\begin{subparts}\n\\item Complete the table.\n\n\\Marks{3}\n\n\\item Complete the pie chart.\n\n\\relinput{Figures/Q05-PieChart.tex}\n\n\\Marks{1}\n\\end{subparts}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "_compactItems": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2018MayJune/Paper33/Q05/Q05-PieChart.png"
+    ]
+  },
+  {
+    "id": "0580-2018MayJune-Paper33-Q06",
+    "paper": "2018MayJune-Paper33",
+    "qnum": 6,
+    "marks": 9,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.10",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Graphs of functions",
+    "qtype": "reciprocal graph plotting, graphical solution of equations",
+    "g": "graph",
+    "src": "0580/33/M/J/18 Q06",
+    "year": 2018,
+    "session": "MayJune",
+    "tex": "(a) Complete the table of values for $y = \\dfrac{6}{x}$, $x \\neq 0$.\n\\newline\n\n\\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}\n\\hline\n$x$ & -6 & -4 & -3 & -2 & -1 & 1 & 2 & 3 & 4 & 6 \\\\\n\\hline\n$y$ & -1.5 &  & -3 &  &  & 3 &  & 1.5 &  & -1.5 \\\\\n\\hline\n\\end{tabular}\n\n(b) On the grid, draw the graph of $y = \\dfrac{6}{x}$ for $-6 \\leq x \\leq -1$ and $1 \\leq x \\leq 6$.\n\\newline\n\n(c) On the grid, draw the line $y = -5$.\n\\newline\n\n(d) Use your graph to solve the equation $\\dfrac{6}{x} = -5$.\n\\newline\n\n$x = $",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Complete the table of values for $y = \\dfrac{6}{x}$, $x \\neq 0$.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}\n\\hline\n$x$ & -6 & -4 & -3 & -2 & -1 & 1 & 2 & 3 & 4 & 6 \\\\\n\\hline\n$y$ & -1.5 &  & -3 &  &  & 3 &  & 1.5 &  & -1.5 \\\\\n\\hline\n\\end{tabular}"
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "text",
+            "content": "On the grid, draw the graph of $y = \\dfrac{6}{x}$ for $-6 \\leq x \\leq -1$ and $1 \\leq x \\leq 6$.\n\\newline\n"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q06-Graph.tex"
+          }
+        ]
+      },
+      {
+        "label": "(c)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "On the grid, draw the line $y = -5$.\n\\newline\n"
+          }
+        ]
+      },
+      {
+        "label": "(d)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Use your graph to solve the equation $\\dfrac{6}{x} = -5$.\n\\newline\n\n$x = $ \\AnswerLine[][]"
+          }
+        ],
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Complete the table of values for $y = \\dfrac{6}{x}$, $x \\neq 0$.\n\n\\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}\n\\hline\n$x$ & -6 & -4 & -3 & -2 & -1 & 1 & 2 & 3 & 4 & 6 \\\\\n\\hline\n$y$ & -1.5 &  & -3 &  &  & 3 &  & 1.5 &  & -1.5 \\\\\n\\hline\n\\end{tabular}\n\n\\Marks{3}\n\n\\item On the grid, draw the graph of $y = \\dfrac{6}{x}$ for $-6 \\leq x \\leq -1$ and $1 \\leq x \\leq 6$.\n\n\\relinput{Figures/Q06-Graph.tex}\n\n\\Marks{4}\n\n\\item On the grid, draw the line $y = -5$.\n\n\\Marks{1}\n\n\\item Use your graph to solve the equation $\\dfrac{6}{x} = -5$.\n\n$x = $ \\AnswerLine[][]\n\\Marks{1}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2018MayJune/Paper33/Q06/Q06-Graph.png"
+    ]
+  },
+  {
+    "id": "0580-2018MayJune-Paper33-Q07",
+    "paper": "2018MayJune-Paper33",
+    "qnum": 7,
+    "marks": 10,
+    "topics": [
+      "Geometry",
+      "Transformations and vectors"
+    ],
+    "s": "4.6",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/33/M/J/18 Q07",
+    "year": 2018,
+    "session": "MayJune",
+    "tex": "The diagram shows three triangles A, B and C.\n\\newline\n\n(a) Describe fully the single transformation that maps triangle A onto triangle B.\n\\newline\n\n(b) Describe fully the single transformation that maps triangle A onto triangle C.\n\\newline\n\n(c) Draw the image of triangle A after\n(i) (d) a translation by the vector $\\begin{pmatrix} 0 \\\\ -6 \\end{pmatrix}$.\n\\newline\n\n(e) a reflection in the line $y = -\\dfrac{3}{5}$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Describe fully the single transformation that maps triangle A onto triangle B.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Describe fully the single transformation that maps triangle A onto triangle C.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Draw the image of triangle A after"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "a translation by the vector $\\begin{pmatrix} 0 \\\\ -6 \\end{pmatrix}$.\n\\newline\n"
+              }
+            ]
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "a reflection in the line $y = -\\dfrac{3}{5}$.\n\\newline\n"
+              }
+            ]
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true,
+        "_compactContentSubparts": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "recall",
+    "cmd": "describe",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The diagram shows three triangles A, B and C.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "Figures/Q07-Triangles.tex"
+      }
+    ],
+    "_rawBody": "The diagram shows three triangles A, B and C.\n\n\\relinput{Figures/Q07-Triangles.tex}\n\n\\begin{parts}\n\\item Describe fully the single transformation that maps triangle A onto triangle B.\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\item Describe fully the single transformation that maps triangle A onto triangle C.\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\item Draw the image of triangle A after\n\\begin{subparts}\n\\item a translation by the vector $\\begin{pmatrix} 0 \\\\ -6 \\end{pmatrix}$.\n\n\\Marks{2}\n\n\\item a reflection in the line $y = -\\dfrac{3}{5}$.\n\n\\Marks{2}\n\\end{subparts}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2018MayJune/Paper33/Q07/Q07-Triangles.png"
+    ]
+  },
+  {
+    "id": "0580-2018MayJune-Paper33-Q08",
+    "paper": "2018MayJune-Paper33",
+    "qnum": 8,
+    "marks": 7,
+    "topics": [
+      "Probability"
+    ],
+    "s": "8.3",
+    "d": 1,
+    "cat": "probability",
+    "topic": "Tree diagrams",
+    "qtype": "combined events",
+    "g": "mixed",
+    "src": "0580/33/M/J/18 Q08",
+    "year": 2018,
+    "session": "MayJune",
+    "tex": "(a) A bag contains 6 green balls, 5 red balls and 3 blue balls only.\n\\newline\nA ball is taken from the bag at random.\n\\newline\n\nFind the probability that the ball is\n\n(i) (b) green,\n\n(c) green or red,\n\n(d) yellow.\n\\newline\n\n(e) Another bag contains brown balls, white balls, black balls and purple balls only.\n\\newline\nA ball is taken from this bag at random.\n\\newline\n\n\\begin{tabular}{|l|c|c|c|c|}\n\\hline\nColour & Brown & White & Black & Purple \\\\\n\\hline\nProbability & 0.46 & 0.22 & 0.14 &  \\\\\n\\hline\n\\end{tabular}\n\n(i) (f) Complete the table.\n\\newline\n\n(g) Which colour is the most likely to be taken?\n\n(h) There are 50 balls in this bag.\n\\newline\n\nWork out the number of black balls.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "A bag contains 6 green balls, 5 red balls and 3 blue balls only.\n\\newline\nA ball is taken from the bag at random.\n\\newline\n\nFind the probability that the ball is"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "green,"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "green or red,"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "yellow.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Another bag contains brown balls, white balls, black balls and purple balls only.\n\\newline\nA ball is taken from this bag at random.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{tabular}{|l|c|c|c|c|}\n\\hline\nColour & Brown & White & Black & Purple \\\\\n\\hline\nProbability & 0.46 & 0.22 & 0.14 &  \\\\\n\\hline\n\\end{tabular}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Complete the table.\n\\newline\n"
+              }
+            ]
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Which colour is the most likely to be taken?"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "There are 50 balls in this bag.\n\\newline\n\nWork out the number of black balls.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item A bag contains 6 green balls, 5 red balls and 3 blue balls only.\nA ball is taken from the bag at random.\n\nFind the probability that the ball is\n\n\\begin{subparts}\n\\item green,\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item green or red,\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item yellow.\n\n\\AnswerLine[][]\n\\Marks{1}\n\\end{subparts}\n\n\\item Another bag contains brown balls, white balls, black balls and purple balls only.\nA ball is taken from this bag at random.\n\n\\begin{tabular}{|l|c|c|c|c|}\n\\hline\nColour & Brown & White & Black & Purple \\\\\n\\hline\nProbability & 0.46 & 0.22 & 0.14 &  \\\\\n\\hline\n\\end{tabular}\n\n\\begin{subparts}\n\\item Complete the table.\n\n\\Marks{2}\n\n\\item Which colour is the most likely to be taken?\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item There are 50 balls in this bag.\n\nWork out the number of black balls.\n\n\\AnswerLine[][]\n\\Marks{1}\n\\end{subparts}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "_compactItems": true
+  },
+  {
+    "id": "0580-2018MayJune-Paper33-Q09",
+    "paper": "2018MayJune-Paper33",
+    "qnum": 9,
+    "marks": 7,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.7",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Sequences",
+    "qtype": "arithmetic and cubic sequences, nth term",
+    "g": "sequence",
+    "src": "0580/33/M/J/18 Q09",
+    "year": 2018,
+    "session": "MayJune",
+    "tex": "(a) These are the first four terms of a sequence.\n\\newline\n\n8,   15,   22,   29\n\n(i) (b) Find the next term of this sequence.\n\\newline\n\n(c) Describe the rule for continuing this sequence.\n\\newline\n\n(d) Find an expression for the nth term of this sequence.\n\\newline\n\n(e) Find the first three terms of another sequence whose nth term is $n^2 + 10$.\n\\newline\n\n ,  , \n\n(f) Write down an expression for the nth term of this sequence.\n\\newline\n\n1,   8,   27,   64",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "These are the first four terms of a sequence.\n\\newline\n\n8, \\quad 15, \\quad 22, \\quad 29"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the next term of this sequence.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Describe the rule for continuing this sequence.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find an expression for the nth term of this sequence.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the first three terms of another sequence whose nth term is $n^2 + 10$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "multiline",
+          "lines": 3,
+          "template": "____\\n____\\n____",
+          "lineSep": "blank"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down an expression for the nth term of this sequence.\n\\newline\n\n1, \\quad 8, \\quad 27, \\quad 64"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "describe",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item These are the first four terms of a sequence.\n\n8, \\quad 15, \\quad 22, \\quad 29\n\n\\begin{subparts}\n\\item Find the next term of this sequence.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Describe the rule for continuing this sequence.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Find an expression for the nth term of this sequence.\n\n\\AnswerLine[][]\n\\Marks{2}\n\\end{subparts}\n\n\\item Find the first three terms of another sequence whose nth term is $n^2 + 10$.\n\n\\AnswerLine[][] , \\AnswerLine[][] , \\AnswerLine[][]\n\\Marks{2}\n\n\\item Write down an expression for the nth term of this sequence.\n\n1, \\quad 8, \\quad 27, \\quad 64\n\n\\AnswerLine[][]\n\\Marks{1}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  }
+]

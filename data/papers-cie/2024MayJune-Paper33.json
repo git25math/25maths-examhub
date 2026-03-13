@@ -1,0 +1,1305 @@
+[
+  {
+    "id": "0580-2024MayJune-Paper33-Q01",
+    "paper": "2024MayJune-Paper33",
+    "qnum": 1,
+    "marks": 9,
+    "topics": [
+      "Statistics"
+    ],
+    "s": "9.4",
+    "d": 1,
+    "cat": "statistics",
+    "topic": "Charts and graphs",
+    "qtype": "statistical charts",
+    "g": "mixed",
+    "src": "0580/33/M/J/24 Q01",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "(a) 40 football players vote on the colour of new shirts.\n\\newline\n\nThe results for red, yellow and green are shown in the bar chart.\n\\newline\n\n(i) (b) Twice as many football players vote blue than vote orange.\n\\newline\n\nComplete the bar chart.\n\\newline\n\n(c) Write down the mode.\n\\newline\n\n(d) 40 hockey players vote on the colour of new shirts.\n\\newline\n\nThe table shows the results.\n\\newline\n\n(i) (e) Complete the pie chart.\n\\newline\n\n(f) Work out the percentage of hockey players who vote grey.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "40 football players vote on the colour of new shirts.\n\\newline\n\nThe results for red, yellow and green are shown in the bar chart.\n\\newline\n"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q01a.tex"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "Twice as many football players vote blue than vote orange.\n\\newline\n"
+              },
+              {
+                "type": "space",
+                "height": "0.8em",
+                "cmd": "vgap"
+              },
+              {
+                "type": "text",
+                "content": "Complete the bar chart.\n\\newline\n"
+              }
+            ]
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Write down the mode.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item"
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "40 hockey players vote on the colour of new shirts.\n\\newline\n\nThe table shows the results.\n\\newline\n"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q01b.tex"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 4,
+            "content": [
+              {
+                "type": "text",
+                "content": "Complete the pie chart.\n\\newline\n"
+              },
+              {
+                "type": "figure",
+                "src": "Figures/Q01bi.tex"
+              }
+            ]
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Work out the percentage of hockey players who vote grey.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "\\%"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item"
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item 40 football players vote on the colour of new shirts.\n\nThe results for red, yellow and green are shown in the bar chart.\n\n\\relinput{Figures/Q01a.tex}\n\n\\begin{subparts}\n\\item Twice as many football players vote blue than vote orange.\n\n\\vgap\n\nComplete the bar chart.\n\n\\Marks{3}\n\n\\item Write down the mode.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{subparts}\n\n\\item 40 hockey players vote on the colour of new shirts.\n\nThe table shows the results.\n\n\\relinput{Figures/Q01b.tex}\n\n\\begin{subparts}\n\\item Complete the pie chart.\n\n\\relinput{Figures/Q01bi.tex}\n\n\\Marks{4}\n\n\\item Work out the percentage of hockey players who vote grey.\n\n\\AnswerLine[][\\%]\n\\Marks{1}\n\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_compactItems": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper33/Q01/Q01a.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper33/Q01/Q01b.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper33/Q01/Q01bi.png"
+    ]
+  },
+  {
+    "id": "0580-2024MayJune-Paper33-Q02",
+    "paper": "2024MayJune-Paper33",
+    "qnum": 2,
+    "marks": 15,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.15",
+    "d": 1,
+    "cat": "number",
+    "topic": "Speed, distance, time",
+    "qtype": "timetable, speed-distance-time, fraction of a quantity, money calculations",
+    "g": "mixed",
+    "src": "0580/33/M/J/24 Q02",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "(a) Here is part of the timetable for buses from the station to the city centre.\n\\newline\n\nAll buses take the same time to travel from the station to the city centre.\n\\newline\n\n(i) (b) Complete the timetable.\n\\newline\n\n(c) Beth walks 4 km from her home to the station at a speed of 6 km/h.\n\\newline\n\nShe wants to travel on the 09 24 bus.\n\\newline\n\nWork out the latest time she can leave her home.\n\\newline\n\n(d) 45 seats on the bus are occupied.\n\\newline\nThis is $\\dfrac{3}{5}$ of the total number of seats on the bus.\n\\newline\n\nWork out the total number of seats on the bus.\n\\newline\n\n(e) Beth buys 2.4 kg of onions costing \\$1.25 per kilogram and 4.5 kg of potatoes.\n\\newline\nThe total cost is \\$11.64.\n\\newline\n\nFind the cost of 1 kg of potatoes.\n\\newline\n\n(f) (i) (g) One day 140 people enter a shop.\n\\newline\nThe ratio adults : children $= 3 : 2$.\n\\newline\n\nFind the number of adults who enter the shop.\n\\newline\n\n(h) The price of a television in this shop is \\$624.\n\\newline\n37.5\\% of this price is profit.\n\\newline\n\nCalculate the profit on this television.\n\\newline\n\n(i) The price of a phone in this shop is \\$420.\n\\newline\nThis price increases by 12\\%.\n\\newline\n\nCalculate the new price.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Here is part of the timetable for buses from the station to the city centre.\n\\newline\n\nAll buses take the same time to travel from the station to the city centre.\n\\newline\n"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q02a.tex"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Complete the timetable.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "none",
+              "space": {
+                "type": "drawing",
+                "height": "1cm",
+                "cmd": "Answerspace"
+              }
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "Beth walks 4 km from her home to the station at a speed of 6 km/h.\n\\newline\n\nShe wants to travel on the 09 24 bus.\n\\newline\n\nWork out the latest time she can leave her home.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "45 seats on the bus are occupied.\n\\newline\nThis is $\\dfrac{3}{5}$ of the total number of seats on the bus.\n\\newline\n\nWork out the total number of seats on the bus.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item"
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Beth buys 2.4 kg of onions costing \\$1.25 per kilogram and 4.5 kg of potatoes.\n\\newline\nThe total cost is \\$11.64.\n\\newline\n\nFind the cost of 1 kg of potatoes.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "\\$"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "One day 140 people enter a shop.\n\\newline\nThe ratio adults : children $= 3 : 2$.\n\\newline\n\nFind the number of adults who enter the shop.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "The price of a television in this shop is \\$624.\n\\newline\n37.5\\% of this price is profit.\n\\newline\n\nCalculate the profit on this television.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "\\$"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "The price of a phone in this shop is \\$420.\n\\newline\nThis price increases by 12\\%.\n\\newline\n\nCalculate the new price.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "\\$"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_itemNewline": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Here is part of the timetable for buses from the station to the city centre.\n\nAll buses take the same time to travel from the station to the city centre.\n\n\\relinput{Figures/Q02a.tex}\n\n\\begin{subparts}\n\\item Complete the timetable.\n\n\\Answerspace[1cm]\n\\Marks{2}\n\n\\item Beth walks 4 km from her home to the station at a speed of 6 km/h.\n\nShe wants to travel on the 09 24 bus.\n\nWork out the latest time she can leave her home.\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\item 45 seats on the bus are occupied.\nThis is $\\dfrac{3}{5}$ of the total number of seats on the bus.\n\nWork out the total number of seats on the bus.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{subparts}\n\n\\item Beth buys 2.4 kg of onions costing \\$1.25 per kilogram and 4.5 kg of potatoes.\nThe total cost is \\$11.64.\n\nFind the cost of 1 kg of potatoes.\n\n\\AnswerLine[\\$][]\n\\Marks{3}\n\n\\item\n\\begin{subparts}\n\\item One day 140 people enter a shop.\nThe ratio adults : children $= 3 : 2$.\n\nFind the number of adults who enter the shop.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item The price of a television in this shop is \\$624.\n37.5\\% of this price is profit.\n\nCalculate the profit on this television.\n\n\\AnswerLine[\\$][]\n\\Marks{1}\n\n\\item The price of a phone in this shop is \\$420.\nThis price increases by 12\\%.\n\nCalculate the new price.\n\n\\AnswerLine[\\$][]\n\\Marks{2}\n\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper33/Q02/Q02a.png"
+    ]
+  },
+  {
+    "id": "0580-2024MayJune-Paper33-Q03",
+    "paper": "2024MayJune-Paper33",
+    "qnum": 3,
+    "marks": 10,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry",
+      "Transformations and vectors"
+    ],
+    "s": "3.1",
+    "d": 1,
+    "cat": "coord",
+    "topic": "Coordinates",
+    "qtype": "coordinates reading/plotting",
+    "g": "graph",
+    "src": "0580/33/M/J/24 Q03",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "(a) The grid shows a trapezium.\n\\newline\n\nOn the grid, draw an enlargement of the trapezium with scale factor 3.\n\\newline\n\n(b) The diagram shows four triangles, $A$, $B$, $C$ and $T$, and a point $P$ on a grid.\n\\newline\n\n(i) (c) Write down the coordinates of point $P$.\n\\newline\n\n( , )\n\n(d) Describe fully the **single** transformation that maps\n\n\\begin{subsubparts}\n\n(e) triangle $T$ onto triangle $A$\n\n(f) triangle $T$ onto triangle $B$\n\n(g) triangle $T$ onto triangle $C$.\n\\newline\n\n\\end{subsubparts}",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "The grid shows a trapezium.\n\\newline\n"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q03a.tex"
+          },
+          {
+            "type": "text",
+            "content": "On the grid, draw an enlargement of the trapezium with scale factor 3.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "none",
+          "space": {
+            "type": "drawing",
+            "height": "6cm",
+            "cmd": "Answerspace"
+          }
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The diagram shows four triangles, $A$, $B$, $C$ and $T$, and a point $P$ on a grid.\n\\newline\n"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q03b.tex"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Write down the coordinates of point $P$.\n\\newline\n\n(\\AnswerLine[][] , \\AnswerLine[][])"
+              }
+            ],
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 0,
+            "content": [
+              {
+                "type": "text",
+                "content": "Describe fully the \\textbf{single} transformation that maps"
+              }
+            ],
+            "subsubparts": [
+              {
+                "label": "(p)",
+                "content": [
+                  {
+                    "type": "text",
+                    "content": "triangle $T$ onto triangle $A$"
+                  }
+                ],
+                "answer": {
+                  "type": "multiline",
+                  "lines": 2,
+                  "template": "____\\n____",
+                  "lineSep": "blank"
+                },
+                "marks": 2
+              },
+              {
+                "label": "(q)",
+                "content": [
+                  {
+                    "type": "text",
+                    "content": "triangle $T$ onto triangle $B$"
+                  }
+                ],
+                "answer": {
+                  "type": "multiline",
+                  "lines": 2,
+                  "template": "____\\n____",
+                  "lineSep": "blank"
+                },
+                "marks": 2
+              },
+              {
+                "label": "(r)",
+                "content": [
+                  {
+                    "type": "text",
+                    "content": "triangle $T$ onto triangle $C$."
+                  }
+                ],
+                "answer": {
+                  "type": "multiline",
+                  "lines": 2,
+                  "template": "____\\n____",
+                  "lineSep": "blank"
+                },
+                "marks": 3
+              }
+            ]
+          }
+        ],
+        "_subpartCmd": "item"
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "recall",
+    "cmd": "describe",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item The grid shows a trapezium.\n\n\\relinput{Figures/Q03a.tex}\n\nOn the grid, draw an enlargement of the trapezium with scale factor 3.\n\n\\Answerspace[6cm]\n\\Marks{2}\n\n\\item The diagram shows four triangles, $A$, $B$, $C$ and $T$, and a point $P$ on a grid.\n\n\\relinput{Figures/Q03b.tex}\n\n\\begin{subparts}\n\\item Write down the coordinates of point $P$.\n\n(\\AnswerLine[][] , \\AnswerLine[][])\n\\Marks{1}\n\n\\item Describe fully the \\textbf{single} transformation that maps\n\n\\begin{subsubparts}\n\\item triangle $T$ onto triangle $A$\n\n\\AnswerLine[][]\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item triangle $T$ onto triangle $B$\n\n\\AnswerLine[][]\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item triangle $T$ onto triangle $C$.\n\n\\AnswerLine[][]\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\end{subsubparts}\n\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper33/Q03/Q03a.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper33/Q03/Q03b.png"
+    ]
+  },
+  {
+    "id": "0580-2024MayJune-Paper33-Q04",
+    "paper": "2024MayJune-Paper33",
+    "qnum": 4,
+    "marks": 11,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.1",
+    "d": 1,
+    "cat": "number",
+    "topic": "Types of number",
+    "qtype": "place value, factors, prime numbers, square roots, multiples, reciprocals, fractions, irrational numbers, HCF",
+    "g": "mixed",
+    "src": "0580/33/M/J/24 Q04",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "(a) Write down the value of the 8 in the number $39\\,829$.\n\\newline\n\n(b) Write down all the factors of 18.\n\\newline\n\n(c) Show that 57 is **not** a prime number.\n\\newline\n\n(d) $\\sqrt{x} = 64$\n\nFind the value of $x$.\n\\newline\n\n$x = $ \n\n(e) Find the first multiple of 40 that is greater than 620.\n\\newline\n\n(f) Find the reciprocal of $\\dfrac{2}{3}$.\n\\newline\n\n(g) Find a fraction between $\\dfrac{1}{5}$ and $\\dfrac{1}{4}$.\n\\newline\n\n(h) Write down an irrational number with a value between 9 and 10.\n\\newline\n\n(i) Find the highest common factor (HCF) of 72 and 180.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down the value of the 8 in the number $39\\,829$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down all the factors of 18.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Show that 57 is \\textbf{not} a prime number.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "none",
+          "space": {
+            "type": "drawing",
+            "height": "2cm",
+            "cmd": "Answerspace"
+          }
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "$\\sqrt{x} = 64$\n\nFind the value of $x$.\n\\newline\n\n$x = $ \\AnswerLine[][]"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(e)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the first multiple of 40 that is greater than 620.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(f)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the reciprocal of $\\dfrac{2}{3}$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(g)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find a fraction between $\\dfrac{1}{5}$ and $\\dfrac{1}{4}$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(h)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down an irrational number with a value between 9 and 10.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(i)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the highest common factor (HCF) of 72 and 180.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "show",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Write down the value of the 8 in the number 39\\,829.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Write down all the factors of 18.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item Show that 57 is \\textbf{not} a prime number.\n\n\\Answerspace[2cm]\n\\Marks{1}\n\n\\item $\\sqrt{x} = 64$\n\nFind the value of $x$.\n\n$x = $ \\AnswerLine[][]\n\\Marks{1}\n\n\\item Find the first multiple of 40 that is greater than 620.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Find the reciprocal of $\\dfrac{2}{3}$.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Find a fraction between $\\dfrac{1}{5}$ and $\\dfrac{1}{4}$.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Write down an irrational number with a value between 9 and 10.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Find the highest common factor (HCF) of 72 and 180.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2024MayJune-Paper33-Q05",
+    "paper": "2024MayJune-Paper33",
+    "qnum": 5,
+    "marks": 11,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.6",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/33/M/J/24 Q05",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "(a) \n\n(i) (b) Measure angle $k$.\n\\newline\n\n(c) Write down the mathematical name for this type of angle.\n\\newline\n\n(d) The diagram shows a pair of parallel lines and a straight line.\n\\newline\nAngles $a$, $b$, $c$, $d$ and $x$ are labelled.\n\\newline\n\nComplete the statements.\n\\newline\n\nAngle  is alternate to angle $x$.\n\\newline\n\nAngle  is corresponding to angle $x$.\n\\newline\n\n(e) The diagram shows a parallelogram.\n\\newline\n\nFind the value of $y$.\n\\newline\n\n$y = $ \n\n(f) \n\n$A$, $B$ and $C$ lie on a circle, centre $O$.\n\\newline\n\nFind angle $ACB$.\n\\newline\n\nAngle $ACB = $ \n\n(g) The interior angle of a regular polygon is $171°$.\n\\newline\n\nWork out the number of sides of this polygon.\n\\newline\n\n(h) \n\nCalculate the value of $x$.\n\\newline\n\n$x = $",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "figure",
+            "src": "Figures/Q05a.tex"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Measure angle $k$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Write down the mathematical name for this type of angle.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_itemNewline": true,
+        "_itemBlankLine": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "The diagram shows a pair of parallel lines and a straight line.\n\\newline\nAngles $a$, $b$, $c$, $d$ and $x$ are labelled.\n\\newline\n"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q05b.tex"
+          },
+          {
+            "type": "text",
+            "content": "Complete the statements.\n\\newline\n\nAngle \\AnswerLine[][] is alternate to angle $x$.\n\\newline\n\nAngle \\AnswerLine[][] is corresponding to angle $x$.\n\\newline\n"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "The diagram shows a parallelogram.\n\\newline\n"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q05c.tex"
+          },
+          {
+            "type": "text",
+            "content": "Find the value of $y$.\n\\newline\n\n$y = $ \\AnswerLine[][]"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "figure",
+            "src": "Figures/Q05d.tex"
+          },
+          {
+            "type": "text",
+            "content": "$A$, $B$ and $C$ lie on a circle, centre $O$.\n\\newline\n\nFind angle $ACB$.\n\\newline\n\nAngle $ACB = $ \\AnswerLine[][]"
+          }
+        ],
+        "_compactMarks": true,
+        "_itemNewline": true,
+        "_itemBlankLine": true
+      },
+      {
+        "label": "(e)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "The interior angle of a regular polygon is $171°$.\n\\newline\n\nWork out the number of sides of this polygon.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(f)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "figure",
+            "src": "Figures/Q05f.tex"
+          },
+          {
+            "type": "text",
+            "content": "Calculate the value of $x$.\n\\newline\n\n$x = $ \\AnswerLine[][]"
+          }
+        ],
+        "_compactMarks": true,
+        "_itemNewline": true,
+        "_itemBlankLine": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item\n\n\\relinput{Figures/Q05a.tex}\n\n\\begin{subparts}\n\\item Measure angle $k$.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Write down the mathematical name for this type of angle.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{subparts}\n\n\\item The diagram shows a pair of parallel lines and a straight line.\nAngles $a$, $b$, $c$, $d$ and $x$ are labelled.\n\n\\relinput{Figures/Q05b.tex}\n\nComplete the statements.\n\nAngle \\AnswerLine[][] is alternate to angle $x$.\n\nAngle \\AnswerLine[][] is corresponding to angle $x$.\n\\Marks{2}\n\n\\item The diagram shows a parallelogram.\n\n\\relinput{Figures/Q05c.tex}\n\nFind the value of $y$.\n\n$y = $ \\AnswerLine[][]\n\\Marks{1}\n\n\\item\n\n\\relinput{Figures/Q05d.tex}\n\n$A$, $B$ and $C$ lie on a circle, centre $O$.\n\nFind angle $ACB$.\n\nAngle $ACB = $ \\AnswerLine[][]\n\\Marks{2}\n\n\\item The interior angle of a regular polygon is $171°$.\n\nWork out the number of sides of this polygon.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item\n\n\\relinput{Figures/Q05f.tex}\n\nCalculate the value of $x$.\n\n$x = $ \\AnswerLine[][]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper33/Q05/Q05a.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper33/Q05/Q05b.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper33/Q05/Q05c.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper33/Q05/Q05d.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper33/Q05/Q05f.png"
+    ]
+  },
+  {
+    "id": "0580-2024MayJune-Paper33-Q06",
+    "paper": "2024MayJune-Paper33",
+    "qnum": 6,
+    "marks": 14,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.5",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Equations",
+    "qtype": "substitution, solving linear equations, expanding and simplifying algebraic expressions, rearranging formula, building expressions",
+    "g": "rearrange",
+    "src": "0580/33/M/J/24 Q06",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "(a) In a sport, teams are given points using the formula\n\nnumber of points $=$ number of wins $\\times 4 +$ number of draws $\\times 2 +$ bonus points.\n\\newline\nOne team has 15 wins, 7 draws and 6 bonus points.\n\\newline\n\nCalculate the total number of points for this team.\n\\newline\n\n(b) Solve.\n\\newline\n\n$\\dfrac{x}{2} = 18$\n\n$x = $ \n\n(c) Solve.\n\\newline\n\n$4x + 12 = 18$\n\n$x = $ \n\n(d) Expand and simplify.\n\\newline\n\n$6(3x - 4) + 5(x - 2)$\n\n(e) $T = 5r - 6$\n\nMake $r$ the subject of this formula.\n\\newline\n\n$r = $ \n\n(f) Bo has a green bag and a blue bag.\n\\newline\nEach bag contains some marbles.\n\\newline\n\nThe green bag has $x$ marbles.\n\\newline\nThere are 5 times as many marbles in the blue bag than in the green bag.\n\\newline\n\nBo now adds 6 marbles to each bag.\n\\newline\nThere are now 4 times as many marbles in the blue bag than in the green bag.\n\\newline\n\nUse this information to write down an equation and solve it to find the value of $x$.\n\\newline\n\n$x = $",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "In a sport, teams are given points using the formula\n\n\\begin{center}\nnumber of points $=$ number of wins $\\times 4 +$ number of draws $\\times 2 +$ bonus points.\n\\newline\n\\end{center}\n\nOne team has 15 wins, 7 draws and 6 bonus points.\n\\newline\n\nCalculate the total number of points for this team.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Solve.\n\\newline\n\n$\\dfrac{x}{2} = 18$\n\n$x = $ \\AnswerLine[][]"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Solve.\n\\newline\n\n$4x + 12 = 18$\n\n$x = $ \\AnswerLine[][]"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Expand and simplify.\n\\newline\n\n$6(3x - 4) + 5(x - 2)$"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(e)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "$T = 5r - 6$\n\nMake $r$ the subject of this formula.\n\\newline\n\n$r = $ \\AnswerLine[][]"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(f)",
+        "marks": 5,
+        "content": [
+          {
+            "type": "text",
+            "content": "Bo has a green bag and a blue bag.\n\\newline\nEach bag contains some marbles.\n\\newline\n\nThe green bag has $x$ marbles.\n\\newline\nThere are 5 times as many marbles in the blue bag than in the green bag.\n\\newline\n\nBo now adds 6 marbles to each bag.\n\\newline\nThere are now 4 times as many marbles in the blue bag than in the green bag.\n\\newline\n\nUse this information to write down an equation and solve it to find the value of $x$.\n\\newline\n\n$x = $ \\AnswerLine[][]"
+          }
+        ],
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item In a sport, teams are given points using the formula\n\n\\begin{center}\nnumber of points $=$ number of wins $\\times 4 +$ number of draws $\\times 2 +$ bonus points.\n\\end{center}\n\nOne team has 15 wins, 7 draws and 6 bonus points.\n\nCalculate the total number of points for this team.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item Solve.\n\n$\\dfrac{x}{2} = 18$\n\n$x = $ \\AnswerLine[][]\n\\Marks{1}\n\n\\item Solve.\n\n$4x + 12 = 18$\n\n$x = $ \\AnswerLine[][]\n\\Marks{2}\n\n\\item Expand and simplify.\n\n$6(3x - 4) + 5(x - 2)$\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item $T = 5r - 6$\n\nMake $r$ the subject of this formula.\n\n$r = $ \\AnswerLine[][]\n\\Marks{2}\n\n\\item Bo has a green bag and a blue bag.\nEach bag contains some marbles.\n\nThe green bag has $x$ marbles.\nThere are 5 times as many marbles in the blue bag than in the green bag.\n\nBo now adds 6 marbles to each bag.\nThere are now 4 times as many marbles in the blue bag than in the green bag.\n\nUse this information to write down an equation and solve it to find the value of $x$.\n\n$x = $ \\AnswerLine[][]\n\\Marks{5}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2024MayJune-Paper33-Q07",
+    "paper": "2024MayJune-Paper33",
+    "qnum": 7,
+    "marks": 12,
+    "topics": [
+      "Number",
+      "Probability"
+    ],
+    "s": "1.1",
+    "d": 1,
+    "cat": "number",
+    "topic": "Types of number",
+    "qtype": "prime numbers in probability",
+    "g": "mixed",
+    "src": "0580/33/M/J/24 Q07",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "(a) Li spins a fair 6-sided spinner numbered 1 to 6.\n\\newline\n\n(i) (b) On the probability scale, draw an arrow ($\\downarrow$) to show the probability that the spinner lands on the number 2.\n\\newline\n\n(c) Find the probability that the spinner lands on a prime number.\n\\newline\n\n(d) Find the probability that the spinner lands on the number 7.\n\\newline\n\n(e) A bag contains 3 red balls and 12 green balls.\n\\newline\nLi picks a ball at random.\n\\newline\n\nFind the probability that it is a green ball.\n\\newline\nGive your answer as a fraction in its simplest form.\n\\newline\n\n(f) Li spins two fair 4-sided spinners, each numbered 1 to 4.\n\\newline\nThe two numbers are multiplied to give the score.\n\\newline\n\nFind the probability that the score is\n\n(i) (g) an even number\n\n(h) an integer\n\n(i) at least 10.\n\\newline\n\n(j) A bag contains red discs and blue discs.\n\\newline\nThe probability that a disc picked at random is red is $\\dfrac{1}{5}$.\n\\newline\n\nLi picks a disc at random, notes its colour and then replaces it in the bag.\n\\newline\nShe then picks another disc at random.\n\\newline\n\n(i) (k) Complete the tree diagram.\n\\newline\n\n(l) Work out the probability that both of the discs she picks are blue.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Li spins a fair 6-sided spinner numbered 1 to 6.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "On the probability scale, draw an arrow ($\\downarrow$) to show the probability that the spinner lands on the number 2.\n\\newline\n"
+              },
+              {
+                "type": "figure",
+                "src": "Figures/Q07ai.tex"
+              }
+            ],
+            "answer": {
+              "type": "none",
+              "space": {
+                "type": "drawing",
+                "height": "2cm",
+                "cmd": "Answerspace"
+              }
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the probability that the spinner lands on a prime number.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the probability that the spinner lands on the number 7.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item"
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "A bag contains 3 red balls and 12 green balls.\n\\newline\nLi picks a ball at random.\n\\newline\n\nFind the probability that it is a green ball.\n\\newline\nGive your answer as a fraction in its simplest form.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Li spins two fair 4-sided spinners, each numbered 1 to 4.\n\\newline\nThe two numbers are multiplied to give the score.\n\\newline\n"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q07c.tex"
+          },
+          {
+            "type": "text",
+            "content": "Find the probability that the score is"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "an even number"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "an integer"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "at least 10.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item"
+      },
+      {
+        "label": "(d)",
+        "content": [
+          {
+            "type": "text",
+            "content": "A bag contains red discs and blue discs.\n\\newline\nThe probability that a disc picked at random is red is $\\dfrac{1}{5}$.\n\\newline\n\nLi picks a disc at random, notes its colour and then replaces it in the bag.\n\\newline\nShe then picks another disc at random.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Complete the tree diagram.\n\\newline\n"
+              },
+              {
+                "type": "figure",
+                "src": "Figures/Q07di.tex"
+              }
+            ],
+            "answer": {
+              "type": "none",
+              "space": {
+                "type": "drawing",
+                "height": "5cm",
+                "cmd": "Answerspace"
+              }
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Work out the probability that both of the discs she picks are blue.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item"
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Li spins a fair 6-sided spinner numbered 1 to 6.\n\n\\begin{subparts}\n\\item On the probability scale, draw an arrow ($\\downarrow$) to show the probability that the spinner lands on the number 2.\n\n\\relinput{Figures/Q07ai.tex}\n\n\\Answerspace[2cm]\n\\Marks{1}\n\n\\item Find the probability that the spinner lands on a prime number.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Find the probability that the spinner lands on the number 7.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{subparts}\n\n\\item A bag contains 3 red balls and 12 green balls.\nLi picks a ball at random.\n\nFind the probability that it is a green ball.\nGive your answer as a fraction in its simplest form.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item Li spins two fair 4-sided spinners, each numbered 1 to 4.\nThe two numbers are multiplied to give the score.\n\n\\relinput{Figures/Q07c.tex}\n\nFind the probability that the score is\n\n\\begin{subparts}\n\\item an even number\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item an integer\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item at least 10.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{subparts}\n\n\\item A bag contains red discs and blue discs.\nThe probability that a disc picked at random is red is $\\dfrac{1}{5}$.\n\nLi picks a disc at random, notes its colour and then replaces it in the bag.\nShe then picks another disc at random.\n\n\\begin{subparts}\n\\item Complete the tree diagram.\n\n\\relinput{Figures/Q07di.tex}\n\n\\Answerspace[5cm]\n\\Marks{2}\n\n\\item Work out the probability that both of the discs she picks are blue.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper33/Q07/Q07ai.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper33/Q07/Q07c.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper33/Q07/Q07di.png"
+    ]
+  },
+  {
+    "id": "0580-2024MayJune-Paper33-Q08",
+    "paper": "2024MayJune-Paper33",
+    "qnum": 8,
+    "marks": 10,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.7",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Nets and 3D shapes",
+    "qtype": "circle theorems",
+    "g": "mixed",
+    "src": "0580/33/M/J/24 Q08",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "(a) \n\nFind the area of this trapezium.\n\\newline\n\n(b) \n\nThe area of this triangle is $15.3\\,\\text{cm}^2$.\n\\newline\n\nFind the value of $b$.\n\\newline\n\n$b = $ \n\n(c) A circle has a circumference of $58.6\\,\\text{cm}$.\n\\newline\n\nFind the radius of this circle.\n\\newline\n\n(d) \n\nThe diagram shows a rectangle with two semicircles removed.\n\\newline\n\nCalculate the shaded area.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "figure",
+            "src": "Figures/Q08a.tex"
+          },
+          {
+            "type": "text",
+            "content": "Find the area of this trapezium.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "cm$^2$"
+        },
+        "_compactMarks": true,
+        "_itemNewline": true,
+        "_itemBlankLine": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "figure",
+            "src": "Figures/Q08b.tex"
+          },
+          {
+            "type": "text",
+            "content": "The area of this triangle is $15.3\\,\\text{cm}^2$.\n\\newline\n\nFind the value of $b$.\n\\newline\n\n$b = $ \\AnswerLine[][]"
+          }
+        ],
+        "_compactMarks": true,
+        "_itemNewline": true,
+        "_itemBlankLine": true
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "A circle has a circumference of $58.6\\,\\text{cm}$.\n\\newline\n\nFind the radius of this circle.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "cm"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "figure",
+            "src": "Figures/Q08d.tex"
+          },
+          {
+            "type": "text",
+            "content": "The diagram shows a rectangle with two semicircles removed.\n\\newline\n\nCalculate the shaded area.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "cm$^2$"
+        },
+        "_compactMarks": true,
+        "_itemNewline": true,
+        "_itemBlankLine": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item\n\n\\relinput{Figures/Q08a.tex}\n\nFind the area of this trapezium.\n\n\\AnswerLine[][cm$^2$]\n\\Marks{2}\n\n\\item\n\n\\relinput{Figures/Q08b.tex}\n\nThe area of this triangle is 15.3\\,cm$^2$.\n\nFind the value of $b$.\n\n$b = $ \\AnswerLine[][]\n\\Marks{2}\n\n\\item A circle has a circumference of 58.6\\,cm.\n\nFind the radius of this circle.\n\n\\AnswerLine[][cm]\n\\Marks{2}\n\n\\item\n\n\\relinput{Figures/Q08d.tex}\n\nThe diagram shows a rectangle with two semicircles removed.\n\nCalculate the shaded area.\n\n\\AnswerLine[][cm$^2$]\n\\Marks{4}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper33/Q08/Q08a.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper33/Q08/Q08b.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper33/Q08/Q08d.png"
+    ]
+  },
+  {
+    "id": "0580-2024MayJune-Paper33-Q09",
+    "paper": "2024MayJune-Paper33",
+    "qnum": 9,
+    "marks": 12,
+    "topics": [
+      "Algebra and graphs",
+      "Coordinate geometry",
+      "Geometry"
+    ],
+    "s": "2.10",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Graphs of functions",
+    "qtype": "equation of a straight line, substitution, plotting quadratic graphs, finding line of symmetry, solving quadratic equations graphically",
+    "g": "quadratic",
+    "src": "0580/33/M/J/24 Q09",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "(a) Line $L$ has a gradient of 4 and passes through the point $(0, 3)$.\n\\newline\n\nWrite down the equation of line $L$ in the form $y = mx + c$.\n\\newline\n\n$y = $ \n\n(b) Line $G$ has the equation $y = 2 - 6x$.\n\\newline\nLine $G$ passes through the point $(a, 5)$.\n\\newline\n\nFind the value of $a$.\n\\newline\n\n$a = $ \n\n(c) (i) (d) Complete the table of values for $y = x^2 - 6$.\n\\newline\n\n(e) On the grid, draw the graph of $y = x^2 - 6$ for $-4 \\leqslant x \\leqslant 4$.\n\\newline\n\n(f) Write down the equation of the line of symmetry of the graph.\n\\newline\n\n(g) Use your graph to solve the equation $x^2 - 6 = 0$ for $x > 0$.\n\\newline\n\n$x = $",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Line $L$ has a gradient of 4 and passes through the point $(0, 3)$.\n\\newline\n\nWrite down the equation of line $L$ in the form $y = mx + c$.\n\\newline\n\n$y = $ \\AnswerLine[][]"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Line $G$ has the equation $y = 2 - 6x$.\n\\newline\nLine $G$ passes through the point $(a, 5)$.\n\\newline\n\nFind the value of $a$.\n\\newline\n\n$a = $ \\AnswerLine[][]"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Complete the table of values for $y = x^2 - 6$.\n\\newline\n"
+              },
+              {
+                "type": "figure",
+                "src": "Figures/Q09ci.tex"
+              }
+            ]
+          },
+          {
+            "label": "(ii)",
+            "marks": 4,
+            "content": [
+              {
+                "type": "text",
+                "content": "On the grid, draw the graph of $y = x^2 - 6$ for $-4 \\leqslant x \\leqslant 4$.\n\\newline\n"
+              },
+              {
+                "type": "figure",
+                "src": "Figures/Q09cii.tex"
+              }
+            ],
+            "answer": {
+              "type": "none",
+              "space": {
+                "type": "drawing",
+                "height": "8cm",
+                "cmd": "Answerspace"
+              }
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Write down the equation of the line of symmetry of the graph.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iv)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Use your graph to solve the equation $x^2 - 6 = 0$ for $x > 0$.\n\\newline\n\n$x = $ \\AnswerLine[][]"
+              }
+            ],
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_itemNewline": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Line $L$ has a gradient of 4 and passes through the point $(0, 3)$.\n\nWrite down the equation of line $L$ in the form $y = mx + c$.\n\n$y = $ \\AnswerLine[][]\n\\Marks{1}\n\n\\item Line $G$ has the equation $y = 2 - 6x$.\nLine $G$ passes through the point $(a, 5)$.\n\nFind the value of $a$.\n\n$a = $ \\AnswerLine[][]\n\\Marks{3}\n\n\\item\n\\begin{subparts}\n\\item Complete the table of values for $y = x^2 - 6$.\n\n\\relinput{Figures/Q09ci.tex}\n\n\\Marks{2}\n\n\\item On the grid, draw the graph of $y = x^2 - 6$ for $-4 \\leqslant x \\leqslant 4$.\n\n\\relinput{Figures/Q09cii.tex}\n\n\\Answerspace[8cm]\n\\Marks{4}\n\n\\item Write down the equation of the line of symmetry of the graph.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Use your graph to solve the equation $x^2 - 6 = 0$ for $x > 0$.\n\n$x = $ \\AnswerLine[][]\n\\Marks{1}\n\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper33/Q09/Q09ci.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper33/Q09/Q09cii.png"
+    ]
+  }
+]

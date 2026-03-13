@@ -1,5 +1,12 @@
 # Development Roadmap
 
+## v5.13.1 — 图片仓库清理 + 试卷数据拆分 [DONE]
+- [x] 25maths-cie0580-figures: 清理 97 个冗余/损坏/占位图片
+- [x] 25maths-cie0580-figures: 重命名 531 个单图文件为标准格式（去掉描述后缀）
+- [x] scripts/split-papers-cie.js: 按试卷拆分 papers-cie.json → 228 个独立文件
+- [x] data/papers-index-cie.json: 试卷索引（year/session/variant/count）
+- [x] papers-cie.json 格式化为多行可读 JSON
+
 ## v5.11 — 三态语言支持 [DONE]
 - [x] `appLang` 扩展为三态 `'en' | 'zh' | 'bilingual'`
 - [x] `t()` / `biText()` / `boardName` / `rankName` / `catName` / `lvTitle` 三态适配

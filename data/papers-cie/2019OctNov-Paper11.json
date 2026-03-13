@@ -1,0 +1,988 @@
+[
+  {
+    "id": "0580-2019OctNov-Paper11-Q01",
+    "paper": "2019OctNov-Paper11",
+    "qnum": 1,
+    "marks": 1,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.12",
+    "d": 1,
+    "cat": "number",
+    "topic": "Set notation",
+    "qtype": "unit conversion (length)",
+    "g": "mixed",
+    "src": "0580/11/O/N/19 Q01",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "Change 4.6 metres to centimetres.\n\\newline\n\n cm",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "other",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Change 4.6 metres to centimetres.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Change 4.6 metres to centimetres.\n\n\\AnswerLine[][] cm\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper11-Q02",
+    "paper": "2019OctNov-Paper11",
+    "qnum": 2,
+    "marks": 1,
+    "topics": [
+      "Geometry",
+      "Transformations and vectors"
+    ],
+    "s": "4.5",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Similarity and congruence",
+    "qtype": "symmetry",
+    "g": "mixed",
+    "src": "0580/11/O/N/19 Q02",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "Write down the order of rotational symmetry of this regular pentagon.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "write",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Write down the order of rotational symmetry of this regular pentagon.\n\\newline\n\n\\begin{tikzpicture}[scale=0.8]\n    % Draw regular pentagon\n    \\draw (0:1) -- (72:1) -- (144:1) -- (216:1) -- (288:1) -- cycle;\n\\end{tikzpicture}"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Write down the order of rotational symmetry of this regular pentagon.\n\n\\begin{tikzpicture}[scale=0.8]\n    % Draw regular pentagon\n    \\draw (0:1) -- (72:1) -- (144:1) -- (216:1) -- (288:1) -- cycle;\n\\end{tikzpicture}\n\n\\AnswerLine[][]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper11-Q03",
+    "paper": "2019OctNov-Paper11",
+    "qnum": 3,
+    "marks": 1,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.13",
+    "d": 1,
+    "cat": "number",
+    "topic": "Electronic calculators",
+    "qtype": "percentage of a quantity calculation",
+    "g": "mixed",
+    "src": "0580/11/O/N/19 Q03",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "Work out 5\\% of \\$25.\n\\newline\n\n\\$",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Work out 5\\% of \\$25.\n\\newline\n\n\\$ \\AnswerLine[]"
+      }
+    ],
+    "_rawBody": "Work out 5\\% of \\$25.\n\n\\$ \\AnswerLine[]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper11-Q04",
+    "paper": "2019OctNov-Paper11",
+    "qnum": 4,
+    "marks": 1,
+    "topics": [
+      "Number",
+      "Algebra and graphs"
+    ],
+    "s": "2.2",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Rearranging formulae",
+    "qtype": "Algebraic factorization (common factor)",
+    "g": "mixed",
+    "src": "0580/11/O/N/19 Q04",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "Factorise 5p + pt.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "simplify",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Factorise 5p + pt.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Factorise 5p + pt.\n\n\\AnswerLine[][]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper11-Q05",
+    "paper": "2019OctNov-Paper11",
+    "qnum": 5,
+    "marks": 2,
+    "topics": [
+      "Probability"
+    ],
+    "s": "8.3",
+    "d": 1,
+    "cat": "probability",
+    "topic": "Tree diagrams",
+    "qtype": "combined events",
+    "g": "mixed",
+    "src": "0580/11/O/N/19 Q05",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "Rui has a bag containing 5 black pens, 8 red pens and 3 blue pens only.\n\\newline\nHe takes a pen out of the bag at random.\n\\newline\n\n(a) Draw an arrow ($\\rightarrow$) on the probability scale to show the probability that Rui takes a red pen.\n\\newline\n\n(b) Draw an arrow ($\\rightarrow$) on the probability scale to show the probability that Rui takes a red pen or a blue pen.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Draw an arrow ($\\rightarrow$) on the probability scale to show the probability that Rui takes a red pen.\n\\newline\n\n\\begin{tikzpicture}[scale=0.8]\n    \\draw[thick] (0,0) -- (6,0);\n    \\draw[thick] (0,0.2) -- (0,-0.2);\n    \\draw[thick] (6,0.2) -- (6,-0.2);\n    \\node[below] at (0,0) {0};\n    \\node[below] at (6,0) {1};\n\\end{tikzpicture}"
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Draw an arrow ($\\rightarrow$) on the probability scale to show the probability that Rui takes a red pen or a blue pen.\n\\newline\n\n\\begin{tikzpicture}[scale=0.8]\n    \\draw[thick] (0,0) -- (6,0);\n    \\draw[thick] (0,0.2) -- (0,-0.2);\n    \\draw[thick] (6,0.2) -- (6,-0.2);\n    \\node[below] at (0,0) {0};\n    \\node[below] at (6,0) {1};\n\\end{tikzpicture}"
+          }
+        ]
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Rui has a bag containing 5 black pens, 8 red pens and 3 blue pens only.\n\\newline\nHe takes a pen out of the bag at random.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "Rui has a bag containing 5 black pens, 8 red pens and 3 blue pens only.\nHe takes a pen out of the bag at random.\n\n\\begin{parts}\n\\item Draw an arrow ($\\rightarrow$) on the probability scale to show the probability that Rui takes a red pen.\n\n\\begin{tikzpicture}[scale=0.8]\n    \\draw[thick] (0,0) -- (6,0);\n    \\draw[thick] (0,0.2) -- (0,-0.2);\n    \\draw[thick] (6,0.2) -- (6,-0.2);\n    \\node[below] at (0,0) {0};\n    \\node[below] at (6,0) {1};\n\\end{tikzpicture}\n\n\\Marks{1}\n\n\\item Draw an arrow ($\\rightarrow$) on the probability scale to show the probability that Rui takes a red pen or a blue pen.\n\n\\begin{tikzpicture}[scale=0.8]\n    \\draw[thick] (0,0) -- (6,0);\n    \\draw[thick] (0,0.2) -- (0,-0.2);\n    \\draw[thick] (6,0.2) -- (6,-0.2);\n    \\node[below] at (0,0) {0};\n    \\node[below] at (6,0) {1};\n\\end{tikzpicture}\n\n\\Marks{1}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper11-Q06",
+    "paper": "2019OctNov-Paper11",
+    "qnum": 6,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.9",
+    "d": 1,
+    "cat": "number",
+    "topic": "Percentages",
+    "qtype": "rounding numbers (nearest ten, decimal places)",
+    "g": "mixed",
+    "src": "0580/11/O/N/19 Q06",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "(a) Write 8473 correct to the nearest ten.\n\\newline\n\n(b) Write 16.086 correct to 2 decimal places.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write 8473 correct to the nearest ten.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write 16.086 correct to 2 decimal places.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "write",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Write 8473 correct to the nearest ten.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Write 16.086 correct to 2 decimal places.\n\n\\AnswerLine[][]\n\\Marks{1}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper11-Q07",
+    "paper": "2019OctNov-Paper11",
+    "qnum": 7,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.5",
+    "d": 1,
+    "cat": "number",
+    "topic": "Ordering",
+    "qtype": "ordering fractions, decimals, and percentages",
+    "g": "mixed",
+    "src": "0580/11/O/N/19 Q07",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "Write these in order of size, starting with the smallest.\n\\newline\n\n$\\dfrac{9}{19}$, $\\dfrac{3}{7}$, 37\\%, 0.43\n\n ,  ,  ,",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "write",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Write these in order of size, starting with the smallest.\n\\newline\n\n$\\dfrac{9}{19}$, $\\dfrac{3}{7}$, 37\\%, 0.43"
+      }
+    ],
+    "answer": {
+      "type": "multiline",
+      "lines": 4,
+      "template": "____\\n____\\n____\\n____",
+      "lineSep": "blank"
+    },
+    "_rawBody": "Write these in order of size, starting with the smallest.\n\n$\\dfrac{9}{19}$, $\\dfrac{3}{7}$, 37\\%, 0.43\n\n\\AnswerLine[] , \\AnswerLine[] , \\AnswerLine[] , \\AnswerLine[]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper11-Q08",
+    "paper": "2019OctNov-Paper11",
+    "qnum": 8,
+    "marks": 2,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.2",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Polygons",
+    "qtype": "geometrical constructions",
+    "g": "mixed",
+    "src": "0580/11/O/N/19 Q08",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "The diagram shows the base of a triangle.\n\\newline\nThe lengths of the other two sides are 6 cm and 4 cm.\n\\newline\nUsing a ruler and compasses only, construct the other two sides of the triangle.\n\\newline\nShow all your construction arcs.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The diagram shows the base of a triangle.\n\\newline\nThe lengths of the other two sides are 6 cm and 4 cm.\n\\newline\nUsing a ruler and compasses only, construct the other two sides of the triangle.\n\\newline\nShow all your construction arcs.\n\\newline\n\n\\begin{tikzpicture}[scale=0.8]\n    % Draw the base of the triangle\n    \\draw[thick] (0,0) -- (5,0);\n    \\draw[thick] (0,0) -- (2.5,4);\n    \\draw[thick] (5,0) -- (2.5,4);\n    \\node at (2.5,-0.3) {base};\n    \\node at (-0.3,2) {6 cm};\n    \\node at (5.3,2) {4 cm};\n\\end{tikzpicture}"
+      }
+    ],
+    "answer": {
+      "type": "none",
+      "space": {
+        "type": "drawing",
+        "height": "8cm",
+        "cmd": "Answerspace"
+      }
+    },
+    "_rawBody": "The diagram shows the base of a triangle.\nThe lengths of the other two sides are 6 cm and 4 cm.\nUsing a ruler and compasses only, construct the other two sides of the triangle.\nShow all your construction arcs.\n\n\\begin{tikzpicture}[scale=0.8]\n    % Draw the base of the triangle\n    \\draw[thick] (0,0) -- (5,0);\n    \\draw[thick] (0,0) -- (2.5,4);\n    \\draw[thick] (5,0) -- (2.5,4);\n    \\node at (2.5,-0.3) {base};\n    \\node at (-0.3,2) {6 cm};\n    \\node at (5.3,2) {4 cm};\n\\end{tikzpicture}\n\n\\Answerspace[8cm]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper11-Q09",
+    "paper": "2019OctNov-Paper11",
+    "qnum": 9,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.6",
+    "d": 1,
+    "cat": "number",
+    "topic": "Standard form",
+    "qtype": "subtraction and significant figures",
+    "g": "mixed",
+    "src": "0580/11/O/N/19 Q09",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "Calculate.\n\\newline\n16.379 - 0.879 = 1.241\n4.2\nGive your answer correct to 2 significant figures.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Calculate.\n\\newline\n16.379 - 0.879 = 1.241\n4.2\nGive your answer correct to 2 significant figures.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Calculate.\n16.379 - 0.879 = 1.241\n4.2\nGive your answer correct to 2 significant figures.\n\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper11-Q10",
+    "paper": "2019OctNov-Paper11",
+    "qnum": 10,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.11",
+    "d": 1,
+    "cat": "number",
+    "topic": "Money and finance",
+    "qtype": "sharing in a given ratio",
+    "g": "mixed",
+    "src": "0580/11/O/N/19 Q10",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "Share 518 in the ratio 2 : 5.\n\\newline\n\n ,",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "other",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Share 518 in the ratio 2 : 5.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "multiline",
+      "lines": 2,
+      "template": "____\\n____",
+      "lineSep": "blank"
+    },
+    "_rawBody": "Share 518 in the ratio 2 : 5.\n\n\\AnswerLine[] , \\AnswerLine[]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper11-Q11",
+    "paper": "2019OctNov-Paper11",
+    "qnum": 11,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.8",
+    "d": 1,
+    "cat": "number",
+    "topic": "Ratio, rate and proportion",
+    "qtype": "writing numbers in words and standard form",
+    "g": "mixed",
+    "src": "0580/11/O/N/19 Q11",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "Write 15060\n\n(a) in words,\n\n(b) in standard form.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "in words,"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "in standard form.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "write",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Write 15060"
+      }
+    ],
+    "_rawBody": "Write 15060\n\n\\begin{parts}\n\\item in words,\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item in standard form.\n\n\\AnswerLine[][]\n\\Marks{1}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper11-Q12",
+    "paper": "2019OctNov-Paper11",
+    "qnum": 12,
+    "marks": 2,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.2",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Rearranging formulae",
+    "qtype": "Algebraic simplification (collecting like terms)",
+    "g": "simplify",
+    "src": "0580/11/O/N/19 Q12",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "Simplify 5c - d - 3d - 2c.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "simplify",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Simplify 5c - d - 3d - 2c.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Simplify 5c - d - 3d - 2c.\n\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper11-Q13",
+    "paper": "2019OctNov-Paper11",
+    "qnum": 13,
+    "marks": 2,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.6",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/11/O/N/19 Q13",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "Calculate the area of a circle with radius 12 cm.\n\\newline\n\n cm$^2$",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Calculate the area of a circle with radius 12 cm.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Calculate the area of a circle with radius 12 cm.\n\n\\AnswerLine[][] cm$^2$\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper11-Q14",
+    "paper": "2019OctNov-Paper11",
+    "qnum": 14,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.16",
+    "d": 1,
+    "cat": "number",
+    "topic": "Upper and lower bounds",
+    "qtype": "currency conversion",
+    "g": "mixed",
+    "src": "0580/11/O/N/19 Q14",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "Levante changes 24650 Hungarian forints to dollars.\n\\newline\nThe exchange rate is \\$1 = 290 forints.\n\\newline\nCalculate how many dollars Levante receives.\n\\newline\n\n\\$",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Levante changes 24650 Hungarian forints to dollars.\n\\newline\nThe exchange rate is \\$1 = 290 forints.\n\\newline\nCalculate how many dollars Levante receives.\n\\newline\n\n\\$ \\AnswerLine[]"
+      }
+    ],
+    "_rawBody": "Levante changes 24650 Hungarian forints to dollars.\nThe exchange rate is \\$1 = 290 forints.\nCalculate how many dollars Levante receives.\n\n\\$ \\AnswerLine[]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper11-Q15",
+    "paper": "2019OctNov-Paper11",
+    "qnum": 15,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.13",
+    "d": 1,
+    "cat": "number",
+    "topic": "Electronic calculators",
+    "qtype": "simple interest calculation",
+    "g": "mixed",
+    "src": "0580/11/O/N/19 Q15",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "Paula invests \\$600 at a rate of r \\% per year simple interest.\n\\newline\nAt the end of 10 years, the total interest earned is \\$90.\n\\newline\nFind the value of r.\n\\newline\n\nr =  \\%",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Paula invests \\$600 at a rate of r \\% per year simple interest.\n\\newline\nAt the end of 10 years, the total interest earned is \\$90.\n\\newline\nFind the value of r.\n\\newline\n\nr = \\AnswerLine[] \\%"
+      }
+    ],
+    "_rawBody": "Paula invests \\$600 at a rate of r \\% per year simple interest.\nAt the end of 10 years, the total interest earned is \\$90.\nFind the value of r.\n\nr = \\AnswerLine[] \\%\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper11-Q16",
+    "paper": "2019OctNov-Paper11",
+    "qnum": 16,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.6",
+    "d": 1,
+    "cat": "number",
+    "topic": "Standard form",
+    "qtype": "multiplication of fractions",
+    "g": "mixed",
+    "src": "0580/11/O/N/19 Q16",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "Without using a calculator, work out\n\n$\\dfrac{1}{5} \\times \\dfrac{7}{16}$.\n\\newline\n\nYou must show all your working and give your answer as a fraction in its simplest form.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Without using a calculator, work out\n\n$\\dfrac{1}{5} \\times \\dfrac{7}{16}$.\n\\newline\n\nYou must show all your working and give your answer as a fraction in its simplest form.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Without using a calculator, work out\n\n$\\dfrac{1}{5} \\times \\dfrac{7}{16}$.\n\nYou must show all your working and give your answer as a fraction in its simplest form.\n\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper11-Q17",
+    "paper": "2019OctNov-Paper11",
+    "qnum": 17,
+    "marks": 2,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.4",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Algebraic fractions",
+    "qtype": "simplifying expressions with indices",
+    "g": "simplify",
+    "src": "0580/11/O/N/19 Q17",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "Simplify $2x^3 \\times 3x^2$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "simplify",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Simplify $2x^3 \\times 3x^2$.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Simplify $2x^3 \\times 3x^2$.\n\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper11-Q18",
+    "paper": "2019OctNov-Paper11",
+    "qnum": 18,
+    "marks": 3,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.4",
+    "d": 1,
+    "cat": "number",
+    "topic": "Fractions, decimals and percentages",
+    "qtype": "fraction decimal percentage inter-conversion",
+    "g": "mixed",
+    "src": "0580/11/O/N/19 Q18",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "Complete the table.\n\\newline\n\n\\begin{tabular}{|c|c|c|}\n\\hline\nFraction & Decimal & Percentage \\\\\n\\hline\n$\\dfrac{3}{4}$ & 0.75 & 75\\% \\\\\n\\hline\n$\\dfrac{2}{25}$ & & \\\\\n\\hline\n& 0.2 & \\\\\n\\hline\n& & 20\\% \\\\\n\\hline\n& & 8\\% \\\\\n\\hline\n\\end{tabular}",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Complete the table.\n\\newline\n"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{tabular}{|c|c|c|}\n\\hline\nFraction & Decimal & Percentage \\\\\n\\hline\n$\\dfrac{3}{4}$ & 0.75 & 75\\% \\\\\n\\hline\n$\\dfrac{2}{25}$ & & \\\\\n\\hline\n& 0.2 & \\\\\n\\hline\n& & 20\\% \\\\\n\\hline\n& & 8\\% \\\\\n\\hline\n\\end{tabular}"
+      }
+    ],
+    "_rawBody": "Complete the table.\n\n\\begin{tabular}{|c|c|c|}\n\\hline\nFraction & Decimal & Percentage \\\\\n\\hline\n$\\dfrac{3}{4}$ & 0.75 & 75\\% \\\\\n\\hline\n$\\dfrac{2}{25}$ & & \\\\\n\\hline\n& 0.2 & \\\\\n\\hline\n& & 20\\% \\\\\n\\hline\n& & 8\\% \\\\\n\\hline\n\\end{tabular}\n\n\\Marks{3}"
+  },
+  {
+    "id": "0580-2019OctNov-Paper11-Q19",
+    "paper": "2019OctNov-Paper11",
+    "qnum": 19,
+    "marks": 3,
+    "topics": [
+      "Statistics"
+    ],
+    "s": "9.3",
+    "d": 1,
+    "cat": "statistics",
+    "topic": "Frequency tables",
+    "qtype": "averages and spread",
+    "g": "mixed",
+    "src": "0580/11/O/N/19 Q19",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "From this list of numbers find\n\n27, 14, 8, 93, 32, 55, 14, 38, 73, 47\n\n(a) the median,\n\n(b) the range.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "the median,"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "the range.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "From this list of numbers find\n\n27, 14, 8, 93, 32, 55, 14, 38, 73, 47"
+      }
+    ],
+    "_rawBody": "From this list of numbers find\n\n27, 14, 8, 93, 32, 55, 14, 38, 73, 47\n\n\\begin{parts}\n\\item the median,\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item the range.\n\n\\AnswerLine[][]\n\\Marks{1}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper11-Q20",
+    "paper": "2019OctNov-Paper11",
+    "qnum": 20,
+    "marks": 3,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.12",
+    "d": 1,
+    "cat": "number",
+    "topic": "Set notation",
+    "qtype": "interpreting travel graph for rates",
+    "g": "graph",
+    "src": "0580/11/O/N/19 Q20",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "Juan travels from his home to a shop.\n\\newline\nThe travel graph shows his journey.\n\\newline\n\n(a) Find the distance Juan travels to the shop.\n\\newline\n\n km\n\n(b) Write down what happens at 14 00.\n\\newline\n\n(c) Juan travels home at a constant speed of 15 km/h.\n\\newline\nHe leaves the shop at 15 15.\n\\newline\nComplete the travel graph.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the distance Juan travels to the shop.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down what happens at 14 00.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Juan travels home at a constant speed of 15 km/h.\n\\newline\nHe leaves the shop at 15 15.\n\\newline\nComplete the travel graph.\n\\newline\n"
+          }
+        ]
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "analyse",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Juan travels from his home to a shop.\n\\newline\nThe travel graph shows his journey.\n\\newline\n\n\\begin{tikzpicture}[scale=0.8]\n    % Draw axes\n    \\draw[->] (0,0) -- (8,0) node[right] {Time};\n    \\draw[->] (0,0) -- (0,7) node[above] {Distance (km)};\n    \n    % Add time labels\n    \\foreach \\x/\\label in {1/13 00, 2/14 00, 3/15 00, 4/16 00} {\n        \\draw (\\x, -0.1) -- (\\x, 0.1);\n        \\node[below] at (\\x, -0.1) {\\label};\n    }\n    \n    % Add distance labels\n    \\foreach \\y/\\label in {2/6, 4/12, 6/18} {\n        \\draw (-0.1, \\y) -- (0.1, \\y);\n        \\node[left] at (-0.1, \\y) {\\label};\n    }\n    \n    % Plot the travel graph (simplified representation)\n    \\draw[thick] (1,0) -- (2,4);  % to shop\n    \\draw[thick] (2,4) -- (3,4);  % at shop\n    \\draw[thick] (3,4) -- (4,0);  % return home\n    \n    % Labels\n    \\node at (1.5,2) {Shop};\n    \\node at (3.5,2) {Home};\n\\end{tikzpicture}"
+      }
+    ],
+    "_rawBody": "Juan travels from his home to a shop.\nThe travel graph shows his journey.\n\n\\begin{tikzpicture}[scale=0.8]\n    % Draw axes\n    \\draw[->] (0,0) -- (8,0) node[right] {Time};\n    \\draw[->] (0,0) -- (0,7) node[above] {Distance (km)};\n    \n    % Add time labels\n    \\foreach \\x/\\label in {1/13 00, 2/14 00, 3/15 00, 4/16 00} {\n        \\draw (\\x, -0.1) -- (\\x, 0.1);\n        \\node[below] at (\\x, -0.1) {\\label};\n    }\n    \n    % Add distance labels\n    \\foreach \\y/\\label in {2/6, 4/12, 6/18} {\n        \\draw (-0.1, \\y) -- (0.1, \\y);\n        \\node[left] at (-0.1, \\y) {\\label};\n    }\n    \n    % Plot the travel graph (simplified representation)\n    \\draw[thick] (1,0) -- (2,4);  % to shop\n    \\draw[thick] (2,4) -- (3,4);  % at shop\n    \\draw[thick] (3,4) -- (4,0);  % return home\n    \n    % Labels\n    \\node at (1.5,2) {Shop};\n    \\node at (3.5,2) {Home};\n\\end{tikzpicture}\n\n\\begin{parts}\n\\item Find the distance Juan travels to the shop.\n\n\\AnswerLine[][] km\n\\Marks{1}\n\n\\item Write down what happens at 14 00.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Juan travels home at a constant speed of 15 km/h.\nHe leaves the shop at 15 15.\nComplete the travel graph.\n\n\\Marks{1}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper11-Q21",
+    "paper": "2019OctNov-Paper11",
+    "qnum": 21,
+    "marks": 3,
+    "topics": [
+      "Geometry",
+      "Trigonometry"
+    ],
+    "s": "4.6",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/11/O/N/19 Q21",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "NOT TO SCALE\n\nUse trigonometry to calculate the value of x.\n\\newline\n\nx =  cm",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "NOT TO SCALE\n\n\\begin{tikzpicture}[scale=0.8]\n    % Draw the triangle\n    \\draw[thick] (0,0) -- (5,0);  % base\n    \\draw[thick] (0,0) -- (2,3.5);  % left side\n    \\draw[thick] (5,0) -- (2,3.5);  % right side\n    \n    % Label the sides\n    \\node at (2.5,-0.3) {12 cm};\n    \\node at (-0.3,1.75) {x cm};\n    \\node at (2,3.8) {43$^\\circ$};\n    \n    % Draw the angle\n    \\draw[thick] (0,0) ++(10:0.5) arc(10:53:0.5);\n\\end{tikzpicture}\n\nUse trigonometry to calculate the value of x.\n\\newline\n\nx = \\AnswerLine[] cm"
+      }
+    ],
+    "_rawBody": "NOT TO SCALE\n\n\\begin{tikzpicture}[scale=0.8]\n    % Draw the triangle\n    \\draw[thick] (0,0) -- (5,0);  % base\n    \\draw[thick] (0,0) -- (2,3.5);  % left side\n    \\draw[thick] (5,0) -- (2,3.5);  % right side\n    \n    % Label the sides\n    \\node at (2.5,-0.3) {12 cm};\n    \\node at (-0.3,1.75) {x cm};\n    \\node at (2,3.8) {43$^\\circ$};\n    \n    % Draw the angle\n    \\draw[thick] (0,0) ++(10:0.5) arc(10:53:0.5);\n\\end{tikzpicture}\n\nUse trigonometry to calculate the value of x.\n\nx = \\AnswerLine[] cm\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper11-Q22",
+    "paper": "2019OctNov-Paper11",
+    "qnum": 22,
+    "marks": 4,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.6",
+    "d": 1,
+    "cat": "number",
+    "topic": "Standard form",
+    "qtype": "solving linear equations",
+    "g": "linear",
+    "src": "0580/11/O/N/19 Q22",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "Solve.\n\\newline\n\n(a) $8(w + 11) = 120$\n\nw = \n\n(b) $\\dfrac{x - 2}{3} = 3$\n\nx =",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "$8(w + 11) = 120$\n\nw = \\AnswerLine[][]"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "$\\dfrac{x - 2}{3} = 3$\n\nx = \\AnswerLine[][]"
+          }
+        ],
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "solve",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Solve.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "Solve.\n\n\\begin{parts}\n\\item $8(w + 11) = 120$\n\nw = \\AnswerLine[][]\n\\Marks{2}\n\n\\item $\\dfrac{x - 2}{3} = 3$\n\nx = \\AnswerLine[][]\n\\Marks{2}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper11-Q23",
+    "paper": "2019OctNov-Paper11",
+    "qnum": 23,
+    "marks": 4,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.5",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Equations",
+    "qtype": "solving simultaneous linear equations",
+    "g": "simul-linear",
+    "src": "0580/11/O/N/19 Q23",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "Solve the simultaneous equations.\n\\newline\nYou must show all your working.\n\\newline\n\n$5x + 4y = 10$\n$7x - 6y = 43$\n\nx = \ny =",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "solve",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Solve the simultaneous equations.\n\\newline\nYou must show all your working.\n\\newline\n\n$5x + 4y = 10$\n$7x - 6y = 43$\n\nx = \\AnswerLine[][]\ny = \\AnswerLine[][]"
+      }
+    ],
+    "_rawBody": "Solve the simultaneous equations.\nYou must show all your working.\n\n$5x + 4y = 10$\n$7x - 6y = 43$\n\nx = \\AnswerLine[][]\ny = \\AnswerLine[][]\n\n\\Marks{4}"
+  },
+  {
+    "id": "0580-2019OctNov-Paper11-Q24",
+    "paper": "2019OctNov-Paper11",
+    "qnum": 24,
+    "marks": 6,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.10",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Graphs of functions",
+    "qtype": "completing table of values and drawing reciprocal graph",
+    "g": "graph",
+    "src": "0580/11/O/N/19 Q24",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "(a) Complete the table of values for $y = \\dfrac{8}{x}$.\n\\newline\n\n\\begin{tabular}{|c|c|}\n\\hline\nx & y \\\\\n\\hline\n-5 & -2 \\\\\n\\hline\n-4 & -2.7 \\\\\n\\hline\n-3 & -4 \\\\\n\\hline\n-2 & -8 \\\\\n\\hline\n-1 &  \\\\\n\\hline\n1 & 8 \\\\\n\\hline\n2 & 4 \\\\\n\\hline\n3 & 2.7 \\\\\n\\hline\n4 &  \\\\\n\\hline\n5 &  \\\\\n\\hline\n\\end{tabular}\n\n(b) On the grid, draw the graph of $y = \\dfrac{8}{x}$ for $-5 \\leq x \\leq -1$ and $1 \\leq x \\leq 5$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Complete the table of values for $y = \\dfrac{8}{x}$.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{tabular}{|c|c|}\n\\hline\nx & y \\\\\n\\hline\n-5 & -2 \\\\\n\\hline\n-4 & -2.7 \\\\\n\\hline\n-3 & -4 \\\\\n\\hline\n-2 & -8 \\\\\n\\hline\n-1 &  \\\\\n\\hline\n1 & 8 \\\\\n\\hline\n2 & 4 \\\\\n\\hline\n3 & 2.7 \\\\\n\\hline\n4 &  \\\\\n\\hline\n5 &  \\\\\n\\hline\n\\end{tabular}"
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "text",
+            "content": "On the grid, draw the graph of $y = \\dfrac{8}{x}$ for $-5 \\leq x \\leq -1$ and $1 \\leq x \\leq 5$.\n\\newline\n\n\\begin{tikzpicture}[scale=0.8]\n    % Draw axes\n    \\draw[->] (-6,0) -- (6,0) node[right] {x};\n    \\draw[->] (0,-6) -- (0,9) node[above] {y};\n    \n    % Add grid lines and labels\n    \\foreach \\x in {-5,...,-1,1,...,5} {\n        \\draw (\\x,-0.1) -- (\\x,0.1);\n        \\node[below] at (\\x,0) {\\x};\n    }\n    \\foreach \\y in {-5,-4,...,8} {\n        \\draw (-0.1,\\y) -- (0.1,\\y);\n        \\node[left] at (0,\\y) {\\y};\n    }\n    \n    % Draw vertical asymptote\n    \\draw[dashed] (0,-6) -- (0,9);\n    \n    % Plot points (simplified - actual graph would be hyperbolic)\n    \\draw[thick, domain=-5:-1] plot (\\x, {8/\\x});\n    \\draw[thick, domain=1:5] plot (\\x, {8/\\x});\n\\end{tikzpicture}"
+          }
+        ]
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Complete the table of values for $y = \\dfrac{8}{x}$.\n\n\\begin{tabular}{|c|c|}\n\\hline\nx & y \\\\\n\\hline\n-5 & -2 \\\\\n\\hline\n-4 & -2.7 \\\\\n\\hline\n-3 & -4 \\\\\n\\hline\n-2 & -8 \\\\\n\\hline\n-1 &  \\\\\n\\hline\n1 & 8 \\\\\n\\hline\n2 & 4 \\\\\n\\hline\n3 & 2.7 \\\\\n\\hline\n4 &  \\\\\n\\hline\n5 &  \\\\\n\\hline\n\\end{tabular}\n\n\\Marks{2}\n\n\\item On the grid, draw the graph of $y = \\dfrac{8}{x}$ for $-5 \\leq x \\leq -1$ and $1 \\leq x \\leq 5$.\n\n\\begin{tikzpicture}[scale=0.8]\n    % Draw axes\n    \\draw[->] (-6,0) -- (6,0) node[right] {x};\n    \\draw[->] (0,-6) -- (0,9) node[above] {y};\n    \n    % Add grid lines and labels\n    \\foreach \\x in {-5,...,-1,1,...,5} {\n        \\draw (\\x,-0.1) -- (\\x,0.1);\n        \\node[below] at (\\x,0) {\\x};\n    }\n    \\foreach \\y in {-5,-4,...,8} {\n        \\draw (-0.1,\\y) -- (0.1,\\y);\n        \\node[left] at (0,\\y) {\\y};\n    }\n    \n    % Draw vertical asymptote\n    \\draw[dashed] (0,-6) -- (0,9);\n    \n    % Plot points (simplified - actual graph would be hyperbolic)\n    \\draw[thick, domain=-5:-1] plot (\\x, {8/\\x});\n    \\draw[thick, domain=1:5] plot (\\x, {8/\\x});\n\\end{tikzpicture}\n\n\\Marks{4}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  }
+]

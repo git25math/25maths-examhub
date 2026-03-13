@@ -1,0 +1,1200 @@
+[
+  {
+    "id": "0580-2020OctNov-Paper33-Q01",
+    "paper": "2020OctNov-Paper33",
+    "qnum": 1,
+    "marks": 11,
+    "topics": [
+      "Geometry",
+      "Mensuration",
+      "Statistics"
+    ],
+    "s": "4.6",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/33/O/N/20 Q01",
+    "year": 2020,
+    "session": "OctNov",
+    "tex": "**[2020 October/November, Paper 33, Question 1]**\n\n(a) A cruise ship travels 2067 km.\n\\newline\n\n(i) (b) Write 2067 in words.\n\\newline\n\n(c) Write 2067 correct to the nearest hundred.\n\\newline\n\n(d) When full, the cruise ship carries 880 guests and 360 crew.\n\\newline\n\nWrite the ratio guests : crew in its simplest form.\n\\newline\n\n : \n\n(e) There are 480 cabins on the ship.\n\\newline\nOn one cruise, 456 of these cabins were used.\n\\newline\n\nFind the percentage of cabins that were used.\n\\newline\n\n \\%\n\n(f) Last year the cost of a cruise was \\$4600.\n\\newline\nThis year the cost of the same cruise is \\$4784.\n\\newline\n\nWork out the percentage increase in the cost.\n\\newline\n\n \\%\n\n(g) The cost of building the ship was \\$153 000 000.\n\\newline\n\nWrite 153 000 000 in standard form.\n\\newline\n\n(h) There are 480 cabins on the ship.\n\\newline\nThere are four types of cabin: Ocean-view, Balcony, Interior and Suite.\n\\newline\nHannah starts to draw a pie chart to show the numbers of each type of cabin.\n\\newline\n\n(i) (i) Show that there are 120 Ocean-view cabins on the ship.\n\\newline\n\n(j) The table shows information about each type of cabin.\n\\newline\n\n\\begin{tabular}{l l l}\nType of cabin & Number of cabins & Sector angle in a pie chart \\\\\nOcean-view & 120 & 90° \\\\\nBalcony & 192 & 144° \\\\\nInterior & 68 & \\\\\nSuite & 100 & \\\\\n\\end{tabular}\n\n(a) Complete the table.\n\\newline\n\n(b) Complete the pie chart.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "A cruise ship travels 2067 km.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Write 2067 in words.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Write 2067 correct to the nearest hundred.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "When full, the cruise ship carries 880 guests and 360 crew.\n\\newline\n\nWrite the ratio guests : crew in its simplest form.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "multiline",
+          "lines": 2,
+          "template": "____\\n____",
+          "lineSep": "blank"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "There are 480 cabins on the ship.\n\\newline\nOn one cruise, 456 of these cabins were used.\n\\newline\n\nFind the percentage of cabins that were used.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Last year the cost of a cruise was \\$4600.\n\\newline\nThis year the cost of the same cruise is \\$4784.\n\\newline\n\nWork out the percentage increase in the cost.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(e)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "The cost of building the ship was \\$153 000 000.\n\\newline\n\nWrite 153 000 000 in standard form.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(f)",
+        "content": [
+          {
+            "type": "text",
+            "content": "There are 480 cabins on the ship.\n\\newline\nThere are four types of cabin: Ocean-view, Balcony, Interior and Suite.\n\\newline\nHannah starts to draw a pie chart to show the numbers of each type of cabin.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Show that there are 120 Ocean-view cabins on the ship.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "The table shows information about each type of cabin.\n\\newline\n"
+              },
+              {
+                "type": "table",
+                "content": "\\begin{tabular}{l l l}\nType of cabin & Number of cabins & Sector angle in a pie chart \\\\\nOcean-view & 120 & 90° \\\\\nBalcony & 192 & 144° \\\\\nInterior & 68 & \\\\\nSuite & 100 & \\\\\n\\end{tabular}"
+              },
+              {
+                "type": "text",
+                "content": "(a) Complete the table.\n\\newline\n\n\\AnswerLine[][]\n\\Marks{2}\n\n(b) Complete the pie chart.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "none",
+              "space": {
+                "type": "drawing",
+                "height": "4cm",
+                "cmd": "Answerspace"
+              }
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "analyse",
+    "cmd": "show",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\textbf{[2020 October/November, Paper 33, Question 1]}"
+      }
+    ],
+    "_rawBody": "\\textbf{[2020 October/November, Paper 33, Question 1]}\n\n\\begin{parts}\n\\item A cruise ship travels 2067 km.\n\n\\begin{subparts}\n\\item Write 2067 in words.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Write 2067 correct to the nearest hundred.\n\n\\AnswerLine[][]\n\\Marks{1}\n\\end{subparts}\n\n\\item When full, the cruise ship carries 880 guests and 360 crew.\n\nWrite the ratio guests : crew in its simplest form.\n\n\\AnswerLine[] : \\AnswerLine[]\n\\Marks{1}\n\n\\item There are 480 cabins on the ship.\nOn one cruise, 456 of these cabins were used.\n\nFind the percentage of cabins that were used.\n\n\\AnswerLine[] \\%\n\\Marks{1}\n\n\\item Last year the cost of a cruise was \\$4600.\nThis year the cost of the same cruise is \\$4784.\n\nWork out the percentage increase in the cost.\n\n\\AnswerLine[] \\%\n\\Marks{2}\n\n\\item The cost of building the ship was \\$153 000 000.\n\nWrite 153 000 000 in standard form.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item There are 480 cabins on the ship.\nThere are four types of cabin: Ocean-view, Balcony, Interior and Suite.\nHannah starts to draw a pie chart to show the numbers of each type of cabin.\n\n\\begin{subparts}\n\\item Show that there are 120 Ocean-view cabins on the ship.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item The table shows information about each type of cabin.\n\n\\begin{tabular}{l l l}\nType of cabin & Number of cabins & Sector angle in a pie chart \\\\\nOcean-view & 120 & 90° \\\\\nBalcony & 192 & 144° \\\\\nInterior & 68 & \\\\\nSuite & 100 & \\\\\n\\end{tabular}\n\n(a) Complete the table.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n(b) Complete the pie chart.\n\n\\Answerspace[4cm]\n\\Marks{1}\n\\end{subparts}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2020OctNov-Paper33-Q02",
+    "paper": "2020OctNov-Paper33",
+    "qnum": 2,
+    "marks": 7,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.1",
+    "d": 1,
+    "cat": "number",
+    "topic": "Types of number",
+    "qtype": "number properties (multiples, factors, primes, squares, odd, prime factors)",
+    "g": "mixed",
+    "src": "0580/33/O/N/20 Q02",
+    "year": 2020,
+    "session": "OctNov",
+    "tex": "**[2020 October/November, Paper 33, Question 2]**\n\n(a) Using numbers from 55 to 85, write down\n\n(i) (b) a multiple of 23,\n\n(c) a factor of 120,\n\n(d) a common multiple of 8 and 12,\n\n(e) a number that is both square and odd,\n\n(f) a number that has exactly 2 factors.\n\\newline\n\n(g) Write 220 as the product of its prime factors.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Using numbers from 55 to 85, write down"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "a multiple of 23,"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "a factor of 120,"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "a common multiple of 8 and 12,"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iv)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "a number that is both square and odd,"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(v)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "a number that has exactly 2 factors.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write 220 as the product of its prime factors.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "write",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\textbf{[2020 October/November, Paper 33, Question 2]}"
+      }
+    ],
+    "_rawBody": "\\textbf{[2020 October/November, Paper 33, Question 2]}\n\n\\begin{parts}\n\\item Using numbers from 55 to 85, write down\n\n\\begin{subparts}\n\\item a multiple of 23,\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item a factor of 120,\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item a common multiple of 8 and 12,\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item a number that is both square and odd,\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item a number that has exactly 2 factors.\n\n\\AnswerLine[][]\n\\Marks{1}\n\\end{subparts}\n\n\\item Write 220 as the product of its prime factors.\n\n\\AnswerLine[][]\n\\Marks{2}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2020OctNov-Paper33-Q03",
+    "paper": "2020OctNov-Paper33",
+    "qnum": 3,
+    "marks": 9,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.10",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Graphs of functions",
+    "qtype": "completing table of values and drawing quadratic graph",
+    "g": "quadratic",
+    "src": "0580/33/O/N/20 Q03",
+    "year": 2020,
+    "session": "OctNov",
+    "tex": "**[2020 October/November, Paper 33, Question 3]**\n\n(a) Complete the table of values for $y = 1 + 5x - x^2$.\n\\newline\n\n\\begin{tabular}{c c c c c c c}\n$x$ & -1 & 0 & 1 & 2 & 3 & 4 \\\\\n$y$ &  & 1 & 5 &  & 7 &  \\\\\n\\end{tabular}\n\n(b) On the grid, draw the graph of $y = 1 + 5x - x^2$ for $-1 \\leq x \\leq 5$.\n\\newline\n\n(c) On the grid, draw the line $y = 3$.\n\\newline\n\nUse your line to solve the equation $1 + 5x - x^2 = 3$.\n\\newline\n\n$x =$ ...\\ or $x =$ ...",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Complete the table of values for $y = 1 + 5x - x^2$.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{tabular}{c c c c c c c}\n$x$ & -1 & 0 & 1 & 2 & 3 & 4 \\\\\n$y$ &  & 1 & 5 &  & 7 &  \\\\\n\\end{tabular}"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "text",
+            "content": "On the grid, draw the graph of $y = 1 + 5x - x^2$ for $-1 \\leq x \\leq 5$.\n\\newline\n\n\\begin{tikzpicture}[scale=0.8]\n    % Draw grid\n    \\draw[help lines] (-1,-6) grid (6,8);\n    % Draw axes\n    \\draw[thick,->] (-1,0) -- (6,0) node[right] {$x$};\n    \\draw[thick,->] (0,-6) -- (0,8) node[above] {$y$};\n    % Label axes\n    \\foreach \\x in {-1,1,2,3,4,5} \\draw (\\x,0) -- (\\x,-0.1) node[below] {\\x};\n    \\foreach \\y in {-4,-2,2,4,6,8} \\draw (0,\\y) -- (-0.1,\\y) node[left] {\\y};\n\\end{tikzpicture}"
+          }
+        ]
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "On the grid, draw the line $y = 3$.\n\\newline\n\n\\AnswerLine[][]\n\\Marks{1}\n\nUse your line to solve the equation $1 + 5x - x^2 = 3$.\n\\newline\n\n$x =$ \\dotfill\\ or $x =$ \\dotfill"
+          }
+        ],
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\textbf{[2020 October/November, Paper 33, Question 3]}"
+      }
+    ],
+    "_rawBody": "\\textbf{[2020 October/November, Paper 33, Question 3]}\n\n\\begin{parts}\n\\item Complete the table of values for $y = 1 + 5x - x^2$.\n\n\\begin{tabular}{c c c c c c c}\n$x$ & -1 & 0 & 1 & 2 & 3 & 4 \\\\\n$y$ &  & 1 & 5 &  & 7 &  \\\\\n\\end{tabular}\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item On the grid, draw the graph of $y = 1 + 5x - x^2$ for $-1 \\leq x \\leq 5$.\n\n\\begin{tikzpicture}[scale=0.8]\n    % Draw grid\n    \\draw[help lines] (-1,-6) grid (6,8);\n    % Draw axes\n    \\draw[thick,->] (-1,0) -- (6,0) node[right] {$x$};\n    \\draw[thick,->] (0,-6) -- (0,8) node[above] {$y$};\n    % Label axes\n    \\foreach \\x in {-1,1,2,3,4,5} \\draw (\\x,0) -- (\\x,-0.1) node[below] {\\x};\n    \\foreach \\y in {-4,-2,2,4,6,8} \\draw (0,\\y) -- (-0.1,\\y) node[left] {\\y};\n\\end{tikzpicture}\n\n\\Marks{4}\n\n\\item On the grid, draw the line $y = 3$.\n\n\\AnswerLine[][]\n\\Marks{1}\n\nUse your line to solve the equation $1 + 5x - x^2 = 3$.\n\n$x =$ \\dotfill\\ or $x =$ \\dotfill\n\\Marks{2}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2020OctNov-Paper33-Q04",
+    "paper": "2020OctNov-Paper33",
+    "qnum": 4,
+    "marks": 13,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.4",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Circle theorems",
+    "qtype": "similarity and congruence",
+    "g": "mixed",
+    "src": "0580/33/O/N/20 Q04",
+    "year": 2020,
+    "session": "OctNov",
+    "tex": "**[2020 October/November, Paper 33, Question 4]**\n\n(a) The diagram shows the plan of part of Rachel's garden.\n\\newline\n\nCalculate the area.\n\\newline\n\n(b) Rachel has a pond in her garden in the shape of a circle.\n\\newline\nThe circumference of the pond is 4.25 m.\n\\newline\n\nCalculate the diameter of the pond.\n\\newline\nGive your answer in centimetres.\n\\newline\n\n(c) A plant pot is a cylinder with radius 15 cm and height 24 cm.\n\\newline\n\nCalculate the volume of the pot.\n\\newline\n\n(d) The diagram shows two mathematically similar plant pots.\n\\newline\n\nThe smaller pot has height 21.6 cm and diameter 27 cm.\n\\newline\nThe larger pot has diameter 33 cm.\n\\newline\n\nFind the height, $h$, of the larger pot.\n\\newline\n\n(e) A shop sells bags of compost in three different sizes.\n\\newline\n\n\\begin{tabular}{l l l}\nSmall & 30 litres & \\$5.82 \\\\\nMedium & 50 litres & \\$9.45 \\\\\nLarge & 75 litres & \\$14.50 \\\\\n\\end{tabular}\n\nWork out which size of bag gives the best value.\n\\newline\nShow how you decide.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "The diagram shows the plan of part of Rachel's garden.\n\\newline\n\n\\begin{tikzpicture}[scale=0.8]\n    % Draw the garden plan\n    \\draw[thick] (0,0) -- (3.2,0) -- (3.2,1.45) -- (0,1.45) -- cycle; % Rectangle\n    \\draw[thick] (3.2,0) -- (5.1,0) -- (5.1,1.45); % Extension\n    \\draw[thick] (3.2,1.45) -- (5.1,1.45); % Top line\n    \\draw[thick] (5.1,1.45) -- (5.1,2.35) -- (0,2.35) -- (0,1.45); % Triangle part\n    \n    % Labels\n    \\node at (1.6,0.725) {3.2 m};\n    \\node at (4.15,0.725) {10.9 m};\n    \\node at (2.55,1.9) {8.5 m};\n    \\node at (0.75,2.15) {14.6 m};\n    \\node at (6,1.5) {NOT TO SCALE};\n\\end{tikzpicture}\n\nCalculate the area.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "m$^2$"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Rachel has a pond in her garden in the shape of a circle.\n\\newline\nThe circumference of the pond is 4.25 m.\n\\newline\n\nCalculate the diameter of the pond.\n\\newline\nGive your answer in centimetres.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "cm"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "A plant pot is a cylinder with radius 15 cm and height 24 cm.\n\\newline\n\nCalculate the volume of the pot.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "cm$^3$"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "The diagram shows two mathematically similar plant pots.\n\\newline\n\n\\begin{tikzpicture}[scale=0.8]\n    % Draw smaller pot\n    \\draw[thick] (0,0) -- (0,2.16) -- (1.35,2.16) -- (1.35,0) -- cycle;\n    \\node at (0.675,1.08) {21.6 cm};\n    \\node at (1.675,1.08) {27 cm};\n    \n    % Draw larger pot  \n    \\draw[thick] (3,0) -- (3,3.3) -- (4.65,3.3) -- (4.65,0) -- cycle;\n    \\node at (3.825,1.65) {h cm};\n    \\node at (5.0,1.65) {33 cm};\n    \n    \\node at (6,1.5) {NOT TO SCALE};\n\\end{tikzpicture}\n\nThe smaller pot has height 21.6 cm and diameter 27 cm.\n\\newline\nThe larger pot has diameter 33 cm.\n\\newline\n\nFind the height, $h$, of the larger pot.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$h =$",
+          "suffix": "cm"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(e)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "A shop sells bags of compost in three different sizes.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{tabular}{l l l}\nSmall & 30 litres & \\$5.82 \\\\\nMedium & 50 litres & \\$9.45 \\\\\nLarge & 75 litres & \\$14.50 \\\\\n\\end{tabular}"
+          },
+          {
+            "type": "text",
+            "content": "Work out which size of bag gives the best value.\n\\newline\nShow how you decide.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\textbf{[2020 October/November, Paper 33, Question 4]}"
+      }
+    ],
+    "_rawBody": "\\textbf{[2020 October/November, Paper 33, Question 4]}\n\n\\begin{parts}\n\\item The diagram shows the plan of part of Rachel's garden.\n\n\\begin{tikzpicture}[scale=0.8]\n    % Draw the garden plan\n    \\draw[thick] (0,0) -- (3.2,0) -- (3.2,1.45) -- (0,1.45) -- cycle; % Rectangle\n    \\draw[thick] (3.2,0) -- (5.1,0) -- (5.1,1.45); % Extension\n    \\draw[thick] (3.2,1.45) -- (5.1,1.45); % Top line\n    \\draw[thick] (5.1,1.45) -- (5.1,2.35) -- (0,2.35) -- (0,1.45); % Triangle part\n    \n    % Labels\n    \\node at (1.6,0.725) {3.2 m};\n    \\node at (4.15,0.725) {10.9 m};\n    \\node at (2.55,1.9) {8.5 m};\n    \\node at (0.75,2.15) {14.6 m};\n    \\node at (6,1.5) {NOT TO SCALE};\n\\end{tikzpicture}\n\nCalculate the area.\n\n\\AnswerLine[][m$^2$]\n\\Marks{3}\n\n\\item Rachel has a pond in her garden in the shape of a circle.\nThe circumference of the pond is 4.25 m.\n\nCalculate the diameter of the pond.\nGive your answer in centimetres.\n\n\\AnswerLine[][cm]\n\\Marks{3}\n\n\\item A plant pot is a cylinder with radius 15 cm and height 24 cm.\n\nCalculate the volume of the pot.\n\n\\AnswerLine[][cm$^3$]\n\\Marks{2}\n\n\\item The diagram shows two mathematically similar plant pots.\n\n\\begin{tikzpicture}[scale=0.8]\n    % Draw smaller pot\n    \\draw[thick] (0,0) -- (0,2.16) -- (1.35,2.16) -- (1.35,0) -- cycle;\n    \\node at (0.675,1.08) {21.6 cm};\n    \\node at (1.675,1.08) {27 cm};\n    \n    % Draw larger pot  \n    \\draw[thick] (3,0) -- (3,3.3) -- (4.65,3.3) -- (4.65,0) -- cycle;\n    \\node at (3.825,1.65) {h cm};\n    \\node at (5.0,1.65) {33 cm};\n    \n    \\node at (6,1.5) {NOT TO SCALE};\n\\end{tikzpicture}\n\nThe smaller pot has height 21.6 cm and diameter 27 cm.\nThe larger pot has diameter 33 cm.\n\nFind the height, $h$, of the larger pot.\n\n\\AnswerLine[$h =$][cm]\n\\Marks{2}\n\n\\item A shop sells bags of compost in three different sizes.\n\n\\begin{tabular}{l l l}\nSmall & 30 litres & \\$5.82 \\\\\nMedium & 50 litres & \\$9.45 \\\\\nLarge & 75 litres & \\$14.50 \\\\\n\\end{tabular}\n\nWork out which size of bag gives the best value.\nShow how you decide.\n\n\\AnswerLine[][]\n\\Marks{3}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2020OctNov-Paper33-Q05",
+    "paper": "2020OctNov-Paper33",
+    "qnum": 5,
+    "marks": 14,
+    "topics": [
+      "Number",
+      "Statistics"
+    ],
+    "s": null,
+    "d": 1,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/33/O/N/20 Q05",
+    "year": 2020,
+    "session": "OctNov",
+    "tex": "The table shows the maximum power, kW, and the time taken, in seconds, to accelerate from 0 to $100\\,\\text{km/h}$ for each of 10 cars.\n\\newline\n\n\\begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|}\n\\hline\nMaximum power (kW) & 77 & 52 & 103 & 55 & 44 & 51 & 85 & 135 & 90 & 110 \\\\\n\\hline\nTime (seconds) & 12.5 & 14.9 & 9.0 & 12.1 & 14.4 & 12.9 & 10.0 & 7.1 & 11.0 & 9.4 \\\\\n\\hline\n\\end{tabular}\n(a) (i)  Find the range of the times.\n\\newline\n\n Find the median maximum power.\n\\newline\n\n(b) (i)  Complete the scatter diagram.\n\\newline\n\\\\\nThe first eight points have been plotted for you.\n\\newline\n\n What type of correlation is shown on the scatter diagram?\n\n Describe the relationship between the maximum power of a car and the time taken to accelerate from 0 to $100\\,\\text{km/h}$.\n\\newline\n\n Draw a line of best fit on the scatter diagram.\n\\newline\n\n Another car has a maximum power of 63$\\,$kW.\n\\newline\n\\\\\nUse your line of best fit to estimate the time taken for this car to accelerate from 0 to $100\\,\\text{km/h}$.\n\\newline\n\n(c) Robert buys a car for \\$$18\\,160$.\n\\newline\n\\\\\nHe pays a deposit of \\$6460.\n\\newline\n\\\\\nHe pays the rest of the money in 24 equal monthly payments.\n\\newline\n\nWork out the amount of each monthly payment.\n\\newline\n\n(d) A fuel tank holds 52 litres when full.\n\\newline\n\\\\\nThe tank is a quarter full.\n\\newline\n\\\\\nJim fills the tank with fuel that costs \\$2.18 per litre.\n\\newline\n\nWork out how much Jim pays.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the range of the times.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "s"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the median maximum power.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "kW"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ],
+        "_itemNewline": true
+      },
+      {
+        "label": "(b)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Complete the scatter diagram.\n\\newline\n\\\\\nThe first eight points have been plotted for you.\n\\newline\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.08]\n% Draw grid\n\\draw[very thin, gray] (40,6) grid[step=10] (140,16);\n\\draw[thick,->] (40,6) -- (145,6) node[right] {Maximum power (kW)};\n\\draw[thick,->] (40,6) -- (40,17) node[above] {Time (s)};\n\n% Labels\n\\foreach \\x in {40,60,80,100,120,140} \\node[below] at (\\x,6) {\\x};\n\\foreach \\y in {6,8,10,12,14,16} \\node[left] at (40,\\y) {\\y};\n\n% Plot points (first 8)\n\\node at (77,12.5) {$\\times$};\n\\node at (52,14.9) {$\\times$};\n\\node at (103,9.0) {$\\times$};\n\\node at (55,12.1) {$\\times$};\n\\node at (44,14.4) {$\\times$};\n\\node at (51,12.9) {$\\times$};\n\\node at (85,10.0) {$\\times$};\n\\node at (135,7.1) {$\\times$};\n\\end{tikzpicture}\n\\end{center}"
+              }
+            ],
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "What type of correlation is shown on the scatter diagram?"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Describe the relationship between the maximum power of a car and the time taken to accelerate from 0 to $100\\,\\text{km/h}$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iv)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Draw a line of best fit on the scatter diagram.\n\\newline\n"
+              }
+            ],
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(v)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Another car has a maximum power of 63$\\,$kW.\n\\newline\n\\\\\nUse your line of best fit to estimate the time taken for this car to accelerate from 0 to $100\\,\\text{km/h}$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "s"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          }
+        ],
+        "_itemNewline": true
+      },
+      {
+        "label": "(c)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Robert buys a car for \\$$18\\,160$.\n\\newline\n\\\\\nHe pays a deposit of \\$6460.\n\\newline\n\\\\\nHe pays the rest of the money in 24 equal monthly payments.\n\\newline\n\nWork out the amount of each monthly payment.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "\\$",
+          "space": {
+            "type": "working",
+            "height": "4cm",
+            "cmd": "WorkingSpace"
+          }
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "A fuel tank holds 52 litres when full.\n\\newline\n\\\\\nThe tank is a quarter full.\n\\newline\n\\\\\nJim fills the tank with fuel that costs \\$2.18 per litre.\n\\newline\n\nWork out how much Jim pays.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "\\$",
+          "space": {
+            "type": "working",
+            "height": "4cm",
+            "cmd": "WorkingSpace"
+          }
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "",
+    "cmd": "describe",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The table shows the maximum power, kW, and the time taken, in seconds, to accelerate from 0 to $100\\,\\text{km/h}$ for each of 10 cars.\n\\newline\n"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{center}\n\\begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|}\n\\hline\nMaximum power (kW) & 77 & 52 & 103 & 55 & 44 & 51 & 85 & 135 & 90 & 110 \\\\\n\\hline\nTime (seconds) & 12.5 & 14.9 & 9.0 & 12.1 & 14.4 & 12.9 & 10.0 & 7.1 & 11.0 & 9.4 \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+      }
+    ],
+    "_rawBody": "The table shows the maximum power, kW, and the time taken, in seconds, to accelerate from 0 to 100\\,km/h for each of 10 cars.\n\n\\begin{center}\n\\begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|}\n\\hline\nMaximum power (kW) & 77 & 52 & 103 & 55 & 44 & 51 & 85 & 135 & 90 & 110 \\\\\n\\hline\nTime (seconds) & 12.5 & 14.9 & 9.0 & 12.1 & 14.4 & 12.9 & 10.0 & 7.1 & 11.0 & 9.4 \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\begin{parts}\n\\item\n\\begin{subparts}\n\\subpart Find the range of the times.\n\n\\AnswerLine[][s]\n\\Marks{1}\n\n\\subpart Find the median maximum power.\n\n\\AnswerLine[][kW]\n\\Marks{2}\n\n\\end{subparts}\n\n\\item\n\\begin{subparts}\n\\subpart Complete the scatter diagram.\\\\\nThe first eight points have been plotted for you.\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.08]\n% Draw grid\n\\draw[very thin, gray] (40,6) grid[step=10] (140,16);\n\\draw[thick,->] (40,6) -- (145,6) node[right] {Maximum power (kW)};\n\\draw[thick,->] (40,6) -- (40,17) node[above] {Time (s)};\n\n% Labels\n\\foreach \\x in {40,60,80,100,120,140} \\node[below] at (\\x,6) {\\x};\n\\foreach \\y in {6,8,10,12,14,16} \\node[left] at (40,\\y) {\\y};\n\n% Plot points (first 8)\n\\node at (77,12.5) {$\\times$};\n\\node at (52,14.9) {$\\times$};\n\\node at (103,9.0) {$\\times$};\n\\node at (55,12.1) {$\\times$};\n\\node at (44,14.4) {$\\times$};\n\\node at (51,12.9) {$\\times$};\n\\node at (85,10.0) {$\\times$};\n\\node at (135,7.1) {$\\times$};\n\\end{tikzpicture}\n\\end{center}\n\\Marks{1}\n\n\\subpart What type of correlation is shown on the scatter diagram?\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\subpart Describe the relationship between the maximum power of a car and the time taken to accelerate from 0 to 100\\,km/h.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\subpart Draw a line of best fit on the scatter diagram.\n\\Marks{1}\n\n\\subpart Another car has a maximum power of 63\\,kW.\\\\\nUse your line of best fit to estimate the time taken for this car to accelerate from 0 to 100\\,km/h.\n\n\\AnswerLine[][s]\n\\Marks{1}\n\n\\end{subparts}\n\n\\item Robert buys a car for \\$18\\,160.\\\\\nHe pays a deposit of \\$6460.\\\\\nHe pays the rest of the money in 24 equal monthly payments.\n\nWork out the amount of each monthly payment.\n\n\\WorkingSpace{4cm}\n\n\\AnswerLine[\\$][]\n\\Marks{3}\n\n\\item A fuel tank holds 52 litres when full.\\\\\nThe tank is a quarter full.\\\\\nJim fills the tank with fuel that costs \\$2.18 per litre.\n\nWork out how much Jim pays.\n\n\\WorkingSpace{4cm}\n\n\\AnswerLine[\\$][]\n\\Marks{3}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2020OctNov-Paper33-Q06",
+    "paper": "2020OctNov-Paper33",
+    "qnum": 6,
+    "marks": 14,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry",
+      "Transformations and vectors"
+    ],
+    "s": "3.1",
+    "d": 1,
+    "cat": "coord",
+    "topic": "Coordinates",
+    "qtype": "coordinates reading/plotting",
+    "g": "graph",
+    "src": "0580/33/O/N/20 Q06",
+    "year": 2020,
+    "session": "OctNov",
+    "tex": "**[2020 October/November, Paper 33, Question 6]**\n\n(a) On the grid, draw the image of triangle A after:\n(i) a translation by the vector $\\begin{pmatrix} 3 \\\\ -7 \\end{pmatrix}$, [2]\n(ii) a reflection in the line $x = 3$.\n\\newline\n [2]\n\n(iii) Describe fully the single transformation that maps triangle A onto triangle B.\n\\newline\n [3]\n\n(b) $\\mathbf{a} = \\begin{pmatrix} 3 \\\\ -2 \\end{pmatrix}$, $\\mathbf{b} = \\begin{pmatrix} 5 \\\\ 7 \\end{pmatrix}$, $\\mathbf{c} = \\begin{pmatrix} -1 \\\\ 4 \\end{pmatrix}$.\n\\newline\n\n(i) $\\mathbf{a} + \\mathbf{b}$ [1]\n(ii) $\\mathbf{b} - 2\\mathbf{c}$ [2]\n\n(c) Point P has coordinates (6, -2) and PQ = $\\begin{pmatrix} -4 \\\\ 5 \\end{pmatrix}$.\n\\newline\nFind the coordinates of point Q.\n\\newline\n\n(, )",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 7,
+        "content": [
+          {
+            "type": "text",
+            "content": "On the grid, draw the image of triangle A after:\n(i) a translation by the vector $\\begin{pmatrix} 3 \\\\ -7 \\end{pmatrix}$, [2]\n(ii) a reflection in the line $x = 3$.\n\\newline\n [2]\n\n(iii) Describe fully the single transformation that maps triangle A onto triangle B.\n\\newline\n [3]\n\n\\begin{tikzpicture}[scale=0.8]\n    % Draw grid\n    \\draw[help lines] (-8,-4) grid (6,8);\n    \\draw[thick,->] (-8,0) -- (6,0) node[right] {$x$};\n    \\draw[thick,->] (0,-4) -- (0,8) node[above] {$y$};\n    \n    % Triangle A\n    \\draw[thick,blue] (-5,1) -- (-2,1) -- (-2,4) -- cycle;\n    \\node[blue] at (-3.5,2.5) {A};\n    \n    % Triangle B  \n    \\draw[thick,red] (1,1) -- (4,1) -- (4,4) -- cycle;\n    \\node[red] at (2.5,2.5) {B};\n    \n    % Triangle C\n    \\draw[thick,green] (-2,-3) -- (-5,-3) -- (-5,0) -- cycle;\n    \\node[green] at (-3.5,-1.5) {C};\n\\end{tikzpicture}"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "$\\mathbf{a} = \\begin{pmatrix} 3 \\\\ -2 \\end{pmatrix}$, $\\mathbf{b} = \\begin{pmatrix} 5 \\\\ 7 \\end{pmatrix}$, $\\mathbf{c} = \\begin{pmatrix} -1 \\\\ 4 \\end{pmatrix}$.\n\\newline\n\n(i) $\\mathbf{a} + \\mathbf{b}$ [1]\n(ii) $\\mathbf{b} - 2\\mathbf{c}$ [2]"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Point P has coordinates (6, -2) and PQ = $\\begin{pmatrix} -4 \\\\ 5 \\end{pmatrix}$.\n\\newline\nFind the coordinates of point Q.\n\\newline\n\n(\\AnswerLine[], \\AnswerLine[])"
+          }
+        ],
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "describe",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\textbf{[2020 October/November, Paper 33, Question 6]}"
+      }
+    ],
+    "_rawBody": "\\textbf{[2020 October/November, Paper 33, Question 6]}\n\n\\begin{parts}\n\\item On the grid, draw the image of triangle A after:\n(i) a translation by the vector $\\begin{pmatrix} 3 \\\\ -7 \\end{pmatrix}$, [2]\n(ii) a reflection in the line $x = 3$. [2]\n\n(iii) Describe fully the single transformation that maps triangle A onto triangle B. [3]\n\n\\begin{tikzpicture}[scale=0.8]\n    % Draw grid\n    \\draw[help lines] (-8,-4) grid (6,8);\n    \\draw[thick,->] (-8,0) -- (6,0) node[right] {$x$};\n    \\draw[thick,->] (0,-4) -- (0,8) node[above] {$y$};\n    \n    % Triangle A\n    \\draw[thick,blue] (-5,1) -- (-2,1) -- (-2,4) -- cycle;\n    \\node[blue] at (-3.5,2.5) {A};\n    \n    % Triangle B  \n    \\draw[thick,red] (1,1) -- (4,1) -- (4,4) -- cycle;\n    \\node[red] at (2.5,2.5) {B};\n    \n    % Triangle C\n    \\draw[thick,green] (-2,-3) -- (-5,-3) -- (-5,0) -- cycle;\n    \\node[green] at (-3.5,-1.5) {C};\n\\end{tikzpicture}\n\n\\AnswerLine[][]\n\\Marks{7}\n\n\\item $\\mathbf{a} = \\begin{pmatrix} 3 \\\\ -2 \\end{pmatrix}$, $\\mathbf{b} = \\begin{pmatrix} 5 \\\\ 7 \\end{pmatrix}$, $\\mathbf{c} = \\begin{pmatrix} -1 \\\\ 4 \\end{pmatrix}$.\n\n(i) $\\mathbf{a} + \\mathbf{b}$ [1]\n(ii) $\\mathbf{b} - 2\\mathbf{c}$ [2]\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\item Point P has coordinates (6, -2) and PQ = $\\begin{pmatrix} -4 \\\\ 5 \\end{pmatrix}$.\nFind the coordinates of point Q.\n\n(\\AnswerLine[], \\AnswerLine[])\n\\Marks{1}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2020OctNov-Paper33-Q07",
+    "paper": "2020OctNov-Paper33",
+    "qnum": 7,
+    "marks": 14,
+    "topics": [
+      "Algebra and graphs",
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "2.4",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Algebraic fractions",
+    "qtype": "substitution, factorisation, changing subject, laws of indices",
+    "g": "simplify",
+    "src": "0580/33/O/N/20 Q07",
+    "year": 2020,
+    "session": "OctNov",
+    "tex": "(a) $W = 3a + 5c$\n\nFind the value of $W$ when $a = 6$ and $c = 2$.\n\\newline\n\n(b) Factorise completely.\n\\newline\n\\[12b + 8b^2\\]\n\n(c) Make $m$ the subject of the formula $y = 4m - p$.\n\\newline\n\n(d) Find the value of $x$ when $5^x \\times 5^3 = 5^{12}$.\n\\newline\n\n(e) Find the value of\n\n(i)  $3^0$,\n\n $5^{-2}$.\n\\newline\n\n(f) In this part, all measurements are in centimetres.\n\\newline\n\nThe diagram shows a kite with sides $(2x + 5)$ and $(3x - 1)$.\n\\newline\n\\\\\nThe perimeter of the kite is $33\\,\\text{cm}$.\n\\newline\n\nWork out the length of a shorter side.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "$W = 3a + 5c$\n\nFind the value of $W$ when $a = 6$ and $c = 2$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$W =$",
+          "space": {
+            "type": "working",
+            "height": "3cm",
+            "cmd": "WorkingSpace"
+          }
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Factorise completely.\n\\newline\n\\[12b + 8b^2\\]"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Make $m$ the subject of the formula $y = 4m - p$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$m =$",
+          "space": {
+            "type": "working",
+            "height": "3cm",
+            "cmd": "WorkingSpace"
+          }
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the value of $x$ when $5^x \\times 5^3 = 5^{12}$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x =$"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(e)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the value of"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "$3^0$,"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "$5^{-2}$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          }
+        ]
+      },
+      {
+        "label": "(f)",
+        "marks": 5,
+        "content": [
+          {
+            "type": "text",
+            "content": "In this part, all measurements are in centimetres.\n\\newline\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.6]\n% Kite shape\n\\draw[thick] (0,0) -- (2,4) -- (4,0) -- (2,-3) -- cycle;\n\n% Tick marks for equal sides\n\\draw[thick] (0.8,1.6) -- (1.2,2);\n\\draw[thick] (2.8,2) -- (3.2,1.6);\n\\draw[thick] (0.8,-1.2) -- (1.2,-1.6);\n\\draw[thick] (2.8,-1.6) -- (3.2,-1.2);\n\n% Labels\n\\node at (0.3,2.5) {$(3x-1)$};\n\\node at (3.7,2.5) {$(3x-1)$};\n\\node at (0.3,-1.8) {$(2x+5)$};\n\\node at (3.7,-1.8) {$(2x+5)$};\n\n\\node at (6,0.5) {NOT TO};\n\\node at (6,0) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nThe diagram shows a kite with sides $(2x + 5)$ and $(3x - 1)$.\n\\newline\n\\\\\nThe perimeter of the kite is $33\\,\\text{cm}$.\n\\newline\n\nWork out the length of a shorter side.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "cm",
+          "space": {
+            "type": "working",
+            "height": "6cm",
+            "cmd": "WorkingSpace"
+          }
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item $W = 3a + 5c$\n\nFind the value of $W$ when $a = 6$ and $c = 2$.\n\n\\WorkingSpace{3cm}\n\n\\AnswerLine[$W =$][]\n\\Marks{2}\n\n\\item Factorise completely.\n\\[12b + 8b^2\\]\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item Make $m$ the subject of the formula $y = 4m - p$.\n\n\\WorkingSpace{3cm}\n\n\\AnswerLine[$m =$][]\n\\Marks{2}\n\n\\item Find the value of $x$ when $5^x \\times 5^3 = 5^{12}$.\n\n\\AnswerLine[$x =$][]\n\\Marks{1}\n\n\\item Find the value of\n\n\\begin{subparts}\n\\subpart $3^0$,\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\subpart $5^{-2}$.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{subparts}\n\n\\item In this part, all measurements are in centimetres.\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.6]\n% Kite shape\n\\draw[thick] (0,0) -- (2,4) -- (4,0) -- (2,-3) -- cycle;\n\n% Tick marks for equal sides\n\\draw[thick] (0.8,1.6) -- (1.2,2);\n\\draw[thick] (2.8,2) -- (3.2,1.6);\n\\draw[thick] (0.8,-1.2) -- (1.2,-1.6);\n\\draw[thick] (2.8,-1.6) -- (3.2,-1.2);\n\n% Labels\n\\node at (0.3,2.5) {$(3x-1)$};\n\\node at (3.7,2.5) {$(3x-1)$};\n\\node at (0.3,-1.8) {$(2x+5)$};\n\\node at (3.7,-1.8) {$(2x+5)$};\n\n\\node at (6,0.5) {NOT TO};\n\\node at (6,0) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nThe diagram shows a kite with sides $(2x + 5)$ and $(3x - 1)$.\\\\\nThe perimeter of the kite is 33\\,cm.\n\nWork out the length of a shorter side.\n\n\\WorkingSpace{6cm}\n\n\\AnswerLine[][cm]\n\\Marks{5}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2020OctNov-Paper33-Q08",
+    "paper": "2020OctNov-Paper33",
+    "qnum": 8,
+    "marks": 14,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry",
+      "Trigonometry"
+    ],
+    "s": "3.6",
+    "d": 1,
+    "cat": "coord",
+    "topic": "Position vectors",
+    "qtype": "parallel lines",
+    "g": "mixed",
+    "src": "0580/33/O/N/20 Q08",
+    "year": 2020,
+    "session": "OctNov",
+    "tex": "(a) \n$P$ and $Q$ are points on the circle, centre $O$.\n\\newline\n\\\\\n$APB$ is a tangent to the circle at $P$.\n\\newline\n\n(i)  Write down the mathematical name for the line $PQ$.\n\\newline\n\n Explain why angle $OPB$ is $90°$.\n\\newline\n\n Find the value of $x$.\n\\newline\n\n(b) \nThe diagram shows two parallel lines and two straight lines.\n\\newline\n\n(i)  Find the value of $a$.\n\\newline\n\\\\\nGive a reason for your answer.\n\\newline\n\n$a =$ ...\\ because ...\n\n Find the value of $b$.\n\\newline\n\\\\\nGive a reason for your answer.\n\\newline\n\n$b =$ ...\\ because ...\n\n Find the value of $c$.\n\\newline\n\n(c) \nCalculate the value of $x$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n% Circle\n\\draw[thick] (0,0) circle (2.5);\n\n% Centre O\n\\fill (0,0) circle (2pt);\n\\node at (-0.3,-0.3) {$O$};\n\n% Point P on circle (top right)\n\\coordinate (P) at (1.77,1.77);\n\\fill (P) circle (2pt);\n\\node at (2.1,2.1) {$P$};\n\n% Point Q on circle (bottom)\n\\coordinate (Q) at (0,-2.5);\n\\fill (Q) circle (2pt);\n\\node at (0,-2.9) {$Q$};\n\n% Tangent line APB\n\\draw[thick] (-0.5,4) -- (P) -- (4,0);\n\\node at (-0.7,4.2) {$A$};\n\\node at (4.2,-0.2) {$B$};\n\n% Radii\n\\draw[thick] (0,0) -- (P);\n\\draw[thick] (0,0) -- (Q);\n\n% Chord PQ\n\\draw[thick] (P) -- (Q);\n\n% Angle markers\n\\node at (0.8,1) {$53°$};\n\\node at (0.3,0.5) {$x°$};\n\n\\node at (5.5,1.5) {NOT TO};\n\\node at (5.5,1) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\n$P$ and $Q$ are points on the circle, centre $O$.\n\\newline\n\\\\\n$APB$ is a tangent to the circle at $P$.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Write down the mathematical name for the line $PQ$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Explain why angle $OPB$ is $90°$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the value of $x$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$x =$",
+              "space": {
+                "type": "working",
+                "height": "4cm",
+                "cmd": "WorkingSpace"
+              }
+            },
+            "marks": 3,
+            "_compactMarks": true
+          }
+        ],
+        "_itemNewline": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n% Parallel lines\n\\draw[thick,->] (-1,2) -- (7,2);\n\\draw[thick,->] (-1,0) -- (7,0);\n\n% Transversal lines\n\\draw[thick] (1,-0.5) -- (3,2.5);\n\\draw[thick] (4,-0.5) -- (6,2.5);\n\n% Angle labels\n\\node at (1.8,0.3) {$65°$};\n\\node at (2.2,1.7) {$a°$};\n\\node at (4.8,0.3) {$b°$};\n\\node at (5.2,1.7) {$48°$};\n\\node at (3.5,-0.3) {$c°$};\n\n\\node at (8.5,1) {NOT TO};\n\\node at (8.5,0.5) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nThe diagram shows two parallel lines and two straight lines.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the value of $a$.\n\\newline\n\\\\\nGive a reason for your answer.\n\\newline\n\n$a =$ \\dotfill\\ because \\dotfill"
+              }
+            ],
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the value of $b$.\n\\newline\n\\\\\nGive a reason for your answer.\n\\newline\n\n$b =$ \\dotfill\\ because \\dotfill"
+              }
+            ],
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the value of $c$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$c =$",
+              "space": {
+                "type": "working",
+                "height": "3cm",
+                "cmd": "WorkingSpace"
+              }
+            },
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ],
+        "_itemNewline": true
+      },
+      {
+        "label": "(c)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.6]\n% Right-angled triangle\n\\draw[thick] (0,0) -- (0,4) -- (6,0) -- cycle;\n\n% Right angle mark\n\\draw (0,0.5) -- (0.5,0.5) -- (0.5,0);\n\n% Labels\n\\node at (-0.7,2) {$11.8\\,\\text{cm}$};\n\\node at (3,-0.5) {$x\\,\\text{cm}$};\n\\node at (4.5,0.5) {$34°$};\n\n\\node at (8,2) {NOT TO};\n\\node at (8,1.5) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nCalculate the value of $x$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x =$",
+          "space": {
+            "type": "working",
+            "height": "4cm",
+            "cmd": "WorkingSpace"
+          }
+        },
+        "_compactMarks": true,
+        "_itemNewline": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "analyse",
+    "cmd": "explain",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item\n\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n% Circle\n\\draw[thick] (0,0) circle (2.5);\n\n% Centre O\n\\fill (0,0) circle (2pt);\n\\node at (-0.3,-0.3) {$O$};\n\n% Point P on circle (top right)\n\\coordinate (P) at (1.77,1.77);\n\\fill (P) circle (2pt);\n\\node at (2.1,2.1) {$P$};\n\n% Point Q on circle (bottom)\n\\coordinate (Q) at (0,-2.5);\n\\fill (Q) circle (2pt);\n\\node at (0,-2.9) {$Q$};\n\n% Tangent line APB\n\\draw[thick] (-0.5,4) -- (P) -- (4,0);\n\\node at (-0.7,4.2) {$A$};\n\\node at (4.2,-0.2) {$B$};\n\n% Radii\n\\draw[thick] (0,0) -- (P);\n\\draw[thick] (0,0) -- (Q);\n\n% Chord PQ\n\\draw[thick] (P) -- (Q);\n\n% Angle markers\n\\node at (0.8,1) {$53°$};\n\\node at (0.3,0.5) {$x°$};\n\n\\node at (5.5,1.5) {NOT TO};\n\\node at (5.5,1) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\n$P$ and $Q$ are points on the circle, centre $O$.\\\\\n$APB$ is a tangent to the circle at $P$.\n\n\\begin{subparts}\n\\subpart Write down the mathematical name for the line $PQ$.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\subpart Explain why angle $OPB$ is $90°$.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\subpart Find the value of $x$.\n\n\\WorkingSpace{4cm}\n\n\\AnswerLine[$x =$][]\n\\Marks{3}\n\n\\end{subparts}\n\n\\item\n\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n% Parallel lines\n\\draw[thick,->] (-1,2) -- (7,2);\n\\draw[thick,->] (-1,0) -- (7,0);\n\n% Transversal lines\n\\draw[thick] (1,-0.5) -- (3,2.5);\n\\draw[thick] (4,-0.5) -- (6,2.5);\n\n% Angle labels\n\\node at (1.8,0.3) {$65°$};\n\\node at (2.2,1.7) {$a°$};\n\\node at (4.8,0.3) {$b°$};\n\\node at (5.2,1.7) {$48°$};\n\\node at (3.5,-0.3) {$c°$};\n\n\\node at (8.5,1) {NOT TO};\n\\node at (8.5,0.5) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nThe diagram shows two parallel lines and two straight lines.\n\n\\begin{subparts}\n\\subpart Find the value of $a$.\\\\\nGive a reason for your answer.\n\n$a =$ \\dotfill\\ because \\dotfill\n\\Marks{2}\n\n\\subpart Find the value of $b$.\\\\\nGive a reason for your answer.\n\n$b =$ \\dotfill\\ because \\dotfill\n\\Marks{2}\n\n\\subpart Find the value of $c$.\n\n\\WorkingSpace{3cm}\n\n\\AnswerLine[$c =$][]\n\\Marks{2}\n\n\\end{subparts}\n\n\\item\n\\begin{center}\n\\begin{tikzpicture}[scale=0.6]\n% Right-angled triangle\n\\draw[thick] (0,0) -- (0,4) -- (6,0) -- cycle;\n\n% Right angle mark\n\\draw (0,0.5) -- (0.5,0.5) -- (0.5,0);\n\n% Labels\n\\node at (-0.7,2) {11.8\\,cm};\n\\node at (3,-0.5) {$x$\\,cm};\n\\node at (4.5,0.5) {$34°$};\n\n\\node at (8,2) {NOT TO};\n\\node at (8,1.5) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nCalculate the value of $x$.\n\n\\WorkingSpace{4cm}\n\n\\AnswerLine[$x =$][]\n\\Marks{3}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2020OctNov-Paper33-Q09",
+    "paper": "2020OctNov-Paper33",
+    "qnum": 9,
+    "marks": 8,
+    "topics": [
+      "Algebra and graphs",
+      "Geometry"
+    ],
+    "s": "2.7",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Sequences",
+    "qtype": "sequences from patterns",
+    "g": "sequence",
+    "src": "0580/33/O/N/20 Q09",
+    "year": 2020,
+    "session": "OctNov",
+    "tex": "A sequence of patterns is made using black counters and white counters.\n\\newline\n\n(a) Draw Pattern 4.\n\\newline\n\n(b) Complete the table.\n\\newline\n\n\\begin{tabular}{|c|c|c|c|c|c|}\n\\hline\nPattern & 1 & 2 & 3 & 4 & 5 \\\\\n\\hline\nNumber of black counters & 4 & 6 & 8 & & \\\\\n\\hline\nNumber of white counters & 1 & 4 & 9 & & \\\\\n\\hline\n\\end{tabular}\n\n(c) Write an expression, in terms of $n$, for\n\n(i)  the number of black counters in Pattern $n$,\n\n the number of white counters in Pattern $n$.\n\\newline\n\n(d) Elena has 30 black counters and 140 white counters.\n\\newline\n\nCan she make Pattern 12 using her counters?\\\\\nExplain your answer.\n\\newline\n\n...\\ because ...",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Draw Pattern 4.\n\\newline\n"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Complete the table.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|c|}\n\\hline\nPattern & 1 & 2 & 3 & 4 & 5 \\\\\n\\hline\nNumber of black counters & 4 & 6 & 8 & & \\\\\n\\hline\nNumber of white counters & 1 & 4 & 9 & & \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Write an expression, in terms of $n$, for"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "the number of black counters in Pattern $n$,"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "the number of white counters in Pattern $n$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          }
+        ]
+      },
+      {
+        "label": "(d)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Elena has 30 black counters and 140 white counters.\n\\newline\n\nCan she make Pattern 12 using her counters?\\\\\nExplain your answer.\n\\newline\n\n\\dotfill\\ because \\dotfill"
+          }
+        ],
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "explain",
+    "stem": [
+      {
+        "type": "text",
+        "content": "A sequence of patterns is made using black counters and white counters.\n\\newline\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.5]\n% Pattern 1\n\\fill (0,0) circle (0.3);\n\\draw (1,0) circle (0.3);\n\\fill (0,-1) circle (0.3);\n\\fill (1,-1) circle (0.3);\n\\fill (2,-1) circle (0.3);\n\\node at (1,-2.5) {Pattern 1};\n\n% Pattern 2\n\\begin{scope}[xshift=5cm]\n\\fill (0,1) circle (0.3);\n\\draw (1,1) circle (0.3);\n\\draw (2,1) circle (0.3);\n\\fill (0,0) circle (0.3);\n\\draw (1,0) circle (0.3);\n\\draw (2,0) circle (0.3);\n\\fill (0,-1) circle (0.3);\n\\fill (1,-1) circle (0.3);\n\\fill (2,-1) circle (0.3);\n\\fill (3,-1) circle (0.3);\n\\fill (4,-1) circle (0.3);\n\\node at (2,-2.5) {Pattern 2};\n\\end{scope}\n\n% Pattern 3\n\\begin{scope}[xshift=12cm]\n\\fill (0,2) circle (0.3);\n\\draw (1,2) circle (0.3);\n\\draw (2,2) circle (0.3);\n\\draw (3,2) circle (0.3);\n\\fill (0,1) circle (0.3);\n\\draw (1,1) circle (0.3);\n\\draw (2,1) circle (0.3);\n\\draw (3,1) circle (0.3);\n\\fill (0,0) circle (0.3);\n\\draw (1,0) circle (0.3);\n\\draw (2,0) circle (0.3);\n\\draw (3,0) circle (0.3);\n\\fill (0,-1) circle (0.3);\n\\fill (1,-1) circle (0.3);\n\\fill (2,-1) circle (0.3);\n\\fill (3,-1) circle (0.3);\n\\fill (4,-1) circle (0.3);\n\\fill (5,-1) circle (0.3);\n\\fill (6,-1) circle (0.3);\n\\node at (3,-2.5) {Pattern 3};\n\\end{scope}\n\n% Pattern 4 - empty space for student to draw\n\\begin{scope}[xshift=22cm]\n\\draw[dashed] (-0.5,-1.5) rectangle (8,4);\n\\node at (3.75,-2.5) {Pattern 4};\n\\end{scope}\n\\end{tikzpicture}\n\\end{center}"
+      }
+    ],
+    "_rawBody": "A sequence of patterns is made using black counters and white counters.\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.5]\n% Pattern 1\n\\fill (0,0) circle (0.3);\n\\draw (1,0) circle (0.3);\n\\fill (0,-1) circle (0.3);\n\\fill (1,-1) circle (0.3);\n\\fill (2,-1) circle (0.3);\n\\node at (1,-2.5) {Pattern 1};\n\n% Pattern 2\n\\begin{scope}[xshift=5cm]\n\\fill (0,1) circle (0.3);\n\\draw (1,1) circle (0.3);\n\\draw (2,1) circle (0.3);\n\\fill (0,0) circle (0.3);\n\\draw (1,0) circle (0.3);\n\\draw (2,0) circle (0.3);\n\\fill (0,-1) circle (0.3);\n\\fill (1,-1) circle (0.3);\n\\fill (2,-1) circle (0.3);\n\\fill (3,-1) circle (0.3);\n\\fill (4,-1) circle (0.3);\n\\node at (2,-2.5) {Pattern 2};\n\\end{scope}\n\n% Pattern 3\n\\begin{scope}[xshift=12cm]\n\\fill (0,2) circle (0.3);\n\\draw (1,2) circle (0.3);\n\\draw (2,2) circle (0.3);\n\\draw (3,2) circle (0.3);\n\\fill (0,1) circle (0.3);\n\\draw (1,1) circle (0.3);\n\\draw (2,1) circle (0.3);\n\\draw (3,1) circle (0.3);\n\\fill (0,0) circle (0.3);\n\\draw (1,0) circle (0.3);\n\\draw (2,0) circle (0.3);\n\\draw (3,0) circle (0.3);\n\\fill (0,-1) circle (0.3);\n\\fill (1,-1) circle (0.3);\n\\fill (2,-1) circle (0.3);\n\\fill (3,-1) circle (0.3);\n\\fill (4,-1) circle (0.3);\n\\fill (5,-1) circle (0.3);\n\\fill (6,-1) circle (0.3);\n\\node at (3,-2.5) {Pattern 3};\n\\end{scope}\n\n% Pattern 4 - empty space for student to draw\n\\begin{scope}[xshift=22cm]\n\\draw[dashed] (-0.5,-1.5) rectangle (8,4);\n\\node at (3.75,-2.5) {Pattern 4};\n\\end{scope}\n\\end{tikzpicture}\n\\end{center}\n\n\\begin{parts}\n\\item Draw Pattern 4.\n\\Marks{1}\n\n\\item Complete the table.\n\n\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|c|}\n\\hline\nPattern & 1 & 2 & 3 & 4 & 5 \\\\\n\\hline\nNumber of black counters & 4 & 6 & 8 & & \\\\\n\\hline\nNumber of white counters & 1 & 4 & 9 & & \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\\Marks{2}\n\n\\item Write an expression, in terms of $n$, for\n\n\\begin{subparts}\n\\subpart the number of black counters in Pattern $n$,\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\subpart the number of white counters in Pattern $n$.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{subparts}\n\n\\item Elena has 30 black counters and 140 white counters.\n\nCan she make Pattern 12 using her counters?\\\\\nExplain your answer.\n\n\\dotfill\\ because \\dotfill\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true
+  }
+]

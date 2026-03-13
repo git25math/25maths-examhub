@@ -1,0 +1,1334 @@
+[
+  {
+    "id": "0580-2020OctNov-Paper43-Q01",
+    "paper": "2020OctNov-Paper43",
+    "qnum": 1,
+    "marks": 11,
+    "topics": [
+      "Number",
+      "Mensuration"
+    ],
+    "s": "1.8",
+    "d": 2,
+    "cat": "number",
+    "topic": "Ratio, rate and proportion",
+    "qtype": "Standard form conversion, percentage calculation of area",
+    "g": "mixed",
+    "src": "0580/43/O/N/20 Q01",
+    "year": 2020,
+    "session": "OctNov",
+    "tex": "(a) The Earth has a surface area of approximately 510 100 000 km$^2$.\n\\newline\n\n    (i) (b) Write this surface area in standard form.\n\\newline\n\n        \n\n(c) Water covers 70.8\\% of the Earth's surface.\n\\newline\n\n        Work out the area of the Earth's surface covered by water.\n\\newline\n\n        \n\n(d) The table shows the surface area of some countries and their estimated population in 2017.\n\\newline\n\n    \\begin{tabular}{|l|r|r|}\n        \\hline\n        Country & Surface area (km$^2$) & Estimated population in 2017 \\\\\n        \\hline\n        Brunei & $5.77 \\times 10^3$ & 433 100 \\\\\n        China & $9.60 \\times 10^6$ & 1 388 000 000 \\\\\n        France & $6.41 \\times 10^5$ & 67 000 000 \\\\\n        Maldives & $3.00 \\times 10^2$ & 374 600 \\\\\n        \\hline\n    \\end{tabular}\n\n    (i) (e) Find the total surface area of Brunei and the Maldives.\n\\newline\n\n        \n\n(f) The ratio surface area of the Maldives : surface area of China\n        can be written in the form 1 : n.\n\\newline\n\n        Find the value of n.\n\\newline\n\n        n = \n\n(g) Find the surface area of France as a percentage of the surface area of China.\n\\newline\n\n        \n\n(h) Find the population density of the Maldives.\n\\newline\n        [Population density = population $\\div$ surface area]\n\n        \n\n(i) The population of the Earth in 2017 was estimated to be $7.53 \\times 10^9$.\n\\newline\n\n    The population of the Earth in 2000 was estimated to be $6.02 \\times 10^9$.\n\\newline\n\n    (i) (j) Work out the percentage increase in the Earth's estimated population from 2000 to 2017.\n\\newline\n\n        \n\n(k) Assume that the population of the Earth increased exponentially by y\\% each year for these\n        17 years.\n\\newline\n\n        Find the value of y.\n\\newline\n\n        y =",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The Earth has a surface area of approximately 510 100 000 km$^2$.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Write this surface area in standard form.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "$km^2$"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Water covers 70.8\\% of the Earth's surface.\n\\newline\n\n        Work out the area of the Earth's surface covered by water.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "$km^2$"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The table shows the surface area of some countries and their estimated population in 2017.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{tabular}{|l|r|r|}\n        \\hline\n        Country & Surface area (km$^2$) & Estimated population in 2017 \\\\\n        \\hline\n        Brunei & $5.77 \\times 10^3$ & 433 100 \\\\\n        China & $9.60 \\times 10^6$ & 1 388 000 000 \\\\\n        France & $6.41 \\times 10^5$ & 67 000 000 \\\\\n        Maldives & $3.00 \\times 10^2$ & 374 600 \\\\\n        \\hline\n    \\end{tabular}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the total surface area of Brunei and the Maldives.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "$km^2$"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "The ratio surface area of the Maldives : surface area of China\n        can be written in the form 1 : n.\n\\newline\n\n        Find the value of n.\n\\newline\n\n        n = \\AnswerLine[]"
+              }
+            ],
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the surface area of France as a percentage of the surface area of China.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "\\%"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iv)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the population density of the Maldives.\n\\newline\n        [Population density = population $\\div$ surface area]"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "people/km$^2$"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The population of the Earth in 2017 was estimated to be $7.53 \\times 10^9$.\n\\newline\n\n    The population of the Earth in 2000 was estimated to be $6.02 \\times 10^9$.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Work out the percentage increase in the Earth's estimated population from 2000 to 2017.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "\\%"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "Assume that the population of the Earth increased exponentially by y\\% each year for these\n        17 years.\n\\newline\n\n        Find the value of y.\n\\newline\n\n        y = \\AnswerLine[]"
+              }
+            ],
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n    \\item The Earth has a surface area of approximately 510 100 000 km$^2$.\n\n    \\begin{subparts}\n        \\item Write this surface area in standard form.\n\n        \\AnswerLine[][$km^2$]\n        \\Marks{1}\n\n        \\item Water covers 70.8\\% of the Earth's surface.\n\n        Work out the area of the Earth's surface covered by water.\n\n        \\AnswerLine[][$km^2$]\n        \\Marks{2}\n    \\end{subparts}\n\n    \\item The table shows the surface area of some countries and their estimated population in 2017.\n\n    \\begin{tabular}{|l|r|r|}\n        \\hline\n        Country & Surface area (km$^2$) & Estimated population in 2017 \\\\\n        \\hline\n        Brunei & $5.77 \\times 10^3$ & 433 100 \\\\\n        China & $9.60 \\times 10^6$ & 1 388 000 000 \\\\\n        France & $6.41 \\times 10^5$ & 67 000 000 \\\\\n        Maldives & $3.00 \\times 10^2$ & 374 600 \\\\\n        \\hline\n    \\end{tabular}\n\n    \\begin{subparts}\n        \\item Find the total surface area of Brunei and the Maldives.\n\n        \\AnswerLine[][$km^2$]\n        \\Marks{1}\n\n        \\item The ratio surface area of the Maldives : surface area of China\n        can be written in the form 1 : n.\n\n        Find the value of n.\n\n        n = \\AnswerLine[]\n        \\Marks{2}\n\n        \\item Find the surface area of France as a percentage of the surface area of China.\n\n        \\AnswerLine[][\\%]\n        \\Marks{2}\n\n        \\item Find the population density of the Maldives.\n        [Population density = population $\\div$ surface area]\n\n        \\AnswerLine[][people/km$^2$]\n        \\Marks{2}\n    \\end{subparts}\n\n    \\item The population of the Earth in 2017 was estimated to be $7.53 \\times 10^9$.\n\n    The population of the Earth in 2000 was estimated to be $6.02 \\times 10^9$.\n\n    \\begin{subparts}\n        \\item Work out the percentage increase in the Earth's estimated population from 2000 to 2017.\n\n        \\AnswerLine[][\\%]\n        \\Marks{2}\n\n        \\item Assume that the population of the Earth increased exponentially by y\\% each year for these\n        17 years.\n\n        Find the value of y.\n\n        y = \\AnswerLine[]\n        \\Marks{3}\n    \\end{subparts}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "_compactItems": true
+  },
+  {
+    "id": "0580-2020OctNov-Paper43-Q02",
+    "paper": "2020OctNov-Paper43",
+    "qnum": 2,
+    "marks": 7,
+    "topics": [
+      "Geometry",
+      "Transformations and vectors"
+    ],
+    "s": "4.6",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/43/O/N/20 Q02",
+    "year": 2020,
+    "session": "OctNov",
+    "tex": "(a) On the grid, draw the image of\n\n    (i) (b) triangle A after a rotation of 90$^\\circ$ anticlockwise about (0, 0),\n\n(c) triangle A after a translation by the vector $\\begin{pmatrix} 3 \\\\ -5 \\end{pmatrix}$.\n\\newline\n\n(d) Describe fully the single transformation that maps triangle A onto triangle B.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "On the grid, draw the image of"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "triangle A after a rotation of 90$^\\circ$ anticlockwise about (0, 0),"
+              },
+              {
+                "type": "figure",
+                "src": "Figures/Q02-TransformGrid.tex"
+              }
+            ]
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "triangle A after a translation by the vector $\\begin{pmatrix} 3 \\\\ -5 \\end{pmatrix}$.\n\\newline\n"
+              }
+            ]
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Describe fully the single transformation that maps triangle A onto triangle B.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "multiline",
+          "lines": 2,
+          "template": "____\\n____",
+          "lineSep": "blank"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "recall",
+    "cmd": "describe",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n    \\item On the grid, draw the image of\n\n    \\begin{subparts}\n        \\item triangle A after a rotation of 90$^\\circ$ anticlockwise about (0, 0),\n\n        \\relinput{Figures/Q02-TransformGrid.tex}\n\n        \\Marks{2}\n\n        \\item triangle A after a translation by the vector $\\begin{pmatrix} 3 \\\\ -5 \\end{pmatrix}$.\n\n        \\Marks{2}\n    \\end{subparts}\n\n    \\item Describe fully the single transformation that maps triangle A onto triangle B.\n\n    \\AnswerLine[][]\n    \\AnswerLine[][]\n    \\Marks{3}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2020OctNov/Paper43/Q02/Q02-TransformGrid.png"
+    ]
+  },
+  {
+    "id": "0580-2020OctNov-Paper43-Q03",
+    "paper": "2020OctNov-Paper43",
+    "qnum": 3,
+    "marks": 6,
+    "topics": [
+      "Geometry",
+      "Statistics"
+    ],
+    "s": "4.6",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/43/O/N/20 Q03",
+    "year": 2020,
+    "session": "OctNov",
+    "tex": "(a) The average speeds, in km/h, of cars travelling along a road are recorded.\n\\newline\n    The box-and-whisker plot shows this information.\n\\newline\n\n    (i) (b) the lowest speed recorded,\n\n        \n\n(c) the median,\n\n        \n\n(d) the interquartile range.\n\\newline\n\n        \n\n(e) Another car takes 18 seconds to travel 400 m along this road.\n\\newline\n\n    Calculate the average speed of this car in km/h.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The average speeds, in km/h, of cars travelling along a road are recorded.\n\\newline\n    The box-and-whisker plot shows this information.\n\\newline\n"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q03-BoxWhiskerPlot.tex"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "the lowest speed recorded,"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "km/h"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "the median,"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "km/h"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "the interquartile range.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "km/h"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Another car takes 18 seconds to travel 400 m along this road.\n\\newline\n\n    Calculate the average speed of this car in km/h.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "km/h"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n    \\item The average speeds, in km/h, of cars travelling along a road are recorded.\n    The box-and-whisker plot shows this information.\n\n    \\relinput{Figures/Q03-BoxWhiskerPlot.tex}\n\n    \\begin{subparts}\n        \\item the lowest speed recorded,\n\n        \\AnswerLine[][km/h]\n        \\Marks{1}\n\n        \\item the median,\n\n        \\AnswerLine[][km/h]\n        \\Marks{1}\n\n        \\item the interquartile range.\n\n        \\AnswerLine[][km/h]\n        \\Marks{1}\n    \\end{subparts}\n\n    \\item Another car takes 18 seconds to travel 400 m along this road.\n\n    Calculate the average speed of this car in km/h.\n\n    \\AnswerLine[][km/h]\n    \\Marks{3}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2020OctNov/Paper43/Q03/Q03-BoxWhiskerPlot.png"
+    ]
+  },
+  {
+    "id": "0580-2020OctNov-Paper43-Q04",
+    "paper": "2020OctNov-Paper43",
+    "qnum": 4,
+    "marks": 15,
+    "topics": [
+      "Probability"
+    ],
+    "s": "8.4",
+    "d": 2,
+    "cat": "probability",
+    "topic": "Conditional probability",
+    "qtype": "conditional probability",
+    "g": "mixed",
+    "src": "0580/43/O/N/20 Q04",
+    "year": 2020,
+    "session": "OctNov",
+    "tex": "(a) P   O   S   S   I   B   I   L   I   T   Y\n    Morgan picks two of these letters, at random, without replacement.\n\\newline\n\n    (i) (b) Find the probability that he picks\n\n        the letter Y first,\n\n        \n\n(c) the letter B then the letter Y,\n\n        \n\n(d) two letters that are the same.\n\\newline\n\n        \n\n(e) Morgan now picks a third letter at random.\n\\newline\n\n    (i) (f) Find the probability that\n\n        all three letters are the same,\n\n        \n\n(g) exactly two of the three letters are the same,\n\n        \n\n(h) all three letters are different.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "\\begin{center}\n    \\Large P \\quad O \\quad S \\quad S \\quad I \\quad B \\quad I \\quad L \\quad I \\quad T \\quad Y\n    \\end{center}\n\n    Morgan picks two of these letters, at random, without replacement.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the probability that he picks\n\n        the letter Y first,"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "the letter B then the letter Y,"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "two letters that are the same.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Morgan now picks a third letter at random.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the probability that\n\n        all three letters are the same,"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 5,
+            "content": [
+              {
+                "type": "text",
+                "content": "exactly two of the three letters are the same,"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "all three letters are different.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n    \\item \\begin{center}\n    \\Large P \\quad O \\quad S \\quad S \\quad I \\quad B \\quad I \\quad L \\quad I \\quad T \\quad Y\n    \\end{center}\n\n    Morgan picks two of these letters, at random, without replacement.\n\n    \\begin{subparts}\n        \\item Find the probability that he picks\n\n        the letter Y first,\n\n        \\AnswerLine[][]\n        \\Marks{1}\n\n        \\item the letter B then the letter Y,\n\n        \\AnswerLine[][]\n        \\Marks{2}\n\n        \\item two letters that are the same.\n\n        \\AnswerLine[][]\n        \\Marks{3}\n    \\end{subparts}\n\n    \\item Morgan now picks a third letter at random.\n\n    \\begin{subparts}\n        \\item Find the probability that\n\n        all three letters are the same,\n\n        \\AnswerLine[][]\n        \\Marks{2}\n\n        \\item exactly two of the three letters are the same,\n\n        \\AnswerLine[][]\n        \\Marks{5}\n\n        \\item all three letters are different.\n\n        \\AnswerLine[][]\n        \\Marks{2}\n    \\end{subparts}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "_compactItems": true
+  },
+  {
+    "id": "0580-2020OctNov-Paper43-Q05",
+    "paper": "2020OctNov-Paper43",
+    "qnum": 5,
+    "marks": 14,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry",
+      "Mensuration",
+      "Trigonometry"
+    ],
+    "s": "3.6",
+    "d": 2,
+    "cat": "coord",
+    "topic": "Position vectors",
+    "qtype": "parallel lines",
+    "g": "mixed",
+    "src": "0580/43/O/N/20 Q05",
+    "year": 2020,
+    "session": "OctNov",
+    "tex": "(a) \n\n    A, B, C and D are points on the circle, centre O.\n\\newline\n    EF is a tangent to the circle at D.\n\\newline\n    Angle ADE = 42$^\\circ$ and angle COD = 162$^\\circ$.\n\\newline\n\n    Find the following angles, giving reasons for each of your answers.\n\\newline\n\n    (i) (b) Angle x\n\n        x =  because \n\n        \n\n(c) Angle y\n\n        y =  because \n\n        \n\n(d) Angle z\n\n        z =  because \n\n        \n\n(e) \n\n    PQR is a triangle.\n\\newline\n    T is a point on PR and U is a point on PQ.\n\\newline\n    RQ is parallel to TU.\n\\newline\n\n    (i) (f) Explain why triangle PQR is similar to triangle PUT.\n\\newline\n        Give a reason for each statement you make.\n\\newline\n\n        \n\n        \n\n(g) PT : TR = 4 : 3\n\n        (h) Find the ratio PU : PQ.\n\\newline\n\n            PU : PQ =  : \n\n(i) The area of triangle PUT is 20 cm$^2$.\n\\newline\n\n            Find the area of the quadrilateral QRTU.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "figure",
+            "src": "Figures/Q05a-CircleTheorem.tex"
+          },
+          {
+            "type": "text",
+            "content": "A, B, C and D are points on the circle, centre O.\n\\newline\n    EF is a tangent to the circle at D.\n\\newline\n    Angle ADE = 42$^\\circ$ and angle COD = 162$^\\circ$.\n\\newline\n\n    Find the following angles, giving reasons for each of your answers.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Angle x\n\n        x = \\AnswerLine[] because \\AnswerLine[][]"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "_compactAnswer": true
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Angle y\n\n        y = \\AnswerLine[] because \\AnswerLine[][]"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "_compactAnswer": true
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "Angle z\n\n        z = \\AnswerLine[] because \\AnswerLine[][]"
+              }
+            ],
+            "answer": {
+              "type": "multiline",
+              "lines": 2,
+              "template": "____\\n____",
+              "lineSep": "blank",
+              "_compactAnswer": true
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_itemNewline": true,
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(b)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "figure",
+            "src": "Figures/Q05b-SimilarTriangles.tex"
+          },
+          {
+            "type": "text",
+            "content": "PQR is a triangle.\n\\newline\n    T is a point on PR and U is a point on PQ.\n\\newline\n    RQ is parallel to TU.\n\\newline\n\n    \\begin{subparts}"
+          }
+        ],
+        "_itemNewline": true
+      },
+      {
+        "label": "(c)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Explain why triangle PQR is similar to triangle PUT.\n\\newline\n        Give a reason for each statement you make.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "multiline",
+          "lines": 3,
+          "template": "____\\n____\\n____",
+          "lineSep": "blank"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "text",
+            "content": "PT : TR = 4 : 3\n\n        \\begin{parts}"
+          }
+        ]
+      },
+      {
+        "label": "(e)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the ratio PU : PQ.\n\\newline\n\n            PU : PQ = \\AnswerLine[] : \\AnswerLine[]"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(f)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "The area of triangle PUT is 20 cm$^2$.\n\\newline\n\n            Find the area of the quadrilateral QRTU.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "cm$^2$"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "analyse",
+    "cmd": "explain",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n    \\item\n    \\relinput{Figures/Q05a-CircleTheorem.tex}\n\n    A, B, C and D are points on the circle, centre O.\n    EF is a tangent to the circle at D.\n    Angle ADE = 42$^\\circ$ and angle COD = 162$^\\circ$.\n\n    Find the following angles, giving reasons for each of your answers.\n\n    \\begin{subparts}\n        \\item Angle x\n\n        x = \\AnswerLine[] because \\AnswerLine[][]\n        \\AnswerLine[][]\n        \\Marks{2}\n\n        \\item Angle y\n\n        y = \\AnswerLine[] because \\AnswerLine[][]\n        \\AnswerLine[][]\n        \\Marks{2}\n\n        \\item Angle z\n\n        z = \\AnswerLine[] because \\AnswerLine[][]\n        \\AnswerLine[][]\n        \\AnswerLine[][]\n        \\Marks{3}\n    \\end{subparts}\n\n    \\item\n    \\relinput{Figures/Q05b-SimilarTriangles.tex}\n\n    PQR is a triangle.\n    T is a point on PR and U is a point on PQ.\n    RQ is parallel to TU.\n\n    \\begin{subparts}\n        \\item Explain why triangle PQR is similar to triangle PUT.\n        Give a reason for each statement you make.\n\n        \\AnswerLine[][]\n        \\AnswerLine[][]\n        \\AnswerLine[][]\n        \\Marks{3}\n\n        \\item PT : TR = 4 : 3\n\n        \\begin{parts}\n            \\item Find the ratio PU : PQ.\n\n            PU : PQ = \\AnswerLine[] : \\AnswerLine[]\n            \\Marks{1}\n\n            \\item The area of triangle PUT is 20 cm$^2$.\n\n            Find the area of the quadrilateral QRTU.\n\n            \\AnswerLine[][cm$^2$]\n            \\Marks{3}\n        \\end{parts}\n    \\end{subparts}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "_postParts": [
+      {
+        "type": "text",
+        "content": "\\end{subparts}\n\\end{parts}"
+      }
+    ],
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2020OctNov/Paper43/Q05/Q05a-CircleTheorem.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2020OctNov/Paper43/Q05/Q05b-SimilarTriangles.png"
+    ]
+  },
+  {
+    "id": "0580-2020OctNov-Paper43-Q06",
+    "paper": "2020OctNov-Paper43",
+    "qnum": 6,
+    "marks": 10,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "3.5",
+    "d": 2,
+    "cat": "coord",
+    "topic": "Parallel and perpendicular lines",
+    "qtype": "equation of a straight line",
+    "g": "mixed",
+    "src": "0580/43/O/N/20 Q06",
+    "year": 2020,
+    "session": "OctNov",
+    "tex": "(a) \n\n    ABCDEFGH is a cuboid.\n\\newline\n    AB = 8 cm, BC = 5 cm and CG = 11 cm.\n\\newline\n\n    (i) (b) Work out the volume of the cuboid.\n\\newline\n\n        \n\n(c) Ivana has a pencil of length 13 cm.\n\\newline\n\n        Does this pencil fit completely inside the cuboid?\n        Show how you decide.\n\\newline\n\n        \n\n(d) Calculate angle CAB.\n\\newline\n\n        Angle CAB = $^\\circ$\n\n(e) Calculate angle GAC.\n\\newline\n\n        Angle GAC = $^\\circ$",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "figure",
+            "src": "Figures/Q06-Cuboid.tex"
+          },
+          {
+            "type": "text",
+            "content": "ABCDEFGH is a cuboid.\n\\newline\n    AB = 8 cm, BC = 5 cm and CG = 11 cm.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Work out the volume of the cuboid.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "cm$^3$"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 4,
+            "content": [
+              {
+                "type": "text",
+                "content": "Ivana has a pencil of length 13 cm.\n\\newline\n\n        Does this pencil fit completely inside the cuboid?\n        Show how you decide.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "none",
+              "space": {
+                "type": "drawing",
+                "height": "3cm",
+                "cmd": "Answerspace"
+              }
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate angle CAB.\n\\newline\n\n        Angle CAB = \\AnswerLine[]$^\\circ$"
+              }
+            ],
+            "_compactMarks": true
+          },
+          {
+            "label": "(iv)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate angle GAC.\n\\newline\n\n        Angle GAC = \\AnswerLine[]$^\\circ$"
+              }
+            ],
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_itemNewline": true,
+        "_compactEndSubparts": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n    \\item\n    \\relinput{Figures/Q06-Cuboid.tex}\n\n    ABCDEFGH is a cuboid.\n    AB = 8 cm, BC = 5 cm and CG = 11 cm.\n\n    \\begin{subparts}\n        \\item Work out the volume of the cuboid.\n\n        \\AnswerLine[][cm$^3$]\n        \\Marks{2}\n\n        \\item Ivana has a pencil of length 13 cm.\n\n        Does this pencil fit completely inside the cuboid?\n        Show how you decide.\n\n        \\Answerspace[3cm]\n        \\Marks{4}\n\n        \\item Calculate angle CAB.\n\n        Angle CAB = \\AnswerLine[]$^\\circ$\n        \\Marks{2}\n\n        \\item Calculate angle GAC.\n\n        Angle GAC = \\AnswerLine[]$^\\circ$\n        \\Marks{2}\n    \\end{subparts}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "_compactItems": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2020OctNov/Paper43/Q06/Q06-Cuboid.png"
+    ]
+  },
+  {
+    "id": "0580-2020OctNov-Paper43-Q07",
+    "paper": "2020OctNov-Paper43",
+    "qnum": 7,
+    "marks": 15,
+    "topics": [
+      "Number",
+      "Algebra and graphs",
+      "Coordinate geometry"
+    ],
+    "s": "2.11",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Differentiation",
+    "qtype": "quadratic and cubic graphs, factorisation, differentiation, sketching curves",
+    "g": "quadratic",
+    "src": "0580/43/O/N/20 Q07",
+    "year": 2020,
+    "session": "OctNov",
+    "tex": "(a) (i) (b) Factorise 24 + 5x - x$^2$.\n\\newline\n\n        \n\n(c) The diagram shows a sketch of y = 24 + 5x - x$^2$.\n\\newline\n\n        Work out the values of a, b and c.\n\\newline\n\n        a = \n        b = \n        c = \n\n(d) Calculate the gradient of y = 24 + 5x - x$^2$ at x = -1.5.\n\\newline\n\n        \n\n(e) (i) (f) On the diagram, sketch the graph of y = (x + 1)(x - 3)$^2$.\n\\newline\n        Label the values where the graph meets the x-axis and the y-axis.\n\\newline\n\n(g) Write (x + 1)(x - 3)$^2$ in the form ax$^3$ + bx$^2$ + cx + d.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Factorise 24 + 5x - x$^2$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "The diagram shows a sketch of y = 24 + 5x - x$^2$.\n\\newline\n"
+              },
+              {
+                "type": "figure",
+                "src": "Figures/Q07a-QuadraticGraph.tex"
+              },
+              {
+                "type": "text",
+                "content": "Work out the values of a, b and c.\n\\newline\n\n        a = \\AnswerLine[][]\n        b = \\AnswerLine[][]\n        c = \\AnswerLine[]"
+              }
+            ],
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate the gradient of y = 24 + 5x - x$^2$ at x = -1.5.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true,
+        "_itemInlineSubparts": true
+      },
+      {
+        "label": "(b)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 4,
+            "content": [
+              {
+                "type": "text",
+                "content": "On the diagram, sketch the graph of y = (x + 1)(x - 3)$^2$.\n\\newline\n        Label the values where the graph meets the x-axis and the y-axis.\n\\newline\n"
+              },
+              {
+                "type": "figure",
+                "src": "Figures/Q07b-SketchGrid.tex"
+              }
+            ]
+          },
+          {
+            "label": "(ii)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "Write (x + 1)(x - 3)$^2$ in the form ax$^3$ + bx$^2$ + cx + d.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true,
+        "_itemInlineSubparts": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "sketch",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n    \\item \\begin{subparts}\n        \\item Factorise 24 + 5x - x$^2$.\n\n        \\AnswerLine[][]\n        \\Marks{2}\n\n        \\item The diagram shows a sketch of y = 24 + 5x - x$^2$.\n\n        \\relinput{Figures/Q07a-QuadraticGraph.tex}\n\n        Work out the values of a, b and c.\n\n        a = \\AnswerLine[][]\n        b = \\AnswerLine[][]\n        c = \\AnswerLine[]\n        \\Marks{3}\n\n        \\item Calculate the gradient of y = 24 + 5x - x$^2$ at x = -1.5.\n\n        \\AnswerLine[][]\n        \\Marks{3}\n    \\end{subparts}\n\n    \\item \\begin{subparts}\n        \\item On the diagram, sketch the graph of y = (x + 1)(x - 3)$^2$.\n        Label the values where the graph meets the x-axis and the y-axis.\n\n        \\relinput{Figures/Q07b-SketchGrid.tex}\n\n        \\Marks{4}\n\n        \\item Write (x + 1)(x - 3)$^2$ in the form ax$^3$ + bx$^2$ + cx + d.\n\n        \\AnswerLine[][]\n        \\Marks{3}\n    \\end{subparts}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "_compactItems": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2020OctNov/Paper43/Q07/Q07a-QuadraticGraph.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2020OctNov/Paper43/Q07/Q07b-SketchGrid.png"
+    ]
+  },
+  {
+    "id": "0580-2020OctNov-Paper43-Q08",
+    "paper": "2020OctNov-Paper43",
+    "qnum": 8,
+    "marks": 12,
+    "topics": [
+      "Coordinate geometry",
+      "Transformations and vectors",
+      "Statistics"
+    ],
+    "s": "3.4",
+    "d": 2,
+    "cat": "coord",
+    "topic": "Equation of a line",
+    "qtype": "length and midpoint",
+    "g": "mixed",
+    "src": "0580/43/O/N/20 Q08",
+    "year": 2020,
+    "session": "OctNov",
+    "tex": "(a) \\begin{tabular}{l}\n        AB = $\\begin{pmatrix} 6 \\\\ -2 \\end{pmatrix}$ \\\\\n        BC = $\\begin{pmatrix} -1 \\\\ 5 \\end{pmatrix}$ \\\\\n        DC = $\\begin{pmatrix} 2 \\\\ -3 \\end{pmatrix}$\n    \\end{tabular}\n\n    Find\n\n    (i) (b) AC\n\n        AC =    \n\n(c) BD\n\n        BD =    \n\n(d) BC\n\n        \n\n(e) \n\n    In the diagram, OAB and OED are straight lines.\n\\newline\n    O is the origin, A is the midpoint of OB and E is the midpoint of AC.\n\\newline\n    AC = a and CB = b.\n\\newline\n\n    Find, in terms of a and b, in its simplest form\n\n    (i) (f) AB\n\n        AB = \n\n(g) OE\n\n        OE =    \n\n(h) the position vector of D",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "table",
+            "content": "\\begin{tabular}{l}\n        AB = $\\begin{pmatrix} 6 \\\\ -2 \\end{pmatrix}$ \\\\\n        BC = $\\begin{pmatrix} -1 \\\\ 5 \\end{pmatrix}$ \\\\\n        DC = $\\begin{pmatrix} 2 \\\\ -3 \\end{pmatrix}$\n    \\end{tabular}"
+          },
+          {
+            "type": "text",
+            "content": "Find"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "AC\n\n        AC = \\AnswerLine[] \\quad \\AnswerLine[]"
+              }
+            ],
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "BD\n\n        BD = \\AnswerLine[] \\quad \\AnswerLine[]"
+              }
+            ],
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "BC"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "figure",
+            "src": "Figures/Q08b-VectorDiagram.tex"
+          },
+          {
+            "type": "text",
+            "content": "In the diagram, OAB and OED are straight lines.\n\\newline\n    O is the origin, A is the midpoint of OB and E is the midpoint of AC.\n\\newline\n    AC = a and CB = b.\n\\newline\n\n    Find, in terms of a and b, in its simplest form"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "AB\n\n        AB = \\AnswerLine[][]"
+              }
+            ],
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "OE\n\n        OE = \\AnswerLine[] \\quad \\AnswerLine[]"
+              }
+            ],
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "the position vector of D"
+              }
+            ],
+            "answer": {
+              "type": "multiline",
+              "lines": 2,
+              "template": "____\\n____",
+              "lineSep": "blank"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_itemNewline": true,
+        "_compactEndSubparts": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n    \\item \\begin{tabular}{l}\n        AB = $\\begin{pmatrix} 6 \\\\ -2 \\end{pmatrix}$ \\\\\n        BC = $\\begin{pmatrix} -1 \\\\ 5 \\end{pmatrix}$ \\\\\n        DC = $\\begin{pmatrix} 2 \\\\ -3 \\end{pmatrix}$\n    \\end{tabular}\n\n    Find\n\n    \\begin{subparts}\n        \\item AC\n\n        AC = \\AnswerLine[] \\quad \\AnswerLine[]\n        \\Marks{2}\n\n        \\item BD\n\n        BD = \\AnswerLine[] \\quad \\AnswerLine[]\n        \\Marks{2}\n\n        \\item BC\n\n        \\AnswerLine[][]\n        \\Marks{2}\n    \\end{subparts}\n\n    \\item\n    \\relinput{Figures/Q08b-VectorDiagram.tex}\n\n    In the diagram, OAB and OED are straight lines.\n    O is the origin, A is the midpoint of OB and E is the midpoint of AC.\n    AC = a and CB = b.\n\n    Find, in terms of a and b, in its simplest form\n\n    \\begin{subparts}\n        \\item AB\n\n        AB = \\AnswerLine[][]\n        \\Marks{1}\n\n        \\item OE\n\n        OE = \\AnswerLine[] \\quad \\AnswerLine[]\n        \\Marks{2}\n\n        \\item the position vector of D\n\n        \\AnswerLine[] \\quad \\AnswerLine[]\n        \\Marks{3}\n    \\end{subparts}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "_compactItems": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2020OctNov/Paper43/Q08/Q08b-VectorDiagram.png"
+    ]
+  },
+  {
+    "id": "0580-2020OctNov-Paper43-Q09",
+    "paper": "2020OctNov-Paper43",
+    "qnum": 9,
+    "marks": 15,
+    "topics": [
+      "Number",
+      "Algebra and graphs",
+      "Coordinate geometry"
+    ],
+    "s": "2.5",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Equations",
+    "qtype": "linear inequality, factorisation, algebraic fractions simplification, simultaneous linear and quadratic equations",
+    "g": "simul-nonlinear",
+    "src": "0580/43/O/N/20 Q09",
+    "year": 2020,
+    "session": "OctNov",
+    "tex": "(a) Find the integer values that satisfy the inequality $2 \\frac{1}{2}x \\leq 10$.\n\\newline\n\n    \n\n(b) Factorise completely.\n\\newline\n\n    (i) (c) $6y^2 - 15xy$\n\n        \n\n(d) $y^2 - 9x^2$\n\n        \n\n(e) Simplify $\\dfrac{3}{x - 1} - \\dfrac{2}{x + 1}$.\n\\newline\n\n    \n\n(f) The straight line y = 3x + 2 intersects the curve y = 2x$^2$ + 7x - 11 at two points.\n\\newline\n\n    Find the coordinates of these two points.\n\\newline\n    Give your answers correct to 2 decimal places.\n\\newline\n\n    ( , ) and ( , )",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the integer values that satisfy the inequality $2 \\frac{1}{2}x \\leq 10$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Factorise completely.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "$6y^2 - 15xy$"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "$y^2 - 9x^2$"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(c)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Simplify $\\dfrac{3}{x - 1} - \\dfrac{2}{x + 1}$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 6,
+        "content": [
+          {
+            "type": "text",
+            "content": "The straight line y = 3x + 2 intersects the curve y = 2x$^2$ + 7x - 11 at two points.\n\\newline\n\n    Find the coordinates of these two points.\n\\newline\n    Give your answers correct to 2 decimal places.\n\\newline\n\n    (\\AnswerLine[] , \\AnswerLine[]) and (\\AnswerLine[] , \\AnswerLine[])"
+          }
+        ],
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n    \\item Find the integer values that satisfy the inequality $2 \\frac{1}{2}x \\leq 10$.\n\n    \\AnswerLine[][]\n    \\Marks{2}\n\n    \\item Factorise completely.\n\n    \\begin{subparts}\n        \\item $6y^2 - 15xy$\n\n        \\AnswerLine[][]\n        \\Marks{2}\n\n        \\item $y^2 - 9x^2$\n\n        \\AnswerLine[][]\n        \\Marks{2}\n    \\end{subparts}\n\n    \\item Simplify $\\dfrac{3}{x - 1} - \\dfrac{2}{x + 1}$.\n\n    \\AnswerLine[][]\n    \\Marks{3}\n\n    \\item The straight line y = 3x + 2 intersects the curve y = 2x$^2$ + 7x - 11 at two points.\n\n    Find the coordinates of these two points.\n    Give your answers correct to 2 decimal places.\n\n    (\\AnswerLine[] , \\AnswerLine[]) and (\\AnswerLine[] , \\AnswerLine[])\n    \\Marks{6}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2020OctNov-Paper43-Q10",
+    "paper": "2020OctNov-Paper43",
+    "qnum": 10,
+    "marks": 12,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.13",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Functions",
+    "qtype": "functions, composite functions, inverse functions, algebraic manipulation, exponential equations",
+    "g": "function",
+    "src": "0580/43/O/N/20 Q10",
+    "year": 2020,
+    "session": "OctNov",
+    "tex": "f(x) = 4 - 3x   g(x) = x$^2$ + x   h(x) = 3$^x$\n\n(a) Find fh(2).\n\\newline\n\n    \n\n(b) Find f$^{-1}$(x).\n\\newline\n\n    f$^{-1}$(x) = \n\n(c) Simplify.\n\\newline\n\n    (i) (d) f(1 - 2x)\n\n        \n\n(e) gf(x) - 9g(x)\n\n        \n\n(f) $\\dfrac{1}{h(x)} = 9^{kx}$\n\n    Find the value of k.\n\\newline\n\n    k =",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find fh(2).\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find f$^{-1}$(x).\n\\newline\n\n    f$^{-1}$(x) = \\AnswerLine[]"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Simplify.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "f(1 - 2x)"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 4,
+            "content": [
+              {
+                "type": "text",
+                "content": "gf(x) - 9g(x)"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(d)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "$\\dfrac{1}{h(x)} = 9^{kx}$\n\n    Find the value of k.\n\\newline\n\n    k = \\AnswerLine[]"
+          }
+        ],
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [
+      {
+        "type": "text",
+        "content": "f(x) = 4 - 3x \\quad g(x) = x$^2$ + x \\quad h(x) = 3$^x$"
+      }
+    ],
+    "_rawBody": "f(x) = 4 - 3x \\quad g(x) = x$^2$ + x \\quad h(x) = 3$^x$\n\n\\begin{parts}\n    \\item Find fh(2).\n\n    \\AnswerLine[][]\n    \\Marks{2}\n\n    \\item Find f$^{-1}$(x).\n\n    f$^{-1}$(x) = \\AnswerLine[]\n    \\Marks{2}\n\n    \\item Simplify.\n\n    \\begin{subparts}\n        \\item f(1 - 2x)\n\n        \\AnswerLine[][]\n        \\Marks{2}\n\n        \\item gf(x) - 9g(x)\n\n        \\AnswerLine[][]\n        \\Marks{4}\n    \\end{subparts}\n\n    \\item $\\dfrac{1}{h(x)} = 9^{kx}$\n\n    Find the value of k.\n\n    k = \\AnswerLine[]\n    \\Marks{2}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2020OctNov-Paper43-Q11",
+    "paper": "2020OctNov-Paper43",
+    "qnum": 11,
+    "marks": 9,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.7",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Sequences",
+    "qtype": "sequences, linear, quadratic and geometric, finding nth term",
+    "g": "quadratic",
+    "src": "0580/43/O/N/20 Q11",
+    "year": 2020,
+    "session": "OctNov",
+    "tex": "The table shows the first four terms in sequences A, B, and C.\n\\newline\n\n\\begin{tabular}{|c|c|c|c|c|c|c|}\n\\hline\nSequence & 1st term & 2nd term & 3rd term & 4th term & 5th term & nth term \\\\\n\\hline\nA & 4 & 9 & 14 & 19 & \\TableAnswerLine[][] & \\TableAnswerLine[][] \\\\\n\\hline\nB & 3 & 10 & 29 & 66 & \\TableAnswerLine[][] & \\TableAnswerLine[][] \\\\\n\\hline\nC & 1 & 4 & 16 & 64 & \\TableAnswerLine[][] & \\TableAnswerLine[][] \\\\\n\\hline\n\\end{tabular}\n\nComplete the table.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The table shows the first four terms in sequences A, B, and C.\n\\newline\n"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{tabular}{|c|c|c|c|c|c|c|}\n\\hline\nSequence & 1st term & 2nd term & 3rd term & 4th term & 5th term & nth term \\\\\n\\hline\nA & 4 & 9 & 14 & 19 & \\TableAnswerLine[][] & \\TableAnswerLine[][] \\\\\n\\hline\nB & 3 & 10 & 29 & 66 & \\TableAnswerLine[][] & \\TableAnswerLine[][] \\\\\n\\hline\nC & 1 & 4 & 16 & 64 & \\TableAnswerLine[][] & \\TableAnswerLine[][] \\\\\n\\hline\n\\end{tabular}"
+      },
+      {
+        "type": "text",
+        "content": "Complete the table.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "The table shows the first four terms in sequences A, B, and C.\n\n\\begin{tabular}{|c|c|c|c|c|c|c|}\n\\hline\nSequence & 1st term & 2nd term & 3rd term & 4th term & 5th term & nth term \\\\\n\\hline\nA & 4 & 9 & 14 & 19 & \\TableAnswerLine[][] & \\TableAnswerLine[][] \\\\\n\\hline\nB & 3 & 10 & 29 & 66 & \\TableAnswerLine[][] & \\TableAnswerLine[][] \\\\\n\\hline\nC & 1 & 4 & 16 & 64 & \\TableAnswerLine[][] & \\TableAnswerLine[][] \\\\\n\\hline\n\\end{tabular}\n\nComplete the table.\n\n\\Marks{9}"
+  }
+]

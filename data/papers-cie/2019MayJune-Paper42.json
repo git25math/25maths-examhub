@@ -1,0 +1,1139 @@
+[
+  {
+    "id": "0580-2019MayJune-Paper42-Q01",
+    "paper": "2019MayJune-Paper42",
+    "qnum": 1,
+    "marks": 14,
+    "topics": [
+      "Number",
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "1.13",
+    "d": 2,
+    "cat": "number",
+    "topic": "Electronic calculators",
+    "qtype": "percentage increase, ratio division, percentage of quantity, and currency conversion",
+    "g": "mixed",
+    "src": "0580/42/M/J/19 Q01",
+    "year": 2019,
+    "session": "MayJune",
+    "tex": "(a) The price of a newspaper increased from \\$0.97 to \\$1.13.\n\\newline\nCalculate the percentage increase.\n\\newline\n\n(b) One day, the newspaper had 60 pages of news and advertisements.\n\\newline\nThe ratio number of pages of news : number of pages of advertisements = 5 : 7.\n\\newline\n\n(i) (c) Calculate the number of pages of advertisements.\n\\newline\n\n(d) Write the number of pages of advertisements as a percentage of the number of pages of news.\n\\newline\n\n(e) On holiday Maria paid 2.25 euros for the newspaper when the exchange rate was \\$1 = 0.9416 euros.\n\\newline\nAt home Maria paid \\$1.13 for the newspaper.\n\\newline\nCalculate the difference in price.\n\\newline\nGive your answer in dollars, correct to the nearest cent.\n\\newline\n\n\\$ \n\n(f) The number of newspapers sold decreases exponentially by x\\% each year.\n\\newline\nOver a period of 21 years the number of newspapers sold decreases from $1\\,763\\,000$ to $58\\,000$.\n\\newline\nCalculate the value of x.\n\\newline\n\nx = \n\n(g) Every page of the newspaper is a rectangle measuring 43 cm by 28 cm, both correct to the nearest centimetre.\n\\newline\nCalculate the upper bound of the area of a page.\n\\newline\n\n cm$^2$",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "The price of a newspaper increased from \\$0.97 to \\$1.13.\n\\newline\nCalculate the percentage increase.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "\\%"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "One day, the newspaper had 60 pages of news and advertisements.\n\\newline\nThe ratio number of pages of news : number of pages of advertisements = 5 : 7.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate the number of pages of advertisements.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Write the number of pages of advertisements as a percentage of the number of pages of news.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "\\%"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item"
+      },
+      {
+        "label": "(c)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "On holiday Maria paid 2.25 euros for the newspaper when the exchange rate was \\$1 = 0.9416 euros.\n\\newline\nAt home Maria paid \\$1.13 for the newspaper.\n\\newline\nCalculate the difference in price.\n\\newline\nGive your answer in dollars, correct to the nearest cent.\n\\newline\n\n\\$ \\AnswerLine[]"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "The number of newspapers sold decreases exponentially by x\\% each year.\n\\newline\nOver a period of 21 years the number of newspapers sold decreases from $1\\,763\\,000$ to $58\\,000$.\n\\newline\nCalculate the value of x.\n\\newline\n\nx = \\AnswerLine[]"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(e)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Every page of the newspaper is a rectangle measuring 43 cm by 28 cm, both correct to the nearest centimetre.\n\\newline\nCalculate the upper bound of the area of a page.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item The price of a newspaper increased from \\$0.97 to \\$1.13.\nCalculate the percentage increase.\n\n\\AnswerLine[][\\%]\n\\Marks{3}\n\n\\item One day, the newspaper had 60 pages of news and advertisements.\nThe ratio number of pages of news : number of pages of advertisements = 5 : 7.\n\n\\begin{subparts}\n\\item Calculate the number of pages of advertisements.\n\n\\AnswerLine[]\n\\Marks{2}\n\n\\item Write the number of pages of advertisements as a percentage of the number of pages of news.\n\n\\AnswerLine[][\\%]\n\\Marks{1}\n\n\\end{subparts}\n\n\\item On holiday Maria paid 2.25 euros for the newspaper when the exchange rate was \\$1 = 0.9416 euros.\nAt home Maria paid \\$1.13 for the newspaper.\nCalculate the difference in price.\nGive your answer in dollars, correct to the nearest cent.\n\n\\$ \\AnswerLine[]\n\\Marks{3}\n\n\\item The number of newspapers sold decreases exponentially by x\\% each year.\nOver a period of 21 years the number of newspapers sold decreases from 1\\,763\\,000 to 58\\,000.\nCalculate the value of x.\n\nx = \\AnswerLine[]\n\\Marks{3}\n\n\\item Every page of the newspaper is a rectangle measuring 43 cm by 28 cm, both correct to the nearest centimetre.\nCalculate the upper bound of the area of a page.\n\n\\AnswerLine[] cm$^2$\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2019MayJune-Paper42-Q02",
+    "paper": "2019MayJune-Paper42",
+    "qnum": 2,
+    "marks": 8,
+    "topics": [
+      "Geometry",
+      "Mensuration",
+      "Trigonometry"
+    ],
+    "s": "4.7",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Nets and 3D shapes",
+    "qtype": "circle theorems",
+    "g": "mixed",
+    "src": "0580/42/M/J/19 Q02",
+    "year": 2019,
+    "session": "MayJune",
+    "tex": "(a) AC is parallel to FBD, ABC is an isosceles triangle and CBE is a straight line.\n\\newline\nFind the value of x.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\n(b) The diagram shows a circle with diameter PQ.\n\\newline\nSPT is a tangent to the circle at P.\n\\newline\nFind the value of y.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\ny =",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "AC is parallel to FBD, ABC is an isosceles triangle and CBE is a straight line.\n\\newline\nFind the value of x.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q02-Geometry.\n\\newline\npng}\n%\\end{InsertScreenShot}"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 5,
+        "content": [
+          {
+            "type": "text",
+            "content": "The diagram shows a circle with diameter PQ.\n\\newline\nSPT is a tangent to the circle at P.\n\\newline\nFind the value of y.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q02-Circle.\n\\newline\npng}\n%\\end{InsertScreenShot}\n\ny = \\AnswerLine[]"
+          }
+        ],
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item AC is parallel to FBD, ABC is an isosceles triangle and CBE is a straight line.\nFind the value of x.\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q02-Geometry.png}\n%\\end{InsertScreenShot}\n\n\\AnswerLine[]\n\\Marks{3}\n\n\\item The diagram shows a circle with diameter PQ.\nSPT is a tangent to the circle at P.\nFind the value of y.\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q02-Circle.png}\n%\\end{InsertScreenShot}\n\ny = \\AnswerLine[]\n\\Marks{5}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2019MayJune-Paper42-Q03",
+    "paper": "2019MayJune-Paper42",
+    "qnum": 3,
+    "marks": 9,
+    "topics": [
+      "Number",
+      "Probability"
+    ],
+    "s": null,
+    "d": 2,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/42/M/J/19 Q03",
+    "year": 2019,
+    "session": "MayJune",
+    "tex": "The probability that Andrei cycles to school is r.\n\\newline\n\n(a) Write down, in terms of r, the probability that Andrei does not cycle to school.\n\\newline\n\n(b) The probability that Benoit does not cycle to school is 1.3 - r.\n\\newline\nThe probability that both Andrei and Benoit do not cycle to school is 0.4.\n\\newline\n\n(i) (c) Complete the equation in terms of r.\n\\newline\n\n ×  = 0.4\n\n(d) Show that this equation simplifies to 10r$^2$ - 23r + 9 = 0.\n\\newline\n\n(e) Solve by factorisation 10r$^2$ - 23r + 9 = 0.\n\\newline\n\nr =  or r = \n\n(f) Find the probability that Benoit does not cycle to school.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down, in terms of r, the probability that Andrei does not cycle to school.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The probability that Benoit does not cycle to school is 1.3 - r.\n\\newline\nThe probability that both Andrei and Benoit do not cycle to school is 0.4.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Complete the equation in terms of r.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "multiline",
+              "lines": 2,
+              "template": "____\\n____",
+              "lineSep": "blank"
+            }
+          },
+          {
+            "label": "(ii)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "Show that this equation simplifies to 10r$^2$ - 23r + 9 = 0.\n\\newline\n"
+              }
+            ]
+          },
+          {
+            "label": "(iii)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "Solve by factorisation 10r$^2$ - 23r + 9 = 0.\n\\newline\n\nr = \\AnswerLine[] or r = \\AnswerLine[]"
+              }
+            ],
+            "_compactMarks": true
+          },
+          {
+            "label": "(iv)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the probability that Benoit does not cycle to school.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item"
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "",
+    "cmd": "show",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The probability that Andrei cycles to school is r.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "The probability that Andrei cycles to school is r.\n\n\\begin{parts}\n\\item Write down, in terms of r, the probability that Andrei does not cycle to school.\n\n\\AnswerLine[]\n\\Marks{1}\n\n\\item The probability that Benoit does not cycle to school is 1.3 - r.\nThe probability that both Andrei and Benoit do not cycle to school is 0.4.\n\n\\begin{subparts}\n\\item Complete the equation in terms of r.\n\n\\AnswerLine[] × \\AnswerLine[] = 0.4\n\n\\Marks{1}\n\n\\item Show that this equation simplifies to 10r$^2$ - 23r + 9 = 0.\n\n\\Marks{3}\n\n\\item Solve by factorisation 10r$^2$ - 23r + 9 = 0.\n\nr = \\AnswerLine[] or r = \\AnswerLine[]\n\\Marks{3}\n\n\\item Find the probability that Benoit does not cycle to school.\n\n\\AnswerLine[]\n\\Marks{1}\n\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2019MayJune-Paper42-Q04",
+    "paper": "2019MayJune-Paper42",
+    "qnum": 4,
+    "marks": 13,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry"
+    ],
+    "s": "3.7",
+    "d": 2,
+    "cat": "coord",
+    "topic": "Coordinate geometry extended",
+    "qtype": "perpendicular lines",
+    "g": "mixed",
+    "src": "0580/42/M/J/19 Q04",
+    "year": 2019,
+    "session": "MayJune",
+    "tex": "(a) The equation of a straight line is 2y = 3x + 4.\n\\newline\n\n(i) (b) Find the gradient of this line.\n\\newline\n\n(c) Find the co-ordinates of the point where the line crosses the y-axis.\n\\newline\n\n(, )\n\n(d) The diagram shows a straight line L.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\n(i) (e) Find the equation of line L.\n\\newline\n\n(f) Find the equation of the line perpendicular to line L that passes through (9, 3).\n\\newline\n\n(g) A is the point (8, 5) and B is the point (-4, 1).\n\\newline\n\n(i) (h) Calculate the length of AB.\n\\newline\n\n(i) Find the co-ordinates of the midpoint of AB.\n\\newline\n\n(, )",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The equation of a straight line is 2y = 3x + 4.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the gradient of this line.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the co-ordinates of the point where the line crosses the y-axis.\n\\newline\n\n(\\AnswerLine[], \\AnswerLine[])"
+              }
+            ],
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item"
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The diagram shows a straight line L.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q04-LineL.\n\\newline\npng}\n%\\end{InsertScreenShot}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the equation of line L.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the equation of the line perpendicular to line L that passes through (9, 3).\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item"
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "A is the point (8, 5) and B is the point (-4, 1).\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate the length of AB.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the co-ordinates of the midpoint of AB.\n\\newline\n\n(\\AnswerLine[], \\AnswerLine[])"
+              }
+            ],
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item"
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item The equation of a straight line is 2y = 3x + 4.\n\n\\begin{subparts}\n\\item Find the gradient of this line.\n\n\\AnswerLine[]\n\\Marks{1}\n\n\\item Find the co-ordinates of the point where the line crosses the y-axis.\n\n(\\AnswerLine[], \\AnswerLine[])\n\\Marks{1}\n\n\\end{subparts}\n\n\\item The diagram shows a straight line L.\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q04-LineL.png}\n%\\end{InsertScreenShot}\n\n\\begin{subparts}\n\\item Find the equation of line L.\n\n\\AnswerLine[]\n\\Marks{3}\n\n\\item Find the equation of the line perpendicular to line L that passes through (9, 3).\n\n\\AnswerLine[]\n\\Marks{3}\n\n\\end{subparts}\n\n\\item A is the point (8, 5) and B is the point (-4, 1).\n\n\\begin{subparts}\n\\item Calculate the length of AB.\n\n\\AnswerLine[]\n\\Marks{3}\n\n\\item Find the co-ordinates of the midpoint of AB.\n\n(\\AnswerLine[], \\AnswerLine[])\n\\Marks{2}\n\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_compactItems": true
+  },
+  {
+    "id": "0580-2019MayJune-Paper42-Q05",
+    "paper": "2019MayJune-Paper42",
+    "qnum": 5,
+    "marks": 14,
+    "topics": [
+      "Algebra and graphs",
+      "Coordinate geometry"
+    ],
+    "s": "2.10",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Graphs of functions",
+    "qtype": "Completing table, plotting rational graphs, solving equations graphically",
+    "g": "graph",
+    "src": "0580/42/M/J/19 Q05",
+    "year": 2019,
+    "session": "MayJune",
+    "tex": "The table shows some values of $y = \\frac{1}{x^2 - 2x - 4}$ for $0.15 \\leq x \\leq 3.5$.\n\\newline\n\n\\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}\n\\hline\nx & 0.15 & 0.2 & 0.5 & 1 & 1.5 & 2 & 2.5 & 3 & 3.5 \\\\\n\\hline\ny & 3.30 &  & 0.88 &  & -0.04 &  & -0.43 & -0.58 & -0.73 \\\\\n\\hline\n\\end{tabular}\n\n(a) Complete the table.\n\\newline\n\n(b) On the grid, draw the graph of $y = \\frac{1}{x^2 - 2x - 4}$ for $0.15 \\leq x \\leq 3.5$.\n\\newline\nThe last two points have been plotted for you.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\n(c) Use your graph to solve the equation $\\frac{1}{x^2 - 2x - 4} = \\frac{1}{2}$ for $0.15 \\leq x \\leq 3.5$.\n\\newline\n\nx = \n\n(d) On the grid, draw the line y = 2 - x.\n\\newline\n\n(e) Write down the x co-ordinates of the points where the line y = 2 - x crosses the graph of\n$y = \\frac{1}{x^2 - 2x - 4}$ for $0.15 \\leq x \\leq 3.5$.\n\\newline\n\nx =  and x = \n\n(f) Show that the graph of $y = \\frac{1}{x^2 - 2x - 4}$ can be used to find the value of $\\sqrt{2}$ for $0.15 \\leq x \\leq 3.5$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Complete the table.\n\\newline\n"
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "text",
+            "content": "On the grid, draw the graph of $y = \\frac{1}{x^2 - 2x - 4}$ for $0.15 \\leq x \\leq 3.5$.\n\\newline\nThe last two points have been plotted for you.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q05-Grid.\n\\newline\npng}\n%\\end{InsertScreenShot}"
+          }
+        ]
+      },
+      {
+        "label": "(c)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Use your graph to solve the equation $\\frac{1}{x^2 - 2x - 4} = \\frac{1}{2}$ for $0.15 \\leq x \\leq 3.5$.\n\\newline\n\nx = \\AnswerLine[]"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "On the grid, draw the line y = 2 - x.\n\\newline\n"
+          }
+        ]
+      },
+      {
+        "label": "(e)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down the x co-ordinates of the points where the line y = 2 - x crosses the graph of\n$y = \\frac{1}{x^2 - 2x - 4}$ for $0.15 \\leq x \\leq 3.5$.\n\\newline\n\nx = \\AnswerLine[] and x = \\AnswerLine[]"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(f)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Show that the graph of $y = \\frac{1}{x^2 - 2x - 4}$ can be used to find the value of $\\sqrt{2}$ for $0.15 \\leq x \\leq 3.5$.\n\\newline\n"
+          }
+        ]
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "show",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The table shows some values of $y = \\frac{1}{x^2 - 2x - 4}$ for $0.15 \\leq x \\leq 3.5$.\n\\newline\n"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}\n\\hline\nx & 0.15 & 0.2 & 0.5 & 1 & 1.5 & 2 & 2.5 & 3 & 3.5 \\\\\n\\hline\ny & 3.30 &  & 0.88 &  & -0.04 &  & -0.43 & -0.58 & -0.73 \\\\\n\\hline\n\\end{tabular}"
+      }
+    ],
+    "_rawBody": "The table shows some values of $y = \\frac{1}{x^2 - 2x - 4}$ for $0.15 \\leq x \\leq 3.5$.\n\n\\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}\n\\hline\nx & 0.15 & 0.2 & 0.5 & 1 & 1.5 & 2 & 2.5 & 3 & 3.5 \\\\\n\\hline\ny & 3.30 &  & 0.88 &  & -0.04 &  & -0.43 & -0.58 & -0.73 \\\\\n\\hline\n\\end{tabular}\n\n\\begin{parts}\n\\item Complete the table.\n\n\\Marks{3}\n\n\\item On the grid, draw the graph of $y = \\frac{1}{x^2 - 2x - 4}$ for $0.15 \\leq x \\leq 3.5$.\nThe last two points have been plotted for you.\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q05-Grid.png}\n%\\end{InsertScreenShot}\n\n\\Marks{4}\n\n\\item Use your graph to solve the equation $\\frac{1}{x^2 - 2x - 4} = \\frac{1}{2}$ for $0.15 \\leq x \\leq 3.5$.\n\nx = \\AnswerLine[]\n\\Marks{1}\n\n\\item On the grid, draw the line y = 2 - x.\n\n\\Marks{2}\n\n\\item Write down the x co-ordinates of the points where the line y = 2 - x crosses the graph of\n$y = \\frac{1}{x^2 - 2x - 4}$ for $0.15 \\leq x \\leq 3.5$.\n\nx = \\AnswerLine[] and x = \\AnswerLine[]\n\\Marks{2}\n\n\\item Show that the graph of $y = \\frac{1}{x^2 - 2x - 4}$ can be used to find the value of $\\sqrt{2}$ for $0.15 \\leq x \\leq 3.5$.\n\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2019MayJune-Paper42-Q06",
+    "paper": "2019MayJune-Paper42",
+    "qnum": 6,
+    "marks": 12,
+    "topics": [
+      "Number",
+      "Algebra and graphs"
+    ],
+    "s": "2.2",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Rearranging formulae",
+    "qtype": "Algebraic expansion, various factorization methods, solving linear equations",
+    "g": "linear",
+    "src": "0580/42/M/J/19 Q06",
+    "year": 2019,
+    "session": "MayJune",
+    "tex": "(a) Expand and simplify (x + 7)(x - 3).\n\\newline\n\n(b) Factorise completely.\n\\newline\n\n(i) (c) 15p$^2$q$^2$ - 25q$^3$\n\n(d) 4fg + 6gh + 10fk + 15hk\n\n(e) 81k$^2$ - m$^2$\n\n(f) Solve the equation $3(x - 4) + \\frac{x + 2}{5} = 6$.\n\\newline\n\nx =",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Expand and simplify (x + 7)(x - 3).\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Factorise completely.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "15p$^2$q$^2$ - 25q$^3$"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "4fg + 6gh + 10fk + 15hk"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "81k$^2$ - m$^2$"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item"
+      },
+      {
+        "label": "(c)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "text",
+            "content": "Solve the equation $3(x - 4) + \\frac{x + 2}{5} = 6$.\n\\newline\n\nx = \\AnswerLine[]"
+          }
+        ],
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Expand and simplify (x + 7)(x - 3).\n\n\\AnswerLine[]\n\\Marks{2}\n\n\\item Factorise completely.\n\n\\begin{subparts}\n\\item 15p$^2$q$^2$ - 25q$^3$\n\n\\AnswerLine[]\n\\Marks{2}\n\n\\item 4fg + 6gh + 10fk + 15hk\n\n\\AnswerLine[]\n\\Marks{2}\n\n\\item 81k$^2$ - m$^2$\n\n\\AnswerLine[]\n\\Marks{2}\n\n\\end{subparts}\n\n\\item Solve the equation $3(x - 4) + \\frac{x + 2}{5} = 6$.\n\nx = \\AnswerLine[]\n\\Marks{4}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2019MayJune-Paper42-Q07",
+    "paper": "2019MayJune-Paper42",
+    "qnum": 7,
+    "marks": 11,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "3.4",
+    "d": 2,
+    "cat": "coord",
+    "topic": "Equation of a line",
+    "qtype": "length and midpoint",
+    "g": "mixed",
+    "src": "0580/42/M/J/19 Q07",
+    "year": 2019,
+    "session": "MayJune",
+    "tex": "(a) Show that each interior angle of a regular pentagon is 108$^\\circ$.\n\\newline\n\n(b) The diagram shows a regular pentagon ABCDE.\n\\newline\nThe vertices of the pentagon lie on a circle, centre O, radius 12 cm.\n\\newline\nM is the midpoint of BC.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\n(i) (c) Find BM.\n\\newline\n\nBM =  cm\n\n(d) OMX and ABX are straight lines.\n\\newline\n\n\\begin{subsubparts}\n\n(e) Find BX\n\n(f) Calculate the area of triangle AOX.\n\\newline\n\n cm$^2$\n\n\\end{subsubparts}",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Show that each interior angle of a regular pentagon is 108$^\\circ$.\n\\newline\n"
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The diagram shows a regular pentagon ABCDE.\n\\newline\nThe vertices of the pentagon lie on a circle, centre O, radius 12 cm.\n\\newline\nM is the midpoint of BC.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q07-Pentagon.\n\\newline\npng}\n%\\end{InsertScreenShot}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find BM.\n\\newline\n\nBM = \\AnswerLine[] cm"
+              }
+            ],
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 0,
+            "content": [
+              {
+                "type": "text",
+                "content": "OMX and ABX are straight lines.\n\\newline\n"
+              }
+            ],
+            "subsubparts": [
+              {
+                "label": "(p)",
+                "content": [
+                  {
+                    "type": "text",
+                    "content": "Find BX"
+                  }
+                ],
+                "answer": {
+                  "type": "number",
+                  "prefix": "$BX = $",
+                  "suffix": "cm"
+                },
+                "marks": 3
+              },
+              {
+                "label": "(q)",
+                "content": [
+                  {
+                    "type": "text",
+                    "content": "Calculate the area of triangle AOX."
+                  }
+                ],
+                "answer": {
+                  "type": "number"
+                },
+                "marks": 3
+              }
+            ]
+          }
+        ],
+        "_subpartCmd": "item"
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "analyse",
+    "cmd": "show",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Show that each interior angle of a regular pentagon is 108$^\\circ$.\n\n\\Marks{2}\n\n\\item The diagram shows a regular pentagon ABCDE.\nThe vertices of the pentagon lie on a circle, centre O, radius 12 cm.\nM is the midpoint of BC.\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q07-Pentagon.png}\n%\\end{InsertScreenShot}\n\n\\begin{subparts}\n\\item Find BM.\n\nBM = \\AnswerLine[] cm\n\\Marks{3}\n\n\\item OMX and ABX are straight lines.\n\n\\begin{subsubparts}\n\\item Find BX\n\n\\AnswerLine[$BX = $][cm]\n\\Marks{3}\n\n\\item Calculate the area of triangle AOX.\n\n\\AnswerLine[] cm$^2$\n\\Marks{3}\n\n\\end{subsubparts}\n\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2019MayJune-Paper42-Q08",
+    "paper": "2019MayJune-Paper42",
+    "qnum": 8,
+    "marks": 12,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.6",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/42/M/J/19 Q08",
+    "year": 2019,
+    "session": "MayJune",
+    "tex": "(a) The diagram shows two triangles ABD and BCD.\n\\newline\nAD = 16.5 cm and BD = 12.4 cm.\n\\newline\nAngle ADB = 64$^\\circ$, angle BDC = 53$^\\circ$ and angle DBC = 95$^\\circ$.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\n(i) (b) Find AB.\n\\newline\n\nAB =  cm\n\n(c) Find BC.\n\\newline\n\nBC =  cm\n\n(d) The diagram shows a sector of a circle of radius 3.8 cm.\n\\newline\nThe arc length is 7.7 cm.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\n(i) (e) Calculate the value of y.\n\\newline\n\ny = $^\\circ$\n\n(f) Calculate the area of the sector.\n\\newline\n\n cm$^2$",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The diagram shows two triangles ABD and BCD.\n\\newline\nAD = 16.5 cm and BD = 12.4 cm.\n\\newline\nAngle ADB = 64$^\\circ$, angle BDC = 53$^\\circ$ and angle DBC = 95$^\\circ$.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q08-Triangles.\n\\newline\npng}\n%\\end{InsertScreenShot}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 4,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find AB.\n\\newline\n\nAB = \\AnswerLine[] cm"
+              }
+            ],
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 4,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find BC.\n\\newline\n\nBC = \\AnswerLine[] cm"
+              }
+            ],
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item"
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The diagram shows a sector of a circle of radius 3.8 cm.\n\\newline\nThe arc length is 7.7 cm.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q08-Sector.\n\\newline\npng}\n%\\end{InsertScreenShot}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate the value of y.\n\\newline\n\ny = \\AnswerLine[]$^\\circ$"
+              }
+            ],
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate the area of the sector.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item"
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item The diagram shows two triangles ABD and BCD.\nAD = 16.5 cm and BD = 12.4 cm.\nAngle ADB = 64$^\\circ$, angle BDC = 53$^\\circ$ and angle DBC = 95$^\\circ$.\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q08-Triangles.png}\n%\\end{InsertScreenShot}\n\n\\begin{subparts}\n\\item Find AB.\n\nAB = \\AnswerLine[] cm\n\\Marks{4}\n\n\\item Find BC.\n\nBC = \\AnswerLine[] cm\n\\Marks{4}\n\n\\end{subparts}\n\n\\item The diagram shows a sector of a circle of radius 3.8 cm.\nThe arc length is 7.7 cm.\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q08-Sector.png}\n%\\end{InsertScreenShot}\n\n\\begin{subparts}\n\\item Calculate the value of y.\n\ny = \\AnswerLine[]$^\\circ$\n\\Marks{2}\n\n\\item Calculate the area of the sector.\n\n\\AnswerLine[] cm$^2$\n\\Marks{2}\n\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_compactItems": true
+  },
+  {
+    "id": "0580-2019MayJune-Paper42-Q09",
+    "paper": "2019MayJune-Paper42",
+    "qnum": 9,
+    "marks": 14,
+    "topics": [
+      "Number",
+      "Statistics"
+    ],
+    "s": null,
+    "d": 2,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/42/M/J/19 Q09",
+    "year": 2019,
+    "session": "MayJune",
+    "tex": "100 students were each asked how much money, \\$m, they spent in one week.\n\\newline\nThe frequency table shows the results.\n\\newline\n\n\\begin{tabular}{|c|c|}\n\\hline\nAmount (\\$m) & Frequency \\\\\n\\hline\n0 1 m \\textless 5 & 16 \\\\\n\\hline\n5 1 m \\textless 10 & 38 \\\\\n\\hline\n10 1 m \\textless 20 & 30 \\\\\n\\hline\n20 1 m \\textless 30 & 9 \\\\\n\\hline\n30 1 m \\textless 50 & 7 \\\\\n\\hline\n\\end{tabular}\n\n(a) Calculate an estimate of the mean.\n\\newline\n\n\\$ \n\n(b) Complete the cumulative frequency table below.\n\\newline\n\n\\begin{tabular}{|c|c|}\n\\hline\nAmount (\\$m) & Cumulative frequency \\\\\n\\hline\nm \\textless 5 & 16 \\\\\n\\hline\nm \\textless 10 &  \\\\\n\\hline\nm \\textless 20 &  \\\\\n\\hline\nm \\textless 30 &  \\\\\n\\hline\nm \\textless 50 & 100 \\\\\n\\hline\n\\end{tabular}\n\n(c) On the grid, draw the cumulative frequency diagram.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\n(d) Use your cumulative frequency diagram to find an estimate for\n\n(i) (e) the median,\n\n\\$ \n\n(f) the interquartile range,\n\n\\$ \n\n(g) the number of students who spent more than \\$25.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "text",
+            "content": "Calculate an estimate of the mean.\n\\newline\n\n\\$ \\AnswerLine[]"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Complete the cumulative frequency table below.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{tabular}{|c|c|}\n\\hline\nAmount (\\$m) & Cumulative frequency \\\\\n\\hline\nm \\textless 5 & 16 \\\\\n\\hline\nm \\textless 10 &  \\\\\n\\hline\nm \\textless 20 &  \\\\\n\\hline\nm \\textless 30 &  \\\\\n\\hline\nm \\textless 50 & 100 \\\\\n\\hline\n\\end{tabular}"
+          }
+        ]
+      },
+      {
+        "label": "(c)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "On the grid, draw the cumulative frequency diagram.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q09-Grid.\n\\newline\npng}\n%\\end{InsertScreenShot}"
+          }
+        ]
+      },
+      {
+        "label": "(d)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Use your cumulative frequency diagram to find an estimate for"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "the median,\n\n\\$ \\AnswerLine[]"
+              }
+            ],
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "the interquartile range,\n\n\\$ \\AnswerLine[]"
+              }
+            ],
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "the number of students who spent more than \\$25.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item"
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "text",
+        "content": "100 students were each asked how much money, \\$m, they spent in one week.\n\\newline\nThe frequency table shows the results.\n\\newline\n"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{tabular}{|c|c|}\n\\hline\nAmount (\\$m) & Frequency \\\\\n\\hline\n0 1 m \\textless 5 & 16 \\\\\n\\hline\n5 1 m \\textless 10 & 38 \\\\\n\\hline\n10 1 m \\textless 20 & 30 \\\\\n\\hline\n20 1 m \\textless 30 & 9 \\\\\n\\hline\n30 1 m \\textless 50 & 7 \\\\\n\\hline\n\\end{tabular}"
+      }
+    ],
+    "_rawBody": "100 students were each asked how much money, \\$m, they spent in one week.\nThe frequency table shows the results.\n\n\\begin{tabular}{|c|c|}\n\\hline\nAmount (\\$m) & Frequency \\\\\n\\hline\n0 1 m \\textless 5 & 16 \\\\\n\\hline\n5 1 m \\textless 10 & 38 \\\\\n\\hline\n10 1 m \\textless 20 & 30 \\\\\n\\hline\n20 1 m \\textless 30 & 9 \\\\\n\\hline\n30 1 m \\textless 50 & 7 \\\\\n\\hline\n\\end{tabular}\n\n\\begin{parts}\n\\item Calculate an estimate of the mean.\n\n\\$ \\AnswerLine[]\n\\Marks{4}\n\n\\item Complete the cumulative frequency table below.\n\n\\begin{tabular}{|c|c|}\n\\hline\nAmount (\\$m) & Cumulative frequency \\\\\n\\hline\nm \\textless 5 & 16 \\\\\n\\hline\nm \\textless 10 &  \\\\\n\\hline\nm \\textless 20 &  \\\\\n\\hline\nm \\textless 30 &  \\\\\n\\hline\nm \\textless 50 & 100 \\\\\n\\hline\n\\end{tabular}\n\n\\Marks{2}\n\n\\item On the grid, draw the cumulative frequency diagram.\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q09-Grid.png}\n%\\end{InsertScreenShot}\n\n\\Marks{3}\n\n\\item Use your cumulative frequency diagram to find an estimate for\n\n\\begin{subparts}\n\\item the median,\n\n\\$ \\AnswerLine[]\n\\Marks{1}\n\n\\item the interquartile range,\n\n\\$ \\AnswerLine[]\n\\Marks{2}\n\n\\item the number of students who spent more than \\$25.\n\n\\AnswerLine[]\n\\Marks{2}\n\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2019MayJune-Paper42-Q10",
+    "paper": "2019MayJune-Paper42",
+    "qnum": 10,
+    "marks": 13,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.4",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Circle theorems",
+    "qtype": "similarity and congruence",
+    "g": "mixed",
+    "src": "0580/42/M/J/19 Q10",
+    "year": 2019,
+    "session": "MayJune",
+    "tex": "(a) The volume of a solid metal sphere is $24\\,430$ cm$^3$.\n\\newline\n\n(i) (b) Calculate the radius of the sphere.\n\\newline\n$\\frac{4}{3}\\pi r^3 = 24\\,430$\n\n cm\n\n(c) The metal sphere is placed in an empty tank.\n\\newline\nThe tank is a cylinder with radius 50 cm, standing on its circular base.\n\\newline\nWater is poured into the tank to a depth of 60 cm.\n\\newline\nCalculate the number of litres of water needed.\n\\newline\n\n litres\n\n(d) A different tank is a cuboid measuring 1.8 m by 1.5 m by 1.2 m.\n\\newline\nWater flows from a pipe into this empty tank at a rate of 200 cm$^3$ per second.\n\\newline\nFind the time it takes to fill the tank.\n\\newline\nGive your answer in hours and minutes.\n\\newline\n\n hours  minutes\n\n(e) The diagram shows two mathematically similar shapes with areas 295 cm$^2$ and 159.5 cm$^2$.\n\\newline\nThe width of the larger shape is 17 cm.\n\\newline\nCalculate the width of the smaller shape.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\n cm",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The volume of a solid metal sphere is $24\\,430$ cm$^3$.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate the radius of the sphere.\n\\newline\n$\\frac{4}{3}\\pi r^3 = 24\\,430$"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "The metal sphere is placed in an empty tank.\n\\newline\nThe tank is a cylinder with radius 50 cm, standing on its circular base.\n\\newline\nWater is poured into the tank to a depth of 60 cm.\n\\newline\nCalculate the number of litres of water needed.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item"
+      },
+      {
+        "label": "(b)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "text",
+            "content": "A different tank is a cuboid measuring 1.8 m by 1.5 m by 1.2 m.\n\\newline\nWater flows from a pipe into this empty tank at a rate of 200 cm$^3$ per second.\n\\newline\nFind the time it takes to fill the tank.\n\\newline\nGive your answer in hours and minutes.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "multiline",
+          "lines": 2,
+          "template": "____\\n____",
+          "lineSep": "blank"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "The diagram shows two mathematically similar shapes with areas 295 cm$^2$ and 159.5 cm$^2$.\n\\newline\nThe width of the larger shape is 17 cm.\n\\newline\nCalculate the width of the smaller shape.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q10-SimilarShapes.\n\\newline\npng}\n%\\end{InsertScreenShot}"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item The volume of a solid metal sphere is 24\\,430 cm$^3$.\n\n\\begin{subparts}\n\\item Calculate the radius of the sphere.\n$\\frac{4}{3}\\pi r^3 = 24\\,430$\n\n\\AnswerLine[] cm\n\\Marks{3}\n\n\\item The metal sphere is placed in an empty tank.\nThe tank is a cylinder with radius 50 cm, standing on its circular base.\nWater is poured into the tank to a depth of 60 cm.\nCalculate the number of litres of water needed.\n\n\\AnswerLine[] litres\n\\Marks{3}\n\n\\end{subparts}\n\n\\item A different tank is a cuboid measuring 1.8 m by 1.5 m by 1.2 m.\nWater flows from a pipe into this empty tank at a rate of 200 cm$^3$ per second.\nFind the time it takes to fill the tank.\nGive your answer in hours and minutes.\n\n\\AnswerLine[] hours \\AnswerLine[] minutes\n\\Marks{4}\n\n\\item The diagram shows two mathematically similar shapes with areas 295 cm$^2$ and 159.5 cm$^2$.\nThe width of the larger shape is 17 cm.\nCalculate the width of the smaller shape.\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q10-SimilarShapes.png}\n%\\end{InsertScreenShot}\n\n\\AnswerLine[] cm\n\\Marks{3}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2019MayJune-Paper42-Q11",
+    "paper": "2019MayJune-Paper42",
+    "qnum": 11,
+    "marks": 10,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.7",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Sequences",
+    "qtype": "Sequences, finding nth term, solving for n, quadratic sequences",
+    "g": "quadratic",
+    "src": "0580/42/M/J/19 Q11",
+    "year": 2019,
+    "session": "MayJune",
+    "tex": "The sequence of diagrams above is made up of small lines and dots.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\n(a) Complete the table.\n\\newline\n\n\\begin{tabular}{|c|c|c|c|c|c|}\n\\hline\nDiagram & 1 & 2 & 3 & 4 & 5 \\\\\n\\hline\nNumber of small lines & 4 & 10 & 18 & 28 &  \\\\\n\\hline\nNumber of dots & 4 & 8 & 13 & 19 &  \\\\\n\\hline\n\\end{tabular}\n\n(b) For Diagram n find an expression, in terms of n, for the number of small lines.\n\\newline\n\n(c) Diagram r has $10\\,300$ small lines.\n\\newline\nFind the value of r.\n\\newline\n\nr = \n\n(d) The number of dots in Diagram n is an$^2$ + bn + 1.\n\\newline\nFind the value of a and the value of b.\n\\newline\n\na = , b =",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "text",
+            "content": "Complete the table.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{tabular}{|c|c|c|c|c|c|}\n\\hline\nDiagram & 1 & 2 & 3 & 4 & 5 \\\\\n\\hline\nNumber of small lines & 4 & 10 & 18 & 28 &  \\\\\n\\hline\nNumber of dots & 4 & 8 & 13 & 19 &  \\\\\n\\hline\n\\end{tabular}"
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "For Diagram n find an expression, in terms of n, for the number of small lines.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Diagram r has $10\\,300$ small lines.\n\\newline\nFind the value of r.\n\\newline\n\nr = \\AnswerLine[]"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "The number of dots in Diagram n is an$^2$ + bn + 1.\n\\newline\nFind the value of a and the value of b.\n\\newline\n\na = \\AnswerLine[], b = \\AnswerLine[]"
+          }
+        ],
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "analyse",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The sequence of diagrams above is made up of small lines and dots.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q11-Sequences.\n\\newline\npng}\n%\\end{InsertScreenShot}"
+      }
+    ],
+    "_rawBody": "The sequence of diagrams above is made up of small lines and dots.\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q11-Sequences.png}\n%\\end{InsertScreenShot}\n\n\\begin{parts}\n\\item Complete the table.\n\n\\begin{tabular}{|c|c|c|c|c|c|}\n\\hline\nDiagram & 1 & 2 & 3 & 4 & 5 \\\\\n\\hline\nNumber of small lines & 4 & 10 & 18 & 28 &  \\\\\n\\hline\nNumber of dots & 4 & 8 & 13 & 19 &  \\\\\n\\hline\n\\end{tabular}\n\n\\Marks{4}\n\n\\item For Diagram n find an expression, in terms of n, for the number of small lines.\n\n\\AnswerLine[]\n\\Marks{2}\n\n\\item Diagram r has 10\\,300 small lines.\nFind the value of r.\n\nr = \\AnswerLine[]\n\\Marks{2}\n\n\\item The number of dots in Diagram n is an$^2$ + bn + 1.\nFind the value of a and the value of b.\n\na = \\AnswerLine[], b = \\AnswerLine[]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true
+  }
+]

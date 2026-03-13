@@ -1,0 +1,1799 @@
+[
+  {
+    "id": "0580-2025OctNov-Paper33-Q01",
+    "paper": "2025OctNov-Paper33",
+    "qnum": 1,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.1",
+    "d": 1,
+    "cat": "number",
+    "topic": "Types of number",
+    "qtype": "finding factors of an integer",
+    "g": "mixed",
+    "src": "0580/33/O/N/25 Q01",
+    "year": 2025,
+    "session": "OctNov",
+    "tex": "Write down all the factors of 26.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "write",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Write down all the factors of 26.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Write down all the factors of 26.\n\n\\vgap\n\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025OctNov-Paper33-Q02",
+    "paper": "2025OctNov-Paper33",
+    "qnum": 2,
+    "marks": 2,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.1",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Angles",
+    "qtype": "geometrical terms",
+    "g": "mixed",
+    "src": "0580/33/O/N/25 Q02",
+    "year": 2025,
+    "session": "OctNov",
+    "tex": "$A$ and $B$ lie on a circle, centre $O$.\n\\newline\n\n(a) Write down the mathematical name of the line $AB$.\n\\newline\n\n(b) On the diagram, draw a radius.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down the mathematical name of the line $AB$.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "On the diagram, draw a radius.\n\\newline\n"
+          }
+        ],
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "recall",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q02-Circle.tex"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "$A$ and $B$ lie on a circle, centre $O$.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "\\relinput{Figures/Q02-Circle.tex}\n\n\\vgap\n\n$A$ and $B$ lie on a circle, centre $O$.\n\n\\begin{parts}\n\\item Write down the mathematical name of the line $AB$.\n\n\\vgap\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item On the diagram, draw a radius.\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025OctNov/Paper33/Q02/Q02-Circle.png"
+    ]
+  },
+  {
+    "id": "0580-2025OctNov-Paper33-Q03",
+    "paper": "2025OctNov-Paper33",
+    "qnum": 3,
+    "marks": 3,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.4",
+    "d": 1,
+    "cat": "number",
+    "topic": "Fractions, decimals and percentages",
+    "qtype": "FDP inter-conversion",
+    "g": "mixed",
+    "src": "0580/33/O/N/25 Q03",
+    "year": 2025,
+    "session": "OctNov",
+    "tex": "(a) Write 0.25 as a fraction.\n\\newline\n\n(b) Write $\\dfrac{1}{2}$ as a percentage.\n\\newline\n\n(c) Write 7\\% as a decimal.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write 0.25 as a fraction.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write $\\dfrac{1}{2}$ as a percentage.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "\\%"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write 7\\% as a decimal.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "write",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Write 0.25 as a fraction.\n\n\\vgap\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Write $\\dfrac{1}{2}$ as a percentage.\n\n\\vgap\n\n\\AnswerLine[][\\%]\n\\Marks{1}\n\n\\item Write 7\\% as a decimal.\n\n\\vgap\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2025OctNov-Paper33-Q04",
+    "paper": "2025OctNov-Paper33",
+    "qnum": 4,
+    "marks": 2,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.6",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/33/O/N/25 Q04",
+    "year": 2025,
+    "session": "OctNov",
+    "tex": "(a) \n\nWrite down the mathematical name of this solid.\n\\newline\n\n(b) \n\nWrite down the mathematical name of this type of triangle.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "$\\,$"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q04a-Cylinder.tex"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "text",
+            "content": "Write down the mathematical name of this solid.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "$\\,$"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q04b-EquilateralTriangle.tex"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "text",
+            "content": "Write down the mathematical name of this type of triangle.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "recall",
+    "cmd": "write",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item \\,\n\n\\relinput{Figures/Q04a-Cylinder.tex}\n\n\\vgap\n\nWrite down the mathematical name of this solid.\n\n\\vgap\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item \\,\n\n\\relinput{Figures/Q04b-EquilateralTriangle.tex}\n\n\\vgap\n\nWrite down the mathematical name of this type of triangle.\n\n\\vgap\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025OctNov/Paper33/Q04/Q04a-Cylinder.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2025OctNov/Paper33/Q04/Q04b-EquilateralTriangle.png"
+    ]
+  },
+  {
+    "id": "0580-2025OctNov-Paper33-Q05",
+    "paper": "2025OctNov-Paper33",
+    "qnum": 5,
+    "marks": 3,
+    "topics": [
+      "Probability"
+    ],
+    "s": "8.1",
+    "d": 1,
+    "cat": "probability",
+    "topic": "Basic probability",
+    "qtype": "basic probability",
+    "g": "mixed",
+    "src": "0580/33/O/N/25 Q05",
+    "year": 2025,
+    "session": "OctNov",
+    "tex": "The diagram shows a fair 5-sided spinner.\n\\newline\n\nThe spinner is spun once.\n\\newline\n\n(a) Write down the colour the spinner is least likely to land on.\n\\newline\n\n(b) Find the probability that the spinner lands on white.\n\\newline\n\n(c) Find the probability that the spinner does not land on red.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down the colour the spinner is least likely to land on.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the probability that the spinner lands on white.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the probability that the spinner does not land on red.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q05-Spinner.tex"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "The diagram shows a fair 5-sided spinner.\n\\newline\n\nThe spinner is spun once.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2025OctNov/Paper33/Q05/Q05.png"
+      }
+    ],
+    "_rawBody": "\\relinput{Figures/Q05-Spinner.tex}\n\n\\vgap\n\nThe diagram shows a fair 5-sided spinner.\n\nThe spinner is spun once.\n\n\\begin{parts}\n\\item Write down the colour the spinner is least likely to land on.\n\n\\vgap\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Find the probability that the spinner lands on white.\n\n\\vgap\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Find the probability that the spinner does not land on red.\n\n\\vgap\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025OctNov/Paper33/Q05/Q05-Spinner.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2025OctNov/Paper33/Q05/Q05.png"
+    ]
+  },
+  {
+    "id": "0580-2025OctNov-Paper33-Q06",
+    "paper": "2025OctNov-Paper33",
+    "qnum": 6,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.1",
+    "d": 1,
+    "cat": "number",
+    "topic": "Types of number",
+    "qtype": "reciprocal and numerical power calculation",
+    "g": "indices",
+    "src": "0580/33/O/N/25 Q06",
+    "year": 2025,
+    "session": "OctNov",
+    "tex": "(a) Write down the reciprocal of 8.\n\\newline\n\n(b) Work out $19^3$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down the reciprocal of 8.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Work out $19^3$.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "calculate",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Write down the reciprocal of 8.\n\n\\vgap\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Work out $19^3$.\n\n\\vgap\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2025OctNov-Paper33-Q07",
+    "paper": "2025OctNov-Paper33",
+    "qnum": 7,
+    "marks": 2,
+    "topics": [
+      "Statistics"
+    ],
+    "s": "9.4",
+    "d": 1,
+    "cat": "statistics",
+    "topic": "Charts and graphs",
+    "qtype": "statistical charts",
+    "g": "mixed",
+    "src": "0580/33/O/N/25 Q07",
+    "year": 2025,
+    "session": "OctNov",
+    "tex": "A newspaper prints this bar chart to show the number of cars sold by a garage in March, April and May.\n\\newline\n\nGive two reasons why the bar chart is incorrect.\n\\newline\n",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "recall",
+    "cmd": "other",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q07-BarChart.tex"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "A newspaper prints this bar chart to show the number of cars sold by a garage in March, April and May.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "Give two reasons why the bar chart is incorrect.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      }
+    ],
+    "answer": {
+      "type": "none",
+      "space": {
+        "type": "drawing",
+        "height": "3cm",
+        "cmd": "Answerspace"
+      }
+    },
+    "_rawBody": "\\relinput{Figures/Q07-BarChart.tex}\n\n\\vgap\n\nA newspaper prints this bar chart to show the number of cars sold by a garage in March, April and May.\n\n\\vgap\n\nGive two reasons why the bar chart is incorrect.\n\n\\vgap\n\n\\Answerspace[3cm]\n\\Marks{2}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025OctNov/Paper33/Q07/Q07-BarChart.png"
+    ]
+  },
+  {
+    "id": "0580-2025OctNov-Paper33-Q08",
+    "paper": "2025OctNov-Paper33",
+    "qnum": 8,
+    "marks": 1,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.15",
+    "d": 1,
+    "cat": "number",
+    "topic": "Speed, distance, time",
+    "qtype": "time unit conversion",
+    "g": "mixed",
+    "src": "0580/33/O/N/25 Q08",
+    "year": 2025,
+    "session": "OctNov",
+    "tex": "Work out the number of seconds in six and a half hours.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Work out the number of seconds in six and a half hours.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "seconds"
+    },
+    "_rawBody": "Work out the number of seconds in six and a half hours.\n\n\\vgap\n\n\\AnswerLine[][seconds]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025OctNov-Paper33-Q09",
+    "paper": "2025OctNov-Paper33",
+    "qnum": 9,
+    "marks": 2,
+    "topics": [
+      "Mensuration"
+    ],
+    "s": "5.5",
+    "d": 1,
+    "cat": "mensuration",
+    "topic": "Compound shapes",
+    "qtype": "compound shapes",
+    "g": "mixed",
+    "src": "0580/33/O/N/25 Q09",
+    "year": 2025,
+    "session": "OctNov",
+    "tex": "Find the area of the shape.\n\\newline\n",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q09-LShape.tex"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "Find the area of the shape.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "cm$^2$"
+    },
+    "_rawBody": "\\relinput{Figures/Q09-LShape.tex}\n\n\\vgap\n\nFind the area of the shape.\n\n\\vgap\n\n\\AnswerLine[][cm$^2$]\n\\Marks{2}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025OctNov/Paper33/Q09/Q09-LShape.png"
+    ]
+  },
+  {
+    "id": "0580-2025OctNov-Paper33-Q10",
+    "paper": "2025OctNov-Paper33",
+    "qnum": 10,
+    "marks": 4,
+    "topics": [
+      "Statistics"
+    ],
+    "s": "9.3",
+    "d": 1,
+    "cat": "statistics",
+    "topic": "Frequency tables",
+    "qtype": "averages and spread",
+    "g": "mixed",
+    "src": "0580/33/O/N/25 Q10",
+    "year": 2025,
+    "session": "OctNov",
+    "tex": "(a) Jason records his score in each of 10 games of cricket.\n\\newline\n\n\\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}\n\\hline\n16 & 7 & 21 & 8 & 20 & 9 & 11 & 7 & 14 & 3 \\\\\n\\hline\n\\end{tabular}\n(i)  Find the mode.\n\\newline\n\n Work out the range.\n\\newline\n\n(b) Ed plays 5 games.\n\\newline\n\nHis mean score is 28.\n\\newline\n\nAfter one more game his mean score is now 26.\n\\newline\n\nWork out his score in the sixth game.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Jason records his score in each of 10 games of cricket.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}\n\\hline\n16 & 7 & 21 & 8 & 20 & 9 & 11 & 7 & 14 & 3 \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the mode.\n\\newline\n"
+              },
+              {
+                "type": "space",
+                "height": "0.8em",
+                "cmd": "vgap"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Work out the range.\n\\newline\n"
+              },
+              {
+                "type": "space",
+                "height": "0.8em",
+                "cmd": "vgap"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Ed plays 5 games.\n\\newline\n\nHis mean score is 28.\n\\newline\n\nAfter one more game his mean score is now 26.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "text",
+            "content": "Work out his score in the sixth game.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Jason records his score in each of 10 games of cricket.\n\n\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}\n\\hline\n16 & 7 & 21 & 8 & 20 & 9 & 11 & 7 & 14 & 3 \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\begin{subparts}\n\\subpart Find the mode.\n\n\\vgap\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\subpart Work out the range.\n\n\\vgap\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{subparts}\n\n\\item Ed plays 5 games.\n\nHis mean score is 28.\n\nAfter one more game his mean score is now 26.\n\n\\vgap\n\nWork out his score in the sixth game.\n\n\\vgap\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2025OctNov-Paper33-Q11",
+    "paper": "2025OctNov-Paper33",
+    "qnum": 11,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.13",
+    "d": 1,
+    "cat": "number",
+    "topic": "Electronic calculators",
+    "qtype": "percentage of money calculation with rounding",
+    "g": "mixed",
+    "src": "0580/33/O/N/25 Q11",
+    "year": 2025,
+    "session": "OctNov",
+    "tex": "Calculate 19\\% of \\$46.25.\n\\newline\n\nGive your answer correct to the nearest cent.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Calculate 19\\% of \\$46.25.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "Give your answer correct to the nearest cent.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "\\$"
+    },
+    "_rawBody": "Calculate 19\\% of \\$46.25\\,.\n\n\\vgap\n\nGive your answer correct to the nearest cent.\n\n\\vgap\n\n\\AnswerLine[\\$][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025OctNov-Paper33-Q12",
+    "paper": "2025OctNov-Paper33",
+    "qnum": 12,
+    "marks": 4,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.2",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Rearranging formulae",
+    "qtype": "simplifying algebraic expressions, substitution and solving for variable",
+    "g": "simplify",
+    "src": "0580/33/O/N/25 Q12",
+    "year": 2025,
+    "session": "OctNov",
+    "tex": "(a) Simplify.\n\\newline\n\n$$5b - 8c + 2b - 3c$$\n\n(b) $q = 3r + 5t$\n\nFind the value of $t$ when $q = 37$ and $r = 4$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Simplify.\n\\newline\n\n$$5b - 8c + 2b - 3c$$"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "$q = 3r + 5t$"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "text",
+            "content": "Find the value of $t$ when $q = 37$ and $r = 4$.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$t = $"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Simplify.\n\n$$5b - 8c + 2b - 3c$$\n\n\\vgap\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item $q = 3r + 5t$\n\n\\vgap\n\nFind the value of $t$ when $q = 37$ and $r = 4$.\n\n\\vgap\n\n\\AnswerLine[$t = $][]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2025OctNov-Paper33-Q13",
+    "paper": "2025OctNov-Paper33",
+    "qnum": 13,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.11",
+    "d": 1,
+    "cat": "number",
+    "topic": "Money and finance",
+    "qtype": "divide quantity in a given ratio",
+    "g": "mixed",
+    "src": "0580/33/O/N/25 Q13",
+    "year": 2025,
+    "session": "OctNov",
+    "tex": "Divide \\$136 in the ratio $3 : 5$.\n\\newline\n\n  ,",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "other",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Divide \\$136 in the ratio $3 : 5$.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      }
+    ],
+    "answer": {
+      "type": "expression",
+      "fields": 2,
+      "_rawAnswer": "\\hfill \\AnswerLineShort[\\$][] , \\AnswerLineShort[\\$][]"
+    },
+    "_rawBody": "Divide \\$136 in the ratio $3 : 5$.\n\n\\vgap\n\n\\hfill \\AnswerLineShort[\\$][] , \\AnswerLineShort[\\$][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025OctNov-Paper33-Q14",
+    "paper": "2025OctNov-Paper33",
+    "qnum": 14,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.6",
+    "d": 1,
+    "cat": "number",
+    "topic": "Standard form",
+    "qtype": "integer division application problem",
+    "g": "mixed",
+    "src": "0580/33/O/N/25 Q14",
+    "year": 2025,
+    "session": "OctNov",
+    "tex": "Carl packs pens into boxes.\n\\newline\n\nEach box holds 68 pens.\n\\newline\n\nCarl has 980 pens and 14 boxes.\n\\newline\n\nDoes Carl have enough boxes to pack all the pens?\n\nShow how you decide.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "other",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Carl packs pens into boxes.\n\\newline\n\nEach box holds 68 pens.\n\\newline\n\nCarl has 980 pens and 14 boxes.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "Does Carl have enough boxes to pack all the pens?\n\nShow how you decide.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      }
+    ],
+    "answer": {
+      "type": "none",
+      "space": {
+        "type": "drawing",
+        "height": "3cm",
+        "cmd": "Answerspace"
+      }
+    },
+    "_rawBody": "Carl packs pens into boxes.\n\nEach box holds 68 pens.\n\nCarl has 980 pens and 14 boxes.\n\n\\vgap\n\nDoes Carl have enough boxes to pack all the pens?\n\nShow how you decide.\n\n\\vgap\n\n\\Answerspace[3cm]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025OctNov-Paper33-Q15",
+    "paper": "2025OctNov-Paper33",
+    "qnum": 15,
+    "marks": 1,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.6",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/33/O/N/25 Q15",
+    "year": 2025,
+    "session": "OctNov",
+    "tex": "Find the value of $x$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q15-Angles.tex"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "Find the value of $x$.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "$x = $"
+    },
+    "_rawBody": "\\relinput{Figures/Q15-Angles.tex}\n\n\\vgap\n\nFind the value of $x$.\n\n\\vgap\n\n\\AnswerLine[$x = $][]\n\\Marks{1}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025OctNov/Paper33/Q15/Q15-Angles.png"
+    ]
+  },
+  {
+    "id": "0580-2025OctNov-Paper33-Q16",
+    "paper": "2025OctNov-Paper33",
+    "qnum": 16,
+    "marks": 5,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.6",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/33/O/N/25 Q16",
+    "year": 2025,
+    "session": "OctNov",
+    "tex": "The diagram shows an isosceles triangle.\n\\newline\n\n(a) Calculate the value of $x$.\n\\newline\n\n(b) The triangle is one face of a square-based pyramid.\n\\newline\n\nEach triangular face of the pyramid is the same.\n\\newline\n\nOn the $1\\,\\text{cm}^2$ grid, draw a net of this pyramid.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Calculate the value of $x$.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x = $"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "The triangle is one face of a square-based pyramid.\n\\newline\n\nEach triangular face of the pyramid is the same.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "text",
+            "content": "On the $1\\,\\text{cm}^2$ grid, draw a net of this pyramid.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q16b-Grid.tex"
+          }
+        ]
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q16-IsoscelesTriangle.tex"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "The diagram shows an isosceles triangle.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "\\relinput{Figures/Q16-IsoscelesTriangle.tex}\n\n\\vgap\n\nThe diagram shows an isosceles triangle.\n\n\\begin{parts}\n\\item Calculate the value of $x$.\n\n\\vgap\n\n\\AnswerLine[$x = $][]\n\\Marks{2}\n\n\\item The triangle is one face of a square-based pyramid.\n\nEach triangular face of the pyramid is the same.\n\n\\vgap\n\nOn the 1\\,cm$^2$ grid, draw a net of this pyramid.\n\n\\vgap\n\n\\relinput{Figures/Q16b-Grid.tex}\n\n\\Marks{3}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025OctNov/Paper33/Q16/Q16-IsoscelesTriangle.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2025OctNov/Paper33/Q16/Q16b-Grid.png"
+    ]
+  },
+  {
+    "id": "0580-2025OctNov-Paper33-Q17",
+    "paper": "2025OctNov-Paper33",
+    "qnum": 17,
+    "marks": 1,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.9",
+    "d": 1,
+    "cat": "number",
+    "topic": "Percentages",
+    "qtype": "rounding to significant figures",
+    "g": "mixed",
+    "src": "0580/33/O/N/25 Q17",
+    "year": 2025,
+    "session": "OctNov",
+    "tex": "Write 46.179 correct to 4 significant figures.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "write",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Write 46.179 correct to 4 significant figures.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Write 46.179 correct to 4 significant figures.\n\n\\vgap\n\n\\AnswerLine[][]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025OctNov-Paper33-Q18",
+    "paper": "2025OctNov-Paper33",
+    "qnum": 18,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.14",
+    "d": 1,
+    "cat": "number",
+    "topic": "Surds",
+    "qtype": "calculator use for complex expression and negative index calculation",
+    "g": "indices",
+    "src": "0580/33/O/N/25 Q18",
+    "year": 2025,
+    "session": "OctNov",
+    "tex": "Calculate.\n\\newline\n\n(a) $\\sqrt{\\dfrac{8.4^2 + 9.3}{26.5}}$\n\n(b) $4^{-3}$",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "$\\sqrt{\\dfrac{8.4^2 + 9.3}{26.5}}$"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "$4^{-3}$"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Calculate.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "Calculate.\n\n\\begin{parts}\n\\item $\\sqrt{\\dfrac{8.4^2 + 9.3}{26.5}}$\n\n\\vgap\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item $4^{-3}$\n\n\\vgap\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2025OctNov-Paper33-Q19",
+    "paper": "2025OctNov-Paper33",
+    "qnum": 19,
+    "marks": 2,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.2",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Rearranging formulae",
+    "qtype": "expanding and simplifying algebraic expressions",
+    "g": "simplify",
+    "src": "0580/33/O/N/25 Q19",
+    "year": 2025,
+    "session": "OctNov",
+    "tex": "Expand and simplify.\n\\newline\n\n$$3(5x + 2) - 4(x + 1)$$",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Expand and simplify.\n\\newline\n\n$$3(5x + 2) - 4(x + 1)$$"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Expand and simplify.\n\n$$3(5x + 2) - 4(x + 1)$$\n\n\\vgap\n\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025OctNov-Paper33-Q21",
+    "paper": "2025OctNov-Paper33",
+    "qnum": 21,
+    "marks": 5,
+    "topics": [
+      "Transformations and vectors"
+    ],
+    "s": "7.1",
+    "d": 1,
+    "cat": "vectors",
+    "topic": "Translation",
+    "qtype": "transformations",
+    "g": "mixed",
+    "src": "0580/33/O/N/25 Q21",
+    "year": 2025,
+    "session": "OctNov",
+    "tex": "The diagram shows shapes $A$ and $B$.\n\\newline\n\n(a) Describe fully the **single** transformation that maps shape $A$ onto shape $B$.\n\\newline\n\n(b) On the grid, draw the image of shape $A$ after a reflection in the line $y = 0$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Describe fully the \\textbf{single} transformation that maps shape $A$ onto shape $B$.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          }
+        ],
+        "answer": {
+          "type": "none",
+          "space": {
+            "type": "drawing",
+            "height": "2cm",
+            "cmd": "Answerspace"
+          }
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "On the grid, draw the image of shape $A$ after a reflection in the line $y = 0$.\n\\newline\n"
+          }
+        ],
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "recall",
+    "cmd": "describe",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The diagram shows shapes $A$ and $B$.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2025OctNov/Paper33/Q21/Q21.png"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "figure",
+        "src": "Figures/Q21-Transformation.tex"
+      }
+    ],
+    "_rawBody": "The diagram shows shapes $A$ and $B$.\n\n\\vgap\n\n\\relinput{Figures/Q21-Transformation.tex}\n\n\\begin{parts}\n\\item Describe fully the \\textbf{single} transformation that maps shape $A$ onto shape $B$.\n\n\\vgap\n\n\\Answerspace[2cm]\n\\Marks{3}\n\n\\item On the grid, draw the image of shape $A$ after a reflection in the line $y = 0$.\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025OctNov/Paper33/Q21/Q21-Transformation.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2025OctNov/Paper33/Q21/Q21.png"
+    ]
+  },
+  {
+    "id": "0580-2025OctNov-Paper33-Q22",
+    "paper": "2025OctNov-Paper33",
+    "qnum": 22,
+    "marks": 6,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.10",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Graphs of functions",
+    "qtype": "completing table of values and drawing quadratic graph",
+    "g": "quadratic",
+    "src": "0580/33/O/N/25 Q22",
+    "year": 2025,
+    "session": "OctNov",
+    "tex": "(a) Complete the table of values for $y = x^2 - 4$.\n\\newline\n\n(b) On the grid, draw the graph of $y = x^2 - 4$ for $-4 \\leqslant x \\leqslant 4$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Complete the table of values for $y = x^2 - 4$.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q22a-Table.tex"
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "text",
+            "content": "On the grid, draw the graph of $y = x^2 - 4$ for $-4 \\leqslant x \\leqslant 4$.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q22b-Graph.tex"
+          }
+        ]
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Complete the table of values for $y = x^2 - 4$.\n\n\\vgap\n\n\\relinput{Figures/Q22a-Table.tex}\n\n\\Marks{2}\n\n\\item On the grid, draw the graph of $y = x^2 - 4$ for $-4 \\leqslant x \\leqslant 4$.\n\n\\vgap\n\n\\relinput{Figures/Q22b-Graph.tex}\n\n\\Marks{4}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025OctNov/Paper33/Q22/Q22a-Table.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2025OctNov/Paper33/Q22/Q22b-Graph.png"
+    ]
+  },
+  {
+    "id": "0580-2025OctNov-Paper33-Q23",
+    "paper": "2025OctNov-Paper33",
+    "qnum": 23,
+    "marks": 5,
+    "topics": [
+      "Mensuration"
+    ],
+    "s": "5.4",
+    "d": 1,
+    "cat": "mensuration",
+    "topic": "Volume",
+    "qtype": "surface area and volume",
+    "g": "mixed",
+    "src": "0580/33/O/N/25 Q23",
+    "year": 2025,
+    "session": "OctNov",
+    "tex": "(a) Jo buys a candle for \\$3.20.\n\\newline\n\nShe sells the candle for \\$4.64.\n\\newline\n\nFind the percentage profit on the candle.\n\\newline\n\n(b) The candle is in the shape of a cone.\n\\newline\n\nThe volume of the candle is $900\\,\\text{cm}^3$.\n\\newline\n\nThe height of the candle is $8\\,\\text{cm}$.\n\\newline\n\nCalculate the radius of the candle.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Jo buys a candle for \\$3.20.\n\\newline\n\nShe sells the candle for \\$4.64.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "text",
+            "content": "Find the percentage profit on the candle.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "\\%"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "The candle is in the shape of a cone.\n\\newline\n\nThe volume of the candle is $900\\,\\text{cm}^3$.\n\\newline\n\nThe height of the candle is $8\\,\\text{cm}$.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "text",
+            "content": "Calculate the radius of the candle.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "cm"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Jo buys a candle for \\$3.20\\,.\n\nShe sells the candle for \\$4.64\\,.\n\n\\vgap\n\nFind the percentage profit on the candle.\n\n\\vgap\n\n\\AnswerLine[][\\%]\n\\Marks{2}\n\n\\item The candle is in the shape of a cone.\n\nThe volume of the candle is 900\\,cm$^3$.\n\nThe height of the candle is 8\\,cm.\n\n\\vgap\n\nCalculate the radius of the candle.\n\n\\vgap\n\n\\AnswerLine[][cm]\n\\Marks{3}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2025OctNov-Paper33-Q24",
+    "paper": "2025OctNov-Paper33",
+    "qnum": 24,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": null,
+    "d": 1,
+    "cat": "number",
+    "topic": null,
+    "qtype": "algebra: rearranging formulae (out of number topic scope)",
+    "g": "rearrange",
+    "src": "0580/33/O/N/25 Q24",
+    "year": 2025,
+    "session": "OctNov",
+    "tex": "Make $p$ the subject of the formula   $m = 9p + 32$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "rearrange",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Make $p$ the subject of the formula \\quad $m = 9p + 32$.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "$p = $"
+    },
+    "_rawBody": "Make $p$ the subject of the formula \\quad $m = 9p + 32$.\n\n\\vgap\n\n\\AnswerLine[$p = $][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025OctNov-Paper33-Q25",
+    "paper": "2025OctNov-Paper33",
+    "qnum": 25,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.1",
+    "d": 1,
+    "cat": "number",
+    "topic": "Types of number",
+    "qtype": "LCM calculation",
+    "g": "mixed",
+    "src": "0580/33/O/N/25 Q25",
+    "year": 2025,
+    "session": "OctNov",
+    "tex": "Find the lowest common multiple (LCM) of 20 and 36.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Find the lowest common multiple (LCM) of 20 and 36.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Find the lowest common multiple (LCM) of 20 and 36.\n\n\\vgap\n\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025OctNov-Paper33-Q26",
+    "paper": "2025OctNov-Paper33",
+    "qnum": 26,
+    "marks": 3,
+    "topics": [
+      "Coordinate geometry"
+    ],
+    "s": "3.5",
+    "d": 1,
+    "cat": "coord",
+    "topic": "Parallel and perpendicular lines",
+    "qtype": "equation of a straight line",
+    "g": "mixed",
+    "src": "0580/33/O/N/25 Q26",
+    "year": 2025,
+    "session": "OctNov",
+    "tex": "Line $L$ is drawn on the grid.\n\\newline\n\nFind the equation of line $L$ in the form $y = mx + c$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Line $L$ is drawn on the grid.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "figure",
+        "src": "Figures/Q26-LineGraph.tex"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "Find the equation of line $L$ in the form $y = mx + c$.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "$y = $"
+    },
+    "_rawBody": "Line $L$ is drawn on the grid.\n\n\\vgap\n\n\\relinput{Figures/Q26-LineGraph.tex}\n\n\\vgap\n\nFind the equation of line $L$ in the form $y = mx + c$.\n\n\\vgap\n\n\\AnswerLine[$y = $][]\n\\Marks{3}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025OctNov/Paper33/Q26/Q26-LineGraph.png"
+    ]
+  },
+  {
+    "id": "0580-2025OctNov-Paper33-Q28",
+    "paper": "2025OctNov-Paper33",
+    "qnum": 28,
+    "marks": 3,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.12",
+    "d": 1,
+    "cat": "number",
+    "topic": "Set notation",
+    "qtype": "average speed calculation, unit conversion",
+    "g": "mixed",
+    "src": "0580/33/O/N/25 Q28",
+    "year": 2025,
+    "session": "OctNov",
+    "tex": "The travel graph shows Chi's journey from home to the station.\n\\newline\n\nCalculate Chi's average speed for the whole journey.\n\\newline\n\nGive your answer in kilometres per hour.\n\\newline\n",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The travel graph shows Chi's journey from home to the station.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "figure",
+        "src": "Figures/Q28-TravelGraph.tex"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "Calculate Chi's average speed for the whole journey.\n\\newline\n\nGive your answer in kilometres per hour.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "km/h"
+    },
+    "_rawBody": "The travel graph shows Chi's journey from home to the station.\n\n\\vgap\n\n\\relinput{Figures/Q28-TravelGraph.tex}\n\n\\vgap\n\nCalculate Chi's average speed for the whole journey.\n\nGive your answer in kilometres per hour.\n\n\\vgap\n\n\\AnswerLine[][km/h]\n\\Marks{3}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025OctNov/Paper33/Q28/Q28-TravelGraph.png"
+    ]
+  },
+  {
+    "id": "0580-2025OctNov-Paper33-Q29",
+    "paper": "2025OctNov-Paper33",
+    "qnum": 29,
+    "marks": 4,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.4",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Circle theorems",
+    "qtype": "similarity and congruence",
+    "g": "mixed",
+    "src": "0580/33/O/N/25 Q29",
+    "year": 2025,
+    "session": "OctNov",
+    "tex": "(a) \n\nThe diagram shows two similar triangles, $A$ and $B$.\n\\newline\n\nCalculate the value of $x$.\n\\newline\n\n(b) \n\nThe diagram shows a right-angled triangle.\n\\newline\n\nCalculate the value of $y$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "$\\,$"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q29a-SimilarTriangles.tex"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "text",
+            "content": "The diagram shows two similar triangles, $A$ and $B$.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "text",
+            "content": "Calculate the value of $x$.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x = $"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "$\\,$"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q29b-RightTriangle.tex"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "text",
+            "content": "The diagram shows a right-angled triangle.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "text",
+            "content": "Calculate the value of $y$.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$y = $"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item \\,\n\n\\relinput{Figures/Q29a-SimilarTriangles.tex}\n\n\\vgap\n\nThe diagram shows two similar triangles, $A$ and $B$.\n\n\\vgap\n\nCalculate the value of $x$.\n\n\\vgap\n\n\\AnswerLine[$x = $][]\n\\Marks{2}\n\n\\item \\,\n\n\\relinput{Figures/Q29b-RightTriangle.tex}\n\n\\vgap\n\nThe diagram shows a right-angled triangle.\n\n\\vgap\n\nCalculate the value of $y$.\n\n\\vgap\n\n\\AnswerLine[$y = $][]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025OctNov/Paper33/Q29/Q29a-SimilarTriangles.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2025OctNov/Paper33/Q29/Q29b-RightTriangle.png"
+    ]
+  }
+]

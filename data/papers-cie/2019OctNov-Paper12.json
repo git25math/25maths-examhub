@@ -1,0 +1,1026 @@
+[
+  {
+    "id": "0580-2019OctNov-Paper12-Q01",
+    "paper": "2019OctNov-Paper12",
+    "qnum": 1,
+    "marks": 1,
+    "topics": [
+      "Algebra and graphs",
+      "Statistics"
+    ],
+    "s": "2.2",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Rearranging formulae",
+    "qtype": "simplifying algebraic expression",
+    "g": "simplify",
+    "src": "0580/12/O/N/19 Q01",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "Simplify $5t + 4t - 2t$.\n\\newline\n}",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "simplify",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\StemText{Simplify $5t + 4t - 2t$.\n\\newline\n}\n\n\\ImplicitPart"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "_compactAnswer": true
+    },
+    "_rawBody": "\\StemText{Simplify $5t + 4t - 2t$.}\n\n\\ImplicitPart\n\\AnswerLine[][]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper12-Q02",
+    "paper": "2019OctNov-Paper12",
+    "qnum": 2,
+    "marks": 1,
+    "topics": [
+      "Statistics"
+    ],
+    "s": "9.3",
+    "d": 1,
+    "cat": "statistics",
+    "topic": "Frequency tables",
+    "qtype": "averages and spread",
+    "g": "mixed",
+    "src": "0580/12/O/N/19 Q02",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "The lowest temperature recorded at Scott Base in Antarctica is $-57.0^\\circ$C.\n\\newline\n The highest temperature recorded at Scott Base is $63.8^\\circ$C more than this.\n\\newline\n\nWhat is the highest temperature recorded at Scott Base?}\n\n$^\\circ$C",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "other",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\StemText{The lowest temperature recorded at Scott Base in Antarctica is $-57.0^\\circ$C.\n\\newline\n The highest temperature recorded at Scott Base is $63.8^\\circ$C more than this.\n\\newline\n\nWhat is the highest temperature recorded at Scott Base?}\n\n\\ImplicitPart"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "_compactAnswer": true
+    },
+    "_rawBody": "\\StemText{The lowest temperature recorded at Scott Base in Antarctica is $-57.0^\\circ$C. The highest temperature recorded at Scott Base is $63.8^\\circ$C more than this.\n\nWhat is the highest temperature recorded at Scott Base?}\n\n\\ImplicitPart\n\\AnswerLine[][]$^\\circ$C\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper12-Q03",
+    "paper": "2019OctNov-Paper12",
+    "qnum": 3,
+    "marks": 1,
+    "topics": [
+      "Geometry",
+      "Statistics"
+    ],
+    "s": "4.3",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Symmetry",
+    "qtype": "scale drawings and bearings",
+    "g": "mixed",
+    "src": "0580/12/O/N/19 Q03",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "Measure the bearing of B from A.\n\\newline\n}\n\n$^\\circ$",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "other",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\StemText{\n\\begin{tikzpicture}[scale=0.8]\n    % Draw north arrow\n    \\draw[->, thick] (0,0) -- (0,2);\n    \\node at (0.3,1) {North};\n\n    % Draw point A\n    \\fill (0,0) circle (2pt);\n    \\node at (0,-0.3) {A};\n\n    % Draw point B\n    \\fill (1.5,0.8) circle (2pt);\n    \\node at (1.8,0.8) {B};\n\\end{tikzpicture}\n\nMeasure the bearing of B from A.\n\\newline\n}\n\n\\ImplicitPart"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "_compactAnswer": true
+    },
+    "_rawBody": "\\StemText{\n\\begin{tikzpicture}[scale=0.8]\n    % Draw north arrow\n    \\draw[->, thick] (0,0) -- (0,2);\n    \\node at (0.3,1) {North};\n\n    % Draw point A\n    \\fill (0,0) circle (2pt);\n    \\node at (0,-0.3) {A};\n\n    % Draw point B\n    \\fill (1.5,0.8) circle (2pt);\n    \\node at (1.8,0.8) {B};\n\\end{tikzpicture}\n\nMeasure the bearing of B from A.\n}\n\n\\ImplicitPart\n\\AnswerLine[][]$^\\circ$\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper12-Q04",
+    "paper": "2019OctNov-Paper12",
+    "qnum": 4,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.3",
+    "d": 1,
+    "cat": "number",
+    "topic": "Directed numbers",
+    "qtype": "calculating powers and roots",
+    "g": "indices",
+    "src": "0580/12/O/N/19 Q04",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "Find the value of\n\n(a) $2^{42}$,\n\n(b) $\\sqrt[3]{2197}$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "$2^{42}$,"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "$\\sqrt[3]{2197}$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Find the value of"
+      }
+    ],
+    "_rawBody": "Find the value of\n\n\\begin{parts}\n\\item $2^{42}$,\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item $\\sqrt[3]{2197}$.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper12-Q05",
+    "paper": "2019OctNov-Paper12",
+    "qnum": 5,
+    "marks": 2,
+    "topics": [
+      "Probability"
+    ],
+    "s": "8.3",
+    "d": 1,
+    "cat": "probability",
+    "topic": "Tree diagrams",
+    "qtype": "combined events",
+    "g": "mixed",
+    "src": "0580/12/O/N/19 Q05",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "A bag contains 3 green balls, 4 red balls and 1 blue ball only.\n\\newline\nMatt takes a ball from the bag at random.\n\\newline\n\nSome probabilities are marked on the probability scale.\n\\newline\n\nWrite down the letter that shows the probability that\n\n(a) Matt takes a red ball,\n\n(b) Matt does not take a blue ball.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Matt takes a red ball,"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Matt does not take a blue ball.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "write",
+    "stem": [
+      {
+        "type": "text",
+        "content": "A bag contains 3 green balls, 4 red balls and 1 blue ball only.\n\\newline\nMatt takes a ball from the bag at random.\n\\newline\n\nSome probabilities are marked on the probability scale.\n\\newline\n\n\\begin{tikzpicture}[scale=0.8]\n    % Draw probability scale\n    \\draw[thick] (0,0) -- (10,0);\n    \\draw[thick] (0,0) -- (0,-0.2);\n    \\draw[thick] (10,0) -- (10,-0.2);\n\n    % Labels\n    \\node at (-0.5,0) {0};\n    \\node at (5,0) {0.5};\n    \\node at (10.5,0) {1};\n\n    % Mark points A through I\n    \\foreach \\x/\\label in {1/A, 2/B, 3/C, 4/D, 5/E, 6/F, 7/G, 8/H, 9/I} {\n        \\draw[thick] (\\x*10/9,0) -- (\\x*10/9,0.3);\n        \\node at (\\x*10/9,0.5) {\\label};\n    }\n\\end{tikzpicture}\n\nWrite down the letter that shows the probability that"
+      }
+    ],
+    "_rawBody": "A bag contains 3 green balls, 4 red balls and 1 blue ball only.\nMatt takes a ball from the bag at random.\n\nSome probabilities are marked on the probability scale.\n\n\\begin{tikzpicture}[scale=0.8]\n    % Draw probability scale\n    \\draw[thick] (0,0) -- (10,0);\n    \\draw[thick] (0,0) -- (0,-0.2);\n    \\draw[thick] (10,0) -- (10,-0.2);\n\n    % Labels\n    \\node at (-0.5,0) {0};\n    \\node at (5,0) {0.5};\n    \\node at (10.5,0) {1};\n\n    % Mark points A through I\n    \\foreach \\x/\\label in {1/A, 2/B, 3/C, 4/D, 5/E, 6/F, 7/G, 8/H, 9/I} {\n        \\draw[thick] (\\x*10/9,0) -- (\\x*10/9,0.3);\n        \\node at (\\x*10/9,0.5) {\\label};\n    }\n\\end{tikzpicture}\n\nWrite down the letter that shows the probability that\n\n\\begin{parts}\n\\item Matt takes a red ball,\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Matt does not take a blue ball.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper12-Q06",
+    "paper": "2019OctNov-Paper12",
+    "qnum": 6,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.12",
+    "d": 1,
+    "cat": "number",
+    "topic": "Set notation",
+    "qtype": "interpreting travel graph for rates",
+    "g": "graph",
+    "src": "0580/12/O/N/19 Q06",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "Sara walks from home to school.\n\\newline\nThe travel graph shows her journey.\n\\newline\n\n(a) Sara stops at a shop on her way to school.\n\\newline\n\nFind the distance of the shop from her home.\n\\newline\n\n km\n\n(b) School starts at 08 55.\n\\newline\n\nFind the number of minutes between the time Sara arrives at school and the time school starts.\n\\newline\n\n min",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Sara stops at a shop on her way to school.\n\\newline\n\nFind the distance of the shop from her home.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "School starts at 08 55.\n\\newline\n\nFind the number of minutes between the time Sara arrives at school and the time school starts.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "analyse",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Sara walks from home to school.\n\\newline\nThe travel graph shows her journey.\n\\newline\n\n\\begin{tikzpicture}[scale=0.8]\n    % Draw axes\n    \\draw[->, thick] (0,0) -- (10,0) node[right] {Time};\n    \\draw[->, thick] (0,0) -- (0,4) node[above] {Distance (km)};\n\n    % Time labels\n    \\node at (0,-0.3) {08 00};\n    \\node at (2,-0.3) {08 10};\n    \\node at (4,-0.3) {08 20};\n    \\node at (6,-0.3) {08 30};\n    \\node at (8,-0.3) {08 40};\n    \\node at (9.5,-0.3) {08 50};\n    \\node at (10.5,-0.3) {09 00};\n\n    % Distance labels\n    \\node at (-0.3,0) {0};\n    \\node at (-0.3,1) {1};\n    \\node at (-0.3,2) {2};\n    \\node at (-0.3,3) {3};\n\n    % Labels\n    \\node at (-1,0) {Home};\n    \\node at (11,3) {School};\n\n    % Draw the travel graph (approximate based on typical CIE graph)\n    \\draw[thick] (0,0) -- (3,1.5) -- (6,1.5) -- (9,3);\n\\end{tikzpicture}"
+      }
+    ],
+    "_rawBody": "Sara walks from home to school.\nThe travel graph shows her journey.\n\n\\begin{tikzpicture}[scale=0.8]\n    % Draw axes\n    \\draw[->, thick] (0,0) -- (10,0) node[right] {Time};\n    \\draw[->, thick] (0,0) -- (0,4) node[above] {Distance (km)};\n\n    % Time labels\n    \\node at (0,-0.3) {08 00};\n    \\node at (2,-0.3) {08 10};\n    \\node at (4,-0.3) {08 20};\n    \\node at (6,-0.3) {08 30};\n    \\node at (8,-0.3) {08 40};\n    \\node at (9.5,-0.3) {08 50};\n    \\node at (10.5,-0.3) {09 00};\n\n    % Distance labels\n    \\node at (-0.3,0) {0};\n    \\node at (-0.3,1) {1};\n    \\node at (-0.3,2) {2};\n    \\node at (-0.3,3) {3};\n\n    % Labels\n    \\node at (-1,0) {Home};\n    \\node at (11,3) {School};\n\n    % Draw the travel graph (approximate based on typical CIE graph)\n    \\draw[thick] (0,0) -- (3,1.5) -- (6,1.5) -- (9,3);\n\\end{tikzpicture}\n\n\\begin{parts}\n\\item Sara stops at a shop on her way to school.\n\nFind the distance of the shop from her home.\n\n\\AnswerLine[][] km\n\\Marks{1}\n\n\\item School starts at 08 55.\n\nFind the number of minutes between the time Sara arrives at school and the time school starts.\n\n\\AnswerLine[][] min\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper12-Q07",
+    "paper": "2019OctNov-Paper12",
+    "qnum": 7,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.5",
+    "d": 1,
+    "cat": "number",
+    "topic": "Ordering",
+    "qtype": "ordering fractions decimals percentages",
+    "g": "mixed",
+    "src": "0580/12/O/N/19 Q07",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "Write these in order of size, starting with the smallest.\n\\newline\n\n\\[\n\\frac{7}{8},   0.8,   78\\%,   \\frac{5}{7}\n\\]\n\n ,  ,  ,",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "write",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Write these in order of size, starting with the smallest.\n\\newline\n\n\\[\n\\frac{7}{8}, \\quad 0.8, \\quad 78\\%, \\quad \\frac{5}{7}\n\\]"
+      }
+    ],
+    "answer": {
+      "type": "multiline",
+      "lines": 4,
+      "template": "____\\n____\\n____\\n____",
+      "lineSep": "blank"
+    },
+    "_rawBody": "Write these in order of size, starting with the smallest.\n\n\\[\n\\frac{7}{8}, \\quad 0.8, \\quad 78\\%, \\quad \\frac{5}{7}\n\\]\n\n\\AnswerLine[] , \\AnswerLine[] , \\AnswerLine[] , \\AnswerLine[]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper12-Q08",
+    "paper": "2019OctNov-Paper12",
+    "qnum": 8,
+    "marks": 2,
+    "topics": [
+      "Geometry",
+      "Mensuration",
+      "Statistics"
+    ],
+    "s": "4.6",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/12/O/N/19 Q08",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "The table shows how children in Ivan's class travel to school.\n\\newline\n\n\\begin{tabular}{|l|r|}\n\\hline\nTravel to school & Number of children \\\\\n\\hline\nWalk & 12 \\\\\nCar & 7 \\\\\nBicycle & 9 \\\\\nBus & 4 \\\\\n\\hline\n\\end{tabular}\n\nIvan wants to draw a pie chart to show this information.\n\\newline\n\nFind the sector angle for children who walk to school.\n\\newline\n\n$^\\circ$",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The table shows how children in Ivan's class travel to school.\n\\newline\n"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{tabular}{|l|r|}\n\\hline\nTravel to school & Number of children \\\\\n\\hline\nWalk & 12 \\\\\nCar & 7 \\\\\nBicycle & 9 \\\\\nBus & 4 \\\\\n\\hline\n\\end{tabular}"
+      },
+      {
+        "type": "text",
+        "content": "Ivan wants to draw a pie chart to show this information.\n\\newline\n\nFind the sector angle for children who walk to school.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "The table shows how children in Ivan's class travel to school.\n\n\\begin{tabular}{|l|r|}\n\\hline\nTravel to school & Number of children \\\\\n\\hline\nWalk & 12 \\\\\nCar & 7 \\\\\nBicycle & 9 \\\\\nBus & 4 \\\\\n\\hline\n\\end{tabular}\n\nIvan wants to draw a pie chart to show this information.\n\nFind the sector angle for children who walk to school.\n\n\\AnswerLine[][]$^\\circ$\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper12-Q09",
+    "paper": "2019OctNov-Paper12",
+    "qnum": 9,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.16",
+    "d": 1,
+    "cat": "number",
+    "topic": "Upper and lower bounds",
+    "qtype": "currency conversion",
+    "g": "mixed",
+    "src": "0580/12/O/N/19 Q09",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "Rashid changes 30 000 rupees to dollars when the exchange rate is \\$1 = 68.14 rupees.\n\\newline\n\nHow many dollars does he receive?\n\n\\$",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "other",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Rashid changes 30 000 rupees to dollars when the exchange rate is \\$1 = 68.14 rupees.\n\\newline\n\nHow many dollars does he receive?\n\n\\$ \\AnswerLine[]"
+      }
+    ],
+    "_rawBody": "Rashid changes 30 000 rupees to dollars when the exchange rate is \\$1 = 68.14 rupees.\n\nHow many dollars does he receive?\n\n\\$ \\AnswerLine[]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper12-Q10",
+    "paper": "2019OctNov-Paper12",
+    "qnum": 10,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.12",
+    "d": 1,
+    "cat": "number",
+    "topic": "Set notation",
+    "qtype": "unit conversion (mass and area)",
+    "g": "mixed",
+    "src": "0580/12/O/N/19 Q10",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "Complete the statements.\n\\newline\n\n3.5 kg =  g\n\n1.4 m$^2$ =  cm$^2$",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Complete the statements.\n\\newline\n\n3.5 kg = \\AnswerLine[] g\n\n1.4 m$^2$ = \\AnswerLine[] cm$^2$"
+      }
+    ],
+    "_rawBody": "Complete the statements.\n\n3.5 kg = \\AnswerLine[] g\n\n1.4 m$^2$ = \\AnswerLine[] cm$^2$\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper12-Q11",
+    "paper": "2019OctNov-Paper12",
+    "qnum": 11,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.12",
+    "d": 1,
+    "cat": "number",
+    "topic": "Set notation",
+    "qtype": "average speed calculation",
+    "g": "mixed",
+    "src": "0580/12/O/N/19 Q11",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "Kiran leaves home at 9.45 am.\n\\newline\nShe drives 135 km to visit a friend.\n\\newline\nShe arrives at her friend's house at 11.15 am.\n\\newline\n\nWork out her average speed in km/h.\n\\newline\n\n km/h",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Kiran leaves home at 9.45 am.\n\\newline\nShe drives 135 km to visit a friend.\n\\newline\nShe arrives at her friend's house at 11.15 am.\n\\newline\n\nWork out her average speed in km/h.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Kiran leaves home at 9.45 am.\nShe drives 135 km to visit a friend.\nShe arrives at her friend's house at 11.15 am.\n\nWork out her average speed in km/h.\n\n\\AnswerLine[] km/h\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper12-Q12",
+    "paper": "2019OctNov-Paper12",
+    "qnum": 12,
+    "marks": 2,
+    "topics": [
+      "Number",
+      "Geometry",
+      "Statistics"
+    ],
+    "s": null,
+    "d": 1,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/12/O/N/19 Q12",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "The scatter diagram shows the age and value of each of ten cars, all of the same model.\n\\newline\n\nBy drawing a line of best fit, estimate the value of a car that is 6 years old.\n\\newline\n\n\\$",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The scatter diagram shows the age and value of each of ten cars, all of the same model.\n\\newline\n\n\\begin{tikzpicture}[scale=0.6]\n    % Draw axes\n    \\draw[->, thick] (0,0) -- (12,0) node[right] {Age (years)};\n    \\draw[->, thick] (0,0) -- (0,14) node[above] {Value (\\$)};\n\n    % Scale labels\n    \\node at (0,-0.5) {0};\n    \\node at (2,-0.5) {2};\n    \\node at (4,-0.5) {4};\n    \\node at (6,-0.5) {6};\n    \\node at (8,-0.5) {8};\n    \\node at (10,-0.5) {10};\n    \\node at (12,-0.5) {12};\n\n    \\node at (-0.5,0) {0};\n    \\node at (-0.5,2) {2000};\n    \\node at (-0.5,4) {4000};\n    \\node at (-0.5,6) {6000};\n    \\node at (-0.5,8) {8000};\n    \\node at (-0.5,10) {10000};\n    \\node at (-0.5,12) {12000};\n    \\node at (-0.5,14) {14000};\n\n    % Scatter points (approximate representation)\n    \\fill (1,1) circle (2pt);\n    \\fill (2,3) circle (2pt);\n    \\fill (3,4) circle (2pt);\n    \\fill (4,6) circle (2pt);\n    \\fill (5,7) circle (2pt);\n    \\fill (6,8) circle (2pt);\n    \\fill (7,9) circle (2pt);\n    \\fill (8,10) circle (2pt);\n    \\fill (9,11) circle (2pt);\n    \\fill (10,12) circle (2pt);\n\\end{tikzpicture}\n\nBy drawing a line of best fit, estimate the value of a car that is 6 years old.\n\\newline\n\n\\$ \\AnswerLine[]"
+      }
+    ],
+    "_rawBody": "The scatter diagram shows the age and value of each of ten cars, all of the same model.\n\n\\begin{tikzpicture}[scale=0.6]\n    % Draw axes\n    \\draw[->, thick] (0,0) -- (12,0) node[right] {Age (years)};\n    \\draw[->, thick] (0,0) -- (0,14) node[above] {Value (\\$)};\n\n    % Scale labels\n    \\node at (0,-0.5) {0};\n    \\node at (2,-0.5) {2};\n    \\node at (4,-0.5) {4};\n    \\node at (6,-0.5) {6};\n    \\node at (8,-0.5) {8};\n    \\node at (10,-0.5) {10};\n    \\node at (12,-0.5) {12};\n\n    \\node at (-0.5,0) {0};\n    \\node at (-0.5,2) {2000};\n    \\node at (-0.5,4) {4000};\n    \\node at (-0.5,6) {6000};\n    \\node at (-0.5,8) {8000};\n    \\node at (-0.5,10) {10000};\n    \\node at (-0.5,12) {12000};\n    \\node at (-0.5,14) {14000};\n\n    % Scatter points (approximate representation)\n    \\fill (1,1) circle (2pt);\n    \\fill (2,3) circle (2pt);\n    \\fill (3,4) circle (2pt);\n    \\fill (4,6) circle (2pt);\n    \\fill (5,7) circle (2pt);\n    \\fill (6,8) circle (2pt);\n    \\fill (7,9) circle (2pt);\n    \\fill (8,10) circle (2pt);\n    \\fill (9,11) circle (2pt);\n    \\fill (10,12) circle (2pt);\n\\end{tikzpicture}\n\nBy drawing a line of best fit, estimate the value of a car that is 6 years old.\n\n\\$ \\AnswerLine[]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper12-Q13",
+    "paper": "2019OctNov-Paper12",
+    "qnum": 13,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.7",
+    "d": 1,
+    "cat": "number",
+    "topic": "Estimation and limits",
+    "qtype": "index laws and power calculation",
+    "g": "indices",
+    "src": "0580/12/O/N/19 Q13",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "Find the value of\n\n(a) $6^0 + 6^2$,\n\n(b) $5^{-4}$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "$6^0 + 6^2$,"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "$5^{-4}$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Find the value of"
+      }
+    ],
+    "_rawBody": "Find the value of\n\n\\begin{parts}\n\\item $6^0 + 6^2$,\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item $5^{-4}$.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper12-Q14",
+    "paper": "2019OctNov-Paper12",
+    "qnum": 14,
+    "marks": 2,
+    "topics": [
+      "Geometry",
+      "Transformations and vectors"
+    ],
+    "s": "4.5",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Similarity and congruence",
+    "qtype": "symmetry",
+    "g": "mixed",
+    "src": "0580/12/O/N/19 Q14",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "Shade two more small squares to give a pattern with exactly one line of symmetry.\n\\newline\n\n(b)\n\nComplete the description of this pattern.\n\\newline\n\nThe pattern has  lines of symmetry\n\nand order of rotational symmetry",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{tikzpicture}[scale=0.8]\n    % Draw a 3x3 grid\n    \\draw[step=1cm, gray, very thin] (0,0) grid (3,3);\n\n    % Shade some squares (example pattern)\n    \\fill[black] (0,0) rectangle (1,1);\n    \\fill[black] (1,1) rectangle (2,2);\n    \\fill[black] (2,2) rectangle (3,3);\n\\end{tikzpicture}\n\nShade two more small squares to give a pattern with exactly one line of symmetry.\n\\newline\n\n\\Marks{1}\n\n\\PartLabel{b}\n\n\\begin{tikzpicture}[scale=0.8]\n    % Draw a 3x3 grid with a pattern\n    \\draw[step=1cm, gray, very thin] (0,0) grid (3,3);\n\n    % Shade some squares to show a pattern\n    \\fill[black] (0,0) rectangle (1,1);\n    \\fill[black] (1,0) rectangle (2,1);\n    \\fill[black] (2,0) rectangle (3,1);\n    \\fill[black] (1,1) rectangle (2,2);\n\\end{tikzpicture}\n\nComplete the description of this pattern.\n\\newline\n\nThe pattern has \\AnswerLine[] lines of symmetry\n\nand order of rotational symmetry \\AnswerLine[]"
+      }
+    ],
+    "_rawBody": "\\begin{tikzpicture}[scale=0.8]\n    % Draw a 3x3 grid\n    \\draw[step=1cm, gray, very thin] (0,0) grid (3,3);\n\n    % Shade some squares (example pattern)\n    \\fill[black] (0,0) rectangle (1,1);\n    \\fill[black] (1,1) rectangle (2,2);\n    \\fill[black] (2,2) rectangle (3,3);\n\\end{tikzpicture}\n\nShade two more small squares to give a pattern with exactly one line of symmetry.\n\n\\Marks{1}\n\n\\PartLabel{b}\n\n\\begin{tikzpicture}[scale=0.8]\n    % Draw a 3x3 grid with a pattern\n    \\draw[step=1cm, gray, very thin] (0,0) grid (3,3);\n\n    % Shade some squares to show a pattern\n    \\fill[black] (0,0) rectangle (1,1);\n    \\fill[black] (1,0) rectangle (2,1);\n    \\fill[black] (2,0) rectangle (3,1);\n    \\fill[black] (1,1) rectangle (2,2);\n\\end{tikzpicture}\n\nComplete the description of this pattern.\n\nThe pattern has \\AnswerLine[] lines of symmetry\n\nand order of rotational symmetry \\AnswerLine[]\n\n\\Marks{2}"
+  },
+  {
+    "id": "0580-2019OctNov-Paper12-Q15",
+    "paper": "2019OctNov-Paper12",
+    "qnum": 15,
+    "marks": 3,
+    "topics": [
+      "Statistics"
+    ],
+    "s": "9.3",
+    "d": 1,
+    "cat": "statistics",
+    "topic": "Frequency tables",
+    "qtype": "averages and spread",
+    "g": "mixed",
+    "src": "0580/12/O/N/19 Q15",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "These are the number of texts sent one day by each of 10 students.\n\\newline\n\n18, 13, 15, 8, 9, 17, 12, 8, 6, 14\n\n(a) Write down the mode.\n\\newline\n\n(b) Calculate the mean.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down the mode.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Calculate the mean.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "These are the number of texts sent one day by each of 10 students.\n\\newline\n\n18, 13, 15, 8, 9, 17, 12, 8, 6, 14"
+      }
+    ],
+    "_rawBody": "These are the number of texts sent one day by each of 10 students.\n\n18, 13, 15, 8, 9, 17, 12, 8, 6, 14\n\n\\begin{parts}\n\\item Write down the mode.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Calculate the mean.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper12-Q16",
+    "paper": "2019OctNov-Paper12",
+    "qnum": 16,
+    "marks": 3,
+    "topics": [
+      "Mensuration"
+    ],
+    "s": "5.4",
+    "d": 1,
+    "cat": "mensuration",
+    "topic": "Volume",
+    "qtype": "surface area and volume",
+    "g": "mixed",
+    "src": "0580/12/O/N/19 Q16",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "The diagram shows a cuboid measuring 15 cm by 12 cm by 4 cm.\n\\newline\n\nCalculate the surface area of the cuboid.\n\\newline\n\n cm$^2$",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{tikzpicture}[scale=0.8]\n    % Draw cuboid\n    \\draw[thick] (0,0) -- (3,0) -- (3,2) -- (0,2) -- cycle; % front face\n    \\draw[thick] (0,0) -- (0.5,0.5); % depth line\n    \\draw[thick] (3,0) -- (3.5,0.5); % depth line\n    \\draw[thick] (3,2) -- (3.5,2.5); % depth line\n    \\draw[thick] (0,2) -- (0.5,2.5); % depth line\n    \\draw[thick] (0.5,0.5) -- (3.5,0.5) -- (3.5,2.5) -- (0.5,2.5) -- cycle; % back face\n\n    % Labels\n    \\node at (1.5,-0.3) {12 cm};\n    \\node at (-0.3,1) {15 cm};\n    \\node at (3.8,1.25) {4 cm};\n    \\node at (4,2.8) {NOT TO SCALE};\n\\end{tikzpicture}\n\nThe diagram shows a cuboid measuring 15 cm by 12 cm by 4 cm.\n\\newline\n\nCalculate the surface area of the cuboid.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "\\begin{tikzpicture}[scale=0.8]\n    % Draw cuboid\n    \\draw[thick] (0,0) -- (3,0) -- (3,2) -- (0,2) -- cycle; % front face\n    \\draw[thick] (0,0) -- (0.5,0.5); % depth line\n    \\draw[thick] (3,0) -- (3.5,0.5); % depth line\n    \\draw[thick] (3,2) -- (3.5,2.5); % depth line\n    \\draw[thick] (0,2) -- (0.5,2.5); % depth line\n    \\draw[thick] (0.5,0.5) -- (3.5,0.5) -- (3.5,2.5) -- (0.5,2.5) -- cycle; % back face\n\n    % Labels\n    \\node at (1.5,-0.3) {12 cm};\n    \\node at (-0.3,1) {15 cm};\n    \\node at (3.8,1.25) {4 cm};\n    \\node at (4,2.8) {NOT TO SCALE};\n\\end{tikzpicture}\n\nThe diagram shows a cuboid measuring 15 cm by 12 cm by 4 cm.\n\nCalculate the surface area of the cuboid.\n\n\\AnswerLine[] cm$^2$\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper12-Q17",
+    "paper": "2019OctNov-Paper12",
+    "qnum": 17,
+    "marks": 3,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.6",
+    "d": 1,
+    "cat": "number",
+    "topic": "Standard form",
+    "qtype": "subtraction of fractions",
+    "g": "mixed",
+    "src": "0580/12/O/N/19 Q17",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "Without using a calculator, work out $\\dfrac{3}{8} - \\dfrac{1}{3}$.\n\\newline\nYou must show all your working and give your answer as a mixed number in its simplest form.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Without using a calculator, work out $\\dfrac{3}{8} - \\dfrac{1}{3}$.\n\\newline\nYou must show all your working and give your answer as a mixed number in its simplest form.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Without using a calculator, work out $\\dfrac{3}{8} - \\dfrac{1}{3}$.\nYou must show all your working and give your answer as a mixed number in its simplest form.\n\n\\AnswerLine[][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper12-Q18",
+    "paper": "2019OctNov-Paper12",
+    "qnum": 18,
+    "marks": 3,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.13",
+    "d": 1,
+    "cat": "number",
+    "topic": "Electronic calculators",
+    "qtype": "compound interest calculation",
+    "g": "mixed",
+    "src": "0580/12/O/N/19 Q18",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "Javier invests \\$750 for 3 years at a rate of 1.8\\% per year compound interest.\n\\newline\n\nCalculate the value of his investment at the end of the 3 years.\n\\newline\n\n\\$",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Javier invests \\$750 for 3 years at a rate of 1.8\\% per year compound interest.\n\\newline\n\nCalculate the value of his investment at the end of the 3 years.\n\\newline\n\n\\$ \\AnswerLine[]"
+      }
+    ],
+    "_rawBody": "Javier invests \\$750 for 3 years at a rate of 1.8\\% per year compound interest.\n\nCalculate the value of his investment at the end of the 3 years.\n\n\\$ \\AnswerLine[]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper12-Q19",
+    "paper": "2019OctNov-Paper12",
+    "qnum": 19,
+    "marks": 3,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.6",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/12/O/N/19 Q19",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "The diagram shows a right-angled triangle.\n\\newline\n\nCalculate the value of x.\n\\newline\n\nx =",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{tikzpicture}[scale=0.8]\n    % Draw right-angled triangle\n    \\draw[thick] (0,0) -- (3,0) -- (3,2) -- cycle;\n    \\draw[thick] (0,0) -- (3,2); % hypotenuse\n\n    % Right angle mark\n    \\draw[thick] (0,0) -- (0.3,0) -- (0.3,0.3);\n\n    % Labels\n    \\node at (1.5,-0.3) {8.5 cm};\n    \\node at (3.3,1) {3.9 cm};\n    \\node at (1.5,2.3) {x cm};\n    \\node at (4,1.5) {NOT TO SCALE};\n\\end{tikzpicture}\n\nThe diagram shows a right-angled triangle.\n\\newline\n\nCalculate the value of x.\n\\newline\n\nx = \\AnswerLine[]"
+      }
+    ],
+    "_rawBody": "\\begin{tikzpicture}[scale=0.8]\n    % Draw right-angled triangle\n    \\draw[thick] (0,0) -- (3,0) -- (3,2) -- cycle;\n    \\draw[thick] (0,0) -- (3,2); % hypotenuse\n\n    % Right angle mark\n    \\draw[thick] (0,0) -- (0.3,0) -- (0.3,0.3);\n\n    % Labels\n    \\node at (1.5,-0.3) {8.5 cm};\n    \\node at (3.3,1) {3.9 cm};\n    \\node at (1.5,2.3) {x cm};\n    \\node at (4,1.5) {NOT TO SCALE};\n\\end{tikzpicture}\n\nThe diagram shows a right-angled triangle.\n\nCalculate the value of x.\n\nx = \\AnswerLine[]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper12-Q20",
+    "paper": "2019OctNov-Paper12",
+    "qnum": 20,
+    "marks": 3,
+    "topics": [
+      "Coordinate geometry"
+    ],
+    "s": "3.5",
+    "d": 1,
+    "cat": "coord",
+    "topic": "Parallel and perpendicular lines",
+    "qtype": "equation of a straight line",
+    "g": "mixed",
+    "src": "0580/12/O/N/19 Q20",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "The line L is shown on the grid.\n\\newline\n\n(a) Find the gradient of the line L.\n\\newline\n\n(b) Find the equation of the line L in the form $y = mx + c$.\n\\newline\n\n$y = $",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the gradient of the line L.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the equation of the line L in the form $y = mx + c$.\n\\newline\n\n$y = $ \\AnswerLine[]"
+          }
+        ],
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The line L is shown on the grid.\n\\newline\n\n\\begin{tikzpicture}[scale=0.5]\n    % Draw grid\n    \\draw[step=1cm, gray, very thin] (-5,-5) grid (5,5);\n    \\draw[thick,->] (-5,0) -- (5,0) node[right] {$x$};\n    \\draw[thick,->] (0,-5) -- (0,5) node[above] {$y$};\n\n    % Draw line L (example line from (-2,1) to (3,4))\n    \\draw[thick, blue] (-2,1) -- (3,4);\n\n    % Axis labels\n    \\foreach \\x in {-4,...,4} {\n        \\node at (\\x,-0.3) {\\x};\n    }\n    \\foreach \\y in {-4,...,4} {\n        \\node at (-0.3,\\y) {\\y};\n    }\n\\end{tikzpicture}"
+      }
+    ],
+    "_rawBody": "The line L is shown on the grid.\n\n\\begin{tikzpicture}[scale=0.5]\n    % Draw grid\n    \\draw[step=1cm, gray, very thin] (-5,-5) grid (5,5);\n    \\draw[thick,->] (-5,0) -- (5,0) node[right] {$x$};\n    \\draw[thick,->] (0,-5) -- (0,5) node[above] {$y$};\n\n    % Draw line L (example line from (-2,1) to (3,4))\n    \\draw[thick, blue] (-2,1) -- (3,4);\n\n    % Axis labels\n    \\foreach \\x in {-4,...,4} {\n        \\node at (\\x,-0.3) {\\x};\n    }\n    \\foreach \\y in {-4,...,4} {\n        \\node at (-0.3,\\y) {\\y};\n    }\n\\end{tikzpicture}\n\n\\begin{parts}\n\\item Find the gradient of the line L.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item Find the equation of the line L in the form $y = mx + c$.\n\n$y = $ \\AnswerLine[]\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper12-Q21",
+    "paper": "2019OctNov-Paper12",
+    "qnum": 21,
+    "marks": 4,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.4",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Circle theorems",
+    "qtype": "similarity and congruence",
+    "g": "mixed",
+    "src": "0580/12/O/N/19 Q21",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "The diagram shows some quadrilaterals.\n\\newline\n\nComplete the statements.\n\\newline\n\n(a) Quadrilateral  is a rhombus.\n\\newline\n\n(b) Quadrilateral A is a \n\n(c) Quadrilaterals  and  are congruent.\n\\newline\n\n(d) Quadrilaterals  and  are similar.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Quadrilateral \\AnswerLine[] is a rhombus.\n\\newline\n"
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Quadrilateral A is a \\AnswerLine[]"
+          }
+        ]
+      },
+      {
+        "label": "(c)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Quadrilaterals \\AnswerLine[] and \\AnswerLine[] are congruent.\n\\newline\n"
+          }
+        ]
+      },
+      {
+        "label": "(d)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Quadrilaterals \\AnswerLine[] and \\AnswerLine[] are similar.\n\\newline\n"
+          }
+        ]
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{tikzpicture}[scale=0.8]\n    % Draw quadrilaterals A, B, C, D\n    \\draw[thick] (0,0) -- (2,0) -- (2,2) -- (0,2) -- cycle; % A\n    \\node at (1,1) {A};\n\n    \\draw[thick] (3,0) -- (5,0) -- (5,2) -- (3,2) -- cycle; % B\n    \\node at (4,1) {B};\n\n    \\draw[thick] (6,0) -- (8,0) -- (8,2) -- (6,2) -- cycle; % C\n    \\node at (7,1) {C};\n\n    \\draw[thick] (9,0) -- (11,0) -- (11,2) -- (9,2) -- cycle; % D\n    \\node at (10,1) {D};\n\n    % Draw quadrilaterals E, F, G, H\n    \\draw[thick] (0,3) -- (2,3) -- (2,5) -- (0,5) -- cycle; % E\n    \\node at (1,4) {E};\n\n    \\draw[thick] (3,3) -- (5,3) -- (5,5) -- (3,5) -- cycle; % F\n    \\node at (4,4) {F};\n\n    \\draw[thick] (6,3) -- (8,3) -- (8,5) -- (6,5) -- cycle; % G\n    \\node at (7,4) {G};\n\n    \\draw[thick] (9,3) -- (11,3) -- (11,5) -- (9,5) -- cycle; % H\n    \\node at (10,4) {H};\n\\end{tikzpicture}\n\nThe diagram shows some quadrilaterals.\n\\newline\n\nComplete the statements.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "\\begin{tikzpicture}[scale=0.8]\n    % Draw quadrilaterals A, B, C, D\n    \\draw[thick] (0,0) -- (2,0) -- (2,2) -- (0,2) -- cycle; % A\n    \\node at (1,1) {A};\n\n    \\draw[thick] (3,0) -- (5,0) -- (5,2) -- (3,2) -- cycle; % B\n    \\node at (4,1) {B};\n\n    \\draw[thick] (6,0) -- (8,0) -- (8,2) -- (6,2) -- cycle; % C\n    \\node at (7,1) {C};\n\n    \\draw[thick] (9,0) -- (11,0) -- (11,2) -- (9,2) -- cycle; % D\n    \\node at (10,1) {D};\n\n    % Draw quadrilaterals E, F, G, H\n    \\draw[thick] (0,3) -- (2,3) -- (2,5) -- (0,5) -- cycle; % E\n    \\node at (1,4) {E};\n\n    \\draw[thick] (3,3) -- (5,3) -- (5,5) -- (3,5) -- cycle; % F\n    \\node at (4,4) {F};\n\n    \\draw[thick] (6,3) -- (8,3) -- (8,5) -- (6,5) -- cycle; % G\n    \\node at (7,4) {G};\n\n    \\draw[thick] (9,3) -- (11,3) -- (11,5) -- (9,5) -- cycle; % H\n    \\node at (10,4) {H};\n\\end{tikzpicture}\n\nThe diagram shows some quadrilaterals.\n\nComplete the statements.\n\n\\begin{parts}\n\\item Quadrilateral \\AnswerLine[] is a rhombus.\n\n\\Marks{1}\n\n\\item Quadrilateral A is a \\AnswerLine[]\n\n\\Marks{1}\n\n\\item Quadrilaterals \\AnswerLine[] and \\AnswerLine[] are congruent.\n\n\\Marks{1}\n\n\\item Quadrilaterals \\AnswerLine[] and \\AnswerLine[] are similar.\n\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper12-Q22",
+    "paper": "2019OctNov-Paper12",
+    "qnum": 22,
+    "marks": 4,
+    "topics": [
+      "Number"
+    ],
+    "s": null,
+    "d": 1,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/12/O/N/19 Q22",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "Esme buys $x$ magazines at \\$2.45 each and $y$ cards at \\$3.15 each.\n\\newline\n\n(a) Write down an expression, in terms of $x$ and $y$, for the total cost, in dollars, of the magazines and the cards.\n\\newline\n\n\\$ \n\n(b) Esme spends \\$60.55 in total.\n\\newline\n She buys 8 magazines.\n\\newline\n\nHow many cards does she buy?",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down an expression, in terms of $x$ and $y$, for the total cost, in dollars, of the magazines and the cards.\n\\newline\n\n\\$ \\AnswerLine[]"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Esme spends \\$60.55 in total.\n\\newline\n She buys 8 magazines.\n\\newline\n\nHow many cards does she buy?"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "",
+    "cmd": "write",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Esme buys $x$ magazines at \\$2.45 each and $y$ cards at \\$3.15 each.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "Esme buys $x$ magazines at \\$2.45 each and $y$ cards at \\$3.15 each.\n\n\\begin{parts}\n\\item Write down an expression, in terms of $x$ and $y$, for the total cost, in dollars, of the magazines and the cards.\n\n\\$ \\AnswerLine[]\n\\Marks{2}\n\n\\item Esme spends \\$60.55 in total. She buys 8 magazines.\n\nHow many cards does she buy?\n\n\\AnswerLine[]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper12-Q23",
+    "paper": "2019OctNov-Paper12",
+    "qnum": 23,
+    "marks": 4,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.8",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Loci",
+    "qtype": "loci constructions",
+    "g": "mixed",
+    "src": "0580/12/O/N/19 Q23",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "The diagram shows a scale drawing of Lei's garden, PQRS.\n\\newline\nThe scale is 1 centimetre represents 2 metres.\n\\newline\n\nLei has a bird table in the garden that is\n\n(a) equidistant from PQ and QR\n\n(b) 13 m from R.\n\\newline\n\nOn the diagram, construct the position of the bird table.\n\\newline\nUse a ruler and compasses only and show all your construction arcs.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "text",
+            "content": "equidistant from PQ and QR"
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "text",
+            "content": "13 m from R.\n\\newline\n"
+          }
+        ]
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The diagram shows a scale drawing of Lei's garden, PQRS.\n\\newline\nThe scale is 1 centimetre represents 2 metres.\n\\newline\n\n\\begin{tikzpicture}[scale=0.8]\n    % Draw garden PQRS (example quadrilateral)\n    \\draw[thick] (0,0) -- (6,0) -- (6,4) -- (2,4) -- cycle;\n    \\node at (0,0) {P};\n    \\node at (6,0) {Q};\n    \\node at (6,4) {R};\n    \\node at (2,4) {S};\n\n    \\node at (4,2) {Scale: 1 cm to 2 m};\n\\end{tikzpicture}\n\nLei has a bird table in the garden that is"
+      }
+    ],
+    "_rawBody": "The diagram shows a scale drawing of Lei's garden, PQRS.\nThe scale is 1 centimetre represents 2 metres.\n\n\\begin{tikzpicture}[scale=0.8]\n    % Draw garden PQRS (example quadrilateral)\n    \\draw[thick] (0,0) -- (6,0) -- (6,4) -- (2,4) -- cycle;\n    \\node at (0,0) {P};\n    \\node at (6,0) {Q};\n    \\node at (6,4) {R};\n    \\node at (2,4) {S};\n\n    \\node at (4,2) {Scale: 1 cm to 2 m};\n\\end{tikzpicture}\n\nLei has a bird table in the garden that is\n\n\\begin{parts}\n\\item equidistant from PQ and QR\n\\item 13 m from R.\n\\end{parts}\n\nOn the diagram, construct the position of the bird table.\nUse a ruler and compasses only and show all your construction arcs.\n\n\\Marks{4}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "_postParts": [
+      {
+        "type": "text",
+        "content": "On the diagram, construct the position of the bird table.\nUse a ruler and compasses only and show all your construction arcs."
+      }
+    ],
+    "_compactItems": true
+  }
+]

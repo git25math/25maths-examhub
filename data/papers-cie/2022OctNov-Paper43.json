@@ -1,0 +1,1278 @@
+[
+  {
+    "id": "0580-2022OctNov-Paper43-Q01",
+    "paper": "2022OctNov-Paper43",
+    "qnum": 1,
+    "marks": 14,
+    "topics": [
+      "Number"
+    ],
+    "s": null,
+    "d": 2,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/43/O/N/22 Q01",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "(a) \nHere are the ingredients needed to make a pasta bake to serve 12 people.\n\\newline\n\n\\begin{tabular}{|l|}\n\\hline\n$250\\,\\text{g}$ butter \\\\\n$600\\,\\text{g}$ pasta \\\\\n$460\\,\\text{g}$ mushrooms \\\\\n$280\\,\\text{g}$ cheese \\\\\n$800\\,\\text{ml}$ milk \\\\\n\\hline\n\\end{tabular}\n(i)  Find the mass of the cheese as a percentage of the mass of the mushrooms.\n\\newline\n\n Find the mass of butter needed to make a pasta bake to serve 18 people.\n\\newline\n\n Monica has 2.2 litres of milk and $1.5\\,\\text{kg}$ of each other ingredient.\n\\newline\n\nCalculate the greatest number of people she can serve with pasta bake.\n\\newline\n\nIn 2019, a packet of pasta cost \\$2.40.\n\\newline\n\nThis was an increase of 25\\% of the cost of a packet in 2018.\n\\newline\n\n(i)  Work out the cost in 2018.\n\\newline\n\n In 2020, the cost of a packet increased by 15\\% from the cost in 2019.\n\\newline\n\nWork out the total percentage increase in the cost of a packet from 2018 to 2020.\n\\newline\n\nt\n\nPasta is sold in packets with width $11.5\\,\\text{cm}$, correct to the nearest $0.5\\,\\text{cm}$.\n\\newline\n\nA shop places these packets in a single line on a shelf of length $2\\,\\text{m}$, correct to the nearest $0.1\\,\\text{m}$.\n\\newline\n\nFind the maximum number of these packets that will fit along this shelf.\n\\newline\n\nYou must show all your working.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Here are the ingredients needed to make a pasta bake to serve 12 people.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{center}\n\\begin{tabular}{|l|}\n\\hline\n250\\,g butter \\\\\n600\\,g pasta \\\\\n460\\,g mushrooms \\\\\n280\\,g cheese \\\\\n800\\,ml milk \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the mass of the cheese as a percentage of the mass of the mushrooms.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "\\%"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the mass of butter needed to make a pasta bake to serve 18 people.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "g"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Monica has 2.2 litres of milk and $1.5\\,\\text{kg}$ of each other ingredient.\n\\newline\n\nCalculate the greatest number of people she can serve with pasta bake.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 3,
+            "_compactMarks": true
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "In 2019, a packet of pasta cost \\$2.40.\n\\newline\n\nThis was an increase of 25\\% of the cost of a packet in 2018.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Work out the cost in 2018.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "\\$"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "In 2020, the cost of a packet increased by 15\\% from the cost in 2019.\n\\newline\n\nWork out the total percentage increase in the cost of a packet from 2018 to 2020.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "\\%"
+            },
+            "marks": 3,
+            "_compactMarks": true
+          }
+        ]
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper43/Q01/Q01c.png"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q01c.tex"
+          },
+          {
+            "type": "text",
+            "content": "Pasta is sold in packets with width $11.5\\,\\text{cm}$, correct to the nearest $0.5\\,\\text{cm}$.\n\\newline\n\nA shop places these packets in a single line on a shelf of length $2\\,\\text{m}$, correct to the nearest $0.1\\,\\text{m}$.\n\\newline\n\nFind the maximum number of these packets that will fit along this shelf.\n\\newline\n\nYou must show all your working.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "marks": 3,
+        "_compactMarks": true,
+        "_itemNewline": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "",
+    "cmd": "calculate",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\part Here are the ingredients needed to make a pasta bake to serve 12 people.\n\n\\begin{center}\n\\begin{tabular}{|l|}\n\\hline\n250\\,g butter \\\\\n600\\,g pasta \\\\\n460\\,g mushrooms \\\\\n280\\,g cheese \\\\\n800\\,ml milk \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\begin{subparts}\n\\subpart Find the mass of the cheese as a percentage of the mass of the mushrooms.\n\n\\AnswerLine[][\\%]\n\\Marks{1}\n\n\\subpart Find the mass of butter needed to make a pasta bake to serve 18 people.\n\n\\AnswerLine[][g]\n\\Marks{2}\n\n\\subpart Monica has 2.2 litres of milk and 1.5\\,kg of each other ingredient.\n\nCalculate the greatest number of people she can serve with pasta bake.\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\end{subparts}\n\n\\part In 2019, a packet of pasta cost \\$2.40.\n\nThis was an increase of 25\\% of the cost of a packet in 2018.\n\n\\begin{subparts}\n\\subpart Work out the cost in 2018.\n\n\\AnswerLine[\\$][]\n\\Marks{2}\n\n\\subpart In 2020, the cost of a packet increased by 15\\% from the cost in 2019.\n\nWork out the total percentage increase in the cost of a packet from 2018 to 2020.\n\n\\AnswerLine[][\\%]\n\\Marks{3}\n\n\\end{subparts}\n\n\\part\n\\relinput{Figures/Q01c.tex}\n\nPasta is sold in packets with width 11.5\\,cm, correct to the nearest 0.5\\,cm.\n\nA shop places these packets in a single line on a shelf of length 2\\,m, correct to the nearest 0.1\\,m.\n\nFind the maximum number of these packets that will fit along this shelf.\n\nYou must show all your working.\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper43/Q01/Q01a.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper43/Q01/Q01c.png"
+    ]
+  },
+  {
+    "id": "0580-2022OctNov-Paper43-Q02",
+    "paper": "2022OctNov-Paper43",
+    "qnum": 2,
+    "marks": 19,
+    "topics": [
+      "Number",
+      "Algebra and graphs"
+    ],
+    "s": "2.7",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Sequences",
+    "qtype": "indices simplification, sequences (nth term, terms from nth term), solving linear equations",
+    "g": "linear",
+    "src": "0580/43/O/N/22 Q02",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "(a) \nSimplify fully.\n\\newline\n\n(i)  $p^3 \\times p^{11}$\n\n $\\dfrac{18m^6}{3m^2}$\n\n $\\left( \\dfrac{27x^9 y^{27}}{64} \\right)^{-\\frac{1}{3}}$\n\nA sequence has $n$th term $3n^2$.\n\\newline\n\nWrite down the first 3 terms of this sequence.\n\\newline\n\n{---} ,  ,][]\n\nFind the $n$th term for each of these sequences.\n\\newline\n\n(i)  13,   16,   19,   22,   25,   \\ldots\n\n 3,   17,   55,   129,   251,   \\ldots\n\nSolve.\n\\newline\n\\[\\frac{3x - 22}{4} = 23\\]\n\nUse the quadratic formula to solve $3x^2 + 8x - 20 = 0$.\n\\newline\n\nShow all your working and give your answers correct to 2 decimal places.\n\\newline\n\n{---} , $x =$][]",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Simplify fully.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "$p^3 \\times p^{11}$"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "$\\dfrac{18m^6}{3m^2}$"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "$\\left( \\dfrac{27x^9 y^{27}}{64} \\right)^{-\\frac{1}{3}}$"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 3,
+            "_compactMarks": true
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "A sequence has $n$th term $3n^2$.\n\\newline\n\nWrite down the first 3 terms of this sequence.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "\\makebox[1cm]{\\hrulefill} , \\makebox[1cm]{\\hrulefill} ,"
+        },
+        "marks": 2,
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the $n$th term for each of these sequences.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "13, \\quad 16, \\quad 19, \\quad 22, \\quad 25, \\quad \\ldots"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "3, \\quad 17, \\quad 55, \\quad 129, \\quad 251, \\quad \\ldots"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ]
+      },
+      {
+        "label": "(d)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Solve.\n\\newline\n\\[\\frac{3x - 22}{4} = 23\\]"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x =$"
+        },
+        "marks": 3,
+        "_compactMarks": true
+      },
+      {
+        "label": "(e)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Use the quadratic formula to solve $3x^2 + 8x - 20 = 0$.\n\\newline\n\nShow all your working and give your answers correct to 2 decimal places.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x =$ \\makebox[1.5cm]{\\hrulefill} , $x =$"
+        },
+        "marks": 4,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\part Simplify fully.\n\n\\begin{subparts}\n\\subpart $p^3 \\times p^{11}$\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\subpart $\\dfrac{18m^6}{3m^2}$\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\subpart $\\left( \\dfrac{27x^9 y^{27}}{64} \\right)^{-\\frac{1}{3}}$\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\end{subparts}\n\n\\part A sequence has $n$th term $3n^2$.\n\nWrite down the first 3 terms of this sequence.\n\n\\AnswerLine[\\makebox[1cm]{\\hrulefill} , \\makebox[1cm]{\\hrulefill} ,][]\n\\Marks{2}\n\n\\part Find the $n$th term for each of these sequences.\n\n\\begin{subparts}\n\\subpart 13, \\quad 16, \\quad 19, \\quad 22, \\quad 25, \\quad \\ldots\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\subpart 3, \\quad 17, \\quad 55, \\quad 129, \\quad 251, \\quad \\ldots\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{subparts}\n\n\\part Solve.\n\\[\\frac{3x - 22}{4} = 23\\]\n\n\\AnswerLine[$x =$][]\n\\Marks{3}\n\n\\part Use the quadratic formula to solve $3x^2 + 8x - 20 = 0$.\n\nShow all your working and give your answers correct to 2 decimal places.\n\n\\AnswerLine[$x =$ \\makebox[1.5cm]{\\hrulefill} , $x =$][]\n\\Marks{4}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper43-Q03",
+    "paper": "2022OctNov-Paper43",
+    "qnum": 3,
+    "marks": 7,
+    "topics": [
+      "Number",
+      "Statistics"
+    ],
+    "s": null,
+    "d": 2,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/43/O/N/22 Q03",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "The height, $h\\,\\text{cm}$, of each of 100 plants is recorded.\n\\newline\n\nThe table shows information about the heights of these plants.\n\\newline\n\n\\begin{tabular}{|c|c|c|c|c|c|}\n\\hline\nHeight ($h\\,\\text{cm}$) & $10 < h \\leqslant 15$ & $15 < h \\leqslant 25$ & $25 < h \\leqslant 40$ & $40 < h \\leqslant 60$ & $60 < h \\leqslant 70$ \\\\\n\\hline\nFrequency & 8 & 18 & 28 & 33 & 13 \\\\\n\\hline\n\\end{tabular}\n(a) \nComplete the histogram to show this information.\n\\newline\n\nThe first two blocks have been drawn for you.\n\\newline\n\nCalculate an estimate of the mean height.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper43/Q03/Q03a.png"
+          },
+          {
+            "type": "text",
+            "content": "Complete the histogram to show this information.\n\\newline\n\nThe first two blocks have been drawn for you.\n\\newline\n"
+          }
+        ],
+        "marks": 3,
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Calculate an estimate of the mean height.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "cm"
+        },
+        "marks": 4,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The height, $h\\,\\text{cm}$, of each of 100 plants is recorded.\n\\newline\n\nThe table shows information about the heights of these plants.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper43/Q03/Q03.png"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|c|}\n\\hline\nHeight ($h$\\,cm) & $10 < h \\leqslant 15$ & $15 < h \\leqslant 25$ & $25 < h \\leqslant 40$ & $40 < h \\leqslant 60$ & $60 < h \\leqslant 70$ \\\\\n\\hline\nFrequency & 8 & 18 & 28 & 33 & 13 \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+      }
+    ],
+    "_rawBody": "The height, $h$\\,cm, of each of 100 plants is recorded.\n\nThe table shows information about the heights of these plants.\n\n\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|c|}\n\\hline\nHeight ($h$\\,cm) & $10 < h \\leqslant 15$ & $15 < h \\leqslant 25$ & $25 < h \\leqslant 40$ & $40 < h \\leqslant 60$ & $60 < h \\leqslant 70$ \\\\\n\\hline\nFrequency & 8 & 18 & 28 & 33 & 13 \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\begin{parts}\n\\part Complete the histogram to show this information.\n\nThe first two blocks have been drawn for you.\n\\Marks{3}\n\n\\part Calculate an estimate of the mean height.\n\n\\AnswerLine[][cm]\n\\Marks{4}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper43/Q03/Q03.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper43/Q03/Q03a.png"
+    ]
+  },
+  {
+    "id": "0580-2022OctNov-Paper43-Q04",
+    "paper": "2022OctNov-Paper43",
+    "qnum": 4,
+    "marks": 7,
+    "topics": [
+      "Number",
+      "Geometry",
+      "Transformations and vectors"
+    ],
+    "s": null,
+    "d": 2,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/43/O/N/22 Q04",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "(a) \nDraw the reflection of triangle $T$ in the line $y = -2$.\n\\newline\n\nDraw the enlargement of triangle $T$ with scale factor $\\dfrac{1}{2}$ and centre of enlargement $(-5, -3)$.\n\\newline\n\nDescribe fully the **single** transformation that maps triangle $T$ onto triangle $A$.\n\\newline\n\n\\AnswerBlank\n\\AnswerBlank",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Draw the reflection of triangle $T$ in the line $y = -2$.\n\\newline\n"
+          }
+        ],
+        "marks": 2,
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Draw the enlargement of triangle $T$ with scale factor $\\dfrac{1}{2}$ and centre of enlargement $(-5, -3)$.\n\\newline\n"
+          }
+        ],
+        "marks": 2,
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Describe fully the \\textbf{single} transformation that maps triangle $T$ onto triangle $A$.\n\\newline\n\n\\AnswerBlank\n\\AnswerBlank"
+          }
+        ],
+        "marks": 3,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "",
+    "cmd": "describe",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q04.tex"
+      }
+    ],
+    "_rawBody": "\\relinput{Figures/Q04.tex}\n\n\\begin{parts}\n\\part Draw the reflection of triangle $T$ in the line $y = -2$.\n\\Marks{2}\n\n\\part Draw the enlargement of triangle $T$ with scale factor $\\dfrac{1}{2}$ and centre of enlargement $(-5, -3)$.\n\\Marks{2}\n\n\\part Describe fully the \\textbf{single} transformation that maps triangle $T$ onto triangle $A$.\n\n\\AnswerBlank\n\\AnswerBlank\n\\Marks{3}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper43/Q04/Q04.png"
+    ]
+  },
+  {
+    "id": "0580-2022OctNov-Paper43-Q05",
+    "paper": "2022OctNov-Paper43",
+    "qnum": 5,
+    "marks": 15,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "3.4",
+    "d": 2,
+    "cat": "coord",
+    "topic": "Equation of a line",
+    "qtype": "length and midpoint",
+    "g": "mixed",
+    "src": "0580/43/O/N/22 Q05",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "The diagram shows a water trough in the shape of a prism.\n\\newline\n\nThe prism has a cross-section in the shape of an isosceles trapezium.\n\\newline\n\nThe trough is completely filled with water.\n\\newline\n\n(a) \nShow that the volume of water in the trough is 206.4 litres.\n\\newline\n\nThe water from the trough is emptied at a rate of $600\\,\\text{ml}$ per second.\n\\newline\n\nCalculate the time taken, in minutes and seconds, for the trough to be emptied.\n\\newline\n\n{---} minutes][seconds]\n\nAll the water from the trough is emptied into a vertical cylindrical tank.\n\\newline\n\nThe depth of the water in the tank is $84\\,\\text{cm}$.\n\\newline\n\n(i)  Calculate the radius of the tank.\n\\newline\n\n The tank is 60\\% full.\n\\newline\n\nCalculate the height of the tank.\n\\newline\n\nt\n\nA steel rod $AM$ is placed inside the empty water trough as shown in the diagram.\n\\newline\n\n$A$ is a vertex at the base of the isosceles trapezium and $M$ is the midpoint of the top edge on the opposite face.\n\\newline\n\nCalculate the length of the steel rod, $AM$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Show that the volume of water in the trough is 206.4 litres.\n\\newline\n"
+          }
+        ],
+        "marks": 3,
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The water from the trough is emptied at a rate of $600\\,\\text{ml}$ per second.\n\\newline\n\nCalculate the time taken, in minutes and seconds, for the trough to be emptied.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "\\makebox[1cm]{\\hrulefill} minutes",
+          "suffix": "seconds"
+        },
+        "marks": 3,
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "All the water from the trough is emptied into a vertical cylindrical tank.\n\\newline\n\nThe depth of the water in the tank is $84\\,\\text{cm}$.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate the radius of the tank.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "cm"
+            },
+            "marks": 3,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "The tank is 60\\% full.\n\\newline\n\nCalculate the height of the tank.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "cm"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ]
+      },
+      {
+        "label": "(d)",
+        "content": [
+          {
+            "type": "figure",
+            "src": "Figures/Q05d.tex"
+          },
+          {
+            "type": "text",
+            "content": "A steel rod $AM$ is placed inside the empty water trough as shown in the diagram.\n\\newline\n\n$A$ is a vertex at the base of the isosceles trapezium and $M$ is the midpoint of the top edge on the opposite face.\n\\newline\n\nCalculate the length of the steel rod, $AM$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$AM =$",
+          "suffix": "cm"
+        },
+        "marks": 4,
+        "_compactMarks": true,
+        "_itemNewline": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "analyse",
+    "cmd": "show",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q05.tex"
+      },
+      {
+        "type": "text",
+        "content": "The diagram shows a water trough in the shape of a prism.\n\\newline\n\nThe prism has a cross-section in the shape of an isosceles trapezium.\n\\newline\n\nThe trough is completely filled with water.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "\\relinput{Figures/Q05.tex}\n\nThe diagram shows a water trough in the shape of a prism.\n\nThe prism has a cross-section in the shape of an isosceles trapezium.\n\nThe trough is completely filled with water.\n\n\\begin{parts}\n\\part Show that the volume of water in the trough is 206.4 litres.\n\\Marks{3}\n\n\\part The water from the trough is emptied at a rate of 600\\,ml per second.\n\nCalculate the time taken, in minutes and seconds, for the trough to be emptied.\n\n\\AnswerLine[\\makebox[1cm]{\\hrulefill} minutes][seconds]\n\\Marks{3}\n\n\\part All the water from the trough is emptied into a vertical cylindrical tank.\n\nThe depth of the water in the tank is 84\\,cm.\n\n\\begin{subparts}\n\\subpart Calculate the radius of the tank.\n\n\\AnswerLine[][cm]\n\\Marks{3}\n\n\\subpart The tank is 60\\% full.\n\nCalculate the height of the tank.\n\n\\AnswerLine[][cm]\n\\Marks{2}\n\n\\end{subparts}\n\n\\part\n\\relinput{Figures/Q05d.tex}\n\nA steel rod $AM$ is placed inside the empty water trough as shown in the diagram.\n\n$A$ is a vertex at the base of the isosceles trapezium and $M$ is the midpoint of the top edge on the opposite face.\n\nCalculate the length of the steel rod, $AM$.\n\n\\AnswerLine[$AM =$][cm]\n\\Marks{4}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper43/Q05/Q05.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper43/Q05/Q05d.png"
+    ]
+  },
+  {
+    "id": "0580-2022OctNov-Paper43-Q06",
+    "paper": "2022OctNov-Paper43",
+    "qnum": 6,
+    "marks": 16,
+    "topics": [
+      "Number",
+      "Algebra and graphs",
+      "Coordinate geometry"
+    ],
+    "s": "2.6",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Inequalities",
+    "qtype": "formula substitution and rearrangement, solving linear inequalities, graphical inequalities",
+    "g": "rearrange",
+    "src": "0580/43/O/N/22 Q06",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "(a) \n$P = 5k^2 - 7$\n\n(i)  Find the value of $P$ when $k = 3$.\n\\newline\n\n Rearrange the formula to make $k$ the subject.\n\\newline\n\nt\n(i)  Solve.\n\\newline\n\\[x - 3 \\leqslant 5x + 7\\]\n\n Show your answer to **part (b)(i)** on the number line.\n\\newline\n\nThe line $y = 16$ is drawn on the grid.\n\\newline\n\nThe region $R$ satisfies the following inequalities.\n\\newline\n\\[y \\geqslant 16 \\qquad x > 2 \\qquad 2x + 3y \\geqslant 72 \\qquad y \\leqslant 32 - x\\]\n\n(i)  By drawing three more lines and shading the region **not required**, find and label region $R$.\n\\newline\n\n Find the integer coordinates $(x, y)$ in the region $R$ that give the maximum value of $2x + y$.\n\\newline\n\n{---} ,  )][]",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "$P = 5k^2 - 7$"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the value of $P$ when $k = 3$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$P =$"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Rearrange the formula to make $k$ the subject.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$k =$"
+            },
+            "marks": 3,
+            "_compactMarks": true
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Solve.\n\\newline\n\\[x - 3 \\leqslant 5x + 7\\]"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Show your answer to \\textbf{part (b)(i)} on the number line.\n\\newline\n"
+              },
+              {
+                "type": "figure",
+                "src": "Figures/Q06bii.tex"
+              }
+            ],
+            "marks": 1,
+            "_compactMarks": true
+          }
+        ],
+        "_itemNewline": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper43/Q06/Q06c.png"
+          },
+          {
+            "type": "text",
+            "content": "The line $y = 16$ is drawn on the grid.\n\\newline\n\nThe region $R$ satisfies the following inequalities.\n\\newline\n\\[y \\geqslant 16 \\qquad x > 2 \\qquad 2x + 3y \\geqslant 72 \\qquad y \\leqslant 32 - x\\]"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "By drawing three more lines and shading the region \\textbf{not required}, find and label region $R$.\n\\newline\n"
+              }
+            ],
+            "marks": 6,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the integer coordinates $(x, y)$ in the region $R$ that give the maximum value of $2x + y$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "( \\makebox[1cm]{\\hrulefill} , \\makebox[1cm]{\\hrulefill} )"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ]
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "solve",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\part $P = 5k^2 - 7$\n\n\\begin{subparts}\n\\subpart Find the value of $P$ when $k = 3$.\n\n\\AnswerLine[$P =$][]\n\\Marks{2}\n\n\\subpart Rearrange the formula to make $k$ the subject.\n\n\\AnswerLine[$k =$][]\n\\Marks{3}\n\n\\end{subparts}\n\n\\part\n\\begin{subparts}\n\\subpart Solve.\n\\[x - 3 \\leqslant 5x + 7\\]\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\subpart Show your answer to \\textbf{part (b)(i)} on the number line.\n\n\\relinput{Figures/Q06bii.tex}\n\\Marks{1}\n\n\\end{subparts}\n\n\\part The line $y = 16$ is drawn on the grid.\n\nThe region $R$ satisfies the following inequalities.\n\\[y \\geqslant 16 \\qquad x > 2 \\qquad 2x + 3y \\geqslant 72 \\qquad y \\leqslant 32 - x\\]\n\n\\begin{subparts}\n\\subpart By drawing three more lines and shading the region \\textbf{not required}, find and label region $R$.\n\\Marks{6}\n\n\\subpart Find the integer coordinates $(x, y)$ in the region $R$ that give the maximum value of $2x + y$.\n\n\\AnswerLine[( \\makebox[1cm]{\\hrulefill} , \\makebox[1cm]{\\hrulefill} )][]\n\\Marks{2}\n\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true,
+    "_compactItems": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper43/Q06/Q06bii.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper43/Q06/Q06c.png"
+    ]
+  },
+  {
+    "id": "0580-2022OctNov-Paper43-Q07",
+    "paper": "2022OctNov-Paper43",
+    "qnum": 7,
+    "marks": 10,
+    "topics": [
+      "Probability"
+    ],
+    "s": "8.4",
+    "d": 2,
+    "cat": "probability",
+    "topic": "Conditional probability",
+    "qtype": "conditional probability",
+    "g": "mixed",
+    "src": "0580/43/O/N/22 Q07",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "Regan is playing a game with these six number cards.\n\\newline\n\n(a) \nShe takes two cards at random, without replacement, and **multiplies** the two numbers to give a score.\n\\newline\n\nFind the probability that\n\n(i)  the score is 35\n\n the score is a positive number.\n\\newline\n\nRegan now takes three cards at random from the six cards, without replacement, and **adds** the three numbers to give a total.\n\\newline\n\nFind the probability that her total is 5.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "She takes two cards at random, without replacement, and \\textbf{multiplies} the two numbers to give a score.\n\\newline\n\nFind the probability that"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "the score is 35"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 3,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "the score is a positive number.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 3,
+            "_compactMarks": true
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Regan now takes three cards at random from the six cards, without replacement, and \\textbf{adds} the three numbers to give a total.\n\\newline\n\nFind the probability that her total is 5.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "marks": 4,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Regan is playing a game with these six number cards.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "Figures/Q07.tex"
+      }
+    ],
+    "_rawBody": "Regan is playing a game with these six number cards.\n\n\\relinput{Figures/Q07.tex}\n\n\\begin{parts}\n\\part She takes two cards at random, without replacement, and \\textbf{multiplies} the two numbers to give a score.\n\nFind the probability that\n\n\\begin{subparts}\n\\subpart the score is 35\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\subpart the score is a positive number.\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\end{subparts}\n\n\\part Regan now takes three cards at random from the six cards, without replacement, and \\textbf{adds} the three numbers to give a total.\n\nFind the probability that her total is 5.\n\n\\AnswerLine[][]\n\\Marks{4}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper43/Q07/Q07.png"
+    ]
+  },
+  {
+    "id": "0580-2022OctNov-Paper43-Q08",
+    "paper": "2022OctNov-Paper43",
+    "qnum": 8,
+    "marks": 14,
+    "topics": [
+      "Number",
+      "Geometry",
+      "Mensuration",
+      "Trigonometry"
+    ],
+    "s": null,
+    "d": 2,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/43/O/N/22 Q08",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "$A$, $B$ and $C$ are points on the circle, centre $O$.\n\\newline\n\n$DE$ is a tangent to the circle at $C$.\n\\newline\n\n$AC = 10\\,\\text{cm}$, $AB = 9.5\\,\\text{cm}$ and $BC = 7.7\\,\\text{cm}$.\n\\newline\n\n(a) \nShow that angle $ABC = 70.2°$, correct to 1 decimal place.\n\\newline\n\nFind\n\n(i)  angle $AOC$\n\n angle $ACO$\n\n angle $ACD$.\n\\newline\n\nCalculate the radius, $OC$, of the circle.\n\\newline\n\nCalculate the area of triangle $ABC$ as a percentage of the area of the circle.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Show that angle $ABC = 70.2°$, correct to 1 decimal place.\n\\newline\n"
+          }
+        ],
+        "marks": 4,
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Find"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "angle $AOC$"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "Angle $AOC =$"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "angle $ACO$"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "Angle $ACO =$"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "angle $ACD$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "Angle $ACD =$"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          }
+        ]
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Calculate the radius, $OC$, of the circle.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$OC =$",
+          "suffix": "cm"
+        },
+        "marks": 3,
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Calculate the area of triangle $ABC$ as a percentage of the area of the circle.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "\\%"
+        },
+        "marks": 4,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "",
+    "cmd": "show",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q08.tex"
+      },
+      {
+        "type": "text",
+        "content": "$A$, $B$ and $C$ are points on the circle, centre $O$.\n\\newline\n\n$DE$ is a tangent to the circle at $C$.\n\\newline\n\n$AC = 10\\,\\text{cm}$, $AB = 9.5\\,\\text{cm}$ and $BC = 7.7\\,\\text{cm}$.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "\\relinput{Figures/Q08.tex}\n\n$A$, $B$ and $C$ are points on the circle, centre $O$.\n\n$DE$ is a tangent to the circle at $C$.\n\n$AC = 10$\\,cm, $AB = 9.5$\\,cm and $BC = 7.7$\\,cm.\n\n\\begin{parts}\n\\part Show that angle $ABC = 70.2°$, correct to 1 decimal place.\n\\Marks{4}\n\n\\part Find\n\n\\begin{subparts}\n\\subpart angle $AOC$\n\n\\AnswerLine[Angle $AOC =$][]\n\\Marks{1}\n\n\\subpart angle $ACO$\n\n\\AnswerLine[Angle $ACO =$][]\n\\Marks{1}\n\n\\subpart angle $ACD$.\n\n\\AnswerLine[Angle $ACD =$][]\n\\Marks{1}\n\n\\end{subparts}\n\n\\part Calculate the radius, $OC$, of the circle.\n\n\\AnswerLine[$OC =$][cm]\n\\Marks{3}\n\n\\part Calculate the area of triangle $ABC$ as a percentage of the area of the circle.\n\n\\AnswerLine[][\\%]\n\\Marks{4}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper43/Q08/Q08.png"
+    ]
+  },
+  {
+    "id": "0580-2022OctNov-Paper43-Q09",
+    "paper": "2022OctNov-Paper43",
+    "qnum": 9,
+    "marks": 17,
+    "topics": [
+      "Algebra and graphs",
+      "Coordinate geometry",
+      "Geometry",
+      "Trigonometry"
+    ],
+    "s": "2.12",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Functions notation",
+    "qtype": "sketching linear, quadratic, exponential graphs; differentiation for gradient and tangent",
+    "g": "quadratic",
+    "src": "0580/43/O/N/22 Q09",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "(a) \nSketch the following graphs.\n\\newline\n\nOn each sketch, indicate any intercepts with the axes.\n\\newline\n\n(i)  $3x - 4y = 12$\n\n $y = x^2 - 3x - 4$\n\n $y = 6^x$\n\nt\n(i)  Find the derivative, $\\dfrac{\\mathrm{d}y}{\\mathrm{d}x}$, of $y = 5 + 8x - \\dfrac{4}{3}x^3$.\n\\newline\n\n Find the gradient of $y = 5 + 8x - \\dfrac{4}{3}x^3$ at $x = -1$.\n\\newline\n\n A tangent is drawn to the graph of $y = 5 + 8x - \\dfrac{4}{3}x^3$.\n\\newline\n\nThe gradient of the tangent is $-28$.\n\\newline\n\nFind the coordinates of the two possible points where this tangent meets the graph.\n\\newline\n\n{---} ,  )][]\n{---} ,  )][]",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Sketch the following graphs.\n\\newline\n\nOn each sketch, indicate any intercepts with the axes.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "$3x - 4y = 12$"
+              },
+              {
+                "type": "figure",
+                "src": "Figures/Q09ai.tex"
+              }
+            ],
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "$y = x^2 - 3x - 4$"
+              },
+              {
+                "type": "figure",
+                "src": "Figures/Q09aii.tex"
+              }
+            ],
+            "marks": 4,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "$y = 6^x$"
+              },
+              {
+                "type": "figure",
+                "src": "Figures/Q09aiii.tex"
+              }
+            ],
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the derivative, $\\dfrac{\\mathrm{d}y}{\\mathrm{d}x}$, of $y = 5 + 8x - \\dfrac{4}{3}x^3$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the gradient of $y = 5 + 8x - \\dfrac{4}{3}x^3$ at $x = -1$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "A tangent is drawn to the graph of $y = 5 + 8x - \\dfrac{4}{3}x^3$.\n\\newline\n\nThe gradient of the tangent is $-28$.\n\\newline\n\nFind the coordinates of the two possible points where this tangent meets the graph.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "multiline",
+              "lines": 2,
+              "template": "( \\makebox[1.5cm]{\\hrulefill} , \\makebox[1.5cm]{\\hrulefill} ) ____\\n( \\makebox[1.5cm]{\\hrulefill} , \\makebox[1.5cm]{\\hrulefill} ) ____",
+              "lineSep": "blank"
+            },
+            "marks": 5,
+            "_compactMarks": true
+          }
+        ],
+        "_itemNewline": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "sketch",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\part Sketch the following graphs.\n\nOn each sketch, indicate any intercepts with the axes.\n\n\\begin{subparts}\n\\subpart $3x - 4y = 12$\n\n\\relinput{Figures/Q09ai.tex}\n\\Marks{2}\n\n\\subpart $y = x^2 - 3x - 4$\n\n\\relinput{Figures/Q09aii.tex}\n\\Marks{4}\n\n\\subpart $y = 6^x$\n\n\\relinput{Figures/Q09aiii.tex}\n\\Marks{2}\n\n\\end{subparts}\n\n\\part\n\\begin{subparts}\n\\subpart Find the derivative, $\\dfrac{\\mathrm{d}y}{\\mathrm{d}x}$, of $y = 5 + 8x - \\dfrac{4}{3}x^3$.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\subpart Find the gradient of $y = 5 + 8x - \\dfrac{4}{3}x^3$ at $x = -1$.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\subpart A tangent is drawn to the graph of $y = 5 + 8x - \\dfrac{4}{3}x^3$.\n\nThe gradient of the tangent is $-28$.\n\nFind the coordinates of the two possible points where this tangent meets the graph.\n\n\\AnswerLine[( \\makebox[1.5cm]{\\hrulefill} , \\makebox[1.5cm]{\\hrulefill} )][]\n\\AnswerLine[( \\makebox[1.5cm]{\\hrulefill} , \\makebox[1.5cm]{\\hrulefill} )][]\n\\Marks{5}\n\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true,
+    "_compactItems": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper43/Q09/Q09ai.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper43/Q09/Q09aii.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper43/Q09/Q09aiii.png"
+    ]
+  },
+  {
+    "id": "0580-2022OctNov-Paper43-Q10",
+    "paper": "2022OctNov-Paper43",
+    "qnum": 10,
+    "marks": 11,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry",
+      "Transformations and vectors"
+    ],
+    "s": "3.6",
+    "d": 2,
+    "cat": "coord",
+    "topic": "Position vectors",
+    "qtype": "parallel lines",
+    "g": "mixed",
+    "src": "0580/43/O/N/22 Q10",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "(a) \n$\\mathbf{a} = \\begin{pmatrix} 1 \\\\ 2 \\end{pmatrix}$ \\qquad $\\mathbf{b} = \\begin{pmatrix} -3 \\\\ 5 \\end{pmatrix}$\n\n(i)  On the grid, draw and label vector $2\\mathbf{a}$.\n\\newline\n\n On the grid, draw and label vector $(\\mathbf{a} - \\mathbf{b})$.\n\\newline\n\nt\n\n$OABC$ is a trapezium with $OA$ parallel to $CB$.\n\\newline\n\n$M$ is the midpoint of $CB$ and $N$ is the point on $AB$ such that $AN : NB = 1 : 2$.\n\\newline\n\n$O$ is the origin, $\\overrightarrow{OA} = \\mathbf{p}$, $\\overrightarrow{OC} = \\mathbf{q}$ and $\\overrightarrow{CB} = \\dfrac{3}{4}\\mathbf{p}$.\n\\newline\n\n(i)  Find, in terms of $\\mathbf{p}$ and/or $\\mathbf{q}$, in its simplest form\n\n(b) $\\overrightarrow{OB}$\n\n(c) $\\overrightarrow{AB}$\n\n(d) $\\overrightarrow{MN}$.\n\\newline\n\n $OA$ and $MN$ are extended to meet at $G$.\n\\newline\n\nFind the position vector of $G$ in terms of $\\mathbf{p}$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "$\\mathbf{a} = \\begin{pmatrix} 1 \\\\ 2 \\end{pmatrix}$ \\qquad $\\mathbf{b} = \\begin{pmatrix} -3 \\\\ 5 \\end{pmatrix}$"
+          }
+        ],
+        "_compactMarks": true,
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "On the grid, draw and label vector $2\\mathbf{a}$.\n\\newline\n"
+              }
+            ],
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "On the grid, draw and label vector $(\\mathbf{a} - \\mathbf{b})$.\n\\newline\n"
+              }
+            ],
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper43/Q10/Q10b.png"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q10b.tex"
+          },
+          {
+            "type": "text",
+            "content": "$OABC$ is a trapezium with $OA$ parallel to $CB$.\n\\newline\n\n$M$ is the midpoint of $CB$ and $N$ is the point on $AB$ such that $AN : NB = 1 : 2$.\n\\newline\n\n$O$ is the origin, $\\overrightarrow{OA} = \\mathbf{p}$, $\\overrightarrow{OC} = \\mathbf{q}$ and $\\overrightarrow{CB} = \\dfrac{3}{4}\\mathbf{p}$.\n\\newline\n\n\\begin{subparts}\n\\subpart Find, in terms of $\\mathbf{p}$ and/or $\\mathbf{q}$, in its simplest form\n\n\\begin{parts}"
+          }
+        ],
+        "_itemNewline": true
+      },
+      {
+        "label": "(c)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "$\\overrightarrow{OB}$"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$\\overrightarrow{OB} =$"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "content": [
+          {
+            "type": "text",
+            "content": "$\\overrightarrow{AB}$"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$\\overrightarrow{AB} =$"
+        },
+        "marks": 2,
+        "_compactMarks": true
+      },
+      {
+        "label": "(e)",
+        "content": [
+          {
+            "type": "text",
+            "content": "$\\overrightarrow{MN}$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$\\overrightarrow{MN} =$"
+        },
+        "marks": 3,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper43/Q10/Q10aii.png"
+      }
+    ],
+    "_rawBody": "\\begin{parts}\n\\part $\\mathbf{a} = \\begin{pmatrix} 1 \\\\ 2 \\end{pmatrix}$ \\qquad $\\mathbf{b} = \\begin{pmatrix} -3 \\\\ 5 \\end{pmatrix}$\n\n\\begin{subparts}\n\\subpart On the grid, draw and label vector $2\\mathbf{a}$.\n\\Marks{1}\n\n\\subpart On the grid, draw and label vector $(\\mathbf{a} - \\mathbf{b})$.\n\\Marks{2}\n\n\\end{subparts}\n\n\\part\n\\relinput{Figures/Q10b.tex}\n\n$OABC$ is a trapezium with $OA$ parallel to $CB$.\n\n$M$ is the midpoint of $CB$ and $N$ is the point on $AB$ such that $AN : NB = 1 : 2$.\n\n$O$ is the origin, $\\overrightarrow{OA} = \\mathbf{p}$, $\\overrightarrow{OC} = \\mathbf{q}$ and $\\overrightarrow{CB} = \\dfrac{3}{4}\\mathbf{p}$.\n\n\\begin{subparts}\n\\subpart Find, in terms of $\\mathbf{p}$ and/or $\\mathbf{q}$, in its simplest form\n\n\\begin{parts}\n\\item $\\overrightarrow{OB}$\n\n\\AnswerLine[$\\overrightarrow{OB} =$][]\n\\Marks{1}\n\n\\item $\\overrightarrow{AB}$\n\n\\AnswerLine[$\\overrightarrow{AB} =$][]\n\\Marks{2}\n\n\\item $\\overrightarrow{MN}$.\n\n\\AnswerLine[$\\overrightarrow{MN} =$][]\n\\Marks{3}\n\n\\end{parts}\n\n\\subpart $OA$ and $MN$ are extended to meet at $G$.\n\nFind the position vector of $G$ in terms of $\\mathbf{p}$.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_postParts": [
+      {
+        "type": "text",
+        "content": "\\subpart $OA$ and $MN$ are extended to meet at $G$.\n\nFind the position vector of $G$ in terms of $\\mathbf{p}$.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{subparts}\n\n\\end{parts}"
+      }
+    ],
+    "_partCmd": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper43/Q10/Q10ai.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper43/Q10/Q10aii.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper43/Q10/Q10b.png"
+    ]
+  }
+]

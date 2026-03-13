@@ -1,0 +1,1169 @@
+[
+  {
+    "id": "0580-2022MayJune-Paper32-Q01",
+    "paper": "2022MayJune-Paper32",
+    "qnum": 1,
+    "marks": 17,
+    "topics": [
+      "Number",
+      "Mensuration",
+      "Statistics"
+    ],
+    "s": "1.11",
+    "d": 1,
+    "cat": "number",
+    "topic": "Money and finance",
+    "qtype": "ratio, fraction and basic counting",
+    "g": "mixed",
+    "src": "0580/32/M/J/22 Q01",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "Antonio has a shop near the beach.\n\\newline\n\n(a) (i)  He makes a tally of the number of ice creams he sells on Friday.\n\\newline\n\n\\TallyMarks{8}{3}\nWork out the number of ice creams he sells on Friday.\n\\newline\n\n 15 of the ice creams he sells on Friday are vanilla.\n\\newline\n\nWork out the fraction of ice creams he sells on Friday that are vanilla.\n\\newline\n\\\\\nGive your answer in its simplest form.\n\\newline\n\n He buys tubs of ice cream for his shop in the ratio vanilla : chocolate $= 11 : 7$.\n\\newline\n\\\\\nHe buys 28 tubs of chocolate ice cream.\n\\newline\n\nWork out how many tubs of vanilla ice cream he buys.\n\\newline\n\n(b) Antonio records the number of chairs his shop hires out on each day for a week.\n\\newline\n\\[123   98   116   45   67   165   156\\]\n\n(i)  Work out the range.\n\\newline\n\n Find the median.\n\\newline\n\n Calculate the mean.\n\\newline\n\n(c) (i)  Antonio buys beach balls for \\$2.50 each and sells them for \\$4.20 each.\n\\newline\n\nWork out the percentage profit he makes on each beach ball.\n\\newline\n\n A beach ball is a sphere with radius $15\\,\\text{cm}$.\n\\newline\n\nCalculate the volume of the beach ball.\n\\newline\n\\\\\nGive the units of your answer.\n\\newline\n\n[The volume, $V$, of a sphere with radius $r$ is $V = \\dfrac{4}{3}\\pi r^3$.\n\\newline\n]\n\n(d) The shop sells sun cream in bottles $A$, $B$ and $C$.\n\\newline\n\n\\begin{tabular}{ccc}\nBottle $A$ & Bottle $B$ & Bottle $C$ \\\\\n$160\\,\\text{ml}$ & $200\\,\\text{ml}$ & $240\\,\\text{ml}$ \\\\\n\\$3.75 & \\$4.75 & \\$6.50 \\\\\n\\end{tabular}\nWork out which bottle is the best value.\n\\newline\n\\\\\nYou must show all your working.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "He makes a tally of the number of ice creams he sells on Friday.\n\\newline\n\n\\begin{center}\n\\TallyMarks{8}{3}\n\\end{center}\n\nWork out the number of ice creams he sells on Friday.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "15 of the ice creams he sells on Friday are vanilla.\n\\newline\n\nWork out the fraction of ice creams he sells on Friday that are vanilla.\n\\newline\n\\\\\nGive your answer in its simplest form.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "He buys tubs of ice cream for his shop in the ratio vanilla : chocolate $= 11 : 7$.\n\\newline\n\\\\\nHe buys 28 tubs of chocolate ice cream.\n\\newline\n\nWork out how many tubs of vanilla ice cream he buys.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ],
+        "_itemInlineSubparts": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Antonio records the number of chairs his shop hires out on each day for a week.\n\\newline\n\\[123 \\quad 98 \\quad 116 \\quad 45 \\quad 67 \\quad 165 \\quad 156\\]"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Work out the range.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the median.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate the mean.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ]
+      },
+      {
+        "label": "(c)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Antonio buys beach balls for \\$2.50 each and sells them for \\$4.20 each.\n\\newline\n\nWork out the percentage profit he makes on each beach ball.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "\\%"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "A beach ball is a sphere with radius $15\\,\\text{cm}$.\n\\newline\n\nCalculate the volume of the beach ball.\n\\newline\n\\\\\nGive the units of your answer.\n\\newline\n\n[The volume, $V$, of a sphere with radius $r$ is $V = \\dfrac{4}{3}\\pi r^3$.\n\\newline\n]"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 3,
+            "_compactMarks": true
+          }
+        ],
+        "_itemInlineSubparts": true
+      },
+      {
+        "label": "(d)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "The shop sells sun cream in bottles $A$, $B$ and $C$.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{center}\n\\begin{tabular}{ccc}\nBottle $A$ & Bottle $B$ & Bottle $C$ \\\\\n160\\,ml & 200\\,ml & 240\\,ml \\\\\n\\$3.75 & \\$4.75 & \\$6.50 \\\\\n\\end{tabular}\n\\end{center}"
+          },
+          {
+            "type": "text",
+            "content": "Work out which bottle is the best value.\n\\newline\n\\\\\nYou must show all your working.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "Bottle"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Antonio has a shop near the beach.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "Antonio has a shop near the beach.\n\n\\begin{parts}\n\\item \\begin{subparts}\n\\subpart He makes a tally of the number of ice creams he sells on Friday.\n\n\\begin{center}\n\\TallyMarks{8}{3}\n\\end{center}\n\nWork out the number of ice creams he sells on Friday.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\subpart 15 of the ice creams he sells on Friday are vanilla.\n\nWork out the fraction of ice creams he sells on Friday that are vanilla.\\\\\nGive your answer in its simplest form.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\subpart He buys tubs of ice cream for his shop in the ratio vanilla : chocolate $= 11 : 7$.\\\\\nHe buys 28 tubs of chocolate ice cream.\n\nWork out how many tubs of vanilla ice cream he buys.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{subparts}\n\n\\item Antonio records the number of chairs his shop hires out on each day for a week.\n\\[123 \\quad 98 \\quad 116 \\quad 45 \\quad 67 \\quad 165 \\quad 156\\]\n\n\\begin{subparts}\n\\subpart Work out the range.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\subpart Find the median.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\subpart Calculate the mean.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{subparts}\n\n\\item \\begin{subparts}\n\\subpart Antonio buys beach balls for \\$2.50 each and sells them for \\$4.20 each.\n\nWork out the percentage profit he makes on each beach ball.\n\n\\AnswerLine[][\\%]\n\\Marks{2}\n\n\\subpart A beach ball is a sphere with radius 15\\,cm.\n\nCalculate the volume of the beach ball.\\\\\nGive the units of your answer.\n\n[The volume, $V$, of a sphere with radius $r$ is $V = \\dfrac{4}{3}\\pi r^3$.]\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\end{subparts}\n\n\\item The shop sells sun cream in bottles $A$, $B$ and $C$.\n\n\\begin{center}\n\\begin{tabular}{ccc}\nBottle $A$ & Bottle $B$ & Bottle $C$ \\\\\n160\\,ml & 200\\,ml & 240\\,ml \\\\\n\\$3.75 & \\$4.75 & \\$6.50 \\\\\n\\end{tabular}\n\\end{center}\n\nWork out which bottle is the best value.\\\\\nYou must show all your working.\n\n\\AnswerLine[Bottle][]\n\\Marks{3}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2022MayJune-Paper32-Q02",
+    "paper": "2022MayJune-Paper32",
+    "qnum": 2,
+    "marks": 15,
+    "topics": [
+      "Algebra and graphs",
+      "Geometry",
+      "Transformations and vectors"
+    ],
+    "s": "2.10",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Graphs of functions",
+    "qtype": "completing table of values and drawing graph of reciprocal function",
+    "g": "function",
+    "src": "0580/32/M/J/22 Q02",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "(a) (i)  Complete the table of values for $y = \\dfrac{-6}{x}$.\n\\newline\n\n\\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}\n\\hline\n$x$ & $-6$ & $-4$ & $-3$ & $-2$ & $-1.5$ & $-1$ & $1$ & $1.5$ & $2$ & $3$ & $5$ & $6$ \\\\\n\\hline\n$y$ & $1$ & & $2$ & $3$ & & $6$ & $-6$ & & $-3$ & $-2$ & & $-1$ \\\\\n\\hline\n\\end{tabular}\n\n On the grid, draw the graph of $y = \\dfrac{-6}{x}$ for $-6 \\leqslant x \\leqslant -1$ and $1 \\leqslant x \\leqslant 6$.\n\\newline\n\n Write down the order of rotational symmetry of the graph.\n\\newline\n\n Write down the equation of each line of symmetry of the graph.\n\\newline\n\n{...}]\n\n(b) On the grid, draw the line $y = 2.5$.\n\\newline\n\n(c) Use your graph to solve the equation $\\dfrac{-6}{x} = 2.5$.\n\\newline\n\n(d) \nDraw a line that passes through the point $P$ and is perpendicular to line $L$.\n\\newline\n\n(e) Find the equation of the straight line that\n(f) is parallel to the line $y = 3x + 5$\nand\n(a) passes through the point $(1, 7)$.\n\\newline\n\nGive your answer in the form $y = mx + c$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Complete the table of values for $y = \\dfrac{-6}{x}$.\n\\newline\n"
+              },
+              {
+                "type": "table",
+                "content": "\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}\n\\hline\n$x$ & $-6$ & $-4$ & $-3$ & $-2$ & $-1.5$ & $-1$ & $1$ & $1.5$ & $2$ & $3$ & $5$ & $6$ \\\\\n\\hline\n$y$ & $1$ & & $2$ & $3$ & & $6$ & $-6$ & & $-3$ & $-2$ & & $-1$ \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+              }
+            ],
+            "marks": 3
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "On the grid, draw the graph of $y = \\dfrac{-6}{x}$ for $-6 \\leqslant x \\leqslant -1$ and $1 \\leqslant x \\leqslant 6$.\n\\newline\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.6]\n\\draw[gray,very thin] (-6,-6) grid (6,6);\n\\draw[->] (-6.5,0) -- (6.5,0) node[right] {$x$};\n\\draw[->] (0,-6.5) -- (0,6.5) node[above] {$y$};\n\\foreach \\x in {-6,-5,-4,-3,-2,-1,1,2,3,4,5,6} \\draw (\\x,0.1) -- (\\x,-0.1) node[below] {\\tiny\\x};\n\\foreach \\y in {-6,-5,-4,-3,-2,-1,1,2,3,4,5,6} \\draw (0.1,\\y) -- (-0.1,\\y) node[left] {\\tiny\\y};\n\\end{tikzpicture}\n\\end{center}"
+              }
+            ],
+            "marks": 4
+          },
+          {
+            "label": "(iii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Write down the order of rotational symmetry of the graph.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iv)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Write down the equation of each line of symmetry of the graph.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "and \\makebox[3cm]{\\dotfill}"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ],
+        "_itemInlineSubparts": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "On the grid, draw the line $y = 2.5$.\n\\newline\n"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Use your graph to solve the equation $\\dfrac{-6}{x} = 2.5$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x = $"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n\\draw[thick] (0,0) -- (4,3);\n\\fill (1.5,0.5) circle (2pt) node[below left] {$P$};\n\\node at (4.2,3.2) {$L$};\n\\end{tikzpicture}\n\\end{center}\n\nDraw a line that passes through the point $P$ and is perpendicular to line $L$.\n\\newline\n"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(e)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the equation of the straight line that\n\\begin{parts}"
+          }
+        ]
+      },
+      {
+        "label": "(f)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "text",
+            "content": "is parallel to the line $y = 3x + 5$"
+          }
+        ]
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [],
+    "_v4_skip": true,
+    "_rawBody": "\\begin{parts}\n\\item \\begin{subparts}\n\\subpart Complete the table of values for $y = \\dfrac{-6}{x}$.\n\n\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}\n\\hline\n$x$ & $-6$ & $-4$ & $-3$ & $-2$ & $-1.5$ & $-1$ & $1$ & $1.5$ & $2$ & $3$ & $5$ & $6$ \\\\\n\\hline\n$y$ & $1$ & & $2$ & $3$ & & $6$ & $-6$ & & $-3$ & $-2$ & & $-1$ \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\Marks{3}\n\n\\subpart On the grid, draw the graph of $y = \\dfrac{-6}{x}$ for $-6 \\leqslant x \\leqslant -1$ and $1 \\leqslant x \\leqslant 6$.\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.6]\n\\draw[gray,very thin] (-6,-6) grid (6,6);\n\\draw[->] (-6.5,0) -- (6.5,0) node[right] {$x$};\n\\draw[->] (0,-6.5) -- (0,6.5) node[above] {$y$};\n\\foreach \\x in {-6,-5,-4,-3,-2,-1,1,2,3,4,5,6} \\draw (\\x,0.1) -- (\\x,-0.1) node[below] {\\tiny\\x};\n\\foreach \\y in {-6,-5,-4,-3,-2,-1,1,2,3,4,5,6} \\draw (0.1,\\y) -- (-0.1,\\y) node[left] {\\tiny\\y};\n\\end{tikzpicture}\n\\end{center}\n\n\\Marks{4}\n\n\\subpart Write down the order of rotational symmetry of the graph.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\subpart Write down the equation of each line of symmetry of the graph.\n\n\\AnswerLine[][and \\makebox[3cm]{\\dotfill}]\n\\Marks{2}\n\n\\end{subparts}\n\n\\item On the grid, draw the line $y = 2.5$.\n\\Marks{1}\n\n\\item Use your graph to solve the equation $\\dfrac{-6}{x} = 2.5$.\n\n\\AnswerLine[$x = $][]\n\\Marks{1}\n\n\\item \n\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n\\draw[thick] (0,0) -- (4,3);\n\\fill (1.5,0.5) circle (2pt) node[below left] {$P$};\n\\node at (4.2,3.2) {$L$};\n\\end{tikzpicture}\n\\end{center}\n\nDraw a line that passes through the point $P$ and is perpendicular to line $L$.\n\\Marks{1}\n\n\\item Find the equation of the straight line that\n\\begin{parts}\n\\item is parallel to the line $y = 3x + 5$\n\\end{parts}\nand\n\\begin{parts}\n\\item passes through the point $(1, 7)$.\n\\end{parts}\n\nGive your answer in the form $y = mx + c$.\n\n\\AnswerLine[$y = $][]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "_postParts": [
+      {
+        "type": "text",
+        "content": "and\n\\begin{parts}\n\\item passes through the point $(1, 7)$.\n\\end{parts}\n\nGive your answer in the form $y = mx + c$.\n\n\\AnswerLine[$y = $][]\n\\Marks{2}\n\n\\end{parts}"
+      }
+    ],
+    "_compactBegin": true
+  },
+  {
+    "id": "0580-2022MayJune-Paper32-Q03",
+    "paper": "2022MayJune-Paper32",
+    "qnum": 3,
+    "marks": 11,
+    "topics": [
+      "Algebra and graphs",
+      "Geometry"
+    ],
+    "s": null,
+    "d": 1,
+    "cat": "algebra",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/32/M/J/22 Q03",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "(a) \n(i)  Write down the mathematical name for the type of angle $a$.\n\\newline\n\n Measure angle $a$.\n\\newline\n\n(b) Kate describes a quadrilateral.\n\\newline\n(c) All the sides are the same length.\n\\newline\n\n(d) It has only two lines of symmetry.\n\\newline\n\n(i)  Draw a sketch of this quadrilateral.\n\\newline\n\n Write down the mathematical name for this quadrilateral.\n\\newline\n\n One of the interior angles of this quadrilateral is $70°$.\n\\newline\n\nWork out the other three interior angles.\n\\newline\n\n{...} , ]\n\nThe diagrams show the angles in a triangle and two angles on a straight line.\n\\newline\n\n(i)  The triangle is used to write down an equation in terms of $x$ and $y$.\n\\newline\n\\[2x + 2y = 180\\]\nGive the geometrical reason why this equation is correct.\n\\newline\n\n Use the diagram with two angles on a straight line to write down another equation in terms of $x$ and $y$.\n\\newline\n\n Solve these simultaneous equations.\n\\newline\n\\\\\nYou must show all your working.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n\\draw (0,0) -- (2,4) -- (5,0);\n\\draw (0,0) -- (-0.5,-0.3);\n\\draw (5,0) -- (5.5,-0.3);\n\\draw (0.3,0) arc (0:63:0.3);\n\\node at (0.6,0.3) {$a$};\n\\end{tikzpicture}\n\\end{center}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Write down the mathematical name for the type of angle $a$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Measure angle $a$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "text",
+            "content": "Kate describes a quadrilateral.\n\\newline\n\\begin{parts}"
+          }
+        ]
+      },
+      {
+        "label": "(c)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "text",
+            "content": "All the sides are the same length.\n\\newline\n"
+          }
+        ]
+      },
+      {
+        "label": "(d)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "text",
+            "content": "It has only two lines of symmetry.\n\\newline\n"
+          }
+        ]
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "",
+    "cmd": "draw",
+    "stem": [],
+    "_v4_skip": true,
+    "_rawBody": "\\begin{parts}\n\\item \n\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n\\draw (0,0) -- (2,4) -- (5,0);\n\\draw (0,0) -- (-0.5,-0.3);\n\\draw (5,0) -- (5.5,-0.3);\n\\draw (0.3,0) arc (0:63:0.3);\n\\node at (0.6,0.3) {$a$};\n\\end{tikzpicture}\n\\end{center}\n\n\\begin{subparts}\n\\subpart Write down the mathematical name for the type of angle $a$.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\subpart Measure angle $a$.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{subparts}\n\n\\item Kate describes a quadrilateral.\n\\begin{parts}\n\\item All the sides are the same length.\n\\item It has only two lines of symmetry.\n\\end{parts}\n\n\\begin{subparts}\n\\subpart Draw a sketch of this quadrilateral.\n\n\\Marks{1}\n\n\\subpart Write down the mathematical name for this quadrilateral.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\subpart One of the interior angles of this quadrilateral is $70°$.\n\nWork out the other three interior angles.\n\n\\AnswerLine[][\\quad , \\makebox[2cm]{\\dotfill} , \\makebox[2cm]{\\dotfill}]\n\\Marks{2}\n\n\\end{subparts}\n\n\\item The diagrams show the angles in a triangle and two angles on a straight line.\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.7]\n% Triangle\n\\draw (0,0) -- (2,3) -- (4,0) -- cycle;\n\\node at (0.5,0.3) {$x°$};\n\\node at (3.5,0.3) {$x°$};\n\\node at (2,2.5) {$2y°$};\n% Straight line\n\\begin{scope}[xshift=7cm]\n\\draw (0,0) -- (4,0);\n\\draw (0,0) -- (1.5,2);\n\\node at (0.6,0.3) {$x°$};\n\\node at (1.5,0.3) {$6y°$};\n\\end{scope}\n\\node at (9,2) {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}\n\n\\begin{subparts}\n\\subpart The triangle is used to write down an equation in terms of $x$ and $y$.\n\\[2x + 2y = 180\\]\nGive the geometrical reason why this equation is correct.\n\n\\AnswerLine[Reason][]\n\\Marks{1}\n\n\\subpart Use the diagram with two angles on a straight line to write down another equation in terms of $x$ and $y$.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\subpart Solve these simultaneous equations.\\\\\nYou must show all your working.\n\n\\AnswerLine[$x = $][]\n\n\\AnswerLine[$y = $][]\n\\Marks{3}\n\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "_postParts": [
+      {
+        "type": "text",
+        "content": "\\begin{subparts}\n\\subpart Draw a sketch of this quadrilateral.\n\n\\Marks{1}\n\n\\subpart Write down the mathematical name for this quadrilateral.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\subpart One of the interior angles of this quadrilateral is $70°$.\n\nWork out the other three interior angles.\n\n\\AnswerLine[][\\quad , \\makebox[2cm]{\\dotfill} , \\makebox[2cm]{\\dotfill}]\n\\Marks{2}\n\n\\end{subparts}\n\n\\item The diagrams show the angles in a triangle and two angles on a straight line.\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.7]\n% Triangle\n\\draw (0,0) -- (2,3) -- (4,0) -- cycle;\n\\node at (0.5,0.3) {$x°$};\n\\node at (3.5,0.3) {$x°$};\n\\node at (2,2.5) {$2y°$};\n% Straight line\n\\begin{scope}[xshift=7cm]\n\\draw (0,0) -- (4,0);\n\\draw (0,0) -- (1.5,2);\n\\node at (0.6,0.3) {$x°$};\n\\node at (1.5,0.3) {$6y°$};\n\\end{scope}\n\\node at (9,2) {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}\n\n\\begin{subparts}\n\\subpart The triangle is used to write down an equation in terms of $x$ and $y$.\n\\[2x + 2y = 180\\]\nGive the geometrical reason why this equation is correct.\n\n\\AnswerLine[Reason][]\n\\Marks{1}\n\n\\subpart Use the diagram with two angles on a straight line to write down another equation in terms of $x$ and $y$.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\subpart Solve these simultaneous equations.\\\\\nYou must show all your working.\n\n\\AnswerLine[$x = $][]\n\n\\AnswerLine[$y = $][]\n\\Marks{3}\n\n\\end{subparts}\n\n\\end{parts}"
+      }
+    ],
+    "_compactBegin": true,
+    "_compactItems": true
+  },
+  {
+    "id": "0580-2022MayJune-Paper32-Q04",
+    "paper": "2022MayJune-Paper32",
+    "qnum": 4,
+    "marks": 9,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.6",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/32/M/J/22 Q04",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "(a) The diagram shows the net of a cuboid.\n\\newline\n\n(i)  Work out the area of the shaded rectangle, $A$.\n\\newline\n\n The volume of the cuboid is $468\\,\\text{cm}^3$.\n\\newline\n\nComplete the statement.\n\\newline\n\nThe dimensions of the cuboid are $\\,$cm by $\\,$cm by $\\,$cm\n\n(b) A cylinder has a radius of $8\\,\\text{cm}$ and a height of $12\\,\\text{cm}$.\n\\newline\n\nCalculate, in terms of $\\pi$, the volume of the cylinder.\n\\newline\n\n(c) \nThe diagram shows a circle with a diameter of $7\\,\\text{cm}$ and a parallelogram with a base of $12\\,\\text{cm}$.\n\\newline\n\\\\\nThe circle touches two of the sides of the parallelogram.\n\\newline\n\nCalculate the shaded area.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The diagram shows the net of a cuboid.\n\\newline\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.5]\n% Net of cuboid\n\\draw (0,0) rectangle (5,7.8);\n\\draw (5,0) rectangle (12.8,7.8);\n\\draw (5,7.8) rectangle (12.8,12.8);\n\\draw (12.8,0) rectangle (17.8,7.8);\n\\draw[fill=gray!30] (0,0) rectangle (5,7.8);\n\\node at (2.5,3.9) {$A$};\n% Dimensions\n\\draw[<->] (0,-0.5) -- (5,-0.5) node[midway,below] {$5\\,\\text{cm}$};\n\\draw[<->] (5,-0.5) -- (12.8,-0.5) node[midway,below] {$7.8\\,\\text{cm}$};\n\\node at (15,9) {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Work out the area of the shaded rectangle, $A$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "cm$^2$"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "The volume of the cuboid is $468\\,\\text{cm}^3$.\n\\newline\n\nComplete the statement.\n\\newline\n\nThe dimensions of the cuboid are \\makebox[1.5cm]{\\dotfill} cm by \\makebox[1.5cm]{\\dotfill} cm by \\makebox[1.5cm]{\\dotfill} cm"
+              }
+            ],
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "A cylinder has a radius of $8\\,\\text{cm}$ and a height of $12\\,\\text{cm}$.\n\\newline\n\nCalculate, in terms of $\\pi$, the volume of the cylinder.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "cm$^3$"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.4]\n% Parallelogram with circle inside\n\\fill[gray!30] (0,0) -- (3,7) -- (15,7) -- (12,0) -- cycle;\n\\fill[white] (7.5,3.5) circle (3.5);\n\\draw (0,0) -- (3,7) -- (15,7) -- (12,0) -- cycle;\n\\draw (7.5,3.5) circle (3.5);\n% Dimensions\n\\draw[<->] (0,-0.5) -- (12,-0.5) node[midway,below] {$12\\,\\text{cm}$};\n\\draw[<->] (3.5,3.5) -- (11.5,3.5) node[midway,above] {$7\\,\\text{cm}$};\n\\node at (16,5) {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nThe diagram shows a circle with a diameter of $7\\,\\text{cm}$ and a parallelogram with a base of $12\\,\\text{cm}$.\n\\newline\n\\\\\nThe circle touches two of the sides of the parallelogram.\n\\newline\n\nCalculate the shaded area.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "cm$^2$"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item The diagram shows the net of a cuboid.\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.5]\n% Net of cuboid\n\\draw (0,0) rectangle (5,7.8);\n\\draw (5,0) rectangle (12.8,7.8);\n\\draw (5,7.8) rectangle (12.8,12.8);\n\\draw (12.8,0) rectangle (17.8,7.8);\n\\draw[fill=gray!30] (0,0) rectangle (5,7.8);\n\\node at (2.5,3.9) {$A$};\n% Dimensions\n\\draw[<->] (0,-0.5) -- (5,-0.5) node[midway,below] {5\\,cm};\n\\draw[<->] (5,-0.5) -- (12.8,-0.5) node[midway,below] {7.8\\,cm};\n\\node at (15,9) {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}\n\n\\begin{subparts}\n\\subpart Work out the area of the shaded rectangle, $A$.\n\n\\AnswerLine[][cm$^2$]\n\\Marks{2}\n\n\\subpart The volume of the cuboid is 468\\,cm$^3$.\n\nComplete the statement.\n\nThe dimensions of the cuboid are \\makebox[1.5cm]{\\dotfill}\\,cm by \\makebox[1.5cm]{\\dotfill}\\,cm by \\makebox[1.5cm]{\\dotfill}\\,cm\n\\Marks{2}\n\n\\end{subparts}\n\n\\item A cylinder has a radius of 8\\,cm and a height of 12\\,cm.\n\nCalculate, in terms of $\\pi$, the volume of the cylinder.\n\n\\AnswerLine[][cm$^3$]\n\\Marks{2}\n\n\\item \n\\begin{center}\n\\begin{tikzpicture}[scale=0.4]\n% Parallelogram with circle inside\n\\fill[gray!30] (0,0) -- (3,7) -- (15,7) -- (12,0) -- cycle;\n\\fill[white] (7.5,3.5) circle (3.5);\n\\draw (0,0) -- (3,7) -- (15,7) -- (12,0) -- cycle;\n\\draw (7.5,3.5) circle (3.5);\n% Dimensions\n\\draw[<->] (0,-0.5) -- (12,-0.5) node[midway,below] {12\\,cm};\n\\draw[<->] (3.5,3.5) -- (11.5,3.5) node[midway,above] {7\\,cm};\n\\node at (16,5) {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nThe diagram shows a circle with a diameter of 7\\,cm and a parallelogram with a base of 12\\,cm.\\\\\nThe circle touches two of the sides of the parallelogram.\n\nCalculate the shaded area.\n\n\\AnswerLine[][cm$^2$]\n\\Marks{3}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_compactBegin": true
+  },
+  {
+    "id": "0580-2022MayJune-Paper32-Q05",
+    "paper": "2022MayJune-Paper32",
+    "qnum": 5,
+    "marks": 8,
+    "topics": [
+      "Number",
+      "Geometry",
+      "Statistics"
+    ],
+    "s": null,
+    "d": 1,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/32/M/J/22 Q05",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "Rebecca records the flight distance and the ticket price for each of her last 12 plane journeys.\n\\newline\n\n\\begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|c|c|}\n\\hline\nFlight distance (km) & 95 & 230 & 70 & 500 & 200 & 450 & 600 & 350 & 100 & 275 & 380 & 540 \\\\\n\\hline\nTicket price (\\$) & 220 & 210 & 60 & 380 & 130 & 270 & 340 & 250 & 120 & 170 & 310 & 305 \\\\\n\\hline\n\\end{tabular}\n\n(a) Complete the scatter diagram.\n\\newline\n\\\\\nThe first eight points have been plotted for you.\n\\newline\n\n(b) What type of correlation is shown in the scatter diagram?\n\n(c) On the scatter diagram, put a ring around the point for the journey that has the highest price per kilometre travelled.\n\\newline\n\n(d) On the scatter diagram, draw a line of best fit.\n\\newline\n\n(e) The scale drawing shows two airports, $K$ and $L$.\n\\newline\n\\\\\nThe scale is 1 centimetre represents 50 kilometres.\n\\newline\n\nA plane flies in a straight line from $K$ to $L$.\n\\newline\n\nUse the scale drawing and your line of best fit to find an estimate for the ticket price of the journey from $K$ to $L$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Complete the scatter diagram.\n\\newline\n\\\\\nThe first eight points have been plotted for you.\n\\newline\n"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "What type of correlation is shown in the scatter diagram?"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "On the scatter diagram, put a ring around the point for the journey that has the highest price per kilometre travelled.\n\\newline\n"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "On the scatter diagram, draw a line of best fit.\n\\newline\n"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(e)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "The scale drawing shows two airports, $K$ and $L$.\n\\newline\n\\\\\nThe scale is 1 centimetre represents 50 kilometres.\n\\newline\n\n\\begin{center}\n\\begin{tikzpicture}[scale=1]\n\\fill (0,0) circle (2pt) node[below left] {$K$};\n\\fill (4,2) circle (2pt) node[above right] {$L$};\n\\draw (0,0) -- (4,2);\n\\node at (5,0) {Scale: $1\\,\\text{cm}$ to $50\\,\\text{km}$};\n\\end{tikzpicture}\n\\end{center}\n\nA plane flies in a straight line from $K$ to $L$.\n\\newline\n\nUse the scale drawing and your line of best fit to find an estimate for the ticket price of the journey from $K$ to $L$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "\\$"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Rebecca records the flight distance and the ticket price for each of her last 12 plane journeys.\n\\newline\n"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{center}\n\\begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|c|c|}\n\\hline\nFlight distance (km) & 95 & 230 & 70 & 500 & 200 & 450 & 600 & 350 & 100 & 275 & 380 & 540 \\\\\n\\hline\nTicket price (\\$) & 220 & 210 & 60 & 380 & 130 & 270 & 340 & 250 & 120 & 170 & 310 & 305 \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+      },
+      {
+        "type": "text",
+        "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.5]\n\\draw[gray,very thin] (0,0) grid (12,8);\n\\draw[->] (0,0) -- (12.5,0) node[right] {Flight distance (km)};\n\\draw[->] (0,0) -- (0,8.5) node[above] {Ticket price (\\$)};\n\\foreach \\x/\\label in {0/0,2/100,4/200,6/300,8/400,10/500,12/600} \n  \\draw (\\x,0.1) -- (\\x,-0.1) node[below] {\\tiny\\label};\n\\foreach \\y/\\label in {0/0,2/100,4/200,6/300,8/400} \n  \\draw (0.1,\\y) -- (-0.1,\\y) node[left] {\\tiny\\label};\n% First 8 points plotted\n\\node at (0.95*2,2.2*2) {$\\times$};\n\\node at (2.3*2,2.1*2) {$\\times$};\n\\node at (0.7*2,0.6*2) {$\\times$};\n\\node at (5*2,3.8*2) {$\\times$};\n\\node at (2*2,1.3*2) {$\\times$};\n\\node at (4.5*2,2.7*2) {$\\times$};\n\\node at (6*2,3.4*2) {$\\times$};\n\\node at (3.5*2,2.5*2) {$\\times$};\n\\end{tikzpicture}\n\\end{center}"
+      }
+    ],
+    "_rawBody": "Rebecca records the flight distance and the ticket price for each of her last 12 plane journeys.\n\n\\begin{center}\n\\begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|c|c|}\n\\hline\nFlight distance (km) & 95 & 230 & 70 & 500 & 200 & 450 & 600 & 350 & 100 & 275 & 380 & 540 \\\\\n\\hline\nTicket price (\\$) & 220 & 210 & 60 & 380 & 130 & 270 & 340 & 250 & 120 & 170 & 310 & 305 \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.5]\n\\draw[gray,very thin] (0,0) grid (12,8);\n\\draw[->] (0,0) -- (12.5,0) node[right] {Flight distance (km)};\n\\draw[->] (0,0) -- (0,8.5) node[above] {Ticket price (\\$)};\n\\foreach \\x/\\label in {0/0,2/100,4/200,6/300,8/400,10/500,12/600} \n  \\draw (\\x,0.1) -- (\\x,-0.1) node[below] {\\tiny\\label};\n\\foreach \\y/\\label in {0/0,2/100,4/200,6/300,8/400} \n  \\draw (0.1,\\y) -- (-0.1,\\y) node[left] {\\tiny\\label};\n% First 8 points plotted\n\\node at (0.95*2,2.2*2) {$\\times$};\n\\node at (2.3*2,2.1*2) {$\\times$};\n\\node at (0.7*2,0.6*2) {$\\times$};\n\\node at (5*2,3.8*2) {$\\times$};\n\\node at (2*2,1.3*2) {$\\times$};\n\\node at (4.5*2,2.7*2) {$\\times$};\n\\node at (6*2,3.4*2) {$\\times$};\n\\node at (3.5*2,2.5*2) {$\\times$};\n\\end{tikzpicture}\n\\end{center}\n\n\\begin{parts}\n\\item Complete the scatter diagram.\\\\\nThe first eight points have been plotted for you.\n\\Marks{2}\n\n\\item What type of correlation is shown in the scatter diagram?\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item On the scatter diagram, put a ring around the point for the journey that has the highest price per kilometre travelled.\n\\Marks{1}\n\n\\item On the scatter diagram, draw a line of best fit.\n\\Marks{1}\n\n\\item The scale drawing shows two airports, $K$ and $L$.\\\\\nThe scale is 1 centimetre represents 50 kilometres.\n\n\\begin{center}\n\\begin{tikzpicture}[scale=1]\n\\fill (0,0) circle (2pt) node[below left] {$K$};\n\\fill (4,2) circle (2pt) node[above right] {$L$};\n\\draw (0,0) -- (4,2);\n\\node at (5,0) {Scale: 1\\,cm to 50\\,km};\n\\end{tikzpicture}\n\\end{center}\n\nA plane flies in a straight line from $K$ to $L$.\n\nUse the scale drawing and your line of best fit to find an estimate for the ticket price of the journey from $K$ to $L$.\n\n\\AnswerLine[\\$][]\n\\Marks{3}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2022MayJune-Paper32-Q06",
+    "paper": "2022MayJune-Paper32",
+    "qnum": 6,
+    "marks": 12,
+    "topics": [
+      "Number"
+    ],
+    "s": null,
+    "d": 1,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/32/M/J/22 Q06",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "Mr Vay works in a bank.\n\\newline\n\n(a) The travel graph shows Mr Vay's journey from his home to the bank.\n\\newline\n\n(i)  Write down the distance Mr Vay travels in the first 8 minutes.\n\\newline\n\n Explain what is happening between 07$\\,$08 and 07$\\,$12.\n\\newline\n\n Between which times is Mr Vay's journey the fastest?\\\\\nGive a reason for your answer.\n\\newline\n\nBetween  and \n\n Work out Mr Vay's average speed for the whole journey.\n\\newline\n\\\\\nGive your answer in kilometres per hour.\n\\newline\n\n(b) Katya takes some coins to the bank.\n\\newline\n\\\\\nThe table shows the number of each type of coin.\n\\newline\n\n\\begin{tabular}{|c|c|}\n\\hline\nType of coin & Number of coins \\\\\n\\hline\n1 cent & 12 \\\\\n\\hline\n5 cent & 23 \\\\\n\\hline\n10 cent & 17 \\\\\n\\hline\n25 cent & 9 \\\\\n\\hline\n50 cent & 7 \\\\\n\\hline\n1 dollar & 24 \\\\\n\\hline\n\\end{tabular}\nWork out the total amount of money Katya takes to the bank.\n\\newline\n\\\\\nGive your answer in dollars.\n\\newline\n\n(c) Adam changes \\$700 into euros at the bank.\n\\newline\n\\\\\nThe exchange rate is \\$1 $=$ 0.904 euros.\n\\newline\n\nWork out the amount Adam receives.\n\\newline\n\n(d) Clara invests \\$8500 for 4 years at a rate of 1.7\\% per year simple interest.\n\\newline\n\nCalculate the total interest earned during the 4 years.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The travel graph shows Mr Vay's journey from his home to the bank.\n\\newline\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.7]\n\\draw[gray,very thin] (0,0) grid (12,7);\n\\draw[->] (0,0) -- (12.5,0) node[right] {Time};\n\\draw[->] (0,0) -- (0,7.5);\n\\node[left] at (0,7) {Bank};\n\\node[left] at (0,0) {Home};\n\\node[left] at (0,3.5) {Distance (km)};\n% Time labels\n\\foreach \\x/\\label in {0/07$\\,$00,2/07$\\,$04,4/07$\\,$08,6/07$\\,$12,8/07$\\,$16,10/07$\\,$20,12/07$\\,$24} \n  \\node[below] at (\\x,0) {\\tiny\\label};\n% Distance labels\n\\foreach \\y in {1,2,3,4,5,6,7} \\node[left] at (0,\\y) {\\tiny\\y};\n% Journey line\n\\draw[thick] (0,0) -- (4,2) -- (6,2) -- (12,7);\n\\end{tikzpicture}\n\\end{center}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Write down the distance Mr Vay travels in the first 8 minutes.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "km"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Explain what is happening between 07$\\,$08 and 07$\\,$12.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Between which times is Mr Vay's journey the fastest?\\\\\nGive a reason for your answer.\n\\newline\n\nBetween \\makebox[2cm]{\\dotfill} and \\makebox[2cm]{\\dotfill}"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "Reason"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iv)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Work out Mr Vay's average speed for the whole journey.\n\\newline\n\\\\\nGive your answer in kilometres per hour.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "km/h"
+            },
+            "marks": 3,
+            "_compactMarks": true
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Katya takes some coins to the bank.\n\\newline\n\\\\\nThe table shows the number of each type of coin.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{center}\n\\begin{tabular}{|c|c|}\n\\hline\nType of coin & Number of coins \\\\\n\\hline\n1 cent & 12 \\\\\n\\hline\n5 cent & 23 \\\\\n\\hline\n10 cent & 17 \\\\\n\\hline\n25 cent & 9 \\\\\n\\hline\n50 cent & 7 \\\\\n\\hline\n1 dollar & 24 \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+          },
+          {
+            "type": "text",
+            "content": "Work out the total amount of money Katya takes to the bank.\n\\newline\n\\\\\nGive your answer in dollars.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "\\$"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Adam changes \\$700 into euros at the bank.\n\\newline\n\\\\\nThe exchange rate is \\$1 $=$ 0.904 euros.\n\\newline\n\nWork out the amount Adam receives.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "euros"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Clara invests \\$8500 for 4 years at a rate of 1.7\\% per year simple interest.\n\\newline\n\nCalculate the total interest earned during the 4 years.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "\\$"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "",
+    "cmd": "explain",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Mr Vay works in a bank.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "Mr Vay works in a bank.\n\n\\begin{parts}\n\\item The travel graph shows Mr Vay's journey from his home to the bank.\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.7]\n\\draw[gray,very thin] (0,0) grid (12,7);\n\\draw[->] (0,0) -- (12.5,0) node[right] {Time};\n\\draw[->] (0,0) -- (0,7.5);\n\\node[left] at (0,7) {Bank};\n\\node[left] at (0,0) {Home};\n\\node[left] at (0,3.5) {Distance (km)};\n% Time labels\n\\foreach \\x/\\label in {0/07\\,00,2/07\\,04,4/07\\,08,6/07\\,12,8/07\\,16,10/07\\,20,12/07\\,24} \n  \\node[below] at (\\x,0) {\\tiny\\label};\n% Distance labels\n\\foreach \\y in {1,2,3,4,5,6,7} \\node[left] at (0,\\y) {\\tiny\\y};\n% Journey line\n\\draw[thick] (0,0) -- (4,2) -- (6,2) -- (12,7);\n\\end{tikzpicture}\n\\end{center}\n\n\\begin{subparts}\n\\subpart Write down the distance Mr Vay travels in the first 8 minutes.\n\n\\AnswerLine[][km]\n\\Marks{1}\n\n\\subpart Explain what is happening between 07\\,08 and 07\\,12.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\subpart Between which times is Mr Vay's journey the fastest?\\\\\nGive a reason for your answer.\n\nBetween \\makebox[2cm]{\\dotfill} and \\makebox[2cm]{\\dotfill}\n\n\\AnswerLine[Reason][]\n\\Marks{2}\n\n\\subpart Work out Mr Vay's average speed for the whole journey.\\\\\nGive your answer in kilometres per hour.\n\n\\AnswerLine[][km/h]\n\\Marks{3}\n\n\\end{subparts}\n\n\\item Katya takes some coins to the bank.\\\\\nThe table shows the number of each type of coin.\n\n\\begin{center}\n\\begin{tabular}{|c|c|}\n\\hline\nType of coin & Number of coins \\\\\n\\hline\n1 cent & 12 \\\\\n\\hline\n5 cent & 23 \\\\\n\\hline\n10 cent & 17 \\\\\n\\hline\n25 cent & 9 \\\\\n\\hline\n50 cent & 7 \\\\\n\\hline\n1 dollar & 24 \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\nWork out the total amount of money Katya takes to the bank.\\\\\nGive your answer in dollars.\n\n\\AnswerLine[\\$][]\n\\Marks{2}\n\n\\item Adam changes \\$700 into euros at the bank.\\\\\nThe exchange rate is \\$1 $=$ 0.904 euros.\n\nWork out the amount Adam receives.\n\n\\AnswerLine[][euros]\n\\Marks{1}\n\n\\item Clara invests \\$8500 for 4 years at a rate of 1.7\\% per year simple interest.\n\nCalculate the total interest earned during the 4 years.\n\n\\AnswerLine[\\$][]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2022MayJune-Paper32-Q07",
+    "paper": "2022MayJune-Paper32",
+    "qnum": 7,
+    "marks": 12,
+    "topics": [
+      "Number",
+      "Geometry"
+    ],
+    "s": "1.4",
+    "d": 1,
+    "cat": "number",
+    "topic": "Fractions, decimals and percentages",
+    "qtype": "fraction equivalence (visual)",
+    "g": "mixed",
+    "src": "0580/32/M/J/22 Q07",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "(a) \nShade some squares so that both shapes have the same fraction shaded.\n\\newline\n\n(b) Here is a pattern.\n\\newline\n\nPosition number 1 is a $\\bigcirc$.\n\\newline\n\\\\\nPosition number 2 is a $\\blacktriangle$.\n\\newline\n\n(i)  Draw the next two shapes in this pattern.\n\\newline\n\n What do the position numbers of the shape $\\blacksquare$ have in common?\n\n Pierre says that the shape in position number 99 is a $\\blacksquare$.\n\\newline\n\nExplain why he is correct.\n\\newline\n\n(c) $\\mathcal{E} = \\{\\LargeBlackCircle, \\LargeWhiteCircle, \\SmallBlackCircle, \\SmallWhiteCircle, \\LargeBlackTriangle, \\LargeWhiteTriangle, \\SmallBlackTriangle, \\SmallWhiteTriangle, \\LargeBlackRect, \\LargeWhiteRect, \\SmallBlackRect, \\SmallWhiteRect\\}$\n\nThis universal set has twelve elements.\n\\newline\n\\\\\nEach shape is:\n(d) a circle, $C$, or a triangle, $T$, or a rectangle, $R$\n\n(e) large, $L$, or small, $S$\n\n(f) black, $B$, or white, $W$.\n\\newline\n\n(i)  \n\nThe triangles and rectangles are drawn in the Venn diagram.\n\\newline\n\n(a) Draw the four circles to complete the Venn diagram.\n\\newline\n\n(b) Find $\\text{n}(B \\cup C)$.\n\\newline\n\n Six of the twelve shapes are drawn in another Venn diagram.\n\\newline\n\nComplete the Venn diagram by:\n(a) labelling the sets\nand\n(a) drawing the shapes $\\LargeBlackCircle$, $\\SmallBlackTriangle$, $\\SmallBlackRect$ and $\\SmallWhiteRect$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.6]\n% Circle divided into 8 parts with 3 shaded\n\\draw (0,0) circle (2);\n\\foreach \\i in {0,45,90,135,180,225,270,315} {\n  \\draw (0,0) -- (\\i:2);\n}\n\\fill[gray!50] (0,0) -- (0:2) arc (0:45:2) -- cycle;\n\\fill[gray!50] (0,0) -- (45:2) arc (45:90:2) -- cycle;\n\\fill[gray!50] (0,0) -- (90:2) arc (90:135:2) -- cycle;\n% Rectangle grid\n\\begin{scope}[xshift=6cm]\n\\draw (0,0) grid (8,4);\n\\end{scope}\n\\end{tikzpicture}\n\\end{center}\n\nShade some squares so that both shapes have the same fraction shaded.\n\\newline\n"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Here is a pattern.\n\\newline\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.5]\n\\draw (0,0) circle (0.3);\n\\fill (1,0) -- (1.3,0.5) -- (0.7,0.5) -- cycle;\n\\fill (2,0) rectangle (2.5,0.5);\n\\draw (3.5,0) circle (0.3);\n\\fill (4.5,0) -- (4.8,0.5) -- (4.2,0.5) -- cycle;\n\\fill (5.5,0) rectangle (6,0.5);\n\\node at (7.5,0.25) {$\\cdots$};\n\\node at (8.5,0.25) {$\\cdots$};\n\\end{tikzpicture}\n\\end{center}\n\nPosition number 1 is a $\\bigcirc$.\n\\newline\n\\\\\nPosition number 2 is a $\\blacktriangle$.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Draw the next two shapes in this pattern.\n\\newline\n"
+              }
+            ],
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "What do the position numbers of the shape $\\blacksquare$ have in common?"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Pierre says that the shape in position number 99 is a $\\blacksquare$.\n\\newline\n\nExplain why he is correct.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "none",
+              "space": {
+                "type": "drawing",
+                "height": "2cm",
+                "cmd": "Answerspace"
+              }
+            },
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ]
+      },
+      {
+        "label": "(c)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "text",
+            "content": "$\\mathcal{E} = \\{\\LargeBlackCircle, \\LargeWhiteCircle, \\SmallBlackCircle, \\SmallWhiteCircle, \\LargeBlackTriangle, \\LargeWhiteTriangle, \\SmallBlackTriangle, \\SmallWhiteTriangle, \\LargeBlackRect, \\LargeWhiteRect, \\SmallBlackRect, \\SmallWhiteRect\\}$\n\nThis universal set has twelve elements.\n\\newline\n\\\\\nEach shape is:\n\\begin{parts}"
+          }
+        ]
+      },
+      {
+        "label": "(d)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "text",
+            "content": "a circle, $C$, or a triangle, $T$, or a rectangle, $R$"
+          }
+        ]
+      },
+      {
+        "label": "(e)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "text",
+            "content": "large, $L$, or small, $S$"
+          }
+        ]
+      },
+      {
+        "label": "(f)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "text",
+            "content": "black, $B$, or white, $W$.\n\\newline\n"
+          }
+        ]
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "explain",
+    "stem": [],
+    "_v4_skip": true,
+    "_rawBody": "\\begin{parts}\n\\item \n\\begin{center}\n\\begin{tikzpicture}[scale=0.6]\n% Circle divided into 8 parts with 3 shaded\n\\draw (0,0) circle (2);\n\\foreach \\i in {0,45,90,135,180,225,270,315} {\n  \\draw (0,0) -- (\\i:2);\n}\n\\fill[gray!50] (0,0) -- (0:2) arc (0:45:2) -- cycle;\n\\fill[gray!50] (0,0) -- (45:2) arc (45:90:2) -- cycle;\n\\fill[gray!50] (0,0) -- (90:2) arc (90:135:2) -- cycle;\n% Rectangle grid\n\\begin{scope}[xshift=6cm]\n\\draw (0,0) grid (8,4);\n\\end{scope}\n\\end{tikzpicture}\n\\end{center}\n\nShade some squares so that both shapes have the same fraction shaded.\n\\Marks{2}\n\n\\item Here is a pattern.\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.5]\n\\draw (0,0) circle (0.3);\n\\fill (1,0) -- (1.3,0.5) -- (0.7,0.5) -- cycle;\n\\fill (2,0) rectangle (2.5,0.5);\n\\draw (3.5,0) circle (0.3);\n\\fill (4.5,0) -- (4.8,0.5) -- (4.2,0.5) -- cycle;\n\\fill (5.5,0) rectangle (6,0.5);\n\\node at (7.5,0.25) {$\\cdots$};\n\\node at (8.5,0.25) {$\\cdots$};\n\\end{tikzpicture}\n\\end{center}\n\nPosition number 1 is a $\\bigcirc$.\\\\\nPosition number 2 is a $\\blacktriangle$.\n\n\\begin{subparts}\n\\subpart Draw the next two shapes in this pattern.\n\\Marks{1}\n\n\\subpart What do the position numbers of the shape $\\blacksquare$ have in common?\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\subpart Pierre says that the shape in position number 99 is a $\\blacksquare$.\n\nExplain why he is correct.\n\n\\Answerspace[2cm]\n\\Marks{2}\n\n\\end{subparts}\n\n\\item $\\mathcal{E} = \\{\\LargeBlackCircle, \\LargeWhiteCircle, \\SmallBlackCircle, \\SmallWhiteCircle, \\LargeBlackTriangle, \\LargeWhiteTriangle, \\SmallBlackTriangle, \\SmallWhiteTriangle, \\LargeBlackRect, \\LargeWhiteRect, \\SmallBlackRect, \\SmallWhiteRect\\}$\n\nThis universal set has twelve elements.\\\\\nEach shape is:\n\\begin{parts}\n\\item a circle, $C$, or a triangle, $T$, or a rectangle, $R$\n\\item large, $L$, or small, $S$\n\\item black, $B$, or white, $W$.\n\\end{parts}\n\n\\begin{subparts}\n\\subpart \n\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n\\draw (0,0) rectangle (8,5);\n\\node at (0.3,4.7) {$\\mathcal{E}$};\n% Set B\n\\draw (2,2.5) circle (1.5);\n\\node at (1,4) {$B$};\n% Set C\n\\draw (6,2.5) circle (1.5);\n\\node at (7,4) {$C$};\n% Elements shown (triangles and rectangles)\n\\fill (2,3) -- (2.3,3.5) -- (1.7,3.5) -- cycle;\n\\fill (2,2) rectangle (2.4,2.4);\n\\draw (6,3) -- (6.3,3.5) -- (5.7,3.5) -- cycle;\n\\draw (6,2) -- (6.3,2.5) -- (5.7,2.5) -- cycle;\n\\draw (6.8,1.5) -- (7.1,2) -- (6.5,2) -- cycle;\n\\draw (7,3) rectangle (7.3,3.3);\n\\draw (7.2,2.2) rectangle (7.5,2.5);\n\\end{tikzpicture}\n\\end{center}\n\nThe triangles and rectangles are drawn in the Venn diagram.\n\n\\begin{parts}\n\\item Draw the four circles to complete the Venn diagram.\n\\Marks{1}\n\n\\item Find $\\text{n}(B \\cup C)$.\n\n\\AnswerLine[][]\n\\Marks{1}\n\\end{parts}\n\n\\subpart Six of the twelve shapes are drawn in another Venn diagram.\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n\\draw (0,0) rectangle (8,5);\n\\node at (0.3,4.7) {$\\mathcal{E}$};\n% Two overlapping circles\n\\draw (2.5,2.5) circle (1.8);\n\\draw (5.5,2.5) circle (1.8);\n\\node at (1,4.2) {\\makebox[1.5cm]{\\dotfill}};\n\\node at (7,4.2) {\\makebox[1.5cm]{\\dotfill}};\n% Some shapes already placed\n\\draw (1.5,3) -- (1.8,3.5) -- (1.2,3.5) -- cycle;\n\\fill (3.5,3) -- (3.8,3.5) -- (3.2,3.5) -- cycle;\n\\fill (4,2) circle (0.15);\n\\draw (2,1.5) circle (0.25);\n\\draw (6.5,2) -- (6.8,2.5) -- (6.2,2.5) -- cycle;\n\\end{tikzpicture}\n\\end{center}\n\nComplete the Venn diagram by:\n\\begin{parts}\n\\item labelling the sets\n\\end{parts}\nand\n\\begin{parts}\n\\item drawing the shapes $\\LargeBlackCircle$, $\\SmallBlackTriangle$, $\\SmallBlackRect$ and $\\SmallWhiteRect$.\n\\end{parts}\n\\Marks{3}\n\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "_postParts": [
+      {
+        "type": "text",
+        "content": "\\begin{subparts}\n\\subpart \n\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n\\draw (0,0) rectangle (8,5);\n\\node at (0.3,4.7) {$\\mathcal{E}$};\n% Set B\n\\draw (2,2.5) circle (1.5);\n\\node at (1,4) {$B$};\n% Set C\n\\draw (6,2.5) circle (1.5);\n\\node at (7,4) {$C$};\n% Elements shown (triangles and rectangles)\n\\fill (2,3) -- (2.3,3.5) -- (1.7,3.5) -- cycle;\n\\fill (2,2) rectangle (2.4,2.4);\n\\draw (6,3) -- (6.3,3.5) -- (5.7,3.5) -- cycle;\n\\draw (6,2) -- (6.3,2.5) -- (5.7,2.5) -- cycle;\n\\draw (6.8,1.5) -- (7.1,2) -- (6.5,2) -- cycle;\n\\draw (7,3) rectangle (7.3,3.3);\n\\draw (7.2,2.2) rectangle (7.5,2.5);\n\\end{tikzpicture}\n\\end{center}\n\nThe triangles and rectangles are drawn in the Venn diagram.\n\n\\begin{parts}\n\\item Draw the four circles to complete the Venn diagram.\n\\Marks{1}\n\n\\item Find $\\text{n}(B \\cup C)$.\n\n\\AnswerLine[][]\n\\Marks{1}\n\\end{parts}\n\n\\subpart Six of the twelve shapes are drawn in another Venn diagram.\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n\\draw (0,0) rectangle (8,5);\n\\node at (0.3,4.7) {$\\mathcal{E}$};\n% Two overlapping circles\n\\draw (2.5,2.5) circle (1.8);\n\\draw (5.5,2.5) circle (1.8);\n\\node at (1,4.2) {\\makebox[1.5cm]{\\dotfill}};\n\\node at (7,4.2) {\\makebox[1.5cm]{\\dotfill}};\n% Some shapes already placed\n\\draw (1.5,3) -- (1.8,3.5) -- (1.2,3.5) -- cycle;\n\\fill (3.5,3) -- (3.8,3.5) -- (3.2,3.5) -- cycle;\n\\fill (4,2) circle (0.15);\n\\draw (2,1.5) circle (0.25);\n\\draw (6.5,2) -- (6.8,2.5) -- (6.2,2.5) -- cycle;\n\\end{tikzpicture}\n\\end{center}\n\nComplete the Venn diagram by:\n\\begin{parts}\n\\item labelling the sets\n\\end{parts}\nand\n\\begin{parts}\n\\item drawing the shapes $\\LargeBlackCircle$, $\\SmallBlackTriangle$, $\\SmallBlackRect$ and $\\SmallWhiteRect$.\n\\end{parts}\n\\Marks{3}\n\n\\end{subparts}\n\n\\end{parts}"
+      }
+    ],
+    "_compactBegin": true
+  },
+  {
+    "id": "0580-2022MayJune-Paper32-Q08",
+    "paper": "2022MayJune-Paper32",
+    "qnum": 8,
+    "marks": 13,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry"
+    ],
+    "s": "3.1",
+    "d": 1,
+    "cat": "coord",
+    "topic": "Coordinates",
+    "qtype": "coordinates reading/plotting",
+    "g": "graph",
+    "src": "0580/32/M/J/22 Q08",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "(a) (i)  Show that the exterior angle of a regular octagon is $45°$.\n\\newline\n\n Find the interior angle of a regular octagon.\n\\newline\n\n(b) \nThe diagram shows the route of a boat race.\n\\newline\n\\\\\nThe route is in the shape of a regular octagon, $ABCDEFGH$.\n\\newline\n\\\\\n$H$ is due west of $A$.\n\\newline\n\n(i)  Find the bearing of $B$ from $A$.\n\\newline\n\n Complete this statement.\n\\newline\n\nThe bearing of $C$ from $D$ is the same as the bearing of  from \n\n (c) Write down the mathematical name of triangle $ABH$.\n\\newline\n\n(d) Calculate angle $ABH$.\n\\newline\n\n(e) Work out the bearing of $H$ from $B$.\n\\newline\n\nEach side of the octagon is $1.35\\,\\text{km}$.\n\\newline\n\\\\\nThe average speed of a boat is $45\\,\\text{km/h}$.\n\\newline\n\nWork out the time it will take this boat to complete the race.\n\\newline\n\\\\\nGive your answer in minutes.\n\\newline\n\nHetty wants to draw a scale drawing of the route.\n\\newline\n\\\\\nShe chooses a scale of $1 : 500\\,000$.\n\\newline\n\nHas Hetty chosen a suitable scale?\\\\\nShow all your working and explain your decision.\n\\newline\n\n{...}]",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Show that the exterior angle of a regular octagon is $45°$.\n\\newline\n"
+              }
+            ],
+            "marks": 1
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the interior angle of a regular octagon.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          }
+        ],
+        "_itemInlineSubparts": true
+      },
+      {
+        "label": "(b)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "text",
+            "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.6]\n% Regular octagon\n\\def\\n{8}\n\\def\\r{3}\n\\foreach \\i in {1,...,\\n} {\n  \\coordinate (P\\i) at ({90+(\\i-1)*360/\\n}:\\r);\n}\n\\draw (P1) -- (P2) -- (P3) -- (P4) -- (P5) -- (P6) -- (P7) -- (P8) -- cycle;\n% Labels\n\\node[above] at (P1) {$A$};\n\\node[above left] at (P2) {$H$};\n\\node[left] at (P3) {$G$};\n\\node[below left] at (P4) {$F$};\n\\node[below] at (P5) {$E$};\n\\node[below right] at (P6) {$D$};\n\\node[right] at (P7) {$C$};\n\\node[above right] at (P8) {$B$};\n% North arrow\n\\draw[->] (0,4) -- (0,5) node[above] {North};\n% Dashed line from center to A\n\\draw[dashed] (0,0) -- (P1);\n\\draw[dashed] (0,0) -- (P2);\n\\node at (5,3) {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nThe diagram shows the route of a boat race.\n\\newline\n\\\\\nThe route is in the shape of a regular octagon, $ABCDEFGH$.\n\\newline\n\\\\\n$H$ is due west of $A$.\n\\newline\n\n\\begin{subparts}\n\\subpart Find the bearing of $B$ from $A$.\n\\newline\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\subpart Complete this statement.\n\\newline\n\nThe bearing of $C$ from $D$ is the same as the bearing of \\makebox[1.5cm]{\\dotfill} from \\makebox[1.5cm]{\\dotfill}\n\\Marks{1}\n\n\\subpart \\begin{parts}"
+          }
+        ]
+      },
+      {
+        "label": "(c)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down the mathematical name of triangle $ABH$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Calculate angle $ABH$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "Angle $ABH = $"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(e)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Work out the bearing of $H$ from $B$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "analyse",
+    "cmd": "show",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item \\begin{subparts}\n\\subpart Show that the exterior angle of a regular octagon is $45°$.\n\n\\Marks{1}\n\n\\subpart Find the interior angle of a regular octagon.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{subparts}\n\n\\item \n\\begin{center}\n\\begin{tikzpicture}[scale=0.6]\n% Regular octagon\n\\def\\n{8}\n\\def\\r{3}\n\\foreach \\i in {1,...,\\n} {\n  \\coordinate (P\\i) at ({90+(\\i-1)*360/\\n}:\\r);\n}\n\\draw (P1) -- (P2) -- (P3) -- (P4) -- (P5) -- (P6) -- (P7) -- (P8) -- cycle;\n% Labels\n\\node[above] at (P1) {$A$};\n\\node[above left] at (P2) {$H$};\n\\node[left] at (P3) {$G$};\n\\node[below left] at (P4) {$F$};\n\\node[below] at (P5) {$E$};\n\\node[below right] at (P6) {$D$};\n\\node[right] at (P7) {$C$};\n\\node[above right] at (P8) {$B$};\n% North arrow\n\\draw[->] (0,4) -- (0,5) node[above] {North};\n% Dashed line from center to A\n\\draw[dashed] (0,0) -- (P1);\n\\draw[dashed] (0,0) -- (P2);\n\\node at (5,3) {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nThe diagram shows the route of a boat race.\\\\\nThe route is in the shape of a regular octagon, $ABCDEFGH$.\\\\\n$H$ is due west of $A$.\n\n\\begin{subparts}\n\\subpart Find the bearing of $B$ from $A$.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\subpart Complete this statement.\n\nThe bearing of $C$ from $D$ is the same as the bearing of \\makebox[1.5cm]{\\dotfill} from \\makebox[1.5cm]{\\dotfill}\n\\Marks{1}\n\n\\subpart \\begin{parts}\n\\item Write down the mathematical name of triangle $ABH$.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Calculate angle $ABH$.\n\n\\AnswerLine[Angle $ABH = $][]\n\\Marks{2}\n\n\\item Work out the bearing of $H$ from $B$.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{parts}\n\n\\end{subparts}\n\n\\item Each side of the octagon is 1.35\\,km.\\\\\nThe average speed of a boat is 45\\,km/h.\n\nWork out the time it will take this boat to complete the race.\\\\\nGive your answer in minutes.\n\n\\AnswerLine[][min]\n\\Marks{3}\n\n\\item Hetty wants to draw a scale drawing of the route.\\\\\nShe chooses a scale of $1 : 500\\,000$.\n\nHas Hetty chosen a suitable scale?\\\\\nShow all your working and explain your decision.\n\n\\AnswerLine[][ because \\makebox[8cm]{\\dotfill}]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_postParts": [
+      {
+        "type": "text",
+        "content": "\\end{subparts}\n\n\\item Each side of the octagon is 1.35\\,km.\\\\\nThe average speed of a boat is 45\\,km/h.\n\nWork out the time it will take this boat to complete the race.\\\\\nGive your answer in minutes.\n\n\\AnswerLine[][min]\n\\Marks{3}\n\n\\item Hetty wants to draw a scale drawing of the route.\\\\\nShe chooses a scale of $1 : 500\\,000$.\n\nHas Hetty chosen a suitable scale?\\\\\nShow all your working and explain your decision.\n\n\\AnswerLine[][ because \\makebox[8cm]{\\dotfill}]\n\\Marks{2}\n\n\\end{parts}"
+      }
+    ],
+    "_compactBegin": true
+  },
+  {
+    "id": "0580-2022MayJune-Paper32-Q09",
+    "paper": "2022MayJune-Paper32",
+    "qnum": 9,
+    "marks": 7,
+    "topics": [
+      "Geometry",
+      "Transformations and vectors"
+    ],
+    "s": "4.6",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/32/M/J/22 Q09",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "The grid shows three shapes, $A$, $B$ and $C$.\n\\newline\n\n(a) Describe fully the **single** transformation that maps\n\n(i)  shape $A$ onto shape $B$,\n\n shape $A$ onto shape $C$.\n\\newline\n\n(b) On the grid, draw the image of shape $A$ after a rotation, $90°$ clockwise, centre $(6, -3)$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Describe fully the \\textbf{single} transformation that maps"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "shape $A$ onto shape $B$,"
+              }
+            ],
+            "answer": {
+              "type": "none",
+              "space": {
+                "type": "drawing",
+                "height": "2cm",
+                "cmd": "Answerspace"
+              }
+            },
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "shape $A$ onto shape $C$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "none",
+              "space": {
+                "type": "drawing",
+                "height": "2cm",
+                "cmd": "Answerspace"
+              }
+            },
+            "marks": 3,
+            "_compactMarks": true
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "On the grid, draw the image of shape $A$ after a rotation, $90°$ clockwise, centre $(6, -3)$.\n\\newline\n"
+          }
+        ],
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "describe",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The grid shows three shapes, $A$, $B$ and $C$.\n\\newline\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.4]\n\\draw[gray,very thin] (-5,-10) grid (14,4);\n\\draw[->] (-5.5,0) -- (14.5,0) node[right] {$x$};\n\\draw[->] (0,-10.5) -- (0,4.5) node[above] {$y$};\n\\foreach \\x in {-5,-4,-3,-2,-1,1,2,3,4,5,6,7,8,9,10,11,12,13,14} \\draw (\\x,0.1) -- (\\x,-0.1);\n\\foreach \\y in {-10,-9,-8,-7,-6,-5,-4,-3,-2,-1,1,2,3,4} \\draw (0.1,\\y) -- (-0.1,\\y);\n% Shape A\n\\fill[gray!30] (2,-2) rectangle (5,-4);\n\\draw (2,-2) rectangle (5,-4);\n\\node at (3.5,-3) {$A$};\n% Shape B\n\\fill[gray!30] (-4,-6) rectangle (-1,-10);\n\\draw (-4,-6) rectangle (-1,-10);\n\\node at (-2.5,-8) {$B$};\n% Shape C\n\\fill[gray!30] (6,-4) rectangle (9,-6);\n\\draw (6,-4) rectangle (9,-6);\n\\node at (7.5,-5) {$C$};\n\\end{tikzpicture}\n\\end{center}"
+      }
+    ],
+    "_rawBody": "The grid shows three shapes, $A$, $B$ and $C$.\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.4]\n\\draw[gray,very thin] (-5,-10) grid (14,4);\n\\draw[->] (-5.5,0) -- (14.5,0) node[right] {$x$};\n\\draw[->] (0,-10.5) -- (0,4.5) node[above] {$y$};\n\\foreach \\x in {-5,-4,-3,-2,-1,1,2,3,4,5,6,7,8,9,10,11,12,13,14} \\draw (\\x,0.1) -- (\\x,-0.1);\n\\foreach \\y in {-10,-9,-8,-7,-6,-5,-4,-3,-2,-1,1,2,3,4} \\draw (0.1,\\y) -- (-0.1,\\y);\n% Shape A\n\\fill[gray!30] (2,-2) rectangle (5,-4);\n\\draw (2,-2) rectangle (5,-4);\n\\node at (3.5,-3) {$A$};\n% Shape B\n\\fill[gray!30] (-4,-6) rectangle (-1,-10);\n\\draw (-4,-6) rectangle (-1,-10);\n\\node at (-2.5,-8) {$B$};\n% Shape C\n\\fill[gray!30] (6,-4) rectangle (9,-6);\n\\draw (6,-4) rectangle (9,-6);\n\\node at (7.5,-5) {$C$};\n\\end{tikzpicture}\n\\end{center}\n\n\\begin{parts}\n\\item Describe fully the \\textbf{single} transformation that maps\n\n\\begin{subparts}\n\\subpart shape $A$ onto shape $B$,\n\n\\Answerspace[2cm]\n\\Marks{2}\n\n\\subpart shape $A$ onto shape $C$.\n\n\\Answerspace[2cm]\n\\Marks{3}\n\n\\end{subparts}\n\n\\item On the grid, draw the image of shape $A$ after a rotation, $90°$ clockwise, centre $(6, -3)$.\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true
+  }
+]

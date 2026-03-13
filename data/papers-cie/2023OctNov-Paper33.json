@@ -1,0 +1,914 @@
+[
+  {
+    "id": "0580-2023OctNov-Paper33-Q01",
+    "paper": "2023OctNov-Paper33",
+    "qnum": 1,
+    "marks": 12,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.13",
+    "d": 1,
+    "cat": "number",
+    "topic": "Electronic calculators",
+    "qtype": "Money calculations, percentages, compound interest",
+    "g": "mixed",
+    "src": "0580/33/O/N/23 Q01",
+    "year": 2023,
+    "session": "OctNov",
+    "tex": "(a) Tom has a restaurant bill.\n\\newline\n\n\\begin{tabular}{lcl}\nSoup & \\$ &  \\\\\nPasta & \\$ & 13.30 \\\\\nIce cream & \\$ & 4.80 \\\\\nDrinks & \\$ & 3.81 \\\\\n\\hline\nTotal cost & \\$ & 25.40 \\\\\n\\end{tabular}\n(a) Complete the bill to show the cost of soup.\n\\newline\n\n(b) Find the cost of drinks as a percentage of the total cost.\n\\newline\n\n(a) Work out $\\frac{2}{5}$ of \\$2400.\n\\newline\n\n(b) Decrease \\$3450 by 18\\%.\n\\newline\n\n(c)Amelia invests \\$$14\\,000$ at a rate of 1.6\\% per year compound interest.\n\\newline\n\nCalculate the value of her investment at the end of 5 years.\n\\newline\n\\\\\nGive your answer correct to the nearest dollar.\n\\newline\n\n(d)This conversion graph can be used to change between dollars and Swiss francs.\n\\newline\n\n(a) Use the graph to change\n\n\\begin{subpartsaliged}\n\n(b) \\$80 to Swiss francs\n\n(c) 108 Swiss francs to dollars.\n\\newline\n\n\\end{subpartsaliged}\n\n(d) Explain how you can use the graph to change \\$360 to Swiss francs.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Complete the bill to show the cost of soup.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the cost of drinks as a percentage of the total cost.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "\\%"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "explain",
+    "stem": [
+      {
+        "type": "text",
+        "content": "(a) Tom has a restaurant bill.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper33/Q01/Q01-ConversionGraph.png"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{center}\n\\begin{tabular}{lcl}\nSoup & \\$ & ............. \\\\\nPasta & \\$ & 13.30 \\\\\nIce cream & \\$ & 4.80 \\\\\nDrinks & \\$ & 3.81 \\\\\n\\hline\nTotal cost & \\$ & 25.40 \\\\\n\\end{tabular}\n\\end{center}"
+      }
+    ],
+    "_v4_skip": true,
+    "_rawBody": "(a) Tom has a restaurant bill.\n\n\\begin{center}\n\\begin{tabular}{lcl}\nSoup & \\$ & ............. \\\\\nPasta & \\$ & 13.30 \\\\\nIce cream & \\$ & 4.80 \\\\\nDrinks & \\$ & 3.81 \\\\\n\\hline\nTotal cost & \\$ & 25.40 \\\\\n\\end{tabular}\n\\end{center}\n\n\\begin{parts}\n\\item Complete the bill to show the cost of soup.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item Find the cost of drinks as a percentage of the total cost.\n\n\\AnswerLine[][\\%]\n\\Marks{1}\n\\end{parts}\n\n\\begin{parts}\n\\item Work out $\\frac{2}{5}$ of \\$2400.\n\n\\AnswerLine[\\$][]\n\\Marks{1}\n\n\\item Decrease \\$3450 by 18\\%.\n\n\\AnswerLine[\\$][]\n\\Marks{2}\n\\end{parts}\n\n\\PartLabel{c}Amelia invests \\$14\\,000 at a rate of 1.6\\% per year compound interest.\n\nCalculate the value of her investment at the end of 5 years.\\\\\nGive your answer correct to the nearest dollar.\n\n\\AnswerLine[\\$][]\n\\Marks{3}\n\n\\PartLabel{d}This conversion graph can be used to change between dollars and Swiss francs.\n\n\\begin{center}\n\\relincludegraphics{Figures/Q01-ConversionGraph.png}\n\\end{center}\n\n\\begin{parts}\n\\item Use the graph to change\n\n\\begin{subpartsaliged}\n\\item \\$80 to Swiss francs\n\n\\AnswerLine[][Swiss francs]\n\\Marks{1}\n\n\\item 108 Swiss francs to dollars.\n\n\\AnswerLine[\\$][]\n\\Marks{1}\n\\end{subpartsaliged}\n\n\\item Explain how you can use the graph to change \\$360 to Swiss francs.\n\n\\answerlines[2]\n\\Marks{1}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "_postParts": [
+      {
+        "type": "text",
+        "content": "\\begin{parts}\n\\item Work out $\\frac{2}{5}$ of \\$2400.\n\n\\AnswerLine[\\$][]\n\\Marks{1}\n\n\\item Decrease \\$3450 by 18\\%.\n\n\\AnswerLine[\\$][]\n\\Marks{2}\n\\end{parts}\n\n\\PartLabel{c}Amelia invests \\$14\\,000 at a rate of 1.6\\% per year compound interest.\n\nCalculate the value of her investment at the end of 5 years.\\\\\nGive your answer correct to the nearest dollar.\n\n\\AnswerLine[\\$][]\n\\Marks{3}\n\n\\PartLabel{d}This conversion graph can be used to change between dollars and Swiss francs.\n\n\\begin{center}\n\\relincludegraphics{Figures/Q01-ConversionGraph.png}\n\\end{center}\n\n\\begin{parts}\n\\item Use the graph to change\n\n\\begin{subpartsaliged}\n\\item \\$80 to Swiss francs\n\n\\AnswerLine[][Swiss francs]\n\\Marks{1}\n\n\\item 108 Swiss francs to dollars.\n\n\\AnswerLine[\\$][]\n\\Marks{1}\n\\end{subpartsaliged}\n\n\\item Explain how you can use the graph to change \\$360 to Swiss francs.\n\n\\answerlines[2]\n\\Marks{1}\n\\end{parts}"
+      }
+    ],
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper33/Q01/Q01-ConversionGraph.png"
+    ]
+  },
+  {
+    "id": "0580-2023OctNov-Paper33-Q02",
+    "paper": "2023OctNov-Paper33",
+    "qnum": 2,
+    "marks": 10,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.3",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Symmetry",
+    "qtype": "scale drawings and bearings",
+    "g": "mixed",
+    "src": "0580/33/O/N/23 Q02",
+    "year": 2023,
+    "session": "OctNov",
+    "tex": "(a) Bayside, Millwater and Westbridge are towns beside a lake.\n\\newline\nThe scale drawing shows the positions of Bayside ($B$) and Millwater ($M$).\n\\newline\nThe scale is 1 centimetre represents 2 kilometres.\n\\newline\n\n(a) Find the actual distance between Bayside and Millwater.\n\\newline\n\n(b) Westbridge ($W$) is 17 km from Bayside on a bearing of 155°.\n\\newline\n\nOn the scale drawing, mark the position of Westbridge.\n\\newline\n\n(a) A boat travels from Bayside to Westbridge.\n\\newline\nThe table gives some information about its journey.\n\\newline\n\n\\begin{tabular}{lcl}\nBayside & departs & 10 50 \\\\\n        & arrives & 11 36 \\\\\nMillwater & & \\\\\n        & departs & 11 45 \\\\\nWestbridge & arrives & 13 07 \\\\\n\\end{tabular}\nWork out how long the boat takes to travel from Millwater to Westbridge.\n\\newline\n\\\\\nGive your answer in hours and minutes.\n\\newline\n\n(b) The boat returns directly to Bayside.\n\\newline\nIt takes 1 hour 20 minutes to travel the 17 km.\n\\newline\n\nWork out the average speed of this journey.\n\\newline\n\n(a) Here are the ticket prices for a boat trip from Bayside to Westbridge.\n\\newline\n\n\\begin{tabular}{ccc}\n1 person & Group of 6 people & Group of 15 people \\\\\n\\$9.80 & \\$57.30 & \\$138.75 \\\\\n\\end{tabular}\n(i) (b) Calculate the cost per person for a group of 15 people.\n\\newline\n\n(c) A group of 24 people buy tickets for the boat trip from Bayside to Westbridge.\n\\newline\n\nCalculate the least amount of money the group needs to pay.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the actual distance between Bayside and Millwater.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "km"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Westbridge ($W$) is 17 km from Bayside on a bearing of 155\\degree.\n\\newline\n\nOn the scale drawing, mark the position of Westbridge.\n\\newline\n"
+          }
+        ]
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "(a) Bayside, Millwater and Westbridge are towns beside a lake.\n\\newline\nThe scale drawing shows the positions of Bayside ($B$) and Millwater ($M$).\n\\newline\nThe scale is 1 centimetre represents 2 kilometres.\n\\newline\n\n\\begin{center}\n\\relincludegraphics{Figures/Q02-Map.\n\\newline\npng}\n\\end{center}"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper33/Q02/Q02-Map.png"
+      }
+    ],
+    "_v4_skip": true,
+    "_rawBody": "(a) Bayside, Millwater and Westbridge are towns beside a lake.\nThe scale drawing shows the positions of Bayside ($B$) and Millwater ($M$).\nThe scale is 1 centimetre represents 2 kilometres.\n\n\\begin{center}\n\\relincludegraphics{Figures/Q02-Map.png}\n\\end{center}\n\n\\begin{parts}\n\\item Find the actual distance between Bayside and Millwater.\n\n\\AnswerLine[][km]\n\\Marks{2}\n\n\\item Westbridge ($W$) is 17 km from Bayside on a bearing of 155\\degree.\n\nOn the scale drawing, mark the position of Westbridge.\n\n\\Marks{2}\n\\end{parts}\n\n\\begin{parts}\n\\item A boat travels from Bayside to Westbridge.\nThe table gives some information about its journey.\n\n\\begin{center}\n\\begin{tabular}{lcl}\nBayside & departs & 10 50 \\\\\n        & arrives & 11 36 \\\\\nMillwater & & \\\\\n        & departs & 11 45 \\\\\nWestbridge & arrives & 13 07 \\\\\n\\end{tabular}\n\\end{center}\n\nWork out how long the boat takes to travel from Millwater to Westbridge.\\\\\nGive your answer in hours and minutes.\n\n\\AnswerLine[][h][min]\n\\Marks{1}\n\n\\item The boat returns directly to Bayside.\nIt takes 1 hour 20 minutes to travel the 17 km.\n\nWork out the average speed of this journey.\n\n\\AnswerLine[][km/h]\n\\Marks{2}\n\\end{parts}\n\n\\begin{parts}\n\\item Here are the ticket prices for a boat trip from Bayside to Westbridge.\n\n\\begin{center}\n\\begin{tabular}{ccc}\n1 person & Group of 6 people & Group of 15 people \\\\\n\\$9.80 & \\$57.30 & \\$138.75 \\\\\n\\end{tabular}\n\\end{center}\n\n\\begin{subparts}\n\\item Calculate the cost per person for a group of 15 people.\n\n\\AnswerLine[\\$][]\n\\Marks{1}\n\n\\item A group of 24 people buy tickets for the boat trip from Bayside to Westbridge.\n\nCalculate the least amount of money the group needs to pay.\n\n\\AnswerLine[\\$][]\n\\Marks{2}\n\\end{subparts}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "_postParts": [
+      {
+        "type": "text",
+        "content": "\\begin{parts}\n\\item A boat travels from Bayside to Westbridge.\nThe table gives some information about its journey."
+      },
+      {
+        "type": "table",
+        "content": "\\begin{center}\n\\begin{tabular}{lcl}\nBayside & departs & 10 50 \\\\\n        & arrives & 11 36 \\\\\nMillwater & & \\\\\n        & departs & 11 45 \\\\\nWestbridge & arrives & 13 07 \\\\\n\\end{tabular}\n\\end{center}"
+      },
+      {
+        "type": "text",
+        "content": "Work out how long the boat takes to travel from Millwater to Westbridge.\\\\\nGive your answer in hours and minutes.\n\n\\AnswerLine[][h][min]\n\\Marks{1}\n\n\\item The boat returns directly to Bayside.\nIt takes 1 hour 20 minutes to travel the 17 km.\n\nWork out the average speed of this journey.\n\n\\AnswerLine[][km/h]\n\\Marks{2}\n\\end{parts}\n\n\\begin{parts}\n\\item Here are the ticket prices for a boat trip from Bayside to Westbridge."
+      },
+      {
+        "type": "table",
+        "content": "\\begin{center}\n\\begin{tabular}{ccc}\n1 person & Group of 6 people & Group of 15 people \\\\\n\\$9.80 & \\$57.30 & \\$138.75 \\\\\n\\end{tabular}\n\\end{center}"
+      },
+      {
+        "type": "text",
+        "content": "\\begin{subparts}\n\\item Calculate the cost per person for a group of 15 people.\n\n\\AnswerLine[\\$][]\n\\Marks{1}\n\n\\item A group of 24 people buy tickets for the boat trip from Bayside to Westbridge.\n\nCalculate the least amount of money the group needs to pay.\n\n\\AnswerLine[\\$][]\n\\Marks{2}\n\\end{subparts}\n\\end{parts}"
+      }
+    ],
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper33/Q02/Q02-Map.png"
+    ]
+  },
+  {
+    "id": "0580-2023OctNov-Paper33-Q03",
+    "paper": "2023OctNov-Paper33",
+    "qnum": 3,
+    "marks": 1,
+    "topics": [
+      "Number",
+      "Algebra and graphs"
+    ],
+    "s": null,
+    "d": 1,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/33/O/N/23 Q03",
+    "year": 2023,
+    "session": "OctNov",
+    "tex": "(a) Aneel has 80 tea bags, $\\frac{1}{2}$ kg of sugar and 1 litre of milk.\n\\newline\nTo make a cup of tea he uses:\n(a) 1 tea bag\n\n(b) 8 grams of sugar\n\n(c) 40 millilitres of milk.\n\\newline\n\n(a) In the morning, Aneel makes 15 cups of tea.\n\\newline\n\nWork out\n\n(i) (b) the fraction of the tea bags he uses, in its simplest form\n\n(c) the mass of sugar, in grams, he has left.\n\\newline\n\n(d) During the day, Aneel uses all of the milk to make cups of tea.\n\\newline\n\nWork out the total number of cups of tea Aneel makes.\n\\newline\n\n(b)Bobby, Carl and Davood share \\$6875 in the ratio Bobby : Carl : Davood = 6 : 8 : 11.\n\\newline\n\nCalculate the amount of money they each receive.\n\\newline\n\n\\begin{flushright}\nBobby \\$ \n\nCarl \\$ \n\nDavood \\$ \n\\end{flushright}\n% Manual spacing for marks if needed, or stick to standard.\n\\newline\n The template for multi-part answer lines usually involves just putting them.\n\\newline\n% But here it's 3 lines.\n\\newline\n I'll use standard lines with text before.\n\\newline\n\n(c)\n\\begin{subpartsaliged}\nWrite $\\frac{3^2 \\times 3^4}{3^6}$ as a power of 3.\n\\newline\n\nWrite the value of $2^{-4}$ as a decimal.\n\\newline\n\n\\end{subpartsaliged}\n\n(d)Simplify.\n\\newline\n\n\\begin{subpartsaliged}\n$(b^5)^3$\n\n$(m^4)^{-2}$ % **[CHECK: OCR was unclear, please verify]**\n\n\\end{subpartsaliged}\n\n(e)\n\\[ 30 = 2 \\times 3 \\times 5     84 = 2^2 \\times 3 \\times 7 \\]\nUse this information to find the lowest common multiple (LCM) of 30 and 84.\n\\newline\n\n(f)\n\\[ \\frac{2}{9}     \\sqrt{7}     \\frac{16}{4}     \\sqrt[3]{25}?   \\sqrt{23} \\]\n% OCR: 2 9, 7, 16 4, 2 5, 23.\n\\newline\n Let's guess 2/9, sqrt(7), 16/4, 5^(2/3) or 2.5? Or maybe mixed number 2 5/7?\n% OCR line 343: 7 16 23\n% OCR line 342: 2 5\n% OCR line 344: 9 4\n% 2/9, sqrt(7), 16/4, 5/something?\n% Using the numbers from original paper\nPut a ring around the irrational number in this list.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "text",
+            "content": "1 tea bag"
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "text",
+            "content": "8 grams of sugar"
+          }
+        ]
+      },
+      {
+        "label": "(c)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "text",
+            "content": "40 millilitres of milk.\n\\newline\n"
+          }
+        ]
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "",
+    "cmd": "simplify",
+    "stem": [
+      {
+        "type": "text",
+        "content": "(a) Aneel has 80 tea bags, $\\frac{1}{2}$ kg of sugar and 1 litre of milk.\n\\newline\nTo make a cup of tea he uses:"
+      }
+    ],
+    "_v4_skip": true,
+    "_rawBody": "(a) Aneel has 80 tea bags, $\\frac{1}{2}$ kg of sugar and 1 litre of milk.\nTo make a cup of tea he uses:\n\\begin{parts}\n\\item 1 tea bag\n\\item 8 grams of sugar\n\\item 40 millilitres of milk.\n\\end{parts}\n\n\\begin{parts}\n\\item In the morning, Aneel makes 15 cups of tea.\n\nWork out\n\n\\begin{subparts}\n\\item the fraction of the tea bags he uses, in its simplest form\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item the mass of sugar, in grams, he has left.\n\n\\AnswerLine[][g]\n\\Marks{2}\n\\end{subparts}\n\n\\item During the day, Aneel uses all of the milk to make cups of tea.\n\nWork out the total number of cups of tea Aneel makes.\n\n\\AnswerLine[][]\n\\Marks{1}\n\\end{parts}\n\n\\PartLabel{b}Bobby, Carl and Davood share \\$6875 in the ratio Bobby : Carl : Davood = 6 : 8 : 11.\n\nCalculate the amount of money they each receive.\n\n\\begin{flushright}\nBobby \\$ \\AnswerLine[]\n\nCarl \\$ \\AnswerLine[]\n\nDavood \\$ \\AnswerLine[][\\hfill \\Marks{3}]\n\\end{flushright}\n% Manual spacing for marks if needed, or stick to standard. The template for multi-part answer lines usually involves just putting them.\n% But here it's 3 lines. I'll use standard lines with text before.\n\n\\PartLabel{c}\n\\begin{subpartsaliged}\n\\item Write $\\frac{3^2 \\times 3^4}{3^6}$ as a power of 3.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Write the value of $2^{-4}$ as a decimal.\n\n\\AnswerLine[][]\n\\Marks{1}\n\\end{subpartsaliged}\n\n\\PartLabel{d}Simplify.\n\n\\begin{subpartsaliged}\n\\item $(b^5)^3$\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item $(m^4)^{-2}$ % \\textbf{[CHECK: OCR was unclear, please verify]}\n\n\\AnswerLine[][]\n\\Marks{1}\n\\end{subpartsaliged}\n\n\\PartLabel{e}\n\\[ 30 = 2 \\times 3 \\times 5 \\quad \\quad 84 = 2^2 \\times 3 \\times 7 \\]\nUse this information to find the lowest common multiple (LCM) of 30 and 84.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\PartLabel{f}\n\\[ \\frac{2}{9} \\quad \\quad \\sqrt{7} \\quad \\quad \\frac{16}{4} \\quad \\quad \\sqrt[3]{25}? \\quad \\sqrt{23} \\]\n% OCR: 2 9, 7, 16 4, 2 5, 23. Let's guess 2/9, sqrt(7), 16/4, 5^(2/3) or 2.5? Or maybe mixed number 2 5/7?\n% OCR line 343: 7 16 23\n% OCR line 342: 2 5\n% OCR line 344: 9 4\n% 2/9, sqrt(7), 16/4, 5/something?\n% Using the numbers from original paper\nPut a ring around the irrational number in this list.\n\n\\Marks{1}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "_compactStemParts": true,
+    "_postParts": [
+      {
+        "type": "text",
+        "content": "\\begin{parts}\n\\item In the morning, Aneel makes 15 cups of tea.\n\nWork out\n\n\\begin{subparts}\n\\item the fraction of the tea bags he uses, in its simplest form\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item the mass of sugar, in grams, he has left.\n\n\\AnswerLine[][g]\n\\Marks{2}\n\\end{subparts}\n\n\\item During the day, Aneel uses all of the milk to make cups of tea.\n\nWork out the total number of cups of tea Aneel makes.\n\n\\AnswerLine[][]\n\\Marks{1}\n\\end{parts}\n\n\\PartLabel{b}Bobby, Carl and Davood share \\$6875 in the ratio Bobby : Carl : Davood = 6 : 8 : 11.\n\nCalculate the amount of money they each receive.\n\n\\begin{flushright}\nBobby \\$ \\AnswerLine[]\n\nCarl \\$ \\AnswerLine[]\n\nDavood \\$ \\AnswerLine[][\\hfill \\Marks{3}]\n\\end{flushright}\n% Manual spacing for marks if needed, or stick to standard. The template for multi-part answer lines usually involves just putting them.\n% But here it's 3 lines. I'll use standard lines with text before.\n\n\\PartLabel{c}\n\\begin{subpartsaliged}\n\\item Write $\\frac{3^2 \\times 3^4}{3^6}$ as a power of 3.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Write the value of $2^{-4}$ as a decimal.\n\n\\AnswerLine[][]\n\\Marks{1}\n\\end{subpartsaliged}\n\n\\PartLabel{d}Simplify.\n\n\\begin{subpartsaliged}\n\\item $(b^5)^3$\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item $(m^4)^{-2}$ % \\textbf{[CHECK: OCR was unclear, please verify]}\n\n\\AnswerLine[][]\n\\Marks{1}\n\\end{subpartsaliged}\n\n\\PartLabel{e}\n\\[ 30 = 2 \\times 3 \\times 5 \\quad \\quad 84 = 2^2 \\times 3 \\times 7 \\]\nUse this information to find the lowest common multiple (LCM) of 30 and 84.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\PartLabel{f}\n\\[ \\frac{2}{9} \\quad \\quad \\sqrt{7} \\quad \\quad \\frac{16}{4} \\quad \\quad \\sqrt[3]{25}? \\quad \\sqrt{23} \\]\n% OCR: 2 9, 7, 16 4, 2 5, 23. Let's guess 2/9, sqrt(7), 16/4, 5^(2/3) or 2.5? Or maybe mixed number 2 5/7?\n% OCR line 343: 7 16 23\n% OCR line 342: 2 5\n% OCR line 344: 9 4\n% 2/9, sqrt(7), 16/4, 5/something?\n% Using the numbers from original paper\nPut a ring around the irrational number in this list."
+      }
+    ],
+    "_compactItems": true
+  },
+  {
+    "id": "0580-2023OctNov-Paper33-Q04",
+    "paper": "2023OctNov-Paper33",
+    "qnum": 4,
+    "marks": 13,
+    "topics": [
+      "Geometry",
+      "Mensuration",
+      "Statistics"
+    ],
+    "s": "4.6",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/33/O/N/23 Q04",
+    "year": 2023,
+    "session": "OctNov",
+    "tex": "(a) A company makes glass using silica, soda, lime and magnesia.\n\\newline\nThe table gives information about the proportions used.\n\\newline\n\n\\begin{tabular}{|l|c|c|}\n\\hline\n& Percentage of total mass & Pie chart sector angle \\\\\n\\hline\nSilica & 75 & 270° \\\\\nSoda & 15 & \\\\\nLime and magnesia & 10 & \\\\\n\\hline\n\\end{tabular}\n(a) Complete the table.\n\\newline\n\n(b) Complete the pie chart to show this information.\n\\newline\n\n(c) The masses of lime and magnesia used are in the ratio lime : magnesia = 3 : 2.\n\\newline\n\nFind the percentage of the total mass of glass that is magnesia.\n\\newline\n\n(d) The company uses 8.25 kg of soda to make some glass.\n\\newline\n\nWork out how many kilograms of silica they use.\n\\newline\n\n(b)The company uses the formula $M = 2.5 A T$ to find the mass of a sheet of glass.\n\\newline\n(a) $M$ is the mass in kilograms.\n\\newline\n\n(b) $A$ is the area in square metres.\n\\newline\n\n(c) $T$ is the thickness in millimetres.\n\\newline\n\nUse the formula to calculate the mass of a rectangular sheet of glass that is 1.9 m long, 0.6 m wide and 8 mm thick.\n\\newline\n\n(c)In one year, 130 000 000 tonnes of glass were produced worldwide.\n\\newline\n\nWrite this number in standard form.\n\\newline\n\n(d)The company sets targets to recycle its waste materials.\n\\newline\nThe bar chart shows the target rate and the actual rate for some of its recycling.\n\\newline\n\n(a) The target rate for recycling glass was 55\\%.\n\\newline\nThe actual rate for recycling glass was 70\\%.\n\\newline\n\nComplete the bar chart.\n\\newline\n\n(b) Which materials did the company recycle at more than double their target rate?",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Complete the table.\n\\newline\n"
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Complete the pie chart to show this information.\n\\newline\n\n\\begin{center}\n\\relincludegraphics{Figures/Q04-PieChart.\n\\newline\npng}\n\\end{center}"
+          }
+        ]
+      },
+      {
+        "label": "(c)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "The masses of lime and magnesia used are in the ratio lime : magnesia = 3 : 2.\n\\newline\n\nFind the percentage of the total mass of glass that is magnesia.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "\\%"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "The company uses 8.25 kg of soda to make some glass.\n\\newline\n\nWork out how many kilograms of silica they use.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "kg"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "(a) A company makes glass using silica, soda, lime and magnesia.\n\\newline\nThe table gives information about the proportions used.\n\\newline\n"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{center}\n\\begin{tabular}{|l|c|c|}\n\\hline\n& Percentage of total mass & Pie chart sector angle \\\\\n\\hline\nSilica & 75 & 270\\degree \\\\\nSoda & 15 & \\\\\nLime and magnesia & 10 & \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+      }
+    ],
+    "_v4_skip": true,
+    "_rawBody": "(a) A company makes glass using silica, soda, lime and magnesia.\nThe table gives information about the proportions used.\n\n\\begin{center}\n\\begin{tabular}{|l|c|c|}\n\\hline\n& Percentage of total mass & Pie chart sector angle \\\\\n\\hline\nSilica & 75 & 270\\degree \\\\\nSoda & 15 & \\\\\nLime and magnesia & 10 & \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\begin{parts}\n\\item Complete the table.\n\n\\Marks{2}\n\n\\item Complete the pie chart to show this information.\n\n\\begin{center}\n\\relincludegraphics{Figures/Q04-PieChart.png}\n\\end{center}\n\n\\Marks{1}\n\n\\item The masses of lime and magnesia used are in the ratio lime : magnesia = 3 : 2.\n\nFind the percentage of the total mass of glass that is magnesia.\n\n\\AnswerLine[][\\%]\n\\Marks{1}\n\n\\item The company uses 8.25 kg of soda to make some glass.\n\nWork out how many kilograms of silica they use.\n\n\\AnswerLine[][kg]\n\\Marks{2}\n\\end{parts}\n\n\\PartLabel{b}The company uses the formula $M = 2.5 A T$ to find the mass of a sheet of glass.\n\\begin{parts}\n\\item $M$ is the mass in kilograms.\n\\item $A$ is the area in square metres.\n\\item $T$ is the thickness in millimetres.\n\\end{parts}\n\nUse the formula to calculate the mass of a rectangular sheet of glass that is 1.9 m long, 0.6 m wide and 8 mm thick.\n\n\\AnswerLine[][kg]\n\\Marks{2}\n\n\\PartLabel{c}In one year, 130 000 000 tonnes of glass were produced worldwide.\n\nWrite this number in standard form.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\PartLabel{d}The company sets targets to recycle its waste materials.\nThe bar chart shows the target rate and the actual rate for some of its recycling.\n\n\\begin{center}\n\\relincludegraphics{Figures/Q04-BarChart.png}\n\\end{center}\n\n\\begin{parts}\n\\item The target rate for recycling glass was 55\\%.\nThe actual rate for recycling glass was 70\\%.\n\nComplete the bar chart.\n\\Marks{2}\n\n\\item Which materials did the company recycle at more than double their target rate?\n\n\\AnswerLine[][]\n\\Marks{2}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "_postParts": [
+      {
+        "type": "text",
+        "content": "\\PartLabel{b}The company uses the formula $M = 2.5 A T$ to find the mass of a sheet of glass.\n\\begin{parts}\n\\item $M$ is the mass in kilograms.\n\\item $A$ is the area in square metres.\n\\item $T$ is the thickness in millimetres.\n\\end{parts}\n\nUse the formula to calculate the mass of a rectangular sheet of glass that is 1.9 m long, 0.6 m wide and 8 mm thick.\n\n\\AnswerLine[][kg]\n\\Marks{2}\n\n\\PartLabel{c}In one year, 130 000 000 tonnes of glass were produced worldwide.\n\nWrite this number in standard form.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\PartLabel{d}The company sets targets to recycle its waste materials.\nThe bar chart shows the target rate and the actual rate for some of its recycling.\n\n\\begin{center}\n\\relincludegraphics{Figures/Q04-BarChart.png}\n\\end{center}\n\n\\begin{parts}\n\\item The target rate for recycling glass was 55\\%.\nThe actual rate for recycling glass was 70\\%.\n\nComplete the bar chart.\n\\Marks{2}\n\n\\item Which materials did the company recycle at more than double their target rate?\n\n\\AnswerLine[][]\n\\Marks{2}\n\\end{parts}"
+      }
+    ],
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper33/Q04/Q04-BarChart.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper33/Q04/Q04-PieChart.png"
+    ]
+  },
+  {
+    "id": "0580-2023OctNov-Paper33-Q05",
+    "paper": "2023OctNov-Paper33",
+    "qnum": 5,
+    "marks": 12,
+    "topics": [
+      "Number",
+      "Mensuration",
+      "Statistics"
+    ],
+    "s": "1.16",
+    "d": 1,
+    "cat": "number",
+    "topic": "Upper and lower bounds",
+    "qtype": "Currency conversion",
+    "g": "mixed",
+    "src": "0580/33/O/N/23 Q05",
+    "year": 2023,
+    "session": "OctNov",
+    "tex": "(a) Zena records the number of letters she posts on each of 12 days.\n\\newline\n\n\\[ 3   7   3   8   7   1   0   6   5   1   7   2 \\]\n\n(a) Write down the mode.\n\\newline\n\n(b) Find the median.\n\\newline\n\n(b)Zena posts 6 parcels.\n\\newline\n(a) The lightest parcel has a mass of 4.6 kg.\n\\newline\n\n(b) The heaviest parcel has a mass of 6.2 kg.\n\\newline\n\n(c) The other 4 parcels have a mean mass of 5.01 kg.\n\\newline\n\nCalculate the mean mass of the 6 parcels.\n\\newline\n\n(c)Zena pays 105 euros to post a parcel.\n\\newline\nThe exchange rate is \\$1 = 0.84 euros.\n\\newline\n\nWork out the cost in dollars to post the parcel.\n\\newline\n\n(d)The cost to post a box increases from \\$22.68 to \\$44.\n\\newline\n\nWork out the percentage increase in the cost.\n\\newline\n\n(e)The diagram shows a parcel in the shape of a cuboid.\n\\newline\n\n(a) Complete the net of the parcel on the 1 cm$^2$ grid.\n\\newline\nTwo faces have been drawn for you.\n\\newline\n\n(b) Find the volume of the parcel.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down the mode.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the median.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "(a) Zena records the number of letters she posts on each of 12 days.\n\\newline\n\n\\[ 3 \\quad 7 \\quad 3 \\quad 8 \\quad 7 \\quad 1 \\quad 0 \\quad 6 \\quad 5 \\quad 1 \\quad 7 \\quad 2 \\]"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper33/Q05/Q05-Net.png"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper33/Q05/Q05-Cuboid.png"
+      }
+    ],
+    "_v4_skip": true,
+    "_rawBody": "(a) Zena records the number of letters she posts on each of 12 days.\n\n\\[ 3 \\quad 7 \\quad 3 \\quad 8 \\quad 7 \\quad 1 \\quad 0 \\quad 6 \\quad 5 \\quad 1 \\quad 7 \\quad 2 \\]\n\n\\begin{parts}\n\\item Write down the mode.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Find the median.\n\n\\AnswerLine[][]\n\\Marks{2}\n\\end{parts}\n\n\\PartLabel{b}Zena posts 6 parcels.\n\\begin{parts}\n\\item The lightest parcel has a mass of 4.6 kg.\n\\item The heaviest parcel has a mass of 6.2 kg.\n\\item The other 4 parcels have a mean mass of 5.01 kg.\n\\end{parts}\n\nCalculate the mean mass of the 6 parcels.\n\n\\AnswerLine[][kg]\n\\Marks{3}\n\n\\PartLabel{c}Zena pays 105 euros to post a parcel.\nThe exchange rate is \\$1 = 0.84 euros.\n\nWork out the cost in dollars to post the parcel.\n\n\\AnswerLine[\\$][]\n\\Marks{1}\n\n\\PartLabel{d}The cost to post a box increases from \\$22.68 to \\$44.\n\nWork out the percentage increase in the cost.\n\n\\AnswerLine[][\\%]\n\\Marks{2}\n\n\\PartLabel{e}The diagram shows a parcel in the shape of a cuboid.\n\n\\begin{center}\n\\relincludegraphics{Figures/Q05-Cuboid.png}\n\\end{center}\n\n\\begin{parts}\n\\item Complete the net of the parcel on the 1 cm$^2$ grid.\nTwo faces have been drawn for you.\n\n\\begin{center}\n\\relincludegraphics{Figures/Q05-Net.png}\n\\end{center}\n\n\\Marks{2}\n\n\\item Find the volume of the parcel.\n\n\\AnswerLine[][cm$^3$]\n\\Marks{1}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "_postParts": [
+      {
+        "type": "text",
+        "content": "\\PartLabel{b}Zena posts 6 parcels.\n\\begin{parts}\n\\item The lightest parcel has a mass of 4.6 kg.\n\\item The heaviest parcel has a mass of 6.2 kg.\n\\item The other 4 parcels have a mean mass of 5.01 kg.\n\\end{parts}\n\nCalculate the mean mass of the 6 parcels.\n\n\\AnswerLine[][kg]\n\\Marks{3}\n\n\\PartLabel{c}Zena pays 105 euros to post a parcel.\nThe exchange rate is \\$1 = 0.84 euros.\n\nWork out the cost in dollars to post the parcel.\n\n\\AnswerLine[\\$][]\n\\Marks{1}\n\n\\PartLabel{d}The cost to post a box increases from \\$22.68 to \\$44.\n\nWork out the percentage increase in the cost.\n\n\\AnswerLine[][\\%]\n\\Marks{2}\n\n\\PartLabel{e}The diagram shows a parcel in the shape of a cuboid.\n\n\\begin{center}\n\\relincludegraphics{Figures/Q05-Cuboid.png}\n\\end{center}\n\n\\begin{parts}\n\\item Complete the net of the parcel on the 1 cm$^2$ grid.\nTwo faces have been drawn for you.\n\n\\begin{center}\n\\relincludegraphics{Figures/Q05-Net.png}\n\\end{center}\n\n\\Marks{2}\n\n\\item Find the volume of the parcel.\n\n\\AnswerLine[][cm$^3$]\n\\Marks{1}\n\\end{parts}"
+      }
+    ],
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper33/Q05/Q05-Cuboid.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper33/Q05/Q05-Net.png"
+    ]
+  },
+  {
+    "id": "0580-2023OctNov-Paper33-Q06",
+    "paper": "2023OctNov-Paper33",
+    "qnum": 6,
+    "marks": 11,
+    "topics": [
+      "Number",
+      "Geometry",
+      "Transformations and vectors"
+    ],
+    "s": null,
+    "d": 1,
+    "cat": "number",
+    "topic": null,
+    "qtype": "Geometry and Transformations",
+    "g": "mixed",
+    "src": "0580/33/O/N/23 Q06",
+    "year": 2023,
+    "session": "OctNov",
+    "tex": "(a)\n\nIn the diagram, $PST$ is a straight line.\n\\newline\n\n(a) Give the geometrical reason why the lines $PQ$ and $SR$ are parallel.\n\\newline\n\n(b) Write down the mathematical name for the shape $PQRS$.\n\\newline\n\n(c) Find the value of $y$.\n\\newline\n\n(b)\n\n(a) Describe fully the single transformation that maps triangle $A$ onto triangle $B$.\n\\newline\n\n(b) Describe fully the single transformation that maps triangle $A$ onto triangle $C$.\n\\newline\n\n(c) On the grid, enlarge triangle $A$ by scale factor 3, centre $(4, -5)$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Give the geometrical reason why the lines $PQ$ and $SR$ are parallel.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "multiline",
+          "lines": 1
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down the mathematical name for the shape $PQRS$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the value of $y$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$y =$"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "describe",
+    "stem": [
+      {
+        "type": "text",
+        "content": "(a)\n\\begin{center}\n\\relincludegraphics{Figures/Q06-Geometry.\n\\newline\npng}\n\\end{center}\n\nIn the diagram, $PST$ is a straight line.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper33/Q06/Q06-Transformation.png"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper33/Q06/Q06-Geometry.png"
+      }
+    ],
+    "_rawBody": "(a)\n\\begin{center}\n\\relincludegraphics{Figures/Q06-Geometry.png}\n\\end{center}\n\nIn the diagram, $PST$ is a straight line.\n\n\\begin{parts}\n\\item Give the geometrical reason why the lines $PQ$ and $SR$ are parallel.\n\n\\answerlines[1]\n\\Marks{1}\n\n\\item Write down the mathematical name for the shape $PQRS$.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Find the value of $y$.\n\n\\AnswerLine[$y =$][]\n\\Marks{2}\n\\end{parts}\n\n\\PartLabel{b}\n\\begin{center}\n\\relincludegraphics{Figures/Q06-Transformation.png}\n\\end{center}\n\n\\begin{parts}\n\\item Describe fully the single transformation that maps triangle $A$ onto triangle $B$.\n\n\\answerlines[2]\n\\Marks{3}\n\n\\item Describe fully the single transformation that maps triangle $A$ onto triangle $C$.\n\n\\answerlines[2]\n\\Marks{2}\n\n\\item On the grid, enlarge triangle $A$ by scale factor 3, centre $(4, -5)$.\n\\Marks{2}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "_postParts": [
+      {
+        "type": "text",
+        "content": "\\PartLabel{b}\n\\begin{center}\n\\relincludegraphics{Figures/Q06-Transformation.png}\n\\end{center}\n\n\\begin{parts}\n\\item Describe fully the single transformation that maps triangle $A$ onto triangle $B$.\n\n\\answerlines[2]\n\\Marks{3}\n\n\\item Describe fully the single transformation that maps triangle $A$ onto triangle $C$.\n\n\\answerlines[2]\n\\Marks{2}\n\n\\item On the grid, enlarge triangle $A$ by scale factor 3, centre $(4, -5)$.\n\\Marks{2}\n\\end{parts}"
+      }
+    ],
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper33/Q06/Q06-Geometry.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper33/Q06/Q06-Transformation.png"
+    ]
+  },
+  {
+    "id": "0580-2023OctNov-Paper33-Q07",
+    "paper": "2023OctNov-Paper33",
+    "qnum": 7,
+    "marks": 8,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.7",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Sequences",
+    "qtype": "sequences, nth term, solving equations related to sequences",
+    "g": "sequence",
+    "src": "0580/33/O/N/23 Q07",
+    "year": 2023,
+    "session": "OctNov",
+    "tex": "These are the first four diagrams in a sequence.\n\\newline\nThe diagrams are made using dots and lines.\n\\newline\n\n(a) Complete the table.\n\\newline\n\n\\begin{tabular}{|l|c|c|c|c|}\n\\hline\nDiagram & 1 & 2 & 3 & 4 \\\\\n\\hline\nNumber of small squares & 2 & 4 & 6 & \\\\\n\\hline\nNumber of dots & 6 & 9 & 12 & \\\\\n\\hline\nNumber of lines & 7 & 12 & 17 & \\\\\n\\hline\n\\end{tabular}\n\n(b) Complete this statement.\n\\newline\n\nA diagram in this sequence cannot have 51 small squares because \n\n(c) An expression for the number of dots in Diagram $n$ is $3n + 3$.\n\\newline\n\nWhich diagram has 249 dots?\n\n(d) (i) (e) Find an expression, in terms of $n$, for the number of lines in Diagram $n$.\n\\newline\n\n(f) Find the number of lines in Diagram 41.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Complete the table.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{center}\n\\begin{tabular}{|l|c|c|c|c|}\n\\hline\nDiagram & 1 & 2 & 3 & 4 \\\\\n\\hline\nNumber of small squares & 2 & 4 & 6 & \\\\\n\\hline\nNumber of dots & 6 & 9 & 12 & \\\\\n\\hline\nNumber of lines & 7 & 12 & 17 & \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Complete this statement.\n\\newline\n\nA diagram in this sequence cannot have 51 small squares because ..........................................."
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "An expression for the number of dots in Diagram $n$ is $3n + 3$.\n\\newline\n\nWhich diagram has 249 dots?"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find an expression, in terms of $n$, for the number of lines in Diagram $n$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the number of lines in Diagram 41.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_itemNewline": true,
+        "_compactEndSubparts": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "These are the first four diagrams in a sequence.\n\\newline\nThe diagrams are made using dots and lines.\n\\newline\n\n\\begin{center}\n\\relincludegraphics{Figures/Q07-Sequence.\n\\newline\npng}\n\\end{center}"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper33/Q07/Q07-Sequence.png"
+      }
+    ],
+    "_rawBody": "These are the first four diagrams in a sequence.\nThe diagrams are made using dots and lines.\n\n\\begin{center}\n\\relincludegraphics{Figures/Q07-Sequence.png}\n\\end{center}\n\n\\begin{parts}\n\\item Complete the table.\n\n\\begin{center}\n\\begin{tabular}{|l|c|c|c|c|}\n\\hline\nDiagram & 1 & 2 & 3 & 4 \\\\\n\\hline\nNumber of small squares & 2 & 4 & 6 & \\\\\n\\hline\nNumber of dots & 6 & 9 & 12 & \\\\\n\\hline\nNumber of lines & 7 & 12 & 17 & \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\Marks{2}\n\n\\item Complete this statement.\n\nA diagram in this sequence cannot have 51 small squares because ...........................................\n\n\\AnswerLine[]\n\\Marks{1}\n\n\\item An expression for the number of dots in Diagram $n$ is $3n + 3$.\n\nWhich diagram has 249 dots?\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item\n\\begin{subparts}\n\\item Find an expression, in terms of $n$, for the number of lines in Diagram $n$.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item Find the number of lines in Diagram 41.\n\n\\AnswerLine[][]\n\\Marks{1}\n\\end{subparts}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper33/Q07/Q07-Sequence.png"
+    ]
+  },
+  {
+    "id": "0580-2023OctNov-Paper33-Q08",
+    "paper": "2023OctNov-Paper33",
+    "qnum": 8,
+    "marks": 3,
+    "topics": [
+      "Algebra and graphs",
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "2.2",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Rearranging formulae",
+    "qtype": "expanding and simplifying, rearranging formula, forming and solving linear equations",
+    "g": "rearrange",
+    "src": "0580/33/O/N/23 Q08",
+    "year": 2023,
+    "session": "OctNov",
+    "tex": "(a) Expand and simplify.\n\\newline\n\n(i) $4 (x + 3) + 2 (x - 1)$\n\n(ii) $(m - 6) (m - 4)$\n\n(b)Make $t$ the subject of the formula   $p = 4t + 3$.\n\\newline\n\n(c)In this part, all measurements are in centimetres.\n\\newline\n\nThe perimeter of this triangle is 49 cm.\n\\newline\n\nWork out the value of $x$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Expand and simplify.\n\\newline\n\n(i) $4 (x + 3) + 2 (x - 1)$\n\n(ii) $(m - 6) (m - 4)$"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        }
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Make $t$ the subject of the formula   $p = 4t + 3$.\n\\newline\n\n(c)In this part, all measurements are in centimetres.\n\\newline\n\nThe perimeter of this triangle is 49 cm.\n\\newline\n\nWork out the value of $x$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        }
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [
+      {
+        "type": "text",
+        "content": "(a) Expand and simplify.\n\\newline\n\n\\begin{subparts}\n\\item $4 (x + 3) + 2 (x - 1)$\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item $(m - 6) (m - 4)$\n\n\\AnswerLine[][]\n\\Marks{2}\n\\end{subparts}\n\n\\PartLabel{b}Make $t$ the subject of the formula \\quad $p = 4t + 3$.\n\\newline\n\n\\AnswerLine[$t =$][]\n\\Marks{2}\n\n\\PartLabel{c}In this part, all measurements are in centimetres.\n\\newline\n\n\\begin{center}\n\\relincludegraphics{Figures/Q08-Triangle.\n\\newline\npng}\n\\end{center}\n\nThe perimeter of this triangle is 49 cm.\n\\newline\n\nWork out the value of $x$.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper33/Q08/Q08-Triangle.png"
+      }
+    ],
+    "_rawBody": "(a) Expand and simplify.\n\n\\begin{subparts}\n\\item $4 (x + 3) + 2 (x - 1)$\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item $(m - 6) (m - 4)$\n\n\\AnswerLine[][]\n\\Marks{2}\n\\end{subparts}\n\n\\PartLabel{b}Make $t$ the subject of the formula \\quad $p = 4t + 3$.\n\n\\AnswerLine[$t =$][]\n\\Marks{2}\n\n\\PartLabel{c}In this part, all measurements are in centimetres.\n\n\\begin{center}\n\\relincludegraphics{Figures/Q08-Triangle.png}\n\\end{center}\n\nThe perimeter of this triangle is 49 cm.\n\nWork out the value of $x$.\n\n\\AnswerLine[$x =$][]\n\\Marks{3}",
+    "answer": {
+      "type": "number",
+      "prefix": "$x =$"
+    },
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper33/Q08/Q08-Triangle.png"
+    ]
+  },
+  {
+    "id": "0580-2023OctNov-Paper33-Q09",
+    "paper": "2023OctNov-Paper33",
+    "qnum": 9,
+    "marks": 4,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "3.4",
+    "d": 1,
+    "cat": "coord",
+    "topic": "Equation of a line",
+    "qtype": "length and midpoint",
+    "g": "mixed",
+    "src": "0580/33/O/N/23 Q09",
+    "year": 2023,
+    "session": "OctNov",
+    "tex": "(a)\n\nThe diagram shows a semicircle with diameter $AB$.\n\\newline\n$O$ is the midpoint of $AB$ and $C$ is a point on the circumference.\n\\newline\n\n(a) Calculate the area of triangle $ABC$.\n\\newline\n\n(b) Show that $AB = 20.4$ cm.\n\\newline\n\n(c) Calculate the shaded area.\n\\newline\n\n(b)The diagram shows two right-angled triangles, $PQR$ and $XYZ$.\n\\newline\n\nCalculate the difference in the heights $RQ$ and $XY$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Calculate the area of triangle $ABC$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "cm$^2$"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Show that $AB = 20.4$ cm.\n\\newline\n"
+          }
+        ]
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Calculate the shaded area.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "cm$^2$"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "analyse",
+    "cmd": "show",
+    "stem": [
+      {
+        "type": "text",
+        "content": "(a)\n\\begin{center}\n\\relincludegraphics{Figures/Q09-Semicircle.\n\\newline\npng}\n\\end{center}\n\nThe diagram shows a semicircle with diameter $AB$.\n\\newline\n$O$ is the midpoint of $AB$ and $C$ is a point on the circumference.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper33/Q09/Q09-Triangles.png"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper33/Q09/Q09-Semicircle.png"
+      }
+    ],
+    "_rawBody": "(a)\n\\begin{center}\n\\relincludegraphics{Figures/Q09-Semicircle.png}\n\\end{center}\n\nThe diagram shows a semicircle with diameter $AB$.\n$O$ is the midpoint of $AB$ and $C$ is a point on the circumference.\n\n\\begin{parts}\n\\item Calculate the area of triangle $ABC$.\n\n\\AnswerLine[][cm$^2$]\n\\Marks{2}\n\n\\item Show that $AB = 20.4$ cm.\n\n\\Marks{2}\n\n\\item Calculate the shaded area.\n\n\\AnswerLine[][cm$^2$]\n\\Marks{2}\n\\end{parts}\n\n\\PartLabel{b}The diagram shows two right-angled triangles, $PQR$ and $XYZ$.\n\n\\begin{center}\n\\relincludegraphics{Figures/Q09-Triangles.png}\n\\end{center}\n\nCalculate the difference in the heights $RQ$ and $XY$.\n\n\\AnswerLine[][cm]\n\\Marks{4}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "_compactMarks": true,
+    "_postParts": [
+      {
+        "type": "text",
+        "content": "\\PartLabel{b}The diagram shows two right-angled triangles, $PQR$ and $XYZ$.\n\n\\begin{center}\n\\relincludegraphics{Figures/Q09-Triangles.png}\n\\end{center}\n\nCalculate the difference in the heights $RQ$ and $XY$."
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "cm"
+    },
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper33/Q09/Q09-Semicircle.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper33/Q09/Q09-Triangles.png"
+    ]
+  },
+  {
+    "id": "0580-2023OctNov-Paper33-Q10",
+    "paper": "2023OctNov-Paper33",
+    "qnum": 10,
+    "marks": 4,
+    "topics": [
+      "Algebra and graphs",
+      "Coordinate geometry",
+      "Geometry"
+    ],
+    "s": "2.10",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Graphs of functions",
+    "qtype": "properties of quadratic graphs, substitution, solving quadratic equations",
+    "g": "quadratic",
+    "src": "0580/33/O/N/23 Q10",
+    "year": 2023,
+    "session": "OctNov",
+    "tex": "The sketch shows the graph of $y = x^2 - 2x - 3$.\n\\newline\nThe graph crosses the $x$-axis at $(-1, 0)$ and $(3, 0)$.\n\\newline\n\n(a) Find the equation of the line of symmetry of the graph.\n\\newline\n\n(b) (i) (c) The point $A$ with coordinates $(6, k)$ lies on the graph.\n\\newline\n\nShow that the value of $k$ is 21.\n\\newline\n\n(d) The point $B$ with coordinates $(p, 21)$ also lies on the graph.\n\\newline\n\nFind the value of $p$.\n\\newline\n\n(e) Write down the $y$-coordinate of the point where the graph crosses the $y$-axis.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the equation of the line of symmetry of the graph.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "The point $A$ with coordinates $(6, k)$ lies on the graph.\n\\newline\n\nShow that the value of $k$ is 21.\n\\newline\n"
+              }
+            ]
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "The point $B$ with coordinates $(p, 21)$ also lies on the graph.\n\\newline\n\nFind the value of $p$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$p =$"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_itemNewline": true,
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(c)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down the $y$-coordinate of the point where the graph crosses the $y$-axis.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "show",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{center}\n\\relincludegraphics{Figures/Q10-Curve.\n\\newline\npng}\n\\end{center}\n\nThe sketch shows the graph of $y = x^2 - 2x - 3$.\n\\newline\nThe graph crosses the $x$-axis at $(-1, 0)$ and $(3, 0)$.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper33/Q10/Q10-Curve.png"
+      }
+    ],
+    "_rawBody": "\\begin{center}\n\\relincludegraphics{Figures/Q10-Curve.png}\n\\end{center}\n\nThe sketch shows the graph of $y = x^2 - 2x - 3$.\nThe graph crosses the $x$-axis at $(-1, 0)$ and $(3, 0)$.\n\n\\begin{parts}\n\\item Find the equation of the line of symmetry of the graph.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item\n\\begin{subparts}\n\\item The point $A$ with coordinates $(6, k)$ lies on the graph.\n\nShow that the value of $k$ is 21.\n\n\\Marks{1}\n\n\\item The point $B$ with coordinates $(p, 21)$ also lies on the graph.\n\nFind the value of $p$.\n\n\\AnswerLine[$p =$][]\n\\Marks{1}\n\\end{subparts}\n\n\\item Write down the $y$-coordinate of the point where the graph crosses the $y$-axis.\n\n\\AnswerLine[][]\n\\Marks{1}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper33/Q10/Q10-Curve.png"
+    ]
+  }
+]

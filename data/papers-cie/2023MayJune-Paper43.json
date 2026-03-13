@@ -1,0 +1,1466 @@
+[
+  {
+    "id": "0580-2023MayJune-Paper43-Q01",
+    "paper": "2023MayJune-Paper43",
+    "qnum": 1,
+    "marks": 11,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.11",
+    "d": 2,
+    "cat": "number",
+    "topic": "Money and finance",
+    "qtype": "Ratio, percentage, profit/loss, simple interest",
+    "g": "mixed",
+    "src": "0580/43/M/J/23 Q01",
+    "year": 2023,
+    "session": "MayJune",
+    "tex": "\\begin{question*}{9}{a}Tomas sells a computer, a bike and a phone.\n\\newline\nThe amounts he receives are in the ratio computer : bike : phone $= 14 : 17 : 9$.\n\\newline\n\n\\begin{subpartsaliged}\nCalculate the amount he receives for the phone as a percentage of the total.\n\\newline\n\nThe total amount he receives is \\$560.\n\\newline\nCalculate how much he receives for the bike.\n\\newline\n\nTomas originally bought the bike for \\$195.\n\\newline\nHe wanted to make a profit of at least 25\\% when he sold it.\n\\newline\n\nDoes Tomas make a profit of at least 25\\%?\nYou must show all your working to support your decision.\n\\newline\n\n\\end{subpartsaliged}\n\n(b)Ulla invests \\$725 for 6 years in an account paying simple interest at a rate of 1.3\\% per year.\n\\newline\n\nCalculate the total interest earned at the end of 6 years.\n\\newline\n\n(c)In a sale, all prices are reduced by 24\\%.\n\\newline\nVictor pays \\$36.86 for a pair of shoes in the sale.\n\\newline\n\nCalculate the original price of the shoes.\n\\newline\n\n\\end{question*}",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [],
+        "answer": {
+          "type": "number"
+        }
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Ulla invests \\$725 for 6 years in an account paying simple interest at a rate of 1.3\\% per year.\n\\newline\n\nCalculate the total interest earned at the end of 6 years.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        }
+      },
+      {
+        "label": "(c)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "In a sale, all prices are reduced by 24\\%.\n\\newline\nVictor pays \\$36.86 for a pair of shoes in the sale.\n\\newline\n\nCalculate the original price of the shoes.\n\\newline\n\n\\end{question*}"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        }
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{question*}{9}{a}Tomas sells a computer, a bike and a phone.\n\\newline\nThe amounts he receives are in the ratio computer : bike : phone $= 14 : 17 : 9$.\n\\newline\n\n\\begin{subpartsaliged}\nCalculate the amount he receives for the phone as a percentage of the total.\n\\newline\n\nThe total amount he receives is \\$560.\n\\newline\nCalculate how much he receives for the bike.\n\\newline\n\nTomas originally bought the bike for \\$195.\n\\newline\nHe wanted to make a profit of at least 25\\% when he sold it.\n\\newline\n\nDoes Tomas make a profit of at least 25\\%?\nYou must show all your working to support your decision.\n\\newline\n\n\\end{subpartsaliged}"
+      }
+    ]
+  },
+  {
+    "id": "0580-2023MayJune-Paper43-Q02",
+    "paper": "2023MayJune-Paper43",
+    "qnum": 2,
+    "marks": 2,
+    "topics": [
+      "Probability",
+      "Statistics"
+    ],
+    "s": "8.3",
+    "d": 2,
+    "cat": "probability",
+    "topic": "Tree diagrams",
+    "qtype": "combined events",
+    "g": "mixed",
+    "src": "0580/43/M/J/23 Q02",
+    "year": 2023,
+    "session": "MayJune",
+    "tex": "Anna records the number of text messages she receives for 14 days.\n\\newline\n\n\\begin{tabular}{ccccccc}\n17 & 15 & 31 & 38 & 31 & 22 & 13 \\\\\n18 & 21 & 27 & 28 & 21 & 31 & 29\n\\end{tabular}\n(a) Complete the stem-and-leaf diagram.\n\\newline\n\n\\begin{tabular}{c|cccccc}\n1 & 8  & & & & & \\\\\n2 & 9  & & & & & \\\\\n3 & 1  & & & & & \\\\\n\\end{tabular}\n\nKey: ...\n\n(b) Find the median.\n\\newline\n\n(c) Find the mode.\n\\newline\n\n(d) Find the range.\n\\newline\n\n **(b)** In a shop, there are 4 red and 8 grey phones.\n\\newline\nAnna and Pete each pick one of these phones at random.\n\\newline\n\nWork out the probability that they both pick a grey phone.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q02/Q02a.png"
+          },
+          {
+            "type": "text",
+            "content": "Complete the stem-and-leaf diagram.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{center}\n\\begin{tabular}{c|cccccc}\n1 & 8 \\makebox[2cm]{\\dotfill} & & & & & \\\\\n2 & 9 \\makebox[2cm]{\\dotfill} & & & & & \\\\\n3 & 1 \\makebox[2cm]{\\dotfill} & & & & & \\\\\n\\end{tabular}\n\\end{center}"
+          },
+          {
+            "type": "space",
+            "height": "0.5cm",
+            "cmd": "vspace"
+          },
+          {
+            "type": "text",
+            "content": "Key: \\dotfill"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the median.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the mode.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the range.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Anna records the number of text messages she receives for 14 days.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q02/Q02ai.png"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{center}\n\\begin{tabular}{ccccccc}\n17 & 15 & 31 & 38 & 31 & 22 & 13 \\\\\n18 & 21 & 27 & 28 & 21 & 31 & 29\n\\end{tabular}\n\\end{center}"
+      }
+    ],
+    "_rawBody": "Anna records the number of text messages she receives for 14 days.\n\n\\begin{center}\n\\begin{tabular}{ccccccc}\n17 & 15 & 31 & 38 & 31 & 22 & 13 \\\\\n18 & 21 & 27 & 28 & 21 & 31 & 29\n\\end{tabular}\n\\end{center}\n\n\\begin{parts}\n\\item Complete the stem-and-leaf diagram.\n\n\\begin{center}\n\\begin{tabular}{c|cccccc}\n1 & 8 \\makebox[2cm]{\\dotfill} & & & & & \\\\\n2 & 9 \\makebox[2cm]{\\dotfill} & & & & & \\\\\n3 & 1 \\makebox[2cm]{\\dotfill} & & & & & \\\\\n\\end{tabular}\n\\end{center}\n\n\\vspace{0.5cm}\nKey: \\dotfill\n\\Marks{3}\n\n\\item Find the median.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Find the mode.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Find the range.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{parts}\n\n\\vspace{0.5cm}\n\\noindent \\textbf{(b)} In a shop, there are 4 red and 8 grey phones.\nAnna and Pete each pick one of these phones at random.\n\nWork out the probability that they both pick a grey phone.\n\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactParts": true,
+    "_compactMarks": true,
+    "_postParts": [
+      {
+        "type": "space",
+        "height": "0.5cm",
+        "cmd": "vspace"
+      },
+      {
+        "type": "text",
+        "content": "\\noindent \\textbf{(b)} In a shop, there are 4 red and 8 grey phones.\nAnna and Pete each pick one of these phones at random.\n\nWork out the probability that they both pick a grey phone."
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q02/Q02a.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q02/Q02ai.png"
+    ]
+  },
+  {
+    "id": "0580-2023MayJune-Paper43-Q03",
+    "paper": "2023MayJune-Paper43",
+    "qnum": 3,
+    "marks": 5,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.4",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Circle theorems",
+    "qtype": "similarity and congruence",
+    "g": "mixed",
+    "src": "0580/43/M/J/23 Q03",
+    "year": 2023,
+    "session": "MayJune",
+    "tex": "The scale drawing shows two sides, $AB$ and $BC$, of a field.\n\\newline\nThe scale is 5 centimetres represents 200 metres.\n\\newline\n\n\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\nScale: 5 cm to 200 m\n\n(a) Measure angle $ABC$.\n\\newline\n\n(b) $X$ is a point on $BC$.\n\\newline\n$BX = 332$ m.\n\\newline\n\nMark the point $X$ on the diagram.\n\\newline\n\n(c) Find the scale in the form $1 : n$.\n\\newline\n\n **(b)** A bronze statue is 4.5 m high and has a mass of $195\\,200$ kg.\n\\newline\nThe density of bronze is 8000 kg/m$^3$.\n\\newline\nThe volume of a mathematically similar model of the statue is $0.385$ m$^3$.\n\\newline\n\nCalculate the height of the model.\n\\newline\n[Density = Mass $\\div$ Volume]",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q03/Q03a.png"
+          },
+          {
+            "type": "text",
+            "content": "Measure angle $ABC$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "Angle $ABC =$ "
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "$X$ is a point on $BC$.\n\\newline\n$BX = 332$ m.\n\\newline\n\nMark the point $X$ on the diagram.\n\\newline\n"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the scale in the form $1 : n$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "1 : "
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The scale drawing shows two sides, $AB$ and $BC$, of a field.\n\\newline\nThe scale is 5 centimetres represents 200 metres.\n\\newline\n"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{InsertScreenShot}\n    \\relinput{Figures/Q03-ScaleDrawing.tex}\n\\end{InsertScreenShot}"
+      },
+      {
+        "type": "text",
+        "content": "Scale: 5 cm to 200 m"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q03/Q03-ScaleDrawing.png"
+      }
+    ],
+    "_rawBody": "The scale drawing shows two sides, $AB$ and $BC$, of a field.\nThe scale is 5 centimetres represents 200 metres.\n\n\\begin{InsertScreenShot}\n    \\relinput{Figures/Q03-ScaleDrawing.tex}\n\\end{InsertScreenShot}\n\nScale: 5 cm to 200 m\n\n\\begin{parts}\n\\item Measure angle $ABC$.\n\n\\AnswerLine[Angle $ABC =$ ][]\n\\Marks{1}\n\n\\item $X$ is a point on $BC$.\n$BX = 332$ m.\n\nMark the point $X$ on the diagram.\n\\Marks{2}\n\n\\item Find the scale in the form $1 : n$.\n\n\\AnswerLine[1 : ][]\n\\Marks{2}\n\n\\end{parts}\n\n\\vspace{0.5cm}\n\\noindent \\textbf{(b)} A bronze statue is 4.5 m high and has a mass of 195\\,200 kg.\nThe density of bronze is 8000 kg/m$^3$.\nThe volume of a mathematically similar model of the statue is $0.385$ m$^3$.\n\nCalculate the height of the model.\n[Density = Mass $\\div$ Volume]\n\n\\AnswerLine[][m]\n\\Marks{5}",
+    "_compactParts": true,
+    "_compactMarks": true,
+    "_postParts": [
+      {
+        "type": "space",
+        "height": "0.5cm",
+        "cmd": "vspace"
+      },
+      {
+        "type": "text",
+        "content": "\\noindent \\textbf{(b)} A bronze statue is 4.5 m high and has a mass of 195\\,200 kg.\nThe density of bronze is 8000 kg/m$^3$.\nThe volume of a mathematically similar model of the statue is $0.385$ m$^3$.\n\nCalculate the height of the model.\n[Density = Mass $\\div$ Volume]"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "m"
+    },
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q03/Q03-ScaleDrawing.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q03/Q03a.png"
+    ]
+  },
+  {
+    "id": "0580-2023MayJune-Paper43-Q04",
+    "paper": "2023MayJune-Paper43",
+    "qnum": 4,
+    "marks": 10,
+    "topics": [
+      "Geometry",
+      "Mensuration",
+      "Trigonometry"
+    ],
+    "s": "4.7",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Nets and 3D shapes",
+    "qtype": "circle theorems",
+    "g": "mixed",
+    "src": "0580/43/M/J/23 Q04",
+    "year": 2023,
+    "session": "MayJune",
+    "tex": "(a) \\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\n$A$, $B$ and $C$ are three towns and the bearing of $C$ from $A$ is $114^\\circ$.\n\\newline\n$B$ is due south of $A$ and $AC = BC$.\n\\newline\n\nCalculate the bearing of $B$ from $C$.\n\\newline\n\n(b) \\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\n$P$, $Q$, $R$ and $S$ lie on a circle.\n\\newline\n$MPN$ is a tangent to the circle at $P$.\n\\newline\nAngle $MPS = 58^\\circ$, angle $PSR = 74^\\circ$ and angle $QPN = 27^\\circ$.\n\\newline\n\n(i) (c) Find angle $PRS$.\n\\newline\n\n(d) Find angle $PQR$.\n\\newline\n\n(e) Find angle $RPQ$.\n\\newline\n\n(f) \\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\n$A$, $B$ and $C$ lie on a circle, centre $O$, with diameter $AC$.\n\\newline\n$TAM$ and $TBN$ are tangents to the circle and angle $ATO = 34^\\circ$.\n\\newline\n\nUsing values and geometrical reasons, complete these statements to show that $CB$ is parallel to $OT$.\n\\newline\n\nIn triangles $AOT$ and $BOT$, $OT$ is common.\n\\newline\n\n(g) Angle $OAT =$ angle $OBT = 90^\\circ$ because \n\n(h) $AT = BT$ because \n\n(i) Triangle $AOT$ is congruent to triangle $BOT$ because of congruence criterion \n\n(j) Angle $AOT =$ angle $BOT = 56^\\circ$ because angles in a triangle add up to $180^\\circ$.\n\\newline\n\n(k) Angle $BOC =$ $^\\circ$ because \n\n(l) Angle $OBC =$ $^\\circ$ because \n\n(m) $CB$ is parallel to $OT$ because",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q04/Q04a.png"
+          },
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q04/Q04a-Bearing.png"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{InsertScreenShot}\n    \\relinput{Figures/Q04a-Bearing.tex}\n\\end{InsertScreenShot}"
+          },
+          {
+            "type": "text",
+            "content": "$A$, $B$ and $C$ are three towns and the bearing of $C$ from $A$ is $114^\\circ$.\n\\newline\n$B$ is due south of $A$ and $AC = BC$.\n\\newline\n\nCalculate the bearing of $B$ from $C$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "Bearing = "
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q04/Q04b.png"
+          },
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q04/Q04b-Circle.png"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{InsertScreenShot}\n    \\relinput{Figures/Q04b-Circle.tex}\n\\end{InsertScreenShot}"
+          },
+          {
+            "type": "text",
+            "content": "$P$, $Q$, $R$ and $S$ lie on a circle.\n\\newline\n$MPN$ is a tangent to the circle at $P$.\n\\newline\nAngle $MPS = 58^\\circ$, angle $PSR = 74^\\circ$ and angle $QPN = 27^\\circ$.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find angle $PRS$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "Angle $PRS =$ "
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find angle $PQR$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "Angle $PQR =$ "
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find angle $RPQ$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "Angle $RPQ =$ "
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(c)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q04/Q04c.png"
+          },
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q04/Q04c-CircleProof.png"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{InsertScreenShot}\n    \\relinput{Figures/Q04c-CircleProof.tex}\n\\end{InsertScreenShot}"
+          },
+          {
+            "type": "text",
+            "content": "$A$, $B$ and $C$ lie on a circle, centre $O$, with diameter $AC$.\n\\newline\n$TAM$ and $TBN$ are tangents to the circle and angle $ATO = 34^\\circ$.\n\\newline\n\nUsing values and geometrical reasons, complete these statements to show that $CB$ is parallel to $OT$.\n\\newline\n\nIn triangles $AOT$ and $BOT$, $OT$ is common.\n\\newline\n\n\\begin{parts}"
+          }
+        ]
+      },
+      {
+        "label": "(d)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "text",
+            "content": "Angle $OAT =$ angle $OBT = 90^\\circ$ because \\AnswerLine"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        }
+      },
+      {
+        "label": "(e)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "text",
+            "content": "$AT = BT$ because \\AnswerLine"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        }
+      },
+      {
+        "label": "(f)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "text",
+            "content": "Triangle $AOT$ is congruent to triangle $BOT$ because of congruence criterion \\AnswerLine"
+          }
+        ]
+      },
+      {
+        "label": "(g)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "text",
+            "content": "Angle $AOT =$ angle $BOT = 56^\\circ$ because angles in a triangle add up to $180^\\circ$.\n\\newline\n"
+          }
+        ]
+      },
+      {
+        "label": "(h)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "text",
+            "content": "Angle $BOC =$ \\AnswerLine[\\hspace{3cm}]$^\\circ$ because \\AnswerLine"
+          }
+        ]
+      },
+      {
+        "label": "(i)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "text",
+            "content": "Angle $OBC =$ \\AnswerLine[\\hspace{3cm}]$^\\circ$ because \\AnswerLine"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        }
+      },
+      {
+        "label": "(j)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "text",
+            "content": "$CB$ is parallel to $OT$ because \\AnswerLine"
+          }
+        ]
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "analyse",
+    "cmd": "show",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item \n\\begin{InsertScreenShot}\n    \\relinput{Figures/Q04a-Bearing.tex}\n\\end{InsertScreenShot}\n\n$A$, $B$ and $C$ are three towns and the bearing of $C$ from $A$ is $114^\\circ$.\n$B$ is due south of $A$ and $AC = BC$.\n\nCalculate the bearing of $B$ from $C$.\n\n\\AnswerLine[Bearing = ][]\n\\Marks{3}\n\n\\item \n\\begin{InsertScreenShot}\n    \\relinput{Figures/Q04b-Circle.tex}\n\\end{InsertScreenShot}\n\n$P$, $Q$, $R$ and $S$ lie on a circle.\n$MPN$ is a tangent to the circle at $P$.\nAngle $MPS = 58^\\circ$, angle $PSR = 74^\\circ$ and angle $QPN = 27^\\circ$.\n\n\\begin{subparts}\n\\item Find angle $PRS$.\n\n\\AnswerLine[Angle $PRS =$ ][]\n\\Marks{1}\n\n\\item Find angle $PQR$.\n\n\\AnswerLine[Angle $PQR =$ ][]\n\\Marks{1}\n\n\\item Find angle $RPQ$.\n\n\\AnswerLine[Angle $RPQ =$ ][]\n\\Marks{2}\n\\end{subparts}\n\n\\item \n\\begin{InsertScreenShot}\n    \\relinput{Figures/Q04c-CircleProof.tex}\n\\end{InsertScreenShot}\n\n$A$, $B$ and $C$ lie on a circle, centre $O$, with diameter $AC$.\n$TAM$ and $TBN$ are tangents to the circle and angle $ATO = 34^\\circ$.\n\nUsing values and geometrical reasons, complete these statements to show that $CB$ is parallel to $OT$.\n\nIn triangles $AOT$ and $BOT$, $OT$ is common.\n\n\\begin{parts}\n    \\item Angle $OAT =$ angle $OBT = 90^\\circ$ because \\AnswerLine\n    \\AnswerLine\n    \n    \\item $AT = BT$ because \\AnswerLine\n    \\AnswerLine\n    \n    \\item Triangle $AOT$ is congruent to triangle $BOT$ because of congruence criterion \\AnswerLine\n    \n    \\item Angle $AOT =$ angle $BOT = 56^\\circ$ because angles in a triangle add up to $180^\\circ$.\n    \n    \\item Angle $BOC =$ \\AnswerLine[\\hspace{3cm}]$^\\circ$ because \\AnswerLine\n    \n    \\item Angle $OBC =$ \\AnswerLine[\\hspace{3cm}]$^\\circ$ because \\AnswerLine\n    \\AnswerLine\n    \n    \\item $CB$ is parallel to $OT$ because \\AnswerLine\n\\end{parts}\n\\Marks{6}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "_postParts": [
+      {
+        "type": "text",
+        "content": "\\Marks{6}\n\n\\end{parts}"
+      }
+    ],
+    "_compactBegin": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q04/Q04a-Bearing.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q04/Q04a.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q04/Q04b-Circle.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q04/Q04b.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q04/Q04c-CircleProof.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q04/Q04c.png"
+    ]
+  },
+  {
+    "id": "0580-2023MayJune-Paper43-Q05",
+    "paper": "2023MayJune-Paper43",
+    "qnum": 5,
+    "marks": 12,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "3.4",
+    "d": 2,
+    "cat": "coord",
+    "topic": "Equation of a line",
+    "qtype": "length and midpoint",
+    "g": "mixed",
+    "src": "0580/43/M/J/23 Q05",
+    "year": 2023,
+    "session": "MayJune",
+    "tex": "(a) \\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\n$ABC$ is a scalene triangle on horizontal ground.\n\\newline\n$AYX$ is a straight vertical post, held in place by two straight wires $XB$ and $YC$.\n\\newline\n$AC = 4.8$ m, $BC = 5.6$ m and angle $ACB = 20.4^\\circ$.\n\\newline\n\n(i) (b) Calculate $AB$.\n\\newline\n\n(c) Angle $XBA = 64^\\circ$.\n\\newline\nCalculate $AX$.\n\\newline\n\n(d) $AY = 2.9$ m.\n\\newline\nCalculate the area of triangle $YAC$.\n\\newline\n\n(e) \\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\nIn triangle $PQR$, $M$ is the midpoint of $PQ$.\n\\newline\n$RM = 8$ cm, angle $PRM = 30^\\circ$ and angle $RMQ = 75^\\circ$.\n\\newline\n\nCalculate $PQ$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q05/Q05a.png"
+          },
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q05/Q05a-3DTrig.png"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{InsertScreenShot}\n    \\relinput{Figures/Q05a-3DTrig.tex}\n\\end{InsertScreenShot}"
+          },
+          {
+            "type": "text",
+            "content": "$ABC$ is a scalene triangle on horizontal ground.\n\\newline\n$AYX$ is a straight vertical post, held in place by two straight wires $XB$ and $YC$.\n\\newline\n$AC = 4.8$ m, $BC = 5.6$ m and angle $ACB = 20.4^\\circ$.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate $AB$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$AB =$ ",
+              "suffix": "m"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Angle $XBA = 64^\\circ$.\n\\newline\nCalculate $AX$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$AX =$ ",
+              "suffix": "m"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "$AY = 2.9$ m.\n\\newline\nCalculate the area of triangle $YAC$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "m$^2$"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(b)",
+        "marks": 5,
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q05/Q05b.png"
+          },
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q05/Q05b-Triangle.png"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{InsertScreenShot}\n    \\relinput{Figures/Q05b-Triangle.tex}\n\\end{InsertScreenShot}"
+          },
+          {
+            "type": "text",
+            "content": "In triangle $PQR$, $M$ is the midpoint of $PQ$.\n\\newline\n$RM = 8$ cm, angle $PRM = 30^\\circ$ and angle $RMQ = 75^\\circ$.\n\\newline\n\nCalculate $PQ$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$PQ =$ ",
+          "suffix": "cm"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item \n\\begin{InsertScreenShot}\n    \\relinput{Figures/Q05a-3DTrig.tex}\n\\end{InsertScreenShot}\n\n$ABC$ is a scalene triangle on horizontal ground.\n$AYX$ is a straight vertical post, held in place by two straight wires $XB$ and $YC$.\n$AC = 4.8$ m, $BC = 5.6$ m and angle $ACB = 20.4^\\circ$.\n\n\\begin{subparts}\n\\item Calculate $AB$.\n\n\\AnswerLine[$AB =$ ][m]\n\\Marks{3}\n\n\\item Angle $XBA = 64^\\circ$.\nCalculate $AX$.\n\n\\AnswerLine[$AX =$ ][m]\n\\Marks{2}\n\n\\item $AY = 2.9$ m.\nCalculate the area of triangle $YAC$.\n\n\\AnswerLine[][m$^2$]\n\\Marks{2}\n\\end{subparts}\n\n\\item \n\\begin{InsertScreenShot}\n    \\relinput{Figures/Q05b-Triangle.tex}\n\\end{InsertScreenShot}\n\nIn triangle $PQR$, $M$ is the midpoint of $PQ$.\n$RM = 8$ cm, angle $PRM = 30^\\circ$ and angle $RMQ = 75^\\circ$.\n\nCalculate $PQ$.\n\n\\AnswerLine[$PQ =$ ][cm]\n\\Marks{5}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_compactBegin": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q05/Q05a-3DTrig.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q05/Q05a.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q05/Q05b-Triangle.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q05/Q05b.png"
+    ]
+  },
+  {
+    "id": "0580-2023MayJune-Paper43-Q06",
+    "paper": "2023MayJune-Paper43",
+    "qnum": 6,
+    "marks": 13,
+    "topics": [
+      "Number",
+      "Statistics"
+    ],
+    "s": "1.6",
+    "d": 2,
+    "cat": "number",
+    "topic": "Standard form",
+    "qtype": "Cumulative frequency diagrams, median, interquartile range",
+    "g": "mixed",
+    "src": "0580/43/M/J/23 Q06",
+    "year": 2023,
+    "session": "MayJune",
+    "tex": "(a) The cumulative frequency table shows information about the speed of each of 200 cars as they pass a speed camera.\n\\newline\n\n\\begin{tabular}{|l|c|c|c|c|c|c|}\n\\hline\nSpeed ($v$ km/h) & $v \\leqslant 70$ & $v \\leqslant 80$ & $v \\leqslant 90$ & $v \\leqslant 95$ & $v \\leqslant 100$ & $v \\leqslant 120$ \\\\\n\\hline\nCumulative frequency & 12 & 46 & 115 & 155 & 177 & 200 \\\\\n\\hline\n\\end{tabular}\n(i) (b) On the grid, draw the cumulative frequency diagram.\n\\newline\n\n\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\n(c) Use your cumulative frequency diagram to find an estimate of\n\n\\PartLabelInline{a} the median\n\n\\PartLabelInline{b} the interquartile range\n\n\\PartLabelInline{c} the number of cars with a speed greater than 110 km/h.\n\\newline\n\n(d) The frequency table shows information about the mass of each of 50 trucks.\n\\newline\n\n\\begin{tabular}{|l|c|c|c|c|}\n\\hline\nMass ($m$ kg) & $2000 < m \\leqslant 2600$ & $2600 < m \\leqslant 3500$ & $3500 < m \\leqslant 5000$ & $5000 < m \\leqslant 5700$ \\\\\n\\hline\nFrequency & 12 & 15 & 16 & 7 \\\\\n\\hline\n\\end{tabular}\n(i) (e) Calculate an estimate for the mean mass of the trucks.\n\\newline\n\n(f) In a histogram showing this information, the height of the first block is 6 cm.\n\\newline\n\nCalculate the heights of the remaining three blocks.\n\\newline\n\nHeight of block for $2600 < m \\leqslant 3500$ \n\nHeight of block for $3500 < m \\leqslant 5000$ \n\nHeight of block for $5000 < m \\leqslant 5700$",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q06/Q06a.png"
+          },
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q06/Q06a-Grid.png"
+          },
+          {
+            "type": "text",
+            "content": "The cumulative frequency table shows information about the speed of each of 200 cars as they pass a speed camera.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{center}\n\\begin{tabular}{|l|c|c|c|c|c|c|}\n\\hline\nSpeed ($v$ km/h) & $v \\leqslant 70$ & $v \\leqslant 80$ & $v \\leqslant 90$ & $v \\leqslant 95$ & $v \\leqslant 100$ & $v \\leqslant 120$ \\\\\n\\hline\nCumulative frequency & 12 & 46 & 115 & 155 & 177 & 200 \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "On the grid, draw the cumulative frequency diagram.\n\\newline\n"
+              },
+              {
+                "type": "table",
+                "content": "\\begin{InsertScreenShot}\n    \\relinput{Figures/Q06a-Grid.tex}\n\\end{InsertScreenShot}"
+              }
+            ],
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Use your cumulative frequency diagram to find an estimate of\n\n\\PartLabelInline{a} the median\n\n\\AnswerLine[][km/h]\n\\Marks{1}\n\n\\PartLabelInline{b} the interquartile range\n\n\\AnswerLine[][km/h]\n\\Marks{2}\n\n\\PartLabelInline{c} the number of cars with a speed greater than 110 km/h.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q06/Q06b.png"
+          },
+          {
+            "type": "text",
+            "content": "The frequency table shows information about the mass of each of 50 trucks.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{center}\n\\begin{tabular}{|l|c|c|c|c|}\n\\hline\nMass ($m$ kg) & $2000 < m \\leqslant 2600$ & $2600 < m \\leqslant 3500$ & $3500 < m \\leqslant 5000$ & $5000 < m \\leqslant 5700$ \\\\\n\\hline\nFrequency & 12 & 15 & 16 & 7 \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 4,
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate an estimate for the mean mass of the trucks.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "kg"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "In a histogram showing this information, the height of the first block is 6 cm.\n\\newline\n\nCalculate the heights of the remaining three blocks.\n\\newline\n"
+              },
+              {
+                "type": "space",
+                "height": "0.5cm",
+                "cmd": "vspace"
+              },
+              {
+                "type": "text",
+                "content": "Height of block for $2600 < m \\leqslant 3500$ \\AnswerLine[][cm]\n\nHeight of block for $3500 < m \\leqslant 5000$ \\AnswerLine[][cm]\n\nHeight of block for $5000 < m \\leqslant 5700$ \\AnswerLine[][cm]"
+              }
+            ],
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q06/Q06ai.png"
+      }
+    ],
+    "_rawBody": "\\begin{parts}\n\\item The cumulative frequency table shows information about the speed of each of 200 cars as they pass a speed camera.\n\n\\begin{center}\n\\begin{tabular}{|l|c|c|c|c|c|c|}\n\\hline\nSpeed ($v$ km/h) & $v \\leqslant 70$ & $v \\leqslant 80$ & $v \\leqslant 90$ & $v \\leqslant 95$ & $v \\leqslant 100$ & $v \\leqslant 120$ \\\\\n\\hline\nCumulative frequency & 12 & 46 & 115 & 155 & 177 & 200 \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\begin{subparts}\n\\item On the grid, draw the cumulative frequency diagram.\n\n\\begin{InsertScreenShot}\n    \\relinput{Figures/Q06a-Grid.tex}\n\\end{InsertScreenShot}\n\\Marks{3}\n\n\\item Use your cumulative frequency diagram to find an estimate of\n\n\\PartLabelInline{a} the median\n\n\\AnswerLine[][km/h]\n\\Marks{1}\n\n\\PartLabelInline{b} the interquartile range\n\n\\AnswerLine[][km/h]\n\\Marks{2}\n\n\\PartLabelInline{c} the number of cars with a speed greater than 110 km/h.\n\n\\AnswerLine[][]\n\\Marks{2}\n\\end{subparts}\n\n\\item The frequency table shows information about the mass of each of 50 trucks.\n\n\\begin{center}\n\\begin{tabular}{|l|c|c|c|c|}\n\\hline\nMass ($m$ kg) & $2000 < m \\leqslant 2600$ & $2600 < m \\leqslant 3500$ & $3500 < m \\leqslant 5000$ & $5000 < m \\leqslant 5700$ \\\\\n\\hline\nFrequency & 12 & 15 & 16 & 7 \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\begin{subparts}\n\\item Calculate an estimate for the mean mass of the trucks.\n\n\\AnswerLine[][kg]\n\\Marks{4}\n\n\\item In a histogram showing this information, the height of the first block is 6 cm.\n\nCalculate the heights of the remaining three blocks.\n\n\\vspace{0.5cm}\nHeight of block for $2600 < m \\leqslant 3500$ \\AnswerLine[][cm]\n\nHeight of block for $3500 < m \\leqslant 5000$ \\AnswerLine[][cm]\n\nHeight of block for $5000 < m \\leqslant 5700$ \\AnswerLine[][cm]\n\\Marks{3}\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_compactBegin": true,
+    "_compactItems": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q06/Q06a-Grid.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q06/Q06a.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q06/Q06ai.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q06/Q06b.png"
+    ]
+  },
+  {
+    "id": "0580-2023MayJune-Paper43-Q07",
+    "paper": "2023MayJune-Paper43",
+    "qnum": 7,
+    "marks": 11,
+    "topics": [
+      "Number",
+      "Algebra and graphs",
+      "Trigonometry"
+    ],
+    "s": "2.11",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Differentiation",
+    "qtype": "identifying function type, sketching reciprocal and trigonometric graphs, solving rational equations",
+    "g": "function",
+    "src": "0580/43/M/J/23 Q07",
+    "year": 2023,
+    "session": "MayJune",
+    "tex": "(a) The diagram shows the graph of a function.\n\\newline\n\n\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\nPut a ring around the word which correctly identifies the type of function.\n\\newline\n\nreciprocal  quadratic  cubic  exponential  linear\n\n(b) (i) (c) On the diagram, sketch the graph of $y = \\dfrac{1}{2x}$, $x \\neq 0$.\n\\newline\n\n\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\n(d) Solve the equation $\\dfrac{1}{2x} = 2x$.\n\\newline\n\n(e) (i) (f) On the diagram, sketch the graph of $y = \\sin x$ for $0^\\circ \\leqslant x \\leqslant 360^\\circ$.\n\\newline\n\n\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\n(g) Solve the equation $3 \\sin x + 1 = 0$ for $0^\\circ \\leqslant x \\leqslant 360^\\circ$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q07/Q07a.png"
+          },
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q07/Q07a-FunctionGraph.png"
+          },
+          {
+            "type": "text",
+            "content": "The diagram shows the graph of a function.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{InsertScreenShot}\n    \\relinput{Figures/Q07a-FunctionGraph.tex}\n\\end{InsertScreenShot}"
+          },
+          {
+            "type": "text",
+            "content": "Put a ring around the word which correctly identifies the type of function.\n\\newline\n\n\\begin{center}\nreciprocal \\hspace{1cm} quadratic \\hspace{1cm} cubic \\hspace{1cm} exponential \\hspace{1cm} linear\n\\end{center}"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q07/Q07b-Sketch.png"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "On the diagram, sketch the graph of $y = \\dfrac{1}{2x}$, $x \\neq 0$.\n\\newline\n"
+              },
+              {
+                "type": "table",
+                "content": "\\begin{InsertScreenShot}\n    \\relinput{Figures/Q07b-Sketch.tex}\n\\end{InsertScreenShot}"
+              }
+            ],
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Solve the equation $\\dfrac{1}{2x} = 2x$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$x =$ ",
+              "suffix": " and $x =$ "
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true,
+        "_itemInlineSubparts": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q07/Q07c-SinGraph.png"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "On the diagram, sketch the graph of $y = \\sin x$ for $0^\\circ \\leqslant x \\leqslant 360^\\circ$.\n\\newline\n"
+              },
+              {
+                "type": "table",
+                "content": "\\begin{InsertScreenShot}\n    \\relinput{Figures/Q07c-SinGraph.tex}\n\\end{InsertScreenShot}"
+              }
+            ],
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "Solve the equation $3 \\sin x + 1 = 0$ for $0^\\circ \\leqslant x \\leqslant 360^\\circ$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$x =$ ",
+              "suffix": " and $x =$ "
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true,
+        "_itemInlineSubparts": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "sketch",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q07/Q07ci.png"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q07/Q07bi.png"
+      }
+    ],
+    "_rawBody": "\\begin{parts}\n\\item The diagram shows the graph of a function.\n\n\\begin{InsertScreenShot}\n    \\relinput{Figures/Q07a-FunctionGraph.tex}\n\\end{InsertScreenShot}\n\nPut a ring around the word which correctly identifies the type of function.\n\n\\begin{center}\nreciprocal \\hspace{1cm} quadratic \\hspace{1cm} cubic \\hspace{1cm} exponential \\hspace{1cm} linear\n\\end{center}\n\\Marks{1}\n\n\\item \n\\begin{subparts}\n\\item On the diagram, sketch the graph of $y = \\dfrac{1}{2x}$, $x \\neq 0$.\n\n\\begin{InsertScreenShot}\n    \\relinput{Figures/Q07b-Sketch.tex}\n\\end{InsertScreenShot}\n\\Marks{2}\n\n\\item Solve the equation $\\dfrac{1}{2x} = 2x$.\n\n\\AnswerLine[$x =$ ][ and $x =$ ]\n\\Marks{2}\n\\end{subparts}\n\n\\item \n\\begin{subparts}\n\\item On the diagram, sketch the graph of $y = \\sin x$ for $0^\\circ \\leqslant x \\leqslant 360^\\circ$.\n\n\\begin{InsertScreenShot}\n    \\relinput{Figures/Q07c-SinGraph.tex}\n\\end{InsertScreenShot}\n\\Marks{2}\n\n\\item Solve the equation $3 \\sin x + 1 = 0$ for $0^\\circ \\leqslant x \\leqslant 360^\\circ$.\n\n\\AnswerLine[$x =$ ][ and $x =$ ]\n\\Marks{3}\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_compactBegin": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q07/Q07a-FunctionGraph.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q07/Q07a.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q07/Q07b-Sketch.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q07/Q07bi.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q07/Q07c-SinGraph.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q07/Q07ci.png"
+    ]
+  },
+  {
+    "id": "0580-2023MayJune-Paper43-Q08",
+    "paper": "2023MayJune-Paper43",
+    "qnum": 8,
+    "marks": 12,
+    "topics": [
+      "Algebra and graphs",
+      "Mensuration"
+    ],
+    "s": "2.5",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Equations",
+    "qtype": "forming and solving linear equations, simultaneous linear and quadratic equations, algebraic manipulation with formulas",
+    "g": "simul-nonlinear",
+    "src": "0580/43/M/J/23 Q08",
+    "year": 2023,
+    "session": "MayJune",
+    "tex": "(a) A shop sells shirts for $\\$x$ and jackets for $\\$(x + 27)$.\n\\newline\nThe shop sells 4 shirts and 3 jackets for a total of \\$194.75.\n\\newline\n\nWrite down and solve an equation to find the cost of one shirt.\n\\newline\n\n(b) Solve the simultaneous equations.\n\\newline\nYou must show all your working.\n\\newline\n\n\\[\n\\begin{aligned}\nx^2 + 4y &= 37 \\\\\n5x + y &= -8\n\\end{aligned}\n\\]\n\n(c) A solid cylinder has radius $x$ and height $6x$.\n\\newline\nA sphere of radius $r$ has the same surface area as the total surface area of the cylinder.\n\\newline\n\nShow that $r^2 = \\dfrac{7}{2} x^2$.\n\\newline\n[The surface area, $A$, of a sphere with radius $r$ is $A = 4\\pi r^2$.\n\\newline\n]",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "A shop sells shirts for $\\$x$ and jackets for $\\$(x + 27)$.\n\\newline\nThe shop sells 4 shirts and 3 jackets for a total of \\$194.75.\n\\newline\n\nWrite down and solve an equation to find the cost of one shirt.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "\\$"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 5,
+        "content": [
+          {
+            "type": "text",
+            "content": "Solve the simultaneous equations.\n\\newline\nYou must show all your working.\n\\newline\n\n\\[\n\\begin{aligned}\nx^2 + 4y &= 37 \\\\\n5x + y &= -8\n\\end{aligned}\n\\]"
+          }
+        ],
+        "answer": {
+          "type": "multiline",
+          "lines": 2,
+          "template": "$x =$  ____ , $y =$\\n$x =$  ____ , $y =$",
+          "lineSep": "blank"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "text",
+            "content": "A solid cylinder has radius $x$ and height $6x$.\n\\newline\nA sphere of radius $r$ has the same surface area as the total surface area of the cylinder.\n\\newline\n\nShow that $r^2 = \\dfrac{7}{2} x^2$.\n\\newline\n[The surface area, $A$, of a sphere with radius $r$ is $A = 4\\pi r^2$.\n\\newline\n]"
+          }
+        ],
+        "answer": {
+          "type": "none",
+          "space": {
+            "type": "drawing",
+            "height": "4cm",
+            "cmd": "Answerspace"
+          }
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "show",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item A shop sells shirts for $\\$x$ and jackets for $\\$(x + 27)$.\nThe shop sells 4 shirts and 3 jackets for a total of \\$194.75.\n\nWrite down and solve an equation to find the cost of one shirt.\n\n\\AnswerLine[\\$][]\n\\Marks{3}\n\n\\item Solve the simultaneous equations.\nYou must show all your working.\n\n\\[\n\\begin{aligned}\nx^2 + 4y &= 37 \\\\\n5x + y &= -8\n\\end{aligned}\n\\]\n\n\\AnswerLine[$x =$ ][, $y =$ ]\n\\AnswerLine[$x =$ ][, $y =$ ]\n\\Marks{5}\n\n\\item A solid cylinder has radius $x$ and height $6x$.\nA sphere of radius $r$ has the same surface area as the total surface area of the cylinder.\n\nShow that $r^2 = \\dfrac{7}{2} x^2$.\n[The surface area, $A$, of a sphere with radius $r$ is $A = 4\\pi r^2$.]\n\n\\Answerspace[4cm]\n\\Marks{4}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_compactBegin": true
+  },
+  {
+    "id": "0580-2023MayJune-Paper43-Q09",
+    "paper": "2023MayJune-Paper43",
+    "qnum": 9,
+    "marks": 10,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.6",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/43/M/J/23 Q09",
+    "year": 2023,
+    "session": "MayJune",
+    "tex": "(a) \\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\nThe diagram shows a shape made from a square $ABCD$ and two equal sectors of a circle.\n\\newline\nThe square has side 11 cm.\n\\newline\n$MAB$ and $DCN$ are straight lines.\n\\newline\n\n(i) (b) Calculate the area of the shape.\n\\newline\n\n(c) Calculate the perimeter of the shape.\n\\newline\n\n(d) \\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\nThe diagram shows a cube $ABCDEFGH$ of edge 7 cm.\n\\newline\n\nCalculate the angle between $AG$ and the base of the cube.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q09/Q09a.png"
+          },
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q09/Q09a-Shape.png"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{InsertScreenShot}\n    \\relinput{Figures/Q09a-Shape.tex}\n\\end{InsertScreenShot}"
+          },
+          {
+            "type": "text",
+            "content": "The diagram shows a shape made from a square $ABCD$ and two equal sectors of a circle.\n\\newline\nThe square has side 11 cm.\n\\newline\n$MAB$ and $DCN$ are straight lines.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate the area of the shape.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "cm$^2$"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate the perimeter of the shape.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "cm"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(b)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q09/Q09b.png"
+          },
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q09/Q09b-Cube.png"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{InsertScreenShot}\n    \\relinput{Figures/Q09b-Cube.tex}\n\\end{InsertScreenShot}"
+          },
+          {
+            "type": "text",
+            "content": "The diagram shows a cube $ABCDEFGH$ of edge 7 cm.\n\\newline\n\nCalculate the angle between $AG$ and the base of the cube.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "$^\\circ$"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item \n\\begin{InsertScreenShot}\n    \\relinput{Figures/Q09a-Shape.tex}\n\\end{InsertScreenShot}\n\nThe diagram shows a shape made from a square $ABCD$ and two equal sectors of a circle.\nThe square has side 11 cm.\n$MAB$ and $DCN$ are straight lines.\n\n\\begin{subparts}\n\\item Calculate the area of the shape.\n\n\\AnswerLine[][cm$^2$]\n\\Marks{3}\n\n\\item Calculate the perimeter of the shape.\n\n\\AnswerLine[][cm]\n\\Marks{3}\n\\end{subparts}\n\n\\item \n\\begin{InsertScreenShot}\n    \\relinput{Figures/Q09b-Cube.tex}\n\\end{InsertScreenShot}\n\nThe diagram shows a cube $ABCDEFGH$ of edge 7 cm.\n\nCalculate the angle between $AG$ and the base of the cube.\n\n\\AnswerLine[][$^\\circ$]\n\\Marks{4}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_compactBegin": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q09/Q09a-Shape.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q09/Q09a.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q09/Q09b-Cube.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q09/Q09b.png"
+    ]
+  },
+  {
+    "id": "0580-2023MayJune-Paper43-Q10",
+    "paper": "2023MayJune-Paper43",
+    "qnum": 10,
+    "marks": 12,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.10",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Graphs of functions",
+    "qtype": "exponential graphs, completing tables, graphical solutions to equations",
+    "g": "graph",
+    "src": "0580/43/M/J/23 Q10",
+    "year": 2023,
+    "session": "MayJune",
+    "tex": "The table shows some values for $y = 2^x - 3$.\n\\newline\n\n\\begin{tabular}{|c|c|c|c|c|c|c|c|c|}\n\\hline\n$x$ & $-2$ & $-1$ & 0 & 0.5 & 1 & 1.5 & 2 & 2.5 \\\\\n\\hline\n$y$ & $-2.75$ & & & $-1.58$ & & $-0.17$ & 1 & 2.66 \\\\\n\\hline\n\\end{tabular}\n(a) Complete the table.\n\\newline\n\n(b) On the grid, draw the graph of $y = 2^x - 3$ for $-2 \\leqslant x \\leqslant 2.5$.\n\\newline\n\n\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\n(c) Use your graph to solve the equation $2^x - 3 = 2$.\n\\newline\n\n(d) By drawing a suitable straight line, solve the equation $2^x - x - 1.5 = 0$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Complete the table.\n\\newline\n"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q10/Q10b.png"
+          },
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q10/Q10b-Grid.png"
+          },
+          {
+            "type": "text",
+            "content": "On the grid, draw the graph of $y = 2^x - 3$ for $-2 \\leqslant x \\leqslant 2.5$.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{InsertScreenShot}\n    \\relinput{Figures/Q10b-Grid.tex}\n\\end{InsertScreenShot}"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Use your graph to solve the equation $2^x - 3 = 2$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x =$ "
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "text",
+            "content": "By drawing a suitable straight line, solve the equation $2^x - x - 1.5 = 0$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x =$ ",
+          "suffix": " or $x =$ "
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The table shows some values for $y = 2^x - 3$.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q10/Q10.png"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|c|c|c|c|}\n\\hline\n$x$ & $-2$ & $-1$ & 0 & 0.5 & 1 & 1.5 & 2 & 2.5 \\\\\n\\hline\n$y$ & $-2.75$ & & & $-1.58$ & & $-0.17$ & 1 & 2.66 \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+      }
+    ],
+    "_rawBody": "The table shows some values for $y = 2^x - 3$.\n\n\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|c|c|c|c|}\n\\hline\n$x$ & $-2$ & $-1$ & 0 & 0.5 & 1 & 1.5 & 2 & 2.5 \\\\\n\\hline\n$y$ & $-2.75$ & & & $-1.58$ & & $-0.17$ & 1 & 2.66 \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\begin{parts}\n\\item Complete the table.\n\\Marks{3}\n\n\\item On the grid, draw the graph of $y = 2^x - 3$ for $-2 \\leqslant x \\leqslant 2.5$.\n\n\\begin{InsertScreenShot}\n    \\relinput{Figures/Q10b-Grid.tex}\n\\end{InsertScreenShot}\n\\Marks{4}\n\n\\item Use your graph to solve the equation $2^x - 3 = 2$.\n\n\\AnswerLine[$x =$ ]\n\\Marks{1}\n\n\\item By drawing a suitable straight line, solve the equation $2^x - x - 1.5 = 0$.\n\n\\AnswerLine[$x =$ ][ or $x =$ ]\n\\Marks{4}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q10/Q10.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q10/Q10b-Grid.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper43/Q10/Q10b.png"
+    ]
+  },
+  {
+    "id": "0580-2023MayJune-Paper43-Q11",
+    "paper": "2023MayJune-Paper43",
+    "qnum": 11,
+    "marks": 9,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "3.7",
+    "d": 2,
+    "cat": "coord",
+    "topic": "Coordinate geometry extended",
+    "qtype": "perpendicular lines",
+    "g": "mixed",
+    "src": "0580/43/M/J/23 Q11",
+    "year": 2023,
+    "session": "MayJune",
+    "tex": "$M$ has coordinates $(4, 1)$ and $N$ has coordinates $(-2, -7)$.\n\\newline\n\n(a) Find the length of $MN$.\n\\newline\n\n(b) Find the gradient of $MN$.\n\\newline\n\n(c) Find the equation of the perpendicular bisector of $MN$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the length of $MN$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the gradient of $MN$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the equation of the perpendicular bisector of $MN$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "$M$ has coordinates $(4, 1)$ and $N$ has coordinates $(-2, -7)$.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "$M$ has coordinates $(4, 1)$ and $N$ has coordinates $(-2, -7)$.\n\n\\begin{parts}\n\\item Find the length of $MN$.\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\item Find the gradient of $MN$.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item Find the equation of the perpendicular bisector of $MN$.\n\n\\AnswerLine[][]\n\\Marks{4}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2023MayJune-Paper43-Q12",
+    "paper": "2023MayJune-Paper43",
+    "qnum": 12,
+    "marks": 8,
+    "topics": [
+      "Coordinate geometry"
+    ],
+    "s": "3.5",
+    "d": 2,
+    "cat": "coord",
+    "topic": "Parallel and perpendicular lines",
+    "qtype": "equation of a straight line",
+    "g": "mixed",
+    "src": "0580/43/M/J/23 Q12",
+    "year": 2023,
+    "session": "MayJune",
+    "tex": "The equation of a curve is $y = x^4 - 8x^2 + 5$.\n\\newline\n\n(a) Find the derivative, $\\dfrac{\\mathrm{d}y}{\\mathrm{d}x}$, of $y = x^4 - 8x^2 + 5$.\n\\newline\n\n(b) Find the coordinates of the three turning points.\n\\newline\nYou must show all your working.\n\\newline\n\n(c) Determine which one of these turning points is a maximum.\n\\newline\nJustify your answer.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the derivative, $\\dfrac{\\mathrm{d}y}{\\mathrm{d}x}$, of $y = x^4 - 8x^2 + 5$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the coordinates of the three turning points.\n\\newline\nYou must show all your working.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "(\\dots\\dots\\dots\\dots\\dots, \\dots\\dots\\dots\\dots\\dots) and (\\dots\\dots\\dots\\dots\\dots, \\dots\\dots\\dots\\dots\\dots) and (\\dots\\dots\\dots\\dots\\dots, \\dots\\dots\\dots\\dots\\dots)"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Determine which one of these turning points is a maximum.\n\\newline\nJustify your answer.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "none",
+          "space": {
+            "type": "drawing",
+            "height": "2cm",
+            "cmd": "Answerspace"
+          }
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "analyse",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The equation of a curve is $y = x^4 - 8x^2 + 5$.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "The equation of a curve is $y = x^4 - 8x^2 + 5$.\n\n\\begin{parts}\n\\item Find the derivative, $\\dfrac{\\mathrm{d}y}{\\mathrm{d}x}$, of $y = x^4 - 8x^2 + 5$.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item Find the coordinates of the three turning points.\nYou must show all your working.\n\n\\AnswerLine[(\\dots\\dots\\dots\\dots\\dots, \\dots\\dots\\dots\\dots\\dots) and (\\dots\\dots\\dots\\dots\\dots, \\dots\\dots\\dots\\dots\\dots) and (\\dots\\dots\\dots\\dots\\dots, \\dots\\dots\\dots\\dots\\dots)]\n\\Marks{4}\n\n\\item Determine which one of these turning points is a maximum.\nJustify your answer.\n\n\\Answerspace[2cm]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true
+  }
+]

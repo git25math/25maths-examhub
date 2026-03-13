@@ -1,0 +1,992 @@
+[
+  {
+    "id": "0580-2025MayJune-Paper23-Q01",
+    "paper": "2025MayJune-Paper23",
+    "qnum": 1,
+    "marks": 1,
+    "topics": [
+      "Probability"
+    ],
+    "s": "8.1",
+    "d": 2,
+    "cat": "probability",
+    "topic": "Basic probability",
+    "qtype": "basic probability",
+    "g": "mixed",
+    "src": "0580/23/M/J/25 Q01",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "The probability of picking a green pen from a box is 0.17 .\n\\newline\n\nFind the probability of not picking a green pen from the box.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The probability of picking a green pen from a box is 0.17 .\n\\newline\n\nFind the probability of not picking a green pen from the box.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "The probability of picking a green pen from a box is 0.17 .\n\nFind the probability of not picking a green pen from the box.\n\n\\AnswerLine[][]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper23-Q02",
+    "paper": "2025MayJune-Paper23",
+    "qnum": 2,
+    "marks": 4,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.6",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/23/M/J/25 Q02",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "[Diagram]\nABCD is a quadrilateral.\n\\newline\n\nCDE is a straight line.\n\\newline\n\nAFB is an isosceles triangle.\n\\newline\n\nFind the value of x and the value of y.\n\\newline\n",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\input{\\currfiledir Figures/Q02-Tikz.\n\\newline\ntex}\n\nABCD is a quadrilateral.\n\\newline\n\\par\nCDE is a straight line.\n\\newline\n\\par\nAFB is an isosceles triangle.\n\\newline\n\\par\n\nFind the value of x and the value of y.\n\\newline\n\\par"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper23/Q02/Q02.png"
+      }
+    ],
+    "answer": {
+      "type": "multiline",
+      "lines": 2,
+      "template": "$x = $ ____\\n$y = $ ____",
+      "lineSep": "blank"
+    },
+    "_rawBody": "\\input{\\currfiledir Figures/Q02-Tikz.tex}\n\nABCD is a quadrilateral.\\par\nCDE is a straight line.\\par\nAFB is an isosceles triangle.\\par\n\nFind the value of x and the value of y.\\par\n\n\\AnswerLine[$x = $][]\n\\AnswerLine[$y = $][]\n\\Marks{4}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper23/Q02/Q02.png"
+    ]
+  },
+  {
+    "id": "0580-2025MayJune-Paper23-Q03",
+    "paper": "2025MayJune-Paper23",
+    "qnum": 3,
+    "marks": 2,
+    "topics": [
+      "Geometry",
+      "Mensuration",
+      "Transformations and vectors"
+    ],
+    "s": "4.5",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Similarity and congruence",
+    "qtype": "symmetry",
+    "g": "mixed",
+    "src": "0580/23/M/J/25 Q03",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "[Diagram]\nThe diagram shows a pyramid ABCDE with a square base.\n\\newline\n\nM is the centre of the square base.\n\\newline\n\nE is vertically above M.\n\\newline\n\n(a) Write down the number of planes of symmetry of this pyramid.\n\\newline\n\n(b) Using two of the letters from A, B, C, D, E and M, complete the statement about the pyramid.\n\\newline\n\nThe axis of rotational symmetry passes through the points  and",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down the number of planes of symmetry of this pyramid.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Using two of the letters from A, B, C, D, E and M, complete the statement about the pyramid.\n\\newline\n\\par\n\nThe axis of rotational symmetry passes through the points ............... and ...............\\par"
+          }
+        ]
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "recall",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\input{\\currfiledir Figures/Q03-Tikz.\n\\newline\ntex}\n\nThe diagram shows a pyramid ABCDE with a square base.\n\\newline\n\\par\nM is the centre of the square base.\n\\newline\n\\par\nE is vertically above M.\n\\newline\n\\par"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper23/Q03/Q03.png"
+      }
+    ],
+    "_rawBody": "\\input{\\currfiledir Figures/Q03-Tikz.tex}\n\nThe diagram shows a pyramid ABCDE with a square base.\\par\nM is the centre of the square base.\\par\nE is vertically above M.\\par\n\n\n\\begin{parts}\n\\item Write down the number of planes of symmetry of this pyramid.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Using two of the letters from A, B, C, D, E and M, complete the statement about the pyramid.\\par\n\nThe axis of rotational symmetry passes through the points ............... and ...............\\par\n\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper23/Q03/Q03.png"
+    ]
+  },
+  {
+    "id": "0580-2025MayJune-Paper23-Q04",
+    "paper": "2025MayJune-Paper23",
+    "qnum": 4,
+    "marks": 1,
+    "topics": [
+      "Statistics"
+    ],
+    "s": "9.5",
+    "d": 2,
+    "cat": "statistics",
+    "topic": "Scatter diagrams",
+    "qtype": "scatter diagrams",
+    "g": "mixed",
+    "src": "0580/23/M/J/25 Q04",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "The number of ice creams sold increases as the temperature rises.\n\\newline\n\nWhat type of correlation does this statement describe?",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "describe",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The number of ice creams sold increases as the temperature rises.\n\\newline\n\\par\n\nWhat type of correlation does this statement describe?\\par"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "The number of ice creams sold increases as the temperature rises.\\par\n\nWhat type of correlation does this statement describe?\\par\n\n\\AnswerLine[][]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper23-Q05",
+    "paper": "2025MayJune-Paper23",
+    "qnum": 5,
+    "marks": 7,
+    "topics": [
+      "Geometry",
+      "Transformations and vectors"
+    ],
+    "s": "4.6",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/23/M/J/25 Q05",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "[Diagram]\n(a) Describe fully the **single** transformation that maps triangle $A$ onto triangle $B$.\n\\newline\n\n\\DotLine{162}\n\n\\DotLine{162}\n\n(b) On the grid, draw the image of\n\n(i) (c) triangle $A$ after a reflection in the line $x = -1$\n\n(d) triangle $A$ after a rotation 90° clockwise, centre (1, -2).\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Describe fully the \\textbf{single} transformation that maps triangle $A$ onto triangle $B$.\n\\newline\n\n\\DotLine{162}\\par\n\n\\DotLine{162}"
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "On the grid, draw the image of"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "triangle $A$ after a reflection in the line $x = -1$"
+              }
+            ]
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "triangle $A$ after a rotation 90° clockwise, centre (1, -2).\n\\newline\n"
+              }
+            ]
+          }
+        ],
+        "_subpartCmd": "item"
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "recall",
+    "cmd": "describe",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\input{\\currfiledir Figures/Q05-Tikz.\n\\newline\ntex}"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper23/Q05/Q05.png"
+      }
+    ],
+    "_rawBody": "\\input{\\currfiledir Figures/Q05-Tikz.tex}\n\n\\begin{parts}\n\\item Describe fully the \\textbf{single} transformation that maps triangle $A$ onto triangle $B$.\n\n\\DotLine{162}\\par\n\n\\DotLine{162}\n\n\\Marks{3}\n\n\\item On the grid, draw the image of\n\n\\begin{subparts}\n\\item triangle $A$ after a reflection in the line $x = -1$\n\n\\Marks{2}\n\n\\item triangle $A$ after a rotation 90° clockwise, centre (1, -2).\n\n\\Marks{2}\n\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper23/Q05/Q05.png"
+    ]
+  },
+  {
+    "id": "0580-2025MayJune-Paper23-Q06",
+    "paper": "2025MayJune-Paper23",
+    "qnum": 6,
+    "marks": 3,
+    "topics": [
+      "Statistics"
+    ],
+    "s": "9.4",
+    "d": 2,
+    "cat": "statistics",
+    "topic": "Charts and graphs",
+    "qtype": "statistical charts",
+    "g": "mixed",
+    "src": "0580/23/M/J/25 Q06",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "There are 15 giraffes in a group.\n\\newline\n\nThe table gives information about the heights of the 15 giraffes.\n\\newline\n\n\\begin{InsertScreenShot}\n\\begin{tabular}{|c|}\n\\hline\nOne giraffe has a height of 2.6 m.\n\\newline\n \\\\\n\\hline\nNo giraffe is shorter than 2.5 m.\n\\newline\n \\\\\n\\hline\nThe range of heights for the 15 giraffes is 2.3 m.\n\\newline\n \\\\\n\\hline\nMore than 3 giraffes have the same height.\n\\newline\n \\\\\n\\hline\nThe modal height for the giraffes is 3.9 m.\n\\newline\n \\\\\n\\hline\n\\end{tabular}\n\\end{InsertScreenShot}\n\nThe stem-and-leaf diagram shows information about the height of 9 of these giraffes.\n\\newline\n\n\\begin{InsertScreenShot}\n\\begin{tabular}{c|l}\n\\hline\n2 & 5 \\\\\n\\hline\n3 & 2   7   7 \\\\\n\\hline\n4 & 1   1   4   5   7 \\\\\n\\hline\n\\end{tabular}\n\n Key: 4 $|$ 1 represents a giraffe height of 4.1 m\n\\end{InsertScreenShot}\n\nUse the information in the table to complete the stem-and-leaf diagram for the group of 15 giraffes.\n\\newline\n\n\\begin{InsertScreenShot}\n\\begin{tabular}{c|l}\n\\hline\n2 & \\\\\n\\hline\n3 & \\\\\n\\hline\n4 & \\\\\n\\hline\n\\end{tabular}\n\\end{InsertScreenShot}",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "recall",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "There are 15 giraffes in a group.\n\\newline\n\nThe table gives information about the heights of the 15 giraffes.\n\\newline\n"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{InsertScreenShot}\n\\begin{center}\n\\begin{tabular}{|c|}\n\\hline\nOne giraffe has a height of 2.6 m. \\\\\n\\hline\nNo giraffe is shorter than 2.5 m. \\\\\n\\hline\nThe range of heights for the 15 giraffes is 2.3 m. \\\\\n\\hline\nMore than 3 giraffes have the same height. \\\\\n\\hline\nThe modal height for the giraffes is 3.9 m. \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\\end{InsertScreenShot}"
+      },
+      {
+        "type": "text",
+        "content": "The stem-and-leaf diagram shows information about the height of 9 of these giraffes.\n\\newline\n"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{InsertScreenShot}\n\\renewcommand{\\arraystretch}{1.5}\n\\begin{center}\n\\begin{tabular}{c|l}\n\\hline\n2 & 5 \\\\\n\\hline\n3 & 2 \\quad 7 \\quad 7 \\\\\n\\hline\n4 & 1 \\quad 1 \\quad 4 \\quad 5 \\quad 7 \\\\\n\\hline\n\\end{tabular}\n\\vspace{0.5em}\n\n\\hfill Key: 4 $|$ 1 represents a giraffe height of 4.1 m\n\\end{center}\n\\end{InsertScreenShot}"
+      },
+      {
+        "type": "text",
+        "content": "Use the information in the table to complete the stem-and-leaf diagram for the group of 15 giraffes.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper23/Q06/Q06-2.png"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper23/Q06/Q06-1.png"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{InsertScreenShot}\n\\renewcommand{\\arraystretch}{1.5}\n\\begin{center}\n\\begin{tabular}{c|l}\n\\hline\n2 & \\\\\n\\hline\n3 & \\\\\n\\hline\n4 & \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\\end{InsertScreenShot}"
+      }
+    ],
+    "_rawBody": "There are 15 giraffes in a group.\n\nThe table gives information about the heights of the 15 giraffes.\n\n\\begin{InsertScreenShot}\n\\begin{center}\n\\begin{tabular}{|c|}\n\\hline\nOne giraffe has a height of 2.6 m. \\\\\n\\hline\nNo giraffe is shorter than 2.5 m. \\\\\n\\hline\nThe range of heights for the 15 giraffes is 2.3 m. \\\\\n\\hline\nMore than 3 giraffes have the same height. \\\\\n\\hline\nThe modal height for the giraffes is 3.9 m. \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\\end{InsertScreenShot}\n\nThe stem-and-leaf diagram shows information about the height of 9 of these giraffes.\n\n\\begin{InsertScreenShot}\n\\renewcommand{\\arraystretch}{1.5}\n\\begin{center}\n\\begin{tabular}{c|l}\n\\hline\n2 & 5 \\\\\n\\hline\n3 & 2 \\quad 7 \\quad 7 \\\\\n\\hline\n4 & 1 \\quad 1 \\quad 4 \\quad 5 \\quad 7 \\\\\n\\hline\n\\end{tabular}\n\\vspace{0.5em}\n\n\\hfill Key: 4 $|$ 1 represents a giraffe height of 4.1 m\n\\end{center}\n\\end{InsertScreenShot}\n\nUse the information in the table to complete the stem-and-leaf diagram for the group of 15 giraffes.\n\n\\begin{InsertScreenShot}\n\\renewcommand{\\arraystretch}{1.5}\n\\begin{center}\n\\begin{tabular}{c|l}\n\\hline\n2 & \\\\\n\\hline\n3 & \\\\\n\\hline\n4 & \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\\end{InsertScreenShot}\n\n\\Marks{3}",
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper23/Q06/Q06-1.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper23/Q06/Q06-2.png"
+    ]
+  },
+  {
+    "id": "0580-2025MayJune-Paper23-Q07",
+    "paper": "2025MayJune-Paper23",
+    "qnum": 7,
+    "marks": 3,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.6",
+    "d": 2,
+    "cat": "number",
+    "topic": "Standard form",
+    "qtype": "operations with fractions",
+    "g": "mixed",
+    "src": "0580/23/M/J/25 Q07",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "**[2025 May/June, 0580/23, Question 7]**\n\nWork out.\n\\newline\n\n(a) $\\dfrac{5}{7} - \\dfrac{6}{12}$\n\nGive your answer as a fraction in its simplest form.\n\\newline\n\n(b)$1\\frac{8}{3} \\times \\dfrac{15}{40}$\n\nGive your answer as a mixed number in its simplest form.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\noindent\\textbf{[2025 May/June, 0580/23, Question 7]}\\par\n\nWork out.\n\\newline\n\n(a) $\\dfrac{5}{7} - \\dfrac{6}{12}$\n\nGive your answer as a fraction in its simplest form.\n\\newline\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\PartLabel{b}$1\\frac{8}{3} \\times \\dfrac{15}{40}$\n\nGive your answer as a mixed number in its simplest form.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "\\noindent\\textbf{[2025 May/June, 0580/23, Question 7]}\\par\n\nWork out.\n\n(a) $\\dfrac{5}{7} - \\dfrac{6}{12}$\n\nGive your answer as a fraction in its simplest form.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\PartLabel{b}$1\\frac{8}{3} \\times \\dfrac{15}{40}$\n\nGive your answer as a mixed number in its simplest form.\n\n\\AnswerLine[][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper23-Q08",
+    "paper": "2025MayJune-Paper23",
+    "qnum": 8,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.1",
+    "d": 2,
+    "cat": "number",
+    "topic": "Types of number",
+    "qtype": "prime factorization and HCF calculation",
+    "g": "mixed",
+    "src": "0580/23/M/J/25 Q08",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "**[2025 May/June, 0580/23, Question 8]**\n\n(a) Write 42 as a product of its prime factors.\n\\newline\n\n(b)Find the highest common factor (HCF) of 84 and 70.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\noindent\\textbf{[2025 May/June, 0580/23, Question 8]}\\par\n\n(a) Write 42 as a product of its prime factors.\n\\newline\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\PartLabel{b}Find the highest common factor (HCF) of 84 and 70.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "\\noindent\\textbf{[2025 May/June, 0580/23, Question 8]}\\par\n\n(a) Write 42 as a product of its prime factors.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\PartLabel{b}Find the highest common factor (HCF) of 84 and 70.\n\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper23-Q09",
+    "paper": "2025MayJune-Paper23",
+    "qnum": 9,
+    "marks": 1,
+    "topics": [
+      "Number"
+    ],
+    "s": null,
+    "d": 2,
+    "cat": "number",
+    "topic": null,
+    "qtype": "Algebra: solving quadratic equation",
+    "g": "quadratic",
+    "src": "0580/23/M/J/25 Q09",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "**[2025 May/June, 0580/23, Question 9]**\n\n(a) Solve.\n\\newline\n$5x^2 = 12 - 17x$\n\n or \n\n(b)$ax^2 + a = b$ where a and b are integers.\n\\newline\n\nOne solution of this equation is $x = 6$.\n\\newline\n\nWrite down the other solution.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "solve",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\noindent\\textbf{[2025 May/June, 0580/23, Question 9]}\\par\n\n(a) Solve.\n\\newline\n$5x^2 = 12 - 17x$\n\n\\AnswerLine[$x = $][] or \\AnswerLine[$x = $][]\n\\Marks{4}\n\n\\PartLabel{b}$ax^2 + a = b$ where a and b are integers.\n\\newline\n\nOne solution of this equation is $x = 6$.\n\\newline\n\nWrite down the other solution.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "$x = $"
+    },
+    "_rawBody": "\\noindent\\textbf{[2025 May/June, 0580/23, Question 9]}\\par\n\n(a) Solve.\n$5x^2 = 12 - 17x$\n\n\\AnswerLine[$x = $][] or \\AnswerLine[$x = $][]\n\\Marks{4}\n\n\\PartLabel{b}$ax^2 + a = b$ where a and b are integers.\n\nOne solution of this equation is $x = 6$.\n\nWrite down the other solution.\n\n\\AnswerLine[$x = $][]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper23-Q10",
+    "paper": "2025MayJune-Paper23",
+    "qnum": 10,
+    "marks": 4,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.5",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Equations",
+    "qtype": "solving simultaneous linear equations",
+    "g": "simul-linear",
+    "src": "0580/23/M/J/25 Q10",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "**[2025 May/June, 0580/23, Question 10]**\n\nSolve the simultaneous equations.\n\\newline\n\\begin{align*}\n4x - 5y &= 13 \\\\\n3x - 2y &= 8\n\\end{align*}",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "solve",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\noindent\\textbf{[2025 May/June, 0580/23, Question 10]}\\par\n\nSolve the simultaneous equations.\n\\newline\n\\begin{align*}\n4x - 5y &= 13 \\\\\n3x - 2y &= 8\n\\end{align*}"
+      }
+    ],
+    "answer": {
+      "type": "multiline",
+      "lines": 2,
+      "template": "$x = $ ____\\n$y = $ ____",
+      "lineSep": "blank"
+    },
+    "_rawBody": "\\noindent\\textbf{[2025 May/June, 0580/23, Question 10]}\\par\n\nSolve the simultaneous equations.\n\\begin{align*}\n4x - 5y &= 13 \\\\\n3x - 2y &= 8\n\\end{align*}\n\n\\AnswerLine[$x = $][]\n\\AnswerLine[$y = $][]\n\\Marks{4}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper23-Q11",
+    "paper": "2025MayJune-Paper23",
+    "qnum": 11,
+    "marks": 2,
+    "topics": [
+      "Probability"
+    ],
+    "s": "8.4",
+    "d": 2,
+    "cat": "probability",
+    "topic": "Conditional probability",
+    "qtype": "conditional probability",
+    "g": "mixed",
+    "src": "0580/23/M/J/25 Q11",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "**[2025 May/June, 0580/23, Question 11]**\n\nAngela picks a number at random from the numbers 1, 2 and 3.\n\\newline\nShe then picks a number at random from the numbers 4, 5 and 6.\n\\newline\nShe adds the two numbers to find the total.\n\\newline\n\n(a) Complete the table to show the possible outcomes.\n\\newline\n\n\\begin{tabular}{|c|c|c|c|}\n\\hline\n+ & 1 & 2 & 3 \\\\\n\\hline\n4 & 5 & 6 & 7 \\\\\n\\hline\n5 & 6 & 7 & 8 \\\\\n\\hline\n6 & 7 & 8 & 9 \\\\\n\\hline\n\\end{tabular}\n\n(b)Given that the total is odd, find the probability that one of the numbers Angela picks is 3.\n\\newline\n",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\noindent\\textbf{[2025 May/June, 0580/23, Question 11]}\\par\n\nAngela picks a number at random from the numbers 1, 2 and 3.\n\\newline\nShe then picks a number at random from the numbers 4, 5 and 6.\n\\newline\nShe adds the two numbers to find the total.\n\\newline\n\n(a) Complete the table to show the possible outcomes.\n\\newline\n"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{tabular}{|c|c|c|c|}\n\\hline\n+ & 1 & 2 & 3 \\\\\n\\hline\n4 & 5 & 6 & 7 \\\\\n\\hline\n5 & 6 & 7 & 8 \\\\\n\\hline\n6 & 7 & 8 & 9 \\\\\n\\hline\n\\end{tabular}"
+      },
+      {
+        "type": "text",
+        "content": "\\Marks{2}\n\n\\PartLabel{b}Given that the total is odd, find the probability that one of the numbers Angela picks is 3.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper23/Q11/Q11a.png"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "\\noindent\\textbf{[2025 May/June, 0580/23, Question 11]}\\par\n\nAngela picks a number at random from the numbers 1, 2 and 3.\nShe then picks a number at random from the numbers 4, 5 and 6.\nShe adds the two numbers to find the total.\n\n(a) Complete the table to show the possible outcomes.\n\n\\begin{tabular}{|c|c|c|c|}\n\\hline\n+ & 1 & 2 & 3 \\\\\n\\hline\n4 & 5 & 6 & 7 \\\\\n\\hline\n5 & 6 & 7 & 8 \\\\\n\\hline\n6 & 7 & 8 & 9 \\\\\n\\hline\n\\end{tabular}\n\n\\Marks{2}\n\n\\PartLabel{b}Given that the total is odd, find the probability that one of the numbers Angela picks is 3.\n\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper23/Q11/Q11a.png"
+    ]
+  },
+  {
+    "id": "0580-2025MayJune-Paper23-Q12",
+    "paper": "2025MayJune-Paper23",
+    "qnum": 12,
+    "marks": 4,
+    "topics": [
+      "Number"
+    ],
+    "s": null,
+    "d": 2,
+    "cat": "number",
+    "topic": null,
+    "qtype": "Algebra/Geometry: vector operations",
+    "g": "mixed",
+    "src": "0580/23/M/J/25 Q12",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "**[2025 May/June, 0580/23, Question 12]**\n\n(a) $v = 2e^o$\n\nFind $5v$.\n\\newline\n\n(b)H is the point (-3, 8) and K is the point (-4, 0).\n\\newline\n\nHJ = $7e^o$\n\nFind JK.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\noindent\\textbf{[2025 May/June, 0580/23, Question 12]}\\par\n\n(a) $v = 2e^o$\n\nFind $5v$.\n\\newline\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\PartLabel{b}H is the point (-3, 8) and K is the point (-4, 0).\n\\newline\n\nHJ = $7e^o$\n\nFind JK.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "\\noindent\\textbf{[2025 May/June, 0580/23, Question 12]}\\par\n\n(a) $v = 2e^o$\n\nFind $5v$.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\PartLabel{b}H is the point (-3, 8) and K is the point (-4, 0).\n\nHJ = $7e^o$\n\nFind JK.\n\n\\AnswerLine[][]\n\\Marks{4}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper23-Q13",
+    "paper": "2025MayJune-Paper23",
+    "qnum": 13,
+    "marks": 2,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry",
+      "Trigonometry"
+    ],
+    "s": "3.6",
+    "d": 2,
+    "cat": "coord",
+    "topic": "Position vectors",
+    "qtype": "parallel lines",
+    "g": "mixed",
+    "src": "0580/23/M/J/25 Q13",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "**[2025 May/June, 0580/23, Question 13]**\n\nA, B, C and D are points on a circle.\n\\newline\nEF is a tangent to the circle at A.\n\\newline\nAB is parallel to DC.\n\\newline\n\n(a) Find angle DCB, giving a geometrical reason.\n\\newline\n\nAngle DCB =  because \n\n(b)Find angle DBC.\n\\newline\n\nAngle DBC =",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\noindent\\textbf{[2025 May/June, 0580/23, Question 13]}\\par\n\n\\begin{center}\n    \\begin{tikzpicture}[scale=0.8, thick]\n        % Draw circle\n        \\draw (0,0) circle (2);\n\n        % Points on circle\n        \\coordinate (A) at (2,0);\n        \\coordinate (B) at (45:2);\n        \\coordinate (C) at (135:2);\n        \\coordinate (D) at (225:2);\n        \\coordinate (E) at (315:2);\n\n        % Label points\n        \\node at (A) [right] {A};\n        \\node at (B) [above right] {B};\n        \\node at (C) [above left] {C};\n        \\node at (D) [below left] {D};\n        \\node at (E) [below right] {E};\n\n        % Tangent at A\n        \\draw (A) -- ++(1.5,1.5);\n\n        % Label tangent\n        \\node at (3,1) {F};\n\n        % Label angles\n        \\draw (A) +(45:0.8) arc (45:75:0.8); % Angle at A (60°)\n        \\node at (2.3,0.8) {$60^\\circ$};\n\n        \\draw (C) +(225:0.8) arc (225:260:0.8); % Angle at C (35°)\n        \\node at (-1.8,1.8) {$35^\\circ$};\n\n        % Parallel lines\n        \\draw[dashed] (A) -- (D);\n        \\draw[dashed] (B) -- (C);\n\n        % NOT TO SCALE\n        \\node[align=left, font=\\footnotesize] at (1.5,-2.5) {NOT TO\\\\SCALE};\n    \\end{tikzpicture}\n\\end{center}\n\nA, B, C and D are points on a circle.\n\\newline\nEF is a tangent to the circle at A.\n\\newline\nAB is parallel to DC.\n\\newline\n\n(a) Find angle DCB, giving a geometrical reason.\n\\newline\n\nAngle DCB = \\AnswerLine[][] because \\AnswerLine[][]\n\n\\Marks{2}\n\n\\PartLabel{b}Find angle DBC.\n\\newline\n\nAngle DBC = \\AnswerLine[][]"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper23/Q13/Q13.png"
+      }
+    ],
+    "_rawBody": "\\noindent\\textbf{[2025 May/June, 0580/23, Question 13]}\\par\n\n\\begin{center}\n    \\begin{tikzpicture}[scale=0.8, thick]\n        % Draw circle\n        \\draw (0,0) circle (2);\n\n        % Points on circle\n        \\coordinate (A) at (2,0);\n        \\coordinate (B) at (45:2);\n        \\coordinate (C) at (135:2);\n        \\coordinate (D) at (225:2);\n        \\coordinate (E) at (315:2);\n\n        % Label points\n        \\node at (A) [right] {A};\n        \\node at (B) [above right] {B};\n        \\node at (C) [above left] {C};\n        \\node at (D) [below left] {D};\n        \\node at (E) [below right] {E};\n\n        % Tangent at A\n        \\draw (A) -- ++(1.5,1.5);\n\n        % Label tangent\n        \\node at (3,1) {F};\n\n        % Label angles\n        \\draw (A) +(45:0.8) arc (45:75:0.8); % Angle at A (60°)\n        \\node at (2.3,0.8) {$60^\\circ$};\n\n        \\draw (C) +(225:0.8) arc (225:260:0.8); % Angle at C (35°)\n        \\node at (-1.8,1.8) {$35^\\circ$};\n\n        % Parallel lines\n        \\draw[dashed] (A) -- (D);\n        \\draw[dashed] (B) -- (C);\n\n        % NOT TO SCALE\n        \\node[align=left, font=\\footnotesize] at (1.5,-2.5) {NOT TO\\\\SCALE};\n    \\end{tikzpicture}\n\\end{center}\n\nA, B, C and D are points on a circle.\nEF is a tangent to the circle at A.\nAB is parallel to DC.\n\n(a) Find angle DCB, giving a geometrical reason.\n\nAngle DCB = \\AnswerLine[][] because \\AnswerLine[][]\n\n\\Marks{2}\n\n\\PartLabel{b}Find angle DBC.\n\nAngle DBC = \\AnswerLine[][]\n\n\\Marks{2}",
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper23/Q13/Q13.png"
+    ]
+  },
+  {
+    "id": "0580-2025MayJune-Paper23-Q14",
+    "paper": "2025MayJune-Paper23",
+    "qnum": 14,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.1",
+    "d": 2,
+    "cat": "number",
+    "topic": "Types of number",
+    "qtype": "LCM of algebraic terms",
+    "g": "mixed",
+    "src": "0580/23/M/J/25 Q14",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "**[2025 May/June, 0580/23, Question 14]**\n\nFind the lowest common multiple (LCM) of $15xy^3$ and $18x^4y$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\noindent\\textbf{[2025 May/June, 0580/23, Question 14]}\\par\n\nFind the lowest common multiple (LCM) of $15xy^3$ and $18x^4y$.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "\\noindent\\textbf{[2025 May/June, 0580/23, Question 14]}\\par\n\nFind the lowest common multiple (LCM) of $15xy^3$ and $18x^4y$.\n\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper23-Q15",
+    "paper": "2025MayJune-Paper23",
+    "qnum": 15,
+    "marks": 2,
+    "topics": [
+      "Number",
+      "Algebra and graphs"
+    ],
+    "s": "2.2",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Rearranging formulae",
+    "qtype": "surd simplification, rationalising the denominator, arithmetic evaluation",
+    "g": "simplify",
+    "src": "0580/23/M/J/25 Q15",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "**[2025 May/June, 0580/23, Question 15]**\n\n(a) Simplify.\n\\newline\n$27 + 12$\n\n(b)$40 \\times \\dfrac{8}{5} = k$, where k is an integer.\n\\newline\n\nFind the value of k.\n\\newline\n\n(c)Rationalise the denominator.\n\\newline\n$\\dfrac{1}{\\sqrt{3} - \\sqrt{5}}$",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\noindent\\textbf{[2025 May/June, 0580/23, Question 15]}\\par\n\n(a) Simplify.\n\\newline\n$27 + 12$\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\PartLabel{b}$40 \\times \\dfrac{8}{5} = k$, where k is an integer.\n\\newline\n\nFind the value of k.\n\\newline\n\n\\AnswerLine[$k = $][]\n\\Marks{2}\n\n\\PartLabel{c}Rationalise the denominator.\n\\newline\n$\\dfrac{1}{\\sqrt{3} - \\sqrt{5}}$"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "\\noindent\\textbf{[2025 May/June, 0580/23, Question 15]}\\par\n\n(a) Simplify.\n$27 + 12$\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\PartLabel{b}$40 \\times \\dfrac{8}{5} = k$, where k is an integer.\n\nFind the value of k.\n\n\\AnswerLine[$k = $][]\n\\Marks{2}\n\n\\PartLabel{c}Rationalise the denominator.\n$\\dfrac{1}{\\sqrt{3} - \\sqrt{5}}$\n\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper23-Q16",
+    "paper": "2025MayJune-Paper23",
+    "qnum": 16,
+    "marks": 3,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.4",
+    "d": 2,
+    "cat": "number",
+    "topic": "Fractions, decimals and percentages",
+    "qtype": "decimal to fraction conversion",
+    "g": "mixed",
+    "src": "0580/23/M/J/25 Q16",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "**[2025 May/June, 0580/23, Question 16]**\n\nWrite $0.328$ as a fraction in its simplest form.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "write",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\noindent\\textbf{[2025 May/June, 0580/23, Question 16]}\\par\n\nWrite $0.328$ as a fraction in its simplest form.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "\\noindent\\textbf{[2025 May/June, 0580/23, Question 16]}\\par\n\nWrite $0.328$ as a fraction in its simplest form.\n\n\\AnswerLine[][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper23-Q17",
+    "paper": "2025MayJune-Paper23",
+    "qnum": 17,
+    "marks": 3,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.4",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Circle theorems",
+    "qtype": "similarity and congruence",
+    "g": "mixed",
+    "src": "0580/23/M/J/25 Q17",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "**[2025 May/June, 0580/23, Question 17]**\n\nSolid A is mathematically similar to solid B.\n\\newline\n\nThe height of solid A is 7 cm and its surface area is 60 cm².\n\\newline\nThe surface area of solid B is 540 cm².\n\\newline\n\nCalculate the height of solid B.\n\\newline\n\n cm",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\noindent\\textbf{[2025 May/June, 0580/23, Question 17]}\\par\n\nSolid A is mathematically similar to solid B.\n\\newline\n\n\\begin{center}\n    \\begin{tikzpicture}[scale=0.6, thick]\n        % Solid A\n        \\draw (0,0) -- (2,0) -- (1,1.5) -- cycle; % Base\n        \\draw (1,0.75) -- (0,0); % Height line\n        \\draw (1,0.75) -- (2,0);\n        \\draw (1,0.75) -- (1,1.5);\n        \\node at (1,0.3) {7 cm};\n        \\node at (0.5,-0.5) {Solid A};\n\n        % Solid B\n        \\draw (4,0) -- (6,0) -- (5,3) -- cycle; % Base\n        \\draw (5,1.5) -- (4,0); % Height line\n        \\draw (5,1.5) -- (6,0);\n        \\draw (5,1.5) -- (5,3);\n        \\node at (5,0.8) {H cm};\n        \\node at (4.5,-0.5) {Solid B};\n\n        % NOT TO SCALE\n        \\node[align=left, font=\\footnotesize] at (3,-1) {NOT TO SCALE};\n    \\end{tikzpicture}\n\\end{center}\n\nThe height of solid A is 7 cm and its surface area is 60 cm².\n\\newline\nThe surface area of solid B is 540 cm².\n\\newline\n\nCalculate the height of solid B.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper23/Q17/Q17.png"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "\\noindent\\textbf{[2025 May/June, 0580/23, Question 17]}\\par\n\nSolid A is mathematically similar to solid B.\n\n\\begin{center}\n    \\begin{tikzpicture}[scale=0.6, thick]\n        % Solid A\n        \\draw (0,0) -- (2,0) -- (1,1.5) -- cycle; % Base\n        \\draw (1,0.75) -- (0,0); % Height line\n        \\draw (1,0.75) -- (2,0);\n        \\draw (1,0.75) -- (1,1.5);\n        \\node at (1,0.3) {7 cm};\n        \\node at (0.5,-0.5) {Solid A};\n\n        % Solid B\n        \\draw (4,0) -- (6,0) -- (5,3) -- cycle; % Base\n        \\draw (5,1.5) -- (4,0); % Height line\n        \\draw (5,1.5) -- (6,0);\n        \\draw (5,1.5) -- (5,3);\n        \\node at (5,0.8) {H cm};\n        \\node at (4.5,-0.5) {Solid B};\n\n        % NOT TO SCALE\n        \\node[align=left, font=\\footnotesize] at (3,-1) {NOT TO SCALE};\n    \\end{tikzpicture}\n\\end{center}\n\nThe height of solid A is 7 cm and its surface area is 60 cm².\nThe surface area of solid B is 540 cm².\n\nCalculate the height of solid B.\n\n\\AnswerLine[][] cm\n\\Marks{3}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper23/Q17/Q17.png"
+    ]
+  },
+  {
+    "id": "0580-2025MayJune-Paper23-Q18",
+    "paper": "2025MayJune-Paper23",
+    "qnum": 18,
+    "marks": 4,
+    "topics": [
+      "Number"
+    ],
+    "s": null,
+    "d": 2,
+    "cat": "number",
+    "topic": null,
+    "qtype": "Algebra: rearranging formula",
+    "g": "rearrange",
+    "src": "0580/23/M/J/25 Q18",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "**[2025 May/June, 0580/23, Question 18]**\n\nMake t the subject of the formula.\n\\newline\n$\\dfrac{m(1 - t)}{2} = pt$",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "rearrange",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\noindent\\textbf{[2025 May/June, 0580/23, Question 18]}\\par\n\nMake t the subject of the formula.\n\\newline\n$\\dfrac{m(1 - t)}{2} = pt$"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "$t = $"
+    },
+    "_rawBody": "\\noindent\\textbf{[2025 May/June, 0580/23, Question 18]}\\par\n\nMake t the subject of the formula.\n$\\dfrac{m(1 - t)}{2} = pt$\n\n\\AnswerLine[$t = $][]\n\\Marks{4}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper23-Q19",
+    "paper": "2025MayJune-Paper23",
+    "qnum": 19,
+    "marks": 3,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.3",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Indices",
+    "qtype": "simplifying algebraic fractions by factorization",
+    "g": "algebraic-fraction",
+    "src": "0580/23/M/J/25 Q19",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "**[2025 May/June, 0580/23, Question 19]**\n\nSimplify.\n\\newline\n$\\dfrac{7x - x^2}{49 - x^2}$",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\noindent\\textbf{[2025 May/June, 0580/23, Question 19]}\\par\n\nSimplify.\n\\newline\n$\\dfrac{7x - x^2}{49 - x^2}$"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "\\noindent\\textbf{[2025 May/June, 0580/23, Question 19]}\\par\n\nSimplify.\n$\\dfrac{7x - x^2}{49 - x^2}$\n\n\\AnswerLine[][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper23-Q20",
+    "paper": "2025MayJune-Paper23",
+    "qnum": 20,
+    "marks": 3,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.6",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/23/M/J/25 Q20",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "**[2025 May/June, 0580/23, Question 20]**\n\nThe diagram shows a sector of a circle, centre O.\n\\newline\nThe radius of the circle is 6 cm.\n\\newline\n\nCalculate the length of the major arc AB.\n\\newline\nGive your answer in its simplest form in terms of π.\n\\newline\n\n cm",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\noindent\\textbf{[2025 May/June, 0580/23, Question 20]}\\par\n\n\\begin{center}\n    \\begin{tikzpicture}[scale=0.6, thick]\n        % Draw sector OAB\n        \\draw (0,0) -- (3,0) arc (0:40:3) -- cycle;\n\n        % Label points\n        \\node at (0,0) [below left] {O};\n        \\node at (3,0) [below right] {A};\n        \\node at (40:3) [above right] {B};\n\n        % Label angle\n        \\draw (0,0) +(10:1) arc (0:40:1);\n        \\node at (20:1.5) {$40^\\circ$};\n\n        % Label radius\n        \\draw (0,0) -- (3,0);\n        \\node at (1.5,-0.3) {6 cm};\n\n        % NOT TO SCALE\n        \\node[align=left, font=\\footnotesize] at (2,2) {NOT TO SCALE};\n    \\end{tikzpicture}\n\\end{center}\n\nThe diagram shows a sector of a circle, centre O.\n\\newline\nThe radius of the circle is 6 cm.\n\\newline\n\nCalculate the length of the major arc AB.\n\\newline\nGive your answer in its simplest form in terms of π.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper23/Q20/Q20.png"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "\\noindent\\textbf{[2025 May/June, 0580/23, Question 20]}\\par\n\n\\begin{center}\n    \\begin{tikzpicture}[scale=0.6, thick]\n        % Draw sector OAB\n        \\draw (0,0) -- (3,0) arc (0:40:3) -- cycle;\n\n        % Label points\n        \\node at (0,0) [below left] {O};\n        \\node at (3,0) [below right] {A};\n        \\node at (40:3) [above right] {B};\n\n        % Label angle\n        \\draw (0,0) +(10:1) arc (0:40:1);\n        \\node at (20:1.5) {$40^\\circ$};\n\n        % Label radius\n        \\draw (0,0) -- (3,0);\n        \\node at (1.5,-0.3) {6 cm};\n\n        % NOT TO SCALE\n        \\node[align=left, font=\\footnotesize] at (2,2) {NOT TO SCALE};\n    \\end{tikzpicture}\n\\end{center}\n\nThe diagram shows a sector of a circle, centre O.\nThe radius of the circle is 6 cm.\n\nCalculate the length of the major arc AB.\nGive your answer in its simplest form in terms of π.\n\n\\AnswerLine[][] cm\n\\Marks{3}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper23/Q20/Q20.png"
+    ]
+  },
+  {
+    "id": "0580-2025MayJune-Paper23-Q21",
+    "paper": "2025MayJune-Paper23",
+    "qnum": 21,
+    "marks": 4,
+    "topics": [
+      "Algebra and graphs",
+      "Coordinate geometry"
+    ],
+    "s": "2.12",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Functions notation",
+    "qtype": "differentiation, finding turning points of a cubic function",
+    "g": "function",
+    "src": "0580/23/M/J/25 Q21",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "**[2025 May/June, 0580/23, Question 21]**\n\n(a) Differentiate $x^3 - 3x^2 + 1$.\n\\newline\n\n(b)Find the coordinates of the turning points of the graph of $y = x^3 - 3x^2 + 1$.\n\\newline\n\n, )][] and , )][]",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\noindent\\textbf{[2025 May/June, 0580/23, Question 21]}\\par\n\n(a) Differentiate $x^3 - 3x^2 + 1$.\n\\newline\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\PartLabel{b}Find the coordinates of the turning points of the graph of $y = x^3 - 3x^2 + 1$.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "multiline",
+      "lines": 6,
+      "template": "(\\AnswerLine[], \\AnswerLine[]) ____\\n____\\n____\\n(\\AnswerLine[], \\AnswerLine[]) ____\\n____\\n____",
+      "lineSep": "blank"
+    },
+    "_rawBody": "\\noindent\\textbf{[2025 May/June, 0580/23, Question 21]}\\par\n\n(a) Differentiate $x^3 - 3x^2 + 1$.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\PartLabel{b}Find the coordinates of the turning points of the graph of $y = x^3 - 3x^2 + 1$.\n\n\\AnswerLine[(\\AnswerLine[], \\AnswerLine[])][] and \\AnswerLine[(\\AnswerLine[], \\AnswerLine[])][]\n\n\\Marks{4}"
+  },
+  {
+    "id": "0580-2025MayJune-Paper23-Q22",
+    "paper": "2025MayJune-Paper23",
+    "qnum": 22,
+    "marks": 2,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.13",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Functions",
+    "qtype": "function evaluation, inverse functions, composite functions, solving exponential equations",
+    "g": "function",
+    "src": "0580/23/M/J/25 Q22",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "**[2025 May/June, 0580/23, Question 22]**\n\n$f(x) = 2x + 5$\n$g(x) = x - 4$\n$h(x) = 5^x$\n\n(a) Find $f(3)$.\n\\newline\n\n(b)Find $f^{-1}(x)$.\n\\newline\n\n(c)Solve $fg(x) = 25$.\n\\newline\n\n(d)Find $x$ when $h^{-1}(x) = 2$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "solve",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\noindent\\textbf{[2025 May/June, 0580/23, Question 22]}\\par\n\n$f(x) = 2x + 5$\n$g(x) = x - 4$\n$h(x) = 5^x$\n\n(a) Find $f(3)$.\n\\newline\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\PartLabel{b}Find $f^{-1}(x)$.\n\\newline\n\n\\AnswerLine[$f^{-1}(x) = $][]\n\\Marks{2}\n\n\\PartLabel{c}Solve $fg(x) = 25$.\n\\newline\n\n\\AnswerLine[$x = $][]\n\\Marks{3}\n\n\\PartLabel{d}Find $x$ when $h^{-1}(x) = 2$.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "$x = $"
+    },
+    "_rawBody": "\\noindent\\textbf{[2025 May/June, 0580/23, Question 22]}\\par\n\n$f(x) = 2x + 5$\n$g(x) = x - 4$\n$h(x) = 5^x$\n\n(a) Find $f(3)$.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\PartLabel{b}Find $f^{-1}(x)$.\n\n\\AnswerLine[$f^{-1}(x) = $][]\n\\Marks{2}\n\n\\PartLabel{c}Solve $fg(x) = 25$.\n\n\\AnswerLine[$x = $][]\n\\Marks{3}\n\n\\PartLabel{d}Find $x$ when $h^{-1}(x) = 2$.\n\n\\AnswerLine[$x = $][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper23-Q23",
+    "paper": "2025MayJune-Paper23",
+    "qnum": 23,
+    "marks": 5,
+    "topics": [
+      "Geometry",
+      "Trigonometry"
+    ],
+    "s": "4.6",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/23/M/J/25 Q23",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "**[2025 May/June, 0580/23, Question 23]**\n\n(a) Write down the value of $\\cos 90^\\circ$.\n\\newline\n\n(b)\n\nThe diagram shows two different right-angled triangles joined by a common side.\n\\newline\n\nFind x in terms of n.\n\\newline\n",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\noindent\\textbf{[2025 May/June, 0580/23, Question 23]}\\par\n\n(a) Write down the value of $\\cos 90^\\circ$.\n\\newline\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\PartLabel{b}\n\n\\begin{center}\n    \\begin{tikzpicture}[scale=0.8, thick]\n        % Draw right-angled triangle\n        \\draw (0,0) -- (3,0) -- (3,2) -- cycle;\n\n        % Label points\n        \\node at (0,0) [below left] {n};\n        \\node at (3,0) [below right] {30°};\n        \\node at (3,2) [above right] {30°};\n\n        % Right angle indicator\n        \\draw (3,0) +(0.3,0) -- +(0.3,0.3) -- +(0,0.3);\n\n        % Label x\n        \\node at (1.5,1) {x};\n\n        % NOT TO SCALE\n        \\node[align=left, font=\\footnotesize] at (1.5,-1) {NOT TO SCALE};\n    \\end{tikzpicture}\n\\end{center}\n\nThe diagram shows two different right-angled triangles joined by a common side.\n\\newline\n\nFind x in terms of n.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper23/Q23/Q23a.png"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "$x = $"
+    },
+    "_rawBody": "\\noindent\\textbf{[2025 May/June, 0580/23, Question 23]}\\par\n\n(a) Write down the value of $\\cos 90^\\circ$.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\PartLabel{b}\n\n\\begin{center}\n    \\begin{tikzpicture}[scale=0.8, thick]\n        % Draw right-angled triangle\n        \\draw (0,0) -- (3,0) -- (3,2) -- cycle;\n\n        % Label points\n        \\node at (0,0) [below left] {n};\n        \\node at (3,0) [below right] {30°};\n        \\node at (3,2) [above right] {30°};\n\n        % Right angle indicator\n        \\draw (3,0) +(0.3,0) -- +(0.3,0.3) -- +(0,0.3);\n\n        % Label x\n        \\node at (1.5,1) {x};\n\n        % NOT TO SCALE\n        \\node[align=left, font=\\footnotesize] at (1.5,-1) {NOT TO SCALE};\n    \\end{tikzpicture}\n\\end{center}\n\nThe diagram shows two different right-angled triangles joined by a common side.\n\nFind x in terms of n.\n\n\\AnswerLine[$x = $][]\n\\Marks{5}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper23/Q23/Q23a.png"
+    ]
+  },
+  {
+    "id": "0580-2025MayJune-Paper23-Q24",
+    "paper": "2025MayJune-Paper23",
+    "qnum": 24,
+    "marks": 3,
+    "topics": [
+      "Coordinate geometry"
+    ],
+    "s": "3.4",
+    "d": 2,
+    "cat": "coord",
+    "topic": "Equation of a line",
+    "qtype": "length and midpoint",
+    "g": "mixed",
+    "src": "0580/23/M/J/25 Q24",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "**[2025 May/June, 0580/23, Question 24]**\n\n(a) A is the point (a, 12) and B is the point (b, 27).\n\\newline\n\n(i) Find the y-coordinate of the midpoint of AB.\n\\newline\n\n(ii) The line AB has gradient 3.\n\\newline\n\nFind an expression for a in terms of b.\n\\newline\n\n(b)D is the point (22, 34) and E is the point (23, 39).\n\\newline\n\nD is the point on CE such that $2CE = 5DE$.\n\\newline\n\nFind the coordinates of C.\n\\newline\n\n, )][]",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\noindent\\textbf{[2025 May/June, 0580/23, Question 24]}\\par\n\n(a) A is the point (a, 12) and B is the point (b, 27).\n\\newline\n\n(i) Find the y-coordinate of the midpoint of AB.\n\\newline\n\n\\AnswerLine[][]\n\\Marks{1}\n\n(ii) The line AB has gradient 3.\n\\newline\n\nFind an expression for a in terms of b.\n\\newline\n\n\\AnswerLine[$a = $][]\n\\Marks{3}\n\n\\PartLabel{b}D is the point (22, 34) and E is the point (23, 39).\n\\newline\n\nD is the point on CE such that $2CE = 5DE$.\n\\newline\n\nFind the coordinates of C.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "multiline",
+      "lines": 3,
+      "template": "(\\AnswerLine[], \\AnswerLine[]) ____\\n____\\n____",
+      "lineSep": "blank"
+    },
+    "_rawBody": "\\noindent\\textbf{[2025 May/June, 0580/23, Question 24]}\\par\n\n(a) A is the point (a, 12) and B is the point (b, 27).\n\n(i) Find the y-coordinate of the midpoint of AB.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n(ii) The line AB has gradient 3.\n\nFind an expression for a in terms of b.\n\n\\AnswerLine[$a = $][]\n\\Marks{3}\n\n\\PartLabel{b}D is the point (22, 34) and E is the point (23, 39).\n\nD is the point on CE such that $2CE = 5DE$.\n\nFind the coordinates of C.\n\n\\AnswerLine[(\\AnswerLine[], \\AnswerLine[])][]\n\n\\Marks{3}"
+  }
+]

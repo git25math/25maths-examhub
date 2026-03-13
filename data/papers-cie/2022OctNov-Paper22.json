@@ -1,0 +1,1065 @@
+[
+  {
+    "id": "0580-2022OctNov-Paper22-Q01",
+    "paper": "2022OctNov-Paper22",
+    "qnum": 1,
+    "marks": 2,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry"
+    ],
+    "s": "3.1",
+    "d": 2,
+    "cat": "coord",
+    "topic": "Coordinates",
+    "qtype": "coordinates reading/plotting",
+    "g": "graph",
+    "src": "0580/22/O/N/22 Q01",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "The diagram shows an isosceles triangle.\n\\newline\n\nFind the value of $x$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n% Isosceles triangle\n\\coordinate (A) at (0,0);\n\\coordinate (B) at (4,0);\n\\coordinate (C) at (2,2.5);\n\n\\draw (A) -- (B) -- (C) -- cycle;\n\n% Equal sides marks\n\\draw ($(A)!0.5!(C) + (-0.15,0.1)$) -- ($(A)!0.5!(C) + (0.15,-0.1)$);\n\\draw ($(B)!0.5!(C) + (-0.15,-0.1)$) -- ($(B)!0.5!(C) + (0.15,0.1)$);\n\n% Angles\n\\node at (2,2.1) {$x°$};\n\\node at (3.3,0.35) {$34°$};\n\n% NOT TO SCALE\n\\node at (5.5,1.5) {NOT TO};\n\\node at (5.5,1) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nThe diagram shows an isosceles triangle.\n\\newline\n\nFind the value of $x$.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "$x =$"
+    },
+    "_rawBody": "\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n% Isosceles triangle\n\\coordinate (A) at (0,0);\n\\coordinate (B) at (4,0);\n\\coordinate (C) at (2,2.5);\n\n\\draw (A) -- (B) -- (C) -- cycle;\n\n% Equal sides marks\n\\draw ($(A)!0.5!(C) + (-0.15,0.1)$) -- ($(A)!0.5!(C) + (0.15,-0.1)$);\n\\draw ($(B)!0.5!(C) + (-0.15,-0.1)$) -- ($(B)!0.5!(C) + (0.15,0.1)$);\n\n% Angles\n\\node at (2,2.1) {$x°$};\n\\node at (3.3,0.35) {$34°$};\n\n% NOT TO SCALE\n\\node at (5.5,1.5) {NOT TO};\n\\node at (5.5,1) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nThe diagram shows an isosceles triangle.\n\nFind the value of $x$.\n\n\\AnswerLine[$x =$][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper22-Q02",
+    "paper": "2022OctNov-Paper22",
+    "qnum": 2,
+    "marks": 1,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.2",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Rearranging formulae",
+    "qtype": "simplifying algebraic expression",
+    "g": "simplify",
+    "src": "0580/22/O/N/22 Q02",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "Simplify.\n\\newline\n\\[y \\times 27 - y \\times 77\\]",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Simplify.\n\\newline\n\\[y \\times 27 - y \\times 77\\]"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Simplify.\n\\[y \\times 27 - y \\times 77\\]\n\n\\AnswerLine[][]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper22-Q03",
+    "paper": "2022OctNov-Paper22",
+    "qnum": 3,
+    "marks": 1,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.3",
+    "d": 2,
+    "cat": "number",
+    "topic": "Directed numbers",
+    "qtype": "calculation involving powers and integers",
+    "g": "indices",
+    "src": "0580/22/O/N/22 Q03",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "Find the sum of $3^2$ and $-3^2$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Find the sum of $3^2$ and $-3^2$.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Find the sum of $3^2$ and $-3^2$.\n\n\\AnswerLine[][]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper22-Q04",
+    "paper": "2022OctNov-Paper22",
+    "qnum": 4,
+    "marks": 2,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.2",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Rearranging formulae",
+    "qtype": "expanding algebraic expression",
+    "g": "simplify",
+    "src": "0580/22/O/N/22 Q04",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "Expand.\n\\newline\n\\[x(3 + x^2)\\]",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Expand.\n\\newline\n\\[x(3 + x^2)\\]"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Expand.\n\\[x(3 + x^2)\\]\n\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper22-Q05",
+    "paper": "2022OctNov-Paper22",
+    "qnum": 5,
+    "marks": 3,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.6",
+    "d": 2,
+    "cat": "number",
+    "topic": "Standard form",
+    "qtype": "multi-step problem solving with decimals and money",
+    "g": "mixed",
+    "src": "0580/22/O/N/22 Q05",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "Jenna buys $2.4\\,\\text{m}$ of ribbon and $4.8\\,\\text{m}$ of fabric.\n\\newline\n\nThe total cost is \\$33.48.\n\\newline\n\nRibbon costs \\$0.85 per metre.\n\\newline\n\nFind the cost of $1\\,\\text{m}$ of fabric.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Jenna buys $2.4\\,\\text{m}$ of ribbon and $4.8\\,\\text{m}$ of fabric.\n\\newline\n\nThe total cost is \\$33.48.\n\\newline\n\nRibbon costs \\$0.85 per metre.\n\\newline\n\nFind the cost of $1\\,\\text{m}$ of fabric.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "\\$"
+    },
+    "_rawBody": "Jenna buys 2.4\\,m of ribbon and 4.8\\,m of fabric.\n\nThe total cost is \\$33.48\\,.\n\nRibbon costs \\$0.85 per metre.\n\nFind the cost of 1\\,m of fabric.\n\n\\AnswerLine[\\$][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper22-Q06",
+    "paper": "2022OctNov-Paper22",
+    "qnum": 6,
+    "marks": 6,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.7",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Sequences",
+    "qtype": "sequences, finding next terms and nth term",
+    "g": "sequence",
+    "src": "0580/22/O/N/22 Q06",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "(a) \nThese are the first five terms of a sequence.\n\\newline\n27 \\qquad 26 \\qquad 23 \\qquad 18 \\qquad 11\nFind the next two terms in the sequence.\n\\newline\n\n{---} , ]\n\nThe table shows information about two different sequences.\n\\newline\n\n\\begin{tabular}{|c|c|c|c|c|c|c|}\n\\hline\n& \\multicolumn{5}{c|}{First five terms of sequence} & $n$th term \\\\\n\\hline\nSequence A & 3 & 10 & 17 & 24 & 31 & \\\\\n\\hline\nSequence B & 2 & 11 & 26 & 47 & 74 & \\\\\n\\hline\n\\end{tabular}\nComplete the table.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "These are the first five terms of a sequence.\n\\newline\n\\begin{center}\n27 \\qquad 26 \\qquad 23 \\qquad 18 \\qquad 11\n\\end{center}\n\nFind the next two terms in the sequence.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "\\makebox[1.5cm]{\\hrulefill} , \\makebox[1.5cm]{\\hrulefill}"
+        },
+        "marks": 2,
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The table shows information about two different sequences.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|c|c|}\n\\hline\n& \\multicolumn{5}{c|}{First five terms of sequence} & $n$th term \\\\\n\\hline\nSequence A & 3 & 10 & 17 & 24 & 31 & \\\\\n\\hline\nSequence B & 2 & 11 & 26 & 47 & 74 & \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+          },
+          {
+            "type": "text",
+            "content": "Complete the table.\n\\newline\n"
+          }
+        ],
+        "marks": 4,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\part These are the first five terms of a sequence.\n\\begin{center}\n27 \\qquad 26 \\qquad 23 \\qquad 18 \\qquad 11\n\\end{center}\n\nFind the next two terms in the sequence.\n\n\\AnswerLine[][\\makebox[1.5cm]{\\hrulefill} , \\makebox[1.5cm]{\\hrulefill}]\n\\Marks{2}\n\n\\part The table shows information about two different sequences.\n\n\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|c|c|}\n\\hline\n& \\multicolumn{5}{c|}{First five terms of sequence} & $n$th term \\\\\n\\hline\nSequence A & 3 & 10 & 17 & 24 & 31 & \\\\\n\\hline\nSequence B & 2 & 11 & 26 & 47 & 74 & \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\nComplete the table.\n\\Marks{4}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper22-Q07",
+    "paper": "2022OctNov-Paper22",
+    "qnum": 7,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.6",
+    "d": 2,
+    "cat": "number",
+    "topic": "Standard form",
+    "qtype": "subtraction of fractions",
+    "g": "mixed",
+    "src": "0580/22/O/N/22 Q07",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "**Without using a calculator**, work out $\\displaystyle\\frac{5}{9} - \\frac{1}{6}$.\n\\newline\n\nYou must show all your working and give your answer as a fraction in its simplest form.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\textbf{Without using a calculator}, work out $\\displaystyle\\frac{5}{9} - \\frac{1}{6}$.\n\\newline\n\nYou must show all your working and give your answer as a fraction in its simplest form.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "\\textbf{Without using a calculator}, work out $\\displaystyle\\frac{5}{9} - \\frac{1}{6}$.\n\nYou must show all your working and give your answer as a fraction in its simplest form.\n\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper22-Q08",
+    "paper": "2022OctNov-Paper22",
+    "qnum": 8,
+    "marks": 3,
+    "topics": [
+      "Statistics"
+    ],
+    "s": "9.3",
+    "d": 2,
+    "cat": "statistics",
+    "topic": "Frequency tables",
+    "qtype": "averages and spread",
+    "g": "mixed",
+    "src": "0580/22/O/N/22 Q08",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "Daryl records the number of hours in a week 8 people spend exercising.\n\\newline\n\n5 \\qquad 2 \\qquad 1.5 \\qquad 3 \\qquad 18 \\qquad 4.5 \\qquad 2 \\qquad 4\n(a) \nFind the median.\n\\newline\n\nExplain why the mean may not be a suitable average to use.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the median.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "h"
+        },
+        "marks": 2,
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Explain why the mean may not be a suitable average to use.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "marks": 1,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "analyse",
+    "cmd": "explain",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Daryl records the number of hours in a week 8 people spend exercising.\n\\newline\n\n\\begin{center}\n5 \\qquad 2 \\qquad 1.5 \\qquad 3 \\qquad 18 \\qquad 4.5 \\qquad 2 \\qquad 4\n\\end{center}"
+      }
+    ],
+    "_rawBody": "Daryl records the number of hours in a week 8 people spend exercising.\n\n\\begin{center}\n5 \\qquad 2 \\qquad 1.5 \\qquad 3 \\qquad 18 \\qquad 4.5 \\qquad 2 \\qquad 4\n\\end{center}\n\n\\begin{parts}\n\\part Find the median.\n\n\\AnswerLine[][h]\n\\Marks{2}\n\n\\part Explain why the mean may not be a suitable average to use.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper22-Q09",
+    "paper": "2022OctNov-Paper22",
+    "qnum": 9,
+    "marks": 2,
+    "topics": [
+      "Number",
+      "Coordinate geometry",
+      "Geometry"
+    ],
+    "s": "1.6",
+    "d": 2,
+    "cat": "number",
+    "topic": "Standard form",
+    "qtype": "geometry (triangles)",
+    "g": "mixed",
+    "src": "0580/22/O/N/22 Q09",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "The diagram shows three triangles A, B and C.\n\\newline\n\n(a) \nWhich two of the triangles A, B and C are congruent with each other?\n\nDraw a ring around the congruence criterion that can be used to support your answer to part (a).\n\\newline\n\nSSS \\qquad\\qquad ASA \\qquad\\qquad SAS \\qquad\\qquad RHS",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Which two of the triangles A, B and C are congruent with each other?"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "marks": 1,
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Draw a ring around the congruence criterion that can be used to support your answer to part (a).\n\\newline\n\n\\begin{center}\nSSS \\qquad\\qquad ASA \\qquad\\qquad SAS \\qquad\\qquad RHS\n\\end{center}"
+          }
+        ],
+        "marks": 1,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "analyse",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The diagram shows three triangles A, B and C.\n\\newline\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.7]\n% Triangle A\n\\coordinate (A1) at (0,0);\n\\coordinate (A2) at (2.5,0);\n\\coordinate (A3) at (0.5,1.8);\n\\draw (A1) -- (A2) -- (A3) -- cycle;\n\\node at (0.4,0.35) {$60°$};\n\\node at (1.9,0.35) {$25°$};\n\\node[below] at (1.25,-0.1) {$6\\,\\text{cm}$};\n\\node[below] at (1.25,-0.6) {A};\n\n% Triangle B\n\\coordinate (B1) at (4,0);\n\\coordinate (B2) at (6.5,0);\n\\coordinate (B3) at (5.25,2.2);\n\\draw (B1) -- (B2) -- (B3) -- cycle;\n\\node at (5.25,1.7) {$60°$};\n\\node at (4.4,0.35) {$25°$};\n\\node[right] at (6,1.1) {$6\\,\\text{cm}$};\n\\node[below] at (5.25,-0.6) {B};\n\n% Triangle C\n\\coordinate (C1) at (8,0);\n\\coordinate (C2) at (10.5,0);\n\\coordinate (C3) at (10,1.8);\n\\draw (C1) -- (C2) -- (C3) -- cycle;\n\\node at (9.7,1.4) {$60°$};\n\\node at (10,0.35) {$25°$};\n\\node[above right] at (9.5,0.9) {$6\\,\\text{cm}$};\n\\node[below] at (9.25,-0.6) {C};\n\n% NOT TO SCALE\n\\node at (12,1.5) {NOT TO};\n\\node at (12,1) {SCALE};\n\\end{tikzpicture}\n\\end{center}"
+      }
+    ],
+    "_rawBody": "The diagram shows three triangles A, B and C.\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.7]\n% Triangle A\n\\coordinate (A1) at (0,0);\n\\coordinate (A2) at (2.5,0);\n\\coordinate (A3) at (0.5,1.8);\n\\draw (A1) -- (A2) -- (A3) -- cycle;\n\\node at (0.4,0.35) {$60°$};\n\\node at (1.9,0.35) {$25°$};\n\\node[below] at (1.25,-0.1) {6\\,cm};\n\\node[below] at (1.25,-0.6) {A};\n\n% Triangle B\n\\coordinate (B1) at (4,0);\n\\coordinate (B2) at (6.5,0);\n\\coordinate (B3) at (5.25,2.2);\n\\draw (B1) -- (B2) -- (B3) -- cycle;\n\\node at (5.25,1.7) {$60°$};\n\\node at (4.4,0.35) {$25°$};\n\\node[right] at (6,1.1) {6\\,cm};\n\\node[below] at (5.25,-0.6) {B};\n\n% Triangle C\n\\coordinate (C1) at (8,0);\n\\coordinate (C2) at (10.5,0);\n\\coordinate (C3) at (10,1.8);\n\\draw (C1) -- (C2) -- (C3) -- cycle;\n\\node at (9.7,1.4) {$60°$};\n\\node at (10,0.35) {$25°$};\n\\node[above right] at (9.5,0.9) {6\\,cm};\n\\node[below] at (9.25,-0.6) {C};\n\n% NOT TO SCALE\n\\node at (12,1.5) {NOT TO};\n\\node at (12,1) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\n\\begin{parts}\n\\part Which two of the triangles A, B and C are congruent with each other?\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\part Draw a ring around the congruence criterion that can be used to support your answer to part (a).\n\n\\begin{center}\nSSS \\qquad\\qquad ASA \\qquad\\qquad SAS \\qquad\\qquad RHS\n\\end{center}\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper22-Q10",
+    "paper": "2022OctNov-Paper22",
+    "qnum": 10,
+    "marks": 3,
+    "topics": [
+      "Trigonometry"
+    ],
+    "s": "6.3",
+    "d": 2,
+    "cat": "trigonometry",
+    "topic": "Sine and cosine rule",
+    "qtype": "exact trigonometric values",
+    "g": "mixed",
+    "src": "0580/22/O/N/22 Q10",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "Calculate.\n\\newline\n\n(a) \n$2000 \\times 1.2^3$\n\n$\\displaystyle 2\\frac{1}{8} \\times \\frac{6}{17}$\n\n$\\displaystyle\\frac{4.5(\\cos 30°)^2}{\\sqrt{3}} - 2$",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "$2000 \\times 1.2^3$"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "marks": 1,
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "$\\displaystyle 2\\frac{1}{8} \\times \\frac{6}{17}$"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "marks": 1,
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "$\\displaystyle\\frac{4.5(\\cos 30°)^2}{\\sqrt{3}} - 2$"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "marks": 1,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Calculate.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "Calculate.\n\n\\begin{parts}\n\\part $2000 \\times 1.2^3$\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\part $\\displaystyle 2\\frac{1}{8} \\times \\frac{6}{17}$\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\part $\\displaystyle\\frac{4.5(\\cos 30°)^2}{\\sqrt{3}} - 2$\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper22-Q11",
+    "paper": "2022OctNov-Paper22",
+    "qnum": 11,
+    "marks": 3,
+    "topics": [
+      "Algebra and graphs",
+      "Coordinate geometry"
+    ],
+    "s": "2.11",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Differentiation",
+    "qtype": "graph of cubic function, intercepts",
+    "g": "function",
+    "src": "0580/22/O/N/22 Q11",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "The graph of $y = (x - 3)(x + b)(x + 2)$ intersects the $y$-axis at $-30$.\n\\newline\n\n(a) \nFind the value of $b$.\n\\newline\n\nWhen $x > 0$ the graph crosses the $x$-axis once.\n\\newline\n\nWrite down the coordinates of this point.\n\\newline\n\n{---} ,  )][]",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the value of $b$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$b =$"
+        },
+        "marks": 2,
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "When $x > 0$ the graph crosses the $x$-axis once.\n\\newline\n\nWrite down the coordinates of this point.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "( \\makebox[1cm]{\\hrulefill} , \\makebox[1cm]{\\hrulefill} )"
+        },
+        "marks": 1,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The graph of $y = (x - 3)(x + b)(x + 2)$ intersects the $y$-axis at $-30$.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "The graph of $y = (x - 3)(x + b)(x + 2)$ intersects the $y$-axis at $-30$.\n\n\\begin{parts}\n\\part Find the value of $b$.\n\n\\AnswerLine[$b =$][]\n\\Marks{2}\n\n\\part When $x > 0$ the graph crosses the $x$-axis once.\n\nWrite down the coordinates of this point.\n\n\\AnswerLine[( \\makebox[1cm]{\\hrulefill} , \\makebox[1cm]{\\hrulefill} )][]\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper22-Q12",
+    "paper": "2022OctNov-Paper22",
+    "qnum": 12,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.1",
+    "d": 2,
+    "cat": "number",
+    "topic": "Types of number",
+    "qtype": "prime factorization, division with indices",
+    "g": "indices",
+    "src": "0580/22/O/N/22 Q12",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "$x = 3^2 \\times 5^2 \\times 7 \\times 199^{57}$ when written as a product of its prime factors.\n\\newline\n\nWrite $x \\div 315$ as a product of its prime factors.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "write",
+    "stem": [
+      {
+        "type": "text",
+        "content": "$x = 3^2 \\times 5^2 \\times 7 \\times 199^{57}$ when written as a product of its prime factors.\n\\newline\n\nWrite $x \\div 315$ as a product of its prime factors.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "$x = 3^2 \\times 5^2 \\times 7 \\times 199^{57}$ when written as a product of its prime factors.\n\nWrite $x \\div 315$ as a product of its prime factors.\n\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper22-Q13",
+    "paper": "2022OctNov-Paper22",
+    "qnum": 13,
+    "marks": 4,
+    "topics": [
+      "Number",
+      "Transformations and vectors",
+      "Statistics"
+    ],
+    "s": null,
+    "d": 2,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/22/O/N/22 Q13",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "The table shows information about the mass of each of 50 children.\n\\newline\n\n\\begin{tabular}{|c|c|}\n\\hline\nMass ($k\\,\\text{kg}$) & Cumulative Frequency \\\\\n\\hline\n$k \\leqslant 20$ & 0 \\\\\n\\hline\n$k \\leqslant 22$ & 7 \\\\\n\\hline\n$k \\leqslant 24$ & 23 \\\\\n\\hline\n$k \\leqslant 28$ & 35 \\\\\n\\hline\n$k \\leqslant 32$ & 43 \\\\\n\\hline\n$k \\leqslant 36$ & 47 \\\\\n\\hline\n$k \\leqslant 42$ & 50 \\\\\n\\hline\n\\end{tabular}\n(a) \nDraw a cumulative frequency diagram to show this information.\n\\newline\n\nUse your graph to find an estimate of the 90th percentile.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Draw a cumulative frequency diagram to show this information.\n\\newline\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.12]\n% Grid\n\\draw[gray!30, very thin] (20,0) grid[step=2] (44,50);\n\n% Axes\n\\draw[thick,->] (20,0) -- (45,0) node[right] {$k$};\n\\draw[thick,->] (20,0) -- (20,52);\n\n% Y-axis labels\n\\foreach \\y in {10,20,30,40,50} {\n    \\draw (20,\\y) -- (19.5,\\y);\n    \\node[left] at (19.5,\\y) {\\y};\n}\n\\node[left] at (19.5,0) {0};\n\n% X-axis labels\n\\foreach \\x in {24,28,32,36,40,44} {\n    \\draw (\\x,0) -- (\\x,-0.5);\n    \\node[below] at (\\x,-1) {\\x};\n}\n\\node[below] at (20,-1) {20};\n\n% Axis titles\n\\node[rotate=90] at (15,25) {Cumulative frequency};\n\\node at (32,-6) {Mass (kg)};\n\\end{tikzpicture}\n\\end{center}"
+          }
+        ],
+        "marks": 3,
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Use your graph to find an estimate of the 90th percentile.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "marks": 1,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The table shows information about the mass of each of 50 children.\n\\newline\n"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{center}\n\\begin{tabular}{|c|c|}\n\\hline\nMass ($k$\\,kg) & Cumulative Frequency \\\\\n\\hline\n$k \\leqslant 20$ & 0 \\\\\n\\hline\n$k \\leqslant 22$ & 7 \\\\\n\\hline\n$k \\leqslant 24$ & 23 \\\\\n\\hline\n$k \\leqslant 28$ & 35 \\\\\n\\hline\n$k \\leqslant 32$ & 43 \\\\\n\\hline\n$k \\leqslant 36$ & 47 \\\\\n\\hline\n$k \\leqslant 42$ & 50 \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+      }
+    ],
+    "_rawBody": "The table shows information about the mass of each of 50 children.\n\n\\begin{center}\n\\begin{tabular}{|c|c|}\n\\hline\nMass ($k$\\,kg) & Cumulative Frequency \\\\\n\\hline\n$k \\leqslant 20$ & 0 \\\\\n\\hline\n$k \\leqslant 22$ & 7 \\\\\n\\hline\n$k \\leqslant 24$ & 23 \\\\\n\\hline\n$k \\leqslant 28$ & 35 \\\\\n\\hline\n$k \\leqslant 32$ & 43 \\\\\n\\hline\n$k \\leqslant 36$ & 47 \\\\\n\\hline\n$k \\leqslant 42$ & 50 \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\begin{parts}\n\\part Draw a cumulative frequency diagram to show this information.\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.12]\n% Grid\n\\draw[gray!30, very thin] (20,0) grid[step=2] (44,50);\n\n% Axes\n\\draw[thick,->] (20,0) -- (45,0) node[right] {$k$};\n\\draw[thick,->] (20,0) -- (20,52);\n\n% Y-axis labels\n\\foreach \\y in {10,20,30,40,50} {\n    \\draw (20,\\y) -- (19.5,\\y);\n    \\node[left] at (19.5,\\y) {\\y};\n}\n\\node[left] at (19.5,0) {0};\n\n% X-axis labels\n\\foreach \\x in {24,28,32,36,40,44} {\n    \\draw (\\x,0) -- (\\x,-0.5);\n    \\node[below] at (\\x,-1) {\\x};\n}\n\\node[below] at (20,-1) {20};\n\n% Axis titles\n\\node[rotate=90] at (15,25) {Cumulative frequency};\n\\node at (32,-6) {Mass (kg)};\n\\end{tikzpicture}\n\\end{center}\n\\Marks{3}\n\n\\part Use your graph to find an estimate of the 90th percentile.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper22-Q14",
+    "paper": "2022OctNov-Paper22",
+    "qnum": 14,
+    "marks": 2,
+    "topics": [
+      "Number",
+      "Geometry",
+      "Statistics"
+    ],
+    "s": null,
+    "d": 2,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/22/O/N/22 Q14",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "136 girls and 144 boys each measure the distance they jump in centimetres.\n\\newline\n\nThe box-and-whisker plots show the distributions of these distances.\n\\newline\n\nEach child who jumps a distance greater than $160\\,\\text{cm}$ gets a certificate.\n\\newline\n\nWork out an estimate of the total number of children who get a certificate.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "136 girls and 144 boys each measure the distance they jump in centimetres.\n\\newline\n\nThe box-and-whisker plots show the distributions of these distances.\n\\newline\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.06]\n% Grid\n\\draw[gray!30, very thin] (100,0) grid[step=10] (200,40);\n\n% Girls box-and-whisker (upper)\n\\draw (110,35) -- (125,35); % left whisker\n\\draw (125,30) rectangle (165,40); % box\n\\draw (150,30) -- (150,40); % median\n\\draw (165,35) -- (175,35); % right whisker\n\n% Boys box-and-whisker (lower)\n\\draw (105,15) -- (120,15); % left whisker\n\\draw (120,10) rectangle (170,20); % box\n\\draw (145,10) -- (145,20); % median\n\\draw (170,15) -- (195,15); % right whisker\n\n% Labels\n\\node[left] at (100,35) {Girls};\n\\node[left] at (100,15) {Boys};\n\n% X-axis\n\\draw[thick,->] (100,0) -- (205,0);\n\\foreach \\x in {100,120,140,160,180,200} {\n    \\draw (\\x,0) -- (\\x,-2);\n    \\node[below] at (\\x,-3) {\\x};\n}\n\\node at (150,-12) {Distance jumped (cm)};\n\\end{tikzpicture}\n\\end{center}\n\nEach child who jumps a distance greater than $160\\,\\text{cm}$ gets a certificate.\n\\newline\n\nWork out an estimate of the total number of children who get a certificate.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "136 girls and 144 boys each measure the distance they jump in centimetres.\n\nThe box-and-whisker plots show the distributions of these distances.\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.06]\n% Grid\n\\draw[gray!30, very thin] (100,0) grid[step=10] (200,40);\n\n% Girls box-and-whisker (upper)\n\\draw (110,35) -- (125,35); % left whisker\n\\draw (125,30) rectangle (165,40); % box\n\\draw (150,30) -- (150,40); % median\n\\draw (165,35) -- (175,35); % right whisker\n\n% Boys box-and-whisker (lower)\n\\draw (105,15) -- (120,15); % left whisker\n\\draw (120,10) rectangle (170,20); % box\n\\draw (145,10) -- (145,20); % median\n\\draw (170,15) -- (195,15); % right whisker\n\n% Labels\n\\node[left] at (100,35) {Girls};\n\\node[left] at (100,15) {Boys};\n\n% X-axis\n\\draw[thick,->] (100,0) -- (205,0);\n\\foreach \\x in {100,120,140,160,180,200} {\n    \\draw (\\x,0) -- (\\x,-2);\n    \\node[below] at (\\x,-3) {\\x};\n}\n\\node at (150,-12) {Distance jumped (cm)};\n\\end{tikzpicture}\n\\end{center}\n\nEach child who jumps a distance greater than 160\\,cm gets a certificate.\n\nWork out an estimate of the total number of children who get a certificate.\n\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper22-Q15",
+    "paper": "2022OctNov-Paper22",
+    "qnum": 15,
+    "marks": 1,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry"
+    ],
+    "s": "3.1",
+    "d": 2,
+    "cat": "coord",
+    "topic": "Coordinates",
+    "qtype": "coordinates reading/plotting",
+    "g": "graph",
+    "src": "0580/22/O/N/22 Q15",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "The diagram shows a quadrilateral.\n\\newline\n\nGive a geometrical reason why this is a cyclic quadrilateral.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "other",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n% Cyclic quadrilateral\n\\coordinate (A) at (0,1.5);\n\\coordinate (B) at (1.5,2.5);\n\\coordinate (C) at (3,1.5);\n\\coordinate (D) at (1.5,0);\n\n\\draw (A) -- (B) -- (C) -- (D) -- cycle;\n\n% Angles\n\\node at (0.5,1.5) {$101°$};\n\\node at (1.5,2) {$95°$};\n\\node at (2.5,1.5) {$79°$};\n\\node at (1.5,0.5) {$85°$};\n\n% NOT TO SCALE\n\\node at (5,1.5) {NOT TO};\n\\node at (5,1) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nThe diagram shows a quadrilateral.\n\\newline\n\nGive a geometrical reason why this is a cyclic quadrilateral.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n% Cyclic quadrilateral\n\\coordinate (A) at (0,1.5);\n\\coordinate (B) at (1.5,2.5);\n\\coordinate (C) at (3,1.5);\n\\coordinate (D) at (1.5,0);\n\n\\draw (A) -- (B) -- (C) -- (D) -- cycle;\n\n% Angles\n\\node at (0.5,1.5) {$101°$};\n\\node at (1.5,2) {$95°$};\n\\node at (2.5,1.5) {$79°$};\n\\node at (1.5,0.5) {$85°$};\n\n% NOT TO SCALE\n\\node at (5,1.5) {NOT TO};\n\\node at (5,1) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nThe diagram shows a quadrilateral.\n\nGive a geometrical reason why this is a cyclic quadrilateral.\n\n\\AnswerLine[][]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper22-Q16",
+    "paper": "2022OctNov-Paper22",
+    "qnum": 16,
+    "marks": 4,
+    "topics": [
+      "Number",
+      "Geometry"
+    ],
+    "s": "1.2",
+    "d": 2,
+    "cat": "number",
+    "topic": "Squares, cubes and roots",
+    "qtype": "shading Venn diagrams with set notation",
+    "g": "mixed",
+    "src": "0580/22/O/N/22 Q16",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "(a) \nShade the region indicated in each Venn diagram.\n\\newline\n\nThe Venn diagram shows some information about the number of elements in sets $A$, $B$, $C$ and $\\mathscr{E}$.\n\\newline\n\nGiven the following information, complete the Venn diagram.\n\\newline\n\n$\\text{n}(A \\cap B \\cap C) = 1$\n\n$\\text{n}(A \\cup B \\cup C)' = 17$\n\n$\\text{n}(C) = 42$",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Shade the region indicated in each Venn diagram.\n\\newline\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.6]\n% First Venn diagram - G ∩ H'\n\\node at (2,3.5) {$G \\cap H'$};\n\\draw (0,0) rectangle (4,3);\n\\node at (0.3,2.7) {$\\mathscr{E}$};\n\\draw (1.3,1.5) circle (1);\n\\draw (2.7,1.5) circle (1);\n\\node at (0.8,1.5) {$G$};\n\\node at (3.2,1.5) {$H$};\n\\end{tikzpicture}\n\\hspace{2cm}\n\\begin{tikzpicture}[scale=0.6]\n% Second Venn diagram - (J ∪ K') ∩ L\n\\node at (2.5,4.5) {$(J \\cup K') \\cap L$};\n\\draw (0,0) rectangle (5,4);\n\\node at (0.3,3.7) {$\\mathscr{E}$};\n\\draw (1.5,2.5) circle (1);\n\\draw (3.5,2.5) circle (1);\n\\draw (2.5,1.2) circle (1);\n\\node at (1,3) {$J$};\n\\node at (4,3) {$K$};\n\\node at (2.5,0.3) {$L$};\n\\end{tikzpicture}\n\\end{center}"
+          }
+        ],
+        "marks": 2,
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The Venn diagram shows some information about the number of elements in sets $A$, $B$, $C$ and $\\mathscr{E}$.\n\\newline\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.7]\n\\draw (0,0) rectangle (6,4.5);\n\\node at (0.3,4.2) {$\\mathscr{E}$};\n\n% Three overlapping circles\n\\draw (2,2.5) circle (1.3);\n\\draw (4,2.5) circle (1.3);\n\\draw (3,1.2) circle (1.3);\n\n\\node at (1.3,3) {$A$};\n\\node at (4.7,3) {$B$};\n\\node at (3,0) {$C$};\n\n% Numbers in regions\n\\node at (1.7,2.5) {3};\n\\node at (3,3) {21};\n\\node at (4.3,2.5) {8};\n\\node at (2.5,1.8) {7};\n\\node at (3.5,1.8) {2};\n\\end{tikzpicture}\n\\end{center}\n\nGiven the following information, complete the Venn diagram.\n\\newline\n\n$\\text{n}(A \\cap B \\cap C) = 1$\n\n$\\text{n}(A \\cup B \\cup C)' = 17$\n\n$\\text{n}(C) = 42$"
+          }
+        ],
+        "marks": 2,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\part Shade the region indicated in each Venn diagram.\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.6]\n% First Venn diagram - G ∩ H'\n\\node at (2,3.5) {$G \\cap H'$};\n\\draw (0,0) rectangle (4,3);\n\\node at (0.3,2.7) {$\\mathscr{E}$};\n\\draw (1.3,1.5) circle (1);\n\\draw (2.7,1.5) circle (1);\n\\node at (0.8,1.5) {$G$};\n\\node at (3.2,1.5) {$H$};\n\\end{tikzpicture}\n\\hspace{2cm}\n\\begin{tikzpicture}[scale=0.6]\n% Second Venn diagram - (J ∪ K') ∩ L\n\\node at (2.5,4.5) {$(J \\cup K') \\cap L$};\n\\draw (0,0) rectangle (5,4);\n\\node at (0.3,3.7) {$\\mathscr{E}$};\n\\draw (1.5,2.5) circle (1);\n\\draw (3.5,2.5) circle (1);\n\\draw (2.5,1.2) circle (1);\n\\node at (1,3) {$J$};\n\\node at (4,3) {$K$};\n\\node at (2.5,0.3) {$L$};\n\\end{tikzpicture}\n\\end{center}\n\\Marks{2}\n\n\\part The Venn diagram shows some information about the number of elements in sets $A$, $B$, $C$ and $\\mathscr{E}$.\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.7]\n\\draw (0,0) rectangle (6,4.5);\n\\node at (0.3,4.2) {$\\mathscr{E}$};\n\n% Three overlapping circles\n\\draw (2,2.5) circle (1.3);\n\\draw (4,2.5) circle (1.3);\n\\draw (3,1.2) circle (1.3);\n\n\\node at (1.3,3) {$A$};\n\\node at (4.7,3) {$B$};\n\\node at (3,0) {$C$};\n\n% Numbers in regions\n\\node at (1.7,2.5) {3};\n\\node at (3,3) {21};\n\\node at (4.3,2.5) {8};\n\\node at (2.5,1.8) {7};\n\\node at (3.5,1.8) {2};\n\\end{tikzpicture}\n\\end{center}\n\nGiven the following information, complete the Venn diagram.\n\n$\\text{n}(A \\cap B \\cap C) = 1$\n\n$\\text{n}(A \\cup B \\cup C)' = 17$\n\n$\\text{n}(C) = 42$\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper22-Q17",
+    "paper": "2022OctNov-Paper22",
+    "qnum": 17,
+    "marks": 6,
+    "topics": [
+      "Number"
+    ],
+    "s": null,
+    "d": 2,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/22/O/N/22 Q17",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "$\\text{f}(x) = x^2$ \\qquad\\qquad $\\text{g}(x) = \\displaystyle\\frac{x + 5}{2}$ \\qquad\\qquad $\\text{h}(x) = 7x - 3$\n(a) \nFind $\\text{f}(-3)$.\n\\newline\n\nFind $\\text{g}^{-1}(x)$.\n\\newline\n\nSolve $\\text{gf}(x) = \\text{hh}^{-1}(63)$ where $x > 0$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Find $\\text{f}(-3)$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "marks": 1,
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Find $\\text{g}^{-1}(x)$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$\\text{g}^{-1}(x) =$"
+        },
+        "marks": 2,
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Solve $\\text{gf}(x) = \\text{hh}^{-1}(63)$ where $x > 0$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x =$"
+        },
+        "marks": 3,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "",
+    "cmd": "solve",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{center}\n$\\text{f}(x) = x^2$ \\qquad\\qquad $\\text{g}(x) = \\displaystyle\\frac{x + 5}{2}$ \\qquad\\qquad $\\text{h}(x) = 7x - 3$\n\\end{center}"
+      }
+    ],
+    "_rawBody": "\\begin{center}\n$\\text{f}(x) = x^2$ \\qquad\\qquad $\\text{g}(x) = \\displaystyle\\frac{x + 5}{2}$ \\qquad\\qquad $\\text{h}(x) = 7x - 3$\n\\end{center}\n\n\\begin{parts}\n\\part Find $\\text{f}(-3)$.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\part Find $\\text{g}^{-1}(x)$.\n\n\\AnswerLine[$\\text{g}^{-1}(x) =$][]\n\\Marks{2}\n\n\\part Solve $\\text{gf}(x) = \\text{hh}^{-1}(63)$ where $x > 0$.\n\n\\AnswerLine[$x =$][]\n\\Marks{3}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper22-Q18",
+    "paper": "2022OctNov-Paper22",
+    "qnum": 18,
+    "marks": 3,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.4",
+    "d": 2,
+    "cat": "number",
+    "topic": "Fractions, decimals and percentages",
+    "qtype": "converting recurring decimal to fraction",
+    "g": "mixed",
+    "src": "0580/22/O/N/22 Q18",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "Write $0.4\\dot{1}\\dot{9}$ as a fraction in its simplest form.\n\\newline\n\nYou must show all your working.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "write",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Write $0.4\\dot{1}\\dot{9}$ as a fraction in its simplest form.\n\\newline\n\nYou must show all your working.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Write $0.4\\dot{1}\\dot{9}$ as a fraction in its simplest form.\n\nYou must show all your working.\n\n\\AnswerLine[][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper22-Q19",
+    "paper": "2022OctNov-Paper22",
+    "qnum": 19,
+    "marks": 3,
+    "topics": [
+      "Probability"
+    ],
+    "s": "8.3",
+    "d": 2,
+    "cat": "probability",
+    "topic": "Tree diagrams",
+    "qtype": "combined events",
+    "g": "mixed",
+    "src": "0580/22/O/N/22 Q19",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "Katy picks a number at random from the numbers 2, 3 and 5.\n\\newline\n\nShe then picks a number at random from the numbers 5, 6, 7 and 9.\n\\newline\n\nWhen she adds the two numbers the answer is even.\n\\newline\n\nFind the probability that exactly one of the numbers picked is a 5.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Katy picks a number at random from the numbers 2, 3 and 5.\n\\newline\n\nShe then picks a number at random from the numbers 5, 6, 7 and 9.\n\\newline\n\nWhen she adds the two numbers the answer is even.\n\\newline\n\nFind the probability that exactly one of the numbers picked is a 5.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Katy picks a number at random from the numbers 2, 3 and 5.\n\nShe then picks a number at random from the numbers 5, 6, 7 and 9.\n\nWhen she adds the two numbers the answer is even.\n\nFind the probability that exactly one of the numbers picked is a 5.\n\n\\AnswerLine[][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper22-Q20",
+    "paper": "2022OctNov-Paper22",
+    "qnum": 20,
+    "marks": 3,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.4",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Algebraic fractions",
+    "qtype": "simplifying expressions with fractional and negative indices",
+    "g": "simplify",
+    "src": "0580/22/O/N/22 Q20",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "Simplify fully.\n\\newline\n\n(a) \n$(81x^{16})^{\\frac{3}{4}}$\n\n$\\displaystyle\\left(\\frac{1}{y^2}\\right)^{-\\frac{1}{2}}$",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "$(81x^{16})^{\\frac{3}{4}}$"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "marks": 2,
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "$\\displaystyle\\left(\\frac{1}{y^2}\\right)^{-\\frac{1}{2}}$"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "marks": 1,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Simplify fully.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "Simplify fully.\n\n\\begin{parts}\n\\part $(81x^{16})^{\\frac{3}{4}}$\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\part $\\displaystyle\\left(\\frac{1}{y^2}\\right)^{-\\frac{1}{2}}$\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper22-Q21",
+    "paper": "2022OctNov-Paper22",
+    "qnum": 21,
+    "marks": 4,
+    "topics": [
+      "Mensuration"
+    ],
+    "s": "5.5",
+    "d": 2,
+    "cat": "mensuration",
+    "topic": "Compound shapes",
+    "qtype": "compound shapes",
+    "g": "mixed",
+    "src": "0580/22/O/N/22 Q21",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "A solid is made by cutting a small cone from a larger cone, as shown in the diagram.\n\\newline\n\nThe height of the larger cone is $12.5\\,\\text{cm}$.\n\\newline\n\nThe height of the solid is $5.5\\,\\text{cm}$.\n\\newline\n\nThe diameter of the base of the larger cone is $9.2\\,\\text{cm}$.\n\\newline\n\nWork out the volume of the solid.\n\\newline\n\n[The volume, $V$, of a cone with radius $r$ and height $h$ is $V = \\displaystyle\\frac{1}{3}\\pi r^2 h$.\n\\newline\n]",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.5]\n% Frustum (truncated cone)\n% Top ellipse\n\\draw (0,4) ellipse (1 and 0.3);\n% Bottom ellipse\n\\draw (-2.5,0) arc (180:360:2.5 and 0.7);\n\\draw[dashed] (-2.5,0) arc (180:0:2.5 and 0.7);\n% Sides\n\\draw (-1,4) -- (-2.5,0);\n\\draw (1,4) -- (2.5,0);\n% Dashed lines to apex\n\\draw[dashed] (-1,4) -- (0,6.5);\n\\draw[dashed] (1,4) -- (0,6.5);\n\\draw[dashed] (0,4) ellipse (1 and 0.3);\n\n% Dimensions\n\\draw[<->] (-3.5,0) -- (-3.5,4);\n\\node[left] at (-3.5,2) {$5.5\\,\\text{cm}$};\n\\draw[<->] (3,0) -- (3,6.5);\n\\node[right] at (3,3.25) {$12.5\\,\\text{cm}$};\n\\draw[<->] (-2.5,-1.2) -- (2.5,-1.2);\n\\node[below] at (0,-1.2) {$9.2\\,\\text{cm}$};\n\n% NOT TO SCALE\n\\node at (6,3) {NOT TO};\n\\node at (6,2.5) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nA solid is made by cutting a small cone from a larger cone, as shown in the diagram.\n\\newline\n\nThe height of the larger cone is $12.5\\,\\text{cm}$.\n\\newline\n\nThe height of the solid is $5.5\\,\\text{cm}$.\n\\newline\n\nThe diameter of the base of the larger cone is $9.2\\,\\text{cm}$.\n\\newline\n\nWork out the volume of the solid.\n\\newline\n\n[The volume, $V$, of a cone with radius $r$ and height $h$ is $V = \\displaystyle\\frac{1}{3}\\pi r^2 h$.\n\\newline\n]"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "\\text{cm}^3"
+    },
+    "_rawBody": "\\begin{center}\n\\begin{tikzpicture}[scale=0.5]\n% Frustum (truncated cone)\n% Top ellipse\n\\draw (0,4) ellipse (1 and 0.3);\n% Bottom ellipse\n\\draw (-2.5,0) arc (180:360:2.5 and 0.7);\n\\draw[dashed] (-2.5,0) arc (180:0:2.5 and 0.7);\n% Sides\n\\draw (-1,4) -- (-2.5,0);\n\\draw (1,4) -- (2.5,0);\n% Dashed lines to apex\n\\draw[dashed] (-1,4) -- (0,6.5);\n\\draw[dashed] (1,4) -- (0,6.5);\n\\draw[dashed] (0,4) ellipse (1 and 0.3);\n\n% Dimensions\n\\draw[<->] (-3.5,0) -- (-3.5,4);\n\\node[left] at (-3.5,2) {5.5\\,cm};\n\\draw[<->] (3,0) -- (3,6.5);\n\\node[right] at (3,3.25) {12.5\\,cm};\n\\draw[<->] (-2.5,-1.2) -- (2.5,-1.2);\n\\node[below] at (0,-1.2) {9.2\\,cm};\n\n% NOT TO SCALE\n\\node at (6,3) {NOT TO};\n\\node at (6,2.5) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nA solid is made by cutting a small cone from a larger cone, as shown in the diagram.\n\nThe height of the larger cone is 12.5\\,cm.\n\nThe height of the solid is 5.5\\,cm.\n\nThe diameter of the base of the larger cone is 9.2\\,cm.\n\nWork out the volume of the solid.\n\n[The volume, $V$, of a cone with radius $r$ and height $h$ is $V = \\displaystyle\\frac{1}{3}\\pi r^2 h$.]\n\n\\AnswerLine[][\\text{cm}^3]\n\\Marks{4}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper22-Q22",
+    "paper": "2022OctNov-Paper22",
+    "qnum": 22,
+    "marks": 3,
+    "topics": [
+      "Geometry",
+      "Mensuration",
+      "Transformations and vectors"
+    ],
+    "s": "4.4",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Circle theorems",
+    "qtype": "similarity and congruence",
+    "g": "mixed",
+    "src": "0580/22/O/N/22 Q22",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "The volumes of two mathematically similar objects are $56\\,\\text{cm}^3$ and $875\\,\\text{cm}^3$.\n\\newline\n\nThe height of the smaller object is $18\\,\\text{cm}$.\n\\newline\n\nFind the height of the larger object.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The volumes of two mathematically similar objects are $56\\,\\text{cm}^3$ and $875\\,\\text{cm}^3$.\n\\newline\n\nThe height of the smaller object is $18\\,\\text{cm}$.\n\\newline\n\nFind the height of the larger object.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "cm"
+    },
+    "_rawBody": "The volumes of two mathematically similar objects are 56\\,cm$^3$ and 875\\,cm$^3$.\n\nThe height of the smaller object is 18\\,cm.\n\nFind the height of the larger object.\n\n\\AnswerLine[][cm]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper22-Q23",
+    "paper": "2022OctNov-Paper22",
+    "qnum": 23,
+    "marks": 7,
+    "topics": [
+      "Number"
+    ],
+    "s": null,
+    "d": 2,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/22/O/N/22 Q23",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "Solve $\\displaystyle\\frac{4}{x + 1} + \\frac{2}{2x - 5} = 3$.\n\\newline\n\nYou must show all your working.\n\\newline\n\n{---} or $x =$][]",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "",
+    "cmd": "solve",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Solve $\\displaystyle\\frac{4}{x + 1} + \\frac{2}{2x - 5} = 3$.\n\\newline\n\nYou must show all your working.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "$x =$ \\makebox[1.5cm]{\\hrulefill} or $x =$"
+    },
+    "_rawBody": "Solve $\\displaystyle\\frac{4}{x + 1} + \\frac{2}{2x - 5} = 3$.\n\nYou must show all your working.\n\n\\AnswerLine[$x =$ \\makebox[1.5cm]{\\hrulefill} or $x =$][]\n\\Marks{7}",
+    "_compactMarks": true
+  }
+]

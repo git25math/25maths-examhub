@@ -1,0 +1,1476 @@
+[
+  {
+    "id": "0580-2018March-Paper32-Q01",
+    "paper": "2018March-Paper32",
+    "qnum": 1,
+    "marks": 11,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.4",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Circle theorems",
+    "qtype": "similarity and congruence",
+    "g": "mixed",
+    "src": "0580/32/M/18 Q01",
+    "year": 2018,
+    "session": "March",
+    "tex": "(a) The diagram shows two rectangles that are mathematically similar.\n\\newline\n\nThe small rectangle has dimensions 1.5 cm by 2.5 cm.\n\\newline\n\\\\\nThe large rectangle has dimensions 4.5 cm by 7.5 cm.\n\\newline\n\n(i) (b) Explain why these rectangles are mathematically similar.\n\\newline\n\n(c) How many times bigger is the area of the large rectangle than the area of the small rectangle?\n\n(d) The diagram shows a net of a cube.\n\\newline\n\nThe square labelled B is the base.\n\\newline\n\n(i) (e) Write the letter T in the square that is the top of the cube.\n\\newline\n\n(f) On the grid, draw a different net of this cube.\n\\newline\n\n(g) The diagram shows a cuboid.\n\\newline\n\nThe cuboid has dimensions 6 cm by 4 cm by 3 cm.\n\\newline\n\n(i) (h) Work out the surface area of this cuboid.\n\\newline\n\n(i) Work out the volume of this cuboid.\n\\newline\n\n(j) Write down the dimensions of a different cuboid that has the same volume as this cuboid.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The diagram shows two rectangles that are mathematically similar.\n\\newline\n\nThe small rectangle has dimensions 1.5 cm by 2.5 cm.\n\\newline\n\\\\\nThe large rectangle has dimensions 4.5 cm by 7.5 cm.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Explain why these rectangles are mathematically similar.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            }
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "How many times bigger is the area of the large rectangle than the area of the small rectangle?"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            }
+          }
+        ],
+        "_subpartCmd": "item"
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The diagram shows a net of a cube.\n\\newline\n\nThe square labelled B is the base.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Write the letter T in the square that is the top of the cube.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "none",
+              "space": {
+                "type": "drawing",
+                "height": "3cm",
+                "cmd": "Answerspace"
+              }
+            }
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "On the grid, draw a different net of this cube.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "none",
+              "space": {
+                "type": "drawing",
+                "height": "4cm",
+                "cmd": "Answerspace"
+              }
+            }
+          }
+        ],
+        "_subpartCmd": "item"
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The diagram shows a cuboid.\n\\newline\n\nThe cuboid has dimensions 6 cm by 4 cm by 3 cm.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "Work out the surface area of this cuboid.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "cm$^2$"
+            }
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Work out the volume of this cuboid.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "cm$^3$"
+            }
+          },
+          {
+            "label": "(iii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Write down the dimensions of a different cuboid that has the same volume as this cuboid.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            }
+          }
+        ],
+        "_subpartCmd": "item"
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "analyse",
+    "cmd": "explain",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2018March/Paper32/Q01/Q01-SimilarRectangles.png"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2018March/Paper32/Q01/Q01-GridShapeB.png"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2018March/Paper32/Q01/Q01-Cuboid.png"
+      }
+    ],
+    "_rawBody": "\\begin{parts}\n\\item The diagram shows two rectangles that are mathematically similar.\n\nThe small rectangle has dimensions 1.5 cm by 2.5 cm.\\\\\nThe large rectangle has dimensions 4.5 cm by 7.5 cm.\n\n\\begin{subparts}\n\\item Explain why these rectangles are mathematically similar.\n\n\\AnswerLine[][]\n\n\\Marks{1}\n\n\\item How many times bigger is the area of the large rectangle than the area of the small rectangle?\n\n\\AnswerLine[][]\n\n\\Marks{2}\n\n\\end{subparts}\n\n\\item The diagram shows a net of a cube.\n\nThe square labelled B is the base.\n\n\\begin{subparts}\n\\item Write the letter T in the square that is the top of the cube.\n\n\\Answerspace[3cm]\n\n\\Marks{1}\n\n\\item On the grid, draw a different net of this cube.\n\n\\Answerspace[4cm]\n\n\\Marks{1}\n\n\\end{subparts}\n\n\\item The diagram shows a cuboid.\n\nThe cuboid has dimensions 6 cm by 4 cm by 3 cm.\n\n\\begin{subparts}\n\\item Work out the surface area of this cuboid.\n\n\\AnswerLine[][cm$^2$]\n\n\\Marks{3}\n\n\\item Work out the volume of this cuboid.\n\n\\AnswerLine[][cm$^3$]\n\n\\Marks{2}\n\n\\item Write down the dimensions of a different cuboid that has the same volume as this cuboid.\n\n\\AnswerLine[][]\n\n\\Marks{1}\n\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_compactItems": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2018March/Paper32/Q01/Q01-Cuboid.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2018March/Paper32/Q01/Q01-GridShapeB.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2018March/Paper32/Q01/Q01-SimilarRectangles.png"
+    ]
+  },
+  {
+    "id": "0580-2018March-Paper32-Q02",
+    "paper": "2018March-Paper32",
+    "qnum": 2,
+    "marks": 15,
+    "topics": [
+      "Number",
+      "Probability",
+      "Statistics"
+    ],
+    "s": "1.5",
+    "d": 1,
+    "cat": "number",
+    "topic": "Ordering",
+    "qtype": "number patterns and spatial reasoning",
+    "g": "sequence",
+    "src": "0580/32/M/18 Q02",
+    "year": 2018,
+    "session": "March",
+    "tex": "(a) Each of 196 candidates has a candidate number from 3001 to 3196.\n\\newline\nThe candidates sit in numerical order in columns and rows, as shown in the diagram.\n\\newline\nThere are 20 rows.\n\\newline\n\nThe diagram shows part of the plan for where the candidates sit.\n\\newline\n\n\\begin{tabular}{ccccc}\n & Column 1 & Column 2 & Column 3 & Column 4 \\\\\nRow 20 & 3020 & & & \\\\\nRow 3 & 3003 & 3023 & A & \\\\\nRow 2 & 3002 & 3022 & 3042 & \\\\\nRow 1 & 3001 & 3021 & 3041 & B\n\\end{tabular}\n\n(i) (b) The diagram shows where candidates A and B sit.\n\\newline\n\nWrite down their numbers.\n\\newline\n\nA \n\nB \n\n(c) Complete this statement.\n\\newline\n\nCandidate 3135 sits in Column  , Row \n\n(d) Candidate C sits in Column n, Row 1.\n\\newline\n\nFind an expression, in terms of n, for the number of candidate C.\n\\newline\n\n(e) The geography examination lasts for 1 hour 40 minutes.\n\\newline\nHari is allowed 25\\% extra time for his geography examination.\n\\newline\n\nWork out the total time Hari has for this examination.\n\\newline\nGive your answer in hours and minutes.\n\\newline\n\n h  min\n\n(f) The number of examinations that each of the 196 candidates takes is recorded in the table.\n\\newline\n\n\\begin{tabular}{ccccc}\nNumber of examinations & 5 & 6 & 7 & 8 \\\\\nNumber of candidates & 27 & 42 & 63 & 64\n\\end{tabular}\n\n(i) (g) Write down the range.\n\\newline\n\n(h) Find the median.\n\\newline\n\n(i) Calculate the mean.\n\\newline\n\n(j) A candidate is selected at random.\n\\newline\n\nFind the probability that the candidate takes fewer than 8 examinations.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Each of 196 candidates has a candidate number from 3001 to 3196.\n\\newline\nThe candidates sit in numerical order in columns and rows, as shown in the diagram.\n\\newline\nThere are 20 rows.\n\\newline\n\nThe diagram shows part of the plan for where the candidates sit.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{tabular}{ccccc}\n & Column 1 & Column 2 & Column 3 & Column 4 \\\\\nRow 20 & 3020 & & & \\\\\nRow 3 & 3003 & 3023 & A & \\\\\nRow 2 & 3002 & 3022 & 3042 & \\\\\nRow 1 & 3001 & 3021 & 3041 & B\n\\end{tabular}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "The diagram shows where candidates A and B sit.\n\\newline\n\nWrite down their numbers.\n\\newline\n\nA \\AnswerLine[][]\n\nB \\AnswerLine[][]"
+              }
+            ]
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Complete this statement.\n\\newline\n\nCandidate 3135 sits in Column \\AnswerLine[][] , Row \\AnswerLine[][]"
+              }
+            ]
+          },
+          {
+            "label": "(iii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Candidate C sits in Column n, Row 1.\n\\newline\n\nFind an expression, in terms of n, for the number of candidate C.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            }
+          }
+        ],
+        "_subpartCmd": "item"
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "The geography examination lasts for 1 hour 40 minutes.\n\\newline\nHari is allowed 25\\% extra time for his geography examination.\n\\newline\n\nWork out the total time Hari has for this examination.\n\\newline\nGive your answer in hours and minutes.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "multiline",
+          "lines": 2,
+          "template": "____\\n____",
+          "lineSep": "blank"
+        }
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The number of examinations that each of the 196 candidates takes is recorded in the table.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{tabular}{ccccc}\nNumber of examinations & 5 & 6 & 7 & 8 \\\\\nNumber of candidates & 27 & 42 & 63 & 64\n\\end{tabular}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Write down the range.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            }
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the median.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            }
+          },
+          {
+            "label": "(iii)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate the mean.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            }
+          },
+          {
+            "label": "(iv)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "A candidate is selected at random.\n\\newline\n\nFind the probability that the candidate takes fewer than 8 examinations.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            }
+          }
+        ],
+        "_subpartCmd": "item"
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2018March/Paper32/Q02/Q02-SpreadsheetPattern.png"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2018March/Paper32/Q02/Q02-ExamTable.png"
+      }
+    ],
+    "_rawBody": "\\begin{parts}\n\\item Each of 196 candidates has a candidate number from 3001 to 3196.\nThe candidates sit in numerical order in columns and rows, as shown in the diagram.\nThere are 20 rows.\n\nThe diagram shows part of the plan for where the candidates sit.\n\n\\begin{tabular}{ccccc}\n & Column 1 & Column 2 & Column 3 & Column 4 \\\\\nRow 20 & 3020 & & & \\\\\nRow 3 & 3003 & 3023 & A & \\\\\nRow 2 & 3002 & 3022 & 3042 & \\\\\nRow 1 & 3001 & 3021 & 3041 & B\n\\end{tabular}\n\n\\begin{subparts}\n\\item The diagram shows where candidates A and B sit.\n\nWrite down their numbers.\n\nA \\AnswerLine[][]\n\nB \\AnswerLine[][]\n\n\\Marks{2}\n\n\\item Complete this statement.\n\nCandidate 3135 sits in Column \\AnswerLine[][] , Row \\AnswerLine[][]\n\n\\Marks{2}\n\n\\item Candidate C sits in Column n, Row 1.\n\nFind an expression, in terms of n, for the number of candidate C.\n\n\\AnswerLine[][]\n\n\\Marks{2}\n\n\\end{subparts}\n\n\\item The geography examination lasts for 1 hour 40 minutes.\nHari is allowed 25\\% extra time for his geography examination.\n\nWork out the total time Hari has for this examination.\nGive your answer in hours and minutes.\n\n\\AnswerLine[][] h \\AnswerLine[][] min\n\n\\Marks{2}\n\n\\item The number of examinations that each of the 196 candidates takes is recorded in the table.\n\n\\begin{tabular}{ccccc}\nNumber of examinations & 5 & 6 & 7 & 8 \\\\\nNumber of candidates & 27 & 42 & 63 & 64\n\\end{tabular}\n\n\\begin{subparts}\n\\item Write down the range.\n\n\\AnswerLine[][]\n\n\\Marks{1}\n\n\\item Find the median.\n\n\\AnswerLine[][]\n\n\\Marks{1}\n\n\\item Calculate the mean.\n\n\\AnswerLine[][]\n\n\\Marks{3}\n\n\\item A candidate is selected at random.\n\nFind the probability that the candidate takes fewer than 8 examinations.\n\n\\AnswerLine[][]\n\n\\Marks{2}\n\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2018March/Paper32/Q02/Q02-ExamTable.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2018March/Paper32/Q02/Q02-SpreadsheetPattern.png"
+    ]
+  },
+  {
+    "id": "0580-2018March-Paper32-Q03",
+    "paper": "2018March-Paper32",
+    "qnum": 3,
+    "marks": 7,
+    "topics": [
+      "Number",
+      "Statistics"
+    ],
+    "s": "1.1",
+    "d": 1,
+    "cat": "number",
+    "topic": "Types of number",
+    "qtype": "frequency table completion",
+    "g": "mixed",
+    "src": "0580/32/M/18 Q03",
+    "year": 2018,
+    "session": "March",
+    "tex": "(a) 25 students go on a water sports trip.\n\\newline\nThe students each choose their favourite water sport.\n\\newline\nThese are the results.\n\\newline\n\n\\begin{tabular}{ccccc}\nRafting & Fishing & Surfing & Snorkelling & Surfing \\\\\nSnorkelling & Rafting & Kayaking & Rafting & Snorkelling \\\\\nFishing & Surfing & Surfing & Kayaking & Surfing \\\\\nFishing & Snorkelling & Surfing & Surfing & Rafting \\\\\nRafting & Fishing & Snorkelling & Snorkelling & Surfing\n\\end{tabular}\n\n(i) (b) Complete the frequency table for the results.\n\\newline\nYou may use the tally column to help you.\n\\newline\n\n\\begin{tabular}{|l|c|c|}\n\\hline\nFavourite water sport & Tally & Frequency \\\\\n\\hline\nRafting & & \\\\\n\\hline\nSurfing & & \\\\\n\\hline\nFishing & & \\\\\n\\hline\nKayaking & & \\\\\n\\hline\nSnorkelling & & \\\\\n\\hline\n\\end{tabular}\n\n(c) Write down the mode.\n\\newline\n\n(d) Work out the percentage of students whose favourite water sport is snorkelling.\n\\newline\n\n \\%\n\n(e) The table shows the times of the high and low tides.\n\\newline\n\n\\begin{tabular}{ccccc}\nDay & 1st high tide & 1st low tide & 2nd high tide & 2nd low tide \\\\\nMonday & 00 30 & 06 09 & 13 12 & 18 35 \\\\\nTuesday & 01 30 & 07 20 & 14 22 & 19 52 \\\\\nWednesday & 02 43 & 08 36 & 15 37 & 21 06 \\\\\nThursday & 03 58 & 09 41 & 16 44 & 22 07 \\\\\nFriday & 05 00 & 10 35 & 17 37 & 22 58\n\\end{tabular}\n\n(i) (f) Write down the time of the 2nd high tide on Wednesday using the 12-hour clock.\n\\newline\n\n(g) Work out the time between the two low tides on Thursday.\n\\newline\n\n h  min\n\n(h) The surfing activity starts $1\\frac{1}{2}$ hours before the high tide on Tuesday afternoon.\n\\newline\n\nWrite down the time that the surfing activity starts.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "25 students go on a water sports trip.\n\\newline\nThe students each choose their favourite water sport.\n\\newline\nThese are the results.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{tabular}{ccccc}\nRafting & Fishing & Surfing & Snorkelling & Surfing \\\\\nSnorkelling & Rafting & Kayaking & Rafting & Snorkelling \\\\\nFishing & Surfing & Surfing & Kayaking & Surfing \\\\\nFishing & Snorkelling & Surfing & Surfing & Rafting \\\\\nRafting & Fishing & Snorkelling & Snorkelling & Surfing\n\\end{tabular}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Complete the frequency table for the results.\n\\newline\nYou may use the tally column to help you.\n\\newline\n"
+              },
+              {
+                "type": "table",
+                "content": "\\begin{tabular}{|l|c|c|}\n\\hline\nFavourite water sport & Tally & Frequency \\\\\n\\hline\nRafting & & \\\\\n\\hline\nSurfing & & \\\\\n\\hline\nFishing & & \\\\\n\\hline\nKayaking & & \\\\\n\\hline\nSnorkelling & & \\\\\n\\hline\n\\end{tabular}"
+              }
+            ]
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Write down the mode.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            }
+          },
+          {
+            "label": "(iii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Work out the percentage of students whose favourite water sport is snorkelling.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            }
+          }
+        ],
+        "_subpartCmd": "item"
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The table shows the times of the high and low tides.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{tabular}{ccccc}\nDay & 1st high tide & 1st low tide & 2nd high tide & 2nd low tide \\\\\nMonday & 00 30 & 06 09 & 13 12 & 18 35 \\\\\nTuesday & 01 30 & 07 20 & 14 22 & 19 52 \\\\\nWednesday & 02 43 & 08 36 & 15 37 & 21 06 \\\\\nThursday & 03 58 & 09 41 & 16 44 & 22 07 \\\\\nFriday & 05 00 & 10 35 & 17 37 & 22 58\n\\end{tabular}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Write down the time of the 2nd high tide on Wednesday using the 12-hour clock.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            }
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Work out the time between the two low tides on Thursday.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "multiline",
+              "lines": 2,
+              "template": "____\\n____",
+              "lineSep": "blank"
+            }
+          },
+          {
+            "label": "(iii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "The surfing activity starts $1\\frac{1}{2}$ hours before the high tide on Tuesday afternoon.\n\\newline\n\nWrite down the time that the surfing activity starts.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            }
+          }
+        ],
+        "_subpartCmd": "item"
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "recall",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2018March/Paper32/Q03/Q03-WaterSportsData.png"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2018March/Paper32/Q03/Q03-TideTable.png"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2018March/Paper32/Q03/Q03-TallyTable.png"
+      }
+    ],
+    "_rawBody": "\\begin{parts}\n\\item 25 students go on a water sports trip.\nThe students each choose their favourite water sport.\nThese are the results.\n\n\\begin{tabular}{ccccc}\nRafting & Fishing & Surfing & Snorkelling & Surfing \\\\\nSnorkelling & Rafting & Kayaking & Rafting & Snorkelling \\\\\nFishing & Surfing & Surfing & Kayaking & Surfing \\\\\nFishing & Snorkelling & Surfing & Surfing & Rafting \\\\\nRafting & Fishing & Snorkelling & Snorkelling & Surfing\n\\end{tabular}\n\n\\begin{subparts}\n\\item Complete the frequency table for the results.\nYou may use the tally column to help you.\n\n\\begin{tabular}{|l|c|c|}\n\\hline\nFavourite water sport & Tally & Frequency \\\\\n\\hline\nRafting & & \\\\\n\\hline\nSurfing & & \\\\\n\\hline\nFishing & & \\\\\n\\hline\nKayaking & & \\\\\n\\hline\nSnorkelling & & \\\\\n\\hline\n\\end{tabular}\n\n\\Marks{2}\n\n\\item Write down the mode.\n\n\\AnswerLine[][]\n\n\\Marks{1}\n\n\\item Work out the percentage of students whose favourite water sport is snorkelling.\n\n\\AnswerLine[][] \\%\n\n\\Marks{1}\n\n\\end{subparts}\n\n\\item The table shows the times of the high and low tides.\n\n\\begin{tabular}{ccccc}\nDay & 1st high tide & 1st low tide & 2nd high tide & 2nd low tide \\\\\nMonday & 00 30 & 06 09 & 13 12 & 18 35 \\\\\nTuesday & 01 30 & 07 20 & 14 22 & 19 52 \\\\\nWednesday & 02 43 & 08 36 & 15 37 & 21 06 \\\\\nThursday & 03 58 & 09 41 & 16 44 & 22 07 \\\\\nFriday & 05 00 & 10 35 & 17 37 & 22 58\n\\end{tabular}\n\n\\begin{subparts}\n\\item Write down the time of the 2nd high tide on Wednesday using the 12-hour clock.\n\n\\AnswerLine[][]\n\n\\Marks{1}\n\n\\item Work out the time between the two low tides on Thursday.\n\n\\AnswerLine[][] h \\AnswerLine[][] min\n\n\\Marks{1}\n\n\\item The surfing activity starts $1\\frac{1}{2}$ hours before the high tide on Tuesday afternoon.\n\nWrite down the time that the surfing activity starts.\n\n\\AnswerLine[][]\n\n\\Marks{1}\n\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_compactItems": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2018March/Paper32/Q03/Q03-TallyTable.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2018March/Paper32/Q03/Q03-TideTable.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2018March/Paper32/Q03/Q03-WaterSportsData.png"
+    ]
+  },
+  {
+    "id": "0580-2018March-Paper32-Q04",
+    "paper": "2018March-Paper32",
+    "qnum": 4,
+    "marks": 5,
+    "topics": [
+      "Probability",
+      "Statistics"
+    ],
+    "s": "8.1",
+    "d": 1,
+    "cat": "probability",
+    "topic": "Basic probability",
+    "qtype": "basic probability",
+    "g": "mixed",
+    "src": "0580/32/M/18 Q04",
+    "year": 2018,
+    "session": "March",
+    "tex": "(a) Some people go fishing and catch four types of fish.\n\\newline\nSome information is shown in the table.\n\\newline\n\n\\begin{tabular}{ccc}\nType of fish & Number of fish & Pie chart sector angle \\\\\nCod & 15 & 120° \\\\\nMackerel & 9 & 72° \\\\\nHerring & & 32° \\\\\nTuna & &\n\\end{tabular}\n\n(i) (b) Complete the table.\n\\newline\n\n(c) Complete the pie chart.\n\\newline\n\n(d) Records show that $\\frac{3}{14}$ of all mullet caught are underweight.\n\\newline\nIn one day, 168 mullet are caught.\n\\newline\n\nWork out the expected number of mullet that are underweight.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Some people go fishing and catch four types of fish.\n\\newline\nSome information is shown in the table.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{tabular}{ccc}\nType of fish & Number of fish & Pie chart sector angle \\\\\nCod & 15 & 120° \\\\\nMackerel & 9 & 72° \\\\\nHerring & & 32° \\\\\nTuna & &\n\\end{tabular}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "Complete the table.\n\\newline\n"
+              }
+            ]
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Complete the pie chart.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "none",
+              "space": {
+                "type": "drawing",
+                "height": "4cm",
+                "cmd": "Answerspace"
+              }
+            }
+          }
+        ],
+        "_subpartCmd": "item"
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Records show that $\\frac{3}{14}$ of all mullet caught are underweight.\n\\newline\nIn one day, 168 mullet are caught.\n\\newline\n\nWork out the expected number of mullet that are underweight.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        }
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "analyse",
+    "cmd": "show",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2018March/Paper32/Q04/Q04-FishPieTable.png"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2018March/Paper32/Q04/Q04-FishPieChart.png"
+      }
+    ],
+    "_rawBody": "\\begin{parts}\n\\item Some people go fishing and catch four types of fish.\nSome information is shown in the table.\n\n\\begin{tabular}{ccc}\nType of fish & Number of fish & Pie chart sector angle \\\\\nCod & 15 & 120° \\\\\nMackerel & 9 & 72° \\\\\nHerring & & 32° \\\\\nTuna & &\n\\end{tabular}\n\n\\begin{subparts}\n\\item Complete the table.\n\n\\Marks{3}\n\n\\item Complete the pie chart.\n\n\\Answerspace[4cm]\n\n\\Marks{1}\n\n\\end{subparts}\n\n\\item Records show that $\\frac{3}{14}$ of all mullet caught are underweight.\nIn one day, 168 mullet are caught.\n\nWork out the expected number of mullet that are underweight.\n\n\\AnswerLine[][]\n\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2018March/Paper32/Q04/Q04-FishPieChart.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2018March/Paper32/Q04/Q04-FishPieTable.png"
+    ]
+  },
+  {
+    "id": "0580-2018March-Paper32-Q05",
+    "paper": "2018March-Paper32",
+    "qnum": 5,
+    "marks": 8,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.1",
+    "d": 1,
+    "cat": "number",
+    "topic": "Types of number",
+    "qtype": "number properties and definitions",
+    "g": "mixed",
+    "src": "0580/32/M/18 Q05",
+    "year": 2018,
+    "session": "March",
+    "tex": "(a) Write down\n\n(i) (b) the number 604 925 in words,\n\n(c) a prime number between 50 and 60,\n\n(d) the value of $999^{0}$,\n\n(e) Find\n\n(i) (f) the smallest multiple of 7 that is greater than 100,\n\n(g) the largest cube number that is less than 100,\n\n(h) the six factors of 45,\n\n ,  ,  ,  ,  , \n\n(i) an irrational number between 6 and 7.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "the number 604 925 in words,"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            }
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "a prime number between 50 and 60,"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            }
+          },
+          {
+            "label": "(iii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "the value of $999^{0}$,"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            }
+          }
+        ],
+        "_subpartCmd": "item"
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Find"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "the smallest multiple of 7 that is greater than 100,"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            }
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "the largest cube number that is less than 100,"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            }
+          },
+          {
+            "label": "(iii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "the six factors of 45,"
+              }
+            ],
+            "answer": {
+              "type": "multiline",
+              "lines": 6,
+              "template": "____\\n____\\n____\\n____\\n____\\n____",
+              "lineSep": "blank"
+            }
+          },
+          {
+            "label": "(iv)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "an irrational number between 6 and 7.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            }
+          }
+        ],
+        "_subpartCmd": "item"
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "find",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Write down\n\n\\begin{subparts}\n\\item the number 604 925 in words,\n\n\\AnswerLine[][]\n\n\\Marks{1}\n\n\\item a prime number between 50 and 60,\n\n\\AnswerLine[][]\n\n\\Marks{1}\n\n\\item the value of $999^{0}$,\n\n\\AnswerLine[][]\n\n\\Marks{1}\n\n\\end{subparts}\n\n\\item Find\n\n\\begin{subparts}\n\\item the smallest multiple of 7 that is greater than 100,\n\n\\AnswerLine[][]\n\n\\Marks{1}\n\n\\item the largest cube number that is less than 100,\n\n\\AnswerLine[][]\n\n\\Marks{1}\n\n\\item the six factors of 45,\n\n\\AnswerLine[][] , \\AnswerLine[][] , \\AnswerLine[][] , \\AnswerLine[][] , \\AnswerLine[][] , \\AnswerLine[][]\n\n\\Marks{2}\n\n\\item an irrational number between 6 and 7.\n\n\\AnswerLine[][]\n\n\\Marks{1}\n\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_compactItems": true
+  },
+  {
+    "id": "0580-2018March-Paper32-Q06",
+    "paper": "2018March-Paper32",
+    "qnum": 6,
+    "marks": 10,
+    "topics": [
+      "Number",
+      "Algebra and graphs"
+    ],
+    "s": "2.9",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Graphs in practical situations",
+    "qtype": "interpreting distance-time graph",
+    "g": "graph",
+    "src": "0580/32/M/18 Q06",
+    "year": 2018,
+    "session": "March",
+    "tex": "(a) Anand, Rahul and Samir go from school to the park each day.\n\\newline\nOne day, Anand cycles and Rahul walks.\n\\newline\nThe travel graph shows their journeys.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\nThe graph shows distance from school (vertical axis) against time (horizontal axis).\n\\newline\n\\\\\nAnand's journey is shown as a straight line from (15:00, 4km) to (15:20, 0km).\n\\newline\n\\\\\nRahul's journey is shown as a straight line from (15:00, 4km) to (15:40, 0km).\n\\newline\n\n(i) (b) Work out the speed that Anand cycles.\n\\newline\nGive your answer in kilometres per hour.\n\\newline\n\n km/h\n\n(c) Find the number of minutes that Anand arrives at the park before Rahul.\n\\newline\n\n min\n\n(d) Samir cycles at the same speed as Anand.\n\\newline\nHe arrives at the park at the same time as Rahul.\n\\newline\n\nFind the time that Samir leaves school.\n\\newline\n\n(e) On another day, Anand cycles 2 km to a bench and then walks the rest of the way to the park.\n\\newline\nThe travel graph shows his journey.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\nThe graph shows Anand cycling from school at 15:00, reaching the bench at 2km, then walking to the park at 4km.\n\\newline\n\n(i) (f) Write down the ratio minutes cycling : minutes walking.\n\\newline\nGive your answer in its simplest form.\n\\newline\n\n : \n\n(g) Rahul leaves school at the same time as Anand.\n\\newline\nRahul walks 2 km to the bench at a constant speed of 6 km/h.\n\\newline\nHe then cycles the rest of the way to the park at a constant speed of 15 km/h.\n\\newline\n\n(h) Complete the travel graph for Rahul's journey to the park.\n\\newline\n\n(i) Use your travel graph to find the number of minutes that Anand arrives at the bench before Rahul.\n\\newline\n\n min\n\n(j) Find the greatest distance between Anand and Rahul as they travel to the park.\n\\newline\n\n km",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Anand, Rahul and Samir go from school to the park each day.\n\\newline\nOne day, Anand cycles and Rahul walks.\n\\newline\nThe travel graph shows their journeys.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q06-TravelGraph1.\n\\newline\npng}\n%\\end{InsertScreenShot}\n\nThe graph shows distance from school (vertical axis) against time (horizontal axis).\n\\newline\n\\\\\nAnand's journey is shown as a straight line from (15:00, 4km) to (15:20, 0km).\n\\newline\n\\\\\nRahul's journey is shown as a straight line from (15:00, 4km) to (15:40, 0km).\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Work out the speed that Anand cycles.\n\\newline\nGive your answer in kilometres per hour.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            }
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the number of minutes that Anand arrives at the park before Rahul.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            }
+          },
+          {
+            "label": "(iii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Samir cycles at the same speed as Anand.\n\\newline\nHe arrives at the park at the same time as Rahul.\n\\newline\n\nFind the time that Samir leaves school.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            }
+          }
+        ],
+        "_subpartCmd": "item"
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "On another day, Anand cycles 2 km to a bench and then walks the rest of the way to the park.\n\\newline\nThe travel graph shows his journey.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q06-TravelGraph2.\n\\newline\npng}\n%\\end{InsertScreenShot}\n\nThe graph shows Anand cycling from school at 15:00, reaching the bench at 2km, then walking to the park at 4km.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Write down the ratio minutes cycling : minutes walking.\n\\newline\nGive your answer in its simplest form.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "multiline",
+              "lines": 2,
+              "template": "____\\n____",
+              "lineSep": "blank"
+            }
+          },
+          {
+            "label": "(ii)",
+            "marks": 0,
+            "content": [
+              {
+                "type": "text",
+                "content": "Rahul leaves school at the same time as Anand.\n\\newline\nRahul walks 2 km to the bench at a constant speed of 6 km/h.\n\\newline\nHe then cycles the rest of the way to the park at a constant speed of 15 km/h.\n\\newline\n"
+              }
+            ]
+          },
+          {
+            "label": "(iii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Complete the travel graph for Rahul's journey to the park.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "none",
+              "space": {
+                "type": "drawing",
+                "height": "4cm",
+                "cmd": "Answerspace"
+              }
+            }
+          },
+          {
+            "label": "(iv)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Use your travel graph to find the number of minutes that Anand arrives at the bench before Rahul.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            }
+          },
+          {
+            "label": "(v)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the greatest distance between Anand and Rahul as they travel to the park.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            }
+          }
+        ],
+        "_subpartCmd": "item"
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2018March/Paper32/Q06/Q06-DistanceTimeGraphB.png"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2018March/Paper32/Q06/Q06-DistanceTimeGraphA.png"
+      }
+    ],
+    "_rawBody": "\\begin{parts}\n\\item Anand, Rahul and Samir go from school to the park each day.\nOne day, Anand cycles and Rahul walks.\nThe travel graph shows their journeys.\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q06-TravelGraph1.png}\n%\\end{InsertScreenShot}\n\nThe graph shows distance from school (vertical axis) against time (horizontal axis).\\\\\nAnand's journey is shown as a straight line from (15:00, 4km) to (15:20, 0km).\\\\\nRahul's journey is shown as a straight line from (15:00, 4km) to (15:40, 0km).\n\n\\begin{subparts}\n\\item Work out the speed that Anand cycles.\nGive your answer in kilometres per hour.\n\n\\AnswerLine[][] km/h\n\n\\Marks{2}\n\n\\item Find the number of minutes that Anand arrives at the park before Rahul.\n\n\\AnswerLine[][] min\n\n\\Marks{1}\n\n\\item Samir cycles at the same speed as Anand.\nHe arrives at the park at the same time as Rahul.\n\nFind the time that Samir leaves school.\n\n\\AnswerLine[][]\n\n\\Marks{1}\n\n\\end{subparts}\n\n\\item On another day, Anand cycles 2 km to a bench and then walks the rest of the way to the park.\nThe travel graph shows his journey.\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q06-TravelGraph2.png}\n%\\end{InsertScreenShot}\n\nThe graph shows Anand cycling from school at 15:00, reaching the bench at 2km, then walking to the park at 4km.\n\n\\begin{subparts}\n\\item Write down the ratio minutes cycling : minutes walking.\nGive your answer in its simplest form.\n\n\\AnswerLine[][] : \\AnswerLine[][]\n\n\\Marks{2}\n\n\\item Rahul leaves school at the same time as Anand.\nRahul walks 2 km to the bench at a constant speed of 6 km/h.\nHe then cycles the rest of the way to the park at a constant speed of 15 km/h.\n\n\\item Complete the travel graph for Rahul's journey to the park.\n\n\\Answerspace[4cm]\n\n\\Marks{2}\n\n\\item Use your travel graph to find the number of minutes that Anand arrives at the bench before Rahul.\n\n\\AnswerLine[][] min\n\n\\Marks{1}\n\n\\item Find the greatest distance between Anand and Rahul as they travel to the park.\n\n\\AnswerLine[][] km\n\n\\Marks{1}\n\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_compactItems": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2018March/Paper32/Q06/Q06-DistanceTimeGraphA.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2018March/Paper32/Q06/Q06-DistanceTimeGraphB.png"
+    ]
+  },
+  {
+    "id": "0580-2018March-Paper32-Q07",
+    "paper": "2018March-Paper32",
+    "qnum": 7,
+    "marks": 11,
+    "topics": [
+      "Mensuration",
+      "Transformations and vectors"
+    ],
+    "s": "5.2",
+    "d": 1,
+    "cat": "mensuration",
+    "topic": "Circles",
+    "qtype": "area and perimeter",
+    "g": "mixed",
+    "src": "0580/32/M/18 Q07",
+    "year": 2018,
+    "session": "March",
+    "tex": "The diagram shows four shapes, A, B, C and D, drawn on a 1 cm$^2$ grid.\n\\newline\n\n(a) Find the area of shape B.\n\\newline\n\n(b) Describe fully the single transformation that maps\n\n(i) (c) shape A onto shape B,\n\n(d) shape B onto shape C,\n\n(e) shape C onto shape D.\n\\newline\n\n(f) On the grid, draw the image of shape D after a reflection in the line x = -1.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the area of shape B.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "cm$^2$"
+        }
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Describe fully the single transformation that maps"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "shape A onto shape B,"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            }
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "shape B onto shape C,"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            }
+          },
+          {
+            "label": "(iii)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "shape C onto shape D.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            }
+          }
+        ],
+        "_subpartCmd": "item"
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "On the grid, draw the image of shape D after a reflection in the line x = -1.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "none",
+          "space": {
+            "type": "drawing",
+            "height": "6cm",
+            "cmd": "Answerspace"
+          }
+        }
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "describe",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The diagram shows four shapes, A, B, C and D, drawn on a 1 cm$^2$ grid.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2018March/Paper32/Q07/Q07.png"
+      },
+      {
+        "type": "figure",
+        "src": "Figures/Q07.tex"
+      }
+    ],
+    "_rawBody": "The diagram shows four shapes, A, B, C and D, drawn on a 1 cm$^2$ grid.\n\n\\relinput{Figures/Q07.tex}\n\n\\begin{parts}\n\\item Find the area of shape B.\n\n\\AnswerLine[][cm$^2$]\n\n\\Marks{1}\n\n\\item Describe fully the single transformation that maps\n\n\\begin{subparts}\n\\item shape A onto shape B,\n\n\\AnswerLine[][]\n\n\\Marks{3}\n\n\\item shape B onto shape C,\n\n\\AnswerLine[][]\n\n\\Marks{2}\n\n\\item shape C onto shape D.\n\n\\AnswerLine[][]\n\n\\Marks{3}\n\n\\end{subparts}\n\n\\item On the grid, draw the image of shape D after a reflection in the line x = -1.\n\n\\Answerspace[6cm]\n\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2018March/Paper32/Q07/Q07-CoordinateShapes.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2018March/Paper32/Q07/Q07.png"
+    ]
+  },
+  {
+    "id": "0580-2018March-Paper32-Q08",
+    "paper": "2018March-Paper32",
+    "qnum": 8,
+    "marks": 12,
+    "topics": [
+      "Number",
+      "Geometry"
+    ],
+    "s": "1.11",
+    "d": 1,
+    "cat": "number",
+    "topic": "Money and finance",
+    "qtype": "map scale and distance calculation",
+    "g": "mixed",
+    "src": "0580/32/M/18 Q08",
+    "year": 2018,
+    "session": "March",
+    "tex": "(a) The scale drawing shows the positions of two towns, Yatterford (Y) and Rexley (R), on a map.\n\\newline\nThe scale is 1 centimetre represents 15 kilometres.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\nThe map shows North pointing upwards, with Y at the bottom and R at the top-right of Y.\n\\newline\n\n(i) (b) Write the scale of the map in the form 1 : n.\n\\newline\n\n1 : \n\n(c) Work out the actual distance of Rexley from Yatterford.\n\\newline\n\n km\n\n(d) Measure the bearing of Rexley from Yatterford.\n\\newline\n\n°\n\n(e) A hospital is to be built on an area of land between 45 km and 60 km from Yatterford.\n\\newline\nThe bearing of the hospital from Yatterford is between 250° and 295°.\n\\newline\n\nOn the map, construct and shade the region in which the hospital is to be built.\n\\newline\n\n(f) The bearing of Bartown from Whitestoke is 073°.\n\\newline\n\nWork out the bearing of Whitestoke from Bartown.\n\\newline\n\n°",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The scale drawing shows the positions of two towns, Yatterford (Y) and Rexley (R), on a map.\n\\newline\nThe scale is 1 centimetre represents 15 kilometres.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q08-Map.\n\\newline\npng}\n%\\end{InsertScreenShot}\n\nThe map shows North pointing upwards, with Y at the bottom and R at the top-right of Y.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Write the scale of the map in the form 1 : n.\n\\newline\n\n1 : \\AnswerLine[][]"
+              }
+            ]
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Work out the actual distance of Rexley from Yatterford.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            }
+          },
+          {
+            "label": "(iii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Measure the bearing of Rexley from Yatterford.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            }
+          },
+          {
+            "label": "(iv)",
+            "marks": 5,
+            "content": [
+              {
+                "type": "text",
+                "content": "A hospital is to be built on an area of land between 45 km and 60 km from Yatterford.\n\\newline\nThe bearing of the hospital from Yatterford is between 250° and 295°.\n\\newline\n\nOn the map, construct and shade the region in which the hospital is to be built.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "none",
+              "space": {
+                "type": "drawing",
+                "height": "6cm",
+                "cmd": "Answerspace"
+              }
+            }
+          }
+        ],
+        "_subpartCmd": "item"
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "The bearing of Bartown from Whitestoke is 073°.\n\\newline\n\nWork out the bearing of Whitestoke from Bartown.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        }
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2018March/Paper32/Q08/Q08-BearingDiagram.png"
+      }
+    ],
+    "_rawBody": "\\begin{parts}\n\\item The scale drawing shows the positions of two towns, Yatterford (Y) and Rexley (R), on a map.\nThe scale is 1 centimetre represents 15 kilometres.\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q08-Map.png}\n%\\end{InsertScreenShot}\n\nThe map shows North pointing upwards, with Y at the bottom and R at the top-right of Y.\n\n\\begin{subparts}\n\\item Write the scale of the map in the form 1 : n.\n\n1 : \\AnswerLine[][]\n\n\\Marks{2}\n\n\\item Work out the actual distance of Rexley from Yatterford.\n\n\\AnswerLine[][] km\n\n\\Marks{2}\n\n\\item Measure the bearing of Rexley from Yatterford.\n\n\\AnswerLine[][]°\n\n\\Marks{1}\n\n\\item A hospital is to be built on an area of land between 45 km and 60 km from Yatterford.\nThe bearing of the hospital from Yatterford is between 250° and 295°.\n\nOn the map, construct and shade the region in which the hospital is to be built.\n\n\\Answerspace[6cm]\n\n\\Marks{5}\n\n\\end{subparts}\n\n\\item The bearing of Bartown from Whitestoke is 073°.\n\nWork out the bearing of Whitestoke from Bartown.\n\n\\AnswerLine[][]°\n\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2018March/Paper32/Q08/Q08-BearingDiagram.png"
+    ]
+  },
+  {
+    "id": "0580-2018March-Paper32-Q09",
+    "paper": "2018March-Paper32",
+    "qnum": 9,
+    "marks": 6,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.5",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Equations",
+    "qtype": "forming and solving simultaneous linear equations from word problem",
+    "g": "simul-linear",
+    "src": "0580/32/M/18 Q09",
+    "year": 2018,
+    "session": "March",
+    "tex": "A shop sells pens and notebooks.\n\\newline\nThe cost of a pen is p cents and the cost of a notebook is n cents.\n\\newline\n\n(a) On Monday, the shop sells 5 pens and 4 notebooks for 450 cents.\n\\newline\n\nComplete the equation.\n\\newline\n\n5p + 4n = \n\n(b) On Tuesday, the shop sells 10 pens and 3 notebooks for 525 cents.\n\\newline\n\nWrite this information as an equation.\n\\newline\n\n = \n\n(c) Solve your two equations to find the cost of a pen and the cost of a notebook.\n\\newline\nYou must show all your working.\n\\newline\n\nCost of a pen =  cents\n\nCost of a notebook =  cents",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "On Monday, the shop sells 5 pens and 4 notebooks for 450 cents.\n\\newline\n\nComplete the equation.\n\\newline\n\n5p + 4n = \\AnswerLine[][]"
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "On Tuesday, the shop sells 10 pens and 3 notebooks for 525 cents.\n\\newline\n\nWrite this information as an equation.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "multiline",
+          "lines": 2,
+          "template": "____\\n____",
+          "lineSep": "blank"
+        }
+      },
+      {
+        "label": "(c)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Solve your two equations to find the cost of a pen and the cost of a notebook.\n\\newline\nYou must show all your working.\n\\newline\n\nCost of a pen = \\AnswerLine[][] cents\n\nCost of a notebook = \\AnswerLine[][] cents"
+          }
+        ]
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "A shop sells pens and notebooks.\n\\newline\nThe cost of a pen is p cents and the cost of a notebook is n cents.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "A shop sells pens and notebooks.\nThe cost of a pen is p cents and the cost of a notebook is n cents.\n\n\\begin{parts}\n\\item On Monday, the shop sells 5 pens and 4 notebooks for 450 cents.\n\nComplete the equation.\n\n5p + 4n = \\AnswerLine[][]\n\n\\Marks{1}\n\n\\item On Tuesday, the shop sells 10 pens and 3 notebooks for 525 cents.\n\nWrite this information as an equation.\n\n\\AnswerLine[][] = \\AnswerLine[][]\n\n\\Marks{2}\n\n\\item Solve your two equations to find the cost of a pen and the cost of a notebook.\nYou must show all your working.\n\nCost of a pen = \\AnswerLine[][] cents\n\nCost of a notebook = \\AnswerLine[][] cents\n\n\\Marks{3}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2018March-Paper32-Q10",
+    "paper": "2018March-Paper32",
+    "qnum": 10,
+    "marks": 6,
+    "topics": [
+      "Number",
+      "Algebra and graphs"
+    ],
+    "s": null,
+    "d": 1,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/32/M/18 Q10",
+    "year": 2018,
+    "session": "March",
+    "tex": "Seven students want to join the school diving club.\n\\newline\nSome information about these students is recorded in the table below.\n\\newline\n\n\\begin{tabular}{|l|c|c|c|}\n\\hline\nName & Month and year of birth & Height (metres) & Distance each student can swim (metres) \\\\\n\\hline\nArj & November 2004 & 1.62 & 200 \\\\\n\\hline\nBiva & October 2006 & 1.43 & 500 \\\\\n\\hline\nCala & February 2006 & 1.53 & 1500 \\\\\n\\hline\nDainy & January 2007 & 1.56 & 1000 \\\\\n\\hline\nElu & December 2005 & 1.64 & 600 \\\\\n\\hline\nFul & August 2006 & 1.52 & 1000 \\\\\n\\hline\nGani & January 2006 & 1.46 & 1000 \\\\\n\\hline\n\\end{tabular}\n\nTo join the diving club you must be\n\n• at least 12 years old in March 2018\\\\\nand\\\\\n• at least 150 centimetres tall\\\\\nand\\\\\n• able to swim at least 0.5 kilometres.\n\\newline\n\n(a) Write down the names of the students who can join the club.\n\\newline\n\n(b) The students dive off boards of different heights.\n\\newline\nThe speed, s m/s, that they enter the water from a board of height h metres, can be found using this formula.\n\\newline\n\ns = $\\sqrt{19.6h}$\n\n(i) (c) Calculate the value of s when h = 10.\n\\newline\n\ns = \n\n(d) Make h the subject of the formula.\n\\newline\n\nh =",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down the names of the students who can join the club.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        }
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The students dive off boards of different heights.\n\\newline\nThe speed, s m/s, that they enter the water from a board of height h metres, can be found using this formula.\n\\newline\n\ns = $\\sqrt{19.6h}$"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate the value of s when h = 10.\n\\newline\n\ns = \\AnswerLine[][]"
+              }
+            ]
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Make h the subject of the formula.\n\\newline\n\nh = \\AnswerLine[][]"
+              }
+            ]
+          }
+        ],
+        "_subpartCmd": "item"
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "",
+    "cmd": "rearrange",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Seven students want to join the school diving club.\n\\newline\nSome information about these students is recorded in the table below.\n\\newline\n"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{tabular}{|l|c|c|c|}\n\\hline\nName & Month and year of birth & Height (metres) & Distance each student can swim (metres) \\\\\n\\hline\nArj & November 2004 & 1.62 & 200 \\\\\n\\hline\nBiva & October 2006 & 1.43 & 500 \\\\\n\\hline\nCala & February 2006 & 1.53 & 1500 \\\\\n\\hline\nDainy & January 2007 & 1.56 & 1000 \\\\\n\\hline\nElu & December 2005 & 1.64 & 600 \\\\\n\\hline\nFul & August 2006 & 1.52 & 1000 \\\\\n\\hline\nGani & January 2006 & 1.46 & 1000 \\\\\n\\hline\n\\end{tabular}"
+      },
+      {
+        "type": "text",
+        "content": "To join the diving club you must be\n\n• at least 12 years old in March 2018\\\\\nand\\\\\n• at least 150 centimetres tall\\\\\nand\\\\\n• able to swim at least 0.5 kilometres.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "Seven students want to join the school diving club.\nSome information about these students is recorded in the table below.\n\n\\begin{tabular}{|l|c|c|c|}\n\\hline\nName & Month and year of birth & Height (metres) & Distance each student can swim (metres) \\\\\n\\hline\nArj & November 2004 & 1.62 & 200 \\\\\n\\hline\nBiva & October 2006 & 1.43 & 500 \\\\\n\\hline\nCala & February 2006 & 1.53 & 1500 \\\\\n\\hline\nDainy & January 2007 & 1.56 & 1000 \\\\\n\\hline\nElu & December 2005 & 1.64 & 600 \\\\\n\\hline\nFul & August 2006 & 1.52 & 1000 \\\\\n\\hline\nGani & January 2006 & 1.46 & 1000 \\\\\n\\hline\n\\end{tabular}\n\nTo join the diving club you must be\n\n• at least 12 years old in March 2018\\\\\nand\\\\\n• at least 150 centimetres tall\\\\\nand\\\\\n• able to swim at least 0.5 kilometres.\n\n\\begin{parts}\n\\item Write down the names of the students who can join the club.\n\n\\AnswerLine[][]\n\n\\Marks{2}\n\n\\item The students dive off boards of different heights.\nThe speed, s m/s, that they enter the water from a board of height h metres, can be found using this formula.\n\ns = $\\sqrt{19.6h}$\n\n\\begin{subparts}\n\\item Calculate the value of s when h = 10.\n\ns = \\AnswerLine[][]\n\n\\Marks{2}\n\n\\item Make h the subject of the formula.\n\nh = \\AnswerLine[][]\n\n\\Marks{2}\n\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2018March/Paper32/Q10/Q10-StudentDataTable.png"
+    ]
+  },
+  {
+    "id": "0580-2018March-Paper32-Q11",
+    "paper": "2018March-Paper32",
+    "qnum": 11,
+    "marks": 13,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.10",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Graphs of functions",
+    "qtype": "linear and quadratic graphs, substitution, solving linear equation",
+    "g": "quadratic",
+    "src": "0580/32/M/18 Q11",
+    "year": 2018,
+    "session": "March",
+    "tex": "(a) A, B, C and D are four equations of straight line graphs.\n\\newline\n\nA   $y = -3x + 4$   B   $y = 4x - 3$   C   $y = 3x - 4$   D   $y = -4x - 3$\n\n(i)  Write down the letter of the graph that\n\n(a) passes through the point $(1, -1)$,\n\n(b) has a y-intercept of 4,\n\n(c) has a gradient of $-4$.\n\\newline\n\n(b) The point $(p, -26)$ lies on the line $y = -3x + 4$.\n\\newline\n\nWork out the value of $p$.\n\\newline\n\n(c) Complete the table of values for $y = x^2 - 10x$.\n\\newline\n\n\\begin{tabular}{|c|c|c|c|c|c|c|c|c|}\n\\hline\n$x$ & $-6$ & $-3$ & $0$ & $3$ & $6$ & $9$ & $12$ & $15$ \\\\\n\\hline\n$y$ & $96$ & & $-21$ & & $-24$ & & $24$ & $75$ \\\\\n\\hline\n\\end{tabular}\n\n(d) On the grid, draw the graph of $y = x^2 - 10x$ for $-6 \\leq x \\leq 15$.\n\\newline\n\n(e) Write down the co-ordinates of the lowest point of the graph.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "A, B, C and D are four equations of straight line graphs.\n\\newline\n\nA \\quad $y = -3x + 4$ \\quad B \\quad $y = 4x - 3$ \\quad C \\quad $y = 3x - 4$ \\quad D \\quad $y = -4x - 3$"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Write down the letter of the graph that\n\n(a) passes through the point $(1, -1)$,\n\n\\AnswerLine[][]\n\\Marks{1}\n\n(b) has a y-intercept of 4,\n\n\\AnswerLine[][]\n\\Marks{1}\n\n(c) has a gradient of $-4$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "The point $(p, -26)$ lies on the line $y = -3x + 4$.\n\\newline\n\nWork out the value of $p$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$p = $"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Complete the table of values for $y = x^2 - 10x$.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{tabular}{|c|c|c|c|c|c|c|c|c|}\n\\hline\n$x$ & $-6$ & $-3$ & $0$ & $3$ & $6$ & $9$ & $12$ & $15$ \\\\\n\\hline\n$y$ & $96$ & & $-21$ & & $-24$ & & $24$ & $75$ \\\\\n\\hline\n\\end{tabular}"
+          }
+        ]
+      },
+      {
+        "label": "(d)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "text",
+            "content": "On the grid, draw the graph of $y = x^2 - 10x$ for $-6 \\leq x \\leq 15$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "none",
+          "space": {
+            "type": "drawing",
+            "height": "6cm",
+            "cmd": "Answerspace"
+          }
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(e)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down the co-ordinates of the lowest point of the graph.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "(....., .....)"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2018March/Paper32/Q11/Q11-XYValueTable.png"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2018March/Paper32/Q11/Q11-LinearEquationCards.png"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2018March/Paper32/Q11/Q11-GraphGrid.png"
+      }
+    ],
+    "_rawBody": "\\begin{parts}\n\\item A, B, C and D are four equations of straight line graphs.\n\nA \\quad $y = -3x + 4$ \\quad B \\quad $y = 4x - 3$ \\quad C \\quad $y = 3x - 4$ \\quad D \\quad $y = -4x - 3$\n\n\\begin{subparts}\n\\subpart Write down the letter of the graph that\n\n(a) passes through the point $(1, -1)$,\n\n\\AnswerLine[][]\n\\Marks{1}\n\n(b) has a y-intercept of 4,\n\n\\AnswerLine[][]\n\\Marks{1}\n\n(c) has a gradient of $-4$.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{subparts}\n\n\\item The point $(p, -26)$ lies on the line $y = -3x + 4$.\n\nWork out the value of $p$.\n\n\\AnswerLine[$p = $][]\n\\Marks{2}\n\n\\item Complete the table of values for $y = x^2 - 10x$.\n\n\\begin{tabular}{|c|c|c|c|c|c|c|c|c|}\n\\hline\n$x$ & $-6$ & $-3$ & $0$ & $3$ & $6$ & $9$ & $12$ & $15$ \\\\\n\\hline\n$y$ & $96$ & & $-21$ & & $-24$ & & $24$ & $75$ \\\\\n\\hline\n\\end{tabular}\n\n\\Marks{3}\n\n\\item On the grid, draw the graph of $y = x^2 - 10x$ for $-6 \\leq x \\leq 15$.\n\n\\Answerspace[6cm]\n\\Marks{4}\n\n\\item Write down the co-ordinates of the lowest point of the graph.\n\n\\AnswerLine[][(....., .....)]\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2018March/Paper32/Q11/Q11-GraphGrid.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2018March/Paper32/Q11/Q11-LinearEquationCards.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2018March/Paper32/Q11/Q11-XYValueTable.png"
+    ]
+  }
+]

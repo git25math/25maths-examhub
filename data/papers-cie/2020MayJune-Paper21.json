@@ -1,0 +1,996 @@
+[
+  {
+    "id": "0580-2020MayJune-Paper21-Q01",
+    "paper": "2020MayJune-Paper21",
+    "qnum": 1,
+    "marks": 2,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.4",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Circle theorems",
+    "qtype": "similarity and congruence",
+    "g": "mixed",
+    "src": "0580/21/M/J/20 Q01",
+    "year": 2020,
+    "session": "MayJune",
+    "tex": "**[2020 May/June, 0580/21, Question 1]**\n\nRectangle A measures 3 cm by 8 cm.\n\\newline\n\nFive rectangles congruent to A are joined to make a shape.\n\\newline\n\nWork out the perimeter of this shape.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\noindent\\textbf{[2020 May/June, 0580/21, Question 1]}\\par\n\nRectangle A measures 3 cm by 8 cm.\n\\newline\n\nFive rectangles congruent to A are joined to make a shape.\n\\newline\n\nWork out the perimeter of this shape.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "cm"
+    },
+    "_rawBody": "\\noindent\\textbf{[2020 May/June, 0580/21, Question 1]}\\par\n\nRectangle A measures 3 cm by 8 cm.\n\nFive rectangles congruent to A are joined to make a shape.\n\nWork out the perimeter of this shape.\n\n\\AnswerLine[][cm]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2020MayJune-Paper21-Q02",
+    "paper": "2020MayJune-Paper21",
+    "qnum": 2,
+    "marks": 1,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.1",
+    "d": 2,
+    "cat": "number",
+    "topic": "Types of number",
+    "qtype": "highest common factor and odd numbers",
+    "g": "mixed",
+    "src": "0580/21/M/J/20 Q02",
+    "year": 2020,
+    "session": "MayJune",
+    "tex": "**[2020 May/June, 0580/21, Question 2]**\n\nFind the highest odd number that is a factor of 60 and a factor of 90.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\noindent\\textbf{[2020 May/June, 0580/21, Question 2]}\\par\n\nFind the highest odd number that is a factor of 60 and a factor of 90.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "\\noindent\\textbf{[2020 May/June, 0580/21, Question 2]}\\par\n\nFind the highest odd number that is a factor of 60 and a factor of 90.\n\n\\AnswerLine[][]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2020MayJune-Paper21-Q03",
+    "paper": "2020MayJune-Paper21",
+    "qnum": 3,
+    "marks": 4,
+    "topics": [
+      "Number",
+      "Statistics"
+    ],
+    "s": null,
+    "d": 2,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/21/M/J/20 Q03",
+    "year": 2020,
+    "session": "MayJune",
+    "tex": "**[2020 May/June, 0580/21, Question 3]**\n\nMrs Salaman gives her class two mathematics tests.\n\\newline\nThe scatter diagram shows information about the marks each student scored.\n\\newline\n\n(a) Write down the highest mark scored on test 1.\n\\newline\n\n(b) Write down the type of correlation shown in the scatter diagram.\n\\newline\n\n(c) Draw a line of best fit on the scatter diagram.\n\\newline\n\n(d) Hamish scored a mark of 40 on test 1.\n\\newline\nHe was absent for test 2.\n\\newline\nUse your line of best fit to find an estimate for his mark on test 2.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down the highest mark scored on test 1.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down the type of correlation shown in the scatter diagram.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Draw a line of best fit on the scatter diagram.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "none",
+          "space": {
+            "type": "drawing",
+            "height": "3cm",
+            "cmd": "Answerspace"
+          }
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Hamish scored a mark of 40 on test 1.\n\\newline\nHe was absent for test 2.\n\\newline\nUse your line of best fit to find an estimate for his mark on test 2.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\noindent\\textbf{[2020 May/June, 0580/21, Question 3]}\\par\n\nMrs Salaman gives her class two mathematics tests.\n\\newline\nThe scatter diagram shows information about the marks each student scored.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "\\noindent\\textbf{[2020 May/June, 0580/21, Question 3]}\\par\n\nMrs Salaman gives her class two mathematics tests.\nThe scatter diagram shows information about the marks each student scored.\n\n\\begin{parts}\n\\item Write down the highest mark scored on test 1.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Write down the type of correlation shown in the scatter diagram.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Draw a line of best fit on the scatter diagram.\n\n\\Answerspace[3cm]\n\\Marks{1}\n\n\\item Hamish scored a mark of 40 on test 1.\nHe was absent for test 2.\nUse your line of best fit to find an estimate for his mark on test 2.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2020MayJune-Paper21-Q04",
+    "paper": "2020MayJune-Paper21",
+    "qnum": 4,
+    "marks": 3,
+    "topics": [
+      "Probability"
+    ],
+    "s": "8.3",
+    "d": 2,
+    "cat": "probability",
+    "topic": "Tree diagrams",
+    "qtype": "combined events",
+    "g": "mixed",
+    "src": "0580/21/M/J/20 Q04",
+    "year": 2020,
+    "session": "MayJune",
+    "tex": "**[2020 May/June, 0580/21, Question 4]**\n\nA bag contains blue, red, yellow and green balls only.\n\\newline\nA ball is taken from the bag at random.\n\\newline\nThe table shows some information about the probabilities.\n\\newline\n\n\\begin{tabular}{|c|c|}\n\\hline\nColour & Probability \\\\\n\\hline\nBlue & 0.15 \\\\\n\\hline\nRed & 0.2 \\\\\n\\hline\nYellow & \\\\\n\\hline\nGreen & 0.43 \\\\\n\\hline\n\\end{tabular}\n\n(a) Complete the table.\n\\newline\n\n(b) Abdul takes a ball at random and replaces it in the bag.\n\\newline\nHe does this 200 times.\n\\newline\nFind how many times he expects to take a red ball.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Complete the table.\n\\newline\n"
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Abdul takes a ball at random and replaces it in the bag.\n\\newline\nHe does this 200 times.\n\\newline\nFind how many times he expects to take a red ball.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\noindent\\textbf{[2020 May/June, 0580/21, Question 4]}\\par\n\nA bag contains blue, red, yellow and green balls only.\n\\newline\nA ball is taken from the bag at random.\n\\newline\nThe table shows some information about the probabilities.\n\\newline\n"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{tabular}{|c|c|}\n\\hline\nColour & Probability \\\\\n\\hline\nBlue & 0.15 \\\\\n\\hline\nRed & 0.2 \\\\\n\\hline\nYellow & \\\\\n\\hline\nGreen & 0.43 \\\\\n\\hline\n\\end{tabular}"
+      }
+    ],
+    "_rawBody": "\\noindent\\textbf{[2020 May/June, 0580/21, Question 4]}\\par\n\nA bag contains blue, red, yellow and green balls only.\nA ball is taken from the bag at random.\nThe table shows some information about the probabilities.\n\n\\begin{tabular}{|c|c|}\n\\hline\nColour & Probability \\\\\n\\hline\nBlue & 0.15 \\\\\n\\hline\nRed & 0.2 \\\\\n\\hline\nYellow & \\\\\n\\hline\nGreen & 0.43 \\\\\n\\hline\n\\end{tabular}\n\n\\begin{parts}\n\\item Complete the table.\n\n\\Marks{2}\n\n\\item Abdul takes a ball at random and replaces it in the bag.\nHe does this 200 times.\nFind how many times he expects to take a red ball.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2020MayJune-Paper21-Q05",
+    "paper": "2020MayJune-Paper21",
+    "qnum": 5,
+    "marks": 3,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.7",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Sequences",
+    "qtype": "nth term, sequences",
+    "g": "sequence",
+    "src": "0580/21/M/J/20 Q05",
+    "year": 2020,
+    "session": "MayJune",
+    "tex": "**[2020 May/June, 0580/21, Question 5]**\n\n(a) The nth term of a sequence is $60 - 8n$.\n\\newline\nFind the largest number in this sequence.\n\\newline\n\n(b) Here are the first five terms of a different sequence.\n\\newline\n12, 19, 26, 33, 40\n\nFind an expression for the nth term of this sequence.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "The nth term of a sequence is $60 - 8n$.\n\\newline\nFind the largest number in this sequence.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Here are the first five terms of a different sequence.\n\\newline\n12, 19, 26, 33, 40\n\nFind an expression for the nth term of this sequence.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\noindent\\textbf{[2020 May/June, 0580/21, Question 5]}\\par"
+      }
+    ],
+    "_rawBody": "\\noindent\\textbf{[2020 May/June, 0580/21, Question 5]}\\par\n\n\\begin{parts}\n\\item The nth term of a sequence is $60 - 8n$.\nFind the largest number in this sequence.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Here are the first five terms of a different sequence.\n12, 19, 26, 33, 40\n\nFind an expression for the nth term of this sequence.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2020MayJune-Paper21-Q06",
+    "paper": "2020MayJune-Paper21",
+    "qnum": 6,
+    "marks": 3,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.6",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/21/M/J/20 Q06",
+    "year": 2020,
+    "session": "MayJune",
+    "tex": "**[2020 May/June, 0580/21, Question 6]**\n\nThe diagram shows a trapezium.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\nWork out the value of x.\n\\newline\n\nx =",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\noindent\\textbf{[2020 May/June, 0580/21, Question 6]}\\par\n\nThe diagram shows a trapezium.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q06-Trapezium.\n\\newline\npng}\n%\\end{InsertScreenShot}\n\nWork out the value of x.\n\\newline\n\nx = \\AnswerLine[][]"
+      }
+    ],
+    "_rawBody": "\\noindent\\textbf{[2020 May/June, 0580/21, Question 6]}\\par\n\nThe diagram shows a trapezium.\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q06-Trapezium.png}\n%\\end{InsertScreenShot}\n\nWork out the value of x.\n\nx = \\AnswerLine[][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2020MayJune-Paper21-Q07",
+    "paper": "2020MayJune-Paper21",
+    "qnum": 7,
+    "marks": 1,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.1",
+    "d": 2,
+    "cat": "number",
+    "topic": "Types of number",
+    "qtype": "prime factorization",
+    "g": "mixed",
+    "src": "0580/21/M/J/20 Q07",
+    "year": 2020,
+    "session": "MayJune",
+    "tex": "**[2020 May/June, 0580/21, Question 7]**\n\n$234 = 2^3 \\times 3^2 \\times 13$\n\n$1872 = 2^4 \\times 3^2 \\times 13$\n\n$234 \\times 1872 = 438\\ 048$\n\nUse this information to write 438 048 as a product of its prime factors.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "write",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\noindent\\textbf{[2020 May/June, 0580/21, Question 7]}\\par\n\n$234 = 2^3 \\times 3^2 \\times 13$\n\n$1872 = 2^4 \\times 3^2 \\times 13$\n\n$234 \\times 1872 = 438\\ 048$\n\nUse this information to write 438 048 as a product of its prime factors.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "\\noindent\\textbf{[2020 May/June, 0580/21, Question 7]}\\par\n\n$234 = 2^3 \\times 3^2 \\times 13$\n\n$1872 = 2^4 \\times 3^2 \\times 13$\n\n$234 \\times 1872 = 438\\ 048$\n\nUse this information to write 438 048 as a product of its prime factors.\n\n\\AnswerLine[][]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2020MayJune-Paper21-Q08",
+    "paper": "2020MayJune-Paper21",
+    "qnum": 8,
+    "marks": 4,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.6",
+    "d": 2,
+    "cat": "number",
+    "topic": "Standard form",
+    "qtype": "mixed operations with fractions without calculator",
+    "g": "mixed",
+    "src": "0580/21/M/J/20 Q08",
+    "year": 2020,
+    "session": "MayJune",
+    "tex": "**[2020 May/June, 0580/21, Question 8]**\n\nWithout using a calculator, work out\n\n\\[\\frac{6}{7} \\times 2 - \\frac{3}{8} \\div \\frac{25}{1}\\]\n\nYou must show all your working and give your answer as a fraction in its simplest form.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\noindent\\textbf{[2020 May/June, 0580/21, Question 8]}\\par\n\nWithout using a calculator, work out\n\n\\[\\frac{6}{7} \\times 2 - \\frac{3}{8} \\div \\frac{25}{1}\\]\n\nYou must show all your working and give your answer as a fraction in its simplest form.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "\\noindent\\textbf{[2020 May/June, 0580/21, Question 8]}\\par\n\nWithout using a calculator, work out\n\n\\[\\frac{6}{7} \\times 2 - \\frac{3}{8} \\div \\frac{25}{1}\\]\n\nYou must show all your working and give your answer as a fraction in its simplest form.\n\n\\AnswerLine[][]\n\\Marks{4}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2020MayJune-Paper21-Q09",
+    "paper": "2020MayJune-Paper21",
+    "qnum": 9,
+    "marks": 5,
+    "topics": [
+      "Number",
+      "Algebra and graphs"
+    ],
+    "s": "2.2",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Rearranging formulae",
+    "qtype": "factorisation",
+    "g": "simplify",
+    "src": "0580/21/M/J/20 Q09",
+    "year": 2020,
+    "session": "MayJune",
+    "tex": "**[2020 May/June, 0580/21, Question 9]**\n\nFactorise completely.\n\\newline\n\n(a) $21a^2 + 28ab$\n\n(b) $20x^2 - 45y^2$",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "$21a^2 + 28ab$"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "$20x^2 - 45y^2$"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\noindent\\textbf{[2020 May/June, 0580/21, Question 9]}\\par\n\nFactorise completely.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "\\noindent\\textbf{[2020 May/June, 0580/21, Question 9]}\\par\n\nFactorise completely.\n\n\\begin{parts}\n\\item $21a^2 + 28ab$\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item $20x^2 - 45y^2$\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2020MayJune-Paper21-Q10",
+    "paper": "2020MayJune-Paper21",
+    "qnum": 10,
+    "marks": 2,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.7",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Nets and 3D shapes",
+    "qtype": "circle theorems",
+    "g": "mixed",
+    "src": "0580/21/M/J/20 Q10",
+    "year": 2020,
+    "session": "MayJune",
+    "tex": "**[2020 May/June, 0580/21, Question 10]**\n\nPoints A, B, C, D, E and F lie on the circle, centre O.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\nFind the value of x and the value of y.\n\\newline\n\nx =  , y =",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\noindent\\textbf{[2020 May/June, 0580/21, Question 10]}\\par\n\nPoints A, B, C, D, E and F lie on the circle, centre O.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q10-Circle.\n\\newline\npng}\n%\\end{InsertScreenShot}\n\nFind the value of x and the value of y.\n\\newline\n\nx = \\AnswerLine[][] , y = \\AnswerLine[][]"
+      }
+    ],
+    "_rawBody": "\\noindent\\textbf{[2020 May/June, 0580/21, Question 10]}\\par\n\nPoints A, B, C, D, E and F lie on the circle, centre O.\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q10-Circle.png}\n%\\end{InsertScreenShot}\n\nFind the value of x and the value of y.\n\nx = \\AnswerLine[][] , y = \\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2020MayJune-Paper21-Q11",
+    "paper": "2020MayJune-Paper21",
+    "qnum": 11,
+    "marks": 3,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.12",
+    "d": 2,
+    "cat": "number",
+    "topic": "Set notation",
+    "qtype": "calculate distance from speed-time graph, rates calculation",
+    "g": "graph",
+    "src": "0580/21/M/J/20 Q11",
+    "year": 2020,
+    "session": "MayJune",
+    "tex": "**[2020 May/June, 0580/21, Question 11]**\n\nThe diagram shows the speed–time graph for 90 seconds of a journey.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\nCalculate the total distance travelled during the 90 seconds.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\noindent\\textbf{[2020 May/June, 0580/21, Question 11]}\\par\n\nThe diagram shows the speed–time graph for 90 seconds of a journey.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q11-SpeedTimeGraph.\n\\newline\npng}\n%\\end{InsertScreenShot}\n\nCalculate the total distance travelled during the 90 seconds.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "m"
+    },
+    "_rawBody": "\\noindent\\textbf{[2020 May/June, 0580/21, Question 11]}\\par\n\nThe diagram shows the speed–time graph for 90 seconds of a journey.\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q11-SpeedTimeGraph.png}\n%\\end{InsertScreenShot}\n\nCalculate the total distance travelled during the 90 seconds.\n\n\\AnswerLine[][m]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2020MayJune-Paper21-Q12",
+    "paper": "2020MayJune-Paper21",
+    "qnum": 12,
+    "marks": 4,
+    "topics": [
+      "Statistics"
+    ],
+    "s": "9.6",
+    "d": 2,
+    "cat": "statistics",
+    "topic": "Cumulative frequency",
+    "qtype": "cumulative frequency",
+    "g": "mixed",
+    "src": "0580/21/M/J/20 Q12",
+    "year": 2020,
+    "session": "MayJune",
+    "tex": "**[2020 May/June, 0580/21, Question 12]**\n\nGemma records the times, in seconds, taken for a group of children and a group of adults to complete a puzzle.\n\\newline\nThe box-and-whisker plot shows information about the times taken for the children to complete the puzzle.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\n(a) Find the interquartile range of the times taken for the children to complete the puzzle.\n\\newline\n\n(b) The table shows some information about the times, in seconds, taken for the adults to complete the puzzle.\n\\newline\n\n\\begin{tabular}{|c|c|}\n\\hline\n & Adults \\\\\n\\hline\nMinimum & 28 \\\\\n\\hline\nLower quartile & 42 \\\\\n\\hline\nMedian & 58 \\\\\n\\hline\nUpper quartile & 70 \\\\\n\\hline\nMaximum & 75 \\\\\n\\hline\n\\end{tabular}\n\nOn the grid above, draw the box-and-whisker plot for the adults.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the interquartile range of the times taken for the children to complete the puzzle.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "seconds"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "The table shows some information about the times, in seconds, taken for the adults to complete the puzzle.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{tabular}{|c|c|}\n\\hline\n & Adults \\\\\n\\hline\nMinimum & 28 \\\\\n\\hline\nLower quartile & 42 \\\\\n\\hline\nMedian & 58 \\\\\n\\hline\nUpper quartile & 70 \\\\\n\\hline\nMaximum & 75 \\\\\n\\hline\n\\end{tabular}"
+          },
+          {
+            "type": "text",
+            "content": "On the grid above, draw the box-and-whisker plot for the adults.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "none",
+          "space": {
+            "type": "drawing",
+            "height": "4cm",
+            "cmd": "Answerspace"
+          }
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\noindent\\textbf{[2020 May/June, 0580/21, Question 12]}\\par\n\nGemma records the times, in seconds, taken for a group of children and a group of adults to complete a puzzle.\n\\newline\nThe box-and-whisker plot shows information about the times taken for the children to complete the puzzle.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q12-BoxPlot.\n\\newline\npng}\n%\\end{InsertScreenShot}"
+      }
+    ],
+    "_rawBody": "\\noindent\\textbf{[2020 May/June, 0580/21, Question 12]}\\par\n\nGemma records the times, in seconds, taken for a group of children and a group of adults to complete a puzzle.\nThe box-and-whisker plot shows information about the times taken for the children to complete the puzzle.\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q12-BoxPlot.png}\n%\\end{InsertScreenShot}\n\n\\begin{parts}\n\\item Find the interquartile range of the times taken for the children to complete the puzzle.\n\n\\AnswerLine[][seconds]\n\\Marks{2}\n\n\\item The table shows some information about the times, in seconds, taken for the adults to complete the puzzle.\n\n\\begin{tabular}{|c|c|}\n\\hline\n & Adults \\\\\n\\hline\nMinimum & 28 \\\\\n\\hline\nLower quartile & 42 \\\\\n\\hline\nMedian & 58 \\\\\n\\hline\nUpper quartile & 70 \\\\\n\\hline\nMaximum & 75 \\\\\n\\hline\n\\end{tabular}\n\nOn the grid above, draw the box-and-whisker plot for the adults.\n\n\\Answerspace[4cm]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2020MayJune-Paper21-Q13",
+    "paper": "2020MayJune-Paper21",
+    "qnum": 13,
+    "marks": 5,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.6",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/21/M/J/20 Q13",
+    "year": 2020,
+    "session": "MayJune",
+    "tex": "**[2020 May/June, 0580/21, Question 13]**\n\n%\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\nC lies on a circle with diameter AD.\n\\newline\nB lies on AC and E lies on AD such that BE is parallel to CD.\n\\newline\nAB = 21 cm, CD = 18 cm and BE = 13.5 cm.\n\\newline\nWork out the radius of the circle.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\noindent\\textbf{[2020 May/June, 0580/21, Question 13]}\\par\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q13-CircleGeometry.\n\\newline\npng}\n%\\end{InsertScreenShot}\n\nC lies on a circle with diameter AD.\n\\newline\nB lies on AC and E lies on AD such that BE is parallel to CD.\n\\newline\nAB = 21 cm, CD = 18 cm and BE = 13.5 cm.\n\\newline\nWork out the radius of the circle.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "cm"
+    },
+    "_rawBody": "\\noindent\\textbf{[2020 May/June, 0580/21, Question 13]}\\par\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q13-CircleGeometry.png}\n%\\end{InsertScreenShot}\n\nC lies on a circle with diameter AD.\nB lies on AC and E lies on AD such that BE is parallel to CD.\nAB = 21 cm, CD = 18 cm and BE = 13.5 cm.\nWork out the radius of the circle.\n\n\\AnswerLine[][cm]\n\\Marks{5}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2020MayJune-Paper21-Q14",
+    "paper": "2020MayJune-Paper21",
+    "qnum": 14,
+    "marks": 5,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.13",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Functions",
+    "qtype": "composite functions, inverse functions",
+    "g": "function",
+    "src": "0580/21/M/J/20 Q14",
+    "year": 2020,
+    "session": "MayJune",
+    "tex": "**[2020 May/June, 0580/21, Question 14]**\n\n(a) $f(x) = 4x + 3$\n\n$g(x) = 5x - 4$\n\n$fg(x) = 20x + p$\n\nFind the value of p.\n\\newline\n\np = \n\n(b) $h(x) = \\dfrac{5x - 1}{3}$\n\nFind $h^{-1}(x)$.\n\\newline\n\n$h^{-1}(x) = $",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "$f(x) = 4x + 3$\n\n$g(x) = 5x - 4$\n\n$fg(x) = 20x + p$\n\nFind the value of p.\n\\newline\n\np = \\AnswerLine[][]"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "$h(x) = \\dfrac{5x - 1}{3}$\n\nFind $h^{-1}(x)$.\n\\newline\n\n$h^{-1}(x) = $ \\AnswerLine[][]"
+          }
+        ],
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\noindent\\textbf{[2020 May/June, 0580/21, Question 14]}\\par"
+      }
+    ],
+    "_rawBody": "\\noindent\\textbf{[2020 May/June, 0580/21, Question 14]}\\par\n\n\\begin{parts}\n\\item $f(x) = 4x + 3$\n\n$g(x) = 5x - 4$\n\n$fg(x) = 20x + p$\n\nFind the value of p.\n\np = \\AnswerLine[][]\n\\Marks{2}\n\n\\item $h(x) = \\dfrac{5x - 1}{3}$\n\nFind $h^{-1}(x)$.\n\n$h^{-1}(x) = $ \\AnswerLine[][]\n\\Marks{3}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2020MayJune-Paper21-Q15",
+    "paper": "2020MayJune-Paper21",
+    "qnum": 15,
+    "marks": 3,
+    "topics": [
+      "Geometry",
+      "Trigonometry"
+    ],
+    "s": "4.7",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Nets and 3D shapes",
+    "qtype": "circle theorems",
+    "g": "mixed",
+    "src": "0580/21/M/J/20 Q15",
+    "year": 2020,
+    "session": "MayJune",
+    "tex": "**[2020 May/June, 0580/21, Question 15]**\n\nP, R and Q are points on the circle.\n\\newline\nAB is a tangent to the circle at Q.\n\\newline\nQR bisects angle PQB.\n\\newline\nAngle BQR = x° and x < 60.\n\\newline\nUse this information to show that triangle PQR is an isosceles triangle.\n\\newline\nGive a geometrical reason for each step of your work.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "analyse",
+    "cmd": "show",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\noindent\\textbf{[2020 May/June, 0580/21, Question 15]}\\par\n\nP, R and Q are points on the circle.\n\\newline\nAB is a tangent to the circle at Q.\n\\newline\nQR bisects angle PQB.\n\\newline\nAngle BQR = x° and x < 60.\n\\newline\nUse this information to show that triangle PQR is an isosceles triangle.\n\\newline\nGive a geometrical reason for each step of your work.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q15-CircleTangent.\n\\newline\npng}\n%\\end{InsertScreenShot}"
+      }
+    ],
+    "answer": {
+      "type": "none",
+      "space": {
+        "type": "drawing",
+        "height": "4cm",
+        "cmd": "Answerspace"
+      }
+    },
+    "_rawBody": "\\noindent\\textbf{[2020 May/June, 0580/21, Question 15]}\\par\n\nP, R and Q are points on the circle.\nAB is a tangent to the circle at Q.\nQR bisects angle PQB.\nAngle BQR = x° and x < 60.\nUse this information to show that triangle PQR is an isosceles triangle.\nGive a geometrical reason for each step of your work.\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q15-CircleTangent.png}\n%\\end{InsertScreenShot}\n\n\\Answerspace[4cm]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2020MayJune-Paper21-Q16",
+    "paper": "2020MayJune-Paper21",
+    "qnum": 16,
+    "marks": 3,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.8",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Proportion",
+    "qtype": "inverse proportion calculation",
+    "g": "function",
+    "src": "0580/21/M/J/20 Q16",
+    "year": 2020,
+    "session": "MayJune",
+    "tex": "**[2020 May/June, 0580/21, Question 16]**\n\n$m$ is inversely proportional to the square of $(p - 1)$.\n\\newline\nWhen $p = 4$, $m = 5$.\n\\newline\nFind $m$ when $p = 6$.\n\\newline\n\nm =",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\noindent\\textbf{[2020 May/June, 0580/21, Question 16]}\\par\n\n$m$ is inversely proportional to the square of $(p - 1)$.\n\\newline\nWhen $p = 4$, $m = 5$.\n\\newline\nFind $m$ when $p = 6$.\n\\newline\n\nm = \\AnswerLine[][]"
+      }
+    ],
+    "_rawBody": "\\noindent\\textbf{[2020 May/June, 0580/21, Question 16]}\\par\n\n$m$ is inversely proportional to the square of $(p - 1)$.\nWhen $p = 4$, $m = 5$.\nFind $m$ when $p = 6$.\n\nm = \\AnswerLine[][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2020MayJune-Paper21-Q17",
+    "paper": "2020MayJune-Paper21",
+    "qnum": 17,
+    "marks": 5,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.6",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/21/M/J/20 Q17",
+    "year": 2020,
+    "session": "MayJune",
+    "tex": "**[2020 May/June, 0580/21, Question 17]**\n\n(a) (i) (b) $m = \\frac{5}{7}$\n\n    Find $3m$.\n\\newline\n\n    \n\n(c) $VW = \\frac{10}{24}$\n\n    Find $VW$.\n\\newline\n\n    \n\n(d) OABC is a parallelogram.\n\\newline\nOA = p and OC = q.\n\\newline\nE is the point on AB such that AE : EB = 3 : 1.\n\\newline\nFind OE, in terms of p and q, in its simplest form.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\nOE =",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "$m = \\frac{5}{7}$\n\n    Find $3m$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "$VW = \\frac{10}{24}$\n\n    Find $VW$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_itemInlineSubparts": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "OABC is a parallelogram.\n\\newline\nOA = p and OC = q.\n\\newline\nE is the point on AB such that AE : EB = 3 : 1.\n\\newline\nFind OE, in terms of p and q, in its simplest form.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q17-Parallelogram.\n\\newline\npng}\n%\\end{InsertScreenShot}\n\nOE = \\AnswerLine[][]"
+          }
+        ],
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\noindent\\textbf{[2020 May/June, 0580/21, Question 17]}\\par"
+      }
+    ],
+    "_rawBody": "\\noindent\\textbf{[2020 May/June, 0580/21, Question 17]}\\par\n\n\\begin{parts}\n\\item \\begin{subparts}\n    \\item $m = \\frac{5}{7}$\n\n    Find $3m$.\n\n    \\AnswerLine[][]\n    \\Marks{1}\n\n    \\item $VW = \\frac{10}{24}$\n\n    Find $VW$.\n\n    \\AnswerLine[][]\n    \\Marks{2}\n\n    \\end{subparts}\n\n\\item OABC is a parallelogram.\nOA = p and OC = q.\nE is the point on AB such that AE : EB = 3 : 1.\nFind OE, in terms of p and q, in its simplest form.\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q17-Parallelogram.png}\n%\\end{InsertScreenShot}\n\nOE = \\AnswerLine[][]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2020MayJune-Paper21-Q18",
+    "paper": "2020MayJune-Paper21",
+    "qnum": 18,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.10",
+    "d": 2,
+    "cat": "number",
+    "topic": "Time",
+    "qtype": "upper bound calculation",
+    "g": "mixed",
+    "src": "0580/21/M/J/20 Q18",
+    "year": 2020,
+    "session": "MayJune",
+    "tex": "**[2020 May/June, 0580/21, Question 18]**\n\nP = 2(w + h)\nw = 12 correct to the nearest whole number.\n\\newline\nh = 4 correct to the nearest whole number.\n\\newline\nWork out the upper bound for the value of P.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\noindent\\textbf{[2020 May/June, 0580/21, Question 18]}\\par\n\nP = 2(w + h)\nw = 12 correct to the nearest whole number.\n\\newline\nh = 4 correct to the nearest whole number.\n\\newline\nWork out the upper bound for the value of P.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "\\noindent\\textbf{[2020 May/June, 0580/21, Question 18]}\\par\n\nP = 2(w + h)\nw = 12 correct to the nearest whole number.\nh = 4 correct to the nearest whole number.\nWork out the upper bound for the value of P.\n\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2020MayJune-Paper21-Q19",
+    "paper": "2020MayJune-Paper21",
+    "qnum": 19,
+    "marks": 5,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.6",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/21/M/J/20 Q19",
+    "year": 2020,
+    "session": "MayJune",
+    "tex": "**[2020 May/June, 0580/21, Question 19]**\n\nThe diagram shows cuboid ABCDEFGH of length 20 cm and width 5.5 cm.\n\\newline\nThe volume of the cuboid is 495 cm$^3$.\n\\newline\nFind the angle between the line AG and the base of the cuboid ABCD.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\noindent\\textbf{[2020 May/June, 0580/21, Question 19]}\\par\n\nThe diagram shows cuboid ABCDEFGH of length 20 cm and width 5.5 cm.\n\\newline\nThe volume of the cuboid is 495 cm$^3$.\n\\newline\nFind the angle between the line AG and the base of the cuboid ABCD.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q19-Cuboid.\n\\newline\npng}\n%\\end{InsertScreenShot}"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "\\noindent\\textbf{[2020 May/June, 0580/21, Question 19]}\\par\n\nThe diagram shows cuboid ABCDEFGH of length 20 cm and width 5.5 cm.\nThe volume of the cuboid is 495 cm$^3$.\nFind the angle between the line AG and the base of the cuboid ABCD.\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q19-Cuboid.png}\n%\\end{InsertScreenShot}\n\n\\AnswerLine[][]\n\\Marks{5}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2020MayJune-Paper21-Q20",
+    "paper": "2020MayJune-Paper21",
+    "qnum": 20,
+    "marks": 1,
+    "topics": [
+      "Number"
+    ],
+    "s": null,
+    "d": 2,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/21/M/J/20 Q20",
+    "year": 2020,
+    "session": "MayJune",
+    "tex": "**[2020 May/June, 0580/21, Question 20]**\n\nThe curve $y = x^2 - 2x + 1$ is drawn on a grid.\n\\newline\nA line is drawn on the same grid.\n\\newline\nThe points of intersection of the line and the curve are used to solve the equation $x^2 - 7x + 5 = 0$.\n\\newline\nFind the equation of the line in the form $y = mx + c$.\n\\newline\n\ny =",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "",
+    "cmd": "solve",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\noindent\\textbf{[2020 May/June, 0580/21, Question 20]}\\par\n\nThe curve $y = x^2 - 2x + 1$ is drawn on a grid.\n\\newline\nA line is drawn on the same grid.\n\\newline\nThe points of intersection of the line and the curve are used to solve the equation $x^2 - 7x + 5 = 0$.\n\\newline\nFind the equation of the line in the form $y = mx + c$.\n\\newline\n\ny = \\AnswerLine[][]"
+      }
+    ],
+    "_rawBody": "\\noindent\\textbf{[2020 May/June, 0580/21, Question 20]}\\par\n\nThe curve $y = x^2 - 2x + 1$ is drawn on a grid.\nA line is drawn on the same grid.\nThe points of intersection of the line and the curve are used to solve the equation $x^2 - 7x + 5 = 0$.\nFind the equation of the line in the form $y = mx + c$.\n\ny = \\AnswerLine[][]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2020MayJune-Paper21-Q21",
+    "paper": "2020MayJune-Paper21",
+    "qnum": 21,
+    "marks": 3,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.2",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Rearranging formulae",
+    "qtype": "expanding and simplifying algebraic expression",
+    "g": "simplify",
+    "src": "0580/21/M/J/20 Q21",
+    "year": 2020,
+    "session": "MayJune",
+    "tex": "**[2020 May/June, 0580/21, Question 21]**\n\nExpand and simplify $(x + 3)(x - 5)(3x - 1)$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\noindent\\textbf{[2020 May/June, 0580/21, Question 21]}\\par\n\nExpand and simplify $(x + 3)(x - 5)(3x - 1)$.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "\\noindent\\textbf{[2020 May/June, 0580/21, Question 21]}\\par\n\nExpand and simplify $(x + 3)(x - 5)(3x - 1)$.\n\n\\AnswerLine[][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2020MayJune-Paper21-Q22",
+    "paper": "2020MayJune-Paper21",
+    "qnum": 22,
+    "marks": 3,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.6",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/21/M/J/20 Q22",
+    "year": 2020,
+    "session": "MayJune",
+    "tex": "**[2020 May/June, 0580/21, Question 22]**\n\nFind the area of a regular hexagon with side length 7.4 cm.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\noindent\\textbf{[2020 May/June, 0580/21, Question 22]}\\par\n\nFind the area of a regular hexagon with side length 7.4 cm.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "cm$^2$"
+    },
+    "_rawBody": "\\noindent\\textbf{[2020 May/June, 0580/21, Question 22]}\\par\n\nFind the area of a regular hexagon with side length 7.4 cm.\n\n\\AnswerLine[][cm$^2$]\n\\Marks{3}",
+    "_compactMarks": true
+  }
+]

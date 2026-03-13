@@ -1,0 +1,981 @@
+[
+  {
+    "id": "0580-2021March-Paper22-Q01",
+    "paper": "2021March-Paper22",
+    "qnum": 1,
+    "marks": 3,
+    "topics": [
+      "Geometry",
+      "Transformations and vectors"
+    ],
+    "s": "4.5",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Similarity and congruence",
+    "qtype": "symmetry",
+    "g": "mixed",
+    "src": "0580/22/M/21 Q01",
+    "year": 2021,
+    "session": "March",
+    "tex": "%\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\n(a) Complete this statement.\n\\newline\n\nThe diagram has rotational symmetry of order \n\n(b) On the diagram, draw all the lines of symmetry.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Complete this statement.\n\\newline\n\nThe diagram has rotational symmetry of order \\AnswerLine[][]"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "On the diagram, draw all the lines of symmetry.\n\\newline\n"
+          }
+        ],
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "text",
+        "content": "%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q01-Diagram.\n\\newline\npng}\n%\\end{InsertScreenShot}"
+      }
+    ],
+    "_rawBody": "%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q01-Diagram.png}\n%\\end{InsertScreenShot}\n\n\\begin{parts}\n\\item Complete this statement.\n\nThe diagram has rotational symmetry of order \\AnswerLine[][]\n\\Marks{1}\n\n\\item On the diagram, draw all the lines of symmetry.\n\\Marks{2}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2021March-Paper22-Q02",
+    "paper": "2021March-Paper22",
+    "qnum": 2,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.11",
+    "d": 2,
+    "cat": "number",
+    "topic": "Money and finance",
+    "qtype": "divide quantity in a given ratio",
+    "g": "mixed",
+    "src": "0580/22/M/21 Q02",
+    "year": 2021,
+    "session": "March",
+    "tex": "Sahil and Anika share \\$78 in the ratio 5 : 8.\n\\newline\n\nCalculate the amount each receives.\n\\newline\n\nSahil \\$ \n\nAnika \\$",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Sahil and Anika share \\$78 in the ratio 5 : 8.\n\\newline\n\nCalculate the amount each receives.\n\\newline\n\nSahil \\$ \\AnswerLine[][]\n\nAnika \\$ \\AnswerLine[][]"
+      }
+    ],
+    "_rawBody": "Sahil and Anika share \\$78 in the ratio 5 : 8.\n\nCalculate the amount each receives.\n\nSahil \\$ \\AnswerLine[][]\n\nAnika \\$ \\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2021March-Paper22-Q03",
+    "paper": "2021March-Paper22",
+    "qnum": 3,
+    "marks": 3,
+    "topics": [
+      "Statistics"
+    ],
+    "s": "9.4",
+    "d": 2,
+    "cat": "statistics",
+    "topic": "Charts and graphs",
+    "qtype": "statistical charts",
+    "g": "mixed",
+    "src": "0580/22/M/21 Q03",
+    "year": 2021,
+    "session": "March",
+    "tex": "The number of passengers on a bus is recorded each day for 14 days.\n\\newline\n\n$15 \\quad 18 \\quad 22 \\quad 17 \\quad 35 \\quad 38 \\quad 24$ \\\\\n$19 \\quad 19 \\quad 24 \\quad 25 \\quad 31 \\quad 36 \\quad 29$\n\n(a) Complete the stem-and-leaf diagram.\n\\newline\n\n\\begin{tabular}{r|p{8cm}}\n1 & \\\\\n2 & \\\\\n3 & \\\\\n\\end{tabular}\n Key: $1 \\mid 5$ represents 15 passengers \n\n(b) Find the median.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Complete the stem-and-leaf diagram.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{center}\n\\begin{tabular}{r|p{8cm}}\n1 & \\\\\n2 & \\\\\n3 & \\\\\n\\end{tabular}\n\\end{center}"
+          },
+          {
+            "type": "text",
+            "content": "\\hfill Key: $1 \\mid 5$ represents 15 passengers \\hfill"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the median.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The number of passengers on a bus is recorded each day for 14 days.\n\\newline\n\n\\hfill\n\\begin{minipage}{0.8\\textwidth}\n\\centering\n$15 \\quad 18 \\quad 22 \\quad 17 \\quad 35 \\quad 38 \\quad 24$ \\\\\n$19 \\quad 19 \\quad 24 \\quad 25 \\quad 31 \\quad 36 \\quad 29$\n\\end{minipage}\n\\hfill"
+      }
+    ],
+    "_rawBody": "The number of passengers on a bus is recorded each day for 14 days.\n\n\\hfill\n\\begin{minipage}{0.8\\textwidth}\n\\centering\n$15 \\quad 18 \\quad 22 \\quad 17 \\quad 35 \\quad 38 \\quad 24$ \\\\\n$19 \\quad 19 \\quad 24 \\quad 25 \\quad 31 \\quad 36 \\quad 29$\n\\end{minipage}\n\\hfill\n\n\\begin{parts}\n\\item Complete the stem-and-leaf diagram.\n\n\\begin{center}\n\\begin{tabular}{r|p{8cm}}\n1 & \\\\\n2 & \\\\\n3 & \\\\\n\\end{tabular}\n\\end{center}\n\n\\hfill Key: $1 \\mid 5$ represents 15 passengers \\hfill\n\\Marks{2}\n\n\\item Find the median.\n\n\\AnswerLine[][]\n\\Marks{1}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2021March-Paper22-Q04",
+    "paper": "2021March-Paper22",
+    "qnum": 4,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.9",
+    "d": 2,
+    "cat": "number",
+    "topic": "Percentages",
+    "qtype": "estimation using significant figures",
+    "g": "mixed",
+    "src": "0580/22/M/21 Q04",
+    "year": 2021,
+    "session": "March",
+    "tex": "By writing each number correct to 1 significant figure, find an estimate for the value of\n\\[\n\\dfrac{2.8 \\times 82.6}{27.8 - 13.9}\n\\]",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "By writing each number correct to 1 significant figure, find an estimate for the value of\n\\[\n\\dfrac{2.8 \\times 82.6}{27.8 - 13.9}\n\\]"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "By writing each number correct to 1 significant figure, find an estimate for the value of\n\\[\n\\dfrac{2.8 \\times 82.6}{27.8 - 13.9}\n\\]\n\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2021March-Paper22-Q05",
+    "paper": "2021March-Paper22",
+    "qnum": 5,
+    "marks": 1,
+    "topics": [
+      "Statistics"
+    ],
+    "s": "9.5",
+    "d": 2,
+    "cat": "statistics",
+    "topic": "Scatter diagrams",
+    "qtype": "scatter diagrams",
+    "g": "mixed",
+    "src": "0580/22/M/21 Q05",
+    "year": 2021,
+    "session": "March",
+    "tex": "The number of bowls of hot soup sold decreases when the temperature rises.\n\\newline\n\nWhat type of correlation does this statement describe?",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "describe",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The number of bowls of hot soup sold decreases when the temperature rises.\n\\newline\n\nWhat type of correlation does this statement describe?"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "The number of bowls of hot soup sold decreases when the temperature rises.\n\nWhat type of correlation does this statement describe?\n\n\\AnswerLine[][]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2021March-Paper22-Q06",
+    "paper": "2021March-Paper22",
+    "qnum": 6,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.4",
+    "d": 2,
+    "cat": "number",
+    "topic": "Fractions, decimals and percentages",
+    "qtype": "fraction problem solving (reverse)",
+    "g": "mixed",
+    "src": "0580/22/M/21 Q06",
+    "year": 2021,
+    "session": "March",
+    "tex": "Joseph spends $\\dfrac{5}{24}$ of one week’s earnings to buy a jacket.\n\\newline\nThe cost of the jacket is \\$56.50.\n\\newline\n\nCalculate the amount Joseph earns in a week.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Joseph spends $\\dfrac{5}{24}$ of one week’s earnings to buy a jacket.\n\\newline\nThe cost of the jacket is \\$56.50.\n\\newline\n\nCalculate the amount Joseph earns in a week.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "$\\$ $"
+    },
+    "_rawBody": "Joseph spends $\\dfrac{5}{24}$ of one week’s earnings to buy a jacket.\nThe cost of the jacket is \\$56.50.\n\nCalculate the amount Joseph earns in a week.\n\n\\AnswerLine[][$\\$ $][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2021March-Paper22-Q07",
+    "paper": "2021March-Paper22",
+    "qnum": 7,
+    "marks": 3,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.6",
+    "d": 2,
+    "cat": "number",
+    "topic": "Standard form",
+    "qtype": "multiplication of mixed numbers",
+    "g": "mixed",
+    "src": "0580/22/M/21 Q07",
+    "year": 2021,
+    "session": "March",
+    "tex": "Without using a calculator, work out $2 \\dfrac{1}{4} \\times 3 \\dfrac{2}{3}$.\n\\newline\nYou must show all your working and give your answer as a mixed number in its simplest form.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Without using a calculator, work out $2 \\dfrac{1}{4} \\times 3 \\dfrac{2}{3}$.\n\\newline\nYou must show all your working and give your answer as a mixed number in its simplest form.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Without using a calculator, work out $2 \\dfrac{1}{4} \\times 3 \\dfrac{2}{3}$.\nYou must show all your working and give your answer as a mixed number in its simplest form.\n\n\\AnswerLine[][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2021March-Paper22-Q08",
+    "paper": "2021March-Paper22",
+    "qnum": 8,
+    "marks": 1,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.4",
+    "d": 2,
+    "cat": "number",
+    "topic": "Fractions, decimals and percentages",
+    "qtype": "convert recurring decimal to fraction",
+    "g": "mixed",
+    "src": "0580/22/M/21 Q08",
+    "year": 2021,
+    "session": "March",
+    "tex": "Write $0.3\\dot{7}$ as a fraction.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "write",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Write $0.3\\dot{7}$ as a fraction.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Write $0.3\\dot{7}$ as a fraction.\n\n\\AnswerLine[][]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2021March-Paper22-Q09",
+    "paper": "2021March-Paper22",
+    "qnum": 9,
+    "marks": 1,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.8",
+    "d": 2,
+    "cat": "number",
+    "topic": "Ratio, rate and proportion",
+    "qtype": "addition of numbers in standard form",
+    "g": "mixed",
+    "src": "0580/22/M/21 Q09",
+    "year": 2021,
+    "session": "March",
+    "tex": "Calculate $4.8 \\times 10^{6} + 3.7 \\times 10^{7}$.\n\\newline\nGive your answer in standard form.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Calculate $4.8 \\times 10^{6} + 3.7 \\times 10^{7}$.\n\\newline\nGive your answer in standard form.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Calculate $4.8 \\times 10^{6} + 3.7 \\times 10^{7}$.\nGive your answer in standard form.\n\n\\AnswerLine[][]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2021March-Paper22-Q10",
+    "paper": "2021March-Paper22",
+    "qnum": 10,
+    "marks": 2,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.3",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Symmetry",
+    "qtype": "scale drawings and bearings",
+    "g": "mixed",
+    "src": "0580/22/M/21 Q10",
+    "year": 2021,
+    "session": "March",
+    "tex": "%\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\nOn a map, the positions of the towns $L$, $M$ and $N$ form an equilateral triangle.\n\\newline\nThe bearing of $M$ from $L$ is $103^\\circ$.\n\\newline\n\nWork out the bearing of $L$ from $N$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q10-Map.\n\\newline\npng}\n%\\end{InsertScreenShot}\n\nOn a map, the positions of the towns $L$, $M$ and $N$ form an equilateral triangle.\n\\newline\nThe bearing of $M$ from $L$ is $103^\\circ$.\n\\newline\n\nWork out the bearing of $L$ from $N$.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q10-Map.png}\n%\\end{InsertScreenShot}\n\nOn a map, the positions of the towns $L$, $M$ and $N$ form an equilateral triangle.\nThe bearing of $M$ from $L$ is $103^\\circ$.\n\nWork out the bearing of $L$ from $N$.\n\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2021March-Paper22-Q11",
+    "paper": "2021March-Paper22",
+    "qnum": 11,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.1",
+    "d": 2,
+    "cat": "number",
+    "topic": "Types of number",
+    "qtype": "HCF calculation",
+    "g": "mixed",
+    "src": "0580/22/M/21 Q11",
+    "year": 2021,
+    "session": "March",
+    "tex": "Find the highest common factor (HCF) of 36 and 84.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Find the highest common factor (HCF) of 36 and 84.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Find the highest common factor (HCF) of 36 and 84.\n\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2021March-Paper22-Q12",
+    "paper": "2021March-Paper22",
+    "qnum": 12,
+    "marks": 3,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.6",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/22/M/21 Q12",
+    "year": 2021,
+    "session": "March",
+    "tex": "%\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\nThe diagram shows a shape made from a quarter-circle, $OAB$, and a right-angled triangle $OBC$.\n\\newline\nThe radius of the circle is 5 cm and $OC = 6$ cm.\n\\newline\n\nCalculate the area of the shape.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q12-Shape.\n\\newline\npng}\n%\\end{InsertScreenShot}\n\nThe diagram shows a shape made from a quarter-circle, $OAB$, and a right-angled triangle $OBC$.\n\\newline\nThe radius of the circle is 5 cm and $OC = 6$ cm.\n\\newline\n\nCalculate the area of the shape.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "cm$^2$"
+    },
+    "_rawBody": "%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q12-Shape.png}\n%\\end{InsertScreenShot}\n\nThe diagram shows a shape made from a quarter-circle, $OAB$, and a right-angled triangle $OBC$.\nThe radius of the circle is 5 cm and $OC = 6$ cm.\n\nCalculate the area of the shape.\n\n\\AnswerLine[][cm$^2$]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2021March-Paper22-Q13",
+    "paper": "2021March-Paper22",
+    "qnum": 13,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.17",
+    "d": 2,
+    "cat": "number",
+    "topic": "Bounds and calculations",
+    "qtype": "exponential decay calculation",
+    "g": "mixed",
+    "src": "0580/22/M/21 Q13",
+    "year": 2021,
+    "session": "March",
+    "tex": "The population of one variety of butterfly is decreasing exponentially at a rate of 34\\% per year.\n\\newline\nAt the end of 2014, the population was 125.9 million.\n\\newline\n\nCalculate the population at the end of 2019.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The population of one variety of butterfly is decreasing exponentially at a rate of 34\\% per year.\n\\newline\nAt the end of 2014, the population was 125.9 million.\n\\newline\n\nCalculate the population at the end of 2019.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "million"
+    },
+    "_rawBody": "The population of one variety of butterfly is decreasing exponentially at a rate of 34\\% per year.\nAt the end of 2014, the population was 125.9 million.\n\nCalculate the population at the end of 2019.\n\n\\AnswerLine[][million]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2021March-Paper22-Q14",
+    "paper": "2021March-Paper22",
+    "qnum": 14,
+    "marks": 4,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.7",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Sequences",
+    "qtype": "linear and quadratic sequences, finding nth term",
+    "g": "quadratic",
+    "src": "0580/22/M/21 Q14",
+    "year": 2021,
+    "session": "March",
+    "tex": "(a) These are the first four terms of a sequence.\n\\newline\n\n$29 \\quad 22 \\quad 15 \\quad 8$\n\nWrite down the next two terms.\n\\newline\n\n , \n\n(b) These are the first five terms of another sequence.\n\\newline\n\n$4 \\quad 7 \\quad 12 \\quad 19 \\quad 28$\n\nFind the $n$th term.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "These are the first four terms of a sequence.\n\\newline\n\n$29 \\quad 22 \\quad 15 \\quad 8$\n\nWrite down the next two terms.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "multiline",
+          "lines": 2,
+          "template": "____\\n____",
+          "lineSep": "blank"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "These are the first five terms of another sequence.\n\\newline\n\n$4 \\quad 7 \\quad 12 \\quad 19 \\quad 28$\n\nFind the $n$th term.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item These are the first four terms of a sequence.\n\n$29 \\quad 22 \\quad 15 \\quad 8$\n\nWrite down the next two terms.\n\n\\AnswerLine[][] , \\AnswerLine[][]\n\\Marks{2}\n\n\\item These are the first five terms of another sequence.\n\n$4 \\quad 7 \\quad 12 \\quad 19 \\quad 28$\n\nFind the $n$th term.\n\n\\AnswerLine[][]\n\\Marks{2}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "_compactBegin": true
+  },
+  {
+    "id": "0580-2021March-Paper22-Q15",
+    "paper": "2021March-Paper22",
+    "qnum": 15,
+    "marks": 2,
+    "topics": [
+      "Geometry",
+      "Trigonometry"
+    ],
+    "s": "4.7",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Nets and 3D shapes",
+    "qtype": "circle theorems",
+    "g": "mixed",
+    "src": "0580/22/M/21 Q15",
+    "year": 2021,
+    "session": "March",
+    "tex": "%\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\nPoints $E$, $F$, $G$ and $H$ lie on the circle and $EG = EH$.\n\\newline\n$HF$ and $EG$ intersect at $K$.\n\\newline\n$ET$ is a tangent to the circle at $E$.\n\\newline\nAngle $FET = 47^\\circ$ and angle $FEG = 25^\\circ$.\n\\newline\n\nFind the value of $x$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q15-Circle.\n\\newline\npng}\n%\\end{InsertScreenShot}\n\nPoints $E$, $F$, $G$ and $H$ lie on the circle and $EG = EH$.\n\\newline\n$HF$ and $EG$ intersect at $K$.\n\\newline\n$ET$ is a tangent to the circle at $E$.\n\\newline\nAngle $FET = 47^\\circ$ and angle $FEG = 25^\\circ$.\n\\newline\n\nFind the value of $x$.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "$x =$"
+    },
+    "_rawBody": "%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q15-Circle.png}\n%\\end{InsertScreenShot}\n\nPoints $E$, $F$, $G$ and $H$ lie on the circle and $EG = EH$.\n$HF$ and $EG$ intersect at $K$.\n$ET$ is a tangent to the circle at $E$.\nAngle $FET = 47^\\circ$ and angle $FEG = 25^\\circ$.\n\nFind the value of $x$.\n\n\\AnswerLine[$x =$][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2021March-Paper22-Q16",
+    "paper": "2021March-Paper22",
+    "qnum": 16,
+    "marks": 5,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.6",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Inequalities",
+    "qtype": "linear inequalities, graphical representation, finding region",
+    "g": "graph",
+    "src": "0580/22/M/21 Q16",
+    "year": 2021,
+    "session": "March",
+    "tex": "%\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\nThe region $R$ satisfies these three inequalities.\n\\newline\n\n$y > 1 \\quad\\quad y < 2x + 2 \\quad\\quad x + y \\le 3$\n\nBy drawing three suitable lines, and shading unwanted regions, find and label the region $R$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q16-Grid.\n\\newline\npng}\n%\\end{InsertScreenShot}\n\nThe region $R$ satisfies these three inequalities.\n\\newline\n\n$y > 1 \\quad\\quad y < 2x + 2 \\quad\\quad x + y \\le 3$\n\nBy drawing three suitable lines, and shading unwanted regions, find and label the region $R$.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q16-Grid.png}\n%\\end{InsertScreenShot}\n\nThe region $R$ satisfies these three inequalities.\n\n$y > 1 \\quad\\quad y < 2x + 2 \\quad\\quad x + y \\le 3$\n\nBy drawing three suitable lines, and shading unwanted regions, find and label the region $R$.\n\\Marks{5}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2021March-Paper22-Q17",
+    "paper": "2021March-Paper22",
+    "qnum": 17,
+    "marks": 3,
+    "topics": [
+      "Statistics"
+    ],
+    "s": "9.3",
+    "d": 2,
+    "cat": "statistics",
+    "topic": "Frequency tables",
+    "qtype": "averages and spread",
+    "g": "mixed",
+    "src": "0580/22/M/21 Q17",
+    "year": 2021,
+    "session": "March",
+    "tex": "Some students were asked how many books they each had in their school bags.\n\\newline\nThe table shows some of this information.\n\\newline\n\n\\begin{tabular}{|c|c|c|c|c|c|c|}\n\\hline\nNumber of books & 5 & 6 & 7 & 8 & 9 & 10 \\\\\n\\hline\nFrequency & 4 & 5 & $x$ & 11 & 7 & 5 \\\\\n\\hline\n\\end{tabular}\nThe mean number of books is 7.6.\n\\newline\n\nCalculate the value of $x$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Some students were asked how many books they each had in their school bags.\n\\newline\nThe table shows some of this information.\n\\newline\n"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|c|c|}\n\\hline\nNumber of books & 5 & 6 & 7 & 8 & 9 & 10 \\\\\n\\hline\nFrequency & 4 & 5 & $x$ & 11 & 7 & 5 \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+      },
+      {
+        "type": "text",
+        "content": "The mean number of books is 7.6.\n\\newline\n\nCalculate the value of $x$.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "$x =$"
+    },
+    "_rawBody": "Some students were asked how many books they each had in their school bags.\nThe table shows some of this information.\n\n\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|c|c|}\n\\hline\nNumber of books & 5 & 6 & 7 & 8 & 9 & 10 \\\\\n\\hline\nFrequency & 4 & 5 & $x$ & 11 & 7 & 5 \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\nThe mean number of books is 7.6.\n\nCalculate the value of $x$.\n\n\\AnswerLine[$x =$][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2021March-Paper22-Q18",
+    "paper": "2021March-Paper22",
+    "qnum": 18,
+    "marks": 2,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.4",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Algebraic fractions",
+    "qtype": "simplifying expressions with fractional indices",
+    "g": "simplify",
+    "src": "0580/22/M/21 Q18",
+    "year": 2021,
+    "session": "March",
+    "tex": "Simplify $(343x^9)^{\\frac{2}{3}}$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Simplify $(343x^9)^{\\frac{2}{3}}$.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Simplify $(343x^9)^{\\frac{2}{3}}$.\n\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2021March-Paper22-Q19",
+    "paper": "2021March-Paper22",
+    "qnum": 19,
+    "marks": 5,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.5",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Equations",
+    "qtype": "solving simultaneous linear and quadratic equations",
+    "g": "simul-nonlinear",
+    "src": "0580/22/M/21 Q19",
+    "year": 2021,
+    "session": "March",
+    "tex": "Solve the simultaneous equations.\n\\newline\nYou must show all your working.\n\\newline\n\\[\n\\begin{aligned}\nx - y &= 7 \\\\\nx^2 + y &= 149\n\\end{aligned}\n\\]",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "solve",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Solve the simultaneous equations.\n\\newline\nYou must show all your working.\n\\newline\n\\[\n\\begin{aligned}\nx - y &= 7 \\\\\nx^2 + y &= 149\n\\end{aligned}\n\\]"
+      }
+    ],
+    "answer": {
+      "type": "multiline",
+      "lines": 4,
+      "template": "$x =$ ____\\n$y =$ ____\\n$x =$ ____\\n$y =$ ____",
+      "lineSep": "blank"
+    },
+    "_rawBody": "Solve the simultaneous equations.\nYou must show all your working.\n\\[\n\\begin{aligned}\nx - y &= 7 \\\\\nx^2 + y &= 149\n\\end{aligned}\n\\]\n\n\\AnswerLine[$x =$][] \\AnswerLine[$y =$][]\n\n\\AnswerLine[$x =$][] \\AnswerLine[$y =$][]\n\\Marks{5}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2021March-Paper22-Q20",
+    "paper": "2021March-Paper22",
+    "qnum": 20,
+    "marks": 5,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.4",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Circle theorems",
+    "qtype": "similarity and congruence",
+    "g": "mixed",
+    "src": "0580/22/M/21 Q20",
+    "year": 2021,
+    "session": "March",
+    "tex": "(a) %\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\nTriangle $ABC$ is mathematically similar to triangle $PQR$.\n\\newline\n\nFind the value of $x$.\n\\newline\n\n(b) %\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\nThe diagram shows two mathematically similar bowls.\n\\newline\nThe larger bowl has capacity 7.8 litres and height 11.5 cm.\n\\newline\nThe smaller bowl has capacity 4 litres.\n\\newline\n\nCalculate the height of the smaller bowl.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q20-Triangles.\n\\newline\npng}\n%\\end{InsertScreenShot}\n\nTriangle $ABC$ is mathematically similar to triangle $PQR$.\n\\newline\n\nFind the value of $x$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x =$"
+        },
+        "_compactMarks": true,
+        "_itemNewline": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q20-Bowls.\n\\newline\npng}\n%\\end{InsertScreenShot}\n\nThe diagram shows two mathematically similar bowls.\n\\newline\nThe larger bowl has capacity 7.8 litres and height 11.5 cm.\n\\newline\nThe smaller bowl has capacity 4 litres.\n\\newline\n\nCalculate the height of the smaller bowl.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "cm"
+        },
+        "_compactMarks": true,
+        "_itemNewline": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q20-Triangles.png}\n%\\end{InsertScreenShot}\n\nTriangle $ABC$ is mathematically similar to triangle $PQR$.\n\nFind the value of $x$.\n\n\\AnswerLine[$x =$][]\n\\Marks{2}\n\n\\item\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q20-Bowls.png}\n%\\end{InsertScreenShot}\n\nThe diagram shows two mathematically similar bowls.\nThe larger bowl has capacity 7.8 litres and height 11.5 cm.\nThe smaller bowl has capacity 4 litres.\n\nCalculate the height of the smaller bowl.\n\n\\AnswerLine[][cm]\n\\Marks{3}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "_compactBegin": true
+  },
+  {
+    "id": "0580-2021March-Paper22-Q21",
+    "paper": "2021March-Paper22",
+    "qnum": 21,
+    "marks": 4,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.11",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Differentiation",
+    "qtype": "sketching reciprocal and exponential graphs",
+    "g": "graph",
+    "src": "0580/22/M/21 Q21",
+    "year": 2021,
+    "session": "March",
+    "tex": "On the axes, sketch the graph of each of these functions.\n\\newline\n\n(a) $y = \\dfrac{1}{x}$\n\n%\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\n(b) $y = 4^{x}$\n\n%\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "$y = \\dfrac{1}{x}$\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q21a-Axes.\n\\newline\npng}\n%\\end{InsertScreenShot}"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "$y = 4^{x}$\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q21b-Axes.\n\\newline\npng}\n%\\end{InsertScreenShot}"
+          }
+        ],
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "sketch",
+    "stem": [
+      {
+        "type": "text",
+        "content": "On the axes, sketch the graph of each of these functions.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "On the axes, sketch the graph of each of these functions.\n\n\\begin{parts}\n\\item $y = \\dfrac{1}{x}$\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q21a-Axes.png}\n%\\end{InsertScreenShot}\n\\Marks{2}\n\n\\item $y = 4^{x}$\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q21b-Axes.png}\n%\\end{InsertScreenShot}\n\\Marks{2}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2021March-Paper22-Q22",
+    "paper": "2021March-Paper22",
+    "qnum": 22,
+    "marks": 4,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.10",
+    "d": 2,
+    "cat": "number",
+    "topic": "Time",
+    "qtype": "lower/upper bound calculation",
+    "g": "mixed",
+    "src": "0580/22/M/21 Q22",
+    "year": 2021,
+    "session": "March",
+    "tex": "(a) A bag of rice has a mass of 25 kg, correct to the nearest kilogram.\n\\newline\n\nCalculate the lower bound of the total mass of 10 of these bags.\n\\newline\n\n(b) Virat has 200 metres of wire, correct to the nearest metre.\n\\newline\nHe cuts the wire into $n$ pieces of length 3 metres, correct to the nearest 20 centimetres.\n\\newline\n\nCalculate the largest possible value of $n$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "A bag of rice has a mass of 25 kg, correct to the nearest kilogram.\n\\newline\n\nCalculate the lower bound of the total mass of 10 of these bags.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "kg"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Virat has 200 metres of wire, correct to the nearest metre.\n\\newline\nHe cuts the wire into $n$ pieces of length 3 metres, correct to the nearest 20 centimetres.\n\\newline\n\nCalculate the largest possible value of $n$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$n =$"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item A bag of rice has a mass of 25 kg, correct to the nearest kilogram.\n\nCalculate the lower bound of the total mass of 10 of these bags.\n\n\\AnswerLine[][kg]\n\\Marks{1}\n\n\\item Virat has 200 metres of wire, correct to the nearest metre.\nHe cuts the wire into $n$ pieces of length 3 metres, correct to the nearest 20 centimetres.\n\nCalculate the largest possible value of $n$.\n\n\\AnswerLine[$n =$][]\n\\Marks{3}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "_compactBegin": true
+  },
+  {
+    "id": "0580-2021March-Paper22-Q23",
+    "paper": "2021March-Paper22",
+    "qnum": 23,
+    "marks": 4,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.6",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/22/M/21 Q23",
+    "year": 2021,
+    "session": "March",
+    "tex": "%\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\nThe diagram shows a pyramid $VABCD$ with a rectangular base.\n\\newline\n$V$ is vertically above $M$, the intersection of the diagonals $AC$ and $BD$.\n\\newline\n$AB = 12$ cm, $BC = 10$ cm and $VC = 14$ cm.\n\\newline\n\nCalculate the angle that $VC$ makes with the base $ABCD$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q23-Pyramid.\n\\newline\npng}\n%\\end{InsertScreenShot}\n\nThe diagram shows a pyramid $VABCD$ with a rectangular base.\n\\newline\n$V$ is vertically above $M$, the intersection of the diagonals $AC$ and $BD$.\n\\newline\n$AB = 12$ cm, $BC = 10$ cm and $VC = 14$ cm.\n\\newline\n\nCalculate the angle that $VC$ makes with the base $ABCD$.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q23-Pyramid.png}\n%\\end{InsertScreenShot}\n\nThe diagram shows a pyramid $VABCD$ with a rectangular base.\n$V$ is vertically above $M$, the intersection of the diagonals $AC$ and $BD$.\n$AB = 12$ cm, $BC = 10$ cm and $VC = 14$ cm.\n\nCalculate the angle that $VC$ makes with the base $ABCD$.\n\n\\AnswerLine[][]\n\\Marks{4}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2021March-Paper22-Q24",
+    "paper": "2021March-Paper22",
+    "qnum": 24,
+    "marks": 5,
+    "topics": [
+      "Coordinate geometry"
+    ],
+    "s": "3.5",
+    "d": 2,
+    "cat": "coord",
+    "topic": "Parallel and perpendicular lines",
+    "qtype": "equation of a straight line",
+    "g": "mixed",
+    "src": "0580/22/M/21 Q24",
+    "year": 2021,
+    "session": "March",
+    "tex": "A curve has equation $y = x^3 - 2x^2 + 5$.\n\\newline\n\nFind the coordinates of its two stationary points.\n\\newline\n\n( , ) and ( , )",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "A curve has equation $y = x^3 - 2x^2 + 5$.\n\\newline\n\nFind the coordinates of its two stationary points.\n\\newline\n\n(\\AnswerLine[][] , \\AnswerLine[][]) and (\\AnswerLine[][] , \\AnswerLine[][])"
+      }
+    ],
+    "_rawBody": "A curve has equation $y = x^3 - 2x^2 + 5$.\n\nFind the coordinates of its two stationary points.\n\n(\\AnswerLine[][] , \\AnswerLine[][]) and (\\AnswerLine[][] , \\AnswerLine[][])\n\\Marks{5}",
+    "_compactMarks": true
+  }
+]

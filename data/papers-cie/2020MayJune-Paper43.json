@@ -1,0 +1,1377 @@
+[
+  {
+    "id": "0580-2020MayJune-Paper43-Q01",
+    "paper": "2020MayJune-Paper43",
+    "qnum": 1,
+    "marks": 13,
+    "topics": [
+      "Number",
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "1.13",
+    "d": 2,
+    "cat": "number",
+    "topic": "Electronic calculators",
+    "qtype": "money calculations",
+    "g": "mixed",
+    "src": "0580/43/M/J/20 Q01",
+    "year": 2020,
+    "session": "MayJune",
+    "tex": "**[2020 May/June, 0580/43, Question 1]**\n\n(a) \\begin{tabular}{|lr|}\n\\hline\n\\multicolumn{2}{|c|}{**Campsite fees**}\\\\\n\\multicolumn{2}{|c|}{(per day)}\\\\\n&\\\\\nTent & \\$15.00\\\\\nCaravan & \\$25.00\\\\\n\\hline\n\\end{tabular}\nThe sign shows the fees charged at a campsite.\n\\newline\n\\\\\nToday there are 54 tents and 18 caravans on the site.\n\\newline\n\nCalculate the fees charged today.\n\\newline\n\n(b) In September the total income at the campsite was \\$$37\\,054$.\n\\newline\n\\\\\nThis was a decrease of 4.5\\% on the total income in August.\n\\newline\n\nCalculate the total income in August.\n\\newline\n\n(c) The visitors to the campsite today are in the ratio\n\n\\indentmen : women = 5 : 4 and women : children = 3 : 7.\n\\newline\n\n(i) (d) Calculate the ratio men : women : children in its simplest form.\n\\newline\n\n(e) Today there are 224 children at the campsite.\n\\newline\n\nCalculate the total number of men and women.\n\\newline\n\n(f) The space allowed for each tent is a rectangle measuring 8 m by 6 m, each correct to the nearest metre.\n\\newline\n\nCalculate the upper bound for the area of the space allowed for each tent.\n\\newline\n\n(g) The value of the campsite has increased exponentially by 1.5\\% every year since it opened 30 years ago.\n\\newline\n\nCalculate the value of the campsite now as a percentage of its value 30 years ago.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "table",
+            "content": "\\begin{center}\n\\begin{tabular}{|lr|}\n\\hline\n\\multicolumn{2}{|c|}{\\textbf{Campsite fees}}\\\\\n\\multicolumn{2}{|c|}{(per day)}\\\\\n&\\\\\nTent & \\$15.00\\\\\nCaravan & \\$25.00\\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+          },
+          {
+            "type": "text",
+            "content": "The sign shows the fees charged at a campsite.\n\\newline\n\\\\\nToday there are 54 tents and 18 caravans on the site.\n\\newline\n\nCalculate the fees charged today.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "\\$"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "In September the total income at the campsite was \\$$37\\,054$.\n\\newline\n\\\\\nThis was a decrease of 4.5\\% on the total income in August.\n\\newline\n\nCalculate the total income in August.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "\\$"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The visitors to the campsite today are in the ratio\n\n\\indent\\hspace{2em}men : women = 5 : 4 and women : children = 3 : 7.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate the ratio men : women : children in its simplest form.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "Today there are 224 children at the campsite.\n\\newline\n\nCalculate the total number of men and women.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(d)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "The space allowed for each tent is a rectangle measuring 8 m by 6 m, each correct to the nearest metre.\n\\newline\n\nCalculate the upper bound for the area of the space allowed for each tent.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "m$^2$"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(e)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "The value of the campsite has increased exponentially by 1.5\\% every year since it opened 30 years ago.\n\\newline\n\nCalculate the value of the campsite now as a percentage of its value 30 years ago.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "\\%"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\noindent\\textbf{[2020 May/June, 0580/43, Question 1]}\\par"
+      }
+    ],
+    "_rawBody": "\\noindent\\textbf{[2020 May/June, 0580/43, Question 1]}\\par\n\n\\begin{parts}\n\\item \n\\begin{center}\n\\begin{tabular}{|lr|}\n\\hline\n\\multicolumn{2}{|c|}{\\textbf{Campsite fees}}\\\\\n\\multicolumn{2}{|c|}{(per day)}\\\\\n&\\\\\nTent & \\$15.00\\\\\nCaravan & \\$25.00\\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\nThe sign shows the fees charged at a campsite.\\\\\nToday there are 54 tents and 18 caravans on the site.\n\nCalculate the fees charged today.\n\n\\AnswerLine[][\\$]\n\\Marks{2}\n\n\\item In September the total income at the campsite was \\$37\\,054.\\\\\nThis was a decrease of 4.5\\% on the total income in August.\n\nCalculate the total income in August.\n\n\\AnswerLine[][\\$]\n\\Marks{2}\n\n\\item The visitors to the campsite today are in the ratio\n\n\\indent\\hspace{2em}men : women = 5 : 4 and women : children = 3 : 7.\n\n\\begin{subparts}\n\\item Calculate the ratio men : women : children in its simplest form.\n\n\\AnswerLine\n\\Marks{2}\n\n\\item Today there are 224 children at the campsite.\n\nCalculate the total number of men and women.\n\n\\AnswerLine\n\\Marks{3}\n\\end{subparts}\n\n\\item The space allowed for each tent is a rectangle measuring 8 m by 6 m, each correct to the nearest metre.\n\nCalculate the upper bound for the area of the space allowed for each tent.\n\n\\AnswerLine[][m$^2$]\n\\Marks{2}\n\n\\item The value of the campsite has increased exponentially by 1.5\\% every year since it opened 30 years ago.\n\nCalculate the value of the campsite now as a percentage of its value 30 years ago.\n\n\\AnswerLine[][\\%]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2020MayJune-Paper43-Q02",
+    "paper": "2020MayJune-Paper43",
+    "qnum": 2,
+    "marks": 10,
+    "topics": [
+      "Geometry",
+      "Transformations and vectors"
+    ],
+    "s": "4.6",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/43/M/J/20 Q02",
+    "year": 2020,
+    "session": "MayJune",
+    "tex": "(a) (i) (b) Draw the image of triangle $A$ after a reflection in the line $y = -x$.\n\\newline\n\n(c) Draw the image of triangle $A$ after a translation by the vector $\\begin{pmatrix} -2 \\\\ -9 \\end{pmatrix}$.\n\\newline\n\n(d) Describe fully the single transformation that maps\n\n(i) (e) triangle $A$ onto triangle $B$,\n\n(f) triangle $A$ onto triangle $C$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Draw the image of triangle $A$ after a reflection in the line $y = -x$.\n\\newline\n"
+              }
+            ],
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Draw the image of triangle $A$ after a translation by the vector $\\begin{pmatrix} -2 \\\\ -9 \\end{pmatrix}$.\n\\newline\n"
+              }
+            ],
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_itemNewline": true,
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Describe fully the single transformation that maps"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "triangle $A$ onto triangle $B$,"
+              }
+            ],
+            "answer": {
+              "type": "multiline",
+              "lines": 2,
+              "template": "____\\n____",
+              "lineSep": "blank"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "triangle $A$ onto triangle $C$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "multiline",
+              "lines": 2,
+              "template": "____\\n____",
+              "lineSep": "blank"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "recall",
+    "cmd": "describe",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q02_Grid.tex"
+      }
+    ],
+    "_rawBody": "\\relinput{Figures/Q02_Grid.tex}\n\n\\begin{parts}\n\\item\n\\begin{subparts}\n\\item Draw the image of triangle $A$ after a reflection in the line $y = -x$.\n\\Marks{2}\n\n\\item Draw the image of triangle $A$ after a translation by the vector $\\begin{pmatrix} -2 \\\\ -9 \\end{pmatrix}$.\n\\Marks{2}\n\\end{subparts}\n\n\\item Describe fully the single transformation that maps\n\n\\begin{subparts}\n\\item triangle $A$ onto triangle $B$,\n\n\\AnswerLine[][]\n\\AnswerLine[][]\n\\Marks{3}\n\n\\item triangle $A$ onto triangle $C$.\n\n\\AnswerLine[][]\n\\AnswerLine[][]\n\\Marks{3}\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_compactItems": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2020MayJune/Paper43/Q02/Q02_Grid.png"
+    ]
+  },
+  {
+    "id": "0580-2020MayJune-Paper43-Q03",
+    "paper": "2020MayJune-Paper43",
+    "qnum": 3,
+    "marks": 7,
+    "topics": [
+      "Statistics"
+    ],
+    "s": "9.3",
+    "d": 2,
+    "cat": "statistics",
+    "topic": "Frequency tables",
+    "qtype": "averages and spread",
+    "g": "mixed",
+    "src": "0580/43/M/J/20 Q03",
+    "year": 2020,
+    "session": "MayJune",
+    "tex": "(a) Here is some information about the masses of potatoes in a sack:\n\n(b) The largest potato has a mass of 174 g.\n\\newline\n\n(c) The range is 69 g.\n\\newline\n\n(d) The median is 148 g.\n\\newline\n\n(e) The lower quartile is 121 g.\n\\newline\n\n(f) The interquartile range is 38 g.\n\\newline\n\nOn the grid below, draw a box-and-whisker plot to show this information.\n\\newline\n\nThe table shows the marks scored by some students in a test.\n\\newline\n\n\\begin{tabular}{|l||c|c|c|c|c|c|}\n\\hline\nMark & 5 & 6 & 7 & 8 & 9 & 10\\\\\n\\hline\nFrequency & 8 & 2 & 12 & 2 & 0 & 1\\\\\n\\hline\n\\end{tabular}\nCalculate the mean mark.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "text",
+            "content": "Here is some information about the masses of potatoes in a sack:\n\n\\begin{parts}"
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "text",
+            "content": "The largest potato has a mass of 174 g.\n\\newline\n"
+          }
+        ]
+      },
+      {
+        "label": "(c)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "text",
+            "content": "The range is 69 g.\n\\newline\n"
+          }
+        ]
+      },
+      {
+        "label": "(d)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "text",
+            "content": "The median is 148 g.\n\\newline\n"
+          }
+        ]
+      },
+      {
+        "label": "(e)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "text",
+            "content": "The lower quartile is 121 g.\n\\newline\n"
+          }
+        ]
+      },
+      {
+        "label": "(f)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "text",
+            "content": "The interquartile range is 38 g.\n\\newline\n"
+          }
+        ]
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2020MayJune/Paper43/Q03/Q03_Grid.png"
+      }
+    ],
+    "_v4_skip": true,
+    "_rawBody": "\\begin{parts}\n\\item Here is some information about the masses of potatoes in a sack:\n\n\\begin{parts}\n\\item The largest potato has a mass of 174 g.\n\\item The range is 69 g.\n\\item The median is 148 g.\n\\item The lower quartile is 121 g.\n\\item The interquartile range is 38 g.\n\\end{parts}\n\nOn the grid below, draw a box-and-whisker plot to show this information.\n\n\\relinput{Figures/Q03_Grid.tex}\n\\Marks{4}\n\n\\item The table shows the marks scored by some students in a test.\n\n\\begin{center}\n\\begin{tabular}{|l||c|c|c|c|c|c|}\n\\hline\nMark & 5 & 6 & 7 & 8 & 9 & 10\\\\\n\\hline\nFrequency & 8 & 2 & 12 & 2 & 0 & 1\\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\nCalculate the mean mark.\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "_postParts": [
+      {
+        "type": "text",
+        "content": "On the grid below, draw a box-and-whisker plot to show this information."
+      },
+      {
+        "type": "figure",
+        "src": "Figures/Q03_Grid.tex"
+      },
+      {
+        "type": "text",
+        "content": "\\Marks{4}\n\n\\item The table shows the marks scored by some students in a test."
+      },
+      {
+        "type": "table",
+        "content": "\\begin{center}\n\\begin{tabular}{|l||c|c|c|c|c|c|}\n\\hline\nMark & 5 & 6 & 7 & 8 & 9 & 10\\\\\n\\hline\nFrequency & 8 & 2 & 12 & 2 & 0 & 1\\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+      },
+      {
+        "type": "text",
+        "content": "Calculate the mean mark.\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\end{parts}"
+      }
+    ],
+    "_compactItems": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2020MayJune/Paper43/Q03/Q03_Grid.png"
+    ]
+  },
+  {
+    "id": "0580-2020MayJune-Paper43-Q04",
+    "paper": "2020MayJune-Paper43",
+    "qnum": 4,
+    "marks": 11,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.5",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Equations",
+    "qtype": "solving linear inequalities, fractional equations, simultaneous linear and quadratic equations",
+    "g": "simul-nonlinear",
+    "src": "0580/43/M/J/20 Q04",
+    "year": 2020,
+    "session": "MayJune",
+    "tex": "**[2020 May/June, 0580/43, Question 4]**\n\n(a) Solve the inequality.\n\\newline\n\\[ 3m + 12 \\leqslant 8m - 5 \\]\n\n(b) Solve the equation.\n\\newline\n\\[ \\frac{2x + 5}{3 - x} = \\frac{14}{15} \\]\n\n(c) Solve the simultaneous equations.\n\\newline\n\\\\\nYou must show all your working.\n\\newline\n\\begin{align*}\ny &= 4 - x \\\\\nx^2 + 2y^2 &= 67\n\\end{align*}",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Solve the inequality.\n\\newline\n\\[ 3m + 12 \\leqslant 8m - 5 \\]"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Solve the equation.\n\\newline\n\\[ \\frac{2x + 5}{3 - x} = \\frac{14}{15} \\]"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x = $",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 6,
+        "content": [
+          {
+            "type": "text",
+            "content": "Solve the simultaneous equations.\n\\newline\n\\\\\nYou must show all your working.\n\\newline\n\\begin{align*}\ny &= 4 - x \\\\\nx^2 + 2y^2 &= 67\n\\end{align*}"
+          }
+        ],
+        "answer": {
+          "type": "multiline",
+          "lines": 2,
+          "template": "$x = $ ____ , $y = $\\n$x = $ ____ , $y = $",
+          "lineSep": "blank",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "solve",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\noindent\\textbf{[2020 May/June, 0580/43, Question 4]}\\par"
+      }
+    ],
+    "_rawBody": "\\noindent\\textbf{[2020 May/June, 0580/43, Question 4]}\\par\n\n\\begin{parts}\n\\item Solve the inequality.\n\\[ 3m + 12 \\leqslant 8m - 5 \\]\n\\AnswerLine\n\\Marks{2}\n\n\\item Solve the equation.\n\\[ \\frac{2x + 5}{3 - x} = \\frac{14}{15} \\]\n\\AnswerLine[$x = $]\n\\Marks{3}\n\n\\item Solve the simultaneous equations.\\\\\nYou must show all your working.\n\\begin{align*}\ny &= 4 - x \\\\\nx^2 + 2y^2 &= 67\n\\end{align*}\n\\AnswerLine[$x = $][, $y = $]\n\\AnswerLine[$x = $][, $y = $]\n\\Marks{6}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2020MayJune-Paper43-Q05",
+    "paper": "2020MayJune-Paper43",
+    "qnum": 5,
+    "marks": 12,
+    "topics": [
+      "Number",
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": null,
+    "d": 2,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/43/M/J/20 Q05",
+    "year": 2020,
+    "session": "MayJune",
+    "tex": "All the lengths in this question are in centimetres.\n\\newline\n\nThe diagram shows a shape $ABCDEF$ made from two rectangles.\n\\newline\n\\\\\nThe total area of the shape is 342 cm$^2$.\n\\newline\n\n(a) Show that $x^2 + x - 72 = 0$.\n\\newline\n\n(b) Solve by factorisation.\n\\newline\n\\[ x^2 + x - 72 = 0 \\]\n\n(c) Work out the perimeter of the shape $ABCDEF$.\n\\newline\n\n(d) Calculate angle $DBC$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 5,
+        "content": [
+          {
+            "type": "text",
+            "content": "Show that $x^2 + x - 72 = 0$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "none",
+          "space": {
+            "type": "drawing",
+            "height": "5cm",
+            "cmd": "Answerspace"
+          }
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Solve by factorisation.\n\\newline\n\\[ x^2 + x - 72 = 0 \\]"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x = $",
+          "suffix": " or $x = $",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Work out the perimeter of the shape $ABCDEF$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "cm"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Calculate angle $DBC$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "Angle $DBC = $"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "",
+    "cmd": "show",
+    "stem": [
+      {
+        "type": "text",
+        "content": "All the lengths in this question are in centimetres.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "Figures/Q05_Shape.tex"
+      },
+      {
+        "type": "text",
+        "content": "The diagram shows a shape $ABCDEF$ made from two rectangles.\n\\newline\n\\\\\nThe total area of the shape is 342 cm$^2$.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "All the lengths in this question are in centimetres.\n\n\\relinput{Figures/Q05_Shape.tex}\n\nThe diagram shows a shape $ABCDEF$ made from two rectangles.\\\\\nThe total area of the shape is 342 cm$^2$.\n\n\\begin{parts}\n\\item Show that $x^2 + x - 72 = 0$.\n\n\\Answerspace[5cm]\n\\Marks{5}\n\n\\item Solve by factorisation.\n\\[ x^2 + x - 72 = 0 \\]\n\\AnswerLine[$x = $][ or $x = $]\n\\Marks{3}\n\n\\item Work out the perimeter of the shape $ABCDEF$.\n\n\\AnswerLine[][cm]\n\\Marks{2}\n\n\\item Calculate angle $DBC$.\n\n\\AnswerLine[Angle $DBC = $][]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2020MayJune/Paper43/Q05/Q05_Shape.png"
+    ]
+  },
+  {
+    "id": "0580-2020MayJune-Paper43-Q06",
+    "paper": "2020MayJune-Paper43",
+    "qnum": 6,
+    "marks": 12,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.6",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/43/M/J/20 Q06",
+    "year": 2020,
+    "session": "MayJune",
+    "tex": "(a) \n\nThe diagram shows triangle $ABC$ with point $G$ inside.\n\\newline\n\\\\\n$CB = 11$ cm, $CG = 5.3$ cm and $BG = 6.9$ cm.\n\\newline\n\\\\\nAngle $CAB = 42^\\circ$ and angle $ACG = 54^\\circ$.\n\\newline\n\n(i) (b) Calculate the value of $x$.\n\\newline\n\n(c) Calculate $AC$.\n\\newline\n\n(d) \n\nWater flows at a speed of 20 cm/s along a rectangular channel into a lake.\n\\newline\n\\\\\nThe width of the channel is 15 cm.\n\\newline\n\\\\\nThe depth of the water is 2.5 cm.\n\\newline\n\nCalculate the amount of water that flows from the channel into the lake in 1 hour.\n\\newline\n\\\\\nGive your answer in litres.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "figure",
+            "src": "Figures/Q06_Triangle.tex"
+          },
+          {
+            "type": "text",
+            "content": "The diagram shows triangle $ABC$ with point $G$ inside.\n\\newline\n\\\\\n$CB = 11$ cm, $CG = 5.3$ cm and $BG = 6.9$ cm.\n\\newline\n\\\\\nAngle $CAB = 42^\\circ$ and angle $ACG = 54^\\circ$.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 4,
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate the value of $x$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$x = $"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 4,
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate $AC$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$AC = $",
+              "suffix": "cm"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_itemNewline": true,
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(b)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "figure",
+            "src": "Figures/Q06_Water.tex"
+          },
+          {
+            "type": "text",
+            "content": "Water flows at a speed of 20 cm/s along a rectangular channel into a lake.\n\\newline\n\\\\\nThe width of the channel is 15 cm.\n\\newline\n\\\\\nThe depth of the water is 2.5 cm.\n\\newline\n\nCalculate the amount of water that flows from the channel into the lake in 1 hour.\n\\newline\n\\\\\nGive your answer in litres.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "litres"
+        },
+        "_compactMarks": true,
+        "_itemNewline": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item\n\\relinput{Figures/Q06_Triangle.tex}\n\nThe diagram shows triangle $ABC$ with point $G$ inside.\\\\\n$CB = 11$ cm, $CG = 5.3$ cm and $BG = 6.9$ cm.\\\\\nAngle $CAB = 42^\\circ$ and angle $ACG = 54^\\circ$.\n\n\\begin{subparts}\n\\item Calculate the value of $x$.\n\n\\AnswerLine[$x = $][]\n\\Marks{4}\n\n\\item Calculate $AC$.\n\n\\AnswerLine[$AC = $][cm]\n\\Marks{4}\n\\end{subparts}\n\n\\item\n\\relinput{Figures/Q06_Water.tex}\n\nWater flows at a speed of 20 cm/s along a rectangular channel into a lake.\\\\\nThe width of the channel is 15 cm.\\\\\nThe depth of the water is 2.5 cm.\n\nCalculate the amount of water that flows from the channel into the lake in 1 hour.\\\\\nGive your answer in litres.\n\n\\AnswerLine[][litres]\n\\Marks{4}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2020MayJune/Paper43/Q06/Q06_Triangle.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2020MayJune/Paper43/Q06/Q06_Water.png"
+    ]
+  },
+  {
+    "id": "0580-2020MayJune-Paper43-Q07",
+    "paper": "2020MayJune-Paper43",
+    "qnum": 7,
+    "marks": 12,
+    "topics": [
+      "Probability"
+    ],
+    "s": "8.3",
+    "d": 2,
+    "cat": "probability",
+    "topic": "Tree diagrams",
+    "qtype": "combined events",
+    "g": "mixed",
+    "src": "0580/43/M/J/20 Q07",
+    "year": 2020,
+    "session": "MayJune",
+    "tex": "On any Saturday, the probability that Arun plays football is $\\frac{3}{4}$.\n\\newline\n\\\\\nOn any Saturday, the probability that Bob plays football is $\\frac{2}{5}$.\n\\newline\n\n(a) (i) (b) Complete the tree diagram.\n\\newline\n\n(c) Calculate the probability that, one Saturday, Arun and Bob both play football.\n\\newline\n\n(d) Calculate the probability that, one Saturday, either Arun plays football or Bob plays football, but not both.\n\\newline\n\n(e) Calculate the probability that Bob plays football for 2 of the next 3 Saturdays.\n\\newline\n\n(f) When Arun plays football, the probability that he scores the winning goal is $\\frac{1}{7}$.\n\\newline\n\nCalculate the probability that Arun scores the winning goal one Saturday.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Complete the tree diagram.\n\\newline\n"
+              },
+              {
+                "type": "figure",
+                "src": "Figures/Q07_Tree.tex"
+              }
+            ],
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate the probability that, one Saturday, Arun and Bob both play football.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate the probability that, one Saturday, either Arun plays football or Bob plays football, but not both.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_itemNewline": true,
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Calculate the probability that Bob plays football for 2 of the next 3 Saturdays.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "When Arun plays football, the probability that he scores the winning goal is $\\frac{1}{7}$.\n\\newline\n\nCalculate the probability that Arun scores the winning goal one Saturday.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "On any Saturday, the probability that Arun plays football is $\\frac{3}{4}$.\n\\newline\n\\\\\nOn any Saturday, the probability that Bob plays football is $\\frac{2}{5}$.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "On any Saturday, the probability that Arun plays football is $\\frac{3}{4}$.\\\\\nOn any Saturday, the probability that Bob plays football is $\\frac{2}{5}$.\n\n\\begin{parts}\n\\item\n\\begin{subparts}\n\\item Complete the tree diagram.\n\n\\relinput{Figures/Q07_Tree.tex}\n\\Marks{2}\n\n\\item Calculate the probability that, one Saturday, Arun and Bob both play football.\n\n\\AnswerLine\n\\Marks{2}\n\n\\item Calculate the probability that, one Saturday, either Arun plays football or Bob plays football, but not both.\n\n\\AnswerLine\n\\Marks{3}\n\\end{subparts}\n\n\\item Calculate the probability that Bob plays football for 2 of the next 3 Saturdays.\n\n\\AnswerLine\n\\Marks{3}\n\n\\item When Arun plays football, the probability that he scores the winning goal is $\\frac{1}{7}$.\n\nCalculate the probability that Arun scores the winning goal one Saturday.\n\n\\AnswerLine\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2020MayJune/Paper43/Q07/Q07_Tree.png"
+    ]
+  },
+  {
+    "id": "0580-2020MayJune-Paper43-Q08",
+    "paper": "2020MayJune-Paper43",
+    "qnum": 8,
+    "marks": 11,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry",
+      "Mensuration",
+      "Trigonometry"
+    ],
+    "s": "3.6",
+    "d": 2,
+    "cat": "coord",
+    "topic": "Position vectors",
+    "qtype": "parallel lines",
+    "g": "mixed",
+    "src": "0580/43/M/J/20 Q08",
+    "year": 2020,
+    "session": "MayJune",
+    "tex": "(a) The interior angle of a regular polygon with $n$ sides is $150^\\circ$.\n\\newline\n\nCalculate the value of $n$.\n\\newline\n\n(b) (i) (c) $K$, $L$ and $M$ are points on the circle.\n\\newline\n\\\\\n$KS$ is a tangent to the circle at $K$.\n\\newline\n\\\\\n$KM$ is a diameter and triangle $KLM$ is isosceles.\n\\newline\n\nFind the value of $z$.\n\\newline\n\n(d) $AT$ is a tangent to the circle at $A$.\n\\newline\n\nFind the value of $x$.\n\\newline\n\n(e) \n\n$F$, $G$, $H$ and $J$ are points on the circle.\n\\newline\n\\\\\n$EFG$ is a straight line parallel to $JH$.\n\\newline\n\nFind the value of $y$.\n\\newline\n\n(f) \n\n$A$, $B$, $C$ and $D$ are points on the circle, centre $O$.\n\\newline\n\\\\\n$M$ is the midpoint of $AB$ and $N$ is the midpoint of $CD$.\n\\newline\n\\\\\n$OM = ON$\n\nExplain, giving reasons, why triangle $OAB$ is congruent to triangle $OCD$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "The interior angle of a regular polygon with $n$ sides is $150^\\circ$.\n\\newline\n\nCalculate the value of $n$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$n = $"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "$K$, $L$ and $M$ are points on the circle.\n\\newline\n\\\\\n$KS$ is a tangent to the circle at $K$.\n\\newline\n\\\\\n$KM$ is a diameter and triangle $KLM$ is isosceles.\n\\newline\n"
+              },
+              {
+                "type": "figure",
+                "src": "Figures/Q08_Circle1.tex"
+              },
+              {
+                "type": "text",
+                "content": "Find the value of $z$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$z = $"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "$AT$ is a tangent to the circle at $A$.\n\\newline\n"
+              },
+              {
+                "type": "figure",
+                "src": "Figures/Q08_Circle2.tex"
+              },
+              {
+                "type": "text",
+                "content": "Find the value of $x$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$x = $"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "figure",
+                "src": "Figures/Q08_Circle3.tex"
+              },
+              {
+                "type": "text",
+                "content": "$F$, $G$, $H$ and $J$ are points on the circle.\n\\newline\n\\\\\n$EFG$ is a straight line parallel to $JH$.\n\\newline\n\nFind the value of $y$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$y = $"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_itemNewline": true,
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(c)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "figure",
+            "src": "Figures/Q08_Circle4.tex"
+          },
+          {
+            "type": "text",
+            "content": "$A$, $B$, $C$ and $D$ are points on the circle, centre $O$.\n\\newline\n\\\\\n$M$ is the midpoint of $AB$ and $N$ is the midpoint of $CD$.\n\\newline\n\\\\\n$OM = ON$\n\nExplain, giving reasons, why triangle $OAB$ is congruent to triangle $OCD$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "multiline",
+          "lines": 4,
+          "template": "____\\n____\\n____\\n____",
+          "lineSep": "blank"
+        },
+        "_compactMarks": true,
+        "_itemNewline": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "explain",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item The interior angle of a regular polygon with $n$ sides is $150^\\circ$.\n\nCalculate the value of $n$.\n\n\\AnswerLine[$n = $]\n\\Marks{2}\n\n\\item\n\\begin{subparts}\n\\item $K$, $L$ and $M$ are points on the circle.\\\\\n$KS$ is a tangent to the circle at $K$.\\\\\n$KM$ is a diameter and triangle $KLM$ is isosceles.\n\n\\relinput{Figures/Q08_Circle1.tex}\n\nFind the value of $z$.\n\n\\AnswerLine[$z = $]\n\\Marks{2}\n\n\\item $AT$ is a tangent to the circle at $A$.\n\n\\relinput{Figures/Q08_Circle2.tex}\n\nFind the value of $x$.\n\n\\AnswerLine[$x = $]\n\\Marks{2}\n\n\\item\n\\relinput{Figures/Q08_Circle3.tex}\n\n$F$, $G$, $H$ and $J$ are points on the circle.\\\\\n$EFG$ is a straight line parallel to $JH$.\n\nFind the value of $y$.\n\n\\AnswerLine[$y = $]\n\\Marks{2}\n\\end{subparts}\n\n\\item\n\\relinput{Figures/Q08_Circle4.tex}\n\n$A$, $B$, $C$ and $D$ are points on the circle, centre $O$.\\\\\n$M$ is the midpoint of $AB$ and $N$ is the midpoint of $CD$.\\\\\n$OM = ON$\n\nExplain, giving reasons, why triangle $OAB$ is congruent to triangle $OCD$.\n\n\\AnswerLine\n\\AnswerLine\n\\AnswerLine\n\\AnswerLine\n\\Marks{3}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2020MayJune/Paper43/Q08/Q08_Circle1.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2020MayJune/Paper43/Q08/Q08_Circle2.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2020MayJune/Paper43/Q08/Q08_Circle3.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2020MayJune/Paper43/Q08/Q08_Circle4.png"
+    ]
+  },
+  {
+    "id": "0580-2020MayJune-Paper43-Q09",
+    "paper": "2020MayJune-Paper43",
+    "qnum": 9,
+    "marks": 13,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "3.7",
+    "d": 2,
+    "cat": "coord",
+    "topic": "Coordinate geometry extended",
+    "qtype": "perpendicular lines",
+    "g": "mixed",
+    "src": "0580/43/M/J/20 Q09",
+    "year": 2020,
+    "session": "MayJune",
+    "tex": "**[2020 May/June, 0580/43, Question 9]**\n\n(a) The equation of line $L$ is $3x - 8y + 20 = 0$.\n\\newline\n\n(i) (b) Find the gradient of line $L$.\n\\newline\n\n(c) Find the coordinates of the point where line $L$ cuts the $y$-axis.\n\\newline\n\n(d) The coordinates of $P$ are $(-3, 8)$ and the coordinates of $Q$ are $(9, -2)$.\n\\newline\n\n(i) (e) Calculate the length $PQ$.\n\\newline\n\n(f) Find the equation of the line parallel to $PQ$ that passes through the point $(6, -1)$.\n\\newline\n\n(g) Find the equation of the perpendicular bisector of $PQ$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The equation of line $L$ is $3x - 8y + 20 = 0$.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the gradient of line $L$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the coordinates of the point where line $L$ cuts the $y$-axis.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The coordinates of $P$ are $(-3, 8)$ and the coordinates of $Q$ are $(9, -2)$.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate the length $PQ$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the equation of the line parallel to $PQ$ that passes through the point $(6, -1)$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 4,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the equation of the perpendicular bisector of $PQ$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\noindent\\textbf{[2020 May/June, 0580/43, Question 9]}\\par"
+      }
+    ],
+    "_rawBody": "\\noindent\\textbf{[2020 May/June, 0580/43, Question 9]}\\par\n\n\\begin{parts}\n\\item The equation of line $L$ is $3x - 8y + 20 = 0$.\n\n\\begin{subparts}\n\\item Find the gradient of line $L$.\n\n\\AnswerLine\n\\Marks{2}\n\n\\item Find the coordinates of the point where line $L$ cuts the $y$-axis.\n\n\\AnswerLine\n\\Marks{1}\n\\end{subparts}\n\n\\item The coordinates of $P$ are $(-3, 8)$ and the coordinates of $Q$ are $(9, -2)$.\n\n\\begin{subparts}\n\\item Calculate the length $PQ$.\n\n\\AnswerLine\n\\Marks{3}\n\n\\item Find the equation of the line parallel to $PQ$ that passes through the point $(6, -1)$.\n\n\\AnswerLine\n\\Marks{3}\n\n\\item Find the equation of the perpendicular bisector of $PQ$.\n\n\\AnswerLine\n\\Marks{4}\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_compactItems": true
+  },
+  {
+    "id": "0580-2020MayJune-Paper43-Q10",
+    "paper": "2020MayJune-Paper43",
+    "qnum": 10,
+    "marks": 7,
+    "topics": [
+      "Algebra and graphs",
+      "Coordinate geometry",
+      "Geometry",
+      "Trigonometry"
+    ],
+    "s": "2.10",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Graphs of functions",
+    "qtype": "interpreting graphs, writing function equations, estimating gradient from tangent",
+    "g": "function",
+    "src": "0580/43/M/J/20 Q10",
+    "year": 2020,
+    "session": "MayJune",
+    "tex": "(a) The diagrams show the graphs of two functions.\n\\newline\n\nWrite down each function.\n\\newline\n\n(i) (b) \n\n(c) \n\n(d) \n\nThe diagram shows the graph of another function.\n\\newline\n\nBy drawing a suitable tangent, find an estimate for the gradient of the function at the point $P$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The diagrams show the graphs of two functions.\n\\newline\n\nWrite down each function.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "figure",
+                "src": "Figures/Q10_Graph1.tex"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$f(x) = $"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "figure",
+                "src": "Figures/Q10_Graph2.tex"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$f(x) = $"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "figure",
+            "src": "Figures/Q10_Graph3.tex"
+          },
+          {
+            "type": "text",
+            "content": "The diagram shows the graph of another function.\n\\newline\n\nBy drawing a suitable tangent, find an estimate for the gradient of the function at the point $P$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true,
+        "_itemNewline": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item The diagrams show the graphs of two functions.\n\nWrite down each function.\n\n\\begin{subparts}\n\\item\n\\relinput{Figures/Q10_Graph1.tex}\n\n\\AnswerLine[$f(x) = $]\n\\Marks{2}\n\n\\item\n\\relinput{Figures/Q10_Graph2.tex}\n\n\\AnswerLine[$f(x) = $]\n\\Marks{2}\n\\end{subparts}\n\n\\item\n\\relinput{Figures/Q10_Graph3.tex}\n\nThe diagram shows the graph of another function.\n\nBy drawing a suitable tangent, find an estimate for the gradient of the function at the point $P$.\n\n\\AnswerLine\n\\Marks{3}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2020MayJune/Paper43/Q10/Q10_Graph1.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2020MayJune/Paper43/Q10/Q10_Graph2.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2020MayJune/Paper43/Q10/Q10_Graph3.png"
+    ]
+  },
+  {
+    "id": "0580-2020MayJune-Paper43-Q11",
+    "paper": "2020MayJune-Paper43",
+    "qnum": 11,
+    "marks": 11,
+    "topics": [
+      "Number",
+      "Algebra and graphs"
+    ],
+    "s": "2.13",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Functions",
+    "qtype": "function evaluation, composite functions, algebraic manipulation of functions, solving equations with functions",
+    "g": "function",
+    "src": "0580/43/M/J/20 Q11",
+    "year": 2020,
+    "session": "MayJune",
+    "tex": "**[2020 May/June, 0580/43, Question 11]**\n\n\\[ f(x) = 7x - 4 \\qquad g(x) = \\frac{2x}{x-3}, \\ x \\neq 3 \\qquad h(x) = x^2 \\]\n\n(a) Find $g(6)$.\n\\newline\n\n(b) Find $fg(4)$.\n\\newline\n\n(c) Find $fh(x)$.\n\\newline\n\n(d) Find $\\frac{f(x)}{2} + g(x)$.\n\\newline\n\\\\\nGive your answer as a single fraction, in terms of $x$, in its simplest form.\n\\newline\n\n(e) Find the value of $x$ when $f(x+2) = -11$.\n\\newline\n\n(f) Find the values of $p$ that satisfy $h(p) = p$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find $g(6)$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find $fg(4)$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find $fh(x)$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find $\\frac{f(x)}{2} + g(x)$.\n\\newline\n\\\\\nGive your answer as a single fraction, in terms of $x$, in its simplest form.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(e)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the value of $x$ when $f(x+2) = -11$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x = $"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(f)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the values of $p$ that satisfy $h(p) = p$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\noindent\\textbf{[2020 May/June, 0580/43, Question 11]}\\par\n\n\\[ f(x) = 7x - 4 \\qquad g(x) = \\frac{2x}{x-3}, \\ x \\neq 3 \\qquad h(x) = x^2 \\]"
+      }
+    ],
+    "_rawBody": "\\noindent\\textbf{[2020 May/June, 0580/43, Question 11]}\\par\n\n\\[ f(x) = 7x - 4 \\qquad g(x) = \\frac{2x}{x-3}, \\ x \\neq 3 \\qquad h(x) = x^2 \\]\n\n\\begin{parts}\n\\item Find $g(6)$.\n\n\\AnswerLine\n\\Marks{1}\n\n\\item Find $fg(4)$.\n\n\\AnswerLine\n\\Marks{2}\n\n\\item Find $fh(x)$.\n\n\\AnswerLine\n\\Marks{1}\n\n\\item Find $\\frac{f(x)}{2} + g(x)$.\\\\\nGive your answer as a single fraction, in terms of $x$, in its simplest form.\n\n\\AnswerLine\n\\Marks{3}\n\n\\item Find the value of $x$ when $f(x+2) = -11$.\n\n\\AnswerLine[$x = $]\n\\Marks{2}\n\n\\item Find the values of $p$ that satisfy $h(p) = p$.\n\n\\AnswerLine\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2020MayJune-Paper43-Q12",
+    "paper": "2020MayJune-Paper43",
+    "qnum": 12,
+    "marks": 11,
+    "topics": [
+      "Algebra and graphs",
+      "Coordinate geometry"
+    ],
+    "s": "2.12",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Functions notation",
+    "qtype": "differentiation, stationary points, maximum/minimum, graphical solution of quadratic equations",
+    "g": "quadratic",
+    "src": "0580/43/M/J/20 Q12",
+    "year": 2020,
+    "session": "MayJune",
+    "tex": "(a) A curve has equation $y = 4x^3 - 3x + 3$.\n\\newline\n\n(i) (b) Find the coordinates of the two stationary points.\n\\newline\n\n(c) Determine whether each of the stationary points is a maximum or a minimum.\n\\newline\n\\\\\nGive reasons for your answers.\n\\newline\n\n(d) The graph of $y = x^2 - x + 1$ is shown on the grid.\n\\newline\n\nBy drawing a suitable line on the grid, solve the equation $x^2 - 2x - 2 = 0$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "A curve has equation $y = 4x^3 - 3x + 3$.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 5,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the coordinates of the two stationary points.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$( \\dots\\dots\\dots\\dots\\dots\\dots , \\dots\\dots\\dots\\dots\\dots\\dots )$ and ",
+              "suffix": "$( \\dots\\dots\\dots\\dots\\dots\\dots , \\dots\\dots\\dots\\dots\\dots\\dots )$"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "Determine whether each of the stationary points is a maximum or a minimum.\n\\newline\n\\\\\nGive reasons for your answers.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "multiline",
+              "lines": 2,
+              "template": "____\\n____",
+              "lineSep": "blank"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "The graph of $y = x^2 - x + 1$ is shown on the grid.\n\\newline\n"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q12_Chart.tex"
+          },
+          {
+            "type": "text",
+            "content": "By drawing a suitable line on the grid, solve the equation $x^2 - 2x - 2 = 0$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x = $",
+          "suffix": " or $x = $"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "analyse",
+    "cmd": "explain",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item A curve has equation $y = 4x^3 - 3x + 3$.\n\n\\begin{subparts}\n\\item Find the coordinates of the two stationary points.\n\n\\AnswerLine[$( \\dots\\dots\\dots\\dots\\dots\\dots , \\dots\\dots\\dots\\dots\\dots\\dots )$ and ][$( \\dots\\dots\\dots\\dots\\dots\\dots , \\dots\\dots\\dots\\dots\\dots\\dots )$]\n\\Marks{5}\n\n\\item Determine whether each of the stationary points is a maximum or a minimum.\\\\\nGive reasons for your answers.\n\n\\AnswerLine\n\\AnswerLine\n\\Marks{3}\n\\end{subparts}\n\n\\item The graph of $y = x^2 - x + 1$ is shown on the grid.\n\n\\relinput{Figures/Q12_Chart.tex}\n\nBy drawing a suitable line on the grid, solve the equation $x^2 - 2x - 2 = 0$.\n\n\\AnswerLine[$x = $][ or $x = $]\n\\Marks{3}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2020MayJune/Paper43/Q12/Q12_Chart.png"
+    ]
+  }
+]

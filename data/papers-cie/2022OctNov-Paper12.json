@@ -1,0 +1,1027 @@
+[
+  {
+    "id": "0580-2022OctNov-Paper12-Q01",
+    "paper": "2022OctNov-Paper12",
+    "qnum": 1,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.5",
+    "d": 1,
+    "cat": "number",
+    "topic": "Ordering",
+    "qtype": "writing numbers in figures, place value",
+    "g": "mixed",
+    "src": "0580/12/O/N/22 Q01",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "(a) \nWrite the number eighty thousand and eighty in figures.\n\\newline\n\nWrite down the value of the 4 in the number $643\\,719$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Write the number eighty thousand and eighty in figures.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "marks": 1,
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down the value of the 4 in the number $643\\,719$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "marks": 1,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "write",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\part Write the number eighty thousand and eighty in figures.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\part Write down the value of the 4 in the number 643\\,719.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper12-Q02",
+    "paper": "2022OctNov-Paper12",
+    "qnum": 2,
+    "marks": 1,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.3",
+    "d": 1,
+    "cat": "number",
+    "topic": "Directed numbers",
+    "qtype": "square root calculation",
+    "g": "mixed",
+    "src": "0580/12/O/N/22 Q02",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "Find the value of $\\sqrt{53.29}$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Find the value of $\\sqrt{53.29}$.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Find the value of $\\sqrt{53.29}$.\n\n\\AnswerLine[][]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper12-Q03",
+    "paper": "2022OctNov-Paper12",
+    "qnum": 3,
+    "marks": 2,
+    "topics": [
+      "Statistics"
+    ],
+    "s": "9.3",
+    "d": 1,
+    "cat": "statistics",
+    "topic": "Frequency tables",
+    "qtype": "averages and spread",
+    "g": "mixed",
+    "src": "0580/12/O/N/22 Q03",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "A football team has 16 players at a training session.\n\\newline\n\nKim records the colour of each of their shirts.\n\\newline\n\n\\begin{tabular}{cccccccc}\nBlue & Silver & Green & Green & Silver & Silver & Red & Silver \\\\\nGreen & Red & Silver & Silver & Blue & Green & White & Blue \\\\\n\\end{tabular}\nComplete the frequency table.\n\\newline\n\nYou may use the tally column to help you.\n\\newline\n\n\\begin{tabular}{|c|c|c|}\n\\hline\nColour & Tally & Frequency \\\\\n\\hline\nBlue & & \\\\\n\\hline\nGreen & & \\\\\n\\hline\nRed & & \\\\\n\\hline\nSilver & & \\\\\n\\hline\nWhite & & \\\\\n\\hline\n\\end{tabular}",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "A football team has 16 players at a training session.\n\\newline\n\nKim records the colour of each of their shirts.\n\\newline\n"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{center}\n\\begin{tabular}{cccccccc}\nBlue & Silver & Green & Green & Silver & Silver & Red & Silver \\\\\nGreen & Red & Silver & Silver & Blue & Green & White & Blue \\\\\n\\end{tabular}\n\\end{center}"
+      },
+      {
+        "type": "text",
+        "content": "Complete the frequency table.\n\\newline\n\nYou may use the tally column to help you.\n\\newline\n"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{center}\n\\begin{tabular}{|c|c|c|}\n\\hline\nColour & Tally & Frequency \\\\\n\\hline\nBlue & & \\\\\n\\hline\nGreen & & \\\\\n\\hline\nRed & & \\\\\n\\hline\nSilver & & \\\\\n\\hline\nWhite & & \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+      }
+    ],
+    "_rawBody": "A football team has 16 players at a training session.\n\nKim records the colour of each of their shirts.\n\n\\begin{center}\n\\begin{tabular}{cccccccc}\nBlue & Silver & Green & Green & Silver & Silver & Red & Silver \\\\\nGreen & Red & Silver & Silver & Blue & Green & White & Blue \\\\\n\\end{tabular}\n\\end{center}\n\nComplete the frequency table.\n\nYou may use the tally column to help you.\n\n\\begin{center}\n\\begin{tabular}{|c|c|c|}\n\\hline\nColour & Tally & Frequency \\\\\n\\hline\nBlue & & \\\\\n\\hline\nGreen & & \\\\\n\\hline\nRed & & \\\\\n\\hline\nSilver & & \\\\\n\\hline\nWhite & & \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper12-Q04",
+    "paper": "2022OctNov-Paper12",
+    "qnum": 4,
+    "marks": 3,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.6",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/12/O/N/22 Q04",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "Complete the net of this cuboid on the $1\\,\\text{cm}^2$ grid.\n\\newline\n\nOne face has been drawn for you.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.6]\n% Cuboid\n\\draw[thick] (0,0) -- (5,0) -- (5,4) -- (0,4) -- cycle;\n\\draw[thick] (5,0) -- (6.5,1.5) -- (6.5,5.5) -- (5,4);\n\\draw[thick] (0,4) -- (1.5,5.5) -- (6.5,5.5);\n\\draw[dashed] (0,0) -- (1.5,1.5) -- (6.5,1.5);\n\\draw[dashed] (1.5,1.5) -- (1.5,5.5);\n\n% Labels\n\\node[above] at (2.5,5.5) {$5\\,\\text{cm}$};\n\\node[right] at (6.5,3.5) {$4\\,\\text{cm}$};\n\\node[below right] at (5.5,0.5) {$2\\,\\text{cm}$};\n\n% NOT TO SCALE\n\\node at (9,4) {NOT TO};\n\\node at (9,3.3) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nComplete the net of this cuboid on the $1\\,\\text{cm}^2$ grid.\n\\newline\n\nOne face has been drawn for you.\n\\newline\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.4]\n% Grid\n\\draw[very thin, gray] (0,0) grid (14,18);\n% One face drawn\n\\draw[thick] (2,13) rectangle (7,17);\n\\end{tikzpicture}\n\\end{center}"
+      }
+    ],
+    "_rawBody": "\\begin{center}\n\\begin{tikzpicture}[scale=0.6]\n% Cuboid\n\\draw[thick] (0,0) -- (5,0) -- (5,4) -- (0,4) -- cycle;\n\\draw[thick] (5,0) -- (6.5,1.5) -- (6.5,5.5) -- (5,4);\n\\draw[thick] (0,4) -- (1.5,5.5) -- (6.5,5.5);\n\\draw[dashed] (0,0) -- (1.5,1.5) -- (6.5,1.5);\n\\draw[dashed] (1.5,1.5) -- (1.5,5.5);\n\n% Labels\n\\node[above] at (2.5,5.5) {5\\,cm};\n\\node[right] at (6.5,3.5) {4\\,cm};\n\\node[below right] at (5.5,0.5) {2\\,cm};\n\n% NOT TO SCALE\n\\node at (9,4) {NOT TO};\n\\node at (9,3.3) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nComplete the net of this cuboid on the 1\\,cm$^2$ grid.\n\nOne face has been drawn for you.\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.4]\n% Grid\n\\draw[very thin, gray] (0,0) grid (14,18);\n% One face drawn\n\\draw[thick] (2,13) rectangle (7,17);\n\\end{tikzpicture}\n\\end{center}\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper12-Q05",
+    "paper": "2022OctNov-Paper12",
+    "qnum": 5,
+    "marks": 2,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.5",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Similarity and congruence",
+    "qtype": "symmetry",
+    "g": "mixed",
+    "src": "0580/12/O/N/22 Q05",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "Draw all the lines of symmetry on this shape.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.5]\n% Arrow/cross shape\n\\draw[thick] (2,0) -- (4,0) -- (4,2) -- (6,2) -- (6,4) -- (4,4) -- (4,6) -- (2,6) -- (2,4) -- (0,4) -- (0,2) -- (2,2) -- cycle;\n\\end{tikzpicture}\n\\end{center}\n\nDraw all the lines of symmetry on this shape.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "\\begin{center}\n\\begin{tikzpicture}[scale=0.5]\n% Arrow/cross shape\n\\draw[thick] (2,0) -- (4,0) -- (4,2) -- (6,2) -- (6,4) -- (4,4) -- (4,6) -- (2,6) -- (2,4) -- (0,4) -- (0,2) -- (2,2) -- cycle;\n\\end{tikzpicture}\n\\end{center}\n\nDraw all the lines of symmetry on this shape.\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper12-Q06",
+    "paper": "2022OctNov-Paper12",
+    "qnum": 6,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.6",
+    "d": 1,
+    "cat": "number",
+    "topic": "Standard form",
+    "qtype": "order of operations, use of brackets",
+    "g": "mixed",
+    "src": "0580/12/O/N/22 Q06",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "Put one pair of brackets in each statement to make it correct.\n\\newline\n\n(a) \n$10 \\quad - \\quad 4 \\quad \\div \\quad 2 \\quad + \\quad 18 \\quad = \\quad 21$\n\n$7 \\quad \\times \\quad 3 \\quad + \\quad 1 \\quad + \\quad 2 \\quad = \\quad 30$",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "$10 \\quad - \\quad 4 \\quad \\div \\quad 2 \\quad + \\quad 18 \\quad = \\quad 21$"
+          }
+        ],
+        "marks": 1,
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "$7 \\quad \\times \\quad 3 \\quad + \\quad 1 \\quad + \\quad 2 \\quad = \\quad 30$"
+          }
+        ],
+        "marks": 1,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "other",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Put one pair of brackets in each statement to make it correct.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "Put one pair of brackets in each statement to make it correct.\n\n\\begin{parts}\n\\part $10 \\quad - \\quad 4 \\quad \\div \\quad 2 \\quad + \\quad 18 \\quad = \\quad 21$\n\\Marks{1}\n\n\\part $7 \\quad \\times \\quad 3 \\quad + \\quad 1 \\quad + \\quad 2 \\quad = \\quad 30$\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper12-Q07",
+    "paper": "2022OctNov-Paper12",
+    "qnum": 7,
+    "marks": 2,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry"
+    ],
+    "s": "3.1",
+    "d": 1,
+    "cat": "coord",
+    "topic": "Coordinates",
+    "qtype": "coordinates reading/plotting",
+    "g": "graph",
+    "src": "0580/12/O/N/22 Q07",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "The diagram shows an isosceles triangle.\n\\newline\n\nFind the value of $x$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n% Isosceles triangle\n\\coordinate (A) at (0,0);\n\\coordinate (B) at (4,0);\n\\coordinate (C) at (2,3);\n\n\\draw[thick] (A) -- (B) -- (C) -- cycle;\n\n% Equal marks\n\\draw (0.9,1.4) -- (1.1,1.6);\n\\draw (2.9,1.6) -- (3.1,1.4);\n\n% Angles\n\\node at (2,2.5) {$x°$};\n\\node at (3.3,0.4) {$34°$};\n\n% NOT TO SCALE\n\\node at (5.5,2) {NOT TO};\n\\node at (5.5,1.3) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nThe diagram shows an isosceles triangle.\n\\newline\n\nFind the value of $x$.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "$x =$"
+    },
+    "_rawBody": "\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n% Isosceles triangle\n\\coordinate (A) at (0,0);\n\\coordinate (B) at (4,0);\n\\coordinate (C) at (2,3);\n\n\\draw[thick] (A) -- (B) -- (C) -- cycle;\n\n% Equal marks\n\\draw (0.9,1.4) -- (1.1,1.6);\n\\draw (2.9,1.6) -- (3.1,1.4);\n\n% Angles\n\\node at (2,2.5) {$x°$};\n\\node at (3.3,0.4) {$34°$};\n\n% NOT TO SCALE\n\\node at (5.5,2) {NOT TO};\n\\node at (5.5,1.3) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nThe diagram shows an isosceles triangle.\n\nFind the value of $x$.\n\n\\AnswerLine[$x =$][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper12-Q08",
+    "paper": "2022OctNov-Paper12",
+    "qnum": 8,
+    "marks": 4,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.2",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Rearranging formulae",
+    "qtype": "algebraic simplification and substitution",
+    "g": "simplify",
+    "src": "0580/12/O/N/22 Q08",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "(a) \nSimplify.\n\\newline\n\\[6a + 3b - 2a - 5b\\]\n\n$s = 5t + \\displaystyle\\frac{1}{2}at^2$\n\nFind the value of $s$ when $t = 6$ and $a = 3$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Simplify.\n\\newline\n\\[6a + 3b - 2a - 5b\\]"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "marks": 2,
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "$s = 5t + \\displaystyle\\frac{1}{2}at^2$\n\nFind the value of $s$ when $t = 6$ and $a = 3$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$s =$"
+        },
+        "marks": 2,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\part Simplify.\n\\[6a + 3b - 2a - 5b\\]\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\part $s = 5t + \\displaystyle\\frac{1}{2}at^2$\n\nFind the value of $s$ when $t = 6$ and $a = 3$.\n\n\\AnswerLine[$s =$][]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper12-Q09",
+    "paper": "2022OctNov-Paper12",
+    "qnum": 9,
+    "marks": 2,
+    "topics": [
+      "Transformations and vectors"
+    ],
+    "s": "7.1",
+    "d": 1,
+    "cat": "vectors",
+    "topic": "Translation",
+    "qtype": "transformations",
+    "g": "mixed",
+    "src": "0580/12/O/N/22 Q09",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "Work out.\n\\newline\n\n(a) \n$\\begin{pmatrix} 6 \\\\ -3 \\end{pmatrix} + \\begin{pmatrix} 4 \\\\ -5 \\end{pmatrix}$\n\n{---} \\\\  \\end{pmatrix}$][]\n\n$6\\begin{pmatrix} 3 \\\\ -2 \\end{pmatrix}$\n\n{---} \\\\  \\end{pmatrix}$][]",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "$\\begin{pmatrix} 6 \\\\ -3 \\end{pmatrix} + \\begin{pmatrix} 4 \\\\ -5 \\end{pmatrix}$"
+          }
+        ],
+        "answer": {
+          "type": "vector",
+          "fields": 2,
+          "prefix": "$\\begin{pmatrix} \\makebox[0.8cm]{\\hrulefill} \\\\ \\makebox[0.8cm]{\\hrulefill} \\end{pmatrix}$"
+        },
+        "marks": 1,
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "$6\\begin{pmatrix} 3 \\\\ -2 \\end{pmatrix}$"
+          }
+        ],
+        "answer": {
+          "type": "vector",
+          "fields": 2,
+          "prefix": "$\\begin{pmatrix} \\makebox[0.8cm]{\\hrulefill} \\\\ \\makebox[0.8cm]{\\hrulefill} \\end{pmatrix}$"
+        },
+        "marks": 1,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Work out.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "Work out.\n\n\\begin{parts}\n\\part $\\begin{pmatrix} 6 \\\\ -3 \\end{pmatrix} + \\begin{pmatrix} 4 \\\\ -5 \\end{pmatrix}$\n\n\\AnswerLine[$\\begin{pmatrix} \\makebox[0.8cm]{\\hrulefill} \\\\ \\makebox[0.8cm]{\\hrulefill} \\end{pmatrix}$][]\n\\Marks{1}\n\n\\part $6\\begin{pmatrix} 3 \\\\ -2 \\end{pmatrix}$\n\n\\AnswerLine[$\\begin{pmatrix} \\makebox[0.8cm]{\\hrulefill} \\\\ \\makebox[0.8cm]{\\hrulefill} \\end{pmatrix}$][]\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper12-Q10",
+    "paper": "2022OctNov-Paper12",
+    "qnum": 10,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.6",
+    "d": 1,
+    "cat": "number",
+    "topic": "Standard form",
+    "qtype": "subtraction of fractions without calculator",
+    "g": "mixed",
+    "src": "0580/12/O/N/22 Q10",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "**Without using a calculator**, work out $\\displaystyle\\frac{5}{9} - \\frac{1}{6}$.\n\\newline\n\nYou must show all your working and give your answer as a fraction in its simplest form.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\textbf{Without using a calculator}, work out $\\displaystyle\\frac{5}{9} - \\frac{1}{6}$.\n\\newline\n\nYou must show all your working and give your answer as a fraction in its simplest form.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "\\textbf{Without using a calculator}, work out $\\displaystyle\\frac{5}{9} - \\frac{1}{6}$.\n\nYou must show all your working and give your answer as a fraction in its simplest form.\n\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper12-Q11",
+    "paper": "2022OctNov-Paper12",
+    "qnum": 11,
+    "marks": 2,
+    "topics": [
+      "Probability"
+    ],
+    "s": "8.3",
+    "d": 1,
+    "cat": "probability",
+    "topic": "Tree diagrams",
+    "qtype": "combined events",
+    "g": "mixed",
+    "src": "0580/12/O/N/22 Q11",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "A 4-faced dice is numbered 1 to 4.\n\\newline\n\nThe table shows some of the probabilities of scoring each number.\n\\newline\n\n\\begin{tabular}{|c|c|c|c|c|}\n\\hline\nNumber & 1 & 2 & 3 & 4 \\\\\n\\hline\nProbability & 0.17 & & 0.28 & 0.31 \\\\\n\\hline\n\\end{tabular}\nComplete the table.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "A 4-faced dice is numbered 1 to 4.\n\\newline\n\nThe table shows some of the probabilities of scoring each number.\n\\newline\n"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|}\n\\hline\nNumber & 1 & 2 & 3 & 4 \\\\\n\\hline\nProbability & 0.17 & & 0.28 & 0.31 \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+      },
+      {
+        "type": "text",
+        "content": "Complete the table.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "A 4-faced dice is numbered 1 to 4.\n\nThe table shows some of the probabilities of scoring each number.\n\n\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|}\n\\hline\nNumber & 1 & 2 & 3 & 4 \\\\\n\\hline\nProbability & 0.17 & & 0.28 & 0.31 \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\nComplete the table.\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper12-Q12",
+    "paper": "2022OctNov-Paper12",
+    "qnum": 12,
+    "marks": 4,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.7",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Sequences",
+    "qtype": "finding terms and nth term of sequences",
+    "g": "sequence",
+    "src": "0580/12/O/N/22 Q12",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "(a) \nThese are the first five terms of a sequence.\n\\newline\n\n\\[27 \\qquad 26 \\qquad 23 \\qquad 18 \\qquad 11\\]\n\nFind the next two terms in the sequence.\n\\newline\n\n{---} , ][]\n\nThese are the first five terms of a different sequence.\n\\newline\n\n\\[3 \\qquad 10 \\qquad 17 \\qquad 24 \\qquad 31\\]\n\nFind the $n$th term.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "These are the first five terms of a sequence.\n\\newline\n\n\\[27 \\qquad 26 \\qquad 23 \\qquad 18 \\qquad 11\\]\n\nFind the next two terms in the sequence.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "\\makebox[1.5cm]{\\hrulefill} , \\makebox[1.5cm]{\\hrulefill}"
+        },
+        "marks": 2,
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "These are the first five terms of a different sequence.\n\\newline\n\n\\[3 \\qquad 10 \\qquad 17 \\qquad 24 \\qquad 31\\]\n\nFind the $n$th term.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "marks": 2,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\part These are the first five terms of a sequence.\n\n\\[27 \\qquad 26 \\qquad 23 \\qquad 18 \\qquad 11\\]\n\nFind the next two terms in the sequence.\n\n\\AnswerLine[\\makebox[1.5cm]{\\hrulefill} , \\makebox[1.5cm]{\\hrulefill}][]\n\\Marks{2}\n\n\\part These are the first five terms of a different sequence.\n\n\\[3 \\qquad 10 \\qquad 17 \\qquad 24 \\qquad 31\\]\n\nFind the $n$th term.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper12-Q13",
+    "paper": "2022OctNov-Paper12",
+    "qnum": 13,
+    "marks": 3,
+    "topics": [
+      "Statistics"
+    ],
+    "s": "9.3",
+    "d": 1,
+    "cat": "statistics",
+    "topic": "Frequency tables",
+    "qtype": "averages and spread",
+    "g": "mixed",
+    "src": "0580/12/O/N/22 Q13",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "Daryl records the number of hours in a week 8 people spend exercising.\n\\newline\n\n\\[5 \\qquad 2 \\qquad 1.5 \\qquad 3 \\qquad 18 \\qquad 4.5 \\qquad 2 \\qquad 4\\]\n\n(a) \nFind the median.\n\\newline\n\nExplain why the mean may not be a suitable average to use.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the median.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "h"
+        },
+        "marks": 2,
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Explain why the mean may not be a suitable average to use.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "marks": 1,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "analyse",
+    "cmd": "explain",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Daryl records the number of hours in a week 8 people spend exercising.\n\\newline\n\n\\[5 \\qquad 2 \\qquad 1.5 \\qquad 3 \\qquad 18 \\qquad 4.5 \\qquad 2 \\qquad 4\\]"
+      }
+    ],
+    "_rawBody": "Daryl records the number of hours in a week 8 people spend exercising.\n\n\\[5 \\qquad 2 \\qquad 1.5 \\qquad 3 \\qquad 18 \\qquad 4.5 \\qquad 2 \\qquad 4\\]\n\n\\begin{parts}\n\\part Find the median.\n\n\\AnswerLine[][h]\n\\Marks{2}\n\n\\part Explain why the mean may not be a suitable average to use.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper12-Q14",
+    "paper": "2022OctNov-Paper12",
+    "qnum": 14,
+    "marks": 3,
+    "topics": [
+      "Trigonometry"
+    ],
+    "s": "6.2",
+    "d": 1,
+    "cat": "trigonometry",
+    "topic": "Trig ratios",
+    "qtype": "trigonometric calculation",
+    "g": "mixed",
+    "src": "0580/12/O/N/22 Q14",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "Calculate.\n\\newline\n\n(a) \n$2000 \\times 1.2^3$\n\n$2\\displaystyle\\frac{1}{8} \\times \\frac{6}{17}$\n\n$\\displaystyle\\frac{4.5(\\cos 30°)}{\\sqrt{3}} - 2$",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "$2000 \\times 1.2^3$"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "marks": 1,
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "$2\\displaystyle\\frac{1}{8} \\times \\frac{6}{17}$"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "marks": 1,
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "$\\displaystyle\\frac{4.5(\\cos 30°)}{\\sqrt{3}} - 2$"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "marks": 1,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Calculate.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "Calculate.\n\n\\begin{parts}\n\\part $2000 \\times 1.2^3$\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\part $2\\displaystyle\\frac{1}{8} \\times \\frac{6}{17}$\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\part $\\displaystyle\\frac{4.5(\\cos 30°)}{\\sqrt{3}} - 2$\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper12-Q15",
+    "paper": "2022OctNov-Paper12",
+    "qnum": 15,
+    "marks": 3,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.16",
+    "d": 1,
+    "cat": "number",
+    "topic": "Upper and lower bounds",
+    "qtype": "cost calculation, unit price",
+    "g": "mixed",
+    "src": "0580/12/O/N/22 Q15",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "Jenna buys $2.4\\,\\text{m}$ of ribbon and $4.8\\,\\text{m}$ of fabric.\n\\newline\n\nThe total cost is \\$33.48.\n\\newline\n\nRibbon costs \\$0.85 per metre.\n\\newline\n\nFind the cost of $1\\,\\text{m}$ of fabric.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Jenna buys $2.4\\,\\text{m}$ of ribbon and $4.8\\,\\text{m}$ of fabric.\n\\newline\n\nThe total cost is \\$33.48.\n\\newline\n\nRibbon costs \\$0.85 per metre.\n\\newline\n\nFind the cost of $1\\,\\text{m}$ of fabric.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "\\$"
+    },
+    "_rawBody": "Jenna buys 2.4\\,m of ribbon and 4.8\\,m of fabric.\n\nThe total cost is \\$33.48.\n\nRibbon costs \\$0.85 per metre.\n\nFind the cost of 1\\,m of fabric.\n\n\\AnswerLine[\\$][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper12-Q16",
+    "paper": "2022OctNov-Paper12",
+    "qnum": 16,
+    "marks": 6,
+    "topics": [
+      "Number",
+      "Algebra and graphs"
+    ],
+    "s": "2.2",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Rearranging formulae",
+    "qtype": "algebraic expansion, factorisation and linear equation solving",
+    "g": "linear",
+    "src": "0580/12/O/N/22 Q16",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "(a) \nExpand.\n\\newline\n\\[x(x + 8)\\]\n\nFactorise completely.\n\\newline\n\\[6a - 3ab\\]\n\nSolve.\n\\newline\n\\[5x - 6 = x + 3\\]",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Expand.\n\\newline\n\\[x(x + 8)\\]"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "marks": 2,
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Factorise completely.\n\\newline\n\\[6a - 3ab\\]"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "marks": 2,
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Solve.\n\\newline\n\\[5x - 6 = x + 3\\]"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x =$"
+        },
+        "marks": 2,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\part Expand.\n\\[x(x + 8)\\]\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\part Factorise completely.\n\\[6a - 3ab\\]\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\part Solve.\n\\[5x - 6 = x + 3\\]\n\n\\AnswerLine[$x =$][]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper12-Q17",
+    "paper": "2022OctNov-Paper12",
+    "qnum": 17,
+    "marks": 4,
+    "topics": [
+      "Number",
+      "Geometry",
+      "Probability"
+    ],
+    "s": "1.2",
+    "d": 1,
+    "cat": "number",
+    "topic": "Squares, cubes and roots",
+    "qtype": "Venn diagram, set notation, probability",
+    "g": "mixed",
+    "src": "0580/12/O/N/22 Q17",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "(a) \n$\\mathscr{E} = \\{$ people in a group $\\}$\n\n$B = \\{$ people who own a bicycle $\\}$\n\n$C = \\{$ people who own a car $\\}$\n\nThere are 120 people in the group.\n\\newline\n\n21 people own a bicycle.\n\\newline\n\n15 people own both a bicycle and a car.\n\\newline\n\n35 people do not own a bicycle and do not own a car.\n\\newline\n\n(i)  Complete the Venn diagram.\n\\newline\n\n A person from the group is chosen at random.\n\\newline\n\nFind the probability that this person owns a car.\n\\newline\n\nt\n\nShade the region $D \\cup E$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "$\\mathscr{E} = \\{$ people in a group $\\}$\n\n$B = \\{$ people who own a bicycle $\\}$\n\n$C = \\{$ people who own a car $\\}$\n\nThere are 120 people in the group.\n\\newline\n\n21 people own a bicycle.\n\\newline\n\n15 people own both a bicycle and a car.\n\\newline\n\n35 people do not own a bicycle and do not own a car.\n\\newline\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n% Universal set\n\\draw (0,0) rectangle (6,4);\n\\node at (0.3,3.7) {$\\mathscr{E}$};\n\n% Set B\n\\draw (2,2) circle (1.3);\n\\node at (1.2,3) {$B$};\n\n% Set C\n\\draw (4,2) circle (1.3);\n\\node at (4.8,3) {$C$};\n\\end{tikzpicture}\n\\end{center}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Complete the Venn diagram.\n\\newline\n"
+              }
+            ],
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "A person from the group is chosen at random.\n\\newline\n\nFind the probability that this person owns a car.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n% Universal set\n\\draw (0,0) rectangle (6,4);\n\\node at (0.3,3.7) {$\\mathscr{E}$};\n\n% Set D\n\\draw (2,2) circle (1.3);\n\\node at (1.2,3) {$D$};\n\n% Set E\n\\draw (4,2) circle (1.3);\n\\node at (4.8,3) {$E$};\n\\end{tikzpicture}\n\\end{center}\n\nShade the region $D \\cup E$.\n\\newline\n"
+          }
+        ],
+        "marks": 1,
+        "_compactMarks": true,
+        "_itemNewline": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\part $\\mathscr{E} = \\{$ people in a group $\\}$\n\n$B = \\{$ people who own a bicycle $\\}$\n\n$C = \\{$ people who own a car $\\}$\n\nThere are 120 people in the group.\n\n21 people own a bicycle.\n\n15 people own both a bicycle and a car.\n\n35 people do not own a bicycle and do not own a car.\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n% Universal set\n\\draw (0,0) rectangle (6,4);\n\\node at (0.3,3.7) {$\\mathscr{E}$};\n\n% Set B\n\\draw (2,2) circle (1.3);\n\\node at (1.2,3) {$B$};\n\n% Set C\n\\draw (4,2) circle (1.3);\n\\node at (4.8,3) {$C$};\n\\end{tikzpicture}\n\\end{center}\n\n\\begin{subparts}\n\\subpart Complete the Venn diagram.\n\\Marks{2}\n\n\\subpart A person from the group is chosen at random.\n\nFind the probability that this person owns a car.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{subparts}\n\n\\part\n\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n% Universal set\n\\draw (0,0) rectangle (6,4);\n\\node at (0.3,3.7) {$\\mathscr{E}$};\n\n% Set D\n\\draw (2,2) circle (1.3);\n\\node at (1.2,3) {$D$};\n\n% Set E\n\\draw (4,2) circle (1.3);\n\\node at (4.8,3) {$E$};\n\\end{tikzpicture}\n\\end{center}\n\nShade the region $D \\cup E$.\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper12-Q18",
+    "paper": "2022OctNov-Paper12",
+    "qnum": 18,
+    "marks": 3,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.6",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/12/O/N/22 Q18",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "The right-angled triangular prism has height $6\\,\\text{cm}$, width $w\\,\\text{cm}$ and length $18\\,\\text{cm}$.\n\\newline\n\nThe volume of the prism is $810\\,\\text{cm}^3$.\n\\newline\n\nFind the value of $w$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.4]\n% Triangular prism\n\\draw[thick] (0,0) -- (4,0) -- (4,6) -- (0,6) -- cycle;\n\\draw[thick] (4,0) -- (8,3) -- (8,9) -- (4,6);\n\\draw[thick] (0,6) -- (4,9) -- (8,9);\n\\draw[dashed] (0,0) -- (4,3) -- (8,3);\n\\draw[dashed] (4,3) -- (4,9);\n\n% Labels\n\\node[left] at (0,3) {$6\\,\\text{cm}$};\n\\node[below] at (2,0) {$w\\,\\text{cm}$};\n\\node[right] at (6,6) {$18\\,\\text{cm}$};\n\n% Right angle mark\n\\draw (0.4,0) -- (0.4,0.4) -- (0,0.4);\n\n% NOT TO SCALE\n\\node at (10,8) {NOT TO};\n\\node at (10,7) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nThe right-angled triangular prism has height $6\\,\\text{cm}$, width $w\\,\\text{cm}$ and length $18\\,\\text{cm}$.\n\\newline\n\nThe volume of the prism is $810\\,\\text{cm}^3$.\n\\newline\n\nFind the value of $w$.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "$w =$"
+    },
+    "_rawBody": "\\begin{center}\n\\begin{tikzpicture}[scale=0.4]\n% Triangular prism\n\\draw[thick] (0,0) -- (4,0) -- (4,6) -- (0,6) -- cycle;\n\\draw[thick] (4,0) -- (8,3) -- (8,9) -- (4,6);\n\\draw[thick] (0,6) -- (4,9) -- (8,9);\n\\draw[dashed] (0,0) -- (4,3) -- (8,3);\n\\draw[dashed] (4,3) -- (4,9);\n\n% Labels\n\\node[left] at (0,3) {6\\,cm};\n\\node[below] at (2,0) {$w$\\,cm};\n\\node[right] at (6,6) {18\\,cm};\n\n% Right angle mark\n\\draw (0.4,0) -- (0.4,0.4) -- (0,0.4);\n\n% NOT TO SCALE\n\\node at (10,8) {NOT TO};\n\\node at (10,7) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nThe right-angled triangular prism has height 6\\,cm, width $w$\\,cm and length 18\\,cm.\n\nThe volume of the prism is 810\\,cm$^3$.\n\nFind the value of $w$.\n\n\\AnswerLine[$w =$][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper12-Q19",
+    "paper": "2022OctNov-Paper12",
+    "qnum": 19,
+    "marks": 2,
+    "topics": [
+      "Probability"
+    ],
+    "s": "8.1",
+    "d": 1,
+    "cat": "probability",
+    "topic": "Basic probability",
+    "qtype": "basic probability",
+    "g": "mixed",
+    "src": "0580/12/O/N/22 Q19",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "In a survey of 1200 people, 150 people are left-handed.\n\\newline\n\nWork out the expected number of left-handed people in a town with $56\\,000$ people.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "In a survey of 1200 people, 150 people are left-handed.\n\\newline\n\nWork out the expected number of left-handed people in a town with $56\\,000$ people.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "In a survey of 1200 people, 150 people are left-handed.\n\nWork out the expected number of left-handed people in a town with 56\\,000 people.\n\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper12-Q20",
+    "paper": "2022OctNov-Paper12",
+    "qnum": 20,
+    "marks": 2,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.4",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Algebraic fractions",
+    "qtype": "simplifying indices and solving index equation",
+    "g": "simplify",
+    "src": "0580/12/O/N/22 Q20",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "(a) \n$5^8 \\div 5^x = 5^2$\n\nFind the value of $x$.\n\\newline\n\nSimplify $(x^5)^3$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "$5^8 \\div 5^x = 5^2$\n\nFind the value of $x$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x =$"
+        },
+        "marks": 1,
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Simplify $(x^5)^3$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "marks": 1,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\part $5^8 \\div 5^x = 5^2$\n\nFind the value of $x$.\n\n\\AnswerLine[$x =$][]\n\\Marks{1}\n\n\\part Simplify $(x^5)^3$.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper12-Q21",
+    "paper": "2022OctNov-Paper12",
+    "qnum": 21,
+    "marks": 2,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry"
+    ],
+    "s": "3.1",
+    "d": 1,
+    "cat": "coord",
+    "topic": "Coordinates",
+    "qtype": "coordinates reading/plotting",
+    "g": "graph",
+    "src": "0580/12/O/N/22 Q21",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "$ABC$ is a right-angled triangle.\n\\newline\n\nCalculate $BC$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.5]\n% Right-angled triangle\n\\coordinate (A) at (2,4);\n\\coordinate (B) at (0,0);\n\\coordinate (C) at (5,0);\n\n\\draw[thick] (A) -- (B) -- (C) -- cycle;\n\n% Right angle mark\n\\draw (0,0.5) -- (0.5,0.5) -- (0.5,0);\n\n% Labels\n\\node[above] at (A) {$A$};\n\\node[below left] at (B) {$B$};\n\\node[below right] at (C) {$C$};\n\\node[left] at (1,2) {$18\\,\\text{cm}$};\n\\node at (3.8,0.6) {$42°$};\n\n% NOT TO SCALE\n\\node at (7,3) {NOT TO};\n\\node at (7,2) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\n$ABC$ is a right-angled triangle.\n\\newline\n\nCalculate $BC$.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "$BC =$",
+      "suffix": "cm"
+    },
+    "_rawBody": "\\begin{center}\n\\begin{tikzpicture}[scale=0.5]\n% Right-angled triangle\n\\coordinate (A) at (2,4);\n\\coordinate (B) at (0,0);\n\\coordinate (C) at (5,0);\n\n\\draw[thick] (A) -- (B) -- (C) -- cycle;\n\n% Right angle mark\n\\draw (0,0.5) -- (0.5,0.5) -- (0.5,0);\n\n% Labels\n\\node[above] at (A) {$A$};\n\\node[below left] at (B) {$B$};\n\\node[below right] at (C) {$C$};\n\\node[left] at (1,2) {18\\,cm};\n\\node at (3.8,0.6) {$42°$};\n\n% NOT TO SCALE\n\\node at (7,3) {NOT TO};\n\\node at (7,2) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\n$ABC$ is a right-angled triangle.\n\nCalculate $BC$.\n\n\\AnswerLine[$BC =$][cm]\n\\Marks{2}",
+    "_compactMarks": true
+  }
+]

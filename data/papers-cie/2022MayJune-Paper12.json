@@ -1,0 +1,1161 @@
+[
+  {
+    "id": "0580-2022MayJune-Paper12-Q01",
+    "paper": "2022MayJune-Paper12",
+    "qnum": 1,
+    "marks": 1,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.5",
+    "d": 1,
+    "cat": "number",
+    "topic": "Ordering",
+    "qtype": "writing numbers in figures from words",
+    "g": "mixed",
+    "src": "0580/12/M/J/22 Q01",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "Write the number six hundred and seven thousand five hundred and thirty-two in figures.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "write",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Write the number six hundred and seven thousand five hundred and thirty-two in figures.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Write the number six hundred and seven thousand five hundred and thirty-two in figures.\n\n\\AnswerLine[][]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2022MayJune-Paper12-Q02",
+    "paper": "2022MayJune-Paper12",
+    "qnum": 2,
+    "marks": 5,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.1",
+    "d": 1,
+    "cat": "number",
+    "topic": "Types of number",
+    "qtype": "identifying types of numbers (square, multiple, factor, prime)",
+    "g": "mixed",
+    "src": "0580/12/M/J/22 Q02",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "From the list of numbers, write down\n61   62   63   64   65   66   67   68   69\n(a) a square number,\n\n(b) a multiple of 13,\n\n(c) a factor of 186,\n\n(d) the prime numbers.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "a square number,"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "a multiple of 13,"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "a factor of 186,"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "the prime numbers.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "write",
+    "stem": [
+      {
+        "type": "text",
+        "content": "From the list of numbers, write down\n\\begin{center}\n61 \\quad 62 \\quad 63 \\quad 64 \\quad 65 \\quad 66 \\quad 67 \\quad 68 \\quad 69\n\\end{center}"
+      }
+    ],
+    "_rawBody": "From the list of numbers, write down\n\\begin{center}\n61 \\quad 62 \\quad 63 \\quad 64 \\quad 65 \\quad 66 \\quad 67 \\quad 68 \\quad 69\n\\end{center}\n\n\\begin{parts}\n\\item a square number,\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item a multiple of 13,\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item a factor of 186,\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item the prime numbers.\n\n\\AnswerLine[][]\n\\Marks{2}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2022MayJune-Paper12-Q03",
+    "paper": "2022MayJune-Paper12",
+    "qnum": 3,
+    "marks": 1,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.4",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Circle theorems",
+    "qtype": "similarity and congruence",
+    "g": "mixed",
+    "src": "0580/12/M/J/22 Q03",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\nOn the grid, draw a triangle that is congruent to triangle $A$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "recall",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "table",
+        "content": "\\begin{InsertScreenShot}\n    \\relincludegraphics{Figures/Q03-TriangleGrid.png}\n\\end{InsertScreenShot}"
+      },
+      {
+        "type": "text",
+        "content": "On the grid, draw a triangle that is congruent to triangle $A$.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2022MayJune/Paper12/Q03/Q03-TriangleGrid.png"
+      }
+    ],
+    "_rawBody": "\\begin{InsertScreenShot}\n    \\relincludegraphics{Figures/Q03-TriangleGrid.png}\n\\end{InsertScreenShot}\n\nOn the grid, draw a triangle that is congruent to triangle $A$.\n\\Marks{1}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2022MayJune/Paper12/Q03/Q03-TriangleGrid.png"
+    ]
+  },
+  {
+    "id": "0580-2022MayJune-Paper12-Q04",
+    "paper": "2022MayJune-Paper12",
+    "qnum": 4,
+    "marks": 2,
+    "topics": [
+      "Statistics"
+    ],
+    "s": "9.4",
+    "d": 1,
+    "cat": "statistics",
+    "topic": "Charts and graphs",
+    "qtype": "statistical charts",
+    "g": "mixed",
+    "src": "0580/12/M/J/22 Q04",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "The stem-and-leaf diagram shows the journey time to school of some students.\n\\newline\n\\begin{tabular}{r|l}\n1 & 3\\;5\\;7\\;9\\;9 \\\\\n2 & 3\\;4\\;5 \\\\\n3 & 0\\;3\\;4\\;6\\;7 \\\\\n4 & 2\\;4\\;5\\;8\n\\end{tabular}\nKey: $1 \\mid 3$ represents 13 minutes\nFind\n(a) the number of students with a journey time of more than 35 minutes,\n\n(b) the mode.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "the number of students with a journey time of more than 35 minutes,"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "the mode.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "min"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The stem-and-leaf diagram shows the journey time to school of some students.\n\\newline\n"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{center}\n\\begin{tabular}{r|l}\n1 & 3\\;5\\;7\\;9\\;9 \\\\\n2 & 3\\;4\\;5 \\\\\n3 & 0\\;3\\;4\\;6\\;7 \\\\\n4 & 2\\;4\\;5\\;8\n\\end{tabular}\n\\end{center}"
+      },
+      {
+        "type": "text",
+        "content": "\\begin{center}\nKey: $1 \\mid 3$ represents 13 minutes\n\\end{center}\n\nFind"
+      }
+    ],
+    "_rawBody": "The stem-and-leaf diagram shows the journey time to school of some students.\n\\begin{center}\n\\begin{tabular}{r|l}\n1 & 3\\;5\\;7\\;9\\;9 \\\\\n2 & 3\\;4\\;5 \\\\\n3 & 0\\;3\\;4\\;6\\;7 \\\\\n4 & 2\\;4\\;5\\;8\n\\end{tabular}\n\\end{center}\n\\begin{center}\nKey: $1 \\mid 3$ represents 13 minutes\n\\end{center}\n\nFind\n\\begin{parts}\n\\item the number of students with a journey time of more than 35 minutes,\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item the mode.\n\n\\AnswerLine[][min]\n\\Marks{1}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "_compactStemParts": true
+  },
+  {
+    "id": "0580-2022MayJune-Paper12-Q05",
+    "paper": "2022MayJune-Paper12",
+    "qnum": 5,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.6",
+    "d": 1,
+    "cat": "number",
+    "topic": "Standard form",
+    "qtype": "division with fractions using a given method",
+    "g": "mixed",
+    "src": "0580/12/M/J/22 Q05",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "This is Arania's method to divide $213$ by $12\\frac{1}{2}$ without using a calculator.\n\\newline\n\\[\n\\begin{aligned}\n213 \\div 12\\frac{1}{2} &= 426 \\div 25 \\\\\n&= 852 \\div 50 \\\\\n&= 1704 \\div 100 \\\\\n&= 17.04\n\\end{aligned}\n\\]\nShow how to use Arania's method to work out $135 \\div 12\\frac{1}{2}$ without using a calculator.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "This is Arania's method to divide $213$ by $12\\frac{1}{2}$ without using a calculator.\n\\newline\n\\[\n\\begin{aligned}\n213 \\div 12\\frac{1}{2} &= 426 \\div 25 \\\\\n&= 852 \\div 50 \\\\\n&= 1704 \\div 100 \\\\\n&= 17.04\n\\end{aligned}\n\\]\nShow how to use Arania's method to work out $135 \\div 12\\frac{1}{2}$ without using a calculator.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "none",
+      "space": {
+        "type": "drawing",
+        "height": "2cm",
+        "cmd": "Answerspace"
+      }
+    },
+    "_rawBody": "This is Arania's method to divide $213$ by $12\\frac{1}{2}$ without using a calculator.\n\\[\n\\begin{aligned}\n213 \\div 12\\frac{1}{2} &= 426 \\div 25 \\\\\n&= 852 \\div 50 \\\\\n&= 1704 \\div 100 \\\\\n&= 17.04\n\\end{aligned}\n\\]\nShow how to use Arania's method to work out $135 \\div 12\\frac{1}{2}$ without using a calculator.\n\n\\Answerspace[2cm]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2022MayJune-Paper12-Q06",
+    "paper": "2022MayJune-Paper12",
+    "qnum": 6,
+    "marks": 2,
+    "topics": [
+      "Statistics"
+    ],
+    "s": "9.4",
+    "d": 1,
+    "cat": "statistics",
+    "topic": "Charts and graphs",
+    "qtype": "statistical charts",
+    "g": "mixed",
+    "src": "0580/12/M/J/22 Q06",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\nSammy records the favourite hot drink of some students.\n\\newline\nHe draws a bar chart to show this information.\n\\newline\n\nWrite down two different reasons why his bar chart is incorrect.\n\\newline\n",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "recall",
+    "cmd": "write",
+    "stem": [
+      {
+        "type": "table",
+        "content": "\\begin{InsertScreenShot}\n    \\relincludegraphics{Figures/Q06-BarChart.png}\n\\end{InsertScreenShot}"
+      },
+      {
+        "type": "text",
+        "content": "Sammy records the favourite hot drink of some students.\n\\newline\nHe draws a bar chart to show this information.\n\\newline\n\nWrite down two different reasons why his bar chart is incorrect.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "multiline",
+      "lines": 2
+    },
+    "_rawBody": "\\begin{InsertScreenShot}\n    \\relincludegraphics{Figures/Q06-BarChart.png}\n\\end{InsertScreenShot}\n\nSammy records the favourite hot drink of some students.\nHe draws a bar chart to show this information.\n\nWrite down two different reasons why his bar chart is incorrect.\n\n\\answerlines[2]\n\\Marks{2}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2022MayJune/Paper12/Q06/Q06-BarChart.png"
+    ]
+  },
+  {
+    "id": "0580-2022MayJune-Paper12-Q07",
+    "paper": "2022MayJune-Paper12",
+    "qnum": 7,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.6",
+    "d": 1,
+    "cat": "number",
+    "topic": "Standard form",
+    "qtype": "order of operations with brackets",
+    "g": "mixed",
+    "src": "0580/12/M/J/22 Q07",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "Put one pair of brackets into each calculation to make it correct.\n\\newline\n\n(a) $6 \\times 7 - 5 + 4 = 16$\n\n(b) $-2^2 + 24 \\div 12 - 4 = 2$",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "$6 \\times 7 - 5 + 4 = 16$"
+          }
+        ],
+        "answer": {
+          "type": "none",
+          "space": {
+            "type": "drawing",
+            "height": "1cm",
+            "cmd": "Answerspace"
+          }
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "$-2^2 + 24 \\div 12 - 4 = 2$"
+          }
+        ],
+        "answer": {
+          "type": "none",
+          "space": {
+            "type": "drawing",
+            "height": "1cm",
+            "cmd": "Answerspace"
+          }
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "other",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Put one pair of brackets into each calculation to make it correct.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "Put one pair of brackets into each calculation to make it correct.\n\n\\begin{parts}\n\\item $6 \\times 7 - 5 + 4 = 16$\n\n\\Answerspace[1cm]\n\\Marks{1}\n\n\\item $-2^2 + 24 \\div 12 - 4 = 2$\n\n\\Answerspace[1cm]\n\\Marks{1}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2022MayJune-Paper12-Q08",
+    "paper": "2022MayJune-Paper12",
+    "qnum": 8,
+    "marks": 1,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.6",
+    "d": 1,
+    "cat": "number",
+    "topic": "Standard form",
+    "qtype": "difference between negative and positive temperatures",
+    "g": "mixed",
+    "src": "0580/12/M/J/22 Q08",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "At noon, the temperature is $4^\\circ\\text{C}$.\n\\newline\nAt midnight, the temperature is $-9^\\circ\\text{C}$.\n\\newline\n\nWork out the difference in temperature between noon and midnight.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "At noon, the temperature is $4^\\circ\\text{C}$.\n\\newline\nAt midnight, the temperature is $-9^\\circ\\text{C}$.\n\\newline\n\nWork out the difference in temperature between noon and midnight.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "$^\\circ\\text{C}$"
+    },
+    "_rawBody": "At noon, the temperature is $4^\\circ\\text{C}$.\nAt midnight, the temperature is $-9^\\circ\\text{C}$.\n\nWork out the difference in temperature between noon and midnight.\n\n\\AnswerLine[][$^\\circ\\text{C}$]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2022MayJune-Paper12-Q09",
+    "paper": "2022MayJune-Paper12",
+    "qnum": 9,
+    "marks": 3,
+    "topics": [
+      "Geometry",
+      "Mensuration",
+      "Statistics"
+    ],
+    "s": "4.6",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/12/M/J/22 Q09",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "Thibault records the number of cars of each colour in a car park.\n\\newline\n\\begin{tabular}{|l|c|c|c|c|}\n\\hline\nColour & Black & White & Silver & Red \\\\\n\\hline\nNumber of cars & 8 & 5 & 4 & 3 \\\\\n\\hline\n\\end{tabular}\n(a) He draws a pie chart to show this information.\n\\newline\n\\\\\nCalculate the sector angle for the red cars.\n\\newline\n\n(b) Two more white cars enter the car park and no cars leave the car park.\n\\newline\n\\\\\nWhen these two white cars are included in the results, will the sector angle for the red cars change?\\\\\nWithout doing any further calculations, give a reason for your decision.\n\\newline\n\n because",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "He draws a pie chart to show this information.\n\\newline\n\\\\\nCalculate the sector angle for the red cars.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "$^\\circ$"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Two more white cars enter the car park and no cars leave the car park.\n\\newline\n\\\\\nWhen these two white cars are included in the results, will the sector angle for the red cars change?\\\\\nWithout doing any further calculations, give a reason for your decision.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "multiline",
+          "lines": 2,
+          "template": "____\\n____",
+          "lineSep": "blank"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "explain",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Thibault records the number of cars of each colour in a car park.\n\\newline\n"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{center}\n\\begin{tabular}{|l|c|c|c|c|}\n\\hline\nColour & Black & White & Silver & Red \\\\\n\\hline\nNumber of cars & 8 & 5 & 4 & 3 \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+      }
+    ],
+    "_rawBody": "Thibault records the number of cars of each colour in a car park.\n\\begin{center}\n\\begin{tabular}{|l|c|c|c|c|}\n\\hline\nColour & Black & White & Silver & Red \\\\\n\\hline\nNumber of cars & 8 & 5 & 4 & 3 \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\begin{parts}\n\\item He draws a pie chart to show this information.\\\\\nCalculate the sector angle for the red cars.\n\n\\AnswerLine[][$^\\circ$]\n\\Marks{2}\n\n\\item Two more white cars enter the car park and no cars leave the car park.\\\\\nWhen these two white cars are included in the results, will the sector angle for the red cars change?\\\\\nWithout doing any further calculations, give a reason for your decision.\n\n\\AnswerLine[][] because \\AnswerLine[][]\n\\Marks{1}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2022MayJune-Paper12-Q10",
+    "paper": "2022MayJune-Paper12",
+    "qnum": 10,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.6",
+    "d": 1,
+    "cat": "number",
+    "topic": "Standard form",
+    "qtype": "operations with fractions and negative numbers",
+    "g": "mixed",
+    "src": "0580/12/M/J/22 Q10",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "Let $p = \\left(\\dfrac{2}{8}\\right)$ and $q = \\left(\\dfrac{-1}{4}\\right)$.\n\\newline\nFind\n(a) $p - q$,\n\n(b) $6p$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "$p - q$,"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "$6p$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Let $p = \\left(\\dfrac{2}{8}\\right)$ and $q = \\left(\\dfrac{-1}{4}\\right)$.\n\\newline\nFind"
+      }
+    ],
+    "_rawBody": "Let $p = \\left(\\dfrac{2}{8}\\right)$ and $q = \\left(\\dfrac{-1}{4}\\right)$.\nFind\n\\begin{parts}\n\\item $p - q$,\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item $6p$.\n\n\\AnswerLine[][]\n\\Marks{1}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "_compactStemParts": true
+  },
+  {
+    "id": "0580-2022MayJune-Paper12-Q11",
+    "paper": "2022MayJune-Paper12",
+    "qnum": 11,
+    "marks": 3,
+    "topics": [
+      "Mensuration"
+    ],
+    "s": "5.4",
+    "d": 1,
+    "cat": "mensuration",
+    "topic": "Volume",
+    "qtype": "surface area and volume",
+    "g": "mixed",
+    "src": "0580/12/M/J/22 Q11",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "Find the total surface area of a cuboid with length $8$ cm, width $6$ cm and height $3$ cm.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Find the total surface area of a cuboid with length $8$ cm, width $6$ cm and height $3$ cm.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "cm$^2$"
+    },
+    "_rawBody": "Find the total surface area of a cuboid with length $8$ cm, width $6$ cm and height $3$ cm.\n\n\\AnswerLine[][cm$^2$]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2022MayJune-Paper12-Q12",
+    "paper": "2022MayJune-Paper12",
+    "qnum": 12,
+    "marks": 3,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.6",
+    "d": 1,
+    "cat": "number",
+    "topic": "Standard form",
+    "qtype": "forming algebraic expressions for cost and change",
+    "g": "mixed",
+    "src": "0580/12/M/J/22 Q12",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "(a) The total cost of $n$ bags of flour is \\$d.\n\\newline\n\\\\\nWrite down an expression for the cost of one bag of flour.\n\\newline\n\n\\$ \n\n(b) A bag of rice costs \\$r and a bag of almonds costs \\$a.\n\\newline\n\\\\\nPedro buys $x$ bags of rice and $y$ bags of almonds.\n\\newline\n\\\\\nWrite down an expression for the change that Pedro receives from a \\$20 note.\n\\newline\n\n\\$",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "The total cost of $n$ bags of flour is \\$d.\n\\newline\n\\\\\nWrite down an expression for the cost of one bag of flour.\n\\newline\n\n\\$ \\AnswerLine[][]"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "A bag of rice costs \\$r and a bag of almonds costs \\$a.\n\\newline\n\\\\\nPedro buys $x$ bags of rice and $y$ bags of almonds.\n\\newline\n\\\\\nWrite down an expression for the change that Pedro receives from a \\$20 note.\n\\newline\n\n\\$ \\AnswerLine[][]"
+          }
+        ],
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "write",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item The total cost of $n$ bags of flour is \\$d.\\\\\nWrite down an expression for the cost of one bag of flour.\n\n\\$ \\AnswerLine[][]\n\\Marks{1}\n\n\\item A bag of rice costs \\$r and a bag of almonds costs \\$a.\\\\\nPedro buys $x$ bags of rice and $y$ bags of almonds.\\\\\nWrite down an expression for the change that Pedro receives from a \\$20 note.\n\n\\$ \\AnswerLine[][]\n\\Marks{2}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "_compactBegin": true
+  },
+  {
+    "id": "0580-2022MayJune-Paper12-Q13",
+    "paper": "2022MayJune-Paper12",
+    "qnum": 13,
+    "marks": 3,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.3",
+    "d": 1,
+    "cat": "number",
+    "topic": "Directed numbers",
+    "qtype": "calculating values involving roots and powers, rounding",
+    "g": "indices",
+    "src": "0580/12/M/J/22 Q13",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "(a) Find the value of $\\sqrt{68} \\times \\sqrt{153}$.\n\\newline\n\n(b) Find the value of $6789^{\\frac{1}{3}}$.\n\\newline\n\\\\\nGive your answer correct to 2 decimal places.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the value of $\\sqrt{68} \\times \\sqrt{153}$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the value of $6789^{\\frac{1}{3}}$.\n\\newline\n\\\\\nGive your answer correct to 2 decimal places.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Find the value of $\\sqrt{68} \\times \\sqrt{153}$.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Find the value of $6789^{\\frac{1}{3}}$.\\\\\nGive your answer correct to 2 decimal places.\n\n\\AnswerLine[][]\n\\Marks{2}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "_compactBegin": true
+  },
+  {
+    "id": "0580-2022MayJune-Paper12-Q14",
+    "paper": "2022MayJune-Paper12",
+    "qnum": 14,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.11",
+    "d": 1,
+    "cat": "number",
+    "topic": "Money and finance",
+    "qtype": "simplifying ratios involving standard form",
+    "g": "simplify",
+    "src": "0580/12/M/J/22 Q14",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "Write the ratio $5 \\times 10^{-1} : 2 : 3 \\times 10^{1}$ in its simplest form.\n\\newline\n\n :  :",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "write",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Write the ratio $5 \\times 10^{-1} : 2 : 3 \\times 10^{1}$ in its simplest form.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "multiline",
+      "lines": 3,
+      "template": "____\\n____\\n____",
+      "lineSep": "blank"
+    },
+    "_rawBody": "Write the ratio $5 \\times 10^{-1} : 2 : 3 \\times 10^{1}$ in its simplest form.\n\n\\AnswerLine[] : \\AnswerLine[] : \\AnswerLine[]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2022MayJune-Paper12-Q15",
+    "paper": "2022MayJune-Paper12",
+    "qnum": 15,
+    "marks": 4,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.7",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Sequences",
+    "qtype": "finding terms of a sequence, checking if a number is a term, substitution and solving equation",
+    "g": "sequence",
+    "src": "0580/12/M/J/22 Q15",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "The $n$th term of a sequence is $n^2 + 12$.\n\\newline\n\n(a) Find the first three terms of this sequence.\n\\newline\n\n ,  , \n\n(b) Is 5196 a term in this sequence?\\\\\nGive a reason for your decision.\n\\newline\n\n because",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the first three terms of this sequence.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "multiline",
+          "lines": 3,
+          "template": "____\\n____\\n____",
+          "lineSep": "blank"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Is 5196 a term in this sequence?\\\\\nGive a reason for your decision.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "multiline",
+          "lines": 2,
+          "template": "____\\n____",
+          "lineSep": "blank"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "explain",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The $n$th term of a sequence is $n^2 + 12$.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "The $n$th term of a sequence is $n^2 + 12$.\n\n\\begin{parts}\n\\item Find the first three terms of this sequence.\n\n\\AnswerLine[] , \\AnswerLine[] , \\AnswerLine[]\n\\Marks{2}\n\n\\item Is 5196 a term in this sequence?\\\\\nGive a reason for your decision.\n\n\\AnswerLine[][] because \\AnswerLine[][]\n\\Marks{2}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2022MayJune-Paper12-Q16",
+    "paper": "2022MayJune-Paper12",
+    "qnum": 16,
+    "marks": 1,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.1",
+    "d": 1,
+    "cat": "number",
+    "topic": "Types of number",
+    "qtype": "identifying irrational numbers from a list",
+    "g": "mixed",
+    "src": "0580/12/M/J/22 Q16",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "$33\\frac{1}{3}\\% \\quad \\pi \\quad \\dfrac{1}{13} \\quad 343^{\\frac{1}{3}} \\quad \\sqrt{3} \\quad 5.6 \\times 10^{-7}$\nTwo of the numbers in this list are irrational.\n\\newline\n\\\\\nPut a ring around each of these irrational numbers.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "other",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{center}\n$33\\frac{1}{3}\\% \\quad \\pi \\quad \\dfrac{1}{13} \\quad 343^{\\frac{1}{3}} \\quad \\sqrt{3} \\quad 5.6 \\times 10^{-7}$\n\\end{center}\n\nTwo of the numbers in this list are irrational.\n\\newline\n\\\\\nPut a ring around each of these irrational numbers.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "\\begin{center}\n$33\\frac{1}{3}\\% \\quad \\pi \\quad \\dfrac{1}{13} \\quad 343^{\\frac{1}{3}} \\quad \\sqrt{3} \\quad 5.6 \\times 10^{-7}$\n\\end{center}\n\nTwo of the numbers in this list are irrational.\\\\\nPut a ring around each of these irrational numbers.\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2022MayJune-Paper12-Q17",
+    "paper": "2022MayJune-Paper12",
+    "qnum": 17,
+    "marks": 1,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.7",
+    "d": 1,
+    "cat": "number",
+    "topic": "Estimation and limits",
+    "qtype": "applying index laws to solve for an unknown",
+    "g": "indices",
+    "src": "0580/12/M/J/22 Q17",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "$9^x \\times 9^2 = 9^{12}$\n\nFind the value of $x$.\n\\newline\n\n$x = $",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "$9^x \\times 9^2 = 9^{12}$\n\nFind the value of $x$.\n\\newline\n\n$x = $ \\AnswerLine[][]"
+      }
+    ],
+    "_rawBody": "$9^x \\times 9^2 = 9^{12}$\n\nFind the value of $x$.\n\n$x = $ \\AnswerLine[][]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2022MayJune-Paper12-Q18",
+    "paper": "2022MayJune-Paper12",
+    "qnum": 18,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.9",
+    "d": 1,
+    "cat": "number",
+    "topic": "Percentages",
+    "qtype": "estimating calculation by rounding to significant figures",
+    "g": "mixed",
+    "src": "0580/12/M/J/22 Q18",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "By writing each number in the calculation correct to 1 significant figure, find an estimate for the value of\n\\[\n\\frac{27 - 2.3^2}{845.4 \\times 0.048}.\n\\newline\n\\]",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "By writing each number in the calculation correct to 1 significant figure, find an estimate for the value of\n\\[\n\\frac{27 - 2.3^2}{845.4 \\times 0.048}.\n\\newline\n\\]"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "By writing each number in the calculation correct to 1 significant figure, find an estimate for the value of\n\\[\n\\frac{27 - 2.3^2}{845.4 \\times 0.048}.\n\\]\n\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2022MayJune-Paper12-Q19",
+    "paper": "2022MayJune-Paper12",
+    "qnum": 19,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.10",
+    "d": 1,
+    "cat": "number",
+    "topic": "Time",
+    "qtype": "determining lower and upper bounds for a measurement",
+    "g": "mixed",
+    "src": "0580/12/M/J/22 Q19",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "The length, $l$ metres, of a piece of rope is $30.7$ m, correct to 1 decimal place.\n\\newline\n\\\\\nComplete this statement about the value of $l$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The length, $l$ metres, of a piece of rope is $30.7$ m, correct to 1 decimal place.\n\\newline\n\\\\\nComplete this statement about the value of $l$.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "~~~~~~~~",
+      "suffix": " $\\le l < $ "
+    },
+    "_rawBody": "The length, $l$ metres, of a piece of rope is $30.7$ m, correct to 1 decimal place.\\\\\nComplete this statement about the value of $l$.\n\n\\AnswerLine[~~~~~~~~][ $\\le l < $ ]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2022MayJune-Paper12-Q20",
+    "paper": "2022MayJune-Paper12",
+    "qnum": 20,
+    "marks": 3,
+    "topics": [
+      "Number",
+      "Algebra and graphs"
+    ],
+    "s": "2.2",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Rearranging formulae",
+    "qtype": "expanding, simplifying and factorising algebraic expressions",
+    "g": "simplify",
+    "src": "0580/12/M/J/22 Q20",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "(a) Simplify.\n\\newline\n\\\\\n$3(2a - b) - b$\n\n(b) Factorise.\n\\newline\n\\\\\n$x^2 - 8xy$",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Simplify.\n\\newline\n\\\\\n$3(2a - b) - b$"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Factorise.\n\\newline\n\\\\\n$x^2 - 8xy$"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Simplify.\\\\\n$3(2a - b) - b$\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item Factorise.\\\\\n$x^2 - 8xy$\n\n\\AnswerLine[][]\n\\Marks{1}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "_compactBegin": true
+  },
+  {
+    "id": "0580-2022MayJune-Paper12-Q21",
+    "paper": "2022MayJune-Paper12",
+    "qnum": 21,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.1",
+    "d": 1,
+    "cat": "number",
+    "topic": "Types of number",
+    "qtype": "LCM calculation",
+    "g": "mixed",
+    "src": "0580/12/M/J/22 Q21",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "Find the lowest common multiple (LCM) of 24 and 28.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Find the lowest common multiple (LCM) of 24 and 28.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Find the lowest common multiple (LCM) of 24 and 28.\n\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2022MayJune-Paper12-Q22",
+    "paper": "2022MayJune-Paper12",
+    "qnum": 22,
+    "marks": 2,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.3",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Symmetry",
+    "qtype": "scale drawings and bearings",
+    "g": "mixed",
+    "src": "0580/12/M/J/22 Q22",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\nThe bearing of $B$ from $A$ is $059^\\circ$.\n\\newline\nWork out the bearing of $A$ from $B$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "table",
+        "content": "\\begin{InsertScreenShot}\n    \\relincludegraphics{Figures/Q22-Bearing.png}\n\\end{InsertScreenShot}"
+      },
+      {
+        "type": "text",
+        "content": "The bearing of $B$ from $A$ is $059^\\circ$.\n\\newline\nWork out the bearing of $A$ from $B$.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2022MayJune/Paper12/Q22/Q22-Bearing.png"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "$^\\circ$"
+    },
+    "_rawBody": "\\begin{InsertScreenShot}\n    \\relincludegraphics{Figures/Q22-Bearing.png}\n\\end{InsertScreenShot}\n\nThe bearing of $B$ from $A$ is $059^\\circ$.\nWork out the bearing of $A$ from $B$.\n\n\\AnswerLine[][$^\\circ$]\n\\Marks{2}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2022MayJune/Paper12/Q22/Q22-Bearing.png"
+    ]
+  },
+  {
+    "id": "0580-2022MayJune-Paper12-Q23",
+    "paper": "2022MayJune-Paper12",
+    "qnum": 23,
+    "marks": 3,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.6",
+    "d": 1,
+    "cat": "number",
+    "topic": "Standard form",
+    "qtype": "mixed number subtraction",
+    "g": "mixed",
+    "src": "0580/12/M/J/22 Q23",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "Without using a calculator, work out $4\\dfrac{1}{8} - 2\\dfrac{5}{6}$.\n\\newline\n\\\\\nYou must show all your working and give your answer as a mixed number in its simplest form.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Without using a calculator, work out $4\\dfrac{1}{8} - 2\\dfrac{5}{6}$.\n\\newline\n\\\\\nYou must show all your working and give your answer as a mixed number in its simplest form.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "space": {
+        "type": "drawing",
+        "height": "3cm",
+        "cmd": "Answerspace"
+      }
+    },
+    "_rawBody": "Without using a calculator, work out $4\\dfrac{1}{8} - 2\\dfrac{5}{6}$.\\\\\nYou must show all your working and give your answer as a mixed number in its simplest form.\n\n\\Answerspace[3cm]\n\\AnswerLine[][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2022MayJune-Paper12-Q24",
+    "paper": "2022MayJune-Paper12",
+    "qnum": 24,
+    "marks": 4,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.6",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/12/M/J/22 Q24",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\nThe diagram shows two right-angled triangles, $ABD$ and $BCD$.\n\\newline\n\\\\\n$AD = 5\\text{ m}$, $DC = 14\\text{ m}$ and angle $BAD = 53^\\circ$.\n\\newline\n\nCalculate $BC$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "table",
+        "content": "\\begin{InsertScreenShot}\n    \\relincludegraphics{Figures/Q24-Triangles.png}\n\\end{InsertScreenShot}"
+      },
+      {
+        "type": "text",
+        "content": "The diagram shows two right-angled triangles, $ABD$ and $BCD$.\n\\newline\n\\\\\n$AD = 5\\text{ m}$, $DC = 14\\text{ m}$ and angle $BAD = 53^\\circ$.\n\\newline\n\nCalculate $BC$.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2022MayJune/Paper12/Q24/Q24-Triangles.png"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "$BC = $",
+      "suffix": "m"
+    },
+    "_rawBody": "\\begin{InsertScreenShot}\n    \\relincludegraphics{Figures/Q24-Triangles.png}\n\\end{InsertScreenShot}\n\nThe diagram shows two right-angled triangles, $ABD$ and $BCD$.\\\\\n$AD = 5\\text{ m}$, $DC = 14\\text{ m}$ and angle $BAD = 53^\\circ$.\n\nCalculate $BC$.\n\n\\AnswerLine[$BC = $][m]\n\\Marks{4}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2022MayJune/Paper12/Q24/Q24-Triangles.png"
+    ]
+  }
+]

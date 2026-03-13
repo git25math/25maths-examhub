@@ -1,0 +1,1116 @@
+[
+  {
+    "id": "0580-2021OctNov-Paper33-Q01",
+    "paper": "2021OctNov-Paper33",
+    "qnum": 1,
+    "marks": 15,
+    "topics": [
+      "Geometry",
+      "Mensuration",
+      "Probability"
+    ],
+    "s": "4.3",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Symmetry",
+    "qtype": "scale drawings and bearings",
+    "g": "mixed",
+    "src": "0580/33/O/N/21 Q01",
+    "year": 2021,
+    "session": "OctNov",
+    "tex": "Roberto and his family fly from London to Los Angeles on a holiday.\n\\newline\n\n(a) The flight takes 11 hours 15 minutes.\n\\newline\n(i) (b) The flight leaves London at 15 40 local time.\n\\newline\nThe local time in Los Angeles is 8 hours behind the local time in London.\n\\newline\nWork out the local time in Los Angeles that the plane arrives.\n\\newline\n\n : \n\n(c) The plane flies a total of 8760 km.\n\\newline\nCalculate the average speed of the plane.\n\\newline\n\n km/h\n\n(d) Roberto hires a car.\n\\newline\n(i) (e) The cost of hiring a car is \\$56 per day, plus a fixed cost of \\$436.\n\\newline\nWrite down a formula for the cost, C dollars, of hiring a car for d days.\n\\newline\n\n =  d + \n\n(f) Roberto is given a car at random.\n\\newline\nThere are four colours of car.\n\\newline\n\\begin{tabular}{|c|c|}\n\\hline\nColour & Probability \\\\\n\\hline\nRed & 0.17 \\\\\n\\hline\nSilver & 0.24 \\\\\n\\hline\nBlack & \\\\\n\\hline\nWhite & 0.3 \\\\\n\\hline\n\\end{tabular}\nComplete the table.\n\\newline\n\n = \n\n(g) The family visit a national park which has an area of 4986 km$^2$.\n\\newline\n(i) (h) Write 4986 correct to the nearest hundred.\n\\newline\n\n(i) Write 4986 in standard form.\n\\newline\n\n(j) A ticket for the park costs \\$17.50 plus 8\\% tax.\n\\newline\nCalculate the amount of tax paid.\n\\newline\n\n(k) The scale drawing shows the positions of two viewing points, A and B, in the park.\n\\newline\nThe scale is 1 centimetre represents 5 kilometres.\n\\newline\n\n(i) (l) Work out the actual distance between point A and point B.\n\\newline\n\n km\n\n(m) Point C is 20 km from point A on a bearing of 072$^\\circ$.\n\\newline\nOn the scale drawing mark the position of point C.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The flight takes 11 hours 15 minutes.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "The flight leaves London at 15 40 local time.\n\\newline\nThe local time in Los Angeles is 8 hours behind the local time in London.\n\\newline\nWork out the local time in Los Angeles that the plane arrives.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "multiline",
+              "lines": 2,
+              "template": "____\\n____",
+              "lineSep": "blank"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "The plane flies a total of 8760 km.\n\\newline\nCalculate the average speed of the plane.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true,
+        "_compactContentSubparts": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Roberto hires a car.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "The cost of hiring a car is \\$56 per day, plus a fixed cost of \\$436.\n\\newline\nWrite down a formula for the cost, C dollars, of hiring a car for d days.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "multiline",
+              "lines": 3,
+              "template": "____\\n____\\n____",
+              "lineSep": "blank"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Roberto is given a car at random.\n\\newline\nThere are four colours of car.\n\\newline\n"
+              },
+              {
+                "type": "table",
+                "content": "\\begin{tabular}{|c|c|}\n\\hline\nColour & Probability \\\\\n\\hline\nRed & 0.17 \\\\\n\\hline\nSilver & 0.24 \\\\\n\\hline\nBlack & \\\\\n\\hline\nWhite & 0.3 \\\\\n\\hline\n\\end{tabular}"
+              },
+              {
+                "type": "text",
+                "content": "Complete the table.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "multiline",
+              "lines": 2,
+              "template": "____\\n____",
+              "lineSep": "blank"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true,
+        "_compactContentSubparts": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The family visit a national park which has an area of 4986 km$^2$.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Write 4986 correct to the nearest hundred.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Write 4986 in standard form.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true,
+        "_compactContentSubparts": true
+      },
+      {
+        "label": "(d)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "A ticket for the park costs \\$17.50 plus 8\\% tax.\n\\newline\nCalculate the amount of tax paid.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$\\textdollar$"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(e)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The scale drawing shows the positions of two viewing points, A and B, in the park.\n\\newline\nThe scale is 1 centimetre represents 5 kilometres.\n\\newline\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n    % North arrow\n    \\draw[->,thick] (0,0) -- (0,1);\n    \\node at (0,1.3) {North};\n\n    % Points A and B\n    \\fill (0,0) circle (0.1);\n    \\node at (-0.3,0) {A};\n    \\fill (3,2) circle (0.1);\n    \\node at (3.2,2) {B};\n\n    % Scale\n    \\node at (4,0) {Scale: 1 cm to 5 km};\n\\end{tikzpicture}\n\\end{center}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Work out the actual distance between point A and point B.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Point C is 20 km from point A on a bearing of 072$^\\circ$.\n\\newline\nOn the scale drawing mark the position of point C.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "none",
+              "space": {
+                "type": "drawing",
+                "height": "4cm",
+                "cmd": "Answerspace"
+              }
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Roberto and his family fly from London to Los Angeles on a holiday.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "Roberto and his family fly from London to Los Angeles on a holiday.\n\n\\begin{parts}\n\\item The flight takes 11 hours 15 minutes.\n\\begin{subparts}\n\\item The flight leaves London at 15 40 local time.\nThe local time in Los Angeles is 8 hours behind the local time in London.\nWork out the local time in Los Angeles that the plane arrives.\n\n\\AnswerLine[] : \\AnswerLine[]\n\\Marks{2}\n\n\\item The plane flies a total of 8760 km.\nCalculate the average speed of the plane.\n\n\\AnswerLine[] km/h\n\\Marks{3}\n\\end{subparts}\n\n\\item Roberto hires a car.\n\\begin{subparts}\n\\item The cost of hiring a car is \\$56 per day, plus a fixed cost of \\$436.\nWrite down a formula for the cost, C dollars, of hiring a car for d days.\n\n\\AnswerLine[] = \\AnswerLine[] d + \\AnswerLine[]\n\\Marks{2}\n\n\\item Roberto is given a car at random.\nThere are four colours of car.\n\\begin{tabular}{|c|c|}\n\\hline\nColour & Probability \\\\\n\\hline\nRed & 0.17 \\\\\n\\hline\nSilver & 0.24 \\\\\n\\hline\nBlack & \\\\\n\\hline\nWhite & 0.3 \\\\\n\\hline\n\\end{tabular}\nComplete the table.\n\n\\AnswerLine[] = \\AnswerLine[]\n\\Marks{2}\n\\end{subparts}\n\n\\item The family visit a national park which has an area of 4986 km$^2$.\n\\begin{subparts}\n\\item Write 4986 correct to the nearest hundred.\n\n\\AnswerLine[]\n\\Marks{1}\n\n\\item Write 4986 in standard form.\n\n\\AnswerLine[][]\n\\Marks{1}\n\\end{subparts}\n\n\\item A ticket for the park costs \\$17.50 plus 8\\% tax.\nCalculate the amount of tax paid.\n\n\\AnswerLine[$\\textdollar$][]\n\\Marks{1}\n\n\\item The scale drawing shows the positions of two viewing points, A and B, in the park.\nThe scale is 1 centimetre represents 5 kilometres.\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n    % North arrow\n    \\draw[->,thick] (0,0) -- (0,1);\n    \\node at (0,1.3) {North};\n\n    % Points A and B\n    \\fill (0,0) circle (0.1);\n    \\node at (-0.3,0) {A};\n    \\fill (3,2) circle (0.1);\n    \\node at (3.2,2) {B};\n\n    % Scale\n    \\node at (4,0) {Scale: 1 cm to 5 km};\n\\end{tikzpicture}\n\\end{center}\n\n\\begin{subparts}\n\\item Work out the actual distance between point A and point B.\n\n\\AnswerLine[] km\n\\Marks{2}\n\n\\item Point C is 20 km from point A on a bearing of 072$^\\circ$.\nOn the scale drawing mark the position of point C.\n\n\\Answerspace[4cm]\n\\Marks{2}\n\\end{subparts}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2021OctNov-Paper33-Q02",
+    "paper": "2021OctNov-Paper33",
+    "qnum": 2,
+    "marks": 12,
+    "topics": [
+      "Geometry",
+      "Transformations and vectors",
+      "Statistics"
+    ],
+    "s": "4.6",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/33/O/N/21 Q02",
+    "year": 2021,
+    "session": "OctNov",
+    "tex": "(a) The bar chart shows the number of cars sold by a garage in each of six months.\n\\newline\n\n(i) (b) In July, 11 cars were sold.\n\\newline\nComplete the bar chart.\n\\newline\n\n(c) How many more cars were sold in March than in May?\n\n(d) These are the opening times of the garage.\n\\newline\n\\begin{tabular}{|l|l|}\n\\hline\nMonday to Friday & 8.30 am to 5.30 pm \\\\\n\\hline\nSaturday & 8.30 am to 1.00 pm \\\\\n\\hline\nSunday & Closed \\\\\n\\hline\n\\end{tabular}\nWork out how many hours the garage is open in one week.\n\\newline\n\n h\n\n(e) Mohammed works at the garage.\n\\newline\nHe works for 36 hours from Monday to Friday and for 2 hours on Saturday.\n\\newline\nHe is paid \\$10.50 per hour from Monday to Friday.\n\\newline\nOn Saturday he is paid $1\\frac{1}{2}$ times this rate.\n\\newline\nCalculate how much Mohammed is paid for this week.\n\\newline\n\n\\$ \n\n(f) Viktor is saving to buy a car.\n\\newline\nHe invests \\$8000 for 5 years at a rate of 2.4\\% per year compound interest.\n\\newline\nCalculate the value of Viktor's investment at the end of the 5 years.\n\\newline\nGive your answer correct to the nearest dollar.\n\\newline\n\n\\$ \n\n(g) At the garage, Pierre, Luigi and Freda sell cars.\n\\newline\nThey share a bonus of \\$12 000 in the ratio Pierre : Luigi : Freda = 8 : 4 : 3.\n\\newline\nCalculate the amount they each receive.\n\\newline\n\nPierre \\$  \\\\\nLuigi \\$  \\\\\nFreda \\$",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The bar chart shows the number of cars sold by a garage in each of six months.\n\\newline\n\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n    % Draw axes\n    \\draw[thick] (0,0) -- (8,0);\n    \\draw[thick] (0,0) -- (0,18);\n\n    % X-axis labels\n    \\node at (1,-0.5) {Jan};\n    \\node at (2,-0.5) {Feb};\n    \\node at (3,-0.5) {Mar};\n    \\node at (4,-0.5) {Apr};\n    \\node at (5,-0.5) {May};\n    \\node at (6,-0.5) {Jun};\n    \\node at (7,-0.5) {Jul};\n\n    % Y-axis label\n    \\node[rotate=90] at (-0.5,9) {Number of cars sold};\n\n    % Bars (sample data from PDF)\n    \\fill[gray] (0.7,0) rectangle (1.3,14);\n    \\fill[gray] (1.7,0) rectangle (2.3,12);\n    \\fill[gray] (2.7,0) rectangle (3.3,16);\n    \\fill[gray] (3.7,0) rectangle (4.3,10);\n    \\fill[gray] (4.7,0) rectangle (5.3,8);\n    \\fill[gray] (5.7,0) rectangle (6.3,6);\n    % July bar to be completed\n    \\fill[gray] (6.7,0) rectangle (7.3,11);\n\n    % Y-axis scale\n    \\node at (-0.3,14) {14};\n    \\node at (-0.3,12) {12};\n    \\node at (-0.3,16) {16};\n    \\node at (-0.3,10) {10};\n    \\node at (-0.3,8) {8};\n    \\node at (-0.3,6) {6};\n    \\node at (-0.3,4) {4};\n    \\node at (-0.3,2) {2};\n\\end{tikzpicture}\n\\end{center}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "In July, 11 cars were sold.\n\\newline\nComplete the bar chart.\n\\newline\n"
+              }
+            ]
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "How many more cars were sold in March than in May?"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "These are the opening times of the garage.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{tabular}{|l|l|}\n\\hline\nMonday to Friday & 8.30 am to 5.30 pm \\\\\n\\hline\nSaturday & 8.30 am to 1.00 pm \\\\\n\\hline\nSunday & Closed \\\\\n\\hline\n\\end{tabular}"
+          },
+          {
+            "type": "text",
+            "content": "Work out how many hours the garage is open in one week.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Mohammed works at the garage.\n\\newline\nHe works for 36 hours from Monday to Friday and for 2 hours on Saturday.\n\\newline\nHe is paid \\$10.50 per hour from Monday to Friday.\n\\newline\nOn Saturday he is paid $1\\frac{1}{2}$ times this rate.\n\\newline\nCalculate how much Mohammed is paid for this week.\n\\newline\n\n\\$ \\AnswerLine[]"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Viktor is saving to buy a car.\n\\newline\nHe invests \\$8000 for 5 years at a rate of 2.4\\% per year compound interest.\n\\newline\nCalculate the value of Viktor's investment at the end of the 5 years.\n\\newline\nGive your answer correct to the nearest dollar.\n\\newline\n\n\\$ \\AnswerLine[]"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(e)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "At the garage, Pierre, Luigi and Freda sell cars.\n\\newline\nThey share a bonus of \\$12 000 in the ratio Pierre : Luigi : Freda = 8 : 4 : 3.\n\\newline\nCalculate the amount they each receive.\n\\newline\n\nPierre \\$ \\AnswerLine[] \\\\\nLuigi \\$ \\AnswerLine[] \\\\\nFreda \\$ \\AnswerLine[]"
+          }
+        ],
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item The bar chart shows the number of cars sold by a garage in each of six months.\n\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n    % Draw axes\n    \\draw[thick] (0,0) -- (8,0);\n    \\draw[thick] (0,0) -- (0,18);\n\n    % X-axis labels\n    \\node at (1,-0.5) {Jan};\n    \\node at (2,-0.5) {Feb};\n    \\node at (3,-0.5) {Mar};\n    \\node at (4,-0.5) {Apr};\n    \\node at (5,-0.5) {May};\n    \\node at (6,-0.5) {Jun};\n    \\node at (7,-0.5) {Jul};\n\n    % Y-axis label\n    \\node[rotate=90] at (-0.5,9) {Number of cars sold};\n\n    % Bars (sample data from PDF)\n    \\fill[gray] (0.7,0) rectangle (1.3,14);\n    \\fill[gray] (1.7,0) rectangle (2.3,12);\n    \\fill[gray] (2.7,0) rectangle (3.3,16);\n    \\fill[gray] (3.7,0) rectangle (4.3,10);\n    \\fill[gray] (4.7,0) rectangle (5.3,8);\n    \\fill[gray] (5.7,0) rectangle (6.3,6);\n    % July bar to be completed\n    \\fill[gray] (6.7,0) rectangle (7.3,11);\n\n    % Y-axis scale\n    \\node at (-0.3,14) {14};\n    \\node at (-0.3,12) {12};\n    \\node at (-0.3,16) {16};\n    \\node at (-0.3,10) {10};\n    \\node at (-0.3,8) {8};\n    \\node at (-0.3,6) {6};\n    \\node at (-0.3,4) {4};\n    \\node at (-0.3,2) {2};\n\\end{tikzpicture}\n\\end{center}\n\n\\begin{subparts}\n\\item In July, 11 cars were sold.\nComplete the bar chart.\n\n\\Marks{1}\n\\item How many more cars were sold in March than in May?\n\n\\AnswerLine[]\n\\Marks{1}\n\\end{subparts}\n\n\\item These are the opening times of the garage.\n\\begin{tabular}{|l|l|}\n\\hline\nMonday to Friday & 8.30 am to 5.30 pm \\\\\n\\hline\nSaturday & 8.30 am to 1.00 pm \\\\\n\\hline\nSunday & Closed \\\\\n\\hline\n\\end{tabular}\nWork out how many hours the garage is open in one week.\n\n\\AnswerLine[] h\n\\Marks{2}\n\n\\item Mohammed works at the garage.\nHe works for 36 hours from Monday to Friday and for 2 hours on Saturday.\nHe is paid \\$10.50 per hour from Monday to Friday.\nOn Saturday he is paid $1\\frac{1}{2}$ times this rate.\nCalculate how much Mohammed is paid for this week.\n\n\\$ \\AnswerLine[]\n\\Marks{3}\n\n\\item Viktor is saving to buy a car.\nHe invests \\$8000 for 5 years at a rate of 2.4\\% per year compound interest.\nCalculate the value of Viktor's investment at the end of the 5 years.\nGive your answer correct to the nearest dollar.\n\n\\$ \\AnswerLine[]\n\\Marks{3}\n\n\\item At the garage, Pierre, Luigi and Freda sell cars.\nThey share a bonus of \\$12 000 in the ratio Pierre : Luigi : Freda = 8 : 4 : 3.\nCalculate the amount they each receive.\n\nPierre \\$ \\AnswerLine[] \\\\\nLuigi \\$ \\AnswerLine[] \\\\\nFreda \\$ \\AnswerLine[]\n\\Marks{3}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2021OctNov-Paper33-Q03",
+    "paper": "2021OctNov-Paper33",
+    "qnum": 3,
+    "marks": 10,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry",
+      "Transformations and vectors"
+    ],
+    "s": "3.1",
+    "d": 1,
+    "cat": "coord",
+    "topic": "Coordinates",
+    "qtype": "coordinates reading/plotting",
+    "g": "graph",
+    "src": "0580/33/O/N/21 Q03",
+    "year": 2021,
+    "session": "OctNov",
+    "tex": "(a) Write down the order of rotational symmetry of each shape.\n\\newline\n\n \\\\\n\n(b) Triangles A, B and C are shown on the grid.\n\\newline\n\n(i) (c) Describe fully the single transformation that maps\n(d) triangle A onto triangle B,\n\n(e) triangle A onto triangle C.\n\\newline\n\n(ii) On the grid, reflect triangle C in the line x = -1.\n\\newline\n\n(iii) On the grid, translate triangle C by the vector $\\begin{pmatrix} 5 \\\\ -1 \\end{pmatrix}$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down the order of rotational symmetry of each shape.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "multiline",
+          "lines": 2,
+          "template": "____\\n____",
+          "lineSep": "blank"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "text",
+            "content": "Triangles A, B and C are shown on the grid.\n\\newline\n\\begin{center}\n\\begin{tikzpicture}[scale=0.7]\n    % Draw grid\n    \\draw[step=1,gray,very thin] (-8,-8) grid (10,10);\n\n    % Draw axes\n    \\draw[thick,->] (-8,0) -- (10,0);\n    \\draw[thick,->] (0,-8) -- (0,10);\n    \\node at (10.5,0) {x};\n    \\node at (0,10.5) {y};\n\n    % Triangle A (example coordinates)\n    \\fill[blue!30] (1,1) -- (3,1) -- (2,3) -- cycle;\n    \\node at (2,2) {A};\n\n    % Triangle B (example coordinates)\n    \\fill[red!30] (4,2) -- (6,2) -- (5,4) -- cycle;\n    \\node at (5,3) {B};\n\n    % Triangle C (example coordinates)\n    \\fill[green!30] (-2,-2) -- (0,-2) -- (-1,0) -- cycle;\n    \\node at (-1,-1) {C};\n\\end{tikzpicture}\n\\end{center}\n\n\\begin{subparts}"
+          }
+        ]
+      },
+      {
+        "label": "(c)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "text",
+            "content": "Describe fully the single transformation that maps\n\\begin{parts}"
+          }
+        ]
+      },
+      {
+        "label": "(d)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "triangle A onto triangle B,"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(e)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "triangle A onto triangle C.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "describe",
+    "stem": [],
+    "_v4_skip": true,
+    "_rawBody": "\\begin{parts}\n\\item Write down the order of rotational symmetry of each shape.\n\n\\AnswerLine[] \\\\\n\\AnswerLine[]\n\\Marks{2}\n\n\\item Triangles A, B and C are shown on the grid.\n\\begin{center}\n\\begin{tikzpicture}[scale=0.7]\n    % Draw grid\n    \\draw[step=1,gray,very thin] (-8,-8) grid (10,10);\n\n    % Draw axes\n    \\draw[thick,->] (-8,0) -- (10,0);\n    \\draw[thick,->] (0,-8) -- (0,10);\n    \\node at (10.5,0) {x};\n    \\node at (0,10.5) {y};\n\n    % Triangle A (example coordinates)\n    \\fill[blue!30] (1,1) -- (3,1) -- (2,3) -- cycle;\n    \\node at (2,2) {A};\n\n    % Triangle B (example coordinates)\n    \\fill[red!30] (4,2) -- (6,2) -- (5,4) -- cycle;\n    \\node at (5,3) {B};\n\n    % Triangle C (example coordinates)\n    \\fill[green!30] (-2,-2) -- (0,-2) -- (-1,0) -- cycle;\n    \\node at (-1,-1) {C};\n\\end{tikzpicture}\n\\end{center}\n\n\\begin{subparts}\n\\item Describe fully the single transformation that maps\n\\begin{parts}\n\\item triangle A onto triangle B,\n\n\\AnswerLine[]\n\\Marks{3}\n\n\\item triangle A onto triangle C.\n\n\\AnswerLine[]\n\\Marks{3}\n\\end{parts}\n\n\\item On the grid, reflect triangle C in the line x = -1.\n\n\\Answerspace[4cm]\n\\Marks{2}\n\n\\item On the grid, translate triangle C by the vector $\\begin{pmatrix} 5 \\\\ -1 \\end{pmatrix}$.\n\n\\Answerspace[4cm]\n\\Marks{2}\n\\end{subparts}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "_postParts": [
+      {
+        "type": "text",
+        "content": "\\item On the grid, reflect triangle C in the line x = -1.\n\n\\Answerspace[4cm]\n\\Marks{2}\n\n\\item On the grid, translate triangle C by the vector $\\begin{pmatrix} 5 \\\\ -1 \\end{pmatrix}$.\n\n\\Answerspace[4cm]\n\\Marks{2}\n\\end{subparts}\n\\end{parts}"
+      }
+    ]
+  },
+  {
+    "id": "0580-2021OctNov-Paper33-Q04",
+    "paper": "2021OctNov-Paper33",
+    "qnum": 4,
+    "marks": 8,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.6",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/33/O/N/21 Q04",
+    "year": 2021,
+    "session": "OctNov",
+    "tex": "(a) \n(i) (b) Measure the size of angle x.\n\\newline\nAngle x = \n\n(c) Write down the mathematical name of this type of angle.\n\\newline\n\n(d) \nABC is a straight line and ABD is an isosceles triangle.\n\\newline\nFind the value of y.\n\\newline\n\ny = \n\n(e) \nE, F and G are points on the circle, centre O.\n\\newline\nEG = 12 cm.\n\\newline\n\n(i) (f) Write down the mathematical name for the line FG.\n\\newline\n\n(g) Explain why angle EFG is 90$^\\circ$.\n\\newline\n\n(h) Calculate the area of the circle.\n\\newline\n\n cm$^2$",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n    % Draw angle x\n    \\draw[thick] (0,0) -- (3,2);\n    \\draw[thick] (0,0) -- (3,0);\n    \\node at (1.5,0.5) {x};\n    \\node at (1.5,-0.3) {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Measure the size of angle x.\n\\newline\nAngle x = \\AnswerLine[$^\\circ$]"
+              }
+            ],
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Write down the mathematical name of this type of angle.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_itemNewline": true,
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n    % Draw straight line ABC with angle\n    \\draw[thick] (0,0) -- (4,0); % Line ABC\n    \\node at (0,-0.2) {A};\n    \\node at (2,-0.2) {B};\n    \\node at (4,-0.2) {C};\n    \\draw[thick] (2,0) -- (2,2); % Line ABD\n    \\node at (2.2,1) {D};\n    \\node at (1.5,0.3) {74$^\\circ$};\n    \\node at (2.3,0.3) {y$^\\circ$};\n    \\node at (3,0.5) {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}\nABC is a straight line and ABD is an isosceles triangle.\n\\newline\nFind the value of y.\n\\newline\n\ny = \\AnswerLine[$^\\circ$]"
+          }
+        ],
+        "_compactMarks": true,
+        "_itemNewline": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n    % Draw circle with points E, F, G, O\n    \\draw[thick] (0,0) circle (2);\n    \\fill (0,0) circle (0.05);\n    \\node at (0,-0.3) {O};\n    \\fill (2,0) circle (0.05);\n    \\node at (2.3,0) {E};\n    \\fill (0,2) circle (0.05);\n    \\node at (0,2.3) {F};\n    \\fill (-1.414,1.414) circle (0.05);\n    \\node at (-1.8,1.7) {G};\n    \\draw[thick] (2,0) -- (-1.414,1.414); % EG\n    \\draw[thick] (-1.414,1.414) -- (0,2); % GF\n    \\node at (1.5,0.5) {12 cm};\n    \\node at (0.5,1.5) {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}\nE, F and G are points on the circle, centre O.\n\\newline\nEG = 12 cm.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Write down the mathematical name for the line FG.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Explain why angle EFG is 90$^\\circ$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate the area of the circle.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_itemNewline": true,
+        "_compactEndSubparts": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "analyse",
+    "cmd": "explain",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item\n\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n    % Draw angle x\n    \\draw[thick] (0,0) -- (3,2);\n    \\draw[thick] (0,0) -- (3,0);\n    \\node at (1.5,0.5) {x};\n    \\node at (1.5,-0.3) {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}\n\n\\begin{subparts}\n\\item Measure the size of angle x.\nAngle x = \\AnswerLine[$^\\circ$]\n\\Marks{1}\n\n\\item Write down the mathematical name of this type of angle.\n\n\\AnswerLine[]\n\\Marks{1}\n\\end{subparts}\n\n\\item\n\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n    % Draw straight line ABC with angle\n    \\draw[thick] (0,0) -- (4,0); % Line ABC\n    \\node at (0,-0.2) {A};\n    \\node at (2,-0.2) {B};\n    \\node at (4,-0.2) {C};\n    \\draw[thick] (2,0) -- (2,2); % Line ABD\n    \\node at (2.2,1) {D};\n    \\node at (1.5,0.3) {74$^\\circ$};\n    \\node at (2.3,0.3) {y$^\\circ$};\n    \\node at (3,0.5) {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}\nABC is a straight line and ABD is an isosceles triangle.\nFind the value of y.\n\ny = \\AnswerLine[$^\\circ$]\n\\Marks{3}\n\n\\item\n\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n    % Draw circle with points E, F, G, O\n    \\draw[thick] (0,0) circle (2);\n    \\fill (0,0) circle (0.05);\n    \\node at (0,-0.3) {O};\n    \\fill (2,0) circle (0.05);\n    \\node at (2.3,0) {E};\n    \\fill (0,2) circle (0.05);\n    \\node at (0,2.3) {F};\n    \\fill (-1.414,1.414) circle (0.05);\n    \\node at (-1.8,1.7) {G};\n    \\draw[thick] (2,0) -- (-1.414,1.414); % EG\n    \\draw[thick] (-1.414,1.414) -- (0,2); % GF\n    \\node at (1.5,0.5) {12 cm};\n    \\node at (0.5,1.5) {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}\nE, F and G are points on the circle, centre O.\nEG = 12 cm.\n\n\\begin{subparts}\n\\item Write down the mathematical name for the line FG.\n\n\\AnswerLine[]\n\\Marks{1}\n\n\\item Explain why angle EFG is 90$^\\circ$.\n\n\\AnswerLine[]\n\\Marks{1}\n\n\\item Calculate the area of the circle.\n\n\\AnswerLine[] cm$^2$\n\\Marks{2}\n\\end{subparts}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2021OctNov-Paper33-Q05",
+    "paper": "2021OctNov-Paper33",
+    "qnum": 5,
+    "marks": 7,
+    "topics": [
+      "Geometry",
+      "Mensuration",
+      "Probability"
+    ],
+    "s": "4.6",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/33/O/N/21 Q05",
+    "year": 2021,
+    "session": "OctNov",
+    "tex": "(a) A cuboid measures 4 cm by 2 cm by 2 cm.\n\\newline\n(i) (b) On the 1 cm$^2$ grid, draw an accurate net of this cuboid.\n\\newline\nOne face has been drawn for you.\n\\newline\n\n(c) Calculate the surface area of the cuboid.\n\\newline\n\n cm$^2$\n\n(d) A factory makes 5000 of these cuboids.\n\\newline\n25 of the cuboids are checked and 3 of these cuboids are faulty.\n\\newline\nHow many of the 5000 cuboids are expected to be faulty?\n\n(e) The surface area of a cube is 294 cm$^2$.\n\\newline\nCalculate the volume of the cube.\n\\newline\n\n cm$^3$\n\n(f) The length, l cm, of a line is measured as 24 cm, correct to the nearest centimetre.\n\\newline\nComplete the statement about the value of l.\n\\newline\n\n23.5  l  24.5",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "A cuboid measures 4 cm by 2 cm by 2 cm.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "On the 1 cm$^2$ grid, draw an accurate net of this cuboid.\n\\newline\nOne face has been drawn for you.\n\\newline\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n    % Draw 1cm grid\n    \\draw[step=1,gray,very thin] (0,0) grid (10,6);\n\n    % Draw one face (2x2)\n    \\draw[thick] (1,1) rectangle (3,3);\n    \\node at (2,2) {2cm};\n\n    % Space for student to draw the rest of the net\n\\end{tikzpicture}\n\\end{center}"
+              }
+            ]
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate the surface area of the cuboid.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "A factory makes 5000 of these cuboids.\n\\newline\n25 of the cuboids are checked and 3 of these cuboids are faulty.\n\\newline\nHow many of the 5000 cuboids are expected to be faulty?"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true,
+        "_compactContentSubparts": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "The surface area of a cube is 294 cm$^2$.\n\\newline\nCalculate the volume of the cube.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "The length, l cm, of a line is measured as 24 cm, correct to the nearest centimetre.\n\\newline\nComplete the statement about the value of l.\n\\newline\n\n23.5 \\AnswerLine[] l \\AnswerLine[] 24.5"
+          }
+        ],
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item A cuboid measures 4 cm by 2 cm by 2 cm.\n\\begin{subparts}\n\\item On the 1 cm$^2$ grid, draw an accurate net of this cuboid.\nOne face has been drawn for you.\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n    % Draw 1cm grid\n    \\draw[step=1,gray,very thin] (0,0) grid (10,6);\n\n    % Draw one face (2x2)\n    \\draw[thick] (1,1) rectangle (3,3);\n    \\node at (2,2) {2cm};\n\n    % Space for student to draw the rest of the net\n\\end{tikzpicture}\n\\end{center}\n\n\\Marks{3}\n\n\\item Calculate the surface area of the cuboid.\n\n\\AnswerLine[] cm$^2$\n\\Marks{2}\n\n\\item A factory makes 5000 of these cuboids.\n25 of the cuboids are checked and 3 of these cuboids are faulty.\nHow many of the 5000 cuboids are expected to be faulty?\n\n\\AnswerLine[]\n\\Marks{2}\n\\end{subparts}\n\n\\item The surface area of a cube is 294 cm$^2$.\nCalculate the volume of the cube.\n\n\\AnswerLine[] cm$^3$\n\\Marks{3}\n\n\\item The length, l cm, of a line is measured as 24 cm, correct to the nearest centimetre.\nComplete the statement about the value of l.\n\n23.5 \\AnswerLine[] l \\AnswerLine[] 24.5\n\\Marks{2}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2021OctNov-Paper33-Q06",
+    "paper": "2021OctNov-Paper33",
+    "qnum": 6,
+    "marks": 10,
+    "topics": [
+      "Mensuration",
+      "Probability",
+      "Statistics"
+    ],
+    "s": "5.3",
+    "d": 1,
+    "cat": "mensuration",
+    "topic": "Surface area",
+    "qtype": "circles, arcs and sectors",
+    "g": "mixed",
+    "src": "0580/33/O/N/21 Q06",
+    "year": 2021,
+    "session": "OctNov",
+    "tex": "(a) Jean asks 600 people to choose their favourite sport.\n\\newline\nThe pie chart shows some of this information.\n\\newline\n\n(i) (b) Show that 100 people choose tennis.\n\\newline\n\n(c) Work out how many people choose rugby.\n\\newline\n\n(d) 125 people choose cricket and the rest choose swimming.\n\\newline\nComplete the pie chart to show this information.\n\\newline\n\n(e) One of the 600 people is picked at random.\n\\newline\nFind the probability that this person chooses tennis or cricket.\n\\newline\nGive your answer as a fraction in its simplest form.\n\\newline\n\n(f) There are 80 people in a group.\n\\newline\n\\begin{tabular}{|l|}\n\\hline\nH = \\{people who play hockey\\} \\\\\n\\hline\nN = \\{people who play netball\\} \\\\\n\\hline\n\\end{tabular}\n\n36 people play hockey.\n\\newline\n \\\\\n53 people play netball.\n\\newline\n \\\\\n8 people do not play hockey or netball.\n\\newline\n\nComplete the Venn diagram.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Jean asks 600 people to choose their favourite sport.\n\\newline\nThe pie chart shows some of this information.\n\\newline\n\n\\begin{center}\n\\begin{tikzpicture}[scale=1.2]\n    % Draw pie chart\n    \\fill[blue!50] (0,0) -- (0:2) arc (0:105:2) -- cycle; % Football 105°\n    \\fill[red!50] (0,0) -- (105:2) arc (105:180:2) -- cycle; % Tennis 75°\n    \\fill[green!50] (0,0) -- (180:2) arc (180:255:2) -- cycle; % Rugby 75°\n    % Cricket to be added\n    % Swimming to be added\n\n    % Labels\n    \\node at (1.5,0.5) {Football};\n    \\node at (-0.5,1.5) {105$^\\circ$};\n    \\node at (-1.2,0.8) {Tennis};\n    \\node at (-1.5,0.3) {60$^\\circ$};\n    \\node at (-0.5,-1.5) {27$^\\circ$};\n    \\node at (0.8,-1.3) {Rugby};\n    % Cricket and swimming labels to be added\n\n    \\node at (2.5,0) {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Show that 100 people choose tennis.\n\\newline\n"
+              }
+            ]
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Work out how many people choose rugby.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "125 people choose cricket and the rest choose swimming.\n\\newline\nComplete the pie chart to show this information.\n\\newline\n"
+              }
+            ]
+          },
+          {
+            "label": "(iv)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "One of the 600 people is picked at random.\n\\newline\nFind the probability that this person chooses tennis or cricket.\n\\newline\nGive your answer as a fraction in its simplest form.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "There are 80 people in a group.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{tabular}{|l|}\n\\hline\nH = \\{people who play hockey\\} \\\\\n\\hline\nN = \\{people who play netball\\} \\\\\n\\hline\n\\end{tabular}"
+          },
+          {
+            "type": "text",
+            "content": "36 people play hockey.\n\\newline\n \\\\\n53 people play netball.\n\\newline\n \\\\\n8 people do not play hockey or netball.\n\\newline\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n    % Draw Venn diagram circles\n    \\draw[thick] (-1.5,0) circle (1.5);\n    \\draw[thick] (1.5,0) circle (1.5);\n\n    % Labels\n    \\node at (-1.5,0) {H};\n    \\node at (1.5,0) {N};\n\n    % Intersection area\n    \\node at (0,0) {H $\\cap$ N};\n\n    % Areas to fill with numbers\n\\end{tikzpicture}\n\\end{center}\n\nComplete the Venn diagram.\n\\newline\n"
+          }
+        ]
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "analyse",
+    "cmd": "show",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Jean asks 600 people to choose their favourite sport.\nThe pie chart shows some of this information.\n\n\\begin{center}\n\\begin{tikzpicture}[scale=1.2]\n    % Draw pie chart\n    \\fill[blue!50] (0,0) -- (0:2) arc (0:105:2) -- cycle; % Football 105°\n    \\fill[red!50] (0,0) -- (105:2) arc (105:180:2) -- cycle; % Tennis 75°\n    \\fill[green!50] (0,0) -- (180:2) arc (180:255:2) -- cycle; % Rugby 75°\n    % Cricket to be added\n    % Swimming to be added\n\n    % Labels\n    \\node at (1.5,0.5) {Football};\n    \\node at (-0.5,1.5) {105$^\\circ$};\n    \\node at (-1.2,0.8) {Tennis};\n    \\node at (-1.5,0.3) {60$^\\circ$};\n    \\node at (-0.5,-1.5) {27$^\\circ$};\n    \\node at (0.8,-1.3) {Rugby};\n    % Cricket and swimming labels to be added\n\n    \\node at (2.5,0) {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}\n\n\\begin{subparts}\n\\item Show that 100 people choose tennis.\n\n\\Marks{1}\n\n\\item Work out how many people choose rugby.\n\n\\AnswerLine[]\n\\Marks{2}\n\n\\item 125 people choose cricket and the rest choose swimming.\nComplete the pie chart to show this information.\n\n\\Marks{2}\n\n\\item One of the 600 people is picked at random.\nFind the probability that this person chooses tennis or cricket.\nGive your answer as a fraction in its simplest form.\n\n\\AnswerLine[]\n\\Marks{2}\n\\end{subparts}\n\n\\item There are 80 people in a group.\n\\begin{tabular}{|l|}\n\\hline\nH = \\{people who play hockey\\} \\\\\n\\hline\nN = \\{people who play netball\\} \\\\\n\\hline\n\\end{tabular}\n\n36 people play hockey. \\\\\n53 people play netball. \\\\\n8 people do not play hockey or netball.\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n    % Draw Venn diagram circles\n    \\draw[thick] (-1.5,0) circle (1.5);\n    \\draw[thick] (1.5,0) circle (1.5);\n\n    % Labels\n    \\node at (-1.5,0) {H};\n    \\node at (1.5,0) {N};\n\n    % Intersection area\n    \\node at (0,0) {H $\\cap$ N};\n\n    % Areas to fill with numbers\n\\end{tikzpicture}\n\\end{center}\n\nComplete the Venn diagram.\n\n\\Marks{3}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2021OctNov-Paper33-Q07",
+    "paper": "2021OctNov-Paper33",
+    "qnum": 7,
+    "marks": 10,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.1",
+    "d": 1,
+    "cat": "number",
+    "topic": "Types of number",
+    "qtype": "number properties, money calculations, powers",
+    "g": "indices",
+    "src": "0580/33/O/N/21 Q07",
+    "year": 2021,
+    "session": "OctNov",
+    "tex": "(a) Write the number six hundred and three thousand eight hundred and twenty-one in figures.\n\\newline\n\n(b) Pens cost 47 cents each.\n\\newline\nAroha buys 8 pens.\n\\newline\nHow much change does she receive from \\$5?\n\n\\$ \n\n(c) Find the value of\n(i) (d) $8^1$\n\n(e) $6^3$\n\n(f) $3^0$\n\n(g) Write 130 as a product of its prime factors.\n\\newline\n\n(h) A tower has two bells, A and B.\n\\newline\nBell A rings every 12 minutes.\n\\newline\nBell B rings every 14 minutes.\n\\newline\nBoth bells ring at 09 30.\n\\newline\nFind the next time both bells ring together.\n\\newline\n\n :",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write the number six hundred and three thousand eight hundred and twenty-one in figures.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Pens cost 47 cents each.\n\\newline\nAroha buys 8 pens.\n\\newline\nHow much change does she receive from \\$5?\n\n\\$ \\AnswerLine[]"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the value of"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "$8^1$"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "$6^3$"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "$3^0$"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true,
+        "_compactContentSubparts": true
+      },
+      {
+        "label": "(d)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write 130 as a product of its prime factors.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(e)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "A tower has two bells, A and B.\n\\newline\nBell A rings every 12 minutes.\n\\newline\nBell B rings every 14 minutes.\n\\newline\nBoth bells ring at 09 30.\n\\newline\nFind the next time both bells ring together.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "multiline",
+          "lines": 2,
+          "template": "____\\n____",
+          "lineSep": "blank"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Write the number six hundred and three thousand eight hundred and twenty-one in figures.\n\n\\AnswerLine[]\n\\Marks{1}\n\n\\item Pens cost 47 cents each.\nAroha buys 8 pens.\nHow much change does she receive from \\$5?\n\n\\$ \\AnswerLine[]\n\\Marks{2}\n\n\\item Find the value of\n\\begin{subparts}\n\\item $8^1$\n\n\\AnswerLine[]\n\\Marks{1}\n\n\\item $6^3$\n\n\\AnswerLine[]\n\\Marks{1}\n\n\\item $3^0$\n\n\\AnswerLine[]\n\\Marks{1}\n\\end{subparts}\n\n\\item Write 130 as a product of its prime factors.\n\n\\AnswerLine[]\n\\Marks{2}\n\n\\item A tower has two bells, A and B.\nBell A rings every 12 minutes.\nBell B rings every 14 minutes.\nBoth bells ring at 09 30.\nFind the next time both bells ring together.\n\n\\AnswerLine[] : \\AnswerLine[]\n\\Marks{3}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2021OctNov-Paper33-Q08",
+    "paper": "2021OctNov-Paper33",
+    "qnum": 8,
+    "marks": 12,
+    "topics": [
+      "Algebra and graphs",
+      "Coordinate geometry"
+    ],
+    "s": "2.11",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Differentiation",
+    "qtype": "finding equation of a straight line, completing table for quadratic",
+    "g": "quadratic",
+    "src": "0580/33/O/N/21 Q08",
+    "year": 2021,
+    "session": "OctNov",
+    "tex": "(a) Line L is shown on the grid.\n\\newline\n\nFind the equation of line L in the form y = mx + c.\n\\newline\n\ny =  x + \n\n(b) (i) (c) Complete the table of values for y = x$^2$ + 4x.\n\\newline\n\\begin{tabular}{|c|c|c|c|c|c|c|c|}\n\\hline\nx & -6 & -5 & -4 & -3 & -2 & -1 & 0 \\\\\n\\hline\ny & 12 & 5 & 0 & -3 &  &  &  \\\\\n\\hline\n\\end{tabular}\n\\begin{tabular}{|c|c|c|}\n\\hline\nx & 1 & 2 \\\\\n\\hline\ny & -3 & 0 \\\\\n\\hline\n\\end{tabular}\n\\begin{tabular}{|c|c|}\n\\hline\nx & 3 \\\\\n\\hline\ny & 5 \\\\\n\\hline\n\\end{tabular}\n\n(d) On the grid, draw the graph of y = x$^2$ + 4x for -6 $\\leq$ x $\\leq$ 3.\n\\newline\n\n(e) Use your graph to solve the equation x$^2$ + 4x = 10.\n\\newline\n\nx =  or x =",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Line L is shown on the grid.\n\\newline\n\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n    % Draw grid\n    \\draw[step=1,gray,very thin] (-6,-10) grid (3,25);\n\n    % Draw axes\n    \\draw[thick,->] (-6,0) -- (3,0);\n    \\draw[thick,->] (0,-10) -- (0,25);\n\n    % Draw line L (example line)\n    \\draw[thick,blue] (-4,-8) -- (2,16);\n\n    % Axis labels\n    \\node at (3.2,0) {x};\n    \\node at (0,25.5) {y};\n\\end{tikzpicture}\n\\end{center}\nFind the equation of line L in the form y = mx + c.\n\\newline\n\ny = \\AnswerLine[] x + \\AnswerLine[]"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Complete the table of values for y = x$^2$ + 4x.\n\\newline\n"
+              },
+              {
+                "type": "table",
+                "content": "\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|c|c|c|}\n\\hline\nx & -6 & -5 & -4 & -3 & -2 & -1 & 0 \\\\\n\\hline\ny & 12 & 5 & 0 & -3 &  &  &  \\\\\n\\hline\n\\end{tabular}\n\\begin{tabular}{|c|c|c|}\n\\hline\nx & 1 & 2 \\\\\n\\hline\ny & -3 & 0 \\\\\n\\hline\n\\end{tabular}\n\\begin{tabular}{|c|c|}\n\\hline\nx & 3 \\\\\n\\hline\ny & 5 \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+              }
+            ]
+          },
+          {
+            "label": "(ii)",
+            "marks": 4,
+            "content": [
+              {
+                "type": "text",
+                "content": "On the grid, draw the graph of y = x$^2$ + 4x for -6 $\\leq$ x $\\leq$ 3.\n\\newline\n\\begin{center}\n\\begin{tikzpicture}[scale=0.6]\n    % Draw grid\n    \\draw[step=1,gray,very thin] (-6,-10) grid (3,25);\n\n    % Draw axes\n    \\draw[thick,->] (-6,0) -- (3,0);\n    \\draw[thick,->] (0,-10) -- (0,25);\n\n    % Axis labels\n    \\node at (3.2,0) {x};\n    \\node at (0,25.5) {y};\n\n    % Some reference points for the parabola\n\\end{tikzpicture}\n\\end{center}"
+              }
+            ]
+          },
+          {
+            "label": "(iii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Use your graph to solve the equation x$^2$ + 4x = 10.\n\\newline\n\nx = \\AnswerLine[] or x = \\AnswerLine[]"
+              }
+            ],
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_itemNewline": true,
+        "_compactEndSubparts": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Line L is shown on the grid.\n\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n    % Draw grid\n    \\draw[step=1,gray,very thin] (-6,-10) grid (3,25);\n\n    % Draw axes\n    \\draw[thick,->] (-6,0) -- (3,0);\n    \\draw[thick,->] (0,-10) -- (0,25);\n\n    % Draw line L (example line)\n    \\draw[thick,blue] (-4,-8) -- (2,16);\n\n    % Axis labels\n    \\node at (3.2,0) {x};\n    \\node at (0,25.5) {y};\n\\end{tikzpicture}\n\\end{center}\nFind the equation of line L in the form y = mx + c.\n\ny = \\AnswerLine[] x + \\AnswerLine[]\n\\Marks{3}\n\n\\item\n\\begin{subparts}\n\\item Complete the table of values for y = x$^2$ + 4x.\n\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|c|c|c|}\n\\hline\nx & -6 & -5 & -4 & -3 & -2 & -1 & 0 \\\\\n\\hline\ny & 12 & 5 & 0 & -3 &  &  &  \\\\\n\\hline\n\\end{tabular}\n\\begin{tabular}{|c|c|c|}\n\\hline\nx & 1 & 2 \\\\\n\\hline\ny & -3 & 0 \\\\\n\\hline\n\\end{tabular}\n\\begin{tabular}{|c|c|}\n\\hline\nx & 3 \\\\\n\\hline\ny & 5 \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\Marks{2}\n\n\\item On the grid, draw the graph of y = x$^2$ + 4x for -6 $\\leq$ x $\\leq$ 3.\n\\begin{center}\n\\begin{tikzpicture}[scale=0.6]\n    % Draw grid\n    \\draw[step=1,gray,very thin] (-6,-10) grid (3,25);\n\n    % Draw axes\n    \\draw[thick,->] (-6,0) -- (3,0);\n    \\draw[thick,->] (0,-10) -- (0,25);\n\n    % Axis labels\n    \\node at (3.2,0) {x};\n    \\node at (0,25.5) {y};\n\n    % Some reference points for the parabola\n\\end{tikzpicture}\n\\end{center}\n\n\\Marks{4}\n\n\\item Use your graph to solve the equation x$^2$ + 4x = 10.\n\nx = \\AnswerLine[] or x = \\AnswerLine[]\n\\Marks{2}\n\\end{subparts}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2021OctNov-Paper33-Q09",
+    "paper": "2021OctNov-Paper33",
+    "qnum": 9,
+    "marks": 9,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.5",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Equations",
+    "qtype": "algebraic manipulation, solving linear equations, indices laws, solving simultaneous equations",
+    "g": "simul-linear",
+    "src": "0580/33/O/N/21 Q09",
+    "year": 2021,
+    "session": "OctNov",
+    "tex": "(a) Simplify 3g + 7g - 4g.\n\\newline\n\n(b) Solve 4x + 5 = 27.\n\\newline\n\nx = \n\n(c) Work out the value of p.\n\\newline\n\n6$^p$ $\\div$ 6$^3$ = 6$^{17}$\n\np = \n\n(d) Mia buys 4 calculators and 2 pens for \\$20.60.\n\\newline\nHeidi buys 5 calculators and 3 pens for \\$26.90.\n\\newline\nWrite down a pair of simultaneous equations and solve them to find the cost of a calculator and the cost of a pen.\n\\newline\n\nCalculator \\$  \\\\\nPen \\$",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Simplify 3g + 7g - 4g.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Solve 4x + 5 = 27.\n\\newline\n\nx = \\AnswerLine[]"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Work out the value of p.\n\\newline\n\n6$^p$ $\\div$ 6$^3$ = 6$^{17}$\n\np = \\AnswerLine[]"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 6,
+        "content": [
+          {
+            "type": "text",
+            "content": "Mia buys 4 calculators and 2 pens for \\$20.60.\n\\newline\nHeidi buys 5 calculators and 3 pens for \\$26.90.\n\\newline\nWrite down a pair of simultaneous equations and solve them to find the cost of a calculator and the cost of a pen.\n\\newline\n\nCalculator \\$ \\AnswerLine[] \\\\\nPen \\$ \\AnswerLine[]"
+          }
+        ],
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Simplify 3g + 7g - 4g.\n\n\\AnswerLine[]\n\\Marks{1}\n\n\\item Solve 4x + 5 = 27.\n\nx = \\AnswerLine[]\n\\Marks{2}\n\n\\item Work out the value of p.\n\n6$^p$ $\\div$ 6$^3$ = 6$^{17}$\n\np = \\AnswerLine[]\n\\Marks{1}\n\n\\item Mia buys 4 calculators and 2 pens for \\$20.60.\nHeidi buys 5 calculators and 3 pens for \\$26.90.\nWrite down a pair of simultaneous equations and solve them to find the cost of a calculator and the cost of a pen.\n\nCalculator \\$ \\AnswerLine[] \\\\\nPen \\$ \\AnswerLine[]\n\\Marks{6}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  }
+]

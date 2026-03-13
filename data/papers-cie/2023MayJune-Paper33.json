@@ -1,0 +1,1096 @@
+[
+  {
+    "id": "0580-2023MayJune-Paper33-Q01",
+    "paper": "2023MayJune-Paper33",
+    "qnum": 1,
+    "marks": 12,
+    "topics": [
+      "Number",
+      "Probability",
+      "Statistics"
+    ],
+    "s": null,
+    "d": 1,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/33/M/J/23 Q01",
+    "year": 2023,
+    "session": "MayJune",
+    "tex": "\\begin{question*}{12}{a}Claudia asks some students to choose their favourite science from biology, chemistry and physics.\n\\newline\nThe pie chart shows the results.\n\\newline\n\n\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\n\\begin{subpartsaliged}\nFind the percentage of students who choose chemistry.\n\\newline\n\nFind the fraction of students who choose physics.\n\\newline\nGive your answer in its simplest form.\n\\newline\n\nFor the number of students choosing each subject, find the ratio biology : chemistry : physics.\n\\newline\nGive your answer in its simplest form.\n\\newline\n\nMarcus says:\n\n`I do not know how many people choose chemistry, but I do know it is an even number.\n\\newline\n'\n\nExplain how Marcus knows this.\n\\newline\n\nClaudia now tells Marcus that 26 students choose chemistry.\n\\newline\n\nWork out how many students choose physics.\n\\newline\n\n\\end{subpartsaliged}\n\n(b)The Venn diagram shows information about the number of students in a class who study geography ($G$) and history ($H$).\n\\newline\n\n\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\n\\begin{subpartsaliged}\nWork out the number of students in the class.\n\\newline\n\nFind $n(G)$.\n\\newline\n\nOne of the students is chosen at random.\n\\newline\n\nFind the probability that this student studies geography and history.\n\\newline\n\nOne of the students who studies geography and history stops studying history.\n\\newline\n\nComplete this Venn diagram to show this change.\n\\newline\n\n\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\n\\end{subpartsaliged}\n\n\\end{question*}",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q01/Q01a.png"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        }
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q01/Q01b.png"
+          },
+          {
+            "type": "text",
+            "content": "The Venn diagram shows information about the number of students in a class who study geography ($G$) and history ($H$).\n\\newline\n\n\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\n\\begin{subpartsaliged}\nWork out the number of students in the class.\n\\newline\n\nFind $n(G)$.\n\\newline\n\nOne of the students is chosen at random.\n\\newline\n\nFind the probability that this student studies geography and history.\n\\newline\n\nOne of the students who studies geography and history stops studying history.\n\\newline\n\nComplete this Venn diagram to show this change.\n\\newline\n\n\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\n\\end{subpartsaliged}\n\n\\end{question*}"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        }
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [],
+        "answer": {
+          "type": "number"
+        }
+      },
+      {
+        "label": "(d)",
+        "marks": 1,
+        "content": [],
+        "answer": {
+          "type": "number"
+        }
+      },
+      {
+        "label": "(e)",
+        "marks": 2,
+        "content": [],
+        "answer": {
+          "type": "number"
+        }
+      },
+      {
+        "label": "(f)",
+        "marks": 1,
+        "content": [],
+        "answer": {
+          "type": "number"
+        }
+      },
+      {
+        "label": "(g)",
+        "marks": 1,
+        "content": [],
+        "answer": {
+          "type": "number"
+        }
+      },
+      {
+        "label": "(h)",
+        "marks": 1,
+        "content": [],
+        "answer": {
+          "type": "number"
+        }
+      },
+      {
+        "label": "(i)",
+        "marks": 1,
+        "content": [],
+        "answer": {
+          "type": "number"
+        }
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "",
+    "cmd": "explain",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{question*}{12}{a}Claudia asks some students to choose their favourite science from biology, chemistry and physics.\n\\newline\nThe pie chart shows the results.\n\\newline\n\n\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\n\\begin{subpartsaliged}\nFind the percentage of students who choose chemistry.\n\\newline\n\nFind the fraction of students who choose physics.\n\\newline\nGive your answer in its simplest form.\n\\newline\n\nFor the number of students choosing each subject, find the ratio biology : chemistry : physics.\n\\newline\nGive your answer in its simplest form.\n\\newline\n\nMarcus says:\n\n`I do not know how many people choose chemistry, but I do know it is an even number.\n\\newline\n'\n\nExplain how Marcus knows this.\n\\newline\n\nClaudia now tells Marcus that 26 students choose chemistry.\n\\newline\n\nWork out how many students choose physics.\n\\newline\n\n\\end{subpartsaliged}"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q01/Q01biv.png"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q01/Q01-VennDiagramEmpty.png"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q01/Q01-VennDiagram.png"
+      },
+      {
+        "type": "figure",
+        "hasFigure": true
+      }
+    ],
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q01/Q01-PieChart.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q01/Q01-VennDiagram.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q01/Q01-VennDiagramEmpty.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q01/Q01a.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q01/Q01b.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q01/Q01biv.png"
+    ]
+  },
+  {
+    "id": "0580-2023MayJune-Paper33-Q02",
+    "paper": "2023MayJune-Paper33",
+    "qnum": 2,
+    "marks": 17,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.13",
+    "d": 1,
+    "cat": "number",
+    "topic": "Electronic calculators",
+    "qtype": "Cost calculation, percentage discount, percentage increase",
+    "g": "mixed",
+    "src": "0580/33/M/J/23 Q02",
+    "year": 2023,
+    "session": "MayJune",
+    "tex": "A shop sells food and drink.\n\\newline\n\n(a) Bananas cost \\$1.20 per kilogram and apples cost \\$2.25 per bag.\n\\newline\n\nWork out the total cost of 3.5 kg of bananas and 2 bags of apples.\n\\newline\n\n(b) Students receive a 10\\% discount on their shopping.\n\\newline\nBefore the discount, the cost of a student's shopping is \\$16.80.\n\\newline\n\nWork out the amount of the discount.\n\\newline\n\n(c) The cost of a cabbage increases by 15\\%.\n\\newline\n\nCalculate the new price if the original price is \\$1.80.\n\\newline\n\n(d) Some customers have their shopping delivered to their home.\n\\newline\nThe cost is \\$5 plus \\$1.50 for each kilometre travelled from the shop to their home.\n\\newline\n\n(i) (e) Show that the cost for a customer living 10 km from the shop is \\$20.\n\\newline\n\n(f) \\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\nOn the grid, draw a line to show the cost of having shopping delivered.\n\\newline\n\n(g) A bottle of water costs \\$1.55.\n\\newline\nSuki has \\$20.\n\\newline\n\nWork out the maximum number of bottles Suki can buy and the change she receives.\n\\newline\n\n(h) A farmer delivers eggs to the shop in trays of 50.\n\\newline\nThe eggs are then put into boxes of 12.\n\\newline\nThere are no eggs left in the trays and all of the egg boxes are full.\n\\newline\n\nWork out the smallest possible number of eggs that the farmer delivers.\n\\newline\n\n(i) The shop sells bottles of orange juice in three different sizes.\n\\newline\n\n\\begin{tabular}{ccc}\nBottle A & Bottle B & Bottle C \\\\\n0.5 litres & 1.2 litres & 2 litres \\\\\n\\$1.30 & \\$3.20 & \\$5.25 \\\\\n\\end{tabular}\nWork out which bottle is the best value.\n\\newline\nShow how you decide.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Bananas cost \\$1.20 per kilogram and apples cost \\$2.25 per bag.\n\\newline\n\nWork out the total cost of 3.5 kg of bananas and 2 bags of apples.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "\\$"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Students receive a 10\\% discount on their shopping.\n\\newline\nBefore the discount, the cost of a student's shopping is \\$16.80.\n\\newline\n\nWork out the amount of the discount.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "\\$"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "The cost of a cabbage increases by 15\\%.\n\\newline\n\nCalculate the new price if the original price is \\$1.80.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "\\$"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Some customers have their shopping delivered to their home.\n\\newline\nThe cost is \\$5 plus \\$1.50 for each kilometre travelled from the shop to their home.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Show that the cost for a customer living 10 km from the shop is \\$20.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "none",
+              "space": {
+                "type": "drawing",
+                "height": "2cm",
+                "cmd": "Answerspace"
+              }
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "table",
+                "content": "\\begin{InsertScreenShot}\n\\relincludegraphics{Figures/Q02-Grid.png}\n\\end{InsertScreenShot}"
+              },
+              {
+                "type": "text",
+                "content": "On the grid, draw a line to show the cost of having shopping delivered.\n\\newline\n"
+              }
+            ],
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item"
+      },
+      {
+        "label": "(e)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "A bottle of water costs \\$1.55.\n\\newline\nSuki has \\$20.\n\\newline\n\nWork out the maximum number of bottles Suki can buy and the change she receives.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "Maximum number of bottles",
+          "suffix": "\\hfill Change \\$"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(f)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "A farmer delivers eggs to the shop in trays of 50.\n\\newline\nThe eggs are then put into boxes of 12.\n\\newline\nThere are no eggs left in the trays and all of the egg boxes are full.\n\\newline\n\nWork out the smallest possible number of eggs that the farmer delivers.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(g)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q02/Q02g.png"
+          },
+          {
+            "type": "text",
+            "content": "The shop sells bottles of orange juice in three different sizes.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{center}\n\\begin{tabular}{ccc}\nBottle A & Bottle B & Bottle C \\\\\n0.5 litres & 1.2 litres & 2 litres \\\\\n\\$1.30 & \\$3.20 & \\$5.25 \\\\\n\\end{tabular}\n\\end{center}"
+          },
+          {
+            "type": "text",
+            "content": "Work out which bottle is the best value.\n\\newline\nShow how you decide.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "Bottle"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "show",
+    "stem": [
+      {
+        "type": "text",
+        "content": "A shop sells food and drink.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q02/Q02dii.png"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q02/Q02-Grid.png"
+      }
+    ],
+    "_rawBody": "A shop sells food and drink.\n\n\\begin{parts}\n\\item Bananas cost \\$1.20 per kilogram and apples cost \\$2.25 per bag.\n\nWork out the total cost of 3.5 kg of bananas and 2 bags of apples.\n\n\\AnswerLine[\\$][]\n\\Marks{3}\n\n\\item Students receive a 10\\% discount on their shopping.\nBefore the discount, the cost of a student's shopping is \\$16.80.\n\nWork out the amount of the discount.\n\n\\AnswerLine[\\$][]\n\\Marks{1}\n\n\\item The cost of a cabbage increases by 15\\%.\n\nCalculate the new price if the original price is \\$1.80.\n\n\\AnswerLine[\\$][]\n\\Marks{2}\n\n\\item Some customers have their shopping delivered to their home.\nThe cost is \\$5 plus \\$1.50 for each kilometre travelled from the shop to their home.\n\n\\begin{subparts}\n\\item Show that the cost for a customer living 10 km from the shop is \\$20.\n\n\\Answerspace[2cm]\n\\Marks{1}\n\n\\item\n\\begin{InsertScreenShot}\n\\relincludegraphics{Figures/Q02-Grid.png}\n\\end{InsertScreenShot}\n\nOn the grid, draw a line to show the cost of having shopping delivered.\n\\Marks{2}\n\n\\end{subparts}\n\n\\item A bottle of water costs \\$1.55.\nSuki has \\$20.\n\nWork out the maximum number of bottles Suki can buy and the change she receives.\n\n\\AnswerLine[Maximum number of bottles][\\hfill Change \\$]\n\\Marks{3}\n\n\\item A farmer delivers eggs to the shop in trays of 50.\nThe eggs are then put into boxes of 12.\nThere are no eggs left in the trays and all of the egg boxes are full.\n\nWork out the smallest possible number of eggs that the farmer delivers.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item The shop sells bottles of orange juice in three different sizes.\n\n\\begin{center}\n\\begin{tabular}{ccc}\nBottle A & Bottle B & Bottle C \\\\\n0.5 litres & 1.2 litres & 2 litres \\\\\n\\$1.30 & \\$3.20 & \\$5.25 \\\\\n\\end{tabular}\n\\end{center}\n\nWork out which bottle is the best value.\nShow how you decide.\n\n\\AnswerLine[Bottle][]\n\\Marks{3}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q02/Q02-Grid.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q02/Q02dii.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q02/Q02g.png"
+    ]
+  },
+  {
+    "id": "0580-2023MayJune-Paper33-Q03",
+    "paper": "2023MayJune-Paper33",
+    "qnum": 3,
+    "marks": 13,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.6",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/33/M/J/23 Q03",
+    "year": 2023,
+    "session": "MayJune",
+    "tex": "\\begin{question*}{13}{a}The diagram shows a shape on a 1 cm$^2$ grid.\n\\newline\n\n\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\nWork out the area of the shape.\n\\newline\n\n(b)\n\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\nWork out the perimeter of the rectangle.\n\\newline\n\n(c)A square has an area of 841 cm$^2$.\n\\newline\n\nWork out the length of one side of the square.\n\\newline\n\n(d)The diagram shows a cuboid made from 1 cm$^3$ cubes.\n\\newline\n\n\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\n\\begin{subpartsaliged}\nWork out the volume of the cuboid.\n\\newline\n\nWrite down the dimensions of a different cuboid that can be made using all of the cubes.\n\\newline\n\n\\end{subpartsaliged}\n\n(e)\n\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\nThe diagram shows three small circles and one large circle.\n\\newline\nThe large circle has radius 20 cm.\n\\newline\nThe small circles each have radius 4 cm.\n\\newline\n\nWork out the shaded area.\n\\newline\nGive your answer in terms of $\\pi$.\n\\newline\n\n(f)The exterior angle of a 9-sided regular polygon is 40°.\n\\newline\n\n\\begin{subpartsaliged}\nWork out the size of the interior angle of this polygon.\n\\newline\n\n\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\nThe diagram shows a regular pentagon inside part of a regular 9-sided polygon.\n\\newline\n\nWork out the value of $x$.\n\\newline\n\n\\end{subpartsaliged}\n\n\\end{question*}",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q03/Q03a.png"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        }
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q03/Q03b.png"
+          },
+          {
+            "type": "text",
+            "content": "\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\nWork out the perimeter of the rectangle.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        }
+      },
+      {
+        "label": "(c)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "A square has an area of 841 cm$^2$.\n\\newline\n\nWork out the length of one side of the square.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        }
+      },
+      {
+        "label": "(d)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q03/Q03d.png"
+          },
+          {
+            "type": "text",
+            "content": "The diagram shows a cuboid made from 1 cm$^3$ cubes.\n\\newline\n\n\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\n\\begin{subpartsaliged}\nWork out the volume of the cuboid.\n\\newline\n\nWrite down the dimensions of a different cuboid that can be made using all of the cubes.\n\\newline\n\n\\end{subpartsaliged}\n\n(e)\n\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\nThe diagram shows three small circles and one large circle.\n\\newline\nThe large circle has radius 20 cm.\n\\newline\nThe small circles each have radius 4 cm.\n\\newline\n\nWork out the shaded area.\n\\newline\nGive your answer in terms of $\\pi$.\n\\newline\n\n(f)The exterior angle of a 9-sided regular polygon is 40°.\n\\newline\n\n\\begin{subpartsaliged}\nWork out the size of the interior angle of this polygon.\n\\newline\n\n\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\nThe diagram shows a regular pentagon inside part of a regular 9-sided polygon.\n\\newline\n\nWork out the value of $x$.\n\\newline\n\n\\end{subpartsaliged}\n\n\\end{question*}"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        }
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{question*}{13}{a}The diagram shows a shape on a 1 cm$^2$ grid.\n\\newline\n\n\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\nWork out the area of the shape.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q03/Q03fii.png"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q03/Q03e.png"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q03/Q03-ShapeGrid.png"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q03/Q03-Rectangle.png"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q03/Q03-Pentagon.png"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q03/Q03-Cuboid.png"
+      },
+      {
+        "type": "figure",
+        "hasFigure": true
+      }
+    ],
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q03/Q03-Circles.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q03/Q03-Cuboid.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q03/Q03-Pentagon.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q03/Q03-Rectangle.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q03/Q03-ShapeGrid.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q03/Q03a.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q03/Q03b.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q03/Q03d.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q03/Q03e.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q03/Q03fii.png"
+    ]
+  },
+  {
+    "id": "0580-2023MayJune-Paper33-Q04",
+    "paper": "2023MayJune-Paper33",
+    "qnum": 4,
+    "marks": 12,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.3",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Symmetry",
+    "qtype": "scale drawings and bearings",
+    "g": "mixed",
+    "src": "0580/33/M/J/23 Q04",
+    "year": 2023,
+    "session": "MayJune",
+    "tex": "\\begin{question*}{12}{a}A boat sails from A to B.\n\\newline\nThe travel graph shows this journey.\n\\newline\n\n\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\n\\begin{subpartsaliged}\nWrite down the time that the boat leaves A.\n\\newline\n\nWork out how long, in minutes, it takes the boat to sail from A to B.\n\\newline\n\nThe boat stays at B for 20 minutes.\n\\newline\nThe boat then sails to C at a constant speed of 8 km/h.\n\\newline\n\nComplete the travel graph.\n\\newline\n\nWork out the average speed, in km/h, for the whole journey from A to C.\n\\newline\n\n\\end{subpartsaliged}\n\n(b)The scale drawing shows the positions of two ports, X and Y.\n\\newline\nThe scale is 1 cm represents 8 km.\n\\newline\n\n\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\n\\begin{subpartsaliged}\nMeasure the bearing of Y from X.\n\\newline\n\nA boat, B, is 52 km from X and 80 km from Y.\n\\newline\n\nOn the scale drawing, mark the position of B.\n\\newline\n\nA ship, S, is on a bearing of 284° from X.\n\\newline\n\nWork out the bearing of X from S.\n\\newline\n\n\\end{subpartsaliged}\n\n\\end{question*}",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q04/Q04a.png"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        }
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q04/Q04b.png"
+          },
+          {
+            "type": "text",
+            "content": "The scale drawing shows the positions of two ports, X and Y.\n\\newline\nThe scale is 1 cm represents 8 km.\n\\newline\n\n\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\n\\begin{subpartsaliged}\nMeasure the bearing of Y from X.\n\\newline\n\nA boat, B, is 52 km from X and 80 km from Y.\n\\newline\n\nOn the scale drawing, mark the position of B.\n\\newline\n\nA ship, S, is on a bearing of 284° from X.\n\\newline\n\nWork out the bearing of X from S.\n\\newline\n\n\\end{subpartsaliged}\n\n\\end{question*}"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        }
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [],
+        "answer": {
+          "type": "number"
+        }
+      },
+      {
+        "label": "(d)",
+        "marks": 3,
+        "content": [],
+        "answer": {
+          "type": "number"
+        }
+      },
+      {
+        "label": "(e)",
+        "marks": 1,
+        "content": [],
+        "answer": {
+          "type": "number"
+        }
+      },
+      {
+        "label": "(f)",
+        "marks": 2,
+        "content": [],
+        "answer": {
+          "type": "number"
+        }
+      },
+      {
+        "label": "(g)",
+        "marks": 2,
+        "content": [],
+        "answer": {
+          "type": "number"
+        }
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{question*}{12}{a}A boat sails from A to B.\n\\newline\nThe travel graph shows this journey.\n\\newline\n\n\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\n\\begin{subpartsaliged}\nWrite down the time that the boat leaves A.\n\\newline\n\nWork out how long, in minutes, it takes the boat to sail from A to B.\n\\newline\n\nThe boat stays at B for 20 minutes.\n\\newline\nThe boat then sails to C at a constant speed of 8 km/h.\n\\newline\n\nComplete the travel graph.\n\\newline\n\nWork out the average speed, in km/h, for the whole journey from A to C.\n\\newline\n\n\\end{subpartsaliged}"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q04/Q04-TravelGraph.png"
+      },
+      {
+        "type": "figure",
+        "hasFigure": true
+      }
+    ],
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q04/Q04-ScaleDrawing.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q04/Q04-TravelGraph.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q04/Q04a.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q04/Q04b.png"
+    ]
+  },
+  {
+    "id": "0580-2023MayJune-Paper33-Q05",
+    "paper": "2023MayJune-Paper33",
+    "qnum": 5,
+    "marks": 14,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.7",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Sequences",
+    "qtype": "visual sequences, nth term, solving equations from sequences",
+    "g": "sequence",
+    "src": "0580/33/M/J/23 Q05",
+    "year": 2023,
+    "session": "MayJune",
+    "tex": "The grid shows the first three diagrams in a sequence.\n\\newline\nEach diagram is made using sticks.\n\\newline\n\n\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\n(a) On the grid, draw Diagram 4.\n\\newline\n\n(b) Complete the table.\n\\newline\n\n\\begin{tabular}{|l|c|c|c|c|c|}\n\\hline\nDiagram number & 1 & 2 & 3 & 4 & 5 \\\\\n\\hline\nNumber of sticks & 5 & 9 & 13 & & \\\\\n\\hline\n\\end{tabular}\n\n(c) (i) (d) Find an expression, in terms of $n$, for the number of sticks in Diagram $n$.\n\\newline\n\n(e) One of the diagrams has 73 sticks.\n\\newline\n\nWork out its Diagram number.\n\\newline\n\n(f) (i) (g) Show that the total number of sticks needed to make the first 3 diagrams is 27.\n\\newline\n\n(h) The total number of sticks needed to make the first $k$ diagrams is $2k^2 + 3k$.\n\\newline\n\nShow that this expression gives the correct total number of sticks needed to make the first 3 diagrams.\n\\newline\n\n(i) Tobias wants to make the first 10 diagrams.\n\\newline\nHe has already made the first 3 diagrams.\n\\newline\nHe has 240 sticks left to make the remaining 7 diagrams.\n\\newline\n\nWork out how many sticks he has left when all 10 diagrams are made.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q05/Q05a.png"
+          },
+          {
+            "type": "text",
+            "content": "On the grid, draw Diagram 4.\n\\newline\n"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q05/Q05b.png"
+          },
+          {
+            "type": "text",
+            "content": "Complete the table.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{center}\n\\begin{tabular}{|l|c|c|c|c|c|}\n\\hline\nDiagram number & 1 & 2 & 3 & 4 & 5 \\\\\n\\hline\nNumber of sticks & 5 & 9 & 13 & & \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find an expression, in terms of $n$, for the number of sticks in Diagram $n$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "One of the diagrams has 73 sticks.\n\\newline\n\nWork out its Diagram number.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "Diagram"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_itemNewline": true
+      },
+      {
+        "label": "(d)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Show that the total number of sticks needed to make the first 3 diagrams is 27.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "none",
+              "space": {
+                "type": "drawing",
+                "height": "2cm",
+                "cmd": "Answerspace"
+              }
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "The total number of sticks needed to make the first $k$ diagrams is $2k^2 + 3k$.\n\\newline\n\nShow that this expression gives the correct total number of sticks needed to make the first 3 diagrams.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "none",
+              "space": {
+                "type": "drawing",
+                "height": "2cm",
+                "cmd": "Answerspace"
+              }
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 4,
+            "content": [
+              {
+                "type": "text",
+                "content": "Tobias wants to make the first 10 diagrams.\n\\newline\nHe has already made the first 3 diagrams.\n\\newline\nHe has 240 sticks left to make the remaining 7 diagrams.\n\\newline\n\nWork out how many sticks he has left when all 10 diagrams are made.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_itemNewline": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "show",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The grid shows the first three diagrams in a sequence.\n\\newline\nEach diagram is made using sticks.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q05/Q05.png"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q05/Q05-Sequence.png"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{InsertScreenShot}\n\\relincludegraphics{Figures/Q05-Sequence.png}\n\\end{InsertScreenShot}"
+      }
+    ],
+    "_rawBody": "The grid shows the first three diagrams in a sequence.\nEach diagram is made using sticks.\n\n\\begin{InsertScreenShot}\n\\relincludegraphics{Figures/Q05-Sequence.png}\n\\end{InsertScreenShot}\n\n\\begin{parts}\n\\item On the grid, draw Diagram 4.\n\\Marks{1}\n\n\\item Complete the table.\n\n\\begin{center}\n\\begin{tabular}{|l|c|c|c|c|c|}\n\\hline\nDiagram number & 1 & 2 & 3 & 4 & 5 \\\\\n\\hline\nNumber of sticks & 5 & 9 & 13 & & \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\\Marks{2}\n\n\\item\n\\begin{subparts}\n\\item Find an expression, in terms of $n$, for the number of sticks in Diagram $n$.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item One of the diagrams has 73 sticks.\n\nWork out its Diagram number.\n\n\\AnswerLine[Diagram][]\n\\Marks{2}\n\n\\end{subparts}\n\n\\item\n\\begin{subparts}\n\\item Show that the total number of sticks needed to make the first 3 diagrams is 27.\n\n\\Answerspace[2cm]\n\\Marks{1}\n\n\\item The total number of sticks needed to make the first $k$ diagrams is $2k^2 + 3k$.\n\nShow that this expression gives the correct total number of sticks needed to make the first 3 diagrams.\n\n\\Answerspace[2cm]\n\\Marks{2}\n\n\\item Tobias wants to make the first 10 diagrams.\nHe has already made the first 3 diagrams.\nHe has 240 sticks left to make the remaining 7 diagrams.\n\nWork out how many sticks he has left when all 10 diagrams are made.\n\n\\AnswerLine[][]\n\\Marks{4}\n\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q05/Q05-Sequence.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q05/Q05.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q05/Q05a.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q05/Q05b.png"
+    ]
+  },
+  {
+    "id": "0580-2023MayJune-Paper33-Q06",
+    "paper": "2023MayJune-Paper33",
+    "qnum": 6,
+    "marks": 12,
+    "topics": [
+      "Algebra and graphs",
+      "Coordinate geometry",
+      "Geometry"
+    ],
+    "s": "2.10",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Graphs of functions",
+    "qtype": "linear and quadratic graphs, equation of line, lowest point of graph",
+    "g": "quadratic",
+    "src": "0580/33/M/J/23 Q06",
+    "year": 2023,
+    "session": "MayJune",
+    "tex": "\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\n(a) Write down the equation of line $L$ in the form $y = mx + c$.\n\\newline\n\n(b) (i) (c) Complete the table of values for $y = x^2 - 3x - 3$.\n\\newline\n\n\\begin{tabular}{|c|c|c|c|c|c|c|c|c|}\n\\hline\n$x$ & $-2$ & $-1$ & 0 & 1 & 2 & 3 & 4 & 5 \\\\\n\\hline\n$y$ & & 1 & $-3$ & $-5$ & $-5$ & & 1 & \\\\\n\\hline\n\\end{tabular}\n\n(d) On the grid, draw the graph of $y = x^2 - 3x - 3$ for $-2 \\le x \\le 5$.\n\\newline\n\n(e) (i) (f) Write down the coordinates of the lowest point of the graph of $y = x^2 - 3x - 3$.\n\\newline\n\n(g) On the grid, draw the line of symmetry of the graph of $y = x^2 - 3x - 3$.\n\\newline\n\n(h) Write down the equation of the line of symmetry.\n\\newline\n\n(i) Write down the coordinates of the point where line $L$ intersects the graph of $y = x^2 - 3x - 3$ for $x \\ge 0$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down the equation of line $L$ in the form $y = mx + c$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$y=$"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Complete the table of values for $y = x^2 - 3x - 3$.\n\\newline\n"
+              },
+              {
+                "type": "table",
+                "content": "\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|c|c|c|c|}\n\\hline\n$x$ & $-2$ & $-1$ & 0 & 1 & 2 & 3 & 4 & 5 \\\\\n\\hline\n$y$ & & 1 & $-3$ & $-5$ & $-5$ & & 1 & \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+              }
+            ],
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 4,
+            "content": [
+              {
+                "type": "text",
+                "content": "On the grid, draw the graph of $y = x^2 - 3x - 3$ for $-2 \\le x \\le 5$.\n\\newline\n"
+              }
+            ],
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_itemNewline": true
+      },
+      {
+        "label": "(c)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Write down the coordinates of the lowest point of the graph of $y = x^2 - 3x - 3$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "(\\dots\\dots\\dots\\dots\\dots\\dots , \\dots\\dots\\dots\\dots\\dots\\dots)"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "On the grid, draw the line of symmetry of the graph of $y = x^2 - 3x - 3$.\n\\newline\n"
+              }
+            ],
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Write down the equation of the line of symmetry.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_itemNewline": true
+      },
+      {
+        "label": "(d)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down the coordinates of the point where line $L$ intersects the graph of $y = x^2 - 3x - 3$ for $x \\ge 0$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "(\\dots\\dots\\dots\\dots\\dots\\dots , \\dots\\dots\\dots\\dots\\dots\\dots)"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q06/Q06bi.png"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q06/Q06.png"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q06/Q06-Graph.png"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{InsertScreenShot}\n\\relincludegraphics{Figures/Q06-Graph.png}\n\\end{InsertScreenShot}"
+      }
+    ],
+    "_rawBody": "\\begin{InsertScreenShot}\n\\relincludegraphics{Figures/Q06-Graph.png}\n\\end{InsertScreenShot}\n\n\\begin{parts}\n\\item Write down the equation of line $L$ in the form $y = mx + c$.\n\n\\AnswerLine[$y=$][]\n\\Marks{2}\n\n\\item\n\\begin{subparts}\n\\item Complete the table of values for $y = x^2 - 3x - 3$.\n\n\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|c|c|c|c|}\n\\hline\n$x$ & $-2$ & $-1$ & 0 & 1 & 2 & 3 & 4 & 5 \\\\\n\\hline\n$y$ & & 1 & $-3$ & $-5$ & $-5$ & & 1 & \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\\Marks{2}\n\n\\item On the grid, draw the graph of $y = x^2 - 3x - 3$ for $-2 \\le x \\le 5$.\n\\Marks{4}\n\n\\end{subparts}\n\n\\item\n\\begin{subparts}\n\\item Write down the coordinates of the lowest point of the graph of $y = x^2 - 3x - 3$.\n\n\\AnswerLine[(\\dots\\dots\\dots\\dots\\dots\\dots , \\dots\\dots\\dots\\dots\\dots\\dots)][]\n\\Marks{1}\n\n\\item On the grid, draw the line of symmetry of the graph of $y = x^2 - 3x - 3$.\n\\Marks{1}\n\n\\item Write down the equation of the line of symmetry.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{subparts}\n\n\\item Write down the coordinates of the point where line $L$ intersects the graph of $y = x^2 - 3x - 3$ for $x \\ge 0$.\n\n\\AnswerLine[(\\dots\\dots\\dots\\dots\\dots\\dots , \\dots\\dots\\dots\\dots\\dots\\dots)][]\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q06/Q06-Graph.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q06/Q06.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q06/Q06bi.png"
+    ]
+  },
+  {
+    "id": "0580-2023MayJune-Paper33-Q07",
+    "paper": "2023MayJune-Paper33",
+    "qnum": 7,
+    "marks": 15,
+    "topics": [
+      "Mensuration",
+      "Trigonometry",
+      "Statistics"
+    ],
+    "s": "5.2",
+    "d": 1,
+    "cat": "mensuration",
+    "topic": "Circles",
+    "qtype": "area and perimeter",
+    "g": "mixed",
+    "src": "0580/33/M/J/23 Q07",
+    "year": 2023,
+    "session": "MayJune",
+    "tex": "\\begin{question*}{15}{a}\n\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\nThe diagram shows a triangle $ABC$ and a straight line $BCD$.\n\\newline\n\n\\begin{subpartsaliged}\nAngle $ACB = 108°$.\n\\newline\n\nWrite down the mathematical name for this type of angle.\n\\newline\n\nWork out the value of $x$.\n\\newline\n\nWork out the value of $y$.\n\\newline\n\n\\end{subpartsaliged}\n\n(b)Show that the mean of the angles in any triangle is 60°.\n\\newline\n\n(c)\n\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\nThe diagram shows a right-angled triangle.\n\\newline\n\nCalculate the value of $h$.\n\\newline\n\n(d)\n\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\nTriangle $ABC$ is similar to triangle $PQR$.\n\\newline\n\n\\begin{subpartsaliged}\nCalculate $PR$.\n\\newline\n\nCalculate $BC$.\n\\newline\n\n\\end{subpartsaliged}\n\n(e)\n\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\nThe diagram shows a right-angled triangle.\n\\newline\n\nCalculate the perimeter of this triangle.\n\\newline\n\n\\end{question*}",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q07/Q07a.png"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        }
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Show that the mean of the angles in any triangle is 60°.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        }
+      },
+      {
+        "label": "(c)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q07/Q07c.png"
+          },
+          {
+            "type": "text",
+            "content": "\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\nThe diagram shows a right-angled triangle.\n\\newline\n\nCalculate the value of $h$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        }
+      },
+      {
+        "label": "(d)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q07/Q07d.png"
+          },
+          {
+            "type": "text",
+            "content": "\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\nTriangle $ABC$ is similar to triangle $PQR$.\n\\newline\n\n\\begin{subpartsaliged}\nCalculate $PR$.\n\\newline\n\nCalculate $BC$.\n\\newline\n\n\\end{subpartsaliged}"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        }
+      },
+      {
+        "label": "(e)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q07/Q07e.png"
+          },
+          {
+            "type": "text",
+            "content": "\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\nThe diagram shows a right-angled triangle.\n\\newline\n\nCalculate the perimeter of this triangle.\n\\newline\n\n\\end{question*}"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        }
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "analyse",
+    "cmd": "show",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{question*}{15}{a}\n\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\nThe diagram shows a triangle $ABC$ and a straight line $BCD$.\n\\newline\n\n\\begin{subpartsaliged}\nAngle $ACB = 108°$.\n\\newline\n\nWrite down the mathematical name for this type of angle.\n\\newline\n\nWork out the value of $x$.\n\\newline\n\nWork out the value of $y$.\n\\newline\n\n\\end{subpartsaliged}"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q07/Q07-TriangleAngle.png"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q07/Q07-SimilarTriangles.png"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q07/Q07-RightAngleTriangle.png"
+      },
+      {
+        "type": "figure",
+        "hasFigure": true
+      }
+    ],
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q07/Q07-RightAnglePythagoras.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q07/Q07-RightAngleTriangle.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q07/Q07-SimilarTriangles.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q07/Q07-TriangleAngle.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q07/Q07a.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q07/Q07c.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q07/Q07d.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper33/Q07/Q07e.png"
+    ]
+  },
+  {
+    "id": "0580-2023MayJune-Paper33-Q08",
+    "paper": "2023MayJune-Paper33",
+    "qnum": 8,
+    "marks": 9,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.12",
+    "d": 1,
+    "cat": "number",
+    "topic": "Set notation",
+    "qtype": "Limits of accuracy, unit conversion, proportional reasoning, standard form, percentage increase",
+    "g": "proportion",
+    "src": "0580/33/M/J/23 Q08",
+    "year": 2023,
+    "session": "MayJune",
+    "tex": "\\begin{question*}{9}{a}The length, $l$ m, of a piece of wire is 18.7 metres, correct to the nearest 10 centimetres.\n\\newline\n\nComplete the statement about the value of $l$.\n\\newline\n\n(b)850 metres of wire has a mass of 130.5 kilograms.\n\\newline\n\nWork out the length of wire, in metres, that has a mass of 900 grams.\n\\newline\n\n(c)Aluminium is used to make the wire.\n\\newline\nThe mass of 1 cm$^3$ of aluminium is 2.7 grams.\n\\newline\n\nWork out the mass, in grams, of 6000 cm$^3$ of aluminium.\n\\newline\nGive your answer in standard form.\n\\newline\n\n(d)A 12 metre length of wire increases in length to 12.017 metres when its temperature rises.\n\\newline\n\nCalculate the percentage increase in the length of the wire.\n\\newline\n\n\\end{question*}",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{question*}{9}{a}The length, $l$ m, of a piece of wire is 18.7 metres, correct to the nearest 10 centimetres.\n\\newline\n\nComplete the statement about the value of $l$.\n\\newline\n\n(b)850 metres of wire has a mass of 130.5 kilograms.\n\\newline\n\nWork out the length of wire, in metres, that has a mass of 900 grams.\n\\newline\n\n(c)Aluminium is used to make the wire.\n\\newline\nThe mass of 1 cm$^3$ of aluminium is 2.7 grams.\n\\newline\n\nWork out the mass, in grams, of 6000 cm$^3$ of aluminium.\n\\newline\nGive your answer in standard form.\n\\newline\n\n(d)A 12 metre length of wire increases in length to 12.017 metres when its temperature rises.\n\\newline\n\nCalculate the percentage increase in the length of the wire.\n\\newline\n\n\\end{question*}"
+      }
+    ],
+    "answer": {
+      "type": "multiline",
+      "lines": 4,
+      "layout": "column",
+      "template": ".......... $\\le l <$ .......... ____\\n____ m\\n____ g\\n____ %"
+    }
+  }
+]

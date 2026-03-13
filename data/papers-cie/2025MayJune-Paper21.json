@@ -1,0 +1,1461 @@
+[
+  {
+    "id": "0580-2025MayJune-Paper21-Q01",
+    "paper": "2025MayJune-Paper21",
+    "qnum": 1,
+    "marks": 2,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.2",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Rearranging formulae",
+    "qtype": "simplifying algebraic expressions by collecting like terms",
+    "g": "simplify",
+    "src": "0580/21/M/J/25 Q01",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "Simplify.\n\\newline\n\\[\n7c - 5d + c + 3d\n\\]",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Simplify.\n\\newline\n\\[\n7c - 5d + c + 3d\n\\]"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Simplify.\n\\[\n7c - 5d + c + 3d\n\\]\n\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper21-Q02",
+    "paper": "2025MayJune-Paper21",
+    "qnum": 2,
+    "marks": 4,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.6",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/21/M/J/25 Q02",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "The diagram shows two parallel lines intersecting two straight lines.\n\\newline\n\nFind the values of $w$, $x$ and $y$.\n\\newline\n\n\\begin{InsertScreenShot}\n\n    \\NotToScale\n\\end{InsertScreenShot}",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The diagram shows two parallel lines intersecting two straight lines.\n\\newline\n\\par\nFind the values of $w$, $x$ and $y$.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper21/Q02/Q02-Figure1.png"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{InsertScreenShot}\n    \\relincludegraphics{Figures/Q02-Figure1.png}\n    \\NotToScale\n\\end{InsertScreenShot}"
+      }
+    ],
+    "answer": {
+      "type": "multiline",
+      "lines": 3,
+      "template": "$w = $ ____\\n$x = $ ____\\n$y = $ ____",
+      "lineSep": "blank"
+    },
+    "_rawBody": "The diagram shows two parallel lines intersecting two straight lines.\\par\nFind the values of $w$, $x$ and $y$.\n\n\n\\begin{InsertScreenShot}\n    \\relincludegraphics{Figures/Q02-Figure1.png}\n    \\NotToScale\n\\end{InsertScreenShot}\n\n\\AnswerLine[$w = $][]\n\\AnswerLine[$x = $][]\n\\AnswerLine[$y = $][]\n\\Marks{4}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper21/Q02/Q02-Figure1.png"
+    ]
+  },
+  {
+    "id": "0580-2025MayJune-Paper21-Q03",
+    "paper": "2025MayJune-Paper21",
+    "qnum": 3,
+    "marks": 3,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.13",
+    "d": 2,
+    "cat": "number",
+    "topic": "Electronic calculators",
+    "qtype": "simple interest calculation",
+    "g": "mixed",
+    "src": "0580/21/M/J/25 Q03",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "Sally invests $\\$1500$ at $3\\%$ per year simple interest.\n\\newline\n \n\nWork out the total value of her investment at the end of $6$ years.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Sally invests $\\$1500$ at $3\\%$ per year simple interest.\n\\newline\n \\par\nWork out the total value of her investment at the end of $6$ years.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "$\\$$"
+    },
+    "_rawBody": "Sally invests $\\$1500$ at $3\\%$ per year simple interest. \\par\nWork out the total value of her investment at the end of $6$ years.\n\n\n\\AnswerLine[$\\$$][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper21-Q04",
+    "paper": "2025MayJune-Paper21",
+    "qnum": 4,
+    "marks": 3,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.6",
+    "d": 2,
+    "cat": "number",
+    "topic": "Standard form",
+    "qtype": "operations with fractions, order of operations",
+    "g": "mixed",
+    "src": "0580/21/M/J/25 Q04",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "Work out.\n\\newline\n\n$$ \\dfrac{5}{6} - \\dfrac{2}{3} \\times \\dfrac{3}{8} $$",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Work out.\n\\newline\n\n$$ \\dfrac{5}{6} - \\dfrac{2}{3} \\times \\dfrac{3}{8} $$"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Work out.\n\n$$ \\dfrac{5}{6} - \\dfrac{2}{3} \\times \\dfrac{3}{8} $$\n\n\n\\AnswerLine[][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper21-Q05",
+    "paper": "2025MayJune-Paper21",
+    "qnum": 5,
+    "marks": 2,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.6",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/21/M/J/25 Q05",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "The interior angle of a regular polygon is $150^\\circ$.\n\\newline\n \n\nFind the number of sides of this polygon.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The interior angle of a regular polygon is $150^\\circ$.\n\\newline\n \\par\nFind the number of sides of this polygon.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "The interior angle of a regular polygon is $150^\\circ$. \\par\nFind the number of sides of this polygon.\n\n\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper21-Q06",
+    "paper": "2025MayJune-Paper21",
+    "qnum": 6,
+    "marks": 3,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.10",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Graphs of functions",
+    "qtype": "drawing linear graphs and solving simultaneous equations graphically",
+    "g": "simul-linear",
+    "src": "0580/21/M/J/25 Q06",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\nThe line $x + y = 7$ is drawn on the grid.\n\\newline\n\n(a) On the grid, draw the line $y = 2x + 1$.\n\\newline\n\n(b) Use your graph to solve these simultaneous equations.\n\\newline\n    \\[ x + y = 7 \\]\n    \\[ y = 2x + 1 \\]",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "On the grid, draw the line $y = 2x + 1$.\n\\newline\n"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Use your graph to solve these simultaneous equations.\n\\newline\n    \\[ x + y = 7 \\]\n    \\[ y = 2x + 1 \\]"
+          }
+        ],
+        "answer": {
+          "type": "multiline",
+          "lines": 2,
+          "template": "$x = $ ____\\n$y = $ ____",
+          "lineSep": "blank",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "table",
+        "content": "\\begin{InsertScreenShot}\n    \\relincludegraphics{Figures/Q06-Figure1.png}\n\\end{InsertScreenShot}"
+      },
+      {
+        "type": "text",
+        "content": "The line $x + y = 7$ is drawn on the grid.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper21/Q06/Q06-Figure1.png"
+      }
+    ],
+    "_rawBody": "\\begin{InsertScreenShot}\n    \\relincludegraphics{Figures/Q06-Figure1.png}\n\\end{InsertScreenShot}\n\n\nThe line $x + y = 7$ is drawn on the grid.\n\n\n\\begin{parts}\n    \\item On the grid, draw the line $y = 2x + 1$.\n    \\Marks{2}\n    \\item Use your graph to solve these simultaneous equations.\n    \\[ x + y = 7 \\]\n    \\[ y = 2x + 1 \\]\n    \\AnswerLine[$x = $][]\\par\n    \\AnswerLine[$y = $][]\n    \\Marks{1}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper21/Q06/Q06-Figure1.png"
+    ]
+  },
+  {
+    "id": "0580-2025MayJune-Paper21-Q07",
+    "paper": "2025MayJune-Paper21",
+    "qnum": 7,
+    "marks": 3,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.4",
+    "d": 2,
+    "cat": "number",
+    "topic": "Fractions, decimals and percentages",
+    "qtype": "recurring decimal to fraction conversion",
+    "g": "mixed",
+    "src": "0580/21/M/J/25 Q07",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "Write the recurring decimal $0.2\\dot{6}$ as a fraction.\n\\newline\n \n\nGive your answer in its simplest form.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "write",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Write the recurring decimal $0.2\\dot{6}$ as a fraction.\n\\newline\n \\par\nGive your answer in its simplest form.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Write the recurring decimal $0.2\\dot{6}$ as a fraction. \\par\nGive your answer in its simplest form.\n\n\n\\AnswerLine[][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper21-Q08",
+    "paper": "2025MayJune-Paper21",
+    "qnum": 8,
+    "marks": 4,
+    "topics": [
+      "Transformations and vectors"
+    ],
+    "s": "7.3",
+    "d": 2,
+    "cat": "vectors",
+    "topic": "Rotation",
+    "qtype": "magnitude and unit vectors",
+    "g": "mixed",
+    "src": "0580/21/M/J/25 Q08",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "$\\mathbf{m} = \\begin{pmatrix} 11 \\\\ 5 \\end{pmatrix} \\quad \\mathbf{n} = \\begin{pmatrix} 8 \\\\ -3 \\end{pmatrix}$\n\n(a) Find $2\\mathbf{m} - \\mathbf{n}$.\n\\newline\n\n    \n\n(b) The vector $\\begin{pmatrix} 5 \\\\ y \\end{pmatrix}$ has a magnitude of $7$.\n\\newline\n \\\\\n    Find the value of $y$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find $2\\mathbf{m} - \\mathbf{n}$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "The vector $\\begin{pmatrix} 5 \\\\ y \\end{pmatrix}$ has a magnitude of $7$.\n\\newline\n \\\\\n    Find the value of $y$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$y = $",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "$\\mathbf{m} = \\begin{pmatrix} 11 \\\\ 5 \\end{pmatrix} \\quad \\mathbf{n} = \\begin{pmatrix} 8 \\\\ -3 \\end{pmatrix}$"
+      }
+    ],
+    "_rawBody": "$\\mathbf{m} = \\begin{pmatrix} 11 \\\\ 5 \\end{pmatrix} \\quad \\mathbf{n} = \\begin{pmatrix} 8 \\\\ -3 \\end{pmatrix}$\n\n\n\\begin{parts}\n    \\item Find $2\\mathbf{m} - \\mathbf{n}$.\n    \\AnswerLine[][]\n    \\Marks{2}\n    \\item The vector $\\begin{pmatrix} 5 \\\\ y \\end{pmatrix}$ has a magnitude of $7$. \\\\\n    Find the value of $y$.\n    \\AnswerLine[$y = $][]\n    \\Marks{2}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper21-Q09",
+    "paper": "2025MayJune-Paper21",
+    "qnum": 9,
+    "marks": 3,
+    "topics": [
+      "Statistics"
+    ],
+    "s": "9.3",
+    "d": 2,
+    "cat": "statistics",
+    "topic": "Frequency tables",
+    "qtype": "averages and spread",
+    "g": "mixed",
+    "src": "0580/21/M/J/25 Q09",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "The table shows some information about the marks scored by a group of students in a test.\n\\newline\n\n\\begin{InsertScreenShot}\n    \\begin{tabular}{|l|c|c|c|}\n        \\hline\n        Test mark & 4 & 5 & 8 \\\\ \\hline\n        Frequency & 2 & 4 & $n$ \\\\ \\hline\n    \\end{tabular}\n\\end{InsertScreenShot}\n\nThe mean mark is $6$.\n\\newline\n \n\nWork out the value of $n$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The table shows some information about the marks scored by a group of students in a test.\n\\newline\n"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{InsertScreenShot}\n    \\begin{tabular}{|l|c|c|c|}\n        \\hline\n        Test mark & 4 & 5 & 8 \\\\ \\hline\n        Frequency & 2 & 4 & $n$ \\\\ \\hline\n    \\end{tabular}\n\\end{InsertScreenShot}"
+      },
+      {
+        "type": "text",
+        "content": "The mean mark is $6$.\n\\newline\n \\par\nWork out the value of $n$.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "$n = $"
+    },
+    "_rawBody": "The table shows some information about the marks scored by a group of students in a test.\n\n\n\\begin{InsertScreenShot}\n    \\begin{tabular}{|l|c|c|c|}\n        \\hline\n        Test mark & 4 & 5 & 8 \\\\ \\hline\n        Frequency & 2 & 4 & $n$ \\\\ \\hline\n    \\end{tabular}\n\\end{InsertScreenShot}\n\n\nThe mean mark is $6$. \\par\nWork out the value of $n$.\n\n\n\\AnswerLine[$n = $][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper21-Q10",
+    "paper": "2025MayJune-Paper21",
+    "qnum": 10,
+    "marks": 4,
+    "topics": [
+      "Geometry",
+      "Trigonometry"
+    ],
+    "s": "4.7",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Nets and 3D shapes",
+    "qtype": "circle theorems",
+    "g": "mixed",
+    "src": "0580/21/M/J/25 Q10",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "$A$, $B$ and $C$ are three points on a circle, centre $O$.\n\\newline\n \n\n$DE$ is a tangent to the circle at $A$.\n\\newline\n \n\nAngle $ACO = 35^\\circ$ and angle $BCO = 40^\\circ$.\n\\newline\n\n\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\nFind\n\n(a) angle $AOC$\n\n    \n\n(b) angle $ABC$\n\n    \n\n(c) angle $DAC$\n\n    \n\n(d) angle $OAB$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "angle $AOC$"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "Angle $AOC = $",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "angle $ABC$"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "Angle $ABC = $",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "angle $DAC$"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "Angle $DAC = $",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "angle $OAB$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "Angle $OAB = $",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "$A$, $B$ and $C$ are three points on a circle, centre $O$.\n\\newline\n \\par\n$DE$ is a tangent to the circle at $A$.\n\\newline\n \\par\nAngle $ACO = 35^\\circ$ and angle $BCO = 40^\\circ$.\n\\newline\n"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{InsertScreenShot}\n    \\relincludegraphics{Figures/Q10-Figure1.png}\n\\end{InsertScreenShot}"
+      },
+      {
+        "type": "text",
+        "content": "Find"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper21/Q10/Q10-Figure1.png"
+      }
+    ],
+    "_rawBody": "$A$, $B$ and $C$ are three points on a circle, centre $O$. \\par\n$DE$ is a tangent to the circle at $A$. \\par\nAngle $ACO = 35^\\circ$ and angle $BCO = 40^\\circ$.\n\n\n\\begin{InsertScreenShot}\n    \\relincludegraphics{Figures/Q10-Figure1.png}\n\\end{InsertScreenShot}\n\n\nFind\n\n\n\\begin{parts}\n    \\item angle $AOC$\n    \\AnswerLine[Angle $AOC = $][]\n    \\Marks{1}\n    \\item angle $ABC$\n    \\AnswerLine[Angle $ABC = $][]\n    \\Marks{1}\n    \\item angle $DAC$\n    \\AnswerLine[Angle $DAC = $][]\n    \\Marks{1}\n    \\item angle $OAB$.\n    \\AnswerLine[Angle $OAB = $][]\n    \\Marks{1}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper21/Q10/Q10-Figure1.png"
+    ]
+  },
+  {
+    "id": "0580-2025MayJune-Paper21-Q11",
+    "paper": "2025MayJune-Paper21",
+    "qnum": 11,
+    "marks": 5,
+    "topics": [
+      "Number",
+      "Algebra and graphs",
+      "Geometry",
+      "Trigonometry"
+    ],
+    "s": "2.12",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Functions notation",
+    "qtype": "finding equation of tangent to a curve from a point",
+    "g": "graph",
+    "src": "0580/21/M/J/25 Q11",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "The diagram shows the graph of $y = f(x)$ and the point $P(-2, 11)$.\n\\newline\n\n\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\nThe tangent from $P$ touches the graph of $y = f(x)$ at the point $(a, b)$.\n\\newline\n \n\nThe values of $a$ and $b$ are integers.\n\\newline\n\n(a) By drawing this tangent, find the value of $a$ and the value of $b$.\n\\newline\n\n    \n\n(b) Find the equation of the tangent.\n\\newline\n \n\n    Give your answer in the form $y = mx + c$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "By drawing this tangent, find the value of $a$ and the value of $b$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "multiline",
+          "lines": 2,
+          "template": "$a = $ ____\\n$b = $ ____",
+          "lineSep": "blank",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the equation of the tangent.\n\\newline\n \\par\n    Give your answer in the form $y = mx + c$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$y = $",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The diagram shows the graph of $y = f(x)$ and the point $P(-2, 11)$.\n\\newline\n"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{InsertScreenShot}\n    \\relincludegraphics{Figures/Q11-Figure1.png}\n\\end{InsertScreenShot}"
+      },
+      {
+        "type": "text",
+        "content": "The tangent from $P$ touches the graph of $y = f(x)$ at the point $(a, b)$.\n\\newline\n \\par\nThe values of $a$ and $b$ are integers.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper21/Q11/Q11-Figure1.png"
+      }
+    ],
+    "_rawBody": "The diagram shows the graph of $y = f(x)$ and the point $P(-2, 11)$.\n\n\\begin{InsertScreenShot}\n    \\relincludegraphics{Figures/Q11-Figure1.png}\n\\end{InsertScreenShot}\n\nThe tangent from $P$ touches the graph of $y = f(x)$ at the point $(a, b)$. \\par\nThe values of $a$ and $b$ are integers.\n\n\\begin{parts}\n    \\item By drawing this tangent, find the value of $a$ and the value of $b$.\n    \\AnswerLine[$a = $][]\\par\n    \\AnswerLine[$b = $][]\n    \\Marks{2}\n    \\item Find the equation of the tangent. \\par\n    Give your answer in the form $y = mx + c$.\n    \\AnswerLine[$y = $][]\n    \\Marks{3}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "_compactEnd": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper21/Q11/Q11-Figure1.png"
+    ]
+  },
+  {
+    "id": "0580-2025MayJune-Paper21-Q12",
+    "paper": "2025MayJune-Paper21",
+    "qnum": 12,
+    "marks": 4,
+    "topics": [
+      "Number",
+      "Mensuration",
+      "Statistics"
+    ],
+    "s": null,
+    "d": 2,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/21/M/J/25 Q12",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "The time spent on the internet by each of 120 adults is recorded for one day.\n\\newline\n \n\nThe cumulative frequency diagram shows this information.\n\\newline\n\n\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n(a) Use the cumulative frequency diagram to find an estimate of the interquartile range.\n\\newline\n\n    \n\n(b) $70\\%$ of the adults spent less than $k$ hours on the internet.\n\\newline\n \n\n    Use the cumulative frequency diagram to find an estimate of the value of $k$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Use the cumulative frequency diagram to find an estimate of the interquartile range.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "\\text{h}",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "$70\\%$ of the adults spent less than $k$ hours on the internet.\n\\newline\n \\par\n    Use the cumulative frequency diagram to find an estimate of the value of $k$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$k = $",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The time spent on the internet by each of 120 adults is recorded for one day.\n\\newline\n \\par\nThe cumulative frequency diagram shows this information.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper21/Q12/Q12-Figure1.png"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{InsertScreenShot}\n    \\relincludegraphics{Figures/Q12-Figure1.png}\n\\end{InsertScreenShot}"
+      }
+    ],
+    "_rawBody": "The time spent on the internet by each of 120 adults is recorded for one day. \\par\nThe cumulative frequency diagram shows this information.\n\n\n\\begin{InsertScreenShot}\n    \\relincludegraphics{Figures/Q12-Figure1.png}\n\\end{InsertScreenShot}\n\\begin{parts}\n    \\item Use the cumulative frequency diagram to find an estimate of the interquartile range.\n    \\AnswerLine[][\\text{h}]\n    \\Marks{2}\n    \\item $70\\%$ of the adults spent less than $k$ hours on the internet. \\par\n    Use the cumulative frequency diagram to find an estimate of the value of $k$.\n    \\AnswerLine[$k = $][]\n    \\Marks{2}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "_compactStemParts": true,
+    "_compactEnd": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper21/Q12/Q12-Figure1.png"
+    ]
+  },
+  {
+    "id": "0580-2025MayJune-Paper21-Q13",
+    "paper": "2025MayJune-Paper21",
+    "qnum": 13,
+    "marks": 8,
+    "topics": [
+      "Mensuration"
+    ],
+    "s": "5.4",
+    "d": 2,
+    "cat": "mensuration",
+    "topic": "Volume",
+    "qtype": "surface area and volume",
+    "g": "mixed",
+    "src": "0580/21/M/J/25 Q13",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "\\begin{InsertScreenShot}\n\n    \\NotToScale\n\\end{InsertScreenShot}\n\nThe diagram shows solid $A$ and solid $B$.\n\\newline\n \n\nSolid $A$ is made from a hemisphere and a cone each with radius $6$ cm.\n\\newline\n \n\nThe cone has sloping edge $10$ cm.\n\\newline\n \n\nSolid $B$ is a cylinder with radius $4$ cm and height $h$ cm.\n\\newline\n \n\nThe total surface area of solid $A$ is equal to the total surface area of solid $B$.\n\\newline\n\n(a) Work out the value of $h$.\n\\newline\n\n    \n\n(b) Work out the height of solid $A$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 5,
+        "content": [
+          {
+            "type": "text",
+            "content": "Work out the value of $h$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$h = $",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Work out the height of solid $A$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "\\text{cm}",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "table",
+        "content": "\\begin{InsertScreenShot}\n    \\relincludegraphics{Figures/Q13-Figure1.png}\n    \\NotToScale\n\\end{InsertScreenShot}"
+      },
+      {
+        "type": "text",
+        "content": "The diagram shows solid $A$ and solid $B$.\n\\newline\n \\par\nSolid $A$ is made from a hemisphere and a cone each with radius $6$ cm.\n\\newline\n \\par\nThe cone has sloping edge $10$ cm.\n\\newline\n \\par\nSolid $B$ is a cylinder with radius $4$ cm and height $h$ cm.\n\\newline\n \\par\nThe total surface area of solid $A$ is equal to the total surface area of solid $B$.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper21/Q13/Q13-Figure1.png"
+      }
+    ],
+    "_rawBody": "\\begin{InsertScreenShot}\n    \\relincludegraphics{Figures/Q13-Figure1.png}\n    \\NotToScale\n\\end{InsertScreenShot}\n\nThe diagram shows solid $A$ and solid $B$. \\par\nSolid $A$ is made from a hemisphere and a cone each with radius $6$ cm. \\par\nThe cone has sloping edge $10$ cm. \\par\nSolid $B$ is a cylinder with radius $4$ cm and height $h$ cm. \\par\nThe total surface area of solid $A$ is equal to the total surface area of solid $B$.\n\n\\begin{parts}\n    \\item Work out the value of $h$.\n    \\AnswerLine[$h = $][]\n    \\Marks{5}\n    \\item Work out the height of solid $A$.\n    \\AnswerLine[][\\text{cm}]\n    \\Marks{3}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "_compactEnd": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper21/Q13/Q13-Figure1.png"
+    ]
+  },
+  {
+    "id": "0580-2025MayJune-Paper21-Q14",
+    "paper": "2025MayJune-Paper21",
+    "qnum": 14,
+    "marks": 8,
+    "topics": [
+      "Number",
+      "Algebra and graphs"
+    ],
+    "s": "2.13",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Functions",
+    "qtype": "function evaluation, inverse functions, composite functions, algebraic fraction simplification",
+    "g": "function",
+    "src": "0580/21/M/J/25 Q14",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "$$ f(x) = 3x - 4   g(x) = 4x + 1 $$\n\n(a) Find $f(-2)$.\n\\newline\n\n    \n\n(b) Find $f^{-1}(x)$.\n\\newline\n\n    \n\n(c) $fg(x) = ax + b$ \n\n    Find the value of $a$, and the value of $b$.\n\\newline\n\n    \n\n(d) Simplify.\n\\newline\n    $$ \\dfrac{2}{f(x)} - \\dfrac{5}{g(x)} $$\n    Give your answer as a single fraction in terms of $x$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find $f(-2)$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find $f^{-1}(x)$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$f^{-1}(x) = $",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "$fg(x) = ax + b$ \\par\n    Find the value of $a$, and the value of $b$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "multiline",
+          "lines": 2,
+          "template": "$a = $ ____\\n$b = $ ____",
+          "lineSep": "blank",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Simplify.\n\\newline\n    $$ \\dfrac{2}{f(x)} - \\dfrac{5}{g(x)} $$\n    Give your answer as a single fraction in terms of $x$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [
+      {
+        "type": "text",
+        "content": "$$ f(x) = 3x - 4 \\quad g(x) = 4x + 1 $$"
+      }
+    ],
+    "_rawBody": "$$ f(x) = 3x - 4 \\quad g(x) = 4x + 1 $$\n\n\\begin{parts}\n    \\item Find $f(-2)$.\n    \\AnswerLine[][]\n    \\Marks{1}\n    \\item Find $f^{-1}(x)$.\n    \\AnswerLine[$f^{-1}(x) = $][]\n    \\Marks{2}\n    \\item $fg(x) = ax + b$ \\par\n    Find the value of $a$, and the value of $b$.\n    \\AnswerLine[$a = $][]\n    \\AnswerLine[$b = $][]\n    \\Marks{2}\n    \\item Simplify.\n    $$ \\dfrac{2}{f(x)} - \\dfrac{5}{g(x)} $$\n    Give your answer as a single fraction in terms of $x$.\n    \\AnswerLine[][]\n    \\Marks{3}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "_compactEnd": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper21-Q15",
+    "paper": "2025MayJune-Paper21",
+    "qnum": 15,
+    "marks": 4,
+    "topics": [
+      "Number",
+      "Algebra and graphs"
+    ],
+    "s": "2.2",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Rearranging formulae",
+    "qtype": "surd expansion and simplification, rationalising the denominator",
+    "g": "simplify",
+    "src": "0580/21/M/J/25 Q15",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "(a) Expand and simplify.\n\\newline\n    $$ (\\sqrt{2} - \\sqrt{5})(1 - 3\\sqrt{5}) $$\n\n    \n\n(b) Rationalise the denominator.\n\\newline\n \n\n    Give your answer in its simplest form.\n\\newline\n    $$ \\dfrac{6}{\\sqrt{10}} $$",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Expand and simplify.\n\\newline\n    $$ (\\sqrt{2} - \\sqrt{5})(1 - 3\\sqrt{5}) $$"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Rationalise the denominator.\n\\newline\n \\par\n    Give your answer in its simplest form.\n\\newline\n    $$ \\dfrac{6}{\\sqrt{10}} $$"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n    \\item Expand and simplify.\n    $$ (\\sqrt{2} - \\sqrt{5})(1 - 3\\sqrt{5}) $$\n    \\AnswerLine[][]\n    \\Marks{2}\n    \\item Rationalise the denominator. \\par\n    Give your answer in its simplest form.\n    $$ \\dfrac{6}{\\sqrt{10}} $$\n    \\AnswerLine[][]\n    \\Marks{2}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "_compactBegin": true,
+    "_compactEnd": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper21-Q16",
+    "paper": "2025MayJune-Paper21",
+    "qnum": 16,
+    "marks": 3,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.2",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Rearranging formulae",
+    "qtype": "expanding and simplifying algebraic expressions with multiple brackets",
+    "g": "simplify",
+    "src": "0580/21/M/J/25 Q16",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "Expand and simplify.\n\\newline\n$$ (x + 4)(x - 3)(3x + 2) $$",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Expand and simplify.\n\\newline\n$$ (x + 4)(x - 3)(3x + 2) $$"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Expand and simplify.\n$$ (x + 4)(x - 3)(3x + 2) $$\n\n\\AnswerLine[][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper21-Q17",
+    "paper": "2025MayJune-Paper21",
+    "qnum": 17,
+    "marks": 7,
+    "topics": [
+      "Probability"
+    ],
+    "s": "8.4",
+    "d": 2,
+    "cat": "probability",
+    "topic": "Conditional probability",
+    "qtype": "conditional probability",
+    "g": "mixed",
+    "src": "0580/21/M/J/25 Q17",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "(a) A bag contains $6$ red marbles, $3$ green marbles and $1$ blue marble.\n\\newline\n \n\n    Two marbles are picked at random from the bag with replacement.\n\\newline\n \n\n    Find the probability that both marbles are green.\n\\newline\n\n    \n\n(b) Another bag contains $4$ red counters and $2$ yellow counters.\n\\newline\n \n\n    Two counters are picked at random from this bag without replacement.\n\\newline\n    (i) (c) Complete the tree diagram.\n\\newline\n        \\begin{InsertScreenShot}\n\n        \\end{InsertScreenShot}\n\n(d) Find the probability that one of the two counters is yellow.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "A bag contains $6$ red marbles, $3$ green marbles and $1$ blue marble.\n\\newline\n \\par\n    Two marbles are picked at random from the bag with replacement.\n\\newline\n \\par\n    Find the probability that both marbles are green.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Another bag contains $4$ red counters and $2$ yellow counters.\n\\newline\n \\par\n    Two counters are picked at random from this bag without replacement.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Complete the tree diagram.\n\\newline\n"
+              },
+              {
+                "type": "table",
+                "content": "\\begin{InsertScreenShot}\n            \\relincludegraphics{Figures/Q17-Figure1.png}\n        \\end{InsertScreenShot}"
+              }
+            ],
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the probability that one of the two counters is yellow.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "_compactAnswer": true
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true,
+        "_compactContentSubparts": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper21/Q17/Q17-Figure1.png"
+      }
+    ],
+    "_rawBody": "\\begin{parts}\n    \\item A bag contains $6$ red marbles, $3$ green marbles and $1$ blue marble. \\par\n    Two marbles are picked at random from the bag with replacement. \\par\n    Find the probability that both marbles are green.\n    \\AnswerLine[][]\n    \\Marks{2}\n    \\item Another bag contains $4$ red counters and $2$ yellow counters. \\par\n    Two counters are picked at random from this bag without replacement.\n    \\begin{subparts}\n        \\item Complete the tree diagram.\n        \\begin{InsertScreenShot}\n            \\relincludegraphics{Figures/Q17-Figure1.png}\n        \\end{InsertScreenShot}\n        \\Marks{2}\n        \\item Find the probability that one of the two counters is yellow.\n        \\AnswerLine[][]\n        \\Marks{3}\n    \\end{subparts}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "_compactBegin": true,
+    "_compactEnd": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper21/Q17/Q17-Figure1.png"
+    ]
+  },
+  {
+    "id": "0580-2025MayJune-Paper21-Q18",
+    "paper": "2025MayJune-Paper21",
+    "qnum": 18,
+    "marks": 10,
+    "topics": [
+      "Number"
+    ],
+    "s": null,
+    "d": 2,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/21/M/J/25 Q18",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "One day, Anya runs $12$ km at a speed of $x$ km/h.\n\\newline\n \n The next day she walks $10$ km at a speed of $(x - 4)$ km/h.\n\\newline\n(a) Write down an expression, in terms of $x$, for the time she spends running.\n\\newline\n\n    \n\n(b) Write down an expression, in terms of $x$, for the time she spends walking.\n\\newline\n\n    \n\n(c) The time Anya spends walking is $1$ hour more than the time she spends running.\n\\newline\n \n\n    Write an equation in terms of $x$ and show that it simplifies to $x^2 - 2x - 48 = 0$.\n\\newline\n\n    \n\n(d) Use factorisation to solve the equation $x^2 - 2x - 48 = 0$.\n\\newline\n\n      or \n\n(e) Find the time Anya spends running.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down an expression, in terms of $x$, for the time she spends running.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "\\text{h}",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down an expression, in terms of $x$, for the time she spends walking.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "\\text{h}",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "text",
+            "content": "The time Anya spends walking is $1$ hour more than the time she spends running.\n\\newline\n \\par\n    Write an equation in terms of $x$ and show that it simplifies to $x^2 - 2x - 48 = 0$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "none",
+          "space": {
+            "type": "drawing",
+            "height": "4cm",
+            "cmd": "Answerspace"
+          },
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Use factorisation to solve the equation $x^2 - 2x - 48 = 0$.\n\\newline\n\\par"
+          }
+        ],
+        "answer": {
+          "type": "expression",
+          "fields": 2,
+          "_rawAnswer": "\\hfill \\AnswerLineShort[$x = $][] or \\AnswerLineShort[$x = $][]",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(e)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the time Anya spends running.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "\\text{h}",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "",
+    "cmd": "show",
+    "stem": [
+      {
+        "type": "text",
+        "content": "One day, Anya runs $12$ km at a speed of $x$ km/h.\n\\newline\n \\par The next day she walks $10$ km at a speed of $(x - 4)$ km/h.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "One day, Anya runs $12$ km at a speed of $x$ km/h. \\par The next day she walks $10$ km at a speed of $(x - 4)$ km/h.\n\\begin{parts}\n    \\item Write down an expression, in terms of $x$, for the time she spends running.\n    \\AnswerLine[][\\text{h}]\n    \\Marks{1}\n    \\item Write down an expression, in terms of $x$, for the time she spends walking.\n    \\AnswerLine[][\\text{h}]\n    \\Marks{1}\n    \\item The time Anya spends walking is $1$ hour more than the time she spends running. \\par\n    Write an equation in terms of $x$ and show that it simplifies to $x^2 - 2x - 48 = 0$.\n    \\Answerspace[4cm]\n    \\Marks{4}\n    \\item Use factorisation to solve the equation $x^2 - 2x - 48 = 0$.\\par\n    \\hfill \\AnswerLineShort[$x = $][] or \\AnswerLineShort[$x = $][]\n    \\Marks{3}\n    \\item Find the time Anya spends running.\n    \\AnswerLine[][\\text{h}]\n    \\Marks{1}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "_compactStemParts": true,
+    "_compactEnd": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper21-Q19",
+    "paper": "2025MayJune-Paper21",
+    "qnum": 19,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.7",
+    "d": 2,
+    "cat": "number",
+    "topic": "Estimation and limits",
+    "qtype": "evaluating fractional and negative indices",
+    "g": "indices",
+    "src": "0580/21/M/J/25 Q19",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "Find the value of $27^{-\\frac{2}{3}}$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Find the value of $27^{-\\frac{2}{3}}$.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Find the value of $27^{-\\frac{2}{3}}$.\n\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper21-Q20",
+    "paper": "2025MayJune-Paper21",
+    "qnum": 20,
+    "marks": 4,
+    "topics": [
+      "Number"
+    ],
+    "s": null,
+    "d": 2,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/21/M/J/25 Q20",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\nFind the exact value of $x$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "table",
+        "content": "\\begin{InsertScreenShot}\n    \\relincludegraphics{Figures/Q20-Figure1.png}\n\\end{InsertScreenShot}"
+      },
+      {
+        "type": "text",
+        "content": "Find the exact value of $x$.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper21/Q20/Q20-Figure1.png"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "$x = $"
+    },
+    "_rawBody": "\\begin{InsertScreenShot}\n    \\relincludegraphics{Figures/Q20-Figure1.png}\n\\end{InsertScreenShot}\n\nFind the exact value of $x$.\n\n\\AnswerLine[$x = $][]\n\\Marks{4}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper21/Q20/Q20-Figure1.png"
+    ]
+  },
+  {
+    "id": "0580-2025MayJune-Paper21-Q21",
+    "paper": "2025MayJune-Paper21",
+    "qnum": 21,
+    "marks": 5,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.6",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/21/M/J/25 Q21",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\n$OABC$ is a rhombus and $O$ is the origin.\n\\newline\n \n\nThe diagonals of the rhombus intersect at $P$.\n\\newline\n \n\n$\\overrightarrow{OP} = 2\\mathbf{m}$ and $\\overrightarrow{AP} = \\mathbf{n}$.\n\\newline\n\n(a) Find, in terms of $\\mathbf{m}$ and $\\mathbf{n}$, in its simplest form\n    (i) (b) $\\overrightarrow{OA}$\n\n        \n\n(c) $\\overrightarrow{OC}$.\n\\newline\n\n        \n\n(d) $D$ is the point such that $\\overrightarrow{AD} = 10\\mathbf{m} - 3\\mathbf{n}$.\n\\newline\n \n\n    Show that $OADC$ is a trapezium.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Find, in terms of $\\mathbf{m}$ and $\\mathbf{n}$, in its simplest form"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "$\\overrightarrow{OA}$"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$\\overrightarrow{OA} = $",
+              "_compactAnswer": true
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "$\\overrightarrow{OC}$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$\\overrightarrow{OC} = $",
+              "_compactAnswer": true
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true,
+        "_compactContentSubparts": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "$D$ is the point such that $\\overrightarrow{AD} = 10\\mathbf{m} - 3\\mathbf{n}$.\n\\newline\n \\par\n    Show that $OADC$ is a trapezium.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "none",
+          "space": {
+            "type": "drawing",
+            "height": "3cm",
+            "cmd": "Answerspace"
+          },
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "analyse",
+    "cmd": "show",
+    "stem": [
+      {
+        "type": "table",
+        "content": "\\begin{InsertScreenShot}\n    \\relincludegraphics{Figures/Q21-Figure1.png}\n\\end{InsertScreenShot}"
+      },
+      {
+        "type": "text",
+        "content": "$OABC$ is a rhombus and $O$ is the origin.\n\\newline\n \\par\nThe diagonals of the rhombus intersect at $P$.\n\\newline\n \\par\n$\\overrightarrow{OP} = 2\\mathbf{m}$ and $\\overrightarrow{AP} = \\mathbf{n}$.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper21/Q21/Q21-Figure1.png"
+      }
+    ],
+    "_rawBody": "\\begin{InsertScreenShot}\n    \\relincludegraphics{Figures/Q21-Figure1.png}\n\\end{InsertScreenShot}\n\n$OABC$ is a rhombus and $O$ is the origin. \\par\nThe diagonals of the rhombus intersect at $P$. \\par\n$\\overrightarrow{OP} = 2\\mathbf{m}$ and $\\overrightarrow{AP} = \\mathbf{n}$.\n\n\\begin{parts}\n    \\item Find, in terms of $\\mathbf{m}$ and $\\mathbf{n}$, in its simplest form\n    \\begin{subparts}\n        \\item $\\overrightarrow{OA}$\n        \\AnswerLine[$\\overrightarrow{OA} = $][]\n        \\Marks{1}\n        \\item $\\overrightarrow{OC}$.\n        \\AnswerLine[$\\overrightarrow{OC} = $][]\n        \\Marks{1}\n    \\end{subparts}\n    \\item $D$ is the point such that $\\overrightarrow{AD} = 10\\mathbf{m} - 3\\mathbf{n}$. \\par\n    Show that $OADC$ is a trapezium.\n    \\Answerspace[3cm]\n    \\Marks{3}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "_compactEnd": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper21/Q21/Q21-Figure1.png"
+    ]
+  },
+  {
+    "id": "0580-2025MayJune-Paper21-Q22",
+    "paper": "2025MayJune-Paper21",
+    "qnum": 22,
+    "marks": 6,
+    "topics": [
+      "Coordinate geometry"
+    ],
+    "s": "3.5",
+    "d": 2,
+    "cat": "coord",
+    "topic": "Parallel and perpendicular lines",
+    "qtype": "equation of a straight line",
+    "g": "mixed",
+    "src": "0580/21/M/J/25 Q22",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "A curve has equation $y = x^n + qx^2 + 9x$.\n\\newline\n \n\n$$\\dfrac{dy}{dx} = 3x^2 - 12x + 9$$\n\n(a) Find the value of $n$, and the value of $q$.\n\\newline\n\n    \n\n(b) Work out the coordinates of the turning points of the curve.\n\\newline\n\n    (, )",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the value of $n$, and the value of $q$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "multiline",
+          "lines": 2,
+          "template": "$n = $ ____\\n$q = $ ____",
+          "lineSep": "blank",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "text",
+            "content": "Work out the coordinates of the turning points of the curve.\n\\newline\n\\par"
+          }
+        ],
+        "answer": {
+          "type": "coordinate",
+          "fields": 2,
+          "_rawAnswer": "\\hfill (\\AnswerLineShort[][], \\AnswerLineShort[][]) \\par"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "A curve has equation $y = x^n + qx^2 + 9x$.\n\\newline\n \\par\n$$\\dfrac{dy}{dx} = 3x^2 - 12x + 9$$"
+      }
+    ],
+    "_rawBody": "A curve has equation $y = x^n + qx^2 + 9x$. \\par\n$$\\dfrac{dy}{dx} = 3x^2 - 12x + 9$$\n\n\\begin{parts}\n    \\item Find the value of $n$, and the value of $q$.\n    \\AnswerLine[$n = $][]\n    \\AnswerLine[$q = $][]\n    \\Marks{2}\n    \\item Work out the coordinates of the turning points of the curve.\\par\n    \n   \\hfill (\\AnswerLineShort[][], \\AnswerLineShort[][]) \\par\n    \\Marks{4}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "_compactEnd": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper21-Q23",
+    "paper": "2025MayJune-Paper21",
+    "qnum": 23,
+    "marks": 3,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.3",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Indices",
+    "qtype": "simplifying algebraic fractions by factorization",
+    "g": "algebraic-fraction",
+    "src": "0580/21/M/J/25 Q23",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "Simplify.\n\\newline\n$$\\dfrac{2x^2 + 10x}{x^2 - 25}$$",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Simplify.\n\\newline\n$$\\dfrac{2x^2 + 10x}{x^2 - 25}$$"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Simplify.\n$$\\dfrac{2x^2 + 10x}{x^2 - 25}$$\n\n\\AnswerLine[][]\n\\Marks{3}",
+    "_compactMarks": true
+  }
+]

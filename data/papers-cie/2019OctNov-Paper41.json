@@ -1,0 +1,1298 @@
+[
+  {
+    "id": "0580-2019OctNov-Paper41-Q01",
+    "paper": "2019OctNov-Paper41",
+    "qnum": 1,
+    "marks": 19,
+    "topics": [
+      "Geometry",
+      "Mensuration",
+      "Trigonometry"
+    ],
+    "s": "4.7",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Nets and 3D shapes",
+    "qtype": "circle theorems",
+    "g": "mixed",
+    "src": "0580/41/O/N/19 Q01",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "(a) \nIn the diagram, $AC$ and $BD$ are straight lines.\n\\newline\n\\\\\nFind the value of $p$ and the value of $q$.\n\\newline\n\n(b) The angles of a quadrilateral are $x°$, $(x + 5)°$, $(2x - 25)°$ and $(x + 10)°$.\n\\newline\n\\\\\nFind the value of $x$.\n\\newline\n\n(c) A regular polygon has 72 sides.\n\\newline\n\\\\\nFind the size of an interior angle.\n\\newline\n\n(d) \n$A$, $B$, $C$ and $D$ lie on the circle, centre $O$, with diameter $AC$.\n\\newline\n\\\\\n$PQ$ is a tangent to the circle at $A$.\n\\newline\n\\\\\nAngle $PAD = 60°$ and angle $BAC = 20°$.\n\\newline\n\nFind the values of $u$, $v$, $w$, $x$ and $y$.\n\\newline\n\n{...}, $w = $ , $x = $ , $y = $ ]\n\n(e) $A$, $B$ and $C$ lie on the circle, centre $O$.\n\\newline\n\\\\\nAngle $AOC = (3x + 22)°$ and angle $ABC = 5x°$.\n\\newline\n\\\\\nFind the value of $x$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "figure",
+            "src": "Figures/Q01a.tex"
+          },
+          {
+            "type": "text",
+            "content": "In the diagram, $AC$ and $BD$ are straight lines.\n\\newline\n\\\\\nFind the value of $p$ and the value of $q$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "multiline",
+          "lines": 2,
+          "template": "$p = $ ____\\n$q = $ ____",
+          "lineSep": "blank"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "The angles of a quadrilateral are $x\\degree$, $(x + 5)\\degree$, $(2x - 25)\\degree$ and $(x + 10)\\degree$.\n\\newline\n\\\\\nFind the value of $x$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x = $"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "A regular polygon has 72 sides.\n\\newline\n\\\\\nFind the size of an interior angle.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "\\degree"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 6,
+        "content": [
+          {
+            "type": "figure",
+            "src": "Figures/Q01d.tex"
+          },
+          {
+            "type": "text",
+            "content": "$A$, $B$, $C$ and $D$ lie on the circle, centre $O$, with diameter $AC$.\n\\newline\n\\\\\n$PQ$ is a tangent to the circle at $A$.\n\\newline\n\\\\\nAngle $PAD = 60\\degree$ and angle $BAC = 20\\degree$.\n\\newline\n\nFind the values of $u$, $v$, $w$, $x$ and $y$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$u = $",
+          "suffix": ", $v = $ \\makebox[1.5cm]{\\dotfill}, $w = $ \\makebox[1.5cm]{\\dotfill}, $x = $ \\makebox[1.5cm]{\\dotfill}, $y = $ \\makebox[1.5cm]{\\dotfill}"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(e)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "text",
+            "content": "$A$, $B$ and $C$ lie on the circle, centre $O$.\n\\newline\n\\\\\nAngle $AOC = (3x + 22)\\degree$ and angle $ABC = 5x\\degree$.\n\\newline\n\\\\\nFind the value of $x$.\n\\newline\n"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q01e.tex"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x = $"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item \n\\relinput{Figures/Q01a.tex}\nIn the diagram, $AC$ and $BD$ are straight lines.\\\\\nFind the value of $p$ and the value of $q$.\n\n\\AnswerLine[$p = $][]\n\\AnswerLine[$q = $][]\n\\Marks{3}\n\n\\item The angles of a quadrilateral are $x\\degree$, $(x + 5)\\degree$, $(2x - 25)\\degree$ and $(x + 10)\\degree$.\\\\\nFind the value of $x$.\n\n\\AnswerLine[$x = $][]\n\\Marks{3}\n\n\\item A regular polygon has 72 sides.\\\\\nFind the size of an interior angle.\n\n\\AnswerLine[][\\degree]\n\\Marks{3}\n\n\\item \n\\relinput{Figures/Q01d.tex}\n$A$, $B$, $C$ and $D$ lie on the circle, centre $O$, with diameter $AC$.\\\\\n$PQ$ is a tangent to the circle at $A$.\\\\\nAngle $PAD = 60\\degree$ and angle $BAC = 20\\degree$.\n\nFind the values of $u$, $v$, $w$, $x$ and $y$.\n\n\\AnswerLine[$u = $][, $v = $ \\makebox[1.5cm]{\\dotfill}, $w = $ \\makebox[1.5cm]{\\dotfill}, $x = $ \\makebox[1.5cm]{\\dotfill}, $y = $ \\makebox[1.5cm]{\\dotfill}]\n\\Marks{6}\n\n\\item $A$, $B$ and $C$ lie on the circle, centre $O$.\\\\\nAngle $AOC = (3x + 22)\\degree$ and angle $ABC = 5x\\degree$.\\\\\nFind the value of $x$.\n\n\\relinput{Figures/Q01e.tex}\n\n\\AnswerLine[$x = $][]\n\\Marks{4}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2019OctNov/Paper41/Q01/Q01a.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2019OctNov/Paper41/Q01/Q01d.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2019OctNov/Paper41/Q01/Q01e.png"
+    ]
+  },
+  {
+    "id": "0580-2019OctNov-Paper41-Q02",
+    "paper": "2019OctNov-Paper41",
+    "qnum": 2,
+    "marks": 9,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.13",
+    "d": 2,
+    "cat": "number",
+    "topic": "Electronic calculators",
+    "qtype": "ratio sharing, percentage decrease, reverse percentage",
+    "g": "mixed",
+    "src": "0580/41/O/N/19 Q02",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "(a) Ali and Mo share a sum of money in the ratio Ali : Mo = $9 : 7$.\n\\newline\n\\\\\nAli receives \\$600 more than Mo.\n\\newline\n\\\\\nCalculate how much each receives.\n\\newline\n\n(b) In a sale, Ali buys a television for \\$195.80.\n\\newline\n\\\\\nThe original price was \\$220.\n\\newline\n\\\\\nCalculate the percentage reduction on the original price.\n\\newline\n\n(c) In the sale, Mo buys a jacket for \\$63.\n\\newline\n\\\\\nThe original price was reduced by 25\\%.\n\\newline\n\\\\\nCalculate the original price of the jacket.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Ali and Mo share a sum of money in the ratio Ali : Mo = $9 : 7$.\n\\newline\n\\\\\nAli receives \\$600 more than Mo.\n\\newline\n\\\\\nCalculate how much each receives.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "multiline",
+          "lines": 2,
+          "template": "Ali \\$ ____\\nMo \\$ ____",
+          "lineSep": "blank"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "In a sale, Ali buys a television for \\$195.80.\n\\newline\n\\\\\nThe original price was \\$220.\n\\newline\n\\\\\nCalculate the percentage reduction on the original price.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "\\%"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "In the sale, Mo buys a jacket for \\$63.\n\\newline\n\\\\\nThe original price was reduced by 25\\%.\n\\newline\n\\\\\nCalculate the original price of the jacket.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "\\$"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Ali and Mo share a sum of money in the ratio Ali : Mo = $9 : 7$.\\\\\nAli receives \\$600 more than Mo.\\\\\nCalculate how much each receives.\n\n\\AnswerLine[Ali \\$][]\n\\AnswerLine[Mo \\$][]\n\\Marks{3}\n\n\\item In a sale, Ali buys a television for \\$195.80.\\\\\nThe original price was \\$220.\\\\\nCalculate the percentage reduction on the original price.\n\n\\AnswerLine[][\\%]\n\\Marks{3}\n\n\\item In the sale, Mo buys a jacket for \\$63.\\\\\nThe original price was reduced by 25\\%.\\\\\nCalculate the original price of the jacket.\n\n\\AnswerLine[\\$][]\n\\Marks{3}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper41-Q03",
+    "paper": "2019OctNov-Paper41",
+    "qnum": 3,
+    "marks": 6,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.17",
+    "d": 2,
+    "cat": "number",
+    "topic": "Bounds and calculations",
+    "qtype": "compound interest, exponential growth, reverse exponential growth, finding time in exponential growth",
+    "g": "mixed",
+    "src": "0580/41/O/N/19 Q03",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "(a) Dina invests \\$600 for 5 years at a rate of 2\\% per year compound interest.\n\\newline\n\\\\\nCalculate the value of this investment at the end of the 5 years.\n\\newline\n\n(b) The value of a gold ring increases exponentially at a rate of 5\\% per year.\n\\newline\n\\\\\nThe value is now \\$882.\n\\newline\n\n(i) (c) Calculate the value of the ring 2 years ago.\n\\newline\n\n(d) Find the number of complete years it takes for the ring's value of \\$882 to increase to a value greater than \\$1100.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Dina invests \\$600 for 5 years at a rate of 2\\% per year compound interest.\n\\newline\n\\\\\nCalculate the value of this investment at the end of the 5 years.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "\\$"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The value of a gold ring increases exponentially at a rate of 5\\% per year.\n\\newline\n\\\\\nThe value is now \\$882.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate the value of the ring 2 years ago.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "\\$"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the number of complete years it takes for the ring's value of \\$882 to increase to a value greater than \\$1100.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item"
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Dina invests \\$600 for 5 years at a rate of 2\\% per year compound interest.\\\\\nCalculate the value of this investment at the end of the 5 years.\n\n\\AnswerLine[\\$][]\n\\Marks{2}\n\n\\item The value of a gold ring increases exponentially at a rate of 5\\% per year.\\\\\nThe value is now \\$882.\n\n\\begin{subparts}\n\\item Calculate the value of the ring 2 years ago.\n\n\\AnswerLine[\\$][]\n\\Marks{2}\n\n\\item Find the number of complete years it takes for the ring's value of \\$882 to increase to a value greater than \\$1100.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper41-Q04",
+    "paper": "2019OctNov-Paper41",
+    "qnum": 4,
+    "marks": 15,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.4",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Circle theorems",
+    "qtype": "similarity and congruence",
+    "g": "mixed",
+    "src": "0580/41/O/N/19 Q04",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "(a) (i) (b) Calculate the external curved surface area of a cylinder with radius 8 m and height 19 m.\n\\newline\n\n(c) This surface is painted at a cost of \\$0.85 per square metre.\n\\newline\n\\\\\nCalculate the cost of painting this surface.\n\\newline\n\n(d) A solid metal sphere with radius 6 cm is melted down and all of the metal is used to make a solid cone with radius 8 cm and height $h$ cm.\n\\newline\n\n(i) (e) Show that $h = 13.5$.\n\\newline\n[The volume, $V$, of a sphere with radius $r$ is $V = \\frac{4}{3}\\pi r^3$.\n\\newline\n]\n[The volume, $V$, of a cone with radius $r$ and height $h$ is $V = \\frac{1}{3}\\pi r^2 h$.\n\\newline\n]\n\n(f) Calculate the slant height of the cone.\n\\newline\n\n(g) Calculate the curved surface area of the cone.\n\\newline\n\\\\ \\null\n[The curved surface area, $A$, of a cone with radius $r$ and slant height $l$ is $A = \\pi rl$.\n\\newline\n]\n\n(h) Two cones are mathematically similar.\n\\newline\n\\\\\nThe total surface area of the smaller cone is 80 cm$^2$.\n\\newline\n\\\\\nThe total surface area of the larger cone is 180 cm$^2$.\n\\newline\n\\\\\nThe volume of the smaller cone is 168 cm$^3$.\n\\newline\n\\\\\nCalculate the volume of the larger cone.\n\\newline\n\n(i) The diagram shows a pyramid with a square base $ABCD$.\n\\newline\n\\\\\n$DB = 8$ cm.\n\\newline\n\\\\\n$P$ is vertically above the centre, $X$, of the base and $PX = 5$ cm.\n\\newline\n\nCalculate the angle between $PB$ and the base $ABCD$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate the external curved surface area of a cylinder with radius 8 m and height 19 m.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "m$^2$"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "This surface is painted at a cost of \\$0.85 per square metre.\n\\newline\n\\\\\nCalculate the cost of painting this surface.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "\\$"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true,
+        "_itemInlineSubparts": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "A solid metal sphere with radius 6 cm is melted down and all of the metal is used to make a solid cone with radius 8 cm and height $h$ cm.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Show that $h = 13.5$.\n\\newline\n[The volume, $V$, of a sphere with radius $r$ is $V = \\frac{4}{3}\\pi r^3$.\n\\newline\n]\n[The volume, $V$, of a cone with radius $r$ and height $h$ is $V = \\frac{1}{3}\\pi r^2 h$.\n\\newline\n]"
+              }
+            ],
+            "answer": {
+              "type": "none",
+              "space": {
+                "type": "drawing",
+                "height": "3cm",
+                "cmd": "Answerspace"
+              }
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate the slant height of the cone.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "cm"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate the curved surface area of the cone.\n\\newline\n\\\\ \\null\n[The curved surface area, $A$, of a cone with radius $r$ and slant height $l$ is $A = \\pi rl$.\n\\newline\n]"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "cm$^2$"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(c)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Two cones are mathematically similar.\n\\newline\n\\\\\nThe total surface area of the smaller cone is 80 cm$^2$.\n\\newline\n\\\\\nThe total surface area of the larger cone is 180 cm$^2$.\n\\newline\n\\\\\nThe volume of the smaller cone is 168 cm$^3$.\n\\newline\n\\\\\nCalculate the volume of the larger cone.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "cm$^3$"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "The diagram shows a pyramid with a square base $ABCD$.\n\\newline\n\\\\\n$DB = 8$ cm.\n\\newline\n\\\\\n$P$ is vertically above the centre, $X$, of the base and $PX = 5$ cm.\n\\newline\n"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q04d.tex"
+          },
+          {
+            "type": "text",
+            "content": "Calculate the angle between $PB$ and the base $ABCD$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "\\degree"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "analyse",
+    "cmd": "show",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item \n\\begin{subparts}\n\\item Calculate the external curved surface area of a cylinder with radius 8 m and height 19 m.\n\n\\AnswerLine[][m$^2$]\n\\Marks{2}\n\n\\item This surface is painted at a cost of \\$0.85 per square metre.\\\\\nCalculate the cost of painting this surface.\n\n\\AnswerLine[\\$][]\n\\Marks{2}\n\\end{subparts}\n\n\\item A solid metal sphere with radius 6 cm is melted down and all of the metal is used to make a solid cone with radius 8 cm and height $h$ cm.\n\n\\begin{subparts}\n\\item Show that $h = 13.5$.\n[The volume, $V$, of a sphere with radius $r$ is $V = \\frac{4}{3}\\pi r^3$.]\n[The volume, $V$, of a cone with radius $r$ and height $h$ is $V = \\frac{1}{3}\\pi r^2 h$.]\n\n\\Answerspace[3cm]\n\\Marks{2}\n\n\\item Calculate the slant height of the cone.\n\n\\AnswerLine[][cm]\n\\Marks{2}\n\n\\item Calculate the curved surface area of the cone.\\\\ \\null\n[The curved surface area, $A$, of a cone with radius $r$ and slant height $l$ is $A = \\pi rl$.]\n\n\\AnswerLine[][cm$^2$]\n\\Marks{1}\n\\end{subparts}\n\n\\item Two cones are mathematically similar.\\\\\nThe total surface area of the smaller cone is 80 cm$^2$.\\\\\nThe total surface area of the larger cone is 180 cm$^2$.\\\\\nThe volume of the smaller cone is 168 cm$^3$.\\\\\nCalculate the volume of the larger cone.\n\n\\AnswerLine[][cm$^3$]\n\\Marks{3}\n\n\\item The diagram shows a pyramid with a square base $ABCD$.\\\\\n$DB = 8$ cm.\\\\\n$P$ is vertically above the centre, $X$, of the base and $PX = 5$ cm.\n\n\\relinput{Figures/Q04d.tex}\n\nCalculate the angle between $PB$ and the base $ABCD$.\n\n\\AnswerLine[][\\degree]\n\\Marks{3}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2019OctNov/Paper41/Q04/Q04d.png"
+    ]
+  },
+  {
+    "id": "0580-2019OctNov-Paper41-Q05",
+    "paper": "2019OctNov-Paper41",
+    "qnum": 5,
+    "marks": 12,
+    "topics": [
+      "Number",
+      "Geometry",
+      "Trigonometry"
+    ],
+    "s": null,
+    "d": 2,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/41/O/N/19 Q05",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "The diagram shows a triangular field, $ABC$, on horizontal ground.\n\\newline\n\n(a) Olav runs from $A$ to $B$ at a constant speed of 4 m/s and then from $B$ to $C$ at a constant speed of 3 m/s.\n\\newline\n\\\\\nHe then runs at a constant speed from $C$ to $A$.\n\\newline\n\\\\\nHis average speed for the whole journey is 3.6 m/s.\n\\newline\n\nCalculate his speed when he runs from $C$ to $A$.\n\\newline\n\n(b) Use the cosine rule to find angle $BAC$.\n\\newline\n\n(c) The bearing of $C$ from $A$ is 210°.\n\\newline\n\n(i) (d) Find the bearing of $B$ from $A$.\n\\newline\n\n(e) Find the bearing of $A$ from $B$.\n\\newline\n\n(f) $D$ is the point on $AC$ that is nearest to $B$.\n\\newline\n\\\\\nCalculate the distance from $D$ to $A$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Olav runs from $A$ to $B$ at a constant speed of 4 m/s and then from $B$ to $C$ at a constant speed of 3 m/s.\n\\newline\n\\\\\nHe then runs at a constant speed from $C$ to $A$.\n\\newline\n\\\\\nHis average speed for the whole journey is 3.6 m/s.\n\\newline\n\nCalculate his speed when he runs from $C$ to $A$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "m/s"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "text",
+            "content": "Use the cosine rule to find angle $BAC$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "Angle $BAC = $"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The bearing of $C$ from $A$ is 210\\degree.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the bearing of $B$ from $A$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the bearing of $A$ from $B$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(d)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "$D$ is the point on $AC$ that is nearest to $B$.\n\\newline\n\\\\\nCalculate the distance from $D$ to $A$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "m"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q05-Diagram.tex"
+      },
+      {
+        "type": "text",
+        "content": "The diagram shows a triangular field, $ABC$, on horizontal ground.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "\\relinput{Figures/Q05-Diagram.tex}\n\nThe diagram shows a triangular field, $ABC$, on horizontal ground.\n\n\\begin{parts}\n\\item Olav runs from $A$ to $B$ at a constant speed of 4 m/s and then from $B$ to $C$ at a constant speed of 3 m/s.\\\\\nHe then runs at a constant speed from $C$ to $A$.\\\\\nHis average speed for the whole journey is 3.6 m/s.\n\nCalculate his speed when he runs from $C$ to $A$.\n\n\\AnswerLine[][m/s]\n\\Marks{3}\n\n\\item Use the cosine rule to find angle $BAC$.\n\n\\AnswerLine[Angle $BAC = $][]\n\\Marks{4}\n\n\\item The bearing of $C$ from $A$ is 210\\degree.\n\n\\begin{subparts}\n\\item Find the bearing of $B$ from $A$.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Find the bearing of $A$ from $B$.\n\n\\AnswerLine[][]\n\\Marks{2}\n\\end{subparts}\n\n\\item $D$ is the point on $AC$ that is nearest to $B$.\\\\\nCalculate the distance from $D$ to $A$.\n\n\\AnswerLine[][m]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2019OctNov/Paper41/Q05/Q05-Diagram.png"
+    ]
+  },
+  {
+    "id": "0580-2019OctNov-Paper41-Q06",
+    "paper": "2019OctNov-Paper41",
+    "qnum": 6,
+    "marks": 17,
+    "topics": [
+      "Number",
+      "Statistics"
+    ],
+    "s": null,
+    "d": 2,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/41/O/N/19 Q06",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "(a) The cumulative frequency diagram shows information about the times taken by 200 students to solve a problem.\n\\newline\n\nUse the cumulative frequency diagram to find an estimate for\n\n(i) (b) the median,\n\n(c) the interquartile range,\n\n(d) the number of students who took more than 40 minutes.\n\\newline\n\n(e) Roberto records the value of each of the coins he has at home.\n\\newline\n\\\\\nThe table shows the results.\n\\newline\n\n\\begin{tabular}{|l|c|c|c|c|c|c|}\n\\hline\nValue (cents) & 1 & 2 & 5 & 10 & 20 & 50 \\\\ \\hline\nFrequency & 3 & 1 & 3 & 2 & 4 & 2 \\\\ \\hline\n\\end{tabular}\n(i) (f) Find the range.\n\\newline\n\n(g) Find the mode.\n\\newline\n\n(h) Find the median.\n\\newline\n\n(i) Work out the total value of Roberto's coins.\n\\newline\n\n(j) Work out the mean.\n\\newline\n\n(k) The histogram shows information about the masses of 100 boxes.\n\\newline\n\nCalculate an estimate of the mean.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The cumulative frequency diagram shows information about the times taken by 200 students to solve a problem.\n\\newline\n"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q06a-CumulativeFrequency.tex"
+          },
+          {
+            "type": "text",
+            "content": "Use the cumulative frequency diagram to find an estimate for"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "the median,"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "min"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "the interquartile range,"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "min"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "the number of students who took more than 40 minutes.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Roberto records the value of each of the coins he has at home.\n\\newline\n\\\\\nThe table shows the results.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{center}\n\\begin{tabular}{|l|c|c|c|c|c|c|}\n\\hline\nValue (cents) & 1 & 2 & 5 & 10 & 20 & 50 \\\\ \\hline\nFrequency & 3 & 1 & 3 & 2 & 4 & 2 \\\\ \\hline\n\\end{tabular}\n\\end{center}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the range.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "cents"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the mode.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "cents"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the median.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "cents"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iv)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Work out the total value of Roberto's coins.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "cents"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(v)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Work out the mean.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "cents"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(c)",
+        "marks": 6,
+        "content": [
+          {
+            "type": "text",
+            "content": "The histogram shows information about the masses of 100 boxes.\n\\newline\n"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q06c-Histogram.tex"
+          },
+          {
+            "type": "text",
+            "content": "Calculate an estimate of the mean.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "kg"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "",
+    "cmd": "solve",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item The cumulative frequency diagram shows information about the times taken by 200 students to solve a problem.\n\n\\relinput{Figures/Q06a-CumulativeFrequency.tex}\n\nUse the cumulative frequency diagram to find an estimate for\n\n\\begin{subparts}\n\\item the median,\n\n\\AnswerLine[][min]\n\\Marks{1}\n\n\\item the interquartile range,\n\n\\AnswerLine[][min]\n\\Marks{2}\n\n\\item the number of students who took more than 40 minutes.\n\n\\AnswerLine[][]\n\\Marks{2}\n\\end{subparts}\n\n\\item Roberto records the value of each of the coins he has at home.\\\\\nThe table shows the results.\n\n\\begin{center}\n\\begin{tabular}{|l|c|c|c|c|c|c|}\n\\hline\nValue (cents) & 1 & 2 & 5 & 10 & 20 & 50 \\\\ \\hline\nFrequency & 3 & 1 & 3 & 2 & 4 & 2 \\\\ \\hline\n\\end{tabular}\n\\end{center}\n\n\\begin{subparts}\n\\item Find the range.\n\n\\AnswerLine[][cents]\n\\Marks{1}\n\n\\item Find the mode.\n\n\\AnswerLine[][cents]\n\\Marks{1}\n\n\\item Find the median.\n\n\\AnswerLine[][cents]\n\\Marks{1}\n\n\\item Work out the total value of Roberto's coins.\n\n\\AnswerLine[][cents]\n\\Marks{2}\n\n\\item Work out the mean.\n\n\\AnswerLine[][cents]\n\\Marks{1}\n\\end{subparts}\n\n\\item The histogram shows information about the masses of 100 boxes.\n\n\\relinput{Figures/Q06c-Histogram.tex}\n\nCalculate an estimate of the mean.\n\n\\AnswerLine[][kg]\n\\Marks{6}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2019OctNov/Paper41/Q06/Q06a-CumulativeFrequency.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2019OctNov/Paper41/Q06/Q06c-Histogram.png"
+    ]
+  },
+  {
+    "id": "0580-2019OctNov-Paper41-Q07",
+    "paper": "2019OctNov-Paper41",
+    "qnum": 7,
+    "marks": 15,
+    "topics": [
+      "Number",
+      "Algebra and graphs"
+    ],
+    "s": "2.5",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Equations",
+    "qtype": "forming and solving linear and simultaneous equations, setting up and simplifying fractional algebraic equations",
+    "g": "simul-linear",
+    "src": "0580/41/O/N/19 Q07",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "(a) Oranges cost 21 cents each.\n\\newline\n\\\\\nAlex buys $x$ oranges and Bobbie buys $(x + 2)$ oranges.\n\\newline\n\\\\\nThe total cost of these oranges is \\$4.20.\n\\newline\n\nFind the value of $x$.\n\\newline\n\n(b) The cost of one ruler is $r$ cents.\n\\newline\n\\\\\nThe cost of one protractor is $p$ cents.\n\\newline\n\nThe total cost of 5 rulers and 1 protractor is 245 cents.\n\\newline\n\\\\\nThe total cost of 2 rulers and 3 protractors is 215 cents.\n\\newline\n\nWrite down two equations in terms of $r$ and $p$ and solve these equations to find the cost of one protractor.\n\\newline\n\n(c) Carol walks 12 km at $x$ km/h and then a further 6 km at $(x - 1)$ km/h.\n\\newline\n\\\\\nThe total time taken is 5 hours.\n\\newline\n\n(i) (d) Write an equation, in terms of $x$, and show that it simplifies to $5x^2 - 23x + 12 = 0$.\n\\newline\n\n(e) Factorise $5x^2 - 23x + 12$.\n\\newline\n\n(f) Solve the equation $5x^2 - 23x + 12 = 0$.\n\\newline\n\n{...}]\n\n(g) Write down Carol's walking speed during the final 6 km.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Oranges cost 21 cents each.\n\\newline\n\\\\\nAlex buys $x$ oranges and Bobbie buys $(x + 2)$ oranges.\n\\newline\n\\\\\nThe total cost of these oranges is \\$4.20.\n\\newline\n\nFind the value of $x$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x = $"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 5,
+        "content": [
+          {
+            "type": "text",
+            "content": "The cost of one ruler is $r$ cents.\n\\newline\n\\\\\nThe cost of one protractor is $p$ cents.\n\\newline\n\nThe total cost of 5 rulers and 1 protractor is 245 cents.\n\\newline\n\\\\\nThe total cost of 2 rulers and 3 protractors is 215 cents.\n\\newline\n\nWrite down two equations in terms of $r$ and $p$ and solve these equations to find the cost of one protractor.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "cents"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Carol walks 12 km at $x$ km/h and then a further 6 km at $(x - 1)$ km/h.\n\\newline\n\\\\\nThe total time taken is 5 hours.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "Write an equation, in terms of $x$, and show that it simplifies to $5x^2 - 23x + 12 = 0$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "none",
+              "space": {
+                "type": "drawing",
+                "height": "3cm",
+                "cmd": "Answerspace"
+              }
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Factorise $5x^2 - 23x + 12$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Solve the equation $5x^2 - 23x + 12 = 0$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$x = $",
+              "suffix": " or $x = $ \\makebox[1.5cm]{\\dotfill}"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iv)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Write down Carol's walking speed during the final 6 km.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "km/h"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "analyse",
+    "cmd": "show",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Oranges cost 21 cents each.\\\\\nAlex buys $x$ oranges and Bobbie buys $(x + 2)$ oranges.\\\\\nThe total cost of these oranges is \\$4.20.\n\nFind the value of $x$.\n\n\\AnswerLine[$x = $][]\n\\Marks{3}\n\n\\item The cost of one ruler is $r$ cents.\\\\\nThe cost of one protractor is $p$ cents.\n\nThe total cost of 5 rulers and 1 protractor is 245 cents.\\\\\nThe total cost of 2 rulers and 3 protractors is 215 cents.\n\nWrite down two equations in terms of $r$ and $p$ and solve these equations to find the cost of one protractor.\n\n\\AnswerLine[][cents]\n\\Marks{5}\n\n\\item Carol walks 12 km at $x$ km/h and then a further 6 km at $(x - 1)$ km/h.\\\\\nThe total time taken is 5 hours.\n\n\\begin{subparts}\n\\item Write an equation, in terms of $x$, and show that it simplifies to $5x^2 - 23x + 12 = 0$.\n\n\\Answerspace[3cm]\n\\Marks{3}\n\n\\item Factorise $5x^2 - 23x + 12$.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item Solve the equation $5x^2 - 23x + 12 = 0$.\n\n\\AnswerLine[$x = $][ or $x = $ \\makebox[1.5cm]{\\dotfill}]\n\\Marks{1}\n\n\\item Write down Carol's walking speed during the final 6 km.\n\n\\AnswerLine[][km/h]\n\\Marks{1}\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper41-Q08",
+    "paper": "2019OctNov-Paper41",
+    "qnum": 8,
+    "marks": 8,
+    "topics": [
+      "Number",
+      "Probability"
+    ],
+    "s": null,
+    "d": 2,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/41/O/N/19 Q08",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "The diagram shows 5 cards.\n\\newline\n\n(a) Donald chooses a card at random.\n\\newline\n\n(i) (b) Write down the probability that the number of dots on this card is an even number.\n\\newline\n\n(c) Write down the probability that the number of dots on this card is a prime number.\n\\newline\n\n(d) Donald chooses two of the five cards at random, without replacement.\n\\newline\n\\\\\nHe works out the total number of dots on these two cards.\n\\newline\n\n(i) (e) Find the probability that the total number of dots is 5.\n\\newline\n\n(f) Find the probability that the total number of dots is an odd number.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Donald chooses a card at random.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Write down the probability that the number of dots on this card is an even number.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Write down the probability that the number of dots on this card is a prime number.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Donald chooses two of the five cards at random, without replacement.\n\\newline\n\\\\\nHe works out the total number of dots on these two cards.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the probability that the total number of dots is 5.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the probability that the total number of dots is an odd number.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q08-Cards.tex"
+      },
+      {
+        "type": "text",
+        "content": "The diagram shows 5 cards.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "\\relinput{Figures/Q08-Cards.tex}\n\nThe diagram shows 5 cards.\n\n\\begin{parts}\n\\item Donald chooses a card at random.\n\n\\begin{subparts}\n\\item Write down the probability that the number of dots on this card is an even number.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Write down the probability that the number of dots on this card is a prime number.\n\n\\AnswerLine[][]\n\\Marks{1}\n\\end{subparts}\n\n\\item Donald chooses two of the five cards at random, without replacement.\\\\\nHe works out the total number of dots on these two cards.\n\n\\begin{subparts}\n\\item Find the probability that the total number of dots is 5.\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\item Find the probability that the total number of dots is an odd number.\n\n\\AnswerLine[][]\n\\Marks{3}\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_compactItems": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2019OctNov/Paper41/Q08/Q08-Cards.png"
+    ]
+  },
+  {
+    "id": "0580-2019OctNov-Paper41-Q09",
+    "paper": "2019OctNov-Paper41",
+    "qnum": 9,
+    "marks": 13,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.6",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Inequalities",
+    "qtype": "linear programming",
+    "g": "mixed",
+    "src": "0580/41/O/N/19 Q09",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "A car hire company has $x$ small cars and $y$ large cars.\n\\newline\n\\\\\nThe company has at least 6 cars in total.\n\\newline\n\\\\\nThe number of large cars is less than or equal to the number of small cars.\n\\newline\n\\\\\nThe largest number of small cars is 8.\n\\newline\n\n(a) Write down three inequalities, in terms of $x$ and/or $y$, to show this information.\n\\newline\n\n{...}, ]\n\n(b) A small car can carry 4 people and a large car can carry 6 people.\n\\newline\n\\\\\nOne day, the largest number of people to be carried is 60.\n\\newline\n\\\\\nShow that $2x + 3y \\le 30$.\n\\newline\n\n(c) \n\nBy shading the unwanted regions on the grid, show and label the region $R$ that satisfies all four inequalities.\n\\newline\n\n(d) (i) (e) Find the number of small cars and the number of large cars needed to carry exactly 60 people.\n\\newline\n\n{...} large cars]\n\n(f) When the company uses 7 cars, find the largest number of people that can be carried.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down three inequalities, in terms of $x$ and/or $y$, to show this information.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": ", \\makebox[2cm]{\\dotfill}, \\makebox[2cm]{\\dotfill}"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "A small car can carry 4 people and a large car can carry 6 people.\n\\newline\n\\\\\nOne day, the largest number of people to be carried is 60.\n\\newline\n\\\\\nShow that $2x + 3y \\le 30$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "none",
+          "space": {
+            "type": "drawing",
+            "height": "1.5cm",
+            "cmd": "Answerspace"
+          }
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 6,
+        "content": [
+          {
+            "type": "figure",
+            "src": "Figures/Q09c-Grid.tex"
+          },
+          {
+            "type": "text",
+            "content": "By shading the unwanted regions on the grid, show and label the region $R$ that satisfies all four inequalities.\n\\newline\n"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the number of small cars and the number of large cars needed to carry exactly 60 people.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "small cars, \\makebox[1.5cm]{\\dotfill} large cars"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "When the company uses 7 cars, find the largest number of people that can be carried.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true,
+        "_itemInlineSubparts": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "show",
+    "stem": [
+      {
+        "type": "text",
+        "content": "A car hire company has $x$ small cars and $y$ large cars.\n\\newline\n\\\\\nThe company has at least 6 cars in total.\n\\newline\n\\\\\nThe number of large cars is less than or equal to the number of small cars.\n\\newline\n\\\\\nThe largest number of small cars is 8.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "A car hire company has $x$ small cars and $y$ large cars.\\\\\nThe company has at least 6 cars in total.\\\\\nThe number of large cars is less than or equal to the number of small cars.\\\\\nThe largest number of small cars is 8.\n\n\\begin{parts}\n\\item Write down three inequalities, in terms of $x$ and/or $y$, to show this information.\n\n\\AnswerLine[][, \\makebox[2cm]{\\dotfill}, \\makebox[2cm]{\\dotfill}]\n\\Marks{3}\n\n\\item A small car can carry 4 people and a large car can carry 6 people.\\\\\nOne day, the largest number of people to be carried is 60.\\\\\nShow that $2x + 3y \\le 30$.\n\n\\Answerspace[1.5cm]\n\\Marks{1}\n\n\\item \n\\relinput{Figures/Q09c-Grid.tex}\n\nBy shading the unwanted regions on the grid, show and label the region $R$ that satisfies all four inequalities.\n\\Marks{6}\n\n\\item \n\\begin{subparts}\n\\item Find the number of small cars and the number of large cars needed to carry exactly 60 people.\n\n\\AnswerLine[][small cars, \\makebox[1.5cm]{\\dotfill} large cars]\n\\Marks{1}\n\n\\item When the company uses 7 cars, find the largest number of people that can be carried.\n\n\\AnswerLine[][]\n\\Marks{2}\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2019OctNov/Paper41/Q09/Q09c-Grid.png"
+    ]
+  },
+  {
+    "id": "0580-2019OctNov-Paper41-Q10",
+    "paper": "2019OctNov-Paper41",
+    "qnum": 10,
+    "marks": 16,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.7",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Sequences",
+    "qtype": "number sequences",
+    "g": "sequence",
+    "src": "0580/41/O/N/19 Q10",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "(a) Complete the table for the 5th term and the $n$th term of each sequence.\n\\newline\n\n\\begin{tabular}{|c|c|c|c|c|c|c|}\n\\hline\n1st term & 2nd term & 3rd term & 4th term & 5th term & \\dots & $n$th term \\\\ \\hline\n9 & 5 & 1 & $-3$ & & & \\\\ \\hline\n4 & 9 & 16 & 25 & & & \\\\ \\hline\n1 & 8 & 27 & 64 & & & \\\\ \\hline\n8 & 16 & 32 & 64 & & & \\\\ \\hline\n\\end{tabular}\n\n(b) $0, 1, 1, 2, 3, 5, 8, 13, 21, \\dots$\\\\\nThis sequence is a Fibonacci sequence.\n\\newline\n\\\\\nAfter the first two terms, the rule to find the next term is ``add the two previous terms''.\n\\newline\n\\\\\nFor example, $5 + 8 = 13$.\n\\newline\n\\\\\nUse this rule to complete each of the following Fibonacci sequences.\n\\newline\n\n(i) (c) $2, \\quad 4, \\quad \\dots\\dots, \\quad \\dots\\dots, \\quad \\dots\\dots$\n\n(d) $1, \\quad \\dots\\dots, \\quad \\dots\\dots, \\quad \\dots\\dots, \\quad 11$\n\n(e) $\\dots\\dots, \\quad -1, \\quad \\dots\\dots, \\quad \\dots\\dots, \\quad 1$\n\n(f) $\\dfrac{1}{3}, \\dfrac{3}{4}, \\dfrac{4}{7}, \\dfrac{7}{11}, \\dfrac{11}{18}, \\dots$\n\n(i) (g) One term of this sequence is $\\dfrac{p}{q}$.\n\\newline\n\\\\\nFind, in terms of $p$ and $q$, the next term in this sequence.\n\\newline\n\n(h) Find the 6th term of this sequence.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 11,
+        "content": [
+          {
+            "type": "text",
+            "content": "Complete the table for the 5th term and the $n$th term of each sequence.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|c|c|}\n\\hline\n1st term & 2nd term & 3rd term & 4th term & 5th term & \\dots & $n$th term \\\\ \\hline\n9 & 5 & 1 & $-3$ & & & \\\\ \\hline\n4 & 9 & 16 & 25 & & & \\\\ \\hline\n1 & 8 & 27 & 64 & & & \\\\ \\hline\n8 & 16 & 32 & 64 & & & \\\\ \\hline\n\\end{tabular}\n\\end{center}"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "$0, 1, 1, 2, 3, 5, 8, 13, 21, \\dots$\\\\\nThis sequence is a Fibonacci sequence.\n\\newline\n\\\\\nAfter the first two terms, the rule to find the next term is ``add the two previous terms''.\n\\newline\n\\\\\nFor example, $5 + 8 = 13$.\n\\newline\n\\\\\nUse this rule to complete each of the following Fibonacci sequences.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 0,
+            "content": [
+              {
+                "type": "text",
+                "content": "$2, \\quad 4, \\quad \\dots\\dots, \\quad \\dots\\dots, \\quad \\dots\\dots$"
+              }
+            ]
+          },
+          {
+            "label": "(ii)",
+            "marks": 0,
+            "content": [
+              {
+                "type": "text",
+                "content": "$1, \\quad \\dots\\dots, \\quad \\dots\\dots, \\quad \\dots\\dots, \\quad 11$"
+              }
+            ]
+          },
+          {
+            "label": "(iii)",
+            "marks": 0,
+            "content": [
+              {
+                "type": "text",
+                "content": "$\\dots\\dots, \\quad -1, \\quad \\dots\\dots, \\quad \\dots\\dots, \\quad 1$"
+              }
+            ]
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "$\\dfrac{1}{3}, \\dfrac{3}{4}, \\dfrac{4}{7}, \\dfrac{7}{11}, \\dfrac{11}{18}, \\dots$"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "One term of this sequence is $\\dfrac{p}{q}$.\n\\newline\n\\\\\nFind, in terms of $p$ and $q$, the next term in this sequence.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the 6th term of this sequence.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Complete the table for the 5th term and the $n$th term of each sequence.\n\n\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|c|c|}\n\\hline\n1st term & 2nd term & 3rd term & 4th term & 5th term & \\dots & $n$th term \\\\ \\hline\n9 & 5 & 1 & $-3$ & & & \\\\ \\hline\n4 & 9 & 16 & 25 & & & \\\\ \\hline\n1 & 8 & 27 & 64 & & & \\\\ \\hline\n8 & 16 & 32 & 64 & & & \\\\ \\hline\n\\end{tabular}\n\\end{center}\n\\Marks{11}\n\n\\item $0, 1, 1, 2, 3, 5, 8, 13, 21, \\dots$\\\\\nThis sequence is a Fibonacci sequence.\\\\\nAfter the first two terms, the rule to find the next term is ``add the two previous terms''.\\\\\nFor example, $5 + 8 = 13$.\\\\\nUse this rule to complete each of the following Fibonacci sequences.\n\n\\begin{subparts}\n\\item $2, \\quad 4, \\quad \\dots\\dots, \\quad \\dots\\dots, \\quad \\dots\\dots$\n\\item $1, \\quad \\dots\\dots, \\quad \\dots\\dots, \\quad \\dots\\dots, \\quad 11$\n\\item $\\dots\\dots, \\quad -1, \\quad \\dots\\dots, \\quad \\dots\\dots, \\quad 1$\n\\end{subparts}\n\\Marks{3}\n\n\\item $\\dfrac{1}{3}, \\dfrac{3}{4}, \\dfrac{4}{7}, \\dfrac{7}{11}, \\dfrac{11}{18}, \\dots$\n\n\\begin{subparts}\n\\item One term of this sequence is $\\dfrac{p}{q}$.\\\\\nFind, in terms of $p$ and $q$, the next term in this sequence.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Find the 6th term of this sequence.\n\n\\AnswerLine[][]\n\\Marks{1}\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true
+  }
+]

@@ -1,0 +1,1396 @@
+[
+  {
+    "id": "0580-2024MayJune-Paper31-Q01",
+    "paper": "2024MayJune-Paper31",
+    "qnum": 1,
+    "marks": 1,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.16",
+    "d": 1,
+    "cat": "number",
+    "topic": "Upper and lower bounds",
+    "qtype": "money calculations",
+    "g": "mixed",
+    "src": "0580/31/M/J/24 Q01",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "**[2024 May/June, 0580/31, Question 1]**\n\n(a) The cost of a cinema ticket is \\$6.30.\n\\newline\n\n(i) (b) Work out the total cost of 4 tickets.\n\\newline\n\n(c) The cinema sells 10 tickets for the price of 9 tickets.\n\\newline\nA group of 10 people go to the cinema.\n\\newline\nWork out how much each person must pay.\n\\newline\n\n(d) The cinema has 650 seats.\n\\newline\n\n(i) (e) There are 26 seats in each row.\n\\newline\nWork out the number of rows.\n\\newline\n\n(f) 84\\% of the seats are occupied.\n\\newline\nWork out how many seats are not occupied.\n\\newline\n\n(g) Suki buys a bag of popcorn and a bottle of water.\n\\newline\nA bag of popcorn costs twice as much as a bottle of water.\n\\newline\nShe receives \\$3.55 change from \\$10.\n\\newline\nWork out the cost of a bag of popcorn and the cost of a bottle of water.\n\\newline\n\nBag of popcorn \nBottle of water \n\n(h) (i) (i) A film lasts for 155 minutes.\n\\newline\nWrite 155 minutes in hours and minutes.\n\\newline\n\n(j) Another film starts at 14 45 and lasts for 2 hours and 20 minutes.\n\\newline\nWork out the time that this film finishes.\n\\newline\n\n(k) The table shows the hours that Trevor works in the cinema each week.\n\\newline\n\nMonday\n\nNo hours\n\nTuesday\n\nNo hours\n\nWednesday\n\n18 00 to 22 00\n\nThursday\n\n18 00 to 22 00\n\nFriday\n\n12 00 to 17 30\n\nSaturday\n\n12 00 to 17 30\n\nSunday\n\n13 00 to 18 00\n\nTrevor is paid \\$11.50 per hour for the time he works before 18 00.\n\\newline\nHe is paid 30\\% more for the time he works after 18 00.\n\\newline\nWork out how much Trevor is paid each week.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The cost of a cinema ticket is \\$6.30.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Work out the total cost of 4 tickets.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "\\$"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "The cinema sells 10 tickets for the price of 9 tickets.\n\\newline\nA group of 10 people go to the cinema.\n\\newline\nWork out how much each person must pay.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "\\$"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item"
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The cinema has 650 seats.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "There are 26 seats in each row.\n\\newline\nWork out the number of rows.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "84\\% of the seats are occupied.\n\\newline\nWork out how many seats are not occupied.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item"
+      },
+      {
+        "label": "(c)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Suki buys a bag of popcorn and a bottle of water.\n\\newline\nA bag of popcorn costs twice as much as a bottle of water.\n\\newline\nShe receives \\$3.55 change from \\$10.\n\\newline\nWork out the cost of a bag of popcorn and the cost of a bottle of water.\n\\newline\n\nBag of popcorn \\AnswerLine[][\\$]\nBottle of water \\AnswerLine[][\\$]"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "A film lasts for 155 minutes.\n\\newline\nWrite 155 minutes in hours and minutes.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "multiline",
+              "lines": 2,
+              "template": "____ hours\\n____ minutes",
+              "lineSep": "blank"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Another film starts at 14 45 and lasts for 2 hours and 20 minutes.\n\\newline\nWork out the time that this film finishes.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_itemInlineSubparts": true
+      },
+      {
+        "label": "(e)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "text",
+            "content": "The table shows the hours that Trevor works in the cinema each week.\n\\newline\n"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q01e.tex"
+          },
+          {
+            "type": "text",
+            "content": "Monday\n\nNo hours\n\nTuesday\n\nNo hours\n\nWednesday\n\n18 00 to 22 00\n\nThursday\n\n18 00 to 22 00\n\nFriday\n\n12 00 to 17 30\n\nSaturday\n\n12 00 to 17 30\n\nSunday\n\n13 00 to 18 00\n\nTrevor is paid \\$11.50 per hour for the time he works before 18 00.\n\\newline\nHe is paid 30\\% more for the time he works after 18 00.\n\\newline\nWork out how much Trevor is paid each week.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "\\$"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\noindent\\textbf{[2024 May/June, 0580/31, Question 1]}\\par"
+      }
+    ],
+    "_rawBody": "\\noindent\\textbf{[2024 May/June, 0580/31, Question 1]}\\par\n\n\\begin{parts}\n\\item The cost of a cinema ticket is \\$6.30.\n\n\\begin{subparts}\n\\item Work out the total cost of 4 tickets.\n\n\\AnswerLine[][\\$]\n\\Marks{1}\n\n\\item The cinema sells 10 tickets for the price of 9 tickets.\nA group of 10 people go to the cinema.\nWork out how much each person must pay.\n\n\\AnswerLine[][\\$]\n\\Marks{2}\n\n\\end{subparts}\n\n\\item The cinema has 650 seats.\n\n\\begin{subparts}\n\\item There are 26 seats in each row.\nWork out the number of rows.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item 84\\% of the seats are occupied.\nWork out how many seats are not occupied.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{subparts}\n\n\\item Suki buys a bag of popcorn and a bottle of water.\nA bag of popcorn costs twice as much as a bottle of water.\nShe receives \\$3.55 change from \\$10.\nWork out the cost of a bag of popcorn and the cost of a bottle of water.\n\nBag of popcorn \\AnswerLine[][\\$]\nBottle of water \\AnswerLine[][\\$]\n\\Marks{3}\n\n\\item \\begin{subparts}\n\\item A film lasts for 155 minutes.\nWrite 155 minutes in hours and minutes.\n\n\\AnswerLine[][hours] \\AnswerLine[][minutes]\n\\Marks{1}\n\n\\item Another film starts at 14 45 and lasts for 2 hours and 20 minutes.\nWork out the time that this film finishes.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{subparts}\n\n\\item The table shows the hours that Trevor works in the cinema each week.\n\n\\relinput{Figures/Q01e.tex}\n\nMonday\n\nNo hours\n\nTuesday\n\nNo hours\n\nWednesday\n\n18 00 to 22 00\n\nThursday\n\n18 00 to 22 00\n\nFriday\n\n12 00 to 17 30\n\nSaturday\n\n12 00 to 17 30\n\nSunday\n\n13 00 to 18 00\n\nTrevor is paid \\$11.50 per hour for the time he works before 18 00.\nHe is paid 30\\% more for the time he works after 18 00.\nWork out how much Trevor is paid each week.\n\n\\AnswerLine[][\\$]\n\\Marks{4}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper31/Q01/Q01e.png"
+    ]
+  },
+  {
+    "id": "0580-2024MayJune-Paper31-Q02",
+    "paper": "2024MayJune-Paper31",
+    "qnum": 2,
+    "marks": 17,
+    "topics": [
+      "Transformations and vectors",
+      "Probability",
+      "Statistics"
+    ],
+    "s": "7.1",
+    "d": 1,
+    "cat": "vectors",
+    "topic": "Translation",
+    "qtype": "transformations",
+    "g": "mixed",
+    "src": "0580/31/M/J/24 Q02",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "(a) \nChen asks some people if they prefer a beach, cruise, lake or mountain holiday.\n\\newline\n\nThe pie chart shows the results.\n\\newline\n\n(i)  Find the fraction of people who prefer a mountain holiday.\n\\newline\n\nGive your answer in its simplest form.\n\\newline\n\n Find the percentage of people who prefer a beach holiday.\n\\newline\n\n Find the ratio of people who prefer each type of holiday in the form\n\nbeach : cruise : lake : mountain.\n\\newline\nGive your answer in its simplest form.\n\\newline\n\n One person is chosen at random.\n\\newline\n\nFind the probability that this person prefers a cruise or a lake holiday.\n\\newline\n\n 675 people prefer a beach holiday.\n\\newline\n\nShow that the total number of people Chen asks is 1800.\n\\newline\n\n\\begin{subsubparts}\n\n\\subsubpart Complete the table.\n\\newline\n\n\\begin{tabular}{|l|c|c|}\n\\hline\nType of holiday & Pie chart sector angle & Frequency \\\\\n\\hline\nBeach & $135°$ & 675 \\\\\n\\hline\nCruise & $30°$ & 150 \\\\\n\\hline\nLake & $75°$ & \\\\\n\\hline\nMountain & $120°$ & \\\\\n\\hline\n\\end{tabular}\n\n\\subsubpart Complete the bar chart, including the scale on the frequency axis.\n\\newline\n\n\\end{subsubparts}\n\nMr Gibb pays \\$2208 for a holiday.\n\\newline\n\nMr Shah pays 2050 euros for the same holiday.\n\\newline\n\nThe exchange rate is 1 euro = \\$1.15.\n\\newline\n\nWork out how much more, in euros, Mr Shah pays for the holiday than Mr Gibb.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Chen asks some people if they prefer a beach, cruise, lake or mountain holiday.\n\\newline\n"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q02a.tex"
+          },
+          {
+            "type": "text",
+            "content": "The pie chart shows the results.\n\\newline\n\n\\begin{center}\n\\begin{tikzpicture}[scale=1.2]\n    \\draw (0,0) circle (2);\n    % Beach: 135°, starting from top (90°)\n    \\draw (0,0) -- (90:2);\n    \\draw (0,0) -- (90-135:2);\n    % Cruise: 30°\n    \\draw (0,0) -- (90-135-30:2);\n    % Lake: 75°\n    \\draw (0,0) -- (90-135-30-75:2);\n    % Mountain: 120° (completes the circle)\n\n    % Labels\n    \\node at (90-67.5:1.3) {Beach};\n    \\node at (90-135-15:1.3) {Cruise};\n    \\node at (90-135-30-37.5:1.3) {Lake};\n    \\node at (90-135-30-75-60:1.3) {Mountain};\n\n    % Angles\n    \\node at (90-67.5:0.6) {$135\\degree$};\n    \\node at (90-135-15:0.6) {$30\\degree$};\n    \\node at (90-135-30-37.5:0.6) {$75\\degree$};\n    \\node at (90-135-30-75-60:0.6) {$120\\degree$};\n\\end{tikzpicture}\n\\end{center}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the fraction of people who prefer a mountain holiday.\n\\newline\n\nGive your answer in its simplest form.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "_compactAnswer": true
+            },
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the percentage of people who prefer a beach holiday.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "\\%",
+              "_compactAnswer": true
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the ratio of people who prefer each type of holiday in the form\n\n\\begin{center}\nbeach : cruise : lake : mountain.\n\\newline\n\\end{center}\n\nGive your answer in its simplest form.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": ".................... : .................... : .................... : ....................",
+              "_compactAnswer": true
+            },
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iv)",
+            "content": [
+              {
+                "type": "text",
+                "content": "One person is chosen at random.\n\\newline\n\nFind the probability that this person prefers a cruise or a lake holiday.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "_compactAnswer": true
+            },
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(v)",
+            "content": [
+              {
+                "type": "text",
+                "content": "675 people prefer a beach holiday.\n\\newline\n\nShow that the total number of people Chen asks is 1800.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "show",
+              "_compactAnswer": true
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(vi)",
+            "content": [],
+            "subsubparts": [
+              {
+                "label": "(p)",
+                "content": [
+                  {
+                    "type": "text",
+                    "content": "Complete the table."
+                  },
+                  {
+                    "type": "figure",
+                    "src": "Figures/Q02avia.tex"
+                  },
+                  {
+                    "type": "table",
+                    "content": "\\begin{center}\n\\begin{tabular}{|l|c|c|}\n\\hline\nType of holiday & Pie chart sector angle & Frequency \\\\\n\\hline\nBeach & $135\\degree$ & 675 \\\\\n\\hline\nCruise & $30\\degree$ & 150 \\\\\n\\hline\nLake & $75\\degree$ & \\\\\n\\hline\nMountain & $120\\degree$ & \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+                  }
+                ],
+                "marks": 2
+              },
+              {
+                "label": "(q)",
+                "content": [
+                  {
+                    "type": "text",
+                    "content": "Complete the bar chart, including the scale on the frequency axis."
+                  },
+                  {
+                    "type": "figure",
+                    "src": "Figures/Q02avib.tex"
+                  },
+                  {
+                    "type": "text",
+                    "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.6]\n    % Axes\n    \\draw[->] (0,0) -- (0,8);\n    \\draw (0,0) -- (10,0);\n\n    % Y-axis label\n    \\node[rotate=90] at (-1.5,4) {Frequency};\n\n    % X-axis labels\n    \\node at (1.5,-0.5) {Beach};\n    \\node at (4,-0.5) {Cruise};\n    \\node at (6.5,-0.5) {Lake};\n    \\node at (9,-0.5) {Mountain};\n\n    % Grid lines\n    \\foreach \\y in {1,2,3,4,5,6,7} {\n        \\draw[dotted,gray] (0,\\y) -- (10,\\y);\n    }\n\n    % 0 label\n    \\node at (-0.3,0) {0};\n\\end{tikzpicture}\n\\end{center}"
+                  }
+                ],
+                "marks": 3
+              }
+            ]
+          }
+        ],
+        "_spacedBeginSubparts": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Mr Gibb pays \\$2208 for a holiday.\n\\newline\n\nMr Shah pays 2050 euros for the same holiday.\n\\newline\n\nThe exchange rate is 1 euro = \\$1.15.\n\\newline\n\nWork out how much more, in euros, Mr Shah pays for the holiday than Mr Gibb.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "euros",
+          "_compactAnswer": true
+        },
+        "marks": 2,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "analyse",
+    "cmd": "show",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\StemText{"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper31/Q02/Q02avib.png"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper31/Q02/Q02avia.png"
+      }
+    ],
+    "_rawBody": "\\StemText{\n\\begin{parts}\n\n\\part Chen asks some people if they prefer a beach, cruise, lake or mountain holiday.\n\n\\relinput{Figures/Q02a.tex}\n\nThe pie chart shows the results.\n\n\\begin{center}\n\\begin{tikzpicture}[scale=1.2]\n    \\draw (0,0) circle (2);\n    % Beach: 135°, starting from top (90°)\n    \\draw (0,0) -- (90:2);\n    \\draw (0,0) -- (90-135:2);\n    % Cruise: 30°\n    \\draw (0,0) -- (90-135-30:2);\n    % Lake: 75°\n    \\draw (0,0) -- (90-135-30-75:2);\n    % Mountain: 120° (completes the circle)\n\n    % Labels\n    \\node at (90-67.5:1.3) {Beach};\n    \\node at (90-135-15:1.3) {Cruise};\n    \\node at (90-135-30-37.5:1.3) {Lake};\n    \\node at (90-135-30-75-60:1.3) {Mountain};\n\n    % Angles\n    \\node at (90-67.5:0.6) {$135\\degree$};\n    \\node at (90-135-15:0.6) {$30\\degree$};\n    \\node at (90-135-30-37.5:0.6) {$75\\degree$};\n    \\node at (90-135-30-75-60:0.6) {$120\\degree$};\n\\end{tikzpicture}\n\\end{center}\n\n\\begin{subparts}\n\n\\subpart Find the fraction of people who prefer a mountain holiday.\n\nGive your answer in its simplest form.\n\\AnswerLine[][]\n\\Marks{2}\n\n\\subpart Find the percentage of people who prefer a beach holiday.\n\\AnswerLine[][\\%]\n\\Marks{1}\n\n\\subpart Find the ratio of people who prefer each type of holiday in the form\n\n\\begin{center}\nbeach : cruise : lake : mountain.\n\\end{center}\n\nGive your answer in its simplest form.\n\\AnswerLine[.................... : .................... : .................... : ....................][][4]\n\\Marks{2}\n\n\\subpart One person is chosen at random.\n\nFind the probability that this person prefers a cruise or a lake holiday.\n\\AnswerLine[][]\n\\Marks{2}\n\n\\subpart 675 people prefer a beach holiday.\n\nShow that the total number of people Chen asks is 1800.\n\\AnswerLine[show][]\n\\Marks{1}\n\n\\subpart\n\\begin{subsubparts}\n\n\\subsubpart Complete the table.\n\n\\relinput{Figures/Q02avia.tex}\n\n\\begin{center}\n\\begin{tabular}{|l|c|c|}\n\\hline\nType of holiday & Pie chart sector angle & Frequency \\\\\n\\hline\nBeach & $135\\degree$ & 675 \\\\\n\\hline\nCruise & $30\\degree$ & 150 \\\\\n\\hline\nLake & $75\\degree$ & \\\\\n\\hline\nMountain & $120\\degree$ & \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\\Marks{2}\n\n\\subsubpart Complete the bar chart, including the scale on the frequency axis.\n\n\\relinput{Figures/Q02avib.tex}\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.6]\n    % Axes\n    \\draw[->] (0,0) -- (0,8);\n    \\draw (0,0) -- (10,0);\n\n    % Y-axis label\n    \\node[rotate=90] at (-1.5,4) {Frequency};\n\n    % X-axis labels\n    \\node at (1.5,-0.5) {Beach};\n    \\node at (4,-0.5) {Cruise};\n    \\node at (6.5,-0.5) {Lake};\n    \\node at (9,-0.5) {Mountain};\n\n    % Grid lines\n    \\foreach \\y in {1,2,3,4,5,6,7} {\n        \\draw[dotted,gray] (0,\\y) -- (10,\\y);\n    }\n\n    % 0 label\n    \\node at (-0.3,0) {0};\n\\end{tikzpicture}\n\\end{center}\n\\Marks{3}\n\n\\end{subsubparts}\n\n\\end{subparts}\n\n\\part Mr Gibb pays \\$2208 for a holiday.\n\nMr Shah pays 2050 euros for the same holiday.\n\nThe exchange rate is 1 euro = \\$1.15\\,.\n\nWork out how much more, in euros, Mr Shah pays for the holiday than Mr Gibb.\n\\AnswerLine[][euros]\n\\Marks{2}\n\n\\end{parts}\n}",
+    "_compactStemParts": true,
+    "_postParts": [
+      {
+        "type": "text",
+        "content": "}"
+      }
+    ],
+    "_partCmd": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper31/Q02/Q02a.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper31/Q02/Q02avia.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper31/Q02/Q02avib.png"
+    ]
+  },
+  {
+    "id": "0580-2024MayJune-Paper31-Q03",
+    "paper": "2024MayJune-Paper31",
+    "qnum": 3,
+    "marks": 13,
+    "topics": [
+      "Geometry",
+      "Probability",
+      "Statistics"
+    ],
+    "s": "4.6",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/31/M/J/24 Q03",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "(a) \nHere is part of the timetable for trains from Hinton to Jarmouth.\n\\newline\n\nAll trains take the same time to travel from Hinton to Jarmouth.\n\\newline\n\n\\begin{tabular}{|l|c|c|}\n\\hline\nHinton & 10$\\,$47 &  \\\\\n\\hline\nJarmouth & 11$\\,$15 & 12$\\,$35 \\\\\n\\hline\n\\end{tabular}\n(i)  Complete the timetable.\n\\newline\n\n Marge arrives at Hinton station exactly 20 minutes before the 10$\\,$47 train leaves.\n\\newline\n\nComplete the clock diagram to show the time she arrives at Hinton station.\n\\newline\n\nEach day, a bus leaves Texford to travel to Cranbrook every 45 minutes.\n\\newline\n\nThe first bus leaves Texford at 07$\\,$10.\n\\newline\n\nThe last bus leaves Texford at 22$\\,$10.\n\\newline\n\nWork out the number of buses that travel from Texford to Cranbrook each day.\n\\newline\n\nThe cost of a bus pass increases every year.\n\\newline\n\nOn 1st January 2022 a bus pass costs \\$50.\n\\newline\n\nOn 1st January 2023 the cost of the bus pass increases by 10\\%.\n\\newline\n\nOn 1st January 2024 the cost of the bus pass increases by 5\\%.\n\\newline\n\nCalculate the cost of the bus pass on 1st January 2024.\n\\newline\n\nThe Venn diagram shows information about the number of workers in a hotel who travel to work by bus ($B$) and train ($T$).\n\\newline\n\n(i)  Work out the number of workers in the hotel.\n\\newline\n\n Work out $n(B \\cup T)$.\n\\newline\n\n Explain in words what the number 85 in the Venn diagram represents.\n\\newline\n\n One of the workers is chosen at random.\n\\newline\n\nFind the probability that this worker travels to work by bus and train.\n\\newline\n\nThe hotel has single and double bedrooms in the ratio single : double $= 3 : 8$.\n\\newline\n\nThere are 75 more double rooms than single rooms.\n\\newline\n\nWork out the number of single rooms.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Here is part of the timetable for trains from Hinton to Jarmouth.\n\\newline\n\nAll trains take the same time to travel from Hinton to Jarmouth.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{center}\n\\begin{tabular}{|l|c|c|}\n\\hline\nHinton & 10\\,47 & ................ \\\\\n\\hline\nJarmouth & 11\\,15 & 12\\,35 \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Complete the timetable.\n\\newline\n"
+              },
+              {
+                "type": "figure",
+                "src": "Figures/Q03ai.tex"
+              }
+            ],
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Marge arrives at Hinton station exactly 20 minutes before the 10$\\,$47 train leaves.\n\\newline\n"
+              },
+              {
+                "type": "figure",
+                "src": "Figures/Q03aii.tex"
+              },
+              {
+                "type": "text",
+                "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n    \\draw (0,0) circle (2);\n    % Hour marks\n    \\foreach \\i in {1,...,12} {\n        \\draw ({90-30*\\i}:1.8) -- ({90-30*\\i}:2);\n        \\node at ({90-30*\\i}:1.5) {\\i};\n    }\n    % Center dot\n    \\fill (0,0) circle (0.08);\n\\end{tikzpicture}\n\\end{center}\n\nComplete the clock diagram to show the time she arrives at Hinton station.\n\\newline\n"
+              }
+            ],
+            "marks": 1,
+            "_compactMarks": true
+          }
+        ],
+        "_spacedBeginSubparts": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Each day, a bus leaves Texford to travel to Cranbrook every 45 minutes.\n\\newline\n\nThe first bus leaves Texford at 07$\\,$10.\n\\newline\n\nThe last bus leaves Texford at 22$\\,$10.\n\\newline\n\nWork out the number of buses that travel from Texford to Cranbrook each day.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "marks": 3,
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The cost of a bus pass increases every year.\n\\newline\n\nOn 1st January 2022 a bus pass costs \\$50.\n\\newline\n\nOn 1st January 2023 the cost of the bus pass increases by 10\\%.\n\\newline\n\nOn 1st January 2024 the cost of the bus pass increases by 5\\%.\n\\newline\n\nCalculate the cost of the bus pass on 1st January 2024.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "\\$",
+          "_compactAnswer": true
+        },
+        "marks": 3,
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The Venn diagram shows information about the number of workers in a hotel who travel to work by bus ($B$) and train ($T$).\n\\newline\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.9]\n    % Universal set\n    \\draw (0,0) rectangle (6,4);\n    \\node at (0.3,3.7) {$\\mathscr{E}$};\n\n    % Circle B\n    \\draw (2,2) circle (1.3);\n    \\node at (1.2,3) {$B$};\n\n    % Circle T\n    \\draw (4,2) circle (1.3);\n    \\node at (4.8,3) {$T$};\n\n    % Numbers\n    \\node at (1.3,2) {31};\n    \\node at (3,2) {9};\n    \\node at (4.7,2) {85};\n    \\node at (5.3,0.5) {107};\n\\end{tikzpicture}\n\\end{center}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Work out the number of workers in the hotel.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "_compactAnswer": true
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Work out $\\text{n}(B \\cup T)$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "_compactAnswer": true
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Explain in words what the number 85 in the Venn diagram represents.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "text",
+              "_compactAnswer": true
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iv)",
+            "content": [
+              {
+                "type": "text",
+                "content": "One of the workers is chosen at random.\n\\newline\n\nFind the probability that this worker travels to work by bus and train.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "_compactAnswer": true
+            },
+            "marks": 1,
+            "_compactMarks": true
+          }
+        ],
+        "_spacedBeginSubparts": true
+      },
+      {
+        "label": "(e)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The hotel has single and double bedrooms in the ratio single : double $= 3 : 8$.\n\\newline\n"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q03d.tex"
+          },
+          {
+            "type": "text",
+            "content": "There are 75 more double rooms than single rooms.\n\\newline\n\nWork out the number of single rooms.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "marks": 2,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "explain",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\StemText{"
+      }
+    ],
+    "_rawBody": "\\StemText{\n\\begin{parts}\n\n\\part Here is part of the timetable for trains from Hinton to Jarmouth.\n\nAll trains take the same time to travel from Hinton to Jarmouth.\n\n\\begin{center}\n\\begin{tabular}{|l|c|c|}\n\\hline\nHinton & 10\\,47 & ................ \\\\\n\\hline\nJarmouth & 11\\,15 & 12\\,35 \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\begin{subparts}\n\n\\subpart Complete the timetable.\n\n\\relinput{Figures/Q03ai.tex}\n\\Marks{2}\n\n\\subpart Marge arrives at Hinton station exactly 20 minutes before the 10\\,47 train leaves.\n\n\\relinput{Figures/Q03aii.tex}\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n    \\draw (0,0) circle (2);\n    % Hour marks\n    \\foreach \\i in {1,...,12} {\n        \\draw ({90-30*\\i}:1.8) -- ({90-30*\\i}:2);\n        \\node at ({90-30*\\i}:1.5) {\\i};\n    }\n    % Center dot\n    \\fill (0,0) circle (0.08);\n\\end{tikzpicture}\n\\end{center}\n\nComplete the clock diagram to show the time she arrives at Hinton station.\n\\Marks{1}\n\n\\end{subparts}\n\n\\part Each day, a bus leaves Texford to travel to Cranbrook every 45 minutes.\n\nThe first bus leaves Texford at 07\\,10.\n\nThe last bus leaves Texford at 22\\,10.\n\nWork out the number of buses that travel from Texford to Cranbrook each day.\n\\AnswerLine[][]\n\\Marks{3}\n\n\\part The cost of a bus pass increases every year.\n\nOn 1st January 2022 a bus pass costs \\$50.\n\nOn 1st January 2023 the cost of the bus pass increases by 10\\%.\n\nOn 1st January 2024 the cost of the bus pass increases by 5\\%.\n\nCalculate the cost of the bus pass on 1st January 2024.\n\\AnswerLine[][\\$]\n\\Marks{3}\n\n\\part The Venn diagram shows information about the number of workers in a hotel who travel to work by bus ($B$) and train ($T$).\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.9]\n    % Universal set\n    \\draw (0,0) rectangle (6,4);\n    \\node at (0.3,3.7) {$\\mathscr{E}$};\n\n    % Circle B\n    \\draw (2,2) circle (1.3);\n    \\node at (1.2,3) {$B$};\n\n    % Circle T\n    \\draw (4,2) circle (1.3);\n    \\node at (4.8,3) {$T$};\n\n    % Numbers\n    \\node at (1.3,2) {31};\n    \\node at (3,2) {9};\n    \\node at (4.7,2) {85};\n    \\node at (5.3,0.5) {107};\n\\end{tikzpicture}\n\\end{center}\n\n\\begin{subparts}\n\n\\subpart Work out the number of workers in the hotel.\n\\AnswerLine[][]\n\\Marks{1}\n\n\\subpart Work out $\\text{n}(B \\cup T)$.\n\\AnswerLine[][]\n\\Marks{1}\n\n\\subpart Explain in words what the number 85 in the Venn diagram represents.\n\\AnswerLine[text][]\n\\Marks{1}\n\n\\subpart One of the workers is chosen at random.\n\nFind the probability that this worker travels to work by bus and train.\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{subparts}\n\n\\part The hotel has single and double bedrooms in the ratio single : double $= 3 : 8$.\n\n\\relinput{Figures/Q03d.tex}\n\nThere are 75 more double rooms than single rooms.\n\nWork out the number of single rooms.\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{parts}\n}",
+    "_compactStemParts": true,
+    "_postParts": [
+      {
+        "type": "text",
+        "content": "}"
+      }
+    ],
+    "_partCmd": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper31/Q03/Q03ai.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper31/Q03/Q03aii.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper31/Q03/Q03d.png"
+    ]
+  },
+  {
+    "id": "0580-2024MayJune-Paper31-Q04",
+    "paper": "2024MayJune-Paper31",
+    "qnum": 4,
+    "marks": 11,
+    "topics": [
+      "Number",
+      "Statistics"
+    ],
+    "s": null,
+    "d": 1,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/31/M/J/24 Q04",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "The stem-and-leaf diagram shows the ages of the 16 workers in a shop on 1st January 2022.\n\\newline\n\n\\begin{tabular}{r|l}\n2 & 3   5   7 \\\\\n3 & 4   6   6   6   9 \\\\\n4 & 1   1   7 \\\\\n5 & 0   7   7   8 \\\\\n6 & 1 \\\\\n\\end{tabular}\n\nKey: $2 \\mid 5$ represents 25\n(a) \nt\n(i)  Work out the range.\n\\newline\n\n Write down the mode.\n\\newline\n\n Work out the median.\n\\newline\n\n Work out the percentage of workers that are older than 40 but younger than 60.\n\\newline\n\nOn 1st January **2023** the shop has the same 16 workers.\n\\newline\n\nWrite down the range, the mode and the median on 1st January **2023**.\n\\newline\n\nOn 1st January **2024** the oldest worker leaves.\n\\newline\n\nHis replacement is a new worker born on 12th November 1970.\n\\newline\n\nThere are no other changes to the workers.\n\\newline\n\nComplete the stem-and-leaf diagram for 1st January 2024.\n\\newline\n\n\\begin{tabular}{r|l}\n2 & 5   7   9 \\\\\n3 & 6   8   8   8 \\\\\n4 & \\\\\n5 & \\\\\n6 & \\\\\n\\end{tabular}\n\nKey: $2 \\mid 5$ represents 25\n\nThe shop owner is $x$ years old.\n\\newline\n\n$x$ is a prime number.\n\\newline\n\n$x + 2$ is a square number.\n\\newline\n\n$x - 2$ is a multiple of 9.\n\\newline\n\nFind the value of $x$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Work out the range.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "_compactAnswer": true
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Write down the mode.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "_compactAnswer": true
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Work out the median.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "_compactAnswer": true
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iv)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Work out the percentage of workers that are older than 40 but younger than 60.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "\\%",
+              "_compactAnswer": true
+            },
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ],
+        "_itemNewline": true,
+        "_spacedBeginSubparts": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "On 1st January \\textbf{2023} the shop has the same 16 workers.\n\\newline\n\nWrite down the range, the mode and the median on 1st January \\textbf{2023}.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "multiline",
+          "lines": 3,
+          "template": "Range .............................................. ____\\nMode .............................................. ____\\nMedian .............................................. ____",
+          "lineSep": "blank",
+          "_compactAnswer": true
+        },
+        "marks": 2,
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "On 1st January \\textbf{2024} the oldest worker leaves.\n\\newline\n"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q04c.tex"
+          },
+          {
+            "type": "text",
+            "content": "His replacement is a new worker born on 12th November 1970.\n\\newline\n\nThere are no other changes to the workers.\n\\newline\n\nComplete the stem-and-leaf diagram for 1st January 2024.\n\\newline\n\n\\begin{center}"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{tabular}{r|l}\n2 & 5 \\quad 7 \\quad 9 \\\\\n3 & 6 \\quad 8 \\quad 8 \\quad 8 \\\\\n4 & \\\\\n5 & \\\\\n6 & \\\\\n\\end{tabular}"
+          },
+          {
+            "type": "space",
+            "height": "0.3cm",
+            "cmd": "vspace"
+          },
+          {
+            "type": "text",
+            "content": "Key: $2 \\mid 5$ represents 25\n\\end{center}"
+          }
+        ],
+        "marks": 2,
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The shop owner is $x$ years old.\n\\newline\n\n$x$ is a prime number.\n\\newline\n\n$x + 2$ is a square number.\n\\newline\n\n$x - 2$ is a multiple of 9.\n\\newline\n\nFind the value of $x$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x$",
+          "_compactAnswer": true
+        },
+        "marks": 2,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q04.tex"
+      },
+      {
+        "type": "text",
+        "content": "\\StemText{\nThe stem-and-leaf diagram shows the ages of the 16 workers in a shop on 1st January 2022.\n\\newline\n\n\\begin{center}"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{tabular}{r|l}\n2 & 3 \\quad 5 \\quad 7 \\\\\n3 & 4 \\quad 6 \\quad 6 \\quad 6 \\quad 9 \\\\\n4 & 1 \\quad 1 \\quad 7 \\\\\n5 & 0 \\quad 7 \\quad 7 \\quad 8 \\\\\n6 & 1 \\\\\n\\end{tabular}"
+      },
+      {
+        "type": "space",
+        "height": "0.3cm",
+        "cmd": "vspace"
+      },
+      {
+        "type": "text",
+        "content": "Key: $2 \\mid 5$ represents 25\n\\end{center}"
+      }
+    ],
+    "_rawBody": "\\relinput{Figures/Q04.tex}\n\n\\StemText{\nThe stem-and-leaf diagram shows the ages of the 16 workers in a shop on 1st January 2022.\n\n\\begin{center}\n\\begin{tabular}{r|l}\n2 & 3 \\quad 5 \\quad 7 \\\\\n3 & 4 \\quad 6 \\quad 6 \\quad 6 \\quad 9 \\\\\n4 & 1 \\quad 1 \\quad 7 \\\\\n5 & 0 \\quad 7 \\quad 7 \\quad 8 \\\\\n6 & 1 \\\\\n\\end{tabular}\n\n\\vspace{0.3cm}\nKey: $2 \\mid 5$ represents 25\n\\end{center}\n\n\\begin{parts}\n\n\\part\n\\begin{subparts}\n\n\\subpart Work out the range.\n\\AnswerLine[][]\n\\Marks{1}\n\n\\subpart Write down the mode.\n\\AnswerLine[][]\n\\Marks{1}\n\n\\subpart Work out the median.\n\\AnswerLine[][]\n\\Marks{1}\n\n\\subpart Work out the percentage of workers that are older than 40 but younger than 60.\n\\AnswerLine[][\\%]\n\\Marks{2}\n\n\\end{subparts}\n\n\\part On 1st January \\textbf{2023} the shop has the same 16 workers.\n\nWrite down the range, the mode and the median on 1st January \\textbf{2023}.\n\\AnswerLine[Range ..............................................][][3]\n\\AnswerLine[Mode ..............................................][][0]\n\\AnswerLine[Median ..............................................][][0]\n\\Marks{2}\n\n\\part On 1st January \\textbf{2024} the oldest worker leaves.\n\n\\relinput{Figures/Q04c.tex}\n\nHis replacement is a new worker born on 12th November 1970.\n\nThere are no other changes to the workers.\n\nComplete the stem-and-leaf diagram for 1st January 2024.\n\n\\begin{center}\n\\begin{tabular}{r|l}\n2 & 5 \\quad 7 \\quad 9 \\\\\n3 & 6 \\quad 8 \\quad 8 \\quad 8 \\\\\n4 & \\\\\n5 & \\\\\n6 & \\\\\n\\end{tabular}\n\n\\vspace{0.3cm}\nKey: $2 \\mid 5$ represents 25\n\\end{center}\n\\Marks{2}\n\n\\part The shop owner is $x$ years old.\n\n$x$ is a prime number.\n\n$x + 2$ is a square number.\n\n$x - 2$ is a multiple of 9.\n\nFind the value of $x$.\n\\AnswerLine[$x$][]\n\\Marks{2}\n\n\\end{parts}\n}",
+    "_postParts": [
+      {
+        "type": "text",
+        "content": "}"
+      }
+    ],
+    "_partCmd": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper31/Q04/Q04.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper31/Q04/Q04c.png"
+    ]
+  },
+  {
+    "id": "0580-2024MayJune-Paper31-Q05",
+    "paper": "2024MayJune-Paper31",
+    "qnum": 5,
+    "marks": 11,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry",
+      "Statistics"
+    ],
+    "s": "3.6",
+    "d": 1,
+    "cat": "coord",
+    "topic": "Position vectors",
+    "qtype": "parallel lines",
+    "g": "mixed",
+    "src": "0580/31/M/J/24 Q05",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "(a) \nt\n\nThe diagram shows a triangle $EFG$ and a straight line $HFI$.\n\\newline\n\n$HFI$ is parallel to $EG$.\n\\newline\n\n(i)  Angle $EFG = 105°$.\n\\newline\n\nWrite down the mathematical name for this type of angle.\n\\newline\n\n Work out the value of $e$.\n\\newline\n\nGive a geometrical reason for your answer.\n\\newline\n\n$e = $ ...\\ because ...\n\n...\n\n Find the value of $f$.\n\\newline\n\nGive a geometrical reason for your answer.\n\\newline\n\n$f = $ ...\\ because ...\n\n...\n\nCalculate the interior angle of a regular 7-sided polygon.\n\\newline\n\nGive your answer correct to 2 decimal places.\n\\newline\n\nThe diagram shows a regular pentagon with sides $15\\,\\text{cm}$.\n\\newline\n\nWork out the values of $w$, $x$ and $y$.\n\\newline\n\n$w = $ ...\n\n$x = $ ...\n\n$y = $ ...",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "\\begin{center}\n\\begin{tikzpicture}[scale=1.2]\n    % Line HFI (horizontal)\n    \\draw[->] (-3,0) -- (2.5,0);\n    \\node[left] at (-3,0) {$H$};\n    \\node[above] at (0,0.1) {$F$};\n    \\node[right] at (2.5,0) {$I$};\n\n    % Triangle EFG\n    \\draw (-2.5,-2) -- (0,0) -- (2,-2);\n    \\draw (-2.5,-2) -- (2,-2);\n    \\node[left] at (-2.5,-2) {$E$};\n    \\node[right] at (2,-2) {$G$};\n\n    % Arrows on parallel lines\n    \\draw[->] (-2.6,-2) -- (-1.5,-2);\n    \\draw[->] (-2.8,0) -- (-1.7,0);\n\n    % Angles\n    \\node at (-0.5,-0.35) {$105\\degree$};\n    \\node at (0.6,-0.25) {$f\\degree$};\n    \\node at (-1.8,-1.7) {$e\\degree$};\n    \\node at (1.5,-1.7) {$52\\degree$};\n\n    % NOT TO SCALE\n    \\node at (3.5,-1) {NOT TO};\n    \\node at (3.5,-1.4) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nThe diagram shows a triangle $EFG$ and a straight line $HFI$.\n\\newline\n\n$HFI$ is parallel to $EG$.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Angle $EFG = 105\\degree$.\n\\newline\n\nWrite down the mathematical name for this type of angle.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "_compactAnswer": true
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Work out the value of $e$.\n\\newline\n\nGive a geometrical reason for your answer.\n\\newline\n\n$e = $ \\dotfill\\ because \\dotfill"
+              }
+            ],
+            "answer": {
+              "type": "multiline",
+              "lines": 1,
+              "style": "dotfill"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the value of $f$.\n\\newline\n\nGive a geometrical reason for your answer.\n\\newline\n\n$f = $ \\dotfill\\ because \\dotfill"
+              }
+            ],
+            "answer": {
+              "type": "multiline",
+              "lines": 1,
+              "style": "dotfill"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ],
+        "_itemNewline": true,
+        "_spacedBeginSubparts": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Calculate the interior angle of a regular 7-sided polygon.\n\\newline\n\nGive your answer correct to 2 decimal places.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "marks": 3,
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The diagram shows a regular pentagon with sides $15\\,\\text{cm}$.\n\\newline\n"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q05c.tex"
+          },
+          {
+            "type": "text",
+            "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n    % Regular pentagon\n    \\coordinate (A) at (90:2);\n    \\coordinate (B) at (162:2);\n    \\coordinate (C) at (234:2);\n    \\coordinate (D) at (306:2);\n    \\coordinate (E) at (18:2);\n\n    \\draw (A) -- (B) -- (C) -- (D) -- (E) -- cycle;\n\n    % Labels\n    \\node[above left] at ($(A)!0.5!(B)$) {$(2w)\\,\\text{cm}$};\n    \\node[above right] at ($(A)!0.5!(E)$) {$5(x+7)\\,\\text{cm}$};\n    \\node[left] at ($(B)!0.5!(C)$) {$15\\,\\text{cm}$};\n    \\node[below] at ($(C)!0.5!(D)$) {$15\\,\\text{cm}$};\n    \\node[right] at ($(D)!0.5!(E)$) {$(w+x+y)\\,\\text{cm}$};\n\n    % NOT TO SCALE\n    \\node at (4,1) {NOT TO};\n    \\node at (4,0.6) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nWork out the values of $w$, $x$ and $y$.\n\\newline\n\n$w = $ \\dotfill\n\n$x = $ \\dotfill\n\n$y = $ \\dotfill"
+          }
+        ],
+        "marks": 5,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q05.tex"
+      },
+      {
+        "type": "text",
+        "content": "\\StemText{"
+      }
+    ],
+    "_rawBody": "\\relinput{Figures/Q05.tex}\n\n\\StemText{\n\\begin{parts}\n\n\\part\n\\begin{center}\n\\begin{tikzpicture}[scale=1.2]\n    % Line HFI (horizontal)\n    \\draw[->] (-3,0) -- (2.5,0);\n    \\node[left] at (-3,0) {$H$};\n    \\node[above] at (0,0.1) {$F$};\n    \\node[right] at (2.5,0) {$I$};\n\n    % Triangle EFG\n    \\draw (-2.5,-2) -- (0,0) -- (2,-2);\n    \\draw (-2.5,-2) -- (2,-2);\n    \\node[left] at (-2.5,-2) {$E$};\n    \\node[right] at (2,-2) {$G$};\n\n    % Arrows on parallel lines\n    \\draw[->] (-2.6,-2) -- (-1.5,-2);\n    \\draw[->] (-2.8,0) -- (-1.7,0);\n\n    % Angles\n    \\node at (-0.5,-0.35) {$105\\degree$};\n    \\node at (0.6,-0.25) {$f\\degree$};\n    \\node at (-1.8,-1.7) {$e\\degree$};\n    \\node at (1.5,-1.7) {$52\\degree$};\n\n    % NOT TO SCALE\n    \\node at (3.5,-1) {NOT TO};\n    \\node at (3.5,-1.4) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nThe diagram shows a triangle $EFG$ and a straight line $HFI$.\n\n$HFI$ is parallel to $EG$.\n\n\\begin{subparts}\n\n\\subpart Angle $EFG = 105\\degree$.\n\nWrite down the mathematical name for this type of angle.\n\\AnswerLine[][]\n\\Marks{1}\n\n\\subpart Work out the value of $e$.\n\nGive a geometrical reason for your answer.\n\n$e = $ \\dotfill\\ because \\dotfill\n\n\\dotfill\n\\Marks{2}\n\n\\subpart Find the value of $f$.\n\nGive a geometrical reason for your answer.\n\n$f = $ \\dotfill\\ because \\dotfill\n\n\\dotfill\n\\Marks{2}\n\n\\end{subparts}\n\n\\part Calculate the interior angle of a regular 7-sided polygon.\n\nGive your answer correct to 2 decimal places.\n\\AnswerLine[][]\n\\Marks{3}\n\n\\part The diagram shows a regular pentagon with sides 15\\,cm.\n\n\\relinput{Figures/Q05c.tex}\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n    % Regular pentagon\n    \\coordinate (A) at (90:2);\n    \\coordinate (B) at (162:2);\n    \\coordinate (C) at (234:2);\n    \\coordinate (D) at (306:2);\n    \\coordinate (E) at (18:2);\n\n    \\draw (A) -- (B) -- (C) -- (D) -- (E) -- cycle;\n\n    % Labels\n    \\node[above left] at ($(A)!0.5!(B)$) {$(2w)$\\,cm};\n    \\node[above right] at ($(A)!0.5!(E)$) {$5(x+7)$\\,cm};\n    \\node[left] at ($(B)!0.5!(C)$) {15\\,cm};\n    \\node[below] at ($(C)!0.5!(D)$) {15\\,cm};\n    \\node[right] at ($(D)!0.5!(E)$) {$(w+x+y)$\\,cm};\n\n    % NOT TO SCALE\n    \\node at (4,1) {NOT TO};\n    \\node at (4,0.6) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nWork out the values of $w$, $x$ and $y$.\n\n$w = $ \\dotfill\n\n$x = $ \\dotfill\n\n$y = $ \\dotfill\n\\Marks{5}\n\n\\end{parts}\n}",
+    "_compactStemParts": true,
+    "_postParts": [
+      {
+        "type": "text",
+        "content": "}"
+      }
+    ],
+    "_partCmd": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper31/Q05/Q05.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper31/Q05/Q05c.png"
+    ]
+  },
+  {
+    "id": "0580-2024MayJune-Paper31-Q06",
+    "paper": "2024MayJune-Paper31",
+    "qnum": 6,
+    "marks": 11,
+    "topics": [
+      "Coordinate geometry",
+      "Transformations and vectors",
+      "Statistics"
+    ],
+    "s": "3.1",
+    "d": 1,
+    "cat": "coord",
+    "topic": "Coordinates",
+    "qtype": "coordinates reading/plotting",
+    "g": "graph",
+    "src": "0580/31/M/J/24 Q06",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "The diagram shows a point, $P$, three triangles, $A$, $B$ and $C$, and part of triangle $D$ on a $1\\,\\text{cm}^2$ grid.\n\\newline\n\n(a) \nOn the grid, mark the image of point $P$ after a reflection in the line $y = 0$.\n\\newline\n\nUse trigonometry to calculate angle $a$.\n\\newline\n\nDescribe fully the **single** transformation that maps\n\n(i)  triangle $A$ onto triangle $B$\n\n...\n\n...\n\n triangle $A$ onto triangle $C$.\n\\newline\n\n...\n\n...\n\nTriangle $A$ has been enlarged with centre $(1, 0)$ to give triangle $D$.\n\\newline\n\nThe grid is only large enough to show one vertex and part of two of the sides of triangle $D$.\n\\newline\n\n(i)  Write down the scale factor of the enlargement.\n\\newline\n\n Find the coordinates of the other two vertices of triangle $D$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "On the grid, mark the image of point $P$ after a reflection in the line $y = 0$.\n\\newline\n"
+          }
+        ],
+        "marks": 1,
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Use trigonometry to calculate angle $a$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "Angle $a$",
+          "_compactAnswer": true
+        },
+        "marks": 2,
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Describe fully the \\textbf{single} transformation that maps"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "triangle $A$ onto triangle $B$"
+              }
+            ],
+            "answer": {
+              "type": "multiline",
+              "lines": 2,
+              "style": "dotfill"
+            },
+            "marks": 3,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "triangle $A$ onto triangle $C$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "multiline",
+              "lines": 2,
+              "style": "dotfill"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ],
+        "_spacedBeginSubparts": true
+      },
+      {
+        "label": "(d)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Triangle $A$ has been enlarged with centre $(1, 0)$ to give triangle $D$.\n\\newline\n\nThe grid is only large enough to show one vertex and part of two of the sides of triangle $D$.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Write down the scale factor of the enlargement.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "_compactAnswer": true
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the coordinates of the other two vertices of triangle $D$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "(\\dotfill, \\dotfill) and (\\dotfill, \\dotfill)",
+              "_compactAnswer": true
+            },
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ],
+        "_spacedBeginSubparts": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "describe",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q06.tex"
+      },
+      {
+        "type": "text",
+        "content": "\\StemText{\nThe diagram shows a point, $P$, three triangles, $A$, $B$ and $C$, and part of triangle $D$ on a $1\\,\\text{cm}^2$ grid.\n\\newline\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.45]\n    % Grid\n    \\draw[very thin, gray!50] (-4,-7) grid (15,11);\n\n    % Axes\n    \\draw[thick,->] (-4,0) -- (15,0) node[right] {$x$};\n    \\draw[thick,->] (0,-7) -- (0,11) node[above] {$y$};\n\n    % Axis labels\n    \\foreach \\x in {1,2,3,4,5,6,7,8,9,10,11,12,13,14} {\n        \\node[below] at (\\x,0) {\\tiny \\x};\n    }\n    \\foreach \\y in {1,2,3,4,5,6,7,8,9,10} {\n        \\node[left] at (0,\\y) {\\tiny \\y};\n    }\n    \\foreach \\y in {-1,-2,-3,-4,-5,-6} {\n        \\node[left] at (0,\\y) {\\tiny \\y};\n    }\n    \\node[below left] at (0,0) {\\tiny 0};\n\n    % Triangle A (shaded)\n    \\fill[gray!40] (1,1) -- (1,3) -- (3,1) -- cycle;\n    \\draw (1,1) -- (1,3) -- (3,1) -- cycle;\n    \\node at (1.5,1.8) {$A$};\n\n    % Angle a in triangle A\n    \\draw (3.5,1) arc (0:135:0.5);\n    \\node at (4,1.3) {$a$};\n\n    % Triangle B (shaded)\n    \\fill[gray!40] (1,-1) -- (1,-3) -- (3,-3) -- cycle;\n    \\draw (1,-1) -- (1,-3) -- (3,-3) -- cycle;\n    \\node at (1.5,-2.2) {$B$};\n\n    % Triangle C (shaded)\n    \\fill[gray!40] (8,-2) -- (8,-4) -- (10,-4) -- cycle;\n    \\draw (8,-2) -- (8,-4) -- (10,-4) -- cycle;\n    \\node at (8.5,-3.2) {$C$};\n\n    % Triangle D (partial, shaded)\n    \\fill[gray!40] (1,7) -- (1,9) -- (3,9) -- cycle;\n    \\draw (1,7) -- (1,9) -- (3,9);\n    \\node at (2,8.3) {$D$};\n\n    % Point P\n    \\fill (13,-4) circle (3pt);\n    \\node[right] at (13,-4) {$P$};\n    \\node at (12.7,-4.3) {$\\times$};\n\\end{tikzpicture}\n\\end{center}"
+      }
+    ],
+    "_rawBody": "\\relinput{Figures/Q06.tex}\n\n\\StemText{\nThe diagram shows a point, $P$, three triangles, $A$, $B$ and $C$, and part of triangle $D$ on a 1\\,cm$^2$ grid.\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.45]\n    % Grid\n    \\draw[very thin, gray!50] (-4,-7) grid (15,11);\n\n    % Axes\n    \\draw[thick,->] (-4,0) -- (15,0) node[right] {$x$};\n    \\draw[thick,->] (0,-7) -- (0,11) node[above] {$y$};\n\n    % Axis labels\n    \\foreach \\x in {1,2,3,4,5,6,7,8,9,10,11,12,13,14} {\n        \\node[below] at (\\x,0) {\\tiny \\x};\n    }\n    \\foreach \\y in {1,2,3,4,5,6,7,8,9,10} {\n        \\node[left] at (0,\\y) {\\tiny \\y};\n    }\n    \\foreach \\y in {-1,-2,-3,-4,-5,-6} {\n        \\node[left] at (0,\\y) {\\tiny \\y};\n    }\n    \\node[below left] at (0,0) {\\tiny 0};\n\n    % Triangle A (shaded)\n    \\fill[gray!40] (1,1) -- (1,3) -- (3,1) -- cycle;\n    \\draw (1,1) -- (1,3) -- (3,1) -- cycle;\n    \\node at (1.5,1.8) {$A$};\n\n    % Angle a in triangle A\n    \\draw (3.5,1) arc (0:135:0.5);\n    \\node at (4,1.3) {$a$};\n\n    % Triangle B (shaded)\n    \\fill[gray!40] (1,-1) -- (1,-3) -- (3,-3) -- cycle;\n    \\draw (1,-1) -- (1,-3) -- (3,-3) -- cycle;\n    \\node at (1.5,-2.2) {$B$};\n\n    % Triangle C (shaded)\n    \\fill[gray!40] (8,-2) -- (8,-4) -- (10,-4) -- cycle;\n    \\draw (8,-2) -- (8,-4) -- (10,-4) -- cycle;\n    \\node at (8.5,-3.2) {$C$};\n\n    % Triangle D (partial, shaded)\n    \\fill[gray!40] (1,7) -- (1,9) -- (3,9) -- cycle;\n    \\draw (1,7) -- (1,9) -- (3,9);\n    \\node at (2,8.3) {$D$};\n\n    % Point P\n    \\fill (13,-4) circle (3pt);\n    \\node[right] at (13,-4) {$P$};\n    \\node at (12.7,-4.3) {$\\times$};\n\\end{tikzpicture}\n\\end{center}\n\n\\begin{parts}\n\n\\part On the grid, mark the image of point $P$ after a reflection in the line $y = 0$.\n\\Marks{1}\n\n\\part Use trigonometry to calculate angle $a$.\n\\AnswerLine[Angle $a$][]\n\\Marks{2}\n\n\\part Describe fully the \\textbf{single} transformation that maps\n\n\\begin{subparts}\n\n\\subpart triangle $A$ onto triangle $B$\n\n\\dotfill\n\n\\dotfill\n\\Marks{3}\n\n\\subpart triangle $A$ onto triangle $C$.\n\n\\dotfill\n\n\\dotfill\n\\Marks{2}\n\n\\end{subparts}\n\n\\part Triangle $A$ has been enlarged with centre $(1, 0)$ to give triangle $D$.\n\nThe grid is only large enough to show one vertex and part of two of the sides of triangle $D$.\n\n\\begin{subparts}\n\n\\subpart Write down the scale factor of the enlargement.\n\\AnswerLine[][]\n\\Marks{1}\n\n\\subpart Find the coordinates of the other two vertices of triangle $D$.\n\\AnswerLine[(\\dotfill, \\dotfill) and (\\dotfill, \\dotfill)][][2]\n\\Marks{2}\n\n\\end{subparts}\n\n\\end{parts}\n}",
+    "_postParts": [
+      {
+        "type": "text",
+        "content": "}"
+      }
+    ],
+    "_partCmd": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper31/Q06/Q06.png"
+    ]
+  },
+  {
+    "id": "0580-2024MayJune-Paper31-Q07",
+    "paper": "2024MayJune-Paper31",
+    "qnum": 7,
+    "marks": 14,
+    "topics": [
+      "Geometry",
+      "Mensuration",
+      "Statistics"
+    ],
+    "s": "4.4",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Circle theorems",
+    "qtype": "similarity and congruence",
+    "g": "mixed",
+    "src": "0580/31/M/J/24 Q07",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "(a) \nThe scale drawing shows the position of a castle, $C$.\n\\newline\n\nThe scale is 1 centimetre represents 2 kilometres.\n\\newline\n\nMicah walks at $4.8\\,\\text{km/h}$ for 3 hours on a bearing of $236°$ from $C$, to his house, $H$.\n\\newline\n\nMark the position of $H$ on the scale drawing.\n\\newline\n\nA restaurant, $R$, is on a bearing of $083°$ from $C$.\n\\newline\n\n(i)  Work out the bearing of $C$ from $R$.\n\\newline\n\n The distance, $d\\,\\text{km}$, from $R$ to $C$ is $5\\,\\text{km}$, correct to the nearest kilometre.\n\\newline\n\nComplete this statement about the value of $d$.\n\\newline\n\n...\\ $\\leqslant d <$ ...\n\nA model of the castle is made.\n\\newline\n\nOn the model, the length of one of the castle walls is 5 centimetres.\n\\newline\n\nThe actual length of the wall is 90 metres.\n\\newline\n\nFind the scale of the model in the form $1 : n$.\n\\newline\n\nThe castle has two kitchens with rectangular floors.\n\\newline\n\nRectangle $ABCD$ is mathematically similar to rectangle $EFGH$.\n\\newline\n\nCalculate the value of $x$.\n\\newline\n\nThe castle has a cylindrical tower.\n\\newline\n\nThe tower has a radius of $2.4\\,\\text{m}$ and a height of $25\\,\\text{m}$.\n\\newline\n\nCalculate the curved surface area of the tower.\n\\newline\n\nGive the units of your answer.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The scale drawing shows the position of a castle, $C$.\n\\newline\n"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q07a.tex"
+          },
+          {
+            "type": "text",
+            "content": "The scale is 1 centimetre represents 2 kilometres.\n\\newline\n\n\\begin{center}\n\\begin{tikzpicture}[scale=1]\n    % North arrow\n    \\draw[->] (0,0) -- (0,3);\n    \\node[above] at (0,3) {North};\n\n    % Point C\n    \\fill (0,0) circle (2pt);\n    \\node[below] at (0,0) {$C$};\n\n    % Scale\n    \\node at (4,-1) {Scale: $1\\,\\text{cm}$ to $2\\,\\text{km}$};\n\\end{tikzpicture}\n\\end{center}\n\nMicah walks at $4.8\\,\\text{km/h}$ for 3 hours on a bearing of $236\\degree$ from $C$, to his house, $H$.\n\\newline\n\nMark the position of $H$ on the scale drawing.\n\\newline\n"
+          }
+        ],
+        "marks": 3,
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "A restaurant, $R$, is on a bearing of $083\\degree$ from $C$.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Work out the bearing of $C$ from $R$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "_compactAnswer": true
+            },
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "The distance, $d\\,\\text{km}$, from $R$ to $C$ is $5\\,\\text{km}$, correct to the nearest kilometre.\n\\newline\n\nComplete this statement about the value of $d$.\n\\newline\n\n\\begin{center}\n\\dotfill\\ $\\leqslant d <$ \\dotfill\n\\end{center}"
+              }
+            ],
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ],
+        "_spacedBeginSubparts": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "A model of the castle is made.\n\\newline\n\nOn the model, the length of one of the castle walls is 5 centimetres.\n\\newline\n\nThe actual length of the wall is 90 metres.\n\\newline\n\nFind the scale of the model in the form $1 : n$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$1 :$",
+          "_compactAnswer": true
+        },
+        "marks": 2,
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The castle has two kitchens with rectangular floors.\n\\newline\n"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q07d.tex"
+          },
+          {
+            "type": "text",
+            "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.7]\n    % Rectangle ABCD\n    \\draw (0,0) rectangle (2.5,1.7);\n    \\node[above left] at (0,1.7) {$B$};\n    \\node[above right] at (2.5,1.7) {$C$};\n    \\node[below left] at (0,0) {$A$};\n    \\node[below right] at (2.5,0) {$D$};\n    \\node[left] at (0,0.85) {$5.6\\,\\text{m}$};\n    \\node[below] at (1.25,0) {$8.4\\,\\text{m}$};\n\n    % Rectangle EFGH\n    \\draw (5,0) rectangle (9,2.8);\n    \\node[above left] at (5,2.8) {$F$};\n    \\node[above right] at (9,2.8) {$G$};\n    \\node[below left] at (5,0) {$E$};\n    \\node[below right] at (9,0) {$H$};\n    \\node[left] at (5,1.4) {$9.2\\,\\text{m}$};\n    \\node[below] at (7,0) {$x\\,\\text{m}$};\n\n    % NOT TO SCALE\n    \\node at (10.5,1.4) {NOT TO};\n    \\node at (10.5,1) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nRectangle $ABCD$ is mathematically similar to rectangle $EFGH$.\n\\newline\n\nCalculate the value of $x$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x$",
+          "_compactAnswer": true
+        },
+        "marks": 2,
+        "_compactMarks": true
+      },
+      {
+        "label": "(e)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The castle has a cylindrical tower.\n\\newline\n\nThe tower has a radius of $2.4\\,\\text{m}$ and a height of $25\\,\\text{m}$.\n\\newline\n\nCalculate the curved surface area of the tower.\n\\newline\n\nGive the units of your answer.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "....................",
+          "suffix": "....................",
+          "_compactAnswer": true
+        },
+        "marks": 3,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\StemText{"
+      }
+    ],
+    "_rawBody": "\\StemText{\n\\begin{parts}\n\n\\part The scale drawing shows the position of a castle, $C$.\n\n\\relinput{Figures/Q07a.tex}\n\nThe scale is 1 centimetre represents 2 kilometres.\n\n\\begin{center}\n\\begin{tikzpicture}[scale=1]\n    % North arrow\n    \\draw[->] (0,0) -- (0,3);\n    \\node[above] at (0,3) {North};\n\n    % Point C\n    \\fill (0,0) circle (2pt);\n    \\node[below] at (0,0) {$C$};\n\n    % Scale\n    \\node at (4,-1) {Scale: 1\\,cm to 2\\,km};\n\\end{tikzpicture}\n\\end{center}\n\nMicah walks at 4.8\\,km/h for 3 hours on a bearing of $236\\degree$ from $C$, to his house, $H$.\n\nMark the position of $H$ on the scale drawing.\n\\Marks{3}\n\n\\part A restaurant, $R$, is on a bearing of $083\\degree$ from $C$.\n\n\\begin{subparts}\n\n\\subpart Work out the bearing of $C$ from $R$.\n\\AnswerLine[][]\n\\Marks{2}\n\n\\subpart The distance, $d$\\,km, from $R$ to $C$ is 5\\,km, correct to the nearest kilometre.\n\nComplete this statement about the value of $d$.\n\n\\begin{center}\n\\dotfill\\ $\\leqslant d <$ \\dotfill\n\\end{center}\n\\Marks{2}\n\n\\end{subparts}\n\n\\part A model of the castle is made.\n\nOn the model, the length of one of the castle walls is 5 centimetres.\n\nThe actual length of the wall is 90 metres.\n\nFind the scale of the model in the form $1 : n$.\n\\AnswerLine[$1 :$][]\n\\Marks{2}\n\n\\part The castle has two kitchens with rectangular floors.\n\n\\relinput{Figures/Q07d.tex}\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.7]\n    % Rectangle ABCD\n    \\draw (0,0) rectangle (2.5,1.7);\n    \\node[above left] at (0,1.7) {$B$};\n    \\node[above right] at (2.5,1.7) {$C$};\n    \\node[below left] at (0,0) {$A$};\n    \\node[below right] at (2.5,0) {$D$};\n    \\node[left] at (0,0.85) {5.6\\,m};\n    \\node[below] at (1.25,0) {8.4\\,m};\n\n    % Rectangle EFGH\n    \\draw (5,0) rectangle (9,2.8);\n    \\node[above left] at (5,2.8) {$F$};\n    \\node[above right] at (9,2.8) {$G$};\n    \\node[below left] at (5,0) {$E$};\n    \\node[below right] at (9,0) {$H$};\n    \\node[left] at (5,1.4) {9.2\\,m};\n    \\node[below] at (7,0) {$x$\\,m};\n\n    % NOT TO SCALE\n    \\node at (10.5,1.4) {NOT TO};\n    \\node at (10.5,1) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nRectangle $ABCD$ is mathematically similar to rectangle $EFGH$.\n\nCalculate the value of $x$.\n\\AnswerLine[$x$][]\n\\Marks{2}\n\n\\part The castle has a cylindrical tower.\n\nThe tower has a radius of 2.4\\,m and a height of 25\\,m.\n\nCalculate the curved surface area of the tower.\n\nGive the units of your answer.\n\\AnswerLine[....................][....................]\n\\Marks{3}\n\n\\end{parts}\n}",
+    "_compactStemParts": true,
+    "_postParts": [
+      {
+        "type": "text",
+        "content": "}"
+      }
+    ],
+    "_partCmd": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper31/Q07/Q07a.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper31/Q07/Q07d.png"
+    ]
+  },
+  {
+    "id": "0580-2024MayJune-Paper31-Q08",
+    "paper": "2024MayJune-Paper31",
+    "qnum": 8,
+    "marks": 10,
+    "topics": [
+      "Coordinate geometry",
+      "Statistics"
+    ],
+    "s": "3.2",
+    "d": 1,
+    "cat": "coord",
+    "topic": "Gradient",
+    "qtype": "drawing linear graphs",
+    "g": "graph",
+    "src": "0580/31/M/J/24 Q08",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "The table shows some values for $y = x^2 - x - 3$.\n\\newline\n\n\\begin{tabular}{|c|c|c|c|c|c|c|c|c|}\n\\hline\n$x$ & $-3$ & $-2$ & $-1$ & $0$ & $1$ & $2$ & $3$ & $4$ \\\\\n\\hline\n$y$ & & & $-1$ & & & $-1$ & & $9$ \\\\\n\\hline\n\\end{tabular}\n(a) \nComplete the table.\n\\newline\n\nOn the grid, draw the graph of $y = x^2 - x - 3$ for $-3 \\leqslant x \\leqslant 4$.\n\\newline\n\nWrite down the coordinates of the lowest point on the graph.\n\\newline\n\nUse your graph to solve the equation $x^2 - x - 3 = 7$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Complete the table.\n\\newline\n"
+          }
+        ],
+        "marks": 3,
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "On the grid, draw the graph of $y = x^2 - x - 3$ for $-3 \\leqslant x \\leqslant 4$.\n\\newline\n"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q08b.tex"
+          },
+          {
+            "type": "text",
+            "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.7]\n    % Grid\n    \\draw[very thin, gray!50] (-4,-5) grid (5,10);\n\n    % Axes\n    \\draw[thick,->] (-4,0) -- (5,0) node[right] {$x$};\n    \\draw[thick,->] (0,-5) -- (0,10) node[above] {$y$};\n\n    % Axis labels\n    \\foreach \\x in {-3,-2,-1,1,2,3,4} {\n        \\node[below] at (\\x,0) {\\small \\x};\n    }\n    \\foreach \\y in {-4,-3,-2,-1,1,2,3,4,5,6,7,8,9} {\n        \\node[left] at (0,\\y) {\\small \\y};\n    }\n    \\node[below left] at (0,0) {\\small 0};\n\\end{tikzpicture}\n\\end{center}"
+          }
+        ],
+        "marks": 4,
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down the coordinates of the lowest point on the graph.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "(\\dotfill, \\dotfill)",
+          "_compactAnswer": true
+        },
+        "marks": 1,
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Use your graph to solve the equation $x^2 - x - 3 = 7$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x =$ \\dotfill\\ or $x =$ \\dotfill",
+          "_compactAnswer": true
+        },
+        "marks": 2,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q08.tex"
+      },
+      {
+        "type": "text",
+        "content": "\\StemText{\nThe table shows some values for $y = x^2 - x - 3$.\n\\newline\n"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|c|c|c|c|}\n\\hline\n$x$ & $-3$ & $-2$ & $-1$ & $0$ & $1$ & $2$ & $3$ & $4$ \\\\\n\\hline\n$y$ & & & $-1$ & & & $-1$ & & $9$ \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+      }
+    ],
+    "_rawBody": "\\relinput{Figures/Q08.tex}\n\n\\StemText{\nThe table shows some values for $y = x^2 - x - 3$.\n\n\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|c|c|c|c|}\n\\hline\n$x$ & $-3$ & $-2$ & $-1$ & $0$ & $1$ & $2$ & $3$ & $4$ \\\\\n\\hline\n$y$ & & & $-1$ & & & $-1$ & & $9$ \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\begin{parts}\n\n\\part Complete the table.\n\\Marks{3}\n\n\\part On the grid, draw the graph of $y = x^2 - x - 3$ for $-3 \\leqslant x \\leqslant 4$.\n\n\\relinput{Figures/Q08b.tex}\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.7]\n    % Grid\n    \\draw[very thin, gray!50] (-4,-5) grid (5,10);\n\n    % Axes\n    \\draw[thick,->] (-4,0) -- (5,0) node[right] {$x$};\n    \\draw[thick,->] (0,-5) -- (0,10) node[above] {$y$};\n\n    % Axis labels\n    \\foreach \\x in {-3,-2,-1,1,2,3,4} {\n        \\node[below] at (\\x,0) {\\small \\x};\n    }\n    \\foreach \\y in {-4,-3,-2,-1,1,2,3,4,5,6,7,8,9} {\n        \\node[left] at (0,\\y) {\\small \\y};\n    }\n    \\node[below left] at (0,0) {\\small 0};\n\\end{tikzpicture}\n\\end{center}\n\\Marks{4}\n\n\\part Write down the coordinates of the lowest point on the graph.\n\\AnswerLine[(\\dotfill, \\dotfill)][][1]\n\\Marks{1}\n\n\\part Use your graph to solve the equation $x^2 - x - 3 = 7$.\n\\AnswerLine[$x =$ \\dotfill\\ or $x =$ \\dotfill][][2]\n\\Marks{2}\n\n\\end{parts}\n}",
+    "_postParts": [
+      {
+        "type": "text",
+        "content": "}"
+      }
+    ],
+    "_partCmd": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper31/Q08/Q08.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper31/Q08/Q08b.png"
+    ]
+  }
+]

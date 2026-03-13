@@ -1,0 +1,1237 @@
+[
+  {
+    "id": "0580-2020MayJune-Paper42-Q01",
+    "paper": "2020MayJune-Paper42",
+    "qnum": 1,
+    "marks": 16,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.13",
+    "d": 2,
+    "cat": "number",
+    "topic": "Electronic calculators",
+    "qtype": "Ratio division, fraction simplification, percentage conversion, percentage reduction, reverse percentage, simple interest.",
+    "g": "simplify",
+    "src": "0580/42/M/J/20 Q01",
+    "year": 2020,
+    "session": "MayJune",
+    "tex": "(a) (i) (b) Divide \\$24 in the ratio $7 : 5$.\n\\newline\n\n(c) Write \\$24.60 as a fraction of \\$2870.\n\\newline\n\nGive your answer in its lowest terms.\n\\newline\n\n(d) Write \\$1.92 as a percentage of \\$1.60 .\n\\newline\n\n(e) In a sale the original prices are reduced by 15\\%.\n\\newline\n\n(i) (f) Calculate the sale price of a book that has an original price of \\$12.\n\\newline\n\n(g) Calculate the original price of a jacket that has a sale price of \\$38.25 .\n\\newline\n\n(h) (i) (i) Dean invests \\$500 for 10 years at a rate of 1.7\\% per year simple interest.\n\\newline\n\nCalculate the total interest earned during the 10 years.\n\\newline\n\n(j) Ollie invests \\$200 at a rate of 0.0035\\% per day compound interest.\n\\newline\n\nCalculate the value of Ollie's investment at the end of 1 year.\n\\newline\n\n[1 year = 365 days.\n\\newline\n]\n\n(k) Edna invests \\$500 at a rate of $r$\\% per year compound interest.\n\\newline\n\nAt the end of 6 years, the value of Edna's investment is \\$559.78 .\n\\newline\n\nFind the value of $r$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Divide \\$24 in the ratio $7 : 5$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": " ",
+              "suffix": "\\$"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Write \\$24.60 as a fraction of \\$2870.\n\\newline\nGive your answer in its lowest terms.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Write \\$1.92 as a percentage of \\$1.60 .\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": " ",
+              "suffix": "\\%"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true,
+        "_itemInlineSubparts": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "In a sale the original prices are reduced by 15\\%.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate the sale price of a book that has an original price of \\$12.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "\\$"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate the original price of a jacket that has a sale price of \\$38.25 .\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "\\$"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(c)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Dean invests \\$500 for 10 years at a rate of 1.7\\% per year simple interest.\n\\newline\n\nCalculate the total interest earned during the 10 years.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "\\$"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Ollie invests \\$200 at a rate of 0.0035\\% per day compound interest.\n\\newline\n\nCalculate the value of Ollie's investment at the end of 1 year.\n\\newline\n[1 year = 365 days.\n\\newline\n]"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "\\$"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "Edna invests \\$500 at a rate of $r$\\% per year compound interest.\n\\newline\nAt the end of 6 years, the value of Edna's investment is \\$559.78 .\n\\newline\n\nFind the value of $r$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$r = $"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true,
+        "_itemInlineSubparts": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item \n\\begin{subparts}\n\\item Divide \\$24 in the ratio $7 : 5$.\n\n\\AnswerLine[ ][\\$]\n\\Marks{2}\n\n\\item Write \\$24.60 as a fraction of \\$2870.\n\\newline\nGive your answer in its lowest terms.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item Write \\$1.92 as a percentage of \\$1.60 .\n\n\\AnswerLine[ ][\\%]\n\\Marks{1}\n\\end{subparts}\n\n\\item In a sale the original prices are reduced by 15\\%.\n\n\\begin{subparts}\n\\item Calculate the sale price of a book that has an original price of \\$12.\n\n\\AnswerLine[\\$][]\n\\Marks{2}\n\n\\item Calculate the original price of a jacket that has a sale price of \\$38.25 .\n\n\\AnswerLine[\\$][]\n\\Marks{2}\n\\end{subparts}\n\n\\item \n\\begin{subparts}\n\\item Dean invests \\$500 for 10 years at a rate of 1.7\\% per year simple interest.\n\nCalculate the total interest earned during the 10 years.\n\n\\AnswerLine[\\$][]\n\\Marks{2}\n\n\\item Ollie invests \\$200 at a rate of 0.0035\\% per day compound interest.\n\nCalculate the value of Ollie's investment at the end of 1 year.\n\\newline\n[1 year = 365 days.]\n\n\\AnswerLine[\\$][]\n\\Marks{2}\n\n\\item Edna invests \\$500 at a rate of $r$\\% per year compound interest.\n\\newline\nAt the end of 6 years, the value of Edna's investment is \\$559.78 .\n\nFind the value of $r$.\n\n\\AnswerLine[$r = $][]\n\\Marks{3}\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_compactItems": true
+  },
+  {
+    "id": "0580-2020MayJune-Paper42-Q02",
+    "paper": "2020MayJune-Paper42",
+    "qnum": 2,
+    "marks": 9,
+    "topics": [
+      "Coordinate geometry",
+      "Transformations and vectors"
+    ],
+    "s": "3.4",
+    "d": 2,
+    "cat": "coord",
+    "topic": "Equation of a line",
+    "qtype": "length and midpoint",
+    "g": "mixed",
+    "src": "0580/42/M/J/20 Q02",
+    "year": 2020,
+    "session": "MayJune",
+    "tex": "(a) $\\mathbf{p} = \\dbinom{4}{5} \\quad \\mathbf{q} = \\dbinom{-2}{7}$\n\n(i) (b) Find $2\\mathbf{p} + \\mathbf{q}$.\n\\newline\n\n(c) Find $|\\mathbf{p}|$.\n\\newline\n\n(d) $A$ is the point $(4, 1)$ and $\\overrightarrow{AB} = \\dbinom{-3}{1}$.\n\\newline\n\nFind the coordinates of $B$.\n\\newline\n\n(e) The line $y = 3x - 2$ crosses the $y$-axis at $G$.\n\\newline\n\nWrite down the coordinates of $G$.\n\\newline\n\n(f) \n\nIn the diagram, $O$ is the origin, $OT = 2TD$ and $M$ is the midpoint of $TC$.\n\\newline\n\n$\\overrightarrow{OC} = \\mathbf{c}$ and $\\overrightarrow{OD} = \\mathbf{d}$.\n\\newline\n\nFind the position vector of $M$.\n\\newline\n\nGive your answer in terms of $\\mathbf{c}$ and $\\mathbf{d}$ in its simplest form.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "$\\mathbf{p} = \\dbinom{4}{5} \\quad \\mathbf{q} = \\dbinom{-2}{7}$"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find $2\\mathbf{p} + \\mathbf{q}$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find $|\\mathbf{p}|$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "$A$ is the point $(4, 1)$ and $\\overrightarrow{AB} = \\dbinom{-3}{1}$.\n\\newline\nFind the coordinates of $B$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "(",
+          "suffix": ",~~)"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "The line $y = 3x - 2$ crosses the $y$-axis at $G$.\n\\newline\n\nWrite down the coordinates of $G$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "(",
+          "suffix": ",~~)"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "figure",
+            "src": "Figures/Q02-VectorDiagram.tex"
+          },
+          {
+            "type": "text",
+            "content": "In the diagram, $O$ is the origin, $OT = 2TD$ and $M$ is the midpoint of $TC$.\n\\newline\n$\\overrightarrow{OC} = \\mathbf{c}$ and $\\overrightarrow{OD} = \\mathbf{d}$.\n\\newline\n\nFind the position vector of $M$.\n\\newline\nGive your answer in terms of $\\mathbf{c}$ and $\\mathbf{d}$ in its simplest form.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item $\\mathbf{p} = \\dbinom{4}{5} \\quad \\mathbf{q} = \\dbinom{-2}{7}$\n\n\\begin{subparts}\n\\item Find $2\\mathbf{p} + \\mathbf{q}$.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item Find $|\\mathbf{p}|$.\n\n\\AnswerLine[][]\n\\Marks{2}\n\\end{subparts}\n\n\\item $A$ is the point $(4, 1)$ and $\\overrightarrow{AB} = \\dbinom{-3}{1}$.\n\\newline\nFind the coordinates of $B$.\n\n\\AnswerLine[(][,~~)]\n\\Marks{1}\n\n\\item The line $y = 3x - 2$ crosses the $y$-axis at $G$.\n\nWrite down the coordinates of $G$.\n\n\\AnswerLine[(][,~~)]\n\\Marks{1}\n\n\\item \n\\relinput{Figures/Q02-VectorDiagram.tex}\n\nIn the diagram, $O$ is the origin, $OT = 2TD$ and $M$ is the midpoint of $TC$.\n\\newline\n$\\overrightarrow{OC} = \\mathbf{c}$ and $\\overrightarrow{OD} = \\mathbf{d}$.\n\nFind the position vector of $M$.\n\\newline\nGive your answer in terms of $\\mathbf{c}$ and $\\mathbf{d}$ in its simplest form.\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_compactBegin": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2020MayJune/Paper42/Q02/Q02-VectorDiagram.png"
+    ]
+  },
+  {
+    "id": "0580-2020MayJune-Paper42-Q03",
+    "paper": "2020MayJune-Paper42",
+    "qnum": 3,
+    "marks": 16,
+    "topics": [
+      "Number",
+      "Probability",
+      "Statistics"
+    ],
+    "s": "1.9",
+    "d": 2,
+    "cat": "number",
+    "topic": "Percentages",
+    "qtype": "estimating mean from frequency table",
+    "g": "mixed",
+    "src": "0580/42/M/J/20 Q03",
+    "year": 2020,
+    "session": "MayJune",
+    "tex": "The speed, $v$ km/h, of each of 200 cars passing a building is measured.\n\\newline\n\nThe table shows the results.\n\\newline\n\n\\begin{tabular}{|l|c|c|c|c|c|c|}\n\\hline\nSpeed ($v$ km/h) & $0 < v \\leqslant 20$ & $20 < v \\leqslant 40$ & $40 < v \\leqslant 45$ & $45 < v \\leqslant 50$ & $50 < v \\leqslant 60$ & $60 < v \\leqslant 80$ \\\\\n\\hline\nFrequency & 16 & 34 & 62 & 58 & 26 & 4 \\\\\n\\hline\n\\end{tabular}\n(a) Calculate an estimate of the mean.\n\\newline\n\n(b) (i) (c) Use the frequency table to complete the cumulative frequency table.\n\\newline\n\n\\begin{tabular}{|l|c|c|c|c|c|c|}\n\\hline\nSpeed ($v$ km/h) & $v \\leqslant 20$ & $v \\leqslant 40$ & $v \\leqslant 45$ & $v \\leqslant 50$ & $v \\leqslant 60$ & $v \\leqslant 80$ \\\\\n\\hline\nCumulative frequency & 16 & 50 &  &  & 196 & 200 \\\\\n\\hline\n\\end{tabular}\n\n(d) On the grid, draw a cumulative frequency diagram.\n\\newline\n\n(e) Use your diagram to find an estimate of\n\n(a) the upper quartile,\n\n(b) the number of cars with a speed greater than 35 km/h.\n\\newline\n\n(f) Two of the 200 cars are chosen at random.\n\\newline\n\nFind the probability that they both have a speed greater than 50 km/h.\n\\newline\n\n(g) A new frequency table is made by combining intervals.\n\\newline\n\n\\begin{tabular}{|l|c|c|c|}\n\\hline\nSpeed ($v$ km/h) & $0 < v \\leqslant 40$ & $40 < v \\leqslant 50$ & $50 < v \\leqslant 80$ \\\\\n\\hline\nFrequency & 50 & 120 & 30 \\\\\n\\hline\n\\end{tabular}\nOn the grid, draw a histogram to show the information in this table.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "text",
+            "content": "Calculate an estimate of the mean.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "km/h"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Use the frequency table to complete the cumulative frequency table.\n\\newline\n"
+              },
+              {
+                "type": "table",
+                "content": "\\begin{center}\n\\begin{tabular}{|l|c|c|c|c|c|c|}\n\\hline\nSpeed ($v$ km/h) & $v \\leqslant 20$ & $v \\leqslant 40$ & $v \\leqslant 45$ & $v \\leqslant 50$ & $v \\leqslant 60$ & $v \\leqslant 80$ \\\\\n\\hline\nCumulative frequency & 16 & 50 &  &  & 196 & 200 \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+              }
+            ],
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "On the grid, draw a cumulative frequency diagram.\n\\newline\n"
+              },
+              {
+                "type": "figure",
+                "src": "Figures/Q03-CumulativeFrequencyGrid.tex"
+              }
+            ],
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Use your diagram to find an estimate of\n\n(a) the upper quartile,\n\n\\AnswerLine[][km/h]\n\\Marks{1}\n\n(b) the number of cars with a speed greater than 35 km/h.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true,
+        "_itemInlineSubparts": true
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Two of the 200 cars are chosen at random.\n\\newline\n\nFind the probability that they both have a speed greater than 50 km/h.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "A new frequency table is made by combining intervals.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{center}\n\\begin{tabular}{|l|c|c|c|}\n\\hline\nSpeed ($v$ km/h) & $0 < v \\leqslant 40$ & $40 < v \\leqslant 50$ & $50 < v \\leqslant 80$ \\\\\n\\hline\nFrequency & 50 & 120 & 30 \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+          },
+          {
+            "type": "text",
+            "content": "On the grid, draw a histogram to show the information in this table.\n\\newline\n"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q03-HistogramGrid.tex"
+          }
+        ],
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The speed, $v$ km/h, of each of 200 cars passing a building is measured.\n\\newline\nThe table shows the results.\n\\newline\n"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{center}\n\\begin{tabular}{|l|c|c|c|c|c|c|}\n\\hline\nSpeed ($v$ km/h) & $0 < v \\leqslant 20$ & $20 < v \\leqslant 40$ & $40 < v \\leqslant 45$ & $45 < v \\leqslant 50$ & $50 < v \\leqslant 60$ & $60 < v \\leqslant 80$ \\\\\n\\hline\nFrequency & 16 & 34 & 62 & 58 & 26 & 4 \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+      }
+    ],
+    "_rawBody": "The speed, $v$ km/h, of each of 200 cars passing a building is measured.\n\\newline\nThe table shows the results.\n\n\\begin{center}\n\\begin{tabular}{|l|c|c|c|c|c|c|}\n\\hline\nSpeed ($v$ km/h) & $0 < v \\leqslant 20$ & $20 < v \\leqslant 40$ & $40 < v \\leqslant 45$ & $45 < v \\leqslant 50$ & $50 < v \\leqslant 60$ & $60 < v \\leqslant 80$ \\\\\n\\hline\nFrequency & 16 & 34 & 62 & 58 & 26 & 4 \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\begin{parts}\n\\item Calculate an estimate of the mean.\n\n\\AnswerLine[][km/h]\n\\Marks{4}\n\n\\item \n\\begin{subparts}\n\\item Use the frequency table to complete the cumulative frequency table.\n\n\\begin{center}\n\\begin{tabular}{|l|c|c|c|c|c|c|}\n\\hline\nSpeed ($v$ km/h) & $v \\leqslant 20$ & $v \\leqslant 40$ & $v \\leqslant 45$ & $v \\leqslant 50$ & $v \\leqslant 60$ & $v \\leqslant 80$ \\\\\n\\hline\nCumulative frequency & 16 & 50 &  &  & 196 & 200 \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\\Marks{1}\n\n\\item On the grid, draw a cumulative frequency diagram.\n\n\\relinput{Figures/Q03-CumulativeFrequencyGrid.tex}\n\\Marks{3}\n\n\\item Use your diagram to find an estimate of\n\n(a) the upper quartile,\n\n\\AnswerLine[][km/h]\n\\Marks{1}\n\n(b) the number of cars with a speed greater than 35 km/h.\n\n\\AnswerLine[][]\n\\Marks{2}\n\\end{subparts}\n\n\\item Two of the 200 cars are chosen at random.\n\nFind the probability that they both have a speed greater than 50 km/h.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item A new frequency table is made by combining intervals.\n\n\\begin{center}\n\\begin{tabular}{|l|c|c|c|}\n\\hline\nSpeed ($v$ km/h) & $0 < v \\leqslant 40$ & $40 < v \\leqslant 50$ & $50 < v \\leqslant 80$ \\\\\n\\hline\nFrequency & 50 & 120 & 30 \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\nOn the grid, draw a histogram to show the information in this table.\n\n\\relinput{Figures/Q03-HistogramGrid.tex}\n\\Marks{3}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2020MayJune/Paper42/Q03/Q03-CumulativeFrequencyGrid.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2020MayJune/Paper42/Q03/Q03-HistogramGrid.png"
+    ]
+  },
+  {
+    "id": "0580-2020MayJune-Paper42-Q04",
+    "paper": "2020MayJune-Paper42",
+    "qnum": 4,
+    "marks": 10,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.6",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/42/M/J/20 Q04",
+    "year": 2020,
+    "session": "MayJune",
+    "tex": "The diagram shows two triangles.\n\\newline\n\n(a) Calculate $QR$.\n\\newline\n\n(b) Calculate $RS$.\n\\newline\n\n(c) Calculate the total area of the two triangles.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Calculate $QR$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$QR = $",
+          "suffix": "m"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "text",
+            "content": "Calculate $RS$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$RS = $",
+          "suffix": "m"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Calculate the total area of the two triangles.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "m$^2$"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q04-TriangleDiagram.tex"
+      },
+      {
+        "type": "text",
+        "content": "The diagram shows two triangles.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "\\relinput{Figures/Q04-TriangleDiagram.tex}\n\nThe diagram shows two triangles.\n\n\\begin{parts}\n\\item Calculate $QR$.\n\n\\AnswerLine[$QR = $][m]\n\\Marks{3}\n\n\\item Calculate $RS$.\n\n\\AnswerLine[$RS = $][m]\n\\Marks{4}\n\n\\item Calculate the total area of the two triangles.\n\n\\AnswerLine[][m$^2$]\n\\Marks{3}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2020MayJune/Paper42/Q04/Q04-TriangleDiagram.png"
+    ]
+  },
+  {
+    "id": "0580-2020MayJune-Paper42-Q05",
+    "paper": "2020MayJune-Paper42",
+    "qnum": 5,
+    "marks": 12,
+    "topics": [
+      "Number",
+      "Geometry"
+    ],
+    "s": "1.12",
+    "d": 2,
+    "cat": "number",
+    "topic": "Set notation",
+    "qtype": "speed, distance, time calculation",
+    "g": "mixed",
+    "src": "0580/42/M/J/20 Q05",
+    "year": 2020,
+    "session": "MayJune",
+    "tex": "The diagram shows a field $ABCD$.\n\\newline\n\nThe bearing of $B$ from $A$ is $140^{\\circ}$.\n\\newline\n\n$C$ is due east of $B$ and $D$ is due north of $C$.\n\\newline\n\n$AB = 400$ m, $BC = 350$ m and $CD = 450$ m.\n\\newline\n\n(a) Find the bearing of $D$ from $B$.\n\\newline\n\n(b) Calculate the distance from $D$ to $A$.\n\\newline\n\n(c) Jono runs around the field from $A$ to $B$, $B$ to $C$, $C$ to $D$ and $D$ to $A$.\n\\newline\n\nHe runs at a speed of 3 m/s.\n\\newline\n\nCalculate the total time Jono takes to run around the field.\n\\newline\n\nGive your answer in minutes and seconds, correct to the nearest second.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the bearing of $D$ from $B$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 6,
+        "content": [
+          {
+            "type": "text",
+            "content": "Calculate the distance from $D$ to $A$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "m"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "text",
+            "content": "Jono runs around the field from $A$ to $B$, $B$ to $C$, $C$ to $D$ and $D$ to $A$.\n\\newline\nHe runs at a speed of 3 m/s.\n\\newline\n\nCalculate the total time Jono takes to run around the field.\n\\newline\nGive your answer in minutes and seconds, correct to the nearest second.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "min ...................................... s"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q05-FieldBearing.tex"
+      },
+      {
+        "type": "text",
+        "content": "The diagram shows a field $ABCD$.\n\\newline\nThe bearing of $B$ from $A$ is $140^{\\circ}$.\n\\newline\n$C$ is due east of $B$ and $D$ is due north of $C$.\n\\newline\n$AB = 400$ m, $BC = 350$ m and $CD = 450$ m.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "\\relinput{Figures/Q05-FieldBearing.tex}\n\nThe diagram shows a field $ABCD$.\n\\newline\nThe bearing of $B$ from $A$ is $140^{\\circ}$.\n\\newline\n$C$ is due east of $B$ and $D$ is due north of $C$.\n\\newline\n$AB = 400$ m, $BC = 350$ m and $CD = 450$ m.\n\n\\begin{parts}\n\\item Find the bearing of $D$ from $B$.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item Calculate the distance from $D$ to $A$.\n\n\\AnswerLine[][m]\n\\Marks{6}\n\n\\item Jono runs around the field from $A$ to $B$, $B$ to $C$, $C$ to $D$ and $D$ to $A$.\n\\newline\nHe runs at a speed of 3 m/s.\n\nCalculate the total time Jono takes to run around the field.\n\\newline\nGive your answer in minutes and seconds, correct to the nearest second.\n\n\\AnswerLine[][min ...................................... s]\n\\Marks{4}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2020MayJune/Paper42/Q05/Q05-FieldBearing.png"
+    ]
+  },
+  {
+    "id": "0580-2020MayJune-Paper42-Q06",
+    "paper": "2020MayJune-Paper42",
+    "qnum": 6,
+    "marks": 14,
+    "topics": [
+      "Number",
+      "Algebra and graphs"
+    ],
+    "s": "2.13",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Functions",
+    "qtype": "function evaluation, composite functions, inverse functions, algebraic fractions with functions",
+    "g": "function",
+    "src": "0580/42/M/J/20 Q06",
+    "year": 2020,
+    "session": "MayJune",
+    "tex": "\\[\nf(x) = 3x + 2 \\qquad g(x) = x^2 + 1 \\qquad h(x) = 4^x\n\\]\n\n(a) Find $h(4)$.\n\\newline\n\n(b) Find $fg(1)$.\n\\newline\n\n(c) Find $gf(x)$ in the form $ax^2 + bx + c$.\n\\newline\n\n(d) Find $x$ when $f(x) = g(7)$.\n\\newline\n\n(e) Find $f^{-1}(x)$.\n\\newline\n\n(f) Find $\\dfrac{g(x)}{f(x)} + x$.\n\\newline\n\nGive your answer as a single fraction, in terms of $x$, in its simplest form.\n\\newline\n\n(g) Find $x$ when $h^{-1}(x) = 2$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find $h(4)$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find $fg(1)$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find $gf(x)$ in the form $ax^2 + bx + c$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find $x$ when $f(x) = g(7)$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x = $"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(e)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find $f^{-1}(x)$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$f^{-1}(x) = $"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(f)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find $\\dfrac{g(x)}{f(x)} + x$.\n\\newline\nGive your answer as a single fraction, in terms of $x$, in its simplest form.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(g)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find $x$ when $h^{-1}(x) = 2$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x = $"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\[\nf(x) = 3x + 2 \\qquad g(x) = x^2 + 1 \\qquad h(x) = 4^x\n\\]"
+      }
+    ],
+    "_rawBody": "\\[\nf(x) = 3x + 2 \\qquad g(x) = x^2 + 1 \\qquad h(x) = 4^x\n\\]\n\n\\begin{parts}\n\\item Find $h(4)$.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Find $fg(1)$.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item Find $gf(x)$ in the form $ax^2 + bx + c$.\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\item Find $x$ when $f(x) = g(7)$.\n\n\\AnswerLine[$x = $][]\n\\Marks{2}\n\n\\item Find $f^{-1}(x)$.\n\n\\AnswerLine[$f^{-1}(x) = $][]\n\\Marks{2}\n\n\\item Find $\\dfrac{g(x)}{f(x)} + x$.\n\\newline\nGive your answer as a single fraction, in terms of $x$, in its simplest form.\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\item Find $x$ when $h^{-1}(x) = 2$.\n\n\\AnswerLine[$x = $][]\n\\Marks{1}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2020MayJune-Paper42-Q07",
+    "paper": "2020MayJune-Paper42",
+    "qnum": 7,
+    "marks": 11,
+    "topics": [
+      "Probability"
+    ],
+    "s": "8.3",
+    "d": 2,
+    "cat": "probability",
+    "topic": "Tree diagrams",
+    "qtype": "combined events",
+    "g": "mixed",
+    "src": "0580/42/M/J/20 Q07",
+    "year": 2020,
+    "session": "MayJune",
+    "tex": "Tanya plants some seeds.\n\\newline\n\nThe probability that a seed will produce flowers is 0.8 .\n\\newline\n\nWhen a seed produces flowers, the probability that the flowers are red is 0.6 and the probability that the flowers are yellow is 0.3 .\n\\newline\n\n(a) Tanya has a seed that produces flowers.\n\\newline\n\nFind the probability that the flowers are not red and not yellow.\n\\newline\n\n(b) (i) (c) Complete the tree diagram.\n\\newline\n\n(d) Find the probability that a seed chosen at random produces red flowers.\n\\newline\n\n(e) Tanya chooses a seed at random.\n\\newline\n\nFind the probability that this seed does not produce red flowers and does not produce yellow flowers.\n\\newline\n\n(f) Two of the seeds are chosen at random.\n\\newline\n\nFind the probability that one produces flowers and one does not produce flowers.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Tanya has a seed that produces flowers.\n\\newline\n\nFind the probability that the flowers are not red and not yellow.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Complete the tree diagram.\n\\newline\n"
+              },
+              {
+                "type": "figure",
+                "src": "Figures/Q07-TreeDiagram.tex"
+              }
+            ],
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the probability that a seed chosen at random produces red flowers.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "Tanya chooses a seed at random.\n\\newline\n\nFind the probability that this seed does not produce red flowers and does not produce yellow flowers.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true,
+        "_itemInlineSubparts": true
+      },
+      {
+        "label": "(c)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Two of the seeds are chosen at random.\n\\newline\n\nFind the probability that one produces flowers and one does not produce flowers.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Tanya plants some seeds.\n\\newline\nThe probability that a seed will produce flowers is 0.8 .\n\\newline\nWhen a seed produces flowers, the probability that the flowers are red is 0.6 and the probability that the flowers are yellow is 0.3 .\n\\newline\n"
+      }
+    ],
+    "_rawBody": "Tanya plants some seeds.\n\\newline\nThe probability that a seed will produce flowers is 0.8 .\n\\newline\nWhen a seed produces flowers, the probability that the flowers are red is 0.6 and the probability that the flowers are yellow is 0.3 .\n\n\\begin{parts}\n\\item Tanya has a seed that produces flowers.\n\nFind the probability that the flowers are not red and not yellow.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item \n\\begin{subparts}\n\\item Complete the tree diagram.\n\n\\relinput{Figures/Q07-TreeDiagram.tex}\n\\Marks{2}\n\n\\item Find the probability that a seed chosen at random produces red flowers.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item Tanya chooses a seed at random.\n\nFind the probability that this seed does not produce red flowers and does not produce yellow flowers.\n\n\\AnswerLine[][]\n\\Marks{3}\n\\end{subparts}\n\n\\item Two of the seeds are chosen at random.\n\nFind the probability that one produces flowers and one does not produce flowers.\n\n\\AnswerLine[][]\n\\Marks{3}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2020MayJune/Paper42/Q07/Q07-TreeDiagram.png"
+    ]
+  },
+  {
+    "id": "0580-2020MayJune-Paper42-Q08",
+    "paper": "2020MayJune-Paper42",
+    "qnum": 8,
+    "marks": 14,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.4",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Circle theorems",
+    "qtype": "similarity and congruence",
+    "g": "mixed",
+    "src": "0580/42/M/J/20 Q08",
+    "year": 2020,
+    "session": "MayJune",
+    "tex": "(a) \n\nTriangle $ABC$ is mathematically similar to triangle $PQR$.\n\\newline\n\nThe area of triangle $ABC$ is 16 cm$^2$.\n\\newline\n\n(i) (b) Calculate the area of triangle $PQR$.\n\\newline\n\n(c) The triangles are the cross-sections of prisms which are also mathematically similar.\n\\newline\n\nThe volume of the smaller prism is 320 cm$^3$.\n\\newline\n\nCalculate the length of the larger prism.\n\\newline\n\n(d) A cylinder with radius 6 cm and height $h$ cm has the same volume as a sphere with radius 4.5 cm.\n\\newline\n\nFind the value of $h$.\n\\newline\n\n[The volume, $V$, of a sphere with radius $r$ is $V = \\frac{4}{3}\\pi r^3$.\n\\newline\n]\n\n(e) A solid metal cube of side 20 cm is melted down and made into 40 solid spheres, each of radius $r$ cm.\n\\newline\n\nFind the value of $r$.\n\\newline\n\n[The volume, $V$, of a sphere with radius $r$ is $V = \\frac{4}{3}\\pi r^3$.\n\\newline\n]\n\n(f) A solid cylinder has radius $x$ cm and height $\\frac{7x}{2}$ cm.\n\\newline\n\nThe surface area of a sphere with radius $R$ cm is equal to the total surface area of the cylinder.\n\\newline\n\nFind an expression for $R$ in terms of $x$.\n\\newline\n\n[The surface area, $A$, of a sphere with radius $r$ is $A = 4\\pi r^2$.\n\\newline\n]",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "figure",
+            "src": "Figures/Q08-SimilarTriangles.tex"
+          },
+          {
+            "type": "text",
+            "content": "Triangle $ABC$ is mathematically similar to triangle $PQR$.\n\\newline\nThe area of triangle $ABC$ is 16 cm$^2$.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate the area of triangle $PQR$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "cm$^2$"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "The triangles are the cross-sections of prisms which are also mathematically similar.\n\\newline\nThe volume of the smaller prism is 320 cm$^3$.\n\\newline\n\nCalculate the length of the larger prism.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "cm"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "A cylinder with radius 6 cm and height $h$ cm has the same volume as a sphere with radius 4.5 cm.\n\\newline\n\nFind the value of $h$.\n\\newline\n[The volume, $V$, of a sphere with radius $r$ is $V = \\frac{4}{3}\\pi r^3$.\n\\newline\n]"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$h = $"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "A solid metal cube of side 20 cm is melted down and made into 40 solid spheres, each of radius $r$ cm.\n\\newline\n\nFind the value of $r$.\n\\newline\n[The volume, $V$, of a sphere with radius $r$ is $V = \\frac{4}{3}\\pi r^3$.\n\\newline\n]"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$r = $"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "A solid cylinder has radius $x$ cm and height $\\frac{7x}{2}$ cm.\n\\newline\nThe surface area of a sphere with radius $R$ cm is equal to the total surface area of the cylinder.\n\\newline\n\nFind an expression for $R$ in terms of $x$.\n\\newline\n[The surface area, $A$, of a sphere with radius $r$ is $A = 4\\pi r^2$.\n\\newline\n]"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$R = $"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item \n\\relinput{Figures/Q08-SimilarTriangles.tex}\n\nTriangle $ABC$ is mathematically similar to triangle $PQR$.\n\\newline\nThe area of triangle $ABC$ is 16 cm$^2$.\n\n\\begin{subparts}\n\\item Calculate the area of triangle $PQR$.\n\n\\AnswerLine[][cm$^2$]\n\\Marks{2}\n\n\\item The triangles are the cross-sections of prisms which are also mathematically similar.\n\\newline\nThe volume of the smaller prism is 320 cm$^3$.\n\nCalculate the length of the larger prism.\n\n\\AnswerLine[][cm]\n\\Marks{3}\n\\end{subparts}\n\n\\item A cylinder with radius 6 cm and height $h$ cm has the same volume as a sphere with radius 4.5 cm.\n\nFind the value of $h$.\n\\newline\n[The volume, $V$, of a sphere with radius $r$ is $V = \\frac{4}{3}\\pi r^3$.]\n\n\\AnswerLine[$h = $][]\n\\Marks{3}\n\n\\item A solid metal cube of side 20 cm is melted down and made into 40 solid spheres, each of radius $r$ cm.\n\nFind the value of $r$.\n\\newline\n[The volume, $V$, of a sphere with radius $r$ is $V = \\frac{4}{3}\\pi r^3$.]\n\n\\AnswerLine[$r = $][]\n\\Marks{3}\n\n\\item A solid cylinder has radius $x$ cm and height $\\frac{7x}{2}$ cm.\n\\newline\nThe surface area of a sphere with radius $R$ cm is equal to the total surface area of the cylinder.\n\nFind an expression for $R$ in terms of $x$.\n\\newline\n[The surface area, $A$, of a sphere with radius $r$ is $A = 4\\pi r^2$.]\n\n\\AnswerLine[$R = $][]\n\\Marks{3}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "_compactBegin": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2020MayJune/Paper42/Q08/Q08-SimilarTriangles.png"
+    ]
+  },
+  {
+    "id": "0580-2020MayJune-Paper42-Q09",
+    "paper": "2020MayJune-Paper42",
+    "qnum": 9,
+    "marks": 18,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.5",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Equations",
+    "qtype": "completing the square, solving quadratic equations, sketching graphs, intersection points",
+    "g": "quadratic",
+    "src": "0580/42/M/J/20 Q09",
+    "year": 2020,
+    "session": "MayJune",
+    "tex": "(a) (i) (b) Write $x^2 + 8x - 9$ in the form $(x + k)^2 + h$.\n\\newline\n\n(c) Use your answer to part (a)(i) to solve the equation $x^2 + 8x - 9 = 0$.\n\\newline\n\n(d) The solutions of the equation $x^2 + bx + c = 0$ are $\\frac{-7 + \\sqrt{61}}{2}$ and $\\frac{-7 - \\sqrt{61}}{2}$.\n\\newline\n\nFind the value of $b$ and the value of $c$.\n\\newline\n\n(e) (i) (f) On the diagram,\n(g) sketch the graph of $y = (x - 1)^2$, [2]\n\n(h) sketch the graph of $y = \\frac{1}{2}x + 1$.\n\\newline\n [2]\n\n(ii) The graphs of $y = (x - 1)^2$ and $y = \\frac{1}{2}x + 1$ intersect at $A$ and $B$.\n\\newline\n\nFind the length of $AB$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Write $x^2 + 8x - 9$ in the form $(x + k)^2 + h$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Use your answer to part (a)(i) to solve the equation $x^2 + 8x - 9 = 0$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$x = $",
+              "suffix": " or $x = $"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true,
+        "_itemInlineSubparts": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "The solutions of the equation $x^2 + bx + c = 0$ are $\\frac{-7 + \\sqrt{61}}{2}$ and $\\frac{-7 - \\sqrt{61}}{2}$.\n\\newline\n\nFind the value of $b$ and the value of $c$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "multiline",
+          "lines": 2,
+          "template": "$b = $ ____\\n$c = $ ____",
+          "lineSep": "blank"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "text",
+            "content": "\\begin{subparts}"
+          }
+        ]
+      },
+      {
+        "label": "(d)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "text",
+            "content": "On the diagram,\n\\begin{parts}"
+          }
+        ]
+      },
+      {
+        "label": "(e)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "text",
+            "content": "sketch the graph of $y = (x - 1)^2$, [2]"
+          }
+        ]
+      },
+      {
+        "label": "(f)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "text",
+            "content": "sketch the graph of $y = \\frac{1}{2}x + 1$.\n\\newline\n [2]"
+          }
+        ]
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "analyse",
+    "cmd": "sketch",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2020MayJune/Paper42/Q09/Q09-GraphGrid.png"
+      }
+    ],
+    "_v4_skip": true,
+    "_rawBody": "\\begin{parts}\n\\item \n\\begin{subparts}\n\\item Write $x^2 + 8x - 9$ in the form $(x + k)^2 + h$.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item Use your answer to part (a)(i) to solve the equation $x^2 + 8x - 9 = 0$.\n\n\\AnswerLine[$x = $][ or $x = $]\n\\Marks{2}\n\\end{subparts}\n\n\\item The solutions of the equation $x^2 + bx + c = 0$ are $\\frac{-7 + \\sqrt{61}}{2}$ and $\\frac{-7 - \\sqrt{61}}{2}$.\n\nFind the value of $b$ and the value of $c$.\n\n\\AnswerLine[$b = $][]\n\\AnswerLine[$c = $][]\n\\Marks{3}\n\n\\item \n\\begin{subparts}\n\\item On the diagram,\n\\begin{parts}\n\\item sketch the graph of $y = (x - 1)^2$, [2]\n\\item sketch the graph of $y = \\frac{1}{2}x + 1$. [2]\n\\end{parts}\n\n\\relinput{Figures/Q09-GraphGrid.tex}\n\n\\item The graphs of $y = (x - 1)^2$ and $y = \\frac{1}{2}x + 1$ intersect at $A$ and $B$.\n\nFind the length of $AB$.\n\n\\AnswerLine[$AB = $][]\n\\Marks{7}\n\\end{subparts}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "_postParts": [
+      {
+        "type": "figure",
+        "src": "Figures/Q09-GraphGrid.tex"
+      },
+      {
+        "type": "text",
+        "content": "\\item The graphs of $y = (x - 1)^2$ and $y = \\frac{1}{2}x + 1$ intersect at $A$ and $B$.\n\nFind the length of $AB$.\n\n\\AnswerLine[$AB = $][]\n\\Marks{7}\n\\end{subparts}\n\\end{parts}"
+      }
+    ],
+    "_compactBegin": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2020MayJune/Paper42/Q09/Q09-GraphGrid.png"
+    ]
+  },
+  {
+    "id": "0580-2020MayJune-Paper42-Q10",
+    "paper": "2020MayJune-Paper42",
+    "qnum": 10,
+    "marks": 10,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.12",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Functions notation",
+    "qtype": "function evaluation, differentiation, stationary points",
+    "g": "function",
+    "src": "0580/42/M/J/20 Q10",
+    "year": 2020,
+    "session": "MayJune",
+    "tex": "(a) $y = x^4 - 4x^3$\n(i) (b) Find the value of $y$ when $x = -1$.\n\\newline\n\n(c) Find the two stationary points on the graph of $y = x^4 - 4x^3$.\n\\newline\n\n(d) $y = x^p + 2x^q$\n\n$\\frac{dy}{dx} = 11x^{10} + 10x^4$, where $\\frac{dy}{dx}$ is the derived function.\n\\newline\n\nFind the value of $p$ and the value of $q$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "$y = x^4 - 4x^3$"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the value of $y$ when $x = -1$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$y = $"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 6,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the two stationary points on the graph of $y = x^4 - 4x^3$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "multiline",
+              "lines": 2,
+              "template": "( ____ ,~~)\\n( ____ ,~~)",
+              "lineSep": "blank"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true,
+        "_compactContentSubparts": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "$y = x^p + 2x^q$\n\\newline\n$\\frac{dy}{dx} = 11x^{10} + 10x^4$, where $\\frac{dy}{dx}$ is the derived function.\n\\newline\n\nFind the value of $p$ and the value of $q$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "multiline",
+          "lines": 2,
+          "template": "$p = $ ____\\n$q = $ ____",
+          "lineSep": "blank"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "analyse",
+    "cmd": "find",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item $y = x^4 - 4x^3$\n\\begin{subparts}\n\\item Find the value of $y$ when $x = -1$.\n\n\\AnswerLine[$y = $][]\n\\Marks{2}\n\n\\item Find the two stationary points on the graph of $y = x^4 - 4x^3$.\n\n\\AnswerLine[(][,~~)]\n\\AnswerLine[(][,~~)]\n\\Marks{6}\n\\end{subparts}\n\n\\item $y = x^p + 2x^q$\n\\newline\n$\\frac{dy}{dx} = 11x^{10} + 10x^4$, where $\\frac{dy}{dx}$ is the derived function.\n\nFind the value of $p$ and the value of $q$.\n\n\\AnswerLine[$p = $][]\n\\AnswerLine[$q = $][]\n\\Marks{2}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "_compactBegin": true
+  }
+]

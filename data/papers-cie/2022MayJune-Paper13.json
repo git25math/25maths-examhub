@@ -1,0 +1,1044 @@
+[
+  {
+    "id": "0580-2022MayJune-Paper13-Q01",
+    "paper": "2022MayJune-Paper13",
+    "qnum": 1,
+    "marks": 1,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.5",
+    "d": 1,
+    "cat": "number",
+    "topic": "Ordering",
+    "qtype": "number writing (word to figure)",
+    "g": "mixed",
+    "src": "0580/13/M/J/22 Q01",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "Write the number one hundred and three thousand eight hundred and six in figures.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "write",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Write the number one hundred and three thousand eight hundred and six in figures.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Write the number one hundred and three thousand eight hundred and six in figures.\n\n\\AnswerLine[][]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2022MayJune-Paper13-Q02",
+    "paper": "2022MayJune-Paper13",
+    "qnum": 2,
+    "marks": 3,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry"
+    ],
+    "s": "3.7",
+    "d": 1,
+    "cat": "coord",
+    "topic": "Coordinate geometry extended",
+    "qtype": "perpendicular lines",
+    "g": "mixed",
+    "src": "0580/13/M/J/22 Q02",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "%\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\n(a) Measure the length of the line $AB$ in millimetres.\n\\newline\n\n(b) Mark the midpoint, $M$, of the line $AB$.\n\\newline\n\n(c) Draw a line through $M$ that is perpendicular to the line $AB$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Measure the length of the line $AB$ in millimetres.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "mm"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Mark the midpoint, $M$, of the line $AB$.\n\\newline\n"
+          }
+        ]
+      },
+      {
+        "label": "(c)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Draw a line through $M$ that is perpendicular to the line $AB$.\n\\newline\n"
+          }
+        ]
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "text",
+        "content": "%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q02-LineAB.\n\\newline\npng}\n%\\end{InsertScreenShot}"
+      }
+    ],
+    "_rawBody": "%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q02-LineAB.png}\n%\\end{InsertScreenShot}\n\n\\begin{parts}\n\\item Measure the length of the line $AB$ in millimetres.\n\n\\AnswerLine[][mm]\n\\Marks{1}\n\n\\item Mark the midpoint, $M$, of the line $AB$.\n\n\\Marks{1}\n\n\\item Draw a line through $M$ that is perpendicular to the line $AB$.\n\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2022MayJune-Paper13-Q03",
+    "paper": "2022MayJune-Paper13",
+    "qnum": 3,
+    "marks": 1,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.2",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Rearranging formulae",
+    "qtype": "simplifying algebraic expressions by collecting like terms",
+    "g": "simplify",
+    "src": "0580/13/M/J/22 Q03",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "Simplify.\n\\newline\n\n$3x - 4x + 7x$",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Simplify.\n\\newline\n\n$3x - 4x + 7x$"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Simplify.\n\n$3x - 4x + 7x$\n\n\\AnswerLine[][]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2022MayJune-Paper13-Q04",
+    "paper": "2022MayJune-Paper13",
+    "qnum": 4,
+    "marks": 2,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.6",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/13/M/J/22 Q04",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "Work out the area of a rectangle that is 9.5 m long and 6.8 m wide.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Work out the area of a rectangle that is 9.5 m long and 6.8 m wide.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "m$^2$"
+    },
+    "_rawBody": "Work out the area of a rectangle that is 9.5 m long and 6.8 m wide.\n\n\\AnswerLine[][m$^2$]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2022MayJune-Paper13-Q05",
+    "paper": "2022MayJune-Paper13",
+    "qnum": 5,
+    "marks": 1,
+    "topics": [
+      "Probability"
+    ],
+    "s": "8.1",
+    "d": 1,
+    "cat": "probability",
+    "topic": "Basic probability",
+    "qtype": "basic probability",
+    "g": "mixed",
+    "src": "0580/13/M/J/22 Q05",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "The probability of picking a red sweet from a bag is 0.05.\n\\newline\nFind the probability of not picking a red sweet.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The probability of picking a red sweet from a bag is 0.05.\n\\newline\nFind the probability of not picking a red sweet.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "The probability of picking a red sweet from a bag is 0.05.\nFind the probability of not picking a red sweet.\n\n\\AnswerLine[][]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2022MayJune-Paper13-Q06",
+    "paper": "2022MayJune-Paper13",
+    "qnum": 6,
+    "marks": 1,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.3",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Symmetry",
+    "qtype": "scale drawings and bearings",
+    "g": "mixed",
+    "src": "0580/13/M/J/22 Q06",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "%\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\nMeasure the bearing of point $B$ from point $A$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "other",
+    "stem": [
+      {
+        "type": "text",
+        "content": "%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q06-Bearing.\n\\newline\npng}\n%\\end{InsertScreenShot}\n\nMeasure the bearing of point $B$ from point $A$.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q06-Bearing.png}\n%\\end{InsertScreenShot}\n\nMeasure the bearing of point $B$ from point $A$.\n\n\\AnswerLine[][]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2022MayJune-Paper13-Q07",
+    "paper": "2022MayJune-Paper13",
+    "qnum": 7,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.3",
+    "d": 1,
+    "cat": "number",
+    "topic": "Directed numbers",
+    "qtype": "evaluate algebraic expression with powers",
+    "g": "indices",
+    "src": "0580/13/M/J/22 Q07",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "Work out the value of $\\dfrac{mk^3}{3}$ when $m = 4$ and $k = 7$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Work out the value of $\\dfrac{mk^3}{3}$ when $m = 4$ and $k = 7$.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Work out the value of $\\dfrac{mk^3}{3}$ when $m = 4$ and $k = 7$.\n\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2022MayJune-Paper13-Q08",
+    "paper": "2022MayJune-Paper13",
+    "qnum": 8,
+    "marks": 2,
+    "topics": [
+      "Mensuration"
+    ],
+    "s": "5.4",
+    "d": 1,
+    "cat": "mensuration",
+    "topic": "Volume",
+    "qtype": "surface area and volume",
+    "g": "mixed",
+    "src": "0580/13/M/J/22 Q08",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "A box, in the shape of a cuboid, has volume 357 cm$^3$.\n\\newline\nIt has a length of 8.5 cm and a width of 6 cm.\n\\newline\nCalculate the height of the box.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "A box, in the shape of a cuboid, has volume 357 cm$^3$.\n\\newline\nIt has a length of 8.5 cm and a width of 6 cm.\n\\newline\nCalculate the height of the box.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "cm"
+    },
+    "_rawBody": "A box, in the shape of a cuboid, has volume 357 cm$^3$.\nIt has a length of 8.5 cm and a width of 6 cm.\nCalculate the height of the box.\n\n\\AnswerLine[][cm]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2022MayJune-Paper13-Q09",
+    "paper": "2022MayJune-Paper13",
+    "qnum": 9,
+    "marks": 2,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.6",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/13/M/J/22 Q09",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "%\\begin{InsertScreenShot}\n%    \n%    \\NotToScale\n%\\end{InsertScreenShot}\n\n$PQRS$ is a quadrilateral.\n\\newline\n\\\\\n$RST$ is a straight line.\n\\newline\n\\\\\nFind angle $PST$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q09-Quadrilateral.\n\\newline\npng}\n%    \\NotToScale\n%\\end{InsertScreenShot}\n\n$PQRS$ is a quadrilateral.\n\\newline\n\\\\\n$RST$ is a straight line.\n\\newline\n\\\\\nFind angle $PST$.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "Angle $PST =$"
+    },
+    "_rawBody": "%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q09-Quadrilateral.png}\n%    \\NotToScale\n%\\end{InsertScreenShot}\n\n$PQRS$ is a quadrilateral.\\\\\n$RST$ is a straight line.\\\\\nFind angle $PST$.\n\n\\AnswerLine[Angle $PST =$][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2022MayJune-Paper13-Q10",
+    "paper": "2022MayJune-Paper13",
+    "qnum": 10,
+    "marks": 3,
+    "topics": [
+      "Statistics"
+    ],
+    "s": "9.4",
+    "d": 1,
+    "cat": "statistics",
+    "topic": "Charts and graphs",
+    "qtype": "statistical charts",
+    "g": "mixed",
+    "src": "0580/13/M/J/22 Q10",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "These are the masses, in kg, of 12 parcels.\n\\newline\n0.3   0.4   1.2   0.8   1.1   2.1   1.7   1.8   1.2   2.3   0.7   1.1\n(a) Complete the stem-and-leaf diagram for the 12 parcels.\n\\newline\n\n\\begin{tabular}{c|l}\n0 & 3   4 \\\\\n1 & \\\\\n2 & \\\\\n\\end{tabular}\n Key: $0|3$ represents 0.3 kg\n\n(b) Find the median.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Complete the stem-and-leaf diagram for the 12 parcels.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{center}\n\\begin{tabular}{c|l}\n0 & 3 \\quad 4 \\\\\n1 & \\\\\n2 & \\\\\n\\end{tabular}\n\\end{center}"
+          },
+          {
+            "type": "text",
+            "content": "\\hspace{3cm} Key: $0|3$ represents 0.3 kg"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the median.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "kg"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "These are the masses, in kg, of 12 parcels.\n\\newline\n\\begin{center}\n0.3 \\quad 0.4 \\quad 1.2 \\quad 0.8 \\quad 1.1 \\quad 2.1 \\quad 1.7 \\quad 1.8 \\quad 1.2 \\quad 2.3 \\quad 0.7 \\quad 1.1\n\\end{center}"
+      }
+    ],
+    "_rawBody": "These are the masses, in kg, of 12 parcels.\n\\begin{center}\n0.3 \\quad 0.4 \\quad 1.2 \\quad 0.8 \\quad 1.1 \\quad 2.1 \\quad 1.7 \\quad 1.8 \\quad 1.2 \\quad 2.3 \\quad 0.7 \\quad 1.1\n\\end{center}\n\n\\begin{parts}\n\\item Complete the stem-and-leaf diagram for the 12 parcels.\n\n\\begin{center}\n\\begin{tabular}{c|l}\n0 & 3 \\quad 4 \\\\\n1 & \\\\\n2 & \\\\\n\\end{tabular}\n\\end{center}\n\\hspace{3cm} Key: $0|3$ represents 0.3 kg\n\\Marks{2}\n\n\\item Find the median.\n\n\\AnswerLine[][kg]\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2022MayJune-Paper13-Q11",
+    "paper": "2022MayJune-Paper13",
+    "qnum": 11,
+    "marks": 4,
+    "topics": [
+      "Coordinate geometry",
+      "Transformations and vectors"
+    ],
+    "s": "3.1",
+    "d": 1,
+    "cat": "coord",
+    "topic": "Coordinates",
+    "qtype": "coordinates reading/plotting",
+    "g": "graph",
+    "src": "0580/13/M/J/22 Q11",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "%\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\nThe grid shows point $P$ and point $R$.\n\\newline\n\n(a) Write down the coordinates of point $P$.\n\\newline\n\n(b) $\\vec{PQ} = \\begin{pmatrix} 3 \\\\ -2 \\end{pmatrix}$\\\\\nMark point $Q$ on the grid.\n\\newline\n\n(c) Find $\\vec{QR}$.\n\\newline\n\n(d) Complete this statement.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down the coordinates of point $P$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "(.................... , ....................)"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "$\\vec{PQ} = \\begin{pmatrix} 3 \\\\ -2 \\end{pmatrix}$\\\\\nMark point $Q$ on the grid.\n\\newline\n"
+          }
+        ]
+      },
+      {
+        "label": "(c)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find $\\vec{QR}$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "vector",
+          "fields": 2,
+          "prefix": "$\\vec{QR} = $"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Complete this statement.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$\\vec{PQ} + \\vec{QR} = $"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q11-Grid.\n\\newline\npng}\n%\\end{InsertScreenShot}\n\nThe grid shows point $P$ and point $R$.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q11-Grid.png}\n%\\end{InsertScreenShot}\n\nThe grid shows point $P$ and point $R$.\n\n\\begin{parts}\n\\item Write down the coordinates of point $P$.\n\n\\AnswerLine[][(.................... , ....................)]\n\\Marks{1}\n\n\\item $\\vec{PQ} = \\begin{pmatrix} 3 \\\\ -2 \\end{pmatrix}$\\\\\nMark point $Q$ on the grid.\n\n\\Marks{1}\n\n\\item Find $\\vec{QR}$.\n\n\\AnswerLine[$\\vec{QR} = $][$\\begin{pmatrix} \\hspace*{1em} \\\\ \\hspace*{1em} \\end{pmatrix}$]\n\\Marks{1}\n\n\\item Complete this statement.\n\n\\AnswerLine[$\\vec{PQ} + \\vec{QR} = $][]\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2022MayJune-Paper13-Q12",
+    "paper": "2022MayJune-Paper13",
+    "qnum": 12,
+    "marks": 2,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.4",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Algebraic fractions",
+    "qtype": "simplifying expressions with indices",
+    "g": "simplify",
+    "src": "0580/13/M/J/22 Q12",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "Simplify.\n\\newline\n\n(a) $\\dfrac{y^3}{y^5}$\n\n(b) $7x^0$",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "$\\dfrac{y^3}{y^5}$"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "$7x^0$"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Simplify.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "Simplify.\n\n\\begin{parts}\n\\item $\\dfrac{y^3}{y^5}$\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item $7x^0$\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2022MayJune-Paper13-Q13",
+    "paper": "2022MayJune-Paper13",
+    "qnum": 13,
+    "marks": 4,
+    "topics": [
+      "Number",
+      "Statistics"
+    ],
+    "s": null,
+    "d": 1,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/13/M/J/22 Q13",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "The scatter diagram shows the number of visitors and the total amount spent, in thousands of dollars, at a zoo on each of eight days.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\n(a) On one of the eight days there are 410 visitors.\n\\newline\nFind the total amount spent by visitors during this day.\n\\newline\n\n\\$ \n\n(b) Information for the ninth day is shown in the table.\n\\newline\n\\begin{tabular}{|l|c|}\n\\hline\nNumber of visitors & 175 \\\\\n\\hline\nTotal amount spent (\\$1000) & 9 \\\\\n\\hline\n\\end{tabular}\nPlot this information on the scatter diagram.\n\\newline\n\n(c) Draw a line of best fit on the scatter diagram.\n\\newline\n\n(d) On the tenth day the total amount spent is \\$$22\\,000$.\n\\newline\nEstimate the number of visitors on this day.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "On one of the eight days there are 410 visitors.\n\\newline\nFind the total amount spent by visitors during this day.\n\\newline\n\n\\$ \\AnswerLine[]"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Information for the ninth day is shown in the table.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{center}\n\\begin{tabular}{|l|c|}\n\\hline\nNumber of visitors & 175 \\\\\n\\hline\nTotal amount spent (\\$1000) & 9 \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+          },
+          {
+            "type": "text",
+            "content": "Plot this information on the scatter diagram.\n\\newline\n"
+          }
+        ]
+      },
+      {
+        "label": "(c)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Draw a line of best fit on the scatter diagram.\n\\newline\n"
+          }
+        ]
+      },
+      {
+        "label": "(d)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "On the tenth day the total amount spent is \\$$22\\,000$.\n\\newline\nEstimate the number of visitors on this day.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The scatter diagram shows the number of visitors and the total amount spent, in thousands of dollars, at a zoo on each of eight days.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q13-Scatter.\n\\newline\npng}\n%\\end{InsertScreenShot}"
+      }
+    ],
+    "_rawBody": "The scatter diagram shows the number of visitors and the total amount spent, in thousands of dollars, at a zoo on each of eight days.\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q13-Scatter.png}\n%\\end{InsertScreenShot}\n\n\\begin{parts}\n\\item On one of the eight days there are 410 visitors.\nFind the total amount spent by visitors during this day.\n\n\\$ \\AnswerLine[]\n\\Marks{1}\n\n\\item Information for the ninth day is shown in the table.\n\\begin{center}\n\\begin{tabular}{|l|c|}\n\\hline\nNumber of visitors & 175 \\\\\n\\hline\nTotal amount spent (\\$1000) & 9 \\\\\n\\hline\n\\end{tabular}\n\\end{center}\nPlot this information on the scatter diagram.\n\n\\Marks{1}\n\n\\item Draw a line of best fit on the scatter diagram.\n\n\\Marks{1}\n\n\\item On the tenth day the total amount spent is \\$22\\,000.\nEstimate the number of visitors on this day.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2022MayJune-Paper13-Q14",
+    "paper": "2022MayJune-Paper13",
+    "qnum": 14,
+    "marks": 6,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.6",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/13/M/J/22 Q14",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "%\\begin{InsertScreenShot}\n%    \n%    \\NotToScale\n%\\end{InsertScreenShot}\n\n(a) Calculate the height, $h$, of the triangle.\n\\newline\n\n(b) The triangle is one face of a square-based pyramid.\n\\newline\nOn the 1 cm$^2$ grid, draw a net of this pyramid.\n\\newline\n\n%%    \n%",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Calculate the height, $h$, of the triangle.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$h =$",
+          "suffix": "cm"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "The triangle is one face of a square-based pyramid.\n\\newline\nOn the 1 cm$^2$ grid, draw a net of this pyramid.\n\\newline\n\n%\\begin{center}\n%    \\relincludegraphics{Figures/Q14-Grid.\n\\newline\npng}\n%\\end{center}"
+          }
+        ]
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "text",
+        "content": "%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q14-Triangle.\n\\newline\npng}\n%    \\NotToScale\n%\\end{InsertScreenShot}"
+      }
+    ],
+    "_rawBody": "%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q14-Triangle.png}\n%    \\NotToScale\n%\\end{InsertScreenShot}\n\n\\begin{parts}\n\\item Calculate the height, $h$, of the triangle.\n\n\\AnswerLine[$h =$][cm]\n\\Marks{3}\n\n\\item The triangle is one face of a square-based pyramid.\nOn the 1 cm$^2$ grid, draw a net of this pyramid.\n\n%\\begin{center}\n%    \\relincludegraphics{Figures/Q14-Grid.png}\n%\\end{center}\n\n\\Marks{3}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2022MayJune-Paper13-Q15",
+    "paper": "2022MayJune-Paper13",
+    "qnum": 15,
+    "marks": 2,
+    "topics": [
+      "Number",
+      "Algebra and graphs"
+    ],
+    "s": "2.2",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Rearranging formulae",
+    "qtype": "factorising algebraic expressions",
+    "g": "simplify",
+    "src": "0580/13/M/J/22 Q15",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "Factorise completely.\n\\newline\n\n$18px - 27p$",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Factorise completely.\n\\newline\n\n$18px - 27p$"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Factorise completely.\n\n$18px - 27p$\n\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2022MayJune-Paper13-Q16",
+    "paper": "2022MayJune-Paper13",
+    "qnum": 16,
+    "marks": 2,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.7",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Sequences",
+    "qtype": "finding terms of a quadratic sequence",
+    "g": "quadratic",
+    "src": "0580/13/M/J/22 Q16",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "The $n$th term of a sequence is $n^2 - 1$.\n\\newline\nFind the first three terms of this sequence.\n\\newline\n\n ,  ,",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The $n$th term of a sequence is $n^2 - 1$.\n\\newline\nFind the first three terms of this sequence.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "multiline",
+      "lines": 3,
+      "template": "____\\n____\\n____",
+      "lineSep": "blank"
+    },
+    "_rawBody": "The $n$th term of a sequence is $n^2 - 1$.\nFind the first three terms of this sequence.\n\n\\AnswerLine[] , \\AnswerLine[] , \\AnswerLine[]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2022MayJune-Paper13-Q17",
+    "paper": "2022MayJune-Paper13",
+    "qnum": 17,
+    "marks": 3,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.6",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/13/M/J/22 Q17",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "%\\begin{InsertScreenShot}\n%    \n%    \\NotToScale\n%\\end{InsertScreenShot}\n\nThe diagram shows two right-angled triangles, $ABC$ and $PQR$.\n\\newline\n\n(a) Complete this statement with a geometrical term.\n\\newline\n\nTriangle $ABC$ is  to triangle $PQR$.\n\\newline\n\n(b) Calculate angle $ABC$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Complete this statement with a geometrical term.\n\\newline\n\nTriangle $ABC$ is \\AnswerLine[] to triangle $PQR$.\n\\newline\n"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Calculate angle $ABC$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "Angle $ABC =$"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q17-Triangles.\n\\newline\npng}\n%    \\NotToScale\n%\\end{InsertScreenShot}\n\nThe diagram shows two right-angled triangles, $ABC$ and $PQR$.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q17-Triangles.png}\n%    \\NotToScale\n%\\end{InsertScreenShot}\n\nThe diagram shows two right-angled triangles, $ABC$ and $PQR$.\n\n\\begin{parts}\n\\item Complete this statement with a geometrical term.\n\nTriangle $ABC$ is \\AnswerLine[] to triangle $PQR$.\n\\Marks{1}\n\n\\item Calculate angle $ABC$.\n\n\\AnswerLine[Angle $ABC =$][]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2022MayJune-Paper13-Q18",
+    "paper": "2022MayJune-Paper13",
+    "qnum": 18,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.1",
+    "d": 1,
+    "cat": "number",
+    "topic": "Types of number",
+    "qtype": "LCM calculation",
+    "g": "mixed",
+    "src": "0580/13/M/J/22 Q18",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "Find the lowest common multiple (LCM) of 32 and 40.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Find the lowest common multiple (LCM) of 32 and 40.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Find the lowest common multiple (LCM) of 32 and 40.\n\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2022MayJune-Paper13-Q19",
+    "paper": "2022MayJune-Paper13",
+    "qnum": 19,
+    "marks": 3,
+    "topics": [
+      "Number"
+    ],
+    "s": null,
+    "d": 1,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/13/M/J/22 Q19",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "Joe thinks of a number, $n$, trebles it, and subtracts 5.\n\\newline\nThe result is 22.\n\\newline\nWrite this as an equation in terms of $n$, and solve the equation.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "",
+    "cmd": "solve",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Joe thinks of a number, $n$, trebles it, and subtracts 5.\n\\newline\nThe result is 22.\n\\newline\nWrite this as an equation in terms of $n$, and solve the equation.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "$n =$"
+    },
+    "_rawBody": "Joe thinks of a number, $n$, trebles it, and subtracts 5.\nThe result is 22.\nWrite this as an equation in terms of $n$, and solve the equation.\n\n\\AnswerLine[$n =$][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2022MayJune-Paper13-Q20",
+    "paper": "2022MayJune-Paper13",
+    "qnum": 20,
+    "marks": 2,
+    "topics": [
+      "Coordinate geometry"
+    ],
+    "s": "3.3",
+    "d": 1,
+    "cat": "coord",
+    "topic": "Length and midpoint",
+    "qtype": "gradient calculation",
+    "g": "graph",
+    "src": "0580/13/M/J/22 Q20",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "%\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\nFind the gradient of line $L$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q20-LineL.\n\\newline\npng}\n%\\end{InsertScreenShot}\n\nFind the gradient of line $L$.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q20-LineL.png}\n%\\end{InsertScreenShot}\n\nFind the gradient of line $L$.\n\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2022MayJune-Paper13-Q21",
+    "paper": "2022MayJune-Paper13",
+    "qnum": 21,
+    "marks": 2,
+    "topics": [
+      "Probability"
+    ],
+    "s": "8.1",
+    "d": 1,
+    "cat": "probability",
+    "topic": "Basic probability",
+    "qtype": "basic probability",
+    "g": "mixed",
+    "src": "0580/13/M/J/22 Q21",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "Dominic asks 30 students in his class if they are right-handed or left-handed.\n\\newline\n7 students are left-handed.\n\\newline\nWork out the expected number of left-handed students in the whole school of 960 students.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Dominic asks 30 students in his class if they are right-handed or left-handed.\n\\newline\n7 students are left-handed.\n\\newline\nWork out the expected number of left-handed students in the whole school of 960 students.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Dominic asks 30 students in his class if they are right-handed or left-handed.\n7 students are left-handed.\nWork out the expected number of left-handed students in the whole school of 960 students.\n\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2022MayJune-Paper13-Q22",
+    "paper": "2022MayJune-Paper13",
+    "qnum": 22,
+    "marks": 3,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.6",
+    "d": 1,
+    "cat": "number",
+    "topic": "Standard form",
+    "qtype": "mixed number subtraction",
+    "g": "mixed",
+    "src": "0580/13/M/J/22 Q22",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "Without using a calculator, work out $4\\frac{1}{6} - 1\\frac{7}{8}$.\n\\newline\nYou must show all your working and give your answer as a mixed number in its simplest form.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Without using a calculator, work out $4\\frac{1}{6} - 1\\frac{7}{8}$.\n\\newline\nYou must show all your working and give your answer as a mixed number in its simplest form.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Without using a calculator, work out $4\\frac{1}{6} - 1\\frac{7}{8}$.\nYou must show all your working and give your answer as a mixed number in its simplest form.\n\n\\AnswerLine[][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2022MayJune-Paper13-Q23",
+    "paper": "2022MayJune-Paper13",
+    "qnum": 23,
+    "marks": 3,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.5",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Equations",
+    "qtype": "solving simultaneous linear equations",
+    "g": "simul-linear",
+    "src": "0580/13/M/J/22 Q23",
+    "year": 2022,
+    "session": "MayJune",
+    "tex": "Solve the simultaneous equations.\n\\newline\nYou must show all your working.\n\\newline\n\n\\begin{align*}\n4x - 3y &= 26 \\\\\n5x + 6y &= 13\n\\end{align*}",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "solve",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Solve the simultaneous equations.\n\\newline\nYou must show all your working.\n\\newline\n\n\\begin{align*}\n4x - 3y &= 26 \\\\\n5x + 6y &= 13\n\\end{align*}"
+      }
+    ],
+    "answer": {
+      "type": "multiline",
+      "lines": 2,
+      "template": "$x =$ ____\\n$y =$ ____",
+      "lineSep": "blank"
+    },
+    "_rawBody": "Solve the simultaneous equations.\nYou must show all your working.\n\n\\begin{align*}\n4x - 3y &= 26 \\\\\n5x + 6y &= 13\n\\end{align*}\n\n\\AnswerLine[$x =$][]\n\\AnswerLine[$y =$][]\n\\Marks{3}",
+    "_compactMarks": true
+  }
+]

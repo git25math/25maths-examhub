@@ -1,0 +1,1349 @@
+[
+  {
+    "id": "0580-2025MayJune-Paper32-Q01",
+    "paper": "2025MayJune-Paper32",
+    "qnum": 1,
+    "marks": 1,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.15",
+    "d": 1,
+    "cat": "number",
+    "topic": "Speed, distance, time",
+    "qtype": "time conversion (24-hour clock)",
+    "g": "mixed",
+    "src": "0580/32/M/J/25 Q01",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "Write 3.45 pm using the 24-hour clock.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "write",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Write 3.45 pm using the 24-hour clock.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Write 3.45 pm using the 24-hour clock.\n\n\\AnswerLine[][]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper32-Q02",
+    "paper": "2025MayJune-Paper32",
+    "qnum": 2,
+    "marks": 2,
+    "topics": [
+      "Coordinate geometry",
+      "Mensuration"
+    ],
+    "s": "3.1",
+    "d": 1,
+    "cat": "coord",
+    "topic": "Coordinates",
+    "qtype": "coordinates reading/plotting",
+    "g": "graph",
+    "src": "0580/32/M/J/25 Q02",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "The diagram shows a square-based pyramid.\n\\newline\n\nComplete this statement.\n\\newline\n\nThe pyramid has ... edges and ... vertices.\n\\newline\n",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "recall",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n% Square base\n\\coordinate (A) at (0,0);\n\\coordinate (B) at (2,0);\n\\coordinate (C) at (2.8,0.8);\n\\coordinate (D) at (0.8,0.8);\n% Apex\n\\coordinate (E) at (1.4,2.5);\n% Draw base\n\\draw[thick] (A) -- (B) -- (C);\n\\draw[thick, dashed] (C) -- (D) -- (A);\n% Draw edges to apex\n\\draw[thick] (A) -- (E);\n\\draw[thick] (B) -- (E);\n\\draw[thick] (C) -- (E);\n\\draw[thick, dashed] (D) -- (E);\n\\end{tikzpicture}\n\\end{center}\n\nThe diagram shows a square-based pyramid.\n\\newline\n\nComplete this statement.\n\\newline\n\nThe pyramid has \\dotfill edges and \\dotfill vertices.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper32/Q02/Q02.png"
+      }
+    ],
+    "_rawBody": "\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n% Square base\n\\coordinate (A) at (0,0);\n\\coordinate (B) at (2,0);\n\\coordinate (C) at (2.8,0.8);\n\\coordinate (D) at (0.8,0.8);\n% Apex\n\\coordinate (E) at (1.4,2.5);\n% Draw base\n\\draw[thick] (A) -- (B) -- (C);\n\\draw[thick, dashed] (C) -- (D) -- (A);\n% Draw edges to apex\n\\draw[thick] (A) -- (E);\n\\draw[thick] (B) -- (E);\n\\draw[thick] (C) -- (E);\n\\draw[thick, dashed] (D) -- (E);\n\\end{tikzpicture}\n\\end{center}\n\nThe diagram shows a square-based pyramid.\n\nComplete this statement.\n\nThe pyramid has \\dotfill edges and \\dotfill vertices.\n\n\\Marks{2}",
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper32/Q02/Q02.png"
+    ]
+  },
+  {
+    "id": "0580-2025MayJune-Paper32-Q03",
+    "paper": "2025MayJune-Paper32",
+    "qnum": 3,
+    "marks": 1,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.12",
+    "d": 1,
+    "cat": "number",
+    "topic": "Set notation",
+    "qtype": "unit conversion (length)",
+    "g": "mixed",
+    "src": "0580/32/M/J/25 Q03",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "Convert $3\\,\\text{m}$ into mm.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Convert $3\\,\\text{m}$ into mm.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "mm"
+    },
+    "_rawBody": "Convert 3\\,m into mm.\n\n\\AnswerLine[][mm]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper32-Q04",
+    "paper": "2025MayJune-Paper32",
+    "qnum": 4,
+    "marks": 4,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.16",
+    "d": 1,
+    "cat": "number",
+    "topic": "Upper and lower bounds",
+    "qtype": "cost calculation, change calculation, currency units",
+    "g": "mixed",
+    "src": "0580/32/M/J/25 Q04",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "Apples cost \\$1.20 per kilogram and one banana costs 35 cents.\n\\newline\n\n(a) \nWork out the total cost, in dollars, of $3\\,\\text{kg}$ of apples and 7 bananas.\n\\newline\n\nWork out the change from \\$20.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Work out the total cost, in dollars, of $3\\,\\text{kg}$ of apples and 7 bananas.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "\\$",
+          "_compactAnswer": true
+        },
+        "marks": 3,
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Work out the change from \\$20.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "\\$",
+          "_compactAnswer": true
+        },
+        "marks": 1,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Apples cost \\$1.20 per kilogram and one banana costs 35 cents.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "Apples cost \\$1.20 per kilogram and one banana costs 35 cents.\n\n\\begin{parts}\n\n\\part Work out the total cost, in dollars, of 3\\,kg of apples and 7 bananas.\n\\AnswerLine[\\$][]\n\\Marks{3}\n\n\\part Work out the change from \\$20.\n\\AnswerLine[\\$][]\n\\Marks{1}\n\n\\end{parts}",
+    "_partCmd": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper32-Q05",
+    "paper": "2025MayJune-Paper32",
+    "qnum": 5,
+    "marks": 1,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.13",
+    "d": 1,
+    "cat": "number",
+    "topic": "Electronic calculators",
+    "qtype": "percentage calculation",
+    "g": "mixed",
+    "src": "0580/32/M/J/25 Q05",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "A student scores 58 out of 80 in a test.\n\\newline\n\nCalculate their percentage score.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "A student scores 58 out of 80 in a test.\n\\newline\n\nCalculate their percentage score.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "\\%"
+    },
+    "_rawBody": "A student scores 58 out of 80 in a test.\n\nCalculate their percentage score.\n\n\\AnswerLine[][\\%]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper32-Q06",
+    "paper": "2025MayJune-Paper32",
+    "qnum": 6,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.13",
+    "d": 1,
+    "cat": "number",
+    "topic": "Electronic calculators",
+    "qtype": "percentage of a quantity",
+    "g": "mixed",
+    "src": "0580/32/M/J/25 Q06",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "Calculate 57\\% of 45.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Calculate 57\\% of 45.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Calculate 57\\% of 45.\n\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper32-Q07",
+    "paper": "2025MayJune-Paper32",
+    "qnum": 7,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.15",
+    "d": 1,
+    "cat": "number",
+    "topic": "Speed, distance, time",
+    "qtype": "time duration, average speed calculation",
+    "g": "mixed",
+    "src": "0580/32/M/J/25 Q07",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "A train leaves station $A$ at 13$\\,$44.\n\\newline\n\nThe train arrives at station $B$ after 3 hours and 30 minutes.\n\\newline\n\n(a) \nWork out the time the train arrives at station $B$.\n\\newline\n\nThe distance between station $A$ and station $B$ is $210\\,\\text{km}$.\n\\newline\n\nCalculate the average speed of the train in km/h.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Work out the time the train arrives at station $B$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "marks": 1,
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The distance between station $A$ and station $B$ is $210\\,\\text{km}$.\n\\newline\n\nCalculate the average speed of the train in km/h.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "km/h",
+          "_compactAnswer": true
+        },
+        "marks": 1,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "A train leaves station $A$ at 13$\\,$44.\n\\newline\n\nThe train arrives at station $B$ after 3 hours and 30 minutes.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "A train leaves station $A$ at 13\\,44.\n\nThe train arrives at station $B$ after 3 hours and 30 minutes.\n\n\\begin{parts}\n\n\\part Work out the time the train arrives at station $B$.\n\\AnswerLine[][]\n\\Marks{1}\n\n\\part The distance between station $A$ and station $B$ is 210\\,km.\n\nCalculate the average speed of the train in km/h.\n\\AnswerLine[][km/h]\n\\Marks{1}\n\n\\end{parts}",
+    "_partCmd": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper32-Q08",
+    "paper": "2025MayJune-Paper32",
+    "qnum": 8,
+    "marks": 3,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.16",
+    "d": 1,
+    "cat": "number",
+    "topic": "Upper and lower bounds",
+    "qtype": "currency conversion, difference calculation, rounding",
+    "g": "mixed",
+    "src": "0580/32/M/J/25 Q08",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "The exchange rate is \\$1 = 0.923 euros.\n\\newline\n\nCalculate the difference between 750 euros and \\$846.\n\\newline\n\nGive your answer in euros correct to 2 decimal places.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The exchange rate is \\$1 = 0.923 euros.\n\\newline\n\nCalculate the difference between 750 euros and \\$846.\n\\newline\n\nGive your answer in euros correct to 2 decimal places.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "euros"
+    },
+    "_rawBody": "The exchange rate is \\$1 = 0.923 euros.\n\nCalculate the difference between 750 euros and \\$846.\n\nGive your answer in euros correct to 2 decimal places.\n\n\\AnswerLine[][euros]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper32-Q09",
+    "paper": "2025MayJune-Paper32",
+    "qnum": 9,
+    "marks": 4,
+    "topics": [
+      "Probability"
+    ],
+    "s": "8.3",
+    "d": 1,
+    "cat": "probability",
+    "topic": "Tree diagrams",
+    "qtype": "combined events",
+    "g": "mixed",
+    "src": "0580/32/M/J/25 Q09",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "Flo has a bag of counters.\n\\newline\n\nShe picks a counter at random from the bag.\n\\newline\n\nThe probability that she picks a green counter is 0.52.\n\\newline\n\n(a) \nWork out the probability that she does **not** pick a green counter.\n\\newline\n\nThe bag contains three colours of counters, green, pink and red.\n\\newline\n\n\\begin{tabular}{|c|c|c|c|}\n\\hline\nColour of counter & Green & Pink & Red \\\\\n\\hline\nProbability & 0.52 & & \\\\\n\\hline\n\\end{tabular}\nThere are three times as many pink counters as red counters.\n\\newline\n\nComplete the table.\n\\newline\n\nFlo picks one counter from the bag at random, records the colour and replaces it in the bag.\n\\newline\n\nShe does this 200 times.\n\\newline\n\nCalculate the expected number of times she picks a green counter.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Work out the probability that she does \\textbf{not} pick a green counter.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "marks": 1,
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper32/Q09/Q09b.png"
+          },
+          {
+            "type": "text",
+            "content": "The bag contains three colours of counters, green, pink and red.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{center}\n\\begin{tabular}{|c|c|c|c|}\n\\hline\nColour of counter & Green & Pink & Red \\\\\n\\hline\nProbability & 0.52 & & \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+          },
+          {
+            "type": "text",
+            "content": "There are three times as many pink counters as red counters.\n\\newline\n\nComplete the table.\n\\newline\n"
+          }
+        ],
+        "marks": 2,
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Flo picks one counter from the bag at random, records the colour and replaces it in the bag.\n\\newline\n\nShe does this 200 times.\n\\newline\n\nCalculate the expected number of times she picks a green counter.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "marks": 1,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Flo has a bag of counters.\n\\newline\n\nShe picks a counter at random from the bag.\n\\newline\n\nThe probability that she picks a green counter is 0.52.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "Flo has a bag of counters.\n\nShe picks a counter at random from the bag.\n\nThe probability that she picks a green counter is 0.52.\n\n\\begin{parts}\n\n\\part Work out the probability that she does \\textbf{not} pick a green counter.\n\\AnswerLine[][]\n\\Marks{1}\n\n\\part The bag contains three colours of counters, green, pink and red.\n\n\\begin{center}\n\\begin{tabular}{|c|c|c|c|}\n\\hline\nColour of counter & Green & Pink & Red \\\\\n\\hline\nProbability & 0.52 & & \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\nThere are three times as many pink counters as red counters.\n\nComplete the table.\n\\Marks{2}\n\n\\part Flo picks one counter from the bag at random, records the colour and replaces it in the bag.\n\nShe does this 200 times.\n\nCalculate the expected number of times she picks a green counter.\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{parts}",
+    "_partCmd": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper32/Q09/Q09b.png"
+    ]
+  },
+  {
+    "id": "0580-2025MayJune-Paper32-Q10",
+    "paper": "2025MayJune-Paper32",
+    "qnum": 10,
+    "marks": 5,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "3.1",
+    "d": 1,
+    "cat": "coord",
+    "topic": "Coordinates",
+    "qtype": "coordinates reading/plotting",
+    "g": "graph",
+    "src": "0580/32/M/J/25 Q10",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "$A$, $B$ and $C$ are points on a circle, centre $O$, diameter $AC$.\n\\newline\n\nComplete these statements, giving geometrical reasons.\n\\newline\n\n(a) \nThe value of $x$ is ... because ...\n\n...\n\nAngle $ABC = 90°$ because ...\n\n...\n\nThe value of $y$ is ... because ...\n\n...",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The value of $x$ is \\dotfill because \\dotfill"
+          }
+        ],
+        "answer": {
+          "type": "multiline",
+          "lines": 1,
+          "style": "dotfill"
+        },
+        "marks": 2,
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Angle $ABC = 90°$ because \\dotfill"
+          }
+        ],
+        "answer": {
+          "type": "multiline",
+          "lines": 1,
+          "style": "dotfill"
+        },
+        "marks": 1,
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The value of $y$ is \\dotfill because \\dotfill"
+          }
+        ],
+        "answer": {
+          "type": "multiline",
+          "lines": 1,
+          "style": "dotfill"
+        },
+        "marks": 2,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "recall",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{center}\n\\begin{tikzpicture}[scale=1.2]\n% Circle\n\\draw[thick] (0,0) circle (2);\n% Points on circle\n\\coordinate (A) at (-2,0);\n\\coordinate (C) at (2,0);\n\\coordinate (B) at (-1.2,-1.6);\n\\coordinate (O) at (0,0);\n% Draw diameter\n\\draw[thick] (A) -- (C);\n% Draw triangle\n\\draw[thick] (A) -- (B) -- (C);\n% Draw radii\n\\draw[thick] (O) -- (B);\n% Angle marks\n\\draw (A) ++(0.4,0) arc (0:-53:0.4);\n\\node at (-1.4,-0.25) {$65°$};\n\\node at (-1.0,-1.1) {$x°$};\n\\node at (1.2,-0.9) {$y°$};\n% Labels\n\\node[above left] at (A) {$A$};\n\\node[below] at (B) {$B$};\n\\node[above right] at (C) {$C$};\n\\node[above] at (O) {$O$};\n% NOT TO SCALE\n\\node at (3.5,0.5) {NOT TO};\n\\node at (3.5,0) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\n$A$, $B$ and $C$ are points on a circle, centre $O$, diameter $AC$.\n\\newline\n\nComplete these statements, giving geometrical reasons.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper32/Q10/Q10.png"
+      }
+    ],
+    "_rawBody": "\\begin{center}\n\\begin{tikzpicture}[scale=1.2]\n% Circle\n\\draw[thick] (0,0) circle (2);\n% Points on circle\n\\coordinate (A) at (-2,0);\n\\coordinate (C) at (2,0);\n\\coordinate (B) at (-1.2,-1.6);\n\\coordinate (O) at (0,0);\n% Draw diameter\n\\draw[thick] (A) -- (C);\n% Draw triangle\n\\draw[thick] (A) -- (B) -- (C);\n% Draw radii\n\\draw[thick] (O) -- (B);\n% Angle marks\n\\draw (A) ++(0.4,0) arc (0:-53:0.4);\n\\node at (-1.4,-0.25) {$65°$};\n\\node at (-1.0,-1.1) {$x°$};\n\\node at (1.2,-0.9) {$y°$};\n% Labels\n\\node[above left] at (A) {$A$};\n\\node[below] at (B) {$B$};\n\\node[above right] at (C) {$C$};\n\\node[above] at (O) {$O$};\n% NOT TO SCALE\n\\node at (3.5,0.5) {NOT TO};\n\\node at (3.5,0) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\n$A$, $B$ and $C$ are points on a circle, centre $O$, diameter $AC$.\n\nComplete these statements, giving geometrical reasons.\n\n\\begin{parts}\n\n\\part The value of $x$ is \\dotfill because \\dotfill\n\n\\dotfill\n\\Marks{2}\n\n\\part Angle $ABC = 90°$ because \\dotfill\n\n\\dotfill\n\\Marks{1}\n\n\\part The value of $y$ is \\dotfill because \\dotfill\n\n\\dotfill\n\\Marks{2}\n\n\\end{parts}",
+    "_partCmd": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper32/Q10/Q10.png"
+    ]
+  },
+  {
+    "id": "0580-2025MayJune-Paper32-Q11",
+    "paper": "2025MayJune-Paper32",
+    "qnum": 11,
+    "marks": 2,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.3",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Symmetry",
+    "qtype": "scale drawings and bearings",
+    "g": "mixed",
+    "src": "0580/32/M/J/25 Q11",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "The scale drawing shows the position of a hospital, $H$.\n\\newline\n\nThe scale is 1 centimetre represents 6 kilometres.\n\\newline\n\nA school, $S$, is $33\\,\\text{km}$ from $H$ on a bearing of $155°$.\n\\newline\n\nMark the position of $S$ on the scale drawing.\n\\newline\n",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "recall",
+    "cmd": "other",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The scale drawing shows the position of a hospital, $H$.\n\\newline\n\nThe scale is 1 centimetre represents 6 kilometres.\n\\newline\n\n\\begin{center}\n\\begin{tikzpicture}[scale=1]\n% North arrow\n\\draw[thick, ->] (3,5) -- (3,7) node[above] {North};\n% Hospital point\n\\fill (3,4) circle (2pt);\n\\node[left] at (3,4) {$H$};\n% Scale note\n\\node at (7,3) {Scale: $1\\,\\text{cm}$ to $6\\,\\text{km}$};\n\\end{tikzpicture}\n\\end{center}\n\nA school, $S$, is $33\\,\\text{km}$ from $H$ on a bearing of $155°$.\n\\newline\n\nMark the position of $S$ on the scale drawing.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper32/Q11/Q11.png"
+      }
+    ],
+    "_rawBody": "The scale drawing shows the position of a hospital, $H$.\n\nThe scale is 1 centimetre represents 6 kilometres.\n\n\\begin{center}\n\\begin{tikzpicture}[scale=1]\n% North arrow\n\\draw[thick, ->] (3,5) -- (3,7) node[above] {North};\n% Hospital point\n\\fill (3,4) circle (2pt);\n\\node[left] at (3,4) {$H$};\n% Scale note\n\\node at (7,3) {Scale: 1\\,cm to 6\\,km};\n\\end{tikzpicture}\n\\end{center}\n\nA school, $S$, is 33\\,km from $H$ on a bearing of $155°$.\n\nMark the position of $S$ on the scale drawing.\n\n\\Marks{2}",
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper32/Q11/Q11.png"
+    ]
+  },
+  {
+    "id": "0580-2025MayJune-Paper32-Q12",
+    "paper": "2025MayJune-Paper32",
+    "qnum": 12,
+    "marks": 7,
+    "topics": [
+      "Mensuration",
+      "Transformations and vectors",
+      "Statistics"
+    ],
+    "s": "5.3",
+    "d": 1,
+    "cat": "mensuration",
+    "topic": "Surface area",
+    "qtype": "circles, arcs and sectors",
+    "g": "mixed",
+    "src": "0580/32/M/J/25 Q12",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "(a) \nKim and Tom ask some students if they prefer Chemistry, Biology or Physics.\n\\newline\n\nKim draws the bars for Biology and Physics on a bar chart.\n\\newline\n\nTom draws the sector for Chemistry on a pie chart.\n\\newline\n\nUse the information from both diagrams to complete\n\n(i)  the bar chart\n\n the pie chart.\n\\newline\n\nGive one advantage of reading results from a bar chart compared to from a pie chart.\n\\newline\n\n...",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper32/Q12/Q12a.png"
+          },
+          {
+            "type": "text",
+            "content": "Kim and Tom ask some students if they prefer Chemistry, Biology or Physics.\n\\newline\n\nKim draws the bars for Biology and Physics on a bar chart.\n\\newline\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.6]\n% Axes\n\\draw[thick, ->] (0,0) -- (0,11);\n\\draw[thick] (0,0) -- (8,0);\n% Y-axis labels\n\\foreach \\y in {0,1,2,3,4,5,6,7,8,9,10} {\n    \\draw (-0.2,\\y) -- (0,\\y);\n    \\node[left] at (-0.2,\\y) {\\y};\n}\n% Grid lines\n\\foreach \\y in {1,2,3,4,5,6,7,8,9,10} {\n    \\draw[gray, dashed] (0,\\y) -- (8,\\y);\n}\n% X-axis labels\n\\node at (1.5,-0.5) {Chemistry};\n\\node at (4,-0.5) {Biology};\n\\node at (6.5,-0.5) {Physics};\n% Bars (Biology = 9, Physics = 3)\n\\fill[gray!50] (3,0) rectangle (5,9);\n\\fill[gray!50] (5.5,0) rectangle (7.5,3);\n% Y-axis title\n\\node[rotate=90] at (-1.5,5) {Number of students};\n\\end{tikzpicture}\n\\end{center}\n\nTom draws the sector for Chemistry on a pie chart.\n\\newline\n\n\\begin{center}\n\\begin{tikzpicture}[scale=1.5]\n% Circle\n\\draw[thick] (0,0) circle (2);\n% Chemistry sector (120 degrees)\n\\draw[thick] (0,0) -- (0,2);\n\\draw[thick] (0,0) -- (-1.732,-1);\n% Angle arc\n\\draw (0,0.5) arc (90:210:0.5);\n\\node at (-0.3,0.3) {$120°$};\n% Label\n\\node at (0.8,1.2) {Chemistry};\n\\end{tikzpicture}\n\\end{center}\n\nUse the information from both diagrams to complete"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "the bar chart"
+              }
+            ],
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "the pie chart.\n\\newline\n"
+              }
+            ],
+            "marks": 4,
+            "_compactMarks": true
+          }
+        ],
+        "_spacedBeginSubparts": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper32/Q12/Q12b.png"
+          },
+          {
+            "type": "text",
+            "content": "Give one advantage of reading results from a bar chart compared to from a pie chart.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "multiline",
+          "lines": 1,
+          "style": "dotfill"
+        },
+        "marks": 1,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "analyse",
+    "cmd": "complete",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\n\\part Kim and Tom ask some students if they prefer Chemistry, Biology or Physics.\n\nKim draws the bars for Biology and Physics on a bar chart.\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.6]\n% Axes\n\\draw[thick, ->] (0,0) -- (0,11);\n\\draw[thick] (0,0) -- (8,0);\n% Y-axis labels\n\\foreach \\y in {0,1,2,3,4,5,6,7,8,9,10} {\n    \\draw (-0.2,\\y) -- (0,\\y);\n    \\node[left] at (-0.2,\\y) {\\y};\n}\n% Grid lines\n\\foreach \\y in {1,2,3,4,5,6,7,8,9,10} {\n    \\draw[gray, dashed] (0,\\y) -- (8,\\y);\n}\n% X-axis labels\n\\node at (1.5,-0.5) {Chemistry};\n\\node at (4,-0.5) {Biology};\n\\node at (6.5,-0.5) {Physics};\n% Bars (Biology = 9, Physics = 3)\n\\fill[gray!50] (3,0) rectangle (5,9);\n\\fill[gray!50] (5.5,0) rectangle (7.5,3);\n% Y-axis title\n\\node[rotate=90] at (-1.5,5) {Number of students};\n\\end{tikzpicture}\n\\end{center}\n\nTom draws the sector for Chemistry on a pie chart.\n\n\\begin{center}\n\\begin{tikzpicture}[scale=1.5]\n% Circle\n\\draw[thick] (0,0) circle (2);\n% Chemistry sector (120 degrees)\n\\draw[thick] (0,0) -- (0,2);\n\\draw[thick] (0,0) -- (-1.732,-1);\n% Angle arc\n\\draw (0,0.5) arc (90:210:0.5);\n\\node at (-0.3,0.3) {$120°$};\n% Label\n\\node at (0.8,1.2) {Chemistry};\n\\end{tikzpicture}\n\\end{center}\n\nUse the information from both diagrams to complete\n\n\\begin{subparts}\n\n\\subpart the bar chart\n\\Marks{2}\n\n\\subpart the pie chart.\n\\Marks{4}\n\n\\end{subparts}\n\n\\part Give one advantage of reading results from a bar chart compared to from a pie chart.\n\n\\dotfill\n\\Marks{1}\n\n\\end{parts}",
+    "_partCmd": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper32/Q12/Q12a.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper32/Q12/Q12b.png"
+    ]
+  },
+  {
+    "id": "0580-2025MayJune-Paper32-Q13",
+    "paper": "2025MayJune-Paper32",
+    "qnum": 13,
+    "marks": 5,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.7",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Sequences",
+    "qtype": "linear sequence nth term, term-to-term rule",
+    "g": "sequence",
+    "src": "0580/32/M/J/25 Q13",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "(a) \n 2,  $e$,  $f$,  20,  \\ldots\n\nA linear sequence has a first term of 2 and a fourth term of 20.\n\\newline\n\nThe term-to-term rule for this sequence is add $k$.\n\\newline\n\nWork out the values of $e$, $f$ and $k$.\n\\newline\n\nThese are the first four terms of another sequence.\n\\newline\n\n9  7  5  3\nFind the $n$th term.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "\\hspace{3cm} 2, \\hspace{0.8cm} $e$, \\hspace{0.8cm} $f$, \\hspace{0.8cm} 20, \\hspace{0.8cm} \\ldots\n\nA linear sequence has a first term of 2 and a fourth term of 20.\n\\newline\n\nThe term-to-term rule for this sequence is add $k$.\n\\newline\n\nWork out the values of $e$, $f$ and $k$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "multiline",
+          "lines": 3,
+          "template": "$e = $ ____\\n$f = $ ____\\n$k = $ ____",
+          "lineSep": "blank"
+        },
+        "marks": 3,
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "These are the first four terms of another sequence.\n\\newline\n\n\\begin{center}\n9 \\hspace{1cm} 7 \\hspace{1cm} 5 \\hspace{1cm} 3\n\\end{center}\n\nFind the $n$th term.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "marks": 2,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\n\\part \\hspace{3cm} 2, \\hspace{0.8cm} $e$, \\hspace{0.8cm} $f$, \\hspace{0.8cm} 20, \\hspace{0.8cm} \\ldots\n\nA linear sequence has a first term of 2 and a fourth term of 20.\n\nThe term-to-term rule for this sequence is add $k$.\n\nWork out the values of $e$, $f$ and $k$.\n\n\\AnswerLine[$e = $][]\n\\AnswerLine[$f = $][]\n\\AnswerLine[$k = $][]\n\\Marks{3}\n\n\\part These are the first four terms of another sequence.\n\n\\begin{center}\n9 \\hspace{1cm} 7 \\hspace{1cm} 5 \\hspace{1cm} 3\n\\end{center}\n\nFind the $n$th term.\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{parts}",
+    "_partCmd": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper32-Q14",
+    "paper": "2025MayJune-Paper32",
+    "qnum": 14,
+    "marks": 4,
+    "topics": [
+      "Number"
+    ],
+    "s": null,
+    "d": 1,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/32/M/J/25 Q14",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "(a) \n $P = 6a + 5b$\n\nFind the value of $b$ when $P = 25$ and $a = 3$.\n\\newline\n\nMake $T$ the subject of the formula $W = kT + y$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "\\hspace{1cm} $P = 6a + 5b$\n\nFind the value of $b$ when $P = 25$ and $a = 3$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$b = $",
+          "_compactAnswer": true
+        },
+        "marks": 2,
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Make $T$ the subject of the formula $W = kT + y$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$T = $",
+          "_compactAnswer": true
+        },
+        "marks": 2,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "",
+    "cmd": "rearrange",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\n\\part \\hspace{1cm} $P = 6a + 5b$\n\nFind the value of $b$ when $P = 25$ and $a = 3$.\n\\AnswerLine[$b = $][]\n\\Marks{2}\n\n\\part Make $T$ the subject of the formula $W = kT + y$.\n\\AnswerLine[$T = $][]\n\\Marks{2}\n\n\\end{parts}",
+    "_partCmd": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper32-Q15",
+    "paper": "2025MayJune-Paper32",
+    "qnum": 15,
+    "marks": 2,
+    "topics": [
+      "Coordinate geometry"
+    ],
+    "s": "3.5",
+    "d": 1,
+    "cat": "coord",
+    "topic": "Parallel and perpendicular lines",
+    "qtype": "equation of a straight line",
+    "g": "mixed",
+    "src": "0580/32/M/J/25 Q15",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "The equation of a line is $y = -5x + 7$.\n\\newline\n\n(a) \nWrite down the gradient of this line.\n\\newline\n\nFind the coordinates of the point where this line crosses the $y$-axis.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down the gradient of this line.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "marks": 1,
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the coordinates of the point where this line crosses the $y$-axis.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$($ \\hspace{1cm} $,$ \\hspace{1cm} $)$",
+          "_compactAnswer": true
+        },
+        "marks": 1,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The equation of a line is $y = -5x + 7$.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "The equation of a line is $y = -5x + 7$.\n\n\\begin{parts}\n\n\\part Write down the gradient of this line.\n\\AnswerLine[][]\n\\Marks{1}\n\n\\part Find the coordinates of the point where this line crosses the $y$-axis.\n\\AnswerLine[$($ \\hspace{1cm} $,$ \\hspace{1cm} $)$][]\n\\Marks{1}\n\n\\end{parts}",
+    "_partCmd": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper32-Q16",
+    "paper": "2025MayJune-Paper32",
+    "qnum": 16,
+    "marks": 4,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.11",
+    "d": 1,
+    "cat": "number",
+    "topic": "Money and finance",
+    "qtype": "divide quantity in ratio, simplify ratio, ratio as fraction",
+    "g": "simplify",
+    "src": "0580/32/M/J/25 Q16",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "(a) \nSam spends \\$187 on electricity and gas.\n\\newline\n\nThe ratio electricity : gas $= 8 : 3$.\n\\newline\n\nWork out how much Sam spends on electricity.\n\\newline\n\nJai spends \\$180 on electricity and \\$150 on gas.\n\\newline\n\nWrite down the ratio electricity : gas in its simplest form.\n\\newline\n\nKat spends money on electricity and gas in the ratio\n\nelectricity : gas $= E : G$.\n\\newline\nWrite down an expression, in terms of $E$ and $G$, for the fraction she spends on gas.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Sam spends \\$187 on electricity and gas.\n\\newline\n\nThe ratio electricity : gas $= 8 : 3$.\n\\newline\n\nWork out how much Sam spends on electricity.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "\\$",
+          "_compactAnswer": true
+        },
+        "marks": 2,
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Jai spends \\$180 on electricity and \\$150 on gas.\n\\newline\n\nWrite down the ratio electricity : gas in its simplest form.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": " : \\hspace{1cm}",
+          "_compactAnswer": true
+        },
+        "marks": 1,
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Kat spends money on electricity and gas in the ratio\n\n\\begin{center}\nelectricity : gas $= E : G$.\n\\newline\n\\end{center}\n\nWrite down an expression, in terms of $E$ and $G$, for the fraction she spends on gas.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "marks": 1,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\n\\part Sam spends \\$187 on electricity and gas.\n\nThe ratio electricity : gas $= 8 : 3$.\n\nWork out how much Sam spends on electricity.\n\\AnswerLine[\\$][]\n\\Marks{2}\n\n\\part Jai spends \\$180 on electricity and \\$150 on gas.\n\nWrite down the ratio electricity : gas in its simplest form.\n\\AnswerLine[][ : \\hspace{1cm}]\n\\Marks{1}\n\n\\part Kat spends money on electricity and gas in the ratio\n\n\\begin{center}\nelectricity : gas $= E : G$.\n\\end{center}\n\nWrite down an expression, in terms of $E$ and $G$, for the fraction she spends on gas.\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{parts}",
+    "_partCmd": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper32-Q17",
+    "paper": "2025MayJune-Paper32",
+    "qnum": 17,
+    "marks": 3,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.13",
+    "d": 1,
+    "cat": "number",
+    "topic": "Electronic calculators",
+    "qtype": "compound interest calculation",
+    "g": "mixed",
+    "src": "0580/32/M/J/25 Q17",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "Rick invests \\$6000 for 5 years at a rate of 9\\% per year compound interest.\n\\newline\n\nCalculate the total interest earned during the 5 years.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Rick invests \\$6000 for 5 years at a rate of 9\\% per year compound interest.\n\\newline\n\nCalculate the total interest earned during the 5 years.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "\\$"
+    },
+    "_rawBody": "Rick invests \\$6000 for 5 years at a rate of 9\\% per year compound interest.\n\nCalculate the total interest earned during the 5 years.\n\n\\AnswerLine[\\$][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper32-Q18",
+    "paper": "2025MayJune-Paper32",
+    "qnum": 18,
+    "marks": 4,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.12",
+    "d": 1,
+    "cat": "number",
+    "topic": "Set notation",
+    "qtype": "unit conversion for rates, percentage increase",
+    "g": "mixed",
+    "src": "0580/32/M/J/25 Q18",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "A factory produces brass at a rate of 172 kilograms per hour.\n\\newline\n\n(a) \nConvert this rate into grams per second.\n\\newline\n\nThe rate is increased to 176 kilograms per hour.\n\\newline\n\nCalculate the percentage increase in the rate.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Convert this rate into grams per second.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "g/s",
+          "_compactAnswer": true
+        },
+        "marks": 2,
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The rate is increased to 176 kilograms per hour.\n\\newline\n\nCalculate the percentage increase in the rate.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "\\%",
+          "_compactAnswer": true
+        },
+        "marks": 2,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "A factory produces brass at a rate of 172 kilograms per hour.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "A factory produces brass at a rate of 172 kilograms per hour.\n\n\\begin{parts}\n\n\\part Convert this rate into grams per second.\n\\AnswerLine[][g/s]\n\\Marks{2}\n\n\\part The rate is increased to 176 kilograms per hour.\n\nCalculate the percentage increase in the rate.\n\\AnswerLine[][\\%]\n\\Marks{2}\n\n\\end{parts}",
+    "_partCmd": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper32-Q19",
+    "paper": "2025MayJune-Paper32",
+    "qnum": 19,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.8",
+    "d": 1,
+    "cat": "number",
+    "topic": "Ratio, rate and proportion",
+    "qtype": "conversion to standard form, calculations with standard form",
+    "g": "mixed",
+    "src": "0580/32/M/J/25 Q19",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "(a) \nWrite $0.000\\,000\\,0347$ in standard form.\n\\newline\n\nCalculate $3 \\times 10^4 \\times 5 \\times 10^6$.\n\\newline\n\nGive your answer in standard form.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Write $0.000\\,000\\,0347$ in standard form.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "marks": 1,
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Calculate $3 \\times 10^4 \\times 5 \\times 10^6$.\n\\newline\n\nGive your answer in standard form.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "marks": 1,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\n\\part Write $0.000\\,000\\,0347$ in standard form.\n\\AnswerLine[][]\n\\Marks{1}\n\n\\part Calculate $3 \\times 10^4 \\times 5 \\times 10^6$.\n\nGive your answer in standard form.\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{parts}",
+    "_partCmd": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper32-Q20",
+    "paper": "2025MayJune-Paper32",
+    "qnum": 20,
+    "marks": 3,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.6",
+    "d": 1,
+    "cat": "number",
+    "topic": "Standard form",
+    "qtype": "solving linear equations",
+    "g": "linear",
+    "src": "0580/32/M/J/25 Q20",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "Solve.\n\\newline\n\n(a) \n$x + 3 = 3$\n\n$\\dfrac{5y}{3} = 8$",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "$x + 3 = 3$"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x = $",
+          "_compactAnswer": true
+        },
+        "marks": 1,
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "$\\dfrac{5y}{3} = 8$"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$y = $",
+          "_compactAnswer": true
+        },
+        "marks": 2,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "solve",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Solve.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "Solve.\n\n\\begin{parts}\n\n\\part $x + 3 = 3$\n\\AnswerLine[$x = $][]\n\\Marks{1}\n\n\\part $\\dfrac{5y}{3} = 8$\n\\AnswerLine[$y = $][]\n\\Marks{2}\n\n\\end{parts}",
+    "_partCmd": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper32-Q21",
+    "paper": "2025MayJune-Paper32",
+    "qnum": 21,
+    "marks": 3,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.4",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Algebraic fractions",
+    "qtype": "simplifying expressions with indices",
+    "g": "simplify",
+    "src": "0580/32/M/J/25 Q21",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "Simplify.\n\\newline\n\n(a) \n$(w^3)^{10}$\n\n$t^6 v^7 \\times t^3 v^{-2}$",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "$(w^3)^{10}$"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "marks": 1,
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "$t^6 v^7 \\times t^3 v^{-2}$"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "marks": 2,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Simplify.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "Simplify.\n\n\\begin{parts}\n\n\\part $(w^3)^{10}$\n\\AnswerLine[][]\n\\Marks{1}\n\n\\part $t^6 v^7 \\times t^3 v^{-2}$\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{parts}",
+    "_partCmd": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper32-Q22",
+    "paper": "2025MayJune-Paper32",
+    "qnum": 22,
+    "marks": 7,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "3.4",
+    "d": 1,
+    "cat": "coord",
+    "topic": "Equation of a line",
+    "qtype": "length and midpoint",
+    "g": "mixed",
+    "src": "0580/32/M/J/25 Q22",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "In this question, all lengths are in centimetres.\n\\newline\n\nThe diagram shows a right-angled triangle.\n\\newline\n\n(a) \nWrite down an expression, in terms of $x$, for the perimeter of the triangle.\n\\newline\n\nGive your answer in its simplest form.\n\\newline\n\nThe perimeter of the triangle is $40\\,\\text{cm}$.\n\\newline\n\nWork out the value of $x$.\n\\newline\n\nWork out the area of the triangle.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down an expression, in terms of $x$, for the perimeter of the triangle.\n\\newline\n\nGive your answer in its simplest form.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "marks": 2,
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The perimeter of the triangle is $40\\,\\text{cm}$.\n\\newline\n\nWork out the value of $x$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x = $",
+          "_compactAnswer": true
+        },
+        "marks": 2,
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Work out the area of the triangle.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "cm$^2$",
+          "_compactAnswer": true
+        },
+        "marks": 3,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "In this question, all lengths are in centimetres.\n\\newline\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n% Triangle\n\\coordinate (A) at (0,0);\n\\coordinate (B) at (4,0);\n\\coordinate (C) at (0,3);\n% Draw triangle\n\\draw[thick] (A) -- (B) -- (C) -- cycle;\n% Right angle mark\n\\draw (0,0.3) -- (0.3,0.3) -- (0.3,0);\n% Labels\n\\node[below] at (2,0) {$2x + 2$};\n\\node[left] at (0,1.5) {$2x - 5$};\n\\node[above right] at (2,1.8) {$4x - 9$};\n% NOT TO SCALE\n\\node at (5.5,1.5) {NOT TO};\n\\node at (5.5,1) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nThe diagram shows a right-angled triangle.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper32/Q22/Q22.png"
+      }
+    ],
+    "_rawBody": "In this question, all lengths are in centimetres.\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n% Triangle\n\\coordinate (A) at (0,0);\n\\coordinate (B) at (4,0);\n\\coordinate (C) at (0,3);\n% Draw triangle\n\\draw[thick] (A) -- (B) -- (C) -- cycle;\n% Right angle mark\n\\draw (0,0.3) -- (0.3,0.3) -- (0.3,0);\n% Labels\n\\node[below] at (2,0) {$2x + 2$};\n\\node[left] at (0,1.5) {$2x - 5$};\n\\node[above right] at (2,1.8) {$4x - 9$};\n% NOT TO SCALE\n\\node at (5.5,1.5) {NOT TO};\n\\node at (5.5,1) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nThe diagram shows a right-angled triangle.\n\n\\begin{parts}\n\n\\part Write down an expression, in terms of $x$, for the perimeter of the triangle.\n\nGive your answer in its simplest form.\n\\AnswerLine[][]\n\\Marks{2}\n\n\\part The perimeter of the triangle is 40\\,cm.\n\nWork out the value of $x$.\n\\AnswerLine[$x = $][]\n\\Marks{2}\n\n\\part Work out the area of the triangle.\n\\AnswerLine[][cm$^2$]\n\\Marks{3}\n\n\\end{parts}",
+    "_partCmd": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper32/Q22/Q22.png"
+    ]
+  },
+  {
+    "id": "0580-2025MayJune-Paper32-Q23",
+    "paper": "2025MayJune-Paper32",
+    "qnum": 23,
+    "marks": 4,
+    "topics": [
+      "Mensuration"
+    ],
+    "s": "5.4",
+    "d": 1,
+    "cat": "mensuration",
+    "topic": "Volume",
+    "qtype": "surface area and volume",
+    "g": "mixed",
+    "src": "0580/32/M/J/25 Q23",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "A sphere has radius $8\\,\\text{cm}$.\n\\newline\n\nA cone has radius $8\\,\\text{cm}$ and height $h$.\n\\newline\n\nThe sphere and the cone have the same volume.\n\\newline\n\nWork out the height, $h$, of the cone.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "A sphere has radius $8\\,\\text{cm}$.\n\\newline\n\nA cone has radius $8\\,\\text{cm}$ and height $h$.\n\\newline\n\nThe sphere and the cone have the same volume.\n\\newline\n\nWork out the height, $h$, of the cone.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "$h = $",
+      "suffix": "cm"
+    },
+    "_rawBody": "A sphere has radius 8\\,cm.\n\nA cone has radius 8\\,cm and height $h$.\n\nThe sphere and the cone have the same volume.\n\nWork out the height, $h$, of the cone.\n\n\\AnswerLine[$h = $][cm]\n\\Marks{4}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper32-Q24",
+    "paper": "2025MayJune-Paper32",
+    "qnum": 24,
+    "marks": 5,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry"
+    ],
+    "s": "3.1",
+    "d": 1,
+    "cat": "coord",
+    "topic": "Coordinates",
+    "qtype": "coordinates reading/plotting",
+    "g": "graph",
+    "src": "0580/32/M/J/25 Q24",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "The diagram shows two right-angled triangles.\n\\newline\n\nCalculate the value of $d$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The diagram shows two right-angled triangles.\n\\newline\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.6]\n% Points\n\\coordinate (A) at (0,0);\n\\coordinate (B) at (3,8);\n\\coordinate (C) at (10,8);\n\\coordinate (D) at (3,0);\n% Draw triangles\n\\draw[thick] (A) -- (B) -- (D) -- cycle;\n\\draw[thick] (B) -- (C) -- (D);\n% Right angle marks\n\\draw (3,0.4) -- (3.4,0.4) -- (3.4,0);\n\\draw (3,7.6) -- (3.4,7.6) -- (3.4,8);\n% Labels\n\\node[left] at (1.5,4) {$14.7\\,\\text{m}$};\n\\node[below] at (1.5,0) {$10.8\\,\\text{m}$};\n\\node[above] at (6.5,8) {$d\\,\\text{m}$};\n\\node[above right] at (D) {$52°$};\n\\node[below left] at (A) {$A$};\n\\node[above left] at (B) {$B$};\n\\node[above right] at (C) {$C$};\n\\node[below right] at (D) {$D$};\n% NOT TO SCALE\n\\node at (12,5) {NOT TO};\n\\node at (12,4) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nCalculate the value of $d$.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper32/Q24/Q24.png"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "$d = $"
+    },
+    "_rawBody": "The diagram shows two right-angled triangles.\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.6]\n% Points\n\\coordinate (A) at (0,0);\n\\coordinate (B) at (3,8);\n\\coordinate (C) at (10,8);\n\\coordinate (D) at (3,0);\n% Draw triangles\n\\draw[thick] (A) -- (B) -- (D) -- cycle;\n\\draw[thick] (B) -- (C) -- (D);\n% Right angle marks\n\\draw (3,0.4) -- (3.4,0.4) -- (3.4,0);\n\\draw (3,7.6) -- (3.4,7.6) -- (3.4,8);\n% Labels\n\\node[left] at (1.5,4) {$14.7$\\,m};\n\\node[below] at (1.5,0) {$10.8$\\,m};\n\\node[above] at (6.5,8) {$d$\\,m};\n\\node[above right] at (D) {$52°$};\n\\node[below left] at (A) {$A$};\n\\node[above left] at (B) {$B$};\n\\node[above right] at (C) {$C$};\n\\node[below right] at (D) {$D$};\n% NOT TO SCALE\n\\node at (12,5) {NOT TO};\n\\node at (12,4) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nCalculate the value of $d$.\n\n\\AnswerLine[$d = $][]\n\\Marks{5}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper32/Q24/Q24.png"
+    ]
+  }
+]

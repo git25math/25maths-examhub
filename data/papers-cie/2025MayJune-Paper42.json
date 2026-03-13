@@ -1,0 +1,1641 @@
+[
+  {
+    "id": "0580-2025MayJune-Paper42-Q01",
+    "paper": "2025MayJune-Paper42",
+    "qnum": 1,
+    "marks": 1,
+    "topics": [
+      "Geometry",
+      "Transformations and vectors"
+    ],
+    "s": "4.5",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Similarity and congruence",
+    "qtype": "symmetry",
+    "g": "mixed",
+    "src": "0580/42/M/J/25 Q01",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "A quadrilateral has these properties\n\nthe diagonals are the only lines of symmetry\nit has rotational symmetry of order 2.\n\\newline\nWrite down the mathematical name of this quadrilateral.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 0,
+        "content": [],
+        "answer": {
+          "type": "number"
+        }
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [],
+        "answer": {
+          "type": "number"
+        }
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "write",
+    "stem": [
+      {
+        "type": "text",
+        "content": "A quadrilateral has these properties"
+      },
+      {
+        "type": "list",
+        "style": "bullet",
+        "items": [
+          "the diagonals are the only lines of symmetry",
+          "it has rotational symmetry of order 2."
+        ]
+      },
+      {
+        "type": "text",
+        "content": "Write down the mathematical name of this quadrilateral.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "A quadrilateral has these properties\n\n\\begin{itemize}\n\\item the diagonals are the only lines of symmetry\n\\item it has rotational symmetry of order 2.\n\\end{itemize}\n\nWrite down the mathematical name of this quadrilateral.\n\n\\AnswerLine[][]\n\\Marks{1}",
+    "answer": {
+      "type": "number"
+    },
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper42-Q02",
+    "paper": "2025MayJune-Paper42",
+    "qnum": 2,
+    "marks": 1,
+    "topics": [
+      "Mensuration"
+    ],
+    "s": "5.2",
+    "d": 2,
+    "cat": "mensuration",
+    "topic": "Circles",
+    "qtype": "area and perimeter",
+    "g": "mixed",
+    "src": "0580/42/M/J/25 Q02",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "The diagram shows the net of a solid.\n\\newline\n\nWrite down the mathematical name of this solid.\n\\newline\n",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "recall",
+    "cmd": "write",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{center}"
+      },
+      {
+        "type": "figure",
+        "src": "Figures/Q02-PrismNet.tex"
+      },
+      {
+        "type": "text",
+        "content": "\\end{center}\n\nThe diagram shows the net of a solid.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "Write down the mathematical name of this solid.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "\\begin{center}\n\n\\relinput{Figures/Q02-PrismNet.tex}\n\n\\end{center}\n\nThe diagram shows the net of a solid.\n\n\\vgap\n\nWrite down the mathematical name of this solid.\n\n\\AnswerLine[][]\n\\Marks{1}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper42/Q02/Q02-PrismNet.png"
+    ]
+  },
+  {
+    "id": "0580-2025MayJune-Paper42-Q03",
+    "paper": "2025MayJune-Paper42",
+    "qnum": 3,
+    "marks": 3,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.11",
+    "d": 2,
+    "cat": "number",
+    "topic": "Money and finance",
+    "qtype": "ratio and proportion calculation",
+    "g": "proportion",
+    "src": "0580/42/M/J/25 Q03",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "\\qquad Mass of box $A$ : Mass of box $B$ = 4 : 7\n\nThe mass of box $B$ is $2.4\\,\\text{kg}$ more than the mass of box $A$.\n\\newline\n\nCalculate the mass of box $A$ and the mass of box $B$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\qquad Mass of box $A$ : Mass of box $B$ = 4 : 7"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "The mass of box $B$ is $2.4\\,\\text{kg}$ more than the mass of box $A$.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "Calculate the mass of box $A$ and the mass of box $B$.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "multiline",
+      "lines": 2,
+      "template": "box $A$ =  ____ kg\\nbox $B$ =  ____ kg",
+      "lineSep": "blank"
+    },
+    "_rawBody": "\\qquad Mass of box $A$ : Mass of box $B$ = 4 : 7\n\n\\vgap\n\nThe mass of box $B$ is 2.4\\,kg more than the mass of box $A$.\n\n\\vgap\n\nCalculate the mass of box $A$ and the mass of box $B$.\n\n\\AnswerLine[box $A$ = ][kg]\n\n\\AnswerLine[box $B$ = ][kg]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper42-Q04",
+    "paper": "2025MayJune-Paper42",
+    "qnum": 4,
+    "marks": 2,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.6",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/42/M/J/25 Q04",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "$ABCD$ is a trapezium.\n\\newline\n\nWork out the area of the trapezium.\n\\newline\n",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{center}"
+      },
+      {
+        "type": "figure",
+        "src": "Figures/Q04-TrapeziumABCD.tex"
+      },
+      {
+        "type": "text",
+        "content": "\\end{center}\n\n$ABCD$ is a trapezium.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "Work out the area of the trapezium.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "cm$^2$"
+    },
+    "_rawBody": "\\begin{center}\n\n\\relinput{Figures/Q04-TrapeziumABCD.tex}\n\n\\end{center}\n\n$ABCD$ is a trapezium.\n\n\\vgap\n\nWork out the area of the trapezium.\n\n\\AnswerLine[][cm$^2$]\n\\Marks{2}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper42/Q04/Q04-TrapeziumABCD.png"
+    ]
+  },
+  {
+    "id": "0580-2025MayJune-Paper42-Q05",
+    "paper": "2025MayJune-Paper42",
+    "qnum": 5,
+    "marks": 1,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.16",
+    "d": 2,
+    "cat": "number",
+    "topic": "Upper and lower bounds",
+    "qtype": "currency conversion",
+    "g": "mixed",
+    "src": "0580/42/M/J/25 Q05",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "Scott changes \\$300 into pounds (\\textsterling).\n\\newline\n\nThe exchange rate is \\textsterling 1 = \\$1.20 .\n\\newline\n\nCalculate the amount Scott receives.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Scott changes \\$300 into pounds (\\textsterling).\n\\newline\n\nThe exchange rate is \\textsterling 1 = \\$1.20 .\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "Calculate the amount Scott receives.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "pounds"
+    },
+    "_rawBody": "Scott changes \\$300 into pounds (\\textsterling).\n\nThe exchange rate is \\textsterling 1 = \\$1.20 .\n\n\\vgap\n\nCalculate the amount Scott receives.\n\n\\AnswerLine[][pounds]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper42-Q06",
+    "paper": "2025MayJune-Paper42",
+    "qnum": 6,
+    "marks": 3,
+    "topics": [
+      "Mensuration"
+    ],
+    "s": "5.4",
+    "d": 2,
+    "cat": "mensuration",
+    "topic": "Volume",
+    "qtype": "surface area and volume",
+    "g": "mixed",
+    "src": "0580/42/M/J/25 Q06",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "A solid wooden cone has base radius $4\\,\\text{cm}$ and height $12\\,\\text{cm}$.\n\\newline\n\nThe density of the wood is $0.74\\,\\text{g}$/cm$^3$.\n\\newline\n\nCalculate the mass of the cone.\n\\newline\n\n\\[\n\\left[ Density = \\frac{Mass}{Volume} \\right]\n\\]",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "A solid wooden cone has base radius $4\\,\\text{cm}$ and height $12\\,\\text{cm}$.\n\\newline\n\nThe density of the wood is $0.74\\,\\text{g}$/cm$^3$.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "Calculate the mass of the cone.\n\\newline\n\n\\[\n\\left[ \\text{Density} = \\frac{\\text{Mass}}{\\text{Volume}} \\right]\n\\]"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "g"
+    },
+    "_rawBody": "A solid wooden cone has base radius 4\\,cm and height 12\\,cm.\n\nThe density of the wood is 0.74\\,g/cm$^3$.\n\n\\vgap\n\nCalculate the mass of the cone.\n\n\\[\n\\left[ \\text{Density} = \\frac{\\text{Mass}}{\\text{Volume}} \\right]\n\\]\n\n\\AnswerLine[][g]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper42-Q07",
+    "paper": "2025MayJune-Paper42",
+    "qnum": 7,
+    "marks": 2,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.5",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Equations",
+    "qtype": "changing the subject of a formula",
+    "g": "mixed",
+    "src": "0580/42/M/J/25 Q07",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "\\[ y = mx + c \\]\n\nRearrange the formula to make $m$ the subject.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "rearrange",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\[ y = mx + c \\]\n\nRearrange the formula to make $m$ the subject.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "$m = $"
+    },
+    "_rawBody": "\\[ y = mx + c \\]\n\nRearrange the formula to make $m$ the subject.\n\n\\AnswerLine[$m = $][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper42-Q08",
+    "paper": "2025MayJune-Paper42",
+    "qnum": 8,
+    "marks": 1,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.6",
+    "d": 2,
+    "cat": "number",
+    "topic": "Standard form",
+    "qtype": "numerical calculation",
+    "g": "mixed",
+    "src": "0580/42/M/J/25 Q08",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "Calculate.\n\\newline\n\n\\[ \\frac{2.1^2 - 1.9}{0.5} \\]",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Calculate.\n\\newline\n\n\\[ \\frac{2.1^2 - 1.9}{0.5} \\]"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Calculate.\n\n\\[ \\frac{2.1^2 - 1.9}{0.5} \\]\n\n\\AnswerLine[][]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper42-Q09",
+    "paper": "2025MayJune-Paper42",
+    "qnum": 9,
+    "marks": 3,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.5",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Equations",
+    "qtype": "solving simultaneous linear equations",
+    "g": "simul-linear",
+    "src": "0580/42/M/J/25 Q09",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "Solve the simultaneous equations.\n\\newline\n\nYou must show all your working.\n\\newline\n\n\\begin{align*}\n2w - 3y &= 11 \\\\\n3w + y &= 11\n\\end{align*}",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "solve",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Solve the simultaneous equations.\n\\newline\n\nYou must show all your working.\n\\newline\n\n\\begin{align*}\n2w - 3y &= 11 \\\\\n3w + y &= 11\n\\end{align*}"
+      }
+    ],
+    "answer": {
+      "type": "multiline",
+      "lines": 2,
+      "template": "$w = $ ____\\n$y = $ ____",
+      "lineSep": "blank"
+    },
+    "_rawBody": "Solve the simultaneous equations.\n\nYou must show all your working.\n\n\\begin{align*}\n2w - 3y &= 11 \\\\\n3w + y &= 11\n\\end{align*}\n\n\\AnswerLine[$w = $][]\n\n\\AnswerLine[$y = $][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper42-Q10",
+    "paper": "2025MayJune-Paper42",
+    "qnum": 10,
+    "marks": 3,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.16",
+    "d": 2,
+    "cat": "number",
+    "topic": "Upper and lower bounds",
+    "qtype": "Money problem with algebraic setup",
+    "g": "mixed",
+    "src": "0580/42/M/J/25 Q10",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "A group of 12 adults and 9 children travel on a bus.\n\\newline\n\nThe cost of an adult ticket is \\$$n$.\n\\newline\n\nThe cost of a child ticket is \\$$(n-10)$.\n\\newline\n\nThe total cost of the tickets is \\$277.50 .\n\\newline\n\nFind the cost of one adult ticket.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "A group of 12 adults and 9 children travel on a bus.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "The cost of an adult ticket is \\$$n$.\n\\newline\n\nThe cost of a child ticket is \\$$(n-10)$.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "The total cost of the tickets is \\$277.50 .\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "Find the cost of one adult ticket.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "\\$"
+    },
+    "_rawBody": "A group of 12 adults and 9 children travel on a bus.\n\n\\vgap\n\nThe cost of an adult ticket is \\$$n$.\n\nThe cost of a child ticket is \\$$(n-10)$.\n\n\\vgap\n\nThe total cost of the tickets is \\$277.50 .\n\n\\vgap\n\nFind the cost of one adult ticket.\n\n\\AnswerLine[\\$][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper42-Q11",
+    "paper": "2025MayJune-Paper42",
+    "qnum": 11,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.13",
+    "d": 2,
+    "cat": "number",
+    "topic": "Electronic calculators",
+    "qtype": "Reverse percentage calculation",
+    "g": "mixed",
+    "src": "0580/42/M/J/25 Q11",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "In a sale, the original price of a shirt is reduced by 15\\%.\n\\newline\n\nThe sale price of the shirt is \\$23.63 .\n\\newline\n\nFind the original price of the shirt.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "In a sale, the original price of a shirt is reduced by 15\\%.\n\\newline\n\nThe sale price of the shirt is \\$23.63 .\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "Find the original price of the shirt.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "\\$"
+    },
+    "_rawBody": "In a sale, the original price of a shirt is reduced by 15\\%.\n\nThe sale price of the shirt is \\$23.63 .\n\n\\vgap\n\nFind the original price of the shirt.\n\n\\AnswerLine[\\$][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper42-Q12",
+    "paper": "2025MayJune-Paper42",
+    "qnum": 12,
+    "marks": 2,
+    "topics": [
+      "Number",
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "1.10",
+    "d": 2,
+    "cat": "number",
+    "topic": "Time",
+    "qtype": "Lower bound of perimeter calculation",
+    "g": "mixed",
+    "src": "0580/42/M/J/25 Q12",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "The length of a rectangle is $16\\,\\text{cm}$, correct to the nearest centimetre.\n\\newline\n\nThe width of the rectangle is $14\\,\\text{cm}$, correct to the nearest centimetre.\n\\newline\n\nCalculate the lower bound of the perimeter of the rectangle.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The length of a rectangle is $16\\,\\text{cm}$, correct to the nearest centimetre.\n\\newline\n\nThe width of the rectangle is $14\\,\\text{cm}$, correct to the nearest centimetre.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "Calculate the lower bound of the perimeter of the rectangle.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "cm"
+    },
+    "_rawBody": "The length of a rectangle is 16\\,cm, correct to the nearest centimetre.\n\nThe width of the rectangle is 14\\,cm, correct to the nearest centimetre.\n\n\\vgap\n\nCalculate the lower bound of the perimeter of the rectangle.\n\n\\AnswerLine[][cm]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper42-Q13",
+    "paper": "2025MayJune-Paper42",
+    "qnum": 13,
+    "marks": 4,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.4",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Circle theorems",
+    "qtype": "similarity and congruence",
+    "g": "mixed",
+    "src": "0580/42/M/J/25 Q13",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "Triangle $ABC$ and triangle $PQR$ are mathematically similar.\n\\newline\n\n(a) Calculate the length of $PR$.\n\\newline\n\n(b) Triangle $ABC$ and triangle $PQR$ are the cross-sections of two prisms.\n\\newline\n\nThese prisms are mathematically similar.\n\\newline\n\nThe volume of the smaller prism is $1120\\,\\text{cm}^3$.\n\\newline\n\nCalculate the volume of the larger prism.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Calculate the length of $PR$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$PR = $",
+          "suffix": "cm",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Triangle $ABC$ and triangle $PQR$ are the cross-sections of two prisms.\n\\newline\n\nThese prisms are mathematically similar.\n\\newline\n\nThe volume of the smaller prism is $1120\\,\\text{cm}^3$.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "text",
+            "content": "Calculate the volume of the larger prism.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "cm$^3$",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{center}"
+      },
+      {
+        "type": "figure",
+        "src": "Figures/Q13-SimilarTriangles.tex"
+      },
+      {
+        "type": "text",
+        "content": "\\end{center}\n\nTriangle $ABC$ and triangle $PQR$ are mathematically similar.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "\\begin{center}\n\n\\relinput{Figures/Q13-SimilarTriangles.tex}\n\n\\end{center}\n\nTriangle $ABC$ and triangle $PQR$ are mathematically similar.\n\n\\begin{parts}\n\n\\item Calculate the length of $PR$.\n\\AnswerLine[$PR = $][cm]\n\\Marks{2}\n\n\\item Triangle $ABC$ and triangle $PQR$ are the cross-sections of two prisms.\n\nThese prisms are mathematically similar.\n\nThe volume of the smaller prism is 1120\\,cm$^3$.\n\n\\vgap\n\nCalculate the volume of the larger prism.\n\\AnswerLine[][cm$^3$]\n\\Marks{2}\n\n\\end{parts}",
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper42/Q13/Q13-SimilarTriangles.png"
+    ]
+  },
+  {
+    "id": "0580-2025MayJune-Paper42-Q14",
+    "paper": "2025MayJune-Paper42",
+    "qnum": 14,
+    "marks": 2,
+    "topics": [
+      "Number",
+      "Algebra and graphs"
+    ],
+    "s": "2.2",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Rearranging formulae",
+    "qtype": "factorisation by grouping",
+    "g": "simplify",
+    "src": "0580/42/M/J/25 Q14",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "Factorise.\n\\newline\n\n\\[ 5x - 10 - ax + 2a \\]",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Factorise.\n\\newline\n\n\\[ 5x - 10 - ax + 2a \\]"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Factorise.\n\n\\[ 5x - 10 - ax + 2a \\]\n\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper42-Q15",
+    "paper": "2025MayJune-Paper42",
+    "qnum": 15,
+    "marks": 2,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.6",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/42/M/J/25 Q15",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "The interior angle of a regular polygon is $172°$.\n\\newline\n\nFind the number of sides of this polygon.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The interior angle of a regular polygon is $172°$.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "Find the number of sides of this polygon.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "The interior angle of a regular polygon is $172°$.\n\n\\vgap\n\nFind the number of sides of this polygon.\n\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper42-Q16",
+    "paper": "2025MayJune-Paper42",
+    "qnum": 16,
+    "marks": 4,
+    "topics": [
+      "Probability"
+    ],
+    "s": "8.3",
+    "d": 2,
+    "cat": "probability",
+    "topic": "Tree diagrams",
+    "qtype": "combined events",
+    "g": "mixed",
+    "src": "0580/42/M/J/25 Q16",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "On any day, the probability that the weather will be sunny is 0.7 .\n\\newline\n\n(a) Find the probability that on any day the weather will not be sunny.\n\\newline\n\n(b) When the weather is sunny, the probability that Rohit goes for a walk is 0.9 .\n\\newline\n\nWhen the weather is not sunny, the probability that Rohit goes for a walk is 0.2 .\n\\newline\n\nFind the probability that on any day Rohit goes for a walk.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the probability that on any day the weather will not be sunny.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "When the weather is sunny, the probability that Rohit goes for a walk is 0.9 .\n\\newline\n\nWhen the weather is not sunny, the probability that Rohit goes for a walk is 0.2 .\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "text",
+            "content": "Find the probability that on any day Rohit goes for a walk.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "On any day, the probability that the weather will be sunny is 0.7 .\n\\newline\n"
+      }
+    ],
+    "_rawBody": "On any day, the probability that the weather will be sunny is 0.7 .\n\n\\begin{parts}\n\n\\item Find the probability that on any day the weather will not be sunny.\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item When the weather is sunny, the probability that Rohit goes for a walk is 0.9 .\n\nWhen the weather is not sunny, the probability that Rohit goes for a walk is 0.2 .\n\n\\vgap\n\nFind the probability that on any day Rohit goes for a walk.\n\\AnswerLine[][]\n\\Marks{3}\n\n\\end{parts}"
+  },
+  {
+    "id": "0580-2025MayJune-Paper42-Q17",
+    "paper": "2025MayJune-Paper42",
+    "qnum": 17,
+    "marks": 10,
+    "topics": [
+      "Number"
+    ],
+    "s": null,
+    "d": 2,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/42/M/J/25 Q17",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "(a) Alex invests \\$400 at a rate of 2.3\\% per year simple interest.\n\\newline\n\nFind the total amount Alex has at the end of 5 years.\n\\newline\n\n(b) Virat has \\$100 to spend.\n\\newline\n\nIn February he spends \\$$x$ .\n\\newline\n\nIn March he spends 10\\% more than he spends in February.\n\\newline\n\nIn April he spends 10\\% more than he spends in March.\n\\newline\n\nAt the end of April, Virat has \\$33.80 remaining.\n\\newline\n\nFind the value of $x$.\n\\newline\n\n(c) Bobbie invests \\$500 in an account that pays compound interest each year.\n\\newline\n\nAt the end of 17 years, the value of Bobbie's investment is \\$700.13 .\n\\newline\n\nFind the value of Bobbie's investment at the end of 20 years.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Alex invests \\$400 at a rate of 2.3\\% per year simple interest.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "text",
+            "content": "Find the total amount Alex has at the end of 5 years.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "\\$",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Virat has \\$100 to spend.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "text",
+            "content": "In February he spends \\$$x$ .\n\\newline\n\nIn March he spends 10\\% more than he spends in February.\n\\newline\n\nIn April he spends 10\\% more than he spends in March.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "text",
+            "content": "At the end of April, Virat has \\$33.80 remaining.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "text",
+            "content": "Find the value of $x$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x = $",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "text",
+            "content": "Bobbie invests \\$500 in an account that pays compound interest each year.\n\\newline\n\nAt the end of 17 years, the value of Bobbie's investment is \\$700.13 .\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "text",
+            "content": "Find the value of Bobbie's investment at the end of 20 years.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "\\$",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "",
+    "cmd": "find",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\n\\item Alex invests \\$400 at a rate of 2.3\\% per year simple interest.\n\n\\vgap\n\nFind the total amount Alex has at the end of 5 years.\n\\AnswerLine[\\$][]\n\\Marks{3}\n\n\\item Virat has \\$100 to spend.\n\n\\vgap\n\nIn February he spends \\$$x$ .\n\nIn March he spends 10\\% more than he spends in February.\n\nIn April he spends 10\\% more than he spends in March.\n\n\\vgap\n\nAt the end of April, Virat has \\$33.80 remaining.\n\n\\vgap\n\nFind the value of $x$.\n\\AnswerLine[$x = $][]\n\\Marks{3}\n\n\\item Bobbie invests \\$500 in an account that pays compound interest each year.\n\nAt the end of 17 years, the value of Bobbie's investment is \\$700.13 .\n\n\\vgap\n\nFind the value of Bobbie's investment at the end of 20 years.\n\\AnswerLine[\\$][]\n\\Marks{4}\n\n\\end{parts}"
+  },
+  {
+    "id": "0580-2025MayJune-Paper42-Q18",
+    "paper": "2025MayJune-Paper42",
+    "qnum": 18,
+    "marks": 4,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.6",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/42/M/J/25 Q18",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "$A$, $B$, $C$, $D$ and $E$ lie on a circle.\n\\newline\n\nFind the values of $x$, $y$ and $z$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{center}"
+      },
+      {
+        "type": "figure",
+        "src": "Figures/Q18-CyclicPolygon.tex"
+      },
+      {
+        "type": "text",
+        "content": "\\end{center}\n\n$A$, $B$, $C$, $D$ and $E$ lie on a circle.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "Find the values of $x$, $y$ and $z$.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      }
+    ],
+    "answer": {
+      "type": "multiline",
+      "lines": 3,
+      "template": "$x = $ ____\\n$y = $ ____\\n$z = $ ____"
+    },
+    "_rawBody": "\\begin{center}\n\n\\relinput{Figures/Q18-CyclicPolygon.tex}\n\n\\end{center}\n\n$A$, $B$, $C$, $D$ and $E$ lie on a circle.\n\n\\vgap\n\nFind the values of $x$, $y$ and $z$.\n\n\\vgap\n\n\\AnswerLine[$x = $][]\n\n\\vgap\n\n\\AnswerLine[$y = $][]\n\n\\vgap\n\n\\AnswerLine[$z = $][]\n\\Marks{4}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper42/Q18/Q18-CyclicPolygon.png"
+    ]
+  },
+  {
+    "id": "0580-2025MayJune-Paper42-Q19",
+    "paper": "2025MayJune-Paper42",
+    "qnum": 19,
+    "marks": 6,
+    "topics": [
+      "Statistics"
+    ],
+    "s": "9.3",
+    "d": 2,
+    "cat": "statistics",
+    "topic": "Frequency tables",
+    "qtype": "averages and spread",
+    "g": "mixed",
+    "src": "0580/42/M/J/25 Q19",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "\\[ f(x) = x + 1 \\qquad g(x) = 5 - 2x \\qquad h(x) = 2^x \\]\n\n(a) Find f$(-3)$.\n\\newline\n\n(b) The domain of g$(x)$ is $\\{-3, 0, 2\\}$.\n\\newline\n\nFind the range of g$(x)$.\n\\newline\n\n(c) Find $x$ when $\\text{h}(x) = \\dfrac{1}{32}$ .\n\\newline\n\n(d) Find $x$ when $\\text{h}^{-1}(x) = 3$ .\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find f$(-3)$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "The domain of g$(x)$ is $\\{-3, 0, 2\\}$.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "text",
+            "content": "Find the range of g$(x)$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$\\{$",
+          "suffix": "$\\}$",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find $x$ when $\\text{h}(x) = \\dfrac{1}{32}$ .\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x = $",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find $x$ when $\\text{h}^{-1}(x) = 3$ .\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x = $",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\[ \\text{f}(x) = x + 1 \\qquad \\text{g}(x) = 5 - 2x \\qquad \\text{h}(x) = 2^x \\]"
+      }
+    ],
+    "_rawBody": "\\[ \\text{f}(x) = x + 1 \\qquad \\text{g}(x) = 5 - 2x \\qquad \\text{h}(x) = 2^x \\]\n\n\\begin{parts}\n\n\\item Find f$(-3)$.\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item The domain of g$(x)$ is $\\{-3, 0, 2\\}$.\n\n\\vgap\n\nFind the range of g$(x)$.\n\\AnswerLine[$\\{$][$\\}$]\n\\Marks{2}\n\n\\item Find $x$ when $\\text{h}(x) = \\dfrac{1}{32}$ .\n\\AnswerLine[$x = $][]\n\\Marks{1}\n\n\\item Find $x$ when $\\text{h}^{-1}(x) = 3$ .\n\\AnswerLine[$x = $][]\n\\Marks{2}\n\n\\end{parts}"
+  },
+  {
+    "id": "0580-2025MayJune-Paper42-Q20",
+    "paper": "2025MayJune-Paper42",
+    "qnum": 20,
+    "marks": 13,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.6",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/42/M/J/25 Q20",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "The diagram shows a quadrilateral $ABCD$.\n\\newline\n\n$CD = 10\\,\\text{m}$ and $DB = 12\\,\\text{m}$.\n\\newline\n\nAngle $DBA = 90°$, angle $CDB = 56°$ and angle $ADB = 34°$.\n\\newline\n\n(a) Calculate the length of $AB$.\n\\newline\n\n(b) Calculate the area of the quadrilateral $ABCD$.\n\\newline\n\n(c) Calculate the perimeter of the quadrilateral $ABCD$.\n\\newline\n\n(d) Calculate the shortest distance from $B$ to the line $AD$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Calculate the length of $AB$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$AB = $",
+          "suffix": "m",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Calculate the area of the quadrilateral $ABCD$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "m$^2$",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 5,
+        "content": [
+          {
+            "type": "text",
+            "content": "Calculate the perimeter of the quadrilateral $ABCD$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "m",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Calculate the shortest distance from $B$ to the line $AD$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "m",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{center}"
+      },
+      {
+        "type": "figure",
+        "src": "Figures/Q20-QuadrilateralABCD.tex"
+      },
+      {
+        "type": "text",
+        "content": "\\end{center}\n\nThe diagram shows a quadrilateral $ABCD$.\n\\newline\n\n$CD = 10\\,\\text{m}$ and $DB = 12\\,\\text{m}$.\n\\newline\n\nAngle $DBA = 90°$, angle $CDB = 56°$ and angle $ADB = 34°$.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "\\begin{center}\n\n\\relinput{Figures/Q20-QuadrilateralABCD.tex}\n\n\\end{center}\n\nThe diagram shows a quadrilateral $ABCD$.\n\n$CD = 10$\\,m and $DB = 12$\\,m.\n\nAngle $DBA = 90°$, angle $CDB = 56°$ and angle $ADB = 34°$.\n\n\\begin{parts}\n\n\\item Calculate the length of $AB$.\n\\AnswerLine[$AB = $][m]\n\\Marks{2}\n\n\\item Calculate the area of the quadrilateral $ABCD$.\n\\AnswerLine[][m$^2$]\n\\Marks{3}\n\n\\item Calculate the perimeter of the quadrilateral $ABCD$.\n\\AnswerLine[][m]\n\\Marks{5}\n\n\\item Calculate the shortest distance from $B$ to the line $AD$.\n\\AnswerLine[][m]\n\\Marks{3}\n\n\\end{parts}",
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper42/Q20/Q20-QuadrilateralABCD.png"
+    ]
+  },
+  {
+    "id": "0580-2025MayJune-Paper42-Q21",
+    "paper": "2025MayJune-Paper42",
+    "qnum": 21,
+    "marks": 4,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.4",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Algebraic fractions",
+    "qtype": "simplifying expressions with indices, fractional indices",
+    "g": "simplify",
+    "src": "0580/42/M/J/25 Q21",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "Simplify.\n\\newline\n\n(a) $3t^5 \\times 5t^3$\n\n(b) $\\left(64u^{36}\\right)^{\\frac{5}{6}}$",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "$3t^5 \\times 5t^3$"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "$\\left(64u^{36}\\right)^{\\frac{5}{6}}$"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Simplify.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "Simplify.\n\n\\begin{parts}\n\n\\item $3t^5 \\times 5t^3$\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item $\\left(64u^{36}\\right)^{\\frac{5}{6}}$\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{parts}"
+  },
+  {
+    "id": "0580-2025MayJune-Paper42-Q22",
+    "paper": "2025MayJune-Paper42",
+    "qnum": 22,
+    "marks": 5,
+    "topics": [
+      "Number",
+      "Probability"
+    ],
+    "s": null,
+    "d": 2,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/42/M/J/25 Q22",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "$\\mathscr{E}$ = \\{number of students in a class\\}\n\n$G$ = \\{number of students who study geography\\}\n\n$H$ = \\{number of students who study history\\}\n\nThe Venn diagram shows information about the 33 students in a class.\n\\newline\n\n(a) One of the students in the class is picked at random.\n\\newline\n\nFind the probability that this student\n\n(i)  does not study geography and does not study history\n\n studies geography and studies history.\n\\newline\n\n(b) Two of the students who study history are picked at random.\n\\newline\n\nFind the probability that one student also studies geography \n\nand one student does not study geography.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "One of the students in the class is picked at random.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "text",
+            "content": "Find the probability that this student"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "does not study geography and does not study history"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "_compactAnswer": true
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "studies geography and studies history.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "_compactAnswer": true
+            },
+            "marks": 1,
+            "_compactMarks": true
+          }
+        ],
+        "_spacedBeginSubparts": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Two of the students who study history are picked at random.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "text",
+            "content": "Find the probability that one student also studies geography \n\nand one student does not study geography.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{center}"
+      },
+      {
+        "type": "figure",
+        "src": "Figures/Q22-VennDiagram.tex"
+      },
+      {
+        "type": "text",
+        "content": "\\end{center}\n\n$\\mathscr{E}$ = \\{number of students in a class\\}\n\n$G$ = \\{number of students who study geography\\}\n\n$H$ = \\{number of students who study history\\}"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "The Venn diagram shows information about the 33 students in a class.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "\\begin{center}\n\n\\relinput{Figures/Q22-VennDiagram.tex}\n\n\\end{center}\n\n$\\mathscr{E}$ = \\{number of students in a class\\}\n\n$G$ = \\{number of students who study geography\\}\n\n$H$ = \\{number of students who study history\\}\n\n\\vgap\n\nThe Venn diagram shows information about the 33 students in a class.\n\n\\begin{parts}\n\n\\item One of the students in the class is picked at random.\n\n\\vgap\n\nFind the probability that this student\n\n\\begin{subparts}\n\n\\subpart does not study geography and does not study history\n\\AnswerLine[][]\n\\Marks{1}\n\n\\subpart studies geography and studies history.\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{subparts}\n\n\\item Two of the students who study history are picked at random.\n\n\\vgap\n\nFind the probability that one student also studies geography \n\nand one student does not study geography.\n\\AnswerLine[][]\n\\Marks{3}\n\n\\end{parts}",
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper42/Q22/Q22-VennDiagram.png"
+    ]
+  },
+  {
+    "id": "0580-2025MayJune-Paper42-Q23",
+    "paper": "2025MayJune-Paper42",
+    "qnum": 23,
+    "marks": 3,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.3",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Indices",
+    "qtype": "simplifying algebraic fractions",
+    "g": "algebraic-fraction",
+    "src": "0580/42/M/J/25 Q23",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "Simplify.\n\\newline\n\n\\[ \\frac{h^2 + 4h}{h^2 - 16} \\]",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Simplify.\n\\newline\n\n\\[ \\frac{h^2 + 4h}{h^2 - 16} \\]"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Simplify.\n\n\\[ \\frac{h^2 + 4h}{h^2 - 16} \\]\n\n\\AnswerLine[][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper42-Q24",
+    "paper": "2025MayJune-Paper42",
+    "qnum": 24,
+    "marks": 8,
+    "topics": [
+      "Number"
+    ],
+    "s": null,
+    "d": 2,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/42/M/J/25 Q24",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "Ahmed walks $2\\,\\text{km}$ at a speed of $x\\,\\text{km/h}$.\n\\newline\n\nHe then walks a further $3\\,\\text{km}$ at a speed of $(x+1)\\,\\text{km/h}$.\n\\newline\n\nThe total time he takes to walk the $5\\,\\text{km}$ is $1\\dfrac{1}{4}$ hours.\n\\newline\n\n(a) Show that $5x^2 - 15x - 8 = 0$ .\n\\newline\n\n(b) Find the value of $x$.\n\\newline\n\nShow all your working and give your answer correct to 2 decimal places.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 5,
+        "content": [
+          {
+            "type": "text",
+            "content": "Show that $5x^2 - 15x - 8 = 0$ .\n\\newline\n"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the value of $x$.\n\\newline\n\nShow all your working and give your answer correct to 2 decimal places.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x = $",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "",
+    "cmd": "show",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Ahmed walks $2\\,\\text{km}$ at a speed of $x\\,\\text{km/h}$.\n\\newline\n\nHe then walks a further $3\\,\\text{km}$ at a speed of $(x+1)\\,\\text{km/h}$.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "The total time he takes to walk the $5\\,\\text{km}$ is $1\\dfrac{1}{4}$ hours.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "Ahmed walks 2\\,km at a speed of $x$\\,km/h.\n\nHe then walks a further 3\\,km at a speed of $(x+1)$\\,km/h.\n\n\\vgap\n\nThe total time he takes to walk the 5\\,km is $1\\dfrac{1}{4}$ hours.\n\n\\begin{parts}\n\n\\item Show that $5x^2 - 15x - 8 = 0$ .\n\\Marks{5}\n\n\\item Find the value of $x$.\n\nShow all your working and give your answer correct to 2 decimal places.\n\\AnswerLine[$x = $][]\n\\Marks{3}\n\n\\end{parts}"
+  },
+  {
+    "id": "0580-2025MayJune-Paper42-Q25",
+    "paper": "2025MayJune-Paper42",
+    "qnum": 25,
+    "marks": 5,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.2",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Polygons",
+    "qtype": "geometrical constructions",
+    "g": "mixed",
+    "src": "0580/42/M/J/25 Q25",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "$P$ is the point $(8, 0)$ and $Q$ is the point $(20, 6)$.\n\\newline\n\nFind the equation of the perpendicular bisector of $PQ$.\n\\newline\n\nGive your answer in the form $y = mx + c$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "$P$ is the point $(8, 0)$ and $Q$ is the point $(20, 6)$.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "Find the equation of the perpendicular bisector of $PQ$.\n\\newline\n\nGive your answer in the form $y = mx + c$.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "$y = $"
+    },
+    "_rawBody": "$P$ is the point $(8, 0)$ and $Q$ is the point $(20, 6)$.\n\n\\vgap\n\nFind the equation of the perpendicular bisector of $PQ$.\n\nGive your answer in the form $y = mx + c$.\n\n\\AnswerLine[$y = $][]\n\\Marks{5}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper42-Q26",
+    "paper": "2025MayJune-Paper42",
+    "qnum": 26,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.7",
+    "d": 2,
+    "cat": "number",
+    "topic": "Estimation and limits",
+    "qtype": "Identifying coefficients and powers after differentiation",
+    "g": "indices",
+    "src": "0580/42/M/J/25 Q26",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "\\[ y = ax^{11} + 3x^b \\]\n\\[ \\frac{dy}{dx} = 44x^{10} + 18x^c \\]\n\nFind the values of $a$, $b$ and $c$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\[ y = ax^{11} + 3x^b \\]\n\\[ \\frac{\\text{d}y}{\\text{d}x} = 44x^{10} + 18x^c \\]"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "Find the values of $a$, $b$ and $c$.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      }
+    ],
+    "answer": {
+      "type": "multiline",
+      "lines": 3,
+      "template": "$a = $ ____\\n$b = $ ____\\n$c = $ ____"
+    },
+    "_rawBody": "\\[ y = ax^{11} + 3x^b \\]\n\\[ \\frac{\\text{d}y}{\\text{d}x} = 44x^{10} + 18x^c \\]\n\n\\vgap\n\nFind the values of $a$, $b$ and $c$.\n\n\\vgap\n\n\\AnswerLine[$a = $][]\n\n\\vgap\n\n\\AnswerLine[$b = $][]\n\n\\vgap\n\n\\AnswerLine[$c = $][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper42-Q27",
+    "paper": "2025MayJune-Paper42",
+    "qnum": 27,
+    "marks": 4,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.6",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/42/M/J/25 Q27",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "The diagram shows a cube.\n\\newline\n\nCalculate the angle between the diagonal $AP$ and the base $ABCD$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{center}"
+      },
+      {
+        "type": "figure",
+        "src": "Figures/Q27-Cuboid.tex"
+      },
+      {
+        "type": "text",
+        "content": "\\end{center}\n\nThe diagram shows a cube.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "Calculate the angle between the diagonal $AP$ and the base $ABCD$.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "\\begin{center}\n\n\\relinput{Figures/Q27-Cuboid.tex}\n\n\\end{center}\n\nThe diagram shows a cube.\n\n\\vgap\n\nCalculate the angle between the diagonal $AP$ and the base $ABCD$.\n\n\\AnswerLine[][]\n\\Marks{4}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper42/Q27/Q27-Cuboid.png"
+    ]
+  }
+]

@@ -1,0 +1,1300 @@
+[
+  {
+    "id": "0580-2021OctNov-Paper43-Q01",
+    "paper": "2021OctNov-Paper43",
+    "qnum": 1,
+    "marks": 7,
+    "topics": [
+      "Geometry",
+      "Transformations and vectors"
+    ],
+    "s": "4.6",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/43/O/N/21 Q01",
+    "year": 2021,
+    "session": "OctNov",
+    "tex": "The diagram shows three triangles, T, A, and B, drawn on a 1 cm$^2$ grid.\n\\newline\n\n(a) Describe fully the single transformation that maps triangle T onto triangle A.\n\\newline\n\n(b) (i) (c) Describe fully the single transformation that maps triangle T onto triangle B.\n\\newline\n\n(d) Calculate the distance that each point of triangle T moves when it is mapped onto triangle B.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Describe fully the single transformation that maps triangle T onto triangle A.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Describe fully the single transformation that maps triangle T onto triangle B.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate the distance that each point of triangle T moves when it is mapped onto triangle B.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "cm"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_itemInlineSubparts": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "describe",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The diagram shows three triangles, T, A, and B, drawn on a 1 cm$^2$ grid.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "Figures/Q01-Grid.tex"
+      }
+    ],
+    "_rawBody": "The diagram shows three triangles, T, A, and B, drawn on a 1 cm$^2$ grid.\n\n\\relinput{Figures/Q01-Grid.tex}\n\n\\begin{parts}\n\\item Describe fully the single transformation that maps triangle T onto triangle A.\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\item \\begin{subparts}\n\\item Describe fully the single transformation that maps triangle T onto triangle B.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item Calculate the distance that each point of triangle T moves when it is mapped onto triangle B.\n\n\\AnswerLine[][cm]\n\\Marks{2}\n\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2021OctNov/Paper43/Q01/Q01-Grid.png"
+    ]
+  },
+  {
+    "id": "0580-2021OctNov-Paper43-Q02",
+    "paper": "2021OctNov-Paper43",
+    "qnum": 2,
+    "marks": 6,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry",
+      "Trigonometry"
+    ],
+    "s": "3.1",
+    "d": 2,
+    "cat": "coord",
+    "topic": "Coordinates",
+    "qtype": "coordinates reading/plotting",
+    "g": "graph",
+    "src": "0580/43/O/N/21 Q02",
+    "year": 2021,
+    "session": "OctNov",
+    "tex": "(a) A, B and P are points on a circle, centre O and angle OBA = 38°.\n\\newline\n\nFind angle APB.\n\\newline\n\n(b) CDEF is a cyclic quadrilateral and FC = FE.\n\\newline\nTU is a tangent to the circle at C and angle TCF = 50°.\n\\newline\n\nFind\n(i) (c) angle EFC,\n\n(d) angle CDE.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "A, B and P are points on a circle, centre O and angle OBA = 38°.\n\\newline\n"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q02a-CircleABOP.tex"
+          },
+          {
+            "type": "text",
+            "content": "Find angle APB.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "CDEF is a cyclic quadrilateral and FC = FE.\n\\newline\nTU is a tangent to the circle at C and angle TCF = 50°.\n\\newline\n"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q02b-CyclicQuad.tex"
+          },
+          {
+            "type": "text",
+            "content": "Find"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "angle EFC,"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "angle CDE.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactContentSubparts": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item A, B and P are points on a circle, centre O and angle OBA = 38°.\n\n\\relinput{Figures/Q02a-CircleABOP.tex}\n\nFind angle APB.\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\item CDEF is a cyclic quadrilateral and FC = FE.\nTU is a tangent to the circle at C and angle TCF = 50°.\n\n\\relinput{Figures/Q02b-CyclicQuad.tex}\n\nFind\n\\begin{subparts}\n\\item angle EFC,\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item angle CDE.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2021OctNov/Paper43/Q02/Q02a-CircleABOP.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2021OctNov/Paper43/Q02/Q02b-CyclicQuad.png"
+    ]
+  },
+  {
+    "id": "0580-2021OctNov-Paper43-Q03",
+    "paper": "2021OctNov-Paper43",
+    "qnum": 3,
+    "marks": 14,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "3.6",
+    "d": 2,
+    "cat": "coord",
+    "topic": "Position vectors",
+    "qtype": "parallel lines",
+    "g": "mixed",
+    "src": "0580/43/O/N/21 Q03",
+    "year": 2021,
+    "session": "OctNov",
+    "tex": "The diagram shows a prism.\n\\newline\nThe cross-section of the prism is a trapezium with CD parallel to AB and AC = BD.\n\\newline\nAB = 10 cm, CD = 4 cm and the height of the trapezium is 5 cm.\n\\newline\nThe volume of the prism is 525 cm$^3$.\n\\newline\n\n(a) (i) (b) The prism is made of iron.\n\\newline\n1 cm$^3$ of iron has a mass of 7.8 g.\n\\newline\nCalculate the mass of the prism.\n\\newline\nGive your answer in kilograms.\n\\newline\n\n(c) Calculate the length of the prism.\n\\newline\n\n(d) Calculate the total surface area of the prism.\n\\newline\n\n(e) In a mathematically similar prism, the height of the trapezium is 10 cm.\n\\newline\nCalculate the volume of this prism.\n\\newline\n\n(f) A cuboid measures 10 cm by 4 cm by 6 cm.\n\\newline\nEach side is measured correct to the nearest centimetre.\n\\newline\nComplete the inequality for the volume, V, of this cuboid.\n\\newline\n\n $\\leq$ V $\\leq$",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "The prism is made of iron.\n\\newline\n1 cm$^3$ of iron has a mass of 7.8 g.\n\\newline\nCalculate the mass of the prism.\n\\newline\nGive your answer in kilograms.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "kg"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate the length of the prism.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "cm"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 6,
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate the total surface area of the prism.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "cm$^2$"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iv)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "In a mathematically similar prism, the height of the trapezium is 10 cm.\n\\newline\nCalculate the volume of this prism.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "cm$^3$"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_itemInlineSubparts": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "A cuboid measures 10 cm by 4 cm by 6 cm.\n\\newline\nEach side is measured correct to the nearest centimetre.\n\\newline\nComplete the inequality for the volume, V, of this cuboid.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "multiline",
+          "lines": 2,
+          "template": "$........................$ ____ cm$^3$\\n$........................$ ____ cm$^3$",
+          "lineSep": "blank"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The diagram shows a prism.\n\\newline\nThe cross-section of the prism is a trapezium with CD parallel to AB and AC = BD.\n\\newline\nAB = 10 cm, CD = 4 cm and the height of the trapezium is 5 cm.\n\\newline\nThe volume of the prism is 525 cm$^3$.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "Figures/Q03-Prism.tex"
+      }
+    ],
+    "_rawBody": "The diagram shows a prism.\nThe cross-section of the prism is a trapezium with CD parallel to AB and AC = BD.\nAB = 10 cm, CD = 4 cm and the height of the trapezium is 5 cm.\nThe volume of the prism is 525 cm$^3$.\n\n\\relinput{Figures/Q03-Prism.tex}\n\n\\begin{parts}\n\\item \\begin{subparts}\n\\item The prism is made of iron.\n1 cm$^3$ of iron has a mass of 7.8 g.\nCalculate the mass of the prism.\nGive your answer in kilograms.\n\n\\AnswerLine[][kg]\n\\Marks{2}\n\n\\item Calculate the length of the prism.\n\n\\AnswerLine[][cm]\n\\Marks{3}\n\n\\item Calculate the total surface area of the prism.\n\n\\AnswerLine[][cm$^2$]\n\\Marks{6}\n\n\\item In a mathematically similar prism, the height of the trapezium is 10 cm.\nCalculate the volume of this prism.\n\n\\AnswerLine[][cm$^3$]\n\\Marks{3}\n\n\\end{subparts}\n\n\\item A cuboid measures 10 cm by 4 cm by 6 cm.\nEach side is measured correct to the nearest centimetre.\nComplete the inequality for the volume, V, of this cuboid.\n\n\\AnswerLine[$........................$][cm$^3$] $\\leq$ V $\\leq$ \\AnswerLine[$........................$][cm$^3$]\n\\Marks{3}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2021OctNov/Paper43/Q03/Q03-Prism.png"
+    ]
+  },
+  {
+    "id": "0580-2021OctNov-Paper43-Q04",
+    "paper": "2021OctNov-Paper43",
+    "qnum": 4,
+    "marks": 13,
+    "topics": [
+      "Number",
+      "Algebra and graphs"
+    ],
+    "s": "2.5",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Equations",
+    "qtype": "solving simultaneous equations, linear equations, inequalities, factorisation, algebraic fractions",
+    "g": "simul-linear",
+    "src": "0580/43/O/N/21 Q04",
+    "year": 2021,
+    "session": "OctNov",
+    "tex": "(a) Solve the simultaneous equations.\n\\newline\nYou must show all your working.\n\\newline\n\\[2p - q = 7\\]\n\\[3p + 2q = 7\\]\n\n(b) Solve the equation.\n\\newline\n\\[\\frac{x}{4} + \\frac{2x}{3} = 1\\]\n\n(c) (i) (d) Solve the inequality.\n\\newline\n\\[3x - 2 \\geq 7\\]\n\n(e) Find the integer values of x that satisfy the inequality.\n\\newline\n\n(f) Factorise completely.\n\\newline\n\\[16a - 4a^2\\]\n\n(g) Write each of the following as a single fraction, in its simplest form.\n\\newline\n(i) (h) \\[\\frac{1}{3} \\div \\frac{2a}{4b}\\]\n\n(i) \\[2 - \\frac{x}{x-1}\\]",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Solve the simultaneous equations.\n\\newline\nYou must show all your working.\n\\newline\n\\[2p - q = 7\\]\n\\[3p + 2q = 7\\]"
+          }
+        ],
+        "answer": {
+          "type": "multiline",
+          "lines": 2,
+          "template": "$p =$ ____\\n$q =$ ____",
+          "lineSep": "blank"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Solve the equation.\n\\newline\n\\[\\frac{x}{4} + \\frac{2x}{3} = 1\\]"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x =$"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "Solve the inequality.\n\\newline\n\\[3x - 2 \\geq 7\\]"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the integer values of x that satisfy the inequality.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_itemInlineSubparts": true
+      },
+      {
+        "label": "(d)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Factorise completely.\n\\newline\n\\[16a - 4a^2\\]"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(e)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Write each of the following as a single fraction, in its simplest form.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "\\[\\frac{1}{3} \\div \\frac{2a}{4b}\\]"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "\\[2 - \\frac{x}{x-1}\\]"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactContentSubparts": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Solve the simultaneous equations.\nYou must show all your working.\n\\[2p - q = 7\\]\n\\[3p + 2q = 7\\]\n\n\\AnswerLine[$p =$][]\\par\n\\AnswerLine[$q =$][]\n\\Marks{3}\n\n\\item Solve the equation.\n\\[\\frac{x}{4} + \\frac{2x}{3} = 1\\]\n\n\\AnswerLine[$x =$][]\n\\Marks{2}\n\n\\item \\begin{subparts}\n\\item Solve the inequality.\n\\[3x - 2 \\geq 7\\]\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\item Find the integer values of x that satisfy the inequality.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{subparts}\n\n\\item Factorise completely.\n\\[16a - 4a^2\\]\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item Write each of the following as a single fraction, in its simplest form.\n\\begin{subparts}\n\\item \\[\\frac{1}{3} \\div \\frac{2a}{4b}\\]\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item \\[2 - \\frac{x}{x-1}\\]\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2021OctNov-Paper43-Q05",
+    "paper": "2021OctNov-Paper43",
+    "qnum": 5,
+    "marks": 8,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.17",
+    "d": 2,
+    "cat": "number",
+    "topic": "Bounds and calculations",
+    "qtype": "simple and compound interest, exponential depreciation",
+    "g": "mixed",
+    "src": "0580/43/O/N/21 Q05",
+    "year": 2021,
+    "session": "OctNov",
+    "tex": "(a) \\$500 is invested at a rate of 3\\% per year.\n\\newline\nCalculate the total interest earned at the end of 7 years when\n(i) (b) simple interest is paid,\n\n(c) compound interest is paid.\n\\newline\n\n(d) The value of a car decreases exponentially by 10\\% each year.\n\\newline\nThe value now is \\$6269.40.\n\\newline\nCalculate the value of the car 3 years ago.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "\\$500 is invested at a rate of 3\\% per year.\n\\newline\nCalculate the total interest earned at the end of 7 years when"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "simple interest is paid,"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$\\$$"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "compound interest is paid.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$\\$$"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactContentSubparts": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "The value of a car decreases exponentially by 10\\% each year.\n\\newline\nThe value now is \\$6269.40.\n\\newline\nCalculate the value of the car 3 years ago.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$\\$$"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item \\$500 is invested at a rate of 3\\% per year.\nCalculate the total interest earned at the end of 7 years when\n\\begin{subparts}\n\\item simple interest is paid,\n\n\\AnswerLine[$\\$$][]\n\\Marks{2}\n\n\\item compound interest is paid.\n\n\\AnswerLine[$\\$$][]\n\\Marks{3}\n\n\\end{subparts}\n\n\\item The value of a car decreases exponentially by 10\\% each year.\nThe value now is \\$6269.40.\nCalculate the value of the car 3 years ago.\n\n\\AnswerLine[$\\$$][]\n\\Marks{3}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2021OctNov-Paper43-Q06",
+    "paper": "2021OctNov-Paper43",
+    "qnum": 6,
+    "marks": 13,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "3.5",
+    "d": 2,
+    "cat": "coord",
+    "topic": "Parallel and perpendicular lines",
+    "qtype": "equation of a straight line",
+    "g": "mixed",
+    "src": "0580/43/O/N/21 Q06",
+    "year": 2021,
+    "session": "OctNov",
+    "tex": "(a) Calculate AD.\n\\newline\n\n cm\n\n(b) Calculate angle BAC and show that it rounds to 40.42°, correct to 2 decimal places.\n\\newline\n\n(c) Calculate the area of the quadrilateral ABCD.\n\\newline\n\n cm$^2$\n\n(d) Calculate the shortest distance from B to AC.\n\\newline\n\n cm",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Calculate AD.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "AD ="
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "text",
+            "content": "Calculate angle BAC and show that it rounds to 40.42°, correct to 2 decimal places.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "none",
+          "space": {
+            "type": "drawing",
+            "height": "3cm",
+            "cmd": "Answerspace"
+          }
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Calculate the area of the quadrilateral ABCD.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Calculate the shortest distance from B to AC.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "analyse",
+    "cmd": "show",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q06-QuadABCD.tex"
+      }
+    ],
+    "_rawBody": "\\relinput{Figures/Q06-QuadABCD.tex}\n\n\\begin{parts}\n\\item Calculate AD.\n\n\\AnswerLine[AD =][] cm\n\\Marks{3}\n\n\\item Calculate angle BAC and show that it rounds to 40.42°, correct to 2 decimal places.\n\n\\Answerspace[3cm]\n\\Marks{4}\n\n\\item Calculate the area of the quadrilateral ABCD.\n\n\\AnswerLine[][] cm$^2$\n\\Marks{3}\n\n\\item Calculate the shortest distance from B to AC.\n\n\\AnswerLine[][] cm\n\\Marks{3}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2021OctNov/Paper43/Q06/Q06-QuadABCD.png"
+    ]
+  },
+  {
+    "id": "0580-2021OctNov-Paper43-Q07",
+    "paper": "2021OctNov-Paper43",
+    "qnum": 7,
+    "marks": 14,
+    "topics": [
+      "Number"
+    ],
+    "s": null,
+    "d": 2,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/43/O/N/21 Q07",
+    "year": 2021,
+    "session": "OctNov",
+    "tex": "(a) Amir buys 3 cakes that cost c cents each and 2 loaves of bread that cost (2c - 11) cents each.\n\\newline\nHe spends a total of \\$5.87.\n\\newline\nFind the value of c.\n\\newline\n\n(b) A bottle of water costs \\$w.\n\\newline\nA bottle of juice costs \\$(w + 1).\n\\newline\nAlex spends \\$22 on bottles of water and \\$42 on bottles of juice.\n\\newline\nThe number of bottles of water is equal to the number of bottles of juice.\n\\newline\nFind the value of w.\n\\newline\n\n(c) Alicia walks a distance of 9 km at a speed of x km/h.\n\\newline\nShe then runs a distance of 5 km at a speed of (2x + 1) km/h.\n\\newline\nThe total time Alicia takes is 2.5 hours.\n\\newline\n(i) (d) Show that 10x$^2$ - 41x - 18 = 0.\n\\newline\n\n(e) Work out Alicia's running speed.\n\\newline\nYou must show all your working.\n\\newline\n\n km/h",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Amir buys 3 cakes that cost c cents each and 2 loaves of bread that cost (2c - 11) cents each.\n\\newline\nHe spends a total of \\$5.87.\n\\newline\nFind the value of c.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$c =$"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "A bottle of water costs \\$w.\n\\newline\nA bottle of juice costs \\$(w + 1).\n\\newline\nAlex spends \\$22 on bottles of water and \\$42 on bottles of juice.\n\\newline\nThe number of bottles of water is equal to the number of bottles of juice.\n\\newline\nFind the value of w.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$w =$"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Alicia walks a distance of 9 km at a speed of x km/h.\n\\newline\nShe then runs a distance of 5 km at a speed of (2x + 1) km/h.\n\\newline\nThe total time Alicia takes is 2.5 hours.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 4,
+            "content": [
+              {
+                "type": "text",
+                "content": "Show that 10x$^2$ - 41x - 18 = 0.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "none",
+              "space": {
+                "type": "drawing",
+                "height": "2cm",
+                "cmd": "Answerspace"
+              }
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 4,
+            "content": [
+              {
+                "type": "text",
+                "content": "Work out Alicia's running speed.\n\\newline\nYou must show all your working.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactContentSubparts": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "",
+    "cmd": "show",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Amir buys 3 cakes that cost c cents each and 2 loaves of bread that cost (2c - 11) cents each.\nHe spends a total of \\$5.87.\nFind the value of c.\n\n\\AnswerLine[$c =$][]\n\\Marks{3}\n\n\\item A bottle of water costs \\$w.\nA bottle of juice costs \\$(w + 1).\nAlex spends \\$22 on bottles of water and \\$42 on bottles of juice.\nThe number of bottles of water is equal to the number of bottles of juice.\nFind the value of w.\n\n\\AnswerLine[$w =$][]\n\\Marks{3}\n\n\\item Alicia walks a distance of 9 km at a speed of x km/h.\nShe then runs a distance of 5 km at a speed of (2x + 1) km/h.\nThe total time Alicia takes is 2.5 hours.\n\\begin{subparts}\n\\item Show that 10x$^2$ - 41x - 18 = 0.\n\n\\Answerspace[2cm]\n\\Marks{4}\n\n\\item Work out Alicia's running speed.\nYou must show all your working.\n\n\\AnswerLine[][] km/h\n\\Marks{4}\n\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2021OctNov-Paper43-Q08",
+    "paper": "2021OctNov-Paper43",
+    "qnum": 8,
+    "marks": 13,
+    "topics": [
+      "Coordinate geometry",
+      "Mensuration",
+      "Statistics"
+    ],
+    "s": "3.1",
+    "d": 2,
+    "cat": "coord",
+    "topic": "Coordinates",
+    "qtype": "coordinates reading/plotting",
+    "g": "graph",
+    "src": "0580/43/O/N/21 Q08",
+    "year": 2021,
+    "session": "OctNov",
+    "tex": "(a) Jean asks 600 people to choose their favourite sport.\n\\newline\nThe pie chart shows some of this information.\n\\newline\n\n(i) (b) Show that 100 people choose tennis.\n\\newline\n\n(c) Work out how many people choose rugby.\n\\newline\n\n(d) 125 people choose cricket and the rest choose swimming.\n\\newline\nComplete the pie chart to show this information.\n\\newline\n\n(e) The heights of some plants are measured:\n(f) smallest height = 0.6 cm\n\n(g) range = 8.1 cm\n\n(h) median = 5.2 cm\n\n(i) lower quartile = 3.4 cm\n\n(j) interquartile range = 4.1 cm.\n\\newline\n\nOn the grid, draw a box-and-whisker plot to show this information.\n\\newline\n\nA dice is rolled 100 times.\n\\newline\nThe frequency table shows the results.\n\\newline\n\n\\begin{tabular}{|c|c|c|c|c|c|c|}\n\\hline\nScore & 1 & 2 & 3 & 4 & 5 & 6 \\\\\n\\hline\nFrequency & 16 & 25 & 17 & 19 & 8 & 15 \\\\\n\\hline\n\\end{tabular}\n\nFind\n(i) the range,\n\n(ii) the mode,\n\n(iii) the median.\n\\newline\n\n50 students answer a mathematics question.\n\\newline\nThe table shows the time, t seconds, taken by each student to answer the question.\n\\newline\n\n\\begin{tabular}{|c|c|}\n\\hline\nTime (t seconds) & Frequency \\\\\n\\hline\n10 $\\leq$ t $<$ 20 & 2 \\\\\n\\hline\n20 $\\leq$ t $<$ 25 & 8 \\\\\n\\hline\n25 $\\leq$ t $<$ 30 & 12 \\\\\n\\hline\n30 $\\leq$ t $<$ 50 & 16 \\\\\n\\hline\n50 $\\leq$ t $<$ 80 & 12 \\\\\n\\hline\n\\end{tabular}\n\nCalculate an estimate of the mean.\n\\newline\n\n s",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Jean asks 600 people to choose their favourite sport.\n\\newline\nThe pie chart shows some of this information.\n\\newline\n"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q08a-PieChart.tex"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Show that 100 people choose tennis.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Work out how many people choose rugby.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "125 people choose cricket and the rest choose swimming.\n\\newline\nComplete the pie chart to show this information.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "none",
+              "space": {
+                "type": "drawing",
+                "height": "3cm",
+                "cmd": "Answerspace"
+              }
+            },
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item"
+      },
+      {
+        "label": "(b)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2021OctNov/Paper43/Q08/Q08b-BoxPlotGrid.png"
+          },
+          {
+            "type": "text",
+            "content": "The heights of some plants are measured:\n\\begin{parts}"
+          }
+        ]
+      },
+      {
+        "label": "(c)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "text",
+            "content": "smallest height = 0.6 cm"
+          }
+        ]
+      },
+      {
+        "label": "(d)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "text",
+            "content": "range = 8.1 cm"
+          }
+        ]
+      },
+      {
+        "label": "(e)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "text",
+            "content": "median = 5.2 cm"
+          }
+        ]
+      },
+      {
+        "label": "(f)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "text",
+            "content": "lower quartile = 3.4 cm"
+          }
+        ]
+      },
+      {
+        "label": "(g)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "text",
+            "content": "interquartile range = 4.1 cm.\n\\newline\n"
+          }
+        ]
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "analyse",
+    "cmd": "show",
+    "stem": [],
+    "_v4_skip": true,
+    "_rawBody": "\\begin{parts}\n\\item Jean asks 600 people to choose their favourite sport.\nThe pie chart shows some of this information.\n\n\\relinput{Figures/Q08a-PieChart.tex}\n\n\\begin{subparts}\n\\item Show that 100 people choose tennis.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Work out how many people choose rugby.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item 125 people choose cricket and the rest choose swimming.\nComplete the pie chart to show this information.\n\n\\Answerspace[3cm]\n\\Marks{2}\n\n\\end{subparts}\n\n\\item The heights of some plants are measured:\n\\begin{parts}\n\\item smallest height = 0.6 cm\n\\item range = 8.1 cm\n\\item median = 5.2 cm\n\\item lower quartile = 3.4 cm\n\\item interquartile range = 4.1 cm.\n\\end{parts}\n\nOn the grid, draw a box-and-whisker plot to show this information.\n\n\\relinput{Figures/Q08b-BoxPlotGrid.tex}\n\n\\Answerspace[2cm]\n\\Marks{3}\n\n\\item A dice is rolled 100 times.\nThe frequency table shows the results.\n\n\\begin{tabular}{|c|c|c|c|c|c|c|}\n\\hline\nScore & 1 & 2 & 3 & 4 & 5 & 6 \\\\\n\\hline\nFrequency & 16 & 25 & 17 & 19 & 8 & 15 \\\\\n\\hline\n\\end{tabular}\n\nFind\n\\begin{subparts}\n\\item the range,\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item the mode,\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item the median.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{subparts}\n\n\\item 50 students answer a mathematics question.\nThe table shows the time, t seconds, taken by each student to answer the question.\n\n\\begin{tabular}{|c|c|}\n\\hline\nTime (t seconds) & Frequency \\\\\n\\hline\n10 $\\leq$ t $<$ 20 & 2 \\\\\n\\hline\n20 $\\leq$ t $<$ 25 & 8 \\\\\n\\hline\n25 $\\leq$ t $<$ 30 & 12 \\\\\n\\hline\n30 $\\leq$ t $<$ 50 & 16 \\\\\n\\hline\n50 $\\leq$ t $<$ 80 & 12 \\\\\n\\hline\n\\end{tabular}\n\nCalculate an estimate of the mean.\n\n\\AnswerLine[][] s\n\\Marks{4}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "_postParts": [
+      {
+        "type": "text",
+        "content": "On the grid, draw a box-and-whisker plot to show this information."
+      },
+      {
+        "type": "figure",
+        "src": "Figures/Q08b-BoxPlotGrid.tex"
+      },
+      {
+        "type": "text",
+        "content": "\\Answerspace[2cm]\n\\Marks{3}\n\n\\item A dice is rolled 100 times.\nThe frequency table shows the results."
+      },
+      {
+        "type": "table",
+        "content": "\\begin{tabular}{|c|c|c|c|c|c|c|}\n\\hline\nScore & 1 & 2 & 3 & 4 & 5 & 6 \\\\\n\\hline\nFrequency & 16 & 25 & 17 & 19 & 8 & 15 \\\\\n\\hline\n\\end{tabular}"
+      },
+      {
+        "type": "text",
+        "content": "Find\n\\begin{subparts}\n\\item the range,\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item the mode,\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item the median.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{subparts}\n\n\\item 50 students answer a mathematics question.\nThe table shows the time, t seconds, taken by each student to answer the question."
+      },
+      {
+        "type": "table",
+        "content": "\\begin{tabular}{|c|c|}\n\\hline\nTime (t seconds) & Frequency \\\\\n\\hline\n10 $\\leq$ t $<$ 20 & 2 \\\\\n\\hline\n20 $\\leq$ t $<$ 25 & 8 \\\\\n\\hline\n25 $\\leq$ t $<$ 30 & 12 \\\\\n\\hline\n30 $\\leq$ t $<$ 50 & 16 \\\\\n\\hline\n50 $\\leq$ t $<$ 80 & 12 \\\\\n\\hline\n\\end{tabular}"
+      },
+      {
+        "type": "text",
+        "content": "Calculate an estimate of the mean.\n\n\\AnswerLine[][] s\n\\Marks{4}\n\n\\end{parts}"
+      }
+    ],
+    "_compactItems": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2021OctNov/Paper43/Q08/Q08a-PieChart.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2021OctNov/Paper43/Q08/Q08b-BoxPlotGrid.png"
+    ]
+  },
+  {
+    "id": "0580-2021OctNov-Paper43-Q09",
+    "paper": "2021OctNov-Paper43",
+    "qnum": 9,
+    "marks": 14,
+    "topics": [
+      "Number",
+      "Algebra and graphs",
+      "Coordinate geometry"
+    ],
+    "s": "2.12",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Functions notation",
+    "qtype": "roots of cubic function, algebraic expansion, finding turning points by differentiation, sketching cubic graphs",
+    "g": "function",
+    "src": "0580/43/O/N/21 Q09",
+    "year": 2021,
+    "session": "OctNov",
+    "tex": "f(x) = x(x - 1)(x - 2)\n\n(a) Find the coordinates of the points where the graph of y = f(x) crosses the x-axis.\n\\newline\n\n(, )\n\n(, )\n\n(, )\n\n(b) Show that f(x) = x$^3$ - 3x$^2$ + 2x.\n\\newline\n\n(c) Find the coordinates of the turning points of the graph of y = f(x).\n\\newline\nShow all your working and give your answers correct to 1 decimal place.\n\\newline\n\n(, )\n\n(, )\n\n(d) Sketch the graph of y = f(x).\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the coordinates of the points where the graph of y = f(x) crosses the x-axis.\n\\newline\n\n(\\AnswerLine[][], \\AnswerLine[][])\\par\n(\\AnswerLine[][], \\AnswerLine[][])\\par\n(\\AnswerLine[][], \\AnswerLine[][])"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Show that f(x) = x$^3$ - 3x$^2$ + 2x.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "none",
+          "space": {
+            "type": "drawing",
+            "height": "2cm",
+            "cmd": "Answerspace"
+          }
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 8,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the coordinates of the turning points of the graph of y = f(x).\n\\newline\nShow all your working and give your answers correct to 1 decimal place.\n\\newline\n\n(\\AnswerLine[][], \\AnswerLine[][])\\par\n(\\AnswerLine[][], \\AnswerLine[][])"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Sketch the graph of y = f(x).\n\\newline\n"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q09-Axes.tex"
+          }
+        ],
+        "answer": {
+          "type": "none",
+          "space": {
+            "type": "drawing",
+            "height": "2cm",
+            "cmd": "Answerspace"
+          }
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "show",
+    "stem": [
+      {
+        "type": "text",
+        "content": "f(x) = x(x - 1)(x - 2)"
+      }
+    ],
+    "_rawBody": "f(x) = x(x - 1)(x - 2)\n\n\\begin{parts}\n\\item Find the coordinates of the points where the graph of y = f(x) crosses the x-axis.\n\n(\\AnswerLine[][], \\AnswerLine[][])\\par\n(\\AnswerLine[][], \\AnswerLine[][])\\par\n(\\AnswerLine[][], \\AnswerLine[][])\n\\Marks{2}\n\n\\item Show that f(x) = x$^3$ - 3x$^2$ + 2x.\n\n\\Answerspace[2cm]\n\\Marks{2}\n\n\\item Find the coordinates of the turning points of the graph of y = f(x).\nShow all your working and give your answers correct to 1 decimal place.\n\n(\\AnswerLine[][], \\AnswerLine[][])\\par\n(\\AnswerLine[][], \\AnswerLine[][])\n\\Marks{8}\n\n\\item Sketch the graph of y = f(x).\n\n\\relinput{Figures/Q09-Axes.tex}\n\n\\Answerspace[2cm]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2021OctNov/Paper43/Q09/Q09-Axes.png"
+    ]
+  },
+  {
+    "id": "0580-2021OctNov-Paper43-Q10",
+    "paper": "2021OctNov-Paper43",
+    "qnum": 10,
+    "marks": 10,
+    "topics": [
+      "Probability"
+    ],
+    "s": "8.3",
+    "d": 2,
+    "cat": "probability",
+    "topic": "Tree diagrams",
+    "qtype": "combined events",
+    "g": "mixed",
+    "src": "0580/43/O/N/21 Q10",
+    "year": 2021,
+    "session": "OctNov",
+    "tex": "(a) Sarah spins a fair four-sided spinner numbered 0, 1, 1 and 3.\n\\newline\n(i) (b) What number is the spinner most likely to land on?\n\n(c) Sarah spins the spinner twice.\n\\newline\nFind the probability that it lands on the number 1 both times.\n\\newline\n\n(d) Sarah spins the spinner until it lands on the number 3.\n\\newline\nThe probability that this happens on the nth spin is $\\dfrac{729}{16384}$.\n\\newline\nFind the value of n.\n\\newline\n\n(e) Scott takes an examination.\n\\newline\nThe examination is in two parts, a theory test and a practical test.\n\\newline\nBoth parts must be passed to pass the examination.\n\\newline\nThe probability that Scott passes the theory test is 0.9.\n\\newline\nThe probability that Scott passes the practical test is 0.8.\n\\newline\nFind the probability that\n(i) (f) Scott passes the examination,\n\n(g) Scott passes the theory test or the practical test but not both.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Sarah spins a fair four-sided spinner numbered 0, 1, 1 and 3.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "What number is the spinner most likely to land on?"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Sarah spins the spinner twice.\n\\newline\nFind the probability that it lands on the number 1 both times.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Sarah spins the spinner until it lands on the number 3.\n\\newline\nThe probability that this happens on the nth spin is $\\dfrac{729}{16384}$.\n\\newline\nFind the value of n.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$n =$"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactContentSubparts": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Scott takes an examination.\n\\newline\nThe examination is in two parts, a theory test and a practical test.\n\\newline\nBoth parts must be passed to pass the examination.\n\\newline\nThe probability that Scott passes the theory test is 0.9.\n\\newline\nThe probability that Scott passes the practical test is 0.8.\n\\newline\nFind the probability that"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Scott passes the examination,"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "Scott passes the theory test or the practical test but not both.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactContentSubparts": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Sarah spins a fair four-sided spinner numbered 0, 1, 1 and 3.\n\\begin{subparts}\n\\item What number is the spinner most likely to land on?\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Sarah spins the spinner twice.\nFind the probability that it lands on the number 1 both times.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item Sarah spins the spinner until it lands on the number 3.\nThe probability that this happens on the nth spin is $\\dfrac{729}{16384}$.\nFind the value of n.\n\n\\AnswerLine[$n =$][]\n\\Marks{2}\n\n\\end{subparts}\n\n\\item Scott takes an examination.\nThe examination is in two parts, a theory test and a practical test.\nBoth parts must be passed to pass the examination.\nThe probability that Scott passes the theory test is 0.9.\nThe probability that Scott passes the practical test is 0.8.\nFind the probability that\n\\begin{subparts}\n\\item Scott passes the examination,\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item Scott passes the theory test or the practical test but not both.\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_compactItems": true
+  },
+  {
+    "id": "0580-2021OctNov-Paper43-Q11",
+    "paper": "2021OctNov-Paper43",
+    "qnum": 11,
+    "marks": 11,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.13",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Functions",
+    "qtype": "function evaluation, composite functions, inverse functions, solving quadratic and exponential equations, indices",
+    "g": "quadratic",
+    "src": "0580/43/O/N/21 Q11",
+    "year": 2021,
+    "session": "OctNov",
+    "tex": "f(x) = 2x - 1\n\ng(x) = x$^2$ + 2x\n\nh(x) = 4$^x$\n\nj(x) = 2$^x$\n\n(a) Find the value of\n(i) (b) h(3),\n\n(c) fh(3).\n\\newline\n\n(d) Solve the equation gf(x) = 0.\n\\newline\n\n or \n\n(e) p$^{-1}$(x) = f(x)\n\nFind p(x).\n\\newline\n\n(f) \\[\\frac{h(x)}{j(x)} = \\frac{1}{2}\\]\n\nFind the value of x.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the value of"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "h(3),"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "fh(3).\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactContentSubparts": true
+      },
+      {
+        "label": "(b)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "text",
+            "content": "Solve the equation gf(x) = 0.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "multiline",
+          "lines": 2,
+          "template": "$x =$ ____\\n$x =$ ____",
+          "lineSep": "blank"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "p$^{-1}$(x) = f(x)\n\nFind p(x).\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$p(x) =$"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "\\[\\frac{h(x)}{j(x)} = \\frac{1}{2}\\]\n\nFind the value of x.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x =$"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "solve",
+    "stem": [
+      {
+        "type": "text",
+        "content": "f(x) = 2x - 1\n\ng(x) = x$^2$ + 2x\n\nh(x) = 4$^x$\n\nj(x) = 2$^x$"
+      }
+    ],
+    "_rawBody": "f(x) = 2x - 1\n\ng(x) = x$^2$ + 2x\n\nh(x) = 4$^x$\n\nj(x) = 2$^x$\n\n\\begin{parts}\n\\item Find the value of\n\\begin{subparts}\n\\item h(3),\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item fh(3).\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{subparts}\n\n\\item Solve the equation gf(x) = 0.\n\n\\AnswerLine[$x =$][] or \\AnswerLine[$x =$][]\n\\Marks{4}\n\n\\item p$^{-1}$(x) = f(x)\n\nFind p(x).\n\n\\AnswerLine[$p(x) =$][]\n\\Marks{2}\n\n\\item \\[\\frac{h(x)}{j(x)} = \\frac{1}{2}\\]\n\nFind the value of x.\n\n\\AnswerLine[$x =$][]\n\\Marks{3}\n\n\\end{parts}",
+    "_compactParts": true
+  }
+]

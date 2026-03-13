@@ -1,0 +1,1365 @@
+[
+  {
+    "id": "0580-2020MayJune-Paper31-Q01",
+    "paper": "2020MayJune-Paper31",
+    "qnum": 1,
+    "marks": 15,
+    "topics": [
+      "Number",
+      "Algebra and graphs"
+    ],
+    "s": "2.1",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Algebra basics",
+    "qtype": "percentage increase, ratio, arithmetic sequence",
+    "g": "sequence",
+    "src": "0580/31/M/J/20 Q01",
+    "year": 2020,
+    "session": "MayJune",
+    "tex": "Gabriela designs the seating layout for a new theatre.\n\\newline\nThere are three sections of seats, A, B and C.\n\\newline\n\n(a) Section A has 152 seats.\n\\newline\nSection B has 12.5\\% more seats than Section A.\n\\newline\nSection C has $\\dfrac{3}{8}$ of the number of seats in Section A.\n\\newline\n\n(i) (b) Show that the number of seats in Section B is 171.\n\\newline\n\n(c) Show that the total number of seats is 380.\n\\newline\n\n(d) Write down and simplify the ratio of the number of seats in each section A : B : C.\n\\newline\n\nA : B : C =  :  : \n\n(e) In Section A:\n\nThere are 12 seats in the front row.\n\\newline\n\nEach row has 2 more seats than the row in front of it.\n\\newline\n\nWork out the number of rows for the 152 seats in Section A.\n\\newline\n\n rows\n\n(f) For a concert in the theatre, the ticket prices are in the ratio\nA : B : C = 9 : 7 : 4.\n\\newline\nA ticket for Section C costs \\$6.\n\\newline\n\n(i) (g) Show that a ticket for Section B costs \\$10.50.\n\\newline\n\n(h) Find the cost of a ticket for Section A.\n\\newline\n\n\\$ \n\n(i) The table shows the number of tickets sold in each section.\n\\newline\nSection\n\nNumber of tickets sold\n\nA\n\n120\n\nB\n\n136\n\nC\n\n30\n\nCalculate the total amount received from the ticket sales.\n\\newline\n\n\\$ \n\n(j) The concert costs \\$4500 to organise.\n\\newline\nCalculate the amount received from the ticket sales as a percentage of the \\$4500.\n\\newline\n\n \\%",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Section A has 152 seats.\n\\newline\nSection B has 12.5\\% more seats than Section A.\n\\newline\nSection C has $\\dfrac{3}{8}$ of the number of seats in Section A.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Show that the number of seats in Section B is 171.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Show that the total number of seats is 380.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item"
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down and simplify the ratio of the number of seats in each section A : B : C.\n\\newline\n\nA : B : C = \\AnswerLine[] : \\AnswerLine[] : \\AnswerLine[]"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "In Section A:\n\nThere are 12 seats in the front row.\n\\newline\n\nEach row has 2 more seats than the row in front of it.\n\\newline\n\nWork out the number of rows for the 152 seats in Section A.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "content": [
+          {
+            "type": "text",
+            "content": "For a concert in the theatre, the ticket prices are in the ratio\nA : B : C = 9 : 7 : 4.\n\\newline\nA ticket for Section C costs \\$6.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Show that a ticket for Section B costs \\$10.50.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the cost of a ticket for Section A.\n\\newline\n\n\\$ \\AnswerLine[]"
+              }
+            ],
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "The table shows the number of tickets sold in each section.\n\\newline\nSection\n\nNumber of tickets sold\n\nA\n\n120\n\nB\n\n136\n\nC\n\n30\n\nCalculate the total amount received from the ticket sales.\n\\newline\n\n\\$ \\AnswerLine[]"
+              }
+            ],
+            "_compactMarks": true
+          },
+          {
+            "label": "(iv)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "The concert costs \\$4500 to organise.\n\\newline\nCalculate the amount received from the ticket sales as a percentage of the \\$4500.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item"
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "show",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Gabriela designs the seating layout for a new theatre.\n\\newline\nThere are three sections of seats, A, B and C.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "Gabriela designs the seating layout for a new theatre.\nThere are three sections of seats, A, B and C.\n\n\\begin{parts}\n\\item Section A has 152 seats.\nSection B has 12.5\\% more seats than Section A.\nSection C has $\\dfrac{3}{8}$ of the number of seats in Section A.\n\n\\begin{subparts}\n\\item Show that the number of seats in Section B is 171.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Show that the total number of seats is 380.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{subparts}\n\n\\item Write down and simplify the ratio of the number of seats in each section A : B : C.\n\nA : B : C = \\AnswerLine[] : \\AnswerLine[] : \\AnswerLine[]\n\\Marks{2}\n\n\\item In Section A:\n\nThere are 12 seats in the front row.\n\nEach row has 2 more seats than the row in front of it.\n\nWork out the number of rows for the 152 seats in Section A.\n\n\\AnswerLine[] rows\n\\Marks{2}\n\n\\item For a concert in the theatre, the ticket prices are in the ratio\nA : B : C = 9 : 7 : 4.\nA ticket for Section C costs \\$6.\n\n\\begin{subparts}\n\\item Show that a ticket for Section B costs \\$10.50.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Find the cost of a ticket for Section A.\n\n\\$ \\AnswerLine[]\n\\Marks{1}\n\n\\item The table shows the number of tickets sold in each section.\nSection\n\nNumber of tickets sold\n\nA\n\n120\n\nB\n\n136\n\nC\n\n30\n\nCalculate the total amount received from the ticket sales.\n\n\\$ \\AnswerLine[]\n\\Marks{3}\n\n\\item The concert costs \\$4500 to organise.\nCalculate the amount received from the ticket sales as a percentage of the \\$4500.\n\n\\AnswerLine[] \\%\n\\Marks{1}\n\n\\end{subparts}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2020MayJune-Paper31-Q02",
+    "paper": "2020MayJune-Paper31",
+    "qnum": 2,
+    "marks": 9,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry",
+      "Transformations and vectors"
+    ],
+    "s": "3.1",
+    "d": 1,
+    "cat": "coord",
+    "topic": "Coordinates",
+    "qtype": "coordinates reading/plotting",
+    "g": "graph",
+    "src": "0580/31/M/J/20 Q02",
+    "year": 2020,
+    "session": "MayJune",
+    "tex": "The grid shows a point E and four quadrilaterals, A, B, C and D.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\n(a) Write down the mathematical name of shape A.\n\\newline\n\n(b) Describe fully the single transformation that maps\n\n(i) (c) shape A onto shape B,\n\n(d) shape A onto shape C,\n\n(e) shape A onto shape D.\n\\newline\n\n(f) (i) (g) Write down the coordinates of the point E.\n\\newline\n\n(  ,  )\n\n(h) On the grid, draw the image of shape A after an enlargement by scale factor 3, centre E.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down the mathematical name of shape A.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Describe fully the single transformation that maps"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "shape A onto shape B,"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "shape A onto shape C,"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "shape A onto shape D.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item"
+      },
+      {
+        "label": "(c)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Write down the coordinates of the point E.\n\\newline\n\n( \\AnswerLine[] , \\AnswerLine[] )"
+              }
+            ],
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "On the grid, draw the image of shape A after an enlargement by scale factor 3, centre E.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "none",
+              "space": {
+                "type": "drawing",
+                "height": "4cm",
+                "cmd": "Answerspace"
+              }
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_itemNewline": true,
+        "_itemBlankLine": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "describe",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The grid shows a point E and four quadrilaterals, A, B, C and D.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q02-Grid.\n\\newline\npng}\n%\\end{InsertScreenShot}"
+      }
+    ],
+    "_rawBody": "The grid shows a point E and four quadrilaterals, A, B, C and D.\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q02-Grid.png}\n%\\end{InsertScreenShot}\n\n\\begin{parts}\n\\item Write down the mathematical name of shape A.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Describe fully the single transformation that maps\n\n\\begin{subparts}\n\\item shape A onto shape B,\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item shape A onto shape C,\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item shape A onto shape D.\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\end{subparts}\n\n\\item\n\n\\begin{subparts}\n\\item Write down the coordinates of the point E.\n\n( \\AnswerLine[] , \\AnswerLine[] )\n\\Marks{1}\n\n\\item On the grid, draw the image of shape A after an enlargement by scale factor 3, centre E.\n\n\\Answerspace[4cm]\n\\Marks{2}\n\n\\end{subparts}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2020MayJune-Paper31-Q03",
+    "paper": "2020MayJune-Paper31",
+    "qnum": 3,
+    "marks": 6,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.6",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/31/M/J/20 Q03",
+    "year": 2020,
+    "session": "MayJune",
+    "tex": "The diagram shows the net of a triangular prism on a 1 cm$^2$ grid.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\n(a) Write down the mathematical name for the type of triangle shown on the grid.\n\\newline\n\n(b) (i) (c) Measure the perpendicular height of the triangle.\n\\newline\n\n cm\n\n(d) Calculate the area of the triangle.\n\\newline\n\n cm$^2$\n\n(e) Calculate the volume of the triangular prism.\n\\newline\n\n cm$^3$",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down the mathematical name for the type of triangle shown on the grid.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Measure the perpendicular height of the triangle.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate the area of the triangle.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate the volume of the triangular prism.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_itemNewline": true,
+        "_itemBlankLine": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The diagram shows the net of a triangular prism on a 1 cm$^2$ grid.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q03-TriangularPrism.\n\\newline\npng}\n%\\end{InsertScreenShot}"
+      }
+    ],
+    "_rawBody": "The diagram shows the net of a triangular prism on a 1 cm$^2$ grid.\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q03-TriangularPrism.png}\n%\\end{InsertScreenShot}\n\n\\begin{parts}\n\\item Write down the mathematical name for the type of triangle shown on the grid.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item\n\n\\begin{subparts}\n\\item Measure the perpendicular height of the triangle.\n\n\\AnswerLine[] cm\n\\Marks{1}\n\n\\item Calculate the area of the triangle.\n\n\\AnswerLine[] cm$^2$\n\\Marks{2}\n\n\\item Calculate the volume of the triangular prism.\n\n\\AnswerLine[] cm$^3$\n\\Marks{2}\n\n\\end{subparts}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2020MayJune-Paper31-Q04",
+    "paper": "2020MayJune-Paper31",
+    "qnum": 4,
+    "marks": 9,
+    "topics": [
+      "Algebra and graphs",
+      "Geometry"
+    ],
+    "s": "2.10",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Graphs of functions",
+    "qtype": "plotting quadratic graph, identifying line of symmetry, solving equation from graph",
+    "g": "quadratic",
+    "src": "0580/31/M/J/20 Q04",
+    "year": 2020,
+    "session": "MayJune",
+    "tex": "(a) Complete the table of values for $y = 7 + 2x - x^2$.\n\\newline\n\\begin{tabular}{|c|c|c|c|c|c|c|}\n\\hline\n$x$ & $-2$ & $-1$ & $0$ & $1$ & $2$ & $3$ \\\\\n\\hline\n$y$ & $8$ & $7$ &  &  & $-1$ &  \\\\\n\\hline\n\\end{tabular}\n\n(b) On the grid, draw the graph of $y = 7 + 2x - x^2$ for $-2 \\leq x \\leq 4$.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\n(c) Write down the equation of the line of symmetry of the graph.\n\\newline\n\n(d) Use your graph to solve the equation $7 + 2x - x^2 = 0$.\n\\newline\n\n$x = $  or $x = $",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Complete the table of values for $y = 7 + 2x - x^2$.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{tabular}{|c|c|c|c|c|c|c|}\n\\hline\n$x$ & $-2$ & $-1$ & $0$ & $1$ & $2$ & $3$ \\\\\n\\hline\n$y$ & $8$ & $7$ &  &  & $-1$ &  \\\\\n\\hline\n\\end{tabular}"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "text",
+            "content": "On the grid, draw the graph of $y = 7 + 2x - x^2$ for $-2 \\leq x \\leq 4$.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q04-GraphGrid.\n\\newline\npng}\n%\\end{InsertScreenShot}"
+          }
+        ],
+        "answer": {
+          "type": "none",
+          "space": {
+            "type": "drawing",
+            "height": "6cm",
+            "cmd": "Answerspace"
+          }
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down the equation of the line of symmetry of the graph.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Use your graph to solve the equation $7 + 2x - x^2 = 0$.\n\\newline\n\n$x = $ \\AnswerLine[] or $x = $ \\AnswerLine[]"
+          }
+        ],
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Complete the table of values for $y = 7 + 2x - x^2$.\n\\begin{tabular}{|c|c|c|c|c|c|c|}\n\\hline\n$x$ & $-2$ & $-1$ & $0$ & $1$ & $2$ & $3$ \\\\\n\\hline\n$y$ & $8$ & $7$ &  &  & $-1$ &  \\\\\n\\hline\n\\end{tabular}\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item On the grid, draw the graph of $y = 7 + 2x - x^2$ for $-2 \\leq x \\leq 4$.\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q04-GraphGrid.png}\n%\\end{InsertScreenShot}\n\n\\Answerspace[6cm]\n\\Marks{4}\n\n\\item Write down the equation of the line of symmetry of the graph.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Use your graph to solve the equation $7 + 2x - x^2 = 0$.\n\n$x = $ \\AnswerLine[] or $x = $ \\AnswerLine[]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2020MayJune-Paper31-Q05",
+    "paper": "2020MayJune-Paper31",
+    "qnum": 5,
+    "marks": 12,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.1",
+    "d": 1,
+    "cat": "number",
+    "topic": "Types of number",
+    "qtype": "identification of number types, powers and roots, indices, rounding, LCM",
+    "g": "indices",
+    "src": "0580/31/M/J/20 Q05",
+    "year": 2020,
+    "session": "MayJune",
+    "tex": "(a) Using the integers from 60 to 75 only, find\n\n(i) (b) a multiple of 17,\n\n(c) the prime numbers.\n\\newline\n\n(d) Find\n\n(i) (e) the square root of 4489,\n\n(f) $4^3$,\n\n(g) $\\sqrt[3]{274625}$,\n\n(h) $2^{-3} \\times 24^2$.\n\\newline\n\n(i) Write down the reciprocal of 7.\n\\newline\n\n(j) Write 3.72194 correct to 3 decimal places.\n\\newline\n\n(k) Find the lowest common multiple (LCM) of 8 and 14.\n\\newline\n\n(l) The average temperature at the North Pole is $-23^\\circ$C in January and $-11^\\circ$C in March.\n\\newline\n\n(i) (m) Find the difference between these temperatures.\n\\newline\n\n $^\\circ$C\n\n(n) The average temperature in July is $28^\\circ$C higher than the average temperature in March.\n\\newline\nFind the average temperature in July.\n\\newline\n\n $^\\circ$C",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Using the integers from 60 to 75 only, find"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "a multiple of 17,"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "the prime numbers.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item"
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Find"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "the square root of 4489,"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "$4^3$,"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "$\\sqrt[3]{274625}$,"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iv)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "$2^{-3} \\times 24^2$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item"
+      },
+      {
+        "label": "(c)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down the reciprocal of 7.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write 3.72194 correct to 3 decimal places.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(e)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the lowest common multiple (LCM) of 8 and 14.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(f)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The average temperature at the North Pole is $-23^\\circ$C in January and $-11^\\circ$C in March.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the difference between these temperatures.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "The average temperature in July is $28^\\circ$C higher than the average temperature in March.\n\\newline\nFind the average temperature in July.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item"
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Using the integers from 60 to 75 only, find\n\n\\begin{subparts}\n\\item a multiple of 17,\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item the prime numbers.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{subparts}\n\n\\item Find\n\n\\begin{subparts}\n\\item the square root of 4489,\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item $4^3$,\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item $\\sqrt[3]{274625}$,\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item $2^{-3} \\times 24^2$.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{subparts}\n\n\\item Write down the reciprocal of 7.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Write 3.72194 correct to 3 decimal places.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Find the lowest common multiple (LCM) of 8 and 14.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item The average temperature at the North Pole is $-23^\\circ$C in January and $-11^\\circ$C in March.\n\n\\begin{subparts}\n\\item Find the difference between these temperatures.\n\n\\AnswerLine[] $^\\circ$C\n\\Marks{1}\n\n\\item The average temperature in July is $28^\\circ$C higher than the average temperature in March.\nFind the average temperature in July.\n\n\\AnswerLine[] $^\\circ$C\n\\Marks{1}\n\n\\end{subparts}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2020MayJune-Paper31-Q06",
+    "paper": "2020MayJune-Paper31",
+    "qnum": 6,
+    "marks": 11,
+    "topics": [
+      "Number",
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": null,
+    "d": 1,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/31/M/J/20 Q06",
+    "year": 2020,
+    "session": "MayJune",
+    "tex": "NOT TO SCALE\n\\begin{tabular}{cc}\nG   O   F\n \\\\\nE   D \\\\\nH   C \\\\\n\\end{tabular}\nThe diagram shows a circle, centre O, radius 11 cm.\n\\newline\nC, F, G and H are points on the circumference of the circle.\n\\newline\nThe line AD touches the circle at C and is parallel to the line EG.\n\\newline\nB is a point on AD and angle ABO = 140°.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\n(a) Write down the mathematical name of the straight line AD.\n\\newline\n\n(b) (i) (c) Find, in terms of $r$, the circumference of the circle.\n\\newline\n\n cm\n\n(d) Work out angle FOH.\n\\newline\n\nAngle FOH = \n\n(e) Calculate the length of the minor arc FH.\n\\newline\n\n cm\n\n(f) (i) (g) Give a reason why angle BCO is 90°.\n\\newline\n\n(h) Show that BC = 13.11 cm, correct to 2 decimal places.\n\\newline\n\n(i) Calculate BH.\n\\newline\n\nBH =  cm",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down the mathematical name of the straight line AD.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find, in terms of $r$, the circumference of the circle.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Work out angle FOH.\n\\newline\n\nAngle FOH = \\AnswerLine[][]"
+              }
+            ],
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate the length of the minor arc FH.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_itemNewline": true,
+        "_itemBlankLine": true
+      },
+      {
+        "label": "(c)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Give a reason why angle BCO is 90°.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "Show that BC = 13.11 cm, correct to 2 decimal places.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate BH.\n\\newline\n\nBH = \\AnswerLine[] cm"
+              }
+            ],
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_itemNewline": true,
+        "_itemBlankLine": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "",
+    "cmd": "show",
+    "stem": [
+      {
+        "type": "text",
+        "content": "NOT TO SCALE"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{tabular}{cc}\n\\begin{minipage}{0.6\\textwidth}\nG \\quad O \\quad F\n\\end{minipage} \\\\\nE \\quad D \\\\\nH \\quad C \\\\\n\\end{tabular}"
+      },
+      {
+        "type": "text",
+        "content": "The diagram shows a circle, centre O, radius 11 cm.\n\\newline\nC, F, G and H are points on the circumference of the circle.\n\\newline\nThe line AD touches the circle at C and is parallel to the line EG.\n\\newline\nB is a point on AD and angle ABO = 140°.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q06-CircleGeometry.\n\\newline\npng}\n%\\end{InsertScreenShot}"
+      }
+    ],
+    "_rawBody": "NOT TO SCALE\n\\begin{tabular}{cc}\n\\begin{minipage}{0.6\\textwidth}\nG \\quad O \\quad F\n\\end{minipage} \\\\\nE \\quad D \\\\\nH \\quad C \\\\\n\\end{tabular}\nThe diagram shows a circle, centre O, radius 11 cm.\nC, F, G and H are points on the circumference of the circle.\nThe line AD touches the circle at C and is parallel to the line EG.\nB is a point on AD and angle ABO = 140°.\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q06-CircleGeometry.png}\n%\\end{InsertScreenShot}\n\n\\begin{parts}\n\\item Write down the mathematical name of the straight line AD.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item\n\n\\begin{subparts}\n\\item Find, in terms of $r$, the circumference of the circle.\n\n\\AnswerLine[] cm\n\\Marks{2}\n\n\\item Work out angle FOH.\n\nAngle FOH = \\AnswerLine[][]\n\\Marks{2}\n\n\\item Calculate the length of the minor arc FH.\n\n\\AnswerLine[] cm\n\\Marks{2}\n\n\\end{subparts}\n\n\\item\n\n\\begin{subparts}\n\\item Give a reason why angle BCO is 90°.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Show that BC = 13.11 cm, correct to 2 decimal places.\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\item Calculate BH.\n\nBH = \\AnswerLine[] cm\n\\Marks{3}\n\n\\end{subparts}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2020MayJune-Paper31-Q07",
+    "paper": "2020MayJune-Paper31",
+    "qnum": 7,
+    "marks": 10,
+    "topics": [
+      "Geometry",
+      "Mensuration",
+      "Statistics"
+    ],
+    "s": "4.6",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/31/M/J/20 Q07",
+    "year": 2020,
+    "session": "MayJune",
+    "tex": "(a) 20 students from College A each run 5 km.\n\\newline\nThe times, correct to the nearest minute, are recorded.\n\\newline\n32   51   25   40   47   21   37   32   48   36\n46   39   30   29   44   39   53   35   40   31\n\n(i) (b) Complete the stem-and-leaf diagram.\n\\newline\n\\begin{tabular}{|c|l|}\n\\hline\n2 & \\\\\n\\hline\n3 & \\\\\n\\hline\n4 & \\\\\n\\hline\n5 & \\\\\n\\hline\n\\end{tabular}\nKey: 3 | 4 represents 34 minutes\n\n(c) Find the range of the times.\n\\newline\n\n min\n\n(d) Find the median of the times.\n\\newline\n\n min\n\n(e) Complete the bar chart for the times of the students.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\n(f) 20 students from College B each run 5 km.\n\\newline\nTheir times, correct to the nearest minute, are recorded and the results are shown in the table.\n\\newline\n\\begin{tabular}{|c|c|c|}\n\\hline\nTime (minutes) & Number of students & Pie chart sector angle \\\\\n\\hline\n30 to 39 & 5 & 90° \\\\\n\\hline\n40 to 49 & 8 & \\\\\n\\hline\n50 to 59 & 7 & \\\\\n\\hline\n\\end{tabular}\n\n(i) (g) Complete the table.\n\\newline\n\n(h) Complete the pie chart.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\n(i) Write down two comments comparing the times of students from College A with the times of\nstudents from College B.\n\\newline\n\n1 \n\n2",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "20 students from College A each run 5 km.\n\\newline\nThe times, correct to the nearest minute, are recorded.\n\\newline\n32 \\quad 51 \\quad 25 \\quad 40 \\quad 47 \\quad 21 \\quad 37 \\quad 32 \\quad 48 \\quad 36\n46 \\quad 39 \\quad 30 \\quad 29 \\quad 44 \\quad 39 \\quad 53 \\quad 35 \\quad 40 \\quad 31"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Complete the stem-and-leaf diagram.\n\\newline\n"
+              },
+              {
+                "type": "table",
+                "content": "\\begin{tabular}{|c|l|}\n\\hline\n2 & \\\\\n\\hline\n3 & \\\\\n\\hline\n4 & \\\\\n\\hline\n5 & \\\\\n\\hline\n\\end{tabular}"
+              },
+              {
+                "type": "text",
+                "content": "Key: 3 | 4 represents 34 minutes"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the range of the times.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the median of the times.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iv)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Complete the bar chart for the times of the students.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q07-BarChart.\n\\newline\npng}\n%\\end{InsertScreenShot}"
+              }
+            ],
+            "answer": {
+              "type": "none",
+              "space": {
+                "type": "drawing",
+                "height": "4cm",
+                "cmd": "Answerspace"
+              }
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item"
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "20 students from College B each run 5 km.\n\\newline\nTheir times, correct to the nearest minute, are recorded and the results are shown in the table.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{tabular}{|c|c|c|}\n\\hline\nTime (minutes) & Number of students & Pie chart sector angle \\\\\n\\hline\n30 to 39 & 5 & 90° \\\\\n\\hline\n40 to 49 & 8 & \\\\\n\\hline\n50 to 59 & 7 & \\\\\n\\hline\n\\end{tabular}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Complete the table.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Complete the pie chart.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q07-PieChart.\n\\newline\npng}\n%\\end{InsertScreenShot}"
+              }
+            ],
+            "answer": {
+              "type": "none",
+              "space": {
+                "type": "drawing",
+                "height": "4cm",
+                "cmd": "Answerspace"
+              }
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item"
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down two comments comparing the times of students from College A with the times of\nstudents from College B.\n\\newline\n\n1 \\AnswerLine[][]\n\\AnswerLine[][]\n\n2 \\AnswerLine[][]"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item 20 students from College A each run 5 km.\nThe times, correct to the nearest minute, are recorded.\n32 \\quad 51 \\quad 25 \\quad 40 \\quad 47 \\quad 21 \\quad 37 \\quad 32 \\quad 48 \\quad 36\n46 \\quad 39 \\quad 30 \\quad 29 \\quad 44 \\quad 39 \\quad 53 \\quad 35 \\quad 40 \\quad 31\n\n\\begin{subparts}\n\\item Complete the stem-and-leaf diagram.\n\\begin{tabular}{|c|l|}\n\\hline\n2 & \\\\\n\\hline\n3 & \\\\\n\\hline\n4 & \\\\\n\\hline\n5 & \\\\\n\\hline\n\\end{tabular}\nKey: 3 | 4 represents 34 minutes\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item Find the range of the times.\n\n\\AnswerLine[] min\n\\Marks{1}\n\n\\item Find the median of the times.\n\n\\AnswerLine[] min\n\\Marks{1}\n\n\\item Complete the bar chart for the times of the students.\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q07-BarChart.png}\n%\\end{InsertScreenShot}\n\n\\Answerspace[4cm]\n\\Marks{2}\n\n\\end{subparts}\n\n\\item 20 students from College B each run 5 km.\nTheir times, correct to the nearest minute, are recorded and the results are shown in the table.\n\\begin{tabular}{|c|c|c|}\n\\hline\nTime (minutes) & Number of students & Pie chart sector angle \\\\\n\\hline\n30 to 39 & 5 & 90° \\\\\n\\hline\n40 to 49 & 8 & \\\\\n\\hline\n50 to 59 & 7 & \\\\\n\\hline\n\\end{tabular}\n\n\\begin{subparts}\n\\item Complete the table.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item Complete the pie chart.\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q07-PieChart.png}\n%\\end{InsertScreenShot}\n\n\\Answerspace[4cm]\n\\Marks{2}\n\n\\end{subparts}\n\n\\item Write down two comments comparing the times of students from College A with the times of\nstudents from College B.\n\n1 \\AnswerLine[][]\n\\AnswerLine[][]\n\n2 \\AnswerLine[][]\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2020MayJune-Paper31-Q08",
+    "paper": "2020MayJune-Paper31",
+    "qnum": 8,
+    "marks": 11,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.5",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Equations",
+    "qtype": "algebraic simplification, solving linear equations, expanding brackets, changing subject, simultaneous equations from word problem",
+    "g": "simul-linear",
+    "src": "0580/31/M/J/20 Q08",
+    "year": 2020,
+    "session": "MayJune",
+    "tex": "(a) Simplify $3c - 5d - c + 2d$.\n\\newline\n\n(b) Solve the equation $12x - 7 = 23$.\n\\newline\n\n$x = $ \n\n(c) Multiply out.\n\\newline\n\n$9(3 - x)$\n\n(d) $A = \\dfrac{(a + b)h}{2}$\n\nWork out the value of $h$ when $A = 38.64$, $a = 5.5$ and $b = 3.7$.\n\\newline\n\n$h = $ \n\n(e) Alphonse is $x$ years old and Beatrice is $y$ years old.\n\\newline\nThree times Alphonse's age is equal to 5 times Beatrice's age.\n\\newline\nTwice Beatrice's age is 4 years more than Alphonse's age.\n\\newline\n\n(i) (f) Use this information to write down two equations in $x$ and $y$.\n\\newline\n\n(g) Find the age of Alphonse and the age of Beatrice.\n\\newline\n\nAlphonse  years old\nBeatrice  years old",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Simplify $3c - 5d - c + 2d$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Solve the equation $12x - 7 = 23$.\n\\newline\n\n$x = $ \\AnswerLine[][]"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Multiply out.\n\\newline\n\n$9(3 - x)$"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "$A = \\dfrac{(a + b)h}{2}$\n\nWork out the value of $h$ when $A = 38.64$, $a = 5.5$ and $b = 3.7$.\n\\newline\n\n$h = $ \\AnswerLine[][]"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(e)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Alphonse is $x$ years old and Beatrice is $y$ years old.\n\\newline\nThree times Alphonse's age is equal to 5 times Beatrice's age.\n\\newline\nTwice Beatrice's age is 4 years more than Alphonse's age.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Use this information to write down two equations in $x$ and $y$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "multiline",
+              "lines": 2,
+              "template": "____\\n____",
+              "lineSep": "blank"
+            }
+          },
+          {
+            "label": "(ii)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the age of Alphonse and the age of Beatrice.\n\\newline\n\nAlphonse \\AnswerLine[] years old\nBeatrice \\AnswerLine[] years old"
+              }
+            ],
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item"
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Simplify $3c - 5d - c + 2d$.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item Solve the equation $12x - 7 = 23$.\n\n$x = $ \\AnswerLine[][]\n\\Marks{2}\n\n\\item Multiply out.\n\n$9(3 - x)$\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item $A = \\dfrac{(a + b)h}{2}$\n\nWork out the value of $h$ when $A = 38.64$, $a = 5.5$ and $b = 3.7$.\n\n$h = $ \\AnswerLine[][]\n\\Marks{3}\n\n\\item Alphonse is $x$ years old and Beatrice is $y$ years old.\nThree times Alphonse's age is equal to 5 times Beatrice's age.\nTwice Beatrice's age is 4 years more than Alphonse's age.\n\n\\begin{subparts}\n\\item Use this information to write down two equations in $x$ and $y$.\n\n\\AnswerLine[][]\n\\AnswerLine[][]\n\n\\Marks{2}\n\n\\item Find the age of Alphonse and the age of Beatrice.\n\nAlphonse \\AnswerLine[] years old\nBeatrice \\AnswerLine[] years old\n\\Marks{3}\n\n\\end{subparts}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2020MayJune-Paper31-Q09",
+    "paper": "2020MayJune-Paper31",
+    "qnum": 9,
+    "marks": 7,
+    "topics": [
+      "Number",
+      "Probability"
+    ],
+    "s": "1.2",
+    "d": 1,
+    "cat": "number",
+    "topic": "Squares, cubes and roots",
+    "qtype": "Set operations, Venn diagrams, number properties.",
+    "g": "mixed",
+    "src": "0580/31/M/J/20 Q09",
+    "year": 2020,
+    "session": "MayJune",
+    "tex": "(a) Use set notation to describe the shaded region in each Venn diagram.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\n(b) $\\xi = \\{x : x$ is a natural number $\\leq 15\\}$\n$F = \\{x : x$ is a factor of $12\\}$\n$O = \\{x : x$ is an odd number\\}\n\n(i) (c) Complete the Venn diagram to show the elements of these sets.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\n(d) Write down one number that is in set $O$, but not in set $F$.\n\\newline\n\n(e) Find $n(F \\cap O)$.\n\\newline\n\n(f) A number is chosen at random from $\\xi$.\n\\newline\nWork out the probability that this number is in set $O$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Use set notation to describe the shaded region in each Venn diagram.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q09-VennDiagrams1.\n\\newline\npng}\n%\\end{InsertScreenShot}"
+          }
+        ],
+        "answer": {
+          "type": "multiline",
+          "lines": 2,
+          "template": "____\\n____",
+          "lineSep": "blank"
+        }
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "$\\xi = \\{x : x$ is a natural number $\\leq 15\\}$\n$F = \\{x : x$ is a factor of $12\\}$\n$O = \\{x : x$ is an odd number\\}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Complete the Venn diagram to show the elements of these sets.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q09-VennDiagram2.\n\\newline\npng}\n%\\end{InsertScreenShot}"
+              }
+            ],
+            "answer": {
+              "type": "none",
+              "space": {
+                "type": "drawing",
+                "height": "4cm",
+                "cmd": "Answerspace"
+              }
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Write down one number that is in set $O$, but not in set $F$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find $n(F \\cap O)$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iv)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "A number is chosen at random from $\\xi$.\n\\newline\nWork out the probability that this number is in set $O$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item"
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "describe",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Use set notation to describe the shaded region in each Venn diagram.\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q09-VennDiagrams1.png}\n%\\end{InsertScreenShot}\n\n\\AnswerLine[][]\n\\AnswerLine[][]\n\n\\Marks{2}\n\n\\item $\\xi = \\{x : x$ is a natural number $\\leq 15\\}$\n$F = \\{x : x$ is a factor of $12\\}$\n$O = \\{x : x$ is an odd number\\}\n\n\\begin{subparts}\n\\item Complete the Venn diagram to show the elements of these sets.\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q09-VennDiagram2.png}\n%\\end{InsertScreenShot}\n\n\\Answerspace[4cm]\n\\Marks{2}\n\n\\item Write down one number that is in set $O$, but not in set $F$.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Find $n(F \\cap O)$.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item A number is chosen at random from $\\xi$.\nWork out the probability that this number is in set $O$.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{subparts}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2020MayJune-Paper31-Q10",
+    "paper": "2020MayJune-Paper31",
+    "qnum": 10,
+    "marks": 6,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.3",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Symmetry",
+    "qtype": "scale drawings and bearings",
+    "g": "mixed",
+    "src": "0580/31/M/J/20 Q10",
+    "year": 2020,
+    "session": "MayJune",
+    "tex": "Point B is 36 km from point A on a bearing of 140°.\n\\newline\n\n(a) Using a scale of 1 centimetre to represent 4 kilometres, mark the position of B.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\nNorth\n\nA\n\nScale: 1 cm to 4 km\n\n(b) (i) (c) Point C is 28 km from A and 20 km from B.\n\\newline\nThe bearing of C from A is less than 140°.\n\\newline\nUsing a ruler and compasses only, construct triangle ABC.\n\\newline\nShow all your construction arcs.\n\\newline\n\n(d) Measure angle ACB.\n\\newline\n\nAngle ACB =",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Using a scale of 1 centimetre to represent 4 kilometres, mark the position of B.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q10-BearingDiagram.\n\\newline\npng}\n%\\end{InsertScreenShot}\n\nNorth\n\nA\n\nScale: 1 cm to 4 km"
+          }
+        ],
+        "answer": {
+          "type": "none",
+          "space": {
+            "type": "drawing",
+            "height": "4cm",
+            "cmd": "Answerspace"
+          }
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "Point C is 28 km from A and 20 km from B.\n\\newline\nThe bearing of C from A is less than 140°.\n\\newline\nUsing a ruler and compasses only, construct triangle ABC.\n\\newline\nShow all your construction arcs.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "none",
+              "space": {
+                "type": "drawing",
+                "height": "6cm",
+                "cmd": "Answerspace"
+              }
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Measure angle ACB.\n\\newline\n\nAngle ACB = \\AnswerLine[][]"
+              }
+            ],
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_itemNewline": true,
+        "_itemBlankLine": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Point B is 36 km from point A on a bearing of 140°.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "Point B is 36 km from point A on a bearing of 140°.\n\n\\begin{parts}\n\\item Using a scale of 1 centimetre to represent 4 kilometres, mark the position of B.\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q10-BearingDiagram.png}\n%\\end{InsertScreenShot}\n\nNorth\n\nA\n\nScale: 1 cm to 4 km\n\n\\Answerspace[4cm]\n\\Marks{2}\n\n\\item\n\n\\begin{subparts}\n\\item Point C is 28 km from A and 20 km from B.\nThe bearing of C from A is less than 140°.\nUsing a ruler and compasses only, construct triangle ABC.\nShow all your construction arcs.\n\n\\Answerspace[6cm]\n\\Marks{3}\n\n\\item Measure angle ACB.\n\nAngle ACB = \\AnswerLine[][]\n\\Marks{1}\n\n\\end{subparts}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  }
+]

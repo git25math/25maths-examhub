@@ -1,0 +1,1120 @@
+[
+  {
+    "id": "0580-2019MayJune-Paper31-Q01",
+    "paper": "2019MayJune-Paper31",
+    "qnum": 1,
+    "marks": 15,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.16",
+    "d": 1,
+    "cat": "number",
+    "topic": "Upper and lower bounds",
+    "qtype": "money calculations, percentage pay",
+    "g": "mixed",
+    "src": "0580/31/M/J/19 Q01",
+    "year": 2019,
+    "session": "MayJune",
+    "tex": "Here is part of the menu for Jamie's café.\n\\newline\n\n\\begin{tabular}{|l|r|}\n\\hline\nMenu & Price (\\$) \\\\\n\\hline\nTea & 2.35 \\\\\nCoffee & 3.40 \\\\\nLemonade & 1.80 \\\\\nCake & 4.45 \\\\\nBiscuit & 0.85 \\\\\n\\hline\n\\end{tabular}\n\n(a) Sue has one tea and one cake.\n\\newline\nCalculate how much she pays.\n\\newline\n\n\\$ \n\n(b) Derrick has one coffee and two biscuits.\n\\newline\nHow much change does he receive from a \\$10 note?\n\n\\$ \n\n(c) Harriet works at the café for 34 hours each week.\n\\newline\nShe is paid \\$8.25 for each hour.\n\\newline\n\n(i) (d) Work out the amount she is paid each week.\n\\newline\n\n\\$ \n\n(e) One week she works 8 hours extra.\n\\newline\nThe extra hours are paid at 1.5 times her usual rate of \\$8.25 for each hour.\n\\newline\nWork out the total amount she is paid for that week.\n\\newline\n\n\\$ \n\n(f) Peter works these hours each week at the café.\n\\newline\n\\begin{tabular}{|l|l|}\n\\hline\nDay & Time \\\\\n\\hline\nMonday & 08 30 to 16 00 \\\\\nTuesday & 10 00 to 17 00 \\\\\nThursday & 08 30 to 16 30 \\\\\nSaturday & 08 00 to 18 30 \\\\\n\\hline\n\\end{tabular}\nWork out the number of hours he works in one week.\n\\newline\n\n hours\n\n(g) Jamie buys a clock for the café from Japan for 9395 yen.\n\\newline\nThe exchange rate is \\$1 = 110.27 yen.\n\\newline\nWork out the cost of the clock in dollars, correct to the nearest cent.\n\\newline\n\n\\$ \n\n(h) Jamie invests \\$12 000 at a rate of 5\\% per year compound interest.\n\\newline\nCalculate the value of his investment at the end of 3 years.\n\\newline\n\n\\$",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Sue has one tea and one cake.\n\\newline\nCalculate how much she pays.\n\\newline\n\n\\$ \\AnswerLine[]"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Derrick has one coffee and two biscuits.\n\\newline\nHow much change does he receive from a \\$10 note?\n\n\\$ \\AnswerLine[]"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Harriet works at the café for 34 hours each week.\n\\newline\nShe is paid \\$8.25 for each hour.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Work out the amount she is paid each week.\n\\newline\n\n\\$ \\AnswerLine[]"
+              }
+            ],
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "One week she works 8 hours extra.\n\\newline\nThe extra hours are paid at 1.5 times her usual rate of \\$8.25 for each hour.\n\\newline\nWork out the total amount she is paid for that week.\n\\newline\n\n\\$ \\AnswerLine[]"
+              }
+            ],
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(d)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Peter works these hours each week at the café.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{tabular}{|l|l|}\n\\hline\nDay & Time \\\\\n\\hline\nMonday & 08 30 to 16 00 \\\\\nTuesday & 10 00 to 17 00 \\\\\nThursday & 08 30 to 16 30 \\\\\nSaturday & 08 00 to 18 30 \\\\\n\\hline\n\\end{tabular}"
+          },
+          {
+            "type": "text",
+            "content": "Work out the number of hours he works in one week.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(e)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Jamie buys a clock for the café from Japan for 9395 yen.\n\\newline\nThe exchange rate is \\$1 = 110.27 yen.\n\\newline\nWork out the cost of the clock in dollars, correct to the nearest cent.\n\\newline\n\n\\$ \\AnswerLine[]"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(f)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Jamie invests \\$12 000 at a rate of 5\\% per year compound interest.\n\\newline\nCalculate the value of his investment at the end of 3 years.\n\\newline\n\n\\$ \\AnswerLine[]"
+          }
+        ],
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Here is part of the menu for Jamie's café.\n\\newline\n"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{tabular}{|l|r|}\n\\hline\nMenu & Price (\\$) \\\\\n\\hline\nTea & 2.35 \\\\\nCoffee & 3.40 \\\\\nLemonade & 1.80 \\\\\nCake & 4.45 \\\\\nBiscuit & 0.85 \\\\\n\\hline\n\\end{tabular}"
+      }
+    ],
+    "_rawBody": "Here is part of the menu for Jamie's café.\n\n\\begin{tabular}{|l|r|}\n\\hline\nMenu & Price (\\$) \\\\\n\\hline\nTea & 2.35 \\\\\nCoffee & 3.40 \\\\\nLemonade & 1.80 \\\\\nCake & 4.45 \\\\\nBiscuit & 0.85 \\\\\n\\hline\n\\end{tabular}\n\n\\begin{parts}\n\\item Sue has one tea and one cake.\nCalculate how much she pays.\n\n\\$ \\AnswerLine[]\n\\Marks{1}\n\n\\item Derrick has one coffee and two biscuits.\nHow much change does he receive from a \\$10 note?\n\n\\$ \\AnswerLine[]\n\\Marks{2}\n\n\\item Harriet works at the café for 34 hours each week.\nShe is paid \\$8.25 for each hour.\n\n\\begin{subparts}\n\\item Work out the amount she is paid each week.\n\n\\$ \\AnswerLine[]\n\\Marks{1}\n\n\\item One week she works 8 hours extra.\nThe extra hours are paid at 1.5 times her usual rate of \\$8.25 for each hour.\nWork out the total amount she is paid for that week.\n\n\\$ \\AnswerLine[]\n\\Marks{2}\n\\end{subparts}\n\n\\item Peter works these hours each week at the café.\n\\begin{tabular}{|l|l|}\n\\hline\nDay & Time \\\\\n\\hline\nMonday & 08 30 to 16 00 \\\\\nTuesday & 10 00 to 17 00 \\\\\nThursday & 08 30 to 16 30 \\\\\nSaturday & 08 00 to 18 30 \\\\\n\\hline\n\\end{tabular}\nWork out the number of hours he works in one week.\n\n\\AnswerLine[] hours\n\\Marks{2}\n\n\\item Jamie buys a clock for the café from Japan for 9395 yen.\nThe exchange rate is \\$1 = 110.27 yen.\nWork out the cost of the clock in dollars, correct to the nearest cent.\n\n\\$ \\AnswerLine[]\n\\Marks{3}\n\n\\item Jamie invests \\$12 000 at a rate of 5\\% per year compound interest.\nCalculate the value of his investment at the end of 3 years.\n\n\\$ \\AnswerLine[]\n\\Marks{3}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2019MayJune-Paper31-Q02",
+    "paper": "2019MayJune-Paper31",
+    "qnum": 2,
+    "marks": 15,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.6",
+    "d": 1,
+    "cat": "number",
+    "topic": "Standard form",
+    "qtype": "order of operations, ordering FDP, number properties, roots",
+    "g": "mixed",
+    "src": "0580/31/M/J/19 Q02",
+    "year": 2019,
+    "session": "MayJune",
+    "tex": "(a) Work out $48 \\div 3 - 5 \\times 2$.\n\\newline\n\n(b) Insert one pair of brackets to make this statement correct.\n\\newline\n\n$3 + 2 \\times 12 - 4 = 19$\n\n(c) Write the following in order, starting with the smallest.\n\\newline\n$\\dfrac{3}{4}$, $0.749$, $76\\%$, $\\dfrac{11}{15}$\n\n ,  ,  , \n\n(d) Find the value of\n(i) (e) $\\sqrt{265.69}$,\n\n(f) $\\sqrt{83}$.\n\\newline\n\n(g) Write down the smallest prime number.\n\\newline\n\n(h) Write down all the factors of 18.\n\\newline\n\n ,  ,  ,  ,  , \n\n(i) Write down a common factor of 16 and 72 that is greater than 2.\n\\newline\n\n(j) Write $\\dfrac{28}{140}$ as a fraction in its simplest form.\n\\newline\n\n / \n\n(k) Jeff and his friends win a prize.\n\\newline\nJeff's share is \\$160 which is $\\dfrac{5}{11}$ of the prize.\n\\newline\nWork out the value of the prize.\n\\newline\n\n\\$",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Work out $48 \\div 3 - 5 \\times 2$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Insert one pair of brackets to make this statement correct.\n\\newline\n\n$3 + 2 \\times 12 - 4 = 19$"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write the following in order, starting with the smallest.\n\\newline\n$\\dfrac{3}{4}$, $0.749$, $76\\%$, $\\dfrac{11}{15}$"
+          }
+        ],
+        "answer": {
+          "type": "multiline",
+          "lines": 4,
+          "template": "____\\n____\\n____\\n____",
+          "lineSep": "blank"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the value of"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "$\\sqrt{265.69}$,"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "$\\sqrt{83}$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true,
+        "_compactContentSubparts": true
+      },
+      {
+        "label": "(e)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down the smallest prime number.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(f)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down all the factors of 18.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "multiline",
+          "lines": 6,
+          "template": "____\\n____\\n____\\n____\\n____\\n____",
+          "lineSep": "blank"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(g)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down a common factor of 16 and 72 that is greater than 2.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(h)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write $\\dfrac{28}{140}$ as a fraction in its simplest form.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "multiline",
+          "lines": 2,
+          "template": "____\\n____",
+          "lineSep": "blank"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(i)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Jeff and his friends win a prize.\n\\newline\nJeff's share is \\$160 which is $\\dfrac{5}{11}$ of the prize.\n\\newline\nWork out the value of the prize.\n\\newline\n\n\\$ \\AnswerLine[]"
+          }
+        ],
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Work out $48 \\div 3 - 5 \\times 2$.\n\n\\AnswerLine[]\n\\Marks{1}\n\n\\item Insert one pair of brackets to make this statement correct.\n\n$3 + 2 \\times 12 - 4 = 19$\n\n\\AnswerLine[]\n\\Marks{1}\n\n\\item Write the following in order, starting with the smallest.\n$\\dfrac{3}{4}$, $0.749$, $76\\%$, $\\dfrac{11}{15}$\n\n\\AnswerLine[] , \\AnswerLine[] , \\AnswerLine[] , \\AnswerLine[]\n\\Marks{2}\n\n\\item Find the value of\n\\begin{subparts}\n\\item $\\sqrt{265.69}$,\n\n\\AnswerLine[]\n\\Marks{1}\n\n\\item $\\sqrt{83}$.\n\n\\AnswerLine[]\n\\Marks{1}\n\\end{subparts}\n\n\\item Write down the smallest prime number.\n\n\\AnswerLine[]\n\\Marks{1}\n\n\\item Write down all the factors of 18.\n\n\\AnswerLine[] , \\AnswerLine[] , \\AnswerLine[] , \\AnswerLine[] , \\AnswerLine[] , \\AnswerLine[]\n\\Marks{2}\n\n\\item Write down a common factor of 16 and 72 that is greater than 2.\n\n\\AnswerLine[]\n\\Marks{1}\n\n\\item Write $\\dfrac{28}{140}$ as a fraction in its simplest form.\n\n\\AnswerLine[] / \\AnswerLine[]\n\\Marks{1}\n\n\\item Jeff and his friends win a prize.\nJeff's share is \\$160 which is $\\dfrac{5}{11}$ of the prize.\nWork out the value of the prize.\n\n\\$ \\AnswerLine[]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2019MayJune-Paper31-Q03",
+    "paper": "2019MayJune-Paper31",
+    "qnum": 3,
+    "marks": 10,
+    "topics": [
+      "Geometry",
+      "Probability",
+      "Statistics"
+    ],
+    "s": "4.6",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/31/M/J/19 Q03",
+    "year": 2019,
+    "session": "MayJune",
+    "tex": "(a) On Monday, Main Street station sells 40 tickets.\n\\newline\nThere are four types of ticket; infant, child, adult and senior.\n\\newline\nThe bar chart shows the number of infant, child and adult tickets sold.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\n(i) (b) Complete the bar chart.\n\\newline\n\n(c) Find how many more adult tickets were sold than child tickets.\n\\newline\n\n(d) Write down the modal type of ticket.\n\\newline\n\n(e) One of these 40 people is chosen at random.\n\\newline\nFind the probability that this person is a child.\n\\newline\n\n(f) At Donville station the number of tickets sold each day is recorded for seven days.\n\\newline\n104, 18, 72, 31, 27, 45, 60\n\nFind\n(i) (g) the range,\n\n(h) the median,\n\n(i) the mean.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "On Monday, Main Street station sells 40 tickets.\n\\newline\nThere are four types of ticket; infant, child, adult and senior.\n\\newline\nThe bar chart shows the number of infant, child and adult tickets sold.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q03-BarChart.\n\\newline\npng}\n%\\end{InsertScreenShot}\n\n\\begin{tikzpicture}[scale=0.8]\n    \\draw[thick] (0,0) -- (0,20) -- (5,20) -- (5,0) -- cycle;\n    \\draw[thick] (0,0) -- (5,0);\n    \\draw[thick] (0,2) -- (0.2,2);\n    \\draw[thick] (0,4) -- (0.2,4);\n    \\draw[thick] (0,6) -- (0.2,6);\n    \\draw[thick] (0,8) -- (0.2,8);\n    \\draw[thick] (0,10) -- (0.2,10);\n    \\draw[thick] (0,12) -- (0.2,12);\n    \\draw[thick] (0,14) -- (0.2,14);\n    \\draw[thick] (0,16) -- (0.2,16);\n    \\draw[thick] (0,18) -- (0.2,18);\n    \\draw[thick] (0,20) -- (0.2,20);\n\n    \\node at (-0.5,10) {Frequency};\n    \\node at (-0.5,0) {0};\n    \\node at (-0.5,2) {2};\n    \\node at (-0.5,4) {4};\n    \\node at (-0.5,6) {6};\n    \\node at (-0.5,8) {8};\n    \\node at (-0.5,10) {10};\n    \\node at (-0.5,12) {12};\n    \\node at (-0.5,14) {14};\n    \\node at (-0.5,16) {16};\n    \\node at (-0.5,18) {18};\n    \\node at (-0.5,20) {20};\n\n    % Bars for infant, child, adult (heights to be filled)\n    \\draw[fill=blue] (0.5,0) rectangle (1.0,8); % Infant - placeholder\n    \\draw[fill=red] (1.5,0) rectangle (2.0,6); % Child - placeholder\n    \\draw[fill=green] (2.5,0) rectangle (3.0,12); % Adult - placeholder\n\n    \\node at (0.75,-0.5) {Infant};\n    \\node at (1.75,-0.5) {Child};\n    \\node at (2.75,-0.5) {Adult};\n    \\node at (3.75,-0.5) {Senior};\n\n    \\node at (2.5,-1.5) {Type of ticket};\n\\end{tikzpicture}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "Complete the bar chart.\n\\newline\n"
+              }
+            ]
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find how many more adult tickets were sold than child tickets.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Write down the modal type of ticket.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iv)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "One of these 40 people is chosen at random.\n\\newline\nFind the probability that this person is a child.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "At Donville station the number of tickets sold each day is recorded for seven days.\n\\newline\n104, 18, 72, 31, 27, 45, 60\n\nFind"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "the range,"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "the median,"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "the mean.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true,
+        "_compactContentSubparts": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item On Monday, Main Street station sells 40 tickets.\nThere are four types of ticket; infant, child, adult and senior.\nThe bar chart shows the number of infant, child and adult tickets sold.\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q03-BarChart.png}\n%\\end{InsertScreenShot}\n\n\\begin{tikzpicture}[scale=0.8]\n    \\draw[thick] (0,0) -- (0,20) -- (5,20) -- (5,0) -- cycle;\n    \\draw[thick] (0,0) -- (5,0);\n    \\draw[thick] (0,2) -- (0.2,2);\n    \\draw[thick] (0,4) -- (0.2,4);\n    \\draw[thick] (0,6) -- (0.2,6);\n    \\draw[thick] (0,8) -- (0.2,8);\n    \\draw[thick] (0,10) -- (0.2,10);\n    \\draw[thick] (0,12) -- (0.2,12);\n    \\draw[thick] (0,14) -- (0.2,14);\n    \\draw[thick] (0,16) -- (0.2,16);\n    \\draw[thick] (0,18) -- (0.2,18);\n    \\draw[thick] (0,20) -- (0.2,20);\n\n    \\node at (-0.5,10) {Frequency};\n    \\node at (-0.5,0) {0};\n    \\node at (-0.5,2) {2};\n    \\node at (-0.5,4) {4};\n    \\node at (-0.5,6) {6};\n    \\node at (-0.5,8) {8};\n    \\node at (-0.5,10) {10};\n    \\node at (-0.5,12) {12};\n    \\node at (-0.5,14) {14};\n    \\node at (-0.5,16) {16};\n    \\node at (-0.5,18) {18};\n    \\node at (-0.5,20) {20};\n\n    % Bars for infant, child, adult (heights to be filled)\n    \\draw[fill=blue] (0.5,0) rectangle (1.0,8); % Infant - placeholder\n    \\draw[fill=red] (1.5,0) rectangle (2.0,6); % Child - placeholder\n    \\draw[fill=green] (2.5,0) rectangle (3.0,12); % Adult - placeholder\n\n    \\node at (0.75,-0.5) {Infant};\n    \\node at (1.75,-0.5) {Child};\n    \\node at (2.75,-0.5) {Adult};\n    \\node at (3.75,-0.5) {Senior};\n\n    \\node at (2.5,-1.5) {Type of ticket};\n\\end{tikzpicture}\n\n\\begin{subparts}\n\\item Complete the bar chart.\n\n\\Marks{3}\n\n\\item Find how many more adult tickets were sold than child tickets.\n\n\\AnswerLine[]\n\\Marks{1}\n\n\\item Write down the modal type of ticket.\n\n\\AnswerLine[]\n\\Marks{1}\n\n\\item One of these 40 people is chosen at random.\nFind the probability that this person is a child.\n\n\\AnswerLine[]\n\\Marks{1}\n\\end{subparts}\n\n\\item At Donville station the number of tickets sold each day is recorded for seven days.\n104, 18, 72, 31, 27, 45, 60\n\nFind\n\\begin{subparts}\n\\item the range,\n\n\\AnswerLine[]\n\\Marks{1}\n\n\\item the median,\n\n\\AnswerLine[]\n\\Marks{2}\n\n\\item the mean.\n\n\\AnswerLine[]\n\\Marks{2}\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_compactItems": true
+  },
+  {
+    "id": "0580-2019MayJune-Paper31-Q04",
+    "paper": "2019MayJune-Paper31",
+    "qnum": 4,
+    "marks": 11,
+    "topics": [
+      "Geometry",
+      "Mensuration",
+      "Trigonometry"
+    ],
+    "s": "4.7",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Nets and 3D shapes",
+    "qtype": "circle theorems",
+    "g": "mixed",
+    "src": "0580/31/M/J/19 Q04",
+    "year": 2019,
+    "session": "MayJune",
+    "tex": "(a) \n\nABC is an isosceles triangle.\n\\newline\nBCD is a straight line.\n\\newline\nFind the value of a.\n\\newline\n\na = $^\\circ$\n\n(b) Find the size of one interior angle of a regular 10-sided polygon.\n\\newline\n\n$^\\circ$\n\n(c) \n\nThe points E, F and G lie on the circumference of a circle, centre O.\n\\newline\nJGH is a tangent to the circle.\n\\newline\nFind the value of x and the value of y.\n\\newline\n\nx = $^\\circ$ , y = $^\\circ$\n\n(d) \n\nIn the diagram AG and AF are straight lines.\n\\newline\nLines BC and DE are parallel.\n\\newline\nFind angle CED and give a reason for your answer.\n\\newline\n\nAngle CED = $^\\circ$ because \n\n(e) \n\nCalculate PR.\n\\newline\n\nPR =  cm",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "\\begin{tikzpicture}[scale=0.8]\n    \\draw[thick] (0,0) -- (3,0) -- (3,2) -- (0,2) -- cycle;\n    \\draw[thick] (3,0) -- (5,0);\n    \\node at (0,0) {A};\n    \\node at (3,0) {B};\n    \\node at (3,2) {C};\n    \\node at (5,0) {D};\n    \\node at (1.5,0.3) {118$^\\circ$};\n    \\node at (1.5,1.7) {a$^\\circ$};\n    \\node at (2,-0.5) {NOT TO SCALE};\n\\end{tikzpicture}\n\nABC is an isosceles triangle.\n\\newline\nBCD is a straight line.\n\\newline\nFind the value of a.\n\\newline\n\na = \\AnswerLine[]$^\\circ$"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the size of one interior angle of a regular 10-sided polygon.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "\\begin{tikzpicture}[scale=0.8]\n    \\draw[thick] (0,0) circle (2);\n    \\draw[thick] (-2,0) -- (2,0);\n    \\draw[thick] (0,0) -- (1.414,1.414);\n    \\draw[thick] (0,0) -- (-1.414,1.414);\n    \\draw[thick] (-1.414,1.414) -- (1.414,1.414);\n    \\node at (0,0) {O};\n    \\node at (1.414,1.414) {F};\n    \\node at (-1.414,1.414) {E};\n    \\node at (0,2.2) {G};\n    \\node at (-2.2,0) {J};\n    \\node at (2.2,0) {H};\n    \\node at (0.7,1.0) {58$^\\circ$};\n    \\node at (1.2,0.3) {x$^\\circ$};\n    \\node at (-1.2,0.3) {y$^\\circ$};\n    \\node at (0,-0.5) {NOT TO SCALE};\n\\end{tikzpicture}\n\nThe points E, F and G lie on the circumference of a circle, centre O.\n\\newline\nJGH is a tangent to the circle.\n\\newline\nFind the value of x and the value of y.\n\\newline\n\nx = \\AnswerLine[]$^\\circ$ , y = \\AnswerLine[]$^\\circ$"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "\\begin{tikzpicture}[scale=0.8]\n    \\draw[thick] (0,0) -- (2,0) -- (2,1) -- (4,1) -- (4,2) -- (0,2) -- cycle;\n    \\draw[thick] (2,0) -- (2,1);\n    \\draw[thick] (4,1) -- (4,2);\n    \\node at (0,0) {A};\n    \\node at (2,0) {G};\n    \\node at (4,0) {F};\n    \\node at (4,1) {D};\n    \\node at (2,1) {C};\n    \\node at (0,1) {E};\n    \\node at (4,1.5) {B};\n    \\node at (1,0.3) {28$^\\circ$};\n    \\node at (3,0.7) {67$^\\circ$};\n    \\node at (2,-0.5) {NOT TO SCALE};\n\\end{tikzpicture}\n\nIn the diagram AG and AF are straight lines.\n\\newline\nLines BC and DE are parallel.\n\\newline\nFind angle CED and give a reason for your answer.\n\\newline\n\nAngle CED = \\AnswerLine[]$^\\circ$ because \\AnswerLine[]"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(e)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "\\begin{tikzpicture}[scale=0.8]\n    \\draw[thick] (0,0) -- (3,0) -- (1.5,2.5) -- cycle;\n    \\node at (0,0) {P};\n    \\node at (3,0) {Q};\n    \\node at (1.5,2.5) {R};\n    \\node at (1.5,0.8) {21 cm};\n    \\node at (2.25,1.25) {28 cm};\n    \\node at (0.75,1.25) {PR = ?};\n    \\node at (1.5,-0.5) {NOT TO SCALE};\n\\end{tikzpicture}\n\nCalculate PR.\n\\newline\n\nPR = \\AnswerLine[] cm"
+          }
+        ],
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "explain",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item \\begin{tikzpicture}[scale=0.8]\n    \\draw[thick] (0,0) -- (3,0) -- (3,2) -- (0,2) -- cycle;\n    \\draw[thick] (3,0) -- (5,0);\n    \\node at (0,0) {A};\n    \\node at (3,0) {B};\n    \\node at (3,2) {C};\n    \\node at (5,0) {D};\n    \\node at (1.5,0.3) {118$^\\circ$};\n    \\node at (1.5,1.7) {a$^\\circ$};\n    \\node at (2,-0.5) {NOT TO SCALE};\n\\end{tikzpicture}\n\nABC is an isosceles triangle.\nBCD is a straight line.\nFind the value of a.\n\na = \\AnswerLine[]$^\\circ$\n\\Marks{2}\n\n\\item Find the size of one interior angle of a regular 10-sided polygon.\n\n\\AnswerLine[]$^\\circ$\n\\Marks{3}\n\n\\item \\begin{tikzpicture}[scale=0.8]\n    \\draw[thick] (0,0) circle (2);\n    \\draw[thick] (-2,0) -- (2,0);\n    \\draw[thick] (0,0) -- (1.414,1.414);\n    \\draw[thick] (0,0) -- (-1.414,1.414);\n    \\draw[thick] (-1.414,1.414) -- (1.414,1.414);\n    \\node at (0,0) {O};\n    \\node at (1.414,1.414) {F};\n    \\node at (-1.414,1.414) {E};\n    \\node at (0,2.2) {G};\n    \\node at (-2.2,0) {J};\n    \\node at (2.2,0) {H};\n    \\node at (0.7,1.0) {58$^\\circ$};\n    \\node at (1.2,0.3) {x$^\\circ$};\n    \\node at (-1.2,0.3) {y$^\\circ$};\n    \\node at (0,-0.5) {NOT TO SCALE};\n\\end{tikzpicture}\n\nThe points E, F and G lie on the circumference of a circle, centre O.\nJGH is a tangent to the circle.\nFind the value of x and the value of y.\n\nx = \\AnswerLine[]$^\\circ$ , y = \\AnswerLine[]$^\\circ$\n\\Marks{2}\n\n\\item \\begin{tikzpicture}[scale=0.8]\n    \\draw[thick] (0,0) -- (2,0) -- (2,1) -- (4,1) -- (4,2) -- (0,2) -- cycle;\n    \\draw[thick] (2,0) -- (2,1);\n    \\draw[thick] (4,1) -- (4,2);\n    \\node at (0,0) {A};\n    \\node at (2,0) {G};\n    \\node at (4,0) {F};\n    \\node at (4,1) {D};\n    \\node at (2,1) {C};\n    \\node at (0,1) {E};\n    \\node at (4,1.5) {B};\n    \\node at (1,0.3) {28$^\\circ$};\n    \\node at (3,0.7) {67$^\\circ$};\n    \\node at (2,-0.5) {NOT TO SCALE};\n\\end{tikzpicture}\n\nIn the diagram AG and AF are straight lines.\nLines BC and DE are parallel.\nFind angle CED and give a reason for your answer.\n\nAngle CED = \\AnswerLine[]$^\\circ$ because \\AnswerLine[]\n\\Marks{2}\n\n\\item \\begin{tikzpicture}[scale=0.8]\n    \\draw[thick] (0,0) -- (3,0) -- (1.5,2.5) -- cycle;\n    \\node at (0,0) {P};\n    \\node at (3,0) {Q};\n    \\node at (1.5,2.5) {R};\n    \\node at (1.5,0.8) {21 cm};\n    \\node at (2.25,1.25) {28 cm};\n    \\node at (0.75,1.25) {PR = ?};\n    \\node at (1.5,-0.5) {NOT TO SCALE};\n\\end{tikzpicture}\n\nCalculate PR.\n\nPR = \\AnswerLine[] cm\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2019MayJune-Paper31-Q05",
+    "paper": "2019MayJune-Paper31",
+    "qnum": 5,
+    "marks": 11,
+    "topics": [
+      "Algebra and graphs",
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "2.1",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Algebra basics",
+    "qtype": "forming algebraic expressions, finding terms of a sequence, completing table for graph",
+    "g": "sequence",
+    "src": "0580/31/M/J/19 Q05",
+    "year": 2019,
+    "session": "MayJune",
+    "tex": "(a) The diagram shows a rectangle with length 7a and width 2a.\n\\newline\n\nWrite an expression, in its simplest form, for\n(i) (b) the perimeter,\n\n(c) the area.\n\\newline\n\n(d) The nth term of a sequence is n$^2$ + 5.\n\\newline\nFind the first three terms of this sequence.\n\\newline\n\n ,  , \n\n(e) Complete the table of values for y = $\\dfrac{12}{x}$, x $\\neq$ 0.\n\\newline\n\n\\begin{tabular}{|c|c|c|c|c|c|c|}\n\\hline\nx & -6 & -4 & -2 & 1 & 2 & 3 \\\\\n\\hline\ny & -2 & -3 & -3 & -2 & 1 & 12 \\\\\n\\hline\n\\end{tabular}\n\n(f) On the grid, draw the graph of y = $\\dfrac{12}{x}$ for -6 $\\leq$ x $\\leq$ -1 and 1 $\\leq$ x $\\leq$ 6.\n\\newline\n\n(g) On the grid, draw the line y = 8.\n\\newline\n\n(h) Use your graph to solve $\\dfrac{12}{x}$ = 8.\n\\newline\n\nx =",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The diagram shows a rectangle with length 7a and width 2a.\n\\newline\n\n\\begin{tikzpicture}[scale=0.8]\n    \\draw[thick] (0,0) rectangle (3.5,1);\n    \\node at (1.75,0.5) {7a};\n    \\node at (1.75,-0.3) {length};\n    \\node at (-0.3,0.5) {2a};\n    \\node at (-0.6,0.5) {width};\n    \\node at (1.75,-0.8) {NOT TO SCALE};\n\\end{tikzpicture}\n\nWrite an expression, in its simplest form, for"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "the perimeter,"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "the area.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true,
+        "_compactContentSubparts": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "The nth term of a sequence is n$^2$ + 5.\n\\newline\nFind the first three terms of this sequence.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "multiline",
+          "lines": 3,
+          "template": "____\\n____\\n____",
+          "lineSep": "blank"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Complete the table of values for y = $\\dfrac{12}{x}$, x $\\neq$ 0.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{tabular}{|c|c|c|c|c|c|c|}\n\\hline\nx & -6 & -4 & -2 & 1 & 2 & 3 \\\\\n\\hline\ny & -2 & -3 & -3 & -2 & 1 & 12 \\\\\n\\hline\n\\end{tabular}"
+          }
+        ]
+      },
+      {
+        "label": "(d)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "text",
+            "content": "On the grid, draw the graph of y = $\\dfrac{12}{x}$ for -6 $\\leq$ x $\\leq$ -1 and 1 $\\leq$ x $\\leq$ 6.\n\\newline\n\n\\begin{tikzpicture}[scale=0.4]\n    \\draw[thick,<->] (-7,0) -- (7,0) node[right] {x};\n    \\draw[thick,<->] (0,-7) -- (0,7) node[above] {y};\n    \\foreach \\x in {-6,-5,-4,-3,-2,-1,1,2,3,4,5,6} \\draw (\\x,0.1) -- (\\x,-0.1) node[below] {\\x};\n    \\foreach \\y in {-6,-5,-4,-3,-2,-1,1,2,3,4,5,6} \\draw (0.1,\\y) -- (-0.1,\\y) node[left] {\\y};\n    \\draw[dashed] (0,0) -- (6,1);\n    \\draw[dashed] (0,0) -- (-6,-1);\n    \\draw[dashed] (0,0) -- (3,4);\n    \\draw[dashed] (0,0) -- (-3,-4);\n    \\draw[dashed] (0,0) -- (2,6);\n    \\draw[dashed] (0,0) -- (-2,-6);\n    \\draw[dashed] (0,0) -- (1,12);\n    \\draw[dashed] (0,0) -- (-1,-12);\n\\end{tikzpicture}"
+          }
+        ]
+      },
+      {
+        "label": "(e)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "On the grid, draw the line y = 8.\n\\newline\n"
+          }
+        ]
+      },
+      {
+        "label": "(f)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Use your graph to solve $\\dfrac{12}{x}$ = 8.\n\\newline\n\nx = \\AnswerLine[]"
+          }
+        ],
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item The diagram shows a rectangle with length 7a and width 2a.\n\n\\begin{tikzpicture}[scale=0.8]\n    \\draw[thick] (0,0) rectangle (3.5,1);\n    \\node at (1.75,0.5) {7a};\n    \\node at (1.75,-0.3) {length};\n    \\node at (-0.3,0.5) {2a};\n    \\node at (-0.6,0.5) {width};\n    \\node at (1.75,-0.8) {NOT TO SCALE};\n\\end{tikzpicture}\n\nWrite an expression, in its simplest form, for\n\\begin{subparts}\n\\item the perimeter,\n\n\\AnswerLine[]\n\\Marks{2}\n\n\\item the area.\n\n\\AnswerLine[]\n\\Marks{2}\n\\end{subparts}\n\n\\item The nth term of a sequence is n$^2$ + 5.\nFind the first three terms of this sequence.\n\n\\AnswerLine[] , \\AnswerLine[] , \\AnswerLine[]\n\\Marks{2}\n\n\\item Complete the table of values for y = $\\dfrac{12}{x}$, x $\\neq$ 0.\n\n\\begin{tabular}{|c|c|c|c|c|c|c|}\n\\hline\nx & -6 & -4 & -2 & 1 & 2 & 3 \\\\\n\\hline\ny & -2 & -3 & -3 & -2 & 1 & 12 \\\\\n\\hline\n\\end{tabular}\n\n\\Marks{3}\n\n\\item On the grid, draw the graph of y = $\\dfrac{12}{x}$ for -6 $\\leq$ x $\\leq$ -1 and 1 $\\leq$ x $\\leq$ 6.\n\n\\begin{tikzpicture}[scale=0.4]\n    \\draw[thick,<->] (-7,0) -- (7,0) node[right] {x};\n    \\draw[thick,<->] (0,-7) -- (0,7) node[above] {y};\n    \\foreach \\x in {-6,-5,-4,-3,-2,-1,1,2,3,4,5,6} \\draw (\\x,0.1) -- (\\x,-0.1) node[below] {\\x};\n    \\foreach \\y in {-6,-5,-4,-3,-2,-1,1,2,3,4,5,6} \\draw (0.1,\\y) -- (-0.1,\\y) node[left] {\\y};\n    \\draw[dashed] (0,0) -- (6,1);\n    \\draw[dashed] (0,0) -- (-6,-1);\n    \\draw[dashed] (0,0) -- (3,4);\n    \\draw[dashed] (0,0) -- (-3,-4);\n    \\draw[dashed] (0,0) -- (2,6);\n    \\draw[dashed] (0,0) -- (-2,-6);\n    \\draw[dashed] (0,0) -- (1,12);\n    \\draw[dashed] (0,0) -- (-1,-12);\n\\end{tikzpicture}\n\n\\Marks{4}\n\n\\item On the grid, draw the line y = 8.\n\n\\Marks{1}\n\n\\item Use your graph to solve $\\dfrac{12}{x}$ = 8.\n\nx = \\AnswerLine[]\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2019MayJune-Paper31-Q06",
+    "paper": "2019MayJune-Paper31",
+    "qnum": 6,
+    "marks": 6,
+    "topics": [
+      "Number",
+      "Geometry",
+      "Statistics"
+    ],
+    "s": null,
+    "d": 1,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/31/M/J/19 Q06",
+    "year": 2019,
+    "session": "MayJune",
+    "tex": "Fourteen students each take two tests in French, a speaking test and a written test.\n\\newline\nThe table shows the scores.\n\\newline\n\n\\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}\n\\hline\nSpeaking test & 10 & 13 & 48 & 30 & 35 & 18 & 41 & 40 & 22 & 28 & 20 & 44 & 37 & 46 \\\\\n\\hline\nWritten test & 24 & 44 & 51 & 39 & 45 & 29 & 56 & 20 & 39 & 49 & 33 & 52 & 44 & 52 \\\\\n\\hline\n\\end{tabular}\n\n(a) Complete the scatter diagram.\n\\newline\nThe first ten points have been plotted for you.\n\\newline\n\n(b) What type of correlation is shown in this scatter diagram?\n\n(c) One student has a high score in the speaking test and a low score in the written test.\n\\newline\nOn the scatter diagram, put a ring around this point.\n\\newline\n\n(d) On the scatter diagram, draw a line of best fit.\n\\newline\n\n(e) Use your line of best fit to estimate a score in the written test for a student who scored 25 in the speaking test.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Complete the scatter diagram.\n\\newline\nThe first ten points have been plotted for you.\n\\newline\n\n\\begin{tikzpicture}[scale=0.5]\n    \\draw[thick,<->] (0,0) -- (55,0) node[right] {Speaking test};\n    \\draw[thick,<->] (0,0) -- (0,60) node[above] {Written test};\n    \\foreach \\x in {0,5,10,15,20,25,30,35,40,45,50} \\draw (\\x,0.2) -- (\\x,-0.2) node[below] {\\x};\n    \\foreach \\y in {0,5,10,15,20,25,30,35,40,45,50,55} \\draw (0.2,\\y) -- (-0.2,\\y) node[left] {\\y};\n\n    % Plot first 10 points (placeholder - actual points need to be plotted)\n    \\fill (10,24) circle (2pt);\n    \\fill (13,44) circle (2pt);\n    \\fill (48,51) circle (2pt);\n    \\fill (30,39) circle (2pt);\n    \\fill (35,45) circle (2pt);\n    \\fill (18,29) circle (2pt);\n    \\fill (41,56) circle (2pt);\n    \\fill (40,20) circle (2pt);\n    \\fill (22,39) circle (2pt);\n    \\fill (28,49) circle (2pt);\n    % Remaining points to be plotted by student\n\\end{tikzpicture}"
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "What type of correlation is shown in this scatter diagram?"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "One student has a high score in the speaking test and a low score in the written test.\n\\newline\nOn the scatter diagram, put a ring around this point.\n\\newline\n"
+          }
+        ]
+      },
+      {
+        "label": "(d)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "On the scatter diagram, draw a line of best fit.\n\\newline\n"
+          }
+        ]
+      },
+      {
+        "label": "(e)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Use your line of best fit to estimate a score in the written test for a student who scored 25 in the speaking test.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Fourteen students each take two tests in French, a speaking test and a written test.\n\\newline\nThe table shows the scores.\n\\newline\n"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}\n\\hline\nSpeaking test & 10 & 13 & 48 & 30 & 35 & 18 & 41 & 40 & 22 & 28 & 20 & 44 & 37 & 46 \\\\\n\\hline\nWritten test & 24 & 44 & 51 & 39 & 45 & 29 & 56 & 20 & 39 & 49 & 33 & 52 & 44 & 52 \\\\\n\\hline\n\\end{tabular}"
+      }
+    ],
+    "_rawBody": "Fourteen students each take two tests in French, a speaking test and a written test.\nThe table shows the scores.\n\n\\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}\n\\hline\nSpeaking test & 10 & 13 & 48 & 30 & 35 & 18 & 41 & 40 & 22 & 28 & 20 & 44 & 37 & 46 \\\\\n\\hline\nWritten test & 24 & 44 & 51 & 39 & 45 & 29 & 56 & 20 & 39 & 49 & 33 & 52 & 44 & 52 \\\\\n\\hline\n\\end{tabular}\n\n\\begin{parts}\n\\item Complete the scatter diagram.\nThe first ten points have been plotted for you.\n\n\\begin{tikzpicture}[scale=0.5]\n    \\draw[thick,<->] (0,0) -- (55,0) node[right] {Speaking test};\n    \\draw[thick,<->] (0,0) -- (0,60) node[above] {Written test};\n    \\foreach \\x in {0,5,10,15,20,25,30,35,40,45,50} \\draw (\\x,0.2) -- (\\x,-0.2) node[below] {\\x};\n    \\foreach \\y in {0,5,10,15,20,25,30,35,40,45,50,55} \\draw (0.2,\\y) -- (-0.2,\\y) node[left] {\\y};\n\n    % Plot first 10 points (placeholder - actual points need to be plotted)\n    \\fill (10,24) circle (2pt);\n    \\fill (13,44) circle (2pt);\n    \\fill (48,51) circle (2pt);\n    \\fill (30,39) circle (2pt);\n    \\fill (35,45) circle (2pt);\n    \\fill (18,29) circle (2pt);\n    \\fill (41,56) circle (2pt);\n    \\fill (40,20) circle (2pt);\n    \\fill (22,39) circle (2pt);\n    \\fill (28,49) circle (2pt);\n    % Remaining points to be plotted by student\n\\end{tikzpicture}\n\n\\Marks{2}\n\n\\item What type of correlation is shown in this scatter diagram?\n\n\\AnswerLine[]\n\\Marks{1}\n\n\\item One student has a high score in the speaking test and a low score in the written test.\nOn the scatter diagram, put a ring around this point.\n\n\\Marks{1}\n\n\\item On the scatter diagram, draw a line of best fit.\n\n\\Marks{1}\n\n\\item Use your line of best fit to estimate a score in the written test for a student who scored 25 in the speaking test.\n\n\\AnswerLine[]\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2019MayJune-Paper31-Q07",
+    "paper": "2019MayJune-Paper31",
+    "qnum": 7,
+    "marks": 8,
+    "topics": [
+      "Coordinate geometry",
+      "Transformations and vectors"
+    ],
+    "s": "3.1",
+    "d": 1,
+    "cat": "coord",
+    "topic": "Coordinates",
+    "qtype": "coordinates reading/plotting",
+    "g": "graph",
+    "src": "0580/31/M/J/19 Q07",
+    "year": 2019,
+    "session": "MayJune",
+    "tex": "(a) Describe fully the single transformation that maps shape A onto shape B.\n\\newline\n\n(b) Describe fully the single transformation that maps shape A onto shape C.\n\\newline\n\n(c) On the grid, draw the image of shape A after a translation by the vector $\\begin{pmatrix} 3 \\\\ 1 \\end{pmatrix}$.\n\\newline\n\n(d) On the grid, draw the image of shape B after a reflection in the line y = 1.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Describe fully the single transformation that maps shape A onto shape B.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Describe fully the single transformation that maps shape A onto shape C.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "On the grid, draw the image of shape A after a translation by the vector $\\begin{pmatrix} 3 \\\\ 1 \\end{pmatrix}$.\n\\newline\n"
+          }
+        ]
+      },
+      {
+        "label": "(d)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "On the grid, draw the image of shape B after a reflection in the line y = 1.\n\\newline\n"
+          }
+        ]
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "describe",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{tikzpicture}[scale=0.6]\n    \\draw[thick,<->] (-9,0) -- (9,0) node[right] {x};\n    \\draw[thick,<->] (0,-9) -- (0,9) node[above] {y};\n    \\foreach \\x in {-8,-7,-6,-5,-4,-3,-2,-1,1,2,3,4,5,6,7,8} \\draw (\\x,0.1) -- (\\x,-0.1) node[below] {\\x};\n    \\foreach \\y in {-8,-7,-6,-5,-4,-3,-2,-1,1,2,3,4,5,6,7,8} \\draw (0.1,\\y) -- (-0.1,\\y) node[left] {\\y};\n\n    % Shape A (placeholder coordinates)\n    \\fill[gray!30] (1,1) -- (1,3) -- (3,3) -- (3,1) -- cycle;\n    \\node at (2,2) {A};\n\n    % Shape B (placeholder - reflection)\n    \\fill[blue!30] (-1,-1) -- (-1,-3) -- (-3,-3) -- (-3,-1) -- cycle;\n    \\node at (-2,-2) {B};\n\n    % Shape C (placeholder - rotation)\n    \\fill[red!30] (-1,1) -- (-3,1) -- (-3,3) -- (-1,3) -- cycle;\n    \\node at (-2,2) {C};\n\\end{tikzpicture}"
+      }
+    ],
+    "_rawBody": "\\begin{tikzpicture}[scale=0.6]\n    \\draw[thick,<->] (-9,0) -- (9,0) node[right] {x};\n    \\draw[thick,<->] (0,-9) -- (0,9) node[above] {y};\n    \\foreach \\x in {-8,-7,-6,-5,-4,-3,-2,-1,1,2,3,4,5,6,7,8} \\draw (\\x,0.1) -- (\\x,-0.1) node[below] {\\x};\n    \\foreach \\y in {-8,-7,-6,-5,-4,-3,-2,-1,1,2,3,4,5,6,7,8} \\draw (0.1,\\y) -- (-0.1,\\y) node[left] {\\y};\n\n    % Shape A (placeholder coordinates)\n    \\fill[gray!30] (1,1) -- (1,3) -- (3,3) -- (3,1) -- cycle;\n    \\node at (2,2) {A};\n\n    % Shape B (placeholder - reflection)\n    \\fill[blue!30] (-1,-1) -- (-1,-3) -- (-3,-3) -- (-3,-1) -- cycle;\n    \\node at (-2,-2) {B};\n\n    % Shape C (placeholder - rotation)\n    \\fill[red!30] (-1,1) -- (-3,1) -- (-3,3) -- (-1,3) -- cycle;\n    \\node at (-2,2) {C};\n\\end{tikzpicture}\n\n\\begin{parts}\n\\item Describe fully the single transformation that maps shape A onto shape B.\n\n\\AnswerLine[]\n\\Marks{3}\n\n\\item Describe fully the single transformation that maps shape A onto shape C.\n\n\\AnswerLine[]\n\\Marks{3}\n\n\\item On the grid, draw the image of shape A after a translation by the vector $\\begin{pmatrix} 3 \\\\ 1 \\end{pmatrix}$.\n\n\\Marks{2}\n\n\\item On the grid, draw the image of shape B after a reflection in the line y = 1.\n\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2019MayJune-Paper31-Q08",
+    "paper": "2019MayJune-Paper31",
+    "qnum": 8,
+    "marks": 7,
+    "topics": [
+      "Number",
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": null,
+    "d": 1,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/31/M/J/19 Q08",
+    "year": 2019,
+    "session": "MayJune",
+    "tex": "(a) A cylinder has a radius of 6 cm and a height of 17 cm.\n\\newline\nShow that the volume of this cylinder is 1923 cm$^3$, correct to 4 significant figures.\n\\newline\n\n(b) \n\nPoints P, Q and R are on the circumference of a semicircle, centre O and radius 8 cm.\n\\newline\nAngle POQ = 90$^\\circ$.\n\\newline\nCalculate the shaded area.\n\\newline\n\n cm$^2$",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "A cylinder has a radius of 6 cm and a height of 17 cm.\n\\newline\nShow that the volume of this cylinder is 1923 cm$^3$, correct to 4 significant figures.\n\\newline\n"
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "marks": 5,
+        "content": [
+          {
+            "type": "text",
+            "content": "\\begin{tikzpicture}[scale=0.8]\n    \\draw[thick] (0,0) arc (180:0:3);\n    \\draw[thick] (-3,0) -- (3,0);\n    \\draw[thick] (0,0) -- (2.12,2.12);\n    \\draw[thick] (0,0) -- (-2.12,2.12);\n    \\draw[thick] (2.12,2.12) arc (45:135:2.83);\n    \\node at (0,0) {O};\n    \\node at (2.12,2.12) {P};\n    \\node at (-2.12,2.12) {Q};\n    \\node at (0,3) {R};\n    \\node at (0,-0.5) {NOT TO SCALE};\n    \\node at (1.5,1.5) {90$^\\circ$};\n    \\node at (1,3.2) {8 cm};\n\\end{tikzpicture}\n\nPoints P, Q and R are on the circumference of a semicircle, centre O and radius 8 cm.\n\\newline\nAngle POQ = 90$^\\circ$.\n\\newline\nCalculate the shaded area.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "",
+    "cmd": "show",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item A cylinder has a radius of 6 cm and a height of 17 cm.\nShow that the volume of this cylinder is 1923 cm$^3$, correct to 4 significant figures.\n\n\\Marks{2}\n\n\\item \\begin{tikzpicture}[scale=0.8]\n    \\draw[thick] (0,0) arc (180:0:3);\n    \\draw[thick] (-3,0) -- (3,0);\n    \\draw[thick] (0,0) -- (2.12,2.12);\n    \\draw[thick] (0,0) -- (-2.12,2.12);\n    \\draw[thick] (2.12,2.12) arc (45:135:2.83);\n    \\node at (0,0) {O};\n    \\node at (2.12,2.12) {P};\n    \\node at (-2.12,2.12) {Q};\n    \\node at (0,3) {R};\n    \\node at (0,-0.5) {NOT TO SCALE};\n    \\node at (1.5,1.5) {90$^\\circ$};\n    \\node at (1,3.2) {8 cm};\n\\end{tikzpicture}\n\nPoints P, Q and R are on the circumference of a semicircle, centre O and radius 8 cm.\nAngle POQ = 90$^\\circ$.\nCalculate the shaded area.\n\n\\AnswerLine[] cm$^2$\n\\Marks{5}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2019MayJune-Paper31-Q09",
+    "paper": "2019MayJune-Paper31",
+    "qnum": 9,
+    "marks": 9,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.5",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Equations",
+    "qtype": "simplifying algebraic expressions, substitution, solving linear equations, rearranging formula",
+    "g": "rearrange",
+    "src": "0580/31/M/J/19 Q09",
+    "year": 2019,
+    "session": "MayJune",
+    "tex": "(a) Simplify 8a + 3b - 2a + b.\n\\newline\n\n(b) Calculate the value of $4x^2 + xy$ when x = 3 and y = -2.\n\\newline\n\n(c) Solve these equations.\n\\newline\n(i) (d) $\\dfrac{x}{4} = 20$\n\nx = \n\n(e) 3x - 5 = 16\n\nx = \n\n(f) 5(2x + 1) = 27\n\nx = \n\n(g) Make r the subject of this formula.\n\\newline\n\np = 3r - 5\n\nr =",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Simplify 8a + 3b - 2a + b.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Calculate the value of $4x^2 + xy$ when x = 3 and y = -2.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Solve these equations.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "$\\dfrac{x}{4} = 20$\n\nx = \\AnswerLine[]"
+              }
+            ],
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "3x - 5 = 16\n\nx = \\AnswerLine[]"
+              }
+            ],
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "5(2x + 1) = 27\n\nx = \\AnswerLine[]"
+              }
+            ],
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true,
+        "_compactContentSubparts": true
+      },
+      {
+        "label": "(d)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Make r the subject of this formula.\n\\newline\n\np = 3r - 5\n\nr = \\AnswerLine[]"
+          }
+        ],
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Simplify 8a + 3b - 2a + b.\n\n\\AnswerLine[]\n\\Marks{2}\n\n\\item Calculate the value of $4x^2 + xy$ when x = 3 and y = -2.\n\n\\AnswerLine[]\n\\Marks{2}\n\n\\item Solve these equations.\n\\begin{subparts}\n\\item $\\dfrac{x}{4} = 20$\n\nx = \\AnswerLine[]\n\\Marks{1}\n\n\\item 3x - 5 = 16\n\nx = \\AnswerLine[]\n\\Marks{2}\n\n\\item 5(2x + 1) = 27\n\nx = \\AnswerLine[]\n\\Marks{3}\n\\end{subparts}\n\n\\item Make r the subject of this formula.\n\np = 3r - 5\n\nr = \\AnswerLine[]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2019MayJune-Paper31-Q10",
+    "paper": "2019MayJune-Paper31",
+    "qnum": 10,
+    "marks": 5,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.3",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Symmetry",
+    "qtype": "scale drawings and bearings",
+    "g": "mixed",
+    "src": "0580/31/M/J/19 Q10",
+    "year": 2019,
+    "session": "MayJune",
+    "tex": "The scale drawing shows a rectangle ABCD.\n\\newline\nThe scale is 1 centimetre represents 20 metres.\n\\newline\n\n(a) Using a straight edge and compasses only, construct the bisector of angle ADC.\n\\newline\nShow all your construction arcs.\n\\newline\n\n(b) Shade the region inside the rectangle that is\n(c) nearer to DA than to DC\n\n(d) less than 210 m from C.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Using a straight edge and compasses only, construct the bisector of angle ADC.\n\\newline\nShow all your construction arcs.\n\\newline\n"
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "text",
+            "content": "Shade the region inside the rectangle that is\n\\begin{parts}"
+          }
+        ]
+      },
+      {
+        "label": "(c)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "text",
+            "content": "nearer to DA than to DC"
+          }
+        ]
+      },
+      {
+        "label": "(d)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "text",
+            "content": "less than 210 m from C.\n\\newline\n"
+          }
+        ]
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The scale drawing shows a rectangle ABCD.\n\\newline\nThe scale is 1 centimetre represents 20 metres.\n\\newline\n\n\\begin{tikzpicture}[scale=1.0]\n    \\draw[thick] (0,0) rectangle (4,2.5);\n    \\node at (0,0) {A};\n    \\node at (4,0) {B};\n    \\node at (4,2.5) {C};\n    \\node at (0,2.5) {D};\n    \\node at (2,-0.5) {Scale: 1 cm to 20 m};\n\\end{tikzpicture}"
+      }
+    ],
+    "_rawBody": "The scale drawing shows a rectangle ABCD.\nThe scale is 1 centimetre represents 20 metres.\n\n\\begin{tikzpicture}[scale=1.0]\n    \\draw[thick] (0,0) rectangle (4,2.5);\n    \\node at (0,0) {A};\n    \\node at (4,0) {B};\n    \\node at (4,2.5) {C};\n    \\node at (0,2.5) {D};\n    \\node at (2,-0.5) {Scale: 1 cm to 20 m};\n\\end{tikzpicture}\n\n\\begin{parts}\n\\item Using a straight edge and compasses only, construct the bisector of angle ADC.\nShow all your construction arcs.\n\n\\Marks{2}\n\n\\item Shade the region inside the rectangle that is\n\\begin{parts}\n\\item nearer to DA than to DC\n\\item less than 210 m from C.\n\\end{parts}\n\n\\Marks{3}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "_postParts": [
+      {
+        "type": "text",
+        "content": "\\Marks{3}\n\n\\end{parts}"
+      }
+    ]
+  }
+]

@@ -1,0 +1,1013 @@
+[
+  {
+    "id": "0580-2020OctNov-Paper22-Q01",
+    "paper": "2020OctNov-Paper22",
+    "qnum": 1,
+    "marks": 1,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.5",
+    "d": 2,
+    "cat": "number",
+    "topic": "Ordering",
+    "qtype": "writing numbers in figures",
+    "g": "mixed",
+    "src": "0580/22/O/N/20 Q01",
+    "year": 2020,
+    "session": "OctNov",
+    "tex": "Write two hundred thousand and seventeen in figures.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "write",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Write two hundred thousand and seventeen in figures.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Write two hundred thousand and seventeen in figures.\n\n\\AnswerLine[][]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2020OctNov-Paper22-Q02",
+    "paper": "2020OctNov-Paper22",
+    "qnum": 2,
+    "marks": 1,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.6",
+    "d": 2,
+    "cat": "number",
+    "topic": "Standard form",
+    "qtype": "applying order of operations",
+    "g": "mixed",
+    "src": "0580/22/O/N/20 Q02",
+    "year": 2020,
+    "session": "OctNov",
+    "tex": "Insert one pair of brackets to make this calculation correct.\n\\newline\n\n$7 - 5 - 3 + 4 = 9$",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "other",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Insert one pair of brackets to make this calculation correct.\n\\newline\n\n$7 - 5 - 3 + 4 = 9$"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Insert one pair of brackets to make this calculation correct.\n\n$7 - 5 - 3 + 4 = 9$\n\n\\AnswerLine[][]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2020OctNov-Paper22-Q03",
+    "paper": "2020OctNov-Paper22",
+    "qnum": 3,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": null,
+    "d": 2,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/22/O/N/20 Q03",
+    "year": 2020,
+    "session": "OctNov",
+    "tex": "Solve the equation.\n\\newline\n$6 - 2x = 3x$",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "",
+    "cmd": "solve",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Solve the equation.\n\\newline\n$6 - 2x = 3x$"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "$x$"
+    },
+    "_rawBody": "Solve the equation.\n$6 - 2x = 3x$\n\n\\AnswerLine[$x$][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2020OctNov-Paper22-Q04",
+    "paper": "2020OctNov-Paper22",
+    "qnum": 4,
+    "marks": 3,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.6",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/22/O/N/20 Q04",
+    "year": 2020,
+    "session": "OctNov",
+    "tex": "The diagram shows a triangle drawn between a pair of parallel lines.\n\\newline\n\nFind the value of x and the value of y.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{tikzpicture}[scale=0.8]\n    % Draw parallel lines\n    \\draw[thick] (0,0) -- (6,0);\n    \\draw[thick] (1,2) -- (7,2);\n\n    % Draw triangle\n    \\draw[thick] (2,0) -- (1,2) -- (4,2) -- cycle;\n\n    % Angle labels\n    \\node at (1.8,0.3) {140°};\n    \\node at (4.2,1.7) {120°};\n    \\node at (2.2,1.7) {x°};\n    \\node at (3.8,0.3) {y°};\n\n    % NOT TO SCALE\n    \\node at (5,2.5) {NOT TO SCALE};\n\\end{tikzpicture}\n\nThe diagram shows a triangle drawn between a pair of parallel lines.\n\\newline\n\nFind the value of x and the value of y.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "multiline",
+      "lines": 2,
+      "template": "$x$ ____\\n$y$ ____",
+      "lineSep": "blank"
+    },
+    "_rawBody": "\\begin{tikzpicture}[scale=0.8]\n    % Draw parallel lines\n    \\draw[thick] (0,0) -- (6,0);\n    \\draw[thick] (1,2) -- (7,2);\n\n    % Draw triangle\n    \\draw[thick] (2,0) -- (1,2) -- (4,2) -- cycle;\n\n    % Angle labels\n    \\node at (1.8,0.3) {140°};\n    \\node at (4.2,1.7) {120°};\n    \\node at (2.2,1.7) {x°};\n    \\node at (3.8,0.3) {y°};\n\n    % NOT TO SCALE\n    \\node at (5,2.5) {NOT TO SCALE};\n\\end{tikzpicture}\n\nThe diagram shows a triangle drawn between a pair of parallel lines.\n\nFind the value of x and the value of y.\n\n\\AnswerLine[$x$][]\n\\AnswerLine[$y$][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2020OctNov-Paper22-Q05",
+    "paper": "2020OctNov-Paper22",
+    "qnum": 5,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.13",
+    "d": 2,
+    "cat": "number",
+    "topic": "Electronic calculators",
+    "qtype": "percentage increase calculation",
+    "g": "mixed",
+    "src": "0580/22/O/N/20 Q05",
+    "year": 2020,
+    "session": "OctNov",
+    "tex": "Increase 42 by 16\\%.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "other",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Increase 42 by 16\\%.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Increase 42 by 16\\%.\n\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2020OctNov-Paper22-Q06",
+    "paper": "2020OctNov-Paper22",
+    "qnum": 6,
+    "marks": 1,
+    "topics": [
+      "Number",
+      "Algebra and graphs"
+    ],
+    "s": "2.2",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Rearranging formulae",
+    "qtype": "factorisation",
+    "g": "simplify",
+    "src": "0580/22/O/N/20 Q06",
+    "year": 2020,
+    "session": "OctNov",
+    "tex": "Factorise completely.\n\\newline\n$4 - 8x$",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Factorise completely.\n\\newline\n$4 - 8x$"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Factorise completely.\n$4 - 8x$\n\n\\AnswerLine[][]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2020OctNov-Paper22-Q07",
+    "paper": "2020OctNov-Paper22",
+    "qnum": 7,
+    "marks": 2,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.6",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/22/O/N/20 Q07",
+    "year": 2020,
+    "session": "OctNov",
+    "tex": "The area of triangle ABC is 27 cm$^2$ and AB = 6 cm.\n\\newline\n\nCalculate the value of h.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{tikzpicture}[scale=0.8]\n    % Draw triangle ABC\n    \\draw[thick] (0,0) -- (6,0) -- (3,3) -- cycle;\n\n    % Label points\n    \\node at (-0.3,-0.3) {A};\n    \\node at (6.3,-0.3) {B};\n    \\node at (3,3.5) {C};\n\n    % Label base\n    \\node at (3,-0.5) {6 cm};\n\n    % Label height\n    \\draw[dashed] (3,0) -- (3,3);\n    \\node at (3.5,1.5) {h cm};\n\n    % NOT TO SCALE\n    \\node at (4.5,3.5) {NOT TO SCALE};\n\\end{tikzpicture}\n\nThe area of triangle ABC is 27 cm$^2$ and AB = 6 cm.\n\\newline\n\nCalculate the value of h.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "$h$",
+      "suffix": "cm"
+    },
+    "_rawBody": "\\begin{tikzpicture}[scale=0.8]\n    % Draw triangle ABC\n    \\draw[thick] (0,0) -- (6,0) -- (3,3) -- cycle;\n\n    % Label points\n    \\node at (-0.3,-0.3) {A};\n    \\node at (6.3,-0.3) {B};\n    \\node at (3,3.5) {C};\n\n    % Label base\n    \\node at (3,-0.5) {6 cm};\n\n    % Label height\n    \\draw[dashed] (3,0) -- (3,3);\n    \\node at (3.5,1.5) {h cm};\n\n    % NOT TO SCALE\n    \\node at (4.5,3.5) {NOT TO SCALE};\n\\end{tikzpicture}\n\nThe area of triangle ABC is 27 cm$^2$ and AB = 6 cm.\n\nCalculate the value of h.\n\n\\AnswerLine[$h$][cm]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2020OctNov-Paper22-Q08",
+    "paper": "2020OctNov-Paper22",
+    "qnum": 8,
+    "marks": 2,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.6",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/22/O/N/20 Q08",
+    "year": 2020,
+    "session": "OctNov",
+    "tex": "Calculate the size of one interior angle of a regular polygon with 40 sides.\n\\newline\n\n°",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Calculate the size of one interior angle of a regular polygon with 40 sides.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Calculate the size of one interior angle of a regular polygon with 40 sides.\n\n\\AnswerLine[][]°\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2020OctNov-Paper22-Q09",
+    "paper": "2020OctNov-Paper22",
+    "qnum": 9,
+    "marks": 2,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.5",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Equations",
+    "qtype": "solving simultaneous linear equations",
+    "g": "simul-linear",
+    "src": "0580/22/O/N/20 Q09",
+    "year": 2020,
+    "session": "OctNov",
+    "tex": "Solve the simultaneous equations.\n\\newline\n$2x + y = 7$\n$3x - y = 8$",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "solve",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Solve the simultaneous equations.\n\\newline\n$2x + y = 7$\n$3x - y = 8$"
+      }
+    ],
+    "answer": {
+      "type": "multiline",
+      "lines": 2,
+      "template": "$x$ ____\\n$y$ ____",
+      "lineSep": "blank"
+    },
+    "_rawBody": "Solve the simultaneous equations.\n$2x + y = 7$\n$3x - y = 8$\n\n\\AnswerLine[$x$][]\n\\AnswerLine[$y$][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2020OctNov-Paper22-Q10",
+    "paper": "2020OctNov-Paper22",
+    "qnum": 10,
+    "marks": 3,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.6",
+    "d": 2,
+    "cat": "number",
+    "topic": "Standard form",
+    "qtype": "division of fractions, simplification",
+    "g": "simplify",
+    "src": "0580/22/O/N/20 Q10",
+    "year": 2020,
+    "session": "OctNov",
+    "tex": "Without using a calculator, work out $\\dfrac{5}{6} \\div \\dfrac{1}{3}$.\n\\newline\nYou must show all your working and give your answer as a fraction in its simplest form.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Without using a calculator, work out $\\dfrac{5}{6} \\div \\dfrac{1}{3}$.\n\\newline\nYou must show all your working and give your answer as a fraction in its simplest form.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Without using a calculator, work out $\\dfrac{5}{6} \\div \\dfrac{1}{3}$.\nYou must show all your working and give your answer as a fraction in its simplest form.\n\n\\AnswerLine[][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2020OctNov-Paper22-Q11",
+    "paper": "2020OctNov-Paper22",
+    "qnum": 11,
+    "marks": 2,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.4",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Algebraic fractions",
+    "qtype": "simplifying expressions with indices",
+    "g": "simplify",
+    "src": "0580/22/O/N/20 Q11",
+    "year": 2020,
+    "session": "OctNov",
+    "tex": "Simplify.\n\\newline\n$2x^{2} \\times 5x^{5}$",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Simplify.\n\\newline\n$2x^{2} \\times 5x^{5}$"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Simplify.\n$2x^{2} \\times 5x^{5}$\n\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2020OctNov-Paper22-Q12",
+    "paper": "2020OctNov-Paper22",
+    "qnum": 12,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.11",
+    "d": 2,
+    "cat": "number",
+    "topic": "Money and finance",
+    "qtype": "ratio problem with difference",
+    "g": "mixed",
+    "src": "0580/22/O/N/20 Q12",
+    "year": 2020,
+    "session": "OctNov",
+    "tex": "Alex and Chris share sweets in the ratio Alex : Chris = 7 : 3.\n\\newline\nAlex receives 20 more sweets than Chris.\n\\newline\n\nWork out the number of sweets Chris receives.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Alex and Chris share sweets in the ratio Alex : Chris = 7 : 3.\n\\newline\nAlex receives 20 more sweets than Chris.\n\\newline\n\nWork out the number of sweets Chris receives.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Alex and Chris share sweets in the ratio Alex : Chris = 7 : 3.\nAlex receives 20 more sweets than Chris.\n\nWork out the number of sweets Chris receives.\n\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2020OctNov-Paper22-Q13",
+    "paper": "2020OctNov-Paper22",
+    "qnum": 13,
+    "marks": 3,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.6",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/22/O/N/20 Q13",
+    "year": 2020,
+    "session": "OctNov",
+    "tex": "The length of one side of a rectangle is 12 cm.\n\\newline\nThe length of the diagonal of the rectangle is 13 cm.\n\\newline\n\nCalculate the area of the rectangle.\n\\newline\n\n cm$^2$",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The length of one side of a rectangle is 12 cm.\n\\newline\nThe length of the diagonal of the rectangle is 13 cm.\n\\newline\n\nCalculate the area of the rectangle.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "The length of one side of a rectangle is 12 cm.\nThe length of the diagonal of the rectangle is 13 cm.\n\nCalculate the area of the rectangle.\n\n\\AnswerLine[][] cm$^2$\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2020OctNov-Paper22-Q14",
+    "paper": "2020OctNov-Paper22",
+    "qnum": 14,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.8",
+    "d": 2,
+    "cat": "number",
+    "topic": "Ratio, rate and proportion",
+    "qtype": "addition of numbers in standard form",
+    "g": "mixed",
+    "src": "0580/22/O/N/20 Q14",
+    "year": 2020,
+    "session": "OctNov",
+    "tex": "Work out $(3 \\times 10^{199}) + (2 \\times 10^{201})$.\n\\newline\nGive your answer in standard form.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Work out $(3 \\times 10^{199}) + (2 \\times 10^{201})$.\n\\newline\nGive your answer in standard form.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Work out $(3 \\times 10^{199}) + (2 \\times 10^{201})$.\nGive your answer in standard form.\n\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2020OctNov-Paper22-Q15",
+    "paper": "2020OctNov-Paper22",
+    "qnum": 15,
+    "marks": 2,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.7",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Nets and 3D shapes",
+    "qtype": "circle theorems",
+    "g": "mixed",
+    "src": "0580/22/O/N/20 Q15",
+    "year": 2020,
+    "session": "OctNov",
+    "tex": "Calculate the area of this sector of a circle.\n\\newline\n\n cm$^2$",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{tikzpicture}[scale=0.8]\n    % Draw circle\n    \\draw[thick] (0,0) circle (2.5);\n\n    % Draw radius and sector\n    \\draw[thick] (0,0) -- (2.5,0);\n    \\draw[thick] (0,0) -- (1.25,2.165);\n\n    % Draw sector arc\n    \\draw[thick] (2.5,0) arc (0:60:2.5);\n\n    % Labels\n    \\node at (1.5,1.5) {60°};\n    \\node at (1.25,-0.5) {7.5 cm};\n\n    % NOT TO SCALE\n    \\node at (3,2) {NOT TO SCALE};\n\\end{tikzpicture}\n\nCalculate the area of this sector of a circle.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "\\begin{tikzpicture}[scale=0.8]\n    % Draw circle\n    \\draw[thick] (0,0) circle (2.5);\n\n    % Draw radius and sector\n    \\draw[thick] (0,0) -- (2.5,0);\n    \\draw[thick] (0,0) -- (1.25,2.165);\n\n    % Draw sector arc\n    \\draw[thick] (2.5,0) arc (0:60:2.5);\n\n    % Labels\n    \\node at (1.5,1.5) {60°};\n    \\node at (1.25,-0.5) {7.5 cm};\n\n    % NOT TO SCALE\n    \\node at (3,2) {NOT TO SCALE};\n\\end{tikzpicture}\n\nCalculate the area of this sector of a circle.\n\n\\AnswerLine[][] cm$^2$\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2020OctNov-Paper22-Q16",
+    "paper": "2020OctNov-Paper22",
+    "qnum": 16,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.13",
+    "d": 2,
+    "cat": "number",
+    "topic": "Electronic calculators",
+    "qtype": "reverse percentage calculation",
+    "g": "mixed",
+    "src": "0580/22/O/N/20 Q16",
+    "year": 2020,
+    "session": "OctNov",
+    "tex": "The selling price of a shirt is \\$26.50.\n\\newline\nThis includes a tax of 6\\%.\n\\newline\n\nCalculate the price of the shirt before the tax was added.\n\\newline\n\n\\$",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The selling price of a shirt is \\$26.50.\n\\newline\nThis includes a tax of 6\\%.\n\\newline\n\nCalculate the price of the shirt before the tax was added.\n\\newline\n\n\\$ \\AnswerLine[]"
+      }
+    ],
+    "_rawBody": "The selling price of a shirt is \\$26.50.\nThis includes a tax of 6\\%.\n\nCalculate the price of the shirt before the tax was added.\n\n\\$ \\AnswerLine[]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2020OctNov-Paper22-Q17",
+    "paper": "2020OctNov-Paper22",
+    "qnum": 17,
+    "marks": 4,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.12",
+    "d": 2,
+    "cat": "number",
+    "topic": "Set notation",
+    "qtype": "interpretation of speed-time graph (rates)",
+    "g": "graph",
+    "src": "0580/22/O/N/20 Q17",
+    "year": 2020,
+    "session": "OctNov",
+    "tex": "The diagram shows the speed–time graph for the first 40 seconds of a cycle ride.\n\\newline\n\n(a) Find the acceleration between 20 and 40 seconds.\n\\newline\n\n m/s$^2$\n\n(b) Find the total distance travelled.\n\\newline\n\n m",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the acceleration between 20 and 40 seconds.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the total distance travelled.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "analyse",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{tikzpicture}[scale=0.8]\n    % Draw axes\n    \\draw[thick,->] (0,0) -- (5,0) node[right] {Time (seconds)};\n    \\draw[thick,->] (0,0) -- (0,4) node[above] {Speed (m/s)};\n\n    % Draw grid lines\n    \\foreach \\x in {1,2,3,4} {\n        \\draw[thin,gray] (\\x,0) -- (\\x,4);\n        \\node at (\\x,-0.2) {\\x0};\n    }\n    \\foreach \\y in {1,2,3} {\n        \\draw[thin,gray] (0,\\y) -- (5,\\y);\n        \\node at (-0.2,\\y) {\\y};\n    }\n\n    % Draw the speed-time graph (simplified representation)\n    % 0-10s: constant speed (assuming from 0 to some speed)\n    \\draw[thick,blue] (0,0) -- (1,3); % 0-10s\n    \\draw[thick,blue] (1,3) -- (2,3); % 10-20s constant\n    \\draw[thick,blue] (2,3) -- (4,1); % 20-40s decreasing\n\n    % Labels\n    \\node[blue] at (2.5,3.5) {Speed-time graph};\n\\end{tikzpicture}\n\nThe diagram shows the speed–time graph for the first 40 seconds of a cycle ride.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "\\begin{tikzpicture}[scale=0.8]\n    % Draw axes\n    \\draw[thick,->] (0,0) -- (5,0) node[right] {Time (seconds)};\n    \\draw[thick,->] (0,0) -- (0,4) node[above] {Speed (m/s)};\n\n    % Draw grid lines\n    \\foreach \\x in {1,2,3,4} {\n        \\draw[thin,gray] (\\x,0) -- (\\x,4);\n        \\node at (\\x,-0.2) {\\x0};\n    }\n    \\foreach \\y in {1,2,3} {\n        \\draw[thin,gray] (0,\\y) -- (5,\\y);\n        \\node at (-0.2,\\y) {\\y};\n    }\n\n    % Draw the speed-time graph (simplified representation)\n    % 0-10s: constant speed (assuming from 0 to some speed)\n    \\draw[thick,blue] (0,0) -- (1,3); % 0-10s\n    \\draw[thick,blue] (1,3) -- (2,3); % 10-20s constant\n    \\draw[thick,blue] (2,3) -- (4,1); % 20-40s decreasing\n\n    % Labels\n    \\node[blue] at (2.5,3.5) {Speed-time graph};\n\\end{tikzpicture}\n\nThe diagram shows the speed–time graph for the first 40 seconds of a cycle ride.\n\n\\begin{parts}\n\\item Find the acceleration between 20 and 40 seconds.\n\n\\AnswerLine[][] m/s$^2$\n\\Marks{1}\n\n\\item Find the total distance travelled.\n\n\\AnswerLine[][] m\n\\Marks{3}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2020OctNov-Paper22-Q18",
+    "paper": "2020OctNov-Paper22",
+    "qnum": 18,
+    "marks": 3,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.6",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/22/O/N/20 Q18",
+    "year": 2020,
+    "session": "OctNov",
+    "tex": "The sides of an isosceles triangle are measured correct to the nearest millimetre.\n\\newline\nOne side has a length of 8.2 cm and another has a length of 9.4 cm.\n\\newline\n\nFind the largest possible value of the perimeter of this triangle.\n\\newline\n\n cm",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The sides of an isosceles triangle are measured correct to the nearest millimetre.\n\\newline\nOne side has a length of 8.2 cm and another has a length of 9.4 cm.\n\\newline\n\nFind the largest possible value of the perimeter of this triangle.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "The sides of an isosceles triangle are measured correct to the nearest millimetre.\nOne side has a length of 8.2 cm and another has a length of 9.4 cm.\n\nFind the largest possible value of the perimeter of this triangle.\n\n\\AnswerLine[][] cm\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2020OctNov-Paper22-Q19",
+    "paper": "2020OctNov-Paper22",
+    "qnum": 19,
+    "marks": 6,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.6",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/22/O/N/20 Q19",
+    "year": 2020,
+    "session": "OctNov",
+    "tex": "(a) Calculate the value of x.\n\\newline\n\n(b) Calculate the area of the triangle.\n\\newline\n\n cm$^2$",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Calculate the value of x.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x$"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Calculate the area of the triangle.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{tikzpicture}[scale=0.8]\n    % Draw triangle\n    \\draw[thick] (0,0) -- (4,0) -- (1,3) -- cycle;\n\n    % Label sides\n    \\node at (2,-0.5) {8 cm};\n    \\node at (0.5,1.5) {9 cm};\n\n    % Label angles\n    \\node at (0.3,0.3) {100°};\n    \\node at (3.7,0.3) {x°};\n\n    % NOT TO SCALE\n    \\node at (4.5,2.5) {NOT TO SCALE};\n\\end{tikzpicture}"
+      }
+    ],
+    "_rawBody": "\\begin{tikzpicture}[scale=0.8]\n    % Draw triangle\n    \\draw[thick] (0,0) -- (4,0) -- (1,3) -- cycle;\n\n    % Label sides\n    \\node at (2,-0.5) {8 cm};\n    \\node at (0.5,1.5) {9 cm};\n\n    % Label angles\n    \\node at (0.3,0.3) {100°};\n    \\node at (3.7,0.3) {x°};\n\n    % NOT TO SCALE\n    \\node at (4.5,2.5) {NOT TO SCALE};\n\\end{tikzpicture}\n\n\\begin{parts}\n\\item Calculate the value of x.\n\n\\AnswerLine[$x$][]\n\\Marks{3}\n\n\\item Calculate the area of the triangle.\n\n\\AnswerLine[][] cm$^2$\n\\Marks{3}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2020OctNov-Paper22-Q20",
+    "paper": "2020OctNov-Paper22",
+    "qnum": 20,
+    "marks": 3,
+    "topics": [
+      "Mensuration"
+    ],
+    "s": "5.4",
+    "d": 2,
+    "cat": "mensuration",
+    "topic": "Volume",
+    "qtype": "surface area and volume",
+    "g": "mixed",
+    "src": "0580/22/O/N/20 Q20",
+    "year": 2020,
+    "session": "OctNov",
+    "tex": "A model of a statue has a height of 4 cm.\n\\newline\nThe volume of the model is 12 cm$^3$.\n\\newline\nThe volume of the statue is 40 500 cm$^3$.\n\\newline\n\nCalculate the height of the statue.\n\\newline\n\n cm",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "A model of a statue has a height of 4 cm.\n\\newline\nThe volume of the model is 12 cm$^3$.\n\\newline\nThe volume of the statue is 40 500 cm$^3$.\n\\newline\n\nCalculate the height of the statue.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "A model of a statue has a height of 4 cm.\nThe volume of the model is 12 cm$^3$.\nThe volume of the statue is 40 500 cm$^3$.\n\nCalculate the height of the statue.\n\n\\AnswerLine[][] cm\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2020OctNov-Paper22-Q21",
+    "paper": "2020OctNov-Paper22",
+    "qnum": 21,
+    "marks": 4,
+    "topics": [
+      "Algebra and graphs",
+      "Coordinate geometry"
+    ],
+    "s": "2.12",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Functions notation",
+    "qtype": "differentiation, finding turning points",
+    "g": "mixed",
+    "src": "0580/22/O/N/20 Q21",
+    "year": 2020,
+    "session": "OctNov",
+    "tex": "(a) Differentiate $6 + 4x - x^{2}$.\n\\newline\n\n(b) Find the coordinates of the turning point of the graph of $y = 6 + 4x - x^{2}$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Differentiate $6 + 4x - x^{2}$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the coordinates of the turning point of the graph of $y = 6 + 4x - x^{2}$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "( , )"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Differentiate $6 + 4x - x^{2}$.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item Find the coordinates of the turning point of the graph of $y = 6 + 4x - x^{2}$.\n\n\\AnswerLine[( , )][]\n\\Marks{2}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2020OctNov-Paper22-Q22",
+    "paper": "2020OctNov-Paper22",
+    "qnum": 22,
+    "marks": 4,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry",
+      "Transformations and vectors"
+    ],
+    "s": "3.4",
+    "d": 2,
+    "cat": "coord",
+    "topic": "Equation of a line",
+    "qtype": "length and midpoint",
+    "g": "mixed",
+    "src": "0580/22/O/N/20 Q22",
+    "year": 2020,
+    "session": "OctNov",
+    "tex": "The diagram shows a triangle OAB and a straight line OAC.\n\\newline\nOA : OC = 2 : 5 and M is the midpoint of AB.\n\\newline\n$\\overrightarrow{OA} = \\mathbf{a}$ and $\\overrightarrow{OB} = \\mathbf{b}$.\n\\newline\n\nFind, in terms of a and b, in its simplest form\n\n(a) $\\overrightarrow{AB}$,\n\n(b) $\\overrightarrow{MC}$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "$\\overrightarrow{AB}$,"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$\\overrightarrow{AB} = $"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "$\\overrightarrow{MC}$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$\\overrightarrow{MC} = $"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{tikzpicture}[scale=0.8]\n    % Draw points\n    \\filldraw (0,0) circle (2pt) node[below left] {O};\n    \\filldraw (3,0) circle (2pt) node[below] {A};\n    \\filldraw (1,2) circle (2pt) node[above] {B};\n    \\filldraw (5,0) circle (2pt) node[below] {C};\n    \\filldraw (2,1) circle (2pt) node[right] {M};\n\n    % Draw lines\n    \\draw[thick] (0,0) -- (3,0) -- (1,2) -- cycle; % triangle OAB\n    \\draw[thick] (0,0) -- (5,0); % line OAC\n    \\draw[dashed] (3,0) -- (2,1); % midpoint line\n\n    % Label vectors\n    \\node at (1.5,-0.3) {$\\mathbf{a}$};\n    \\node at (2,1.3) {$\\mathbf{b}$};\n\n    % Label ratio\n    \\node at (2.5,0.3) {OA : OC = 2 : 5};\n\n    % NOT TO SCALE\n    \\node at (5.5,2) {NOT TO SCALE};\n\\end{tikzpicture}\n\nThe diagram shows a triangle OAB and a straight line OAC.\n\\newline\nOA : OC = 2 : 5 and M is the midpoint of AB.\n\\newline\n$\\overrightarrow{OA} = \\mathbf{a}$ and $\\overrightarrow{OB} = \\mathbf{b}$.\n\\newline\n\nFind, in terms of a and b, in its simplest form"
+      }
+    ],
+    "_rawBody": "\\begin{tikzpicture}[scale=0.8]\n    % Draw points\n    \\filldraw (0,0) circle (2pt) node[below left] {O};\n    \\filldraw (3,0) circle (2pt) node[below] {A};\n    \\filldraw (1,2) circle (2pt) node[above] {B};\n    \\filldraw (5,0) circle (2pt) node[below] {C};\n    \\filldraw (2,1) circle (2pt) node[right] {M};\n\n    % Draw lines\n    \\draw[thick] (0,0) -- (3,0) -- (1,2) -- cycle; % triangle OAB\n    \\draw[thick] (0,0) -- (5,0); % line OAC\n    \\draw[dashed] (3,0) -- (2,1); % midpoint line\n\n    % Label vectors\n    \\node at (1.5,-0.3) {$\\mathbf{a}$};\n    \\node at (2,1.3) {$\\mathbf{b}$};\n\n    % Label ratio\n    \\node at (2.5,0.3) {OA : OC = 2 : 5};\n\n    % NOT TO SCALE\n    \\node at (5.5,2) {NOT TO SCALE};\n\\end{tikzpicture}\n\nThe diagram shows a triangle OAB and a straight line OAC.\nOA : OC = 2 : 5 and M is the midpoint of AB.\n$\\overrightarrow{OA} = \\mathbf{a}$ and $\\overrightarrow{OB} = \\mathbf{b}$.\n\nFind, in terms of a and b, in its simplest form\n\n\\begin{parts}\n\\item $\\overrightarrow{AB}$,\n\n\\AnswerLine[$\\overrightarrow{AB} = $][]\n\\Marks{1}\n\n\\item $\\overrightarrow{MC}$.\n\n\\AnswerLine[$\\overrightarrow{MC} = $][]\n\\Marks{3}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2020OctNov-Paper22-Q23",
+    "paper": "2020OctNov-Paper22",
+    "qnum": 23,
+    "marks": 3,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.6",
+    "d": 2,
+    "cat": "number",
+    "topic": "Standard form",
+    "qtype": "subtraction of algebraic fractions",
+    "g": "algebraic-fraction",
+    "src": "0580/22/O/N/20 Q23",
+    "year": 2020,
+    "session": "OctNov",
+    "tex": "Write as a single fraction in its simplest form.\n\\newline\n$2 - \\dfrac{2x - 1}{x + 1}$",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "write",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Write as a single fraction in its simplest form.\n\\newline\n$2 - \\dfrac{2x - 1}{x + 1}$"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Write as a single fraction in its simplest form.\n$2 - \\dfrac{2x - 1}{x + 1}$\n\n\\AnswerLine[][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2020OctNov-Paper22-Q24",
+    "paper": "2020OctNov-Paper22",
+    "qnum": 24,
+    "marks": 5,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry"
+    ],
+    "s": "3.7",
+    "d": 2,
+    "cat": "coord",
+    "topic": "Coordinate geometry extended",
+    "qtype": "perpendicular lines",
+    "g": "mixed",
+    "src": "0580/22/O/N/20 Q24",
+    "year": 2020,
+    "session": "OctNov",
+    "tex": "A line from the point (2, 3) is perpendicular to the line $y = \\dfrac{1}{3}x + 1$.\n\\newline\nThe two lines meet at the point P.\n\\newline\n\nFind the coordinates of P.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "A line from the point (2, 3) is perpendicular to the line $y = \\dfrac{1}{3}x + 1$.\n\\newline\nThe two lines meet at the point P.\n\\newline\n\nFind the coordinates of P.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "( , )"
+    },
+    "_rawBody": "A line from the point (2, 3) is perpendicular to the line $y = \\dfrac{1}{3}x + 1$.\nThe two lines meet at the point P.\n\nFind the coordinates of P.\n\n\\AnswerLine[( , )][]\n\\Marks{5}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2020OctNov-Paper22-Q25",
+    "paper": "2020OctNov-Paper22",
+    "qnum": 25,
+    "marks": 2,
+    "topics": [
+      "Trigonometry"
+    ],
+    "s": "6.4",
+    "d": 2,
+    "cat": "trigonometry",
+    "topic": "Area of triangle",
+    "qtype": "trigonometric equation",
+    "g": "mixed",
+    "src": "0580/22/O/N/20 Q25",
+    "year": 2020,
+    "session": "OctNov",
+    "tex": "Solve the equation $\\tan x = 2$ for $0^\\circ \\leq x \\leq 360^\\circ$.\n\\newline\n\n or",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "solve",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Solve the equation $\\tan x = 2$ for $0^\\circ \\leq x \\leq 360^\\circ$.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "multiline",
+      "lines": 2,
+      "template": "$x = $ ____\\n$x = $ ____",
+      "lineSep": "blank"
+    },
+    "_rawBody": "Solve the equation $\\tan x = 2$ for $0^\\circ \\leq x \\leq 360^\\circ$.\n\n\\AnswerLine[$x = $][] or \\AnswerLine[$x = $][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2020OctNov-Paper22-Q26",
+    "paper": "2020OctNov-Paper22",
+    "qnum": 26,
+    "marks": 4,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.3",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Indices",
+    "qtype": "simplifying algebraic fractions, factorisation by grouping",
+    "g": "algebraic-fraction",
+    "src": "0580/22/O/N/20 Q26",
+    "year": 2020,
+    "session": "OctNov",
+    "tex": "Simplify.\n\\newline\n$\\dfrac{ux - 2u - x + 2}{u^{2} - 1}$",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Simplify.\n\\newline\n$\\dfrac{ux - 2u - x + 2}{u^{2} - 1}$"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Simplify.\n$\\dfrac{ux - 2u - x + 2}{u^{2} - 1}$\n\n\\AnswerLine[][]\n\\Marks{4}",
+    "_compactMarks": true
+  }
+]

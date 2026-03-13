@@ -1,0 +1,1451 @@
+[
+  {
+    "id": "0580-2022OctNov-Paper33-Q01",
+    "paper": "2022OctNov-Paper33",
+    "qnum": 1,
+    "marks": 15,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.1",
+    "d": 1,
+    "cat": "number",
+    "topic": "Types of number",
+    "qtype": "factors, order of operations, reciprocals, powers and roots, ordering numbers",
+    "g": "indices",
+    "src": "0580/33/O/N/22 Q01",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "(a) \nList all the factors of 68.\n\\newline\n\nPut **one** pair of brackets into each calculation to make it correct.\n\\newline\n\n(i)  $7 + 3 \\times 5 - 1 = 19$\n\n $12 + 16 \\div 2 + 5 = 19$\n\nFind\n\n(i)  the reciprocal of $\\displaystyle\\frac{2}{7}$,\n\n the value of $10^0$.\n\\newline\n\nCalculate.\n\\newline\n\n(i)  $3^2 + 3^4$\n\n $\\sqrt{3} \\times \\sqrt{12}$\n\n $5^{-3}$\n\nWrite these numbers in order of size, starting with the smallest.\n\\newline\n\\[\\sqrt{10} \\qquad 3.142 \\qquad 1.8^2 \\qquad \\pi \\qquad \\frac{22}{7}\\]\n\nBy writing each number in the calculation correct to 1 significant figure, work out an estimate for the value of\n\\[\\frac{136 + 47.2}{62.9 \\div 18.1}.\n\\newline\n\\]\n\nYou must show all your working.\n\\newline\n\nWrite $4.73 \\times 10^6$ as an ordinary number.\n\\newline\n\nWrite down a prime number between 30 and 40.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "List all the factors of 68.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "marks": 2,
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Put \\textbf{one} pair of brackets into each calculation to make it correct.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "$7 + 3 \\times 5 - 1 = 19$"
+              }
+            ],
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "$12 + 16 \\div 2 + 5 = 19$"
+              }
+            ],
+            "marks": 1,
+            "_compactMarks": true
+          }
+        ]
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Find"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "the reciprocal of $\\displaystyle\\frac{2}{7}$,"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "the value of $10^0$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          }
+        ]
+      },
+      {
+        "label": "(d)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Calculate.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "$3^2 + 3^4$"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "$\\sqrt{3} \\times \\sqrt{12}$"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "$5^{-3}$"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          }
+        ]
+      },
+      {
+        "label": "(e)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Write these numbers in order of size, starting with the smallest.\n\\newline\n\\[\\sqrt{10} \\qquad 3.142 \\qquad 1.8^2 \\qquad \\pi \\qquad \\frac{22}{7}\\]"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "............... $<$ ............... $<$ ............... $<$ ............... $<$ ...............\\\\smallest"
+        },
+        "marks": 2,
+        "_compactMarks": true
+      },
+      {
+        "label": "(f)",
+        "content": [
+          {
+            "type": "text",
+            "content": "By writing each number in the calculation correct to 1 significant figure, work out an estimate for the value of\n\\[\\frac{136 + 47.2}{62.9 \\div 18.1}.\n\\newline\n\\]\n\nYou must show all your working.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "marks": 2,
+        "_compactMarks": true
+      },
+      {
+        "label": "(g)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Write $4.73 \\times 10^6$ as an ordinary number.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "marks": 1,
+        "_compactMarks": true
+      },
+      {
+        "label": "(h)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down a prime number between 30 and 40.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "marks": 1,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\part List all the factors of 68.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\part Put \\textbf{one} pair of brackets into each calculation to make it correct.\n\n\\begin{subparts}\n\\subpart $7 + 3 \\times 5 - 1 = 19$\n\\Marks{1}\n\n\\subpart $12 + 16 \\div 2 + 5 = 19$\n\\Marks{1}\n\n\\end{subparts}\n\n\\part Find\n\n\\begin{subparts}\n\\subpart the reciprocal of $\\displaystyle\\frac{2}{7}$,\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\subpart the value of $10^0$.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{subparts}\n\n\\part Calculate.\n\n\\begin{subparts}\n\\subpart $3^2 + 3^4$\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\subpart $\\sqrt{3} \\times \\sqrt{12}$\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\subpart $5^{-3}$\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{subparts}\n\n\\part Write these numbers in order of size, starting with the smallest.\n\\[\\sqrt{10} \\qquad 3.142 \\qquad 1.8^2 \\qquad \\pi \\qquad \\frac{22}{7}\\]\n\n\\AnswerLine[............... $<$ ............... $<$ ............... $<$ ............... $<$ ...............\\\\smallest][]\n\\Marks{2}\n\n\\part By writing each number in the calculation correct to 1 significant figure, work out an estimate for the value of\n\\[\\frac{136 + 47.2}{62.9 \\div 18.1}.\\]\n\nYou must show all your working.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\part Write $4.73 \\times 10^6$ as an ordinary number.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\part Write down a prime number between 30 and 40.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper33-Q02",
+    "paper": "2022OctNov-Paper33",
+    "qnum": 2,
+    "marks": 7,
+    "topics": [
+      "Geometry",
+      "Transformations and vectors",
+      "Statistics"
+    ],
+    "s": "4.3",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Symmetry",
+    "qtype": "scale drawings and bearings",
+    "g": "mixed",
+    "src": "0580/33/O/N/22 Q02",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "(a) \nThe bar chart shows the number of people who visit a beach in each month in one year.\n\\newline\n\n(i)  Estimate the number of people who visit the beach in November.\n\\newline\n\n The table shows the average daytime temperature, in °C, in each month at the beach in the same year.\n\\newline\n\n\\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}\n\\hline\nMonth & Jan & Feb & Mar & Apr & May & Jun & Jul & Aug & Sep & Oct & Nov & Dec \\\\\n\\hline\nTemperature (°C) & 32.5 & 32 & 29.7 & 25.5 & 24.6 & 20.8 & 19.5 & 19.2 & 23.4 & 24.8 & 32.1 & 32.5 \\\\\n\\hline\n\\end{tabular}\nMario says that more people visit the beach when the temperature is warmer.\n\\newline\n\nIs he correct?\n\nExplain your answer by comparing the bar chart and the table.\n\\newline\n\nThe scale drawing shows the positions of two lifeguards, $L$ and $M$, on a beach.\n\\newline\n\nThe scale is 1 centimetre represents 50 metres.\n\\newline\n\n(i)  Find the actual distance between $L$ and $M$.\n\\newline\n\n Measure the bearing of $M$ from $L$.\n\\newline\n\n A boat, $B$, is 300 metres from $M$ on a bearing of 068°.\n\\newline\n\nOn the scale drawing, mark the position of $B$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The bar chart shows the number of people who visit a beach in each month in one year.\n\\newline\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.7]\n% Axes\n\\draw[->] (0,0) -- (13,0);\n\\draw[->] (0,0) -- (0,7.5);\n\n% Y-axis labels\n\\foreach \\y/\\label in {0/0, 1/100, 2/200, 3/300, 4/400, 5/500, 6/600, 7/700} {\n    \\draw (-0.1,\\y) -- (0.1,\\y);\n    \\node[left] at (0,\\y) {\\label};\n}\n\n\\node[left, rotate=90] at (-1.2,3.5) {Number of people};\n\n% X-axis labels\n\\node[below] at (0.5,0) {\\tiny Jan};\n\\node[below] at (1.5,0) {\\tiny Feb};\n\\node[below] at (2.5,0) {\\tiny Mar};\n\\node[below] at (3.5,0) {\\tiny Apr};\n\\node[below] at (4.5,0) {\\tiny May};\n\\node[below] at (5.5,0) {\\tiny Jun};\n\\node[below] at (6.5,0) {\\tiny Jul};\n\\node[below] at (7.5,0) {\\tiny Aug};\n\\node[below] at (8.5,0) {\\tiny Sep};\n\\node[below] at (9.5,0) {\\tiny Oct};\n\\node[below] at (10.5,0) {\\tiny Nov};\n\\node[below] at (11.5,0) {\\tiny Dec};\n\n\\node[below] at (6,-0.7) {Month};\n\n% Bars (approximate heights from chart)\n\\draw[fill=gray!50] (0.2,0) rectangle (0.8,5.5); % Jan ~550\n\\draw[fill=gray!50] (1.2,0) rectangle (1.8,5.5); % Feb ~550\n\\draw[fill=gray!50] (2.2,0) rectangle (2.8,3.0); % Mar ~300\n\\draw[fill=gray!50] (3.2,0) rectangle (3.8,1.5); % Apr ~150\n\\draw[fill=gray!50] (4.2,0) rectangle (4.8,0.8); % May ~80\n\\draw[fill=gray!50] (5.2,0) rectangle (5.8,4.5); % Jun ~450\n\\draw[fill=gray!50] (6.2,0) rectangle (6.8,4.5); % Jul ~450\n\\draw[fill=gray!50] (7.2,0) rectangle (7.8,4.5); % Aug ~450\n\\draw[fill=gray!50] (8.2,0) rectangle (8.8,5.0); % Sep ~500\n\\draw[fill=gray!50] (9.2,0) rectangle (9.8,3.5); % Oct ~350\n\\draw[fill=gray!50] (10.2,0) rectangle (10.8,6.5); % Nov ~650\n\\draw[fill=gray!50] (11.2,0) rectangle (11.8,6.5); % Dec ~650\n\\end{tikzpicture}\n\\end{center}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Estimate the number of people who visit the beach in November.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "The table shows the average daytime temperature, in °C, in each month at the beach in the same year.\n\\newline\n"
+              },
+              {
+                "type": "table",
+                "content": "\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}\n\\hline\nMonth & Jan & Feb & Mar & Apr & May & Jun & Jul & Aug & Sep & Oct & Nov & Dec \\\\\n\\hline\nTemperature (°C) & 32.5 & 32 & 29.7 & 25.5 & 24.6 & 20.8 & 19.5 & 19.2 & 23.4 & 24.8 & 32.1 & 32.5 \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+              },
+              {
+                "type": "text",
+                "content": "Mario says that more people visit the beach when the temperature is warmer.\n\\newline\n\nIs he correct?\n\nExplain your answer by comparing the bar chart and the table.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "............... because"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The scale drawing shows the positions of two lifeguards, $L$ and $M$, on a beach.\n\\newline\n\nThe scale is 1 centimetre represents 50 metres.\n\\newline\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n% Point L with North arrow\n\\draw[->] (0,0) -- (0,2);\n\\node[above] at (0,2) {North};\n\\node[below left] at (0,0) {$L$};\n\\fill (0,0) circle (2pt);\n\n% Point M with North arrow\n\\draw[->] (4,3) -- (4,5);\n\\node[above] at (4,5) {North};\n\\node[below] at (4,3) {$M$};\n\\fill (4,3) circle (2pt);\n\n% Scale\n\\node at (6,1) {Scale: $1\\,\\text{cm}$ to $50\\,\\text{m}$};\n\\end{tikzpicture}\n\\end{center}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the actual distance between $L$ and $M$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "m"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Measure the bearing of $M$ from $L$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "A boat, $B$, is 300 metres from $M$ on a bearing of 068°.\n\\newline\n\nOn the scale drawing, mark the position of $B$.\n\\newline\n"
+              }
+            ],
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ]
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "explain",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\part The bar chart shows the number of people who visit a beach in each month in one year.\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.7]\n% Axes\n\\draw[->] (0,0) -- (13,0);\n\\draw[->] (0,0) -- (0,7.5);\n\n% Y-axis labels\n\\foreach \\y/\\label in {0/0, 1/100, 2/200, 3/300, 4/400, 5/500, 6/600, 7/700} {\n    \\draw (-0.1,\\y) -- (0.1,\\y);\n    \\node[left] at (0,\\y) {\\label};\n}\n\n\\node[left, rotate=90] at (-1.2,3.5) {Number of people};\n\n% X-axis labels\n\\node[below] at (0.5,0) {\\tiny Jan};\n\\node[below] at (1.5,0) {\\tiny Feb};\n\\node[below] at (2.5,0) {\\tiny Mar};\n\\node[below] at (3.5,0) {\\tiny Apr};\n\\node[below] at (4.5,0) {\\tiny May};\n\\node[below] at (5.5,0) {\\tiny Jun};\n\\node[below] at (6.5,0) {\\tiny Jul};\n\\node[below] at (7.5,0) {\\tiny Aug};\n\\node[below] at (8.5,0) {\\tiny Sep};\n\\node[below] at (9.5,0) {\\tiny Oct};\n\\node[below] at (10.5,0) {\\tiny Nov};\n\\node[below] at (11.5,0) {\\tiny Dec};\n\n\\node[below] at (6,-0.7) {Month};\n\n% Bars (approximate heights from chart)\n\\draw[fill=gray!50] (0.2,0) rectangle (0.8,5.5); % Jan ~550\n\\draw[fill=gray!50] (1.2,0) rectangle (1.8,5.5); % Feb ~550\n\\draw[fill=gray!50] (2.2,0) rectangle (2.8,3.0); % Mar ~300\n\\draw[fill=gray!50] (3.2,0) rectangle (3.8,1.5); % Apr ~150\n\\draw[fill=gray!50] (4.2,0) rectangle (4.8,0.8); % May ~80\n\\draw[fill=gray!50] (5.2,0) rectangle (5.8,4.5); % Jun ~450\n\\draw[fill=gray!50] (6.2,0) rectangle (6.8,4.5); % Jul ~450\n\\draw[fill=gray!50] (7.2,0) rectangle (7.8,4.5); % Aug ~450\n\\draw[fill=gray!50] (8.2,0) rectangle (8.8,5.0); % Sep ~500\n\\draw[fill=gray!50] (9.2,0) rectangle (9.8,3.5); % Oct ~350\n\\draw[fill=gray!50] (10.2,0) rectangle (10.8,6.5); % Nov ~650\n\\draw[fill=gray!50] (11.2,0) rectangle (11.8,6.5); % Dec ~650\n\\end{tikzpicture}\n\\end{center}\n\n\\begin{subparts}\n\\subpart Estimate the number of people who visit the beach in November.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\subpart The table shows the average daytime temperature, in °C, in each month at the beach in the same year.\n\n\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}\n\\hline\nMonth & Jan & Feb & Mar & Apr & May & Jun & Jul & Aug & Sep & Oct & Nov & Dec \\\\\n\\hline\nTemperature (°C) & 32.5 & 32 & 29.7 & 25.5 & 24.6 & 20.8 & 19.5 & 19.2 & 23.4 & 24.8 & 32.1 & 32.5 \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\nMario says that more people visit the beach when the temperature is warmer.\n\nIs he correct?\n\nExplain your answer by comparing the bar chart and the table.\n\n\\AnswerLine[............... because][]\n\\Marks{1}\n\n\\end{subparts}\n\n\\part The scale drawing shows the positions of two lifeguards, $L$ and $M$, on a beach.\n\nThe scale is 1 centimetre represents 50 metres.\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n% Point L with North arrow\n\\draw[->] (0,0) -- (0,2);\n\\node[above] at (0,2) {North};\n\\node[below left] at (0,0) {$L$};\n\\fill (0,0) circle (2pt);\n\n% Point M with North arrow\n\\draw[->] (4,3) -- (4,5);\n\\node[above] at (4,5) {North};\n\\node[below] at (4,3) {$M$};\n\\fill (4,3) circle (2pt);\n\n% Scale\n\\node at (6,1) {Scale: 1\\,cm to 50\\,m};\n\\end{tikzpicture}\n\\end{center}\n\n\\begin{subparts}\n\\subpart Find the actual distance between $L$ and $M$.\n\n\\AnswerLine[][m]\n\\Marks{2}\n\n\\subpart Measure the bearing of $M$ from $L$.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\subpart A boat, $B$, is 300 metres from $M$ on a bearing of 068°.\n\nOn the scale drawing, mark the position of $B$.\n\\Marks{2}\n\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true,
+    "_compactItems": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper33-Q03",
+    "paper": "2022OctNov-Paper33",
+    "qnum": 3,
+    "marks": 8,
+    "topics": [
+      "Mensuration"
+    ],
+    "s": "5.2",
+    "d": 1,
+    "cat": "mensuration",
+    "topic": "Circles",
+    "qtype": "area and perimeter",
+    "g": "mixed",
+    "src": "0580/33/O/N/22 Q03",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "(a) \nThe population of Alaska is $735\\,720$.\n\\newline\n\n(i)  Write this number in words.\n\\newline\n\n The land area of Alaska is $1\\,477\\,300$ square kilometres.\n\\newline\n\nWork out the average number of people per square kilometre.\n\\newline\n\n In Alaska, the city with the highest population is Anchorage with $291\\,830$ people.\n\\newline\n\nWhat percentage of the population of Alaska live in Anchorage?\n\nThe length, $L\\,\\text{km}$, of a race is $1569\\,\\text{km}$, correct to the nearest kilometre.\n\\newline\n\nComplete this statement about the value of $L$.\n\\newline\n\nThe table gives some information about two mountains.\n\\newline\n\nThe temperatures are taken at the top of each mountain on the same day.\n\\newline\n\n\\begin{tabular}{|c|c|c|c|c|}\n\\hline\n & & Height in metres & Maximum temperature & Minimum temperature \\\\\n\\hline\nDenali & Highest mountain in Alaska & 6190 & $-9$°C & $-20$°C \\\\\n\\hline\nEverest & Highest mountain in the world & 8849 &  °C & $-38$°C \\\\\n\\hline\n\\end{tabular}\n(i)  Find the difference between the height of Denali and the height of Everest.\n\\newline\n\n Find the difference between the maximum temperature and the minimum temperature at the top of Denali.\n\\newline\n\n The maximum temperature at the top of Everest was 27°C colder than the maximum temperature at the top of Denali.\n\\newline\n\nComplete the table.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The population of Alaska is $735\\,720$.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Write this number in words.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "The land area of Alaska is $1\\,477\\,300$ square kilometres.\n\\newline\n\nWork out the average number of people per square kilometre.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "In Alaska, the city with the highest population is Anchorage with $291\\,830$ people.\n\\newline\n\nWhat percentage of the population of Alaska live in Anchorage?"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "\\%"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The length, $L\\,\\text{km}$, of a race is $1569\\,\\text{km}$, correct to the nearest kilometre.\n\\newline\n\nComplete this statement about the value of $L$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "............... $\\leqslant L <$ ..............."
+        },
+        "marks": 2,
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The table gives some information about two mountains.\n\\newline\n\nThe temperatures are taken at the top of each mountain on the same day.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|}\n\\hline\n & & Height in metres & Maximum temperature & Minimum temperature \\\\\n\\hline\nDenali & Highest mountain in Alaska & 6190 & $-9$°C & $-20$°C \\\\\n\\hline\nEverest & Highest mountain in the world & 8849 & ............... °C & $-38$°C \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the difference between the height of Denali and the height of Everest.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "m"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the difference between the maximum temperature and the minimum temperature at the top of Denali.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "°C"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "The maximum temperature at the top of Everest was 27°C colder than the maximum temperature at the top of Denali.\n\\newline\n\nComplete the table.\n\\newline\n"
+              }
+            ],
+            "marks": 1,
+            "_compactMarks": true
+          }
+        ]
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\part The population of Alaska is 735\\,720.\n\n\\begin{subparts}\n\\subpart Write this number in words.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\subpart The land area of Alaska is 1\\,477\\,300 square kilometres.\n\nWork out the average number of people per square kilometre.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\subpart In Alaska, the city with the highest population is Anchorage with 291\\,830 people.\n\nWhat percentage of the population of Alaska live in Anchorage?\n\n\\AnswerLine[][\\%]\n\\Marks{1}\n\n\\end{subparts}\n\n\\part The length, $L$\\,km, of a race is 1569\\,km, correct to the nearest kilometre.\n\nComplete this statement about the value of $L$.\n\n\\AnswerLine[............... $\\leqslant L <$ ...............][]\n\\Marks{2}\n\n\\part The table gives some information about two mountains.\n\nThe temperatures are taken at the top of each mountain on the same day.\n\n\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|}\n\\hline\n & & Height in metres & Maximum temperature & Minimum temperature \\\\\n\\hline\nDenali & Highest mountain in Alaska & 6190 & $-9$°C & $-20$°C \\\\\n\\hline\nEverest & Highest mountain in the world & 8849 & ............... °C & $-38$°C \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\begin{subparts}\n\\subpart Find the difference between the height of Denali and the height of Everest.\n\n\\AnswerLine[][m]\n\\Marks{1}\n\n\\subpart Find the difference between the maximum temperature and the minimum temperature at the top of Denali.\n\n\\AnswerLine[][°C]\n\\Marks{1}\n\n\\subpart The maximum temperature at the top of Everest was 27°C colder than the maximum temperature at the top of Denali.\n\nComplete the table.\n\\Marks{1}\n\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper33-Q04",
+    "paper": "2022OctNov-Paper33",
+    "qnum": 4,
+    "marks": 11,
+    "topics": [
+      "Number",
+      "Algebra and graphs",
+      "Transformations and vectors"
+    ],
+    "s": "2.9",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Graphs in practical situations",
+    "qtype": "distance-time graph, travel graph",
+    "g": "graph",
+    "src": "0580/33/O/N/22 Q04",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "A path from Bay Park to Ocean Park passes through Sandy Cove.\n\\newline\n\n(a) \nTia cycles along the path.\n\\newline\n\nThe diagram shows the travel graph of Tia's journey.\n\\newline\n\n(i)  Between which two times is Tia cycling the fastest?\n\n Andy leaves Bay Park at 10$\\,$20 and runs to Sandy Cove at a constant speed of $8\\,\\text{km/h}$.\n\\newline\n\nHe then stops to rest until 12$\\,$00.\n\\newline\n\nOn the travel graph, draw Andy's journey.\n\\newline\n\n Write down the time and the distance from Bay Park when Tia and Andy pass each other.\n\\newline\n\nIn June, the number of cyclists using the path is 3546.\n\\newline\n\nIn July, the number of cyclists using the path is 4067.\n\\newline\n\nWork out the percentage increase in the number of cyclists from June to July.\n\\newline\n\nIn one week, 432 walkers and 528 runners use the path.\n\\newline\n\n(i)  Write the ratio walkers : runners in its simplest form.\n\\newline\n\n In the same week, the ratio of cyclists and walkers using the path is\n\ncyclists : walkers = 14 : 3.\n\\newline\n\nFind the total of the number of cyclists, walkers and runners using the path in this week.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Tia cycles along the path.\n\\newline\n\nThe diagram shows the travel graph of Tia's journey.\n\\newline\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.5]\n% Axes\n\\draw[->] (0,0) -- (13,0);\n\\draw[->] (0,0) -- (0,11);\n\n% Y-axis labels\n\\node[left] at (0,0) {0};\n\\node[left] at (0,2) {4};\n\\node[left] at (0,4) {8};\n\\node[left] at (0,6) {12};\n\\node[left] at (0,8) {16};\n\\node[left] at (0,10) {20};\n\n% Location labels\n\\node[left] at (-1,0) {Bay Park};\n\\node[left] at (-1,6) {Sandy Cove};\n\\node[left] at (-1,10) {Ocean Park};\n\n\\node[left, rotate=90] at (-2.5,5) {Distance from Bay Park (km)};\n\n% X-axis labels\n\\node[below] at (0,0) {\\tiny 10$\\,$00};\n\\node[below] at (2,0) {\\tiny 10$\\,$20};\n\\node[below] at (4,0) {\\tiny 10$\\,$40};\n\\node[below] at (6,0) {\\tiny 11$\\,$00};\n\\node[below] at (8,0) {\\tiny 11$\\,$20};\n\\node[below] at (10,0) {\\tiny 11$\\,$40};\n\\node[below] at (12,0) {\\tiny 12$\\,$00};\n\n\\node[below] at (6,-1) {Time};\n\n% Grid lines\n\\draw[gray!30] (0,0) grid (12,10);\n\n% Tia's journey\n\\draw[thick] (0,0) -- (4,6) -- (5,9) -- (6,9) -- (10,4) -- (12,0);\n\\end{tikzpicture}\n\\end{center}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Between which two times is Tia cycling the fastest?"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "............... and ..............."
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Andy leaves Bay Park at 10$\\,$20 and runs to Sandy Cove at a constant speed of $8\\,\\text{km/h}$.\n\\newline\n\nHe then stops to rest until 12$\\,$00.\n\\newline\n\nOn the travel graph, draw Andy's journey.\n\\newline\n"
+              }
+            ],
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Write down the time and the distance from Bay Park when Tia and Andy pass each other.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "multiline",
+              "lines": 2,
+              "template": "Time ____\\nDistance ____ km",
+              "lineSep": "blank"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "In June, the number of cyclists using the path is 3546.\n\\newline\n\nIn July, the number of cyclists using the path is 4067.\n\\newline\n\nWork out the percentage increase in the number of cyclists from June to July.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "\\%"
+        },
+        "marks": 2,
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "In one week, 432 walkers and 528 runners use the path.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Write the ratio walkers : runners in its simplest form.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "............... : ..............."
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "In the same week, the ratio of cyclists and walkers using the path is\n\n\\hspace{2cm}cyclists : walkers = 14 : 3.\n\\newline\n\nFind the total of the number of cyclists, walkers and runners using the path in this week.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 3,
+            "_compactMarks": true
+          }
+        ]
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "text",
+        "content": "A path from Bay Park to Ocean Park passes through Sandy Cove.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "A path from Bay Park to Ocean Park passes through Sandy Cove.\n\n\\begin{parts}\n\\part Tia cycles along the path.\n\nThe diagram shows the travel graph of Tia's journey.\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.5]\n% Axes\n\\draw[->] (0,0) -- (13,0);\n\\draw[->] (0,0) -- (0,11);\n\n% Y-axis labels\n\\node[left] at (0,0) {0};\n\\node[left] at (0,2) {4};\n\\node[left] at (0,4) {8};\n\\node[left] at (0,6) {12};\n\\node[left] at (0,8) {16};\n\\node[left] at (0,10) {20};\n\n% Location labels\n\\node[left] at (-1,0) {Bay Park};\n\\node[left] at (-1,6) {Sandy Cove};\n\\node[left] at (-1,10) {Ocean Park};\n\n\\node[left, rotate=90] at (-2.5,5) {Distance from Bay Park (km)};\n\n% X-axis labels\n\\node[below] at (0,0) {\\tiny 10\\,00};\n\\node[below] at (2,0) {\\tiny 10\\,20};\n\\node[below] at (4,0) {\\tiny 10\\,40};\n\\node[below] at (6,0) {\\tiny 11\\,00};\n\\node[below] at (8,0) {\\tiny 11\\,20};\n\\node[below] at (10,0) {\\tiny 11\\,40};\n\\node[below] at (12,0) {\\tiny 12\\,00};\n\n\\node[below] at (6,-1) {Time};\n\n% Grid lines\n\\draw[gray!30] (0,0) grid (12,10);\n\n% Tia's journey\n\\draw[thick] (0,0) -- (4,6) -- (5,9) -- (6,9) -- (10,4) -- (12,0);\n\\end{tikzpicture}\n\\end{center}\n\n\\begin{subparts}\n\\subpart Between which two times is Tia cycling the fastest?\n\n\\AnswerLine[............... and ...............][]\n\\Marks{1}\n\n\\subpart Andy leaves Bay Park at 10\\,20 and runs to Sandy Cove at a constant speed of 8\\,km/h.\n\nHe then stops to rest until 12\\,00.\n\nOn the travel graph, draw Andy's journey.\n\\Marks{2}\n\n\\subpart Write down the time and the distance from Bay Park when Tia and Andy pass each other.\n\n\\AnswerLine[Time][]\n\\AnswerLine[Distance][km]\n\\Marks{2}\n\n\\end{subparts}\n\n\\part In June, the number of cyclists using the path is 3546.\n\nIn July, the number of cyclists using the path is 4067.\n\nWork out the percentage increase in the number of cyclists from June to July.\n\n\\AnswerLine[][\\%]\n\\Marks{2}\n\n\\part In one week, 432 walkers and 528 runners use the path.\n\n\\begin{subparts}\n\\subpart Write the ratio walkers : runners in its simplest form.\n\n\\AnswerLine[............... : ...............][]\n\\Marks{1}\n\n\\subpart In the same week, the ratio of cyclists and walkers using the path is\n\n\\hspace{2cm}cyclists : walkers = 14 : 3.\n\nFind the total of the number of cyclists, walkers and runners using the path in this week.\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper33-Q05",
+    "paper": "2022OctNov-Paper33",
+    "qnum": 5,
+    "marks": 13,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.6",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/33/O/N/22 Q05",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "(a) \nIn this part, all measurements are in centimetres.\n\\newline\n\nThe diagram shows a rectangle, $ABCD$.\n\\newline\n\n(i)  Show that the length $AD$ is $5x + 8$.\n\\newline\n\n The area of $ABCD$ is $360\\,\\text{cm}^2$.\n\\newline\n\nWork out the value of $x$.\n\\newline\n\n Find the total shaded area.\n\\newline\n\nt\n\nThe diagram shows an open rectangular box and a solid cuboid.\n\\newline\n\n(i)  Show that a maximum of 24 of these cuboids will fit inside the box.\n\\newline\n\n 24 of these cuboids are placed inside the box.\n\\newline\n\nCalculate the volume of empty space in the box.\n\\newline\n\nGive the units of your answer.\n\\newline\n\nt\n\nThe diagram shows a solid cube with side $x\\,\\text{cm}$.\n\\newline\n\nThe total surface area of the cube is $486\\,\\text{cm}^2$.\n\\newline\n\nCalculate the value of $x$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "In this part, all measurements are in centimetres.\n\\newline\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.6]\n% Rectangle ABCD\n\\draw (0,0) rectangle (10,3);\n\n% Labels for corners\n\\node[below left] at (0,0) {$A$};\n\\node[above left] at (0,3) {$B$};\n\\node[above right] at (10,3) {$C$};\n\\node[below right] at (10,0) {$D$};\n\n% Three shaded rectangles\n\\fill[gray!50] (1.5,0) rectangle (2.5,3);\n\\fill[gray!50] (4.5,0) rectangle (5.5,3);\n\\fill[gray!50] (7.5,0) rectangle (8.5,3);\n\n% Dimension labels along top\n\\draw[<->] (0,3.5) -- (1.5,3.5);\n\\node[above] at (0.75,3.5) {$x+4$};\n\n\\draw[<->] (1.5,3.5) -- (2.5,3.5);\n\\node[above] at (2,3.5) {$\\frac{x}{2}$};\n\n\\draw[<->] (2.5,3.5) -- (4.5,3.5);\n\\node[above] at (3.5,3.5) {$2x$};\n\n\\draw[<->] (4.5,3.5) -- (5.5,3.5);\n\\node[above] at (5,3.5) {$\\frac{x}{2}$};\n\n\\draw[<->] (5.5,3.5) -- (7.5,3.5);\n\\node[above] at (6.5,3.5) {$x+4$};\n\n% Height label\n\\node[right] at (10,1.5) {15};\n\n% NOT TO SCALE\n\\node at (12,1.5) {NOT TO};\n\\node at (12,1) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nThe diagram shows a rectangle, $ABCD$.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Show that the length $AD$ is $5x + 8$.\n\\newline\n"
+              }
+            ],
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "The area of $ABCD$ is $360\\,\\text{cm}^2$.\n\\newline\n\nWork out the value of $x$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$x =$"
+            },
+            "marks": 4,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the total shaded area.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "cm$^2$"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.5]\n% Open rectangular box\n\\draw (0,0) -- (4,0) -- (5,2) -- (5,5) -- (1,5) -- (0,3) -- cycle;\n\\draw (0,3) -- (4,3) -- (5,5);\n\\draw (4,0) -- (4,3);\n\\draw[dashed] (0,0) -- (1,2) -- (5,2);\n\\draw[dashed] (1,2) -- (1,5);\n\n% Dimensions\n\\node[left] at (0,1.5) {$18\\,\\text{cm}$};\n\\node[below] at (2,0) {$30\\,\\text{cm}$};\n\\node[below right] at (4.5,1) {$65\\,\\text{cm}$};\n\n\\node at (2.5,-1.5) {Rectangular box};\n\n% Cuboid\n\\draw (9,0) -- (11,0) -- (11,1.5) -- (9,1.5) -- cycle;\n\\draw (9,1.5) -- (10,2.5) -- (12,2.5) -- (11,1.5);\n\\draw (11,0) -- (12,1) -- (12,2.5);\n\\draw[dashed] (9,0) -- (10,1) -- (12,1);\n\\draw[dashed] (10,1) -- (10,2.5);\n\n% Cuboid dimensions\n\\node[above] at (10.5,2.5) {$6\\,\\text{cm}$};\n\\node[right] at (12,1.75) {$15\\,\\text{cm}$};\n\\node[below] at (10,0) {$15\\,\\text{cm}$};\n\n\\node at (10.5,-1.5) {Cuboid};\n\n% NOT TO SCALE\n\\node at (14,2) {NOT TO};\n\\node at (14,1.5) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nThe diagram shows an open rectangular box and a solid cuboid.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Show that a maximum of 24 of these cuboids will fit inside the box.\n\\newline\n"
+              }
+            ],
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "24 of these cuboids are placed inside the box.\n\\newline\n\nCalculate the volume of empty space in the box.\n\\newline\n\nGive the units of your answer.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "............... ..............."
+            },
+            "marks": 4,
+            "_compactMarks": true
+          }
+        ],
+        "_itemNewline": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.5]\n% Cube\n\\draw (0,0) -- (3,0) -- (3,3) -- (0,3) -- cycle;\n\\draw (0,3) -- (1,4) -- (4,4) -- (3,3);\n\\draw (3,0) -- (4,1) -- (4,4);\n\\draw[dashed] (0,0) -- (1,1) -- (4,1);\n\\draw[dashed] (1,1) -- (1,4);\n\n% Dimension\n\\draw[<->] (4.5,1) -- (4.5,4);\n\\node[right] at (4.5,2.5) {$x\\,\\text{cm}$};\n\n% NOT TO SCALE\n\\node at (7,2.5) {NOT TO};\n\\node at (7,2) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nThe diagram shows a solid cube with side $x\\,\\text{cm}$.\n\\newline\n\nThe total surface area of the cube is $486\\,\\text{cm}^2$.\n\\newline\n\nCalculate the value of $x$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x =$"
+        },
+        "marks": 2,
+        "_compactMarks": true,
+        "_itemNewline": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "analyse",
+    "cmd": "show",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\part In this part, all measurements are in centimetres.\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.6]\n% Rectangle ABCD\n\\draw (0,0) rectangle (10,3);\n\n% Labels for corners\n\\node[below left] at (0,0) {$A$};\n\\node[above left] at (0,3) {$B$};\n\\node[above right] at (10,3) {$C$};\n\\node[below right] at (10,0) {$D$};\n\n% Three shaded rectangles\n\\fill[gray!50] (1.5,0) rectangle (2.5,3);\n\\fill[gray!50] (4.5,0) rectangle (5.5,3);\n\\fill[gray!50] (7.5,0) rectangle (8.5,3);\n\n% Dimension labels along top\n\\draw[<->] (0,3.5) -- (1.5,3.5);\n\\node[above] at (0.75,3.5) {$x+4$};\n\n\\draw[<->] (1.5,3.5) -- (2.5,3.5);\n\\node[above] at (2,3.5) {$\\frac{x}{2}$};\n\n\\draw[<->] (2.5,3.5) -- (4.5,3.5);\n\\node[above] at (3.5,3.5) {$2x$};\n\n\\draw[<->] (4.5,3.5) -- (5.5,3.5);\n\\node[above] at (5,3.5) {$\\frac{x}{2}$};\n\n\\draw[<->] (5.5,3.5) -- (7.5,3.5);\n\\node[above] at (6.5,3.5) {$x+4$};\n\n% Height label\n\\node[right] at (10,1.5) {15};\n\n% NOT TO SCALE\n\\node at (12,1.5) {NOT TO};\n\\node at (12,1) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nThe diagram shows a rectangle, $ABCD$.\n\n\\begin{subparts}\n\\subpart Show that the length $AD$ is $5x + 8$.\n\\Marks{1}\n\n\\subpart The area of $ABCD$ is 360\\,cm$^2$.\n\nWork out the value of $x$.\n\n\\AnswerLine[$x =$][]\n\\Marks{4}\n\n\\subpart Find the total shaded area.\n\n\\AnswerLine[][cm$^2$]\n\\Marks{1}\n\n\\end{subparts}\n\n\\part\n\\begin{center}\n\\begin{tikzpicture}[scale=0.5]\n% Open rectangular box\n\\draw (0,0) -- (4,0) -- (5,2) -- (5,5) -- (1,5) -- (0,3) -- cycle;\n\\draw (0,3) -- (4,3) -- (5,5);\n\\draw (4,0) -- (4,3);\n\\draw[dashed] (0,0) -- (1,2) -- (5,2);\n\\draw[dashed] (1,2) -- (1,5);\n\n% Dimensions\n\\node[left] at (0,1.5) {18\\,cm};\n\\node[below] at (2,0) {30\\,cm};\n\\node[below right] at (4.5,1) {65\\,cm};\n\n\\node at (2.5,-1.5) {Rectangular box};\n\n% Cuboid\n\\draw (9,0) -- (11,0) -- (11,1.5) -- (9,1.5) -- cycle;\n\\draw (9,1.5) -- (10,2.5) -- (12,2.5) -- (11,1.5);\n\\draw (11,0) -- (12,1) -- (12,2.5);\n\\draw[dashed] (9,0) -- (10,1) -- (12,1);\n\\draw[dashed] (10,1) -- (10,2.5);\n\n% Cuboid dimensions\n\\node[above] at (10.5,2.5) {6\\,cm};\n\\node[right] at (12,1.75) {15\\,cm};\n\\node[below] at (10,0) {15\\,cm};\n\n\\node at (10.5,-1.5) {Cuboid};\n\n% NOT TO SCALE\n\\node at (14,2) {NOT TO};\n\\node at (14,1.5) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nThe diagram shows an open rectangular box and a solid cuboid.\n\n\\begin{subparts}\n\\subpart Show that a maximum of 24 of these cuboids will fit inside the box.\n\\Marks{1}\n\n\\subpart 24 of these cuboids are placed inside the box.\n\nCalculate the volume of empty space in the box.\n\nGive the units of your answer.\n\n\\AnswerLine[............... ...............][]\n\\Marks{4}\n\n\\end{subparts}\n\n\\part\n\\begin{center}\n\\begin{tikzpicture}[scale=0.5]\n% Cube\n\\draw (0,0) -- (3,0) -- (3,3) -- (0,3) -- cycle;\n\\draw (0,3) -- (1,4) -- (4,4) -- (3,3);\n\\draw (3,0) -- (4,1) -- (4,4);\n\\draw[dashed] (0,0) -- (1,1) -- (4,1);\n\\draw[dashed] (1,1) -- (1,4);\n\n% Dimension\n\\draw[<->] (4.5,1) -- (4.5,4);\n\\node[right] at (4.5,2.5) {$x$\\,cm};\n\n% NOT TO SCALE\n\\node at (7,2.5) {NOT TO};\n\\node at (7,2) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nThe diagram shows a solid cube with side $x$\\,cm.\n\nThe total surface area of the cube is 486\\,cm$^2$.\n\nCalculate the value of $x$.\n\n\\AnswerLine[$x =$][]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper33-Q06",
+    "paper": "2022OctNov-Paper33",
+    "qnum": 6,
+    "marks": 9,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry",
+      "Mensuration",
+      "Trigonometry"
+    ],
+    "s": "3.6",
+    "d": 1,
+    "cat": "coord",
+    "topic": "Position vectors",
+    "qtype": "parallel lines",
+    "g": "mixed",
+    "src": "0580/33/O/N/22 Q06",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "(a) \nt\n\nIn the diagram, $ABC$ is parallel to $ED$.\n\\newline\n\n(i)  Find the value of $p$.\n\\newline\n\nGive a geometrical reason for your answer.\n\\newline\n\n Find the value of $q$.\n\\newline\n\nGive a geometrical reason for your answer.\n\\newline\n\nt\n\n$G$ is a point on the circle, centre $O$.\n\\newline\n\n$FHJ$ is a tangent to the circle at $G$ and $OH = HJ$.\n\\newline\n\n(i)  Write down the mathematical name for triangle $OHJ$.\n\\newline\n\n Find the value of $x$.\n\\newline\n\n Find the value of $y$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n% Parallel lines\n\\draw[->] (0,0) -- (6,0);\n\\node[above left] at (0,0) {$A$};\n\\node[above] at (3,0) {$B$};\n\\node[above right] at (6,0) {$C$};\n\n\\draw[->] (1,-3) -- (5,-3);\n\\node[below left] at (1,-3) {$E$};\n\\node[below right] at (5,-3) {$D$};\n\n% Transversals\n\\draw (1,-3) -- (1.5,0);\n\\draw (5,-3) -- (4.5,0);\n\n% Angles\n\\node at (1.8,-0.4) {$p$°};\n\\node at (4.2,-0.4) {$q$°};\n\\node at (1.5,-2.5) {48°};\n\\node at (4.5,-2.5) {57°};\n\n% NOT TO SCALE\n\\node at (7,-1.5) {NOT TO};\n\\node at (7,-2) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nIn the diagram, $ABC$ is parallel to $ED$.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the value of $p$.\n\\newline\n\nGive a geometrical reason for your answer.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$p =$ ............... because"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the value of $q$.\n\\newline\n\nGive a geometrical reason for your answer.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$q =$ ............... because"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ],
+        "_itemNewline": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.6]\n% Circle\n\\draw (0,0) circle (3);\n\\node[above left] at (-0.5,0.5) {$O$};\n\n% Point G on circle\n\\coordinate (G) at (-1.5,-2.6);\n\\fill (G) circle (2pt);\n\\node[below] at (G) {$G$};\n\n% Radius OG\n\\draw (0,0) -- (G);\n\n% Tangent FHJ\n\\coordinate (F) at (-4,-4.3);\n\\coordinate (H) at (1.5,-1);\n\\coordinate (J) at (5,1.5);\n\n\\draw (F) -- (J);\n\\node[below left] at (F) {$F$};\n\\node[above] at (H) {$H$};\n\\node[above right] at (J) {$J$};\n\n% Line from O to H\n\\draw (0,0) -- (H);\n\n% Line from H to J\n\\draw (H) -- (J);\n\n% Angles\n\\node at (-0.3,-0.7) {$y$°};\n\\node at (0.4,0.3) {28°};\n\\node at (4,0.8) {$x$°};\n\n% NOT TO SCALE\n\\node at (5,-2) {NOT TO};\n\\node at (5,-2.5) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\n$G$ is a point on the circle, centre $O$.\n\\newline\n\n$FHJ$ is a tangent to the circle at $G$ and $OH = HJ$.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Write down the mathematical name for triangle $OHJ$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the value of $x$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$x =$"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the value of $y$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$y =$"
+            },
+            "marks": 3,
+            "_compactMarks": true
+          }
+        ],
+        "_itemNewline": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\part\n\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n% Parallel lines\n\\draw[->] (0,0) -- (6,0);\n\\node[above left] at (0,0) {$A$};\n\\node[above] at (3,0) {$B$};\n\\node[above right] at (6,0) {$C$};\n\n\\draw[->] (1,-3) -- (5,-3);\n\\node[below left] at (1,-3) {$E$};\n\\node[below right] at (5,-3) {$D$};\n\n% Transversals\n\\draw (1,-3) -- (1.5,0);\n\\draw (5,-3) -- (4.5,0);\n\n% Angles\n\\node at (1.8,-0.4) {$p$°};\n\\node at (4.2,-0.4) {$q$°};\n\\node at (1.5,-2.5) {48°};\n\\node at (4.5,-2.5) {57°};\n\n% NOT TO SCALE\n\\node at (7,-1.5) {NOT TO};\n\\node at (7,-2) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nIn the diagram, $ABC$ is parallel to $ED$.\n\n\\begin{subparts}\n\\subpart Find the value of $p$.\n\nGive a geometrical reason for your answer.\n\n\\AnswerLine[$p =$ ............... because][]\n\\Marks{2}\n\n\\subpart Find the value of $q$.\n\nGive a geometrical reason for your answer.\n\n\\AnswerLine[$q =$ ............... because][]\n\\Marks{2}\n\n\\end{subparts}\n\n\\part\n\\begin{center}\n\\begin{tikzpicture}[scale=0.6]\n% Circle\n\\draw (0,0) circle (3);\n\\node[above left] at (-0.5,0.5) {$O$};\n\n% Point G on circle\n\\coordinate (G) at (-1.5,-2.6);\n\\fill (G) circle (2pt);\n\\node[below] at (G) {$G$};\n\n% Radius OG\n\\draw (0,0) -- (G);\n\n% Tangent FHJ\n\\coordinate (F) at (-4,-4.3);\n\\coordinate (H) at (1.5,-1);\n\\coordinate (J) at (5,1.5);\n\n\\draw (F) -- (J);\n\\node[below left] at (F) {$F$};\n\\node[above] at (H) {$H$};\n\\node[above right] at (J) {$J$};\n\n% Line from O to H\n\\draw (0,0) -- (H);\n\n% Line from H to J\n\\draw (H) -- (J);\n\n% Angles\n\\node at (-0.3,-0.7) {$y$°};\n\\node at (0.4,0.3) {28°};\n\\node at (4,0.8) {$x$°};\n\n% NOT TO SCALE\n\\node at (5,-2) {NOT TO};\n\\node at (5,-2.5) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\n$G$ is a point on the circle, centre $O$.\n\n$FHJ$ is a tangent to the circle at $G$ and $OH = HJ$.\n\n\\begin{subparts}\n\\subpart Write down the mathematical name for triangle $OHJ$.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\subpart Find the value of $x$.\n\n\\AnswerLine[$x =$][]\n\\Marks{1}\n\n\\subpart Find the value of $y$.\n\n\\AnswerLine[$y =$][]\n\\Marks{3}\n\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true,
+    "_compactItems": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper33-Q07",
+    "paper": "2022OctNov-Paper33",
+    "qnum": 7,
+    "marks": 10,
+    "topics": [
+      "Number",
+      "Transformations and vectors",
+      "Statistics"
+    ],
+    "s": null,
+    "d": 1,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/33/O/N/22 Q07",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "(a) \nThe table shows the distance, in km, a plane travels and the ticket price, in dollars, for each of 10 flights.\n\\newline\n\n\\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}\n\\hline\nDistance (km) & 1650 & 2675 & 3000 & 5300 & 6600 & 2100 & 5500 & 5950 & 3850 & 2900 \\\\\n\\hline\nPrice (\\$) & 360 & 500 & 900 & 740 & 960 & 470 & 900 & 950 & 715 & 530 \\\\\n\\hline\n\\end{tabular}\n\n(i)  Complete the scatter diagram.\n\\newline\n\nThe first eight points have been plotted for you.\n\\newline\n\n What type of correlation is shown on the scatter diagram?\n\n On one flight, the ticket price is much more expensive per kilometre travelled than on all of the other flights.\n\\newline\n\nDraw a ring around this point on the scatter diagram.\n\\newline\n\n Draw a line of best fit on the scatter diagram.\n\\newline\n\n Another plane travels $4500\\,\\text{km}$.\n\\newline\n\nUse your line of best fit to estimate the ticket price for this flight.\n\\newline\n\nThe ticket price for a flight is \\$522.\n\\newline\n\nThe exchange rate is 1 euro = \\$1.16.\n\\newline\n\nFind the ticket price in euros.\n\\newline\n\nA plane travels $939\\,\\text{km}$ from London to Copenhagen.\n\\newline\n\n(i)  This flight takes 1 hour 24 minutes.\n\\newline\n\nWork out the average speed in kilometres per hour.\n\\newline\n\n For this flight, the amount of fuel used is $3.89\\,\\text{kg}$ per kilometre travelled.\n\\newline\n\nCarbon emissions are $3.15\\,\\text{kg}$ for each kilogram of fuel used.\n\\newline\n\nWork out the carbon emissions, in kilograms, for this flight.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The table shows the distance, in km, a plane travels and the ticket price, in dollars, for each of 10 flights.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}\n\\hline\nDistance (km) & 1650 & 2675 & 3000 & 5300 & 6600 & 2100 & 5500 & 5950 & 3850 & 2900 \\\\\n\\hline\nPrice (\\$) & 360 & 500 & 900 & 740 & 960 & 470 & 900 & 950 & 715 & 530 \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+          },
+          {
+            "type": "text",
+            "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.7]\n% Axes\n\\draw[->] (0,0) -- (8,0);\n\\draw[->] (0,0) -- (0,8);\n\n% X-axis labels\n\\foreach \\x/\\label in {0/1000, 1/2000, 2/3000, 3/4000, 4/5000, 5/6000, 6/7000} {\n    \\node[below] at (\\x,0) {\\tiny \\label};\n}\n\\node[below] at (4,-0.8) {Distance (km)};\n\n% Y-axis labels\n\\foreach \\y/\\label in {0/300, 1/400, 2/500, 3/600, 4/700, 5/800, 6/900, 7/1000} {\n    \\node[left] at (0,\\y) {\\tiny \\label};\n}\n\\node[left, rotate=90] at (-1.2,3.5) {Price (\\$)};\n\n% Grid\n\\draw[gray!30] (0,0) grid (7,7);\n\n% First 8 points plotted\n\\node at (0.65,0.6) {$\\times$}; % 1650, 360\n\\node at (1.675,2) {$\\times$}; % 2675, 500\n\\node at (2,6) {$\\times$}; % 3000, 900\n\\node at (4.3,4.4) {$\\times$}; % 5300, 740\n\\node at (5.6,6.6) {$\\times$}; % 6600, 960\n\\node at (1.1,1.7) {$\\times$}; % 2100, 470\n\\node at (4.5,6) {$\\times$}; % 5500, 900\n\\node at (4.95,6.5) {$\\times$}; % 5950, 950\n\\end{tikzpicture}\n\\end{center}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Complete the scatter diagram.\n\\newline\n\nThe first eight points have been plotted for you.\n\\newline\n"
+              }
+            ],
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "What type of correlation is shown on the scatter diagram?"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "On one flight, the ticket price is much more expensive per kilometre travelled than on all of the other flights.\n\\newline\n\nDraw a ring around this point on the scatter diagram.\n\\newline\n"
+              }
+            ],
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iv)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Draw a line of best fit on the scatter diagram.\n\\newline\n"
+              }
+            ],
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(v)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Another plane travels $4500\\,\\text{km}$.\n\\newline\n\nUse your line of best fit to estimate the ticket price for this flight.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "\\$"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The ticket price for a flight is \\$522.\n\\newline\n\nThe exchange rate is 1 euro = \\$1.16.\n\\newline\n\nFind the ticket price in euros.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "euros"
+        },
+        "marks": 1,
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "A plane travels $939\\,\\text{km}$ from London to Copenhagen.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "This flight takes 1 hour 24 minutes.\n\\newline\n\nWork out the average speed in kilometres per hour.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "km/h"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "For this flight, the amount of fuel used is $3.89\\,\\text{kg}$ per kilometre travelled.\n\\newline\n\nCarbon emissions are $3.15\\,\\text{kg}$ for each kilogram of fuel used.\n\\newline\n\nWork out the carbon emissions, in kilograms, for this flight.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "kg"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ]
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "",
+    "cmd": "draw",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\part The table shows the distance, in km, a plane travels and the ticket price, in dollars, for each of 10 flights.\n\n\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}\n\\hline\nDistance (km) & 1650 & 2675 & 3000 & 5300 & 6600 & 2100 & 5500 & 5950 & 3850 & 2900 \\\\\n\\hline\nPrice (\\$) & 360 & 500 & 900 & 740 & 960 & 470 & 900 & 950 & 715 & 530 \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.7]\n% Axes\n\\draw[->] (0,0) -- (8,0);\n\\draw[->] (0,0) -- (0,8);\n\n% X-axis labels\n\\foreach \\x/\\label in {0/1000, 1/2000, 2/3000, 3/4000, 4/5000, 5/6000, 6/7000} {\n    \\node[below] at (\\x,0) {\\tiny \\label};\n}\n\\node[below] at (4,-0.8) {Distance (km)};\n\n% Y-axis labels\n\\foreach \\y/\\label in {0/300, 1/400, 2/500, 3/600, 4/700, 5/800, 6/900, 7/1000} {\n    \\node[left] at (0,\\y) {\\tiny \\label};\n}\n\\node[left, rotate=90] at (-1.2,3.5) {Price (\\$)};\n\n% Grid\n\\draw[gray!30] (0,0) grid (7,7);\n\n% First 8 points plotted\n\\node at (0.65,0.6) {$\\times$}; % 1650, 360\n\\node at (1.675,2) {$\\times$}; % 2675, 500\n\\node at (2,6) {$\\times$}; % 3000, 900\n\\node at (4.3,4.4) {$\\times$}; % 5300, 740\n\\node at (5.6,6.6) {$\\times$}; % 6600, 960\n\\node at (1.1,1.7) {$\\times$}; % 2100, 470\n\\node at (4.5,6) {$\\times$}; % 5500, 900\n\\node at (4.95,6.5) {$\\times$}; % 5950, 950\n\\end{tikzpicture}\n\\end{center}\n\n\\begin{subparts}\n\\subpart Complete the scatter diagram.\n\nThe first eight points have been plotted for you.\n\\Marks{1}\n\n\\subpart What type of correlation is shown on the scatter diagram?\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\subpart On one flight, the ticket price is much more expensive per kilometre travelled than on all of the other flights.\n\nDraw a ring around this point on the scatter diagram.\n\\Marks{1}\n\n\\subpart Draw a line of best fit on the scatter diagram.\n\\Marks{1}\n\n\\subpart Another plane travels 4500\\,km.\n\nUse your line of best fit to estimate the ticket price for this flight.\n\n\\AnswerLine[\\$][]\n\\Marks{1}\n\n\\end{subparts}\n\n\\part The ticket price for a flight is \\$522.\n\nThe exchange rate is 1 euro = \\$1.16\\,.\n\nFind the ticket price in euros.\n\n\\AnswerLine[][euros]\n\\Marks{1}\n\n\\part A plane travels 939\\,km from London to Copenhagen.\n\n\\begin{subparts}\n\\subpart This flight takes 1 hour 24 minutes.\n\nWork out the average speed in kilometres per hour.\n\n\\AnswerLine[][km/h]\n\\Marks{2}\n\n\\subpart For this flight, the amount of fuel used is 3.89\\,kg per kilometre travelled.\n\nCarbon emissions are 3.15\\,kg for each kilogram of fuel used.\n\nWork out the carbon emissions, in kilograms, for this flight.\n\n\\AnswerLine[][kg]\n\\Marks{2}\n\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper33-Q08",
+    "paper": "2022OctNov-Paper33",
+    "qnum": 8,
+    "marks": 14,
+    "topics": [
+      "Geometry",
+      "Mensuration",
+      "Transformations and vectors"
+    ],
+    "s": "4.6",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/33/O/N/22 Q08",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "(a) \nt\n\n(i)  Draw the image of shape $A$ after a reflection in the line $y = -1$.\n\\newline\n\n Describe fully the **single** transformation that maps shape $A$ onto shape $B$.\n\\newline\n\n Describe fully the **single** transformation that maps shape $A$ onto shape $C$.\n\\newline\n\n Complete this statement.\n\\newline\n\nt\n\n(i)  Write $\\overrightarrow{AB}$ as a column vector.\n\\newline\n\n $\\overrightarrow{BC} = \\begin{pmatrix} 4 \\\\ -5 \\end{pmatrix}$\n\nOn the grid, plot point $C$.\n\\newline\n\n$\\mathbf{p} = \\begin{pmatrix} 5 \\\\ -12 \\end{pmatrix}$ \\qquad $\\mathbf{t} = \\begin{pmatrix} 4 \\\\ 7 \\end{pmatrix}$\n\nWork out\n\n(i)  $3\\mathbf{p}$,\n\n $\\mathbf{t} - \\mathbf{p}$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.4]\n% Grid\n\\draw[gray!30] (-8,-6) grid (6,10);\n\n% Axes\n\\draw[thick,->] (-8,0) -- (6.5,0) node[right] {$x$};\n\\draw[thick,->] (0,-6) -- (0,10.5) node[above] {$y$};\n\n% Axis labels\n\\foreach \\x in {-8,-7,-6,-5,-4,-3,-2,-1,1,2,3,4,5,6} {\n    \\node[below, font=\\tiny] at (\\x,0) {\\x};\n}\n\\foreach \\y in {-6,-5,-4,-3,-2,-1,1,2,3,4,5,6,7,8,9,10} {\n    \\node[left, font=\\tiny] at (0,\\y) {\\y};\n}\n\n% Shape A (triangle at around (-5,1) to (-3,1) to (-3,3))\n\\draw[thick] (-5,1) -- (-3,1) -- (-3,3) -- cycle;\n\\node at (-4,1.5) {$A$};\n\n% Shape B (triangle at around (3,-1) to (5,-1) to (5,-3))\n\\draw[thick] (3,-1) -- (5,-1) -- (5,-3) -- cycle;\n\\node at (4,-1.5) {$B$};\n\n% Shape C (larger triangle at around (3,5) to (6,5) to (6,9))\n\\draw[thick] (3,5) -- (6,5) -- (6,9) -- cycle;\n\\node at (5,6) {$C$};\n\\end{tikzpicture}\n\\end{center}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Draw the image of shape $A$ after a reflection in the line $y = -1$.\n\\newline\n"
+              }
+            ],
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Describe fully the \\textbf{single} transformation that maps shape $A$ onto shape $B$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 3,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Describe fully the \\textbf{single} transformation that maps shape $A$ onto shape $C$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 3,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iv)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Complete this statement.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "The area of shape $C$ is ............... times bigger than the area of shape $A$."
+            },
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ],
+        "_itemNewline": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.5]\n% Grid\n\\draw[gray!30] (0,0) grid (12,8);\n\n% Axes\n\\draw[thick,->] (0,0) -- (12.5,0) node[right] {$x$};\n\\draw[thick,->] (0,0) -- (0,8.5) node[above] {$y$};\n\n% Axis labels\n\\foreach \\x in {0,2,4,6,8,10,12} {\n    \\node[below] at (\\x,0) {\\x};\n}\n\\foreach \\y in {0,2,4,6,8} {\n    \\node[left] at (0,\\y) {\\y};\n}\n\n% Points A and B\n\\node at (3,2) {$\\times$};\n\\node[below] at (3,2) {$A$};\n\n\\node at (6,6) {$\\times$};\n\\node[above] at (6,6) {$B$};\n\\end{tikzpicture}\n\\end{center}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Write $\\overrightarrow{AB}$ as a column vector.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "vector",
+              "fields": 2,
+              "prefix": "$\\begin{pmatrix} \\phantom{00} \\\\ \\phantom{00} \\end{pmatrix}$"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "$\\overrightarrow{BC} = \\begin{pmatrix} 4 \\\\ -5 \\end{pmatrix}$\n\nOn the grid, plot point $C$.\n\\newline\n"
+              }
+            ],
+            "marks": 1,
+            "_compactMarks": true
+          }
+        ],
+        "_itemNewline": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "$\\mathbf{p} = \\begin{pmatrix} 5 \\\\ -12 \\end{pmatrix}$ \\qquad $\\mathbf{t} = \\begin{pmatrix} 4 \\\\ 7 \\end{pmatrix}$\n\nWork out"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "$3\\mathbf{p}$,"
+              }
+            ],
+            "answer": {
+              "type": "vector",
+              "fields": 2,
+              "prefix": "$\\begin{pmatrix} \\phantom{00} \\\\ \\phantom{00} \\end{pmatrix}$"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "$\\mathbf{t} - \\mathbf{p}$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "vector",
+              "fields": 2,
+              "prefix": "$\\begin{pmatrix} \\phantom{00} \\\\ \\phantom{00} \\end{pmatrix}$"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          }
+        ]
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "describe",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\part\n\\begin{center}\n\\begin{tikzpicture}[scale=0.4]\n% Grid\n\\draw[gray!30] (-8,-6) grid (6,10);\n\n% Axes\n\\draw[thick,->] (-8,0) -- (6.5,0) node[right] {$x$};\n\\draw[thick,->] (0,-6) -- (0,10.5) node[above] {$y$};\n\n% Axis labels\n\\foreach \\x in {-8,-7,-6,-5,-4,-3,-2,-1,1,2,3,4,5,6} {\n    \\node[below, font=\\tiny] at (\\x,0) {\\x};\n}\n\\foreach \\y in {-6,-5,-4,-3,-2,-1,1,2,3,4,5,6,7,8,9,10} {\n    \\node[left, font=\\tiny] at (0,\\y) {\\y};\n}\n\n% Shape A (triangle at around (-5,1) to (-3,1) to (-3,3))\n\\draw[thick] (-5,1) -- (-3,1) -- (-3,3) -- cycle;\n\\node at (-4,1.5) {$A$};\n\n% Shape B (triangle at around (3,-1) to (5,-1) to (5,-3))\n\\draw[thick] (3,-1) -- (5,-1) -- (5,-3) -- cycle;\n\\node at (4,-1.5) {$B$};\n\n% Shape C (larger triangle at around (3,5) to (6,5) to (6,9))\n\\draw[thick] (3,5) -- (6,5) -- (6,9) -- cycle;\n\\node at (5,6) {$C$};\n\\end{tikzpicture}\n\\end{center}\n\n\\begin{subparts}\n\\subpart Draw the image of shape $A$ after a reflection in the line $y = -1$.\n\\Marks{2}\n\n\\subpart Describe fully the \\textbf{single} transformation that maps shape $A$ onto shape $B$.\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\subpart Describe fully the \\textbf{single} transformation that maps shape $A$ onto shape $C$.\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\subpart Complete this statement.\n\n\\AnswerLine[The area of shape $C$ is ............... times bigger than the area of shape $A$.][]\n\\Marks{2}\n\n\\end{subparts}\n\n\\part\n\\begin{center}\n\\begin{tikzpicture}[scale=0.5]\n% Grid\n\\draw[gray!30] (0,0) grid (12,8);\n\n% Axes\n\\draw[thick,->] (0,0) -- (12.5,0) node[right] {$x$};\n\\draw[thick,->] (0,0) -- (0,8.5) node[above] {$y$};\n\n% Axis labels\n\\foreach \\x in {0,2,4,6,8,10,12} {\n    \\node[below] at (\\x,0) {\\x};\n}\n\\foreach \\y in {0,2,4,6,8} {\n    \\node[left] at (0,\\y) {\\y};\n}\n\n% Points A and B\n\\node at (3,2) {$\\times$};\n\\node[below] at (3,2) {$A$};\n\n\\node at (6,6) {$\\times$};\n\\node[above] at (6,6) {$B$};\n\\end{tikzpicture}\n\\end{center}\n\n\\begin{subparts}\n\\subpart Write $\\overrightarrow{AB}$ as a column vector.\n\n\\AnswerLine[$\\begin{pmatrix} \\phantom{00} \\\\ \\phantom{00} \\end{pmatrix}$][]\n\\Marks{1}\n\n\\subpart $\\overrightarrow{BC} = \\begin{pmatrix} 4 \\\\ -5 \\end{pmatrix}$\n\nOn the grid, plot point $C$.\n\\Marks{1}\n\n\\end{subparts}\n\n\\part $\\mathbf{p} = \\begin{pmatrix} 5 \\\\ -12 \\end{pmatrix}$ \\qquad $\\mathbf{t} = \\begin{pmatrix} 4 \\\\ 7 \\end{pmatrix}$\n\nWork out\n\n\\begin{subparts}\n\\subpart $3\\mathbf{p}$,\n\n\\AnswerLine[$\\begin{pmatrix} \\phantom{00} \\\\ \\phantom{00} \\end{pmatrix}$][]\n\\Marks{1}\n\n\\subpart $\\mathbf{t} - \\mathbf{p}$.\n\n\\AnswerLine[$\\begin{pmatrix} \\phantom{00} \\\\ \\phantom{00} \\end{pmatrix}$][]\n\\Marks{1}\n\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true,
+    "_compactItems": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper33-Q09",
+    "paper": "2022OctNov-Paper33",
+    "qnum": 9,
+    "marks": 7,
+    "topics": [
+      "Probability"
+    ],
+    "s": "8.3",
+    "d": 1,
+    "cat": "probability",
+    "topic": "Tree diagrams",
+    "qtype": "combined events",
+    "g": "mixed",
+    "src": "0580/33/O/N/22 Q09",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "(a) \nAlvian has a bag containing 35 counters.\n\\newline\n\n6 are pink, 8 are blue and the rest are either green or yellow.\n\\newline\n\nHe picks one counter at random.\n\\newline\n\nThe probability that Alvian picks a green counter is $\\displaystyle\\frac{2}{7}$.\n\\newline\n\nFind the number of yellow counters in the bag.\n\\newline\n\nMateo has a box containing 15 counters, of which 7 are red and 8 are brown.\n\\newline\n\nHe picks one counter at random, notes the colour and replaces it in the box.\n\\newline\n\nHe then picks another counter at random.\n\\newline\n\n(i)  Complete the tree diagram.\n\\newline\n\n Calculate the probability that Mateo picks two brown counters.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Alvian has a bag containing 35 counters.\n\\newline\n\n6 are pink, 8 are blue and the rest are either green or yellow.\n\\newline\n\nHe picks one counter at random.\n\\newline\n\nThe probability that Alvian picks a green counter is $\\displaystyle\\frac{2}{7}$.\n\\newline\n\nFind the number of yellow counters in the bag.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "marks": 3,
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Mateo has a box containing 15 counters, of which 7 are red and 8 are brown.\n\\newline\n\nHe picks one counter at random, notes the colour and replaces it in the box.\n\\newline\n\nHe then picks another counter at random.\n\\newline\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.9]\n% Tree diagram\n\\node at (0,0) {};\n\n% First branch\n\\draw (0,0) -- (2,1.5);\n\\draw (0,0) -- (2,-1.5);\n\n\\node[above] at (1,0.75) {$\\frac{7}{15}$};\n\\node[below] at (1,-0.75) {..........};\n\n\\node[right] at (2,1.5) {Red};\n\\node[right] at (2,-1.5) {Brown};\n\n% Second branches from Red\n\\draw (3,1.5) -- (5,2.5);\n\\draw (3,1.5) -- (5,0.5);\n\n\\node[above] at (4,2) {..........};\n\\node[below] at (4,1) {..........};\n\n\\node[right] at (5,2.5) {Red};\n\\node[right] at (5,0.5) {Brown};\n\n% Second branches from Brown\n\\draw (3,-1.5) -- (5,-0.5);\n\\draw (3,-1.5) -- (5,-2.5);\n\n\\node[above] at (4,-1) {..........};\n\\node[below] at (4,-2) {..........};\n\n\\node[right] at (5,-0.5) {Red};\n\\node[right] at (5,-2.5) {Brown};\n\n% Labels\n\\node[above] at (1.5,3) {First counter};\n\\node[above] at (4.5,3) {Second counter};\n\\end{tikzpicture}\n\\end{center}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Complete the tree diagram.\n\\newline\n"
+              }
+            ],
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate the probability that Mateo picks two brown counters.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ]
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\part Alvian has a bag containing 35 counters.\n\n6 are pink, 8 are blue and the rest are either green or yellow.\n\nHe picks one counter at random.\n\nThe probability that Alvian picks a green counter is $\\displaystyle\\frac{2}{7}$.\n\nFind the number of yellow counters in the bag.\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\part Mateo has a box containing 15 counters, of which 7 are red and 8 are brown.\n\nHe picks one counter at random, notes the colour and replaces it in the box.\n\nHe then picks another counter at random.\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.9]\n% Tree diagram\n\\node at (0,0) {};\n\n% First branch\n\\draw (0,0) -- (2,1.5);\n\\draw (0,0) -- (2,-1.5);\n\n\\node[above] at (1,0.75) {$\\frac{7}{15}$};\n\\node[below] at (1,-0.75) {..........};\n\n\\node[right] at (2,1.5) {Red};\n\\node[right] at (2,-1.5) {Brown};\n\n% Second branches from Red\n\\draw (3,1.5) -- (5,2.5);\n\\draw (3,1.5) -- (5,0.5);\n\n\\node[above] at (4,2) {..........};\n\\node[below] at (4,1) {..........};\n\n\\node[right] at (5,2.5) {Red};\n\\node[right] at (5,0.5) {Brown};\n\n% Second branches from Brown\n\\draw (3,-1.5) -- (5,-0.5);\n\\draw (3,-1.5) -- (5,-2.5);\n\n\\node[above] at (4,-1) {..........};\n\\node[below] at (4,-2) {..........};\n\n\\node[right] at (5,-0.5) {Red};\n\\node[right] at (5,-2.5) {Brown};\n\n% Labels\n\\node[above] at (1.5,3) {First counter};\n\\node[above] at (4.5,3) {Second counter};\n\\end{tikzpicture}\n\\end{center}\n\n\\begin{subparts}\n\\subpart Complete the tree diagram.\n\\Marks{2}\n\n\\subpart Calculate the probability that Mateo picks two brown counters.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper33-Q10",
+    "paper": "2022OctNov-Paper33",
+    "qnum": 10,
+    "marks": 10,
+    "topics": [
+      "Algebra and graphs",
+      "Geometry"
+    ],
+    "s": "2.7",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Sequences",
+    "qtype": "number patterns, sequences",
+    "g": "sequence",
+    "src": "0580/33/O/N/22 Q10",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "Meena makes these patterns using dots and lines.\n\\newline\n\n(a) \nDraw Pattern 4.\n\\newline\n\nComplete the table.\n\\newline\n\n\\begin{tabular}{|c|c|c|c|c|}\n\\hline\nPattern & 1 & 2 & 3 & 4 \\\\\n\\hline\nNumber of dots & 3 & 5 & 7 & \\\\\n\\hline\nNumber of lines & 5 & 9 & 13 & \\\\\n\\hline\n\\end{tabular}\n\nt\n(i)  Write down the term to term rule for continuing the sequence for the number of dots.\n\\newline\n\n Find an expression, in terms of $n$, for the number of dots in Pattern $n$.\n\\newline\n\nThe number of lines in Pattern $n$ is $4n + 1$.\n\\newline\n\nMeena makes the pattern which has 129 lines.\n\\newline\n\nWork out the number of dots she uses to make this pattern.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Draw Pattern 4.\n\\newline\n"
+          }
+        ],
+        "marks": 1,
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Complete the table.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|}\n\\hline\nPattern & 1 & 2 & 3 & 4 \\\\\n\\hline\nNumber of dots & 3 & 5 & 7 & \\\\\n\\hline\nNumber of lines & 5 & 9 & 13 & \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+          }
+        ],
+        "marks": 2,
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Write down the term to term rule for continuing the sequence for the number of dots.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Find an expression, in terms of $n$, for the number of dots in Pattern $n$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ],
+        "_itemNewline": true
+      },
+      {
+        "label": "(d)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The number of lines in Pattern $n$ is $4n + 1$.\n\\newline\n\nMeena makes the pattern which has 129 lines.\n\\newline\n\nWork out the number of dots she uses to make this pattern.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "marks": 4,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Meena makes these patterns using dots and lines.\n\\newline\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n% Pattern 1\n\\fill (0,0) circle (3pt);\n\\fill (1,0) circle (3pt);\n\\fill (0.5,0.866) circle (3pt);\n\\draw (0,0) -- (1,0) -- (0.5,0.866) -- cycle;\n\\draw (0.5,0.866) -- (0.5,1.5);\n\\draw (0,0) -- (-0.3,-0.5);\n\\draw (1,0) -- (1.3,-0.5);\n\\node[below] at (0.5,-0.7) {Pattern 1};\n\n% Pattern 2\n\\fill (3,0) circle (3pt);\n\\fill (4,0) circle (3pt);\n\\fill (5,0) circle (3pt);\n\\fill (3.5,0.866) circle (3pt);\n\\fill (4.5,0.866) circle (3pt);\n\\draw (3,0) -- (5,0);\n\\draw (3,0) -- (3.5,0.866) -- (4,0);\n\\draw (4,0) -- (4.5,0.866) -- (5,0);\n\\draw (3.5,0.866) -- (4.5,0.866);\n\\draw (3.5,0.866) -- (3.2,1.5);\n\\draw (4.5,0.866) -- (4.8,1.5);\n\\draw (3,0) -- (2.7,-0.5);\n\\draw (5,0) -- (5.3,-0.5);\n\\node[below] at (4,-0.7) {Pattern 2};\n\n% Pattern 3\n\\fill (7,0) circle (3pt);\n\\fill (8,0) circle (3pt);\n\\fill (9,0) circle (3pt);\n\\fill (10,0) circle (3pt);\n\\fill (7.5,0.866) circle (3pt);\n\\fill (8.5,0.866) circle (3pt);\n\\fill (9.5,0.866) circle (3pt);\n\\draw (7,0) -- (10,0);\n\\draw (7,0) -- (7.5,0.866) -- (8,0);\n\\draw (8,0) -- (8.5,0.866) -- (9,0);\n\\draw (9,0) -- (9.5,0.866) -- (10,0);\n\\draw (7.5,0.866) -- (9.5,0.866);\n\\draw (7.5,0.866) -- (7.2,1.5);\n\\draw (9.5,0.866) -- (9.8,1.5);\n\\draw (7,0) -- (6.7,-0.5);\n\\draw (10,0) -- (10.3,-0.5);\n\\node[below] at (8.5,-0.7) {Pattern 3};\n\n% Pattern 4 (empty space)\n\\node[below] at (13,-0.7) {Pattern 4};\n\\end{tikzpicture}\n\\end{center}"
+      }
+    ],
+    "_rawBody": "Meena makes these patterns using dots and lines.\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n% Pattern 1\n\\fill (0,0) circle (3pt);\n\\fill (1,0) circle (3pt);\n\\fill (0.5,0.866) circle (3pt);\n\\draw (0,0) -- (1,0) -- (0.5,0.866) -- cycle;\n\\draw (0.5,0.866) -- (0.5,1.5);\n\\draw (0,0) -- (-0.3,-0.5);\n\\draw (1,0) -- (1.3,-0.5);\n\\node[below] at (0.5,-0.7) {Pattern 1};\n\n% Pattern 2\n\\fill (3,0) circle (3pt);\n\\fill (4,0) circle (3pt);\n\\fill (5,0) circle (3pt);\n\\fill (3.5,0.866) circle (3pt);\n\\fill (4.5,0.866) circle (3pt);\n\\draw (3,0) -- (5,0);\n\\draw (3,0) -- (3.5,0.866) -- (4,0);\n\\draw (4,0) -- (4.5,0.866) -- (5,0);\n\\draw (3.5,0.866) -- (4.5,0.866);\n\\draw (3.5,0.866) -- (3.2,1.5);\n\\draw (4.5,0.866) -- (4.8,1.5);\n\\draw (3,0) -- (2.7,-0.5);\n\\draw (5,0) -- (5.3,-0.5);\n\\node[below] at (4,-0.7) {Pattern 2};\n\n% Pattern 3\n\\fill (7,0) circle (3pt);\n\\fill (8,0) circle (3pt);\n\\fill (9,0) circle (3pt);\n\\fill (10,0) circle (3pt);\n\\fill (7.5,0.866) circle (3pt);\n\\fill (8.5,0.866) circle (3pt);\n\\fill (9.5,0.866) circle (3pt);\n\\draw (7,0) -- (10,0);\n\\draw (7,0) -- (7.5,0.866) -- (8,0);\n\\draw (8,0) -- (8.5,0.866) -- (9,0);\n\\draw (9,0) -- (9.5,0.866) -- (10,0);\n\\draw (7.5,0.866) -- (9.5,0.866);\n\\draw (7.5,0.866) -- (7.2,1.5);\n\\draw (9.5,0.866) -- (9.8,1.5);\n\\draw (7,0) -- (6.7,-0.5);\n\\draw (10,0) -- (10.3,-0.5);\n\\node[below] at (8.5,-0.7) {Pattern 3};\n\n% Pattern 4 (empty space)\n\\node[below] at (13,-0.7) {Pattern 4};\n\\end{tikzpicture}\n\\end{center}\n\n\\begin{parts}\n\\part Draw Pattern 4.\n\\Marks{1}\n\n\\part Complete the table.\n\n\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|}\n\\hline\nPattern & 1 & 2 & 3 & 4 \\\\\n\\hline\nNumber of dots & 3 & 5 & 7 & \\\\\n\\hline\nNumber of lines & 5 & 9 & 13 & \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\\Marks{2}\n\n\\part\n\\begin{subparts}\n\\subpart Write down the term to term rule for continuing the sequence for the number of dots.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\subpart Find an expression, in terms of $n$, for the number of dots in Pattern $n$.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{subparts}\n\n\\part The number of lines in Pattern $n$ is $4n + 1$.\n\nMeena makes the pattern which has 129 lines.\n\nWork out the number of dots she uses to make this pattern.\n\n\\AnswerLine[][]\n\\Marks{4}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true
+  }
+]

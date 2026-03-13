@@ -1,0 +1,1038 @@
+[
+  {
+    "id": "0580-2021MayJune-Paper11-Q01",
+    "paper": "2021MayJune-Paper11",
+    "qnum": 1,
+    "marks": 2,
+    "topics": [
+      "Mensuration"
+    ],
+    "s": "5.2",
+    "d": 1,
+    "cat": "mensuration",
+    "topic": "Circles",
+    "qtype": "area and perimeter",
+    "g": "mixed",
+    "src": "0580/11/M/J/21 Q01",
+    "year": 2021,
+    "session": "MayJune",
+    "tex": "Zachary asks the 30 students in his class which is their favourite sport.\n\\newline\n\nThe table shows the results.\n\\newline\n\n\\begin{tabular}{|c|c|c|c|}\n\\hline\nNetball & Football & Hockey & Tennis \\\\\n\\hline\n7 & 12 & 6 & 5 \\\\\n\\hline\n\\end{tabular}\nComplete the pictogram.\n\\newline\n\n\\begin{tabular}{|l|p{8cm}|}\n\\hline\nNetball & \\PictogramSymbol \\PictogramSymbolThreeQuarter \\\\\n\\hline\nFootball & \\\\\n\\hline\nHockey & \\\\\n\\hline\nTennis & \\\\\n\\hline\n\\end{tabular}\n\nKey: \\PictogramSymbol\\ represents 4 people",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Zachary asks the 30 students in his class which is their favourite sport.\n\\newline\n\nThe table shows the results.\n\\newline\n"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{center}\n\\begin{tabular}{|c|c|c|c|}\n\\hline\nNetball & Football & Hockey & Tennis \\\\\n\\hline\n7 & 12 & 6 & 5 \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+      },
+      {
+        "type": "text",
+        "content": "Complete the pictogram.\n\\newline\n\n\\begin{center}"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{tabular}{|l|p{8cm}|}\n\\hline\nNetball & \\PictogramSymbol \\PictogramSymbolThreeQuarter \\\\\n\\hline\nFootball & \\\\\n\\hline\nHockey & \\\\\n\\hline\nTennis & \\\\\n\\hline\n\\end{tabular}"
+      },
+      {
+        "type": "text",
+        "content": "Key: \\PictogramSymbol\\ represents 4 people\n\\end{center}"
+      }
+    ],
+    "_rawBody": "Zachary asks the 30 students in his class which is their favourite sport.\n\nThe table shows the results.\n\n\\begin{center}\n\\begin{tabular}{|c|c|c|c|}\n\\hline\nNetball & Football & Hockey & Tennis \\\\\n\\hline\n7 & 12 & 6 & 5 \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\nComplete the pictogram.\n\n\\begin{center}\n\\begin{tabular}{|l|p{8cm}|}\n\\hline\nNetball & \\PictogramSymbol \\PictogramSymbolThreeQuarter \\\\\n\\hline\nFootball & \\\\\n\\hline\nHockey & \\\\\n\\hline\nTennis & \\\\\n\\hline\n\\end{tabular}\n\nKey: \\PictogramSymbol\\ represents 4 people\n\\end{center}\n\n\\Marks{2}"
+  },
+  {
+    "id": "0580-2021MayJune-Paper11-Q02",
+    "paper": "2021MayJune-Paper11",
+    "qnum": 2,
+    "marks": 4,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.3",
+    "d": 1,
+    "cat": "number",
+    "topic": "Directed numbers",
+    "qtype": "square root, reciprocal, fraction multiplication, integer operations",
+    "g": "mixed",
+    "src": "0580/11/M/J/21 Q02",
+    "year": 2021,
+    "session": "MayJune",
+    "tex": "(a) Find the value of $\\sqrt{225}$.\n\\newline\n\n(b) Write down the reciprocal of $\\dfrac{2}{3}$.\n\\newline\n\n(c) Work out three-quarters of one-third.\n\\newline\n\n(d) Work out $-7 - (6 - 8)$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the value of $\\sqrt{225}$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down the reciprocal of $\\dfrac{2}{3}$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Work out three-quarters of one-third.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Work out $-7 - (6 - 8)$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Find the value of $\\sqrt{225}$.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Write down the reciprocal of $\\dfrac{2}{3}$.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Work out three-quarters of one-third.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Work out $-7 - (6 - 8)$.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2021MayJune-Paper11-Q03",
+    "paper": "2021MayJune-Paper11",
+    "qnum": 3,
+    "marks": 3,
+    "topics": [
+      "Geometry",
+      "Transformations and vectors"
+    ],
+    "s": "4.5",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Similarity and congruence",
+    "qtype": "symmetry",
+    "g": "mixed",
+    "src": "0580/11/M/J/21 Q03",
+    "year": 2021,
+    "session": "MayJune",
+    "tex": "(a) Write down the order of rotational symmetry of this diagram.\n\\newline\n\n(b) On the diagram, draw all the lines of symmetry.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down the order of rotational symmetry of this diagram.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "On the diagram, draw all the lines of symmetry.\n\\newline\n"
+          }
+        ],
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.6]\n% L-shaped figure made of 5 squares in cross pattern\n\\draw[thick] (0,0) rectangle (1,1);\n\\draw[thick] (1,0) rectangle (2,1);\n\\draw[thick] (2,0) rectangle (3,1);\n\\draw[thick] (1,1) rectangle (2,2);\n\\draw[thick] (1,-1) rectangle (2,0);\n% Shading alternate squares\n\\fill[gray!50] (1,0) rectangle (2,1);\n\\fill[gray!50] (0,0) rectangle (1,1);\n\\fill[gray!50] (2,0) rectangle (3,1);\n\\end{tikzpicture}\n\\end{center}"
+      }
+    ],
+    "_rawBody": "\\begin{center}\n\\begin{tikzpicture}[scale=0.6]\n% L-shaped figure made of 5 squares in cross pattern\n\\draw[thick] (0,0) rectangle (1,1);\n\\draw[thick] (1,0) rectangle (2,1);\n\\draw[thick] (2,0) rectangle (3,1);\n\\draw[thick] (1,1) rectangle (2,2);\n\\draw[thick] (1,-1) rectangle (2,0);\n% Shading alternate squares\n\\fill[gray!50] (1,0) rectangle (2,1);\n\\fill[gray!50] (0,0) rectangle (1,1);\n\\fill[gray!50] (2,0) rectangle (3,1);\n\\end{tikzpicture}\n\\end{center}\n\n\\begin{parts}\n\\item Write down the order of rotational symmetry of this diagram.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item On the diagram, draw all the lines of symmetry.\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2021MayJune-Paper11-Q04",
+    "paper": "2021MayJune-Paper11",
+    "qnum": 4,
+    "marks": 3,
+    "topics": [
+      "Statistics"
+    ],
+    "s": "9.4",
+    "d": 1,
+    "cat": "statistics",
+    "topic": "Charts and graphs",
+    "qtype": "statistical charts",
+    "g": "mixed",
+    "src": "0580/11/M/J/21 Q04",
+    "year": 2021,
+    "session": "MayJune",
+    "tex": "The stem-and-leaf diagram shows the number of hours that each of 16 students studied last week.\n\\newline\n\n\\begin{tabular}{r|l l l l l}\n1 & 2 & 5 & 6 & 8 & \\\\\n2 & 0 & 1 & 1 & 7 & 9 \\\\\n3 & 2 & 3 & 4 & 5 & \\\\\n4 & 4 & 5 & 7 & & \\\\\n\\end{tabular}\n\nKey: $1|2$ represents 12 hours\nFind\n\n(a) the median,\n\n(b) the mode,\n\n(c) the range.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "the median,"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "h"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "the mode,"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "h"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "the range.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "h"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The stem-and-leaf diagram shows the number of hours that each of 16 students studied last week.\n\\newline\n\n\\begin{center}"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{tabular}{r|l l l l l}\n1 & 2 & 5 & 6 & 8 & \\\\\n2 & 0 & 1 & 1 & 7 & 9 \\\\\n3 & 2 & 3 & 4 & 5 & \\\\\n4 & 4 & 5 & 7 & & \\\\\n\\end{tabular}"
+      },
+      {
+        "type": "text",
+        "content": "Key: $1|2$ represents 12 hours\n\\end{center}\n\nFind"
+      }
+    ],
+    "_rawBody": "The stem-and-leaf diagram shows the number of hours that each of 16 students studied last week.\n\n\\begin{center}\n\\begin{tabular}{r|l l l l l}\n1 & 2 & 5 & 6 & 8 & \\\\\n2 & 0 & 1 & 1 & 7 & 9 \\\\\n3 & 2 & 3 & 4 & 5 & \\\\\n4 & 4 & 5 & 7 & & \\\\\n\\end{tabular}\n\nKey: $1|2$ represents 12 hours\n\\end{center}\n\nFind\n\n\\begin{parts}\n\\item the median,\n\n\\AnswerLine[][h]\n\\Marks{1}\n\n\\item the mode,\n\n\\AnswerLine[][h]\n\\Marks{1}\n\n\\item the range.\n\n\\AnswerLine[][h]\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2021MayJune-Paper11-Q05",
+    "paper": "2021MayJune-Paper11",
+    "qnum": 5,
+    "marks": 4,
+    "topics": [
+      "Mensuration"
+    ],
+    "s": "5.4",
+    "d": 1,
+    "cat": "mensuration",
+    "topic": "Volume",
+    "qtype": "surface area and volume",
+    "g": "mixed",
+    "src": "0580/11/M/J/21 Q05",
+    "year": 2021,
+    "session": "MayJune",
+    "tex": "The volume of a cuboid is $24\\,\\text{cm}^3$.\n\\newline\n\\\\\nThe base of the cuboid is $3\\,\\text{cm}$ by $2\\,\\text{cm}$.\n\\newline\n\nDraw a net of the cuboid on the $1\\,\\text{cm}^2$ grid.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The volume of a cuboid is $24\\,\\text{cm}^3$.\n\\newline\n\\\\\nThe base of the cuboid is $3\\,\\text{cm}$ by $2\\,\\text{cm}$.\n\\newline\n\nDraw a net of the cuboid on the $1\\,\\text{cm}^2$ grid.\n\\newline\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.4]\n\\draw[step=1,gray,thin] (0,0) grid (18,22);\n\\end{tikzpicture}\n\\end{center}"
+      }
+    ],
+    "_rawBody": "The volume of a cuboid is 24\\,cm$^3$.\\\\\nThe base of the cuboid is 3\\,cm by 2\\,cm.\n\nDraw a net of the cuboid on the 1\\,cm$^2$ grid.\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.4]\n\\draw[step=1,gray,thin] (0,0) grid (18,22);\n\\end{tikzpicture}\n\\end{center}\n\n\\Marks{4}"
+  },
+  {
+    "id": "0580-2021MayJune-Paper11-Q06",
+    "paper": "2021MayJune-Paper11",
+    "qnum": 6,
+    "marks": 3,
+    "topics": [
+      "Transformations and vectors"
+    ],
+    "s": "7.1",
+    "d": 1,
+    "cat": "vectors",
+    "topic": "Translation",
+    "qtype": "transformations",
+    "g": "mixed",
+    "src": "0580/11/M/J/21 Q06",
+    "year": 2021,
+    "session": "MayJune",
+    "tex": "The travel graph shows a student's journey.\n\\newline\n\n(a) Explain what is happening between 14$\\,$20 and 14$\\,$40.\n\\newline\n\n(b) Complete the statement.\n\\newline\n\nThe student is travelling fastest between the times  and \n\nbecause",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Explain what is happening between 14$\\,$20 and 14$\\,$40.\n\\newline\n\n\\makebox[14cm]{\\dotfill}"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Complete the statement.\n\\newline\n\nThe student is travelling fastest between the times \\makebox[2cm]{\\dotfill} and \\makebox[2cm]{\\dotfill}\n\nbecause \\makebox[10cm]{\\dotfill}"
+          }
+        ],
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "explain",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n\\draw[->] (0,0) -- (8.5,0) node[below] {Time};\n\\draw[->] (0,0) -- (0,8.5);\n\\node[left] at (0,8) {8};\n\\node[left] at (0,7) {7};\n\\node[left] at (0,6) {6};\n\\node[left] at (0,5) {5};\n\\node[left] at (0,4) {4};\n\\node[left] at (0,3) {3};\n\\node[left] at (0,2) {2};\n\\node[left] at (0,1) {1};\n\\node[left] at (0,0) {0};\n\\node[below] at (0,0) {12$\\,$00};\n\\node[below] at (2,0) {13$\\,$00};\n\\node[below] at (4,0) {14$\\,$00};\n\\node[below] at (6,0) {15$\\,$00};\n\\node[below] at (8,0) {16$\\,$00};\n\\node[left,rotate=90] at (-0.8,4) {Distance (km)};\n\n% Grid lines\n\\foreach \\y in {1,2,...,8} {\n  \\draw[gray,thin,dashed] (0,\\y) -- (8,\\y);\n}\n\\foreach \\x in {2,4,6,8} {\n  \\draw[gray,thin,dashed] (\\x,0) -- (\\x,8);\n}\n\n% Travel graph\n\\draw[thick] (0,0) -- (1.33,7) -- (2,5) -- (2.67,4) -- (3.33,4) -- (4.67,7) -- (5.33,4) -- (8,1);\n\\end{tikzpicture}\n\\end{center}\n\nThe travel graph shows a student's journey.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n\\draw[->] (0,0) -- (8.5,0) node[below] {Time};\n\\draw[->] (0,0) -- (0,8.5);\n\\node[left] at (0,8) {8};\n\\node[left] at (0,7) {7};\n\\node[left] at (0,6) {6};\n\\node[left] at (0,5) {5};\n\\node[left] at (0,4) {4};\n\\node[left] at (0,3) {3};\n\\node[left] at (0,2) {2};\n\\node[left] at (0,1) {1};\n\\node[left] at (0,0) {0};\n\\node[below] at (0,0) {12\\,00};\n\\node[below] at (2,0) {13\\,00};\n\\node[below] at (4,0) {14\\,00};\n\\node[below] at (6,0) {15\\,00};\n\\node[below] at (8,0) {16\\,00};\n\\node[left,rotate=90] at (-0.8,4) {Distance (km)};\n\n% Grid lines\n\\foreach \\y in {1,2,...,8} {\n  \\draw[gray,thin,dashed] (0,\\y) -- (8,\\y);\n}\n\\foreach \\x in {2,4,6,8} {\n  \\draw[gray,thin,dashed] (\\x,0) -- (\\x,8);\n}\n\n% Travel graph\n\\draw[thick] (0,0) -- (1.33,7) -- (2,5) -- (2.67,4) -- (3.33,4) -- (4.67,7) -- (5.33,4) -- (8,1);\n\\end{tikzpicture}\n\\end{center}\n\nThe travel graph shows a student's journey.\n\n\\begin{parts}\n\\item Explain what is happening between 14\\,20 and 14\\,40.\n\n\\makebox[14cm]{\\dotfill}\n\\Marks{1}\n\n\\item Complete the statement.\n\nThe student is travelling fastest between the times \\makebox[2cm]{\\dotfill} and \\makebox[2cm]{\\dotfill}\n\nbecause \\makebox[10cm]{\\dotfill}\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2021MayJune-Paper11-Q07",
+    "paper": "2021MayJune-Paper11",
+    "qnum": 7,
+    "marks": 1,
+    "topics": [
+      "Probability"
+    ],
+    "s": "8.1",
+    "d": 1,
+    "cat": "probability",
+    "topic": "Basic probability",
+    "qtype": "basic probability",
+    "g": "mixed",
+    "src": "0580/11/M/J/21 Q07",
+    "year": 2021,
+    "session": "MayJune",
+    "tex": "The probability that a train is late is 0.15.\n\\newline\n\nWrite down the probability that the train is not late.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "write",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The probability that a train is late is 0.15.\n\\newline\n\nWrite down the probability that the train is not late.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "The probability that a train is late is 0.15.\n\nWrite down the probability that the train is not late.\n\n\\AnswerLine[][]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2021MayJune-Paper11-Q08",
+    "paper": "2021MayJune-Paper11",
+    "qnum": 8,
+    "marks": 1,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.16",
+    "d": 1,
+    "cat": "number",
+    "topic": "Upper and lower bounds",
+    "qtype": "currency exchange rate calculation",
+    "g": "mixed",
+    "src": "0580/11/M/J/21 Q08",
+    "year": 2021,
+    "session": "MayJune",
+    "tex": "Nazaneen changes \\$6500 into 5798 euros at a bank.\n\\newline\n\nWork out the exchange rate the bank uses.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Nazaneen changes \\$6500 into 5798 euros at a bank.\n\\newline\n\nWork out the exchange rate the bank uses.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "\\$1 =",
+      "suffix": "euros"
+    },
+    "_rawBody": "Nazaneen changes \\$6500 into 5798 euros at a bank.\n\nWork out the exchange rate the bank uses.\n\n\\AnswerLine[\\$1 =][euros]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2021MayJune-Paper11-Q09",
+    "paper": "2021MayJune-Paper11",
+    "qnum": 9,
+    "marks": 2,
+    "topics": [
+      "Transformations and vectors"
+    ],
+    "s": "7.1",
+    "d": 1,
+    "cat": "vectors",
+    "topic": "Translation",
+    "qtype": "transformations",
+    "g": "mixed",
+    "src": "0580/11/M/J/21 Q09",
+    "year": 2021,
+    "session": "MayJune",
+    "tex": "Work out.\n\\newline\n\n(a) $\\begin{pmatrix} 6 \\\\ -5 \\end{pmatrix} + \\begin{pmatrix} 8 \\\\ -1 \\end{pmatrix}$\n\n(b) $3\\begin{pmatrix} -4 \\\\ 7 \\end{pmatrix}$",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "$\\begin{pmatrix} 6 \\\\ -5 \\end{pmatrix} + \\begin{pmatrix} 8 \\\\ -1 \\end{pmatrix}$"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "$3\\begin{pmatrix} -4 \\\\ 7 \\end{pmatrix}$"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Work out.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "Work out.\n\n\\begin{parts}\n\\item $\\begin{pmatrix} 6 \\\\ -5 \\end{pmatrix} + \\begin{pmatrix} 8 \\\\ -1 \\end{pmatrix}$\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item $3\\begin{pmatrix} -4 \\\\ 7 \\end{pmatrix}$\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2021MayJune-Paper11-Q10",
+    "paper": "2021MayJune-Paper11",
+    "qnum": 10,
+    "marks": 3,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.6",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/11/M/J/21 Q10",
+    "year": 2021,
+    "session": "MayJune",
+    "tex": "The diagram shows two parallel lines intersected by two straight lines.\n\\newline\n\nFind the values of $a$, $b$ and $c$.\n\\newline\n\n\\begin{align*}\na &=  \\\\\nb &=  \\\\\nc &= \n\\end{align*}",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{center}\n\\begin{tikzpicture}[scale=1]\n% Two parallel lines\n\\draw[thick,->] (-1,2) -- (4,2);\n\\draw[thick,->] (-1,-1) -- (4,-1);\n\n% Two intersecting lines\n\\draw[thick] (-0.5,3) -- (1.5,-2);\n\\draw[thick] (1,3) -- (3.5,-2);\n\n% Labels\n\\node at (0.8,1.7) {$59°$};\n\\node at (1.3,1.7) {$37°$};\n\\node at (0.7,1.2) {$a°$};\n\\node at (2.7,-0.6) {$c°$};\n\\node at (0,-0.6) {$b°$};\n\n% NOT TO SCALE\n\\node at (4.5,1) {NOT TO};\n\\node at (4.5,0.5) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nThe diagram shows two parallel lines intersected by two straight lines.\n\\newline\n\nFind the values of $a$, $b$ and $c$.\n\\newline\n\n\\begin{align*}\na &= \\text{\\makebox[4cm]{\\dotfill}} \\\\\nb &= \\text{\\makebox[4cm]{\\dotfill}} \\\\\nc &= \\text{\\makebox[4cm]{\\dotfill}}\n\\end{align*}"
+      }
+    ],
+    "_rawBody": "\\begin{center}\n\\begin{tikzpicture}[scale=1]\n% Two parallel lines\n\\draw[thick,->] (-1,2) -- (4,2);\n\\draw[thick,->] (-1,-1) -- (4,-1);\n\n% Two intersecting lines\n\\draw[thick] (-0.5,3) -- (1.5,-2);\n\\draw[thick] (1,3) -- (3.5,-2);\n\n% Labels\n\\node at (0.8,1.7) {$59°$};\n\\node at (1.3,1.7) {$37°$};\n\\node at (0.7,1.2) {$a°$};\n\\node at (2.7,-0.6) {$c°$};\n\\node at (0,-0.6) {$b°$};\n\n% NOT TO SCALE\n\\node at (4.5,1) {NOT TO};\n\\node at (4.5,0.5) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nThe diagram shows two parallel lines intersected by two straight lines.\n\nFind the values of $a$, $b$ and $c$.\n\n\\begin{align*}\na &= \\text{\\makebox[4cm]{\\dotfill}} \\\\\nb &= \\text{\\makebox[4cm]{\\dotfill}} \\\\\nc &= \\text{\\makebox[4cm]{\\dotfill}}\n\\end{align*}\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2021MayJune-Paper11-Q11",
+    "paper": "2021MayJune-Paper11",
+    "qnum": 11,
+    "marks": 3,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.6",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/11/M/J/21 Q11",
+    "year": 2021,
+    "session": "MayJune",
+    "tex": "(a) Write down the mathematical name for a polygon with 5 sides.\n\\newline\n\n(b) Work out the interior angle of a regular 18-sided polygon.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down the mathematical name for a polygon with 5 sides.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Work out the interior angle of a regular 18-sided polygon.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Write down the mathematical name for a polygon with 5 sides.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Work out the interior angle of a regular 18-sided polygon.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2021MayJune-Paper11-Q12",
+    "paper": "2021MayJune-Paper11",
+    "qnum": 12,
+    "marks": 3,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.7",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Sequences",
+    "qtype": "linear sequence and term value",
+    "g": "sequence",
+    "src": "0580/11/M/J/21 Q12",
+    "year": 2021,
+    "session": "MayJune",
+    "tex": "The $n$th term of a sequence is $6n - 4$.\n\\newline\n\n(a) Write down the first 3 terms in this sequence.\n\\newline\n\n{...}, , ]\n\n(b) The $k$th term of this sequence is 422.\n\\newline\n\nWork out the value of $k$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down the first 3 terms in this sequence.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "\\makebox[1.5cm]{\\dotfill}, \\makebox[1.5cm]{\\dotfill}, \\makebox[1.5cm]{\\dotfill}"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "The $k$th term of this sequence is 422.\n\\newline\n\nWork out the value of $k$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$k =$"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The $n$th term of a sequence is $6n - 4$.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "The $n$th term of a sequence is $6n - 4$.\n\n\\begin{parts}\n\\item Write down the first 3 terms in this sequence.\n\n\\AnswerLine[][\\makebox[1.5cm]{\\dotfill}, \\makebox[1.5cm]{\\dotfill}, \\makebox[1.5cm]{\\dotfill}]\n\\Marks{1}\n\n\\item The $k$th term of this sequence is 422.\n\nWork out the value of $k$.\n\n\\AnswerLine[$k =$][]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2021MayJune-Paper11-Q13",
+    "paper": "2021MayJune-Paper11",
+    "qnum": 13,
+    "marks": 2,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.6",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/11/M/J/21 Q13",
+    "year": 2021,
+    "session": "MayJune",
+    "tex": "The radius of a circle is $42\\,\\text{cm}$.\n\\newline\n\nWork out the circumference of the circle.\n\\newline\n\\\\\nGive your answer in terms of $\\pi$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The radius of a circle is $42\\,\\text{cm}$.\n\\newline\n\nWork out the circumference of the circle.\n\\newline\n\\\\\nGive your answer in terms of $\\pi$.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "cm"
+    },
+    "_rawBody": "The radius of a circle is 42\\,cm.\n\nWork out the circumference of the circle.\\\\\nGive your answer in terms of $\\pi$.\n\n\\AnswerLine[][cm]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2021MayJune-Paper11-Q14",
+    "paper": "2021MayJune-Paper11",
+    "qnum": 14,
+    "marks": 1,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.12",
+    "d": 1,
+    "cat": "number",
+    "topic": "Set notation",
+    "qtype": "volume unit conversion",
+    "g": "mixed",
+    "src": "0580/11/M/J/21 Q14",
+    "year": 2021,
+    "session": "MayJune",
+    "tex": "Change $680\\,000\\,\\text{cm}^3$ into m$^3$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "other",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Change $680\\,000\\,\\text{cm}^3$ into m$^3$.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "m$^3$"
+    },
+    "_rawBody": "Change 680\\,000\\,cm$^3$ into m$^3$.\n\n\\AnswerLine[][m$^3$]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2021MayJune-Paper11-Q15",
+    "paper": "2021MayJune-Paper11",
+    "qnum": 15,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.10",
+    "d": 1,
+    "cat": "number",
+    "topic": "Time",
+    "qtype": "limits of accuracy, upper and lower bounds",
+    "g": "mixed",
+    "src": "0580/11/M/J/21 Q15",
+    "year": 2021,
+    "session": "MayJune",
+    "tex": "The length, $l$ metres, of a piece of rope is $5.67\\,\\text{m}$, correct to the nearest centimetre.\n\\newline\n\nComplete this statement about the value of $l$.\n\\newline\n\n\\[ \\leqslant l < \\]",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The length, $l$ metres, of a piece of rope is $5.67\\,\\text{m}$, correct to the nearest centimetre.\n\\newline\n\nComplete this statement about the value of $l$.\n\\newline\n\n\\[\\text{\\makebox[3cm]{\\dotfill}} \\leqslant l < \\text{\\makebox[3cm]{\\dotfill}}\\]"
+      }
+    ],
+    "_rawBody": "The length, $l$ metres, of a piece of rope is 5.67\\,m, correct to the nearest centimetre.\n\nComplete this statement about the value of $l$.\n\n\\[\\text{\\makebox[3cm]{\\dotfill}} \\leqslant l < \\text{\\makebox[3cm]{\\dotfill}}\\]\n\n\\Marks{2}"
+  },
+  {
+    "id": "0580-2021MayJune-Paper11-Q16",
+    "paper": "2021MayJune-Paper11",
+    "qnum": 16,
+    "marks": 3,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.6",
+    "d": 1,
+    "cat": "number",
+    "topic": "Standard form",
+    "qtype": "subtraction of mixed numbers and fractions",
+    "g": "mixed",
+    "src": "0580/11/M/J/21 Q16",
+    "year": 2021,
+    "session": "MayJune",
+    "tex": "**Without using a calculator**, work out $1\\dfrac{3}{8} - \\dfrac{5}{6}$.\n\\newline\n\nYou must show all your working and give your answer as a fraction in its simplest form.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\textbf{Without using a calculator}, work out $1\\dfrac{3}{8} - \\dfrac{5}{6}$.\n\\newline\n\nYou must show all your working and give your answer as a fraction in its simplest form.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "space": {
+        "type": "working",
+        "height": "6cm",
+        "cmd": "WorkingSpace"
+      }
+    },
+    "_rawBody": "\\textbf{Without using a calculator}, work out $1\\dfrac{3}{8} - \\dfrac{5}{6}$.\n\nYou must show all your working and give your answer as a fraction in its simplest form.\n\n\\WorkingSpace{6cm}\n\n\\AnswerLine[][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2021MayJune-Paper11-Q17",
+    "paper": "2021MayJune-Paper11",
+    "qnum": 17,
+    "marks": 4,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.4",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Algebraic fractions",
+    "qtype": "index laws",
+    "g": "indices",
+    "src": "0580/11/M/J/21 Q17",
+    "year": 2021,
+    "session": "MayJune",
+    "tex": "(a) Write $\\dfrac{1}{2 \\times 2 \\times 2 \\times 2 \\times 2}$ as a power of 2.\n\\newline\n\n(b) (i)  $3^{18} \\div 3^t = 3^6$\n\nFind the value of $t$.\n\\newline\n\n Simplify.\n\\newline\n\\[8w^{10} \\times 6w^5\\]",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write $\\dfrac{1}{2 \\times 2 \\times 2 \\times 2 \\times 2}$ as a power of 2.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "$3^{18} \\div 3^t = 3^6$\n\nFind the value of $t$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$t =$"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Simplify.\n\\newline\n\\[8w^{10} \\times 6w^5\\]"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ],
+        "_itemNewline": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Write $\\dfrac{1}{2 \\times 2 \\times 2 \\times 2 \\times 2}$ as a power of 2.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item\n\\begin{subparts}\n\\subpart $3^{18} \\div 3^t = 3^6$\n\nFind the value of $t$.\n\n\\AnswerLine[$t =$][]\n\\Marks{1}\n\n\\subpart Simplify.\n\\[8w^{10} \\times 6w^5\\]\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2021MayJune-Paper11-Q18",
+    "paper": "2021MayJune-Paper11",
+    "qnum": 18,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.13",
+    "d": 1,
+    "cat": "number",
+    "topic": "Electronic calculators",
+    "qtype": "compound interest calculation",
+    "g": "mixed",
+    "src": "0580/11/M/J/21 Q18",
+    "year": 2021,
+    "session": "MayJune",
+    "tex": "Annie invests \\$8300 at a rate of 5.6\\% per year compound interest.\n\\newline\n\nCalculate the value of her investment at the end of 6 years.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Annie invests \\$8300 at a rate of 5.6\\% per year compound interest.\n\\newline\n\nCalculate the value of her investment at the end of 6 years.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "\\$",
+      "space": {
+        "type": "working",
+        "height": "4cm",
+        "cmd": "WorkingSpace"
+      }
+    },
+    "_rawBody": "Annie invests \\$8300 at a rate of 5.6\\% per year compound interest.\n\nCalculate the value of her investment at the end of 6 years.\n\n\\WorkingSpace{4cm}\n\n\\AnswerLine[\\$][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2021MayJune-Paper11-Q19",
+    "paper": "2021MayJune-Paper11",
+    "qnum": 19,
+    "marks": 1,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.1",
+    "d": 1,
+    "cat": "number",
+    "topic": "Types of number",
+    "qtype": "identifying irrational numbers",
+    "g": "mixed",
+    "src": "0580/11/M/J/21 Q19",
+    "year": 2021,
+    "session": "MayJune",
+    "tex": "Write down an irrational number, $n$, where $31 < n < 32$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "write",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Write down an irrational number, $n$, where $31 < n < 32$.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "$n =$"
+    },
+    "_rawBody": "Write down an irrational number, $n$, where $31 < n < 32$.\n\n\\AnswerLine[$n =$][]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2021MayJune-Paper11-Q20",
+    "paper": "2021MayJune-Paper11",
+    "qnum": 20,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.9",
+    "d": 1,
+    "cat": "number",
+    "topic": "Percentages",
+    "qtype": "estimation of calculation by rounding to significant figures",
+    "g": "mixed",
+    "src": "0580/11/M/J/21 Q20",
+    "year": 2021,
+    "session": "MayJune",
+    "tex": "By rounding each number in the calculation correct to 1 significant figure, estimate the value of\n\\[\\frac{38.7 \\times 3.115}{20.3 - 4.1^2}.\n\\newline\n\\]\n\nYou must show all your working.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "By rounding each number in the calculation correct to 1 significant figure, estimate the value of\n\\[\\frac{38.7 \\times 3.115}{20.3 - 4.1^2}.\n\\newline\n\\]\n\nYou must show all your working.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "space": {
+        "type": "working",
+        "height": "5cm",
+        "cmd": "WorkingSpace"
+      }
+    },
+    "_rawBody": "By rounding each number in the calculation correct to 1 significant figure, estimate the value of\n\\[\\frac{38.7 \\times 3.115}{20.3 - 4.1^2}.\\]\n\nYou must show all your working.\n\n\\WorkingSpace{5cm}\n\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2021MayJune-Paper11-Q21",
+    "paper": "2021MayJune-Paper11",
+    "qnum": 21,
+    "marks": 3,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.5",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Equations",
+    "qtype": "simultaneous linear equations",
+    "g": "simul-linear",
+    "src": "0580/11/M/J/21 Q21",
+    "year": 2021,
+    "session": "MayJune",
+    "tex": "Solve the simultaneous equations.\n\\newline\n\\\\\nYou must show all your working.\n\\newline\n\\begin{align*}\n2x + y &= 3 \\\\\nx - 5y &= 40\n\\end{align*}\n\n\\begin{align*}\nx &=  \\\\\ny &= \n\\end{align*}",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "solve",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Solve the simultaneous equations.\n\\newline\n\\\\\nYou must show all your working.\n\\newline\n\\begin{align*}\n2x + y &= 3 \\\\\nx - 5y &= 40\n\\end{align*}\n\n\\WorkingSpace{6cm}\n\n\\begin{align*}\nx &= \\text{\\makebox[4cm]{\\dotfill}} \\\\\ny &= \\text{\\makebox[4cm]{\\dotfill}}\n\\end{align*}"
+      }
+    ],
+    "_rawBody": "Solve the simultaneous equations.\\\\\nYou must show all your working.\n\\begin{align*}\n2x + y &= 3 \\\\\nx - 5y &= 40\n\\end{align*}\n\n\\WorkingSpace{6cm}\n\n\\begin{align*}\nx &= \\text{\\makebox[4cm]{\\dotfill}} \\\\\ny &= \\text{\\makebox[4cm]{\\dotfill}}\n\\end{align*}\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2021MayJune-Paper11-Q22",
+    "paper": "2021MayJune-Paper11",
+    "qnum": 22,
+    "marks": 4,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.12",
+    "d": 1,
+    "cat": "number",
+    "topic": "Set notation",
+    "qtype": "speed, distance, time problem (meeting point)",
+    "g": "mixed",
+    "src": "0580/11/M/J/21 Q22",
+    "year": 2021,
+    "session": "MayJune",
+    "tex": "There is a straight road between town $A$ and town $B$ of length $130\\,\\text{km}$.\n\\newline\n\nMaxi travels from town $A$ to town $B$.\n\\newline\n\\\\\nPippa travels from town $B$ to town $A$.\n\\newline\n\\\\\nBoth travel at a constant speed of $40\\,\\text{km/h}$.\n\\newline\n\\\\\nMaxi leaves 30 minutes before Pippa.\n\\newline\n\nWork out how far from town $A$ they will be when they pass each other.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "analyse",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "There is a straight road between town $A$ and town $B$ of length $130\\,\\text{km}$.\n\\newline\n\nMaxi travels from town $A$ to town $B$.\n\\newline\n\\\\\nPippa travels from town $B$ to town $A$.\n\\newline\n\\\\\nBoth travel at a constant speed of $40\\,\\text{km/h}$.\n\\newline\n\\\\\nMaxi leaves 30 minutes before Pippa.\n\\newline\n\nWork out how far from town $A$ they will be when they pass each other.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "km",
+      "space": {
+        "type": "working",
+        "height": "8cm",
+        "cmd": "WorkingSpace"
+      }
+    },
+    "_rawBody": "There is a straight road between town $A$ and town $B$ of length 130\\,km.\n\nMaxi travels from town $A$ to town $B$.\\\\\nPippa travels from town $B$ to town $A$.\\\\\nBoth travel at a constant speed of 40\\,km/h.\\\\\nMaxi leaves 30 minutes before Pippa.\n\nWork out how far from town $A$ they will be when they pass each other.\n\n\\WorkingSpace{8cm}\n\n\\AnswerLine[][km]\n\\Marks{4}",
+    "_compactMarks": true
+  }
+]

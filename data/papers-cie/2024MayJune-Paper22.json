@@ -1,0 +1,1154 @@
+[
+  {
+    "id": "0580-2024MayJune-Paper22-Q01",
+    "paper": "2024MayJune-Paper22",
+    "qnum": 1,
+    "marks": 1,
+    "topics": [
+      "Statistics"
+    ],
+    "s": "9.3",
+    "d": 2,
+    "cat": "statistics",
+    "topic": "Frequency tables",
+    "qtype": "averages and spread",
+    "g": "mixed",
+    "src": "0580/22/M/J/24 Q01",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "The temperature at midnight is $-4^\\circ$C.\n\\newline\nThe temperature at noon is $25^\\circ$C.\n\\newline\nWork out the difference between these two temperatures.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\StemText{\nThe temperature at midnight is $-4^\\circ$C.\n\\newline\nThe temperature at noon is $25^\\circ$C.\n\\newline\nWork out the difference between these two temperatures.\n\\newline\n}\n\n\\ImplicitPart"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "°C",
+      "_compactAnswer": true
+    },
+    "_rawBody": "\\StemText{\nThe temperature at midnight is $-4^\\circ$C.\nThe temperature at noon is $25^\\circ$C.\nWork out the difference between these two temperatures.\n}\n\n\\ImplicitPart\n\\AnswerLine[][°C]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2024MayJune-Paper22-Q02",
+    "paper": "2024MayJune-Paper22",
+    "qnum": 2,
+    "marks": 2,
+    "topics": [
+      "Statistics"
+    ],
+    "s": "9.3",
+    "d": 2,
+    "cat": "statistics",
+    "topic": "Frequency tables",
+    "qtype": "averages and spread",
+    "g": "mixed",
+    "src": "0580/22/M/J/24 Q02",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "A gardener charges \\$6.55 for each hour he works plus a fixed charge of \\$15.50.\n\\newline\nCalculate the total amount he charges when he works for 4 hours.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\StemText{\nA gardener charges \\$6.55 for each hour he works plus a fixed charge of \\$15.50.\n\\newline\nCalculate the total amount he charges when he works for 4 hours.\n\\newline\n}\n\n\\ImplicitPart"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "\\$",
+      "_compactAnswer": true
+    },
+    "_rawBody": "\\StemText{\nA gardener charges \\$6.55 for each hour he works plus a fixed charge of \\$15.50.\nCalculate the total amount he charges when he works for 4 hours.\n}\n\n\\ImplicitPart\n\\AnswerLine[][\\$]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2024MayJune-Paper22-Q03",
+    "paper": "2024MayJune-Paper22",
+    "qnum": 3,
+    "marks": 3,
+    "topics": [
+      "Statistics"
+    ],
+    "s": "9.4",
+    "d": 2,
+    "cat": "statistics",
+    "topic": "Charts and graphs",
+    "qtype": "statistical charts",
+    "g": "mixed",
+    "src": "0580/22/M/J/24 Q03",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "A delivery driver records the number of pizzas she delivers each month for one year.\n\\newline\n\\begin{tabular}{cccccccccccc}\n48 & 36 & 44 & 41 & 39 & 54 & 28 & 57 & 57 & 49 & 22 & 52\n\\end{tabular}\n}\n(i) Complete the stem-and-leaf diagram.\n\\newline\n\n\\begin{tabular}{c|c|c}\n2 &  & 8 \\\\\n3 &  &  \\\\\n4 &  &  \\\\\n5 &  &  \\\\\n\\end{tabular}\nKey: 4$|$8 represents 48 pizzas\n\n(ii) Find the median.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 0,
+        "content": [],
+        "answer": {
+          "type": "number"
+        }
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [],
+        "answer": {
+          "type": "number"
+        }
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\StemText{\nA delivery driver records the number of pizzas she delivers each month for one year.\n\\newline\n"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{tabular}{cccccccccccc}\n48 & 36 & 44 & 41 & 39 & 54 & 28 & 57 & 57 & 49 & 22 & 52\n\\end{tabular}"
+      },
+      {
+        "type": "text",
+        "content": "}\n\\begin{subparts}\n\\item Complete the stem-and-leaf diagram.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "Figures/Q03a.tex"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{tabular}{c|c|c}\n2 &  & 8 \\\\\n3 &  &  \\\\\n4 &  &  \\\\\n5 &  &  \\\\\n\\end{tabular}"
+      },
+      {
+        "type": "text",
+        "content": "Key: 4$|$8 represents 48 pizzas\n\n\\item Find the median.\n\\newline\n\\end{subparts}"
+      }
+    ],
+    "_rawBody": "\\StemText{\nA delivery driver records the number of pizzas she delivers each month for one year.\n\\begin{tabular}{cccccccccccc}\n48 & 36 & 44 & 41 & 39 & 54 & 28 & 57 & 57 & 49 & 22 & 52\n\\end{tabular}\n}\n\\begin{subparts}\n\\item Complete the stem-and-leaf diagram.\n\\relinput{Figures/Q03a.tex}\n\\begin{tabular}{c|c|c}\n2 &  & 8 \\\\\n3 &  &  \\\\\n4 &  &  \\\\\n5 &  &  \\\\\n\\end{tabular}\nKey: 4$|$8 represents 48 pizzas\n\n\\item Find the median.\n\\end{subparts}\n\n\\AnswerLine[][]\n\\Marks{3}",
+    "answer": {
+      "type": "number"
+    },
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper22/Q03/Q03a.png"
+    ]
+  },
+  {
+    "id": "0580-2024MayJune-Paper22-Q04",
+    "paper": "2024MayJune-Paper22",
+    "qnum": 4,
+    "marks": 3,
+    "topics": [
+      "Number",
+      "Statistics"
+    ],
+    "s": "1.4",
+    "d": 2,
+    "cat": "number",
+    "topic": "Fractions, decimals and percentages",
+    "qtype": "fraction calculations, money",
+    "g": "mixed",
+    "src": "0580/22/M/J/24 Q04",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "Jonah has \\$750.\n\\newline\nHe spends $\\frac{1}{4}$ of this money on travel and some of this money on food.\n\\newline\nHe now has \\$437.50.\n\\newline\nWork out the fraction of the \\$750 he spends on food.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\StemText{\nJonah has \\$750.\n\\newline\nHe spends $\\frac{1}{4}$ of this money on travel and some of this money on food.\n\\newline\nHe now has \\$437.50.\n\\newline\nWork out the fraction of the \\$750 he spends on food.\n\\newline\n}\n\n\\ImplicitPart"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "_compactAnswer": true
+    },
+    "_rawBody": "\\StemText{\nJonah has \\$750.\nHe spends $\\frac{1}{4}$ of this money on travel and some of this money on food.\nHe now has \\$437.50.\nWork out the fraction of the \\$750 he spends on food.\n}\n\n\\ImplicitPart\n\\AnswerLine[][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2024MayJune-Paper22-Q05",
+    "paper": "2024MayJune-Paper22",
+    "qnum": 5,
+    "marks": 2,
+    "topics": [
+      "Statistics"
+    ],
+    "s": "9.3",
+    "d": 2,
+    "cat": "statistics",
+    "topic": "Frequency tables",
+    "qtype": "averages and spread",
+    "g": "mixed",
+    "src": "0580/22/M/J/24 Q05",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "The table shows part of a tram timetable.\n\\newline\n\\begin{tabular}{|c|c|}\n\\hline\nNewpoint & Westhill \\\\\n\\hline\n10 30 & \\\\\n\\hline\n11 17 & \\\\\n\\hline\n12 18 & \\\\\n\\hline\n13 30 & \\\\\n\\hline\n14 17 & \\\\\n\\hline\n\\end{tabular}\nAll the trams take the same number of minutes to complete the journey from Newpoint to Westhill.\n\\newline\nComplete the table.\n\\newline\n",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "recall",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q05.tex"
+      },
+      {
+        "type": "text",
+        "content": "\\StemText{\nThe table shows part of a tram timetable.\n\\newline\n"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{tabular}{|c|c|}\n\\hline\nNewpoint & Westhill \\\\\n\\hline\n10 30 & \\\\\n\\hline\n11 17 & \\\\\n\\hline\n12 18 & \\\\\n\\hline\n13 30 & \\\\\n\\hline\n14 17 & \\\\\n\\hline\n\\end{tabular}"
+      },
+      {
+        "type": "text",
+        "content": "All the trams take the same number of minutes to complete the journey from Newpoint to Westhill.\n\\newline\nComplete the table.\n\\newline\n}\n\n\\ImplicitPart"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "_compactAnswer": true
+    },
+    "_rawBody": "\\relinput{Figures/Q05.tex}\n\n\\StemText{\nThe table shows part of a tram timetable.\n\\begin{tabular}{|c|c|}\n\\hline\nNewpoint & Westhill \\\\\n\\hline\n10 30 & \\\\\n\\hline\n11 17 & \\\\\n\\hline\n12 18 & \\\\\n\\hline\n13 30 & \\\\\n\\hline\n14 17 & \\\\\n\\hline\n\\end{tabular}\nAll the trams take the same number of minutes to complete the journey from Newpoint to Westhill.\nComplete the table.\n}\n\n\\ImplicitPart\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper22/Q05/Q05.png"
+    ]
+  },
+  {
+    "id": "0580-2024MayJune-Paper22-Q06",
+    "paper": "2024MayJune-Paper22",
+    "qnum": 6,
+    "marks": 1,
+    "topics": [
+      "Number",
+      "Statistics"
+    ],
+    "s": "1.9",
+    "d": 2,
+    "cat": "number",
+    "topic": "Percentages",
+    "qtype": "rounding to significant figures",
+    "g": "mixed",
+    "src": "0580/22/M/J/24 Q06",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "Write 0.04628 correct to 2 significant figures.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "write",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\StemText{\nWrite 0.04628 correct to 2 significant figures.\n\\newline\n}\n\n\\ImplicitPart"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "_compactAnswer": true
+    },
+    "_rawBody": "\\StemText{\nWrite 0.04628 correct to 2 significant figures.\n}\n\n\\ImplicitPart\n\\AnswerLine[][]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2024MayJune-Paper22-Q07",
+    "paper": "2024MayJune-Paper22",
+    "qnum": 7,
+    "marks": 1,
+    "topics": [
+      "Number",
+      "Statistics"
+    ],
+    "s": "1.2",
+    "d": 2,
+    "cat": "number",
+    "topic": "Squares, cubes and roots",
+    "qtype": "Venn diagram shading, set intersection",
+    "g": "mixed",
+    "src": "0580/22/M/J/24 Q07",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "On the Venn diagram, shade the region $A \\cap B$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q07.tex"
+      },
+      {
+        "type": "text",
+        "content": "\\StemText{\nOn the Venn diagram, shade the region $A \\cap B$.\n\\newline\n}\n\n\\ImplicitPart"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "_compactAnswer": true
+    },
+    "_rawBody": "\\relinput{Figures/Q07.tex}\n\n\\StemText{\nOn the Venn diagram, shade the region $A \\cap B$.\n}\n\n\\ImplicitPart\n\\AnswerLine[][]\n\\Marks{1}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper22/Q07/Q07.png"
+    ]
+  },
+  {
+    "id": "0580-2024MayJune-Paper22-Q08",
+    "paper": "2024MayJune-Paper22",
+    "qnum": 8,
+    "marks": 3,
+    "topics": [
+      "Number",
+      "Statistics"
+    ],
+    "s": "1.13",
+    "d": 2,
+    "cat": "number",
+    "topic": "Electronic calculators",
+    "qtype": "simple interest calculation, finding rate",
+    "g": "mixed",
+    "src": "0580/22/M/J/24 Q08",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "Kai invests \\$5000 in an account paying simple interest at a rate of r\\% per year.\n\\newline\nAt the end of 8 years, the value of his investment is \\$5700.\n\\newline\nFind the value of r.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\StemText{\nKai invests \\$5000 in an account paying simple interest at a rate of r\\% per year.\n\\newline\nAt the end of 8 years, the value of his investment is \\$5700.\n\\newline\nFind the value of r.\n\\newline\n}\n\n\\ImplicitPart"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "r = ",
+      "_compactAnswer": true
+    },
+    "_rawBody": "\\StemText{\nKai invests \\$5000 in an account paying simple interest at a rate of r\\% per year.\nAt the end of 8 years, the value of his investment is \\$5700.\nFind the value of r.\n}\n\n\\ImplicitPart\n\\AnswerLine[][r = ]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2024MayJune-Paper22-Q09",
+    "paper": "2024MayJune-Paper22",
+    "qnum": 9,
+    "marks": 5,
+    "topics": [
+      "Geometry",
+      "Transformations and vectors",
+      "Statistics"
+    ],
+    "s": "4.6",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/22/M/J/24 Q09",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "}\n(i) Describe fully the single transformation that maps triangle A onto triangle B.\n\\newline\n\n(ii) On the grid, draw the image of triangle A after a translation by the vector $\\begin{pmatrix} 3 \\\\ -4 \\end{pmatrix}$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 0,
+        "content": [],
+        "answer": {
+          "type": "number"
+        }
+      },
+      {
+        "label": "(b)",
+        "marks": 5,
+        "content": [],
+        "answer": {
+          "type": "number"
+        }
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "recall",
+    "cmd": "describe",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q09.tex"
+      },
+      {
+        "type": "text",
+        "content": "\\StemText{\n\\begin{tikzpicture}[scale=0.8]\n\\begin{axis}[\n    axis lines=middle,\n    xmin=-5, xmax=10,\n    ymin=-3, ymax=7,\n    xtick={-5,-4,...,10},\n    ytick={-3,-2,...,7},\n    grid=major,\n    width=8cm,\n    height=6cm\n]\n% Triangle A\n\\fill[blue, opacity=0.3] (0,2) -- (3,2) -- (1,4) -- cycle;\n\\node at (0,2) [below left] {A};\n\\node at (3,2) [below right] {};\n\\node at (1,4) [above] {};\n\n% Triangle B\n\\fill[red, opacity=0.3] (5,1) -- (8,1) -- (6,3) -- cycle;\n\\node at (5,1) [below left] {B};\n\\node at (8,1) [below right] {};\n\\node at (6,3) [above] {};\n\n\\end{axis}\n\\end{tikzpicture}\n}\n\\begin{subparts}\n\\item Describe fully the single transformation that maps triangle A onto triangle B.\n\\newline\n\n\\item On the grid, draw the image of triangle A after a translation by the vector $\\begin{pmatrix} 3 \\\\ -4 \\end{pmatrix}$.\n\\newline\n\\end{subparts}"
+      }
+    ],
+    "_rawBody": "\\relinput{Figures/Q09.tex}\n\n\\StemText{\n\\begin{tikzpicture}[scale=0.8]\n\\begin{axis}[\n    axis lines=middle,\n    xmin=-5, xmax=10,\n    ymin=-3, ymax=7,\n    xtick={-5,-4,...,10},\n    ytick={-3,-2,...,7},\n    grid=major,\n    width=8cm,\n    height=6cm\n]\n% Triangle A\n\\fill[blue, opacity=0.3] (0,2) -- (3,2) -- (1,4) -- cycle;\n\\node at (0,2) [below left] {A};\n\\node at (3,2) [below right] {};\n\\node at (1,4) [above] {};\n\n% Triangle B\n\\fill[red, opacity=0.3] (5,1) -- (8,1) -- (6,3) -- cycle;\n\\node at (5,1) [below left] {B};\n\\node at (8,1) [below right] {};\n\\node at (6,3) [above] {};\n\n\\end{axis}\n\\end{tikzpicture}\n}\n\\begin{subparts}\n\\item Describe fully the single transformation that maps triangle A onto triangle B.\n\n\\item On the grid, draw the image of triangle A after a translation by the vector $\\begin{pmatrix} 3 \\\\ -4 \\end{pmatrix}$.\n\\end{subparts}\n\n\\AnswerLine[][]\n\\Marks{5}",
+    "answer": {
+      "type": "number"
+    },
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper22/Q09/Q09.png"
+    ]
+  },
+  {
+    "id": "0580-2024MayJune-Paper22-Q10",
+    "paper": "2024MayJune-Paper22",
+    "qnum": 10,
+    "marks": 1,
+    "topics": [
+      "Number",
+      "Statistics"
+    ],
+    "s": "1.8",
+    "d": 2,
+    "cat": "number",
+    "topic": "Ratio, rate and proportion",
+    "qtype": "standard form conversion",
+    "g": "mixed",
+    "src": "0580/22/M/J/24 Q10",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "Write 174000 in standard form.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "write",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\StemText{\nWrite 174000 in standard form.\n\\newline\n}\n\n\\ImplicitPart"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "_compactAnswer": true
+    },
+    "_rawBody": "\\StemText{\nWrite 174000 in standard form.\n}\n\n\\ImplicitPart\n\\AnswerLine[][]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2024MayJune-Paper22-Q11",
+    "paper": "2024MayJune-Paper22",
+    "qnum": 11,
+    "marks": 2,
+    "topics": [
+      "Probability",
+      "Statistics"
+    ],
+    "s": "8.3",
+    "d": 2,
+    "cat": "probability",
+    "topic": "Tree diagrams",
+    "qtype": "combined events",
+    "g": "mixed",
+    "src": "0580/22/M/J/24 Q11",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "A company surveys 40 of its employees.\n\\newline\nIn the survey, 3 employees say they walk to work.\n\\newline\nThe company has a total of 1240 employees.\n\\newline\nFind the expected number of employees in the company who walk to work.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\StemText{\nA company surveys 40 of its employees.\n\\newline\nIn the survey, 3 employees say they walk to work.\n\\newline\nThe company has a total of 1240 employees.\n\\newline\nFind the expected number of employees in the company who walk to work.\n\\newline\n}\n\n\\ImplicitPart"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "_compactAnswer": true
+    },
+    "_rawBody": "\\StemText{\nA company surveys 40 of its employees.\nIn the survey, 3 employees say they walk to work.\nThe company has a total of 1240 employees.\nFind the expected number of employees in the company who walk to work.\n}\n\n\\ImplicitPart\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2024MayJune-Paper22-Q12",
+    "paper": "2024MayJune-Paper22",
+    "qnum": 12,
+    "marks": 2,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry",
+      "Statistics"
+    ],
+    "s": "3.1",
+    "d": 2,
+    "cat": "coord",
+    "topic": "Coordinates",
+    "qtype": "coordinates reading/plotting",
+    "g": "graph",
+    "src": "0580/22/M/J/24 Q12",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "NOT TO SCALE\n\nThe diagram shows a right-angled triangle.\n\\newline\nCalculate the value of x.\n\\newline\n",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q12.tex"
+      },
+      {
+        "type": "text",
+        "content": "\\StemText{\nNOT TO SCALE\n\\begin{tikzpicture}[scale=0.8]\n% Right-angled triangle\n\\coordinate (A) at (0,0);\n\\coordinate (B) at (4,0);\n\\coordinate (C) at (0,2.8);\n\n% Draw triangle\n\\draw (A) -- (B) -- (C) -- cycle;\n\n% Right angle mark\n\\draw (A) -- ++(0.3,0) -- ++(0,0.3);\n\n% Labels\n\\node at (2,-0.3) {14 cm};\n\\node at (-0.3,1.4) {8.5 cm};\n\\node at (-0.5,-0.2) {$x^\\circ$};\n\n\\end{tikzpicture}\nThe diagram shows a right-angled triangle.\n\\newline\nCalculate the value of x.\n\\newline\n}\n\n\\ImplicitPart"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "x = ",
+      "_compactAnswer": true
+    },
+    "_rawBody": "\\relinput{Figures/Q12.tex}\n\n\\StemText{\nNOT TO SCALE\n\\begin{tikzpicture}[scale=0.8]\n% Right-angled triangle\n\\coordinate (A) at (0,0);\n\\coordinate (B) at (4,0);\n\\coordinate (C) at (0,2.8);\n\n% Draw triangle\n\\draw (A) -- (B) -- (C) -- cycle;\n\n% Right angle mark\n\\draw (A) -- ++(0.3,0) -- ++(0,0.3);\n\n% Labels\n\\node at (2,-0.3) {14 cm};\n\\node at (-0.3,1.4) {8.5 cm};\n\\node at (-0.5,-0.2) {$x^\\circ$};\n\n\\end{tikzpicture}\nThe diagram shows a right-angled triangle.\nCalculate the value of x.\n}\n\n\\ImplicitPart\n\\AnswerLine[][x = ]\n\\Marks{2}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper22/Q12/Q12.png"
+    ]
+  },
+  {
+    "id": "0580-2024MayJune-Paper22-Q13",
+    "paper": "2024MayJune-Paper22",
+    "qnum": 13,
+    "marks": 3,
+    "topics": [
+      "Statistics"
+    ],
+    "s": "9.3",
+    "d": 2,
+    "cat": "statistics",
+    "topic": "Frequency tables",
+    "qtype": "averages and spread",
+    "g": "mixed",
+    "src": "0580/22/M/J/24 Q13",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "Without using a calculator, work out $2\\frac{1}{7} - \\frac{1}{4}$.\n\\newline\nYou must show all your working and give your answer as a mixed number in its simplest form.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\StemText{\nWithout using a calculator, work out $2\\frac{1}{7} - \\frac{1}{4}$.\n\\newline\nYou must show all your working and give your answer as a mixed number in its simplest form.\n\\newline\n}\n\n\\ImplicitPart"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "_compactAnswer": true
+    },
+    "_rawBody": "\\StemText{\nWithout using a calculator, work out $2\\frac{1}{7} - \\frac{1}{4}$.\nYou must show all your working and give your answer as a mixed number in its simplest form.\n}\n\n\\ImplicitPart\n\\AnswerLine[][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2024MayJune-Paper22-Q14",
+    "paper": "2024MayJune-Paper22",
+    "qnum": 14,
+    "marks": 2,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry",
+      "Statistics"
+    ],
+    "s": "3.5",
+    "d": 2,
+    "cat": "coord",
+    "topic": "Parallel and perpendicular lines",
+    "qtype": "equation of a straight line",
+    "g": "mixed",
+    "src": "0580/22/M/J/24 Q14",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "A is the point (0, 2) and B is the point (8, 6).\n\\newline\nFind the equation of line AB.\n\\newline\nGive your answer in the form y = mx + c.\n\\newline\n",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q14.tex"
+      },
+      {
+        "type": "text",
+        "content": "\\StemText{\n\\begin{tikzpicture}[scale=0.6]\n\\begin{axis}[\n    axis lines=middle,\n    xmin=-1, xmax=9,\n    ymin=-1, ymax=7,\n    xtick={0,1,...,8},\n    ytick={0,1,...,6},\n    grid=major,\n    width=8cm,\n    height=6cm\n]\n% Points A and B\n\\fill[blue] (0,2) circle (2pt);\n\\fill[red] (8,6) circle (2pt);\n\\node at (0,2) [below left] {A};\n\\node at (8,6) [above right] {B};\n\n% Line AB\n\\draw[thick] (0,2) -- (8,6);\n\n\\end{axis}\n\\end{tikzpicture}\nA is the point (0, 2) and B is the point (8, 6).\n\\newline\nFind the equation of line AB.\n\\newline\nGive your answer in the form y = mx + c.\n\\newline\n}\n\n\\ImplicitPart"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "y = ",
+      "_compactAnswer": true
+    },
+    "_rawBody": "\\relinput{Figures/Q14.tex}\n\n\\StemText{\n\\begin{tikzpicture}[scale=0.6]\n\\begin{axis}[\n    axis lines=middle,\n    xmin=-1, xmax=9,\n    ymin=-1, ymax=7,\n    xtick={0,1,...,8},\n    ytick={0,1,...,6},\n    grid=major,\n    width=8cm,\n    height=6cm\n]\n% Points A and B\n\\fill[blue] (0,2) circle (2pt);\n\\fill[red] (8,6) circle (2pt);\n\\node at (0,2) [below left] {A};\n\\node at (8,6) [above right] {B};\n\n% Line AB\n\\draw[thick] (0,2) -- (8,6);\n\n\\end{axis}\n\\end{tikzpicture}\nA is the point (0, 2) and B is the point (8, 6).\nFind the equation of line AB.\nGive your answer in the form y = mx + c.\n}\n\n\\ImplicitPart\n\\AnswerLine[][y = ]\n\\Marks{2}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper22/Q14/Q14.png"
+    ]
+  },
+  {
+    "id": "0580-2024MayJune-Paper22-Q15",
+    "paper": "2024MayJune-Paper22",
+    "qnum": 15,
+    "marks": 3,
+    "topics": [
+      "Coordinate geometry",
+      "Mensuration",
+      "Statistics"
+    ],
+    "s": "3.1",
+    "d": 2,
+    "cat": "coord",
+    "topic": "Coordinates",
+    "qtype": "coordinates reading/plotting",
+    "g": "graph",
+    "src": "0580/22/M/J/24 Q15",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "Three towns, A, B and C, are equidistant from each other.\n\\newline\nThe bearing of C from A is 104°.\n\\newline\nCalculate the bearing of B from C.\n\\newline\n",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q15.tex"
+      },
+      {
+        "type": "text",
+        "content": "\\StemText{\n\\begin{tikzpicture}[scale=0.8]\n% Towns A, B, C forming equilateral triangle\n\\coordinate (A) at (0,0);\n\\coordinate (B) at (3,0);\n\\coordinate (C) at (1.5,2.598);\n\n% Draw triangle\n\\draw (A) -- (B) -- (C) -- cycle;\n\n% Labels\n\\node at (A) [below] {A};\n\\node at (B) [below] {B};\n\\node at (C) [above] {C};\n\n% North arrow\n\\draw[->, thick] (1.5,0) -- (1.5,1);\n\\node at (1.5,0.7) [left] {North};\n\n% Bearing arc from A to C\n\\draw[thick, red] (A) ++(0,0.3) arc[start angle=0, end angle=104, radius=0.3];\n\\node at (0.8,0.5) [red] {104°};\n\n\\end{tikzpicture}\nThree towns, A, B and C, are equidistant from each other.\n\\newline\nThe bearing of C from A is 104°.\n\\newline\nCalculate the bearing of B from C.\n\\newline\n}\n\n\\ImplicitPart"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "_compactAnswer": true
+    },
+    "_rawBody": "\\relinput{Figures/Q15.tex}\n\n\\StemText{\n\\begin{tikzpicture}[scale=0.8]\n% Towns A, B, C forming equilateral triangle\n\\coordinate (A) at (0,0);\n\\coordinate (B) at (3,0);\n\\coordinate (C) at (1.5,2.598);\n\n% Draw triangle\n\\draw (A) -- (B) -- (C) -- cycle;\n\n% Labels\n\\node at (A) [below] {A};\n\\node at (B) [below] {B};\n\\node at (C) [above] {C};\n\n% North arrow\n\\draw[->, thick] (1.5,0) -- (1.5,1);\n\\node at (1.5,0.7) [left] {North};\n\n% Bearing arc from A to C\n\\draw[thick, red] (A) ++(0,0.3) arc[start angle=0, end angle=104, radius=0.3];\n\\node at (0.8,0.5) [red] {104°};\n\n\\end{tikzpicture}\nThree towns, A, B and C, are equidistant from each other.\nThe bearing of C from A is 104°.\nCalculate the bearing of B from C.\n}\n\n\\ImplicitPart\n\\AnswerLine[][]\n\\Marks{3}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper22/Q15/Q15.png"
+    ]
+  },
+  {
+    "id": "0580-2024MayJune-Paper22-Q16",
+    "paper": "2024MayJune-Paper22",
+    "qnum": 16,
+    "marks": 4,
+    "topics": [
+      "Number",
+      "Statistics"
+    ],
+    "s": null,
+    "d": 2,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/22/M/J/24 Q16",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "The speed--time graph shows information about a car journey.\n\\newline\n\n}\n(i) Find the deceleration of the car between 240 and 320 seconds.\n\\newline\n\n(ii) Calculate the total distance the car travels during the 320 seconds.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 0,
+        "content": [],
+        "answer": {
+          "type": "number"
+        }
+      },
+      {
+        "label": "(b)",
+        "marks": 4,
+        "content": [],
+        "answer": {
+          "type": "number"
+        }
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q16.tex"
+      },
+      {
+        "type": "text",
+        "content": "\\StemText{\nThe speed--time graph shows information about a car journey.\n\\newline\n\\begin{tikzpicture}[scale=0.8]\n\\begin{axis}[\n    axis lines=left,\n    xmin=0, xmax=350,\n    ymin=0, ymax=18,\n    xtick={0,30,240,320},\n    ytick={0,16},\n    width=10cm,\n    height=6cm,\n    xlabel={Time (s)},\n    ylabel={Speed (m/s)}\n]\n% Speed-time graph (simplified representation)\n% Assuming a typical speed-time graph\n\\addplot[thick, domain=0:240] {16};\n\\addplot[thick, domain=240:320] {16 - (16/80)*(x-240)};\n\\addplot[thick, domain=320:350] {0};\n\n% Labels\n\\node at (120,17) {16};\n\\node at (280,8) {0};\n\\node at (240,17) [above] {240};\n\\node at (320,1) [right] {320};\n\n\\end{axis}\n\\end{tikzpicture}\n}\n\\begin{subparts}\n\\item Find the deceleration of the car between 240 and 320 seconds.\n\\newline\n\n\\item Calculate the total distance the car travels during the 320 seconds.\n\\newline\n\\end{subparts}"
+      }
+    ],
+    "_rawBody": "\\relinput{Figures/Q16.tex}\n\n\\StemText{\nThe speed--time graph shows information about a car journey.\n\\begin{tikzpicture}[scale=0.8]\n\\begin{axis}[\n    axis lines=left,\n    xmin=0, xmax=350,\n    ymin=0, ymax=18,\n    xtick={0,30,240,320},\n    ytick={0,16},\n    width=10cm,\n    height=6cm,\n    xlabel={Time (s)},\n    ylabel={Speed (m/s)}\n]\n% Speed-time graph (simplified representation)\n% Assuming a typical speed-time graph\n\\addplot[thick, domain=0:240] {16};\n\\addplot[thick, domain=240:320] {16 - (16/80)*(x-240)};\n\\addplot[thick, domain=320:350] {0};\n\n% Labels\n\\node at (120,17) {16};\n\\node at (280,8) {0};\n\\node at (240,17) [above] {240};\n\\node at (320,1) [right] {320};\n\n\\end{axis}\n\\end{tikzpicture}\n}\n\\begin{subparts}\n\\item Find the deceleration of the car between 240 and 320 seconds.\n\n\\item Calculate the total distance the car travels during the 320 seconds.\n\\end{subparts}\n\n\\AnswerLine[][]\n\\Marks{4}",
+    "answer": {
+      "type": "number"
+    },
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper22/Q16/Q16.png"
+    ]
+  },
+  {
+    "id": "0580-2024MayJune-Paper22-Q17",
+    "paper": "2024MayJune-Paper22",
+    "qnum": 17,
+    "marks": 2,
+    "topics": [
+      "Number",
+      "Geometry",
+      "Statistics"
+    ],
+    "s": "1.2",
+    "d": 2,
+    "cat": "number",
+    "topic": "Squares, cubes and roots",
+    "qtype": "Venn diagram completion",
+    "g": "mixed",
+    "src": "0580/22/M/J/24 Q17",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "W = \\{students who walk to school\\}\\\\\nG = \\{students who wear glasses\\}\\\\\nThere are 20 students in a class.\n\\newline\n\\\\\n· 8 walk to school\\\\\n· 3 wear glasses and walk to school\\\\\n· 2 do not wear glasses and do not walk to school.\n\\newline\n\\\\\nComplete the Venn diagram.\n\\newline\n",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q17.tex"
+      },
+      {
+        "type": "text",
+        "content": "\\StemText{\nW = \\{students who walk to school\\}\\\\\nG = \\{students who wear glasses\\}\\\\\nThere are 20 students in a class.\n\\newline\n\\\\\n· 8 walk to school\\\\\n· 3 wear glasses and walk to school\\\\\n· 2 do not wear glasses and do not walk to school.\n\\newline\n\\\\\nComplete the Venn diagram.\n\\newline\n\\begin{tikzpicture}\n% Venn diagram circles\n\\begin{scope}\n\\clip (0,0) circle (1.5);\n\\fill[blue!30] (1.5,0) circle (1.5);\n\\end{scope}\n\\begin{scope}\n\\clip (1.5,0) circle (1.5);\n\\fill[red!30] (0,0) circle (1.5);\n\\end{scope}\n\\draw (0,0) circle (1.5);\n\\draw (1.5,0) circle (1.5);\n\\node at (-0.75,0) {W};\n\\node at (2.25,0) {G};\n\\end{tikzpicture}\n}\n\n\\ImplicitPart"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "_compactAnswer": true
+    },
+    "_rawBody": "\\relinput{Figures/Q17.tex}\n\n\\StemText{\nW = \\{students who walk to school\\}\\\\\nG = \\{students who wear glasses\\}\\\\\nThere are 20 students in a class.\\\\\n· 8 walk to school\\\\\n· 3 wear glasses and walk to school\\\\\n· 2 do not wear glasses and do not walk to school.\\\\\nComplete the Venn diagram.\n\\begin{tikzpicture}\n% Venn diagram circles\n\\begin{scope}\n\\clip (0,0) circle (1.5);\n\\fill[blue!30] (1.5,0) circle (1.5);\n\\end{scope}\n\\begin{scope}\n\\clip (1.5,0) circle (1.5);\n\\fill[red!30] (0,0) circle (1.5);\n\\end{scope}\n\\draw (0,0) circle (1.5);\n\\draw (1.5,0) circle (1.5);\n\\node at (-0.75,0) {W};\n\\node at (2.25,0) {G};\n\\end{tikzpicture}\n}\n\n\\ImplicitPart\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper22/Q17/Q17.png"
+    ]
+  },
+  {
+    "id": "0580-2024MayJune-Paper22-Q18",
+    "paper": "2024MayJune-Paper22",
+    "qnum": 18,
+    "marks": 3,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry",
+      "Statistics",
+      "Trigonometry"
+    ],
+    "s": "3.3",
+    "d": 2,
+    "cat": "coord",
+    "topic": "Length and midpoint",
+    "qtype": "gradient calculation",
+    "g": "graph",
+    "src": "0580/22/M/J/24 Q18",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "The graph of y = f(x) is drawn on the grid.\n\\newline\n\n}\n(i) Draw the tangent to the graph at the point x = 3.\n\\newline\n\n(ii) Use your tangent to find an estimate for the gradient of the curve at the point x = 3.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 0,
+        "content": [],
+        "answer": {
+          "type": "number"
+        }
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [],
+        "answer": {
+          "type": "number"
+        }
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q18.tex"
+      },
+      {
+        "type": "text",
+        "content": "\\StemText{\nThe graph of y = f(x) is drawn on the grid.\n\\newline\n\\begin{tikzpicture}[scale=0.8]\n\\begin{axis}[\n    axis lines=left,\n    xmin=0, xmax=5,\n    ymin=0, ymax=20,\n    xtick={0,1,2,3,4,5},\n    ytick={0,5,10,15,20},\n    width=8cm,\n    height=6cm,\n    grid=major\n]\n% Sample curve (simplified representation of a typical function)\n\\addplot[thick, domain=0:5, samples=50] {x^2 + x + 1};\n\\end{axis}\n\\end{tikzpicture}\n}\n\\begin{subparts}\n\\item Draw the tangent to the graph at the point x = 3.\n\\newline\n\n\\item Use your tangent to find an estimate for the gradient of the curve at the point x = 3.\n\\newline\n\\end{subparts}"
+      }
+    ],
+    "_rawBody": "\\relinput{Figures/Q18.tex}\n\n\\StemText{\nThe graph of y = f(x) is drawn on the grid.\n\\begin{tikzpicture}[scale=0.8]\n\\begin{axis}[\n    axis lines=left,\n    xmin=0, xmax=5,\n    ymin=0, ymax=20,\n    xtick={0,1,2,3,4,5},\n    ytick={0,5,10,15,20},\n    width=8cm,\n    height=6cm,\n    grid=major\n]\n% Sample curve (simplified representation of a typical function)\n\\addplot[thick, domain=0:5, samples=50] {x^2 + x + 1};\n\\end{axis}\n\\end{tikzpicture}\n}\n\\begin{subparts}\n\\item Draw the tangent to the graph at the point x = 3.\n\n\\item Use your tangent to find an estimate for the gradient of the curve at the point x = 3.\n\\end{subparts}\n\n\\AnswerLine[][]\n\\Marks{3}",
+    "answer": {
+      "type": "number"
+    },
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper22/Q18/Q18.png"
+    ]
+  },
+  {
+    "id": "0580-2024MayJune-Paper22-Q19",
+    "paper": "2024MayJune-Paper22",
+    "qnum": 19,
+    "marks": 4,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.8",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Proportion",
+    "qtype": "direct and inverse proportion",
+    "g": "function",
+    "src": "0580/22/M/J/24 Q19",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "(i) y is directly proportional to |x - 1|.\n\\newline\nWhen x = 4, y = 3.\n\\newline\nFind y when x = 7.\n\\newline\n\n(ii) m is inversely proportional to the square root of p.\n\\newline\nExplain what happens to the value of m when the value of p is multiplied by 9.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 0,
+        "content": [],
+        "answer": {
+          "type": "number"
+        }
+      },
+      {
+        "label": "(b)",
+        "marks": 4,
+        "content": [],
+        "answer": {
+          "type": "number"
+        }
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "explain",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{subparts}\n\\item y is directly proportional to |x - 1|.\n\\newline\nWhen x = 4, y = 3.\n\\newline\nFind y when x = 7.\n\\newline\n\n\\item m is inversely proportional to the square root of p.\n\\newline\nExplain what happens to the value of m when the value of p is multiplied by 9.\n\\newline\n\\end{subparts}"
+      }
+    ],
+    "_rawBody": "\\begin{subparts}\n\\item y is directly proportional to |x - 1|.\nWhen x = 4, y = 3.\nFind y when x = 7.\n\n\\item m is inversely proportional to the square root of p.\nExplain what happens to the value of m when the value of p is multiplied by 9.\n\\end{subparts}\n\n\\AnswerLine[][]\n\\Marks{4}",
+    "answer": {
+      "type": "number"
+    },
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2024MayJune-Paper22-Q20",
+    "paper": "2024MayJune-Paper22",
+    "qnum": 20,
+    "marks": 3,
+    "topics": [
+      "Geometry",
+      "Mensuration",
+      "Statistics"
+    ],
+    "s": "4.4",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Circle theorems",
+    "qtype": "similarity and congruence",
+    "g": "mixed",
+    "src": "0580/22/M/J/24 Q20",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "Two parcels are mathematically similar.\n\\newline\nThe larger parcel has volume 80 cm$^3$ and height 5.2 cm.\n\\newline\nThe smaller parcel has volume 33.75 cm$^3$.\n\\newline\nCalculate the height of the smaller parcel.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\StemText{\nTwo parcels are mathematically similar.\n\\newline\nThe larger parcel has volume 80 cm$^3$ and height 5.2 cm.\n\\newline\nThe smaller parcel has volume 33.75 cm$^3$.\n\\newline\nCalculate the height of the smaller parcel.\n\\newline\n}\n\n\\ImplicitPart"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "cm",
+      "_compactAnswer": true
+    },
+    "_rawBody": "\\StemText{\nTwo parcels are mathematically similar.\nThe larger parcel has volume 80 cm$^3$ and height 5.2 cm.\nThe smaller parcel has volume 33.75 cm$^3$.\nCalculate the height of the smaller parcel.\n}\n\n\\ImplicitPart\n\\AnswerLine[][cm]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2024MayJune-Paper22-Q21",
+    "paper": "2024MayJune-Paper22",
+    "qnum": 21,
+    "marks": 5,
+    "topics": [
+      "Algebra and graphs",
+      "Statistics"
+    ],
+    "s": "2.5",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Equations",
+    "qtype": "solving simultaneous linear and non-linear equations",
+    "g": "simul-nonlinear",
+    "src": "0580/22/M/J/24 Q21",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "Solve the simultaneous equations.\n\\newline\nYou must show all your working.\n\\newline\n\\begin{align*}\n4y + 3x &= 13 \\\\\ny &= x^2 - 18\n\\end{align*}",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "solve",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\StemText{\nSolve the simultaneous equations.\n\\newline\nYou must show all your working.\n\\newline\n\\begin{align*}\n4y + 3x &= 13 \\\\\ny &= x^2 - 18\n\\end{align*}\n}\n\n\\ImplicitPart"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "x = \\quad y = \\quad or \\quad x = \\quad y = ",
+      "_compactAnswer": true
+    },
+    "_rawBody": "\\StemText{\nSolve the simultaneous equations.\nYou must show all your working.\n\\begin{align*}\n4y + 3x &= 13 \\\\\ny &= x^2 - 18\n\\end{align*}\n}\n\n\\ImplicitPart\n\\AnswerLine[][x = \\quad y = \\quad or \\quad x = \\quad y = ]\n\\Marks{5}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2024MayJune-Paper22-Q22",
+    "paper": "2024MayJune-Paper22",
+    "qnum": 22,
+    "marks": 22,
+    "topics": [
+      "Number",
+      "Algebra and graphs"
+    ],
+    "s": "2.10",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Graphs of functions",
+    "qtype": "identifying function types from graphs, sketching trigonometric graphs, solving trigonometric equations",
+    "g": "function",
+    "src": "0580/22/M/J/24 Q22",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "(i) For each sketch, put a ring around the correct type of function shown.\n\\newline\n(ii) \nlinear   cubic   quadratic   reciprocal   exponential\n\n(iii) \nlinear   cubic   quadratic   reciprocal   exponential\n\n(iv) On the grid, sketch the curve y = sin x for 0$^\\circ$ $\\leq$ x $\\leq$ 360$^\\circ$.\n\\newline\n\n(v) Solve the equation sin x + 0.4 = 0 for 0$^\\circ$ $\\leq$ x $\\leq$ 360$^\\circ$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 0,
+        "content": [],
+        "answer": {
+          "type": "number"
+        }
+      },
+      {
+        "label": "(b)",
+        "marks": 0,
+        "content": [],
+        "answer": {
+          "type": "number"
+        }
+      },
+      {
+        "label": "(c)",
+        "marks": 0,
+        "content": [],
+        "answer": {
+          "type": "number"
+        }
+      },
+      {
+        "label": "(d)",
+        "marks": 0,
+        "content": [],
+        "answer": {
+          "type": "number"
+        }
+      },
+      {
+        "label": "(e)",
+        "marks": 6,
+        "content": [],
+        "answer": {
+          "type": "number"
+        }
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "sketch",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{subparts}\n\\item For each sketch, put a ring around the correct type of function shown.\n\\newline\n\\begin{minipage}{0.45\\textwidth}\n\\item"
+      },
+      {
+        "type": "figure",
+        "src": "Figures/Q22ai.tex"
+      },
+      {
+        "type": "text",
+        "content": "linear \\quad cubic \\quad quadratic \\quad reciprocal \\quad exponential\n\\end{minipage}\n\\hfill\n\\begin{minipage}{0.45\\textwidth}\n\\item"
+      },
+      {
+        "type": "figure",
+        "src": "Figures/Q22aii.tex"
+      },
+      {
+        "type": "text",
+        "content": "linear \\quad cubic \\quad quadratic \\quad reciprocal \\quad exponential\n\\end{minipage}\n\n\\item On the grid, sketch the curve y = sin x for 0$^\\circ$ $\\leq$ x $\\leq$ 360$^\\circ$.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "Figures/Q22bi.tex"
+      },
+      {
+        "type": "text",
+        "content": "\\item Solve the equation sin x + 0.4 = 0 for 0$^\\circ$ $\\leq$ x $\\leq$ 360$^\\circ$.\n\\newline\n\n\\AnswerLine[][]\n\\Marks{6}\n\\end{subparts}"
+      }
+    ],
+    "_rawBody": "\\begin{subparts}\n\\item For each sketch, put a ring around the correct type of function shown.\n\\begin{minipage}{0.45\\textwidth}\n\\item\n\\relinput{Figures/Q22ai.tex}\nlinear \\quad cubic \\quad quadratic \\quad reciprocal \\quad exponential\n\\end{minipage}\n\\hfill\n\\begin{minipage}{0.45\\textwidth}\n\\item\n\\relinput{Figures/Q22aii.tex}\nlinear \\quad cubic \\quad quadratic \\quad reciprocal \\quad exponential\n\\end{minipage}\n\n\\item On the grid, sketch the curve y = sin x for 0$^\\circ$ $\\leq$ x $\\leq$ 360$^\\circ$.\n\\relinput{Figures/Q22bi.tex}\n\n\\item Solve the equation sin x + 0.4 = 0 for 0$^\\circ$ $\\leq$ x $\\leq$ 360$^\\circ$.\n\n\\AnswerLine[][]\n\\Marks{6}\n\\end{subparts}",
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper22/Q22/Q22ai.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper22/Q22/Q22aii.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper22/Q22/Q22bi.png"
+    ]
+  },
+  {
+    "id": "0580-2024MayJune-Paper22-Q23",
+    "paper": "2024MayJune-Paper22",
+    "qnum": 23,
+    "marks": 23,
+    "topics": [
+      "Number",
+      "Geometry",
+      "Probability"
+    ],
+    "s": null,
+    "d": 2,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/22/M/J/24 Q23",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "The Venn diagram shows information about the number of students in a class.\n\\newline\nSome study English (E), some study French (F), some study Spanish (S) and some do not study any of these languages.\n\\newline\n\n(i) Find n((E ∪ F) ∩ S).\n\\newline\n\n(ii) One student is picked at random from those who study Spanish.\n\\newline\nFind the probability that this student studies exactly two languages.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 0,
+        "content": [],
+        "answer": {
+          "type": "number"
+        }
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [],
+        "answer": {
+          "type": "number"
+        }
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q23.tex"
+      },
+      {
+        "type": "text",
+        "content": "The Venn diagram shows information about the number of students in a class.\n\\newline\nSome study English (E), some study French (F), some study Spanish (S) and some do not study any of these languages.\n\\newline\n\\begin{tikzpicture}\n% Three-circle Venn diagram\n\\begin{scope}\n\\clip (0,0) circle (1.2);\n\\fill[blue!20] (1.2,0) circle (1.2);\n\\end{scope}\n\\begin{scope}\n\\clip (1.2,0) circle (1.2);\n\\fill[red!20] (-0.6,1.039) circle (1.2);\n\\end{scope}\n\\begin{scope}\n\\clip (-0.6,1.039) circle (1.2);\n\\fill[green!20] (0,0) circle (1.2);\n\\end{scope}\n\n% Draw circles\n\\draw (0,0) circle (1.2);\n\\draw (1.2,0) circle (1.2);\n\\draw (-0.6,1.039) circle (1.2);\n\n% Labels\n\\node at (-0.8,0) {E};\n\\node at (2.0,0) {F};\n\\node at (-0.6,2.0) {S};\n\n% Numbers\n\\node at (-0.3,0.5) {8};\n\\node at (0.9,0.5) {1};\n\\node at (0.6,1.2) {6};\n\\node at (0.3,0) {3};\n\\node at (-0.9,1.2) {5};\n\\node at (1.5,1.2) {4};\n\\end{tikzpicture}\n\n\\begin{subparts}\n\\item Find n((E ∪ F) ∩ S).\n\\newline\n\n\\item One student is picked at random from those who study Spanish.\n\\newline\nFind the probability that this student studies exactly two languages.\n\\newline\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\end{subparts}"
+      }
+    ],
+    "_rawBody": "\\relinput{Figures/Q23.tex}\n\nThe Venn diagram shows information about the number of students in a class.\nSome study English (E), some study French (F), some study Spanish (S) and some do not study any of these languages.\n\\begin{tikzpicture}\n% Three-circle Venn diagram\n\\begin{scope}\n\\clip (0,0) circle (1.2);\n\\fill[blue!20] (1.2,0) circle (1.2);\n\\end{scope}\n\\begin{scope}\n\\clip (1.2,0) circle (1.2);\n\\fill[red!20] (-0.6,1.039) circle (1.2);\n\\end{scope}\n\\begin{scope}\n\\clip (-0.6,1.039) circle (1.2);\n\\fill[green!20] (0,0) circle (1.2);\n\\end{scope}\n\n% Draw circles\n\\draw (0,0) circle (1.2);\n\\draw (1.2,0) circle (1.2);\n\\draw (-0.6,1.039) circle (1.2);\n\n% Labels\n\\node at (-0.8,0) {E};\n\\node at (2.0,0) {F};\n\\node at (-0.6,2.0) {S};\n\n% Numbers\n\\node at (-0.3,0.5) {8};\n\\node at (0.9,0.5) {1};\n\\node at (0.6,1.2) {6};\n\\node at (0.3,0) {3};\n\\node at (-0.9,1.2) {5};\n\\node at (1.5,1.2) {4};\n\\end{tikzpicture}\n\n\\begin{subparts}\n\\item Find n((E ∪ F) ∩ S).\n\n\\item One student is picked at random from those who study Spanish.\nFind the probability that this student studies exactly two languages.\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\end{subparts}",
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper22/Q23/Q23.png"
+    ]
+  },
+  {
+    "id": "0580-2024MayJune-Paper22-Q24",
+    "paper": "2024MayJune-Paper22",
+    "qnum": 24,
+    "marks": 24,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry",
+      "Transformations and vectors"
+    ],
+    "s": "3.6",
+    "d": 2,
+    "cat": "coord",
+    "topic": "Position vectors",
+    "qtype": "parallel lines",
+    "g": "mixed",
+    "src": "0580/22/M/J/24 Q24",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "O is the origin and OPQR is a parallelogram.\n\\newline\nM is the midpoint of PQ and N divides QR in the ratio 2:1.\n\\newline\nOP = $\\vec{a}$ and OR = $\\vec{b}$.\n\\newline\n\n(i) Find $\\vec{MN}$.\n\\newline\nGive your answer in terms of $\\vec{a}$ and/or $\\vec{b}$ and in its simplest form.\n\\newline\n\n(ii) The lines MN and OR are extended to meet at S.\n\\newline\nFind the position vector of S.\n\\newline\nGive your answer in terms of $\\vec{a}$ and/or $\\vec{b}$ and in its simplest form.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 0,
+        "content": [],
+        "answer": {
+          "type": "number"
+        }
+      },
+      {
+        "label": "(b)",
+        "marks": 5,
+        "content": [],
+        "answer": {
+          "type": "number"
+        }
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q24.tex"
+      },
+      {
+        "type": "text",
+        "content": "\\begin{tikzpicture}[scale=0.8]\n% Parallelogram OPQR\n\\coordinate (O) at (0,0);\n\\coordinate (P) at (3,1);\n\\coordinate (Q) at (5,3);\n\\coordinate (R) at (2,2);\n\n% Draw parallelogram\n\\draw (O) -- (P) -- (Q) -- (R) -- cycle;\n\n% Labels\n\\node at (O) [below left] {O};\n\\node at (P) [above left] {P};\n\\node at (Q) [above right] {Q};\n\\node at (R) [below right] {R};\n\n% Midpoint M of PQ\n\\coordinate (M) at ($(P)!0.5!(Q)$);\n\\node at (M) [above] {M};\n\n% Point N dividing QR in ratio 2:1\n\\coordinate (N) at ($(Q)!0.333!(R)$);\n\\node at (N) [right] {N};\n\n% Vectors a and b\n\\draw[->, thick, blue] (O) -- (P) node[midway, above left] {$\\vec{a}$};\n\\draw[->, thick, red] (O) -- (R) node[midway, below right] {$\\vec{b}$};\n\n\\end{tikzpicture}\nO is the origin and OPQR is a parallelogram.\n\\newline\nM is the midpoint of PQ and N divides QR in the ratio 2:1.\n\\newline\nOP = $\\vec{a}$ and OR = $\\vec{b}$.\n\\newline\n\\par\n\n\\begin{subparts}\n\\item Find $\\vec{MN}$.\n\\newline\nGive your answer in terms of $\\vec{a}$ and/or $\\vec{b}$ and in its simplest form.\n\\newline\n\n\\item The lines MN and OR are extended to meet at S.\n\\newline\nFind the position vector of S.\n\\newline\nGive your answer in terms of $\\vec{a}$ and/or $\\vec{b}$ and in its simplest form.\n\\newline\n\n\n\\AnswerLine[][]\n\\Marks{5}\n\\end{subparts}"
+      }
+    ],
+    "_rawBody": "\\relinput{Figures/Q24.tex}\n\n\\begin{tikzpicture}[scale=0.8]\n% Parallelogram OPQR\n\\coordinate (O) at (0,0);\n\\coordinate (P) at (3,1);\n\\coordinate (Q) at (5,3);\n\\coordinate (R) at (2,2);\n\n% Draw parallelogram\n\\draw (O) -- (P) -- (Q) -- (R) -- cycle;\n\n% Labels\n\\node at (O) [below left] {O};\n\\node at (P) [above left] {P};\n\\node at (Q) [above right] {Q};\n\\node at (R) [below right] {R};\n\n% Midpoint M of PQ\n\\coordinate (M) at ($(P)!0.5!(Q)$);\n\\node at (M) [above] {M};\n\n% Point N dividing QR in ratio 2:1\n\\coordinate (N) at ($(Q)!0.333!(R)$);\n\\node at (N) [right] {N};\n\n% Vectors a and b\n\\draw[->, thick, blue] (O) -- (P) node[midway, above left] {$\\vec{a}$};\n\\draw[->, thick, red] (O) -- (R) node[midway, below right] {$\\vec{b}$};\n\n\\end{tikzpicture}\nO is the origin and OPQR is a parallelogram.\nM is the midpoint of PQ and N divides QR in the ratio 2:1.\nOP = $\\vec{a}$ and OR = $\\vec{b}$.\\par\n\n\\begin{subparts}\n\\item Find $\\vec{MN}$.\nGive your answer in terms of $\\vec{a}$ and/or $\\vec{b}$ and in its simplest form.\n\n\\item The lines MN and OR are extended to meet at S.\nFind the position vector of S.\nGive your answer in terms of $\\vec{a}$ and/or $\\vec{b}$ and in its simplest form.\n\n\n\\AnswerLine[][]\n\\Marks{5}\n\\end{subparts}",
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper22/Q24/Q24.png"
+    ]
+  }
+]

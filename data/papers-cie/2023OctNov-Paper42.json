@@ -1,0 +1,1727 @@
+[
+  {
+    "id": "0580-2023OctNov-Paper42-Q01",
+    "paper": "2023OctNov-Paper42",
+    "qnum": 1,
+    "marks": 11,
+    "topics": [
+      "Number",
+      "Geometry",
+      "Transformations and vectors"
+    ],
+    "s": null,
+    "d": 2,
+    "cat": "number",
+    "topic": null,
+    "qtype": "Transformation Geometry",
+    "g": "mixed",
+    "src": "0580/42/O/N/23 Q01",
+    "year": 2023,
+    "session": "OctNov",
+    "tex": "(a) (i) (b) Translate triangle $T$ by the vector $\\begin{pmatrix} -7 \\\\ 1 \\end{pmatrix}$.\n\\newline\n\n        Label the image $K$.\n\\newline\n\n(c) Describe fully the single transformation that maps triangle $K$ onto triangle $T$.\n\\newline\n\n(d) Reflect triangle $T$ in the line $y = 4$.\n\\newline\n\n(e) Rotate triangle $T$ through $90^{\\circ}$ clockwise about $(0, 0)$.\n\\newline\n\n(f) (i) (g) Enlarge triangle $T$ by scale factor $-\\frac{1}{2}$, centre $(0, 0)$.\n\\newline\n\n        Label the image $P$.\n\\newline\n\n(h) Describe fully the single transformation that maps triangle $P$ onto triangle $T$.\n\\newline\n\n        \n\n\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Translate triangle $T$ by the vector $\\begin{pmatrix} -7 \\\\ 1 \\end{pmatrix}$.\n\\newline\n\n        Label the image $K$.\n\\newline\n"
+              }
+            ],
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Describe fully the single transformation that maps triangle $K$ onto triangle $T$.\n\\newline\n"
+              },
+              {
+                "type": "space",
+                "height": "0.8em",
+                "cmd": "vgap"
+              }
+            ],
+            "answer": {
+              "type": "multiline",
+              "lines": 2
+            }
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true,
+        "_itemInlineSubparts": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Reflect triangle $T$ in the line $y = 4$.\n\\newline\n"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Rotate triangle $T$ through $90^{\\circ}$ clockwise about $(0, 0)$.\n\\newline\n"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Enlarge triangle $T$ by scale factor $-\\frac{1}{2}$, centre $(0, 0)$.\n\\newline\n\n        Label the image $P$.\n\\newline\n"
+              }
+            ],
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Describe fully the single transformation that maps triangle $P$ onto triangle $T$.\n\\newline\n"
+              },
+              {
+                "type": "space",
+                "height": "0.8em",
+                "cmd": "vgap"
+              }
+            ],
+            "answer": {
+              "type": "multiline",
+              "lines": 2
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true,
+        "_itemInlineSubparts": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "describe",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper42/Q01/Q01.png"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper42/Q01/Q01-Grid.png"
+      }
+    ],
+    "_rawBody": "\\begin{parts}\n    \\item \n    \\begin{subparts}\n        \\item Translate triangle $T$ by the vector $\\begin{pmatrix} -7 \\\\ 1 \\end{pmatrix}$.\n\n        Label the image $K$.\n        \\Marks{2}\n\n        \\item Describe fully the single transformation that maps triangle $K$ onto triangle $T$.\n\n        \\vgap\n\n        \\answerlines[2]\n\n        \\Marks{1}\n    \\end{subparts}\n\n    \\item Reflect triangle $T$ in the line $y = 4$.\n    \\Marks{2}\n\n    \\item Rotate triangle $T$ through $90^{\\circ}$ clockwise about $(0, 0)$.\n    \\Marks{2}\n\n    \\item \n    \\begin{subparts}\n        \\item Enlarge triangle $T$ by scale factor $-\\frac{1}{2}$, centre $(0, 0)$.\n\n        Label the image $P$.\n        \\Marks{2}\n\n        \\item Describe fully the single transformation that maps triangle $P$ onto triangle $T$.\n\n\n        \\vgap\n\n        \\answerlines[2]\n        \\Marks{2}\n    \\end{subparts}\n\\end{parts}\n\n\\begin{InsertScreenShot}\n    \\relinput{Figures/Q01-Grid.tex}\n\\end{InsertScreenShot}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "_postParts": [
+      {
+        "type": "table",
+        "content": "\\begin{InsertScreenShot}\n    \\relinput{Figures/Q01-Grid.tex}\n\\end{InsertScreenShot}"
+      }
+    ],
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper42/Q01/Q01-Grid.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper42/Q01/Q01.png"
+    ]
+  },
+  {
+    "id": "0580-2023OctNov-Paper42-Q02",
+    "paper": "2023OctNov-Paper42",
+    "qnum": 2,
+    "marks": 11,
+    "topics": [
+      "Statistics"
+    ],
+    "s": "9.6",
+    "d": 2,
+    "cat": "statistics",
+    "topic": "Cumulative frequency",
+    "qtype": "cumulative frequency",
+    "g": "mixed",
+    "src": "0580/42/O/N/23 Q02",
+    "year": 2023,
+    "session": "OctNov",
+    "tex": "(a) Daisy records her 50 homework marks.\n\\newline\n    The table shows the results.\n\\newline\n\n    \\begin{tabular}{|l|c|c|c|c|c|c|}\n        \\hline\n        Homework mark & 15 & 16 & 17 & 18 & 19 & 20 \\\\\n        \\hline\n        Frequency & 1 & 3 & 19 & 11 & 10 & 6 \\\\\n        \\hline\n    \\end{tabular}\n    (i) (b) Write down the range.\n\\newline\n\n        \n\n(c) Write down the mode.\n\\newline\n\n        \n\n(d) Find the median.\n\\newline\n\n        \n\n(e) Calculate the mean.\n\\newline\n\n        \n\n(f) The list shows Ed's scores in 11 tests.\n\\newline\n    21   33   20   25   21   34   22   21   20   30   18\n    (i) (g) Complete the stem-and-leaf diagram to show this information.\n\\newline\n\n        \\begin{tabular}{r|llllllll}\n            1 &  & & & & & & & \\\\\n            2 & & & & & & & & \\\\\n            3 & & & & & & & & \\\\\n        \\end{tabular}\n\n         Key: $2|5$ represents 25\n\n(h) Find the median.\n\\newline\n\n        \n\n(i) Find the interquartile range.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper42/Q02/Q02a.png"
+          },
+          {
+            "type": "text",
+            "content": "Daisy records her 50 homework marks.\n\\newline\n    The table shows the results.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{center}\n    \\begin{tabular}{|l|c|c|c|c|c|c|}\n        \\hline\n        Homework mark & 15 & 16 & 17 & 18 & 19 & 20 \\\\\n        \\hline\n        Frequency & 1 & 3 & 19 & 11 & 10 & 6 \\\\\n        \\hline\n    \\end{tabular}\n    \\end{center}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Write down the range.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Write down the mode.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the median.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iv)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate the mean.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The list shows Ed's scores in 11 tests.\n\\newline\n    \\begin{center}\n        21 \\quad 33 \\quad 20 \\quad 25 \\quad 21 \\quad 34 \\quad 22 \\quad 21 \\quad 20 \\quad 30 \\quad 18\n    \\end{center}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Complete the stem-and-leaf diagram to show this information.\n\\newline\n"
+              },
+              {
+                "type": "table",
+                "content": "\\begin{center}\n        \\begin{tabular}{r|llllllll}\n            1 & \\hspace{2cm} & & & & & & & \\\\\n            2 & & & & & & & & \\\\\n            3 & & & & & & & & \\\\\n        \\end{tabular}\n        \\end{center}"
+              },
+              {
+                "type": "space",
+                "height": "0.2cm",
+                "cmd": "vspace"
+              },
+              {
+                "type": "text",
+                "content": "\\hfill Key: $2|5$ represents 25"
+              }
+            ]
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the median.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the interquartile range.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper42/Q02/Q02bi.png"
+      }
+    ],
+    "_rawBody": "\\begin{parts}\n    \\item Daisy records her 50 homework marks.\n    The table shows the results.\n\n    \\begin{center}\n    \\begin{tabular}{|l|c|c|c|c|c|c|}\n        \\hline\n        Homework mark & 15 & 16 & 17 & 18 & 19 & 20 \\\\\n        \\hline\n        Frequency & 1 & 3 & 19 & 11 & 10 & 6 \\\\\n        \\hline\n    \\end{tabular}\n    \\end{center}\n\n    \\begin{subparts}\n        \\item Write down the range.\n\n        \\AnswerLine\n        \\Marks{1}\n\n        \\item Write down the mode.\n\n        \\AnswerLine\n        \\Marks{1}\n\n        \\item Find the median.\n\n        \\AnswerLine\n        \\Marks{1}\n\n        \\item Calculate the mean.\n\n        \\AnswerLine\n        \\Marks{3}\n    \\end{subparts}\n\n    \\item The list shows Ed's scores in 11 tests.\n    \\begin{center}\n        21 \\quad 33 \\quad 20 \\quad 25 \\quad 21 \\quad 34 \\quad 22 \\quad 21 \\quad 20 \\quad 30 \\quad 18\n    \\end{center}\n\n    \\begin{subparts}\n        \\item Complete the stem-and-leaf diagram to show this information.\n\n        \\begin{center}\n        \\begin{tabular}{r|llllllll}\n            1 & \\hspace{2cm} & & & & & & & \\\\\n            2 & & & & & & & & \\\\\n            3 & & & & & & & & \\\\\n        \\end{tabular}\n        \\end{center}\n        \\vspace{0.2cm}\n        \\hfill Key: $2|5$ represents 25\n\n        \\Marks{2}\n\n        \\item Find the median.\n\n        \\AnswerLine\n        \\Marks{1}\n\n        \\item Find the interquartile range.\n\n        \\AnswerLine\n        \\Marks{2}\n    \\end{subparts}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "_compactItems": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper42/Q02/Q02a.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper42/Q02/Q02bi.png"
+    ]
+  },
+  {
+    "id": "0580-2023OctNov-Paper42-Q03",
+    "paper": "2023OctNov-Paper42",
+    "qnum": 3,
+    "marks": 15,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.13",
+    "d": 2,
+    "cat": "number",
+    "topic": "Electronic calculators",
+    "qtype": "percentage applications, simple and compound interest, reverse percentage",
+    "g": "mixed",
+    "src": "0580/42/O/N/23 Q03",
+    "year": 2023,
+    "session": "OctNov",
+    "tex": "(a) The value of Priya's car decreases by $10\\%$ every year.\n\\newline\n\n    The value today is $\\$7695$.\n\\newline\n\n    (i) (b) Calculate the value of the car after one year.\n\\newline\n\n        \n\n(c) Calculate the value of the car one year ago.\n\\newline\n\n        \n\n(d) Ali invests $\\$600$ at a rate of $2\\%$ per year simple interest.\n\\newline\n\n    Calculate the value of Ali's investment at the end of 5 years.\n\\newline\n\n    \n\n(e) Sara invests $\\$500$ at a rate of $r\\%$ per year compound interest.\n\\newline\n\n    At the end of 12 years, the value of Sara's investment is $\\$601.35$, correct to the nearest cent.\n\\newline\n\n    Find the value of $r$.\n\\newline\n\n    \n\n(f) The mass of a radioactive substance decreases exponentially at a rate of $3\\%$ each day.\n\\newline\n\n    (i) (g) Find the overall percentage decrease at the end of 10 days.\n\\newline\n\n        \n\n(h) Find the number of whole days it takes until the mass of this substance is one half of its original amount.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The value of Priya's car decreases by $10\\%$ every year.\n\\newline\n\n    The value today is $\\$7695$.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate the value of the car after one year.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "\\$"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate the value of the car one year ago.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "\\$"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Ali invests $\\$600$ at a rate of $2\\%$ per year simple interest.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "text",
+            "content": "Calculate the value of Ali's investment at the end of 5 years.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "\\$"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Sara invests $\\$500$ at a rate of $r\\%$ per year compound interest.\n\\newline\n\n    At the end of 12 years, the value of Sara's investment is $\\$601.35$, correct to the nearest cent.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "text",
+            "content": "Find the value of $r$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$r=$"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The mass of a radioactive substance decreases exponentially at a rate of $3\\%$ each day.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the overall percentage decrease at the end of 10 days.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "\\%"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the number of whole days it takes until the mass of this substance is one half of its original amount.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n    \\item The value of Priya's car decreases by $10\\%$ every year.\n\n    The value today is $\\$7695$.\n\n    \\begin{subparts}\n        \\item Calculate the value of the car after one year.\n\n        \\AnswerLine[][\\$]\n        \\Marks{2}\n\n        \\item Calculate the value of the car one year ago.\n\n        \\AnswerLine[][\\$]\n        \\Marks{2}\n    \\end{subparts}\n\n    \\item Ali invests $\\$600$ at a rate of $2\\%$ per year simple interest.\n\n    \\vgap\n\n    Calculate the value of Ali's investment at the end of 5 years.\n\n    \\AnswerLine[][\\$]\n    \\Marks{3}\n\n    \\item Sara invests $\\$500$ at a rate of $r\\%$ per year compound interest.\n\n    At the end of 12 years, the value of Sara's investment is $\\$601.35$, correct to the nearest cent.\n\n    \\vgap\n\n    Find the value of $r$.\n\n    \\AnswerLine[$r=$][]\n    \\Marks{3}\n\n    \\item The mass of a radioactive substance decreases exponentially at a rate of $3\\%$ each day.\n\n    \\begin{subparts}\n        \\item Find the overall percentage decrease at the end of 10 days.\n\n        \\AnswerLine[][\\%]\n        \\Marks{2}\n\n        \\item Find the number of whole days it takes until the mass of this substance is one half of its original amount.\n\n        \\AnswerLine\n        \\Marks{3}\n    \\end{subparts}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2023OctNov-Paper42-Q04",
+    "paper": "2023OctNov-Paper42",
+    "qnum": 4,
+    "marks": 12,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.6",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/42/O/N/23 Q04",
+    "year": 2023,
+    "session": "OctNov",
+    "tex": "(a) \\begin{InsertScreenShot}\n\n    \\end{InsertScreenShot}\n    The diagram shows a sector of a circle that is made into a cone by joining $OA$ to $OB$.\n\\newline\n\n    The sector angle is $x^{\\circ}$ and the radius of the sector is $7.5$ cm.\n\\newline\n\n    The base radius of the cone is $1.5$ cm.\n\\newline\n\n    Calculate the value of $x$.\n\\newline\n\n    \n\n(b) \\begin{InsertScreenShot}\n\n    \\end{InsertScreenShot}\n    The diagram shows a cylinder with radius 8 cm inside a sphere with radius 17 cm.\n\\newline\n\n    Both ends of the cylinder touch the curved surface of the sphere.\n\\newline\n\n    (i) (c) Show that the height of the cylinder is 30 cm.\n\\newline\n\n(d) Calculate the volume of the cylinder as a percentage of the volume of the sphere.\n\\newline\n\n        [The volume, $V$, of a sphere with radius $r$ is $V = \\frac{4}{3}\\pi r^3$.\n\\newline\n]\n\n        \n\n(e) \\begin{InsertScreenShot}\n\n    \\end{InsertScreenShot}\n    The diagram shows a solid sphere with radius 6 cm inside a cube with side length 20 cm.\n\\newline\n\n    The cube contains water to a depth of 15 cm.\n\\newline\n\n    The sphere is removed.\n\\newline\n\n    Calculate the new depth of water in the cube.\n\\newline\n\n    [The volume, $V$, of a sphere with radius $r$ is $V = \\frac{4}{3}\\pi r^3$.\n\\newline\n]",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper42/Q04/Q04a.png"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{InsertScreenShot}\n        \\relinput{Figures/Q04-ConeSector.tex}\n    \\end{InsertScreenShot}"
+          },
+          {
+            "type": "text",
+            "content": "The diagram shows a sector of a circle that is made into a cone by joining $OA$ to $OB$.\n\\newline\n\n    The sector angle is $x^{\\circ}$ and the radius of the sector is $7.5$ cm.\n\\newline\n\n    The base radius of the cone is $1.5$ cm.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "text",
+            "content": "Calculate the value of $x$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x=$"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper42/Q04/Q04b.png"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{InsertScreenShot}\n        \\relinput{Figures/Q04-CylinderSphere.tex}\n    \\end{InsertScreenShot}"
+          },
+          {
+            "type": "text",
+            "content": "The diagram shows a cylinder with radius 8 cm inside a sphere with radius 17 cm.\n\\newline\n\n    Both ends of the cylinder touch the curved surface of the sphere.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Show that the height of the cylinder is 30 cm.\n\\newline\n"
+              }
+            ],
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 4,
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate the volume of the cylinder as a percentage of the volume of the sphere.\n\\newline\n\n        [The volume, $V$, of a sphere with radius $r$ is $V = \\frac{4}{3}\\pi r^3$.\n\\newline\n]"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "\\%"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(c)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper42/Q04/Q04c.png"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{InsertScreenShot}\n        \\relinput{Figures/Q04-SphereCube.tex}\n    \\end{InsertScreenShot}"
+          },
+          {
+            "type": "text",
+            "content": "The diagram shows a solid sphere with radius 6 cm inside a cube with side length 20 cm.\n\\newline\n\n    The cube contains water to a depth of 15 cm.\n\\newline\n\n    The sphere is removed.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "text",
+            "content": "Calculate the new depth of water in the cube.\n\\newline\n\n    [The volume, $V$, of a sphere with radius $r$ is $V = \\frac{4}{3}\\pi r^3$.\n\\newline\n]"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "cm"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "analyse",
+    "cmd": "show",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper42/Q04/Q04-SphereCube.png"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper42/Q04/Q04-CylinderSphere.png"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper42/Q04/Q04-ConeSector.png"
+      }
+    ],
+    "_rawBody": "\\begin{parts}\n    \\item \n    \\begin{InsertScreenShot}\n        \\relinput{Figures/Q04-ConeSector.tex}\n    \\end{InsertScreenShot}\n    The diagram shows a sector of a circle that is made into a cone by joining $OA$ to $OB$.\n\n    The sector angle is $x^{\\circ}$ and the radius of the sector is $7.5$ cm.\n\n    The base radius of the cone is $1.5$ cm.\n\n    \\vgap\n\n    Calculate the value of $x$.\n\n    \\AnswerLine[$x=$][]\n    \\Marks{3}\n\n    \\item \n    \\begin{InsertScreenShot}\n        \\relinput{Figures/Q04-CylinderSphere.tex}\n    \\end{InsertScreenShot}\n    The diagram shows a cylinder with radius 8 cm inside a sphere with radius 17 cm.\n\n    Both ends of the cylinder touch the curved surface of the sphere.\n\n    \\begin{subparts}\n        \\item Show that the height of the cylinder is 30 cm.\n        \\Marks{2}\n\n        \\item Calculate the volume of the cylinder as a percentage of the volume of the sphere.\n\n        [The volume, $V$, of a sphere with radius $r$ is $V = \\frac{4}{3}\\pi r^3$.]\n\n        \\AnswerLine[][\\%]\n        \\Marks{4}\n    \\end{subparts}\n\n    \\item \n    \\begin{InsertScreenShot}\n        \\relinput{Figures/Q04-SphereCube.tex}\n    \\end{InsertScreenShot}\n    The diagram shows a solid sphere with radius 6 cm inside a cube with side length 20 cm.\n\n    The cube contains water to a depth of 15 cm.\n\n    The sphere is removed.\n\n    \\vgap\n\n    Calculate the new depth of water in the cube.\n\n    [The volume, $V$, of a sphere with radius $r$ is $V = \\frac{4}{3}\\pi r^3$.]\n\n    \\AnswerLine[][cm]\n    \\Marks{3}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper42/Q04/Q04-ConeSector.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper42/Q04/Q04-CylinderSphere.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper42/Q04/Q04-SphereCube.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper42/Q04/Q04a.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper42/Q04/Q04b.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper42/Q04/Q04c.png"
+    ]
+  },
+  {
+    "id": "0580-2023OctNov-Paper42-Q05",
+    "paper": "2023OctNov-Paper42",
+    "qnum": 5,
+    "marks": 9,
+    "topics": [
+      "Number",
+      "Algebra and graphs"
+    ],
+    "s": "2.5",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Equations",
+    "qtype": "forming and solving linear and quadratic equations, factorisation of quadratic expressions",
+    "g": "quadratic",
+    "src": "0580/42/O/N/23 Q05",
+    "year": 2023,
+    "session": "OctNov",
+    "tex": "(a) In a shop the cost of a fiction book is $\\$x$ and the cost of a reference book is $\\$(x + 2)$.\n\\newline\n\n    The cost of 11 fiction books is the same as the cost of 10 reference books.\n\\newline\n\n    Find the value of $x$.\n\\newline\n\n    \n\n(b) In another shop, the cost of a fiction book is $\\$y$ and the cost of a reference book is $\\$(y + 2)$.\n\\newline\n\n    Maria spends $\\$95$ on fiction books and $\\$147$ on reference books.\n\\newline\n\n    She buys a total of 12 books.\n\\newline\n\n    (i) (c) Show that   $6y^2 - 109y - 95 = 0$.\n\\newline\n\n(d) Factorise   $6y^2 - 109y - 95$.\n\\newline\n\n        \n\n(e) Find the value of $y$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "In a shop the cost of a fiction book is $\\$x$ and the cost of a reference book is $\\$(x + 2)$.\n\\newline\n\n    The cost of 11 fiction books is the same as the cost of 10 reference books.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "text",
+            "content": "Find the value of $x$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x=$"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "In another shop, the cost of a fiction book is $\\$y$ and the cost of a reference book is $\\$(y + 2)$.\n\\newline\n\n    Maria spends $\\$95$ on fiction books and $\\$147$ on reference books.\n\\newline\n\n    She buys a total of 12 books.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 4,
+            "content": [
+              {
+                "type": "text",
+                "content": "Show that \\quad $6y^2 - 109y - 95 = 0$.\n\\newline\n"
+              }
+            ],
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Factorise \\quad $6y^2 - 109y - 95$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the value of $y$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$y=$"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "show",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n    \\item In a shop the cost of a fiction book is $\\$x$ and the cost of a reference book is $\\$(x + 2)$.\n\n    The cost of 11 fiction books is the same as the cost of 10 reference books.\n\n    \\vgap\n\n    Find the value of $x$.\n\n    \\AnswerLine[$x=$]\n    \\Marks{2}\n\n    \\item In another shop, the cost of a fiction book is $\\$y$ and the cost of a reference book is $\\$(y + 2)$.\n\n    Maria spends $\\$95$ on fiction books and $\\$147$ on reference books.\n\n    She buys a total of 12 books.\n\n    \\begin{subparts}\n        \\item Show that \\quad $6y^2 - 109y - 95 = 0$.\n        \\Marks{4}\n\n        \\item Factorise \\quad $6y^2 - 109y - 95$.\n\n        \\AnswerLine\n        \\Marks{2}\n\n        \\item Find the value of $y$.\n\n        \\AnswerLine[$y=$]\n        \\Marks{1}\n    \\end{subparts}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2023OctNov-Paper42-Q06",
+    "paper": "2023OctNov-Paper42",
+    "qnum": 6,
+    "marks": 7,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.6",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/42/O/N/23 Q06",
+    "year": 2023,
+    "session": "OctNov",
+    "tex": "\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\nThe diagram shows a right-angled triangle.\n\\newline\n\nFind the value of $w$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "table",
+        "content": "\\begin{InsertScreenShot}\n    \\relinput{Figures/Q06-Triangle.tex}\n\\end{InsertScreenShot}"
+      },
+      {
+        "type": "text",
+        "content": "The diagram shows a right-angled triangle.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "Find the value of $w$.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper42/Q06/Q06.png"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper42/Q06/Q06-Triangle.png"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "$w=$"
+    },
+    "_rawBody": "\\begin{InsertScreenShot}\n    \\relinput{Figures/Q06-Triangle.tex}\n\\end{InsertScreenShot}\nThe diagram shows a right-angled triangle.\n\n\\vgap\n\nFind the value of $w$.\n\n\\AnswerLine[$w=$]\n\\Marks{7}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper42/Q06/Q06-Triangle.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper42/Q06/Q06.png"
+    ]
+  },
+  {
+    "id": "0580-2023OctNov-Paper42-Q07",
+    "paper": "2023OctNov-Paper42",
+    "qnum": 7,
+    "marks": 16,
+    "topics": [
+      "Geometry",
+      "Mensuration",
+      "Trigonometry"
+    ],
+    "s": "4.6",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/42/O/N/23 Q07",
+    "year": 2023,
+    "session": "OctNov",
+    "tex": "(a) \\begin{InsertScreenShot}\n\n    \\end{InsertScreenShot}\n    The diagram shows a right-angled triangle $PQR$ on horizontal ground.\n\\newline\n\n    $X$ is vertically above $R$ and the angle of elevation of $X$ from $P$ is $21^{\\circ}$.\n\\newline\n\n    $XR = 2.8$ m and $RQ = 7.1$ m.\n\\newline\n\n    (i) (b) Calculate the angle of elevation of $X$ from $Q$.\n\\newline\n\n        \n\n(c) Calculate $PQ$.\n\\newline\n\n        \n\n(d) \\begin{InsertScreenShot}\n\n    \\end{InsertScreenShot}\n\n    \n\n    Calculate the acute angle $KML$.\n\\newline\n\n    \n\n(e) \\begin{InsertScreenShot}\n\n    \\end{InsertScreenShot}\n\n    The area of triangle $ABC$ is $62.89$ cm$^2$.\n\\newline\n\n    (i) (f) Show that angle $BAC = 28.4^{\\circ}$, correct to 1 decimal place.\n\\newline\n\n(g) Calculate $BC$.\n\\newline\n\n        \n\n(h) $AB$ is extended to a point $D$ such that angle $BDC = 90^{\\circ}$.\n\\newline\n\n        Calculate $BD$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper42/Q07/Q07a.png"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{InsertScreenShot}\n        \\relinput{Figures/Q07-TrianglePQR.tex}\n    \\end{InsertScreenShot}"
+          },
+          {
+            "type": "text",
+            "content": "The diagram shows a right-angled triangle $PQR$ on horizontal ground.\n\\newline\n\n    $X$ is vertically above $R$ and the angle of elevation of $X$ from $P$ is $21^{\\circ}$.\n\\newline\n\n    $XR = 2.8$ m and $RQ = 7.1$ m.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate the angle of elevation of $X$ from $Q$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate $PQ$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "m"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper42/Q07/Q07b.png"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{InsertScreenShot}\n        \\relinput{Figures/Q07-TriangleKLM.tex}\n    \\end{InsertScreenShot}"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "text",
+            "content": "Calculate the acute angle $KML$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "Angle $KML =$"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper42/Q07/Q07c.png"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{InsertScreenShot}\n        \\relinput{Figures/Q07-TriangleABC.tex}\n    \\end{InsertScreenShot}"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "text",
+            "content": "The area of triangle $ABC$ is $62.89$ cm$^2$.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Show that angle $BAC = 28.4^{\\circ}$, correct to 1 decimal place.\n\\newline\n"
+              }
+            ],
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate $BC$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "cm"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "$AB$ is extended to a point $D$ such that angle $BDC = 90^{\\circ}$.\n\\newline\n\n        Calculate $BD$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "cm"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "analyse",
+    "cmd": "show",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper42/Q07/Q07-TrianglePQR.png"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper42/Q07/Q07-TriangleKLM.png"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper42/Q07/Q07-TriangleABC.png"
+      }
+    ],
+    "_rawBody": "\\begin{parts}\n    \\item \n    \\begin{InsertScreenShot}\n        \\relinput{Figures/Q07-TrianglePQR.tex}\n    \\end{InsertScreenShot}\n    The diagram shows a right-angled triangle $PQR$ on horizontal ground.\n\n    $X$ is vertically above $R$ and the angle of elevation of $X$ from $P$ is $21^{\\circ}$.\n\n    $XR = 2.8$ m and $RQ = 7.1$ m.\n\n    \\begin{subparts}\n        \\item Calculate the angle of elevation of $X$ from $Q$.\n\n        \\AnswerLine\n        \\Marks{2}\n\n        \\item Calculate $PQ$.\n\n        \\AnswerLine[][m]\n        \\Marks{3}\n    \\end{subparts}\n\n    \\item \n    \\begin{InsertScreenShot}\n        \\relinput{Figures/Q07-TriangleKLM.tex}\n    \\end{InsertScreenShot}\n    \n    \\vgap\n    \n    Calculate the acute angle $KML$.\n\n    \\AnswerLine[Angle $KML =$]\n    \\Marks{3}\n\n    \\item \n    \\begin{InsertScreenShot}\n        \\relinput{Figures/Q07-TriangleABC.tex}\n    \\end{InsertScreenShot}\n\n    \\vgap\n\n    The area of triangle $ABC$ is $62.89$ cm$^2$.\n\n    \\begin{subparts}\n        \\item Show that angle $BAC = 28.4^{\\circ}$, correct to 1 decimal place.\n        \\Marks{2}\n\n        \\item Calculate $BC$.\n\n        \\AnswerLine[][cm]\n        \\Marks{3}\n\n        \\item $AB$ is extended to a point $D$ such that angle $BDC = 90^{\\circ}$.\n\n        Calculate $BD$.\n\n        \\AnswerLine[][cm]\n        \\Marks{3}\n    \\end{subparts}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper42/Q07/Q07-TriangleABC.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper42/Q07/Q07-TriangleKLM.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper42/Q07/Q07-TrianglePQR.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper42/Q07/Q07a.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper42/Q07/Q07b.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper42/Q07/Q07c.png"
+    ]
+  },
+  {
+    "id": "0580-2023OctNov-Paper42-Q08",
+    "paper": "2023OctNov-Paper42",
+    "qnum": 8,
+    "marks": 9,
+    "topics": [
+      "Probability"
+    ],
+    "s": "8.3",
+    "d": 2,
+    "cat": "probability",
+    "topic": "Tree diagrams",
+    "qtype": "combined events",
+    "g": "mixed",
+    "src": "0580/42/O/N/23 Q08",
+    "year": 2023,
+    "session": "OctNov",
+    "tex": "\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\nThe diagram shows two fair dice.\n\\newline\n\nDice A is numbered 1, 2, 2, 2, 3, 6.\n\\newline\n\nDice B is numbered 2, 3, 3, 4, 4, 4.\n\\newline\n\n(a) (i) (b) Dice A is rolled once.\n\\newline\n\n        Write down the probability that it lands on the number 6.\n\\newline\n\n        \n\n(c) Dice A is rolled 150 times.\n\\newline\n\n        Find the number of times it is expected to land on the number 6.\n\\newline\n\n        \n\n(d) Dice A and Dice B are each rolled once.\n\\newline\n\n    (i) (e) Find the probability that the two numbers they land on have a total of 6.\n\\newline\n\n        \n\n(f) Find the probability that when the two numbers they land on have a total of 6, both numbers are 3.\n\\newline\n\n        \n\n(g) Dice B is rolled $n$ times.\n\\newline\n\n    The probability that on the $n$th roll it first lands on a number 3 is $\\frac{32}{729}$.\n\\newline\n\n    Find the value of $n$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Dice A is rolled once.\n\\newline\n"
+              },
+              {
+                "type": "space",
+                "height": "0.8em",
+                "cmd": "vgap"
+              },
+              {
+                "type": "text",
+                "content": "Write down the probability that it lands on the number 6.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Dice A is rolled 150 times.\n\\newline\n"
+              },
+              {
+                "type": "space",
+                "height": "0.8em",
+                "cmd": "vgap"
+              },
+              {
+                "type": "text",
+                "content": "Find the number of times it is expected to land on the number 6.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true,
+        "_itemInlineSubparts": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Dice A and Dice B are each rolled once.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the probability that the two numbers they land on have a total of 6.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the probability that when the two numbers they land on have a total of 6, both numbers are 3.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Dice B is rolled $n$ times.\n\\newline\n\n    The probability that on the $n$th roll it first lands on a number 3 is $\\frac{32}{729}$.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "text",
+            "content": "Find the value of $n$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$n=$"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "table",
+        "content": "\\begin{InsertScreenShot}\n    \\relinput{Figures/Q08-Dice.tex}\n\\end{InsertScreenShot}"
+      },
+      {
+        "type": "text",
+        "content": "The diagram shows two fair dice.\n\\newline\n\nDice A is numbered 1, 2, 2, 2, 3, 6.\n\\newline\n\nDice B is numbered 2, 3, 3, 4, 4, 4.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper42/Q08/Q08.png"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper42/Q08/Q08-Dice.png"
+      }
+    ],
+    "_rawBody": "\\begin{InsertScreenShot}\n    \\relinput{Figures/Q08-Dice.tex}\n\\end{InsertScreenShot}\nThe diagram shows two fair dice.\n\nDice A is numbered 1, 2, 2, 2, 3, 6.\n\nDice B is numbered 2, 3, 3, 4, 4, 4.\n\n\\begin{parts}\n    \\item \n    \\begin{subparts}\n        \\item Dice A is rolled once.\n\n        \\vgap\n\n        Write down the probability that it lands on the number 6.\n\n        \\AnswerLine\n        \\Marks{1}\n\n        \\item Dice A is rolled 150 times.\n\n        \\vgap\n\n        Find the number of times it is expected to land on the number 6.\n\n        \\AnswerLine\n        \\Marks{1}\n    \\end{subparts}\n\n    \\item Dice A and Dice B are each rolled once.\n\n    \\begin{subparts}\n        \\item Find the probability that the two numbers they land on have a total of 6.\n\n        \\AnswerLine\n        \\Marks{3}\n\n        \\item Find the probability that when the two numbers they land on have a total of 6, both numbers are 3.\n\n        \\AnswerLine\n        \\Marks{2}\n    \\end{subparts}\n\n    \\item Dice B is rolled $n$ times.\n\n    The probability that on the $n$th roll it first lands on a number 3 is $\\frac{32}{729}$.\n\n    \\vgap\n\n    Find the value of $n$.\n\n    \\AnswerLine[$n=$]\n    \\Marks{2}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper42/Q08/Q08-Dice.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper42/Q08/Q08.png"
+    ]
+  },
+  {
+    "id": "0580-2023OctNov-Paper42-Q09",
+    "paper": "2023OctNov-Paper42",
+    "qnum": 9,
+    "marks": 8,
+    "topics": [
+      "Algebra and graphs",
+      "Coordinate geometry"
+    ],
+    "s": "2.12",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Functions notation",
+    "qtype": "differentiation, finding maximum points, finding gradient of a curve",
+    "g": "graph",
+    "src": "0580/42/O/N/23 Q09",
+    "year": 2023,
+    "session": "OctNov",
+    "tex": "\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\nThe diagram shows a sketch of the graph of $y = 4x^3 - x^4$.\n\\newline\n\nThe graph crosses the $x$-axis at the origin $O$ and at the point $A$.\n\\newline\n\nThe point $B$ is a maximum point.\n\\newline\n\n(a) Differentiate $4x^3 - x^4$.\n\\newline\n\n    \n\n(b) Find the coordinates of $B$.\n\\newline\n\n     ( , )\n\n(c) Find the gradient of the graph at the point $A$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Differentiate $4x^3 - x^4$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the coordinates of $B$.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          }
+        ],
+        "answer": {
+          "type": "coordinate",
+          "fields": 2,
+          "_rawAnswer": "\\hfill (\\AnswerLineShort[][] , \\AnswerLineShort[][])"
+        }
+      },
+      {
+        "label": "(c)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the gradient of the graph at the point $A$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "sketch",
+    "stem": [
+      {
+        "type": "table",
+        "content": "\\begin{InsertScreenShot}\n    \\relinput{Figures/Q09-Graph.tex}\n\\end{InsertScreenShot}"
+      },
+      {
+        "type": "text",
+        "content": "The diagram shows a sketch of the graph of $y = 4x^3 - x^4$.\n\\newline\n\nThe graph crosses the $x$-axis at the origin $O$ and at the point $A$.\n\\newline\n\nThe point $B$ is a maximum point.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper42/Q09/Q09.png"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper42/Q09/Q09-Graph.png"
+      }
+    ],
+    "_rawBody": "\\begin{InsertScreenShot}\n    \\relinput{Figures/Q09-Graph.tex}\n\\end{InsertScreenShot}\nThe diagram shows a sketch of the graph of $y = 4x^3 - x^4$.\n\nThe graph crosses the $x$-axis at the origin $O$ and at the point $A$.\n\nThe point $B$ is a maximum point.\n\n\\begin{parts}\n    \\item Differentiate $4x^3 - x^4$.\n\n    \\AnswerLine\n    \\Marks{2}\n\n    \\item Find the coordinates of $B$.\n\n    \\vgap\n\n    \\hfill (\\AnswerLineShort[][] , \\AnswerLineShort[][])\n\n    \\Marks{3}\n\n    \\item Find the gradient of the graph at the point $A$.\n\n    \\AnswerLine\n    \\Marks{3}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper42/Q09/Q09-Graph.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper42/Q09/Q09.png"
+    ]
+  },
+  {
+    "id": "0580-2023OctNov-Paper42-Q10",
+    "paper": "2023OctNov-Paper42",
+    "qnum": 10,
+    "marks": 7,
+    "topics": [
+      "Geometry",
+      "Mensuration",
+      "Trigonometry"
+    ],
+    "s": "4.7",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Nets and 3D shapes",
+    "qtype": "circle theorems",
+    "g": "mixed",
+    "src": "0580/42/O/N/23 Q10",
+    "year": 2023,
+    "session": "OctNov",
+    "tex": "(a) \\begin{InsertScreenShot}\n\n    \\end{InsertScreenShot}\n    $ABCDEF$ is a regular hexagon.\n\\newline\n\n    $DF$, $DA$ and $DB$ are diagonals.\n\\newline\n\n    Complete the following statements using three different triangles.\n\\newline\n\n    (b) Triangle $DEF$ is congruent to triangle ...\n\n(c) Triangle  is congruent to triangle \n\n    \\begin{InsertScreenShot}\n\n    \\end{InsertScreenShot}\n    $P$ and $Q$ are points on the circle with centre $O$.\n\\newline\n\n    $TP$ and $TQ$ are tangents to the circle from the point $T$.\n\\newline\n\n    Complete the following statements and reasons.\n\\newline\n\n    In triangles $OPT$ and $OQT$\n\n     because each is a radius of the circle\n\n    $OT$ is a common side\n\n    Angle $OPT =$ angle  $= 90^{\\circ}$ because ...\n\n    \n\n    Triangles $OPT$ and $OQT$ are congruent using the criterion ...\n\n    This proves that the tangents $TP$ and $TQ$ are ...",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper42/Q10/Q10a.png"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{InsertScreenShot}\n        \\relinput{Figures/Q10-Hexagon.tex}\n    \\end{InsertScreenShot}"
+          },
+          {
+            "type": "text",
+            "content": "$ABCDEF$ is a regular hexagon.\n\\newline\n    \n    $DF$, $DA$ and $DB$ are diagonals.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "text",
+            "content": "Complete the following statements using three different triangles.\n\\newline\n\n    \\begin{parts}"
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper42/Q10/Q10b.png"
+          },
+          {
+            "type": "text",
+            "content": "Triangle $DEF$ is congruent to triangle \\dotfill"
+          }
+        ]
+      },
+      {
+        "label": "(c)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "text",
+            "content": "Triangle \\AnswerLineShort[][] is congruent to triangle \\AnswerLineShort[][]"
+          }
+        ]
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "analyse",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper42/Q10/Q10-Hexagon.png"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper42/Q10/Q10-CircleTangent.png"
+      }
+    ],
+    "_v4_skip": true,
+    "_rawBody": "\\begin{parts}\n    \\item \n    \\begin{InsertScreenShot}\n        \\relinput{Figures/Q10-Hexagon.tex}\n    \\end{InsertScreenShot}\n    $ABCDEF$ is a regular hexagon.\n    \n    $DF$, $DA$ and $DB$ are diagonals.\n\n    \\vgap\n\n    Complete the following statements using three different triangles.\n\n    \\begin{parts}\n        \\item Triangle $DEF$ is congruent to triangle \\dotfill\n\n        \\item Triangle \\AnswerLineShort[][] is congruent to triangle \\AnswerLineShort[][]\n\n    \\end{parts}\n    \\Marks{2}\n\n    \\item \n    \\begin{InsertScreenShot}\n        \\relinput{Figures/Q10-CircleTangent.tex}\n    \\end{InsertScreenShot}\n    $P$ and $Q$ are points on the circle with centre $O$.\n\n    $TP$ and $TQ$ are tangents to the circle from the point $T$.\n\n    \\vgap\n\n    Complete the following statements and reasons.\n\n    \\vgap\n\n    In triangles $OPT$ and $OQT$\n\n    \\vgap\n\n    \\AnswerLineShort[$OP =$][] because each is a radius of the circle\n\n    $OT$ is a common side\n\n    Angle $OPT =$ angle \\AnswerLineShort[][] $= 90^{\\circ}$ because \\dotfill\n    \n    \\vgap\n\n    Triangles $OPT$ and $OQT$ are congruent using the criterion \\dotfill\n\n    \\vgap\n\n    This proves that the tangents $TP$ and $TQ$ are \\dotfill\n\n    \\Marks{5}\n\\end{parts}",
+    "_compactParts": true,
+    "_postParts": [
+      {
+        "type": "text",
+        "content": "\\Marks{2}\n\n    \\item"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{InsertScreenShot}\n        \\relinput{Figures/Q10-CircleTangent.tex}\n    \\end{InsertScreenShot}"
+      },
+      {
+        "type": "text",
+        "content": "$P$ and $Q$ are points on the circle with centre $O$.\n\n    $TP$ and $TQ$ are tangents to the circle from the point $T$."
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "Complete the following statements and reasons."
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "In triangles $OPT$ and $OQT$"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "\\AnswerLineShort[$OP =$][] because each is a radius of the circle\n\n    $OT$ is a common side\n\n    Angle $OPT =$ angle \\AnswerLineShort[][] $= 90^{\\circ}$ because \\dotfill"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "Triangles $OPT$ and $OQT$ are congruent using the criterion \\dotfill"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "This proves that the tangents $TP$ and $TQ$ are \\dotfill\n\n    \\Marks{5}\n\\end{parts}"
+      }
+    ],
+    "_compactItems": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper42/Q10/Q10-CircleTangent.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper42/Q10/Q10-Hexagon.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper42/Q10/Q10a.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper42/Q10/Q10b.png"
+    ]
+  },
+  {
+    "id": "0580-2023OctNov-Paper42-Q11",
+    "paper": "2023OctNov-Paper42",
+    "qnum": 11,
+    "marks": 14,
+    "topics": [
+      "Number",
+      "Algebra and graphs"
+    ],
+    "s": "2.13",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Functions",
+    "qtype": "function evaluation, inverse functions, composite functions, simplifying algebraic expressions, algebraic fractions, solving exponential equations",
+    "g": "function",
+    "src": "0580/42/O/N/23 Q11",
+    "year": 2023,
+    "session": "OctNov",
+    "tex": "\\[\nf(x) = 1 - 3x     g(x) = (x - 1)^2     h(x) = \\frac{3}{x}, x \\neq 0\n\\]\n\n(a) Find $g(3)$.\n\\newline\n\n    \n\n(b) Find $f(x - 2)$, giving your answer in its simplest form.\n\\newline\n\n    \n\n(c) Find $f^{-1}(x)$.\n\\newline\n\n    \n\n(d) $gf(x) - g(x)f(x) = 3x^3 + ax^2 + bx + c$\n\n    Find the value of each of $a$, $b$ and $c$.\n\\newline\n\n    \n\n(e) Find $h(x) - f(x)$, giving your answer as a single fraction in its simplest form.\n\\newline\n\n    \n\n(f) $h(x^n) = 3x^7$\n\n    Find the value of $n$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find $g(3)$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find $f(x - 2)$, giving your answer in its simplest form.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find $f^{-1}(x)$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$f^{-1}(x) =$"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 5,
+        "content": [
+          {
+            "type": "text",
+            "content": "$gf(x) - g(x)f(x) = 3x^3 + ax^2 + bx + c$"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "text",
+            "content": "Find the value of each of $a$, $b$ and $c$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "multiline",
+          "lines": 3,
+          "template": "$a=$ ____\\n$b=$ ____\\n$c=$ ____"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(e)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find $h(x) - f(x)$, giving your answer as a single fraction in its simplest form.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(f)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "$h(x^n) = 3x^7$"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "text",
+            "content": "Find the value of $n$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$n=$"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\[\nf(x) = 1 - 3x \\quad \\quad g(x) = (x - 1)^2 \\quad \\quad h(x) = \\frac{3}{x}, x \\neq 0\n\\]"
+      }
+    ],
+    "_rawBody": "\\[\nf(x) = 1 - 3x \\quad \\quad g(x) = (x - 1)^2 \\quad \\quad h(x) = \\frac{3}{x}, x \\neq 0\n\\]\n\n\\begin{parts}\n    \\item Find $g(3)$.\n\n    \\AnswerLine\n    \\Marks{1}\n\n    \\item Find $f(x - 2)$, giving your answer in its simplest form.\n\n    \\AnswerLine\n    \\Marks{2}\n\n    \\item Find $f^{-1}(x)$.\n\n    \\AnswerLine[$f^{-1}(x) =$]\n    \\Marks{2}\n\n    \\item $gf(x) - g(x)f(x) = 3x^3 + ax^2 + bx + c$\n\n    \\vgap\n\n    Find the value of each of $a$, $b$ and $c$.\n\n    \\AnswerLine[$a=$][]\n\n    \\vgap\n\n    \\AnswerLine[$b=$][]\n\n    \\vgap\n\n    \\AnswerLine[$c=$][]\n    \\Marks{5}\n\n    \\item Find $h(x) - f(x)$, giving your answer as a single fraction in its simplest form.\n\n    \\AnswerLine[][]\n    \\Marks{3}\n\n    \\item $h(x^n) = 3x^7$\n\n    \\vgap\n\n    Find the value of $n$.\n\n    \\AnswerLine[$n=$][]\n    \\Marks{1}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2023OctNov-Paper42-Q12",
+    "paper": "2023OctNov-Paper42",
+    "qnum": 12,
+    "marks": 11,
+    "topics": [
+      "Geometry",
+      "Mensuration",
+      "Transformations and vectors"
+    ],
+    "s": "4.2",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Polygons",
+    "qtype": "geometrical constructions",
+    "g": "mixed",
+    "src": "0580/42/O/N/23 Q12",
+    "year": 2023,
+    "session": "OctNov",
+    "tex": "\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n$O$ is the origin $(0, 0)$, $A$ is the point $(8, 1)$ and $B$ is the point $(2, 5)$.\n\\newline\n\n(a) Write as column vectors.\n\\newline\n\n    (i) (b) $\\overrightarrow{OB}$\n\n        \n\n(c) $\\overrightarrow{AB}$\n\n        \n\n(d) Find the equation of the line $AB$.\n\\newline\n\n    Give your answer in the form $y = mx + c$.\n\\newline\n\n    \n\n(e) Find the equation of the perpendicular bisector of $AB$.\n\\newline\n\n    Give your answer in the form $y = mx + c$.\n\\newline\n\n    \n\n(f) The line $AB$ meets the $y$-axis at $P$.\n\\newline\n\n    The perpendicular bisector of $AB$ meets the $y$-axis at $Q$.\n\\newline\n\n    Find the length of $PQ$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Write as column vectors.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "$\\overrightarrow{OB}$"
+              }
+            ],
+            "answer": {
+              "type": "vector",
+              "fields": 2,
+              "prefix": "$\\overrightarrow{OB} = \\begin{pmatrix} \\\\ \\end{pmatrix}$"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "$\\overrightarrow{AB}$"
+              }
+            ],
+            "answer": {
+              "type": "vector",
+              "fields": 2,
+              "prefix": "$\\overrightarrow{AB} = \\begin{pmatrix} \\\\ \\end{pmatrix}$"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the equation of the line $AB$.\n\\newline\n\n    Give your answer in the form $y = mx + c$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$y=$"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the equation of the perpendicular bisector of $AB$.\n\\newline\n\n    Give your answer in the form $y = mx + c$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$y=$"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "The line $AB$ meets the $y$-axis at $P$.\n\\newline\n\n    The perpendicular bisector of $AB$ meets the $y$-axis at $Q$.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "text",
+            "content": "Find the length of $PQ$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "table",
+        "content": "\\begin{InsertScreenShot}\n    \\relinput{Figures/Q12-Graph.tex}\n\\end{InsertScreenShot}"
+      },
+      {
+        "type": "text",
+        "content": "$O$ is the origin $(0, 0)$, $A$ is the point $(8, 1)$ and $B$ is the point $(2, 5)$.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper42/Q12/Q12.png"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper42/Q12/Q12-Graph.png"
+      }
+    ],
+    "_rawBody": "\\begin{InsertScreenShot}\n    \\relinput{Figures/Q12-Graph.tex}\n\\end{InsertScreenShot}\n$O$ is the origin $(0, 0)$, $A$ is the point $(8, 1)$ and $B$ is the point $(2, 5)$.\n\n\\begin{parts}\n    \\item Write as column vectors.\n\n    \\begin{subparts}\n        \\item $\\overrightarrow{OB}$\n\n        \\AnswerLine[$\\overrightarrow{OB} = \\begin{pmatrix} \\\\ \\end{pmatrix}$]\n        \\Marks{1}\n\n        \\item $\\overrightarrow{AB}$\n\n        \\AnswerLine[$\\overrightarrow{AB} = \\begin{pmatrix} \\\\ \\end{pmatrix}$]\n        \\Marks{1}\n    \\end{subparts}\n\n    \\item Find the equation of the line $AB$.\n\n    Give your answer in the form $y = mx + c$.\n\n    \\AnswerLine[$y=$][]\n    \\Marks{3}\n\n    \\item Find the equation of the perpendicular bisector of $AB$.\n\n    Give your answer in the form $y = mx + c$.\n\n    \\AnswerLine[$y=$]\n    \\Marks{4}\n\n    \\item The line $AB$ meets the $y$-axis at $P$.\n\n    The perpendicular bisector of $AB$ meets the $y$-axis at $Q$.\n\n    \\vgap\n\n    Find the length of $PQ$.\n\n    \\AnswerLine\n    \\Marks{2}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper42/Q12/Q12-Graph.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023OctNov/Paper42/Q12/Q12.png"
+    ]
+  }
+]

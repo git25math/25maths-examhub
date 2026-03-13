@@ -1,0 +1,1033 @@
+[
+  {
+    "id": "0580-2021MayJune-Paper21-Q01",
+    "paper": "2021MayJune-Paper21",
+    "qnum": 1,
+    "marks": 3,
+    "topics": [
+      "Geometry",
+      "Transformations and vectors"
+    ],
+    "s": "4.5",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Similarity and congruence",
+    "qtype": "symmetry",
+    "g": "mixed",
+    "src": "0580/21/M/J/21 Q01",
+    "year": 2021,
+    "session": "MayJune",
+    "tex": "(a) Write down the order of rotational symmetry of this diagram.\n\\newline\n\n(b) On the diagram, draw all the lines of symmetry.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down the order of rotational symmetry of this diagram.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "On the diagram, draw all the lines of symmetry.\n\\newline\n"
+          }
+        ],
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.5]\n% Cross shape made of squares\n\\fill[gray!30] (-1,1) rectangle (1,3);\n\\fill[gray!30] (-3,-1) rectangle (3,1);\n\\fill[gray!30] (-1,-3) rectangle (1,-1);\n\\draw (-1,1) rectangle (1,3);\n\\draw (-3,-1) rectangle (-1,1);\n\\draw (-1,-1) rectangle (1,1);\n\\draw (1,-1) rectangle (3,1);\n\\draw (-1,-3) rectangle (1,-1);\n\\end{tikzpicture}\n\\end{center}"
+      }
+    ],
+    "_rawBody": "\\begin{center}\n\\begin{tikzpicture}[scale=0.5]\n% Cross shape made of squares\n\\fill[gray!30] (-1,1) rectangle (1,3);\n\\fill[gray!30] (-3,-1) rectangle (3,1);\n\\fill[gray!30] (-1,-3) rectangle (1,-1);\n\\draw (-1,1) rectangle (1,3);\n\\draw (-3,-1) rectangle (-1,1);\n\\draw (-1,-1) rectangle (1,1);\n\\draw (1,-1) rectangle (3,1);\n\\draw (-1,-3) rectangle (1,-1);\n\\end{tikzpicture}\n\\end{center}\n\n\\begin{parts}\n\\item Write down the order of rotational symmetry of this diagram.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item On the diagram, draw all the lines of symmetry.\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2021MayJune-Paper21-Q02",
+    "paper": "2021MayJune-Paper21",
+    "qnum": 2,
+    "marks": 1,
+    "topics": [
+      "Probability"
+    ],
+    "s": "8.1",
+    "d": 2,
+    "cat": "probability",
+    "topic": "Basic probability",
+    "qtype": "basic probability",
+    "g": "mixed",
+    "src": "0580/21/M/J/21 Q02",
+    "year": 2021,
+    "session": "MayJune",
+    "tex": "The probability that a train is late is 0.15.\n\\newline\n\nWrite down the probability that the train is not late.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "write",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The probability that a train is late is 0.15.\n\\newline\n\nWrite down the probability that the train is not late.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "The probability that a train is late is 0.15\\,.\n\nWrite down the probability that the train is not late.\n\n\\AnswerLine[][]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2021MayJune-Paper21-Q03",
+    "paper": "2021MayJune-Paper21",
+    "qnum": 3,
+    "marks": 3,
+    "topics": [
+      "Statistics"
+    ],
+    "s": "9.4",
+    "d": 2,
+    "cat": "statistics",
+    "topic": "Charts and graphs",
+    "qtype": "statistical charts",
+    "g": "mixed",
+    "src": "0580/21/M/J/21 Q03",
+    "year": 2021,
+    "session": "MayJune",
+    "tex": "The stem-and-leaf diagram shows the number of hours that each of 16 students studied last week.\n\\newline\n\n\\begin{tabular}{r|l l l l l}\n1 & 2 & 5 & 6 & 8 & \\\\\n2 & 0 & 1 & 1 & 7 & 9 \\\\\n3 & 2 & 3 & 4 & 5 & \\\\\n4 & 4 & 5 & 7 & & \\\\\n\\end{tabular}\n\nKey: 1$\\,|\\,$2 represents 12 hours\nFind\n\n(a) the median,\n\n(b) the mode,\n\n(c) the range.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "the median,"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "h"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "the mode,"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "h"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "the range.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "h"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The stem-and-leaf diagram shows the number of hours that each of 16 students studied last week.\n\\newline\n\n\\begin{center}"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{tabular}{r|l l l l l}\n1 & 2 & 5 & 6 & 8 & \\\\\n2 & 0 & 1 & 1 & 7 & 9 \\\\\n3 & 2 & 3 & 4 & 5 & \\\\\n4 & 4 & 5 & 7 & & \\\\\n\\end{tabular}"
+      },
+      {
+        "type": "text",
+        "content": "Key: 1$\\,|\\,$2 represents 12 hours\n\\end{center}\n\nFind"
+      }
+    ],
+    "_rawBody": "The stem-and-leaf diagram shows the number of hours that each of 16 students studied last week.\n\n\\begin{center}\n\\begin{tabular}{r|l l l l l}\n1 & 2 & 5 & 6 & 8 & \\\\\n2 & 0 & 1 & 1 & 7 & 9 \\\\\n3 & 2 & 3 & 4 & 5 & \\\\\n4 & 4 & 5 & 7 & & \\\\\n\\end{tabular}\n\nKey: 1\\,|\\,2 represents 12 hours\n\\end{center}\n\nFind\n\n\\begin{parts}\n\\item the median,\n\n\\AnswerLine[][h]\n\\Marks{1}\n\n\\item the mode,\n\n\\AnswerLine[][h]\n\\Marks{1}\n\n\\item the range.\n\n\\AnswerLine[][h]\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2021MayJune-Paper21-Q04",
+    "paper": "2021MayJune-Paper21",
+    "qnum": 4,
+    "marks": 3,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.6",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/21/M/J/21 Q04",
+    "year": 2021,
+    "session": "MayJune",
+    "tex": "The diagram shows two parallel lines intersected by two straight lines.\n\\newline\n\nFind the values of $a$, $b$ and $c$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n% Two parallel lines\n\\draw[->] (-2,2) -- (4,2);\n\\draw[->] (-2,0) -- (4,0);\n% Two transversals\n\\draw (-1,3) -- (1,-1);\n\\draw (1,3) -- (3,-1);\n% Angles at top\n\\node at (0.3,2.3) {$59°$};\n\\node at (0.9,2.3) {$37°$};\n\\node at (0.6,1.6) {$a°$};\n% Angles at bottom\n\\node at (2.4,0.3) {$c°$};\n\\node at (-0.3,-0.4) {$b°$};\n% NOT TO SCALE\n\\node at (5,1) {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nThe diagram shows two parallel lines intersected by two straight lines.\n\\newline\n\nFind the values of $a$, $b$ and $c$.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "multiline",
+      "lines": 3,
+      "template": "$a = $ ____\\n$b = $ ____\\n$c = $ ____",
+      "lineSep": "blank"
+    },
+    "_rawBody": "\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n% Two parallel lines\n\\draw[->] (-2,2) -- (4,2);\n\\draw[->] (-2,0) -- (4,0);\n% Two transversals\n\\draw (-1,3) -- (1,-1);\n\\draw (1,3) -- (3,-1);\n% Angles at top\n\\node at (0.3,2.3) {$59°$};\n\\node at (0.9,2.3) {$37°$};\n\\node at (0.6,1.6) {$a°$};\n% Angles at bottom\n\\node at (2.4,0.3) {$c°$};\n\\node at (-0.3,-0.4) {$b°$};\n% NOT TO SCALE\n\\node at (5,1) {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nThe diagram shows two parallel lines intersected by two straight lines.\n\nFind the values of $a$, $b$ and $c$.\n\n\\AnswerLine[$a = $][]\n\n\\AnswerLine[$b = $][]\n\n\\AnswerLine[$c = $][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2021MayJune-Paper21-Q05",
+    "paper": "2021MayJune-Paper21",
+    "qnum": 5,
+    "marks": 2,
+    "topics": [
+      "Transformations and vectors"
+    ],
+    "s": "7.1",
+    "d": 2,
+    "cat": "vectors",
+    "topic": "Translation",
+    "qtype": "transformations",
+    "g": "mixed",
+    "src": "0580/21/M/J/21 Q05",
+    "year": 2021,
+    "session": "MayJune",
+    "tex": "Work out.\n\\newline\n\n(a) $\\begin{pmatrix} 6 \\\\ -5 \\end{pmatrix} + \\begin{pmatrix} 8 \\\\ -1 \\end{pmatrix}$\n\n\\[\\begin{pmatrix}  \\\\  \\end{pmatrix}\\]\n\n(b) $3\\begin{pmatrix} -4 \\\\ 7 \\end{pmatrix}$\n\n\\[\\begin{pmatrix}  \\\\  \\end{pmatrix}\\]",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "$\\begin{pmatrix} 6 \\\\ -5 \\end{pmatrix} + \\begin{pmatrix} 8 \\\\ -1 \\end{pmatrix}$\n\n\\[\\begin{pmatrix} \\phantom{00} \\\\ \\phantom{00} \\end{pmatrix}\\]"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "$3\\begin{pmatrix} -4 \\\\ 7 \\end{pmatrix}$\n\n\\[\\begin{pmatrix} \\phantom{00} \\\\ \\phantom{00} \\end{pmatrix}\\]"
+          }
+        ],
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Work out.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "Work out.\n\n\\begin{parts}\n\\item $\\begin{pmatrix} 6 \\\\ -5 \\end{pmatrix} + \\begin{pmatrix} 8 \\\\ -1 \\end{pmatrix}$\n\n\\[\\begin{pmatrix} \\phantom{00} \\\\ \\phantom{00} \\end{pmatrix}\\]\n\\Marks{1}\n\n\\item $3\\begin{pmatrix} -4 \\\\ 7 \\end{pmatrix}$\n\n\\[\\begin{pmatrix} \\phantom{00} \\\\ \\phantom{00} \\end{pmatrix}\\]\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2021MayJune-Paper21-Q06",
+    "paper": "2021MayJune-Paper21",
+    "qnum": 6,
+    "marks": 4,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.7",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Sequences",
+    "qtype": "sequences (quadratic and linear)",
+    "g": "quadratic",
+    "src": "0580/21/M/J/21 Q06",
+    "year": 2021,
+    "session": "MayJune",
+    "tex": "(a) The $n$th term of a sequence is $n^2 + 3n$.\n\\newline\n\nFind the first three terms of this sequence.\n\\newline\n\n{...} , ]\n\n(b) These are the first five terms of a different sequence.\n\\newline\n\\[25 \\qquad 18 \\qquad 11 \\qquad 4 \\qquad -3\\]\n\nFind the $n$th term of this sequence.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "The $n$th term of a sequence is $n^2 + 3n$.\n\\newline\n\nFind the first three terms of this sequence.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": " , \\makebox[1cm]{\\dotfill} , \\makebox[1cm]{\\dotfill}"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "These are the first five terms of a different sequence.\n\\newline\n\\[25 \\qquad 18 \\qquad 11 \\qquad 4 \\qquad -3\\]\n\nFind the $n$th term of this sequence.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item The $n$th term of a sequence is $n^2 + 3n$.\n\nFind the first three terms of this sequence.\n\n\\AnswerLine[][ , \\makebox[1cm]{\\dotfill} , \\makebox[1cm]{\\dotfill}]\n\\Marks{2}\n\n\\item These are the first five terms of a different sequence.\n\\[25 \\qquad 18 \\qquad 11 \\qquad 4 \\qquad -3\\]\n\nFind the $n$th term of this sequence.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_compactBegin": true
+  },
+  {
+    "id": "0580-2021MayJune-Paper21-Q07",
+    "paper": "2021MayJune-Paper21",
+    "qnum": 7,
+    "marks": 3,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.5",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Equations",
+    "qtype": "simultaneous linear equations",
+    "g": "simul-linear",
+    "src": "0580/21/M/J/21 Q07",
+    "year": 2021,
+    "session": "MayJune",
+    "tex": "Solve the simultaneous equations.\n\\newline\n\\\\\nYou must show all your working.\n\\newline\n\\begin{align*}\n2x + y &= 3 \\\\\nx - 5y &= 40\n\\end{align*}",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "solve",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Solve the simultaneous equations.\n\\newline\n\\\\\nYou must show all your working.\n\\newline\n\\begin{align*}\n2x + y &= 3 \\\\\nx - 5y &= 40\n\\end{align*}"
+      }
+    ],
+    "answer": {
+      "type": "multiline",
+      "lines": 2,
+      "template": "$x = $ ____\\n$y = $ ____",
+      "lineSep": "blank",
+      "space": {
+        "type": "working",
+        "height": "6cm",
+        "cmd": "WorkingSpace"
+      }
+    },
+    "_rawBody": "Solve the simultaneous equations.\\\\\nYou must show all your working.\n\\begin{align*}\n2x + y &= 3 \\\\\nx - 5y &= 40\n\\end{align*}\n\n\\WorkingSpace{6cm}\n\n\\AnswerLine[$x = $][]\n\n\\AnswerLine[$y = $][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2021MayJune-Paper21-Q08",
+    "paper": "2021MayJune-Paper21",
+    "qnum": 8,
+    "marks": 3,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.6",
+    "d": 2,
+    "cat": "number",
+    "topic": "Standard form",
+    "qtype": "fraction subtraction",
+    "g": "mixed",
+    "src": "0580/21/M/J/21 Q08",
+    "year": 2021,
+    "session": "MayJune",
+    "tex": "**Without using a calculator**, work out $1\\frac{3}{8} - \\frac{5}{6}$.\n\\newline\n\nYou must show all your working and give your answer as a fraction in its simplest form.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\textbf{Without using a calculator}, work out $1\\frac{3}{8} - \\frac{5}{6}$.\n\\newline\n\nYou must show all your working and give your answer as a fraction in its simplest form.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "space": {
+        "type": "working",
+        "height": "5cm",
+        "cmd": "WorkingSpace"
+      }
+    },
+    "_rawBody": "\\textbf{Without using a calculator}, work out $1\\frac{3}{8} - \\frac{5}{6}$.\n\nYou must show all your working and give your answer as a fraction in its simplest form.\n\n\\WorkingSpace{5cm}\n\n\\AnswerLine[][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2021MayJune-Paper21-Q09",
+    "paper": "2021MayJune-Paper21",
+    "qnum": 9,
+    "marks": 5,
+    "topics": [
+      "Coordinate geometry"
+    ],
+    "s": "3.4",
+    "d": 2,
+    "cat": "coord",
+    "topic": "Equation of a line",
+    "qtype": "length and midpoint",
+    "g": "mixed",
+    "src": "0580/21/M/J/21 Q09",
+    "year": 2021,
+    "session": "MayJune",
+    "tex": "$A$ is the point $(5, -5)$ and $B$ is the point $(9, 3)$.\n\\newline\n\n(a) Find the coordinates of the midpoint of $AB$.\n\\newline\n\n{...} )]\n\n(b) Find the length of $AB$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the coordinates of the midpoint of $AB$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "( ",
+          "suffix": " , \\makebox[1.5cm]{\\dotfill} )"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the length of $AB$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "$A$ is the point $(5, -5)$ and $B$ is the point $(9, 3)$.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "$A$ is the point $(5, -5)$ and $B$ is the point $(9, 3)$.\n\n\\begin{parts}\n\\item Find the coordinates of the midpoint of $AB$.\n\n\\AnswerLine[( ][ , \\makebox[1.5cm]{\\dotfill} )]\n\\Marks{2}\n\n\\item Find the length of $AB$.\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2021MayJune-Paper21-Q10",
+    "paper": "2021MayJune-Paper21",
+    "qnum": 10,
+    "marks": 8,
+    "topics": [
+      "Geometry",
+      "Transformations and vectors"
+    ],
+    "s": "4.6",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/21/M/J/21 Q10",
+    "year": 2021,
+    "session": "MayJune",
+    "tex": "(a) Describe fully the **single** transformation that maps\n\n(i)  triangle $A$ onto triangle $B$,\n\n triangle $A$ onto triangle $C$.\n\\newline\n\n(b) Draw the image of triangle $A$ after a translation by the vector $\\begin{pmatrix} 2 \\\\ 10 \\end{pmatrix}$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Describe fully the \\textbf{single} transformation that maps"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "triangle $A$ onto triangle $B$,"
+              }
+            ],
+            "answer": {
+              "type": "none",
+              "space": {
+                "type": "drawing",
+                "height": "2cm",
+                "cmd": "Answerspace"
+              }
+            },
+            "marks": 3,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "triangle $A$ onto triangle $C$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "none",
+              "space": {
+                "type": "drawing",
+                "height": "2cm",
+                "cmd": "Answerspace"
+              }
+            },
+            "marks": 3,
+            "_compactMarks": true
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Draw the image of triangle $A$ after a translation by the vector $\\begin{pmatrix} 2 \\\\ 10 \\end{pmatrix}$.\n\\newline\n"
+          }
+        ],
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "describe",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.4]\n\\draw[help lines, very thin, gray] (-8,-10) grid (10,10);\n\\draw[->] (-8,0) -- (10,0) node[right] {$x$};\n\\draw[->] (0,-10) -- (0,10) node[above] {$y$};\n\\foreach \\x in {-8,-6,-4,-2,2,4,6,8,10} \\draw (\\x,0.2) -- (\\x,-0.2) node[below] {\\tiny \\x};\n\\foreach \\y in {-10,-8,-6,-4,-2,2,4,6,8,10} \\draw (0.2,\\y) -- (-0.2,\\y) node[left] {\\tiny \\y};\n% Triangle A\n\\draw[thick] (-6,-6) -- (-6,-9) -- (-3,-9) -- cycle;\n\\node at (-5,-7.5) {$A$};\n% Triangle B\n\\draw[thick] (6,-4) -- (6,-7) -- (9,-4) -- cycle;\n\\node at (7,-5) {$B$};\n% Triangle C\n\\draw[thick] (1,1) -- (1,4) -- (4,1) -- cycle;\n\\node at (2,2) {$C$};\n\\end{tikzpicture}\n\\end{center}"
+      }
+    ],
+    "_rawBody": "\\begin{center}\n\\begin{tikzpicture}[scale=0.4]\n\\draw[help lines, very thin, gray] (-8,-10) grid (10,10);\n\\draw[->] (-8,0) -- (10,0) node[right] {$x$};\n\\draw[->] (0,-10) -- (0,10) node[above] {$y$};\n\\foreach \\x in {-8,-6,-4,-2,2,4,6,8,10} \\draw (\\x,0.2) -- (\\x,-0.2) node[below] {\\tiny \\x};\n\\foreach \\y in {-10,-8,-6,-4,-2,2,4,6,8,10} \\draw (0.2,\\y) -- (-0.2,\\y) node[left] {\\tiny \\y};\n% Triangle A\n\\draw[thick] (-6,-6) -- (-6,-9) -- (-3,-9) -- cycle;\n\\node at (-5,-7.5) {$A$};\n% Triangle B\n\\draw[thick] (6,-4) -- (6,-7) -- (9,-4) -- cycle;\n\\node at (7,-5) {$B$};\n% Triangle C\n\\draw[thick] (1,1) -- (1,4) -- (4,1) -- cycle;\n\\node at (2,2) {$C$};\n\\end{tikzpicture}\n\\end{center}\n\n\\begin{parts}\n\\item Describe fully the \\textbf{single} transformation that maps\n\n\\begin{subparts}\n\\subpart triangle $A$ onto triangle $B$,\n\n\\Answerspace[2cm]\n\\Marks{3}\n\n\\subpart triangle $A$ onto triangle $C$.\n\n\\Answerspace[2cm]\n\\Marks{3}\n\n\\end{subparts}\n\n\\item Draw the image of triangle $A$ after a translation by the vector $\\begin{pmatrix} 2 \\\\ 10 \\end{pmatrix}$.\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2021MayJune-Paper21-Q11",
+    "paper": "2021MayJune-Paper21",
+    "qnum": 11,
+    "marks": 5,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.4",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Algebraic fractions",
+    "qtype": "index laws and exponential equations",
+    "g": "indices",
+    "src": "0580/21/M/J/21 Q11",
+    "year": 2021,
+    "session": "MayJune",
+    "tex": "(a) Simplify fully.\n\\newline\n\\[(4ab^5)^4\\]\n\n(b) $2p^{\\frac{1}{3}} = 6$\n\nFind the value of $p$.\n\\newline\n\n(c) $81^2 \\div 3^t = 9$\n\nFind the value of $t$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Simplify fully.\n\\newline\n\\[(4ab^5)^4\\]"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "$2p^{\\frac{1}{3}} = 6$\n\nFind the value of $p$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$p = $"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "$81^2 \\div 3^t = 9$\n\nFind the value of $t$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$t = $"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Simplify fully.\n\\[(4ab^5)^4\\]\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item $2p^{\\frac{1}{3}} = 6$\n\nFind the value of $p$.\n\n\\AnswerLine[$p = $][]\n\\Marks{1}\n\n\\item $81^2 \\div 3^t = 9$\n\nFind the value of $t$.\n\n\\AnswerLine[$t = $][]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_compactBegin": true
+  },
+  {
+    "id": "0580-2021MayJune-Paper21-Q12",
+    "paper": "2021MayJune-Paper21",
+    "qnum": 12,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.17",
+    "d": 2,
+    "cat": "number",
+    "topic": "Bounds and calculations",
+    "qtype": "exponential decay calculation",
+    "g": "mixed",
+    "src": "0580/21/M/J/21 Q12",
+    "year": 2021,
+    "session": "MayJune",
+    "tex": "The profit a company makes decreases exponentially at a rate of 0.9\\% per year.\n\\newline\n\\\\\nIn 2014, the profit was \\$9500.\n\\newline\n\nCalculate the profit in 2019.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The profit a company makes decreases exponentially at a rate of 0.9\\% per year.\n\\newline\n\\\\\nIn 2014, the profit was \\$9500.\n\\newline\n\nCalculate the profit in 2019.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "\\$"
+    },
+    "_rawBody": "The profit a company makes decreases exponentially at a rate of 0.9\\% per year.\\\\\nIn 2014, the profit was \\$9500.\n\nCalculate the profit in 2019.\n\n\\AnswerLine[\\$][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2021MayJune-Paper21-Q13",
+    "paper": "2021MayJune-Paper21",
+    "qnum": 13,
+    "marks": 2,
+    "topics": [
+      "Mensuration"
+    ],
+    "s": "5.2",
+    "d": 2,
+    "cat": "mensuration",
+    "topic": "Circles",
+    "qtype": "area and perimeter",
+    "g": "mixed",
+    "src": "0580/21/M/J/21 Q13",
+    "year": 2021,
+    "session": "MayJune",
+    "tex": "On a map, a lake has an area of $32\\,\\text{cm}^2$.\n\\newline\n\\\\\nThe scale of the map is $1 : 24\\,000$.\n\\newline\n\nCalculate the actual area of the lake.\n\\newline\n\\\\\nGive your answer in km$^2$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "On a map, a lake has an area of $32\\,\\text{cm}^2$.\n\\newline\n\\\\\nThe scale of the map is $1 : 24\\,000$.\n\\newline\n\nCalculate the actual area of the lake.\n\\newline\n\\\\\nGive your answer in km$^2$.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "km$^2$"
+    },
+    "_rawBody": "On a map, a lake has an area of 32\\,cm$^2$.\\\\\nThe scale of the map is $1 : 24\\,000$.\n\nCalculate the actual area of the lake.\\\\\nGive your answer in km$^2$.\n\n\\AnswerLine[][km$^2$]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2021MayJune-Paper21-Q14",
+    "paper": "2021MayJune-Paper21",
+    "qnum": 14,
+    "marks": 3,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.8",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Proportion",
+    "qtype": "direct proportion",
+    "g": "proportion",
+    "src": "0580/21/M/J/21 Q14",
+    "year": 2021,
+    "session": "MayJune",
+    "tex": "$y$ is directly proportional to the square root of $(x - 3)$.\n\\newline\n\\\\\nWhen $x = 28$, $y = 20$.\n\\newline\n\nFind $y$ when $x = 39$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "$y$ is directly proportional to the square root of $(x - 3)$.\n\\newline\n\\\\\nWhen $x = 28$, $y = 20$.\n\\newline\n\nFind $y$ when $x = 39$.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "$y = $",
+      "space": {
+        "type": "working",
+        "height": "4cm",
+        "cmd": "WorkingSpace"
+      }
+    },
+    "_rawBody": "$y$ is directly proportional to the square root of $(x - 3)$.\\\\\nWhen $x = 28$, $y = 20$.\n\nFind $y$ when $x = 39$.\n\n\\WorkingSpace{4cm}\n\n\\AnswerLine[$y = $][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2021MayJune-Paper21-Q15",
+    "paper": "2021MayJune-Paper21",
+    "qnum": 15,
+    "marks": 4,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.5",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Equations",
+    "qtype": "changing subject of formula",
+    "g": "mixed",
+    "src": "0580/21/M/J/21 Q15",
+    "year": 2021,
+    "session": "MayJune",
+    "tex": "Make $h$ the subject of the formula $2mh = g(1 - h)$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "rearrange",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Make $h$ the subject of the formula $2mh = g(1 - h)$.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "$h = $",
+      "space": {
+        "type": "working",
+        "height": "5cm",
+        "cmd": "WorkingSpace"
+      }
+    },
+    "_rawBody": "Make $h$ the subject of the formula $2mh = g(1 - h)$.\n\n\\WorkingSpace{5cm}\n\n\\AnswerLine[$h = $][]\n\\Marks{4}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2021MayJune-Paper21-Q16",
+    "paper": "2021MayJune-Paper21",
+    "qnum": 16,
+    "marks": 7,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry"
+    ],
+    "s": "3.7",
+    "d": 2,
+    "cat": "coord",
+    "topic": "Coordinate geometry extended",
+    "qtype": "perpendicular lines",
+    "g": "mixed",
+    "src": "0580/21/M/J/21 Q16",
+    "year": 2021,
+    "session": "MayJune",
+    "tex": "(a) Find the gradient of line $l$.\n\\newline\n\n(b) Find the equation of line $l$ in the form $y = mx + c$.\n\\newline\n\n(c) Find the equation of the line that is perpendicular to line $l$ and passes through the point $(12, -7)$.\n\\newline\n\\\\\nGive your answer in the form $y = mx + c$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the gradient of line $l$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the equation of line $l$ in the form $y = mx + c$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$y = $"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the equation of the line that is perpendicular to line $l$ and passes through the point $(12, -7)$.\n\\newline\n\\\\\nGive your answer in the form $y = mx + c$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$y = $"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.6]\n\\draw[help lines, very thin, gray] (-3,-3) grid (6,5);\n\\draw[->] (-3,0) -- (6,0) node[right] {$x$};\n\\draw[->] (0,-3) -- (0,5) node[above] {$y$};\n\\foreach \\x in {-3,-2,-1,1,2,3,4,5,6} \\draw (\\x,0.1) -- (\\x,-0.1) node[below] {\\tiny \\x};\n\\foreach \\y in {-3,-2,-1,1,2,3,4,5} \\draw (0.1,\\y) -- (-0.1,\\y) node[left] {\\tiny \\y};\n% Line l\n\\draw[thick] (-2,4) -- (5,-3);\n\\node at (-1.5,3.5) {$l$};\n\\end{tikzpicture}\n\\end{center}"
+      }
+    ],
+    "_rawBody": "\\begin{center}\n\\begin{tikzpicture}[scale=0.6]\n\\draw[help lines, very thin, gray] (-3,-3) grid (6,5);\n\\draw[->] (-3,0) -- (6,0) node[right] {$x$};\n\\draw[->] (0,-3) -- (0,5) node[above] {$y$};\n\\foreach \\x in {-3,-2,-1,1,2,3,4,5,6} \\draw (\\x,0.1) -- (\\x,-0.1) node[below] {\\tiny \\x};\n\\foreach \\y in {-3,-2,-1,1,2,3,4,5} \\draw (0.1,\\y) -- (-0.1,\\y) node[left] {\\tiny \\y};\n% Line l\n\\draw[thick] (-2,4) -- (5,-3);\n\\node at (-1.5,3.5) {$l$};\n\\end{tikzpicture}\n\\end{center}\n\n\\begin{parts}\n\\item Find the gradient of line $l$.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item Find the equation of line $l$ in the form $y = mx + c$.\n\n\\AnswerLine[$y = $][]\n\\Marks{2}\n\n\\item Find the equation of the line that is perpendicular to line $l$ and passes through the point $(12, -7)$.\\\\\nGive your answer in the form $y = mx + c$.\n\n\\AnswerLine[$y = $][]\n\\Marks{3}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2021MayJune-Paper21-Q17",
+    "paper": "2021MayJune-Paper21",
+    "qnum": 17,
+    "marks": 3,
+    "topics": [
+      "Probability"
+    ],
+    "s": "8.4",
+    "d": 2,
+    "cat": "probability",
+    "topic": "Conditional probability",
+    "qtype": "conditional probability",
+    "g": "mixed",
+    "src": "0580/21/M/J/21 Q17",
+    "year": 2021,
+    "session": "MayJune",
+    "tex": "A bag contains 3 blue buttons, 8 white buttons and 5 red buttons.\n\\newline\n\\\\\nTwo buttons are picked at random from the bag, without replacement.\n\\newline\n\nWork out the probability that the two buttons are either both red or both white.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "A bag contains 3 blue buttons, 8 white buttons and 5 red buttons.\n\\newline\n\\\\\nTwo buttons are picked at random from the bag, without replacement.\n\\newline\n\nWork out the probability that the two buttons are either both red or both white.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "space": {
+        "type": "working",
+        "height": "4cm",
+        "cmd": "WorkingSpace"
+      }
+    },
+    "_rawBody": "A bag contains 3 blue buttons, 8 white buttons and 5 red buttons.\\\\\nTwo buttons are picked at random from the bag, without replacement.\n\nWork out the probability that the two buttons are either both red or both white.\n\n\\WorkingSpace{4cm}\n\n\\AnswerLine[][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2021MayJune-Paper21-Q18",
+    "paper": "2021MayJune-Paper21",
+    "qnum": 18,
+    "marks": 2,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry"
+    ],
+    "s": "3.1",
+    "d": 2,
+    "cat": "coord",
+    "topic": "Coordinates",
+    "qtype": "coordinates reading/plotting",
+    "g": "graph",
+    "src": "0580/21/M/J/21 Q18",
+    "year": 2021,
+    "session": "MayJune",
+    "tex": "$S$ is a point on $PQ$ such that $PS : SQ = 4 : 5$.\n\\newline\n\nFind $\\overrightarrow{OS}$, in terms of $\\mathbf{a}$ and $\\mathbf{b}$, in its simplest form.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n\\coordinate (O) at (0,0);\n\\coordinate (P) at (1,2);\n\\coordinate (Q) at (3,0);\n\\coordinate (S) at (1.89,0.89);\n\\draw (O) -- (P) -- (Q) -- cycle;\n\\draw[->] (O) -- (0.5,1) node[midway, above left] {$\\mathbf{a}$};\n\\draw[->] (O) -- (1.5,0) node[midway, below] {$\\mathbf{b}$};\n\\draw (P) -- (S);\n\\fill (S) circle (1.5pt);\n\\node[above left] at (O) {$O$};\n\\node[above] at (P) {$P$};\n\\node[right] at (Q) {$Q$};\n\\node[above right] at (S) {$S$};\n\\node at (4,1) {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}\n\n$S$ is a point on $PQ$ such that $PS : SQ = 4 : 5$.\n\\newline\n\nFind $\\overrightarrow{OS}$, in terms of $\\mathbf{a}$ and $\\mathbf{b}$, in its simplest form.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "$\\overrightarrow{OS} = $"
+    },
+    "_rawBody": "\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n\\coordinate (O) at (0,0);\n\\coordinate (P) at (1,2);\n\\coordinate (Q) at (3,0);\n\\coordinate (S) at (1.89,0.89);\n\\draw (O) -- (P) -- (Q) -- cycle;\n\\draw[->] (O) -- (0.5,1) node[midway, above left] {$\\mathbf{a}$};\n\\draw[->] (O) -- (1.5,0) node[midway, below] {$\\mathbf{b}$};\n\\draw (P) -- (S);\n\\fill (S) circle (1.5pt);\n\\node[above left] at (O) {$O$};\n\\node[above] at (P) {$P$};\n\\node[right] at (Q) {$Q$};\n\\node[above right] at (S) {$S$};\n\\node at (4,1) {NOT TO SCALE};\n\\end{tikzpicture}\n\\end{center}\n\n$S$ is a point on $PQ$ such that $PS : SQ = 4 : 5$.\n\nFind $\\overrightarrow{OS}$, in terms of $\\mathbf{a}$ and $\\mathbf{b}$, in its simplest form.\n\n\\AnswerLine[$\\overrightarrow{OS} = $][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2021MayJune-Paper21-Q19",
+    "paper": "2021MayJune-Paper21",
+    "qnum": 19,
+    "marks": 4,
+    "topics": [
+      "Algebra and graphs",
+      "Trigonometry"
+    ],
+    "s": "2.11",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Differentiation",
+    "qtype": "trigonometric graph and equation",
+    "g": "graph",
+    "src": "0580/21/M/J/21 Q19",
+    "year": 2021,
+    "session": "MayJune",
+    "tex": "(a) Sketch the graph of $y = \\tan x$ for $0° \\leqslant x \\leqslant 360°$.\n\\newline\n\n(b) Solve the equation $5\\tan x = 1$ for $0° \\leqslant x \\leqslant 360°$.\n\\newline\n\n{...}]",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Sketch the graph of $y = \\tan x$ for $0° \\leqslant x \\leqslant 360°$.\n\\newline\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.02]\n\\draw[->] (0,0) -- (380,0) node[right] {$x$};\n\\draw[->] (0,-100) -- (0,100) node[above] {$y$};\n\\draw (90,-5) -- (90,5) node[below=5pt] {$90°$};\n\\draw (180,-5) -- (180,5) node[below=5pt] {$180°$};\n\\draw (270,-5) -- (270,5) node[below=5pt] {$270°$};\n\\draw (360,-5) -- (360,5) node[below=5pt] {$360°$};\n\\end{tikzpicture}\n\\end{center}"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Solve the equation $5\\tan x = 1$ for $0° \\leqslant x \\leqslant 360°$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x = $",
+          "suffix": " or $x = $ \\makebox[2cm]{\\dotfill}"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "sketch",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Sketch the graph of $y = \\tan x$ for $0° \\leqslant x \\leqslant 360°$.\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.02]\n\\draw[->] (0,0) -- (380,0) node[right] {$x$};\n\\draw[->] (0,-100) -- (0,100) node[above] {$y$};\n\\draw (90,-5) -- (90,5) node[below=5pt] {$90°$};\n\\draw (180,-5) -- (180,5) node[below=5pt] {$180°$};\n\\draw (270,-5) -- (270,5) node[below=5pt] {$270°$};\n\\draw (360,-5) -- (360,5) node[below=5pt] {$360°$};\n\\end{tikzpicture}\n\\end{center}\n\\Marks{2}\n\n\\item Solve the equation $5\\tan x = 1$ for $0° \\leqslant x \\leqslant 360°$.\n\n\\AnswerLine[$x = $][ or $x = $ \\makebox[2cm]{\\dotfill}]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_compactBegin": true
+  },
+  {
+    "id": "0580-2021MayJune-Paper21-Q20",
+    "paper": "2021MayJune-Paper21",
+    "qnum": 20,
+    "marks": 3,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.10",
+    "d": 2,
+    "cat": "number",
+    "topic": "Time",
+    "qtype": "lower bound calculation for speed",
+    "g": "mixed",
+    "src": "0580/21/M/J/21 Q20",
+    "year": 2021,
+    "session": "MayJune",
+    "tex": "The distance between two towns is $600\\,\\text{km}$, correct to the nearest $10\\,\\text{km}$.\n\\newline\n\\\\\nA car takes 8 hours 40 minutes, correct to the nearest 10 minutes, to travel this distance.\n\\newline\n\nCalculate the lower bound for the average speed of the car in km/h.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The distance between two towns is $600\\,\\text{km}$, correct to the nearest $10\\,\\text{km}$.\n\\newline\n\\\\\nA car takes 8 hours 40 minutes, correct to the nearest 10 minutes, to travel this distance.\n\\newline\n\nCalculate the lower bound for the average speed of the car in km/h.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "km/h",
+      "space": {
+        "type": "working",
+        "height": "4cm",
+        "cmd": "WorkingSpace"
+      }
+    },
+    "_rawBody": "The distance between two towns is 600\\,km, correct to the nearest 10\\,km.\\\\\nA car takes 8 hours 40 minutes, correct to the nearest 10 minutes, to travel this distance.\n\nCalculate the lower bound for the average speed of the car in km/h.\n\n\\WorkingSpace{4cm}\n\n\\AnswerLine[][km/h]\n\\Marks{3}",
+    "_compactMarks": true
+  }
+]

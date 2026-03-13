@@ -1,0 +1,1143 @@
+[
+  {
+    "id": "0580-2024OctNov-Paper11-Q01",
+    "paper": "2024OctNov-Paper11",
+    "qnum": 1,
+    "marks": 1,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.15",
+    "d": 1,
+    "cat": "number",
+    "topic": "Speed, distance, time",
+    "qtype": "time calculation, subtraction of months",
+    "g": "mixed",
+    "src": "0580/11/O/N/24 Q01",
+    "year": 2024,
+    "session": "OctNov",
+    "tex": "Jacob is 10 years 8 months old.\n\\newline\n\\\\\nAmy is 15 months younger than Jacob.\n\\newline\n\\\\\nFind how old Amy is.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Jacob is 10 years 8 months old.\n\\newline\n\\\\\nAmy is 15 months younger than Jacob.\n\\newline\n\\\\\nFind how old Amy is.\n\\newline\n\n\\par\\noindent\\hfill\\AnswerLineShort[][\\text{years}] \\AnswerLineShort[][\\text{months}]"
+      }
+    ],
+    "_rawBody": "Jacob is 10 years 8 months old.\\\\\nAmy is 15 months younger than Jacob.\\\\\nFind how old Amy is.\n\n\\par\\noindent\\hfill\\AnswerLineShort[][\\text{years}] \\AnswerLineShort[][\\text{months}]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2024OctNov-Paper11-Q02",
+    "paper": "2024OctNov-Paper11",
+    "qnum": 2,
+    "marks": 1,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.12",
+    "d": 1,
+    "cat": "number",
+    "topic": "Set notation",
+    "qtype": "unit conversion (length)",
+    "g": "mixed",
+    "src": "0580/11/O/N/24 Q02",
+    "year": 2024,
+    "session": "OctNov",
+    "tex": "Change 6.7 kilometres to metres.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "other",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Change 6.7 kilometres to metres.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "\\text{m}"
+    },
+    "_rawBody": "Change 6.7 kilometres to metres.\n\n\\AnswerLine[][\\text{m}]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2024OctNov-Paper11-Q03",
+    "paper": "2024OctNov-Paper11",
+    "qnum": 3,
+    "marks": 2,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.6",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/11/O/N/24 Q03",
+    "year": 2024,
+    "session": "OctNov",
+    "tex": "(a) Measure angle $x$.\n\\newline\n\n(b) Write down the mathematical name for this type of angle.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Measure angle $x$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x = $",
+          "suffix": "{\\degree}",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down the mathematical name for this type of angle.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "recall",
+    "cmd": "write",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q03-Angle.tex"
+      }
+    ],
+    "_rawBody": "\\relinput{Figures/Q03-Angle.tex}\n\n\\begin{parts}\n\\item Measure angle $x$.\n\\AnswerLine[$x = $][{\\degree}]\n\\Marks{1}\n\n\\item Write down the mathematical name for this type of angle.\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2024OctNov/Paper11/Q03/Q03-Angle.png"
+    ]
+  },
+  {
+    "id": "0580-2024OctNov-Paper11-Q04",
+    "paper": "2024OctNov-Paper11",
+    "qnum": 4,
+    "marks": 1,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.15",
+    "d": 1,
+    "cat": "number",
+    "topic": "Speed, distance, time",
+    "qtype": "time calculation, duration",
+    "g": "mixed",
+    "src": "0580/11/O/N/24 Q04",
+    "year": 2024,
+    "session": "OctNov",
+    "tex": "A concert starts at 19 50 and finishes 2 hours 42 minutes later.\n\\newline\n\\\\\nWork out the time the concert finishes.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "A concert starts at 19 50 and finishes 2 hours 42 minutes later.\n\\newline\n\\\\\nWork out the time the concert finishes.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "A concert starts at 19 50 and finishes 2 hours 42 minutes later.\\\\\nWork out the time the concert finishes.\n\n\\AnswerLine[][]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2024OctNov-Paper11-Q05",
+    "paper": "2024OctNov-Paper11",
+    "qnum": 5,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.5",
+    "d": 1,
+    "cat": "number",
+    "topic": "Ordering",
+    "qtype": "ordering numbers, comparing fractions/decimals/percentages/powers",
+    "g": "indices",
+    "src": "0580/11/O/N/24 Q05",
+    "year": 2024,
+    "session": "OctNov",
+    "tex": "Use one of these symbols $<$, $>$ or $=$ to make each statement true.\n\\newline\n\n$\\dfrac{2}{7}$ \\BlankInText $0.2861$\n\n$\\dfrac{99}{900}$ \\BlankInText $11\\%$\n\n$1^3$ \\BlankInText $4^0$",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "other",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Use one of these symbols $<$, $>$ or $=$ to make each statement true.\n\\newline\n"
+      },
+      {
+        "type": "text",
+        "content": "Use one of these symbols $<$, $>$ or $=$ to make each statement true.\\newline"
+      },
+      {
+        "type": "text",
+        "content": "$\\dfrac{2}{7}$ \\BlankInText $0.2861$"
+      },
+      {
+        "type": "text",
+        "content": "$\\dfrac{2}{7}$ \\BlankInText $0.2861$\\newline"
+      },
+      {
+        "type": "text",
+        "content": "$\\dfrac{99}{900}$ \\BlankInText $11\\%$"
+      },
+      {
+        "type": "text",
+        "content": "$\\dfrac{99}{900}$ \\BlankInText $11\\%$\\newline"
+      },
+      {
+        "type": "text",
+        "content": "$1^3$ \\BlankInText $4^0$"
+      }
+    ],
+    "_rawBody": "Use one of these symbols $<$, $>$ or $=$ to make each statement true.\\\\[0.3cm]\n$\\dfrac{2}{7}$ \\BlankInText $0.2861$\\\\[0.3cm]\n$\\dfrac{99}{900}$ \\BlankInText $11\\%$\\\\[0.3cm]\n$1^3$ \\BlankInText $4^0$\n\n\\Marks{2}"
+  },
+  {
+    "id": "0580-2024OctNov-Paper11-Q06",
+    "paper": "2024OctNov-Paper11",
+    "qnum": 6,
+    "marks": 2,
+    "topics": [
+      "Statistics"
+    ],
+    "s": "9.4",
+    "d": 1,
+    "cat": "statistics",
+    "topic": "Charts and graphs",
+    "qtype": "statistical charts",
+    "g": "mixed",
+    "src": "0580/11/O/N/24 Q06",
+    "year": 2024,
+    "session": "OctNov",
+    "tex": "The stem-and-leaf diagram shows the number of cars sold each day by a company.\n\\newline\n\n\\begin{tabular}{r | l}\n1 & 0, 3, 4, 5, 6, 7 \\\\\n2 & 1, 2, 2, 4, 7, 7, 7 \\\\\n3 & 0, 0, 1, 2, 2, 5, 6, 8 \\\\\n4 & 0, 1, 4, 6 \\\\\n5 & 1, 2, 4\n\\end{tabular}\nKey: 3 | 2 represents 32\n\n(a) Find the range.\n\\newline\n\n(b) Find the mode.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the range.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the mode.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The stem-and-leaf diagram shows the number of cars sold each day by a company.\n\\newline\n"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{center}\n\\begin{tabular}{r | l}\n1 & 0, 3, 4, 5, 6, 7 \\\\\n2 & 1, 2, 2, 4, 7, 7, 7 \\\\\n3 & 0, 0, 1, 2, 2, 5, 6, 8 \\\\\n4 & 0, 1, 4, 6 \\\\\n5 & 1, 2, 4\n\\end{tabular}\n\\end{center}"
+      },
+      {
+        "type": "text",
+        "content": "Key: 3 | 2 represents 32"
+      }
+    ],
+    "_rawBody": "The stem-and-leaf diagram shows the number of cars sold each day by a company.\n\n\\begin{center}\n\\begin{tabular}{r | l}\n1 & 0, 3, 4, 5, 6, 7 \\\\\n2 & 1, 2, 2, 4, 7, 7, 7 \\\\\n3 & 0, 0, 1, 2, 2, 5, 6, 8 \\\\\n4 & 0, 1, 4, 6 \\\\\n5 & 1, 2, 4\n\\end{tabular}\n\\end{center}\n\nKey: 3 | 2 represents 32\n\n\\begin{parts}\n\\item Find the range.\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Find the mode.\n\\AnswerLine[][]\n\\Marks{1}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2024OctNov-Paper11-Q07",
+    "paper": "2024OctNov-Paper11",
+    "qnum": 7,
+    "marks": 1,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.1",
+    "d": 1,
+    "cat": "number",
+    "topic": "Types of number",
+    "qtype": "find reciprocal of a mixed number",
+    "g": "mixed",
+    "src": "0580/11/O/N/24 Q07",
+    "year": 2024,
+    "session": "OctNov",
+    "tex": "Find the reciprocal of $1\\dfrac{1}{4}$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Find the reciprocal of $1\\dfrac{1}{4}$.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Find the reciprocal of $1\\dfrac{1}{4}$.\n\n\\AnswerLine[][]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2024OctNov-Paper11-Q08",
+    "paper": "2024OctNov-Paper11",
+    "qnum": 8,
+    "marks": 2,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.6",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/11/O/N/24 Q08",
+    "year": 2024,
+    "session": "OctNov",
+    "tex": "\\NotToScale\n\nThe diagram shows a quadrilateral.\n\\newline\n\\\\\nFind the value of $y$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q08-Quad.tex"
+      },
+      {
+        "type": "text",
+        "content": "\\NotToScale\n\nThe diagram shows a quadrilateral.\n\\newline\n\\\\\nFind the value of $y$.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2024OctNov/Paper11/Q08/Q08-Quadrilateral.png"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "$y = $"
+    },
+    "_rawBody": "\\relinput{Figures/Q08-Quad.tex}\n\\NotToScale\n\nThe diagram shows a quadrilateral.\\\\\nFind the value of $y$.\n\n\\AnswerLine[$y = $][]\n\\Marks{2}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2024OctNov/Paper11/Q08/Q08-Quad.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2024OctNov/Paper11/Q08/Q08-Quadrilateral.png"
+    ]
+  },
+  {
+    "id": "0580-2024OctNov-Paper11-Q09",
+    "paper": "2024OctNov-Paper11",
+    "qnum": 9,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.13",
+    "d": 1,
+    "cat": "number",
+    "topic": "Electronic calculators",
+    "qtype": "simple interest calculation",
+    "g": "mixed",
+    "src": "0580/11/O/N/24 Q09",
+    "year": 2024,
+    "session": "OctNov",
+    "tex": "Edith invests \\$3000 in a savings account.\n\\newline\n\\\\\nThe account pays simple interest at a rate of 2.6\\% per year.\n\\newline\n\\\\\nCalculate the total interest earned during the 3 years.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Edith invests \\$3000 in a savings account.\n\\newline\n\\\\\nThe account pays simple interest at a rate of 2.6\\% per year.\n\\newline\n\\\\\nCalculate the total interest earned during the 3 years.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "\\$"
+    },
+    "_rawBody": "Edith invests \\$3000 in a savings account.\\\\\nThe account pays simple interest at a rate of 2.6\\% per year.\\\\\nCalculate the total interest earned during the 3 years.\n\n\\AnswerLine[\\$][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2024OctNov-Paper11-Q10",
+    "paper": "2024OctNov-Paper11",
+    "qnum": 10,
+    "marks": 3,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.7",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Sequences",
+    "qtype": "sequences, term to term rule",
+    "g": "sequence",
+    "src": "0580/11/O/N/24 Q10",
+    "year": 2024,
+    "session": "OctNov",
+    "tex": "(a) These are the first four terms of a sequence.\n\\newline\n\\[ 10   16   22   28 \\]\nWrite down the next term in the sequence.\n\\newline\n\n(b) The term to term rule for another sequence is multiply by 3 and subtract 1.\n\\newline\n\\\\\nThe fourth term in the sequence is 68.\n\\newline\n\\\\\nFind the third term in the sequence.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "These are the first four terms of a sequence.\n\\newline\n\\[ 10 \\quad 16 \\quad 22 \\quad 28 \\]\nWrite down the next term in the sequence.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "The term to term rule for another sequence is multiply by 3 and subtract 1.\n\\newline\n\\\\\nThe fourth term in the sequence is 68.\n\\newline\n\\\\\nFind the third term in the sequence.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item These are the first four terms of a sequence.\n\\[ 10 \\quad 16 \\quad 22 \\quad 28 \\]\nWrite down the next term in the sequence.\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item The term to term rule for another sequence is multiply by 3 and subtract 1.\\\\\nThe fourth term in the sequence is 68.\\\\\nFind the third term in the sequence.\n\\AnswerLine[][]\n\\Marks{2}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2024OctNov-Paper11-Q11",
+    "paper": "2024OctNov-Paper11",
+    "qnum": 11,
+    "marks": 3,
+    "topics": [
+      "Mensuration"
+    ],
+    "s": "5.3",
+    "d": 1,
+    "cat": "mensuration",
+    "topic": "Surface area",
+    "qtype": "circles, arcs and sectors",
+    "g": "mixed",
+    "src": "0580/11/O/N/24 Q11",
+    "year": 2024,
+    "session": "OctNov",
+    "tex": "The circumference of a wheel is 198.55 cm.\n\\newline\n\\\\\nCalculate the diameter of the wheel.\n\\newline\n\\\\\nGive your answer in millimetres.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The circumference of a wheel is 198.55 cm.\n\\newline\n\\\\\nCalculate the diameter of the wheel.\n\\newline\n\\\\\nGive your answer in millimetres.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "\\text{mm}"
+    },
+    "_rawBody": "The circumference of a wheel is 198.55 cm.\\\\\nCalculate the diameter of the wheel.\\\\\nGive your answer in millimetres.\n\n\\AnswerLine[][\\text{mm}]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2024OctNov-Paper11-Q12",
+    "paper": "2024OctNov-Paper11",
+    "qnum": 12,
+    "marks": 2,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.5",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Similarity and congruence",
+    "qtype": "symmetry",
+    "g": "mixed",
+    "src": "0580/11/O/N/24 Q12",
+    "year": 2024,
+    "session": "OctNov",
+    "tex": "The grid shows half of a shape which has a line of symmetry, $L$.\n\\newline\n\\\\\nComplete the shape.\n\\newline\n",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "recall",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The grid shows half of a shape which has a line of symmetry, $L$.\n\\newline\n\\\\\nComplete the shape.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2024OctNov/Paper11/Q12/Q12-Symmetry.png"
+      },
+      {
+        "type": "figure",
+        "src": "Figures/Q12-Grid.tex"
+      }
+    ],
+    "_rawBody": "The grid shows half of a shape which has a line of symmetry, $L$.\\\\\nComplete the shape.\n\n\\relinput{Figures/Q12-Grid.tex}\n\n\\Marks{2}",
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2024OctNov/Paper11/Q12/Q12-Grid.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2024OctNov/Paper11/Q12/Q12-Symmetry.png"
+    ]
+  },
+  {
+    "id": "0580-2024OctNov-Paper11-Q13",
+    "paper": "2024OctNov-Paper11",
+    "qnum": 13,
+    "marks": 4,
+    "topics": [
+      "Number"
+    ],
+    "s": null,
+    "d": 1,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/11/O/N/24 Q13",
+    "year": 2024,
+    "session": "OctNov",
+    "tex": "(a) Find the value of $6c + 7d$ when $c = 3$ and $d = -4$.\n\\newline\n\n(b) Solve.\n\\newline\n\\[ 6x + 8 = 11x + 4 \\]",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the value of $6c + 7d$ when $c = 3$ and $d = -4$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Solve.\n\\newline\n\\[ 6x + 8 = 11x + 4 \\]"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x = $",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "",
+    "cmd": "solve",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Find the value of $6c + 7d$ when $c = 3$ and $d = -4$.\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item Solve.\n\\[ 6x + 8 = 11x + 4 \\]\n\\AnswerLine[$x = $][]\n\\Marks{2}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2024OctNov-Paper11-Q14",
+    "paper": "2024OctNov-Paper11",
+    "qnum": 14,
+    "marks": 1,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.13",
+    "d": 1,
+    "cat": "number",
+    "topic": "Electronic calculators",
+    "qtype": "express one number as a percentage of another",
+    "g": "mixed",
+    "src": "0580/11/O/N/24 Q14",
+    "year": 2024,
+    "session": "OctNov",
+    "tex": "Write 34 as a percentage of 80.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "write",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Write 34 as a percentage of 80.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "\\%"
+    },
+    "_rawBody": "Write 34 as a percentage of 80.\n\n\\AnswerLine[][\\%]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2024OctNov-Paper11-Q15",
+    "paper": "2024OctNov-Paper11",
+    "qnum": 15,
+    "marks": 3,
+    "topics": [
+      "Statistics"
+    ],
+    "s": "9.3",
+    "d": 1,
+    "cat": "statistics",
+    "topic": "Frequency tables",
+    "qtype": "averages and spread",
+    "g": "mixed",
+    "src": "0580/11/O/N/24 Q15",
+    "year": 2024,
+    "session": "OctNov",
+    "tex": "A bus stops 25 times on a journey.\n\\newline\n\\\\\nThe table shows the number of people who get on the bus at each stop.\n\\newline\n\n\\begin{tabular}{c | c}\nNumber of people & Frequency \\\\ \\hline\n0 & 1 \\\\\n1 & 6 \\\\\n2 & 7 \\\\\n3 & 4 \\\\\n4 & 5 \\\\\n5 & 2\n\\end{tabular}\nCalculate the mean.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "A bus stops 25 times on a journey.\n\\newline\n\\\\\nThe table shows the number of people who get on the bus at each stop.\n\\newline\n"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{center}\n\\begin{tabular}{c | c}\nNumber of people & Frequency \\\\ \\hline\n0 & 1 \\\\\n1 & 6 \\\\\n2 & 7 \\\\\n3 & 4 \\\\\n4 & 5 \\\\\n5 & 2\n\\end{tabular}\n\\end{center}"
+      },
+      {
+        "type": "text",
+        "content": "Calculate the mean.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "A bus stops 25 times on a journey.\\\\\nThe table shows the number of people who get on the bus at each stop.\n\n\\begin{center}\n\\begin{tabular}{c | c}\nNumber of people & Frequency \\\\ \\hline\n0 & 1 \\\\\n1 & 6 \\\\\n2 & 7 \\\\\n3 & 4 \\\\\n4 & 5 \\\\\n5 & 2\n\\end{tabular}\n\\end{center}\n\nCalculate the mean.\n\n\\AnswerLine[][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2024OctNov-Paper11-Q16",
+    "paper": "2024OctNov-Paper11",
+    "qnum": 16,
+    "marks": 2,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.6",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/11/O/N/24 Q16",
+    "year": 2024,
+    "session": "OctNov",
+    "tex": "\\NotToScale\n\nThe diagram shows a trapezium with parallel sides of length 12~cm and $w$~cm.\n\\newline\n\\\\\nThe height of the trapezium is 8~cm.\n\\newline\n\\\\\nThe area of the trapezium is 78~cm$^2$.\n\\newline\n\nFind the value of $w$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q16-Trapezium.tex"
+      },
+      {
+        "type": "text",
+        "content": "\\NotToScale\n\nThe diagram shows a trapezium with parallel sides of length 12~cm and $w$~cm.\n\\newline\n\\\\\nThe height of the trapezium is 8~cm.\n\\newline\n\\\\\nThe area of the trapezium is 78~cm$^2$.\n\\newline\n\nFind the value of $w$.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "$w = $"
+    },
+    "_rawBody": "\\relinput{Figures/Q16-Trapezium.tex}\n\\NotToScale\n\nThe diagram shows a trapezium with parallel sides of length 12~cm and $w$~cm.\\\\\nThe height of the trapezium is 8~cm.\\\\\nThe area of the trapezium is 78~cm$^2$.\n\nFind the value of $w$.\n\n\\AnswerLine[$w = $][]\n\\Marks{2}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2024OctNov/Paper11/Q16/Q16-Trapezium.png"
+    ]
+  },
+  {
+    "id": "0580-2024OctNov-Paper11-Q17",
+    "paper": "2024OctNov-Paper11",
+    "qnum": 17,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.10",
+    "d": 1,
+    "cat": "number",
+    "topic": "Time",
+    "qtype": "limits of accuracy, bounds for rounded number",
+    "g": "mixed",
+    "src": "0580/11/O/N/24 Q17",
+    "year": 2024,
+    "session": "OctNov",
+    "tex": "A distance, $d$ metres, measures 34.6~m, correct to the nearest 0.1~m.\n\\newline\n\\\\\nComplete this statement about the value of $d$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "A distance, $d$ metres, measures 34.6~m, correct to the nearest 0.1~m.\n\\newline\n\\\\\nComplete this statement about the value of $d$.\n\\newline\n\n\\par\\noindent\\hfill\\AnswerLineShort[][$\\le d <$] \\AnswerLineShort[][]"
+      }
+    ],
+    "_rawBody": "A distance, $d$ metres, measures 34.6~m, correct to the nearest 0.1~m.\\\\\nComplete this statement about the value of $d$.\n\n\\par\\noindent\\hfill\\AnswerLineShort[][$\\le d <$] \\AnswerLineShort[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2024OctNov-Paper11-Q18",
+    "paper": "2024OctNov-Paper11",
+    "qnum": 18,
+    "marks": 4,
+    "topics": [
+      "Coordinate geometry",
+      "Mensuration",
+      "Transformations and vectors"
+    ],
+    "s": "3.1",
+    "d": 1,
+    "cat": "coord",
+    "topic": "Coordinates",
+    "qtype": "coordinates reading/plotting",
+    "g": "graph",
+    "src": "0580/11/O/N/24 Q18",
+    "year": 2024,
+    "session": "OctNov",
+    "tex": "The diagram shows a rectangle and two points, $P$ and $C$, on a 1~cm$^2$ grid.\n\\newline\n\n(a) Write down the coordinates of point $C$.\n\\newline\n\n(b) The rectangle is enlarged by scale factor 2 with centre of enlargement point $C$.\n\\newline\n\\\\\nFind the coordinates of the image of point $P$.\n\\newline\n\n(c) Find the area of the enlarged rectangle.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down the coordinates of point $C$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "( \\hspace{1cm} , \\hspace{1cm} )",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "The rectangle is enlarged by scale factor 2 with centre of enlargement point $C$.\n\\newline\n\\\\\nFind the coordinates of the image of point $P$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "( \\hspace{1cm} , \\hspace{1cm} )",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the area of the enlarged rectangle.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "\\text{cm}$^2$",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The diagram shows a rectangle and two points, $P$ and $C$, on a 1~cm$^2$ grid.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2024OctNov/Paper11/Q18/Q18-Rectangle.png"
+      },
+      {
+        "type": "figure",
+        "src": "Figures/Q18-Grid.tex"
+      }
+    ],
+    "_rawBody": "The diagram shows a rectangle and two points, $P$ and $C$, on a 1~cm$^2$ grid.\n\\relinput{Figures/Q18-Grid.tex}\n\n\\begin{parts}\n\\item Write down the coordinates of point $C$.\n\\AnswerLine[][( \\hspace{1cm} , \\hspace{1cm} )]\n\\Marks{1}\n\n\\item The rectangle is enlarged by scale factor 2 with centre of enlargement point $C$.\\\\\nFind the coordinates of the image of point $P$.\n\\AnswerLine[][( \\hspace{1cm} , \\hspace{1cm} )]\n\\Marks{2}\n\n\\item Find the area of the enlarged rectangle.\n\\AnswerLine[][\\text{cm}$^2$]\n\\Marks{1}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2024OctNov/Paper11/Q18/Q18-Grid.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2024OctNov/Paper11/Q18/Q18-Rectangle.png"
+    ]
+  },
+  {
+    "id": "0580-2024OctNov-Paper11-Q19",
+    "paper": "2024OctNov-Paper11",
+    "qnum": 19,
+    "marks": 4,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.2",
+    "d": 1,
+    "cat": "number",
+    "topic": "Squares, cubes and roots",
+    "qtype": "Venn diagram with set notation",
+    "g": "mixed",
+    "src": "0580/11/O/N/24 Q19",
+    "year": 2024,
+    "session": "OctNov",
+    "tex": "Jo asks some people if they own a car ($C$) and if they own a motorbike ($M$).\n\\newline\n\\\\\n86 people own a car.\n\\newline\n\\\\\n39 people own a motorbike.\n\\newline\n\\\\\n7 people do not own a car and do not own a motorbike.\n\\newline\n\n(a) Complete the Venn diagram.\n\\newline\n\n(b) Find the total number of people that Jo asks.\n\\newline\n\n(c) Write down $n(C \\cup M)$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Complete the Venn diagram.\n\\newline\n"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q19-Venn.tex"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the total number of people that Jo asks.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down $n(C \\cup M)$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Jo asks some people if they own a car ($C$) and if they own a motorbike ($M$).\n\\newline\n\\\\\n86 people own a car.\n\\newline\n\\\\\n39 people own a motorbike.\n\\newline\n\\\\\n7 people do not own a car and do not own a motorbike.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2024OctNov/Paper11/Q19/Q19-VennDiagram.png"
+      }
+    ],
+    "_rawBody": "Jo asks some people if they own a car ($C$) and if they own a motorbike ($M$).\\\\\n86 people own a car.\\\\\n39 people own a motorbike.\\\\\n7 people do not own a car and do not own a motorbike.\n\n\\begin{parts}\n\\item Complete the Venn diagram.\n\\relinput{Figures/Q19-Venn.tex}\n\\Marks{2}\n\n\\item Find the total number of people that Jo asks.\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Write down $n(C \\cup M)$.\n\\AnswerLine[][]\n\\Marks{1}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2024OctNov/Paper11/Q19/Q19-Venn.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2024OctNov/Paper11/Q19/Q19-VennDiagram.png"
+    ]
+  },
+  {
+    "id": "0580-2024OctNov-Paper11-Q20",
+    "paper": "2024OctNov-Paper11",
+    "qnum": 20,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.13",
+    "d": 1,
+    "cat": "number",
+    "topic": "Electronic calculators",
+    "qtype": "percentage loss calculation",
+    "g": "mixed",
+    "src": "0580/11/O/N/24 Q20",
+    "year": 2024,
+    "session": "OctNov",
+    "tex": "Josh buys a car for \\$7800 and sells it for \\$5265.\n\\newline\n\\\\\nCalculate his percentage loss.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Josh buys a car for \\$7800 and sells it for \\$5265.\n\\newline\n\\\\\nCalculate his percentage loss.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "\\%"
+    },
+    "_rawBody": "Josh buys a car for \\$7800 and sells it for \\$5265.\\\\\nCalculate his percentage loss.\n\n\\AnswerLine[][\\%]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2024OctNov-Paper11-Q21",
+    "paper": "2024OctNov-Paper11",
+    "qnum": 21,
+    "marks": 3,
+    "topics": [
+      "Number",
+      "Algebra and graphs"
+    ],
+    "s": "2.2",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Rearranging formulae",
+    "qtype": "factorisation, changing subject of formula",
+    "g": "simplify",
+    "src": "0580/11/O/N/24 Q21",
+    "year": 2024,
+    "session": "OctNov",
+    "tex": "(a) Factorise.\n\\newline\n\\[ 28x - 35 \\]\n\n(b) Make $r$ the subject of the formula.\n\\newline\n\\[ T = \\dfrac{r}{4} - p \\]",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Factorise.\n\\newline\n\\[ 28x - 35 \\]"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Make $r$ the subject of the formula.\n\\newline\n\\[ T = \\dfrac{r}{4} - p \\]"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$r = $",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Factorise.\n\\[ 28x - 35 \\]\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Make $r$ the subject of the formula.\n\\[ T = \\dfrac{r}{4} - p \\]\n\\AnswerLine[$r = $][]\n\\Marks{2}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2024OctNov-Paper11-Q22",
+    "paper": "2024OctNov-Paper11",
+    "qnum": 22,
+    "marks": 3,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.5",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Equations",
+    "qtype": "solving simultaneous linear equations",
+    "g": "simul-linear",
+    "src": "0580/11/O/N/24 Q22",
+    "year": 2024,
+    "session": "OctNov",
+    "tex": "Solve the simultaneous equations.\n\\newline\n\\\\\nYou must show all your working.\n\\newline\n\\begin{align*}\n5x + 6y &= 9 \\\\\n3x - 2y &= -17\n\\end{align*}",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "solve",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Solve the simultaneous equations.\n\\newline\n\\\\\nYou must show all your working.\n\\newline\n\\begin{align*}\n5x + 6y &= 9 \\\\\n3x - 2y &= -17\n\\end{align*}"
+      }
+    ],
+    "answer": {
+      "type": "multiline",
+      "lines": 2,
+      "template": "$x = $ ____\\n$y = $ ____",
+      "lineSep": "blank"
+    },
+    "_rawBody": "Solve the simultaneous equations.\\\\\nYou must show all your working.\n\\begin{align*}\n5x + 6y &= 9 \\\\\n3x - 2y &= -17\n\\end{align*}\n\n\\AnswerLine[$x = $][]\n\\AnswerLine[$y = $][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2024OctNov-Paper11-Q23",
+    "paper": "2024OctNov-Paper11",
+    "qnum": 23,
+    "marks": 3,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.6",
+    "d": 1,
+    "cat": "number",
+    "topic": "Standard form",
+    "qtype": "subtraction of mixed numbers",
+    "g": "mixed",
+    "src": "0580/11/O/N/24 Q23",
+    "year": 2024,
+    "session": "OctNov",
+    "tex": "Without using a calculator, work out $5\\dfrac{1}{3} - 3\\dfrac{4}{7}$.\n\\newline\n\\\\\nYou must show all your working and give your answer as a mixed number in its simplest form.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Without using a calculator, work out $5\\dfrac{1}{3} - 3\\dfrac{4}{7}$.\n\\newline\n\\\\\nYou must show all your working and give your answer as a mixed number in its simplest form.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Without using a calculator, work out $5\\dfrac{1}{3} - 3\\dfrac{4}{7}$.\\\\\nYou must show all your working and give your answer as a mixed number in its simplest form.\n\n\\AnswerLine[][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2024OctNov-Paper11-Q24",
+    "paper": "2024OctNov-Paper11",
+    "qnum": 24,
+    "marks": 3,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.6",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/11/O/N/24 Q24",
+    "year": 2024,
+    "session": "OctNov",
+    "tex": "\\NotToScale\n\nThe diagram shows part of a regular polygon.\n\\newline\n\\\\\nThe interior angle of the polygon is $132^\\circ$ larger than the exterior angle.\n\\newline\n\nCalculate the number of sides of this polygon.\n\\newline\n",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q24-Polygon.tex"
+      },
+      {
+        "type": "text",
+        "content": "\\NotToScale\n\nThe diagram shows part of a regular polygon.\n\\newline\n\\\\\nThe interior angle of the polygon is $132^\\circ$ larger than the exterior angle.\n\\newline\n\nCalculate the number of sides of this polygon.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "\\relinput{Figures/Q24-Polygon.tex}\n\\NotToScale\n\nThe diagram shows part of a regular polygon.\\\\\nThe interior angle of the polygon is $132^\\circ$ larger than the exterior angle.\n\nCalculate the number of sides of this polygon.\n\n\\AnswerLine[][]\n\\Marks{3}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2024OctNov/Paper11/Q24/Q24-Polygon.png"
+    ]
+  }
+]

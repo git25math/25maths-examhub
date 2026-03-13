@@ -1,0 +1,1274 @@
+[
+  {
+    "id": "0580-2018OctNov-Paper33-Q01",
+    "paper": "2018OctNov-Paper33",
+    "qnum": 1,
+    "marks": 15,
+    "topics": [
+      "Geometry",
+      "Mensuration",
+      "Statistics"
+    ],
+    "s": "4.6",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/33/O/N/18 Q01",
+    "year": 2018,
+    "session": "OctNov",
+    "tex": "(a) Some people each recorded their favourite holiday destination.\n\\newline\n\n    The results are shown in the pie chart.\n\\newline\n\n    (i)  Complete the statements about the pie chart.\n\\newline\n\n        The sector angle for Mexico is ... degrees.\n\\newline\n\n        The most popular destination is ...\n\n        $\\dfrac{1}{5}$ of the people chose ...\n\n        Three times as many people chose ... as ...\n\n         180 people chose Bali.\n\\newline\n\n        Find how many people were asked altogether.\n\\newline\n\n        \n\n(b) Mr and Mrs Baker go on holiday with their three children.\n\\newline\n\n    They fly from Miami to Mexico City.\n\\newline\n\n    (i)  The cost of each adult ticket is \\$450.\n\\newline\n\n        The cost of each child ticket is 70\\% of the cost of an adult ticket.\n\\newline\n\n        Calculate the total cost of the five tickets.\n\\newline\n\n        \n\n         The plane leaves Miami at 09$\\,$29.\n\\newline\n\n        It arrives in Mexico City 2 hours 11 minutes later.\n\\newline\n\n        The local time in Miami is 1 hour ahead of the local time in Mexico City.\n\\newline\n\n        Work out the time in Mexico City when the plane arrives.\n\\newline\n\n        \n\n         The family travels 38 kilometres by taxi.\n\\newline\n\n        The journey costs \\$3.50 plus an extra \\$2.15 for each kilometre travelled.\n\\newline\n\n        Find the cost of the journey.\n\\newline\n\n        \n\n         At the end of the holiday Mr Baker changes 1335 pesos into dollars.\n\\newline\n\n        The exchange rate is \\$1 = 17.8 pesos.\n\\newline\n\n        Find how many dollars Mr Baker receives.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Some people each recorded their favourite holiday destination.\n\\newline\n\n    The results are shown in the pie chart.\n\\newline\n\n    \\begin{center}\n    \\begin{tikzpicture}[scale=1.2]\n        % Pie chart\n        \\draw (0,0) circle (2);\n\n        % Sectors - angles: USA=118°, Mexico=(unlabeled), Caribbean=108°, Bali=72°, Brazil=36°\n        % USA starts from top\n        \\draw (0,0) -- (90:2);\n        \\draw (0,0) -- (90-118:2);\n        \\draw (0,0) -- (90-118-26:2);\n        \\draw (0,0) -- (90-118-26-108:2);\n        \\draw (0,0) -- (90-118-26-108-72:2);\n\n        % Labels\n        \\node at (90-59:1.3) {USA};\n        \\node at (90-118-13:1.3) {Mexico};\n        \\node at (90-118-26-54:1.3) {Caribbean};\n        \\node at (90-118-26-108-36:1.3) {Bali};\n        \\node at (90-118-26-108-72-18:1.3) {Brazil};\n\n        % Angle labels\n        \\node at (90-59:0.6) {$118°$};\n        \\node at (90-118-26-30:0.6) {$108°$};\n        \\node at (90-118-26-108-20:0.6) {$72°$};\n        \\node at (90-118-26-108-72-10:0.6) {$36°$};\n    \\end{tikzpicture}\n    \\end{center}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Complete the statements about the pie chart.\n\\newline\n\n        The sector angle for Mexico is \\dotfill degrees.\n\\newline\n\n        The most popular destination is \\dotfill\n\n        $\\dfrac{1}{5}$ of the people chose \\dotfill\n\n        Three times as many people chose \\dotfill as \\dotfill"
+              }
+            ],
+            "marks": 4,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "180 people chose Bali.\n\\newline\n\n        Find how many people were asked altogether.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "_compactAnswer": true
+            },
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ],
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Mr and Mrs Baker go on holiday with their three children.\n\\newline\n\n    They fly from Miami to Mexico City.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "The cost of each adult ticket is \\$450.\n\\newline\n\n        The cost of each child ticket is 70\\% of the cost of an adult ticket.\n\\newline\n\n        Calculate the total cost of the five tickets.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "\\$",
+              "_compactAnswer": true
+            },
+            "marks": 3,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "The plane leaves Miami at 09$\\,$29.\n\\newline\n\n        It arrives in Mexico City 2 hours 11 minutes later.\n\\newline\n\n        The local time in Miami is 1 hour ahead of the local time in Mexico City.\n\\newline\n\n        Work out the time in Mexico City when the plane arrives.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "_compactAnswer": true
+            },
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "The family travels 38 kilometres by taxi.\n\\newline\n\n        The journey costs \\$3.50 plus an extra \\$2.15 for each kilometre travelled.\n\\newline\n\n        Find the cost of the journey.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "\\$",
+              "_compactAnswer": true
+            },
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iv)",
+            "content": [
+              {
+                "type": "text",
+                "content": "At the end of the holiday Mr Baker changes 1335 pesos into dollars.\n\\newline\n\n        The exchange rate is \\$1 = 17.8 pesos.\n\\newline\n\n        Find how many dollars Mr Baker receives.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "\\$",
+              "_compactAnswer": true
+            },
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ],
+        "_compactEndSubparts": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n    \\item Some people each recorded their favourite holiday destination.\n\n    The results are shown in the pie chart.\n\n    \\begin{center}\n    \\begin{tikzpicture}[scale=1.2]\n        % Pie chart\n        \\draw (0,0) circle (2);\n\n        % Sectors - angles: USA=118°, Mexico=(unlabeled), Caribbean=108°, Bali=72°, Brazil=36°\n        % USA starts from top\n        \\draw (0,0) -- (90:2);\n        \\draw (0,0) -- (90-118:2);\n        \\draw (0,0) -- (90-118-26:2);\n        \\draw (0,0) -- (90-118-26-108:2);\n        \\draw (0,0) -- (90-118-26-108-72:2);\n\n        % Labels\n        \\node at (90-59:1.3) {USA};\n        \\node at (90-118-13:1.3) {Mexico};\n        \\node at (90-118-26-54:1.3) {Caribbean};\n        \\node at (90-118-26-108-36:1.3) {Bali};\n        \\node at (90-118-26-108-72-18:1.3) {Brazil};\n\n        % Angle labels\n        \\node at (90-59:0.6) {$118°$};\n        \\node at (90-118-26-30:0.6) {$108°$};\n        \\node at (90-118-26-108-20:0.6) {$72°$};\n        \\node at (90-118-26-108-72-10:0.6) {$36°$};\n    \\end{tikzpicture}\n    \\end{center}\n\n    \\begin{subparts}\n        \\subpart Complete the statements about the pie chart.\n\n        The sector angle for Mexico is \\dotfill degrees.\n\n        The most popular destination is \\dotfill\n\n        $\\dfrac{1}{5}$ of the people chose \\dotfill\n\n        Three times as many people chose \\dotfill as \\dotfill\n        \\Marks{4}\n\n        \\subpart 180 people chose Bali.\n\n        Find how many people were asked altogether.\n        \\AnswerLine[][]\n        \\Marks{2}\n    \\end{subparts}\n\n    \\item Mr and Mrs Baker go on holiday with their three children.\n\n    They fly from Miami to Mexico City.\n\n    \\begin{subparts}\n        \\subpart The cost of each adult ticket is \\$450.\n\n        The cost of each child ticket is 70\\% of the cost of an adult ticket.\n\n        Calculate the total cost of the five tickets.\n        \\AnswerLine[\\$][]\n        \\Marks{3}\n\n        \\subpart The plane leaves Miami at 09\\,29.\n\n        It arrives in Mexico City 2 hours 11 minutes later.\n\n        The local time in Miami is 1 hour ahead of the local time in Mexico City.\n\n        Work out the time in Mexico City when the plane arrives.\n        \\AnswerLine[][]\n        \\Marks{2}\n\n        \\subpart The family travels 38 kilometres by taxi.\n\n        The journey costs \\$3.50 plus an extra \\$2.15 for each kilometre travelled.\n\n        Find the cost of the journey.\n        \\AnswerLine[\\$][]\n        \\Marks{2}\n\n        \\subpart At the end of the holiday Mr Baker changes 1335 pesos into dollars.\n\n        The exchange rate is \\$1 = 17.8 pesos.\n\n        Find how many dollars Mr Baker receives.\n        \\AnswerLine[\\$][]\n        \\Marks{2}\n    \\end{subparts}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "_compactItems": true
+  },
+  {
+    "id": "0580-2018OctNov-Paper33-Q02",
+    "paper": "2018OctNov-Paper33",
+    "qnum": 2,
+    "marks": 12,
+    "topics": [
+      "Geometry",
+      "Mensuration",
+      "Transformations and vectors"
+    ],
+    "s": "4.6",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/33/O/N/18 Q02",
+    "year": 2018,
+    "session": "OctNov",
+    "tex": "Shapes $A$, $B$ and $C$ are shown on the $1\\,\\text{cm}^2$ grid.\n\\newline\n\n(a) Shape $A$ is a special type of quadrilateral.\n\\newline\n\n    Write down the mathematical name for shape $A$.\n\\newline\n\n    \n\n(b) Describe fully the **single** transformation that maps\n\n    (i)  shape $A$ onto shape $B$,\n\n        \n\n         shape $A$ onto shape $C$.\n\\newline\n\n        \n\n(c) On the grid,\n\n    (i)  translate shape $A$ by the vector $\\begin{pmatrix} 8 \\\\ -4 \\end{pmatrix}$,\n\n         reflect shape $A$ in the line $x = 2$.\n\\newline\n\n(d) Find the area of **shape $B$**.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Shape $A$ is a special type of quadrilateral.\n\\newline\n\n    Write down the mathematical name for shape $A$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Describe fully the \\textbf{single} transformation that maps"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "shape $A$ onto shape $B$,"
+              }
+            ],
+            "answer": {
+              "type": "multiline",
+              "lines": 2,
+              "template": "____\\n____",
+              "lineSep": "blank",
+              "_compactAnswer": true
+            },
+            "marks": 3,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "shape $A$ onto shape $C$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "multiline",
+              "lines": 2,
+              "template": "____\\n____",
+              "lineSep": "blank",
+              "_compactAnswer": true
+            },
+            "marks": 3,
+            "_compactMarks": true
+          }
+        ],
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "On the grid,"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "translate shape $A$ by the vector $\\begin{pmatrix} 8 \\\\ -4 \\end{pmatrix}$,"
+              }
+            ],
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "reflect shape $A$ in the line $x = 2$.\n\\newline\n"
+              }
+            ],
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ],
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(d)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the area of \\textbf{shape $B$}.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "cm$^2$",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "describe",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Shapes $A$, $B$ and $C$ are shown on the $1\\,\\text{cm}^2$ grid.\n\\newline\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.45]\n    % Grid\n    \\draw[gray, very thin] (-6,-4) grid (8,10);\n\n    % Axes\n    \\draw[thick, ->] (-6,0) -- (8.5,0) node[right] {$x$};\n    \\draw[thick, ->] (0,-4) -- (0,10.5) node[above] {$y$};\n\n    % X-axis labels\n    \\foreach \\x in {-6,-5,-4,-3,-2,-1,1,2,3,4,5,6,7,8}\n        \\node[below] at (\\x,0) {\\tiny \\x};\n\n    % Y-axis labels\n    \\foreach \\y in {-4,-3,-2,-1,1,2,3,4,5,6,7,8,9,10}\n        \\node[left] at (0,\\y) {\\tiny \\y};\n\n    \\node[below left] at (0,0) {\\tiny 0};\n\n    % Shape A (parallelogram)\n    \\fill[gray!30] (-5,1) -- (-3,1) -- (-2,3) -- (-4,3) -- cycle;\n    \\draw[thick] (-5,1) -- (-3,1) -- (-2,3) -- (-4,3) -- cycle;\n    \\node at (-3.5,2) {$A$};\n\n    % Shape B (parallelogram)\n    \\fill[gray!30] (3,4) -- (7,4) -- (8,8) -- (4,8) -- cycle;\n    \\draw[thick] (3,4) -- (7,4) -- (8,8) -- (4,8) -- cycle;\n    \\node at (5.5,6) {$B$};\n\n    % Shape C (parallelogram)\n    \\fill[gray!30] (1,-3) -- (3,-3) -- (4,-1) -- (2,-1) -- cycle;\n    \\draw[thick] (1,-3) -- (3,-3) -- (4,-1) -- (2,-1) -- cycle;\n    \\node at (2.5,-2) {$C$};\n\\end{tikzpicture}\n\\end{center}"
+      }
+    ],
+    "_rawBody": "Shapes $A$, $B$ and $C$ are shown on the 1\\,cm$^2$ grid.\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.45]\n    % Grid\n    \\draw[gray, very thin] (-6,-4) grid (8,10);\n\n    % Axes\n    \\draw[thick, ->] (-6,0) -- (8.5,0) node[right] {$x$};\n    \\draw[thick, ->] (0,-4) -- (0,10.5) node[above] {$y$};\n\n    % X-axis labels\n    \\foreach \\x in {-6,-5,-4,-3,-2,-1,1,2,3,4,5,6,7,8}\n        \\node[below] at (\\x,0) {\\tiny \\x};\n\n    % Y-axis labels\n    \\foreach \\y in {-4,-3,-2,-1,1,2,3,4,5,6,7,8,9,10}\n        \\node[left] at (0,\\y) {\\tiny \\y};\n\n    \\node[below left] at (0,0) {\\tiny 0};\n\n    % Shape A (parallelogram)\n    \\fill[gray!30] (-5,1) -- (-3,1) -- (-2,3) -- (-4,3) -- cycle;\n    \\draw[thick] (-5,1) -- (-3,1) -- (-2,3) -- (-4,3) -- cycle;\n    \\node at (-3.5,2) {$A$};\n\n    % Shape B (parallelogram)\n    \\fill[gray!30] (3,4) -- (7,4) -- (8,8) -- (4,8) -- cycle;\n    \\draw[thick] (3,4) -- (7,4) -- (8,8) -- (4,8) -- cycle;\n    \\node at (5.5,6) {$B$};\n\n    % Shape C (parallelogram)\n    \\fill[gray!30] (1,-3) -- (3,-3) -- (4,-1) -- (2,-1) -- cycle;\n    \\draw[thick] (1,-3) -- (3,-3) -- (4,-1) -- (2,-1) -- cycle;\n    \\node at (2.5,-2) {$C$};\n\\end{tikzpicture}\n\\end{center}\n\n\\begin{parts}\n    \\item Shape $A$ is a special type of quadrilateral.\n\n    Write down the mathematical name for shape $A$.\n    \\AnswerLine[][]\n    \\Marks{1}\n\n    \\item Describe fully the \\textbf{single} transformation that maps\n\n    \\begin{subparts}\n        \\subpart shape $A$ onto shape $B$,\n        \\AnswerLine[][]\n        \\AnswerLine[][]\n        \\Marks{3}\n\n        \\subpart shape $A$ onto shape $C$.\n        \\AnswerLine[][]\n        \\AnswerLine[][]\n        \\Marks{3}\n    \\end{subparts}\n\n    \\item On the grid,\n\n    \\begin{subparts}\n        \\subpart translate shape $A$ by the vector $\\begin{pmatrix} 8 \\\\ -4 \\end{pmatrix}$,\n        \\Marks{2}\n\n        \\subpart reflect shape $A$ in the line $x = 2$.\n        \\Marks{2}\n    \\end{subparts}\n\n    \\item Find the area of \\textbf{shape $B$}.\n    \\AnswerLine[][cm$^2$]\n    \\Marks{1}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2018OctNov-Paper33-Q03",
+    "paper": "2018OctNov-Paper33",
+    "qnum": 3,
+    "marks": 10,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.3",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Symmetry",
+    "qtype": "scale drawings and bearings",
+    "g": "mixed",
+    "src": "0580/33/O/N/18 Q03",
+    "year": 2018,
+    "session": "OctNov",
+    "tex": "The scale drawing shows the positions of three towns $A$, $B$ and $C$ on a map.\n\\newline\n\nThe scale is 1 centimetre represents 10 kilometres.\n\\newline\n\n(a) Work out the actual distance between town $A$ and town $B$.\n\\newline\n\n    \n\n(b) (i)  Measure the bearing of town $C$ from town $A$.\n\\newline\n\n        \n\n         Show how to use your answer to **part (b)(i)** to find the bearing of town $A$ from town $C$.\n\\newline\n\n        \n\n(c) Town $D$ is $96\\,\\text{km}$ from town $C$ on a bearing of $100°$.\n\\newline\n\n    (i)  Mark the position of town $D$ on the map.\n\\newline\n\n         Jez drives from town $C$ to town $D$ in $1\\dfrac{1}{2}$ hours.\n\\newline\n\n        Work out his average speed.\n\\newline\n\n        \n\n         Change $96\\,\\text{km}$ into miles.\n\\newline\n\n        Assume that $8\\,\\text{km}$ equals 5 miles.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Work out the actual distance between town $A$ and town $B$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "km",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Measure the bearing of town $C$ from town $A$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "_compactAnswer": true
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Show how to use your answer to \\textbf{part (b)(i)} to find the bearing of town $A$ from town $C$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "_compactAnswer": true
+            },
+            "marks": 1,
+            "_compactMarks": true
+          }
+        ],
+        "_itemNewline": true,
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Town $D$ is $96\\,\\text{km}$ from town $C$ on a bearing of $100°$.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Mark the position of town $D$ on the map.\n\\newline\n"
+              }
+            ],
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Jez drives from town $C$ to town $D$ in $1\\dfrac{1}{2}$ hours.\n\\newline\n\n        Work out his average speed.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "km/h",
+              "_compactAnswer": true
+            },
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Change $96\\,\\text{km}$ into miles.\n\\newline\n\n        Assume that $8\\,\\text{km}$ equals 5 miles.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "miles",
+              "_compactAnswer": true
+            },
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ],
+        "_compactEndSubparts": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The scale drawing shows the positions of three towns $A$, $B$ and $C$ on a map.\n\\newline\n\nThe scale is 1 centimetre represents 10 kilometres.\n\\newline\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n    % Town A\n    \\fill (5,6) circle (0.05);\n    \\node[right] at (5,6) {$A$};\n    \\draw[->] (5,6) -- (5,7.5);\n    \\node[above] at (5,7.5) {North};\n\n    % Town B\n    \\fill (4,2) circle (0.05);\n    \\node[right] at (4,2) {$B$};\n    \\draw[->] (4,2) -- (4,3.5);\n    \\node[above] at (4,3.5) {North};\n\n    % Town C\n    \\fill (0.5,4) circle (0.05);\n    \\node[left] at (0.5,4) {$C$};\n\n    % Scale\n    \\node at (7,1) {Scale : $1\\,\\text{cm}$ to $10\\,\\text{km}$};\n\\end{tikzpicture}\n\\end{center}"
+      }
+    ],
+    "_rawBody": "The scale drawing shows the positions of three towns $A$, $B$ and $C$ on a map.\n\nThe scale is 1 centimetre represents 10 kilometres.\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n    % Town A\n    \\fill (5,6) circle (0.05);\n    \\node[right] at (5,6) {$A$};\n    \\draw[->] (5,6) -- (5,7.5);\n    \\node[above] at (5,7.5) {North};\n\n    % Town B\n    \\fill (4,2) circle (0.05);\n    \\node[right] at (4,2) {$B$};\n    \\draw[->] (4,2) -- (4,3.5);\n    \\node[above] at (4,3.5) {North};\n\n    % Town C\n    \\fill (0.5,4) circle (0.05);\n    \\node[left] at (0.5,4) {$C$};\n\n    % Scale\n    \\node at (7,1) {Scale : 1\\,cm to 10\\,km};\n\\end{tikzpicture}\n\\end{center}\n\n\\begin{parts}\n    \\item Work out the actual distance between town $A$ and town $B$.\n    \\AnswerLine[][km]\n    \\Marks{2}\n\n    \\item\n    \\begin{subparts}\n        \\subpart Measure the bearing of town $C$ from town $A$.\n        \\AnswerLine[][]\n        \\Marks{1}\n\n        \\subpart Show how to use your answer to \\textbf{part (b)(i)} to find the bearing of town $A$ from town $C$.\n        \\AnswerLine[][]\n        \\Marks{1}\n    \\end{subparts}\n\n    \\item Town $D$ is 96\\,km from town $C$ on a bearing of $100°$.\n\n    \\begin{subparts}\n        \\subpart Mark the position of town $D$ on the map.\n        \\Marks{2}\n\n        \\subpart Jez drives from town $C$ to town $D$ in $1\\dfrac{1}{2}$ hours.\n\n        Work out his average speed.\n        \\AnswerLine[][km/h]\n        \\Marks{2}\n\n        \\subpart Change 96\\,km into miles.\n\n        Assume that 8\\,km equals 5 miles.\n        \\AnswerLine[][miles]\n        \\Marks{2}\n    \\end{subparts}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2018OctNov-Paper33-Q04",
+    "paper": "2018OctNov-Paper33",
+    "qnum": 4,
+    "marks": 8,
+    "topics": [
+      "Algebra and graphs",
+      "Geometry"
+    ],
+    "s": "2.7",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Sequences",
+    "qtype": "finding terms and rules for sequences from patterns",
+    "g": "sequence",
+    "src": "0580/33/O/N/18 Q04",
+    "year": 2018,
+    "session": "OctNov",
+    "tex": "(a) The diagram shows the first three patterns in a sequence.\n\\newline\n\n    On the grid, draw pattern 4.\n\\newline\n\n(b) These are the first four terms of another sequence.\n\\newline\n    \\[41 \\qquad 35 \\qquad 29 \\qquad 23\\]\n\n    (i)  Write down the next two terms.\n\\newline\n\n        \n\n         Write down the rule for continuing this sequence.\n\\newline\n\n        \n\n(c) These are the first four terms of a different sequence.\n\\newline\n    \\[11 \\qquad 15 \\qquad 19 \\qquad 23\\]\n\n    (i)  Write down an expression for the $n$th term.\n\\newline\n\n        \n\n         Is 129 a term in this sequence?\n\n        Show how you decide.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "The diagram shows the first three patterns in a sequence.\n\\newline\n\n    \\begin{center}\n    \\begin{tikzpicture}[scale=0.4]\n        % Pattern 1 - 2 squares\n        \\draw (0,0) rectangle (1,1);\n        \\draw (1,0) rectangle (2,1);\n        \\node[below] at (1,-0.5) {Pattern 1};\n\n        % Pattern 2 - 4 squares (2x2 with one missing = L shape or 2+2)\n        \\draw (4,0) rectangle (5,1);\n        \\draw (5,0) rectangle (6,1);\n        \\draw (6,0) rectangle (7,1);\n        \\draw (7,0) rectangle (8,1);\n        \\node[below] at (6,-0.5) {Pattern 2};\n\n        % Pattern 3 - 6 squares\n        \\draw (10,0) rectangle (11,1);\n        \\draw (11,0) rectangle (12,1);\n        \\draw (12,0) rectangle (13,1);\n        \\draw (13,0) rectangle (14,1);\n        \\draw (14,0) rectangle (15,1);\n        \\draw (15,0) rectangle (16,1);\n        \\node[below] at (13,-0.5) {Pattern 3};\n\n        % Pattern 4 - blank space for student\n        \\node[below] at (20,-0.5) {Pattern 4};\n    \\end{tikzpicture}\n    \\end{center}\n\n    On the grid, draw pattern 4.\n\\newline\n"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "These are the first four terms of another sequence.\n\\newline\n    \\[41 \\qquad 35 \\qquad 29 \\qquad 23\\]"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Write down the next two terms.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": " , ",
+              "_compactAnswer": true
+            },
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Write down the rule for continuing this sequence.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "_compactAnswer": true
+            },
+            "marks": 1,
+            "_compactMarks": true
+          }
+        ],
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "These are the first four terms of a different sequence.\n\\newline\n    \\[11 \\qquad 15 \\qquad 19 \\qquad 23\\]"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Write down an expression for the $n$th term.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "_compactAnswer": true
+            },
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Is 129 a term in this sequence?\n\n        Show how you decide.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": " because "
+            },
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ],
+        "_compactEndSubparts": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n    \\item The diagram shows the first three patterns in a sequence.\n\n    \\begin{center}\n    \\begin{tikzpicture}[scale=0.4]\n        % Pattern 1 - 2 squares\n        \\draw (0,0) rectangle (1,1);\n        \\draw (1,0) rectangle (2,1);\n        \\node[below] at (1,-0.5) {Pattern 1};\n\n        % Pattern 2 - 4 squares (2x2 with one missing = L shape or 2+2)\n        \\draw (4,0) rectangle (5,1);\n        \\draw (5,0) rectangle (6,1);\n        \\draw (6,0) rectangle (7,1);\n        \\draw (7,0) rectangle (8,1);\n        \\node[below] at (6,-0.5) {Pattern 2};\n\n        % Pattern 3 - 6 squares\n        \\draw (10,0) rectangle (11,1);\n        \\draw (11,0) rectangle (12,1);\n        \\draw (12,0) rectangle (13,1);\n        \\draw (13,0) rectangle (14,1);\n        \\draw (14,0) rectangle (15,1);\n        \\draw (15,0) rectangle (16,1);\n        \\node[below] at (13,-0.5) {Pattern 3};\n\n        % Pattern 4 - blank space for student\n        \\node[below] at (20,-0.5) {Pattern 4};\n    \\end{tikzpicture}\n    \\end{center}\n\n    On the grid, draw pattern 4.\n    \\Marks{1}\n\n    \\item These are the first four terms of another sequence.\n    \\[41 \\qquad 35 \\qquad 29 \\qquad 23\\]\n\n    \\begin{subparts}\n        \\subpart Write down the next two terms.\n        \\AnswerLine[][ , ][]\n        \\Marks{2}\n\n        \\subpart Write down the rule for continuing this sequence.\n        \\AnswerLine[][]\n        \\Marks{1}\n    \\end{subparts}\n\n    \\item These are the first four terms of a different sequence.\n    \\[11 \\qquad 15 \\qquad 19 \\qquad 23\\]\n\n    \\begin{subparts}\n        \\subpart Write down an expression for the $n$th term.\n        \\AnswerLine[][]\n        \\Marks{2}\n\n        \\subpart Is 129 a term in this sequence?\n\n        Show how you decide.\n\n        \\AnswerLine[][ because ][]\n        \\Marks{2}\n    \\end{subparts}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2018OctNov-Paper33-Q05",
+    "paper": "2018OctNov-Paper33",
+    "qnum": 5,
+    "marks": 15,
+    "topics": [
+      "Algebra and graphs",
+      "Statistics"
+    ],
+    "s": null,
+    "d": 1,
+    "cat": "algebra",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/33/O/N/18 Q05",
+    "year": 2018,
+    "session": "OctNov",
+    "tex": "(a) Stef buys 3.5 kilograms of bananas.\n\\newline\n\n    (i)  Bananas cost \\$1.24 per kilogram.\n\\newline\n\n        Stef pays with a \\$5 note.\n\\newline\n\n        Work out how much change she receives.\n\\newline\n\n        \n\n         Write 3.5 kilograms in grams.\n\\newline\n\n        \n\n(b) Oranges cost 85 cents each.\n\\newline\n\n    Leo has a \\$10 note.\n\\newline\n\n    Work out the maximum number of oranges he can buy.\n\\newline\n\n    \n\n(c) 87\\% of the mass of a pineapple is water.\n\\newline\n\n    A pineapple has a mass of $700\\,\\text{g}$.\n\\newline\n\n    Work out the mass of water in this pineapple.\n\\newline\n\n    \n\n(d) The number of melons sold in a shop each day for 7 days is shown below.\n\\newline\n    \\[18 \\qquad 5 \\qquad 23 \\qquad 40 \\qquad 28 \\qquad 19 \\qquad 17\\]\n\n    Work out the mean number of melons sold.\n\\newline\n\n    \n\n(e) Rio and Chi go to a fruit shop.\n\\newline\n\n    Rio buys 4 apples and 2 plums for \\$1.96.\n\\newline\n\n    Chi buys 7 apples and 3 plums for \\$3.24.\n\\newline\n\n    Write down a pair of simultaneous equations and solve them to find the cost of 1 apple and the cost of 1 plum.\n\\newline\n\n    You must show all your working.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Stef buys 3.5 kilograms of bananas.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Bananas cost \\$1.24 per kilogram.\n\\newline\n\n        Stef pays with a \\$5 note.\n\\newline\n\n        Work out how much change she receives.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "\\$",
+              "_compactAnswer": true
+            },
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Write 3.5 kilograms in grams.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "g",
+              "_compactAnswer": true
+            },
+            "marks": 1,
+            "_compactMarks": true
+          }
+        ],
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Oranges cost 85 cents each.\n\\newline\n\n    Leo has a \\$10 note.\n\\newline\n\n    Work out the maximum number of oranges he can buy.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "87\\% of the mass of a pineapple is water.\n\\newline\n\n    A pineapple has a mass of $700\\,\\text{g}$.\n\\newline\n\n    Work out the mass of water in this pineapple.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "g",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "The number of melons sold in a shop each day for 7 days is shown below.\n\\newline\n    \\[18 \\qquad 5 \\qquad 23 \\qquad 40 \\qquad 28 \\qquad 19 \\qquad 17\\]\n\n    Work out the mean number of melons sold.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(e)",
+        "marks": 6,
+        "content": [
+          {
+            "type": "text",
+            "content": "Rio and Chi go to a fruit shop.\n\\newline\n\n    Rio buys 4 apples and 2 plums for \\$1.96.\n\\newline\n\n    Chi buys 7 apples and 3 plums for \\$3.24.\n\\newline\n\n    Write down a pair of simultaneous equations and solve them to find the cost of 1 apple and the cost of 1 plum.\n\\newline\n\n    You must show all your working.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "multiline",
+          "lines": 2,
+          "template": "Apple \\$ ____\\nPlum \\$ ____",
+          "lineSep": "blank",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "",
+    "cmd": "solve",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n    \\item Stef buys 3.5 kilograms of bananas.\n\n    \\begin{subparts}\n        \\subpart Bananas cost \\$1.24 per kilogram.\n\n        Stef pays with a \\$5 note.\n\n        Work out how much change she receives.\n        \\AnswerLine[\\$][]\n        \\Marks{2}\n\n        \\subpart Write 3.5 kilograms in grams.\n        \\AnswerLine[][g]\n        \\Marks{1}\n    \\end{subparts}\n\n    \\item Oranges cost 85 cents each.\n\n    Leo has a \\$10 note.\n\n    Work out the maximum number of oranges he can buy.\n    \\AnswerLine[][]\n    \\Marks{2}\n\n    \\item 87\\% of the mass of a pineapple is water.\n\n    A pineapple has a mass of 700\\,g.\n\n    Work out the mass of water in this pineapple.\n    \\AnswerLine[][g]\n    \\Marks{2}\n\n    \\item The number of melons sold in a shop each day for 7 days is shown below.\n    \\[18 \\qquad 5 \\qquad 23 \\qquad 40 \\qquad 28 \\qquad 19 \\qquad 17\\]\n\n    Work out the mean number of melons sold.\n    \\AnswerLine[][]\n    \\Marks{2}\n\n    \\item Rio and Chi go to a fruit shop.\n\n    Rio buys 4 apples and 2 plums for \\$1.96\\,.\n\n    Chi buys 7 apples and 3 plums for \\$3.24\\,.\n\n    Write down a pair of simultaneous equations and solve them to find the cost of 1 apple and the cost of 1 plum.\n\n    You must show all your working.\n    \\AnswerLine[Apple \\$][]\n    \\AnswerLine[Plum \\$][]\n    \\Marks{6}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2018OctNov-Paper33-Q06",
+    "paper": "2018OctNov-Paper33",
+    "qnum": 6,
+    "marks": 11,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.1",
+    "d": 1,
+    "cat": "number",
+    "topic": "Types of number",
+    "qtype": "number representation, multiples, powers, roots, indices, HCF, LCM, prime factorization",
+    "g": "indices",
+    "src": "0580/33/O/N/18 Q06",
+    "year": 2018,
+    "session": "OctNov",
+    "tex": "(a) Write the number $602\\,047$ in words.\n\\newline\n\n    \n\n(b) Find\n\n    (i)  a multiple of 14,\n\n        \n\n         $56^2$,\n\n        \n\n         $\\sqrt[3]{103\\,823}$,\n\n        \n\n         $12^0$.\n\\newline\n\n        \n\n(c) Find the lowest common multiple (LCM) of 12 and 78.\n\\newline\n\n    \n\n(d) Find the highest common factor (HCF) of 12 and 78.\n\\newline\n\n    \n\n(e) Write 432 as a product of its prime factors.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write the number $602\\,047$ in words.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Find"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "a multiple of 14,"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "_compactAnswer": true
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "$56^2$,"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "_compactAnswer": true
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "$\\sqrt[3]{103\\,823}$,"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "_compactAnswer": true
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iv)",
+            "content": [
+              {
+                "type": "text",
+                "content": "$12^0$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "_compactAnswer": true
+            },
+            "marks": 1,
+            "_compactMarks": true
+          }
+        ],
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the lowest common multiple (LCM) of 12 and 78.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the highest common factor (HCF) of 12 and 78.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(e)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write 432 as a product of its prime factors.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n    \\item Write the number 602\\,047 in words.\n    \\AnswerLine[][]\n    \\Marks{1}\n\n    \\item Find\n\n    \\begin{subparts}\n        \\subpart a multiple of 14,\n        \\AnswerLine[][]\n        \\Marks{1}\n\n        \\subpart $56^2$,\n        \\AnswerLine[][]\n        \\Marks{1}\n\n        \\subpart $\\sqrt[3]{103\\,823}$,\n        \\AnswerLine[][]\n        \\Marks{1}\n\n        \\subpart $12^0$.\n        \\AnswerLine[][]\n        \\Marks{1}\n    \\end{subparts}\n\n    \\item Find the lowest common multiple (LCM) of 12 and 78.\n    \\AnswerLine[][]\n    \\Marks{2}\n\n    \\item Find the highest common factor (HCF) of 12 and 78.\n    \\AnswerLine[][]\n    \\Marks{2}\n\n    \\item Write 432 as a product of its prime factors.\n    \\AnswerLine[][]\n    \\Marks{2}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2018OctNov-Paper33-Q07",
+    "paper": "2018OctNov-Paper33",
+    "qnum": 7,
+    "marks": 10,
+    "topics": [
+      "Algebra and graphs",
+      "Coordinate geometry"
+    ],
+    "s": "2.10",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Graphs of functions",
+    "qtype": "drawing reciprocal graph",
+    "g": "graph",
+    "src": "0580/33/O/N/18 Q07",
+    "year": 2018,
+    "session": "OctNov",
+    "tex": "(a) Complete the table of values for $y = \\dfrac{6}{x}$.\n\\newline\n\n    \\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}\n    \\hline\n    $x$ & $-6$ & $-5$ & $-4$ & $-3$ & $-2$ & $-1$ & 1 & 2 & 3 & 4 & 5 & 6 \\\\\n    \\hline\n    $y$ & $-1$ & & & $-2$ & $-3$ & $-6$ & 6 & 3 & 2 & & 1.2 & 1 \\\\\n    \\hline\n    \\end{tabular}\n\n(b) On the grid, draw the graph of $y = \\dfrac{6}{x}$ for $-6 \\leqslant x \\leqslant -1$ and $1 \\leqslant x \\leqslant 6$.\n\\newline\n\n    \n\n(c) Use your graph to solve the equation $\\dfrac{6}{x} = 4.5$.\n\\newline\n\n    \n\n(d) (i)  On the grid, draw the line $y = x$.\n\\newline\n\n         Write down the co-ordinates of the points of intersection of $y = \\dfrac{6}{x}$ and $y = x$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Complete the table of values for $y = \\dfrac{6}{x}$.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{center}\n    \\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}\n    \\hline\n    $x$ & $-6$ & $-5$ & $-4$ & $-3$ & $-2$ & $-1$ & 1 & 2 & 3 & 4 & 5 & 6 \\\\\n    \\hline\n    $y$ & $-1$ & & & $-2$ & $-3$ & $-6$ & 6 & 3 & 2 & & 1.2 & 1 \\\\\n    \\hline\n    \\end{tabular}\n    \\end{center}"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "text",
+            "content": "On the grid, draw the graph of $y = \\dfrac{6}{x}$ for $-6 \\leqslant x \\leqslant -1$ and $1 \\leqslant x \\leqslant 6$.\n\\newline\n\n    \\begin{center}\n    \\begin{tikzpicture}[scale=0.5]\n        % Grid\n        \\draw[gray, very thin] (-6,-6) grid (6,6);\n\n        % Axes\n        \\draw[thick, ->] (-6,0) -- (6.5,0) node[right] {$x$};\n        \\draw[thick, ->] (0,-6) -- (0,6.5) node[above] {$y$};\n\n        % X-axis labels\n        \\foreach \\x in {-6,-5,-4,-3,-2,-1,1,2,3,4,5,6}\n            \\node[below] at (\\x,0) {\\tiny \\x};\n\n        % Y-axis labels\n        \\foreach \\y in {-6,-5,-4,-3,-2,-1,1,2,3,4,5,6}\n            \\node[left] at (0,\\y) {\\tiny \\y};\n\n        \\node[below left] at (0,0) {\\tiny 0};\n    \\end{tikzpicture}\n    \\end{center}"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Use your graph to solve the equation $\\dfrac{6}{x} = 4.5$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x =$",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "On the grid, draw the line $y = x$.\n\\newline\n"
+              }
+            ],
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Write down the co-ordinates of the points of intersection of $y = \\dfrac{6}{x}$ and $y = x$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "(\\hspace{1cm},\\hspace{1cm}) and (\\hspace{1cm},\\hspace{1cm})",
+              "_compactAnswer": true
+            },
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ],
+        "_itemNewline": true,
+        "_compactEndSubparts": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n    \\item Complete the table of values for $y = \\dfrac{6}{x}$.\n\n    \\begin{center}\n    \\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}\n    \\hline\n    $x$ & $-6$ & $-5$ & $-4$ & $-3$ & $-2$ & $-1$ & 1 & 2 & 3 & 4 & 5 & 6 \\\\\n    \\hline\n    $y$ & $-1$ & & & $-2$ & $-3$ & $-6$ & 6 & 3 & 2 & & 1.2 & 1 \\\\\n    \\hline\n    \\end{tabular}\n    \\end{center}\n    \\Marks{2}\n\n    \\item On the grid, draw the graph of $y = \\dfrac{6}{x}$ for $-6 \\leqslant x \\leqslant -1$ and $1 \\leqslant x \\leqslant 6$.\n\n    \\begin{center}\n    \\begin{tikzpicture}[scale=0.5]\n        % Grid\n        \\draw[gray, very thin] (-6,-6) grid (6,6);\n\n        % Axes\n        \\draw[thick, ->] (-6,0) -- (6.5,0) node[right] {$x$};\n        \\draw[thick, ->] (0,-6) -- (0,6.5) node[above] {$y$};\n\n        % X-axis labels\n        \\foreach \\x in {-6,-5,-4,-3,-2,-1,1,2,3,4,5,6}\n            \\node[below] at (\\x,0) {\\tiny \\x};\n\n        % Y-axis labels\n        \\foreach \\y in {-6,-5,-4,-3,-2,-1,1,2,3,4,5,6}\n            \\node[left] at (0,\\y) {\\tiny \\y};\n\n        \\node[below left] at (0,0) {\\tiny 0};\n    \\end{tikzpicture}\n    \\end{center}\n    \\Marks{4}\n\n    \\item Use your graph to solve the equation $\\dfrac{6}{x} = 4.5$.\n    \\AnswerLine[$x =$][]\n    \\Marks{1}\n\n    \\item\n    \\begin{subparts}\n        \\subpart On the grid, draw the line $y = x$.\n        \\Marks{1}\n\n        \\subpart Write down the co-ordinates of the points of intersection of $y = \\dfrac{6}{x}$ and $y = x$.\n        \\AnswerLine[(\\hspace{1cm},\\hspace{1cm}) and (\\hspace{1cm},\\hspace{1cm})][]\n        \\Marks{2}\n    \\end{subparts}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2018OctNov-Paper33-Q08",
+    "paper": "2018OctNov-Paper33",
+    "qnum": 8,
+    "marks": 13,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry",
+      "Probability"
+    ],
+    "s": "3.4",
+    "d": 1,
+    "cat": "coord",
+    "topic": "Equation of a line",
+    "qtype": "length and midpoint",
+    "g": "mixed",
+    "src": "0580/33/O/N/18 Q08",
+    "year": 2018,
+    "session": "OctNov",
+    "tex": "(a) A bag contains 20 bulbs.\n\\newline\n\n    8 are yellow, 5 are red, 4 are white and 3 are pink.\n\\newline\n\n    Sam takes one bulb at random.\n\\newline\n\n    Find the probability that the bulb he takes is\n\n    (i)  white,\n\n        \n\n         blue,\n\n        \n\n         not pink.\n\\newline\n\n        \n\n(b) Sam has a rectangular pond, $ABCD$.\n\\newline\n\n    (i)  Calculate $BC$.\n\\newline\n\n        \n\n         He puts a fence around the edge of the pond.\n\\newline\n\n        Calculate the length of the fence.\n\\newline\n\n        \n\n(c) A scale drawing of Sam's garden, $PQRS$, is shown below.\n\\newline\n\n    The scale is 1 centimetre represents 4 metres.\n\\newline\n\n    Sam plants some bulbs so that they are\n    (d) less than 30 metres from $P$\n    and\n    (e) nearer to $PQ$ than to $PS$.\n\\newline\n    **Using a ruler and compasses only**, construct and shade the region where he plants the bulbs.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "A bag contains 20 bulbs.\n\\newline\n\n    8 are yellow, 5 are red, 4 are white and 3 are pink.\n\\newline\n\n    Sam takes one bulb at random.\n\\newline\n\n    Find the probability that the bulb he takes is"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "white,"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "_compactAnswer": true
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "blue,"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "_compactAnswer": true
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "not pink.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "_compactAnswer": true
+            },
+            "marks": 1,
+            "_compactMarks": true
+          }
+        ],
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Sam has a rectangular pond, $ABCD$.\n\\newline\n\n    \\begin{center}\n    \\begin{tikzpicture}[scale=0.4]\n        % Rectangle\n        \\coordinate (A) at (0,3.5);\n        \\coordinate (B) at (0,0);\n        \\coordinate (C) at (6,0);\n        \\coordinate (D) at (6,3.5);\n\n        \\draw (A) -- (B) -- (C) -- (D) -- cycle;\n        \\draw[dashed] (A) -- (C);\n\n        % Labels\n        \\node[above left] at (A) {$A$};\n        \\node[below left] at (B) {$B$};\n        \\node[below right] at (C) {$C$};\n        \\node[above right] at (D) {$D$};\n\n        % Dimensions\n        \\node[above] at (3,2.5) {$12\\,\\text{m}$};\n        \\node[right] at (6,1.75) {$7\\,\\text{m}$};\n\n        \\node at (9,2) {\\footnotesize NOT TO};\n        \\node at (9,1.5) {\\footnotesize SCALE};\n    \\end{tikzpicture}\n    \\end{center}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate $BC$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$BC =$",
+              "suffix": "m",
+              "_compactAnswer": true
+            },
+            "marks": 3,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "He puts a fence around the edge of the pond.\n\\newline\n\n        Calculate the length of the fence.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "m",
+              "_compactAnswer": true
+            },
+            "marks": 1,
+            "_compactMarks": true
+          }
+        ],
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(c)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "text",
+            "content": "A scale drawing of Sam's garden, $PQRS$, is shown below.\n\\newline\n\n    The scale is 1 centimetre represents 4 metres.\n\\newline\n\n    \\begin{center}\n    \\begin{tikzpicture}[scale=0.4]\n        % Rectangle garden\n        \\draw (0,0) rectangle (12,8);\n\n        % Labels\n        \\node[above left] at (0,8) {$P$};\n        \\node[below left] at (0,0) {$Q$};\n        \\node[below right] at (12,0) {$R$};\n        \\node[above right] at (12,8) {$S$};\n\n        % Scale\n        \\node at (14,0) {Scale : $1\\,\\text{cm}$ to $4\\,\\text{m}$};\n    \\end{tikzpicture}\n    \\end{center}\n\n    Sam plants some bulbs so that they are\n    \\begin{itemize}"
+          }
+        ]
+      },
+      {
+        "label": "(d)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "text",
+            "content": "less than 30 metres from $P$\n    \\end{itemize}\n    and\n    \\begin{itemize}"
+          }
+        ]
+      },
+      {
+        "label": "(e)",
+        "marks": 5,
+        "content": [
+          {
+            "type": "text",
+            "content": "nearer to $PQ$ than to $PS$.\n\\newline\n    \\end{itemize}\n\n    \\textbf{Using a ruler and compasses only}, construct and shade the region where he plants the bulbs.\n\\newline\n"
+          }
+        ],
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [],
+    "_v4_skip": true,
+    "_rawBody": "\\begin{parts}\n    \\item A bag contains 20 bulbs.\n\n    8 are yellow, 5 are red, 4 are white and 3 are pink.\n\n    Sam takes one bulb at random.\n\n    Find the probability that the bulb he takes is\n\n    \\begin{subparts}\n        \\subpart white,\n        \\AnswerLine[][]\n        \\Marks{1}\n\n        \\subpart blue,\n        \\AnswerLine[][]\n        \\Marks{1}\n\n        \\subpart not pink.\n        \\AnswerLine[][]\n        \\Marks{1}\n    \\end{subparts}\n\n    \\item Sam has a rectangular pond, $ABCD$.\n\n    \\begin{center}\n    \\begin{tikzpicture}[scale=0.4]\n        % Rectangle\n        \\coordinate (A) at (0,3.5);\n        \\coordinate (B) at (0,0);\n        \\coordinate (C) at (6,0);\n        \\coordinate (D) at (6,3.5);\n\n        \\draw (A) -- (B) -- (C) -- (D) -- cycle;\n        \\draw[dashed] (A) -- (C);\n\n        % Labels\n        \\node[above left] at (A) {$A$};\n        \\node[below left] at (B) {$B$};\n        \\node[below right] at (C) {$C$};\n        \\node[above right] at (D) {$D$};\n\n        % Dimensions\n        \\node[above] at (3,2.5) {$12\\,\\text{m}$};\n        \\node[right] at (6,1.75) {$7\\,\\text{m}$};\n\n        \\node at (9,2) {\\footnotesize NOT TO};\n        \\node at (9,1.5) {\\footnotesize SCALE};\n    \\end{tikzpicture}\n    \\end{center}\n\n    \\begin{subparts}\n        \\subpart Calculate $BC$.\n        \\AnswerLine[$BC =$][m]\n        \\Marks{3}\n\n        \\subpart He puts a fence around the edge of the pond.\n\n        Calculate the length of the fence.\n        \\AnswerLine[][m]\n        \\Marks{1}\n    \\end{subparts}\n\n    \\item A scale drawing of Sam's garden, $PQRS$, is shown below.\n\n    The scale is 1 centimetre represents 4 metres.\n\n    \\begin{center}\n    \\begin{tikzpicture}[scale=0.4]\n        % Rectangle garden\n        \\draw (0,0) rectangle (12,8);\n\n        % Labels\n        \\node[above left] at (0,8) {$P$};\n        \\node[below left] at (0,0) {$Q$};\n        \\node[below right] at (12,0) {$R$};\n        \\node[above right] at (12,8) {$S$};\n\n        % Scale\n        \\node at (14,0) {Scale : 1\\,cm to 4\\,m};\n    \\end{tikzpicture}\n    \\end{center}\n\n    Sam plants some bulbs so that they are\n    \\begin{itemize}\n        \\item less than 30 metres from $P$\n    \\end{itemize}\n    and\n    \\begin{itemize}\n        \\item nearer to $PQ$ than to $PS$.\n    \\end{itemize}\n\n    \\textbf{Using a ruler and compasses only}, construct and shade the region where he plants the bulbs.\n    \\Marks{5}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2018OctNov-Paper33-Q09",
+    "paper": "2018OctNov-Paper33",
+    "qnum": 9,
+    "marks": 10,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry",
+      "Mensuration",
+      "Trigonometry"
+    ],
+    "s": "3.2",
+    "d": 1,
+    "cat": "coord",
+    "topic": "Gradient",
+    "qtype": "drawing linear graphs",
+    "g": "graph",
+    "src": "0580/33/O/N/18 Q09",
+    "year": 2018,
+    "session": "OctNov",
+    "tex": "$A$, $B$ and $C$ are points on the circumference of the circle, centre $O$.\n\\newline\n\nThe straight line $DE$ touches the circle at $B$.\n\\newline\n\n(a) Write down the mathematical name for the line $DE$.\n\\newline\n\n    \n\n(b) On the circle, draw a radius.\n\\newline\n\n(c) Complete the following statements.\n\\newline\n\n    (i)  Angle $ABD$ = ... because ...\n\n        \n\n         Angle $ACB$ = ... because ...\n\n        \n\n(d) $AB = 9\\,\\text{cm}$.\n\\newline\n\n    (i)  Calculate the area of the circle.\n\\newline\n\n        Give the units of your answer.\n\\newline\n\n        \n\n         Calculate $BC$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down the mathematical name for the line $DE$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "On the circle, draw a radius.\n\\newline\n"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Complete the following statements.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Angle $ABD$ = \\dotfill because \\dotfill"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Angle $ACB$ = \\dotfill because \\dotfill"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ],
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(d)",
+        "content": [
+          {
+            "type": "text",
+            "content": "$AB = 9\\,\\text{cm}$.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate the area of the circle.\n\\newline\n\n        Give the units of your answer.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "_compactAnswer": true
+            },
+            "marks": 3,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate $BC$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$BC =$",
+              "suffix": "cm",
+              "_compactAnswer": true
+            },
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ],
+        "_compactEndSubparts": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n    % Circle\n    \\draw (0,0) circle (2);\n\n    % Centre O\n    \\fill (0,0) circle (0.05);\n    \\node[below left] at (0,0) {$O$};\n\n    % Points on circle\n    \\coordinate (A) at (120:2);\n    \\coordinate (B) at (-30:2);\n    \\coordinate (C) at (210:2);\n\n    \\fill (A) circle (0.05);\n    \\fill (B) circle (0.05);\n    \\fill (C) circle (0.05);\n\n    \\node[above left] at (A) {$A$};\n    \\node[right] at (B) {$B$};\n    \\node[below left] at (C) {$C$};\n\n    % Lines\n    \\draw (A) -- (B) -- (C) -- cycle;\n    \\draw (A) -- (0,0);\n\n    % Tangent line DE\n    \\coordinate (D) at ($(B)+(-2.5,-1.44)$);\n    \\coordinate (E) at ($(B)+(1.5,0.87)$);\n    \\draw (D) -- (E);\n\n    \\node[below] at (D) {$D$};\n    \\node[right] at (E) {$E$};\n\n    % Angle at A\n    \\node at (100:1.5) {$35°$};\n\n    \\node at (4,1) {\\footnotesize NOT TO};\n    \\node at (4,0.5) {\\footnotesize SCALE};\n\\end{tikzpicture}\n\\end{center}\n\n$A$, $B$ and $C$ are points on the circumference of the circle, centre $O$.\n\\newline\n\nThe straight line $DE$ touches the circle at $B$.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n    % Circle\n    \\draw (0,0) circle (2);\n\n    % Centre O\n    \\fill (0,0) circle (0.05);\n    \\node[below left] at (0,0) {$O$};\n\n    % Points on circle\n    \\coordinate (A) at (120:2);\n    \\coordinate (B) at (-30:2);\n    \\coordinate (C) at (210:2);\n\n    \\fill (A) circle (0.05);\n    \\fill (B) circle (0.05);\n    \\fill (C) circle (0.05);\n\n    \\node[above left] at (A) {$A$};\n    \\node[right] at (B) {$B$};\n    \\node[below left] at (C) {$C$};\n\n    % Lines\n    \\draw (A) -- (B) -- (C) -- cycle;\n    \\draw (A) -- (0,0);\n\n    % Tangent line DE\n    \\coordinate (D) at ($(B)+(-2.5,-1.44)$);\n    \\coordinate (E) at ($(B)+(1.5,0.87)$);\n    \\draw (D) -- (E);\n\n    \\node[below] at (D) {$D$};\n    \\node[right] at (E) {$E$};\n\n    % Angle at A\n    \\node at (100:1.5) {$35°$};\n\n    \\node at (4,1) {\\footnotesize NOT TO};\n    \\node at (4,0.5) {\\footnotesize SCALE};\n\\end{tikzpicture}\n\\end{center}\n\n$A$, $B$ and $C$ are points on the circumference of the circle, centre $O$.\n\nThe straight line $DE$ touches the circle at $B$.\n\n\\begin{parts}\n    \\item Write down the mathematical name for the line $DE$.\n    \\AnswerLine[][]\n    \\Marks{1}\n\n    \\item On the circle, draw a radius.\n    \\Marks{1}\n\n    \\item Complete the following statements.\n\n    \\begin{subparts}\n        \\subpart Angle $ABD$ = \\dotfill because \\dotfill\n\n        \\AnswerLine[][]\n        \\Marks{2}\n\n        \\subpart Angle $ACB$ = \\dotfill because \\dotfill\n\n        \\AnswerLine[][]\n        \\Marks{2}\n    \\end{subparts}\n\n    \\item $AB = 9$\\,cm.\n\n    \\begin{subparts}\n        \\subpart Calculate the area of the circle.\n\n        Give the units of your answer.\n        \\AnswerLine[][]\n        \\Marks{3}\n\n        \\subpart Calculate $BC$.\n        \\AnswerLine[$BC =$][cm]\n        \\Marks{2}\n    \\end{subparts}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  }
+]

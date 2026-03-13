@@ -1,0 +1,1121 @@
+[
+  {
+    "id": "0580-2023MayJune-Paper12-Q01",
+    "paper": "2023MayJune-Paper12",
+    "qnum": 1,
+    "marks": 3,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.1",
+    "d": 1,
+    "cat": "number",
+    "topic": "Types of number",
+    "qtype": "finding factors and reciprocals",
+    "g": "mixed",
+    "src": "0580/12/M/J/23 Q01",
+    "year": 2023,
+    "session": "MayJune",
+    "tex": "(a) Write down all the factors of 18.\n\\newline\n\n(b) Write down the reciprocal of 8.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down all the factors of 18.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down the reciprocal of 8.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "write",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Write down all the factors of 18.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item Write down the reciprocal of 8.\n\n\\AnswerLine[][]\n\\Marks{1}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2023MayJune-Paper12-Q02",
+    "paper": "2023MayJune-Paper12",
+    "qnum": 2,
+    "marks": 2,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.6",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/12/M/J/23 Q02",
+    "year": 2023,
+    "session": "MayJune",
+    "tex": "%\\begin{InsertScreenShot}\n%    \n%    \\NotToScale\n%\\end{InsertScreenShot}\n\n(a) Draw a line perpendicular to the line AB.\n\\newline\n\n(b) Measure the line AB in centimetres.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Draw a line perpendicular to the line AB.\n\\newline\n"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Measure the line AB in centimetres.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "cm"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "recall",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "text",
+        "content": "%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q02-LineAB.\n\\newline\npng}\n%    \\NotToScale\n%\\end{InsertScreenShot}"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper12/Q02/Q02.png"
+      }
+    ],
+    "_rawBody": "%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q02-LineAB.png}\n%    \\NotToScale\n%\\end{InsertScreenShot}\n\n\\begin{parts}\n\\item Draw a line perpendicular to the line AB.\n\\Marks{1}\n\n\\item Measure the line AB in centimetres.\n\n\\AnswerLine[][cm]\n\\Marks{1}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper12/Q02/Q02.png"
+    ]
+  },
+  {
+    "id": "0580-2023MayJune-Paper12-Q03",
+    "paper": "2023MayJune-Paper12",
+    "qnum": 3,
+    "marks": 2,
+    "topics": [
+      "Geometry",
+      "Transformations and vectors"
+    ],
+    "s": "4.5",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Similarity and congruence",
+    "qtype": "symmetry",
+    "g": "mixed",
+    "src": "0580/12/M/J/23 Q03",
+    "year": 2023,
+    "session": "MayJune",
+    "tex": "%\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\nShade two squares so that the diagram has rotational symmetry of order 4.\n\\newline\n",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "recall",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "text",
+        "content": "%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q03-SymmetryGrid.\n\\newline\npng}\n%\\end{InsertScreenShot}\n\nShade two squares so that the diagram has rotational symmetry of order 4.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper12/Q03/Q03.png"
+      }
+    ],
+    "_rawBody": "%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q03-SymmetryGrid.png}\n%\\end{InsertScreenShot}\n\nShade two squares so that the diagram has rotational symmetry of order 4.\n\\Marks{2}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper12/Q03/Q03.png"
+    ]
+  },
+  {
+    "id": "0580-2023MayJune-Paper12-Q04",
+    "paper": "2023MayJune-Paper12",
+    "qnum": 4,
+    "marks": 3,
+    "topics": [
+      "Number",
+      "Statistics"
+    ],
+    "s": "1.11",
+    "d": 1,
+    "cat": "number",
+    "topic": "Money and finance",
+    "qtype": "ratio and division",
+    "g": "mixed",
+    "src": "0580/12/M/J/23 Q04",
+    "year": 2023,
+    "session": "MayJune",
+    "tex": "Kai and Ava each have a piece of wood 57 cm long.\n\\newline\n}\n\n(a) Kai cuts his piece into 4 equal length parts.\n\\newline\nFind the length of one part.\n\\newline\n\n(b) Ava cuts her piece into two parts and the lengths are in the ratio $5 : 1$.\n\\newline\nFind the length of the longer part.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Kai cuts his piece into 4 equal length parts.\n\\newline\nFind the length of one part.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "cm"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Ava cuts her piece into two parts and the lengths are in the ratio $5 : 1$.\n\\newline\nFind the length of the longer part.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "cm"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\StemText{Kai and Ava each have a piece of wood 57 cm long.\n\\newline\n}"
+      }
+    ],
+    "_rawBody": "\\StemText{Kai and Ava each have a piece of wood 57 cm long.}\n\n\\begin{parts}\n\\item Kai cuts his piece into 4 equal length parts.\nFind the length of one part.\n\n\\AnswerLine[][cm]\n\\Marks{1}\n\n\\item Ava cuts her piece into two parts and the lengths are in the ratio $5 : 1$.\nFind the length of the longer part.\n\n\\AnswerLine[][cm]\n\\Marks{2}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2023MayJune-Paper12-Q05",
+    "paper": "2023MayJune-Paper12",
+    "qnum": 5,
+    "marks": 2,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.6",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/12/M/J/23 Q05",
+    "year": 2023,
+    "session": "MayJune",
+    "tex": "%\\begin{InsertScreenShot}\n%    \n%    \\NotToScale\n%\\end{InsertScreenShot}\n\nIn the diagram, $ABC$ is a triangle and $ACD$ is a straight line.\n\\newline\nFind the value of $x$ and the value of $y$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q05-Angles.\n\\newline\npng}\n%    \\NotToScale\n%\\end{InsertScreenShot}\n\nIn the diagram, $ABC$ is a triangle and $ACD$ is a straight line.\n\\newline\nFind the value of $x$ and the value of $y$.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper12/Q05/Q05.png"
+      }
+    ],
+    "answer": {
+      "type": "multiline",
+      "lines": 2,
+      "template": "$x = $ ____\\n$y = $ ____",
+      "lineSep": "blank"
+    },
+    "_rawBody": "%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q05-Angles.png}\n%    \\NotToScale\n%\\end{InsertScreenShot}\n\nIn the diagram, $ABC$ is a triangle and $ACD$ is a straight line.\nFind the value of $x$ and the value of $y$.\n\n\\AnswerLine[$x = $][]\n\n\\AnswerLine[$y = $][]\n\\Marks{2}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper12/Q05/Q05.png"
+    ]
+  },
+  {
+    "id": "0580-2023MayJune-Paper12-Q06",
+    "paper": "2023MayJune-Paper12",
+    "qnum": 6,
+    "marks": 1,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.6",
+    "d": 1,
+    "cat": "number",
+    "topic": "Standard form",
+    "qtype": "subtraction with negative numbers (temperature)",
+    "g": "mixed",
+    "src": "0580/12/M/J/23 Q06",
+    "year": 2023,
+    "session": "MayJune",
+    "tex": "Find the temperature that is 8 ° C colder than $-5$ ° C.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Find the temperature that is 8 \\textdegree C colder than $-5$ \\textdegree C.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "\\textdegree C"
+    },
+    "_rawBody": "Find the temperature that is 8 \\textdegree C colder than $-5$ \\textdegree C.\n\n\\AnswerLine[][\\textdegree C]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2023MayJune-Paper12-Q07",
+    "paper": "2023MayJune-Paper12",
+    "qnum": 7,
+    "marks": 2,
+    "topics": [
+      "Number",
+      "Statistics"
+    ],
+    "s": "1.1",
+    "d": 1,
+    "cat": "number",
+    "topic": "Types of number",
+    "qtype": "identifying prime numbers and summing them",
+    "g": "mixed",
+    "src": "0580/12/M/J/23 Q07",
+    "year": 2023,
+    "session": "MayJune",
+    "tex": "There are two prime numbers in this list.\n\\newline\n}\n27   47   57   61   75   93\nWork out the sum of these two prime numbers.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\StemText{There are two prime numbers in this list.\n\\newline\n}\n\\begin{center}\n27 \\quad 47 \\quad 57 \\quad 61 \\quad 75 \\quad 93\n\\end{center}\n\nWork out the sum of these two prime numbers.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "\\StemText{There are two prime numbers in this list.}\n\\begin{center}\n27 \\quad 47 \\quad 57 \\quad 61 \\quad 75 \\quad 93\n\\end{center}\n\nWork out the sum of these two prime numbers.\n\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2023MayJune-Paper12-Q08",
+    "paper": "2023MayJune-Paper12",
+    "qnum": 8,
+    "marks": 3,
+    "topics": [
+      "Statistics"
+    ],
+    "s": "9.4",
+    "d": 1,
+    "cat": "statistics",
+    "topic": "Charts and graphs",
+    "qtype": "statistical charts",
+    "g": "mixed",
+    "src": "0580/12/M/J/23 Q08",
+    "year": 2023,
+    "session": "MayJune",
+    "tex": "On ten days, Stefan records the number of minutes he has to wait for a train.\n\\newline\n1   3   12   5   4   23   5   24   11   8\n(a) Complete the stem-and-leaf diagram to show this information.\n\\newline\n\n\\begin{tabular}{c|l}\n0 & 1   3 \\\\\n& \\\\\n1 & \\\\\n& \\\\\n2 & \\\\\n\\end{tabular}\n Key: $0 \\mid 1$ represents 1 minute\n\n(b) Find the median.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Complete the stem-and-leaf diagram to show this information.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{center}\n\\begin{tabular}{c|l}\n0 & 1 \\quad 3 \\\\\n& \\\\\n1 & \\\\\n& \\\\\n2 & \\\\\n\\end{tabular}\n\\end{center}"
+          },
+          {
+            "type": "text",
+            "content": "\\hspace{3cm} Key: $0 \\mid 1$ represents 1 minute"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the median.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "min"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "On ten days, Stefan records the number of minutes he has to wait for a train.\n\\newline\n\\begin{center}\n1 \\quad 3 \\quad 12 \\quad 5 \\quad 4 \\quad 23 \\quad 5 \\quad 24 \\quad 11 \\quad 8\n\\end{center}"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper12/Q08/Q08.png"
+      }
+    ],
+    "_rawBody": "On ten days, Stefan records the number of minutes he has to wait for a train.\n\\begin{center}\n1 \\quad 3 \\quad 12 \\quad 5 \\quad 4 \\quad 23 \\quad 5 \\quad 24 \\quad 11 \\quad 8\n\\end{center}\n\n\\begin{parts}\n\\item Complete the stem-and-leaf diagram to show this information.\n\n\\begin{center}\n\\begin{tabular}{c|l}\n0 & 1 \\quad 3 \\\\\n& \\\\\n1 & \\\\\n& \\\\\n2 & \\\\\n\\end{tabular}\n\\end{center}\n\\hspace{3cm} Key: $0 \\mid 1$ represents 1 minute\n\\Marks{2}\n\n\\item Find the median.\n\n\\AnswerLine[][min]\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper12/Q08/Q08.png"
+    ]
+  },
+  {
+    "id": "0580-2023MayJune-Paper12-Q09",
+    "paper": "2023MayJune-Paper12",
+    "qnum": 9,
+    "marks": 1,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.3",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Symmetry",
+    "qtype": "scale drawings and bearings",
+    "g": "mixed",
+    "src": "0580/12/M/J/23 Q09",
+    "year": 2023,
+    "session": "MayJune",
+    "tex": "%\\begin{InsertScreenShot}\n%    \n%    \\NotToScale\n%\\end{InsertScreenShot}\n\nThe scale drawing shows the positions of town $A$ and town $B$.\n\\newline\nMeasure the bearing of town $B$ from town $A$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "recall",
+    "cmd": "other",
+    "stem": [
+      {
+        "type": "text",
+        "content": "%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q09-Bearing.\n\\newline\npng}\n%    \\NotToScale\n%\\end{InsertScreenShot}\n\nThe scale drawing shows the positions of town $A$ and town $B$.\n\\newline\nMeasure the bearing of town $B$ from town $A$.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper12/Q09/Q09.png"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "\\textdegree"
+    },
+    "_rawBody": "%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q09-Bearing.png}\n%    \\NotToScale\n%\\end{InsertScreenShot}\n\nThe scale drawing shows the positions of town $A$ and town $B$.\nMeasure the bearing of town $B$ from town $A$.\n\n\\AnswerLine[][\\textdegree]\n\\Marks{1}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper12/Q09/Q09.png"
+    ]
+  },
+  {
+    "id": "0580-2023MayJune-Paper12-Q10",
+    "paper": "2023MayJune-Paper12",
+    "qnum": 10,
+    "marks": 3,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.6",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/12/M/J/23 Q10",
+    "year": 2023,
+    "session": "MayJune",
+    "tex": "%\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\nThe diagram shows a right-angled triangular prism.\n\\newline\nOn the $1\\text{ cm}^2$ grid, complete the net of this prism.\n\\newline\nOne face has been drawn for you.\n\\newline\n",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "recall",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q10-PrismNet.\n\\newline\npng}\n%\\end{InsertScreenShot}\n\nThe diagram shows a right-angled triangular prism.\n\\newline\nOn the $1\\text{ cm}^2$ grid, complete the net of this prism.\n\\newline\nOne face has been drawn for you.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper12/Q10/Q10-2.png"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper12/Q10/Q10-1.png"
+      }
+    ],
+    "_rawBody": "%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q10-PrismNet.png}\n%\\end{InsertScreenShot}\n\nThe diagram shows a right-angled triangular prism.\nOn the $1\\text{ cm}^2$ grid, complete the net of this prism.\nOne face has been drawn for you.\n\\Marks{3}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper12/Q10/Q10-1.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper12/Q10/Q10-2.png"
+    ]
+  },
+  {
+    "id": "0580-2023MayJune-Paper12-Q11",
+    "paper": "2023MayJune-Paper12",
+    "qnum": 11,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.11",
+    "d": 1,
+    "cat": "number",
+    "topic": "Money and finance",
+    "qtype": "map scale calculation and unit conversion",
+    "g": "mixed",
+    "src": "0580/12/M/J/23 Q11",
+    "year": 2023,
+    "session": "MayJune",
+    "tex": "The distance from town $A$ to town $B$ on a map is 3.5 cm.\n\\newline\nThe scale on the map is $1 : 250\\,000$.\n\\newline\n\nFind the actual distance, in kilometres, from town $A$ to town $B$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The distance from town $A$ to town $B$ on a map is 3.5 cm.\n\\newline\nThe scale on the map is $1 : 250\\,000$.\n\\newline\n\nFind the actual distance, in kilometres, from town $A$ to town $B$.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "km"
+    },
+    "_rawBody": "The distance from town $A$ to town $B$ on a map is 3.5 cm.\nThe scale on the map is $1 : 250\\,000$.\n\nFind the actual distance, in kilometres, from town $A$ to town $B$.\n\n\\AnswerLine[][km]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2023MayJune-Paper12-Q12",
+    "paper": "2023MayJune-Paper12",
+    "qnum": 12,
+    "marks": 2,
+    "topics": [
+      "Probability"
+    ],
+    "s": "8.3",
+    "d": 1,
+    "cat": "probability",
+    "topic": "Tree diagrams",
+    "qtype": "combined events",
+    "g": "mixed",
+    "src": "0580/12/M/J/23 Q12",
+    "year": 2023,
+    "session": "MayJune",
+    "tex": "A spinner is spun.\n\\newline\nThe possible outcomes are A, B, C or D.\n\\newline\nThe probability of spinning A, C or D is shown in the table.\n\\newline\n\n\\begin{tabular}{|l|c|c|c|c|}\n\\hline\nLetter on spinner & A & B & C & D \\\\\n\\hline\nProbability & 0.2 &  & 0.05 & 0.35 \\\\\n\\hline\n\\end{tabular}\nComplete the table.\n\\newline\n",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "recall",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "A spinner is spun.\n\\newline\nThe possible outcomes are A, B, C or D.\n\\newline\nThe probability of spinning A, C or D is shown in the table.\n\\newline\n"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{center}\n\\begin{tabular}{|l|c|c|c|c|}\n\\hline\nLetter on spinner & A & B & C & D \\\\\n\\hline\nProbability & 0.2 &  & 0.05 & 0.35 \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+      },
+      {
+        "type": "text",
+        "content": "Complete the table.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper12/Q12/Q12.png"
+      }
+    ],
+    "_rawBody": "A spinner is spun.\nThe possible outcomes are A, B, C or D.\nThe probability of spinning A, C or D is shown in the table.\n\n\\begin{center}\n\\begin{tabular}{|l|c|c|c|c|}\n\\hline\nLetter on spinner & A & B & C & D \\\\\n\\hline\nProbability & 0.2 &  & 0.05 & 0.35 \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\nComplete the table.\n\\Marks{2}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper12/Q12/Q12.png"
+    ]
+  },
+  {
+    "id": "0580-2023MayJune-Paper12-Q13",
+    "paper": "2023MayJune-Paper12",
+    "qnum": 13,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.2",
+    "d": 1,
+    "cat": "number",
+    "topic": "Squares, cubes and roots",
+    "qtype": "Cardinality of a set, intersection of sets",
+    "g": "mixed",
+    "src": "0580/12/M/J/23 Q13",
+    "year": 2023,
+    "session": "MayJune",
+    "tex": "$\\mathcal{E} = \\{x \\mid 1 \\leqslant x \\leqslant 20\\}$\n$E = \\{\\text{even numbers}\\}$\n$M = \\{\\text{multiples of 5}\\}$\n\n(a) Find $n(M)$.\n\\newline\n\n(b) Find the elements in the set $E \\cap M$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find $n(M)$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the elements in the set $E \\cap M$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "$\\mathcal{E} = \\{x \\mid 1 \\leqslant x \\leqslant 20\\}$\n$E = \\{\\text{even numbers}\\}$\n$M = \\{\\text{multiples of 5}\\}$"
+      }
+    ],
+    "_rawBody": "$\\mathcal{E} = \\{x \\mid 1 \\leqslant x \\leqslant 20\\}$\n$E = \\{\\text{even numbers}\\}$\n$M = \\{\\text{multiples of 5}\\}$\n\n\\begin{parts}\n\\item Find $n(M)$.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Find the elements in the set $E \\cap M$.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2023MayJune-Paper12-Q14",
+    "paper": "2023MayJune-Paper12",
+    "qnum": 14,
+    "marks": 3,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.6",
+    "d": 1,
+    "cat": "number",
+    "topic": "Standard form",
+    "qtype": "Division of mixed numbers and fractions without calculator",
+    "g": "mixed",
+    "src": "0580/12/M/J/23 Q14",
+    "year": 2023,
+    "session": "MayJune",
+    "tex": "Without using a calculator, work out $1\\frac{4}{7} \\div \\frac{5}{21}$.\n\\newline\nYou must show all your working and give your answer as a fraction in its simplest form.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Without using a calculator, work out $1\\frac{4}{7} \\div \\frac{5}{21}$.\n\\newline\nYou must show all your working and give your answer as a fraction in its simplest form.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Without using a calculator, work out $1\\frac{4}{7} \\div \\frac{5}{21}$.\nYou must show all your working and give your answer as a fraction in its simplest form.\n\n\\AnswerLine[][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2023MayJune-Paper12-Q15",
+    "paper": "2023MayJune-Paper12",
+    "qnum": 15,
+    "marks": 3,
+    "topics": [
+      "Coordinate geometry",
+      "Transformations and vectors"
+    ],
+    "s": "3.1",
+    "d": 1,
+    "cat": "coord",
+    "topic": "Coordinates",
+    "qtype": "coordinates reading/plotting",
+    "g": "graph",
+    "src": "0580/12/M/J/23 Q15",
+    "year": 2023,
+    "session": "MayJune",
+    "tex": "$F$ is the point $(1, -4)$, $\\vec{FG} = \\begin{pmatrix} 8 \\\\ -3 \\end{pmatrix}$ and $\\vec{GH} = \\begin{pmatrix} -12 \\\\ 35 \\end{pmatrix}$.\n\\newline\n\nFind\n\n(a) $3\\vec{FG}$\n\n(b) $\\vec{FG} + \\vec{GH}$\n\n(c) the coordinates of the point $G$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "$3\\vec{FG}$"
+          }
+        ],
+        "answer": {
+          "type": "vector",
+          "fields": 2
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "$\\vec{FG} + \\vec{GH}$"
+          }
+        ],
+        "answer": {
+          "type": "vector",
+          "fields": 2
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "the coordinates of the point $G$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "(...................... , ......................)"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "$F$ is the point $(1, -4)$, $\\vec{FG} = \\begin{pmatrix} 8 \\\\ -3 \\end{pmatrix}$ and $\\vec{GH} = \\begin{pmatrix} -12 \\\\ 35 \\end{pmatrix}$.\n\\newline\n\nFind"
+      }
+    ],
+    "_rawBody": "$F$ is the point $(1, -4)$, $\\vec{FG} = \\begin{pmatrix} 8 \\\\ -3 \\end{pmatrix}$ and $\\vec{GH} = \\begin{pmatrix} -12 \\\\ 35 \\end{pmatrix}$.\n\nFind\n\n\\begin{parts}\n\\item $3\\vec{FG}$\n\n\\AnswerLine[][$\\begin{pmatrix} \\hspace*{1em} \\\\ \\hspace*{1em} \\end{pmatrix}$]\n\\Marks{1}\n\n\\item $\\vec{FG} + \\vec{GH}$\n\n\\AnswerLine[][$\\begin{pmatrix} \\hspace*{1em} \\\\ \\hspace*{1em} \\end{pmatrix}$]\n\\Marks{1}\n\n\\item the coordinates of the point $G$.\n\n\\AnswerLine[][(...................... , ......................)]\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2023MayJune-Paper12-Q16",
+    "paper": "2023MayJune-Paper12",
+    "qnum": 16,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.5",
+    "d": 1,
+    "cat": "number",
+    "topic": "Ordering",
+    "qtype": "Listing integers within an inequality range",
+    "g": "inequality",
+    "src": "0580/12/M/J/23 Q16",
+    "year": 2023,
+    "session": "MayJune",
+    "tex": "$x$ is an integer where $x \\geqslant -3$ and $x \\leqslant 13$.\n\\newline\nWrite down all the possible values of $x$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "write",
+    "stem": [
+      {
+        "type": "text",
+        "content": "$x$ is an integer where $x \\geqslant -3$ and $x \\leqslant 13$.\n\\newline\nWrite down all the possible values of $x$.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "$x$ is an integer where $x \\geqslant -3$ and $x \\leqslant 13$.\nWrite down all the possible values of $x$.\n\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2023MayJune-Paper12-Q17",
+    "paper": "2023MayJune-Paper12",
+    "qnum": 17,
+    "marks": 2,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.6",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/12/M/J/23 Q17",
+    "year": 2023,
+    "session": "MayJune",
+    "tex": "Find the size of an interior angle of a regular 15-sided polygon.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Find the size of an interior angle of a regular 15-sided polygon.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "\\textdegree"
+    },
+    "_rawBody": "Find the size of an interior angle of a regular 15-sided polygon.\n\n\\AnswerLine[][\\textdegree]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2023MayJune-Paper12-Q18",
+    "paper": "2023MayJune-Paper12",
+    "qnum": 18,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.8",
+    "d": 1,
+    "cat": "number",
+    "topic": "Ratio, rate and proportion",
+    "qtype": "Converting to standard form, multiplication of numbers in standard form",
+    "g": "mixed",
+    "src": "0580/12/M/J/23 Q18",
+    "year": 2023,
+    "session": "MayJune",
+    "tex": "(a) Write 45 000 in standard form.\n\\newline\n\n(b) Calculate $6.75 \\times 10^{-3} \\times 4.2 \\times 10^{5}$.\n\\newline\nGive your answer in standard form.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write 45 000 in standard form.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Calculate $6.75 \\times 10^{-3} \\times 4.2 \\times 10^{5}$.\n\\newline\nGive your answer in standard form.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Write 45 000 in standard form.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Calculate $6.75 \\times 10^{-3} \\times 4.2 \\times 10^{5}$.\nGive your answer in standard form.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2023MayJune-Paper12-Q19",
+    "paper": "2023MayJune-Paper12",
+    "qnum": 19,
+    "marks": 2,
+    "topics": [
+      "Algebra and graphs",
+      "Statistics"
+    ],
+    "s": null,
+    "d": 1,
+    "cat": "algebra",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/12/M/J/23 Q19",
+    "year": 2023,
+    "session": "MayJune",
+    "tex": "Simplify.\n\\newline\n}\n\n\\[\n18 \\times 12 \\div 3 \\times 3\n\\]",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "",
+    "cmd": "simplify",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\StemText{Simplify.\n\\newline\n}\n\n\\[\n18 \\times 12 \\div 3 \\times 3\n\\]"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "\\StemText{Simplify.}\n\n\\[\n18 \\times 12 \\div 3 \\times 3\n\\]\n\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2023MayJune-Paper12-Q20",
+    "paper": "2023MayJune-Paper12",
+    "qnum": 20,
+    "marks": 3,
+    "topics": [
+      "Statistics"
+    ],
+    "s": "9.3",
+    "d": 1,
+    "cat": "statistics",
+    "topic": "Frequency tables",
+    "qtype": "averages and spread",
+    "g": "mixed",
+    "src": "0580/12/M/J/23 Q20",
+    "year": 2023,
+    "session": "MayJune",
+    "tex": "Buses at a station go to the port or to the town.\n\\newline\n}\nBuses leave every 28 minutes for the port.\n\\newline\nBuses leave every 48 minutes for the town.\n\\newline\nAt 10:18 a bus for the port and a bus for the town leave the station together.\n\\newline\n\nFind the next time when a bus for the port and a bus for the town leave the station together.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\StemText{Buses at a station go to the port or to the town.\n\\newline\n}\nBuses leave every 28 minutes for the port.\n\\newline\nBuses leave every 48 minutes for the town.\n\\newline\nAt 10:18 a bus for the port and a bus for the town leave the station together.\n\\newline\n\nFind the next time when a bus for the port and a bus for the town leave the station together.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "\\StemText{Buses at a station go to the port or to the town.}\nBuses leave every 28 minutes for the port.\nBuses leave every 48 minutes for the town.\nAt 10:18 a bus for the port and a bus for the town leave the station together.\n\nFind the next time when a bus for the port and a bus for the town leave the station together.\n\n\\AnswerLine[][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2023MayJune-Paper12-Q21",
+    "paper": "2023MayJune-Paper12",
+    "qnum": 21,
+    "marks": 2,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.4",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Circle theorems",
+    "qtype": "similarity and congruence",
+    "g": "mixed",
+    "src": "0580/12/M/J/23 Q21",
+    "year": 2023,
+    "session": "MayJune",
+    "tex": "%\\begin{InsertScreenShot}\n%    \n%    \\NotToScale\n%\\end{InsertScreenShot}\n\nTriangle $ABC$ is similar to triangle $PQR$.\n\\newline\nCalculate $QR$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q21-SimilarTriangles.\n\\newline\npng}\n%    \\NotToScale\n%\\end{InsertScreenShot}\n\nTriangle $ABC$ is similar to triangle $PQR$.\n\\newline\nCalculate $QR$.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper12/Q21/Q21.png"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "$QR = $",
+      "suffix": "cm"
+    },
+    "_rawBody": "%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q21-SimilarTriangles.png}\n%    \\NotToScale\n%\\end{InsertScreenShot}\n\nTriangle $ABC$ is similar to triangle $PQR$.\nCalculate $QR$.\n\n\\AnswerLine[$QR = $][cm]\n\\Marks{2}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper12/Q21/Q21.png"
+    ]
+  },
+  {
+    "id": "0580-2023MayJune-Paper12-Q22",
+    "paper": "2023MayJune-Paper12",
+    "qnum": 22,
+    "marks": 6,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.6",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/12/M/J/23 Q22",
+    "year": 2023,
+    "session": "MayJune",
+    "tex": "(a) %\\begin{InsertScreenShot}\n%    \n%    \\NotToScale\n%\\end{InsertScreenShot}\n\nThe diagram shows a right-angled triangle $ABC$.\n\\newline\nCalculate $AB$.\n\\newline\n\n(b) %\\begin{InsertScreenShot}\n%    \n%    \\NotToScale\n%\\end{InsertScreenShot}\n\nThe diagram shows right-angled triangles $PQS$ and $PRS$.\n\\newline\n$PQ = 23.8$ cm, $QS = 11.2$ cm and $SR = 20$ cm.\n\\newline\nCalculate $PR$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper12/Q22/Q22a.png"
+          },
+          {
+            "type": "text",
+            "content": "%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q22-TriangleABC.\n\\newline\npng}\n%    \\NotToScale\n%\\end{InsertScreenShot}\n\nThe diagram shows a right-angled triangle $ABC$.\n\\newline\nCalculate $AB$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$AB = $",
+          "suffix": "cm"
+        },
+        "_compactMarks": true,
+        "_itemNewline": true
+      },
+      {
+        "label": "(b)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper12/Q22/Q22b.png"
+          },
+          {
+            "type": "text",
+            "content": "%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q22-TrianglesPQS-PRS.\n\\newline\npng}\n%    \\NotToScale\n%\\end{InsertScreenShot}\n\nThe diagram shows right-angled triangles $PQS$ and $PRS$.\n\\newline\n$PQ = 23.8$ cm, $QS = 11.2$ cm and $SR = 20$ cm.\n\\newline\nCalculate $PR$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$PR = $",
+          "suffix": "cm"
+        },
+        "_compactMarks": true,
+        "_itemNewline": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q22-TriangleABC.png}\n%    \\NotToScale\n%\\end{InsertScreenShot}\n\nThe diagram shows a right-angled triangle $ABC$.\nCalculate $AB$.\n\n\\AnswerLine[$AB = $][cm]\n\\Marks{2}\n\n\\item\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q22-TrianglesPQS-PRS.png}\n%    \\NotToScale\n%\\end{InsertScreenShot}\n\nThe diagram shows right-angled triangles $PQS$ and $PRS$.\n$PQ = 23.8$ cm, $QS = 11.2$ cm and $SR = 20$ cm.\nCalculate $PR$.\n\n\\AnswerLine[$PR = $][cm]\n\\Marks{4}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper12/Q22/Q22a.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper12/Q22/Q22b.png"
+    ]
+  },
+  {
+    "id": "0580-2023MayJune-Paper12-Q23",
+    "paper": "2023MayJune-Paper12",
+    "qnum": 23,
+    "marks": 3,
+    "topics": [
+      "Transformations and vectors"
+    ],
+    "s": "7.1",
+    "d": 1,
+    "cat": "vectors",
+    "topic": "Translation",
+    "qtype": "transformations",
+    "g": "mixed",
+    "src": "0580/12/M/J/23 Q23",
+    "year": 2023,
+    "session": "MayJune",
+    "tex": "(a) The mass, $m$ kilograms, of object $A$ is 350 kg, correct to the nearest 10 kg.\n\\newline\nComplete this statement about the value of $m$.\n\\newline\n\n(b) The mass of object $B$ is 348 kg, correct to the nearest kilogram.\n\\newline\nShow that the mass of object $B$ may be more than the mass of object $A$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "The mass, $m$ kilograms, of object $A$ is 350 kg, correct to the nearest 10 kg.\n\\newline\nComplete this statement about the value of $m$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "~~~~~~~~",
+          "suffix": " $\\le m < $ "
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "The mass of object $B$ is 348 kg, correct to the nearest kilogram.\n\\newline\nShow that the mass of object $B$ may be more than the mass of object $A$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "multiline",
+          "lines": 2
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "analyse",
+    "cmd": "show",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item The mass, $m$ kilograms, of object $A$ is 350 kg, correct to the nearest 10 kg.\nComplete this statement about the value of $m$.\n\n\\AnswerLine[~~~~~~~~][ $\\le m < $ ]\n\\Marks{2}\n\n\\item The mass of object $B$ is 348 kg, correct to the nearest kilogram.\nShow that the mass of object $B$ may be more than the mass of object $A$.\n\n\\answerlines[2]\n\\Marks{1}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  }
+]

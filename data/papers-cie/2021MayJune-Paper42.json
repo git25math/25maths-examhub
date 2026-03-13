@@ -1,0 +1,1224 @@
+[
+  {
+    "id": "0580-2021MayJune-Paper42-Q01",
+    "paper": "2021MayJune-Paper42",
+    "qnum": 1,
+    "marks": 11,
+    "topics": [
+      "Number",
+      "Mensuration"
+    ],
+    "s": "1.13",
+    "d": 2,
+    "cat": "number",
+    "topic": "Electronic calculators",
+    "qtype": "Percentage decrease, cost calculation, ratio to percentage, ratio sharing",
+    "g": "mixed",
+    "src": "0580/42/M/J/21 Q01",
+    "year": 2021,
+    "session": "MayJune",
+    "tex": "(a) A 2.5-litre tin of paint costs \\$13.50.\n\\newline\n\\\\\nIn a sale, the cost is reduced by 14\\%.\n\\newline\n\n(i)  Work out the sale price of this tin of paint.\n\\newline\n\n Work out the cost of buying 42.5 litres of paint at this sale price.\n\\newline\n\n(b) Henri buys some paint in the ratio red paint : white paint : green paint = 2 : 8 : 5.\n\\newline\n\n(i)  Find the percentage of this paint that is white.\n\\newline\n\n Henri buys a total of 22.5 litres of paint.\n\\newline\n\nFind the number of litres of green paint he buys.\n\\newline\n\n(c) Maria paints a rectangular wall.\n\\newline\n\\\\\nThe length of the wall is $20.5\\,\\text{m}$ and the height is $2.4\\,\\text{m}$, both correct to 1 decimal place.\n\\newline\n\nOne litre of paint covers an area of exactly $10\\,\\text{m}^2$.\n\\newline\n\nCalculate the smallest number of 2.5-litre tins of paint she will need to be sure all the wall is painted.\n\\newline\n\\\\\nShow all your working.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "A 2.5-litre tin of paint costs \\$13.50.\n\\newline\n\\\\\nIn a sale, the cost is reduced by 14\\%.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Work out the sale price of this tin of paint.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "\\$",
+              "space": {
+                "type": "working",
+                "height": "3cm",
+                "cmd": "WorkingSpace"
+              }
+            },
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Work out the cost of buying 42.5 litres of paint at this sale price.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "\\$",
+              "space": {
+                "type": "working",
+                "height": "3cm",
+                "cmd": "WorkingSpace"
+              }
+            },
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Henri buys some paint in the ratio red paint : white paint : green paint = 2 : 8 : 5.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the percentage of this paint that is white.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "\\%",
+              "space": {
+                "type": "working",
+                "height": "2cm",
+                "cmd": "WorkingSpace"
+              }
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Henri buys a total of 22.5 litres of paint.\n\\newline\n\nFind the number of litres of green paint he buys.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "litres",
+              "space": {
+                "type": "working",
+                "height": "3cm",
+                "cmd": "WorkingSpace"
+              }
+            },
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ]
+      },
+      {
+        "label": "(c)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "text",
+            "content": "Maria paints a rectangular wall.\n\\newline\n\\\\\nThe length of the wall is $20.5\\,\\text{m}$ and the height is $2.4\\,\\text{m}$, both correct to 1 decimal place.\n\\newline\n\nOne litre of paint covers an area of exactly $10\\,\\text{m}^2$.\n\\newline\n\nCalculate the smallest number of 2.5-litre tins of paint she will need to be sure all the wall is painted.\n\\newline\n\\\\\nShow all your working.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "space": {
+            "type": "working",
+            "height": "6cm",
+            "cmd": "WorkingSpace"
+          }
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item A 2.5-litre tin of paint costs \\$13.50.\\\\\nIn a sale, the cost is reduced by 14\\%.\n\n\\begin{subparts}\n\\subpart Work out the sale price of this tin of paint.\n\n\\WorkingSpace{3cm}\n\n\\AnswerLine[\\$][]\n\\Marks{2}\n\n\\subpart Work out the cost of buying 42.5 litres of paint at this sale price.\n\n\\WorkingSpace{3cm}\n\n\\AnswerLine[\\$][]\n\\Marks{2}\n\n\\end{subparts}\n\n\\item Henri buys some paint in the ratio red paint : white paint : green paint = 2 : 8 : 5.\n\n\\begin{subparts}\n\\subpart Find the percentage of this paint that is white.\n\n\\WorkingSpace{2cm}\n\n\\AnswerLine[][\\%]\n\\Marks{1}\n\n\\subpart Henri buys a total of 22.5 litres of paint.\n\nFind the number of litres of green paint he buys.\n\n\\WorkingSpace{3cm}\n\n\\AnswerLine[][litres]\n\\Marks{2}\n\n\\end{subparts}\n\n\\item Maria paints a rectangular wall.\\\\\nThe length of the wall is 20.5\\,m and the height is 2.4\\,m, both correct to 1 decimal place.\n\nOne litre of paint covers an area of exactly 10\\,m$^2$.\n\nCalculate the smallest number of 2.5-litre tins of paint she will need to be sure all the wall is painted.\\\\\nShow all your working.\n\n\\WorkingSpace{6cm}\n\n\\AnswerLine[][]\n\\Marks{4}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2021MayJune-Paper42-Q02",
+    "paper": "2021MayJune-Paper42",
+    "qnum": 2,
+    "marks": 11,
+    "topics": [
+      "Number",
+      "Algebra and graphs"
+    ],
+    "s": "2.10",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Graphs of functions",
+    "qtype": "graphing exponential functions, solving equations graphically, and interpreting solutions from graph",
+    "g": "function",
+    "src": "0580/42/M/J/21 Q02",
+    "year": 2021,
+    "session": "MayJune",
+    "tex": "The table shows some values for $y = 2 \\times 0.5^x - 1$.\n\\newline\n\n\\begin{tabular}{|c|c|c|c|c|c|c|c|}\n\\hline\n$x$ & $-1$ & $-0.5$ & $0$ & $0.5$ & $1$ & $1.5$ & $2$ \\\\\n\\hline\n$y$ & $3$ & $1.83$ & & $0.41$ & $0$ & & $-0.29$ \\\\\n\\hline\n\\end{tabular}\n(a) (i)  Complete the table.\n\\newline\n\n On the grid, draw the graph of $y = 2 \\times 0.5^x - 1$ for $-1 \\leqslant x \\leqslant 2$.\n\\newline\n\n(b) By drawing a suitable straight line, solve the equation $2 \\times 0.5^x + 2x - 3.5 = 0$ for $-1 \\leqslant x \\leqslant 2$.\n\\newline\n\n(c) There are no solutions to the equation $2 \\times 0.5^x - 1 = k$ where $k$ is an integer.\n\\newline\n\nComplete the following statements.\n\\newline\n\nThe highest possible value of $k$ is \n\nThe equation of the asymptote to the graph of $y = 2 \\times 0.5^x - 1$ is",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Complete the table.\n\\newline\n"
+              }
+            ],
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "On the grid, draw the graph of $y = 2 \\times 0.5^x - 1$ for $-1 \\leqslant x \\leqslant 2$.\n\\newline\n"
+              },
+              {
+                "type": "figure",
+                "src": "Figures/Q02-ExponentialGrid.tex"
+              }
+            ],
+            "marks": 4,
+            "_compactMarks": true
+          }
+        ],
+        "_itemNewline": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "By drawing a suitable straight line, solve the equation $2 \\times 0.5^x + 2x - 3.5 = 0$ for $-1 \\leqslant x \\leqslant 2$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x =$",
+          "space": {
+            "type": "working",
+            "height": "3cm",
+            "cmd": "WorkingSpace"
+          }
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "There are no solutions to the equation $2 \\times 0.5^x - 1 = k$ where $k$ is an integer.\n\\newline\n\nComplete the following statements.\n\\newline\n\nThe highest possible value of $k$ is \\makebox[2cm]{\\dotfill}\n\nThe equation of the asymptote to the graph of $y = 2 \\times 0.5^x - 1$ is \\makebox[2cm]{\\dotfill}"
+          }
+        ],
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "analyse",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The table shows some values for $y = 2 \\times 0.5^x - 1$.\n\\newline\n"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|c|c|c|}\n\\hline\n$x$ & $-1$ & $-0.5$ & $0$ & $0.5$ & $1$ & $1.5$ & $2$ \\\\\n\\hline\n$y$ & $3$ & $1.83$ & & $0.41$ & $0$ & & $-0.29$ \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+      }
+    ],
+    "_rawBody": "The table shows some values for $y = 2 \\times 0.5^x - 1$.\n\n\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|c|c|c|}\n\\hline\n$x$ & $-1$ & $-0.5$ & $0$ & $0.5$ & $1$ & $1.5$ & $2$ \\\\\n\\hline\n$y$ & $3$ & $1.83$ & & $0.41$ & $0$ & & $-0.29$ \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\begin{parts}\n\\item\n\\begin{subparts}\n\\subpart Complete the table.\n\\Marks{2}\n\n\\subpart On the grid, draw the graph of $y = 2 \\times 0.5^x - 1$ for $-1 \\leqslant x \\leqslant 2$.\n\n\\relinput{Figures/Q02-ExponentialGrid.tex}\n\\Marks{4}\n\n\\end{subparts}\n\n\\item By drawing a suitable straight line, solve the equation $2 \\times 0.5^x + 2x - 3.5 = 0$ for $-1 \\leqslant x \\leqslant 2$.\n\n\\WorkingSpace{3cm}\n\n\\AnswerLine[$x =$][]\n\\Marks{3}\n\n\\item There are no solutions to the equation $2 \\times 0.5^x - 1 = k$ where $k$ is an integer.\n\nComplete the following statements.\n\nThe highest possible value of $k$ is \\makebox[2cm]{\\dotfill}\n\nThe equation of the asymptote to the graph of $y = 2 \\times 0.5^x - 1$ is \\makebox[2cm]{\\dotfill}\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2021MayJune/Paper42/Q02/Q02-ExponentialGrid.png"
+    ]
+  },
+  {
+    "id": "0580-2021MayJune-Paper42-Q03",
+    "paper": "2021MayJune-Paper42",
+    "qnum": 3,
+    "marks": 20,
+    "topics": [
+      "Number",
+      "Algebra and graphs",
+      "Mensuration"
+    ],
+    "s": "2.4",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Algebraic fractions",
+    "qtype": "simplifying expressions using index laws, prime factorization, HCF, LCM, and finding cube numbers",
+    "g": "simplify",
+    "src": "0580/42/M/J/21 Q03",
+    "year": 2021,
+    "session": "MayJune",
+    "tex": "(a) Simplify, giving your answer as a single power of 7.\n\\newline\n\n(i)  $7^5 \\times 7^6$\n\n $7^{15} \\div 7^5$\n\n $42 + 7$\n\n(b) Simplify.\n\\newline\n\\[(5x^2 \\times 2xy^4)^3\\]\n\n(c) \\[P = 2^5 \\times 3^3 \\times 7 \\qquad Q = 540\\]\n\n(i)  Find the highest common factor (HCF) of $P$ and $Q$.\n\\newline\n\n Find the lowest common multiple (LCM) of $P$ and $Q$.\n\\newline\n\n $P \\times R$ is a cube number, where $R$ is an integer.\n\\newline\n\nFind the smallest possible value of $R$.\n\\newline\n\n(d) Factorise the following completely.\n\\newline\n\n(i)  $x^2 - 3x - 28$\n\n $7(a + 2b)^2 + 4a(a + 2b)$\n\n(e) \\[3^{2x-1} = \\frac{1}{9^x} \\times 3^{2y-x}\\]\n\nFind an expression for $y$ in terms of $x$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Simplify, giving your answer as a single power of 7.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "$7^5 \\times 7^6$"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "$7^{15} \\div 7^5$"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "$42 + 7$"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Simplify.\n\\newline\n\\[(5x^2 \\times 2xy^4)^3\\]"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "space": {
+            "type": "working",
+            "height": "3cm",
+            "cmd": "WorkingSpace"
+          }
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "\\[P = 2^5 \\times 3^3 \\times 7 \\qquad Q = 540\\]"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the highest common factor (HCF) of $P$ and $Q$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "space": {
+                "type": "working",
+                "height": "3cm",
+                "cmd": "WorkingSpace"
+              }
+            },
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the lowest common multiple (LCM) of $P$ and $Q$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "space": {
+                "type": "working",
+                "height": "3cm",
+                "cmd": "WorkingSpace"
+              }
+            },
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "$P \\times R$ is a cube number, where $R$ is an integer.\n\\newline\n\nFind the smallest possible value of $R$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "space": {
+                "type": "working",
+                "height": "3cm",
+                "cmd": "WorkingSpace"
+              }
+            },
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ]
+      },
+      {
+        "label": "(d)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Factorise the following completely.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "$x^2 - 3x - 28$"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "space": {
+                "type": "working",
+                "height": "3cm",
+                "cmd": "WorkingSpace"
+              }
+            },
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "$7(a + 2b)^2 + 4a(a + 2b)$"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "space": {
+                "type": "working",
+                "height": "3cm",
+                "cmd": "WorkingSpace"
+              }
+            },
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ]
+      },
+      {
+        "label": "(e)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "text",
+            "content": "\\[3^{2x-1} = \\frac{1}{9^x} \\times 3^{2y-x}\\]\n\nFind an expression for $y$ in terms of $x$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$y =$",
+          "space": {
+            "type": "working",
+            "height": "5cm",
+            "cmd": "WorkingSpace"
+          }
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Simplify, giving your answer as a single power of 7.\n\n\\begin{subparts}\n\\subpart $7^5 \\times 7^6$\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\subpart $7^{15} \\div 7^5$\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\subpart $42 + 7$\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{subparts}\n\n\\item Simplify.\n\\[(5x^2 \\times 2xy^4)^3\\]\n\n\\WorkingSpace{3cm}\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\item \\[P = 2^5 \\times 3^3 \\times 7 \\qquad Q = 540\\]\n\n\\begin{subparts}\n\\subpart Find the highest common factor (HCF) of $P$ and $Q$.\n\n\\WorkingSpace{3cm}\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\subpart Find the lowest common multiple (LCM) of $P$ and $Q$.\n\n\\WorkingSpace{3cm}\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\subpart $P \\times R$ is a cube number, where $R$ is an integer.\n\nFind the smallest possible value of $R$.\n\n\\WorkingSpace{3cm}\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{subparts}\n\n\\item Factorise the following completely.\n\n\\begin{subparts}\n\\subpart $x^2 - 3x - 28$\n\n\\WorkingSpace{3cm}\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\subpart $7(a + 2b)^2 + 4a(a + 2b)$\n\n\\WorkingSpace{3cm}\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{subparts}\n\n\\item \\[3^{2x-1} = \\frac{1}{9^x} \\times 3^{2y-x}\\]\n\nFind an expression for $y$ in terms of $x$.\n\n\\WorkingSpace{5cm}\n\n\\AnswerLine[$y =$][]\n\\Marks{4}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2021MayJune-Paper42-Q04",
+    "paper": "2021MayJune-Paper42",
+    "qnum": 4,
+    "marks": 15,
+    "topics": [
+      "Transformations and vectors",
+      "Probability",
+      "Statistics"
+    ],
+    "s": "7.1",
+    "d": 2,
+    "cat": "vectors",
+    "topic": "Translation",
+    "qtype": "transformations",
+    "g": "mixed",
+    "src": "0580/42/M/J/21 Q04",
+    "year": 2021,
+    "session": "MayJune",
+    "tex": "(a) The mass, $m\\,\\text{kg}$, of each of 40 parcels in a warehouse is recorded.\n\\newline\n\\\\\nThe table shows information about the masses of these parcels.\n\\newline\n\n\\begin{tabular}{|c|c|c|c|c|c|}\n\\hline\nMass ($m\\,\\text{kg}$) & $0.5 < m \\leqslant 1$ & $1 < m \\leqslant 2$ & $2 < m \\leqslant 4$ & $4 < m \\leqslant 7$ & $7 < m \\leqslant 12$ \\\\\n\\hline\nFrequency & 4 & 7 & 15 & 10 & 4 \\\\\n\\hline\n\\end{tabular}\n(i)  Complete the histogram to show this information.\n\\newline\n\n Calculate an estimate of the mean mass of the parcels.\n\\newline\n\n A parcel is picked at random from the 40 parcels.\n\\newline\n\nFind the probability that this parcel has a mass of $2\\,\\text{kg}$ or less.\n\\newline\n\n(b) Two parcels are picked at random without replacement from those with a mass **greater than** $2\\,\\text{kg}$.\n\\newline\n\nWork out the probability that one of them has a mass greater than $7\\,\\text{kg}$ and the other has a mass of $4\\,\\text{kg}$ or less.\n\\newline\n\n(c) A van delivers parcels from a different warehouse.\n\\newline\n\\\\\nThe box-and-whisker plot shows information about the masses of the parcels in the van.\n\\newline\n\n(i)  Find the median.\n\\newline\n\n Find the interquartile range.\n\\newline\n\n Two parcels are removed from the van at the first delivery.\n\\newline\n\\\\\nThe masses of these parcels are $2.4\\,\\text{kg}$ and $5.8\\,\\text{kg}$.\n\\newline\n\nDescribe the effect that removing these parcels has on the median mass of the remaining parcels.\n\\newline\n\\\\\nGive a reason for your answer.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The mass, $m\\,\\text{kg}$, of each of 40 parcels in a warehouse is recorded.\n\\newline\n\\\\\nThe table shows information about the masses of these parcels.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|c|}\n\\hline\nMass ($m$\\,kg) & $0.5 < m \\leqslant 1$ & $1 < m \\leqslant 2$ & $2 < m \\leqslant 4$ & $4 < m \\leqslant 7$ & $7 < m \\leqslant 12$ \\\\\n\\hline\nFrequency & 4 & 7 & 15 & 10 & 4 \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Complete the histogram to show this information.\n\\newline\n"
+              },
+              {
+                "type": "figure",
+                "src": "Figures/Q04a-Histogram.tex"
+              }
+            ],
+            "marks": 3,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate an estimate of the mean mass of the parcels.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "kg",
+              "space": {
+                "type": "working",
+                "height": "5cm",
+                "cmd": "WorkingSpace"
+              }
+            },
+            "marks": 4,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "A parcel is picked at random from the 40 parcels.\n\\newline\n\nFind the probability that this parcel has a mass of $2\\,\\text{kg}$ or less.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Two parcels are picked at random without replacement from those with a mass \\textbf{greater than} $2\\,\\text{kg}$.\n\\newline\n\nWork out the probability that one of them has a mass greater than $7\\,\\text{kg}$ and the other has a mass of $4\\,\\text{kg}$ or less.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "space": {
+            "type": "working",
+            "height": "5cm",
+            "cmd": "WorkingSpace"
+          }
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "A van delivers parcels from a different warehouse.\n\\newline\n\\\\\nThe box-and-whisker plot shows information about the masses of the parcels in the van.\n\\newline\n"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q04c-BoxPlot.tex"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the median.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "kg"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the interquartile range.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "kg"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Two parcels are removed from the van at the first delivery.\n\\newline\n\\\\\nThe masses of these parcels are $2.4\\,\\text{kg}$ and $5.8\\,\\text{kg}$.\n\\newline\n\nDescribe the effect that removing these parcels has on the median mass of the remaining parcels.\n\\newline\n\\\\\nGive a reason for your answer.\n\\newline\n\n\\makebox[14cm]{\\dotfill}\n\n\\makebox[14cm]{\\dotfill}"
+              }
+            ],
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ]
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "explain",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item The mass, $m$\\,kg, of each of 40 parcels in a warehouse is recorded.\\\\\nThe table shows information about the masses of these parcels.\n\n\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|c|}\n\\hline\nMass ($m$\\,kg) & $0.5 < m \\leqslant 1$ & $1 < m \\leqslant 2$ & $2 < m \\leqslant 4$ & $4 < m \\leqslant 7$ & $7 < m \\leqslant 12$ \\\\\n\\hline\nFrequency & 4 & 7 & 15 & 10 & 4 \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\begin{subparts}\n\\subpart Complete the histogram to show this information.\n\n\\relinput{Figures/Q04a-Histogram.tex}\n\\Marks{3}\n\n\\subpart Calculate an estimate of the mean mass of the parcels.\n\n\\WorkingSpace{5cm}\n\n\\AnswerLine[][kg]\n\\Marks{4}\n\n\\subpart A parcel is picked at random from the 40 parcels.\n\nFind the probability that this parcel has a mass of 2\\,kg or less.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{subparts}\n\n\\item Two parcels are picked at random without replacement from those with a mass \\textbf{greater than} 2\\,kg.\n\nWork out the probability that one of them has a mass greater than 7\\,kg and the other has a mass of 4\\,kg or less.\n\n\\WorkingSpace{5cm}\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\item A van delivers parcels from a different warehouse.\\\\\nThe box-and-whisker plot shows information about the masses of the parcels in the van.\n\n\\relinput{Figures/Q04c-BoxPlot.tex}\n\n\\begin{subparts}\n\\subpart Find the median.\n\n\\AnswerLine[][kg]\n\\Marks{1}\n\n\\subpart Find the interquartile range.\n\n\\AnswerLine[][kg]\n\\Marks{1}\n\n\\subpart Two parcels are removed from the van at the first delivery.\\\\\nThe masses of these parcels are 2.4\\,kg and 5.8\\,kg.\n\nDescribe the effect that removing these parcels has on the median mass of the remaining parcels.\\\\\nGive a reason for your answer.\n\n\\makebox[14cm]{\\dotfill}\n\n\\makebox[14cm]{\\dotfill}\n\\Marks{2}\n\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2021MayJune/Paper42/Q04/Q04a-Histogram.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2021MayJune/Paper42/Q04/Q04c-BoxPlot.png"
+    ]
+  },
+  {
+    "id": "0580-2021MayJune-Paper42-Q05",
+    "paper": "2021MayJune-Paper42",
+    "qnum": 5,
+    "marks": 16,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry",
+      "Transformations and vectors"
+    ],
+    "s": "3.6",
+    "d": 2,
+    "cat": "coord",
+    "topic": "Position vectors",
+    "qtype": "parallel lines",
+    "g": "mixed",
+    "src": "0580/42/M/J/21 Q05",
+    "year": 2021,
+    "session": "MayJune",
+    "tex": "(a) \\[\\mathbf{a} = \\begin{pmatrix} -3 \\\\ 8 \\end{pmatrix} \\qquad \\mathbf{b} = \\begin{pmatrix} 2 \\\\ -5 \\end{pmatrix}\\]\n\n(i)  Find\n\n(b) $\\mathbf{b} - \\mathbf{a}$,\n\n(c) $2\\mathbf{a} + \\mathbf{b}$,\n\n(d) $|\\mathbf{b}|$.\n\\newline\n\n \\[\\mathbf{a} + k\\mathbf{b} = \\begin{pmatrix} 13 \\\\ m \\end{pmatrix},  where  k  and  m  are integers.\n\\newline\n\\]\n\nFind the value of $k$ and the value of $m$.\n\\newline\n\n$k = $ \n\n$m = $ \n\n$OABC$ is a parallelogram and $O$ is the origin.\n\\newline\n\\\\\n$M$ is the midpoint of $OB$.\n\\newline\n\\\\\n$N$ is the point on $AB$ such that $AN : NB = 3 : 2$.\n\\newline\n\\\\\n$\\overrightarrow{OA} = \\mathbf{p}$ and $\\overrightarrow{OC} = \\mathbf{q}$.\n\\newline\n\n(i)  Find, in terms of $\\mathbf{p}$ and $\\mathbf{q}$, in its simplest form.\n\\newline\n\n(a) $\\overrightarrow{OB}$\n\n(b) $\\overrightarrow{CM}$\n\n(c) $\\overrightarrow{MN}$\n\n $CB$ and $ON$ are extended to meet at $D$.\n\\newline\n\nFind the position vector of $D$ in terms of $\\mathbf{p}$ and $\\mathbf{q}$.\n\\newline\n\\\\\nGive your answer in its simplest form.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "text",
+            "content": "\\[\\mathbf{a} = \\begin{pmatrix} -3 \\\\ 8 \\end{pmatrix} \\qquad \\mathbf{b} = \\begin{pmatrix} 2 \\\\ -5 \\end{pmatrix}\\]\n\n\\begin{subparts}\n\\subpart Find\n\n\\begin{parts}"
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2021MayJune/Paper42/Q05/Q05b-Parallelogram.png"
+          },
+          {
+            "type": "text",
+            "content": "$\\mathbf{b} - \\mathbf{a}$,"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "$2\\mathbf{a} + \\mathbf{b}$,"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "$|\\mathbf{b}|$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "space": {
+            "type": "working",
+            "height": "2cm",
+            "cmd": "WorkingSpace"
+          }
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [],
+    "_v4_skip": true,
+    "_rawBody": "\\begin{parts}\n\\item \\[\\mathbf{a} = \\begin{pmatrix} -3 \\\\ 8 \\end{pmatrix} \\qquad \\mathbf{b} = \\begin{pmatrix} 2 \\\\ -5 \\end{pmatrix}\\]\n\n\\begin{subparts}\n\\subpart Find\n\n\\begin{parts}\n\\item $\\mathbf{b} - \\mathbf{a}$,\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item $2\\mathbf{a} + \\mathbf{b}$,\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item $|\\mathbf{b}|$.\n\n\\WorkingSpace{2cm}\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{parts}\n\n\\subpart \\[\\mathbf{a} + k\\mathbf{b} = \\begin{pmatrix} 13 \\\\ m \\end{pmatrix}, \\text{ where } k \\text{ and } m \\text{ are integers.}\\]\n\nFind the value of $k$ and the value of $m$.\n\n\\WorkingSpace{4cm}\n\n$k = $ \\makebox[3cm]{\\dotfill}\n\n$m = $ \\makebox[3cm]{\\dotfill}\n\\Marks{3}\n\n\\end{subparts}\n\n\\item\n\\relinput{Figures/Q05b-Parallelogram.tex}\n\n$OABC$ is a parallelogram and $O$ is the origin.\\\\\n$M$ is the midpoint of $OB$.\\\\\n$N$ is the point on $AB$ such that $AN : NB = 3 : 2$.\\\\\n$\\overrightarrow{OA} = \\mathbf{p}$ and $\\overrightarrow{OC} = \\mathbf{q}$.\n\n\\begin{subparts}\n\\subpart Find, in terms of $\\mathbf{p}$ and $\\mathbf{q}$, in its simplest form.\n\n\\begin{parts}\n\\item $\\overrightarrow{OB}$\n\n\\AnswerLine[$\\overrightarrow{OB} =$][]\n\\Marks{1}\n\n\\item $\\overrightarrow{CM}$\n\n\\WorkingSpace{3cm}\n\n\\AnswerLine[$\\overrightarrow{CM} =$][]\n\\Marks{2}\n\n\\item $\\overrightarrow{MN}$\n\n\\WorkingSpace{4cm}\n\n\\AnswerLine[$\\overrightarrow{MN} =$][]\n\\Marks{2}\n\n\\end{parts}\n\n\\subpart $CB$ and $ON$ are extended to meet at $D$.\n\nFind the position vector of $D$ in terms of $\\mathbf{p}$ and $\\mathbf{q}$.\\\\\nGive your answer in its simplest form.\n\n\\WorkingSpace{5cm}\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_postParts": [
+      {
+        "type": "text",
+        "content": "\\subpart \\[\\mathbf{a} + k\\mathbf{b} = \\begin{pmatrix} 13 \\\\ m \\end{pmatrix}, \\text{ where } k \\text{ and } m \\text{ are integers.}\\]\n\nFind the value of $k$ and the value of $m$.\n\n\\WorkingSpace{4cm}\n\n$k = $ \\makebox[3cm]{\\dotfill}\n\n$m = $ \\makebox[3cm]{\\dotfill}\n\\Marks{3}\n\n\\end{subparts}\n\n\\item"
+      },
+      {
+        "type": "figure",
+        "src": "Figures/Q05b-Parallelogram.tex"
+      },
+      {
+        "type": "text",
+        "content": "$OABC$ is a parallelogram and $O$ is the origin.\\\\\n$M$ is the midpoint of $OB$.\\\\\n$N$ is the point on $AB$ such that $AN : NB = 3 : 2$.\\\\\n$\\overrightarrow{OA} = \\mathbf{p}$ and $\\overrightarrow{OC} = \\mathbf{q}$.\n\n\\begin{subparts}\n\\subpart Find, in terms of $\\mathbf{p}$ and $\\mathbf{q}$, in its simplest form.\n\n\\begin{parts}\n\\item $\\overrightarrow{OB}$\n\n\\AnswerLine[$\\overrightarrow{OB} =$][]\n\\Marks{1}\n\n\\item $\\overrightarrow{CM}$\n\n\\WorkingSpace{3cm}\n\n\\AnswerLine[$\\overrightarrow{CM} =$][]\n\\Marks{2}\n\n\\item $\\overrightarrow{MN}$\n\n\\WorkingSpace{4cm}\n\n\\AnswerLine[$\\overrightarrow{MN} =$][]\n\\Marks{2}\n\n\\end{parts}\n\n\\subpart $CB$ and $ON$ are extended to meet at $D$.\n\nFind the position vector of $D$ in terms of $\\mathbf{p}$ and $\\mathbf{q}$.\\\\\nGive your answer in its simplest form.\n\n\\WorkingSpace{5cm}\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\end{subparts}\n\n\\end{parts}"
+      }
+    ],
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2021MayJune/Paper42/Q05/Q05b-Parallelogram.png"
+    ]
+  },
+  {
+    "id": "0580-2021MayJune-Paper42-Q06",
+    "paper": "2021MayJune-Paper42",
+    "qnum": 6,
+    "marks": 13,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "3.5",
+    "d": 2,
+    "cat": "coord",
+    "topic": "Parallel and perpendicular lines",
+    "qtype": "equation of a straight line",
+    "g": "mixed",
+    "src": "0580/42/M/J/21 Q06",
+    "year": 2021,
+    "session": "MayJune",
+    "tex": "The diagram shows a quadrilateral $ABCD$ made from two triangles, $ABD$ and $BCD$.\n\\newline\n\n(a) Show that $BD = 16.9\\,\\text{m}$, correct to 1 decimal place.\n\\newline\n\n(b) Calculate angle $CBD$.\n\\newline\n\n(c) Find the area of the quadrilateral $ABCD$.\n\\newline\n\n(d) Find the shortest distance from $B$ to $AD$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Show that $BD = 16.9\\,\\text{m}$, correct to 1 decimal place.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "none",
+          "space": {
+            "type": "working",
+            "height": "5cm",
+            "cmd": "WorkingSpace"
+          }
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "text",
+            "content": "Calculate angle $CBD$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "Angle $CBD =$",
+          "space": {
+            "type": "working",
+            "height": "6cm",
+            "cmd": "WorkingSpace"
+          }
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the area of the quadrilateral $ABCD$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "m$^2$",
+          "space": {
+            "type": "working",
+            "height": "5cm",
+            "cmd": "WorkingSpace"
+          }
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the shortest distance from $B$ to $AD$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "m",
+          "space": {
+            "type": "working",
+            "height": "5cm",
+            "cmd": "WorkingSpace"
+          }
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "analyse",
+    "cmd": "show",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q06-QuadrilateralABCD.tex"
+      },
+      {
+        "type": "text",
+        "content": "The diagram shows a quadrilateral $ABCD$ made from two triangles, $ABD$ and $BCD$.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "\\relinput{Figures/Q06-QuadrilateralABCD.tex}\n\nThe diagram shows a quadrilateral $ABCD$ made from two triangles, $ABD$ and $BCD$.\n\n\\begin{parts}\n\\item Show that $BD = 16.9$\\,m, correct to 1 decimal place.\n\n\\WorkingSpace{5cm}\n\\Marks{3}\n\n\\item Calculate angle $CBD$.\n\n\\WorkingSpace{6cm}\n\n\\AnswerLine[Angle $CBD =$][]\n\\Marks{4}\n\n\\item Find the area of the quadrilateral $ABCD$.\n\n\\WorkingSpace{5cm}\n\n\\AnswerLine[][m$^2$]\n\\Marks{3}\n\n\\item Find the shortest distance from $B$ to $AD$.\n\n\\WorkingSpace{5cm}\n\n\\AnswerLine[][m]\n\\Marks{3}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2021MayJune/Paper42/Q06/Q06-QuadrilateralABCD.png"
+    ]
+  },
+  {
+    "id": "0580-2021MayJune-Paper42-Q07",
+    "paper": "2021MayJune-Paper42",
+    "qnum": 7,
+    "marks": 8,
+    "topics": [
+      "Number",
+      "Geometry",
+      "Transformations and vectors"
+    ],
+    "s": null,
+    "d": 2,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/42/M/J/21 Q07",
+    "year": 2021,
+    "session": "MayJune",
+    "tex": "(a) On the grid, draw the image of\n\n(i)  triangle $T$ after a translation by the vector $\\begin{pmatrix} 2 \\\\ -1 \\end{pmatrix}$,\n\n triangle $T$ after a rotation, 90° clockwise, about the origin,\n\n triangle $T$ after an enlargement, scale factor $-\\dfrac{1}{2}$, centre $(-2, 3)$.\n\\newline\n\n(b) Describe fully the **single** transformation that maps triangle $T$ onto triangle $A$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "On the grid, draw the image of"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "triangle $T$ after a translation by the vector $\\begin{pmatrix} 2 \\\\ -1 \\end{pmatrix}$,"
+              }
+            ],
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "triangle $T$ after a rotation, 90° clockwise, about the origin,"
+              }
+            ],
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "triangle $T$ after an enlargement, scale factor $-\\dfrac{1}{2}$, centre $(-2, 3)$.\n\\newline\n"
+              }
+            ],
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Describe fully the \\textbf{single} transformation that maps triangle $T$ onto triangle $A$.\n\\newline\n\n\\makebox[14cm]{\\dotfill}\n\n\\makebox[14cm]{\\dotfill}"
+          }
+        ],
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "",
+    "cmd": "describe",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q07-TransformGrid.tex"
+      }
+    ],
+    "_rawBody": "\\relinput{Figures/Q07-TransformGrid.tex}\n\n\\begin{parts}\n\\item On the grid, draw the image of\n\n\\begin{subparts}\n\\subpart triangle $T$ after a translation by the vector $\\begin{pmatrix} 2 \\\\ -1 \\end{pmatrix}$,\n\\Marks{2}\n\n\\subpart triangle $T$ after a rotation, 90° clockwise, about the origin,\n\\Marks{2}\n\n\\subpart triangle $T$ after an enlargement, scale factor $-\\dfrac{1}{2}$, centre $(-2, 3)$.\n\\Marks{2}\n\n\\end{subparts}\n\n\\item Describe fully the \\textbf{single} transformation that maps triangle $T$ onto triangle $A$.\n\n\\makebox[14cm]{\\dotfill}\n\n\\makebox[14cm]{\\dotfill}\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2021MayJune/Paper42/Q07/Q07-TransformGrid.png"
+    ]
+  },
+  {
+    "id": "0580-2021MayJune-Paper42-Q08",
+    "paper": "2021MayJune-Paper42",
+    "qnum": 8,
+    "marks": 14,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "3.4",
+    "d": 2,
+    "cat": "coord",
+    "topic": "Equation of a line",
+    "qtype": "length and midpoint",
+    "g": "mixed",
+    "src": "0580/42/M/J/21 Q08",
+    "year": 2021,
+    "session": "MayJune",
+    "tex": "(a) A cuboid has length $L\\,\\text{cm}$, width $W\\,\\text{cm}$ and height $H\\,\\text{cm}$.\n\\newline\n\nThe diagram shows the net of this cuboid.\n\\newline\n\\\\\nThe ratio $W : L = 1 : 2$.\n\\newline\n\nFind the value of $L$, the value of $W$ and the value of $H$.\n\\newline\n\n$L = $ \n\n$W = $ \n\n$H = $ \n\n(b) \n\nThe diagram shows a solid pyramid with a rectangular base $ABCD$.\n\\newline\n\\\\\n$E$ is vertically above $D$.\n\\newline\n\\\\\nAngle $EDC$ = angle $EDA$ = 90°.\n\\newline\n\\\\\n$AB = 18\\,\\text{cm}$, $BC = 15\\,\\text{cm}$ and $EC = 24\\,\\text{cm}$.\n\\newline\n\n(i)  The pyramid is made of wood and has a mass of $800\\,\\text{g}$.\n\\newline\n\nCalculate the density of the wood.\n\\newline\n\\\\\nGive the units of your answer.\n\\newline\n\n[The volume, $V$, of a pyramid is $V = \\dfrac{1}{3} \\times \\text{area of base} \\times \\text{height}$.\n\\newline\n]\n\n[Density = mass $\\div$ volume]\n\n Calculate the angle between $BE$ and the base of the pyramid.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 5,
+        "content": [
+          {
+            "type": "text",
+            "content": "A cuboid has length $L\\,\\text{cm}$, width $W\\,\\text{cm}$ and height $H\\,\\text{cm}$.\n\\newline\n"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q08a-CuboidNet.tex"
+          },
+          {
+            "type": "text",
+            "content": "The diagram shows the net of this cuboid.\n\\newline\n\\\\\nThe ratio $W : L = 1 : 2$.\n\\newline\n\nFind the value of $L$, the value of $W$ and the value of $H$.\n\\newline\n\n\\WorkingSpace{7cm}\n\n$L = $ \\makebox[3cm]{\\dotfill}\n\n$W = $ \\makebox[3cm]{\\dotfill}\n\n$H = $ \\makebox[3cm]{\\dotfill}"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "figure",
+            "src": "Figures/Q08b-Pyramid.tex"
+          },
+          {
+            "type": "text",
+            "content": "The diagram shows a solid pyramid with a rectangular base $ABCD$.\n\\newline\n\\\\\n$E$ is vertically above $D$.\n\\newline\n\\\\\nAngle $EDC$ = angle $EDA$ = 90°.\n\\newline\n\\\\\n$AB = 18\\,\\text{cm}$, $BC = 15\\,\\text{cm}$ and $EC = 24\\,\\text{cm}$.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "The pyramid is made of wood and has a mass of $800\\,\\text{g}$.\n\\newline\n\nCalculate the density of the wood.\n\\newline\n\\\\\nGive the units of your answer.\n\\newline\n\n[The volume, $V$, of a pyramid is $V = \\dfrac{1}{3} \\times \\text{area of base} \\times \\text{height}$.\n\\newline\n]\n\n[Density = mass $\\div$ volume]"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "space": {
+                "type": "working",
+                "height": "7cm",
+                "cmd": "WorkingSpace"
+              }
+            },
+            "marks": 5,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate the angle between $BE$ and the base of the pyramid.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "space": {
+                "type": "working",
+                "height": "6cm",
+                "cmd": "WorkingSpace"
+              }
+            },
+            "marks": 4,
+            "_compactMarks": true
+          }
+        ],
+        "_itemNewline": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item A cuboid has length $L$\\,cm, width $W$\\,cm and height $H$\\,cm.\n\n\\relinput{Figures/Q08a-CuboidNet.tex}\n\nThe diagram shows the net of this cuboid.\\\\\nThe ratio $W : L = 1 : 2$.\n\nFind the value of $L$, the value of $W$ and the value of $H$.\n\n\\WorkingSpace{7cm}\n\n$L = $ \\makebox[3cm]{\\dotfill}\n\n$W = $ \\makebox[3cm]{\\dotfill}\n\n$H = $ \\makebox[3cm]{\\dotfill}\n\\Marks{5}\n\n\\item\n\\relinput{Figures/Q08b-Pyramid.tex}\n\nThe diagram shows a solid pyramid with a rectangular base $ABCD$.\\\\\n$E$ is vertically above $D$.\\\\\nAngle $EDC$ = angle $EDA$ = 90°.\\\\\n$AB = 18$\\,cm, $BC = 15$\\,cm and $EC = 24$\\,cm.\n\n\\begin{subparts}\n\\subpart The pyramid is made of wood and has a mass of 800\\,g.\n\nCalculate the density of the wood.\\\\\nGive the units of your answer.\n\n[The volume, $V$, of a pyramid is $V = \\dfrac{1}{3} \\times \\text{area of base} \\times \\text{height}$.]\n\n[Density = mass $\\div$ volume]\n\n\\WorkingSpace{7cm}\n\n\\AnswerLine[][][]\n\\Marks{5}\n\n\\subpart Calculate the angle between $BE$ and the base of the pyramid.\n\n\\WorkingSpace{6cm}\n\n\\AnswerLine[][]\n\\Marks{4}\n\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2021MayJune/Paper42/Q08/Q08a-CuboidNet.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2021MayJune/Paper42/Q08/Q08b-Pyramid.png"
+    ]
+  },
+  {
+    "id": "0580-2021MayJune-Paper42-Q09",
+    "paper": "2021MayJune-Paper42",
+    "qnum": 9,
+    "marks": 13,
+    "topics": [
+      "Algebra and graphs",
+      "Geometry",
+      "Trigonometry"
+    ],
+    "s": "2.12",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Functions notation",
+    "qtype": "factorizing and sketching cubic graphs, finding equation of tangent using differentiation",
+    "g": "graph",
+    "src": "0580/42/M/J/21 Q09",
+    "year": 2021,
+    "session": "MayJune",
+    "tex": "(a) (i)  The equation $y = x^3 - 4x^2 + 4x$ can be written as $y = x(x - a)^2$.\n\\newline\n\nFind the value of $a$.\n\\newline\n\n On the axes, sketch the graph of $y = x^3 - 4x^2 + 4x$, indicating the values where the graph meets the axes.\n\\newline\n\n(b) Find the equation of the tangent to the graph of $y = x^3 - 4x^2 + 4x$ at $x = 4$.\n\\newline\n\\\\\nGive your answer in the form $y = mx + c$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "The equation $y = x^3 - 4x^2 + 4x$ can be written as $y = x(x - a)^2$.\n\\newline\n\nFind the value of $a$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$a =$",
+              "space": {
+                "type": "working",
+                "height": "3cm",
+                "cmd": "WorkingSpace"
+              }
+            },
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "On the axes, sketch the graph of $y = x^3 - 4x^2 + 4x$, indicating the values where the graph meets the axes.\n\\newline\n"
+              },
+              {
+                "type": "figure",
+                "src": "Figures/Q09-SketchAxes.tex"
+              }
+            ],
+            "marks": 4,
+            "_compactMarks": true
+          }
+        ],
+        "_itemNewline": true
+      },
+      {
+        "label": "(b)",
+        "marks": 7,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the equation of the tangent to the graph of $y = x^3 - 4x^2 + 4x$ at $x = 4$.\n\\newline\n\\\\\nGive your answer in the form $y = mx + c$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$y =$",
+          "space": {
+            "type": "working",
+            "height": "10cm",
+            "cmd": "WorkingSpace"
+          }
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "sketch",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item\n\\begin{subparts}\n\\subpart The equation $y = x^3 - 4x^2 + 4x$ can be written as $y = x(x - a)^2$.\n\nFind the value of $a$.\n\n\\WorkingSpace{3cm}\n\n\\AnswerLine[$a =$][]\n\\Marks{2}\n\n\\subpart On the axes, sketch the graph of $y = x^3 - 4x^2 + 4x$, indicating the values where the graph meets the axes.\n\n\\relinput{Figures/Q09-SketchAxes.tex}\n\\Marks{4}\n\n\\end{subparts}\n\n\\item Find the equation of the tangent to the graph of $y = x^3 - 4x^2 + 4x$ at $x = 4$.\\\\\nGive your answer in the form $y = mx + c$.\n\n\\WorkingSpace{10cm}\n\n\\AnswerLine[$y =$][]\n\\Marks{7}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2021MayJune/Paper42/Q09/Q09-SketchAxes.png"
+    ]
+  },
+  {
+    "id": "0580-2021MayJune-Paper42-Q10",
+    "paper": "2021MayJune-Paper42",
+    "qnum": 10,
+    "marks": 9,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.7",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Sequences",
+    "qtype": "finding nth term of linear, geometric and cubic sequences",
+    "g": "sequence",
+    "src": "0580/42/M/J/21 Q10",
+    "year": 2021,
+    "session": "MayJune",
+    "tex": "The table shows four sequences $A$, $B$, $C$ and $D$.\n\\newline\n\n\\begin{tabular}{|c|c|c|c|c|c|c|}\n\\hline\nSequence & 1st term & 2nd term & 3rd term & 4th term & 5th term & $n$th term \\\\\n\\hline\n$A$ & 1 & 8 & 27 & 64 & & \\\\\n\\hline\n$B$ & 5 & 11 & 17 & 23 & & \\\\\n\\hline\n$C$ & 0.25 & 0.5 & 1 & 2 & 4 & \\\\\n\\hline\n$D$ & 4.75 & 10.5 & 16 & 21 & & \\\\\n\\hline\n\\end{tabular}\nComplete the table.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The table shows four sequences $A$, $B$, $C$ and $D$.\n\\newline\n"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|c|c|}\n\\hline\nSequence & 1st term & 2nd term & 3rd term & 4th term & 5th term & $n$th term \\\\\n\\hline\n$A$ & 1 & 8 & 27 & 64 & & \\\\\n\\hline\n$B$ & 5 & 11 & 17 & 23 & & \\\\\n\\hline\n$C$ & 0.25 & 0.5 & 1 & 2 & 4 & \\\\\n\\hline\n$D$ & 4.75 & 10.5 & 16 & 21 & & \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+      },
+      {
+        "type": "text",
+        "content": "Complete the table.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "The table shows four sequences $A$, $B$, $C$ and $D$.\n\n\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|c|c|}\n\\hline\nSequence & 1st term & 2nd term & 3rd term & 4th term & 5th term & $n$th term \\\\\n\\hline\n$A$ & 1 & 8 & 27 & 64 & & \\\\\n\\hline\n$B$ & 5 & 11 & 17 & 23 & & \\\\\n\\hline\n$C$ & 0.25 & 0.5 & 1 & 2 & 4 & \\\\\n\\hline\n$D$ & 4.75 & 10.5 & 16 & 21 & & \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\nComplete the table.\n\\Marks{9}",
+    "_compactMarks": true
+  }
+]

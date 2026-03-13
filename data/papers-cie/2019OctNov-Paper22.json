@@ -1,0 +1,1040 @@
+[
+  {
+    "id": "0580-2019OctNov-Paper22-Q01",
+    "paper": "2019OctNov-Paper22",
+    "qnum": 1,
+    "marks": 1,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.6",
+    "d": 2,
+    "cat": "number",
+    "topic": "Standard form",
+    "qtype": "operations with negative integers (temperature)",
+    "g": "mixed",
+    "src": "0580/22/O/N/19 Q01",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "The lowest temperature recorded at Scott Base in Antarctica is -57.0 °C.\n\\newline\nThe highest temperature recorded at Scott Base is 63.8 °C more than this.\n\\newline\n\nWhat is the highest temperature recorded at Scott Base?\n\n° C",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "other",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The lowest temperature recorded at Scott Base in Antarctica is -57.0 °C.\n\\newline\nThe highest temperature recorded at Scott Base is 63.8 °C more than this.\n\\newline\n\nWhat is the highest temperature recorded at Scott Base?"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "The lowest temperature recorded at Scott Base in Antarctica is -57.0 °C.\nThe highest temperature recorded at Scott Base is 63.8 °C more than this.\n\nWhat is the highest temperature recorded at Scott Base?\n\n\\AnswerLine[][]\\textdegree C\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper22-Q02",
+    "paper": "2019OctNov-Paper22",
+    "qnum": 2,
+    "marks": 1,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.6",
+    "d": 2,
+    "cat": "number",
+    "topic": "Standard form",
+    "qtype": "addition of fractions",
+    "g": "mixed",
+    "src": "0580/22/O/N/19 Q02",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "Calculate.\n\\newline\n\\[\\dfrac{5}{8} + \\dfrac{3}{40}\\]",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Calculate.\n\\newline\n\\[\\dfrac{5}{8} + \\dfrac{3}{40}\\]"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Calculate.\n\\[\\dfrac{5}{8} + \\dfrac{3}{40}\\]\n\n\\AnswerLine[][]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper22-Q03",
+    "paper": "2019OctNov-Paper22",
+    "qnum": 3,
+    "marks": 1,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.2",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Rearranging formulae",
+    "qtype": "expanding algebraic expression",
+    "g": "simplify",
+    "src": "0580/22/O/N/19 Q03",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "Expand.\n\\newline\n\\[a(a + 3)\\]",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "simplify",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Expand.\n\\newline\n\\[a(a + 3)\\]"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Expand.\n\\[a(a + 3)\\]\n\n\\AnswerLine[][]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper22-Q04",
+    "paper": "2019OctNov-Paper22",
+    "qnum": 4,
+    "marks": 1,
+    "topics": [
+      "Number",
+      "Geometry"
+    ],
+    "s": "1.2",
+    "d": 2,
+    "cat": "number",
+    "topic": "Squares, cubes and roots",
+    "qtype": "Venn diagram shading (complement of union)",
+    "g": "mixed",
+    "src": "0580/22/O/N/19 Q04",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "On the Venn diagram, shade the region (A + B)l .\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "text",
+        "content": "On the Venn diagram, shade the region (A + B)l .\n\\newline\n\n\\begin{tikzpicture}[scale=0.8]\n    \\draw (0,0) circle (2);\n    \\draw (2.5,0) circle (2);\n    \\node at (-1.25,0) {$A$};\n    \\node at (3.75,0) {$B$};\n\\end{tikzpicture}"
+      }
+    ],
+    "answer": {
+      "type": "none",
+      "space": {
+        "type": "drawing",
+        "height": "3cm",
+        "cmd": "Answerspace"
+      }
+    },
+    "_rawBody": "On the Venn diagram, shade the region (A + B)l .\n\n\\begin{tikzpicture}[scale=0.8]\n    \\draw (0,0) circle (2);\n    \\draw (2.5,0) circle (2);\n    \\node at (-1.25,0) {$A$};\n    \\node at (3.75,0) {$B$};\n\\end{tikzpicture}\n\n\\Answerspace[3cm]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper22-Q05",
+    "paper": "2019OctNov-Paper22",
+    "qnum": 5,
+    "marks": 2,
+    "topics": [
+      "Statistics"
+    ],
+    "s": "9.3",
+    "d": 2,
+    "cat": "statistics",
+    "topic": "Frequency tables",
+    "qtype": "averages and spread",
+    "g": "mixed",
+    "src": "0580/22/O/N/19 Q05",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "The mass, correct to the nearest kilogram, of each of 11 parcels is shown below.\n\\newline\n\n24   23   23   26   25   27   18   96   16   17   32\n\n(a) Find the mode.\n\\newline\n\n kg\n\n(b) Give a reason why the mean would be an unsuitable average to use.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the mode.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Give a reason why the mean would be an unsuitable average to use.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "explain",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The mass, correct to the nearest kilogram, of each of 11 parcels is shown below.\n\\newline\n\n24 \\quad 23 \\quad 23 \\quad 26 \\quad 25 \\quad 27 \\quad 18 \\quad 96 \\quad 16 \\quad 17 \\quad 32"
+      }
+    ],
+    "_rawBody": "The mass, correct to the nearest kilogram, of each of 11 parcels is shown below.\n\n24 \\quad 23 \\quad 23 \\quad 26 \\quad 25 \\quad 27 \\quad 18 \\quad 96 \\quad 16 \\quad 17 \\quad 32\n\n\\begin{parts}\n\\item Find the mode.\n\n\\AnswerLine[][] kg\n\\Marks{1}\n\n\\item Give a reason why the mean would be an unsuitable average to use.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper22-Q06",
+    "paper": "2019OctNov-Paper22",
+    "qnum": 6,
+    "marks": 2,
+    "topics": [
+      "Geometry",
+      "Mensuration",
+      "Statistics"
+    ],
+    "s": "4.6",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/22/O/N/19 Q06",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "The table shows how children in Ivan's class travel to school.\n\\newline\n\n\\begin{tabular}{l c}\nTravel to school & Number of children \\\\\nWalk & 12 \\\\\nCar & 7 \\\\\nBicycle & 9 \\\\\nBus & 4 \\\\\n\\end{tabular}\n\nIvan wants to draw a pie chart to show this information.\n\\newline\n\nFind the sector angle for children who walk to school.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The table shows how children in Ivan's class travel to school.\n\\newline\n"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{tabular}{l c}\nTravel to school & Number of children \\\\\nWalk & 12 \\\\\nCar & 7 \\\\\nBicycle & 9 \\\\\nBus & 4 \\\\\n\\end{tabular}"
+      },
+      {
+        "type": "text",
+        "content": "Ivan wants to draw a pie chart to show this information.\n\\newline\n\nFind the sector angle for children who walk to school.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "The table shows how children in Ivan's class travel to school.\n\n\\begin{tabular}{l c}\nTravel to school & Number of children \\\\\nWalk & 12 \\\\\nCar & 7 \\\\\nBicycle & 9 \\\\\nBus & 4 \\\\\n\\end{tabular}\n\nIvan wants to draw a pie chart to show this information.\n\nFind the sector angle for children who walk to school.\n\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper22-Q07",
+    "paper": "2019OctNov-Paper22",
+    "qnum": 7,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.16",
+    "d": 2,
+    "cat": "number",
+    "topic": "Upper and lower bounds",
+    "qtype": "currency conversion",
+    "g": "mixed",
+    "src": "0580/22/O/N/19 Q07",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "Rashid changes 30 000 rupees to dollars when the exchange rate is \\$1 = 68.14 rupees.\n\\newline\n\nHow many dollars does he receive?\n\n\\$",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "other",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Rashid changes 30 000 rupees to dollars when the exchange rate is \\$1 = 68.14 rupees.\n\\newline\n\nHow many dollars does he receive?\n\n\\$ \\AnswerLine[]"
+      }
+    ],
+    "_rawBody": "Rashid changes 30 000 rupees to dollars when the exchange rate is \\$1 = 68.14 rupees.\n\nHow many dollars does he receive?\n\n\\$ \\AnswerLine[]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper22-Q08",
+    "paper": "2019OctNov-Paper22",
+    "qnum": 8,
+    "marks": 2,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.3",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Symmetry",
+    "qtype": "scale drawings and bearings",
+    "g": "mixed",
+    "src": "0580/22/O/N/19 Q08",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "The bearing of P from B is 102°.\n\\newline\n\nFind the bearing of B from P.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{tikzpicture}[scale=0.8]\n    \\draw[thick,->] (0,0) -- (0,2) node[above] {North};\n    \\draw[thick] (0,0) -- (1.5,0.5) node[midway,above right] {102°};\n    \\node at (0,0) {B};\n    \\node at (1.5,0.5) {P};\n    \\node at (2.5,1) {NOT TO SCALE};\n\\end{tikzpicture}\n\nThe bearing of P from B is 102°.\n\\newline\n\nFind the bearing of B from P.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "\\begin{tikzpicture}[scale=0.8]\n    \\draw[thick,->] (0,0) -- (0,2) node[above] {North};\n    \\draw[thick] (0,0) -- (1.5,0.5) node[midway,above right] {102°};\n    \\node at (0,0) {B};\n    \\node at (1.5,0.5) {P};\n    \\node at (2.5,1) {NOT TO SCALE};\n\\end{tikzpicture}\n\nThe bearing of P from B is 102°.\n\nFind the bearing of B from P.\n\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper22-Q09",
+    "paper": "2019OctNov-Paper22",
+    "qnum": 9,
+    "marks": 2,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.6",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Inequalities",
+    "qtype": "solving linear inequality",
+    "g": "linear",
+    "src": "0580/22/O/N/19 Q09",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "Solve the inequality.\n\\newline\n\\[\\dfrac{x}{2} - 13 \\leq 2(12 + 3x)\\]",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "solve",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Solve the inequality.\n\\newline\n\\[\\dfrac{x}{2} - 13 \\leq 2(12 + 3x)\\]"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Solve the inequality.\n\\[\\dfrac{x}{2} - 13 \\leq 2(12 + 3x)\\]\n\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper22-Q10",
+    "paper": "2019OctNov-Paper22",
+    "qnum": 10,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.4",
+    "d": 2,
+    "cat": "number",
+    "topic": "Fractions, decimals and percentages",
+    "qtype": "recurring decimal to fraction conversion",
+    "g": "mixed",
+    "src": "0580/22/O/N/19 Q10",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "Write the recurring decimal $0.67\\dot{6}$ as a fraction.\n\\newline\nShow all your working and give your answer in its simplest form.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "write",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Write the recurring decimal $0.67\\dot{6}$ as a fraction.\n\\newline\nShow all your working and give your answer in its simplest form.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Write the recurring decimal $0.67\\dot{6}$ as a fraction.\nShow all your working and give your answer in its simplest form.\n\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper22-Q11",
+    "paper": "2019OctNov-Paper22",
+    "qnum": 11,
+    "marks": 3,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.7",
+    "d": 2,
+    "cat": "number",
+    "topic": "Estimation and limits",
+    "qtype": "calculation with fractional indices and surds",
+    "g": "indices",
+    "src": "0580/22/O/N/19 Q11",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "Without using a calculator, work out $\\,3^{\\frac{5}{2}} - 1^{\\frac{8}{3}}\\,$.\n\\newline\nYou must show all your working and give your answer as a mixed number in its simplest form.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Without using a calculator, work out $\\,3^{\\frac{5}{2}} - 1^{\\frac{8}{3}}\\,$.\n\\newline\nYou must show all your working and give your answer as a mixed number in its simplest form.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Without using a calculator, work out $\\,3^{\\frac{5}{2}} - 1^{\\frac{8}{3}}\\,$.\nYou must show all your working and give your answer as a mixed number in its simplest form.\n\n\\AnswerLine[][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper22-Q12",
+    "paper": "2019OctNov-Paper22",
+    "qnum": 12,
+    "marks": 3,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.6",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/22/O/N/19 Q12",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "A regular polygon has an interior angle of 176°.\n\\newline\n\nFind the number of sides of this polygon.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "A regular polygon has an interior angle of 176°.\n\\newline\n\nFind the number of sides of this polygon.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "A regular polygon has an interior angle of 176°.\n\nFind the number of sides of this polygon.\n\n\\AnswerLine[][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper22-Q13",
+    "paper": "2019OctNov-Paper22",
+    "qnum": 13,
+    "marks": 3,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.4",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Circle theorems",
+    "qtype": "similarity and congruence",
+    "g": "mixed",
+    "src": "0580/22/O/N/19 Q13",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "Two mathematically similar containers have heights of 30 cm and 75 cm.\n\\newline\nThe larger container has a capacity of 5.5 litres.\n\\newline\n\nCalculate the capacity of the smaller container.\n\\newline\nGive your answer in millilitres.\n\\newline\n\n ml",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Two mathematically similar containers have heights of 30 cm and 75 cm.\n\\newline\nThe larger container has a capacity of 5.5 litres.\n\\newline\n\nCalculate the capacity of the smaller container.\n\\newline\nGive your answer in millilitres.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Two mathematically similar containers have heights of 30 cm and 75 cm.\nThe larger container has a capacity of 5.5 litres.\n\nCalculate the capacity of the smaller container.\nGive your answer in millilitres.\n\n\\AnswerLine[][] ml\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper22-Q14",
+    "paper": "2019OctNov-Paper22",
+    "qnum": 14,
+    "marks": 3,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.6",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/22/O/N/19 Q14",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "Show that the line 4y = 5x - 10 is perpendicular to the line 5y + 4x = 35.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "analyse",
+    "cmd": "show",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Show that the line 4y = 5x - 10 is perpendicular to the line 5y + 4x = 35.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "none",
+      "space": {
+        "type": "drawing",
+        "height": "4cm",
+        "cmd": "Answerspace"
+      }
+    },
+    "_rawBody": "Show that the line 4y = 5x - 10 is perpendicular to the line 5y + 4x = 35.\n\n\\Answerspace[4cm]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper22-Q15",
+    "paper": "2019OctNov-Paper22",
+    "qnum": 15,
+    "marks": 4,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.16",
+    "d": 2,
+    "cat": "number",
+    "topic": "Upper and lower bounds",
+    "qtype": "cost calculation and problem-solving with money",
+    "g": "mixed",
+    "src": "0580/22/O/N/19 Q15",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "Esme buys x magazines at \\$2.45 each and y cards at \\$3.15 each.\n\\newline\n\n(a) Write down an expression, in terms of x and y, for the total cost, in dollars, of the magazines and the cards.\n\\newline\n\n\\$ \n\n(b) Esme spends \\$60.55 in total.\n\\newline\nShe buys 8 magazines.\n\\newline\n\nHow many cards does she buy?",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down an expression, in terms of x and y, for the total cost, in dollars, of the magazines and the cards.\n\\newline\n\n\\$ \\AnswerLine[]"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Esme spends \\$60.55 in total.\n\\newline\nShe buys 8 magazines.\n\\newline\n\nHow many cards does she buy?"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "write",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Esme buys x magazines at \\$2.45 each and y cards at \\$3.15 each.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "Esme buys x magazines at \\$2.45 each and y cards at \\$3.15 each.\n\n\\begin{parts}\n\\item Write down an expression, in terms of x and y, for the total cost, in dollars, of the magazines and the cards.\n\n\\$ \\AnswerLine[]\n\\Marks{2}\n\n\\item Esme spends \\$60.55 in total.\nShe buys 8 magazines.\n\nHow many cards does she buy?\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper22-Q16",
+    "paper": "2019OctNov-Paper22",
+    "qnum": 16,
+    "marks": 4,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.6",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Inequalities",
+    "qtype": "graphical inequalities",
+    "g": "graph",
+    "src": "0580/22/O/N/19 Q16",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "By shading the unwanted regions of the grid, find and label the region R that satisfies the following inequalities.\n\\newline\n\n\\[y \\leq 5   2x + y \\leq 6   y \\geq x + 1\\]",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{tikzpicture}[scale=0.6]\n    \\draw[help lines] (0,0) grid (5,6);\n    \\draw[thick,->] (0,0) -- (5.5,0) node[right] {$x$};\n    \\draw[thick,->] (0,0) -- (0,6.5) node[above] {$y$};\n    \n    % x-axis labels\n    \\foreach \\x in {1,2,3,4,5} \\draw (\\x,0) -- (\\x,-0.1) node[below] {\\x};\n    % y-axis labels  \n    \\foreach \\y in {1,2,3,4,5,6} \\draw (0,\\y) -- (-0.1,\\y) node[left] {\\y};\n    \n    % Line 2x + y = 6\n    \\draw[thick,blue] (0,6) -- (3,0);\n    \\node[above right] at (1,4) {$2x + y = 6$};\n\\end{tikzpicture}\n\nBy shading the unwanted regions of the grid, find and label the region R that satisfies the following inequalities.\n\\newline\n\n\\[y \\leq 5 \\quad 2x + y \\leq 6 \\quad y \\geq x + 1\\]"
+      }
+    ],
+    "answer": {
+      "type": "none",
+      "space": {
+        "type": "drawing",
+        "height": "6cm",
+        "cmd": "Answerspace"
+      }
+    },
+    "_rawBody": "\\begin{tikzpicture}[scale=0.6]\n    \\draw[help lines] (0,0) grid (5,6);\n    \\draw[thick,->] (0,0) -- (5.5,0) node[right] {$x$};\n    \\draw[thick,->] (0,0) -- (0,6.5) node[above] {$y$};\n    \n    % x-axis labels\n    \\foreach \\x in {1,2,3,4,5} \\draw (\\x,0) -- (\\x,-0.1) node[below] {\\x};\n    % y-axis labels  \n    \\foreach \\y in {1,2,3,4,5,6} \\draw (0,\\y) -- (-0.1,\\y) node[left] {\\y};\n    \n    % Line 2x + y = 6\n    \\draw[thick,blue] (0,6) -- (3,0);\n    \\node[above right] at (1,4) {$2x + y = 6$};\n\\end{tikzpicture}\n\nBy shading the unwanted regions of the grid, find and label the region R that satisfies the following inequalities.\n\n\\[y \\leq 5 \\quad 2x + y \\leq 6 \\quad y \\geq x + 1\\]\n\n\\Answerspace[6cm]\n\\Marks{4}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper22-Q17",
+    "paper": "2019OctNov-Paper22",
+    "qnum": 17,
+    "marks": 4,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry"
+    ],
+    "s": "3.1",
+    "d": 2,
+    "cat": "coord",
+    "topic": "Coordinates",
+    "qtype": "coordinates reading/plotting",
+    "g": "graph",
+    "src": "0580/22/O/N/19 Q17",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "The diagram shows a scale drawing of Lei's garden, PQRS.\n\\newline\nThe scale is 1 centimetre represents 2 metres.\n\\newline\n\nLei has a bird table in the garden that is\n\n• equidistant from PQ and QR\n\nand\n\n• 13 m from R.\n\\newline\n\nOn the diagram, construct the position of the bird table.\n\\newline\nUse a ruler and compasses only and show all your construction arcs.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The diagram shows a scale drawing of Lei's garden, PQRS.\n\\newline\nThe scale is 1 centimetre represents 2 metres.\n\\newline\n\n\\begin{tikzpicture}[scale=0.8]\n    % Draw quadrilateral PQRS\n    \\coordinate (P) at (0,3);\n    \\coordinate (Q) at (4,3);\n    \\coordinate (R) at (3,0);\n    \\coordinate (S) at (1,0);\n    \n    \\draw[thick] (P) -- (Q) -- (R) -- (S) -- cycle;\n    \n    \\node[above] at (P) {P};\n    \\node[above] at (Q) {Q};\n    \\node[below] at (R) {R};\n    \\node[below] at (S) {S};\n    \n    \\node at (2,1.5) {Scale: 1 cm to 2 m};\n\\end{tikzpicture}\n\nLei has a bird table in the garden that is\n\n• equidistant from PQ and QR\n\nand\n\n• 13 m from R.\n\\newline\n\nOn the diagram, construct the position of the bird table.\n\\newline\nUse a ruler and compasses only and show all your construction arcs.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "none",
+      "space": {
+        "type": "drawing",
+        "height": "6cm",
+        "cmd": "Answerspace"
+      }
+    },
+    "_rawBody": "The diagram shows a scale drawing of Lei's garden, PQRS.\nThe scale is 1 centimetre represents 2 metres.\n\n\\begin{tikzpicture}[scale=0.8]\n    % Draw quadrilateral PQRS\n    \\coordinate (P) at (0,3);\n    \\coordinate (Q) at (4,3);\n    \\coordinate (R) at (3,0);\n    \\coordinate (S) at (1,0);\n    \n    \\draw[thick] (P) -- (Q) -- (R) -- (S) -- cycle;\n    \n    \\node[above] at (P) {P};\n    \\node[above] at (Q) {Q};\n    \\node[below] at (R) {R};\n    \\node[below] at (S) {S};\n    \n    \\node at (2,1.5) {Scale: 1 cm to 2 m};\n\\end{tikzpicture}\n\nLei has a bird table in the garden that is\n\n• equidistant from PQ and QR\n\nand\n\n• 13 m from R.\n\nOn the diagram, construct the position of the bird table.\nUse a ruler and compasses only and show all your construction arcs.\n\n\\Answerspace[6cm]\n\\Marks{4}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper22-Q18",
+    "paper": "2019OctNov-Paper22",
+    "qnum": 18,
+    "marks": 4,
+    "topics": [
+      "Probability"
+    ],
+    "s": "8.3",
+    "d": 2,
+    "cat": "probability",
+    "topic": "Tree diagrams",
+    "qtype": "combined events",
+    "g": "mixed",
+    "src": "0580/22/O/N/19 Q18",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "Harris is taking a driving test.\n\\newline\nThe probability that he passes the driving test at the first attempt is 0.6.\n\\newline\nIf he fails, the probability that he passes at any further attempt is 0.75.\n\\newline\n\nCalculate the probability that Harris\n\n(a) passes the driving test at the second attempt,\n\n(b) takes no more than three attempts to pass the driving test.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "passes the driving test at the second attempt,"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "takes no more than three attempts to pass the driving test.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Harris is taking a driving test.\n\\newline\nThe probability that he passes the driving test at the first attempt is 0.6.\n\\newline\nIf he fails, the probability that he passes at any further attempt is 0.75.\n\\newline\n\nCalculate the probability that Harris"
+      }
+    ],
+    "_rawBody": "Harris is taking a driving test.\nThe probability that he passes the driving test at the first attempt is 0.6.\nIf he fails, the probability that he passes at any further attempt is 0.75.\n\nCalculate the probability that Harris\n\n\\begin{parts}\n\\item passes the driving test at the second attempt,\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item takes no more than three attempts to pass the driving test.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper22-Q19",
+    "paper": "2019OctNov-Paper22",
+    "qnum": 19,
+    "marks": 4,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "3.1",
+    "d": 2,
+    "cat": "coord",
+    "topic": "Coordinates",
+    "qtype": "coordinates reading/plotting",
+    "g": "graph",
+    "src": "0580/22/O/N/19 Q19",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "In the diagram, A, B, C and D lie on the circumference of a circle, centre O.\n\\newline\nAngle ACD = x° and angle OAB = 2x°.\n\\newline\n\nFind an expression, in terms of x, in its simplest form for\n\n(a) angle AOB,\n\nAngle AOB = \n\n(b) angle ACB,\n\nAngle ACB = \n\n(c) angle DAB.\n\\newline\n\nAngle DAB =",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "angle AOB,\n\nAngle AOB = \\AnswerLine[][]"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "angle ACB,\n\nAngle ACB = \\AnswerLine[][]"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "angle DAB.\n\\newline\n\nAngle DAB = \\AnswerLine[][]"
+          }
+        ],
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{tikzpicture}[scale=0.8]\n    \\draw[thick] (0,0) circle (2);\n    \\coordinate (O) at (0,0);\n    \\coordinate (A) at (-1.5,1.3);\n    \\coordinate (B) at (1.5,1.3);\n    \\coordinate (C) at (0.8,-1.8);\n    \\coordinate (D) at (-0.8,-1.8);\n    \n    \\node at (O) {O};\n    \\node[above] at (A) {A};\n    \\node[above] at (B) {B};\n    \\node[below] at (C) {C};\n    \\node[below] at (D) {D};\n    \n    % Angles\n    \\draw[thick] (A) -- (C) -- (D);\n    \\draw[thick] (O) -- (A) -- (B);\n    \n    \\node at (-0.5,0.3) {$2x^\\circ$};\n    \\node at (0.3,-0.5) {$x^\\circ$};\n    \n    \\node at (1.5,-0.5) {NOT TO SCALE};\n\\end{tikzpicture}\n\nIn the diagram, A, B, C and D lie on the circumference of a circle, centre O.\n\\newline\nAngle ACD = x° and angle OAB = 2x°.\n\\newline\n\nFind an expression, in terms of x, in its simplest form for"
+      }
+    ],
+    "_rawBody": "\\begin{tikzpicture}[scale=0.8]\n    \\draw[thick] (0,0) circle (2);\n    \\coordinate (O) at (0,0);\n    \\coordinate (A) at (-1.5,1.3);\n    \\coordinate (B) at (1.5,1.3);\n    \\coordinate (C) at (0.8,-1.8);\n    \\coordinate (D) at (-0.8,-1.8);\n    \n    \\node at (O) {O};\n    \\node[above] at (A) {A};\n    \\node[above] at (B) {B};\n    \\node[below] at (C) {C};\n    \\node[below] at (D) {D};\n    \n    % Angles\n    \\draw[thick] (A) -- (C) -- (D);\n    \\draw[thick] (O) -- (A) -- (B);\n    \n    \\node at (-0.5,0.3) {$2x^\\circ$};\n    \\node at (0.3,-0.5) {$x^\\circ$};\n    \n    \\node at (1.5,-0.5) {NOT TO SCALE};\n\\end{tikzpicture}\n\nIn the diagram, A, B, C and D lie on the circumference of a circle, centre O.\nAngle ACD = x° and angle OAB = 2x°.\n\nFind an expression, in terms of x, in its simplest form for\n\n\\begin{parts}\n\\item angle AOB,\n\nAngle AOB = \\AnswerLine[][]\n\\Marks{1}\n\n\\item angle ACB,\n\nAngle ACB = \\AnswerLine[][]\n\\Marks{1}\n\n\\item angle DAB.\n\nAngle DAB = \\AnswerLine[][]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper22-Q20",
+    "paper": "2019OctNov-Paper22",
+    "qnum": 20,
+    "marks": 5,
+    "topics": [
+      "Number",
+      "Algebra and graphs"
+    ],
+    "s": "2.2",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Rearranging formulae",
+    "qtype": "factorisation by grouping and difference of two squares",
+    "g": "simplify",
+    "src": "0580/22/O/N/19 Q20",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "(a) Factorise.\n\\newline\n\\[18y - 3ay + 12x - 2ax\\]\n\n(b) Factorise.\n\\newline\n\\[3x^{2} - 48y^{2}\\]",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Factorise.\n\\newline\n\\[18y - 3ay + 12x - 2ax\\]"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Factorise.\n\\newline\n\\[3x^{2} - 48y^{2}\\]"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Factorise.\n\\[18y - 3ay + 12x - 2ax\\]\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item Factorise.\n\\[3x^{2} - 48y^{2}\\]\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_compactBegin": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper22-Q21",
+    "paper": "2019OctNov-Paper22",
+    "qnum": 21,
+    "marks": 5,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.7",
+    "d": 2,
+    "cat": "number",
+    "topic": "Estimation and limits",
+    "qtype": "solving exponential equations using index laws",
+    "g": "indices",
+    "src": "0580/22/O/N/19 Q21",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "(a) $\\,3^{-2} \\times 3^{x} = 81\\,$\n\nFind the value of x.\n\\newline\n\nx = \n\n(b) $\\,\\dfrac{1}{x - 3} = 32^{x - 2}\\,$\n\nFind the value of x.\n\\newline\n\nx =",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "$\\,3^{-2} \\times 3^{x} = 81\\,$\n\nFind the value of x.\n\\newline\n\nx = \\AnswerLine[]"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "$\\,\\dfrac{1}{x - 3} = 32^{x - 2}\\,$\n\nFind the value of x.\n\\newline\n\nx = \\AnswerLine[]"
+          }
+        ],
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "analyse",
+    "cmd": "find",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item $\\,3^{-2} \\times 3^{x} = 81\\,$\n\nFind the value of x.\n\nx = \\AnswerLine[]\n\\Marks{2}\n\n\\item $\\,\\dfrac{1}{x - 3} = 32^{x - 2}\\,$\n\nFind the value of x.\n\nx = \\AnswerLine[]\n\\Marks{3}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_compactBegin": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper22-Q22",
+    "paper": "2019OctNov-Paper22",
+    "qnum": 22,
+    "marks": 6,
+    "topics": [
+      "Transformations and vectors"
+    ],
+    "s": "7.1",
+    "d": 2,
+    "cat": "vectors",
+    "topic": "Translation",
+    "qtype": "transformations",
+    "g": "mixed",
+    "src": "0580/22/O/N/19 Q22",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "\\[A = \\begin{pmatrix} 3 & -2 \\\\ -5 & 0 \\end{pmatrix}   B = \\begin{pmatrix} -2 & 5 \\\\ 4 & 1 \\end{pmatrix}   C = \\begin{pmatrix} -1 \\\\ k \\end{pmatrix}\\]\n\n(a) Find AB.\n\\newline\n\n(b) $\\,CA = \\begin{pmatrix} -13 \\\\ -2 \\end{pmatrix}\\,$\n\nFind the value of k.\n\\newline\n\nk = \n\n(c) Find A$^{-1}$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find AB.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "$\\,CA = \\begin{pmatrix} -13 \\\\ -2 \\end{pmatrix}\\,$\n\nFind the value of k.\n\\newline\n\nk = \\AnswerLine[]"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find A$^{-1}$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\[A = \\begin{pmatrix} 3 & -2 \\\\ -5 & 0 \\end{pmatrix} \\quad B = \\begin{pmatrix} -2 & 5 \\\\ 4 & 1 \\end{pmatrix} \\quad C = \\begin{pmatrix} -1 \\\\ k \\end{pmatrix}\\]"
+      }
+    ],
+    "_rawBody": "\\[A = \\begin{pmatrix} 3 & -2 \\\\ -5 & 0 \\end{pmatrix} \\quad B = \\begin{pmatrix} -2 & 5 \\\\ 4 & 1 \\end{pmatrix} \\quad C = \\begin{pmatrix} -1 \\\\ k \\end{pmatrix}\\]\n\n\\begin{parts}\n\\item Find AB.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item $\\,CA = \\begin{pmatrix} -13 \\\\ -2 \\end{pmatrix}\\,$\n\nFind the value of k.\n\nk = \\AnswerLine[]\n\\Marks{2}\n\n\\item Find A$^{-1}$.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2019OctNov-Paper22-Q23",
+    "paper": "2019OctNov-Paper22",
+    "qnum": 23,
+    "marks": 6,
+    "topics": [
+      "Number",
+      "Coordinate geometry",
+      "Geometry",
+      "Trigonometry"
+    ],
+    "s": "1.12",
+    "d": 2,
+    "cat": "number",
+    "topic": "Set notation",
+    "qtype": "interpretation of speed-time graph",
+    "g": "graph",
+    "src": "0580/22/O/N/19 Q23",
+    "year": 2019,
+    "session": "OctNov",
+    "tex": "The speed–time graph shows information about a train journey.\n\\newline\n\n(a) By drawing a suitable tangent to the graph, estimate the gradient of the curve at t = 24.\n\\newline\n\n(b) What does this gradient represent?\n\n(c) Work out the distance travelled by the train when it is travelling at constant speed.\n\\newline\n\n km",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "By drawing a suitable tangent to the graph, estimate the gradient of the curve at t = 24.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "What does this gradient represent?"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Work out the distance travelled by the train when it is travelling at constant speed.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "analyse",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{tikzpicture}[scale=0.7]\n    \\draw[help lines] (0,0) grid (6,4);\n    \\draw[thick,->] (0,0) -- (6.5,0) node[right] {$t$ (minutes)};\n    \\draw[thick,->] (0,0) -- (0,4.5) node[above] {Speed (km/min)};\n    \n    % Speed-time curve (approximated)\n    \\draw[thick,domain=0:1.5] plot (\\x, {4-2*\\x});\n    \\draw[thick,domain=1.5:4.5] plot (\\x, {1});\n    \\draw[thick,domain=4.5:6] plot (\\x, {4-0.5*\\x});\n    \n    % Axis labels\n    \\node[below] at (1,0) {5};\n    \\node[below] at (2,0) {10};\n    \\node[below] at (3,0) {15};\n    \\node[below] at (4,0) {20};\n    \\node[below] at (5,0) {25};\n    \\node[below] at (6,0) {30};\n    \n    \\node[left] at (0,1) {1};\n    \\node[left] at (0,2) {2};\n    \\node[left] at (0,3) {3};\n    \\node[left] at (0,4) {4};\n\\end{tikzpicture}\n\nThe speed–time graph shows information about a train journey.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "\\begin{tikzpicture}[scale=0.7]\n    \\draw[help lines] (0,0) grid (6,4);\n    \\draw[thick,->] (0,0) -- (6.5,0) node[right] {$t$ (minutes)};\n    \\draw[thick,->] (0,0) -- (0,4.5) node[above] {Speed (km/min)};\n    \n    % Speed-time curve (approximated)\n    \\draw[thick,domain=0:1.5] plot (\\x, {4-2*\\x});\n    \\draw[thick,domain=1.5:4.5] plot (\\x, {1});\n    \\draw[thick,domain=4.5:6] plot (\\x, {4-0.5*\\x});\n    \n    % Axis labels\n    \\node[below] at (1,0) {5};\n    \\node[below] at (2,0) {10};\n    \\node[below] at (3,0) {15};\n    \\node[below] at (4,0) {20};\n    \\node[below] at (5,0) {25};\n    \\node[below] at (6,0) {30};\n    \n    \\node[left] at (0,1) {1};\n    \\node[left] at (0,2) {2};\n    \\node[left] at (0,3) {3};\n    \\node[left] at (0,4) {4};\n\\end{tikzpicture}\n\nThe speed–time graph shows information about a train journey.\n\n\\begin{parts}\n\\item By drawing a suitable tangent to the graph, estimate the gradient of the curve at t = 24.\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\item What does this gradient represent?\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Work out the distance travelled by the train when it is travelling at constant speed.\n\n\\AnswerLine[][] km\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true
+  }
+]

@@ -1,0 +1,1339 @@
+[
+  {
+    "id": "0580-2023MayJune-Paper31-Q01",
+    "paper": "2023MayJune-Paper31",
+    "qnum": 1,
+    "marks": 14,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.6",
+    "d": 1,
+    "cat": "number",
+    "topic": "Standard form",
+    "qtype": "Basic number operations, place value, powers, roots, reciprocals, index laws, order of operations, rounding",
+    "g": "indices",
+    "src": "0580/31/M/J/23 Q01",
+    "year": 2023,
+    "session": "MayJune",
+    "tex": "\\begin{question*}{1}{a}Write the number forty thousand and thirty-three in figures.\n\\newline\n\n(b)Find the value of $\\sqrt[3]{729}$.\n\\newline\n\n(c)Find the reciprocal of $\\frac{7}{9}$.\n\\newline\n\\\\\nGive your answer as a decimal, correct to 3 decimal places.\n\\newline\n\n(d)Find the value of $6^5 \\div 3^4$.\n\\newline\n\n(e)Work out $(- 9) \\times (- 7) \\div (- 3)$.\n\\newline\n\n(f)Work out.\n\\newline\n\n(i) $11 + 9 \\times 5 - 4$\n\n(ii) $(11 + 9) \\times 5 - 4$\n\n(g)\n\\[\n\\frac{5}{9}  -0.67  \\sqrt{123}  \\sqrt{49}  3.142\n\\]\nFrom this list, write down an irrational number.\n\\newline\n\n(h)\n\\begin{subpartsaliged}\nFind the lowest common multiple (LCM) of 24 and 104.\n\\newline\n\nFind the highest common factor (HCF) of 24 and 104.\n\\newline\n\n\\end{subpartsaliged}\n\n\\end{question*}",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [],
+        "answer": {
+          "type": "number"
+        }
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the value of $\\sqrt[3]{729}$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        }
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the reciprocal of $\\frac{7}{9}$.\n\\newline\n\\\\\nGive your answer as a decimal, correct to 3 decimal places.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        }
+      },
+      {
+        "label": "(d)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the value of $6^5 \\div 3^4$.\n\\newline\n\n(e)Work out $(- 9) \\times (- 7) \\div (- 3)$.\n\\newline\n\n(f)Work out.\n\\newline\n\n(i) $11 + 9 \\times 5 - 4$\n\n(ii) $(11 + 9) \\times 5 - 4$\n\n(g)\n\\[\n\\frac{5}{9}  -0.67  \\sqrt{123}  \\sqrt{49}  3.142\n\\]\nFrom this list, write down an irrational number.\n\\newline\n\n(h)\n\\begin{subpartsaliged}\nFind the lowest common multiple (LCM) of 24 and 104.\n\\newline\n\nFind the highest common factor (HCF) of 24 and 104.\n\\newline\n\n\\end{subpartsaliged}\n\n\\end{question*}"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        }
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{question*}{1}{a}Write the number forty thousand and thirty-three in figures.\n\\newline\n"
+      }
+    ]
+  },
+  {
+    "id": "0580-2023MayJune-Paper31-Q02",
+    "paper": "2023MayJune-Paper31",
+    "qnum": 2,
+    "marks": 11,
+    "topics": [
+      "Geometry",
+      "Transformations and vectors"
+    ],
+    "s": "4.6",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/31/M/J/23 Q02",
+    "year": 2023,
+    "session": "MayJune",
+    "tex": "(a) Complete this statement.\n\\newline\n\nThe mathematical name of any polygon with 4 sides is a .\n\\newline\n\n(b) Three of these shapes are shown on the grid.\n\\newline\n\n\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\nDescribe fully the single transformation that maps\n\n(i) (c) the shaded shape onto shape A.\n\\newline\n\n(d) the shaded shape onto shape B.\n\\newline\n\n(e) On the grid, draw the image of\n\n(i) (f) the shaded shape after a translation by the vector $\\binom{9}{-6}$.\n\\newline\n\n(g) the shaded shape after a reflection in the line $y = -1$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Complete this statement.\n\\newline\n\nThe mathematical name of any polygon with 4 sides is a \\AnswerLine[3cm][].\n\\newline\n"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper31/Q02/Q02b.png"
+          },
+          {
+            "type": "text",
+            "content": "Three of these shapes are shown on the grid.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{InsertScreenShot}\n   \\relincludegraphics{Figures/Q02-Grid.png}\n\\end{InsertScreenShot}"
+          },
+          {
+            "type": "text",
+            "content": "Describe fully the single transformation that maps"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "the shaded shape onto shape A.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "none",
+              "space": {
+                "type": "drawing",
+                "height": "2cm",
+                "cmd": "Answerspace"
+              }
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "the shaded shape onto shape B.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "none",
+              "space": {
+                "type": "drawing",
+                "height": "2cm",
+                "cmd": "Answerspace"
+              }
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item"
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "On the grid, draw the image of"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "the shaded shape after a translation by the vector $\\binom{9}{-6}$.\n\\newline\n"
+              }
+            ],
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "the shaded shape after a reflection in the line $y = -1$.\n\\newline\n"
+              }
+            ],
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item"
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "recall",
+    "cmd": "describe",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper31/Q02/Q02-Grid.png"
+      }
+    ],
+    "_rawBody": "\\begin{parts}\n\\item Complete this statement.\n\nThe mathematical name of any polygon with 4 sides is a \\AnswerLine[3cm][].\n\\Marks{1}\n\n\\item Three of these shapes are shown on the grid.\n\n\\begin{InsertScreenShot}\n   \\relincludegraphics{Figures/Q02-Grid.png}\n\\end{InsertScreenShot}\n\nDescribe fully the single transformation that maps\n\n\\begin{subparts}\n\\item the shaded shape onto shape A.\n\n\\Answerspace[2cm]\n\\Marks{3}\n\n\\item the shaded shape onto shape B.\n\n\\Answerspace[2cm]\n\\Marks{3}\n\n\\end{subparts}\n\n\\item On the grid, draw the image of\n\n\\begin{subparts}\n\\item the shaded shape after a translation by the vector $\\binom{9}{-6}$.\n\\Marks{2}\n\n\\item the shaded shape after a reflection in the line $y = -1$.\n\\Marks{2}\n\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_compactBegin": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper31/Q02/Q02-Grid.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper31/Q02/Q02b.png"
+    ]
+  },
+  {
+    "id": "0580-2023MayJune-Paper31-Q03",
+    "paper": "2023MayJune-Paper31",
+    "qnum": 3,
+    "marks": 8,
+    "topics": [
+      "Statistics"
+    ],
+    "s": "9.4",
+    "d": 1,
+    "cat": "statistics",
+    "topic": "Charts and graphs",
+    "qtype": "statistical charts",
+    "g": "mixed",
+    "src": "0580/31/M/J/23 Q03",
+    "year": 2023,
+    "session": "MayJune",
+    "tex": "These are the test scores of 16 students.\n\\newline\n\n\\[\n15  26  9  45  36  20  41  39\n\\]\n\\[\n40  23  32  18  41  34  37  31\n\\]\n\n(a) Complete the stem-and-leaf diagram.\n\\newline\n\n\\begin{tabular}{c|l}\n0 &  \\\\\n1 & \\\\\n2 & \\\\\n3 & \\\\\n4 & \\\\\n\\end{tabular}\nKey: 1 \\textbar\\ 5 represents 15\n\n(b) Find the mode.\n\\newline\n\n(c) Find the median.\n\\newline\n\n(d) Find the range.\n\\newline\n\n(e) Complete the bar chart for the test scores of the 16 students.\n\\newline\n\n\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\n(f) Work out the percentage of students with a test score of 40 or more.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper31/Q03/Q03a.png"
+          },
+          {
+            "type": "text",
+            "content": "Complete the stem-and-leaf diagram.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{center}\n\\begin{tabular}{c|l}\n0 & \\hspace{3cm} \\\\\n1 & \\\\\n2 & \\\\\n3 & \\\\\n4 & \\\\\n\\end{tabular}\n\\end{center}"
+          },
+          {
+            "type": "text",
+            "content": "Key: 1 \\textbar\\ 5 represents 15"
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the mode.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the median.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the range.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(e)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper31/Q03/Q03e.png"
+          },
+          {
+            "type": "text",
+            "content": "Complete the bar chart for the test scores of the 16 students.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{InsertScreenShot}\n   \\relincludegraphics{Figures/Q03-BarChart.png}\n\\end{InsertScreenShot}"
+          }
+        ]
+      },
+      {
+        "label": "(f)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Work out the percentage of students with a test score of 40 or more.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "\\%"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "These are the test scores of 16 students.\n\\newline\n\n\\[\n15 \\hspace{0.5cm} 26 \\hspace{0.5cm} 9 \\hspace{0.5cm} 45 \\hspace{0.5cm} 36 \\hspace{0.5cm} 20 \\hspace{0.5cm} 41 \\hspace{0.5cm} 39\n\\]\n\\[\n40 \\hspace{0.5cm} 23 \\hspace{0.5cm} 32 \\hspace{0.5cm} 18 \\hspace{0.5cm} 41 \\hspace{0.5cm} 34 \\hspace{0.5cm} 37 \\hspace{0.5cm} 31\n\\]"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper31/Q03/Q03.png"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper31/Q03/Q03-BarChart.png"
+      }
+    ],
+    "_rawBody": "These are the test scores of 16 students.\n\n\\[\n15 \\hspace{0.5cm} 26 \\hspace{0.5cm} 9 \\hspace{0.5cm} 45 \\hspace{0.5cm} 36 \\hspace{0.5cm} 20 \\hspace{0.5cm} 41 \\hspace{0.5cm} 39\n\\]\n\\[\n40 \\hspace{0.5cm} 23 \\hspace{0.5cm} 32 \\hspace{0.5cm} 18 \\hspace{0.5cm} 41 \\hspace{0.5cm} 34 \\hspace{0.5cm} 37 \\hspace{0.5cm} 31\n\\]\n\n\\begin{parts}\n\\item Complete the stem-and-leaf diagram.\n\n\\begin{center}\n\\begin{tabular}{c|l}\n0 & \\hspace{3cm} \\\\\n1 & \\\\\n2 & \\\\\n3 & \\\\\n4 & \\\\\n\\end{tabular}\n\\end{center}\nKey: 1 \\textbar\\ 5 represents 15\n\n\\Marks{2}\n\n\\item Find the mode.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Find the median.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Find the range.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Complete the bar chart for the test scores of the 16 students.\n\n\\begin{InsertScreenShot}\n   \\relincludegraphics{Figures/Q03-BarChart.png}\n\\end{InsertScreenShot}\n\n\\Marks{2}\n\n\\item Work out the percentage of students with a test score of 40 or more.\n\n\\AnswerLine[][\\%]\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper31/Q03/Q03-BarChart.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper31/Q03/Q03.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper31/Q03/Q03a.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper31/Q03/Q03e.png"
+    ]
+  },
+  {
+    "id": "0580-2023MayJune-Paper31-Q04",
+    "paper": "2023MayJune-Paper31",
+    "qnum": 4,
+    "marks": 9,
+    "topics": [
+      "Mensuration"
+    ],
+    "s": "5.4",
+    "d": 1,
+    "cat": "mensuration",
+    "topic": "Volume",
+    "qtype": "surface area and volume",
+    "g": "mixed",
+    "src": "0580/31/M/J/23 Q04",
+    "year": 2023,
+    "session": "MayJune",
+    "tex": "(a) The diagram shows the net of a solid on a 1 cm$^2$ grid.\n\\newline\n\n\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\n(i) (b) When the net is folded to make the solid, point C will join with point A.\n\\newline\n\nWrite down which other point will join with point A.\n\\newline\n\n(c) Calculate the total surface area of the solid.\n\\newline\n\n(d) Complete this statement.\n\\newline\n\nThe solid is a , with the cross-section in the shape of a .\n\\newline\n\n(e) Draw a sketch of the solid.\n\\newline\n\n(f) \\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\nThe diagram shows a cuboid.\n\\newline\nThe volume of the cuboid is 540 cm$^3$.\n\\newline\n\nCalculate the value of $x$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper31/Q04/Q04a.png"
+          },
+          {
+            "type": "text",
+            "content": "The diagram shows the net of a solid on a 1 cm$^2$ grid.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{InsertScreenShot}\n   \\relincludegraphics{Figures/Q04-Net.png}\n\\end{InsertScreenShot}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "When the net is folded to make the solid, point C will join with point A.\n\\newline\n\nWrite down which other point will join with point A.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate the total surface area of the solid.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "cm$^2$"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Complete this statement.\n\\newline\n\nThe solid is a \\AnswerLine[3cm][], with the cross-section in the shape of a \\AnswerLine[4cm][].\n\\newline\n"
+              }
+            ],
+            "_compactMarks": true
+          },
+          {
+            "label": "(iv)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Draw a sketch of the solid.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "none",
+              "space": {
+                "type": "drawing",
+                "height": "3cm",
+                "cmd": "Answerspace"
+              }
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item"
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper31/Q04/Q04b.png"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{InsertScreenShot}\n   \\relincludegraphics{Figures/Q04-Cuboid.png}\n\\end{InsertScreenShot}"
+          },
+          {
+            "type": "text",
+            "content": "The diagram shows a cuboid.\n\\newline\nThe volume of the cuboid is 540 cm$^3$.\n\\newline\n\nCalculate the value of $x$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x=$"
+        },
+        "_compactMarks": true,
+        "_itemNewline": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper31/Q04/Q04-Net.png"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper31/Q04/Q04-Cuboid.png"
+      }
+    ],
+    "_rawBody": "\\begin{parts}\n\\item The diagram shows the net of a solid on a 1 cm$^2$ grid.\n\n\\begin{InsertScreenShot}\n   \\relincludegraphics{Figures/Q04-Net.png}\n\\end{InsertScreenShot}\n\n\\begin{subparts}\n\\item When the net is folded to make the solid, point C will join with point A.\n\nWrite down which other point will join with point A.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Calculate the total surface area of the solid.\n\n\\AnswerLine[][cm$^2$]\n\\Marks{3}\n\n\\item Complete this statement.\n\nThe solid is a \\AnswerLine[3cm][], with the cross-section in the shape of a \\AnswerLine[4cm][].\n\\Marks{2}\n\n\\item Draw a sketch of the solid.\n\n\\Answerspace[3cm]\n\\Marks{1}\n\n\\end{subparts}\n\n\\item\n\\begin{InsertScreenShot}\n   \\relincludegraphics{Figures/Q04-Cuboid.png}\n\\end{InsertScreenShot}\n\nThe diagram shows a cuboid.\nThe volume of the cuboid is 540 cm$^3$.\n\nCalculate the value of $x$.\n\n\\AnswerLine[$x=$][]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_compactBegin": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper31/Q04/Q04-Cuboid.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper31/Q04/Q04-Net.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper31/Q04/Q04a.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper31/Q04/Q04b.png"
+    ]
+  },
+  {
+    "id": "0580-2023MayJune-Paper31-Q05",
+    "paper": "2023MayJune-Paper31",
+    "qnum": 5,
+    "marks": 12,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.11",
+    "d": 1,
+    "cat": "number",
+    "topic": "Money and finance",
+    "qtype": "Fraction of an amount, ratio division, percentage increase (compound/simple interest)",
+    "g": "mixed",
+    "src": "0580/31/M/J/23 Q05",
+    "year": 2023,
+    "session": "MayJune",
+    "tex": "Antonio buys a restaurant for \\$$240\\,000$.\n\\newline\n\\\\\nThis is $\\frac{5}{8}$ of the amount he has available to spend.\n\\newline\n\n(a) Show that he has \\$$144\\,000$ left after buying the restaurant.\n\\newline\n\n(b) Some of the \\$$144\\,000$ is spent on expenses.\n\\newline\nExpenses are wages, equipment and supplies in the ratio\n\n\\[\n\\text{wages} : \\text{equipment} : \\text{supplies} = 9 : 5 : 8.\n\\newline\n\\]\n\nThe amount spent on wages is \\$$45\\,000$.\n\\newline\n\n(i) (c) Find the amount spent on\n\n\\begin{subsubparts}\n\n(d) equipment\n\n(e) supplies.\n\\newline\n\n\\end{subsubparts}\n\n(f) Work out the amount Antonio has left now.\n\\newline\n\n(g) Antonio borrows \\$$25\\,400$ for 6 years at a rate of 5\\% per year simple interest.\n\\newline\n\nCalculate the total amount he repays at the end of the 6 years.\n\\newline\n\n(h) In one week, the number of customers in the restaurant was 560.\n\\newline\nIn the next week, the number of customers in the restaurant was 656.\n\\newline\n\nCalculate the percentage increase.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Show that he has \\$$144\\,000$ left after buying the restaurant.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "none",
+          "space": {
+            "type": "drawing",
+            "height": "3cm",
+            "cmd": "Answerspace"
+          }
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Some of the \\$$144\\,000$ is spent on expenses.\n\\newline\nExpenses are wages, equipment and supplies in the ratio\n\n\\[\n\\text{wages} : \\text{equipment} : \\text{supplies} = 9 : 5 : 8.\n\\newline\n\\]\n\nThe amount spent on wages is \\$$45\\,000$.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 0,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the amount spent on"
+              }
+            ],
+            "subsubparts": [
+              {
+                "label": "(p)",
+                "content": [
+                  {
+                    "type": "text",
+                    "content": "equipment"
+                  }
+                ],
+                "answer": {
+                  "type": "number",
+                  "prefix": "\\$"
+                },
+                "marks": 2
+              },
+              {
+                "label": "(q)",
+                "content": [
+                  {
+                    "type": "text",
+                    "content": "supplies."
+                  }
+                ],
+                "answer": {
+                  "type": "number",
+                  "prefix": "\\$"
+                },
+                "marks": 1
+              }
+            ]
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Work out the amount Antonio has left now.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "\\$"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item"
+      },
+      {
+        "label": "(c)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Antonio borrows \\$$25\\,400$ for 6 years at a rate of 5\\% per year simple interest.\n\\newline\n\nCalculate the total amount he repays at the end of the 6 years.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "\\$"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "In one week, the number of customers in the restaurant was 560.\n\\newline\nIn the next week, the number of customers in the restaurant was 656.\n\\newline\n\nCalculate the percentage increase.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "\\%"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "show",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Antonio buys a restaurant for \\$$240\\,000$.\n\\newline\n\\\\\nThis is $\\frac{5}{8}$ of the amount he has available to spend.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "Antonio buys a restaurant for \\$240\\,000.\\\\\nThis is $\\frac{5}{8}$ of the amount he has available to spend.\n\n\\begin{parts}\n\\item Show that he has \\$144\\,000 left after buying the restaurant.\n\n\\Answerspace[3cm]\n\\Marks{2}\n\n\\item Some of the \\$144\\,000 is spent on expenses.\nExpenses are wages, equipment and supplies in the ratio\n\n\\[\n\\text{wages} : \\text{equipment} : \\text{supplies} = 9 : 5 : 8.\n\\]\n\nThe amount spent on wages is \\$45\\,000.\n\n\\begin{subparts}\n\\item Find the amount spent on\n\n\\begin{subsubparts}\n\\item equipment\n\n\\AnswerLine[\\$][]\n\\Marks{2}\n\n\\item supplies.\n\n\\AnswerLine[\\$][]\n\\Marks{1}\n\n\\end{subsubparts}\n\n\\item Work out the amount Antonio has left now.\n\n\\AnswerLine[\\$][]\n\\Marks{2}\n\n\\end{subparts}\n\n\\item Antonio borrows \\$25\\,400 for 6 years at a rate of 5\\% per year simple interest.\n\nCalculate the total amount he repays at the end of the 6 years.\n\n\\AnswerLine[\\$][]\n\\Marks{3}\n\n\\item In one week, the number of customers in the restaurant was 560.\nIn the next week, the number of customers in the restaurant was 656.\n\nCalculate the percentage increase.\n\n\\AnswerLine[][\\%]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2023MayJune-Paper31-Q06",
+    "paper": "2023MayJune-Paper31",
+    "qnum": 6,
+    "marks": 14,
+    "topics": [
+      "Algebra and graphs",
+      "Coordinate geometry",
+      "Geometry"
+    ],
+    "s": "2.10",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Graphs of functions",
+    "qtype": "plotting quadratic and linear graphs, line of symmetry",
+    "g": "quadratic",
+    "src": "0580/31/M/J/23 Q06",
+    "year": 2023,
+    "session": "MayJune",
+    "tex": "(a) Complete the table of values for $y = 5 + 3x - x^2$.\n\\newline\n\n\\begin{tabular}{|c|c|c|c|c|c|c|c|c|}\n\\hline\n$x$ & $-2$ & $-1$ & $0$ & $1$ & $2$ & $3$ & $4$ & $5$ \\\\\n\\hline\n$y$ & & $1$ & & $7$ & & & & $-5$ \\\\\n\\hline\n\\end{tabular}\n\n(b) On the grid, draw the graph of $y = 5 + 3x - x^2$ for $-2 \\leqslant x \\leqslant 5$.\n\\newline\n\n\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\n(c) Write down the equation of the line of symmetry of the graph.\n\\newline\n\n(d) (i) (e) Complete the table of values for $y = 2x + 1$.\n\\newline\n\n\\begin{tabular}{|c|c|c|c|}\n\\hline\n$x$ & $-1$ & $0$ & $2$ \\\\\n\\hline\n$y$ & & & \\\\\n\\hline\n\\end{tabular}\n\n(f) On the grid, draw the graph of $y = 2x + 1$ for $-2 \\leqslant x \\leqslant 5$.\n\\newline\n\n(g) Write down the coordinates of the two points where the two graphs intersect.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper31/Q06/Q06a.png"
+          },
+          {
+            "type": "text",
+            "content": "Complete the table of values for $y = 5 + 3x - x^2$.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|c|c|c|c|}\n\\hline\n$x$ & $-2$ & $-1$ & $0$ & $1$ & $2$ & $3$ & $4$ & $5$ \\\\\n\\hline\n$y$ & & $1$ & & $7$ & & & & $-5$ \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper31/Q06/Q06b.png"
+          },
+          {
+            "type": "text",
+            "content": "On the grid, draw the graph of $y = 5 + 3x - x^2$ for $-2 \\leqslant x \\leqslant 5$.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{InsertScreenShot}\n   \\relincludegraphics{Figures/Q06-Graph.png}\n\\end{InsertScreenShot}"
+          }
+        ]
+      },
+      {
+        "label": "(c)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down the equation of the line of symmetry of the graph.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Complete the table of values for $y = 2x + 1$.\n\\newline\n"
+              },
+              {
+                "type": "table",
+                "content": "\\begin{center}\n\\begin{tabular}{|c|c|c|c|}\n\\hline\n$x$ & $-1$ & $0$ & $2$ \\\\\n\\hline\n$y$ & & & \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+              }
+            ],
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "On the grid, draw the graph of $y = 2x + 1$ for $-2 \\leqslant x \\leqslant 5$.\n\\newline\n"
+              }
+            ],
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_itemNewline": true,
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(e)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down the coordinates of the two points where the two graphs intersect.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$(.................... , ....................)$ and ",
+          "suffix": "$(.................... , ....................)$"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper31/Q06/Q06di.png"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper31/Q06/Q06-Graph.png"
+      }
+    ],
+    "_rawBody": "\\begin{parts}\n\\item Complete the table of values for $y = 5 + 3x - x^2$.\n\n\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|c|c|c|c|}\n\\hline\n$x$ & $-2$ & $-1$ & $0$ & $1$ & $2$ & $3$ & $4$ & $5$ \\\\\n\\hline\n$y$ & & $1$ & & $7$ & & & & $-5$ \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\\Marks{3}\n\n\\item On the grid, draw the graph of $y = 5 + 3x - x^2$ for $-2 \\leqslant x \\leqslant 5$.\n\n\\begin{InsertScreenShot}\n   \\relincludegraphics{Figures/Q06-Graph.png}\n\\end{InsertScreenShot}\n\n\\Marks{4}\n\n\\item Write down the equation of the line of symmetry of the graph.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item\n\\begin{subparts}\n\\item Complete the table of values for $y = 2x + 1$.\n\n\\begin{center}\n\\begin{tabular}{|c|c|c|c|}\n\\hline\n$x$ & $-1$ & $0$ & $2$ \\\\\n\\hline\n$y$ & & & \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\\Marks{2}\n\n\\item On the grid, draw the graph of $y = 2x + 1$ for $-2 \\leqslant x \\leqslant 5$.\n\\Marks{1}\n\\end{subparts}\n\n\\item Write down the coordinates of the two points where the two graphs intersect.\n\n\\AnswerLine[$(.................... , ....................)$ and ][$(.................... , ....................)$]\n\\Marks{3}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_compactBegin": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper31/Q06/Q06-Graph.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper31/Q06/Q06a.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper31/Q06/Q06b.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper31/Q06/Q06di.png"
+    ]
+  },
+  {
+    "id": "0580-2023MayJune-Paper31-Q07",
+    "paper": "2023MayJune-Paper31",
+    "qnum": 7,
+    "marks": 14,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.6",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/31/M/J/23 Q07",
+    "year": 2023,
+    "session": "MayJune",
+    "tex": "(a) \\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\nThe diagram shows a circle, centre $O$, with points $B, D$ and $E$ on the circumference.\n\\newline\n$AOEF$ is a straight line.\n\\newline\nThe straight line $AC$ touches the circle at $B$.\n\\newline\n\n(i) (b) Write down the mathematical name for\n\n\\begin{subsubparts}\n\n(c) line $BOD$\n\n(d) line $ABC$.\n\\newline\n\n\\end{subsubparts}\n\n(e) Write down the two geometrical reasons why angle $AOB$ is $62^\\circ$.\n\\newline\n\n(f) Give the geometrical reason why angle $DOE$ is also $62^\\circ$.\n\\newline\n\n(g) \\begin{subsubparts}\n\n(h) Find angle $DEB$.\n\\newline\n\n(i) Find angle $ODE$.\n\\newline\n\n(j) Find angle $BEF$.\n\\newline\n\n\\end{subsubparts}\n\n(k) Write down two geometrical properties that show that a polygon is regular.\n\\newline\n\n(l) Work out the interior angle of a regular 10-sided polygon.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper31/Q07/Q07a.png"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{InsertScreenShot}\n   \\relincludegraphics{Figures/Q07-Circle.png}\n\\end{InsertScreenShot}"
+          },
+          {
+            "type": "text",
+            "content": "The diagram shows a circle, centre $O$, with points $B, D$ and $E$ on the circumference.\n\\newline\n$AOEF$ is a straight line.\n\\newline\nThe straight line $AC$ touches the circle at $B$.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 0,
+            "content": [
+              {
+                "type": "text",
+                "content": "Write down the mathematical name for"
+              }
+            ],
+            "subsubparts": [
+              {
+                "label": "(p)",
+                "content": [
+                  {
+                    "type": "text",
+                    "content": "line $BOD$"
+                  }
+                ],
+                "answer": {
+                  "type": "number"
+                },
+                "marks": 1
+              },
+              {
+                "label": "(q)",
+                "content": [
+                  {
+                    "type": "text",
+                    "content": "line $ABC$."
+                  }
+                ],
+                "answer": {
+                  "type": "number"
+                },
+                "marks": 1
+              }
+            ]
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Write down the two geometrical reasons why angle $AOB$ is $62^\\circ$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "multiline",
+              "lines": 2,
+              "template": "............................................................................................................................................. ____\\nand ...................................................................................................................................... ____",
+              "lineSep": "blank"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Give the geometrical reason why angle $DOE$ is also $62^\\circ$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "............................................................................................................................................."
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iv)",
+            "marks": 2,
+            "content": [],
+            "subsubparts": [
+              {
+                "label": "(p)",
+                "content": [
+                  {
+                    "type": "text",
+                    "content": "Find angle $DEB$."
+                  }
+                ],
+                "answer": {
+                  "type": "number",
+                  "prefix": "Angle $DEB$ = "
+                },
+                "marks": 1
+              },
+              {
+                "label": "(q)",
+                "content": [
+                  {
+                    "type": "text",
+                    "content": "Find angle $ODE$."
+                  }
+                ],
+                "answer": {
+                  "type": "number",
+                  "prefix": "Angle $ODE$ = "
+                },
+                "marks": 2
+              },
+              {
+                "label": "(r)",
+                "content": [
+                  {
+                    "type": "text",
+                    "content": "Find angle $BEF$."
+                  }
+                ],
+                "answer": {
+                  "type": "number",
+                  "prefix": "Angle $BEF$ = "
+                },
+                "marks": 2
+              }
+            ]
+          }
+        ],
+        "_subpartCmd": "item",
+        "_itemNewline": true,
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down two geometrical properties that show that a polygon is regular.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "....................................................................... and ......................................................................"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Work out the interior angle of a regular 10-sided polygon.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "analyse",
+    "cmd": "show",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper31/Q07/Q07-Circle.png"
+      }
+    ],
+    "_rawBody": "\\begin{parts}\n\\item\n\\begin{InsertScreenShot}\n   \\relincludegraphics{Figures/Q07-Circle.png}\n\\end{InsertScreenShot}\n\nThe diagram shows a circle, centre $O$, with points $B, D$ and $E$ on the circumference.\n$AOEF$ is a straight line.\nThe straight line $AC$ touches the circle at $B$.\n\n\\begin{subparts}\n\\item Write down the mathematical name for\n\n\\begin{subsubparts}\n\\item line $BOD$\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item line $ABC$.\n\n\\AnswerLine[][]\n\\Marks{1}\n\\end{subsubparts}\n\n\\item Write down the two geometrical reasons why angle $AOB$ is $62^\\circ$.\n\n\\AnswerLine[.............................................................................................................................................]\n\\AnswerLine[and ......................................................................................................................................]\n\\Marks{2}\n\n\\item Give the geometrical reason why angle $DOE$ is also $62^\\circ$.\n\n\\AnswerLine[.............................................................................................................................................]\n\\Marks{1}\n\n\\item\n\\begin{subsubparts}\n\\item Find angle $DEB$.\n\n\\AnswerLine[Angle $DEB$ = ][]\n\\Marks{1}\n\n\\item Find angle $ODE$.\n\n\\AnswerLine[Angle $ODE$ = ][]\n\\Marks{2}\n\n\\item Find angle $BEF$.\n\n\\AnswerLine[Angle $BEF$ = ][]\n\\Marks{2}\n\\end{subsubparts}\n\\end{subparts}\n\n\\item Write down two geometrical properties that show that a polygon is regular.\n\n\\AnswerLine[....................................................................... and ......................................................................]\n\\Marks{2}\n\n\\item Work out the interior angle of a regular 10-sided polygon.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_compactBegin": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper31/Q07/Q07-Circle.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper31/Q07/Q07a.png"
+    ]
+  },
+  {
+    "id": "0580-2023MayJune-Paper31-Q08",
+    "paper": "2023MayJune-Paper31",
+    "qnum": 8,
+    "marks": 9,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.12",
+    "d": 1,
+    "cat": "number",
+    "topic": "Set notation",
+    "qtype": "Speed calculation from travel graph, time duration calculation",
+    "g": "graph",
+    "src": "0580/31/M/J/23 Q08",
+    "year": 2023,
+    "session": "MayJune",
+    "tex": "Two friends, Diego and Javier, meet at a swimming pool.\n\\newline\nThe travel graph shows Diego's journey by bicycle from his home to the swimming pool.\n\\newline\n\n\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\n(a) Calculate Diego's speed for his journey from his home to the swimming pool.\n\\newline\nGive your answer in kilometres per hour.\n\\newline\n\n(b) Diego stays at the swimming pool until 12 20.\n\\newline\n\n(i) (c) On the grid, draw the line representing the time he stays at the swimming pool.\n\\newline\n\n(d) Work out how long, in hours and minutes, he is at the swimming pool.\n\\newline\n\n(e) Javier leaves his home 15 minutes later than Diego.\n\\newline\nHe walks to the swimming pool at a constant speed of 6 km/h.\n\\newline\n\nOn the grid, show Javier's journey from his home to the swimming pool.\n\\newline\n\n(f) They both leave the swimming pool at 12 20 and return to their own homes, each at a constant speed.\n\\newline\nDiego arrives home at 12 45.\n\\newline\nJavier arrives home 5 minutes later than Diego.\n\\newline\n\nComplete the travel graph.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Calculate Diego's speed for his journey from his home to the swimming pool.\n\\newline\nGive your answer in kilometres per hour.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "km/h"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Diego stays at the swimming pool until 12 20.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "On the grid, draw the line representing the time he stays at the swimming pool.\n\\newline\n"
+              }
+            ],
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Work out how long, in hours and minutes, he is at the swimming pool.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "h"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(c)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Javier leaves his home 15 minutes later than Diego.\n\\newline\nHe walks to the swimming pool at a constant speed of 6 km/h.\n\\newline\n\nOn the grid, show Javier's journey from his home to the swimming pool.\n\\newline\n"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "They both leave the swimming pool at 12 20 and return to their own homes, each at a constant speed.\n\\newline\nDiego arrives home at 12 45.\n\\newline\nJavier arrives home 5 minutes later than Diego.\n\\newline\n\nComplete the travel graph.\n\\newline\n"
+          }
+        ],
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Two friends, Diego and Javier, meet at a swimming pool.\n\\newline\nThe travel graph shows Diego's journey by bicycle from his home to the swimming pool.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper31/Q08/Q08.png"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper31/Q08/Q08-TravelGraph.png"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{InsertScreenShot}\n   \\relincludegraphics{Figures/Q08-TravelGraph.png}\n\\end{InsertScreenShot}"
+      }
+    ],
+    "_rawBody": "Two friends, Diego and Javier, meet at a swimming pool.\nThe travel graph shows Diego's journey by bicycle from his home to the swimming pool.\n\n\\begin{InsertScreenShot}\n   \\relincludegraphics{Figures/Q08-TravelGraph.png}\n\\end{InsertScreenShot}\n\n\\begin{parts}\n\\item Calculate Diego's speed for his journey from his home to the swimming pool.\nGive your answer in kilometres per hour.\n\n\\AnswerLine[][km/h]\n\\Marks{2}\n\n\\item Diego stays at the swimming pool until 12 20.\n\n\\begin{subparts}\n\\item On the grid, draw the line representing the time he stays at the swimming pool.\n\\Marks{1}\n\n\\item Work out how long, in hours and minutes, he is at the swimming pool.\n\n\\AnswerLine[][h][min]\n\\Marks{1}\n\\end{subparts}\n\n\\item Javier leaves his home 15 minutes later than Diego.\nHe walks to the swimming pool at a constant speed of 6 km/h.\n\nOn the grid, show Javier's journey from his home to the swimming pool.\n\\Marks{3}\n\n\\item They both leave the swimming pool at 12 20 and return to their own homes, each at a constant speed.\nDiego arrives home at 12 45.\nJavier arrives home 5 minutes later than Diego.\n\nComplete the travel graph.\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper31/Q08/Q08-TravelGraph.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper31/Q08/Q08.png"
+    ]
+  },
+  {
+    "id": "0580-2023MayJune-Paper31-Q09",
+    "paper": "2023MayJune-Paper31",
+    "qnum": 9,
+    "marks": 6,
+    "topics": [
+      "Number",
+      "Probability"
+    ],
+    "s": null,
+    "d": 1,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/31/M/J/23 Q09",
+    "year": 2023,
+    "session": "MayJune",
+    "tex": "(a) Maria spins a fair 7-sided spinner numbered 1 to 7.\n\\newline\n\n\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\nExplain why the probability that the spinner lands on a prime number is $\\frac{4}{7}$.\n\\newline\n\n(b) Maria spins the spinner a 2nd time.\n\\newline\n\n(i) (c) Complete the tree diagram.\n\\newline\n\n\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\n(d) Work out the probability that the spinner lands on a prime number both times.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper31/Q09/Q09a.png"
+          },
+          {
+            "type": "text",
+            "content": "Maria spins a fair 7-sided spinner numbered 1 to 7.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{InsertScreenShot}\n   \\relincludegraphics{Figures/Q09-Spinner.png}\n\\end{InsertScreenShot}"
+          },
+          {
+            "type": "text",
+            "content": "Explain why the probability that the spinner lands on a prime number is $\\frac{4}{7}$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "multiline",
+          "lines": 2,
+          "template": "............................................................................................................................................. ____\\n............................................................................................................................................. ____",
+          "lineSep": "blank"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper31/Q09/Q09b.png"
+          },
+          {
+            "type": "text",
+            "content": "Maria spins the spinner a 2nd time.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Complete the tree diagram.\n\\newline\n"
+              },
+              {
+                "type": "table",
+                "content": "\\begin{InsertScreenShot}\n   \\relincludegraphics{Figures/Q09-Tree.png}\n\\end{InsertScreenShot}"
+              }
+            ],
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Work out the probability that the spinner lands on a prime number both times.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "",
+    "cmd": "explain",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper31/Q09/Q09-Tree.png"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper31/Q09/Q09-Spinner.png"
+      }
+    ],
+    "_rawBody": "\\begin{parts}\n\\item Maria spins a fair 7-sided spinner numbered 1 to 7.\n\n\\begin{InsertScreenShot}\n   \\relincludegraphics{Figures/Q09-Spinner.png}\n\\end{InsertScreenShot}\n\nExplain why the probability that the spinner lands on a prime number is $\\frac{4}{7}$.\n\n\\AnswerLine[.............................................................................................................................................]\n\\AnswerLine[.............................................................................................................................................]\n\\Marks{2}\n\n\\item Maria spins the spinner a 2nd time.\n\n\\begin{subparts}\n\\item Complete the tree diagram.\n\n\\begin{InsertScreenShot}\n   \\relincludegraphics{Figures/Q09-Tree.png}\n\\end{InsertScreenShot}\n\\Marks{2}\n\n\\item Work out the probability that the spinner lands on a prime number both times.\n\n\\AnswerLine[][]\n\\Marks{2}\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_compactBegin": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper31/Q09/Q09-Spinner.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper31/Q09/Q09-Tree.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper31/Q09/Q09a.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper31/Q09/Q09b.png"
+    ]
+  },
+  {
+    "id": "0580-2023MayJune-Paper31-Q10",
+    "paper": "2023MayJune-Paper31",
+    "qnum": 10,
+    "marks": 7,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.7",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Nets and 3D shapes",
+    "qtype": "circle theorems",
+    "g": "mixed",
+    "src": "0580/31/M/J/23 Q10",
+    "year": 2023,
+    "session": "MayJune",
+    "tex": "\\begin{InsertScreenShot}\n\n\\end{InsertScreenShot}\n\nThe diagram shows a right-angled triangle, $ABC$, and a semicircle.\n\\newline\nThe radius of the semicircle is 4.5 cm.\n\\newline\n$AC = 8.9$ cm and $BC = 13.2$ cm.\n\\newline\n\n(a) Calculate the shaded area.\n\\newline\nGive the units of your answer.\n\\newline\n\n(b) Calculate $AB$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 5,
+        "content": [
+          {
+            "type": "text",
+            "content": "Calculate the shaded area.\n\\newline\nGive the units of your answer.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "...................."
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Calculate $AB$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$AB =$",
+          "suffix": "cm"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "table",
+        "content": "\\begin{InsertScreenShot}\n   \\relincludegraphics{Figures/Q10-Shape.png}\n\\end{InsertScreenShot}"
+      },
+      {
+        "type": "text",
+        "content": "The diagram shows a right-angled triangle, $ABC$, and a semicircle.\n\\newline\nThe radius of the semicircle is 4.5 cm.\n\\newline\n$AC = 8.9$ cm and $BC = 13.2$ cm.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper31/Q10/Q10.png"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper31/Q10/Q10-Shape.png"
+      }
+    ],
+    "_rawBody": "\\begin{InsertScreenShot}\n   \\relincludegraphics{Figures/Q10-Shape.png}\n\\end{InsertScreenShot}\n\nThe diagram shows a right-angled triangle, $ABC$, and a semicircle.\nThe radius of the semicircle is 4.5 cm.\n$AC = 8.9$ cm and $BC = 13.2$ cm.\n\n\\begin{parts}\n\\item Calculate the shaded area.\nGive the units of your answer.\n\n\\AnswerLine[][....................]\n\\Marks{5}\n\n\\item Calculate $AB$.\n\n\\AnswerLine[$AB =$][cm]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper31/Q10/Q10-Shape.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2023MayJune/Paper31/Q10/Q10.png"
+    ]
+  }
+]

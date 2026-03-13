@@ -1,0 +1,967 @@
+[
+  {
+    "id": "0580-2019MayJune-Paper41-Q01",
+    "paper": "2019MayJune-Paper41",
+    "qnum": 1,
+    "marks": 12,
+    "topics": [
+      "Transformations and vectors"
+    ],
+    "s": "7.1",
+    "d": 2,
+    "cat": "vectors",
+    "topic": "Translation",
+    "qtype": "transformations",
+    "g": "mixed",
+    "src": "0580/41/M/J/19 Q01",
+    "year": 2019,
+    "session": "MayJune",
+    "tex": "(a) Translate shape T by the vector $\\overrightarrow{c}$.\n\\newline\n\nLabel the image A.\n\\newline\n\n(b) Rotate shape T about the point (5, 3) through 180°.\n\\newline\n\nLabel the image B.\n\\newline\n\n(c) Describe fully the single transformation that maps shape A onto shape B.\n\\newline\n\n(d) Reflect shape T in the line y = x.\n\\newline\n\n(e) Find the matrix that represents the transformation in part (d).\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Translate shape T by the vector $\\overrightarrow{c}$.\n\\newline\n\nLabel the image A.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Rotate shape T about the point (5, 3) through 180°.\n\\newline\n\nLabel the image B.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Describe fully the single transformation that maps shape A onto shape B.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Reflect shape T in the line y = x.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(e)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the matrix that represents the transformation in part (d).\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "describe",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q01-Grid.tex"
+      }
+    ],
+    "_rawBody": "\\relinput{Figures/Q01-Grid.tex}\n\n\\begin{parts}\n\\item Translate shape T by the vector $\\overrightarrow{c}$.\n\nLabel the image A.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item Rotate shape T about the point (5, 3) through 180°.\n\nLabel the image B.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item Describe fully the single transformation that maps shape A onto shape B.\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\item Reflect shape T in the line y = x.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item Find the matrix that represents the transformation in part (d).\n\n\\AnswerLine[][]\n\\Marks{3}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2019MayJune/Paper41/Q01/Q01-Grid.png"
+    ]
+  },
+  {
+    "id": "0580-2019MayJune-Paper41-Q02",
+    "paper": "2019MayJune-Paper41",
+    "qnum": 2,
+    "marks": 15,
+    "topics": [
+      "Number",
+      "Algebra and graphs"
+    ],
+    "s": "2.10",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Graphs of functions",
+    "qtype": "Completing table of values, plotting cubic graph, solving equations graphically",
+    "g": "graph",
+    "src": "0580/41/M/J/19 Q02",
+    "year": 2019,
+    "session": "MayJune",
+    "tex": "The table shows some values for $y = x^{3} + 3x^{2} + 2$.\n\\newline\n\n\\begin{tabular}{c c c c c c}\n$x$ & $-3.5$ & $-3$ & $-2.5$ & $-2$ & $-1.5$ \\\\\n$y$ & $-4.1$ &  & $-2.1$ &  & $2.6$ \\\\\n$x$ & $-1$ & $-0.5$ & $0$ & $0.5$ & $1$ \\\\\n$y$ &  & $0.5$ &  & $1.5$ &  \\\\\n$x$ & $1.5$ &  &  &  &  \\\\\n$y$ & $12.1$ &  &  &  &  \\\\\n\\end{tabular}\n\n(a) Complete the table.\n\\newline\n\n(b) On the grid, draw the graph of $y = x^{3} + 3x^{2} + 2$ for $-3.5 \\leq x \\leq 1.5$.\n\\newline\n\n(c) Use your graph to solve the equation $x^{3} + 3x^{2} + 2 = 0$ for $-3.5 \\leq x \\leq 1.5$.\n\\newline\n\n(d) By drawing a suitable straight line, solve the equation $x^{3} + 3x^{2} + 2x + 2 = 0$ for $-3.5 \\leq x \\leq 1.5$.\n\\newline\n\n(e) For $-3.5 \\leq x \\leq 1.5$, the equation $x^{3} + 3x^{2} + 2 = k$ has three solutions and $k$ is an integer.\n\\newline\n\nWrite down a possible value of $k$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Complete the table.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "text",
+            "content": "On the grid, draw the graph of $y = x^{3} + 3x^{2} + 2$ for $-3.5 \\leq x \\leq 1.5$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "none",
+          "space": {
+            "type": "drawing",
+            "height": "6cm",
+            "cmd": "Answerspace"
+          }
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Use your graph to solve the equation $x^{3} + 3x^{2} + 2 = 0$ for $-3.5 \\leq x \\leq 1.5$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x = $"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "By drawing a suitable straight line, solve the equation $x^{3} + 3x^{2} + 2x + 2 = 0$ for $-3.5 \\leq x \\leq 1.5$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x = $"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(e)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "For $-3.5 \\leq x \\leq 1.5$, the equation $x^{3} + 3x^{2} + 2 = k$ has three solutions and $k$ is an integer.\n\\newline\n\nWrite down a possible value of $k$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$k = $"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The table shows some values for $y = x^{3} + 3x^{2} + 2$.\n\\newline\n"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{tabular}{c c c c c c}\n$x$ & $-3.5$ & $-3$ & $-2.5$ & $-2$ & $-1.5$ \\\\\n$y$ & $-4.1$ &  & $-2.1$ &  & $2.6$ \\\\\n$x$ & $-1$ & $-0.5$ & $0$ & $0.5$ & $1$ \\\\\n$y$ &  & $0.5$ &  & $1.5$ &  \\\\\n$x$ & $1.5$ &  &  &  &  \\\\\n$y$ & $12.1$ &  &  &  &  \\\\\n\\end{tabular}"
+      }
+    ],
+    "_rawBody": "The table shows some values for $y = x^{3} + 3x^{2} + 2$.\n\n\\begin{tabular}{c c c c c c}\n$x$ & $-3.5$ & $-3$ & $-2.5$ & $-2$ & $-1.5$ \\\\\n$y$ & $-4.1$ &  & $-2.1$ &  & $2.6$ \\\\\n$x$ & $-1$ & $-0.5$ & $0$ & $0.5$ & $1$ \\\\\n$y$ &  & $0.5$ &  & $1.5$ &  \\\\\n$x$ & $1.5$ &  &  &  &  \\\\\n$y$ & $12.1$ &  &  &  &  \\\\\n\\end{tabular}\n\n\\begin{parts}\n\\item Complete the table.\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\item On the grid, draw the graph of $y = x^{3} + 3x^{2} + 2$ for $-3.5 \\leq x \\leq 1.5$.\n\n\\Answerspace[6cm]\n\\Marks{4}\n\n\\item Use your graph to solve the equation $x^{3} + 3x^{2} + 2 = 0$ for $-3.5 \\leq x \\leq 1.5$.\n\n\\AnswerLine[$x = $][]\n\\Marks{1}\n\n\\item By drawing a suitable straight line, solve the equation $x^{3} + 3x^{2} + 2x + 2 = 0$ for $-3.5 \\leq x \\leq 1.5$.\n\n\\AnswerLine[$x = $][]\n\\Marks{2}\n\n\\item For $-3.5 \\leq x \\leq 1.5$, the equation $x^{3} + 3x^{2} + 2 = k$ has three solutions and $k$ is an integer.\n\nWrite down a possible value of $k$.\n\n\\AnswerLine[$k = $][]\n\\Marks{1}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2019MayJune-Paper41-Q03",
+    "paper": "2019MayJune-Paper41",
+    "qnum": 3,
+    "marks": 14,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.3",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Symmetry",
+    "qtype": "scale drawings and bearings",
+    "g": "mixed",
+    "src": "0580/41/M/J/19 Q03",
+    "year": 2019,
+    "session": "MayJune",
+    "tex": "The diagram shows a field ABCDE.\n\\newline\n\n(a) Calculate the perimeter of the field ABCDE.\n\\newline\n\n m\n\n(b) Calculate angle ABD.\n\\newline\n\n$^\\circ$\n\n(c) Calculate angle CBD.\n\\newline\n\n$^\\circ$\n\n(d) The point C is due north of the point B.\n\\newline\n\nFind the bearing of D from B.\n\\newline\n\n$^\\circ$\n\n(e) Calculate the area of the field ABCDE.\n\\newline\n\nGive your answer in hectares.\n\\newline\n\n[1 hectare = 10 000 m$^2$]\n\n hectares",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "text",
+            "content": "Calculate the perimeter of the field ABCDE.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "text",
+            "content": "Calculate angle ABD.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "Angle ABD = "
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Calculate angle CBD.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "Angle CBD = "
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "The point C is due north of the point B.\n\\newline\n\nFind the bearing of D from B.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(e)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "text",
+            "content": "Calculate the area of the field ABCDE.\n\\newline\n\nGive your answer in hectares.\n\\newline\n\n[1 hectare = 10 000 m$^2$]"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The diagram shows a field ABCDE.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "Figures/Q03-Field.tex"
+      }
+    ],
+    "_rawBody": "The diagram shows a field ABCDE.\n\n\\relinput{Figures/Q03-Field.tex}\n\n\\begin{parts}\n\\item Calculate the perimeter of the field ABCDE.\n\n\\AnswerLine[] m\n\\Marks{4}\n\n\\item Calculate angle ABD.\n\n\\AnswerLine[Angle ABD = ]$^\\circ$\n\\Marks{4}\n\n\\item Calculate angle CBD.\n\n\\AnswerLine[Angle CBD = ]$^\\circ$\n\\Marks{2}\n\n\\item The point C is due north of the point B.\n\nFind the bearing of D from B.\n\n\\AnswerLine[][]$^\\circ$\n\\Marks{2}\n\n\\item Calculate the area of the field ABCDE.\n\nGive your answer in hectares.\n\n[1 hectare = 10 000 m$^2$]\n\n\\AnswerLine[] hectares\n\\Marks{4}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2019MayJune/Paper41/Q03/Q03-Field.png"
+    ]
+  },
+  {
+    "id": "0580-2019MayJune-Paper41-Q04",
+    "paper": "2019MayJune-Paper41",
+    "qnum": 4,
+    "marks": 10,
+    "topics": [
+      "Probability",
+      "Statistics"
+    ],
+    "s": "8.3",
+    "d": 2,
+    "cat": "probability",
+    "topic": "Tree diagrams",
+    "qtype": "combined events",
+    "g": "mixed",
+    "src": "0580/41/M/J/19 Q04",
+    "year": 2019,
+    "session": "MayJune",
+    "tex": "(a) The test scores of 14 students are shown below.\n\\newline\n\n21, 21, 23, 26, 25, 21, 22, 20, 21, 23, 23, 27, 24, 21\n\n(i) (b) Find the range, mode, median and mean of the test scores.\n\\newline\n\nRange =  \\\\\nMode =  \\\\\nMedian =  \\\\\nMean = \n\n(c) A student is chosen at random.\n\\newline\n\nFind the probability that this student has a test score of more than 24.\n\\newline\n\n(d) Petra records the score in each test she takes.\n\\newline\n\nThe mean of the first n scores is x.\n\\newline\n\nThe mean of the first (n - 1) scores is (x + 1).\n\\newline\n\nFind the nth score in terms of n and x.\n\\newline\n\nGive your answer in its simplest form.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The test scores of 14 students are shown below.\n\\newline\n\n21, 21, 23, 26, 25, 21, 22, 20, 21, 23, 23, 27, 24, 21"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 6,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the range, mode, median and mean of the test scores.\n\\newline\n\nRange = \\AnswerLine[] \\\\\nMode = \\AnswerLine[] \\\\\nMedian = \\AnswerLine[] \\\\\nMean = \\AnswerLine[]"
+              }
+            ],
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "A student is chosen at random.\n\\newline\n\nFind the probability that this student has a test score of more than 24.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Petra records the score in each test she takes.\n\\newline\n\nThe mean of the first n scores is x.\n\\newline\n\nThe mean of the first (n - 1) scores is (x + 1).\n\\newline\n\nFind the nth score in terms of n and x.\n\\newline\n\nGive your answer in its simplest form.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item The test scores of 14 students are shown below.\n\n21, 21, 23, 26, 25, 21, 22, 20, 21, 23, 23, 27, 24, 21\n\n\\begin{subparts}\n\\item Find the range, mode, median and mean of the test scores.\n\nRange = \\AnswerLine[] \\\\\nMode = \\AnswerLine[] \\\\\nMedian = \\AnswerLine[] \\\\\nMean = \\AnswerLine[]\n\\Marks{6}\n\n\\item A student is chosen at random.\n\nFind the probability that this student has a test score of more than 24.\n\n\\AnswerLine[]\n\\Marks{1}\n\\end{subparts}\n\n\\item Petra records the score in each test she takes.\n\nThe mean of the first n scores is x.\n\nThe mean of the first (n - 1) scores is (x + 1).\n\nFind the nth score in terms of n and x.\n\nGive your answer in its simplest form.\n\n\\AnswerLine[]\n\\Marks{3}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2019MayJune-Paper41-Q05",
+    "paper": "2019MayJune-Paper41",
+    "qnum": 5,
+    "marks": 9,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.7",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Nets and 3D shapes",
+    "qtype": "circle theorems",
+    "g": "mixed",
+    "src": "0580/41/M/J/19 Q05",
+    "year": 2019,
+    "session": "MayJune",
+    "tex": "The diagram shows the surface of a garden pond, made from a rectangle and two semicircles.\n\\newline\n\nThe rectangle measures 3 m by 1.2 m.\n\\newline\n\n(a) Calculate the area of this surface.\n\\newline\n\n m$^2$\n\n(b) The pond is a prism and the water in the pond has a depth of 20 cm.\n\\newline\n\nCalculate the number of litres of water in the pond.\n\\newline\n\n litres\n\n(c) After a rainfall, the number of litres of water in the pond is 1007.\n\\newline\n\nCalculate the increase in the depth of water in the pond.\n\\newline\n\nGive your answer in centimetres.\n\\newline\n\n cm",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Calculate the area of this surface.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "The pond is a prism and the water in the pond has a depth of 20 cm.\n\\newline\n\nCalculate the number of litres of water in the pond.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "After a rainfall, the number of litres of water in the pond is 1007.\n\\newline\n\nCalculate the increase in the depth of water in the pond.\n\\newline\n\nGive your answer in centimetres.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The diagram shows the surface of a garden pond, made from a rectangle and two semicircles.\n\\newline\n\nThe rectangle measures 3 m by 1.2 m.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "Figures/Q05-Pond.tex"
+      }
+    ],
+    "_rawBody": "The diagram shows the surface of a garden pond, made from a rectangle and two semicircles.\n\nThe rectangle measures 3 m by 1.2 m.\n\n\\relinput{Figures/Q05-Pond.tex}\n\n\\begin{parts}\n\\item Calculate the area of this surface.\n\n\\AnswerLine[] m$^2$\n\\Marks{3}\n\n\\item The pond is a prism and the water in the pond has a depth of 20 cm.\n\nCalculate the number of litres of water in the pond.\n\n\\AnswerLine[] litres\n\\Marks{3}\n\n\\item After a rainfall, the number of litres of water in the pond is 1007.\n\nCalculate the increase in the depth of water in the pond.\n\nGive your answer in centimetres.\n\n\\AnswerLine[] cm\n\\Marks{3}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2019MayJune/Paper41/Q05/Q05-Pond.png"
+    ]
+  },
+  {
+    "id": "0580-2019MayJune-Paper41-Q06",
+    "paper": "2019MayJune-Paper41",
+    "qnum": 6,
+    "marks": 7,
+    "topics": [
+      "Number",
+      "Probability"
+    ],
+    "s": null,
+    "d": 2,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/41/M/J/19 Q06",
+    "year": 2019,
+    "session": "MayJune",
+    "tex": "$\\xi = \\{students\\ in\\ a\\ school\\}$\n\n$F = \\{students\\ who\\ play\\ football\\}$\n\n$B = \\{students\\ who\\ play\\ baseball\\}$\n\nThere are 240 students in the school.\n\\newline\n\n120 students play football.\n\\newline\n\n40 students play baseball.\n\\newline\n\n90 students play football but not baseball.\n\\newline\n\n(a) Complete the Venn diagram to show this information.\n\\newline\n\n(b) Find $n(F \\cup B)$.\n\\newline\n\n(c) A student in the school is chosen at random.\n\\newline\n\nFind the probability that this student plays baseball but not football.\n\\newline\n\n(d) Two students who play baseball are chosen at random.\n\\newline\n\nFind the probability that they both also play football.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Complete the Venn diagram to show this information.\n\\newline\n"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q06-Venn.tex"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find $n(F \\cup B)$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "A student in the school is chosen at random.\n\\newline\n\nFind the probability that this student plays baseball but not football.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Two students who play baseball are chosen at random.\n\\newline\n\nFind the probability that they both also play football.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "$\\xi = \\{students\\ in\\ a\\ school\\}$\n\n$F = \\{students\\ who\\ play\\ football\\}$\n\n$B = \\{students\\ who\\ play\\ baseball\\}$\n\nThere are 240 students in the school.\n\\newline\n\n120 students play football.\n\\newline\n\n40 students play baseball.\n\\newline\n\n90 students play football but not baseball.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "$\\xi = \\{students\\ in\\ a\\ school\\}$\n\n$F = \\{students\\ who\\ play\\ football\\}$\n\n$B = \\{students\\ who\\ play\\ baseball\\}$\n\nThere are 240 students in the school.\n\n120 students play football.\n\n40 students play baseball.\n\n90 students play football but not baseball.\n\n\\begin{parts}\n\\item Complete the Venn diagram to show this information.\n\n\\relinput{Figures/Q06-Venn.tex}\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item Find $n(F \\cup B)$.\n\n\\AnswerLine[]\n\\Marks{1}\n\n\\item A student in the school is chosen at random.\n\nFind the probability that this student plays baseball but not football.\n\n\\AnswerLine[]\n\\Marks{1}\n\n\\item Two students who play baseball are chosen at random.\n\nFind the probability that they both also play football.\n\n\\AnswerLine[]\n\\Marks{3}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2019MayJune/Paper41/Q06/Q06-Venn.png"
+    ]
+  },
+  {
+    "id": "0580-2019MayJune-Paper41-Q07",
+    "paper": "2019MayJune-Paper41",
+    "qnum": 7,
+    "marks": 10,
+    "topics": [
+      "Algebra and graphs",
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "2.5",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Equations",
+    "qtype": "Formula rearrangement, substitution, forming and solving quadratic equations, factorization",
+    "g": "rearrange",
+    "src": "0580/41/M/J/19 Q07",
+    "year": 2019,
+    "session": "MayJune",
+    "tex": "$s = ut + \\frac{1}{2}at^{2}$\n\n(a) Find s when t = 26.5, u = 104.3 and a = -2.2.\n\\newline\n\nGive your answer in standard form, correct to 4 significant figures.\n\\newline\n\ns = \n\n(b) Rearrange the formula to write a in terms of u, t and s.\n\\newline\n\na = \n\nThe difference between the areas of the two rectangles is 62 cm$^2$.\n\\newline\n\n(a) Show that x$^2$ + 2x - 63 = 0.\n\\newline\n\n(b) Factorise x$^2$ + 2x - 63.\n\\newline\n\n(c) Solve the equation x$^2$ + 2x - 63 = 0 to find the difference between the perimeters of the two rectangles.\n\\newline\n\n cm",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find s when t = 26.5, u = 104.3 and a = -2.2.\n\\newline\n\nGive your answer in standard form, correct to 4 significant figures.\n\\newline\n\ns = \\AnswerLine[]"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Rearrange the formula to write a in terms of u, t and s.\n\\newline\n\na = \\AnswerLine[]"
+          }
+        ],
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "show",
+    "stem": [
+      {
+        "type": "text",
+        "content": "$s = ut + \\frac{1}{2}at^{2}$"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2019MayJune/Paper41/Q07/Q07-Rectangles.png"
+      }
+    ],
+    "_rawBody": "$s = ut + \\frac{1}{2}at^{2}$\n\n\\begin{parts}\n\\item Find s when t = 26.5, u = 104.3 and a = -2.2.\n\nGive your answer in standard form, correct to 4 significant figures.\n\ns = \\AnswerLine[]\n\\Marks{4}\n\n\\item Rearrange the formula to write a in terms of u, t and s.\n\na = \\AnswerLine[]\n\\Marks{3}\n\\end{parts}\n\nThe difference between the areas of the two rectangles is 62 cm$^2$.\n\n\\relinput{Figures/Q07-Rectangles.tex}\n\n\\begin{parts}\n\\item Show that x$^2$ + 2x - 63 = 0.\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\item Factorise x$^2$ + 2x - 63.\n\n\\AnswerLine[]\n\\Marks{2}\n\n\\item Solve the equation x$^2$ + 2x - 63 = 0 to find the difference between the perimeters of the two rectangles.\n\n\\AnswerLine[] cm\n\\Marks{2}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "_postParts": [
+      {
+        "type": "text",
+        "content": "The difference between the areas of the two rectangles is 62 cm$^2$."
+      },
+      {
+        "type": "figure",
+        "src": "Figures/Q07-Rectangles.tex"
+      },
+      {
+        "type": "text",
+        "content": "\\begin{parts}\n\\item Show that x$^2$ + 2x - 63 = 0.\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\item Factorise x$^2$ + 2x - 63.\n\n\\AnswerLine[]\n\\Marks{2}\n\n\\item Solve the equation x$^2$ + 2x - 63 = 0 to find the difference between the perimeters of the two rectangles.\n\n\\AnswerLine[] cm\n\\Marks{2}\n\\end{parts}"
+      }
+    ],
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2019MayJune/Paper41/Q07/Q07-Rectangles.png"
+    ]
+  },
+  {
+    "id": "0580-2019MayJune-Paper41-Q08",
+    "paper": "2019MayJune-Paper41",
+    "qnum": 8,
+    "marks": 11,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.17",
+    "d": 2,
+    "cat": "number",
+    "topic": "Bounds and calculations",
+    "qtype": "percentage increase, simple interest, exponential growth/decay, reverse percentage",
+    "g": "mixed",
+    "src": "0580/41/M/J/19 Q08",
+    "year": 2019,
+    "session": "MayJune",
+    "tex": "(a) The price of a book increases from \\$2.50 to \\$2.65.\n\\newline\n\nCalculate the percentage increase.\n\\newline\n\n \\%\n\n(b) Scott invests \\$500 for 7 years at a rate of 1.5\\% per year simple interest.\n\\newline\n\nCalculate the value of his investment at the end of the 7 years.\n\\newline\n\n\\$ \n\n(c) In a city the population is increasing exponentially at a rate of 1.6\\% per year.\n\\newline\n\nFind the overall percentage increase at the end of 20 years.\n\\newline\n\n \\%\n\n(d) The population of a village is 6400.\n\\newline\n\nThe population is decreasing exponentially at a rate of r\\% per year.\n\\newline\n\nAfter 22 years, the population will be 2607.\n\\newline\n\nFind the value of r.\n\\newline\n\nr =",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "The price of a book increases from \\$2.50 to \\$2.65.\n\\newline\n\nCalculate the percentage increase.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Scott invests \\$500 for 7 years at a rate of 1.5\\% per year simple interest.\n\\newline\n\nCalculate the value of his investment at the end of the 7 years.\n\\newline\n\n\\$ \\AnswerLine[]"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "In a city the population is increasing exponentially at a rate of 1.6\\% per year.\n\\newline\n\nFind the overall percentage increase at the end of 20 years.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "The population of a village is 6400.\n\\newline\n\nThe population is decreasing exponentially at a rate of r\\% per year.\n\\newline\n\nAfter 22 years, the population will be 2607.\n\\newline\n\nFind the value of r.\n\\newline\n\nr = \\AnswerLine[]"
+          }
+        ],
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item The price of a book increases from \\$2.50 to \\$2.65.\n\nCalculate the percentage increase.\n\n\\AnswerLine[] \\%\n\\Marks{3}\n\n\\item Scott invests \\$500 for 7 years at a rate of 1.5\\% per year simple interest.\n\nCalculate the value of his investment at the end of the 7 years.\n\n\\$ \\AnswerLine[]\n\\Marks{3}\n\n\\item In a city the population is increasing exponentially at a rate of 1.6\\% per year.\n\nFind the overall percentage increase at the end of 20 years.\n\n\\AnswerLine[] \\%\n\\Marks{2}\n\n\\item The population of a village is 6400.\n\nThe population is decreasing exponentially at a rate of r\\% per year.\n\nAfter 22 years, the population will be 2607.\n\nFind the value of r.\n\nr = \\AnswerLine[]\n\\Marks{3}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2019MayJune-Paper41-Q09",
+    "paper": "2019MayJune-Paper41",
+    "qnum": 9,
+    "marks": 10,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.13",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Functions",
+    "qtype": "Composite functions, inverse functions, solving exponential equations",
+    "g": "function",
+    "src": "0580/41/M/J/19 Q09",
+    "year": 2019,
+    "session": "MayJune",
+    "tex": "f(x) = 7x - 2\n\ng(x) = x$^2$ + 1\n\nh(x) = 3$^x$\n\n(a) Find gh(2).\n\\newline\n\n(b) Find f$^{-1}$(x).\n\\newline\n\nf$^{-1}$(x) = \n\n(c) gg(x) = ax$^4$ + bx$^2$ + c\n\nFind the values of a, b and c.\n\\newline\n\nc = \n\n(d) Find x when hf(x) = 81.\n\\newline\n\nx =",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find gh(2).\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find f$^{-1}$(x).\n\\newline\n\nf$^{-1}$(x) = \\AnswerLine[]"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "gg(x) = ax$^4$ + bx$^2$ + c\n\nFind the values of a, b and c.\n\\newline\n\na = \\AnswerLine[] \\\\\nb = \\AnswerLine[] \\\\\nc = \\AnswerLine[]"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find x when hf(x) = 81.\n\\newline\n\nx = \\AnswerLine[]"
+          }
+        ],
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "f(x) = 7x - 2\n\ng(x) = x$^2$ + 1\n\nh(x) = 3$^x$"
+      }
+    ],
+    "_rawBody": "f(x) = 7x - 2\n\ng(x) = x$^2$ + 1\n\nh(x) = 3$^x$\n\n\\begin{parts}\n\\item Find gh(2).\n\n\\AnswerLine[]\n\\Marks{2}\n\n\\item Find f$^{-1}$(x).\n\nf$^{-1}$(x) = \\AnswerLine[]\n\\Marks{2}\n\n\\item gg(x) = ax$^4$ + bx$^2$ + c\n\nFind the values of a, b and c.\n\na = \\AnswerLine[] \\\\\nb = \\AnswerLine[] \\\\\nc = \\AnswerLine[]\n\\Marks{3}\n\n\\item Find x when hf(x) = 81.\n\nx = \\AnswerLine[]\n\\Marks{3}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2019MayJune-Paper41-Q10",
+    "paper": "2019MayJune-Paper41",
+    "qnum": 10,
+    "marks": 12,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.6",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/41/M/J/19 Q10",
+    "year": 2019,
+    "session": "MayJune",
+    "tex": "The volume of each of the following solids is 1000 cm$^3$.\n\\newline\n\nCalculate the value of x for each solid.\n\\newline\n\n(a) A cube with side length x cm.\n\\newline\n\nx = \n\n(b) A sphere with radius x cm.\n\\newline\n\n[The volume, V, of a sphere with radius r is V = $\\frac{4}{3}\\pi r^{3}$.\n\\newline\n]\n\nx = \n\n(c) A cone with radius x cm and slant height 5 cm.\n\\newline\n\n[The volume, V, of a cone with radius r and height h is V = $\\frac{1}{3}\\pi r^{2}h$.\n\\newline\n]\n\nx = \n\n(d) A prism with a right-angled triangle as its cross-section.\n\\newline\n\nx =",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "A cube with side length x cm.\n\\newline\n\nx = \\AnswerLine[]"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "A sphere with radius x cm.\n\\newline\n\n[The volume, V, of a sphere with radius r is V = $\\frac{4}{3}\\pi r^{3}$.\n\\newline\n]\n\nx = \\AnswerLine[]"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "text",
+            "content": "A cone with radius x cm and slant height 5 cm.\n\\newline\n"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q10-Cone.tex"
+          },
+          {
+            "type": "text",
+            "content": "[The volume, V, of a cone with radius r and height h is V = $\\frac{1}{3}\\pi r^{2}h$.\n\\newline\n]\n\nx = \\AnswerLine[]"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "text",
+            "content": "A prism with a right-angled triangle as its cross-section.\n\\newline\n"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q10-Prism.tex"
+          },
+          {
+            "type": "text",
+            "content": "x = \\AnswerLine[]"
+          }
+        ],
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The volume of each of the following solids is 1000 cm$^3$.\n\\newline\n\nCalculate the value of x for each solid.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "The volume of each of the following solids is 1000 cm$^3$.\n\nCalculate the value of x for each solid.\n\n\\begin{parts}\n\\item A cube with side length x cm.\n\nx = \\AnswerLine[]\n\\Marks{1}\n\n\\item A sphere with radius x cm.\n\n[The volume, V, of a sphere with radius r is V = $\\frac{4}{3}\\pi r^{3}$.]\n\nx = \\AnswerLine[]\n\\Marks{3}\n\n\\item A cone with radius x cm and slant height 5 cm.\n\n\\relinput{Figures/Q10-Cone.tex}\n\n[The volume, V, of a cone with radius r and height h is V = $\\frac{1}{3}\\pi r^{2}h$.]\n\nx = \\AnswerLine[]\n\\Marks{4}\n\n\\item A prism with a right-angled triangle as its cross-section.\n\n\\relinput{Figures/Q10-Prism.tex}\n\nx = \\AnswerLine[]\n\\Marks{4}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2019MayJune/Paper41/Q10/Q10-Cone.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2019MayJune/Paper41/Q10/Q10-Prism.png"
+    ]
+  },
+  {
+    "id": "0580-2019MayJune-Paper41-Q11",
+    "paper": "2019MayJune-Paper41",
+    "qnum": 11,
+    "marks": 11,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.6",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/41/M/J/19 Q11",
+    "year": 2019,
+    "session": "MayJune",
+    "tex": "Brad travelled from his home in New York to Chamonix.\n\\newline\n\nHe left his home at 16 30 and travelled by taxi to the airport in New York.\n\\newline\n\nThis journey took 55 minutes and had an average speed of 18 km/h.\n\\newline\n\nHe then travelled by plane to Geneva, departing from New York at 22 15.\n\\newline\n\nThe flight path can be taken as an arc of a circle of radius 6400 km with a sector angle of 55.5°.\n\\newline\n\nThe local time in Geneva is 6 hours ahead of the local time in New York.\n\\newline\n\nBrad arrived in Geneva at 11 25 the next day.\n\\newline\n\nTo complete his journey, Brad travelled by bus from Geneva to Chamonix.\n\\newline\n\nThis journey started at 13 00 and took 1 hour 36 minutes.\n\\newline\n\nThe average speed was 65 km/h.\n\\newline\n\nThe local time in Chamonix is the same as the local time in Geneva.\n\\newline\n\nFind the overall average speed of Brad's journey from his home in New York to Chamonix.\n\\newline\n\nShow all your working and give your answer in km/h.\n\\newline\n\n km/h",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Brad travelled from his home in New York to Chamonix.\n\\newline\n\nHe left his home at 16 30 and travelled by taxi to the airport in New York.\n\\newline\n\nThis journey took 55 minutes and had an average speed of 18 km/h.\n\\newline\n\nHe then travelled by plane to Geneva, departing from New York at 22 15.\n\\newline\n\nThe flight path can be taken as an arc of a circle of radius 6400 km with a sector angle of 55.5°.\n\\newline\n\nThe local time in Geneva is 6 hours ahead of the local time in New York.\n\\newline\n\nBrad arrived in Geneva at 11 25 the next day.\n\\newline\n\nTo complete his journey, Brad travelled by bus from Geneva to Chamonix.\n\\newline\n\nThis journey started at 13 00 and took 1 hour 36 minutes.\n\\newline\n\nThe average speed was 65 km/h.\n\\newline\n\nThe local time in Chamonix is the same as the local time in Geneva.\n\\newline\n\nFind the overall average speed of Brad's journey from his home in New York to Chamonix.\n\\newline\n\nShow all your working and give your answer in km/h.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Brad travelled from his home in New York to Chamonix.\n\nHe left his home at 16 30 and travelled by taxi to the airport in New York.\n\nThis journey took 55 minutes and had an average speed of 18 km/h.\n\nHe then travelled by plane to Geneva, departing from New York at 22 15.\n\nThe flight path can be taken as an arc of a circle of radius 6400 km with a sector angle of 55.5°.\n\nThe local time in Geneva is 6 hours ahead of the local time in New York.\n\nBrad arrived in Geneva at 11 25 the next day.\n\nTo complete his journey, Brad travelled by bus from Geneva to Chamonix.\n\nThis journey started at 13 00 and took 1 hour 36 minutes.\n\nThe average speed was 65 km/h.\n\nThe local time in Chamonix is the same as the local time in Geneva.\n\nFind the overall average speed of Brad's journey from his home in New York to Chamonix.\n\nShow all your working and give your answer in km/h.\n\n\\AnswerLine[] km/h\n\\Marks{11}",
+    "_compactMarks": true
+  }
+]

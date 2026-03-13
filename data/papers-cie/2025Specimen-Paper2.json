@@ -1,0 +1,1606 @@
+[
+  {
+    "id": "0580-2025Specimen-Paper2-Q01",
+    "paper": "2025Specimen-Paper2",
+    "qnum": 1,
+    "marks": 1,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.3",
+    "d": 2,
+    "cat": "number",
+    "topic": "Directed numbers",
+    "qtype": "calculating powers of decimals",
+    "g": "indices",
+    "src": "0580/2/S/25 Q01",
+    "year": 2025,
+    "session": "Specimen",
+    "tex": "Work out $(0.01)^2$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Work out $(0.01)^2$.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Work out $(0.01)^2$.\n\n\\AnswerLine[][]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025Specimen-Paper2-Q02",
+    "paper": "2025Specimen-Paper2",
+    "qnum": 2,
+    "marks": 1,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.9",
+    "d": 2,
+    "cat": "number",
+    "topic": "Percentages",
+    "qtype": "rounding to significant figures",
+    "g": "mixed",
+    "src": "0580/2/S/25 Q02",
+    "year": 2025,
+    "session": "Specimen",
+    "tex": "Write $57.3997$ correct to $4$ significant figures.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "write",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Write $57.3997$ correct to $4$ significant figures.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Write $57.3997$ correct to $4$ significant figures.\n\n\\AnswerLine[][]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025Specimen-Paper2-Q03",
+    "paper": "2025Specimen-Paper2",
+    "qnum": 3,
+    "marks": 1,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.16",
+    "d": 2,
+    "cat": "number",
+    "topic": "Upper and lower bounds",
+    "qtype": "currency conversion",
+    "g": "mixed",
+    "src": "0580/2/S/25 Q03",
+    "year": 2025,
+    "session": "Specimen",
+    "tex": "Aimee changes 250 euros into dollars.\n\\newline\n\nThe exchange rate is 1 euro = \\$1.10.\n\\newline\n\nCalculate the number of dollars Aimee receives.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Aimee changes 250 euros into dollars.\n\\newline\n\nThe exchange rate is 1 euro = \\$1.10.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "Calculate the number of dollars Aimee receives.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "\\$"
+    },
+    "_rawBody": "Aimee changes 250 euros into dollars.\n\nThe exchange rate is 1 euro = \\$1.10.\n\n\\vgap\n\nCalculate the number of dollars Aimee receives.\n\n\\AnswerLine[\\$][]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025Specimen-Paper2-Q04",
+    "paper": "2025Specimen-Paper2",
+    "qnum": 4,
+    "marks": 2,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.6",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/2/S/25 Q04",
+    "year": 2025,
+    "session": "Specimen",
+    "tex": "The diagram shows two triangles, $ABD$ and $ADC$.\n\\newline\n\n$BDC$ is a straight line, $AB = AC$, angle $ABD = 61^\\circ$ and angle $ADC = 81^\\circ$.\n\\newline\n\nWork out angle $DAC$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The diagram shows two triangles, $ABD$ and $ADC$.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "Figures/Q04-IsoscelesTriangle.tex"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "$BDC$ is a straight line, $AB = AC$, angle $ABD = 61^\\circ$ and angle $ADC = 81^\\circ$.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "Work out angle $DAC$.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "Angle $DAC$ = "
+    },
+    "_rawBody": "The diagram shows two triangles, $ABD$ and $ADC$.\n\n\\relinput{Figures/Q04-IsoscelesTriangle.tex}\n\n\\vgap\n\n$BDC$ is a straight line, $AB = AC$, angle $ABD = 61^\\circ$ and angle $ADC = 81^\\circ$.\n\n\\vgap\n\nWork out angle $DAC$.\n\n\\AnswerLine[Angle $DAC$ = ][]\n\\Marks{2}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025Specimen/Paper2/Q04/Q04-IsoscelesTriangle.png"
+    ]
+  },
+  {
+    "id": "0580-2025Specimen-Paper2-Q05",
+    "paper": "2025Specimen-Paper2",
+    "qnum": 5,
+    "marks": 1,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.12",
+    "d": 2,
+    "cat": "number",
+    "topic": "Set notation",
+    "qtype": "area unit conversion",
+    "g": "mixed",
+    "src": "0580/2/S/25 Q05",
+    "year": 2025,
+    "session": "Specimen",
+    "tex": "Convert $0.17\\,\\text{m}^2$ into cm$^2$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Convert $0.17\\,\\text{m}^2$ into cm$^2$.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "cm$^2$"
+    },
+    "_rawBody": "Convert $0.17$\\,m$^2$ into cm$^2$.\n\n\\AnswerLine[][cm$^2$]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025Specimen-Paper2-Q06",
+    "paper": "2025Specimen-Paper2",
+    "qnum": 6,
+    "marks": 2,
+    "topics": [
+      "Mensuration"
+    ],
+    "s": "5.4",
+    "d": 2,
+    "cat": "mensuration",
+    "topic": "Volume",
+    "qtype": "surface area and volume",
+    "g": "mixed",
+    "src": "0580/2/S/25 Q06",
+    "year": 2025,
+    "session": "Specimen",
+    "tex": "The mass of a solid metal cuboid is $4\\,\\text{kg}$.\n\\newline\n The volume of the cuboid is $600\\,\\text{cm}^3$.\n\\newline\n\nCalculate the density of the metal, giving your answer in g/cm$^3$.\n\\newline\n\n[Density = mass $\\div$ volume]",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The mass of a solid metal cuboid is $4\\,\\text{kg}$.\n\\newline\n The volume of the cuboid is $600\\,\\text{cm}^3$.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "Calculate the density of the metal, giving your answer in g/cm$^3$.\n\\newline\n\n[Density = mass $\\div$ volume]"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "g/cm$^3$"
+    },
+    "_rawBody": "The mass of a solid metal cuboid is 4\\,kg. The volume of the cuboid is 600\\,cm$^3$.\n\n\\vgap\n\nCalculate the density of the metal, giving your answer in g/cm$^3$.\n\n[Density = mass $\\div$ volume]\n\n\\AnswerLine[][g/cm$^3$]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025Specimen-Paper2-Q07",
+    "paper": "2025Specimen-Paper2",
+    "qnum": 7,
+    "marks": 4,
+    "topics": [
+      "Transformations and vectors"
+    ],
+    "s": "7.1",
+    "d": 2,
+    "cat": "vectors",
+    "topic": "Translation",
+    "qtype": "transformations",
+    "g": "mixed",
+    "src": "0580/2/S/25 Q07",
+    "year": 2025,
+    "session": "Specimen",
+    "tex": "$$\\mathbf{u} = \\begin{pmatrix} 3 \\\\ -2 \\end{pmatrix} \\qquad \\mathbf{v} = \\begin{pmatrix} -12 \\\\ 5 \\end{pmatrix}$$\n\n(a) Find $\\mathbf{u} - 2\\mathbf{v}$.\n\\newline\n\n(b) Find $|\\mathbf{v}|$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find $\\mathbf{u} - 2\\mathbf{v}$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find $|\\mathbf{v}|$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "$$\\mathbf{u} = \\begin{pmatrix} 3 \\\\ -2 \\end{pmatrix} \\qquad \\mathbf{v} = \\begin{pmatrix} -12 \\\\ 5 \\end{pmatrix}$$"
+      }
+    ],
+    "_rawBody": "$$\\mathbf{u} = \\begin{pmatrix} 3 \\\\ -2 \\end{pmatrix} \\qquad \\mathbf{v} = \\begin{pmatrix} -12 \\\\ 5 \\end{pmatrix}$$\n\n\\begin{parts}\n\\item Find $\\mathbf{u} - 2\\mathbf{v}$.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item Find $|\\mathbf{v}|$.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2025Specimen-Paper2-Q08",
+    "paper": "2025Specimen-Paper2",
+    "qnum": 8,
+    "marks": 3,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.7",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Nets and 3D shapes",
+    "qtype": "circle theorems",
+    "g": "mixed",
+    "src": "0580/2/S/25 Q08",
+    "year": 2025,
+    "session": "Specimen",
+    "tex": "The diagram shows a semicircle with diameter $9\\,\\text{cm}$.\n\\newline\n\nCalculate the total perimeter of this semicircle.\n\\newline\n\nGive your answer in exact form.\n\\newline\n",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q08-Semicircle.tex"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "The diagram shows a semicircle with diameter $9\\,\\text{cm}$.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "Calculate the total perimeter of this semicircle.\n\\newline\n\nGive your answer in exact form.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "cm"
+    },
+    "_rawBody": "\\relinput{Figures/Q08-Semicircle.tex}\n\n\\vgap\n\nThe diagram shows a semicircle with diameter 9\\,cm.\n\n\\vgap\n\nCalculate the total perimeter of this semicircle.\n\nGive your answer in exact form.\n\n\\AnswerLine[][cm]\n\\Marks{3}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025Specimen/Paper2/Q08/Q08-Semicircle.png"
+    ]
+  },
+  {
+    "id": "0580-2025Specimen-Paper2-Q09",
+    "paper": "2025Specimen-Paper2",
+    "qnum": 9,
+    "marks": 3,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.7",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Sequences",
+    "qtype": "finding terms of an arithmetic sequence, finding the nth term",
+    "g": "sequence",
+    "src": "0580/2/S/25 Q09",
+    "year": 2025,
+    "session": "Specimen",
+    "tex": "In a sequence\n\\[\nT_1 = 17 \\qquad T_2 = 12 \\qquad T_3 = 7 \\qquad T_4 = 2.\n\\newline\n\\]\n\nFind\n\n(a) $T_5$\n\n(b) $T_n$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "$T_5$"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "$T_n$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "In a sequence\n\\[\nT_1 = 17 \\qquad T_2 = 12 \\qquad T_3 = 7 \\qquad T_4 = 2.\n\\newline\n\\]\n\nFind"
+      }
+    ],
+    "_rawBody": "In a sequence\n\\[\nT_1 = 17 \\qquad T_2 = 12 \\qquad T_3 = 7 \\qquad T_4 = 2.\n\\]\n\nFind\n\n\\begin{parts}\n\\item $T_5$\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item $T_n$.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2025Specimen-Paper2-Q10",
+    "paper": "2025Specimen-Paper2",
+    "qnum": 10,
+    "marks": 3,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.6",
+    "d": 2,
+    "cat": "number",
+    "topic": "Standard form",
+    "qtype": "addition of mixed numbers, fractions",
+    "g": "mixed",
+    "src": "0580/2/S/25 Q10",
+    "year": 2025,
+    "session": "Specimen",
+    "tex": "Work out  $2\\dfrac{2}{3} + 3\\dfrac{1}{2}$.\n\\newline\n\nGive your answer as a mixed number in its simplest form.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Work out \\quad$2\\dfrac{2}{3} + 3\\dfrac{1}{2}$.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "Give your answer as a mixed number in its simplest form.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Work out \\quad$2\\dfrac{2}{3} + 3\\dfrac{1}{2}$.\n\n\\vgap\n\nGive your answer as a mixed number in its simplest form.\n\n\\AnswerLine[][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025Specimen-Paper2-Q11",
+    "paper": "2025Specimen-Paper2",
+    "qnum": 11,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.7",
+    "d": 2,
+    "cat": "number",
+    "topic": "Estimation and limits",
+    "qtype": "fractional indices calculation",
+    "g": "indices",
+    "src": "0580/2/S/25 Q11",
+    "year": 2025,
+    "session": "Specimen",
+    "tex": "Find the value of $64^{\\frac{2}{3}}$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Find the value of $64^{\\frac{2}{3}}$.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Find the value of $64^{\\frac{2}{3}}$.\n\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025Specimen-Paper2-Q12",
+    "paper": "2025Specimen-Paper2",
+    "qnum": 12,
+    "marks": 4,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.8",
+    "d": 2,
+    "cat": "number",
+    "topic": "Ratio, rate and proportion",
+    "qtype": "standard form multiplication, standard form addition",
+    "g": "mixed",
+    "src": "0580/2/S/25 Q12",
+    "year": 2025,
+    "session": "Specimen",
+    "tex": "Work out, giving your answer in standard form,\n\n(a) $(7.1 \\times 10^{-15}) \\times (2 \\times 10^{3})$\n\n(b) $(5.2 \\times 10^{7}) + (5.2 \\times 10^{6})$",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "$(7.1 \\times 10^{-15}) \\times (2 \\times 10^{3})$"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "$(5.2 \\times 10^{7}) + (5.2 \\times 10^{6})$"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Work out, giving your answer in standard form,"
+      }
+    ],
+    "_rawBody": "Work out, giving your answer in standard form,\n\n\\begin{parts}\n\\item $(7.1 \\times 10^{-15}) \\times (2 \\times 10^{3})$\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item $(5.2 \\times 10^{7}) + (5.2 \\times 10^{6})$\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2025Specimen-Paper2-Q13",
+    "paper": "2025Specimen-Paper2",
+    "qnum": 13,
+    "marks": 2,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.6",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/2/S/25 Q13",
+    "year": 2025,
+    "session": "Specimen",
+    "tex": "Find the number of sides of a regular polygon with interior angle $162^\\circ$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Find the number of sides of a regular polygon with interior angle $162^\\circ$.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Find the number of sides of a regular polygon with interior angle $162^\\circ$.\n\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025Specimen-Paper2-Q14",
+    "paper": "2025Specimen-Paper2",
+    "qnum": 14,
+    "marks": 4,
+    "topics": [
+      "Number",
+      "Statistics"
+    ],
+    "s": "1.1",
+    "d": 2,
+    "cat": "number",
+    "topic": "Types of number",
+    "qtype": "finding a set of integers based on statistical properties",
+    "g": "mixed",
+    "src": "0580/2/S/25 Q14",
+    "year": 2025,
+    "session": "Specimen",
+    "tex": "The range, mode, median and mean of five positive integers are all equal to 10.\n\\newline\n\nFind one possible set of these five integers.\n\\newline\n\n  ,  ,  ,  ,",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The range, mode, median and mean of five positive integers are all equal to 10.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "Find one possible set of these five integers.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "expression",
+      "fields": 5,
+      "_rawAnswer": "\\hfill \\AnswerLineShort[][] , \\AnswerLineShort[][] , \\AnswerLineShort[][] , \\AnswerLineShort[][] , \\AnswerLineShort[][]"
+    },
+    "_rawBody": "The range, mode, median and mean of five positive integers are all equal to 10.\n\n\\vgap\n\nFind one possible set of these five integers.\n\n\\hfill \\AnswerLineShort[][] , \\AnswerLineShort[][] , \\AnswerLineShort[][] , \\AnswerLineShort[][] , \\AnswerLineShort[][]\n\\Marks{4}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025Specimen-Paper2-Q15",
+    "paper": "2025Specimen-Paper2",
+    "qnum": 15,
+    "marks": 3,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry",
+      "Transformations and vectors"
+    ],
+    "s": "3.1",
+    "d": 2,
+    "cat": "coord",
+    "topic": "Coordinates",
+    "qtype": "coordinates reading/plotting",
+    "g": "graph",
+    "src": "0580/2/S/25 Q15",
+    "year": 2025,
+    "session": "Specimen",
+    "tex": "Describe fully the **single** transformation that maps triangle $T$ onto triangle $A$.\n\\newline\n\n...\n\n...",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "recall",
+    "cmd": "describe",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q15-CoordinateTriangles.tex"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "Describe fully the \\textbf{single} transformation that maps triangle $T$ onto triangle $A$.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      }
+    ],
+    "answer": {
+      "type": "multiline",
+      "lines": 2,
+      "style": "dotfill"
+    },
+    "_rawBody": "\\relinput{Figures/Q15-CoordinateTriangles.tex}\n\n\\vgap\n\nDescribe fully the \\textbf{single} transformation that maps triangle $T$ onto triangle $A$.\n\n\\vgap\n\n\\dotfill\n\n\\vgap\n\n\\dotfill\n\n\\Marks{3}",
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025Specimen/Paper2/Q15/Q15-CoordinateTriangles.png"
+    ]
+  },
+  {
+    "id": "0580-2025Specimen-Paper2-Q16",
+    "paper": "2025Specimen-Paper2",
+    "qnum": 16,
+    "marks": 10,
+    "topics": [
+      "Number",
+      "Statistics"
+    ],
+    "s": "1.6",
+    "d": 2,
+    "cat": "number",
+    "topic": "Standard form",
+    "qtype": "estimation and calculation from data representation",
+    "g": "mixed",
+    "src": "0580/2/S/25 Q16",
+    "year": 2025,
+    "session": "Specimen",
+    "tex": "A student measures the height, $h\\,\\text{cm}$, of each of 400 plants.\n\\newline\n(a) The cumulative frequency diagram shows the results.\n\\newline\n\\\\\n\nUse the diagram to find an estimate for\n\n(i) (b) the median\n\n(c) the interquartile range\n\n(d) the 80th percentile\n\n(e) the number of plants with a height greater than 60 cm.\n\\newline\n\n(f) The heights are also shown in the frequency table.\n\\newline\n\nComplete the histogram to show this information.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The cumulative frequency diagram shows the results.\n\\newline\n\\\\"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q16-CumulativeFreqCurve.tex"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "text",
+            "content": "Use the diagram to find an estimate for"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "the median"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "cm"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "the interquartile range"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "cm"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "the 80th percentile"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "cm"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iv)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "the number of plants with a height greater than 60 cm.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item"
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "The heights are also shown in the frequency table.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q16-HeightFrequencyTable.tex"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "text",
+            "content": "Complete the histogram to show this information.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q16-FrequencyDensityHistogram.tex"
+          }
+        ]
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "analyse",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "A student measures the height, $h\\,\\text{cm}$, of each of 400 plants.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2025Specimen/Paper2/Q16/Q16-HeightFrequencyTable.png"
+      }
+    ],
+    "_rawBody": "A student measures the height, $h$\\,cm, of each of 400 plants.\n\\begin{parts}\n\\item The cumulative frequency diagram shows the results.\\\\\n\n\\relinput{Figures/Q16-CumulativeFreqCurve.tex}\n\n\\vgap\n\nUse the diagram to find an estimate for\n\n\\begin{subparts}\n\\item the median\n\n\\AnswerLine[][cm]\n\\Marks{1}\n\n\\item the interquartile range\n\n\\AnswerLine[][cm]\n\\Marks{2}\n\n\\item the 80th percentile\n\n\\AnswerLine[][cm]\n\\Marks{2}\n\n\\item the number of plants with a height greater than 60 cm.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{subparts}\n\n\\item The heights are also shown in the frequency table.\n\n\\vgap\n\n\\relinput{Figures/Q16-HeightFrequencyTable.tex}\n\n\\vgap\n\nComplete the histogram to show this information.\n\n\\vgap\n\n\\relinput{Figures/Q16-FrequencyDensityHistogram.tex}\n\n\\Marks{3}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "_compactStemParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025Specimen/Paper2/Q16/Q16-CumulativeFreqCurve copy.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2025Specimen/Paper2/Q16/Q16-CumulativeFreqCurve.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2025Specimen/Paper2/Q16/Q16-FrequencyDensityHistogram.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2025Specimen/Paper2/Q16/Q16-HeightFrequencyTable.png"
+    ]
+  },
+  {
+    "id": "0580-2025Specimen-Paper2-Q17",
+    "paper": "2025Specimen-Paper2",
+    "qnum": 17,
+    "marks": 5,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.7",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Nets and 3D shapes",
+    "qtype": "circle theorems",
+    "g": "mixed",
+    "src": "0580/2/S/25 Q17",
+    "year": 2025,
+    "session": "Specimen",
+    "tex": "The diagram shows a cyclic quadrilateral $ABCD$.\n\\newline\n \n\n$BD$ and $AC$ intersect at $X$.\n\\newline\n\n(a) Angle $BAD = 74^\\circ$ and angle $BCA = 34^\\circ$.\n\\newline\n\nFind\n\n(i) (b) angle $BDA$\n\n(c) angle $BCD$\n\n(d) angle $ABD$.\n\\newline\n\n(e) In the diagram, triangle $ADX$ is similar to triangle $BCX$.\n\\newline\n\n$BC = 4.5\\,\\text{cm}$, $AD = 9\\,\\text{cm}$ and $CX = 3.3\\,\\text{cm}$.\n\\newline\n\nWork out $XD$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Angle $BAD = 74^\\circ$ and angle $BCA = 34^\\circ$.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "text",
+            "content": "Find"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "angle $BDA$"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "Angle $BDA$ = "
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "angle $BCD$"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "Angle $BCD$ = "
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "angle $ABD$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "Angle $ABD$ = "
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item"
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "In the diagram, triangle $ADX$ is similar to triangle $BCX$.\n\\newline\n\n$BC = 4.5\\,\\text{cm}$, $AD = 9\\,\\text{cm}$ and $CX = 3.3\\,\\text{cm}$.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "text",
+            "content": "Work out $XD$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$XD$ = ",
+          "suffix": "cm"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q17-CircleCyclicQuad.tex"
+      },
+      {
+        "type": "text",
+        "content": "The diagram shows a cyclic quadrilateral $ABCD$.\n\\newline\n \n\n$BD$ and $AC$ intersect at $X$.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "\\relinput{Figures/Q17-CircleCyclicQuad.tex}\n\nThe diagram shows a cyclic quadrilateral $ABCD$. \n\n$BD$ and $AC$ intersect at $X$.\n\n\\begin{parts}\n\\item Angle $BAD = 74^\\circ$ and angle $BCA = 34^\\circ$.\n\n\\vgap\n\nFind\n\n\\begin{subparts}\n\\item angle $BDA$\n\n\\AnswerLine[Angle $BDA$ = ][]\n\\Marks{1}\n\n\\item angle $BCD$\n\n\\AnswerLine[Angle $BCD$ = ][]\n\\Marks{1}\n\n\\item angle $ABD$.\n\n\\AnswerLine[Angle $ABD$ = ][]\n\\Marks{1}\n\n\\end{subparts}\n\n\\item In the diagram, triangle $ADX$ is similar to triangle $BCX$.\n\n$BC = 4.5$\\,cm, $AD = 9$\\,cm and $CX = 3.3$\\,cm.\n\n\\vgap\n\nWork out $XD$.\n\n\\AnswerLine[$XD$ = ][cm]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025Specimen/Paper2/Q17/Q17-CircleCyclicQuad.png"
+    ]
+  },
+  {
+    "id": "0580-2025Specimen-Paper2-Q18",
+    "paper": "2025Specimen-Paper2",
+    "qnum": 18,
+    "marks": 9,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.6",
+    "d": 2,
+    "cat": "number",
+    "topic": "Standard form",
+    "qtype": "evaluating and solving function expressions",
+    "g": "function",
+    "src": "0580/2/S/25 Q18",
+    "year": 2025,
+    "session": "Specimen",
+    "tex": "$$f(x) = 3 - 2x \\qquad g(x) = 2x + 3 \\qquad h(x) = 2^x$$\n\n(a) \n\n(i) (b) Find $\\text{f}(-3)$.\n\\newline\n\n(c) Find $\\text{gf}(-3)$.\n\\newline\n\n(d) Find $\\text{f}^{-1}(x)$.\n\\newline\n\n(e) Find $x$ when $\\text{gg}(x) = 7$.\n\\newline\n\n(f) Find $x$ when $\\text{h}^{-1}(x) = 5$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "\\mbox{}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find $\\text{f}(-3)$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find $\\text{gf}(-3)$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item"
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find $\\text{f}^{-1}(x)$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$\\text{f}^{-1}(x)$ = "
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find $x$ when $\\text{gg}(x) = 7$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x$ = "
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find $x$ when $\\text{h}^{-1}(x) = 5$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x$ = "
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "$$\\text{f}(x) = 3 - 2x \\qquad \\text{g}(x) = 2x + 3 \\qquad \\text{h}(x) = 2^x$$"
+      }
+    ],
+    "_rawBody": "$$\\text{f}(x) = 3 - 2x \\qquad \\text{g}(x) = 2x + 3 \\qquad \\text{h}(x) = 2^x$$\n\n\\begin{parts}\n\\item \\mbox{}\n\n\\begin{subparts}\n\\item Find $\\text{f}(-3)$.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Find $\\text{gf}(-3)$.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{subparts}\n\n\\item Find $\\text{f}^{-1}(x)$.\n\n\\AnswerLine[$\\text{f}^{-1}(x)$ = ][]\n\\Marks{2}\n\n\\item Find $x$ when $\\text{gg}(x) = 7$.\n\n\\AnswerLine[$x$ = ][]\n\\Marks{3}\n\n\\item Find $x$ when $\\text{h}^{-1}(x) = 5$.\n\n\\AnswerLine[$x$ = ][]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2025Specimen-Paper2-Q19",
+    "paper": "2025Specimen-Paper2",
+    "qnum": 19,
+    "marks": 4,
+    "topics": [
+      "Number",
+      "Algebra and graphs"
+    ],
+    "s": "2.2",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Rearranging formulae",
+    "qtype": "simplifying surds, rationalising the denominator",
+    "g": "simplify",
+    "src": "0580/2/S/25 Q19",
+    "year": 2025,
+    "session": "Specimen",
+    "tex": "(a) Simplify.\n\\newline\n\\[\n\\sqrt{32} + \\sqrt{98}\n\\]\n\n(b) Rationalise the denominator.\n\\newline\n\\[\n\\dfrac{1}{\\sqrt{2} + 1}\n\\]",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Simplify.\n\\newline\n\\[\n\\sqrt{32} + \\sqrt{98}\n\\]"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Rationalise the denominator.\n\\newline\n\\[\n\\dfrac{1}{\\sqrt{2} + 1}\n\\]"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Simplify.\n\\[\n\\sqrt{32} + \\sqrt{98}\n\\]\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item Rationalise the denominator.\n\\[\n\\dfrac{1}{\\sqrt{2} + 1}\n\\]\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2025Specimen-Paper2-Q20",
+    "paper": "2025Specimen-Paper2",
+    "qnum": 20,
+    "marks": 3,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.11",
+    "d": 2,
+    "cat": "number",
+    "topic": "Money and finance",
+    "qtype": "inverse proportion calculation",
+    "g": "function",
+    "src": "0580/2/S/25 Q20",
+    "year": 2025,
+    "session": "Specimen",
+    "tex": "$$y \\propto \\dfrac{1}{\\sqrt{x}}$$\n\nWhen $y = 8$, $x = 4$.\n\\newline\n\nFind $y$ when $x = 49$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "$$y \\propto \\dfrac{1}{\\sqrt{x}}$$\n\nWhen $y = 8$, $x = 4$.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "Find $y$ when $x = 49$.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "$y$ = "
+    },
+    "_rawBody": "$$y \\propto \\dfrac{1}{\\sqrt{x}}$$\n\nWhen $y = 8$, $x = 4$.\n\n\\vgap\n\nFind $y$ when $x = 49$.\n\n\\AnswerLine[$y$ = ][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025Specimen-Paper2-Q21",
+    "paper": "2025Specimen-Paper2",
+    "qnum": 21,
+    "marks": 9,
+    "topics": [
+      "Number",
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "1.6",
+    "d": 2,
+    "cat": "number",
+    "topic": "Standard form",
+    "qtype": "solving algebraic equations involving geometric areas",
+    "g": "mixed",
+    "src": "0580/2/S/25 Q21",
+    "year": 2025,
+    "session": "Specimen",
+    "tex": "In this question, all measurements are in centimetres.\n\\newline\n\nThe height of the triangle is $h$ and the height of the rectangle is $(h + 2)$.\n\\newline\n\nThe length of the base of the triangle is $x$ and the length of the rectangle is $(x + 1)$.\n\\newline\n\nThe area of the triangle is $11\\,\\text{cm}^2$ and the area of the rectangle is $39\\,\\text{cm}^2$.\n\\newline\n\n(a) Write down an expression, in terms of $x$, for the height of the rectangle.\n\\newline\n\n(b) Show that   $2x^2 - 15x + 22 = 0$.\n\\newline\n\n(c) By factorising and solving   $2x^2 - 15x + 22 = 0$, find the two possible heights of the triangle.\n\\newline\n\n $h$ =  or $h$ =",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down an expression, in terms of $x$, for the height of the rectangle.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Show that \\quad $2x^2 - 15x + 22 = 0$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "none",
+          "space": {
+            "type": "drawing",
+            "height": "3cm",
+            "cmd": "Answerspace"
+          }
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 5,
+        "content": [
+          {
+            "type": "text",
+            "content": "By factorising and solving \\quad $2x^2 - 15x + 22 = 0$, find the two possible heights of the triangle.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "expression",
+          "fields": 2,
+          "_rawAnswer": "\\hfill $h$ = \\AnswerLineShort[][] or $h$ = \\AnswerLineShort[][]"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "analyse",
+    "cmd": "show",
+    "stem": [
+      {
+        "type": "text",
+        "content": "In this question, all measurements are in centimetres.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "figure",
+        "src": "Figures/Q21-TriangleRectangle.tex"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "The height of the triangle is $h$ and the height of the rectangle is $(h + 2)$.\n\\newline\n\nThe length of the base of the triangle is $x$ and the length of the rectangle is $(x + 1)$.\n\\newline\n\nThe area of the triangle is $11\\,\\text{cm}^2$ and the area of the rectangle is $39\\,\\text{cm}^2$.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "In this question, all measurements are in centimetres.\n\n\\vgap\n\n\\relinput{Figures/Q21-TriangleRectangle.tex}\n\n\\vgap\n\nThe height of the triangle is $h$ and the height of the rectangle is $(h + 2)$.\n\nThe length of the base of the triangle is $x$ and the length of the rectangle is $(x + 1)$.\n\nThe area of the triangle is 11\\,cm$^2$ and the area of the rectangle is 39\\,cm$^2$.\n\n\\begin{parts}\n\\item Write down an expression, in terms of $x$, for the height of the rectangle.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Show that \\quad $2x^2 - 15x + 22 = 0$.\n\n\\Answerspace[3cm]\n\\Marks{3}\n\n\\item By factorising and solving \\quad $2x^2 - 15x + 22 = 0$, find the two possible heights of the triangle.\n\n\\hfill $h$ = \\AnswerLineShort[][] or $h$ = \\AnswerLineShort[][]\n\\Marks{5}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025Specimen/Paper2/Q21/Q21-TriangleRectangle.png"
+    ]
+  },
+  {
+    "id": "0580-2025Specimen-Paper2-Q22",
+    "paper": "2025Specimen-Paper2",
+    "qnum": 22,
+    "marks": 4,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.6",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/2/S/25 Q22",
+    "year": 2025,
+    "session": "Specimen",
+    "tex": "Find the exact value of $x$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q22-RightTriangle30.tex"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "Find the exact value of $x$.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "$x = $"
+    },
+    "_rawBody": "\\relinput{Figures/Q22-RightTriangle30.tex}\n\n\\vgap\n\nFind the exact value of $x$.\n\n\\AnswerLine[$x = $][]\n\\Marks{4}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025Specimen/Paper2/Q22/Q22-RightTriangle30.png"
+    ]
+  },
+  {
+    "id": "0580-2025Specimen-Paper2-Q23",
+    "paper": "2025Specimen-Paper2",
+    "qnum": 23,
+    "marks": 3,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.4",
+    "d": 2,
+    "cat": "number",
+    "topic": "Fractions, decimals and percentages",
+    "qtype": "algebraic fraction simplification",
+    "g": "algebraic-fraction",
+    "src": "0580/2/S/25 Q23",
+    "year": 2025,
+    "session": "Specimen",
+    "tex": "Write as a single fraction in its simplest form.\n\\newline\n\\[\n\\dfrac{3}{x - 4} - \\dfrac{4}{x + 3}\n\\]",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "write",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Write as a single fraction in its simplest form.\n\\newline\n\\[\n\\dfrac{3}{x - 4} - \\dfrac{4}{x + 3}\n\\]"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Write as a single fraction in its simplest form.\n\\[\n\\dfrac{3}{x - 4} - \\dfrac{4}{x + 3}\n\\]\n\n\\AnswerLine[][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025Specimen-Paper2-Q24",
+    "paper": "2025Specimen-Paper2",
+    "qnum": 24,
+    "marks": 3,
+    "topics": [
+      "Algebra and graphs",
+      "Coordinate geometry"
+    ],
+    "s": "2.2",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Rearranging formulae",
+    "qtype": "completing the square, finding turning point of quadratic graph",
+    "g": "quadratic",
+    "src": "0580/2/S/25 Q24",
+    "year": 2025,
+    "session": "Specimen",
+    "tex": "(a) Write   $x^2 - 4x + 7$   in the form   $(x - a)^2 + b$.\n\\newline\n\n(b) Write down the coordinates of the turning point of the graph of   $y = x^2 - 4x + 7$.\n\\newline\n\n (  ,  )",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write \\quad $x^2 - 4x + 7$ \\quad in the form \\quad $(x - a)^2 + b$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down the coordinates of the turning point of the graph of \\quad $y = x^2 - 4x + 7$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "coordinate",
+          "fields": 2,
+          "_rawAnswer": "\\hfill ( \\AnswerLineShort[][] , \\AnswerLineShort[][] )"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "write",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Write \\quad $x^2 - 4x + 7$ \\quad in the form \\quad $(x - a)^2 + b$.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item Write down the coordinates of the turning point of the graph of \\quad $y = x^2 - 4x + 7$.\n\n\\hfill ( \\AnswerLineShort[][] , \\AnswerLineShort[][] )\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2025Specimen-Paper2-Q25",
+    "paper": "2025Specimen-Paper2",
+    "qnum": 25,
+    "marks": 3,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.4",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Circle theorems",
+    "qtype": "similarity and congruence",
+    "g": "mixed",
+    "src": "0580/2/S/25 Q25",
+    "year": 2025,
+    "session": "Specimen",
+    "tex": "The two shapes are mathematically similar.\n\\newline\n\nThe area of the larger shape is $36\\,\\text{cm}^2$ and the area of the smaller shape is $25\\,\\text{cm}^2$.\n\\newline\n\nThe height of the larger shape is $9\\,\\text{cm}$ and the height of the smaller shape is $x\\,\\text{cm}$.\n\\newline\n\nFind the value of $x$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q25-SimilarHearts.tex"
+      },
+      {
+        "type": "text",
+        "content": "The two shapes are mathematically similar.\n\\newline\n\nThe area of the larger shape is $36\\,\\text{cm}^2$ and the area of the smaller shape is $25\\,\\text{cm}^2$.\n\\newline\n\nThe height of the larger shape is $9\\,\\text{cm}$ and the height of the smaller shape is $x\\,\\text{cm}$.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "Find the value of $x$.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "$x = $"
+    },
+    "_rawBody": "\\relinput{Figures/Q25-SimilarHearts.tex}\n\nThe two shapes are mathematically similar.\n\nThe area of the larger shape is 36\\,cm$^2$ and the area of the smaller shape is 25\\,cm$^2$.\n\nThe height of the larger shape is 9\\,cm and the height of the smaller shape is $x$\\,cm.\n\n\\vgap\n\nFind the value of $x$.\n\n\\AnswerLine[$x = $][]\n\\Marks{3}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025Specimen/Paper2/Q25/Q25-SimilarHearts.png"
+    ]
+  },
+  {
+    "id": "0580-2025Specimen-Paper2-Q26",
+    "paper": "2025Specimen-Paper2",
+    "qnum": 26,
+    "marks": 11,
+    "topics": [
+      "Algebra and graphs",
+      "Coordinate geometry",
+      "Geometry",
+      "Trigonometry"
+    ],
+    "s": "2.12",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Functions notation",
+    "qtype": "sketching cubic graph, expanding algebraic expression, differentiation, finding equation of tangent, finding y-intercept",
+    "g": "graph",
+    "src": "0580/2/S/25 Q26",
+    "year": 2025,
+    "session": "Specimen",
+    "tex": "$$f(x) = x(x + 2)(x - 3)$$\n\n(a) On the diagram, sketch the graph of $y = \\text{f}(x)$ for $-3 \\leqslant x \\leqslant 4$.\n\\newline\n\nShow the values of the intersections with the axes.\n\\newline\n\n(b) Expand and simplify.\n\\newline\n\n$$x(x + 2)(x - 3)$$\n\n(c) $A$ is the point $(1, -6)$.\n\\newline\n\nThe tangent to the graph of $y = \\text{f}(x)$ at $A$ meets the $y$-axis at $B$.\n\\newline\n\nFind the coordinates of $B$.\n\\newline\n\n (  ,  )",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "On the diagram, sketch the graph of $y = \\text{f}(x)$ for $-3 \\leqslant x \\leqslant 4$.\n\\newline\n\nShow the values of the intersections with the axes.\n\\newline\n"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Expand and simplify.\n\\newline\n\n$$x(x + 2)(x - 3)$$"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 5,
+        "content": [
+          {
+            "type": "text",
+            "content": "$A$ is the point $(1, -6)$.\n\\newline\n\nThe tangent to the graph of $y = \\text{f}(x)$ at $A$ meets the $y$-axis at $B$.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "text",
+            "content": "Find the coordinates of $B$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "coordinate",
+          "fields": 2,
+          "_rawAnswer": "\\hfill ( \\AnswerLineShort[][] , \\AnswerLineShort[][] )"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "analyse",
+    "cmd": "sketch",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q26-CoordinateAxes.tex"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "$$\\text{f}(x) = x(x + 2)(x - 3)$$"
+      }
+    ],
+    "_rawBody": "\\relinput{Figures/Q26-CoordinateAxes.tex}\n\n\\vgap\n\n$$\\text{f}(x) = x(x + 2)(x - 3)$$\n\n\\begin{parts}\n\\item On the diagram, sketch the graph of $y = \\text{f}(x)$ for $-3 \\leqslant x \\leqslant 4$.\n\nShow the values of the intersections with the axes.\n\\Marks{3}\n\n\\item Expand and simplify.\n\n$$x(x + 2)(x - 3)$$\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\item $A$ is the point $(1, -6)$.\n\nThe tangent to the graph of $y = \\text{f}(x)$ at $A$ meets the $y$-axis at $B$.\n\n\\vgap\n\nFind the coordinates of $B$.\n\n\\hfill ( \\AnswerLineShort[][] , \\AnswerLineShort[][] )\n\\Marks{5}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025Specimen/Paper2/Q26/Q26-CoordinateAxes.png"
+    ]
+  }
+]

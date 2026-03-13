@@ -1,0 +1,894 @@
+[
+  {
+    "id": "0580-2021OctNov-Paper21-Q01",
+    "paper": "2021OctNov-Paper21",
+    "qnum": 1,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.1",
+    "d": 2,
+    "cat": "number",
+    "topic": "Types of number",
+    "qtype": "identify prime numbers and square numbers",
+    "g": "mixed",
+    "src": "0580/21/O/N/21 Q01",
+    "year": 2021,
+    "session": "OctNov",
+    "tex": "P is a prime number where $60 \\leq P \\leq 80$.\n\\newline\nP is 2 less than a square number.\n\\newline\nFind the value of P.\n\\newline\n\nP =",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "P is a prime number where $60 \\leq P \\leq 80$.\n\\newline\nP is 2 less than a square number.\n\\newline\nFind the value of P.\n\\newline\n\nP = \\AnswerLine[][]"
+      }
+    ],
+    "_rawBody": "P is a prime number where $60 \\leq P \\leq 80$.\nP is 2 less than a square number.\nFind the value of P.\n\nP = \\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2021OctNov-Paper21-Q02",
+    "paper": "2021OctNov-Paper21",
+    "qnum": 2,
+    "marks": 4,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.15",
+    "d": 2,
+    "cat": "number",
+    "topic": "Speed, distance, time",
+    "qtype": "time calculation with time zones, currency conversion",
+    "g": "mixed",
+    "src": "0580/21/O/N/21 Q02",
+    "year": 2021,
+    "session": "OctNov",
+    "tex": "Hank flies from Los Angeles to Shanghai.\n\\newline\n\n(a) The flight departs on Friday 22 July at 21 40.\n\\newline\nThe flight takes 13 hours 35 minutes.\n\\newline\nThe local time in Shanghai is 15 hours ahead of the local time in Los Angeles.\n\\newline\nFind the day, date and time in Shanghai when Hank's flight arrives.\n\\newline\n\nDay  , Date  , Time \n\n(b) The cost of the flight is \\$920.\n\\newline\nThe exchange rate is \\$1 = 6.87 Chinese yuan.\n\\newline\nFind the cost of the flight in yuan.\n\\newline\n\n yuan",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "The flight departs on Friday 22 July at 21 40.\n\\newline\nThe flight takes 13 hours 35 minutes.\n\\newline\nThe local time in Shanghai is 15 hours ahead of the local time in Los Angeles.\n\\newline\nFind the day, date and time in Shanghai when Hank's flight arrives.\n\\newline\n\nDay \\AnswerLine[][] , Date \\AnswerLine[][] , Time \\AnswerLine[][]"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "The cost of the flight is \\$920.\n\\newline\nThe exchange rate is \\$1 = 6.87 Chinese yuan.\n\\newline\nFind the cost of the flight in yuan.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Hank flies from Los Angeles to Shanghai.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "Hank flies from Los Angeles to Shanghai.\n\n\\begin{parts}\n\\item The flight departs on Friday 22 July at 21 40.\nThe flight takes 13 hours 35 minutes.\nThe local time in Shanghai is 15 hours ahead of the local time in Los Angeles.\nFind the day, date and time in Shanghai when Hank's flight arrives.\n\nDay \\AnswerLine[][] , Date \\AnswerLine[][] , Time \\AnswerLine[][]\n\\Marks{3}\n\n\\item The cost of the flight is \\$920.\nThe exchange rate is \\$1 = 6.87 Chinese yuan.\nFind the cost of the flight in yuan.\n\n\\AnswerLine[][] yuan\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2021OctNov-Paper21-Q03",
+    "paper": "2021OctNov-Paper21",
+    "qnum": 3,
+    "marks": 1,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.6",
+    "d": 2,
+    "cat": "number",
+    "topic": "Standard form",
+    "qtype": "four operations with decimals",
+    "g": "mixed",
+    "src": "0580/21/O/N/21 Q03",
+    "year": 2021,
+    "session": "OctNov",
+    "tex": "Calculate.\n\\newline\n$4.87 - 2.7 - 0.2 + 3 \\times 0.729$",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Calculate.\n\\newline\n$4.87 - 2.7 - 0.2 + 3 \\times 0.729$"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Calculate.\n$4.87 - 2.7 - 0.2 + 3 \\times 0.729$\n\n\\AnswerLine[][]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2021OctNov-Paper21-Q04",
+    "paper": "2021OctNov-Paper21",
+    "qnum": 4,
+    "marks": 2,
+    "topics": [
+      "Statistics"
+    ],
+    "s": "9.4",
+    "d": 2,
+    "cat": "statistics",
+    "topic": "Charts and graphs",
+    "qtype": "statistical charts",
+    "g": "mixed",
+    "src": "0580/21/O/N/21 Q04",
+    "year": 2021,
+    "session": "OctNov",
+    "tex": "The number of items that each of 22 people buy in a supermarket is shown in the stem-and-leaf diagram.\n\\newline\n\\begin{tabular}{c|cccccccccc}\n1 & 1 & 3 & 6 & 6 & \\\\\n2 & 0 & 2 & 2 & 2 & 4 & 8 & \\\\\n3 & 1 & 1 & 5 & 8 & 9 & 9 & \\\\\n4 & 2 & 4 & 6 & 7 & 8 & 9 & \\\\\n\\end{tabular}\nKey: 1 | 1 represents 11 items\n\n(a) Find the mode.\n\\newline\n\n(b) Find the median.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the mode.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the median.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The number of items that each of 22 people buy in a supermarket is shown in the stem-and-leaf diagram.\n\\newline\n"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{center}\n\\begin{tabular}{c|cccccccccc}\n1 & 1 & 3 & 6 & 6 & \\\\\n2 & 0 & 2 & 2 & 2 & 4 & 8 & \\\\\n3 & 1 & 1 & 5 & 8 & 9 & 9 & \\\\\n4 & 2 & 4 & 6 & 7 & 8 & 9 & \\\\\n\\end{tabular}\n\\end{center}"
+      },
+      {
+        "type": "text",
+        "content": "Key: 1 | 1 represents 11 items"
+      }
+    ],
+    "_rawBody": "The number of items that each of 22 people buy in a supermarket is shown in the stem-and-leaf diagram.\n\\begin{center}\n\\begin{tabular}{c|cccccccccc}\n1 & 1 & 3 & 6 & 6 & \\\\\n2 & 0 & 2 & 2 & 2 & 4 & 8 & \\\\\n3 & 1 & 1 & 5 & 8 & 9 & 9 & \\\\\n4 & 2 & 4 & 6 & 7 & 8 & 9 & \\\\\n\\end{tabular}\n\\end{center}\nKey: 1 | 1 represents 11 items\n\n\\begin{parts}\n\\item Find the mode.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Find the median.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2021OctNov-Paper21-Q05",
+    "paper": "2021OctNov-Paper21",
+    "qnum": 5,
+    "marks": 3,
+    "topics": [
+      "Statistics"
+    ],
+    "s": "9.3",
+    "d": 2,
+    "cat": "statistics",
+    "topic": "Frequency tables",
+    "qtype": "averages and spread",
+    "g": "mixed",
+    "src": "0580/21/O/N/21 Q05",
+    "year": 2021,
+    "session": "OctNov",
+    "tex": "The table shows the relative frequency of the games won by a football team.\n\\newline\n\\begin{tabular}{|c|c|}\n\\hline\nResult of game & Relative frequency \\\\\n\\hline\nwon & 0.1 \\\\\n\\hline\nlost & \\\\\n\\hline\ndrawn & \\\\\n\\hline\n\\end{tabular}\nThe number of games lost is twice the number of games drawn.\n\\newline\nComplete the table.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The table shows the relative frequency of the games won by a football team.\n\\newline\n"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{center}\n\\begin{tabular}{|c|c|}\n\\hline\nResult of game & Relative frequency \\\\\n\\hline\nwon & 0.1 \\\\\n\\hline\nlost & \\\\\n\\hline\ndrawn & \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+      },
+      {
+        "type": "text",
+        "content": "The number of games lost is twice the number of games drawn.\n\\newline\nComplete the table.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "The table shows the relative frequency of the games won by a football team.\n\\begin{center}\n\\begin{tabular}{|c|c|}\n\\hline\nResult of game & Relative frequency \\\\\n\\hline\nwon & 0.1 \\\\\n\\hline\nlost & \\\\\n\\hline\ndrawn & \\\\\n\\hline\n\\end{tabular}\n\\end{center}\nThe number of games lost is twice the number of games drawn.\nComplete the table.\n\n\\Marks{3}"
+  },
+  {
+    "id": "0580-2021OctNov-Paper21-Q06",
+    "paper": "2021OctNov-Paper21",
+    "qnum": 6,
+    "marks": 5,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.3",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Symmetry",
+    "qtype": "scale drawings and bearings",
+    "g": "mixed",
+    "src": "0580/21/O/N/21 Q06",
+    "year": 2021,
+    "session": "OctNov",
+    "tex": "The scale drawing shows the positions of two towns, P and Q.\n\\newline\nThe scale is 1 cm represents 4 km.\n\\newline\n\n(a) Find the actual distance between town P and town Q.\n\\newline\n\n km\n\n(b) Measure the bearing of town Q from town P.\n\\newline\n\n$^\\circ$\n\n(c) Town X is 28 km from town P on a bearing of 140$^\\circ$.\n\\newline\nOn the scale drawing, mark the position of town X.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the actual distance between town P and town Q.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Measure the bearing of town Q from town P.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Town X is 28 km from town P on a bearing of 140$^\\circ$.\n\\newline\nOn the scale drawing, mark the position of town X.\n\\newline\n"
+          }
+        ]
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The scale drawing shows the positions of two towns, P and Q.\n\\newline\nThe scale is 1 cm represents 4 km.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "The scale drawing shows the positions of two towns, P and Q.\nThe scale is 1 cm represents 4 km.\n\n\\begin{parts}\n\\item Find the actual distance between town P and town Q.\n\n\\AnswerLine[][] km\n\\Marks{2}\n\n\\item Measure the bearing of town Q from town P.\n\n\\AnswerLine[][]$^\\circ$\n\\Marks{1}\n\n\\item Town X is 28 km from town P on a bearing of 140$^\\circ$.\nOn the scale drawing, mark the position of town X.\n\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2021OctNov-Paper21-Q07",
+    "paper": "2021OctNov-Paper21",
+    "qnum": 7,
+    "marks": 3,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.4",
+    "d": 2,
+    "cat": "number",
+    "topic": "Fractions, decimals and percentages",
+    "qtype": "addition of mixed and improper fractions",
+    "g": "mixed",
+    "src": "0580/21/O/N/21 Q07",
+    "year": 2021,
+    "session": "OctNov",
+    "tex": "Without using a calculator, work out $1\\frac{5}{2} + \\frac{6}{5}$.\n\\newline\nYou must show all your working and give your answer as a mixed number in its simplest form.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Without using a calculator, work out $1\\frac{5}{2} + \\frac{6}{5}$.\n\\newline\nYou must show all your working and give your answer as a mixed number in its simplest form.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Without using a calculator, work out $1\\frac{5}{2} + \\frac{6}{5}$.\nYou must show all your working and give your answer as a mixed number in its simplest form.\n\n\\AnswerLine[][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2021OctNov-Paper21-Q08",
+    "paper": "2021OctNov-Paper21",
+    "qnum": 8,
+    "marks": 3,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.5",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Equations",
+    "qtype": "solving simultaneous linear equations",
+    "g": "simul-linear",
+    "src": "0580/21/O/N/21 Q08",
+    "year": 2021,
+    "session": "OctNov",
+    "tex": "Solve the simultaneous equations.\n\\newline\nYou must show all your working.\n\\newline\n\\begin{align*}\n4x - 2y &= -13 \\\\\n-3x + 4y &= 11\n\\end{align*}\n\nx =  , y =",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "solve",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Solve the simultaneous equations.\n\\newline\nYou must show all your working.\n\\newline\n\\begin{align*}\n4x - 2y &= -13 \\\\\n-3x + 4y &= 11\n\\end{align*}\n\nx = \\AnswerLine[][] , y = \\AnswerLine[][]"
+      }
+    ],
+    "_rawBody": "Solve the simultaneous equations.\nYou must show all your working.\n\\begin{align*}\n4x - 2y &= -13 \\\\\n-3x + 4y &= 11\n\\end{align*}\n\nx = \\AnswerLine[][] , y = \\AnswerLine[][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2021OctNov-Paper21-Q09",
+    "paper": "2021OctNov-Paper21",
+    "qnum": 9,
+    "marks": 2,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.6",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/21/O/N/21 Q09",
+    "year": 2021,
+    "session": "OctNov",
+    "tex": "Calculate the value of x.\n\\newline\n\nx = $^\\circ$",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{tikzpicture}[scale=0.8]\n    % Draw triangle\n    \\draw[thick] (0,0) -- (7,0) -- (7,4.8) -- cycle;\n    \n    % Labels\n    \\node at (3.5,-0.3) {12 cm};\n    \\node at (7.3,2.4) {7 cm};\n    \\node at (3.5,4.8) {$x^\\circ$};\n    \n    % Angle mark\n    \\draw (7,4.8) ++(-0.3,-0.3) -- ++(0.3,0.3) -- ++(0.3,-0.3);\n\\end{tikzpicture}\n\nCalculate the value of x.\n\\newline\n\nx = \\AnswerLine[][]$^\\circ$"
+      }
+    ],
+    "_rawBody": "\\begin{tikzpicture}[scale=0.8]\n    % Draw triangle\n    \\draw[thick] (0,0) -- (7,0) -- (7,4.8) -- cycle;\n    \n    % Labels\n    \\node at (3.5,-0.3) {12 cm};\n    \\node at (7.3,2.4) {7 cm};\n    \\node at (3.5,4.8) {$x^\\circ$};\n    \n    % Angle mark\n    \\draw (7,4.8) ++(-0.3,-0.3) -- ++(0.3,0.3) -- ++(0.3,-0.3);\n\\end{tikzpicture}\n\nCalculate the value of x.\n\nx = \\AnswerLine[][]$^\\circ$\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2021OctNov-Paper21-Q10",
+    "paper": "2021OctNov-Paper21",
+    "qnum": 10,
+    "marks": 2,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.6",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/21/O/N/21 Q10",
+    "year": 2021,
+    "session": "OctNov",
+    "tex": "A regular polygon has an interior angle of 174$^\\circ$.\n\\newline\nFind the number of sides of this polygon.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "A regular polygon has an interior angle of 174$^\\circ$.\n\\newline\nFind the number of sides of this polygon.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "A regular polygon has an interior angle of 174$^\\circ$.\nFind the number of sides of this polygon.\n\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2021OctNov-Paper21-Q11",
+    "paper": "2021OctNov-Paper21",
+    "qnum": 11,
+    "marks": 3,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry"
+    ],
+    "s": "3.7",
+    "d": 2,
+    "cat": "coord",
+    "topic": "Coordinate geometry extended",
+    "qtype": "perpendicular lines",
+    "g": "mixed",
+    "src": "0580/21/O/N/21 Q11",
+    "year": 2021,
+    "session": "OctNov",
+    "tex": "Line L has equation y = 4 - 5x.\n\\newline\nFind the equation of a line that is perpendicular to line L and passes through the point (0, 6).\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Line L has equation y = 4 - 5x.\n\\newline\nFind the equation of a line that is perpendicular to line L and passes through the point (0, 6).\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Line L has equation y = 4 - 5x.\nFind the equation of a line that is perpendicular to line L and passes through the point (0, 6).\n\n\\AnswerLine[][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2021OctNov-Paper21-Q12",
+    "paper": "2021OctNov-Paper21",
+    "qnum": 12,
+    "marks": 3,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.13",
+    "d": 2,
+    "cat": "number",
+    "topic": "Electronic calculators",
+    "qtype": "overall percentage change calculation",
+    "g": "mixed",
+    "src": "0580/21/O/N/21 Q12",
+    "year": 2021,
+    "session": "OctNov",
+    "tex": "Chai invests some money.\n\\newline\nBy the end of the first year, the value of the investment has decreased by 35\\%.\n\\newline\nBy the end of the second year, the value of the investment has increased by 40\\% of its value at the end of the first year.\n\\newline\nFind the overall percentage change in the value of the investment.\n\\newline\n\n \\%",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Chai invests some money.\n\\newline\nBy the end of the first year, the value of the investment has decreased by 35\\%.\n\\newline\nBy the end of the second year, the value of the investment has increased by 40\\% of its value at the end of the first year.\n\\newline\nFind the overall percentage change in the value of the investment.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Chai invests some money.\nBy the end of the first year, the value of the investment has decreased by 35\\%.\nBy the end of the second year, the value of the investment has increased by 40\\% of its value at the end of the first year.\nFind the overall percentage change in the value of the investment.\n\n\\AnswerLine[][] \\%\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2021OctNov-Paper21-Q13",
+    "paper": "2021OctNov-Paper21",
+    "qnum": 13,
+    "marks": 3,
+    "topics": [
+      "Number"
+    ],
+    "s": null,
+    "d": 2,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/21/O/N/21 Q13",
+    "year": 2021,
+    "session": "OctNov",
+    "tex": "Solve.\n\\newline\n\\[\\frac{4 - 3x}{6 - x} \\geq 5\\]",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "",
+    "cmd": "solve",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Solve.\n\\newline\n\\[\\frac{4 - 3x}{6 - x} \\geq 5\\]"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Solve.\n\\[\\frac{4 - 3x}{6 - x} \\geq 5\\]\n\n\\AnswerLine[][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2021OctNov-Paper21-Q14",
+    "paper": "2021OctNov-Paper21",
+    "qnum": 14,
+    "marks": 3,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.8",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Proportion",
+    "qtype": "inverse proportion equation solving",
+    "g": "function",
+    "src": "0580/21/O/N/21 Q14",
+    "year": 2021,
+    "session": "OctNov",
+    "tex": "y is inversely proportional to the square root of (x - 2).\n\\newline\nWhen x = 4.25, y = 12.\n\\newline\nFind x when y = 3.\n\\newline\n\nx =",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "y is inversely proportional to the square root of (x - 2).\n\\newline\nWhen x = 4.25, y = 12.\n\\newline\nFind x when y = 3.\n\\newline\n\nx = \\AnswerLine[][]"
+      }
+    ],
+    "_rawBody": "y is inversely proportional to the square root of (x - 2).\nWhen x = 4.25, y = 12.\nFind x when y = 3.\n\nx = \\AnswerLine[][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2021OctNov-Paper21-Q15",
+    "paper": "2021OctNov-Paper21",
+    "qnum": 15,
+    "marks": 4,
+    "topics": [
+      "Number",
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "1.11",
+    "d": 2,
+    "cat": "number",
+    "topic": "Money and finance",
+    "qtype": "ratio of similar shapes (area, volume)",
+    "g": "mixed",
+    "src": "0580/21/O/N/21 Q15",
+    "year": 2021,
+    "session": "OctNov",
+    "tex": "The diagram shows three shapes that are mathematically similar.\n\\newline\nThe heights of the shapes are in the ratio small : medium : large = 1 : 5 : 8.\n\\newline\nFind the ratio shaded area : total unshaded area.\n\\newline\nGive your answer in its simplest form.\n\\newline\n\n :",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{tikzpicture}[scale=0.7]\n    % Small shape\n    \\draw[thick] (0,0) rectangle (1,2);\n    \\fill[gray!30] (0,0) rectangle (1,2);\n    \n    % Medium shape\n    \\draw[thick] (2,0) rectangle (2+2.5,0+5);\n    \\fill[gray!30] (2,0) rectangle (2+2.5,0+5);\n    \n    % Large shape\n    \\draw[thick] (6,0) rectangle (6+4,0+8);\n    \\fill[gray!30] (6,0) rectangle (6+4,0+8);\n    \n    % Labels\n    \\node at (0.5,-0.3) {small};\n    \\node at (3.25,-0.3) {medium};\n    \\node at (8,-0.3) {large};\n    \n    \\node at (10,3) {heights in ratio};\n    \\node at (10,2) {small : medium : large};\n    \\node at (10,1) {= 1 : 5 : 8};\n\\end{tikzpicture}\n\nThe diagram shows three shapes that are mathematically similar.\n\\newline\nThe heights of the shapes are in the ratio small : medium : large = 1 : 5 : 8.\n\\newline\nFind the ratio shaded area : total unshaded area.\n\\newline\nGive your answer in its simplest form.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "multiline",
+      "lines": 2,
+      "template": "____\\n____",
+      "lineSep": "blank"
+    },
+    "_rawBody": "\\begin{tikzpicture}[scale=0.7]\n    % Small shape\n    \\draw[thick] (0,0) rectangle (1,2);\n    \\fill[gray!30] (0,0) rectangle (1,2);\n    \n    % Medium shape\n    \\draw[thick] (2,0) rectangle (2+2.5,0+5);\n    \\fill[gray!30] (2,0) rectangle (2+2.5,0+5);\n    \n    % Large shape\n    \\draw[thick] (6,0) rectangle (6+4,0+8);\n    \\fill[gray!30] (6,0) rectangle (6+4,0+8);\n    \n    % Labels\n    \\node at (0.5,-0.3) {small};\n    \\node at (3.25,-0.3) {medium};\n    \\node at (8,-0.3) {large};\n    \n    \\node at (10,3) {heights in ratio};\n    \\node at (10,2) {small : medium : large};\n    \\node at (10,1) {= 1 : 5 : 8};\n\\end{tikzpicture}\n\nThe diagram shows three shapes that are mathematically similar.\nThe heights of the shapes are in the ratio small : medium : large = 1 : 5 : 8.\nFind the ratio shaded area : total unshaded area.\nGive your answer in its simplest form.\n\n\\AnswerLine[][] : \\AnswerLine[][]\n\\Marks{4}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2021OctNov-Paper21-Q16",
+    "paper": "2021OctNov-Paper21",
+    "qnum": 16,
+    "marks": 5,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.7",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Sequences",
+    "qtype": "finding nth term of sequences",
+    "g": "sequence",
+    "src": "0580/21/O/N/21 Q16",
+    "year": 2021,
+    "session": "OctNov",
+    "tex": "Find the nth term of each sequence.\n\\newline\n\n(a) 8, 15, 34, 71, 132, \\ldots\n\n(b) $\\frac{2}{3}, \\frac{1}{3}, \\frac{4}{4}, \\frac{16}{5}, \\frac{256}{6}, \\ldots$",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "8, 15, 34, 71, 132, \\ldots"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "$\\frac{2}{3}, \\frac{1}{3}, \\frac{4}{4}, \\frac{16}{5}, \\frac{256}{6}, \\ldots$"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "analyse",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Find the nth term of each sequence.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "Find the nth term of each sequence.\n\n\\begin{parts}\n\\item 8, 15, 34, 71, 132, \\ldots\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item $\\frac{2}{3}, \\frac{1}{3}, \\frac{4}{4}, \\frac{16}{5}, \\frac{256}{6}, \\ldots$\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2021OctNov-Paper21-Q17",
+    "paper": "2021OctNov-Paper21",
+    "qnum": 17,
+    "marks": 4,
+    "topics": [
+      "Number"
+    ],
+    "s": null,
+    "d": 2,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/21/O/N/21 Q17",
+    "year": 2021,
+    "session": "OctNov",
+    "tex": "$y = \\frac{3x - 2}{1 - x}$\nMake x the subject of the formula.\n\\newline\n\nx =",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "",
+    "cmd": "rearrange",
+    "stem": [
+      {
+        "type": "text",
+        "content": "$y = \\frac{3x - 2}{1 - x}$\nMake x the subject of the formula.\n\\newline\n\nx = \\AnswerLine[][]"
+      }
+    ],
+    "_rawBody": "$y = \\frac{3x - 2}{1 - x}$\nMake x the subject of the formula.\n\nx = \\AnswerLine[][]\n\\Marks{4}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2021OctNov-Paper21-Q18",
+    "paper": "2021OctNov-Paper21",
+    "qnum": 18,
+    "marks": 3,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.6",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/21/O/N/21 Q18",
+    "year": 2021,
+    "session": "OctNov",
+    "tex": "The diagram shows some land in the shape of a triangle ABC.\n\\newline\nHouses are built on this land.\n\\newline\nEach house requires 400 m$^2$ of land.\n\\newline\nFind the greatest number of houses that can be built on this land.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{tikzpicture}[scale=0.6]\n    % Triangle ABC\n    \\draw[thick] (0,0) -- (8,0) -- (4,6.928) -- cycle;\n    \n    % Labels\n    \\node at (-0.3,0) {A};\n    \\node at (8.3,0) {B};\n    \\node at (4,7.2) {C};\n    \n    % Measurements\n    \\node at (4,-0.3) {800 m};\n    \\node at (6,3.5) {2300 m};\n    \\node at (1.5,3.5) {30$^\\circ$};\n    \n    % Angle mark at A\n    \\draw (0,0) ++(0.5,0) arc (0:30:0.5);\n\\end{tikzpicture}\n\nThe diagram shows some land in the shape of a triangle ABC.\n\\newline\nHouses are built on this land.\n\\newline\nEach house requires 400 m$^2$ of land.\n\\newline\nFind the greatest number of houses that can be built on this land.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "\\begin{tikzpicture}[scale=0.6]\n    % Triangle ABC\n    \\draw[thick] (0,0) -- (8,0) -- (4,6.928) -- cycle;\n    \n    % Labels\n    \\node at (-0.3,0) {A};\n    \\node at (8.3,0) {B};\n    \\node at (4,7.2) {C};\n    \n    % Measurements\n    \\node at (4,-0.3) {800 m};\n    \\node at (6,3.5) {2300 m};\n    \\node at (1.5,3.5) {30$^\\circ$};\n    \n    % Angle mark at A\n    \\draw (0,0) ++(0.5,0) arc (0:30:0.5);\n\\end{tikzpicture}\n\nThe diagram shows some land in the shape of a triangle ABC.\nHouses are built on this land.\nEach house requires 400 m$^2$ of land.\nFind the greatest number of houses that can be built on this land.\n\n\\AnswerLine[][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2021OctNov-Paper21-Q19",
+    "paper": "2021OctNov-Paper21",
+    "qnum": 19,
+    "marks": 3,
+    "topics": [
+      "Number"
+    ],
+    "s": null,
+    "d": 2,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/21/O/N/21 Q19",
+    "year": 2021,
+    "session": "OctNov",
+    "tex": "Write as a single fraction in its simplest form.\n\\newline\n\\[\\frac{2}{x+2} + \\frac{7}{x+3}\\]",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "",
+    "cmd": "write",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Write as a single fraction in its simplest form.\n\\newline\n\\[\\frac{2}{x+2} + \\frac{7}{x+3}\\]"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Write as a single fraction in its simplest form.\n\\[\\frac{2}{x+2} + \\frac{7}{x+3}\\]\n\n\\AnswerLine[][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2021OctNov-Paper21-Q20",
+    "paper": "2021OctNov-Paper21",
+    "qnum": 20,
+    "marks": 3,
+    "topics": [
+      "Trigonometry"
+    ],
+    "s": "6.4",
+    "d": 2,
+    "cat": "trigonometry",
+    "topic": "Area of triangle",
+    "qtype": "solving trigonometric equations",
+    "g": "mixed",
+    "src": "0580/21/O/N/21 Q20",
+    "year": 2021,
+    "session": "OctNov",
+    "tex": "Solve $3(2 + \\cos x) = 5$ for $0^\\circ \\leq x \\leq 360^\\circ$.\n\\newline\n\n$^\\circ$",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "solve",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Solve $3(2 + \\cos x) = 5$ for $0^\\circ \\leq x \\leq 360^\\circ$.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Solve $3(2 + \\cos x) = 5$ for $0^\\circ \\leq x \\leq 360^\\circ$.\n\n\\AnswerLine[][]$^\\circ$\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2021OctNov-Paper21-Q21",
+    "paper": "2021OctNov-Paper21",
+    "qnum": 21,
+    "marks": 4,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.6",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/21/O/N/21 Q21",
+    "year": 2021,
+    "session": "OctNov",
+    "tex": "The diagram shows a pyramid ABCDE.\n\\newline\nThe pyramid has a square horizontal base ABCD with side 5 cm.\n\\newline\nThe vertex E is vertically above the centre O of the base.\n\\newline\nThe height OE of the pyramid is 9 cm.\n\\newline\nCalculate the angle that EC makes with the base ABCD.\n\\newline\n\n$^\\circ$",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{tikzpicture}[scale=0.7]\n    % Square base ABCD\n    \\draw[thick] (0,0) -- (5,0) -- (5,5) -- (0,5) -- cycle;\n    \n    % Labels for base\n    \\node at (-0.3,0) {A};\n    \\node at (5.3,0) {B};\n    \\node at (5.3,5) {C};\n    \\node at (-0.3,5) {D};\n    \n    % Apex E\n    \\draw[thick] (2.5,2.5) -- (2.5,2.5+9);\n    \\node at (2.5,11.5) {E};\n    \n    % Label O (center)\n    \\node at (2.5,-0.3) {O};\n    \n    % Slant edges\n    \\draw[thick] (0,0) -- (2.5,11.5);\n    \\draw[thick] (5,0) -- (2.5,11.5);\n    \\draw[thick] (5,5) -- (2.5,11.5);\n    \\draw[thick] (0,5) -- (2.5,11.5);\n    \n    % Dimensions\n    \\node at (2.5,0.8) {5 cm};\n    \\node at (6.5,2.5) {5 cm};\n    \\node at (2.5,6.5) {9 cm};\n    \n    % Label EC\n    \\draw[dashed] (2.5,11.5) -- (5,5);\n    \\node at (4,8.5) {EC};\n\\end{tikzpicture}\n\nThe diagram shows a pyramid ABCDE.\n\\newline\nThe pyramid has a square horizontal base ABCD with side 5 cm.\n\\newline\nThe vertex E is vertically above the centre O of the base.\n\\newline\nThe height OE of the pyramid is 9 cm.\n\\newline\nCalculate the angle that EC makes with the base ABCD.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "\\begin{tikzpicture}[scale=0.7]\n    % Square base ABCD\n    \\draw[thick] (0,0) -- (5,0) -- (5,5) -- (0,5) -- cycle;\n    \n    % Labels for base\n    \\node at (-0.3,0) {A};\n    \\node at (5.3,0) {B};\n    \\node at (5.3,5) {C};\n    \\node at (-0.3,5) {D};\n    \n    % Apex E\n    \\draw[thick] (2.5,2.5) -- (2.5,2.5+9);\n    \\node at (2.5,11.5) {E};\n    \n    % Label O (center)\n    \\node at (2.5,-0.3) {O};\n    \n    % Slant edges\n    \\draw[thick] (0,0) -- (2.5,11.5);\n    \\draw[thick] (5,0) -- (2.5,11.5);\n    \\draw[thick] (5,5) -- (2.5,11.5);\n    \\draw[thick] (0,5) -- (2.5,11.5);\n    \n    % Dimensions\n    \\node at (2.5,0.8) {5 cm};\n    \\node at (6.5,2.5) {5 cm};\n    \\node at (2.5,6.5) {9 cm};\n    \n    % Label EC\n    \\draw[dashed] (2.5,11.5) -- (5,5);\n    \\node at (4,8.5) {EC};\n\\end{tikzpicture}\n\nThe diagram shows a pyramid ABCDE.\nThe pyramid has a square horizontal base ABCD with side 5 cm.\nThe vertex E is vertically above the centre O of the base.\nThe height OE of the pyramid is 9 cm.\nCalculate the angle that EC makes with the base ABCD.\n\n\\AnswerLine[][]$^\\circ$\n\\Marks{4}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2021OctNov-Paper21-Q22",
+    "paper": "2021OctNov-Paper21",
+    "qnum": 22,
+    "marks": 5,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.4",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Algebraic fractions",
+    "qtype": "simplifying algebraic fractions with indices and solving equations with algebraic fractions",
+    "g": "algebraic-fraction",
+    "src": "0580/21/O/N/21 Q22",
+    "year": 2021,
+    "session": "OctNov",
+    "tex": "(a) Simplify.\n\\newline\n\\[\\frac{2}{x^3} \\times \\frac{8}{x^3}\\]\n\n(b) $16 = 64k$\nFind the value of k.\n\\newline\n\nk = \n\n(c) Solve.\n\\newline\n\\[\\frac{4 - 3x}{9} \\times \\frac{1}{3} = \\frac{9}{3x}\\]\n\nx =",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Simplify.\n\\newline\n\\[\\frac{2}{x^3} \\times \\frac{8}{x^3}\\]"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "$16 = 64k$\nFind the value of k.\n\\newline\n\nk = \\AnswerLine[][]"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Solve.\n\\newline\n\\[\\frac{4 - 3x}{9} \\times \\frac{1}{3} = \\frac{9}{3x}\\]\n\nx = \\AnswerLine[][]"
+          }
+        ],
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Simplify.\n\\[\\frac{2}{x^3} \\times \\frac{8}{x^3}\\]\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item $16 = 64k$\nFind the value of k.\n\nk = \\AnswerLine[][]\n\\Marks{1}\n\n\\item Solve.\n\\[\\frac{4 - 3x}{9} \\times \\frac{1}{3} = \\frac{9}{3x}\\]\n\nx = \\AnswerLine[][]\n\\Marks{3}\n\n\\end{parts}",
+    "_compactParts": true
+  }
+]

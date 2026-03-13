@@ -1,0 +1,1163 @@
+[
+  {
+    "id": "0580-2018OctNov-Paper13-Q01",
+    "paper": "2018OctNov-Paper13",
+    "qnum": 1,
+    "marks": 1,
+    "topics": [
+      "Number"
+    ],
+    "s": null,
+    "d": 1,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/13/O/N/18 Q01",
+    "year": 2018,
+    "session": "OctNov",
+    "tex": "Measure the length of this line in centimetres.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "",
+    "cmd": "other",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Measure the length of this line in centimetres.\n\\newline\n\n\\begin{center}\n\\begin{tikzpicture}\n    \\draw[thick] (0,0) -- (5.5,1.5);\n\\end{tikzpicture}\n\\end{center}"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "cm",
+      "_compactAnswer": true
+    },
+    "_rawBody": "Measure the length of this line in centimetres.\n\n\\begin{center}\n\\begin{tikzpicture}\n    \\draw[thick] (0,0) -- (5.5,1.5);\n\\end{tikzpicture}\n\\end{center}\n\\AnswerLine[][cm]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2018OctNov-Paper13-Q02",
+    "paper": "2018OctNov-Paper13",
+    "qnum": 2,
+    "marks": 1,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.6",
+    "d": 1,
+    "cat": "number",
+    "topic": "Standard form",
+    "qtype": "fraction of a quantity calculation",
+    "g": "mixed",
+    "src": "0580/13/O/N/18 Q02",
+    "year": 2018,
+    "session": "OctNov",
+    "tex": "Work out $\\dfrac{7}{11}$ of $198\\,\\text{kg}$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Work out $\\dfrac{7}{11}$ of $198\\,\\text{kg}$.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "kg",
+      "_compactAnswer": true
+    },
+    "_rawBody": "Work out $\\dfrac{7}{11}$ of $198\\,\\text{kg}$.\n\\AnswerLine[][kg]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2018OctNov-Paper13-Q03",
+    "paper": "2018OctNov-Paper13",
+    "qnum": 3,
+    "marks": 1,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.13",
+    "d": 1,
+    "cat": "number",
+    "topic": "Electronic calculators",
+    "qtype": "percentage calculation of one quantity relative to another",
+    "g": "mixed",
+    "src": "0580/13/O/N/18 Q03",
+    "year": 2018,
+    "session": "OctNov",
+    "tex": "Work out \\$1.45 as a percentage of \\$72.50.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Work out \\$1.45 as a percentage of \\$72.50.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "\\%",
+      "_compactAnswer": true
+    },
+    "_rawBody": "Work out \\$1.45 as a percentage of \\$72.50.\n\\AnswerLine[][\\%]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2018OctNov-Paper13-Q04",
+    "paper": "2018OctNov-Paper13",
+    "qnum": 4,
+    "marks": 1,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.6",
+    "d": 1,
+    "cat": "number",
+    "topic": "Standard form",
+    "qtype": "decimal calculation with division and subtraction",
+    "g": "mixed",
+    "src": "0580/13/O/N/18 Q04",
+    "year": 2018,
+    "session": "OctNov",
+    "tex": "Calculate.\n\\newline\n\\[\n    \\frac{5.39 - 0.98}{0.743 - 0.0743}\n\\]",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Calculate.\n\\newline\n\\[\n    \\frac{5.39 - 0.98}{0.743 - 0.0743}\n\\]"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "_compactAnswer": true
+    },
+    "_rawBody": "Calculate.\n\\[\n    \\frac{5.39 - 0.98}{0.743 - 0.0743}\n\\]\n\\AnswerLine[][]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2018OctNov-Paper13-Q05",
+    "paper": "2018OctNov-Paper13",
+    "qnum": 5,
+    "marks": 1,
+    "topics": [
+      "Number",
+      "Algebra and graphs"
+    ],
+    "s": "2.2",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Rearranging formulae",
+    "qtype": "factorising algebraic expressions",
+    "g": "simplify",
+    "src": "0580/13/O/N/18 Q05",
+    "year": 2018,
+    "session": "OctNov",
+    "tex": "Factorise.\n\\newline\n\\[\n    y - 2y^2\n\\]",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "simplify",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Factorise.\n\\newline\n\\[\n    y - 2y^2\n\\]"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "_compactAnswer": true
+    },
+    "_rawBody": "Factorise.\n\\[\n    y - 2y^2\n\\]\n\\AnswerLine[][]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2018OctNov-Paper13-Q06",
+    "paper": "2018OctNov-Paper13",
+    "qnum": 6,
+    "marks": 1,
+    "topics": [
+      "Transformations and vectors"
+    ],
+    "s": "7.2",
+    "d": 1,
+    "cat": "vectors",
+    "topic": "Reflection",
+    "qtype": "vector operations",
+    "g": "mixed",
+    "src": "0580/13/O/N/18 Q06",
+    "year": 2018,
+    "session": "OctNov",
+    "tex": "Work out $\\begin{pmatrix} 2 \\\\ 5 \\end{pmatrix} - \\begin{pmatrix} -3 \\\\ 4 \\end{pmatrix}$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Work out $\\begin{pmatrix} 2 \\\\ 5 \\end{pmatrix} - \\begin{pmatrix} -3 \\\\ 4 \\end{pmatrix}$.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "vector",
+      "_compactAnswer": true
+    },
+    "_rawBody": "Work out $\\begin{pmatrix} 2 \\\\ 5 \\end{pmatrix} - \\begin{pmatrix} -3 \\\\ 4 \\end{pmatrix}$.\n\\AnswerLine[vector][]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2018OctNov-Paper13-Q07",
+    "paper": "2018OctNov-Paper13",
+    "qnum": 7,
+    "marks": 2,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.5",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Similarity and congruence",
+    "qtype": "symmetry",
+    "g": "mixed",
+    "src": "0580/13/O/N/18 Q07",
+    "year": 2018,
+    "session": "OctNov",
+    "tex": "On the shape, draw all the lines of symmetry.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.5]\n    % 十字形（加号形状）\n    \\draw[thick] (1,0) -- (1,1) -- (0,1) -- (0,2) -- (1,2) -- (1,3) -- (2,3) -- (2,2) -- (3,2) -- (3,1) -- (2,1) -- (2,0) -- cycle;\n\\end{tikzpicture}\n\\end{center}\n\nOn the shape, draw all the lines of symmetry.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "\\begin{center}\n\\begin{tikzpicture}[scale=0.5]\n    % 十字形（加号形状）\n    \\draw[thick] (1,0) -- (1,1) -- (0,1) -- (0,2) -- (1,2) -- (1,3) -- (2,3) -- (2,2) -- (3,2) -- (3,1) -- (2,1) -- (2,0) -- cycle;\n\\end{tikzpicture}\n\\end{center}\n\nOn the shape, draw all the lines of symmetry.\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2018OctNov-Paper13-Q08",
+    "paper": "2018OctNov-Paper13",
+    "qnum": 8,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.11",
+    "d": 1,
+    "cat": "number",
+    "topic": "Money and finance",
+    "qtype": "share quantity in a given ratio",
+    "g": "mixed",
+    "src": "0580/13/O/N/18 Q08",
+    "year": 2018,
+    "session": "OctNov",
+    "tex": "Share \\$72 in the ratio $5 : 4$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "other",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Share \\$72 in the ratio $5 : 4$.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "\\$ \\dots\\ , \\$ \\dots",
+      "_compactAnswer": true
+    },
+    "_rawBody": "Share \\$72 in the ratio $5 : 4$.\n\\AnswerLine[][\\$ \\dots\\ , \\$ \\dots]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2018OctNov-Paper13-Q09",
+    "paper": "2018OctNov-Paper13",
+    "qnum": 9,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.6",
+    "d": 1,
+    "cat": "number",
+    "topic": "Standard form",
+    "qtype": "operations with integers, temperature difference",
+    "g": "mixed",
+    "src": "0580/13/O/N/18 Q09",
+    "year": 2018,
+    "session": "OctNov",
+    "tex": "(a) At noon on Wednesday, the temperature was $5\\,^\\circ\\text{C}$.\n\\newline\n\n    At midnight, the temperature was $8\\,^\\circ\\text{C}$ lower.\n\\newline\n\n    Work out the temperature at midnight.\n\\newline\n\n    \n\n(b) At noon on Saturday, the temperature was $15\\,^\\circ\\text{C}$.\n\\newline\n\n    At midnight, the temperature was $-3\\,^\\circ\\text{C}$.\n\\newline\n\n    Work out the difference in these temperatures.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "At noon on Wednesday, the temperature was $5\\,^\\circ\\text{C}$.\n\\newline\n\n    At midnight, the temperature was $8\\,^\\circ\\text{C}$ lower.\n\\newline\n\n    Work out the temperature at midnight.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "$^\\circ$C",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "At noon on Saturday, the temperature was $15\\,^\\circ\\text{C}$.\n\\newline\n\n    At midnight, the temperature was $-3\\,^\\circ\\text{C}$.\n\\newline\n\n    Work out the difference in these temperatures.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "$^\\circ$C",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n    \\item At noon on Wednesday, the temperature was $5\\,^\\circ\\text{C}$.\n\n    At midnight, the temperature was $8\\,^\\circ\\text{C}$ lower.\n\n    Work out the temperature at midnight.\n    \\AnswerLine[][$^\\circ$C]\n    \\Marks{1}\n\n    \\item At noon on Saturday, the temperature was $15\\,^\\circ\\text{C}$.\n\n    At midnight, the temperature was $-3\\,^\\circ\\text{C}$.\n\n    Work out the difference in these temperatures.\n    \\AnswerLine[][$^\\circ$C]\n    \\Marks{1}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2018OctNov-Paper13-Q10",
+    "paper": "2018OctNov-Paper13",
+    "qnum": 10,
+    "marks": 2,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.2",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Rearranging formulae",
+    "qtype": "simplifying algebraic expressions",
+    "g": "simplify",
+    "src": "0580/13/O/N/18 Q10",
+    "year": 2018,
+    "session": "OctNov",
+    "tex": "Simplify.\n\\newline\n\\[\n    2p - q - 3q - 5p\n\\]",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "simplify",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Simplify.\n\\newline\n\\[\n    2p - q - 3q - 5p\n\\]"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "_compactAnswer": true
+    },
+    "_rawBody": "Simplify.\n\\[\n    2p - q - 3q - 5p\n\\]\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2018OctNov-Paper13-Q11",
+    "paper": "2018OctNov-Paper13",
+    "qnum": 11,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.9",
+    "d": 1,
+    "cat": "number",
+    "topic": "Percentages",
+    "qtype": "rounding to significant figures",
+    "g": "mixed",
+    "src": "0580/13/O/N/18 Q11",
+    "year": 2018,
+    "session": "OctNov",
+    "tex": "Write these numbers correct to 2 significant figures.\n\\newline\n\n(a) $0.076499$\n\n    \n\n(b) $10100$",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "$0.076499$"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "$10100$"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "write",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Write these numbers correct to 2 significant figures.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "Write these numbers correct to 2 significant figures.\n\n\\begin{parts}\n    \\item $0.076499$\n    \\AnswerLine[][]\n    \\Marks{1}\n\n    \\item $10100$\n    \\AnswerLine[][]\n    \\Marks{1}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2018OctNov-Paper13-Q12",
+    "paper": "2018OctNov-Paper13",
+    "qnum": 12,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.6",
+    "d": 1,
+    "cat": "number",
+    "topic": "Standard form",
+    "qtype": "division of fractions without calculator",
+    "g": "mixed",
+    "src": "0580/13/O/N/18 Q12",
+    "year": 2018,
+    "session": "OctNov",
+    "tex": "**Without using a calculator**, work out $\\dfrac{1}{4} \\div \\dfrac{2}{3}$.\n\\newline\n\nYou must show all your working and give your answer as a fraction.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\textbf{Without using a calculator}, work out $\\dfrac{1}{4} \\div \\dfrac{2}{3}$.\n\\newline\n\nYou must show all your working and give your answer as a fraction.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "_compactAnswer": true
+    },
+    "_rawBody": "\\textbf{Without using a calculator}, work out $\\dfrac{1}{4} \\div \\dfrac{2}{3}$.\n\nYou must show all your working and give your answer as a fraction.\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2018OctNov-Paper13-Q13",
+    "paper": "2018OctNov-Paper13",
+    "qnum": 13,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.8",
+    "d": 1,
+    "cat": "number",
+    "topic": "Ratio, rate and proportion",
+    "qtype": "write number in figures, convert to standard form",
+    "g": "mixed",
+    "src": "0580/13/O/N/18 Q13",
+    "year": 2018,
+    "session": "OctNov",
+    "tex": "(a) Write the number five million, two hundred and seven in figures.\n\\newline\n\n    \n\n(b) Write $0.00813$ in standard form.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write the number five million, two hundred and seven in figures.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write $0.00813$ in standard form.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "write",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n    \\item Write the number five million, two hundred and seven in figures.\n    \\AnswerLine[][]\n    \\Marks{1}\n\n    \\item Write $0.00813$ in standard form.\n    \\AnswerLine[][]\n    \\Marks{1}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2018OctNov-Paper13-Q14",
+    "paper": "2018OctNov-Paper13",
+    "qnum": 14,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.1",
+    "d": 1,
+    "cat": "number",
+    "topic": "Types of number",
+    "qtype": "listing factors of a number",
+    "g": "mixed",
+    "src": "0580/13/O/N/18 Q14",
+    "year": 2018,
+    "session": "OctNov",
+    "tex": "Write down all the factors of 30.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "write",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Write down all the factors of 30.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "_compactAnswer": true
+    },
+    "_rawBody": "Write down all the factors of 30.\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2018OctNov-Paper13-Q15",
+    "paper": "2018OctNov-Paper13",
+    "qnum": 15,
+    "marks": 2,
+    "topics": [
+      "Probability"
+    ],
+    "s": "8.1",
+    "d": 1,
+    "cat": "probability",
+    "topic": "Basic probability",
+    "qtype": "basic probability",
+    "g": "mixed",
+    "src": "0580/13/O/N/18 Q15",
+    "year": 2018,
+    "session": "OctNov",
+    "tex": "Ethan has a box of toys.\n\\newline\nHe takes a toy at random.\n\\newline\n\n\\begin{tabular}{|c|c|c|c|c|}\n\\hline\nToy & Car & Train & Bus & Other \\\\\n\\hline\nProbability & $0.2$ & $0.45$ & & $0.08$ \\\\\n\\hline\n\\end{tabular}\nComplete the table.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Ethan has a box of toys.\n\\newline\nHe takes a toy at random.\n\\newline\n"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|}\n\\hline\nToy & Car & Train & Bus & Other \\\\\n\\hline\nProbability & $0.2$ & $0.45$ & & $0.08$ \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+      },
+      {
+        "type": "text",
+        "content": "Complete the table.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "Ethan has a box of toys.\nHe takes a toy at random.\n\n\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|}\n\\hline\nToy & Car & Train & Bus & Other \\\\\n\\hline\nProbability & $0.2$ & $0.45$ & & $0.08$ \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\nComplete the table.\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2018OctNov-Paper13-Q16",
+    "paper": "2018OctNov-Paper13",
+    "qnum": 16,
+    "marks": 2,
+    "topics": [
+      "Coordinate geometry"
+    ],
+    "s": "3.3",
+    "d": 1,
+    "cat": "coord",
+    "topic": "Length and midpoint",
+    "qtype": "gradient calculation",
+    "g": "graph",
+    "src": "0580/13/O/N/18 Q16",
+    "year": 2018,
+    "session": "OctNov",
+    "tex": "For the line $y = 4x - 6$, write down\n\n(a) the gradient,\n\n    \n\n(b) the $y$-intercept.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "the gradient,"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "the $y$-intercept.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "write",
+    "stem": [
+      {
+        "type": "text",
+        "content": "For the line $y = 4x - 6$, write down"
+      }
+    ],
+    "_rawBody": "For the line $y = 4x - 6$, write down\n\n\\begin{parts}\n    \\item the gradient,\n    \\AnswerLine[][]\n    \\Marks{1}\n\n    \\item the $y$-intercept.\n    \\AnswerLine[][]\n    \\Marks{1}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2018OctNov-Paper13-Q17",
+    "paper": "2018OctNov-Paper13",
+    "qnum": 17,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.10",
+    "d": 1,
+    "cat": "number",
+    "topic": "Time",
+    "qtype": "determine upper and lower bounds",
+    "g": "mixed",
+    "src": "0580/13/O/N/18 Q17",
+    "year": 2018,
+    "session": "OctNov",
+    "tex": "The mass, $m$ kilograms, of Katy's suitcase is $31\\,\\text{kg}$, correct to the nearest kilogram.\n\\newline\n\nComplete the statement about the value of $m$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The mass, $m$ kilograms, of Katy's suitcase is $31\\,\\text{kg}$, correct to the nearest kilogram.\n\\newline\n\nComplete the statement about the value of $m$.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "$\\leqslant m <$",
+      "_compactAnswer": true
+    },
+    "_rawBody": "The mass, $m$ kilograms, of Katy's suitcase is $31\\,\\text{kg}$, correct to the nearest kilogram.\n\nComplete the statement about the value of $m$.\n\\AnswerLine[][$\\leqslant m <$]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2018OctNov-Paper13-Q18",
+    "paper": "2018OctNov-Paper13",
+    "qnum": 18,
+    "marks": 3,
+    "topics": [
+      "Statistics"
+    ],
+    "s": "9.3",
+    "d": 1,
+    "cat": "statistics",
+    "topic": "Frequency tables",
+    "qtype": "averages and spread",
+    "g": "mixed",
+    "src": "0580/13/O/N/18 Q18",
+    "year": 2018,
+    "session": "OctNov",
+    "tex": "\\[\n    16   7   23   18   73   20   95   17   89   54\n\\]\n\nFor this list of numbers, find\n\n(a) the median,\n\n    \n\n(b) the range.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "the median,"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "the range.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\[\n    16 \\quad 7 \\quad 23 \\quad 18 \\quad 73 \\quad 20 \\quad 95 \\quad 17 \\quad 89 \\quad 54\n\\]\n\nFor this list of numbers, find"
+      }
+    ],
+    "_rawBody": "\\[\n    16 \\quad 7 \\quad 23 \\quad 18 \\quad 73 \\quad 20 \\quad 95 \\quad 17 \\quad 89 \\quad 54\n\\]\n\nFor this list of numbers, find\n\n\\begin{parts}\n    \\item the median,\n    \\AnswerLine[][]\n    \\Marks{2}\n\n    \\item the range.\n    \\AnswerLine[][]\n    \\Marks{1}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2018OctNov-Paper13-Q19",
+    "paper": "2018OctNov-Paper13",
+    "qnum": 19,
+    "marks": 3,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry"
+    ],
+    "s": "3.2",
+    "d": 1,
+    "cat": "coord",
+    "topic": "Gradient",
+    "qtype": "drawing linear graphs",
+    "g": "graph",
+    "src": "0580/13/O/N/18 Q19",
+    "year": 2018,
+    "session": "OctNov",
+    "tex": "(a) \n    Find the value of $x$.\n\\newline\n\n    \n\n(b) \n    $ABC$ is an isosceles triangle and $BCD$ is a straight line.\n\\newline\n\n    Find the value of $y$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "\\begin{center}\n    \\begin{tikzpicture}[scale=1.2]\n        % Draw the angles at a point\n        \\coordinate (O) at (0,0);\n        \\draw (O) -- (2,0);\n        \\draw (O) -- (150:2);\n        \\draw (O) -- (95:2);\n        \\draw (O) -- (53:2);\n\n        % Arc for 153°\n        \\draw (0.5,0) arc (0:150:0.5);\n        \\node at (75:0.75) {$153^\\circ$};\n\n        % Arc for x°\n        \\draw (0.7,0) arc (0:53:0.7) node[midway, above right] {$x^\\circ$};\n\n        % Arc for 55°\n        \\draw[shift={(O)}] (53:0.4) arc (53:95:0.4);\n        \\node at (74:0.55) [above left, xshift=-2pt] {$55^\\circ$};\n\n        % Arc for 42°\n        \\draw[shift={(O)}] (95:0.4) arc (95:150:0.4);\n        \\node at (122:0.6) {$42^\\circ$};\n\n        \\node at (2.5,1) {\\footnotesize NOT TO};\n        \\node at (2.5,0.7) {\\footnotesize SCALE};\n    \\end{tikzpicture}\n    \\end{center}\n\n    Find the value of $x$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x =$",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true,
+        "_itemNewline": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "\\begin{center}\n    \\begin{tikzpicture}[scale=1]\n        % Triangle ABC with BCD straight line\n        \\coordinate (A) at (1,2.5);\n        \\coordinate (B) at (0,0);\n        \\coordinate (C) at (2,0);\n        \\coordinate (D) at (4,0);\n\n        % Draw triangle\n        \\draw (B) -- (A) -- (C) -- cycle;\n        % Draw line CD\n        \\draw (C) -- (D);\n\n        % Mark equal sides\n        \\draw (0.4,1.1) -- (0.55,1.25);\n        \\draw (1.4,1.1) -- (1.55,1.25);\n\n        % Label vertices\n        \\node[above] at (A) {$A$};\n        \\node[below left] at (B) {$B$};\n        \\node[below] at (C) {$C$};\n        \\node[below right] at (D) {$D$};\n\n        % Angle at A\n        \\draw (A) ++(250:0.4) arc (250:290:0.4);\n        \\node at (1,2) {$48^\\circ$};\n\n        % Angle y at C\n        \\draw (C) ++(180:0.5) arc (180:0:0.5);\n        \\node at (2.7,0.3) {$y^\\circ$};\n\n        \\node at (4.5,1.5) {\\footnotesize NOT TO};\n        \\node at (4.5,1.2) {\\footnotesize SCALE};\n    \\end{tikzpicture}\n    \\end{center}\n\n    $ABC$ is an isosceles triangle and $BCD$ is a straight line.\n\\newline\n\n    Find the value of $y$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$y =$",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true,
+        "_itemNewline": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n    \\item\n    \\begin{center}\n    \\begin{tikzpicture}[scale=1.2]\n        % Draw the angles at a point\n        \\coordinate (O) at (0,0);\n        \\draw (O) -- (2,0);\n        \\draw (O) -- (150:2);\n        \\draw (O) -- (95:2);\n        \\draw (O) -- (53:2);\n\n        % Arc for 153°\n        \\draw (0.5,0) arc (0:150:0.5);\n        \\node at (75:0.75) {$153^\\circ$};\n\n        % Arc for x°\n        \\draw (0.7,0) arc (0:53:0.7) node[midway, above right] {$x^\\circ$};\n\n        % Arc for 55°\n        \\draw[shift={(O)}] (53:0.4) arc (53:95:0.4);\n        \\node at (74:0.55) [above left, xshift=-2pt] {$55^\\circ$};\n\n        % Arc for 42°\n        \\draw[shift={(O)}] (95:0.4) arc (95:150:0.4);\n        \\node at (122:0.6) {$42^\\circ$};\n\n        \\node at (2.5,1) {\\footnotesize NOT TO};\n        \\node at (2.5,0.7) {\\footnotesize SCALE};\n    \\end{tikzpicture}\n    \\end{center}\n\n    Find the value of $x$.\n    \\AnswerLine[$x =$][]\n    \\Marks{1}\n\n    \\item\n    \\begin{center}\n    \\begin{tikzpicture}[scale=1]\n        % Triangle ABC with BCD straight line\n        \\coordinate (A) at (1,2.5);\n        \\coordinate (B) at (0,0);\n        \\coordinate (C) at (2,0);\n        \\coordinate (D) at (4,0);\n\n        % Draw triangle\n        \\draw (B) -- (A) -- (C) -- cycle;\n        % Draw line CD\n        \\draw (C) -- (D);\n\n        % Mark equal sides\n        \\draw (0.4,1.1) -- (0.55,1.25);\n        \\draw (1.4,1.1) -- (1.55,1.25);\n\n        % Label vertices\n        \\node[above] at (A) {$A$};\n        \\node[below left] at (B) {$B$};\n        \\node[below] at (C) {$C$};\n        \\node[below right] at (D) {$D$};\n\n        % Angle at A\n        \\draw (A) ++(250:0.4) arc (250:290:0.4);\n        \\node at (1,2) {$48^\\circ$};\n\n        % Angle y at C\n        \\draw (C) ++(180:0.5) arc (180:0:0.5);\n        \\node at (2.7,0.3) {$y^\\circ$};\n\n        \\node at (4.5,1.5) {\\footnotesize NOT TO};\n        \\node at (4.5,1.2) {\\footnotesize SCALE};\n    \\end{tikzpicture}\n    \\end{center}\n\n    $ABC$ is an isosceles triangle and $BCD$ is a straight line.\n\n    Find the value of $y$.\n    \\AnswerLine[$y =$][]\n    \\Marks{2}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2018OctNov-Paper13-Q20",
+    "paper": "2018OctNov-Paper13",
+    "qnum": 20,
+    "marks": 3,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.6",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/13/O/N/18 Q20",
+    "year": 2018,
+    "session": "OctNov",
+    "tex": "Work out the size of an interior angle of a regular 20-sided polygon.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Work out the size of an interior angle of a regular 20-sided polygon.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "_compactAnswer": true
+    },
+    "_rawBody": "Work out the size of an interior angle of a regular 20-sided polygon.\n\\AnswerLine[][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2018OctNov-Paper13-Q21",
+    "paper": "2018OctNov-Paper13",
+    "qnum": 21,
+    "marks": 3,
+    "topics": [
+      "Statistics"
+    ],
+    "s": "9.3",
+    "d": 1,
+    "cat": "statistics",
+    "topic": "Frequency tables",
+    "qtype": "averages and spread",
+    "g": "mixed",
+    "src": "0580/13/O/N/18 Q21",
+    "year": 2018,
+    "session": "OctNov",
+    "tex": "The table shows the number of pets owned by each of the 95 students in a school.\n\\newline\n\n\\begin{tabular}{|c|c|}\n\\hline\nNumber of pets & Frequency \\\\\n\\hline\n0 & 5 \\\\\n\\hline\n1 & 14 \\\\\n\\hline\n2 & 39 \\\\\n\\hline\n3 & 14 \\\\\n\\hline\n4 & 23 \\\\\n\\hline\n\\end{tabular}\nCalculate the mean number of pets.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The table shows the number of pets owned by each of the 95 students in a school.\n\\newline\n"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{center}\n\\begin{tabular}{|c|c|}\n\\hline\nNumber of pets & Frequency \\\\\n\\hline\n0 & 5 \\\\\n\\hline\n1 & 14 \\\\\n\\hline\n2 & 39 \\\\\n\\hline\n3 & 14 \\\\\n\\hline\n4 & 23 \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+      },
+      {
+        "type": "text",
+        "content": "Calculate the mean number of pets.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "_compactAnswer": true
+    },
+    "_rawBody": "The table shows the number of pets owned by each of the 95 students in a school.\n\n\\begin{center}\n\\begin{tabular}{|c|c|}\n\\hline\nNumber of pets & Frequency \\\\\n\\hline\n0 & 5 \\\\\n\\hline\n1 & 14 \\\\\n\\hline\n2 & 39 \\\\\n\\hline\n3 & 14 \\\\\n\\hline\n4 & 23 \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\nCalculate the mean number of pets.\n\\AnswerLine[][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2018OctNov-Paper13-Q22",
+    "paper": "2018OctNov-Paper13",
+    "qnum": 22,
+    "marks": 2,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry"
+    ],
+    "s": "3.1",
+    "d": 1,
+    "cat": "coord",
+    "topic": "Coordinates",
+    "qtype": "coordinates reading/plotting",
+    "g": "graph",
+    "src": "0580/13/O/N/18 Q22",
+    "year": 2018,
+    "session": "OctNov",
+    "tex": "Triangle $ABC$ is similar to triangle $PQR$.\n\\newline\n\nFind the value of $x$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n    % Triangle ABC\n    \\coordinate (A) at (0,2);\n    \\coordinate (B) at (0,0);\n    \\coordinate (C) at (1.5,0);\n\n    % Triangle PQR\n    \\coordinate (P) at (4,3.5);\n    \\coordinate (Q) at (4,0);\n    \\coordinate (R) at (7,0);\n\n    % Draw triangles\n    \\draw (A) -- (B) -- (C) -- cycle;\n    \\draw (P) -- (Q) -- (R) -- cycle;\n\n    % Labels for ABC\n    \\node[above left] at (A) {$A$};\n    \\node[below left] at (B) {$B$};\n    \\node[below right] at (C) {$C$};\n\n    % Labels for PQR\n    \\node[above] at (P) {$P$};\n    \\node[below left] at (Q) {$Q$};\n    \\node[below right] at (R) {$R$};\n\n    % Dimensions for ABC\n    \\node[right] at (0.75,1) {$x$ cm};\n    \\node[below] at (0.75,0) {$8$ cm};\n\n    % Dimensions for PQR\n    \\node[right] at (5.5,1.75) {$23$ cm};\n    \\node[below] at (5.5,0) {$20$ cm};\n\n    \\node at (8,2) {\\footnotesize NOT TO};\n    \\node at (8,1.7) {\\footnotesize SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nTriangle $ABC$ is similar to triangle $PQR$.\n\\newline\n\nFind the value of $x$.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "$x =$",
+      "_compactAnswer": true
+    },
+    "_rawBody": "\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n    % Triangle ABC\n    \\coordinate (A) at (0,2);\n    \\coordinate (B) at (0,0);\n    \\coordinate (C) at (1.5,0);\n\n    % Triangle PQR\n    \\coordinate (P) at (4,3.5);\n    \\coordinate (Q) at (4,0);\n    \\coordinate (R) at (7,0);\n\n    % Draw triangles\n    \\draw (A) -- (B) -- (C) -- cycle;\n    \\draw (P) -- (Q) -- (R) -- cycle;\n\n    % Labels for ABC\n    \\node[above left] at (A) {$A$};\n    \\node[below left] at (B) {$B$};\n    \\node[below right] at (C) {$C$};\n\n    % Labels for PQR\n    \\node[above] at (P) {$P$};\n    \\node[below left] at (Q) {$Q$};\n    \\node[below right] at (R) {$R$};\n\n    % Dimensions for ABC\n    \\node[right] at (0.75,1) {$x$ cm};\n    \\node[below] at (0.75,0) {$8$ cm};\n\n    % Dimensions for PQR\n    \\node[right] at (5.5,1.75) {$23$ cm};\n    \\node[below] at (5.5,0) {$20$ cm};\n\n    \\node at (8,2) {\\footnotesize NOT TO};\n    \\node at (8,1.7) {\\footnotesize SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nTriangle $ABC$ is similar to triangle $PQR$.\n\nFind the value of $x$.\n\\AnswerLine[$x =$][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2018OctNov-Paper13-Q23",
+    "paper": "2018OctNov-Paper13",
+    "qnum": 23,
+    "marks": 3,
+    "topics": [
+      "Coordinate geometry",
+      "Transformations and vectors"
+    ],
+    "s": "3.1",
+    "d": 1,
+    "cat": "coord",
+    "topic": "Coordinates",
+    "qtype": "coordinates reading/plotting",
+    "g": "graph",
+    "src": "0580/13/O/N/18 Q23",
+    "year": 2018,
+    "session": "OctNov",
+    "tex": "(a) Write down the co-ordinates of point $A$.\n\\newline\n\n    \n\n(b) Plot the point $C$ at $(4, -3)$.\n\\newline\n\n(c) Find the vector $\\overrightarrow{AB}$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down the co-ordinates of point $A$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "(................. , .................)",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Plot the point $C$ at $(4, -3)$.\n\\newline\n"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the vector $\\overrightarrow{AB}$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$\\overrightarrow{AB} =$",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.6]\n    % Draw grid\n    \\draw[step=1, gray, very thin] (-5,-4) grid (6,8);\n\n    % Draw axes\n    \\draw[thick, ->] (-5,0) -- (6.5,0) node[right] {$x$};\n    \\draw[thick, ->] (0,-4) -- (0,8.5) node[above] {$y$};\n\n    % Label axes\n    \\foreach \\x in {-5,-4,-3,-2,-1,1,2,3,4,5,6}\n        \\node[below] at (\\x,0) {\\tiny $\\x$};\n    \\foreach \\y in {-4,-3,-2,-1,1,2,3,4,5,6,7,8}\n        \\node[left] at (0,\\y) {\\tiny $\\y$};\n    \\node[below left] at (0,0) {\\tiny $0$};\n\n    % Plot points A and B\n    \\node[cross=3pt, thick] at (5,3) {};\n    \\node[above right] at (5,3) {$A$};\n\n    \\node[cross=3pt, thick] at (-3,5) {};\n    \\node[above left] at (-3,5) {$B$};\n\\end{tikzpicture}\n\\end{center}"
+      }
+    ],
+    "_rawBody": "\\begin{center}\n\\begin{tikzpicture}[scale=0.6]\n    % Draw grid\n    \\draw[step=1, gray, very thin] (-5,-4) grid (6,8);\n\n    % Draw axes\n    \\draw[thick, ->] (-5,0) -- (6.5,0) node[right] {$x$};\n    \\draw[thick, ->] (0,-4) -- (0,8.5) node[above] {$y$};\n\n    % Label axes\n    \\foreach \\x in {-5,-4,-3,-2,-1,1,2,3,4,5,6}\n        \\node[below] at (\\x,0) {\\tiny $\\x$};\n    \\foreach \\y in {-4,-3,-2,-1,1,2,3,4,5,6,7,8}\n        \\node[left] at (0,\\y) {\\tiny $\\y$};\n    \\node[below left] at (0,0) {\\tiny $0$};\n\n    % Plot points A and B\n    \\node[cross=3pt, thick] at (5,3) {};\n    \\node[above right] at (5,3) {$A$};\n\n    \\node[cross=3pt, thick] at (-3,5) {};\n    \\node[above left] at (-3,5) {$B$};\n\\end{tikzpicture}\n\\end{center}\n\n\\begin{parts}\n    \\item Write down the co-ordinates of point $A$.\n    \\AnswerLine[][(................. , .................)]\n    \\Marks{1}\n\n    \\item Plot the point $C$ at $(4, -3)$.\n    \\Marks{1}\n\n    \\item Find the vector $\\overrightarrow{AB}$.\n    \\AnswerLine[$\\overrightarrow{AB} =$][]\n    \\Marks{1}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2018OctNov-Paper13-Q24",
+    "paper": "2018OctNov-Paper13",
+    "qnum": 24,
+    "marks": 3,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.12",
+    "d": 1,
+    "cat": "number",
+    "topic": "Set notation",
+    "qtype": "speed, distance, time calculation with unit conversion",
+    "g": "mixed",
+    "src": "0580/13/O/N/18 Q24",
+    "year": 2018,
+    "session": "OctNov",
+    "tex": "A car travels at $108\\,\\text{km/h}$ for $20$ seconds.\n\\newline\n\nCalculate the distance the car travels.\n\\newline\n\nGive your answer in metres.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "A car travels at $108\\,\\text{km/h}$ for $20$ seconds.\n\\newline\n\nCalculate the distance the car travels.\n\\newline\n\nGive your answer in metres.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "m",
+      "_compactAnswer": true
+    },
+    "_rawBody": "A car travels at $108\\,\\text{km/h}$ for $20$ seconds.\n\nCalculate the distance the car travels.\n\nGive your answer in metres.\n\\AnswerLine[][m]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2018OctNov-Paper13-Q25",
+    "paper": "2018OctNov-Paper13",
+    "qnum": 25,
+    "marks": 3,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.13",
+    "d": 1,
+    "cat": "number",
+    "topic": "Electronic calculators",
+    "qtype": "compound interest calculation",
+    "g": "mixed",
+    "src": "0580/13/O/N/18 Q25",
+    "year": 2018,
+    "session": "OctNov",
+    "tex": "Jo invests $\\$5000$ at a rate of $2\\%$ per year compound interest.\n\\newline\n\nCalculate the value of her investment at the end of 3 years.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Jo invests $\\$5000$ at a rate of $2\\%$ per year compound interest.\n\\newline\n\nCalculate the value of her investment at the end of 3 years.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "\\$",
+      "_compactAnswer": true
+    },
+    "_rawBody": "Jo invests $\\$5000$ at a rate of $2\\%$ per year compound interest.\n\nCalculate the value of her investment at the end of 3 years.\n\\AnswerLine[][\\$]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2018OctNov-Paper13-Q26",
+    "paper": "2018OctNov-Paper13",
+    "qnum": 26,
+    "marks": 5,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.6",
+    "d": 1,
+    "cat": "number",
+    "topic": "Standard form",
+    "qtype": "solving linear equations",
+    "g": "linear",
+    "src": "0580/13/O/N/18 Q26",
+    "year": 2018,
+    "session": "OctNov",
+    "tex": "Solve.\n\\newline\n\n(a) $3w - 7 = 32$\n\n    \n\n(b) $4(5x + 7) = 42$",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "$3w - 7 = 32$"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$w =$",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "$4(5x + 7) = 42$"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x =$",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "solve",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Solve.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "Solve.\n\n\\begin{parts}\n    \\item $3w - 7 = 32$\n    \\AnswerLine[$w =$][]\n    \\Marks{2}\n\n    \\item $4(5x + 7) = 42$\n    \\AnswerLine[$x =$][]\n    \\Marks{3}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  }
+]

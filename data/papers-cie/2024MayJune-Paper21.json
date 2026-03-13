@@ -1,0 +1,1056 @@
+[
+  {
+    "id": "0580-2024MayJune-Paper21-Q01",
+    "paper": "2024MayJune-Paper21",
+    "qnum": 1,
+    "marks": 2,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry",
+      "Statistics"
+    ],
+    "s": "3.6",
+    "d": 2,
+    "cat": "coord",
+    "topic": "Position vectors",
+    "qtype": "parallel lines",
+    "g": "mixed",
+    "src": "0580/21/M/J/24 Q01",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "The diagram shows two sides of a parallelogram ABCD.\n\\newline\nFind the coordinates of point D.\n\\newline\n}\n\n% Diagram would be included here showing points A, B, C on coordinate grid\n% A(0,1), B(3,4), C(-3,4)\n\n{}",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q01.tex"
+      },
+      {
+        "type": "text",
+        "content": "\\StemText{\nThe diagram shows two sides of a parallelogram ABCD.\n\\newline\nFind the coordinates of point D.\n\\newline\n}\n\n% Diagram would be included here showing points A, B, C on coordinate grid\n% A(0,1), B(3,4), C(-3,4)"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "( , )"
+    },
+    "_rawBody": "\\relinput{Figures/Q01.tex}\n\\StemText{\nThe diagram shows two sides of a parallelogram ABCD.\nFind the coordinates of point D.\n}\n\n% Diagram would be included here showing points A, B, C on coordinate grid\n% A(0,1), B(3,4), C(-3,4)\n\n\\AnswerLine[( , )]{}\n\\Marks{2}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper21/Q01/Q01.png"
+    ]
+  },
+  {
+    "id": "0580-2024MayJune-Paper21-Q02",
+    "paper": "2024MayJune-Paper21",
+    "qnum": 2,
+    "marks": 2,
+    "topics": [
+      "Probability"
+    ],
+    "s": "8.3",
+    "d": 2,
+    "cat": "probability",
+    "topic": "Tree diagrams",
+    "qtype": "combined events",
+    "g": "mixed",
+    "src": "0580/21/M/J/24 Q02",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "(a) Geetha has a box of toys.\n\\newline\nShe picks a toy at random from the box.\n\\newline\nThe probability that she picks a wooden toy is 0.6 .\n\\newline\n\n(i) (b) Work out the probability that she does not pick a wooden toy.\n\\newline\n\n(c) The box contains three types of toys, wooden, plastic or metal.\n\\newline\n\n\\begin{tabular}{|l|l|l|}\n\\hline\nType of toy & Number of toys & Probability \\\\\n\\hline\nWooden & 14 & 0.6 \\\\\n\\hline\nPlastic & 14 & \\\\\n\\hline\nMetal & & \\\\\n\\hline\n\\hline\n\\end{tabular}\n\nComplete the table.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Geetha has a box of toys.\n\\newline\nShe picks a toy at random from the box.\n\\newline\nThe probability that she picks a wooden toy is 0.6 .\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Work out the probability that she does not pick a wooden toy.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "The box contains three types of toys, wooden, plastic or metal.\n\\newline\n"
+              },
+              {
+                "type": "figure",
+                "src": "Figures/Q02b.tex"
+              },
+              {
+                "type": "table",
+                "content": "\\begin{tabular}{|l|l|l|}\n\\hline\nType of toy & Number of toys & Probability \\\\\n\\hline\nWooden & 14 & 0.6 \\\\\n\\hline\nPlastic & 14 & \\\\\n\\hline\nMetal & & \\\\\n\\hline\n\\hline\n\\end{tabular}"
+              },
+              {
+                "type": "text",
+                "content": "Complete the table.\n\\newline\n"
+              }
+            ],
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Geetha has a box of toys.\nShe picks a toy at random from the box.\nThe probability that she picks a wooden toy is 0.6 .\n\n\\begin{subparts}\n\\item Work out the probability that she does not pick a wooden toy.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item The box contains three types of toys, wooden, plastic or metal.\n\\relinput{Figures/Q02b.tex}\n\\begin{tabular}{|l|l|l|}\n\\hline\nType of toy & Number of toys & Probability \\\\\n\\hline\nWooden & 14 & 0.6 \\\\\n\\hline\nPlastic & 14 & \\\\\n\\hline\nMetal & & \\\\\n\\hline\n\\hline\n\\end{tabular}\n\nComplete the table.\n\\Marks{2}\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_compactItems": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper21/Q02/Q02b.png"
+    ]
+  },
+  {
+    "id": "0580-2024MayJune-Paper21-Q03",
+    "paper": "2024MayJune-Paper21",
+    "qnum": 3,
+    "marks": 3,
+    "topics": [
+      "Algebra and graphs",
+      "Statistics"
+    ],
+    "s": "2.7",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Sequences",
+    "qtype": "nth term of sequence, completing table, finding smallest term",
+    "g": "sequence",
+    "src": "0580/21/M/J/24 Q03",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "The table shows some information about two sequences.\n\\newline\n}\n\n\\begin{tabular}{|l|l|l|}\n\\hline\n& nth term & 5th term \\\\\n\\hline\nSequence A & $60 - 4n$ & \\\\\n\\hline\nSequence B & $n^2 - 300$ & \\\\\n\\hline\n\\end{tabular}\n\n(a) Complete the table.\n\\newline\n\n(b) Find the smallest positive number in sequence B.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Complete the table.\n\\newline\n"
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the smallest positive number in sequence B.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q03.tex"
+      },
+      {
+        "type": "text",
+        "content": "\\StemText{\nThe table shows some information about two sequences.\n\\newline\n}"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{tabular}{|l|l|l|}\n\\hline\n& nth term & 5th term \\\\\n\\hline\nSequence A & $60 - 4n$ & \\\\\n\\hline\nSequence B & $n^2 - 300$ & \\\\\n\\hline\n\\end{tabular}"
+      }
+    ],
+    "_rawBody": "\\relinput{Figures/Q03.tex}\n\\StemText{\nThe table shows some information about two sequences.\n}\n\n\\begin{tabular}{|l|l|l|}\n\\hline\n& nth term & 5th term \\\\\n\\hline\nSequence A & $60 - 4n$ & \\\\\n\\hline\nSequence B & $n^2 - 300$ & \\\\\n\\hline\n\\end{tabular}\n\n\\begin{parts}\n\\item Complete the table.\n\n\\Marks{2}\n\n\\item Find the smallest positive number in sequence B.\n\n\\AnswerLine[][]\n\\Marks{2}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper21/Q03/Q03.png"
+    ]
+  },
+  {
+    "id": "0580-2024MayJune-Paper21-Q04",
+    "paper": "2024MayJune-Paper21",
+    "qnum": 4,
+    "marks": 2,
+    "topics": [
+      "Number",
+      "Statistics"
+    ],
+    "s": "1.1",
+    "d": 2,
+    "cat": "number",
+    "topic": "Types of number",
+    "qtype": "factors, HCF, odd numbers",
+    "g": "mixed",
+    "src": "0580/21/M/J/24 Q04",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "Find the greatest odd number that is a factor of 140 and a factor of 210.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\StemText{\nFind the greatest odd number that is a factor of 140 and a factor of 210.\n\\newline\n}"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "\\StemText{\nFind the greatest odd number that is a factor of 140 and a factor of 210.\n}\n\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2024MayJune-Paper21-Q05",
+    "paper": "2024MayJune-Paper21",
+    "qnum": 5,
+    "marks": 5,
+    "topics": [
+      "Statistics"
+    ],
+    "s": "9.3",
+    "d": 2,
+    "cat": "statistics",
+    "topic": "Frequency tables",
+    "qtype": "averages and spread",
+    "g": "mixed",
+    "src": "0580/21/M/J/24 Q05",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "Calculate.\n\\newline\n}\n\n(a) $\\sqrt[3]{343 - 40.96}$\n\n(b) $(192 + 4 \\times 16) \\times 1.25$",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "$\\sqrt[3]{343 - 40.96}$"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "$(192 + 4 \\times 16) \\times 1.25$"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\StemText{\nCalculate.\n\\newline\n}"
+      }
+    ],
+    "_rawBody": "\\StemText{\nCalculate.\n}\n\n\\begin{parts}\n\\item $\\sqrt[3]{343 - 40.96}$\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item $(192 + 4 \\times 16) \\times 1.25$\n\n\\AnswerLine[][]\n\\Marks{1}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2024MayJune-Paper21-Q06",
+    "paper": "2024MayJune-Paper21",
+    "qnum": 6,
+    "marks": 3,
+    "topics": [
+      "Geometry",
+      "Statistics"
+    ],
+    "s": "4.4",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Circle theorems",
+    "qtype": "similarity and congruence",
+    "g": "mixed",
+    "src": "0580/21/M/J/24 Q06",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "The diagram shows 5 kites that are congruent to kite ABCD.\n\\newline\nEach kite is joined to the next kite along one edge.\n\\newline\nAngle DAB = 40° and DCE is a straight line.\n\\newline\nFind the value of x.\n\\newline\n}\n\n% Diagram would show 5 connected kites with angles marked",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q06.tex"
+      },
+      {
+        "type": "text",
+        "content": "\\StemText{\nThe diagram shows 5 kites that are congruent to kite ABCD.\n\\newline\nEach kite is joined to the next kite along one edge.\n\\newline\nAngle DAB = 40° and DCE is a straight line.\n\\newline\nFind the value of x.\n\\newline\n}\n\n% Diagram would show 5 connected kites with angles marked"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "$x = $",
+      "suffix": "$^{\\circ}$"
+    },
+    "_rawBody": "\\relinput{Figures/Q06.tex}\n\\StemText{\nThe diagram shows 5 kites that are congruent to kite ABCD.\nEach kite is joined to the next kite along one edge.\nAngle DAB = 40° and DCE is a straight line.\nFind the value of x.\n}\n\n% Diagram would show 5 connected kites with angles marked\n\n\\AnswerLine[$x = $][$^{\\circ}$]\n\\Marks{3}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper21/Q06/Q06.png"
+    ]
+  },
+  {
+    "id": "0580-2024MayJune-Paper21-Q07",
+    "paper": "2024MayJune-Paper21",
+    "qnum": 7,
+    "marks": 7,
+    "topics": [
+      "Geometry",
+      "Mensuration",
+      "Statistics"
+    ],
+    "s": "4.7",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Nets and 3D shapes",
+    "qtype": "circle theorems",
+    "g": "mixed",
+    "src": "0580/21/M/J/24 Q07",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "The diagram shows a shape made from a triangle JKL and a semicircle with diameter JL.\n\\newline\nJKL is an isosceles right-angled triangle with JK = JL = 12.8 cm.\n\\newline\n}\n\n(a) Calculate the area of this shape.\n\\newline\n\n(b) Calculate the perimeter of this shape.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Calculate the area of this shape.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "cm$^2$"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "text",
+            "content": "Calculate the perimeter of this shape.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "cm"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q07.tex"
+      },
+      {
+        "type": "text",
+        "content": "\\StemText{\nThe diagram shows a shape made from a triangle JKL and a semicircle with diameter JL.\n\\newline\nJKL is an isosceles right-angled triangle with JK = JL = 12.8 cm.\n\\newline\n}"
+      }
+    ],
+    "_rawBody": "\\relinput{Figures/Q07.tex}\n\\StemText{\nThe diagram shows a shape made from a triangle JKL and a semicircle with diameter JL.\nJKL is an isosceles right-angled triangle with JK = JL = 12.8 cm.\n}\n\n\\begin{parts}\n\\item Calculate the area of this shape.\n\n\\AnswerLine[][cm$^2$]\n\\Marks{3}\n\n\\item Calculate the perimeter of this shape.\n\n\\AnswerLine[][cm]\n\\Marks{4}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper21/Q07/Q07.png"
+    ]
+  },
+  {
+    "id": "0580-2024MayJune-Paper21-Q08",
+    "paper": "2024MayJune-Paper21",
+    "qnum": 8,
+    "marks": 2,
+    "topics": [
+      "Algebra and graphs",
+      "Statistics"
+    ],
+    "s": "2.7",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Sequences",
+    "qtype": "finding nth term of linear sequence",
+    "g": "sequence",
+    "src": "0580/21/M/J/24 Q08",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "These are the first five terms of a sequence.\n\\newline\n11, 18, 25, 32, 39\n\nFind an expression for the nth term of the sequence.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\StemText{\nThese are the first five terms of a sequence.\n\\newline\n11, 18, 25, 32, 39\n\nFind an expression for the nth term of the sequence.\n\\newline\n}"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "\\StemText{\nThese are the first five terms of a sequence.\n11, 18, 25, 32, 39\n\nFind an expression for the nth term of the sequence.\n}\n\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2024MayJune-Paper21-Q09",
+    "paper": "2024MayJune-Paper21",
+    "qnum": 9,
+    "marks": 2,
+    "topics": [
+      "Statistics"
+    ],
+    "s": "9.3",
+    "d": 2,
+    "cat": "statistics",
+    "topic": "Frequency tables",
+    "qtype": "averages and spread",
+    "g": "mixed",
+    "src": "0580/21/M/J/24 Q09",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "The value of a car is \\$8000.\n\\newline\nEach year the value of the car decreases exponentially by 25\\%.\n\\newline\nCalculate the value of this car after 3 years.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\StemText{\nThe value of a car is \\$8000.\n\\newline\nEach year the value of the car decreases exponentially by 25\\%.\n\\newline\nCalculate the value of this car after 3 years.\n\\newline\n}"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "\\$"
+    },
+    "_rawBody": "\\StemText{\nThe value of a car is \\$8000.\nEach year the value of the car decreases exponentially by 25\\%.\nCalculate the value of this car after 3 years.\n}\n\n\\AnswerLine[\\$][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2024MayJune-Paper21-Q10",
+    "paper": "2024MayJune-Paper21",
+    "qnum": 10,
+    "marks": 3,
+    "topics": [
+      "Number",
+      "Statistics"
+    ],
+    "s": "1.13",
+    "d": 2,
+    "cat": "number",
+    "topic": "Electronic calculators",
+    "qtype": "compound interest calculation, finding rate",
+    "g": "mixed",
+    "src": "0580/21/M/J/24 Q10",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "Amir invests \\$1500 in an account.\n\\newline\nThe account pays compound interest at a rate of r \\% per year.\n\\newline\nAt the end of 8 years the value of his investment is \\$1656.73 .\n\\newline\nFind the value of r.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\StemText{\nAmir invests \\$1500 in an account.\n\\newline\nThe account pays compound interest at a rate of r \\% per year.\n\\newline\nAt the end of 8 years the value of his investment is \\$1656.73 .\n\\newline\nFind the value of r.\n\\newline\n}"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "$r = $",
+      "suffix": "\\%"
+    },
+    "_rawBody": "\\StemText{\nAmir invests \\$1500 in an account.\nThe account pays compound interest at a rate of r \\% per year.\nAt the end of 8 years the value of his investment is \\$1656.73 .\nFind the value of r.\n}\n\n\\AnswerLine[$r = $][\\%]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2024MayJune-Paper21-Q11",
+    "paper": "2024MayJune-Paper21",
+    "qnum": 11,
+    "marks": 4,
+    "topics": [
+      "Algebra and graphs",
+      "Coordinate geometry",
+      "Statistics"
+    ],
+    "s": "2.6",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Inequalities",
+    "qtype": "graphical inequalities, defining region",
+    "g": "graph",
+    "src": "0580/21/M/J/24 Q11",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "Find the inequalities that define the unshaded region, R.\n\\newline\n}\n\n% Diagram would show coordinate grid with shaded and unshaded regions",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "analyse",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q11.tex"
+      },
+      {
+        "type": "text",
+        "content": "\\StemText{\nFind the inequalities that define the unshaded region, R.\n\\newline\n}\n\n% Diagram would show coordinate grid with shaded and unshaded regions"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "\\relinput{Figures/Q11.tex}\n\\StemText{\nFind the inequalities that define the unshaded region, R.\n}\n\n% Diagram would show coordinate grid with shaded and unshaded regions\n\n\\AnswerLine[][]\n\\Marks{4}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper21/Q11/Q11.png"
+    ]
+  },
+  {
+    "id": "0580-2024MayJune-Paper21-Q12",
+    "paper": "2024MayJune-Paper21",
+    "qnum": 12,
+    "marks": 4,
+    "topics": [
+      "Algebra and graphs",
+      "Statistics"
+    ],
+    "s": "2.5",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Equations",
+    "qtype": "solving simultaneous linear equations with fractions",
+    "g": "simul-linear",
+    "src": "0580/21/M/J/24 Q12",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "Solve the simultaneous equations.\n\\newline\nYou must show all your working.\n\\newline\n}\n\n\\[\\frac{3x}{2} + 5y = 5\\]\n\\[4x - 3y = 46\\]",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "solve",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\StemText{\nSolve the simultaneous equations.\n\\newline\nYou must show all your working.\n\\newline\n}\n\n\\[\\frac{3x}{2} + 5y = 5\\]\n\\[4x - 3y = 46\\]"
+      }
+    ],
+    "answer": {
+      "type": "multiline",
+      "lines": 2,
+      "template": "$x = $ ____\\n$y = $ ____",
+      "lineSep": "blank"
+    },
+    "_rawBody": "\\StemText{\nSolve the simultaneous equations.\nYou must show all your working.\n}\n\n\\[\\frac{3x}{2} + 5y = 5\\]\n\\[4x - 3y = 46\\]\n\n\\AnswerLine[$x = $][]\n\\AnswerLine[$y = $][]\n\n\\Marks{4}"
+  },
+  {
+    "id": "0580-2024MayJune-Paper21-Q13",
+    "paper": "2024MayJune-Paper21",
+    "qnum": 13,
+    "marks": 3,
+    "topics": [
+      "Geometry",
+      "Statistics"
+    ],
+    "s": "4.7",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Nets and 3D shapes",
+    "qtype": "circle theorems",
+    "g": "mixed",
+    "src": "0580/21/M/J/24 Q13",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "The diagram shows a cyclic quadrilateral.\n\\newline\nFind the value of p.\n\\newline\n}\n\n% Diagram would show cyclic quadrilateral with angles: p°, 4m°, 5m°, (4m+38)°",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q13.tex"
+      },
+      {
+        "type": "text",
+        "content": "\\StemText{\nThe diagram shows a cyclic quadrilateral.\n\\newline\nFind the value of p.\n\\newline\n}\n\n% Diagram would show cyclic quadrilateral with angles: p°, 4m°, 5m°, (4m+38)°"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "$p = $",
+      "suffix": "$^{\\circ}$"
+    },
+    "_rawBody": "\\relinput{Figures/Q13.tex}\n\\StemText{\nThe diagram shows a cyclic quadrilateral.\nFind the value of p.\n}\n\n% Diagram would show cyclic quadrilateral with angles: p°, 4m°, 5m°, (4m+38)°\n\n\\AnswerLine[$p = $][$^{\\circ}$]\n\\Marks{3}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper21/Q13/Q13.png"
+    ]
+  },
+  {
+    "id": "0580-2024MayJune-Paper21-Q14",
+    "paper": "2024MayJune-Paper21",
+    "qnum": 14,
+    "marks": 3,
+    "topics": [
+      "Geometry",
+      "Mensuration",
+      "Statistics"
+    ],
+    "s": "4.6",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/21/M/J/24 Q14",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "The diagram shows a circle with radius 9 cm.\n\\newline\nCalculate the area of the shaded major sector.\n\\newline\n}\n\n% Diagram would show circle with radius 9cm and central angle 48°",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q14.tex"
+      },
+      {
+        "type": "text",
+        "content": "\\StemText{\nThe diagram shows a circle with radius 9 cm.\n\\newline\nCalculate the area of the shaded major sector.\n\\newline\n}\n\n% Diagram would show circle with radius 9cm and central angle 48°"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "cm$^2$"
+    },
+    "_rawBody": "\\relinput{Figures/Q14.tex}\n\\StemText{\nThe diagram shows a circle with radius 9 cm.\nCalculate the area of the shaded major sector.\n}\n\n% Diagram would show circle with radius 9cm and central angle 48°\n\n\\AnswerLine[][cm$^2$]\n\\Marks{3}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper21/Q14/Q14.png"
+    ]
+  },
+  {
+    "id": "0580-2024MayJune-Paper21-Q15",
+    "paper": "2024MayJune-Paper21",
+    "qnum": 15,
+    "marks": 3,
+    "topics": [
+      "Number",
+      "Statistics"
+    ],
+    "s": "1.4",
+    "d": 2,
+    "cat": "number",
+    "topic": "Fractions, decimals and percentages",
+    "qtype": "decimal to fraction conversion",
+    "g": "mixed",
+    "src": "0580/21/M/J/24 Q15",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "Write 0.146 as a fraction in its simplest form.\n\\newline\nYou must show all your working.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "write",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\StemText{\nWrite 0.146 as a fraction in its simplest form.\n\\newline\nYou must show all your working.\n\\newline\n}"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "\\StemText{\nWrite 0.146 as a fraction in its simplest form.\nYou must show all your working.\n}\n\n\\AnswerLine[][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2024MayJune-Paper21-Q16",
+    "paper": "2024MayJune-Paper21",
+    "qnum": 16,
+    "marks": 16,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.2",
+    "d": 2,
+    "cat": "number",
+    "topic": "Squares, cubes and roots",
+    "qtype": "Venn diagram shading, set operations, number of elements in a set",
+    "g": "mixed",
+    "src": "0580/21/M/J/24 Q16",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "(a) In the Venn diagram, shade the region $M \\cap N$.\n\\newline\n\n% Venn diagram would be shown here with sets M and N\n\n(b) Find $n(B \\cup (A \\cap C))$.\n\\newline\n\n% Venn diagram shown with sets A, B, C and numbers:\n% A∩B∩C = 3, A∩B = 10, A∩C = 16, B∩C = 4, A only = 18, B only = 20, C only = 9, outside = 33",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "In the Venn diagram, shade the region $M \\cap N$.\n\\newline\n"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q16a.tex"
+          },
+          {
+            "type": "text",
+            "content": "% Venn diagram would be shown here with sets M and N"
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find $n(B \\cup (A \\cap C))$.\n\\newline\n"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q16b.tex"
+          },
+          {
+            "type": "text",
+            "content": "% Venn diagram shown with sets A, B, C and numbers:\n% A∩B∩C = 3, A∩B = 10, A∩C = 16, B∩C = 4, A only = 18, B only = 20, C only = 9, outside = 33"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item In the Venn diagram, shade the region $M \\cap N$.\n\\relinput{Figures/Q16a.tex}\n% Venn diagram would be shown here with sets M and N\n\n\\Marks{1}\n\n\\item Find $n(B \\cup (A \\cap C))$.\n\\relinput{Figures/Q16b.tex}\n% Venn diagram shown with sets A, B, C and numbers:\n% A∩B∩C = 3, A∩B = 10, A∩C = 16, B∩C = 4, A only = 18, B only = 20, C only = 9, outside = 33\n\n\\AnswerLine[][]\n\\Marks{1}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper21/Q16/Q16a.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper21/Q16/Q16b.png"
+    ]
+  },
+  {
+    "id": "0580-2024MayJune-Paper21-Q17",
+    "paper": "2024MayJune-Paper21",
+    "qnum": 17,
+    "marks": 2,
+    "topics": [
+      "Geometry",
+      "Mensuration",
+      "Statistics"
+    ],
+    "s": "4.6",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/21/M/J/24 Q17",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "Calculate the area of triangle ABC.\n\\newline\n}\n\n% Diagram shows triangle ABC with AB = 6.7cm, AC = 5.9cm, angle BAC = 81°",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q17.tex"
+      },
+      {
+        "type": "text",
+        "content": "\\StemText{\nCalculate the area of triangle ABC.\n\\newline\n}\n\n% Diagram shows triangle ABC with AB = 6.7cm, AC = 5.9cm, angle BAC = 81°"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "cm$^2$"
+    },
+    "_rawBody": "\\relinput{Figures/Q17.tex}\n\\StemText{\nCalculate the area of triangle ABC.\n}\n\n% Diagram shows triangle ABC with AB = 6.7cm, AC = 5.9cm, angle BAC = 81°\n\n\\AnswerLine[][cm$^2$]\n\\Marks{2}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper21/Q17/Q17.png"
+    ]
+  },
+  {
+    "id": "0580-2024MayJune-Paper21-Q18",
+    "paper": "2024MayJune-Paper21",
+    "qnum": 18,
+    "marks": 3,
+    "topics": [
+      "Statistics"
+    ],
+    "s": "9.4",
+    "d": 2,
+    "cat": "statistics",
+    "topic": "Charts and graphs",
+    "qtype": "statistical charts",
+    "g": "mixed",
+    "src": "0580/21/M/J/24 Q18",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "The diagram shows the graph of $y = x^3 + 4x^2 - 2$ for $-3 \\leq x \\leq 1.5$.\n\\newline\nBy drawing a suitable straight line, solve the equation $x^3 + 4x^2 - 2 = 2x$ for $-3 \\leq x \\leq 1.5$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "solve",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q18.tex"
+      },
+      {
+        "type": "text",
+        "content": "\\StemText{\nThe diagram shows the graph of $y = x^3 + 4x^2 - 2$ for $-3 \\leq x \\leq 1.5$.\n\\newline\nBy drawing a suitable straight line, solve the equation $x^3 + 4x^2 - 2 = 2x$ for $-3 \\leq x \\leq 1.5$.\n\\newline\n}"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "$x = $",
+      "suffix": " or $x = $"
+    },
+    "_rawBody": "\\relinput{Figures/Q18.tex}\n\\StemText{\nThe diagram shows the graph of $y = x^3 + 4x^2 - 2$ for $-3 \\leq x \\leq 1.5$.\nBy drawing a suitable straight line, solve the equation $x^3 + 4x^2 - 2 = 2x$ for $-3 \\leq x \\leq 1.5$.\n}\n\n\\AnswerLine[$x = $][ or $x = $]\n\\Marks{3}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper21/Q18/Q18.png"
+    ]
+  },
+  {
+    "id": "0580-2024MayJune-Paper21-Q19",
+    "paper": "2024MayJune-Paper21",
+    "qnum": 19,
+    "marks": 19,
+    "topics": [
+      "Number",
+      "Algebra and graphs",
+      "Statistics"
+    ],
+    "s": "2.2",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Rearranging formulae",
+    "qtype": "algebraic factorisation (difference of squares, by grouping)",
+    "g": "simplify",
+    "src": "0580/21/M/J/24 Q19",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "Factorise completely.\n\\newline\n}\n\n(a) $12m^2 - 75t^2$\n\n(b) $xy + 15 + 3y + 5x$",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "$12m^2 - 75t^2$"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "$xy + 15 + 3y + 5x$"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\StemText{\nFactorise completely.\n\\newline\n}"
+      }
+    ],
+    "_rawBody": "\\StemText{\nFactorise completely.\n}\n\n\\begin{parts}\n\\item $12m^2 - 75t^2$\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\item $xy + 15 + 3y + 5x$\n\n\\AnswerLine[][]\n\\Marks{2}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2024MayJune-Paper21-Q20",
+    "paper": "2024MayJune-Paper21",
+    "qnum": 20,
+    "marks": 3,
+    "topics": [
+      "Trigonometry",
+      "Statistics"
+    ],
+    "s": "6.4",
+    "d": 2,
+    "cat": "trigonometry",
+    "topic": "Area of triangle",
+    "qtype": "solving trigonometric equations",
+    "g": "mixed",
+    "src": "0580/21/M/J/24 Q20",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "Solve the equation $8 \\sin x + 6 = 1$ for $0^\\circ \\leq x \\leq 360^\\circ$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "solve",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\StemText{\nSolve the equation $8 \\sin x + 6 = 1$ for $0^\\circ \\leq x \\leq 360^\\circ$.\n\\newline\n}"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "$x = $",
+      "suffix": "$^{\\circ}$ or $x = $ $^{\\circ}$"
+    },
+    "_rawBody": "\\StemText{\nSolve the equation $8 \\sin x + 6 = 1$ for $0^\\circ \\leq x \\leq 360^\\circ$.\n}\n\n\\AnswerLine[$x = $][$^{\\circ}$ or $x = $ $^{\\circ}$]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2024MayJune-Paper21-Q21",
+    "paper": "2024MayJune-Paper21",
+    "qnum": 21,
+    "marks": 4,
+    "topics": [
+      "Geometry",
+      "Mensuration",
+      "Statistics"
+    ],
+    "s": "4.6",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/21/M/J/24 Q21",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "The diagram shows a cuboid.\n\\newline\nHD = 4 cm, EH = 6.5 cm and EF = 9.1 cm.\n\\newline\nCalculate the angle between CE and the base CDHG.\n\\newline\n}\n\n% Diagram shows cuboid with dimensions marked",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q21.tex"
+      },
+      {
+        "type": "text",
+        "content": "\\StemText{\nThe diagram shows a cuboid.\n\\newline\nHD = 4 cm, EH = 6.5 cm and EF = 9.1 cm.\n\\newline\nCalculate the angle between CE and the base CDHG.\n\\newline\n}\n\n% Diagram shows cuboid with dimensions marked"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "$^{\\circ}$"
+    },
+    "_rawBody": "\\relinput{Figures/Q21.tex}\n\\StemText{\nThe diagram shows a cuboid.\nHD = 4 cm, EH = 6.5 cm and EF = 9.1 cm.\nCalculate the angle between CE and the base CDHG.\n}\n\n% Diagram shows cuboid with dimensions marked\n\n\\AnswerLine[][$^{\\circ}$]\n\\Marks{4}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2024MayJune/Paper21/Q21/Q21.png"
+    ]
+  },
+  {
+    "id": "0580-2024MayJune-Paper21-Q22",
+    "paper": "2024MayJune-Paper21",
+    "qnum": 22,
+    "marks": 4,
+    "topics": [
+      "Probability",
+      "Statistics"
+    ],
+    "s": "8.3",
+    "d": 2,
+    "cat": "probability",
+    "topic": "Tree diagrams",
+    "qtype": "combined events",
+    "g": "mixed",
+    "src": "0580/21/M/J/24 Q22",
+    "year": 2024,
+    "session": "MayJune",
+    "tex": "Bag A and bag B each contain red counters and blue counters only.\n\\newline\nStephan picks a counter at random from bag A and Jen picks a counter at random from bag B.\n\\newline\nThe probability that Stephan picks a red counter is 0.4 .\n\\newline\nThe probability that Stephan and Jen both pick a red counter is 0.25 .\n\\newline\nFind the probability that Stephan and Jen both pick a blue counter.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\StemText{\nBag A and bag B each contain red counters and blue counters only.\n\\newline\nStephan picks a counter at random from bag A and Jen picks a counter at random from bag B.\n\\newline\nThe probability that Stephan picks a red counter is 0.4 .\n\\newline\nThe probability that Stephan and Jen both pick a red counter is 0.25 .\n\\newline\nFind the probability that Stephan and Jen both pick a blue counter.\n\\newline\n}"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "\\StemText{\nBag A and bag B each contain red counters and blue counters only.\nStephan picks a counter at random from bag A and Jen picks a counter at random from bag B.\nThe probability that Stephan picks a red counter is 0.4 .\nThe probability that Stephan and Jen both pick a red counter is 0.25 .\nFind the probability that Stephan and Jen both pick a blue counter.\n}\n\n\\AnswerLine[][]\n\\Marks{4}",
+    "_compactMarks": true
+  }
+]

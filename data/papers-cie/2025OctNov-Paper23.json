@@ -1,0 +1,2023 @@
+[
+  {
+    "id": "0580-2025OctNov-Paper23-Q01",
+    "paper": "2025OctNov-Paper23",
+    "qnum": 1,
+    "marks": 2,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.6",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/23/O/N/25 Q01",
+    "year": 2025,
+    "session": "OctNov",
+    "tex": "The diagram shows an isosceles triangle.\n\\newline\n\nFind the value of $x$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q01-IsoscelesTriangle.tex"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "The diagram shows an isosceles triangle.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "Find the value of $x$.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "$x = $"
+    },
+    "_rawBody": "\\relinput{Figures/Q01-IsoscelesTriangle.tex}\n\n\\vgap\n\nThe diagram shows an isosceles triangle.\n\n\\vgap\n\nFind the value of $x$.\n\n\\vgap\n\n\\AnswerLine[$x = $][]\n\\Marks{2}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025OctNov/Paper23/Q01/Q01-IsoscelesTriangle.png"
+    ]
+  },
+  {
+    "id": "0580-2025OctNov-Paper23-Q02",
+    "paper": "2025OctNov-Paper23",
+    "qnum": 2,
+    "marks": 1,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.1",
+    "d": 2,
+    "cat": "number",
+    "topic": "Types of number",
+    "qtype": "finding largest odd common factor",
+    "g": "mixed",
+    "src": "0580/23/O/N/25 Q02",
+    "year": 2025,
+    "session": "OctNov",
+    "tex": "Find the largest **odd** number that is a common factor of 90 and 120.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Find the largest \\textbf{odd} number that is a common factor of 90 and 120.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Find the largest \\textbf{odd} number that is a common factor of 90 and 120.\n\n\\vgap\n\n\\AnswerLine[][]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025OctNov-Paper23-Q03",
+    "paper": "2025OctNov-Paper23",
+    "qnum": 3,
+    "marks": 1,
+    "topics": [
+      "Mensuration"
+    ],
+    "s": "5.2",
+    "d": 2,
+    "cat": "mensuration",
+    "topic": "Circles",
+    "qtype": "area and perimeter",
+    "g": "mixed",
+    "src": "0580/23/O/N/25 Q03",
+    "year": 2025,
+    "session": "OctNov",
+    "tex": "The diagram shows a net for a dice.\n\\newline\n\nThe dice has six faces numbered 1 to 6.\n\\newline\n\nThe sum of each pair of opposite faces on the dice is 7.\n\\newline\n\nWrite the missing numbers on the net.\n\\newline\n",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "recall",
+    "cmd": "write",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The diagram shows a net for a dice.\n\\newline\n\nThe dice has six faces numbered 1 to 6.\n\\newline\n\nThe sum of each pair of opposite faces on the dice is 7.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "figure",
+        "src": "Figures/Q03-DiceNet.tex"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "Write the missing numbers on the net.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "The diagram shows a net for a dice.\n\nThe dice has six faces numbered 1 to 6.\n\nThe sum of each pair of opposite faces on the dice is 7.\n\n\\vgap\n\n\\relinput{Figures/Q03-DiceNet.tex}\n\n\\vgap\n\nWrite the missing numbers on the net.\n\\Marks{1}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025OctNov/Paper23/Q03/Q03-DiceNet.png"
+    ]
+  },
+  {
+    "id": "0580-2025OctNov-Paper23-Q04",
+    "paper": "2025OctNov-Paper23",
+    "qnum": 4,
+    "marks": 2,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.6",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/23/O/N/25 Q04",
+    "year": 2025,
+    "session": "OctNov",
+    "tex": "A rectangle measures $5\\,\\text{cm}$ by $19\\,\\text{cm}$.\n\\newline\n\nTwo of these rectangles are joined to make a shape.\n\\newline\n\nWork out the perimeter of the shape.\n\\newline\n",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "A rectangle measures $5\\,\\text{cm}$ by $19\\,\\text{cm}$.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "figure",
+        "src": "Figures/Q04-Rectangle.tex"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "Two of these rectangles are joined to make a shape.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "figure",
+        "src": "Figures/Q04-LShape.tex"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "Work out the perimeter of the shape.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "cm"
+    },
+    "_rawBody": "A rectangle measures 5\\,cm by 19\\,cm.\n\n\\vgap\n\n\\relinput{Figures/Q04-Rectangle.tex}\n\n\\vgap\n\nTwo of these rectangles are joined to make a shape.\n\n\\vgap\n\n\\relinput{Figures/Q04-LShape.tex}\n\n\\vgap\n\nWork out the perimeter of the shape.\n\n\\vgap\n\n\\AnswerLine[][cm]\n\\Marks{2}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025OctNov/Paper23/Q04/Q04-LShape.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2025OctNov/Paper23/Q04/Q04-Rectangle.png"
+    ]
+  },
+  {
+    "id": "0580-2025OctNov-Paper23-Q05",
+    "paper": "2025OctNov-Paper23",
+    "qnum": 5,
+    "marks": 2,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.6",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/23/O/N/25 Q05",
+    "year": 2025,
+    "session": "OctNov",
+    "tex": "The diagram shows a rectangle $ABCD$.\n\\newline\n\n$EFG$ is an equilateral triangle that touches the rectangle at $F$ and $G$.\n\\newline\n\nFind the value of $x$ and the value of $y$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q05-RectangleTriangle.tex"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "The diagram shows a rectangle $ABCD$.\n\\newline\n\n$EFG$ is an equilateral triangle that touches the rectangle at $F$ and $G$.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "Find the value of $x$ and the value of $y$.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      }
+    ],
+    "answer": {
+      "type": "multiline",
+      "lines": 2,
+      "template": "$x = $ ____\\n$y = $ ____"
+    },
+    "_rawBody": "\\relinput{Figures/Q05-RectangleTriangle.tex}\n\n\\vgap\n\nThe diagram shows a rectangle $ABCD$.\n\n$EFG$ is an equilateral triangle that touches the rectangle at $F$ and $G$.\n\n\\vgap\n\nFind the value of $x$ and the value of $y$.\n\n\\vgap\n\n\\AnswerLine[$x = $][]\n\n\\vgap\n\n\\AnswerLine[$y = $][]\n\\Marks{2}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025OctNov/Paper23/Q05/Q05-RectangleTriangle.png"
+    ]
+  },
+  {
+    "id": "0580-2025OctNov-Paper23-Q06",
+    "paper": "2025OctNov-Paper23",
+    "qnum": 6,
+    "marks": 4,
+    "topics": [
+      "Geometry",
+      "Probability",
+      "Statistics"
+    ],
+    "s": "4.7",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Nets and 3D shapes",
+    "qtype": "circle theorems",
+    "g": "mixed",
+    "src": "0580/23/O/N/25 Q06",
+    "year": 2025,
+    "session": "OctNov",
+    "tex": "The scatter diagram shows the value, in thousands of dollars, of ten paintings in 2005 and the value of the same paintings in 2025.\n\\newline\n\n(a) The value of one of the paintings in 2025 is less than expected.\n\\newline\n\nDraw a circle around the point that represents this painting.\n\\newline\n\n(b) Another painting had a value of \\$$75\\,000$ in 2005 and \\$$140\\,000$ in 2025.\n\\newline\n\nOn the scatter diagram, plot this point.\n\\newline\n\n(c) Write down the number of paintings with a value of less than \\$$53\\,000$ in 2005.\n\\newline\n\n(d) What type of correlation is shown on the scatter diagram?",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "The value of one of the paintings in 2025 is less than expected.\n\\newline\n\nDraw a circle around the point that represents this painting.\n\\newline\n"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Another painting had a value of \\$$75\\,000$ in 2005 and \\$$140\\,000$ in 2025.\n\\newline\n\nOn the scatter diagram, plot this point.\n\\newline\n"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down the number of paintings with a value of less than \\$$53\\,000$ in 2005.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "What type of correlation is shown on the scatter diagram?"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "recall",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The scatter diagram shows the value, in thousands of dollars, of ten paintings in 2005 and the value of the same paintings in 2025.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2025OctNov/Paper23/Q06/Q06.png"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "figure",
+        "src": "Figures/Q06-ScatterDiagram.tex"
+      }
+    ],
+    "_rawBody": "The scatter diagram shows the value, in thousands of dollars, of ten paintings in 2005 and the value of the same paintings in 2025.\n\n\\vgap\n\n\\relinput{Figures/Q06-ScatterDiagram.tex}\n\n\\begin{parts}\n\\item The value of one of the paintings in 2025 is less than expected.\n\nDraw a circle around the point that represents this painting.\n\\Marks{1}\n\n\\item Another painting had a value of \\$75\\,000 in 2005 and \\$140\\,000 in 2025.\n\nOn the scatter diagram, plot this point.\n\\Marks{1}\n\n\\item Write down the number of paintings with a value of less than \\$53\\,000 in 2005.\n\n\\vgap\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item What type of correlation is shown on the scatter diagram?\n\n\\vgap\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025OctNov/Paper23/Q06/Q06-ScatterDiagram.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2025OctNov/Paper23/Q06/Q06.png"
+    ]
+  },
+  {
+    "id": "0580-2025OctNov-Paper23-Q07",
+    "paper": "2025OctNov-Paper23",
+    "qnum": 7,
+    "marks": 3,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.1",
+    "d": 2,
+    "cat": "number",
+    "topic": "Types of number",
+    "qtype": "finding sum of prime numbers and identifying prime numbers within a range",
+    "g": "mixed",
+    "src": "0580/23/O/N/25 Q07",
+    "year": 2025,
+    "session": "OctNov",
+    "tex": "(a) The sum of all the prime numbers less than 10 is equal to 17.\n\\newline\n\nFind the sum of all the prime numbers less than 16.\n\\newline\n\n(b) $x$ is an integer.\n\\newline\n\nThe sum of the prime numbers greater than 6 and less than $x$ is equal to 18.\n\\newline\n\nFind a possible value for $x$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "The sum of all the prime numbers less than 10 is equal to 17.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "text",
+            "content": "Find the sum of all the prime numbers less than 16.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "$x$ is an integer.\n\\newline\n\nThe sum of the prime numbers greater than 6 and less than $x$ is equal to 18.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "text",
+            "content": "Find a possible value for $x$.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x = $"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item The sum of all the prime numbers less than 10 is equal to 17.\n\n\\vgap\n\nFind the sum of all the prime numbers less than 16.\n\n\\vgap\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item $x$ is an integer.\n\nThe sum of the prime numbers greater than 6 and less than $x$ is equal to 18.\n\n\\vgap\n\nFind a possible value for $x$.\n\n\\vgap\n\n\\AnswerLine[$x = $][]\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2025OctNov-Paper23-Q08",
+    "paper": "2025OctNov-Paper23",
+    "qnum": 8,
+    "marks": 5,
+    "topics": [
+      "Coordinate geometry",
+      "Transformations and vectors"
+    ],
+    "s": "3.1",
+    "d": 2,
+    "cat": "coord",
+    "topic": "Coordinates",
+    "qtype": "coordinates reading/plotting",
+    "g": "graph",
+    "src": "0580/23/O/N/25 Q08",
+    "year": 2025,
+    "session": "OctNov",
+    "tex": "$$\\overrightarrow{DE} = \\begin{pmatrix} 3 \\\\ -4 \\end{pmatrix}$$\n\n(a) Find   $5\\overrightarrow{DE}$.\n\\newline\n\n $\\begin{pmatrix}  \\\\  \\end{pmatrix}$\n\n(b) Find   $\\left| \\overrightarrow{DE} \\right|$.\n\\newline\n\n(c) $D$ is the point $(-2, -3)$.\n\\newline\n\nFind the coordinates of the point $E$.\n\\newline\n\n (  ,  )",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find \\quad $5\\overrightarrow{DE}$.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          }
+        ],
+        "answer": {
+          "type": "expression",
+          "_rawAnswer": "\\vspace{0.5cm}\n\n\\hfill $\\begin{pmatrix} \\makebox[2cm]{\\hrulefill} \\\\ \\makebox[2cm]{\\hrulefill} \\end{pmatrix}$",
+          "space": {
+            "type": "working",
+            "height": "0.5cm",
+            "cmd": "vspace"
+          }
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find \\quad $\\left| \\overrightarrow{DE} \\right|$.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "$D$ is the point $(-2, -3)$.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "text",
+            "content": "Find the coordinates of the point $E$.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          }
+        ],
+        "answer": {
+          "type": "coordinate",
+          "fields": 2,
+          "_rawAnswer": "\\hfill ( \\AnswerLineShort[][] , \\AnswerLineShort[][] )"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "$$\\overrightarrow{DE} = \\begin{pmatrix} 3 \\\\ -4 \\end{pmatrix}$$"
+      }
+    ],
+    "_rawBody": "$$\\overrightarrow{DE} = \\begin{pmatrix} 3 \\\\ -4 \\end{pmatrix}$$\n\n\\begin{parts}\n\\item Find \\quad $5\\overrightarrow{DE}$.\n\n\\vgap\n\n\\vspace{0.5cm}\n\n\\hfill $\\begin{pmatrix} \\makebox[2cm]{\\hrulefill} \\\\ \\makebox[2cm]{\\hrulefill} \\end{pmatrix}$\n\\Marks{1}\n\n\\item Find \\quad $\\left| \\overrightarrow{DE} \\right|$.\n\n\\vgap\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item $D$ is the point $(-2, -3)$.\n\n\\vgap\n\nFind the coordinates of the point $E$.\n\n\\vgap\n\n\\hfill ( \\AnswerLineShort[][] , \\AnswerLineShort[][] )\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2025OctNov-Paper23-Q09",
+    "paper": "2025OctNov-Paper23",
+    "qnum": 9,
+    "marks": 1,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.7",
+    "d": 2,
+    "cat": "number",
+    "topic": "Estimation and limits",
+    "qtype": "applying index law for division",
+    "g": "indices",
+    "src": "0580/23/O/N/25 Q09",
+    "year": 2025,
+    "session": "OctNov",
+    "tex": "$$n^{15} \\div n^x = n^5$$\n\nFind the value of $x$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "$$n^{15} \\div n^x = n^5$$"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "Find the value of $x$.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "$x = $"
+    },
+    "_rawBody": "$$n^{15} \\div n^x = n^5$$\n\n\\vgap\n\nFind the value of $x$.\n\n\\vgap\n\n\\AnswerLine[$x = $][]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025OctNov-Paper23-Q10",
+    "paper": "2025OctNov-Paper23",
+    "qnum": 10,
+    "marks": 4,
+    "topics": [
+      "Geometry",
+      "Trigonometry"
+    ],
+    "s": "4.6",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/23/O/N/25 Q10",
+    "year": 2025,
+    "session": "OctNov",
+    "tex": "The diagram shows a right-angled triangle $ABC$.\n\\newline\n\n(a) Work out the exact length of $AC$.\n\\newline\n\n(b) $\\cos x^\\circ = k$\n\nWrite down the value of $k$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Work out the exact length of $AC$.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "cm"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "$\\cos x^\\circ = k$"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "text",
+            "content": "Write down the value of $k$.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$k = $"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q10-RightTriangle.tex"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "The diagram shows a right-angled triangle $ABC$.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "\\relinput{Figures/Q10-RightTriangle.tex}\n\n\\vgap\n\nThe diagram shows a right-angled triangle $ABC$.\n\n\\begin{parts}\n\\item Work out the exact length of $AC$.\n\n\\vgap\n\n\\AnswerLine[][cm]\n\\Marks{3}\n\n\\item $\\cos x^\\circ = k$\n\n\\vgap\n\nWrite down the value of $k$.\n\n\\vgap\n\n\\AnswerLine[$k = $][]\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025OctNov/Paper23/Q10/Q10-RightTriangle.png"
+    ]
+  },
+  {
+    "id": "0580-2025OctNov-Paper23-Q11",
+    "paper": "2025OctNov-Paper23",
+    "qnum": 11,
+    "marks": 2,
+    "topics": [
+      "Probability"
+    ],
+    "s": "8.3",
+    "d": 2,
+    "cat": "probability",
+    "topic": "Tree diagrams",
+    "qtype": "combined events",
+    "g": "mixed",
+    "src": "0580/23/O/N/25 Q11",
+    "year": 2025,
+    "session": "OctNov",
+    "tex": "Sarah rolls a fair 6-sided dice twice.\n\\newline\n\nFind the probability she rolls a number greater than 4 both times.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Sarah rolls a fair 6-sided dice twice.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "Find the probability she rolls a number greater than 4 both times.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Sarah rolls a fair 6-sided dice twice.\n\n\\vgap\n\nFind the probability she rolls a number greater than 4 both times.\n\n\\vgap\n\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025OctNov-Paper23-Q12",
+    "paper": "2025OctNov-Paper23",
+    "qnum": 12,
+    "marks": 5,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.7",
+    "d": 2,
+    "cat": "number",
+    "topic": "Estimation and limits",
+    "qtype": "applying zero index, negative index, and converting to base form using index laws",
+    "g": "indices",
+    "src": "0580/23/O/N/25 Q12",
+    "year": 2025,
+    "session": "OctNov",
+    "tex": "(a) Write down the value of $73^0$.\n\\newline\n\n(b) Find the value of   $\\dfrac{7}{3^{-2}}$.\n\\newline\n\n(c) Write   $27 \\times 81^2$   in the form $3^n$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down the value of $73^0$.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the value of \\quad $\\dfrac{7}{3^{-2}}$.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write \\quad $27 \\times 81^2$ \\quad in the form $3^n$.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Write down the value of $73^0$.\n\n\\vgap\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Find the value of \\quad $\\dfrac{7}{3^{-2}}$.\n\n\\vgap\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item Write \\quad $27 \\times 81^2$ \\quad in the form $3^n$.\n\n\\vgap\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2025OctNov-Paper23-Q13",
+    "paper": "2025OctNov-Paper23",
+    "qnum": 13,
+    "marks": 4,
+    "topics": [
+      "Geometry",
+      "Mensuration",
+      "Trigonometry"
+    ],
+    "s": "4.7",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Nets and 3D shapes",
+    "qtype": "circle theorems",
+    "g": "mixed",
+    "src": "0580/23/O/N/25 Q13",
+    "year": 2025,
+    "session": "OctNov",
+    "tex": "$A$, $B$, $C$ and $D$ are points on the circumference of a circle with centre $O$.\n\\newline\n\n$ED$ and $EB$ are tangents to the circle.\n\\newline\n\n$AC$ is parallel to $EB$.\n\\newline\n\nAngle $AOD = 44^\\circ$.\n\\newline\n\nFind the value of $x$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q13-CircleTangent.tex"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "$A$, $B$, $C$ and $D$ are points on the circumference of a circle with centre $O$.\n\\newline\n\n$ED$ and $EB$ are tangents to the circle.\n\\newline\n\n$AC$ is parallel to $EB$.\n\\newline\n\nAngle $AOD = 44^\\circ$.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "Find the value of $x$.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "$x = $"
+    },
+    "_rawBody": "\\relinput{Figures/Q13-CircleTangent.tex}\n\n\\vgap\n\n$A$, $B$, $C$ and $D$ are points on the circumference of a circle with centre $O$.\n\n$ED$ and $EB$ are tangents to the circle.\n\n$AC$ is parallel to $EB$.\n\nAngle $AOD = 44^\\circ$.\n\n\\vgap\n\nFind the value of $x$.\n\n\\vgap\n\n\\AnswerLine[$x = $][]\n\\Marks{4}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025OctNov/Paper23/Q13/Q13-CircleTangent.png"
+    ]
+  },
+  {
+    "id": "0580-2025OctNov-Paper23-Q14",
+    "paper": "2025OctNov-Paper23",
+    "qnum": 14,
+    "marks": 2,
+    "topics": [
+      "Algebra and graphs",
+      "Geometry"
+    ],
+    "s": "2.10",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Graphs of functions",
+    "qtype": "properties of quadratic graphs, vertex form",
+    "g": "quadratic",
+    "src": "0580/23/O/N/25 Q14",
+    "year": 2025,
+    "session": "OctNov",
+    "tex": "The minimum point on a quadratic curve is $(-3, -5)$.\n\\newline\n\n(a) Find the equation of the line of symmetry of the curve.\n\\newline\n\n(b) Write the equation of the curve in the form   $y = (x + a)^2 + b$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the equation of the line of symmetry of the curve.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write the equation of the curve in the form \\quad $y = (x + a)^2 + b$.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$y = $"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The minimum point on a quadratic curve is $(-3, -5)$.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "The minimum point on a quadratic curve is $(-3, -5)$.\n\n\\begin{parts}\n\\item Find the equation of the line of symmetry of the curve.\n\n\\vgap\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Write the equation of the curve in the form \\quad $y = (x + a)^2 + b$.\n\n\\vgap\n\n\\AnswerLine[$y = $][]\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2025OctNov-Paper23-Q15",
+    "paper": "2025OctNov-Paper23",
+    "qnum": 15,
+    "marks": 4,
+    "topics": [
+      "Number",
+      "Algebra and graphs"
+    ],
+    "s": "2.2",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Rearranging formulae",
+    "qtype": "factorisation of quadratic and by grouping",
+    "g": "quadratic",
+    "src": "0580/23/O/N/25 Q15",
+    "year": 2025,
+    "session": "OctNov",
+    "tex": "Factorise.\n\\newline\n\n(a) $x^2 - 7x + 12$\n\n(b) $5x + 10y + 6ny + 3nx$",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "$x^2 - 7x + 12$"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "$5x + 10y + 6ny + 3nx$"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Factorise.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "Factorise.\n\n\\begin{parts}\n\\item $x^2 - 7x + 12$\n\n\\vgap\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item $5x + 10y + 6ny + 3nx$\n\n\\vgap\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2025OctNov-Paper23-Q16",
+    "paper": "2025OctNov-Paper23",
+    "qnum": 16,
+    "marks": 5,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.7",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Sequences",
+    "qtype": "finding the nth term of sequences",
+    "g": "sequence",
+    "src": "0580/23/O/N/25 Q16",
+    "year": 2025,
+    "session": "OctNov",
+    "tex": "The table shows three sequences.\n\\newline\n\nComplete the table to show the $n$th term of each sequence.\n\\newline\n",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The table shows three sequences.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "figure",
+        "src": "Figures/Q16-SequenceTable.tex"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "Complete the table to show the $n$th term of each sequence.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "The table shows three sequences.\n\n\\vgap\n\n\\relinput{Figures/Q16-SequenceTable.tex}\n\n\\vgap\n\nComplete the table to show the $n$th term of each sequence.\n\\Marks{5}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025OctNov/Paper23/Q16/Q16-SequenceTable.png"
+    ]
+  },
+  {
+    "id": "0580-2025OctNov-Paper23-Q17",
+    "paper": "2025OctNov-Paper23",
+    "qnum": 17,
+    "marks": 4,
+    "topics": [
+      "Algebra and graphs",
+      "Geometry",
+      "Trigonometry"
+    ],
+    "s": "2.10",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Graphs of functions",
+    "qtype": "sketching trigonometric graph, solving trigonometric equation",
+    "g": "graph",
+    "src": "0580/23/O/N/25 Q17",
+    "year": 2025,
+    "session": "OctNov",
+    "tex": "(a) Sketch the graph of   $y = \\cos x$   for $0^\\circ \\leqslant x \\leqslant 360^\\circ$.\n\\newline\n\n(b) $\\cos x^\\circ = \\dfrac{1}{\\sqrt{2}}$   and $x$ is a **reflex** angle.\n\\newline\n\nFind the value of $x$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Sketch the graph of \\quad $y = \\cos x$ \\quad for $0^\\circ \\leqslant x \\leqslant 360^\\circ$.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q17a-CosineCurve.tex"
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "$\\cos x^\\circ = \\dfrac{1}{\\sqrt{2}}$ \\quad and $x$ is a \\textbf{reflex} angle.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "text",
+            "content": "Find the value of $x$.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x = $"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "sketch",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Sketch the graph of \\quad $y = \\cos x$ \\quad for $0^\\circ \\leqslant x \\leqslant 360^\\circ$.\n\n\\vgap\n\n\\relinput{Figures/Q17a-CosineCurve.tex}\n\n\\Marks{2}\n\n\\item $\\cos x^\\circ = \\dfrac{1}{\\sqrt{2}}$ \\quad and $x$ is a \\textbf{reflex} angle.\n\n\\vgap\n\nFind the value of $x$.\n\n\\vgap\n\n\\AnswerLine[$x = $][]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025OctNov/Paper23/Q17/Q17a-CosineCurve.png"
+    ]
+  },
+  {
+    "id": "0580-2025OctNov-Paper23-Q18",
+    "paper": "2025OctNov-Paper23",
+    "qnum": 18,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.2",
+    "d": 2,
+    "cat": "number",
+    "topic": "Squares, cubes and roots",
+    "qtype": "shading regions in Venn diagrams based on set notation",
+    "g": "mixed",
+    "src": "0580/23/O/N/25 Q18",
+    "year": 2025,
+    "session": "OctNov",
+    "tex": "Shade the region in each Venn diagram.\n\\newline\n\n(a) $(A \\cap B)'$\n\n(b) $(C \\cup D) \\cap E'$",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "$(A \\cap B)'$"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q18a-VennDiagram1.tex"
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2025OctNov/Paper23/Q18/Q18b.png"
+          },
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2025OctNov/Paper23/Q18/Q18b-VennDiagram2.png"
+          },
+          {
+            "type": "text",
+            "content": "$(C \\cup D) \\cap E'$"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q18b-VennDiagram2.tex"
+          }
+        ]
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Shade the region in each Venn diagram.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "Shade the region in each Venn diagram.\n\n\\begin{parts}\n\\item $(A \\cap B)'$\n\n\\vgap\n\n\\relinput{Figures/Q18a-VennDiagram1.tex}\n\n\\Marks{1}\n\n\\item $(C \\cup D) \\cap E'$\n\n\\vgap\n\n\\relinput{Figures/Q18b-VennDiagram2.tex}\n\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025OctNov/Paper23/Q18/Q18a-VennDiagram1.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2025OctNov/Paper23/Q18/Q18a.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2025OctNov/Paper23/Q18/Q18b-VennDiagram2.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2025OctNov/Paper23/Q18/Q18b.png"
+    ]
+  },
+  {
+    "id": "0580-2025OctNov-Paper23-Q19",
+    "paper": "2025OctNov-Paper23",
+    "qnum": 19,
+    "marks": 5,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.7",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Nets and 3D shapes",
+    "qtype": "circle theorems",
+    "g": "mixed",
+    "src": "0580/23/O/N/25 Q19",
+    "year": 2025,
+    "session": "OctNov",
+    "tex": "The diagram shows a circle, centre $O$, radius $12\\,\\text{cm}$.\n\\newline\n\n(a) Work out the area of the **minor** sector $AOB$.\n\\newline\n\nGive your answer in terms of $\\pi$ in its simplest form.\n\\newline\n\n(b) Calculate the length of the **major** arc $AB$.\n\\newline\n\nGive your answer in terms of $\\pi$ in its simplest form.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Work out the area of the \\textbf{minor} sector $AOB$.\n\\newline\n\nGive your answer in terms of $\\pi$ in its simplest form.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "cm$^2$"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Calculate the length of the \\textbf{major} arc $AB$.\n\\newline\n\nGive your answer in terms of $\\pi$ in its simplest form.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "cm"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q19-CircleSector.tex"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "The diagram shows a circle, centre $O$, radius $12\\,\\text{cm}$.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "\\relinput{Figures/Q19-CircleSector.tex}\n\n\\vgap\n\nThe diagram shows a circle, centre $O$, radius 12\\,cm.\n\n\\begin{parts}\n\\item Work out the area of the \\textbf{minor} sector $AOB$.\n\nGive your answer in terms of $\\pi$ in its simplest form.\n\n\\vgap\n\n\\AnswerLine[][cm$^2$]\n\\Marks{2}\n\n\\item Calculate the length of the \\textbf{major} arc $AB$.\n\nGive your answer in terms of $\\pi$ in its simplest form.\n\n\\vgap\n\n\\AnswerLine[][cm]\n\\Marks{3}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025OctNov/Paper23/Q19/Q19-CircleSector.png"
+    ]
+  },
+  {
+    "id": "0580-2025OctNov-Paper23-Q20",
+    "paper": "2025OctNov-Paper23",
+    "qnum": 20,
+    "marks": 3,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.4",
+    "d": 2,
+    "cat": "number",
+    "topic": "Fractions, decimals and percentages",
+    "qtype": "converting recurring decimals to fractions and adding fractions",
+    "g": "mixed",
+    "src": "0580/23/O/N/25 Q20",
+    "year": 2025,
+    "session": "OctNov",
+    "tex": "Work out   $0.1\\dot{1}\\dot{4} + 0.\\dot{2}$.\n\\newline\n\nGive your answer as a fraction.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Work out \\quad $0.1\\dot{1}\\dot{4} + 0.\\dot{2}$.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "Give your answer as a fraction.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Work out \\quad $0.1\\dot{1}\\dot{4} + 0.\\dot{2}$.\n\n\\vgap\n\nGive your answer as a fraction.\n\n\\vgap\n\n\\AnswerLine[][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025OctNov-Paper23-Q21",
+    "paper": "2025OctNov-Paper23",
+    "qnum": 21,
+    "marks": 4,
+    "topics": [
+      "Number",
+      "Geometry"
+    ],
+    "s": "1.11",
+    "d": 2,
+    "cat": "number",
+    "topic": "Money and finance",
+    "qtype": "calculating values using ratios in a geometric context",
+    "g": "mixed",
+    "src": "0580/23/O/N/25 Q21",
+    "year": 2025,
+    "session": "OctNov",
+    "tex": "The diagram shows a cyclic quadrilateral.\n\\newline\n\nThe ratio   $p : m = 2 : 3$.\n\\newline\n\nFind the value of $y$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q21-CyclicQuadrilateral.tex"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "The diagram shows a cyclic quadrilateral.\n\\newline\n\nThe ratio \\quad $p : m = 2 : 3$.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "Find the value of $y$.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "$y = $"
+    },
+    "_rawBody": "\\relinput{Figures/Q21-CyclicQuadrilateral.tex}\n\n\\vgap\n\nThe diagram shows a cyclic quadrilateral.\n\nThe ratio \\quad $p : m = 2 : 3$.\n\n\\vgap\n\nFind the value of $y$.\n\n\\vgap\n\n\\AnswerLine[$y = $][]\n\\Marks{4}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025OctNov/Paper23/Q21/Q21-CyclicQuadrilateral.png"
+    ]
+  },
+  {
+    "id": "0580-2025OctNov-Paper23-Q22",
+    "paper": "2025OctNov-Paper23",
+    "qnum": 22,
+    "marks": 3,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry"
+    ],
+    "s": "3.7",
+    "d": 2,
+    "cat": "coord",
+    "topic": "Coordinate geometry extended",
+    "qtype": "perpendicular lines",
+    "g": "mixed",
+    "src": "0580/23/O/N/25 Q22",
+    "year": 2025,
+    "session": "OctNov",
+    "tex": "The equation of line $L$ is   $y = -\\dfrac{1}{2}x + 7$.\n\\newline\n\nFind an equation of the line perpendicular to line $L$ that passes through the point $(3, 5)$.\n\\newline\n\nGive your answer in the form $y = mx + c$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The equation of line $L$ is \\quad $y = -\\dfrac{1}{2}x + 7$.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "Find an equation of the line perpendicular to line $L$ that passes through the point $(3, 5)$.\n\\newline\n\nGive your answer in the form $y = mx + c$.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "$y = $"
+    },
+    "_rawBody": "The equation of line $L$ is \\quad $y = -\\dfrac{1}{2}x + 7$.\n\n\\vgap\n\nFind an equation of the line perpendicular to line $L$ that passes through the point $(3, 5)$.\n\nGive your answer in the form $y = mx + c$.\n\n\\vgap\n\n\\AnswerLine[$y = $][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025OctNov-Paper23-Q23",
+    "paper": "2025OctNov-Paper23",
+    "qnum": 23,
+    "marks": 3,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.6",
+    "d": 2,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/23/O/N/25 Q23",
+    "year": 2025,
+    "session": "OctNov",
+    "tex": "Work out the area of triangle $ABC$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q23-TriangleArea.tex"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "Work out the area of triangle $ABC$.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "cm$^2$"
+    },
+    "_rawBody": "\\relinput{Figures/Q23-TriangleArea.tex}\n\n\\vgap\n\nWork out the area of triangle $ABC$.\n\n\\vgap\n\n\\AnswerLine[][cm$^2$]\n\\Marks{3}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025OctNov/Paper23/Q23/Q23-TriangleArea.png"
+    ]
+  },
+  {
+    "id": "0580-2025OctNov-Paper23-Q24",
+    "paper": "2025OctNov-Paper23",
+    "qnum": 24,
+    "marks": 6,
+    "topics": [
+      "Algebra and graphs",
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "2.4",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Algebraic fractions",
+    "qtype": "simplifying surds, calculating with surds, rationalising denominator",
+    "g": "simplify",
+    "src": "0580/23/O/N/25 Q24",
+    "year": 2025,
+    "session": "OctNov",
+    "tex": "(a) Simplify.\n\\newline\n\n$$\\sqrt{125} - \\sqrt{20}$$\n\n(b) \n\nThe area of this rectangle is $k\\,\\text{cm}^2$.\n\\newline\n\nWork out the value of $k$.\n\\newline\n\n(c) Rationalise the denominator.\n\\newline\n\n$$\\dfrac{1}{\\sqrt{7} + 2}$$",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Simplify.\n\\newline\n\n$$\\sqrt{125} - \\sqrt{20}$$"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "$\\,$"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q24b-Rectangle.tex"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "text",
+            "content": "The area of this rectangle is $k\\,\\text{cm}^2$.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          },
+          {
+            "type": "text",
+            "content": "Work out the value of $k$.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$k = $"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Rationalise the denominator.\n\\newline\n\n$$\\dfrac{1}{\\sqrt{7} + 2}$$"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Simplify.\n\n$$\\sqrt{125} - \\sqrt{20}$$\n\n\\vgap\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item \\,\n\n\\relinput{Figures/Q24b-Rectangle.tex}\n\n\\vgap\n\nThe area of this rectangle is $k$\\,cm$^2$.\n\n\\vgap\n\nWork out the value of $k$.\n\n\\vgap\n\n\\AnswerLine[$k = $][]\n\\Marks{2}\n\n\\item Rationalise the denominator.\n\n$$\\dfrac{1}{\\sqrt{7} + 2}$$\n\n\\vgap\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025OctNov/Paper23/Q24/Q24b-Rectangle.png"
+    ]
+  },
+  {
+    "id": "0580-2025OctNov-Paper23-Q25",
+    "paper": "2025OctNov-Paper23",
+    "qnum": 25,
+    "marks": 3,
+    "topics": [
+      "Probability"
+    ],
+    "s": "8.4",
+    "d": 2,
+    "cat": "probability",
+    "topic": "Conditional probability",
+    "qtype": "conditional probability",
+    "g": "mixed",
+    "src": "0580/23/O/N/25 Q25",
+    "year": 2025,
+    "session": "OctNov",
+    "tex": "Mahir picks one number at random from the numbers 5, 10 and 15.\n\\newline\n\nHe then picks one number at random from the numbers 4, 5 and 6.\n\\newline\n\nHe adds the two numbers.\n\\newline\n\nThe sample space diagram shows some of the possible outcomes.\n\\newline\n\n(a) Complete the sample space diagram.\n\\newline\n\n(b) Given that the total of the two numbers is odd, find the probability that one of the numbers added is 15.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Complete the sample space diagram.\n\\newline\n"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Given that the total of the two numbers is odd, find the probability that one of the numbers added is 15.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Mahir picks one number at random from the numbers 5, 10 and 15.\n\\newline\n\nHe then picks one number at random from the numbers 4, 5 and 6.\n\\newline\n\nHe adds the two numbers.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "The sample space diagram shows some of the possible outcomes.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "figure",
+        "src": "Figures/Q25-SampleSpaceTable.tex"
+      }
+    ],
+    "_rawBody": "Mahir picks one number at random from the numbers 5, 10 and 15.\n\nHe then picks one number at random from the numbers 4, 5 and 6.\n\nHe adds the two numbers.\n\n\\vgap\n\nThe sample space diagram shows some of the possible outcomes.\n\n\\vgap\n\n\\relinput{Figures/Q25-SampleSpaceTable.tex}\n\n\\begin{parts}\n\\item Complete the sample space diagram.\n\\Marks{1}\n\n\\item Given that the total of the two numbers is odd, find the probability that one of the numbers added is 15.\n\n\\vgap\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025OctNov/Paper23/Q25/Q25-SampleSpaceTable.png"
+    ]
+  },
+  {
+    "id": "0580-2025OctNov-Paper23-Q26",
+    "paper": "2025OctNov-Paper23",
+    "qnum": 26,
+    "marks": 5,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.6",
+    "d": 2,
+    "cat": "number",
+    "topic": "Standard form",
+    "qtype": "simplifying and adding algebraic fractions",
+    "g": "algebraic-fraction",
+    "src": "0580/23/O/N/25 Q26",
+    "year": 2025,
+    "session": "OctNov",
+    "tex": "Write as a single fraction in its simplest form.\n\\newline\n\n(a) $\\dfrac{mp}{25y} \\times \\dfrac{15}{m}$\n\n(b) $\\dfrac{3}{2x - 5} + \\dfrac{4}{x - 3}$",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "$\\dfrac{mp}{25y} \\times \\dfrac{15}{m}$"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "$\\dfrac{3}{2x - 5} + \\dfrac{4}{x - 3}$"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "write",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Write as a single fraction in its simplest form.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "Write as a single fraction in its simplest form.\n\n\\begin{parts}\n\\item $\\dfrac{mp}{25y} \\times \\dfrac{15}{m}$\n\n\\vgap\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item $\\dfrac{3}{2x - 5} + \\dfrac{4}{x - 3}$\n\n\\vgap\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2025OctNov-Paper23-Q27",
+    "paper": "2025OctNov-Paper23",
+    "qnum": 27,
+    "marks": 6,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.5",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Equations",
+    "qtype": "solving simultaneous linear and quadratic equations",
+    "g": "simul-nonlinear",
+    "src": "0580/23/O/N/25 Q27",
+    "year": 2025,
+    "session": "OctNov",
+    "tex": "Solve the simultaneous equations.\n\\newline\n\n$$y = x^2 - 8x + 22$$\n$$y + 2 = 3x$$\n\n  , \n\n  ,",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "solve",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Solve the simultaneous equations.\n\\newline\n\n$$y = x^2 - 8x + 22$$\n$$y + 2 = 3x$$"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      }
+    ],
+    "answer": {
+      "type": "expression",
+      "fields": 4,
+      "_rawAnswer": "\\Answerspace[5cm]\n\n\\hfill \\AnswerLineShort[$x = $][] , \\AnswerLineShort[$y = $][]\n\n\\vgap\n\n\\hfill \\AnswerLineShort[$x = $][] , \\AnswerLineShort[$y = $][]",
+      "space": {
+        "type": "drawing",
+        "height": "5cm",
+        "cmd": "Answerspace"
+      }
+    },
+    "_rawBody": "Solve the simultaneous equations.\n\n$$y = x^2 - 8x + 22$$\n$$y + 2 = 3x$$\n\n\\vgap\n\n\\Answerspace[5cm]\n\n\\hfill \\AnswerLineShort[$x = $][] , \\AnswerLineShort[$y = $][]\n\n\\vgap\n\n\\hfill \\AnswerLineShort[$x = $][] , \\AnswerLineShort[$y = $][]\n\\Marks{6}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025OctNov-Paper23-Q28",
+    "paper": "2025OctNov-Paper23",
+    "qnum": 28,
+    "marks": 4,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.3",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Indices",
+    "qtype": "simplifying algebraic fractions by factorisation",
+    "g": "algebraic-fraction",
+    "src": "0580/23/O/N/25 Q28",
+    "year": 2025,
+    "session": "OctNov",
+    "tex": "Simplify.\n\\newline\n\n$$\\dfrac{2x^2 - 11x - 21}{x^2 - 49}$$",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Simplify.\n\\newline\n\n$$\\dfrac{2x^2 - 11x - 21}{x^2 - 49}$$"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Simplify.\n\n$$\\dfrac{2x^2 - 11x - 21}{x^2 - 49}$$\n\n\\vgap\n\n\\AnswerLine[][]\n\\Marks{4}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025OctNov-Paper23-Q29",
+    "paper": "2025OctNov-Paper23",
+    "qnum": 29,
+    "marks": 5,
+    "topics": [
+      "Mensuration"
+    ],
+    "s": "5.4",
+    "d": 2,
+    "cat": "mensuration",
+    "topic": "Volume",
+    "qtype": "surface area and volume",
+    "g": "mixed",
+    "src": "0580/23/O/N/25 Q29",
+    "year": 2025,
+    "session": "OctNov",
+    "tex": "In this question all measurements are in centimetres.\n\\newline\n\nSolid $A$ is made from a cylinder and a hemisphere, both of radius $2R$.\n\\newline\n\nThe cylinder has height $5R$.\n\\newline\n\nSolid $B$ is a cone of radius $R$ and sloping edge $x$.\n\\newline\n\nThe **total** surface area of solid $A$ is equal to the **total** surface area of solid $B$.\n\\newline\n\nFind $R$ in terms of $x$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "In this question all measurements are in centimetres.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "figure",
+        "src": "Figures/Q29-CylinderCone.tex"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "Solid $A$ is made from a cylinder and a hemisphere, both of radius $2R$.\n\\newline\n\nThe cylinder has height $5R$.\n\\newline\n\nSolid $B$ is a cone of radius $R$ and sloping edge $x$.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "The \\textbf{total} surface area of solid $A$ is equal to the \\textbf{total} surface area of solid $B$.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "text",
+        "content": "Find $R$ in terms of $x$.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "$R = $"
+    },
+    "_rawBody": "In this question all measurements are in centimetres.\n\n\\vgap\n\n\\relinput{Figures/Q29-CylinderCone.tex}\n\n\\vgap\n\nSolid $A$ is made from a cylinder and a hemisphere, both of radius $2R$.\n\nThe cylinder has height $5R$.\n\nSolid $B$ is a cone of radius $R$ and sloping edge $x$.\n\n\\vgap\n\nThe \\textbf{total} surface area of solid $A$ is equal to the \\textbf{total} surface area of solid $B$.\n\n\\vgap\n\nFind $R$ in terms of $x$.\n\n\\vgap\n\n\\AnswerLine[$R = $][]\n\\Marks{5}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025OctNov/Paper23/Q29/Q29-CylinderCone.png"
+    ]
+  }
+]

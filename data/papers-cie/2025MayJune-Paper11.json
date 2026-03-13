@@ -1,0 +1,1505 @@
+[
+  {
+    "id": "0580-2025MayJune-Paper11-Q01",
+    "paper": "2025MayJune-Paper11",
+    "qnum": 1,
+    "marks": 3,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.5",
+    "d": 1,
+    "cat": "number",
+    "topic": "Ordering",
+    "qtype": "number representation, rounding, unit conversion",
+    "g": "mixed",
+    "src": "0580/11/M/J/25 Q01",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "(a) Write the number 10 069 in words.\n\\newline\n\n(b) Write 10 069 correct to the nearest ten.\n\\newline\n\n(c) Convert 10 069 centimetres into metres.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write the number 10 069 in words.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write 10 069 correct to the nearest ten.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Convert 10 069 centimetres into metres.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "m"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Write the number 10 069 in words.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Write 10 069 correct to the nearest ten.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Convert 10 069 centimetres into metres.\n\n\\AnswerLine[][m]\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper11-Q02",
+    "paper": "2025MayJune-Paper11",
+    "qnum": 2,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.6",
+    "d": 1,
+    "cat": "number",
+    "topic": "Standard form",
+    "qtype": "money calculation with decimals",
+    "g": "mixed",
+    "src": "0580/11/M/J/25 Q02",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "A bag of sweets costs \\$0.34.\n\\newline\n\nArun buys 10 bags of sweets.\n\\newline\n\nWork out how much change he receives from \\$5.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "A bag of sweets costs \\$0.34.\n\\newline\n\\par\nArun buys 10 bags of sweets.\n\\newline\n\\par\nWork out how much change he receives from \\$5.\n\\newline\n\\par"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "\\$"
+    },
+    "_rawBody": "A bag of sweets costs \\$0.34.\\par\nArun buys 10 bags of sweets.\\par\nWork out how much change he receives from \\$5.\\par\n\n\\AnswerLine[\\$][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper11-Q03",
+    "paper": "2025MayJune-Paper11",
+    "qnum": 3,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": null,
+    "d": 1,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/11/M/J/25 Q03",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "Two numbers have a sum of $-2$ and a product of $-15$.\n\\newline\n\nWork out the two numbers.\n\\newline\n\n ]",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Two numbers have a sum of $-2$ and a product of $-15$.\n\\newline\n\\par\nWork out the two numbers.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "expression",
+      "fields": 2,
+      "_rawAnswer": "\\hfill \\AnswerLineShort[][and \\AnswerLineShort[][]]"
+    },
+    "_rawBody": "Two numbers have a sum of $-2$ and a product of $-15$.\\par\nWork out the two numbers.\n\n\\hfill \\AnswerLineShort[][and \\AnswerLineShort[][]]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper11-Q04",
+    "paper": "2025MayJune-Paper11",
+    "qnum": 4,
+    "marks": 4,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.1",
+    "d": 1,
+    "cat": "number",
+    "topic": "Types of number",
+    "qtype": "identification of number properties",
+    "g": "mixed",
+    "src": "0580/11/M/J/25 Q04",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "$7$\\ $$ $27$\\ $$ $39$\\ $$ $49$\\ $$ $99$\\ $$ $112$\n    From the list of numbers, write down\n(a) an even number\n\n(b) a square number\n\n(c) a factor of 56\n\n(d) a prime number",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "an even number"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "a square number"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "a factor of 56"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "a prime number"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "write",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{center}\n    $7$\\ $\\hspace{1cm}$ $27$\\ $\\hspace{1cm}$ $39$\\ $\\hspace{1cm}$ $49$\\ $\\hspace{1cm}$ $99$\\ $\\hspace{1cm}$ $112$\n    \\end{center}\n\nFrom the list of numbers, write down"
+      }
+    ],
+    "_rawBody": "\\begin{center}\n    $7$\\ $\\hspace{1cm}$ $27$\\ $\\hspace{1cm}$ $39$\\ $\\hspace{1cm}$ $49$\\ $\\hspace{1cm}$ $99$\\ $\\hspace{1cm}$ $112$\n    \\end{center}\n\nFrom the list of numbers, write down\n\\begin{parts}\n\\item an even number\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item a square number\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item a factor of 56\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item a prime number\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_compactStemParts": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper11-Q05",
+    "paper": "2025MayJune-Paper11",
+    "qnum": 5,
+    "marks": 1,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.1",
+    "d": 1,
+    "cat": "number",
+    "topic": "Types of number",
+    "qtype": "reciprocal calculation",
+    "g": "mixed",
+    "src": "0580/11/M/J/25 Q05",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "Write down the reciprocal of 5.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "write",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Write down the reciprocal of 5.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Write down the reciprocal of 5.\n\n\\AnswerLine[][]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper11-Q06",
+    "paper": "2025MayJune-Paper11",
+    "qnum": 6,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.6",
+    "d": 1,
+    "cat": "number",
+    "topic": "Standard form",
+    "qtype": "order of operations with brackets",
+    "g": "mixed",
+    "src": "0580/11/M/J/25 Q06",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "Put one pair of brackets into each calculation to make it correct.\n\\newline\n\n(a) $7 - 5 \\times 4 + 8 = 16$\n\n(b) $7 - 5 \\times 4 + 8 = -21$",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "$7 - 5 \\times 4 + 8 = 16$"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "$7 - 5 \\times 4 + 8 = -21$"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "other",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Put one pair of brackets into each calculation to make it correct.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "Put one pair of brackets into each calculation to make it correct.\n\n\\begin{parts}\n\\item $7 - 5 \\times 4 + 8 = 16$\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item $7 - 5 \\times 4 + 8 = -21$\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper11-Q07",
+    "paper": "2025MayJune-Paper11",
+    "qnum": 7,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.6",
+    "d": 1,
+    "cat": "number",
+    "topic": "Standard form",
+    "qtype": "forming algebraic expressions",
+    "g": "mixed",
+    "src": "0580/11/M/J/25 Q07",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "(a) A ticket costs \\$18.\n\\newline\n\nWrite down an expression, in dollars, for the cost of $t$ tickets.\n\\newline\n\n(b) A bag contains $n$ red balls and 16 green balls.\n\\newline\n\nWrite down an expression for the total number of balls in the bag.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "A ticket costs \\$18.\n\\newline\n\\par\nWrite down an expression, in dollars, for the cost of $t$ tickets.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "\\$"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "A bag contains $n$ red balls and 16 green balls.\n\\newline\n\\par\nWrite down an expression for the total number of balls in the bag.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "write",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item A ticket costs \\$18.\\par\nWrite down an expression, in dollars, for the cost of $t$ tickets.\n\n\\AnswerLine[\\$][]\n\\Marks{1}\n\n\\item A bag contains $n$ red balls and 16 green balls.\\par\nWrite down an expression for the total number of balls in the bag.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper11-Q08",
+    "paper": "2025MayJune-Paper11",
+    "qnum": 8,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.4",
+    "d": 1,
+    "cat": "number",
+    "topic": "Fractions, decimals and percentages",
+    "qtype": "FDP inter-conversion",
+    "g": "mixed",
+    "src": "0580/11/M/J/25 Q08",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "(a) Write 90\\% as a fraction in its simplest form.\n\\newline\n\n(b) Write $\\dfrac{3}{100}$ as a decimal.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write 90\\% as a fraction in its simplest form.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write $\\dfrac{3}{100}$ as a decimal.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "write",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Write 90\\% as a fraction in its simplest form.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Write $\\dfrac{3}{100}$ as a decimal.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper11-Q09",
+    "paper": "2025MayJune-Paper11",
+    "qnum": 9,
+    "marks": 5,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.7",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Sequences",
+    "qtype": "linear sequence, term-to-term rule, nth term",
+    "g": "sequence",
+    "src": "0580/11/M/J/25 Q09",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "(a) These are the first four terms of a sequence.\n\\newline\n\n$33$\\ $$ $26$\\ $$ $19$\\ $$ $12$\n(i) (b) Write down the term-to-term rule for this sequence.\n\\newline\n\n(c) Work out the next two terms in this sequence.\n\\newline\n\n(d) These are the first four terms of another sequence.\n\\newline\n\n$19$\\ $$ $23$\\ $$ $27$\\ $$ $31$\nFind the $n$th term.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "These are the first four terms of a sequence.\n\\newline\n\n\\begin{center}\n$33$\\ $\\hspace{1cm}$ $26$\\ $\\hspace{1cm}$ $19$\\ $\\hspace{1cm}$ $12$\n\\end{center}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Write down the term-to-term rule for this sequence.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Work out the next two terms in this sequence.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "multiline",
+              "lines": 2,
+              "template": "____\\n____",
+              "lineSep": "blank"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item"
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "These are the first four terms of another sequence.\n\\newline\n\n\\begin{center}\n$19$\\ $\\hspace{1cm}$ $23$\\ $\\hspace{1cm}$ $27$\\ $\\hspace{1cm}$ $31$\n\\end{center}\n\nFind the $n$th term.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item These are the first four terms of a sequence.\n\n\\begin{center}\n$33$\\ $\\hspace{1cm}$ $26$\\ $\\hspace{1cm}$ $19$\\ $\\hspace{1cm}$ $12$\n\\end{center}\n\n\\begin{subparts}\n\\item Write down the term-to-term rule for this sequence.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Work out the next two terms in this sequence.\n\n\\AnswerLine[][]\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{subparts}\n\n\\item These are the first four terms of another sequence.\n\n\\begin{center}\n$19$\\ $\\hspace{1cm}$ $23$\\ $\\hspace{1cm}$ $27$\\ $\\hspace{1cm}$ $31$\n\\end{center}\n\nFind the $n$th term.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper11-Q10",
+    "paper": "2025MayJune-Paper11",
+    "qnum": 10,
+    "marks": 5,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.12",
+    "d": 1,
+    "cat": "number",
+    "topic": "Set notation",
+    "qtype": "interpreting and completing travel graphs",
+    "g": "graph",
+    "src": "0580/11/M/J/25 Q10",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "Ky cycles from his office to a meeting and back again.\n\\newline\n\nThe travel graph shows his time at the meeting and his journey back.\n\\newline\n\n(a) How far is the meeting from his office?\n\n(b) How long is Ky at the meeting for?\n\n(c) Write down the time Ky arrives back at his office after the meeting.\n\\newline\n\n(d) Ky cycles from his office to the meeting at a constant speed of 21 km/h.\n\\newline\n\nComplete the travel graph.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "How far is the meeting from his office?"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "km"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "How long is Ky at the meeting for?"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "min"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down the time Ky arrives back at his office after the meeting.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Ky cycles from his office to the meeting at a constant speed of 21 km/h.\n\\newline\n\\par\nComplete the travel graph.\n\\newline\n"
+          }
+        ]
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Ky cycles from his office to a meeting and back again.\n\\newline\n\nThe travel graph shows his time at the meeting and his journey back.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "Figures/Q10.tex"
+      }
+    ],
+    "_rawBody": "Ky cycles from his office to a meeting and back again.\n\nThe travel graph shows his time at the meeting and his journey back.\n\n\\relinput{Figures/Q10.tex}\n\n\\begin{parts}\n\\item How far is the meeting from his office?\n\n\\AnswerLine[][km]\n\\Marks{1}\n\n\\item How long is Ky at the meeting for?\n\n\\AnswerLine[][min]\n\\Marks{1}\n\n\\item Write down the time Ky arrives back at his office after the meeting.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Ky cycles from his office to the meeting at a constant speed of 21 km/h.\\par\nComplete the travel graph.\n\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEnd": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper11/Q10/Q10.png"
+    ]
+  },
+  {
+    "id": "0580-2025MayJune-Paper11-Q11",
+    "paper": "2025MayJune-Paper11",
+    "qnum": 11,
+    "marks": 1,
+    "topics": [
+      "Mensuration"
+    ],
+    "s": "5.4",
+    "d": 1,
+    "cat": "mensuration",
+    "topic": "Volume",
+    "qtype": "surface area and volume",
+    "g": "mixed",
+    "src": "0580/11/M/J/25 Q11",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "Calculate the volume of a cube with side length 3 cm.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Calculate the volume of a cube with side length 3 cm.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "cm$^3$"
+    },
+    "_rawBody": "Calculate the volume of a cube with side length 3 cm.\n\n\\AnswerLine[][cm$^3$]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper11-Q12",
+    "paper": "2025MayJune-Paper11",
+    "qnum": 12,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.6",
+    "d": 1,
+    "cat": "number",
+    "topic": "Standard form",
+    "qtype": "solving linear equations",
+    "g": "linear",
+    "src": "0580/11/M/J/25 Q12",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "Solve.\n\\newline\n\\[\n5x + 8 = 3x - 2\n\\]",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "solve",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Solve.\n\\newline\n\\[\n5x + 8 = 3x - 2\n\\]"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "$x = $"
+    },
+    "_rawBody": "Solve.\n\\[\n5x + 8 = 3x - 2\n\\]\n\n\\AnswerLine[$x = $][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper11-Q13",
+    "paper": "2025MayJune-Paper11",
+    "qnum": 13,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.6",
+    "d": 1,
+    "cat": "number",
+    "topic": "Standard form",
+    "qtype": "operations with negative integers",
+    "g": "mixed",
+    "src": "0580/11/M/J/25 Q13",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "Work out.\n\\newline\n\n(a) $-5 \\times -4$.\n\\newline\n\n(b) $-8 + (-3)$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "$-5 \\times -4$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "$-8 + (-3)$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Work out.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "Work out.\n\n\\begin{parts}\n\\item  $-5 \\times -4$.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item $-8 + (-3)$.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper11-Q14",
+    "paper": "2025MayJune-Paper11",
+    "qnum": 14,
+    "marks": 1,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.7",
+    "d": 1,
+    "cat": "number",
+    "topic": "Estimation and limits",
+    "qtype": "applying index laws",
+    "g": "indices",
+    "src": "0580/11/M/J/25 Q14",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "$3^{p} \\times 3^{4} = 3^{10}$\n\nFind the value of $p$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "$3^{p} \\times 3^{4} = 3^{10}$\n\n\nFind the value of $p$.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "$p=$"
+    },
+    "_rawBody": "$3^{p} \\times 3^{4} = 3^{10}$\n\n\nFind the value of $p$.\n\n\\AnswerLine[$p=$][]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper11-Q15",
+    "paper": "2025MayJune-Paper11",
+    "qnum": 15,
+    "marks": 3,
+    "topics": [
+      "Mensuration"
+    ],
+    "s": "5.2",
+    "d": 1,
+    "cat": "mensuration",
+    "topic": "Circles",
+    "qtype": "area and perimeter",
+    "g": "mixed",
+    "src": "0580/11/M/J/25 Q15",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "Complete a net of this cuboid on the $1\\,\\text{cm}^2$ grid.\n\\newline\n\nOne face has been drawn for you.\n\\newline\n",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "recall",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q15-1.tex"
+      },
+      {
+        "type": "text",
+        "content": "Complete a net of this cuboid on the $1\\,\\text{cm}^2$ grid.\n\\newline\n\nOne face has been drawn for you.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "Figures/Q15-2.tex"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      }
+    ],
+    "_rawBody": "\\relinput{Figures/Q15-1.tex}\n\nComplete a net of this cuboid on the 1\\,cm$^2$ grid.\n\nOne face has been drawn for you.\n\n\\relinput{Figures/Q15-2.tex}\n\n\\vgap\n\n\\Marks{3}",
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper11/Q15/Q15-1.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper11/Q15/Q15-2.png"
+    ]
+  },
+  {
+    "id": "0580-2025MayJune-Paper11-Q16",
+    "paper": "2025MayJune-Paper11",
+    "qnum": 16,
+    "marks": 5,
+    "topics": [
+      "Number",
+      "Algebra and graphs"
+    ],
+    "s": "2.2",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Rearranging formulae",
+    "qtype": "simplifying and factorising algebraic expressions",
+    "g": "simplify",
+    "src": "0580/11/M/J/25 Q16",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "(a) Simplify.\n\\newline\n\n\\[6a + 4b - a - 5b\\]\n\n(b) Factorise.\n\\newline\n\n(i) (c) $6x + 15y$\n\n(d) $x^{2}y - 5xy$",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Simplify.\n\\newline\n\n\\[6a + 4b - a - 5b\\]"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Factorise.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "$6x + 15y$"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "$x^{2}y - 5xy$"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item"
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Simplify.\n\n\\[6a + 4b - a - 5b\\]\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item Factorise.\n\n\\begin{subparts}\n\\item $6x + 15y$\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item $x^{2}y - 5xy$\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper11-Q17",
+    "paper": "2025MayJune-Paper11",
+    "qnum": 17,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.9",
+    "d": 1,
+    "cat": "number",
+    "topic": "Percentages",
+    "qtype": "estimation by rounding to significant figures",
+    "g": "mixed",
+    "src": "0580/11/M/J/25 Q17",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "By writing each number in the calculation correct to 1 significant figure, find an estimate for the value of\n\n\\[\\dfrac{42.8 + 17.4}{1.97 \\times 5.79}\\]",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "By writing each number in the calculation correct to 1 significant figure, find an estimate for the value of\n    \n\\[\\dfrac{42.8 + 17.4}{1.97 \\times 5.79}\\]"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "By writing each number in the calculation correct to 1 significant figure, find an estimate for the value of\n    \n\\[\\dfrac{42.8 + 17.4}{1.97 \\times 5.79}\\]\n\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper11-Q18",
+    "paper": "2025MayJune-Paper11",
+    "qnum": 18,
+    "marks": 6,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.6",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/11/M/J/25 Q18",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "The diagram shows two straight lines intersecting two parallel lines.\n\\newline\n\n(a) Find the value of $x$.\n\\newline\n\nGive a geometrical reason for your answer.\n\\newline\n\n\\DotLine{162}\n\n(b) Find the value of $y$.\n\\newline\n\nGive a geometrical reason for your answer.\n\\newline\n\n\\DotLine{162}\n\n(c) Find the value of $z$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the value of $x$.\n\\newline\n\\par\nGive a geometrical reason for your answer.\n\\newline\n\\par\n\n\\AnswerLine[$x=$][because \\DotLine{92}]\\par\n\n\\noindent\\hfill\\DotLine{162}\\par"
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the value of $y$.\n\\newline\n\\par\nGive a geometrical reason for your answer.\n\\newline\n\\par\n\n\\AnswerLine[$y=$][because \\DotLine{92}]\\par\n\n\\noindent\\hfill\\DotLine{162}\\par"
+          }
+        ]
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the value of $z$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$z=$"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The diagram shows two straight lines intersecting two parallel lines.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "Figures/Q18.tex"
+      }
+    ],
+    "_rawBody": "The diagram shows two straight lines intersecting two parallel lines.\n\n\\relinput{Figures/Q18.tex}\n\n\\begin{parts}\n\\item Find the value of $x$.\\par\nGive a geometrical reason for your answer.\\par\n\n\\AnswerLine[$x=$][because \\DotLine{92}]\\par\n\n\\noindent\\hfill\\DotLine{162}\\par\n\n\\Marks{2}\n\n\\item Find the value of $y$.\\par\nGive a geometrical reason for your answer.\\par\n\n\\AnswerLine[$y=$][because \\DotLine{92}]\\par\n\n\\noindent\\hfill\\DotLine{162}\\par\n\n\\Marks{2}\n\n\\item Find the value of $z$.\n\n\\AnswerLine[$z=$][]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper11/Q18/Q18.png"
+    ]
+  },
+  {
+    "id": "0580-2025MayJune-Paper11-Q19",
+    "paper": "2025MayJune-Paper11",
+    "qnum": 19,
+    "marks": 5,
+    "topics": [
+      "Number",
+      "Probability"
+    ],
+    "s": "1.11",
+    "d": 1,
+    "cat": "number",
+    "topic": "Money and finance",
+    "qtype": "probability with tree diagrams (based on ratio)",
+    "g": "mixed",
+    "src": "0580/11/M/J/25 Q19",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "A box contains 10 counters.\n\\newline\n\nThe counters are either red or green.\n\\newline\n\nThe ratio red counters : green counters = 1 : 4.\n\\newline\n\nShareen picks a counter at random, notes its colour and puts it back in the box.\n\\newline\n\nShe then picks a second counter at random.\n\\newline\n\n(a) Complete the tree diagram.\n\\newline\n\n(b) Find the probability that both counters are green.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Complete the tree diagram.\n\\newline\n"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the probability that both counters are green.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "A box contains 10 counters.\n\\newline\n\nThe counters are either red or green.\n\\newline\n\nThe ratio red counters : green counters = 1 : 4.\n\\newline\n\nShareen picks a counter at random, notes its colour and puts it back in the box.\n\\newline\n\nShe then picks a second counter at random.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "Figures/Q19.tex"
+      }
+    ],
+    "_rawBody": "A box contains 10 counters.\n\nThe counters are either red or green.\n\nThe ratio red counters : green counters = 1 : 4.\n\nShareen picks a counter at random, notes its colour and puts it back in the box.\n\nShe then picks a second counter at random.\n\n\\relinput{Figures/Q19.tex}\n\n\\begin{parts}\n\\item Complete the tree diagram.\n\\Marks{3}\n\n\\item Find the probability that both counters are green.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper11/Q19/Q19.png"
+    ]
+  },
+  {
+    "id": "0580-2025MayJune-Paper11-Q20",
+    "paper": "2025MayJune-Paper11",
+    "qnum": 20,
+    "marks": 4,
+    "topics": [
+      "Number",
+      "Statistics"
+    ],
+    "s": "1.5",
+    "d": 1,
+    "cat": "number",
+    "topic": "Ordering",
+    "qtype": "interpreting and plotting scatter diagrams",
+    "g": "graph",
+    "src": "0580/11/M/J/25 Q20",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "The scatter diagram shows the price of petrol per litre and the number of litres sold at a petrol station on each of ten days.\n\\newline\n\n(a) These are the results for two more days.\n\\newline\n\nPlot this information on the scatter diagram.\n\\newline\n\n(b) What type of correlation is shown in the scatter diagram?\n\n(c) (i) On the scatter diagram, draw a line of best fit.\n\\newline\n\n(ii) One day the price of petrol was \\$1.55 per litre.\n\\newline\n\nUse your line of best fit to estimate the number of litres sold.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "These are the results for two more days.\n\\newline\n"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q20-Table.tex"
+          },
+          {
+            "type": "text",
+            "content": "Plot this information on the scatter diagram.\n\\newline\n"
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "What type of correlation is shown in the scatter diagram?"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "(i) On the scatter diagram, draw a line of best fit.\n\\newline\n\n\\Marks{1}\n\n(ii) One day the price of petrol was \\$1.55 per litre.\n\\newline\n\\par\nUse your line of best fit to estimate the number of litres sold.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "litres"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The scatter diagram shows the price of petrol per litre and the number of litres sold at a petrol station on each of ten days.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "Figures/Q20-Figure.tex"
+      }
+    ],
+    "_rawBody": "The scatter diagram shows the price of petrol per litre and the number of litres sold at a petrol station on each of ten days.\n\n\\relinput{Figures/Q20-Figure.tex}\n\n\\begin{parts}\n\\item These are the results for two more days.\n\n\\relinput{Figures/Q20-Table.tex}\n\nPlot this information on the scatter diagram.\n\n\\Marks{1}\n\n\\item What type of correlation is shown in the scatter diagram?\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item (i) On the scatter diagram, draw a line of best fit.\n\n\\Marks{1}\n\n(ii) One day the price of petrol was \\$1.55 per litre.\\par\nUse your line of best fit to estimate the number of litres sold.\n\n\\AnswerLine[][litres]\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper11/Q20/Q20-Figure.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper11/Q20/Q20-Table.png"
+    ]
+  },
+  {
+    "id": "0580-2025MayJune-Paper11-Q21",
+    "paper": "2025MayJune-Paper11",
+    "qnum": 21,
+    "marks": 2,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.6",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/11/M/J/25 Q21",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "Points $A$, $B$ and $C$ lie on the circle, centre $O$.\n\\newline\n\nWork out angle $BCA$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Points $A$, $B$ and $C$ lie on the circle, centre $O$.\n\\newline\n"
+      },
+      {
+        "type": "figure",
+        "src": "Figures/Q21.tex"
+      },
+      {
+        "type": "text",
+        "content": "Work out angle $BCA$.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "prefix": "Angle $BCA = $"
+    },
+    "_rawBody": "Points $A$, $B$ and $C$ lie on the circle, centre $O$.\n\n\\relinput{Figures/Q21.tex}\n\nWork out angle $BCA$.\n\n\\vgap\n\n\\AnswerLine[Angle $BCA = $][]\n\\Marks{2}",
+    "_compactMarks": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper11/Q21/Q21.png"
+    ]
+  },
+  {
+    "id": "0580-2025MayJune-Paper11-Q22",
+    "paper": "2025MayJune-Paper11",
+    "qnum": 22,
+    "marks": 3,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.1",
+    "d": 1,
+    "cat": "number",
+    "topic": "Types of number",
+    "qtype": "HCF and LCM calculation",
+    "g": "mixed",
+    "src": "0580/11/M/J/25 Q22",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "$A = 2^3 \\times 3$\n\n$B = 3^2 \\times 5$\n\n(a) Find the highest common factor (HCF) of $A$ and $B$.\n\\newline\n\n(b) Find the lowest common multiple (LCM) of $A$ and $B$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the highest common factor (HCF) of $A$ and $B$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the lowest common multiple (LCM) of $A$ and $B$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "$A = 2^3 \\times 3$\n\n$B = 3^2 \\times 5$"
+      }
+    ],
+    "_rawBody": "$A = 2^3 \\times 3$\n\n$B = 3^2 \\times 5$\n\n\\begin{parts}\n\\item Find the highest common factor (HCF) of $A$ and $B$.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Find the lowest common multiple (LCM) of $A$ and $B$.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper11-Q23",
+    "paper": "2025MayJune-Paper11",
+    "qnum": 23,
+    "marks": 7,
+    "topics": [
+      "Geometry",
+      "Transformations and vectors"
+    ],
+    "s": "4.6",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/11/M/J/25 Q23",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "(a) On the grid, draw the image of triangle $T$ after a rotation, 90° clockwise, centre (0, 0).\n\\newline\n\n(b) Describe fully the single transformation that maps triangle $T$ onto triangle $A$.\n\\newline\n\n(c) Describe fully the single transformation that maps triangle $T$ onto triangle $B$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "On the grid, draw the image of triangle $T$ after a rotation, 90° clockwise, centre (0, 0).\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Describe fully the single transformation that maps triangle $T$ onto triangle $A$.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          }
+        ],
+        "answer": {
+          "type": "none",
+          "space": {
+            "type": "drawing",
+            "height": "2cm",
+            "cmd": "Answerspace"
+          }
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Describe fully the single transformation that maps triangle $T$ onto triangle $B$.\n\\newline\n"
+          },
+          {
+            "type": "space",
+            "height": "0.8em",
+            "cmd": "vgap"
+          }
+        ],
+        "answer": {
+          "type": "none",
+          "space": {
+            "type": "drawing",
+            "height": "2cm",
+            "cmd": "Answerspace"
+          }
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "recall",
+    "cmd": "describe",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q23.tex"
+      }
+    ],
+    "_rawBody": "\\relinput{Figures/Q23.tex}\n\n\\begin{parts}\n\\item On the grid, draw the image of triangle $T$ after a rotation, 90° clockwise, centre (0, 0).\n\n\\vgap\n\n\\Marks{2}\n\n\\item Describe fully the single transformation that maps triangle $T$ onto triangle $A$.\n\n\\vgap\n\n\\Answerspace[2cm]\n\\Marks{2}\n\n\\item Describe fully the single transformation that maps triangle $T$ onto triangle $B$.\n\n\\vgap\n\n\\Answerspace[2cm]\n\\Marks{3}\n\n\\end{parts}",
+    "_compactParts": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2025MayJune/Paper11/Q23/Q23.png"
+    ]
+  },
+  {
+    "id": "0580-2025MayJune-Paper11-Q24",
+    "paper": "2025MayJune-Paper11",
+    "qnum": 24,
+    "marks": 3,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.6",
+    "d": 1,
+    "cat": "number",
+    "topic": "Standard form",
+    "qtype": "addition of mixed numbers",
+    "g": "mixed",
+    "src": "0580/11/M/J/25 Q24",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "Work out\n\n    $$1\\dfrac{1}{3} + 1\\dfrac{3}{4}$$.\n\\newline\n\nGive your answer as a mixed number in its simplest form.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Work out\n\n    $$1\\dfrac{1}{3} + 1\\dfrac{3}{4}$$.\n\\newline\n\n\nGive your answer as a mixed number in its simplest form.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number"
+    },
+    "_rawBody": "Work out\n\n    $$1\\dfrac{1}{3} + 1\\dfrac{3}{4}$$.\n\n\nGive your answer as a mixed number in its simplest form.\n\n\\AnswerLine[][]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper11-Q25",
+    "paper": "2025MayJune-Paper11",
+    "qnum": 25,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.8",
+    "d": 1,
+    "cat": "number",
+    "topic": "Ratio, rate and proportion",
+    "qtype": "conversion to and from standard form",
+    "g": "mixed",
+    "src": "0580/11/M/J/25 Q25",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "(a) Write 32 500 in standard form.\n\\newline\n\n(b) Write $5.6 \\times 10^{-3}$ as an ordinary number.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write 32 500 in standard form.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write $5.6 \\times 10^{-3}$ as an ordinary number.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "write",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Write 32 500 in standard form.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Write $5.6 \\times 10^{-3}$ as an ordinary number.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{parts}",
+    "_compactParts": true
+  },
+  {
+    "id": "0580-2025MayJune-Paper11-Q26",
+    "paper": "2025MayJune-Paper11",
+    "qnum": 26,
+    "marks": 4,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.5",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Equations",
+    "qtype": "solving simultaneous linear equations",
+    "g": "simul-linear",
+    "src": "0580/11/M/J/25 Q26",
+    "year": 2025,
+    "session": "MayJune",
+    "tex": "Solve the simultaneous equations.\n\\newline\n\n$$2x + 5y = 5$$ \n$$3x + 4y = 11$$",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "solve",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Solve the simultaneous equations.\n\\newline\n\n\\begin{center}\n$$2x + 5y = 5$$ \n$$3x + 4y = 11$$\n\\end{center}"
+      }
+    ],
+    "answer": {
+      "type": "multiline",
+      "lines": 2,
+      "template": "$x = $  ____\\n$y = $  ____",
+      "lineSep": "blank"
+    },
+    "_rawBody": "Solve the simultaneous equations.\n\n\\begin{center}\n$$2x + 5y = 5$$ \n$$3x + 4y = 11$$\n\\end{center}\n\n\\AnswerLine[$x = $ ][]\n\n\\AnswerLine[$y = $ ][]\n\n\\Marks{4}"
+  }
+]

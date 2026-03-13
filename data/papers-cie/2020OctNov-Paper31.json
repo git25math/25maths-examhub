@@ -1,0 +1,1339 @@
+[
+  {
+    "id": "0580-2020OctNov-Paper31-Q01",
+    "paper": "2020OctNov-Paper31",
+    "qnum": 1,
+    "marks": 10,
+    "topics": [
+      "Number",
+      "Statistics"
+    ],
+    "s": "1.16",
+    "d": 1,
+    "cat": "number",
+    "topic": "Upper and lower bounds",
+    "qtype": "currency conversion, temperature difference",
+    "g": "mixed",
+    "src": "0580/31/O/N/20 Q01",
+    "year": 2020,
+    "session": "OctNov",
+    "tex": "Sean is the manager of a museum.\n\\newline\n\n(a) He buys a Chinese pot costing 1200 yuan.\n\\newline\nThe exchange rate is \\$1 = 6.4 yuan.\n\\newline\n\nWork out the cost of this pot in dollars.\n\\newline\n\n(b) Sean records the maximum and minimum temperatures, in °C, at the museum.\n\\newline\nSome of the results for one week are shown in the table.\n\\newline\n\n\\begin{table}[h]\n\\begin{tabular}{l|ccccccc}\nDay & Mon & Tue & Wed & Thu & Fri & Sat & Sun \\\\\n\\hline\nMaximum temperature (°C) & 8 & 12 & 15 & 14 & 11 & 7 & 4 \\\\\nMinimum temperature (°C) & -5 & -2 & -4 & -1 & 3 &  &  \\\\\n\\end{tabular}\n\\end{table}\n\n(i) (c) Find the difference between the maximum temperature and the minimum temperature on Wednesday.\n\\newline\n\n(d) The minimum temperature on Saturday was 2 °C higher than the minimum temperature on Monday.\n\\newline\n\nFind the minimum temperature on Saturday.\n\\newline\n\n(e) In this week the range of temperatures was 23 °C.\n\\newline\n\nFind the minimum temperature on Sunday.\n\\newline\n\n(f) These are the opening times for the museum.\n\\newline\n\nMonday to Friday 09 00 to 17 00 \\\\\nSaturday and Sunday 10 00 to 16 00\n\nDuring opening hours the museum has 4 security guards working.\n\\newline\nEach guard works a maximum of 30 hours each week.\n\\newline\n\nWork out the smallest number of guards needed each week.\n\\newline\n\n(g) The entry price to the museum is \\$18.\n\\newline\nThis price is increased by 28\\%.\n\\newline\n\nFind the increased entry price.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "He buys a Chinese pot costing 1200 yuan.\n\\newline\nThe exchange rate is \\$1 = 6.4 yuan.\n\\newline\n\nWork out the cost of this pot in dollars.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "\\$"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Sean records the maximum and minimum temperatures, in °C, at the museum.\n\\newline\nSome of the results for one week are shown in the table.\n\\newline\n\n\\begin{table}[h]\n\\centering"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{tabular}{l|ccccccc}\nDay & Mon & Tue & Wed & Thu & Fri & Sat & Sun \\\\\n\\hline\nMaximum temperature (°C) & 8 & 12 & 15 & 14 & 11 & 7 & 4 \\\\\nMinimum temperature (°C) & -5 & -2 & -4 & -1 & 3 &  &  \\\\\n\\end{tabular}"
+          },
+          {
+            "type": "text",
+            "content": "\\end{table}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the difference between the maximum temperature and the minimum temperature on Wednesday.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "°C"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "The minimum temperature on Saturday was 2 °C higher than the minimum temperature on Monday.\n\\newline\n\nFind the minimum temperature on Saturday.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "°C"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "In this week the range of temperatures was 23 °C.\n\\newline\n\nFind the minimum temperature on Sunday.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "°C"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(c)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "text",
+            "content": "These are the opening times for the museum.\n\\newline\n\nMonday to Friday 09 00 to 17 00 \\\\\nSaturday and Sunday 10 00 to 16 00\n\nDuring opening hours the museum has 4 security guards working.\n\\newline\nEach guard works a maximum of 30 hours each week.\n\\newline\n\nWork out the smallest number of guards needed each week.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "The entry price to the museum is \\$18.\n\\newline\nThis price is increased by 28\\%.\n\\newline\n\nFind the increased entry price.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "\\$"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Sean is the manager of a museum.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "Sean is the manager of a museum.\n\n\\begin{parts}\n\\item He buys a Chinese pot costing 1200 yuan.\nThe exchange rate is \\$1 = 6.4 yuan.\n\nWork out the cost of this pot in dollars.\n\n\\AnswerLine[][\\$]\n\\Marks{1}\n\n\\item Sean records the maximum and minimum temperatures, in °C, at the museum.\nSome of the results for one week are shown in the table.\n\n\\begin{table}[h]\n\\centering\n\\begin{tabular}{l|ccccccc}\nDay & Mon & Tue & Wed & Thu & Fri & Sat & Sun \\\\\n\\hline\nMaximum temperature (°C) & 8 & 12 & 15 & 14 & 11 & 7 & 4 \\\\\nMinimum temperature (°C) & -5 & -2 & -4 & -1 & 3 &  &  \\\\\n\\end{tabular}\n\\end{table}\n\n\\begin{subparts}\n\\item Find the difference between the maximum temperature and the minimum temperature on Wednesday.\n\n\\AnswerLine[][°C]\n\\Marks{1}\n\n\\item The minimum temperature on Saturday was 2 °C higher than the minimum temperature on Monday.\n\nFind the minimum temperature on Saturday.\n\n\\AnswerLine[][°C]\n\\Marks{1}\n\n\\item In this week the range of temperatures was 23 °C.\n\nFind the minimum temperature on Sunday.\n\n\\AnswerLine[][°C]\n\\Marks{1}\n\\end{subparts}\n\n\\item These are the opening times for the museum.\n\nMonday to Friday 09 00 to 17 00 \\\\\nSaturday and Sunday 10 00 to 16 00\n\nDuring opening hours the museum has 4 security guards working.\nEach guard works a maximum of 30 hours each week.\n\nWork out the smallest number of guards needed each week.\n\n\\AnswerLine[][]\n\\Marks{4}\n\n\\item The entry price to the museum is \\$18.\nThis price is increased by 28\\%.\n\nFind the increased entry price.\n\n\\AnswerLine[][\\$]\n\\Marks{2}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2020OctNov-Paper31-Q02",
+    "paper": "2020OctNov-Paper31",
+    "qnum": 2,
+    "marks": 12,
+    "topics": [
+      "Geometry",
+      "Probability",
+      "Statistics"
+    ],
+    "s": "4.6",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/31/O/N/20 Q02",
+    "year": 2020,
+    "session": "OctNov",
+    "tex": "(a) Jian has a fair spinner in the shape of a regular hexagon.\n\\newline\nThe spinner is numbered 2, 2, 3, 4, 4, 5.\n\\newline\n\nJian spins the spinner.\n\\newline\n\n(i) (b) Find the probability that the spinner lands on\n\nan even number,\n\n(c) a number less than 6,\n\n(d) the number 1.\n\\newline\n\n(e) Mei has two fair square spinners, A and B.\n\\newline\nSpinner A is numbered 1, 2, 2, 4 and spinner B is numbered 3, 3, 4, 5.\n\\newline\n\nShe spins both spinners and adds the two numbers.\n\\newline\n\n(i) (f) Complete the table to show all the possible outcomes.\n\\newline\n\n\\begin{table}[h]\n\\begin{tabular}{c|ccccc}\nB & 3 & 3 & 4 & 5 \\\\\n\\hline\nA &  &  &  &  \\\\\n1 & 4 & 4 &  &  \\\\\n2 & 5 & 5 & 6 & 7 \\\\\n2 & 5 & 5 & 6 & 7 \\\\\n4 & 7 & 7 &  &  \\\\\n\\end{tabular}\n\\end{table}\n\n(g) Use the table to write down the probability that the total is\n\n(a) 5,\n\n(b) more than 5.\n\\newline\n\n(h) Ning has a spinner numbered 1 to 6.\n\\newline\nShe spins it 50 times and her results are shown in the table.\n\\newline\n\n\\begin{table}[h]\n\\begin{tabular}{c|c}\nNumber on spinner & Frequency \\\\\n\\hline\n1 & 15 \\\\\n2 & 12 \\\\\n3 & 9 \\\\\n4 & 5 \\\\\n5 & 2 \\\\\n6 & 7 \\\\\n\\end{tabular}\n\\end{table}\n\n(i) (i) Write down the mode.\n\\newline\n\n(j) Find the median.\n\\newline\n\n(k) Work out the mean.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Jian has a fair spinner in the shape of a regular hexagon.\n\\newline\nThe spinner is numbered 2, 2, 3, 4, 4, 5.\n\\newline\n\nJian spins the spinner.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the probability that the spinner lands on\n\nan even number,"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "a number less than 6,"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "the number 1.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Mei has two fair square spinners, A and B.\n\\newline\nSpinner A is numbered 1, 2, 2, 4 and spinner B is numbered 3, 3, 4, 5.\n\\newline\n\nShe spins both spinners and adds the two numbers.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Complete the table to show all the possible outcomes.\n\\newline\n\n\\begin{table}[h]\n\\centering"
+              },
+              {
+                "type": "table",
+                "content": "\\begin{tabular}{c|ccccc}\nB & 3 & 3 & 4 & 5 \\\\\n\\hline\nA &  &  &  &  \\\\\n1 & 4 & 4 &  &  \\\\\n2 & 5 & 5 & 6 & 7 \\\\\n2 & 5 & 5 & 6 & 7 \\\\\n4 & 7 & 7 &  &  \\\\\n\\end{tabular}"
+              },
+              {
+                "type": "text",
+                "content": "\\end{table}"
+              }
+            ]
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Use the table to write down the probability that the total is\n\n(a) 5,\n\n\\AnswerLine[][]\n\\Marks{1}\n\n(b) more than 5.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Ning has a spinner numbered 1 to 6.\n\\newline\nShe spins it 50 times and her results are shown in the table.\n\\newline\n\n\\begin{table}[h]\n\\centering"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{tabular}{c|c}\nNumber on spinner & Frequency \\\\\n\\hline\n1 & 15 \\\\\n2 & 12 \\\\\n3 & 9 \\\\\n4 & 5 \\\\\n5 & 2 \\\\\n6 & 7 \\\\\n\\end{tabular}"
+          },
+          {
+            "type": "text",
+            "content": "\\end{table}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Write down the mode.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the median.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "Work out the mean.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Jian has a fair spinner in the shape of a regular hexagon.\nThe spinner is numbered 2, 2, 3, 4, 4, 5.\n\nJian spins the spinner.\n\n\\begin{subparts}\n\\item Find the probability that the spinner lands on\n\nan even number,\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item a number less than 6,\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item the number 1.\n\n\\AnswerLine[][]\n\\Marks{1}\n\\end{subparts}\n\n\\item Mei has two fair square spinners, A and B.\nSpinner A is numbered 1, 2, 2, 4 and spinner B is numbered 3, 3, 4, 5.\n\nShe spins both spinners and adds the two numbers.\n\n\\begin{subparts}\n\\item Complete the table to show all the possible outcomes.\n\n\\begin{table}[h]\n\\centering\n\\begin{tabular}{c|ccccc}\nB & 3 & 3 & 4 & 5 \\\\\n\\hline\nA &  &  &  &  \\\\\n1 & 4 & 4 &  &  \\\\\n2 & 5 & 5 & 6 & 7 \\\\\n2 & 5 & 5 & 6 & 7 \\\\\n4 & 7 & 7 &  &  \\\\\n\\end{tabular}\n\\end{table}\n\n\\Marks{2}\n\n\\item Use the table to write down the probability that the total is\n\n(a) 5,\n\n\\AnswerLine[][]\n\\Marks{1}\n\n(b) more than 5.\n\n\\AnswerLine[][]\n\\Marks{1}\n\\end{subparts}\n\n\\item Ning has a spinner numbered 1 to 6.\nShe spins it 50 times and her results are shown in the table.\n\n\\begin{table}[h]\n\\centering\n\\begin{tabular}{c|c}\nNumber on spinner & Frequency \\\\\n\\hline\n1 & 15 \\\\\n2 & 12 \\\\\n3 & 9 \\\\\n4 & 5 \\\\\n5 & 2 \\\\\n6 & 7 \\\\\n\\end{tabular}\n\\end{table}\n\n\\begin{subparts}\n\\item Write down the mode.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Find the median.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Work out the mean.\n\n\\AnswerLine[][]\n\\Marks{3}\n\\end{subparts}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "_compactItems": true
+  },
+  {
+    "id": "0580-2020OctNov-Paper31-Q03",
+    "paper": "2020OctNov-Paper31",
+    "qnum": 3,
+    "marks": 11,
+    "topics": [
+      "Number",
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "1.1",
+    "d": 1,
+    "cat": "number",
+    "topic": "Types of number",
+    "qtype": "number properties, reciprocals, standard form, sets",
+    "g": "mixed",
+    "src": "0580/31/O/N/20 Q03",
+    "year": 2020,
+    "session": "OctNov",
+    "tex": "(a) From this list: 8, 15, 18, 33, 39, 41, 51, 57, 60, 81\n\n(i) (b) write down a factor of 54,\n\n(c) a multiple of 19,\n\n(d) a prime number.\n\\newline\n\n(e) Write down the reciprocal of 64.\n\\newline\n\n(f) (i) (g) Write $4.81 \\times 10^{-3}$ as an ordinary number.\n\\newline\n\n(h) Write 75 000 in standard form.\n\\newline\n\n(i) Calculate $\\dfrac{6.3 \\times 10^{2}}{7 \\times 10^{-3}}$.\n\\newline\nWrite your answer in standard form.\n\\newline\n\n(j) (i) (k) $\\xi = \\{2, 4, 8, 16, 32, 64\\}$\n$A = \\{square\\ numbers\\}$\n$B = \\{cube\\ numbers\\}$\n\nUse this information to complete the Venn diagram.\n\\newline\n\n(l) On this Venn diagram, shade the region $P \\cap Q$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "From this list: 8, 15, 18, 33, 39, 41, 51, 57, 60, 81"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "write down a factor of 54,"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "a multiple of 19,"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "a prime number.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down the reciprocal of 64.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Write $4.81 \\times 10^{-3}$ as an ordinary number.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Write 75 000 in standard form.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate $\\dfrac{6.3 \\times 10^{2}}{7 \\times 10^{-3}}$.\n\\newline\nWrite your answer in standard form.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true,
+        "_itemInlineSubparts": true
+      },
+      {
+        "label": "(d)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "$\\xi = \\{2, 4, 8, 16, 32, 64\\}$\n$A = \\{square\\ numbers\\}$\n$B = \\{cube\\ numbers\\}$\n\nUse this information to complete the Venn diagram.\n\\newline\n\n\\begin{tikzpicture}[scale=0.8]\n    \\draw (0,0) circle (2);\n    \\draw (2,0) circle (2);\n    \\node at (-1,0) {A};\n    \\node at (3,0) {B};\n    \\node at (1,0) {$\\xi$};\n\\end{tikzpicture}"
+              }
+            ]
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "On this Venn diagram, shade the region $P \\cap Q$.\n\\newline\n\n\\begin{tikzpicture}[scale=0.8]\n    \\draw (0,0) circle (2);\n    \\draw (2,0) circle (2);\n    \\node at (-1,0) {P};\n    \\node at (3,0) {Q};\n\\end{tikzpicture}"
+              }
+            ]
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true,
+        "_itemInlineSubparts": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "draw",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item From this list: 8, 15, 18, 33, 39, 41, 51, 57, 60, 81\n\n\\begin{subparts}\n\\item write down a factor of 54,\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item a multiple of 19,\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item a prime number.\n\n\\AnswerLine[][]\n\\Marks{1}\n\\end{subparts}\n\n\\item Write down the reciprocal of 64.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item \\begin{subparts}\n\\item Write $4.81 \\times 10^{-3}$ as an ordinary number.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Write 75 000 in standard form.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Calculate $\\dfrac{6.3 \\times 10^{2}}{7 \\times 10^{-3}}$.\nWrite your answer in standard form.\n\n\\AnswerLine[][]\n\\Marks{2}\n\\end{subparts}\n\n\\item \\begin{subparts}\n\\item $\\xi = \\{2, 4, 8, 16, 32, 64\\}$\n$A = \\{square\\ numbers\\}$\n$B = \\{cube\\ numbers\\}$\n\nUse this information to complete the Venn diagram.\n\n\\begin{tikzpicture}[scale=0.8]\n    \\draw (0,0) circle (2);\n    \\draw (2,0) circle (2);\n    \\node at (-1,0) {A};\n    \\node at (3,0) {B};\n    \\node at (1,0) {$\\xi$};\n\\end{tikzpicture}\n\n\\Marks{2}\n\n\\item On this Venn diagram, shade the region $P \\cap Q$.\n\n\\begin{tikzpicture}[scale=0.8]\n    \\draw (0,0) circle (2);\n    \\draw (2,0) circle (2);\n    \\node at (-1,0) {P};\n    \\node at (3,0) {Q};\n\\end{tikzpicture}\n\n\\Marks{1}\n\\end{subparts}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2020OctNov-Paper31-Q04",
+    "paper": "2020OctNov-Paper31",
+    "qnum": 4,
+    "marks": 14,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.5",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Equations",
+    "qtype": "algebraic manipulation, solving linear and simultaneous equations, indices",
+    "g": "simul-linear",
+    "src": "0580/31/O/N/20 Q04",
+    "year": 2020,
+    "session": "OctNov",
+    "tex": "(a) Simplify.\n\\newline\n$6a - 3b + 2a - 4b$\n\n(b) Expand.\n\\newline\n$5(x - 3)$\n\n(c) Solve these equations.\n\\newline\n\n(i) (d) $\\dfrac{x}{3} = 18$\n\n$x =$\n\n(e) $5x + 18 = 8$\n\n$x =$\n\n(f) $12x - 3 = 4x + 21$\n\n$x =$\n\n(g) $6^{10} \\div 6^{x} = 6^{2}$\n\nFind the value of $x$.\n\\newline\n\n$x =$\n\n(h) The Fraser family and the Singh family go to the cinema.\n\\newline\nThe Fraser family buys 6 adult tickets and 2 child tickets for \\$124.\n\\newline\nThe Singh family buys 3 adult tickets and 5 child tickets for \\$100.\n\\newline\n\nFind the price of an adult ticket and the price of a child ticket.\n\\newline\n\nAdult ticket \\$ \n\nChild ticket \\$",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Simplify.\n\\newline\n$6a - 3b + 2a - 4b$"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Expand.\n\\newline\n$5(x - 3)$"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Solve these equations.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "$\\dfrac{x}{3} = 18$\n\n$x =$"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "_compactAnswer": true
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "$5x + 18 = 8$\n\n$x =$"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "_compactAnswer": true
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "$12x - 3 = 4x + 21$\n\n$x =$"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "_compactAnswer": true
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(d)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "$6^{10} \\div 6^{x} = 6^{2}$\n\nFind the value of $x$.\n\\newline\n\n$x =$"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(e)",
+        "marks": 5,
+        "content": [
+          {
+            "type": "text",
+            "content": "The Fraser family and the Singh family go to the cinema.\n\\newline\nThe Fraser family buys 6 adult tickets and 2 child tickets for \\$124.\n\\newline\nThe Singh family buys 3 adult tickets and 5 child tickets for \\$100.\n\\newline\n\nFind the price of an adult ticket and the price of a child ticket.\n\\newline\n\nAdult ticket \\$ \\AnswerLine[]\n\nChild ticket \\$ \\AnswerLine[]"
+          }
+        ],
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Simplify.\n$6a - 3b + 2a - 4b$\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item Expand.\n$5(x - 3)$\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Solve these equations.\n\n\\begin{subparts}\n\\item $\\dfrac{x}{3} = 18$\n\n$x =$\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item $5x + 18 = 8$\n\n$x =$\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item $12x - 3 = 4x + 21$\n\n$x =$\n\\AnswerLine[][]\n\\Marks{2}\n\\end{subparts}\n\n\\item $6^{10} \\div 6^{x} = 6^{2}$\n\nFind the value of $x$.\n\n$x =$\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item The Fraser family and the Singh family go to the cinema.\nThe Fraser family buys 6 adult tickets and 2 child tickets for \\$124.\nThe Singh family buys 3 adult tickets and 5 child tickets for \\$100.\n\nFind the price of an adult ticket and the price of a child ticket.\n\nAdult ticket \\$ \\AnswerLine[]\n\nChild ticket \\$ \\AnswerLine[]\n\\Marks{5}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2020OctNov-Paper31-Q05",
+    "paper": "2020OctNov-Paper31",
+    "qnum": 5,
+    "marks": 13,
+    "topics": [
+      "Number",
+      "Geometry"
+    ],
+    "s": "1.5",
+    "d": 1,
+    "cat": "number",
+    "topic": "Ordering",
+    "qtype": "number writing, powers, fraction/percentage equivalence, ordering FDP",
+    "g": "indices",
+    "src": "0580/31/O/N/20 Q05",
+    "year": 2020,
+    "session": "OctNov",
+    "tex": "(a) Write one hundred and twenty thousand and twenty in figures.\n\\newline\n\n(b) Find the value of $3^{4} \\times 8^{1}$.\n\\newline\n\n(c) (i) (d) Write down the fraction of the rectangle that is shaded.\n\\newline\n\n(e) Find the percentage of the rectangle that is not shaded.\n\\newline\n\n(f) Write these numbers in order, starting with the smallest.\n\\newline\n$\\dfrac{5}{17}$, 27\\%, 0.268, $\\dfrac{7}{29}$\n\n ,  ,  , \n\n(g) Write 0.3728 correct to 1 decimal place.\n\\newline\n\n(h) Write down the value of $19^{0}$.\n\\newline\n\n(i) The height, $h$ metres, of a tower is 128 m, correct to the nearest metre.\n\\newline\n\nComplete the statement about the value of $h$.\n\\newline\n\n$127.5 \\leq h < 128.5$\n\n(j) Find the highest common factor (HCF) of 126 and 180.\n\\newline\n\n(k) Write down an irrational number with a value between 6 and 7.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write one hundred and twenty thousand and twenty in figures.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the value of $3^{4} \\times 8^{1}$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Write down the fraction of the rectangle that is shaded.\n\\newline\n\n\\begin{tikzpicture}[scale=0.5]\n    \\draw (0,0) rectangle (4,2);\n    \\draw (0,0) -- (4,2);\n    \\draw (2,0) -- (2,2);\n    \\node at (1,1) {shaded};\n    \\node at (3,1) {not shaded};\n\\end{tikzpicture}"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the percentage of the rectangle that is not shaded.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "\\%"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true,
+        "_itemInlineSubparts": true
+      },
+      {
+        "label": "(d)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write these numbers in order, starting with the smallest.\n\\newline\n$\\dfrac{5}{17}$, 27\\%, 0.268, $\\dfrac{7}{29}$"
+          }
+        ],
+        "answer": {
+          "type": "multiline",
+          "lines": 4,
+          "template": "____\\n____\\n____\\n____",
+          "lineSep": "blank"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(e)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write 0.3728 correct to 1 decimal place.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(f)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down the value of $19^{0}$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(g)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "The height, $h$ metres, of a tower is 128 m, correct to the nearest metre.\n\\newline\n\nComplete the statement about the value of $h$.\n\\newline\n\n$127.5 \\leq h < 128.5$"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(h)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the highest common factor (HCF) of 126 and 180.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(i)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down an irrational number with a value between 6 and 7.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Write one hundred and twenty thousand and twenty in figures.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Find the value of $3^{4} \\times 8^{1}$.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item \\begin{subparts}\n\\item Write down the fraction of the rectangle that is shaded.\n\n\\begin{tikzpicture}[scale=0.5]\n    \\draw (0,0) rectangle (4,2);\n    \\draw (0,0) -- (4,2);\n    \\draw (2,0) -- (2,2);\n    \\node at (1,1) {shaded};\n    \\node at (3,1) {not shaded};\n\\end{tikzpicture}\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Find the percentage of the rectangle that is not shaded.\n\n\\AnswerLine[][\\%]\n\\Marks{1}\n\\end{subparts}\n\n\\item Write these numbers in order, starting with the smallest.\n$\\dfrac{5}{17}$, 27\\%, 0.268, $\\dfrac{7}{29}$\n\n\\AnswerLine[] , \\AnswerLine[] , \\AnswerLine[] , \\AnswerLine[]\n\\Marks{2}\n\n\\item Write 0.3728 correct to 1 decimal place.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Write down the value of $19^{0}$.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item The height, $h$ metres, of a tower is 128 m, correct to the nearest metre.\n\nComplete the statement about the value of $h$.\n\n$127.5 \\leq h < 128.5$\n\\Marks{2}\n\n\\item Find the highest common factor (HCF) of 126 and 180.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item Write down an irrational number with a value between 6 and 7.\n\n\\AnswerLine[][]\n\\Marks{1}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2020OctNov-Paper31-Q06",
+    "paper": "2020OctNov-Paper31",
+    "qnum": 6,
+    "marks": 8,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.6",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/31/O/N/20 Q06",
+    "year": 2020,
+    "session": "OctNov",
+    "tex": "The diagram shows a right-angled triangular prism.\n\\newline\n\n(a) On the 1 cm$^2$ grid, complete the net of the prism.\n\\newline\nOne face has been drawn for you.\n\\newline\n\n(b) Work out the surface area of the prism.\n\\newline\n\n(c) Work out the volume of the prism.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "On the 1 cm$^2$ grid, complete the net of the prism.\n\\newline\nOne face has been drawn for you.\n\\newline\n\n\\begin{tikzpicture}[scale=0.5]\n    \\draw[step=1cm,gray,very thin] (0,0) grid (6,4);\n    \n    % Draw the given face (triangle)\n    \\draw[thick] (0,0) -- (1.5,2) -- (3,0) -- cycle;\n    \n    % Label the given face\n    \\node at (1.5,1) {3 cm};\n\\end{tikzpicture}"
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Work out the surface area of the prism.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "cm$^2$"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Work out the volume of the prism.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "cm$^3$"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The diagram shows a right-angled triangular prism.\n\\newline\n\n\\begin{tikzpicture}[scale=0.8]\n    % Main prism\n    \\draw[thick] (0,0) -- (3,0) -- (3,4) -- (0,4) -- cycle; % back rectangle\n    \\draw[thick] (0,0) -- (0,4); % left side\n    \\draw[thick] (3,0) -- (3,4); % right side\n    \n    % Front triangle\n    \\draw[thick] (0,0) -- (1.5,2) -- (3,0);\n    \n    % Labels\n    \\node at (1.5,1) {3 cm};\n    \\node at (3.2,2) {4 cm};\n    \\node at (1.5,4.2) {6 cm};\n    \n    \\node at (4,2) {NOT TO SCALE};\n\\end{tikzpicture}"
+      }
+    ],
+    "_rawBody": "The diagram shows a right-angled triangular prism.\n\n\\begin{tikzpicture}[scale=0.8]\n    % Main prism\n    \\draw[thick] (0,0) -- (3,0) -- (3,4) -- (0,4) -- cycle; % back rectangle\n    \\draw[thick] (0,0) -- (0,4); % left side\n    \\draw[thick] (3,0) -- (3,4); % right side\n    \n    % Front triangle\n    \\draw[thick] (0,0) -- (1.5,2) -- (3,0);\n    \n    % Labels\n    \\node at (1.5,1) {3 cm};\n    \\node at (3.2,2) {4 cm};\n    \\node at (1.5,4.2) {6 cm};\n    \n    \\node at (4,2) {NOT TO SCALE};\n\\end{tikzpicture}\n\n\\begin{parts}\n\\item On the 1 cm$^2$ grid, complete the net of the prism.\nOne face has been drawn for you.\n\n\\begin{tikzpicture}[scale=0.5]\n    \\draw[step=1cm,gray,very thin] (0,0) grid (6,4);\n    \n    % Draw the given face (triangle)\n    \\draw[thick] (0,0) -- (1.5,2) -- (3,0) -- cycle;\n    \n    % Label the given face\n    \\node at (1.5,1) {3 cm};\n\\end{tikzpicture}\n\n\\Marks{3}\n\n\\item Work out the surface area of the prism.\n\n\\AnswerLine[][cm$^2$]\n\\Marks{3}\n\n\\item Work out the volume of the prism.\n\n\\AnswerLine[][cm$^3$]\n\\Marks{2}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2020OctNov-Paper31-Q07",
+    "paper": "2020OctNov-Paper31",
+    "qnum": 7,
+    "marks": 9,
+    "topics": [
+      "Geometry",
+      "Mensuration",
+      "Transformations and vectors"
+    ],
+    "s": "4.6",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/31/O/N/20 Q07",
+    "year": 2020,
+    "session": "OctNov",
+    "tex": "(a) The diagram shows an isosceles triangle and a straight line.\n\\newline\n\nWork out the value of $w$.\n\\newline\n\n$w =$\n\n(b) ABCD is a rectangle.\n\\newline\nAE is parallel to DBF.\n\\newline\n\nFind the value of $x$ and the value of $y$.\n\\newline\n\n$x =$\n\n$y =$\n\n(c) A, B and C are points on a circle.\n\\newline\nAC is a diameter of the circle.\n\\newline\n\nFind the value of $a$.\n\\newline\n\n$a =$\n\n(d) Two regular octagons and a square meet at point P.\n\\newline\n\nShow, by calculation, that the three interior angles at P add up to 360°.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "The diagram shows an isosceles triangle and a straight line.\n\\newline\n\n\\begin{tikzpicture}[scale=0.8]\n    \\draw[thick] (0,0) -- (4,0) -- (2,3) -- cycle;\n    \\draw[thick] (1,1.5) -- (3,1.5);\n    \\node at (2,3.2) {$118^\\circ$};\n    \\node at (0.5,1.5) {$w^\\circ$};\n    \\node at (5,1.5) {NOT TO SCALE};\n\\end{tikzpicture}\n\nWork out the value of $w$.\n\\newline\n\n$w =$"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "$^\\circ$",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "ABCD is a rectangle.\n\\newline\nAE is parallel to DBF.\n\\newline\n\n\\begin{tikzpicture}[scale=0.8]\n    \\draw[thick] (0,0) rectangle (4,2);\n    \\draw[thick] (0,0) -- (2,3);\n    \\draw[thick] (4,2) -- (2,3);\n    \\node at (-0.2,-0.2) {A};\n    \\node at (4.2,-0.2) {B};\n    \\node at (4.2,2.2) {C};\n    \\node at (-0.2,2.2) {D};\n    \\node at (2,3.2) {E};\n    \\node at (2,2.8) {F};\n    \\node at (0.8,1) {$31^\\circ$};\n    \\node at (2.5,1.5) {$x^\\circ$};\n    \\node at (3.2,2.5) {$y^\\circ$};\n    \\node at (5,1) {NOT TO SCALE};\n\\end{tikzpicture}\n\nFind the value of $x$ and the value of $y$.\n\\newline\n\n$x =$\n\\AnswerLine[][$^\\circ$]\n\n$y =$"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "$^\\circ$",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "A, B and C are points on a circle.\n\\newline\nAC is a diameter of the circle.\n\\newline\n\n\\begin{tikzpicture}[scale=0.8]\n    \\draw[thick] (0,0) circle (2);\n    \\draw[thick] (0,0) -- (4,0);\n    \\node at (-0.2,-0.2) {A};\n    \\node at (4.2,-0.2) {C};\n    \\node at (2,2.2) {B};\n    \\node at (2,1) {$a^\\circ$};\n    \\node at (2,-0.5) {$53^\\circ$};\n    \\node at (5,1) {NOT TO SCALE};\n\\end{tikzpicture}\n\nFind the value of $a$.\n\\newline\n\n$a =$"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "$^\\circ$",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Two regular octagons and a square meet at point P.\n\\newline\n\n\\begin{tikzpicture}[scale=0.6]\n    \\draw[thick] (0,0) -- (1,0) -- (1,1) -- (0,1) -- cycle; % square\n    \\draw[thick,rotate=22.5] (0,0) -- (1.5,0) -- (1.5,1.5) -- (0,1.5) -- cycle; % octagon approximation\n    \\node at (0.5,0.5) {P};\n    \\node at (2,0.5) {NOT TO SCALE};\n\\end{tikzpicture}\n\nShow, by calculation, that the three interior angles at P add up to 360°.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "none",
+          "space": {
+            "type": "drawing",
+            "height": "4cm",
+            "cmd": "Answerspace"
+          }
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item The diagram shows an isosceles triangle and a straight line.\n\n\\begin{tikzpicture}[scale=0.8]\n    \\draw[thick] (0,0) -- (4,0) -- (2,3) -- cycle;\n    \\draw[thick] (1,1.5) -- (3,1.5);\n    \\node at (2,3.2) {$118^\\circ$};\n    \\node at (0.5,1.5) {$w^\\circ$};\n    \\node at (5,1.5) {NOT TO SCALE};\n\\end{tikzpicture}\n\nWork out the value of $w$.\n\n$w =$\n\\AnswerLine[][$^\\circ$]\n\\Marks{2}\n\n\\item ABCD is a rectangle.\nAE is parallel to DBF.\n\n\\begin{tikzpicture}[scale=0.8]\n    \\draw[thick] (0,0) rectangle (4,2);\n    \\draw[thick] (0,0) -- (2,3);\n    \\draw[thick] (4,2) -- (2,3);\n    \\node at (-0.2,-0.2) {A};\n    \\node at (4.2,-0.2) {B};\n    \\node at (4.2,2.2) {C};\n    \\node at (-0.2,2.2) {D};\n    \\node at (2,3.2) {E};\n    \\node at (2,2.8) {F};\n    \\node at (0.8,1) {$31^\\circ$};\n    \\node at (2.5,1.5) {$x^\\circ$};\n    \\node at (3.2,2.5) {$y^\\circ$};\n    \\node at (5,1) {NOT TO SCALE};\n\\end{tikzpicture}\n\nFind the value of $x$ and the value of $y$.\n\n$x =$\n\\AnswerLine[][$^\\circ$]\n\n$y =$\n\\AnswerLine[][$^\\circ$]\n\\Marks{2}\n\n\\item A, B and C are points on a circle.\nAC is a diameter of the circle.\n\n\\begin{tikzpicture}[scale=0.8]\n    \\draw[thick] (0,0) circle (2);\n    \\draw[thick] (0,0) -- (4,0);\n    \\node at (-0.2,-0.2) {A};\n    \\node at (4.2,-0.2) {C};\n    \\node at (2,2.2) {B};\n    \\node at (2,1) {$a^\\circ$};\n    \\node at (2,-0.5) {$53^\\circ$};\n    \\node at (5,1) {NOT TO SCALE};\n\\end{tikzpicture}\n\nFind the value of $a$.\n\n$a =$\n\\AnswerLine[][$^\\circ$]\n\\Marks{2}\n\n\\item Two regular octagons and a square meet at point P.\n\n\\begin{tikzpicture}[scale=0.6]\n    \\draw[thick] (0,0) -- (1,0) -- (1,1) -- (0,1) -- cycle; % square\n    \\draw[thick,rotate=22.5] (0,0) -- (1.5,0) -- (1.5,1.5) -- (0,1.5) -- cycle; % octagon approximation\n    \\node at (0.5,0.5) {P};\n    \\node at (2,0.5) {NOT TO SCALE};\n\\end{tikzpicture}\n\nShow, by calculation, that the three interior angles at P add up to 360°.\n\n\\Answerspace[4cm]\n\\Marks{3}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2020OctNov-Paper31-Q08",
+    "paper": "2020OctNov-Paper31",
+    "qnum": 8,
+    "marks": 10,
+    "topics": [
+      "Geometry",
+      "Transformations and vectors"
+    ],
+    "s": "4.6",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/31/O/N/20 Q08",
+    "year": 2020,
+    "session": "OctNov",
+    "tex": "(a) Describe fully the single transformation that maps\n\n(i) (b) triangle A onto triangle B.\n\\newline\n\n(c) triangle A onto triangle C.\n\\newline\n\n(d) triangle A onto triangle D.\n\\newline\n\n(e) On the grid, draw the image of triangle A after a reflection in the line $x = -2$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Describe fully the single transformation that maps"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "triangle A onto triangle B.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "multiline",
+              "lines": 2,
+              "template": "____\\n____",
+              "lineSep": "blank"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "triangle A onto triangle C.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "multiline",
+              "lines": 2,
+              "template": "____\\n____",
+              "lineSep": "blank"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "triangle A onto triangle D.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "multiline",
+              "lines": 2,
+              "template": "____\\n____",
+              "lineSep": "blank"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "On the grid, draw the image of triangle A after a reflection in the line $x = -2$.\n\\newline\n\n\\begin{tikzpicture}[scale=0.7]\n    \\draw[step=1cm,gray,very thin] (-6,-6) grid (6,6);\n    \\draw[thick,<->] (-6.5,0) -- (6.5,0) node[right] {$x$};\n    \\draw[thick,<->] (0,-6.5) -- (0,6.5) node[above] {$y$};\n    \n    % Triangle A\n    \\draw[thick,blue] (-4,-3) -- (-1,-3) -- (-2.5,-1) -- cycle;\n    \\node[blue] at (-2.5,-2) {A};\n    \n    % Reflection line x = -2\n    \\draw[thick,dashed] (-2,-6) -- (-2,6);\n    \\node at (-2,6.2) {$x = -2$};\n    \n    \\foreach \\x in {-6,-5,...,6} {\n        \\node[below] at (\\x,-0.1) {\\x};\n    }\n    \\foreach \\y in {-6,-5,...,6} {\n        \\node[left] at (-0.1,\\y) {\\y};\n    }\n\\end{tikzpicture}"
+          }
+        ]
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "describe",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{tikzpicture}[scale=0.7]\n    \\draw[step=1cm,gray,very thin] (-6,-6) grid (6,6);\n    \\draw[thick,<->] (-6.5,0) -- (6.5,0) node[right] {$x$};\n    \\draw[thick,<->] (0,-6.5) -- (0,6.5) node[above] {$y$};\n    \n    % Triangle A\n    \\draw[thick,blue] (-4,-3) -- (-1,-3) -- (-2.5,-1) -- cycle;\n    \\node[blue] at (-2.5,-2) {A};\n    \n    % Triangle B\n    \\draw[thick,red] (1,-3) -- (4,-3) -- (2.5,-1) -- cycle;\n    \\node[red] at (2.5,-2) {B};\n    \n    % Triangle C\n    \\draw[thick,green] (-4,1) -- (-1,1) -- (-2.5,3) -- cycle;\n    \\node[green] at (-2.5,2) {C};\n    \n    % Triangle D\n    \\draw[thick,purple] (1,1) -- (4,1) -- (2.5,3) -- cycle;\n    \\node[purple] at (2.5,2) {D};\n    \n    \\foreach \\x in {-6,-5,...,6} {\n        \\node[below] at (\\x,-0.1) {\\x};\n    }\n    \\foreach \\y in {-6,-5,...,6} {\n        \\node[left] at (-0.1,\\y) {\\y};\n    }\n\\end{tikzpicture}"
+      }
+    ],
+    "_rawBody": "\\begin{tikzpicture}[scale=0.7]\n    \\draw[step=1cm,gray,very thin] (-6,-6) grid (6,6);\n    \\draw[thick,<->] (-6.5,0) -- (6.5,0) node[right] {$x$};\n    \\draw[thick,<->] (0,-6.5) -- (0,6.5) node[above] {$y$};\n    \n    % Triangle A\n    \\draw[thick,blue] (-4,-3) -- (-1,-3) -- (-2.5,-1) -- cycle;\n    \\node[blue] at (-2.5,-2) {A};\n    \n    % Triangle B\n    \\draw[thick,red] (1,-3) -- (4,-3) -- (2.5,-1) -- cycle;\n    \\node[red] at (2.5,-2) {B};\n    \n    % Triangle C\n    \\draw[thick,green] (-4,1) -- (-1,1) -- (-2.5,3) -- cycle;\n    \\node[green] at (-2.5,2) {C};\n    \n    % Triangle D\n    \\draw[thick,purple] (1,1) -- (4,1) -- (2.5,3) -- cycle;\n    \\node[purple] at (2.5,2) {D};\n    \n    \\foreach \\x in {-6,-5,...,6} {\n        \\node[below] at (\\x,-0.1) {\\x};\n    }\n    \\foreach \\y in {-6,-5,...,6} {\n        \\node[left] at (-0.1,\\y) {\\y};\n    }\n\\end{tikzpicture}\n\n\\begin{parts}\n\\item Describe fully the single transformation that maps\n\n\\begin{subparts}\n\\item triangle A onto triangle B.\n\n\\AnswerLine[][]\n\\AnswerLine[][]\n\\Marks{3}\n\n\\item triangle A onto triangle C.\n\n\\AnswerLine[][]\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item triangle A onto triangle D.\n\n\\AnswerLine[][]\n\\AnswerLine[][]\n\\Marks{3}\n\\end{subparts}\n\n\\item On the grid, draw the image of triangle A after a reflection in the line $x = -2$.\n\n\\begin{tikzpicture}[scale=0.7]\n    \\draw[step=1cm,gray,very thin] (-6,-6) grid (6,6);\n    \\draw[thick,<->] (-6.5,0) -- (6.5,0) node[right] {$x$};\n    \\draw[thick,<->] (0,-6.5) -- (0,6.5) node[above] {$y$};\n    \n    % Triangle A\n    \\draw[thick,blue] (-4,-3) -- (-1,-3) -- (-2.5,-1) -- cycle;\n    \\node[blue] at (-2.5,-2) {A};\n    \n    % Reflection line x = -2\n    \\draw[thick,dashed] (-2,-6) -- (-2,6);\n    \\node at (-2,6.2) {$x = -2$};\n    \n    \\foreach \\x in {-6,-5,...,6} {\n        \\node[below] at (\\x,-0.1) {\\x};\n    }\n    \\foreach \\y in {-6,-5,...,6} {\n        \\node[left] at (-0.1,\\y) {\\y};\n    }\n\\end{tikzpicture}\n\n\\Marks{2}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2020OctNov-Paper31-Q09",
+    "paper": "2020OctNov-Paper31",
+    "qnum": 9,
+    "marks": 9,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.10",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Graphs of functions",
+    "qtype": "completing table of values and drawing graph of reciprocal function",
+    "g": "function",
+    "src": "0580/31/O/N/20 Q09",
+    "year": 2020,
+    "session": "OctNov",
+    "tex": "(a) Complete the table of values for $y = \\dfrac{15}{x}$.\n\\newline\n\n\\begin{table}[h]\n\\begin{tabular}{c|cccccc}\n$x$ & -5 & -3 & -2 & -1 & 1 & 2 \\\\\n$y$ &  & -5 &  & 15 &  &  \\\\\n\\end{tabular}\n\\end{table}\n\n(b) On the grid, draw the graph of $y = \\dfrac{15}{x}$ for $-5 \\leq x \\leq -1$ and $1 \\leq x \\leq 5$.\n\\newline\n\n(c) On the grid, draw the line $y = 6$.\n\\newline\n\n(d) Use your graph to solve $\\dfrac{15}{x} = 6$.\n\\newline\n\n$x =$",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Complete the table of values for $y = \\dfrac{15}{x}$.\n\\newline\n\n\\begin{table}[h]\n\\centering"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{tabular}{c|cccccc}\n$x$ & -5 & -3 & -2 & -1 & 1 & 2 \\\\\n$y$ &  & -5 &  & 15 &  &  \\\\\n\\end{tabular}"
+          },
+          {
+            "type": "text",
+            "content": "\\end{table}"
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "text",
+            "content": "On the grid, draw the graph of $y = \\dfrac{15}{x}$ for $-5 \\leq x \\leq -1$ and $1 \\leq x \\leq 5$.\n\\newline\n\n\\begin{tikzpicture}[scale=0.6]\n    \\draw[step=1cm,gray,very thin] (-5,-16) grid (5,16);\n    \\draw[thick,<->] (-5.5,0) -- (5.5,0) node[right] {$x$};\n    \\draw[thick,<->] (0,-16.5) -- (0,16.5) node[above] {$y$};\n    \n    \\foreach \\x in {-5,-4,...,5} {\n        \\node[below] at (\\x,-0.3) {\\x};\n    }\n    \\foreach \\y in {-15,-12,-10,-8,-6,-4,-2,2,4,6,8,10,12,15} {\n        \\node[left] at (-0.3,\\y) {\\y};\n    }\n\\end{tikzpicture}"
+          }
+        ]
+      },
+      {
+        "label": "(c)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "On the grid, draw the line $y = 6$.\n\\newline\n"
+          }
+        ]
+      },
+      {
+        "label": "(d)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Use your graph to solve $\\dfrac{15}{x} = 6$.\n\\newline\n\n$x =$"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Complete the table of values for $y = \\dfrac{15}{x}$.\n\n\\begin{table}[h]\n\\centering\n\\begin{tabular}{c|cccccc}\n$x$ & -5 & -3 & -2 & -1 & 1 & 2 \\\\\n$y$ &  & -5 &  & 15 &  &  \\\\\n\\end{tabular}\n\\end{table}\n\n\\Marks{3}\n\n\\item On the grid, draw the graph of $y = \\dfrac{15}{x}$ for $-5 \\leq x \\leq -1$ and $1 \\leq x \\leq 5$.\n\n\\begin{tikzpicture}[scale=0.6]\n    \\draw[step=1cm,gray,very thin] (-5,-16) grid (5,16);\n    \\draw[thick,<->] (-5.5,0) -- (5.5,0) node[right] {$x$};\n    \\draw[thick,<->] (0,-16.5) -- (0,16.5) node[above] {$y$};\n    \n    \\foreach \\x in {-5,-4,...,5} {\n        \\node[below] at (\\x,-0.3) {\\x};\n    }\n    \\foreach \\y in {-15,-12,-10,-8,-6,-4,-2,2,4,6,8,10,12,15} {\n        \\node[left] at (-0.3,\\y) {\\y};\n    }\n\\end{tikzpicture}\n\n\\Marks{4}\n\n\\item On the grid, draw the line $y = 6$.\n\n\\Marks{1}\n\n\\item Use your graph to solve $\\dfrac{15}{x} = 6$.\n\n$x =$\n\\AnswerLine[][]\n\\Marks{1}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2020OctNov-Paper31-Q10",
+    "paper": "2020OctNov-Paper31",
+    "qnum": 10,
+    "marks": 8,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.7",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Sequences",
+    "qtype": "sequences, finding nth term, term-to-term rule, and terms from nth term",
+    "g": "sequence",
+    "src": "0580/31/O/N/20 Q10",
+    "year": 2020,
+    "session": "OctNov",
+    "tex": "(a) These are the first four terms of a sequence.\n\\newline\n\n8, 15, 22, 29\n\n(i) (b) Write down the next term.\n\\newline\n\n(c) Write down the term-to-term rule for continuing this sequence.\n\\newline\n\n(d) Find an expression for the $n$th term.\n\\newline\n\n(e) Find the next term in each of these sequences.\n\\newline\n\n(i) (f) 18, 21, 26, 33, 42, \\dots\n\n(g) 18, 20, 24, 32, 48, \\dots\n\n(h) Find the first three terms of the sequence with $n$th term $n^{2} + 5n$.\n\\newline\n\n ,  ,",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "These are the first four terms of a sequence.\n\\newline\n\n8, 15, 22, 29"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Write down the next term.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Write down the term-to-term rule for continuing this sequence.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find an expression for the $n$th term.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the next term in each of these sequences.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "18, 21, 26, 33, 42, \\dots"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "18, 20, 24, 32, 48, \\dots"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the first three terms of the sequence with $n$th term $n^{2} + 5n$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "multiline",
+          "lines": 3,
+          "template": "____\\n____\\n____",
+          "lineSep": "blank"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item These are the first four terms of a sequence.\n\n8, 15, 22, 29\n\n\\begin{subparts}\n\\item Write down the next term.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Write down the term-to-term rule for continuing this sequence.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Find an expression for the $n$th term.\n\n\\AnswerLine[][]\n\\Marks{2}\n\\end{subparts}\n\n\\item Find the next term in each of these sequences.\n\n\\begin{subparts}\n\\item 18, 21, 26, 33, 42, \\dots\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item 18, 20, 24, 32, 48, \\dots\n\n\\AnswerLine[][]\n\\Marks{1}\n\\end{subparts}\n\n\\item Find the first three terms of the sequence with $n$th term $n^{2} + 5n$.\n\n\\AnswerLine[] , \\AnswerLine[] , \\AnswerLine[]\n\\Marks{2}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  }
+]

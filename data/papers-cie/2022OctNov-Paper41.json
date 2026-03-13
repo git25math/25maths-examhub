@@ -1,0 +1,1376 @@
+[
+  {
+    "id": "0580-2022OctNov-Paper41-Q01",
+    "paper": "2022OctNov-Paper41",
+    "qnum": 1,
+    "marks": 15,
+    "topics": [
+      "Mensuration"
+    ],
+    "s": "5.4",
+    "d": 2,
+    "cat": "mensuration",
+    "topic": "Volume",
+    "qtype": "surface area and volume",
+    "g": "mixed",
+    "src": "0580/41/O/N/22 Q01",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "(a) \nCalculate the volume of\n\n(i)  a solid cylinder with radius $6\\,\\text{cm}$ and height $14\\,\\text{cm}$,\n\n a solid hemisphere with radius $6\\,\\text{cm}$.\n\\newline\n\n[The volume, $V$, of a sphere with radius $r$ is $V = \\frac{4}{3}\\pi r^3$.\n\\newline\n]\n\nt\n\nThe cylinder and hemisphere in **part (a)** are joined to form the solid in the diagram.\n\\newline\n\nThe solid is made of steel and $1\\,\\text{cm}^3$ of steel has a mass of $7.85\\,\\text{g}$.\n\\newline\n\n(i)  Show that $1\\,\\text{cm}^3$ of steel has a mass of $0.00785\\,\\text{kg}$.\n\\newline\n\n Calculate the total mass of the solid.\n\\newline\n\n$2000\\,\\text{cm}^3$ of iron is melted down and some of it is used to make 50 spheres with radius $2\\,\\text{cm}$.\n\\newline\n\n(i)  Calculate the percentage of iron that is left over.\n\\newline\n\n[The volume, $V$, of a sphere with radius $r$ is $V = \\frac{4}{3}\\pi r^3$.\n\\newline\n]\n\n The iron left over is then made into a cube.\n\\newline\n\nCalculate the length of an edge of the cube.\n\\newline\n\nA solid cone has radius $3R\\,\\text{cm}$ and slant height $9R\\,\\text{cm}$.\n\\newline\n\nA solid cylinder has radius $x\\,\\text{cm}$ and height $7x\\,\\text{cm}$.\n\\newline\n\nThe **total** surface area of the cone is equal to the **total** surface area of the cylinder.\n\\newline\n\nGiven that $R = kx$, find the value of $k$.\n\\newline\n\n[The curved surface area, $A$, of a cone with radius $r$ and slant height $l$ is $A = \\pi rl$.\n\\newline\n]",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Calculate the volume of"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "a solid cylinder with radius $6\\,\\text{cm}$ and height $14\\,\\text{cm}$,"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "cm$^3$"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "a solid hemisphere with radius $6\\,\\text{cm}$.\n\\newline\n\n[The volume, $V$, of a sphere with radius $r$ is $V = \\frac{4}{3}\\pi r^3$.\n\\newline\n]"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "cm$^3$"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper41/Q01/Q01b.png"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q01a-CylinderHemisphere.tex"
+          },
+          {
+            "type": "text",
+            "content": "The cylinder and hemisphere in \\textbf{part (a)} are joined to form the solid in the diagram.\n\\newline\n\nThe solid is made of steel and $1\\,\\text{cm}^3$ of steel has a mass of $7.85\\,\\text{g}$.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Show that $1\\,\\text{cm}^3$ of steel has a mass of $0.00785\\,\\text{kg}$.\n\\newline\n"
+              }
+            ],
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate the total mass of the solid.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "kg"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ],
+        "_itemNewline": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "$2000\\,\\text{cm}^3$ of iron is melted down and some of it is used to make 50 spheres with radius $2\\,\\text{cm}$.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate the percentage of iron that is left over.\n\\newline\n\n[The volume, $V$, of a sphere with radius $r$ is $V = \\frac{4}{3}\\pi r^3$.\n\\newline\n]"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "\\%"
+            },
+            "marks": 3,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "The iron left over is then made into a cube.\n\\newline\n\nCalculate the length of an edge of the cube.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "cm"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          }
+        ]
+      },
+      {
+        "label": "(d)",
+        "content": [
+          {
+            "type": "text",
+            "content": "A solid cone has radius $3R\\,\\text{cm}$ and slant height $9R\\,\\text{cm}$.\n\\newline\n\nA solid cylinder has radius $x\\,\\text{cm}$ and height $7x\\,\\text{cm}$.\n\\newline\n\nThe \\textbf{total} surface area of the cone is equal to the \\textbf{total} surface area of the cylinder.\n\\newline\n\nGiven that $R = kx$, find the value of $k$.\n\\newline\n\n[The curved surface area, $A$, of a cone with radius $r$ and slant height $l$ is $A = \\pi rl$.\n\\newline\n]"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$k =$"
+        },
+        "marks": 4,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "analyse",
+    "cmd": "show",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\part Calculate the volume of\n\n\\begin{subparts}\n\\subpart a solid cylinder with radius 6\\,cm and height 14\\,cm,\n\n\\AnswerLine[][cm$^3$]\n\\Marks{2}\n\n\\subpart a solid hemisphere with radius 6\\,cm.\n\n[The volume, $V$, of a sphere with radius $r$ is $V = \\frac{4}{3}\\pi r^3$.]\n\n\\AnswerLine[][cm$^3$]\n\\Marks{2}\n\n\\end{subparts}\n\n\\part\n\\relinput{Figures/Q01a-CylinderHemisphere.tex}\n\nThe cylinder and hemisphere in \\textbf{part (a)} are joined to form the solid in the diagram.\n\nThe solid is made of steel and 1\\,cm$^3$ of steel has a mass of 7.85\\,g.\n\n\\begin{subparts}\n\\subpart Show that 1\\,cm$^3$ of steel has a mass of 0.00785\\,kg.\n\\Marks{1}\n\n\\subpart Calculate the total mass of the solid.\n\n\\AnswerLine[][kg]\n\\Marks{2}\n\n\\end{subparts}\n\n\\part 2000\\,cm$^3$ of iron is melted down and some of it is used to make 50 spheres with radius 2\\,cm.\n\n\\begin{subparts}\n\\subpart Calculate the percentage of iron that is left over.\n\n[The volume, $V$, of a sphere with radius $r$ is $V = \\frac{4}{3}\\pi r^3$.]\n\n\\AnswerLine[][\\%]\n\\Marks{3}\n\n\\subpart The iron left over is then made into a cube.\n\nCalculate the length of an edge of the cube.\n\n\\AnswerLine[][cm]\n\\Marks{1}\n\n\\end{subparts}\n\n\\part A solid cone has radius $3R$\\,cm and slant height $9R$\\,cm.\n\nA solid cylinder has radius $x$\\,cm and height $7x$\\,cm.\n\nThe \\textbf{total} surface area of the cone is equal to the \\textbf{total} surface area of the cylinder.\n\nGiven that $R = kx$, find the value of $k$.\n\n[The curved surface area, $A$, of a cone with radius $r$ and slant height $l$ is $A = \\pi rl$.]\n\n\\AnswerLine[$k =$][]\n\\Marks{4}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper41/Q01/Q01a-CylinderHemisphere.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper41/Q01/Q01b.png"
+    ]
+  },
+  {
+    "id": "0580-2022OctNov-Paper41-Q02",
+    "paper": "2022OctNov-Paper41",
+    "qnum": 2,
+    "marks": 10,
+    "topics": [
+      "Number",
+      "Algebra and graphs"
+    ],
+    "s": "2.4",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Algebraic fractions",
+    "qtype": "indices manipulation, standard form operations",
+    "g": "indices",
+    "src": "0580/41/O/N/22 Q02",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "(a) \nWrite\n\n(i)  2994.99 correct to the nearest 10,\n\n 0.983 correct to 1 decimal place,\n\n 2090 correct to 2 significant figures.\n\\newline\n\nWrite down a prime number between 90 and 100.\n\\newline\n\nWrite $2^{-6}$ as a fraction.\n\\newline\n\nWrite 0.00701 in standard form.\n\\newline\n\nSimplify $1.5 \\times 10^x + 1.5 \\times 10^{x-1}$ giving your answer in standard form.\n\\newline\n\nWrite $0.3\\dot{7}$ as a fraction.\n\\newline\n\nYou must show all your working.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Write"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "2994.99 correct to the nearest 10,"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "0.983 correct to 1 decimal place,"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "2090 correct to 2 significant figures.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down a prime number between 90 and 100.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "marks": 1,
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Write $2^{-6}$ as a fraction.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "marks": 1,
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Write 0.00701 in standard form.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "marks": 1,
+        "_compactMarks": true
+      },
+      {
+        "label": "(e)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Simplify $1.5 \\times 10^x + 1.5 \\times 10^{x-1}$ giving your answer in standard form.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "marks": 2,
+        "_compactMarks": true
+      },
+      {
+        "label": "(f)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Write $0.3\\dot{7}$ as a fraction.\n\\newline\n\nYou must show all your working.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "marks": 2,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "simplify",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\part Write\n\n\\begin{subparts}\n\\subpart 2994.99 correct to the nearest 10,\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\subpart 0.983 correct to 1 decimal place,\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\subpart 2090 correct to 2 significant figures.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{subparts}\n\n\\part Write down a prime number between 90 and 100.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\part Write $2^{-6}$ as a fraction.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\part Write 0.00701 in standard form.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\part Simplify $1.5 \\times 10^x + 1.5 \\times 10^{x-1}$ giving your answer in standard form.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\part Write $0.3\\dot{7}$ as a fraction.\n\nYou must show all your working.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper41-Q03",
+    "paper": "2022OctNov-Paper41",
+    "qnum": 3,
+    "marks": 13,
+    "topics": [
+      "Number",
+      "Algebra and graphs",
+      "Geometry"
+    ],
+    "s": "2.6",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Inequalities",
+    "qtype": "solving linear inequalities, linear equations with fractions",
+    "g": "linear",
+    "src": "0580/41/O/N/22 Q03",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "(a) \nt\n\nWrite down the inequality shown by the number line.\n\\newline\n\n$-3 \\leqslant 2x + 3 < 9$\n\n(i)  Solve the inequality.\n\\newline\n\n Write down all the integer values of $x$ that satisfy the inequality.\n\\newline\n\nSolve the equations.\n\\newline\n\n(i)  $\\displaystyle 3(3 - x) - \\frac{2(x + 2)}{5} = 1$\n\n $\\displaystyle \\frac{5}{x + 3} = \\frac{3}{x + 5}$",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper41/Q03/Q03a.png"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q03a-NumberLine.tex"
+          },
+          {
+            "type": "text",
+            "content": "Write down the inequality shown by the number line.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "marks": 1,
+        "_compactMarks": true,
+        "_itemNewline": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "$-3 \\leqslant 2x + 3 < 9$"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Solve the inequality.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 3,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Write down all the integer values of $x$ that satisfy the inequality.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ]
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Solve the equations.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "$\\displaystyle 3(3 - x) - \\frac{2(x + 2)}{5} = 1$"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$x =$"
+            },
+            "marks": 4,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "$\\displaystyle \\frac{5}{x + 3} = \\frac{3}{x + 5}$"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$x =$"
+            },
+            "marks": 3,
+            "_compactMarks": true
+          }
+        ]
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "solve",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\part\n\\relinput{Figures/Q03a-NumberLine.tex}\n\nWrite down the inequality shown by the number line.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\part $-3 \\leqslant 2x + 3 < 9$\n\n\\begin{subparts}\n\\subpart Solve the inequality.\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\subpart Write down all the integer values of $x$ that satisfy the inequality.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{subparts}\n\n\\part Solve the equations.\n\n\\begin{subparts}\n\\subpart $\\displaystyle 3(3 - x) - \\frac{2(x + 2)}{5} = 1$\n\n\\AnswerLine[$x =$][]\n\\Marks{4}\n\n\\subpart $\\displaystyle \\frac{5}{x + 3} = \\frac{3}{x + 5}$\n\n\\AnswerLine[$x =$][]\n\\Marks{3}\n\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper41/Q03/Q03a-NumberLine.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper41/Q03/Q03a.png"
+    ]
+  },
+  {
+    "id": "0580-2022OctNov-Paper41-Q04",
+    "paper": "2022OctNov-Paper41",
+    "qnum": 4,
+    "marks": 14,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.13",
+    "d": 2,
+    "cat": "number",
+    "topic": "Electronic calculators",
+    "qtype": "simple and compound interest, comparison of investment growth, exponential depreciation",
+    "g": "mixed",
+    "src": "0580/41/O/N/22 Q04",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "(a) \nt\n(i)  Zak invests \\$500 at a rate of 2\\% per year simple interest.\n\\newline\n\nCalculate the value of Zak's investment at the end of 5 years.\n\\newline\n\n Yasmin invests \\$500 at a rate of 1.8\\% per year compound interest.\n\\newline\n\nCalculate the value of Yasmin's investment at the end of 5 years.\n\\newline\n\n Zak and Yasmin continue with these investments.\n\\newline\n\nHow many **more complete** years is it before the value of Yasmin's investment is greater than the value of Zak's investment?\n\nXavier buys a car for \\$2500.\n\\newline\n\nThe value of the car decreases exponentially at a rate of 10\\% each year.\n\\newline\n\nCalculate the value of Xavier's car at the end of 5 years.\n\\newline\n\nGive your answer correct to the nearest dollar.\n\\newline\n\nThe number of a certain type of bacteria increases exponentially at a rate of $r$\\% each day.\n\\newline\n\nAfter 22 days, the number of this bacteria has doubled.\n\\newline\n\nFind the value of $r$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Zak invests \\$500 at a rate of 2\\% per year simple interest.\n\\newline\n\nCalculate the value of Zak's investment at the end of 5 years.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "\\$"
+            },
+            "marks": 3,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Yasmin invests \\$500 at a rate of 1.8\\% per year compound interest.\n\\newline\n\nCalculate the value of Yasmin's investment at the end of 5 years.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "\\$"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Zak and Yasmin continue with these investments.\n\\newline\n\nHow many \\textbf{more complete} years is it before the value of Yasmin's investment is greater than the value of Zak's investment?"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 3,
+            "_compactMarks": true
+          }
+        ],
+        "_itemNewline": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Xavier buys a car for \\$2500.\n\\newline\n\nThe value of the car decreases exponentially at a rate of 10\\% each year.\n\\newline\n\nCalculate the value of Xavier's car at the end of 5 years.\n\\newline\n\nGive your answer correct to the nearest dollar.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "\\$"
+        },
+        "marks": 3,
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The number of a certain type of bacteria increases exponentially at a rate of $r$\\% each day.\n\\newline\n\nAfter 22 days, the number of this bacteria has doubled.\n\\newline\n\nFind the value of $r$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$r =$"
+        },
+        "marks": 3,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\part\n\\begin{subparts}\n\\subpart Zak invests \\$500 at a rate of 2\\% per year simple interest.\n\nCalculate the value of Zak's investment at the end of 5 years.\n\n\\AnswerLine[\\$][]\n\\Marks{3}\n\n\\subpart Yasmin invests \\$500 at a rate of 1.8\\% per year compound interest.\n\nCalculate the value of Yasmin's investment at the end of 5 years.\n\n\\AnswerLine[\\$][]\n\\Marks{2}\n\n\\subpart Zak and Yasmin continue with these investments.\n\nHow many \\textbf{more complete} years is it before the value of Yasmin's investment is greater than the value of Zak's investment?\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\end{subparts}\n\n\\part Xavier buys a car for \\$2500.\n\nThe value of the car decreases exponentially at a rate of 10\\% each year.\n\nCalculate the value of Xavier's car at the end of 5 years.\n\nGive your answer correct to the nearest dollar.\n\n\\AnswerLine[\\$][]\n\\Marks{3}\n\n\\part The number of a certain type of bacteria increases exponentially at a rate of $r$\\% each day.\n\nAfter 22 days, the number of this bacteria has doubled.\n\nFind the value of $r$.\n\n\\AnswerLine[$r =$][]\n\\Marks{3}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper41-Q05",
+    "paper": "2022OctNov-Paper41",
+    "qnum": 5,
+    "marks": 14,
+    "topics": [
+      "Transformations and vectors",
+      "Probability",
+      "Statistics"
+    ],
+    "s": "7.1",
+    "d": 2,
+    "cat": "vectors",
+    "topic": "Translation",
+    "qtype": "transformations",
+    "g": "mixed",
+    "src": "0580/41/O/N/22 Q05",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "(a) \n100 students each record the time, $t$ minutes, taken to eat a pizza.\n\\newline\n\nThe cumulative frequency diagram shows the results.\n\\newline\n\nFind an estimate of\n\n(i)  the median,\n\n the interquartile range,\n\n the number of students taking more than 11 minutes to eat a pizza.\n\\newline\n\n150 students each record how far they can throw a tennis ball.\n\\newline\n\nThe table shows the results.\n\\newline\n\n\\begin{tabular}{|c|c|c|c|c|c|}\n\\hline\nDistance ($d$ metres) & $0 < d \\leqslant 20$ & $20 < d \\leqslant 30$ & $30 < d \\leqslant 35$ & $35 < d \\leqslant 45$ & $45 < d \\leqslant 60$ \\\\\n\\hline\nFrequency & 4 & 38 & 40 & 53 & 15 \\\\\n\\hline\n\\end{tabular}\n(i)  Calculate an estimate of the mean.\n\\newline\n\n A histogram is drawn to show this information.\n\\newline\n\nThe height of the bar representing $30 < d \\leqslant 35$ is $12\\,\\text{cm}$.\n\\newline\n\nCalculate the height of each of the other bars.\n\\newline\n\n\\begin{tabular}{|c|c|c|}\n\\hline\nDistance ($d$ metres) & Frequency & Height of bar (cm) \\\\\n\\hline\n$0 < d \\leqslant 20$ & 4 & \\\\\n\\hline\n$20 < d \\leqslant 30$ & 38 & \\\\\n\\hline\n$30 < d \\leqslant 35$ & 40 & 12 \\\\\n\\hline\n$35 < d \\leqslant 45$ & 53 & \\\\\n\\hline\n$45 < d \\leqslant 60$ & 15 & \\\\\n\\hline\n\\end{tabular}\n\n Two students are chosen at random.\n\\newline\n\nFind the probability that they both threw the ball more than $45\\,\\text{m}$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper41/Q05/Q05a.png"
+          },
+          {
+            "type": "text",
+            "content": "100 students each record the time, $t$ minutes, taken to eat a pizza.\n\\newline\n\nThe cumulative frequency diagram shows the results.\n\\newline\n"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q05a-CumulativeFreq.tex"
+          },
+          {
+            "type": "text",
+            "content": "Find an estimate of"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "the median,"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "min"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "the interquartile range,"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "min"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "the number of students taking more than 11 minutes to eat a pizza.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper41/Q05/Q05b.png"
+          },
+          {
+            "type": "text",
+            "content": "150 students each record how far they can throw a tennis ball.\n\\newline\n\nThe table shows the results.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|c|}\n\\hline\nDistance ($d$ metres) & $0 < d \\leqslant 20$ & $20 < d \\leqslant 30$ & $30 < d \\leqslant 35$ & $35 < d \\leqslant 45$ & $45 < d \\leqslant 60$ \\\\\n\\hline\nFrequency & 4 & 38 & 40 & 53 & 15 \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate an estimate of the mean.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "m"
+            },
+            "marks": 4,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "A histogram is drawn to show this information.\n\\newline\n\nThe height of the bar representing $30 < d \\leqslant 35$ is $12\\,\\text{cm}$.\n\\newline\n\nCalculate the height of each of the other bars.\n\\newline\n"
+              },
+              {
+                "type": "table",
+                "content": "\\begin{center}\n\\begin{tabular}{|c|c|c|}\n\\hline\nDistance ($d$ metres) & Frequency & Height of bar (cm) \\\\\n\\hline\n$0 < d \\leqslant 20$ & 4 & \\\\\n\\hline\n$20 < d \\leqslant 30$ & 38 & \\\\\n\\hline\n$30 < d \\leqslant 35$ & 40 & 12 \\\\\n\\hline\n$35 < d \\leqslant 45$ & 53 & \\\\\n\\hline\n$45 < d \\leqslant 60$ & 15 & \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+              }
+            ],
+            "marks": 3,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Two students are chosen at random.\n\\newline\n\nFind the probability that they both threw the ball more than $45\\,\\text{m}$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ]
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper41/Q05/Q05bii.png"
+      }
+    ],
+    "_rawBody": "\\begin{parts}\n\\part 100 students each record the time, $t$ minutes, taken to eat a pizza.\n\nThe cumulative frequency diagram shows the results.\n\n\\relinput{Figures/Q05a-CumulativeFreq.tex}\n\nFind an estimate of\n\n\\begin{subparts}\n\\subpart the median,\n\n\\AnswerLine[][min]\n\\Marks{1}\n\n\\subpart the interquartile range,\n\n\\AnswerLine[][min]\n\\Marks{2}\n\n\\subpart the number of students taking more than 11 minutes to eat a pizza.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{subparts}\n\n\\part 150 students each record how far they can throw a tennis ball.\n\nThe table shows the results.\n\n\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|c|}\n\\hline\nDistance ($d$ metres) & $0 < d \\leqslant 20$ & $20 < d \\leqslant 30$ & $30 < d \\leqslant 35$ & $35 < d \\leqslant 45$ & $45 < d \\leqslant 60$ \\\\\n\\hline\nFrequency & 4 & 38 & 40 & 53 & 15 \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n\\begin{subparts}\n\\subpart Calculate an estimate of the mean.\n\n\\AnswerLine[][m]\n\\Marks{4}\n\n\\subpart A histogram is drawn to show this information.\n\nThe height of the bar representing $30 < d \\leqslant 35$ is 12\\,cm.\n\nCalculate the height of each of the other bars.\n\n\\begin{center}\n\\begin{tabular}{|c|c|c|}\n\\hline\nDistance ($d$ metres) & Frequency & Height of bar (cm) \\\\\n\\hline\n$0 < d \\leqslant 20$ & 4 & \\\\\n\\hline\n$20 < d \\leqslant 30$ & 38 & \\\\\n\\hline\n$30 < d \\leqslant 35$ & 40 & 12 \\\\\n\\hline\n$35 < d \\leqslant 45$ & 53 & \\\\\n\\hline\n$45 < d \\leqslant 60$ & 15 & \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\\Marks{3}\n\n\\subpart Two students are chosen at random.\n\nFind the probability that they both threw the ball more than 45\\,m.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{subparts}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true,
+    "_compactItems": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper41/Q05/Q05a-CumulativeFreq.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper41/Q05/Q05a.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper41/Q05/Q05b.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper41/Q05/Q05bii.png"
+    ]
+  },
+  {
+    "id": "0580-2022OctNov-Paper41-Q06",
+    "paper": "2022OctNov-Paper41",
+    "qnum": 6,
+    "marks": 10,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry",
+      "Transformations and vectors"
+    ],
+    "s": "3.4",
+    "d": 2,
+    "cat": "coord",
+    "topic": "Equation of a line",
+    "qtype": "length and midpoint",
+    "g": "mixed",
+    "src": "0580/41/O/N/22 Q06",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "(a) \n$\\mathbf{p} = \\begin{pmatrix} 2 \\\\ 3 \\end{pmatrix}$ \\qquad $\\mathbf{q} = \\begin{pmatrix} -1 \\\\ 1 \\end{pmatrix}$\n\nFind\n\n(i)  $3\\mathbf{q}$,\n\n $\\mathbf{p} - \\mathbf{q}$,\n\n $|\\mathbf{p}|$.\n\\newline\n\n$B$ is the point $(2, 7)$ and $\\overrightarrow{AB} = \\begin{pmatrix} -4 \\\\ 6 \\end{pmatrix}$.\n\\newline\n\nFind the coordinates of $A$.\n\\newline\n\n{---} ,  )][]\n\nt\n\nIn triangle $OGH$, $M$ is the midpoint of $OH$ and $K$ divides $GH$ in the ratio $5:2$.\n\\newline\n\n$\\overrightarrow{OG} = \\mathbf{g}$ and $\\overrightarrow{OH} = \\mathbf{h}$.\n\\newline\n\nFind $\\overrightarrow{MK}$ in terms of $\\mathbf{g}$ and $\\mathbf{h}$.\n\\newline\n\nGive your answer in its simplest form.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "$\\mathbf{p} = \\begin{pmatrix} 2 \\\\ 3 \\end{pmatrix}$ \\qquad $\\mathbf{q} = \\begin{pmatrix} -1 \\\\ 1 \\end{pmatrix}$\n\nFind"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "$3\\mathbf{q}$,"
+              }
+            ],
+            "answer": {
+              "type": "vector",
+              "fields": 2,
+              "prefix": "$\\begin{pmatrix} \\phantom{00} \\\\ \\phantom{00} \\end{pmatrix}$"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "$\\mathbf{p} - \\mathbf{q}$,"
+              }
+            ],
+            "answer": {
+              "type": "vector",
+              "fields": 2,
+              "prefix": "$\\begin{pmatrix} \\phantom{00} \\\\ \\phantom{00} \\end{pmatrix}$"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "$|\\mathbf{p}|$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "$B$ is the point $(2, 7)$ and $\\overrightarrow{AB} = \\begin{pmatrix} -4 \\\\ 6 \\end{pmatrix}$.\n\\newline\n\nFind the coordinates of $A$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "( \\makebox[1cm]{\\hrulefill} , \\makebox[1cm]{\\hrulefill} )"
+        },
+        "marks": 2,
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper41/Q06/Q06c.png"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q06a-TriangleOGH.tex"
+          },
+          {
+            "type": "text",
+            "content": "In triangle $OGH$, $M$ is the midpoint of $OH$ and $K$ divides $GH$ in the ratio $5:2$.\n\\newline\n\n$\\overrightarrow{OG} = \\mathbf{g}$ and $\\overrightarrow{OH} = \\mathbf{h}$.\n\\newline\n\nFind $\\overrightarrow{MK}$ in terms of $\\mathbf{g}$ and $\\mathbf{h}$.\n\\newline\n\nGive your answer in its simplest form.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$\\overrightarrow{MK} =$"
+        },
+        "marks": 4,
+        "_compactMarks": true,
+        "_itemNewline": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\part $\\mathbf{p} = \\begin{pmatrix} 2 \\\\ 3 \\end{pmatrix}$ \\qquad $\\mathbf{q} = \\begin{pmatrix} -1 \\\\ 1 \\end{pmatrix}$\n\nFind\n\n\\begin{subparts}\n\\subpart $3\\mathbf{q}$,\n\n\\AnswerLine[$\\begin{pmatrix} \\phantom{00} \\\\ \\phantom{00} \\end{pmatrix}$][]\n\\Marks{1}\n\n\\subpart $\\mathbf{p} - \\mathbf{q}$,\n\n\\AnswerLine[$\\begin{pmatrix} \\phantom{00} \\\\ \\phantom{00} \\end{pmatrix}$][]\n\\Marks{1}\n\n\\subpart $|\\mathbf{p}|$.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\end{subparts}\n\n\\part $B$ is the point $(2, 7)$ and $\\overrightarrow{AB} = \\begin{pmatrix} -4 \\\\ 6 \\end{pmatrix}$.\n\nFind the coordinates of $A$.\n\n\\AnswerLine[( \\makebox[1cm]{\\hrulefill} , \\makebox[1cm]{\\hrulefill} )][]\n\\Marks{2}\n\n\\part\n\\relinput{Figures/Q06a-TriangleOGH.tex}\n\nIn triangle $OGH$, $M$ is the midpoint of $OH$ and $K$ divides $GH$ in the ratio $5:2$.\n\n$\\overrightarrow{OG} = \\mathbf{g}$ and $\\overrightarrow{OH} = \\mathbf{h}$.\n\nFind $\\overrightarrow{MK}$ in terms of $\\mathbf{g}$ and $\\mathbf{h}$.\n\nGive your answer in its simplest form.\n\n\\AnswerLine[$\\overrightarrow{MK} =$][]\n\\Marks{4}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper41/Q06/Q06a-TriangleOGH.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper41/Q06/Q06c.png"
+    ]
+  },
+  {
+    "id": "0580-2022OctNov-Paper41-Q07",
+    "paper": "2022OctNov-Paper41",
+    "qnum": 7,
+    "marks": 16,
+    "topics": [
+      "Number"
+    ],
+    "s": null,
+    "d": 2,
+    "cat": "number",
+    "topic": null,
+    "qtype": "",
+    "g": null,
+    "src": "0580/41/O/N/22 Q07",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "\\[f(x) = 10 - x \\qquad g(x) = \\frac{2}{x}, \\; x \\neq 0 \\qquad h(x) = 2^x \\qquad j(x) = 5 - 2x\\]\n\n(a) \nt\n(i)  Find $\\text{g}\\left(\\frac{1}{2}\\right)$.\n\\newline\n\n Find $\\text{hg}\\left(\\frac{1}{2}\\right)$.\n\\newline\n\nFind $x$ when $\\text{f}(x) = 7$.\n\\newline\n\nFind $x$ when $\\text{g}(x) = \\text{h}(3)$.\n\\newline\n\nFind $\\text{j}^{-1}(x)$.\n\\newline\n\nWrite $\\text{f}(x) + \\text{g}(x) + 1$ as a single fraction in its simplest form.\n\\newline\n\n$\\left(\\text{f}(x)\\right)^2 - \\text{ff}(x) = ax^2 + bx + c$\n\nFind the values of $a$, $b$ and $c$.\n\\newline\n\nFind $x$ when $\\text{h}^{-1}(x) = 10$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Find $\\text{g}\\left(\\frac{1}{2}\\right)$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Find $\\text{hg}\\left(\\frac{1}{2}\\right)$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          }
+        ],
+        "_itemNewline": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Find $x$ when $\\text{f}(x) = 7$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x =$"
+        },
+        "marks": 1,
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Find $x$ when $\\text{g}(x) = \\text{h}(3)$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x =$"
+        },
+        "marks": 2,
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Find $\\text{j}^{-1}(x)$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$\\text{j}^{-1}(x) =$"
+        },
+        "marks": 2,
+        "_compactMarks": true
+      },
+      {
+        "label": "(e)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Write $\\text{f}(x) + \\text{g}(x) + 1$ as a single fraction in its simplest form.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "marks": 3,
+        "_compactMarks": true
+      },
+      {
+        "label": "(f)",
+        "content": [
+          {
+            "type": "text",
+            "content": "$\\left(\\text{f}(x)\\right)^2 - \\text{ff}(x) = ax^2 + bx + c$\n\nFind the values of $a$, $b$ and $c$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "multiline",
+          "lines": 3,
+          "template": "$a =$ ____\\n$b =$ ____\\n$c =$ ____",
+          "lineSep": "blank"
+        },
+        "marks": 4,
+        "_compactMarks": true
+      },
+      {
+        "label": "(g)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Find $x$ when $\\text{h}^{-1}(x) = 10$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$x =$"
+        },
+        "marks": 2,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\[\\text{f}(x) = 10 - x \\qquad \\text{g}(x) = \\frac{2}{x}, \\; x \\neq 0 \\qquad \\text{h}(x) = 2^x \\qquad \\text{j}(x) = 5 - 2x\\]"
+      }
+    ],
+    "_rawBody": "\\[\\text{f}(x) = 10 - x \\qquad \\text{g}(x) = \\frac{2}{x}, \\; x \\neq 0 \\qquad \\text{h}(x) = 2^x \\qquad \\text{j}(x) = 5 - 2x\\]\n\n\\begin{parts}\n\\part\n\\begin{subparts}\n\\subpart Find $\\text{g}\\left(\\frac{1}{2}\\right)$.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\subpart Find $\\text{hg}\\left(\\frac{1}{2}\\right)$.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\end{subparts}\n\n\\part Find $x$ when $\\text{f}(x) = 7$.\n\n\\AnswerLine[$x =$][]\n\\Marks{1}\n\n\\part Find $x$ when $\\text{g}(x) = \\text{h}(3)$.\n\n\\AnswerLine[$x =$][]\n\\Marks{2}\n\n\\part Find $\\text{j}^{-1}(x)$.\n\n\\AnswerLine[$\\text{j}^{-1}(x) =$][]\n\\Marks{2}\n\n\\part Write $\\text{f}(x) + \\text{g}(x) + 1$ as a single fraction in its simplest form.\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\part $\\left(\\text{f}(x)\\right)^2 - \\text{ff}(x) = ax^2 + bx + c$\n\nFind the values of $a$, $b$ and $c$.\n\n\\AnswerLine[$a =$][]\n\\AnswerLine[$b =$][]\n\\AnswerLine[$c =$][]\n\\Marks{4}\n\n\\part Find $x$ when $\\text{h}^{-1}(x) = 10$.\n\n\\AnswerLine[$x =$][]\n\\Marks{2}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true
+  },
+  {
+    "id": "0580-2022OctNov-Paper41-Q08",
+    "paper": "2022OctNov-Paper41",
+    "qnum": 8,
+    "marks": 16,
+    "topics": [
+      "Coordinate geometry",
+      "Mensuration",
+      "Trigonometry"
+    ],
+    "s": "3.4",
+    "d": 2,
+    "cat": "coord",
+    "topic": "Equation of a line",
+    "qtype": "length and midpoint",
+    "g": "mixed",
+    "src": "0580/41/O/N/22 Q08",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "The diagram shows triangle $ABC$ on horizontal ground.\n\\newline\n\n$AC = 15\\,\\text{m}$, $BC = 8\\,\\text{m}$ and $AB = 20\\,\\text{m}$.\n\\newline\n\n$BP$ and $CQ$ are vertical poles of different heights.\n\\newline\n\n$BP = 3\\,\\text{m}$ and $CQ = 4\\,\\text{m}$.\n\\newline\n\n$AQ$ and $PQ$ are straight wires.\n\\newline\n\n(a) \nShow that angle $ACB = 117.5°$, correct to 1 decimal place.\n\\newline\n\nCalculate the area of triangle $ABC$.\n\\newline\n\nCalculate the length of $AQ$.\n\\newline\n\nCalculate the angle of elevation of $Q$ from $P$.\n\\newline\n\nAnother straight wire connects $A$ to the midpoint of $PQ$.\n\\newline\n\nCalculate the angle between this wire and the horizontal ground.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper41/Q08/Q08a-TrianglePoles.png"
+          },
+          {
+            "type": "text",
+            "content": "Show that angle $ACB = 117.5°$, correct to 1 decimal place.\n\\newline\n"
+          }
+        ],
+        "marks": 4,
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Calculate the area of triangle $ABC$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "m$^2$"
+        },
+        "marks": 2,
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Calculate the length of $AQ$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "m"
+        },
+        "marks": 2,
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Calculate the angle of elevation of $Q$ from $P$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "marks": 3,
+        "_compactMarks": true
+      },
+      {
+        "label": "(e)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Another straight wire connects $A$ to the midpoint of $PQ$.\n\\newline\n\nCalculate the angle between this wire and the horizontal ground.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "marks": 5,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "analyse",
+    "cmd": "show",
+    "stem": [
+      {
+        "type": "figure",
+        "src": "Figures/Q08a-TrianglePoles.tex"
+      },
+      {
+        "type": "text",
+        "content": "The diagram shows triangle $ABC$ on horizontal ground.\n\\newline\n\n$AC = 15\\,\\text{m}$, $BC = 8\\,\\text{m}$ and $AB = 20\\,\\text{m}$.\n\\newline\n\n$BP$ and $CQ$ are vertical poles of different heights.\n\\newline\n\n$BP = 3\\,\\text{m}$ and $CQ = 4\\,\\text{m}$.\n\\newline\n\n$AQ$ and $PQ$ are straight wires.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "\\relinput{Figures/Q08a-TrianglePoles.tex}\n\nThe diagram shows triangle $ABC$ on horizontal ground.\n\n$AC = 15$\\,m, $BC = 8$\\,m and $AB = 20$\\,m.\n\n$BP$ and $CQ$ are vertical poles of different heights.\n\n$BP = 3$\\,m and $CQ = 4$\\,m.\n\n$AQ$ and $PQ$ are straight wires.\n\n\\begin{parts}\n\\part Show that angle $ACB = 117.5°$, correct to 1 decimal place.\n\\Marks{4}\n\n\\part Calculate the area of triangle $ABC$.\n\n\\AnswerLine[][m$^2$]\n\\Marks{2}\n\n\\part Calculate the length of $AQ$.\n\n\\AnswerLine[][m]\n\\Marks{2}\n\n\\part Calculate the angle of elevation of $Q$ from $P$.\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\part Another straight wire connects $A$ to the midpoint of $PQ$.\n\nCalculate the angle between this wire and the horizontal ground.\n\n\\AnswerLine[][]\n\\Marks{5}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper41/Q08/Q08.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper41/Q08/Q08a-TrianglePoles.png"
+    ]
+  },
+  {
+    "id": "0580-2022OctNov-Paper41-Q09",
+    "paper": "2022OctNov-Paper41",
+    "qnum": 9,
+    "marks": 14,
+    "topics": [
+      "Algebra and graphs",
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "2.5",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Equations",
+    "qtype": "forming and solving quadratic equations, factorisation",
+    "g": "quadratic",
+    "src": "0580/41/O/N/22 Q09",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "(a) \nt\n\nThe total of the areas of rectangles $A$ and $B$ is $20\\,\\text{cm}^2$.\n\\newline\n\n(i)  Show that $3x^2 + 6x - 22 = 0$.\n\\newline\n\n Solve the equation $3x^2 + 6x - 22 = 0$, giving your answers correct to 4 significant figures.\n\\newline\n\nYou must show all your working.\n\\newline\n\n{---} or $x =$][]\n\n Find the perimeter of rectangle $B$.\n\\newline\n\nt\n\nThe diagram shows two rectangles where $H - h = 1$.\n\\newline\n\nBy forming a quadratic equation and factorising, find the value of $y$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "figure",
+            "src": "Figures/Q09a-RectanglesAB.tex"
+          },
+          {
+            "type": "text",
+            "content": "The total of the areas of rectangles $A$ and $B$ is $20\\,\\text{cm}^2$.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Show that $3x^2 + 6x - 22 = 0$.\n\\newline\n"
+              }
+            ],
+            "marks": 2,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Solve the equation $3x^2 + 6x - 22 = 0$, giving your answers correct to 4 significant figures.\n\\newline\n\nYou must show all your working.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$x =$ \\makebox[2cm]{\\hrulefill} or $x =$"
+            },
+            "marks": 4,
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the perimeter of rectangle $B$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "cm"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          }
+        ],
+        "_itemNewline": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper41/Q09/Q09b.png"
+          },
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper41/Q09/Q09b-RectanglesHh.png"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q09b-RectanglesHh.tex"
+          },
+          {
+            "type": "text",
+            "content": "The diagram shows two rectangles where $H - h = 1$.\n\\newline\n\nBy forming a quadratic equation and factorising, find the value of $y$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "$y =$"
+        },
+        "marks": 7,
+        "_compactMarks": true,
+        "_itemNewline": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "show",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\part\n\\relinput{Figures/Q09a-RectanglesAB.tex}\n\nThe total of the areas of rectangles $A$ and $B$ is 20\\,cm$^2$.\n\n\\begin{subparts}\n\\subpart Show that $3x^2 + 6x - 22 = 0$.\n\\Marks{2}\n\n\\subpart Solve the equation $3x^2 + 6x - 22 = 0$, giving your answers correct to 4 significant figures.\n\nYou must show all your working.\n\n\\AnswerLine[$x =$ \\makebox[2cm]{\\hrulefill} or $x =$][]\n\\Marks{4}\n\n\\subpart Find the perimeter of rectangle $B$.\n\n\\AnswerLine[][cm]\n\\Marks{1}\n\n\\end{subparts}\n\n\\part\n\\relinput{Figures/Q09b-RectanglesHh.tex}\n\nThe diagram shows two rectangles where $H - h = 1$.\n\nBy forming a quadratic equation and factorising, find the value of $y$.\n\n\\AnswerLine[$y =$][]\n\\Marks{7}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper41/Q09/Q09a-RectanglesAB.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper41/Q09/Q09a.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper41/Q09/Q09b-RectanglesHh.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper41/Q09/Q09b.png"
+    ]
+  },
+  {
+    "id": "0580-2022OctNov-Paper41-Q10",
+    "paper": "2022OctNov-Paper41",
+    "qnum": 10,
+    "marks": 8,
+    "topics": [
+      "Algebra and graphs",
+      "Coordinate geometry",
+      "Geometry"
+    ],
+    "s": "2.12",
+    "d": 2,
+    "cat": "algebra",
+    "topic": "Functions notation",
+    "qtype": "graph interpretation, differentiation to find stationary points",
+    "g": "graph",
+    "src": "0580/41/O/N/22 Q10",
+    "year": 2022,
+    "session": "OctNov",
+    "tex": "(a) \nt\n\nThe diagram shows a sketch of the graph of $y = \\text{f}(x)$ for $-1.5 \\leqslant x \\leqslant 6$.\n\\newline\n\nThe coordinates of five points on the graph of $y = \\text{f}(x)$ are shown on the diagram.\n\\newline\n\n(i)  $\\text{f}(x) = k$ has two solutions in the interval $-1.5 \\leqslant x \\leqslant 6$.\n\\newline\n\nWrite down a possible integer value of $k$.\n\\newline\n\n $\\text{f}(x) = j$ has no solutions in the interval $-1.5 \\leqslant x \\leqslant 6$ when $j < a$ or $j > b$.\n\\newline\n\nFind the maximum value of $a$ and the minimum value of $b$.\n\\newline\n\nFind the coordinates of the two stationary points on the graph of $y = x^6 - 6x^5$.\n\\newline\n\nYou must show all your working.\n\\newline\n\n{---} ,  )][]\n{---} ,  )][]",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "figure",
+            "src": "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper41/Q10/Q10a.png"
+          },
+          {
+            "type": "figure",
+            "src": "Figures/Q10a-GraphSketch.tex"
+          },
+          {
+            "type": "text",
+            "content": "The diagram shows a sketch of the graph of $y = \\text{f}(x)$ for $-1.5 \\leqslant x \\leqslant 6$.\n\\newline\n\nThe coordinates of five points on the graph of $y = \\text{f}(x)$ are shown on the diagram.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "$\\text{f}(x) = k$ has two solutions in the interval $-1.5 \\leqslant x \\leqslant 6$.\n\\newline\n\nWrite down a possible integer value of $k$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$k =$"
+            },
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "$\\text{f}(x) = j$ has no solutions in the interval $-1.5 \\leqslant x \\leqslant 6$ when $j < a$ or $j > b$.\n\\newline\n\nFind the maximum value of $a$ and the minimum value of $b$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "multiline",
+              "lines": 2,
+              "template": "$a =$ ____\\n$b =$ ____",
+              "lineSep": "blank"
+            },
+            "marks": 2,
+            "_compactMarks": true
+          }
+        ],
+        "_itemNewline": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the coordinates of the two stationary points on the graph of $y = x^6 - 6x^5$.\n\\newline\n\nYou must show all your working.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "multiline",
+          "lines": 2,
+          "template": "( \\makebox[1.5cm]{\\hrulefill} , \\makebox[1.5cm]{\\hrulefill} ) ____\\n( \\makebox[1.5cm]{\\hrulefill} , \\makebox[1.5cm]{\\hrulefill} ) ____",
+          "lineSep": "blank"
+        },
+        "marks": 5,
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": true,
+    "cognitive": "apply",
+    "cmd": "sketch",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\part\n\\relinput{Figures/Q10a-GraphSketch.tex}\n\nThe diagram shows a sketch of the graph of $y = \\text{f}(x)$ for $-1.5 \\leqslant x \\leqslant 6$.\n\nThe coordinates of five points on the graph of $y = \\text{f}(x)$ are shown on the diagram.\n\n\\begin{subparts}\n\\subpart $\\text{f}(x) = k$ has two solutions in the interval $-1.5 \\leqslant x \\leqslant 6$.\n\nWrite down a possible integer value of $k$.\n\n\\AnswerLine[$k =$][]\n\\Marks{1}\n\n\\subpart $\\text{f}(x) = j$ has no solutions in the interval $-1.5 \\leqslant x \\leqslant 6$ when $j < a$ or $j > b$.\n\nFind the maximum value of $a$ and the minimum value of $b$.\n\n\\AnswerLine[$a =$][]\n\\AnswerLine[$b =$][]\n\\Marks{2}\n\n\\end{subparts}\n\n\\part Find the coordinates of the two stationary points on the graph of $y = x^6 - 6x^5$.\n\nYou must show all your working.\n\n\\AnswerLine[( \\makebox[1.5cm]{\\hrulefill} , \\makebox[1.5cm]{\\hrulefill} )][]\n\\AnswerLine[( \\makebox[1.5cm]{\\hrulefill} , \\makebox[1.5cm]{\\hrulefill} )][]\n\\Marks{5}\n\n\\end{parts}",
+    "_compactParts": true,
+    "_partCmd": true,
+    "figureUrls": [
+      "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper41/Q10/Q10a-GraphSketch.png",
+      "https://git25math.github.io/25maths-cie0580-figures/2022OctNov/Paper41/Q10/Q10a.png"
+    ]
+  }
+]

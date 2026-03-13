@@ -1,0 +1,1145 @@
+[
+  {
+    "id": "0580-2021March-Paper32-Q01",
+    "paper": "2021March-Paper32",
+    "qnum": 1,
+    "marks": 11,
+    "topics": [
+      "Number",
+      "Probability",
+      "Statistics"
+    ],
+    "s": "1.6",
+    "d": 1,
+    "cat": "number",
+    "topic": "Standard form",
+    "qtype": "basic operations and fractions from data",
+    "g": "mixed",
+    "src": "0580/32/M/21 Q01",
+    "year": 2021,
+    "session": "March",
+    "tex": "20 students choose their favourite science subject.\n\\newline\nThe results are shown in the bar chart.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\n(a) Work out how many more students choose biology than physics.\n\\newline\n\n(b) Write down the fraction of students whose favourite science subject is chemistry.\n\\newline\n\n(c) One of the 20 students is picked at random.\n\\newline\nWrite down the probability that this student did not choose biology.\n\\newline\n\n(d) Only one of the averages, median, mode and mean can be found for these results.\n\\newline\n\n(i) (e) Write down the average that can be found.\n\\newline\n\n(f) Find this average for these results.\n\\newline\n\n(g) Explain why the range cannot be found.\n\\newline\n\n(h) The results are to be shown in a pie chart.\n\\newline\n\n(i) (i) Complete the table.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\n(j) Complete the pie chart.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Work out how many more students choose biology than physics.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down the fraction of students whose favourite science subject is chemistry.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "One of the 20 students is picked at random.\n\\newline\nWrite down the probability that this student did not choose biology.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Only one of the averages, median, mode and mean can be found for these results.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Write down the average that can be found.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find this average for these results.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Explain why the range cannot be found.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "multiline",
+              "lines": 2
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(e)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The results are to be shown in a pie chart.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "Complete the table.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q01-Table.\n\\newline\npng}\n%\\end{InsertScreenShot}"
+              }
+            ],
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Complete the pie chart.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q01-PieChart.\n\\newline\npng}\n%\\end{InsertScreenShot}"
+              }
+            ],
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "explain",
+    "stem": [
+      {
+        "type": "text",
+        "content": "20 students choose their favourite science subject.\n\\newline\nThe results are shown in the bar chart.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q01-BarChart.\n\\newline\npng}\n%\\end{InsertScreenShot}"
+      }
+    ],
+    "_rawBody": "20 students choose their favourite science subject.\nThe results are shown in the bar chart.\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q01-BarChart.png}\n%\\end{InsertScreenShot}\n\n\\begin{parts}\n\\item Work out how many more students choose biology than physics.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Write down the fraction of students whose favourite science subject is chemistry.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item One of the 20 students is picked at random.\nWrite down the probability that this student did not choose biology.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item Only one of the averages, median, mode and mean can be found for these results.\n\n\\begin{subparts}\n\\item Write down the average that can be found.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Find this average for these results.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Explain why the range cannot be found.\n\n\\answerlines[2]\n\\Marks{1}\n\\end{subparts}\n\n\\item The results are to be shown in a pie chart.\n\n\\begin{subparts}\n\\item Complete the table.\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q01-Table.png}\n%\\end{InsertScreenShot}\n\\Marks{3}\n\n\\item Complete the pie chart.\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q01-PieChart.png}\n%\\end{InsertScreenShot}\n\\Marks{2}\n\\end{subparts}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2021March-Paper32-Q02",
+    "paper": "2021March-Paper32",
+    "qnum": 2,
+    "marks": 13,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.13",
+    "d": 1,
+    "cat": "number",
+    "topic": "Electronic calculators",
+    "qtype": "percentage calculation, temperature change, money calculation",
+    "g": "mixed",
+    "src": "0580/32/M/21 Q02",
+    "year": 2021,
+    "session": "March",
+    "tex": "A family go on a skiing holiday to America.\n\\newline\n\n(a) The hotel has 840 rooms.\n\\newline\n735 rooms are occupied.\n\\newline\n\nCalculate the percentage of rooms that are occupied.\n\\newline\n\n(b) The temperature in the hotel is $21^\\circ$C.\n\\newline\nThe temperature in the hotel is $26.7^\\circ$C warmer than at the top of the mountain.\n\\newline\nThe temperature at the top of the mountain is $3.2^\\circ$C colder than at the bottom of the mountain.\n\\newline\n\nWork out the temperature at the bottom of the mountain.\n\\newline\n\n(c) %\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\nThere are two adults and one child in the family.\n\\newline\nThey hire all their equipment.\n\\newline\nThe child skis for 3 days and snowboards for 4 days.\n\\newline\nBoth adults ski for 7 days.\n\\newline\nAll three of them hire a helmet for 7 days.\n\\newline\n\nWork out the total cost of the equipment hire for the family.\n\\newline\n\n\\$ \n\n(d) A ski lift, when full, takes 4000 passengers per hour.\n\\newline\nThis lift works for 10 hours a day.\n\\newline\nOne day, this lift is 90\\% full for 3 hours and 75\\% full for 7 hours.\n\\newline\n\nWork out the number of passengers who take the lift that day.\n\\newline\n\n(e) The family buy their lift passes before the holiday for a total of 51 400 rupees.\n\\newline\nIn America, the passes cost a total of \\$684.\n\\newline\nThe exchange rate is 1 rupee = \\$0.0129.\n\\newline\n\nShow that the family save 1620 rupees, correct to the nearest 10 rupees, by buying the passes\nbefore their holiday.\n\\newline\n\n(f) The height, $h$ metres, of the mountain is 2642 m, correct to the nearest metre.\n\\newline\n\nComplete this statement about the value of $h$.\n\\newline\n\n $\\le h <$",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "The hotel has 840 rooms.\n\\newline\n735 rooms are occupied.\n\\newline\n\nCalculate the percentage of rooms that are occupied.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "\\%"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "The temperature in the hotel is $21^\\circ$C.\n\\newline\nThe temperature in the hotel is $26.7^\\circ$C warmer than at the top of the mountain.\n\\newline\nThe temperature at the top of the mountain is $3.2^\\circ$C colder than at the bottom of the mountain.\n\\newline\n\nWork out the temperature at the bottom of the mountain.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "$^\\circ$C"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q02-HireTable.\n\\newline\npng}\n%\\end{InsertScreenShot}\n\nThere are two adults and one child in the family.\n\\newline\nThey hire all their equipment.\n\\newline\nThe child skis for 3 days and snowboards for 4 days.\n\\newline\nBoth adults ski for 7 days.\n\\newline\nAll three of them hire a helmet for 7 days.\n\\newline\n\nWork out the total cost of the equipment hire for the family.\n\\newline\n\n\\$ \\AnswerLine[][]"
+          }
+        ],
+        "_compactMarks": true,
+        "_itemNewline": true
+      },
+      {
+        "label": "(d)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "A ski lift, when full, takes 4000 passengers per hour.\n\\newline\nThis lift works for 10 hours a day.\n\\newline\nOne day, this lift is 90\\% full for 3 hours and 75\\% full for 7 hours.\n\\newline\n\nWork out the number of passengers who take the lift that day.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(e)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "The family buy their lift passes before the holiday for a total of 51 400 rupees.\n\\newline\nIn America, the passes cost a total of \\$684.\n\\newline\nThe exchange rate is 1 rupee = \\$0.0129.\n\\newline\n\nShow that the family save 1620 rupees, correct to the nearest 10 rupees, by buying the passes\nbefore their holiday.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "multiline",
+          "lines": 2
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(f)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "The height, $h$ metres, of the mountain is 2642 m, correct to the nearest metre.\n\\newline\n\nComplete this statement about the value of $h$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "multiline",
+          "lines": 2,
+          "template": "____\\n____",
+          "lineSep": "blank"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "show",
+    "stem": [
+      {
+        "type": "text",
+        "content": "A family go on a skiing holiday to America.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "A family go on a skiing holiday to America.\n\n\\begin{parts}\n\\item The hotel has 840 rooms.\n735 rooms are occupied.\n\nCalculate the percentage of rooms that are occupied.\n\n\\AnswerLine[][\\%]\n\\Marks{1}\n\n\\item The temperature in the hotel is $21^\\circ$C.\nThe temperature in the hotel is $26.7^\\circ$C warmer than at the top of the mountain.\nThe temperature at the top of the mountain is $3.2^\\circ$C colder than at the bottom of the mountain.\n\nWork out the temperature at the bottom of the mountain.\n\n\\AnswerLine[][$^\\circ$C]\n\\Marks{2}\n\n\\item\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q02-HireTable.png}\n%\\end{InsertScreenShot}\n\nThere are two adults and one child in the family.\nThey hire all their equipment.\nThe child skis for 3 days and snowboards for 4 days.\nBoth adults ski for 7 days.\nAll three of them hire a helmet for 7 days.\n\nWork out the total cost of the equipment hire for the family.\n\n\\$ \\AnswerLine[][]\n\\Marks{2}\n\n\\item A ski lift, when full, takes 4000 passengers per hour.\nThis lift works for 10 hours a day.\nOne day, this lift is 90\\% full for 3 hours and 75\\% full for 7 hours.\n\nWork out the number of passengers who take the lift that day.\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\item The family buy their lift passes before the holiday for a total of 51 400 rupees.\nIn America, the passes cost a total of \\$684.\nThe exchange rate is 1 rupee = \\$0.0129.\n\nShow that the family save 1620 rupees, correct to the nearest 10 rupees, by buying the passes\nbefore their holiday.\n\n\\answerlines[2]\n\\Marks{3}\n\n\\item The height, $h$ metres, of the mountain is 2642 m, correct to the nearest metre.\n\nComplete this statement about the value of $h$.\n\n\\AnswerLine[][] $\\le h <$ \\AnswerLine[][]\n\\Marks{2}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2021March-Paper32-Q03",
+    "paper": "2021March-Paper32",
+    "qnum": 3,
+    "marks": 12,
+    "topics": [
+      "Geometry",
+      "Transformations and vectors"
+    ],
+    "s": "4.4",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Circle theorems",
+    "qtype": "similarity and congruence",
+    "g": "mixed",
+    "src": "0580/32/M/21 Q03",
+    "year": 2021,
+    "session": "March",
+    "tex": "The diagram shows three triangles $A$, $B$ and $C$ on a grid.\n\\newline\nTriangle $A$ is shaded.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\n(a) Measure angle $w$.\n\\newline\n\nAngle $w =$ \n\n(b) Explain why triangle $B$ is congruent to triangle $C$.\n\\newline\n\n(c) Describe fully the single transformation that maps\n\n(i) (d) triangle $A$ onto triangle $B$,\n\n(e) triangle $B$ onto triangle $C$.\n\\newline\n\n(f) On the grid, draw the image of\n\n(i) (g) shape $A$ after a translation by the vector $\\begin{pmatrix} 7 \\\\ -1 \\end{pmatrix}$,\n\n(h) shape $A$ after a reflection in the line $y = -1$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Measure angle $w$.\n\\newline\n\nAngle $w =$ \\AnswerLine[][]"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Explain why triangle $B$ is congruent to triangle $C$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "multiline",
+          "lines": 2
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Describe fully the single transformation that maps"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "triangle $A$ onto triangle $B$,"
+              }
+            ],
+            "answer": {
+              "type": "multiline",
+              "lines": 2
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "triangle $B$ onto triangle $C$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "multiline",
+              "lines": 2
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(d)",
+        "content": [
+          {
+            "type": "text",
+            "content": "On the grid, draw the image of"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "shape $A$ after a translation by the vector $\\begin{pmatrix} 7 \\\\ -1 \\end{pmatrix}$,"
+              }
+            ],
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "shape $A$ after a reflection in the line $y = -1$.\n\\newline\n"
+              }
+            ],
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "analyse",
+    "cmd": "explain",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The diagram shows three triangles $A$, $B$ and $C$ on a grid.\n\\newline\nTriangle $A$ is shaded.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q03-Grid.\n\\newline\npng}\n%\\end{InsertScreenShot}"
+      }
+    ],
+    "_rawBody": "The diagram shows three triangles $A$, $B$ and $C$ on a grid.\nTriangle $A$ is shaded.\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q03-Grid.png}\n%\\end{InsertScreenShot}\n\n\\begin{parts}\n\\item Measure angle $w$.\n\nAngle $w =$ \\AnswerLine[][]\n\\Marks{1}\n\n\\item Explain why triangle $B$ is congruent to triangle $C$.\n\n\\answerlines[2]\n\\Marks{1}\n\n\\item Describe fully the single transformation that maps\n\n\\begin{subparts}\n\\item triangle $A$ onto triangle $B$,\n\n\\answerlines[2]\n\\Marks{3}\n\n\\item triangle $B$ onto triangle $C$.\n\n\\answerlines[2]\n\\Marks{3}\n\\end{subparts}\n\n\\item On the grid, draw the image of\n\n\\begin{subparts}\n\\item shape $A$ after a translation by the vector $\\begin{pmatrix} 7 \\\\ -1 \\end{pmatrix}$,\n\\Marks{2}\n\n\\item shape $A$ after a reflection in the line $y = -1$.\n\\Marks{2}\n\\end{subparts}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2021March-Paper32-Q04",
+    "paper": "2021March-Paper32",
+    "qnum": 4,
+    "marks": 10,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.3",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Symmetry",
+    "qtype": "scale drawings and bearings",
+    "g": "mixed",
+    "src": "0580/32/M/21 Q04",
+    "year": 2021,
+    "session": "March",
+    "tex": "The scale drawing shows the positions of Kendra's house, $K$, and Latika's house, $L$, on a map.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\n(a) Jesminder's house, $J$, is on a bearing of $036^\\circ$ from $K$ and on a bearing of $284^\\circ$ from $L$.\n\\newline\n\nMark the position of $J$ on the map.\n\\newline\n\n(b) The actual distance between $K$ and $L$ is 9600 metres.\n\\newline\n\n(i) (c) Complete the scale of the map.\n\\newline\n\n1 cm represents  metres\n\n(d) Kendra walks from $K$ to $L$ at a constant speed of 4.5 km/h.\n\\newline\nShe leaves $K$ at 10 15.\n\\newline\n\nWork out the time she arrives at $L$.\n\\newline\n\n(e) (i) (f) Kendra and Latika leave Latika's house at 15 00 to go to the cinema.\n\\newline\n\n\\begin{subsubparts}\n\n(g) They walk for 20 minutes at a constant speed of 4.5 km/h.\n\\newline\n\nWork out the distance they walk.\n\\newline\n\n(h) After walking for 20 minutes, they then run a distance of 6 km at a constant speed for\n40 minutes.\n\\newline\n\nDraw their journey to the cinema on the travel graph.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\n\\end{subsubparts}\n\n(i) Kendra and Latika leave the cinema at 18 05.\n\\newline\nThey travel back to Latika's house in a taxi at a constant speed of 30 km/h.\n\\newline\n\nComplete the travel graph.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Jesminder's house, $J$, is on a bearing of $036^\\circ$ from $K$ and on a bearing of $284^\\circ$ from $L$.\n\\newline\n\nMark the position of $J$ on the map.\n\\newline\n"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The actual distance between $K$ and $L$ is 9600 metres.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Complete the scale of the map.\n\\newline\n\n1 cm represents \\AnswerLine[][] metres"
+              }
+            ],
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "Kendra walks from $K$ to $L$ at a constant speed of 4.5 km/h.\n\\newline\nShe leaves $K$ at 10 15.\n\\newline\n\nWork out the time she arrives at $L$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(c)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 0,
+            "content": [
+              {
+                "type": "text",
+                "content": "Kendra and Latika leave Latika's house at 15 00 to go to the cinema.\n\\newline\n"
+              }
+            ],
+            "subsubparts": [
+              {
+                "label": "(p)",
+                "content": [
+                  {
+                    "type": "text",
+                    "content": "They walk for 20 minutes at a constant speed of 4.5 km/h.\n\nWork out the distance they walk."
+                  }
+                ],
+                "answer": {
+                  "type": "number",
+                  "suffix": "km"
+                },
+                "marks": 1
+              },
+              {
+                "label": "(q)",
+                "content": [
+                  {
+                    "type": "text",
+                    "content": "After walking for 20 minutes, they then run a distance of 6 km at a constant speed for\n40 minutes.\n\nDraw their journey to the cinema on the travel graph.\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q04-TravelGraph.png}\n%\\end{InsertScreenShot}"
+                  }
+                ],
+                "marks": 2
+              }
+            ]
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Kendra and Latika leave the cinema at 18 05.\n\\newline\nThey travel back to Latika's house in a taxi at a constant speed of 30 km/h.\n\\newline\n\nComplete the travel graph.\n\\newline\n"
+              }
+            ],
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_itemNewline": true,
+        "_compactEndSubparts": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The scale drawing shows the positions of Kendra's house, $K$, and Latika's house, $L$, on a map.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q04-Map.\n\\newline\npng}\n%\\end{InsertScreenShot}"
+      }
+    ],
+    "_rawBody": "The scale drawing shows the positions of Kendra's house, $K$, and Latika's house, $L$, on a map.\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q04-Map.png}\n%\\end{InsertScreenShot}\n\n\\begin{parts}\n\\item Jesminder's house, $J$, is on a bearing of $036^\\circ$ from $K$ and on a bearing of $284^\\circ$ from $L$.\n\nMark the position of $J$ on the map.\n\\Marks{2}\n\n\\item The actual distance between $K$ and $L$ is 9600 metres.\n\n\\begin{subparts}\n\\item Complete the scale of the map.\n\n1 cm represents \\AnswerLine[][] metres\n\\Marks{2}\n\n\\item Kendra walks from $K$ to $L$ at a constant speed of 4.5 km/h.\nShe leaves $K$ at 10 15.\n\nWork out the time she arrives at $L$.\n\n\\AnswerLine[][]\n\\Marks{3}\n\\end{subparts}\n\n\\item\n\\begin{subparts}\n\\item Kendra and Latika leave Latika's house at 15 00 to go to the cinema.\n\n\\begin{subsubparts}\n\\item They walk for 20 minutes at a constant speed of 4.5 km/h.\n\nWork out the distance they walk.\n\n\\AnswerLine[][km]\n\\Marks{1}\n\n\\item After walking for 20 minutes, they then run a distance of 6 km at a constant speed for\n40 minutes.\n\nDraw their journey to the cinema on the travel graph.\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q04-TravelGraph.png}\n%\\end{InsertScreenShot}\n\\Marks{2}\n\\end{subsubparts}\n\n\\item Kendra and Latika leave the cinema at 18 05.\nThey travel back to Latika's house in a taxi at a constant speed of 30 km/h.\n\nComplete the travel graph.\n\\Marks{2}\n\\end{subparts}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2021March-Paper32-Q05",
+    "paper": "2021March-Paper32",
+    "qnum": 5,
+    "marks": 10,
+    "topics": [
+      "Algebra and graphs",
+      "Coordinate geometry",
+      "Geometry"
+    ],
+    "s": "2.10",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Graphs of functions",
+    "qtype": "quadratic graphs, table of values, plotting, line of symmetry, vertex, graphical solution of equation",
+    "g": "quadratic",
+    "src": "0580/32/M/21 Q05",
+    "year": 2021,
+    "session": "March",
+    "tex": "(a) Complete the table of values for $y = -x^2 - x + 14$.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\n(b) On the grid, draw the graph of $y = -x^2 - x + 14$ for $-5 \\le x \\le 4$.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\n(c) (i) (d) Write down the equation of the line of symmetry of the graph.\n\\newline\n\n(e) Find the coordinates of the highest point on the graph.\n\\newline\n\n( , )\n\n(f) Use your graph to solve the equation $-x^2 - x + 14 = -2$.\n\\newline\n\n or",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Complete the table of values for $y = -x^2 - x + 14$.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q05-Table.\n\\newline\npng}\n%\\end{InsertScreenShot}"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "text",
+            "content": "On the grid, draw the graph of $y = -x^2 - x + 14$ for $-5 \\le x \\le 4$.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q05-Grid.\n\\newline\npng}\n%\\end{InsertScreenShot}"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Write down the equation of the line of symmetry of the graph.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the coordinates of the highest point on the graph.\n\\newline\n\n(\\AnswerLine[][] , \\AnswerLine[][])"
+              }
+            ],
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_itemNewline": true,
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(d)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Use your graph to solve the equation $-x^2 - x + 14 = -2$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "multiline",
+          "lines": 2,
+          "template": "$x =$ ____\\n$x =$ ____",
+          "lineSep": "blank"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Complete the table of values for $y = -x^2 - x + 14$.\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q05-Table.png}\n%\\end{InsertScreenShot}\n\\Marks{3}\n\n\\item On the grid, draw the graph of $y = -x^2 - x + 14$ for $-5 \\le x \\le 4$.\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q05-Grid.png}\n%\\end{InsertScreenShot}\n\\Marks{4}\n\n\\item\n\\begin{subparts}\n\\item Write down the equation of the line of symmetry of the graph.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Find the coordinates of the highest point on the graph.\n\n(\\AnswerLine[][] , \\AnswerLine[][])\n\\Marks{1}\n\\end{subparts}\n\n\\item Use your graph to solve the equation $-x^2 - x + 14 = -2$.\n\n\\AnswerLine[$x =$][] or \\AnswerLine[$x =$][]\n\\Marks{2}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "_compactBegin": true
+  },
+  {
+    "id": "0580-2021March-Paper32-Q06",
+    "paper": "2021March-Paper32",
+    "qnum": 6,
+    "marks": 6,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "3.6",
+    "d": 1,
+    "cat": "coord",
+    "topic": "Position vectors",
+    "qtype": "parallel lines",
+    "g": "mixed",
+    "src": "0580/32/M/21 Q06",
+    "year": 2021,
+    "session": "March",
+    "tex": "The diagram shows a point $P$, a shape $S$ and lines $A$ and $B$ on a 1cm$^2$ grid.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\n(a) Line $A$ is parallel to line $B$.\n\\newline\nExplain what parallel means.\n\\newline\n\n(b) Write down the coordinates of point $P$.\n\\newline\n\n( , )\n\n(c) (i) (d) Write down the mathematical name for shape $S$.\n\\newline\n\n(e) Work out the area of shape $S$.\n\\newline\n\n(f) (i) (g) Find the gradient of line $A$.\n\\newline\n\n(h) Write down the equation of line $A$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Line $A$ is parallel to line $B$.\n\\newline\nExplain what parallel means.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "multiline",
+          "lines": 2
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down the coordinates of point $P$.\n\\newline\n\n(\\AnswerLine[][] , \\AnswerLine[][])"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Write down the mathematical name for shape $S$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Work out the area of shape $S$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "suffix": "cm$^2$"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_itemNewline": true,
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(d)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the gradient of line $A$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Write down the equation of line $A$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_itemNewline": true,
+        "_compactEndSubparts": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "explain",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The diagram shows a point $P$, a shape $S$ and lines $A$ and $B$ on a 1cm$^2$ grid.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q06-Grid.\n\\newline\npng}\n%\\end{InsertScreenShot}"
+      }
+    ],
+    "_rawBody": "The diagram shows a point $P$, a shape $S$ and lines $A$ and $B$ on a 1cm$^2$ grid.\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q06-Grid.png}\n%\\end{InsertScreenShot}\n\n\\begin{parts}\n\\item Line $A$ is parallel to line $B$.\nExplain what parallel means.\n\n\\answerlines[2]\n\\Marks{1}\n\n\\item Write down the coordinates of point $P$.\n\n(\\AnswerLine[][] , \\AnswerLine[][])\n\\Marks{1}\n\n\\item\n\\begin{subparts}\n\\item Write down the mathematical name for shape $S$.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Work out the area of shape $S$.\n\n\\AnswerLine[][cm$^2$]\n\\Marks{1}\n\\end{subparts}\n\n\\item\n\\begin{subparts}\n\\item Find the gradient of line $A$.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Write down the equation of line $A$.\n\n\\AnswerLine[][]\n\\Marks{2}\n\\end{subparts}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2021March-Paper32-Q07",
+    "paper": "2021March-Paper32",
+    "qnum": 7,
+    "marks": 11,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.16",
+    "d": 1,
+    "cat": "number",
+    "topic": "Upper and lower bounds",
+    "qtype": "money calculation, ratio in simplest form",
+    "g": "mixed",
+    "src": "0580/32/M/21 Q07",
+    "year": 2021,
+    "session": "March",
+    "tex": "Prakash buys 45 flowers from a shop.\n\\newline\n\n(a) %\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\nEach bunch has 5 flowers.\n\\newline\nThe price of one bunch of flowers is \\$2.68.\n\\newline\n\nUsing the special offer, work out how much Prakash pays for the 45 flowers.\n\\newline\n\n(b) 15 of the flowers are red.\n\\newline\n18 of the flowers are orange.\n\\newline\nThe rest of the flowers are yellow.\n\\newline\n\nWrite down the ratio of the number of red flowers : orange flowers : yellow flowers.\n\\newline\nGive your answer in its simplest form.\n\\newline\n\n :  : \n\n(c) Prakash gives the 45 flowers to his family.\n\\newline\nHe gives his grandmother $x$ flowers.\n\\newline\nHe gives his mother 8 more flowers than his grandmother.\n\\newline\nHe gives his cousin 6 fewer flowers than his grandmother.\n\\newline\nHe gives his sister twice as many flowers as he gives his cousin.\n\\newline\n\n(i) (d) Use this information to show that $5x - 10 = 45$.\n\\newline\n\n(e) Solve the equation $5x - 10 = 45$.\n\\newline\n\n(f) Find the number of flowers that Prakash gives to his cousin.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q07-Offer.\n\\newline\npng}\n%\\end{InsertScreenShot}\n\nEach bunch has 5 flowers.\n\\newline\nThe price of one bunch of flowers is \\$2.68.\n\\newline\n\nUsing the special offer, work out how much Prakash pays for the 45 flowers.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "$\\$ $"
+        },
+        "_compactMarks": true,
+        "_itemNewline": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "15 of the flowers are red.\n\\newline\n18 of the flowers are orange.\n\\newline\nThe rest of the flowers are yellow.\n\\newline\n\nWrite down the ratio of the number of red flowers : orange flowers : yellow flowers.\n\\newline\nGive your answer in its simplest form.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "multiline",
+          "lines": 3,
+          "template": "____\\n____\\n____",
+          "lineSep": "blank"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Prakash gives the 45 flowers to his family.\n\\newline\nHe gives his grandmother $x$ flowers.\n\\newline\nHe gives his mother 8 more flowers than his grandmother.\n\\newline\nHe gives his cousin 6 fewer flowers than his grandmother.\n\\newline\nHe gives his sister twice as many flowers as he gives his cousin.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "Use this information to show that $5x - 10 = 45$.\n\\newline\n"
+              }
+            ],
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Solve the equation $5x - 10 = 45$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number",
+              "prefix": "$x =$"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the number of flowers that Prakash gives to his cousin.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "show",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Prakash buys 45 flowers from a shop.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "Prakash buys 45 flowers from a shop.\n\n\\begin{parts}\n\\item\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q07-Offer.png}\n%\\end{InsertScreenShot}\n\nEach bunch has 5 flowers.\nThe price of one bunch of flowers is \\$2.68.\n\nUsing the special offer, work out how much Prakash pays for the 45 flowers.\n\n\\AnswerLine[][$\\$ $][]\n\\Marks{3}\n\n\\item 15 of the flowers are red.\n18 of the flowers are orange.\nThe rest of the flowers are yellow.\n\nWrite down the ratio of the number of red flowers : orange flowers : yellow flowers.\nGive your answer in its simplest form.\n\n\\AnswerLine[][] : \\AnswerLine[][] : \\AnswerLine[][]\n\\Marks{2}\n\n\\item Prakash gives the 45 flowers to his family.\nHe gives his grandmother $x$ flowers.\nHe gives his mother 8 more flowers than his grandmother.\nHe gives his cousin 6 fewer flowers than his grandmother.\nHe gives his sister twice as many flowers as he gives his cousin.\n\n\\begin{subparts}\n\\item Use this information to show that $5x - 10 = 45$.\n\\Marks{3}\n\n\\item Solve the equation $5x - 10 = 45$.\n\n\\AnswerLine[$x =$][]\n\\Marks{2}\n\n\\item Find the number of flowers that Prakash gives to his cousin.\n\n\\AnswerLine[][]\n\\Marks{1}\n\\end{subparts}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2021March-Paper32-Q08",
+    "paper": "2021March-Paper32",
+    "qnum": 8,
+    "marks": 10,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.15",
+    "d": 1,
+    "cat": "number",
+    "topic": "Speed, distance, time",
+    "qtype": "time calculation, proportion, best value, percentage profit",
+    "g": "proportion",
+    "src": "0580/32/M/21 Q08",
+    "year": 2021,
+    "session": "March",
+    "tex": "(a) A baker puts some cakes in the oven at 5.50 pm.\n\\newline\nThe cakes take 20 minutes to bake.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\nComplete the clock diagram to show the time when the cakes are baked.\n\\newline\n\n(b) A recipe uses 550 g of flour to make 8 cakes.\n\\newline\nWork out the amount of flour needed to make 360 cakes.\n\\newline\nGive your answer in kilograms.\n\\newline\n\n(c) %\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\nWork out which bag of flour is the best value.\n\\newline\nShow all your working.\n\\newline\n\n(d) One cake costs 24 cents to make.\n\\newline\nThe baker sells each cake for 65 cents.\n\\newline\n\nCalculate the percentage profit the baker makes on each cake.\n\\newline\n\n(e) The baker asks some customers if they like lemon cake ($L$) and if they like chocolate cake ($C$).\n\\newline\nThe Venn diagram shows the results.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\n(i) (f) Complete the statement.\n\\newline\n\n$n(\\xi)$ = \n\n(g) Work out the fraction of the customers who like lemon cake or chocolate cake but not both.\n\\newline\n\n(h) Use set notation to complete the statement.\n\\newline\n\n$\\{\\text{Jai}, \\text{Nera}\\}$ = \n\n(i) What does the Venn diagram show about Taj?",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "A baker puts some cakes in the oven at 5.50 pm.\n\\newline\nThe cakes take 20 minutes to bake.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q08-Clock.\n\\newline\npng}\n%\\end{InsertScreenShot}\n\nComplete the clock diagram to show the time when the cakes are baked.\n\\newline\n"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "A recipe uses 550 g of flour to make 8 cakes.\n\\newline\nWork out the amount of flour needed to make 360 cakes.\n\\newline\nGive your answer in kilograms.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "kg"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q08-Bags.\n\\newline\npng}\n%\\end{InsertScreenShot}\n\nWork out which bag of flour is the best value.\n\\newline\nShow all your working.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "Bag "
+        },
+        "_compactMarks": true,
+        "_itemNewline": true
+      },
+      {
+        "label": "(d)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "One cake costs 24 cents to make.\n\\newline\nThe baker sells each cake for 65 cents.\n\\newline\n\nCalculate the percentage profit the baker makes on each cake.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "\\%"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(e)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The baker asks some customers if they like lemon cake ($L$) and if they like chocolate cake ($C$).\n\\newline\nThe Venn diagram shows the results.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q08-Venn.\n\\newline\npng}\n%\\end{InsertScreenShot}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Complete the statement.\n\\newline\n\n$n(\\xi)$ = \\AnswerLine[][]"
+              }
+            ],
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Work out the fraction of the customers who like lemon cake or chocolate cake but not both.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Use set notation to complete the statement.\n\\newline\n\n$\\{\\text{Jai}, \\text{Nera}\\}$ = \\AnswerLine[][]"
+              }
+            ],
+            "_compactMarks": true
+          },
+          {
+            "label": "(iv)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "What does the Venn diagram show about Taj?"
+              }
+            ],
+            "answer": {
+              "type": "multiline",
+              "lines": 2
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item A baker puts some cakes in the oven at 5.50 pm.\nThe cakes take 20 minutes to bake.\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q08-Clock.png}\n%\\end{InsertScreenShot}\n\nComplete the clock diagram to show the time when the cakes are baked.\n\\Marks{1}\n\n\\item A recipe uses 550 g of flour to make 8 cakes.\nWork out the amount of flour needed to make 360 cakes.\nGive your answer in kilograms.\n\n\\AnswerLine[][kg]\n\\Marks{3}\n\n\\item\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q08-Bags.png}\n%\\end{InsertScreenShot}\n\nWork out which bag of flour is the best value.\nShow all your working.\n\n\\AnswerLine[Bag ][]\n\\Marks{3}\n\n\\item One cake costs 24 cents to make.\nThe baker sells each cake for 65 cents.\n\nCalculate the percentage profit the baker makes on each cake.\n\n\\AnswerLine[][\\%]\n\\Marks{2}\n\n\\item The baker asks some customers if they like lemon cake ($L$) and if they like chocolate cake ($C$).\nThe Venn diagram shows the results.\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q08-Venn.png}\n%\\end{InsertScreenShot}\n\n\\begin{subparts}\n\\item Complete the statement.\n\n$n(\\xi)$ = \\AnswerLine[][]\n\\Marks{1}\n\n\\item Work out the fraction of the customers who like lemon cake or chocolate cake but not both.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Use set notation to complete the statement.\n\n$\\{\\text{Jai}, \\text{Nera}\\}$ = \\AnswerLine[][]\n\\Marks{1}\n\n\\item What does the Venn diagram show about Taj?\n\n\\answerlines[2]\n\\Marks{1}\n\\end{subparts}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "_compactBegin": true
+  },
+  {
+    "id": "0580-2021March-Paper32-Q09",
+    "paper": "2021March-Paper32",
+    "qnum": 9,
+    "marks": 13,
+    "topics": [
+      "Geometry",
+      "Mensuration",
+      "Trigonometry"
+    ],
+    "s": "4.7",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Nets and 3D shapes",
+    "qtype": "circle theorems",
+    "g": "mixed",
+    "src": "0580/32/M/21 Q09",
+    "year": 2021,
+    "session": "March",
+    "tex": "(a) On the 1cm$^2$ grid, draw one rectangle that has\n(b) a perimeter of 22 cm\n\n(c) an area of 24 cm$^2$.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\n%\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\nWork out the value of $x$.\n\\newline\n\nWrite down the two geometrical properties needed to find $x$.\n\\newline\n\n1 \n\n2 \n\n$x =$ \n\n%\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\nDraw a tangent to the circle at point $P$.\n\\newline\n\nThe exterior angle of a regular polygon is $24^\\circ$.\n\\newline\n\nWork out the number of sides of this polygon.\n\\newline\n\n%\\begin{InsertScreenShot}\n%    \n%\\end{InsertScreenShot}\n\nCalculate the value of $x$.\n\\newline\n\n$x =$",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "text",
+            "content": "On the 1cm$^2$ grid, draw one rectangle that has\n\\begin{parts}"
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "text",
+            "content": "a perimeter of 22 cm"
+          }
+        ]
+      },
+      {
+        "label": "(c)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "text",
+            "content": "an area of 24 cm$^2$.\n\\newline\n"
+          }
+        ]
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [],
+    "_v4_skip": true,
+    "_rawBody": "\\begin{parts}\n\\item On the 1cm$^2$ grid, draw one rectangle that has\n\\begin{parts}\n\\item a perimeter of 22 cm\n\\item an area of 24 cm$^2$.\n\\end{parts}\n\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q09-Grid.png}\n%\\end{InsertScreenShot}\n\\Marks{2}\n\n\\item\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q09-Polygon.png}\n%\\end{InsertScreenShot}\n\nWork out the value of $x$.\n\nWrite down the two geometrical properties needed to find $x$.\n\n1 \\AnswerLine[][]\n\n2 \\AnswerLine[][]\n\n$x =$ \\AnswerLine[][]\n\\Marks{4}\n\n\\item\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q09-Circle.png}\n%\\end{InsertScreenShot}\n\nDraw a tangent to the circle at point $P$.\n\\Marks{1}\n\n\\item The exterior angle of a regular polygon is $24^\\circ$.\n\nWork out the number of sides of this polygon.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q09-Triangle.png}\n%\\end{InsertScreenShot}\n\nCalculate the value of $x$.\n\n$x =$ \\AnswerLine[][]\n\\Marks{5}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "_postParts": [
+      {
+        "type": "text",
+        "content": "%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q09-Grid.png}\n%\\end{InsertScreenShot}\n\\Marks{2}\n\n\\item\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q09-Polygon.png}\n%\\end{InsertScreenShot}\n\nWork out the value of $x$.\n\nWrite down the two geometrical properties needed to find $x$.\n\n1 \\AnswerLine[][]\n\n2 \\AnswerLine[][]\n\n$x =$ \\AnswerLine[][]\n\\Marks{4}\n\n\\item\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q09-Circle.png}\n%\\end{InsertScreenShot}\n\nDraw a tangent to the circle at point $P$.\n\\Marks{1}\n\n\\item The exterior angle of a regular polygon is $24^\\circ$.\n\nWork out the number of sides of this polygon.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item\n%\\begin{InsertScreenShot}\n%    \\relincludegraphics{Figures/Q09-Triangle.png}\n%\\end{InsertScreenShot}\n\nCalculate the value of $x$.\n\n$x =$ \\AnswerLine[][]\n\\Marks{5}\n\\end{parts}"
+      }
+    ],
+    "_compactBegin": true,
+    "_compactItems": true
+  }
+]

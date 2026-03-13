@@ -1,0 +1,1042 @@
+[
+  {
+    "id": "0580-2018OctNov-Paper12-Q01",
+    "paper": "2018OctNov-Paper12",
+    "qnum": 1,
+    "marks": 1,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.6",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/12/O/N/18 Q01",
+    "year": 2018,
+    "session": "OctNov",
+    "tex": "Write down the type of angle shown in the diagram.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "write",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{center}\n\\begin{tikzpicture}[scale=1]\n    % 画一条水平线和一个钝角\n    \\draw[thick] (0,0) -- (4,0);\n    \\draw[thick] (2,0) arc[start angle=0, end angle=135, radius=1.5];\n    \\draw[thick] (2,0) -- ($(2,0) + (135:2)$);\n\\end{tikzpicture}\n\\end{center}\n\nWrite down the type of angle shown in the diagram.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "_compactAnswer": true
+    },
+    "_rawBody": "\\begin{center}\n\\begin{tikzpicture}[scale=1]\n    % 画一条水平线和一个钝角\n    \\draw[thick] (0,0) -- (4,0);\n    \\draw[thick] (2,0) arc[start angle=0, end angle=135, radius=1.5];\n    \\draw[thick] (2,0) -- ($(2,0) + (135:2)$);\n\\end{tikzpicture}\n\\end{center}\n\nWrite down the type of angle shown in the diagram.\n\\AnswerLine[][]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2018OctNov-Paper12-Q02",
+    "paper": "2018OctNov-Paper12",
+    "qnum": 2,
+    "marks": 1,
+    "topics": [
+      "Geometry"
+    ],
+    "s": "4.6",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/12/O/N/18 Q02",
+    "year": 2018,
+    "session": "OctNov",
+    "tex": "Write down the size of one angle in an equilateral triangle.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "write",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Write down the size of one angle in an equilateral triangle.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "_compactAnswer": true
+    },
+    "_rawBody": "Write down the size of one angle in an equilateral triangle.\n\\AnswerLine[][]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2018OctNov-Paper12-Q03",
+    "paper": "2018OctNov-Paper12",
+    "qnum": 3,
+    "marks": 1,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.8",
+    "d": 1,
+    "cat": "number",
+    "topic": "Ratio, rate and proportion",
+    "qtype": "standard form conversion",
+    "g": "mixed",
+    "src": "0580/12/O/N/18 Q03",
+    "year": 2018,
+    "session": "OctNov",
+    "tex": "Write $23000$ in standard form.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "write",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Write $23000$ in standard form.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "_compactAnswer": true
+    },
+    "_rawBody": "Write $23000$ in standard form.\n\\AnswerLine[][]\n\\Marks{1}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2018OctNov-Paper12-Q04",
+    "paper": "2018OctNov-Paper12",
+    "qnum": 4,
+    "marks": 2,
+    "topics": [
+      "Transformations and vectors"
+    ],
+    "s": "7.2",
+    "d": 1,
+    "cat": "vectors",
+    "topic": "Reflection",
+    "qtype": "vector operations",
+    "g": "mixed",
+    "src": "0580/12/O/N/18 Q04",
+    "year": 2018,
+    "session": "OctNov",
+    "tex": "Work out.\n\\newline\n\n(a) $\\begin{pmatrix} -2 \\\\ 5 \\end{pmatrix} - \\begin{pmatrix} -1 \\\\ 1 \\end{pmatrix}$\n\n    \n\n(b) $7\\begin{pmatrix} -3 \\\\ 4 \\end{pmatrix}$",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "$\\begin{pmatrix} -2 \\\\ 5 \\end{pmatrix} - \\begin{pmatrix} -1 \\\\ 1 \\end{pmatrix}$"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "vector",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "$7\\begin{pmatrix} -3 \\\\ 4 \\end{pmatrix}$"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "prefix": "vector",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Work out.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "Work out.\n\n\\begin{parts}\n    \\item $\\begin{pmatrix} -2 \\\\ 5 \\end{pmatrix} - \\begin{pmatrix} -1 \\\\ 1 \\end{pmatrix}$\n    \\AnswerLine[vector][]\n    \\Marks{1}\n\n    \\item $7\\begin{pmatrix} -3 \\\\ 4 \\end{pmatrix}$\n    \\AnswerLine[vector][]\n    \\Marks{1}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2018OctNov-Paper12-Q05",
+    "paper": "2018OctNov-Paper12",
+    "qnum": 5,
+    "marks": 2,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.2",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Rearranging formulae",
+    "qtype": "expanding algebraic expressions",
+    "g": "simplify",
+    "src": "0580/12/O/N/18 Q05",
+    "year": 2018,
+    "session": "OctNov",
+    "tex": "Expand.\n\\newline\n\\[\n    2x(3 - x^2)\n\\]",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "simplify",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Expand.\n\\newline\n\\[\n    2x(3 - x^2)\n\\]"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "_compactAnswer": true
+    },
+    "_rawBody": "Expand.\n\\[\n    2x(3 - x^2)\n\\]\n\\AnswerLine[][]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2018OctNov-Paper12-Q06",
+    "paper": "2018OctNov-Paper12",
+    "qnum": 6,
+    "marks": 2,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry"
+    ],
+    "s": "3.1",
+    "d": 1,
+    "cat": "coord",
+    "topic": "Coordinates",
+    "qtype": "coordinates reading/plotting",
+    "g": "graph",
+    "src": "0580/12/O/N/18 Q06",
+    "year": 2018,
+    "session": "OctNov",
+    "tex": "Triangle $ABC$ and triangle $DEF$ are similar.\n\\newline\n\nFind $DE$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Triangle $ABC$ and triangle $DEF$ are similar.\n\\newline\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n    % Triangle ABC\n    \\coordinate (A) at (0,0);\n    \\coordinate (C) at (3,0);\n    \\coordinate (B) at (0.5,2);\n    \\draw[thick] (A) -- (B) -- (C) -- cycle;\n    \\node[left] at (A) {$A$};\n    \\node[above] at (B) {$B$};\n    \\node[right] at (C) {$C$};\n    \\node[left, midway] at ($(A)!0.5!(B)$) {$16\\,\\text{cm}$};\n    \\node[below] at ($(A)!0.5!(C)$) {$18\\,\\text{cm}$};\n\n    % Triangle DEF\n    \\begin{scope}[xshift=5cm]\n    \\coordinate (D) at (0,0);\n    \\coordinate (F) at (4.5,0);\n    \\coordinate (E) at (0.75,3);\n    \\draw[thick] (D) -- (E) -- (F) -- cycle;\n    \\node[left] at (D) {$D$};\n    \\node[above] at (E) {$E$};\n    \\node[right] at (F) {$F$};\n    \\node[below] at ($(D)!0.5!(F)$) {$27\\,\\text{cm}$};\n    \\end{scope}\n\n    \\node at (7,3) {NOT TO};\n    \\node at (7,2.5) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nFind $DE$.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "$DE = \\dots$ cm",
+      "_compactAnswer": true
+    },
+    "_rawBody": "Triangle $ABC$ and triangle $DEF$ are similar.\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n    % Triangle ABC\n    \\coordinate (A) at (0,0);\n    \\coordinate (C) at (3,0);\n    \\coordinate (B) at (0.5,2);\n    \\draw[thick] (A) -- (B) -- (C) -- cycle;\n    \\node[left] at (A) {$A$};\n    \\node[above] at (B) {$B$};\n    \\node[right] at (C) {$C$};\n    \\node[left, midway] at ($(A)!0.5!(B)$) {$16\\,\\text{cm}$};\n    \\node[below] at ($(A)!0.5!(C)$) {$18\\,\\text{cm}$};\n\n    % Triangle DEF\n    \\begin{scope}[xshift=5cm]\n    \\coordinate (D) at (0,0);\n    \\coordinate (F) at (4.5,0);\n    \\coordinate (E) at (0.75,3);\n    \\draw[thick] (D) -- (E) -- (F) -- cycle;\n    \\node[left] at (D) {$D$};\n    \\node[above] at (E) {$E$};\n    \\node[right] at (F) {$F$};\n    \\node[below] at ($(D)!0.5!(F)$) {$27\\,\\text{cm}$};\n    \\end{scope}\n\n    \\node at (7,3) {NOT TO};\n    \\node at (7,2.5) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nFind $DE$.\n\\AnswerLine[][$DE = \\dots$ cm]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2018OctNov-Paper12-Q07",
+    "paper": "2018OctNov-Paper12",
+    "qnum": 7,
+    "marks": 2,
+    "topics": [
+      "Coordinate geometry",
+      "Mensuration",
+      "Trigonometry"
+    ],
+    "s": "3.1",
+    "d": 1,
+    "cat": "coord",
+    "topic": "Coordinates",
+    "qtype": "coordinates reading/plotting",
+    "g": "graph",
+    "src": "0580/12/O/N/18 Q07",
+    "year": 2018,
+    "session": "OctNov",
+    "tex": "The diagram shows a right-angled triangle.\n\\newline\n\nUse trigonometry to calculate the value of $x$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The diagram shows a right-angled triangle.\n\\newline\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.6]\n    \\coordinate (A) at (0,0);\n    \\coordinate (B) at (0,4);\n    \\coordinate (C) at (3,0);\n\n    \\draw[thick] (A) -- (B) -- (C) -- cycle;\n\n    % 直角标记\n    \\draw (A) rectangle ++(0.3,0.3);\n\n    % 标注\n    \\node[left] at ($(A)!0.5!(B)$) {$16\\,\\text{cm}$};\n    \\node[below] at ($(A)!0.5!(C)$) {$x\\,\\text{cm}$};\n\n    % 角度标注\n    \\draw (C) +(-0.8,0) arc[start angle=180, end angle=127, radius=0.8];\n    \\node at ($(C)+(-1.2,0.3)$) {$52^\\circ$};\n\n    \\node at (5,3) {NOT TO};\n    \\node at (5,2.5) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nUse trigonometry to calculate the value of $x$.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "$x = \\dots$",
+      "_compactAnswer": true
+    },
+    "_rawBody": "The diagram shows a right-angled triangle.\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.6]\n    \\coordinate (A) at (0,0);\n    \\coordinate (B) at (0,4);\n    \\coordinate (C) at (3,0);\n\n    \\draw[thick] (A) -- (B) -- (C) -- cycle;\n\n    % 直角标记\n    \\draw (A) rectangle ++(0.3,0.3);\n\n    % 标注\n    \\node[left] at ($(A)!0.5!(B)$) {$16\\,\\text{cm}$};\n    \\node[below] at ($(A)!0.5!(C)$) {$x\\,\\text{cm}$};\n\n    % 角度标注\n    \\draw (C) +(-0.8,0) arc[start angle=180, end angle=127, radius=0.8];\n    \\node at ($(C)+(-1.2,0.3)$) {$52^\\circ$};\n\n    \\node at (5,3) {NOT TO};\n    \\node at (5,2.5) {SCALE};\n\\end{tikzpicture}\n\\end{center}\n\nUse trigonometry to calculate the value of $x$.\n\\AnswerLine[][$x = \\dots$]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2018OctNov-Paper12-Q08",
+    "paper": "2018OctNov-Paper12",
+    "qnum": 8,
+    "marks": 2,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.3",
+    "d": 1,
+    "cat": "number",
+    "topic": "Directed numbers",
+    "qtype": "evaluation of algebraic expression with powers",
+    "g": "indices",
+    "src": "0580/12/O/N/18 Q08",
+    "year": 2018,
+    "session": "OctNov",
+    "tex": "$T = a^2 + 4b$\n\nFind the value of $T$ when $a = 5$ and $b = 3$.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "$T = a^2 + 4b$\n\nFind the value of $T$ when $a = 5$ and $b = 3$.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "$T = \\dots$",
+      "_compactAnswer": true
+    },
+    "_rawBody": "$T = a^2 + 4b$\n\nFind the value of $T$ when $a = 5$ and $b = 3$.\n\\AnswerLine[][$T = \\dots$]\n\\Marks{2}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2018OctNov-Paper12-Q09",
+    "paper": "2018OctNov-Paper12",
+    "qnum": 9,
+    "marks": 3,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.4",
+    "d": 1,
+    "cat": "number",
+    "topic": "Fractions, decimals and percentages",
+    "qtype": "fraction to percentage conversion",
+    "g": "mixed",
+    "src": "0580/12/O/N/18 Q09",
+    "year": 2018,
+    "session": "OctNov",
+    "tex": "Complete the table.\n\\newline\n\n\\begin{tabular}{|c|c|}\n\\hline\nFraction & Percentage \\\\\n\\hline\n$\\dfrac{1}{4}$ & =  \\\\\n\\hline\n & = 47\\% \\\\\n\\hline\n$\\dfrac{3}{5}$ & =  \\\\\n\\hline\n\\end{tabular}",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Complete the table.\n\\newline\n"
+      },
+      {
+        "type": "space",
+        "height": "0.8em",
+        "cmd": "vgap"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{center}\n\\begin{tabular}{|c|c|}\n\\hline\nFraction & Percentage \\\\\n\\hline\n$\\dfrac{1}{4}$ & = \\hspace{2cm} \\\\\n\\hline\n\\hspace{2cm} & = 47\\% \\\\\n\\hline\n$\\dfrac{3}{5}$ & = \\hspace{2cm} \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+      }
+    ],
+    "_rawBody": "Complete the table.\n\n\\vgap\n\n\\begin{center}\n\\begin{tabular}{|c|c|}\n\\hline\nFraction & Percentage \\\\\n\\hline\n$\\dfrac{1}{4}$ & = \\hspace{2cm} \\\\\n\\hline\n\\hspace{2cm} & = 47\\% \\\\\n\\hline\n$\\dfrac{3}{5}$ & = \\hspace{2cm} \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2018OctNov-Paper12-Q10",
+    "paper": "2018OctNov-Paper12",
+    "qnum": 10,
+    "marks": 3,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry"
+    ],
+    "s": "3.1",
+    "d": 1,
+    "cat": "coord",
+    "topic": "Coordinates",
+    "qtype": "coordinates reading/plotting",
+    "g": "graph",
+    "src": "0580/12/O/N/18 Q10",
+    "year": 2018,
+    "session": "OctNov",
+    "tex": "The scale drawing shows the positions of town $A$ and town $B$.\n\\newline\n\nThe scale is 1 centimetre represents 12 kilometres.\n\\newline\n\n(a) Work out the actual distance from town $A$ to town $B$.\n\\newline\n\n    \n\n(b) Measure the bearing of town $B$ from town $A$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Work out the actual distance from town $A$ to town $B$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "km",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Measure the bearing of town $B$ from town $A$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The scale drawing shows the positions of town $A$ and town $B$.\n\\newline\n\nThe scale is 1 centimetre represents 12 kilometres.\n\\newline\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n    % Town A\n    \\coordinate (A) at (0,0);\n    \\fill (A) circle (2pt);\n    \\node[below left] at (A) {$A$};\n    \\draw[->, thick] (A) -- ++(0,2) node[above] {North};\n\n    % Town B\n    \\coordinate (B) at (4,3);\n    \\fill (B) circle (2pt);\n    \\node[below right] at (B) {$B$};\n    \\draw[->, thick] (B) -- ++(0,2) node[above] {North};\n\n    % Scale\n    \\node at (6,1) {Scale: $1\\,\\text{cm}$ to $12\\,\\text{km}$};\n\\end{tikzpicture}\n\\end{center}"
+      }
+    ],
+    "_rawBody": "The scale drawing shows the positions of town $A$ and town $B$.\n\nThe scale is 1 centimetre represents 12 kilometres.\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n    % Town A\n    \\coordinate (A) at (0,0);\n    \\fill (A) circle (2pt);\n    \\node[below left] at (A) {$A$};\n    \\draw[->, thick] (A) -- ++(0,2) node[above] {North};\n\n    % Town B\n    \\coordinate (B) at (4,3);\n    \\fill (B) circle (2pt);\n    \\node[below right] at (B) {$B$};\n    \\draw[->, thick] (B) -- ++(0,2) node[above] {North};\n\n    % Scale\n    \\node at (6,1) {Scale: 1\\,cm to 12\\,km};\n\\end{tikzpicture}\n\\end{center}\n\n\\begin{parts}\n    \\item Work out the actual distance from town $A$ to town $B$.\n    \\AnswerLine[][km]\n    \\Marks{2}\n\n    \\item Measure the bearing of town $B$ from town $A$.\n    \\AnswerLine[][]\n    \\Marks{1}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2018OctNov-Paper12-Q11",
+    "paper": "2018OctNov-Paper12",
+    "qnum": 11,
+    "marks": 3,
+    "topics": [
+      "Probability"
+    ],
+    "s": "8.3",
+    "d": 1,
+    "cat": "probability",
+    "topic": "Tree diagrams",
+    "qtype": "combined events",
+    "g": "mixed",
+    "src": "0580/12/O/N/18 Q11",
+    "year": 2018,
+    "session": "OctNov",
+    "tex": "(a) A bag contains 6 blue counters and 2 red counters only.\n\\newline\n\n    A counter is taken from the bag at random.\n\\newline\n\n    Draw an arrow ($\\downarrow$) on the probability scale to show the probability of taking\n\n    (i)  a blue counter,\n\n        \n\n         a yellow counter.\n\\newline\n\n        \n\n(b) Another bag contains green counters and black counters only.\n\\newline\n\n    A counter is taken from the bag at random.\n\\newline\n\n    The probability of taking a green counter is $0.64$.\n\\newline\n\n    Work out the probability of taking a black counter.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "A bag contains 6 blue counters and 2 red counters only.\n\\newline\n\n    A counter is taken from the bag at random.\n\\newline\n\n    Draw an arrow ($\\downarrow$) on the probability scale to show the probability of taking"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "content": [
+              {
+                "type": "text",
+                "content": "a blue counter,\n\n        \\begin{center}\n        \\begin{tikzpicture}\n            \\draw (0,0) -- (6,0);\n            \\draw (0,-0.15) -- (0,0.15) node[below=5pt] {0};\n            \\draw (6,-0.15) -- (6,0.15) node[below=5pt] {1};\n            \\foreach \\x in {1.5,3,4.5} {\n                \\draw (\\x,-0.1) -- (\\x,0.1);\n            }\n        \\end{tikzpicture}\n        \\end{center}"
+              }
+            ],
+            "marks": 1,
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "content": [
+              {
+                "type": "text",
+                "content": "a yellow counter.\n\\newline\n\n        \\begin{center}\n        \\begin{tikzpicture}\n            \\draw (0,0) -- (6,0);\n            \\draw (0,-0.15) -- (0,0.15) node[below=5pt] {0};\n            \\draw (6,-0.15) -- (6,0.15) node[below=5pt] {1};\n            \\foreach \\x in {1.5,3,4.5} {\n                \\draw (\\x,-0.1) -- (\\x,0.1);\n            }\n        \\end{tikzpicture}\n        \\end{center}"
+              }
+            ],
+            "marks": 1,
+            "_compactMarks": true
+          }
+        ],
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Another bag contains green counters and black counters only.\n\\newline\n\n    A counter is taken from the bag at random.\n\\newline\n\n    The probability of taking a green counter is $0.64$.\n\\newline\n\n    Work out the probability of taking a black counter.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n    \\item A bag contains 6 blue counters and 2 red counters only.\n\n    A counter is taken from the bag at random.\n\n    Draw an arrow ($\\downarrow$) on the probability scale to show the probability of taking\n\n    \\begin{subparts}\n        \\subpart a blue counter,\n\n        \\begin{center}\n        \\begin{tikzpicture}\n            \\draw (0,0) -- (6,0);\n            \\draw (0,-0.15) -- (0,0.15) node[below=5pt] {0};\n            \\draw (6,-0.15) -- (6,0.15) node[below=5pt] {1};\n            \\foreach \\x in {1.5,3,4.5} {\n                \\draw (\\x,-0.1) -- (\\x,0.1);\n            }\n        \\end{tikzpicture}\n        \\end{center}\n        \\Marks{1}\n\n        \\subpart a yellow counter.\n\n        \\begin{center}\n        \\begin{tikzpicture}\n            \\draw (0,0) -- (6,0);\n            \\draw (0,-0.15) -- (0,0.15) node[below=5pt] {0};\n            \\draw (6,-0.15) -- (6,0.15) node[below=5pt] {1};\n            \\foreach \\x in {1.5,3,4.5} {\n                \\draw (\\x,-0.1) -- (\\x,0.1);\n            }\n        \\end{tikzpicture}\n        \\end{center}\n        \\Marks{1}\n    \\end{subparts}\n\n    \\item Another bag contains green counters and black counters only.\n\n    A counter is taken from the bag at random.\n\n    The probability of taking a green counter is $0.64$.\n\n    Work out the probability of taking a black counter.\n    \\AnswerLine[][]\n    \\Marks{1}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2018OctNov-Paper12-Q12",
+    "paper": "2018OctNov-Paper12",
+    "qnum": 12,
+    "marks": 3,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.13",
+    "d": 1,
+    "cat": "number",
+    "topic": "Electronic calculators",
+    "qtype": "simple interest calculation",
+    "g": "mixed",
+    "src": "0580/12/O/N/18 Q12",
+    "year": 2018,
+    "session": "OctNov",
+    "tex": "Samit invests \\$1800 at a rate of 4.5\\% per year simple interest.\n\\newline\n\nWork out the value of his investment at the end of 4 years.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Samit invests \\$1800 at a rate of 4.5\\% per year simple interest.\n\\newline\n\nWork out the value of his investment at the end of 4 years.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "\\$",
+      "_compactAnswer": true
+    },
+    "_rawBody": "Samit invests \\$1800 at a rate of 4.5\\% per year simple interest.\n\nWork out the value of his investment at the end of 4 years.\n\\AnswerLine[][\\$]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2018OctNov-Paper12-Q13",
+    "paper": "2018OctNov-Paper12",
+    "qnum": 13,
+    "marks": 3,
+    "topics": [
+      "Number",
+      "Mensuration"
+    ],
+    "s": "1.16",
+    "d": 1,
+    "cat": "number",
+    "topic": "Upper and lower bounds",
+    "qtype": "currency conversion using graph",
+    "g": "graph",
+    "src": "0580/12/O/N/18 Q13",
+    "year": 2018,
+    "session": "OctNov",
+    "tex": "The diagram shows a conversion graph between pounds (£) and dollars (\\$).\n\\newline\n\nAna finds the same watch on sale in a shop and on the internet.\n\\newline\n\nThe shop price is \\$120.\n\\newline\n\nThe internet price is £ 90.\n\\newline\n\nUse the conversion graph to find which price is lower.\n\\newline\n\nShow your working clearly.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The diagram shows a conversion graph between pounds (\\pounds) and dollars (\\$).\n\\newline\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.12]\n    % 网格\n    \\draw[very thin, gray!30] (0,0) grid[step=5] (40,30);\n\n    % 坐标轴\n    \\draw[->, thick] (0,0) -- (42,0) node[below] {Dollars (\\$)};\n    \\draw[->, thick] (0,0) -- (0,32) node[left] {Pounds (\\pounds)};\n\n    % 刻度\n    \\foreach \\x in {0,10,20,30,40} {\n        \\draw (\\x,-1) -- (\\x,0) node[below=3pt] {\\x};\n    }\n    \\foreach \\y in {0,10,20,30} {\n        \\draw (-1,\\y) -- (0,\\y) node[left=3pt] {\\y};\n    }\n\n    % 转换线\n    \\draw[thick] (0,0) -- (40,30);\n\\end{tikzpicture}\n\\end{center}\n\nAna finds the same watch on sale in a shop and on the internet.\n\\newline\n\nThe shop price is \\$120.\n\\newline\n\nThe internet price is \\pounds 90.\n\\newline\n\nUse the conversion graph to find which price is lower.\n\\newline\n\nShow your working clearly.\n\\newline\n"
+      }
+    ],
+    "answer": {
+      "type": "number",
+      "suffix": "The \\dots\\ price is lower.",
+      "_compactAnswer": true
+    },
+    "_rawBody": "The diagram shows a conversion graph between pounds (\\pounds) and dollars (\\$).\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.12]\n    % 网格\n    \\draw[very thin, gray!30] (0,0) grid[step=5] (40,30);\n\n    % 坐标轴\n    \\draw[->, thick] (0,0) -- (42,0) node[below] {Dollars (\\$)};\n    \\draw[->, thick] (0,0) -- (0,32) node[left] {Pounds (\\pounds)};\n\n    % 刻度\n    \\foreach \\x in {0,10,20,30,40} {\n        \\draw (\\x,-1) -- (\\x,0) node[below=3pt] {\\x};\n    }\n    \\foreach \\y in {0,10,20,30} {\n        \\draw (-1,\\y) -- (0,\\y) node[left=3pt] {\\y};\n    }\n\n    % 转换线\n    \\draw[thick] (0,0) -- (40,30);\n\\end{tikzpicture}\n\\end{center}\n\nAna finds the same watch on sale in a shop and on the internet.\n\nThe shop price is \\$120.\n\nThe internet price is \\pounds 90.\n\nUse the conversion graph to find which price is lower.\n\nShow your working clearly.\n\\AnswerLine[][The \\dots\\ price is lower.]\n\\Marks{3}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2018OctNov-Paper12-Q14",
+    "paper": "2018OctNov-Paper12",
+    "qnum": 14,
+    "marks": 3,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.7",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Sequences",
+    "qtype": "sequences (evaluating term, finding nth term)",
+    "g": "sequence",
+    "src": "0580/12/O/N/18 Q14",
+    "year": 2018,
+    "session": "OctNov",
+    "tex": "(a) The expression for the $n$th term of a sequence is $5n^2$.\n\\newline\n\n    Work out the third term in this sequence.\n\\newline\n\n    \n\n(b) These are the first five terms of a sequence.\n\\newline\n    \\[\n        -4 \\qquad 2 \\qquad 8 \\qquad 14 \\qquad 20\n    \\]\n\n    Find an expression for the $n$th term of this sequence.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "The expression for the $n$th term of a sequence is $5n^2$.\n\\newline\n\n    Work out the third term in this sequence.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "These are the first five terms of a sequence.\n\\newline\n    \\[\n        -4 \\qquad 2 \\qquad 8 \\qquad 14 \\qquad 20\n    \\]\n\n    Find an expression for the $n$th term of this sequence.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n    \\item The expression for the $n$th term of a sequence is $5n^2$.\n\n    Work out the third term in this sequence.\n    \\AnswerLine[][]\n    \\Marks{1}\n\n    \\item These are the first five terms of a sequence.\n    \\[\n        -4 \\qquad 2 \\qquad 8 \\qquad 14 \\qquad 20\n    \\]\n\n    Find an expression for the $n$th term of this sequence.\n    \\AnswerLine[][]\n    \\Marks{2}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2018OctNov-Paper12-Q15",
+    "paper": "2018OctNov-Paper12",
+    "qnum": 15,
+    "marks": 4,
+    "topics": [
+      "Geometry",
+      "Mensuration",
+      "Statistics"
+    ],
+    "s": "4.6",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Constructions",
+    "qtype": "angle calculations",
+    "g": "mixed",
+    "src": "0580/12/O/N/18 Q15",
+    "year": 2018,
+    "session": "OctNov",
+    "tex": "120 students choose what they want to do when they leave school.\n\\newline\n\nTheir choices are shown in the table.\n\\newline\n\n\\begin{tabular}{|l|c|}\n\\hline\nChoice & Number of students \\\\\n\\hline\nUniversity & 57 \\\\\n\\hline\nTraining & 45 \\\\\n\\hline\nWork & 18 \\\\\n\\hline\n\\end{tabular}\nComplete the pie chart to show this information.\n\\newline\n\nLabel each sector clearly.\n\\newline\n",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "120 students choose what they want to do when they leave school.\n\\newline\n\nTheir choices are shown in the table.\n\\newline\n"
+      },
+      {
+        "type": "table",
+        "content": "\\begin{center}\n\\begin{tabular}{|l|c|}\n\\hline\nChoice & Number of students \\\\\n\\hline\nUniversity & 57 \\\\\n\\hline\nTraining & 45 \\\\\n\\hline\nWork & 18 \\\\\n\\hline\n\\end{tabular}\n\\end{center}"
+      },
+      {
+        "type": "text",
+        "content": "Complete the pie chart to show this information.\n\\newline\n\nLabel each sector clearly.\n\\newline\n\n\\begin{center}\n\\begin{tikzpicture}\n    \\draw (0,0) circle (3);\n    \\draw (0,0) -- (0,3);\n    \\fill (0,0) circle (2pt);\n\\end{tikzpicture}\n\\end{center}"
+      }
+    ],
+    "_rawBody": "120 students choose what they want to do when they leave school.\n\nTheir choices are shown in the table.\n\n\\begin{center}\n\\begin{tabular}{|l|c|}\n\\hline\nChoice & Number of students \\\\\n\\hline\nUniversity & 57 \\\\\n\\hline\nTraining & 45 \\\\\n\\hline\nWork & 18 \\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\nComplete the pie chart to show this information.\n\nLabel each sector clearly.\n\n\\begin{center}\n\\begin{tikzpicture}\n    \\draw (0,0) circle (3);\n    \\draw (0,0) -- (0,3);\n    \\fill (0,0) circle (2pt);\n\\end{tikzpicture}\n\\end{center}\n\\Marks{4}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2018OctNov-Paper12-Q16",
+    "paper": "2018OctNov-Paper12",
+    "qnum": 16,
+    "marks": 4,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.6",
+    "d": 1,
+    "cat": "number",
+    "topic": "Standard form",
+    "qtype": "numerical calculations with powers, roots, and four operations",
+    "g": "indices",
+    "src": "0580/12/O/N/18 Q16",
+    "year": 2018,
+    "session": "OctNov",
+    "tex": "Calculate.\n\\newline\n\n(a) $4.1^3$\n\n    \n\n(b) $-4 - (5^2 - 2 \\times 4 \\times {-3})$\n\n    \n\n(c) $\\dfrac{4.88 - 2.36}{5.3 + 1.9}$\n\n    \n\n(d) $\\sqrt{56.25} - \\sqrt[3]{15.625}$",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "$4.1^3$"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "$-4 - (5^2 - 2 \\times 4 \\times {-3})$"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "$\\dfrac{4.88 - 2.36}{5.3 + 1.9}$"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "$\\sqrt{56.25} - \\sqrt[3]{15.625}$"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Calculate.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "Calculate.\n\n\\begin{parts}\n    \\item $4.1^3$\n    \\AnswerLine[][]\n    \\Marks{1}\n\n    \\item $-4 - (5^2 - 2 \\times 4 \\times {-3})$\n    \\AnswerLine[][]\n    \\Marks{1}\n\n    \\item $\\dfrac{4.88 - 2.36}{5.3 + 1.9}$\n    \\AnswerLine[][]\n    \\Marks{1}\n\n    \\item $\\sqrt{56.25} - \\sqrt[3]{15.625}$\n    \\AnswerLine[][]\n    \\Marks{1}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2018OctNov-Paper12-Q17",
+    "paper": "2018OctNov-Paper12",
+    "qnum": 17,
+    "marks": 4,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.1",
+    "d": 1,
+    "cat": "number",
+    "topic": "Types of number",
+    "qtype": "prime factorization and LCM calculation",
+    "g": "mixed",
+    "src": "0580/12/O/N/18 Q17",
+    "year": 2018,
+    "session": "OctNov",
+    "tex": "(a) Write 56 as a product of its prime factors.\n\\newline\n\n    \n\n(b) Find the lowest common multiple (LCM) of 56 and 42.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write 56 as a product of its prime factors.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the lowest common multiple (LCM) of 56 and 42.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "find",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n    \\item Write 56 as a product of its prime factors.\n    \\AnswerLine[][]\n    \\Marks{2}\n\n    \\item Find the lowest common multiple (LCM) of 56 and 42.\n    \\AnswerLine[][]\n    \\Marks{2}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2018OctNov-Paper12-Q18",
+    "paper": "2018OctNov-Paper12",
+    "qnum": 18,
+    "marks": 4,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "3.1",
+    "d": 1,
+    "cat": "coord",
+    "topic": "Coordinates",
+    "qtype": "coordinates reading/plotting",
+    "g": "graph",
+    "src": "0580/12/O/N/18 Q18",
+    "year": 2018,
+    "session": "OctNov",
+    "tex": "The diagram shows a pentagon $ABCDE$.\n\\newline\n\n(a) **Using a straight edge and compasses only**, construct the bisector of angle $BCD$.\n\\newline\n\n(b) Draw the locus of the points inside the pentagon that are $3\\,\\text{cm}$ from $E$.\n\\newline\n\n(c) Shade the region inside the pentagon that is\n    (d) less than $3\\,\\text{cm}$ from $E$\n    and\n    (e) nearer to $DC$ than to $BC$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "\\textbf{Using a straight edge and compasses only}, construct the bisector of angle $BCD$.\n\\newline\n"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Draw the locus of the points inside the pentagon that are $3\\,\\text{cm}$ from $E$.\n\\newline\n"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "text",
+            "content": "Shade the region inside the pentagon that is\n    \\begin{itemize}"
+          }
+        ]
+      },
+      {
+        "label": "(d)",
+        "marks": 0,
+        "content": [
+          {
+            "type": "text",
+            "content": "less than $3\\,\\text{cm}$ from $E$\n    \\end{itemize}\n    and\n    \\begin{itemize}"
+          }
+        ]
+      },
+      {
+        "label": "(e)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "nearer to $DC$ than to $BC$.\n\\newline\n    \\end{itemize}"
+          }
+        ],
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The diagram shows a pentagon $ABCDE$.\n\\newline\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.7]\n    % 五边形\n    \\coordinate (A) at (2,5);\n    \\coordinate (B) at (5,3);\n    \\coordinate (C) at (4,0);\n    \\coordinate (D) at (0,0);\n    \\coordinate (E) at (-1,3);\n\n    \\draw[thick] (A) -- (B) -- (C) -- (D) -- (E) -- cycle;\n\n    \\node[above] at (A) {$A$};\n    \\node[right] at (B) {$B$};\n    \\node[below right] at (C) {$C$};\n    \\node[below left] at (D) {$D$};\n    \\node[left] at (E) {$E$};\n\\end{tikzpicture}\n\\end{center}"
+      }
+    ],
+    "_rawBody": "The diagram shows a pentagon $ABCDE$.\n\n\\begin{center}\n\\begin{tikzpicture}[scale=0.7]\n    % 五边形\n    \\coordinate (A) at (2,5);\n    \\coordinate (B) at (5,3);\n    \\coordinate (C) at (4,0);\n    \\coordinate (D) at (0,0);\n    \\coordinate (E) at (-1,3);\n\n    \\draw[thick] (A) -- (B) -- (C) -- (D) -- (E) -- cycle;\n\n    \\node[above] at (A) {$A$};\n    \\node[right] at (B) {$B$};\n    \\node[below right] at (C) {$C$};\n    \\node[below left] at (D) {$D$};\n    \\node[left] at (E) {$E$};\n\\end{tikzpicture}\n\\end{center}\n\n\\begin{parts}\n    \\item \\textbf{Using a straight edge and compasses only}, construct the bisector of angle $BCD$.\n    \\Marks{2}\n\n    \\item Draw the locus of the points inside the pentagon that are 3\\,cm from $E$.\n    \\Marks{1}\n\n    \\item Shade the region inside the pentagon that is\n    \\begin{itemize}\n        \\item less than 3\\,cm from $E$\n    \\end{itemize}\n    and\n    \\begin{itemize}\n        \\item nearer to $DC$ than to $BC$.\n    \\end{itemize}\n    \\Marks{1}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2018OctNov-Paper12-Q19",
+    "paper": "2018OctNov-Paper12",
+    "qnum": 19,
+    "marks": 4,
+    "topics": [
+      "Algebra and graphs"
+    ],
+    "s": "2.5",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Equations",
+    "qtype": "solving simultaneous linear equations",
+    "g": "simul-linear",
+    "src": "0580/12/O/N/18 Q19",
+    "year": 2018,
+    "session": "OctNov",
+    "tex": "Solve the simultaneous equations.\n\\newline\n\nYou must show all your working.\n\\newline\n\\begin{align*}\n    2x + 5y &= 60 \\\\\n    3x - 2y &= 14\n\\end{align*}",
+    "parts": [],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "solve",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Solve the simultaneous equations.\n\\newline\n\nYou must show all your working.\n\\newline\n\\begin{align*}\n    2x + 5y &= 60 \\\\\n    3x - 2y &= 14\n\\end{align*}"
+      }
+    ],
+    "answer": {
+      "type": "multiline",
+      "lines": 2,
+      "template": "____ $x = \\dots$\\n____ $y = \\dots$",
+      "lineSep": "blank",
+      "_compactAnswer": true
+    },
+    "_rawBody": "Solve the simultaneous equations.\n\nYou must show all your working.\n\\begin{align*}\n    2x + 5y &= 60 \\\\\n    3x - 2y &= 14\n\\end{align*}\n\\AnswerLine[][$x = \\dots$]\n\\AnswerLine[][$y = \\dots$]\n\\Marks{4}",
+    "_compactMarks": true
+  },
+  {
+    "id": "0580-2018OctNov-Paper12-Q20",
+    "paper": "2018OctNov-Paper12",
+    "qnum": 20,
+    "marks": 5,
+    "topics": [
+      "Coordinate geometry",
+      "Geometry"
+    ],
+    "s": "3.5",
+    "d": 1,
+    "cat": "coord",
+    "topic": "Parallel and perpendicular lines",
+    "qtype": "equation of a straight line",
+    "g": "mixed",
+    "src": "0580/12/O/N/18 Q20",
+    "year": 2018,
+    "session": "OctNov",
+    "tex": "(a) Write down the co-ordinates of point $A$.\n\\newline\n\n    \n\n(b) On the grid, plot point $B$ $(1, -3)$.\n\\newline\n\n(c) Find the gradient of line $L$.\n\\newline\n\n    \n\n(d) Find the equation of line $L$ in the form $y = mx + c$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down the co-ordinates of point $A$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "(\\dots, \\dots)",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "On the grid, plot point $B$ $(1, -3)$.\n\\newline\n"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the gradient of line $L$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the equation of line $L$ in the form $y = mx + c$.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "$y = \\dots$",
+          "_compactAnswer": true
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "text",
+        "content": "\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n    % 网格\n    \\draw[very thin, gray!50] (-4,-4) grid (4,4);\n\n    % 坐标轴\n    \\draw[->, thick] (-4.5,0) -- (4.5,0) node[right] {$x$};\n    \\draw[->, thick] (0,-4.5) -- (0,4.5) node[above] {$y$};\n\n    % 刻度\n    \\foreach \\x in {-4,-3,-2,-1,1,2,3,4} {\n        \\draw (\\x,0.1) -- (\\x,-0.1) node[below] {\\tiny\\x};\n    }\n    \\foreach \\y in {-4,-3,-2,-1,1,2,3,4} {\n        \\draw (0.1,\\y) -- (-0.1,\\y) node[left] {\\tiny\\y};\n    }\n    \\node[below left] at (0,0) {\\tiny 0};\n\n    % 点 A\n    \\fill (-3,2) circle (3pt);\n    \\node[above left] at (-3,2) {$A$};\n\n    % 直线 L\n    \\draw[thick] (-2,0) -- (4,3);\n    \\node[above right] at (4,3) {$L$};\n\\end{tikzpicture}\n\\end{center}"
+      }
+    ],
+    "_rawBody": "\\begin{center}\n\\begin{tikzpicture}[scale=0.8]\n    % 网格\n    \\draw[very thin, gray!50] (-4,-4) grid (4,4);\n\n    % 坐标轴\n    \\draw[->, thick] (-4.5,0) -- (4.5,0) node[right] {$x$};\n    \\draw[->, thick] (0,-4.5) -- (0,4.5) node[above] {$y$};\n\n    % 刻度\n    \\foreach \\x in {-4,-3,-2,-1,1,2,3,4} {\n        \\draw (\\x,0.1) -- (\\x,-0.1) node[below] {\\tiny\\x};\n    }\n    \\foreach \\y in {-4,-3,-2,-1,1,2,3,4} {\n        \\draw (0.1,\\y) -- (-0.1,\\y) node[left] {\\tiny\\y};\n    }\n    \\node[below left] at (0,0) {\\tiny 0};\n\n    % 点 A\n    \\fill (-3,2) circle (3pt);\n    \\node[above left] at (-3,2) {$A$};\n\n    % 直线 L\n    \\draw[thick] (-2,0) -- (4,3);\n    \\node[above right] at (4,3) {$L$};\n\\end{tikzpicture}\n\\end{center}\n\n\\begin{parts}\n    \\item Write down the co-ordinates of point $A$.\n    \\AnswerLine[][(\\dots, \\dots)]\n    \\Marks{1}\n\n    \\item On the grid, plot point $B$ $(1, -3)$.\n    \\Marks{1}\n\n    \\item Find the gradient of line $L$.\n    \\AnswerLine[][]\n    \\Marks{2}\n\n    \\item Find the equation of line $L$ in the form $y = mx + c$.\n    \\AnswerLine[][$y = \\dots$]\n    \\Marks{1}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  }
+]

@@ -1,0 +1,1258 @@
+[
+  {
+    "id": "0580-2019MayJune-Paper33-Q01",
+    "paper": "2019MayJune-Paper33",
+    "qnum": 1,
+    "marks": 15,
+    "topics": [
+      "Number",
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "1.1",
+    "d": 1,
+    "cat": "number",
+    "topic": "Types of number",
+    "qtype": "number representation, basic arithmetic",
+    "g": "mixed",
+    "src": "0580/33/M/J/19 Q01",
+    "year": 2019,
+    "session": "MayJune",
+    "tex": "(a) Write this number in figures.\n\\newline\n\nOne million three hundred and two thousand five hundred and ninety-six.\n\\newline\n\n(b) (i) Two numbers are added together to give the number in the box immediately above.\n\\newline\n\nComplete the diagram.\n\\newline\n\n(c) (ii) Two numbers are multiplied together to give the number in the box immediately above.\n\\newline\n\nComplete the diagram.\n\\newline\n\n(d) Write these in order of size, starting with the smallest.\n\\newline\n\n18.4\\%,   $1.83 \\times 10^{-1}$,   $\\dfrac{5}{27}$\n\n ,  , \n\n(e) Work out 142 as a percentage of 304.\n\\newline\n\n(f) (i) Find the highest common factor (HCF) of 28 and 98.\n\\newline\n\n(g) (ii) Find the lowest common multiple (LCM) of 28 and 98.\n\\newline\n\n(h) The average distance from Earth to Mars is $2.25 \\times 10^{8}$ km.\n\\newline\n\\\\\nA space ship travels from Earth to Mars at an average speed of $5.8 \\times 10^{4}$ km/h.\n\\newline\n\nFind how long, in hours, the journey takes.\n\\newline\n\n hours",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write this number in figures.\n\\newline\n\nOne million three hundred and two thousand five hundred and ninety-six.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "(i) Two numbers are added together to give the number in the box immediately above.\n\\newline\n\nComplete the diagram.\n\\newline\n\n\\begin{tikzpicture}[scale=0.8]\n    % Draw the addition diagram\n    \\draw[thick] (0,0) -- (3,0); % ground\n    \\draw[thick] (1.25,-0.5) rectangle (1.75,0.5); % box\n\n    % Labels\n    \\node at (1.5,0) {2};\n    \\node at (0.5,0) {5};\n    \\node at (2.5,0) {-3};\n    \\node at (1.5,-1) {-4};\n\\end{tikzpicture}"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "(ii) Two numbers are multiplied together to give the number in the box immediately above.\n\\newline\n\nComplete the diagram.\n\\newline\n\n\\begin{tikzpicture}[scale=0.8]\n    % Draw the multiplication diagram\n    \\draw[thick] (0,0) -- (3,0); % ground\n\n    % Labels\n    \\node at (0.5,0) {5};\n    \\node at (2.5,0) {-3};\n    \\node at (1.5,-1) {-4};\n\\end{tikzpicture}"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write these in order of size, starting with the smallest.\n\\newline\n\n18.4\\%, \\quad $1.83 \\times 10^{-1}$, \\quad $\\dfrac{5}{27}$"
+          }
+        ],
+        "answer": {
+          "type": "multiline",
+          "lines": 3,
+          "template": "____\\n____\\n____",
+          "lineSep": "blank"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(e)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Work out 142 as a percentage of 304.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number",
+          "suffix": "\\%"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(f)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "(i) Find the highest common factor (HCF) of 28 and 98.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(g)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "(ii) Find the lowest common multiple (LCM) of 28 and 98.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(h)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "The average distance from Earth to Mars is $2.25 \\times 10^{8}$ km.\n\\newline\n\\\\\nA space ship travels from Earth to Mars at an average speed of $5.8 \\times 10^{4}$ km/h.\n\\newline\n\nFind how long, in hours, the journey takes.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "recall",
+    "cmd": "complete",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Write this number in figures.\n\nOne million three hundred and two thousand five hundred and ninety-six.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item (i) Two numbers are added together to give the number in the box immediately above.\n\nComplete the diagram.\n\n\\begin{tikzpicture}[scale=0.8]\n    % Draw the addition diagram\n    \\draw[thick] (0,0) -- (3,0); % ground\n    \\draw[thick] (1.25,-0.5) rectangle (1.75,0.5); % box\n\n    % Labels\n    \\node at (1.5,0) {2};\n    \\node at (0.5,0) {5};\n    \\node at (2.5,0) {-3};\n    \\node at (1.5,-1) {-4};\n\\end{tikzpicture}\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item (ii) Two numbers are multiplied together to give the number in the box immediately above.\n\nComplete the diagram.\n\n\\begin{tikzpicture}[scale=0.8]\n    % Draw the multiplication diagram\n    \\draw[thick] (0,0) -- (3,0); % ground\n\n    % Labels\n    \\node at (0.5,0) {5};\n    \\node at (2.5,0) {-3};\n    \\node at (1.5,-1) {-4};\n\\end{tikzpicture}\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\item Write these in order of size, starting with the smallest.\n\n18.4\\%, \\quad $1.83 \\times 10^{-1}$, \\quad $\\dfrac{5}{27}$\n\n\\AnswerLine[] , \\AnswerLine[] , \\AnswerLine[]\n\\Marks{2}\n\n\\item Work out 142 as a percentage of 304.\n\n\\AnswerLine[][\\%]\n\\Marks{1}\n\n\\item (i) Find the highest common factor (HCF) of 28 and 98.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item (ii) Find the lowest common multiple (LCM) of 28 and 98.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item The average distance from Earth to Mars is $2.25 \\times 10^{8}$ km.\\\\\nA space ship travels from Earth to Mars at an average speed of $5.8 \\times 10^{4}$ km/h.\n\nFind how long, in hours, the journey takes.\n\n\\AnswerLine[] hours\n\\Marks{2}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2019MayJune-Paper33-Q02",
+    "paper": "2019MayJune-Paper33",
+    "qnum": 2,
+    "marks": 12,
+    "topics": [
+      "Geometry",
+      "Mensuration",
+      "Transformations and vectors"
+    ],
+    "s": "4.4",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Circle theorems",
+    "qtype": "similarity and congruence",
+    "g": "mixed",
+    "src": "0580/33/M/J/19 Q02",
+    "year": 2019,
+    "session": "MayJune",
+    "tex": "Three quadrilaterals are shown on a 1 cm$^2$ grid.\n\\newline\n\n(a) Write down the mathematical name of the shaded quadrilateral.\n\\newline\n\n(b) For the shaded quadrilateral\n\n(i) (c) measure the perimeter,\n\n cm\n\n(d) work out the area.\n\\newline\n\n cm$^2$\n\n(e) Describe fully the single transformation that maps the shaded quadrilateral onto\n\n(i) (f) quadrilateral A,\n\n(g) quadrilateral B.\n\\newline\n\n(h) On the grid,\n\n(i) (i) reflect the shaded quadrilateral in the line $x = 1$,\n\n(j) enlarge the shaded quadrilateral by scale factor $\\dfrac{1}{2}$, centre $(-1, 0)$.\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down the mathematical name of the shaded quadrilateral.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "For the shaded quadrilateral"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "measure the perimeter,"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "work out the area.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(c)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Describe fully the single transformation that maps the shaded quadrilateral onto"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "quadrilateral A,"
+              }
+            ],
+            "answer": {
+              "type": "multiline",
+              "lines": 2,
+              "template": "____\\n____",
+              "lineSep": "blank"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "quadrilateral B.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "multiline",
+              "lines": 3,
+              "template": "____\\n____\\n____",
+              "lineSep": "blank"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(d)",
+        "content": [
+          {
+            "type": "text",
+            "content": "On the grid,"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "reflect the shaded quadrilateral in the line $x = 1$,"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "enlarge the shaded quadrilateral by scale factor $\\dfrac{1}{2}$, centre $(-1, 0)$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "describe",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Three quadrilaterals are shown on a 1 cm$^2$ grid.\n\\newline\n\n\\begin{tikzpicture}[scale=0.6]\n    % Draw the grid\n    \\draw[step=0.5cm, gray, very thin] (-3.5,-4) grid (4,4);\n\n    % Draw axes\n    \\draw[thick,->] (-3.5,0) -- (4,0) node[right] {$x$};\n    \\draw[thick,->] (0,-4) -- (0,4) node[above] {$y$};\n\n    % Label axes\n    \\foreach \\x in {-6,-4,-2,2,4,6,8} {\n        \\node at (\\x*0.5, -0.3) {\\x};\n    }\n    \\foreach \\y in {-6,-4,-2,2,4,6,8} {\n        \\node at (-0.3, \\y*0.5) {\\y};\n    }\n\n    % Draw quadrilateral A (assume it's a triangle or shape at different position)\n    \\draw[thick, fill=blue!20] (1.5,1.5) -- (2.5,1.5) -- (2.5,2.5) -- (1.5,2.5) -- cycle;\n    \\node at (2,2) {A};\n\n    % Draw quadrilateral B (assume it's at different position)\n    \\draw[thick, fill=green!20] (-1,-2) -- (-0.5,-2) -- (-0.5,-1.5) -- (-1,-1.5) -- cycle;\n    \\node at (-0.75,-1.75) {B};\n\n    % Draw the shaded quadrilateral (assume it's a square)\n    \\draw[thick, fill=red!30] (0.5,-0.5) -- (1.5,-0.5) -- (1.5,0.5) -- (0.5,0.5) -- cycle;\n\\end{tikzpicture}"
+      }
+    ],
+    "_rawBody": "Three quadrilaterals are shown on a 1 cm$^2$ grid.\n\n\\begin{tikzpicture}[scale=0.6]\n    % Draw the grid\n    \\draw[step=0.5cm, gray, very thin] (-3.5,-4) grid (4,4);\n\n    % Draw axes\n    \\draw[thick,->] (-3.5,0) -- (4,0) node[right] {$x$};\n    \\draw[thick,->] (0,-4) -- (0,4) node[above] {$y$};\n\n    % Label axes\n    \\foreach \\x in {-6,-4,-2,2,4,6,8} {\n        \\node at (\\x*0.5, -0.3) {\\x};\n    }\n    \\foreach \\y in {-6,-4,-2,2,4,6,8} {\n        \\node at (-0.3, \\y*0.5) {\\y};\n    }\n\n    % Draw quadrilateral A (assume it's a triangle or shape at different position)\n    \\draw[thick, fill=blue!20] (1.5,1.5) -- (2.5,1.5) -- (2.5,2.5) -- (1.5,2.5) -- cycle;\n    \\node at (2,2) {A};\n\n    % Draw quadrilateral B (assume it's at different position)\n    \\draw[thick, fill=green!20] (-1,-2) -- (-0.5,-2) -- (-0.5,-1.5) -- (-1,-1.5) -- cycle;\n    \\node at (-0.75,-1.75) {B};\n\n    % Draw the shaded quadrilateral (assume it's a square)\n    \\draw[thick, fill=red!30] (0.5,-0.5) -- (1.5,-0.5) -- (1.5,0.5) -- (0.5,0.5) -- cycle;\n\\end{tikzpicture}\n\n\\begin{parts}\n\\item Write down the mathematical name of the shaded quadrilateral.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item For the shaded quadrilateral\n\n\\begin{subparts}\n\\item measure the perimeter,\n\n\\AnswerLine[] cm\n\\Marks{1}\n\n\\item work out the area.\n\n\\AnswerLine[] cm$^2$\n\\Marks{1}\n\\end{subparts}\n\n\\item Describe fully the single transformation that maps the shaded quadrilateral onto\n\n\\begin{subparts}\n\\item quadrilateral A,\n\n\\AnswerLine[][]\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item quadrilateral B.\n\n\\AnswerLine[][]\n\\AnswerLine[][]\n\\AnswerLine[][]\n\\Marks{3}\n\\end{subparts}\n\n\\item On the grid,\n\n\\begin{subparts}\n\\item reflect the shaded quadrilateral in the line $x = 1$,\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item enlarge the shaded quadrilateral by scale factor $\\dfrac{1}{2}$, centre $(-1, 0)$.\n\n\\AnswerLine[][]\n\\Marks{2}\n\\end{subparts}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2019MayJune-Paper33-Q03",
+    "paper": "2019MayJune-Paper33",
+    "qnum": 3,
+    "marks": 12,
+    "topics": [
+      "Number",
+      "Mensuration"
+    ],
+    "s": "1.11",
+    "d": 1,
+    "cat": "number",
+    "topic": "Money and finance",
+    "qtype": "ratio simplification, dividing in a ratio, percentage of quantity",
+    "g": "simplify",
+    "src": "0580/33/M/J/19 Q03",
+    "year": 2019,
+    "session": "MayJune",
+    "tex": "The music teacher at a school forms an orchestra.\n\\newline\n\\\\\nThe instruments in the orchestra are 36 string, 15 woodwind and 12 brass.\n\\newline\n\n(a) Write the ratio string : woodwind : brass in its simplest form.\n\\newline\n\n :  : \n\n(b) The 36 string instruments are violins, cellos and double basses in the ratio\n\nviolins : cellos : double basses = 9 : 2 : 1.\n\\newline\n\n(i) (c) Show that the number of violins is 27.\n\\newline\n\n(d) Work out the number of cellos and the number of double basses.\n\\newline\n\nCellos \n\nDouble basses \n\n(e) The 15 woodwind instruments are oboes, flutes and clarinets.\n\\newline\n\\\\\n20\\% of these instruments are oboes.\n\\newline\n\\\\\nThere are twice as many flutes as clarinets.\n\\newline\n\nFind the number of flutes.\n\\newline\n\n(f) The 12 brass instruments are trumpets, trombones and horns.\n\\newline\n\\\\\n$\\dfrac{1}{3}$ of these instruments are trumpets, 3 are trombones and the remainder are horns.\n\\newline\n\\\\\nFind the number of horns.\n\\newline\n\n(g) The music teacher needs to buy all the instruments for the orchestra.\n\\newline\n\n\\begin{tabular}{|l|r|r|r|}\n\\hline\nNumber of & Price of each & Cost (\\$) \\\\\ninstruments & instrument (\\$) & \\\\\n\\hline\nString & 36 & 131 & 4716 \\\\\nWoodwind & 15 & 217 \\\\\nBrass & 12 & 221 \\\\\n\\hline\n\\end{tabular}\n\n(i) (h) Complete the table.\n\\newline\n\n(i) Find the total cost of all the instruments.\n\\newline\n\n\\$ \n\n(j) The school is given 65\\% of the total cost of all the instruments.\n\\newline\n\nFind how much more money is needed.\n\\newline\n\n\\$",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write the ratio string : woodwind : brass in its simplest form.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "multiline",
+          "lines": 3,
+          "template": "____\\n____\\n____",
+          "lineSep": "blank"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The 36 string instruments are violins, cellos and double basses in the ratio\n\nviolins : cellos : double basses = 9 : 2 : 1.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Show that the number of violins is 27.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Work out the number of cellos and the number of double basses.\n\\newline\n\nCellos \\AnswerLine[][]\n\nDouble basses \\AnswerLine[][]"
+              }
+            ],
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "The 15 woodwind instruments are oboes, flutes and clarinets.\n\\newline\n\\\\\n20\\% of these instruments are oboes.\n\\newline\n\\\\\nThere are twice as many flutes as clarinets.\n\\newline\n\nFind the number of flutes.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "The 12 brass instruments are trumpets, trombones and horns.\n\\newline\n\\\\\n$\\dfrac{1}{3}$ of these instruments are trumpets, 3 are trombones and the remainder are horns.\n\\newline\n\\\\\nFind the number of horns.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(e)",
+        "content": [
+          {
+            "type": "text",
+            "content": "The music teacher needs to buy all the instruments for the orchestra.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{tabular}{|l|r|r|r|}\n\\hline\nNumber of & Price of each & Cost (\\$) \\\\\ninstruments & instrument (\\$) & \\\\\n\\hline\nString & 36 & 131 & 4716 \\\\\nWoodwind & 15 & 217 \\\\\nBrass & 12 & 221 \\\\\n\\hline\n\\end{tabular}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Complete the table.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the total cost of all the instruments.\n\\newline\n\n\\$ \\AnswerLine[][]"
+              }
+            ],
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(f)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "The school is given 65\\% of the total cost of all the instruments.\n\\newline\n\nFind how much more money is needed.\n\\newline\n\n\\$ \\AnswerLine[][]"
+          }
+        ],
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "show",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The music teacher at a school forms an orchestra.\n\\newline\n\\\\\nThe instruments in the orchestra are 36 string, 15 woodwind and 12 brass.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "The music teacher at a school forms an orchestra.\\\\\nThe instruments in the orchestra are 36 string, 15 woodwind and 12 brass.\n\n\\begin{parts}\n\\item Write the ratio string : woodwind : brass in its simplest form.\n\n\\AnswerLine[] : \\AnswerLine[] : \\AnswerLine[]\n\\Marks{2}\n\n\\item The 36 string instruments are violins, cellos and double basses in the ratio\n\nviolins : cellos : double basses = 9 : 2 : 1.\n\n\\begin{subparts}\n\\item Show that the number of violins is 27.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Work out the number of cellos and the number of double basses.\n\nCellos \\AnswerLine[][]\n\nDouble basses \\AnswerLine[][]\n\\Marks{2}\n\\end{subparts}\n\n\\item The 15 woodwind instruments are oboes, flutes and clarinets.\\\\\n20\\% of these instruments are oboes.\\\\\nThere are twice as many flutes as clarinets.\n\nFind the number of flutes.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item The 12 brass instruments are trumpets, trombones and horns.\\\\\n$\\dfrac{1}{3}$ of these instruments are trumpets, 3 are trombones and the remainder are horns.\\\\\nFind the number of horns.\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item The music teacher needs to buy all the instruments for the orchestra.\n\n\\begin{tabular}{|l|r|r|r|}\n\\hline\nNumber of & Price of each & Cost (\\$) \\\\\ninstruments & instrument (\\$) & \\\\\n\\hline\nString & 36 & 131 & 4716 \\\\\nWoodwind & 15 & 217 \\\\\nBrass & 12 & 221 \\\\\n\\hline\n\\end{tabular}\n\n\\begin{subparts}\n\\item Complete the table.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Find the total cost of all the instruments.\n\n\\$ \\AnswerLine[][]\n\\Marks{1}\n\\end{subparts}\n\n\\item The school is given 65\\% of the total cost of all the instruments.\n\nFind how much more money is needed.\n\n\\$ \\AnswerLine[][]\n\\Marks{2}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2019MayJune-Paper33-Q04",
+    "paper": "2019MayJune-Paper33",
+    "qnum": 4,
+    "marks": 14,
+    "topics": [
+      "Algebra and graphs",
+      "Geometry"
+    ],
+    "s": "2.10",
+    "d": 1,
+    "cat": "algebra",
+    "topic": "Graphs of functions",
+    "qtype": "Completing a table of values for a quadratic function, drawing a quadratic graph",
+    "g": "quadratic",
+    "src": "0580/33/M/J/19 Q04",
+    "year": 2019,
+    "session": "MayJune",
+    "tex": "(a) Complete the table of values for $y = 5 + 2x - x^{2}$.\n\\newline\n\n\\begin{tabular}{|c|c|c|c|c|c|c|}\n\\hline\n$x$ & -2 & -1 & 0 & 1 & 2 & 3 \\\\\n\\hline\n$y$ & 2 & 5 & 6 &  &  & -3 \\\\\n\\hline\n\\end{tabular}\n\n(b) On the grid, draw the graph of $y = 5 + 2x - x^{2}$ for $-2 \\leq x \\leq 4$.\n\\newline\n\n(c) (i) (d) On the grid, draw the line of symmetry.\n\\newline\n\n(e) Write down the equation of the line of symmetry.\n\\newline\n\n(f) Use your graph to find the solutions of the equation $5 + 2x - x^{2} = 4$.\n\\newline\n\n$x = $  or $x = $ \n\n(g) (i) (h) On the grid, draw a line from $(-1, 2)$ to $(1, 6)$.\n\\newline\n\n(i) Find the equation of this line in the form $y = mx + c$.\n\\newline\n\n$y = $",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Complete the table of values for $y = 5 + 2x - x^{2}$.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{tabular}{|c|c|c|c|c|c|c|}\n\\hline\n$x$ & -2 & -1 & 0 & 1 & 2 & 3 \\\\\n\\hline\n$y$ & 2 & 5 & 6 &  &  & -3 \\\\\n\\hline\n\\end{tabular}"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "text",
+            "content": "On the grid, draw the graph of $y = 5 + 2x - x^{2}$ for $-2 \\leq x \\leq 4$.\n\\newline\n\n\\begin{tikzpicture}[scale=0.8]\n    % Draw grid\n    \\draw[step=0.5cm, gray, very thin] (-3,-1) grid (5,4);\n\n    % Draw axes\n    \\draw[thick,->] (-3,0) -- (5,0) node[right] {$x$};\n    \\draw[thick,->] (0,-1) -- (0,4) node[above] {$y$};\n\n    % Label axes\n    \\foreach \\x in {-2,-1,1,2,3,4} {\n        \\node at (\\x, -0.3) {\\x};\n    }\n    \\foreach \\y in {1,2,3} {\n        \\node at (-0.3, \\y) {\\y};\n    }\n\\end{tikzpicture}"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "On the grid, draw the line of symmetry.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Write down the equation of the line of symmetry.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true,
+        "_itemInlineSubparts": true
+      },
+      {
+        "label": "(d)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Use your graph to find the solutions of the equation $5 + 2x - x^{2} = 4$.\n\\newline\n\n$x = $ \\AnswerLine[] or $x = $ \\AnswerLine[]"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(e)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "On the grid, draw a line from $(-1, 2)$ to $(1, 6)$.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the equation of this line in the form $y = mx + c$.\n\\newline\n\n$y = $ \\AnswerLine[][]"
+              }
+            ],
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true,
+        "_itemInlineSubparts": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Complete the table of values for $y = 5 + 2x - x^{2}$.\n\n\\begin{tabular}{|c|c|c|c|c|c|c|}\n\\hline\n$x$ & -2 & -1 & 0 & 1 & 2 & 3 \\\\\n\\hline\n$y$ & 2 & 5 & 6 &  &  & -3 \\\\\n\\hline\n\\end{tabular}\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item On the grid, draw the graph of $y = 5 + 2x - x^{2}$ for $-2 \\leq x \\leq 4$.\n\n\\begin{tikzpicture}[scale=0.8]\n    % Draw grid\n    \\draw[step=0.5cm, gray, very thin] (-3,-1) grid (5,4);\n\n    % Draw axes\n    \\draw[thick,->] (-3,0) -- (5,0) node[right] {$x$};\n    \\draw[thick,->] (0,-1) -- (0,4) node[above] {$y$};\n\n    % Label axes\n    \\foreach \\x in {-2,-1,1,2,3,4} {\n        \\node at (\\x, -0.3) {\\x};\n    }\n    \\foreach \\y in {1,2,3} {\n        \\node at (-0.3, \\y) {\\y};\n    }\n\\end{tikzpicture}\n\n\\AnswerLine[][]\n\\Marks{4}\n\n\\item \\begin{subparts}\n\\item On the grid, draw the line of symmetry.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Write down the equation of the line of symmetry.\n\n\\AnswerLine[][]\n\\Marks{1}\n\\end{subparts}\n\n\\item Use your graph to find the solutions of the equation $5 + 2x - x^{2} = 4$.\n\n$x = $ \\AnswerLine[] or $x = $ \\AnswerLine[]\n\\Marks{2}\n\n\\item \\begin{subparts}\n\\item On the grid, draw a line from $(-1, 2)$ to $(1, 6)$.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Find the equation of this line in the form $y = mx + c$.\n\n$y = $ \\AnswerLine[][]\n\\Marks{3}\n\\end{subparts}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2019MayJune-Paper33-Q05",
+    "paper": "2019MayJune-Paper33",
+    "qnum": 5,
+    "marks": 11,
+    "topics": [
+      "Geometry",
+      "Mensuration"
+    ],
+    "s": "4.8",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Loci",
+    "qtype": "loci constructions",
+    "g": "mixed",
+    "src": "0580/33/M/J/19 Q05",
+    "year": 2019,
+    "session": "MayJune",
+    "tex": "The scale drawing shows a play area, ABCDE.\n\\newline\n\\\\\nThe scale is 1 centimetre represents 3 metres.\n\\newline\n\n(a) Find the actual distance $h$ in metres.\n\\newline\n\n$h = $  m\n\n(b) Find the actual area of triangle CDE.\n\\newline\n\n m$^2$\n\n(c) A straight path crosses the play area from C to AB.\n\\newline\n\\\\\nIt is equidistant from CB and CD.\n\\newline\n\nUsing a straight edge and compasses only, construct the path.\n\\newline\n\\\\\nShow all your construction arcs.\n\\newline\n\n(d) There is a circular pool in the play area.\n\\newline\n\\\\\nThe pool has a diameter of 8 m.\n\\newline\n\nCalculate\n\n(i) (e) the circumference of the pool,\n\n m\n\n(f) the area of the pool.\n\\newline\n\n m$^2$",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the actual distance $h$ in metres.\n\\newline\n\n$h = $ \\AnswerLine[] m"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 3,
+        "content": [
+          {
+            "type": "text",
+            "content": "Find the actual area of triangle CDE.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "A straight path crosses the play area from C to AB.\n\\newline\n\\\\\nIt is equidistant from CB and CD.\n\\newline\n\nUsing a straight edge and compasses only, construct the path.\n\\newline\n\\\\\nShow all your construction arcs.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "none",
+          "space": {
+            "type": "drawing",
+            "height": "4cm",
+            "cmd": "Answerspace"
+          }
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(d)",
+        "content": [
+          {
+            "type": "text",
+            "content": "There is a circular pool in the play area.\n\\newline\n\\\\\nThe pool has a diameter of 8 m.\n\\newline\n\nCalculate"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "the circumference of the pool,"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "the area of the pool.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "draw",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The scale drawing shows a play area, ABCDE.\n\\newline\n\\\\\nThe scale is 1 centimetre represents 3 metres.\n\\newline\n\n\\begin{tikzpicture}[scale=0.8]\n    % Draw the play area ABCDE\n    \\draw[thick] (0,0) -- (4,0) -- (4,2) -- (2,3) -- (0,2) -- cycle;\n\n    % Label points\n    \\node at (0,0) {A};\n    \\node at (4,0) {B};\n    \\node at (4,2) {C};\n    \\node at (2,3) {D};\n    \\node at (0,2) {E};\n\n    % Draw height h\n    \\draw[dashed] (2,3) -- (2,2);\n    \\node at (2.3,2.5) {h};\n\n    % Scale label\n    \\node at (2,-0.5) {Scale: 1 cm to 3 m};\n\\end{tikzpicture}"
+      }
+    ],
+    "_rawBody": "The scale drawing shows a play area, ABCDE.\\\\\nThe scale is 1 centimetre represents 3 metres.\n\n\\begin{tikzpicture}[scale=0.8]\n    % Draw the play area ABCDE\n    \\draw[thick] (0,0) -- (4,0) -- (4,2) -- (2,3) -- (0,2) -- cycle;\n\n    % Label points\n    \\node at (0,0) {A};\n    \\node at (4,0) {B};\n    \\node at (4,2) {C};\n    \\node at (2,3) {D};\n    \\node at (0,2) {E};\n\n    % Draw height h\n    \\draw[dashed] (2,3) -- (2,2);\n    \\node at (2.3,2.5) {h};\n\n    % Scale label\n    \\node at (2,-0.5) {Scale: 1 cm to 3 m};\n\\end{tikzpicture}\n\n\\begin{parts}\n\\item Find the actual distance $h$ in metres.\n\n$h = $ \\AnswerLine[] m\n\\Marks{2}\n\n\\item Find the actual area of triangle CDE.\n\n\\AnswerLine[] m$^2$\n\\Marks{3}\n\n\\item A straight path crosses the play area from C to AB.\\\\\nIt is equidistant from CB and CD.\n\nUsing a straight edge and compasses only, construct the path.\\\\\nShow all your construction arcs.\n\n\\Answerspace[4cm]\n\\Marks{2}\n\n\\item There is a circular pool in the play area.\\\\\nThe pool has a diameter of 8 m.\n\nCalculate\n\n\\begin{subparts}\n\\item the circumference of the pool,\n\n\\AnswerLine[] m\n\\Marks{2}\n\n\\item the area of the pool.\n\n\\AnswerLine[] m$^2$\n\\Marks{2}\n\\end{subparts}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2019MayJune-Paper33-Q06",
+    "paper": "2019MayJune-Paper33",
+    "qnum": 6,
+    "marks": 8,
+    "topics": [
+      "Geometry",
+      "Mensuration",
+      "Trigonometry"
+    ],
+    "s": "4.7",
+    "d": 1,
+    "cat": "geometry",
+    "topic": "Nets and 3D shapes",
+    "qtype": "circle theorems",
+    "g": "mixed",
+    "src": "0580/33/M/J/19 Q06",
+    "year": 2019,
+    "session": "MayJune",
+    "tex": "(a) In the diagram, ABC is a straight line.\n\\newline\n\\\\\nAD is parallel to BE, angle BAD = 34° and AB = BD.\n\\newline\n\n(i) (b) Complete the statements.\n\\newline\n\n(a) $p = $  because  \n\n(b) $q = $  because  \n\n(c) Work out the value of $r$ and the value of $s$.\n\\newline\n\n$r = $    $s = $ \n\n(d) Find the value of $t$ and give a reason for your answer.\n\\newline\n\n$t = $  because  \n\n(e) In the diagram, B and D are points on the circumference of a circle, centre O.\n\\newline\n\\\\\nAC is a straight line touching the circle at B only and BD is a straight line through O.\n\\newline\n\nComplete the statement.\n\\newline\n\nAngle ABD =  because",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "In the diagram, ABC is a straight line.\n\\newline\n\\\\\nAD is parallel to BE, angle BAD = 34° and AB = BD.\n\\newline\n\n\\begin{tikzpicture}[scale=0.8]\n    % Draw straight line ABC\n    \\draw[thick] (0,0) -- (6,0);\n\n    % Draw AD parallel to BE\n    \\draw[thick] (1,0) -- (1,2);\n    \\draw[thick] (4,0) -- (4,2);\n\n    % Draw BD\n    \\draw[thick] (4,0) -- (2.5,1.5);\n\n    % Label points\n    \\node at (0,0) {A};\n    \\node at (1,0) {B};\n    \\node at (6,0) {C};\n    \\node at (1,2) {D};\n    \\node at (4,2) {E};\n\n    % Label angles\n    \\node at (0.7,0.3) {$34^\\circ$};\n    \\node at (2.8,0.8) {$p^\\circ$};\n    \\node at (4.3,0.3) {$q^\\circ$};\n    \\node at (3.2,0.8) {$r^\\circ$};\n    \\node at (2.2,0.3) {$s^\\circ$};\n    \\node at (3.8,0.3) {$t^\\circ$};\n\\end{tikzpicture}"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Complete the statements.\n\\newline\n\n(a) $p = $ \\AnswerLine[] because \\AnswerLine[][] \\AnswerLine[][]\n\\Marks{2}\n\n(b) $q = $ \\AnswerLine[] because \\AnswerLine[][] \\AnswerLine[][]"
+              }
+            ],
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Work out the value of $r$ and the value of $s$.\n\\newline\n\n$r = $ \\AnswerLine[][] \\quad $s = $ \\AnswerLine[][]"
+              }
+            ],
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the value of $t$ and give a reason for your answer.\n\\newline\n\n$t = $ \\AnswerLine[] because \\AnswerLine[][] \\AnswerLine[][]"
+              }
+            ],
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "In the diagram, B and D are points on the circumference of a circle, centre O.\n\\newline\n\\\\\nAC is a straight line touching the circle at B only and BD is a straight line through O.\n\\newline\n\n\\begin{tikzpicture}[scale=0.8]\n    % Draw circle\n    \\draw[thick] (0,0) circle (2);\n\n    % Draw points\n    \\node at (0,0) {O};\n    \\node at (2,0) {B};\n    \\node at (-1,1.5) {A};\n    \\node at (-2,0) {C};\n    \\node at (-1,-1.5) {D};\n\n    % Draw tangent AC\n    \\draw[thick] (-1,1.5) -- (2,0);\n\n    % Draw line BD through O\n    \\draw[thick] (2,0) -- (-2,0);\n\n    % Label angle\n    \\node at (-0.5,-0.3) {ABD};\n\\end{tikzpicture}\n\nComplete the statement.\n\\newline\n\nAngle ABD = \\AnswerLine[] because \\AnswerLine[][] \\AnswerLine[][]"
+          }
+        ],
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "explain",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item In the diagram, ABC is a straight line.\\\\\nAD is parallel to BE, angle BAD = 34° and AB = BD.\n\n\\begin{tikzpicture}[scale=0.8]\n    % Draw straight line ABC\n    \\draw[thick] (0,0) -- (6,0);\n\n    % Draw AD parallel to BE\n    \\draw[thick] (1,0) -- (1,2);\n    \\draw[thick] (4,0) -- (4,2);\n\n    % Draw BD\n    \\draw[thick] (4,0) -- (2.5,1.5);\n\n    % Label points\n    \\node at (0,0) {A};\n    \\node at (1,0) {B};\n    \\node at (6,0) {C};\n    \\node at (1,2) {D};\n    \\node at (4,2) {E};\n\n    % Label angles\n    \\node at (0.7,0.3) {$34^\\circ$};\n    \\node at (2.8,0.8) {$p^\\circ$};\n    \\node at (4.3,0.3) {$q^\\circ$};\n    \\node at (3.2,0.8) {$r^\\circ$};\n    \\node at (2.2,0.3) {$s^\\circ$};\n    \\node at (3.8,0.3) {$t^\\circ$};\n\\end{tikzpicture}\n\n\\begin{subparts}\n\\item Complete the statements.\n\n(a) $p = $ \\AnswerLine[] because \\AnswerLine[][] \\AnswerLine[][]\n\\Marks{2}\n\n(b) $q = $ \\AnswerLine[] because \\AnswerLine[][] \\AnswerLine[][]\n\\Marks{2}\n\n\\item Work out the value of $r$ and the value of $s$.\n\n$r = $ \\AnswerLine[][] \\quad $s = $ \\AnswerLine[][]\n\\Marks{2}\n\n\\item Find the value of $t$ and give a reason for your answer.\n\n$t = $ \\AnswerLine[] because \\AnswerLine[][] \\AnswerLine[][]\n\\Marks{2}\n\\end{subparts}\n\n\\item In the diagram, B and D are points on the circumference of a circle, centre O.\\\\\nAC is a straight line touching the circle at B only and BD is a straight line through O.\n\n\\begin{tikzpicture}[scale=0.8]\n    % Draw circle\n    \\draw[thick] (0,0) circle (2);\n\n    % Draw points\n    \\node at (0,0) {O};\n    \\node at (2,0) {B};\n    \\node at (-1,1.5) {A};\n    \\node at (-2,0) {C};\n    \\node at (-1,-1.5) {D};\n\n    % Draw tangent AC\n    \\draw[thick] (-1,1.5) -- (2,0);\n\n    % Draw line BD through O\n    \\draw[thick] (2,0) -- (-2,0);\n\n    % Label angle\n    \\node at (-0.5,-0.3) {ABD};\n\\end{tikzpicture}\n\nComplete the statement.\n\nAngle ABD = \\AnswerLine[] because \\AnswerLine[][] \\AnswerLine[][]\n\\Marks{2}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2019MayJune-Paper33-Q07",
+    "paper": "2019MayJune-Paper33",
+    "qnum": 7,
+    "marks": 8,
+    "topics": [
+      "Mensuration"
+    ],
+    "s": "5.2",
+    "d": 1,
+    "cat": "mensuration",
+    "topic": "Circles",
+    "qtype": "area and perimeter",
+    "g": "mixed",
+    "src": "0580/33/M/J/19 Q07",
+    "year": 2019,
+    "session": "MayJune",
+    "tex": "The travel graph shows part of a train journey between station A and station C.\n\\newline\n\n(a) (i) (b) Calculate, in km/h, the speed of the train between station A and station B.\n\\newline\n\n km/h\n\n(c) The train leaves station B at 14 40.\n\\newline\n\nFor how many minutes did the train stop at station B?\n\n min\n\n(d) The train travels at a constant speed between station B and station C, arriving at 15 20.\n\\newline\n\nComplete the travel graph for the journey between station B and station C.\n\\newline\n\n(e) On which part of the journey was the train travelling faster?\n\nBetween station  and station \n\n(f) Another train leaves station C at 12 45.\n\\newline\n\\\\\nIt travels to station A at a constant speed of 62 km/h without stopping at station B.\n\\newline\n\n(i) (g) Work out how long, in hours and minutes, this journey takes.\n\\newline\n\n h  min\n\n(h) Write down the time this train arrives at station A.\n\\newline\n\n(i) On the grid, show the journey of this train.\n\\newline\n\n(j) Find the distance from station A when the two trains pass each other.\n\\newline\n\n km",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate, in km/h, the speed of the train between station A and station B.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "The train leaves station B at 14 40.\n\\newline\n\nFor how many minutes did the train stop at station B?"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "The train travels at a constant speed between station B and station C, arriving at 15 20.\n\\newline\n\nComplete the travel graph for the journey between station B and station C.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iv)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "On which part of the journey was the train travelling faster?\n\nBetween station \\AnswerLine[] and station \\AnswerLine[]"
+              }
+            ],
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true,
+        "_itemInlineSubparts": true
+      },
+      {
+        "label": "(b)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Another train leaves station C at 12 45.\n\\newline\n\\\\\nIt travels to station A at a constant speed of 62 km/h without stopping at station B.\n\\newline\n"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Work out how long, in hours and minutes, this journey takes.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "multiline",
+              "lines": 2,
+              "template": "____\\n____",
+              "lineSep": "blank"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Write down the time this train arrives at station A.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "On the grid, show the journey of this train.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iv)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Find the distance from station A when the two trains pass each other.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [
+      {
+        "type": "text",
+        "content": "The travel graph shows part of a train journey between station A and station C.\n\\newline\n\n\\begin{tikzpicture}[scale=0.7]\n    % Draw axes\n    \\draw[thick,->] (0,0) -- (12,0) node[right] {Time};\n    \\draw[thick,->] (0,0) -- (0,9) node[above] {Distance (km)};\n\n    % Label time axis\n    \\node at (2,-0.3) {12 30};\n    \\node at (4,-0.3) {13 00};\n    \\node at (6,-0.3) {13 30};\n    \\node at (8,-0.3) {14 00};\n    \\node at (10,-0.3) {14 30};\n    \\node at (12,-0.3) {15 00};\n\n    % Label distance axis\n    \\node at (-0.3,2) {40};\n    \\node at (-0.3,4) {80};\n    \\node at (-0.3,6) {120};\n    \\node at (-0.3,8) {160};\n\n    % Draw graph segments\n    % A to B: from (2,0) to (4,6) - assuming 12:30 to 13:00, 0 to 120km\n    \\draw[thick,blue] (2,0) -- (4,6);\n    \\node at (3,3) {Station B};\n\n    % B to C: horizontal line at 120km from 14:40 to 15:20\n    % 14:40 is at x=9 (14:30 is 10, 14:40 is 10.67, approx 10.5)\n    % 15:20 is at x=11.33, approx 11.5\n\n    % Label stations\n    \\node at (2,-0.5) {Station A};\n    \\node at (11.5,8.5) {Station C};\n\n    % Add grid lines\n    \\draw[dotted] (2,0) -- (2,8);\n    \\draw[dotted] (4,0) -- (4,8);\n    \\draw[dotted] (6,0) -- (6,8);\n    \\draw[dotted] (8,0) -- (8,8);\n    \\draw[dotted] (10,0) -- (10,8);\n    \\draw[dotted] (12,0) -- (12,8);\n\\end{tikzpicture}"
+      }
+    ],
+    "_rawBody": "The travel graph shows part of a train journey between station A and station C.\n\n\\begin{tikzpicture}[scale=0.7]\n    % Draw axes\n    \\draw[thick,->] (0,0) -- (12,0) node[right] {Time};\n    \\draw[thick,->] (0,0) -- (0,9) node[above] {Distance (km)};\n\n    % Label time axis\n    \\node at (2,-0.3) {12 30};\n    \\node at (4,-0.3) {13 00};\n    \\node at (6,-0.3) {13 30};\n    \\node at (8,-0.3) {14 00};\n    \\node at (10,-0.3) {14 30};\n    \\node at (12,-0.3) {15 00};\n\n    % Label distance axis\n    \\node at (-0.3,2) {40};\n    \\node at (-0.3,4) {80};\n    \\node at (-0.3,6) {120};\n    \\node at (-0.3,8) {160};\n\n    % Draw graph segments\n    % A to B: from (2,0) to (4,6) - assuming 12:30 to 13:00, 0 to 120km\n    \\draw[thick,blue] (2,0) -- (4,6);\n    \\node at (3,3) {Station B};\n\n    % B to C: horizontal line at 120km from 14:40 to 15:20\n    % 14:40 is at x=9 (14:30 is 10, 14:40 is 10.67, approx 10.5)\n    % 15:20 is at x=11.33, approx 11.5\n\n    % Label stations\n    \\node at (2,-0.5) {Station A};\n    \\node at (11.5,8.5) {Station C};\n\n    % Add grid lines\n    \\draw[dotted] (2,0) -- (2,8);\n    \\draw[dotted] (4,0) -- (4,8);\n    \\draw[dotted] (6,0) -- (6,8);\n    \\draw[dotted] (8,0) -- (8,8);\n    \\draw[dotted] (10,0) -- (10,8);\n    \\draw[dotted] (12,0) -- (12,8);\n\\end{tikzpicture}\n\n\\begin{parts}\n\\item \\begin{subparts}\n\\item Calculate, in km/h, the speed of the train between station A and station B.\n\n\\AnswerLine[] km/h\n\\Marks{2}\n\n\\item The train leaves station B at 14 40.\n\nFor how many minutes did the train stop at station B?\n\n\\AnswerLine[] min\n\\Marks{1}\n\n\\item The train travels at a constant speed between station B and station C, arriving at 15 20.\n\nComplete the travel graph for the journey between station B and station C.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item On which part of the journey was the train travelling faster?\n\nBetween station \\AnswerLine[] and station \\AnswerLine[]\n\\Marks{1}\n\\end{subparts}\n\n\\item Another train leaves station C at 12 45.\\\\\nIt travels to station A at a constant speed of 62 km/h without stopping at station B.\n\n\\begin{subparts}\n\\item Work out how long, in hours and minutes, this journey takes.\n\n\\AnswerLine[] h \\AnswerLine[] min\n\\Marks{2}\n\n\\item Write down the time this train arrives at station A.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item On the grid, show the journey of this train.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Find the distance from station A when the two trains pass each other.\n\n\\AnswerLine[] km\n\\Marks{1}\n\\end{subparts}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true,
+    "_compactItems": true
+  },
+  {
+    "id": "0580-2019MayJune-Paper33-Q08",
+    "paper": "2019MayJune-Paper33",
+    "qnum": 8,
+    "marks": 9,
+    "topics": [
+      "Probability",
+      "Statistics"
+    ],
+    "s": "8.3",
+    "d": 1,
+    "cat": "probability",
+    "topic": "Tree diagrams",
+    "qtype": "combined events",
+    "g": "mixed",
+    "src": "0580/33/M/J/19 Q08",
+    "year": 2019,
+    "session": "MayJune",
+    "tex": "(a) Kyung records the number of people in each of 24 cars on Wednesday.\n\\newline\n\\\\\nHis results are shown below.\n\\newline\n\\\\\n1   3   6   1   2   2   4   5\\\\\n3   4   1   5   3   2   4   1\\\\\n1   1   2   4   4   1   2   1\n\n(i) (b) Complete the frequency table.\n\\newline\n\\\\\nYou may use the tally column to help you.\n\\newline\n\n\\begin{tabular}{|c|c|c|c|}\n\\hline\nNumber in a car & Tally & Frequency \\\\\n\\hline\n1 & & \\\\\n\\hline\n2 & & \\\\\n\\hline\n3 & & \\\\\n\\hline\n4 & & \\\\\n\\hline\n5 & & \\\\\n\\hline\n6 & & \\\\\n\\hline\n\\end{tabular}\n\n(c) Write down the mode.\n\\newline\n\n(d) Work out the range.\n\\newline\n\n(e) Work out the median.\n\\newline\n\n(f) Calculate the mean.\n\\newline\n\n(g) One of these cars is chosen at random.\n\\newline\n\nFind the probability that the number of people in this car is 4.\n\\newline\n\n(h) Kyung also records the number of people in each of 24 cars on Saturday.\n\\newline\n\\\\\nThe table shows the results.\n\\newline\n\n\\begin{tabular}{|c|c|c|c|c|c|c|}\n\\hline\nNumber in a car & 1 & 2 & 3 & 4 & 5 & 6 \\\\\n\\hline\nFrequency & 1 & 2 & 5 & 13 & 2 & 1 \\\\\n\\hline\n\\end{tabular}\n\nOn the grid, complete the bar chart to show these results.\n\\newline\n\n(i) Write down one comparison between the frequency tables in part (a)(i) and part (b).\n\\newline\n",
+    "parts": [
+      {
+        "label": "(a)",
+        "content": [
+          {
+            "type": "text",
+            "content": "Kyung records the number of people in each of 24 cars on Wednesday.\n\\newline\n\\\\\nHis results are shown below.\n\\newline\n\\\\\n1 \\quad 3 \\quad 6 \\quad 1 \\quad 2 \\quad 2 \\quad 4 \\quad 5\\\\\n3 \\quad 4 \\quad 1 \\quad 5 \\quad 3 \\quad 2 \\quad 4 \\quad 1\\\\\n1 \\quad 1 \\quad 2 \\quad 4 \\quad 4 \\quad 1 \\quad 2 \\quad 1"
+          }
+        ],
+        "subparts": [
+          {
+            "label": "(i)",
+            "marks": 2,
+            "content": [
+              {
+                "type": "text",
+                "content": "Complete the frequency table.\n\\newline\n\\\\\nYou may use the tally column to help you.\n\\newline\n"
+              },
+              {
+                "type": "table",
+                "content": "\\begin{tabular}{|c|c|c|c|}\n\\hline\nNumber in a car & Tally & Frequency \\\\\n\\hline\n1 & & \\\\\n\\hline\n2 & & \\\\\n\\hline\n3 & & \\\\\n\\hline\n4 & & \\\\\n\\hline\n5 & & \\\\\n\\hline\n6 & & \\\\\n\\hline\n\\end{tabular}"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(ii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Write down the mode.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iii)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Work out the range.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(iv)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "Work out the median.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(v)",
+            "marks": 3,
+            "content": [
+              {
+                "type": "text",
+                "content": "Calculate the mean.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          },
+          {
+            "label": "(vi)",
+            "marks": 1,
+            "content": [
+              {
+                "type": "text",
+                "content": "One of these cars is chosen at random.\n\\newline\n\nFind the probability that the number of people in this car is 4.\n\\newline\n"
+              }
+            ],
+            "answer": {
+              "type": "number"
+            },
+            "_compactMarks": true
+          }
+        ],
+        "_subpartCmd": "item",
+        "_compactEndSubparts": true
+      },
+      {
+        "label": "(b)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Kyung also records the number of people in each of 24 cars on Saturday.\n\\newline\n\\\\\nThe table shows the results.\n\\newline\n"
+          },
+          {
+            "type": "table",
+            "content": "\\begin{tabular}{|c|c|c|c|c|c|c|}\n\\hline\nNumber in a car & 1 & 2 & 3 & 4 & 5 & 6 \\\\\n\\hline\nFrequency & 1 & 2 & 5 & 13 & 2 & 1 \\\\\n\\hline\n\\end{tabular}"
+          },
+          {
+            "type": "text",
+            "content": "On the grid, complete the bar chart to show these results.\n\\newline\n\n\\begin{tikzpicture}[scale=0.8]\n    % Draw axes\n    \\draw[thick,->] (0,0) -- (8,0) node[right] {Number in a car};\n    \\draw[thick,->] (0,0) -- (0,8) node[above] {Frequency};\n\n    % Label x-axis\n    \\foreach \\x in {1,2,3,4,5,6} {\n        \\node at (\\x, -0.3) {\\x};\n    }\n\n    % Label y-axis\n    \\foreach \\y in {2,4,6,8,10,12,14} {\n        \\node at (-0.3, \\y*0.5) {\\y};\n    }\n\n    % Draw grid lines\n    \\foreach \\x in {1,2,3,4,5,6} {\n        \\draw[dotted] (\\x,0) -- (\\x,7);\n    }\n    \\foreach \\y in {1,2,3,4,5,6,7} {\n        \\draw[dotted] (0,\\y) -- (7,\\y);\n    }\n\\end{tikzpicture}"
+          }
+        ],
+        "answer": {
+          "type": "number"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "Write down one comparison between the frequency tables in part (a)(i) and part (b).\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "multiline",
+          "lines": 2,
+          "template": "____\\n____",
+          "lineSep": "blank"
+        },
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "complete",
+    "stem": [],
+    "_rawBody": "\\begin{parts}\n\\item Kyung records the number of people in each of 24 cars on Wednesday.\\\\\nHis results are shown below.\\\\\n1 \\quad 3 \\quad 6 \\quad 1 \\quad 2 \\quad 2 \\quad 4 \\quad 5\\\\\n3 \\quad 4 \\quad 1 \\quad 5 \\quad 3 \\quad 2 \\quad 4 \\quad 1\\\\\n1 \\quad 1 \\quad 2 \\quad 4 \\quad 4 \\quad 1 \\quad 2 \\quad 1\n\n\\begin{subparts}\n\\item Complete the frequency table.\\\\\nYou may use the tally column to help you.\n\n\\begin{tabular}{|c|c|c|c|}\n\\hline\nNumber in a car & Tally & Frequency \\\\\n\\hline\n1 & & \\\\\n\\hline\n2 & & \\\\\n\\hline\n3 & & \\\\\n\\hline\n4 & & \\\\\n\\hline\n5 & & \\\\\n\\hline\n6 & & \\\\\n\\hline\n\\end{tabular}\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item Write down the mode.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Work out the range.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Work out the median.\n\n\\AnswerLine[][]\n\\Marks{1}\n\n\\item Calculate the mean.\n\n\\AnswerLine[][]\n\\Marks{3}\n\n\\item One of these cars is chosen at random.\n\nFind the probability that the number of people in this car is 4.\n\n\\AnswerLine[][]\n\\Marks{1}\n\\end{subparts}\n\n\\item Kyung also records the number of people in each of 24 cars on Saturday.\\\\\nThe table shows the results.\n\n\\begin{tabular}{|c|c|c|c|c|c|c|}\n\\hline\nNumber in a car & 1 & 2 & 3 & 4 & 5 & 6 \\\\\n\\hline\nFrequency & 1 & 2 & 5 & 13 & 2 & 1 \\\\\n\\hline\n\\end{tabular}\n\nOn the grid, complete the bar chart to show these results.\n\n\\begin{tikzpicture}[scale=0.8]\n    % Draw axes\n    \\draw[thick,->] (0,0) -- (8,0) node[right] {Number in a car};\n    \\draw[thick,->] (0,0) -- (0,8) node[above] {Frequency};\n\n    % Label x-axis\n    \\foreach \\x in {1,2,3,4,5,6} {\n        \\node at (\\x, -0.3) {\\x};\n    }\n\n    % Label y-axis\n    \\foreach \\y in {2,4,6,8,10,12,14} {\n        \\node at (-0.3, \\y*0.5) {\\y};\n    }\n\n    % Draw grid lines\n    \\foreach \\x in {1,2,3,4,5,6} {\n        \\draw[dotted] (\\x,0) -- (\\x,7);\n    }\n    \\foreach \\y in {1,2,3,4,5,6,7} {\n        \\draw[dotted] (0,\\y) -- (7,\\y);\n    }\n\\end{tikzpicture}\n\n\\AnswerLine[][]\n\\Marks{2}\n\n\\item Write down one comparison between the frequency tables in part (a)(i) and part (b).\n\n\\AnswerLine[][] \\AnswerLine[][]\n\\Marks{1}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  },
+  {
+    "id": "0580-2019MayJune-Paper33-Q09",
+    "paper": "2019MayJune-Paper33",
+    "qnum": 9,
+    "marks": 7,
+    "topics": [
+      "Number"
+    ],
+    "s": "1.16",
+    "d": 1,
+    "cat": "number",
+    "topic": "Upper and lower bounds",
+    "qtype": "money calculations, time duration, currency exchange, percentage spending",
+    "g": "mixed",
+    "src": "0580/33/M/J/19 Q09",
+    "year": 2019,
+    "session": "MayJune",
+    "tex": "Mr Razif travels by bus from Singapore to Kuala Lumpur with his wife and his four children.\n\\newline\n\n(a) \\begin{tabular}{|l|r|}\n\\hline\nTicket Price \\\\\n\\hline\nAdult & \\$32.40 \\\\\n\\hline\nChild & \\$24.40 \\\\\n\\hline\nFamily (2 adults and 3 children) & \\$115.00 \\\\\n\\hline\n\\end{tabular}\n\nWork out how much Mr Razif saves if he buys a family ticket and one child ticket rather than six individual tickets.\n\\newline\n\n\\$ \n\n(b) The bus leaves Singapore at 12 40 and arrives in Kuala Lumpur at 17 35.\n\\newline\n\nWork out, in hours and minutes, the time this journey takes.\n\\newline\n\n h  min\n\n(c) Mr Razif changes some dollars into Malaysian ringgits.\n\\newline\n\\\\\nHe receives 318 ringgits when the exchange rate is \\$1 = 4.24 ringgits.\n\\newline\n\nWork out how many dollars he changes.\n\\newline\n\n\\$",
+    "parts": [
+      {
+        "label": "(a)",
+        "marks": 4,
+        "content": [
+          {
+            "type": "table",
+            "content": "\\begin{tabular}{|l|r|}\n\\hline\nTicket Price \\\\\n\\hline\nAdult & \\$32.40 \\\\\n\\hline\nChild & \\$24.40 \\\\\n\\hline\nFamily (2 adults and 3 children) & \\$115.00 \\\\\n\\hline\n\\end{tabular}"
+          },
+          {
+            "type": "text",
+            "content": "Work out how much Mr Razif saves if he buys a family ticket and one child ticket rather than six individual tickets.\n\\newline\n\n\\$ \\AnswerLine[][]"
+          }
+        ],
+        "_compactMarks": true
+      },
+      {
+        "label": "(b)",
+        "marks": 1,
+        "content": [
+          {
+            "type": "text",
+            "content": "The bus leaves Singapore at 12 40 and arrives in Kuala Lumpur at 17 35.\n\\newline\n\nWork out, in hours and minutes, the time this journey takes.\n\\newline\n"
+          }
+        ],
+        "answer": {
+          "type": "multiline",
+          "lines": 2,
+          "template": "____\\n____",
+          "lineSep": "blank"
+        },
+        "_compactMarks": true
+      },
+      {
+        "label": "(c)",
+        "marks": 2,
+        "content": [
+          {
+            "type": "text",
+            "content": "Mr Razif changes some dollars into Malaysian ringgits.\n\\newline\n\\\\\nHe receives 318 ringgits when the exchange rate is \\$1 = 4.24 ringgits.\n\\newline\n\nWork out how many dollars he changes.\n\\newline\n\n\\$ \\AnswerLine[][]"
+          }
+        ],
+        "_compactMarks": true
+      }
+    ],
+    "hasFigure": false,
+    "cognitive": "apply",
+    "cmd": "calculate",
+    "stem": [
+      {
+        "type": "text",
+        "content": "Mr Razif travels by bus from Singapore to Kuala Lumpur with his wife and his four children.\n\\newline\n"
+      }
+    ],
+    "_rawBody": "Mr Razif travels by bus from Singapore to Kuala Lumpur with his wife and his four children.\n\n\\begin{parts}\n\\item \\begin{tabular}{|l|r|}\n\\hline\nTicket Price \\\\\n\\hline\nAdult & \\$32.40 \\\\\n\\hline\nChild & \\$24.40 \\\\\n\\hline\nFamily (2 adults and 3 children) & \\$115.00 \\\\\n\\hline\n\\end{tabular}\n\nWork out how much Mr Razif saves if he buys a family ticket and one child ticket rather than six individual tickets.\n\n\\$ \\AnswerLine[][]\n\\Marks{4}\n\n\\item The bus leaves Singapore at 12 40 and arrives in Kuala Lumpur at 17 35.\n\nWork out, in hours and minutes, the time this journey takes.\n\n\\AnswerLine[] h \\AnswerLine[] min\n\\Marks{1}\n\n\\item Mr Razif changes some dollars into Malaysian ringgits.\\\\\nHe receives 318 ringgits when the exchange rate is \\$1 = 4.24 ringgits.\n\nWork out how many dollars he changes.\n\n\\$ \\AnswerLine[][]\n\\Marks{2}\n\\end{parts}",
+    "_compactParts": true,
+    "_compactEndParts": true
+  }
+]
