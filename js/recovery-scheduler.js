@@ -51,9 +51,11 @@ function _mergeWithBacklog(freshUnits, backlog) {
     var bl = blMap[key];
     if (bl) {
       u.skippedCount = bl.skippedCount || 0;
+      u._addedAt = bl._addedAt || Date.now();
       u.carryOver = bl.carryOver || false;
     } else {
       u.skippedCount = u.skippedCount || 0;
+      u._addedAt = u._addedAt || Date.now();
       u.carryOver = false;
     }
     merged.push(u);
@@ -63,10 +65,14 @@ function _mergeWithBacklog(freshUnits, backlog) {
   for (var k = 0; k < backlog.length; k++) {
     var bkey = backlog[k].type + ':' + backlog[k].id;
     if (!seen[bkey]) {
-      /* Check if item is still valid — skip if too old */
+      /* Check if item is still valid — skip if too old or skipped too many times (v5.13.2) */
       var maxDays = (typeof RECOVERY_SCHEDULER_CONFIG !== 'undefined') ?
         RECOVERY_SCHEDULER_CONFIG.maxCarryOverDays : 7;
-      if ((backlog[k].skippedCount || 0) <= maxDays) {
+      var maxSkips = (typeof RECOVERY_SCHEDULER_CONFIG !== 'undefined' && RECOVERY_SCHEDULER_CONFIG.maxSkipCount) ?
+        RECOVERY_SCHEDULER_CONFIG.maxSkipCount : 5;
+      var addedAt = backlog[k]._addedAt || Date.now();
+      var ageDays = (Date.now() - addedAt) / 86400000;
+      if (ageDays <= maxDays && (backlog[k].skippedCount || 0) < maxSkips) {
         seen[bkey] = true;
         merged.push(backlog[k]);
       }
@@ -457,6 +463,7 @@ function finalizeRecoverySchedule(completedTypes, meta) {
           sectionId: item.sectionId,
           priorityScore: item.priorityScore,
           skippedCount: (item.skippedCount || 0) + 1,
+          _addedAt: item._addedAt || Date.now(),
           carryOver: true,
           reason: item.reason,
           raw: item.raw

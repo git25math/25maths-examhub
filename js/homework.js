@@ -4,6 +4,7 @@
 
 /* Notification functions migrated to smart-notif.js (v5.4.0) */
 var _hwQuestionDelegated = false;
+var _hwSubmitting = false;
 
 /* ═══ TEACHER: CREATE HOMEWORK ═══ */
 var _hwMode = 'deck';
@@ -1137,8 +1138,10 @@ function pickHwAnswer(btn, isCorrect, correctAnswer) {
 }
 
 async function finishHwTest() {
+  if (_hwSubmitting) return;
   var el = E('panel-homework');
   if (!el || !_hwTest) return;
+  _hwSubmitting = true;
 
   var t_ = _hwTest;
   var pct = t_.total > 0 ? Math.round(t_.correct / t_.total * 100) : 0;
@@ -1178,8 +1181,9 @@ async function finishHwTest() {
           'hw_result', t_.hwId);
       }
     }
-  } catch (e) { /* ignore */ }
+  } catch (e) { _hwSubmitting = false; return; }
 
+  _hwSubmitting = false;
   /* Show result screen */
   var resultHtml = resultScreenHTML(
     t_.correct, t_.total,

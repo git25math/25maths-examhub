@@ -7,6 +7,37 @@
 
 var _recoverySession = null;
 var RECOVERY_ADVANCE_DELAY = 800;
+var _RECOVERY_CHECKPOINT_KEY = 'recovery_session_checkpoint';
+
+/* ═══ CHECKPOINT PERSISTENCE (v5.13.2) ═══ */
+
+function _saveRecoveryCheckpoint() {
+  if (!_recoverySession) return;
+  try {
+    localStorage.setItem(_RECOVERY_CHECKPOINT_KEY, JSON.stringify({
+      queue: _recoverySession.queue,
+      currentIndex: _recoverySession.currentIndex,
+      results: _recoverySession.results,
+      startedAt: _recoverySession.startedAt,
+      summaryReasons: _recoverySession.summaryReasons
+    }));
+  } catch (e) { /* quota exceeded — degrade gracefully */ }
+}
+
+function _clearRecoveryCheckpoint() {
+  try { localStorage.removeItem(_RECOVERY_CHECKPOINT_KEY); } catch (e) {}
+}
+
+function _loadRecoveryCheckpoint() {
+  try {
+    var raw = localStorage.getItem(_RECOVERY_CHECKPOINT_KEY);
+    if (!raw) return null;
+    var cp = JSON.parse(raw);
+    if (cp && cp.queue && cp.queue.length > 0 && cp.currentIndex < cp.queue.length) return cp;
+  } catch (e) {}
+  _clearRecoveryCheckpoint();
+  return null;
+}
 
 /* Legacy fixed-order queue builder (fallback) */
 function _buildLegacyRecoverySession() {
@@ -58,6 +89,17 @@ function startRecoverySession() {
     if (typeof showToast === 'function') showToast(t('Recovery already running', '复查正在进行中'));
     return;
   }
+
+  /* Resume from checkpoint if browser was closed mid-session (v5.13.2) */
+  var checkpoint = _loadRecoveryCheckpoint();
+  if (checkpoint) {
+    _recoverySession = checkpoint;
+    _clearRecoveryCheckpoint();
+    if (typeof showToast === 'function') showToast(t('Resuming recovery session...', '恢复上次复查进度...'));
+    _runCurrentRecoveryItem();
+    return;
+  }
+
   var queue = buildRecoverySession();
   if (queue.length === 0) {
     if (typeof showToast === 'function') showToast(t('Nothing to refresh!', '没有需要复查的内容！'));
@@ -134,6 +176,7 @@ function _runCurrentRecoveryItem() {
 function _recordRecoveryResult(resultType) {
   if (!_recoverySession) return;
   _recoverySession.results.push({ type: resultType, status: 'done' });
+  _saveRecoveryCheckpoint();
 }
 
 /* Advance to next item (called by session buttons) */
@@ -228,6 +271,7 @@ function _endRecoverySession() {
   } catch (e) {}
 
   _recoverySession = null;
+  _clearRecoveryCheckpoint();
   if (typeof _profileCacheTs !== 'undefined') _profileCacheTs = 0;
 
   /* Refresh goals to detect completions (v3.9.1) */
@@ -300,4 +344,5 @@ function skipRecoverySession() {
     } catch (e) {}
   }
   _recoverySession = null;
+  _clearRecoveryCheckpoint();
 }

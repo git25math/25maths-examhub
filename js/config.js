@@ -388,7 +388,7 @@ function isSuperAdmin() {
 }
 
 /* App version */
-var APP_VERSION = 'v5.13.1';
+var APP_VERSION = 'v5.13.2';
 
 /* AI Tutor configuration */
 var AI_TUTOR_CONFIG = {

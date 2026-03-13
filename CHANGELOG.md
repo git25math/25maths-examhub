@@ -1,5 +1,63 @@
 # Changelog
 
+## [5.13.2] - 2026-03-14 — 架构完备性修复（7 项）
+
+### 安全与数据完整性
+
+#### Fix 1: practice.js — Supabase upsert 缺 .catch()
+- 题目编辑 upsert 链追加 `.catch()`，网络失败时显示 toast 而非静默吞错
+
+#### Fix 2: storage.js — 缓存失效补全
+- `invalidateCache()` 补充 7 个用户状态缓存清理（dailyPlan/profile/goals/sectionHealth/listRaw）
+- 非用户状态缓存（admin/notif/STT 等）不清理
+
+#### Fix 3: homework.js — 作业双击提交防护
+- 新增 `_hwSubmitting` guard，`finishHwTest()` 入口检查防止重复提交
+- catch 块和正常路径均正确重置 flag
+
+### 架构韧性
+
+#### Fix 4: ui.js — Study 模式 flag 清理
+- `_cleanupActiveMode()` 末尾重置 `S._refreshMode/_mistakeMode/_kpScanMode/_kpRefreshMode`
+- 防止中途导航后残留 flag 导致下次进入显示错误 UI
+
+#### Fix 5: app.js — 全局错误边界
+- 添加 `window.onerror` 结构化日志（return false 保留浏览器默认行为）
+- 添加 `unhandledrejection` 监听，仅对网络错误显示 toast
+
+#### Fix 6: recovery-session.js — 会话中断 checkpoint
+- 新增 checkpoint 持久化（`_saveRecoveryCheckpoint` / `_loadRecoveryCheckpoint`）
+- 每次 `_recordRecoveryResult()` 后写 localStorage
+- `_endRecoverySession()` 和 `skipRecoverySession()` 正确清理 checkpoint
+- `startRecoverySession()` 开头检查 checkpoint，有未完成进度则恢复并 toast 提示
+
+#### Fix 7: recovery-scheduler.js — Backlog 漂移修复
+- backlog 条目增加 `_addedAt` 时间戳
+- 过滤条件改为双重限制：时间 ≤ maxCarryOverDays 天 + 跳过次数 < maxSkipCount（默认 5）
+- 旧 backlog 无 `_addedAt` 时 fallback 为 `Date.now()`（优雅迁移）
+
+### 误报排除（9 项经代码验证不需修复）
+- S1 KaTeX XSS：pqSanitize + escapeHtml 多层防护 ✓
+- S3 .single() 错误检查：全部 3 处正确处理 ✓
+- S4 客户端 rate-limit：UX 层 + Supabase 后端保护 ✓
+- D2 FLM 合并冲突：取高状态 + 求和逻辑正确 ✓
+- D4 通知竞态：极低概率偏差可接受 ✓
+- A3 typeof 分发：所有路径有 fallback ✓
+- A5 索引重建：O(n) 量级可接受 ✓
+- A7 时区：一致使用本地时区 ✓
+- D6 pastpapers-cie 重复：仅 admin 面板使用 ✓
+
+### 修改文件
+| 文件 | 变更 |
+|------|------|
+| `js/practice.js` | 追加 .catch() 错误处理 |
+| `js/storage.js` | 扩展 invalidateCache() +7 缓存 |
+| `js/homework.js` | 添加 _hwSubmitting 双击防护 |
+| `js/ui.js` | _cleanupActiveMode() 追加 flag 清理 |
+| `js/app.js` | 新增全局错误边界 |
+| `js/recovery-session.js` | 新增 checkpoint 持久化系统 |
+| `js/recovery-scheduler.js` | backlog 时间+次数双重过滤 |
+
 ## [5.13.1] - 2026-03-13 — 图片仓库清理 + 试卷数据拆分
 
 ### 图片仓库清理 (25maths-cie0580-figures)

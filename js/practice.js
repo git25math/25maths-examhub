@@ -891,6 +891,8 @@ function savePracticeEdit(qid, board) {
     E('modal-card').className = 'modal-card';
     showToast(t('Saved!', '已保存！'));
     if (_pqEditorSaveCb) _pqEditorSaveCb();
+  }).catch(function() {
+    showToast(t('Save failed', '保存失败'));
   });
 }
 

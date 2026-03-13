@@ -26,6 +26,10 @@ function _cleanupActiveMode() {
     if (typeof _ppScanKeyHandler === 'function') document.removeEventListener('keydown', _ppScanKeyHandler);
     _ppScanState = null;
   }
+  /* Reset study mode flags (v5.13.2) */
+  if (typeof S !== 'undefined' && S) {
+    S._refreshMode = S._mistakeMode = S._kpScanMode = S._kpRefreshMode = false;
+  }
 }
 
 function showPanel(id) {

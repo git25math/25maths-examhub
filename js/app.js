@@ -2,6 +2,24 @@
    app.js — Application entry point: init + URL parameter handling
    ══════════════════════════════════════════════════════════════ */
 
+/* ═══ GLOBAL ERROR BOUNDARY (v5.13.2) ═══ */
+try {
+  window.onerror = function(msg, src, line, col, err) {
+    try { console.error('[ExamHub]', msg, src + ':' + line + ':' + col, err); } catch (e) {}
+    return false;
+  };
+  window.addEventListener('unhandledrejection', function(ev) {
+    try {
+      var reason = ev.reason || {};
+      var msg = reason.message || String(reason);
+      console.error('[ExamHub] Unhandled rejection:', msg);
+      if (/Failed to fetch|NetworkError|fetch/i.test(msg)) {
+        if (typeof showToast === 'function') showToast(typeof t === 'function' ? t('Network error, please retry', '网络错误，请重试') : 'Network error');
+      }
+    } catch (e) {}
+  });
+} catch (e) {}
+
 onLevelsReady(function() {
 (async function initApp() {
   /* Session start timestamp for hidden badges */

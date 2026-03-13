@@ -44,6 +44,14 @@ function invalidateCache() {
   if (typeof _catLevelIndex !== 'undefined') _catLevelIndex = null;
   if (typeof _hhkSlugIdx !== 'undefined') _hhkSlugIdx = null;
   if (typeof _sttIndex !== 'undefined') _sttIndex = null;
+  /* User-state caches added in v5.13.2 */
+  if (typeof _dailyPlanCache !== 'undefined') _dailyPlanCache = null;
+  if (typeof _dailyPlanCacheDate !== 'undefined') _dailyPlanCacheDate = '';
+  if (typeof _profileCache !== 'undefined') _profileCache = null;
+  if (typeof _profileCacheTs !== 'undefined') _profileCacheTs = 0;
+  if (typeof _goalsCache !== 'undefined') _goalsCache = null;
+  if (typeof _sectionHealthCache !== 'undefined') _sectionHealthCache = {};
+  if (typeof _listRawCache !== 'undefined') _listRawCache = null;
 }
 
 /* Level best scores */
