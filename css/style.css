@@ -247,6 +247,10 @@ input { font-family: inherit; }
 .btn-warning:hover { opacity: 0.9; }
 
 .btn-block { width: 100%; margin-bottom: 8px; }
+.btn-outline { background: transparent; color: var(--c-primary); border: 2px solid var(--c-primary); }
+.btn-outline:hover { background: var(--c-primary); color: #fff; }
+.auth-btn-row { display: flex; gap: 8px; }
+.auth-btn-row .btn-block { flex: 1; margin-bottom: 0; }
 
 .btn-sm { padding: 6px 14px; font-size: 12px; border-radius: var(--r-sm); }
 

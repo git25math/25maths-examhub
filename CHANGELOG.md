@@ -1,5 +1,46 @@
 # Changelog
 
+## [5.13.0] - 2026-03-13 — 安全加固：RLS + 登录注册拆分 + 邮箱验证
+
+### 安全修复
+
+#### 1. RLS 缺口修复（Critical）
+- **leaderboard 表**: 启用 RLS + FORCE，撤销 anon 角色权限，仅 authenticated 可读写自己的行
+- **vocab_progress 表**: 启用 RLS，撤销 anon 角色权限，仅 authenticated 可读写自己的行
+- **教师可读**: 教师可查看同校学生的排行榜数据
+- **Super Admin**: 保留全表读取权限
+
+#### 2. 登录/注册拆分（High）
+- **拆分为独立按钮**: "Login 登录" + "Register 注册"，不再"登录失败自动注册"
+- **登录按钮**: 仅调用 `signInWithPassword()`，失败显示错误，不触发注册
+- **注册按钮**: 仅调用 `signUp()`，成功后提示检查邮箱
+- **邀请码输入框**: 注册时可选填邀请码（`#auth-invite`），预留 `activate-invite` Edge Function 调用
+- **消除账户枚举**: 登录失败统一显示"邮箱或密码错误"
+
+#### 3. 邮箱验证（High）
+- **register-teacher Edge Function**: `email_confirm` 从 `true` 改为 `false`，教师注册需验证邮箱
+- **注册成功提示**: 显示"请查看邮箱，点击确认链接后再登录"
+- **注意**: 需在 Supabase Dashboard → Auth → Providers → Email 开启 "Confirm email"
+
+### UI 变更
+- 登录页按钮从单个 "Login / Register" 改为并排 "Login" + "Register"
+- 新增 `.btn-outline` 样式（注册按钮）
+- 新增 `.auth-btn-row` flex 布局
+- 登录页说明文案更新
+
+### 文件变更
+| 文件 | 变更类型 |
+|------|---------|
+| `js/auth.js` | 修改 — 拆分登录/注册事件监听器 + 邮箱验证提示 + 邀请码字段 |
+| `index.html` | 修改 — 双按钮 + 邀请码输入框 |
+| `css/style.css` | 修改 — `.btn-outline` + `.auth-btn-row` |
+| `supabase/functions/register-teacher/index.ts` | 修改 — `email_confirm: false` |
+| `supabase/migrations/20260313100000_*.sql` | 新建 — RLS 启用 + 策略 |
+| `supabase/migrations/20260313100001_*.sql` | 新建 — FORCE RLS |
+| `supabase/migrations/20260313100002_*.sql` | 新建 — 策略重建 + grant 修复 |
+| `supabase/migrations/20260313100003_*.sql` | 新建 — 撤销 anon 权限 |
+| `supabase/migrations/20260313100004_*.sql` | 新建 — 恢复 authenticated 权限 |
+
 ## [5.12.1] - 2026-03-13 — singleRound 练习结果不存库修复
 
 ### Bug 修复

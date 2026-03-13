@@ -21,7 +21,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700;800&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 
   <!-- App Styles -->
-  <link rel="stylesheet" href="css/style.min.css?v=5.12.1">
+  <link rel="stylesheet" href="css/style.min.css?v=5.13.0">
   <script>(function(){try{if(localStorage.getItem('wmatch_dark')==='1'||(localStorage.getItem('wmatch_dark')===null&&window.matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.setAttribute('data-theme','dark')}}catch(e){}})()</script>
   <script>(function(){try{var ts=localStorage.getItem('wmatch_login_ts');if(ts&&(Date.now()-parseInt(ts,10))<300000){var s=document.createElement('style');s.id='auth-hide-style';s.textContent='#ov-auth{display:none}';document.head.appendChild(s);/* Watchdog: if app doesn't init within 8s, show auth */setTimeout(function(){var ov=document.getElementById('ov-auth');if(ov&&ov.style.display==='none'&&!document.getElementById('panel-home').children.length){try{localStorage.removeItem('wmatch_login_ts')}catch(e){}ov.style.display='';ov.classList.add('vis')}},8000)}}catch(e){}})()</script>
 </head>
@@ -40,12 +40,16 @@
     <form id="auth-form" autocomplete="on" onsubmit="return false">
       <input class="auth-input" id="auth-email" type="email" placeholder="Email" aria-label="Email" autocomplete="username">
       <input class="auth-input" id="auth-pass" type="password" placeholder="Password (min 6 chars)" aria-label="Password" autocomplete="current-password">
+      <input class="auth-input" id="auth-invite" type="text" placeholder="Invite code, e.g. MATH2026-A" aria-label="Invite Code" autocomplete="off" style="display:none">
       <div class="auth-err" id="auth-err"></div>
-      <button class="btn btn-primary btn-block" id="auth-login" type="submit" data-en="Login / Register" data-zh="登录 / 注册">Login / Register</button>
+      <div class="auth-btn-row">
+        <button class="btn btn-primary btn-block" id="auth-login" type="submit" data-en="Login" data-zh="登录">Login</button>
+        <button class="btn btn-outline btn-block" id="auth-register" type="button" data-en="Register" data-zh="注册">Register</button>
+      </div>
     </form>
     <button class="btn btn-ghost btn-block" id="auth-skip" data-en="Try without login" data-zh="先不登录，直接体验">Try without login</button>
     <div class="text-center"><a class="auth-forgot" onclick="showPasswordReset()" data-en="Forgot password?" data-zh="忘记密码？">Forgot password?</a></div>
-    <div class="auth-note" data-en="First email auto-registers · Login to sync across devices" data-zh="首次输入邮箱将自动注册 · 登录后可跨设备同步进度">First email auto-registers · Login to sync across devices</div>
+    <div class="auth-note" data-en="Login to sync across devices" data-zh="登录后可跨设备同步进度">Login to sync across devices</div>
     <div class="auth-divider"><span>OR</span></div>
     <button class="btn btn-ghost btn-block btn-sm" id="auth-teacher-toggle" onclick="toggleTeacherReg()"><span data-en="👩‍🏫 Teacher Registration" data-zh="👩‍🏫 教师注册">👩‍🏫 Teacher Registration</span></button>
     <form id="teacher-reg" style="display:none" autocomplete="on" onsubmit="doTeacherRegister(); return false">
@@ -250,7 +254,7 @@
 <!-- Supabase SDK -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <!-- App Bundle (core JS files, minified) -->
-<script src="js/app.bundle.min.js?v=5.12.1"></script>
+<script src="js/app.bundle.min.js?v=5.13.0"></script>
 <!-- homework.min.js loaded dynamically for students with classes + teachers (see auth.js) -->
 <!-- admin.js + vocab-admin.js loaded dynamically for teachers (see auth.js) -->
 

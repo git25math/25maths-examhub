@@ -26,6 +26,7 @@ function updateAuthLang() {
   var ph = {
     'auth-email': ['Email', '邮箱地址'],
     'auth-pass': ['Password (min 6 chars)', '密码 (至少6位)'],
+    'auth-invite': ['Invite code, e.g. MATH2026-A', '邀请码，如 MATH2026-A'],
     'tr-name': ['Name', '姓名'],
     'tr-email': ['Email', '邮箱'],
     'tr-pass': ['Password (min 6)', '密码 (至少6位)'],
@@ -77,7 +78,7 @@ function authSuccess() {
   authLockUntil = 0;
 }
 
-/* Login / register button */
+/* ── Login button (signIn only) ── */
 E('auth-login').addEventListener('click', async function() {
   var email = E('auth-email').value.trim();
   var pass = E('auth-pass').value;
@@ -87,71 +88,102 @@ E('auth-login').addEventListener('click', async function() {
   if (!email) { E('auth-err').textContent = t('Please enter email', '请输入邮箱'); return; }
   if (pass.length < 6) { E('auth-err').textContent = t('Password min 6 chars', '密码至少6位'); return; }
   if (!sb) { E('auth-err').textContent = t('Supabase not configured', 'Supabase 未配置，请先体验'); return; }
-
-  /* Throttle check */
   if (!checkAuthThrottle()) return;
 
-  /* Loading state */
   btn.disabled = true;
   btn.textContent = t('Logging in...', '登录中...');
 
   try {
     var res = await sb.auth.signInWithPassword({ email: email, password: pass });
-    if (res.error && res.error.message.indexOf('Invalid') >= 0) {
-      /* Sign-in failed — try sign-up (no email verification) */
-      var res2 = await sb.auth.signUp({ email: email, password: pass });
-      if (res2.error) {
-        authFail();
-        /* "User already registered" means signIn password was wrong */
-        if (res2.error.message.indexOf('already') >= 0) {
-          E('auth-err').textContent = t('Incorrect email or password', '邮箱或密码错误');
-        } else {
-          E('auth-err').textContent = translateAuthError(res2.error.message);
-        }
-        btn.disabled = false;
-        btn.textContent = t('Login / Register', '登录 / 注册');
-        return;
-      }
-
-      /* Sign-up succeeded — check if session exists (Confirm email OFF) */
-      if (res2.data.session) {
-        currentUser = { email: email, id: res2.data.user.id, nickname: '' };
-        /* New user — no board yet, will be prompted */
-      } else {
-        /* Dashboard still has Confirm email ON — tell user to login */
-        E('auth-err').textContent = '';
-        showToast(t('Registered, please login', '注册成功，请直接登录'));
-        btn.disabled = false;
-        btn.textContent = t('Login / Register', '登录 / 注册');
-        return;
-      }
-    } else if (res.error) {
+    if (res.error) {
       authFail();
-      /* Rate limit → immediate lockout */
       if (res.error.message.indexOf('rate') >= 0 || res.error.message.indexOf('limit') >= 0) {
         authLockUntil = Date.now() + AUTH_LOCKOUT_MS;
         authAttempts = 0;
       }
-      E('auth-err').textContent = translateAuthError(res.error.message);
+      E('auth-err').textContent = t('Incorrect email or password', '邮箱或密码错误');
       btn.disabled = false;
-      btn.textContent = t('Login / Register', '登录 / 注册');
+      btn.textContent = t('Login', '登录');
       return;
-    } else {
-      var meta = res.data.user.user_metadata || {};
-      currentUser = { email: email, id: res.data.user.id, nickname: meta.nickname || '' };
-      if (meta.board) userBoard = meta.board;
     }
 
+    var meta = res.data.user.user_metadata || {};
+    currentUser = { email: email, id: res.data.user.id, nickname: meta.nickname || '' };
+    if (meta.board) userBoard = meta.board;
     authSuccess();
     btn.disabled = false;
-    btn.textContent = t('Login / Register', '登录 / 注册');
+    btn.textContent = t('Login', '登录');
     afterLogin();
   } catch (e) {
     authFail();
     E('auth-err').textContent = t('Network error, try later', '网络错误，请稍后重试');
     btn.disabled = false;
-    btn.textContent = t('Login / Register', '登录 / 注册');
+    btn.textContent = t('Login', '登录');
   }
+});
+
+/* ── Register button (signUp only) ── */
+E('auth-register').addEventListener('click', async function() {
+  var email = E('auth-email').value.trim();
+  var pass = E('auth-pass').value;
+  var inviteCode = E('auth-invite').value.trim();
+  var btn = E('auth-register');
+  E('auth-err').textContent = '';
+
+  if (!email) { E('auth-err').textContent = t('Please enter email', '请输入邮箱'); return; }
+  if (pass.length < 6) { E('auth-err').textContent = t('Password min 6 chars', '密码至少6位'); return; }
+  if (!sb) { E('auth-err').textContent = t('Supabase not configured', 'Supabase 未配置，请先体验'); return; }
+  if (!checkAuthThrottle()) return;
+
+  btn.disabled = true;
+  btn.textContent = t('Registering...', '注册中...');
+
+  try {
+    var res = await sb.auth.signUp({ email: email, password: pass });
+    if (res.error) {
+      authFail();
+      E('auth-err').textContent = translateAuthError(res.error.message);
+      btn.disabled = false;
+      btn.textContent = t('Register', '注册');
+      return;
+    }
+
+    /* If invite code provided, activate it after signup */
+    if (inviteCode && res.data.user) {
+      try {
+        await callEdgeFunction('activate-invite', { user_id: res.data.user.id, code: inviteCode });
+      } catch (e) { /* invite activation failure is non-blocking */ }
+    }
+
+    /* Email confirmation required — tell user to check inbox */
+    if (!res.data.session) {
+      E('auth-err').style.color = 'var(--c-success)';
+      E('auth-err').textContent = t(
+        'Check your email and click the confirmation link, then login.',
+        '请查看邮箱，点击确认链接后再登录。'
+      );
+      btn.disabled = false;
+      btn.textContent = t('Register', '注册');
+      return;
+    }
+
+    /* Session exists (email confirm OFF in Supabase dashboard) — direct login */
+    currentUser = { email: email, id: res.data.user.id, nickname: '' };
+    authSuccess();
+    btn.disabled = false;
+    btn.textContent = t('Register', '注册');
+    afterLogin();
+  } catch (e) {
+    authFail();
+    E('auth-err').textContent = t('Network error, try later', '网络错误，请稍后重试');
+    btn.disabled = false;
+    btn.textContent = t('Register', '注册');
+  }
+});
+
+/* Show invite code input when Register is tapped/hovered */
+E('auth-register').addEventListener('focus', function() {
+  E('auth-invite').style.display = '';
 });
 
 /* Guest mode */
@@ -624,21 +656,14 @@ async function doTeacherRegister() {
       return;
     }
 
-    /* Auto sign in after registration */
-    var res = await sb.auth.signInWithPassword({ email: email, password: pass });
-    if (res.error) {
-      err.textContent = t('Registered but login failed, please login manually', '注册成功但自动登录失败，请手动登录');
-      btn.disabled = false;
-      btn.textContent = t('Register Teacher Account', '注册教师账号');
-      return;
-    }
-
-    currentUser = { email: email, id: res.data.user.id, nickname: name };
-    userBoard = 'cie';
-    try { localStorage.setItem('userBoard', 'cie'); } catch (e) {}
+    /* Email verification required — show confirmation message */
+    err.style.color = 'var(--c-success)';
+    err.textContent = t(
+      'Registered! Check your email and click the confirmation link, then login.',
+      '注册成功！请查看邮箱，点击确认链接后再登录。'
+    );
     btn.disabled = false;
     btn.textContent = t('Register Teacher Account', '注册教师账号');
-    afterLogin();
   } catch (e) {
     err.textContent = t('Network error', '网络错误');
     btn.disabled = false;
