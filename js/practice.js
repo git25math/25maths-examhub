@@ -1132,6 +1132,10 @@ function loadPastPaperData(board) {
       .then(function(r) { return r.ok ? r.json() : {}; })
       .then(function(m) { _ppQPMSIndex = m; })
       .catch(function() { _ppQPMSIndex = {}; });
+    fetch('data/qp-index.json?v=' + APP_VERSION)
+      .then(function(r) { return r.ok ? r.json() : {}; })
+      .then(function(m) { _ppQPIndex = m; })
+      .catch(function() { _ppQPIndex = {}; });
   }
   return Promise.all([
     fetch(file).then(function(r) {
@@ -2431,6 +2435,31 @@ function _ppRenderBodyModule(q, showAnsLine) {
   return h;
 }
 
+/* ═══ TRANSLATION MODULE ═══ */
+
+function _ppRenderTranslationModule(q) {
+  if (appLang === 'en') return '';
+  var h = '<div class="pp-ms-toggle" role="button" tabindex="0" data-action="toggleTranslation">';
+  h += '<span id="pp-trans-arrow">\u25b6</span> ';
+  h += t('Translation', '\u9898\u5e72\u7ffb\u8bd1');
+  h += '</div>';
+  h += '<div class="pp-ms-content" id="pp-trans-body">';
+  if (q.stem_zh) {
+    h += '<div class="pp-translation-text">' + escapeHtml(q.stem_zh) + '</div>';
+  } else {
+    h += '<div class="pp-translation-placeholder">' + t('Translation coming soon', '\u7ffb\u8bd1\u52a0\u8f7d\u4e2d...') + '</div>';
+  }
+  h += '</div>';
+  return h;
+}
+
+function ppToggleTranslation() {
+  var body = document.getElementById('pp-trans-body');
+  var arrow = document.getElementById('pp-trans-arrow');
+  if (!body) return;
+  body.classList.toggle('show');
+  if (arrow) arrow.textContent = body.classList.contains('show') ? '\u25bc' : '\u25b6';
+}
 
 function _ppRenderVocabModule(q) {
   if (_ppSession.mode !== 'practice' || !q.s) return '';
@@ -2482,26 +2511,79 @@ function _ppRenderVocabModule(q) {
 }
 
 function _ppRenderKPModule(q) {
-  if (_ppSession.mode !== 'practice' || !q.s || typeof getQuestionKPs !== 'function') return '';
-  var relKPs = getQuestionKPs(q.s, _ppSession.board);
-  if (!relKPs.length) return '';
+  if (_ppSession.mode !== 'practice' || !q.s) return '';
+  var fullKPs = (typeof _lgGetSectionKPs === 'function') ? _lgGetSectionKPs(q.s, _ppSession.board) : [];
+  if (!fullKPs.length) return '';
+  var kpDone = loadS().kpDone || {};
   var h = '<div class="pp-ms-toggle" role="button" tabindex="0" data-action="toggleKP">';
   h += '<span id="pp-kp-arrow">\u25b6</span> ';
-  h += t('Related Knowledge Points', '\u76f8\u5173\u77e5\u8bc6\u70b9');
-  h += ' <span class="text-muted-sm">(' + relKPs.length + ')</span>';
+  h += t('Knowledge Points', '\u8003\u67e5\u77e5\u8bc6\u70b9');
+  h += ' <span class="text-muted-sm">(' + fullKPs.length + ')</span>';
   h += '</div>';
   h += '<div class="pp-ms-content" id="pp-kp-body">';
-  for (var ki = 0; ki < relKPs.length; ki++) {
-    var rkp = relKPs[ki];
-    var kpBadge = rkp.fs === 'mastered' ? '\u2705' : rkp.fs === 'uncertain' ? '\ud83d\udfe1' : rkp.fs === 'learning' ? '\ud83d\udfe2' : '\u26aa';
-    h += '<div class="pp-vocab-row">';
-    h += '<span class="pp-vocab-word">' + escapeHtml(rkp.title) + '</span>';
-    if (rkp.title_zh) h += '<span class="pp-vocab-def">' + escapeHtml(rkp.title_zh) + '</span>';
+  for (var ki = 0; ki < fullKPs.length; ki++) {
+    var kp = fullKPs[ki];
+    var kpState = kpDone[kp.id] || {};
+    var fs = kpState.fs || 'new';
+    var kpBadge = fs === 'mastered' ? '\u2705' : fs === 'uncertain' ? '\ud83d\udfe1' : fs === 'learning' ? '\ud83d\udfe2' : '\u26aa';
+    h += '<div class="pp-kp-row">';
+    h += '<div class="pp-kp-main">';
+    h += '<span class="pp-kp-title">' + escapeHtml(kp.title) + '</span>';
+    if (kp.title_zh) h += '<span class="pp-kp-title-zh">' + escapeHtml(kp.title_zh) + '</span>';
     h += '<span class="pp-kp-badge">' + kpBadge + '</span>';
+    h += '</div>';
+    var expl = (kp.explanation && (appLang !== 'en' ? kp.explanation.zh : kp.explanation.en)) || '';
+    if (expl.length > 60) expl = expl.substring(0, 57) + '...';
+    if (expl) h += '<div class="pp-kp-expl">' + escapeHtml(expl) + '</div>';
+    h += '<button class="pp-kp-learn-btn" data-action="learnKP" data-kp-id="' + escapeHtml(kp.id) + '" data-board="' + escapeHtml(_ppSession.board) + '">';
+    h += '\ud83d\udcd6 ' + t('Learn This', '\u6df1\u5165\u5b66\u4e60') + '</button>';
     h += '</div>';
   }
   h += '</div>';
   return h;
+}
+
+/* ═══ EXAM PATTERN MODULE ═══ */
+
+function _ppRenderPatternModule(q) {
+  if (_ppSession.mode !== 'practice' || !q.s) return '';
+  var fullKPs = (typeof _lgGetSectionKPs === 'function') ? _lgGetSectionKPs(q.s, _ppSession.board) : [];
+  if (!fullKPs.length) return '';
+  var patterns = [];
+  for (var ki = 0; ki < fullKPs.length; ki++) {
+    var kp = fullKPs[ki];
+    if (kp.examPatterns) {
+      for (var pi = 0; pi < kp.examPatterns.length; pi++) {
+        patterns.push({ ep: kp.examPatterns[pi], kp: kp });
+      }
+    }
+  }
+  if (!patterns.length) return '';
+  var h = '<div class="pp-ms-toggle" role="button" tabindex="0" data-action="togglePattern">';
+  h += '<span id="pp-pattern-arrow">\u25b6</span> ';
+  h += t('Exam Patterns & Methods', '\u9898\u578b\u5f52\u7eb3 & \u89e3\u9898\u601d\u8def');
+  h += ' <span class="text-muted-sm">(' + patterns.length + ')</span>';
+  h += '</div>';
+  h += '<div class="pp-ms-content" id="pp-pattern-body">';
+  for (var i = 0; i < patterns.length; i++) {
+    var ep = patterns[i].ep;
+    var label = appLang !== 'en' && ep.label_zh ? ep.label_zh : ep.label;
+    var desc = appLang !== 'en' && ep.description_zh ? ep.description_zh : ep.description;
+    h += '<div class="pp-pattern-item">';
+    h += '<div class="pp-pattern-label">' + escapeHtml(label) + '</div>';
+    if (desc) h += '<div class="pp-pattern-desc">' + escapeHtml(desc) + '</div>';
+    h += '</div>';
+  }
+  h += '</div>';
+  return h;
+}
+
+function ppTogglePattern() {
+  var body = document.getElementById('pp-pattern-body');
+  var arrow = document.getElementById('pp-pattern-arrow');
+  if (!body) return;
+  body.classList.toggle('show');
+  if (arrow) arrow.textContent = body.classList.contains('show') ? '\u25bc' : '\u25b6';
 }
 
 /* ═══ SOLUTION / ANSWER EXPLANATION MODULE ═══ */
@@ -2531,6 +2613,8 @@ function _ppRenderKPModule(q) {
 
 var _PP_MS_BASE = 'https://git25math.github.io/25maths-cie0580-pdf-singlems/';
 var _PP_QPMS_BASE = 'https://git25math.github.io/25maths-cie0580-pdf-qpms/';
+var _PP_QP_BASE = 'https://git25math.github.io/25maths-cie0580-pdf-singlequestions/';
+var _ppQPIndex = null;
 
 /**
  * Returns the best mark scheme PDF URL for a question, or null if unavailable.
@@ -2564,15 +2648,38 @@ function ppGetMarkSchemeURL(q) {
 }
 
 /**
- * Renders the mark scheme PDF button module (practice mode only).
+ * Returns the QP-only PDF URL for a question, or null if unavailable.
+ */
+function ppGetQPURL(q) {
+  if (!q || !q.paper || !q.qnum || !_ppQPIndex) return null;
+  var paperKey = q.paper;
+  var qnum = String(q.qnum);
+  var qpMap = _ppQPIndex[paperKey];
+  if (qpMap && qpMap[qnum]) {
+    var parts = paperKey.split('-Paper');
+    return _PP_QP_BASE + parts[0] + '/Paper' + parts[1] + '/' + encodeURIComponent(qpMap[qnum]);
+  }
+  return null;
+}
+
+/**
+ * Renders the PDF download row: QP + Mark Scheme side by side (practice mode only).
  */
 function _ppRenderMarkSchemeModule(q) {
-  var url = ppGetMarkSchemeURL(q);
-  if (!url) return '';
-  var h = '<div class="pp-ms-pdf-btn" role="button" tabindex="0" data-action="openMarkScheme" data-url="' + escapeHtml(url) + '">';
-  h += '<span class="pp-ms-pdf-icon">\ud83d\udccb</span> ';
-  h += t('View Mark Scheme', '\u67e5\u770b\u8bc4\u5206\u6807\u51c6');
-  h += ' <span class="pp-ms-pdf-arrow">\u2192</span>';
+  var msUrl = ppGetMarkSchemeURL(q);
+  var qpUrl = ppGetQPURL(q);
+  if (!msUrl && !qpUrl) return '';
+  var h = '<div class="pp-pdf-row">';
+  if (qpUrl) {
+    h += '<div class="pp-ms-pdf-btn" role="button" tabindex="0" data-action="openPDF" data-url="' + escapeHtml(qpUrl) + '">';
+    h += '<span class="pp-ms-pdf-icon">\ud83d\udcc4</span> ' + t('Question Paper', '\u539f\u9898PDF');
+    h += ' <span class="pp-ms-pdf-arrow">\u2192</span></div>';
+  }
+  if (msUrl) {
+    h += '<div class="pp-ms-pdf-btn" role="button" tabindex="0" data-action="openPDF" data-url="' + escapeHtml(msUrl) + '">';
+    h += '<span class="pp-ms-pdf-icon">\ud83d\udccb</span> ' + t('Mark Scheme', '\u8bc4\u5206\u6807\u51c6');
+    h += ' <span class="pp-ms-pdf-arrow">\u2192</span></div>';
+  }
   h += '</div>';
   return h;
 }
@@ -2662,6 +2769,18 @@ function ppToggleSolution() {
 
 /* ═══ PRACTICE MODE ═══ */
 
+function _ppGetSectionName(sectionId, board) {
+  var syllabus = (typeof BOARD_SYLLABUS !== 'undefined') ? BOARD_SYLLABUS[board] : null;
+  if (!syllabus || !syllabus.chapters) return sectionId;
+  for (var ci = 0; ci < syllabus.chapters.length; ci++) {
+    var secs = syllabus.chapters[ci].sections || [];
+    for (var si = 0; si < secs.length; si++) {
+      if (secs[si].id === sectionId) return appLang !== 'en' && secs[si].titleZh ? secs[si].titleZh : secs[si].title;
+    }
+  }
+  return sectionId;
+}
+
 function renderPPCard() {
   if (!_ppSession) return;
   var el = E('panel-pastpaper');
@@ -2743,7 +2862,7 @@ function renderPPCard() {
   }
 
   /* Render card modules in configurable order (v4.3.3) */
-  var _ppDefaultModOrder = ['body', 'vocab', 'kp', 'markscheme', 'solution'];
+  var _ppDefaultModOrder = ['body', 'translation', 'vocab', 'kp', 'pattern', 'markscheme', 'solution'];
   var _modOrder = q.moduleOrder || _ppDefaultModOrder;
   /* Filter out legacy 'answers' module from old moduleOrder overrides */
   _modOrder = _modOrder.filter(function(m) { return m !== 'answers'; });
@@ -2754,14 +2873,24 @@ function renderPPCard() {
   for (var _moi = 0; _moi < _modOrder.length; _moi++) {
     switch (_modOrder[_moi]) {
       case 'body':     html += _ppRenderBodyModule(q, _showAnsLine); break;
+      case 'translation': html += _ppRenderTranslationModule(q); break;
       case 'vocab':    html += _ppRenderVocabModule(q); break;
       case 'kp':       html += _ppRenderKPModule(q); break;
+      case 'pattern':  if (_ppSession.mode !== 'exam') html += _ppRenderPatternModule(q); break;
       case 'markscheme': if (_ppSession.mode !== 'exam') html += _ppRenderMarkSchemeModule(q); break;
       case 'solution': if (_ppSession.mode !== 'exam') html += _ppRenderSolution(q); break;
     }
   }
 
   html += '</div>'; /* end pp-card */
+
+  /* Module 7: More topic practice footer */
+  if (q.s && _ppSession.mode === 'practice') {
+    var _secName = _ppGetSectionName(q.s, _ppSession.board);
+    html += '<div class="pp-topic-more" data-action="moreTopicPractice" data-section="' + escapeHtml(q.s) + '" data-board="' + escapeHtml(_ppSession.board) + '">';
+    html += '\ud83d\udcda ' + t('More ' + _secName + ' practice', '\u66f4\u591a\u300c' + _secName + '\u300d\u4e13\u9898\u7ec3\u4e60') + ' \u2192';
+    html += '</div>';
+  }
 
   /* Self-assessment (practice mode) */
   if (_ppSession.mode === 'practice') {
@@ -2833,7 +2962,9 @@ function renderPPCard() {
       if (!target) return;
       var action = target.dataset.action;
       if (action === 'toggleVocab') ppToggleVocab();
+      else if (action === 'toggleTranslation') ppToggleTranslation();
       else if (action === 'toggleKP') ppToggleKP();
+      else if (action === 'togglePattern') ppTogglePattern();
       else if (action === 'toggleSolution') ppToggleSolution();
       else if (action === 'toggleMarkBody') ppToggleMarkBody(Number(target.dataset.idx));
       else if (action === 'openDeckFromVocab') openDeck(Number(target.dataset.li));
@@ -2853,9 +2984,24 @@ function renderPPCard() {
         }
       }
       else if (action === 'recoverSkip') _ppRecoverySkip();
-      else if (action === 'openMarkScheme') {
-        var msUrl = target.dataset.url;
-        if (msUrl) window.open(msUrl, '_blank');
+      else if (action === 'openMarkScheme' || action === 'openPDF') {
+        if (target.dataset.url) window.open(target.dataset.url, '_blank');
+      }
+      else if (action === 'moreTopicPractice') {
+        _ppBrowseTab = 'topic';
+        ppShowPaperBrowse(target.dataset.board);
+        setTimeout(function() {
+          var row = document.querySelector('[data-section-id="' + target.dataset.section + '"]');
+          if (row) row.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 300);
+      }
+      else if (action === 'learnKP') {
+        if (typeof openKnowledgeNode === 'function') {
+          openKnowledgeNode(target.dataset.kpId, target.dataset.board, {
+            sectionId: _ppSession.sectionId || '',
+            board: target.dataset.board
+          });
+        }
       }
     });
   }
@@ -5501,7 +5647,7 @@ function _ppRenderTopicBrowse(board) {
       }
       var pct = qc > 0 ? Math.round(masteredCount / qc * 100) : 0;
 
-      html += '<div class="pp-topic-row" role="button" tabindex="0" onclick="startPastPaper(\'' + escapeHtml(s.id) + '\',\'' + escapeHtml(board) + '\',\'practice\')">';
+      html += '<div class="pp-topic-row" data-section-id="' + escapeHtml(s.id) + '" role="button" tabindex="0" onclick="startPastPaper(\'' + escapeHtml(s.id) + '\',\'' + escapeHtml(board) + '\',\'practice\')">';
       html += '<div class="pp-topic-info">';
       html += '<span class="pp-topic-id">' + escapeHtml(s.id) + '</span> ';
       html += '<span class="pp-topic-name">' + escapeHtml(t(s.title, s.titleZh || s.title)) + '</span>';

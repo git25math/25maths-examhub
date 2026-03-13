@@ -1,5 +1,31 @@
 # Changelog
 
+## [5.12.0] - 2026-03-13 — 七模块真题卡片升级
+
+### 核心变更
+- **Module 3 — 题干翻译**: 新增折叠式翻译占位模块（中文模式自动显示），数据待 Gemini 批量生成
+- **Module 4 — 考查知识点升级**: KP 模块增加 explanation 摘要（60 字截断）+ 「📖 深入学习」按钮直达 Knowledge Node
+- **Module 5 — 题型归纳 & 解题思路**: 新增折叠模块，展示 `examPatterns` 的 label + description（双语）
+- **Module 6 — 下载练习 PDF**: 接入 QP-only 仓库（3,120 PDF），原题PDF + 评分标准并排显示
+- **Module 7 — 更多专题练习**: 卡片底部新增 section 名称链接，点击跳转 Topic Browse 并自动滚动到对应 section
+
+### 模块顺序
+`body → translation → vocab → kp → pattern → markscheme → solution` + topic-more footer
+
+### 新文件
+| 文件 | 说明 |
+|------|------|
+| `data/qp-index.json` | QP-only PDF 索引（3,120 题 × 187 套卷） |
+| `scripts/build-qp-index.js` | 扫描 QP 仓库生成索引脚本 |
+
+### 修改文件
+| 文件 | 变更 |
+|------|------|
+| `js/practice.js` | 5 个新/升级模块函数 + 事件委托 + QP URL 构建 + section name helper + topic row data-section-id |
+| `css/style.css` | KP row / pattern item / PDF row / topic-more / translation 样式 |
+| `js/config.js` | 版本号 → v5.12.0 |
+| `data/vocabulary-cie.json` | 修正 4 条三角特殊角定义（sin30°/cos60°/tan45°/cos30° 补充中文） |
+
 ## [5.11.1] - 2026-03-13 — 三态语言审计修复
 
 ### Bug 修复

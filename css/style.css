@@ -3604,6 +3604,33 @@ input { font-family: inherit; }
 .pp-vocab-add:hover { background: var(--c-primary); color: #fff; }
 .pp-vocab-added { font-size: 11px; color: var(--c-success); white-space: nowrap; cursor: pointer; }
 .pp-kp-badge { font-size: 12px; white-space: nowrap; }
+.pp-kp-row { padding: 10px 16px; border-bottom: 1px solid var(--c-border); }
+.pp-kp-row:last-child { border-bottom: none; }
+.pp-kp-main { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.pp-kp-title { font-weight: 600; font-size: 13px; }
+.pp-kp-title-zh { font-size: 12px; color: var(--c-text2); }
+.pp-kp-expl { font-size: 12px; color: var(--c-text2); margin-top: 4px; line-height: 1.4; }
+.pp-kp-learn-btn {
+  display: inline-flex; align-items: center; gap: 4px;
+  margin-top: 6px; padding: 4px 10px; font-size: 12px;
+  color: var(--c-primary); background: var(--c-primary-bg);
+  border: 1px solid var(--c-primary); border-radius: 6px; cursor: pointer;
+}
+.pp-kp-learn-btn:hover { background: var(--c-primary); color: #fff; }
+.pp-pattern-item { padding: 8px 16px; border-bottom: 1px solid var(--c-border); }
+.pp-pattern-item:last-child { border-bottom: none; }
+.pp-pattern-label { font-size: 13px; font-weight: 600; color: var(--c-text); }
+.pp-pattern-desc { font-size: 12px; color: var(--c-text2); margin-top: 2px; line-height: 1.4; }
+.pp-pdf-row { display: flex; gap: 8px; padding: 8px 16px; flex-wrap: wrap; }
+.pp-pdf-row .pp-ms-pdf-btn { flex: 1; min-width: 140px; }
+.pp-topic-more {
+  padding: 12px 16px; text-align: center; font-size: 13px;
+  color: var(--c-primary); cursor: pointer; font-weight: 500;
+  border-top: 1px solid var(--c-border);
+}
+.pp-topic-more:hover { background: var(--c-primary-bg); }
+.pp-translation-text { font-size: 14px; line-height: 1.6; color: var(--c-text); padding: 4px 0; }
+.pp-translation-placeholder { font-size: 13px; color: var(--c-muted); font-style: italic; }
 .recovery-hint { font-size: 11px; color: var(--c-text2); margin-top: 3px;
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .recovery-hint-cta { color: var(--c-primary); font-weight: 600; }
