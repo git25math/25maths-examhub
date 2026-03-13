@@ -1,5 +1,18 @@
 # Changelog
 
+## [5.12.1] - 2026-03-13 — singleRound 练习结果不存库修复
+
+### Bug 修复
+- **practice.js**: `startPPScanByIds(ids, board, true)` 的 singleRound 模式下，用户选「完全掌握」后 cs 只有 1（< 2 门槛），状态被错误设为 `uncertain` 而非 `mastered`
+- **根因**: `_ratePPScanPractice()` 的 cs≥2 渐进机制不适用于单轮模式（round=5），每题只评分一次无法达到 cs≥2
+- **修复**: 新增 `isSingleRound` 检查，单轮模式下用户单次「完全掌握」直接设为 mastered
+
+### 修改文件
+| 文件 | 变更 |
+|------|------|
+| `js/practice.js` | `_ratePPScanPractice()`: 添加 `isSingleRound` bypass cs≥2 门槛 |
+| `js/config.js` | 版本号 → v5.12.1 |
+
 ## [5.12.0] - 2026-03-13 — 七模块真题卡片升级
 
 ### 核心变更

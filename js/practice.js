@@ -1763,9 +1763,10 @@ function _ppScanToggleAnswer() {
 
 function _ratePPScanPractice(verdict) {
   var item = _ppScanState.pool[_ppScanState.idx];
+  var isSingleRound = _ppScanState.round >= 5;
   if (verdict === 'mastered') {
     item.cs = (item.cs || 0) + 1;
-    if (item.cs >= 2) item.status = 'mastered';
+    if (isSingleRound || item.cs >= 2) item.status = 'mastered';
     else if (item.status === 'new' || item.status === 'learning') item.status = 'uncertain';
   } else if (verdict === 'partial') {
     item.cs = 0;
