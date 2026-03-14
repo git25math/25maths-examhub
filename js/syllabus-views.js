@@ -303,9 +303,9 @@ function renderSectionDetail(ch, sec, secIdx, board) {
     html += '</div>'; /* close kp-list */
     /* Scan & Quiz button */
     html += '<div class="btn-row mt-4" style="padding:0 12px">';
-    html += '<button class="btn btn-sm btn-primary" onclick="event.stopPropagation();if(typeof startKPScan===\'function\')startKPScan(\'' + escapeHtml(sec.id) + '\',\'' + escapeHtml(board) + '\')">';
+    html += '<button class="btn btn-sm btn-primary" onclick="event.stopPropagation();_lazyCall(\'study-quiz-battle\',\'startKPScan\',[\'' + escapeHtml(sec.id) + '\',\'' + escapeHtml(board) + '\'])">';
     html += '\ud83d\udd0d ' + t('Scan & Quiz', '\u626b\u63cf\u6d4b\u9a8c') + '</button>';
-    html += '<button class="btn btn-sm btn-ghost" onclick="event.stopPropagation();if(typeof renderScanOverview===\'function\')renderScanOverview(\'' + escapeHtml(board) + '\')">';
+    html += '<button class="btn btn-sm btn-ghost" onclick="event.stopPropagation();_lazyCall(\'study-quiz-battle\',\'renderScanOverview\',[\'' + escapeHtml(board) + '\'])">';
     html += '\ud83d\udcca ' + t('Scan Overview', '\u626b\u63cf\u603b\u89c8') + '</button>';
     html += '</div>';
     html += '</div>'; /* close sec-module-content */
@@ -794,7 +794,7 @@ function _renderPPSectionModule(slot, secId, board) {
   h += '<div class="btn-row btn-row--wrap mt-4">';
   h += '<button class="btn btn-sm sec-mod-btn-flex" data-pp-start data-sec="' + secId + '" data-board="' + board + '" data-mode="practice">';
   h += '\ud83d\udcd6 ' + t('Practice Mode', '\u7ec3\u4e60\u6a21\u5f0f') + '</button>';
-  h += '<button class="btn btn-sm btn-secondary sec-mod-btn-flex" onclick="event.stopPropagation();if(typeof startPPScan===\'function\')startPPScan(\'' + escapeHtml(secId) + '\',\'' + escapeHtml(board) + '\')">';
+  h += '<button class="btn btn-sm btn-secondary sec-mod-btn-flex" onclick="event.stopPropagation();_lazyCall(\'practice\',\'startPPScan\',[\'' + escapeHtml(secId) + '\',\'' + escapeHtml(board) + '\'])">';
   h += '\ud83d\udd0d ' + t('Scan & Practice', '\u626b\u63cf\u7ec3\u4e60') + '</button>';
   h += '<button class="btn btn-sm btn-warning sec-mod-btn-flex" data-pp-start data-sec="' + secId + '" data-board="' + board + '" data-mode="exam">';
   h += '\u23f1 ' + t('Exam Mode', '\u5b9e\u6218\u6a21\u5f0f') + '</button>';
@@ -2111,13 +2111,13 @@ function renderTodaysPlan() {
       return;
     }
     var kpRefreshBtn = e.target.closest('[data-action="start-kp-refresh"]');
-    if (kpRefreshBtn && typeof startKPRefreshScan === 'function') { startKPRefreshScan(); return; }
+    if (kpRefreshBtn) { _lazyCall('study-quiz-battle', 'startKPRefreshScan', []); return; }
     var ppRefreshBtn = e.target.closest('[data-action="start-pp-refresh"]');
-    if (ppRefreshBtn && typeof startPPRefreshScan === 'function') { startPPRefreshScan(); return; }
+    if (ppRefreshBtn) { _lazyCall('practice', 'startPPRefreshScan', []); return; }
     var recoveryBtn = e.target.closest('[data-action="start-recovery"]');
-    if (recoveryBtn && typeof startRecoverySession === 'function') { startRecoverySession(); return; }
+    if (recoveryBtn) { _lazyCall('recovery', 'startRecoverySession', []); return; }
     var planFocusBtn = e.target.closest('[data-action="start-plan-focus"]');
-    if (planFocusBtn && typeof startPlanFocusStudy === 'function') { startPlanFocusStudy(planFocusBtn.dataset.planId); return; }
+    if (planFocusBtn) { _lazyCall('lists', 'startPlanFocusStudy', [planFocusBtn.dataset.planId]); return; }
   };
   panel.addEventListener('click', panel._planHandler);
 }
@@ -2777,7 +2777,7 @@ document.addEventListener('click', function(e) {
     var pBoard = practiceLink.getAttribute('data-kp-practice-board');
     var pKpId = practiceLink.getAttribute('data-kp-return-id');
     if (pKpId) window._kpReturnContext = { kpId: pKpId, board: pBoard };
-    if (typeof startPracticeBySection === 'function') startPracticeBySection(pSec, pBoard);
+    _lazyCall('practice', 'startPracticeBySection', [pSec, pBoard]);
     return;
   }
   /* KP Quiz — option click */
