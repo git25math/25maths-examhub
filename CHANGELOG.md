@@ -1,5 +1,24 @@
 # Changelog
 
+## [5.26.1] - 2026-03-14 — 首屏加载性能优化
+
+### 性能优化
+
+#### Google Fonts 非阻塞加载
+- `<link rel="stylesheet">` 改为 `media="print" onload="this.media='all'"` 模式
+- 字体不再阻塞首屏渲染（FCP 提前），`display=swap` 确保文字立即可见
+- 添加 `<noscript>` 降级确保无 JS 环境仍能加载字体
+
+#### 关键资源预加载
+- 新增 `<link rel="preload">` 提前获取 `style.min.css` 和 `app.bundle.min.js`
+- 浏览器在解析 HTML 时即开始下载，而非等到遇到 `<link>` / `<script>` 标签
+
+### 文件变更
+| 文件 | 修改 |
+|------|------|
+| index.html | Google Fonts 非阻塞 + CSS/JS preload hints |
+| js/config.js | APP_VERSION → v5.26.1 |
+
 ## [5.26.0] - 2026-03-14 — 圆角补全 + margin-top 令牌化
 
 ### CSS 令牌化
