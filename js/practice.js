@@ -1529,10 +1529,10 @@ function _finishPPRefreshScan() {
   html += '<div class="result-title">' + t('PP Refresh Complete!', '真题复查完成！') + '</div>';
   html += '<div class="result-sub">' + t('Reviewed ' + (k + f + u) + ' questions', '复查了 ' + (k + f + u) + ' 个真题') + '</div>';
   html += '</div>';
-  html += '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:20px 0">';
-  html += '<div style="padding:12px;border-radius:var(--r);background:var(--c-success-bg);text-align:center"><div style="font-size:22px;font-weight:800">' + k + '</div><div style="font-size:10px;font-weight:600;color:var(--c-success)">' + t('Still know', '仍认识') + '</div></div>';
-  html += '<div style="padding:12px;border-radius:var(--r);background:var(--c-warning-bg);text-align:center"><div style="font-size:22px;font-weight:800">' + f + '</div><div style="font-size:10px;font-weight:600;color:var(--c-warning)">' + t('Fuzzy', '模糊') + '</div></div>';
-  html += '<div style="padding:12px;border-radius:var(--r);background:var(--c-danger-bg);text-align:center"><div style="font-size:22px;font-weight:800">' + u + '</div><div style="font-size:10px;font-weight:600;color:var(--c-danger)">' + t('Needs another round', '再练一轮') + '</div></div>';
+  html += '<div class="stat-grid">';
+  html += '<div class="stat-card success"><div class="stat-card-num">' + k + '</div><div class="stat-card-label">' + t('Still know', '仍认识') + '</div></div>';
+  html += '<div class="stat-card warning"><div class="stat-card-num">' + f + '</div><div class="stat-card-label">' + t('Fuzzy', '模糊') + '</div></div>';
+  html += '<div class="stat-card danger"><div class="stat-card-num">' + u + '</div><div class="stat-card-label">' + t('Needs another round', '再练一轮') + '</div></div>';
   html += '</div>';
   if (f + u > 0) {
     html += '<div style="font-size:13px;color:var(--c-text2);text-align:center;margin:8px 0">';
@@ -1838,10 +1838,10 @@ function _finishPPScan() {
   html += '<div class="result-title">' + t('PP Scan Complete!', '\u771f\u9898\u626b\u63cf\u5b8c\u6210\uff01') + '</div>';
   html += '<div class="result-sub">' + t('Scanned ' + total + ' questions', '\u626b\u63cf\u4e86 ' + total + ' \u9053\u771f\u9898') + '</div>';
   html += '</div>';
-  html += '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:20px 0">';
-  html += '<div style="padding:12px;border-radius:var(--r);background:var(--c-success-bg);text-align:center"><div style="font-size:22px;font-weight:800">' + statusCounts.mastered + '</div><div style="font-size:10px;font-weight:600;color:var(--c-success)">' + t('Mastered', '\u5df2\u638c\u63e1') + '</div></div>';
-  html += '<div style="padding:12px;border-radius:var(--r);background:var(--c-warning-bg);text-align:center"><div style="font-size:22px;font-weight:800">' + statusCounts.uncertain + '</div><div style="font-size:10px;font-weight:600;color:var(--c-warning)">' + t('Partial', '\u90e8\u5206') + '</div></div>';
-  html += '<div style="padding:12px;border-radius:var(--r);background:var(--c-danger-bg);text-align:center"><div style="font-size:22px;font-weight:800">' + statusCounts.learning + '</div><div style="font-size:10px;font-weight:600;color:var(--c-danger)">' + t('Needs Work', '\u9700\u52a0\u5f3a') + '</div></div>';
+  html += '<div class="stat-grid">';
+  html += '<div class="stat-card success"><div class="stat-card-num">' + statusCounts.mastered + '</div><div class="stat-card-label">' + t('Mastered', '\u5df2\u638c\u63e1') + '</div></div>';
+  html += '<div class="stat-card warning"><div class="stat-card-num">' + statusCounts.uncertain + '</div><div class="stat-card-label">' + t('Partial', '\u90e8\u5206') + '</div></div>';
+  html += '<div class="stat-card danger"><div class="stat-card-num">' + statusCounts.learning + '</div><div class="stat-card-label">' + t('Needs Work', '\u9700\u52a0\u5f3a') + '</div></div>';
   html += '</div>';
   html += '<div class="result-actions">';
   html += '<button class="btn btn-primary" onclick="navTo(\'section\')">' + t('Back to Section', '\u8fd4\u56de\u77e5\u8bc6\u70b9') + '</button>';

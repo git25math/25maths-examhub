@@ -1,5 +1,11 @@
 # Development Roadmap
 
+## v5.24.0 — 过渡令牌化 + 状态卡片组件 + 进度条基类 [DONE]
+- [x] --t-medium: 0.3s 令牌 + 19 处 hardcoded 替换（全过渡 4 级 token 化完成）
+- [x] stat-grid/stat-card 组件：study.js 16 处 + practice.js 8 处 inline style → CSS class
+- [x] progress-track/progress-bar-fill 共享基类（lg/md/sm 三档）
+- [x] 死 CSS 清理：.admin-empty + .admin-loading 规则移除
+
 ## v5.23.0 — 加载态统一 + 阴影/间距令牌化 [DONE]
 - [x] _renderLoading(text) 统一加载态组件（spinner + 文字）
 - [x] admin/homework/data-admin/vocab-admin 13 处 admin-loading → _renderLoading

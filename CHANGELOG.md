@@ -1,5 +1,38 @@
 # Changelog
 
+## [5.24.0] - 2026-03-14 — 过渡令牌化 + 状态卡片组件 + 进度条共享基类
+
+### CSS 令牌深化
+
+#### --t-medium 过渡令牌 (0.3s)
+- 新增 `--t-medium: 0.3s` 填补 --t-base (0.2s) 与 --t-slow (0.35s) 之间的间隙
+- 19 处 hardcoded `0.3s` 全部替换为 `var(--t-medium)`（含进度条、面板切换、动画）
+- 至此全部过渡/动画时间均由 4 级 token 管控
+
+#### 共享进度条基类
+- 新增 `.progress-track` / `.progress-bar-fill` 共享基类（6px/3px 默认 + lg/sm 变体）
+- 现有 9 套进度条 CSS 保留向后兼容，新代码可直接使用共享类
+
+### 状态卡片组件化
+
+#### stat-grid + stat-card 系统
+- 新增 `.stat-grid` / `.stat-card` / `.stat-card-num` / `.stat-card-label` CSS 组件
+- study.js 16 处 inline style → CSS class（4 组 × 3 色 grid + label）
+- practice.js 8 处 inline style → CSS class（2 组 × 3 色 grid + label）
+- 共计消除 ~2KB inline style 重复代码
+
+### 死代码清理
+- 移除 `.admin-empty` + `.admin-loading` CSS 规则（全部迁移至 .empty-state / .spinner）
+
+### 文件变更
+| 文件 | 修改 |
+|------|------|
+| css/style.css | +1 token (--t-medium) + stat-card 组件 + progress-track 基类 + 19 处 0.3s 替换 + 死 CSS 删除 |
+| js/study.js | 16 处 inline style → stat-card/stat-grid class |
+| js/practice.js | 8 处 inline style → stat-card/stat-grid class |
+| js/config.js | APP_VERSION → v5.24.0 |
+| CLAUDE.md | 版本号更新 |
+
 ## [5.23.0] - 2026-03-14 — 加载态统一 + 阴影/间距令牌化
 
 ### 加载状态统一
