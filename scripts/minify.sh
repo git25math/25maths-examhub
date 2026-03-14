@@ -4,15 +4,16 @@ ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT"
 
 # Core JS: concatenate in index.html load order → esbuild minify → single bundle
-# (homework.js, spell.js, match.js, translate.js, export.js, stats.js, worksheet.js, practice.js, lists.js excluded — lazy-loaded)
+# Lazy-loaded: homework, spell, match, translate, export, stats, worksheet, practice, lists, study, quiz, battle, knowledge-node, learning-graph
 cat js/config.js js/levels-loader.js js/storage.js js/particles.js \
-    js/auth.js js/ui.js js/mastery.js js/syllabus.js js/study.js js/battle.js \
-    js/review.js js/quiz.js \
-    js/knowledge-node.js js/learning-graph.js js/recovery-priority.js js/recovery-scheduler.js js/student-profile.js js/learning-goals.js js/ai-tutor.js js/error-patterns.js js/mistake-coach.js js/recovery-session.js js/smart-notif.js js/app.js | \
+    js/auth.js js/ui.js js/mastery.js js/syllabus.js \
+    js/review.js \
+    js/recovery-priority.js js/recovery-scheduler.js js/student-profile.js js/learning-goals.js js/ai-tutor.js js/error-patterns.js js/mistake-coach.js js/recovery-session.js js/smart-notif.js js/app.js | \
     npx esbuild --loader=js --minify > js/app.bundle.min.js
 
 # Lazy-loaded bundles
-npx esbuild js/practice.js --minify --outfile=js/practice.min.js
+cat js/study.js js/quiz.js js/battle.js | npx esbuild --loader=js --minify > js/study-quiz-battle.min.js
+cat js/practice.js js/knowledge-node.js js/learning-graph.js | npx esbuild --loader=js --minify > js/practice.min.js
 npx esbuild js/lists.js --minify --outfile=js/lists.min.js
 cat js/stats.js js/export.js | npx esbuild --loader=js --minify > js/tools.min.js
 cat js/spell.js js/match.js | npx esbuild --loader=js --minify > js/modes.min.js
@@ -41,8 +42,9 @@ if [ -n "$APP_VER" ]; then
 fi
 
 echo "=== Build complete ==="
-ls -lh js/app.bundle.min.js js/practice.min.js js/lists.min.js js/tools.min.js js/modes.min.js js/translate.min.js js/worksheet.min.js js/homework.min.js js/admin.bundle.min.js css/style.min.css
+ls -lh js/app.bundle.min.js js/study-quiz-battle.min.js js/practice.min.js js/lists.min.js js/tools.min.js js/modes.min.js js/translate.min.js js/worksheet.min.js js/homework.min.js js/admin.bundle.min.js css/style.min.css
 printf "JS app bundle gzip:  "; gzip -c js/app.bundle.min.js | wc -c
+printf "JS study-quiz gzip:  "; gzip -c js/study-quiz-battle.min.js | wc -c
 printf "JS practice gzip:    "; gzip -c js/practice.min.js | wc -c
 printf "JS lists gzip:       "; gzip -c js/lists.min.js | wc -c
 printf "JS tools gzip:       "; gzip -c js/tools.min.js | wc -c

@@ -158,7 +158,7 @@ function finishMatch() {
   html += '<div class="result-emoji">' + matchEmoji + '</div>';
   html += '<div class="result-title">' + t('Match Complete!', '\u914d\u5bf9\u5b8c\u6210\uff01') + '</div>';
   html += '<div class="result-sub">' + t('Time ' + elapsed + 's \xb7 Errors ' + MT.errors, '\u7528\u65f6 ' + elapsed + ' \u79d2 \xb7 \u9519\u8bef ' + MT.errors + ' \u6b21') + '</div>';
-  html += nextStepHTML('\u2753', t('Quiz to test yourself', '\u6d4b\u9a8c\u68c0\u9a8c\u6548\u679c'), 'startQuiz(' + currentLvl + ')');
+  html += nextStepHTML('\u2753', t('Quiz to test yourself', '\u6d4b\u9a8c\u68c0\u9a8c\u6548\u679c'), '_lazyCall(\"study-quiz-battle\",\"startQuiz\",[' + currentLvl + '])');
   html += '<div class="result-actions">';
   if (MT.errors > 0) {
     html += '<button class="btn btn-secondary" onclick="studyWrongMatch()">\ud83d\udcd6 ' + t('Review missed words', '\u590d\u4e60\u5f85\u52a0\u5f3a\u7684\u8bcd') + '</button>';
@@ -179,7 +179,7 @@ function studyWrongMatch() {
     var d = wd[wordKey(MT.lvl, p.lid)];
     return d && d.fail > 0;
   });
-  if (wrong.length > 0) startStudy(currentLvl, wrong);
+  if (wrong.length > 0) _lazyCall('study-quiz-battle', 'startStudy', [currentLvl, wrong]);
   else openDeck(currentLvl);
 }
 

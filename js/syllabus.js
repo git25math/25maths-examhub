@@ -2521,7 +2521,7 @@ function startPracticeByChapter(chNum, board) {
     if (action === 'vocab' && lvl >= 0) {
       openDeck(lvl);
     } else if (action === 'quiz' && lvl >= 0) {
-      startQuiz(lvl);
+      _lazyCall('study-quiz-battle', 'startQuiz', [lvl]);
     } else if (action === 'practice' && step.dataset.sec) {
       startPracticeBySection(step.dataset.sec, step.dataset.board);
     }

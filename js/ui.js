@@ -98,6 +98,12 @@ function _lazyLoad(bundle, callback) {
   document.head.appendChild(s);
 }
 
+/* Call a global function, lazy-loading its bundle first if needed */
+function _lazyCall(bundle, fnName, args) {
+  if (typeof window[fnName] === 'function') { window[fnName].apply(null, args || []); return; }
+  _lazyLoad(bundle, function() { if (typeof window[fnName] === 'function') window[fnName].apply(null, args || []); });
+}
+
 function _showPanelLoading(panelId) {
   var el = E('panel-' + panelId);
   if (el) el.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;padding:80px 0"><div class="spinner"></div></div>';
@@ -789,7 +795,7 @@ function sectionNextStepHTML(currentMode, scoreRate) {
     if (scoreRate < 0.5) {
       /* Low score → review wrong words */
       emoji = '\ud83d\udcd6'; label = t('Review words to strengthen', '复习待加强的词');
-      action = li >= 0 ? 'startStudy(' + li + ')' : 'openSection(\'' + ctx.sectionId + '\',\'' + ctx.board + '\')';
+      action = li >= 0 ? '_lazyCall(\"study-quiz-battle\",\"startStudy\",[' + li + '])' : 'openSection(\'' + ctx.sectionId + '\',\'' + ctx.board + '\')';
     } else if (scoreRate <= 0.8) {
       /* Medium → try again or spell */
       if (currentMode === 'quiz') {
@@ -797,13 +803,14 @@ function sectionNextStepHTML(currentMode, scoreRate) {
         action = li >= 0 ? '(typeof startSpell===\"function\"?startSpell(' + li + '):_lazyLoad(\"modes\",function(){startSpell(' + li + ')}))' : 'openSection(\'' + ctx.sectionId + '\',\'' + ctx.board + '\')';
       } else {
         emoji = '\ud83d\udd01'; label = t('Try again for a better score', '再试一次提高成绩');
-        action = li >= 0 ? 'start' + currentMode.charAt(0).toUpperCase() + currentMode.slice(1) + '(' + li + ')' : 'openSection(\'' + ctx.sectionId + '\',\'' + ctx.board + '\')';
+        var _retryFn = 'start' + currentMode.charAt(0).toUpperCase() + currentMode.slice(1);
+        action = li >= 0 ? '_lazyCall(\"study-quiz-battle\",\"' + _retryFn + '\",[' + li + '])' : 'openSection(\'' + ctx.sectionId + '\',\'' + ctx.board + '\')';
       }
     } else {
       /* High score */
       if (modesUsed < 7 && currentMode !== 'battle') {
         emoji = '\u2694\ufe0f'; label = t('Challenge Battle mode', '挑战 Battle 模式');
-        action = li >= 0 ? 'startBattle(' + li + ')' : 'openSection(\'' + ctx.sectionId + '\',\'' + ctx.board + '\')';
+        action = li >= 0 ? '_lazyCall(\"study-quiz-battle\",\"startBattle\",[' + li + '])' : 'openSection(\'' + ctx.sectionId + '\',\'' + ctx.board + '\')';
       } else {
         emoji = '\ud83d\udcd8'; label = t('Continue to next section', '进入下一知识点');
         action = 'openSection(\'' + ctx.sectionId + '\',\'' + ctx.board + '\')';
@@ -812,7 +819,7 @@ function sectionNextStepHTML(currentMode, scoreRate) {
   } else if (currentMode === 'study') {
     if (li >= 0) {
       emoji = '\u2753'; label = t('Quiz to test yourself', '测验检验学习效果');
-      action = 'startQuiz(' + li + ')';
+      action = '_lazyCall(\"study-quiz-battle\",\"startQuiz\",[' + li + '])';
     } else {
       emoji = '\ud83d\udcd8'; label = t('Back to Section', '返回知识点');
       action = 'openSection(\'' + ctx.sectionId + '\',\'' + ctx.board + '\')';

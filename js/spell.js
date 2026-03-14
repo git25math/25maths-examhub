@@ -154,5 +154,5 @@ function finishSpell() {
 }
 
 function studyWrongSpell() {
-  startStudy(currentLvl, SP.wrongPairs);
+  _lazyCall('study-quiz-battle', 'startStudy', [currentLvl, SP.wrongPairs]);
 }

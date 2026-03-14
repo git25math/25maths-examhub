@@ -1,5 +1,35 @@
 # Changelog
 
+## [5.16.0] - 2026-03-14 — JS 懒加载优化 Phase 3+4
+
+### 性能优化
+
+#### 主 Bundle 三次瘦身
+- 拆出 study.js + quiz.js + battle.js → `study-quiz-battle.min.js` (56KB / 14KB gzip)
+- 将 knowledge-node.js + learning-graph.js 并入 practice.min.js bundle
+- 主 bundle: 417KB → 336KB (−81KB raw), gzip: 113KB → 93KB (−20KB)
+- 新增 `_lazyCall()` 通用延迟调用辅助函数
+- mastery.js `_initDeckActionDelegation` / `_initRefluxDelegation` 全部改为 `_lazyCall` 包裹
+- ui.js 推荐按钮 onclick、syllabus.js journey delegation 同步改为 `_lazyCall`
+- match.js / spell.js 跨 bundle 调用改为 `_lazyCall`
+- SW SHELL_FILES 预缓存新 bundle
+
+### 累计优化（v5.14.0 → v5.16.0）
+- 主 bundle: **672KB → 336KB (−50%)**, gzip: **184KB → 93KB (−49%)**
+- 懒加载 bundle 数: 4 → 10
+
+### 文件变更
+| 文件 | 修改 |
+|------|------|
+| js/ui.js | +_lazyCall() 辅助函数，推荐按钮 onclick 改为 _lazyCall |
+| js/mastery.js | modeFns/refluxFns 改为 _lazyCall，studySelected/quizSelected 同步 |
+| js/syllabus.js | journey delegation startQuiz 改为 _lazyCall |
+| js/match.js | startQuiz/startStudy 调用改为 _lazyCall |
+| js/spell.js | startStudy 调用改为 _lazyCall |
+| scripts/minify.sh | 主 bundle 移除 5 文件，+study-quiz-battle bundle，practice bundle +2 文件 |
+| sw.js | SHELL_FILES +1 (study-quiz-battle.min.js) |
+| js/config.js | APP_VERSION → v5.16.0 |
+
 ## [5.15.0] - 2026-03-14 — JS 懒加载优化 Phase 2
 
 ### 性能优化

@@ -1104,7 +1104,7 @@ function studySelected(idx) {
     showToast(t('No words selected', '\u672a\u9009\u62e9\u5355\u8bcd'));
     return;
   }
-  startStudy(idx, shuffle(subset));
+  _lazyCall('study-quiz-battle', 'startStudy', [idx, shuffle(subset)]);
 }
 
 function quizSelected(idx) {
@@ -1115,7 +1115,7 @@ function quizSelected(idx) {
     showToast(t('Select at least 4 words for quiz', '\u81f3\u5c11\u9009\u62e9 4 \u4e2a\u5355\u8bcd\u624d\u80fd\u6d4b\u9a8c'));
     return;
   }
-  startQuiz(idx, subset);
+  _lazyCall('study-quiz-battle', 'startQuiz', [idx, subset]);
 }
 
 /* ═══ QUICK BROWSE MODAL ═══ */
@@ -1187,10 +1187,11 @@ function _initDeckActionDelegation() {
   if (_deckActionDelegated) return;
   _deckActionDelegated = true;
   var modeFns = {
-    study: startStudy, quiz: startQuiz,
+    study: function(li) { _lazyCall('study-quiz-battle', 'startStudy', [li]); },
+    quiz: function(li) { _lazyCall('study-quiz-battle', 'startQuiz', [li]); },
     spell: function(li) { _lazyLoad('modes', function() { startSpell(li); }); },
     match: function(li) { _lazyLoad('modes', function() { startMatch(li); }); },
-    battle: startBattle
+    battle: function(li) { _lazyCall('study-quiz-battle', 'startBattle', [li]); }
   };
   document.addEventListener('click', function(e) {
     var btn = e.target.closest('[data-action]');
@@ -1263,7 +1264,7 @@ function _initRefluxDelegation() {
   if (_refluxDelegated) return;
   _refluxDelegated = true;
   var fns = {
-    battle: startBattle,
+    battle: function(li) { _lazyCall('study-quiz-battle', 'startBattle', [li]); },
     spell: function(li) { _lazyLoad('modes', function() { startSpell(li); }); },
     match: function(li) { _lazyLoad('modes', function() { startMatch(li); }); }
   };

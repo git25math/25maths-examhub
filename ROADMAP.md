@@ -1,5 +1,12 @@
 # Development Roadmap
 
+## v5.16.0 — JS 懒加载优化 Phase 3+4 [DONE]
+- [x] study.js + quiz.js + battle.js → study-quiz-battle.min.js 懒加载 bundle
+- [x] knowledge-node.js + learning-graph.js 并入 practice.min.js bundle
+- [x] _lazyCall() 通用延迟调用辅助函数
+- [x] mastery/ui/syllabus/match/spell 所有跨 bundle 调用改为 _lazyCall
+- [x] 主 bundle −81KB raw (−20KB gzip)，累计 −50%
+
 ## v5.15.1 — CIE 0580 数据完整性修复 [DONE]
 - [x] classify_number() + classify_algebra() 规则分类器（31 个 section）
 - [x] 全量重标 Number 1,886 + Algebra 803 = 2,689 题
