@@ -1,5 +1,41 @@
 # Changelog
 
+## [5.27.0] - 2026-03-14 — 懒加载深度优化 + 首次登录渲染修复
+
+### 懒加载拆分
+- **review.js 移除**: 10 个空函数桩（FLM v2.6.0 废弃），调用方改为跳转 Study 模式
+- **particles.js → particles.min.js**: 粒子系统懒加载（1.1KB gzip），ui.js 添加 3 个代理函数
+- **board-guides.js → board-guides.min.js**: Board 面板 + Score/Rank Guide 懒加载（3.6KB gzip）
+- **deck-detail.js → deck-detail.min.js**: Deck 详情视图懒加载（3.8KB gzip）
+
+### 首次登录渲染修复
+- **await loadVisibleBoardData()**: 修复首次登录时 syllabus 数据未就绪导致走 fallback 旧视图的问题
+- 现在首次登录即显示有编号的考纲 section 视图，与后续导航一致
+
+### 构建结果
+| 指标 | Before | After | 变化 |
+|------|--------|-------|------|
+| 主 bundle (raw) | 157KB | 135KB | −22KB (−14%) |
+| 主 bundle (gzip) | 46KB | 40KB | −6KB (−13%) |
+| 懒加载 bundle 数 | 15 | 18 | +3 |
+| cat 链文件数 | 10 | 8 | −2 |
+
+### 文件变更
+| 文件 | 修改 |
+|------|------|
+| js/board-guides.js | **新增**: Board 面板 + Score/Rank Guide (~250行) |
+| js/deck-detail.js | **新增**: Deck Detail 视图 (~300行) |
+| js/particles.js | 3 个函数加 `_` 前缀 |
+| js/ui.js | +3 粒子代理, navTo/toggleLang board 分支改 _lazyNav, startReview→startStudy |
+| js/mastery.js | 删除 deck detail (~330行), 添加代理, showRankGuide→_lazyCall |
+| js/app.js | 删除 board+guide 代码 (~198行), 保留状态变量 |
+| js/auth.js | 删除 showRankGuide, await loadVisibleBoardData |
+| js/syllabus.js | loadVisibleBoardData 返回 Promise |
+| js/spell.js | startReview → _lazyCall startStudy |
+| js/quiz.js | startReview → _lazyCall startStudy |
+| scripts/minify.sh | cat 链 −2, +3 lazy bundle |
+| js/config.js | APP_VERSION → v5.27.0 |
+
 ## [5.26.1] - 2026-03-14 — 首屏加载性能优化
 
 ### 性能优化

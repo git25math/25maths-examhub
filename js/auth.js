@@ -257,8 +257,10 @@ async function afterLogin() {
   if (userBoard) {
     try { await ensureBoardLoaded(userBoard); } catch(e) {}
   }
-  /* Load syllabus data only for visible boards (deferred from syllabus.js parse time) */
-  if (typeof loadVisibleBoardData === 'function') loadVisibleBoardData();
+  /* Load syllabus data only for visible boards — await so renderHome sees section data */
+  if (typeof loadVisibleBoardData === 'function') {
+    try { await loadVisibleBoardData(); } catch(e) {}
+  }
 
   /* Load DB vocab overrides */
   if (sb && isLoggedIn()) {
@@ -491,55 +493,4 @@ async function doTeacherRegister() {
   }
 }
 
-/* ═══ RANK GUIDE MODAL ═══ */
-function showRankGuide() {
-  if (isTeacher()) return;
-  var allW = getAllWords();
-  var pct = getMasteryPct();
-  var total = allW.length;
-  var mastered = allW.filter(function(w) { return w.status === 'mastered'; }).length;
-  var cur = getRank();
-  var next = getNextRank();
-
-  var html = '<div class="section-title">\ud83c\udfc5 ' + t('Rank Progress', '段位进化路线') + '</div>';
-
-  /* Rank rows */
-  RANKS.forEach(function(r) {
-    var needed = Math.ceil(r.min / 100 * total);
-    var isCurrent = r.name === cur.name;
-    html += '<div class="rank-row' + (isCurrent ? ' current' : '') + '" style="' + (isCurrent ? 'border-color:' + r.color + ';background:' + r.color + '15' : '') + '">';
-    html += '<div class="rank-row-emoji">' + r.emoji + '</div>';
-    html += '<div class="rank-row-info">';
-    html += '<div class="rank-row-name" style="color:' + r.color + '">' + rankName(r) + '</div>';
-    html += '<div class="rank-row-req">' + t('Mastery \u2265' + r.min + '%' + (total > 0 ? ' (approx. ' + needed + ' words)' : ''), '精通率 \u2265' + r.min + '%' + (total > 0 ? '（约 ' + needed + ' 词）' : '')) + '</div>';
-    html += '</div>';
-    if (isCurrent) html += '<span class="rank-row-badge">' + t('Current', '当前') + '</span>';
-    html += '</div>';
-  });
-
-  /* Progress to next rank */
-  if (next) {
-    var nextNeeded = Math.ceil(next.min / 100 * total);
-    var remaining = Math.max(nextNeeded - mastered, 0);
-    var progressPct = total > 0 ? Math.min(Math.round(mastered / nextNeeded * 100), 100) : 0;
-    html += '<div class="rank-progress-section">';
-    html += '<div class="rank-progress-label">' + t('<strong>' + remaining + '</strong> more to reach ' + next.emoji + ' ' + rankName(next), '距 ' + next.emoji + ' ' + rankName(next) + ' 还需掌握 <strong>' + remaining + '</strong> 个') + '</div>';
-    html += '<div class="rank-progress-bar"><div class="rank-progress-fill" style="width:' + progressPct + '%;background:' + next.color + '"></div></div>';
-    html += '<div class="rank-progress-pct">' + pct + '% \u2192 ' + next.min + '%</div>';
-    html += '</div>';
-  } else {
-    html += '<div class="rank-progress-section text-center text-success">' + t('Highest rank achieved!', '已达最高段位') + ' \ud83c\udf89</div>';
-  }
-
-  /* Tips */
-  html += '<div class="guide-tip">';
-  html += '<div class="guide-tip-title">' + t('How to rank up?', '如何升级？') + '</div>';
-  html += '<div class="guide-tip-item">' + t('1. Master vocabulary across study modes', '1. 通过多种模式掌握词汇') + '</div>';
-  html += '<div class="guide-tip-item">' + t('2. Practice past paper questions', '2. 练习真题巩固知识点') + '</div>';
-  html += '<div class="guide-tip-item">' + t('3. Complete knowledge point exercises', '3. 完成知识点练习') + '</div>';
-  html += '<div class="guide-tip-item">' + t('4. Follow your recovery plan daily', '4. 每日跟进复习计划') + '</div>';
-  html += '</div>';
-
-  html += '<button class="btn btn-ghost btn-block mt-16" onclick="hideModal()">' + t('Close', '关闭') + '</button>';
-  showModal(html);
-}
+/* showRankGuide → moved to board-guides.js (lazy-loaded) */

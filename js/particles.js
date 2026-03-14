@@ -16,7 +16,7 @@ addEventListener('resize', resizeFx);
 resizeFx();
 
 /* Spawn particles at a position */
-function spawnP(x, y, n) {
+function _spawnP(x, y, n) {
   n = n || 12;
   if (!_pRunning) { _pRunning = true; requestAnimationFrame(drawP); }
   for (var i = 0; i < n; i++) {
@@ -87,7 +87,7 @@ function drawP() {
 }
 
 /* Floating text effect */
-function floatTxt(t, c, x, y) {
+function _floatTxt(t, c, x, y) {
   var el = document.createElement('div');
   el.className = 'bf';
   el.textContent = t;
@@ -99,7 +99,7 @@ function floatTxt(t, c, x, y) {
 
 /* Combo popup */
 var comboEl = E('combo-el');
-function showCombo(n) {
+function _showCombo(n) {
   var m = ['', '', 'Nice \xd72', 'Great \xd73', 'Amazing \xd74', 'Incredible \xd75'];
   var e = ['', '', '\u26a1', '\ud83d\udd25', '\ud83d\udca5', '\ud83c\udf1f'];
   var i = Math.min(n, 5);

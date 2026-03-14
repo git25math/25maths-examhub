@@ -916,11 +916,13 @@ function _truncTitle(str, maxWidth) {
 /* Load only the boards the user needs (called after auth sets userBoard) */
 function loadVisibleBoardData() {
   var boards = getVisibleBoards();
+  var promises = [];
   for (var i = 0; i < boards.length; i++) {
     var bid = boards[i].id;
-    if (bid === 'cie') { loadCIESyllabus(); loadKnowledgeData('cie'); }
-    else if (bid === 'edx') { loadEdxSyllabus(); }
-    else if (bid === '25m') { loadHHKSyllabus(); loadKnowledgeData('hhk'); }
+    if (bid === 'cie') { promises.push(loadCIESyllabus()); loadKnowledgeData('cie'); }
+    else if (bid === 'edx') { promises.push(loadEdxSyllabus()); }
+    else if (bid === '25m') { promises.push(loadHHKSyllabus()); loadKnowledgeData('hhk'); }
   }
+  return Promise.all(promises).catch(function() {});
 }
 loadKnowledgeData('edx');

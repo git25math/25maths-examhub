@@ -82,7 +82,7 @@ function navTo(id) {
   else if (id === 'plan') { _lazyNav('syllabus-views', 'renderTodaysPlan', 'plan'); }
   else if (id === 'mistakes') { _lazyNav('syllabus-views', 'renderMistakeBook', 'mistakes'); }
   else if (id === 'import') { _lazyNav('tools', 'renderImport', 'import'); }
-  else if (id === 'board') renderBoard();
+  else if (id === 'board') { _lazyNav('board-guides', 'renderBoard', 'board'); }
   else if (id === 'stats') { _lazyNav('tools', 'renderStats', 'stats'); }
   else if (id === 'admin' && typeof renderAdmin === 'function') renderAdmin();
   else if (id === 'homework') { if (typeof showStudentHwPage === 'function') showStudentHwPage(); }
@@ -271,7 +271,7 @@ function toggleLang() {
   else if (appView === 'plan') { _lazyCall('syllabus-views', 'renderTodaysPlan', []); }
   else if (appView === 'mistakes') { _lazyCall('syllabus-views', 'renderMistakeBook', []); }
   else if (appView === 'import') { _lazyNav('tools', 'renderImport', 'import'); }
-  else if (appView === 'board') renderBoard();
+  else if (appView === 'board') { _lazyCall('board-guides', 'renderBoard', []); }
   else if (appView === 'stats') { _lazyNav('tools', 'renderStats', 'stats'); }
   else if (appView === 'admin' && typeof renderAdmin === 'function') renderAdmin();
   else if (appView === 'section' && typeof _currentSectionContext === 'object' && _currentSectionContext) {
@@ -760,8 +760,8 @@ function sectionNextStepHTML(currentMode, scoreRate) {
       emoji = '\ud83d\udcd8'; label = t('Back to Section', '返回知识点');
       action = 'openSection(\'' + ctx.sectionId + '\',\'' + ctx.board + '\')';
     } else {
-      emoji = '\ud83e\udde0'; label = t('Review to consolidate', '复习巩固记忆');
-      action = li >= 0 ? 'startReview(' + li + ')' : 'openSection(\'' + ctx.sectionId + '\',\'' + ctx.board + '\')';
+      emoji = '\ud83d\udcd6'; label = t('Study to consolidate', '学习巩固记忆');
+      action = li >= 0 ? '_lazyCall(\"study-quiz-battle\",\"startStudy\",[' + li + '])' : 'openSection(\'' + ctx.sectionId + '\',\'' + ctx.board + '\')';
     }
   } else {
     emoji = '\ud83d\udcd8'; label = t('Back to Section', '返回知识点');
@@ -905,3 +905,8 @@ function showBadgeCelebration(badge) {
     setTimeout(function() { if (el.parentNode) el.remove(); }, 400);
   }, 4000);
 }
+
+/* ═══ PARTICLE PROXIES (lazy-loaded) ═══ */
+function spawnP(x, y, n) { _lazyCall('particles', '_spawnP', [x, y, n]); }
+function floatTxt(t, c, x, y) { _lazyCall('particles', '_floatTxt', [t, c, x, y]); }
+function showCombo(n) { _lazyCall('particles', '_showCombo', [n]); }

@@ -4,11 +4,10 @@ ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT"
 
 # Core JS: concatenate in index.html load order → esbuild minify → single bundle
-# Lazy-loaded: homework, spell, match, translate, export, stats, worksheet, practice, lists,
-#   study, quiz, battle, knowledge-node, learning-graph, recovery cluster (9 files)
-cat js/config.js js/levels-loader.js js/storage.js js/particles.js \
+# Removed from core: review.js (dead code), particles.js (lazy), board+guide code (lazy)
+cat js/config.js js/levels-loader.js js/storage.js \
     js/auth.js js/ui.js js/mastery.js js/syllabus.js \
-    js/review.js js/app.js | \
+    js/app.js | \
     npx esbuild --loader=js --minify > js/app.bundle.min.js
 
 # Lazy-loaded bundles
@@ -33,8 +32,14 @@ npx esbuild js/homework.js --minify --outfile=js/homework.min.js
 cat js/admin.js js/vocab-admin.js js/data-admin.js | \
     npx esbuild --loader=js --minify > js/admin.bundle.min.js
 
-# Board guides (lazy-loaded on board panel visit)
+# Particles (lazy-loaded on first particle effect)
+npx esbuild js/particles.js --minify --outfile=js/particles.min.js
+
+# Board + Guides (lazy-loaded on board panel visit)
 npx esbuild js/board-guides.js --minify --outfile=js/board-guides.min.js
+
+# Deck Detail (lazy-loaded on deck open)
+npx esbuild js/deck-detail.js --minify --outfile=js/deck-detail.min.js
 
 # CSS minify
 npx esbuild css/style.css --minify --outfile=css/style.min.css
@@ -51,7 +56,7 @@ if [ -n "$APP_VER" ]; then
 fi
 
 echo "=== Build complete ==="
-ls -lh js/app.bundle.min.js js/syllabus-views.min.js js/study-quiz-battle.min.js js/practice.min.js js/recovery.min.js js/lists.min.js js/tools.min.js js/modes.min.js js/translate.min.js js/worksheet.min.js js/tour.min.js js/bug-report.min.js js/settings.min.js js/homework.min.js js/admin.bundle.min.js css/style.min.css
+ls -lh js/app.bundle.min.js js/syllabus-views.min.js js/study-quiz-battle.min.js js/practice.min.js js/recovery.min.js js/lists.min.js js/tools.min.js js/modes.min.js js/translate.min.js js/worksheet.min.js js/tour.min.js js/bug-report.min.js js/settings.min.js js/homework.min.js js/admin.bundle.min.js js/particles.min.js js/board-guides.min.js js/deck-detail.min.js css/style.min.css
 printf "JS app bundle gzip:  "; gzip -c js/app.bundle.min.js | wc -c
 printf "JS study-quiz gzip:  "; gzip -c js/study-quiz-battle.min.js | wc -c
 printf "JS practice gzip:    "; gzip -c js/practice.min.js | wc -c
@@ -67,4 +72,7 @@ printf "JS bug-report gzip:  "; gzip -c js/bug-report.min.js | wc -c
 printf "JS settings gzip:    "; gzip -c js/settings.min.js | wc -c
 printf "JS homework gzip:    "; gzip -c js/homework.min.js | wc -c
 printf "JS admin gzip:       "; gzip -c js/admin.bundle.min.js | wc -c
+printf "JS particles gzip:   "; gzip -c js/particles.min.js | wc -c
+printf "JS board-guides gzip:"; gzip -c js/board-guides.min.js | wc -c
+printf "JS deck-detail gzip: "; gzip -c js/deck-detail.min.js | wc -c
 printf "CSS gzip:            "; gzip -c css/style.min.css | wc -c

@@ -1,5 +1,13 @@
 # Development Roadmap
 
+## v5.27.0 — 懒加载深度优化 + 首次登录渲染修复 [DONE]
+- [x] review.js 死代码删除（10 个空函数桩 + 3 处调用方修复）
+- [x] particles.js → particles.min.js 懒加载（1.1KB gzip）
+- [x] board-guides.js → board-guides.min.js 懒加载（3.6KB gzip）
+- [x] deck-detail.js → deck-detail.min.js 懒加载（3.8KB gzip）
+- [x] 首次登录 await syllabus 数据，消除旧版无编号 fallback 视图
+- [x] 主 bundle 135KB (40KB gzip)，−22KB raw / −6KB gzip
+
 ## v5.26.0 — 圆角补全 + margin-top 令牌化 [DONE]
 - [x] border-radius 补全：10px→--r-sm (×21), 14px→--r (×21), 20px→--r-lg (×12)
 - [x] margin-top → --sp-* 令牌：4-20px 五档共 ~84 处
