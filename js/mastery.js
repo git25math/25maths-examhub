@@ -207,7 +207,7 @@ function renderDeckRow(cl, cat, _levelLocked, _levelStats) {
 function _getNextAction(dueCount) {
   var boards = getVisibleBoards();
   var due = dueCount != null ? dueCount : getDueWords().length;
-  var dcData = getDailyData();
+  var dcData = typeof getDailyData === 'function' ? getDailyData() : null;
 
   /* Check all syllabus boards for in-progress or next sections */
   var inProgress = null;
@@ -368,7 +368,7 @@ function _renderHeroAction() {
   var streakN = getStreakCount();
   var homeRank = getRank();
   var action = _getNextAction(0);
-  var dcData = getDailyData();
+  var dcData = typeof getDailyData === 'function' ? getDailyData() : null;
   var wg = typeof getWeeklyGoal === 'function' ? getWeeklyGoal() : null;
 
   var html = '<div class="hero-card">';
