@@ -1,5 +1,15 @@
 # Development Roadmap
 
+## v5.21.0 — UI 一致性审查 & 设计令牌体系 [DONE]
+- [x] CSS token 扩展：圆角/间距/阴影/过渡/遮罩/卡片 14 个新 token
+- [x] panel-header 共享基类统一 deck-header / study-topbar
+- [x] 折叠系统统一（board/category/unit-body 共享过渡）
+- [x] 遮罩统一（.ov / .modal-overlay 共享 token）
+- [x] 新增 .spinner + .empty-state 共享组件
+- [x] 全局键盘 a11y 委托（role="button" Enter/Space）
+- [x] 导航历史栈 _navStack + navPush/navBack 基础设施
+- [x] hero-btn !important 清理 + shadow-hover token
+
 ## v5.20.0 — UI/Auth 模块精细拆分 + 粒子性能 [DONE]
 - [x] Tour 引导系统 → tour.min.js 懒加载 (1.6KB gzip)
 - [x] Bug Report 表单 → bug-report.min.js 懒加载 (1.5KB gzip)
