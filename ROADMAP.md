@@ -1,5 +1,10 @@
 # Development Roadmap
 
+## v5.25.0 — 间距系统全面令牌化 [DONE]
+- [x] gap 值 → --sp-* 令牌：~166 处（8px ×99, 12px ×30, 4px ×31, 16-24px ×6）
+- [x] margin-bottom → --sp-* 令牌：~130 处（4-20px 五档全覆盖）
+- [x] --sp-* 间距 token 现为全系统统一间距来源
+
 ## v5.24.0 — 过渡令牌化 + 状态卡片组件 + 进度条基类 [DONE]
 - [x] --t-medium: 0.3s 令牌 + 19 处 hardcoded 替换（全过渡 4 级 token 化完成）
 - [x] stat-grid/stat-card 组件：study.js 16 处 + practice.js 8 处 inline style → CSS class

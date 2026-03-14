@@ -1,5 +1,33 @@
 # Changelog
 
+## [5.25.0] - 2026-03-14 — 间距系统全面令牌化
+
+### CSS 间距令牌化
+
+#### gap 值 → --sp-* 令牌（~166 处）
+- `gap: 4px` → `var(--sp-1)` — 31 处
+- `gap: 8px` → `var(--sp-2)` — 99 处
+- `gap: 12px` → `var(--sp-3)` — 30 处
+- `gap: 16px` → `var(--sp-4)` — 5 处
+- `gap: 20px/24px` → `var(--sp-5/6)` — 1 处各
+
+#### margin-bottom → --sp-* 令牌（~130 处）
+- `margin-bottom: 4px` → `var(--sp-1)` — 24 处
+- `margin-bottom: 8px` → `var(--sp-2)` — 34 处
+- `margin-bottom: 12px` → `var(--sp-3)` — 27 处
+- `margin-bottom: 16px` → `var(--sp-4)` — 29 处
+- `margin-bottom: 20px` → `var(--sp-5)` — 16 处
+
+#### --t-medium 过渡补漏
+- `pp-topic-progress-fill` 遗留 `0.3s` → `var(--t-medium)`
+
+### 文件变更
+| 文件 | 修改 |
+|------|------|
+| css/style.css | ~296 处 gap + margin-bottom → --sp-* token |
+| js/config.js | APP_VERSION → v5.25.0 |
+| CLAUDE.md | 版本号更新 |
+
 ## [5.24.0] - 2026-03-14 — 过渡令牌化 + 状态卡片组件 + 进度条共享基类
 
 ### CSS 令牌深化
