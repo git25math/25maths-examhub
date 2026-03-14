@@ -1,5 +1,43 @@
 # Changelog
 
+## [5.20.0] - 2026-03-14 — UI/Auth 模块精细拆分 + 粒子性能
+
+### 性能优化
+
+#### Tour / Bug Report / Settings 懒加载拆分
+- Tour 引导系统 (104行) 从 ui.js 提取为 `tour.min.js` (1.6KB gzip)，仅新用户首次登录时加载
+- Bug Report 表单 (82行) 从 ui.js 提取为 `bug-report.min.js` (1.5KB gzip)，点击反馈按钮时加载
+- Settings 面板 (182行) 从 auth.js 提取为 `settings.min.js` (2.3KB gzip)，点击设置按钮时加载
+- Speech 函数 (canSpeak/speakWord) 从 ui.js 移至 spell.js (modes.min.js bundle)
+
+#### 粒子系统 RAF 空转优化
+- drawP() 改为 idle-aware：无粒子时自动暂停 RAF 循环
+- spawnP() 按需重启 RAF，移除启动时的无条件 drawP() 调用
+- 减少登录页空闲时 CPU 空转
+
+#### index.html onclick 更新
+- showSettings / showBugReport 改为 `_lazyCall()` 触发（sidebar + header 共 3 处）
+- app.js 密码恢复回调改为 `_lazyCall('settings', ...)`
+
+### 累计优化（v5.14.0 → v5.20.0）
+- 主 bundle: **672KB → 157KB (−77%)**, gzip: **184KB → 46KB (−75%)**
+- 懒加载 bundle 数: 4 → 15
+
+### 文件变更
+| 文件 | 修改 |
+|------|------|
+| js/tour.js | **新增**: Tour 引导系统 (~104行) |
+| js/bug-report.js | **新增**: Bug Report 表单 (~82行) |
+| js/settings.js | **新增**: Settings 面板 + manualSync (~182行) |
+| js/ui.js | 移除 tour + bug report + speech (~196行), maybeStartTour 改为 _lazyLoad |
+| js/auth.js | 移除 settings / manualSync / _isStudentLocked / changeBoardFromSettings (~182行) |
+| js/spell.js | 添加 canSpeak/speakWord (~10行) |
+| js/particles.js | RAF 改为 idle-aware (drawP 自动暂停/spawnP 按需启动) |
+| index.html | showBugReport/showSettings onclick → _lazyCall |
+| js/app.js | showSettings → _lazyCall('settings', ...) |
+| scripts/minify.sh | +3 bundle (tour/bug-report/settings) + 报告行 |
+| js/config.js | APP_VERSION → v5.20.0 |
+
 ## [5.19.0] - 2026-03-14 — Syllabus 视图拆分
 
 ### 性能优化

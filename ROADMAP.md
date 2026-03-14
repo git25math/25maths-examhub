@@ -1,5 +1,13 @@
 # Development Roadmap
 
+## v5.20.0 — UI/Auth 模块精细拆分 + 粒子性能 [DONE]
+- [x] Tour 引导系统 → tour.min.js 懒加载 (1.6KB gzip)
+- [x] Bug Report 表单 → bug-report.min.js 懒加载 (1.5KB gzip)
+- [x] Settings 面板 → settings.min.js 懒加载 (2.3KB gzip)
+- [x] Speech 函数移至 modes.min.js (spell.js)
+- [x] 粒子 RAF idle-aware 优化（无粒子时自动暂停）
+- [x] 主 bundle −13KB raw (−4KB gzip)，累计 **−77%**
+
 ## v5.19.0 — Syllabus 视图拆分 [DONE]
 - [x] syllabus.js 拆为 core (34KB) + syllabus-views.js (92KB) 懒加载
 - [x] 64 个视图函数 + IIFE 事件委托移至 syllabus-views.min.js

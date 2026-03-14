@@ -21,7 +21,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700;800&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 
   <!-- App Styles -->
-  <link rel="stylesheet" href="css/style.min.css?v=5.19.0">
+  <link rel="stylesheet" href="css/style.min.css?v=5.20.0">
   <script>(function(){try{if(localStorage.getItem('wmatch_dark')==='1'||(localStorage.getItem('wmatch_dark')===null&&window.matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.setAttribute('data-theme','dark')}}catch(e){}})()</script>
   <script>(function(){try{var ts=localStorage.getItem('wmatch_login_ts');if(ts&&(Date.now()-parseInt(ts,10))<300000){var s=document.createElement('style');s.id='auth-hide-style';s.textContent='#ov-auth{display:none}';document.head.appendChild(s);/* Watchdog: if app doesn't init within 8s, show auth */setTimeout(function(){var ov=document.getElementById('ov-auth');if(ov&&ov.style.display==='none'&&!document.getElementById('panel-home').children.length){try{localStorage.removeItem('wmatch_login_ts')}catch(e){}ov.style.display='';ov.classList.add('vis')}},8000)}}catch(e){}})()</script>
 </head>
@@ -133,7 +133,7 @@
       <div class="sf-menu" id="sf-menu" role="menu">
         <div class="sf-menu-header" id="sf-menu-header"></div>
         <div class="sf-divider"></div>
-        <button class="sf-menu-item" role="menuitem" onclick="showSettings(); toggleUserMenu()">
+        <button class="sf-menu-item" role="menuitem" onclick="_lazyCall('settings','showSettings',[]); toggleUserMenu()">
           <span class="sf-icon">⚙</span><span data-en="Settings" data-zh="设置">设置</span>
         </button>
         <button class="sf-menu-item" role="menuitem" id="dark-toggle-sb" onclick="toggleDark()">
@@ -145,7 +145,7 @@
         <button class="sf-menu-item" role="menuitem" id="lang-toggle-sb" onclick="toggleLang()">
           <span class="sf-icon">🌐</span><span data-en="Language" data-zh="语言">语言</span>
         </button>
-        <button class="sf-menu-item" role="menuitem" onclick="showBugReport(); toggleUserMenu()">
+        <button class="sf-menu-item" role="menuitem" onclick="_lazyCall('bug-report','showBugReport',[]); toggleUserMenu()">
           <span class="sf-icon">🐛</span><span data-en="Report Bug" data-zh="报告问题">报告问题</span>
         </button>
         <div class="sf-divider"></div>
@@ -174,7 +174,7 @@
           <span id="hb-name"></span>
         </div>
         <button class="btn-icon notif-bell" id="notif-bell-hb" style="display:none" onclick="showNotifPanel()" title="通知">🔔<span class="notif-badge" id="notif-badge-hb">0</span></button>
-        <button class="btn-icon" onclick="showSettings()" title="设置" aria-label="Settings">⚙</button>
+        <button class="btn-icon" onclick="_lazyCall('settings','showSettings',[])" title="设置" aria-label="Settings">⚙</button>
         <button class="btn-icon" id="btn-logout-hb" title="退出" aria-label="Log out">↩</button>
       </div>
     </header>
@@ -253,7 +253,7 @@
 
 <!-- Supabase SDK + App Bundle: defer = non-blocking parse, execute in order after DOM ready -->
 <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script defer src="js/app.bundle.min.js?v=5.19.0"></script>
+<script defer src="js/app.bundle.min.js?v=5.20.0"></script>
 <!-- homework.min.js loaded dynamically for students with classes + teachers (see auth.js) -->
 <!-- admin.js + vocab-admin.js loaded dynamically for teachers (see auth.js) -->
 

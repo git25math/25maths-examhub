@@ -22,6 +22,9 @@ cat js/stats.js js/export.js | npx esbuild --loader=js --minify > js/tools.min.j
 cat js/spell.js js/match.js | npx esbuild --loader=js --minify > js/modes.min.js
 npx esbuild js/translate.js --minify --outfile=js/translate.min.js
 npx esbuild js/worksheet.js --minify --outfile=js/worksheet.min.js
+npx esbuild js/tour.js --minify --outfile=js/tour.min.js
+npx esbuild js/bug-report.js --minify --outfile=js/bug-report.min.js
+npx esbuild js/settings.js --minify --outfile=js/settings.min.js
 
 # Homework module (lazy-loaded separately)
 npx esbuild js/homework.js --minify --outfile=js/homework.min.js
@@ -45,7 +48,7 @@ if [ -n "$APP_VER" ]; then
 fi
 
 echo "=== Build complete ==="
-ls -lh js/app.bundle.min.js js/syllabus-views.min.js js/study-quiz-battle.min.js js/practice.min.js js/recovery.min.js js/lists.min.js js/tools.min.js js/modes.min.js js/translate.min.js js/worksheet.min.js js/homework.min.js js/admin.bundle.min.js css/style.min.css
+ls -lh js/app.bundle.min.js js/syllabus-views.min.js js/study-quiz-battle.min.js js/practice.min.js js/recovery.min.js js/lists.min.js js/tools.min.js js/modes.min.js js/translate.min.js js/worksheet.min.js js/tour.min.js js/bug-report.min.js js/settings.min.js js/homework.min.js js/admin.bundle.min.js css/style.min.css
 printf "JS app bundle gzip:  "; gzip -c js/app.bundle.min.js | wc -c
 printf "JS study-quiz gzip:  "; gzip -c js/study-quiz-battle.min.js | wc -c
 printf "JS practice gzip:    "; gzip -c js/practice.min.js | wc -c
@@ -56,6 +59,9 @@ printf "JS tools gzip:       "; gzip -c js/tools.min.js | wc -c
 printf "JS modes gzip:       "; gzip -c js/modes.min.js | wc -c
 printf "JS translate gzip:   "; gzip -c js/translate.min.js | wc -c
 printf "JS worksheet gzip:   "; gzip -c js/worksheet.min.js | wc -c
+printf "JS tour gzip:        "; gzip -c js/tour.min.js | wc -c
+printf "JS bug-report gzip:  "; gzip -c js/bug-report.min.js | wc -c
+printf "JS settings gzip:    "; gzip -c js/settings.min.js | wc -c
 printf "JS homework gzip:    "; gzip -c js/homework.min.js | wc -c
 printf "JS admin gzip:       "; gzip -c js/admin.bundle.min.js | wc -c
 printf "CSS gzip:            "; gzip -c css/style.min.css | wc -c

@@ -38,7 +38,7 @@ onLevelsReady(function() {
   if (sb) {
     sb.auth.onAuthStateChange(function(event, session) {
       if (event === 'PASSWORD_RECOVERY') {
-        setTimeout(function() { showSettings(); showToast(t('Set your new password', '请设置新密码')); }, 500);
+        setTimeout(function() { _lazyCall('settings', 'showSettings', []); showToast(t('Set your new password', '请设置新密码')); }, 500);
       }
     });
   }

@@ -2,6 +2,18 @@
    spell.js — Spelling mode (type the English word)
    ══════════════════════════════════════════════════════════════ */
 
+/* ═══ SPEECH SYNTHESIS ═══ */
+function canSpeak() { return !!window.speechSynthesis; }
+
+function speakWord(text) {
+  if (!appSound || !canSpeak()) return;
+  window.speechSynthesis.cancel();
+  var u = new SpeechSynthesisUtterance(text);
+  u.lang = 'en-US';
+  u.rate = 0.85;
+  window.speechSynthesis.speak(u);
+}
+
 var SP = { pairs: [], idx: 0, correct: 0, lvl: 0, answered: false };
 var _spellDelegated = false;
 

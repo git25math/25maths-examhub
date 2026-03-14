@@ -18,6 +18,7 @@ resizeFx();
 /* Spawn particles at a position */
 function spawnP(x, y, n) {
   n = n || 12;
+  if (!_pRunning) { _pRunning = true; requestAnimationFrame(drawP); }
   for (var i = 0; i < n; i++) {
     var a = Math.PI * 2 * i / n + Math.random() * 0.5;
     particles.push({
@@ -36,9 +37,11 @@ function spawnP(x, y, n) {
 }
 
 /* Draw loop */
+var _pRunning = false;
 function drawP() {
   fxX.clearRect(0, 0, fxC.width, fxC.height);
   particles = particles.filter(function(p) { return p.life > 0; });
+  if (particles.length === 0) { _pRunning = false; return; }
 
   particles.forEach(function(p) {
     p.x += p.vx;
@@ -82,7 +85,6 @@ function drawP() {
   fxX.globalAlpha = 1;
   requestAnimationFrame(drawP);
 }
-drawP();
 
 /* Floating text effect */
 function floatTxt(t, c, x, y) {
