@@ -122,8 +122,8 @@ function renderAdmin() {
   else if (_adminTab === 'school') renderSchoolOverview();
   else if (_adminTab === 'users') renderUserManagement();
   else if (_adminTab === 'allusers') renderAllUsers();
-  else if (_adminTab === 'feedback' && typeof renderFeedbackList === 'function') renderFeedbackList();
-  else if (_adminTab === 'dataquality' && typeof renderDataQuality === 'function') renderDataQuality();
+  else if (_adminTab === 'feedback') _lazyCall('super-admin', 'renderFeedbackList', []);
+  else if (_adminTab === 'dataquality') _lazyCall('super-admin', 'renderDataQuality', []);
 }
 
 function switchAdminTab(tab) {

@@ -1,5 +1,53 @@
 # Changelog
 
+## [5.29.0] - 2026-03-15 — 懒加载 Phase 7: practice.js 拆分 + admin 分层 + 智能预加载
+
+### practice.js 拆分 (198KB → 160KB + 3 子 bundle)
+
+#### practice-editor.min.js (8.9KB raw, 3.1KB gzip)
+- 超管题目编辑器完整提取：editPracticeQ, _openEditor, 工具栏, 公式/图片插入, savePracticeEdit
+- 仅超管点击"编辑"时按需加载
+
+#### practice-review.min.js (4.3KB raw, 1.7KB gzip)
+- 超管审查列表完整提取：startPracticeReview, renderPracticeReview, 难度/专题筛选
+- 审查中编辑按钮 → _lazyCall practice-editor
+
+#### practice-browse.min.js (26.5KB raw, 8.3KB gzip)
+- 真题浏览全模块提取：ppShowPaperBrowse, 年份/专题双视图, 套卷详情, 筛选芯片
+- 全卷练习/考试：ppStartFullPaper, ppShowPaperExamSetup, ppStartPaperExam
+- 模考生成器：ppShowMockSetup, ppStartMockExam (加权选题算法)
+- 诊断测试：startDiagnostic, _diagShowResults (含历史趋势)
+- 错题本 UI：ppShowWrongBook, ppReviewWrongItem, ppStartWrongBookReview
+
+#### practice.js 核心 (160KB raw, 44.7KB gzip)
+- 保留 MCQ 练习核心 + PP 数据层/FLM/渲染/模块/考试会话/结果
+- 保留 PP_TYPE_LABELS/PP_SESSION_LABELS 常量 (practice-browse 共享)
+- 保留全局变量 (_pqFocusedTextarea 等 8 个)
+- 添加 15 个 lazy proxy 函数，子 bundle 加载后自动覆盖
+
+### admin 分层 (admin.bundle 90KB → admin 60KB + super-admin 30KB)
+- admin.min.js (60KB/14.3KB gzip) — 教师班级管理，非超管用户不加载超管代码
+- super-admin.min.js (30KB/8.8KB gzip) — vocab-admin + data-admin，按需加载
+- auth.js 加载入口 admin.bundle → admin.min.js
+
+### 智能预加载
+- ui.js +_idlePreload()：requestIdleCallback 空闲预加载 study-quiz-battle
+- auth.js afterLogin 完成 3s 后调度
+
+### 文件变更
+| 文件 | 修改 |
+|------|------|
+| js/practice-editor.js | **新增** 315 行 (超管编辑器) |
+| js/practice-review.js | **新增** 176 行 (超管审查) |
+| js/practice-browse.js | **新增** 880 行 (浏览+模考+诊断+错题本) |
+| js/practice.js | −1,553 行 + 15 个 lazy proxy |
+| js/admin.js | feedback/dataquality 调用 → _lazyCall super-admin |
+| js/auth.js | admin.bundle → admin.min.js; +idle 预加载调度 |
+| js/ui.js | +_idlePreload() |
+| js/mastery.js | startPracticeReview 调用 → _lazyCall |
+| js/config.js | APP_VERSION → v5.29.0 |
+| scripts/minify.sh | +4 bundle (practice-editor/review/browse, super-admin); admin 改单文件 |
+
 ## [5.28.1] - 2026-03-15 — perf: 登录后首屏从 14s 降至 ~3s
 
 ### 性能修复

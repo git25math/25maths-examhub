@@ -1,5 +1,11 @@
 # Development Roadmap
 
+## v5.29.0 — 懒加载 Phase 7: practice.js 拆分 + admin 分层 [DONE]
+- [x] practice.js → practice-editor/review/browse 3 子 bundle 拆分
+- [x] admin.bundle → admin.min.js + super-admin.min.js 角色分层
+- [x] requestIdleCallback 空闲预加载 study-quiz-battle
+- [x] 22 个懒加载 bundle，practice 首次加载量 −19%
+
 ## v5.28.0 — 间距系统补全 6px/10px [DONE]
 - [x] 新增 --sp-1h (6px) / --sp-2h (10px) 半步 token
 - [x] ~198 处 gap/margin-top/margin-bottom 6px/10px → token

@@ -304,6 +304,9 @@ async function afterLogin() {
   /* Background: homework + teacher modules */
   if (sb && isLoggedIn() && userClassId) loadHomeworkModule();
   if (sb && isLoggedIn()) loadAndInitTeacher();
+
+  /* Idle preload most-used lazy bundle */
+  if (typeof _idlePreload === 'function') setTimeout(_idlePreload, 3000);
 }
 
 /* ═══ DYNAMIC TEACHER MODULE LOADING ═══ */
@@ -326,7 +329,7 @@ async function loadAndInitTeacher() {
     loadHomeworkModule(),
     new Promise(function(resolve) {
       var s = document.createElement('script');
-      s.src = 'js/admin.bundle.min.js?v=' + _v;
+      s.src = 'js/admin.min.js?v=' + _v;
       s.onload = resolve;
       s.onerror = resolve;
       document.head.appendChild(s);

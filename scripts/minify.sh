@@ -13,6 +13,9 @@ cat js/config.js js/levels-loader.js js/storage.js \
 # Lazy-loaded bundles
 cat js/study.js js/quiz.js js/battle.js | npx esbuild --loader=js --minify > js/study-quiz-battle.min.js
 cat js/practice.js js/knowledge-node.js js/learning-graph.js | npx esbuild --loader=js --minify > js/practice.min.js
+npx esbuild js/practice-editor.js --minify --outfile=js/practice-editor.min.js
+npx esbuild js/practice-review.js --minify --outfile=js/practice-review.min.js
+npx esbuild js/practice-browse.js --minify --outfile=js/practice-browse.min.js
 cat js/recovery-priority.js js/recovery-scheduler.js js/student-profile.js js/learning-goals.js js/ai-tutor.js js/error-patterns.js js/mistake-coach.js js/recovery-session.js js/smart-notif.js | \
     npx esbuild --loader=js --minify > js/recovery.min.js
 npx esbuild js/lists.js --minify --outfile=js/lists.min.js
@@ -28,9 +31,12 @@ npx esbuild js/settings.js --minify --outfile=js/settings.min.js
 # Homework module (lazy-loaded separately)
 npx esbuild js/homework.js --minify --outfile=js/homework.min.js
 
-# Admin module bundle (lazy-loaded for teachers/super admin)
-cat js/admin.js js/vocab-admin.js js/data-admin.js | \
-    npx esbuild --loader=js --minify > js/admin.bundle.min.js
+# Admin module (lazy-loaded for teachers/super admin)
+npx esbuild js/admin.js --minify --outfile=js/admin.min.js
+
+# Super-admin module (lazy-loaded from admin panel)
+cat js/vocab-admin.js js/data-admin.js | \
+    npx esbuild --loader=js --minify > js/super-admin.min.js
 
 # Particles (lazy-loaded on first particle effect)
 npx esbuild js/particles.js --minify --outfile=js/particles.min.js
@@ -56,10 +62,18 @@ if [ -n "$APP_VER" ]; then
 fi
 
 echo "=== Build complete ==="
-ls -lh js/app.bundle.min.js js/syllabus-views.min.js js/study-quiz-battle.min.js js/practice.min.js js/recovery.min.js js/lists.min.js js/tools.min.js js/modes.min.js js/translate.min.js js/worksheet.min.js js/tour.min.js js/bug-report.min.js js/settings.min.js js/homework.min.js js/admin.bundle.min.js js/particles.min.js js/board-guides.min.js js/deck-detail.min.js css/style.min.css
+ls -lh js/app.bundle.min.js js/syllabus-views.min.js js/study-quiz-battle.min.js \
+  js/practice.min.js js/practice-editor.min.js js/practice-review.min.js js/practice-browse.min.js \
+  js/recovery.min.js js/lists.min.js js/tools.min.js js/modes.min.js \
+  js/translate.min.js js/worksheet.min.js js/tour.min.js js/bug-report.min.js js/settings.min.js \
+  js/homework.min.js js/admin.min.js js/super-admin.min.js \
+  js/particles.min.js js/board-guides.min.js js/deck-detail.min.js css/style.min.css
 printf "JS app bundle gzip:  "; gzip -c js/app.bundle.min.js | wc -c
 printf "JS study-quiz gzip:  "; gzip -c js/study-quiz-battle.min.js | wc -c
 printf "JS practice gzip:    "; gzip -c js/practice.min.js | wc -c
+printf "JS prac-editor gzip: "; gzip -c js/practice-editor.min.js | wc -c
+printf "JS prac-review gzip: "; gzip -c js/practice-review.min.js | wc -c
+printf "JS prac-browse gzip: "; gzip -c js/practice-browse.min.js | wc -c
 printf "JS recovery gzip:    "; gzip -c js/recovery.min.js | wc -c
 printf "JS syllabus-views gz:"; gzip -c js/syllabus-views.min.js | wc -c
 printf "JS lists gzip:       "; gzip -c js/lists.min.js | wc -c
@@ -71,7 +85,8 @@ printf "JS tour gzip:        "; gzip -c js/tour.min.js | wc -c
 printf "JS bug-report gzip:  "; gzip -c js/bug-report.min.js | wc -c
 printf "JS settings gzip:    "; gzip -c js/settings.min.js | wc -c
 printf "JS homework gzip:    "; gzip -c js/homework.min.js | wc -c
-printf "JS admin gzip:       "; gzip -c js/admin.bundle.min.js | wc -c
+printf "JS admin gzip:       "; gzip -c js/admin.min.js | wc -c
+printf "JS super-admin gzip: "; gzip -c js/super-admin.min.js | wc -c
 printf "JS particles gzip:   "; gzip -c js/particles.min.js | wc -c
 printf "JS board-guides gzip:"; gzip -c js/board-guides.min.js | wc -c
 printf "JS deck-detail gzip: "; gzip -c js/deck-detail.min.js | wc -c

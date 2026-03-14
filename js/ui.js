@@ -136,6 +136,14 @@ function _lazyNav(bundle, fnName, panelId) {
   _lazyLoad(bundle, function() { if (typeof window[fnName] === 'function') window[fnName](); });
 }
 
+/* ═══ IDLE PRELOAD ═══ */
+function _idlePreload() {
+  if (typeof requestIdleCallback === 'undefined') return;
+  requestIdleCallback(function() {
+    _lazyLoad('study-quiz-battle', function() {});
+  }, { timeout: 5000 });
+}
+
 function updateNav() {
   /* Sidebar nav */
   document.querySelectorAll('.nav-item').forEach(function(n) {
