@@ -1,5 +1,18 @@
 # Changelog
 
+## [5.27.1] - 2026-03-14 — fix: pqRender 跨 bundle 依赖修复
+
+### Bug 修复
+- **pqRender 未定义**: `pqRender` 定义在 `practice.js`（懒加载），但 `syllabus-views.js` / `homework.js` 直接调用无 `typeof` 守卫 → ReferenceError
+- **修复**: `pqRender` + `pqSanitize` 迁入 `ui.js`（主 bundle），确保所有懒加载模块可用
+
+### 文件变更
+| 文件 | 修改 |
+|------|------|
+| js/ui.js | 新增 pqRender/pqSanitize（从 practice.js 迁入） |
+| js/practice.js | 移除重复定义 |
+| js/config.js | APP_VERSION → v5.27.1 |
+
 ## [5.27.0] - 2026-03-14 — 懒加载深度优化 + 首次登录渲染修复
 
 ### 懒加载拆分

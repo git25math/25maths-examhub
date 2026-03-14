@@ -884,6 +884,51 @@ function _renderLoading(text) {
     '</div>';
 }
 
+/* ═══ RICH TEXT SANITIZER (shared across bundles) ═══ */
+var PQ_ALLOWED_TAGS = { b:1, i:1, em:1, strong:1, br:1, sub:1, sup:1, img:1, u:1 };
+var PQ_IMG_ATTRS = { src:1, alt:1, class:1 };
+
+function pqSanitize(html) {
+  if (!html) return '';
+  var tmp = document.createElement('div');
+  tmp.innerHTML = html;
+  _pqSanitizeNode(tmp);
+  return tmp.innerHTML;
+}
+
+function _pqSanitizeNode(parent) {
+  var children = Array.prototype.slice.call(parent.childNodes);
+  for (var i = 0; i < children.length; i++) {
+    var node = children[i];
+    if (node.nodeType === 3) continue;
+    if (node.nodeType !== 1) { parent.removeChild(node); continue; }
+    var tag = node.tagName.toLowerCase();
+    if (!PQ_ALLOWED_TAGS[tag]) {
+      while (node.firstChild) parent.insertBefore(node.firstChild, node);
+      parent.removeChild(node);
+    } else {
+      var attrs = Array.prototype.slice.call(node.attributes);
+      for (var j = 0; j < attrs.length; j++) {
+        if (tag === 'img' && PQ_IMG_ATTRS[attrs[j].name]) continue;
+        node.removeAttribute(attrs[j].name);
+      }
+      if (tag === 'img') {
+        var src = node.getAttribute('src') || '';
+        if (src.indexOf('https://') !== 0 && src.indexOf('data:image/') !== 0) {
+          parent.removeChild(node); continue;
+        }
+      }
+      _pqSanitizeNode(node);
+    }
+  }
+}
+
+function pqRender(text) {
+  if (!text) return '';
+  if (text.indexOf('<') === -1) return escapeHtml(text);
+  return pqSanitize(text);
+}
+
 /* Badge celebration (replaces showToast for badges) */
 function showBadgeCelebration(badge) {
   var el = document.createElement('div');
