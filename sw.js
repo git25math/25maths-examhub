@@ -3,7 +3,7 @@
    Strategy: Cache-first for app shell, network-first for data
    ══════════════════════════════════════════════════════════════ */
 
-var CACHE_VERSION = 'v5.16.0';
+var CACHE_VERSION = 'v5.17.0';
 var SHELL_CACHE = 'shell-' + CACHE_VERSION;
 var DATA_CACHE = 'data-v1';
 
@@ -19,6 +19,7 @@ var SHELL_FILES = [
   'js/worksheet.min.js',
   'js/study-quiz-battle.min.js',
   'js/practice.min.js',
+  'js/recovery.min.js',
   'js/lists.min.js',
   'manifest.json',
   'icons/icon-192.svg',

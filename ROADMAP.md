@@ -1,5 +1,10 @@
 # Development Roadmap
 
+## v5.17.0 — JS 懒加载优化 Phase 5 [DONE]
+- [x] 9 个 Recovery 文件 → recovery.min.js 懒加载 bundle
+- [x] 登录后 2s 延迟自动加载 + initSmartNotifications
+- [x] 主 bundle −74KB raw (−21KB gzip)，累计 −61%
+
 ## v5.16.0 — JS 懒加载优化 Phase 3+4 [DONE]
 - [x] study.js + quiz.js + battle.js → study-quiz-battle.min.js 懒加载 bundle
 - [x] knowledge-node.js + learning-graph.js 并入 practice.min.js bundle

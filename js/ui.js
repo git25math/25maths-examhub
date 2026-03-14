@@ -448,9 +448,11 @@ function showApp() {
   var sn = E('sidebar-notif'); if (sn) sn.style.display = '';
   var nb = E('notif-bell-hb'); if (nb) nb.style.display = '';
   if (typeof loadNotifications === 'function') loadNotifications();
-  /* Init smart notifications after data loads */
+  /* Lazy-load recovery bundle (smart-notif, student-profile, learning-goals, etc.) */
   setTimeout(function() {
-    if (typeof initSmartNotifications === 'function') initSmartNotifications();
+    _lazyLoad('recovery', function() {
+      if (typeof initSmartNotifications === 'function') initSmartNotifications();
+    });
   }, 2000);
 
   /* Show homework nav for logged-in students with a class */

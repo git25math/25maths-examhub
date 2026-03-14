@@ -1,5 +1,28 @@
 # Changelog
 
+## [5.17.0] - 2026-03-14 — JS 懒加载优化 Phase 5
+
+### 性能优化
+
+#### Recovery 集群拆出
+- 9 个 Recovery 相关文件拆为独立 `recovery.min.js` bundle (75KB / 22KB gzip)
+- 包含: recovery-priority, recovery-scheduler, student-profile, learning-goals, ai-tutor, error-patterns, mistake-coach, recovery-session, smart-notif
+- 主 bundle: 336KB → 262KB (−74KB raw), gzip: 93KB → 72KB (−21KB)
+- 登录后 2s 延迟自动加载 recovery bundle，加载后触发 initSmartNotifications
+- 所有跨 bundle 调用已有 typeof guard，无需新增
+
+### 累计优化（v5.14.0 → v5.17.0）
+- 主 bundle: **672KB → 262KB (−61%)**, gzip: **184KB → 72KB (−61%)**
+- 懒加载 bundle 数: 4 → 11
+
+### 文件变更
+| 文件 | 修改 |
+|------|------|
+| js/ui.js | afterLogin() 改为 _lazyLoad('recovery') 触发 initSmartNotifications |
+| scripts/minify.sh | 主 bundle 移除 9 个 recovery 文件，新增 recovery.min.js bundle |
+| sw.js | SHELL_FILES +1 (recovery.min.js) |
+| js/config.js | APP_VERSION → v5.17.0 |
+
 ## [5.16.0] - 2026-03-14 — JS 懒加载优化 Phase 3+4
 
 ### 性能优化
