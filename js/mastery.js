@@ -525,6 +525,7 @@ function scheduleRenderHome() {
 }
 
 function renderHome() {
+  try {
   _initHeroDelegation();
   _initDiscDelegation();
   var gs = getGlobalStats();
@@ -714,6 +715,7 @@ function renderHome() {
   }
 
   E('panel-home').innerHTML = html;
+  } catch(e) { console.error('[renderHome CRASH]', e); E('panel-home').innerHTML = '<div style="padding:40px;color:red">renderHome error: ' + e.message + '</div>'; }
   updateSidebar();
 
   /* Async fill homework banner */
