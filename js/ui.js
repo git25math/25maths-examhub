@@ -968,7 +968,8 @@ function renderMath(el) {
         { left: '$', right: '$', display: false },
         { left: '\\(', right: '\\)', display: false }
       ],
-      throwOnError: false
+      throwOnError: false,
+      strict: false
     });
   } catch(e) {}
 }
