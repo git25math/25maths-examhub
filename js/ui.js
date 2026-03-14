@@ -425,7 +425,6 @@ document.addEventListener('click', function(e) {
 
 /* ═══ APP SHELL ═══ */
 function showApp() {
-  try {
   E('ov-auth').classList.remove('vis');
   E('ov-auth').style.display = 'none';
   E('app-shell').style.display = 'flex';
@@ -457,7 +456,6 @@ function showApp() {
     }, 600);
   }
 
-  } catch(e) { console.error('[showApp CRASH]', e); }
   /* Select-to-Translate */
   if (typeof initTranslate === 'function') initTranslate();
 
