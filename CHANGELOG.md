@@ -1,5 +1,27 @@
 # Changelog
 
+## [5.15.0] - 2026-03-14 — JS 懒加载优化 Phase 2
+
+### 性能优化
+
+#### 主 Bundle 二次瘦身
+- 从 app.bundle.min.js 拆出 practice.js (270KB) + lists.js (126KB) 为独立懒加载 bundle
+- 主 bundle: 672KB → 417KB (−255KB raw), gzip: 184KB → 113KB (−71KB)
+- practice.min.js: 175KB (49KB gzip) — 点击练习按钮时按需加载
+- lists.min.js: 80KB (22KB gzip) — 点击 Learning Items 时按需加载
+- mastery.js 中 startPractice/startPracticeReview onclick 加 typeof guard + _lazyLoad fallback
+- navTo('lists') 改用 _lazyNav 统一懒加载入口
+- SW SHELL_FILES 预缓存 2 个新 bundle
+
+### 文件变更
+| 文件 | 修改 |
+|------|------|
+| js/ui.js | navTo('lists') 改为 _lazyNav('lists', ...) |
+| js/mastery.js | startPractice/startPracticeReview onclick 加 lazy guard |
+| scripts/minify.sh | 主 bundle 移除 practice.js/lists.js，新增 2 个独立 bundle |
+| sw.js | SHELL_FILES +2 (practice.min.js, lists.min.js) |
+| js/config.js | APP_VERSION → v5.15.0 |
+
 ## [5.14.1] - 2026-03-14 — CIE 0580 数据完整性修复
 
 ### 数据修复

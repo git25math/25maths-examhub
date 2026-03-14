@@ -1,5 +1,12 @@
 # Development Roadmap
 
+## v5.15.0 — JS 懒加载优化 Phase 2 [DONE]
+- [x] 从主 bundle 拆出 practice.js + lists.js 为独立懒加载 bundle
+- [x] mastery.js onclick guard + _lazyLoad fallback
+- [x] navTo('lists') 改用 _lazyNav
+- [x] SW SHELL_FILES 预缓存 2 个新 bundle
+- [x] 主 bundle −255KB raw (−71KB gzip)
+
 ## v5.14.0 — JS 懒加载优化 [DONE]
 - [x] 从主 bundle 拆出 6 个文件为 4 个懒加载 bundle（tools/modes/translate/worksheet）
 - [x] _lazyLoad() 动态 script 注入基础设施 + 面板加载 spinner

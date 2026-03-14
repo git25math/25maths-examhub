@@ -3,7 +3,7 @@
    Strategy: Cache-first for app shell, network-first for data
    ══════════════════════════════════════════════════════════════ */
 
-var CACHE_VERSION = 'v5.14.0';
+var CACHE_VERSION = 'v5.15.0';
 var SHELL_CACHE = 'shell-' + CACHE_VERSION;
 var DATA_CACHE = 'data-v1';
 
@@ -17,6 +17,8 @@ var SHELL_FILES = [
   'js/modes.min.js',
   'js/translate.min.js',
   'js/worksheet.min.js',
+  'js/practice.min.js',
+  'js/lists.min.js',
   'manifest.json',
   'icons/icon-192.svg',
   'icons/icon-512.svg'

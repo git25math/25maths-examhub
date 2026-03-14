@@ -65,7 +65,7 @@ function navTo(id) {
   else if (id === 'stats') { _lazyNav('tools', 'renderStats', 'stats'); }
   else if (id === 'admin' && typeof renderAdmin === 'function') renderAdmin();
   else if (id === 'homework') { if (typeof showStudentHwPage === 'function') showStudentHwPage(); }
-  else if (id === 'lists') { if (typeof renderListView === 'function') renderListView(); }
+  else if (id === 'lists') { _lazyNav('lists', 'renderListView', 'lists'); }
   /* section panel is rendered by openSection() directly */
 }
 

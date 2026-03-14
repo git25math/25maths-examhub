@@ -675,9 +675,9 @@ function renderHome() {
       if (!is25m && catLevels.length > 0) {
         var firstIdx = catLevels[0].idx;
         boardHtml += '<div class="pq-cat-actions">';
-        boardHtml += '<button class="sort-btn" onclick="startPractice(' + firstIdx + ')">\ud83d\udcdd ' + t('Practice', '\u7ec3\u4e60') + '</button>';
+        boardHtml += '<button class="sort-btn" onclick="(typeof startPractice===\'function\'?startPractice(' + firstIdx + '):_lazyLoad(\'practice\',function(){startPractice(' + firstIdx + ')}))">\ud83d\udcdd ' + t('Practice', '\u7ec3\u4e60') + '</button>';
         if (typeof isSuperAdmin === 'function' && isSuperAdmin()) {
-          boardHtml += '<button class="sort-btn" onclick="startPracticeReview(' + firstIdx + ')">\ud83d\udccb ' + t('Review All', '\u603b\u89c8\u5168\u90e8') + '</button>';
+          boardHtml += '<button class="sort-btn" onclick="(typeof startPracticeReview===\'function\'?startPracticeReview(' + firstIdx + '):_lazyLoad(\'practice\',function(){startPracticeReview(' + firstIdx + ')}))">\ud83d\udccb ' + t('Review All', '\u603b\u89c8\u5168\u90e8') + '</button>';
         }
         boardHtml += '</div>';
       }
