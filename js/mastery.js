@@ -782,6 +782,7 @@ function openDeck(idx) {
   if (isGuestLocked(idx)) { showGuestLockPrompt(); return; }
   currentLvl = idx;
   renderDeck(idx);
+  navPush('deck');
   showPanel('deck');
 }
 

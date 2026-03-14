@@ -1,5 +1,65 @@
 # Changelog
 
+## [5.21.0] - 2026-03-14 — UI 一致性审查 & 设计令牌体系
+
+### CSS 设计系统
+
+#### 设计令牌扩展
+- **圆角**: 新增 `--r-xs` (6px) / `--r-pill` (999px) / `--r-full` (50%)
+- **间距**: 新增 8 级间距比例 `--sp-1` (4px) 至 `--sp-10` (40px)
+- **阴影**: 新增 `--shadow-sm` / `--shadow-hover`，明暗主题各有优化值
+- **过渡**: 新增 `--t-fast` (0.15s) / `--t-base` (0.2s) / `--t-slow` (0.35s)
+- **遮罩**: 新增 `--overlay-blur` (8px) / `--overlay-bg`，统一 `.ov` 和 `.modal-overlay`
+- **卡片**: 新增 `--card-p-sm` (12px) / `--card-p-md` (16px) / `--card-p-lg` (24px)
+- 暗色主题同步新增 `--shadow-sm` / `--shadow-hover` / `--overlay-bg` 覆盖值
+
+#### Header 模式统一
+- 新增 `.panel-header` 共享基类，`.deck-header` 和 `.study-topbar` 作为别名
+- 统一 flex 布局 + gap + min-height，消除两套重复声明
+
+#### 折叠系统统一
+- `.board-body` / `.category-body` / `.unit-body` 共享 overflow/opacity/transition 规则
+- 过渡时间统一使用 `var(--t-slow)` 令牌
+
+#### 遮罩统一
+- `.ov` 和 `.modal-overlay` 统一使用 `var(--overlay-bg)` 和 `var(--overlay-blur)`
+- 移除暗色主题冗余的单独覆盖（由 token 覆盖自动处理）
+
+#### 新增组件
+- `.spinner` + `@keyframes spin` — 统一加载旋转器
+- `.empty-state` / `.empty-state-icon` / `.empty-state-text` — 统一空状态组件
+- `[role="button"]:focus-visible` — 通用键盘焦点环
+
+#### 按钮清理
+- `.hero-btn` 移除 3 个 `!important`，改用正常级联
+- hover 阴影改用 `var(--shadow-hover)` 令牌
+
+### JavaScript 改进
+
+#### 全局键盘无障碍
+- ui.js 新增全局 `role="button"` + `tabindex` keydown 委托（Enter/Space → click）
+- 覆盖所有现有和未来的可交互元素，标准 ARIA 模式
+- mastery.js 移除冗余的 per-class 键盘处理代码
+
+#### 空状态 helper
+- ui.js 新增 `_renderEmptyState(icon, text)` 统一空状态渲染函数
+
+#### 导航历史栈
+- ui.js 新增 `_navStack[]` / `navPush(id)` / `navBack()` 导航历史基础设施
+- `navTo()` 自动压栈，`openDeck()` / `openSection()` 手动压栈
+- mastery.js deck 返回按钮改用 `navBack()` 支持多级回退
+- 栈深限制 20 层，自动淘汰旧条目
+
+### 文件变更
+| 文件 | 修改 |
+|------|------|
+| css/style.css | 新增 14 个 token + panel-header + 折叠共享规则 + spinner + empty-state + focus-visible + overlay 统一 + hero-btn 清理 |
+| js/ui.js | 新增导航栈 (navPush/navBack) + 全局键盘 a11y + _renderEmptyState |
+| js/mastery.js | deck back 改用 navBack + openDeck 压栈 + 移除冗余键盘代码 |
+| js/syllabus.js | openSection 压栈 |
+| js/config.js | APP_VERSION → v5.21.0 |
+| CLAUDE.md | 版本号更新 |
+
 ## [5.20.0] - 2026-03-14 — UI/Auth 模块精细拆分 + 粒子性能
 
 ### 性能优化
