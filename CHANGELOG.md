@@ -1,5 +1,24 @@
 # Changelog
 
+## [5.28.1] - 2026-03-15 — perf: 登录后首屏从 14s 降至 ~3s
+
+### 性能修复
+
+#### afterLogin() 串行阻塞消除
+- **根因**: `afterLogin()` 中 `ensureBoardLoaded` → `loadVisibleBoardData` → `loadDbVocabLevels` 全部串行 `await`，且在 `showApp()` **之前**执行。在慢网络下每步 3-4 秒，用户看空白页 ~14 秒
+- **修复**: 只 await `ensureBoardLoaded`（加载 levels JSON，49KB），然后立即 `showApp()` 渲染首页
+- syllabus/KP 数据、DB vocab overrides、homework/teacher 模块全部改为**后台并行加载**
+- 数据到达后自动 `renderHome()` 刷新，用户先看到词汇卡片再逐步看到 section health
+
+#### selectBoard() 同步优化
+- `loadVisibleBoardData` 和 `loadAndInitTeacher` 改为后台执行，不阻塞 `showApp()`
+
+### 文件变更
+| 文件 | 修改 |
+|------|------|
+| js/auth.js | afterLogin() 重构：先 showApp 后台加载数据；selectBoard() 同步优化 |
+| js/config.js | APP_VERSION → v5.28.1 |
+
 ## [5.28.0] - 2026-03-15 — 间距系统补全 6px/10px 半步 token
 
 ### CSS 间距 token 补全

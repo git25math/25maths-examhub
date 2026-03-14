@@ -253,55 +253,57 @@ async function afterLogin() {
     }
   }
 
-  /* Ensure board JSON is loaded (may differ from localStorage if user changed board on another device) */
-  if (userBoard) {
-    try { await ensureBoardLoaded(userBoard); } catch(e) {}
-  }
-  /* Load syllabus data only for visible boards — await so renderHome sees section data */
-  if (typeof loadVisibleBoardData === 'function') {
-    try { await loadVisibleBoardData(); } catch(e) {}
-  }
-
-  /* Load DB vocab overrides */
-  if (sb && isLoggedIn()) {
-    try {
-      var dbLvls = await loadDbVocabLevels();
-      if (dbLvls.length > 0) {
-        var custom = getCustomLevels();
-        var baseLen = LEVELS.length - custom.length;
-        var base = LEVELS.slice(0, baseLen);
-        LEVELS = mergeVocabLevels(base, dbLvls).concat(custom);
-        invalidateCache();
-      }
-    } catch (e) { /* ignore */ }
-  }
-
-  try { localStorage.setItem('wmatch_login_ts', '' + Date.now()); } catch(e) {}
+  /* Subdomain board override */
   if (_hostBoard) {
-    /* Subdomain: force-lock board */
     if (_hostBoard === '25m' && userBoard && userBoard.indexOf('25m-') === 0) {
       /* keep specific year from metadata */
     } else {
       userBoard = _hostBoard;
     }
     try { localStorage.setItem('userBoard', userBoard); } catch(e) {}
-    try { await ensureBoardLoaded(userBoard); } catch(e) {}
-    showApp();
-    if (sb && isLoggedIn() && userClassId) loadHomeworkModule();
-    if (sb && isLoggedIn()) await loadAndInitTeacher();
-  } else if (!userBoard) {
-    showBoardSelection();
-  } else {
-    showApp();
-    /* Lazy-load homework module for students with a class */
-    if (sb && isLoggedIn() && userClassId) {
-      loadHomeworkModule();
-    }
-    /* Init teacher panel after app shell is visible */
-    if (sb && isLoggedIn()) {
-      await loadAndInitTeacher();
-    }
   }
+
+  if (!userBoard) {
+    showBoardSelection();
+    return;
+  }
+
+  /* CRITICAL PERF: Load levels first (fast, small JSON), then showApp immediately.
+     Syllabus/KP/vocab-overrides load in background and refresh home when ready. */
+  try { await ensureBoardLoaded(userBoard); } catch(e) {}
+
+  try { localStorage.setItem('wmatch_login_ts', '' + Date.now()); } catch(e) {}
+  showApp();
+
+  /* Background: load syllabus + KP data, then refresh home to show section health */
+  var _bgTasks = [];
+  if (typeof loadVisibleBoardData === 'function') {
+    _bgTasks.push(loadVisibleBoardData().then(function() {
+      /* Re-render home once syllabus data arrives */
+      if (appView === 'home' && typeof renderHome === 'function') renderHome();
+    }).catch(function() {}));
+  }
+
+  /* Background: load DB vocab overrides */
+  if (sb && isLoggedIn()) {
+    _bgTasks.push((async function() {
+      try {
+        var dbLvls = await loadDbVocabLevels();
+        if (dbLvls.length > 0) {
+          var custom = getCustomLevels();
+          var baseLen = LEVELS.length - custom.length;
+          var base = LEVELS.slice(0, baseLen);
+          LEVELS = mergeVocabLevels(base, dbLvls).concat(custom);
+          invalidateCache();
+          if (appView === 'home' && typeof renderHome === 'function') renderHome();
+        }
+      } catch (e) { /* ignore */ }
+    })());
+  }
+
+  /* Background: homework + teacher modules */
+  if (sb && isLoggedIn() && userClassId) loadHomeworkModule();
+  if (sb && isLoggedIn()) loadAndInitTeacher();
 }
 
 /* ═══ DYNAMIC TEACHER MODULE LOADING ═══ */
@@ -380,14 +382,16 @@ async function selectBoard(value) {
   try { await ensureBoardLoaded(value); } catch(e) {
     showToast(t('Failed to load vocabulary data', '词汇数据加载失败'));
   }
-  /* Load syllabus data for newly visible boards */
-  if (typeof loadVisibleBoardData === 'function') loadVisibleBoardData();
   hideBoardSelection();
   showApp();
-  /* Init teacher panel if applicable */
-  if (sb && isLoggedIn()) {
-    await loadAndInitTeacher();
+  /* Background: load syllabus data + refresh home when ready */
+  if (typeof loadVisibleBoardData === 'function') {
+    loadVisibleBoardData().then(function() {
+      if (appView === 'home' && typeof renderHome === 'function') renderHome();
+    }).catch(function() {});
   }
+  /* Background: teacher panel */
+  if (sb && isLoggedIn()) loadAndInitTeacher();
   syncToCloud();
 }
 
