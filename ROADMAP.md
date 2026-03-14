@@ -1,5 +1,10 @@
 # Development Roadmap
 
+## v5.26.0 — 圆角补全 + margin-top 令牌化 [DONE]
+- [x] border-radius 补全：10px→--r-sm (×21), 14px→--r (×21), 20px→--r-lg (×12)
+- [x] margin-top → --sp-* 令牌：4-20px 五档共 ~84 处
+- [x] 圆角系统 6 级 token 全覆盖（xs/sm/r/lg/pill/full）
+
 ## v5.25.0 — 间距系统全面令牌化 [DONE]
 - [x] gap 值 → --sp-* 令牌：~166 处（8px ×99, 12px ×30, 4px ×31, 16-24px ×6）
 - [x] margin-bottom → --sp-* 令牌：~130 处（4-20px 五档全覆盖）

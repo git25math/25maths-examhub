@@ -1,5 +1,29 @@
 # Changelog
 
+## [5.26.0] - 2026-03-14 — 圆角补全 + margin-top 令牌化
+
+### CSS 令牌化
+
+#### border-radius 补全（~54 处）
+- `border-radius: 10px` → `var(--r-sm)` — 21 处
+- `border-radius: 14px` → `var(--r)` — 21 处
+- `border-radius: 20px` → `var(--r-lg)` — 12 处
+- 至此所有标准圆角值均由 6 级 token 管控（--r-xs/--r-sm/--r/--r-lg/--r-pill/--r-full）
+
+#### margin-top → --sp-* 令牌（~84 处）
+- `margin-top: 4px` → `var(--sp-1)` — 27 处
+- `margin-top: 8px` → `var(--sp-2)` — 30 处
+- `margin-top: 12px` → `var(--sp-3)` — 11 处
+- `margin-top: 16px` → `var(--sp-4)` — 12 处
+- `margin-top: 20px` → `var(--sp-5)` — 4 处
+
+### 文件变更
+| 文件 | 修改 |
+|------|------|
+| css/style.css | ~138 处 border-radius + margin-top → token |
+| js/config.js | APP_VERSION → v5.26.0 |
+| CLAUDE.md | 版本号更新 |
+
 ## [5.25.0] - 2026-03-14 — 间距系统全面令牌化
 
 ### CSS 间距令牌化
