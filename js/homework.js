@@ -590,15 +590,15 @@ async function renderHwProgress(hwId, classId) {
 
   try {
     var aRes = await sb.rpc('get_assignment', { p_id: hwId });
-    if (aRes.error) { ct.innerHTML = '<div class="admin-empty">Load failed</div>'; return; }
+    if (aRes.error) { ct.innerHTML = _renderEmptyState('', 'Load failed'); return; }
     var hw = (aRes.data && aRes.data.length > 0) ? aRes.data[0] : null;
-    if (!hw) { ct.innerHTML = '<div class="admin-empty">Not found</div>'; return; }
+    if (!hw) { ct.innerHTML = _renderEmptyState('', 'Not found'); return; }
 
     var activity = await loadActivityData(true);
     var students = activity.filter(function(s) { return s.class_id === classId; });
 
     var rRes = await sb.from('assignment_results').select('*').eq('assignment_id', hwId);
-    if (rRes.error) { ct.innerHTML = '<div class="admin-empty">Load failed</div>'; return; }
+    if (rRes.error) { ct.innerHTML = _renderEmptyState('', 'Load failed'); return; }
     var results = rRes.data || [];
     var resultMap = {};
     results.forEach(function(r) { resultMap[r.user_id] = r; });
@@ -711,7 +711,7 @@ async function renderHwProgress(hwId, classId) {
     html += '</tbody></table></div>';
     ct.innerHTML = html;
   } catch (e) {
-    ct.innerHTML = '<div class="admin-empty">' + e.message + '</div>';
+    ct.innerHTML = _renderEmptyState('', escapeHtml(e.message));
   }
 }
 
@@ -1007,9 +1007,9 @@ async function startHwTest(hwId) {
 
   try {
     var aRes = await sb.rpc('get_assignment', { p_id: hwId });
-    if (aRes.error) { el.innerHTML = '<div class="admin-empty">Load failed</div>'; return; }
+    if (aRes.error) { el.innerHTML = _renderEmptyState('', 'Load failed'); return; }
     var hw = (aRes.data && aRes.data.length > 0) ? aRes.data[0] : null;
-    if (!hw) { el.innerHTML = '<div class="admin-empty">Not found</div>'; return; }
+    if (!hw) { el.innerHTML = _renderEmptyState('', 'Not found'); return; }
 
     var words = [];
 
@@ -1032,7 +1032,7 @@ async function startHwTest(hwId) {
     }
 
     if (words.length === 0) {
-      el.innerHTML = '<div class="admin-empty">' + t('No words found', '未找到词汇') + '</div>';
+      el.innerHTML = _renderEmptyState('', t('No words found', '未找到词汇'));
       return;
     }
 
@@ -1051,7 +1051,7 @@ async function startHwTest(hwId) {
 
     renderHwQuestion();
   } catch (e) {
-    el.innerHTML = '<div class="admin-empty">' + e.message + '</div>';
+    el.innerHTML = _renderEmptyState('', escapeHtml(e.message));
   }
 }
 
@@ -1264,7 +1264,7 @@ async function startHwPractice(hwId) {
   try {
     var aRes = await sb.rpc('get_assignment', { p_id: hwId });
     var hw = (aRes.data && aRes.data.length > 0) ? aRes.data[0] : null;
-    if (!hw) { el.innerHTML = '<div class="admin-empty">Not found</div>'; return; }
+    if (!hw) { el.innerHTML = _renderEmptyState('', 'Not found'); return; }
 
     var config = hw.custom_vocabulary;
     if (!config || config._type !== 'practice') {
@@ -1291,7 +1291,7 @@ async function startHwPractice(hwId) {
     allQ = shuffle(allQ).slice(0, config.count);
 
     if (allQ.length === 0) {
-      el.innerHTML = '<div class="admin-empty">' + t('No questions found for selected sections', '\u6240\u9009\u77e5\u8bc6\u70b9\u6682\u65e0\u9898\u76ee') + '</div>';
+      el.innerHTML = _renderEmptyState('', t('No questions found for selected sections', '所选知识点暂无题目'));
       return;
     }
 
@@ -1308,7 +1308,7 @@ async function startHwPractice(hwId) {
 
     renderHwPracticeCard();
   } catch (e) {
-    el.innerHTML = '<div class="admin-empty">' + escapeHtml(e.message) + '</div>';
+    el.innerHTML = _renderEmptyState('', escapeHtml(e.message));
   }
 }
 

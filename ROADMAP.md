@@ -1,5 +1,11 @@
 # Development Roadmap
 
+## v5.22.0 — 设计令牌批量迁移 + 空状态统一 [DONE]
+- [x] border-radius 令牌化：50% → --r-full (×26), 999px → --r-pill (×7), 6px → --r-xs (×17)
+- [x] 过渡时间令牌化：0.15s → --t-fast (×48), 0.2s → --t-base (×32), 0.35s → --t-slow (×3)
+- [x] 空状态统一：admin.js (×8) + homework.js (×11) + syllabus-views.js (×3) + vocab-admin.js (×2) → _renderEmptyState
+- [x] XSS 修复：homework.js 2 处 e.message 添加 escapeHtml
+
 ## v5.21.0 — UI 一致性审查 & 设计令牌体系 [DONE]
 - [x] CSS token 扩展：圆角/间距/阴影/过渡/遮罩/卡片 14 个新 token
 - [x] panel-header 共享基类统一 deck-header / study-topbar

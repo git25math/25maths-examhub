@@ -2307,7 +2307,7 @@ function renderMistakeBook() {
   if (_mistakeTab === 'reforget') {
     var rfItems = _collectAllReforgetItems();
     if (rfItems.length === 0) {
-      html += '<div class="mistake-empty">\ud83c\udf89 ' + t('No re-forgotten items!', '\u6ca1\u6709\u91cd\u5237\u9519\u9898\uff01') + '</div>';
+      html += _renderEmptyState('\ud83c\udf89', t('No re-forgotten items!', '\u6ca1\u6709\u91cd\u5237\u9519\u9898\uff01'));
     } else {
       /* Group by rc descending */
       var maxRc = 0;
@@ -2376,7 +2376,7 @@ function renderMistakeBook() {
         html += '</div>';
         html += '</div>';
       } else if (_mistakeTab === 'vocab') {
-        html += '<div class="mistake-empty">\ud83c\udf89 ' + t('No vocabulary mistakes!', '\u6ca1\u6709\u8bcd\u6c47\u9519\u9898\uff01') + '</div>';
+        html += _renderEmptyState('\ud83c\udf89', t('No vocabulary mistakes!', '\u6ca1\u6709\u8bcd\u6c47\u9519\u9898\uff01'));
       }
     }
 
@@ -2415,7 +2415,7 @@ function renderMistakeBook() {
         html += '</div>';
         html += '</div>';
       } else if (_mistakeTab === 'practice') {
-        html += '<div class="mistake-empty">\ud83c\udf89 ' + t('No practice mistakes!', '\u6ca1\u6709\u7ec3\u4e60\u9519\u9898\uff01') + '</div>';
+        html += _renderEmptyState('\ud83c\udf89', t('No practice mistakes!', '\u6ca1\u6709\u7ec3\u4e60\u9519\u9898\uff01'));
       }
     }
 

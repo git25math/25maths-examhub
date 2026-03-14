@@ -166,7 +166,7 @@ async function renderClassList() {
   }
 
   if (classes.length === 0) {
-    html += '<div class="admin-empty">' + t('No classes yet. Create your first class!', '还没有班级，创建第一个班级吧！') + '</div>';
+    html += _renderEmptyState('', t('No classes yet. Create your first class!', '还没有班级，创建第一个班级吧！'));
     ct.innerHTML = html;
     return;
   }
@@ -212,7 +212,7 @@ async function renderClassList() {
 
   ct.innerHTML = html;
   } catch (e) {
-    ct.innerHTML = '<div class="admin-empty">' + escapeHtml(e.message) + '</div>';
+    ct.innerHTML = _renderEmptyState('', escapeHtml(e.message));
   }
 }
 
@@ -548,7 +548,7 @@ async function renderClassDetail(classId) {
   /* Load class info */
   var cRes = await sb.from('kw_classes').select('id, name, grade').eq('id', classId).single();
   var cls = cRes.data;
-  if (!cls) { ct.innerHTML = '<div class="admin-empty">Not found</div>'; return; }
+  if (!cls) { ct.innerHTML = _renderEmptyState('', 'Not found'); return; }
 
   var gradeOpt = BOARD_OPTIONS.find(function(o) { return o.value === cls.grade; });
   var gradeLabel = gradeOpt ? t(gradeOpt.name, gradeOpt.nameZh) : cls.grade;
@@ -565,7 +565,7 @@ async function renderClassDetail(classId) {
     '</div>';
 
   if (students.length === 0) {
-    html += '<div class="admin-empty">' + t('No students yet. Add students to this class!', '还没有学生，给班级添加学生吧！') + '</div>';
+    html += _renderEmptyState('', t('No students yet. Add students to this class!', '还没有学生，给班级添加学生吧！'));
     ct.innerHTML = html;
     return;
   }
@@ -688,7 +688,7 @@ async function renderGradeOverview() {
   var grades = Object.keys(gradeMap).sort();
 
   if (grades.length === 0) {
-    ct.innerHTML = '<div class="admin-empty">' + t('No data yet', '暂无数据') + '</div>';
+    ct.innerHTML = _renderEmptyState('', t('No data yet', '暂无数据'));
     return;
   }
 
@@ -895,7 +895,7 @@ async function renderUserManagement() {
       _umTotal = res.total || 0;
       _umClasses = res.classes || [];
     } catch (e) {
-      ct.innerHTML = '<div class="admin-empty">' + escapeHtml(e.message) + '</div>';
+      ct.innerHTML = _renderEmptyState('', escapeHtml(e.message));
       return;
     }
   }
@@ -977,7 +977,7 @@ function _umRenderTable() {
 
   /* Table */
   if (filtered.length === 0) {
-    html += '<div class="admin-empty">' + t('No matching users', '无匹配用户') + '</div>';
+    html += _renderEmptyState('', t('No matching users', '无匹配用户'));
   } else {
     var cols = [
       { key: 'email', en: 'Email', zh: '邮箱' },
@@ -1419,7 +1419,7 @@ async function renderAllUsers() {
         .order('updated_at', { ascending: false });
       _auData = res.data || [];
     } catch (e) {
-      ct.innerHTML = '<div class="admin-empty">' + escapeHtml(e.message) + '</div>';
+      ct.innerHTML = _renderEmptyState('', escapeHtml(e.message));
       return;
     }
   }
@@ -1480,7 +1480,7 @@ async function renderAllUsers() {
 
   /* Table */
   if (filtered.length === 0) {
-    html += '<div class="admin-empty">' + t('No matching users', '无匹配用户') + '</div>';
+    html += _renderEmptyState('', t('No matching users', '无匹配用户'));
   } else {
     var cols = [
       { key: 'nickname', en: 'Name', zh: '姓名' },

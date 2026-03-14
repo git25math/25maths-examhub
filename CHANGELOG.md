@@ -1,5 +1,47 @@
 # Changelog
 
+## [5.22.0] - 2026-03-14 — 设计令牌批量迁移 + 空状态统一
+
+### CSS 令牌批量替换
+
+#### border-radius 令牌化
+- `border-radius: 50%` → `var(--r-full)` — 26 处圆形元素（头像、圆点、圆环等）
+- `border-radius: 999px` → `var(--r-pill)` — 7 处药丸形（进度条、标签、芯片）
+- `border-radius: 6px` → `var(--r-xs)` — 17 处小圆角（按钮、输入框、标签）
+
+#### 过渡时间令牌化
+- `0.15s` → `var(--t-fast)` — 48 处快速过渡（hover、active 状态）
+- `0.2s` → `var(--t-base)` — 32 处标准过渡（面板切换、展开）
+- `0.35s` → `var(--t-slow)` — 3 处慢速过渡/动画（popIn、slotIn、折叠）
+- 保留 `0.25s`（无精确 token）和 `0.3s`（与 --t-slow 差异明显）
+
+### JavaScript 空状态统一
+
+#### admin.js（8 处）
+- 所有 `<div class="admin-empty">` 迁移至 `_renderEmptyState()` helper
+- 保留 `admin-loading` 样式（加载状态独立于空状态）
+
+#### homework.js（11 处）
+- 错误/未找到/空列表全部迁移至 `_renderEmptyState()`
+- 修复 2 处缺失的 `escapeHtml()` 包裹（e.message 直接拼接 → escapeHtml）
+
+#### syllabus-views.js（3 处）
+- `mistake-empty` 🎉 类型迁移至 `_renderEmptyState('🎉', text)`
+
+#### vocab-admin.js（2 处）
+- 反馈列表空状态 + 错误状态迁移
+
+### 文件变更
+| 文件 | 修改 |
+|------|------|
+| css/style.css | 130+ 处 hardcoded 值替换为 token（border-radius × 50, transition × 83） |
+| js/admin.js | 8 处 admin-empty → _renderEmptyState |
+| js/homework.js | 11 处 admin-empty → _renderEmptyState + 2 处 XSS 修复 |
+| js/syllabus-views.js | 3 处 mistake-empty → _renderEmptyState |
+| js/vocab-admin.js | 2 处 admin-empty → _renderEmptyState |
+| js/config.js | APP_VERSION → v5.22.0 |
+| CLAUDE.md | 版本号更新 |
+
 ## [5.21.0] - 2026-03-14 — UI 一致性审查 & 设计令牌体系
 
 ### CSS 设计系统

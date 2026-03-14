@@ -286,7 +286,7 @@ async function renderFeedbackList() {
     var items = res.data || [];
 
     if (items.length === 0) {
-      ct.innerHTML = '<div class="admin-empty">' + t('No feedback yet', '暂无反馈') + '</div>';
+      ct.innerHTML = _renderEmptyState('', t('No feedback yet', '暂无反馈'));
       return;
     }
 
@@ -304,7 +304,7 @@ async function renderFeedbackList() {
 
     ct.innerHTML = html;
   } catch (e) {
-    ct.innerHTML = '<div class="admin-empty">' + escapeHtml(e.message) + '</div>';
+    ct.innerHTML = _renderEmptyState('', escapeHtml(e.message));
   }
 }
 
