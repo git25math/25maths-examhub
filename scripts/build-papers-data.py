@@ -33,7 +33,7 @@ tabular_to_html = _ct.convert_tex
 IGCSE_ROOT = "/Users/zhuxingzhe/Project/ExamBoard/CIE/IGCSE_v2"
 CATALOG_FILE = os.path.join(IGCSE_ROOT, "TikzVault/catalog.json")
 PASTPAPERS_ROOT = os.path.join(IGCSE_ROOT, "PastPapers")
-ALGEBRA_TAGGED = os.path.join(IGCSE_ROOT, "analysis/data/algebra_questions_tagged.json")
+ALGEBRA_TAGGED = os.path.join(IGCSE_ROOT, "analysis/topics/algebra/data/questions_tagged.json")
 NUMBER_TAGGED = os.path.join(IGCSE_ROOT, "analysis/topics/number/data/questions_tagged.json")
 
 # All tagged data sources: (label, path)
@@ -70,49 +70,53 @@ TOPIC_CAT_MAP = {
     "Statistics": "statistics",
 }
 
-# Section → human-readable topic name
+# Section → human-readable topic name (must match syllabus-cie.json / config subtopics)
 SECTION_TOPICS = {
     # Chapter 1: Number
-    "1.1": "Types of number", "1.2": "Squares, cubes and roots",
-    "1.3": "Directed numbers", "1.4": "Fractions, decimals and percentages",
-    "1.5": "Ordering", "1.6": "Standard form", "1.7": "Estimation and limits",
-    "1.8": "Ratio, rate and proportion", "1.9": "Percentages",
-    "1.10": "Time", "1.11": "Money and finance", "1.12": "Set notation",
-    "1.13": "Electronic calculators", "1.14": "Surds", "1.15": "Speed, distance, time",
-    "1.16": "Upper and lower bounds", "1.17": "Bounds and calculations",
-    "1.18": "Surds extended",
+    "1.1": "Types of number", "1.2": "Sets",
+    "1.3": "Powers and roots", "1.4": "Fractions, decimals, percentages",
+    "1.5": "Ordering", "1.6": "The four operations", "1.7": "Indices I",
+    "1.8": "Standard form", "1.9": "Estimation",
+    "1.10": "Limits of accuracy", "1.11": "Ratio and proportion", "1.12": "Rates",
+    "1.13": "Percentages", "1.14": "Using a calculator", "1.15": "Time",
+    "1.16": "Money", "1.17": "Exponential growth and decay",
+    "1.18": "Surds",
     # Chapter 2: Algebra
-    "2.1": "Algebra basics", "2.2": "Rearranging formulae",
-    "2.3": "Indices", "2.4": "Algebraic fractions",
+    "2.1": "Introduction to algebra", "2.2": "Algebraic manipulation",
+    "2.3": "Algebraic fractions", "2.4": "Indices II",
     "2.5": "Equations", "2.6": "Inequalities",
     "2.7": "Sequences", "2.8": "Proportion",
     "2.9": "Graphs in practical situations", "2.10": "Graphs of functions",
-    "2.11": "Differentiation", "2.12": "Functions notation", "2.13": "Functions",
+    "2.11": "Sketching curves", "2.12": "Differentiation", "2.13": "Functions",
     # Chapter 3: Coordinate geometry
-    "3.1": "Coordinates", "3.2": "Gradient", "3.3": "Length and midpoint",
-    "3.4": "Equation of a line", "3.5": "Parallel and perpendicular lines",
-    "3.6": "Position vectors", "3.7": "Coordinate geometry extended",
+    "3.1": "Coordinates", "3.2": "Drawing linear graphs",
+    "3.3": "Gradient of linear graphs", "3.4": "Length and midpoint",
+    "3.5": "Equations of linear graphs", "3.6": "Parallel lines",
+    "3.7": "Perpendicular lines",
     # Chapter 4: Geometry
-    "4.1": "Angles", "4.2": "Polygons", "4.3": "Symmetry",
-    "4.4": "Circle theorems", "4.5": "Similarity and congruence",
-    "4.6": "Constructions", "4.7": "Nets and 3D shapes", "4.8": "Loci",
+    "4.1": "Geometrical terms", "4.2": "Geometrical constructions",
+    "4.3": "Scale drawings and bearings", "4.4": "Similarity and congruence",
+    "4.5": "Symmetry", "4.6": "Angles",
+    "4.7": "Circle theorems", "4.8": "Constructions and loci",
     # Chapter 5: Mensuration
-    "5.1": "Perimeter and area", "5.2": "Circles", "5.3": "Surface area",
-    "5.4": "Volume", "5.5": "Compound shapes",
+    "5.1": "Units of measure", "5.2": "Area and perimeter",
+    "5.3": "Circles, arcs and sectors", "5.4": "Surface area and volume",
+    "5.5": "Compound shapes",
     # Chapter 6: Trigonometry
-    "6.1": "Right-angled triangles", "6.2": "Trig ratios",
-    "6.3": "Sine and cosine rule", "6.4": "Area of triangle",
-    "6.5": "3D trigonometry", "6.6": "Trig graphs",
-    # Chapter 7: Transformations
-    "7.1": "Translation", "7.2": "Reflection",
-    "7.3": "Rotation", "7.4": "Enlargement",
+    "6.1": "Pythagoras' theorem", "6.2": "Right-angled triangles",
+    "6.3": "Exact trigonometric values", "6.4": "Trigonometric functions",
+    "6.5": "Non-right-angled triangles", "6.6": "3D trigonometry",
+    # Chapter 7: Transformations and vectors
+    "7.1": "Transformations", "7.2": "Vectors in 2D",
+    "7.3": "Magnitude of a vector", "7.4": "Vector geometry",
     # Chapter 8: Probability
-    "8.1": "Basic probability", "8.2": "Combined events",
-    "8.3": "Tree diagrams", "8.4": "Conditional probability",
+    "8.1": "Introduction to probability", "8.2": "Relative and expected frequencies",
+    "8.3": "Combined events", "8.4": "Conditional probability",
     # Chapter 9: Statistics
-    "9.1": "Data collection", "9.2": "Averages", "9.3": "Frequency tables",
-    "9.4": "Charts and graphs", "9.5": "Scatter diagrams",
-    "9.6": "Cumulative frequency", "9.7": "Histograms",
+    "9.1": "Classifying and tabulating data", "9.2": "Interpreting statistical data",
+    "9.3": "Averages and measures of spread", "9.4": "Statistical charts and diagrams",
+    "9.5": "Scatter diagrams and correlation", "9.6": "Cumulative frequency",
+    "9.7": "Histograms",
 }
 
 # Chapter number → broad cat

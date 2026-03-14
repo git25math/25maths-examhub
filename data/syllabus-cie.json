@@ -26,7 +26,7 @@
         },
         {
           "id": "1.2",
-          "title": "Sets and Venn diagrams",
+          "title": "Sets",
           "title_zh": "集合与韦恩图",
           "slug": "cie-1-2",
           "tier": "both",
@@ -57,24 +57,9 @@
         },
         {
           "id": "1.4",
-          "title": "Directed numbers",
-          "title_zh": "有向数",
+          "title": "Fractions, decimals, percentages",
+          "title_zh": "分数、小数、百分数互转",
           "slug": "cie-1-4",
-          "tier": "both",
-          "core_content": "Use directed numbers in practical situations. Order directed numbers. Apply the four operations to directed numbers.",
-          "extended_content": "",
-          "vocabSlugs": [
-            "num-ops"
-          ],
-          "questionTopics": [
-            "Ordering"
-          ]
-        },
-        {
-          "id": "1.5",
-          "title": "Fractions, decimals and percentages",
-          "title_zh": "分数、小数与百分数",
-          "slug": "cie-1-5",
           "tier": "both",
           "core_content": "Use the language and notation of fractions, decimals and percentages including proper fractions, improper fractions, mixed numbers, decimals, percentages. Recognise equivalences and convert between these forms. Order fractions and decimals.",
           "extended_content": "Convert recurring decimals to fractions and vice versa.",
@@ -86,12 +71,27 @@
           ]
         },
         {
+          "id": "1.5",
+          "title": "Ordering",
+          "title_zh": "排序",
+          "slug": "cie-1-5",
+          "tier": "both",
+          "core_content": "Order quantities by magnitude and demonstrate familiarity with the symbols =, ≠, <, >, ≤, ≥. Understand and use directed numbers in practical situations.",
+          "extended_content": "",
+          "vocabSlugs": [
+            "num-ops"
+          ],
+          "questionTopics": [
+            "Ordering"
+          ]
+        },
+        {
           "id": "1.6",
-          "title": "Order of operations",
-          "title_zh": "运算顺序",
+          "title": "The four operations",
+          "title_zh": "四则运算",
           "slug": "cie-1-6",
           "tier": "both",
-          "core_content": "Use the standard order of operations (BIDMAS/BODMAS) including correct use of brackets. Understand that multiplication and division have equal priority and are performed left to right, as do addition and subtraction.",
+          "core_content": "Use the four operations for calculations with integers, fractions and decimals, including correct ordering of operations (BIDMAS/BODMAS) and use of brackets.",
           "extended_content": "",
           "vocabSlugs": [
             "num-ops"
@@ -102,16 +102,18 @@
         },
         {
           "id": "1.7",
-          "title": "Bounds and rounding",
-          "title_zh": "取整与近似",
+          "title": "Indices I",
+          "title_zh": "指数法则I",
           "slug": "cie-1-7",
           "tier": "both",
-          "core_content": "Round values to a specified degree of accuracy including decimal places and significant figures. Round answers to a reasonable degree of accuracy in the context of a given problem.",
-          "extended_content": "Give upper and lower bounds for data given to a specified accuracy.",
+          "core_content": "Understand and use index notation. Apply index laws for multiplication, division, powers of powers. Use zero and negative indices.",
+          "extended_content": "Apply the rules of indices to simplify algebraic expressions involving positive, negative, zero and fractional indices.",
           "vocabSlugs": [
-            "num-accuracy"
+            "num-powers"
           ],
-          "questionTopics": []
+          "questionTopics": [
+            "Indices I"
+          ]
         },
         {
           "id": "1.8",
@@ -130,26 +132,11 @@
         },
         {
           "id": "1.9",
-          "title": "Four operations",
-          "title_zh": "四则运算",
-          "slug": "cie-1-9",
-          "tier": "both",
-          "core_content": "Use the four operations for calculations with integers, fractions and decimals, including correct ordering of operations and use of brackets.",
-          "extended_content": "",
-          "vocabSlugs": [
-            "num-ops"
-          ],
-          "questionTopics": [
-            "Four Operations"
-          ]
-        },
-        {
-          "id": "1.10",
           "title": "Estimation",
           "title_zh": "估算",
-          "slug": "cie-1-10",
+          "slug": "cie-1-9",
           "tier": "both",
-          "core_content": "Make estimates of numbers, quantities and lengths. Estimate the results of calculations. Round answers to a reasonable degree of accuracy in the context of a given problem.",
+          "core_content": "Round values to a specified degree of accuracy including decimal places and significant figures. Make estimates of numbers, quantities and lengths. Round answers to a reasonable degree of accuracy in the context of a given problem.",
           "extended_content": "",
           "vocabSlugs": [
             "num-accuracy"
@@ -159,10 +146,10 @@
           ]
         },
         {
-          "id": "1.11",
+          "id": "1.10",
           "title": "Limits of accuracy",
-          "title_zh": "精确度极限",
-          "slug": "cie-1-11",
+          "title_zh": "精度范围",
+          "slug": "cie-1-10",
           "tier": "extended",
           "core_content": "",
           "extended_content": "Give upper and lower bounds for data given to a specified accuracy. Find upper and lower bounds of the results of calculations involving quantities given to specified accuracies.",
@@ -174,10 +161,10 @@
           ]
         },
         {
-          "id": "1.12",
+          "id": "1.11",
           "title": "Ratio and proportion",
           "title_zh": "比与比例",
-          "slug": "cie-1-12",
+          "slug": "cie-1-11",
           "tier": "both",
           "core_content": "Use ratio notation, including reduction to simplest form. Divide a quantity in a given ratio. Use proportion to solve problems. Calculate average speed, distance, time. Use common measures of rate.",
           "extended_content": "Increase and decrease a quantity by a given ratio.",
@@ -186,6 +173,21 @@
           ],
           "questionTopics": [
             "Ratio And Proportion"
+          ]
+        },
+        {
+          "id": "1.12",
+          "title": "Rates",
+          "title_zh": "速率",
+          "slug": "cie-1-12",
+          "tier": "both",
+          "core_content": "Use common measures of rate. Calculate average speed, distance and time.",
+          "extended_content": "Use compound measures such as speed (km/h, m/s), density (g/cm³, kg/m³), pressure (N/m²) and population density in solving problems.",
+          "vocabSlugs": [
+            "num-rates"
+          ],
+          "questionTopics": [
+            "Rates"
           ]
         },
         {
@@ -218,24 +220,23 @@
         },
         {
           "id": "1.15",
-          "title": "Time, speed and rates",
-          "title_zh": "时间、速度与率",
+          "title": "Time",
+          "title_zh": "时间",
           "slug": "cie-1-15",
           "tier": "both",
-          "core_content": "Calculate times in terms of the 24-hour and 12-hour clock. Read clocks, dials and timetables. Calculate average speed, distance and time. Use common measures of rate including cost per unit.",
-          "extended_content": "Use compound measures such as speed, density, pressure and population density in solving problems.",
+          "core_content": "Calculate times in terms of the 24-hour and 12-hour clock. Read clocks, dials and timetables. Calculate time intervals, time zones and duration.",
+          "extended_content": "",
           "vocabSlugs": [
             "num-rates"
           ],
           "questionTopics": [
-            "Time",
-            "Rates"
+            "Time"
           ]
         },
         {
           "id": "1.16",
-          "title": "Money and finance",
-          "title_zh": "货币与金融",
+          "title": "Money",
+          "title_zh": "货币",
           "slug": "cie-1-16",
           "tier": "both",
           "core_content": "Solve problems involving money and convert from one currency to another. Use given data to solve problems on personal and household finance involving earnings, simple and compound interest, discount, profit and loss.",
@@ -287,8 +288,8 @@
       "sections": [
         {
           "id": "2.1",
-          "title": "Algebraic notation and substitution",
-          "title_zh": "代数表示与代入",
+          "title": "Introduction to algebra",
+          "title_zh": "代数入门",
           "slug": "cie-2-1",
           "tier": "both",
           "core_content": "Use letters to express generalised numbers and express basic arithmetic processes algebraically. Substitute numbers for words and letters in formulae and expressions. Understand and use the concepts of expression, equation, formula, identity, term, variable, constant, coefficient.",
@@ -302,24 +303,11 @@
         },
         {
           "id": "2.2",
-          "title": "Rearranging formulae",
-          "title_zh": "公式变换",
-          "slug": "cie-2-2",
-          "tier": "both",
-          "core_content": "Rearrange simple formulae. Change the subject of a formula.",
-          "extended_content": "Rearrange formulae where the subject appears in more than one term, or where a power of the subject appears.",
-          "vocabSlugs": [
-            "alg-manip"
-          ],
-          "questionTopics": []
-        },
-        {
-          "id": "2.3",
           "title": "Algebraic manipulation",
           "title_zh": "代数运算",
-          "slug": "cie-2-3",
+          "slug": "cie-2-2",
           "tier": "both",
-          "core_content": "Collect like terms. Expand products of algebraic expressions. Factorise by extracting common factors. Factorise expressions of the form $ax + bx + kay + kby$. Expand the product of two linear expressions.",
+          "core_content": "Collect like terms. Expand products of algebraic expressions. Factorise by extracting common factors. Factorise expressions of the form $ax + bx + kay + kby$. Expand the product of two linear expressions. Rearrange simple formulae. Change the subject of a formula.",
           "extended_content": "Factorise expressions of the form $a^2x^2 - b^2y^2$ (difference of squares). Complete the square for expressions in the form $x^2 + bx + c$. Factorise quadratic expressions of the form $ax^2 + bx + c$.",
           "vocabSlugs": [
             "alg-manip"
@@ -329,10 +317,10 @@
           ]
         },
         {
-          "id": "2.4",
+          "id": "2.3",
           "title": "Algebraic fractions",
           "title_zh": "代数分式",
-          "slug": "cie-2-4",
+          "slug": "cie-2-3",
           "tier": "extended",
           "core_content": "",
           "extended_content": "Manipulate algebraic fractions: add, subtract, multiply and divide algebraic fractions. Simplify algebraic fractions. Factorise and simplify rational expressions.",
@@ -341,6 +329,21 @@
           ],
           "questionTopics": [
             "Algebraic Fractions"
+          ]
+        },
+        {
+          "id": "2.4",
+          "title": "Indices II",
+          "title_zh": "指数法则II",
+          "slug": "cie-2-4",
+          "tier": "both",
+          "core_content": "Apply index laws to algebraic expressions. Simplify expressions involving positive, negative and zero indices.",
+          "extended_content": "Apply fractional indices to algebraic expressions. Use the rules of indices with algebraic terms.",
+          "vocabSlugs": [
+            "alg-indices"
+          ],
+          "questionTopics": [
+            "Indices II"
           ]
         },
         {
@@ -390,7 +393,7 @@
         },
         {
           "id": "2.8",
-          "title": "Direct and inverse proportion",
+          "title": "Proportion",
           "title_zh": "正反比例",
           "slug": "cie-2-8",
           "tier": "extended",

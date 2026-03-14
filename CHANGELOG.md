@@ -1,5 +1,37 @@
 # Changelog
 
+## [5.14.1] - 2026-03-14 — CIE 0580 数据完整性修复
+
+### 数据修复
+
+#### Section 标签全覆盖 (326→0 未标记)
+- 新增 `classify_number()` 规则分类器（18 个 section：1.1→1.18）
+- 新增 `classify_algebra()` 规则分类器（13 个 section：2.1→2.13）
+- 全量重标 Number 1,886 题 + Algebra 803 题
+- 4,107 道真题全部获得 section 标签（覆盖率 92%→100%）
+
+#### SECTION_TOPICS 映射修正
+- 修正 build-papers-data.py 中 72 个 section→topic 名称映射
+- 对齐官方 CIE 0580 2025-2027 考纲编号（C1.x/E1.x/C2.x/E2.x）
+
+#### syllabus-cie.json 考纲对齐
+- 重新排列 Chapter 1（Number）和 Chapter 2（Algebra）section 编号
+- 修正 16 处 section ID→topic 名称错位
+- 所有 72 个 section 现与官方考纲编号完全一致
+
+#### Answer 元数据富化
+- 运行 enrich-answers-cie.py，1,926 道题获得 answer 元数据
+- 1,831 个 parts 获得 prefix/suffix/type 信息
+
+### 文件变更
+| 文件 | 修改 |
+|------|------|
+| CIE/analysis/scripts/tag_subtopics_auto.py | +classify_number +classify_algebra, CLASSIFIERS 扩展为 9 个 |
+| scripts/build-papers-data.py | SECTION_TOPICS 修正 72 项，ALGEBRA_TAGGED 路径更新 |
+| data/syllabus-cie.json | Ch1+Ch2 section 重排对齐考纲 |
+| data/papers-cie.json | 重建：4,107 题全标记 + answer 富化 |
+| data/papers-cie/*.json | 重新拆分 228 份试卷 |
+
 ## [5.14.0] - 2026-03-14 — JS 懒加载优化
 
 ### 性能优化
