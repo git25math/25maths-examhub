@@ -33,6 +33,9 @@ npx esbuild js/homework.js --minify --outfile=js/homework.min.js
 cat js/admin.js js/vocab-admin.js js/data-admin.js | \
     npx esbuild --loader=js --minify > js/admin.bundle.min.js
 
+# Board guides (lazy-loaded on board panel visit)
+npx esbuild js/board-guides.js --minify --outfile=js/board-guides.min.js
+
 # CSS minify
 npx esbuild css/style.css --minify --outfile=css/style.min.css
 
