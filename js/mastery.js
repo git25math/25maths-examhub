@@ -352,14 +352,7 @@ function _initDiscDelegation() {
     }
   }
   document.addEventListener('click', _handleDiscDismiss);
-  /* Keyboard support: Enter/Space on discover-close and recap-close */
-  document.addEventListener('keydown', function(e) {
-    if (e.key !== 'Enter' && e.key !== ' ') return;
-    var dismiss = e.target.closest('[data-disc-dismiss]');
-    var recapClose = e.target.closest('.return-recap-close');
-    if (dismiss || recapClose) { e.preventDefault(); e.target.click(); return; }
-    if (e.target.classList.contains('category-header') || e.target.classList.contains('unit-header')) { e.preventDefault(); e.target.click(); }
-  });
+  /* Keyboard a11y (Enter/Space) now handled by global role="button" delegation in ui.js */
 }
 
 /* Zone 1: Hero Action Card */
@@ -1213,7 +1206,7 @@ function _initDeckActionDelegation() {
     } else if (action === 'back') {
       var backType = btn.getAttribute('data-back');
       if (backType === 'home') {
-        navTo('home');
+        navBack();
       } else if (backType === 'section') {
         var secId = btn.getAttribute('data-sec-id');
         var secBoard = btn.getAttribute('data-sec-board');

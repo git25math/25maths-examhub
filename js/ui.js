@@ -7,6 +7,26 @@ var _lastShareOpts = null;
 /* ═══ XSS ESCAPE HELPER ═══ */
 function escapeHtml(s) { var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
 
+/* ═══ NAVIGATION HISTORY STACK ═══ */
+var _navStack = [];
+var _navMaxDepth = 20;
+
+function navPush(id) {
+  if (_navStack.length > 0 && _navStack[_navStack.length - 1] === id) return;
+  _navStack.push(id);
+  if (_navStack.length > _navMaxDepth) _navStack.shift();
+}
+
+function navBack() {
+  if (_navStack.length > 1) {
+    _navStack.pop(); /* remove current */
+    var prev = _navStack[_navStack.length - 1];
+    navTo(prev);
+  } else {
+    navTo('home');
+  }
+}
+
 /* ═══ PANEL NAVIGATION ═══ */
 function _cleanupActiveMode() {
   /* Battle timer */
@@ -55,6 +75,7 @@ function navTo(id) {
       if (typeof skipRecoverySession === 'function') skipRecoverySession();
     }
   }
+  navPush(id);
   showPanel(id);
   /* Render content for target panel */
   if (id === 'home') { if (typeof _currentSectionContext !== 'undefined') _currentSectionContext = null; renderHome(); }
@@ -837,6 +858,24 @@ function showNudge(key, msg, actionLabel, actionFn) {
     if (el.parentNode) { el.classList.add('fade-out'); setTimeout(function() { if (el.parentNode) el.remove(); }, 400); }
     if (_activeNudge === el) _activeNudge = null;
   }, 8000);
+}
+
+/* ═══ GLOBAL KEYBOARD A11Y ═══ */
+/* Activate role="button" elements with Enter/Space (standard ARIA pattern) */
+document.addEventListener('keydown', function(e) {
+  if (e.key !== 'Enter' && e.key !== ' ') return;
+  var el = e.target;
+  if (el.getAttribute('role') === 'button' && el.hasAttribute('tabindex')) {
+    e.preventDefault();
+    el.click();
+  }
+});
+
+/* ═══ EMPTY STATE HELPER ═══ */
+function _renderEmptyState(icon, text) {
+  return '<div class="empty-state">' +
+    (icon ? '<div class="empty-state-icon">' + icon + '</div>' : '') +
+    '<div class="empty-state-text">' + text + '</div></div>';
 }
 
 /* Badge celebration (replaces showToast for badges) */

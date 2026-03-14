@@ -531,6 +531,7 @@ function openSection(sectionId, board) {
   _currentSectionContext = { sectionId: sectionId, board: info.board };
   var _doOpen = function() {
     renderSectionDetail(info.chapter, info.section, info.sectionIndex, info.board);
+    navPush('section');
     showPanel('section');
   };
   if (typeof renderSectionDetail === 'function') { _doOpen(); }
