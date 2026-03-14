@@ -1,5 +1,14 @@
 # Development Roadmap
 
+## v5.15.1 — CIE 0580 数据完整性修复 [DONE]
+- [x] classify_number() + classify_algebra() 规则分类器（31 个 section）
+- [x] 全量重标 Number 1,886 + Algebra 803 = 2,689 题
+- [x] 9 个 topic 分类器全量运行（6,183 题）
+- [x] Section 覆盖率 92%→100%（4,107 题全部标记）
+- [x] SECTION_TOPICS 72 项修正 + syllabus-cie.json Ch1/Ch2 考纲对齐
+- [x] answer 元数据富化 1,926 题
+- [x] Q-Vocab 增量提取 615 题（Gemini CLI 批处理）
+
 ## v5.15.0 — JS 懒加载优化 Phase 2 [DONE]
 - [x] 从主 bundle 拆出 practice.js + lists.js 为独立懒加载 bundle
 - [x] mastery.js onclick guard + _lazyLoad fallback
