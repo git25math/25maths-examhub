@@ -220,6 +220,10 @@ function _renderDeck(idx) {
   }
 
   E('panel-deck').innerHTML = html;
+  /* Render KaTeX math in word list (e.g. $f(x)$) */
+  if (typeof loadKaTeX === 'function') {
+    loadKaTeX().then(function() { renderMath(E('panel-deck')); });
+  }
 }
 
 function setSort(s, idx) {
@@ -341,6 +345,9 @@ function _renderPreview(idx) {
   html += '</div>';
 
   E('panel-preview').innerHTML = html;
+  if (typeof loadKaTeX === 'function') {
+    loadKaTeX().then(function() { renderMath(E('panel-preview')); });
+  }
 }
 
 /* Delegate mode button clicks in deck panel */
