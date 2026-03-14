@@ -3,7 +3,7 @@
    Strategy: Cache-first for app shell, network-first for data
    ══════════════════════════════════════════════════════════════ */
 
-var CACHE_VERSION = 'v5.27.1';
+var CACHE_VERSION = 'v5.27.2';
 var SHELL_CACHE = 'shell-' + CACHE_VERSION;
 var DATA_CACHE = 'data-v1';
 
