@@ -1,5 +1,33 @@
 # Changelog
 
+## [5.18.0] - 2026-03-14 — 首屏加载优化
+
+### 性能优化
+
+#### 按需加载 Syllabus 数据
+- syllabus.js 不再在 parse 时自动 fetch 全部 3 个 board 的数据
+- 新增 `loadVisibleBoardData()`：根据 userBoard 只加载可见 board 的 syllabus + vocabulary + knowledge JSON
+- CIE 用户不加载 HHK 数据，25m 用户不加载 CIE 数据
+- 首屏数据 fetch 从 ~416KB 降至 ~125KB（单 board）
+
+#### Script defer 非阻塞加载
+- Supabase SDK + app.bundle.min.js 改为 `defer`：HTML 解析不再被阻塞
+- 两个 defer script 保持 DOM 顺序执行，确保 Supabase SDK 先于 app 初始化
+
+#### SW 分层预缓存
+- SHELL_FILES 从 14 个精简为 4 个（index.html + CSS + app bundle + manifest + icons）
+- 懒加载 bundle 改为 runtime cache-first（首次 fetch 时自动缓存）
+- SW install 预缓存数据量从 ~1MB 降至 ~280KB
+
+### 文件变更
+| 文件 | 修改 |
+|------|------|
+| js/syllabus.js | 移除 EOF 自动 fetch，新增 loadVisibleBoardData() |
+| js/auth.js | afterLogin() + selectBoard() 中调用 loadVisibleBoardData() |
+| index.html | script 标签加 defer |
+| sw.js | SHELL_FILES 精简为 critical path only |
+| js/config.js | APP_VERSION → v5.18.0 |
+
 ## [5.17.0] - 2026-03-14 — JS 懒加载优化 Phase 5
 
 ### 性能优化

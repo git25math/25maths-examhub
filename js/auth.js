@@ -257,6 +257,8 @@ async function afterLogin() {
   if (userBoard) {
     try { await ensureBoardLoaded(userBoard); } catch(e) {}
   }
+  /* Load syllabus data only for visible boards (deferred from syllabus.js parse time) */
+  if (typeof loadVisibleBoardData === 'function') loadVisibleBoardData();
 
   /* Load DB vocab overrides */
   if (sb && isLoggedIn()) {
@@ -376,6 +378,8 @@ async function selectBoard(value) {
   try { await ensureBoardLoaded(value); } catch(e) {
     showToast(t('Failed to load vocabulary data', '词汇数据加载失败'));
   }
+  /* Load syllabus data for newly visible boards */
+  if (typeof loadVisibleBoardData === 'function') loadVisibleBoardData();
   hideBoardSelection();
   showApp();
   /* Init teacher panel if applicable */

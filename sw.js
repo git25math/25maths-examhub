@@ -3,28 +3,21 @@
    Strategy: Cache-first for app shell, network-first for data
    ══════════════════════════════════════════════════════════════ */
 
-var CACHE_VERSION = 'v5.17.0';
+var CACHE_VERSION = 'v5.18.0';
 var SHELL_CACHE = 'shell-' + CACHE_VERSION;
 var DATA_CACHE = 'data-v1';
 
-/* App shell — cached on install */
+/* App shell — cached on install (critical path only) */
 var SHELL_FILES = [
   './',
   'index.html',
   'css/style.min.css',
   'js/app.bundle.min.js',
-  'js/tools.min.js',
-  'js/modes.min.js',
-  'js/translate.min.js',
-  'js/worksheet.min.js',
-  'js/study-quiz-battle.min.js',
-  'js/practice.min.js',
-  'js/recovery.min.js',
-  'js/lists.min.js',
   'manifest.json',
   'icons/icon-192.svg',
   'icons/icon-512.svg'
 ];
+/* Lazy bundles are cached on first fetch via cacheFirst strategy — no need to precache */
 
 /* Data files — cached on first fetch, network-first */
 var DATA_PATTERNS = [

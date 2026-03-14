@@ -3780,11 +3780,14 @@ document.addEventListener('keydown', function(e) {
 });
 
 /* ═══ INIT ═══ */
-/* Auto-load all board data on script load */
-loadCIESyllabus();
-loadEdxSyllabus();
-loadHHKSyllabus();
-/* Pre-load knowledge point data for active boards */
-loadKnowledgeData('cie');
-loadKnowledgeData('hhk');
+/* Load only the boards the user needs (called after auth sets userBoard) */
+function loadVisibleBoardData() {
+  var boards = getVisibleBoards();
+  for (var i = 0; i < boards.length; i++) {
+    var bid = boards[i].id;
+    if (bid === 'cie') { loadCIESyllabus(); loadKnowledgeData('cie'); }
+    else if (bid === 'edx') { loadEdxSyllabus(); }
+    else if (bid === '25m') { loadHHKSyllabus(); loadKnowledgeData('hhk'); }
+  }
+}
 loadKnowledgeData('edx');

@@ -1,5 +1,10 @@
 # Development Roadmap
 
+## v5.18.0 — 首屏加载优化 [DONE]
+- [x] Syllabus 按需加载：只 fetch 可见 board 数据（−290KB 首屏 fetch）
+- [x] Script defer：HTML 解析不阻塞
+- [x] SW 分层预缓存：install 从 ~1MB 降至 ~280KB
+
 ## v5.17.0 — JS 懒加载优化 Phase 5 [DONE]
 - [x] 9 个 Recovery 文件 → recovery.min.js 懒加载 bundle
 - [x] 登录后 2s 延迟自动加载 + initSmartNotifications
