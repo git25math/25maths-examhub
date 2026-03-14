@@ -5,7 +5,7 @@
 
 var _pqData = {};       /* { cie: [...], edx: [...] } lazy-loaded cache */
 var _pqSession = null;  /* { questions, current, correct, answers, lvl } */
-var _katexReady = false; /* KaTeX loaded flag */
+/* _katexReady — moved to ui.js (shared across bundles) */
 var _pqEditsCache = {};  /* { cie: {qid: data}, edx: {qid: data} } */
 var _pqFocusedTextarea = null; /* last focused textarea in editor */
 var _pqPreviewTimer = null;
@@ -16,51 +16,7 @@ var _pqReviewFilter = 'all';  /* 'all' | 1 (Core) | 2 (Extended) */
 var _pqReviewTopicFilter = 'all'; /* 'all' | topic name string */
 var _pqReviewDelegated = false; /* event delegation bound flag */
 
-/* ═══ KATEX LAZY LOADING ═══ */
-
-function loadKaTeX() {
-  if (_katexReady) return Promise.resolve();
-  if (window._katexLoading) return window._katexLoading;
-
-  window._katexLoading = new Promise(function(resolve) {
-    /* CSS */
-    var link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = 'https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css';
-    document.head.appendChild(link);
-
-    /* KaTeX core */
-    var script = document.createElement('script');
-    script.src = 'https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js';
-    script.onload = function() {
-      /* Auto-render extension */
-      var ar = document.createElement('script');
-      ar.src = 'https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js';
-      ar.onload = function() {
-        _katexReady = true;
-        resolve();
-      };
-      document.head.appendChild(ar);
-    };
-    document.head.appendChild(script);
-  });
-  return window._katexLoading;
-}
-
-function renderMath(el) {
-  if (!_katexReady || !window.renderMathInElement) return;
-  try {
-    window.renderMathInElement(el, {
-      delimiters: [
-        { left: '$$', right: '$$', display: true },
-        { left: '\\[', right: '\\]', display: true },
-        { left: '$', right: '$', display: false },
-        { left: '\\(', right: '\\)', display: false }
-      ],
-      throwOnError: false
-    });
-  } catch(e) { /* ignore render errors */ }
-}
+/* loadKaTeX / renderMath — moved to ui.js (shared across all bundles) */
 
 /* pqSanitize / pqRender — moved to ui.js (shared across all bundles) */
 

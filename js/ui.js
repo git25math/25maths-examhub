@@ -929,6 +929,50 @@ function pqRender(text) {
   return pqSanitize(text);
 }
 
+/* ═══ KATEX LAZY LOADING (shared across bundles) ═══ */
+var _katexReady = false;
+
+function loadKaTeX() {
+  if (_katexReady) return Promise.resolve();
+  if (window._katexLoading) return window._katexLoading;
+
+  window._katexLoading = new Promise(function(resolve) {
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css';
+    document.head.appendChild(link);
+
+    var script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js';
+    script.onload = function() {
+      var ar = document.createElement('script');
+      ar.src = 'https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js';
+      ar.onload = function() {
+        _katexReady = true;
+        resolve();
+      };
+      document.head.appendChild(ar);
+    };
+    document.head.appendChild(script);
+  });
+  return window._katexLoading;
+}
+
+function renderMath(el) {
+  if (!_katexReady || !window.renderMathInElement) return;
+  try {
+    window.renderMathInElement(el, {
+      delimiters: [
+        { left: '$$', right: '$$', display: true },
+        { left: '\\[', right: '\\]', display: true },
+        { left: '$', right: '$', display: false },
+        { left: '\\(', right: '\\)', display: false }
+      ],
+      throwOnError: false
+    });
+  } catch(e) {}
+}
+
 /* Badge celebration (replaces showToast for badges) */
 function showBadgeCelebration(badge) {
   var el = document.createElement('div');
