@@ -1,5 +1,27 @@
 # Changelog
 
+## [5.28.0] - 2026-03-15 — 间距系统补全 6px/10px 半步 token
+
+### CSS 间距 token 补全
+
+#### 新增 --sp-1h (6px) / --sp-2h (10px) 半步 token
+- 填补 sp-1(4px) 与 sp-2(8px)、sp-2(8px) 与 sp-3(12px) 之间的间隙
+- 间距系统现为 10 级：4/6/8/10/12/16/20/24/32/40px
+
+#### 批量替换（~198 处）
+- `gap: 6px` → `var(--sp-1h)` — 31 处
+- `gap: 10px` → `var(--sp-2h)` — 39 处
+- `margin-bottom: 6px` → `var(--sp-1h)` — 19 处
+- `margin-bottom: 10px` → `var(--sp-2h)` — 12 处
+- `margin-top: 6px` → `var(--sp-1h)` — 18 处
+- `margin-top: 10px` → `var(--sp-2h)` — 若干处
+
+### 文件变更
+| 文件 | 修改 |
+|------|------|
+| css/style.css | +2 token (--sp-1h/--sp-2h) + ~198 处 6px/10px → token |
+| js/config.js | APP_VERSION → v5.28.0 |
+
 ## [5.27.1] - 2026-03-14 — fix: pqRender 跨 bundle 依赖修复
 
 ### Bug 修复

@@ -1,5 +1,10 @@
 # Development Roadmap
 
+## v5.28.0 — 间距系统补全 6px/10px [DONE]
+- [x] 新增 --sp-1h (6px) / --sp-2h (10px) 半步 token
+- [x] ~198 处 gap/margin-top/margin-bottom 6px/10px → token
+- [x] 间距系统 10 级全覆盖（4/6/8/10/12/16/20/24/32/40px）
+
 ## v5.27.0 — 懒加载深度优化 + 首次登录渲染修复 [DONE]
 - [x] review.js 死代码删除（10 个空函数桩 + 3 处调用方修复）
 - [x] particles.js → particles.min.js 懒加载（1.1KB gzip）
