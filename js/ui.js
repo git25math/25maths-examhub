@@ -939,7 +939,7 @@ function loadKaTeX() {
   window._katexLoading = new Promise(function(resolve) {
     var link = document.createElement('link');
     link.rel = 'stylesheet';
-    link.href = 'https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css';
+    link.href = 'css/katex.min.css'; /* self-hosted with font-display:swap */
     document.head.appendChild(link);
 
     var script = document.createElement('script');
