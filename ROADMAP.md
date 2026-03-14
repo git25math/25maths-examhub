@@ -1,5 +1,11 @@
 # Development Roadmap
 
+## v5.19.0 — Syllabus 视图拆分 [DONE]
+- [x] syllabus.js 拆为 core (34KB) + syllabus-views.js (92KB) 懒加载
+- [x] 64 个视图函数 + IIFE 事件委托移至 syllabus-views.min.js
+- [x] openSection / openKnowledgePoint 加 _lazyLoad wrapper
+- [x] 主 bundle −92KB raw (−22KB gzip)，累计 **−75%**
+
 ## v5.18.0 — 首屏加载优化 [DONE]
 - [x] Syllabus 按需加载：只 fetch 可见 board 数据（−290KB 首屏 fetch）
 - [x] Script defer：HTML 解析不阻塞

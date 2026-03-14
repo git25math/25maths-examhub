@@ -1,5 +1,29 @@
 # Changelog
 
+## [5.19.0] - 2026-03-14 — Syllabus 视图拆分
+
+### 性能优化
+
+#### syllabus.js 拆分为 core + views
+- syllabus.js (174KB) 拆为 syllabus.js core (34KB) + syllabus-views.js (92KB)
+- 视图函数（renderSectionDetail, renderTodaysPlan, renderMistakeBook, renderKPDetail 等 64 个）移至懒加载
+- 核心函数（数据加载、Home 渲染、getSectionHealth 等）保留在主 bundle
+- openSection / openKnowledgePoint 添加 _lazyLoad('syllabus-views') wrapper
+- IIFE 事件委托（PP start、KP edit、键盘 a11y）随视图文件一起懒加载
+- 主 bundle: **262KB → 170KB (−92KB, −35%)**, gzip: **72KB → 50KB (−30%)**
+
+### 累计优化（v5.14.0 → v5.19.0）
+- 主 bundle: **672KB → 170KB (−75%)**, gzip: **184KB → 50KB (−73%)**
+- 懒加载 bundle 数: 4 → 12
+
+### 文件变更
+| 文件 | 修改 |
+|------|------|
+| js/syllabus.js | 拆出视图函数，保留核心 (~920 行)；openSection/openKnowledgePoint 加 lazy wrapper |
+| js/syllabus-views.js | 新增：视图函数 + IIFE 事件委托 (~2,877 行) |
+| scripts/minify.sh | 新增 syllabus-views.min.js bundle |
+| js/config.js | APP_VERSION → v5.19.0 |
+
 ## [5.18.0] - 2026-03-14 — 首屏加载优化
 
 ### 性能优化
