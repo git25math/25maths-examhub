@@ -166,13 +166,13 @@ function renderDataQuality() {
   var ct = E('admin-content');
   if (!ct) return;
 
-  ct.innerHTML = '<div class="admin-loading">' + t('Scanning...', '\u626b\u63cf\u4e2d...') + '</div>';
+  ct.innerHTML = _renderLoading(t('Scanning...', '扫描中...'));
 
   dqLoadData(_dqBoard).then(function(questions) {
     _dqScanResult = dqScan(questions);
     dqRenderDashboard(ct);
   }).catch(function(err) {
-    ct.innerHTML = '<div class="admin-empty">' + escapeHtml(err.message) + '</div>';
+    ct.innerHTML = _renderEmptyState('', escapeHtml(err.message));
   });
 }
 

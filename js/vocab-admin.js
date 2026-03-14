@@ -276,7 +276,7 @@ async function vaCreateDeck(boardId, catId) {
 async function renderFeedbackList() {
   var ct = E('admin-content');
   if (!ct) return;
-  ct.innerHTML = '<div class="admin-loading">' + t('Loading...', '加载中...') + '</div>';
+  ct.innerHTML = _renderLoading(t('Loading...', '加载中...'));
 
   try {
     var res = await sb.from('feedback')

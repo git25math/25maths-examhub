@@ -586,7 +586,7 @@ async function renderClassHwList(classId) {
 async function renderHwProgress(hwId, classId) {
   var ct = E('admin-content');
   if (!ct) return;
-  ct.innerHTML = '<div class="admin-loading">' + t('Loading...', '加载中...') + '</div>';
+  ct.innerHTML = _renderLoading(t('Loading...', '加载中...'));
 
   try {
     var aRes = await sb.rpc('get_assignment', { p_id: hwId });
@@ -876,7 +876,7 @@ async function showStudentHwPage() {
   showPanel('homework');
   var el = E('panel-homework');
   if (!el) return;
-  el.innerHTML = '<div class="admin-loading">' + t('Loading...', '加载中...') + '</div>';
+  el.innerHTML = _renderLoading(t('Loading...', '加载中...'));
 
   /* Cross-board homework may reference slugs from any board */
   try { await ensureAllBoardsLoaded(); } catch(e) {}
@@ -1000,7 +1000,7 @@ async function startHwTest(hwId) {
   showPanel('homework');
   var el = E('panel-homework');
   if (!el) return;
-  el.innerHTML = '<div class="admin-loading">' + t('Loading homework...', '加载作业中...') + '</div>';
+  el.innerHTML = _renderLoading(t('Loading homework...', '加载作业中...'));
 
   /* Ensure all boards loaded for cross-board homework */
   try { await ensureAllBoardsLoaded(); } catch(e) {}
@@ -1259,7 +1259,7 @@ async function startHwPractice(hwId) {
   showPanel('homework');
   var el = E('panel-homework');
   if (!el) return;
-  el.innerHTML = '<div class="admin-loading">' + t('Loading practice...', '\u52a0\u8f7d\u7ec3\u4e60\u9898\u4e2d...') + '</div>';
+  el.innerHTML = _renderLoading(t('Loading practice...', '加载练习题中...'));
 
   try {
     var aRes = await sb.rpc('get_assignment', { p_id: hwId });

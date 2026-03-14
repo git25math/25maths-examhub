@@ -135,7 +135,7 @@ function switchAdminTab(tab) {
 async function renderClassList() {
   var ct = E('admin-content');
   if (!ct) return;
-  ct.innerHTML = '<div class="admin-loading">' + t('Loading...', '加载中...') + '</div>';
+  ct.innerHTML = _renderLoading(t('Loading...', '加载中...'));
 
   var _isSA = !_teacherData && typeof isSuperAdmin === 'function' && isSuperAdmin();
   try {
@@ -543,7 +543,7 @@ async function doBatchCreate(classId) {
 async function renderClassDetail(classId) {
   var ct = E('admin-content');
   if (!ct) return;
-  ct.innerHTML = '<div class="admin-loading">' + t('Loading...', '加载中...') + '</div>';
+  ct.innerHTML = _renderLoading(t('Loading...', '加载中...'));
 
   /* Load class info */
   var cRes = await sb.from('kw_classes').select('id, name, grade').eq('id', classId).single();
@@ -672,7 +672,7 @@ async function doResetPassword(userId) {
 async function renderGradeOverview() {
   var ct = E('admin-content');
   if (!ct) return;
-  ct.innerHTML = '<div class="admin-loading">' + t('Loading...', '加载中...') + '</div>';
+  ct.innerHTML = _renderLoading(t('Loading...', '加载中...'));
 
   var activity = await loadActivityData(true);
 
@@ -762,7 +762,7 @@ async function expandGrade(grade) {
 async function renderSchoolOverview() {
   var ct = E('admin-content');
   if (!ct) return;
-  ct.innerHTML = '<div class="admin-loading">' + t('Loading...', '加载中...') + '</div>';
+  ct.innerHTML = _renderLoading(t('Loading...', '加载中...'));
 
   var activity = await loadActivityData(true);
   var _saView = !_teacherData && typeof isSuperAdmin === 'function' && isSuperAdmin();
@@ -885,7 +885,7 @@ async function renderUserManagement() {
   if (!ct) return;
 
   if (!_umData) {
-    ct.innerHTML = '<div class="admin-loading">' + t('Loading users...', '加载用户...') + '</div>';
+    ct.innerHTML = _renderLoading(t('Loading users...', '加载用户...'));
     try {
       var res = await callEdgeFunction('list-users', {
         page: _umPage, per_page: 1000, search: _umSearch, role_filter: _umRoleFilter
@@ -1412,7 +1412,7 @@ async function renderAllUsers() {
   if (!ct) return;
 
   if (!_auData) {
-    ct.innerHTML = '<div class="admin-loading">' + t('Loading all users...', '加载全部用户...') + '</div>';
+    ct.innerHTML = _renderLoading(t('Loading all users...', '加载全部用户...'));
     try {
       var res = await sb.from('leaderboard')
         .select('user_id, nickname, score, mastery_pct, mastered_words, total_words, rank_emoji, board, school_id, class_id, updated_at')

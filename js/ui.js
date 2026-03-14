@@ -127,7 +127,7 @@ function _lazyCall(bundle, fnName, args) {
 
 function _showPanelLoading(panelId) {
   var el = E('panel-' + panelId);
-  if (el) el.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;padding:80px 0"><div class="spinner"></div></div>';
+  if (el) el.innerHTML = '<div class="empty-state" style="padding:80px 0"><div class="spinner"></div></div>';
 }
 
 function _lazyNav(bundle, fnName, panelId) {
@@ -871,11 +871,17 @@ document.addEventListener('keydown', function(e) {
   }
 });
 
-/* ═══ EMPTY STATE HELPER ═══ */
+/* ═══ EMPTY STATE & LOADING HELPERS ═══ */
 function _renderEmptyState(icon, text) {
   return '<div class="empty-state">' +
     (icon ? '<div class="empty-state-icon">' + icon + '</div>' : '') +
     '<div class="empty-state-text">' + text + '</div></div>';
+}
+
+function _renderLoading(text) {
+  return '<div class="empty-state"><div class="spinner"></div>' +
+    (text ? '<div class="empty-state-text" style="margin-top:12px">' + text + '</div>' : '') +
+    '</div>';
 }
 
 /* Badge celebration (replaces showToast for badges) */

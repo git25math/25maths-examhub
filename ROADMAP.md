@@ -1,5 +1,12 @@
 # Development Roadmap
 
+## v5.23.0 — 加载态统一 + 阴影/间距令牌化 [DONE]
+- [x] _renderLoading(text) 统一加载态组件（spinner + 文字）
+- [x] admin/homework/data-admin/vocab-admin 13 处 admin-loading → _renderLoading
+- [x] _showPanelLoading 改用 .empty-state 替代内联样式
+- [x] 阴影令牌化：btn-primary + 4 处 hover → --shadow-hover / --shadow-sm
+- [x] 卡片间距令牌化：5 处 card/section padding → --card-p-md/lg
+
 ## v5.22.0 — 设计令牌批量迁移 + 空状态统一 [DONE]
 - [x] border-radius 令牌化：50% → --r-full (×26), 999px → --r-pill (×7), 6px → --r-xs (×17)
 - [x] 过渡时间令牌化：0.15s → --t-fast (×48), 0.2s → --t-base (×32), 0.35s → --t-slow (×3)

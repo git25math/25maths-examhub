@@ -1,5 +1,40 @@
 # Changelog
 
+## [5.23.0] - 2026-03-14 — 加载态统一 + 阴影/间距令牌化
+
+### 加载状态统一
+
+#### _renderLoading 组件化
+- ui.js 新增 `_renderLoading(text)` — 统一加载态渲染（spinner + 文字）
+- `_showPanelLoading` 改用 `.empty-state` 类替代内联样式
+- admin.js 7 处 `admin-loading` → `_renderLoading()`
+- homework.js 4 处 `admin-loading` → `_renderLoading()`
+- data-admin.js 1 处 + vocab-admin.js 1 处 → `_renderLoading()`
+- data-admin.js 1 处 `admin-empty` → `_renderEmptyState()`
+
+### CSS 令牌深化
+
+#### 阴影令牌化（7 处）
+- `.btn-primary` 阴影 → `var(--shadow-hover)`
+- `.pp-rate-btn:hover` / `.sec-module:hover` / `.smart-path-card` → `var(--shadow-sm)` / `var(--shadow)`
+- `.pp-browse-entry:hover` / `.pp-paper-card:hover` → `var(--shadow-sm)`
+
+#### 卡片间距令牌化（5 处）
+- `.hero-card` / `.plan-card` / `.modal-card.pq-editor-modal` → `var(--card-p-md)`
+- `.scan-kp-card` / `.kp-section` → `var(--card-p-lg)`
+
+### 文件变更
+| 文件 | 修改 |
+|------|------|
+| css/style.css | 7 处 shadow + 5 处 card padding → token |
+| js/ui.js | 新增 _renderLoading + _showPanelLoading 改用 empty-state |
+| js/admin.js | 7 处 admin-loading → _renderLoading |
+| js/homework.js | 4 处 admin-loading → _renderLoading |
+| js/data-admin.js | 1 处 loading + 1 处 empty → helper |
+| js/vocab-admin.js | 1 处 loading → _renderLoading |
+| js/config.js | APP_VERSION → v5.23.0 |
+| CLAUDE.md | 版本号更新 |
+
 ## [5.22.0] - 2026-03-14 — 设计令牌批量迁移 + 空状态统一
 
 ### CSS 令牌批量替换
