@@ -2982,8 +2982,11 @@ function renderPPCard() {
       else if (action === 'recoverQuestion') ppReviewWrongItem(target.dataset.qid, target.dataset.section, target.dataset.board);
       else if (action === 'recoverPrint') {
         var rpq = _ppSession && _ppSession.questions ? _ppSession.questions[_ppSession.current] : null;
-        if (rpq && typeof printRepairWorksheet === 'function') {
-          printRepairWorksheet(rpq, _ppSession.sectionId || rpq.s || '', _ppSession.board || '');
+        if (rpq) {
+          var _rpSec = _ppSession.sectionId || rpq.s || '';
+          var _rpBoard = _ppSession.board || '';
+          if (typeof printRepairWorksheet === 'function') printRepairWorksheet(rpq, _rpSec, _rpBoard);
+          else _lazyLoad('worksheet', function() { printRepairWorksheet(rpq, _rpSec, _rpBoard); });
         }
       }
       else if (action === 'recoverSkip') _ppRecoverySkip();

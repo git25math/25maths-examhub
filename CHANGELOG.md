@@ -1,5 +1,48 @@
 # Changelog
 
+## [5.14.0] - 2026-03-14 — JS 懒加载优化
+
+### 性能优化
+
+#### 主 Bundle 瘦身
+- 从 app.bundle.min.js 拆出 6 个文件为 4 个懒加载 bundle
+- 主 bundle: 740KB → 672KB (−68KB minified, −18KB gzip)
+
+#### 新增懒加载 Bundle
+| Bundle | 包含 | 大小 | 触发时机 |
+|--------|------|------|---------|
+| tools.min.js | stats.js + export.js | 18KB (6KB gz) | 点击 Stats / Import 面板 |
+| modes.min.js | spell.js + match.js | 8.4KB (3KB gz) | 点击 Spell / Match 模式 |
+| translate.min.js | translate.js | 12KB (4KB gz) | 启用划词翻译 |
+| worksheet.min.js | worksheet.js | 31KB (8KB gz) | 打印修复卷 |
+
+#### 懒加载基础设施 (ui.js)
+- `_lazyLoad(bundle, callback)` — 动态 script 注入，状态追踪 + 回调队列 + 错误处理
+- `_showPanelLoading(panelId)` — 面板加载 spinner
+- `_lazyNav(bundle, fnName, panelId)` — 面板导航懒加载封装
+
+#### 延迟绑定修改
+- mastery.js: modeFns/fns 中 spell/match 改为延迟绑定函数
+- battle.js: startSpell 交叉引用加 typeof guard + lazy fallback
+- practice.js: printRepairWorksheet 加 lazy fallback
+- auth.js: _sttEnabled 改为 localStorage 直读 + toggleTranslate 包裹 _lazyLoad
+
+#### SW 预缓存
+- 4 个新 bundle 加入 SHELL_FILES（install 时预缓存）
+- admin.bundle.min.js 加入 DATA_PATTERNS
+
+### 文件变更
+| 文件 | 修改 |
+|------|------|
+| js/ui.js | +_lazyLoad/+_showPanelLoading/+_lazyNav, navTo() 分发改 lazy |
+| js/mastery.js | modeFns/fns spell/match 延迟绑定 |
+| js/battle.js | startSpell guard + lazy fallback |
+| js/practice.js | printRepairWorksheet lazy fallback |
+| js/auth.js | translate 解耦 |
+| scripts/minify.sh | 拆分 4 个 bundle 构建 |
+| sw.js | SHELL_FILES + DATA_PATTERNS 扩展 |
+| js/config.js | APP_VERSION → v5.14.0 |
+
 ## [5.13.2] - 2026-03-14 — 架构完备性修复（7 项）
 
 ### 安全与数据完整性

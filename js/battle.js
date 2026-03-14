@@ -238,6 +238,6 @@ function endBattle(won) {
 
   /* Nudge: suggest spell after first battle */
   if (won && typeof showNudge === 'function') {
-    showNudge('try_spell', t('Try Spelling mode to remember even better!', '拼写模式帮你记得更牢'), t('Go', '去试试'), function() { hideModal(); startSpell(G.lvlIdx); });
+    showNudge('try_spell', t('Try Spelling mode to remember even better!', '拼写模式帮你记得更牢'), t('Go', '去试试'), function() { hideModal(); if (typeof startSpell === 'function') startSpell(G.lvlIdx); else _lazyLoad('modes', function() { startSpell(G.lvlIdx); }); });
   }
 }

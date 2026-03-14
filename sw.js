@@ -3,7 +3,7 @@
    Strategy: Cache-first for app shell, network-first for data
    ══════════════════════════════════════════════════════════════ */
 
-var CACHE_VERSION = 'v5.13.2';
+var CACHE_VERSION = 'v5.14.0';
 var SHELL_CACHE = 'shell-' + CACHE_VERSION;
 var DATA_CACHE = 'data-v1';
 
@@ -13,6 +13,10 @@ var SHELL_FILES = [
   'index.html',
   'css/style.min.css',
   'js/app.bundle.min.js',
+  'js/tools.min.js',
+  'js/modes.min.js',
+  'js/translate.min.js',
+  'js/worksheet.min.js',
   'manifest.json',
   'icons/icon-192.svg',
   'icons/icon-512.svg'
@@ -21,7 +25,8 @@ var SHELL_FILES = [
 /* Data files — cached on first fetch, network-first */
 var DATA_PATTERNS = [
   /\/data\//,
-  /\/js\/homework\.min\.js/
+  /\/js\/homework\.min\.js/,
+  /\/js\/admin\.bundle\.min\.js/
 ];
 
 /* External CDN — cache on first fetch */

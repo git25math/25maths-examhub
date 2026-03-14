@@ -60,13 +60,53 @@ function navTo(id) {
   if (id === 'home') { if (typeof _currentSectionContext !== 'undefined') _currentSectionContext = null; renderHome(); }
   else if (id === 'plan') renderTodaysPlan();
   else if (id === 'mistakes') renderMistakeBook();
-  else if (id === 'import') renderImport();
+  else if (id === 'import') { _lazyNav('tools', 'renderImport', 'import'); }
   else if (id === 'board') renderBoard();
-  else if (id === 'stats') renderStats();
+  else if (id === 'stats') { _lazyNav('tools', 'renderStats', 'stats'); }
   else if (id === 'admin' && typeof renderAdmin === 'function') renderAdmin();
   else if (id === 'homework') { if (typeof showStudentHwPage === 'function') showStudentHwPage(); }
   else if (id === 'lists') { if (typeof renderListView === 'function') renderListView(); }
   /* section panel is rendered by openSection() directly */
+}
+
+/* ═══ LAZY LOADING ═══ */
+var _lazyState = {}; /* bundle → 'loading' | 'done' */
+var _lazyQueue = {}; /* bundle → [callback, ...] */
+
+function _lazyLoad(bundle, callback) {
+  if (_lazyState[bundle] === 'done') { if (callback) callback(); return; }
+  if (!_lazyQueue[bundle]) _lazyQueue[bundle] = [];
+  if (callback) _lazyQueue[bundle].push(callback);
+  if (_lazyState[bundle] === 'loading') return;
+  _lazyState[bundle] = 'loading';
+  var s = document.createElement('script');
+  s.src = 'js/' + bundle + '.min.js?v=' + (typeof APP_VERSION !== 'undefined' ? APP_VERSION.replace('v','') : '0');
+  s.onload = function() {
+    _lazyState[bundle] = 'done';
+    var q = _lazyQueue[bundle] || [];
+    _lazyQueue[bundle] = [];
+    for (var i = 0; i < q.length; i++) q[i]();
+  };
+  s.onerror = function() {
+    _lazyState[bundle] = null;
+    var q = _lazyQueue[bundle] || [];
+    _lazyQueue[bundle] = [];
+    console.error('[LazyLoad] Failed to load ' + bundle);
+    showToast('Failed to load module. Please retry.');
+    for (var i = 0; i < q.length; i++) q[i]();
+  };
+  document.head.appendChild(s);
+}
+
+function _showPanelLoading(panelId) {
+  var el = E('panel-' + panelId);
+  if (el) el.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;padding:80px 0"><div class="spinner"></div></div>';
+}
+
+function _lazyNav(bundle, fnName, panelId) {
+  if (typeof window[fnName] === 'function') { window[fnName](); return; }
+  _showPanelLoading(panelId);
+  _lazyLoad(bundle, function() { if (typeof window[fnName] === 'function') window[fnName](); });
 }
 
 function updateNav() {
@@ -203,9 +243,9 @@ function toggleLang() {
   else if (appView === 'preview') renderPreview(currentLvl);
   else if (appView === 'plan') renderTodaysPlan();
   else if (appView === 'mistakes') renderMistakeBook();
-  else if (appView === 'import') renderImport();
+  else if (appView === 'import') { _lazyNav('tools', 'renderImport', 'import'); }
   else if (appView === 'board') renderBoard();
-  else if (appView === 'stats') renderStats();
+  else if (appView === 'stats') { _lazyNav('tools', 'renderStats', 'stats'); }
   else if (appView === 'admin' && typeof renderAdmin === 'function') renderAdmin();
   else if (appView === 'section' && typeof _currentSectionContext === 'object' && _currentSectionContext) {
     openSection(_currentSectionContext.sectionId, _currentSectionContext.board);
@@ -754,7 +794,7 @@ function sectionNextStepHTML(currentMode, scoreRate) {
       /* Medium → try again or spell */
       if (currentMode === 'quiz') {
         emoji = '\u270d\ufe0f'; label = t('Try Spelling mode', '试试拼写模式');
-        action = li >= 0 ? 'startSpell(' + li + ')' : 'openSection(\'' + ctx.sectionId + '\',\'' + ctx.board + '\')';
+        action = li >= 0 ? '(typeof startSpell===\"function\"?startSpell(' + li + '):_lazyLoad(\"modes\",function(){startSpell(' + li + ')}))' : 'openSection(\'' + ctx.sectionId + '\',\'' + ctx.board + '\')';
       } else {
         emoji = '\ud83d\udd01'; label = t('Try again for a better score', '再试一次提高成绩');
         action = li >= 0 ? 'start' + currentMode.charAt(0).toUpperCase() + currentMode.slice(1) + '(' + li + ')' : 'openSection(\'' + ctx.sectionId + '\',\'' + ctx.board + '\')';

@@ -4,12 +4,18 @@ ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT"
 
 # Core JS: concatenate in index.html load order → esbuild minify → single bundle
-# (homework.js excluded — lazy-loaded for students with classes + teachers)
+# (homework.js, spell.js, match.js, translate.js, export.js, stats.js, worksheet.js excluded — lazy-loaded)
 cat js/config.js js/levels-loader.js js/storage.js js/particles.js \
     js/auth.js js/ui.js js/mastery.js js/syllabus.js js/study.js js/battle.js \
-    js/review.js js/quiz.js js/spell.js js/match.js js/translate.js js/export.js \
-    js/stats.js js/practice.js js/knowledge-node.js js/learning-graph.js js/worksheet.js js/lists.js js/recovery-priority.js js/recovery-scheduler.js js/student-profile.js js/learning-goals.js js/ai-tutor.js js/error-patterns.js js/mistake-coach.js js/recovery-session.js js/smart-notif.js js/app.js | \
+    js/review.js js/quiz.js \
+    js/practice.js js/knowledge-node.js js/learning-graph.js js/lists.js js/recovery-priority.js js/recovery-scheduler.js js/student-profile.js js/learning-goals.js js/ai-tutor.js js/error-patterns.js js/mistake-coach.js js/recovery-session.js js/smart-notif.js js/app.js | \
     npx esbuild --loader=js --minify > js/app.bundle.min.js
+
+# Lazy-loaded bundles
+cat js/stats.js js/export.js | npx esbuild --loader=js --minify > js/tools.min.js
+cat js/spell.js js/match.js | npx esbuild --loader=js --minify > js/modes.min.js
+npx esbuild js/translate.js --minify --outfile=js/translate.min.js
+npx esbuild js/worksheet.js --minify --outfile=js/worksheet.min.js
 
 # Homework module (lazy-loaded separately)
 npx esbuild js/homework.js --minify --outfile=js/homework.min.js
@@ -33,8 +39,12 @@ if [ -n "$APP_VER" ]; then
 fi
 
 echo "=== Build complete ==="
-ls -lh js/app.bundle.min.js js/homework.min.js js/admin.bundle.min.js css/style.min.css
-printf "JS bundle gzip: "; gzip -c js/app.bundle.min.js | wc -c
-printf "JS homework gzip: "; gzip -c js/homework.min.js | wc -c
-printf "JS admin gzip: "; gzip -c js/admin.bundle.min.js | wc -c
-printf "CSS gzip: "; gzip -c css/style.min.css | wc -c
+ls -lh js/app.bundle.min.js js/tools.min.js js/modes.min.js js/translate.min.js js/worksheet.min.js js/homework.min.js js/admin.bundle.min.js css/style.min.css
+printf "JS app bundle gzip:  "; gzip -c js/app.bundle.min.js | wc -c
+printf "JS tools gzip:       "; gzip -c js/tools.min.js | wc -c
+printf "JS modes gzip:       "; gzip -c js/modes.min.js | wc -c
+printf "JS translate gzip:   "; gzip -c js/translate.min.js | wc -c
+printf "JS worksheet gzip:   "; gzip -c js/worksheet.min.js | wc -c
+printf "JS homework gzip:    "; gzip -c js/homework.min.js | wc -c
+printf "JS admin gzip:       "; gzip -c js/admin.bundle.min.js | wc -c
+printf "CSS gzip:            "; gzip -c css/style.min.css | wc -c

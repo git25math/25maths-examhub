@@ -1,5 +1,12 @@
 # Development Roadmap
 
+## v5.14.0 — JS 懒加载优化 [DONE]
+- [x] 从主 bundle 拆出 6 个文件为 4 个懒加载 bundle（tools/modes/translate/worksheet）
+- [x] _lazyLoad() 动态 script 注入基础设施 + 面板加载 spinner
+- [x] mastery.js/battle.js/practice.js/auth.js 延迟绑定适配
+- [x] SW SHELL_FILES 预缓存 4 个新 bundle
+- [x] 主 bundle −68KB minified (−18KB gzip)
+
 ## v5.13.1 — 图片仓库清理 + 试卷数据拆分 [DONE]
 - [x] 25maths-cie0580-figures: 清理 97 个冗余/损坏/占位图片
 - [x] 25maths-cie0580-figures: 重命名 531 个单图文件为标准格式（去掉描述后缀）

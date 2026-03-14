@@ -475,7 +475,7 @@ function showSettings() {
     gHtml += '<div class="settings-section">';
     gHtml += '<label class="settings-label">' + t('Select-to-Translate', '划词翻译') + '</label>';
     gHtml += '<div class="text-sm text-sub mb-8">' + t('Select text to see translation from vocabulary', '选中文字即可查看词库翻译') + '</div>';
-    gHtml += '<label style="cursor:pointer"><input type="checkbox" id="settings-translate"' + (_sttEnabled ? ' checked' : '') + ' onchange="toggleTranslate(this.checked)"> ' + t('Enable', '启用') + '</label>';
+    gHtml += '<label style="cursor:pointer"><input type="checkbox" id="settings-translate"' + ((localStorage.getItem('wmatch_translate') === '1') ? ' checked' : '') + ' onchange="_lazyLoad(\'translate\', function(){ toggleTranslate(this.checked); }.bind(this))"> ' + t('Enable', '启用') + '</label>';
     gHtml += '</div>';
     gHtml += '<div class="settings-divider"></div>';
     /* Locked features list */
@@ -535,7 +535,7 @@ function showSettings() {
     '<div class="settings-section">' +
     '<label class="settings-label">' + t('Select-to-Translate', '划词翻译') + '</label>' +
     '<div class="text-sm text-sub mb-8">' + t('Select text to see translation from vocabulary', '选中文字即可查看词库翻译') + '</div>' +
-    '<label style="cursor:pointer"><input type="checkbox" id="settings-translate"' + (_sttEnabled ? ' checked' : '') + '> ' + t('Enable', '启用') + '</label>' +
+    '<label style="cursor:pointer"><input type="checkbox" id="settings-translate"' + ((localStorage.getItem('wmatch_translate') === '1') ? ' checked' : '') + '> ' + t('Enable', '启用') + '</label>' +
     '</div>' +
     '<div class="settings-msg" id="settings-msg"></div>' +
     '<div class="btn-row btn-row--mt16">' +
@@ -593,7 +593,10 @@ async function saveSettings() {
 
     /* Select-to-Translate toggle */
     var trEl = E('settings-translate');
-    if (trEl) toggleTranslate(trEl.checked);
+    if (trEl) {
+      if (typeof toggleTranslate === 'function') toggleTranslate(trEl.checked);
+      else _lazyLoad('translate', function() { toggleTranslate(trEl.checked); });
+    }
 
     if (updated) {
       showToast(t('Saved', '保存成功'));

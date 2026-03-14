@@ -1188,7 +1188,9 @@ function _initDeckActionDelegation() {
   _deckActionDelegated = true;
   var modeFns = {
     study: startStudy, quiz: startQuiz,
-    spell: startSpell, match: startMatch, battle: startBattle
+    spell: function(li) { _lazyLoad('modes', function() { startSpell(li); }); },
+    match: function(li) { _lazyLoad('modes', function() { startMatch(li); }); },
+    battle: startBattle
   };
   document.addEventListener('click', function(e) {
     var btn = e.target.closest('[data-action]');
@@ -1260,7 +1262,11 @@ var _refluxDelegated = false;
 function _initRefluxDelegation() {
   if (_refluxDelegated) return;
   _refluxDelegated = true;
-  var fns = { battle: startBattle, spell: startSpell, match: startMatch };
+  var fns = {
+    battle: startBattle,
+    spell: function(li) { _lazyLoad('modes', function() { startSpell(li); }); },
+    match: function(li) { _lazyLoad('modes', function() { startMatch(li); }); }
+  };
   document.addEventListener('click', function(e) {
     var btn = e.target.closest('[data-action="reflux"]');
     if (!btn) return;
