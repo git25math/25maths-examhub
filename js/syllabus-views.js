@@ -298,6 +298,10 @@ function renderSectionDetail(ch, sec, secIdx, board) {
       } else {
         html += '<div class="kp-row-status kp-row-new">NEW</div>';
       }
+      /* Favorite star on KP row */
+      if (typeof favStarHtml === 'function') {
+        html += favStarHtml('kp', kp.id, board, kp.section || sec.id, { title: kp.title, title_zh: kp.title_zh || '' });
+      }
       html += '</div>';
     }
     html += '</div>'; /* close kp-list */
@@ -2516,14 +2520,72 @@ function renderKPDetail(kp, board) {
 
   /* Hero */
   html += '<div class="kp-hero">';
-  html += '<div class="kp-hero-title">' + pqRender(kp.title) + _kpeBtn('title') + '</div>';
+  html += '<div class="kp-hero-title">' + pqRender(kp.title) + _kpeBtn('title');
+  if (typeof favStarHtml === 'function') {
+    html += favStarHtml('kp', kp.id, board, kp.section, { title: kp.title, title_zh: kp.title_zh || '' });
+  }
+  html += '</div>';
   if (kp.title_zh) html += '<div class="kp-hero-sub">' + kp.title_zh + '</div>';
+  /* Difficulty badge (v5.30.0) */
+  if (kp.difficulty) {
+    var _diffLabels = { 1: [t('Foundation', '基础'), 'kp-diff-1'], 2: [t('Standard', '标准'), 'kp-diff-2'], 3: [t('Extended', '拓展'), 'kp-diff-3'] };
+    var _dl = _diffLabels[kp.difficulty] || _diffLabels[2];
+    html += '<span class="kp-difficulty ' + _dl[1] + '">' + _dl[0] + '</span>';
+  }
   var heroResult = typeof getKPResult === 'function' ? getKPResult(kp.id) : null;
   if (heroResult) {
     var heroClass = heroResult.score === heroResult.total ? 'kp-hero-score-perfect' : 'kp-hero-score-partial';
     html += '<div class="kp-hero-score ' + heroClass + '">' + t('Score', '\u5f97\u5206') + ': ' + heroResult.score + '/' + heroResult.total + '</div>';
   }
   html += '</div>';
+
+  /* Quick Summary card (v5.30.0) — before explanation */
+  if (kp.quickSummary) {
+    var _qsText = isZh && kp.quickSummary.zh ? kp.quickSummary.zh : (kp.quickSummary.en || '');
+    if (_qsText) {
+      html += '<div class="kp-quick-summary">';
+      html += '<span class="kp-quick-summary-icon">\ud83d\udca1</span>';
+      html += '<span class="kp-quick-summary-text">' + kpMarkdown(_qsText) + '</span>';
+      html += '</div>';
+    }
+  }
+
+  /* Prerequisites chain (v5.30.0) */
+  if (kp.prerequisites && kp.prerequisites.length > 0) {
+    html += '<div style="margin-bottom:var(--sp-4)">';
+    html += '<div class="kp-prereq-label">\ud83d\udd17 ' + t('Prerequisites', '\u524d\u7f6e\u77e5\u8bc6') + '</div>';
+    html += '<div class="kp-prereq-chain">';
+    for (var pri = 0; pri < kp.prerequisites.length; pri++) {
+      var prId = kp.prerequisites[pri];
+      var prKP = null;
+      if (typeof _kpData !== 'undefined' && _kpData[board]) {
+        prKP = _kpData[board].find(function(k) { return k.id === prId; });
+      }
+      var prTitle = prKP ? (isZh && prKP.title_zh ? prKP.title_zh : prKP.title) : prId;
+      var prFs = typeof getKPFLM === 'function' ? getKPFLM(prId) : 'new';
+      var prCheck = prFs === 'mastered' ? '<span class="prereq-check">\u2713</span> ' : '';
+      html += '<button class="kp-prereq-chip" data-kp-id="' + escapeHtml(prId) + '" data-kp-board="' + escapeHtml(board) + '">';
+      html += prCheck + escapeHtml(prTitle);
+      html += '</button>';
+    }
+    html += '</div></div>';
+  }
+
+  /* Key Formulas grid (v5.30.0) */
+  if (kp.keyFormulas && kp.keyFormulas.length > 0) {
+    html += '<div style="margin-bottom:var(--sp-4)">';
+    html += '<div class="kp-prereq-label">\ud83d\udcdd ' + t('Key Formulas', '\u6838\u5fc3\u516c\u5f0f') + '</div>';
+    html += '<div class="kp-formulas-grid">';
+    for (var kfi = 0; kfi < kp.keyFormulas.length; kfi++) {
+      var kf = kp.keyFormulas[kfi];
+      var kfLabel = isZh && kf.label_zh ? kf.label_zh : kf.label;
+      html += '<div class="kp-formula-card">';
+      html += '<div class="kp-formula-label">' + escapeHtml(kfLabel) + '</div>';
+      html += '<div class="kp-formula-expr">' + pqRender(kf.formula) + '</div>';
+      html += '</div>';
+    }
+    html += '</div></div>';
+  }
 
   /* ① Explanation — split into concept cards */
   html += '<div class="kp-section">';

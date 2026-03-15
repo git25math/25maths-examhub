@@ -113,7 +113,9 @@ function _knPanelHTML(title, kp) {
       '<div class="kn-header">' +
         '<div class="kn-header-left">' +
           '<span class="kn-badge">📖 知识点</span>' +
-          '<h2 class="kn-title">' + pqSanitize(title) + '</h2>' +
+          '<h2 class="kn-title">' + pqSanitize(title) +
+            (typeof favStarHtml === 'function' ? favStarHtml('kp', kp.id, _knState.board, kp.section || '', { title: kp.title, title_zh: kp.title_zh || '' }) : '') +
+          '</h2>' +
           '<span class="kn-kp-id">' + pqSanitize(kp.id) + '</span>' +
         '</div>' +
         '<button class="kn-close-btn" onclick="closeKnowledgeNode()" aria-label="Close">✕</button>' +
@@ -247,11 +249,35 @@ function _knStageMotivation(kp, lang) {
     );
   }
 
+  /* Prerequisites warning (v5.30.0) */
+  var prereqWarn = '';
+  if (kp.prerequisites && kp.prerequisites.length > 0) {
+    var _unmastered = [];
+    for (var _pi = 0; _pi < kp.prerequisites.length; _pi++) {
+      var _prId = kp.prerequisites[_pi];
+      var _prFs = typeof getKPFLM === 'function' ? getKPFLM(_prId) : 'new';
+      if (_prFs !== 'mastered') {
+        var _prKP = _knFindKP(_prId, _knState.board);
+        _unmastered.push({ id: _prId, title: _prKP ? (_prKP.title_zh || _prKP.title) : _prId });
+      }
+    }
+    if (_unmastered.length > 0) {
+      var _prLinks = _unmastered.map(function(pr) {
+        return '<span class="kn-prereq-warn-link" onclick="closeKnowledgeNode();setTimeout(function(){openKnowledgeNode(\'' + pr.id + '\',\'' + _knState.board + '\')},300)">' + pqSanitize(pr.title) + '</span>';
+      }).join('、');
+      prereqWarn = '<div class="kn-prereq-warn">' +
+        '<span class="kn-prereq-warn-icon">⚠️</span>' +
+        '<div class="kn-prereq-warn-text">建议先掌握前置知识：' + _prLinks + '</div>' +
+      '</div>';
+    }
+  }
+
   var patternCount = (kp.examPatterns || []).length;
   var exampleCount = (kp.examples || []).length;
 
   return (
     '<div class="kn-stage kn-stage-motivation">' +
+      prereqWarn +
       ctxBanner +
       '<div class="kn-intro-block">' +
         '<h3 class="kn-intro-title">这个知识点是什么？</h3>' +
@@ -307,8 +333,18 @@ function _knStageConcept(kp, lang) {
     );
   }
 
+  /* TL;DR card from quickSummary (v5.30.0) */
+  var tldr = '';
+  if (kp.quickSummary) {
+    var _qsTxt = (lang === 'zh' && kp.quickSummary.zh) ? kp.quickSummary.zh : (kp.quickSummary.en || '');
+    if (_qsTxt) {
+      tldr = '<div class="kn-tldr"><div class="kn-tldr-label">💡 TL;DR</div><div class="kn-tldr-text">' + pqSanitize(_qsTxt) + '</div></div>';
+    }
+  }
+
   return (
     '<div class="kn-stage kn-stage-concept">' +
+      tldr +
       '<div class="kn-exp-block">' +
         '<p class="kn-block-label">📖 概念说明</p>' +
         '<div class="kn-exp-text">' + pqSanitize(show) + '</div>' +
@@ -385,10 +421,21 @@ function _knStageMethod(kp, lang) {
     return '<div class="kn-step"><span class="kn-step-num">' + (i+1) + '</span><span class="kn-step-text">' + pqSanitize(line) + '</span></div>';
   }).join('');
 
+  /* Key formulas reference (v5.30.0) */
+  var formulasHtml = '';
+  if (kp.keyFormulas && kp.keyFormulas.length > 0) {
+    var fCards = kp.keyFormulas.map(function(kf) {
+      var fLabel = (lang === 'zh' && kf.label_zh) ? kf.label_zh : kf.label;
+      return '<div class="kp-formula-card"><div class="kp-formula-label">' + pqSanitize(fLabel) + '</div><div class="kp-formula-expr math-content">' + pqSanitize(kf.formula) + '</div></div>';
+    }).join('');
+    formulasHtml = '<div style="margin-top:16px"><p class="kn-block-label">📝 核心公式速查</p><div class="kp-formulas-grid">' + fCards + '</div></div>';
+  }
+
   return (
     '<div class="kn-stage kn-stage-method">' +
       '<p class="kn-stage-intro">📋 标准解题流程 — 每次做题按这个顺序走：</p>' +
       '<div class="kn-steps">' + stepsHtml + '</div>' +
+      formulasHtml +
     '</div>'
   );
 }

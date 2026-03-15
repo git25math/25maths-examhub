@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="dns-prefetch" href="https://jjjigohjvmyewasmmmyf.supabase.co">
-  <link rel="preload" href="js/app.bundle.min.js?v=5.29.2" as="script">
+  <link rel="preload" href="js/app.bundle.min.js?v=5.30.0" as="script">
 
   <!-- Fonts: non-blocking load (print→all swap for instant render) -->
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700;800&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
@@ -58,8 +58,8 @@
   .panel{display:none}
   </style>
   <!-- Full stylesheet (non-blocking: loaded async, won't delay login page render) -->
-  <link rel="stylesheet" href="css/style.min.css?v=5.29.2" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="css/style.min.css?v=5.29.2"></noscript>
+  <link rel="stylesheet" href="css/style.min.css?v=5.30.0" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="css/style.min.css?v=5.30.0"></noscript>
   <script>(function(){try{if(localStorage.getItem('wmatch_dark')==='1'||(localStorage.getItem('wmatch_dark')===null&&window.matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.setAttribute('data-theme','dark')}}catch(e){}})()</script>
   <script>(function(){try{var ts=localStorage.getItem('wmatch_login_ts');if(ts&&(Date.now()-parseInt(ts,10))<300000){var s=document.createElement('style');s.id='auth-hide-style';s.textContent='#ov-auth{display:none}';document.head.appendChild(s);/* Watchdog: if app doesn't init within 8s, show auth */setTimeout(function(){var ov=document.getElementById('ov-auth');if(ov&&ov.style.display==='none'&&!document.getElementById('panel-home').children.length){try{localStorage.removeItem('wmatch_login_ts')}catch(e){}ov.style.display='';ov.classList.add('vis')}},8000)}}catch(e){}})()</script>
 </head>
@@ -138,6 +138,9 @@
       </button>
       <button class="nav-item" data-panel="lists" onclick="navTo('lists')">
         <span class="nav-icon">📋</span><span class="nav-label" data-en="Learning Items" data-zh="学习项目">学习项目</span>
+      </button>
+      <button class="nav-item" data-panel="favorites" onclick="navTo('favorites')">
+        <span class="nav-icon">⭐</span><span class="nav-label" data-en="Favorites" data-zh="收藏">收藏</span>
       </button>
 
       <div class="sidebar-sep"></div>
@@ -243,6 +246,7 @@
       <div class="panel" id="panel-admin"></div>
       <div class="panel" id="panel-homework"></div>
       <div class="panel" id="panel-lists"></div>
+      <div class="panel" id="panel-favorites"></div>
     </div>
   </div>
 
@@ -261,6 +265,9 @@
     </button>
     <button class="bnav-item" data-panel="lists" onclick="navTo('lists')">
       <span class="bnav-icon">📋</span><span class="bnav-label" data-en="Items" data-zh="项目">项目</span>
+    </button>
+    <button class="bnav-item" data-panel="favorites" onclick="navTo('favorites')">
+      <span class="bnav-icon">⭐</span><span class="bnav-label" data-en="Favs" data-zh="收藏">收藏</span>
     </button>
     <button class="bnav-item" data-panel="stats" onclick="navTo('stats')">
       <span class="bnav-icon">📊</span><span class="bnav-label" data-en="Stats" data-zh="统计">统计</span>
@@ -291,7 +298,7 @@
 
 <!-- Supabase SDK + App Bundle: defer = non-blocking parse, execute in order after DOM ready -->
 <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script defer src="js/app.bundle.min.js?v=5.29.2"></script>
+<script defer src="js/app.bundle.min.js?v=5.30.0"></script>
 <!-- homework.min.js loaded dynamically for students with classes + teachers (see auth.js) -->
 <!-- admin.js + vocab-admin.js loaded dynamically for teachers (see auth.js) -->
 

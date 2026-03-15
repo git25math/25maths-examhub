@@ -817,6 +817,11 @@ async function _doSyncToCloud() {
     var bgRaw = localStorage.getItem('wmatch_badges');
     if (bgRaw) payload._badges = JSON.parse(bgRaw);
   } catch(e) {}
+  /* Bridge favorites for cross-device sync (v5.30.0) */
+  try {
+    var favRaw = localStorage.getItem('favorites');
+    if (favRaw) payload._favorites = JSON.parse(favRaw);
+  } catch(e) {}
   var vpRes = await sb.from('vocab_progress').upsert(
     { user_id: currentUser.id, data: JSON.stringify(payload), updated_at: now },
     { onConflict: 'user_id' }
@@ -942,6 +947,21 @@ async function syncFromCloud() {
           try { localStorage.setItem(_REFORGET_KEY, JSON.stringify(cloud._reforgetLog)); } catch(e) {}
         }
         delete cloud._reforgetLog;
+        /* Restore favorites from cloud bridge (union merge by key, v5.30.0) */
+        if (cloud && typeof cloud === 'object' && cloud._favorites && cloud._favorites.items) {
+          try {
+            var localFav = _loadFavorites();
+            var cloudItems = cloud._favorites.items;
+            var ck = Object.keys(cloudItems);
+            for (var fi = 0; fi < ck.length; fi++) {
+              if (!localFav.items[ck[fi]]) {
+                localFav.items[ck[fi]] = cloudItems[ck[fi]];
+              }
+            }
+            _saveFavorites(localFav);
+          } catch(e) {}
+        }
+        delete cloud._favorites;
         /* Restore badges from cloud bridge (merge: union of cloud + local) */
         if (cloud && typeof cloud === 'object' && cloud._badges && Array.isArray(cloud._badges)) {
           try {
@@ -1834,6 +1854,115 @@ function updateItemLearnedAt(listId, type, ref) {
       return;
     }
   }
+}
+
+/* ═══ FAVORITES (one-tap bookmark system v5.30.0) ═══ */
+
+var _FAV_KEY = 'favorites';
+var _favCache = null;
+
+function _loadFavorites() {
+  if (_favCache) return _favCache;
+  try {
+    var raw = localStorage.getItem(_FAV_KEY);
+    if (raw) {
+      _favCache = JSON.parse(raw);
+      if (!_favCache.items) _favCache.items = {};
+    } else {
+      _favCache = { version: 1, items: {} };
+    }
+  } catch(e) {
+    _favCache = { version: 1, items: {} };
+  }
+  return _favCache;
+}
+
+function _saveFavorites(data) {
+  _favCache = data;
+  try { localStorage.setItem(_FAV_KEY, JSON.stringify(data)); } catch(e) {}
+  debouncedSync();
+}
+
+function _favMakeKey(type, ref) {
+  return type + ':' + ref;
+}
+
+function favAdd(type, ref, board, section, meta) {
+  var data = _loadFavorites();
+  var key = _favMakeKey(type, ref);
+  data.items[key] = {
+    type: type,
+    ref: ref,
+    board: board || '',
+    section: section || '',
+    addedAt: new Date().toISOString(),
+    meta: meta || {}
+  };
+  _saveFavorites(data);
+  return true;
+}
+
+function favRemove(type, ref) {
+  var data = _loadFavorites();
+  var key = _favMakeKey(type, ref);
+  if (!data.items[key]) return false;
+  delete data.items[key];
+  _saveFavorites(data);
+  return true;
+}
+
+function favToggle(type, ref, board, section, meta) {
+  if (isFavorited(type, ref)) {
+    favRemove(type, ref);
+    return false;
+  } else {
+    favAdd(type, ref, board, section, meta);
+    return true;
+  }
+}
+
+function isFavorited(type, ref) {
+  var data = _loadFavorites();
+  return !!data.items[_favMakeKey(type, ref)];
+}
+
+function getFavorites(filterType) {
+  var data = _loadFavorites();
+  var result = [];
+  var keys = Object.keys(data.items);
+  for (var i = 0; i < keys.length; i++) {
+    var item = data.items[keys[i]];
+    if (!filterType || item.type === filterType) {
+      result.push(item);
+    }
+  }
+  /* Sort by addedAt descending (newest first) */
+  result.sort(function(a, b) { return (b.addedAt || '').localeCompare(a.addedAt || ''); });
+  return result;
+}
+
+function getFavCount(type) {
+  var data = _loadFavorites();
+  if (!type) return Object.keys(data.items).length;
+  var count = 0;
+  var keys = Object.keys(data.items);
+  for (var i = 0; i < keys.length; i++) {
+    if (data.items[keys[i]].type === type) count++;
+  }
+  return count;
+}
+
+function getFavsBySection(section, board) {
+  var data = _loadFavorites();
+  var result = [];
+  var keys = Object.keys(data.items);
+  for (var i = 0; i < keys.length; i++) {
+    var item = data.items[keys[i]];
+    if (item.section === section && (!board || item.board === board)) {
+      result.push(item);
+    }
+  }
+  return result;
 }
 
 /* ═══ LEARNING PLANS (extends Custom Lists) ═══ */

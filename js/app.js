@@ -118,6 +118,44 @@ onLevelsReady(function() {
 })();
 });
 
+/* ═══ FAVORITES STAR HELPER (v5.30.0) ═══ */
+
+function favStarHtml(type, ref, board, section, meta) {
+  var active = typeof isFavorited === 'function' && isFavorited(type, ref);
+  var metaStr = meta ? escapeHtml(JSON.stringify(meta)) : '{}';
+  return '<button class="fav-star' + (active ? ' fav-active' : '') + '" ' +
+    'data-fav-type="' + escapeHtml(type) + '" ' +
+    'data-fav-ref="' + escapeHtml(ref) + '" ' +
+    'data-fav-board="' + escapeHtml(board || '') + '" ' +
+    'data-fav-section="' + escapeHtml(section || '') + '" ' +
+    'data-fav-meta="' + metaStr + '" ' +
+    'title="' + (active ? t('Remove from favorites', '取消收藏') : t('Add to favorites', '收藏')) + '" ' +
+    'aria-label="Favorite">' +
+    (active ? '⭐' : '☆') +
+  '</button>';
+}
+
+/* Global click delegation for .fav-star buttons */
+document.addEventListener('click', function(e) {
+  var star = e.target.closest('.fav-star');
+  if (!star) return;
+  e.preventDefault();
+  e.stopPropagation();
+  var type = star.dataset.favType;
+  var ref = star.dataset.favRef;
+  var board = star.dataset.favBoard || '';
+  var section = star.dataset.favSection || '';
+  var meta = {};
+  try { meta = JSON.parse(star.dataset.favMeta || '{}'); } catch(ex) {}
+  var isNowFav = favToggle(type, ref, board, section, meta);
+  star.textContent = isNowFav ? '⭐' : '☆';
+  star.classList.toggle('fav-active', isNowFav);
+  star.title = isNowFav ? t('Remove from favorites', '取消收藏') : t('Add to favorites', '收藏');
+  if (typeof showToast === 'function') {
+    showToast(isNowFav ? t('Added to favorites', '已收藏') : t('Removed from favorites', '已取消收藏'));
+  }
+});
+
 /* ═══ BOARD STATE (shared with board-guides.js via global scope) ═══ */
 var _boardScope = 'course';    /* 'course' | 'class' | 'grade' | 'school' */
 var _boardSubKey = null;       /* currently selected sub pill value */

@@ -19,6 +19,7 @@ npx esbuild js/practice-browse.js --minify --outfile=js/practice-browse.min.js
 cat js/recovery-priority.js js/recovery-scheduler.js js/student-profile.js js/learning-goals.js js/ai-tutor.js js/error-patterns.js js/mistake-coach.js js/recovery-session.js js/smart-notif.js | \
     npx esbuild --loader=js --minify > js/recovery.min.js
 npx esbuild js/lists.js --minify --outfile=js/lists.min.js
+npx esbuild js/favorites.js --minify --outfile=js/favorites.min.js
 npx esbuild js/syllabus-views.js --minify --outfile=js/syllabus-views.min.js
 cat js/stats.js js/export.js | npx esbuild --loader=js --minify > js/tools.min.js
 cat js/spell.js js/match.js | npx esbuild --loader=js --minify > js/modes.min.js
@@ -64,7 +65,7 @@ fi
 echo "=== Build complete ==="
 ls -lh js/app.bundle.min.js js/syllabus-views.min.js js/study-quiz-battle.min.js \
   js/practice.min.js js/practice-editor.min.js js/practice-review.min.js js/practice-browse.min.js \
-  js/recovery.min.js js/lists.min.js js/tools.min.js js/modes.min.js \
+  js/recovery.min.js js/lists.min.js js/favorites.min.js js/tools.min.js js/modes.min.js \
   js/translate.min.js js/worksheet.min.js js/tour.min.js js/bug-report.min.js js/settings.min.js \
   js/homework.min.js js/admin.min.js js/super-admin.min.js \
   js/particles.min.js js/board-guides.min.js js/deck-detail.min.js css/style.min.css
@@ -77,6 +78,7 @@ printf "JS prac-browse gzip: "; gzip -c js/practice-browse.min.js | wc -c
 printf "JS recovery gzip:    "; gzip -c js/recovery.min.js | wc -c
 printf "JS syllabus-views gz:"; gzip -c js/syllabus-views.min.js | wc -c
 printf "JS lists gzip:       "; gzip -c js/lists.min.js | wc -c
+printf "JS favorites gzip:   "; gzip -c js/favorites.min.js | wc -c
 printf "JS tools gzip:       "; gzip -c js/tools.min.js | wc -c
 printf "JS modes gzip:       "; gzip -c js/modes.min.js | wc -c
 printf "JS translate gzip:   "; gzip -c js/translate.min.js | wc -c

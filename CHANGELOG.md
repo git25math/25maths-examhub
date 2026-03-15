@@ -1,5 +1,41 @@
 # Changelog
 
+## [5.30.0] - 2026-03-16 — 一键收藏系统 + 薄弱分析 + KP 深度增强
+
+### Phase 1: 一键收藏基础设施
+- **收藏 CRUD API**：`favAdd/favRemove/favToggle/isFavorited/getFavorites/getFavCount/getFavsBySection` — localStorage + O(1) 键查找
+- **云同步桥接**：`_doSyncToCloud` 添加 `_favorites` 字段，`syncFromCloud` union merge 恢复
+- **Star 渲染助手**：`favStarHtml()` 全局函数 + document 级 click 委托处理 `.fav-star`
+- **Star 注入点**：Scan 卡片、词汇列表行、KP 列表/详情页、PP 卡片、知识节点面板
+
+### Phase 2: 收藏面板 + 薄弱分析
+- **新文件 `favorites.js`**：4 Tab 面板（单词/知识点/题型/真题）+ 3 种排序（时间/章节/掌握度）
+- **薄弱分析引擎**：按 section 分组评分（unmasteredVocab×2 + unmasteredKP×3 + PP×1），输出修复建议
+- **面板注册**：sidebar + bottom-nav 添加 ⭐ 导航项，lazy-load 独立 bundle
+
+### Phase 3: KP 学习深度增强
+- **KP 详情页**：难度徽章（Foundation/Standard/Extended）、快速摘要卡、前置知识链（可点击 + 掌握状态）、核心公式速查网格
+- **知识节点 Stage 0**：前置知识掌握度检查，未达标显示警告横幅 + 跳转链接
+- **知识节点 Stage 1**：TL;DR 卡片（quickSummary 摘要）
+- **知识节点 Stage 3**：底部核心公式速查
+
+### 文件变更
+| 文件 | 修改 |
+|------|------|
+| js/storage.js | +100 行 Favorites CRUD + 云同步桥接 |
+| js/favorites.js | **新文件** +290 行 — 面板 + 薄弱分析 |
+| js/app.js | +35 行 favStarHtml + 事件委托 |
+| js/ui.js | +2 行 navTo dispatch + preload |
+| js/study.js | +4 行 scan card star |
+| js/deck-detail.js | +5 行 word row star |
+| js/syllabus-views.js | +60 行 KP star + 深度增强 |
+| js/practice.js | +4 行 PP card star |
+| js/knowledge-node.js | +55 行 KP star + 初学者增强 |
+| css/style.css | +110 行 star + panel + KP 样式 |
+| index.html | +5 行 panel div + nav items |
+| scripts/minify.sh | +3 行 favorites bundle |
+| js/config.js | APP_VERSION → v5.30.0 |
+
 ## [5.29.2] - 2026-03-16 — LaTeX 深度清理 + JS 健壮性修复
 
 ### LaTeX 深度清理（~2000 处残留命令）

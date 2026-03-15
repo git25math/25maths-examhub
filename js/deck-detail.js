@@ -195,6 +195,12 @@ function _renderDeck(idx) {
     if (ok > 0 || fail > 0) {
       html += '<span class="word-stats">\u2713' + ok + ' \u2717' + fail + '</span>';
     }
+    /* Favorite star */
+    if (typeof favStarHtml === 'function') {
+      var _favBoard = lv.board || lv._board || '';
+      var _favSec = lv._section || '';
+      html += favStarHtml('vocab', key, _favBoard, _favSec, { word: p.word, def: p.def });
+    }
     html += '</div>';
   });
 

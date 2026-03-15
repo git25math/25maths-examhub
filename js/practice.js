@@ -2305,6 +2305,10 @@ function renderPPCard() {
   }
   html += '</div>';
   html += '<div class="pp-marks-badge">' + q.marks + (q.marks === 1 ? ' mark' : ' marks') + '</div>';
+  /* Favorite star on PP card */
+  if (typeof favStarHtml === 'function') {
+    html += favStarHtml('pp', q.id, _ppSession.board, q.s || '', { src: q.src, marks: q.marks });
+  }
   html += '</div>';
 
   /* Question type tag */

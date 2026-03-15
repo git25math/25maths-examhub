@@ -1,5 +1,10 @@
 # Development Roadmap
 
+## v5.30.0 — 一键收藏系统 + 薄弱分析 + KP 深度增强 [DONE]
+- [x] Phase 1: Favorites CRUD API + 云同步 + Star 按钮注入（6 文件）
+- [x] Phase 2: 收藏面板（4 Tab + 排序） + 薄弱分析引擎
+- [x] Phase 3: KP 详情深度增强（难度/前置知识/摘要/公式）+ 知识节点初学者引导
+
 ## v5.29.2 — LaTeX 深度清理 + JS 健壮性修复 [DONE]
 - [x] `_ppRenderTexStr()` 添加 6 类 LaTeX 命令清理（~2000 处）
 - [x] `renderPPCard()` + vocab 遍历 + catch 块防御性修复

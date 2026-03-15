@@ -350,6 +350,12 @@ function renderStudyCard() {
     html += '<div class="scan-prior-hint ' + _hintClass + '">' + _hintLabel + '</div>';
   }
 
+  /* Favorite star on scan card */
+  var _scanBoard = S.lvl >= 0 && LEVELS[S.lvl] ? (LEVELS[S.lvl].board || '') : '';
+  var _scanSection = S.lvl >= 0 && LEVELS[S.lvl] ? (LEVELS[S.lvl]._section || '') : '';
+  if (typeof favStarHtml === 'function') {
+    html += '<div style="text-align:right;padding:0 4px">' + favStarHtml('vocab', _scanKey, _scanBoard, _scanSection, { word: p.word, def: p.def }) + '</div>';
+  }
   html += '<div class="scan-word">' + escapeHtml(p.word) + '</div>';
   html += '<div class="scan-def hidden" id="scan-def">' + escapeHtml(p.def) + '</div>';
   html += '</div>';

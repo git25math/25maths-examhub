@@ -87,6 +87,7 @@ function navTo(id) {
   else if (id === 'admin') { _lazyNav('admin', 'renderAdmin', 'admin'); }
   else if (id === 'homework') { _lazyNav('homework', 'showStudentHwPage', 'homework'); }
   else if (id === 'lists') { _lazyNav('lists', 'renderListView', 'lists'); }
+  else if (id === 'favorites') { _lazyNav('favorites', 'renderFavorites', 'favorites'); }
   /* section panel is rendered by openSection() directly */
 }
 
@@ -141,7 +142,7 @@ function _lazyNav(bundle, fnName, panelId) {
    Uses requestIdleCallback to avoid blocking main thread.
    Staggered loading: most critical first, then progressively less critical. */
 function _idlePreload() {
-  var bundles = ['study-quiz-battle', 'practice', 'syllabus-views', 'deck-detail', 'lists', 'worksheet', 'modes'];
+  var bundles = ['study-quiz-battle', 'practice', 'syllabus-views', 'deck-detail', 'lists', 'favorites', 'worksheet', 'modes'];
   var idx = 0;
   function loadNext() {
     if (idx >= bundles.length) return;
