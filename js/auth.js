@@ -201,7 +201,7 @@ var _userDataKeys = [
   'wmatch_v3', 'wmatch_last_sync', 'wmatch_login_ts',
   'pp_mastery', 'pp_wrong_book', 'pp_exam_history', 'pp_paper_results',
   'diag_history', 'wmatch_badges', 'wmatch_weekly',
-  'recovery_schedule', 'student_profile',
+  'recovery_schedule', 'student_profile', 'favorites',
   'wmatch_catCollapsed', 'wmatch_boardCollapsed',
   'wmatch_unitCollapsed', 'wmatch_chapterCollapsed'
 ];
@@ -217,6 +217,7 @@ async function doLogout() {
     try { localStorage.removeItem(k); } catch(e) {}
   });
   invalidateCache();
+  if (typeof _favCache !== 'undefined') _favCache = null;
   currentUser = null;
   E('app-shell').style.display = 'none';
   E('ov-auth').style.display = 'flex';
