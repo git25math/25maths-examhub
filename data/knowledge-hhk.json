@@ -18,6 +18,13 @@
           "label_zh": "真分数相乘",
           "description": "Calculate the product of two or more proper fractions and simplify the result.",
           "description_zh": "计算两个或多个真分数的乘积并化简结果。"
+        },
+        {
+          "id": "ep-mixed-mult",
+          "label": "Multiply mixed numbers",
+          "label_zh": "带分数乘法",
+          "description": "Convert mixed numbers to improper fractions and multiply.",
+          "description_zh": "将带分数化为假分数再乘。"
         }
       ],
       "examples": [
@@ -123,6 +130,13 @@
           "label_zh": "两个分数相除",
           "description": "Use the reciprocal rule to divide fractions and simplify.",
           "description_zh": "利用倒数规则进行分数除法并化简。"
+        },
+        {
+          "id": "ep-word-div",
+          "label": "Division in context",
+          "label_zh": "情景中的除法",
+          "description": "Solve a word problem that requires dividing fractions.",
+          "description_zh": "解需要除分数的文字题。"
         }
       ],
       "examples": [
@@ -236,6 +250,13 @@
           "label_zh": "负数的计算",
           "description": "Perform basic arithmetic operations involving negative integers.",
           "description_zh": "进行涉及负整数的基础四则运算。"
+        },
+        {
+          "id": "ep-order-neg",
+          "label": "Order negative numbers",
+          "label_zh": "排列负数",
+          "description": "Arrange a set of negative and positive numbers in ascending order.",
+          "description_zh": "将一组正负数按升序排列。"
         }
       ],
       "examples": [
@@ -340,6 +361,13 @@
           "label_zh": "读取并绘制坐标",
           "description": "Identify the coordinates of points or plot points in all four quadrants.",
           "description_zh": "识别点的坐标或在所有四个象限中绘制点。"
+        },
+        {
+          "id": "ep-describe-move",
+          "label": "Describe a translation",
+          "label_zh": "描述平移",
+          "description": "Write the column vector that describes a given translation.",
+          "description_zh": "写出描述给定平移的列向量。"
         }
       ],
       "examples": [
@@ -444,6 +472,13 @@
           "label_zh": "按比率分配数量",
           "description": "Divide a given total into parts according to a specific ratio.",
           "description_zh": "根据特定比率将给定的总量分为几部分。"
+        },
+        {
+          "id": "ep-ratio-context",
+          "label": "Solve ratio problems in context",
+          "label_zh": "在情景中解比例问题",
+          "description": "Use ratios to solve real-life sharing problems.",
+          "description_zh": "用比例解实际分配问题。"
         }
       ],
       "examples": [
@@ -549,6 +584,13 @@
           "label_zh": "计算数量的百分比",
           "description": "Calculate a specific percentage of a given value.",
           "description_zh": "计算给定数值的特定百分比。"
+        },
+        {
+          "id": "ep-pct-increase",
+          "label": "Calculate percentage increase/decrease",
+          "label_zh": "计算百分比增减",
+          "description": "Find the new amount after a percentage change.",
+          "description_zh": "求百分比变化后的新值。"
         }
       ],
       "examples": [
@@ -646,6 +688,13 @@
           "label_zh": "计算周长和面积",
           "description": "Given the radius or diameter, find the circumference or area of a circle.",
           "description_zh": "已知半径或直径，求圆的周长或面积。"
+        },
+        {
+          "id": "ep-find-r",
+          "label": "Find radius from circumference or area",
+          "label_zh": "由周长或面积求半径",
+          "description": "Rearrange the circle formulas to find the radius.",
+          "description_zh": "变换圆的公式求半径。"
         }
       ],
       "examples": [
@@ -765,6 +814,13 @@
           "label_zh": "计算圆柱体的体积",
           "description": "Find the volume using the radius and height.",
           "description_zh": "利用半径和高求体积。"
+        },
+        {
+          "id": "ep-find-h",
+          "label": "Find the height given the volume",
+          "label_zh": "已知体积求高",
+          "description": "Rearrange volume formula to calculate the height.",
+          "description_zh": "变换体积公式计算高度。"
         }
       ],
       "examples": [
@@ -886,6 +942,13 @@
           "label_zh": "求第 n 项公式",
           "description": "Find the general formula for a given linear sequence.",
           "description_zh": "求给定等差序列的通用公式。"
+        },
+        {
+          "id": "ep-find-position",
+          "label": "Find which term has a given value",
+          "label_zh": "求给定值是第几项",
+          "description": "Set the nth term equal to a value and solve for n.",
+          "description_zh": "令通项等于给定值并解n。"
         }
       ],
       "examples": [
@@ -998,6 +1061,13 @@
           "label_zh": "计算基础概率",
           "description": "Find the probability of a single event occurring.",
           "description_zh": "求单个事件发生的概率。"
+        },
+        {
+          "id": "ep-expected",
+          "label": "Calculate expected frequency",
+          "label_zh": "计算期望频率",
+          "description": "Multiply probability by number of trials.",
+          "description_zh": "概率乘以试验次数。"
         }
       ],
       "examples": [
@@ -1109,6 +1179,13 @@
           "label_zh": "作垂直平分线",
           "description": "Bisect a given line segment using a compass and ruler.",
           "description_zh": "使用圆规和直尺平分给定的线段。"
+        },
+        {
+          "id": "ep-perp-bisector",
+          "label": "Construct a perpendicular bisector",
+          "label_zh": "作垂直平分线",
+          "description": "Use compasses to construct the perpendicular bisector of a line segment.",
+          "description_zh": "用圆规作线段的垂直平分线。"
         }
       ],
       "examples": [
@@ -2262,6 +2339,13 @@
           "label_zh": "化简根式表达式",
           "description": "Convert a surd into the form $k\\sqrt{n}$ where $k$ is an integer and $n$ is as small as possible.",
           "description_zh": "将根式转换为 $k\\sqrt{n}$ 的形式，其中 $k$ 为整数且 $n$ 尽可能小。"
+        },
+        {
+          "id": "ep-rationalise-surd",
+          "label": "Rationalise the denominator",
+          "label_zh": "分母有理化",
+          "description": "Rewrite a fraction so the denominator has no surds.",
+          "description_zh": "改写分数使分母无根号。"
         }
       ],
       "examples": [
@@ -2377,6 +2461,13 @@
           "label_zh": "分解 $x^2 + bx + c$",
           "description": "Identify the two integers needed to complete the brackets $(x+p)(x+q)$.",
           "description_zh": "确定完成括号 $(x+p)(x+q)$ 所需的两个整数。"
+        },
+        {
+          "id": "ep-solve-factored",
+          "label": "Solve quadratic by factorising",
+          "label_zh": "因式分解解二次方程",
+          "description": "Set each bracket equal to zero after factorising.",
+          "description_zh": "因式分解后令每个括号等于零。"
         }
       ],
       "examples": [
@@ -2480,6 +2571,13 @@
           "label_zh": "求函数值",
           "description": "Find the value of $f(k)$ for a given constant $k$.",
           "description_zh": "对于给定的常数 $k$，求 $f(k)$ 的值。"
+        },
+        {
+          "id": "ep-evaluate-f",
+          "label": "Evaluate a function for given inputs",
+          "label_zh": "求给定输入的函数值",
+          "description": "Calculate f(a) by substituting into the function rule.",
+          "description_zh": "代入函数规则计算 f(a)。"
         }
       ],
       "examples": [
@@ -2589,6 +2687,13 @@
           "label_zh": "计算多边形中缺失的角度",
           "description": "Use sum rules to find one unknown angle in a given shape.",
           "description_zh": "利用求和规则寻找给定图形中的一个未知角。"
+        },
+        {
+          "id": "ep-interior-each",
+          "label": "Find each interior angle",
+          "label_zh": "求每个内角",
+          "description": "Use (n-2)×180/n for regular polygons.",
+          "description_zh": "正多边形用 (n-2)×180/n。"
         }
       ],
       "examples": [
@@ -2705,6 +2810,13 @@
           "label_zh": "求缺失的边长",
           "description": "Calculate the length of the hypotenuse or a shorter side in a right-angled triangle.",
           "description_zh": "计算直角三角形中斜边或较短边的长度。"
+        },
+        {
+          "id": "ep-3d-pythagoras",
+          "label": "Pythagoras in 3D",
+          "label_zh": "3D勾股定理",
+          "description": "Apply Pythagoras twice to find a space diagonal.",
+          "description_zh": "应用两次勾股定理求空间对角线。"
         }
       ],
       "examples": [
@@ -2818,6 +2930,13 @@
           "label_zh": "计算扇形面积或弧长",
           "description": "Given the radius and the central angle $\\theta$, find the dimensions of the sector.",
           "description_zh": "给定半径和中心角 $\\theta$，求扇形的尺寸。"
+        },
+        {
+          "id": "ep-sector-perimeter",
+          "label": "Find sector perimeter",
+          "label_zh": "求扇形周长",
+          "description": "Add arc length and two radii.",
+          "description_zh": "弧长加两条半径。"
         }
       ],
       "examples": [
@@ -2939,6 +3058,13 @@
           "label_zh": "计算 $n$ 年后的总价值",
           "description": "Find the final amount in a bank account or the value of a depreciating asset.",
           "description_zh": "寻找银行账户中的最终金额或贬值资产的价值。"
+        },
+        {
+          "id": "ep-depreciation",
+          "label": "Calculate depreciation",
+          "label_zh": "计算折旧",
+          "description": "Apply compound decrease formula for losing value over time.",
+          "description_zh": "应用复合递减公式计算随时间贬值。"
         }
       ],
       "examples": [
@@ -3046,6 +3172,13 @@
           "label_zh": "计算分层样本量",
           "description": "Work out how many people from a specific group should be in the sample.",
           "description_zh": "算出样本中应包含特定群体中的多少人。"
+        },
+        {
+          "id": "ep-stratified",
+          "label": "Calculate stratified sample sizes",
+          "label_zh": "计算分层样本大小",
+          "description": "Find how many from each group using proportions.",
+          "description_zh": "用比例求每组应取多少样本。"
         }
       ],
       "examples": [
@@ -3150,6 +3283,13 @@
           "label_zh": "绘制并解释累积频数图",
           "description": "Calculate cumulative frequencies from a table and use the graph to estimate the median.",
           "description_zh": "从表格计算累积频数，并使用图表估计中位数。"
+        },
+        {
+          "id": "ep-read-quartiles",
+          "label": "Read quartiles from a CF curve",
+          "label_zh": "从CF曲线读四分位数",
+          "description": "Find Q1, Q3 and IQR from the cumulative frequency curve.",
+          "description_zh": "从累积频率曲线找 Q1、Q3 和 IQR。"
         }
       ],
       "examples": [
@@ -3265,6 +3405,13 @@
           "label_zh": "约分代数分数",
           "description": "Factorize quadratics to cancel common terms.",
           "description_zh": "因式分解二次式以约去共同项。"
+        },
+        {
+          "id": "ep-add-alg-frac",
+          "label": "Add or subtract algebraic fractions",
+          "label_zh": "代数分式加减",
+          "description": "Find common denominator and combine algebraic fractions.",
+          "description_zh": "通分并合并代数分式。"
         }
       ],
       "examples": [
@@ -3371,6 +3518,13 @@
           "label_zh": "识别阴影区域",
           "description": "Combine multiple loci rules to shade an area, e.g., 'less than 5cm from A and closer to line AB than line AC'.",
           "description_zh": "结合多种轨迹规则为某个区域涂色，例如：“距离 A 小于 5cm 且距离直线 AB 比直线 AC 近”。"
+        },
+        {
+          "id": "ep-loci-shade",
+          "label": "Shade a region satisfying loci conditions",
+          "label_zh": "阴影表示满足轨迹条件的区域",
+          "description": "Identify and shade the area that satisfies all given constraints.",
+          "description_zh": "识别并阴影表示满足所有约束的区域。"
         }
       ],
       "examples": [
@@ -3471,6 +3625,13 @@
           "label_zh": "计算相似图形中缺失的边",
           "description": "Find the scale factor and use it to find an unknown length.",
           "description_zh": "寻找比例因子并使用它求未知长度。"
+        },
+        {
+          "id": "ep-area-volume-sf",
+          "label": "Use scale factor for area and volume",
+          "label_zh": "用比例因子求面积和体积",
+          "description": "Apply k² for area and k³ for volume of similar shapes.",
+          "description_zh": "相似图形面积用 k²，体积用 k³。"
         }
       ],
       "examples": [
@@ -3575,6 +3736,13 @@
           "label_zh": "计算测量结果的界限",
           "description": "Find the maximum or minimum possible value for a calculated quantity given the precision of measurements.",
           "description_zh": "根据测量精度，计算某一测量量可能的最大值或最小值。"
+        },
+        {
+          "id": "ep-max-calc",
+          "label": "Find maximum/minimum from bounds",
+          "label_zh": "由界限求最大/最小值",
+          "description": "Use UB and LB to find max/min of calculations.",
+          "description_zh": "用上下界求计算的最大/最小值。"
         }
       ],
       "examples": [
@@ -3682,6 +3850,13 @@
           "label_zh": "利用因式分解化简复杂分数",
           "description": "Simplify fractions where both numerator and denominator are quadratic expressions.",
           "description_zh": "化简分子和分母均为二次表达式的分数。"
+        },
+        {
+          "id": "ep-add-alg",
+          "label": "Add/subtract algebraic fractions",
+          "label_zh": "代数分式加减",
+          "description": "Find common denominator and simplify.",
+          "description_zh": "通分并化简。"
         }
       ],
       "examples": [
@@ -3788,6 +3963,13 @@
           "label_zh": "使用求根公式",
           "description": "Solve quadratic equations that do not factorize, giving answers to 2 decimal places.",
           "description_zh": "解不能分解因式的二次方程，结果保留两位小数。"
+        },
+        {
+          "id": "ep-formula-method",
+          "label": "Solve using the quadratic formula",
+          "label_zh": "用求根公式解",
+          "description": "Apply the formula when factorising is difficult.",
+          "description_zh": "因式分解困难时用公式。"
         }
       ],
       "examples": [
@@ -3902,6 +4084,13 @@
           "label_zh": "解线性与二次方程组",
           "description": "Find the intersection points of a line and a curve by solving simultaneous equations.",
           "description_zh": "通过解联立方程组找到直线与曲线的交点。"
+        },
+        {
+          "id": "ep-interpret-solutions",
+          "label": "Interpret simultaneous solutions",
+          "label_zh": "解释联立方程的解",
+          "description": "Relate solutions to intersection points on a graph.",
+          "description_zh": "将解与图上的交点联系起来。"
         }
       ],
       "examples": [
@@ -4129,6 +4318,13 @@
           "label_zh": "解非直角三角形",
           "description": "Calculate missing lengths and angles using Sine or Cosine rules.",
           "description_zh": "使用正弦或余弦定理计算缺失的边长和角度。"
+        },
+        {
+          "id": "ep-find-angle",
+          "label": "Find an angle using sine/cosine rule",
+          "label_zh": "用正弦/余弦定理求角",
+          "description": "Rearrange to find a missing angle.",
+          "description_zh": "变换公式求缺失角。"
         }
       ],
       "examples": [
@@ -4250,6 +4446,13 @@
           "label_zh": "寻找圆中的缺失角",
           "description": "Calculate angles by applying one or more circle theorems, giving reasons.",
           "description_zh": "应用一个或多个圆定理计算角度，并给出理由。"
+        },
+        {
+          "id": "ep-give-reasons",
+          "label": "Give reasons using circle theorems",
+          "label_zh": "用圆定理说明理由",
+          "description": "State which theorem justifies each angle calculation.",
+          "description_zh": "说明每步用了哪个定理。"
         }
       ],
       "examples": [
@@ -4358,6 +4561,13 @@
           "label_zh": "阴影表示满足多个轨迹条件的区域",
           "description": "Construct loci and shade the region that meets all inequalities (e.g., closer to A than B AND less than 5cm from C).",
           "description_zh": "作出轨迹并阴影表示满足所有不等式条件的区域（例如，离 A 比离 B 近，且离 C 小于 5cm）。"
+        },
+        {
+          "id": "ep-angle-bisector",
+          "label": "Construct an angle bisector",
+          "label_zh": "作角平分线",
+          "description": "Use compasses to bisect an angle accurately.",
+          "description_zh": "用圆规精确地平分角。"
         }
       ],
       "examples": [
@@ -4465,6 +4675,13 @@
           "label_zh": "计算相似图形的面积或体积",
           "description": "Use the length ratio to find missing areas or volumes, or vice-versa.",
           "description_zh": "利用长度比寻找缺失的面积或体积，反之亦然。"
+        },
+        {
+          "id": "ep-find-sf",
+          "label": "Find scale factor from area or volume",
+          "label_zh": "由面积或体积求比例因子",
+          "description": "Work backwards from area/volume ratio to find length ratio.",
+          "description_zh": "从面积/体积比反推长度比。"
         }
       ],
       "examples": [
@@ -4583,6 +4800,13 @@
           "label_zh": "描述单个变换",
           "description": "Identify the type and give full details (vector for translation, line for reflection, etc.) that maps shape A to B.",
           "description_zh": "识别变换类型并给出完整细节（平移的向量、反射的镜面线等），使图形 A 映射到 B。"
+        },
+        {
+          "id": "ep-single-equiv",
+          "label": "Find single equivalent transformation",
+          "label_zh": "求等价的单一变换",
+          "description": "Describe one transformation equivalent to two combined.",
+          "description_zh": "描述等价于两个组合变换的单一变换。"
         }
       ],
       "examples": [
@@ -4690,6 +4914,13 @@
           "label_zh": "利用树状图解决概率问题",
           "description": "Calculate probabilities for multiple events, often involving 'at least' or 'without replacement'.",
           "description_zh": "计算多个事件的概率，通常涉及“至少”或“不放回”情况。"
+        },
+        {
+          "id": "ep-without-replacement",
+          "label": "Draw tree diagram without replacement",
+          "label_zh": "画不放回树状图",
+          "description": "Adjust probabilities on second branches.",
+          "description_zh": "调整第二组分支上的概率。"
         }
       ],
       "examples": [
@@ -4797,6 +5028,13 @@
           "label_zh": "计算复杂几何体的体积/面积",
           "description": "Calculate dimensions for cones, spheres, and composite solids.",
           "description_zh": "计算圆锥、球体和组合几何体的相关尺寸。"
+        },
+        {
+          "id": "ep-surface-area",
+          "label": "Calculate surface area",
+          "label_zh": "计算表面积",
+          "description": "Find total surface area of 3D shapes.",
+          "description_zh": "求3D形状的总表面积。"
         }
       ],
       "examples": [
@@ -5154,6 +5392,13 @@
           "label_zh": "解线性与二次方程组",
           "description": "Solve a pair of equations where one is linear (e.g., $x+y=5$) and one is quadratic (e.g., $x^2+y^2=13$).",
           "description_zh": "解一对方程，其中一个是线性的（如 $x+y=5$），一个是二次的（如 $x^2+y^2=13$）。"
+        },
+        {
+          "id": "ep-graph-intersect",
+          "label": "Find intersection points graphically",
+          "label_zh": "图解求交点",
+          "description": "Solve by finding where line meets curve on a graph.",
+          "description_zh": "在图上找直线与曲线的交点。"
         }
       ],
       "examples": [
@@ -5261,6 +5506,13 @@
           "label_zh": "求二次数列的第 n 项",
           "description": "Determine the formula $an^2 + bn + c$ for a given sequence of numbers.",
           "description_zh": "确定给定数字序列的公式 $an^2 + bn + c$。"
+        },
+        {
+          "id": "ep-find-n",
+          "label": "Find position of a given term",
+          "label_zh": "求给定项的位置",
+          "description": "Set nth term = value and solve for n.",
+          "description_zh": "令通项=值并解n。"
         }
       ],
       "examples": [
@@ -5823,6 +6075,13 @@
           "label_zh": "识别区域 R",
           "description": "Given a set of inequalities, identify the region that satisfies all of them.",
           "description_zh": "给定一组不等式，识别出满足所有条件的区域。"
+        },
+        {
+          "id": "ep-identify-region",
+          "label": "Identify the feasible region",
+          "label_zh": "识别可行域",
+          "description": "Test points to determine which side of each line to shade.",
+          "description_zh": "用试点法确定每条线的哪一侧需要阴影。"
         }
       ],
       "examples": [
@@ -6045,6 +6304,13 @@
           "label_zh": "完成并使用树状图",
           "description": "Fill in missing probabilities and calculate the chance of a specific combined outcome.",
           "description_zh": "填写缺失的概率并计算特定组合结果的概率。"
+        },
+        {
+          "id": "ep-at-least-one",
+          "label": "Find P(at least one)",
+          "label_zh": "求至少一个的概率",
+          "description": "Use 1 - P(none) to calculate.",
+          "description_zh": "用 1 - P(无) 来计算。"
         }
       ],
       "examples": [
