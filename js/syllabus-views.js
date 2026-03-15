@@ -57,9 +57,10 @@ function renderSectionDetail(ch, sec, secIdx, board) {
   html += '</div>';
   /* Human-friendly progress label */
   var _progLabel;
-  if (stats.started === 0) _progLabel = t('Not started yet', '\u8fd8\u672a\u5f00\u59cb');
-  else if (stats.pct >= 80) _progLabel = t('Well done! ' + stats.mastered + '/' + stats.total + ' mastered', '\u505a\u5f97\u5f88\u68d2\uff01\u5df2\u638c\u63e1 ' + stats.mastered + '/' + stats.total);
-  else _progLabel = t("You've learned " + stats.started + ' of ' + stats.total + ' words', '\u4f60\u5df2\u5b66\u4e60 ' + stats.started + '/' + stats.total + ' \u4e2a\u8bcd');
+  if (stats.started === 0) _progLabel = t('Ready to start! Tap Study below.', '\u51c6\u5907\u597d\u4e86\uff01\u70b9\u51fb\u4e0b\u65b9\u5f00\u59cb\u5b66\u4e60\u3002');
+  else if (stats.pct >= 80) _progLabel = t('Amazing! ' + stats.mastered + '/' + stats.total + ' mastered', '\u592a\u68d2\u4e86\uff01\u5df2\u638c\u63e1 ' + stats.mastered + '/' + stats.total);
+  else if (stats.pct >= 50) _progLabel = t('Great progress! ' + stats.mastered + '/' + stats.total + ' mastered', '\u8fdb\u6b65\u5f88\u5927\uff01\u5df2\u638c\u63e1 ' + stats.mastered + '/' + stats.total);
+  else _progLabel = t("You've started " + stats.started + ' of ' + stats.total + ' words — keep going!', '\u5df2\u5f00\u59cb ' + stats.started + '/' + stats.total + ' \u4e2a\u8bcd\u2014\u2014\u7ee7\u7eed\u52a0\u6cb9\uff01');
   html += '<div class="sec-progress-label">' + _progLabel + '</div>';
 
   /* Section status — human-friendly progress description */

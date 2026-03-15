@@ -36,6 +36,34 @@
 | scripts/minify.sh | +3 行 favorites bundle |
 | js/config.js | APP_VERSION → v5.30.0 |
 
+### 知识点数据深度充实（11 commits）
+- **201 个知识点**全部添加 `difficulty` / `prerequisites` / `quickSummary` / `keyFormulas`
+- **136 个考试题型**补充（CIE 63 + EDX 35 + HHK 38），每个 KP 至少 2 种出题方式
+- **60+ 核心公式**速查，覆盖 Number → Algebra → Geometry → Trig → Stats
+- **前置知识链**零断裂零循环，最深 5 层（Number → Trig）
+- **EDX 4 个 KP** 中文解释扩充（分数运算/循环小数/标准形式/估算）
+- **kp-1.9-01** 修复中英混排（"从左到 right 计算" → "从左到右计算"）
+
+### 知识节点双语化 + 温度优化
+- 6 个学习阶段 **20+ 处文案**支持中英切换
+- 前置知识提示 ⚠️ → 💡，"建议先掌握" → "先看看这个会更容易理解"
+- 错误反馈 "答错了" → "没关系，看看解析再试试"
+- Stage labels / button text / toast 全部双语化
+
+### 学生体验温度优化
+- FLM 状态标签："Uncertain/模糊" → "Reviewing/巩固中"
+- 低分反馈："Try again! 📚" → "You're learning! 🌱"
+- Scan 结果："Still learning ❌" → "Just started 🌱"（紫色非红色）
+- PP 自评："How did you do?" → "How did you feel about this question?"
+- 首次访问："Welcome! Learn at your own pace — no pressure."
+- Explore 提示增加模式说明
+
+### Bug 修复 + 安全
+- 收藏面板 KP 导航：`openKPDetail` → `openKnowledgePoint`
+- Knowledge Node / PP 启动添加 lazy-load 保护
+- 收藏面板空状态引导："点击 ☆ 即可收藏，我们帮你追踪进度"
+- 退出登录时清除收藏数据（防跨用户泄漏）
+
 ## [5.29.2] - 2026-03-16 — LaTeX 深度清理 + JS 健壮性修复
 
 ### LaTeX 深度清理（~2000 处残留命令）

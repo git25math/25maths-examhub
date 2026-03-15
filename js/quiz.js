@@ -365,10 +365,10 @@ function finishDaily() {
   var data = getDailyData();
   var pct = Math.round(DC.score / DC.words.length * 100);
   var emoji, title;
-  if (pct >= 90) { emoji = '\ud83c\udfc6'; title = t('Excellent!', '太棒了！'); }
-  else if (pct >= 70) { emoji = '\ud83c\udf89'; title = t('Well done!', '做得好！'); }
-  else if (pct >= 50) { emoji = '\ud83d\udcaa'; title = t('Keep going!', '继续加油！'); }
-  else { emoji = '\ud83d\udcda'; title = t('Try again!', '再练练！'); }
+  if (pct >= 90) { emoji = '\ud83c\udfc6'; title = t('Excellent!', '\u592a\u68d2\u4e86\uff01'); }
+  else if (pct >= 70) { emoji = '\ud83c\udf89'; title = t('Well done!', '\u505a\u5f97\u597d\uff01'); }
+  else if (pct >= 50) { emoji = '\ud83d\udcaa'; title = t('Keep going!', '\u7ee7\u7eed\u52a0\u6cb9\uff01'); }
+  else { emoji = '\ud83c\udf31'; title = t('You\u2019re learning!', '\u5728\u8fdb\u6b65\u4e2d\uff01'); }
 
   _lastShareOpts = {
     mode: 'daily', score: DC.score, total: DC.words.length, emoji: emoji,

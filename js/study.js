@@ -119,9 +119,9 @@ function _renderRefreshCard() {
   html += '<button class="scan-btn scan-known" data-scan="known">';
   html += '<span class="scan-key">1</span> ' + t('Know it', '\u8ba4\u8bc6') + '</button>';
   html += '<button class="scan-btn scan-fuzzy" data-scan="fuzzy">';
-  html += '<span class="scan-key">2</span> ' + t('Fuzzy', '\u6a21\u7cca') + '</button>';
+  html += '<span class="scan-key">2</span> ' + t('Seen it', '\u6709\u5370\u8c61') + '</button>';
   html += '<button class="scan-btn scan-unknown" data-scan="unknown">';
-  html += '<span class="scan-key">3</span> ' + t('Still learning', '\u8fd8\u5728\u5b66') + '</button>';
+  html += '<span class="scan-key">3</span> ' + t('New to me', '\u8fd8\u4e0d\u719f') + '</button>';
   html += '</div>';
 
   E('panel-study').innerHTML = html;
@@ -156,7 +156,7 @@ function _finishRefreshScan() {
   /* Result breakdown */
   html += '<div class="stat-grid">';
   html += '<div class="stat-card success"><div class="stat-card-num">' + k + '</div><div class="stat-card-label">' + t('Still know', '\u4ecd\u8ba4\u8bc6') + '</div></div>';
-  html += '<div class="stat-card warning"><div class="stat-card-num">' + f + '</div><div class="stat-card-label">' + t('Fuzzy', '\u6a21\u7cca') + '</div></div>';
+  html += '<div class="stat-card warning"><div class="stat-card-num">' + f + '</div><div class="stat-card-label">' + t('Seen it', '\u6709\u5370\u8c61') + '</div></div>';
   html += '<div class="stat-card danger"><div class="stat-card-num">' + u + '</div><div class="stat-card-label">' + t('Needs another round', '\u518d\u7ec3\u4e00\u8f6e') + '</div></div>';
   html += '</div>';
 
@@ -345,7 +345,7 @@ function renderStudyCard() {
   if (_scanFs !== 'new' && S.round === 1) {
     var _hintClass = _scanFs === 'mastered' ? 'scan-hint-mastered' : _scanFs === 'uncertain' ? 'scan-hint-fuzzy' : 'scan-hint-learning';
     var _hintLabel = _scanFs === 'mastered' ? t('Mastered', '\u5df2\u638c\u63e1')
-                   : _scanFs === 'uncertain' ? t('Fuzzy', '\u6a21\u7cca')
+                   : _scanFs === 'uncertain' ? t('Seen it', '\u6709\u5370\u8c61')
                    : t('Learning', '\u5b66\u4e60\u4e2d');
     html += '<div class="scan-prior-hint ' + _hintClass + '">' + _hintLabel + '</div>';
   }
@@ -365,9 +365,9 @@ function renderStudyCard() {
   html += '<button class="scan-btn scan-known" data-scan="known">';
   html += '<span class="scan-key">1</span> ' + t('Know it', '\u8ba4\u8bc6') + '</button>';
   html += '<button class="scan-btn scan-fuzzy" data-scan="fuzzy">';
-  html += '<span class="scan-key">2</span> ' + t('Fuzzy', '\u6a21\u7cca') + '</button>';
+  html += '<span class="scan-key">2</span> ' + t('Seen it', '\u6709\u5370\u8c61') + '</button>';
   html += '<button class="scan-btn scan-unknown" data-scan="unknown">';
-  html += '<span class="scan-key">3</span> ' + t('Still learning', '\u8fd8\u5728\u5b66') + '</button>';
+  html += '<span class="scan-key">3</span> ' + t('New to me', '\u8fd8\u4e0d\u719f') + '</button>';
   html += '</div>';
 
   E('panel-study').innerHTML = html;
@@ -651,7 +651,7 @@ function _renderKPScanPreview() {
   html += '</div>';
   html += '<div class="scan-actions" id="scan-actions">';
   html += '<button class="scan-btn scan-known" data-kpscan="known"><span class="scan-key">1</span> ' + t('Know', '\u5df2\u638c\u63e1') + '</button>';
-  html += '<button class="scan-btn scan-fuzzy" data-kpscan="fuzzy"><span class="scan-key">2</span> ' + t('Fuzzy', '\u6a21\u7cca') + '</button>';
+  html += '<button class="scan-btn scan-fuzzy" data-kpscan="fuzzy"><span class="scan-key">2</span> ' + t('Seen it', '\u6709\u5370\u8c61') + '</button>';
   html += '<button class="scan-btn scan-unknown" data-kpscan="unknown"><span class="scan-key">3</span> ' + t('Learning', '\u5b66\u4e60\u4e2d') + '</button>';
   html += '</div>';
   E('panel-study').innerHTML = html;
@@ -844,8 +844,8 @@ function _finishKPScan() {
   html += '</div>';
   html += '<div class="stat-grid">';
   html += '<div class="stat-card success"><div class="stat-card-num">' + statusCounts.mastered + '</div><div class="stat-card-label">' + t('Mastered', '\u5df2\u638c\u63e1') + '</div></div>';
-  html += '<div class="stat-card warning"><div class="stat-card-num">' + statusCounts.uncertain + '</div><div class="stat-card-label">' + t('Fuzzy', '\u6a21\u7cca') + '</div></div>';
-  html += '<div class="stat-card danger"><div class="stat-card-num">' + statusCounts.learning + '</div><div class="stat-card-label">' + t('Still learning', '\u8fd8\u5728\u5b66') + '</div></div>';
+  html += '<div class="stat-card warning"><div class="stat-card-num">' + statusCounts.uncertain + '</div><div class="stat-card-label">' + t('Seen it', '\u6709\u5370\u8c61') + '</div></div>';
+  html += '<div class="stat-card danger"><div class="stat-card-num">' + statusCounts.learning + '</div><div class="stat-card-label">' + t('New to me', '\u8fd8\u4e0d\u719f') + '</div></div>';
   html += '</div>';
   html += '<div class="result-actions">';
   html += '<button class="btn btn-primary" onclick="navTo(\'section\')">' + t('Back to Section', '\u8fd4\u56de\u77e5\u8bc6\u70b9') + '</button>';
@@ -987,7 +987,7 @@ function renderScanOverview(board) {
   html += '<select class="scan-ov-select" id="scan-ov-status" onchange="_applyScanOvFilter()">';
   html += '<option value="all">' + t('All Status', '\u5168\u90e8\u72b6\u6001') + '</option>';
   html += '<option value="known">' + t('Known', '\u5df2\u4f1a') + '</option>';
-  html += '<option value="fuzzy">' + t('Fuzzy', '\u6a21\u7cca') + '</option>';
+  html += '<option value="fuzzy">' + t('Seen it', '\u6709\u5370\u8c61') + '</option>';
   html += '<option value="unknown">' + t('Unknown', '\u4e0d\u4f1a') + '</option>';
   html += '</select>';
   html += '<select class="scan-ov-select" id="scan-ov-fuzzy" onchange="_applyScanOvFilter()">';
@@ -999,7 +999,7 @@ function renderScanOverview(board) {
   html += '<div class="scan-ov-stats">';
   html += '<div class="scan-ov-stat">' + data.length + '<br><small>' + t('Total', '\u603b\u8ba1') + '</small></div>';
   html += '<div class="scan-ov-stat known">' + knownN + '<br><small>' + t('Known', '\u5df2\u4f1a') + '</small></div>';
-  html += '<div class="scan-ov-stat fuzzy">' + fuzzyN + '<br><small>' + t('Fuzzy', '\u6a21\u7cca') + '</small></div>';
+  html += '<div class="scan-ov-stat fuzzy">' + fuzzyN + '<br><small>' + t('Seen it', '\u6709\u5370\u8c61') + '</small></div>';
   html += '<div class="scan-ov-stat unknown">' + unknownN + '<br><small>' + t('Unknown', '\u4e0d\u4f1a') + '</small></div>';
   html += '</div>';
 
@@ -1064,7 +1064,7 @@ function _renderScanOvItems(data) {
     if (d.fuzzyCount > 0) html += ' \u00b7 <span class="scan-ov-fuzzy-tag">' + d.fuzzyCount + '\u00d7 ' + t('fuzzy', '\u6a21\u7cca') + '</span>';
     html += '</div></div>';
     html += '<div class="scan-ov-item-badge scan-ov-badge-' + rc + '">';
-    html += rc === 'known' ? t('Known', '\u5df2\u4f1a') : rc === 'fuzzy' ? t('Fuzzy', '\u6a21\u7cca') : t('Unknown', '\u4e0d\u4f1a');
+    html += rc === 'known' ? t('Known', '\u5df2\u4f1a') : rc === 'fuzzy' ? t('Seen it', '\u6709\u5370\u8c61') : t('Unknown', '\u4e0d\u4f1a');
     html += '</div>';
     if (d.history.length > 1) {
       html += '<div class="scan-ov-dots">';

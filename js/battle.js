@@ -208,7 +208,7 @@ function endBattle(won) {
   var modalHtml = '';
   modalHtml += '<div class="result-emoji">' + emoji + '</div>';
   modalHtml += '<div class="result-title">' + title + '</div>';
-  modalHtml += '<div class="result-sub">' + (won ? t('All matched!', '\u5168\u90e8\u914d\u5bf9\u6210\u529f\uff01') : t('Try again!', '\u518d\u6765\u4e00\u6b21\uff01')) + '</div>';
+  modalHtml += '<div class="result-sub">' + (won ? t('All matched!', '\u5168\u90e8\u914d\u5bf9\u6210\u529f\uff01') : t('So close! You\u2019re getting faster.', '\u5dee\u4e00\u70b9\uff01\u4f60\u8d8a\u6765\u8d8a\u5feb\u4e86\u3002')) + '</div>';
 
   modalHtml += '<div class="result-stats">';
   modalHtml += '<div class="text-center"><div class="result-stat-val">' + (won ? elapsed : '-') + '</div><div class="result-stat-label">' + t('TIME', '\u7528\u65f6') + '</div></div>';
