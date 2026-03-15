@@ -64,7 +64,7 @@ function renderFavorites() {
     html += '<div class="fav-empty-icon">⭐</div>';
     html += '<div class="fav-empty-text" style="font-size:16px;font-weight:600;margin-bottom:8px">' + t('Your collection starts here', '你的收藏从这里开始') + '</div>';
     html += '<div style="font-size:13px;color:var(--c-text2);line-height:1.6;max-width:320px;margin:0 auto">';
-    html += t('As you study, tap the ☆ on any word, knowledge point, or exam question to save it here. We\u2019ll help you track your progress and find your weak spots.', '学习过程中，点击任何单词、知识点或真题旁的 ☆ 即可收藏。我们会帮你追踪进度，发现薄弱环节。');
+    html += t('As you study, tap the \u2606 on any word, knowledge point, or exam question to save it here. We\u2019ll help you track your progress and suggest what to focus on next.', '\u5b66\u4e60\u8fc7\u7a0b\u4e2d\uff0c\u70b9\u51fb\u4efb\u4f55\u5355\u8bcd\u3001\u77e5\u8bc6\u70b9\u6216\u771f\u9898\u65c1\u7684 \u2606 \u5373\u53ef\u6536\u85cf\u3002\u6211\u4eec\u4f1a\u5e2e\u4f60\u8ffd\u8e2a\u8fdb\u5ea6\uff0c\u5efa\u8bae\u4e0b\u4e00\u6b65\u5b66\u4ec0\u4e48\u3002');
     html += '</div>';
     html += '<button class="btn btn-primary" style="margin-top:20px" onclick="navTo(\'home\')">' + t('Start Exploring', '开始探索') + ' \u2192</button>';
     html += '</div>';
@@ -226,9 +226,9 @@ function _favRenderWeakness() {
   if (analysis.length === 0) return '';
 
   var html = '<div class="fav-weak-section">';
-  html += '<div class="fav-weak-title">🔬 ' + t('Weakness Analysis', '薄弱分析') + '</div>';
+  html += '<div class="fav-weak-title">\ud83c\udfaf ' + t('Focus Suggestions', '\u5efa\u8bae\u5173\u6ce8') + '</div>';
   html += '<div style="font-size:13px;color:var(--c-text2);margin-bottom:12px">' +
-    t('Based on your favorites and learning progress', '基于你的收藏和学习进度') + '</div>';
+    t('Based on your favorites and learning progress \u2014 where to focus next', '\u57fa\u4e8e\u4f60\u7684\u6536\u85cf\u548c\u5b66\u4e60\u8fdb\u5ea6\u2014\u2014\u63a5\u4e0b\u6765\u53ef\u4ee5\u5173\u6ce8\u8fd9\u4e9b') + '</div>';
   html += '<div class="fav-weak-cards">';
 
   var shown = Math.min(analysis.length, 5);
@@ -243,13 +243,13 @@ function _favRenderWeakness() {
     if (w.vocabCount > 0) html += '<span>📝 ' + w.vocabCount + ' ' + t('words', '单词') + '</span>';
     if (w.kpCount > 0) html += '<span>📖 ' + w.kpCount + ' ' + t('KPs', '知识点') + '</span>';
     if (w.ppCount > 0) html += '<span>📄 ' + w.ppCount + ' ' + t('questions', '题') + '</span>';
-    html += '<span>' + w.unmasteredPct + '% ' + t('unmastered', '未掌握') + '</span>';
+    html += '<span>' + w.unmasteredPct + '% ' + t('in progress', '\u5b66\u4e60\u4e2d') + '</span>';
     html += '</div>';
     if (w.recommendation) {
       html += '<div class="fav-weak-card-rec">' + escapeHtml(w.recommendation) + '</div>';
     }
     html += '<button class="btn btn-sm btn-primary fav-weak-fix-btn" data-fav-action="fix" data-fav-section="' + escapeHtml(w.section) + '" data-fav-board="' + escapeHtml(w.board) + '">';
-    html += '🔧 ' + t('Start Fixing', '开始修复');
+    html += '\ud83d\udcaa ' + t('Practice This', '\u7ec3\u4e60\u8fd9\u4e2a');
     html += '</button>';
     html += '</div>';
   }
