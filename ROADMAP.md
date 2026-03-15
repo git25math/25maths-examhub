@@ -1,5 +1,9 @@
 # Development Roadmap
 
+## v5.29.2 — LaTeX 深度清理 + JS 健壮性修复 [DONE]
+- [x] `_ppRenderTexStr()` 添加 6 类 LaTeX 命令清理（~2000 处）
+- [x] `renderPPCard()` + vocab 遍历 + catch 块防御性修复
+
 ## v5.29.1 — 知识点标注修正 + LaTeX 渲染修复 [DONE]
 - [x] `_ppRenderTexStr()` 清理 `\[Ncm]` 间距命令（45 题）
 - [x] topics[0] 强制对应 section→chapter 映射（190 题修正）

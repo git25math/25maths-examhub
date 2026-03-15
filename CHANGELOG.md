@@ -1,5 +1,26 @@
 # Changelog
 
+## [5.29.2] - 2026-03-16 — LaTeX 深度清理 + JS 健壮性修复
+
+### LaTeX 深度清理（~2000 处残留命令）
+- 间距命令清理：`\quad` `\qquad` `\,` `\;` `\:` `\hspace{}` → 空格/移除（1370 处）
+- 文本模式命令：`\text{}` `\textit{}` `\mbox{}` `\underline{}` → 提取内容/HTML 标签（120 处）
+- 页面控制命令：`\newpage` `\pagebreak` `\centering` `\noindent` → 移除（34 处）
+- 列表环境：`\begin{itemize}` `\item` → HTML `<ul><li>`（19 处）
+- tabular 表格：清理 wrapper 标签 + `\hline` `\arraystretch` `\minipage`（453 处）
+- 横线命令：`\rule{}{}` → `<hr>`（2 处）
+
+### JS 防御性修复
+- `renderPPCard()` 添加 `if (!q) return` 边界检查
+- vocab 遍历添加 `if (!item || !def) continue` null 检查
+- Recovery Pack 两处 silent catch 改为 `console.warn('[Recovery]', e.message)`
+
+### 文件变更
+| 文件 | 修改 |
+|------|------|
+| js/practice.js | +27 行 LaTeX 清理正则 + 3 处防御性修复 |
+| js/config.js | APP_VERSION → v5.29.2 |
+
 ## [5.29.1] - 2026-03-15 — 知识点标注修正 + LaTeX 渲染修复
 
 ### LaTeX 渲染修复

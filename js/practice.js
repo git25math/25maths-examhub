@@ -1360,6 +1360,35 @@ function _ppRenderTexStr(str) {
   html = html.replace(/\\\[[\d.]+\s*cm\]/g, '<br>');
   html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
   html = html.replace(/\\newline/g, '<br>');
+
+  /* v5.29.2 — LaTeX deep cleanup (outside math delimiters) */
+  /* 1.1 Spacing commands → spaces */
+  html = html.replace(/\\quad/g, ' ');
+  html = html.replace(/\\qquad/g, '  ');
+  html = html.replace(/\\,(?![a-zA-Z])/g, ' ');
+  html = html.replace(/\\[;:]/g, ' ');
+  html = html.replace(/\\hspace\*?\{[^}]*\}/g, ' ');
+  /* 1.2 Text-mode commands → extract content */
+  html = html.replace(/\\text\{([^}]*)\}/g, '$1');
+  html = html.replace(/\\textit\{([^}]*)\}/g, '<em>$1</em>');
+  html = html.replace(/\\mbox\{([^}]*)\}/g, '$1');
+  html = html.replace(/\\underline\{([^}]*)\}/g, '<u>$1</u>');
+  /* 1.3 Page control commands → remove */
+  html = html.replace(/\\newpage|\\pagebreak|\\centering|\\noindent/g, '');
+  /* 1.4 List environments → HTML lists */
+  html = html.replace(/\\begin\{itemize\}/g, '<ul>');
+  html = html.replace(/\\end\{itemize\}/g, '</ul>');
+  html = html.replace(/\\item\s*/g, '<li>');
+  /* 1.5 Tabular → simple formatting */
+  html = html.replace(/\\begin\{tabular\}\{[^}]*\}/g, '<div class="pp-tex-table">');
+  html = html.replace(/\\end\{tabular\}/g, '</div>');
+  html = html.replace(/\\hline/g, '');
+  html = html.replace(/\\renewcommand\{\\arraystretch\}\{[^}]*\}/g, '');
+  html = html.replace(/\\begin\{minipage\}\{[^}]*\}/g, '');
+  html = html.replace(/\\end\{minipage\}/g, '');
+  /* 1.6 Rule command → HR */
+  html = html.replace(/\\rule\{[^}]*\}\{[^}]*\}/g, '<hr class="pp-rule">');
+
   return html;
 }
 
@@ -2207,6 +2236,7 @@ function renderPPCard() {
   var el = E('panel-pastpaper');
   if (!el) return;
   var q = _ppSession.questions[_ppSession.current];
+  if (!q) return;
   var total = _ppSession.questions.length;
   var idx = _ppSession.current;
   var mastery = _ppGetQMastery(q.id);
@@ -2611,7 +2641,7 @@ function _ppShowRecoveryPack(q) {
       if (_tutorPack && typeof renderTutorBlock === 'function') {
         html += renderTutorBlock(_tutorPack, 'pack');
       }
-    } catch (e) {}
+    } catch (e) { console.warn('[Recovery]', e.message); }
   }
 
   /* Mistake Correction Coach (v4.0.0) */
@@ -2621,7 +2651,7 @@ function _ppShowRecoveryPack(q) {
       if (_coach && typeof renderMistakeCoachBlock === 'function') {
         html += renderMistakeCoachBlock(_coach);
       }
-    } catch (e) {}
+    } catch (e) { console.warn('[Recovery]', e.message); }
   }
 
   /* Action buttons */
@@ -2828,6 +2858,7 @@ function _resolveVocabUid(uid, sectionId, board) {
       for (var vi = 0; vi < lv.vocabulary.length; vi += 2) {
         var item = lv.vocabulary[vi];
         var def = lv.vocabulary[vi + 1];
+        if (!item || !def) continue;
         if (makeUid(item.content) === uid) {
           return { word: item.content, def: def.content, key: wordKey(idx, item.id), levelIdx: idx };
         }
