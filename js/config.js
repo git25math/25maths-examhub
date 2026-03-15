@@ -4,7 +4,7 @@
 
 /* Supabase credentials (shared with 25maths-website) */
 var SUPABASE_URL = 'https://jjjigohjvmyewasmmmyf.supabase.co';
-var SUPABASE_KEY = 'sb_publishable_EDe6c9jFS4_PL451oYMYzg_86KRbHRZ';
+var SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Impqamlnb2hqdm15ZXdhc21tbXlmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzEzOTgzNDYsImV4cCI6MjA4Njk3NDM0Nn0.P2L7t9v7Cj89vwkPHjRyp-h70Mawwov6mHyw7u6ALcY';
 
 /* Supabase client (initialized only if credentials are set and SDK is loaded) */
 var sb = null;
