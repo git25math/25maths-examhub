@@ -4525,13 +4525,15 @@ function ppShowResults(exam, conceptErrors) {
 }
 
 /* ═══ LAZY PROXIES — Browse + Wrong Book + Mock (overwritten when practice-browse loads) ═══ */
-function ppShowWrongBook(s, b) { _lazyCall('practice-browse', 'ppShowWrongBook', [s, b]); }
-function ppReviewWrongItem(q, s, b) { _lazyCall('practice-browse', 'ppReviewWrongItem', [q, s, b]); }
-function ppStartWrongBookReview(s, b) { _lazyCall('practice-browse', 'ppStartWrongBookReview', [s, b]); }
-function ppShowPaperBrowse(b) { _lazyCall('practice-browse', 'ppShowPaperBrowse', [b]); }
-function ppShowPaperDetail(k, b) { _lazyCall('practice-browse', 'ppShowPaperDetail', [k, b]); }
-function ppStartFullPaper(k, b, m, i) { _lazyCall('practice-browse', 'ppStartFullPaper', [k, b, m, i]); }
-function ppShowPaperExamSetup(k, b, q, m) { _lazyCall('practice-browse', 'ppShowPaperExamSetup', [k, b, q, m]); }
+/* NOTE: Cannot use _lazyCall here — the proxy IS window[fnName], causing infinite recursion.
+   Use _lazyLoad + direct call in callback (practice-browse.js overwrites these proxies on load). */
+function ppShowWrongBook(s, b) { _lazyLoad('practice-browse', function() { ppShowWrongBook(s, b); }); }
+function ppReviewWrongItem(q, s, b) { _lazyLoad('practice-browse', function() { ppReviewWrongItem(q, s, b); }); }
+function ppStartWrongBookReview(s, b) { _lazyLoad('practice-browse', function() { ppStartWrongBookReview(s, b); }); }
+function ppShowPaperBrowse(b) { _lazyLoad('practice-browse', function() { ppShowPaperBrowse(b); }); }
+function ppShowPaperDetail(k, b) { _lazyLoad('practice-browse', function() { ppShowPaperDetail(k, b); }); }
+function ppStartFullPaper(k, b, m, i) { _lazyLoad('practice-browse', function() { ppStartFullPaper(k, b, m, i); }); }
+function ppShowPaperExamSetup(k, b, q, m) { _lazyLoad('practice-browse', function() { ppShowPaperExamSetup(k, b, q, m); }); }
 function ppStartPaperExam(k, b) { _lazyCall('practice-browse', 'ppStartPaperExam', [k, b]); }
 function ppShowMockSetup(b) { _lazyCall('practice-browse', 'ppShowMockSetup', [b]); }
 function ppMockSetOpt(e, k, v) { _lazyCall('practice-browse', 'ppMockSetOpt', [e, k, v]); }
