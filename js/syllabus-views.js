@@ -602,7 +602,7 @@ function renderSmartPath() {
       spRec = 'vocab'; spLi = h.levelIdx;
     } else if (h.rec === 'review_words' && h.levelIdx >= 0) {
       spRec = 'review_words'; spLi = h.levelIdx;
-    } else if (h.rec === 'past_papers' && typeof startPastPaper === 'function' && typeof _ppAccessAllowed === 'function' && _ppAccessAllowed(h.board)) {
+    } else if (h.rec === 'past_papers' && typeof _ppAccessAllowed === 'function' && _ppAccessAllowed(h.board)) {
       spRec = 'past_papers';
     } else {
       spRec = 'section';
@@ -913,10 +913,10 @@ function _renderMasterQSummary(slot, secId, board) {
   var unmasteredCount = totalTypes - masteredTypes;
   h += '<div class="btn-row btn-row--wrap">';
   if (unmasteredCount > 0) {
-    h += '<button class="btn btn-primary btn-sm" onclick="startPracticeUnmastered(\'' + escapeHtml(secId) + '\',\'' + escapeHtml(board) + '\')" class="flex-1">';
+    h += '<button class="btn btn-primary btn-sm" onclick="_lazyLoad(\'practice\',function(){startPracticeUnmastered(\'' + escapeHtml(secId) + '\',\'' + escapeHtml(board) + '\')})" class="flex-1">';
     h += t('Practice to strengthen', '\u7ec3\u4e60\u5f85\u52a0\u5f3a\u7684') + ' (' + unmasteredCount + ')</button>';
   }
-  h += '<button class="btn btn-ghost btn-sm" onclick="startPastPaper(\'' + escapeHtml(secId) + '\',\'' + escapeHtml(board) + '\',\'practice\')" class="flex-1">';
+  h += '<button class="btn btn-ghost btn-sm" onclick="_lazyCall(\'practice\',\'startPastPaper\',[\'' + escapeHtml(secId) + '\',\'' + escapeHtml(board) + '\',\'practice\'])" class="flex-1">';
   h += t('Practice All', '\u5168\u90E8\u7EC3\u4E60') + '</button>';
   h += '</div>';
 
@@ -1715,7 +1715,7 @@ function submitSectionReport(sectionId, moduleType, board) {
     var pp = e.target.closest('[data-pp-start]');
     if (pp) {
       e.stopPropagation();
-      startPastPaper(pp.dataset.sec, pp.dataset.board, pp.dataset.mode, pp.dataset.group || undefined, pp.dataset.cmd || undefined);
+      _lazyCall('practice', 'startPastPaper', [pp.dataset.sec, pp.dataset.board, pp.dataset.mode, pp.dataset.group || undefined, pp.dataset.cmd || undefined]);
     }
   });
 
@@ -1735,8 +1735,8 @@ function submitSectionReport(sectionId, moduleType, board) {
       openDeck(parseInt(li, 10));
     } else if (rec === 'review_words' && li !== '') {
       appSort = 'hard'; openDeck(parseInt(li, 10));
-    } else if (rec === 'past_papers' && typeof startPastPaper === 'function' && typeof _ppAccessAllowed === 'function' && _ppAccessAllowed(sp.dataset.spBoard)) {
-      startPastPaper(sp.dataset.spSec, sp.dataset.spBoard, 'practice');
+    } else if (rec === 'past_papers' && typeof _ppAccessAllowed === 'function' && _ppAccessAllowed(sp.dataset.spBoard)) {
+      _lazyCall('practice', 'startPastPaper', [sp.dataset.spSec, sp.dataset.spBoard, 'practice']);
     } else {
       openSection(sp.dataset.spSec, sp.dataset.spBoard);
     }
