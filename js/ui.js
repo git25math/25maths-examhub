@@ -719,7 +719,7 @@ function resultScreenHTML(ok, total, retryId, backId, mode) {
   if (pct >= 90) { emoji = '\ud83c\udfc6'; title = t('Excellent!', '\u592a\u68d2\u4e86\uff01'); }
   else if (pct >= 70) { emoji = '\ud83c\udf89'; title = t('Well done!', '\u505a\u5f97\u597d\uff01'); }
   else if (pct >= 50) { emoji = '\ud83d\udcaa'; title = t('Keep going!', '\u7ee7\u7eed\u52a0\u6cb9\uff01'); }
-  else { emoji = '\ud83d\udcda'; title = t('Try again!', '\u518d\u7ec3\u7ec3\uff01'); }
+  else { emoji = '\ud83c\udf31'; title = t('You\u2019re learning!', '\u5728\u8fdb\u6b65\u4e2d\uff01'); }
 
   _lastShareOpts = { mode: mode || 'quiz', score: ok, total: total, emoji: emoji };
 

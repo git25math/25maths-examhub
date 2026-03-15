@@ -2351,15 +2351,15 @@ function renderPPCard() {
   if (_ppSession.mode === 'practice') {
     html += '<div class="mt-16 pp-self-assess-wrap">';
     html += '<div class="pp-self-assess-hint">';
-    html += t('How did you do?', '\u4f60\u505a\u5f97\u5982\u4f55\uff1f');
+    html += t('How did you feel about this question?', '\u8fd9\u9053\u9898\u4f60\u611f\u89c9\u5982\u4f55\uff1f');
     html += '</div>';
     html += '<div class="pp-rate-row">';
     html += '<button class="pp-rate-btn needs-work' + (mastery === 'needs_work' ? ' selected' : '') + '" onclick="ppRate(\'needs_work\')">';
-    html += '\ud83d\udd34 ' + t('Keep Practicing', '\u7ee7\u7eed\u52a0\u6cb9') + '</button>';
+    html += '\ud83c\udf31 ' + t('Still learning', '\u8fd8\u5728\u5b66') + '</button>';
     html += '<button class="pp-rate-btn partial' + (mastery === 'partial' ? ' selected' : '') + '" onclick="ppRate(\'partial\')">';
-    html += '\ud83d\udfe1 ' + t('Partial', '\u90e8\u5206\u638c\u63e1') + '</button>';
+    html += '\ud83d\udfe1 ' + t('Getting there', '\u5feb\u4e86') + '</button>';
     html += '<button class="pp-rate-btn mastered' + (mastery === 'mastered' ? ' selected' : '') + '" onclick="ppRate(\'mastered\')">';
-    html += '\u2705 ' + t('Mastered', '\u5df2\u638c\u63e1') + '</button>';
+    html += '\u2705 ' + t('Got it!', '\u638c\u63e1\u4e86\uff01') + '</button>';
     html += '</div></div>';
   }
 

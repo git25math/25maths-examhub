@@ -455,9 +455,23 @@ function finishStudy() {
   /* Result breakdown */
   html += '<div class="stat-grid">';
   html += '<div class="stat-card success"><div class="stat-card-num">' + k + '</div><div class="stat-card-label">' + t('Know it', '\u8ba4\u8bc6') + '</div></div>';
-  html += '<div class="stat-card warning"><div class="stat-card-num">' + f + '</div><div class="stat-card-label">' + t('Fuzzy', '\u6a21\u7cca') + '</div></div>';
-  html += '<div class="stat-card danger"><div class="stat-card-num">' + u + '</div><div class="stat-card-label">' + t('Still learning', '\u8fd8\u5728\u5b66') + '</div></div>';
+  html += '<div class="stat-card warning"><div class="stat-card-num">' + f + '</div><div class="stat-card-label">' + t('Getting there', '\u5feb\u4e86') + '</div></div>';
+  html += '<div class="stat-card" style="background:var(--c-primary-bg);color:var(--c-primary)"><div class="stat-card-num">' + u + '</div><div class="stat-card-label">' + t('Just started', '\u521a\u5f00\u59cb') + '</div></div>';
   html += '</div>';
+
+  /* Encouraging context message */
+  if (!allMastered && k > 0) {
+    var pct = Math.round(k / total * 100);
+    html += '<div style="font-size:13px;color:var(--c-text2);text-align:center;margin:8px 0;line-height:1.6">';
+    if (pct >= 70) {
+      html += t('Impressive! Most words are already clicking.', '\u771f\u68d2\uff01\u5927\u90e8\u5206\u8bcd\u5df2\u7ecf\u8bb0\u4f4f\u4e86\u3002');
+    } else if (pct >= 40) {
+      html += t('Good progress! Every round builds your memory.', '\u8fdb\u6b65\u5f88\u5927\uff01\u6bcf\u8f6e\u90fd\u5728\u5f3a\u5316\u8bb0\u5fc6\u3002');
+    } else {
+      html += t('You\'ve started learning — that\'s the hardest part!', '\u5df2\u7ecf\u8d70\u51fa\u7b2c\u4e00\u6b65\u2014\u2014\u8fd9\u662f\u6700\u96be\u7684\u90e8\u5206\uff01');
+    }
+    html += '</div>';
+  }
 
   /* Pool progress bar */
   var deckPairs = getPairs(LEVELS[S.lvl].vocabulary);
