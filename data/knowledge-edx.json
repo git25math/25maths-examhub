@@ -116,6 +116,20 @@
           "label_zh": "乘积法则",
           "formula": "$a \\times b = \\text{HCF} \\times \\text{LCM}$"
         }
+      ],
+      "realWorldContext": {
+        "en": "Prime factorisation is the basis of all modern encryption. Every secure website (https) relies on the difficulty of factoring large numbers!",
+        "zh": "质因数分解是所有现代加密的基础。每个安全网站(https)都依赖大数难以分解的特性！"
+      },
+      "examTips": [
+        {
+          "en": "Use a factor tree — draw it neatly! Examiners like to see your working.",
+          "zh": "用因数树——画整齐！考官喜欢看到你的过程。"
+        },
+        {
+          "en": "HCF: lowest powers of COMMON factors. LCM: highest powers of ALL factors.",
+          "zh": "HCF：公有因子的最低幂。LCM：所有因子的最高幂。"
+        }
       ]
     },
     {
@@ -472,6 +486,16 @@
           "label_zh": "分数指数",
           "formula": "$a^{\\frac{1}{n}} = \\sqrt[n]{a}$"
         }
+      ],
+      "realWorldContext": {
+        "en": "Index laws describe how bacteria multiply (exponential growth), how radioactive materials decay, and how compound interest grows your savings.",
+        "zh": "指数法则描述细菌如何繁殖(指数增长)、放射性物质如何衰变、以及复利如何增长你的存款。"
+      },
+      "examTips": [
+        {
+          "en": "Negative power = flip it! x⁻³ = 1/x³. Fractional power = root! x^(1/2) = √x.",
+          "zh": "负指数=翻转！x⁻³ = 1/x³。分数指数=开根！x^(1/2) = √x。"
+        }
       ]
     },
     {
@@ -713,6 +737,16 @@
           "label_zh": "复利",
           "formula": "$A = P(1+\\frac{r}{100})^n$"
         }
+      ],
+      "realWorldContext": {
+        "en": "Banks use compound interest on savings; credit cards charge it on debt. Understanding this could save you thousands over your lifetime!",
+        "zh": "银行对存款用复利；信用卡对债务收复利。理解这个区别能在一生中为你省下几千块！"
+      },
+      "examTips": [
+        {
+          "en": "Reverse percentage: DIVIDE by multiplier, never subtract. This catches most students out!",
+          "zh": "反向百分比：除以乘数，不要减去。大多数学生在这里出错！"
+        }
       ]
     },
     {
@@ -944,6 +978,16 @@
           "label": "Bounds",
           "label_zh": "界限",
           "formula": "$\\text{value} \\pm \\frac{1}{2} \\times \\text{accuracy}$"
+        }
+      ],
+      "realWorldContext": {
+        "en": "Engineers use bounds to ensure safety — a bridge rated for 10 tonnes must actually hold the upper bound of any 10-tonne measurement.",
+        "zh": "工程师用界限确保安全——额定10吨的桥梁必须承受10吨测量值的上界。"
+      },
+      "examTips": [
+        {
+          "en": "Write bounds BEFORE calculating. Max of A×B = UB(A) × UB(B). Max of A÷B = UB(A) ÷ LB(B).",
+          "zh": "计算前先写界限。A×B最大值=A上界×B上界。A÷B最大值=A上界÷B下界。"
         }
       ]
     },
@@ -1970,7 +2014,17 @@
       "quickSummary": {
         "en": "Set up proportion equations: if y is proportional to x^n, then y = kx^n.",
         "zh": "建立比例方程：如果y与x^n成正比，则y = kx^n。"
-      }
+      },
+      "realWorldContext": {
+        "en": "Proportion equations model drug dosages (proportional to body weight), cooking recipes, and currency exchange rates.",
+        "zh": "比例方程用于药物剂量(与体重成正比)、烹饪食谱和汇率换算。"
+      },
+      "examTips": [
+        {
+          "en": "Find k first using given values, then use k to find the unknown. Always show this clearly!",
+          "zh": "先用已知值求k，再用k求未知数。一定要清晰展示这个过程！"
+        }
+      ]
     },
     {
       "id": "kp-2.6-01",
@@ -2082,7 +2136,21 @@
       "quickSummary": {
         "en": "Two equations, two unknowns: eliminate one variable or substitute.",
         "zh": "两个方程两个未知数：消元或代入。"
-      }
+      },
+      "realWorldContext": {
+        "en": "Simultaneous equations help businesses find break-even points — where cost equals revenue. They also help solve mixing problems in chemistry!",
+        "zh": "联立方程帮企业找盈亏平衡点——成本等于收入的地方。还帮化学中解决混合问题！"
+      },
+      "examTips": [
+        {
+          "en": "Elimination method: multiply equations to match coefficients, then add/subtract.",
+          "zh": "消元法：乘以方程让系数匹配，然后加减。"
+        },
+        {
+          "en": "ALWAYS check your answer by substituting into BOTH equations!",
+          "zh": "一定要把答案代回两个方程检查！"
+        }
+      ]
     },
     {
       "id": "kp-2.7-01",
@@ -2312,6 +2380,16 @@
           "label": "Formula",
           "label_zh": "求根公式",
           "formula": "$x = \\frac{-b \\pm \\sqrt{b^2-4ac}}{2a}$"
+        }
+      ],
+      "realWorldContext": {
+        "en": "The quadratic formula is one of the most powerful tools in mathematics. It works for ANY quadratic — even when factorising fails!",
+        "zh": "求根公式是数学中最强大的工具之一。它对任何二次方程都有效——即使因式分解不行！"
+      },
+      "examTips": [
+        {
+          "en": "Discriminant b²-4ac tells you: positive = 2 solutions, zero = 1 solution, negative = no real solutions.",
+          "zh": "判别式b²-4ac告诉你：正数=2个解，零=1个解，负数=无实数解。"
         }
       ]
     },
@@ -3009,6 +3087,16 @@
           "label_zh": "方程",
           "formula": "$y = mx + c$"
         }
+      ],
+      "realWorldContext": {
+        "en": "y = mx + c models any constant-rate relationship: taxi fares (base charge + per-km rate), phone bills (monthly fee + per-minute cost).",
+        "zh": "y = mx + c 可以描述任何匀速关系：出租车费(起步价+每公里费)、电话费(月租+每分钟费)。"
+      },
+      "examTips": [
+        {
+          "en": "Parallel lines: same gradient. Perpendicular lines: gradient product = -1.",
+          "zh": "平行线：斜率相同。垂直线：斜率之积=-1。"
+        }
       ]
     },
     {
@@ -3127,6 +3215,16 @@
           "label": "Power rule",
           "label_zh": "幂法则",
           "formula": "$\\frac{d}{dx}(x^n) = nx^{n-1}$"
+        }
+      ],
+      "realWorldContext": {
+        "en": "Differentiation is the mathematical tool behind self-driving cars (rate of change of position), stock market analysis, and optimising business profits.",
+        "zh": "微分是自动驾驶汽车(位置变化率)、股市分析和优化商业利润背后的数学工具。"
+      },
+      "examTips": [
+        {
+          "en": "dy/dx = 0 at turning points. Don't forget to find the y-coordinate too — substitute x back in!",
+          "zh": "驻点处dy/dx=0。别忘了也要求y坐标——把x代回原方程！"
         }
       ]
     },
@@ -3920,7 +4018,17 @@
       "quickSummary": {
         "en": "Centre angle = 2x circumference angle. Semicircle = 90. Tangent perpendicular to radius.",
         "zh": "圆心角=2倍圆周角。半圆=90°。切线垂直于半径。"
-      }
+      },
+      "realWorldContext": {
+        "en": "Circle theorems explain how camera lenses focus light, how Ferris wheels maintain smooth rotation, and why manhole covers are circular (they can't fall through!).",
+        "zh": "圆的定理解释了相机镜头如何聚焦光线、摩天轮如何保持平稳旋转、以及为什么井盖是圆形的(不会掉下去！)。"
+      },
+      "examTips": [
+        {
+          "en": "ALWAYS name the theorem in your answer! 'Angle at centre = 2× angle at circumference' gets marks even if the calculation is wrong.",
+          "zh": "答案中一定要写出定理名！即使计算错了，'圆心角=2倍圆周角'也能得分。"
+        }
+      ]
     },
     {
       "id": "kp-4.7-01",
@@ -4164,6 +4272,16 @@
           "label": "TOA",
           "label_zh": "正切",
           "formula": "$\\tan\\theta=\\frac{O}{A}$"
+        }
+      ],
+      "realWorldContext": {
+        "en": "Pythagoras and trigonometry are used by surveyors, pilots, game developers, and architects every single day. They're the foundation of measurement!",
+        "zh": "勾股定理和三角学被测量员、飞行员、游戏开发者和建筑师每天使用。它们是测量的基础！"
+      },
+      "examTips": [
+        {
+          "en": "SOH CAH TOA: label O, A, H relative to YOUR angle first, then pick the right ratio.",
+          "zh": "SOH CAH TOA：先相对于你的角标注O、A、H，然后选对比率。"
         }
       ]
     },
@@ -5469,6 +5587,16 @@
           "label_zh": "平均数",
           "formula": "$\\bar{x}=\\frac{\\sum fx}{\\sum f}$"
         }
+      ],
+      "realWorldContext": {
+        "en": "Mean from grouped data is used in government statistics, school performance analysis, and weather data processing — whenever you have ranges instead of exact values.",
+        "zh": "分组数据的平均数用于政府统计、学校表现分析和天气数据处理——每当你有范围而非精确值时。"
+      },
+      "examTips": [
+        {
+          "en": "Use MIDPOINTS × frequencies. The answer is an ESTIMATE — say so in your answer!",
+          "zh": "用组中值×频率。答案是估算——在答案中说明！"
+        }
       ]
     },
     {
@@ -5580,7 +5708,17 @@
       "quickSummary": {
         "en": "Tree diagrams: multiply along branches (AND), add between branches (OR).",
         "zh": "树状图：沿分支相乘(且)，不同分支相加(或)。"
-      }
+      },
+      "realWorldContext": {
+        "en": "Tree diagrams help insurance companies calculate risk, doctors assess treatment paths, and weather forecasters combine multiple factors for predictions.",
+        "zh": "树状图帮保险公司计算风险、医生评估治疗方案、天气预报员综合多因素做预测。"
+      },
+      "examTips": [
+        {
+          "en": "Multiply along branches (AND), add between branches (OR). Branch probabilities must sum to 1!",
+          "zh": "沿分支乘(且)，跨分支加(或)。每组分支概率之和必须=1！"
+        }
+      ]
     },
     {
       "id": "kp-6.3-02",

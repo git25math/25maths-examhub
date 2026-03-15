@@ -111,7 +111,17 @@
       "quickSummary": {
         "en": "Multiply fractions: top x top, bottom x bottom. Simplify first if possible.",
         "zh": "分数乘法：分子乘分子，分母乘分母。能先约分就先约。"
-      }
+      },
+      "realWorldContext": {
+        "en": "Cooking, baking, sharing food equally — fractions are the language of everyday portions. Half a pizza, quarter of a cake, two-thirds of a recipe!",
+        "zh": "做饭、烘焙、平均分食物——分数是日常份量的语言。半个披萨、四分之一蛋糕、三分之二的食谱！"
+      },
+      "examTips": [
+        {
+          "en": "Simplify before multiplying — it keeps numbers small and avoids mistakes!",
+          "zh": "先约分再乘——数字小不容易出错！"
+        }
+      ]
     },
     {
       "id": "kp-Y7.2-01",
@@ -795,6 +805,16 @@
           "label_zh": "面积",
           "formula": "$A=\\pi r^2$"
         }
+      ],
+      "realWorldContext": {
+        "en": "From bicycle wheels to pizza sizes, roundabouts to clock faces — circles are everywhere. Knowing C=πd saves time when buying fencing for a round garden!",
+        "zh": "从自行车轮到披萨大小，从环形交叉路口到时钟面——圆无处不在。知道C=πd在给圆形花园买栅栏时能省时间！"
+      },
+      "examTips": [
+        {
+          "en": "Area uses RADIUS (πr²), circumference uses DIAMETER (πd) or radius (2πr). Don't mix up!",
+          "zh": "面积用半径(πr²)，周长用直径(πd)或半径(2πr)。别搞混！"
+        }
       ]
     },
     {
@@ -1159,6 +1179,16 @@
           "label": "P",
           "label_zh": "概率",
           "formula": "$P = \\frac{\\text{favourable}}{\\text{total}}$"
+        }
+      ],
+      "realWorldContext": {
+        "en": "Probability helps you understand games, weather forecasts, and medical tests. It's the mathematics of making smart decisions under uncertainty!",
+        "zh": "概率帮你理解游戏、天气预报和医学检测。它是在不确定情况下做出明智决策的数学！"
+      },
+      "examTips": [
+        {
+          "en": "Probability is ALWAYS between 0 and 1. If your answer is > 1 or negative, check again!",
+          "zh": "概率永远在0到1之间。如果答案>1或是负数，重新检查！"
         }
       ]
     },
@@ -1851,6 +1881,16 @@
           "label_zh": "勾股",
           "formula": "$a^2+b^2=c^2$"
         }
+      ],
+      "realWorldContext": {
+        "en": "Builders use Pythagoras to check corners are square (3-4-5 triangle), pilots to calculate distances, and game developers for character movement!",
+        "zh": "建筑工人用勾股定理检查墙角是否直角(3-4-5三角形)，飞行员计算距离，游戏开发者计算角色移动！"
+      },
+      "examTips": [
+        {
+          "en": "Always identify the hypotenuse FIRST — it's the longest side, opposite the right angle.",
+          "zh": "先找斜边——最长边，在直角对面。"
+        }
       ]
     },
     {
@@ -2200,6 +2240,16 @@
           "label": "Gradient",
           "label_zh": "斜率",
           "formula": "$m=\\frac{y_2-y_1}{x_2-x_1}$"
+        }
+      ],
+      "realWorldContext": {
+        "en": "y=mx+c describes taxi fares (m=per-km rate, c=base charge), phone plans, and any situation where something changes at a constant rate.",
+        "zh": "y=mx+c 描述出租车费(m=每公里费率，c=起步价)、手机套餐、以及任何匀速变化的情况。"
+      },
+      "examTips": [
+        {
+          "en": "Gradient = rise ÷ run. Pick two clear points on the line and count squares!",
+          "zh": "斜率=纵变÷横变。在线上选两个清晰的点，数方格！"
         }
       ]
     },
@@ -2552,7 +2602,17 @@
       "quickSummary": {
         "en": "Find two numbers that multiply to c and add to b in x^2+bx+c.",
         "zh": "在x^2+bx+c中找乘积=c、和=b的两个数。"
-      }
+      },
+      "realWorldContext": {
+        "en": "Quadratic expressions describe projectile motion — every time you throw a ball, kick a football, or watch fireworks, you're seeing a quadratic curve!",
+        "zh": "二次式描述抛体运动——每次扔球、踢足球或看烟花时，你看到的就是二次曲线！"
+      },
+      "examTips": [
+        {
+          "en": "Find two numbers that multiply to give c AND add to give b. Write them out systematically!",
+          "zh": "找两个数：乘积=c，和=b。系统地列出来试！"
+        }
+      ]
     },
     {
       "id": "kp-Y9.3-01",
@@ -3152,6 +3212,16 @@
           "label": "Compound",
           "label_zh": "复利",
           "formula": "$A=P(1+\\frac{r}{100})^n$"
+        }
+      ],
+      "realWorldContext": {
+        "en": "Compound interest makes your savings grow faster each year. It also makes debt grow faster — which is why paying off credit cards early matters!",
+        "zh": "复利让你的存款每年增长得更快。它也让债务增长更快——这就是为什么提前还信用卡很重要！"
+      },
+      "examTips": [
+        {
+          "en": "Multiply by (1+r/100) for increase, (1-r/100) for decrease. Power = number of years.",
+          "zh": "增加乘(1+r/100)，减少乘(1-r/100)。幂次=年数。"
         }
       ]
     },
@@ -4065,6 +4135,16 @@
           "label_zh": "公式",
           "formula": "$x=\\frac{-b \\pm \\sqrt{b^2-4ac}}{2a}$"
         }
+      ],
+      "realWorldContext": {
+        "en": "Quadratic equations model the path of projectiles, the shape of bridges, and profit optimisation in business. The solutions are where the curve meets the x-axis!",
+        "zh": "二次方程模拟弹道、桥梁形状和商业利润优化。解就是曲线与x轴相交的地方！"
+      },
+      "examTips": [
+        {
+          "en": "Try factorising first — it's faster. Use the quadratic formula only when factorising fails.",
+          "zh": "先试因式分解——更快。只有分解不了才用公式。"
+        }
       ]
     },
     {
@@ -4542,7 +4622,17 @@
       "quickSummary": {
         "en": "Circle theorems: centre=2x circumference, semicircle=90, tangent perpendicular.",
         "zh": "圆定理：圆心角=2倍圆周角，半圆=90°，切线垂直。"
-      }
+      },
+      "realWorldContext": {
+        "en": "Circle theorems explain gear mechanisms, camera optics, and why satellite dishes are the shape they are. The 90° angle in a semicircle is used in engineering daily!",
+        "zh": "圆定理解释齿轮机制、相机光学和卫星天线的形状。半圆中90°角每天都在工程中使用！"
+      },
+      "examTips": [
+        {
+          "en": "Always state the theorem name — 'angle in semicircle = 90°' earns marks even without calculation!",
+          "zh": "一定写定理名——'半圆上的角=90°'即使没计算也能得分！"
+        }
+      ]
     },
     {
       "id": "kp-Y10.8-01",
@@ -5824,6 +5914,16 @@
           "label": "Rule",
           "label_zh": "法则",
           "formula": "$\\frac{d}{dx}(x^n)=nx^{n-1}$"
+        }
+      ],
+      "realWorldContext": {
+        "en": "Differentiation powers self-driving cars, stock market predictions, and engineering optimisation. Finding the turning point means finding the best possible answer!",
+        "zh": "微分驱动自动驾驶、股市预测和工程优化。找极值点就是找最优解！"
+      },
+      "examTips": [
+        {
+          "en": "dy/dx = 0 at turning points. Use second derivative to check: positive = minimum, negative = maximum.",
+          "zh": "驻点dy/dx=0。二阶导判断：正=最小值，负=最大值。"
         }
       ]
     },
