@@ -103,6 +103,19 @@
           "correction": "The number 1 is neither prime nor composite; prime factorization and HCF/LCM calculations only involve actual prime numbers (2, 3, 5, etc.).",
           "correction_zh": "数字1既不是质数也不是合数；质因数分解和HCF/LCM计算只涉及实际的质数（2、3、5等）。"
         }
+      ],
+      "difficulty": 1,
+      "prerequisites": [],
+      "quickSummary": {
+        "en": "Break numbers into prime factors to find HCF and LCM. Use factor trees or division.",
+        "zh": "用质因数分解找HCF和LCM。用因数树或短除法。"
+      },
+      "keyFormulas": [
+        {
+          "label": "Product rule",
+          "label_zh": "乘积法则",
+          "formula": "$a \\times b = \\text{HCF} \\times \\text{LCM}$"
+        }
       ]
     },
     {
@@ -199,6 +212,19 @@
           "mistake_zh": "学生在进行带分数乘除法时，经常不先将其转换为假分数就直接计算。",
           "correction": "Always convert any mixed numbers to improper fractions *before* performing multiplication or division to ensure correct calculations.",
           "correction_zh": "在进行乘法或除法运算之前，务必将所有带分数转换为假分数，以确保计算正确。"
+        }
+      ],
+      "difficulty": 1,
+      "prerequisites": [],
+      "quickSummary": {
+        "en": "Fractions: same denominator to +/-, multiply tops & bottoms, flip to divide.",
+        "zh": "分数：通分加减，分子乘分子分母乘分母，除法变乘倒数。"
+      },
+      "keyFormulas": [
+        {
+          "label": "Division",
+          "label_zh": "除法",
+          "formula": "$\\frac{a}{b} \\div \\frac{c}{d} = \\frac{a}{b} \\times \\frac{d}{c}$"
         }
       ]
     },
@@ -297,7 +323,15 @@
           "correction": "After finding the fraction, always simplify it to its lowest terms by dividing both the numerator and denominator by their greatest common divisor.",
           "correction_zh": "在得到分数后，务必通过将分子和分母同时除以它们的最大公约数来将其化为最简形式。"
         }
-      ]
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "kp-E1.2-01"
+      ],
+      "quickSummary": {
+        "en": "Let x = the recurring decimal, multiply to shift the repeating part, subtract to eliminate it.",
+        "zh": "设x=循环小数，乘以10的幂移位重复部分，相减消去。"
+      }
     },
     {
       "id": "kp-E1.4-01",
@@ -401,6 +435,29 @@
           "correction": "A negative index indicates the reciprocal of the base raised to the positive power, so $a^{-n} = \\frac{1}{a^n}$.",
           "correction_zh": "负指数表示底数的倒数，再将底数提高到正指数，即 $a^{-n} = \\frac{1}{a^n}$。"
         }
+      ],
+      "difficulty": 2,
+      "prerequisites": [],
+      "quickSummary": {
+        "en": "Index laws: multiply=add powers, divide=subtract, power of power=multiply.",
+        "zh": "指数法则：乘法加指数，除法减指数，幂的幂乘指数。"
+      },
+      "keyFormulas": [
+        {
+          "label": "Multiply",
+          "label_zh": "乘法",
+          "formula": "$a^m \\times a^n = a^{m+n}$"
+        },
+        {
+          "label": "Negative",
+          "label_zh": "负指数",
+          "formula": "$a^{-n} = \\frac{1}{a^n}$"
+        },
+        {
+          "label": "Fractional",
+          "label_zh": "分数指数",
+          "formula": "$a^{\\frac{1}{n}} = \\sqrt[n]{a}$"
+        }
       ]
     },
     {
@@ -497,6 +554,24 @@
           "mistake_zh": "在列出并集的元素时包含重复项，或在韦恩图中错误放置共有元素。",
           "correction": "Ensure each unique element is listed only once in a set; for Venn diagrams, elements common to multiple sets must be placed precisely in their overlapping region.",
           "correction_zh": "确保集合中的每个唯一元素只列出一次；对于韦恩图，属于多个集合的元素必须准确地放置在它们的重叠区域。"
+        }
+      ],
+      "difficulty": 1,
+      "prerequisites": [],
+      "quickSummary": {
+        "en": "Sets + Venn diagrams: union combines, intersection overlaps, complement is outside.",
+        "zh": "集合+韦恩图：并集合并，交集重叠，补集在外面。"
+      },
+      "keyFormulas": [
+        {
+          "label": "Union",
+          "label_zh": "并集",
+          "formula": "$A \\cup B$"
+        },
+        {
+          "label": "Intersection",
+          "label_zh": "交集",
+          "formula": "$A \\cap B$"
         }
       ]
     },
@@ -602,6 +677,21 @@
           "correction": "Compound interest means the interest is added to the principal each period, so the multiplier should be applied exponentially for each period.",
           "correction_zh": "复利意味着每个周期的利息都会加到本金上，因此乘数应该以指数形式应用于每个周期。"
         }
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "kp-E1.2-01"
+      ],
+      "quickSummary": {
+        "en": "Compound interest snowballs. Reverse percentage: divide by the multiplier.",
+        "zh": "复利滚雪球。反向百分比：除以乘数找原值。"
+      },
+      "keyFormulas": [
+        {
+          "label": "Compound",
+          "label_zh": "复利",
+          "formula": "$A = P(1+\\frac{r}{100})^n$"
+        }
       ]
     },
     {
@@ -699,6 +789,24 @@
           "correction": "Always add up your final calculated amounts for each share to verify they sum to the original total quantity provided in the problem.",
           "correction_zh": "务必将您计算出的每个份额相加，以验证它们的总和是否等于题目中给出的原始总数量。"
         }
+      ],
+      "difficulty": 1,
+      "prerequisites": [],
+      "quickSummary": {
+        "en": "Ratio shares: add parts, find one part, multiply. Proportion: y=kx or y=k/x.",
+        "zh": "按比分配：加总份数，求一份，乘各份。比例：y=kx 或 y=k/x。"
+      },
+      "keyFormulas": [
+        {
+          "label": "Direct",
+          "label_zh": "正比例",
+          "formula": "$y = kx$"
+        },
+        {
+          "label": "Inverse",
+          "label_zh": "反比例",
+          "formula": "$y = \\frac{k}{x}$"
+        }
       ]
     },
     {
@@ -788,6 +896,19 @@
           "mistake_zh": "误解上界是包含在内的值，例如，认为15（精确到厘米）的上界是15.49而不是15.5。",
           "correction": "The Upper Bound is defined as the smallest value that would round *up* or *away* from the given rounded number, meaning the actual value must be strictly less than the upper bound ($x < \\text{UB}$).",
           "correction_zh": "上界定义为将向上舍入或偏离给定舍入数字的最小值，这意味着实际值必须严格小于上界 ($x < \\text{UB}$)。"
+        }
+      ],
+      "difficulty": 2,
+      "prerequisites": [],
+      "quickSummary": {
+        "en": "Round to d.p. or s.f. Bounds: true value is within half a unit of the rounded value.",
+        "zh": "四舍五入到小数位或有效数字。界限：真值在四舍五入值的半个单位内。"
+      },
+      "keyFormulas": [
+        {
+          "label": "Bounds",
+          "label_zh": "界限",
+          "formula": "$\\text{value} \\pm \\frac{1}{2} \\times \\text{accuracy}$"
         }
       ]
     },
@@ -886,6 +1007,21 @@
           "correction": "Carefully count each decimal place movement, especially when dealing with many zeros or converting from standard form to an ordinary number where adding zeros is required.",
           "correction_zh": "仔细计算每一次小数点的移动，特别是在处理很多零或者将标准式转换成普通数字需要添加零时。"
         }
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "kp-E1.4-01"
+      ],
+      "quickSummary": {
+        "en": "Standard form: A x 10^n where 1 <= A < 10. For very big/small numbers.",
+        "zh": "标准形式：A x 10^n，1 <= A < 10。用于极大或极小的数。"
+      },
+      "keyFormulas": [
+        {
+          "label": "Standard form",
+          "label_zh": "标准形式",
+          "formula": "$A \\times 10^n$"
+        }
       ]
     },
     {
@@ -983,7 +1119,15 @@
           "correction": "Carefully identify the first non-zero digit as the first significant figure and apply standard rounding rules to that position, ensuring all subsequent digits become zeros (or are dropped if they are after the decimal point and not significant).",
           "correction_zh": "仔细识别第一个非零数字作为第一位有效数字，并对该位置应用标准舍入规则，确保所有后续数字都变为零（如果它们在小数点后且不重要，则可舍去）。"
         }
-      ]
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "kp-E1.8-01"
+      ],
+      "quickSummary": {
+        "en": "Round to 1 s.f. before calculating to estimate. Great for checking!",
+        "zh": "估算：四舍五入到1位有效数字再算。适合检验答案！"
+      }
     },
     {
       "id": "kp-E1.11-01",
@@ -1080,7 +1224,13 @@
           "correction": "Carefully review the expression to ensure all terms meant to be under a root or as an exponent are correctly grouped by parentheses or symbol placement on the calculator.",
           "correction_zh": "仔细检查表达式，确保所有应在根号下或作为指数的项都通过括号或计算器上的符号放置正确分组。"
         }
-      ]
+      ],
+      "difficulty": 1,
+      "prerequisites": [],
+      "quickSummary": {
+        "en": "BODMAS order. Use brackets on calculator to control the sequence.",
+        "zh": "BODMAS运算顺序。用计算器时靠括号控制。"
+      }
     },
     {
       "id": "kp-2.1-01",
@@ -1177,7 +1327,13 @@
           "correction": "Always remember that juxtaposition (letters next to each other or a number next to a letter) implies multiplication, and a fraction bar implies division.",
           "correction_zh": "务必记住，并置（字母或数字并排）表示乘法，分数线表示除法。"
         }
-      ]
+      ],
+      "difficulty": 1,
+      "prerequisites": [],
+      "quickSummary": {
+        "en": "Replace letters with numbers and calculate. Follow BIDMAS order.",
+        "zh": "把字母换成数再算。遵循BIDMAS顺序。"
+      }
     },
     {
       "id": "kp-2.2-01",
@@ -1273,6 +1429,26 @@
           "mistake_zh": "错误地合并“非同类项”，例如试图合并 $3x^2$ 和 $5x$，或合并常数项与变量项。",
           "correction": "Only terms with *exactly the same variables* raised to *exactly the same powers* can be combined; constant terms can only be combined with other constant terms.",
           "correction_zh": "只有拥有*完全相同的变量*和*完全相同的幂次*的项才能合并；常数项只能与其他的常数项合并。"
+        }
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "kp-2.1-01"
+      ],
+      "quickSummary": {
+        "en": "Expanding: multiply each term inside bracket. Single and double brackets.",
+        "zh": "展开：括号内每项相乘。单括号和双括号。"
+      },
+      "keyFormulas": [
+        {
+          "label": "Single",
+          "label_zh": "单括号",
+          "formula": "$a(b+c) = ab + ac$"
+        },
+        {
+          "label": "Double",
+          "label_zh": "双括号",
+          "formula": "$(a+b)(c+d) = ac+ad+bc+bd$"
         }
       ]
     },
@@ -1370,6 +1546,21 @@
           "mistake_zh": "尝试使用平方差公式对形如 $a^2 + b^2$ 的表达式进行因式分解。",
           "correction": "Remember that the difference of two squares formula, $a^2 - b^2 = (a - b)(a + b)$, only applies when there is a subtraction sign between the two perfect squares.",
           "correction_zh": "请记住，平方差公式 $a^2 - b^2 = (a - b)(a + b)$ 仅适用于两个完全平方项之间是减号的情况。"
+        }
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "kp-2.2-01"
+      ],
+      "quickSummary": {
+        "en": "Factorising: take out common factors, or find two numbers for quadratics.",
+        "zh": "因式分解：提公因式，或找两个数分解二次式。"
+      },
+      "keyFormulas": [
+        {
+          "label": "Diff of squares",
+          "label_zh": "平方差",
+          "formula": "$a^2 - b^2 = (a+b)(a-b)$"
         }
       ]
     },
@@ -1469,7 +1660,15 @@
           "correction": "If the variable you want to make the subject appears in two or more terms (e.g., $ax+b=cx$), collect all these terms on one side of the equation, then factorise the variable out (e.g., $x(a-c)=-b$).",
           "correction_zh": "如果您想设为主元的变量出现在两个或更多项中（例如 $ax+b=cx$），请将所有这些项收集到等式的一侧，然后将该变量因式分解出来（例如 $x(a-c)=-b$）。"
         }
-      ]
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "kp-2.2-01"
+      ],
+      "quickSummary": {
+        "en": "Rearrange: do same operation to both sides. Undo in reverse BIDMAS order.",
+        "zh": "变换：两边做相同操作。按反BIDMAS顺序。"
+      }
     },
     {
       "id": "kp-2.4-01",
@@ -1566,7 +1765,15 @@
           "correction": "Ensure that *every single term* in the equation, including those without a visible denominator, is multiplied by the lowest common multiple of the denominators.",
           "correction_zh": "确保方程中的*每一项*，包括那些没有可见分母的项，都乘以分母的最小公倍数。"
         }
-      ]
+      ],
+      "difficulty": 1,
+      "prerequisites": [
+        "kp-2.1-01"
+      ],
+      "quickSummary": {
+        "en": "Isolate x step by step. Whatever you do to one side, do to the other.",
+        "zh": "逐步隔离x。一边做什么，另一边也做什么。"
+      }
     },
     {
       "id": "kp-2.5-01",
@@ -1663,7 +1870,16 @@
           "correction": "Double-check all arithmetic, especially when dealing with squares, square roots, or fractions, to ensure the final answer is accurate.",
           "correction_zh": "仔细核对所有算术计算，尤其是在处理平方、平方根或分数时，以确保最终答案的准确性。"
         }
-      ]
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "kp-2.4-01",
+        "kp-E1.7-01"
+      ],
+      "quickSummary": {
+        "en": "Set up proportion equations: if y is proportional to x^n, then y = kx^n.",
+        "zh": "建立比例方程：如果y与x^n成正比，则y = kx^n。"
+      }
     },
     {
       "id": "kp-2.6-01",
@@ -1760,7 +1976,15 @@
           "correction": "Carefully multiply *every single term* on both sides of the equation by the chosen constant to ensure accuracy before proceeding with addition or subtraction.",
           "correction_zh": "在进行加减运算之前，仔细地将方程两边的*每一个项*都乘以所选的常数，以确保准确性。"
         }
-      ]
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "kp-2.4-01"
+      ],
+      "quickSummary": {
+        "en": "Two equations, two unknowns: eliminate one variable or substitute.",
+        "zh": "两个方程两个未知数：消元或代入。"
+      }
     },
     {
       "id": "kp-2.7-01",
@@ -1857,7 +2081,15 @@
           "correction": "Remember the Null Factor Law states that if $(x-a)(x-b) = 0$, then it must be that $x-a=0$ (so $x=a$) or $x-b=0$ (so $x=b$), ensuring correct signs for the solutions.",
           "correction_zh": "请记住零乘积性质规定，如果 $(x-a)(x-b) = 0$，那么必须是 $x-a=0$（所以 $x=a$）或者 $x-b=0$（所以 $x=b$），从而确保解的符号正确。"
         }
-      ]
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "kp-2.2-02"
+      ],
+      "quickSummary": {
+        "en": "Factorise quadratic, set each bracket = 0, solve for x.",
+        "zh": "因式分解二次式，每个括号=0，求x。"
+      }
     },
     {
       "id": "kp-2.7-02",
@@ -1954,6 +2186,21 @@
           "correction": "Ensure that the entire expression in the numerator is calculated first, and only then is it divided by $2a$ to get the final values for $x$.",
           "correction_zh": "确保先计算分子中的整个表达式，然后才将其除以 $2a$ 以获得 $x$ 的最终值。"
         }
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "kp-2.7-01"
+      ],
+      "quickSummary": {
+        "en": "When factorising fails, use the quadratic formula. Always works!",
+        "zh": "因式分解不行时用求根公式。万能方法！"
+      },
+      "keyFormulas": [
+        {
+          "label": "Formula",
+          "label_zh": "求根公式",
+          "formula": "$x = \\frac{-b \\pm \\sqrt{b^2-4ac}}{2a}$"
+        }
       ]
     },
     {
@@ -2044,7 +2291,15 @@
           "correction": "Remember that $<$ and $>$ use an open circle ($\\circ$), $\\le$ and $\\ge$ use a solid circle ($\\bullet$), and the arrow always points in the direction of the values that satisfy the inequality.",
           "correction_zh": "请记住，$<$ 和 $>$ 使用空心圆圈（$\\circ$），$\\le$ 和 $\\ge$ 使用实心圆点（$\\bullet$），并且箭头始终指向满足不等式的值的方向。"
         }
-      ]
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "kp-2.4-01"
+      ],
+      "quickSummary": {
+        "en": "Solve like equations, but flip sign when multiplying/dividing by negative.",
+        "zh": "像解方程一样，但乘除负数时翻转不等号。"
+      }
     },
     {
       "id": "kp-3.1-01",
@@ -2140,6 +2395,19 @@
           "mistake_zh": "忘记将最终答案写成关于 $n$ 的 $u_n$ 公式，或者只给出公差。",
           "correction": "Ensure your final answer is a complete algebraic expression for the $n^{th}$ term, typically in the form $u_n = dn + b$.",
           "correction_zh": "确保你的最终答案是第 $n$ 项的完整代数表达式，通常形式为 $u_n = dn + b$。"
+        }
+      ],
+      "difficulty": 1,
+      "prerequisites": [],
+      "quickSummary": {
+        "en": "Arithmetic: constant difference. Nth term = first + (n-1) x difference.",
+        "zh": "等差数列：公差恒定。通项 = 首项 + (n-1) x 公差。"
+      },
+      "keyFormulas": [
+        {
+          "label": "Nth term",
+          "label_zh": "通项",
+          "formula": "$T_n = a + (n-1)d$"
         }
       ]
     },
@@ -2238,7 +2506,15 @@
           "correction": "Treat the remainder sequence as a separate linear sequence and apply the standard method for finding its $n^{th}$ term: $d n + (a_1 - d)$, where $d$ is the common difference and $a_1$ is the first term of the remainder sequence.",
           "correction_zh": "将剩余数列视为一个独立的线性数列，并应用标准的求其第 $n$ 项公式的方法：$d n + (a_1 - d)$，其中 $d$ 是公差，$a_1$ 是剩余数列的首项。"
         }
-      ]
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "kp-3.1-01"
+      ],
+      "quickSummary": {
+        "en": "Quadratic sequences: second differences are constant. Nth term has an n^2 term.",
+        "zh": "二次数列：二阶差恒定。通项含n^2项。"
+      }
     },
     {
       "id": "kp-3.2-01",
@@ -2342,6 +2618,21 @@
           "correction": "Pay close attention to distributive laws when expanding brackets and meticulously combine only like terms to arrive at the correct simplified composite function.",
           "correction_zh": "在展开括号时要特别注意分配律，并仔细合并同类项，以得到正确的简化复合函数。"
         }
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "kp-2.3-01"
+      ],
+      "quickSummary": {
+        "en": "f(x) notation. Composite fg(x): do g first then f. Domain and range.",
+        "zh": "f(x)表示法。复合fg(x)：先g后f。定义域和值域。"
+      },
+      "keyFormulas": [
+        {
+          "label": "Composite",
+          "label_zh": "复合",
+          "formula": "$fg(x) = f(g(x))$"
+        }
       ]
     },
     {
@@ -2438,6 +2729,21 @@
           "mistake_zh": "将反函数符号 $f^{-1}(x)$ 与函数 $f(x)$ 的倒数 $1/f(x)$ 混淆。",
           "correction": "Remember that $f^{-1}(x)$ denotes the function that reverses $f(x)$; it does not mean $f(x)$ raised to the power of $-1$.",
           "correction_zh": "请记住，$f^{-1}(x)$ 表示撤销 $f(x)$ 的函数，它不意味着 $f(x)$ 的负一次方。"
+        }
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "kp-3.2-01"
+      ],
+      "quickSummary": {
+        "en": "Inverse: swap x and y, solve for y. Reflects in y=x line.",
+        "zh": "反函数：交换x和y，解出y。关于y=x对称。"
+      },
+      "keyFormulas": [
+        {
+          "label": "Inverse",
+          "label_zh": "反函数",
+          "formula": "$f(f^{-1}(x)) = x$"
         }
       ]
     },
@@ -2538,6 +2844,24 @@
           "correction": "Carefully substitute the values for $x$, $y$, and $m$, then perform the arithmetic and solve for $c$ step-by-step to avoid calculation mistakes.",
           "correction_zh": "仔细代入 $x$、$y$ 和 $m$ 的值，然后逐步进行算术运算并求解 $c$，以避免计算错误。"
         }
+      ],
+      "difficulty": 2,
+      "prerequisites": [],
+      "quickSummary": {
+        "en": "y = mx + c: m is gradient, c is y-intercept. Parallel = same m.",
+        "zh": "y = mx + c：m是斜率，c是截距。平行=相同m。"
+      },
+      "keyFormulas": [
+        {
+          "label": "Gradient",
+          "label_zh": "斜率",
+          "formula": "$m = \\frac{y_2-y_1}{x_2-x_1}$"
+        },
+        {
+          "label": "Equation",
+          "label_zh": "方程",
+          "formula": "$y = mx + c$"
+        }
       ]
     },
     {
@@ -2635,6 +2959,21 @@
           "correction": "Remember that the derivative of any constant (e.g., $5$, $-7$) is $0$, and the derivative of $x$ (which is $x^1$) is $1$.",
           "correction_zh": "请记住，任何常数（例如 $5$, $-7$）的导数都是 $0$，而 $x$（即 $x^1$）的导数是 $1$。"
         }
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "kp-E1.4-01"
+      ],
+      "quickSummary": {
+        "en": "Differentiate: bring power down, reduce by 1. Gives gradient function.",
+        "zh": "微分：指数下移减1。得到斜率函数。"
+      },
+      "keyFormulas": [
+        {
+          "label": "Power rule",
+          "label_zh": "幂法则",
+          "formula": "$\\frac{d}{dx}(x^n) = nx^{n-1}$"
+        }
       ]
     },
     {
@@ -2731,6 +3070,21 @@
           "mistake_zh": "错误地解方程 $\\frac{dy}{dx} = 0$，例如，通过除以变量而遗漏了 $x$ 的有效解。",
           "correction": "When solving polynomial equations for $x$, always factorize or use appropriate algebraic methods to ensure all possible solutions for $x$ are found, rather than dividing by a variable.",
           "correction_zh": "在解多项式方程的 $x$ 值时，务必使用因式分解或其他适当的代数方法，以确保找到 $x$ 的所有可能解，而不是直接除以变量。"
+        }
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "kp-3.4-01"
+      ],
+      "quickSummary": {
+        "en": "Set dy/dx = 0 to find turning points. Check with second derivative.",
+        "zh": "令dy/dx=0找极值点。用二阶导数判断。"
+      },
+      "keyFormulas": [
+        {
+          "label": "Stationary",
+          "label_zh": "驻点条件",
+          "formula": "$\\frac{dy}{dx} = 0$"
         }
       ]
     },
@@ -2831,7 +3185,13 @@
           "correction": "Remember that an exterior angle of a triangle is equal to the sum of the *two opposite interior angles*, not the sum of an adjacent interior angle and an opposite one.",
           "correction_zh": "请记住，三角形的一个外角等于其*两个不相邻的内角之和*，而不是与相邻内角和另一个内角之和。"
         }
-      ]
+      ],
+      "difficulty": 1,
+      "prerequisites": [],
+      "quickSummary": {
+        "en": "Angles on line=180, at point=360. Alternate equal (Z), co-interior sum 180 (C).",
+        "zh": "直线上180°，一点360°。内错角相等(Z)，同旁内角和180°(C)。"
+      }
     },
     {
       "id": "kp-4.2-01",
@@ -2929,6 +3289,26 @@
           "correction": "Practice basic algebraic rearrangement; if $n$ is in the denominator (e.g., in $\\frac{360^\\circ}{n}$), first multiply both sides of the equation by $n$ to bring it to the numerator before isolating it.",
           "correction_zh": "练习基本的代数重排；如果 $n$ 在分母中（例如在 $\\frac{360^\\circ}{n}$ 中），请先将等式两边都乘以 $n$，将其移到分子位置，然后再分离 $n$。"
         }
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "kp-4.1-01"
+      ],
+      "quickSummary": {
+        "en": "Interior sum = (n-2)x180. Exterior always sum to 360.",
+        "zh": "内角和=(n-2)x180°。外角和总是360°。"
+      },
+      "keyFormulas": [
+        {
+          "label": "Interior",
+          "label_zh": "内角和",
+          "formula": "$(n-2) \\times 180°$"
+        },
+        {
+          "label": "Exterior",
+          "label_zh": "外角",
+          "formula": "$\\frac{360°}{n}$"
+        }
       ]
     },
     {
@@ -3019,7 +3399,13 @@
           "correction": "Mentally or physically rotate the shape $360^\\circ$, counting each unique position where it perfectly matches the original, including the initial $0^\\circ$ position (which is also the $360^\\circ$ position).",
           "correction_zh": "在脑海中或实际旋转图形 $360^\\circ$，数出每次与原始图形完全匹配的独特位置，包括初始的 $0^\\circ$ 位置（也是 $360^\\circ$ 位置）。"
         }
-      ]
+      ],
+      "difficulty": 1,
+      "prerequisites": [],
+      "quickSummary": {
+        "en": "Line symmetry: fold and match. Rotational: same after turning.",
+        "zh": "轴对称：折叠重合。旋转对称：旋转后不变。"
+      }
     },
     {
       "id": "kp-4.4-01",
@@ -3116,7 +3502,13 @@
           "correction": "Remember to add $180^\\circ$ if the original bearing is less than $180^\\circ$, and subtract $180^\\circ$ if it's greater than $180^\\circ$.",
           "correction_zh": "记住，如果原始方位角小于 $180^\\circ$，则加上 $180^\\circ$；如果大于 $180^\\circ$，则减去 $180^\\circ$ 来求反向方位角。"
         }
-      ]
+      ],
+      "difficulty": 2,
+      "prerequisites": [],
+      "quickSummary": {
+        "en": "Bearings: 3 digits, clockwise from North (e.g. 045, 270).",
+        "zh": "方位角：3位数，从正北顺时针(如045°, 270°)。"
+      }
     },
     {
       "id": "kp-4.5-01",
@@ -3213,7 +3605,13 @@
           "correction": "Remember that the locus of points at a fixed distance from a line segment includes two parallel lines AND two semi-circles at the ends, centered at the segment's endpoints.",
           "correction_zh": "请记住，到线段固定距离的点的轨迹包括两条平行线以及在两端以线段端点为圆心的两个半圆。"
         }
-      ]
+      ],
+      "difficulty": 1,
+      "prerequisites": [],
+      "quickSummary": {
+        "en": "Ruler + compasses: perpendicular bisector, angle bisector, loci.",
+        "zh": "直尺圆规：垂直平分线、角平分线、轨迹。"
+      }
     },
     {
       "id": "kp-4.6-01",
@@ -3311,7 +3709,15 @@
           "correction": "A cyclic quadrilateral *must* have all four vertices lying on the circumference of the circle. For the alternate segment theorem, carefully identify the chord, the tangent, and the angle in the segment *opposite* to the angle between the tangent and the chord.",
           "correction_zh": "圆内接四边形 *必须* 具有所有四个顶点都位于圆周上。对于弦切角定理，请仔细识别弦、切线，以及与弦和切线之间夹角 *相对* 的弓形中的角。"
         }
-      ]
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "kp-4.1-01"
+      ],
+      "quickSummary": {
+        "en": "Centre angle = 2x circumference angle. Semicircle = 90. Tangent perpendicular to radius.",
+        "zh": "圆心角=2倍圆周角。半圆=90°。切线垂直于半径。"
+      }
     },
     {
       "id": "kp-4.7-01",
@@ -3408,7 +3814,16 @@
           "correction": "Every piece of information used in the proof must be justified with a reason, such as \"Given\" (已知), \"Common side\" (公共边), \"Vertically opposite angles\" (对顶角), or another valid geometric theorem.",
           "correction_zh": "证明中使用的每一条信息都必须有理由支持，例如“已知”（Given）、“公共边”（Common side）、“对顶角”（Vertically opposite angles）或其他有效的几何定理。"
         }
-      ]
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "kp-4.1-01",
+        "kp-4.6-01"
+      ],
+      "quickSummary": {
+        "en": "Use angle facts + circle theorems to prove geometric results.",
+        "zh": "用角的性质+圆定理证明几何结论。"
+      }
     },
     {
       "id": "kp-4.8-01",
@@ -3512,6 +3927,34 @@
           "correction": "Use SOH CAH TOA to select the ratio that connects the two sides (or side and angle) you have or need, and always use $\\sin^{-1}$, $\\cos^{-1}$, or $\\tan^{-1}$ when the goal is to find an angle.",
           "correction_zh": "使用 SOH CAH TOA 来选择连接你拥有或需要的两条边（或边和角）的三角函数比，并且当目标是找到一个角度时，务必使用 $\\sin^{-1}$、$\\cos^{-1}$ 或 $\\tan^{-1}$。"
         }
+      ],
+      "difficulty": 2,
+      "prerequisites": [],
+      "quickSummary": {
+        "en": "Pythagoras: a^2+b^2=c^2. SOH CAH TOA for angles and sides.",
+        "zh": "勾股定理：a^2+b^2=c^2。SOH CAH TOA求角和边。"
+      },
+      "keyFormulas": [
+        {
+          "label": "Pythagoras",
+          "label_zh": "勾股",
+          "formula": "$a^2+b^2=c^2$"
+        },
+        {
+          "label": "SOH",
+          "label_zh": "正弦",
+          "formula": "$\\sin\\theta=\\frac{O}{H}$"
+        },
+        {
+          "label": "CAH",
+          "label_zh": "余弦",
+          "formula": "$\\cos\\theta=\\frac{A}{H}$"
+        },
+        {
+          "label": "TOA",
+          "label_zh": "正切",
+          "formula": "$\\tan\\theta=\\frac{O}{A}$"
+        }
       ]
     },
     {
@@ -3608,6 +4051,31 @@
           "mistake_zh": "使用正弦定理求解角度时，忘记考虑模糊情况，这可能导致遗漏第二个可能的钝角。",
           "correction": "If you are given two sides and a non-included angle (SSA) and are solving for an angle using the Sine Rule, always check if $180^\\circ - \\text{calculated acute angle}$ is also a valid solution, especially if the side opposite the angle you are finding is shorter than the other known side.",
           "correction_zh": "如果你已知两条边和一个非夹角（SSA），并使用正弦定理求解角度，请务必检查 $180^\\circ - \\text{计算出的锐角}$ 是否也是一个有效的解，特别是当要求解角度的对边比另一个已知边短时。"
+        }
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "kp-4.8-01"
+      ],
+      "quickSummary": {
+        "en": "Sine rule for side-angle pairs. Cosine rule for 2 sides + included angle.",
+        "zh": "正弦定理：有边角对。余弦定理：两边及夹角。"
+      },
+      "keyFormulas": [
+        {
+          "label": "Sine rule",
+          "label_zh": "正弦定理",
+          "formula": "$\\frac{a}{\\sin A}=\\frac{b}{\\sin B}$"
+        },
+        {
+          "label": "Cosine rule",
+          "label_zh": "余弦定理",
+          "formula": "$a^2=b^2+c^2-2bc\\cos A$"
+        },
+        {
+          "label": "Area",
+          "label_zh": "面积",
+          "formula": "$A=\\frac{1}{2}ab\\sin C$"
         }
       ]
     },
@@ -3707,6 +4175,24 @@
           "correction": "Always double-check the given angle $\\theta$ from the question and ensure the fraction $\\frac{\\theta}{360}$ is simplified correctly before further calculation.",
           "correction_zh": "始终仔细核对问题中给定的圆心角 $\\theta$，并确保分数 $\\frac{\\theta}{360}$ 在进一步计算之前被正确简化。"
         }
+      ],
+      "difficulty": 2,
+      "prerequisites": [],
+      "quickSummary": {
+        "en": "Arc and sector are fractions of the circle based on the angle.",
+        "zh": "弧和扇形是根据角度取的圆的一部分。"
+      },
+      "keyFormulas": [
+        {
+          "label": "Arc",
+          "label_zh": "弧长",
+          "formula": "$l=\\frac{\\theta}{360} \\times 2\\pi r$"
+        },
+        {
+          "label": "Sector",
+          "label_zh": "扇形",
+          "formula": "$A=\\frac{\\theta}{360} \\times \\pi r^2$"
+        }
       ]
     },
     {
@@ -3803,6 +4289,29 @@
           "mistake_zh": "在适当情况下，计算半球或半圆柱体时忘记除以二，或者在计算切割图形的表面积时忘记计算新暴露的平面。",
           "correction": "For partial shapes, remember to adjust the standard formula (e.g., divide by 2 for volume of a hemisphere) and carefully consider all exposed surfaces for surface area.",
           "correction_zh": "对于部分图形，记住调整标准公式（例如，半球的体积需要除以 2），并在计算表面积时仔细考虑所有暴露的表面。"
+        }
+      ],
+      "difficulty": 2,
+      "prerequisites": [],
+      "quickSummary": {
+        "en": "Know formulas for prism, cylinder, cone, sphere. Prism = cross-section x length.",
+        "zh": "棱柱、圆柱、圆锥、球体公式。棱柱=截面×长度。"
+      },
+      "keyFormulas": [
+        {
+          "label": "Cylinder",
+          "label_zh": "圆柱",
+          "formula": "$V=\\pi r^2 h$"
+        },
+        {
+          "label": "Cone",
+          "label_zh": "圆锥",
+          "formula": "$V=\\frac{1}{3}\\pi r^2 h$"
+        },
+        {
+          "label": "Sphere",
+          "label_zh": "球",
+          "formula": "$V=\\frac{4}{3}\\pi r^3$"
         }
       ]
     },
@@ -3901,6 +4410,26 @@
           "correction": "Carefully identify corresponding sides of the similar shapes and ensure the ratio is formed correctly, typically (larger dimension) / (smaller dimension) for $k > 1$.",
           "correction_zh": "仔细识别相似图形的对应边，并确保比例形成正确，通常将（较大尺寸）除以（较小尺寸）以得到 $k > 1$。"
         }
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "kp-4.10-01"
+      ],
+      "quickSummary": {
+        "en": "Length factor k: area = k^2, volume = k^3.",
+        "zh": "长度比k：面积=k^2，体积=k^3。"
+      },
+      "keyFormulas": [
+        {
+          "label": "Area",
+          "label_zh": "面积比",
+          "formula": "$k^2$"
+        },
+        {
+          "label": "Volume",
+          "label_zh": "体积比",
+          "formula": "$k^3$"
+        }
       ]
     },
     {
@@ -3998,6 +4527,19 @@
           "mistake_zh": "在计算向量模时，忘记开平方根，或者在对负分量求平方时出现符号错误。",
           "correction": "Always apply the full Pythagoras' Theorem formula $|\\mathbf{v}| = \\sqrt{x^2 + y^2}$, ensuring that squaring a negative number (e.g., $(-2)^2$) results in a positive value (e.g., 4).",
           "correction_zh": "始终使用完整的勾股定理公式 $|\\mathbf{v}| = \\sqrt{x^2 + y^2}$，并确保负数平方（例如 $(-2)^2$）的结果是正数（例如 4）。"
+        }
+      ],
+      "difficulty": 2,
+      "prerequisites": [],
+      "quickSummary": {
+        "en": "Vectors have direction + magnitude. Add/subtract component-wise.",
+        "zh": "向量有方向+大小。按分量加减。"
+      },
+      "keyFormulas": [
+        {
+          "label": "Magnitude",
+          "label_zh": "模",
+          "formula": "$|\\vec{v}|=\\sqrt{x^2+y^2}$"
         }
       ]
     },
@@ -4104,7 +4646,15 @@
           "correction": "For three points to be collinear, you must show that two vectors representing segments between them are parallel (one is a scalar multiple of the other) AND that they share a common point.",
           "correction_zh": "要使三点共线，你必须证明表示它们之间线段的两个向量平行（一个向量是另一个向量的标量倍数），并且它们共享一个公共点。"
         }
-      ]
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "kp-5.1-01"
+      ],
+      "quickSummary": {
+        "en": "Express paths as vector sums. Parallel = scalar multiple. Prove with ratios.",
+        "zh": "路径=向量和。平行=标量倍数。用比例证明。"
+      }
     },
     {
       "id": "kp-5.2-01",
@@ -4209,7 +4759,13 @@
           "correction": "Remember that in a vector $\\begin{pmatrix} x \\\\ y \\end{pmatrix}$, $x$ indicates horizontal movement (positive is right, negative is left) and $y$ indicates vertical movement (positive is up, negative is down). Apply this consistently to all vertices.",
           "correction_zh": "请记住，在向量 $\\begin{pmatrix} x \\\\ y \\end{pmatrix}$ 中，$x$ 表示水平移动（正值向右，负值向左），$y$ 表示垂直移动（正值向上，负值向下）。将此规则一致地应用于所有顶点。"
         }
-      ]
+      ],
+      "difficulty": 1,
+      "prerequisites": [],
+      "quickSummary": {
+        "en": "Reflection: mirror line. Rotation: centre + angle + direction. Translation: column vector.",
+        "zh": "反射：对称轴。旋转：中心+角度+方向。平移：列向量。"
+      }
     },
     {
       "id": "kp-5.2-02",
@@ -4314,7 +4870,15 @@
           "correction": "Remember that if the linear scale factor is $k$, the area of the image is $k^2$ times the area of the original shape.",
           "correction_zh": "请记住，如果线性比例因子是 $k$，则像的面积是原图形面积的 $k^2$ 倍。"
         }
-      ]
+      ],
+      "difficulty": 2,
+      "prerequisites": [
+        "kp-5.2-01"
+      ],
+      "quickSummary": {
+        "en": "Enlargement: centre + scale factor. Negative SF inverts. Fractional SF shrinks.",
+        "zh": "放大：中心+比例因子。负SF翻转。分数SF缩小。"
+      }
     },
     {
       "id": "kp-6.1-01",
@@ -4418,6 +4982,19 @@
           "mistake_zh": "在读取现有直方图时，错误地将条形的高度而非其面积作为频数。",
           "correction": "Always calculate frequency from a histogram by finding the area of the bar, which is $\\text{Frequency} = \\text{Frequency Density} \\times \\text{Class Width}$.",
           "correction_zh": "在直方图中计算频数时，务必通过计算条形的面积来获得，即 $\\text{频数} = \\text{频数密度} \\times \\text{组距宽度}$。"
+        }
+      ],
+      "difficulty": 3,
+      "prerequisites": [],
+      "quickSummary": {
+        "en": "Histograms use frequency density (freq / class width). Bar area = frequency.",
+        "zh": "直方图用频率密度(频率/组距)。面积=频率。"
+      },
+      "keyFormulas": [
+        {
+          "label": "FD",
+          "label_zh": "频率密度",
+          "formula": "$\\text{FD}=\\frac{f}{\\text{width}}$"
         }
       ]
     },
@@ -4524,6 +5101,19 @@
           "correction": "Cumulative frequency graphs represent continuous data and should always be drawn as a smooth S-shaped curve passing through the plotted points.",
           "correction_zh": "累积频数图表示连续数据，因此应始终绘制成一条穿过标记点的平滑S形曲线。"
         }
+      ],
+      "difficulty": 2,
+      "prerequisites": [],
+      "quickSummary": {
+        "en": "Plot cumulative frequency S-curve. Read off median at n/2, Q1 at n/4, Q3 at 3n/4.",
+        "zh": "画累积频率S曲线。n/2读中位数，n/4读Q1，3n/4读Q3。"
+      },
+      "keyFormulas": [
+        {
+          "label": "IQR",
+          "label_zh": "四分位距",
+          "formula": "$\\text{IQR}=Q_3-Q_1$"
+        }
       ]
     },
     {
@@ -4620,6 +5210,19 @@
           "mistake_zh": "错误计算具有不同精度（例如，$1-5$ 与 $1-5.9$）的分组区间的中点。",
           "correction": "Ensure you correctly identify the true upper and lower bounds for each class before finding the midpoint; for example, if classes are $1-5$ and $6-10$, the midpoint for $1-5$ might be $(0.5+5.5)/2 = 3$ if the data is continuous, or $(1+5)/2 = 3$ if discrete.",
           "correction_zh": "在计算中点之前，请确保正确识别每个分组的真实上下限；例如，如果分组是 $1-5$ 和 $6-10$，则 $1-5$ 的中点可能是 $(0.5+5.5)/2 = 3$（如果数据是连续的），或者 $(1+5)/2 = 3$（如果数据是离散的）。"
+        }
+      ],
+      "difficulty": 2,
+      "prerequisites": [],
+      "quickSummary": {
+        "en": "Grouped data mean: sum of (midpoint x freq) / total freq.",
+        "zh": "分组数据平均数：(组中值×频率)之和 / 总频率。"
+      },
+      "keyFormulas": [
+        {
+          "label": "Mean",
+          "label_zh": "平均数",
+          "formula": "$\\bar{x}=\\frac{\\sum fx}{\\sum f}$"
         }
       ]
     },
@@ -4726,7 +5329,13 @@
           "correction": "Always double-check that the probabilities for all branches originating from a single point add up to 1.",
           "correction_zh": "务必仔细检查从同一点发出的所有分支的概率之和是否为1。"
         }
-      ]
+      ],
+      "difficulty": 2,
+      "prerequisites": [],
+      "quickSummary": {
+        "en": "Tree diagrams: multiply along branches (AND), add between branches (OR).",
+        "zh": "树状图：沿分支相乘(且)，不同分支相加(或)。"
+      }
     },
     {
       "id": "kp-6.3-02",
@@ -4830,6 +5439,21 @@
           "mistake_zh": "错误地解释韦恩图中的区域，尤其是在识别交集或完整的条件事件时。",
           "correction": "Carefully label each region of the Venn diagram and ensure you sum all parts that constitute $A \\cap B$ and $B$ (or any other required event).",
           "correction_zh": "仔细标注韦恩图的每个区域，并确保你正确地加总构成 $A \\cap B$ 和 $B$（或任何其他所需事件）的所有部分。"
+        }
+      ],
+      "difficulty": 3,
+      "prerequisites": [
+        "kp-6.3-01"
+      ],
+      "quickSummary": {
+        "en": "Without replacement: probabilities change. Venn diagrams for conditional P(A|B).",
+        "zh": "不放回：概率改变。韦恩图求条件概率P(A|B)。"
+      },
+      "keyFormulas": [
+        {
+          "label": "Conditional",
+          "label_zh": "条件概率",
+          "formula": "$P(A|B)=\\frac{P(A \\cap B)}{P(B)}$"
         }
       ]
     }
