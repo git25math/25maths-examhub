@@ -1622,7 +1622,7 @@ function checkBadges() {
       }, 5000);
     }
     if (typeof showNudge === 'function') {
-      showNudge('try_diag', t('Try a Diagnostic Test to find weak areas!', '\u8bd5\u8bd5\u8bca\u65ad\u6d4b\u8bd5\u627e\u8584\u5f31\u77e5\u8bc6\u70b9'), t('Go', '\u53bb\u8bd5\u8bd5'), function() { if (typeof navTo === 'function') navTo('diag'); });
+      showNudge('try_diag', t('Try a Diagnostic Test to discover your strengths!', '\u8bd5\u8bd5\u8bca\u65ad\u6d4b\u8bd5\u53d1\u73b0\u4f60\u7684\u4f18\u52bf\uff01'), t('Go', '\u53bb\u8bd5\u8bd5'), function() { if (typeof navTo === 'function') navTo('diag'); });
     }
   }
   return unlocked;

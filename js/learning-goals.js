@@ -49,7 +49,7 @@ function generateDefaultLearningGoals(profile, backlogCount) {
       isCompleted: false,
       createdAt: new Date().toISOString(),
       reasons: [
-        { key: 'weak-section', en: (ws.title || ws.id || ws) + ' is still weak', zh: (ws.title || ws.id || ws) + ' \u4ECD\u7136\u504F\u5F31' }
+        { key: 'weak-section', en: (ws.title || ws.id || ws) + ' could use more practice', zh: (ws.title || ws.id || ws) + ' \u8fd8\u53ef\u4ee5\u591a\u7ec3\u4e60' }
       ]
     });
   }

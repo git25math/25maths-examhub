@@ -216,12 +216,12 @@ function buildPersonalizationReasons(profile, budget, caps) {
   /* Weak type cap boost */
   if (profile.weakType) {
     var tl = _typeLabels[profile.weakType] || [profile.weakType, profile.weakType];
-    reasons.push({ key: 'weak-type', en: tl[0] + ' is your weakest area \u2014 more added today', zh: tl[1] + '\u662F\u4F60\u5F53\u524D\u6700\u8584\u5F31\u7C7B\u578B\uFF0C\u5DF2\u589E\u52A0\u5BF9\u5E94\u4EFB\u52A1' });
+    reasons.push({ key: 'weak-type', en: tl[0] + ' needs the most practice \u2014 extra added today', zh: tl[1] + '\u9700\u8981\u591a\u7ec3\u4e60\u2014\u2014\u4eca\u5929\u5df2\u589e\u52a0\u5bf9\u5e94\u4efb\u52a1' });
   }
 
   /* Weak section bias */
   if (profile.weakSections && profile.weakSections.length > 0 && !profile.weakType) {
-    reasons.push({ key: 'weak-section', en: 'Weak sections prioritized in today\'s plan', zh: '\u4ECA\u65E5\u8BA1\u5212\u5DF2\u4F18\u5148\u5B89\u6392\u8F83\u5F31\u7AE0\u8282' });
+    reasons.push({ key: 'weak-section', en: 'Focus sections prioritized in today\'s plan', zh: '\u4eca\u65e5\u8ba1\u5212\u5df2\u4f18\u5148\u5b89\u6392\u91cd\u70b9\u7ae0\u8282' });
   }
 
   /* Declining trend */

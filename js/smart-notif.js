@@ -350,8 +350,8 @@ function _checkWeaknessNotif() {
     /* Trend declining */
     if (profile.trend && profile.trend.direction === 'declining' && !_isNotifThrottled('weakness_trend')) {
       _markNotifSent('weakness_trend');
-      var title = t('Accuracy Declining', '正确率下降');
-      var body = t('Your recent accuracy is trending down. Review weak areas to improve.', '你最近的正确率有所下降，建议复习薄弱知识点。');
+      var title = t('Time for a Review', '\u8be5\u590d\u4e60\u4e86');
+      var body = t('Your recent scores suggest some topics could use a refresh. A quick review will help!', '\u6700\u8fd1\u7684\u6210\u7ee9\u663e\u793a\u6709\u4e9b\u77e5\u8bc6\u70b9\u53ef\u4ee5\u590d\u4e60\u4e00\u4e0b\u3002\u5feb\u901f\u590d\u67e5\u4f1a\u6709\u5e2e\u52a9\uff01');
       if (isGuest()) {
         sendLocalNotification('weakness', title, body, 'stats', '');
       } else if (isLoggedIn() && currentUser) {
@@ -364,8 +364,8 @@ function _checkWeaknessNotif() {
       _markNotifSent('weakness_pattern');
       var pat = profile.dominantPatterns[0];
       var patLabel = typeof getErrorPatternLabel === 'function' ? getErrorPatternLabel(pat) : pat;
-      var ptitle = t('Recurring Mistake Pattern', '反复错误模式');
-      var pbody = t('Pattern detected: ', '检测到模式：') + patLabel;
+      var ptitle = t('Learning Insight', '\u5b66\u4e60\u6d1e\u5bdf');
+      var pbody = t('We noticed a pattern — reviewing this will help: ', '\u6211\u4eec\u53d1\u73b0\u4e86\u4e00\u4e2a\u89c4\u5f8b\u2014\u2014\u590d\u4e60\u8fd9\u4e2a\u4f1a\u6709\u5e2e\u52a9\uff1a') + patLabel;
       if (isGuest()) {
         sendLocalNotification('weakness', ptitle, pbody, 'stats', '');
       } else if (isLoggedIn() && currentUser) {
@@ -379,8 +379,8 @@ function _checkWeaknessNotif() {
       var ws = profile.weakSections[0];
       var wsId = ws.id || ws;
       var wsBoard = ws.board || userBoard || 'cie';
-      var wtitle = t('Weak Section Detected', '发现薄弱知识点');
-      var wbody = t('Section ', '知识点 ') + wsId + t(' needs attention', ' 需要加强');
+      var wtitle = t('Focus Suggestion', '\u5efa\u8bae\u5173\u6ce8');
+      var wbody = t('Section ', '\u77e5\u8bc6\u70b9 ') + wsId + t(' could use some extra practice', ' \u53ef\u4ee5\u591a\u7ec3\u4e60\u4e00\u4e0b');
       if (isGuest()) {
         sendLocalNotification('weakness', wtitle, wbody, 'section', wsBoard + ':' + wsId);
       } else if (isLoggedIn() && currentUser) {
