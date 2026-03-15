@@ -371,7 +371,8 @@ function _renderHeroAction() {
   if (todayKey !== lastWelcome) {
     try { localStorage.setItem('wmatch_last_welcome', todayKey); } catch(e) {}
     var welcomeMsg;
-    if (streakN >= 7) welcomeMsg = t('Amazing dedication!', '\u575a\u6301\u5f97\u592a\u68d2\u4e86\uff01');
+    if (gs.mastered === 0 && gs.kpMastered === 0) welcomeMsg = t('Welcome! Learn at your own pace — no pressure.', '\u6b22\u8fce\uff01\u6309\u81ea\u5df1\u7684\u8282\u594f\u5b66\u4e60\u2014\u2014\u6ca1\u6709\u538b\u529b\u3002');
+    else if (streakN >= 7) welcomeMsg = t('Amazing dedication!', '\u575a\u6301\u5f97\u592a\u68d2\u4e86\uff01');
     else if (streakN >= 3) welcomeMsg = t(streakN + ' days strong!', '\u8fde\u7eed ' + streakN + ' \u5929\u4e86\uff0c\u7ee7\u7eed\uff01');
     else welcomeMsg = t('Welcome back!', '\u6b22\u8fce\u56de\u6765\uff01');
     html += '<div class="hero-welcome">' + welcomeMsg + '</div>';
@@ -424,7 +425,7 @@ function _renderHeroAction() {
     html += t('Start Learning', '\u5f00\u59cb\u5b66\u4e60') + ' \u2192</button>';
   } else {
     html += '<div class="hero-label">' + t('Explore', '\u63a2\u7d22') + '</div>';
-    html += '<div class="hero-section">' + t('Pick a topic below to start learning', '\u9009\u62e9\u4e00\u4e2a\u77e5\u8bc6\u70b9\u5f00\u59cb\u5b66\u4e60') + '</div>';
+    html += '<div class="hero-section">' + t('Pick any topic below — Study shows definitions, Quiz tests you!', '\u9009\u62e9\u4efb\u4f55\u4e3b\u9898\u2014\u2014\u626b\u63cf\u6a21\u5f0f\u770b\u5b9a\u4e49\uff0c\u6d4b\u9a8c\u6a21\u5f0f\u8003\u8003\u4f60\uff01') + '</div>';
   }
   html += '</div>';
 
