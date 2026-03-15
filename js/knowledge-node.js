@@ -112,7 +112,7 @@ function _knPanelHTML(title, kp) {
       // ── Header
       '<div class="kn-header">' +
         '<div class="kn-header-left">' +
-          '<span class="kn-badge">📖 知识点</span>' +
+          '<span class="kn-badge">📖 ' + ((typeof currentLang !== 'undefined' && currentLang === 'zh') ? '知识点' : 'Knowledge Point') + '</span>' +
           '<h2 class="kn-title">' + pqSanitize(title) +
             (typeof favStarHtml === 'function' ? favStarHtml('kp', kp.id, _knState.board, kp.section || '', { title: kp.title, title_zh: kp.title_zh || '' }) : '') +
           '</h2>' +
@@ -141,9 +141,9 @@ function _knPanelHTML(title, kp) {
 
       // ── Footer Nav
       '<div class="kn-footer">' +
-        '<button class="kn-btn-sec" id="kn-btn-prev" onclick="_knPrev()">← 上一步</button>' +
+        '<button class="kn-btn-sec" id="kn-btn-prev" onclick="_knPrev()">← ' + (lang === 'zh' ? '上一步' : 'Previous') + '</button>' +
         '<div class="kn-footer-center" id="kn-footer-center"></div>' +
-        '<button class="kn-btn-pri" id="kn-btn-next" onclick="_knNext()">下一步 →</button>' +
+        '<button class="kn-btn-pri" id="kn-btn-next" onclick="_knNext()">' + (lang === 'zh' ? '下一步' : 'Next') + ' →</button>' +
       '</div>' +
 
     '</div>'
@@ -195,8 +195,9 @@ function _knRenderStage(n) {
   var footerCenter = document.getElementById('kn-footer-center');
   if (prevBtn) prevBtn.style.visibility = (n === 0) ? 'hidden' : 'visible';
   if (nextBtn) {
-    nextBtn.textContent = (n === KN_STAGES.length - 1) ? '🎯 开始练习' : '下一步 →';
-    nextBtn.className   = (n === KN_STAGES.length - 1) ? 'kn-btn-practice' : 'kn-btn-pri';
+    var _isLast = (n === KN_STAGES.length - 1);
+    nextBtn.textContent = _isLast ? (lang === 'zh' ? '🎯 开始练习' : '🎯 Start Practice') : (lang === 'zh' ? '下一步 →' : 'Next →');
+    nextBtn.className   = _isLast ? 'kn-btn-practice' : 'kn-btn-pri';
   }
   if (footerCenter) {
     footerCenter.textContent = (n + 1) + ' of ' + KN_STAGES.length;
@@ -242,8 +243,8 @@ function _knStageMotivation(kp, lang) {
       '<div class="kn-ctx-banner">' +
         '<span class="kn-ctx-icon">⚠️</span>' +
         '<div>' +
-          '<p class="kn-ctx-label">你刚才的题目涉及这个知识点</p>' +
-          '<p class="kn-ctx-mistake">错误类型：' + pqSanitize(ctx.mistakeType) + '</p>' +
+          '<p class="kn-ctx-label">' + (lang === 'zh' ? '你刚才的题目涉及这个知识点' : 'Your last question relates to this topic') + '</p>' +
+          '<p class="kn-ctx-mistake">' + (lang === 'zh' ? '错误类型：' : 'Error type: ') + pqSanitize(ctx.mistakeType) + '</p>' +
         '</div>' +
       '</div>'
     );
@@ -264,10 +265,10 @@ function _knStageMotivation(kp, lang) {
     if (_unmastered.length > 0) {
       var _prLinks = _unmastered.map(function(pr) {
         return '<span class="kn-prereq-warn-link" onclick="closeKnowledgeNode();setTimeout(function(){openKnowledgeNode(\'' + pr.id + '\',\'' + _knState.board + '\')},300)">' + pqSanitize(pr.title) + '</span>';
-      }).join('、');
+      }).join(lang === 'zh' ? '、' : ', ');
       prereqWarn = '<div class="kn-prereq-warn">' +
-        '<span class="kn-prereq-warn-icon">⚠️</span>' +
-        '<div class="kn-prereq-warn-text">建议先掌握前置知识：' + _prLinks + '</div>' +
+        '<span class="kn-prereq-warn-icon">💡</span>' +
+        '<div class="kn-prereq-warn-text">' + (lang === 'zh' ? '建议先看看前置知识，会更容易理解：' : 'It helps to review these first: ') + _prLinks + '</div>' +
       '</div>';
     }
   }
@@ -275,35 +276,54 @@ function _knStageMotivation(kp, lang) {
   var patternCount = (kp.examPatterns || []).length;
   var exampleCount = (kp.examples || []).length;
 
+  /* Extract a short intro: use quickSummary if available, else first sentence */
+  var introText = '';
+  if (kp.quickSummary) {
+    introText = lang === 'zh' ? (kp.quickSummary.zh || kp.quickSummary.en) : kp.quickSummary.en;
+  } else {
+    /* Split by sentence-ending punctuation (. or 。) to get first sentence */
+    var sentenceEnd = lang === 'zh' ? /[。！？]/ : /[.!?]/;
+    var firstSentence = expText.split(sentenceEnd)[0];
+    introText = firstSentence + (lang === 'zh' ? '。' : '.');
+  }
+
+  /* Difficulty label */
+  var diffLabel = '';
+  if (kp.difficulty) {
+    var _dMap = { 1: [lang === 'zh' ? '基础' : 'Foundation', 'kn-diff-easy'], 2: [lang === 'zh' ? '标准' : 'Standard', 'kn-diff-mid'], 3: [lang === 'zh' ? '拓展' : 'Extended', 'kn-diff-hard'] };
+    var _dd = _dMap[kp.difficulty] || _dMap[2];
+    diffLabel = _dd[0];
+  }
+
   return (
     '<div class="kn-stage kn-stage-motivation">' +
       prereqWarn +
       ctxBanner +
       '<div class="kn-intro-block">' +
-        '<h3 class="kn-intro-title">这个知识点是什么？</h3>' +
-        '<p class="kn-intro-text">' + pqSanitize(expText.split('.')[0]) + '.</p>' +
+        '<h3 class="kn-intro-title">' + (lang === 'zh' ? '这个知识点是什么？' : 'What is this about?') + '</h3>' +
+        '<p class="kn-intro-text">' + pqSanitize(introText) + '</p>' +
       '</div>' +
       '<div class="kn-stat-row">' +
         '<div class="kn-stat-card">' +
           '<span class="kn-stat-num">' + patternCount + '</span>' +
-          '<span class="kn-stat-lbl">题型</span>' +
+          '<span class="kn-stat-lbl">' + (lang === 'zh' ? '题型' : 'Patterns') + '</span>' +
         '</div>' +
         '<div class="kn-stat-card">' +
           '<span class="kn-stat-num">' + exampleCount + '</span>' +
-          '<span class="kn-stat-lbl">例题</span>' +
+          '<span class="kn-stat-lbl">' + (lang === 'zh' ? '例题' : 'Examples') + '</span>' +
         '</div>' +
         '<div class="kn-stat-card">' +
-          '<span class="kn-stat-num kn-tier">' + (kp.tier || '—') + '</span>' +
-          '<span class="kn-stat-lbl">难度层级</span>' +
+          '<span class="kn-stat-num kn-tier">' + (diffLabel || kp.tier || '—') + '</span>' +
+          '<span class="kn-stat-lbl">' + (lang === 'zh' ? '难度层级' : 'Level') + '</span>' +
         '</div>' +
       '</div>' +
       '<div class="kn-roadmap">' +
-        '<p class="kn-roadmap-label">📍 本节学习路径</p>' +
+        '<p class="kn-roadmap-label">📍 ' + (lang === 'zh' ? '本节学习路径' : 'Your Learning Path') + '</p>' +
         '<div class="kn-roadmap-steps">' +
           KN_STAGES.map(function(s, i) {
             return '<div class="kn-roadmap-step">' +
               '<span class="kn-roadmap-icon">' + s.icon + '</span>' +
-              '<span class="kn-roadmap-name">' + s.label + '</span>' +
+              '<span class="kn-roadmap-name">' + (lang === 'zh' ? s.label : s.labelEn) + '</span>' +
             '</div>';
           }).join('<span class="kn-roadmap-arrow">→</span>') +
         '</div>' +
@@ -327,7 +347,7 @@ function _knStageConcept(kp, lang) {
     var mText = (lang === 'zh' && method.zh) ? method.zh : (method.en || '');
     methodHtml = (
       '<div class="kn-method-block">' +
-        '<p class="kn-block-label">💡 直觉理解</p>' +
+        '<p class="kn-block-label">' + (lang === 'zh' ? '💡 直觉理解' : '💡 INTUITION') + '</p>' +
         '<p class="kn-method-text">' + pqSanitize(mText) + '</p>' +
       '</div>'
     );
@@ -346,7 +366,7 @@ function _knStageConcept(kp, lang) {
     '<div class="kn-stage kn-stage-concept">' +
       tldr +
       '<div class="kn-exp-block">' +
-        '<p class="kn-block-label">📖 概念说明</p>' +
+        '<p class="kn-block-label">' + (lang === 'zh' ? '📖 概念说明' : '📖 EXPLANATION') + '</p>' +
         '<div class="kn-exp-text">' + pqSanitize(show) + '</div>' +
       '</div>' +
       (en && zh && lang === 'en'
@@ -362,7 +382,7 @@ function _knStageConcept(kp, lang) {
 function _knStagePattern(kp, lang) {
   var patterns = kp.examPatterns || [];
   if (!patterns.length) {
-    return '<div class="kn-stage"><p class="kn-empty">暂无题型数据。</p></div>';
+    return '<div class="kn-stage"><p class="kn-empty">' + (lang === 'zh' ? '暂无题型数据。' : 'No pattern data yet.') + '</p></div>';
   }
 
   var cards = patterns.map(function(ep, i) {
@@ -382,7 +402,7 @@ function _knStagePattern(kp, lang) {
 
   return (
     '<div class="kn-stage kn-stage-pattern">' +
-      '<p class="kn-stage-intro">看到这些题型信号 → 就用这个知识点 👇</p>' +
+      '<p class="kn-stage-intro">' + (lang === 'zh' ? '看到这些题型信号 → 就用这个知识点 👇' : 'When you spot these patterns → use this knowledge point 👇') + '</p>' +
       '<div class="kn-pattern-list">' + cards + '</div>' +
     '</div>'
   );
@@ -403,9 +423,9 @@ function _knStageMethod(kp, lang) {
     }).join('');
     return (
       '<div class="kn-stage kn-stage-method">' +
-        '<p class="kn-stage-intro">按照以下题型逐步思考：</p>' +
+        '<p class="kn-stage-intro">' + (lang === 'zh' ? '按照以下题型逐步思考：' : 'Think through these patterns step by step:') + '</p>' +
         '<div class="kn-steps">' + fallback + '</div>' +
-        '<p class="kn-method-note">💡 详细解题方法将在例题阶段展示。</p>' +
+        '<p class="kn-method-note">💡 ' + (lang === 'zh' ? '详细解题方法将在例题阶段展示。' : 'Detailed methods will be shown in the worked examples.') + '</p>' +
       '</div>'
     );
   }
@@ -428,12 +448,12 @@ function _knStageMethod(kp, lang) {
       var fLabel = (lang === 'zh' && kf.label_zh) ? kf.label_zh : kf.label;
       return '<div class="kp-formula-card"><div class="kp-formula-label">' + pqSanitize(fLabel) + '</div><div class="kp-formula-expr math-content">' + pqSanitize(kf.formula) + '</div></div>';
     }).join('');
-    formulasHtml = '<div style="margin-top:16px"><p class="kn-block-label">📝 核心公式速查</p><div class="kp-formulas-grid">' + fCards + '</div></div>';
+    formulasHtml = '<div style="margin-top:16px"><p class="kn-block-label">' + (lang === 'zh' ? '📝 核心公式速查' : '📝 KEY FORMULAS') + '</p><div class="kp-formulas-grid">' + fCards + '</div></div>';
   }
 
   return (
     '<div class="kn-stage kn-stage-method">' +
-      '<p class="kn-stage-intro">📋 标准解题流程 — 每次做题按这个顺序走：</p>' +
+      '<p class="kn-stage-intro">' + (lang === 'zh' ? '📋 标准解题流程 — 每次做题按这个顺序走：' : '📋 Standard approach — follow these steps every time:') + '</p>' +
       '<div class="kn-steps">' + stepsHtml + '</div>' +
       formulasHtml +
     '</div>'
@@ -445,7 +465,7 @@ function _knStageMethod(kp, lang) {
 function _knStageExample(kp, lang) {
   var examples = kp.examples || [];
   if (!examples.length) {
-    return '<div class="kn-stage"><p class="kn-empty">暂无例题。</p></div>';
+    return '<div class="kn-stage"><p class="kn-empty">' + (lang === 'zh' ? '暂无例题。' : 'No examples yet.') + '</p></div>';
   }
 
   // Show first 2 examples
@@ -458,15 +478,15 @@ function _knStageExample(kp, lang) {
     return (
       '<div class="kn-example-card">' +
         '<div class="kn-example-header">' +
-          '<span class="kn-example-num">例题 ' + (i+1) + '</span>' +
+          '<span class="kn-example-num">' + (lang === 'zh' ? '例题' : 'Example') + ' ' + (i+1) + '</span>' +
           src +
         '</div>' +
         '<div class="kn-example-q">' +
-          '<p class="kn-block-label">题目</p>' +
+          '<p class="kn-block-label">' + (lang === 'zh' ? '题目' : 'QUESTION') + '</p>' +
           '<div class="kn-q-text math-content">' + pqSanitize(q) + '</div>' +
         '</div>' +
         '<details class="kn-solution-details">' +
-          '<summary class="kn-solution-toggle">👁 查看解答</summary>' +
+          '<summary class="kn-solution-toggle">👁 ' + (lang === 'zh' ? '查看解答' : 'Show Solution') + '</summary>' +
           '<div class="kn-solution-body math-content">' + pqSanitize(s) + '</div>' +
         '</details>' +
       '</div>'
@@ -489,7 +509,7 @@ function _knStageExample(kp, lang) {
     }).join('');
     mistakesHtml = (
       '<div class="kn-mistakes-block">' +
-        '<p class="kn-block-label">⚠️ 常见错误</p>' +
+        '<p class="kn-block-label">' + (lang === 'zh' ? '⚠️ 常见错误' : '⚠️ COMMON MISTAKES') + '</p>' +
         mItems +
       '</div>'
     );
@@ -523,7 +543,7 @@ function _knStagePractice(kp, lang) {
     }).join('');
     mcqHtml = (
       '<div class="kn-mcq-block">' +
-        '<p class="kn-block-label">🧪 先测测自己</p>' +
+        '<p class="kn-block-label">' + (lang === 'zh' ? '🧪 先测测自己' : '🧪 QUICK CHECK') + '</p>' +
         '<p class="kn-mcq-q math-content">' + pqSanitize(q) + '</p>' +
         '<div class="kn-mcq-opts">' + opts + '</div>' +
         '<div class="kn-mcq-feedback" id="kn-mcq-feedback"></div>' +
@@ -536,11 +556,11 @@ function _knStagePractice(kp, lang) {
       mcqHtml +
       '<div class="kn-practice-cta">' +
         '<div class="kn-practice-info">' +
-          '<span class="kn-practice-count">' + count + ' 道定向练习题</span>' +
-          '<span class="kn-practice-sub">针对「' + pqSanitize(kp.title) + '」精选</span>' +
+          '<span class="kn-practice-count">' + count + (lang === 'zh' ? ' 道定向练习题' : ' targeted questions') + '</span>' +
+          '<span class="kn-practice-sub">' + (lang === 'zh' ? '针对「' + pqSanitize(kp.title) + '」精选' : 'Selected for "' + pqSanitize(kp.title) + '"') + '</span>' +
         '</div>' +
         '<button class="kn-btn-practice-lg" onclick="_knStartPractice()">' +
-          '🎯 开始练习' +
+          (lang === 'zh' ? '🎯 开始练习' : '🎯 Start Practice') +
         '</button>' +
       '</div>' +
     '</div>'
@@ -558,7 +578,10 @@ function _knCheckMCQ(btn, correctIdx, chosenIdx) {
   });
   var fb = document.getElementById('kn-mcq-feedback');
   if (fb) {
-    fb.textContent = (chosenIdx === correctIdx) ? '✅ 正确！继续练习吧。' : '❌ 答错了，继续学习。';
+    var _isZh = (typeof currentLang !== 'undefined') ? currentLang === 'zh' : true;
+    fb.textContent = (chosenIdx === correctIdx)
+      ? (_isZh ? '✅ 正确！继续练习吧。' : '✅ Correct! Keep going.')
+      : (_isZh ? '❌ 没关系，看看解析再试试。' : '❌ Not quite — review and try again.');
     fb.className = 'kn-mcq-feedback ' + (chosenIdx === correctIdx ? 'kn-fb-ok' : 'kn-fb-err');
   }
 }
@@ -573,7 +596,7 @@ function _knStartPractice() {
   closeKnowledgeNode();
 
   if (typeof loadPastPaperData !== 'function' || typeof getKPQuestions !== 'function') {
-    if (typeof showToast === 'function') showToast('暂无该知识点的练习题');
+    if (typeof showToast === 'function') showToast(typeof t === 'function' ? t('No practice questions yet', '暂无该知识点的练习题') : 'No practice questions yet');
     return;
   }
 
@@ -590,7 +613,7 @@ function _knStartPractice() {
     } else if (kp && kp.section && typeof startPPScan === 'function') {
       startPPScan(kp.section, board);
     } else {
-      if (typeof showToast === 'function') showToast('暂无该知识点的练习题');
+      if (typeof showToast === 'function') showToast(typeof t === 'function' ? t('No practice questions yet', '暂无该知识点的练习题') : 'No practice questions yet');
     }
   });
 }
