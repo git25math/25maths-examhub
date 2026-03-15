@@ -137,11 +137,31 @@ function _lazyNav(bundle, fnName, panelId) {
 }
 
 /* ═══ IDLE PRELOAD ═══ */
+/* Preload commonly used bundles in background after login.
+   Uses requestIdleCallback to avoid blocking main thread.
+   Staggered loading: most critical first, then progressively less critical. */
 function _idlePreload() {
-  if (typeof requestIdleCallback === 'undefined') return;
-  requestIdleCallback(function() {
-    _lazyLoad('study-quiz-battle', function() {});
-  }, { timeout: 5000 });
+  var bundles = ['study-quiz-battle', 'practice', 'syllabus-views', 'deck-detail', 'lists', 'worksheet', 'modes'];
+  var idx = 0;
+  function loadNext() {
+    if (idx >= bundles.length) return;
+    var b = bundles[idx++];
+    _lazyLoad(b, function() {
+      /* Stagger: wait 500ms between bundles to avoid saturating the connection */
+      setTimeout(function() {
+        if (typeof requestIdleCallback !== 'undefined') {
+          requestIdleCallback(loadNext, { timeout: 8000 });
+        } else {
+          loadNext();
+        }
+      }, 500);
+    });
+  }
+  if (typeof requestIdleCallback !== 'undefined') {
+    requestIdleCallback(loadNext, { timeout: 5000 });
+  } else {
+    setTimeout(loadNext, 3000);
+  }
 }
 
 function updateNav() {
