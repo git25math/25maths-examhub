@@ -1148,6 +1148,7 @@ function _renderPPScanPractice() {
   html += '</div>';
   html += '<div class="pp-scan-answer d-none" id="pp-scan-answer">' + _ppRenderWithMarks(q, true) + '</div>';
   html += _ppRenderSolution(q);
+  html += _ppRenderMarkSchemeModule(q);
   html += '</div>';
   /* Self-assess */
   html += '<div class="scan-actions" id="pp-scan-rate">';
