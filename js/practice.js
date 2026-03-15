@@ -1357,6 +1357,7 @@ function _ppRenderTexStr(str) {
   /* Render a raw tex/html string: clean remnants, convert markdown bold, newline */
   if (!str) return '';
   var html = str.replace(/\[leftmargin[^\]]*\]/g, '');
+  html = html.replace(/\\\[[\d.]+\s*cm\]/g, '<br>');
   html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
   html = html.replace(/\\newline/g, '<br>');
   return html;

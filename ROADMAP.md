@@ -1,5 +1,10 @@
 # Development Roadmap
 
+## v5.29.1 — 知识点标注修正 + LaTeX 渲染修复 [DONE]
+- [x] `_ppRenderTexStr()` 清理 `\[Ncm]` 间距命令（45 题）
+- [x] topics[0] 强制对应 section→chapter 映射（190 题修正）
+- [x] topics 数组裁剪至 ≤2（515 题去噪）
+
 ## v5.29.0 — 懒加载 Phase 7: practice.js 拆分 + admin 分层 [DONE]
 - [x] practice.js → practice-editor/review/browse 3 子 bundle 拆分
 - [x] admin.bundle → admin.min.js + super-admin.min.js 角色分层

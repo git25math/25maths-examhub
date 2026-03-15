@@ -1,5 +1,23 @@
 # Changelog
 
+## [5.29.1] - 2026-03-15 — 知识点标注修正 + LaTeX 渲染修复
+
+### LaTeX 渲染修复
+- `_ppRenderTexStr()` 新增 `\[Ncm]` 间距命令清理，替换为 `<br>`
+- 修复 45 题因 `\[0.5cm]` 等被 KaTeX 误判为 display-math 导致渲染异常
+
+### 知识点标注修正
+- 修正 190 题 `topics[0]` 与 section 所属 chapter 不匹配
+- 裁剪 515 题 topics 数组至 ≤2 项（移除噪声标签）
+- 所有题目 `topics[0]` 现严格对应 syllabus section→chapter 映射
+
+### 文件变更
+| 文件 | 修改 |
+|------|------|
+| js/practice.js | +1 行 `\[Ncm]` 清理正则 |
+| data/papers-cie.json | 705 题 topics 修正 |
+| scripts/fix-topic-tags.py | **新增** 修正脚本 |
+
 ## [5.29.0] - 2026-03-15 — 懒加载 Phase 7: practice.js 拆分 + admin 分层 + 智能预加载
 
 ### practice.js 拆分 (198KB → 160KB + 3 子 bundle)
