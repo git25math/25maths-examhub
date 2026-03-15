@@ -378,7 +378,7 @@ function _initDeckActionDelegation() {
     } else if (action === 'deck-refresh') {
       var dli = parseInt(btn.getAttribute('data-li'), 10);
       var dStale = typeof getStaleWords === 'function' ? getStaleWords().filter(function(w) { return w.level === dli; }) : [];
-      if (dStale.length > 0 && typeof startRefreshScan === 'function') startRefreshScan(dStale);
+      if (dStale.length > 0) _lazyCall('study-quiz-battle', 'startRefreshScan', [dStale]);
     } else if (action === 'back') {
       var backType = btn.getAttribute('data-back');
       if (backType === 'home') {

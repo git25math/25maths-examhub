@@ -453,17 +453,16 @@ function _initHeroDelegation() {
     if (act === 'continue' || act === 'start') {
       openSection(el.dataset.heroSec, el.dataset.heroBoard);
     } else if (act === 'refresh') {
-      if (typeof startRefreshScan === 'function' && typeof getStaleWords === 'function') {
-        startRefreshScan(getStaleWords());
-      }
+      var _stale = typeof getStaleWords === 'function' ? getStaleWords() : [];
+      if (_stale.length > 0) _lazyCall('study-quiz-battle', 'startRefreshScan', [_stale]);
     } else if (act === 'daily') {
       startDaily();
     } else if (act === 'rank') {
       _lazyCall('board-guides', 'showRankGuide', []);
     } else if (act === 'kp-refresh') {
-      if (typeof startKPRefreshScan === 'function') startKPRefreshScan();
+      _lazyCall('study-quiz-battle', 'startKPRefreshScan', []);
     } else if (act === 'pp-refresh') {
-      if (typeof startPPRefreshScan === 'function') startPPRefreshScan();
+      _lazyCall('practice', 'startPPRefreshScan', []);
     } else if (act === 'stats') {
       navTo('stats');
     }
@@ -730,7 +729,7 @@ function renderHome() {
         if (hrsAgo >= 20 && hrsAgo <= 48) {
           var today = new Date().toISOString().slice(0, 10);
           if (st.last !== today && typeof showNudge === 'function') {
-            showNudge('streak_risk', t('Keep your ' + st.cur + '-day streak alive! A quick Daily Challenge will do it', '\u4f60\u5df2\u8fde\u7eed\u5b66\u4e60 ' + st.cur + ' \u5929\uff0c\u5feb\u6765\u5ef6\u7eed\u5427\uff01\u505a\u4e2a\u6bcf\u65e5\u6311\u6218\u5373\u53ef\u4fdd\u6301'), t('Go', '\u53bb\u6311\u6218'), function() { if (typeof startDailyChallenge === 'function') startDailyChallenge(); });
+            showNudge('streak_risk', t('Keep your ' + st.cur + '-day streak alive! A quick Daily Challenge will do it', '\u4f60\u5df2\u8fde\u7eed\u5b66\u4e60 ' + st.cur + ' \u5929\uff0c\u5feb\u6765\u5ef6\u7eed\u5427\uff01\u505a\u4e2a\u6bcf\u65e5\u6311\u6218\u5373\u53ef\u4fdd\u6301'), t('Go', '\u53bb\u6311\u6218'), function() { _lazyCall('study-quiz-battle', 'startDaily', []); });
           }
         }
       }
@@ -880,7 +879,7 @@ function _initDeckActionDelegation() {
     } else if (action === 'deck-refresh') {
       var dli = parseInt(btn.getAttribute('data-li'), 10);
       var dStale = typeof getStaleWords === 'function' ? getStaleWords().filter(function(w) { return w.level === dli; }) : [];
-      if (dStale.length > 0 && typeof startRefreshScan === 'function') startRefreshScan(dStale);
+      if (dStale.length > 0) _lazyCall('study-quiz-battle', 'startRefreshScan', [dStale]);
     } else if (action === 'back') {
       var backType = btn.getAttribute('data-back');
       if (backType === 'home') {

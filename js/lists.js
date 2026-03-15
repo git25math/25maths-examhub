@@ -1101,12 +1101,12 @@ function _printSelectedItems() {
   }
   if (items.length === 0) return;
 
-  if (_listTab === 'words' && typeof printWordList === 'function') {
-    printWordList(items);
-  } else if (_listTab === 'kps' && typeof printKPList === 'function') {
-    printKPList(items);
-  } else if (_listTab === 'pps' && typeof printPPList === 'function') {
-    printPPList(items);
+  if (_listTab === 'words') {
+    _lazyCall('worksheet', 'printWordList', [items]);
+  } else if (_listTab === 'kps') {
+    _lazyCall('worksheet', 'printKPList', [items]);
+  } else if (_listTab === 'pps') {
+    _lazyCall('worksheet', 'printPPList', [items]);
   }
 }
 
@@ -1807,26 +1807,16 @@ function _runListScanPhase() {
         wordObjs.push({ word: allW[wi].word, def: allW[wi].def, key: allW[wi].key, lid: allW[wi].level });
       }
     }
-    if (wordObjs.length > 0 && typeof startRefreshScan === 'function') {
-      startRefreshScan(wordObjs);
+    if (wordObjs.length > 0) {
+      _lazyCall('study-quiz-battle', 'startRefreshScan', [wordObjs]);
     } else {
       _listScanSession.phaseIdx++;
       _runListScanPhase();
     }
   } else if (phase.type === 'kp') {
-    if (typeof startKPScanByIds === 'function') {
-      startKPScanByIds(phase.items, phase.board);
-    } else {
-      _listScanSession.phaseIdx++;
-      _runListScanPhase();
-    }
+    _lazyCall('study-quiz-battle', 'startKPScanByIds', [phase.items, phase.board]);
   } else if (phase.type === 'pp') {
-    if (typeof startPPScanByIds === 'function') {
-      startPPScanByIds(phase.items, phase.board);
-    } else {
-      _listScanSession.phaseIdx++;
-      _runListScanPhase();
-    }
+    _lazyCall('practice', 'startPPScanByIds', [phase.items, phase.board]);
   }
 }
 
@@ -1934,9 +1924,9 @@ function _showPrintModeModal(list) {
       btn.addEventListener('click', function() {
         if (typeof hideModal === 'function') hideModal();
         var mode = btn.dataset.printMode;
-        if (mode === 'detailed' && typeof printCustomListDetailed === 'function') printCustomListDetailed(list);
-        else if (mode === 'checklist' && typeof printCustomListChecklist === 'function') printCustomListChecklist(list);
-        else if (typeof printCustomList === 'function') printCustomList(list);
+        if (mode === 'detailed') _lazyCall('worksheet', 'printCustomListDetailed', [list]);
+        else if (mode === 'checklist') _lazyCall('worksheet', 'printCustomListChecklist', [list]);
+        else _lazyCall('worksheet', 'printCustomList', [list]);
       });
     });
   }, 150);

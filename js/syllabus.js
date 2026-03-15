@@ -752,7 +752,7 @@ function startPracticeBySection(sectionId, board) {
   window._practiceSection = sectionId;
   window._practiceChapter = null;
   window._practiceBoard = board;
-  if (typeof startPractice === 'function') startPractice(li);
+  _lazyCall('practice', 'startPractice', [li]);
 }
 
 function startPracticeByChapter(chNum, board) {
@@ -771,7 +771,7 @@ function startPracticeByChapter(chNum, board) {
   window._practiceSection = null;
   window._practiceChapter = chNum;
   window._practiceBoard = board;
-  if (typeof startPractice === 'function') startPractice(li);
+  _lazyCall('practice', 'startPractice', [li]);
 }
 /* ═══ KNOWLEDGE POINTS DATA & RENDERING ═══ */
 var _kpData = {};

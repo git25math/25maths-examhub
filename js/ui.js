@@ -84,8 +84,8 @@ function navTo(id) {
   else if (id === 'import') { _lazyNav('tools', 'renderImport', 'import'); }
   else if (id === 'board') { _lazyNav('board-guides', 'renderBoard', 'board'); }
   else if (id === 'stats') { _lazyNav('tools', 'renderStats', 'stats'); }
-  else if (id === 'admin' && typeof renderAdmin === 'function') renderAdmin();
-  else if (id === 'homework') { if (typeof showStudentHwPage === 'function') showStudentHwPage(); }
+  else if (id === 'admin') { _lazyNav('admin', 'renderAdmin', 'admin'); }
+  else if (id === 'homework') { _lazyNav('homework', 'showStudentHwPage', 'homework'); }
   else if (id === 'lists') { _lazyNav('lists', 'renderListView', 'lists'); }
   /* section panel is rendered by openSection() directly */
 }
@@ -281,7 +281,7 @@ function toggleLang() {
   else if (appView === 'import') { _lazyNav('tools', 'renderImport', 'import'); }
   else if (appView === 'board') { _lazyCall('board-guides', 'renderBoard', []); }
   else if (appView === 'stats') { _lazyNav('tools', 'renderStats', 'stats'); }
-  else if (appView === 'admin' && typeof renderAdmin === 'function') renderAdmin();
+  else if (appView === 'admin') { _lazyCall('admin', 'renderAdmin', []); }
   else if (appView === 'section' && typeof _currentSectionContext === 'object' && _currentSectionContext) {
     openSection(_currentSectionContext.sectionId, _currentSectionContext.board);
   }
