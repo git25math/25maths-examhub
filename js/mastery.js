@@ -749,9 +749,9 @@ function renderHome() {
       if (curIdx > prevIdx && prevIdx >= 0) {
         localStorage.setItem('wmatch_user_stage', us.stage);
         var msgs = {
-          active: t('10+ words down! Explore more learning modes', '\u5df2\u638c\u63e1 10+ \u8bcd\u6c47\uff01\u63a2\u7d22\u66f4\u591a\u5b66\u4e60\u6a21\u5f0f'),
-          intermediate: t('100+ words mastered! You\'re becoming a math expert', '\u638c\u63e1 100+ \u8bcd\u6c47\uff01\u4f60\u6b63\u5728\u6210\u4e3a\u6570\u5b66\u8fbe\u4eba'),
-          advanced: t('500+ words! You\'re a true math master', '500+ \u8bcd\u6c47\uff01\u4f60\u662f\u771f\u6b63\u7684\u6570\u5b66\u5927\u5e08')
+          active: t('\ud83c\udf1f 10+ words mastered! Your math vocabulary is growing — try Quiz mode next!', '\ud83c\udf1f \u5df2\u638c\u63e1 10+ \u8bcd\u6c47\uff01\u4f60\u7684\u6570\u5b66\u8bcd\u6c47\u5728\u589e\u957f\u2014\u2014\u8bd5\u8bd5\u6d4b\u9a8c\u6a21\u5f0f\u5427\uff01'),
+          intermediate: t('\ud83c\udfc6 100+ words mastered! You\u2019re building serious math confidence. Keep it up!', '\ud83c\udfc6 \u638c\u63e1 100+ \u8bcd\u6c47\uff01\u4f60\u7684\u6570\u5b66\u4fe1\u5fc3\u5728\u7a33\u6b65\u63d0\u5347\u3002\u7ee7\u7eed\u52a0\u6cb9\uff01'),
+          advanced: t('\ud83d\ude80 500+ words mastered! You\u2019re truly exceptional. The exam has nothing on you!', '\ud83d\ude80 500+ \u8bcd\u6c47\uff01\u4f60\u771f\u7684\u592a\u5389\u5bb3\u4e86\u3002\u8003\u8bd5\u5bf9\u4f60\u6765\u8bf4\u4e0d\u5728\u8bdd\u4e0b\uff01')
         };
         if (typeof showNudge === 'function' && msgs[us.stage]) {
           showNudge('stage_' + us.stage, msgs[us.stage]);
@@ -767,6 +767,29 @@ function renderHome() {
       }
     } catch (e) {}
   }, 1000);
+
+  /* Word mastery milestones — celebrate at 25, 50, 200, 1000 (v5.30.0) */
+  setTimeout(function() {
+    try {
+      var gs = getGlobalStats();
+      var m = gs.mastered;
+      var prevMilestone = parseInt(localStorage.getItem('wmatch_word_milestone') || '0', 10) || 0;
+      var milestones = [
+        { n: 25,   msg: t('\ud83c\udf1f 25 words mastered! Great start — your math vocabulary is growing!', '\ud83c\udf1f 25\u4e2a\u8bcd\u5df2\u638c\u63e1\uff01\u597d\u7684\u5f00\u59cb\u2014\u2014\u4f60\u7684\u6570\u5b66\u8bcd\u6c47\u5728\u589e\u957f\uff01') },
+        { n: 50,   msg: t('\ud83c\udf89 50 words! You\u2019re halfway to a hundred — keep this momentum!', '\ud83c\udf89 50\u4e2a\u8bcd\uff01\u79bb100\u5df2\u7ecf\u8fc7\u534a\u2014\u2014\u4fdd\u6301\u8fd9\u4e2a\u52bf\u5934\uff01') },
+        { n: 200,  msg: t('\ud83d\udcab 200 words! Your math English is getting really strong!', '\ud83d\udcab 200\u4e2a\u8bcd\uff01\u4f60\u7684\u6570\u5b66\u82f1\u8bed\u8d8a\u6765\u8d8a\u5f3a\u4e86\uff01') },
+        { n: 1000, msg: t('\ud83d\ude80 1000 words! Incredible dedication — you\u2019re in the top tier!', '\ud83d\ude80 1000\u4e2a\u8bcd\uff01\u96be\u4ee5\u7f6e\u4fe1\u7684\u575a\u6301\u2014\u2014\u4f60\u662f\u9876\u5c16\u5b66\u8005\uff01') }
+      ];
+      for (var mi = milestones.length - 1; mi >= 0; mi--) {
+        if (m >= milestones[mi].n && prevMilestone < milestones[mi].n) {
+          localStorage.setItem('wmatch_word_milestone', String(milestones[mi].n));
+          if (typeof showToast === 'function') showToast(milestones[mi].msg);
+          if (milestones[mi].n >= 200 && typeof spawnP === 'function') spawnP(window.innerWidth / 2, window.innerHeight / 3, 20);
+          break;
+        }
+      }
+    } catch(e) {}
+  }, 1500);
 }
 
 /* ═══ DECK DETAIL ═══ */
