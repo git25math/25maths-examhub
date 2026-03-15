@@ -2617,6 +2617,28 @@ function renderKPDetail(kp, board) {
   }
   html += '</div>';
 
+  /* Real-world context + Exam tips (v5.30.0) */
+  if (kp.realWorldContext || (kp.examTips && kp.examTips.length > 0)) {
+    html += '<div class="kp-context-tips">';
+    if (kp.realWorldContext) {
+      var _rwText = isZh && kp.realWorldContext.zh ? kp.realWorldContext.zh : kp.realWorldContext.en;
+      html += '<div class="kp-real-world">';
+      html += '<span class="kp-rw-icon">\ud83c\udf0d</span>';
+      html += '<div class="kp-rw-text">' + kpMarkdown(_rwText) + '</div>';
+      html += '</div>';
+    }
+    if (kp.examTips && kp.examTips.length > 0) {
+      html += '<div class="kp-exam-tips">';
+      html += '<div class="kp-tips-title">\ud83c\udfaf ' + t('Exam Tips', '\u8003\u8bd5\u5c0f\u8d34\u58eb') + '</div>';
+      for (var eti = 0; eti < kp.examTips.length; eti++) {
+        var etTip = isZh && kp.examTips[eti].zh ? kp.examTips[eti].zh : kp.examTips[eti].en;
+        html += '<div class="kp-tip-item">\u2713 ' + kpMarkdown(etTip) + '</div>';
+      }
+      html += '</div>';
+    }
+    html += '</div>';
+  }
+
   /* ② Exam Patterns */
   if (kp.examPatterns && kp.examPatterns.length > 0) {
     html += '<div class="kp-section">';

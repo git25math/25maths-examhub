@@ -109,7 +109,21 @@
       "quickSummary": {
         "en": "Numbers live in families: naturals, integers, rationals, irrationals, and reals.",
         "zh": "数有不同的家族：自然数、整数、有理数、无理数，实数就是它们的大家庭。"
-      }
+      },
+      "realWorldContext": {
+        "en": "Every time your phone calculates, it uses these number types. Passwords use prime numbers. GPS coordinates are real numbers. Even music streaming relies on irrational numbers like pi!",
+        "zh": "你的手机每次计算都在用这些数的类型。密码加密使用质数。GPS坐标是实数。甚至音乐流媒体也依赖像π这样的无理数！"
+      },
+      "examTips": [
+        {
+          "en": "Read the question carefully — 'irrational' and 'rational' look similar but mean opposite things!",
+          "zh": "仔细读题——'irrational'和'rational'看起来相似但意思相反！"
+        },
+        {
+          "en": "Remember: 1 is NOT a prime number. This is tested almost every year.",
+          "zh": "记住：1不是质数。几乎每年都考这个。"
+        }
+      ]
     },
     {
       "id": "kp-1.1-02",
@@ -233,6 +247,16 @@
           "label_zh": "倒数",
           "formula": "$\\frac{1}{n}$"
         }
+      ],
+      "realWorldContext": {
+        "en": "Prime numbers are the building blocks of internet security. Every time you shop online, prime factorisation keeps your credit card safe!",
+        "zh": "质数是互联网安全的基石。每次网上购物时，质因数分解都在保护你的银行卡安全！"
+      },
+      "examTips": [
+        {
+          "en": "List primes up to 30 by heart: 2,3,5,7,11,13,17,19,23,29. You'll need them fast!",
+          "zh": "背熟30以内的质数：2,3,5,7,11,13,17,19,23,29。考试时需要快速想到！"
+        }
       ]
     },
     {
@@ -351,6 +375,20 @@
           "label": "Product rule",
           "label_zh": "乘积法则",
           "formula": "$a \\times b = \\text{HCF} \\times \\text{LCM}$"
+        }
+      ],
+      "realWorldContext": {
+        "en": "HCF and LCM help you solve real problems: when will two buses arrive at the same time again? How to cut fabric into equal pieces with no waste?",
+        "zh": "HCF和LCM帮你解决实际问题：两路公交车什么时候再次同时到站？怎样把布料切成等份而不浪费？"
+      },
+      "examTips": [
+        {
+          "en": "Always use prime factor trees — they're reliable and easy to check.",
+          "zh": "一定要用因数树——可靠且容易检查。"
+        },
+        {
+          "en": "For HCF: take the LOWEST powers of COMMON primes. For LCM: take the HIGHEST powers of ALL primes.",
+          "zh": "HCF：取公有质因数的最低幂次。LCM：取所有质因数的最高幂次。"
         }
       ]
     },
@@ -854,6 +892,20 @@
           "label_zh": "分数指数",
           "formula": "$a^{\\frac{1}{n}} = \\sqrt[n]{a}$"
         }
+      ],
+      "realWorldContext": {
+        "en": "Index laws power everything from compound interest calculations to how scientists measure earthquake strength (Richter scale) and sound volume (decibels).",
+        "zh": "指数法则驱动着从复利计算到科学家测量地震强度（里氏震级）和声音音量（分贝）的一切。"
+      },
+      "examTips": [
+        {
+          "en": "Fractional indices: always do the ROOT first, then the POWER. It keeps numbers small!",
+          "zh": "分数指数：先开根号，再乘方。这样数字不会太大！"
+        },
+        {
+          "en": "Negative index = flip it. a⁻² = 1/a². Write this on your formula page!",
+          "zh": "负指数=翻转。a⁻² = 1/a²。写在你的公式页上！"
+        }
       ]
     },
     {
@@ -1091,6 +1143,16 @@
           "label": "Division",
           "label_zh": "除法",
           "formula": "$\\frac{a}{b} \\div \\frac{c}{d} = \\frac{a}{b} \\times \\frac{d}{c}$"
+        }
+      ],
+      "realWorldContext": {
+        "en": "Cooking uses fractions constantly — doubling a recipe, sharing pizza equally, measuring ingredients. Fractions are the language of everyday portions.",
+        "zh": "做饭时经常用到分数——加倍食谱、平均分披萨、量取食材。分数是日常份量的语言。"
+      },
+      "examTips": [
+        {
+          "en": "For division: Keep-Change-Flip. Keep the first fraction, Change ÷ to ×, Flip the second.",
+          "zh": "除法口诀：保持-改变-翻转。保持第一个分数，÷变×，第二个分数翻转。"
         }
       ]
     },
@@ -1550,6 +1612,20 @@
           "label_zh": "界限",
           "formula": "$\\text{value} \\pm \\frac{1}{2} \\times \\text{accuracy}$"
         }
+      ],
+      "realWorldContext": {
+        "en": "Engineers use bounds to ensure bridges can handle the maximum possible weight. Pharmacists use bounds to make sure medicine doses are safe.",
+        "zh": "工程师用界限确保桥梁能承受最大可能重量。药剂师用界限确保药物剂量安全。"
+      },
+      "examTips": [
+        {
+          "en": "For maximum A/B: use upper bound of A divided by lower bound of B.",
+          "zh": "求A/B的最大值：用A的上界除以B的下界。"
+        },
+        {
+          "en": "Always write down your bounds BEFORE calculating. It prevents mix-ups!",
+          "zh": "计算前一定要先写出界限。防止搞混！"
+        }
       ]
     },
     {
@@ -1668,6 +1744,16 @@
           "label": "Standard form",
           "label_zh": "标准形式",
           "formula": "$A \\times 10^n \\quad (1 \\leq A < 10)$"
+        }
+      ],
+      "realWorldContext": {
+        "en": "Scientists use standard form daily: the distance to the Sun (1.5 × 10⁸ km), the size of a virus (1 × 10⁻⁷ m), the age of the universe (1.4 × 10¹⁰ years).",
+        "zh": "科学家每天使用标准形式：到太阳的距离(1.5×10⁸ km)、病毒的大小(1×10⁻⁷ m)、宇宙的年龄(1.4×10¹⁰ 年)。"
+      },
+      "examTips": [
+        {
+          "en": "After calculating, check A is between 1 and 10. If not, adjust! e.g. 15×10³ = 1.5×10⁴",
+          "zh": "计算后检查A是否在1到10之间。如果不是就调整！如 15×10³ = 1.5×10⁴"
         }
       ]
     },
@@ -2239,6 +2325,16 @@
           "label_zh": "减少",
           "formula": "$\\text{new} = \\text{orig} \\times (1 - \\frac{r}{100})$"
         }
+      ],
+      "realWorldContext": {
+        "en": "Sales, discounts, tax, inflation, profit margins — percentages run the entire economy. Understanding reverse percentages means you can never be tricked by 'was £80, now £60, 25% off!' (it's actually 25% off!).",
+        "zh": "打折、税收、通货膨胀、利润率——百分数支撑着整个经济。理解反向百分数意味着你永远不会被'原价80英镑，现价60英镑，打七五折！'之类的话误导。"
+      },
+      "examTips": [
+        {
+          "en": "Reverse percentage: DIVIDE by the multiplier, don't subtract! Original = Final ÷ multiplier.",
+          "zh": "反向百分比：除以乘数，不是减去！原值 = 终值 ÷ 乘数。"
+        }
       ]
     },
     {
@@ -2594,6 +2690,16 @@
           "label": "Compound",
           "label_zh": "复利",
           "formula": "$A = P(1 + \\frac{r}{100})^n$"
+        }
+      ],
+      "realWorldContext": {
+        "en": "Banks use compound interest on your savings. Credit cards charge compound interest on your debt. Understanding this difference could save you thousands over your lifetime!",
+        "zh": "银行对你的存款使用复利。信用卡对你的债务收取复利。理解这个区别可能在你一生中为你省下几千块！"
+      },
+      "examTips": [
+        {
+          "en": "Simple: I = PRT/100. Compound: multiply by (1+r/100) for each year. Don't mix them up!",
+          "zh": "单利：I = PRT/100。复利：每年乘以(1+r/100)。别搞混了！"
         }
       ]
     },
@@ -2954,7 +3060,17 @@
       "quickSummary": {
         "en": "Algebra uses letters for unknowns. Substitution: replace letters with numbers.",
         "zh": "代数用字母表示未知数。代入：把字母换成数再算。"
-      }
+      },
+      "realWorldContext": {
+        "en": "Algebra is the universal language of problem-solving. Game developers use it for physics, data scientists for predictions, and architects for design calculations.",
+        "zh": "代数是解决问题的通用语言。游戏开发者用它做物理运算，数据科学家用它做预测，建筑师用它做设计计算。"
+      },
+      "examTips": [
+        {
+          "en": "Substitute CAREFULLY — use brackets around negative numbers! e.g. (-3)² = 9, not -9.",
+          "zh": "代入时要小心——负数加括号！如 (-3)² = 9，不是 -9。"
+        }
+      ]
     },
     {
       "id": "kp-2.2-01",
@@ -3189,6 +3305,20 @@
           "label": "Diff of squares",
           "label_zh": "平方差",
           "formula": "$a^2 - b^2 = (a+b)(a-b)$"
+        }
+      ],
+      "realWorldContext": {
+        "en": "Factorising is like finding the recipe behind a dish — once you know the ingredients (factors), you can work with them more easily.",
+        "zh": "因式分解就像找到一道菜的食谱——一旦知道了原料（因式），就能更容易地处理它们。"
+      },
+      "examTips": [
+        {
+          "en": "Always look for a common factor FIRST before trying other methods.",
+          "zh": "在尝试其他方法之前，一定要先找公因式。"
+        },
+        {
+          "en": "Check your answer by expanding — you should get back to the original!",
+          "zh": "展开你的答案来检查——应该得回原式！"
         }
       ]
     },
@@ -3534,7 +3664,21 @@
       "quickSummary": {
         "en": "Linear: isolate unknown. Simultaneous: elimination or substitution for two unknowns.",
         "zh": "一次方程：隔离未知数。联立方程：消元法或代入法。"
-      }
+      },
+      "realWorldContext": {
+        "en": "Simultaneous equations help solve problems with two unknowns — like finding two prices when you only know the totals, or two speeds when you know distances and times.",
+        "zh": "联立方程帮你解决有两个未知数的问题——比如只知道总价时找两个单价，或知道距离和时间时找两个速度。"
+      },
+      "examTips": [
+        {
+          "en": "Elimination: make coefficients match, then add or subtract to eliminate one variable.",
+          "zh": "消元法：让系数相同，然后加减消去一个变量。"
+        },
+        {
+          "en": "Always substitute your answer back in to CHECK both equations!",
+          "zh": "一定要把答案代回去检查两个方程！"
+        }
+      ]
     },
     {
       "id": "kp-2.5-02",
@@ -3652,6 +3796,20 @@
           "label": "Quadratic formula",
           "label_zh": "求根公式",
           "formula": "$x = \\frac{-b \\pm \\sqrt{b^2-4ac}}{2a}$"
+        }
+      ],
+      "realWorldContext": {
+        "en": "Quadratic equations describe the path of a thrown ball, the shape of satellite dishes, and the design of roller coasters. They're everywhere in the real world!",
+        "zh": "二次方程描述了抛球的轨迹、卫星天线的形状和过山车的设计。它们在现实世界中无处不在！"
+      },
+      "examTips": [
+        {
+          "en": "Try factorising first — it's faster. Only use the formula if factorising doesn't work.",
+          "zh": "先试因式分解——更快。只有分解不了才用公式。"
+        },
+        {
+          "en": "In the formula, be extra careful with the ± sign — you need TWO answers!",
+          "zh": "用公式时特别注意±号——你需要两个答案！"
         }
       ]
     },
@@ -3883,6 +4041,16 @@
           "label": "Linear nth term",
           "label_zh": "线性通项",
           "formula": "$T_n = an + b$"
+        }
+      ],
+      "realWorldContext": {
+        "en": "Sequences are patterns in nature: sunflower spirals follow Fibonacci, population growth follows geometric sequences, and your weekly savings follow arithmetic ones!",
+        "zh": "数列是自然界中的规律：向日葵螺旋遵循斐波那契数列，人口增长遵循等比数列，你每周的存款遵循等差数列！"
+      },
+      "examTips": [
+        {
+          "en": "For nth term: find the common difference d, then T_n = dn + (first term - d).",
+          "zh": "求通项：找公差d，然后 T_n = dn + (首项 - d)。"
         }
       ]
     },
@@ -4938,6 +5106,16 @@
           "label_zh": "斜率",
           "formula": "$m = \\frac{y_2 - y_1}{x_2 - x_1}$"
         }
+      ],
+      "realWorldContext": {
+        "en": "Gradient measures steepness — road signs show it (10% gradient = 10m rise per 100m). Ski slopes, wheelchair ramps, and roof pitches all use gradient!",
+        "zh": "斜率衡量陡度——路标上会标注(10%坡度=每100m升高10m)。滑雪道、轮椅坡道和屋顶坡度都用斜率！"
+      },
+      "examTips": [
+        {
+          "en": "Rise over Run — always! Remember: vertical change ÷ horizontal change.",
+          "zh": "纵变÷横变——永远记住！垂直变化÷水平变化。"
+        }
       ]
     },
     {
@@ -5287,6 +5465,16 @@
           "label": "Slope-intercept",
           "label_zh": "斜截式",
           "formula": "$y = mx + c$"
+        }
+      ],
+      "realWorldContext": {
+        "en": "y = mx + c is one of the most used equations in science. It describes any straight-line relationship: cost vs quantity, temperature conversion, speed vs time under constant acceleration.",
+        "zh": "y = mx + c 是科学中最常用的方程之一。它描述任何直线关系：成本与数量、温度转换、匀加速下速度与时间。"
+      },
+      "examTips": [
+        {
+          "en": "To find the equation: get gradient from two points, then substitute ONE point to find c.",
+          "zh": "求方程：先用两点求斜率，再代入一个点求c。"
         }
       ]
     },
@@ -6552,6 +6740,16 @@
           "label_zh": "外角",
           "formula": "$\\frac{360°}{n}$"
         }
+      ],
+      "realWorldContext": {
+        "en": "Interior angles matter in engineering — hexagonal tiles (120° angles) fit perfectly with no gaps, which is why bees use hexagons for honeycomb!",
+        "zh": "内角在工程中很重要——六边形瓷砖(120°角)完美拼接无缝隙，这就是蜜蜂用六边形做蜂巢的原因！"
+      },
+      "examTips": [
+        {
+          "en": "If they give you an exterior angle, interior = 180° - exterior. Quick shortcut!",
+          "zh": "如果给了外角，内角 = 180° - 外角。快捷方法！"
+        }
       ]
     },
     {
@@ -6664,7 +6862,17 @@
       "quickSummary": {
         "en": "Centre angle = 2× circumference angle. Semicircle angle = 90°.",
         "zh": "圆心角=2×圆周角。半圆上的角=90°。"
-      }
+      },
+      "realWorldContext": {
+        "en": "Circle theorems explain how gears mesh, how cameras focus, and why satellite dishes are curved. The angle in a semicircle = 90° is used in construction to check right angles!",
+        "zh": "圆的定理解释了齿轮如何啮合、相机如何对焦、以及为什么卫星天线是弯曲的。半圆上的角=90°在建筑中用来检查直角！"
+      },
+      "examTips": [
+        {
+          "en": "Always state the theorem name in your answer — examiners give marks for naming it!",
+          "zh": "答案中一定要写定理名——考官会因为你写了名字而给分！"
+        }
+      ]
     },
     {
       "id": "kp-4.7-02",
@@ -7246,6 +7454,16 @@
           "label_zh": "面积",
           "formula": "$A = \\pi r^2$"
         }
+      ],
+      "realWorldContext": {
+        "en": "Circles are everywhere: wheels, clocks, coins, plates, orbits. Understanding circumference and area helps you calculate materials for fencing a circular garden or tiling a round room.",
+        "zh": "圆无处不在：车轮、时钟、硬币、盘子、轨道。理解周长和面积帮你计算围圆形花园的栅栏用料或铺圆形房间的瓷砖。"
+      },
+      "examTips": [
+        {
+          "en": "Use RADIUS for area (πr²), use DIAMETER for circumference (πd). Mix-up = half marks lost!",
+          "zh": "面积用半径(πr²)，周长用直径(πd)。搞混了就丢一半分！"
+        }
       ]
     },
     {
@@ -7494,6 +7712,16 @@
           "label": "Cylinder",
           "label_zh": "圆柱",
           "formula": "$V = \\pi r^2 h$"
+        }
+      ],
+      "realWorldContext": {
+        "en": "Volume calculations help you figure out how much water a swimming pool holds, how much concrete to pour for a foundation, or how much paint fits in a cylindrical can.",
+        "zh": "体积计算帮你算出游泳池能装多少水、地基需要多少混凝土、或一个圆柱形罐子能装多少油漆。"
+      },
+      "examTips": [
+        {
+          "en": "Volume of ANY prism = area of cross-section × length. Learn this one rule, solve many shapes!",
+          "zh": "任何棱柱体积 = 截面面积 × 长度。记住这一个规则，解决很多形状！"
         }
       ]
     },
@@ -7856,6 +8084,16 @@
           "label_zh": "勾股定理",
           "formula": "$a^2 + b^2 = c^2$"
         }
+      ],
+      "realWorldContext": {
+        "en": "Pythagoras' theorem is used by builders to ensure corners are square, by pilots to calculate flight distances, and by game designers for character movement on screen.",
+        "zh": "勾股定理被建筑工人用来确保墙角是直角，被飞行员用来计算飞行距离，被游戏设计师用来计算角色在屏幕上的移动。"
+      },
+      "examTips": [
+        {
+          "en": "Always identify the HYPOTENUSE first (longest side, opposite the right angle). Then decide: finding hyp? ADD squares. Finding short side? SUBTRACT.",
+          "zh": "先找斜边（最长边，对着直角）。然后决定：求斜边？加平方。求短边？减平方。"
+        }
       ]
     },
     {
@@ -7984,6 +8222,20 @@
           "label": "TOA",
           "label_zh": "正切",
           "formula": "$\\tan\\theta = \\frac{O}{A}$"
+        }
+      ],
+      "realWorldContext": {
+        "en": "Trigonometry helps surveyors measure building heights without climbing them, sailors navigate by the stars, and engineers design bridges at precise angles.",
+        "zh": "三角学帮助测量员不用爬上去就能量建筑高度，帮助水手通过星星导航，帮助工程师以精确角度设计桥梁。"
+      },
+      "examTips": [
+        {
+          "en": "Label sides FIRST (H, O, A relative to your angle), THEN pick the ratio. SOH-CAH-TOA!",
+          "zh": "先标注边（相对于你的角的H、O、A），然后选比率。SOH-CAH-TOA！"
+        },
+        {
+          "en": "Finding a side? Use sin/cos/tan directly. Finding an angle? Use inverse sin⁻¹/cos⁻¹/tan⁻¹.",
+          "zh": "求边？直接用sin/cos/tan。求角？用反函数sin⁻¹/cos⁻¹/tan⁻¹。"
         }
       ]
     },
@@ -8808,7 +9060,17 @@
       "quickSummary": {
         "en": "Translations slide, reflections flip, rotations turn around a centre.",
         "zh": "平移滑动，反射翻转，旋转绕中心转动。"
-      }
+      },
+      "realWorldContext": {
+        "en": "Transformations are the foundation of all computer graphics, animation, and video games. Every time a character moves on screen, that's a translation. Every mirror effect is a reflection!",
+        "zh": "变换是所有电脑图形、动画和电子游戏的基础。角色在屏幕上每次移动就是平移。每个镜像效果就是反射！"
+      },
+      "examTips": [
+        {
+          "en": "For reflection: give the equation of the mirror line (y=x, x=2, etc). For rotation: give centre, angle, AND direction.",
+          "zh": "反射：写出对称轴方程(y=x, x=2等)。旋转：写中心、角度和方向。"
+        }
+      ]
     },
     {
       "id": "kp-7.1-02",
@@ -9382,6 +9644,16 @@
           "label_zh": "基本概率",
           "formula": "$P(A) = \\frac{\\text{favourable}}{\\text{total}}$"
         }
+      ],
+      "realWorldContext": {
+        "en": "Probability helps doctors assess treatment success rates, weather forecasters predict rain, and game designers balance difficulty. It's the mathematics of decision-making!",
+        "zh": "概率帮助医生评估治疗成功率，天气预报员预测下雨，游戏设计师平衡难度。它是决策的数学！"
+      },
+      "examTips": [
+        {
+          "en": "Probability is ALWAYS a fraction, decimal, or percentage between 0 and 1. If your answer is negative or > 1, something went wrong!",
+          "zh": "概率永远是0到1之间的分数、小数或百分比。如果答案是负数或>1，一定出错了！"
+        }
       ]
     },
     {
@@ -9732,7 +10004,17 @@
       "quickSummary": {
         "en": "Tree diagrams: multiply along branches, add between branches.",
         "zh": "树状图：沿分支相乘，不同分支相加。"
-      }
+      },
+      "realWorldContext": {
+        "en": "Tree diagrams are used by doctors (diagnosis paths), businesses (decision analysis), and sports analysts (game outcome predictions). They make complex decisions visual!",
+        "zh": "树状图被医生(诊断路径)、企业(决策分析)和体育分析师(比赛结果预测)使用。它们让复杂决策变得可视化！"
+      },
+      "examTips": [
+        {
+          "en": "Multiply ALONG branches (AND). Add ACROSS branches (OR). The branch probabilities must sum to 1!",
+          "zh": "沿分支相乘(且)。跨分支相加(或)。每组分支的概率之和必须=1！"
+        }
+      ]
     },
     {
       "id": "kp-8.3-02",
@@ -10419,6 +10701,16 @@
           "label_zh": "平均数",
           "formula": "$\\bar{x} = \\frac{\\sum x}{n}$"
         }
+      ],
+      "realWorldContext": {
+        "en": "Averages are everywhere: your school grades, sports statistics, economic indicators, social media analytics. Understanding which average to use is a real-world superpower!",
+        "zh": "平均数无处不在：你的学校成绩、体育统计、经济指标、社交媒体分析。知道用哪种平均数是一种现实世界的超能力！"
+      },
+      "examTips": [
+        {
+          "en": "Mean is affected by outliers. Median isn't. This is a COMMON exam question: 'Which average best represents the data?'",
+          "zh": "平均数受极端值影响。中位数不受。这是常考题：'哪种平均数最能代表这组数据？'"
+        }
       ]
     },
     {
@@ -10882,7 +11174,17 @@
       "quickSummary": {
         "en": "Scatter diagrams: dot patterns reveal correlation between variables.",
         "zh": "散点图：点的分布模式揭示变量间的相关性。"
-      }
+      },
+      "realWorldContext": {
+        "en": "Scatter diagrams are used in medicine (does this drug work?), economics (are house prices linked to income?), and climate science (is temperature related to CO₂?). They reveal hidden relationships!",
+        "zh": "散点图用于医学(这个药有效吗？)、经济学(房价与收入有关吗？)和气候科学(温度与CO₂有关吗？)。它们揭示隐藏的关系！"
+      },
+      "examTips": [
+        {
+          "en": "Types of correlation: positive (both increase), negative (one up, one down), none (no pattern). Always describe in CONTEXT!",
+          "zh": "相关性类型：正相关(同增)、负相关(一增一减)、无相关(无规律)。一定要结合情境描述！"
+        }
+      ]
     },
     {
       "id": "kp-9.5-02",

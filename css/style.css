@@ -5171,3 +5171,15 @@ input { font-family: inherit; }
 .kn-prereq-warn-icon { font-size:18px; flex-shrink:0; }
 .kn-prereq-warn-text { font-size:13px; color:#E65100; }
 .kn-prereq-warn-link { color:var(--c-primary); cursor:pointer; text-decoration:underline; font-weight:600; }
+
+/* KP Detail: Real-world context + Exam tips (v5.30.0) */
+.kp-context-tips { margin-bottom:var(--sp-4); display:flex; flex-direction:column; gap:var(--sp-3); }
+.kp-real-world { background:rgba(34,197,94,0.06); border-left:4px solid #22c55e; border-radius:0 var(--r) var(--r) 0; padding:14px 16px; display:flex; gap:12px; align-items:flex-start; }
+.kp-rw-icon { font-size:20px; flex-shrink:0; }
+.kp-rw-text { font-size:13px; color:var(--c-text); line-height:1.6; }
+.kp-exam-tips { background:rgba(253,186,116,0.08); border:1.5px solid rgba(253,186,116,0.4); border-radius:var(--r); padding:14px 16px; }
+.kp-tips-title { font-size:13px; font-weight:700; color:#C2410C; margin-bottom:var(--sp-2); }
+.kp-tip-item { font-size:13px; color:var(--c-text); line-height:1.6; padding:4px 0; }
+[data-theme="dark"] .kp-real-world { background:rgba(34,197,94,0.08); }
+[data-theme="dark"] .kp-exam-tips { background:rgba(253,186,116,0.06); border-color:rgba(253,186,116,0.2); }
+[data-theme="dark"] .kp-tips-title { color:#FDBA74; }

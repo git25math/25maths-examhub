@@ -303,6 +303,22 @@ function _knStageMotivation(kp, lang) {
         '<h3 class="kn-intro-title">' + (lang === 'zh' ? '这个知识点是什么？' : 'What is this about?') + '</h3>' +
         '<p class="kn-intro-text">' + pqSanitize(introText) + '</p>' +
       '</div>' +
+      /* Real-world context (v5.30.0) */
+      (kp.realWorldContext
+        ? '<div class="kn-real-world">' +
+            '<span class="kn-rw-icon">\ud83c\udf0d</span>' +
+            '<p class="kn-rw-text">' + pqSanitize(lang === 'zh' ? (kp.realWorldContext.zh || kp.realWorldContext.en) : kp.realWorldContext.en) + '</p>' +
+          '</div>'
+        : '') +
+      /* Exam tips (v5.30.0) */
+      (kp.examTips && kp.examTips.length > 0
+        ? '<div class="kn-exam-tips">' +
+            '<p class="kn-tips-label">\ud83c\udfaf ' + (lang === 'zh' ? '考试小贴士' : 'Exam Tips') + '</p>' +
+            kp.examTips.map(function(tip) {
+              return '<div class="kn-tip-item">' + pqSanitize(lang === 'zh' ? (tip.zh || tip.en) : tip.en) + '</div>';
+            }).join('') +
+          '</div>'
+        : '') +
       '<div class="kn-stat-row">' +
         '<div class="kn-stat-card">' +
           '<span class="kn-stat-num">' + patternCount + '</span>' +
@@ -694,6 +710,20 @@ function _knHandleKey(e) {
 .kn-stage-intro { font-size:14px; color:#555; margin:0; }
 .kn-block-label { font-size:11px; font-weight:700; letter-spacing:.06em; color:#888; text-transform:uppercase; margin:0 0 6px; }
 .kn-empty { color:#bbb; font-style:italic; text-align:center; padding:40px 0; }
+
+/* Real-world context & Exam tips (v5.30.0) */
+.kn-real-world { background:#F0FDF4; border-left:4px solid #22C55E; border-radius:0 12px 12px 0; padding:14px 16px; display:flex; gap:12px; align-items:flex-start; }
+.kn-rw-icon { font-size:20px; flex-shrink:0; }
+.kn-rw-text { font-size:13px; color:#166534; line-height:1.6; margin:0; }
+.kn-exam-tips { background:#FFF7ED; border:1.5px solid #FDBA74; border-radius:12px; padding:14px 16px; }
+.kn-tips-label { font-size:12px; font-weight:700; color:#C2410C; margin:0 0 8px; }
+.kn-tip-item { font-size:13px; color:#9A3412; line-height:1.6; padding:6px 0 6px 20px; position:relative; }
+.kn-tip-item::before { content:'\\2713'; position:absolute; left:0; color:#22C55E; font-weight:700; }
+[data-theme="dark"] .kn-real-world { background:rgba(34,197,94,0.08); border-color:rgba(34,197,94,0.4); }
+[data-theme="dark"] .kn-rw-text { color:#86EFAC; }
+[data-theme="dark"] .kn-exam-tips { background:rgba(253,186,116,0.08); border-color:rgba(253,186,116,0.3); }
+[data-theme="dark"] .kn-tips-label { color:#FDBA74; }
+[data-theme="dark"] .kn-tip-item { color:#FED7AA; }
 
 /* Motivation */
 .kn-ctx-banner { background:#FFF3CD; border:1px solid #FFD96A; border-radius:12px; padding:12px 16px; display:flex; gap:12px; align-items:flex-start; }
