@@ -2477,14 +2477,12 @@ function ppRate(level) {
     /* Show Recovery Pack instead of auto-advance */
     _ppShowRecoveryPack(q);
 
-    /* Insert Learn button at top of recovery pack */
+    /* Insert Learn button at bottom of recovery pack (below repair suggestions) */
     if (_knBtn) {
-      var _knWrap = document.createElement('div');
-      _knWrap.innerHTML = _knBtn;
       var _rrPack = document.getElementById('pp-recovery-pack');
       if (_rrPack) {
         var _rrInner = _rrPack.querySelector('.recovery-pack');
-        if (_rrInner) _rrInner.insertAdjacentHTML('afterbegin', _knBtn);
+        if (_rrInner) _rrInner.insertAdjacentHTML('beforeend', _knBtn);
       }
     }
     return;
