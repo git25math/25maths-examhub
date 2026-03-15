@@ -58,6 +58,20 @@ function renderFavorites() {
   }
   html += '</div>';
 
+  /* Empty state for brand new users */
+  if (totalCount === 0) {
+    html += '<div class="fav-empty" style="padding:60px 20px">';
+    html += '<div class="fav-empty-icon">⭐</div>';
+    html += '<div class="fav-empty-text" style="font-size:16px;font-weight:600;margin-bottom:8px">' + t('Your collection starts here', '你的收藏从这里开始') + '</div>';
+    html += '<div style="font-size:13px;color:var(--c-text2);line-height:1.6;max-width:320px;margin:0 auto">';
+    html += t('As you study, tap the ☆ on any word, knowledge point, or exam question to save it here. We\u2019ll help you track your progress and find your weak spots.', '学习过程中，点击任何单词、知识点或真题旁的 ☆ 即可收藏。我们会帮你追踪进度，发现薄弱环节。');
+    html += '</div>';
+    html += '<button class="btn btn-primary" style="margin-top:20px" onclick="navTo(\'home\')">' + t('Start Exploring', '开始探索') + ' \u2192</button>';
+    html += '</div>';
+    el.innerHTML = html;
+    return;
+  }
+
   /* Content */
   html += '<div id="fav-content">';
   html += _favRenderTab(_favCurrentTab);
@@ -369,25 +383,25 @@ function _favBindEvents(el) {
 
     if (action === 'kp' && ref) {
       /* Navigate to KP detail */
-      if (typeof openKPDetail === 'function') {
-        openKPDetail(ref, board);
+      if (typeof openKnowledgePoint === 'function') {
+        openKnowledgePoint(ref, board);
       }
     } else if (action === 'learn-kp' && ref) {
-      /* Open Knowledge Node for this KP */
-      if (typeof openKnowledgeNode === 'function') {
-        openKnowledgeNode(ref, board);
-      }
+      /* Open Knowledge Node for this KP (lazy-load practice bundle which contains knowledge-node.js) */
+      _lazyCall('practice', 'openKnowledgeNode', [ref, board]);
     } else if (action === 'pp' && ref) {
-      /* Navigate to PP card */
-      if (typeof startPPScanByIds === 'function' && typeof loadPastPaperData === 'function') {
-        loadPastPaperData(board).then(function() {
-          startPPScanByIds([ref], board, true);
-        });
-      }
+      /* Navigate to PP card (lazy-load practice bundle) */
+      _lazyLoad('practice', function() {
+        if (typeof loadPastPaperData === 'function' && typeof startPPScanByIds === 'function') {
+          loadPastPaperData(board).then(function() {
+            startPPScanByIds([ref], board, true);
+          });
+        }
+      });
     } else if (action === 'fix') {
-      /* Navigate to section */
+      /* Navigate to section (openSection is in syllabus.js, part of core bundle) */
       var sec = item.dataset.favSection;
-      if (typeof openSection === 'function' && sec) {
+      if (sec && typeof openSection === 'function') {
         openSection(sec, board);
       }
     }
