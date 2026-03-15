@@ -404,9 +404,7 @@ function renderSectionDetail(ch, sec, secIdx, board) {
   var secPlanBtn = document.getElementById('sec-create-plan-btn');
   if (secPlanBtn) {
     secPlanBtn.addEventListener('click', function() {
-      if (typeof _createPlanFromSection === 'function') {
-        _createPlanFromSection(secPlanBtn.dataset.sec, secPlanBtn.dataset.board);
-      }
+      _lazyCall('lists', '_createPlanFromSection', [secPlanBtn.dataset.sec, secPlanBtn.dataset.board]);
     });
   }
 
@@ -2100,14 +2098,15 @@ function renderTodaysPlan() {
   if (panel._planHandler) panel.removeEventListener('click', panel._planHandler);
   panel._planHandler = function(e) {
     var dueBtn = e.target.closest('[data-action="start-due-review"]');
-    if (dueBtn && typeof startMistakeScan === 'function' && typeof getDueWords === 'function') {
-      var due = getDueWords();
-      if (due.length > 0) startMistakeScan(due);
+    if (dueBtn) {
+      var due = typeof getDueWords === 'function' ? getDueWords() : [];
+      if (due.length > 0) _lazyCall('study-quiz-battle', 'startMistakeScan', [due]);
       return;
     }
     var refreshBtn = e.target.closest('[data-action="start-refresh"]');
-    if (refreshBtn && typeof startRefreshScan === 'function' && typeof getStaleWords === 'function') {
-      startRefreshScan(getStaleWords());
+    if (refreshBtn) {
+      var stale = typeof getStaleWords === 'function' ? getStaleWords() : [];
+      if (stale.length > 0) _lazyCall('study-quiz-battle', 'startRefreshScan', [stale]);
       return;
     }
     var kpRefreshBtn = e.target.closest('[data-action="start-kp-refresh"]');
