@@ -494,10 +494,9 @@ function startPracticeReview(li) { return _lazyCall('practice-review', 'startPra
    PAST PAPER MODULE — Practice + Exam + Review Book
    ══════════════════════════════════════════════════════════════ */
 
-/* Past paper access guard: CIE/Edexcel locked to super admin until QA complete */
+/* Past paper access guard */
 function _ppAccessAllowed(board) {
-  if (board === '25m') return true;
-  return typeof isSuperAdmin === 'function' && isSuperAdmin();
+  return true;
 }
 
 var _ppData = {};          /* { cie: { paperMeta: {}, questions: [] } } lazy-loaded */
