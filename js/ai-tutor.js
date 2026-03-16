@@ -68,7 +68,7 @@ function getPlanTutorMessage() {
 
   /* Backlog warning */
   if (ctx.backlog > 5) {
-    lines.push(t('You have ' + ctx.backlog + ' items ready for review — even a few will make a difference!', '有 ' + ctx.backlog + ' 个内容可以复习——哪怕几个也会有进步！'));
+    lines.push(t('Some topics are ready for a refresh — even a few minutes will help!', '\u6709\u4e9b\u5185\u5bb9\u53ef\u4ee5\u56de\u987e\u2014\u2014\u54ea\u6015\u51e0\u5206\u949f\u4e5f\u4f1a\u6709\u5e2e\u52a9\uff01'));
   }
 
   /* Weak section hint */

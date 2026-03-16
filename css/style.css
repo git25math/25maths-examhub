@@ -347,6 +347,10 @@ input { font-family: inherit; }
   padding: 1px 6px; border-radius: var(--r-sm);
   min-width: 18px; text-align: center;
 }
+/* Gentle badge — no red, no count, just a soft dot (v5.30.0) */
+.nav-badge.badge-gentle {
+  background: var(--c-primary); min-width: 8px; width: 8px; height: 8px; padding: 0; font-size: 0;
+}
 
 /* Sidebar Notifications + Groups */
 .sidebar-notif { padding: 0 12px; }
@@ -587,6 +591,9 @@ input { font-family: inherit; }
   font-size: 9px; font-weight: 700;
   padding: 1px 5px; border-radius: var(--r-sm);
   min-width: 16px; text-align: center;
+}
+.bnav-badge.badge-gentle {
+  background: var(--c-primary); min-width: 6px; width: 6px; height: 6px; padding: 0; font-size: 0; top: 6px; right: 8px;
   line-height: 14px;
 }
 

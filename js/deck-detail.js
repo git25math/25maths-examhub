@@ -45,7 +45,7 @@ function _renderDeck(idx) {
   if (_deckStale.length > 0) {
     html += '<div class="deck-refresh-banner">';
     html += '<span class="deck-refresh-icon">\ud83d\udd04</span>';
-    html += '<span class="deck-refresh-text">' + _deckStale.length + ' ' + t('words due for another round', '\u4e2a\u8bcd\u9700\u8981\u518d\u8fc7\u4e00\u8f6e') + '</span>';
+    html += '<span class="deck-refresh-text">' + _deckStale.length + ' ' + t('words ready for a quick refresh', '\u4e2a\u8bcd\u53ef\u4ee5\u5feb\u901f\u56de\u987e') + '</span>';
     html += '<button class="btn btn-primary btn-sm" data-action="deck-refresh" data-li="' + idx + '">' + t('Quick Refresh', '\u5feb\u901f\u590d\u67e5') + '</button>';
     html += '</div>';
   }

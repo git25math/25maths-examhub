@@ -395,11 +395,11 @@ function _renderHeroAction() {
     html += '<div class="hero-welcome">' + welcomeMsg + '</div>';
   }
 
-  /* Top row: streak + weekly goal + rank */
+  /* Top row: growth summary (v5.30.0: no streak pressure, focus on growth) */
   html += '<div class="hero-top">';
-  html += '<span class="hero-streak">\ud83d\udd25 ' + t(streakN + '-day streak', '\u8fde\u7eed ' + streakN + ' \u5929') + '</span>';
-  if (wg) {
-    html += '<span class="hero-weekly">' + t('Week', '\u672c\u5468') + ': ' + wg.learned + '/' + wg.target + '</span>';
+  /* Show streak only as a gentle note when >= 3, not a pressure counter */
+  if (streakN >= 3) {
+    html += '<span class="hero-streak">\u2728 ' + t(streakN + ' days of learning', '\u5b66\u4e60\u4e86 ' + streakN + ' \u5929') + '</span>';
   }
   html += '<span class="hero-rank" data-hero-action="stats">' + homeRank.emoji + ' '
     + t(gs.mastered + ' words \u00b7 ' + gs.kpMastered + ' KPs mastered',
@@ -420,20 +420,20 @@ function _renderHeroAction() {
     html += '<button class="btn btn-primary hero-btn" data-hero-action="daily">';
     html += t('GO', '\u5f00\u59cb') + ' \u2192</button>';
   } else if (action.type === 'refresh') {
-    html += '<div class="hero-label">' + t('Refresh Review', '\u8f7b\u91cf\u590d\u67e5') + '</div>';
-    html += '<div class="hero-section">' + action.count + ' ' + t('mastered words ready for another round', '\u4e2a\u5df2\u638c\u63e1\u8bcd\u6c47\u9700\u8981\u518d\u8fc7\u4e00\u8f6e') + '</div>';
+    html += '<div class="hero-label">' + t('Quick Refresh', '\u5feb\u901f\u56de\u987e') + '</div>';
+    html += '<div class="hero-section">' + action.count + ' ' + t('words ready for a quick revisit — whenever you like', '\u4e2a\u8bcd\u53ef\u4ee5\u5feb\u901f\u56de\u987e\u2014\u2014\u4f60\u60f3\u770b\u7684\u65f6\u5019\u5c31\u770b') + '</div>';
     html += '<button class="btn btn-primary hero-btn" data-hero-action="refresh">';
-    html += '\ud83d\udd04 ' + t('Quick Scan', '\u5feb\u901f\u590d\u67e5') + ' \u2192</button>';
+    html += '\ud83d\udd04 ' + t('Quick Refresh', '\u5feb\u901f\u56de\u987e') + ' \u2192</button>';
   } else if (action.type === 'kp-refresh') {
-    html += '<div class="hero-label">' + t('Knowledge Point Review', '\u77e5\u8bc6\u70b9\u590d\u67e5') + '</div>';
-    html += '<div class="hero-section">' + action.count + ' ' + t('mastered KPs ready for another round', '\u4e2a\u5df2\u638c\u63e1\u77e5\u8bc6\u70b9\u9700\u8981\u518d\u8fc7\u4e00\u8f6e') + '</div>';
+    html += '<div class="hero-label">' + t('Knowledge Refresh', '\u77e5\u8bc6\u70b9\u56de\u987e') + '</div>';
+    html += '<div class="hero-section">' + action.count + ' ' + t('KPs you can revisit to stay sharp', '\u4e2a\u77e5\u8bc6\u70b9\u53ef\u4ee5\u56de\u987e\u4ee5\u4fdd\u6301\u8bb0\u5fc6') + '</div>';
     html += '<button class="btn btn-primary hero-btn" data-hero-action="kp-refresh">';
-    html += '\ud83d\udd04 ' + t('Quick Scan', '\u5feb\u901f\u590d\u67e5') + ' \u2192</button>';
+    html += '\ud83d\udd04 ' + t('Quick Refresh', '\u5feb\u901f\u56de\u987e') + ' \u2192</button>';
   } else if (action.type === 'pp-refresh') {
-    html += '<div class="hero-label">' + t('Past Paper Review', '\u771f\u9898\u590d\u67e5') + '</div>';
-    html += '<div class="hero-section">' + action.count + ' ' + t('mastered questions ready for another round', '\u4e2a\u5df2\u638c\u63e1\u771f\u9898\u9700\u8981\u518d\u8fc7\u4e00\u8f6e') + '</div>';
+    html += '<div class="hero-label">' + t('Paper Refresh', '\u771f\u9898\u56de\u987e') + '</div>';
+    html += '<div class="hero-section">' + action.count + ' ' + t('questions you can revisit to build confidence', '\u4e2a\u771f\u9898\u53ef\u4ee5\u56de\u987e\u4ee5\u5efa\u7acb\u4fe1\u5fc3') + '</div>';
     html += '<button class="btn btn-primary hero-btn" data-hero-action="pp-refresh">';
-    html += '\ud83d\udd04 ' + t('Quick Scan', '\u5feb\u901f\u590d\u67e5') + ' \u2192</button>';
+    html += '\ud83d\udd04 ' + t('Quick Refresh', '\u5feb\u901f\u56de\u987e') + ' \u2192</button>';
   } else if (action.type === 'start') {
     html += '<div class="hero-label">' + t('Up next', '\u4e0b\u4e00\u7ad9') + '</div>';
     html += '<div class="hero-section">' + escapeHtml(appLang === 'zh' && action.labelZh ? action.labelZh : action.label) + '</div>';

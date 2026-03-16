@@ -187,14 +187,16 @@ function updateNav() {
     var wb = _ppGetWB();
     for (var k in wb) { if (wb[k].status === 'active') mc++; }
   }
+  /* Review Book badge — subtle dot instead of count (v5.30.0: no pressure) */
   var mkBadges = [E('nav-mk-badge'), E('bnav-mk-badge')];
   mkBadges.forEach(function(b) {
     if (b) {
-      b.textContent = mc;
+      b.textContent = '';
+      b.className = (b.className || '').replace('badge-pressure', '') + ' badge-gentle';
       b.style.display = mc > 0 ? 'inline-block' : 'none';
     }
   });
-  /* Plan badge — stale word + KP + PP count */
+  /* Plan badge — gentle indicator, no count (v5.30.0: follow your own pace) */
   var staleN = typeof getStaleCount === 'function' ? getStaleCount() : 0;
   var staleKPN = typeof getStaleKPCount === 'function' ? getStaleKPCount() : 0;
   var stalePPN = typeof getStalePPCount === 'function' ? getStalePPCount() : 0;
@@ -202,7 +204,8 @@ function updateNav() {
   var planBadges = [E('nav-plan-badge'), E('bnav-plan-badge')];
   planBadges.forEach(function(b) {
     if (b) {
-      b.textContent = totalStale;
+      b.textContent = '';
+      b.className = (b.className || '').replace('badge-pressure', '') + ' badge-gentle';
       b.style.display = totalStale > 0 ? 'inline-block' : 'none';
     }
   });

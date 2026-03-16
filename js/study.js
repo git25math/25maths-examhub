@@ -105,7 +105,7 @@ function _renderRefreshCard() {
   if (S._mistakeMode) {
     html += '<div class="study-refresh-label">\ud83d\udcdd ' + t('Mistake Review', '\u9519\u9898\u590d\u4e60') + '</div>';
   } else {
-    html += '<div class="study-refresh-label">\ud83d\udd04 ' + t('Refresh Review', '\u8f7b\u91cf\u590d\u67e5') + '</div>';
+    html += '<div class="study-refresh-label">\ud83d\udd04 ' + t('Quick Refresh', '\u5feb\u901f\u56de\u987e') + '</div>';
   }
 
   /* Word card */
