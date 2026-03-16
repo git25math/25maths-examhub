@@ -565,17 +565,54 @@ function renderHome() {
   /* Homework banner (students only) */
   html += _renderHomeworkSlot();
 
-  /* Search bar */
-  html += '<div class="search-bar">';
-  html += '<input class="search-input" id="home-search" type="text" placeholder="' + t('Search groups or words...', '\u641c\u7d22\u8bcd\u7ec4\u6216\u5355\u8bcd...') + '" value="' + appSearch.replace(/"/g, '&quot;') + '" oninput="onHomeSearch(this.value)">';
-  if (appSearch) {
-    html += '<button class="search-clear" onclick="clearHomeSearch()">&times;</button>';
+  /* ═══ HOME MODULE CARDS (v5.30.0) ═══ */
+  html += '<div class="home-boards">';
+  var _visBoards = getVisibleBoards();
+  var _visBoardIds = {};
+  _visBoards.forEach(function(b) { _visBoardIds[b.id] = true; });
+
+  for (var _hmi = 0; _hmi < HOME_MODULES.length; _hmi++) {
+    var mod = HOME_MODULES[_hmi];
+    /* Filter: only show modules relevant to userBoard, or all if no filter */
+    if (userBoard && userBoard !== 'all') {
+      if (mod.status === 'active' && mod.boardId && !_visBoardIds[mod.boardId]) continue;
+    }
+    var isActive = mod.status === 'active';
+    var mTitle = appLang !== 'en' ? mod.titleZh : mod.title;
+    var mSub = appLang !== 'en' ? mod.subtitleZh : mod.subtitle;
+    var mDesc = appLang !== 'en' ? mod.descZh : mod.desc;
+
+    html += '<div class="home-board-card' + (isActive ? '' : ' coming') + '" ' +
+      (isActive ? 'onclick="openBoardHome(\'' + escapeHtml(mod.id) + '\')"' : '') +
+      ' role="button" tabindex="0">';
+    html += '<div class="home-board-icon" style="background:' + mod.color + '18;color:' + mod.color + '">' + mod.icon + '</div>';
+    html += '<div class="home-board-info">';
+    html += '<div class="home-board-title">' + escapeHtml(mTitle);
+    if (isActive) {
+      html += '<span class="home-board-badge badge-active">' + t('Active', '\u5df2\u5f00\u653e') + '</span>';
+    } else {
+      html += '<span class="home-board-badge badge-coming">' + t('Coming', '\u5373\u5c06\u63a8\u51fa') + '</span>';
+    }
+    html += '</div>';
+    html += '<div class="home-board-subtitle">' + escapeHtml(mSub) + '</div>';
+    html += '<div class="home-board-desc">' + escapeHtml(mDesc) + '</div>';
+    html += '</div>';
+    html += '<span class="home-board-arrow">' + (isActive ? '\u2192' : '') + '</span>';
+    html += '</div>';
   }
   html += '</div>';
 
-  /* Deck grid grouped by BOARDS → categories → levels */
-  var hasAnyResult = false;
+  /* Legacy deck grid hidden on home — shown via openBoardHome() (v5.30.0) */
+  /* Suppress rendering on home page; board detail renders its own content */
+  var hasAnyResult = true;
+  var _skipLegacy = true;
+  if (_skipLegacy) {
+    /* no-op: legacy board content not rendered on home */
+  }
+  var _legacyBoardRenderPlaceholder = function() {};
+  _legacyBoardRenderPlaceholder.boards = getVisibleBoards();
   getVisibleBoards().forEach(function(board) {
+    if (_skipLegacy) return;
 
     /* ── CIE board: syllabus-driven rendering ── */
     if (board.id === 'cie' && typeof renderCIEHome === 'function' && _cieDataReady) {
@@ -807,6 +844,237 @@ function renderHome() {
       }
     } catch(e) {}
   }, 1500);
+}
+
+/* ═══ BOARD HOME — drill-down from home page (v5.30.0) ═══ */
+
+function openBoardHome(modId) {
+  var mod = null;
+  for (var i = 0; i < HOME_MODULES.length; i++) {
+    if (HOME_MODULES[i].id === modId) { mod = HOME_MODULES[i]; break; }
+  }
+  if (!mod || mod.status !== 'active') return;
+
+  var mTitle = appLang !== 'en' ? mod.titleZh : mod.title;
+  var mSub = appLang !== 'en' ? mod.subtitleZh : mod.subtitle;
+
+  /* Set breadcrumb */
+  breadcrumbSet([
+    { id: 'home', label: 'Home', labelZh: '\u9996\u9875', action: "navTo('home')" },
+    { id: modId, label: mod.title, labelZh: mod.titleZh }
+  ]);
+
+  var boardKey = mod.boardId || mod.id;
+
+  /* Render board detail into panel-home (reuse home panel, push to nav stack) */
+  navPush('home'); /* keep on home panel but update content */
+  var html = '';
+
+  html += '<div class="board-detail-header">';
+  html += '<div style="font-size:36px;margin-bottom:8px">' + mod.icon + '</div>';
+  html += '<div class="board-detail-title">' + escapeHtml(mTitle) + '</div>';
+  html += '<div class="board-detail-sub">' + escapeHtml(mSub) + '</div>';
+  html += '</div>';
+
+  html += '<div class="board-detail-options">';
+
+  if (modId === 'cie' || modId === 'edx') {
+    /* CIE / Edexcel: Topic-based + Paper-based + Review + Favorites */
+    html += _boardOptionCard('\ud83d\udcda', t('Study by Topic', '\u6309\u4e13\u9898\u5b66\u4e60'),
+      t('Vocabulary, knowledge points, and practice by chapter', '\u6309\u7ae0\u8282\u5b66\u4e60\u8bcd\u6c47\u3001\u77e5\u8bc6\u70b9\u548c\u7ec3\u4e60\u9898'),
+      "openBoardTopics('" + escapeHtml(modId) + "')");
+
+    if (typeof ppShowPaperBrowse === 'function') {
+      html += _boardOptionCard('\ud83d\udcc4', t('Past Papers', '\u5957\u5377\u7ec3\u4e60'),
+        modId === 'cie'
+          ? t('228 papers \u00b7 4,110 questions \u00b7 2018\u20132025', '228\u5957\u5377 \u00b7 4,110\u9053\u9898')
+          : t('76 papers \u00b7 1,855 questions', '76\u5957\u5377 \u00b7 1,855\u9053\u9898'),
+        "ppShowPaperBrowse('" + escapeHtml(boardKey) + "')");
+    }
+
+    html += _boardOptionCard('\ud83d\udd04', t('Review Completed', '\u56de\u987e\u5df2\u505a\u8fc7\u7684'),
+      t('Revisit questions you have practised', '\u56de\u987e\u4f60\u7ec3\u4e60\u8fc7\u7684\u9898\u76ee'),
+      "navTo('mistakes')");
+
+    html += _boardOptionCard('\u2b50', t('My Favorites', '\u6211\u7684\u6536\u85cf'),
+      t('Words, KPs, and questions you bookmarked', '\u4f60\u6536\u85cf\u7684\u5355\u8bcd\u3001\u77e5\u8bc6\u70b9\u548c\u9898\u76ee'),
+      "navTo('favorites')");
+
+  } else if (modId === 'hhk') {
+    /* HHK: Year groups */
+    var years = [
+      { id: 'y7', label: 'Year 7', labelZh: 'Y7 \u516d\u5e74\u7ea7', icon: '\u24fb' },
+      { id: 'y8', label: 'Year 8', labelZh: 'Y8 \u4e03\u5e74\u7ea7', icon: '\u24fc' },
+      { id: 'y9', label: 'Year 9', labelZh: 'Y9 \u516b\u5e74\u7ea7', icon: '\u24fd' },
+      { id: 'y10', label: 'Year 10', labelZh: 'Y10 \u4e5d\u5e74\u7ea7', icon: '\u24fe' },
+      { id: 'y11', label: 'Year 11', labelZh: 'Y11 \u5341\u5e74\u7ea7', icon: '\u24eb' }
+    ];
+    for (var yi = 0; yi < years.length; yi++) {
+      var yr = years[yi];
+      var yrTitle = appLang !== 'en' ? yr.labelZh : yr.label;
+      /* Count units in this year from syllabus data */
+      var unitCount = 0;
+      if (typeof BOARD_SYLLABUS !== 'undefined' && BOARD_SYLLABUS.hhk) {
+        for (var ci = 0; ci < BOARD_SYLLABUS.hhk.length; ci++) {
+          var ch = BOARD_SYLLABUS.hhk[ci];
+          if (ch.num === (yi + 7)) unitCount = ch.sections ? ch.sections.length : 0;
+        }
+      }
+      html += _boardOptionCard(yr.icon, yrTitle,
+        unitCount + ' ' + t('units', '\u4e2a\u5355\u5143'),
+        "openBoardYear('hhk'," + (yi + 7) + ")");
+    }
+  }
+
+  html += '</div>';
+
+  E('panel-home').innerHTML = html;
+}
+
+function _boardOptionCard(icon, title, sub, onclick) {
+  return '<div class="board-option-card" onclick="' + onclick + '" role="button" tabindex="0">' +
+    '<div class="board-option-icon">' + icon + '</div>' +
+    '<div class="board-option-info">' +
+      '<div class="board-option-title">' + title + '</div>' +
+      '<div class="board-option-sub">' + sub + '</div>' +
+    '</div>' +
+    '<span class="board-option-arrow">\u2192</span>' +
+  '</div>';
+}
+
+/* Open topic list for CIE/EDX board */
+function openBoardTopics(modId) {
+  var boardKey = modId === 'hhk' ? 'hhk' : modId;
+  var mod = null;
+  for (var i = 0; i < HOME_MODULES.length; i++) {
+    if (HOME_MODULES[i].id === modId) { mod = HOME_MODULES[i]; break; }
+  }
+  if (!mod) return;
+
+  breadcrumbSet([
+    { id: 'home', label: 'Home', labelZh: '\u9996\u9875', action: "navTo('home')" },
+    { id: modId, label: mod.title, labelZh: mod.titleZh, action: "openBoardHome('" + modId + "')" },
+    { id: 'topics', label: t('Topics', '\u4e13\u9898'), labelZh: '\u4e13\u9898' }
+  ]);
+
+  var syllabus = typeof BOARD_SYLLABUS !== 'undefined' ? BOARD_SYLLABUS[boardKey] : null;
+  if (!syllabus) {
+    E('panel-home').innerHTML = '<div class="empty-state" style="padding:80px 0">' + t('Loading...', '\u52a0\u8f7d\u4e2d...') + '</div>';
+    return;
+  }
+
+  var html = '';
+  html += '<div class="board-detail-header">';
+  html += '<div class="board-detail-title">' + t('Study by Topic', '\u6309\u4e13\u9898\u5b66\u4e60') + '</div>';
+  html += '</div>';
+
+  html += '<div class="board-detail-options">';
+  for (var ci = 0; ci < syllabus.length; ci++) {
+    var ch = syllabus[ci];
+    var chTitle = appLang !== 'en' && ch.title_zh ? ch.title_zh : ch.title;
+    var chNum = ch.num;
+    var secCount = ch.sections ? ch.sections.length : 0;
+    var emojis = boardKey === 'cie'
+      ? ['', '\ud83d\udd22', '\ud83d\udcdd', '\ud83d\udccd', '\ud83d\udcd0', '\ud83d\udccf', '\ud83d\udcd0', '\u27a1\ufe0f', '\ud83c\udfb2', '\ud83d\udcc8']
+      : ['', '\ud83d\udd22', '\ud83d\udcdd', '\ud83d\udcca', '\ud83d\udcd0', '\u27a1\ufe0f', '\ud83d\udcc8'];
+    var emoji = emojis[chNum] || '\ud83d\udcda';
+    html += _boardOptionCard(emoji, chNum + '. ' + chTitle,
+      secCount + ' ' + t('sections', '\u4e2a\u77e5\u8bc6\u70b9'),
+      "openBoardChapter('" + modId + "'," + chNum + ")");
+  }
+  html += '</div>';
+
+  E('panel-home').innerHTML = html;
+}
+
+/* Open a specific chapter showing its sections */
+function openBoardChapter(modId, chNum) {
+  var boardKey = modId === 'hhk' ? 'hhk' : modId;
+  var mod = null;
+  for (var i = 0; i < HOME_MODULES.length; i++) {
+    if (HOME_MODULES[i].id === modId) { mod = HOME_MODULES[i]; break; }
+  }
+  var syllabus = typeof BOARD_SYLLABUS !== 'undefined' ? BOARD_SYLLABUS[boardKey] : null;
+  if (!mod || !syllabus) return;
+
+  var ch = null;
+  for (var ci = 0; ci < syllabus.length; ci++) {
+    if (syllabus[ci].num === chNum) { ch = syllabus[ci]; break; }
+  }
+  if (!ch) return;
+
+  var chTitle = appLang !== 'en' && ch.title_zh ? ch.title_zh : ch.title;
+  breadcrumbSet([
+    { id: 'home', label: 'Home', labelZh: '\u9996\u9875', action: "navTo('home')" },
+    { id: modId, label: mod.title, labelZh: mod.titleZh, action: "openBoardHome('" + modId + "')" },
+    { id: 'topics', label: t('Topics', '\u4e13\u9898'), labelZh: '\u4e13\u9898', action: "openBoardTopics('" + modId + "')" },
+    { id: 'ch' + chNum, label: chNum + '. ' + (ch.title || ''), labelZh: chNum + '. ' + (ch.title_zh || ch.title) }
+  ]);
+
+  var html = '';
+  html += '<div class="board-detail-header">';
+  html += '<div class="board-detail-title">' + chNum + '. ' + escapeHtml(chTitle) + '</div>';
+  html += '<div class="board-detail-sub">' + (ch.sections ? ch.sections.length : 0) + ' ' + t('sections', '\u4e2a\u77e5\u8bc6\u70b9') + '</div>';
+  html += '</div>';
+
+  html += '<div class="board-detail-options">';
+  if (ch.sections) {
+    for (var si = 0; si < ch.sections.length; si++) {
+      var sec = ch.sections[si];
+      var secTitle = appLang !== 'en' && sec.title_zh ? sec.title_zh : sec.title;
+      html += _boardOptionCard('\ud83d\udcd6', sec.id + ' ' + secTitle,
+        '',
+        "openSection('" + escapeHtml(sec.id) + "','" + escapeHtml(boardKey) + "')");
+    }
+  }
+  html += '</div>';
+
+  E('panel-home').innerHTML = html;
+}
+
+/* Open a HHK year group showing its units */
+function openBoardYear(modId, yearNum) {
+  var mod = null;
+  for (var i = 0; i < HOME_MODULES.length; i++) {
+    if (HOME_MODULES[i].id === modId) { mod = HOME_MODULES[i]; break; }
+  }
+  var syllabus = typeof BOARD_SYLLABUS !== 'undefined' ? BOARD_SYLLABUS.hhk : null;
+  if (!mod || !syllabus) return;
+
+  var ch = null;
+  for (var ci = 0; ci < syllabus.length; ci++) {
+    if (syllabus[ci].num === yearNum) { ch = syllabus[ci]; break; }
+  }
+  if (!ch) return;
+
+  var yearLabel = 'Year ' + yearNum;
+  var yearLabelZh = 'Y' + yearNum;
+  breadcrumbSet([
+    { id: 'home', label: 'Home', labelZh: '\u9996\u9875', action: "navTo('home')" },
+    { id: 'hhk', label: mod.title, labelZh: mod.titleZh, action: "openBoardHome('hhk')" },
+    { id: 'y' + yearNum, label: yearLabel, labelZh: yearLabelZh }
+  ]);
+
+  var html = '';
+  html += '<div class="board-detail-header">';
+  html += '<div style="font-size:36px;margin-bottom:8px">' + mod.icon + '</div>';
+  html += '<div class="board-detail-title">' + yearLabel + '</div>';
+  html += '<div class="board-detail-sub">' + (ch.sections ? ch.sections.length : 0) + ' ' + t('units', '\u4e2a\u5355\u5143') + '</div>';
+  html += '</div>';
+
+  html += '<div class="board-detail-options">';
+  if (ch.sections) {
+    for (var si = 0; si < ch.sections.length; si++) {
+      var sec = ch.sections[si];
+      var secTitle = appLang !== 'en' && sec.title_zh ? sec.title_zh : sec.title;
+      html += _boardOptionCard('\ud83d\udcd6', sec.id + ' ' + secTitle,
+        '',
+        "openSection('" + escapeHtml(sec.id) + "','hhk')");
+    }
+  }
+  html += '</div>';
+
+  E('panel-home').innerHTML = html;
 }
 
 /* ═══ DECK DETAIL ═══ */

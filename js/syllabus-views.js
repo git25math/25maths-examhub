@@ -23,7 +23,8 @@ function renderSectionDetail(ch, sec, secIdx, board) {
 
   /* Header */
   html += '<div class="deck-header">';
-  html += '<button class="back-btn" onclick="navTo(\'home\')">\u2190</button>';
+  var _modId = board === 'hhk' ? 'hhk' : board;
+  html += '<button class="back-btn" onclick="openBoardTopics(\'' + escapeHtml(_modId) + '\')">\u2190</button>';
   if (board === 'hhk') {
     html += '<div class="deck-title">' + biText(ch.title, ch.title_zh) + '</div>';
   } else {

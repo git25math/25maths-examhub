@@ -7,6 +7,48 @@ var _lastShareOpts = null;
 /* ═══ XSS ESCAPE HELPER ═══ */
 function escapeHtml(s) { var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
 
+/* ═══ BREADCRUMB NAVIGATION (v5.30.0) ═══ */
+var _breadcrumb = []; /* [{id, label, labelZh, action}] */
+
+function breadcrumbSet(crumbs) {
+  _breadcrumb = crumbs || [];
+  _renderBreadcrumb();
+}
+
+function breadcrumbPush(crumb) {
+  _breadcrumb.push(crumb);
+  _renderBreadcrumb();
+}
+
+function breadcrumbPop() {
+  if (_breadcrumb.length > 0) _breadcrumb.pop();
+  _renderBreadcrumb();
+}
+
+function _renderBreadcrumb() {
+  var el = document.getElementById('breadcrumb-bar');
+  if (!el) return;
+  if (_breadcrumb.length === 0) {
+    el.style.display = 'none';
+    return;
+  }
+  el.style.display = '';
+  var html = '';
+  for (var i = 0; i < _breadcrumb.length; i++) {
+    var c = _breadcrumb[i];
+    var label = appLang !== 'en' && c.labelZh ? c.labelZh : c.label;
+    if (i < _breadcrumb.length - 1) {
+      /* Clickable ancestor */
+      html += '<button class="bc-link" onclick="' + escapeHtml(c.action || "navTo('home')") + '">' + escapeHtml(label) + '</button>';
+      html += '<span class="bc-sep">\u203a</span>';
+    } else {
+      /* Current page (not clickable) */
+      html += '<span class="bc-current">' + escapeHtml(label) + '</span>';
+    }
+  }
+  el.innerHTML = html;
+}
+
 /* ═══ NAVIGATION HISTORY STACK ═══ */
 var _navStack = [];
 var _navMaxDepth = 20;
@@ -92,7 +134,7 @@ function navTo(id) {
   navPush(id);
   showPanel(id);
   /* Render content for target panel */
-  if (id === 'home') { if (typeof _currentSectionContext !== 'undefined') _currentSectionContext = null; renderHome(); }
+  if (id === 'home') { if (typeof _currentSectionContext !== 'undefined') _currentSectionContext = null; breadcrumbSet([]); renderHome(); }
   else if (id === 'plan') { _lazyNav('syllabus-views', 'renderTodaysPlan', 'plan'); }
   else if (id === 'mistakes') { _lazyNav('syllabus-views', 'renderMistakeBook', 'mistakes'); }
   else if (id === 'import') { _lazyNav('tools', 'renderImport', 'import'); }

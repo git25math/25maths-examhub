@@ -230,6 +230,62 @@ var BOARDS = [
   }
 ];
 
+/* ═══ HOME MODULES — Board cards for the home page (v5.30.0) ═══ */
+var HOME_MODULES = [
+  {
+    id: 'cie', boardId: 'cie', status: 'active',
+    icon: '\ud83d\udcda', color: '#5248C9',
+    title: 'CIE 0580', titleZh: 'CIE 0580',
+    subtitle: 'IGCSE Mathematics', subtitleZh: 'IGCSE \u6570\u5b66',
+    desc: '72 sections \u00b7 2,200+ vocab \u00b7 5,962 past paper questions', descZh: '72 \u4e2a\u77e5\u8bc6\u70b9 \u00b7 2,200+ \u8bcd\u6c47 \u00b7 5,962 \u9053\u771f\u9898'
+  },
+  {
+    id: 'edx', boardId: 'edx', status: 'active',
+    icon: '\ud83d\udcd8', color: '#2563EB',
+    title: 'Edexcel 4MA1', titleZh: 'Edexcel 4MA1',
+    subtitle: 'IGCSE Mathematics', subtitleZh: 'IGCSE \u6570\u5b66',
+    desc: '39 sections \u00b7 1,400+ vocab \u00b7 3,578 practice questions', descZh: '39 \u4e2a\u77e5\u8bc6\u70b9 \u00b7 1,400+ \u8bcd\u6c47 \u00b7 3,578 \u9053\u7ec3\u4e60\u9898'
+  },
+  {
+    id: 'hhk', boardId: '25m', status: 'active',
+    icon: '\ud83c\udfeb', color: '#059669',
+    title: 'Harrow Haikou', titleZh: '\u54c8\u7f57\u6d77\u53e3',
+    subtitle: 'Y7\u2013Y11 Mathematics', subtitleZh: 'Y7\u2013Y11 \u6570\u5b66\u8bfe\u7a0b',
+    desc: '55 units \u00b7 5 year groups \u00b7 bilingual', descZh: '55 \u4e2a\u5355\u5143 \u00b7 5 \u4e2a\u5e74\u7ea7 \u00b7 \u53cc\u8bed\u6559\u5b66'
+  },
+  {
+    id: 'ial', boardId: null, status: 'coming',
+    icon: '\ud83c\udf93', color: '#7C3AED',
+    title: 'Edexcel IAL', titleZh: 'Edexcel IAL',
+    subtitle: 'International A-Level', subtitleZh: '\u56fd\u9645A-Level\u6570\u5b66',
+    desc: 'Pure Mathematics + Statistics + Mechanics', descZh: '\u7eaf\u6570\u5b66 + \u7edf\u8ba1 + \u529b\u5b66'
+  },
+  {
+    id: 'cn-math', boardId: null, status: 'coming',
+    icon: '\ud83c\udde8\ud83c\uddf3', color: '#DC2626',
+    title: '\u56fd\u5185\u6570\u5b66', titleZh: '\u56fd\u5185\u6570\u5b66',
+    subtitle: '\u4e2d\u8003\u6570\u5b66\u5907\u8003', subtitleZh: '\u4e2d\u8003\u6570\u5b66\u5907\u8003',
+    desc: '\u6d77\u5357\u4e2d\u8003 \u00b7 \u5386\u5e74\u771f\u9898 \u00b7 \u4e07\u7ef4\u4e2d\u8003', descZh: '\u6d77\u5357\u4e2d\u8003 \u00b7 \u5386\u5e74\u771f\u9898 \u00b7 \u4e07\u7ef4\u4e2d\u8003',
+    children: [
+      { id: 'hainan', title: '\u6d77\u5357\u4e2d\u8003', titleZh: '\u6d77\u5357\u4e2d\u8003', icon: '\ud83c\udfdd\ufe0f', status: 'coming' },
+      { id: 'wanwei', title: '\u4e07\u7ef4\u4e2d\u8003', titleZh: '\u4e07\u7ef4\u4e2d\u8003', icon: '\ud83d\udcbb', status: 'coming' }
+    ]
+  },
+  {
+    id: 'competition', boardId: null, status: 'coming',
+    icon: '\ud83c\udfc6', color: '#D97706',
+    title: '\u6570\u5b66\u7ade\u8d5b', titleZh: '\u6570\u5b66\u7ade\u8d5b',
+    subtitle: 'Math Competitions', subtitleZh: '\u56fd\u9645\u6570\u5b66\u7ade\u8d5b',
+    desc: 'AMC \u00b7 Kangaroo \u00b7 UKMT \u00b7 BMMT', descZh: 'AMC \u00b7 \u888b\u9f20\u6570\u5b66 \u00b7 UKMT \u00b7 BMMT',
+    children: [
+      { id: 'amc', title: 'AMC 8/10/12', titleZh: 'AMC 8/10/12', icon: '\ud83c\uddfa\ud83c\uddf8', status: 'coming' },
+      { id: 'kangaroo', title: 'Kangaroo Math', titleZh: '\u888b\u9f20\u6570\u5b66', icon: '\ud83e\udd98', status: 'coming' },
+      { id: 'ukmt', title: 'UKMT-TMC', titleZh: 'UKMT-TMC', icon: '\ud83c\uddec\ud83c\udde7', status: 'coming' },
+      { id: 'bmmt', title: 'BMMT', titleZh: 'BMMT', icon: '\ud83c\udde8\ud83c\uddf3', status: 'coming' }
+    ]
+  }
+];
+
 /* Backward-compatible alias */
 var CATEGORIES = BOARDS[0].categories;
 
