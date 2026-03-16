@@ -2297,7 +2297,7 @@ function renderMistakeBook() {
   if (!panel) return;
   var html = '';
 
-  html += '<div class="section-title">' + t('Mistake Book', '\u9519\u9898\u672c') + '</div>';
+  html += '<div class="section-title">' + t('Review Book', '\u590d\u4e60\u672c') + '</div>';
 
   /* Tabs: all | vocab | kp | pp | reforget */
   html += '<div class="mistake-tabs">';

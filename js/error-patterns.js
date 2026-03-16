@@ -14,32 +14,32 @@ var ERROR_PATTERN_TYPES = [
 ];
 
 var ERROR_PATTERN_LABELS = {
-  'vocab-misunderstanding': { en: 'Vocabulary misunderstanding', zh: '\u8bcd\u6c47\u7406\u89e3\u504f\u5dee' },
-  'concept-gap':            { en: 'Concept gap',                 zh: '\u6982\u5ff5\u8584\u5f31' },
-  'method-confusion':       { en: 'Method confusion',            zh: '\u65b9\u6cd5\u6df7\u4e71' },
-  'careless-reading':       { en: 'Careless reading',            zh: '\u8bfb\u9898\u7c97\u5fc3' },
-  'careless-calculation':   { en: 'Careless calculation',        zh: '\u8ba1\u7b97\u7c97\u5fc3' }
+  'vocab-misunderstanding': { en: 'Vocabulary building',       zh: '\u8bcd\u6c47\u5f85\u5de9\u56fa' },
+  'concept-gap':            { en: 'Concept strengthening',     zh: '\u6982\u5ff5\u5f85\u52a0\u5f3a' },
+  'method-confusion':       { en: 'Method practice needed',    zh: '\u65b9\u6cd5\u9700\u7ec3\u4e60' },
+  'careless-reading':       { en: 'Reading focus',             zh: '\u5ba1\u9898\u53ef\u63d0\u5347' },
+  'careless-calculation':   { en: 'Calculation check',         zh: '\u8ba1\u7b97\u53ef\u68c0\u67e5' }
 };
 
 var ERROR_PATTERN_META = {
   'vocab-misunderstanding': {
-    shortHint: { en: 'Key maths words may be causing confusion.', zh: '\u5173\u952e\u6570\u5b66\u672f\u8bed\u53ef\u80fd\u9020\u6210\u56f0\u60d1\u3002' },
+    shortHint: { en: 'Reviewing key terms will make questions much clearer.', zh: '\u590d\u4e60\u5173\u952e\u672f\u8bed\u4f1a\u8ba9\u9898\u76ee\u66f4\u6e05\u6670\u3002' },
     solveHabit: { en: 'Check the meaning of key terms before solving.', zh: '\u505a\u9898\u524d\u5148\u786e\u8ba4\u5173\u952e\u672f\u8bed\u7684\u542b\u4e49\u3002' }
   },
   'concept-gap': {
-    shortHint: { en: 'The core idea may need rebuilding.', zh: '\u6838\u5fc3\u6982\u5ff5\u53ef\u80fd\u9700\u8981\u91cd\u5efa\u3002' },
+    shortHint: { en: 'Strengthening the core concept will help everything click.', zh: '\u52a0\u5f3a\u6838\u5fc3\u6982\u5ff5\u4f1a\u8ba9\u4e00\u5207\u8c41\u7136\u5f00\u6717\u3002' },
     solveHabit: { en: 'Review the key idea with one simple example first.', zh: '\u5148\u7528\u4e00\u4e2a\u7b80\u5355\u4f8b\u5b50\u590d\u4e60\u6838\u5fc3\u6982\u5ff5\u3002' }
   },
   'method-confusion': {
-    shortHint: { en: 'The solving steps may not be clear yet.', zh: '\u89e3\u9898\u6b65\u9aa4\u53ef\u80fd\u8fd8\u4e0d\u6e05\u6670\u3002' },
+    shortHint: { en: 'Practising a clear step-by-step method builds confidence.', zh: '\u7ec3\u4e60\u6e05\u6670\u7684\u89e3\u9898\u6b65\u9aa4\u4f1a\u5efa\u7acb\u4fe1\u5fc3\u3002' },
     solveHabit: { en: 'Follow a fixed step-by-step method before speeding up.', zh: '\u5148\u6309\u56fa\u5b9a\u6b65\u9aa4\u89e3\u9898\uff0c\u518d\u9010\u6b65\u63d0\u901f\u3002' }
   },
   'careless-reading': {
-    shortHint: { en: 'Important conditions may be missed while reading.', zh: '\u8bfb\u9898\u65f6\u53ef\u80fd\u9057\u6f0f\u91cd\u8981\u6761\u4ef6\u3002' },
+    shortHint: { en: 'Slowing down to read carefully can unlock marks you already know.', zh: '\u653e\u6162\u901f\u5ea6\u4ed4\u7ec6\u8bfb\u9898\u80fd\u62ff\u5230\u4f60\u672c\u5c31\u4f1a\u7684\u5206\u3002' },
     solveHabit: { en: 'Underline the given information and circle what is asked.', zh: '\u5728\u5df2\u77e5\u4fe1\u606f\u4e0b\u5212\u7ebf\uff0c\u5728\u6c42\u89e3\u76ee\u6807\u4e0a\u753b\u5708\u3002' }
   },
   'careless-calculation': {
-    shortHint: { en: 'Small arithmetic slips may be affecting accuracy.', zh: '\u5c0f\u7684\u7b97\u672f\u5931\u8bef\u53ef\u80fd\u5f71\u54cd\u51c6\u786e\u7387\u3002' },
+    shortHint: { en: 'A quick double-check habit will catch easy marks.', zh: '\u517b\u6210\u5feb\u901f\u68c0\u67e5\u7684\u4e60\u60ef\u80fd\u62ff\u5230\u5f88\u591a\u5206\u3002' },
     solveHabit: { en: 'Estimate first, then check the final calculation.', zh: '\u5148\u4f30\u7b97\uff0c\u518d\u68c0\u67e5\u6700\u7ec8\u8ba1\u7b97\u3002' }
   }
 };

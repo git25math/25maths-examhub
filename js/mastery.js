@@ -274,13 +274,30 @@ function _renderReturnRecap() {
   var gs = typeof getGlobalStats === 'function' ? getGlobalStats() : { mastered: 0 };
   var streak = typeof getStreakCount === 'function' ? getStreakCount() : 0;
   var dueCount = typeof getDueWords === 'function' ? getDueWords().length : 0;
-  var msg = t('Welcome back!', '欢迎回来！');
+  /* Personalised welcome based on absence length */
+  var absentDays = Math.floor((now - lastVisit) / 86400000);
+  var msg;
+  if (absentDays >= 7) {
+    msg = t('Welcome back! We missed you.', '\u6b22\u8fce\u56de\u6765\uff01\u6211\u4eec\u60f3\u4f60\u4e86\u3002');
+  } else if (absentDays >= 3) {
+    msg = t('Good to see you again!', '\u5f88\u9ad8\u5174\u518d\u6b21\u770b\u5230\u4f60\uff01');
+  } else {
+    msg = t('Welcome back!', '\u6b22\u8fce\u56de\u6765\uff01');
+  }
+
   var details = [];
-  if (dueCount > 0) details.push(dueCount + ' ' + t('words to revisit', '\u8bcd\u5f85\u56de\u987e'));
-  if (streak > 0) details.push(streak + ' ' + t('-day streak', '天连续'));
-  details.push(gs.mastered + ' ' + t('words mastered', '词已掌握'));
-  return '<div class="return-recap" role="status" aria-live="polite"><span>' + msg + ' ' + details.join(' · ') + '</span>' +
-    '<button class="return-recap-close" aria-label="' + t('Close', '关闭') + '">&times;</button></div>';
+  if (gs.mastered > 0) details.push('\u2705 ' + gs.mastered + ' ' + t('words mastered', '\u8bcd\u5df2\u638c\u63e1'));
+  if (dueCount > 0) details.push('\ud83d\udd04 ' + dueCount + ' ' + t('ready for review', '\u53ef\u4ee5\u590d\u4e60'));
+  if (streak > 0) details.push('\ud83d\udd25 ' + streak + ' ' + t('-day streak', '\u5929\u8fde\u7eed'));
+
+  /* Encouraging closing */
+  var closing = '';
+  if (absentDays >= 7 && gs.mastered > 0) {
+    closing = ' \u00b7 ' + t('Your progress is saved \u2014 pick up right where you left off!', '\u4f60\u7684\u8fdb\u5ea6\u90fd\u5728\u2014\u2014\u63a5\u7740\u4e0a\u6b21\u7ee7\u7eed\u5427\uff01');
+  }
+
+  return '<div class="return-recap" role="status" aria-live="polite"><span>' + msg + ' ' + details.join(' \u00b7 ') + closing + '</span>' +
+    '<button class="return-recap-close" aria-label="' + t('Close', '\u5173\u95ed') + '">&times;</button></div>';
 }
 
 /* Mode discovery chips (recommend untried modes) */
