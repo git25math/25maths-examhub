@@ -1792,13 +1792,14 @@ function renderTodaysPlan() {
 
   /* Title + date */
   var dateStr = new Date().toLocaleDateString(appLang === 'en' ? 'en-US' : 'zh-CN', { weekday: 'long', month: 'long', day: 'numeric' });
-  html += '<div class="section-title">' + t("Today's Plan", '\u4eca\u65e5\u8ba1\u5212') + '</div>';
+  html += '<div class="section-title">' + t('Learning Suggestions', '\u5b66\u4e60\u5efa\u8bae') + '</div>';
   html += '<div class="plan-date">' + dateStr + '</div>';
+  html += '<div style="font-size:13px;color:var(--c-text2);margin-bottom:var(--sp-3)">' + t('Here are some ideas for today \u2014 no pressure, go at your own pace.', '\u4ee5\u4e0b\u662f\u4eca\u5929\u7684\u4e00\u4e9b\u5efa\u8bae\u2014\u2014\u4e0d\u7740\u6025\uff0c\u6309\u81ea\u5df1\u7684\u8282\u594f\u6765\u3002') + '</div>';
 
-  /* Streak */
+  /* Streak — gentle celebration only when meaningful */
   var streak = getStreakCount();
-  if (streak > 0) {
-    html += '<div class="plan-streak">\ud83d\udd25 ' + streak + t('-day streak', ' \u5929\u8fde\u7eed\u5b66\u4e60') + '</div>';
+  if (streak >= 3) {
+    html += '<div class="plan-streak">\u2728 ' + streak + t(' days of learning', ' \u5929\u5b66\u4e60\u65c5\u7a0b') + '</div>';
   }
 
   /* Stage-based insight */
@@ -1809,13 +1810,13 @@ function renderTodaysPlan() {
   html += '<div class="plan-card plan-review-due">';
   html += '<div class="plan-card-header">';
   html += '<span class="plan-card-icon">\ud83e\udde0</span>';
-  html += '<span class="plan-card-title">' + t('Words Due for Review', '\u5f85\u590d\u4e60\u8bcd\u6c47') + '</span>';
+  html += '<span class="plan-card-title">' + t('Words to Revisit', '\u53ef\u4ee5\u56de\u987e\u7684\u8bcd\u6c47') + '</span>';
   html += '</div>';
   if (dueCount > 0) {
-    html += '<div class="plan-card-count">' + dueCount + ' ' + t('words', '\u4e2a\u8bcd') + '</div>';
-    html += '<button class="btn btn-primary btn-sm" data-action="start-due-review">' + t('Start Review', '\u5f00\u59cb\u590d\u4e60') + '</button>';
+    html += '<div class="plan-card-count">' + dueCount + ' ' + t('words ready', '\u4e2a\u8bcd\u5df2\u5c31\u7eea') + '</div>';
+    html += '<button class="btn btn-primary btn-sm" data-action="start-due-review">' + t('Review', '\u56de\u987e') + '</button>';
   } else {
-    html += '<div class="plan-card-count plan-done">\u2713 ' + t('All caught up!', '\u5168\u90e8\u5b8c\u6210\uff01') + '</div>';
+    html += '<div class="plan-card-count plan-done">\u2713 ' + t('Looking good!', '\u72b6\u6001\u5f88\u597d\uff01') + '</div>';
   }
   html += '</div>';
 
@@ -1825,10 +1826,10 @@ function renderTodaysPlan() {
     html += '<div class="plan-card plan-refresh">';
     html += '<div class="plan-card-header">';
     html += '<span class="plan-card-icon">\ud83d\udd04</span>';
-    html += '<span class="plan-card-title">' + t('Refresh Review', '\u8f7b\u91cf\u590d\u67e5') + '</span>';
+    html += '<span class="plan-card-title">' + t('Quick Refresh', '\u5feb\u901f\u56de\u987e') + '</span>';
     html += '</div>';
-    html += '<div class="plan-card-count">' + staleN + ' ' + t('mastered words ready for review', '\u4e2a\u5df2\u638c\u63e1\u8bcd\u6c47\u53ef\u4ee5\u590d\u67e5') + '</div>';
-    html += '<button class="btn btn-primary btn-sm" data-action="start-refresh">' + t('Quick Scan', '\u5feb\u901f\u590d\u67e5') + '</button>';
+    html += '<div class="plan-card-count">' + staleN + ' ' + t('words you can revisit', '\u4e2a\u8bcd\u53ef\u4ee5\u56de\u987e') + '</div>';
+    html += '<button class="btn btn-primary btn-sm" data-action="start-refresh">' + t('Refresh', '\u56de\u987e') + '</button>';
     html += '</div>';
   }
 
@@ -1838,10 +1839,10 @@ function renderTodaysPlan() {
     html += '<div class="plan-card plan-refresh">';
     html += '<div class="plan-card-header">';
     html += '<span class="plan-card-icon">\ud83d\udcd6</span>';
-    html += '<span class="plan-card-title">' + t('Knowledge Point Review', '\u77e5\u8bc6\u70b9\u590d\u67e5') + '</span>';
+    html += '<span class="plan-card-title">' + t('Knowledge Refresh', '\u77e5\u8bc6\u70b9\u56de\u987e') + '</span>';
     html += '</div>';
-    html += '<div class="plan-card-count">' + staleKPN + ' ' + t('mastered KPs ready for review', '\u4e2a\u5df2\u638c\u63e1\u77e5\u8bc6\u70b9\u53ef\u4ee5\u590d\u67e5') + '</div>';
-    html += '<button class="btn btn-primary btn-sm" data-action="start-kp-refresh">' + t('Quick Scan', '\u5feb\u901f\u590d\u67e5') + '</button>';
+    html += '<div class="plan-card-count">' + staleKPN + ' ' + t('KPs you can revisit', '\u4e2a\u77e5\u8bc6\u70b9\u53ef\u4ee5\u56de\u987e') + '</div>';
+    html += '<button class="btn btn-primary btn-sm" data-action="start-kp-refresh">' + t('Refresh', '\u56de\u987e') + '</button>';
     html += '</div>';
   }
 
@@ -1851,10 +1852,10 @@ function renderTodaysPlan() {
     html += '<div class="plan-card plan-refresh">';
     html += '<div class="plan-card-header">';
     html += '<span class="plan-card-icon">\ud83d\udcc4</span>';
-    html += '<span class="plan-card-title">' + t('Past Paper Review', '\u771f\u9898\u590d\u67e5') + '</span>';
+    html += '<span class="plan-card-title">' + t('Paper Refresh', '\u771f\u9898\u56de\u987e') + '</span>';
     html += '</div>';
-    html += '<div class="plan-card-count">' + stalePPN + ' ' + t('mastered questions ready for review', '\u4e2a\u5df2\u638c\u63e1\u771f\u9898\u53ef\u4ee5\u590d\u67e5') + '</div>';
-    html += '<button class="btn btn-primary btn-sm" data-action="start-pp-refresh">' + t('Quick Scan', '\u5feb\u901f\u590d\u67e5') + '</button>';
+    html += '<div class="plan-card-count">' + stalePPN + ' ' + t('questions you can revisit', '\u4e2a\u771f\u9898\u53ef\u4ee5\u56de\u987e') + '</div>';
+    html += '<button class="btn btn-primary btn-sm" data-action="start-pp-refresh">' + t('Refresh', '\u56de\u987e') + '</button>';
     html += '</div>';
   }
 
@@ -1869,7 +1870,7 @@ function renderTodaysPlan() {
         html += '<div class="plan-card recovery-session-card">';
         html += '<div class="plan-card-header">';
         html += '<span class="plan-card-icon">\ud83d\udd04</span>';
-        html += '<span class="plan-card-title">' + t("Today's Recovery", '\u4eca\u65e5\u590d\u67e5') + '</span>';
+        html += '<span class="plan-card-title">' + t('Personalised Review', '\u4e2a\u6027\u5316\u56de\u987e') + '</span>';
         html += '</div>';
         html += '<div class="plan-card-count">';
         var _rsParts2 = [];
@@ -1891,9 +1892,7 @@ function renderTodaysPlan() {
         } else if (_rsPlan.carryOverCount > 0) {
           html += '<div class="plan-card-carryover">' + _rsPlan.carryOverCount + ' ' + t('carried over', '\u9879\u7ed3\u8f6c\u81ea\u6628\u65e5') + '</div>';
         }
-        if (_rsPlan.backlogCount > 0) {
-          html += '<div class="plan-card-backlog">' + _rsPlan.backlogCount + ' ' + t('more items to explore', '\u9879\u5185\u5bb9\u5f85\u63a2\u7d22') + '</div>';
-        }
+        /* Backlog count hidden (v5.30.0: showing backlog creates pressure) */
         if (_rsPlan.reasons && _rsPlan.reasons.length > 0) {
           html += '<div class="plan-card-reason">' + t('Focus', '\u91cd\u70b9') + ': ' + _rsPlan.reasons.join(' \u00b7 ') + '</div>';
         }
@@ -1903,7 +1902,7 @@ function renderTodaysPlan() {
           var _exMax = _exCfg.maxReasonsOnCard || 2;
           var _exReasons = _rsPlan.personalization.reasons;
           html += '<div class="plan-card-explain">';
-          html += '<div class="plan-card-explain-title">' + t('Why this plan', '\u4E3A\u4EC0\u4E48\u8FD9\u6837\u5B89\u6392') + '</div>';
+          html += '<div class="plan-card-explain-title">' + t('Tailored for you', '\u4e3a\u4f60\u91cf\u8eab\u5b9a\u5236') + '</div>';
           for (var _exi = 0; _exi < Math.min(_exReasons.length, _exMax); _exi++) {
             html += '<div class="plan-card-explain-item">' + t(_exReasons[_exi].en, _exReasons[_exi].zh) + '</div>';
           }
