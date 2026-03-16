@@ -1866,6 +1866,21 @@ function startPastPaper(sectionId, board, mode, groupFilter, cmdFilter) {
         cmdFilter: cmdFilter || null,
         results: []
       };
+      /* Set breadcrumb (v5.31.2) */
+      if (typeof breadcrumbSet === 'function' && sectionId) {
+        var _pspModId = board === '25m' ? 'hhk' : board;
+        var _pspMod = null;
+        if (typeof HOME_MODULES !== 'undefined') {
+          for (var _pmi = 0; _pmi < HOME_MODULES.length; _pmi++) {
+            if (HOME_MODULES[_pmi].id === _pspModId) { _pspMod = HOME_MODULES[_pmi]; break; }
+          }
+        }
+        var _pspCrumbs = [{ id:'home', label:'Home', labelZh:'\u9996\u9875', action:"navTo('home')" }];
+        if (_pspMod) _pspCrumbs.push({ id:_pspModId, label:_pspMod.title, labelZh:_pspMod.titleZh, action:"openBoardHome('" + _pspModId + "')" });
+        _pspCrumbs.push({ id:sectionId, label:sectionId, labelZh:sectionId, action:"openSection('" + sectionId + "','" + board + "')" });
+        _pspCrumbs.push({ id:'pp-' + sectionId, label:'\ud83d\udcc4 Past Papers', labelZh:'\ud83d\udcc4 \u771f\u9898' });
+        breadcrumbSet(_pspCrumbs);
+      }
       showPanel('pastpaper');
       renderPPCard();
     }
@@ -2739,6 +2754,7 @@ function ppForceBack() {
   var wasMock = _ppSession && _ppSession.isMock;
   var fromMistakeBook = _ppSession && _ppSession.fromMistakeBook;
   var board = _ppSession ? _ppSession.board : 'cie';
+  var secId = _ppSession ? _ppSession.sectionId : null;
   _ppSession = null;
   if (fromMistakeBook) {
     navTo('mistakes');
@@ -2752,6 +2768,9 @@ function ppForceBack() {
     } else {
       navTo('home');
     }
+  } else if (secId && typeof openSection === 'function') {
+    /* Return to section detail with correct breadcrumb (v5.31.2) */
+    openSection(secId, board);
   } else {
     showPanel('section');
   }

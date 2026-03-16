@@ -1,5 +1,19 @@
 # Changelog
 
+## [5.31.3] - 2026-03-16 — 真题返回路径修复 + 真题面包屑
+
+### Bug 修复
+- **真题练习返回路径**：`ppForceBack()` 在非套卷、非诊断场景下，由 `showPanel('section')` 改为 `openSection(secId, board)` — 正确重新渲染章节并更新面包屑
+- **真题练习面包屑**：`startPastPaper()` 开始后设置面包屑 `首页 › 板块 › 章节 › 📄 Past Papers`，与其他入口保持一致
+
+### 文件变更
+| 文件 | 修改 |
+|------|------|
+| js/practice.js | ppForceBack() 使用 openSection + startPastPaper() 设置面包屑 |
+| js/config.js | APP_VERSION → v5.31.3 |
+
+---
+
 ## [5.31.2] - 2026-03-16 — 全面面包屑导航 + 手机端悬停修复
 
 ### 导航面包屑全覆盖
