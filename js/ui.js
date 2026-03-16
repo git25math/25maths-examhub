@@ -11,10 +11,16 @@ function escapeHtml(s) { var d = document.createElement('div'); d.textContent = 
 var _navStack = [];
 var _navMaxDepth = 20;
 
+var _navPushingState = false; /* prevent popstate → navTo → pushState loop */
+
 function navPush(id) {
   if (_navStack.length > 0 && _navStack[_navStack.length - 1] === id) return;
   _navStack.push(id);
   if (_navStack.length > _navMaxDepth) _navStack.shift();
+  /* Push to browser history so back button works between panels (v5.30.0) */
+  if (!_navPushingState && typeof history !== 'undefined' && history.pushState) {
+    try { history.pushState({ panel: id }, '', '#' + id); } catch(e) {}
+  }
 }
 
 function navBack() {
@@ -26,6 +32,14 @@ function navBack() {
     navTo('home');
   }
 }
+
+/* Handle browser back/forward button (v5.30.0) */
+window.addEventListener('popstate', function(e) {
+  var panel = (e.state && e.state.panel) ? e.state.panel : 'home';
+  _navPushingState = true;
+  navTo(panel);
+  _navPushingState = false;
+});
 
 /* ═══ PANEL NAVIGATION ═══ */
 function _cleanupActiveMode() {
