@@ -24,7 +24,12 @@ function renderSectionDetail(ch, sec, secIdx, board) {
   /* Header */
   html += '<div class="deck-header">';
   var _modId = board === 'hhk' ? 'hhk' : board;
-  html += '<button class="back-btn" onclick="openBoardTopics(\'' + escapeHtml(_modId) + '\')">\u2190</button>';
+  /* Back button: go to chapter list (CIE/EDX) or year group (HHK) */
+  if (board === 'hhk') {
+    html += '<button class="back-btn" onclick="openBoardYear(\'hhk\',' + ch.num + ')">\u2190</button>';
+  } else {
+    html += '<button class="back-btn" onclick="openBoardChapter(\'' + escapeHtml(_modId) + '\',' + ch.num + ')">\u2190</button>';
+  }
   if (board === 'hhk') {
     html += '<div class="deck-title">' + biText(ch.title, ch.title_zh) + '</div>';
   } else {
