@@ -1,5 +1,23 @@
 # Changelog
 
+## [5.31.5] - 2026-03-16 — 面包屑导航全修复：板块/章节/收藏页返回实际生效
+
+### Bug 修复
+- **面包屑点击不跳转**：`openBoardHome` / `openBoardTopics` / `openBoardChapter` / `openBoardYear` 均只更新 `panel-home` 内容但从未调用 `showPanel('home')`，导致从其他面板点击面包屑时内容更新但页面不切换。现已全部补加 `navPush('home'); showPanel('home')`。
+- **小专题/章节返回失效**：同上原因，章节页面内的"返回上一级"实际上只更新了隐藏面板的内容。
+- **收藏页返回路径丢失**：从收藏面板跳入 KP 详情或章节页后，面包屑丢失收藏入口。现在在跳转后立即将"⭐ 我的收藏"插入面包屑路径（Home › Favorites › …），可一键返回收藏页。
+- **新增 `breadcrumbGet()`**：供各模块读取当前面包屑数组，在跳转后做上下文注入。
+
+### 文件变更
+| 文件 | 修改 |
+|------|------|
+| js/mastery.js | openBoardHome/Topics/Chapter/Year 全部补加 showPanel('home') |
+| js/favorites.js | KP/Section 跳转后注入 Favorites 面包屑 |
+| js/ui.js | 新增 breadcrumbGet() |
+| js/config.js | APP_VERSION → v5.31.5 |
+
+---
+
 ## [5.31.3] - 2026-03-16 — 真题返回路径修复 + 真题面包屑
 
 ### Bug 修复

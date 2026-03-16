@@ -890,7 +890,7 @@ function openBoardHome(modId) {
   var boardKey = mod.boardId || mod.id;
 
   /* Render board detail into panel-home (reuse home panel, push to nav stack) */
-  navPush('home'); /* keep on home panel but update content */
+  navPush('home'); showPanel('home'); /* keep on home panel but update content */
   var html = '';
 
   html += '<div class="board-detail-header">';
@@ -1011,6 +1011,7 @@ function _renderBoardTopics(modId, boardKey) {
   }
   html += '</div>';
 
+  navPush('home'); showPanel('home');
   E('panel-home').innerHTML = html;
 }
 
@@ -1058,6 +1059,7 @@ function openBoardChapter(modId, chNum) {
   }
   html += '</div>';
 
+    navPush('home'); showPanel('home');
     E('panel-home').innerHTML = html;
   }); /* end _withBoardSyllabus */
 }
@@ -1106,6 +1108,7 @@ function openBoardYear(modId, yearNum) {
   }
   html += '</div>';
 
+    navPush('home'); showPanel('home');
     E('panel-home').innerHTML = html;
   }); /* end _withBoardSyllabus */
 }

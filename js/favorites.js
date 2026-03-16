@@ -381,10 +381,19 @@ function _favBindEvents(el) {
     var ref = item.dataset.favRef;
     var board = item.dataset.favBoard || '';
 
+    var _favCrumb = { id:'favorites', label:'⭐ My Favorites', labelZh:'⭐ 我的收藏', action:"navTo('favorites')" };
+
     if (action === 'kp' && ref) {
-      /* Navigate to KP detail */
+      /* Navigate to KP detail, prepend Favorites to breadcrumb */
       if (typeof openKnowledgePoint === 'function') {
         openKnowledgePoint(ref, board);
+        /* Prepend Favorites crumb after openKnowledgePoint sets its own breadcrumb */
+        if (typeof breadcrumbSet === 'function' && typeof breadcrumbGet === 'function') {
+          var _cur = breadcrumbGet();
+          if (_cur && _cur.length > 0 && _cur[0].id === 'home') {
+            breadcrumbSet([_cur[0], _favCrumb].concat(_cur.slice(1)));
+          }
+        }
       }
     } else if (action === 'learn-kp' && ref) {
       /* Open Knowledge Node for this KP (lazy-load practice bundle which contains knowledge-node.js) */
@@ -399,10 +408,16 @@ function _favBindEvents(el) {
         }
       });
     } else if (action === 'fix') {
-      /* Navigate to section (openSection is in syllabus.js, part of core bundle) */
+      /* Navigate to section, prepend Favorites to breadcrumb */
       var sec = item.dataset.favSection;
       if (sec && typeof openSection === 'function') {
         openSection(sec, board);
+        if (typeof breadcrumbSet === 'function' && typeof breadcrumbGet === 'function') {
+          var _cur2 = breadcrumbGet();
+          if (_cur2 && _cur2.length > 0 && _cur2[0].id === 'home') {
+            breadcrumbSet([_cur2[0], _favCrumb].concat(_cur2.slice(1)));
+          }
+        }
       }
     }
   });

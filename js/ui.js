@@ -10,6 +10,7 @@ function escapeHtml(s) { var d = document.createElement('div'); d.textContent = 
 /* ═══ BREADCRUMB NAVIGATION (v5.30.0) ═══ */
 var _breadcrumb = []; /* [{id, label, labelZh, action}] */
 
+function breadcrumbGet() { return _breadcrumb.slice(); }
 function breadcrumbSet(crumbs) {
   _breadcrumb = crumbs || [];
   _renderBreadcrumb();
