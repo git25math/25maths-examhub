@@ -848,6 +848,29 @@ function renderHome() {
 
 /* ═══ BOARD HOME — drill-down from home page (v5.30.0) ═══ */
 
+/* Ensure syllabus data is loaded, then run callback */
+function _withBoardSyllabus(boardKey, callback) {
+  if (typeof BOARD_SYLLABUS !== 'undefined' && BOARD_SYLLABUS[boardKey]) {
+    callback(); return;
+  }
+  /* Show loading state */
+  var el = E('panel-home');
+  if (el) el.innerHTML = '<div class="empty-state" style="padding:80px 0">\u23f3 ' + t('Loading...', '\u52a0\u8f7d\u4e2d...') + '</div>';
+  navPush('home'); showPanel('home');
+  /* Load the right board data then re-render */
+  var loadFn = boardKey === 'cie' ? (typeof loadCIESyllabus !== 'undefined' ? loadCIESyllabus : null)
+             : boardKey === 'edx' ? (typeof loadEdxSyllabus !== 'undefined' ? loadEdxSyllabus : null)
+             : boardKey === 'hhk' ? (typeof loadHHKSyllabus !== 'undefined' ? loadHHKSyllabus : null)
+             : null;
+  if (loadFn) {
+    loadFn().then(callback).catch(function() {
+      if (el) el.innerHTML = '<div class="empty-state" style="padding:80px 0">' + t('Failed to load. Please refresh.', '\u52a0\u8f7d\u5931\u8d25\uff0c\u8bf7\u5237\u65b0\u9875\u9762\u3002') + '</div>';
+    });
+  } else {
+    callback();
+  }
+}
+
 function openBoardHome(modId) {
   var mod = null;
   for (var i = 0; i < HOME_MODULES.length; i++) {
@@ -961,11 +984,11 @@ function openBoardTopics(modId) {
     { id: 'topics', label: t('Topics', '\u4e13\u9898'), labelZh: '\u4e13\u9898' }
   ]);
 
+  _withBoardSyllabus(boardKey, function() { _renderBoardTopics(modId, boardKey); });
+}
+function _renderBoardTopics(modId, boardKey) {
   var syllabus = typeof BOARD_SYLLABUS !== 'undefined' ? BOARD_SYLLABUS[boardKey] : null;
-  if (!syllabus) {
-    E('panel-home').innerHTML = '<div class="empty-state" style="padding:80px 0">' + t('Loading...', '\u52a0\u8f7d\u4e2d...') + '</div>';
-    return;
-  }
+  if (!syllabus) return;
 
   var html = '';
   html += '<div class="board-detail-header">';
@@ -998,8 +1021,10 @@ function openBoardChapter(modId, chNum) {
   for (var i = 0; i < HOME_MODULES.length; i++) {
     if (HOME_MODULES[i].id === modId) { mod = HOME_MODULES[i]; break; }
   }
-  var syllabus = typeof BOARD_SYLLABUS !== 'undefined' ? BOARD_SYLLABUS[boardKey] : null;
-  if (!mod || !syllabus) return;
+  if (!mod) return;
+  _withBoardSyllabus(boardKey, function() {
+    var syllabus = typeof BOARD_SYLLABUS !== 'undefined' ? BOARD_SYLLABUS[boardKey] : null;
+    if (!syllabus) return;
 
   var ch = null;
   for (var ci = 0; ci < syllabus.length; ci++) {
@@ -1033,7 +1058,8 @@ function openBoardChapter(modId, chNum) {
   }
   html += '</div>';
 
-  E('panel-home').innerHTML = html;
+    E('panel-home').innerHTML = html;
+  }); /* end _withBoardSyllabus */
 }
 
 /* Open a HHK year group showing its units */
@@ -1042,8 +1068,10 @@ function openBoardYear(modId, yearNum) {
   for (var i = 0; i < HOME_MODULES.length; i++) {
     if (HOME_MODULES[i].id === modId) { mod = HOME_MODULES[i]; break; }
   }
-  var syllabus = typeof BOARD_SYLLABUS !== 'undefined' ? BOARD_SYLLABUS.hhk : null;
-  if (!mod || !syllabus) return;
+  if (!mod) return;
+  _withBoardSyllabus('hhk', function() {
+    var syllabus = typeof BOARD_SYLLABUS !== 'undefined' ? BOARD_SYLLABUS.hhk : null;
+    if (!syllabus) return;
 
   var ch = null;
   for (var ci = 0; ci < syllabus.length; ci++) {
@@ -1078,7 +1106,8 @@ function openBoardYear(modId, yearNum) {
   }
   html += '</div>';
 
-  E('panel-home').innerHTML = html;
+    E('panel-home').innerHTML = html;
+  }); /* end _withBoardSyllabus */
 }
 
 /* ═══ DECK DETAIL ═══ */
