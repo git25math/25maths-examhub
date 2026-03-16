@@ -2585,12 +2585,12 @@ function _ppShowRecoveryPack(q) {
 
   var html = '<div class="recovery-pack">';
   html += '<div class="recovery-pack-header">';
-  html += '<span class="recovery-pack-icon">\ud83e\ude7a</span> ';
-  html += t('Recovery Pack', '\u4fee\u590d\u5efa\u8bae');
+  html += '<span class="recovery-pack-icon">\ud83d\udca1</span> ';
+  html += t('Your Next Steps', '\u4e0b\u4e00\u6b65\u5efa\u8bae');
   html += '</div>';
   html += '<div class="recovery-pack-why">';
-  html += t('This question was marked needs work. Here are steps to help you improve.',
-            '\u8fd9\u9053\u9898\u88ab\u6807\u8bb0\u4e3a\u201c\u9700\u8981\u52a0\u5f3a\u201d\uff0c\u4ee5\u4e0b\u662f\u7cfb\u7edf\u4e3a\u4f60\u751f\u6210\u7684\u4fee\u590d\u5efa\u8bae\u3002');
+  html += t('No worries! Here\u2019s a personalised plan to help you master this.',
+            '\u6ca1\u5173\u7cfb\uff01\u4ee5\u4e0b\u662f\u4e13\u4e3a\u4f60\u5b9a\u5236\u7684\u5b66\u4e60\u8ba1\u5212\uff0c\u5e2e\u4f60\u638c\u63e1\u8fd9\u4e2a\u77e5\u8bc6\u70b9\u3002');
   html += '</div>';
 
   /* Weak vocabulary */
@@ -2603,7 +2603,8 @@ function _ppShowRecoveryPack(q) {
       html += '<button class="recovery-pack-item" data-action="recoverVocab" data-level-idx="' + v.levelIdx + '" data-word="' + escapeHtml(v.word) + '">';
       html += vBadge + ' <strong>' + escapeHtml(v.word) + '</strong>';
       html += ' <span class="text-muted-sm">' + escapeHtml(v.def) + '</span>';
-      html += ' <span class="recovery-fs-label">' + t(v.fs, v.fs === 'learning' ? '\u5b66\u4e60\u4e2d' : v.fs === 'uncertain' ? '\u6a21\u7cca' : '\u65b0\u8bcd') + '</span>';
+      var _rvLabel = v.fs === 'learning' ? t('Learning', '\u5b66\u4e60\u4e2d') : v.fs === 'uncertain' ? t('Reviewing', '\u5de9\u56fa\u4e2d') : t('New', '\u65b0\u8bcd');
+      html += ' <span class="recovery-fs-label">' + _rvLabel + '</span>';
       html += '</button>';
     }
     html += '</div>';
@@ -2619,7 +2620,8 @@ function _ppShowRecoveryPack(q) {
       html += '<button class="recovery-pack-item" data-action="recoverKP" data-kp-id="' + kp.id + '" data-board="' + board + '">';
       html += kpBadge + ' <strong>' + escapeHtml(kp.title) + '</strong>';
       if (kp.title_zh) html += ' <span class="text-muted-sm">' + escapeHtml(kp.title_zh) + '</span>';
-      html += ' <span class="recovery-fs-label">' + t(kp.fs, kp.fs === 'learning' ? '\u5b66\u4e60\u4e2d' : kp.fs === 'uncertain' ? '\u6a21\u7cca' : '\u65b0') + '</span>';
+      var _rkLabel = kp.fs === 'learning' ? t('Learning', '\u5b66\u4e60\u4e2d') : kp.fs === 'uncertain' ? t('Reviewing', '\u5de9\u56fa\u4e2d') : t('New', '\u65b0');
+      html += ' <span class="recovery-fs-label">' + _rkLabel + '</span>';
       html += '</button>';
     }
     html += '</div>';
