@@ -884,13 +884,11 @@ function openBoardHome(modId) {
       t('Vocabulary, knowledge points, and practice by chapter', '\u6309\u7ae0\u8282\u5b66\u4e60\u8bcd\u6c47\u3001\u77e5\u8bc6\u70b9\u548c\u7ec3\u4e60\u9898'),
       "openBoardTopics('" + escapeHtml(modId) + "')");
 
-    if (typeof ppShowPaperBrowse === 'function') {
-      html += _boardOptionCard('\ud83d\udcc4', t('Past Papers', '\u5957\u5377\u7ec3\u4e60'),
-        modId === 'cie'
-          ? t('228 papers \u00b7 4,110 questions \u00b7 2018\u20132025', '228\u5957\u5377 \u00b7 4,110\u9053\u9898')
-          : t('76 papers \u00b7 1,855 questions', '76\u5957\u5377 \u00b7 1,855\u9053\u9898'),
-        "ppShowPaperBrowse('" + escapeHtml(boardKey) + "')");
-    }
+    html += _boardOptionCard('\ud83d\udcc4', t('Past Papers', '\u5957\u5377\u7ec3\u4e60'),
+      modId === 'cie'
+        ? t('228 papers \u00b7 4,110 questions \u00b7 2018\u20132025', '228\u5957\u5377 \u00b7 4,110\u9053\u9898')
+        : t('76 papers \u00b7 1,855 questions', '76\u5957\u5377 \u00b7 1,855\u9053\u9898'),
+      "_lazyLoad('practice',function(){ppShowPaperBrowse('" + escapeHtml(boardKey) + "');})");
 
     html += _boardOptionCard('\ud83d\udd04', t('Review Completed', '\u56de\u987e\u5df2\u505a\u8fc7\u7684'),
       t('Revisit questions you have practised', '\u56de\u987e\u4f60\u7ec3\u4e60\u8fc7\u7684\u9898\u76ee'),
@@ -924,6 +922,12 @@ function openBoardHome(modId) {
         unitCount + ' ' + t('units', '\u4e2a\u5355\u5143'),
         "openBoardYear('hhk'," + (yi + 7) + ")");
     }
+    html += _boardOptionCard('\ud83d\udd04', t('Review Completed', '\u56de\u987e\u5df2\u505a\u8fc7\u7684'),
+      t('Revisit questions you have practised', '\u56de\u987e\u4f60\u7ec3\u4e60\u8fc7\u7684\u9898\u76ee'),
+      "navTo('mistakes')");
+    html += _boardOptionCard('\u2b50', t('My Favorites', '\u6211\u7684\u6536\u85cf'),
+      t('Words, KPs, and questions you bookmarked', '\u4f60\u6536\u85cf\u7684\u5355\u8bcd\u3001\u77e5\u8bc6\u70b9\u548c\u9898\u76ee'),
+      "navTo('favorites')");
   }
 
   html += '</div>';

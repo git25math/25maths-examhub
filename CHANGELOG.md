@@ -1,5 +1,19 @@
 # Changelog
 
+## [5.31.1] - 2026-03-16 — 导航修复 + HHK 板块完善
+
+### Bug 修复
+- **套卷入口始终可见**：移除 `typeof ppShowPaperBrowse === 'function'` 前置检查 — 改为 onclick 内 `_lazyLoad('practice', ...)` 懒加载，确保在 practice 包加载前按钮也能正常显示
+- **HHK 板块完善**：Harrow Haikou 板块首页新增"回顾已做过的"与"我的收藏"入口，与 CIE/EDX 板块保持一致
+
+### 文件变更
+| 文件 | 修改 |
+|------|------|
+| js/mastery.js | 修复套卷按钮条件渲染 + HHK 补充 Review/Favorites 选项 |
+| js/config.js | APP_VERSION → v5.31.1 |
+
+---
+
 ## [5.30.0] - 2026-03-16 — 一键收藏系统 + 薄弱分析 + KP 深度增强
 
 ### Phase 1: 一键收藏基础设施
