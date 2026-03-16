@@ -778,6 +778,21 @@ function getWeakestSections(board, limit) {
 /* ═══ PRACTICE BY SECTION/CHAPTER ═══ */
 function startPracticeBySection(sectionId, board) {
   board = board || 'cie';
+  /* Set breadcrumb (v5.31.1) */
+  if (typeof breadcrumbSet === 'function') {
+    var _spModId = board === 'hhk' ? 'hhk' : board;
+    var _spMod = null;
+    if (typeof HOME_MODULES !== 'undefined') {
+      for (var _mi = 0; _mi < HOME_MODULES.length; _mi++) {
+        if (HOME_MODULES[_mi].id === _spModId) { _spMod = HOME_MODULES[_mi]; break; }
+      }
+    }
+    var _spCrumbs = [{ id:'home', label:'Home', labelZh:'\u9996\u9875', action:"navTo('home')" }];
+    if (_spMod) _spCrumbs.push({ id:_spModId, label:_spMod.title, labelZh:_spMod.titleZh, action:"openBoardHome('" + _spModId + "')" });
+    _spCrumbs.push({ id:sectionId, label:sectionId, labelZh:sectionId, action:"openSection('" + sectionId + "','" + board + "')" });
+    _spCrumbs.push({ id:'practice-' + sectionId, label:'\u270f\ufe0f Practice', labelZh:'\u270f\ufe0f \u7ec3\u4e60' });
+    breadcrumbSet(_spCrumbs);
+  }
   /* Get first level in this section for reference */
   var li = getSectionLevelIdx(sectionId, board);
   if (li < 0) li = 0;

@@ -134,16 +134,17 @@ function navTo(id) {
   navPush(id);
   showPanel(id);
   /* Render content for target panel */
+  var _hc = { id:'home', label:'Home', labelZh:'\u9996\u9875', action:"navTo('home')" };
   if (id === 'home') { if (typeof _currentSectionContext !== 'undefined') _currentSectionContext = null; breadcrumbSet([]); renderHome(); }
-  else if (id === 'plan') { _lazyNav('syllabus-views', 'renderTodaysPlan', 'plan'); }
-  else if (id === 'mistakes') { _lazyNav('syllabus-views', 'renderMistakeBook', 'mistakes'); }
-  else if (id === 'import') { _lazyNav('tools', 'renderImport', 'import'); }
-  else if (id === 'board') { _lazyNav('board-guides', 'renderBoard', 'board'); }
-  else if (id === 'stats') { _lazyNav('tools', 'renderStats', 'stats'); }
-  else if (id === 'admin') { _lazyNav('admin', 'renderAdmin', 'admin'); }
-  else if (id === 'homework') { _lazyNav('homework', 'showStudentHwPage', 'homework'); }
-  else if (id === 'lists') { _lazyNav('lists', 'renderListView', 'lists'); }
-  else if (id === 'favorites') { _lazyNav('favorites', 'renderFavorites', 'favorites'); }
+  else if (id === 'plan') { breadcrumbSet([_hc, {id:'plan', label:'Learning Guide', labelZh:'\u5b66\u4e60\u5efa\u8bae'}]); _lazyNav('syllabus-views', 'renderTodaysPlan', 'plan'); }
+  else if (id === 'mistakes') { breadcrumbSet([_hc, {id:'mistakes', label:'Review Book', labelZh:'\u590d\u4e60\u672c'}]); _lazyNav('syllabus-views', 'renderMistakeBook', 'mistakes'); }
+  else if (id === 'favorites') { breadcrumbSet([_hc, {id:'favorites', label:'My Favorites', labelZh:'\u6211\u7684\u6536\u85cf'}]); _lazyNav('favorites', 'renderFavorites', 'favorites'); }
+  else if (id === 'stats') { breadcrumbSet([_hc, {id:'stats', label:'Progress', labelZh:'\u5b66\u4e60\u6570\u636e'}]); _lazyNav('tools', 'renderStats', 'stats'); }
+  else if (id === 'lists') { breadcrumbSet([_hc, {id:'lists', label:'My Lists', labelZh:'\u6211\u7684\u5217\u8868'}]); _lazyNav('lists', 'renderListView', 'lists'); }
+  else if (id === 'import') { breadcrumbSet([_hc, {id:'import', label:'Import', labelZh:'\u5bfc\u5165'}]); _lazyNav('tools', 'renderImport', 'import'); }
+  else if (id === 'board') { breadcrumbSet([_hc, {id:'board', label:'Study Guide', labelZh:'\u5907\u8003\u6307\u5357'}]); _lazyNav('board-guides', 'renderBoard', 'board'); }
+  else if (id === 'homework') { breadcrumbSet([_hc, {id:'homework', label:'Homework', labelZh:'\u4f5c\u4e1a'}]); _lazyNav('homework', 'showStudentHwPage', 'homework'); }
+  else if (id === 'admin') { breadcrumbSet([_hc, {id:'admin', label:'Admin', labelZh:'\u7ba1\u7406'}]); _lazyNav('admin', 'renderAdmin', 'admin'); }
   /* section panel is rendered by openSection() directly */
 }
 

@@ -5180,7 +5180,8 @@ input { font-family: inherit; }
 .kn-prereq-warn-link { color:var(--c-primary); cursor:pointer; text-decoration:underline; font-weight:600; }
 
 /* ═══ BREADCRUMB BAR (v5.30.0) ═══ */
-.breadcrumb-bar { padding:8px 20px; background:var(--c-surface-alt); border-bottom:1px solid var(--c-border); display:flex; align-items:center; gap:4px; flex-wrap:wrap; font-size:13px; position:sticky; top:0; z-index:10; }
+.breadcrumb-bar { padding:7px 20px; background:var(--c-surface-alt); border-bottom:1px solid var(--c-border); display:flex; align-items:center; gap:4px; flex-wrap:wrap; font-size:13px; position:sticky; top:0; z-index:10; }
+@media (max-width:1079px) { .breadcrumb-bar { position:sticky; top:calc(var(--header-h) + env(safe-area-inset-top, 0)); z-index:90; } }
 .bc-link { background:none; border:none; color:var(--c-primary); font-size:13px; cursor:pointer; padding:2px 4px; border-radius:var(--r-xs, 4px); transition:background .15s; font-weight:500; }
 .bc-link:hover { background:var(--c-primary-bg); }
 .bc-sep { color:var(--c-muted); font-size:14px; margin:0 2px; }

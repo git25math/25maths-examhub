@@ -1091,6 +1091,27 @@ function openDeck(idx) {
   }
   if (isGuestLocked(idx)) { showGuestLockPrompt(); return; }
   currentLvl = idx;
+  /* Set breadcrumb (v5.31.1) */
+  if (typeof breadcrumbSet === 'function') {
+    var _lv = LEVELS[idx];
+    var _hc = { id:'home', label:'Home', labelZh:'\u9996\u9875', action:"navTo('home')" };
+    var _crumbs = [_hc];
+    if (_lv && _lv._isSection && _lv._section && _lv._board) {
+      /* Deck linked to a section — show full path */
+      var _secMod = _lv._board === 'hhk' ? 'hhk' : _lv._board;
+      var _mod = null;
+      if (typeof HOME_MODULES !== 'undefined') {
+        for (var _mi = 0; _mi < HOME_MODULES.length; _mi++) {
+          if (HOME_MODULES[_mi].id === _secMod) { _mod = HOME_MODULES[_mi]; break; }
+        }
+      }
+      if (_mod) _crumbs.push({ id:_secMod, label:_mod.title, labelZh:_mod.titleZh, action:"openBoardHome('" + _secMod + "')" });
+      _crumbs.push({ id:_lv._section, label:_lv._section, labelZh:_lv._section, action:"openSection('" + _lv._section + "','" + _lv._board + "')" });
+    }
+    var _deckLabel = typeof lvTitle === 'function' ? lvTitle(_lv) : (idx + '');
+    _crumbs.push({ id:'deck-' + idx, label:'\ud83d\udcdd ' + _deckLabel, labelZh:'\ud83d\udcdd ' + _deckLabel });
+    breadcrumbSet(_crumbs);
+  }
   renderDeck(idx);
   navPush('deck');
   showPanel('deck');

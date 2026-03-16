@@ -1,5 +1,27 @@
 # Changelog
 
+## [5.31.2] - 2026-03-16 — 全面面包屑导航 + 手机端悬停修复
+
+### 导航面包屑全覆盖
+- **所有主要面板**均新增面包屑：Learning Guide、Review Book、My Favorites、Progress、My Lists、Study Guide、Homework、Admin
+- **词汇卡组（Deck）**：从章节进入时显示 `首页 › 板块 › 章节 › 📝 词汇`；从其他入口进入时显示 `首页 › 📝 词汇`
+- **章节练习（Practice）**：从章节进入显示 `首页 › 板块 › 章节 › ✏️ 练习`
+- 面包屑链接全部可点击，直接跳回对应层级，无需多次返回
+
+### 手机端面包屑位置修复
+- 移动端（≤1079px）面包屑 `top` 从 `0` 改为 `calc(var(--header-h) + safe-area-inset-top)`，避免与固定顶部导航栏重叠
+
+### 文件变更
+| 文件 | 修改 |
+|------|------|
+| js/ui.js | navTo() 为 9 个面板添加 breadcrumbSet 调用 |
+| js/mastery.js | openDeck() 添加上下文感知面包屑 |
+| js/syllabus.js | startPracticeBySection() 添加面包屑 |
+| css/style.css | 面包屑移动端 sticky top 修复 |
+| js/config.js | APP_VERSION → v5.31.2 |
+
+---
+
 ## [5.31.1] - 2026-03-16 — 导航修复 + HHK 板块完善
 
 ### Bug 修复
