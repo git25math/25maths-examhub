@@ -142,7 +142,7 @@ function _lazyCall(bundle, fnName, args) {
 
 function _showPanelLoading(panelId) {
   var el = E('panel-' + panelId);
-  if (el) el.innerHTML = '<div class="empty-state" style="padding:80px 0"><div class="spinner"></div></div>';
+  if (el) el.innerHTML = '<div class="empty-state" style="padding:80px 0"><div class="spinner"></div><div style="margin-top:16px;font-size:13px;color:var(--c-text2)">' + t('Loading...', '\u52a0\u8f7d\u4e2d...') + '</div></div>';
 }
 
 function _lazyNav(bundle, fnName, panelId) {
