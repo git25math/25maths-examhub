@@ -67,6 +67,11 @@ function navPush(id) {
 }
 
 function navBack() {
+  if (_navStack.length > 0 && _navStack[_navStack.length - 1] === 'knowledge-node') {
+    _navStack.pop();
+    if (typeof closeKnowledgeNode === 'function') closeKnowledgeNode();
+    return;
+  }
   if (_navStack.length > 1) {
     _navStack.pop(); /* remove current */
     var prev = _navStack[_navStack.length - 1];
@@ -79,6 +84,11 @@ function navBack() {
 /* Handle browser back/forward button (v5.30.0) */
 window.addEventListener('popstate', function(e) {
   var panel = (e.state && e.state.panel) ? e.state.panel : 'home';
+  /* Knowledge Node is a modal overlay — close it instead of switching panels */
+  if (panel === 'knowledge-node') {
+    if (typeof closeKnowledgeNode === 'function') closeKnowledgeNode();
+    return;
+  }
   _navPushingState = true;
   navTo(panel);
   _navPushingState = false;

@@ -1,5 +1,28 @@
 # Changelog
 
+## [5.31.6] - 2026-03-16 — 导航历史栈全补齐 + KN Modal 返回修复
+
+### Bug 修复
+- **openKnowledgePoint()** 缺少 `navPush('kp')`：从章节/收藏进入 KP 详情页后，浏览器返回键无法返回章节。已补加。
+- **ppShowPaperBrowse()** 缺少 `navPush('papers')`：进入套卷浏览面板不入历史栈，返回键直接跳过该页。已补加。
+- **startPastPaper()** 缺少 `navPush('pastpaper')`：开始真题练习不入历史栈。已补加。
+- **KnowledgeNode Modal 返回键穿透**：KN 是全屏 fixed overlay（z-index:9900），但未入导航栈，导致按返回键关闭底层面板而非关闭 KN。
+  - `openKnowledgeNode()` 新增 `navPush('knowledge-node')`
+  - `navBack()` 检测到 `knowledge-node` 时直接调用 `closeKnowledgeNode()`，不执行 `navTo()`
+  - `popstate` handler 同样处理 `knowledge-node` 情况
+
+### 文件变更
+| 文件 | 修改 |
+|------|------|
+| js/syllabus.js | openKnowledgePoint 补 navPush('kp') |
+| js/practice-browse.js | ppShowPaperBrowse 补 navPush('papers') |
+| js/practice.js | startPastPaper 补 navPush('pastpaper') |
+| js/knowledge-node.js | openKnowledgeNode 加 navPush('knowledge-node') |
+| js/ui.js | navBack + popstate 处理 knowledge-node 特殊路径 |
+| js/config.js | APP_VERSION → v5.31.6 |
+
+---
+
 ## [5.31.5] - 2026-03-16 — 面包屑导航全修复：板块/章节/收藏页返回实际生效
 
 ### Bug 修复

@@ -58,6 +58,9 @@ function openKnowledgeNode(kpId, board, context) {
   _knState.stage   = 0;
   _knState.context = context || null;
 
+  /* Push to nav history so browser/app back button closes this overlay */
+  if (typeof navPush === 'function') navPush('knowledge-node');
+
   _knRenderPanel();
   _knBindEvents();
 }

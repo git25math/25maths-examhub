@@ -967,6 +967,7 @@ function openKnowledgePoint(kpId, board) {
 
   var _doOpen = function() {
     renderKPDetail(kp, board);
+    navPush('kp');
     showPanel('kp');
     var panel = document.getElementById('panel-kp');
     if (panel) panel.scrollTop = 0;

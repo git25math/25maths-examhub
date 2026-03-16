@@ -486,6 +486,7 @@ function ppShowPaperBrowse(board) {
     window._ppBrowseBoard = board;
 
     el.innerHTML = html;
+    navPush('papers');
     showPanel('papers');
   });
 }

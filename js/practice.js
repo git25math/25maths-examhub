@@ -1881,6 +1881,7 @@ function startPastPaper(sectionId, board, mode, groupFilter, cmdFilter) {
         _pspCrumbs.push({ id:'pp-' + sectionId, label:'\ud83d\udcc4 Past Papers', labelZh:'\ud83d\udcc4 \u771f\u9898' });
         breadcrumbSet(_pspCrumbs);
       }
+      navPush('pastpaper');
       showPanel('pastpaper');
       renderPPCard();
     }
