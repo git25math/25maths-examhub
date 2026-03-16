@@ -414,6 +414,23 @@ function ppShowPaperBrowse(board) {
     var el = E('panel-papers');
     if (!el) return;
 
+    /* Set breadcrumb (v5.31.0) */
+    var _ppModId = board === '25m' ? 'hhk' : board;
+    if (typeof breadcrumbSet === 'function' && typeof HOME_MODULES !== 'undefined') {
+      var _ppMod = null;
+      for (var _mi = 0; _mi < HOME_MODULES.length; _mi++) {
+        if (HOME_MODULES[_mi].id === _ppModId) { _ppMod = HOME_MODULES[_mi]; break; }
+      }
+      var _ppCrumbs = [
+        { id: 'home', label: 'Home', labelZh: '\u9996\u9875', action: "navTo('home')" }
+      ];
+      if (_ppMod) {
+        _ppCrumbs.push({ id: _ppModId, label: _ppMod.title, labelZh: _ppMod.titleZh, action: "openBoardHome('" + _ppModId + "')" });
+      }
+      _ppCrumbs.push({ id: 'papers', label: 'Past Papers', labelZh: '\u5957\u5377\u7ec3\u4e60' });
+      breadcrumbSet(_ppCrumbs);
+    }
+
     var papers = getPaperList(board);
     var results = _ppGetPaperResults();
 
@@ -430,7 +447,8 @@ function ppShowPaperBrowse(board) {
 
     var html = '';
     html += '<div class="page-header">';
-    html += '<button class="btn-icon" onclick="ppBack()" title="Back">&larr;</button>';
+    var _ppBrowseModId = board === '25m' ? 'hhk' : board;
+    html += '<button class="btn-icon" onclick="openBoardHome(\'' + escapeHtml(_ppBrowseModId) + '\')" title="Back">&larr;</button>';
     html += '<h2 class="mt-0 mb-0 flex-1">' + t('Past Papers', '\u5957\u5377\u7ec3\u4e60') + '</h2>';
     html += '<button class="btn btn-sm btn-warning" onclick="ppShowMockSetup(\'' + escapeHtml(board) + '\')">\ud83c\udfb2 ' + t('Mock Exam', '\u6a21\u62df\u5377') + '</button>';
     html += '</div>';

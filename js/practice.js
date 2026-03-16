@@ -2745,7 +2745,13 @@ function ppForceBack() {
   } else if (wasPaper) {
     ppShowPaperBrowse(board);
   } else if (wasDiag || wasMock) {
-    navTo('home');
+    /* Return to board home instead of app home (v5.31.0) */
+    var _ppModId = board === '25m' ? 'hhk' : board;
+    if (typeof openBoardHome === 'function') {
+      openBoardHome(_ppModId);
+    } else {
+      navTo('home');
+    }
   } else {
     showPanel('section');
   }
